@@ -6,6 +6,8 @@ import (
 
 	"github.com/gofiber/fiber"
 	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
+	"github.com/kokiebisu/gonebnb/api/models"
 )
 
 type Server struct {
@@ -13,10 +15,12 @@ type Server struct {
 	App *fiber.App
 }
 
+// Initialize starts the server
 func (server *Server) Initialize(driver, user, password, port, host, name string) {
 	var err error
 
 	url := fmt.Sprintf("host=%s port=%s user=%s dbname=%s sslmode=disable password=%s", host, port, user, name, password)
+
 	server.DB, err = gorm.Open(driver, url)
 	if err != nil {
 		fmt.Printf("Cannot connect to %s database", driver)
@@ -30,7 +34,8 @@ func (server *Server) Initialize(driver, user, password, port, host, name string
 
 }
 
-func (server *Server) Run(address string) {
-	fmt.Println("Listening on port 8080")
-	server.App.Listen(8080)
+// Run starts listening on the specified port
+func (server *Server) Run(address int) {
+	fmt.Printf("Listening on port %d", address)
+	server.App.Listen(address)
 }
