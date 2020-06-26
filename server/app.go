@@ -3,10 +3,11 @@ package main
 import (
 	"log"
 
-	"server/database"
+	"github.com/kokiebisu/gonebnb/server/database"
+	"github.com/kokiebisu/gonebnb/server/routes"
 
-	"gihub.com/gofiber/logger"
 	"github.com/gofiber/fiber"
+	"github.com/gofiber/logger"
 	"github.com/gofiber/recover"
 )
 
@@ -20,7 +21,9 @@ func main() {
 	app.Use(logger.New())
 
 	// Register stay routes
-	routes.Stay(app)
+	api := app.Group("/api")
+	v1 := api.Group("/v1")
+	routes.Stay(v1)
 
 	app.Listen(4000)
 }
