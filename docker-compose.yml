@@ -13,12 +13,15 @@ services:
   database:
     container_name: database
     image: postgres:latest
+    ports:
+      - '5432:5432'
     environment:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
       - POSTGRES_DB=${DB_NAME}
       - DATABASE_HOST=${DB_HOST}
-    ports:
-      - '5432:5432'
     volumes:
-      - server/database:/var/lib/postgres
+      - database_postgres:/var/lib/postgresql/data
+
+volumes:
+  database_postgres:
