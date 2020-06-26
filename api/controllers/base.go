@@ -9,8 +9,8 @@ import (
 )
 
 type Server struct {
-	DB     *gorm.DB
-	Router *fiber.App
+	DB  *gorm.DB
+	App *fiber.App
 }
 
 func (server *Server) Initialize(driver, user, password, port, host, name string) {
@@ -26,6 +26,11 @@ func (server *Server) Initialize(driver, user, password, port, host, name string
 	}
 
 	server.DB.Debug().AutoMigrate(&models.User{}, &models.Stay{})
-	server.Router = fiber.New()
+	server.App = fiber.New()
 
+}
+
+func (server *Server) Run(address string) {
+	fmt.Println("Listening on port 8080")
+	server.App.Listen(8080)
 }
