@@ -1,6 +1,6 @@
 # Larger image which includes all of the dependencies 
 # that we need to compilete the program
-FROM golang:1.14 AS builder
+FROM golang:1.14 AS build
 
 WORKDIR /go/src/gonebnb
 
@@ -15,7 +15,7 @@ RUN go mod download
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -installsuffix cgo -o app .
 
 # Moving the binary to the 'final Image' to make it smaller
-FROM alpine:latest AS production
+FROM alpine:latest
 
 WORKDIR /app
 

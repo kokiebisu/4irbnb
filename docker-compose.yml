@@ -1,0 +1,24 @@
+version: '3.7'
+
+services:
+  server:
+    container_name: server
+    build: ./server
+    ports:
+      - '4000:4000'
+    restart: on-failure
+    depends_on:
+      - database
+
+  database:
+    container_name: database
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+      - DATABASE_HOST=${DB_HOST}
+    ports:
+      - '5432:5432'
+    volumes:
+      - server/database:/var/lib/postgres

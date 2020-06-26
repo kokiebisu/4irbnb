@@ -3,6 +3,8 @@ package main
 import (
 	"log"
 
+	"github.com/joho/godotenv"
+
 	"github.com/kokiebisu/gonebnb/server/database"
 	"github.com/kokiebisu/gonebnb/server/routes"
 
@@ -12,6 +14,12 @@ import (
 )
 
 func main() {
+	// Loading env files
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
 	if err := database.Connect(); err != nil {
 		log.Fatal(err)
 	}
