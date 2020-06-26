@@ -23,7 +23,7 @@ func main() {
 	// Register stay routes
 	api := app.Group("/api")
 	v1 := api.Group("/v1")
-	routes.Stay(v1)
+	routes.RegisterApi(v1)
 
 	app.Listen(4000)
 }
