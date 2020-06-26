@@ -26,16 +26,17 @@ func (server *Server) Initialize(driver, user, password, port, host, name string
 		fmt.Printf("Cannot connect to %s database", driver)
 		log.Fatalf("this is the error: %v", err)
 	} else {
-		fmt.Print("Succesfully connected to the database")
+		fmt.Println("Succesfully connected to the database")
 	}
 
 	server.DB.Debug().AutoMigrate(&models.User{}, &models.Stay{})
 	server.App = fiber.New()
 
+	server.initializeRoutes()
 }
 
 // Run starts listening on the specified port
-func (server *Server) Run(address int) {
-	fmt.Printf("Listening on port %d", address)
+func (server *Server) Run(address string) {
+	fmt.Printf("Listening on port %s", address)
 	server.App.Listen(address)
 }

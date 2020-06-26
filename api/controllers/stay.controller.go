@@ -13,10 +13,9 @@ func GetStay(c *fiber.Ctx) {
 }
 
 func CreateStay(c *fiber.Ctx) {
-	c.Send
+	c.Send("create stay")
 }
 
-stay.Get("/", GetAllStays)
-stay.Get("/:id", GetStay)
-stay.Post("/", CreateStay)
-stay.Delete("/:id", RemoveStay)
+func RemoveStay(c *fiber.Ctx) {
+	c.Send("delete stay")
+}
