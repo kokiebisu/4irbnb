@@ -25,7 +25,9 @@ func Run() {
 		log.Fatalf("Error getting env %v", err)
 	}
 
-	server.Initialize(os.Getenv("DB_DRIVER"), os.Getenv("DB_USER"), os.Getenv("DB_PASSWORD"), os.Getenv("DB_PORT"), os.Getenv("DB_HOST"), os.Getenv("DB_NAME"))
+	server.Initialize(os.Getenv("DB_HOST"), os.Getenv("DB_PORT"), os.Getenv("DB_NAME"), os.Getenv("DB_USER"), os.Getenv("DB_PASSWORD"))
 
-	server.Run("127.0.0.1:8080")
+	server.Run(8080)
+
+	defer server.DB.Close()
 }

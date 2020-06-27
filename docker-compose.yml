@@ -1,27 +1,29 @@
 version: '3.7'
 
 services:
-  server:
-    container_name: server
-    build: ./server
+  db:
+    image: postgres
     ports:
-      - '4000:4000'
-    restart: on-failure
-    depends_on:
-      - database
-
-  database:
-    container_name: database
-    image: postgres:latest
-    ports:
-      - '5432:5432'
+      - 5432:5432
     environment:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
       - POSTGRES_DB=${DB_NAME}
-      - DATABASE_HOST=${DB_HOST}
+    restart: always
     volumes:
       - database_postgres:/var/lib/postgresql/data
 
+  server:
+    build: .
+    image: gonebnb_server
+    ports:
+      - 8080:8080
+    restart: always
+    volumes:
+      - api:/usr/src/app/
+    depends_on:
+      - db
+
 volumes:
+  api:
   database_postgres:
