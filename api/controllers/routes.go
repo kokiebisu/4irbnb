@@ -9,11 +9,11 @@ func (server *Server) initializeRoutes() {
 	api := server.App.Group("/api")
 	version := api.Group("/v1")
 
-	registerStayRoutes(version)
-	registerUserRoutes(version)
+	server.registerStayRoutes(version)
+	server.registerUserRoutes(version)
 }
 
-func registerStayRoutes(url *fiber.Group) {
+func (server *Server) registerStayRoutes(url *fiber.Group) {
 	stay := url.Group("/stay")
 	stay.Get("/", GetAllStays)
 	stay.Get("/:id", GetStay)
@@ -21,10 +21,10 @@ func registerStayRoutes(url *fiber.Group) {
 	stay.Delete("/:id", RemoveStay)
 }
 
-func registerUserRoutes(url *fiber.Group) {
+func (server *Server) registerUserRoutes(url *fiber.Group) {
 	user := url.Group("/user")
-	user.Get("/", GetAllUsers)
-	user.Get("/:id", GetUser)
-	user.Post("/", CreateUser)
-	user.Delete("/:id", RemoveUser)
+	user.Get("/", server.GetAllUsers)
+	user.Get("/:id", server.GetUser)
+	user.Post("/", server.CreateUser)
+	user.Delete("/:id", server.RemoveUser)
 }
