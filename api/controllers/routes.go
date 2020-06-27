@@ -15,10 +15,10 @@ func (server *Server) initializeRoutes() {
 
 func (server *Server) registerStayRoutes(url *fiber.Group) {
 	stay := url.Group("/stay")
-	stay.Get("/", GetAllStays)
-	stay.Get("/:id", GetStay)
-	stay.Post("/", CreateStay)
-	stay.Delete("/:id", RemoveStay)
+	stay.Get("/", server.GetAllStays)
+	stay.Get("/:id", server.GetStay)
+	stay.Post("/", server.CreateStay)
+	stay.Delete("/:id", server.RemoveStay)
 }
 
 func (server *Server) registerUserRoutes(url *fiber.Group) {
