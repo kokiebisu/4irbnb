@@ -16,14 +16,13 @@ type Server struct {
 }
 
 // Initialize starts the server
-func (server *Server) Initialize(driver, user, password, port, host, name string) {
+func (server *Server) Initialize(host, port, dbname, user, password string) {
 	var err error
 
-	url := fmt.Sprintf("host=%s port=%s user=%s dbname=%s sslmode=disable password=%s", host, port, user, name, password)
+	url := fmt.Sprint("host=db port=5432 user=ken password=kronos111 dbname=gonebnb sslmode=disable")
 
-	server.DB, err = gorm.Open(driver, url)
+	server.DB, err = gorm.Open("postgres", url)
 	if err != nil {
-		fmt.Printf("Cannot connect to %s database", driver)
 		log.Fatalf("this is the error: %v", err)
 	} else {
 		fmt.Println("Succesfully connected to the database")
@@ -36,7 +35,7 @@ func (server *Server) Initialize(driver, user, password, port, host, name string
 }
 
 // Run starts listening on the specified port
-func (server *Server) Run(address string) {
-	fmt.Printf("Listening on port %s", address)
+func (server *Server) Run(address int) {
+	fmt.Printf("Listening on port %d", address)
 	server.App.Listen(address)
 }
