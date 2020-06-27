@@ -19,7 +19,7 @@ type Server struct {
 func (server *Server) Initialize(host, port, dbname, user, password string) {
 	var err error
 
-	url := fmt.Sprint("host=db port=5432 user=ken password=kronos111 dbname=gonebnb sslmode=disable")
+	url := fmt.Sprintf("host=db port=5432 user=%s password=%s dbname=%s sslmode=disable", user, password, dbname)
 
 	server.DB, err = gorm.Open("postgres", url)
 	if err != nil {
