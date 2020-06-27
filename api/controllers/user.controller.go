@@ -17,8 +17,8 @@ func GetUser(c *fiber.Ctx) {
 
 func CreateUser(c *fiber.Ctx) {
 	c.Send("create user")
-	user := new(models.User)
-	if err := c.BodyParser(user); err != nil {
+	user := models.User{}
+	if err := c.BodyParser(&user); err != nil {
 		log.Fatal(err)
 	}
 	log.Println(user.Email)
