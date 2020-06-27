@@ -1,6 +1,7 @@
 package models
 
 import (
+	"errors"
 	"time"
 
 	"github.com/jinzhu/gorm"
@@ -63,9 +64,9 @@ func (stay *Stay) UpdateStay(db *gorm.DB, sid int) (*Stay, error) {
 	// assign to the current db instance
 	db = db.Debug().Model(&Stay{}).Where("id = ?", sid).Take(&Stay{}).UpdateColumns(
 		map[string]interface{}{
-			"title": stay.Title,
-			"updated_at": time.Now()
-		}
+			"title":      stay.Title,
+			"updated_at": time.Now(),
+		},
 	)
 	// Retrieve the stay from the updated database
 	err := db.Debug().Model(&Stay{}).Where("id = ?", sid).Take(&stay).Error
@@ -73,8 +74,8 @@ func (stay *Stay) UpdateStay(db *gorm.DB, sid int) (*Stay, error) {
 		return &Stay{}, err
 	}
 	// if it exists you want to fetch the host as well
-	if p.ID != 0 {
-		err = db.Debug().Model(&User).Where("id = ?", stay.HostID).Take(&stay.Host).Error
+	if stay.ID != 0 {
+		err = db.Debug().Model(&User{}).Where("id = ?", stay.HostID).Take(&stay.Host).Error
 		if err != nil {
 			return &Stay{}, err
 		}
