@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: alpine:3.7
+      - image: circleci/golang:latest
     # Order list of run directives
     steps:
       # Pulls down the code to start a build
@@ -18,3 +18,7 @@ jobs:
           command: |
             ls -al
             echo '^^^That should look familiar^^^'
+      - run:
+          name: Check Go version
+          command: |
+            go version
