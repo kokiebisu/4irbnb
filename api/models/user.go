@@ -1,6 +1,11 @@
 package models
 
-import "time"
+import (
+	"errors"
+	"time"
+
+	"github.com/jinzhu/gorm"
+)
 
 // User represents the structure of model User
 type User struct {
@@ -9,4 +14,79 @@ type User struct {
 	Password  string    `gorm:"size:100;not null" json:"password"`
 	CreatedAt time.Time `gorm:"default:CURRENT_TIMESTAMP" json:"created_at"`
 	UpdatedAt time.Time `gorm:"default:CURRENT_TIMESTAMP" json:"updated_at"`
+}
+
+func (user *User) Prepare() {
+	user.ID = 0
+	user.Email = html.EscapeString(strings.TrimSpace(u.Email))
+	user.CreatedAt = time.Now()
+	user.UpdatedAt = time.Now()
+}
+
+func (user *User) SaveUser(db *gorm.DB) (*User, error) {
+	err := db.Debug().Create(&u).Error
+	if err != nil {
+		// Has to return something for first argument so an empty User object
+		return &User{}, err
+	}
+	return u, nil
+}
+
+func (user *User) FindAllUsers(db *gorm.DB) (*User, error) {
+	users := []User{}
+	// Check the User model
+	// If you find it then insert into &users
+	err := db.Debug().Model(&User{}).Find(&users).Error
+	if err != nil {
+		return &[]Users{}, err
+	}
+	return &users, err
+}
+
+func (user *User) FindUserById(db *gorm.DB, uid int) (*User, error) {
+	// Check the User model
+	// If you find it then insert into &u
+	err := db.Debug().Model(&User{}).Where("id = ?", uid).Take(&u).Error
+	if err != nil {
+		return &User{}, err
+	}
+	if gorm.IsRecordNotFoundError(err) {
+		return &User{}, errors.New("User not found")
+	}
+	return user, err
+}
+
+func (user *User) UpdateUser(db *gorm.DB, uid int) {
+	err := user.HashPassword()
+	if err != nil {
+		log.Fatal(err)
+	}
+	// You want to assign the the result to an empty User object
+	db = db.Debug().Model(&User{}).Where("id = ?", uid).Take(&User{}).UpdateColumns(
+		map[string]interface{}{
+			"password": u.Password,
+			"email": u.Email,
+			"update_at": time.Now(),
+		}
+	)
+	if db.Error != nil {
+		return &User{}, db.Error
+	}
+
+	// Retrieve the updated User
+	err = db.Debug().Model(&User{}).Where("id = ?", uid).Take(&user).Error
+	if err != nil {
+		return &User{}, nil
+	}
+	return user, nil
+}
+
+func (user *User) DeleteUser(db *gorm.DB, uid int) (int64, error) {
+	// You are getting the address of it so you can just delete it directly
+	db = db.Debug().Model(&User{}).Where("id = ?", uid).Take(&User{}).Delete(&User{})
+
+	if db.Error != nil {
+		return 0, db.Error
+	}
+	return db.RowsAffected, nil
 }
