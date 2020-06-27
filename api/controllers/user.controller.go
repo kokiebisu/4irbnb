@@ -15,6 +15,7 @@ func GetUser(c *fiber.Ctx) {
 	c.Send("get user")
 }
 
+// CreateUser creates the User based on the request body
 func CreateUser(c *fiber.Ctx) {
 	c.Send("create user")
 	user := models.User{}
