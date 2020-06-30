@@ -6,7 +6,7 @@ LABEL maintainer="Kenichi Okiebisu <kenichikona@gmail.com>"
 RUN apk update && apk add --no-cache git
 
 # Set the current working directory inside the container
-WORKDIR /app
+WORKDIR /server
 
 # Copy go.mod, go.sum into the container's app directory
 COPY go.mod go.sum ./
@@ -27,10 +27,10 @@ RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 
 # Move the entry point of the file (main.go) into the root folder 
-COPY --from=builder /app/main .
+COPY --from=builder /server/main .
 
 # # Move the .env file to enable reading environmental variables within program
-COPY --from=builder /app/.env .
+COPY --from=builder /server/.env .
 
 EXPOSE 8080
 
