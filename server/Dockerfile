@@ -29,7 +29,7 @@ WORKDIR /root/
 # Move the entry point of the file (main.go) into the root folder 
 COPY --from=builder /app/main .
 
-# Move the .env file to enable reading environmental variables within program
+# # Move the .env file to enable reading environmental variables within program
 COPY --from=builder /app/.env .
 
 EXPOSE 8080
