@@ -6,9 +6,9 @@ services:
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_USER=${DB_USER}
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
     restart: always
     volumes:
       - database_postgres:/var/lib/postgresql/data
@@ -16,7 +16,9 @@ services:
       - gonebnb
 
   server:
-    image: gonebnb_server
+    build:
+      context: ./server
+      dockerfile: Dockerfile
     ports:
       - 8080:8080
     restart: always
@@ -26,6 +28,16 @@ services:
       - db
     networks:
       - gonebnb
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    networks:
+      - gonebnb
+    stdin_open: true
 
 volumes:
   api:
