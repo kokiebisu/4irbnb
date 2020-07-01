@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:11
-    working_directory: ~/client/client
+    working_directory: ~/client
     steps:
       # Pulls down the code to start a build
       - checkout
@@ -17,7 +17,7 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: pwd
+      - run: cd client
 
       - run: ls -la
 
