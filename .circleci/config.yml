@@ -4,8 +4,6 @@ jobs:
     docker:
       - image: circleci/node:11
     working_directory: ~/web
-    general:
-      build_dir: client
     steps:
       # Pulls down the code to start a build
       - checkout:
@@ -19,6 +17,6 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: yarn test
+      - run: cd client && yarn test
       # - run: yarn build
       # - run: yarn netlify:deploy
