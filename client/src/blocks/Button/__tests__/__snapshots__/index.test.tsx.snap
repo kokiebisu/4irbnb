@@ -1,16 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button Block renders correctly 1`] = `
+.c0 {
+  background-color: #7d7d7d;
+  border-radius: 2px;
+  border: solid 1px transparent;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  outline: none;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.c0:hover,
+.c0:focus {
+  background-color: #8a8a8a;
+  box-shadow: 0 8px 8px 0 rgba(100,100,100,0.4);
+}
+
 <button
-  className="sc-AxiKw dSSDkf"
+  className="c0"
 >
   <h1
-    className="sc-AxjAm StDqN"
+    className=""
   >
     Login
   </h1>
   <div
-    className="sc-AxirZ ktnnZK"
+    className=""
     name="home"
   />
 </button>
