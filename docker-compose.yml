@@ -23,7 +23,7 @@ services:
       - 8080:8080
     restart: always
     volumes:
-      - api:/usr/src/app/
+      - api:/usr/src/app/server
     depends_on:
       - db
     networks:
@@ -33,14 +33,19 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
+    volumes:
+      - /app/node_modules
+      - ./client:/app
     ports:
-      - 3000:3000
+      - '3000:3000'
+    restart: on-failure
     networks:
       - gonebnb
     stdin_open: true
 
 volumes:
   api:
+  app:
   database_postgres:
 
 networks:
