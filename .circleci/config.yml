@@ -17,6 +17,9 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+      - run: pwd
+
+      - run: ls -la
 
       - run: yarn test
       # - run: yarn build
