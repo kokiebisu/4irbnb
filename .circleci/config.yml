@@ -1,24 +1,15 @@
-version: 2.1
+version: 2
 jobs:
   build:
     docker:
-      - image: circleci/golang:latest
-    # Order list of run directives
+      - image: circleci/node:11
+    working_directory: ~/repo
     steps:
       # Pulls down the code to start a build
-      - checkout
-      - run:
-          name: The First steps
-          # | indicates there will be more than one line of shell commands
-          command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
-      - run:
-          name: Code Has Arrived
-          command: |
-            ls -al
-            echo '^^^That should look familiar^^^'
-      - run:
-          name: Check Go version
-          command: |
-            go version
+      - checkout:
+      - run: ls -la
+      - run: cd client && ls -la
+      - run: cd client && yarn install && ls -la
+      - run: cd client && yarn test && ls -la
+      # - run: yarn build
+      # - run: yarn netlify:deploy
