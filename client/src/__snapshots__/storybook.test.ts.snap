@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Design System/Blocks/Buttons Base 1`] = `
+exports[`Storyshots Base Large 1`] = `
 <div
   style={
     Object {
@@ -9,8 +9,99 @@ exports[`Storyshots Design System/Blocks/Buttons Base 1`] = `
   }
 >
   <button
-    className="sc-AxjAm cgheHh"
+    className="sc-AxjAm gLAfDj"
     onClick={[Function]}
+    size={7}
+  >
+    click me
+  </button>
+</div>
+`;
+
+exports[`Storyshots Base Medium 1`] = `
+<div
+  style={
+    Object {
+      "textAlign": "center",
+    }
+  }
+>
+  <button
+    className="sc-AxjAm joZrnN"
+    onClick={[Function]}
+    size={5}
+  >
+    click me
+  </button>
+</div>
+`;
+
+exports[`Storyshots Base Small 1`] = `
+<div
+  style={
+    Object {
+      "textAlign": "center",
+    }
+  }
+>
+  <button
+    className="sc-AxjAm iObLQM"
+    onClick={[Function]}
+    size={3}
+  >
+    click me
+  </button>
+</div>
+`;
+
+exports[`Storyshots Primary Large 1`] = `
+<div
+  style={
+    Object {
+      "textAlign": "center",
+    }
+  }
+>
+  <button
+    className="sc-AxjAm gLAfDj sc-AxirZ knANer"
+    onClick={[Function]}
+    size={7}
+  >
+    click me
+  </button>
+</div>
+`;
+
+exports[`Storyshots Primary Medium 1`] = `
+<div
+  style={
+    Object {
+      "textAlign": "center",
+    }
+  }
+>
+  <button
+    className="sc-AxjAm joZrnN sc-AxirZ knANer"
+    onClick={[Function]}
+    size={5}
+  >
+    click me
+  </button>
+</div>
+`;
+
+exports[`Storyshots Primary Small 1`] = `
+<div
+  style={
+    Object {
+      "textAlign": "center",
+    }
+  }
+>
+  <button
+    className="sc-AxjAm iObLQM sc-AxirZ knANer"
+    onClick={[Function]}
+    size={3}
   >
     click me
   </button>
