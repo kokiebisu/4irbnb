@@ -20,7 +20,5 @@ const actionsData = {
 };
 
 export const Base = () => {
-  return (
-    <BaseButton {{...buttonData}} {...actionsData}/>
-  );
+  return <BaseButton {...buttonData} {...actionsData} />;
 };

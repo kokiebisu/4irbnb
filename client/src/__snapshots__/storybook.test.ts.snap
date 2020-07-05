@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Design System/Blocks/Buttons Base 1`] = `
+<div
+  style={
+    Object {
+      "textAlign": "center",
+    }
+  }
+>
+  <button
+    className="sc-AxjAm cgheHh"
+    onClick={[Function]}
+  >
+    click me
+  </button>
+</div>
+`;
