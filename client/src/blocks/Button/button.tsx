@@ -4,23 +4,24 @@ import styled, { css } from 'styled-components';
 interface Props {
   onPress: () => void;
   className?: string;
+  styles: any;
   size: number;
 }
 
 interface ButtonProps {
+  styles: any;
   size: number;
 }
 
 const Button = styled.button<ButtonProps>`
-  font-family: 'Airbnb-Cereal';
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 18px;
   border: none;
-
+  ${({ styles }) => styles}
   ${({ size }) =>
     (size === 3 &&
       css`
-        padding: 10px;
+        padding: 14px 22px;
       `) ||
     (size === 5 &&
       css`
@@ -33,13 +34,12 @@ const Button = styled.button<ButtonProps>`
 `;
 
 export const BaseButton: React.FC<Props> = ({
-  className,
   onPress,
   children,
-  size,
+  ...props
 }) => {
   return (
-    <Button size={size} className={className} onClick={onPress}>
+    <Button {...props} onClick={onPress}>
       {children}
     </Button>
   );
