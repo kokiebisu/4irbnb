@@ -13,9 +13,11 @@ interface ButtonProps {
 }
 
 const Button = styled.button<ButtonProps>`
+  font-family: 'Airbnb-Cereal';
   border-radius: 5px;
   font-size: 18px;
   border: none;
+
   ${({ size }) =>
     (size === 3 &&
       css`
