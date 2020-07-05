@@ -1,12 +1,14 @@
 import React from 'react';
-import { Button } from '../button';
+import { BaseButton } from '../button';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-describe('Button Block', () => {
+describe('Base Button', () => {
   it('renders correctly', () => {
     const tree = renderer
-      .create(<Button onPress={() => console.log('base')}>button</Button>)
+      .create(
+        <BaseButton onPress={() => console.log('base')}>button</BaseButton>
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
