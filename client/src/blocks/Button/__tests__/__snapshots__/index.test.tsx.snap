@@ -2,6 +2,7 @@
 
 exports[`Base Button renders correctly 1`] = `
 .c0 {
+  font-family: 'Airbnb-Cereal';
   border-radius: 5px;
   font-size: 18px;
   border: none;
