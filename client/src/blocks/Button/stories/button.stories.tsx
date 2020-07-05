@@ -7,7 +7,7 @@ import { action } from '@storybook/addon-actions';
 
 export default {
   component: BaseButton,
-  title: 'Base',
+  title: 'Button/Base',
   excludeStories: /.*Data$/,
   size: 'sm',
 };
