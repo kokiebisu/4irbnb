@@ -6,12 +6,14 @@ services:
     ports:
       - 5432:5432
     environment:
-      - db.env
+      POSTGRES_USER: ken
+      POSTGRES_PASSWORD: kronos111
+      POSTGRES_DB: gobnb
     restart: always
     volumes:
       - database_postgres:/var/lib/postgresql/data
     networks:
-      - gonebnb
+      - gobnb
 
   server:
     build:
@@ -25,7 +27,7 @@ services:
     depends_on:
       - db
     networks:
-      - gonebnb
+      - gobnb
 
 volumes:
   api:
@@ -33,5 +35,5 @@ volumes:
   database_postgres:
 
 networks:
-  gonebnb:
+  gobnb:
     driver: bridge
