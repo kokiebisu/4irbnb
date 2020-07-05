@@ -58,7 +58,7 @@ docker-compose build
 
 | Stacks                                      |                                                                            |
 | ------------------------------------------- | -------------------------------------------------------------------------- |
-| [Typescript](addons/a11y/)                  | Test components for user accessibility in Storybook                        |
-| [React](addons/actions/)                    | Log actions as users interact with components in the Storybook UI          |
+| [Typescript](https://www.typescriptlang.org)| A superset of Javascript                                                   |
+| [React](https://reactjs.org)                | A javascript library to create reusable UI components                      |
 
 
