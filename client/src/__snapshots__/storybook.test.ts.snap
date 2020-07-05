@@ -12,15 +12,11 @@ exports[`Storyshots Button/Base Small 1`] = `
   }
 >
   <button
-    className="sc-AxjAm eUHOsn"
+    className="sc-AxjAm jLaQQk"
     onClick={[Function]}
     size={3}
   >
-    <p
-      className="sc-AxiKw iXhYZV"
-    >
-      click me
-    </p>
+    click
   </button>
 </div>
 `;
@@ -37,7 +33,7 @@ exports[`Storyshots Button/Search Large 1`] = `
   }
 >
   <button
-    className="sc-AxjAm jxankI sc-AxhCb tRdBn"
+    className="sc-AxjAm gVqTou"
     onClick={[Function]}
     size={7}
   >
@@ -45,7 +41,7 @@ exports[`Storyshots Button/Search Large 1`] = `
       className="sc-AxirZ dKQBjA"
     >
       <div
-        className="sc-AxmLO lnsMIg sc-AxhUy ceIRJJ"
+        className="sc-AxiKw bcHzLP"
       >
         <svg
           stroke="white"
@@ -58,7 +54,7 @@ exports[`Storyshots Button/Search Large 1`] = `
         </svg>
       </div>
       <p
-        className="sc-AxiKw sc-AxgMl bWbodz"
+        className="sc-AxhCb bxSUOc"
       >
         Search
       </p>
@@ -79,7 +75,7 @@ exports[`Storyshots Button/Search Medium 1`] = `
   }
 >
   <button
-    className="sc-AxjAm eGyjhG sc-AxhCb tRdBn"
+    className="sc-AxjAm ceOPdU"
     onClick={[Function]}
     size={5}
   >
@@ -87,7 +83,7 @@ exports[`Storyshots Button/Search Medium 1`] = `
       className="sc-AxirZ dKQBjA"
     >
       <div
-        className="sc-Axmtr fZTHKl sc-AxhUy ceIRJJ"
+        className="sc-AxiKw bcHzLP"
       >
         <svg
           stroke="white"
@@ -100,7 +96,7 @@ exports[`Storyshots Button/Search Medium 1`] = `
         </svg>
       </div>
       <p
-        className="sc-AxiKw sc-AxgMl bWbodz"
+        className="sc-AxhCb bxSUOc"
       >
         Search
       </p>
@@ -121,7 +117,7 @@ exports[`Storyshots Button/Search Small 1`] = `
   }
 >
   <button
-    className="sc-AxjAm eUHOsn sc-AxhCb tRdBn"
+    className="sc-AxjAm kfsJUR"
     onClick={[Function]}
     size={3}
   >
@@ -129,7 +125,7 @@ exports[`Storyshots Button/Search Small 1`] = `
       className="sc-AxirZ dKQBjA"
     >
       <div
-        className="sc-AxheI hlfPuK sc-AxhUy ceIRJJ"
+        className="sc-AxiKw bcHzLP"
       >
         <svg
           stroke="white"
@@ -142,7 +138,7 @@ exports[`Storyshots Button/Search Small 1`] = `
         </svg>
       </div>
       <p
-        className="sc-AxiKw sc-AxgMl bWbodz"
+        className="sc-AxhCb bxSUOc"
       >
         Search
       </p>

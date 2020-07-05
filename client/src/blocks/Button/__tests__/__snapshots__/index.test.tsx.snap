@@ -9,6 +9,7 @@ exports[`Base Button renders correctly 1`] = `
 }
 
 <button
+  action={[Function]}
   className="c0"
   onClick={[Function]}
   size={3}

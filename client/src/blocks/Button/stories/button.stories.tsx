@@ -6,6 +6,7 @@ import { BaseButton } from '../button';
 import { Text } from '../../../elements/Text';
 
 import { action } from '@storybook/addon-actions';
+import { css } from 'styled-components';
 
 export default {
   component: BaseButton,
@@ -22,5 +23,5 @@ const actionsData = {
 };
 
 export const Small = () => {
-  return <BaseButton size={3} {...buttonData} {...actionsData} />;
+  return <BaseButton styles={css``} size={3} {...buttonData} {...actionsData} />;
 };

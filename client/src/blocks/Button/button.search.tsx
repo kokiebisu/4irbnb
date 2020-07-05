@@ -1,6 +1,6 @@
 import React from 'react';
 import { BaseButton } from './button';
-import styled, { css } from 'styled-components';
+import { css } from 'styled-components';
 import { Flex } from '../layout';
 
 import { Icon } from '../../assets/svg/icon';
@@ -12,8 +12,8 @@ export default (props: props) => {
   return (
     <BaseButton styles={search} {...props}>
       <Flex alignCenter>
-        <StyledIcon name='search' />
-        <StyledText>Search</StyledText>
+        <Icon styles={icon} name='search' />
+        <Text styles={text}>Search</Text>
       </Flex>
     </BaseButton>
   );
@@ -30,7 +30,7 @@ const search = css`
   color: white;
 `;
 
-const StyledIcon = styled(Icon)`
+const icon = css`
   position: relative;
   top: 1.5px;
   margin-right: 7px;
@@ -43,7 +43,7 @@ const StyledIcon = styled(Icon)`
   }
 `;
 
-const StyledText = styled(Text)`
+const text = css`
   font-size: 15px;
   letter-spacing: 0.5px;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
