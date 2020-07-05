@@ -1,13 +1,12 @@
 import React from 'react';
 
-// Component
-import { BaseButton } from '../button';
+import { PrimaryButton } from '../button.primary';
 
 import { action } from '@storybook/addon-actions';
 
 export default {
-  component: BaseButton,
-  title: 'Base',
+  component: PrimaryButton,
+  title: 'Primary',
   excludeStories: /.*Data$/,
 };
 
@@ -19,6 +18,6 @@ const actionsData = {
   onPress: action('onPress'),
 };
 
-export const Base = () => {
-  return <BaseButton {...buttonData} {...actionsData} />;
+export const Primary = () => {
+  return <PrimaryButton {...buttonData} {...actionsData} />;
 };
