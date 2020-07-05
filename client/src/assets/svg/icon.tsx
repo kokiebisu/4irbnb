@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 interface Props {
   name: string;
-  styles: any;
+  styles?: any;
 }
 
 interface WrapperProps {
@@ -15,7 +15,7 @@ const items: any = {
   search: Search,
 };
 
-export const Logo: React.FC<Props> = ({ name, styles, ...props }) => {
+export const Icon: React.FC<Props> = ({ name, styles, ...props }) => {
   const Component: any = items[name];
 
   const Wrapper = styled.div<WrapperProps>`
