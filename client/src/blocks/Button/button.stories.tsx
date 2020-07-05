@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Component
-import { Button } from './button';
+import { BaseButton } from './button';
 import { PrimaryButton } from './button.primary';
 
 export default {
@@ -9,7 +9,9 @@ export default {
 };
 
 export const Base = () => {
-  return <Button onPress={() => console.log('base')}>Base BUtton</Button>;
+  return (
+    <BaseButton onPress={() => console.log('base')}>Base BUtton</BaseButton>
+  );
 };
 
 export const Primary = () => {
