@@ -11,7 +11,9 @@ describe('Base Button', () => {
     };
 
     const tree = renderer
-      .create(<BaseButton onPress={testingData.action} {...testingData} />)
+      .create(
+        <BaseButton size={3} onPress={testingData.action} {...testingData} />
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

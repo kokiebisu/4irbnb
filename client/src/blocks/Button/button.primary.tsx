@@ -1,5 +1,5 @@
 import { BaseButton } from './button';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const PrimaryButton = styled(BaseButton)`
   background: -webkit-linear-gradient(
@@ -10,5 +10,4 @@ export const PrimaryButton = styled(BaseButton)`
   );
   border: none;
   color: white;
-  padding: 20px;
 `;

@@ -2,14 +2,16 @@
 
 exports[`Base Button renders correctly 1`] = `
 .c0 {
-  background-color: transparent;
-  border: 1px solid red;
-  color: red;
+  border-radius: 5px;
+  font-size: 18px;
+  border: none;
+  padding: 10px;
 }
 
 <button
   className="c0"
   onClick={[Function]}
+  size={3}
 >
   test
 </button>
