@@ -1,7 +1,7 @@
 import { BaseButton } from './button';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-export const PrimaryButton = styled(BaseButton)`
+export const SearchButton = styled(BaseButton)`
   background: -webkit-linear-gradient(
     right,
     rgb(230, 30, 77) 0%,

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { PrimaryButton } from '../button.primary';
+import { SearchButton } from '../button.search';
 
 import { action } from '@storybook/addon-actions';
 
 export default {
-  component: PrimaryButton,
-  title: 'Primary',
+  component: SearchButton,
+  title: 'Button/Search',
   excludeStories: /.*Data$/,
 };
 
@@ -19,13 +19,13 @@ const actionsData = {
 };
 
 export const Small = () => {
-  return <PrimaryButton size={3} {...buttonData} {...actionsData} />;
+  return <SearchButton size={3} {...buttonData} {...actionsData} />;
 };
 
 export const Medium = () => {
-  return <PrimaryButton size={5} {...buttonData} {...actionsData} />;
+  return <SearchButton size={5} {...buttonData} {...actionsData} />;
 };
 
 export const Large = () => {
-  return <PrimaryButton size={7} {...buttonData} {...actionsData} />;
+  return <SearchButton size={7} {...buttonData} {...actionsData} />;
 };
