@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 
 interface Props {
-  children: string;
   onPress: () => void;
   className?: string;
   size: number;
