@@ -1,15 +1,13 @@
 import React from 'react';
 
-// Component
-import { BaseButton } from '../button';
+import { PrimaryButton } from '../button.primary';
 
 import { action } from '@storybook/addon-actions';
 
 export default {
-  component: BaseButton,
-  title: 'Base',
+  component: PrimaryButton,
+  title: 'Primary',
   excludeStories: /.*Data$/,
-  size: 'sm',
 };
 
 const buttonData = {
@@ -21,13 +19,13 @@ const actionsData = {
 };
 
 export const Small = () => {
-  return <BaseButton size={3} {...buttonData} {...actionsData} />;
+  return <PrimaryButton size={3} {...buttonData} {...actionsData} />;
 };
 
 export const Medium = () => {
-  return <BaseButton size={5} {...buttonData} {...actionsData} />;
+  return <PrimaryButton size={5} {...buttonData} {...actionsData} />;
 };
 
 export const Large = () => {
-  return <BaseButton size={7} {...buttonData} {...actionsData} />;
+  return <PrimaryButton size={7} {...buttonData} {...actionsData} />;
 };
