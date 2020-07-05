@@ -22,9 +22,9 @@ The goal for this project is to migrate into using Golang and follow the test dr
 ## Intro
 
 I created a replica called nextbnb in the past and now I am starting a new one by taking approaches I have regretted not taking for the past project. I have experienced numerous pain points as the project got bigger. Some of the pain points were the following:
-* Creating duplicate components unnecessarily
-* Gathering all the code in one file for multiple purposes (this can result in slow performance on the browser)
-* Not using React hooks effectively for optimized performance
+- [ ] Creating duplicate components unnecessarily
+- [ ] Gathering all the code in one file for multiple purposes (this can result in slow performance on the browser)
+- [ ] Not using React hooks effectively for optimized performance
 
 To fix these problems I decided to take a complete different development flow. I focused into component driven development and a more test driven approach. 
 
@@ -51,7 +51,8 @@ docker-compose build
 
 ## Development
 
-### Hashtags
+### Keywords
+- [x] #ComponentDrivenDevelopment 
 
 ### Tech Stacks
 
