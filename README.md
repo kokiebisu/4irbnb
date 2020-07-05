@@ -7,8 +7,8 @@
 <br/>
 
 <p align="center">
-  <a href="https://circleci.com/gh/kokiebisu/gonebnb">
-    <img src="https://circleci.com/gh/kokiebisu/gonebnb.svg?style=shield" alt="Build Status on CircleCI" />
+  <a href="https://circleci.com/gh/kokiebisu/gobnb">
+    <img src="https://circleci.com/gh/kokiebisu/gobnb.svg?style=shield" alt="Build Status on CircleCI" />
   </a>
   <a href="">
     <img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg" alt="Build Status on CircleCI" />
@@ -52,7 +52,7 @@ docker-compose build
 ## Development
 
 ### Keywords
-- [x] #ComponentDrivenDevelopment 
+- [x] Component Driven Development 
 
 ### Tech Stacks
 
