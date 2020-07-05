@@ -1,13 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Primary } from './button.primary';
 
 interface Props {
+  className: string;
   onPress: () => void;
 }
 
-export const Button: React.FC<Props> = ({ onPress, children }) => {
-  return <Element onClick={onPress}>{children}</Element>;
+export const Button: React.FC<Props> = ({ className, onPress, children }) => {
+  return (
+    <Element className={className} onClick={onPress}>
+      {children}
+    </Element>
+  );
 };
 
 const Element = styled.button`
