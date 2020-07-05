@@ -12,15 +12,14 @@ interface ButtonProps {
 }
 
 const Button = styled.button<ButtonProps>`
-  font-family: 'Airbnb-Cereal';
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 18px;
   border: none;
 
   ${({ size }) =>
     (size === 3 &&
       css`
-        padding: 10px;
+        padding: 14px 22px;
       `) ||
     (size === 5 &&
       css`
