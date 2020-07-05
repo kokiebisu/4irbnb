@@ -3,17 +3,19 @@ import React from 'react';
 // Component
 import { BaseButton } from '../button';
 
+import { Text } from '../../../elements/Text';
+
 import { action } from '@storybook/addon-actions';
+import { css } from 'styled-components';
 
 export default {
   component: BaseButton,
   title: 'Button/Base',
   excludeStories: /.*Data$/,
-  size: 'sm',
 };
 
 const buttonData = {
-  children: 'click me',
+  children: 'click',
 };
 
 const actionsData = {
@@ -21,13 +23,5 @@ const actionsData = {
 };
 
 export const Small = () => {
-  return <BaseButton size={3} {...buttonData} {...actionsData} />;
-};
-
-export const Medium = () => {
-  return <BaseButton size={5} {...buttonData} {...actionsData} />;
-};
-
-export const Large = () => {
-  return <BaseButton size={7} {...buttonData} {...actionsData} />;
+  return <BaseButton styles={css``} size={3} {...buttonData} {...actionsData} />;
 };
