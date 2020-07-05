@@ -2,18 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface Props {
+  title: string;
   onPress: () => void;
   className?: string;
 }
 
-export const BaseButton: React.FC<Props> = ({
-  className,
-  onPress,
-  children,
-}) => {
+export const BaseButton: React.FC<Props> = ({ className, onPress, title }) => {
   return (
     <Button className={className} onClick={onPress}>
-      {children}
+      {title}
     </Button>
   );
 };
