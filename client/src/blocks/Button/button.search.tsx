@@ -1,6 +1,6 @@
 import React from 'react';
 import { BaseButton } from './button';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Flex } from '../layout';
 
 import { Icon } from '../../assets/svg/icon';
@@ -10,16 +10,16 @@ type props = { size: number; onPress: () => void };
 
 export default (props: props) => {
   return (
-    <Wrapper {...props}>
+    <BaseButton styles={search} {...props}>
       <Flex alignCenter>
         <StyledIcon name='search' />
         <StyledText>Search</StyledText>
       </Flex>
-    </Wrapper>
+    </BaseButton>
   );
 };
 
-const Wrapper = styled(BaseButton)`
+const search = css`
   background: -webkit-linear-gradient(
     right,
     rgb(230, 30, 77) 0%,
