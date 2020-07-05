@@ -6,7 +6,7 @@ import 'jest-styled-components';
 describe('Base Button', () => {
   it('renders correctly', () => {
     const testingData = {
-      title: 'test',
+      children: 'test',
       action: () => console.log('test'),
     };
 

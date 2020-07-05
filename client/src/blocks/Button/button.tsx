@@ -2,21 +2,25 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface Props {
-  title: string;
+  children: string;
   onPress: () => void;
   className?: string;
 }
 
-export const BaseButton: React.FC<Props> = ({ className, onPress, title }) => {
+export const BaseButton: React.FC<Props> = ({
+  className,
+  onPress,
+  children,
+}) => {
   return (
     <Button className={className} onClick={onPress}>
-      {title}
+      {children}
     </Button>
   );
 };
 
 const Button = styled.button`
-  background-color: transparent;
-  border: 1px solid red;
-  color: red;
+  border-radius: 5px;
+  font-size: 18px;
+  border: none;
 `;
