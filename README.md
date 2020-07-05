@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/43525282/86524021-e1d52400-be29-11ea-9943-6affd2b8038c.png" alt="Storybook" width="150" />
+    <img src="https://user-images.githubusercontent.com/43525282/86524021-e1d52400-be29-11ea-9943-6affd2b8038c.png" alt="airbnb" width="150" />
 </p>
 
 <p align="center">Yet another one...</p>
@@ -11,7 +11,7 @@
     <img src="https://circleci.com/gh/kokiebisu/gonebnb.svg?style=shield" alt="Build Status on CircleCI" />
   </a>
   <a href="">
-    <img src="https://img.shields.io/github/license/storybookjs/storybook.svg" alt="License" />
+    <img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg" alt="Build Status on CircleCI" />
   </a>
   <br/>
 </p>
@@ -37,7 +37,6 @@ To fix these problems I decided to take a complete different development flow. I
 - 👏[Development](#technology)
   - 💻[Hashtags](#hashtags)
   - 💵[Stack](#backers)
-- :memo:[License](#license)
 
 ## Getting Started
 
