@@ -11,6 +11,6 @@ exports[`Base Button renders correctly 1`] = `
   className="c0"
   onClick={[Function]}
 >
-  button
+  test
 </button>
 `;
