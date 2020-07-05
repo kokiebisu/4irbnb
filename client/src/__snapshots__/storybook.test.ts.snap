@@ -1,15 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Base Large 1`] = `
+exports[`Storyshots Button/Base Large 1`] = `
 <div
   style={
     Object {
-      "textAlign": "center",
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
     }
   }
 >
   <button
-    className="sc-AxjAm gLAfDj"
+    className="sc-AxjAm htgDOH"
     onClick={[Function]}
     size={7}
   >
@@ -18,16 +21,19 @@ exports[`Storyshots Base Large 1`] = `
 </div>
 `;
 
-exports[`Storyshots Base Medium 1`] = `
+exports[`Storyshots Button/Base Medium 1`] = `
 <div
   style={
     Object {
-      "textAlign": "center",
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
     }
   }
 >
   <button
-    className="sc-AxjAm joZrnN"
+    className="sc-AxjAm chWfkF"
     onClick={[Function]}
     size={5}
   >
@@ -36,16 +42,19 @@ exports[`Storyshots Base Medium 1`] = `
 </div>
 `;
 
-exports[`Storyshots Base Small 1`] = `
+exports[`Storyshots Button/Base Small 1`] = `
 <div
   style={
     Object {
-      "textAlign": "center",
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
     }
   }
 >
   <button
-    className="sc-AxjAm iObLQM"
+    className="sc-AxjAm YXHCs"
     onClick={[Function]}
     size={3}
   >
@@ -54,16 +63,19 @@ exports[`Storyshots Base Small 1`] = `
 </div>
 `;
 
-exports[`Storyshots Primary Large 1`] = `
+exports[`Storyshots Button/Search Large 1`] = `
 <div
   style={
     Object {
-      "textAlign": "center",
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
     }
   }
 >
   <button
-    className="sc-AxjAm gLAfDj sc-AxirZ knANer"
+    className="sc-AxjAm htgDOH sc-AxirZ knANer"
     onClick={[Function]}
     size={7}
   >
@@ -72,16 +84,19 @@ exports[`Storyshots Primary Large 1`] = `
 </div>
 `;
 
-exports[`Storyshots Primary Medium 1`] = `
+exports[`Storyshots Button/Search Medium 1`] = `
 <div
   style={
     Object {
-      "textAlign": "center",
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
     }
   }
 >
   <button
-    className="sc-AxjAm joZrnN sc-AxirZ knANer"
+    className="sc-AxjAm chWfkF sc-AxirZ knANer"
     onClick={[Function]}
     size={5}
   >
@@ -90,16 +105,19 @@ exports[`Storyshots Primary Medium 1`] = `
 </div>
 `;
 
-exports[`Storyshots Primary Small 1`] = `
+exports[`Storyshots Button/Search Small 1`] = `
 <div
   style={
     Object {
-      "textAlign": "center",
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
     }
   }
 >
   <button
-    className="sc-AxjAm iObLQM sc-AxirZ knANer"
+    className="sc-AxjAm YXHCs sc-AxirZ knANer"
     onClick={[Function]}
     size={3}
   >
