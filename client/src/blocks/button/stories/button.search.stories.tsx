@@ -18,6 +18,6 @@ const actionsData = {
   onPress: action('onPress'),
 };
 
-export const plain = () => {
-  return <SearchButton {...data} {...actionsData} />;
+export const base = () => {
+  return <SearchButton sm {...data} {...actionsData} />;
 };

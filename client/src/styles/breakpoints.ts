@@ -1,5 +1,3 @@
-import { css } from 'styled-components';
-
 export const screen = {
   sm: 576,
   md: 768,
