@@ -1,26 +1,22 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+
 // breakpoints
 import { sizes } from '../../styles/breakpoints';
 
 // svg
 import { Icon } from '../../assets/svg/icon';
 
-// layout
-import { Flex } from '../layout';
-
 // block
-import { BaseButton } from './button';
+import BaseButton from './button';
 
 // element
 import { Text } from '../../elements/Text';
 
-type props = {
-  title?: string;
-  onPress: () => void;
-};
+// interface
+import { ButtonProps } from './interface';
 
-export default ({ title, ...props }: props) => {
+export default ({ title, ...props }: ButtonProps) => {
   return (
     <BaseButton styles={button} {...props}>
       <Wrapper>
@@ -64,10 +60,15 @@ const icon = css`
 `;
 
 const text = css`
+  display: none;
   font-size: 15px;
   letter-spacing: 0.5px;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
     Helvetica Neue, sans-serif !important;
   font-weight: 400;
   padding-left: 7px;
+
+  @media ${sizes.sm} {
+    display: block;
+  }
 `;
