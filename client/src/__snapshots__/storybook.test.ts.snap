@@ -36,7 +36,7 @@ exports[`Storyshots Button/Cookie Base 1`] = `
   }
 >
   <button
-    className="sc-AxjAm kvRmOl"
+    className="sc-AxjAm gDjUcE"
     onClick={[Function]}
   >
     <p
@@ -64,7 +64,7 @@ exports[`Storyshots Button/Cookie Inverse 1`] = `
   }
 >
   <button
-    className="sc-AxjAm ctRxFL"
+    className="sc-AxjAm ivuvQu"
     onClick={[Function]}
   >
     <p
@@ -73,7 +73,7 @@ exports[`Storyshots Button/Cookie Inverse 1`] = `
       <p
         className="sc-AxirZ KAyjI"
       >
-        OK
+        Cookie Preferences
       </p>
     </p>
   </button>
@@ -99,7 +99,7 @@ exports[`Storyshots Button/Search Large 1`] = `
       className="sc-AxhCb gthXWM"
     >
       <div
-        className="sc-AxiKw bcHzLP"
+        className="sc-AxiKw eXoVfN"
       >
         <svg
           stroke="white"
@@ -144,7 +144,7 @@ exports[`Storyshots Button/Search Medium 1`] = `
       className="sc-AxhCb gthXWM"
     >
       <div
-        className="sc-AxiKw bcHzLP"
+        className="sc-AxiKw eXoVfN"
       >
         <svg
           stroke="white"
@@ -189,7 +189,7 @@ exports[`Storyshots Button/Search Small 1`] = `
       className="sc-AxhCb gthXWM"
     >
       <div
-        className="sc-AxiKw bcHzLP"
+        className="sc-AxiKw eXoVfN"
       >
         <svg
           stroke="white"
