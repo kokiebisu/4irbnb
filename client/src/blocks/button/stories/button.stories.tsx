@@ -22,6 +22,6 @@ const actionsData = {
 
 export const Small = () => {
   return (
-    <BaseButton styles={css``} size={3} {...buttonData} {...actionsData} />
+    <BaseButton size='sm' styles={css``} {...buttonData} {...actionsData} />
   );
 };

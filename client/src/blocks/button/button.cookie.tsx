@@ -8,7 +8,7 @@ import { BaseButton } from './button';
 // element
 import { Text } from '../../elements/Text';
 
-type props = { onPress: () => void };
+type props = { size: string; onPress: () => void };
 
 export default (props: props) => {
   return (
