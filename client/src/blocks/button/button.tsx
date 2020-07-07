@@ -5,12 +5,12 @@ interface Props {
   onPress: () => void;
   className?: string;
   styles: any;
-  size: number;
+  size?: number;
 }
 
 interface ButtonProps {
   styles: any;
-  size: number;
+  size?: number;
 }
 
 const Button = styled.button<ButtonProps>`

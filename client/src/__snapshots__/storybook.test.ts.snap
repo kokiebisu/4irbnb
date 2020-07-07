@@ -21,6 +21,30 @@ exports[`Storyshots Button/Base Small 1`] = `
 </div>
 `;
 
+exports[`Storyshots Button/Cookie Base 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
+    }
+  }
+>
+  <button
+    className="sc-AxjAm lipKwl"
+    onClick={[Function]}
+  >
+    <p
+      className="sc-AxirZ KAyjI"
+    >
+      ok
+    </p>
+  </button>
+</div>
+`;
+
 exports[`Storyshots Button/Search Large 1`] = `
 <div
   style={
@@ -38,7 +62,7 @@ exports[`Storyshots Button/Search Large 1`] = `
     size={7}
   >
     <div
-      className="sc-AxirZ dKQBjA"
+      className="sc-AxhCb gthXWM"
     >
       <div
         className="sc-AxiKw bcHzLP"
@@ -54,7 +78,7 @@ exports[`Storyshots Button/Search Large 1`] = `
         </svg>
       </div>
       <p
-        className="sc-AxhCb bxSUOc"
+        className="sc-AxirZ crmARo"
       >
         Search
       </p>
@@ -80,7 +104,7 @@ exports[`Storyshots Button/Search Medium 1`] = `
     size={5}
   >
     <div
-      className="sc-AxirZ dKQBjA"
+      className="sc-AxhCb gthXWM"
     >
       <div
         className="sc-AxiKw bcHzLP"
@@ -96,7 +120,7 @@ exports[`Storyshots Button/Search Medium 1`] = `
         </svg>
       </div>
       <p
-        className="sc-AxhCb bxSUOc"
+        className="sc-AxirZ crmARo"
       >
         Search
       </p>
@@ -122,7 +146,7 @@ exports[`Storyshots Button/Search Small 1`] = `
     size={3}
   >
     <div
-      className="sc-AxirZ dKQBjA"
+      className="sc-AxhCb gthXWM"
     >
       <div
         className="sc-AxiKw bcHzLP"
@@ -138,7 +162,7 @@ exports[`Storyshots Button/Search Small 1`] = `
         </svg>
       </div>
       <p
-        className="sc-AxhCb bxSUOc"
+        className="sc-AxirZ crmARo"
       >
         Search
       </p>
