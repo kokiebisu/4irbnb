@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import theme from 'styled-theming';
 
 interface Props {
   onPress: () => void;
@@ -25,6 +24,11 @@ const Button = styled.button<ButtonProps>`
   ${({ styles }) => styles};
   ${({ sm }) =>
     sm &&
+    css`
+      padding: 14px 22px;
+    `}
+  ${({ md }) =>
+    md &&
     css`
       padding: 14px 22px;
     `}
