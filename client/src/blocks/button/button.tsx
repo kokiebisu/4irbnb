@@ -1,35 +1,37 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
 
 interface Props {
   onPress: () => void;
   className?: string;
-  styles: any;
-  size?: any;
+  styles?: any;
+  sm?: boolean;
+  md?: boolean;
+  lg?: boolean;
 }
 
 interface ButtonProps {
-  styles: any;
-  size?: any;
+  styles?: any;
+  sm?: boolean;
+  md?: boolean;
+  lg?: boolean;
 }
-
-const buttonSize = theme.variants('mode', 'size', {
-  sm: { default: '14px 22px' },
-  md: { default: '20px 27px' },
-  lg: { default: '25px 30px' },
-});
 
 const Button = styled.button<ButtonProps>`
   border-radius: 8px;
   font-size: 18px;
   border: none;
-  padding: ${buttonSize};
   ${({ styles }) => styles};
+  ${({ sm }) =>
+    sm &&
+    css`
+      padding: 14px 22px;
+    `}
 `;
 
 Button.defaultProps = {
-  size: 'md',
+  md: true,
 };
 
 export const BaseButton: React.FC<Props> = ({

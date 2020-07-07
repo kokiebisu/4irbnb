@@ -3,6 +3,9 @@ import React from 'react';
 // Component
 import { BaseButton } from '../button';
 
+// element
+import { Text } from '../../../elements/Text';
+
 import { action } from '@storybook/addon-actions';
 import { css } from 'styled-components';
 
@@ -13,7 +16,7 @@ export default {
 };
 
 const buttonData = {
-  children: 'click',
+  children: <Text>click</Text>,
 };
 
 const actionsData = {
@@ -21,7 +24,5 @@ const actionsData = {
 };
 
 export const Small = () => {
-  return (
-    <BaseButton size='sm' styles={css``} {...buttonData} {...actionsData} />
-  );
+  return <BaseButton sm {...buttonData} {...actionsData} />;
 };
