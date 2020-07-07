@@ -12,9 +12,9 @@ exports[`Storyshots Button/Base Small 1`] = `
   }
 >
   <button
-    className="sc-AxjAm jLaQQk"
+    className="sc-AxjAm edcsHv"
     onClick={[Function]}
-    size={3}
+    size="sm"
   >
     click
   </button>
@@ -33,8 +33,9 @@ exports[`Storyshots Button/Cookie Base 1`] = `
   }
 >
   <button
-    className="sc-AxjAm fNIUAo"
+    className="sc-AxjAm hizmlE"
     onClick={[Function]}
+    size="md"
   >
     <p
       className="sc-AxirZ icJVKj"
@@ -57,9 +58,9 @@ exports[`Storyshots Button/Search Large 1`] = `
   }
 >
   <button
-    className="sc-AxjAm gVqTou"
+    className="sc-AxjAm lgFYQH"
     onClick={[Function]}
-    size={7}
+    size="lg"
   >
     <div
       className="sc-AxhCb gthXWM"
@@ -99,9 +100,9 @@ exports[`Storyshots Button/Search Medium 1`] = `
   }
 >
   <button
-    className="sc-AxjAm ceOPdU"
+    className="sc-AxjAm cOkpuk"
     onClick={[Function]}
-    size={5}
+    size="md"
   >
     <div
       className="sc-AxhCb gthXWM"
@@ -141,9 +142,9 @@ exports[`Storyshots Button/Search Small 1`] = `
   }
 >
   <button
-    className="sc-AxjAm kfsJUR"
+    className="sc-AxjAm fBfXiy"
     onClick={[Function]}
-    size={3}
+    size="sm"
   >
     <div
       className="sc-AxhCb gthXWM"

@@ -5,7 +5,6 @@ exports[`Base Button renders correctly 1`] = `
   border-radius: 8px;
   font-size: 18px;
   border: none;
-  padding: 14px 22px;
 }
 
 <button
