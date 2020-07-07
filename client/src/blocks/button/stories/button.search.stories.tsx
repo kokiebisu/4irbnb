@@ -10,11 +10,7 @@ export default {
   excludeStories: /.*Data$/,
 };
 
-const mdData = {
-  title: 'Search',
-};
-
-const lgData = {
+const data = {
   title: 'Search',
 };
 
@@ -22,6 +18,6 @@ const actionsData = {
   onPress: action('onPress'),
 };
 
-export const normal = () => {
-  return <SearchButton {...actionsData} />;
+export const plain = () => {
+  return <SearchButton {...data} {...actionsData} />;
 };
