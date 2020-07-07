@@ -32,9 +32,10 @@ const secondary = theme('mode', {
 });
 
 const common = css`
-  padding: 14px 22px;
+  padding: 15px 0;
   font-size: 12px;
   font-weight: 700;
+  min-width: 125px;
 `;
 
 const inverseButton = css`
