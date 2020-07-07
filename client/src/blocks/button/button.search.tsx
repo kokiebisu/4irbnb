@@ -10,7 +10,7 @@ type props = { size: number; onPress: () => void };
 
 export default (props: props) => {
   return (
-    <BaseButton styles={search} {...props}>
+    <BaseButton styles={button} {...props}>
       <Flex alignCenter>
         <Icon styles={icon} name='search' />
         <Text styles={text}>Search</Text>
@@ -19,7 +19,7 @@ export default (props: props) => {
   );
 };
 
-const search = css`
+const button = css`
   background: -webkit-linear-gradient(
     right,
     rgb(230, 30, 77) 0%,
