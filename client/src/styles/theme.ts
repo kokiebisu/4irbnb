@@ -1,8 +1,1 @@
-const theme = {
-  sizes: {
-    button: {},
-  },
-  breakpoints: {},
-};
-
-export { theme };
+export const theme = {};
