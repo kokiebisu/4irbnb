@@ -5,14 +5,13 @@ exports[`Base Button renders correctly 1`] = `
   border-radius: 8px;
   font-size: 18px;
   border: none;
-  padding: 14px 22px;
+  padding: 15px 22px;
 }
 
 <button
   action={[Function]}
   className="c0"
   onClick={[Function]}
-  size={3}
 >
   test
 </button>

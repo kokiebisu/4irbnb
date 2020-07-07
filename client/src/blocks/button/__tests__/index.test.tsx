@@ -1,5 +1,5 @@
 import React from 'react';
-import { BaseButton } from '../button';
+import BaseButton from '../button';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
@@ -11,9 +11,7 @@ describe('Base Button', () => {
     };
 
     const tree = renderer
-      .create(
-        <BaseButton size={3} onPress={testingData.action} {...testingData} />
-      )
+      .create(<BaseButton sm onPress={testingData.action} {...testingData} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
