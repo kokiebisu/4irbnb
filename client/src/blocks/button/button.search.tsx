@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 // breakpoints
 import { sizes } from '../../styles/breakpoints';
 
@@ -16,20 +16,17 @@ import { BaseButton } from './button';
 import { Text } from '../../elements/Text';
 
 type props = {
-  sm?: boolean;
-  md?: boolean;
-  lg?: boolean;
-  children: React.ReactNode;
+  title?: string;
   onPress: () => void;
 };
 
-export default ({ children, ...props }: props) => {
+export default ({ title, ...props }: props) => {
   return (
     <BaseButton styles={button} {...props}>
-      <Flex alignCenter>
+      <Wrapper>
         <Icon styles={icon} name='search' />
-        <Text styles={text}>{children}</Text>
-      </Flex>
+        {text && <Text styles={text}>{title}</Text>}
+      </Wrapper>
     </BaseButton>
   );
 };
@@ -45,6 +42,14 @@ const button = css`
   color: white;
 `;
 
+const Wrapper = styled.div`
+  display: block;
+  @media ${sizes.sm} {
+    display: flex;
+    align-items: center;
+  }
+`;
+
 const icon = css`
   position: relative;
   top: 1.5px;
@@ -56,9 +61,6 @@ const icon = css`
       fill: white;
     }
   }
-  @media ${sizes.sm} {
-    margin-right: 7px;
-  }
 `;
 
 const text = css`
@@ -67,4 +69,5 @@ const text = css`
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
     Helvetica Neue, sans-serif !important;
   font-weight: 400;
+  padding-left: 7px;
 `;
