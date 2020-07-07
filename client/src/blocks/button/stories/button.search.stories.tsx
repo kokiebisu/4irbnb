@@ -19,13 +19,13 @@ const actionsData = {
 };
 
 export const Small = () => {
-  return <SearchButton size={3} {...buttonData} {...actionsData} />;
+  return <SearchButton size='sm' {...buttonData} {...actionsData} />;
 };
 
 export const Medium = () => {
-  return <SearchButton size={5} {...buttonData} {...actionsData} />;
+  return <SearchButton size='md' {...buttonData} {...actionsData} />;
 };
 
 export const Large = () => {
-  return <SearchButton size={7} {...buttonData} {...actionsData} />;
+  return <SearchButton size='lg' {...buttonData} {...actionsData} />;
 };
