@@ -12,11 +12,14 @@ exports[`Storyshots Button/Base Small 1`] = `
   }
 >
   <button
-    className="sc-AxjAm edcsHv"
+    className="sc-AxjAm ipxSCz"
     onClick={[Function]}
-    size="sm"
   >
-    click
+    <p
+      className="sc-AxirZ KAyjI"
+    >
+      click
+    </p>
   </button>
 </div>
 `;
@@ -33,14 +36,45 @@ exports[`Storyshots Button/Cookie Base 1`] = `
   }
 >
   <button
-    className="sc-AxjAm hizmlE"
+    className="sc-AxjAm kvRmOl"
     onClick={[Function]}
-    size="md"
   >
     <p
       className="sc-AxirZ icJVKj"
     >
-      ok
+      <p
+        className="sc-AxirZ KAyjI"
+      >
+        OK
+      </p>
+    </p>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Button/Cookie Inverse 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
+    }
+  }
+>
+  <button
+    className="sc-AxjAm ctRxFL"
+    onClick={[Function]}
+  >
+    <p
+      className="sc-AxirZ hYjkqe"
+    >
+      <p
+        className="sc-AxirZ KAyjI"
+      >
+        OK
+      </p>
     </p>
   </button>
 </div>
@@ -58,9 +92,8 @@ exports[`Storyshots Button/Search Large 1`] = `
   }
 >
   <button
-    className="sc-AxjAm lgFYQH"
+    className="sc-AxjAm eoLydb"
     onClick={[Function]}
-    size="lg"
   >
     <div
       className="sc-AxhCb gthXWM"
@@ -81,7 +114,11 @@ exports[`Storyshots Button/Search Large 1`] = `
       <p
         className="sc-AxirZ crmARo"
       >
-        Search
+        <p
+          className="sc-AxirZ KAyjI"
+        >
+          Search
+        </p>
       </p>
     </div>
   </button>
@@ -100,9 +137,8 @@ exports[`Storyshots Button/Search Medium 1`] = `
   }
 >
   <button
-    className="sc-AxjAm cOkpuk"
+    className="sc-AxjAm eoLydb"
     onClick={[Function]}
-    size="md"
   >
     <div
       className="sc-AxhCb gthXWM"
@@ -123,7 +159,11 @@ exports[`Storyshots Button/Search Medium 1`] = `
       <p
         className="sc-AxirZ crmARo"
       >
-        Search
+        <p
+          className="sc-AxirZ KAyjI"
+        >
+          Search
+        </p>
       </p>
     </div>
   </button>
@@ -142,9 +182,8 @@ exports[`Storyshots Button/Search Small 1`] = `
   }
 >
   <button
-    className="sc-AxjAm fBfXiy"
+    className="sc-AxjAm hzjJXe"
     onClick={[Function]}
-    size="sm"
   >
     <div
       className="sc-AxhCb gthXWM"
@@ -165,7 +204,11 @@ exports[`Storyshots Button/Search Small 1`] = `
       <p
         className="sc-AxirZ crmARo"
       >
-        Search
+        <p
+          className="sc-AxirZ KAyjI"
+        >
+          Search
+        </p>
       </p>
     </div>
   </button>

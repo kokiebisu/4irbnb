@@ -1,8 +1,11 @@
 import React from 'react';
-
 import { action } from '@storybook/addon-actions';
 
+// block
 import SearchButton from '../button.search';
+
+// element
+import { Text } from '../../../elements/Text';
 
 export default {
   component: SearchButton,
@@ -11,7 +14,7 @@ export default {
 };
 
 const buttonData = {
-  children: 'click me',
+  children: <Text>Search</Text>,
 };
 
 const actionsData = {
@@ -19,13 +22,13 @@ const actionsData = {
 };
 
 export const Small = () => {
-  return <SearchButton size='sm' {...buttonData} {...actionsData} />;
+  return <SearchButton sm {...buttonData} {...actionsData} />;
 };
 
 export const Medium = () => {
-  return <SearchButton size='md' {...buttonData} {...actionsData} />;
+  return <SearchButton md {...buttonData} {...actionsData} />;
 };
 
 export const Large = () => {
-  return <SearchButton size='lg' {...buttonData} {...actionsData} />;
+  return <SearchButton lg {...buttonData} {...actionsData} />;
 };

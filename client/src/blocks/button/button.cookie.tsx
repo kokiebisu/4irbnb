@@ -1,37 +1,58 @@
 import React from 'react';
 import { css } from 'styled-components';
-import theme from 'styled-theming';
 
 // block
 import { BaseButton } from './button';
 
 // element
 import { Text } from '../../elements/Text';
+import { colorpallete } from '../../styles/colorpallete';
+import theme from 'styled-theming';
 
-type props = { size: string; onPress: () => void };
+type props = {
+  children: React.ReactNode;
+  inverse?: boolean;
+  onPress: () => void;
+};
 
-export default (props: props) => {
+export default ({ inverse, children, ...props }: props) => {
   return (
-    <BaseButton styles={button} {...props}>
-      <Text styles={text}>ok</Text>
+    <BaseButton styles={inverse ? inverseButton : button} {...props}>
+      <Text styles={inverse ? inverseText : text}>{children}</Text>
     </BaseButton>
   );
 };
 
-// theme
-const backgroundColor = theme('mode', {
-  default: '#008489',
+const primary = theme('mode', {
+  default: colorpallete.bluegreen__5,
 });
 
-const textColor = theme('mode', {
-  default: '#ffffff',
+const secondary = theme('mode', {
+  default: colorpallete.white,
 });
 
-// style
+const common = css`
+  padding: 14px 22px;
+  font-size: 12px;
+  font-weight: 700;
+`;
+
+const inverseButton = css`
+  ${common}
+  background-color: ${secondary};
+
+  border: 1px solid ${primary};
+`;
+
 const button = css`
-  background-color: ${backgroundColor};
+  ${common}
+  background-color: ${primary};
+`;
+
+const inverseText = css`
+  color: ${primary};
 `;
 
 const text = css`
-  color: ${textColor};
+  color: ${secondary};
 `;

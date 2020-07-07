@@ -4,6 +4,9 @@ import { action } from '@storybook/addon-actions';
 // block
 import CookieButton from '../button.cookie';
 
+// element
+import { Text } from '../../../elements/Text';
+
 export default {
   component: CookieButton,
   title: 'Button/Cookie',
@@ -11,7 +14,7 @@ export default {
 };
 
 const buttonData = {
-  children: 'ok',
+  children: <Text>OK</Text>,
 };
 
 const actionsData = {
@@ -19,3 +22,7 @@ const actionsData = {
 };
 
 export const base = () => <CookieButton {...buttonData} {...actionsData} />;
+
+export const inverse = () => (
+  <CookieButton inverse {...buttonData} {...actionsData} />
+);

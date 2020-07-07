@@ -13,14 +13,20 @@ import { BaseButton } from './button';
 // element
 import { Text } from '../../elements/Text';
 
-type props = { size: string; onPress: () => void };
+type props = {
+  sm?: boolean;
+  md?: boolean;
+  lg?: boolean;
+  children: React.ReactNode;
+  onPress: () => void;
+};
 
-export default (props: props) => {
+export default ({ children, ...props }: props) => {
   return (
     <BaseButton styles={button} {...props}>
       <Flex alignCenter>
         <Icon styles={icon} name='search' />
-        <Text styles={text}>Search</Text>
+        <Text styles={text}>{children}</Text>
       </Flex>
     </BaseButton>
   );

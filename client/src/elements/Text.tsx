@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface Props {
-  styles: any;
+  styles?: any;
 }
 
 interface ElementProps {
-  styles: any;
+  styles?: any;
 }
 
 const Element = styled.p<ElementProps>`
