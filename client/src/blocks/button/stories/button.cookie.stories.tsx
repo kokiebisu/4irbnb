@@ -13,16 +13,20 @@ export default {
   excludeStories: /.*Data$/,
 };
 
-const buttonData = {
+const normalData = {
   children: <Text>OK</Text>,
+};
+
+const inverseData = {
+  children: <Text>Cookie Preferences</Text>,
 };
 
 const actionsData = {
   onPress: action('onPress'),
 };
 
-export const base = () => <CookieButton {...buttonData} {...actionsData} />;
+export const base = () => <CookieButton {...normalData} {...actionsData} />;
 
 export const inverse = () => (
-  <CookieButton inverse {...buttonData} {...actionsData} />
+  <CookieButton inverse {...inverseData} {...actionsData} />
 );
