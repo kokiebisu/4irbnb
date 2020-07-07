@@ -1,5 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Button/Base Large 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
+    }
+  }
+>
+  <button
+    className="sc-AxjAm gHPRuo"
+    onClick={[Function]}
+  >
+    <p
+      className="sc-AxirZ KAyjI"
+    >
+      click
+    </p>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Button/Base Medium 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
+    }
+  }
+>
+  <button
+    className="sc-AxjAm jxutPw"
+    onClick={[Function]}
+  >
+    <p
+      className="sc-AxirZ KAyjI"
+    >
+      click
+    </p>
+  </button>
+</div>
+`;
+
 exports[`Storyshots Button/Base Small 1`] = `
 <div
   style={
@@ -12,7 +60,7 @@ exports[`Storyshots Button/Base Small 1`] = `
   }
 >
   <button
-    className="sc-AxjAm goJXLH"
+    className="sc-AxjAm ZtJdt"
     onClick={[Function]}
   >
     <p
@@ -36,7 +84,7 @@ exports[`Storyshots Button/Cookie Base 1`] = `
   }
 >
   <button
-    className="sc-AxjAm gzuaQs"
+    className="sc-AxjAm idqguH"
     onClick={[Function]}
   >
     <p
@@ -64,7 +112,7 @@ exports[`Storyshots Button/Cookie Inverse 1`] = `
   }
 >
   <button
-    className="sc-AxjAm cCxrGa"
+    className="sc-AxjAm ghArZV"
     onClick={[Function]}
   >
     <p
@@ -80,7 +128,7 @@ exports[`Storyshots Button/Cookie Inverse 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button/Search Plain 1`] = `
+exports[`Storyshots Button/Search Base 1`] = `
 <div
   style={
     Object {
@@ -92,7 +140,7 @@ exports[`Storyshots Button/Search Plain 1`] = `
   }
 >
   <button
-    className="sc-AxjAm btPXNL"
+    className="sc-AxjAm kULqKo"
     onClick={[Function]}
   >
     <div
@@ -112,7 +160,7 @@ exports[`Storyshots Button/Search Plain 1`] = `
         </svg>
       </div>
       <p
-        className="sc-AxirZ eTkzqP"
+        className="sc-AxirZ lediIm"
       >
         Search
       </p>
