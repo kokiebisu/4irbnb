@@ -1,8 +1,11 @@
 import React from 'react';
 import { css } from 'styled-components';
+import theme from 'styled-theming';
 
+// block
 import { BaseButton } from './button';
 
+// element
 import { Text } from '../../elements/Text';
 
 type props = { onPress: () => void };
@@ -15,8 +18,20 @@ export default (props: props) => {
   );
 };
 
+// theme
+const backgroundColor = theme('mode', {
+  default: '#008489',
+});
+
+const textColor = theme('mode', {
+  default: '#ffffff',
+});
+
+// style
 const button = css`
-  background-color: green;
+  background-color: ${backgroundColor};
 `;
 
-const text = css``;
+const text = css`
+  color: ${textColor};
+`;

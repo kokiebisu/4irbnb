@@ -33,11 +33,11 @@ exports[`Storyshots Button/Cookie Base 1`] = `
   }
 >
   <button
-    className="sc-AxjAm lipKwl"
+    className="sc-AxjAm fNIUAo"
     onClick={[Function]}
   >
     <p
-      className="sc-AxirZ KAyjI"
+      className="sc-AxirZ icJVKj"
     >
       ok
     </p>
