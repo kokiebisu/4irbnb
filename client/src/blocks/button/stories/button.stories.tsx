@@ -7,7 +7,6 @@ import { BaseButton } from '../button';
 import { Text } from '../../../elements/Text';
 
 import { action } from '@storybook/addon-actions';
-import { css } from 'styled-components';
 
 export default {
   component: BaseButton,
