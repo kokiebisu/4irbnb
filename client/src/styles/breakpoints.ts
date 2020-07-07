@@ -1,13 +1,13 @@
 import { css } from 'styled-components';
 
-const screen = {
+export const screen = {
   sm: 576,
   md: 768,
   lg: 992,
 };
 
 export const sizes = {
-  sm: `(min-width: ${screen.sm})`,
-  md: `(min-width: ${screen.md})`,
-  lg: `(min-width: ${screen.lg})`,
+  sm: `(min-width: ${screen.sm}px)`,
+  md: `(min-width: ${screen.md}px)`,
+  lg: `(min-width: ${screen.lg}px)`,
 };
