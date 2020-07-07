@@ -6,10 +6,12 @@ LABEL maintainer="Kenichi Okiebisu <kenichikona@gmail.com>"
 RUN apk update && apk add --no-cache git
 
 # Set the current working directory inside the container
-WORKDIR /server
+WORKDIR /usr/build
 
 # Copy go.mod, go.sum into the container's app directory
-COPY go.mod go.sum ./
+COPY go.mod .
+
+COPY go.sum .
 
 # Install all the dependencies
 RUN go mod download
@@ -24,13 +26,13 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .
 FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 
-WORKDIR /root/
+WORKDIR /usr/app
 
 # Move the entry point of the file (main.go) into the root folder 
-COPY --from=builder /server/main .
+COPY --from=builder /usr/build/main .
 
 # # Move the .env file to enable reading environmental variables within program
-COPY --from=builder /server/.env .
+COPY --from=builder /usr/build/.env .
 
 EXPOSE 8080
 
