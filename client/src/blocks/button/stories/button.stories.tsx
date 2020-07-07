@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Component
-import { BaseButton } from '../button';
+import BaseButton from '../button';
 
 // element
 import { Text } from '../../../elements/Text';
@@ -22,6 +22,14 @@ const actionsData = {
   onPress: action('onPress'),
 };
 
-export const Small = () => {
+export const small = () => {
   return <BaseButton sm {...buttonData} {...actionsData} />;
+};
+
+export const medium = () => {
+  return <BaseButton md {...buttonData} {...actionsData} />;
+};
+
+export const large = () => {
+  return <BaseButton lg {...buttonData} {...actionsData} />;
 };

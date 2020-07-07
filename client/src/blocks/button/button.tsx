@@ -1,23 +1,15 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { ButtonProps } from './interface';
 
-interface Props {
-  onPress: () => void;
-  className?: string;
+interface StylesProps {
   styles?: any;
   sm?: boolean;
   md?: boolean;
   lg?: boolean;
 }
 
-interface ButtonProps {
-  styles?: any;
-  sm?: boolean;
-  md?: boolean;
-  lg?: boolean;
-}
-
-const Button = styled.button<ButtonProps>`
+const Button = styled.button<StylesProps>`
   border-radius: 8px;
   font-size: 18px;
   border: none;
@@ -25,24 +17,21 @@ const Button = styled.button<ButtonProps>`
   ${({ sm }) =>
     sm &&
     css`
-      padding: 14px 22px;
-    `}
+      padding: 15px 22px;
+    `};
   ${({ md }) =>
     md &&
     css`
-      padding: 14px 22px;
-    `}
+      padding: 15px 50px;
+    `};
+  ${({ lg }) =>
+    lg &&
+    css`
+      padding: 15px 100px;
+    `};
 `;
 
-Button.defaultProps = {
-  md: true,
-};
-
-export const BaseButton: React.FC<Props> = ({
-  onPress,
-  children,
-  ...props
-}) => {
+export default ({ onPress, children, ...props }: ButtonProps) => {
   return (
     <Button {...props} onClick={onPress}>
       {children}

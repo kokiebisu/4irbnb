@@ -1,21 +1,18 @@
 import React from 'react';
 import { css } from 'styled-components';
+import theme from 'styled-theming';
+
+// interface
+import { ButtonProps } from './interface';
 
 // block
-import { BaseButton } from './button';
+import BaseButton from './button';
 
 // element
 import { Text } from '../../elements/Text';
 import { colorpallete } from '../../styles/colorpallete';
-import theme from 'styled-theming';
 
-type props = {
-  children: React.ReactNode;
-  inverse?: boolean;
-  onPress: () => void;
-};
-
-export default ({ inverse, children, ...props }: props) => {
+export default ({ inverse, children, ...props }: ButtonProps) => {
   return (
     <BaseButton styles={inverse ? inverseButton : button} {...props}>
       <Text styles={inverse ? inverseText : text}>{children}</Text>
