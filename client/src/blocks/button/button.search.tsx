@@ -1,5 +1,7 @@
 import React from 'react';
 import { css } from 'styled-components';
+// breakpoints
+import { sizes } from '../../styles/breakpoints';
 
 // svg
 import { Icon } from '../../assets/svg/icon';
@@ -46,13 +48,16 @@ const button = css`
 const icon = css`
   position: relative;
   top: 1.5px;
-  margin-right: 7px;
+
   & svg {
     width: 14px;
     height: 14px;
     path {
       fill: white;
     }
+  }
+  @media ${sizes.sm} {
+    margin-right: 7px;
   }
 `;
 
