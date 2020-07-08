@@ -10,7 +10,7 @@ import { action } from '@storybook/addon-actions';
 
 export default {
   component: Button,
-  title: 'Button/Base',
+  title: 'Blocks/Button/Base',
   excludeStories: /.*Data$/,
 };
 
