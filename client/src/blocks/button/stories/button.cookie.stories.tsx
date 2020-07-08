@@ -9,7 +9,7 @@ import { Text } from '../../../elements/Text';
 
 export default {
   component: CookieButton,
-  title: 'Button/Cookie',
+  title: 'Blocks/Button/Cookie',
   excludeStories: /.*Data$/,
 };
 

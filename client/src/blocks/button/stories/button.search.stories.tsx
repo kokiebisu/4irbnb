@@ -6,7 +6,7 @@ import SearchButton from '../button.search';
 
 export default {
   component: SearchButton,
-  title: 'Button/Search',
+  title: 'Blocks/Button/Search',
   excludeStories: /.*Data$/,
 };
 
