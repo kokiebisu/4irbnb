@@ -8,22 +8,17 @@ import { sizes } from '../../styles/breakpoints';
 import { Icon } from '../../assets/svg/icon';
 
 // block
-import BaseButton from './button';
-
-// element
+import { Button, ButtonProps } from '../../elements/Button';
 import { Text } from '../../elements/Text';
-
-// interface
-import { ButtonProps } from './interface';
 
 export default ({ title, ...props }: ButtonProps) => {
   return (
-    <BaseButton styles={button} {...props}>
+    <Button styles={button} {...props}>
       <Wrapper>
         <Icon styles={icon} name='search' />
         {text && <Text styles={text}>{title}</Text>}
       </Wrapper>
-    </BaseButton>
+    </Button>
   );
 };
 
