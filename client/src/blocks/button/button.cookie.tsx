@@ -2,21 +2,16 @@ import React from 'react';
 import { css } from 'styled-components';
 import theme from 'styled-theming';
 
-// interface
-import { ButtonProps } from './interface';
-
-// block
-import BaseButton from './button';
-
 // element
+import { Button, ButtonProps } from '../../elements/Button';
 import { Text } from '../../elements/Text';
 import { colorpallete } from '../../styles/colorpallete';
 
 export default ({ inverse, children, ...props }: ButtonProps) => {
   return (
-    <BaseButton styles={inverse ? inverseButton : button} {...props}>
+    <Button styles={inverse ? inverseButton : button} {...props}>
       <Text styles={inverse ? inverseText : text}>{children}</Text>
-    </BaseButton>
+    </Button>
   );
 };
 
