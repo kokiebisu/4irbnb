@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-export default ({ ...props }) => {
-  return <div>this is a card with title</div>;
+type CardProps = { children?: React.ReactNode };
+
+export default ({ children, ...props }: CardProps) => {
+  return <div {...props}>{children}</div>;
 };
