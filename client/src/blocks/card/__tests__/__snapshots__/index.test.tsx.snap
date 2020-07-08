@@ -1,7 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Base Card renders correctly 1`] = `
+.c0 {
+  background: red;
+  border-radius: 5px;
+}
+
 <div
-  text="test"
+  className="c0"
 />
 `;

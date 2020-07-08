@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Button/Base Large 1`] = `
+exports[`Storyshots Blocks/Button/Base Large 1`] = `
 <div
   style={
     Object {
@@ -24,7 +24,7 @@ exports[`Storyshots Button/Base Large 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button/Base Medium 1`] = `
+exports[`Storyshots Blocks/Button/Base Medium 1`] = `
 <div
   style={
     Object {
@@ -48,7 +48,7 @@ exports[`Storyshots Button/Base Medium 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button/Base Small 1`] = `
+exports[`Storyshots Blocks/Button/Base Small 1`] = `
 <div
   style={
     Object {
@@ -72,7 +72,7 @@ exports[`Storyshots Button/Base Small 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button/Cookie Base 1`] = `
+exports[`Storyshots Blocks/Button/Cookie Base 1`] = `
 <div
   style={
     Object {
@@ -100,7 +100,7 @@ exports[`Storyshots Button/Cookie Base 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button/Cookie Inverse 1`] = `
+exports[`Storyshots Blocks/Button/Cookie Inverse 1`] = `
 <div
   style={
     Object {
@@ -128,7 +128,7 @@ exports[`Storyshots Button/Cookie Inverse 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button/Search Base 1`] = `
+exports[`Storyshots Blocks/Button/Search Base 1`] = `
 <div
   style={
     Object {
@@ -166,5 +166,28 @@ exports[`Storyshots Button/Search Base 1`] = `
       </p>
     </div>
   </button>
+</div>
+`;
+
+exports[`Storyshots Blocks/Card/WithTitle Base 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
+    }
+  }
+>
+  <div
+    className="sc-AxhUy jbzoVz"
+  >
+    <p
+      className="sc-AxirZ KAyjI"
+    >
+      Hello
+    </p>
+  </div>
 </div>
 `;
