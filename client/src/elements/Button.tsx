@@ -1,15 +1,25 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { ButtonProps } from './interface';
 
-interface StylesProps {
+export interface ButtonProps {
+  styles?: any;
+  sm?: boolean;
+  md?: boolean;
+  lg?: boolean;
+  title?: string;
+  children?: React.ReactNode;
+  inverse?: boolean;
+  onPress: () => void;
+}
+
+interface ElementProps {
   styles?: any;
   sm?: boolean;
   md?: boolean;
   lg?: boolean;
 }
 
-const Button = styled.button<StylesProps>`
+const Element = styled.button<ElementProps>`
   border-radius: 8px;
   font-size: 18px;
   border: none;
@@ -31,10 +41,14 @@ const Button = styled.button<StylesProps>`
     `};
 `;
 
-export default ({ onPress, children, ...props }: ButtonProps) => {
+export const Button: React.FC<ButtonProps> = ({
+  onPress,
+  children,
+  ...props
+}) => {
   return (
-    <Button {...props} onClick={onPress}>
+    <Element {...props} onClick={onPress}>
       {children}
-    </Button>
+    </Element>
   );
 };
