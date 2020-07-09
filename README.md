@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://user-images.githubusercontent.com/43525282/86524021-e1d52400-be29-11ea-9943-6affd2b8038c.png" alt="airbnb" width="150" />
+    <img src="https://user-images.githubusercontent.com/43525282/86524021-e1d52400-be29-11ea-9943-6affd2b8038c.png" alt="airbnb" width="100" />
 </p>
 
 <p align="center">Yet another one...</p>
