@@ -1,12 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Base Card renders correctly 1`] = `
+exports[`Base Card renders correctly with title 1`] = `
 .c0 {
   background: red;
   border-radius: 5px;
 }
 
+.c1 {
+  margin: 0;
+}
+
 <div
   className="c0"
-/>
+>
+  <div
+    className=""
+  >
+    <img
+      alt="card-image"
+      src="card.jpg"
+    />
+  </div>
+  <div
+    className=""
+  >
+    <p
+      className="c1"
+    >
+      test description
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Base Card renders correctly without title 1`] = `
+.c0 {
+  background: red;
+  border-radius: 5px;
+}
+
+.c1 {
+  margin: 0;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className=""
+  >
+    <img
+      alt="card-image"
+      src="card.jpg"
+    />
+  </div>
+  <div
+    className=""
+  >
+    <p
+      className="c1"
+    >
+      test description
+    </p>
+  </div>
+</div>
 `;

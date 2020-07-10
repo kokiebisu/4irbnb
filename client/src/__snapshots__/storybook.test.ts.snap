@@ -183,11 +183,28 @@ exports[`Storyshots Blocks/Card/WithTitle Base 1`] = `
   <div
     className="sc-AxhUy jbzoVz"
   >
-    <p
-      className="sc-AxirZ KAyjI"
+    <div
+      className="sc-AxhUy hRxdMo"
     >
-      Hello
-    </p>
+      <img
+        alt="card-image"
+        src="card.jpg"
+      />
+    </div>
+    <div
+      className="sc-AxhUy hRxdMo"
+    >
+      <p
+        className="sc-AxirZ jlQOFm"
+      >
+        card.jpg
+      </p>
+      <p
+        className="sc-AxirZ KAyjI"
+      >
+        Unplug or reconnect on a trip that's just a short drive away
+      </p>
+    </div>
   </div>
 </div>
 `;
