@@ -4,12 +4,12 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 // img
-import img from '../../../assets/img/card.jpg';
+import card1 from '../../../assets/img/card1.jpg';
 
 describe('Base Card', () => {
   it('renders correctly with title', () => {
     const testingData = {
-      image: img,
+      image: card1,
       tite: 'test title',
       description: 'test description',
     };
@@ -20,7 +20,7 @@ describe('Base Card', () => {
 
   it('renders correctly without title', () => {
     const testingData = {
-      image: img,
+      image: card1,
       description: 'test description',
     };
 
