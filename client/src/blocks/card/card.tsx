@@ -1,21 +1,17 @@
 import React from 'react';
 import { css } from 'styled-components';
+
+// Elements
 import { Box } from '../../elements/Box';
+import { Text } from '../../elements/Text';
 
 type CardProps = {
-  children?: React.ReactNode;
   image: string;
   title?: string;
   description: string;
 };
 
-export default ({
-  children,
-  image,
-  title,
-  description,
-  ...props
-}: CardProps) => {
+export default ({ image, title, description, ...props }: CardProps) => {
   return (
     <Box styles={box} {...props}>
       <Box>
