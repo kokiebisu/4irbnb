@@ -4,6 +4,9 @@ import { css } from 'styled-components';
 // Elements
 import { Box } from '../../elements/Box';
 import { Text } from '../../elements/Text';
+import { Img } from '../../elements/Img';
+import { colorpallete } from '../../styles/colorpallete';
+import theme from 'styled-theming';
 
 type CardProps = {
   image: string;
@@ -13,21 +16,52 @@ type CardProps = {
 
 export default ({ image, title, description, ...props }: CardProps) => {
   return (
-    <Box styles={box} {...props}>
-      <Box>
-        <img src={image} alt='card-image' />
+    <Box styles={extend.wrapper} {...props}>
+      <Box styles={extend.img}>
+        <Img src={image} alt='card-image' />
       </Box>
-      <Box>
-        {title && <Text styles={title}>{image}</Text>}
-        <Text>{description}</Text>
+      <Box styles={extend.text}>
+        {title && <Text styles={extend.title}>{title}</Text>}
+        <Text styles={extend.description}>{description}</Text>
       </Box>
     </Box>
   );
 };
 
-const box = css`
-  background: red;
-  border-radius: 5px;
-`;
+const primary = theme('mode', {
+  default: colorpallete.gray__8,
+});
 
-const title = css``;
+const secondary = theme('mode', {
+  default: colorpallete.gray__5,
+});
+
+const extend = {
+  wrapper: css`
+    border-radius: 16px;
+    max-height: min-content;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  `,
+  img: css`
+    object-fit: cover;
+
+    & > img {
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+    }
+  `,
+  text: css`
+    padding: 0 18px 12px 18px;
+  `,
+  title: css`
+    font-weight: 700;
+    color: ${primary};
+    padding: 4px 0;
+  `,
+  description: css`
+    font-size: 13px;
+    font-weight: 300;
+    color: ${secondary};
+    line-height: 1.4;
+  `,
+};

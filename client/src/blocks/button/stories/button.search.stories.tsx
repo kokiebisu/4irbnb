@@ -11,7 +11,7 @@ export default {
 };
 
 const data = {
-  title: 'Search',
+  name: 'Search',
 };
 
 const actionsData = {
