@@ -1,10 +1,10 @@
 import React from 'react';
-import TitleCard from '../card.title';
+import Card from '../card
 
 import { Text } from '../../../elements/Text';
 
 export default {
-  component: TitleCard,
+  component: Card,
   title: 'Blocks/Card/WithTitle',
   excludeStories: /.*Data$/,
 };
@@ -13,4 +13,4 @@ const cardData = {
   children: <Text>Hello</Text>,
 };
 
-export const base = () => <TitleCard {...cardData} />;
+export const base = () => <Card {...cardData} />;
