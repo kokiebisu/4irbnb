@@ -5,6 +5,8 @@ import { css } from 'styled-components';
 import { Box } from '../../elements/Box';
 import { Text } from '../../elements/Text';
 import { Img } from '../../elements/Img';
+import { colorpallete } from '../../styles/colorpallete';
+import theme from 'styled-theming';
 
 type CardProps = {
   image: string;
@@ -26,10 +28,13 @@ export default ({ image, title, description, ...props }: CardProps) => {
   );
 };
 
-const colors = {
-  darkgray: '#242424',
-  gray: '#717171',
-};
+const primary = theme('mode', {
+  default: colorpallete.gray__8,
+});
+
+const secondary = theme('mode', {
+  default: colorpallete.gray__5,
+});
 
 const extend = {
   wrapper: css`
@@ -50,13 +55,13 @@ const extend = {
   `,
   title: css`
     font-weight: 700;
-    color: ${colors.darkgray};
+    color: ${primary};
     padding: 4px 0;
   `,
   description: css`
     font-size: 13px;
     font-weight: 300;
-    color: ${colors.gray};
+    color: ${secondary};
     line-height: 1.4;
   `,
 };
