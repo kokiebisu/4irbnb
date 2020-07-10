@@ -16,7 +16,7 @@ exports[`Storyshots Blocks/Button/Base Large 1`] = `
     onClick={[Function]}
   >
     <p
-      className="sc-AxirZ KAyjI"
+      className="sc-AxirZ bgdYHC"
     >
       click
     </p>
@@ -40,7 +40,7 @@ exports[`Storyshots Blocks/Button/Base Medium 1`] = `
     onClick={[Function]}
   >
     <p
-      className="sc-AxirZ KAyjI"
+      className="sc-AxirZ bgdYHC"
     >
       click
     </p>
@@ -64,7 +64,7 @@ exports[`Storyshots Blocks/Button/Base Small 1`] = `
     onClick={[Function]}
   >
     <p
-      className="sc-AxirZ KAyjI"
+      className="sc-AxirZ bgdYHC"
     >
       click
     </p>
@@ -84,14 +84,14 @@ exports[`Storyshots Blocks/Button/Cookie Base 1`] = `
   }
 >
   <button
-    className="sc-AxjAm idqguH"
+    className="sc-AxjAm lbpRGH"
     onClick={[Function]}
   >
     <p
-      className="sc-AxirZ icJVKj"
+      className="sc-AxirZ kukGxJ"
     >
       <p
-        className="sc-AxirZ KAyjI"
+        className="sc-AxirZ bgdYHC"
       >
         OK
       </p>
@@ -112,14 +112,14 @@ exports[`Storyshots Blocks/Button/Cookie Inverse 1`] = `
   }
 >
   <button
-    className="sc-AxjAm ghArZV"
+    className="sc-AxjAm dxLjKr"
     onClick={[Function]}
   >
     <p
-      className="sc-AxirZ hYjkqe"
+      className="sc-AxirZ cflXfo"
     >
       <p
-        className="sc-AxirZ KAyjI"
+        className="sc-AxirZ bgdYHC"
       >
         Cookie Preferences
       </p>
@@ -140,14 +140,14 @@ exports[`Storyshots Blocks/Button/Search Base 1`] = `
   }
 >
   <button
-    className="sc-AxjAm kULqKo"
+    className="sc-AxjAm eukCWE"
     onClick={[Function]}
   >
     <div
-      className="sc-AxhCb dMRSin"
+      className="sc-AxhCb guAUfP"
     >
       <div
-        className="sc-AxiKw kiEQCa"
+        className="sc-AxiKw hCQdpu"
       >
         <svg
           stroke="white"
@@ -160,7 +160,7 @@ exports[`Storyshots Blocks/Button/Search Base 1`] = `
         </svg>
       </div>
       <p
-        className="sc-AxirZ lediIm"
+        className="sc-AxirZ zWlbo"
       >
         Search
       </p>
@@ -169,7 +169,7 @@ exports[`Storyshots Blocks/Button/Search Base 1`] = `
 </div>
 `;
 
-exports[`Storyshots Blocks/Card/WithTitle Base 1`] = `
+exports[`Storyshots Blocks/Card Multiple 1`] = `
 <div
   style={
     Object {
@@ -181,29 +181,173 @@ exports[`Storyshots Blocks/Card/WithTitle Base 1`] = `
   }
 >
   <div
-    className="sc-AxhUy jbzoVz"
+    className="sc-AxhCb hDjEmF"
   >
     <div
-      className="sc-AxhUy hRxdMo"
+      className="sc-AxhCb jjOAEb"
     >
-      <img
-        alt="card-image"
-        src="card.jpg"
-      />
+      <div
+        className="sc-AxhCb hpiXzu"
+      >
+        <img
+          alt="card-image"
+          className="sc-AxhUy CKPFt"
+          src="card1.jpg"
+        />
+      </div>
+      <div
+        className="sc-AxhCb eBnqhK"
+      >
+        <p
+          className="sc-AxirZ dzwEML"
+        >
+          Online experiences
+        </p>
+        <p
+          className="sc-AxirZ ijcTVn"
+        >
+          Unique activities we can do together, led by a world of hosts
+        </p>
+      </div>
     </div>
     <div
-      className="sc-AxhUy hRxdMo"
+      className="sc-AxhCb jjOAEb"
     >
-      <p
-        className="sc-AxirZ jlQOFm"
+      <div
+        className="sc-AxhCb hpiXzu"
       >
-        card.jpg
-      </p>
-      <p
-        className="sc-AxirZ KAyjI"
+        <img
+          alt="card-image"
+          className="sc-AxhUy CKPFt"
+          src="card2.jpg"
+        />
+      </div>
+      <div
+        className="sc-AxhCb eBnqhK"
       >
-        Unplug or reconnect on a trip that's just a short drive away
-      </p>
+        <p
+          className="sc-AxirZ dzwEML"
+        >
+          Your next getaway
+        </p>
+        <p
+          className="sc-AxirZ ijcTVn"
+        >
+          Unplug or reconnect on a trip that's just a short drive away
+        </p>
+      </div>
+    </div>
+    <div
+      className="sc-AxhCb jjOAEb"
+    >
+      <div
+        className="sc-AxhCb hpiXzu"
+      >
+        <img
+          alt="card-image"
+          className="sc-AxhUy CKPFt"
+          src="card3.jpg"
+        />
+      </div>
+      <div
+        className="sc-AxhCb eBnqhK"
+      >
+        <p
+          className="sc-AxirZ dzwEML"
+        >
+          Entire homes
+        </p>
+        <p
+          className="sc-AxirZ ijcTVn"
+        >
+          Comfortable private places, with room for friends or family
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Blocks/Card Single With Title 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
+    }
+  }
+>
+  <div
+    className="sc-AxhCb crnaHo"
+  >
+    <div
+      className="sc-AxhCb jjOAEb"
+    >
+      <div
+        className="sc-AxhCb hpiXzu"
+      >
+        <img
+          alt="card-image"
+          className="sc-AxhUy CKPFt"
+          src="card1.jpg"
+        />
+      </div>
+      <div
+        className="sc-AxhCb eBnqhK"
+      >
+        <p
+          className="sc-AxirZ dzwEML"
+        >
+          Online experiences
+        </p>
+        <p
+          className="sc-AxirZ ijcTVn"
+        >
+          Unique activities we can do together, led by a world of hosts
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Blocks/Card Single Without Title 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
+    }
+  }
+>
+  <div
+    className="sc-AxhCb crnaHo"
+  >
+    <div
+      className="sc-AxhCb jjOAEb"
+    >
+      <div
+        className="sc-AxhCb hpiXzu"
+      >
+        <img
+          alt="card-image"
+          className="sc-AxhUy CKPFt"
+          src="card1.jpg"
+        />
+      </div>
+      <div
+        className="sc-AxhCb eBnqhK"
+      >
+        <p
+          className="sc-AxirZ ijcTVn"
+        >
+          Unique activities we can do together, led by a world of hosts
+        </p>
+      </div>
     </div>
   </div>
 </div>

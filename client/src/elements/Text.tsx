@@ -12,6 +12,7 @@ interface ElementProps {
 const Element = styled.p<ElementProps>`
   ${({ styles }) => styles}
   margin: 0;
+  font-family: 'Airbnb-Cereal';
 `;
 
 export const Text: React.FC<TextProps> = ({ children, ...props }) => {

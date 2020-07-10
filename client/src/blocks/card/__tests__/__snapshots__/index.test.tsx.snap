@@ -2,30 +2,55 @@
 
 exports[`Base Card renders correctly with title 1`] = `
 .c0 {
-  background: red;
-  border-radius: 5px;
+  border-radius: 16px;
+  max-height: -webkit-min-content;
+  max-height: -moz-min-content;
+  max-height: min-content;
+  box-shadow: rgba(0,0,0,0.15) 0px 2px 8px;
 }
 
 .c1 {
+  object-fit: cover;
+}
+
+.c1 > img {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.c3 {
+  padding: 0 18px 12px 18px;
+}
+
+.c4 {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.4;
   margin: 0;
+  font-family: 'Airbnb-Cereal';
+}
+
+.c2 {
+  width: 100%;
 }
 
 <div
   className="c0"
 >
   <div
-    className=""
+    className="c1"
   >
     <img
       alt="card-image"
-      src="card.jpg"
+      className="c2"
+      src="card1.jpg"
     />
   </div>
   <div
-    className=""
+    className="c3"
   >
     <p
-      className="c1"
+      className="c4"
     >
       test description
     </p>
@@ -35,30 +60,55 @@ exports[`Base Card renders correctly with title 1`] = `
 
 exports[`Base Card renders correctly without title 1`] = `
 .c0 {
-  background: red;
-  border-radius: 5px;
+  border-radius: 16px;
+  max-height: -webkit-min-content;
+  max-height: -moz-min-content;
+  max-height: min-content;
+  box-shadow: rgba(0,0,0,0.15) 0px 2px 8px;
 }
 
 .c1 {
+  object-fit: cover;
+}
+
+.c1 > img {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.c3 {
+  padding: 0 18px 12px 18px;
+}
+
+.c4 {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.4;
   margin: 0;
+  font-family: 'Airbnb-Cereal';
+}
+
+.c2 {
+  width: 100%;
 }
 
 <div
   className="c0"
 >
   <div
-    className=""
+    className="c1"
   >
     <img
       alt="card-image"
-      src="card.jpg"
+      className="c2"
+      src="card1.jpg"
     />
   </div>
   <div
-    className=""
+    className="c3"
   >
     <p
-      className="c1"
+      className="c4"
     >
       test description
     </p>

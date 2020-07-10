@@ -6,7 +6,7 @@ export interface ButtonProps {
   sm?: boolean;
   md?: boolean;
   lg?: boolean;
-  title?: string;
+  name?: string;
   children?: React.ReactNode;
   inverse?: boolean;
   onPress: () => void;
