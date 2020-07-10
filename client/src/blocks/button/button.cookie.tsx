@@ -9,8 +9,12 @@ import { colorpallete } from '../../styles/colorpallete';
 
 export default ({ inverse, children, ...props }: ButtonProps) => {
   return (
-    <Button styles={inverse ? inverseButton : button} {...props}>
-      <Text styles={inverse ? inverseText : text}>{children}</Text>
+    <Button
+      styles={inverse ? extend.inverse.button : extend.normal.button}
+      {...props}>
+      <Text styles={inverse ? extend.inverse.text : extend.normal.text}>
+        {children}
+      </Text>
     </Button>
   );
 };
@@ -30,22 +34,24 @@ const common = css`
   min-width: 125px;
 `;
 
-const inverseButton = css`
-  ${common}
-  background-color: ${secondary};
-
-  border: 1px solid ${primary};
-`;
-
-const button = css`
-  ${common}
-  background-color: ${primary};
-`;
-
-const inverseText = css`
-  color: ${primary};
-`;
-
-const text = css`
-  color: ${secondary};
-`;
+const extend = {
+  normal: {
+    button: css`
+      ${common}
+      background-color: ${primary};
+    `,
+    text: css`
+      color: ${secondary};
+    `,
+  },
+  inverse: {
+    button: css`
+      ${common}
+      background-color: ${secondary}; 
+      border: 1px solid ${primary};
+    `,
+    text: css`
+      color: ${primary};
+    `,
+  },
+};
