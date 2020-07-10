@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../../card/card.title';
+import Card from '../card';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
