@@ -14,13 +14,13 @@ type CardProps = {
 
 export default ({ image, title, description, ...props }: CardProps) => {
   return (
-    <Box styles={styles.wrapper} {...props}>
-      <Box styles={styles.img}>
+    <Box styles={extend.wrapper} {...props}>
+      <Box styles={extend.img}>
         <Img src={image} alt='card-image' />
       </Box>
-      <Box styles={styles.text}>
-        {title && <Text styles={styles.title}>{title}</Text>}
-        <Text styles={styles.description}>{description}</Text>
+      <Box styles={extend.text}>
+        {title && <Text styles={extend.title}>{title}</Text>}
+        <Text styles={extend.description}>{description}</Text>
       </Box>
     </Box>
   );
@@ -31,7 +31,7 @@ const colors = {
   gray: '#717171',
 };
 
-const styles = {
+const extend = {
   wrapper: css`
     border-radius: 16px;
     max-height: min-content;

@@ -8,7 +8,7 @@ import card1 from '../../../assets/img/card1.jpg';
 import card2 from '../../../assets/img/card2.jpg';
 import card3 from '../../../assets/img/card3.jpg';
 
-import styled, { css } from 'styled-components';
+import { css } from 'styled-components';
 import { sizes } from '../../../styles/breakpoints';
 import { Box } from '../../../elements/Box';
 
