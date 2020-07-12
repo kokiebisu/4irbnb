@@ -3,10 +3,10 @@ import { SearchBar } from '../searchbar';
 
 export default {
   component: SearchBar,
-  title: 'Blocks/SearchBar/Mobile',
+  title: 'Blocks/SearchBar/Normal',
   excludeStories: /.*Data$/,
 };
 
 export const Base = () => {
-  return <SearchBar type='mobile' onPress={() => console.log('hello!')} />;
+  return <SearchBar type='normal' onPress={() => console.log('hello!')} />;
 };
