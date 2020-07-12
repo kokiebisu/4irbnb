@@ -1,11 +1,18 @@
 import React from 'react';
 import { css } from 'styled-components';
+import theme from 'styled-theming';
+
+// layout
+import { Flex } from '../../layout/flex';
 
 // element
 import { Icon } from '../../elements/Icon';
 import { Box } from '../../elements/Box';
 import { BaseButton } from '../../elements/Button';
 import { Text } from '../../elements/Text';
+
+// colorpallete
+import { colorpallete } from '../../styles/colorpallete';
 
 type SearchBarProps = {
   onPress: () => void;
@@ -14,19 +21,57 @@ type SearchBarProps = {
 export default ({ ...props }: SearchBarProps) => {
   return (
     <BaseButton styles={extend.wrapper} {...props}>
-      <Icon name='search' />
-      <Box styles={extend.text}>
-        <Text>Add a location</Text>
-      </Box>
+      <Flex justifyCenter alignCenter>
+        <Icon name='search' styles={extend.icon} />
+        <Box styles={extend.text}>
+          <Text>Add a location</Text>
+        </Box>
+      </Flex>
     </BaseButton>
   );
 };
 
+const primary = theme('mode', {
+  default: colorpallete.gray__6,
+});
+
+const secondary = theme('mode', {
+  default: colorpallete.gray__1,
+});
+
+const tertiary = theme('mode', {
+  default: colorpallete.red__5,
+});
+
 const extend = {
   wrapper: css`
     background-color: transparent;
-    border: 1px solid black;
-    padding: 5px;
+    border: 1px solid ${secondary};
+    height: 50px;
+    max-width: 100%;
+    min-width: 220px;
+    border-radius: 24px;
   `,
-  text: css``,
+  icon: css`
+    position: relative;
+    top: 2px;
+    margin-right: 16px;
+    & svg {
+      width: 16px;
+      height: 16px;
+      stroke: ${tertiary};
+      & path {
+        fill: ${tertiary};
+        stroke-width: 2;
+      }
+    }
+  `,
+  text: css`
+    & p {
+      color: ${primary};
+      font-family: 'Airbnb-Cereal';
+      font-size: 14px;
+      font-weight: 700;
+    }
+  `,
 };
