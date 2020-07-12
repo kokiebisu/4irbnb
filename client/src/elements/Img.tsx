@@ -14,6 +14,6 @@ const Element = styled.img<ElementProps>`
   width: 100%;
 `;
 
-export const Img = ({ ...props }) => {
+export const Img: React.FC<ImageProps> = ({ ...props }) => {
   return <Element {...props} />;
 };

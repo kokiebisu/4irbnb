@@ -5,7 +5,7 @@ import { css } from 'styled-components';
 import { sizes } from '../../styles/breakpoints';
 
 // svg
-import { Icon } from '../../assets/svg/icon';
+import { Icon } from '../../elements/Icon';
 
 // element
 import { Button, ButtonProps } from '../../elements/Button';
