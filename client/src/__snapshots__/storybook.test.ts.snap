@@ -16,7 +16,7 @@ exports[`Storyshots Blocks/Button/Base Large 1`] = `
     onClick={[Function]}
   >
     <p
-      className="sc-AxirZ bgdYHC"
+      className="sc-AxiKw cLOcWK"
     >
       click
     </p>
@@ -40,7 +40,7 @@ exports[`Storyshots Blocks/Button/Base Medium 1`] = `
     onClick={[Function]}
   >
     <p
-      className="sc-AxirZ bgdYHC"
+      className="sc-AxiKw cLOcWK"
     >
       click
     </p>
@@ -64,7 +64,7 @@ exports[`Storyshots Blocks/Button/Base Small 1`] = `
     onClick={[Function]}
   >
     <p
-      className="sc-AxirZ bgdYHC"
+      className="sc-AxiKw cLOcWK"
     >
       click
     </p>
@@ -88,10 +88,10 @@ exports[`Storyshots Blocks/Button/Cookie Base 1`] = `
     onClick={[Function]}
   >
     <p
-      className="sc-AxirZ kukGxJ"
+      className="sc-AxiKw DTSNp"
     >
       <p
-        className="sc-AxirZ bgdYHC"
+        className="sc-AxiKw cLOcWK"
       >
         OK
       </p>
@@ -116,10 +116,10 @@ exports[`Storyshots Blocks/Button/Cookie Inverse 1`] = `
     onClick={[Function]}
   >
     <p
-      className="sc-AxirZ cflXfo"
+      className="sc-AxiKw hbXxFA"
     >
       <p
-        className="sc-AxirZ bgdYHC"
+        className="sc-AxiKw cLOcWK"
       >
         Cookie Preferences
       </p>
@@ -141,13 +141,14 @@ exports[`Storyshots Blocks/Button/Search Base 1`] = `
 >
   <button
     className="sc-AxjAm eukCWE"
+    name="Search"
     onClick={[Function]}
   >
     <div
       className="sc-AxhCb guAUfP"
     >
       <div
-        className="sc-AxiKw hCQdpu"
+        className="sc-AxirZ jCQkyK"
       >
         <svg
           stroke="white"
@@ -160,7 +161,7 @@ exports[`Storyshots Blocks/Button/Search Base 1`] = `
         </svg>
       </div>
       <p
-        className="sc-AxirZ zWlbo"
+        className="sc-AxiKw porOw"
       >
         Search
       </p>
@@ -199,12 +200,12 @@ exports[`Storyshots Blocks/Card Multiple 1`] = `
         className="sc-AxhCb eBnqhK"
       >
         <p
-          className="sc-AxirZ dzwEML"
+          className="sc-AxiKw dUCObv"
         >
           Online experiences
         </p>
         <p
-          className="sc-AxirZ ijcTVn"
+          className="sc-AxiKw dafxov"
         >
           Unique activities we can do together, led by a world of hosts
         </p>
@@ -226,12 +227,12 @@ exports[`Storyshots Blocks/Card Multiple 1`] = `
         className="sc-AxhCb eBnqhK"
       >
         <p
-          className="sc-AxirZ dzwEML"
+          className="sc-AxiKw dUCObv"
         >
           Your next getaway
         </p>
         <p
-          className="sc-AxirZ ijcTVn"
+          className="sc-AxiKw dafxov"
         >
           Unplug or reconnect on a trip that's just a short drive away
         </p>
@@ -253,12 +254,12 @@ exports[`Storyshots Blocks/Card Multiple 1`] = `
         className="sc-AxhCb eBnqhK"
       >
         <p
-          className="sc-AxirZ dzwEML"
+          className="sc-AxiKw dUCObv"
         >
           Entire homes
         </p>
         <p
-          className="sc-AxirZ ijcTVn"
+          className="sc-AxiKw dafxov"
         >
           Comfortable private places, with room for friends or family
         </p>
@@ -298,12 +299,12 @@ exports[`Storyshots Blocks/Card Single With Title 1`] = `
         className="sc-AxhCb eBnqhK"
       >
         <p
-          className="sc-AxirZ dzwEML"
+          className="sc-AxiKw dUCObv"
         >
           Online experiences
         </p>
         <p
-          className="sc-AxirZ ijcTVn"
+          className="sc-AxiKw dafxov"
         >
           Unique activities we can do together, led by a world of hosts
         </p>
@@ -343,7 +344,7 @@ exports[`Storyshots Blocks/Card Single Without Title 1`] = `
         className="sc-AxhCb eBnqhK"
       >
         <p
-          className="sc-AxirZ ijcTVn"
+          className="sc-AxiKw dafxov"
         >
           Unique activities we can do together, led by a world of hosts
         </p>
@@ -369,7 +370,7 @@ exports[`Storyshots Blocks/SearchBar/Mobile Base 1`] = `
     onClick={[Function]}
   >
     <div
-      className="sc-AxiKw cBoXSN"
+      className="sc-AxirZ dVRjgl"
     >
       <svg
         stroke="white"
@@ -385,7 +386,7 @@ exports[`Storyshots Blocks/SearchBar/Mobile Base 1`] = `
       className="sc-AxhCb eYhTuB"
     >
       <p
-        className="sc-AxirZ bgdYHC"
+        className="sc-AxiKw cLOcWK"
       >
         Where are you going?
       </p>
@@ -410,7 +411,7 @@ exports[`Storyshots Blocks/SearchBar/Normal Base 1`] = `
     onClick={[Function]}
   >
     <div
-      className="sc-AxiKw cBoXSN"
+      className="sc-AxirZ dVRjgl"
     >
       <svg
         stroke="white"
@@ -426,7 +427,7 @@ exports[`Storyshots Blocks/SearchBar/Normal Base 1`] = `
       className="sc-AxhCb eYhTuB"
     >
       <p
-        className="sc-AxirZ bgdYHC"
+        className="sc-AxiKw cLOcWK"
       >
         Add a location
       </p>
