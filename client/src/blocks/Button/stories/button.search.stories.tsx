@@ -2,10 +2,10 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 
 // block
-import SearchButton from '../button.search';
+import { Button } from '../button';
 
 export default {
-  component: SearchButton,
+  component: Button,
   title: 'Blocks/Button/Search',
   excludeStories: /.*Data$/,
 };
@@ -19,5 +19,5 @@ const actionsData = {
 };
 
 export const base = () => {
-  return <SearchButton sm {...data} {...actionsData} />;
+  return <Button type='search' sm {...data} {...actionsData} />;
 };

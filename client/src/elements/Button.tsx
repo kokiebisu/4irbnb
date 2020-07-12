@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-export interface ButtonProps {
+interface ElementProps {
   styles?: any;
   sm?: boolean;
   md?: boolean;
@@ -12,14 +12,14 @@ export interface ButtonProps {
   onPress: () => void;
 }
 
-interface ElementProps {
+interface StyledProps {
   styles?: any;
   sm?: boolean;
   md?: boolean;
   lg?: boolean;
 }
 
-const Element = styled.button<ElementProps>`
+const Element = styled.button<StyledProps>`
   border-radius: 8px;
   font-size: 18px;
   border: none;
@@ -41,7 +41,7 @@ const Element = styled.button<ElementProps>`
     `};
 `;
 
-export const Button: React.FC<ButtonProps> = ({
+export const BaseButton: React.FC<ElementProps> = ({
   onPress,
   children,
   ...props

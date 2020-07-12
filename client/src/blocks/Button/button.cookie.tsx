@@ -3,19 +3,22 @@ import { css } from 'styled-components';
 import theme from 'styled-theming';
 
 // element
-import { Button, ButtonProps } from '../../elements/Button';
+import { BaseButton } from '../../elements/Button';
 import { Text } from '../../elements/Text';
 import { colorpallete } from '../../styles/colorpallete';
 
+// type
+import { ButtonProps } from './button';
+
 export default ({ inverse, children, ...props }: ButtonProps) => {
   return (
-    <Button
+    <BaseButton
       styles={inverse ? extend.inverse.button : extend.normal.button}
       {...props}>
       <Text styles={inverse ? extend.inverse.text : extend.normal.text}>
         {children}
       </Text>
-    </Button>
+    </BaseButton>
   );
 };
 

@@ -2,12 +2,12 @@ import React from 'react';
 import { Search } from '../assets/svg';
 import styled from 'styled-components';
 
-export interface IconProps {
+interface ElementProps {
   name: string;
   styles?: any;
 }
 
-interface ElementProps {
+interface StyledProps {
   styles?: any;
 }
 
@@ -19,11 +19,11 @@ const items: MapProps = {
   search: Search,
 };
 
-const Element = styled.div<ElementProps>`
+const Element = styled.div<StyledProps>`
   ${({ styles }) => styles}
 `;
 
-export const Icon: React.FC<IconProps> = ({ name, ...props }) => {
+export const Icon: React.FC<ElementProps> = ({ name, ...props }) => {
   const Component: any = items[name];
 
   return (

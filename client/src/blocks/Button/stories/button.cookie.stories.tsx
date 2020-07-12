@@ -2,13 +2,13 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 
 // block
-import CookieButton from '../button.cookie';
+import { Button } from '../button';
 
 // element
 import { Text } from '../../../elements/Text';
 
 export default {
-  component: CookieButton,
+  component: Button,
   title: 'Blocks/Button/Cookie',
   excludeStories: /.*Data$/,
 };
@@ -25,8 +25,10 @@ const actionsData = {
   onPress: action('onPress'),
 };
 
-export const base = () => <CookieButton {...normalData} {...actionsData} />;
+export const base = () => (
+  <Button type='cookie' {...normalData} {...actionsData} />
+);
 
 export const inverse = () => (
-  <CookieButton inverse {...inverseData} {...actionsData} />
+  <Button type='cookie' inverse {...inverseData} {...actionsData} />
 );

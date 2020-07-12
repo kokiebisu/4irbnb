@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Component
-import { Button } from '../../../elements/Button';
+import { BaseButton } from '../../../elements/Button';
 
 // element
 import { Text } from '../../../elements/Text';
@@ -9,7 +9,7 @@ import { Text } from '../../../elements/Text';
 import { action } from '@storybook/addon-actions';
 
 export default {
-  component: Button,
+  component: BaseButton,
   title: 'Blocks/Button/Base',
   excludeStories: /.*Data$/,
 };
@@ -23,13 +23,13 @@ const actionsData = {
 };
 
 export const small = () => {
-  return <Button sm {...buttonData} {...actionsData} />;
+  return <BaseButton sm {...buttonData} {...actionsData} />;
 };
 
 export const medium = () => {
-  return <Button md {...buttonData} {...actionsData} />;
+  return <BaseButton md {...buttonData} {...actionsData} />;
 };
 
 export const large = () => {
-  return <Button lg {...buttonData} {...actionsData} />;
+  return <BaseButton lg {...buttonData} {...actionsData} />;
 };
