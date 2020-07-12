@@ -1,20 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface TextProps {
-  styles?: any;
-}
-
 interface ElementProps {
   styles?: any;
 }
 
-const Element = styled.p<ElementProps>`
+interface StyledProps {
+  styles?: any;
+}
+
+const Element = styled.p<StyledProps>`
   ${({ styles }) => styles}
   margin: 0;
   font-family: 'Airbnb-Cereal';
 `;
 
-export const Text: React.FC<TextProps> = ({ children, ...props }) => {
+export const Text: React.FC<ElementProps> = ({ children, ...props }) => {
   return <Element {...props}>{children}</Element>;
 };

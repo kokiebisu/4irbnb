@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-interface BoxProps {
-  styles?: any;
-}
-
 interface ElementProps {
   styles?: any;
 }
 
-const Element = styled.div<ElementProps>`
+interface StyledProps {
+  styles?: any;
+}
+
+const Element = styled.div<StyledProps>`
   ${({ styles }) => styles}
 `;
 
-export const Box: React.FC<BoxProps> = ({ children, ...props }) => {
+export const Box: React.FC<ElementProps> = ({ children, ...props }) => {
   return <Element {...props}>{children}</Element>;
 };

@@ -9,12 +9,12 @@ type SearchBarProps = {
   onPress: () => void;
 };
 
-interface typeProps {
+interface mapProps {
   [key: string]: JSX.Element;
 }
 
 export const SearchBar = ({ type, ...props }: SearchBarProps) => {
-  const types: typeProps = {
+  const types: mapProps = {
     mobile: <SearchBarLarge {...props} />,
     normal: <SearchBarSmall {...props} />,
   };
