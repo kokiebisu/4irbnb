@@ -8,18 +8,21 @@ import { sizes } from '../../styles/breakpoints';
 import { Icon } from '../../elements/Icon';
 
 // element
-import { Button, ButtonProps } from '../../elements/Button';
+import { BaseButton } from '../../elements/Button';
 import { Text } from '../../elements/Text';
 import { Box } from '../../elements/Box';
 
-export default ({ name, ...props }: ButtonProps) => {
+// type
+import { ButtonProps } from './button';
+
+export default ({ ...props }: ButtonProps) => {
   return (
-    <Button styles={extend.button} {...props}>
+    <BaseButton styles={extend.button} {...props}>
       <Box styles={extend.box}>
         <Icon styles={extend.icon} name='search' />
-        {name && <Text styles={extend.text}>{name}</Text>}
+        <Text styles={extend.text}>Search</Text>
       </Box>
-    </Button>
+    </BaseButton>
   );
 };
 

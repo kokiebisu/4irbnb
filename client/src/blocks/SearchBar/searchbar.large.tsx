@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 
 // element
 import { Box } from '../../elements/Box';
-import { Button } from '../../elements/Button';
+import { BaseButton } from '../../elements/Button';
 import { Icon } from '../../elements/Icon';
 import { Text } from '../../elements/Text';
 
@@ -13,12 +13,12 @@ type SearchBarProps = {
 
 export default ({ ...props }: SearchBarProps) => {
   return (
-    <Button styles={extend.wrapper} {...props}>
+    <BaseButton styles={extend.wrapper} {...props}>
       <Icon name='search' />
       <Box styles={extend.text}>
         <Text>Where are you going?</Text>
       </Box>
-    </Button>
+    </BaseButton>
   );
 };
 
