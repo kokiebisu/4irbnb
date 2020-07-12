@@ -51,8 +51,10 @@ const extend = {
     & svg {
       width: 14px;
       height: 14px;
+      stroke: white;
       path {
         fill: white;
+        stroke-width: 2;
       }
     }
   `,
