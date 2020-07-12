@@ -1,12 +1,14 @@
 import React from 'react';
 import { css } from 'styled-components';
+import theme from 'styled-theming';
 
-// Elements
+// element
 import { Box } from '../../elements/Box';
 import { Text } from '../../elements/Text';
 import { Img } from '../../elements/Img';
+
+// color
 import { colorpallete } from '../../styles/colorpallete';
-import theme from 'styled-theming';
 
 type CardProps = {
   image: string;
