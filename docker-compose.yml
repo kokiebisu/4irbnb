@@ -43,7 +43,6 @@ services:
 
 volumes:
   api:
-  app:
   database_postgres:
 
 networks:
