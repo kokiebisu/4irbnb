@@ -1,6 +1,21 @@
 version: '3.7'
 
 services:
+  proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - gobnb
+    restart: always
+    ports:
+      - 80:80
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - gobnb
   db:
     image: postgres
     ports:
@@ -9,7 +24,6 @@ services:
       POSTGRES_USER: ken
       POSTGRES_PASSWORD: kronos111
       POSTGRES_DB: gobnb
-    restart: always
     volumes:
       - database_postgres:/var/lib/postgresql/data
     networks:
@@ -19,12 +33,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    ports:
-      - 8080:8080
-    restart: always
     volumes:
       - api:/usr/src/app/server
     depends_on:
+      - proxy
       - db
     networks:
       - gobnb
@@ -36,4 +48,3 @@ volumes:
 
 networks:
   gobnb:
-    driver: bridge
