@@ -2,9 +2,13 @@ import React from 'react';
 import { addDecorator, addParameters } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
 import { screen } from '../src/styles/breakpoints';
+import { GlobalStyles } from '../src/styles/global';
+import { Fonts } from '../src/styles/fonts';
 
 addDecorator((storyFn) => (
   <ThemeProvider theme={{ mode: 'light' }}>
+    <Fonts />
+    <GlobalStyles />
     <div
       style={{
         height: '100vh',
