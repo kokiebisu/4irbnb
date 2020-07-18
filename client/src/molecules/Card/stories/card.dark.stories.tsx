@@ -77,7 +77,8 @@ export const Large = () => {
   const extend = {
     box: css`
       width: 100%;
-      max-width: 550px;
+      max-width: 350px;
+      margin-top: 10px;
     `,
   };
   return (

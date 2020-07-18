@@ -7,4 +7,5 @@ export const colorpallete = {
   gray__5: '#717171',
   gray__1: '#DDDDDD',
   red__5: '#FF385C',
+  black: '#030101',
 };

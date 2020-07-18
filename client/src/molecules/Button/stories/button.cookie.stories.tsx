@@ -14,11 +14,11 @@ export default {
 };
 
 const normalData = {
-  children: <Text>OK</Text>,
+  name: 'OK',
 };
 
 const inverseData = {
-  children: <Text>Cookie Preferences</Text>,
+  name: 'Cookie Preferences',
 };
 
 const actionsData = {

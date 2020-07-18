@@ -8,12 +8,13 @@ import SearchButton from './button.search';
 import CookieButton from './button.cookie';
 
 export type ButtonProps = {
-  type: string;
+  type?: string;
   onPress: () => void;
   sm?: boolean;
   md?: boolean;
   lg?: boolean;
   inverse?: boolean;
+  name: string;
 };
 
 interface mapProps {
