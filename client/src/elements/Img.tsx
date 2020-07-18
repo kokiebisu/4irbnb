@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 export interface ElementProps {
   styles?: any;
+  src: any;
+  alt: string;
 }
 
 interface StyledProps {

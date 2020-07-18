@@ -168,7 +168,87 @@ exports[`Storyshots Blocks/Button/Search Base 1`] = `
 </div>
 `;
 
-exports[`Storyshots Blocks/Card Multiple 1`] = `
+exports[`Storyshots Blocks/Card/Dark Large 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
+    }
+  }
+>
+  <div
+    className="sc-AxhCb gzlPyu"
+  >
+    <div
+      className="sc-AxhCb ipfxuP"
+    >
+      <div
+        className="sc-AxhCb hpiXzu"
+      >
+        <img
+          alt="card-image"
+          className="sc-AxhUy CKPFt"
+          src="card1.jpg"
+        />
+      </div>
+      <div
+        className="sc-AxhCb cZgEAi"
+      >
+        <p
+          className="sc-AxiKw kRqGEM"
+        >
+          Learn favorite summer recipes with celebrated chef Roze Traore
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Blocks/Card/Dark Small 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
+    }
+  }
+>
+  <div
+    className="sc-AxhCb crnaHo"
+  >
+    <div
+      className="sc-AxhCb ipfxuP"
+    >
+      <div
+        className="sc-AxhCb hpiXzu"
+      >
+        <img
+          alt="card-image"
+          className="sc-AxhUy CKPFt"
+          src="card1.jpg"
+        />
+      </div>
+      <div
+        className="sc-AxhCb eBnqhK"
+      >
+        <p
+          className="sc-AxiKw kRqGEM"
+        >
+          Fruits de mer with Michelin chef Marc Favier
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Blocks/Card/Light Multiple 1`] = `
 <div
   style={
     Object {
@@ -183,7 +263,7 @@ exports[`Storyshots Blocks/Card Multiple 1`] = `
     className="sc-AxhCb hDjEmF"
   >
     <div
-      className="sc-AxhCb jjOAEb"
+      className="sc-AxhCb fMpaBo"
     >
       <div
         className="sc-AxhCb hpiXzu"
@@ -198,19 +278,19 @@ exports[`Storyshots Blocks/Card Multiple 1`] = `
         className="sc-AxhCb eBnqhK"
       >
         <p
-          className="sc-AxiKw dUCObv"
+          className="sc-AxiKw cCngPp"
         >
           Online experiences
         </p>
         <p
-          className="sc-AxiKw dafxov"
+          className="sc-AxiKw eqRQNp"
         >
           Unique activities we can do together, led by a world of hosts
         </p>
       </div>
     </div>
     <div
-      className="sc-AxhCb jjOAEb"
+      className="sc-AxhCb fMpaBo"
     >
       <div
         className="sc-AxhCb hpiXzu"
@@ -225,19 +305,19 @@ exports[`Storyshots Blocks/Card Multiple 1`] = `
         className="sc-AxhCb eBnqhK"
       >
         <p
-          className="sc-AxiKw dUCObv"
+          className="sc-AxiKw cCngPp"
         >
           Your next getaway
         </p>
         <p
-          className="sc-AxiKw dafxov"
+          className="sc-AxiKw eqRQNp"
         >
           Unplug or reconnect on a trip that's just a short drive away
         </p>
       </div>
     </div>
     <div
-      className="sc-AxhCb jjOAEb"
+      className="sc-AxhCb fMpaBo"
     >
       <div
         className="sc-AxhCb hpiXzu"
@@ -252,12 +332,12 @@ exports[`Storyshots Blocks/Card Multiple 1`] = `
         className="sc-AxhCb eBnqhK"
       >
         <p
-          className="sc-AxiKw dUCObv"
+          className="sc-AxiKw cCngPp"
         >
           Entire homes
         </p>
         <p
-          className="sc-AxiKw dafxov"
+          className="sc-AxiKw eqRQNp"
         >
           Comfortable private places, with room for friends or family
         </p>
@@ -267,7 +347,7 @@ exports[`Storyshots Blocks/Card Multiple 1`] = `
 </div>
 `;
 
-exports[`Storyshots Blocks/Card Single With Title 1`] = `
+exports[`Storyshots Blocks/Card/Light Single With Title 1`] = `
 <div
   style={
     Object {
@@ -282,7 +362,7 @@ exports[`Storyshots Blocks/Card Single With Title 1`] = `
     className="sc-AxhCb crnaHo"
   >
     <div
-      className="sc-AxhCb jjOAEb"
+      className="sc-AxhCb fMpaBo"
     >
       <div
         className="sc-AxhCb hpiXzu"
@@ -297,12 +377,12 @@ exports[`Storyshots Blocks/Card Single With Title 1`] = `
         className="sc-AxhCb eBnqhK"
       >
         <p
-          className="sc-AxiKw dUCObv"
+          className="sc-AxiKw cCngPp"
         >
           Online experiences
         </p>
         <p
-          className="sc-AxiKw dafxov"
+          className="sc-AxiKw eqRQNp"
         >
           Unique activities we can do together, led by a world of hosts
         </p>
@@ -312,7 +392,7 @@ exports[`Storyshots Blocks/Card Single With Title 1`] = `
 </div>
 `;
 
-exports[`Storyshots Blocks/Card Single Without Title 1`] = `
+exports[`Storyshots Blocks/Card/Light Single Without Title 1`] = `
 <div
   style={
     Object {
@@ -327,7 +407,7 @@ exports[`Storyshots Blocks/Card Single Without Title 1`] = `
     className="sc-AxhCb crnaHo"
   >
     <div
-      className="sc-AxhCb jjOAEb"
+      className="sc-AxhCb fMpaBo"
     >
       <div
         className="sc-AxhCb hpiXzu"
@@ -342,7 +422,7 @@ exports[`Storyshots Blocks/Card Single Without Title 1`] = `
         className="sc-AxhCb eBnqhK"
       >
         <p
-          className="sc-AxiKw dafxov"
+          className="sc-AxiKw eqRQNp"
         >
           Unique activities we can do together, led by a world of hosts
         </p>
