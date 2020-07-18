@@ -30,16 +30,24 @@ export default ({ image, title, description, ...props }: CardProps) => {
   );
 };
 
+const background = theme('mode', {
+  light: colorpallete.white__1,
+  dark: colorpallete.gray__8,
+});
+
 const primary = theme('mode', {
   light: colorpallete.gray__8,
+  dark: colorpallete.white__1,
 });
 
 const secondary = theme('mode', {
   light: colorpallete.gray__5,
+  dark: colorpallete.white__1,
 });
 
 const extend = {
   wrapper: css`
+    background-color: ${background};
     border-radius: 16px;
     max-height: min-content;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;

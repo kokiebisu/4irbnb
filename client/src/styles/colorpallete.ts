@@ -1,5 +1,6 @@
 export const colorpallete = {
   white: '#ffffff',
+  white__1: '#FCFCFC',
   bluegreen__5: '#008489',
   gray__8: '#242424',
   gray__7: '#333333',
