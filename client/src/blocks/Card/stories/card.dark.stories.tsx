@@ -22,30 +22,20 @@ export default {
 };
 
 // data
-const cardDataWithoutTitle = {
+
+const cardDataSmall = {
   image: card1,
-  description: 'Unique activities we can do together, led by a world of hosts',
+  subtitle: 'Fruits de mer with Michelin chef Marc Favier',
+  size: 'sm',
 };
 
-const cardData1 = {
+const cardDataLarge = {
   image: card1,
-  title: 'Online experiences',
-  description: 'Unique activities we can do together, led by a world of hosts',
+  subtitle: 'Learn favorite summer recipes with celebrated chef Roze Traore',
+  size: 'lg',
 };
 
-const cardData2 = {
-  image: card2,
-  title: 'Your next getaway',
-  description: "Unplug or reconnect on a trip that's just a short drive away",
-};
-
-const cardData3 = {
-  image: card3,
-  title: 'Entire homes',
-  description: 'Comfortable private places, with room for friends or family',
-};
-
-export const SingleWithoutTitle = () => {
+export const Small = () => {
   const extend = {
     box: css`
       width: 100%;
@@ -55,50 +45,23 @@ export const SingleWithoutTitle = () => {
   return (
     <ThemeProvider theme={{ mode: 'dark' }}>
       <Box styles={extend.box}>
-        <Card {...cardDataWithoutTitle} />
+        <Card {...cardDataSmall} />
       </Box>
     </ThemeProvider>
   );
 };
 
-export const SingleWithTitle = () => {
+export const Large = () => {
   const extend = {
     box: css`
       width: 100%;
-      max-width: 350px;
+      max-width: 550px;
     `,
   };
   return (
     <ThemeProvider theme={{ mode: 'dark' }}>
       <Box styles={extend.box}>
-        <Card {...cardData1} />
-      </Box>
-    </ThemeProvider>
-  );
-};
-
-export const Multiple = () => {
-  const extend = {
-    box: css`
-      width: 100%;
-      height: 100%;
-      padding: 0 20px;
-      display: flex;
-
-      @media ${sizes.sm} {
-        display: grid;
-        align-items: center;
-        grid-template-columns: repeat(3, 1fr);
-        column-gap: 15px;
-      }
-    `,
-  };
-  return (
-    <ThemeProvider theme={{ mode: 'dark' }}>
-      <Box styles={extend.box}>
-        <Card {...cardData1} />
-        <Card {...cardData2} />
-        <Card {...cardData3} />
+        <Card {...cardDataLarge} />
       </Box>
     </ThemeProvider>
   );
