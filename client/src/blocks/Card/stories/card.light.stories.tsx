@@ -17,7 +17,7 @@ import { sizes } from '../../../styles/breakpoints';
 
 export default {
   component: Card,
-  title: 'Blocks/Card',
+  title: 'Blocks/Card/Light',
   excludeStories: /.*Data$/,
 };
 

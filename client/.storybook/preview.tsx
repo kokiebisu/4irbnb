@@ -4,7 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import { screen } from '../src/styles/breakpoints';
 
 addDecorator((storyFn) => (
-  <ThemeProvider theme={{ mode: 'default' }}>
+  <ThemeProvider theme={{ mode: 'light' }}>
     <div
       style={{
         height: '100vh',

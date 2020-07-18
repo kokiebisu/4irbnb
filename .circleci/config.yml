@@ -7,9 +7,5 @@ jobs:
     steps:
       # Pulls down the code to start a build
       - checkout:
-      - run: ls -la
-      - run: cd client && ls -la
-      - run: cd client && yarn install && ls -la
-      - run: cd client && yarn test && ls -la
-      # - run: yarn build
-      # - run: yarn netlify:deploy
+      - run: cd client && yarn install
+      - run: cd client && yarn test
