@@ -10,13 +10,13 @@ import { colorpallete } from '../../styles/colorpallete';
 // type
 import { ButtonProps } from './button';
 
-export default ({ inverse, children, ...props }: ButtonProps) => {
+export default ({ inverse, name, ...props }: ButtonProps) => {
   return (
     <BaseButton
       styles={inverse ? extend.inverse.button : extend.normal.button}
       {...props}>
       <Text styles={inverse ? extend.inverse.text : extend.normal.text}>
-        {children}
+        {name}
       </Text>
     </BaseButton>
   );

@@ -15,12 +15,12 @@ import { Box } from '../../atoms/Box';
 // type
 import { ButtonProps } from './button';
 
-export default ({ ...props }: ButtonProps) => {
+export default ({ name, ...props }: ButtonProps) => {
   return (
     <BaseButton styles={extend.button} {...props}>
       <Box styles={extend.box}>
         <Icon styles={extend.icon} name='search' />
-        <Text styles={extend.text}>Search</Text>
+        <Text styles={extend.text}>{name}</Text>
       </Box>
     </BaseButton>
   );
