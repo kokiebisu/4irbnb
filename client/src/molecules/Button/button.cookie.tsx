@@ -3,8 +3,8 @@ import { css } from 'styled-components';
 import theme from 'styled-theming';
 
 // element
-import { BaseButton } from '../../elements/Button';
-import { Text } from '../../elements/Text';
+import { BaseButton } from '../../atoms/Button';
+import { Text } from '../../atoms/Text';
 import { colorpallete } from '../../styles/colorpallete';
 
 // type

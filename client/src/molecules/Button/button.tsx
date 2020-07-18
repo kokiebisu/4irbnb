@@ -1,7 +1,7 @@
 import React from 'react';
 
 // element
-import { BaseButton } from '../../elements/Button';
+import { BaseButton } from '../../atoms/Button';
 
 // block
 import SearchButton from './button.search';

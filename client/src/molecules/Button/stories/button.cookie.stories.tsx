@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { Button } from '../button';
 
 // element
-import { Text } from '../../../elements/Text';
+import { Text } from '../../../atoms/Text';
 
 export default {
   component: Button,
