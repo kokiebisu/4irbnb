@@ -7,5 +7,13 @@ jobs:
     steps:
       # Pulls down the code to start a build
       - checkout:
+      - restore_cache:
+        keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          - v1-dependencies-
       - run: cd client && yarn install
+      - save_cache:
+        paths:
+          - node_modules
+        key: v1-dependencies-{{ checksum "package.json" }}
       - run: cd client && yarn test
