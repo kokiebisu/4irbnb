@@ -191,7 +191,7 @@ exports[`Storyshots Blocks/Card/Dark Large 1`] = `
         <img
           alt="card-image"
           className="sc-AxhUy CKPFt"
-          src="card1.jpg"
+          src="darkcard-lg.png"
         />
       </div>
       <div
@@ -201,6 +201,46 @@ exports[`Storyshots Blocks/Card/Dark Large 1`] = `
           className="sc-AxiKw kRqGEM"
         >
           Learn favorite summer recipes with celebrated chef Roze Traore
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Blocks/Card/Dark Medium 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
+    }
+  }
+>
+  <div
+    className="sc-AxhCb cHIEcy"
+  >
+    <div
+      className="sc-AxhCb ipfxuP"
+    >
+      <div
+        className="sc-AxhCb hpiXzu"
+      >
+        <img
+          alt="card-image"
+          className="sc-AxhUy CKPFt"
+          src="darkcard-md.png"
+        />
+      </div>
+      <div
+        className="sc-AxhCb eBnqhK"
+      >
+        <p
+          className="sc-AxiKw kRqGEM"
+        >
+          Fruits de mer with Michelin chef Marc Favier
         </p>
       </div>
     </div>
@@ -220,7 +260,7 @@ exports[`Storyshots Blocks/Card/Dark Small 1`] = `
   }
 >
   <div
-    className="sc-AxhCb crnaHo"
+    className="sc-AxhCb kICKCZ"
   >
     <div
       className="sc-AxhCb ipfxuP"
@@ -231,7 +271,7 @@ exports[`Storyshots Blocks/Card/Dark Small 1`] = `
         <img
           alt="card-image"
           className="sc-AxhUy CKPFt"
-          src="card1.jpg"
+          src="darkcard-sm.png"
         />
       </div>
       <div

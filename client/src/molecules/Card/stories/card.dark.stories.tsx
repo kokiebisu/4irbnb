@@ -5,7 +5,7 @@ import { css, ThemeProvider } from 'styled-components';
 import Card from '../card';
 
 // element
-import { Box } from '../../../elements/Box';
+import { Box } from '../../../atoms/Box';
 
 // img
 import cardsm from '../../../assets/img/darkcard-sm.png';
