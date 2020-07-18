@@ -31,11 +31,11 @@ export default ({ image, title, description, ...props }: CardProps) => {
 };
 
 const primary = theme('mode', {
-  default: colorpallete.gray__8,
+  light: colorpallete.gray__8,
 });
 
 const secondary = theme('mode', {
-  default: colorpallete.gray__5,
+  light: colorpallete.gray__5,
 });
 
 const extend = {

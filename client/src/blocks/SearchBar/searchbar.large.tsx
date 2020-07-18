@@ -32,11 +32,11 @@ export default ({ ...props }: SearchBarProps) => {
 };
 
 const primary = theme('mode', {
-  default: colorpallete.gray__5,
+  light: colorpallete.gray__5,
 });
 
 const secondary = theme('mode', {
-  default: colorpallete.gray__7,
+  light: colorpallete.gray__7,
 });
 
 const extend = {

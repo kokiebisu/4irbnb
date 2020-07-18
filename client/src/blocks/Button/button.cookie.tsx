@@ -23,11 +23,11 @@ export default ({ inverse, children, ...props }: ButtonProps) => {
 };
 
 const primary = theme('mode', {
-  default: colorpallete.bluegreen__5,
+  light: colorpallete.bluegreen__5,
 });
 
 const secondary = theme('mode', {
-  default: colorpallete.white,
+  light: colorpallete.white,
 });
 
 const common = css`
