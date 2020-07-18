@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { Button } from '../button';
 
 // element
-import { Text } from '../../../elements/Text';
+import { Text } from '../../../atoms/Text';
 
 export default {
   component: Button,
@@ -14,11 +14,11 @@ export default {
 };
 
 const normalData = {
-  children: <Text>OK</Text>,
+  name: 'OK',
 };
 
 const inverseData = {
-  children: <Text>Cookie Preferences</Text>,
+  name: 'Cookie Preferences',
 };
 
 const actionsData = {

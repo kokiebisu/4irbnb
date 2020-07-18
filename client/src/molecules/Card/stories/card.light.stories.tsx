@@ -5,7 +5,7 @@ import { css } from 'styled-components';
 import Card from '../card';
 
 // element
-import { Box } from '../../../elements/Box';
+import { Box } from '../../../atoms/Box';
 
 // img
 import card1 from '../../../assets/img/card1.jpg';

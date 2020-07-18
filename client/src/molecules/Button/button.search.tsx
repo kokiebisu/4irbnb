@@ -5,22 +5,22 @@ import { css } from 'styled-components';
 import { sizes } from '../../styles/breakpoints';
 
 // svg
-import { Icon } from '../../elements/Icon';
+import { Icon } from '../../atoms/Icon';
 
 // element
-import { BaseButton } from '../../elements/Button';
-import { Text } from '../../elements/Text';
-import { Box } from '../../elements/Box';
+import { BaseButton } from '../../atoms/Button';
+import { Text } from '../../atoms/Text';
+import { Box } from '../../atoms/Box';
 
 // type
 import { ButtonProps } from './button';
 
-export default ({ ...props }: ButtonProps) => {
+export default ({ name, ...props }: ButtonProps) => {
   return (
     <BaseButton styles={extend.button} {...props}>
       <Box styles={extend.box}>
         <Icon styles={extend.icon} name='search' />
-        <Text styles={extend.text}>Search</Text>
+        <Text styles={extend.text}>{name}</Text>
       </Box>
     </BaseButton>
   );
