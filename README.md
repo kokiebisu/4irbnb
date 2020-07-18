@@ -47,7 +47,9 @@ docker-compose build
 ```
 
 
-## Aspects
+## References
+ - [atomic design](https://bradfrost.com/blog/post/atomic-web-design/)
+ - [Design System for Developers](https://www.learnstorybook.com/design-systems-for-developers/)
 
 ## Development
 
