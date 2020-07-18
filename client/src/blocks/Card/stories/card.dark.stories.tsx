@@ -8,9 +8,9 @@ import Card from '../card';
 import { Box } from '../../../elements/Box';
 
 // img
-import card1 from '../../../assets/img/card1.jpg';
-import card2 from '../../../assets/img/card2.jpg';
-import card3 from '../../../assets/img/card3.jpg';
+import cardsm from '../../../assets/img/darkcard-sm.png';
+import cardmd from '../../../assets/img/darkcard-md.png';
+import cardlg from '../../../assets/img/darkcard-lg.png';
 
 // breakpoint
 import { sizes } from '../../../styles/breakpoints';
@@ -24,13 +24,19 @@ export default {
 // data
 
 const cardDataSmall = {
-  image: card1,
+  image: cardsm,
+  subtitle: 'Fruits de mer with Michelin chef Marc Favier',
+  size: 'sm',
+};
+
+const cardDataMedium = {
+  image: cardmd,
   subtitle: 'Fruits de mer with Michelin chef Marc Favier',
   size: 'sm',
 };
 
 const cardDataLarge = {
-  image: card1,
+  image: cardlg,
   subtitle: 'Learn favorite summer recipes with celebrated chef Roze Traore',
   size: 'lg',
 };
@@ -39,13 +45,29 @@ export const Small = () => {
   const extend = {
     box: css`
       width: 100%;
-      max-width: 350px;
+      max-width: 250px;
     `,
   };
   return (
     <ThemeProvider theme={{ mode: 'dark' }}>
       <Box styles={extend.box}>
         <Card {...cardDataSmall} />
+      </Box>
+    </ThemeProvider>
+  );
+};
+
+export const Medium = () => {
+  const extend = {
+    box: css`
+      width: 100%;
+      max-width: 400px;
+    `,
+  };
+  return (
+    <ThemeProvider theme={{ mode: 'dark' }}>
+      <Box styles={extend.box}>
+        <Card {...cardDataMedium} />
       </Box>
     </ThemeProvider>
   );
