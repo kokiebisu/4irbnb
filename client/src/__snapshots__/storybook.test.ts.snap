@@ -90,11 +90,7 @@ exports[`Storyshots Blocks/Button/Cookie Base 1`] = `
     <p
       className="sc-AxiKw DTSNp"
     >
-      <p
-        className="sc-AxiKw cLOcWK"
-      >
-        OK
-      </p>
+      OK
     </p>
   </button>
 </div>
@@ -118,11 +114,7 @@ exports[`Storyshots Blocks/Button/Cookie Inverse 1`] = `
     <p
       className="sc-AxiKw hbXxFA"
     >
-      <p
-        className="sc-AxiKw cLOcWK"
-      >
-        Cookie Preferences
-      </p>
+      Cookie Preferences
     </p>
   </button>
 </div>
@@ -141,7 +133,6 @@ exports[`Storyshots Blocks/Button/Search Base 1`] = `
 >
   <button
     className="sc-AxjAm eukCWE"
-    name="Search"
     onClick={[Function]}
   >
     <div
@@ -180,7 +171,7 @@ exports[`Storyshots Blocks/Card/Dark Large 1`] = `
   }
 >
   <div
-    className="sc-AxhCb gzlPyu"
+    className="sc-AxhCb bdLUAq"
   >
     <div
       className="sc-AxhCb ipfxuP"
@@ -191,7 +182,7 @@ exports[`Storyshots Blocks/Card/Dark Large 1`] = `
         <img
           alt="card-image"
           className="sc-AxhUy CKPFt"
-          src="card1.jpg"
+          src="darkcard-lg.png"
         />
       </div>
       <div
@@ -201,6 +192,46 @@ exports[`Storyshots Blocks/Card/Dark Large 1`] = `
           className="sc-AxiKw kRqGEM"
         >
           Learn favorite summer recipes with celebrated chef Roze Traore
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Blocks/Card/Dark Medium 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
+    }
+  }
+>
+  <div
+    className="sc-AxhCb cHIEcy"
+  >
+    <div
+      className="sc-AxhCb ipfxuP"
+    >
+      <div
+        className="sc-AxhCb hpiXzu"
+      >
+        <img
+          alt="card-image"
+          className="sc-AxhUy CKPFt"
+          src="darkcard-md.png"
+        />
+      </div>
+      <div
+        className="sc-AxhCb eBnqhK"
+      >
+        <p
+          className="sc-AxiKw kRqGEM"
+        >
+          Fruits de mer with Michelin chef Marc Favier
         </p>
       </div>
     </div>
@@ -220,7 +251,7 @@ exports[`Storyshots Blocks/Card/Dark Small 1`] = `
   }
 >
   <div
-    className="sc-AxhCb crnaHo"
+    className="sc-AxhCb kICKCZ"
   >
     <div
       className="sc-AxhCb ipfxuP"
@@ -231,7 +262,7 @@ exports[`Storyshots Blocks/Card/Dark Small 1`] = `
         <img
           alt="card-image"
           className="sc-AxhUy CKPFt"
-          src="card1.jpg"
+          src="darkcard-sm.png"
         />
       </div>
       <div
@@ -426,6 +457,51 @@ exports[`Storyshots Blocks/Card/Light Single Without Title 1`] = `
         >
           Unique activities we can do together, led by a world of hosts
         </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Blocks/Card/Section Black Lives Matter 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
+    }
+  }
+>
+  <div
+    className="sc-AxhCb bsNBui"
+  >
+    <div
+      className="sc-AxhCb dKQJaW"
+    >
+      <div
+        className="sc-AxhCb jPieBM"
+      >
+        <div
+          className="sc-AxhCb kdbIet"
+        >
+          <div
+            className="sc-AxhCb hVWeUF"
+          >
+            We stand with #BlackLivesMatter
+          </div>
+          <div
+            className="sc-AxhCb kGIUxF"
+          >
+            We believe in a world where everyone belongs. We reject all racism that stands in the way.
+          </div>
+          <div
+            className="sc-AxhCb lblAfN"
+          >
+            Donate
+          </div>
+        </div>
       </div>
     </div>
   </div>

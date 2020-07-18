@@ -5,12 +5,12 @@ import { css, ThemeProvider } from 'styled-components';
 import Card from '../card';
 
 // element
-import { Box } from '../../../elements/Box';
+import { Box } from '../../../atoms/Box';
 
 // img
-import card1 from '../../../assets/img/card1.jpg';
-import card2 from '../../../assets/img/card2.jpg';
-import card3 from '../../../assets/img/card3.jpg';
+import cardsm from '../../../assets/img/darkcard-sm.png';
+import cardmd from '../../../assets/img/darkcard-md.png';
+import cardlg from '../../../assets/img/darkcard-lg.png';
 
 // breakpoint
 import { sizes } from '../../../styles/breakpoints';
@@ -24,13 +24,19 @@ export default {
 // data
 
 const cardDataSmall = {
-  image: card1,
+  image: cardsm,
+  subtitle: 'Fruits de mer with Michelin chef Marc Favier',
+  size: 'sm',
+};
+
+const cardDataMedium = {
+  image: cardmd,
   subtitle: 'Fruits de mer with Michelin chef Marc Favier',
   size: 'sm',
 };
 
 const cardDataLarge = {
-  image: card1,
+  image: cardlg,
   subtitle: 'Learn favorite summer recipes with celebrated chef Roze Traore',
   size: 'lg',
 };
@@ -39,7 +45,7 @@ export const Small = () => {
   const extend = {
     box: css`
       width: 100%;
-      max-width: 350px;
+      max-width: 250px;
     `,
   };
   return (
@@ -51,11 +57,28 @@ export const Small = () => {
   );
 };
 
+export const Medium = () => {
+  const extend = {
+    box: css`
+      width: 100%;
+      max-width: 400px;
+    `,
+  };
+  return (
+    <ThemeProvider theme={{ mode: 'dark' }}>
+      <Box styles={extend.box}>
+        <Card {...cardDataMedium} />
+      </Box>
+    </ThemeProvider>
+  );
+};
+
 export const Large = () => {
   const extend = {
     box: css`
       width: 100%;
-      max-width: 550px;
+      max-width: 350px;
+      margin-top: 10px;
     `,
   };
   return (
