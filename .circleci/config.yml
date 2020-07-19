@@ -10,3 +10,19 @@ jobs:
       - run: cd client && yarn install
       - run: cd client && yarn test
       - run: cd client && npx chromatic --project-token=vnmckyhfm5k --exit-zero-on-changes
+workflows:
+  approval:
+    - ready:
+        type: approval
+        filters:
+          branchs:
+            ignore: master
+    - chromatic/test:
+        requires:
+          - ready
+  main-workflow:
+    jobs:
+      - chromatic/run-and-accept-all:
+        filters:
+          branches:
+            only: master
