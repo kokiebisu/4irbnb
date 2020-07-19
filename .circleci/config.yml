@@ -33,5 +33,5 @@ workflows:
     jobs:
       - test
       - docker_hub
-          require:
+          requires:
             - test
