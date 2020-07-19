@@ -1,16 +1,19 @@
 import React from 'react';
 
 // Component
-import { BaseButton } from '../../../atoms/Button';
+import { BaseButton } from '../../../elements/Button';
 
 // element
-import { Text } from '../../../atoms/Text';
+import { Text } from '../../../elements/Text';
 
 import { action } from '@storybook/addon-actions';
 
 export default {
-  component: BaseButton,
-  title: 'Blocks/Button/Base',
+  title: 'Design Systems|Blocks/Button/Base',
+  parameters: {
+    component: BaseButton,
+    componentSubtitle: 'Displays the default button',
+  },
   excludeStories: /.*Data$/,
 };
 
@@ -22,14 +25,14 @@ const actionsData = {
   onPress: action('onPress'),
 };
 
-export const small = () => {
+export const Small = () => {
   return <BaseButton sm {...buttonData} {...actionsData} />;
 };
 
-export const medium = () => {
+export const Medium = () => {
   return <BaseButton md {...buttonData} {...actionsData} />;
 };
 
-export const large = () => {
+export const Large = () => {
   return <BaseButton lg {...buttonData} {...actionsData} />;
 };

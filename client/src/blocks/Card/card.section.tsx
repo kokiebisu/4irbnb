@@ -3,9 +3,7 @@ import { css } from 'styled-components';
 import theme from 'styled-theming';
 
 // element
-import { Box } from '../../atoms/Box';
-import { Text } from '../../atoms/Text';
-import { Img } from '../../atoms/Img';
+import { Box } from '../../elements/Box';
 
 // color
 import { colorpallete } from '../../styles/colorpallete';
