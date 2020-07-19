@@ -17,16 +17,25 @@ jobs:
           command: cd client && npx chromatic --project-token=vnmckyhfm5k --exit-zero-on-changes
   docker_hub:
     working_directory: ~/app
-    docker:
-      - image: circleci/node:11
+    machine: true
     steps:
       - checkout
-      - run: |
-          docker build -t kokiebisu/gobnb-client ./client
-          docker build -t kokiebisu/gobnb-server ./server
-          docker login -u $DOCKER_USER -p $DOCKER_PASS
-          docker push kokiebisu/gobnb-client ./client
-          docker push kokiebisu/gobnb-server ./server
+      - run:
+          name: Building Client Image
+          command: docker build -t kokiebisu/gobnb-client ./client
+      - run:
+          name: Building Server Image
+          command: docker build -t kokiebisu/gobnb-server ./server
+      - run:
+          name: Login
+          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run:
+          name: Pushing to Client
+          command: docker push kokiebisu/gobnb-client ./client
+      - run:
+          name: Pushing to Server
+          command: docker push kokiebisu/gobnb-server ./server
+
 workflows:
   version: 2
   build-test-and-deploy:
