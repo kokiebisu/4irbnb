@@ -1,19 +1,46 @@
 version: 2
 jobs:
-  build:
+  test:
+    working_directory: ~/app
     docker:
       - image: circleci/node:11
-    working_directory: ~/repo
     steps:
-      # Pulls down the code to start a build
       - checkout:
-      - restore_cache:
-        keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          - v1-dependencies-
-      - run: cd client && yarn install
-      - save_cache:
-        paths:
-          - node_modules
-        key: v1-dependencies-{{ checksum "package.json" }}
-      - run: cd client && yarn test
+      - run:
+          name: Install Dependencies
+          command: cd client && yarn install
+      - run:
+          name: Testing
+          command: cd client && yarn test
+      - run:
+          name: Comparing Snapshots
+          command: cd client && npx chromatic --project-token=vnmckyhfm5k --exit-zero-on-changes
+  docker_hub:
+    working_directory: ~/app
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Building Client Image
+          command: docker build -t kokiebisu/gobnb-client ./client
+      - run:
+          name: Building Server Image
+          command: docker build -t kokiebisu/gobnb-server ./server
+      - run:
+          name: Login
+          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run:
+          name: Pushing to Client
+          command: docker push kokiebisu/gobnb-client
+      - run:
+          name: Pushing to Server
+          command: docker push kokiebisu/gobnb-server
+
+workflows:
+  version: 2
+  build-test-and-deploy:
+    jobs:
+      - test
+      - docker_hub:
+          requires:
+            - test
