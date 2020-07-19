@@ -12,9 +12,6 @@ import cardsm from '../../../assets/img/darkcard-sm.png';
 import cardmd from '../../../assets/img/darkcard-md.png';
 import cardlg from '../../../assets/img/darkcard-lg.png';
 
-// breakpoint
-import { sizes } from '../../../styles/breakpoints';
-
 export default {
   component: Card,
   title: 'Blocks/Card/Dark',
