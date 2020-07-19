@@ -17,8 +17,6 @@ jobs:
           command: cd client && npx chromatic --project-token=vnmckyhfm5k --exit-zero-on-changes
   docker_hub:
     working_directory: ~/app
-    machine:
-      docker_layer_caching: true
     steps:
       - checkout
       - run: |
