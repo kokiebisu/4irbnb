@@ -1,5 +1,5 @@
 import React from 'react';
-import { BaseButton } from '../../../atoms/Button';
+import { BaseButton } from '../../../elements/Button';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 

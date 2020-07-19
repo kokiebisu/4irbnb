@@ -6,10 +6,10 @@ import theme from 'styled-theming';
 import { Flex } from '../../layout/flex';
 
 // element
-import { Icon } from '../../atoms/Icon';
-import { Box } from '../../atoms/Box';
-import { BaseButton } from '../../atoms/Button';
-import { Text } from '../../atoms/Text';
+import { Icon } from '../../elements/Icon';
+import { Box } from '../../elements/Box';
+import { BaseButton } from '../../elements/Button';
+import { Text } from '../../elements/Text';
 
 // colorpallete
 import { colorpallete } from '../../styles/colorpallete';

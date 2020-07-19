@@ -4,12 +4,13 @@ import { action } from '@storybook/addon-actions';
 // block
 import { Button } from '../button';
 
-// element
-import { Text } from '../../../atoms/Text';
-
 export default {
-  component: Button,
-  title: 'Blocks/Button/Cookie',
+  title: 'Design Systems|Blocks/Button/Cookie',
+  parameters: {
+    component: Button,
+    componentSubtitle:
+      'Displays the two types of cookie buttons used for the landing popup notifications',
+  },
   excludeStories: /.*Data$/,
 };
 

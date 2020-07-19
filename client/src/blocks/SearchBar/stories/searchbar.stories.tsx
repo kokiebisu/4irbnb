@@ -2,14 +2,17 @@ import React from 'react';
 import { css } from 'styled-components';
 
 // element
-import { Box } from '../../../atoms/Box';
+import { Box } from '../../../elements/Box';
 
 // block
 import { SearchBar } from '../searchbar';
 
 export default {
-  component: SearchBar,
-  title: 'Blocks/SearchBar',
+  title: 'Design Systems|Blocks/SearchBar',
+  parameters: {
+    component: SearchBar,
+    componentSubtitle: 'Displays the searchbars',
+  },
   excludeStories: /.*Data$/,
 };
 

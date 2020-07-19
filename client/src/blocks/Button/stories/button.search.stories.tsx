@@ -5,8 +5,12 @@ import { action } from '@storybook/addon-actions';
 import { Button } from '../button';
 
 export default {
-  component: Button,
-  title: 'Blocks/Button/Search',
+  title: 'Design Systems|Blocks/Button/Search',
+  parameters: {
+    component: Button,
+    componentSubtitle:
+      'Displays the search button used to look for a place to stay',
+  },
   excludeStories: /.*Data$/,
 };
 
