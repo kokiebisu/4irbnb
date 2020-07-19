@@ -6,5 +6,11 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-viewport/register',
     '@storybook/addon-storysource',
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        configureTSX: true,
+      },
+    },
   ],
 };
