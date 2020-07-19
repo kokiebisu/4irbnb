@@ -17,6 +17,8 @@ jobs:
           command: cd client && npx chromatic --project-token=vnmckyhfm5k --exit-zero-on-changes
   docker_hub:
     working_directory: ~/app
+    docker:
+      - image: circleci/node:11
     steps:
       - checkout
       - run: |
