@@ -2,13 +2,16 @@ import React from 'react';
 import { css } from 'styled-components';
 
 // atom
-import { Box } from '../../../atoms/Box';
+import { Box } from '../../../elements/Box';
 
 import Card from '../card.section';
 
 export default {
-  component: Card,
-  title: 'Blocks/Card/Section',
+  title: 'Design Systems|Blocks/Card/Section',
+  parameters: {
+    component: Card,
+    componentSubtitle: 'Displays a card that stretches full width',
+  },
   excludeStories: /.*Data$/,
 };
 

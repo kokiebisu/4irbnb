@@ -3,13 +3,16 @@ import { css } from 'styled-components';
 import theme from 'styled-theming';
 
 // element
-import { BaseButton } from '../../atoms/Button';
-import { Text } from '../../atoms/Text';
+import { BaseButton } from '../../elements/Button';
+import { Text } from '../../elements/Text';
 import { colorpallete } from '../../styles/colorpallete';
 
 // type
 import { ButtonProps } from './button';
 
+/**
+ - Use a button when you want to perform specific cookie actions
+ **/
 export default ({ inverse, name, ...props }: ButtonProps) => {
   return (
     <BaseButton

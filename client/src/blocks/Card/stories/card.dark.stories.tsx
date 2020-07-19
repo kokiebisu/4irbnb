@@ -5,7 +5,7 @@ import { css, ThemeProvider } from 'styled-components';
 import Card from '../card';
 
 // element
-import { Box } from '../../../atoms/Box';
+import { Box } from '../../../elements/Box';
 
 // img
 import cardsm from '../../../assets/img/darkcard-sm.png';
@@ -13,8 +13,11 @@ import cardmd from '../../../assets/img/darkcard-md.png';
 import cardlg from '../../../assets/img/darkcard-lg.png';
 
 export default {
-  component: Card,
-  title: 'Blocks/Card/Dark',
+  title: 'Design Systems|Blocks/Card/Dark',
+  parameters: {
+    component: Card,
+    componentSubtitle: 'Displays the card under a dark background',
+  },
   excludeStories: /.*Data$/,
 };
 

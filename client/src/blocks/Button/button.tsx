@@ -1,7 +1,7 @@
 import React from 'react';
 
 // element
-import { BaseButton } from '../../atoms/Button';
+import { BaseButton } from '../../elements/Button';
 
 // block
 import SearchButton from './button.search';
@@ -21,6 +21,9 @@ interface mapProps {
   [key: string]: JSX.Element;
 }
 
+/**
+ * Use a button when you want to perform specific actions
+ **/
 export const Button = ({ type, ...props }: ButtonProps) => {
   if (!type) {
     return <BaseButton {...props} />;

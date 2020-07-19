@@ -5,12 +5,12 @@ import { css } from 'styled-components';
 import { sizes } from '../../styles/breakpoints';
 
 // svg
-import { Icon } from '../../atoms/Icon';
+import { Icon } from '../../elements/Icon';
 
 // element
-import { BaseButton } from '../../atoms/Button';
-import { Text } from '../../atoms/Text';
-import { Box } from '../../atoms/Box';
+import { BaseButton } from '../../elements/Button';
+import { Text } from '../../elements/Text';
+import { Box } from '../../elements/Box';
 
 // type
 import { ButtonProps } from './button';
