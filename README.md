@@ -10,7 +10,7 @@
   <a href="https://circleci.com/gh/kokiebisu/gobnb">
     <img src="https://circleci.com/gh/kokiebisu/gobnb.svg?style=shield" alt="Build Status on CircleCI" />
   </a>
-  <a href="">
+  <a href="https://gobnb-storybook.netlify.app/">
     <img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg" alt="Build Status on CircleCI" />
   </a>
   <br/>
@@ -47,7 +47,9 @@ docker-compose build
 ```
 
 
-## Aspects
+## References
+ - [atomic design](https://bradfrost.com/blog/post/atomic-web-design/)
+ - [Design System for Developers](https://www.learnstorybook.com/design-systems-for-developers/)
 
 ## Development
 
@@ -58,7 +60,8 @@ docker-compose build
 
 | Stacks                                      |                                                                            |
 | ------------------------------------------- | -------------------------------------------------------------------------- |
-| [Typescript](https://www.typescriptlang.org)| A superset of Javascript                                                   |
-| [React](https://reactjs.org)                | A javascript library to create reusable UI components                      |
-
+| [Typescript](https://www.typescriptlang.org)| Superset of Javascript                                                   |
+| [React](https://reactjs.org)                | Library to create reusable UI components                      |
+| [Storybook](https://storybook.js.org)       | Design System tool                                                       |
+| [Go](https://golang.org)                    | Rest Api
 
