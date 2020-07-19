@@ -8,6 +8,5 @@ jobs:
       # Pulls down the code to start a build
       - checkout:
       - run: cd client && yarn install
-      - run: cd client && jest --updateSnapshot
       - run: cd client && yarn test
       - run: cd client && npx chromatic --project-token=vnmckyhfm5k --exit-zero-on-changes
