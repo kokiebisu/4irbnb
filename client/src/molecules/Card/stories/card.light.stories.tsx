@@ -16,7 +16,7 @@ import card3 from '../../../assets/img/card3.jpg';
 import { sizes } from '../../../styles/breakpoints';
 
 export default {
-  title: 'Design Systems|molecules/Card/Light',
+  title: 'Design Systems|Molecules/Card/Light',
   parameters: {
     component: Card,
     componentSubtitle: 'Displays a card under a light background',

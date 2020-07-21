@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { Button } from '../button';
 
 export default {
-  title: 'Design Systems|molecules/Button/Cookie',
+  title: 'Design Systems|Molecules/Button/Cookie',
   parameters: {
     component: Button,
     componentSubtitle:
