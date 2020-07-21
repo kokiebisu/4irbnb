@@ -9,7 +9,7 @@ import { Text } from '../../../atoms/Text';
 import { action } from '@storybook/addon-actions';
 
 export default {
-  title: 'Design Systems|molecules/Button/Base',
+  title: 'Design Systems|Molecules/Button/Base',
   parameters: {
     component: BaseButton,
     componentSubtitle: 'Displays the default button',

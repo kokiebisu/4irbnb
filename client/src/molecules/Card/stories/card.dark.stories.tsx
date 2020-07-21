@@ -13,7 +13,7 @@ import cardmd from '../../../assets/img/darkcard-md.png';
 import cardlg from '../../../assets/img/darkcard-lg.png';
 
 export default {
-  title: 'Design Systems|molecules/Card/Dark',
+  title: 'Design Systems|Molecules/Card/Dark',
   parameters: {
     component: Card,
     componentSubtitle: 'Displays the card under a dark background',

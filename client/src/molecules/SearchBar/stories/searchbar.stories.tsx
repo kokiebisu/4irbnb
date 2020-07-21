@@ -8,7 +8,7 @@ import { Box } from '../../../atoms/Box';
 import { SearchBar } from '../searchbar';
 
 export default {
-  title: 'Design Systems|molecules/SearchBar',
+  title: 'Design Systems|Molecules/SearchBar',
   parameters: {
     component: SearchBar,
     componentSubtitle: 'Displays the searchbars',
