@@ -2,12 +2,12 @@ import React from 'react';
 import { css } from 'styled-components';
 
 // atom
-import { Box } from '../../../elements/Box';
+import { Box } from '../../../atoms/Box';
 
 import Card from '../card.section';
 
 export default {
-  title: 'Design Systems|Blocks/Card/Section',
+  title: 'Design Systems|molecules/Card/Section',
   parameters: {
     component: Card,
     componentSubtitle: 'Displays a card that stretches full width',

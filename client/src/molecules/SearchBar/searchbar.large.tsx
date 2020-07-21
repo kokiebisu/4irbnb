@@ -9,10 +9,10 @@ import { colorpallete } from '../../styles/colorpallete';
 import { Flex } from '../../layout/flex';
 
 // element
-import { Box } from '../../elements/Box';
-import { BaseButton } from '../../elements/Button';
-import { Icon } from '../../elements/Icon';
-import { Text } from '../../elements/Text';
+import { Box } from '../../atoms/Box';
+import { BaseButton } from '../../atoms/Button';
+import { Icon } from '../../atoms/Icon';
+import { Text } from '../../atoms/Text';
 
 type SearchBarProps = {
   onPress: () => void;
