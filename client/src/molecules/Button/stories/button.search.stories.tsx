@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { Button } from '../button';
 
 export default {
-  title: 'Design Systems|Blocks/Button/Search',
+  title: 'Design Systems|Molecules/Button/Search',
   parameters: {
     component: Button,
     componentSubtitle:
