@@ -3,38 +3,43 @@ version: '3.7'
 services:
   client:
     build:
-      context: .
-      dockerfile: Dockerfile
-    networks:
-      - gobnb
-  db:
-    image: postgres
+      context: ./client
+      dockerfile: dev.Dockerfile
+    # networks:
+    #   - gobnb
     ports:
-      - 5432:5432
-    environment:
-      POSTGRES_USER: ken
-      POSTGRES_PASSWORD: kronos111
-      POSTGRES_DB: gobnb
+      - 3000:3000
+    stdin_open: true
     volumes:
-      - database_postgres:/var/lib/postgresql/data
-    networks:
-      - gobnb
+      - ./client:/app
+  # server:
+  #   build:
+  #     context: ./server
+  #     dockerfile: dev.Dockerfile
+  #   volumes:
+  #     - api:/usr/src/app/server
+  #   depends_on:
+  #     - proxy
+  #     - db
+  #   networks:
+  #     - gobnb
+  #   ports:
+  #     - 8080:8080
+  # db:
+  #   image: postgres
+  #   ports:
+  #     - 5432:5432
+  #   environment:
+  #     POSTGRES_USER: ken
+  #     POSTGRES_PASSWORD: kronos111
+  #     POSTGRES_DB: gobnb
+  #   volumes:
+  #     - database_postgres:/var/lib/postgresql/data
+  #   networks:
+  #     - gobnb
+# volumes:
+#   api:
+#   database_postgres:
 
-  server:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - api:/usr/src/app/server
-    depends_on:
-      - proxy
-      - db
-    networks:
-      - gobnb
-
-volumes:
-  api:
-  database_postgres:
-
-networks:
-  gobnb:
+# networks:
+#   gobnb:
