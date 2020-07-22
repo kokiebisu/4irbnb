@@ -5,7 +5,7 @@ import { css, ThemeProvider } from 'styled-components';
 import Card from '../card';
 
 // element
-import { Box } from '../../../elements/Box';
+import { Box } from '../../../atoms/Box';
 
 // img
 import cardsm from '../../../assets/img/darkcard-sm.png';
@@ -13,7 +13,7 @@ import cardmd from '../../../assets/img/darkcard-md.png';
 import cardlg from '../../../assets/img/darkcard-lg.png';
 
 export default {
-  title: 'Design Systems|Blocks/Card/Dark',
+  title: 'Design Systems|Molecules/Card/Dark',
   parameters: {
     component: Card,
     componentSubtitle: 'Displays the card under a dark background',

@@ -5,7 +5,7 @@ import { css } from 'styled-components';
 import Card from '../card';
 
 // element
-import { Box } from '../../../elements/Box';
+import { Box } from '../../../atoms/Box';
 
 // img
 import card1 from '../../../assets/img/card1.jpg';
@@ -16,7 +16,7 @@ import card3 from '../../../assets/img/card3.jpg';
 import { sizes } from '../../../styles/breakpoints';
 
 export default {
-  title: 'Design Systems|Blocks/Card/Light',
+  title: 'Design Systems|Molecules/Card/Light',
   parameters: {
     component: Card,
     componentSubtitle: 'Displays a card under a light background',

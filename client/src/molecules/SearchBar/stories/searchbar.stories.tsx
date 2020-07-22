@@ -2,13 +2,13 @@ import React from 'react';
 import { css } from 'styled-components';
 
 // element
-import { Box } from '../../../elements/Box';
+import { Box } from '../../../atoms/Box';
 
 // block
 import { SearchBar } from '../searchbar';
 
 export default {
-  title: 'Design Systems|Blocks/SearchBar',
+  title: 'Design Systems|Molecules/SearchBar',
   parameters: {
     component: SearchBar,
     componentSubtitle: 'Displays the searchbars',
