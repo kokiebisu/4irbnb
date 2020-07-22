@@ -31,12 +31,12 @@ To fix these problems I decided to take a complete different development flow. I
 
 ## Table of contents
 
-- ✌️[Getting Started](#getting-started)
-- ❄️[Aspects](#aspects)
-  - 🛠[Landing](#landing)
-- 👏[Development](#technology)
-  - 💻[Hashtags](#hashtags)
-  - 💵[Stack](#backers)
+- ✌️ [Getting Started](#getting-started)
+- ❄️ [Aspects](#aspects)
+  - 🛠 [Landing](#landing)
+- 👏 [Development](#technology)
+  - 💻 [Hashtags](#hashtags)
+  - 💵 [Stack](#backers)
 
 ## Getting Started
 
