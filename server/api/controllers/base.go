@@ -36,6 +36,6 @@ func (server *Server) Initialize(host, port, dbname, user, password string) {
 
 // Run starts listening on the specified port
 func (server *Server) Run(address int) {
-	fmt.Printf("Listening on port %d", address)
+	fmt.Printf("Listen on port %d", address)
 	server.App.Listen(address)
 }
