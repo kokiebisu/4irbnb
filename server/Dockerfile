@@ -31,9 +31,6 @@ WORKDIR /usr/app
 # Move the entry point of the file (main.go) into the root folder 
 COPY --from=builder /usr/build/main .
 
-# # Move the .env file to enable reading environmental variables within program
-COPY --from=builder /usr/build/.env .
-
 EXPOSE 8080
 
 CMD ["./main"]
