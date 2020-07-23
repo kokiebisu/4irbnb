@@ -1,4 +1,4 @@
-FROM golang:alpine as builder
+FROM golang:alpine
 
 LABEL maintainer="Kenichi Okiebisu <kenichikona@gmail.com>"
 
@@ -6,7 +6,7 @@ LABEL maintainer="Kenichi Okiebisu <kenichikona@gmail.com>"
 RUN apk update && apk add --no-cache git
 
 # Set the current working directory inside the container
-WORKDIR /usr/build
+WORKDIR /app
 
 # Copy go.mod, go.sum into the container's app directory
 COPY go.mod .
@@ -19,19 +19,7 @@ RUN go mod download
 # Copy all the files to the container's app directory
 COPY . .
 
-# Build the Go app inside the container
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .
-
-## Production
-FROM alpine:latest
-RUN apk --no-cache add ca-certificates
-
-WORKDIR /usr/app
-
-# Move the entry point of the file (main.go) into the root folder 
-COPY --from=builder /usr/build/main .
-
 EXPOSE 8080
 
-CMD ["./main"]
+CMD ["go", "run", "main.go"]
 
