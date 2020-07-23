@@ -31,12 +31,12 @@ To fix these problems I decided to take a complete different development flow. I
 
 ## Table of contents
 
-- ✌️[Getting Started](#getting-started)
-- ❄️[Aspects](#aspects)
-  - 🛠[Landing](#landing)
-- 👏[Development](#technology)
-  - 💻[Hashtags](#hashtags)
-  - 💵[Stack](#backers)
+- ✌️ &nbsp;[Getting Started](#getting-started)
+- ❄️ &nbsp;[Aspects](#aspects)
+  - 🛠 &nbsp;[Landing](#landing)
+- 👏  &nbsp;[Development](#technology)
+  - 💻  &nbsp;[Hashtags](#hashtags)
+  - 💵  &nbsp;[Stack](#backers)
 
 ## Getting Started
 
@@ -46,12 +46,12 @@ It's really easy. But you must have docker installed.:
 docker-compose build
 ```
 
-
 ## References
  - [atomic design](https://bradfrost.com/blog/post/atomic-web-design/)
  - [Design System for Developers](https://www.learnstorybook.com/design-systems-for-developers/)
 
 ## Development
+ - Check out the [Design System](https://gobnb-storybook.netlify.app)
 
 ### Keywords
 - [x] Component Driven Development 
