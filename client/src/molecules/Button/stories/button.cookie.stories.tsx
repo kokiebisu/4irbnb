@@ -1,7 +1,9 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
+import { css } from 'styled-components';
 
 // block
+import { Box } from '../../../atoms/Box';
 import { Button } from '../button';
 
 export default {
@@ -26,10 +28,28 @@ const actionsData = {
   onPress: action('onPress'),
 };
 
-export const base = () => (
-  <Button type='cookie' {...normalData} {...actionsData} />
-);
+export const base = () => {
+  const extend = {
+    wrapper: css`
+      width: 150px;
+    `,
+  };
+  return (
+    <Box styles={extend.wrapper}>
+      <Button type='cookie' {...normalData} {...actionsData} />
+    </Box>
+  );
+};
 
-export const inverse = () => (
-  <Button type='cookie' inverse {...inverseData} {...actionsData} />
-);
+export const inverse = () => {
+  const extend = {
+    wrapper: css`
+      width: 150px;
+    `,
+  };
+  return (
+    <Box styles={extend.wrapper}>
+      <Button type='cookie' inverse {...inverseData} {...actionsData} />
+    </Box>
+  );
+};
