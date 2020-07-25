@@ -7,6 +7,8 @@ import { Button } from '../../molecules/Button/button';
 import { Flex } from '../../layout/flex';
 import { Text } from '../../atoms/Text';
 
+import { sizes } from '../../styles/breakpoints';
+
 export default () => {
   return (
     <Box styles={extend.wrapper}>
@@ -52,14 +54,20 @@ const extend = {
     border-radius: 16px;
   `,
   inner: css`
-    display: flex;
-    justify-content: space-between;
     padding: 20px;
+    @media ${sizes.sm} {
+      display: flex;
+      justify-content: space-between;
+    }
   `,
   content: {
     text: css`
-      width: 60%;
-      margin-right: 20px;
+      width: 100%;
+
+      @media ${sizes.sm} {
+        width: 60%;
+        margin-right: 20px;
+      }
       p {
         font-size: 16px;
         line-height: 1.3;
@@ -68,14 +76,20 @@ const extend = {
     `,
     button: css`
       display: flex;
-      width: 40%;
       align-items: center;
+      width: 100%;
+      margin-top: 15px;
+
+      @media ${sizes.sm} {
+        width: 40%;
+        margin-top: 0px;
+      }
     `,
   },
   buttons: css`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 5px;
+    grid-column-gap: 10px;
     width: 100%;
   `,
 };
