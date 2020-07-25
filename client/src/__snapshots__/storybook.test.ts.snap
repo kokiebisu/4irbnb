@@ -84,7 +84,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Cookie Base 1`] = `
   }
 >
   <button
-    className="sc-AxjAm lbpRGH"
+    className="sc-AxjAm bfbRC"
     onClick={[Function]}
   >
     <p
@@ -108,7 +108,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Cookie Inverse 1`] = `
   }
 >
   <button
-    className="sc-AxjAm dxLjKr"
+    className="sc-AxjAm cjSZpm"
     onClick={[Function]}
   >
     <p
@@ -609,8 +609,62 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
     }
   }
 >
-  <h1>
-    hello
-  </h1>
+  <div
+    className="sc-AxhCb jJLjCh"
+  >
+    <div
+      className="sc-AxhCb kCKgpk"
+    >
+      <div
+        className="sc-AxhCb jldEpv"
+      >
+        <div
+          className="sc-AxhCb jYWyww"
+        >
+          <p
+            className="sc-AxiKw cLOcWK"
+          >
+            We use cookies to help personalize content, tailor and measure ads, and provide a safer experience. By navigating the site, you agree to the use of cookies to collect information on and off Airbnb. Read our Cookie Policy to learn more or go to Cookie Preferences to manage your settings
+          </p>
+        </div>
+        <div
+          className="sc-AxhCb cFjMPQ"
+        >
+          <div
+            className="sc-AxhCb NnEkO"
+          >
+            <div
+              className="sc-AxhCb eYhTuB"
+            >
+              <button
+                className="sc-AxjAm bfbRC"
+                onClick={[Function]}
+              >
+                <p
+                  className="sc-AxiKw DTSNp"
+                >
+                  OK
+                </p>
+              </button>
+            </div>
+            <div
+              className="sc-AxhCb eYhTuB"
+            >
+              <button
+                className="sc-AxjAm cjSZpm"
+                onClick={[Function]}
+              >
+                <p
+                  className="sc-AxiKw hbXxFA"
+                >
+                  Cookie Preferences
+                </p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
