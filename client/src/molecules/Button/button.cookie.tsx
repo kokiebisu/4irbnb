@@ -38,6 +38,7 @@ const common = css`
   font-size: 12px;
   font-weight: 700;
   min-width: 125px;
+  width: 100%;
 `;
 
 const extend = {

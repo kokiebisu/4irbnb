@@ -12,11 +12,11 @@ exports[`Storyshots Design Systems|Molecules/Button/Base Large 1`] = `
   }
 >
   <button
-    className="sc-AxjAm gHPRuo"
+    className="sc-AxirZ epsruj"
     onClick={[Function]}
   >
     <p
-      className="sc-AxiKw cLOcWK"
+      className="sc-AxhCb cuIxYa"
     >
       click
     </p>
@@ -36,11 +36,11 @@ exports[`Storyshots Design Systems|Molecules/Button/Base Medium 1`] = `
   }
 >
   <button
-    className="sc-AxjAm jxutPw"
+    className="sc-AxirZ eWaXyT"
     onClick={[Function]}
   >
     <p
-      className="sc-AxiKw cLOcWK"
+      className="sc-AxhCb cuIxYa"
     >
       click
     </p>
@@ -60,11 +60,11 @@ exports[`Storyshots Design Systems|Molecules/Button/Base Small 1`] = `
   }
 >
   <button
-    className="sc-AxjAm ZtJdt"
+    className="sc-AxirZ jSjmxS"
     onClick={[Function]}
   >
     <p
-      className="sc-AxiKw cLOcWK"
+      className="sc-AxhCb cuIxYa"
     >
       click
     </p>
@@ -83,16 +83,20 @@ exports[`Storyshots Design Systems|Molecules/Button/Cookie Base 1`] = `
     }
   }
 >
-  <button
-    className="sc-AxjAm lbpRGH"
-    onClick={[Function]}
+  <div
+    className="sc-AxjAm iceKch"
   >
-    <p
-      className="sc-AxiKw DTSNp"
+    <button
+      className="sc-AxirZ FGwJZ"
+      onClick={[Function]}
     >
-      OK
-    </p>
-  </button>
+      <p
+        className="sc-AxhCb jhTscF"
+      >
+        OK
+      </p>
+    </button>
+  </div>
 </div>
 `;
 
@@ -107,16 +111,20 @@ exports[`Storyshots Design Systems|Molecules/Button/Cookie Inverse 1`] = `
     }
   }
 >
-  <button
-    className="sc-AxjAm dxLjKr"
-    onClick={[Function]}
+  <div
+    className="sc-AxjAm iceKch"
   >
-    <p
-      className="sc-AxiKw hbXxFA"
+    <button
+      className="sc-AxirZ hQdWNJ"
+      onClick={[Function]}
     >
-      Cookie Preferences
-    </p>
-  </button>
+      <p
+        className="sc-AxhCb VjwRU"
+      >
+        Cookie Preferences
+      </p>
+    </button>
+  </div>
 </div>
 `;
 
@@ -132,14 +140,14 @@ exports[`Storyshots Design Systems|Molecules/Button/Search Base 1`] = `
   }
 >
   <button
-    className="sc-AxjAm eukCWE"
+    className="sc-AxirZ kWzJJT"
     onClick={[Function]}
   >
     <div
-      className="sc-AxhCb guAUfP"
+      className="sc-AxjAm hZZDgA"
     >
       <div
-        className="sc-AxirZ kzXchU"
+        className="sc-AxiKw fCvwts"
       >
         <svg
           viewBox="0 0 56.966 56.966"
@@ -150,7 +158,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Search Base 1`] = `
         </svg>
       </div>
       <p
-        className="sc-AxiKw porOw"
+        className="sc-AxhCb uaKk"
       >
         Search
       </p>
@@ -171,13 +179,13 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Large 1`] = `
   }
 >
   <div
-    className="sc-AxhCb bdLUAq"
+    className="sc-AxjAm gfmURB"
   >
     <div
-      className="sc-AxhCb ipfxuP"
+      className="sc-AxjAm kAPhWw"
     >
       <div
-        className="sc-AxhCb hpiXzu"
+        className="sc-AxjAm jcqOdB"
       >
         <img
           alt="card-image"
@@ -186,10 +194,10 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Large 1`] = `
         />
       </div>
       <div
-        className="sc-AxhCb cZgEAi"
+        className="sc-AxjAm bXaHUx"
       >
         <p
-          className="sc-AxiKw kRqGEM"
+          className="sc-AxhCb cJSAZM"
         >
           Learn favorite summer recipes with celebrated chef Roze Traore
         </p>
@@ -211,13 +219,13 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Medium 1`] = `
   }
 >
   <div
-    className="sc-AxhCb cHIEcy"
+    className="sc-AxjAm hFICtt"
   >
     <div
-      className="sc-AxhCb ipfxuP"
+      className="sc-AxjAm kAPhWw"
     >
       <div
-        className="sc-AxhCb hpiXzu"
+        className="sc-AxjAm jcqOdB"
       >
         <img
           alt="card-image"
@@ -226,10 +234,10 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Medium 1`] = `
         />
       </div>
       <div
-        className="sc-AxhCb eBnqhK"
+        className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxiKw kRqGEM"
+          className="sc-AxhCb cJSAZM"
         >
           Fruits de mer with Michelin chef Marc Favier
         </p>
@@ -251,13 +259,13 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Small 1`] = `
   }
 >
   <div
-    className="sc-AxhCb kICKCZ"
+    className="sc-AxjAm kUkfrO"
   >
     <div
-      className="sc-AxhCb ipfxuP"
+      className="sc-AxjAm kAPhWw"
     >
       <div
-        className="sc-AxhCb hpiXzu"
+        className="sc-AxjAm jcqOdB"
       >
         <img
           alt="card-image"
@@ -266,10 +274,10 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Small 1`] = `
         />
       </div>
       <div
-        className="sc-AxhCb eBnqhK"
+        className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxiKw kRqGEM"
+          className="sc-AxhCb cJSAZM"
         >
           Fruits de mer with Michelin chef Marc Favier
         </p>
@@ -291,13 +299,13 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
   }
 >
   <div
-    className="sc-AxhCb hDjEmF"
+    className="sc-AxjAm bUwkzS"
   >
     <div
-      className="sc-AxhCb fMpaBo"
+      className="sc-AxjAm ckXsfb"
     >
       <div
-        className="sc-AxhCb hpiXzu"
+        className="sc-AxjAm jcqOdB"
       >
         <img
           alt="card-image"
@@ -306,25 +314,25 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
         />
       </div>
       <div
-        className="sc-AxhCb eBnqhK"
+        className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxiKw cCngPp"
+          className="sc-AxhCb kLXMrl"
         >
           Online experiences
         </p>
         <p
-          className="sc-AxiKw eqRQNp"
+          className="sc-AxhCb cBMJmN"
         >
           Unique activities we can do together, led by a world of hosts
         </p>
       </div>
     </div>
     <div
-      className="sc-AxhCb fMpaBo"
+      className="sc-AxjAm ckXsfb"
     >
       <div
-        className="sc-AxhCb hpiXzu"
+        className="sc-AxjAm jcqOdB"
       >
         <img
           alt="card-image"
@@ -333,25 +341,25 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
         />
       </div>
       <div
-        className="sc-AxhCb eBnqhK"
+        className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxiKw cCngPp"
+          className="sc-AxhCb kLXMrl"
         >
           Your next getaway
         </p>
         <p
-          className="sc-AxiKw eqRQNp"
+          className="sc-AxhCb cBMJmN"
         >
           Unplug or reconnect on a trip that's just a short drive away
         </p>
       </div>
     </div>
     <div
-      className="sc-AxhCb fMpaBo"
+      className="sc-AxjAm ckXsfb"
     >
       <div
-        className="sc-AxhCb hpiXzu"
+        className="sc-AxjAm jcqOdB"
       >
         <img
           alt="card-image"
@@ -360,15 +368,15 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
         />
       </div>
       <div
-        className="sc-AxhCb eBnqhK"
+        className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxiKw cCngPp"
+          className="sc-AxhCb kLXMrl"
         >
           Entire homes
         </p>
         <p
-          className="sc-AxiKw eqRQNp"
+          className="sc-AxhCb cBMJmN"
         >
           Comfortable private places, with room for friends or family
         </p>
@@ -390,13 +398,13 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single With Title 1`] = 
   }
 >
   <div
-    className="sc-AxhCb crnaHo"
+    className="sc-AxjAm htNMvP"
   >
     <div
-      className="sc-AxhCb fMpaBo"
+      className="sc-AxjAm ckXsfb"
     >
       <div
-        className="sc-AxhCb hpiXzu"
+        className="sc-AxjAm jcqOdB"
       >
         <img
           alt="card-image"
@@ -405,15 +413,15 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single With Title 1`] = 
         />
       </div>
       <div
-        className="sc-AxhCb eBnqhK"
+        className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxiKw cCngPp"
+          className="sc-AxhCb kLXMrl"
         >
           Online experiences
         </p>
         <p
-          className="sc-AxiKw eqRQNp"
+          className="sc-AxhCb cBMJmN"
         >
           Unique activities we can do together, led by a world of hosts
         </p>
@@ -435,13 +443,13 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single Without Title 1`]
   }
 >
   <div
-    className="sc-AxhCb crnaHo"
+    className="sc-AxjAm htNMvP"
   >
     <div
-      className="sc-AxhCb fMpaBo"
+      className="sc-AxjAm ckXsfb"
     >
       <div
-        className="sc-AxhCb hpiXzu"
+        className="sc-AxjAm jcqOdB"
       >
         <img
           alt="card-image"
@@ -450,10 +458,10 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single Without Title 1`]
         />
       </div>
       <div
-        className="sc-AxhCb eBnqhK"
+        className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxiKw eqRQNp"
+          className="sc-AxhCb cBMJmN"
         >
           Unique activities we can do together, led by a world of hosts
         </p>
@@ -475,29 +483,29 @@ exports[`Storyshots Design Systems|Molecules/Card/Section Black Lives Matter 1`]
   }
 >
   <div
-    className="sc-AxhCb bsNBui"
+    className="sc-AxjAm zwqux"
   >
     <div
-      className="sc-AxhCb dKQJaW"
+      className="sc-AxjAm heQYgx"
     >
       <div
-        className="sc-AxhCb jPieBM"
+        className="sc-AxjAm eAyVbj"
       >
         <div
-          className="sc-AxhCb kdbIet"
+          className="sc-AxjAm dtrJa"
         >
           <div
-            className="sc-AxhCb hVWeUF"
+            className="sc-AxjAm Yuxai"
           >
             We stand with #BlackLivesMatter
           </div>
           <div
-            className="sc-AxhCb kGIUxF"
+            className="sc-AxjAm iftlja"
           >
             We believe in a world where everyone belongs. We reject all racism that stands in the way.
           </div>
           <div
-            className="sc-AxhCb lblAfN"
+            className="sc-AxjAm fKwtEC"
           >
             Donate
           </div>
@@ -520,17 +528,17 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Mobile 1`] = `
   }
 >
   <div
-    className="sc-AxhCb brJaSX"
+    className="sc-AxjAm fjaeUw"
   >
     <button
-      className="sc-AxjAm gXNtTd"
+      className="sc-AxirZ bieduq"
       onClick={[Function]}
     >
       <div
         className="sc-AxgMl clxCuj"
       >
         <div
-          className="sc-AxirZ cCrTiP"
+          className="sc-AxiKw lahuVH"
         >
           <svg
             viewBox="0 0 56.966 56.966"
@@ -541,10 +549,10 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Mobile 1`] = `
           </svg>
         </div>
         <div
-          className="sc-AxhCb hsEcKD"
+          className="sc-AxjAm gzylxM"
         >
           <p
-            className="sc-AxiKw cLOcWK"
+            className="sc-AxhCb cuIxYa"
           >
             Where are you going?
           </p>
@@ -567,14 +575,14 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Normal 1`] = `
   }
 >
   <button
-    className="sc-AxjAm focuLH"
+    className="sc-AxirZ eAiNpM"
     onClick={[Function]}
   >
     <div
       className="sc-AxgMl hyXtBT"
     >
       <div
-        className="sc-AxirZ kDsUQX"
+        className="sc-AxiKw goKRxr"
       >
         <svg
           viewBox="0 0 56.966 56.966"
@@ -585,10 +593,10 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Normal 1`] = `
         </svg>
       </div>
       <div
-        className="sc-AxhCb knzivN"
+        className="sc-AxjAm hVARuK"
       >
         <p
-          className="sc-AxiKw cLOcWK"
+          className="sc-AxhCb cuIxYa"
         >
           Add a location
         </p>
@@ -609,8 +617,62 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
     }
   }
 >
-  <h1>
-    hello
-  </h1>
+  <div
+    className="sc-AxjAm bkttMG"
+  >
+    <div
+      className="sc-AxjAm icBPAH"
+    >
+      <div
+        className="sc-AxjAm dycSZs"
+      >
+        <div
+          className="sc-AxjAm ieaSbn"
+        >
+          <p
+            className="sc-AxhCb cuIxYa"
+          >
+            We use cookies to help personalize content, tailor and measure ads, and provide a safer experience. By navigating the site, you agree to the use of cookies to collect information on and off Airbnb. Read our Cookie Policy to learn more or go to Cookie Preferences to manage your settings
+          </p>
+        </div>
+        <div
+          className="sc-AxjAm gTMHyH"
+        >
+          <div
+            className="sc-AxjAm ivUTch"
+          >
+            <div
+              className="sc-AxjAm hyNcgC"
+            >
+              <button
+                className="sc-AxirZ FGwJZ"
+                onClick={[Function]}
+              >
+                <p
+                  className="sc-AxhCb jhTscF"
+                >
+                  OK
+                </p>
+              </button>
+            </div>
+            <div
+              className="sc-AxjAm hyNcgC"
+            >
+              <button
+                className="sc-AxirZ hQdWNJ"
+                onClick={[Function]}
+              >
+                <p
+                  className="sc-AxhCb VjwRU"
+                >
+                  Cookie Preferences
+                </p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
