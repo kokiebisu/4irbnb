@@ -22,19 +22,21 @@ export default () => {
         </Box>
         <Box styles={extend.content.button}>
           <Box styles={extend.buttons}>
-            <Box styles={extend.ok}>
+            <Box>
               <Button
                 type='cookie'
                 name='OK'
                 onPress={() => console.log('ok')}
               />
             </Box>
-            <Button
-              inverse
-              type='cookie'
-              name='Cookie Preferences'
-              onPress={() => console.log('cookie preferences')}
-            />
+            <Box>
+              <Button
+                inverse
+                type='cookie'
+                name='Cookie Preferences'
+                onPress={() => console.log('cookie preferences')}
+              />
+            </Box>
           </Box>
         </Box>
       </Box>
@@ -65,13 +67,15 @@ const extend = {
       }
     `,
     button: css`
+      display: flex;
       width: 40%;
+      align-items: center;
     `,
   },
   buttons: css`
-    display: flex;
-  `,
-  ok: css`
-    margin-right: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 5px;
+    width: 100%;
   `,
 };
