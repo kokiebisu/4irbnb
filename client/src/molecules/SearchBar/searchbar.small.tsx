@@ -21,10 +21,12 @@ type SearchBarProps = {
 export default ({ ...props }: SearchBarProps) => {
   return (
     <BaseButton styles={extend.wrapper} {...props}>
-      <Flex justifyCenter alignCenter>
-        <Icon name='search' styles={extend.icon} />
+      <Flex justifyBetween alignCenter>
         <Box styles={extend.text}>
-          <Text>Add a location</Text>
+          <Text>Start your search</Text>
+        </Box>
+        <Box styles={extend.iconwrapper}>
+          <Icon name='search' styles={extend.icon} />
         </Box>
       </Flex>
     </BaseButton>
@@ -32,15 +34,15 @@ export default ({ ...props }: SearchBarProps) => {
 };
 
 const primary = theme('mode', {
-  light: colorpallete.gray__8,
+  light: [colorpallete.pink__4, colorpallete.pink__5, colorpallete.pink__6],
 });
 
 const secondary = theme('mode', {
   light: colorpallete.gray__1,
 });
 
-const tertiary = theme('mode', {
-  light: colorpallete.red__5,
+const white = theme('mode', {
+  light: colorpallete.white,
 });
 
 const extend = {
@@ -49,19 +51,33 @@ const extend = {
     border: 1px solid ${secondary};
     height: 50px;
     max-width: 100%;
+    padding: 0 7px 0 18px;
     min-width: 220px;
     border-radius: 24px;
   `,
+  iconwrapper: css`
+    width: 32px;
+    height: 32px;
+    background: -webkit-linear-gradient(
+      right,
+      rgb(230, 30, 77) 0%,
+      rgb(227, 28, 95) 50%,
+      rgb(215, 4, 102) 100%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  `,
   icon: css`
     position: relative;
-    top: 2px;
-    margin-right: 16px;
+
     & svg {
-      width: 16px;
-      height: 16px;
-      stroke: ${tertiary};
+      width: 12px;
+      height: 12px;
+      stroke: ${white};
       & path {
-        fill: ${tertiary};
+        fill: ${white};
         stroke-width: 2;
       }
     }
@@ -71,7 +87,7 @@ const extend = {
       color: ${primary};
       font-family: 'Airbnb-Cereal';
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 500;
     }
   `,
 };

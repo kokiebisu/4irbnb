@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 interface FlexProps {
   justifyCenter?: boolean;
   alignCenter?: boolean;
+  justifyBetween?: boolean;
 }
 
 export const Flex = styled.div<FlexProps>`
@@ -17,5 +18,11 @@ export const Flex = styled.div<FlexProps>`
     alignCenter &&
     css`
       align-items: center;
+    `}
+
+  ${({ justifyBetween }) =>
+    justifyBetween &&
+    css`
+      justify-content: space-between;
     `}
 `;
