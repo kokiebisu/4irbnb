@@ -17,6 +17,7 @@ interface StyledProps {
   sm?: boolean;
   md?: boolean;
   lg?: boolean;
+  inverse?: boolean;
 }
 
 const Element = styled.button<StyledProps>`
@@ -38,6 +39,12 @@ const Element = styled.button<StyledProps>`
     lg &&
     css`
       padding: 15px 100px;
+    `};
+  ${({ inverse }) =>
+    inverse &&
+    css`
+      border: 1px solid black;
+      background-color: transparent;
     `};
 `;
 

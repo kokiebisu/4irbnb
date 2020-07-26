@@ -36,3 +36,7 @@ export const Medium = () => {
 export const Large = () => {
   return <BaseButton lg {...buttonData} {...actionsData} />;
 };
+
+export const SmallInverse = () => {
+  return <BaseButton lg inverse {...buttonData} {...actionsData} />;
+};
