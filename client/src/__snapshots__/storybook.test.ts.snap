@@ -12,7 +12,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Base Large 1`] = `
   }
 >
   <button
-    className="sc-AxirZ epsruj"
+    className="sc-AxirZ lgzomW"
     onClick={[Function]}
   >
     <p
@@ -36,7 +36,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Base Medium 1`] = `
   }
 >
   <button
-    className="sc-AxirZ eWaXyT"
+    className="sc-AxirZ ehKCIm"
     onClick={[Function]}
   >
     <p
@@ -60,7 +60,31 @@ exports[`Storyshots Design Systems|Molecules/Button/Base Small 1`] = `
   }
 >
   <button
-    className="sc-AxirZ jSjmxS"
+    className="sc-AxirZ fzJlpv"
+    onClick={[Function]}
+  >
+    <p
+      className="sc-AxhCb cuIxYa"
+    >
+      click
+    </p>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Design Systems|Molecules/Button/Base Small Inverse 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
+    }
+  }
+>
+  <button
+    className="sc-AxirZ jIfvdX"
     onClick={[Function]}
   >
     <p
@@ -87,7 +111,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Cookie Base 1`] = `
     className="sc-AxjAm iceKch"
   >
     <button
-      className="sc-AxirZ FGwJZ"
+      className="sc-AxirZ kwHQpA"
       onClick={[Function]}
     >
       <p
@@ -115,7 +139,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Cookie Inverse 1`] = `
     className="sc-AxjAm iceKch"
   >
     <button
-      className="sc-AxirZ hQdWNJ"
+      className="sc-AxirZ gJMSw"
       onClick={[Function]}
     >
       <p
@@ -140,7 +164,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Search Base 1`] = `
   }
 >
   <button
-    className="sc-AxirZ kWzJJT"
+    className="sc-AxirZ gwpFde"
     onClick={[Function]}
   >
     <div
@@ -531,7 +555,7 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Mobile 1`] = `
     className="sc-AxjAm fjaeUw"
   >
     <button
-      className="sc-AxirZ bieduq"
+      className="sc-AxirZ gBUFfL"
       onClick={[Function]}
     >
       <div
@@ -575,7 +599,7 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Normal 1`] = `
   }
 >
   <button
-    className="sc-AxirZ gTEfPI"
+    className="sc-AxirZ iAGYQN"
     onClick={[Function]}
   >
     <div
@@ -649,7 +673,7 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
               className="sc-AxjAm hyNcgC"
             >
               <button
-                className="sc-AxirZ FGwJZ"
+                className="sc-AxirZ kwHQpA"
                 onClick={[Function]}
               >
                 <p
@@ -663,7 +687,7 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
               className="sc-AxjAm hyNcgC"
             >
               <button
-                className="sc-AxirZ hQdWNJ"
+                className="sc-AxirZ gJMSw"
                 onClick={[Function]}
               >
                 <p
