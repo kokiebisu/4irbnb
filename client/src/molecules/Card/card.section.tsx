@@ -2,11 +2,11 @@ import React from 'react';
 import { css } from 'styled-components';
 import theme from 'styled-theming';
 
-// element
-import { Box } from '../../atoms/Box';
+// atoms
+import { Box } from 'atoms/Box';
 
-// color
-import { colorpallete } from '../../styles/colorpallete';
+// colors
+import { colorpallete } from 'styles/colorpallete';
 
 type CardProps = {
   title?: string;
