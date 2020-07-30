@@ -23,13 +23,12 @@ export const Globe = () => {
 
 export const BottomArrow = () => {
   return (
-    <svg viewBox='0 0 9 6'>
-      <path
-        d='M1 1L4.5 4.5L8 1'
-        strokeWidth='1.5'
-        strokeLinecap='round'
-        strokeLinejoin='round'
-      />
+    <svg viewBox='0 0 256 256'>
+      <g>
+        <g>
+          <polygon points='225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		' />
+        </g>
+      </g>
     </svg>
   );
 };
