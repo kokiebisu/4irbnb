@@ -2,14 +2,13 @@ import React from 'react';
 import { css } from 'styled-components';
 
 // atoms
-import { Text } from 'atoms/Text';
-import { Box } from 'atoms/Box';
+import { Text, Box } from 'atoms';
 
 // molecules
-import { Button } from 'molecules/Button/button';
+import { CustomButton } from 'molecules/Button';
 
 // breakpoints
-import { sizes } from 'styles/breakpoints';
+import { sizes } from 'styles';
 
 export default () => {
   return (
@@ -26,8 +25,12 @@ export default () => {
         </Box>
         <Box styles={extend.content.button}>
           <Box styles={extend.buttons}>
-            <Button type='cookie' name='OK' onPress={() => console.log('ok')} />
-            <Button
+            <CustomButton
+              type='cookie'
+              name='OK'
+              onPress={() => console.log('ok')}
+            />
+            <CustomButton
               inverse
               type='cookie'
               name='Cookie Preferences'

@@ -1,4 +1,4 @@
-export const colorpallete = {
+export default {
   white: '#ffffff',
   white__1: '#FCFCFC',
   bluegreen__5: '#008489',

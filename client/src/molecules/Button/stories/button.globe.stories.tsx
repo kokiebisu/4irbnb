@@ -1,17 +1,13 @@
 import React from 'react';
 import { css } from 'styled-components';
 import { action } from '@storybook/addon-actions';
-
-// atoms
-import { Box } from 'atoms/Box';
-
-// molecules
-import { Button } from 'molecules/Button/button';
+import { Box } from 'atoms';
+import { CustomButton } from 'molecules/Button';
 
 export default {
   title: 'Design Systems|Molecules/Button/Globe',
   parameters: {
-    component: Button,
+    component: CustomButton,
     componentSubtitle:
       'Displays the search button used to look for a place to stay',
   },
@@ -35,7 +31,7 @@ export const base = () => {
   };
   return (
     <Box styles={extend.wrapper}>
-      <Button type='globe' {...actionsData} />
+      <CustomButton type='globe' {...actionsData} />
     </Box>
   );
 };

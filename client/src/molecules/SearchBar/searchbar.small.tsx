@@ -3,16 +3,13 @@ import { css } from 'styled-components';
 import theme from 'styled-theming';
 
 // layout
-import { Flex } from 'layout/flex';
+import { Flex } from 'layout';
 
 // element
-import { Icon } from 'atoms/Icon';
-import { Box } from 'atoms/Box';
-import { BaseButton } from 'atoms/Button';
-import { Text } from 'atoms/Text';
+import { Icon, Box, Button, Text } from 'atoms';
 
 // colors
-import { colorpallete } from 'styles/colorpallete';
+import { colors } from 'styles';
 
 type SearchBarProps = {
   onPress: () => void;
@@ -20,7 +17,7 @@ type SearchBarProps = {
 
 export default ({ ...props }: SearchBarProps) => {
   return (
-    <BaseButton styles={extend.wrapper} {...props}>
+    <Button styles={extend.wrapper} {...props}>
       <Flex justifyBetween alignCenter>
         <Box styles={extend.text}>
           <Text>Start your search</Text>
@@ -29,20 +26,20 @@ export default ({ ...props }: SearchBarProps) => {
           <Icon name='Search' styles={extend.icon} />
         </Box>
       </Flex>
-    </BaseButton>
+    </Button>
   );
 };
 
 const primary = theme('mode', {
-  light: [colorpallete.pink__4, colorpallete.pink__5, colorpallete.pink__6],
+  light: [colors.pink__4, colors.pink__5, colors.pink__6],
 });
 
 const secondary = theme('mode', {
-  light: colorpallete.gray__1,
+  light: colors.gray__1,
 });
 
 const white = theme('mode', {
-  light: colorpallete.white,
+  light: colors.white,
 });
 
 const extend = {

@@ -22,6 +22,10 @@ exports[`Base Card renders correctly with title 1`] = `
   padding: 0 18px 12px 18px;
 }
 
+.c2 {
+  width: 100%;
+}
+
 .c4 {
   padding-top: 2px;
   font-size: 13px;
@@ -29,10 +33,6 @@ exports[`Base Card renders correctly with title 1`] = `
   line-height: 1.4;
   margin: 0;
   font-family: 'Airbnb-Cereal';
-}
-
-.c2 {
-  width: 100%;
 }
 
 <div
@@ -81,6 +81,10 @@ exports[`Base Card renders correctly without title 1`] = `
   padding: 0 18px 12px 18px;
 }
 
+.c2 {
+  width: 100%;
+}
+
 .c4 {
   padding-top: 2px;
   font-size: 13px;
@@ -88,10 +92,6 @@ exports[`Base Card renders correctly without title 1`] = `
   line-height: 1.4;
   margin: 0;
   font-family: 'Airbnb-Cereal';
-}
-
-.c2 {
-  width: 100%;
 }
 
 <div

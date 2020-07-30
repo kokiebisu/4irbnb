@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface ElementProps {
+  children?: React.ReactNode;
   styles?: any;
 }
 
@@ -13,6 +14,6 @@ const Element = styled.div<StyledProps>`
   ${({ styles }) => styles}
 `;
 
-export const Box: React.FC<ElementProps> = ({ children, ...props }) => {
+export default ({ children, ...props }: ElementProps) => {
   return <Element {...props}>{children}</Element>;
 };

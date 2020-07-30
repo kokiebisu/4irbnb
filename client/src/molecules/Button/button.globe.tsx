@@ -1,32 +1,24 @@
 import React from 'react';
 import { css } from 'styled-components';
-
-// atoms
-import { Icon } from 'atoms/Icon';
-import { BaseButton } from 'atoms/Button';
-import { Box } from 'atoms/Box';
-
-import { Flex } from 'layout/flex';
-
-// type
-import { ButtonProps } from 'molecules/Button/button';
+import { Icon, Button } from 'atoms';
+import { Flex } from 'layout';
+import { colors } from 'styles';
+import { ButtonProps } from 'molecules/Button';
 import theme from 'styled-theming';
-
-import { colorpallete } from 'styles/colorpallete';
 
 export default ({ name, ...props }: ButtonProps) => {
   return (
-    <BaseButton styles={extend.wrapper} {...props}>
+    <Button styles={extend.wrapper} {...props}>
       <Flex alignCenter>
         <Icon styles={extend.icon.globe} name='Globe' />
         <Icon styles={extend.icon.arrow} name='BottomArrow' />
       </Flex>
-    </BaseButton>
+    </Button>
   );
 };
 
 const stroke = theme('mode', {
-  light: colorpallete.white,
+  light: colors.white,
 });
 
 const extend = {
