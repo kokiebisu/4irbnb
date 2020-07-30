@@ -1,8 +1,11 @@
 import React from 'react';
 import { css } from 'styled-components';
 
-import { Box } from '../../../atoms/Box';
-import { Notification } from '../notification';
+// atoms
+import { Box } from 'atoms/Box';
+
+// organisms
+import { Notification } from 'organisms/Notification/notification';
 
 export default {
   title: 'Design Systems|Organisms/Notification/Cookie',
