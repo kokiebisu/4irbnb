@@ -2,12 +2,12 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 
 // molecules
-import { Button } from 'molecules/Button/button';
+import { CustomButton } from 'molecules/Button/button';
 
 export default {
   title: 'Design Systems|Molecules/Button/Search',
   parameters: {
-    component: Button,
+    component: CustomButton,
     componentSubtitle:
       'Displays the search button used to look for a place to stay',
   },
@@ -23,5 +23,5 @@ const actionsData = {
 };
 
 export const base = () => {
-  return <Button type='search' sm {...data} {...actionsData} />;
+  return <CustomButton type='search' sm {...data} {...actionsData} />;
 };

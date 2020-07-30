@@ -5,10 +5,7 @@ import { css } from 'styled-components';
 import { sizes } from '../../styles/breakpoints';
 
 // atoms
-import { Icon } from 'atoms/Icon';
-import { BaseButton } from 'atoms/Button';
-import { Text } from 'atoms/Text';
-import { Box } from 'atoms/Box';
+import { Icon, Button, Text, Box } from 'atoms';
 
 // type
 import { ButtonProps } from 'molecules/Button/button';
