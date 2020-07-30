@@ -5,7 +5,7 @@ import { css } from 'styled-components';
 import { Text, Box } from 'atoms';
 
 // molecules
-import { CustomButton } from 'molecules/Button/button';
+import { CustomButton } from 'molecules/Button';
 
 // breakpoints
 import { sizes } from 'styles/breakpoints';

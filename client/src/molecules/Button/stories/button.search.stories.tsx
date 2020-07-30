@@ -2,7 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 
 // molecules
-import { CustomButton } from 'molecules/Button/button';
+import { CustomButton } from 'molecules/Button';
 
 export default {
   title: 'Design Systems|Molecules/Button/Search',
