@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 import theme from 'styled-theming';
 
 // color
-import { colorpallete } from 'styles/colorpallete';
+import { colors } from 'styles';
 
 // layout
 import { Flex } from 'layout';
@@ -29,11 +29,11 @@ export default ({ ...props }: SearchBarProps) => {
 };
 
 const primary = theme('mode', {
-  light: colorpallete.gray__5,
+  light: colors.gray__5,
 });
 
 const secondary = theme('mode', {
-  light: colorpallete.gray__7,
+  light: colors.gray__7,
 });
 
 const extend = {

@@ -6,7 +6,7 @@ import theme from 'styled-theming';
 import { Box } from 'atoms';
 
 // colors
-import { colorpallete } from 'styles/colorpallete';
+import { colors } from 'styles';
 
 type CardProps = {
   title?: string;
@@ -29,13 +29,13 @@ export default ({ title, description, option, ...props }: CardProps) => {
 };
 
 const background = theme('mode', {
-  light: colorpallete.black,
-  dark: colorpallete.white,
+  light: colors.black,
+  dark: colors.white,
 });
 
 const primary = theme('mode', {
-  light: colorpallete.white,
-  dark: colorpallete.black,
+  light: colors.white,
+  dark: colors.black,
 });
 
 const extend = {

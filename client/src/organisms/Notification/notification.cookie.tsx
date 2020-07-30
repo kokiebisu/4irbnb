@@ -8,7 +8,7 @@ import { Text, Box } from 'atoms';
 import { CustomButton } from 'molecules/Button';
 
 // breakpoints
-import { sizes } from 'styles/breakpoints';
+import { sizes } from 'styles';
 
 export default () => {
   return (

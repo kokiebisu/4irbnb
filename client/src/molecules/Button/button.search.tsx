@@ -2,13 +2,13 @@ import React from 'react';
 import { css } from 'styled-components';
 
 // breakpoints
-import { sizes } from '../../styles/breakpoints';
+import { sizes } from 'styles';
 
 // atoms
 import { Icon, Button, Text, Box } from 'atoms';
 
 // type
-import { ButtonProps } from 'molecules/Button/button';
+import { ButtonProps } from 'molecules/Button';
 
 export default ({ name, ...props }: ButtonProps) => {
   return (
