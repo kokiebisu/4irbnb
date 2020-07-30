@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CookieNotification from './notification.cookie';
+import CookieNotification from 'organisms/Notification/notification.cookie';
 
 export type NotificationProps = {
   type?: string;

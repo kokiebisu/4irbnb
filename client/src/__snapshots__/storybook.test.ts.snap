@@ -516,20 +516,20 @@ exports[`Storyshots Design Systems|Molecules/Card/Section Black Lives Matter 1`]
         className="sc-AxjAm eAyVbj"
       >
         <div
-          className="sc-AxjAm dtrJa"
+          className="sc-AxjAm hAsXji"
         >
           <div
-            className="sc-AxjAm Yuxai"
+            className="sc-AxjAm cocgVm"
           >
             We stand with #BlackLivesMatter
           </div>
           <div
-            className="sc-AxjAm iftlja"
+            className="sc-AxjAm eeNAti"
           >
             We believe in a world where everyone belongs. We reject all racism that stands in the way.
           </div>
           <div
-            className="sc-AxjAm fKwtEC"
+            className="sc-AxjAm hAnyuu"
           >
             Donate
           </div>
@@ -669,34 +669,26 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
           <div
             className="sc-AxjAm ivUTch"
           >
-            <div
-              className="sc-AxjAm hyNcgC"
+            <button
+              className="sc-AxirZ kwHQpA"
+              onClick={[Function]}
             >
-              <button
-                className="sc-AxirZ kwHQpA"
-                onClick={[Function]}
+              <p
+                className="sc-AxhCb jhTscF"
               >
-                <p
-                  className="sc-AxhCb jhTscF"
-                >
-                  OK
-                </p>
-              </button>
-            </div>
-            <div
-              className="sc-AxjAm hyNcgC"
+                OK
+              </p>
+            </button>
+            <button
+              className="sc-AxirZ gJMSw"
+              onClick={[Function]}
             >
-              <button
-                className="sc-AxirZ gJMSw"
-                onClick={[Function]}
+              <p
+                className="sc-AxhCb VjwRU"
               >
-                <p
-                  className="sc-AxhCb VjwRU"
-                >
-                  Cookie Preferences
-                </p>
-              </button>
-            </div>
+                Cookie Preferences
+              </p>
+            </button>
           </div>
         </div>
       </div>

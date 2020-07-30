@@ -3,16 +3,16 @@ import { css } from 'styled-components';
 import theme from 'styled-theming';
 
 // layout
-import { Flex } from '../../layout/flex';
+import { Flex } from 'layout/flex';
 
 // element
-import { Icon } from '../../atoms/Icon';
-import { Box } from '../../atoms/Box';
-import { BaseButton } from '../../atoms/Button';
-import { Text } from '../../atoms/Text';
+import { Icon } from 'atoms/Icon';
+import { Box } from 'atoms/Box';
+import { BaseButton } from 'atoms/Button';
+import { Text } from 'atoms/Text';
 
-// colorpallete
-import { colorpallete } from '../../styles/colorpallete';
+// colors
+import { colorpallete } from 'styles/colorpallete';
 
 type SearchBarProps = {
   onPress: () => void;

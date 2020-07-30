@@ -1,7 +1,9 @@
 import React from 'react';
-import { SearchBar } from '../searchbar';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
+
+// molecules
+import { SearchBar } from 'molecules/SearchBar/searchbar';
 
 describe('Searchbar', () => {
   it('renders correctly with mobile size', () => {

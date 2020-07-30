@@ -2,9 +2,11 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { css } from 'styled-components';
 
-// block
-import { Box } from '../../../atoms/Box';
-import { Button } from '../button';
+// atoms
+import { Box } from 'atoms/Box';
+
+// molecules
+import { Button } from 'molecules/Button/button';
 
 export default {
   title: 'Design Systems|Molecules/Button/Cookie',

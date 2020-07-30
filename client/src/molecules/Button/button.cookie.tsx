@@ -2,9 +2,11 @@ import React from 'react';
 import { css } from 'styled-components';
 import theme from 'styled-theming';
 
-// element
-import { BaseButton } from '../../atoms/Button';
-import { Text } from '../../atoms/Text';
+// atoms
+import { BaseButton } from 'atoms/Button';
+import { Text } from 'atoms/Text';
+
+// colors
 import { colorpallete } from '../../styles/colorpallete';
 
 // type
