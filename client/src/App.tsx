@@ -1,7 +1,8 @@
 import React from 'react';
+import { Text } from 'atoms/Text';
 
 function App() {
-  return <div>nothing yet now what</div>;
+  return <Text>hello</Text>;
 }
 
 export default App;
