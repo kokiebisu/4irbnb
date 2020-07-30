@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 // molecules
-import { SearchBar } from 'molecules/SearchBar/searchbar';
+import { SearchBar } from 'molecules/SearchBar';
 
 describe('Searchbar', () => {
   it('renders correctly with mobile size', () => {

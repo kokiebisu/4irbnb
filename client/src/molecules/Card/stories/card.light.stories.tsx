@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from 'styled-components';
 
 // molecules
-import Card from 'molecules/Card/card';
+import Card from 'molecules/Card';
 
 // atoms
 import { Box } from 'atoms';
@@ -13,7 +13,7 @@ import card2 from 'assets/img/card2.jpg';
 import card3 from 'assets/img/card3.jpg';
 
 // breakpoint
-import { sizes } from '../../../styles/breakpoints';
+import { sizes } from 'styles/breakpoints';
 
 export default {
   title: 'Design Systems|Molecules/Card/Light',
