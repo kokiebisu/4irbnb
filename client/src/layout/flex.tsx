@@ -6,7 +6,7 @@ interface FlexProps {
   justifyBetween?: boolean;
 }
 
-export const Flex = styled.div<FlexProps>`
+export default styled.div<FlexProps>`
   display: flex;
   ${({ justifyCenter }) =>
     justifyCenter &&
