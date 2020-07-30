@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 import theme from 'styled-theming';
 
 // layout
-import { Flex } from 'layout/flex';
+import { Flex } from 'layout';
 
 // element
 import { Icon, Box, Button, Text } from 'atoms';
