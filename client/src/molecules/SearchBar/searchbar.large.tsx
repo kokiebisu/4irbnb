@@ -19,7 +19,7 @@ export default ({ ...props }: SearchBarProps) => {
   return (
     <Button styles={extend.wrapper} {...props}>
       <Flex alignCenter>
-        <Icon name='search' styles={extend.icon} />
+        <Icon name='Search' styles={extend.icon} />
         <Box styles={extend.text}>
           <Text>Where are you going?</Text>
         </Box>

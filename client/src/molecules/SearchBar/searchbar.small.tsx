@@ -23,7 +23,7 @@ export default ({ ...props }: SearchBarProps) => {
           <Text>Start your search</Text>
         </Box>
         <Box styles={extend.iconwrapper}>
-          <Icon name='search' styles={extend.icon} />
+          <Icon name='Search' styles={extend.icon} />
         </Box>
       </Flex>
     </Button>
