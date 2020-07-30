@@ -17,7 +17,7 @@ type SearchBarProps = {
 
 export default ({ ...props }: SearchBarProps) => {
   return (
-    <BaseButton styles={extend.wrapper} {...props}>
+    <Button styles={extend.wrapper} {...props}>
       <Flex justifyBetween alignCenter>
         <Box styles={extend.text}>
           <Text>Start your search</Text>
@@ -26,7 +26,7 @@ export default ({ ...props }: SearchBarProps) => {
           <Icon name='search' styles={extend.icon} />
         </Box>
       </Flex>
-    </BaseButton>
+    </Button>
   );
 };
 

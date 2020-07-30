@@ -11,7 +11,7 @@ import { CustomButton } from 'molecules/Button/button';
 export default {
   title: 'Design Systems|Molecules/Button/Cookie',
   parameters: {
-    component: Button,
+    component: CustomButton,
     componentSubtitle:
       'Displays the two types of cookie buttons used for the landing popup notifications',
   },

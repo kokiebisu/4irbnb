@@ -25,8 +25,12 @@ export default () => {
         </Box>
         <Box styles={extend.content.button}>
           <Box styles={extend.buttons}>
-            <Button type='cookie' name='OK' onPress={() => console.log('ok')} />
-            <Button
+            <CustomButton
+              type='cookie'
+              name='OK'
+              onPress={() => console.log('ok')}
+            />
+            <CustomButton
               inverse
               type='cookie'
               name='Cookie Preferences'
