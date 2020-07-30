@@ -12,12 +12,12 @@ import { ButtonProps } from 'molecules/Button/button';
 
 export default ({ name, ...props }: ButtonProps) => {
   return (
-    <BaseButton styles={extend.button} {...props}>
+    <Button styles={extend.button} {...props}>
       <Box styles={extend.box}>
         <Icon styles={extend.icon} name='search' />
         <Text styles={extend.text}>{name}</Text>
       </Box>
-    </BaseButton>
+    </Button>
   );
 };
 

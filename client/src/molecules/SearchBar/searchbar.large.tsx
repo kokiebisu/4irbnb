@@ -17,14 +17,14 @@ type SearchBarProps = {
 
 export default ({ ...props }: SearchBarProps) => {
   return (
-    <BaseButton styles={extend.wrapper} {...props}>
+    <Button styles={extend.wrapper} {...props}>
       <Flex alignCenter>
         <Icon name='search' styles={extend.icon} />
         <Box styles={extend.text}>
           <Text>Where are you going?</Text>
         </Box>
       </Flex>
-    </BaseButton>
+    </Button>
   );
 };
 

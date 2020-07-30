@@ -6,10 +6,10 @@ import theme from 'styled-theming';
 import { Button, Text } from 'atoms';
 
 // colors
-import { colorpallete } from '../../styles/colorpallete';
+import { colorpallete } from 'styles/colorpallete';
 
 // type
-import { ButtonProps } from './button';
+import { ButtonProps } from 'molecules/Button/button';
 
 /**
  - Use a button when you want to perform specific cookie actions
