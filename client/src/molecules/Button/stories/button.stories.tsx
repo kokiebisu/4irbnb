@@ -1,12 +1,9 @@
 import React from 'react';
-
-// Component
-import { BaseButton } from '../../../atoms/Button';
-
-// element
-import { Text } from '../../../atoms/Text';
-
 import { action } from '@storybook/addon-actions';
+
+// atoms
+import { BaseButton } from 'atoms/Button';
+import { Text } from 'atoms/Text';
 
 export default {
   title: 'Design Systems|Molecules/Button/Base',

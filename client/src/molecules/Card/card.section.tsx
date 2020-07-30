@@ -18,10 +18,10 @@ export default ({ title, description, option, ...props }: CardProps) => {
   return (
     <Box styles={extend.wrapper} {...props}>
       <Box styles={extend.inner}>
-        <Box styles={extend.text}>
-          <Box styles={extend.title}>{title}</Box>
-          <Box styles={extend.description}>{description}</Box>
-          <Box styles={extend.option}>{option}</Box>
+        <Box styles={extend.content.wrapper}>
+          <Box styles={extend.content.title}>{title}</Box>
+          <Box styles={extend.content.description}>{description}</Box>
+          <Box styles={extend.content.option}>{option}</Box>
         </Box>
       </Box>
     </Box>
@@ -47,23 +47,25 @@ const extend = {
   inner: css`
     padding: 32px;
   `,
-  text: css`
-    padding-top: 56px;
-    width: 100%;
-    max-width: 360px;
-    color: ${primary};
-  `,
-  title: css`
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    line-height: 1.3;
-  `,
-  description: css`
-    line-height: 1.2;
-  `,
-  option: css`
-    font-weight: 700;
-    margin-top: 12px;
-  `,
+  content: {
+    wrapper: css`
+      padding-top: 56px;
+      width: 100%;
+      max-width: 360px;
+      color: ${primary};
+    `,
+    title: css`
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    `,
+    description: css`
+      line-height: 1.2;
+    `,
+    option: css`
+      font-weight: 700;
+      margin-top: 12px;
+    `,
+  },
 };

@@ -1,7 +1,9 @@
 import React from 'react';
-import { BaseButton } from '../../../atoms/Button';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
+
+// atoms
+import { BaseButton } from 'atoms/Button';
 
 describe('Base Button', () => {
   it('renders correctly', () => {
