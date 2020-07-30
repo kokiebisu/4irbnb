@@ -13,6 +13,6 @@ const Element = styled.div<StyledProps>`
   ${({ styles }) => styles}
 `;
 
-export const Box: React.FC<ElementProps> = ({ children, ...props }) => {
+export default ({ children, ...props }) => {
   return <Element {...props}>{children}</Element>;
 };

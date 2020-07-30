@@ -15,6 +15,6 @@ const Element = styled.p<StyledProps>`
   font-family: 'Airbnb-Cereal';
 `;
 
-export const Text: React.FC<ElementProps> = ({ children, ...props }) => {
+export default ({ children, ...props }) => {
   return <Element {...props}>{children}</Element>;
 };
