@@ -48,11 +48,7 @@ const Element = styled.button<StyledProps>`
     `};
 `;
 
-export const BaseButton: React.FC<ElementProps> = ({
-  onPress,
-  children,
-  ...props
-}) => {
+export default ({ onPress, children, ...props }) => {
   return (
     <Element {...props} onClick={onPress}>
       {children}

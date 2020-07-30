@@ -23,7 +23,7 @@ const Element = styled.div<StyledProps>`
   ${({ styles }) => styles}
 `;
 
-export const Icon: React.FC<ElementProps> = ({ name, ...props }) => {
+export default ({ name, ...props }) => {
   const Component: any = items[name];
 
   return (
