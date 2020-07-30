@@ -5,7 +5,7 @@ import { css } from 'styled-components';
 import { Box } from 'atoms/Box';
 
 // molecules
-import Card from 'molecules/Card/card';
+import Card from 'molecules/Card/card.section';
 
 export default {
   title: 'Design Systems|Molecules/Card/Section',

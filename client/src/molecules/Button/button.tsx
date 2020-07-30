@@ -1,11 +1,11 @@
 import React from 'react';
 
-// element
-import { BaseButton } from '../../atoms/Button';
+// atoms
+import { BaseButton } from 'atoms/Button';
 
-// block
-import SearchButton from './button.search';
-import CookieButton from './button.cookie';
+// blocks
+import SearchButton from 'molecules/Button/button.search';
+import CookieButton from 'molecules/Button/button.cookie';
 
 export type ButtonProps = {
   type?: string;

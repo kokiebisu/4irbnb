@@ -4,16 +4,14 @@ import { css } from 'styled-components';
 // breakpoints
 import { sizes } from '../../styles/breakpoints';
 
-// svg
-import { Icon } from '../../atoms/Icon';
-
-// element
-import { BaseButton } from '../../atoms/Button';
-import { Text } from '../../atoms/Text';
-import { Box } from '../../atoms/Box';
+// atoms
+import { Icon } from 'atoms/Icon';
+import { BaseButton } from 'atoms/Button';
+import { Text } from 'atoms/Text';
+import { Box } from 'atoms/Box';
 
 // type
-import { ButtonProps } from './button';
+import { ButtonProps } from 'molecules/Button/button';
 
 export default ({ name, ...props }: ButtonProps) => {
   return (
