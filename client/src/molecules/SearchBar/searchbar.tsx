@@ -1,8 +1,8 @@
 import React from 'react';
 
 // block
-import SearchBarLarge from './searchbar.large';
-import SearchBarSmall from './searchbar.small';
+import SearchBarLarge from 'molecules/SearchBar/searchbar.large';
+import SearchBarSmall from 'molecules/SearchBar/searchbar.small';
 
 type SearchBarProps = {
   type: string;
