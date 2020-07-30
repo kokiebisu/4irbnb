@@ -48,7 +48,7 @@ const Element = styled.button<StyledProps>`
     `};
 `;
 
-export default ({ onPress, children, ...props }) => {
+export default ({ onPress, children, ...props }: ElementProps) => {
   return (
     <Element {...props} onClick={onPress}>
       {children}
