@@ -1,6 +1,8 @@
 import React from 'react';
-import { Search } from '../assets/svg';
 import styled from 'styled-components';
+
+// svgs
+import { Search, Globe, BottomArrow } from 'assets/svg';
 
 interface ElementProps {
   name: string;
@@ -16,7 +18,9 @@ interface MapProps {
 }
 
 const items: MapProps = {
-  search: Search,
+  Search: Search,
+  Globe: Globe,
+  BottomArrow: BottomArrow,
 };
 
 const Element = styled.div<StyledProps>`
