@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from 'styled-components';
 
 // atoms
-import { Box } from 'atoms/Box';
+import { Box } from 'atoms';
 
 // organisms
 import { Notification } from 'organisms/Notification/notification';

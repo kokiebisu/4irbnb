@@ -2,11 +2,10 @@ import React from 'react';
 import { css } from 'styled-components';
 
 // atoms
-import { Text } from 'atoms/Text';
-import { Box } from 'atoms/Box';
+import { Text, Box } from 'atoms';
 
 // molecules
-import { Button } from 'molecules/Button/button';
+import { CustomButton } from 'molecules/Button/button';
 
 // breakpoints
 import { sizes } from 'styles/breakpoints';
