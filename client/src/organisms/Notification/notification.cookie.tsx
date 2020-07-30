@@ -1,13 +1,15 @@
 import React from 'react';
 import { css } from 'styled-components';
 
-// components
-import { Box } from '../../atoms/Box';
-import { Button } from '../../molecules/Button/button';
-import { Flex } from '../../layout/flex';
-import { Text } from '../../atoms/Text';
+// atoms
+import { Text } from 'atoms/Text';
+import { Box } from 'atoms/Box';
 
-import { sizes } from '../../styles/breakpoints';
+// molecules
+import { Button } from 'molecules/Button/button';
+
+// breakpoints
+import { sizes } from 'styles/breakpoints';
 
 export default () => {
   return (
@@ -24,21 +26,13 @@ export default () => {
         </Box>
         <Box styles={extend.content.button}>
           <Box styles={extend.buttons}>
-            <Box>
-              <Button
-                type='cookie'
-                name='OK'
-                onPress={() => console.log('ok')}
-              />
-            </Box>
-            <Box>
-              <Button
-                inverse
-                type='cookie'
-                name='Cookie Preferences'
-                onPress={() => console.log('cookie preferences')}
-              />
-            </Box>
+            <Button type='cookie' name='OK' onPress={() => console.log('ok')} />
+            <Button
+              inverse
+              type='cookie'
+              name='Cookie Preferences'
+              onPress={() => console.log('cookie preferences')}
+            />
           </Box>
         </Box>
       </Box>

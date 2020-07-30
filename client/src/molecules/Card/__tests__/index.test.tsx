@@ -1,10 +1,12 @@
 import React from 'react';
-import Card from '../card';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
+// atoms
+import Card from 'molecules/Card/card';
+
 // img
-import card1 from '../../../assets/img/card1.jpg';
+import card1 from 'assets/img/card1.jpg';
 
 describe('Base Card', () => {
   it('renders correctly with title', () => {

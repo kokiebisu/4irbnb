@@ -1,8 +1,8 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 
-// block
-import { Button } from '../button';
+// molecules
+import { Button } from 'molecules/Button/button';
 
 export default {
   title: 'Design Systems|Molecules/Button/Search',
