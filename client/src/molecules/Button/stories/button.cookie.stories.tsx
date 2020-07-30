@@ -3,10 +3,10 @@ import { action } from '@storybook/addon-actions';
 import { css } from 'styled-components';
 
 // atoms
-import { Box } from 'atoms/Box';
+import { Box } from 'atoms';
 
 // molecules
-import { Button } from 'molecules/Button/button';
+import { CustomButton } from 'molecules/Button/button';
 
 export default {
   title: 'Design Systems|Molecules/Button/Cookie',
@@ -38,7 +38,7 @@ export const base = () => {
   };
   return (
     <Box styles={extend.wrapper}>
-      <Button type='cookie' {...normalData} {...actionsData} />
+      <CustomButton type='cookie' {...normalData} {...actionsData} />
     </Box>
   );
 };
@@ -51,7 +51,7 @@ export const inverse = () => {
   };
   return (
     <Box styles={extend.wrapper}>
-      <Button type='cookie' inverse {...inverseData} {...actionsData} />
+      <CustomButton type='cookie' inverse {...inverseData} {...actionsData} />
     </Box>
   );
 };

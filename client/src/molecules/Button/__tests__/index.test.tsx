@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 // atoms
-import { BaseButton } from 'atoms/Button';
+import { Button } from 'atoms';
 
 describe('Base Button', () => {
   it('renders correctly', () => {
@@ -13,7 +13,7 @@ describe('Base Button', () => {
     };
 
     const tree = renderer
-      .create(<BaseButton sm onPress={testingData.action} {...testingData} />)
+      .create(<Button sm onPress={testingData.action} {...testingData} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

@@ -2,13 +2,12 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 
 // atoms
-import { BaseButton } from 'atoms/Button';
-import { Text } from 'atoms/Text';
+import { Text, Button } from 'atoms';
 
 export default {
   title: 'Design Systems|Molecules/Button/Base',
   parameters: {
-    component: BaseButton,
+    component: Button,
     componentSubtitle: 'Displays the default button',
   },
   excludeStories: /.*Data$/,
@@ -23,17 +22,17 @@ const actionsData = {
 };
 
 export const Small = () => {
-  return <BaseButton sm {...buttonData} {...actionsData} />;
+  return <Button sm {...buttonData} {...actionsData} />;
 };
 
 export const Medium = () => {
-  return <BaseButton md {...buttonData} {...actionsData} />;
+  return <Button md {...buttonData} {...actionsData} />;
 };
 
 export const Large = () => {
-  return <BaseButton lg {...buttonData} {...actionsData} />;
+  return <Button lg {...buttonData} {...actionsData} />;
 };
 
 export const SmallInverse = () => {
-  return <BaseButton lg inverse {...buttonData} {...actionsData} />;
+  return <Button lg inverse {...buttonData} {...actionsData} />;
 };

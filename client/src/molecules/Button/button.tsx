@@ -1,7 +1,7 @@
 import React from 'react';
 
 // atoms
-import { BaseButton } from 'atoms/Button';
+import { Button } from 'atoms';
 
 // blocks
 import SearchButton from 'molecules/Button/button.search';
@@ -24,9 +24,9 @@ interface mapProps {
 /**
  * Use a button when you want to perform specific actions
  **/
-export const Button = ({ type, ...props }: ButtonProps) => {
+export const CustomButton = ({ type, ...props }: ButtonProps) => {
   if (!type) {
-    return <BaseButton {...props} />;
+    return <Button {...props} />;
   }
   const types: mapProps = {
     search: <SearchButton {...props} />,

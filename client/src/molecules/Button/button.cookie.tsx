@@ -3,8 +3,7 @@ import { css } from 'styled-components';
 import theme from 'styled-theming';
 
 // atoms
-import { BaseButton } from 'atoms/Button';
-import { Text } from 'atoms/Text';
+import { Button, Text } from 'atoms';
 
 // colors
 import { colorpallete } from '../../styles/colorpallete';
@@ -17,13 +16,13 @@ import { ButtonProps } from './button';
  **/
 export default ({ inverse, name, ...props }: ButtonProps) => {
   return (
-    <BaseButton
+    <Button
       styles={inverse ? extend.inverse.button : extend.normal.button}
       {...props}>
       <Text styles={inverse ? extend.inverse.text : extend.normal.text}>
         {name}
       </Text>
-    </BaseButton>
+    </Button>
   );
 };
 
