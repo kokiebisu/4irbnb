@@ -1,16 +1,16 @@
 import React from 'react';
 import { css } from 'styled-components';
 
-// block
-import Card from '../card';
+// molecules
+import Card from 'molecules/Card/card';
 
-// element
-import { Box } from '../../../atoms/Box';
+// atoms
+import { Box } from 'atoms/Box';
 
 // img
-import card1 from '../../../assets/img/card1.jpg';
-import card2 from '../../../assets/img/card2.jpg';
-import card3 from '../../../assets/img/card3.jpg';
+import card1 from 'assets/img/card1.jpg';
+import card2 from 'assets/img/card2.jpg';
+import card3 from 'assets/img/card3.jpg';
 
 // breakpoint
 import { sizes } from '../../../styles/breakpoints';

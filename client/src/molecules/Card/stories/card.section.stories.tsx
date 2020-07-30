@@ -1,10 +1,11 @@
 import React from 'react';
 import { css } from 'styled-components';
 
-// atom
-import { Box } from '../../../atoms/Box';
+// atoms
+import { Box } from 'atoms/Box';
 
-import Card from '../card.section';
+// molecules
+import Card from 'molecules/Card/card';
 
 export default {
   title: 'Design Systems|Molecules/Card/Section',
