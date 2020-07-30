@@ -2,7 +2,7 @@ import React from 'react';
 import { css, ThemeProvider } from 'styled-components';
 
 // blocks
-import Card from '../card';
+import Card from 'molecules/Card';
 
 // element
 import { Box } from 'atoms';

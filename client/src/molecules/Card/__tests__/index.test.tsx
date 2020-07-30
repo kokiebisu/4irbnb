@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 // atoms
-import Card from 'molecules/Card/card';
+import Card from 'molecules/Card';
 
 // img
 import card1 from 'assets/img/card1.jpg';
