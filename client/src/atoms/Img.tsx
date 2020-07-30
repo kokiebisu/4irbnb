@@ -16,6 +16,6 @@ const Element = styled.img<StyledProps>`
   width: 100%;
 `;
 
-export default ({ ...props }) => {
+export default ({ ...props }: ElementProps) => {
   return <Element {...props} />;
 };
