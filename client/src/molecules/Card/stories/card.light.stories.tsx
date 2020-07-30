@@ -5,7 +5,7 @@ import { css } from 'styled-components';
 import Card from 'molecules/Card/card';
 
 // atoms
-import { Box } from 'atoms/Box';
+import { Box } from 'atoms';
 
 // img
 import card1 from 'assets/img/card1.jpg';
