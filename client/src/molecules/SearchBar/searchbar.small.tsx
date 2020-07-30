@@ -6,10 +6,7 @@ import theme from 'styled-theming';
 import { Flex } from 'layout/flex';
 
 // element
-import { Icon } from 'atoms/Icon';
-import { Box } from 'atoms/Box';
-import { BaseButton } from 'atoms/Button';
-import { Text } from 'atoms/Text';
+import { Icon, Box, Button, Text } from 'atoms';
 
 // colors
 import { colorpallete } from 'styles/colorpallete';

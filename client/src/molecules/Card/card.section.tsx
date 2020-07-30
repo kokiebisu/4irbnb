@@ -3,7 +3,7 @@ import { css } from 'styled-components';
 import theme from 'styled-theming';
 
 // atoms
-import { Box } from 'atoms/Box';
+import { Box } from 'atoms';
 
 // colors
 import { colorpallete } from 'styles/colorpallete';

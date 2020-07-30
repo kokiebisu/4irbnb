@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from 'styled-components';
 
 // element
-import { Box } from 'atoms/Box';
+import { Box } from 'atoms';
 
 // block
 import { SearchBar } from 'molecules/SearchBar/searchbar';
