@@ -3,12 +3,10 @@ import { css } from 'styled-components';
 import theme from 'styled-theming';
 
 // atoms
-import { Box } from 'atoms/Box';
-import { Text } from 'atoms/Text';
-import { Img } from 'atoms/Img';
+import { Box, Text, Img } from 'atoms';
 
 // colors
-import { colorpallete } from 'styles/colorpallete';
+import { colors } from 'styles';
 
 type CardProps = {
   image: string;
@@ -41,18 +39,18 @@ export default ({
 };
 
 const background = theme('mode', {
-  light: colorpallete.white__1,
-  dark: colorpallete.gray__8,
+  light: colors.white__1,
+  dark: colors.gray__8,
 });
 
 const primary = theme('mode', {
-  light: colorpallete.gray__8,
-  dark: colorpallete.white__1,
+  light: colors.gray__8,
+  dark: colors.white__1,
 });
 
 const secondary = theme('mode', {
-  light: colorpallete.gray__5,
-  dark: colorpallete.white__1,
+  light: colors.gray__5,
+  dark: colors.white__1,
 });
 
 const extend = {
