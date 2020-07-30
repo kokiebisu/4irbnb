@@ -1,5 +1,9 @@
 import React from 'react';
+import { css } from 'styled-components';
 import { action } from '@storybook/addon-actions';
+
+// atoms
+import { Box } from 'atoms/Box';
 
 // molecules
 import { Button } from 'molecules/Button/button';
@@ -19,5 +23,19 @@ const actionsData = {
 };
 
 export const base = () => {
-  return <Button type='globe' {...actionsData} />;
+  const extend = {
+    wrapper: css`
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: black;
+    `,
+  };
+  return (
+    <Box styles={extend.wrapper}>
+      <Button type='globe' {...actionsData} />
+    </Box>
+  );
 };
