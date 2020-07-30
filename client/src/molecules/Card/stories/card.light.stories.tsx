@@ -13,7 +13,7 @@ import card2 from 'assets/img/card2.jpg';
 import card3 from 'assets/img/card3.jpg';
 
 // breakpoint
-import { sizes } from 'styles/breakpoints';
+import { sizes } from 'styles';
 
 export default {
   title: 'Design Systems|Molecules/Card/Light',

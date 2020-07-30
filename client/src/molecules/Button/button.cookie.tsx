@@ -6,10 +6,10 @@ import theme from 'styled-theming';
 import { Button, Text } from 'atoms';
 
 // colors
-import { colorpallete } from 'styles/colorpallete';
+import { colors } from 'styles';
 
 // type
-import { ButtonProps } from 'molecules/Button/button';
+import { ButtonProps } from 'molecules/Button';
 
 /**
  - Use a button when you want to perform specific cookie actions
@@ -27,11 +27,11 @@ export default ({ inverse, name, ...props }: ButtonProps) => {
 };
 
 const primary = theme('mode', {
-  light: colorpallete.bluegreen__5,
+  light: colors.bluegreen__5,
 });
 
 const secondary = theme('mode', {
-  light: colorpallete.white,
+  light: colors.white,
 });
 
 const common = css`

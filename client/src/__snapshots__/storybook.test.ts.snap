@@ -16,7 +16,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Base Large 1`] = `
     onClick={[Function]}
   >
     <p
-      className="sc-AxhCb cuIxYa"
+      className="sc-AxhUy hdaMzb"
     >
       click
     </p>
@@ -40,7 +40,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Base Medium 1`] = `
     onClick={[Function]}
   >
     <p
-      className="sc-AxhCb cuIxYa"
+      className="sc-AxhUy hdaMzb"
     >
       click
     </p>
@@ -64,7 +64,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Base Small 1`] = `
     onClick={[Function]}
   >
     <p
-      className="sc-AxhCb cuIxYa"
+      className="sc-AxhUy hdaMzb"
     >
       click
     </p>
@@ -88,7 +88,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Base Small Inverse 1`] = `
     onClick={[Function]}
   >
     <p
-      className="sc-AxhCb cuIxYa"
+      className="sc-AxhUy hdaMzb"
     >
       click
     </p>
@@ -115,7 +115,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Cookie Base 1`] = `
       onClick={[Function]}
     >
       <p
-        className="sc-AxhCb jhTscF"
+        className="sc-AxhUy bFZbWA"
       >
         OK
       </p>
@@ -143,7 +143,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Cookie Inverse 1`] = `
       onClick={[Function]}
     >
       <p
-        className="sc-AxhCb VjwRU"
+        className="sc-AxhUy fMVaqh"
       >
         Cookie Preferences
       </p>
@@ -182,7 +182,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Search Base 1`] = `
         </svg>
       </div>
       <p
-        className="sc-AxhCb uaKk"
+        className="sc-AxhUy bRmETt"
       >
         Search
       </p>
@@ -213,7 +213,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Large 1`] = `
       >
         <img
           alt="card-image"
-          className="sc-AxhUy CKPFt"
+          className="sc-AxhCb dohgRM"
           src="darkcard-lg.png"
         />
       </div>
@@ -221,7 +221,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Large 1`] = `
         className="sc-AxjAm bXaHUx"
       >
         <p
-          className="sc-AxhCb cJSAZM"
+          className="sc-AxhUy ldUGOp"
         >
           Learn favorite summer recipes with celebrated chef Roze Traore
         </p>
@@ -253,7 +253,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Medium 1`] = `
       >
         <img
           alt="card-image"
-          className="sc-AxhUy CKPFt"
+          className="sc-AxhCb dohgRM"
           src="darkcard-md.png"
         />
       </div>
@@ -261,7 +261,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Medium 1`] = `
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhCb cJSAZM"
+          className="sc-AxhUy ldUGOp"
         >
           Fruits de mer with Michelin chef Marc Favier
         </p>
@@ -293,7 +293,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Small 1`] = `
       >
         <img
           alt="card-image"
-          className="sc-AxhUy CKPFt"
+          className="sc-AxhCb dohgRM"
           src="darkcard-sm.png"
         />
       </div>
@@ -301,7 +301,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Small 1`] = `
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhCb cJSAZM"
+          className="sc-AxhUy ldUGOp"
         >
           Fruits de mer with Michelin chef Marc Favier
         </p>
@@ -333,7 +333,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
       >
         <img
           alt="card-image"
-          className="sc-AxhUy CKPFt"
+          className="sc-AxhCb dohgRM"
           src="card1.jpg"
         />
       </div>
@@ -341,12 +341,12 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhCb kLXMrl"
+          className="sc-AxhUy kneUdw"
         >
           Online experiences
         </p>
         <p
-          className="sc-AxhCb cBMJmN"
+          className="sc-AxhUy gdeJho"
         >
           Unique activities we can do together, led by a world of hosts
         </p>
@@ -360,7 +360,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
       >
         <img
           alt="card-image"
-          className="sc-AxhUy CKPFt"
+          className="sc-AxhCb dohgRM"
           src="card2.jpg"
         />
       </div>
@@ -368,12 +368,12 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhCb kLXMrl"
+          className="sc-AxhUy kneUdw"
         >
           Your next getaway
         </p>
         <p
-          className="sc-AxhCb cBMJmN"
+          className="sc-AxhUy gdeJho"
         >
           Unplug or reconnect on a trip that's just a short drive away
         </p>
@@ -387,7 +387,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
       >
         <img
           alt="card-image"
-          className="sc-AxhUy CKPFt"
+          className="sc-AxhCb dohgRM"
           src="card3.jpg"
         />
       </div>
@@ -395,12 +395,12 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhCb kLXMrl"
+          className="sc-AxhUy kneUdw"
         >
           Entire homes
         </p>
         <p
-          className="sc-AxhCb cBMJmN"
+          className="sc-AxhUy gdeJho"
         >
           Comfortable private places, with room for friends or family
         </p>
@@ -432,7 +432,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single With Title 1`] = 
       >
         <img
           alt="card-image"
-          className="sc-AxhUy CKPFt"
+          className="sc-AxhCb dohgRM"
           src="card1.jpg"
         />
       </div>
@@ -440,12 +440,12 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single With Title 1`] = 
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhCb kLXMrl"
+          className="sc-AxhUy kneUdw"
         >
           Online experiences
         </p>
         <p
-          className="sc-AxhCb cBMJmN"
+          className="sc-AxhUy gdeJho"
         >
           Unique activities we can do together, led by a world of hosts
         </p>
@@ -477,7 +477,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single Without Title 1`]
       >
         <img
           alt="card-image"
-          className="sc-AxhUy CKPFt"
+          className="sc-AxhCb dohgRM"
           src="card1.jpg"
         />
       </div>
@@ -485,7 +485,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single Without Title 1`]
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhCb cBMJmN"
+          className="sc-AxhUy gdeJho"
         >
           Unique activities we can do together, led by a world of hosts
         </p>
@@ -576,7 +576,7 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Mobile 1`] = `
           className="sc-AxjAm gzylxM"
         >
           <p
-            className="sc-AxhCb cuIxYa"
+            className="sc-AxhUy hdaMzb"
           >
             Where are you going?
           </p>
@@ -609,7 +609,7 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Normal 1`] = `
         className="sc-AxjAm tWoWx"
       >
         <p
-          className="sc-AxhCb cuIxYa"
+          className="sc-AxhUy hdaMzb"
         >
           Start your search
         </p>
@@ -658,7 +658,7 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
           className="sc-AxjAm ieaSbn"
         >
           <p
-            className="sc-AxhCb cuIxYa"
+            className="sc-AxhUy hdaMzb"
           >
             We use cookies to help personalize content, tailor and measure ads, and provide a safer experience. By navigating the site, you agree to the use of cookies to collect information on and off Airbnb. Read our Cookie Policy to learn more or go to Cookie Preferences to manage your settings
           </p>
@@ -674,7 +674,7 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
               onClick={[Function]}
             >
               <p
-                className="sc-AxhCb jhTscF"
+                className="sc-AxhUy bFZbWA"
               >
                 OK
               </p>
@@ -684,7 +684,7 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
               onClick={[Function]}
             >
               <p
-                className="sc-AxhCb VjwRU"
+                className="sc-AxhUy fMVaqh"
               >
                 Cookie Preferences
               </p>

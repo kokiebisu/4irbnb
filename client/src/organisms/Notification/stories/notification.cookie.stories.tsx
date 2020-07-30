@@ -5,7 +5,7 @@ import { css } from 'styled-components';
 import { Box } from 'atoms';
 
 // organisms
-import { Notification } from 'organisms/Notification/notification';
+import { Notification } from 'organisms/Notification';
 
 export default {
   title: 'Design Systems|Organisms/Notification/Cookie',

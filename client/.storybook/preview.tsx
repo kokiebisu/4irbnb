@@ -1,9 +1,7 @@
 import React from 'react';
 import { addDecorator, addParameters } from '@storybook/react';
 import { ThemeProvider } from 'styled-components';
-import { screen } from '../src/styles/breakpoints';
-import { GlobalStyles } from '../src/styles/global';
-import { Fonts } from '../src/styles/fonts';
+import { Fonts, GlobalStyles } from 'styles';
 
 addDecorator((storyFn) => (
   <ThemeProvider theme={{ mode: 'light' }}>

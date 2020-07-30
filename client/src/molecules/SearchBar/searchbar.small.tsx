@@ -9,7 +9,7 @@ import { Flex } from 'layout';
 import { Icon, Box, Button, Text } from 'atoms';
 
 // colors
-import { colorpallete } from 'styles/colorpallete';
+import { colors } from 'styles';
 
 type SearchBarProps = {
   onPress: () => void;
@@ -31,15 +31,15 @@ export default ({ ...props }: SearchBarProps) => {
 };
 
 const primary = theme('mode', {
-  light: [colorpallete.pink__4, colorpallete.pink__5, colorpallete.pink__6],
+  light: [colors.pink__4, colors.pink__5, colors.pink__6],
 });
 
 const secondary = theme('mode', {
-  light: colorpallete.gray__1,
+  light: colors.gray__1,
 });
 
 const white = theme('mode', {
-  light: colorpallete.white,
+  light: colors.white,
 });
 
 const extend = {
