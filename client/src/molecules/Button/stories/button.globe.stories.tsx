@@ -31,7 +31,7 @@ export const base = () => {
   };
   return (
     <Box styles={extend.wrapper}>
-      <Button type='globe' {...actionsData} />
+      <CustomButton type='globe' {...actionsData} />
     </Box>
   );
 };
