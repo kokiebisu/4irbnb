@@ -12,9 +12,9 @@ import { ButtonProps } from 'molecules/Button';
 
 export default ({ name, ...props }: ButtonProps) => {
   return (
-    <Button styles={extend.button} {...props}>
-      <Box styles={extend.box}>
-        <Icon styles={extend.icon} name='search' />
+    <Button styles={extend.wrapper} {...props}>
+      <Box styles={extend.content}>
+        <Icon styles={extend.icon} name='Search' />
         <Text styles={extend.text}>{name}</Text>
       </Box>
     </Button>
@@ -22,7 +22,7 @@ export default ({ name, ...props }: ButtonProps) => {
 };
 
 const extend = {
-  button: css`
+  wrapper: css`
     background: -webkit-linear-gradient(
       right,
       rgb(230, 30, 77) 0%,
@@ -32,7 +32,7 @@ const extend = {
     border: none;
     color: white;
   `,
-  box: css`
+  content: css`
     display: block;
     @media ${sizes.sm} {
       display: flex;

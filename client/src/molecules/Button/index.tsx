@@ -6,6 +6,7 @@ import { Button } from 'atoms';
 // blocks
 import SearchButton from 'molecules/Button/button.search';
 import CookieButton from 'molecules/Button/button.cookie';
+import GlobeButton from 'molecules/Button/button.globe';
 
 export type ButtonProps = {
   type?: string;
@@ -14,7 +15,7 @@ export type ButtonProps = {
   md?: boolean;
   lg?: boolean;
   inverse?: boolean;
-  name: string;
+  name?: string;
 };
 
 interface mapProps {
@@ -31,6 +32,7 @@ export const CustomButton = ({ type, ...props }: ButtonProps) => {
   const types: mapProps = {
     search: <SearchButton {...props} />,
     cookie: <CookieButton {...props} />,
+    globe: <GlobeButton {...props} />,
   };
   return types[type];
 };
