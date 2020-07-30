@@ -6,7 +6,7 @@ import { css } from 'styled-components';
 import { Box } from 'atoms';
 
 // molecules
-import { CustomButton } from 'molecules/Button/button';
+import { CustomButton } from 'molecules/Button';
 
 export default {
   title: 'Design Systems|Molecules/Button/Cookie',
