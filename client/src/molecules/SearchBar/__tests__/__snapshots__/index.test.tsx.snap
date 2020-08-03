@@ -29,7 +29,27 @@ exports[`Searchbar renders correctly with mobile size 1`] = `
   border-radius: 24px;
 }
 
+.c0:hover {
+  cursor: pointer;
+}
+
+.c0:focus {
+  outline: none;
+}
+
 .c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   position: relative;
   top: 2px;
   margin-right: 16px;
@@ -134,7 +154,27 @@ exports[`Searchbar renders correctly with normal size 1`] = `
   border-radius: 24px;
 }
 
+.c0:hover {
+  cursor: pointer;
+}
+
+.c0:focus {
+  outline: none;
+}
+
 .c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   position: relative;
 }
 
