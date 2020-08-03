@@ -5,8 +5,14 @@ exports[`Menu Button renders correctly 1`] = `
   border-radius: 8px;
   font-size: 18px;
   border: none;
-  border-radius: 20px;
+  border-radius: 24px;
   padding: 5px 6px 5px 12px;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+  border: 1px solid;
+}
+
+.c0:hover {
   box-shadow: rgba(0,0,0,0.15) 0px 2px 8px;
 }
 
