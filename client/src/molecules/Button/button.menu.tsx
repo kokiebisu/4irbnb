@@ -5,6 +5,7 @@ import { Flex } from 'layout';
 import { colors } from 'styles';
 import { ButtonProps } from 'molecules/Button';
 import theme from 'styled-theming';
+import { lighten } from 'polished';
 
 export default ({ name, ...props }: ButtonProps) => {
   return (
@@ -25,12 +26,20 @@ const gray = theme('mode', {
   light: colors.gray__5,
 });
 
+const lightgray = theme('mode', {
+  light: lighten(0.4, colors.gray__5),
+});
+
 const extend = {
   wrapper: css`
     background-color: ${background};
-    border-radius: 20px;
+    border-radius: 24px;
     padding: 5px 6px 5px 12px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    transition: 0.2s ease-in;
+    border: 1px solid ${lightgray};
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    }
   `,
   icon: {
     bars: css`
