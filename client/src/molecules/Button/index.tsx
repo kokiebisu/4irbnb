@@ -9,15 +9,7 @@ import CookieButton from 'molecules/Button/button.cookie';
 import GlobeButton from 'molecules/Button/button.globe';
 import MenuButton from 'molecules/Button/button.menu';
 
-export type ButtonProps = {
-  type?: string;
-  onPress: () => void;
-  sm?: boolean;
-  md?: boolean;
-  lg?: boolean;
-  inverse?: boolean;
-  name?: string;
-};
+import { Props } from 'molecules/Button/props';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -26,7 +18,7 @@ interface mapProps {
 /**
  * Use a button when you want to perform specific actions
  **/
-export const CustomButton = ({ type, ...props }: ButtonProps) => {
+export const CustomButton = ({ type, ...props }: Props) => {
   if (!type) {
     return <Button {...props} />;
   }
@@ -38,3 +30,5 @@ export const CustomButton = ({ type, ...props }: ButtonProps) => {
   };
   return types[type];
 };
+
+export type CustomProps = Props;

@@ -3,10 +3,10 @@ import { css } from 'styled-components';
 import { Icon, Button } from 'atoms';
 import { Flex } from 'layout';
 import { colors } from 'styles';
-import { ButtonProps } from 'molecules/Button';
+import { CustomProps } from 'molecules/Button';
 import theme from 'styled-theming';
 
-export default ({ name, ...props }: ButtonProps) => {
+export default ({ name, ...props }: CustomProps) => {
   return (
     <Button styles={extend.wrapper} {...props}>
       <Flex alignCenter>
