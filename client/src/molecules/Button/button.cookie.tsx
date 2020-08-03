@@ -1,14 +1,9 @@
 import React from 'react';
 import { css } from 'styled-components';
 import theme from 'styled-theming';
-
-// atoms
+import { darken } from 'polished';
 import { Button, Text } from 'atoms';
-
-// colors
-import { colors } from 'styles';
-
-// type
+import { colors, sizes } from 'styles';
 import { ButtonProps } from 'molecules/Button';
 
 /**
@@ -27,7 +22,7 @@ export default ({ inverse, name, ...props }: ButtonProps) => {
 };
 
 const primary = theme('mode', {
-  light: colors.bluegreen,
+  light: darken(0.4, colors.gray),
 });
 
 const secondary = theme('mode', {
@@ -35,11 +30,15 @@ const secondary = theme('mode', {
 });
 
 const common = css`
-  padding: 15px 0;
-  font-size: 12px;
-  font-weight: 700;
-  min-width: 125px;
-  width: 100%;
+  padding: 14px 20px;
+  font-size: 16px;
+  letter-spacing: 1.1;
+  font-weight: 300;
+  white-space: nowrap;
+  @media ${sizes.md} {
+    min-width: 125px;
+    width: 100%;
+  }
 `;
 
 const extend = {
