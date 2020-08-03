@@ -8,6 +8,14 @@ exports[`Base Button renders correctly 1`] = `
   padding: 15px 22px;
 }
 
+.c0:hover {
+  cursor: pointer;
+}
+
+.c0:focus {
+  outline: none;
+}
+
 <button
   action={[Function]}
   className="c0"
