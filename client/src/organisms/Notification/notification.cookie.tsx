@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from 'styled-components';
 
 // atoms
-import { Text, Box } from 'atoms';
+import { Text, Box, Icon } from 'atoms';
 
 // molecules
 import { CustomButton } from 'molecules/Button';
@@ -15,6 +15,10 @@ export default () => {
     <Box styles={extend.wrapper}>
       <Box styles={extend.inner}>
         <Box styles={extend.content.text}>
+          <Box styles={extend.header.wrapper}>
+            <Text styles={extend.header.text}>Your Privacy</Text>
+            <Icon styles={extend.header.icon} name='Lock' />
+          </Box>
           <Text>
             We use cookies to help personalize content, tailor and measure ads,
             and provide a safer experience. By navigating the site, you agree to
@@ -57,6 +61,26 @@ const extend = {
       justify-content: space-between;
     }
   `,
+  header: {
+    wrapper: css`
+      display: flex;
+    `,
+    text: css`
+      margin-right: 10px;
+    `,
+    icon: css`
+      width: 15px;
+      height: 15px;
+      svg {
+        width: 100%;
+        height: 100%;
+        path {
+          fill: black;
+        }
+      }
+    `,
+  },
+
   content: {
     text: css`
       width: 100%;
