@@ -8,9 +8,9 @@ import { sizes } from 'styles';
 import { Icon, Button, Text, Box } from 'atoms';
 
 // type
-import { ButtonProps } from 'molecules/Button';
+import { CustomProps } from 'molecules/Button';
 
-export default ({ name, ...props }: ButtonProps) => {
+export default ({ name, ...props }: CustomProps) => {
   return (
     <Button styles={extend.wrapper} {...props}>
       <Box styles={extend.content}>

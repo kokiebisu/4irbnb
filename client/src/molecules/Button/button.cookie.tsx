@@ -3,13 +3,17 @@ import { css } from 'styled-components';
 import theme from 'styled-theming';
 import { darken } from 'polished';
 import { Button, Text } from 'atoms';
+
+// colors
 import { colors, sizes } from 'styles';
-import { ButtonProps } from 'molecules/Button';
+
+// type
+import { CustomProps } from 'molecules/Button';
 
 /**
  - Use a button when you want to perform specific cookie actions
  **/
-export default ({ inverse, name, ...props }: ButtonProps) => {
+export default ({ inverse, name, ...props }: CustomProps) => {
   return (
     <Button
       styles={inverse ? extend.inverse.button : extend.normal.button}
