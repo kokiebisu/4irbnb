@@ -2,10 +2,9 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
-// atoms
-import { CustomButton } from 'molecules/Button';
+import { Button } from 'atoms';
 
-describe('Cookie Button', () => {
+describe('Base Button', () => {
   it('renders correctly', () => {
     const testingData = {
       children: 'test',
@@ -13,13 +12,7 @@ describe('Cookie Button', () => {
     };
 
     const tree = renderer
-      .create(
-        <CustomButton
-          type='cookie'
-          onPress={testingData.action}
-          {...testingData}
-        />
-      )
+      .create(<Button sm onPress={testingData.action} {...testingData} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
