@@ -308,7 +308,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Large 1`] = `
     className="sc-AxjAm gfmURB"
   >
     <div
-      className="sc-AxjAm kAPhWw"
+      className="sc-AxjAm Telpu"
     >
       <div
         className="sc-AxjAm jcqOdB"
@@ -323,7 +323,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Large 1`] = `
         className="sc-AxjAm bXaHUx"
       >
         <p
-          className="sc-AxhUy ldUGOp"
+          className="sc-AxhUy kAJVVx"
         >
           Learn favorite summer recipes with celebrated chef Roze Traore
         </p>
@@ -348,7 +348,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Medium 1`] = `
     className="sc-AxjAm hFICtt"
   >
     <div
-      className="sc-AxjAm kAPhWw"
+      className="sc-AxjAm Telpu"
     >
       <div
         className="sc-AxjAm jcqOdB"
@@ -363,7 +363,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Medium 1`] = `
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhUy ldUGOp"
+          className="sc-AxhUy kAJVVx"
         >
           Fruits de mer with Michelin chef Marc Favier
         </p>
@@ -388,7 +388,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Small 1`] = `
     className="sc-AxjAm kUkfrO"
   >
     <div
-      className="sc-AxjAm kAPhWw"
+      className="sc-AxjAm Telpu"
     >
       <div
         className="sc-AxjAm jcqOdB"
@@ -403,7 +403,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Small 1`] = `
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhUy ldUGOp"
+          className="sc-AxhUy kAJVVx"
         >
           Fruits de mer with Michelin chef Marc Favier
         </p>
@@ -428,7 +428,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
     className="sc-AxjAm bUwkzS"
   >
     <div
-      className="sc-AxjAm ckXsfb"
+      className="sc-AxjAm RVvez"
     >
       <div
         className="sc-AxjAm jcqOdB"
@@ -443,7 +443,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhUy kneUdw"
+          className="sc-AxhUy dzPGzW"
         >
           Online experiences
         </p>
@@ -455,7 +455,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
       </div>
     </div>
     <div
-      className="sc-AxjAm ckXsfb"
+      className="sc-AxjAm RVvez"
     >
       <div
         className="sc-AxjAm jcqOdB"
@@ -470,7 +470,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhUy kneUdw"
+          className="sc-AxhUy dzPGzW"
         >
           Your next getaway
         </p>
@@ -482,7 +482,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
       </div>
     </div>
     <div
-      className="sc-AxjAm ckXsfb"
+      className="sc-AxjAm RVvez"
     >
       <div
         className="sc-AxjAm jcqOdB"
@@ -497,7 +497,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhUy kneUdw"
+          className="sc-AxhUy dzPGzW"
         >
           Entire homes
         </p>
@@ -527,7 +527,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single With Title 1`] = 
     className="sc-AxjAm htNMvP"
   >
     <div
-      className="sc-AxjAm ckXsfb"
+      className="sc-AxjAm RVvez"
     >
       <div
         className="sc-AxjAm jcqOdB"
@@ -542,7 +542,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single With Title 1`] = 
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhUy kneUdw"
+          className="sc-AxhUy dzPGzW"
         >
           Online experiences
         </p>
@@ -572,7 +572,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single Without Title 1`]
     className="sc-AxjAm htNMvP"
   >
     <div
-      className="sc-AxjAm ckXsfb"
+      className="sc-AxjAm RVvez"
     >
       <div
         className="sc-AxjAm jcqOdB"
@@ -664,7 +664,7 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Mobile 1`] = `
         className="sc-AxgMl wTXyQ"
       >
         <div
-          className="sc-AxiKw cIZvRW"
+          className="sc-AxiKw eWYSxW"
         >
           <svg
             viewBox="0 0 56.966 56.966"
@@ -701,14 +701,14 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Normal 1`] = `
   }
 >
   <button
-    className="sc-AxirZ fpqvJY"
+    className="sc-AxirZ fcduhH"
     onClick={[Function]}
   >
     <div
       className="sc-AxgMl lmkBdg"
     >
       <div
-        className="sc-AxjAm tWoWx"
+        className="sc-AxjAm dExgth"
       >
         <p
           className="sc-AxhUy hdaMzb"

@@ -27,7 +27,7 @@ export default ({ inverse, name, ...props }: ButtonProps) => {
 };
 
 const primary = theme('mode', {
-  light: colors.bluegreen__5,
+  light: colors.bluegreen,
 });
 
 const secondary = theme('mode', {

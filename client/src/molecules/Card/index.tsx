@@ -1,6 +1,7 @@
 import React from 'react';
 import { css } from 'styled-components';
 import theme from 'styled-theming';
+import { darken } from 'polished';
 
 // atoms
 import { Box, Text, Img } from 'atoms';
@@ -39,18 +40,18 @@ export default ({
 };
 
 const background = theme('mode', {
-  light: colors.white__1,
-  dark: colors.gray__8,
+  light: darken(0.4, colors.white),
+  dark: darken(0.8, colors.gray),
 });
 
 const primary = theme('mode', {
-  light: colors.gray__8,
-  dark: colors.white__1,
+  light: darken(0.8, colors.gray),
+  dark: darken(0.4, colors.white),
 });
 
 const secondary = theme('mode', {
-  light: colors.gray__5,
-  dark: colors.white__1,
+  light: colors.gray,
+  dark: darken(0.4, colors.white),
 });
 
 const extend = {
