@@ -1,25 +1,26 @@
 version: 2
 jobs:
   test:
-    working_directory: ~/app
+    working_directory: ~/gobnb/client
     docker:
       - image: circleci/node:11
     steps:
       - checkout:
+          path: ~/gobnb
       - run:
           name: Install Dependencies
-          command: cd client && yarn install
+          command: yarn install
       - run:
           name: Testing
-          command: cd client && yarn test --watchAll=false -u
+          command: yarn test --watchAll=false -u
       - run:
           name: Comparing Snapshots
-          command: cd client && npx chromatic --project-token=vnmckyhfm5k --exit-zero-on-changes
+          command: npx chromatic --project-token=vnmckyhfm5k --exit-zero-on-changes
   docker_hub:
     working_directory: ~/app
     machine: true
     steps:
-      - checkout
+      - checkout:
       - run:
           name: Building Client Image
           command: docker build -t kokiebisu/gobnb-client ./client
