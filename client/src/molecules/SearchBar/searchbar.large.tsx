@@ -1,6 +1,7 @@
 import React from 'react';
 import { css } from 'styled-components';
 import theme from 'styled-theming';
+import { darken } from 'polished';
 
 // color
 import { colors } from 'styles';
@@ -29,11 +30,11 @@ export default ({ ...props }: SearchBarProps) => {
 };
 
 const primary = theme('mode', {
-  light: colors.gray__5,
+  light: colors.gray,
 });
 
 const secondary = theme('mode', {
-  light: colors.gray__7,
+  light: darken(0.7, colors.gray),
 });
 
 const extend = {
