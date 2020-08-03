@@ -1,6 +1,7 @@
 import React from 'react';
 import { css } from 'styled-components';
 import theme from 'styled-theming';
+import { darken, lighten } from 'polished';
 
 // layout
 import { Flex } from 'layout';
@@ -31,11 +32,11 @@ export default ({ ...props }: SearchBarProps) => {
 };
 
 const primary = theme('mode', {
-  light: [colors.pink__4, colors.pink__5, colors.pink__6],
+  light: [darken(0.4, colors.pink), colors.pink, lighten(0.6, colors.pink)],
 });
 
-const secondary = theme('mode', {
-  light: colors.gray__1,
+const border = theme('mode', {
+  light: lighten(0.4, colors.gray),
 });
 
 const white = theme('mode', {
@@ -45,7 +46,7 @@ const white = theme('mode', {
 const extend = {
   wrapper: css`
     background-color: transparent;
-    border: 1px solid ${secondary};
+    border: 1px solid ${border};
     height: 50px;
     max-width: 100%;
     padding: 0 7px 0 18px;
