@@ -46,6 +46,12 @@ const Element = styled.button<StyledProps>`
       border: 1px solid black;
       background-color: transparent;
     `};
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+  }
 `;
 
 export default ({ onPress, children, ...props }: ElementProps) => {
