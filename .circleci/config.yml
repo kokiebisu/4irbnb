@@ -12,7 +12,7 @@ jobs:
           command: yarn install
       - run:
           name: Testing
-          command: yarn test
+          command: yarn test --watchAll=false -u
       - run:
           name: Comparing Snapshots
           command: npx chromatic --project-token=vnmckyhfm5k --exit-zero-on-changes

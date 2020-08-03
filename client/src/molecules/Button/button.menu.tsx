@@ -23,11 +23,11 @@ const background = theme('mode', {
 });
 
 const gray = theme('mode', {
-  light: colors.gray__5,
+  light: colors.gray,
 });
 
 const lightgray = theme('mode', {
-  light: lighten(0.4, colors.gray__5),
+  light: lighten(0.4, colors.gray),
 });
 
 const extend = {
