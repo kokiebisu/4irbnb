@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search Button renders correctly 1`] = `
+.c1 {
+  display: block;
+}
+
+.c0 {
+  border-radius: 8px;
+  font-size: 18px;
+  border: none;
+  background: -webkit-linear-gradient( right, rgb(230,30,77) 0%, rgb(227,28,95) 50%, rgb(215,4,102) 100% );
+  border: none;
+  color: white;
+}
+
+.c0:hover {
+  cursor: pointer;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  top: 1.5px;
+}
+
+.c2 svg {
+  width: 14px;
+  height: 14px;
+  stroke: white;
+}
+
+.c2 svg path {
+  fill: white;
+  stroke-width: 2;
+}
+
+.c3 {
+  display: none;
+  font-size: 15px;
+  -webkit-letter-spacing: 0.5px;
+  -moz-letter-spacing: 0.5px;
+  -ms-letter-spacing: 0.5px;
+  letter-spacing: 0.5px;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto, Helvetica Neue,sans-serif !important;
+  font-weight: 400;
+  padding-left: 7px;
+  margin: 0;
+  font-family: 'Airbnb-Cereal';
+}
+
+@media (min-width:576px) {
+  .c1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width:576px) {
+  .c3 {
+    display: block;
+  }
+}
+
+<button
+  action={[Function]}
+  className="c0"
+  onClick={[Function]}
+>
+  <div
+    className="c1"
+  >
+    <div
+      className="c2"
+    >
+      <svg
+        viewBox="0 0 56.966 56.966"
+      >
+        <path
+          d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23 s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92 c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17 s-17-7.626-17-17S14.61,6,23.984,6z"
+        />
+      </svg>
+    </div>
+    <p
+      className="c3"
+    />
+  </div>
+</button>
+`;

@@ -5,7 +5,7 @@ import 'jest-styled-components';
 // atoms
 import { CustomButton } from 'molecules/Button';
 
-describe('Globe Button', () => {
+describe('Menu Button', () => {
   it('renders correctly', () => {
     const testingData = {
       action: () => console.log('test'),
@@ -14,7 +14,7 @@ describe('Globe Button', () => {
     const tree = renderer
       .create(
         <CustomButton
-          type='globe'
+          type='menu'
           onPress={testingData.action}
           {...testingData}
         />
