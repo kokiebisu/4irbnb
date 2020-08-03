@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 // svgs
-import { Search, Globe, BottomArrow } from 'assets/svg';
+import { Search, Globe, ChevronDown } from 'assets/svg';
 
 interface ElementProps {
   name: string;
@@ -20,7 +20,7 @@ interface MapProps {
 const items: MapProps = {
   Search: Search,
   Globe: Globe,
-  BottomArrow: BottomArrow,
+  ChevronDown: ChevronDown,
 };
 
 const Element = styled.div<StyledProps>`
