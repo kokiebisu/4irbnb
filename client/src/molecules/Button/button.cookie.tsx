@@ -9,12 +9,12 @@ import { Button, Text } from 'atoms';
 import { colors } from 'styles';
 
 // type
-import { ButtonProps } from 'molecules/Button';
+import { CustomProps } from 'molecules/Button';
 
 /**
  - Use a button when you want to perform specific cookie actions
  **/
-export default ({ inverse, name, ...props }: ButtonProps) => {
+export default ({ inverse, name, ...props }: CustomProps) => {
   return (
     <Button
       styles={inverse ? extend.inverse.button : extend.normal.button}
