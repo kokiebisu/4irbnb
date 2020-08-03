@@ -3,17 +3,22 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 // atoms
-import { Button } from 'atoms';
+import { CustomButton } from 'molecules/Button';
 
-describe('Base Button', () => {
+describe('Search Button', () => {
   it('renders correctly', () => {
     const testingData = {
-      children: 'test',
       action: () => console.log('test'),
     };
 
     const tree = renderer
-      .create(<Button sm onPress={testingData.action} {...testingData} />)
+      .create(
+        <CustomButton
+          type='search'
+          onPress={testingData.action}
+          {...testingData}
+        />
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

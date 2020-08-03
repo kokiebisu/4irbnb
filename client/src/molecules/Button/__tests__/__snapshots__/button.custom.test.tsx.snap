@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cookie Button renders correctly 1`] = `
+.c0 {
+  border-radius: 8px;
+  font-size: 18px;
+  border: none;
+  padding: 15px 0;
+  font-size: 12px;
+  font-weight: 700;
+  min-width: 125px;
+  width: 100%;
+}
+
+.c0:hover {
+  cursor: pointer;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c1 {
+  margin: 0;
+  font-family: 'Airbnb-Cereal';
+}
+
+<button
+  action={[Function]}
+  className="c0"
+  onClick={[Function]}
+>
+  <p
+    className="c1"
+  />
+</button>
+`;
