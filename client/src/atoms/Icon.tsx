@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 // svgs
-import { Search, Globe, ChevronDown, Bars, Avatar } from 'assets/svg';
+import { Search, Globe, ChevronDown, Bars, Avatar, Lock } from 'assets/svg';
 
 interface ElementProps {
   name: string;
@@ -23,6 +23,7 @@ const items: MapProps = {
   ChevronDown: ChevronDown,
   Bars: Bars,
   Avatar: Avatar,
+  Lock: Lock,
 };
 
 const Element = styled.div<StyledProps>`

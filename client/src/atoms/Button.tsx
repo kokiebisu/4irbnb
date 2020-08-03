@@ -61,3 +61,12 @@ export default ({ onPress, children, ...props }: ElementProps) => {
     </Element>
   );
 };
+export type CustomProps = {
+  type?: string;
+  onPress: () => void;
+  sm?: boolean;
+  md?: boolean;
+  lg?: boolean;
+  inverse?: boolean;
+  name?: string;
+};
