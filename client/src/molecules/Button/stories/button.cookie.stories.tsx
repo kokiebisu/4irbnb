@@ -19,7 +19,7 @@ export default {
 };
 
 const normalData = {
-  name: 'OK',
+  name: 'Save Settings',
 };
 
 const inverseData = {
@@ -33,7 +33,7 @@ const actionsData = {
 export const base = () => {
   const extend = {
     wrapper: css`
-      width: 150px;
+      /* width: 200px; */
     `,
   };
   return (
@@ -46,7 +46,7 @@ export const base = () => {
 export const inverse = () => {
   const extend = {
     wrapper: css`
-      width: 150px;
+      /* width: 200px; */
     `,
   };
   return (
