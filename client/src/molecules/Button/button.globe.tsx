@@ -11,7 +11,7 @@ export default ({ name, ...props }: ButtonProps) => {
     <Button styles={extend.wrapper} {...props}>
       <Flex alignCenter>
         <Icon styles={extend.icon.globe} name='Globe' />
-        <Icon styles={extend.icon.arrow} name='BottomArrow' />
+        <Icon styles={extend.icon.arrow} name='ChevronDown' />
       </Flex>
     </Button>
   );
