@@ -69,8 +69,8 @@ const extend = {
     border-radius: 11px;
   `,
   inner: css`
-    padding: 30px 20px;
-    @media ${sizes.sm} {
+    padding: 25px 20px;
+    @media ${sizes.lg} {
       display: flex;
       justify-content: space-between;
     }
@@ -110,7 +110,7 @@ const extend = {
     text: css`
       width: 100%;
 
-      @media ${sizes.sm} {
+      @media ${sizes.lg} {
         width: 60%;
         margin-right: 20px;
       }
