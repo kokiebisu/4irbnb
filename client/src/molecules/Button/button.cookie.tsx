@@ -26,7 +26,7 @@ export default ({ inverse, name, ...props }: CustomProps) => {
 };
 
 const primary = theme('mode', {
-  light: darken(0.4, colors.gray),
+  light: darken(0.2, colors.gray),
 });
 
 const secondary = theme('mode', {
@@ -39,9 +39,12 @@ const common = css`
   letter-spacing: 1.1;
   font-weight: 300;
   white-space: nowrap;
-  @media ${sizes.md} {
+  min-width: none;
+  margin-top: 25px;
+  @media ${sizes.lg} {
     min-width: 125px;
     width: 100%;
+    margin-top: initial;
   }
 `;
 
