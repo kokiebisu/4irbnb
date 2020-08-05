@@ -8,7 +8,9 @@ import { Text, Box, Icon } from 'atoms';
 import { CustomButton } from 'molecules/Button';
 
 // breakpoints
-import { sizes } from 'styles';
+import { colors, sizes } from 'styles';
+import theme from 'styled-theming';
+import { darken, lighten } from 'polished';
 
 export default () => {
   return (
@@ -19,7 +21,7 @@ export default () => {
             <Text styles={extend.header.text}>Your Privacy</Text>
             <Icon styles={extend.header.icon} name='Lock' />
           </Box>
-          <Text>
+          <Text styles={extend.description}>
             We use cookies to help personalize content, tailor and measure ads,
             and provide a safer experience. By navigating the site, you agree to
             the use of cookies to collect information on and off Airbnb. Read
@@ -31,7 +33,7 @@ export default () => {
           <Box styles={extend.buttons}>
             <CustomButton
               type='cookie'
-              name='OK'
+              name='Save Settings'
               onPress={() => console.log('ok')}
             />
             <CustomButton
@@ -47,15 +49,27 @@ export default () => {
   );
 };
 
+const description = theme('mode', {
+  light: lighten(0.025, colors.gray),
+});
+
+const header = theme('mode', {
+  light: darken(0.05, colors.gray),
+});
+
+const lock = theme('mode', {
+  light: lighten(0.025, colors.blue),
+});
+
 const extend = {
   wrapper: css`
     width: 100%;
     background-color: white;
     box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.27);
-    border-radius: 16px;
+    border-radius: 11px;
   `,
   inner: css`
-    padding: 20px;
+    padding: 30px 20px;
     @media ${sizes.sm} {
       display: flex;
       justify-content: space-between;
@@ -64,23 +78,34 @@ const extend = {
   header: {
     wrapper: css`
       display: flex;
+      margin-bottom: 10px;
     `,
     text: css`
+      font-weight: 700;
+      font-size: 16px;
+      color: ${header};
       margin-right: 10px;
+      letter-spacing: 0.25px;
     `,
     icon: css`
-      width: 15px;
+      width: 13px;
       height: 15px;
       svg {
         width: 100%;
         height: 100%;
         path {
-          fill: black;
+          fill: ${lock};
         }
       }
     `,
   },
-
+  description: css`
+    font-weight: 300;
+    font-size: 14px;
+    color: ${description};
+    letter-spacing: 0.25px;
+    line-height: 18px;
+  `,
   content: {
     text: css`
       width: 100%;
@@ -88,11 +113,6 @@ const extend = {
       @media ${sizes.sm} {
         width: 60%;
         margin-right: 20px;
-      }
-      p {
-        font-size: 16px;
-        line-height: 1.3;
-        font-weight: 300;
       }
     `,
     button: css`

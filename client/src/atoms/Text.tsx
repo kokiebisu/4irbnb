@@ -11,9 +11,9 @@ interface StyledProps {
 }
 
 const Element = styled.p<StyledProps>`
-  ${({ styles }) => styles}
   margin: 0;
   font-family: 'Airbnb-Cereal';
+  ${({ styles }) => styles}
 `;
 
 export default ({ children, ...props }: ElementProps) => {
