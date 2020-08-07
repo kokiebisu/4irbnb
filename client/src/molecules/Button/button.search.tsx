@@ -24,14 +24,6 @@ const backgroundLight = theme('mode', {
   light: lighten(0.2, colors.pink),
 });
 
-const background = theme('mode', {
-  light: colors.pink,
-});
-
-const backgroundDark = theme('mode', {
-  light: darken(0.2, colors.pink),
-});
-
 const extend = {
   wrapper: css`
     background-color: #ff385c;
@@ -41,12 +33,6 @@ const extend = {
     border-radius: 50%;
     transition: 0.8s;
     &:hover {
-      /* background: -webkit-linear-gradient(
-        right,
-        rgb(230, 30, 77) 0%,
-        rgb(227, 28, 95) 50%,
-        rgb(215, 4, 102) 100%
-      ); */
       background-color: rgb(215, 4, 102);
     }
   `,
