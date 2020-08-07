@@ -34,20 +34,20 @@ const backgroundDark = theme('mode', {
 
 const extend = {
   wrapper: css`
-    background: #ff385c;
+    background-color: #ff385c;
     border: none;
     padding: 8px;
     color: white;
     border-radius: 50%;
+    transition: 0.8s;
     &:hover {
-      background: -webkit-linear-gradient(
+      /* background: -webkit-linear-gradient(
         right,
         rgb(230, 30, 77) 0%,
         rgb(227, 28, 95) 50%,
         rgb(215, 4, 102) 100%
-      );
-      transition: 2s ease-in-out;
-      -webkit-transition: 2s ease-in-out;
+      ); */
+      background-color: rgb(215, 4, 102);
     }
   `,
   content: css`
