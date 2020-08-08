@@ -1,17 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Searchbar renders correctly with mobile size 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .c3 p {
   font-size: 16px;
   font-weight: 500;
@@ -69,6 +58,17 @@ exports[`Searchbar renders correctly with mobile size 1`] = `
   font-family: 'Airbnb-Cereal';
 }
 
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 <button
   className="c0"
   onClick={[Function]}
@@ -101,21 +101,6 @@ exports[`Searchbar renders correctly with mobile size 1`] = `
 `;
 
 exports[`Searchbar renders correctly with normal size 1`] = `
-.c1 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-
 .c2 p {
   font-family: 'Airbnb-Cereal';
   font-size: 14px;
@@ -190,6 +175,21 @@ exports[`Searchbar renders correctly with normal size 1`] = `
 .c3 {
   margin: 0;
   font-family: 'Airbnb-Cereal';
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 <button
