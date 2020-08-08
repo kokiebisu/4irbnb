@@ -27,12 +27,12 @@ exports[`Base Card renders correctly with title 1`] = `
 }
 
 .c4 {
+  margin: 0;
+  font-family: 'Airbnb-Cereal';
   padding-top: 2px;
   font-size: 13px;
   font-weight: 300;
   line-height: 1.4;
-  margin: 0;
-  font-family: 'Airbnb-Cereal';
 }
 
 <div
@@ -86,12 +86,12 @@ exports[`Base Card renders correctly without title 1`] = `
 }
 
 .c4 {
+  margin: 0;
+  font-family: 'Airbnb-Cereal';
   padding-top: 2px;
   font-size: 13px;
   font-weight: 300;
   line-height: 1.4;
-  margin: 0;
-  font-family: 'Airbnb-Cereal';
 }
 
 <div

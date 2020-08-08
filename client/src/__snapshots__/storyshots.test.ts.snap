@@ -16,7 +16,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Base Large 1`] = `
     onClick={[Function]}
   >
     <p
-      className="sc-AxhUy hdaMzb"
+      className="sc-AxhUy vsUGv"
     >
       click
     </p>
@@ -40,7 +40,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Base Medium 1`] = `
     onClick={[Function]}
   >
     <p
-      className="sc-AxhUy hdaMzb"
+      className="sc-AxhUy vsUGv"
     >
       click
     </p>
@@ -64,7 +64,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Base Small 1`] = `
     onClick={[Function]}
   >
     <p
-      className="sc-AxhUy hdaMzb"
+      className="sc-AxhUy vsUGv"
     >
       click
     </p>
@@ -88,7 +88,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Base Small Inverse 1`] = `
     onClick={[Function]}
   >
     <p
-      className="sc-AxhUy hdaMzb"
+      className="sc-AxhUy vsUGv"
     >
       click
     </p>
@@ -108,16 +108,16 @@ exports[`Storyshots Design Systems|Molecules/Button/Cookie Base 1`] = `
   }
 >
   <div
-    className="sc-AxjAm iceKch"
+    className="sc-AxjAm vuqMX"
   >
     <button
-      className="sc-AxirZ dEpbgp"
+      className="sc-AxirZ dJPYgl"
       onClick={[Function]}
     >
       <p
-        className="sc-AxhUy bFZbWA"
+        className="sc-AxhUy hWdaik"
       >
-        OK
+        Save Settings
       </p>
     </button>
   </div>
@@ -136,14 +136,14 @@ exports[`Storyshots Design Systems|Molecules/Button/Cookie Inverse 1`] = `
   }
 >
   <div
-    className="sc-AxjAm iceKch"
+    className="sc-AxjAm vuqMX"
   >
     <button
-      className="sc-AxirZ agizJ"
+      className="sc-AxirZ gQcsgR"
       onClick={[Function]}
     >
       <p
-        className="sc-AxhUy fMVaqh"
+        className="sc-AxhUy hdKEJG"
       >
         Cookie Preferences
       </p>
@@ -266,14 +266,14 @@ exports[`Storyshots Design Systems|Molecules/Button/Search Base 1`] = `
   }
 >
   <button
-    className="sc-AxirZ byNBAj"
+    className="sc-AxirZ fVcrrQ"
     onClick={[Function]}
   >
     <div
-      className="sc-AxjAm hZZDgA"
+      className="sc-AxjAm cMhjCn"
     >
       <div
-        className="sc-AxiKw dJvupZ"
+        className="sc-AxiKw MZacv"
       >
         <svg
           viewBox="0 0 56.966 56.966"
@@ -283,11 +283,6 @@ exports[`Storyshots Design Systems|Molecules/Button/Search Base 1`] = `
           />
         </svg>
       </div>
-      <p
-        className="sc-AxhUy bRmETt"
-      >
-        Search
-      </p>
     </div>
   </button>
 </div>
@@ -323,7 +318,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Large 1`] = `
         className="sc-AxjAm bXaHUx"
       >
         <p
-          className="sc-AxhUy kAJVVx"
+          className="sc-AxhUy gxsYhh"
         >
           Learn favorite summer recipes with celebrated chef Roze Traore
         </p>
@@ -363,7 +358,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Medium 1`] = `
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhUy kAJVVx"
+          className="sc-AxhUy gxsYhh"
         >
           Fruits de mer with Michelin chef Marc Favier
         </p>
@@ -403,7 +398,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Small 1`] = `
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhUy kAJVVx"
+          className="sc-AxhUy gxsYhh"
         >
           Fruits de mer with Michelin chef Marc Favier
         </p>
@@ -443,12 +438,12 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhUy dzPGzW"
+          className="sc-AxhUy cXHHIS"
         >
           Online experiences
         </p>
         <p
-          className="sc-AxhUy gdeJho"
+          className="sc-AxhUy fiHroI"
         >
           Unique activities we can do together, led by a world of hosts
         </p>
@@ -470,12 +465,12 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhUy dzPGzW"
+          className="sc-AxhUy cXHHIS"
         >
           Your next getaway
         </p>
         <p
-          className="sc-AxhUy gdeJho"
+          className="sc-AxhUy fiHroI"
         >
           Unplug or reconnect on a trip that's just a short drive away
         </p>
@@ -497,12 +492,12 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhUy dzPGzW"
+          className="sc-AxhUy cXHHIS"
         >
           Entire homes
         </p>
         <p
-          className="sc-AxhUy gdeJho"
+          className="sc-AxhUy fiHroI"
         >
           Comfortable private places, with room for friends or family
         </p>
@@ -542,12 +537,12 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single With Title 1`] = 
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhUy dzPGzW"
+          className="sc-AxhUy cXHHIS"
         >
           Online experiences
         </p>
         <p
-          className="sc-AxhUy gdeJho"
+          className="sc-AxhUy fiHroI"
         >
           Unique activities we can do together, led by a world of hosts
         </p>
@@ -587,7 +582,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single Without Title 1`]
         className="sc-AxjAm dFnguV"
       >
         <p
-          className="sc-AxhUy gdeJho"
+          className="sc-AxhUy fiHroI"
         >
           Unique activities we can do together, led by a world of hosts
         </p>
@@ -642,6 +637,51 @@ exports[`Storyshots Design Systems|Molecules/Card/Section Black Lives Matter 1`]
 </div>
 `;
 
+exports[`Storyshots Design Systems|Molecules/SearchBar Full 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "height": "100vh",
+      "justifyContent": "center",
+    }
+  }
+>
+  <div
+    className="sc-AxjAm eDmQwZ"
+  >
+    <div
+      className="sc-AxjAm eAqbXt"
+    />
+    <div
+      className="sc-AxjAm kBAtYp"
+    >
+      <button
+        className="sc-AxirZ fVcrrQ"
+        onClick={[Function]}
+      >
+        <div
+          className="sc-AxjAm cMhjCn"
+        >
+          <div
+            className="sc-AxiKw MZacv"
+          >
+            <svg
+              viewBox="0 0 56.966 56.966"
+            >
+              <path
+                d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23 s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92 c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17 s-17-7.626-17-17S14.61,6,23.984,6z"
+              />
+            </svg>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Design Systems|Molecules/SearchBar Mobile 1`] = `
 <div
   style={
@@ -678,7 +718,7 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Mobile 1`] = `
           className="sc-AxjAm gzylxM"
         >
           <p
-            className="sc-AxhUy hdaMzb"
+            className="sc-AxhUy vsUGv"
           >
             Where are you going?
           </p>
@@ -711,7 +751,7 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Normal 1`] = `
         className="sc-AxjAm dExgth"
       >
         <p
-          className="sc-AxhUy hdaMzb"
+          className="sc-AxhUy vsUGv"
         >
           Start your search
         </p>
@@ -751,16 +791,36 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
     className="sc-AxjAm bkttMG"
   >
     <div
-      className="sc-AxjAm icBPAH"
+      className="sc-AxjAm fIXBRY"
     >
       <div
-        className="sc-AxjAm dycSZs"
+        className="sc-AxjAm hDaJRB"
       >
         <div
-          className="sc-AxjAm ieaSbn"
+          className="sc-AxjAm kkDVNx"
         >
+          <div
+            className="sc-AxjAm cFZHbc"
+          >
+            <p
+              className="sc-AxhUy gxCFEe"
+            >
+              Your Privacy
+            </p>
+            <div
+              className="sc-AxiKw LnqfM"
+            >
+              <svg
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"
+                />
+              </svg>
+            </div>
+          </div>
           <p
-            className="sc-AxhUy hdaMzb"
+            className="sc-AxhUy gudwKO"
           >
             We use cookies to help personalize content, tailor and measure ads, and provide a safer experience. By navigating the site, you agree to the use of cookies to collect information on and off Airbnb. Read our Cookie Policy to learn more or go to Cookie Preferences to manage your settings
           </p>
@@ -772,21 +832,21 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
             className="sc-AxjAm ivUTch"
           >
             <button
-              className="sc-AxirZ dEpbgp"
+              className="sc-AxirZ dJPYgl"
               onClick={[Function]}
             >
               <p
-                className="sc-AxhUy bFZbWA"
+                className="sc-AxhUy hWdaik"
               >
-                OK
+                Save Settings
               </p>
             </button>
             <button
-              className="sc-AxirZ agizJ"
+              className="sc-AxirZ gQcsgR"
               onClick={[Function]}
             >
               <p
-                className="sc-AxhUy fMVaqh"
+                className="sc-AxhUy hdKEJG"
               >
                 Cookie Preferences
               </p>
