@@ -5,7 +5,7 @@ import { darken } from 'polished';
 import { colors } from 'styles';
 import { Flex } from 'layout';
 import { Box, Button, Icon, Text } from 'atoms';
-import {CustomButton} from 'molecules/Button'
+import { CustomButton } from 'molecules/Button';
 
 type SearchBarProps = {
   onPress: () => void;
@@ -14,11 +14,31 @@ type SearchBarProps = {
 export default ({ ...props }: SearchBarProps) => {
   return (
     <Box styles={extend.wrapper}>
-        <Button></Button>
-         <Button></Button>
-          <Button></Button>
-            <Button></Button>
-            <CustomButton type='search' />
+      <Box styles={extend.options}>
+        {/* <Button
+          styles={extend.section.wrapper}
+          onPress={() => console.log('pressed')}>
+          sadf
+        </Button>
+        <Button
+          styles={extend.section.wrapper}
+          onPress={() => console.log('pressed')}>
+          sadf
+        </Button>
+        <Button
+          styles={extend.section.wrapper}
+          onPress={() => console.log('pressed')}>
+          sadf
+        </Button>
+        <Button
+          styles={extend.section.wrapper}
+          onPress={() => console.log('pressed')}>
+          sdaf
+        </Button> */}
+      </Box>
+      <Box styles={extend.button}>
+        <CustomButton type='search' onPress={() => console.log('pressed')} />
+      </Box>
     </Box>
   );
 };
@@ -33,10 +53,26 @@ const secondary = theme('mode', {
 
 const extend = {
   wrapper: css`
-  background-color: blue;
-    width: 820px;
-    padding: 9px 0;
+    width: 100%;
+    max-width: 850px;
+    height: 65px;
     border-radius: 50px;
+    display: flex;
+    box-shadow: rgb(0, 0, 0, 0.15) 0px 5px 12px;
   `,
- 
+  section: {
+    wrapper: css`
+      height: 100%;
+      width: 150px;
+      border-radius: 50px;
+    `,
+  },
+  options: css`
+    flex: 1 1 0%;
+    height: 100%;
+  `,
+  button: css`
+    padding: 8px;
+    flex: 0 0 auto;
+  `,
 };
