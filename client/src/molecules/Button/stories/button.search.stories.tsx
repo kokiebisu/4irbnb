@@ -23,5 +23,5 @@ const actionsData = {
 };
 
 export const base = () => {
-  return <CustomButton type='search' sm {...data} {...actionsData} />;
+  return <CustomButton type='search' {...data} {...actionsData} />;
 };

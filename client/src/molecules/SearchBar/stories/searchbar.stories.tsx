@@ -33,3 +33,7 @@ export const Mobile = () => {
 export const Normal = () => {
   return <SearchBar type='normal' onPress={() => console.log('hello!')} />;
 };
+
+export const Full = () => {
+  return <SearchBar type='full' onPress={() => console.log('hello!')} />;
+};
