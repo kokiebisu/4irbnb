@@ -18,7 +18,6 @@ export default ({ ...props }: SearchBarProps) => {
         <Box styles={extend.section.side}>
           <Button onPress={() => console.log('pressed')}>sadf</Button>
         </Box>
-        <Box styles={extend.seperator} />
         <Box styles={extend.section.middle}>
           <Box styles={extend.section.button}>
             <Button onPress={() => console.log('pressed')}>sadf</Button>
@@ -27,25 +26,14 @@ export default ({ ...props }: SearchBarProps) => {
             <Button onPress={() => console.log('pressed')}>sadf</Button>
           </Box>
         </Box>
-        <Box styles={extend.seperator} />
         <Box styles={extend.section.side}>
           <Button onPress={() => console.log('pressed')}>sdaf</Button>
+          {/* <CustomButton type='search' onPress={() => console.log('pressed')} /> */}
         </Box>
-      </Box>
-      <Box styles={extend.button}>
-        <CustomButton type='search' onPress={() => console.log('pressed')} />
       </Box>
     </Box>
   );
 };
-
-const primary = theme('mode', {
-  light: colors.gray,
-});
-
-const secondary = theme('mode', {
-  light: darken(0.7, colors.gray),
-});
 
 const common = css`
   background-color: white;
@@ -62,6 +50,13 @@ const extend = {
 
     box-shadow: rgb(0, 0, 0, 0.15) 0px 5px 12px;
   `,
+  options: css`
+    background-color: white;
+    display: flex;
+    flex: 1 1 0%;
+    height: 100%;
+    border-radius: inherit;
+  `,
   section: {
     side: css`
       flex: 1.5 0 0%;
@@ -70,6 +65,8 @@ const extend = {
         border-bottom-left-radius: 50px;
       }
       &:last-child {
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
       }
 
       button {
@@ -106,14 +103,7 @@ const extend = {
     width: 1px;
     height: 32px;
   `,
-  options: css`
-    border-top-left-radius: inherit;
-    border-bottom-left-radius: inherit;
-    background-color: white;
-    display: flex;
-    flex: 1 1 0%;
-    height: 100%;
-  `,
+
   button: css`
     padding: 8px;
     flex: 0 0 auto;
