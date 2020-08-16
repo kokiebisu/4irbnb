@@ -1,5 +1,5 @@
-import React from 'react';
-import { css } from 'styled-components';
+import React, { useReducer } from 'react';
+import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
 import { darken } from 'polished';
 import { colors } from 'styles';
@@ -11,45 +11,50 @@ type SearchBarProps = {
   onPress: () => void;
 };
 
-export default ({ ...props }: SearchBarProps) => {
-  return (
-    <Box styles={extend.wrapper}>
-      <Box styles={extend.options}>
-        <Box styles={extend.section.side}>
-          <Button onPress={() => console.log('pressed')}>sadf</Button>
-        </Box>
-        <Box styles={extend.section.middle}>
-          <Box styles={extend.section.button}>
-            <Button onPress={() => console.log('pressed')}>sadf</Button>
-          </Box>
-          <Box styles={extend.section.button}>
-            <Button onPress={() => console.log('pressed')}>sadf</Button>
-          </Box>
-        </Box>
-        <Box styles={extend.section.side}>
-          <Button onPress={() => console.log('pressed')}>sdaf</Button>
-          {/* <CustomButton type='search' onPress={() => console.log('pressed')} /> */}
-        </Box>
-      </Box>
-    </Box>
-  );
-};
+const hover = theme('mode', {
+  light: darken(0.05, colors.white),
+});
 
-const common = css`
-  background-color: white;
+const seperator = theme('mode', {
+  light: darken(0.1, colors.white),
+});
+
+const hoverMixin = (number: number) => css`
+  &:hover ~ div:nth-child(${number}) {
+    width: 1px;
+    height: 28px;
+    background-color: transparent;
+  }
+`;
+
+const Wrapper = styled(Box)`
+  width: 100%;
+  max-width: 850px;
+  height: 65px;
   border-radius: 50px;
+  display: flex;
+  background-color: ${colors.white};
+  box-shadow: rgb(0, 0, 0, 0.15) 0px 5px 12px;
+`;
+
+const Section = styled(Button)`
+  background-color: inherit;
+  border-radius: 50px;
+  height: 100%;
+  width: 100%;
+  &:hover {
+    background-color: ${hover};
+  }
+`;
+
+const Seperator = styled(Box)`
+  width: 1px;
+  height: 28px;
+  background-color: ${seperator};
+  align-self: center;
 `;
 
 const extend = {
-  wrapper: css`
-    width: 100%;
-    max-width: 850px;
-    height: 65px;
-    border-radius: 50px;
-    display: flex;
-
-    box-shadow: rgb(0, 0, 0, 0.15) 0px 5px 12px;
-  `,
   options: css`
     background-color: white;
     display: flex;
@@ -58,54 +63,72 @@ const extend = {
     border-radius: inherit;
   `,
   section: {
-    side: css`
+    first: css`
       flex: 1.5 0 0%;
-      &:first-child {
-        border-top-left-radius: 50px;
-        border-bottom-left-radius: 50px;
-      }
-      &:last-child {
-        border-top-right-radius: 50px;
-        border-bottom-right-radius: 50px;
-      }
-
-      button {
-        height: 100%;
-        width: 100%;
-        padding: 20px;
-        border-radius: 50px;
-        ${common};
-        &:hover {
-          background-color: gray;
-        }
-      }
+      order: 1;
+      ${hoverMixin(5)}
     `,
-    middle: css`
-      flex: 2 0 0%;
-      width: 100%;
-      display: flex;
+    second: css`
+      flex: 0.8 0 0%;
+      padding: 20px;
+      order: 3;
+      ${hoverMixin(5)}
+      ${hoverMixin(6)}
     `,
-    button: css`
-      flex: 1 0 0%;
-      button {
-        height: 100%;
-        width: 100%;
-        padding: 20px;
-        ${common};
-
-        &:hover {
-          background-color: gray;
-        }
-      }
+    third: css`
+      flex: 0.8 0 0%;
+      padding: 20px;
+      order: 5;
+      ${hoverMixin(6)}
+      ${hoverMixin(7)}
+    `,
+    fourth: css`
+      flex: 1.15 0 0%;
+      order: 7;
+      ${hoverMixin(7)}
     `,
   },
-  seperator: css`
-    width: 1px;
-    height: 32px;
-  `,
+  seperator: {
+    first: css`
+      order: 2;
+    `,
+    second: css`
+      order: 4;
+    `,
+    third: css`
+      order: 6;
+    `,
+  },
+};
 
-  button: css`
-    padding: 8px;
-    flex: 0 0 auto;
-  `,
+export default ({ ...props }: SearchBarProps) => {
+  return (
+    <Wrapper>
+      <Box styles={extend.options}>
+        <Section
+          styles={extend.section.first}
+          onPress={() => console.log('pressed')}>
+          sadf
+        </Section>
+        <Section
+          styles={extend.section.second}
+          onPress={() => console.log('pressed')}>
+          sadf
+        </Section>
+        <Section
+          styles={extend.section.third}
+          onPress={() => console.log('pressed')}>
+          sadf
+        </Section>
+        <Section
+          styles={extend.section.fourth}
+          onPress={() => console.log('pressed')}>
+          sdaf
+        </Section>
+        <Seperator styles={extend.seperator.first} />
+        <Seperator styles={extend.seperator.second} />
+        <Seperator styles={extend.seperator.third} />
+      </Box>
+    </Wrapper>
+  );
 };
