@@ -37,14 +37,39 @@ const Wrapper = styled(Box)`
   box-shadow: rgb(0, 0, 0, 0.15) 0px 5px 12px;
 `;
 
-const Section = styled(Button)`
+const Section = styled(Box)`
+  background-color: ${colors.white};
+  border-radius: 50px;
+  height: 100%;
+  width: 100%;
+`;
+
+const Select = styled(Button)`
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  background-color: ${colors.white};
+  &:hover {
+    background-color: ${hover};
+  }
+`;
+
+const LastSection = styled(Box)`
   background-color: inherit;
   border-radius: 50px;
   height: 100%;
   width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
   &:hover {
     background-color: ${hover};
   }
+  /* & > div {
+    height: inherit;
+    width: inherit;
+    border-radius: inherit;
+  } */
 `;
 
 const Seperator = styled(Box)`
@@ -52,6 +77,13 @@ const Seperator = styled(Box)`
   height: 28px;
   background-color: ${seperator};
   align-self: center;
+`;
+
+const Search = styled(CustomButton)`
+  position: absolute;
+  right: 0px;
+  z-index: 5px;
+  margin-right: 8px;
 `;
 
 const extend = {
@@ -70,14 +102,12 @@ const extend = {
     `,
     second: css`
       flex: 0.8 0 0%;
-      padding: 20px;
       order: 3;
       ${hoverMixin(5)}
       ${hoverMixin(6)}
     `,
     third: css`
       flex: 0.8 0 0%;
-      padding: 20px;
       order: 5;
       ${hoverMixin(6)}
       ${hoverMixin(7)}
@@ -99,32 +129,29 @@ const extend = {
       order: 6;
     `,
   },
+  search: css`
+    position: relative;
+    z-index: 10;
+  `,
 };
 
 export default ({ ...props }: SearchBarProps) => {
   return (
     <Wrapper>
       <Box styles={extend.options}>
-        <Section
-          styles={extend.section.first}
-          onPress={() => console.log('pressed')}>
-          sadf
+        <Section styles={extend.section.first}>
+          <Select onPress={() => console.log('pressed')}>sadf</Select>
         </Section>
-        <Section
-          styles={extend.section.second}
-          onPress={() => console.log('pressed')}>
-          sadf
+        <Section styles={extend.section.second}>
+          <Select onPress={() => console.log('pressed')}>sadf</Select>
         </Section>
-        <Section
-          styles={extend.section.third}
-          onPress={() => console.log('pressed')}>
-          sadf
+        <Section styles={extend.section.third}>
+          <Select onPress={() => console.log('pressed')}>sadf</Select>
         </Section>
-        <Section
-          styles={extend.section.fourth}
-          onPress={() => console.log('pressed')}>
-          sdaf
-        </Section>
+        <LastSection styles={extend.section.fourth}>
+          <Select onPress={() => console.log('pressed')}>hello</Select>
+          <Search type='search' onPress={() => console.log('pressed')} />
+        </LastSection>
         <Seperator styles={extend.seperator.first} />
         <Seperator styles={extend.seperator.second} />
         <Seperator styles={extend.seperator.third} />
