@@ -1,10 +1,9 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
 import { darken } from 'polished';
 import { colors } from 'styles';
-import { Flex } from 'layout';
-import { Box, Button, Icon, Text } from 'atoms';
+import { Box, Button } from 'atoms';
 import { CustomButton } from 'molecules/Button';
 
 type SearchBarProps = {
