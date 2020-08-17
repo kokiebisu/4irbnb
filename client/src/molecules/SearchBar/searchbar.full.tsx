@@ -159,7 +159,7 @@ const Content = ({ title, description }: any) => {
   return (
     <>
       <Title>
-        <Text>{title}</Text>
+        <Text animate={{ opacity: 0 }}>{title}</Text>
       </Title>
       <Description>
         <Text>{description}</Text>
