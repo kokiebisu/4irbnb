@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 interface ElementProps {
   children?: React.ReactNode;
@@ -10,7 +11,7 @@ interface StyledProps {
   styles?: any;
 }
 
-const Element = styled.div<StyledProps>`
+const Element = styled(motion.div)<StyledProps>`
   ${({ styles }) => styles}
 `;
 
