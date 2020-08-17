@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
-import { darken } from 'polished';
+import { lighten, darken } from 'polished';
 import { colors } from 'styles';
-import { Box, Button } from 'atoms';
+import { Box, Button, Text } from 'atoms';
 import { CustomButton } from 'molecules/Button';
 
 type SearchBarProps = {
@@ -12,6 +12,10 @@ type SearchBarProps = {
 
 const hover = theme('mode', {
   light: darken(0.05, colors.white),
+});
+
+const description = theme('mode', {
+  light: lighten(0.05, colors.gray),
 });
 
 const seperator = theme('mode', {
@@ -48,6 +52,8 @@ const Select = styled(Button)`
   height: inherit;
   border-radius: inherit;
   background-color: ${colors.white};
+  text-align: left;
+  padding: 0 20px;
   &:hover {
     background-color: ${hover};
   }
@@ -134,21 +140,57 @@ const extend = {
   `,
 };
 
+const Title = styled(Box)`
+  p {
+    font-size: 12px;
+  }
+`;
+
+const Description = styled(Box)`
+  margin-top: 5px;
+  p {
+    font-size: 14px;
+    font-weight: 300;
+    color: ${description};
+  }
+`;
+
+const Content = ({ title, description }: any) => {
+  return (
+    <>
+      <Title>
+        <Text>{title}</Text>
+      </Title>
+      <Description>
+        <Text>{description}</Text>
+      </Description>
+    </>
+  );
+};
+
 export default ({ ...props }: SearchBarProps) => {
   return (
     <Wrapper>
       <Box styles={extend.options}>
         <Section styles={extend.section.first}>
-          <Select onPress={() => console.log('pressed')}>sadf</Select>
+          <Select onPress={() => console.log('pressed')}>
+            <Content title='Location' description='Where are you going?' />
+          </Select>
         </Section>
         <Section styles={extend.section.second}>
-          <Select onPress={() => console.log('pressed')}>sadf</Select>
+          <Select onPress={() => console.log('pressed')}>
+            <Content title='Check in' description='Add dates' />
+          </Select>
         </Section>
         <Section styles={extend.section.third}>
-          <Select onPress={() => console.log('pressed')}>sadf</Select>
+          <Select onPress={() => console.log('pressed')}>
+            <Content title='Check out' description='Add dates' />
+          </Select>
         </Section>
         <LastSection styles={extend.section.fourth}>
-          <Select onPress={() => console.log('pressed')}>hello</Select>
+          <Select onPress={() => console.log('pressed')}>
+            <Content title='Guests' description='Add guests' />
+          </Select>
           <Search type='search' onPress={() => console.log('pressed')} />
         </LastSection>
         <Seperator styles={extend.seperator.first} />
