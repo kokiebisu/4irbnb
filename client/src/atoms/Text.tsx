@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { AnimationMixin } from 'mixins/animation';
+import { AnimationInterface } from 'interface/animation';
 
-interface ElementProps extends AnimationMixin {
+interface ElementProps extends AnimationInterface {
   children?: React.ReactNode;
   styles?: any;
 }
