@@ -72,12 +72,14 @@ exports[`Searchbar renders correctly with mobile size 1`] = `
 <button
   className="c0"
   onClick={[Function]}
+  style={Object {}}
 >
   <div
     className="c1"
   >
     <div
       className="c2"
+      style={Object {}}
     >
       <svg
         viewBox="0 0 56.966 56.966"
@@ -89,9 +91,11 @@ exports[`Searchbar renders correctly with mobile size 1`] = `
     </div>
     <div
       className="c3"
+      style={Object {}}
     >
       <p
         className="c4"
+        style={Object {}}
       >
         Where are you going?
       </p>
@@ -195,24 +199,29 @@ exports[`Searchbar renders correctly with normal size 1`] = `
 <button
   className="c0"
   onClick={[Function]}
+  style={Object {}}
 >
   <div
     className="c1"
   >
     <div
       className="c2"
+      style={Object {}}
     >
       <p
         className="c3"
+        style={Object {}}
       >
         Start your search
       </p>
     </div>
     <div
       className="c4"
+      style={Object {}}
     >
       <div
         className="c5"
+        style={Object {}}
       >
         <svg
           viewBox="0 0 56.966 56.966"

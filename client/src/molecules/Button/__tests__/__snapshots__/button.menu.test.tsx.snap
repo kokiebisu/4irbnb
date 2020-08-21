@@ -84,12 +84,14 @@ exports[`Menu Button renders correctly 1`] = `
   action={[Function]}
   className="c0"
   onClick={[Function]}
+  style={Object {}}
 >
   <div
     className="c1"
   >
     <div
       className="c2"
+      style={Object {}}
     >
       <svg
         viewBox="0 0 448 512"
@@ -101,6 +103,7 @@ exports[`Menu Button renders correctly 1`] = `
     </div>
     <div
       className="c3"
+      style={Object {}}
     >
       <svg
         viewBox="0 0 32 32"

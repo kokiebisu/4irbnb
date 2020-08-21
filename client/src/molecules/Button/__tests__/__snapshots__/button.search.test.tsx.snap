@@ -74,12 +74,15 @@ exports[`Search Button renders correctly 1`] = `
   action={[Function]}
   className="c0"
   onClick={[Function]}
+  style={Object {}}
 >
   <div
     className="c1"
+    style={Object {}}
   >
     <div
       className="c2"
+      style={Object {}}
     >
       <svg
         viewBox="0 0 56.966 56.966"
