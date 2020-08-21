@@ -18,6 +18,10 @@ const description = theme('mode', {
   light: lighten(0.05, colors.gray),
 });
 
+const border = theme('mode', {
+  light: darken(0.25, colors.white),
+});
+
 const seperator = theme('mode', {
   light: darken(0.1, colors.white),
 });
@@ -34,7 +38,8 @@ const Wrapper = styled(Box)`
   width: 100%;
   max-width: 850px;
   height: 65px;
-  border-radius: 50px;
+  border-radius: 15px;
+  border: 1px solid ${border};
   display: flex;
   background-color: ${colors.white};
   box-shadow: rgb(0, 0, 0, 0.15) 0px 5px 12px;
@@ -70,16 +75,11 @@ const LastSection = styled(Box)`
   &:hover {
     background-color: ${hover};
   }
-  /* & > div {
-    height: inherit;
-    width: inherit;
-    border-radius: inherit;
-  } */
 `;
 
 const Seperator = styled(Box)`
   width: 1px;
-  height: 28px;
+  height: 100%;
   background-color: ${seperator};
   align-self: center;
 `;
@@ -142,12 +142,15 @@ const extend = {
 
 const Title = styled(Box)`
   p {
-    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 10px;
+    text-transform: uppercase;
   }
 `;
 
 const Description = styled(Box)`
-  margin-top: 5px;
+  margin-top: 8px;
   p {
     font-size: 14px;
     font-weight: 300;
