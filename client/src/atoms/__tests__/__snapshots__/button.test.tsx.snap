@@ -20,6 +20,7 @@ exports[`Base Button renders correctly 1`] = `
   action={[Function]}
   className="c0"
   onClick={[Function]}
+  style={Object {}}
 >
   test
 </button>

@@ -42,9 +42,11 @@ exports[`Cookie Button renders correctly 1`] = `
   action={[Function]}
   className="c0"
   onClick={[Function]}
+  style={Object {}}
 >
   <p
     className="c1"
+    style={Object {}}
   />
 </button>
 `;

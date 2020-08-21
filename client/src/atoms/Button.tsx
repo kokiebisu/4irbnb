@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { motion } from 'framer-motion';
 
 interface ElementProps {
   styles?: any;
@@ -10,6 +11,7 @@ interface ElementProps {
   children?: React.ReactNode;
   inverse?: boolean;
   onPress: () => void;
+  className?: string;
 }
 
 interface StyledProps {
@@ -20,7 +22,7 @@ interface StyledProps {
   inverse?: boolean;
 }
 
-const Element = styled.button<StyledProps>`
+const Element = styled(motion.button)<StyledProps>`
   border-radius: 8px;
   font-size: 18px;
   border: none;
