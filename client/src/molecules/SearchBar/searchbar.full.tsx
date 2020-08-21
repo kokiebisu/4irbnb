@@ -34,22 +34,37 @@ const hoverMixin = (number: number) => css`
   }
 `;
 
+const borderMixin = (
+  top: number,
+  right: number,
+  bottom: number,
+  left: number,
+  color: string | theme.ThemeSet
+) => css`
+  border-top: ${top}px solid ${color};
+  border-right: ${right}px solid ${color};
+  border-bottom: ${bottom}px solid ${color};
+  border-left: ${left}px solid ${color};
+`;
+
 const Wrapper = styled(Box)`
   width: 100%;
-  max-width: 850px;
-  height: 65px;
+  height: 70px;
   border-radius: 15px;
   border: 1px solid ${border};
   display: flex;
   background-color: ${colors.white};
   box-shadow: rgb(0, 0, 0, 0.15) 0px 5px 12px;
+  /* &:hover {
+    border: none;
+  } */
 `;
 
 const Section = styled(Box)`
   background-color: ${colors.white};
-  border-radius: 50px;
   height: 100%;
   width: 100%;
+  border-radius: 15px;
 `;
 
 const Select = styled(Button)`
@@ -59,14 +74,32 @@ const Select = styled(Button)`
   background-color: ${colors.white};
   text-align: left;
   padding: 0 20px;
+  ${borderMixin(1, 2, 1, 2, 'transparent')};
+
+  &.first {
+    ${borderMixin(1, 2, 1, 1, 'transparent')};
+  }
+
+  &.first:hover {
+    ${borderMixin(1, 2, 1, 1, border)};
+  }
+
+  &.last {
+    ${borderMixin(1, 1, 1, 2, 'transparent')};
+  }
+
+  &.last:hover {
+    ${borderMixin(1, 1, 1, 2, border)};
+  }
+
   &:hover {
-    background-color: ${hover};
+    ${borderMixin(1, 2, 1, 2, border)};
   }
 `;
 
 const LastSection = styled(Box)`
   background-color: inherit;
-  border-radius: 50px;
+  border-radius: 15px;
   height: 100%;
   width: 100%;
   display: flex;
@@ -88,7 +121,7 @@ const Search = styled(CustomButton)`
   position: absolute;
   right: 0px;
   z-index: 5px;
-  margin-right: 8px;
+  margin-right: 12px;
 `;
 
 const extend = {
@@ -176,7 +209,7 @@ export default ({ ...props }: SearchBarProps) => {
     <Wrapper>
       <Box styles={extend.options}>
         <Section styles={extend.section.first}>
-          <Select onPress={() => console.log('pressed')}>
+          <Select className='first' onPress={() => console.log('pressed')}>
             <Content title='Location' description='Where are you going?' />
           </Select>
         </Section>
@@ -191,7 +224,7 @@ export default ({ ...props }: SearchBarProps) => {
           </Select>
         </Section>
         <LastSection styles={extend.section.fourth}>
-          <Select onPress={() => console.log('pressed')}>
+          <Select className='last' onPress={() => console.log('pressed')}>
             <Content title='Guests' description='Add guests' />
           </Select>
           <Search type='search' onPress={() => console.log('pressed')} />
