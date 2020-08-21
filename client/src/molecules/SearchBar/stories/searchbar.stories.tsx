@@ -36,20 +36,20 @@ export const Normal = () => {
   return <SearchBar type='normal' onPress={() => console.log('hello!')} />;
 };
 
-export const Full = () => {
-  const extend = {
-    wrapper: css`
-      margin: 0 80px;
+// export const Full = () => {
+//   const extend = {
+//     wrapper: css`
+//       margin: 0 80px;
 
-      @media ${sizes.lg} {
-        width: 100%;
-        max-width: 1560px;
-      }
-    `,
-  };
-  return (
-    <Box styles={extend.wrapper}>
-      <SearchBar type='full' onPress={() => console.log('hello!')} />
-    </Box>
-  );
-};
+//       @media ${sizes.lg} {
+//         width: 100%;
+//         max-width: 1560px;
+//       }
+//     `,
+//   };
+//   return (
+//     <Box styles={extend.wrapper}>
+//       <SearchBar type='full' onPress={() => console.log('hello!')} />
+//     </Box>
+//   );
+// };

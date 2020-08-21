@@ -2,8 +2,6 @@
 
 exports[`Search Button renders correctly 1`] = `
 .c1 {
-  height: 32px;
-  width: 32px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -22,17 +20,17 @@ exports[`Search Button renders correctly 1`] = `
   border-radius: 8px;
   font-size: 18px;
   border: none;
-  background-color: #ff385c;
+  background-color: rgb(215,4,102);
   border: none;
-  padding: 8px;
+  padding: 15px 22px;
   color: white;
-  border-radius: 50%;
+  border-radius: 8px;
   -webkit-transition: 0.8s;
   transition: 0.8s;
 }
 
 .c0:hover {
-  background-color: rgb(215,4,102);
+  background-color: #ff385c;
 }
 
 .c0:hover {
@@ -57,6 +55,7 @@ exports[`Search Button renders correctly 1`] = `
   -ms-flex-pack: center;
   justify-content: center;
   position: relative;
+  margin-right: 8px;
 }
 
 .c2 svg {
@@ -70,16 +69,26 @@ exports[`Search Button renders correctly 1`] = `
   stroke-width: 2;
 }
 
+.c3 {
+  margin: 0;
+  font-family: 'Airbnb-Cereal';
+  font-weight: 300;
+  font-size: 16px;
+}
+
 <button
   action={[Function]}
   className="c0"
   onClick={[Function]}
+  style={Object {}}
 >
   <div
     className="c1"
+    style={Object {}}
   >
     <div
       className="c2"
+      style={Object {}}
     >
       <svg
         viewBox="0 0 56.966 56.966"
@@ -89,6 +98,12 @@ exports[`Search Button renders correctly 1`] = `
         />
       </svg>
     </div>
+    <p
+      className="c3"
+      style={Object {}}
+    >
+      Search
+    </p>
   </div>
 </button>
 `;
