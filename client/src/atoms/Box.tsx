@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { AnimationInterface } from 'interface/animation';
 
-interface ElementProps {
+interface ElementProps extends AnimationInterface {
   children?: React.ReactNode;
   styles?: any;
+  layout?: any;
 }
 
 interface StyledProps {
