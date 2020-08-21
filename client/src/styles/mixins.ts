@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+import theme from 'styled-theming';
 
 export const hoverMixin = (number: number) => css`
   &:hover ~ div:nth-child(${number}) {
