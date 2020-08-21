@@ -5,6 +5,6 @@ import {
   VariantLabels,
 } from 'framer-motion';
 
-export interface AnimationMixin {
+export interface AnimationInterface {
   animate?: AnimationControls | TargetAndTransition | VariantLabels | string;
 }

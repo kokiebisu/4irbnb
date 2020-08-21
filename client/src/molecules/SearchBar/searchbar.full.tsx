@@ -5,6 +5,8 @@ import { lighten, darken } from 'polished';
 import { colors } from 'styles';
 import { Box, Button, Text } from 'atoms';
 import { CustomButton } from 'molecules/Button';
+import * as mixins from 'styles/mixins';
+import { AnimateSharedLayout, AnimatePresence } from 'framer-motion';
 
 type SearchBarProps = {
   onPress: () => void;
@@ -26,28 +28,7 @@ const seperator = theme('mode', {
   light: darken(0.1, colors.white),
 });
 
-const hoverMixin = (number: number) => css`
-  &:hover ~ div:nth-child(${number}) {
-    width: 1px;
-    height: 28px;
-    background-color: transparent;
-  }
-`;
-
-const borderMixin = (
-  top: number,
-  right: number,
-  bottom: number,
-  left: number,
-  color: string | theme.ThemeSet
-) => css`
-  border-top: ${top}px solid ${color};
-  border-right: ${right}px solid ${color};
-  border-bottom: ${bottom}px solid ${color};
-  border-left: ${left}px solid ${color};
-`;
-
-const Wrapper = styled(Box)`
+const Inputs = styled(Box)`
   width: 100%;
   height: 70px;
   border-radius: 15px;
@@ -74,26 +55,26 @@ const Select = styled(Button)`
   background-color: ${colors.white};
   text-align: left;
   padding: 0 20px;
-  ${borderMixin(1, 2, 1, 2, 'transparent')};
+  ${mixins.borderMixin(1, 2, 1, 2, 'transparent')};
 
   &.first {
-    ${borderMixin(1, 2, 1, 1, 'transparent')};
+    ${mixins.borderMixin(1, 2, 1, 1, 'transparent')};
   }
 
   &.first:hover {
-    ${borderMixin(1, 2, 1, 1, border)};
+    ${mixins.borderMixin(1, 2, 1, 1, border)};
   }
 
   &.last {
-    ${borderMixin(1, 1, 1, 2, 'transparent')};
+    ${mixins.borderMixin(1, 1, 1, 2, 'transparent')};
   }
 
   &.last:hover {
-    ${borderMixin(1, 1, 1, 2, border)};
+    ${mixins.borderMixin(1, 1, 1, 2, border)};
   }
 
   &:hover {
-    ${borderMixin(1, 2, 1, 2, border)};
+    ${mixins.borderMixin(1, 2, 1, 2, border)};
   }
 `;
 
@@ -124,6 +105,28 @@ const Search = styled(CustomButton)`
   margin-right: 12px;
 `;
 
+const Title = styled(Box)`
+  p {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+`;
+
+const Description = styled(Box)`
+  margin-top: 8px;
+  p {
+    font-size: 14px;
+    font-weight: 300;
+    color: ${description};
+  }
+`;
+
+const Categories = styled(Box)`
+  margin-bottom: 22px;
+`;
+
 const extend = {
   options: css`
     background-color: white;
@@ -136,24 +139,24 @@ const extend = {
     first: css`
       flex: 1.5 0 0%;
       order: 1;
-      ${hoverMixin(5)}
+      ${mixins.hoverMixin(5)}
     `,
     second: css`
       flex: 0.8 0 0%;
       order: 3;
-      ${hoverMixin(5)}
-      ${hoverMixin(6)}
+      ${mixins.hoverMixin(5)}
+      ${mixins.hoverMixin(6)}
     `,
     third: css`
       flex: 0.8 0 0%;
       order: 5;
-      ${hoverMixin(6)}
-      ${hoverMixin(7)}
+      ${mixins.hoverMixin(6)}
+      ${mixins.hoverMixin(7)}
     `,
     fourth: css`
       flex: 1.15 0 0%;
       order: 7;
-      ${hoverMixin(7)}
+      ${mixins.hoverMixin(7)}
     `,
   },
   seperator: {
@@ -173,24 +176,6 @@ const extend = {
   `,
 };
 
-const Title = styled(Box)`
-  p {
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    font-size: 10px;
-    text-transform: uppercase;
-  }
-`;
-
-const Description = styled(Box)`
-  margin-top: 8px;
-  p {
-    font-size: 14px;
-    font-weight: 300;
-    color: ${description};
-  }
-`;
-
 const Content = ({ title, description }: any) => {
   return (
     <>
@@ -204,35 +189,63 @@ const Content = ({ title, description }: any) => {
   );
 };
 
+const Category = ({ type, title }: any) => {
+  const extend = {
+    wrapper: css`
+      background-color: transparent;
+      margin-right: 20px;
+    `,
+    title: css`
+      font-weight: 300;
+      font-size: 15.5px;
+    `,
+  };
+  return (
+    <Button styles={extend.wrapper} onPress={() => console.log(type)}>
+      <Text styles={extend.title}>{title}</Text>
+    </Button>
+  );
+};
+
 export default ({ ...props }: SearchBarProps) => {
   return (
-    <Wrapper>
-      <Box styles={extend.options}>
-        <Section styles={extend.section.first}>
-          <Select className='first' onPress={() => console.log('pressed')}>
-            <Content title='Location' description='Where are you going?' />
-          </Select>
-        </Section>
-        <Section styles={extend.section.second}>
-          <Select onPress={() => console.log('pressed')}>
-            <Content title='Check in' description='Add dates' />
-          </Select>
-        </Section>
-        <Section styles={extend.section.third}>
-          <Select onPress={() => console.log('pressed')}>
-            <Content title='Check out' description='Add dates' />
-          </Select>
-        </Section>
-        <LastSection styles={extend.section.fourth}>
-          <Select className='last' onPress={() => console.log('pressed')}>
-            <Content title='Guests' description='Add guests' />
-          </Select>
-          <Search type='search' onPress={() => console.log('pressed')} />
-        </LastSection>
-        <Seperator styles={extend.seperator.first} />
-        <Seperator styles={extend.seperator.second} />
-        <Seperator styles={extend.seperator.third} />
-      </Box>
-    </Wrapper>
+    <Box>
+      <AnimateSharedLayout>
+        <Categories layout>
+          <Category type='places' title='Places to stay' />
+          <Category type='monthly' title='Monthly stays' />
+          <Category type='experiences' title='Experiences' />
+          <Category type='online' title='Online Experiences' />
+        </Categories>
+      </AnimateSharedLayout>
+      <Inputs>
+        <Box styles={extend.options}>
+          <Section styles={extend.section.first}>
+            <Select className='first' onPress={() => console.log('pressed')}>
+              <Content title='Location' description='Where are you going?' />
+            </Select>
+          </Section>
+          <Section styles={extend.section.second}>
+            <Select onPress={() => console.log('pressed')}>
+              <Content title='Check in' description='Add dates' />
+            </Select>
+          </Section>
+          <Section styles={extend.section.third}>
+            <Select onPress={() => console.log('pressed')}>
+              <Content title='Check out' description='Add dates' />
+            </Select>
+          </Section>
+          <LastSection styles={extend.section.fourth}>
+            <Select className='last' onPress={() => console.log('pressed')}>
+              <Content title='Guests' description='Add guests' />
+            </Select>
+            <Search type='search' onPress={() => console.log('pressed')} />
+          </LastSection>
+          <Seperator styles={extend.seperator.first} />
+          <Seperator styles={extend.seperator.second} />
+          <Seperator styles={extend.seperator.third} />
+        </Box>
+      </Inputs>
+    </Box>
   );
 };
