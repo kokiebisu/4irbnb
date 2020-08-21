@@ -6,7 +6,7 @@ import { colors } from 'styles';
 import { Box, Button, Text } from 'atoms';
 import { CustomButton } from 'molecules/Button';
 import * as mixins from 'styles/mixins';
-import { AnimateSharedLayout, AnimatePresence } from 'framer-motion';
+import { AnimateSharedLayout, AnimatePresence, motion } from 'framer-motion';
 
 type SearchBarProps = {
   onPress: () => void;
@@ -185,14 +185,13 @@ const Category = ({ category, onClick, isSelected }: any) => {
   return (
     <List onClick={onClick}>
       {isSelected && (
-        <Text
+        <motion.div
           layoutId='outline'
           className='outline'
           animate={{ borderBottom: '2px solid black' }}
-          transition={spring}
-          styles={extend.title}>
+          transition={spring}>
           {category}
-        </Text>
+        </motion.div>
       )}
     </List>
   );
