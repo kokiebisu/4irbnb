@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
 import { lighten, darken } from 'polished';
 import { colors } from 'styles';
 import { Box, Button, Text } from 'atoms';
 import { CustomButton } from 'molecules/Button';
+import * as mixins from 'styles/mixins';
+import { AnimateSharedLayout, AnimatePresence, motion } from 'framer-motion';
 
 type SearchBarProps = {
   onPress: () => void;
@@ -18,33 +20,36 @@ const description = theme('mode', {
   light: lighten(0.05, colors.gray),
 });
 
+const border = theme('mode', {
+  light: darken(0.25, colors.white),
+});
+
 const seperator = theme('mode', {
   light: darken(0.1, colors.white),
 });
 
-const hoverMixin = (number: number) => css`
-  &:hover ~ div:nth-child(${number}) {
-    width: 1px;
-    height: 28px;
-    background-color: transparent;
-  }
-`;
+const category = theme('mode', {
+  light: lighten(0.1, colors.gray),
+});
 
-const Wrapper = styled(Box)`
+const Inputs = styled(Box)`
   width: 100%;
-  max-width: 850px;
-  height: 65px;
-  border-radius: 50px;
+  height: 70px;
+  border-radius: 15px;
+  border: 1px solid ${border};
   display: flex;
   background-color: ${colors.white};
   box-shadow: rgb(0, 0, 0, 0.15) 0px 5px 12px;
+  /* &:hover {
+    border: none;
+  } */
 `;
 
 const Section = styled(Box)`
   background-color: ${colors.white};
-  border-radius: 50px;
   height: 100%;
   width: 100%;
+  border-radius: 15px;
 `;
 
 const Select = styled(Button)`
@@ -54,14 +59,32 @@ const Select = styled(Button)`
   background-color: ${colors.white};
   text-align: left;
   padding: 0 20px;
+  ${mixins.borderMixin(1, 2, 1, 2, 'transparent')};
+
+  &.first {
+    ${mixins.borderMixin(1, 2, 1, 1, 'transparent')};
+  }
+
+  &.first:hover {
+    ${mixins.borderMixin(1, 2, 1, 1, border)};
+  }
+
+  &.last {
+    ${mixins.borderMixin(1, 1, 1, 2, 'transparent')};
+  }
+
+  &.last:hover {
+    ${mixins.borderMixin(1, 1, 1, 2, border)};
+  }
+
   &:hover {
-    background-color: ${hover};
+    ${mixins.borderMixin(1, 2, 1, 2, border)};
   }
 `;
 
 const LastSection = styled(Box)`
   background-color: inherit;
-  border-radius: 50px;
+  border-radius: 15px;
   height: 100%;
   width: 100%;
   display: flex;
@@ -70,16 +93,11 @@ const LastSection = styled(Box)`
   &:hover {
     background-color: ${hover};
   }
-  /* & > div {
-    height: inherit;
-    width: inherit;
-    border-radius: inherit;
-  } */
 `;
 
 const Seperator = styled(Box)`
   width: 1px;
-  height: 28px;
+  height: 100%;
   background-color: ${seperator};
   align-self: center;
 `;
@@ -88,70 +106,32 @@ const Search = styled(CustomButton)`
   position: absolute;
   right: 0px;
   z-index: 5px;
-  margin-right: 8px;
+  margin-right: 12px;
 `;
-
-const extend = {
-  options: css`
-    background-color: white;
-    display: flex;
-    flex: 1 1 0%;
-    height: 100%;
-    border-radius: inherit;
-  `,
-  section: {
-    first: css`
-      flex: 1.5 0 0%;
-      order: 1;
-      ${hoverMixin(5)}
-    `,
-    second: css`
-      flex: 0.8 0 0%;
-      order: 3;
-      ${hoverMixin(5)}
-      ${hoverMixin(6)}
-    `,
-    third: css`
-      flex: 0.8 0 0%;
-      order: 5;
-      ${hoverMixin(6)}
-      ${hoverMixin(7)}
-    `,
-    fourth: css`
-      flex: 1.15 0 0%;
-      order: 7;
-      ${hoverMixin(7)}
-    `,
-  },
-  seperator: {
-    first: css`
-      order: 2;
-    `,
-    second: css`
-      order: 4;
-    `,
-    third: css`
-      order: 6;
-    `,
-  },
-  search: css`
-    position: relative;
-    z-index: 10;
-  `,
-};
 
 const Title = styled(Box)`
   p {
-    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 10px;
+    text-transform: uppercase;
   }
 `;
 
 const Description = styled(Box)`
-  margin-top: 5px;
+  margin-top: 8px;
   p {
     font-size: 14px;
     font-weight: 300;
     color: ${description};
+  }
+`;
+
+const List = styled.li`
+  background-color: transparent;
+  margin-right: 20px;
+
+  &.outline {
   }
 `;
 
@@ -168,35 +148,135 @@ const Content = ({ title, description }: any) => {
   );
 };
 
-export default ({ ...props }: SearchBarProps) => {
+const Categories = () => {
+  const categories = ['places', 'monthly', 'experiences', 'online'];
+  const [selected, setSelected] = useState(categories[0]);
   return (
-    <Wrapper>
-      <Box styles={extend.options}>
-        <Section styles={extend.section.first}>
-          <Select onPress={() => console.log('pressed')}>
-            <Content title='Location' description='Where are you going?' />
-          </Select>
-        </Section>
-        <Section styles={extend.section.second}>
-          <Select onPress={() => console.log('pressed')}>
-            <Content title='Check in' description='Add dates' />
-          </Select>
-        </Section>
-        <Section styles={extend.section.third}>
-          <Select onPress={() => console.log('pressed')}>
-            <Content title='Check out' description='Add dates' />
-          </Select>
-        </Section>
-        <LastSection styles={extend.section.fourth}>
-          <Select onPress={() => console.log('pressed')}>
-            <Content title='Guests' description='Add guests' />
-          </Select>
-          <Search type='search' onPress={() => console.log('pressed')} />
-        </LastSection>
-        <Seperator styles={extend.seperator.first} />
-        <Seperator styles={extend.seperator.second} />
-        <Seperator styles={extend.seperator.third} />
-      </Box>
-    </Wrapper>
+    <AnimateSharedLayout>
+      <ul>
+        {categories.map((category) => (
+          <Category
+            key={category}
+            category={category}
+            isSelected={selected === category}
+            onClick={() => setSelected(category)}
+          />
+        ))}
+      </ul>
+    </AnimateSharedLayout>
+  );
+};
+
+const Category = ({ category, onClick, isSelected }: any) => {
+  const extend = {
+    title: css`
+      font-weight: 300;
+      font-size: 15.5px;
+      &:hover {
+        color: ${category};
+      }
+    `,
+  };
+  const spring = {
+    type: 'spring',
+    stiffness: 500,
+    damping: 30,
+  };
+  return (
+    <List onClick={onClick}>
+      {isSelected && (
+        <motion.div
+          layoutId='outline'
+          className='outline'
+          animate={{ borderBottom: '2px solid black' }}
+          transition={spring}>
+          {category}
+        </motion.div>
+      )}
+    </List>
+  );
+};
+
+export default ({ ...props }: SearchBarProps) => {
+  const extend = {
+    options: css`
+      background-color: white;
+      display: flex;
+      flex: 1 1 0%;
+      height: 100%;
+      border-radius: inherit;
+    `,
+    section: {
+      first: css`
+        flex: 1.5 0 0%;
+        order: 1;
+        ${mixins.hoverMixin(5)}
+      `,
+      second: css`
+        flex: 0.8 0 0%;
+        order: 3;
+        ${mixins.hoverMixin(5)}
+        ${mixins.hoverMixin(6)}
+      `,
+      third: css`
+        flex: 0.8 0 0%;
+        order: 5;
+        ${mixins.hoverMixin(6)}
+        ${mixins.hoverMixin(7)}
+      `,
+      fourth: css`
+        flex: 1.15 0 0%;
+        order: 7;
+        ${mixins.hoverMixin(7)}
+      `,
+    },
+    seperator: {
+      first: css`
+        order: 2;
+      `,
+      second: css`
+        order: 4;
+      `,
+      third: css`
+        order: 6;
+      `,
+    },
+    search: css`
+      position: relative;
+      z-index: 10;
+    `,
+  };
+  return (
+    <Box>
+      <Categories />
+      <Inputs>
+        <Box styles={extend.options}>
+          <Section styles={extend.section.first}>
+            <Select className='first' onPress={() => console.log('pressed')}>
+              <Content title='Location' description='Where are you going?' />
+            </Select>
+          </Section>
+          <Section styles={extend.section.second}>
+            <Select onPress={() => console.log('pressed')}>
+              <Content title='Check in' description='Add dates' />
+            </Select>
+          </Section>
+          <Section styles={extend.section.third}>
+            <Select onPress={() => console.log('pressed')}>
+              <Content title='Check out' description='Add dates' />
+            </Select>
+          </Section>
+          <LastSection styles={extend.section.fourth}>
+            <Select className='last' onPress={() => console.log('pressed')}>
+              <Content title='Guests' description='Add guests' />
+            </Select>
+            <Search type='search' onPress={() => console.log('pressed')} />
+          </LastSection>
+          <Seperator styles={extend.seperator.first} />
+          <Seperator styles={extend.seperator.second} />
+          <Seperator styles={extend.seperator.third} />
+        </Box>
+      </Inputs>
+    </Box>
   );
 };

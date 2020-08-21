@@ -37,9 +37,11 @@ exports[`Base Card renders correctly with title 1`] = `
 
 <div
   className="c0"
+  style={Object {}}
 >
   <div
     className="c1"
+    style={Object {}}
   >
     <img
       alt="card-image"
@@ -49,9 +51,11 @@ exports[`Base Card renders correctly with title 1`] = `
   </div>
   <div
     className="c3"
+    style={Object {}}
   >
     <p
       className="c4"
+      style={Object {}}
     >
       test description
     </p>
@@ -96,9 +100,11 @@ exports[`Base Card renders correctly without title 1`] = `
 
 <div
   className="c0"
+  style={Object {}}
 >
   <div
     className="c1"
+    style={Object {}}
   >
     <img
       alt="card-image"
@@ -108,9 +114,11 @@ exports[`Base Card renders correctly without title 1`] = `
   </div>
   <div
     className="c3"
+    style={Object {}}
   >
     <p
       className="c4"
+      style={Object {}}
     >
       test description
     </p>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 // svgs
 import { Search, Globe, ChevronDown, Bars, Avatar, Lock } from 'assets/svg';
@@ -26,7 +27,7 @@ const items: MapProps = {
   Lock: Lock,
 };
 
-const Element = styled.div<StyledProps>`
+const Element = styled(motion.div)<StyledProps>`
   display: flex;
   align-items: center;
   justify-content: center;
