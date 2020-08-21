@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { m as motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 interface ElementProps {
   styles?: any;
@@ -22,7 +22,7 @@ interface StyledProps {
   inverse?: boolean;
 }
 
-const Element = styled(m.button)<StyledProps>`
+const Element = styled(motion.button)<StyledProps>`
   border-radius: 8px;
   font-size: 18px;
   border: none;

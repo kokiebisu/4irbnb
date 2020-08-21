@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
 import { lighten, darken } from 'polished';
@@ -26,6 +26,10 @@ const border = theme('mode', {
 
 const seperator = theme('mode', {
   light: darken(0.1, colors.white),
+});
+
+const category = theme('mode', {
+  light: lighten(0.1, colors.gray),
 });
 
 const Inputs = styled(Box)`
@@ -123,58 +127,13 @@ const Description = styled(Box)`
   }
 `;
 
-const Categories = styled(Box)`
-  margin-bottom: 22px;
-`;
+const List = styled.li`
+  background-color: transparent;
+  margin-right: 20px;
 
-const extend = {
-  options: css`
-    background-color: white;
-    display: flex;
-    flex: 1 1 0%;
-    height: 100%;
-    border-radius: inherit;
-  `,
-  section: {
-    first: css`
-      flex: 1.5 0 0%;
-      order: 1;
-      ${mixins.hoverMixin(5)}
-    `,
-    second: css`
-      flex: 0.8 0 0%;
-      order: 3;
-      ${mixins.hoverMixin(5)}
-      ${mixins.hoverMixin(6)}
-    `,
-    third: css`
-      flex: 0.8 0 0%;
-      order: 5;
-      ${mixins.hoverMixin(6)}
-      ${mixins.hoverMixin(7)}
-    `,
-    fourth: css`
-      flex: 1.15 0 0%;
-      order: 7;
-      ${mixins.hoverMixin(7)}
-    `,
-  },
-  seperator: {
-    first: css`
-      order: 2;
-    `,
-    second: css`
-      order: 4;
-    `,
-    third: css`
-      order: 6;
-    `,
-  },
-  search: css`
-    position: relative;
-    z-index: 10;
-  `,
-};
+  &.outline {
+  }
+`;
 
 const Content = ({ title, description }: any) => {
   return (
@@ -189,35 +148,108 @@ const Content = ({ title, description }: any) => {
   );
 };
 
-const Category = ({ type, title }: any) => {
+const Categories = () => {
+  const categories = ['places', 'monthly', 'experiences', 'online'];
+  const [selected, setSelected] = useState(categories[0]);
+  return (
+    <AnimateSharedLayout>
+      <ul>
+        {categories.map((category) => (
+          <Category
+            key={category}
+            category={category}
+            isSelected={selected === category}
+            onClick={() => setSelected(category)}
+          />
+        ))}
+      </ul>
+    </AnimateSharedLayout>
+  );
+};
+
+const Category = ({ category, onClick, isSelected }: any) => {
   const extend = {
-    wrapper: css`
-      background-color: transparent;
-      margin-right: 20px;
-    `,
     title: css`
       font-weight: 300;
       font-size: 15.5px;
+      &:hover {
+        color: ${category};
+      }
     `,
   };
+  const spring = {
+    type: 'spring',
+    stiffness: 500,
+    damping: 30,
+  };
   return (
-    <Button styles={extend.wrapper} onPress={() => console.log(type)}>
-      <Text styles={extend.title}>{title}</Text>
-    </Button>
+    <List onClick={onClick}>
+      {isSelected && (
+        <Text
+          layoutId='outline'
+          className='outline'
+          animate={{ borderBottom: '2px solid black' }}
+          transition={spring}
+          styles={extend.title}>
+          {category}
+        </Text>
+      )}
+    </List>
   );
 };
 
 export default ({ ...props }: SearchBarProps) => {
+  const extend = {
+    options: css`
+      background-color: white;
+      display: flex;
+      flex: 1 1 0%;
+      height: 100%;
+      border-radius: inherit;
+    `,
+    section: {
+      first: css`
+        flex: 1.5 0 0%;
+        order: 1;
+        ${mixins.hoverMixin(5)}
+      `,
+      second: css`
+        flex: 0.8 0 0%;
+        order: 3;
+        ${mixins.hoverMixin(5)}
+        ${mixins.hoverMixin(6)}
+      `,
+      third: css`
+        flex: 0.8 0 0%;
+        order: 5;
+        ${mixins.hoverMixin(6)}
+        ${mixins.hoverMixin(7)}
+      `,
+      fourth: css`
+        flex: 1.15 0 0%;
+        order: 7;
+        ${mixins.hoverMixin(7)}
+      `,
+    },
+    seperator: {
+      first: css`
+        order: 2;
+      `,
+      second: css`
+        order: 4;
+      `,
+      third: css`
+        order: 6;
+      `,
+    },
+    search: css`
+      position: relative;
+      z-index: 10;
+    `,
+  };
   return (
     <Box>
-      <AnimateSharedLayout>
-        <Categories layout>
-          <Category type='places' title='Places to stay' />
-          <Category type='monthly' title='Monthly stays' />
-          <Category type='experiences' title='Experiences' />
-          <Category type='online' title='Online Experiences' />
-        </Categories>
-      </AnimateSharedLayout>
+      <Categories />
       <Inputs>
         <Box styles={extend.options}>
           <Section styles={extend.section.first}>
