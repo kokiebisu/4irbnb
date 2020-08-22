@@ -1,27 +1,17 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-
-// molecules
-import { CustomButton } from 'molecules/Button';
+import { Story } from '@storybook/react/types-6-0';
+import { CustomButton, CustomProps } from 'molecules/Button';
+import { Box } from 'atoms';
 
 export default {
-  title: 'Design Systems|Molecules/Button/Search',
-  parameters: {
-    component: CustomButton,
-    componentSubtitle:
-      'Displays the search button used to look for a place to stay',
-  },
-  excludeStories: /.*Data$/,
+  title: 'Design Systems/Button/Search',
+  component: CustomButton,
+  argsType: { onPress: { action: 'clicked' } },
 };
 
-const data = {
-  name: 'Search',
-};
+const ButtonTemplate: Story<CustomProps> = (args) => (
+  <CustomButton type='search' {...args} />
+);
 
-const actionsData = {
-  onPress: action('onPress'),
-};
-
-export const base = () => {
-  return <CustomButton type='search' {...data} {...actionsData} />;
-};
+export const base = ButtonTemplate.bind({});
+base.args = { name: 'Search' };

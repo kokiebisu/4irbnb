@@ -10,13 +10,9 @@ export default {
   argTypes: { onPress: { action: 'clicked' } },
 };
 
-const Template: Story<CustomProps> = (args) => {
-  return (
-    <Box>
-      <CustomButton type='globe' {...args} />
-    </Box>
-  );
-};
+const Template: Story<CustomProps> = (args) => (
+  <CustomButton type='globe' {...args} />
+);
 
 export const base = Template.bind({});
 base.args = {};
