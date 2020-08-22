@@ -9,7 +9,7 @@ import { Box, Text, Img } from 'atoms';
 // colors
 import { colors } from 'styles';
 
-type CardProps = {
+export type CardProps = {
   image: string;
   title?: string;
   description?: string;
