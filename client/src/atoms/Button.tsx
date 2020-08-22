@@ -1,6 +1,9 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
+import theme from 'styled-theming';
+import { lighten } from 'polished';
+import { colors } from 'styles';
 
 export interface ElementProps extends StyledProps {
   children?: React.ReactNode;
@@ -38,7 +41,7 @@ const Element = styled(motion.button)<StyledProps>`
     inverse &&
     css`
       border: 1px solid black;
-      background-color: transparent;
+      background-color: transparent !important;
     `};
   &:hover {
     cursor: pointer;
@@ -67,4 +70,5 @@ export type CustomProps = {
   size?: 'small' | 'medium' | 'large';
   inverse?: boolean;
   name?: string;
+  className?: string;
 };
