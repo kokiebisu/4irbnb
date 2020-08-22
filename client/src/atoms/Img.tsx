@@ -13,7 +13,8 @@ interface StyledProps {
 
 const Element = styled.img<StyledProps>`
   ${({ styles }) => styles}
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 `;
 
 export default ({ ...props }: ElementProps) => {
