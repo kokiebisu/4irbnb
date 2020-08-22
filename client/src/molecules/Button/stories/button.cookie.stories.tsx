@@ -10,7 +10,7 @@ export default {
   argTypes: { onPress: { action: 'clicked' } },
 };
 
-const Template: Story<CustomProps> = (args) => {
+const ButtonTemplate: Story<CustomProps> = (args) => {
   const extend = {
     wrapper: css`
       width: 200px;
@@ -23,8 +23,8 @@ const Template: Story<CustomProps> = (args) => {
   );
 };
 
-export const base = Template.bind({});
+export const base = ButtonTemplate.bind({});
 base.args = { name: 'Save Settings' };
 
-export const inverse = Template.bind({});
+export const inverse = ButtonTemplate.bind({});
 inverse.args = { inverse: true, name: 'Cookie Preferences' };
