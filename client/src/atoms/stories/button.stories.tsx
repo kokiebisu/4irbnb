@@ -1,5 +1,4 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 import { Story, Meta } from '@storybook/react/types-6-0';
 // atoms
 import { Text, Button } from 'atoms';
@@ -9,7 +8,7 @@ export default {
   title: 'Button/Base',
   component: Button,
   excludeStories: /.*Data$/,
-  argTypes: { onPress: { action: 'clicked' } },
+  argTypes: { onPress: { action: 'clicked' }, label: { control: 'text' } },
 } as Meta;
 
 const buttonData = {
@@ -25,4 +24,4 @@ export const Large = Template.bind({});
 Large.args = { lg: true, ...buttonData };
 
 export const SmallInverse = Template.bind({});
-SmallInverse.args = { lg: true, inverse: true, ...buttonData };
+SmallInverse.args = { inverse: true, ...Large.args };

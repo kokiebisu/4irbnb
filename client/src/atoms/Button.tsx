@@ -56,7 +56,12 @@ const Element = styled(motion.button)<StyledProps>`
   }
 `;
 
-export default ({ onPress, children, ...props }: ElementProps) => {
+export default ({
+  name = 'button',
+  children,
+  onPress = () => console.log('hello'),
+  ...props
+}: ElementProps) => {
   return (
     <Element {...props} onClick={onPress}>
       {children}
