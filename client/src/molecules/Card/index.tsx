@@ -1,42 +1,16 @@
 import React from 'react';
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
 import { darken } from 'polished';
-
-// atoms
 import { Box, Text, Img } from 'atoms';
-
-// colors
 import { colors } from 'styles';
 
-export type CardProps = {
+type CardProps = {
   image: string;
   title?: string;
   description?: string;
   subtitle?: string;
   size?: string;
-};
-
-export default ({
-  image,
-  title,
-  subtitle,
-  description,
-  size,
-  ...props
-}: CardProps) => {
-  return (
-    <Box styles={extend.wrapper} {...props}>
-      <Box styles={extend.img}>
-        <Img src={image} alt='card-image' />
-      </Box>
-      <Box styles={size === 'lg' ? extend.text__lg : extend.text}>
-        {title && <Text styles={extend.title}>{title}</Text>}
-        {subtitle && <Text styles={extend.subtitle}>{subtitle}</Text>}
-        {description && <Text styles={extend.description}>{description}</Text>}
-      </Box>
-    </Box>
-  );
 };
 
 const background = theme('mode', {
@@ -54,29 +28,34 @@ const secondary = theme('mode', {
   dark: darken(0.4, colors.white),
 });
 
-const extend = {
-  wrapper: css`
-    background-color: ${background};
-    border-radius: 16px;
-    max-height: min-content;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-  `,
-  img: css`
-    object-fit: cover;
+const Wrapper = styled(Box)`
+  height: 100%;
+  background-color: ${background};
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+`;
 
-    & > img {
-      border-top-left-radius: 16px;
-      border-top-right-radius: 16px;
-    }
-  `,
-  text__lg: css`
+const ImageWrapper = styled(Box)`
+  object-fit: cover;
+
+  & > img {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+`;
+
+const Content = styled(Box)`
+  &.large {
     width: 50%;
     text-align: left;
     padding: 0 18px 12px 18px;
-  `,
-  text: css`
+  }
+  &.normal {
     padding: 0 18px 12px 18px;
-  `,
+  }
+`;
+
+const extend = {
   title: css`
     font-weight: 700;
     color: ${primary};
@@ -96,4 +75,26 @@ const extend = {
     color: ${secondary};
     line-height: 1.4;
   `,
+};
+
+export default ({
+  image,
+  title,
+  subtitle,
+  description,
+  size,
+  ...props
+}: CardProps) => {
+  return (
+    <Wrapper {...props}>
+      <ImageWrapper>
+        <Img src={image} alt='card-image' />
+      </ImageWrapper>
+      <Content className={size === 'lg' ? 'large' : 'normal'}>
+        {title && <Text styles={extend.title}>{title}</Text>}
+        {subtitle && <Text styles={extend.subtitle}>{subtitle}</Text>}
+        {description && <Text styles={extend.description}>{description}</Text>}
+      </Content>
+    </Wrapper>
+  );
 };

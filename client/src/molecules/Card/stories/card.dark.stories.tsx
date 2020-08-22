@@ -49,7 +49,6 @@ small.args = {
   styles: css`
     width: 100%;
     max-width: 200px;
-    height: 200px;
   `,
   size: 'sm',
   ...cardData,
@@ -59,8 +58,7 @@ export const medium = DarkCardTemplate.bind({});
 medium.args = {
   styles: css`
     width: 100%;
-    max-width: 400px;
-    height: 200px;
+    max-width: 350px;
   `,
   size: 'md',
   ...cardData,
@@ -71,7 +69,6 @@ large.args = {
   styles: css`
     width: 100%;
     max-width: 400px;
-    height: 400px;
   `,
   size: 'lg',
   ...cardData,
