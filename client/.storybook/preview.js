@@ -1,4 +1,5 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 import { Fonts, GlobalStyles } from 'styles';
 
 export const parameters = {
@@ -7,11 +8,11 @@ export const parameters = {
 
 const globalProvider = (Story, context) => {
   return (
-    <div>
+    <ThemeProvider theme={{ mode: 'light' }}>
       <Fonts />
       <GlobalStyles />
       <Story {...context} />
-    </div>
+    </ThemeProvider>
   );
 };
 

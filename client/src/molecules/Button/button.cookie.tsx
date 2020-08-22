@@ -1,8 +1,14 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { Button, Text } from 'atoms';
-import { sizes } from 'styles';
+import { colors, sizes } from 'styles';
 import { CustomProps } from 'molecules/Button';
+import theme from 'styled-theming';
+import { darken } from 'polished';
+
+const primary = theme('mode', {
+  light: darken(0.25, colors.gray),
+});
 
 const Wrapper = styled(Button)`
   padding: 14px 20px;
@@ -12,6 +18,15 @@ const Wrapper = styled(Button)`
   white-space: nowrap;
   min-width: none;
   margin-top: 25px;
+
+  &.inverse {
+    border: 1px solid ${primary};
+    background-color: transparent;
+  }
+  &.normal {
+    color: ${colors.white};
+    background-color: ${primary};
+  }
   @media ${sizes.lg} {
     min-width: 125px;
     width: 100%;
@@ -19,9 +34,9 @@ const Wrapper = styled(Button)`
   }
 `;
 
-export default ({ name = 'cookie', ...props }: CustomProps) => {
+export default ({ inverse, name = 'cookie', ...props }: CustomProps) => {
   return (
-    <Wrapper {...props}>
+    <Wrapper className={inverse ? 'inverse' : 'normal'} {...props}>
       <Text>{name}</Text>
     </Wrapper>
   );
