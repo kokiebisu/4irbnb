@@ -69,7 +69,7 @@ exports[`Storyshots Design Systems/Button/Cookie Base 1`] = `
   style={Object {}}
 >
   <button
-    className="sc-AxirZ gohgme sc-AxgMl cByTwP normal"
+    className="sc-AxirZ gohgme sc-fzozJi iOrtLq normal"
     onClick={[Function]}
     style={Object {}}
   >
@@ -89,7 +89,7 @@ exports[`Storyshots Design Systems/Button/Cookie Inverse 1`] = `
   style={Object {}}
 >
   <button
-    className="sc-AxirZ gohgme sc-AxgMl cByTwP inverse"
+    className="sc-AxirZ gohgme sc-fzozJi iOrtLq inverse"
     onClick={[Function]}
     style={Object {}}
   >
@@ -104,142 +104,95 @@ exports[`Storyshots Design Systems/Button/Cookie Inverse 1`] = `
 `;
 
 exports[`Storyshots Design Systems/Button/Globe Base 1`] = `
-<div
-  className="sc-AxjAm hyNcgC"
-  style={Object {}}
->
-  <button
-    className="sc-AxirZ gohgme sc-Axmtr fnQlAj"
-    onClick={[Function]}
-    style={Object {}}
-  >
-    <div
-      className="sc-AxheI bTPmmO"
-    >
-      <div
-        className="sc-AxiKw cQwZvr sc-AxmLO kdoeAL"
-        style={Object {}}
-      >
-        <svg
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
-          />
-        </svg>
-      </div>
-      <div
-        className="sc-AxiKw bzYuei sc-AxmLO kdoeAL"
-        style={Object {}}
-      >
-        <svg
-          viewBox="0 0 256 256"
-        >
-          <g>
-            <g>
-              <polygon
-                points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-              />
-            </g>
-          </g>
-        </svg>
-      </div>
-    </div>
-  </button>
-</div>
-`;
-
-exports[`Storyshots Design Systems/Button/Menu Base 1`] = `
-<div
-  className="sc-AxjAm hyNcgC"
-  style={Object {}}
->
-  <button
-    className="sc-AxirZ flmVAP"
-    onClick={[Function]}
-    style={Object {}}
-  >
-    <div
-      className="sc-AxheI bTPmmO"
-    >
-      <div
-        className="sc-AxiKw iXpccB"
-        style={Object {}}
-      >
-        <svg
-          viewBox="0 0 448 512"
-        >
-          <path
-            d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
-          />
-        </svg>
-      </div>
-      <div
-        className="sc-AxiKw jcjbbo"
-        style={Object {}}
-      >
-        <svg
-          viewBox="0 0 32 32"
-        >
-          <path
-            d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"
-          />
-        </svg>
-      </div>
-    </div>
-  </button>
-</div>
-`;
-
-exports[`Storyshots Design Systems/Button/Search Base 1`] = `
-<div
-  className="sc-AxjAm hyNcgC"
-  style={Object {}}
->
-  <button
-    className="sc-AxirZ iBtTxo"
-    onClick={[Function]}
-    style={Object {}}
-  >
-    <div
-      className="sc-AxjAm jDopsC"
-      style={Object {}}
-    >
-      <div
-        className="sc-AxiKw VBlYN"
-        style={Object {}}
-      >
-        <svg
-          viewBox="0 0 56.966 56.966"
-        >
-          <path
-            d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23 s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92 c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17 s-17-7.626-17-17S14.61,6,23.984,6z"
-          />
-        </svg>
-      </div>
-      <p
-        className="sc-AxhUy iNgPSM"
-        style={Object {}}
-      >
-        Search
-      </p>
-    </div>
-  </button>
-</div>
-`;
-
-exports[`Storyshots Design Systems|Molecules/Button/Search Base 1`] = `
 <button
-  className="sc-AxirZ iBtTxo"
+  className="sc-AxirZ gohgme sc-fzpans hdcBQR"
   onClick={[Function]}
   style={Object {}}
 >
   <div
-    className="sc-AxjAm jDopsC"
+    className="sc-fzoLsD bNtBwL"
+  >
+    <div
+      className="sc-AxiKw cQwZvr sc-fzplWN chpejV"
+      style={Object {}}
+    >
+      <svg
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
+        />
+      </svg>
+    </div>
+    <div
+      className="sc-AxiKw bzYuei sc-fzplWN chpejV"
+      style={Object {}}
+    >
+      <svg
+        viewBox="0 0 256 256"
+      >
+        <g>
+          <g>
+            <polygon
+              points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
+            />
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Design Systems/Button/Menu Base 1`] = `
+<button
+  className="sc-AxirZ flmVAP"
+  onClick={[Function]}
+  style={Object {}}
+>
+  <div
+    className="sc-fzoLsD bNtBwL"
+  >
+    <div
+      className="sc-AxiKw iXpccB"
+      style={Object {}}
+    >
+      <svg
+        viewBox="0 0 448 512"
+      >
+        <path
+          d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+        />
+      </svg>
+    </div>
+    <div
+      className="sc-AxiKw jcjbbo"
+      style={Object {}}
+    >
+      <svg
+        viewBox="0 0 32 32"
+      >
+        <path
+          d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Design Systems/Button/Search Base 1`] = `
+<button
+  className="sc-AxirZ gohgme sc-AxgMl ffnbCP"
+  onClick={[Function]}
+  style={Object {}}
+>
+  <div
+    className="sc-AxjAm hyNcgC sc-AxheI JGUfr"
     style={Object {}}
   >
     <div
-      className="sc-AxiKw VBlYN"
+      className="sc-AxiKw goejwU sc-Axmtr bFeZIB"
       style={Object {}}
     >
       <svg
@@ -251,7 +204,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Search Base 1`] = `
       </svg>
     </div>
     <p
-      className="sc-AxhUy iNgPSM"
+      className="sc-AxhUy vsUGv sc-AxmLO cyibMK"
       style={Object {}}
     >
       Search
@@ -592,7 +545,7 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Mobile 1`] = `
     style={Object {}}
   >
     <div
-      className="sc-AxheI bTPmmO"
+      className="sc-fzoLsD bNtBwL"
     >
       <div
         className="sc-AxiKw eWYSxW"
@@ -629,7 +582,7 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Normal 1`] = `
   style={Object {}}
 >
   <div
-    className="sc-AxheI dabaIO"
+    className="sc-fzoLsD cssfbH"
   >
     <div
       className="sc-AxjAm dExgth"
@@ -719,7 +672,7 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
           style={Object {}}
         >
           <button
-            className="sc-AxirZ gohgme sc-AxgMl cByTwP normal"
+            className="sc-AxirZ gohgme sc-fzozJi iOrtLq normal"
             onClick={[Function]}
             style={Object {}}
           >
@@ -731,7 +684,7 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
             </p>
           </button>
           <button
-            className="sc-AxirZ gohgme sc-AxgMl cByTwP inverse"
+            className="sc-AxirZ gohgme sc-fzozJi iOrtLq inverse"
             onClick={[Function]}
             style={Object {}}
           >

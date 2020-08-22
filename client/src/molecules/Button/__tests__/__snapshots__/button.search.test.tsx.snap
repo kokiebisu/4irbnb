@@ -1,7 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search Button renders correctly 1`] = `
-.c1 {
+.c0 {
+  border-radius: 8px;
+  font-size: 18px;
+  border: none;
+}
+
+.c0:hover {
+  cursor: pointer;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -16,10 +30,12 @@ exports[`Search Button renders correctly 1`] = `
   justify-content: center;
 }
 
-.c0 {
-  border-radius: 8px;
-  font-size: 18px;
-  border: none;
+.c5 {
+  margin: 0;
+  font-family: 'Airbnb-Cereal';
+}
+
+.c1 {
   background-color: rgb(215,4,102);
   border: none;
   padding: 15px 22px;
@@ -29,16 +45,8 @@ exports[`Search Button renders correctly 1`] = `
   transition: 0.8s;
 }
 
-.c0:hover {
+.c1:hover {
   background-color: #ff385c;
-}
-
-.c0:hover {
-  cursor: pointer;
-}
-
-.c0:focus {
-  outline: none;
 }
 
 .c2 {
@@ -54,40 +62,41 @@ exports[`Search Button renders correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+
+.c4 {
   position: relative;
   margin-right: 8px;
 }
 
-.c2 svg {
+.c4 svg {
   width: 14px;
   height: 14px;
   stroke: white;
 }
 
-.c2 svg path {
+.c4 svg path {
   fill: white;
   stroke-width: 2;
 }
 
-.c3 {
-  margin: 0;
-  font-family: 'Airbnb-Cereal';
+.c6 {
   font-weight: 300;
   font-size: 16px;
 }
 
 <button
   action={[Function]}
-  className="c0"
+  className="c0 c1"
   onClick={[Function]}
   style={Object {}}
 >
   <div
-    className="c1"
+    className="c2"
     style={Object {}}
   >
     <div
-      className="c2"
+      className="c3 c4"
       style={Object {}}
     >
       <svg
@@ -99,7 +108,7 @@ exports[`Search Button renders correctly 1`] = `
       </svg>
     </div>
     <p
-      className="c3"
+      className="c5 c6"
       style={Object {}}
     >
       Search
