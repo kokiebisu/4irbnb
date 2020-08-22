@@ -1,24 +1,16 @@
 import React from 'react';
+import { Story } from '@storybook/react/types-6-0';
 import { css } from 'styled-components';
-import { action } from '@storybook/addon-actions';
 import { Box } from 'atoms';
-import { CustomButton } from 'molecules/Button';
+import { CustomButton, CustomProps } from 'molecules/Button';
 
 export default {
-  title: 'Design Systems|Molecules/Button/Globe',
-  parameters: {
-    component: CustomButton,
-    componentSubtitle:
-      'Displays the search button used to look for a place to stay',
-  },
-  excludeStories: /.*Data$/,
+  title: 'Design Systems/Button/Globe',
+  component: CustomButton,
+  argTypes: { onPress: { action: 'clicked' } },
 };
 
-const actionsData = {
-  onPress: action('onPress'),
-};
-
-export const base = () => {
+const Template: Story<CustomProps> = (args) => {
   const extend = {
     wrapper: css`
       width: 100%;
@@ -31,7 +23,10 @@ export const base = () => {
   };
   return (
     <Box styles={extend.wrapper}>
-      <CustomButton type='globe' {...actionsData} />
+      <CustomButton type='globe' {...args} />
     </Box>
   );
 };
+
+export const base = Template.bind({});
+base.args = {};

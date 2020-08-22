@@ -27,6 +27,7 @@ exports[`Search Button renders correctly 1`] = `
   border-radius: 8px;
   -webkit-transition: 0.8s;
   transition: 0.8s;
+  padding: 15px 50px;
 }
 
 .c0:hover {
@@ -80,6 +81,7 @@ exports[`Search Button renders correctly 1`] = `
   action={[Function]}
   className="c0"
   onClick={[Function]}
+  size="medium"
   style={Object {}}
 >
   <div
