@@ -5,19 +5,6 @@ exports[`Globe Button renders correctly 1`] = `
   border-radius: 8px;
   font-size: 18px;
   border: none;
-  padding: 10px 14px;
-  background-color: transparent;
-  border-radius: 24px;
-  cursor: pointer;
-  padding: 15px 50px;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c0:hover {
-  background-color: rgba(190,190,190,0.2);
 }
 
 .c0:hover {
@@ -28,7 +15,7 @@ exports[`Globe Button renders correctly 1`] = `
   outline: none;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -48,11 +35,7 @@ exports[`Globe Button renders correctly 1`] = `
   height: 16px;
 }
 
-.c2 svg {
-  width: 100%;
-}
-
-.c3 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -68,11 +51,7 @@ exports[`Globe Button renders correctly 1`] = `
   width: 10px;
 }
 
-.c3 svg {
-  width: 100%;
-}
-
-.c1 {
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -83,18 +62,32 @@ exports[`Globe Button renders correctly 1`] = `
   align-items: center;
 }
 
+.c1 {
+  padding: 15px;
+  background-color: transparent;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+.c4 svg {
+  width: 100%;
+}
+
 <button
   action={[Function]}
-  className="c0"
+  className="c0 c1"
   onClick={[Function]}
-  size="medium"
   style={Object {}}
 >
   <div
-    className="c1"
+    className="c2"
   >
     <div
-      className="c2"
+      className="c3 c4"
       style={Object {}}
     >
       <svg
@@ -106,7 +99,7 @@ exports[`Globe Button renders correctly 1`] = `
       </svg>
     </div>
     <div
-      className="c3"
+      className="c5 c4"
       style={Object {}}
     >
       <svg
