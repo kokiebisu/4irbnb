@@ -9,13 +9,9 @@ export default {
   argTypes: { onPress: { action: 'clicked' } },
 };
 
-const Template: Story<CustomProps> = (args) => {
-  return (
-    <Box>
-      <CustomButton type='menu' {...args} />
-    </Box>
-  );
-};
+const Template: Story<CustomProps> = (args) => (
+  <CustomButton type='menu' {...args} />
+);
 
 export const base = Template.bind({});
 base.args = {};
