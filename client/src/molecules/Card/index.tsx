@@ -14,7 +14,7 @@ type CardProps = {
 };
 
 const background = theme('mode', {
-  light: darken(0.4, colors.white),
+  light: colors.white,
   dark: darken(0.8, colors.gray),
 });
 
@@ -28,11 +28,16 @@ const secondary = theme('mode', {
   dark: darken(0.4, colors.white),
 });
 
+const shadow = theme('mode', {
+  light: 'rgba(0, 0, 0, 0.15)',
+  dark: 'rgba(0, 0, 0, 0.15)',
+});
+
 const Wrapper = styled(Box)`
   height: 100%;
   background-color: ${background};
   border-radius: 16px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  box-shadow: ${shadow} 0px 2px 8px;
 `;
 
 const ImageWrapper = styled(Box)`

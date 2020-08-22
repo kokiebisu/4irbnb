@@ -213,95 +213,27 @@ exports[`Storyshots Design Systems/Button/Search Base 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design Systems|Molecules/Card/Dark Large 1`] = `
+exports[`Storyshots Design Systems/Card/Dark Large 1`] = `
 <div
-  className="sc-AxjAm gfmURB"
+  className="sc-AxjAm jypzoh"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm Telpu"
+    className="sc-AxjAm hyNcgC sc-fznyAO cqsqcg"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm jcqOdB"
+      className="sc-AxjAm hyNcgC sc-fznKkj bJBDHp"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb dohgRM"
-        src="darkcard-lg.png"
-      />
-    </div>
-    <div
-      className="sc-AxjAm bXaHUx"
-      style={Object {}}
-    >
-      <p
-        className="sc-AxhUy gxsYhh"
-        style={Object {}}
-      >
-        Learn favorite summer recipes with celebrated chef Roze Traore
-      </p>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Design Systems|Molecules/Card/Dark Medium 1`] = `
-<div
-  className="sc-AxjAm hFICtt"
-  style={Object {}}
->
-  <div
-    className="sc-AxjAm Telpu"
-    style={Object {}}
-  >
-    <div
-      className="sc-AxjAm jcqOdB"
-      style={Object {}}
-    >
-      <img
-        alt="card-image"
-        className="sc-AxhCb dohgRM"
-        src="darkcard-md.png"
-      />
-    </div>
-    <div
-      className="sc-AxjAm dFnguV"
-      style={Object {}}
-    >
-      <p
-        className="sc-AxhUy gxsYhh"
-        style={Object {}}
-      >
-        Fruits de mer with Michelin chef Marc Favier
-      </p>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Design Systems|Molecules/Card/Dark Small 1`] = `
-<div
-  className="sc-AxjAm kUkfrO"
-  style={Object {}}
->
-  <div
-    className="sc-AxjAm Telpu"
-    style={Object {}}
-  >
-    <div
-      className="sc-AxjAm jcqOdB"
-      style={Object {}}
-    >
-      <img
-        alt="card-image"
-        className="sc-AxhCb dohgRM"
+        className="sc-AxhCb daRQi"
         src="darkcard-sm.png"
       />
     </div>
     <div
-      className="sc-AxjAm dFnguV"
+      className="sc-AxjAm hyNcgC sc-fznZeY dHnyNS large"
       style={Object {}}
     >
       <p
@@ -315,131 +247,95 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Small 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
+exports[`Storyshots Design Systems/Card/Dark Medium 1`] = `
 <div
-  className="sc-AxjAm bUwkzS"
+  className="sc-AxjAm iQkBjj"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm RVvez"
+    className="sc-AxjAm hyNcgC sc-fznyAO cqsqcg"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm jcqOdB"
+      className="sc-AxjAm hyNcgC sc-fznKkj bJBDHp"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb dohgRM"
-        src="card1.jpg"
+        className="sc-AxhCb daRQi"
+        src="darkcard-sm.png"
       />
     </div>
     <div
-      className="sc-AxjAm dFnguV"
+      className="sc-AxjAm hyNcgC sc-fznZeY dHnyNS normal"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy cXHHIS"
+        className="sc-AxhUy gxsYhh"
         style={Object {}}
       >
-        Online experiences
-      </p>
-      <p
-        className="sc-AxhUy fiHroI"
-        style={Object {}}
-      >
-        Unique activities we can do together, led by a world of hosts
-      </p>
-    </div>
-  </div>
-  <div
-    className="sc-AxjAm RVvez"
-    style={Object {}}
-  >
-    <div
-      className="sc-AxjAm jcqOdB"
-      style={Object {}}
-    >
-      <img
-        alt="card-image"
-        className="sc-AxhCb dohgRM"
-        src="card2.jpg"
-      />
-    </div>
-    <div
-      className="sc-AxjAm dFnguV"
-      style={Object {}}
-    >
-      <p
-        className="sc-AxhUy cXHHIS"
-        style={Object {}}
-      >
-        Your next getaway
-      </p>
-      <p
-        className="sc-AxhUy fiHroI"
-        style={Object {}}
-      >
-        Unplug or reconnect on a trip that's just a short drive away
-      </p>
-    </div>
-  </div>
-  <div
-    className="sc-AxjAm RVvez"
-    style={Object {}}
-  >
-    <div
-      className="sc-AxjAm jcqOdB"
-      style={Object {}}
-    >
-      <img
-        alt="card-image"
-        className="sc-AxhCb dohgRM"
-        src="card3.jpg"
-      />
-    </div>
-    <div
-      className="sc-AxjAm dFnguV"
-      style={Object {}}
-    >
-      <p
-        className="sc-AxhUy cXHHIS"
-        style={Object {}}
-      >
-        Entire homes
-      </p>
-      <p
-        className="sc-AxhUy fiHroI"
-        style={Object {}}
-      >
-        Comfortable private places, with room for friends or family
+        Fruits de mer with Michelin chef Marc Favier
       </p>
     </div>
   </div>
 </div>
 `;
 
-exports[`Storyshots Design Systems|Molecules/Card/Light Single With Title 1`] = `
+exports[`Storyshots Design Systems/Card/Dark Small 1`] = `
 <div
-  className="sc-AxjAm htNMvP"
+  className="sc-AxjAm eeyQCz"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm RVvez"
+    className="sc-AxjAm hyNcgC sc-fznyAO cqsqcg"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm jcqOdB"
+      className="sc-AxjAm hyNcgC sc-fznKkj bJBDHp"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb dohgRM"
+        className="sc-AxhCb daRQi"
+        src="darkcard-sm.png"
+      />
+    </div>
+    <div
+      className="sc-AxjAm hyNcgC sc-fznZeY dHnyNS normal"
+      style={Object {}}
+    >
+      <p
+        className="sc-AxhUy gxsYhh"
+        style={Object {}}
+      >
+        Fruits de mer with Michelin chef Marc Favier
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Design Systems/Card/Light Base 1`] = `
+<div
+  className="sc-AxjAm iQkBjj"
+  style={Object {}}
+>
+  <div
+    className="sc-AxjAm hyNcgC sc-fznyAO fGEoIw"
+    style={Object {}}
+  >
+    <div
+      className="sc-AxjAm hyNcgC sc-fznKkj bJBDHp"
+      style={Object {}}
+    >
+      <img
+        alt="card-image"
+        className="sc-AxhCb daRQi"
         src="card1.jpg"
       />
     </div>
     <div
-      className="sc-AxjAm dFnguV"
+      className="sc-AxjAm hyNcgC sc-fznZeY dHnyNS normal"
       style={Object {}}
     >
       <p
@@ -459,27 +355,113 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single With Title 1`] = 
 </div>
 `;
 
-exports[`Storyshots Design Systems|Molecules/Card/Light Single Without Title 1`] = `
+exports[`Storyshots Design Systems/Card/Light Multiple 1`] = `
 <div
-  className="sc-AxjAm htNMvP"
+  className="sc-AxjAm hAFOia"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm RVvez"
+    className="sc-AxjAm hyNcgC sc-fznyAO fGEoIw"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm jcqOdB"
+      className="sc-AxjAm hyNcgC sc-fznKkj bJBDHp"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb dohgRM"
+        className="sc-AxhCb daRQi"
         src="card1.jpg"
       />
     </div>
     <div
-      className="sc-AxjAm dFnguV"
+      className="sc-AxjAm hyNcgC sc-fznZeY dHnyNS normal"
+      style={Object {}}
+    >
+      <p
+        className="sc-AxhUy fiHroI"
+        style={Object {}}
+      >
+        Unique activities we can do together, led by a world of hosts
+      </p>
+    </div>
+  </div>
+  <div
+    className="sc-AxjAm hyNcgC sc-fznyAO fGEoIw"
+    style={Object {}}
+  >
+    <div
+      className="sc-AxjAm hyNcgC sc-fznKkj bJBDHp"
+      style={Object {}}
+    >
+      <img
+        alt="card-image"
+        className="sc-AxhCb daRQi"
+        src="card1.jpg"
+      />
+    </div>
+    <div
+      className="sc-AxjAm hyNcgC sc-fznZeY dHnyNS normal"
+      style={Object {}}
+    >
+      <p
+        className="sc-AxhUy fiHroI"
+        style={Object {}}
+      >
+        Unique activities we can do together, led by a world of hosts
+      </p>
+    </div>
+  </div>
+  <div
+    className="sc-AxjAm hyNcgC sc-fznyAO fGEoIw"
+    style={Object {}}
+  >
+    <div
+      className="sc-AxjAm hyNcgC sc-fznKkj bJBDHp"
+      style={Object {}}
+    >
+      <img
+        alt="card-image"
+        className="sc-AxhCb daRQi"
+        src="card1.jpg"
+      />
+    </div>
+    <div
+      className="sc-AxjAm hyNcgC sc-fznZeY dHnyNS normal"
+      style={Object {}}
+    >
+      <p
+        className="sc-AxhUy fiHroI"
+        style={Object {}}
+      >
+        Unique activities we can do together, led by a world of hosts
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Design Systems/Card/Light No Title 1`] = `
+<div
+  className="sc-AxjAm iQkBjj"
+  style={Object {}}
+>
+  <div
+    className="sc-AxjAm hyNcgC sc-fznyAO fGEoIw"
+    style={Object {}}
+  >
+    <div
+      className="sc-AxjAm hyNcgC sc-fznKkj bJBDHp"
+      style={Object {}}
+    >
+      <img
+        alt="card-image"
+        className="sc-AxhCb daRQi"
+        src="card1.jpg"
+      />
+    </div>
+    <div
+      className="sc-AxjAm hyNcgC sc-fznZeY dHnyNS normal"
       style={Object {}}
     >
       <p
@@ -499,35 +481,35 @@ exports[`Storyshots Design Systems|Molecules/Card/Section Black Lives Matter 1`]
   style={Object {}}
 >
   <div
-    className="sc-AxjAm heQYgx"
+    className="sc-AxjAm hyNcgC sc-fzokOt edMvOd"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm eAyVbj"
+      className="sc-AxjAm hyNcgC sc-fzqBZW jdmALV"
       style={Object {}}
     >
       <div
-        className="sc-AxjAm hAsXji"
+        className="sc-AxjAm hyNcgC sc-fzqNJr duVJuO"
         style={Object {}}
       >
-        <div
-          className="sc-AxjAm cocgVm"
+        <p
+          className="sc-AxhUy vsUGv sc-fzoyAV ildYuj"
           style={Object {}}
         >
           We stand with #BlackLivesMatter
-        </div>
-        <div
-          className="sc-AxjAm eeNAti"
+        </p>
+        <p
+          className="sc-AxhUy vsUGv sc-fzoLag cxFYrT"
           style={Object {}}
         >
           We believe in a world where everyone belongs. We reject all racism that stands in the way.
-        </div>
-        <div
-          className="sc-AxjAm hAnyuu"
+        </p>
+        <p
+          className="sc-AxhUy vsUGv sc-fzoXzr ipXbWl"
           style={Object {}}
         >
           Donate
-        </div>
+        </p>
       </div>
     </div>
   </div>
