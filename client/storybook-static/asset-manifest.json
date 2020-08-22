@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "./static/css/main.cc6f50a5.chunk.css",
+    "main.js": "./main.16734e52f53e34763a7e.bundle.js",
+    "main.css.map": "./static/css/main.cc6f50a5.chunk.css.map",
+    "main.js.map": "./main.16734e52f53e34763a7e.bundle.js.map",
+    "runtime~main.js": "./runtime~main.16734e52f53e34763a7e.bundle.js",
+    "runtime~main.js.map": "./runtime~main.16734e52f53e34763a7e.bundle.js.map",
+    "vendors~main.js": "./vendors~main.16734e52f53e34763a7e.bundle.js",
+    "vendors~main.js.map": "./vendors~main.16734e52f53e34763a7e.bundle.js.map",
+    "iframe.html": "./iframe.html",
+    "precache-manifest.778236ddabf65be322faf01830d68917.js": "./precache-manifest.778236ddabf65be322faf01830d68917.js",
+    "service-worker.js": "./service-worker.js",
+    "static/media/AirbnbCereal-Bold.woff2": "./static/media/AirbnbCereal-Bold.b422e783.woff2",
+    "static/media/AirbnbCereal-Book.woff2": "./static/media/AirbnbCereal-Book.e849748a.woff2",
+    "static/media/AirbnbCereal-ExtraBold.woff": "./static/media/AirbnbCereal-ExtraBold.eef0aa3f.woff",
+    "static/media/AirbnbCereal-Light.woff": "./static/media/AirbnbCereal-Light.d2a616df.woff",
+    "static/media/AirbnbCereal-Medium.woff2": "./static/media/AirbnbCereal-Medium.aa2d47eb.woff2",
+    "static/media/card1.jpg": "./static/media/card1.c2d079c5.jpg",
+    "static/media/card2.jpg": "./static/media/card2.2ce80f84.jpg",
+    "static/media/card3.jpg": "./static/media/card3.55af2372.jpg",
+    "static/media/code-brackets.svg": "./static/media/code-brackets.d43eb968.svg",
+    "static/media/colors.svg": "./static/media/colors.8104e6f5.svg",
+    "static/media/comments.svg": "./static/media/comments.3f9a1398.svg",
+    "static/media/darkcard-lg.png": "./static/media/darkcard-lg.79a6724e.png",
+    "static/media/darkcard-md.png": "./static/media/darkcard-md.77314da7.png",
+    "static/media/darkcard-sm.png": "./static/media/darkcard-sm.bd175880.png",
+    "static/media/direction.svg": "./static/media/direction.d3dc567b.svg",
+    "static/media/flow.svg": "./static/media/flow.e3812c4f.svg",
+    "static/media/plugin.svg": "./static/media/plugin.5ba97e9b.svg",
+    "static/media/repo.svg": "./static/media/repo.3452b916.svg",
+    "static/media/stackalt.svg": "./static/media/stackalt.66f4b748.svg",
+    "vendors~main.16734e52f53e34763a7e.bundle.js.LICENSE.txt": "./vendors~main.16734e52f53e34763a7e.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.16734e52f53e34763a7e.bundle.js",
+    "vendors~main.16734e52f53e34763a7e.bundle.js",
+    "static/css/main.cc6f50a5.chunk.css",
+    "main.16734e52f53e34763a7e.bundle.js"
+  ]
+}

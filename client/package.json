@@ -22,9 +22,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "chromatic": "npx chromatic --project-token=r2o8ven87hs --allow-console-errors",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
-    "chromatic": "npx chromatic --project-token=vnmckyhfm5k"
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -44,7 +44,6 @@
   "devDependencies": {
     "@babel/core": "^7.11.4",
     "@storybook/addon-actions": "^6.0.16",
-    "@storybook/addon-controls": "^6.0.16",
     "@storybook/addon-essentials": "^6.0.16",
     "@storybook/addon-links": "^6.0.16",
     "@storybook/addon-storyshots": "^6.0.16",
@@ -61,7 +60,7 @@
     "@types/react-test-renderer": "^16.9.2",
     "@types/styled-components": "^5.1.0",
     "babel-loader": "^8.1.0",
-    "chromatic": "^5.0.0",
+    "chromatic": "^5.1.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "jest-styled-components": "^7.0.2",
