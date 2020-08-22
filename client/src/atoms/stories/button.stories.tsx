@@ -1,38 +1,28 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
-
-// atoms
+import { Story, Meta } from '@storybook/react/types-6-0';
 import { Text, Button } from 'atoms';
+import { ElementProps } from 'atoms/Button';
 
 export default {
-  title: 'Design Systems|Molecules/Button/Base',
-  parameters: {
-    component: Button,
-    componentSubtitle: 'Displays the default button',
-  },
-  excludeStories: /.*Data$/,
-};
+  title: 'Design Systems/Button',
+  component: Button,
+  argTypes: { onPress: { action: 'clicked' }, label: { control: 'text' } },
+} as Meta;
 
 const buttonData = {
-  children: <Text>click</Text>,
+  children: <Text>Button</Text>,
 };
 
-const actionsData = {
-  onPress: action('onPress'),
-};
+const Template: Story<ElementProps> = (args) => <Button {...args} />;
 
-export const Small = () => {
-  return <Button sm {...buttonData} {...actionsData} />;
-};
+export const Small = Template.bind({});
+Small.args = { size: 'small', ...buttonData };
 
-export const Medium = () => {
-  return <Button md {...buttonData} {...actionsData} />;
-};
+export const Medium = Template.bind({});
+Medium.args = { ...buttonData };
 
-export const Large = () => {
-  return <Button lg {...buttonData} {...actionsData} />;
-};
+export const Large = Template.bind({});
+Large.args = { size: 'large', ...buttonData };
 
-export const SmallInverse = () => {
-  return <Button lg inverse {...buttonData} {...actionsData} />;
-};
+export const Inverse = Template.bind({});
+Inverse.args = { inverse: true, ...buttonData };

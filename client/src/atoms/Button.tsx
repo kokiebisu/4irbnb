@@ -1,24 +1,19 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
+import theme from 'styled-theming';
+import { lighten } from 'polished';
+import { colors } from 'styles';
 
-interface ElementProps {
-  styles?: any;
-  sm?: boolean;
-  md?: boolean;
-  lg?: boolean;
-  name?: string;
+export interface ElementProps extends StyledProps {
   children?: React.ReactNode;
-  inverse?: boolean;
   onPress: () => void;
   className?: string;
 }
 
 interface StyledProps {
   styles?: any;
-  sm?: boolean;
-  md?: boolean;
-  lg?: boolean;
+  size?: 'small' | 'medium' | 'large';
   inverse?: boolean;
 }
 
@@ -27,18 +22,18 @@ const Element = styled(motion.button)<StyledProps>`
   font-size: 18px;
   border: none;
   ${({ styles }) => styles};
-  ${({ sm }) =>
-    sm &&
+  ${({ size }) =>
+    size === 'small' &&
     css`
       padding: 15px 22px;
     `};
-  ${({ md }) =>
-    md &&
+  ${({ size }) =>
+    size === 'medium' &&
     css`
       padding: 15px 50px;
     `};
-  ${({ lg }) =>
-    lg &&
+  ${({ size }) =>
+    size === 'large' &&
     css`
       padding: 15px 100px;
     `};
@@ -46,7 +41,7 @@ const Element = styled(motion.button)<StyledProps>`
     inverse &&
     css`
       border: 1px solid black;
-      background-color: transparent;
+      background-color: transparent !important;
     `};
   &:hover {
     cursor: pointer;
@@ -56,19 +51,24 @@ const Element = styled(motion.button)<StyledProps>`
   }
 `;
 
-export default ({ onPress, children, ...props }: ElementProps) => {
+export default ({
+  size = 'medium',
+  children,
+  onPress = () => console.log('hello'),
+  ...props
+}: ElementProps) => {
   return (
-    <Element {...props} onClick={onPress}>
+    <Element size={size} {...props} onClick={onPress}>
       {children}
     </Element>
   );
 };
+
 export type CustomProps = {
   type?: string;
   onPress: () => void;
-  sm?: boolean;
-  md?: boolean;
-  lg?: boolean;
+  size?: 'small' | 'medium' | 'large';
   inverse?: boolean;
   name?: string;
+  className?: string;
 };
