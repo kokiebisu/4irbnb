@@ -52,7 +52,7 @@ const Element = styled(motion.button)<StyledProps>`
 `;
 
 export default ({
-  size = 'medium',
+  size,
   children,
   onPress = () => console.log('hello'),
   ...props
