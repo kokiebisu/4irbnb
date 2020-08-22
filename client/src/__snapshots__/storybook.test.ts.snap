@@ -2,50 +2,65 @@
 
 exports[`Storyshots Design Systems/Button Inverse 1`] = `
 <button
-  className="sc-AxirZ hWWebX"
-  id="design-systems-button--inverse"
-  kind="Design Systems/Button"
-  name="Inverse"
+  className="sc-AxirZ cNnLFY"
   onClick={[Function]}
-  size="medium"
   style={Object {}}
-/>
+>
+  <p
+    className="sc-AxhUy vsUGv"
+    style={Object {}}
+  >
+    Button
+  </p>
+</button>
 `;
 
 exports[`Storyshots Design Systems/Button Large 1`] = `
 <button
-  className="sc-AxirZ hWWebX"
-  id="design-systems-button--large"
-  kind="Design Systems/Button"
-  name="Large"
+  className="sc-AxirZ dExmxL"
   onClick={[Function]}
-  size="medium"
+  size="large"
   style={Object {}}
-/>
+>
+  <p
+    className="sc-AxhUy vsUGv"
+    style={Object {}}
+  >
+    Button
+  </p>
+</button>
 `;
 
 exports[`Storyshots Design Systems/Button Medium 1`] = `
 <button
   className="sc-AxirZ hWWebX"
-  id="design-systems-button--medium"
-  kind="Design Systems/Button"
-  name="Medium"
   onClick={[Function]}
   size="medium"
   style={Object {}}
-/>
+>
+  <p
+    className="sc-AxhUy vsUGv"
+    style={Object {}}
+  >
+    Button
+  </p>
+</button>
 `;
 
 exports[`Storyshots Design Systems/Button Small 1`] = `
 <button
-  className="sc-AxirZ hWWebX"
-  id="design-systems-button--small"
-  kind="Design Systems/Button"
-  name="Small"
+  className="sc-AxirZ gQWyCq"
   onClick={[Function]}
-  size="medium"
+  size="small"
   style={Object {}}
-/>
+>
+  <p
+    className="sc-AxhUy vsUGv"
+    style={Object {}}
+  >
+    Button
+  </p>
+</button>
 `;
 
 exports[`Storyshots Design Systems/Button/Cookie Base 1`] = `
@@ -54,18 +69,15 @@ exports[`Storyshots Design Systems/Button/Cookie Base 1`] = `
   style={Object {}}
 >
   <button
-    className="sc-AxirZ hWWebX sc-AxgMl eDWHIR"
-    id="design-systems-button-cookie--base"
-    kind="Design Systems/Button/Cookie"
+    className="sc-AxirZ gohgme sc-AxgMl cByTwP normal"
     onClick={[Function]}
-    size="medium"
     style={Object {}}
   >
     <p
       className="sc-AxhUy vsUGv"
       style={Object {}}
     >
-      Base
+      Save Settings
     </p>
   </button>
 </div>
@@ -77,18 +89,15 @@ exports[`Storyshots Design Systems/Button/Cookie Inverse 1`] = `
   style={Object {}}
 >
   <button
-    className="sc-AxirZ hWWebX sc-AxgMl eDWHIR"
-    id="design-systems-button-cookie--inverse"
-    kind="Design Systems/Button/Cookie"
+    className="sc-AxirZ gohgme sc-AxgMl cByTwP inverse"
     onClick={[Function]}
-    size="medium"
     style={Object {}}
   >
     <p
       className="sc-AxhUy vsUGv"
       style={Object {}}
     >
-      Inverse
+      Cookie Preferences
     </p>
   </button>
 </div>
@@ -96,22 +105,19 @@ exports[`Storyshots Design Systems/Button/Cookie Inverse 1`] = `
 
 exports[`Storyshots Design Systems/Button/Globe Base 1`] = `
 <div
-  className="sc-AxjAm isvGjR"
+  className="sc-AxjAm hyNcgC"
   style={Object {}}
 >
   <button
-    className="sc-AxirZ mPDbX"
-    id="design-systems-button-globe--base"
-    kind="Design Systems/Button/Globe"
+    className="sc-AxirZ gohgme sc-Axmtr fnQlAj"
     onClick={[Function]}
-    size="medium"
     style={Object {}}
   >
     <div
       className="sc-AxheI bTPmmO"
     >
       <div
-        className="sc-AxiKw cVwieh"
+        className="sc-AxiKw cQwZvr sc-AxmLO kdoeAL"
         style={Object {}}
       >
         <svg
@@ -123,7 +129,7 @@ exports[`Storyshots Design Systems/Button/Globe Base 1`] = `
         </svg>
       </div>
       <div
-        className="sc-AxiKw UvGOl"
+        className="sc-AxiKw bzYuei sc-AxmLO kdoeAL"
         style={Object {}}
       >
         <svg
@@ -143,22 +149,21 @@ exports[`Storyshots Design Systems/Button/Globe Base 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design Systems|Molecules/Button/Menu Base 1`] = `
+exports[`Storyshots Design Systems/Button/Menu Base 1`] = `
 <div
-  className="sc-AxjAm cjOPXP"
+  className="sc-AxjAm hyNcgC"
   style={Object {}}
 >
   <button
-    className="sc-AxirZ hosTcl"
+    className="sc-AxirZ flmVAP"
     onClick={[Function]}
-    size="medium"
     style={Object {}}
   >
     <div
       className="sc-AxheI bTPmmO"
     >
       <div
-        className="sc-AxiKw ksAxXI"
+        className="sc-AxiKw iXpccB"
         style={Object {}}
       >
         <svg
@@ -170,7 +175,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Menu Base 1`] = `
         </svg>
       </div>
       <div
-        className="sc-AxiKw cBApGh"
+        className="sc-AxiKw jcjbbo"
         style={Object {}}
       >
         <svg
@@ -188,9 +193,8 @@ exports[`Storyshots Design Systems|Molecules/Button/Menu Base 1`] = `
 
 exports[`Storyshots Design Systems|Molecules/Button/Search Base 1`] = `
 <button
-  className="sc-AxirZ bRkvtp"
+  className="sc-AxirZ iBtTxo"
   onClick={[Function]}
-  size="medium"
   style={Object {}}
 >
   <div
@@ -327,7 +331,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
   style={Object {}}
 >
   <div
-    className="sc-AxjAm lbuXgB"
+    className="sc-AxjAm RVvez"
     style={Object {}}
   >
     <div
@@ -345,13 +349,13 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
       style={Object {}}
     >
       <p
-        className="sc-AxhUy bIfkMF"
+        className="sc-AxhUy cXHHIS"
         style={Object {}}
       >
         Online experiences
       </p>
       <p
-        className="sc-AxhUy hEgaEx"
+        className="sc-AxhUy fiHroI"
         style={Object {}}
       >
         Unique activities we can do together, led by a world of hosts
@@ -359,7 +363,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxjAm lbuXgB"
+    className="sc-AxjAm RVvez"
     style={Object {}}
   >
     <div
@@ -377,13 +381,13 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
       style={Object {}}
     >
       <p
-        className="sc-AxhUy bIfkMF"
+        className="sc-AxhUy cXHHIS"
         style={Object {}}
       >
         Your next getaway
       </p>
       <p
-        className="sc-AxhUy hEgaEx"
+        className="sc-AxhUy fiHroI"
         style={Object {}}
       >
         Unplug or reconnect on a trip that's just a short drive away
@@ -391,7 +395,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxjAm lbuXgB"
+    className="sc-AxjAm RVvez"
     style={Object {}}
   >
     <div
@@ -409,13 +413,13 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
       style={Object {}}
     >
       <p
-        className="sc-AxhUy bIfkMF"
+        className="sc-AxhUy cXHHIS"
         style={Object {}}
       >
         Entire homes
       </p>
       <p
-        className="sc-AxhUy hEgaEx"
+        className="sc-AxhUy fiHroI"
         style={Object {}}
       >
         Comfortable private places, with room for friends or family
@@ -431,7 +435,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single With Title 1`] = 
   style={Object {}}
 >
   <div
-    className="sc-AxjAm lbuXgB"
+    className="sc-AxjAm RVvez"
     style={Object {}}
   >
     <div
@@ -449,13 +453,13 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single With Title 1`] = 
       style={Object {}}
     >
       <p
-        className="sc-AxhUy bIfkMF"
+        className="sc-AxhUy cXHHIS"
         style={Object {}}
       >
         Online experiences
       </p>
       <p
-        className="sc-AxhUy hEgaEx"
+        className="sc-AxhUy fiHroI"
         style={Object {}}
       >
         Unique activities we can do together, led by a world of hosts
@@ -471,7 +475,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single Without Title 1`]
   style={Object {}}
 >
   <div
-    className="sc-AxjAm lbuXgB"
+    className="sc-AxjAm RVvez"
     style={Object {}}
   >
     <div
@@ -489,7 +493,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single Without Title 1`]
       style={Object {}}
     >
       <p
-        className="sc-AxhUy hEgaEx"
+        className="sc-AxhUy fiHroI"
         style={Object {}}
       >
         Unique activities we can do together, led by a world of hosts
@@ -505,7 +509,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Section Black Lives Matter 1`]
   style={Object {}}
 >
   <div
-    className="sc-AxjAm bVjzwh"
+    className="sc-AxjAm heQYgx"
     style={Object {}}
   >
     <div
@@ -513,7 +517,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Section Black Lives Matter 1`]
       style={Object {}}
     >
       <div
-        className="sc-AxjAm kIAOWV"
+        className="sc-AxjAm hAsXji"
         style={Object {}}
       >
         <div
@@ -546,16 +550,15 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Mobile 1`] = `
   style={Object {}}
 >
   <button
-    className="sc-AxirZ fUVOpT"
+    className="sc-AxirZ hhoZfu"
     onClick={[Function]}
-    size="medium"
     style={Object {}}
   >
     <div
       className="sc-AxheI bTPmmO"
     >
       <div
-        className="sc-AxiKw eQeGXi"
+        className="sc-AxiKw eWYSxW"
         style={Object {}}
       >
         <svg
@@ -567,7 +570,7 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Mobile 1`] = `
         </svg>
       </div>
       <div
-        className="sc-AxjAm iYXUvd"
+        className="sc-AxjAm gzylxM"
         style={Object {}}
       >
         <p
@@ -584,16 +587,15 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Mobile 1`] = `
 
 exports[`Storyshots Design Systems|Molecules/SearchBar Normal 1`] = `
 <button
-  className="sc-AxirZ fnmfwe"
+  className="sc-AxirZ fcduhH"
   onClick={[Function]}
-  size="medium"
   style={Object {}}
 >
   <div
     className="sc-AxheI dabaIO"
   >
     <div
-      className="sc-AxjAm cOVuHV"
+      className="sc-AxjAm dExgth"
       style={Object {}}
     >
       <p
@@ -608,7 +610,7 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Normal 1`] = `
       style={Object {}}
     >
       <div
-        className="sc-AxiKw eHmJlp"
+        className="sc-AxiKw gkeBYJ"
         style={Object {}}
       >
         <svg
@@ -646,13 +648,13 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
           style={Object {}}
         >
           <p
-            className="sc-AxhUy wviov"
+            className="sc-AxhUy gxCFEe"
             style={Object {}}
           >
             Your Privacy
           </p>
           <div
-            className="sc-AxiKw ZpJZf"
+            className="sc-AxiKw LnqfM"
             style={Object {}}
           >
             <svg
@@ -665,7 +667,7 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
           </div>
         </div>
         <p
-          className="sc-AxhUy eLvxwK"
+          className="sc-AxhUy gudwKO"
           style={Object {}}
         >
           We use cookies to help personalize content, tailor and measure ads, and provide a safer experience. By navigating the site, you agree to the use of cookies to collect information on and off Airbnb. Read our Cookie Policy to learn more or go to Cookie Preferences to manage your settings
@@ -680,9 +682,8 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
           style={Object {}}
         >
           <button
-            className="sc-AxirZ hWWebX sc-AxgMl eDWHIR"
+            className="sc-AxirZ gohgme sc-AxgMl cByTwP normal"
             onClick={[Function]}
-            size="medium"
             style={Object {}}
           >
             <p
@@ -693,9 +694,8 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
             </p>
           </button>
           <button
-            className="sc-AxirZ eLeEep sc-AxgMl eDWHIR"
+            className="sc-AxirZ gohgme sc-AxgMl cByTwP inverse"
             onClick={[Function]}
-            size="medium"
             style={Object {}}
           >
             <p
@@ -714,242 +714,58 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
 
 exports[`Storyshots Example/Button Large 1`] = `
 <button
-  className="storybook-button storybook-button--medium storybook-button--secondary"
-  hooks={
-    HooksContext {
-      "currentContext": Object {
-        "hooks": [Circular],
-        "id": "example-button--large",
-        "kind": "Example/Button",
-        "name": "Large",
-        "parameters": Object {
-          "__id": "example-button--large",
-          "component": [Function],
-          "fileName": "./stories/Button.stories.tsx",
-          "framework": "react",
-          "subcomponents": undefined,
-        },
-        "story": "Large",
-      },
-      "currentDecoratorName": null,
-      "currentEffects": Array [],
-      "currentHooks": Array [],
-      "currentPhase": "NONE",
-      "hasUpdates": false,
-      "hookListsMap": WeakMap {},
-      "mountedDecorators": Set {
-        [Function],
-        [Function],
-      },
-      "nextHookIndex": 0,
-      "prevEffects": Array [],
-      "prevMountedDecorators": Set {
-        [Function],
-        [Function],
-      },
-      "renderListener": [Function],
-    }
-  }
-  id="example-button--large"
-  kind="Example/Button"
-  name="Large"
-  parameters={
-    Object {
-      "__id": "example-button--large",
-      "component": [Function],
-      "fileName": "./stories/Button.stories.tsx",
-      "framework": "react",
-      "subcomponents": undefined,
-    }
-  }
-  story="Large"
+  className="storybook-button storybook-button--large storybook-button--secondary"
   style={
     Object {
       "backgroundColor": undefined,
     }
   }
   type="button"
-/>
+>
+  Button
+</button>
 `;
 
 exports[`Storyshots Example/Button Primary 1`] = `
 <button
-  className="storybook-button storybook-button--medium storybook-button--secondary"
-  hooks={
-    HooksContext {
-      "currentContext": Object {
-        "hooks": [Circular],
-        "id": "example-button--primary",
-        "kind": "Example/Button",
-        "name": "Primary",
-        "parameters": Object {
-          "__id": "example-button--primary",
-          "component": [Function],
-          "fileName": "./stories/Button.stories.tsx",
-          "framework": "react",
-          "subcomponents": undefined,
-        },
-        "story": "Primary",
-      },
-      "currentDecoratorName": null,
-      "currentEffects": Array [],
-      "currentHooks": Array [],
-      "currentPhase": "NONE",
-      "hasUpdates": false,
-      "hookListsMap": WeakMap {},
-      "mountedDecorators": Set {
-        [Function],
-        [Function],
-      },
-      "nextHookIndex": 0,
-      "prevEffects": Array [],
-      "prevMountedDecorators": Set {
-        [Function],
-        [Function],
-      },
-      "renderListener": [Function],
-    }
-  }
-  id="example-button--primary"
-  kind="Example/Button"
-  name="Primary"
-  parameters={
-    Object {
-      "__id": "example-button--primary",
-      "component": [Function],
-      "fileName": "./stories/Button.stories.tsx",
-      "framework": "react",
-      "subcomponents": undefined,
-    }
-  }
-  story="Primary"
+  className="storybook-button storybook-button--medium storybook-button--primary"
   style={
     Object {
       "backgroundColor": undefined,
     }
   }
   type="button"
-/>
+>
+  Button
+</button>
 `;
 
 exports[`Storyshots Example/Button Secondary 1`] = `
 <button
   className="storybook-button storybook-button--medium storybook-button--secondary"
-  hooks={
-    HooksContext {
-      "currentContext": Object {
-        "hooks": [Circular],
-        "id": "example-button--secondary",
-        "kind": "Example/Button",
-        "name": "Secondary",
-        "parameters": Object {
-          "__id": "example-button--secondary",
-          "component": [Function],
-          "fileName": "./stories/Button.stories.tsx",
-          "framework": "react",
-          "subcomponents": undefined,
-        },
-        "story": "Secondary",
-      },
-      "currentDecoratorName": null,
-      "currentEffects": Array [],
-      "currentHooks": Array [],
-      "currentPhase": "NONE",
-      "hasUpdates": false,
-      "hookListsMap": WeakMap {},
-      "mountedDecorators": Set {
-        [Function],
-        [Function],
-      },
-      "nextHookIndex": 0,
-      "prevEffects": Array [],
-      "prevMountedDecorators": Set {
-        [Function],
-        [Function],
-      },
-      "renderListener": [Function],
-    }
-  }
-  id="example-button--secondary"
-  kind="Example/Button"
-  name="Secondary"
-  parameters={
-    Object {
-      "__id": "example-button--secondary",
-      "component": [Function],
-      "fileName": "./stories/Button.stories.tsx",
-      "framework": "react",
-      "subcomponents": undefined,
-    }
-  }
-  story="Secondary"
   style={
     Object {
       "backgroundColor": undefined,
     }
   }
   type="button"
-/>
+>
+  Button
+</button>
 `;
 
 exports[`Storyshots Example/Button Small 1`] = `
 <button
-  className="storybook-button storybook-button--medium storybook-button--secondary"
-  hooks={
-    HooksContext {
-      "currentContext": Object {
-        "hooks": [Circular],
-        "id": "example-button--small",
-        "kind": "Example/Button",
-        "name": "Small",
-        "parameters": Object {
-          "__id": "example-button--small",
-          "component": [Function],
-          "fileName": "./stories/Button.stories.tsx",
-          "framework": "react",
-          "subcomponents": undefined,
-        },
-        "story": "Small",
-      },
-      "currentDecoratorName": null,
-      "currentEffects": Array [],
-      "currentHooks": Array [],
-      "currentPhase": "NONE",
-      "hasUpdates": false,
-      "hookListsMap": WeakMap {},
-      "mountedDecorators": Set {
-        [Function],
-        [Function],
-      },
-      "nextHookIndex": 0,
-      "prevEffects": Array [],
-      "prevMountedDecorators": Set {
-        [Function],
-        [Function],
-      },
-      "renderListener": [Function],
-    }
-  }
-  id="example-button--small"
-  kind="Example/Button"
-  name="Small"
-  parameters={
-    Object {
-      "__id": "example-button--small",
-      "component": [Function],
-      "fileName": "./stories/Button.stories.tsx",
-      "framework": "react",
-      "subcomponents": undefined,
-    }
-  }
-  story="Small"
+  className="storybook-button storybook-button--small storybook-button--secondary"
   style={
     Object {
       "backgroundColor": undefined,
     }
   }
   type="button"
-/>
+>
+  Button
+</button>
 `;
 
 exports[`Storyshots Example/Header Logged In 1`] = `
@@ -996,18 +812,7 @@ exports[`Storyshots Example/Header Logged In 1`] = `
         }
         type="button"
       >
-        Log in
-      </button>
-      <button
-        className="storybook-button storybook-button--small storybook-button--primary"
-        style={
-          Object {
-            "backgroundColor": undefined,
-          }
-        }
-        type="button"
-      >
-        Sign up
+        Log out
       </button>
     </div>
   </div>
@@ -1121,18 +926,7 @@ exports[`Storyshots Example/Page Logged In 1`] = `
           }
           type="button"
         >
-          Log in
-        </button>
-        <button
-          className="storybook-button storybook-button--small storybook-button--primary"
-          style={
-            Object {
-              "backgroundColor": undefined,
-            }
-          }
-          type="button"
-        >
-          Sign up
+          Log out
         </button>
       </div>
     </div>
