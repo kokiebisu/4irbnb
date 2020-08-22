@@ -2,26 +2,28 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 // atoms
 import { Text, Button } from 'atoms';
-import { CustomProps } from 'molecules/Button';
+import { ElementProps } from 'atoms/Button';
 
 export default {
-  title: 'Button/Base',
+  title: 'Design Systems/Button',
   component: Button,
-  excludeStories: /.*Data$/,
   argTypes: { onPress: { action: 'clicked' }, label: { control: 'text' } },
 } as Meta;
 
 const buttonData = {
-  children: <Text>click</Text>,
+  children: <Text>Button</Text>,
 };
 
-const Template: Story<CustomProps> = (args) => <Button {...args} />;
+const Template: Story<ElementProps> = (args) => <Button {...args} />;
+
+export const Small = Template.bind({});
+Small.args = { size: 'small', ...buttonData };
 
 export const Medium = Template.bind({});
-Medium.args = { md: true, ...buttonData };
+Medium.args = { ...buttonData };
 
 export const Large = Template.bind({});
-Large.args = { lg: true, ...buttonData };
+Large.args = { size: 'large', ...buttonData };
 
-export const SmallInverse = Template.bind({});
-SmallInverse.args = { inverse: true, ...Large.args };
+export const Inverse = Template.bind({});
+Inverse.args = { inverse: true, ...buttonData };
