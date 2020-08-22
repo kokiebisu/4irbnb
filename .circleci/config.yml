@@ -3,7 +3,7 @@ jobs:
   test:
     working_directory: ~/gobnb/client
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:10
     steps:
       - checkout:
           path: ~/gobnb
@@ -15,7 +15,7 @@ jobs:
           command: yarn test --watchAll=false -u
       - run:
           name: Comparing Snapshots
-          command: npx chromatic --project-token=vnmckyhfm5k --exit-zero-on-changes
+          command: npx chromatic --project-token=r2o8ven87hs --exit-zero-on-changes
   docker_hub:
     working_directory: ~/app
     machine: true
