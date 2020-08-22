@@ -1,9 +1,7 @@
 export type Props = {
   type?: string;
   onPress: () => void;
-  sm?: boolean;
-  md?: boolean;
-  lg?: boolean;
+  size?: 'small' | 'medium' | 'large';
   inverse?: boolean;
   name?: string;
 };

@@ -1,57 +1,30 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
+import { Story } from '@storybook/react/types-6-0';
 import { css } from 'styled-components';
-
-// atoms
 import { Box } from 'atoms';
-
-// molecules
-import { CustomButton } from 'molecules/Button';
+import { CustomButton, CustomProps } from 'molecules/Button';
 
 export default {
-  title: 'Design Systems|Molecules/Button/Cookie',
-  parameters: {
-    component: CustomButton,
-    componentSubtitle:
-      'Displays the two types of cookie buttons used for the landing popup notifications',
-  },
-  excludeStories: /.*Data$/,
+  title: 'Design Systems/Button/Cookie',
+  component: CustomButton,
+  argTypes: { onPress: { action: 'clicked' } },
 };
 
-const normalData = {
-  name: 'Save Settings',
-};
-
-const inverseData = {
-  name: 'Cookie Preferences',
-};
-
-const actionsData = {
-  onPress: action('onPress'),
-};
-
-export const base = () => {
+const Template: Story<CustomProps> = (args) => {
   const extend = {
     wrapper: css`
-      /* width: 200px; */
+      width: 200px;
     `,
   };
   return (
     <Box styles={extend.wrapper}>
-      <CustomButton type='cookie' {...normalData} {...actionsData} />
+      <CustomButton type='cookie' {...args} />
     </Box>
   );
 };
 
-export const inverse = () => {
-  const extend = {
-    wrapper: css`
-      /* width: 200px; */
-    `,
-  };
-  return (
-    <Box styles={extend.wrapper}>
-      <CustomButton type='cookie' inverse {...inverseData} {...actionsData} />
-    </Box>
-  );
-};
+export const base = Template.bind({});
+base.args = { name: 'Save Settings' };
+
+export const inverse = Template.bind({});
+inverse.args = { inverse: true, name: 'Cookie Preferences' };
