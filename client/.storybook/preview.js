@@ -10,11 +10,11 @@ export const globalTypes = {
     name: 'Theme',
     description: 'Global theme for components',
     defaultValue: 'light',
-    toolbar: {
-      icon: 'circlehollow',
-      // array of plain string values or MenuItem shape (see below)
-      items: ['light', 'dark'],
-    },
+    // toolbar: {
+    //   icon: 'circlehollow',
+    //   // array of plain string values or MenuItem shape (see below)
+    //   items: ['light', 'dark'],
+    // },
   },
 };
 

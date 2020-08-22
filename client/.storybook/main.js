@@ -6,4 +6,9 @@ module.exports = {
     '@storybook/preset-create-react-app',
     '@storybook/addon-controls',
   ],
+  refs: {
+    'design-system': {
+      title: 'Design System',
+    },
+  },
 };
