@@ -1,17 +1,15 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-
+import { Story, Meta } from '@storybook/react/types-6-0';
 // atoms
 import { Text, Button } from 'atoms';
+import { CustomProps } from 'molecules/Button';
 
 export default {
-  title: 'Design Systems|Molecules/Button/Base',
-  parameters: {
-    component: Button,
-    componentSubtitle: 'Displays the default button',
-  },
+  title: 'Button/Base',
+  component: Button,
   excludeStories: /.*Data$/,
-};
+} as Meta;
 
 const buttonData = {
   children: <Text>click</Text>,
@@ -21,18 +19,13 @@ const actionsData = {
   onPress: action('onPress'),
 };
 
-export const Small = () => {
-  return <Button sm {...buttonData} {...actionsData} />;
-};
+const Template: Story<CustomProps> = (args) => <Button {...args} />;
 
-export const Medium = () => {
-  return <Button md {...buttonData} {...actionsData} />;
-};
+export const Medium = Template.bind({});
+Medium.args = { md: true, ...buttonData, ...actionsData };
 
-export const Large = () => {
-  return <Button lg {...buttonData} {...actionsData} />;
-};
+export const Large = Template.bind({});
+Large.args = { lg: true, ...buttonData, ...actionsData };
 
-export const SmallInverse = () => {
-  return <Button lg inverse {...buttonData} {...actionsData} />;
-};
+export const SmallInverse = Template.bind({});
+SmallInverse.args = { lg: true, inverse: true, ...buttonData, ...actionsData };
