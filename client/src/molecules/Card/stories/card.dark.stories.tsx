@@ -3,7 +3,6 @@ import { Story } from '@storybook/react/types-6-0';
 import styled, { css, ThemeProvider } from 'styled-components';
 import Card from 'molecules/Card';
 import { Box } from 'atoms';
-import { CardProps } from 'molecules/Card';
 
 import cardimg from 'assets/img/darkcard-sm.png';
 
@@ -12,23 +11,10 @@ export default {
   component: Card,
 };
 
-// data
 const cardData = {
   image: cardimg,
   subtitle: 'Fruits de mer with Michelin chef Marc Favier',
 };
-
-// const cardDataMedium = {
-//   image: cardmd,
-//   subtitle: 'Fruits de mer with Michelin chef Marc Favier',
-//   size: 'sm',
-// };
-
-// const cardDataLarge = {
-//   image: cardlg,
-//   subtitle: 'Learn favorite summer recipes with celebrated chef Roze Traore',
-//   size: 'lg',
-// };
 
 interface CardTemplateProps {
   styles?: any;
