@@ -9,23 +9,20 @@ export default {
   title: 'Button/Base',
   component: Button,
   excludeStories: /.*Data$/,
+  argTypes: { onPress: { action: 'clicked' } },
 } as Meta;
 
 const buttonData = {
   children: <Text>click</Text>,
 };
 
-const actionsData = {
-  onPress: action('onPress'),
-};
-
 const Template: Story<CustomProps> = (args) => <Button {...args} />;
 
 export const Medium = Template.bind({});
-Medium.args = { md: true, ...buttonData, ...actionsData };
+Medium.args = { md: true, ...buttonData };
 
 export const Large = Template.bind({});
-Large.args = { lg: true, ...buttonData, ...actionsData };
+Large.args = { lg: true, ...buttonData };
 
 export const SmallInverse = Template.bind({});
-SmallInverse.args = { lg: true, inverse: true, ...buttonData, ...actionsData };
+SmallInverse.args = { lg: true, inverse: true, ...buttonData };
