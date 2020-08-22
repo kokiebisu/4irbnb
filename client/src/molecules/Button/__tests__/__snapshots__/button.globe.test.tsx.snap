@@ -9,6 +9,7 @@ exports[`Globe Button renders correctly 1`] = `
   background-color: transparent;
   border-radius: 24px;
   cursor: pointer;
+  padding: 15px 50px;
 }
 
 .c0:focus {
@@ -86,6 +87,7 @@ exports[`Globe Button renders correctly 1`] = `
   action={[Function]}
   className="c0"
   onClick={[Function]}
+  size="medium"
   style={Object {}}
 >
   <div

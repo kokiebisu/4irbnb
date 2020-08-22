@@ -1,131 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Design Systems|Molecules/Button/Base Large 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "100vh",
-      "justifyContent": "center",
-    }
-  }
->
+exports[`Storyshots Design Systems/Button Inverse 1`] = `
+<div>
+  <button
+    className="sc-AxirZ eLeEep"
+    onClick={[Function]}
+    size="medium"
+    style={Object {}}
+  >
+    <p
+      className="sc-AxhUy vsUGv"
+      style={Object {}}
+    >
+      Button
+    </p>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Design Systems/Button Large 1`] = `
+<div>
   <button
     className="sc-AxirZ dExmxL"
     onClick={[Function]}
+    size="large"
     style={Object {}}
   >
     <p
       className="sc-AxhUy vsUGv"
       style={Object {}}
     >
-      click
+      Button
     </p>
   </button>
 </div>
 `;
 
-exports[`Storyshots Design Systems|Molecules/Button/Base Medium 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "100vh",
-      "justifyContent": "center",
-    }
-  }
->
+exports[`Storyshots Design Systems/Button Medium 1`] = `
+<div>
   <button
     className="sc-AxirZ hWWebX"
     onClick={[Function]}
+    size="medium"
     style={Object {}}
   >
     <p
       className="sc-AxhUy vsUGv"
       style={Object {}}
     >
-      click
+      Button
     </p>
   </button>
 </div>
 `;
 
-exports[`Storyshots Design Systems|Molecules/Button/Base Small 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "100vh",
-      "justifyContent": "center",
-    }
-  }
->
+exports[`Storyshots Design Systems/Button Small 1`] = `
+<div>
   <button
     className="sc-AxirZ gQWyCq"
     onClick={[Function]}
+    size="small"
     style={Object {}}
   >
     <p
       className="sc-AxhUy vsUGv"
       style={Object {}}
     >
-      click
+      Button
     </p>
   </button>
 </div>
 `;
 
-exports[`Storyshots Design Systems|Molecules/Button/Base Small Inverse 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "100vh",
-      "justifyContent": "center",
-    }
-  }
->
-  <button
-    className="sc-AxirZ jxNpCS"
-    onClick={[Function]}
-    style={Object {}}
-  >
-    <p
-      className="sc-AxhUy vsUGv"
-      style={Object {}}
-    >
-      click
-    </p>
-  </button>
-</div>
-`;
-
-exports[`Storyshots Design Systems|Molecules/Button/Cookie Base 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "100vh",
-      "justifyContent": "center",
-    }
-  }
->
+exports[`Storyshots Design Systems/Button/Cookie Base 1`] = `
+<div>
   <div
-    className="sc-AxjAm vuqMX"
+    className="sc-AxjAm gWPKXv"
     style={Object {}}
   >
     <button
-      className="sc-AxirZ dJPYgl"
+      className="sc-AxirZ hWWebX sc-AxgMl eDWHIR"
       onClick={[Function]}
+      size="medium"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy hWdaik"
+        className="sc-AxhUy vsUGv"
         style={Object {}}
       >
         Save Settings
@@ -135,28 +95,20 @@ exports[`Storyshots Design Systems|Molecules/Button/Cookie Base 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design Systems|Molecules/Button/Cookie Inverse 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "100vh",
-      "justifyContent": "center",
-    }
-  }
->
+exports[`Storyshots Design Systems/Button/Cookie Inverse 1`] = `
+<div>
   <div
-    className="sc-AxjAm vuqMX"
+    className="sc-AxjAm gWPKXv"
     style={Object {}}
   >
     <button
-      className="sc-AxirZ gQcsgR"
+      className="sc-AxirZ eLeEep sc-AxgMl eDWHIR"
       onClick={[Function]}
+      size="medium"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy hdKEJG"
+        className="sc-AxhUy vsUGv"
         style={Object {}}
       >
         Cookie Preferences
@@ -167,30 +119,22 @@ exports[`Storyshots Design Systems|Molecules/Button/Cookie Inverse 1`] = `
 `;
 
 exports[`Storyshots Design Systems|Molecules/Button/Globe Base 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "100vh",
-      "justifyContent": "center",
-    }
-  }
->
+<div>
   <div
     className="sc-AxjAm isvGjR"
     style={Object {}}
   >
     <button
-      className="sc-AxirZ zBlbG"
+      className="sc-AxirZ mPDbX"
       onClick={[Function]}
+      size="medium"
       style={Object {}}
     >
       <div
-        className="sc-AxgMl wTXyQ"
+        className="sc-AxheI bTPmmO"
       >
         <div
-          className="sc-AxiKw eYXacm"
+          className="sc-AxiKw cVwieh"
           style={Object {}}
         >
           <svg
@@ -202,7 +146,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Globe Base 1`] = `
           </svg>
         </div>
         <div
-          className="sc-AxiKw jrZZkq"
+          className="sc-AxiKw UvGOl"
           style={Object {}}
         >
           <svg
@@ -224,30 +168,22 @@ exports[`Storyshots Design Systems|Molecules/Button/Globe Base 1`] = `
 `;
 
 exports[`Storyshots Design Systems|Molecules/Button/Menu Base 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "100vh",
-      "justifyContent": "center",
-    }
-  }
->
+<div>
   <div
     className="sc-AxjAm cjOPXP"
     style={Object {}}
   >
     <button
-      className="sc-AxirZ flmVAP"
+      className="sc-AxirZ hosTcl"
       onClick={[Function]}
+      size="medium"
       style={Object {}}
     >
       <div
-        className="sc-AxgMl wTXyQ"
+        className="sc-AxheI bTPmmO"
       >
         <div
-          className="sc-AxiKw iXpccB"
+          className="sc-AxiKw ksAxXI"
           style={Object {}}
         >
           <svg
@@ -259,7 +195,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Menu Base 1`] = `
           </svg>
         </div>
         <div
-          className="sc-AxiKw jcjbbo"
+          className="sc-AxiKw cBApGh"
           style={Object {}}
         >
           <svg
@@ -277,19 +213,11 @@ exports[`Storyshots Design Systems|Molecules/Button/Menu Base 1`] = `
 `;
 
 exports[`Storyshots Design Systems|Molecules/Button/Search Base 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "100vh",
-      "justifyContent": "center",
-    }
-  }
->
+<div>
   <button
-    className="sc-AxirZ iBtTxo"
+    className="sc-AxirZ bRkvtp"
     onClick={[Function]}
+    size="medium"
     style={Object {}}
   >
     <div
@@ -320,16 +248,7 @@ exports[`Storyshots Design Systems|Molecules/Button/Search Base 1`] = `
 `;
 
 exports[`Storyshots Design Systems|Molecules/Card/Dark Large 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "100vh",
-      "justifyContent": "center",
-    }
-  }
->
+<div>
   <div
     className="sc-AxjAm gfmURB"
     style={Object {}}
@@ -365,16 +284,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Large 1`] = `
 `;
 
 exports[`Storyshots Design Systems|Molecules/Card/Dark Medium 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "100vh",
-      "justifyContent": "center",
-    }
-  }
->
+<div>
   <div
     className="sc-AxjAm hFICtt"
     style={Object {}}
@@ -410,16 +320,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Medium 1`] = `
 `;
 
 exports[`Storyshots Design Systems|Molecules/Card/Dark Small 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "100vh",
-      "justifyContent": "center",
-    }
-  }
->
+<div>
   <div
     className="sc-AxjAm kUkfrO"
     style={Object {}}
@@ -455,22 +356,13 @@ exports[`Storyshots Design Systems|Molecules/Card/Dark Small 1`] = `
 `;
 
 exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "100vh",
-      "justifyContent": "center",
-    }
-  }
->
+<div>
   <div
     className="sc-AxjAm bUwkzS"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm RVvez"
+      className="sc-AxjAm lbuXgB"
       style={Object {}}
     >
       <div
@@ -488,13 +380,13 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
         style={Object {}}
       >
         <p
-          className="sc-AxhUy cXHHIS"
+          className="sc-AxhUy bIfkMF"
           style={Object {}}
         >
           Online experiences
         </p>
         <p
-          className="sc-AxhUy fiHroI"
+          className="sc-AxhUy hEgaEx"
           style={Object {}}
         >
           Unique activities we can do together, led by a world of hosts
@@ -502,7 +394,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
       </div>
     </div>
     <div
-      className="sc-AxjAm RVvez"
+      className="sc-AxjAm lbuXgB"
       style={Object {}}
     >
       <div
@@ -520,13 +412,13 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
         style={Object {}}
       >
         <p
-          className="sc-AxhUy cXHHIS"
+          className="sc-AxhUy bIfkMF"
           style={Object {}}
         >
           Your next getaway
         </p>
         <p
-          className="sc-AxhUy fiHroI"
+          className="sc-AxhUy hEgaEx"
           style={Object {}}
         >
           Unplug or reconnect on a trip that's just a short drive away
@@ -534,7 +426,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
       </div>
     </div>
     <div
-      className="sc-AxjAm RVvez"
+      className="sc-AxjAm lbuXgB"
       style={Object {}}
     >
       <div
@@ -552,13 +444,13 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
         style={Object {}}
       >
         <p
-          className="sc-AxhUy cXHHIS"
+          className="sc-AxhUy bIfkMF"
           style={Object {}}
         >
           Entire homes
         </p>
         <p
-          className="sc-AxhUy fiHroI"
+          className="sc-AxhUy hEgaEx"
           style={Object {}}
         >
           Comfortable private places, with room for friends or family
@@ -570,22 +462,13 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Multiple 1`] = `
 `;
 
 exports[`Storyshots Design Systems|Molecules/Card/Light Single With Title 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "100vh",
-      "justifyContent": "center",
-    }
-  }
->
+<div>
   <div
     className="sc-AxjAm htNMvP"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm RVvez"
+      className="sc-AxjAm lbuXgB"
       style={Object {}}
     >
       <div
@@ -603,13 +486,13 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single With Title 1`] = 
         style={Object {}}
       >
         <p
-          className="sc-AxhUy cXHHIS"
+          className="sc-AxhUy bIfkMF"
           style={Object {}}
         >
           Online experiences
         </p>
         <p
-          className="sc-AxhUy fiHroI"
+          className="sc-AxhUy hEgaEx"
           style={Object {}}
         >
           Unique activities we can do together, led by a world of hosts
@@ -621,22 +504,13 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single With Title 1`] = 
 `;
 
 exports[`Storyshots Design Systems|Molecules/Card/Light Single Without Title 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "100vh",
-      "justifyContent": "center",
-    }
-  }
->
+<div>
   <div
     className="sc-AxjAm htNMvP"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm RVvez"
+      className="sc-AxjAm lbuXgB"
       style={Object {}}
     >
       <div
@@ -654,7 +528,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single Without Title 1`]
         style={Object {}}
       >
         <p
-          className="sc-AxhUy fiHroI"
+          className="sc-AxhUy hEgaEx"
           style={Object {}}
         >
           Unique activities we can do together, led by a world of hosts
@@ -666,22 +540,13 @@ exports[`Storyshots Design Systems|Molecules/Card/Light Single Without Title 1`]
 `;
 
 exports[`Storyshots Design Systems|Molecules/Card/Section Black Lives Matter 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "100vh",
-      "justifyContent": "center",
-    }
-  }
->
+<div>
   <div
     className="sc-AxjAm zwqux"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm heQYgx"
+      className="sc-AxjAm bVjzwh"
       style={Object {}}
     >
       <div
@@ -689,7 +554,7 @@ exports[`Storyshots Design Systems|Molecules/Card/Section Black Lives Matter 1`]
         style={Object {}}
       >
         <div
-          className="sc-AxjAm hAsXji"
+          className="sc-AxjAm kIAOWV"
           style={Object {}}
         >
           <div
@@ -718,30 +583,22 @@ exports[`Storyshots Design Systems|Molecules/Card/Section Black Lives Matter 1`]
 `;
 
 exports[`Storyshots Design Systems|Molecules/SearchBar Mobile 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "100vh",
-      "justifyContent": "center",
-    }
-  }
->
+<div>
   <div
     className="sc-AxjAm fjaeUw"
     style={Object {}}
   >
     <button
-      className="sc-AxirZ hhoZfu"
+      className="sc-AxirZ fUVOpT"
       onClick={[Function]}
+      size="medium"
       style={Object {}}
     >
       <div
-        className="sc-AxgMl wTXyQ"
+        className="sc-AxheI bTPmmO"
       >
         <div
-          className="sc-AxiKw eWYSxW"
+          className="sc-AxiKw eQeGXi"
           style={Object {}}
         >
           <svg
@@ -753,7 +610,7 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Mobile 1`] = `
           </svg>
         </div>
         <div
-          className="sc-AxjAm gzylxM"
+          className="sc-AxjAm iYXUvd"
           style={Object {}}
         >
           <p
@@ -770,26 +627,18 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Mobile 1`] = `
 `;
 
 exports[`Storyshots Design Systems|Molecules/SearchBar Normal 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "100vh",
-      "justifyContent": "center",
-    }
-  }
->
+<div>
   <button
-    className="sc-AxirZ fcduhH"
+    className="sc-AxirZ fnmfwe"
     onClick={[Function]}
+    size="medium"
     style={Object {}}
   >
     <div
-      className="sc-AxgMl lmkBdg"
+      className="sc-AxheI dabaIO"
     >
       <div
-        className="sc-AxjAm dExgth"
+        className="sc-AxjAm cOVuHV"
         style={Object {}}
       >
         <p
@@ -804,7 +653,7 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Normal 1`] = `
         style={Object {}}
       >
         <div
-          className="sc-AxiKw gkeBYJ"
+          className="sc-AxiKw eHmJlp"
           style={Object {}}
         >
           <svg
@@ -822,16 +671,7 @@ exports[`Storyshots Design Systems|Molecules/SearchBar Normal 1`] = `
 `;
 
 exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "display": "flex",
-      "height": "100vh",
-      "justifyContent": "center",
-    }
-  }
->
+<div>
   <div
     className="sc-AxjAm bkttMG"
     style={Object {}}
@@ -853,13 +693,13 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
             style={Object {}}
           >
             <p
-              className="sc-AxhUy gxCFEe"
+              className="sc-AxhUy wviov"
               style={Object {}}
             >
               Your Privacy
             </p>
             <div
-              className="sc-AxiKw LnqfM"
+              className="sc-AxiKw ZpJZf"
               style={Object {}}
             >
               <svg
@@ -872,7 +712,7 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
             </div>
           </div>
           <p
-            className="sc-AxhUy gudwKO"
+            className="sc-AxhUy eLvxwK"
             style={Object {}}
           >
             We use cookies to help personalize content, tailor and measure ads, and provide a safer experience. By navigating the site, you agree to the use of cookies to collect information on and off Airbnb. Read our Cookie Policy to learn more or go to Cookie Preferences to manage your settings
@@ -887,24 +727,26 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
             style={Object {}}
           >
             <button
-              className="sc-AxirZ dJPYgl"
+              className="sc-AxirZ hWWebX sc-AxgMl eDWHIR"
               onClick={[Function]}
+              size="medium"
               style={Object {}}
             >
               <p
-                className="sc-AxhUy hWdaik"
+                className="sc-AxhUy vsUGv"
                 style={Object {}}
               >
                 Save Settings
               </p>
             </button>
             <button
-              className="sc-AxirZ gQcsgR"
+              className="sc-AxirZ eLeEep sc-AxgMl eDWHIR"
               onClick={[Function]}
+              size="medium"
               style={Object {}}
             >
               <p
-                className="sc-AxhUy hdKEJG"
+                className="sc-AxhUy vsUGv"
                 style={Object {}}
               >
                 Cookie Preferences
@@ -915,5 +757,469 @@ exports[`Storyshots Design Systems|Organisms/Notification/Cookie Default 1`] = `
       </div>
     </div>
   </div>
+</div>
+`;
+
+exports[`Storyshots Example/Button Large 1`] = `
+<div>
+  <button
+    className="storybook-button storybook-button--large storybook-button--secondary"
+    style={
+      Object {
+        "backgroundColor": undefined,
+      }
+    }
+    type="button"
+  >
+    Button
+  </button>
+</div>
+`;
+
+exports[`Storyshots Example/Button Primary 1`] = `
+<div>
+  <button
+    className="storybook-button storybook-button--medium storybook-button--primary"
+    style={
+      Object {
+        "backgroundColor": undefined,
+      }
+    }
+    type="button"
+  >
+    Button
+  </button>
+</div>
+`;
+
+exports[`Storyshots Example/Button Secondary 1`] = `
+<div>
+  <button
+    className="storybook-button storybook-button--medium storybook-button--secondary"
+    style={
+      Object {
+        "backgroundColor": undefined,
+      }
+    }
+    type="button"
+  >
+    Button
+  </button>
+</div>
+`;
+
+exports[`Storyshots Example/Button Small 1`] = `
+<div>
+  <button
+    className="storybook-button storybook-button--small storybook-button--secondary"
+    style={
+      Object {
+        "backgroundColor": undefined,
+      }
+    }
+    type="button"
+  >
+    Button
+  </button>
+</div>
+`;
+
+exports[`Storyshots Example/Header Logged In 1`] = `
+<div>
+  <header>
+    <div
+      className="wrapper"
+    >
+      <div>
+        <svg
+          height="32"
+          viewBox="0 0 32 32"
+          width="32"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            fill="none"
+            fillRule="evenodd"
+          >
+            <path
+              d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
+              fill="#FFF"
+            />
+            <path
+              d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
+              fill="#555AB9"
+            />
+            <path
+              d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
+              fill="#91BAF8"
+            />
+          </g>
+        </svg>
+        <h1>
+          Acme
+        </h1>
+      </div>
+      <div>
+        <button
+          className="storybook-button storybook-button--small storybook-button--secondary"
+          style={
+            Object {
+              "backgroundColor": undefined,
+            }
+          }
+          type="button"
+        >
+          Log out
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+`;
+
+exports[`Storyshots Example/Header Logged Out 1`] = `
+<div>
+  <header>
+    <div
+      className="wrapper"
+    >
+      <div>
+        <svg
+          height="32"
+          viewBox="0 0 32 32"
+          width="32"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            fill="none"
+            fillRule="evenodd"
+          >
+            <path
+              d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
+              fill="#FFF"
+            />
+            <path
+              d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
+              fill="#555AB9"
+            />
+            <path
+              d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
+              fill="#91BAF8"
+            />
+          </g>
+        </svg>
+        <h1>
+          Acme
+        </h1>
+      </div>
+      <div>
+        <button
+          className="storybook-button storybook-button--small storybook-button--secondary"
+          style={
+            Object {
+              "backgroundColor": undefined,
+            }
+          }
+          type="button"
+        >
+          Log in
+        </button>
+        <button
+          className="storybook-button storybook-button--small storybook-button--primary"
+          style={
+            Object {
+              "backgroundColor": undefined,
+            }
+          }
+          type="button"
+        >
+          Sign up
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+`;
+
+exports[`Storyshots Example/Page Logged In 1`] = `
+<div>
+  <article>
+    <header>
+      <div
+        className="wrapper"
+      >
+        <div>
+          <svg
+            height="32"
+            viewBox="0 0 32 32"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="none"
+              fillRule="evenodd"
+            >
+              <path
+                d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
+                fill="#FFF"
+              />
+              <path
+                d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
+                fill="#555AB9"
+              />
+              <path
+                d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
+                fill="#91BAF8"
+              />
+            </g>
+          </svg>
+          <h1>
+            Acme
+          </h1>
+        </div>
+        <div>
+          <button
+            className="storybook-button storybook-button--small storybook-button--secondary"
+            style={
+              Object {
+                "backgroundColor": undefined,
+              }
+            }
+            type="button"
+          >
+            Log out
+          </button>
+        </div>
+      </div>
+    </header>
+    <section>
+      <h2>
+        Pages in Storybook
+      </h2>
+      <p>
+        We recommend building UIs with a
+         
+        <a
+          href="https://componentdriven.org"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <strong>
+            component-driven
+          </strong>
+        </a>
+         
+        process starting with atomic components and ending with pages.
+      </p>
+      <p>
+        Render pages with mock data. This makes it easy to build and review page states without needing to navigate to them in your app. Here are some handy patterns for managing page data in Storybook:
+      </p>
+      <ul>
+        <li>
+          Use a higher-level connected component. Storybook helps you compose such data from the "args" of child component stories
+        </li>
+        <li>
+          Assemble data in the page component from your services. You can mock these services out using Storybook.
+        </li>
+      </ul>
+      <p>
+        Get a guided tutorial on component-driven development at
+         
+        <a
+          href="https://www.learnstorybook.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Learn Storybook
+        </a>
+        . Read more in the
+         
+        <a
+          href="https://storybook.js.org/docs"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          docs
+        </a>
+        .
+      </p>
+      <div
+        className="tip-wrapper"
+      >
+        <span
+          className="tip"
+        >
+          Tip
+        </span>
+         Adjust the width of the canvas with the
+         
+        <svg
+          height="10"
+          viewBox="0 0 12 12"
+          width="10"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            fill="none"
+            fillRule="evenodd"
+          >
+            <path
+              d="M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z"
+              fill="#999"
+              id="a"
+            />
+          </g>
+        </svg>
+        Viewports addon in the toolbar
+      </div>
+    </section>
+  </article>
+</div>
+`;
+
+exports[`Storyshots Example/Page Logged Out 1`] = `
+<div>
+  <article>
+    <header>
+      <div
+        className="wrapper"
+      >
+        <div>
+          <svg
+            height="32"
+            viewBox="0 0 32 32"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g
+              fill="none"
+              fillRule="evenodd"
+            >
+              <path
+                d="M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z"
+                fill="#FFF"
+              />
+              <path
+                d="M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z"
+                fill="#555AB9"
+              />
+              <path
+                d="M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z"
+                fill="#91BAF8"
+              />
+            </g>
+          </svg>
+          <h1>
+            Acme
+          </h1>
+        </div>
+        <div>
+          <button
+            className="storybook-button storybook-button--small storybook-button--secondary"
+            style={
+              Object {
+                "backgroundColor": undefined,
+              }
+            }
+            type="button"
+          >
+            Log in
+          </button>
+          <button
+            className="storybook-button storybook-button--small storybook-button--primary"
+            style={
+              Object {
+                "backgroundColor": undefined,
+              }
+            }
+            type="button"
+          >
+            Sign up
+          </button>
+        </div>
+      </div>
+    </header>
+    <section>
+      <h2>
+        Pages in Storybook
+      </h2>
+      <p>
+        We recommend building UIs with a
+         
+        <a
+          href="https://componentdriven.org"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <strong>
+            component-driven
+          </strong>
+        </a>
+         
+        process starting with atomic components and ending with pages.
+      </p>
+      <p>
+        Render pages with mock data. This makes it easy to build and review page states without needing to navigate to them in your app. Here are some handy patterns for managing page data in Storybook:
+      </p>
+      <ul>
+        <li>
+          Use a higher-level connected component. Storybook helps you compose such data from the "args" of child component stories
+        </li>
+        <li>
+          Assemble data in the page component from your services. You can mock these services out using Storybook.
+        </li>
+      </ul>
+      <p>
+        Get a guided tutorial on component-driven development at
+         
+        <a
+          href="https://www.learnstorybook.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Learn Storybook
+        </a>
+        . Read more in the
+         
+        <a
+          href="https://storybook.js.org/docs"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          docs
+        </a>
+        .
+      </p>
+      <div
+        className="tip-wrapper"
+      >
+        <span
+          className="tip"
+        >
+          Tip
+        </span>
+         Adjust the width of the canvas with the
+         
+        <svg
+          height="10"
+          viewBox="0 0 12 12"
+          width="10"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g
+            fill="none"
+            fillRule="evenodd"
+          >
+            <path
+              d="M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z"
+              fill="#999"
+              id="a"
+            />
+          </g>
+        </svg>
+        Viewports addon in the toolbar
+      </div>
+    </section>
+  </article>
 </div>
 `;
