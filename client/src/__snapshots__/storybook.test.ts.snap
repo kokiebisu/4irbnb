@@ -511,42 +511,6 @@ exports[`Storyshots Design Systems/Card/Section Black Lives Matter 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design Systems|Molecules/Card/Section Black Lives Matter 1`] = `
-<div
-  className="sc-AxjAm hyNcgC sc-fzokOt edMvOd"
-  style={Object {}}
->
-  <div
-    className="sc-AxjAm hyNcgC sc-fzqBZW jdmALV"
-    style={Object {}}
-  >
-    <div
-      className="sc-AxjAm hyNcgC sc-fzqNJr duVJuO"
-      style={Object {}}
-    >
-      <p
-        className="sc-AxhUy vsUGv sc-fzoyAV ildYuj"
-        style={Object {}}
-      >
-        We stand with #BlackLivesMatter
-      </p>
-      <p
-        className="sc-AxhUy vsUGv sc-fzoLag cxFYrT"
-        style={Object {}}
-      >
-        We believe in a world where everyone belongs. We reject all racism that stands in the way.
-      </p>
-      <p
-        className="sc-AxhUy vsUGv sc-fzoXzr ipXbWl"
-        style={Object {}}
-      >
-        Donate
-      </p>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Storyshots Design Systems|Molecules/SearchBar Mobile 1`] = `
 <div
   className="sc-AxjAm fjaeUw"
