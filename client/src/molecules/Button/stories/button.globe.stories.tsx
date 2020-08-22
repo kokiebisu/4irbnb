@@ -11,18 +11,8 @@ export default {
 };
 
 const Template: Story<CustomProps> = (args) => {
-  const extend = {
-    wrapper: css`
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: black;
-    `,
-  };
   return (
-    <Box styles={extend.wrapper}>
+    <Box>
       <CustomButton type='globe' {...args} />
     </Box>
   );
