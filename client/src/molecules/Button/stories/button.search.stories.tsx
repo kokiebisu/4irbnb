@@ -9,12 +9,11 @@ export default {
 } as Meta;
 
 interface Props {
+  type: string;
   onPress: () => void;
 }
 
-const ButtonTemplate: Story<CustomProps> = (args) => (
-  <CustomButton type='search' {...args} />
-);
+const ButtonTemplate: Story<Props> = (args) => <CustomButton {...args} />;
 
 export const base = ButtonTemplate.bind({});
-base.args = { name: 'Search' };
+base.args = { type: 'search', name: 'Search' };

@@ -5,15 +5,6 @@ exports[`Menu Button renders correctly 1`] = `
   border-radius: 8px;
   font-size: 18px;
   border: none;
-  border-radius: 24px;
-  padding: 5px 6px 5px 12px;
-  -webkit-transition: 0.2s ease-in;
-  transition: 0.2s ease-in;
-  border: 1px solid;
-}
-
-.c0:hover {
-  box-shadow: rgba(0,0,0,0.15) 0px 2px 8px;
 }
 
 .c0:hover {
@@ -24,7 +15,7 @@ exports[`Menu Button renders correctly 1`] = `
   outline: none;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -42,12 +33,7 @@ exports[`Menu Button renders correctly 1`] = `
   width: 17px;
 }
 
-.c2 svg {
-  width: 100%;
-  height: 100%;
-}
-
-.c3 {
+.c5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -64,12 +50,19 @@ exports[`Menu Button renders correctly 1`] = `
   width: 32px;
 }
 
-.c3 svg {
-  height: 100%;
-  width: 100%;
+.c1 {
+  border-radius: 24px;
+  padding: 5px 6px 5px 12px;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+  border: 1px solid;
 }
 
-.c1 {
+.c1:hover {
+  box-shadow: rgba(0,0,0,0.15) 0px 2px 8px;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -80,17 +73,23 @@ exports[`Menu Button renders correctly 1`] = `
   align-items: center;
 }
 
+.c4 svg {
+  width: 100%;
+  height: 100%;
+}
+
 <button
   action={[Function]}
-  className="c0"
+  className="c0 c1"
   onClick={[Function]}
   style={Object {}}
 >
   <div
-    className="c1"
+    className="c2"
+    style={Object {}}
   >
     <div
-      className="c2"
+      className="c3 c4"
       style={Object {}}
     >
       <svg
@@ -102,7 +101,7 @@ exports[`Menu Button renders correctly 1`] = `
       </svg>
     </div>
     <div
-      className="c3"
+      className="c5 c4"
       style={Object {}}
     >
       <svg

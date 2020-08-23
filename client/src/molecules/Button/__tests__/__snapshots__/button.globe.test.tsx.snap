@@ -51,17 +51,6 @@ exports[`Globe Button renders correctly 1`] = `
   width: 10px;
 }
 
-.c2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .c1 {
   padding: 15px;
   background-color: transparent;
@@ -77,6 +66,17 @@ exports[`Globe Button renders correctly 1`] = `
   width: 100%;
 }
 
+.c2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 <button
   action={[Function]}
   className="c0 c1"
@@ -85,6 +85,7 @@ exports[`Globe Button renders correctly 1`] = `
 >
   <div
     className="c2"
+    style={Object {}}
   >
     <div
       className="c3 c4"
