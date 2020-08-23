@@ -5,7 +5,7 @@ import { Box } from 'atoms';
 import { CustomButton } from 'molecules/Button';
 
 export default {
-  title: 'Design Systems/Button/Cookie Button',
+  title: 'Design Systems/Button/Custom',
   component: CustomButton,
   argTypes: { onPress: { action: 'clicked' } },
 } as Meta;
@@ -30,11 +30,11 @@ const ButtonTemplate: Story<Props> = ({ className, ...args }) => {
   );
 };
 
-export const base = ButtonTemplate.bind({});
-base.args = { type: 'cookie', name: 'Save Settings' };
+export const cookie = ButtonTemplate.bind({});
+cookie.args = { type: 'cookie', name: 'Save Settings' };
 
-export const inverse = ButtonTemplate.bind({});
-inverse.args = {
+export const cookieInverse = ButtonTemplate.bind({});
+cookieInverse.args = {
   type: 'cookie',
   inverse: true,
   name: 'Cookie Preferences',
