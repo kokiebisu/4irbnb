@@ -34,6 +34,16 @@ const StyledIcon = styled(Icon)`
       fill: ${stroke};
     }
   }
+  &.globe {
+    position: relative;
+    top: 50%;
+    margin-right: 6px;
+    width: 16px;
+    height: 16px;
+  }
+  &.arrow {
+    width: 10px;
+  }
 `;
 
 export const Flex = styled(Box)`
@@ -45,22 +55,9 @@ export default ({ name, ...props }: CustomProps) => {
   return (
     <Wrapper {...props}>
       <Flex>
-        <StyledIcon styles={extend.globe} name='Globe' />
-        <StyledIcon styles={extend.arrow} name='ChevronDown' />
+        <StyledIcon className='globe' name='Globe' />
+        <StyledIcon className='arrow' name='ChevronDown' />
       </Flex>
     </Wrapper>
   );
-};
-
-const extend = {
-  globe: css`
-    position: relative;
-    top: 50%;
-    margin-right: 6px;
-    width: 16px;
-    height: 16px;
-  `,
-  arrow: css`
-    width: 10px;
-  `,
 };
