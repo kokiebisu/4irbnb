@@ -513,6 +513,92 @@ exports[`Storyshots Design Systems/Card/Section Black Lives Matter 1`] = `
 </div>
 `;
 
+exports[`Storyshots Design Systems/Notification/Cookie Base 1`] = `
+<div
+  className="sc-AxjAm kLSqRm"
+  style={Object {}}
+>
+  <div
+    className="sc-AxjAm fIXBRY"
+    style={Object {}}
+  >
+    <div
+      className="sc-AxjAm hDaJRB"
+      style={Object {}}
+    >
+      <div
+        className="sc-AxjAm kkDVNx"
+        style={Object {}}
+      >
+        <div
+          className="sc-AxjAm cFZHbc"
+          style={Object {}}
+        >
+          <p
+            className="sc-AxhUy gxCFEe"
+            style={Object {}}
+          >
+            Your Privacy
+          </p>
+          <div
+            className="sc-AxiKw LnqfM"
+            style={Object {}}
+          >
+            <svg
+              viewBox="0 0 448 512"
+            >
+              <path
+                d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"
+              />
+            </svg>
+          </div>
+        </div>
+        <p
+          className="sc-AxhUy gudwKO"
+          style={Object {}}
+        >
+          We use cookies to help personalize content, tailor and measure ads, and provide a safer experience. By navigating the site, you agree to the use of cookies to collect information on and off Airbnb. Read our Cookie Policy to learn more or go to Cookie Preferences to manage your settings
+        </p>
+      </div>
+      <div
+        className="sc-AxjAm gTMHyH"
+        style={Object {}}
+      >
+        <div
+          className="sc-AxjAm ivUTch"
+          style={Object {}}
+        >
+          <button
+            className="sc-AxirZ gohgme sc-fzozJi iOrtLq normal"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <p
+              className="sc-AxhUy vsUGv"
+              style={Object {}}
+            >
+              Save Settings
+            </p>
+          </button>
+          <button
+            className="sc-AxirZ gohgme sc-fzozJi iOrtLq inverse"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <p
+              className="sc-AxhUy vsUGv"
+              style={Object {}}
+            >
+              Cookie Preferences
+            </p>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Design Systems/SearchBar Medium 1`] = `
 <div
   className="sc-AxjAm emteCl"
@@ -588,6 +674,92 @@ exports[`Storyshots Design Systems/SearchBar Small 1`] = `
       </p>
     </div>
   </button>
+</div>
+`;
+
+exports[`Storyshots Design Systems|Organisms/Notification/Cookie Base 1`] = `
+<div
+  className="sc-AxjAm kLSqRm"
+  style={Object {}}
+>
+  <div
+    className="sc-AxjAm fIXBRY"
+    style={Object {}}
+  >
+    <div
+      className="sc-AxjAm hDaJRB"
+      style={Object {}}
+    >
+      <div
+        className="sc-AxjAm kkDVNx"
+        style={Object {}}
+      >
+        <div
+          className="sc-AxjAm cFZHbc"
+          style={Object {}}
+        >
+          <p
+            className="sc-AxhUy gxCFEe"
+            style={Object {}}
+          >
+            Your Privacy
+          </p>
+          <div
+            className="sc-AxiKw LnqfM"
+            style={Object {}}
+          >
+            <svg
+              viewBox="0 0 448 512"
+            >
+              <path
+                d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"
+              />
+            </svg>
+          </div>
+        </div>
+        <p
+          className="sc-AxhUy gudwKO"
+          style={Object {}}
+        >
+          We use cookies to help personalize content, tailor and measure ads, and provide a safer experience. By navigating the site, you agree to the use of cookies to collect information on and off Airbnb. Read our Cookie Policy to learn more or go to Cookie Preferences to manage your settings
+        </p>
+      </div>
+      <div
+        className="sc-AxjAm gTMHyH"
+        style={Object {}}
+      >
+        <div
+          className="sc-AxjAm ivUTch"
+          style={Object {}}
+        >
+          <button
+            className="sc-AxirZ gohgme sc-fzozJi iOrtLq normal"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <p
+              className="sc-AxhUy vsUGv"
+              style={Object {}}
+            >
+              Save Settings
+            </p>
+          </button>
+          <button
+            className="sc-AxirZ gohgme sc-fzozJi iOrtLq inverse"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <p
+              className="sc-AxhUy vsUGv"
+              style={Object {}}
+            >
+              Cookie Preferences
+            </p>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 `;
 

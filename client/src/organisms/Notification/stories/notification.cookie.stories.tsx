@@ -1,33 +1,29 @@
 import React from 'react';
+import { Story, Meta } from '@storybook/react/types-6-0';
 import { css } from 'styled-components';
-
-// atoms
 import { Box } from 'atoms';
-
-// organisms
 import { Notification } from 'organisms/Notification';
 
 export default {
-  title: 'Design Systems|Organisms/Notification/Cookie',
-  parameters: {
-    component: Notification,
-    componentSubtitle: 'Displays the cookie notification for the user',
-  },
-  excludeStories: /.*Data$/,
-};
+  title: 'Design Systems/Notification/Cookie',
+  component: Notification,
+} as Meta;
 
-export const Default = () => {
-  const extend = {
-    wrapper: css`
-      width: calc(100% - 30px);
-      position: fixed;
-      bottom: 25px;
-      margin: 0 auto;
-    `,
-  };
-  return (
-    <Box styles={extend.wrapper}>
-      <Notification type='cookie' />
-    </Box>
-  );
+interface Props {}
+
+const NotificationTemplate: Story<Props> = ({ styles, ...args }) => (
+  <Box styles={styles}>
+    <Notification {...args} />
+  </Box>
+);
+
+export const base = NotificationTemplate.bind({});
+base.args = {
+  type: 'cookie',
+  styles: css`
+    width: calc(100% - 30px);
+    position: fixed;
+    bottom: 25px;
+    margin: 0 auto;
+  `,
 };
