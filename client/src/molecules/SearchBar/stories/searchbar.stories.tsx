@@ -25,7 +25,7 @@ const SearchBarTemplate: Story<Props> = ({ styles, ...args }) => (
 
 export const small = SearchBarTemplate.bind({});
 small.args = {
-  type: 'mobile',
+  type: 'sm',
   styles: css`
     width: 100%;
   `,
@@ -33,7 +33,18 @@ small.args = {
 
 export const medium = SearchBarTemplate.bind({});
 medium.args = {
-  type: 'normal',
+  type: 'md',
+  styles: css`
+    @media ${sizes.lg} {
+      width: 100%;
+      max-width: 1560px;
+    }
+  `,
+};
+
+export const large = SearchBarTemplate.bind({});
+large.args = {
+  type: 'lg',
   styles: css`
     @media ${sizes.lg} {
       width: 100%;
