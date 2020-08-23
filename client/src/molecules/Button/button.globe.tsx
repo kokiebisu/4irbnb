@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { Icon, Button } from 'atoms';
+import { Box, Icon, Button } from 'atoms';
 import { colors } from 'styles';
 import { CustomProps } from 'molecules/Button';
 import theme from 'styled-theming';

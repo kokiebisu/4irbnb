@@ -54,9 +54,9 @@ const Label = styled(Text)`
 
 export default ({ ...props }: SearchBarProps) => {
   return (
-    <Wrapper styles={extend.wrapper} {...props}>
+    <Wrapper {...props}>
       <Flex>
-        <CustomIcon name='Search' styles={extend.icon} />
+        <CustomIcon name='Search' />
         <Label>Where are you going?</Label>
       </Flex>
     </Wrapper>

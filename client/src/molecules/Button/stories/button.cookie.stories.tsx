@@ -14,6 +14,7 @@ interface Props {
   name: string;
   styles?: any;
   onPress: () => void;
+  type: string;
   inverse: boolean;
 }
 
@@ -26,13 +27,18 @@ const baseStyles = {
 const ButtonTemplate: Story<Props> = ({ styles, ...args }) => {
   return (
     <Box styles={styles}>
-      <CustomButton type='cookie' {...args} />
+      <CustomButton {...args} />
     </Box>
   );
 };
 
 export const base = ButtonTemplate.bind({});
-base.args = { name: 'Save Settings', ...baseStyles };
+base.args = { type: 'cookie', name: 'Save Settings', ...baseStyles };
 
 export const inverse = ButtonTemplate.bind({});
-inverse.args = { inverse: true, name: 'Cookie Preferences', ...baseStyles };
+inverse.args = {
+  type: 'cookie',
+  inverse: true,
+  name: 'Cookie Preferences',
+  ...baseStyles,
+};
