@@ -2,12 +2,12 @@
 
 exports[`Storyshots Design Systems/Button Inverse 1`] = `
 <button
-  className="sc-AxirZ cNnLFY"
+  className="sc-AxjAm bCpvVe"
   onClick={[Function]}
   style={Object {}}
 >
   <p
-    className="sc-AxhUy vsUGv"
+    className="sc-AxhCb hwvJMW"
     style={Object {}}
   >
     Button
@@ -17,13 +17,13 @@ exports[`Storyshots Design Systems/Button Inverse 1`] = `
 
 exports[`Storyshots Design Systems/Button Large 1`] = `
 <button
-  className="sc-AxirZ dExmxL"
+  className="sc-AxjAm UKiHR"
   onClick={[Function]}
   size="large"
   style={Object {}}
 >
   <p
-    className="sc-AxhUy vsUGv"
+    className="sc-AxhCb hwvJMW"
     style={Object {}}
   >
     Button
@@ -33,13 +33,13 @@ exports[`Storyshots Design Systems/Button Large 1`] = `
 
 exports[`Storyshots Design Systems/Button Medium 1`] = `
 <button
-  className="sc-AxirZ hWWebX"
+  className="sc-AxjAm cvqeIJ"
   onClick={[Function]}
   size="medium"
   style={Object {}}
 >
   <p
-    className="sc-AxhUy vsUGv"
+    className="sc-AxhCb hwvJMW"
     style={Object {}}
   >
     Button
@@ -49,13 +49,13 @@ exports[`Storyshots Design Systems/Button Medium 1`] = `
 
 exports[`Storyshots Design Systems/Button Small 1`] = `
 <button
-  className="sc-AxirZ gQWyCq"
+  className="sc-AxjAm fNGIKE"
   onClick={[Function]}
   size="small"
   style={Object {}}
 >
   <p
-    className="sc-AxhUy vsUGv"
+    className="sc-AxhCb hwvJMW"
     style={Object {}}
   >
     Button
@@ -65,16 +65,16 @@ exports[`Storyshots Design Systems/Button Small 1`] = `
 
 exports[`Storyshots Design Systems/Button/Cookie Button Base 1`] = `
 <div
-  className="sc-AxjAm emnWxD"
+  className="sc-fznZeY iUeFbD"
   style={Object {}}
 >
   <button
-    className="sc-AxirZ gohgme sc-fzozJi iOrtLq normal"
+    className="sc-AxjAm jCtvLM sc-AxmLO jPsGPL normal"
     onClick={[Function]}
     style={Object {}}
   >
     <p
-      className="sc-AxhUy vsUGv"
+      className="sc-AxhCb hwvJMW"
       style={Object {}}
     >
       Save Settings
@@ -85,16 +85,16 @@ exports[`Storyshots Design Systems/Button/Cookie Button Base 1`] = `
 
 exports[`Storyshots Design Systems/Button/Cookie Button Inverse 1`] = `
 <div
-  className="sc-AxjAm emnWxD"
+  className="sc-fznZeY iUeFbD"
   style={Object {}}
 >
   <button
-    className="sc-AxirZ gohgme sc-fzozJi iOrtLq inverse"
+    className="sc-AxjAm jCtvLM sc-AxmLO jPsGPL inverse"
     onClick={[Function]}
     style={Object {}}
   >
     <p
-      className="sc-AxhUy vsUGv"
+      className="sc-AxhCb hwvJMW"
       style={Object {}}
     >
       Cookie Preferences
@@ -105,16 +105,16 @@ exports[`Storyshots Design Systems/Button/Cookie Button Inverse 1`] = `
 
 exports[`Storyshots Design Systems/Button/Globe Button Base 1`] = `
 <button
-  className="sc-AxirZ gohgme sc-fzoLsD cOrIpp"
+  className="sc-AxjAm jCtvLM sc-fzozJi eHoYAr"
   onClick={[Function]}
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-fzplWN bcoWYt"
+    className="sc-fzpans kOqDuY"
     style={Object {}}
   >
     <div
-      className="sc-AxiKw cQwZvr sc-fzpans bVVCfM"
+      className="sc-AxirZ dwDDHT sc-fzoLsD iMAZPU"
       style={Object {}}
     >
       <svg
@@ -126,7 +126,7 @@ exports[`Storyshots Design Systems/Button/Globe Button Base 1`] = `
       </svg>
     </div>
     <div
-      className="sc-AxiKw bzYuei sc-fzpans bVVCfM"
+      className="sc-AxirZ ctWWdq sc-fzoLsD iMAZPU"
       style={Object {}}
     >
       <svg
@@ -147,16 +147,16 @@ exports[`Storyshots Design Systems/Button/Globe Button Base 1`] = `
 
 exports[`Storyshots Design Systems/Button/Menu Button Base 1`] = `
 <button
-  className="sc-AxirZ gohgme sc-fznyAO iZtzaS"
+  className="sc-AxjAm jCtvLM sc-fzplWN kYhxzC"
   onClick={[Function]}
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-fznKkj ebJJPw"
+    className="sc-fznyAO jTttdB"
     style={Object {}}
   >
     <div
-      className="sc-AxiKw lnZkSe sc-fznZeY bZjQJg"
+      className="sc-AxirZ jJXXIO sc-fznKkj pjFnA"
       style={Object {}}
     >
       <svg
@@ -168,7 +168,7 @@ exports[`Storyshots Design Systems/Button/Menu Button Base 1`] = `
       </svg>
     </div>
     <div
-      className="sc-AxiKw kfGogn sc-fznZeY bZjQJg"
+      className="sc-AxirZ uSBqH sc-fznKkj pjFnA"
       style={Object {}}
     >
       <svg
@@ -185,16 +185,16 @@ exports[`Storyshots Design Systems/Button/Menu Button Base 1`] = `
 
 exports[`Storyshots Design Systems/Button/Search Button Base 1`] = `
 <button
-  className="sc-AxirZ gohgme sc-AxgMl ffnbCP"
+  className="sc-AxjAm jCtvLM sc-AxhUy brOdhp"
   onClick={[Function]}
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-AxheI JGUfr"
+    className="sc-AxgMl doShmx"
     style={Object {}}
   >
     <div
-      className="sc-AxiKw goejwU sc-Axmtr bFeZIB"
+      className="sc-AxirZ caTuOI sc-AxheI clmUzO"
       style={Object {}}
     >
       <svg
@@ -206,7 +206,7 @@ exports[`Storyshots Design Systems/Button/Search Button Base 1`] = `
       </svg>
     </div>
     <p
-      className="sc-AxhUy vsUGv sc-AxmLO cyibMK"
+      className="sc-AxhCb hwvJMW sc-Axmtr cctsr"
       style={Object {}}
     >
       Search
@@ -217,29 +217,28 @@ exports[`Storyshots Design Systems/Button/Search Button Base 1`] = `
 
 exports[`Storyshots Design Systems/Card/Dark Large 1`] = `
 <div
-  className="sc-AxjAm jypzoh"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-fzokOt iojPmO"
+    className="sc-fzokOt iojPmO"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzqBZW gIodXL"
+      className="sc-fzqBZW gIodXL"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb daRQi"
+        className="sc-AxiKw dTmhvO"
         src="darkcard-sm.png"
       />
     </div>
     <div
-      className="sc-AxjAm hyNcgC sc-fzqNJr crcRSx large"
+      className="sc-fzqNJr crcRSx large"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy gxsYhh"
+        className="sc-AxhCb cPymSo"
         style={Object {}}
       >
         Fruits de mer with Michelin chef Marc Favier
@@ -251,29 +250,28 @@ exports[`Storyshots Design Systems/Card/Dark Large 1`] = `
 
 exports[`Storyshots Design Systems/Card/Dark Medium 1`] = `
 <div
-  className="sc-AxjAm iQkBjj"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-fzokOt iojPmO"
+    className="sc-fzokOt iojPmO"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzqBZW gIodXL"
+      className="sc-fzqBZW gIodXL"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb daRQi"
+        className="sc-AxiKw dTmhvO"
         src="darkcard-sm.png"
       />
     </div>
     <div
-      className="sc-AxjAm hyNcgC sc-fzqNJr crcRSx normal"
+      className="sc-fzqNJr crcRSx normal"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy gxsYhh"
+        className="sc-AxhCb cPymSo"
         style={Object {}}
       >
         Fruits de mer with Michelin chef Marc Favier
@@ -285,29 +283,28 @@ exports[`Storyshots Design Systems/Card/Dark Medium 1`] = `
 
 exports[`Storyshots Design Systems/Card/Dark Small 1`] = `
 <div
-  className="sc-AxjAm eeyQCz"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-fzokOt iojPmO"
+    className="sc-fzokOt iojPmO"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzqBZW gIodXL"
+      className="sc-fzqBZW gIodXL"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb daRQi"
+        className="sc-AxiKw dTmhvO"
         src="darkcard-sm.png"
       />
     </div>
     <div
-      className="sc-AxjAm hyNcgC sc-fzqNJr crcRSx normal"
+      className="sc-fzqNJr crcRSx normal"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy gxsYhh"
+        className="sc-AxhCb cPymSo"
         style={Object {}}
       >
         Fruits de mer with Michelin chef Marc Favier
@@ -319,35 +316,34 @@ exports[`Storyshots Design Systems/Card/Dark Small 1`] = `
 
 exports[`Storyshots Design Systems/Card/Light Base 1`] = `
 <div
-  className="sc-AxjAm iQkBjj"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-fzokOt bIXlJm"
+    className="sc-fzokOt bIXlJm"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzqBZW gIodXL"
+      className="sc-fzqBZW gIodXL"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb daRQi"
+        className="sc-AxiKw dTmhvO"
         src="card1.jpg"
       />
     </div>
     <div
-      className="sc-AxjAm hyNcgC sc-fzqNJr crcRSx normal"
+      className="sc-fzqNJr crcRSx normal"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy cXHHIS"
+        className="sc-AxhCb dxyUUr"
         style={Object {}}
       >
         Online experiences
       </p>
       <p
-        className="sc-AxhUy fiHroI"
+        className="sc-AxhCb fJlgqh"
         style={Object {}}
       >
         Unique activities we can do together, led by a world of hosts
@@ -359,29 +355,28 @@ exports[`Storyshots Design Systems/Card/Light Base 1`] = `
 
 exports[`Storyshots Design Systems/Card/Light Multiple 1`] = `
 <div
-  className="sc-AxjAm hAFOia"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-fzokOt bIXlJm"
+    className="sc-fzokOt bIXlJm"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzqBZW gIodXL"
+      className="sc-fzqBZW gIodXL"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb daRQi"
+        className="sc-AxiKw dTmhvO"
         src="card1.jpg"
       />
     </div>
     <div
-      className="sc-AxjAm hyNcgC sc-fzqNJr crcRSx normal"
+      className="sc-fzqNJr crcRSx normal"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy fiHroI"
+        className="sc-AxhCb fJlgqh"
         style={Object {}}
       >
         Unique activities we can do together, led by a world of hosts
@@ -389,25 +384,25 @@ exports[`Storyshots Design Systems/Card/Light Multiple 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxjAm hyNcgC sc-fzokOt bIXlJm"
+    className="sc-fzokOt bIXlJm"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzqBZW gIodXL"
+      className="sc-fzqBZW gIodXL"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb daRQi"
+        className="sc-AxiKw dTmhvO"
         src="card1.jpg"
       />
     </div>
     <div
-      className="sc-AxjAm hyNcgC sc-fzqNJr crcRSx normal"
+      className="sc-fzqNJr crcRSx normal"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy fiHroI"
+        className="sc-AxhCb fJlgqh"
         style={Object {}}
       >
         Unique activities we can do together, led by a world of hosts
@@ -415,25 +410,25 @@ exports[`Storyshots Design Systems/Card/Light Multiple 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxjAm hyNcgC sc-fzokOt bIXlJm"
+    className="sc-fzokOt bIXlJm"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzqBZW gIodXL"
+      className="sc-fzqBZW gIodXL"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb daRQi"
+        className="sc-AxiKw dTmhvO"
         src="card1.jpg"
       />
     </div>
     <div
-      className="sc-AxjAm hyNcgC sc-fzqNJr crcRSx normal"
+      className="sc-fzqNJr crcRSx normal"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy fiHroI"
+        className="sc-AxhCb fJlgqh"
         style={Object {}}
       >
         Unique activities we can do together, led by a world of hosts
@@ -445,29 +440,28 @@ exports[`Storyshots Design Systems/Card/Light Multiple 1`] = `
 
 exports[`Storyshots Design Systems/Card/Light No Title 1`] = `
 <div
-  className="sc-AxjAm iQkBjj"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-fzokOt bIXlJm"
+    className="sc-fzokOt bIXlJm"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzqBZW gIodXL"
+      className="sc-fzqBZW gIodXL"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb daRQi"
+        className="sc-AxiKw dTmhvO"
         src="card1.jpg"
       />
     </div>
     <div
-      className="sc-AxjAm hyNcgC sc-fzqNJr crcRSx normal"
+      className="sc-fzqNJr crcRSx normal"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy fiHroI"
+        className="sc-AxhCb fJlgqh"
         style={Object {}}
       >
         Unique activities we can do together, led by a world of hosts
@@ -479,31 +473,31 @@ exports[`Storyshots Design Systems/Card/Light No Title 1`] = `
 
 exports[`Storyshots Design Systems/Card/Section Black Lives Matter 1`] = `
 <div
-  className="sc-AxjAm hyNcgC sc-fzoyAV blpVPj"
+  className="sc-fzoyAV blpVPj"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-fzoLag cmHoju"
+    className="sc-fzoLag cmHoju"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzoXzr lfKW"
+      className="sc-fzoXzr lfKW"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy vsUGv sc-fzpjYC kVblru"
+        className="sc-AxhCb hwvJMW sc-fzpjYC kVblru"
         style={Object {}}
       >
         We stand with #BlackLivesMatter
       </p>
       <p
-        className="sc-AxhUy vsUGv sc-fznxsB TTUXp"
+        className="sc-AxhCb hwvJMW sc-fznxsB TTUXp"
         style={Object {}}
       >
         We believe in a world where everyone belongs. We reject all racism that stands in the way.
       </p>
       <p
-        className="sc-AxhUy vsUGv sc-fznJRM eJquNt"
+        className="sc-AxhCb hwvJMW sc-fznJRM eJquNt"
         style={Object {}}
       >
         Donate
@@ -515,33 +509,32 @@ exports[`Storyshots Design Systems/Card/Section Black Lives Matter 1`] = `
 
 exports[`Storyshots Design Systems/Notification/Cookie Notification Base 1`] = `
 <div
-  className="sc-AxjAm kEoNHJ"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-fznzOf ghBRDV"
+    className="sc-fznMnq hNa-dBw"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fznMnq kYauKO"
+      className="sc-fzoant eqzNdK"
       style={Object {}}
     >
       <div
-        className="sc-AxjAm kBDirS sc-fzomME ldlIyn"
+        className="sc-fzqAbL cTqogH"
         style={Object {}}
       >
         <div
-          className="sc-AxjAm hyNcgC sc-fzoant htPhAA"
+          className="sc-fzomME kMvoMu"
           style={Object {}}
         >
           <p
-            className="sc-AxhUy vsUGv sc-fzoydu cciBTv"
+            className="sc-AxhCb hwvJMW sc-fzoJMP gGWNBQ"
             style={Object {}}
           >
             Your Privacy
           </p>
           <div
-            className="sc-AxiKw goejwU sc-fzqAbL cpHFaL"
+            className="sc-AxirZ caTuOI sc-fzqMAW hrnhBv"
             style={Object {}}
           >
             <svg
@@ -554,39 +547,39 @@ exports[`Storyshots Design Systems/Notification/Cookie Notification Base 1`] = `
           </div>
         </div>
         <p
-          className="sc-AxhUy vsUGv sc-fzoJMP dVbhQQ"
+          className="sc-AxhCb hwvJMW sc-fzoYHE kIEyBL"
           style={Object {}}
         >
           We use cookies to help personalize content, tailor and measure ads, and provide a safer experience. By navigating the site, you agree to the use of cookies to collect information on and off Airbnb. Read our Cookie Policy to learn more or go to Cookie Preferences to manage your settings
         </p>
       </div>
       <div
-        className="sc-AxjAm bdDgBS sc-fzomME ldlIyn"
+        className="sc-fzqAbL cTqogH"
         style={Object {}}
       >
         <div
-          className="sc-AxjAm hyNcgC sc-fzqMAW jlOAuf"
+          className="sc-fzoydu gluVdS"
           style={Object {}}
         >
           <button
-            className="sc-AxirZ gohgme sc-fzozJi iOrtLq normal"
+            className="sc-AxjAm jCtvLM sc-AxmLO jPsGPL normal"
             onClick={[Function]}
             style={Object {}}
           >
             <p
-              className="sc-AxhUy vsUGv"
+              className="sc-AxhCb hwvJMW"
               style={Object {}}
             >
               Save Settings
             </p>
           </button>
           <button
-            className="sc-AxirZ gohgme sc-fzozJi iOrtLq inverse"
+            className="sc-AxjAm jCtvLM sc-AxmLO jPsGPL inverse"
             onClick={[Function]}
             style={Object {}}
           >
             <p
-              className="sc-AxhUy vsUGv"
+              className="sc-AxhCb hwvJMW"
               style={Object {}}
             >
               Cookie Preferences
@@ -601,29 +594,28 @@ exports[`Storyshots Design Systems/Notification/Cookie Notification Base 1`] = `
 
 exports[`Storyshots Design Systems/SearchBar Medium 1`] = `
 <div
-  className="sc-AxjAm emteCl"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-fzqPZZ iFLnFW"
+    className="sc-fzoxKX iwFcdn"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzpkJw bxTymk"
+      className="sc-fznzOf jfKreH"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy vsUGv sc-fzoxKX gWzCxi"
+        className="sc-AxhCb hwvJMW sc-fzoKki cvyqnY"
         style={Object {}}
       >
         Start your search
       </p>
       <div
-        className="sc-AxjAm hyNcgC sc-fzoKki dRMBeU"
+        className="sc-fzoYkl gFmuNn"
         style={Object {}}
       >
         <div
-          className="sc-AxiKw goejwU sc-fzoYkl eRSyIe"
+          className="sc-AxirZ caTuOI sc-fzpkJw jlofRV"
           style={Object {}}
         >
           <svg
@@ -642,20 +634,19 @@ exports[`Storyshots Design Systems/SearchBar Medium 1`] = `
 
 exports[`Storyshots Design Systems/SearchBar Small 1`] = `
 <div
-  className="sc-AxjAm zmAEV"
   style={Object {}}
 >
   <button
-    className="sc-AxirZ gohgme sc-fznMAR jPRPdm"
+    className="sc-AxjAm jCtvLM sc-fznWOq brlxWF"
     onClick={[Function]}
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fznWOq eJcXnf"
+      className="sc-fzolEj bcyKUA"
       style={Object {}}
     >
       <div
-        className="sc-AxiKw goejwU sc-fzolEj cWXjnI"
+        className="sc-AxirZ caTuOI sc-fzqBkg cfjMD"
         style={Object {}}
       >
         <svg
@@ -667,7 +658,7 @@ exports[`Storyshots Design Systems/SearchBar Small 1`] = `
         </svg>
       </div>
       <p
-        className="sc-AxhUy vsUGv sc-fzqBkg hMEAbA"
+        className="sc-AxhCb hwvJMW sc-fzqPZZ fDpmXC"
         style={Object {}}
       >
         Where are you going?
