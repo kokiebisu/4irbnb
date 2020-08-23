@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import 'jest-styled-components';
 
 // atoms
-import { CustomButton } from 'molecules/Button';
+import { Button } from 'atoms';
 import { Medium } from 'atoms/stories/button.stories';
 
 describe('Button', () => {
@@ -14,7 +14,7 @@ describe('Button', () => {
 
     const tree = renderer
       .create(
-        <CustomButton
+        <Button
           onPress={testingData.action}
           {...testingData}
           {...Medium.args}
