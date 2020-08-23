@@ -1,15 +1,18 @@
 import React from 'react';
-import { Box } from 'atoms';
-import { CustomButton, CustomProps } from 'molecules/Button';
-import { Story } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { CustomButton } from 'molecules/Button';
 
 export default {
   title: 'Design Systems/Button/Menu',
   component: CustomButton,
   argTypes: { onPress: { action: 'clicked' } },
-};
+} as Meta;
 
-const ButtonTemplate: Story<CustomProps> = (args) => (
+interface Props {
+  onPress: () => void;
+}
+
+const ButtonTemplate: Story<Props> = (args) => (
   <CustomButton type='menu' {...args} />
 );
 

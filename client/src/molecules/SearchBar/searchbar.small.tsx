@@ -1,91 +1,81 @@
 import React from 'react';
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
 import { darken, lighten } from 'polished';
-
-// layout
-import { Flex } from 'layout';
-
-// element
 import { Icon, Box, Button, Text } from 'atoms';
-
-// colors
 import { colors } from 'styles';
 
 type SearchBarProps = {
   onPress: () => void;
 };
 
-export default ({ ...props }: SearchBarProps) => {
-  return (
-    <Button styles={extend.wrapper} {...props}>
-      <Flex justifyBetween alignCenter>
-        <Box styles={extend.text}>
-          <Text>Start your search</Text>
-        </Box>
-        <Box styles={extend.iconwrapper}>
-          <Icon name='Search' styles={extend.icon} />
-        </Box>
-      </Flex>
-    </Button>
-  );
-};
-
 const primary = theme('mode', {
-  light: [darken(0.4, colors.pink), colors.pink, lighten(0.6, colors.pink)],
+  light: lighten(0.25, colors.black),
 });
 
 const border = theme('mode', {
   light: lighten(0.4, colors.gray),
 });
 
-const white = theme('mode', {
-  light: colors.white,
-});
+const Wrapper = styled(Box)`
+  background-color: transparent;
+  border: 1px solid ${border};
+  height: 50px;
+  width: 260px;
+  padding: 0 7px 0 18px;
+  border-radius: 24px;
+`;
 
-const extend = {
-  wrapper: css`
-    background-color: transparent;
-    border: 1px solid ${border};
-    height: 50px;
-    max-width: 100%;
-    padding: 0 7px 0 18px;
-    min-width: 220px;
-    border-radius: 24px;
-  `,
-  iconwrapper: css`
-    width: 32px;
-    height: 32px;
-    background: -webkit-linear-gradient(
-      right,
-      rgb(230, 30, 77) 0%,
-      rgb(227, 28, 95) 50%,
-      rgb(215, 4, 102) 100%
-    );
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-  `,
-  icon: css`
-    position: relative;
+const Label = styled(Text)`
+  color: ${primary};
+  font-size: 14px;
+`;
 
-    & svg {
-      width: 12px;
-      height: 12px;
-      stroke: ${white};
-      & path {
-        fill: ${white};
-        stroke-width: 2;
-      }
+const IconWrapper = styled(Box)`
+  width: 32px;
+  height: 32px;
+  background: -webkit-linear-gradient(
+    right,
+    rgb(230, 30, 77) 0%,
+    rgb(227, 28, 95) 50%,
+    rgb(215, 4, 102) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+`;
+
+export const CustomIcon = styled(Icon)`
+  position: relative;
+
+  & svg {
+    width: 12px;
+    height: 12px;
+    stroke: ${colors.white};
+    & path {
+      fill: ${colors.white};
+      stroke-width: 2;
     }
-  `,
-  text: css`
-    & p {
-      color: ${primary};
-      font-family: 'Airbnb-Cereal';
-      font-size: 14px;
-      font-weight: 500;
-    }
-  `,
+  }
+`;
+
+export const Flex = styled(Box)`
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export default ({ ...props }: SearchBarProps) => {
+  return (
+    <Wrapper {...props}>
+      <Flex>
+        <Label>Start your search</Label>
+        <IconWrapper>
+          <CustomIcon name='Search' />
+        </IconWrapper>
+      </Flex>
+    </Wrapper>
+  );
 };

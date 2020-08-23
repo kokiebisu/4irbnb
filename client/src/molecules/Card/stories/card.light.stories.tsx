@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react/types-6-0';
 import { css } from 'styled-components';
 import Card from 'molecules/Card';
 import { Box } from 'atoms';
@@ -10,7 +10,7 @@ import cardImg from 'assets/img/card1.jpg';
 export default {
   title: 'Design Systems/Card/Light',
   component: Card,
-};
+} as Meta;
 
 const cardData = {
   image: cardImg,
@@ -24,17 +24,14 @@ const basicStyles = {
   `,
 };
 
-interface CardTemplateProps {
+interface Props {
   styles?: any;
   title?: string;
   image: string;
   size: string;
 }
 
-const SingleCardLightTemplate: Story<CardTemplateProps> = ({
-  styles,
-  ...args
-}) => {
+const SingleCardLightTemplate: Story<Props> = ({ styles, ...args }) => {
   return (
     <Box styles={styles}>
       <Card {...args} />

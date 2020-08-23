@@ -1,22 +1,20 @@
 import React from 'react';
+import { Story, Meta } from '@storybook/react/types-6-0';
 import Card from 'molecules/Card/card.section';
-import { Story } from '@storybook/react/types-6-0';
 
 export default {
   title: 'Design Systems/Card/Section',
   component: Card,
-};
+} as Meta;
 
-interface CardTemplateProps {
+interface Props {
   styles?: any;
   title?: string;
   description?: string;
   option?: string;
 }
 
-const SectionCardTemplate: Story<CardTemplateProps> = (args) => (
-  <Card {...args} />
-);
+const SectionCardTemplate: Story<Props> = (args) => <Card {...args} />;
 
 export const blackLivesMatter = SectionCardTemplate.bind({});
 blackLivesMatter.args = {
