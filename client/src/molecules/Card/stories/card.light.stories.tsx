@@ -39,10 +39,7 @@ const SingleCardLightTemplate: Story<Props> = ({ styles, ...args }) => {
   );
 };
 
-const MultipleCardLightTemplate: Story<CardTemplateProps> = ({
-  styles,
-  ...args
-}) => {
+const MultipleCardLightTemplate: Story<Props> = ({ styles, ...args }) => {
   return (
     <Box styles={styles}>
       <Card {...args} />

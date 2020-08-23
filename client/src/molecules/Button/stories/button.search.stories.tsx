@@ -10,6 +10,7 @@ export default {
 
 interface Props {
   type: string;
+  name: string;
   onPress: () => void;
 }
 
