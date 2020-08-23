@@ -222,7 +222,7 @@ exports[`Storyshots Design Systems/Card/Dark Large 1`] = `
     >
       <img
         alt="card-image"
-        className="sc-AxiKw dTmhvO"
+        className="sc-AxiKw kRufkD"
         src="darkcard-sm.png"
       />
     </div>
@@ -256,7 +256,7 @@ exports[`Storyshots Design Systems/Card/Dark Medium 1`] = `
     >
       <img
         alt="card-image"
-        className="sc-AxiKw dTmhvO"
+        className="sc-AxiKw kRufkD"
         src="darkcard-sm.png"
       />
     </div>
@@ -290,7 +290,7 @@ exports[`Storyshots Design Systems/Card/Dark Small 1`] = `
     >
       <img
         alt="card-image"
-        className="sc-AxiKw dTmhvO"
+        className="sc-AxiKw kRufkD"
         src="darkcard-sm.png"
       />
     </div>
@@ -324,7 +324,7 @@ exports[`Storyshots Design Systems/Card/Light Base 1`] = `
     >
       <img
         alt="card-image"
-        className="sc-AxiKw dTmhvO"
+        className="sc-AxiKw kRufkD"
         src="card1.jpg"
       />
     </div>
@@ -364,7 +364,7 @@ exports[`Storyshots Design Systems/Card/Light Multiple 1`] = `
     >
       <img
         alt="card-image"
-        className="sc-AxiKw dTmhvO"
+        className="sc-AxiKw kRufkD"
         src="card1.jpg"
       />
     </div>
@@ -390,7 +390,7 @@ exports[`Storyshots Design Systems/Card/Light Multiple 1`] = `
     >
       <img
         alt="card-image"
-        className="sc-AxiKw dTmhvO"
+        className="sc-AxiKw kRufkD"
         src="card1.jpg"
       />
     </div>
@@ -416,7 +416,7 @@ exports[`Storyshots Design Systems/Card/Light Multiple 1`] = `
     >
       <img
         alt="card-image"
-        className="sc-AxiKw dTmhvO"
+        className="sc-AxiKw kRufkD"
         src="card1.jpg"
       />
     </div>
@@ -450,7 +450,7 @@ exports[`Storyshots Design Systems/Card/Light No Title 1`] = `
     >
       <img
         alt="card-image"
-        className="sc-AxiKw dTmhvO"
+        className="sc-AxiKw kRufkD"
         src="card1.jpg"
       />
     </div>

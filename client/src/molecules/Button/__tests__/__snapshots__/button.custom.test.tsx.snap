@@ -59,8 +59,6 @@ exports[`Cookie Button renders correctly 1`] = `
   <p
     className="c2"
     style={Object {}}
-  >
-    cookie
-  </p>
+  />
 </button>
 `;
