@@ -25,7 +25,7 @@ exports[`Button renders correctly 1`] = `
   action={[Function]}
   className="c0"
   onClick={[Function]}
-  size="medium"
+  size="md"
   style={Object {}}
 >
   <p

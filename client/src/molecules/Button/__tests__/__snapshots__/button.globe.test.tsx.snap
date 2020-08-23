@@ -28,27 +28,6 @@ exports[`Globe Button renders correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  position: relative;
-  top: 50%;
-  margin-right: 6px;
-  width: 16px;
-  height: 16px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 10px;
 }
 
 .c1 {
@@ -64,6 +43,18 @@ exports[`Globe Button renders correctly 1`] = `
 
 .c4 svg {
   width: 100%;
+}
+
+.c4.globe {
+  position: relative;
+  top: 50%;
+  margin-right: 6px;
+  width: 16px;
+  height: 16px;
+}
+
+.c4.arrow {
+  width: 10px;
 }
 
 .c2 {
@@ -88,7 +79,7 @@ exports[`Globe Button renders correctly 1`] = `
     style={Object {}}
   >
     <div
-      className="c3 c4"
+      className="c3 c4 globe"
       style={Object {}}
     >
       <svg
@@ -100,7 +91,7 @@ exports[`Globe Button renders correctly 1`] = `
       </svg>
     </div>
     <div
-      className="c5 c4"
+      className="c3 c4 arrow"
       style={Object {}}
     >
       <svg
