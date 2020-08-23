@@ -47,6 +47,25 @@ const Section = styled(Box)`
   height: 100%;
   width: 100%;
   border-radius: 15px;
+
+  &.first {
+    flex: 1.5 0 0%;
+    order: 1;
+    ${mixins.hoverMixin(5)}
+  }
+
+  &.second {
+    flex: 0.8 0 0%;
+    order: 3;
+    ${mixins.hoverMixin(5)}
+    ${mixins.hoverMixin(6)}
+  }
+  &.third {
+    flex: 0.8 0 0%;
+    order: 5;
+    ${mixins.hoverMixin(6)}
+    ${mixins.hoverMixin(7)}
+  }
 `;
 
 const Select = styled(Button)`
@@ -90,6 +109,9 @@ const LastSection = styled(Box)`
   &:hover {
     background-color: ${hover};
   }
+  flex: 1.15 0 0%;
+  order: 7;
+  ${mixins.hoverMixin(7)}
 `;
 
 const Seperator = styled(Box)`
@@ -97,6 +119,15 @@ const Seperator = styled(Box)`
   height: 100%;
   background-color: ${seperator};
   align-self: center;
+  &.first {
+    order: 2;
+  }
+  &.second {
+    order: 4;
+  }
+  &.third {
+    order: 6;
+  }
 `;
 
 const Search = styled(CustomButton)`
@@ -130,6 +161,14 @@ const List = styled.li`
 
   &.outline {
   }
+`;
+
+const Options = styled(Box)`
+  background-color: white;
+  display: flex;
+  flex: 1 1 0%;
+  height: 100%;
+  border-radius: inherit;
 `;
 
 const Content = ({ title, description }: any) => {
@@ -196,48 +235,6 @@ const Category = ({ category, onClick, isSelected }: any) => {
 
 export default ({ ...props }: SearchBarProps) => {
   const extend = {
-    options: css`
-      background-color: white;
-      display: flex;
-      flex: 1 1 0%;
-      height: 100%;
-      border-radius: inherit;
-    `,
-    section: {
-      first: css`
-        flex: 1.5 0 0%;
-        order: 1;
-        ${mixins.hoverMixin(5)}
-      `,
-      second: css`
-        flex: 0.8 0 0%;
-        order: 3;
-        ${mixins.hoverMixin(5)}
-        ${mixins.hoverMixin(6)}
-      `,
-      third: css`
-        flex: 0.8 0 0%;
-        order: 5;
-        ${mixins.hoverMixin(6)}
-        ${mixins.hoverMixin(7)}
-      `,
-      fourth: css`
-        flex: 1.15 0 0%;
-        order: 7;
-        ${mixins.hoverMixin(7)}
-      `,
-    },
-    seperator: {
-      first: css`
-        order: 2;
-      `,
-      second: css`
-        order: 4;
-      `,
-      third: css`
-        order: 6;
-      `,
-    },
     search: css`
       position: relative;
       z-index: 10;
@@ -247,32 +244,32 @@ export default ({ ...props }: SearchBarProps) => {
     <Box>
       <Categories />
       <Inputs>
-        <Box styles={extend.options}>
-          <Section styles={extend.section.first}>
+        <Options>
+          <Section className='first'>
             <Select className='first' onPress={() => console.log('pressed')}>
               <Content title='Location' description='Where are you going?' />
             </Select>
           </Section>
-          <Section styles={extend.section.second}>
+          <Section className='second'>
             <Select onPress={() => console.log('pressed')}>
               <Content title='Check in' description='Add dates' />
             </Select>
           </Section>
-          <Section styles={extend.section.third}>
+          <Section className='third'>
             <Select onPress={() => console.log('pressed')}>
               <Content title='Check out' description='Add dates' />
             </Select>
           </Section>
-          <LastSection styles={extend.section.fourth}>
+          <LastSection>
             <Select className='last' onPress={() => console.log('pressed')}>
               <Content title='Guests' description='Add guests' />
             </Select>
             <Search type='search' onPress={() => console.log('pressed')} />
           </LastSection>
-          <Seperator styles={extend.seperator.first} />
-          <Seperator styles={extend.seperator.second} />
-          <Seperator styles={extend.seperator.third} />
-        </Box>
+          <Seperator className='first' />
+          <Seperator className='second' />
+          <Seperator className='third' />
+        </Options>
       </Inputs>
     </Box>
   );
