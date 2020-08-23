@@ -9,7 +9,7 @@ export interface ElementProps extends StyledProps {
 }
 
 interface StyledProps {
-  size?: 'small' | 'medium' | 'large';
+  size?: 'sm' | 'md' | 'lg';
   inverse?: boolean;
 }
 
@@ -18,17 +18,17 @@ const Element = styled(motion.button)<StyledProps>`
   font-size: 18px;
   border: none;
   ${({ size }) =>
-    size === 'small' &&
+    size === 'sm' &&
     css`
       padding: 15px 22px;
     `};
   ${({ size }) =>
-    size === 'medium' &&
+    size === 'md' &&
     css`
       padding: 15px 50px;
     `};
   ${({ size }) =>
-    size === 'large' &&
+    size === 'lg' &&
     css`
       padding: 15px 100px;
     `};
@@ -49,11 +49,16 @@ const Element = styled(motion.button)<StyledProps>`
 export default ({
   size,
   children,
-  onPress = () => console.log('hello'),
+  className,
+  onPress,
   ...props
 }: ElementProps) => {
   return (
-    <Element size={size} {...props} onClick={onPress}>
+    <Element
+      className={className && className}
+      size={size}
+      {...props}
+      onClick={onPress}>
       {children}
     </Element>
   );
