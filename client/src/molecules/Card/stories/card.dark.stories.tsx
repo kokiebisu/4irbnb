@@ -17,45 +17,49 @@ const cardData = {
 };
 
 interface Props {
-  styles?: any;
+  className?: string;
   image: string;
   size: string;
 }
 
-const DarkCardTemplate: Story<Props> = ({ styles, ...args }) => (
+const Wrapper = styled(Box)`
+  width: 100%;
+  &.small {
+    max-width: 200px;
+  }
+  &.medium {
+    max-width: 350px;
+  }
+  &.large {
+    max-width: 400px;
+  }
+`;
+
+const DarkCardTemplate: Story<Props> = ({ className, ...args }) => (
   <ThemeProvider theme={{ mode: 'dark' }}>
-    <Box styles={styles}>
+    <Wrapper className={className && className}>
       <Card {...args} />
-    </Box>
+    </Wrapper>
   </ThemeProvider>
 );
 
 export const small = DarkCardTemplate.bind({});
 small.args = {
-  styles: css`
-    width: 100%;
-    max-width: 200px;
-  `,
+  className: 'small',
   size: 'sm',
   ...cardData,
 };
 
 export const medium = DarkCardTemplate.bind({});
 medium.args = {
-  styles: css`
-    width: 100%;
-    max-width: 350px;
-  `,
+  className: 'medium',
   size: 'md',
   ...cardData,
 };
 
 export const large = DarkCardTemplate.bind({});
 large.args = {
-  styles: css`
-    width: 100%;
-    max-width: 400px;
-  `,
+  className: 'large',
   size: 'lg',
   ...cardData,
 };

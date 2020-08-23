@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { CustomButton } from 'molecules/Button';
 
 export default {
-  title: 'Design Systems/Button/Globe Button',
+  title: 'Design Systems/Button/Custom',
   component: CustomButton,
   argTypes: { onPress: { action: 'clicked' } },
 } as Meta;
@@ -15,5 +15,5 @@ interface Props {
 
 const ButtonTemplate: Story<Props> = (args) => <CustomButton {...args} />;
 
-export const base = ButtonTemplate.bind({});
-base.args = { type: 'globe' };
+export const globe = ButtonTemplate.bind({});
+globe.args = { type: 'globe' };

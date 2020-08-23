@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Button, Text } from 'atoms';
 import { colors, sizes } from 'styles';
 import { CustomProps } from 'molecules/Button';
@@ -34,7 +34,7 @@ const Wrapper = styled(Button)`
   }
 `;
 
-export default ({ inverse, name = 'cookie', ...props }: CustomProps) => {
+export default ({ inverse, name, ...props }: CustomProps) => {
   return (
     <Wrapper className={inverse ? 'inverse' : 'normal'} {...props}>
       <Text>{name}</Text>

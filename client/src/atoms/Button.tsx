@@ -1,9 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
-import theme from 'styled-theming';
-import { lighten } from 'polished';
-import { colors } from 'styles';
 
 export interface ElementProps extends StyledProps {
   children?: React.ReactNode;
@@ -12,8 +9,7 @@ export interface ElementProps extends StyledProps {
 }
 
 interface StyledProps {
-  styles?: any;
-  size?: 'small' | 'medium' | 'large';
+  size?: 'sm' | 'md' | 'lg';
   inverse?: boolean;
 }
 
@@ -21,19 +17,18 @@ const Element = styled(motion.button)<StyledProps>`
   border-radius: 8px;
   font-size: 18px;
   border: none;
-  ${({ styles }) => styles};
   ${({ size }) =>
-    size === 'small' &&
+    size === 'sm' &&
     css`
       padding: 15px 22px;
     `};
   ${({ size }) =>
-    size === 'medium' &&
+    size === 'md' &&
     css`
       padding: 15px 50px;
     `};
   ${({ size }) =>
-    size === 'large' &&
+    size === 'lg' &&
     css`
       padding: 15px 100px;
     `};
@@ -51,12 +46,7 @@ const Element = styled(motion.button)<StyledProps>`
   }
 `;
 
-export default ({
-  size,
-  children,
-  onPress = () => console.log('hello'),
-  ...props
-}: ElementProps) => {
+export default ({ size, children, onPress, ...props }: ElementProps) => {
   return (
     <Element size={size} {...props} onClick={onPress}>
       {children}
@@ -64,11 +54,11 @@ export default ({
   );
 };
 
-export type CustomProps = {
-  type?: string;
-  onPress: () => void;
-  size?: 'small' | 'medium' | 'large';
-  inverse?: boolean;
-  name?: string;
-  className?: string;
-};
+// export type CustomProps = {
+//   type?: string;
+//   onPress: () => void;
+//   size?: 'small' | 'medium' | 'large';
+//   inverse?: boolean;
+//   name?: string;
+//   className?: string;
+// };

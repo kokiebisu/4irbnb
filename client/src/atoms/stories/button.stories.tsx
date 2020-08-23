@@ -16,13 +16,13 @@ const buttonData = {
 const Template: Story<ElementProps> = (args) => <Button {...args} />;
 
 export const Small = Template.bind({});
-Small.args = { size: 'small', ...buttonData };
+Small.args = { size: 'sm', ...buttonData };
 
 export const Medium = Template.bind({});
-Medium.args = { size: 'medium', ...buttonData };
+Medium.args = { size: 'md', ...buttonData };
 
 export const Large = Template.bind({});
-Large.args = { size: 'large', ...buttonData };
+Large.args = { size: 'lg', ...buttonData };
 
 export const Inverse = Template.bind({});
-Inverse.args = { inverse: true, ...buttonData };
+Inverse.args = { size: 'md', inverse: true, ...buttonData };

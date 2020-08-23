@@ -2,17 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 export interface ElementProps {
-  styles?: any;
   src: any;
   alt: string;
+  className?: string;
 }
 
-interface StyledProps {
-  styles?: any;
-}
-
-const Element = styled.img<StyledProps>`
-  ${({ styles }) => styles}
+const Element = styled.img`
   max-width: 100%;
   height: auto;
 `;

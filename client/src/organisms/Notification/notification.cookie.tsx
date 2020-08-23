@@ -18,25 +18,6 @@ const lock = theme('mode', {
   light: lighten(0.025, colors.blue),
 });
 
-const content = {
-  text: css`
-    @media ${sizes.lg} {
-      width: 60%;
-      margin-right: 20px;
-    }
-  `,
-  buttons: css`
-    display: flex;
-    align-items: center;
-    margin-top: 15px;
-
-    @media ${sizes.sm} {
-      width: 40%;
-      margin-top: 0px;
-    }
-  `,
-};
-
 const Wrapper = styled(Box)`
   width: 100%;
   background-color: white;
@@ -59,6 +40,24 @@ const Header = styled(Box)`
 
 const Content = styled(Box)`
   width: 100%;
+
+  &.text {
+    @media ${sizes.lg} {
+      width: 60%;
+      margin-right: 20px;
+    }
+  }
+
+  &.buttons {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+
+    @media ${sizes.sm} {
+      width: 40%;
+      margin-top: 0px;
+    }
+  }
 `;
 
 const CustomIcon = styled(Icon)`
@@ -100,7 +99,7 @@ export default () => {
   return (
     <Wrapper>
       <Inner>
-        <Content styles={content.text}>
+        <Content className='text'>
           <Header>
             <Title>Your Privacy</Title>
             <CustomIcon name='Lock' />
@@ -113,18 +112,18 @@ export default () => {
             manage your settings
           </Description>
         </Content>
-        <Content styles={content.buttons}>
+        <Content className='buttons'>
           <Buttons>
             <CustomButton
               type='cookie'
               name='Save Settings'
-              onPress={() => console.log('ok')}
+              onPress={() => console.log('clicked')}
             />
             <CustomButton
               inverse
               type='cookie'
               name='Cookie Preferences'
-              onPress={() => console.log('cookie preferences')}
+              onPress={() => console.log('clicked')}
             />
           </Buttons>
         </Content>
