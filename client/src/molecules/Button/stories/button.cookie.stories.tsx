@@ -1,44 +1,41 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { css } from 'styled-components';
+import styled from 'styled-components';
 import { Box } from 'atoms';
 import { CustomButton } from 'molecules/Button';
 
 export default {
-  title: 'Design Systems/Button/Cookie Button',
+  title: 'Design Systems/Button/Custom',
   component: CustomButton,
   argTypes: { onPress: { action: 'clicked' } },
 } as Meta;
 
 interface Props {
   name: string;
-  styles?: any;
+  className?: string;
   onPress: () => void;
   type: string;
   inverse: boolean;
 }
 
-const baseStyles = {
-  styles: css`
-    width: 200px;
-  `,
-};
+const Wrapper = styled(Box)`
+  width: 200px;
+`;
 
-const ButtonTemplate: Story<Props> = ({ styles, ...args }) => {
+const ButtonTemplate: Story<Props> = ({ className, ...args }) => {
   return (
-    <Box styles={styles}>
+    <Wrapper className={className && className}>
       <CustomButton {...args} />
-    </Box>
+    </Wrapper>
   );
 };
 
-export const base = ButtonTemplate.bind({});
-base.args = { type: 'cookie', name: 'Save Settings', ...baseStyles };
+export const cookie = ButtonTemplate.bind({});
+cookie.args = { type: 'cookie', name: 'Save Settings' };
 
-export const inverse = ButtonTemplate.bind({});
-inverse.args = {
+export const cookieInverse = ButtonTemplate.bind({});
+cookieInverse.args = {
   type: 'cookie',
   inverse: true,
   name: 'Cookie Preferences',
-  ...baseStyles,
 };

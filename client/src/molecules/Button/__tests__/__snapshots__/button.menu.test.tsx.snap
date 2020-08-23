@@ -28,26 +28,6 @@ exports[`Menu Button renders correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  margin-right: 12px;
-  height: 15px;
-  width: 17px;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  height: 32px;
-  width: 32px;
 }
 
 .c1 {
@@ -78,6 +58,17 @@ exports[`Menu Button renders correctly 1`] = `
   height: 100%;
 }
 
+.c4.bars {
+  margin-right: 12px;
+  height: 15px;
+  width: 17px;
+}
+
+.c4.avatar {
+  height: 32px;
+  width: 32px;
+}
+
 <button
   action={[Function]}
   className="c0 c1"
@@ -89,7 +80,7 @@ exports[`Menu Button renders correctly 1`] = `
     style={Object {}}
   >
     <div
-      className="c3 c4"
+      className="c3 c4 bars"
       style={Object {}}
     >
       <svg
@@ -101,7 +92,7 @@ exports[`Menu Button renders correctly 1`] = `
       </svg>
     </div>
     <div
-      className="c5 c4"
+      className="c3 c4 avatar"
       style={Object {}}
     >
       <svg

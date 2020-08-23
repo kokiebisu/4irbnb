@@ -1,27 +1,25 @@
 import React from 'react';
-
-// atoms
-import { Button } from 'atoms';
-
-// blocks
 import SearchButton from 'molecules/Button/button.search';
 import CookieButton from 'molecules/Button/button.cookie';
 import GlobeButton from 'molecules/Button/button.globe';
 import MenuButton from 'molecules/Button/button.menu';
+import { ElementProps } from 'atoms/Button';
 
-import { Props } from 'molecules/Button/props';
+export interface CustomProps extends ElementProps {
+  name?: string;
+}
 
 interface mapProps {
   [key: string]: JSX.Element;
 }
 
-/**
- * Use a button when you want to perform specific actions
- **/
+interface typeProps {
+  type: string;
+}
+
+interface Props extends CustomProps, typeProps {}
+
 export const CustomButton = ({ type, ...props }: Props) => {
-  if (!type) {
-    return <Button {...props} />;
-  }
   const types: mapProps = {
     search: <SearchButton {...props} />,
     cookie: <CookieButton {...props} />,
@@ -30,5 +28,3 @@ export const CustomButton = ({ type, ...props }: Props) => {
   };
   return types[type];
 };
-
-export type CustomProps = Props;

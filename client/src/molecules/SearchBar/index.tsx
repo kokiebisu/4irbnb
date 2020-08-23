@@ -1,8 +1,8 @@
 import React from 'react';
 
 // block
-import SearchBarFull from 'molecules/SearchBar/searchbar.full';
 import SearchBarLarge from 'molecules/SearchBar/searchbar.large';
+import SearchBarMedium from 'molecules/SearchBar/searchbar.medium';
 import SearchBarSmall from 'molecules/SearchBar/searchbar.small';
 
 type SearchBarProps = {
@@ -16,9 +16,9 @@ interface mapProps {
 
 export const SearchBar = ({ type, ...props }: SearchBarProps) => {
   const types: mapProps = {
-    mobile: <SearchBarLarge {...props} />,
-    normal: <SearchBarSmall {...props} />,
-    full: <SearchBarFull {...props} />
+    sm: <SearchBarMedium {...props} />,
+    md: <SearchBarSmall {...props} />,
+    lg: <SearchBarLarge {...props} />,
   };
   return types[type];
 };

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { CustomButton, CustomProps } from 'molecules/Button';
+import { CustomButton } from 'molecules/Button';
 
 export default {
-  title: 'Design Systems/Button/Search Button',
+  title: 'Design Systems/Button/Custom',
   component: CustomButton,
   argsType: { onPress: { action: 'clicked' } },
 } as Meta;
@@ -16,5 +16,5 @@ interface Props {
 
 const ButtonTemplate: Story<Props> = (args) => <CustomButton {...args} />;
 
-export const base = ButtonTemplate.bind({});
-base.args = { type: 'search', name: 'Search' };
+export const search = ButtonTemplate.bind({});
+search.args = { type: 'search', name: 'Search' };

@@ -8,7 +8,6 @@ export default {
 } as Meta;
 
 interface Props {
-  styles?: any;
   title?: string;
   description?: string;
   option?: string;

@@ -10,14 +10,6 @@ interface ElementProps extends AnimationInterface {
   className?: string;
 }
 
-interface StyledProps {
-  styles?: any;
-}
-
-const Element = styled(motion.div)<StyledProps>`
-  ${({ styles }) => styles}
-`;
-
 export default ({ children, ...props }: ElementProps) => {
-  return <Element {...props}>{children}</Element>;
+  return <motion.div {...props}>{children}</motion.div>;
 };

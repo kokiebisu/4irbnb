@@ -7,11 +7,7 @@ import { Search, Globe, ChevronDown, Bars, Avatar, Lock } from 'assets/svg';
 
 interface ElementProps {
   name: string;
-  styles?: any;
-}
-
-interface StyledProps {
-  styles?: any;
+  className?: string;
 }
 
 interface MapProps {
@@ -27,11 +23,10 @@ const items: MapProps = {
   Lock: Lock,
 };
 
-const Element = styled(motion.div)<StyledProps>`
+const Element = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
-  ${({ styles }) => styles};
 `;
 
 export default ({ name, ...props }: ElementProps) => {
