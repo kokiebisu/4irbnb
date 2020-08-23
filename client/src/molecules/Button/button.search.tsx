@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Icon, Button, Text, Box } from 'atoms';
 import { CustomProps } from 'molecules/Button';
 

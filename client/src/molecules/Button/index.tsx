@@ -5,19 +5,21 @@ import GlobeButton from 'molecules/Button/button.globe';
 import MenuButton from 'molecules/Button/button.menu';
 import { ElementProps } from 'atoms/Button';
 
+export interface CustomProps extends ElementProps {
+  name?: string;
+}
+
 interface mapProps {
   [key: string]: JSX.Element;
 }
 
-export interface CustomProps extends ElementProps {
+interface typeProps {
   type: string;
-  name?: string;
 }
 
-/**
- * Use a button when you want to perform specific actions
- **/
-export const CustomButton = ({ type, ...props }: CustomProps) => {
+interface Props extends CustomProps, typeProps {}
+
+export const CustomButton = ({ type, ...props }: Props) => {
   const types: mapProps = {
     search: <SearchButton {...props} />,
     cookie: <CookieButton {...props} />,
