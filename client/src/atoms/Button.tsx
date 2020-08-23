@@ -1,9 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
-import theme from 'styled-theming';
-import { lighten } from 'polished';
-import { colors } from 'styles';
 
 export interface ElementProps extends StyledProps {
   children?: React.ReactNode;
@@ -12,7 +9,6 @@ export interface ElementProps extends StyledProps {
 }
 
 interface StyledProps {
-  styles?: any;
   size?: 'small' | 'medium' | 'large';
   inverse?: boolean;
 }
@@ -21,7 +17,6 @@ const Element = styled(motion.button)<StyledProps>`
   border-radius: 8px;
   font-size: 18px;
   border: none;
-  ${({ styles }) => styles};
   ${({ size }) =>
     size === 'small' &&
     css`
@@ -64,11 +59,11 @@ export default ({
   );
 };
 
-export type CustomProps = {
-  type?: string;
-  onPress: () => void;
-  size?: 'small' | 'medium' | 'large';
-  inverse?: boolean;
-  name?: string;
-  className?: string;
-};
+// export type CustomProps = {
+//   type?: string;
+//   onPress: () => void;
+//   size?: 'small' | 'medium' | 'large';
+//   inverse?: boolean;
+//   name?: string;
+//   className?: string;
+// };
