@@ -42,26 +42,23 @@ export const CustomIcon = styled(Icon)`
       fill: ${content};
     }
   }
-`;
-
-const extend = {
-  bars: css`
+  &.bars {
     margin-right: 12px;
     height: 15px;
     width: 17px;
-  `,
-  avatar: css`
+  }
+  &.avatar {
     height: 32px;
     width: 32px;
-  `,
-};
+  }
+`;
 
 export default ({ name, ...props }: CustomProps) => {
   return (
     <Wrapper {...props}>
       <Flex>
-        <CustomIcon styles={extend.bars} name='Bars' />
-        <CustomIcon styles={extend.avatar} name='Avatar' />
+        <CustomIcon className='bars' name='Bars' />
+        <CustomIcon className='avatar' name='Avatar' />
       </Flex>
     </Wrapper>
   );

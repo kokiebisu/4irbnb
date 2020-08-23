@@ -9,7 +9,7 @@ interface mapProps {
   [key: string]: JSX.Element;
 }
 
-interface CustomProps extends ElementProps {
+export interface CustomProps extends ElementProps {
   type: string;
   name?: string;
 }
