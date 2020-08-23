@@ -5,7 +5,7 @@ import { Box } from 'atoms';
 import { CustomButton } from 'molecules/Button';
 
 export default {
-  title: 'Design Systems/Button/Cookie',
+  title: 'Design Systems/Button/Cookie Button',
   component: CustomButton,
   argTypes: { onPress: { action: 'clicked' } },
 } as Meta;

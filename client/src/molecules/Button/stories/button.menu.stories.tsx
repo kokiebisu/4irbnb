@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { CustomButton } from 'molecules/Button';
 
 export default {
-  title: 'Design Systems/Button/Menu',
+  title: 'Design Systems/Button/Menu Button',
   component: CustomButton,
   argTypes: { onPress: { action: 'clicked' } },
 } as Meta;
