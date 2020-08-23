@@ -5,17 +5,12 @@ import { AnimationInterface } from 'interface/animation';
 
 interface ElementProps extends AnimationInterface {
   children?: React.ReactNode;
-  styles?: any;
+  className?: string;
 }
 
-interface StyledProps {
-  styles?: any;
-}
-
-const Element = styled(motion.p)<StyledProps>`
+const Element = styled(motion.p)`
   margin: 0;
   font-family: 'Airbnb-Cereal';
-  ${({ styles }) => styles}
 `;
 
 export default ({ children, ...props }: ElementProps) => {

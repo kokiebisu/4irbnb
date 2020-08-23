@@ -5,7 +5,7 @@ import { Box } from 'atoms';
 import { Notification } from 'organisms/Notification';
 
 export default {
-  title: 'Design Systems/Notification/Cookie Notification',
+  title: 'Design Systems/Notification',
   component: Notification,
 } as Meta;
 
@@ -20,8 +20,8 @@ const NotificationTemplate: Story<Props> = ({ styles, ...args }) => (
   </Box>
 );
 
-export const base = NotificationTemplate.bind({});
-base.args = {
+export const cookie = NotificationTemplate.bind({});
+cookie.args = {
   type: 'cookie',
   styles: css`
     width: calc(100% - 30px);

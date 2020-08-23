@@ -60,27 +60,27 @@ const Content = styled(Box)`
   }
 `;
 
-const extend = {
-  title: css`
-    font-weight: 700;
-    color: ${primary};
-    padding: 4px 0 2px 0;
-  `,
-  subtitle: css`
-    padding: 14px 0;
-    color: ${primary};
-    font-weight: 500;
-    line-height: 1.3;
-    font-size: 15px;
-  `,
-  description: css`
-    padding-top: 2px;
-    font-size: 13px;
-    font-weight: 300;
-    color: ${secondary};
-    line-height: 1.4;
-  `,
-};
+const Title = styled(Text)`
+  font-weight: 700;
+  color: ${primary};
+  padding: 4px 0 2px 0;
+`;
+
+const Subtitle = styled(Text)`
+  padding: 14px 0;
+  color: ${primary};
+  font-weight: 500;
+  line-height: 1.3;
+  font-size: 15px;
+`;
+
+const Description = styled(Text)`
+  padding-top: 2px;
+  font-size: 13px;
+  font-weight: 300;
+  color: ${secondary};
+  line-height: 1.4;
+`;
 
 export default ({
   image,
@@ -96,9 +96,9 @@ export default ({
         <Img src={image} alt='card-image' />
       </ImageWrapper>
       <Content className={size === 'lg' ? 'large' : 'normal'}>
-        {title && <Text styles={extend.title}>{title}</Text>}
-        {subtitle && <Text styles={extend.subtitle}>{subtitle}</Text>}
-        {description && <Text styles={extend.description}>{description}</Text>}
+        {title && <Title>{title}</Title>}
+        {subtitle && <Subtitle>{subtitle}</Subtitle>}
+        {description && <Description>{description}</Description>}
       </Content>
     </Wrapper>
   );
