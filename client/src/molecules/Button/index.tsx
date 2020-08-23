@@ -11,7 +11,7 @@ interface mapProps {
 
 interface CustomProps extends ElementProps {
   type: string;
-  name: string;
+  name?: string;
 }
 
 /**
