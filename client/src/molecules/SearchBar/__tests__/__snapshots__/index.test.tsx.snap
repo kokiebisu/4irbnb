@@ -1,22 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Searchbar renders correctly with mobile size 1`] = `
-.c3 p {
-  font-size: 16px;
-  font-weight: 500;
-}
-
 .c0 {
   border-radius: 8px;
   font-size: 18px;
   border: none;
-  background-color: transparent;
-  box-shadow: rgb(0,0,0,0.15) 0px 5px 12px;
-  height: 50px;
-  width: 100%;
-  padding: 0 10px 0 18px;
-  border-radius: 24px;
-  padding: 15px 50px;
 }
 
 .c0:hover {
@@ -27,7 +15,7 @@ exports[`Searchbar renders correctly with mobile size 1`] = `
   outline: none;
 }
 
-.c2 {
+.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -40,26 +28,23 @@ exports[`Searchbar renders correctly with mobile size 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  position: relative;
-  top: 2px;
-  margin-right: 16px;
 }
 
-.c2 svg {
-  width: 16px;
-  height: 16px;
-}
-
-.c2 svg path {
-  stroke-width: 2;
-}
-
-.c4 {
+.c5 {
   margin: 0;
   font-family: 'Airbnb-Cereal';
 }
 
 .c1 {
+  background-color: transparent;
+  box-shadow: rgb(0,0,0,0.15) 0px 5px 12px;
+  height: 50px;
+  width: 100%;
+  padding: 0 10px 0 18px;
+  border-radius: 24px;
+}
+
+.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -70,17 +55,37 @@ exports[`Searchbar renders correctly with mobile size 1`] = `
   align-items: center;
 }
 
+.c4 {
+  position: relative;
+  top: 2px;
+  margin-right: 16px;
+}
+
+.c4 svg {
+  width: 16px;
+  height: 16px;
+}
+
+.c4 svg path {
+  stroke-width: 2;
+}
+
+.c6 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
 <button
-  className="c0"
+  className="c0 c1"
   onClick={[Function]}
-  size="medium"
   style={Object {}}
 >
   <div
-    className="c1"
+    className="c2"
+    style={Object {}}
   >
     <div
-      className="c2"
+      className="c3 c4"
       style={Object {}}
     >
       <svg
@@ -91,26 +96,48 @@ exports[`Searchbar renders correctly with mobile size 1`] = `
         />
       </svg>
     </div>
-    <div
-      className="c3"
+    <p
+      className="c5 c6"
       style={Object {}}
     >
-      <p
-        className="c4"
-        style={Object {}}
-      >
-        Where are you going?
-      </p>
-    </div>
+      Where are you going?
+    </p>
   </div>
 </button>
 `;
 
 exports[`Searchbar renders correctly with normal size 1`] = `
-.c2 p {
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c2 {
+  margin: 0;
   font-family: 'Airbnb-Cereal';
+}
+
+.c0 {
+  background-color: transparent;
+  border: 1px solid;
+  height: 50px;
+  width: 260px;
+  padding: 0 7px 0 18px;
+  border-radius: 24px;
+}
+
+.c3 {
   font-size: 14px;
-  font-weight: 500;
 }
 
 .c4 {
@@ -132,56 +159,19 @@ exports[`Searchbar renders correctly with normal size 1`] = `
   border-radius: 50%;
 }
 
-.c0 {
-  border-radius: 8px;
-  font-size: 18px;
-  border: none;
-  background-color: transparent;
-  border: 1px solid;
-  height: 50px;
-  max-width: 100%;
-  padding: 0 7px 0 18px;
-  min-width: 220px;
-  border-radius: 24px;
-  padding: 15px 50px;
-}
-
-.c0:hover {
-  cursor: pointer;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+.c6 {
   position: relative;
 }
 
-.c5 svg {
+.c6 svg {
   width: 12px;
   height: 12px;
+  stroke: #ffffff;
 }
 
-.c5 svg path {
+.c6 svg path {
+  fill: #ffffff;
   stroke-width: 2;
-}
-
-.c3 {
-  margin: 0;
-  font-family: 'Airbnb-Cereal';
 }
 
 .c1 {
@@ -189,42 +179,38 @@ exports[`Searchbar renders correctly with normal size 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  height: 100%;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-<button
+<div
   className="c0"
-  onClick={[Function]}
-  size="medium"
+  onPress={[Function]}
   style={Object {}}
 >
   <div
     className="c1"
+    style={Object {}}
   >
-    <div
-      className="c2"
+    <p
+      className="c2 c3"
       style={Object {}}
     >
-      <p
-        className="c3"
-        style={Object {}}
-      >
-        Start your search
-      </p>
-    </div>
+      Start your search
+    </p>
     <div
       className="c4"
       style={Object {}}
     >
       <div
-        className="c5"
+        className="c5 c6"
         style={Object {}}
       >
         <svg
@@ -237,5 +223,5 @@ exports[`Searchbar renders correctly with normal size 1`] = `
       </div>
     </div>
   </div>
-</button>
+</div>
 `;

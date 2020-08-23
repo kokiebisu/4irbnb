@@ -1,35 +1,19 @@
 import React from 'react';
-import { css } from 'styled-components';
-import { action } from '@storybook/addon-actions';
-import { Box } from 'atoms';
+import { Story, Meta } from '@storybook/react/types-6-0';
 import { CustomButton } from 'molecules/Button';
 
 export default {
-  title: 'Design Systems|Molecules/Button/Menu',
-  parameters: {
-    component: CustomButton,
-    componentSubtitle: 'Displays the menu button',
-  },
-  excludeStories: /.*Data$/,
-};
+  title: 'Design Systems/Button/Menu Button',
+  component: CustomButton,
+  argTypes: { onPress: { action: 'clicked' } },
+} as Meta;
 
-const actionsData = {
-  onPress: action('onPress'),
-};
+interface Props {
+  type: string;
+  onPress: () => void;
+}
 
-export const base = () => {
-  const extend = {
-    wrapper: css`
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    `,
-  };
-  return (
-    <Box styles={extend.wrapper}>
-      <CustomButton type='menu' {...actionsData} />
-    </Box>
-  );
-};
+const ButtonTemplate: Story<Props> = (args) => <CustomButton {...args} />;
+
+export const base = ButtonTemplate.bind({});
+base.args = { type: 'menu' };

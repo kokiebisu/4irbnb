@@ -1,91 +1,61 @@
 import React from 'react';
-import { css, ThemeProvider } from 'styled-components';
-
-// blocks
+import { Story, Meta } from '@storybook/react/types-6-0';
+import styled, { css, ThemeProvider } from 'styled-components';
 import Card from 'molecules/Card';
-
-// element
 import { Box } from 'atoms';
 
-// img
-import cardsm from 'assets/img/darkcard-sm.png';
-import cardmd from 'assets/img/darkcard-md.png';
-import cardlg from 'assets/img/darkcard-lg.png';
+import cardimg from 'assets/img/darkcard-sm.png';
 
 export default {
-  title: 'Design Systems|Molecules/Card/Dark',
-  parameters: {
-    component: Card,
-    componentSubtitle: 'Displays the card under a dark background',
-  },
-  excludeStories: /.*Data$/,
-};
+  title: 'Design Systems/Card/Dark',
+  component: Card,
+} as Meta;
 
-// data
-
-const cardDataSmall = {
-  image: cardsm,
+const cardData = {
+  image: cardimg,
   subtitle: 'Fruits de mer with Michelin chef Marc Favier',
-  size: 'sm',
 };
 
-const cardDataMedium = {
-  image: cardmd,
-  subtitle: 'Fruits de mer with Michelin chef Marc Favier',
+interface Props {
+  styles?: any;
+  image: string;
+  size: string;
+}
+
+const DarkCardTemplate: Story<Props> = ({ styles, ...args }) => (
+  <ThemeProvider theme={{ mode: 'dark' }}>
+    <Box styles={styles}>
+      <Card {...args} />
+    </Box>
+  </ThemeProvider>
+);
+
+export const small = DarkCardTemplate.bind({});
+small.args = {
+  styles: css`
+    width: 100%;
+    max-width: 200px;
+  `,
   size: 'sm',
+  ...cardData,
 };
 
-const cardDataLarge = {
-  image: cardlg,
-  subtitle: 'Learn favorite summer recipes with celebrated chef Roze Traore',
+export const medium = DarkCardTemplate.bind({});
+medium.args = {
+  styles: css`
+    width: 100%;
+    max-width: 350px;
+  `,
+  size: 'md',
+  ...cardData,
+};
+
+export const large = DarkCardTemplate.bind({});
+large.args = {
+  styles: css`
+    width: 100%;
+    max-width: 400px;
+  `,
   size: 'lg',
-};
-
-export const Small = () => {
-  const extend = {
-    box: css`
-      width: 100%;
-      max-width: 250px;
-    `,
-  };
-  return (
-    <ThemeProvider theme={{ mode: 'dark' }}>
-      <Box styles={extend.box}>
-        <Card {...cardDataSmall} />
-      </Box>
-    </ThemeProvider>
-  );
-};
-
-export const Medium = () => {
-  const extend = {
-    box: css`
-      width: 100%;
-      max-width: 400px;
-    `,
-  };
-  return (
-    <ThemeProvider theme={{ mode: 'dark' }}>
-      <Box styles={extend.box}>
-        <Card {...cardDataMedium} />
-      </Box>
-    </ThemeProvider>
-  );
-};
-
-export const Large = () => {
-  const extend = {
-    box: css`
-      width: 100%;
-      max-width: 350px;
-      margin-top: 10px;
-    `,
-  };
-  return (
-    <ThemeProvider theme={{ mode: 'dark' }}>
-      <Box styles={extend.box}>
-        <Card {...cardDataLarge} />
-      </Box>
-    </ThemeProvider>
-  );
+  ...cardData,
 };

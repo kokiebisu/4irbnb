@@ -40,9 +40,6 @@ const Inputs = styled(Box)`
   display: flex;
   background-color: ${colors.white};
   box-shadow: rgb(0, 0, 0, 0.15) 0px 5px 12px;
-  /* &:hover {
-    border: none;
-  } */
 `;
 
 const Section = styled(Box)`
