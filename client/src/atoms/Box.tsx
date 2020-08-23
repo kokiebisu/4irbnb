@@ -7,6 +7,7 @@ interface ElementProps extends AnimationInterface {
   children?: React.ReactNode;
   styles?: any;
   layout?: any;
+  className?: string;
 }
 
 interface StyledProps {

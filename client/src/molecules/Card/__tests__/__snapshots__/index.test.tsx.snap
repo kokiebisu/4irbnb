@@ -1,12 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Base Card renders correctly with title 1`] = `
+.c2 {
+  max-width: 100%;
+  height: auto;
+}
+
+.c4 {
+  margin: 0;
+  font-family: 'Airbnb-Cereal';
+  padding-top: 2px;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
 .c0 {
+  height: 100%;
   border-radius: 16px;
-  max-height: -webkit-min-content;
-  max-height: -moz-min-content;
-  max-height: min-content;
-  box-shadow: rgba(0,0,0,0.15) 0px 2px 8px;
+  box-shadow: 0px 2px 8px;
 }
 
 .c1 {
@@ -18,21 +30,14 @@ exports[`Base Card renders correctly with title 1`] = `
   border-top-right-radius: 16px;
 }
 
-.c3 {
+.c3.large {
+  width: 50%;
+  text-align: left;
   padding: 0 18px 12px 18px;
 }
 
-.c2 {
-  width: 100%;
-}
-
-.c4 {
-  margin: 0;
-  font-family: 'Airbnb-Cereal';
-  padding-top: 2px;
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 1.4;
+.c3.normal {
+  padding: 0 18px 12px 18px;
 }
 
 <div
@@ -50,7 +55,7 @@ exports[`Base Card renders correctly with title 1`] = `
     />
   </div>
   <div
-    className="c3"
+    className="c3 normal"
     style={Object {}}
   >
     <p
@@ -64,12 +69,24 @@ exports[`Base Card renders correctly with title 1`] = `
 `;
 
 exports[`Base Card renders correctly without title 1`] = `
+.c2 {
+  max-width: 100%;
+  height: auto;
+}
+
+.c4 {
+  margin: 0;
+  font-family: 'Airbnb-Cereal';
+  padding-top: 2px;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
 .c0 {
+  height: 100%;
   border-radius: 16px;
-  max-height: -webkit-min-content;
-  max-height: -moz-min-content;
-  max-height: min-content;
-  box-shadow: rgba(0,0,0,0.15) 0px 2px 8px;
+  box-shadow: 0px 2px 8px;
 }
 
 .c1 {
@@ -81,21 +98,14 @@ exports[`Base Card renders correctly without title 1`] = `
   border-top-right-radius: 16px;
 }
 
-.c3 {
+.c3.large {
+  width: 50%;
+  text-align: left;
   padding: 0 18px 12px 18px;
 }
 
-.c2 {
-  width: 100%;
-}
-
-.c4 {
-  margin: 0;
-  font-family: 'Airbnb-Cereal';
-  padding-top: 2px;
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 1.4;
+.c3.normal {
+  padding: 0 18px 12px 18px;
 }
 
 <div
@@ -113,7 +123,7 @@ exports[`Base Card renders correctly without title 1`] = `
     />
   </div>
   <div
-    className="c3"
+    className="c3 normal"
     style={Object {}}
   >
     <p

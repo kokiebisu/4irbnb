@@ -1,31 +1,14 @@
 import React from 'react';
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
-
-// atoms
+import { Text } from 'atoms';
 import { Box } from 'atoms';
-
-// colors
 import { colors } from 'styles';
 
 type CardProps = {
   title?: string;
   description?: string;
   option?: string;
-};
-
-export default ({ title, description, option, ...props }: CardProps) => {
-  return (
-    <Box styles={extend.wrapper} {...props}>
-      <Box styles={extend.inner}>
-        <Box styles={extend.content.wrapper}>
-          <Box styles={extend.content.title}>{title}</Box>
-          <Box styles={extend.content.description}>{description}</Box>
-          <Box styles={extend.content.option}>{option}</Box>
-        </Box>
-      </Box>
-    </Box>
-  );
 };
 
 const background = theme('mode', {
@@ -38,34 +21,49 @@ const primary = theme('mode', {
   dark: colors.black,
 });
 
-const extend = {
-  wrapper: css`
-    width: 100%;
-    background-color: ${background};
-    border-radius: 16px;
-  `,
-  inner: css`
-    padding: 32px;
-  `,
-  content: {
-    wrapper: css`
-      padding-top: 56px;
-      width: 100%;
-      max-width: 360px;
-      color: ${primary};
-    `,
-    title: css`
-      font-size: 22px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      line-height: 1.3;
-    `,
-    description: css`
-      line-height: 1.2;
-    `,
-    option: css`
-      font-weight: 700;
-      margin-top: 12px;
-    `,
-  },
+const Wrapper = styled(Box)`
+  width: 100%;
+  background-color: ${background};
+  border-radius: 16px;
+`;
+
+const Inner = styled(Box)`
+  padding: 32px;
+`;
+
+const Content = styled(Box)`
+  padding-top: 56px;
+  width: 100%;
+  max-width: 360px;
+  color: ${primary};
+`;
+
+const Title = styled(Text)`
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.3;
+`;
+
+const Description = styled(Text)`
+  line-height: 1.2;
+`;
+
+const Option = styled(Text)`
+  font-weight: 700;
+  margin-top: 12px;
+`;
+
+export default ({ title, description, option, ...props }: CardProps) => {
+  return (
+    <Wrapper {...props}>
+      <Inner>
+        <Content>
+          <Title>{title}</Title>
+          <Description>{description}</Description>
+          <Option>{option}</Option>
+        </Content>
+      </Inner>
+    </Wrapper>
+  );
 };

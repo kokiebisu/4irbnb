@@ -19,7 +19,7 @@ export const Small = Template.bind({});
 Small.args = { size: 'small', ...buttonData };
 
 export const Medium = Template.bind({});
-Medium.args = { ...buttonData };
+Medium.args = { size: 'medium', ...buttonData };
 
 export const Large = Template.bind({});
 Large.args = { size: 'large', ...buttonData };
