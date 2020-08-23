@@ -1,5 +1,5 @@
 import React from 'react';
-import { Story } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react/types-6-0';
 import styled, { css, ThemeProvider } from 'styled-components';
 import Card from 'molecules/Card';
 import { Box } from 'atoms';
@@ -9,20 +9,20 @@ import cardimg from 'assets/img/darkcard-sm.png';
 export default {
   title: 'Design Systems/Card/Dark',
   component: Card,
-};
+} as Meta;
 
 const cardData = {
   image: cardimg,
   subtitle: 'Fruits de mer with Michelin chef Marc Favier',
 };
 
-interface CardTemplateProps {
+interface Props {
   styles?: any;
   image: string;
   size: string;
 }
 
-const DarkCardTemplate: Story<CardTemplateProps> = ({ styles, ...args }) => (
+const DarkCardTemplate: Story<Props> = ({ styles, ...args }) => (
   <ThemeProvider theme={{ mode: 'dark' }}>
     <Box styles={styles}>
       <Card {...args} />

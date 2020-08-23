@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { Icon, Button } from 'atoms';
-import { Flex } from 'layout';
 import { colors } from 'styles';
 import { CustomProps } from 'molecules/Button';
 import theme from 'styled-theming';
@@ -37,10 +36,15 @@ const StyledIcon = styled(Icon)`
   }
 `;
 
+export const Flex = styled(Box)`
+  display: flex;
+  align-items: center;
+`;
+
 export default ({ name, ...props }: CustomProps) => {
   return (
     <Wrapper {...props}>
-      <Flex alignCenter>
+      <Flex>
         <StyledIcon styles={extend.globe} name='Globe' />
         <StyledIcon styles={extend.arrow} name='ChevronDown' />
       </Flex>
