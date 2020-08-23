@@ -12,7 +12,7 @@ export default {
 
 interface Props {
   name: string;
-  className: string;
+  className?: string;
   onPress: () => void;
   type: string;
   inverse: boolean;
