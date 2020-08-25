@@ -13,7 +13,7 @@ const border = theme('mode', {
   light: lighten(0.4, colors.gray),
 });
 
-const Wrapper = styled(Box)`
+const Wrapper = styled(Button)`
   background-color: transparent;
   border: 1px solid ${border};
   height: 50px;
@@ -65,7 +65,7 @@ export const Flex = styled(Box)`
 
 export default () => {
   return (
-    <Wrapper>
+    <Wrapper onPress={() => console.log('clicked')}>
       <Flex>
         <Label>Start your search</Label>
         <IconWrapper>

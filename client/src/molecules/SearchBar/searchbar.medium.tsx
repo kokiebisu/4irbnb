@@ -50,7 +50,7 @@ const Label = styled(Text)`
 
 export default () => {
   return (
-    <Wrapper>
+    <Wrapper onPress={() => console.log('clicked')}>
       <Flex>
         <CustomIcon name='Search' />
         <Label>Where are you going?</Label>
