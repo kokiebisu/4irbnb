@@ -8,10 +8,6 @@ import { CustomButton } from 'molecules/Button';
 import * as mixins from 'styles/mixins';
 import { AnimateSharedLayout, AnimatePresence, motion } from 'framer-motion';
 
-type SearchBarProps = {
-  onPress: () => void;
-};
-
 const hover = theme('mode', {
   light: darken(0.05, colors.white),
 });
@@ -233,7 +229,7 @@ const Category = ({ category, onClick, isSelected }: any) => {
   );
 };
 
-export default ({ ...props }: SearchBarProps) => {
+export default () => {
   const extend = {
     search: css`
       position: relative;
