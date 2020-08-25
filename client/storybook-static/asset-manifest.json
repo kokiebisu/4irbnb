@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.js": "./main.5d834e5c378b9bc075be.bundle.js",
+    "main.js.map": "./main.5d834e5c378b9bc075be.bundle.js.map",
+    "runtime~main.js": "./runtime~main.5d834e5c378b9bc075be.bundle.js",
+    "runtime~main.js.map": "./runtime~main.5d834e5c378b9bc075be.bundle.js.map",
+    "vendors~main.js": "./vendors~main.5d834e5c378b9bc075be.bundle.js",
+    "vendors~main.js.map": "./vendors~main.5d834e5c378b9bc075be.bundle.js.map",
+    "iframe.html": "./iframe.html",
+    "precache-manifest.afe7c488ff45af44a76dbb51fe2b1c56.js": "./precache-manifest.afe7c488ff45af44a76dbb51fe2b1c56.js",
+    "service-worker.js": "./service-worker.js",
+    "static/media/AirbnbCereal-Bold.woff2": "./static/media/AirbnbCereal-Bold.b422e783.woff2",
+    "static/media/AirbnbCereal-Book.woff2": "./static/media/AirbnbCereal-Book.e849748a.woff2",
+    "static/media/AirbnbCereal-ExtraBold.woff": "./static/media/AirbnbCereal-ExtraBold.eef0aa3f.woff",
+    "static/media/AirbnbCereal-Light.woff": "./static/media/AirbnbCereal-Light.d2a616df.woff",
+    "static/media/AirbnbCereal-Medium.woff2": "./static/media/AirbnbCereal-Medium.aa2d47eb.woff2",
+    "static/media/card1.jpg": "./static/media/card1.c2d079c5.jpg",
+    "static/media/darkcard-sm.png": "./static/media/darkcard-sm.bd175880.png",
+    "vendors~main.5d834e5c378b9bc075be.bundle.js.LICENSE.txt": "./vendors~main.5d834e5c378b9bc075be.bundle.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "runtime~main.5d834e5c378b9bc075be.bundle.js",
+    "vendors~main.5d834e5c378b9bc075be.bundle.js",
+    "main.5d834e5c378b9bc075be.bundle.js"
+  ]
+}
