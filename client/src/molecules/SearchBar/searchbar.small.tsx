@@ -5,10 +5,6 @@ import { darken, lighten } from 'polished';
 import { Icon, Box, Button, Text } from 'atoms';
 import { colors } from 'styles';
 
-type SearchBarProps = {
-  onPress: () => void;
-};
-
 const primary = theme('mode', {
   light: lighten(0.25, colors.black),
 });
@@ -17,7 +13,7 @@ const border = theme('mode', {
   light: lighten(0.4, colors.gray),
 });
 
-const Wrapper = styled(Box)`
+const Wrapper = styled(Button)`
   background-color: transparent;
   border: 1px solid ${border};
   height: 50px;
@@ -67,9 +63,9 @@ export const Flex = styled(Box)`
   align-items: center;
 `;
 
-export default ({ ...props }: SearchBarProps) => {
+export default () => {
   return (
-    <Wrapper {...props}>
+    <Wrapper onPress={() => console.log('clicked')}>
       <Flex>
         <Label>Start your search</Label>
         <IconWrapper>

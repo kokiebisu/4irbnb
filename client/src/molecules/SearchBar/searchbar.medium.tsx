@@ -5,10 +5,6 @@ import { darken } from 'polished';
 import { colors } from 'styles';
 import { Box, Button, Icon, Text } from 'atoms';
 
-type SearchBarProps = {
-  onPress: () => void;
-};
-
 const primary = theme('mode', {
   light: colors.gray,
 });
@@ -52,9 +48,9 @@ const Label = styled(Text)`
   font-weight: 500;
 `;
 
-export default ({ ...props }: SearchBarProps) => {
+export default () => {
   return (
-    <Wrapper {...props}>
+    <Wrapper onPress={() => console.log('clicked')}>
       <Flex>
         <CustomIcon name='Search' />
         <Label>Where are you going?</Label>
