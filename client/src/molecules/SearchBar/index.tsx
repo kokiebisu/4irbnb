@@ -7,7 +7,6 @@ import SearchBarSmall from 'molecules/SearchBar/searchbar.small';
 
 type SearchBarProps = {
   type: string;
-  onPress: () => void;
 };
 
 interface mapProps {
@@ -16,8 +15,8 @@ interface mapProps {
 
 export const SearchBar = ({ type, ...props }: SearchBarProps) => {
   const types: mapProps = {
-    sm: <SearchBarMedium {...props} />,
-    md: <SearchBarSmall {...props} />,
+    sm: <SearchBarSmall {...props} />,
+    md: <SearchBarMedium {...props} />,
     lg: <SearchBarLarge {...props} />,
   };
   return types[type];

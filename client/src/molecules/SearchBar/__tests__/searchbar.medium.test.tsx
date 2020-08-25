@@ -2,15 +2,15 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { SearchBar } from 'molecules/SearchBar';
-import { small } from 'molecules/SearchBar/stories/searchbar.stories';
+import { medium } from 'molecules/SearchBar/stories/searchbar.stories';
 
-describe('Small Searchbar', () => {
+describe('Medium Searchbar', () => {
   it('renders text correctly', () => {
     const data = {
-      type: 'sm',
+      type: 'md',
       onPress: () => console.log('clicked'),
     };
-    const { getByText } = render(<SearchBar {...data} {...small.args} />);
-    expect(getByText('Start your search')).toBeInTheDocument();
+    const { getByText } = render(<SearchBar {...data} {...medium.args} />);
+    expect(getByText('Where are you going?')).toBeInTheDocument();
   });
 });
