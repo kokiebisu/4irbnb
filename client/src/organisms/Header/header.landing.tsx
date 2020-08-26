@@ -12,7 +12,7 @@ const Middle = styled(Box)``;
 
 const Right = styled(Box)``;
 
-export default ({ fillColor, ...props }) => {
+export default () => {
   return (
     <Box>
       <Left>
