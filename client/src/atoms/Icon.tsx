@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
+import theme from 'styled-theming';
 
 // svgs
 import {
@@ -12,7 +13,6 @@ import {
   Lock,
   NoColorLogo,
 } from 'assets/svg';
-import theme from 'styled-theming';
 
 interface ElementProps {
   name: string;
@@ -20,7 +20,7 @@ interface ElementProps {
 }
 
 interface StyledProps {
-  fillColor?: any;
+  fillColor?: theme.ThemeSet;
 }
 
 interface MapProps {
@@ -37,31 +37,31 @@ const items: MapProps = {
   NoColorLogo: NoColorLogo,
 };
 
-const Element = styled(motion.div)`
+const Element = styled(motion.div)<StyledProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
 
-const StyledComponent = styled.svg<StyledProps>`
-  width: 100%;
-  path {
-    ${({ fill }) =>
-      fill &&
-      css`
-        fill: ${fill};
-      `}
+  & > svg {
+    width: 100%;
+    path,
+    polygon {
+      ${({ fillColor }) =>
+        fillColor &&
+        css`
+          fill: ${fillColor};
+        `}
+    }
   }
 `;
 
 interface Props extends ElementProps, StyledProps {}
 
-export default ({ name, fillColor, ...props }: Props) => {
+export default ({ name, ...props }: Props) => {
   const Component: any = items[name];
-
   return (
     <Element {...props}>
-      <StyledComponent fillColor={fillColor} />
+      <Component />
     </Element>
   );
 };

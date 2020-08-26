@@ -22,11 +22,13 @@ const Wrapper = styled(Box)`
   &.cookie {
     width: 200px;
   }
+  &.globe {
+  }
 `;
 
 const ButtonTemplate: Story<Props> = ({ className, ...args }) => {
   return (
-    <Wrapper className={className && className}>
+    <Wrapper className={className}>
       <CustomButton {...args} />
     </Wrapper>
   );
@@ -40,10 +42,14 @@ cookieInverse.args = {
   type: 'cookie',
   inverse: true,
   name: 'Cookie Preferences',
+  className: 'cookie',
 };
 
 export const globe = ButtonTemplate.bind({});
-globe.args = { type: 'globe' };
+globe.args = { type: 'globe', className: 'globe' };
 
 export const menu = ButtonTemplate.bind({});
 menu.args = { type: 'menu' };
+
+export const search = ButtonTemplate.bind({});
+search.args = { type: 'search', name: 'Search' };
