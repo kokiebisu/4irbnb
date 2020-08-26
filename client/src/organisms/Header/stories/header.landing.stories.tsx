@@ -34,5 +34,4 @@ const HeaderTemplate: Story<Props> = ({ ...args }) => (
 export const landing = HeaderTemplate.bind({});
 landing.args = {
   type: 'landing',
-  fillColor,
 };
