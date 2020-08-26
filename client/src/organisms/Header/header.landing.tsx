@@ -6,6 +6,10 @@ import { Text, Box, Icon } from 'atoms';
 import { CustomButton } from 'molecules/Button';
 import { colors, sizes } from 'styles';
 
+const fill = theme('mode', {
+  light: colors.white,
+});
+
 const Left = styled(Box)``;
 
 const Middle = styled(Box)``;
@@ -16,7 +20,7 @@ export default () => {
   return (
     <Box>
       <Left>
-        <Icon name='NoColorLogo' fillColor={fillColor} />
+        <Icon name='NoColorLogo' fillColor={fill} />
       </Left>
       <Middle>
         <Text>header</Text>
