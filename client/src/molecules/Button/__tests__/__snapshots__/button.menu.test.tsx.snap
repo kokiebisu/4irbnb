@@ -30,6 +30,10 @@ exports[`Menu Button renders correctly 1`] = `
   justify-content: center;
 }
 
+.c3 > svg {
+  width: 100%;
+}
+
 .c1 {
   border-radius: 24px;
   padding: 5px 6px 5px 12px;

@@ -1,7 +1,4 @@
-import { Bars, Lock } from 'assets/svg/solid';
-import { Search, Globe, ChevronDown } from 'assets/svg/regular';
-import { Avatar } from 'assets/svg/original';
-
-export { Bars, Lock };
-export { Search, Globe, ChevronDown };
-export { Avatar };
+export * from 'assets/svg/solid';
+export * from 'assets/svg/regular';
+export * from 'assets/svg/original';
+export * from 'assets/svg/logo';
