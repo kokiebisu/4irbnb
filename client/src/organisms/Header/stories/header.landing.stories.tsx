@@ -3,6 +3,8 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import styled, { css } from 'styled-components';
 import { Box } from 'atoms';
 import { Header } from 'organisms/Header';
+import theme from 'styled-theming';
+import { colors } from 'styles';
 
 export default {
   title: 'Design Systems/Header',
@@ -13,6 +15,10 @@ interface Props {
   type: string;
   styles?: any;
 }
+
+const fillColor = theme('mode', {
+  light: colors.white,
+});
 
 const Wrapper = styled(Box)`
   width: calc(100% - 30px);
@@ -28,4 +34,5 @@ const HeaderTemplate: Story<Props> = ({ ...args }) => (
 export const landing = HeaderTemplate.bind({});
 landing.args = {
   type: 'landing',
+  fillColor,
 };
