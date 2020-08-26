@@ -11,7 +11,7 @@ export default {
 } as Meta;
 
 interface Props {
-  name: string;
+  name?: string;
   className?: string;
   onPress: () => void;
   type: string;
@@ -19,7 +19,9 @@ interface Props {
 }
 
 const Wrapper = styled(Box)`
-  width: 200px;
+  &.cookie {
+    width: 200px;
+  }
 `;
 
 const ButtonTemplate: Story<Props> = ({ className, ...args }) => {
@@ -31,7 +33,7 @@ const ButtonTemplate: Story<Props> = ({ className, ...args }) => {
 };
 
 export const cookie = ButtonTemplate.bind({});
-cookie.args = { type: 'cookie', name: 'Save Settings' };
+cookie.args = { type: 'cookie', name: 'Save Settings', className: 'cookie' };
 
 export const cookieInverse = ButtonTemplate.bind({});
 cookieInverse.args = {
@@ -39,3 +41,9 @@ cookieInverse.args = {
   inverse: true,
   name: 'Cookie Preferences',
 };
+
+export const globe = ButtonTemplate.bind({});
+globe.args = { type: 'globe' };
+
+export const menu = ButtonTemplate.bind({});
+menu.args = { type: 'menu' };

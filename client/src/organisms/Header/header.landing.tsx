@@ -6,6 +6,22 @@ import { Text, Box, Icon } from 'atoms';
 import { CustomButton } from 'molecules/Button';
 import { colors, sizes } from 'styles';
 
-export default () => {
-  return <div>header</div>;
+const Left = styled(Box)``;
+
+const Middle = styled(Box)``;
+
+const Right = styled(Box)``;
+
+export default ({ fillColor, ...props }) => {
+  return (
+    <Box>
+      <Left>
+        <Icon name='NoColorLogo' fillColor={fillColor} />
+      </Left>
+      <Middle>
+        <Text>header</Text>
+      </Middle>
+      <Right></Right>
+    </Box>
+  );
 };
