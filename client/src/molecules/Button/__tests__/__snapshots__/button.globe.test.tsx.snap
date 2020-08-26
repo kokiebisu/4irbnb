@@ -30,6 +30,10 @@ exports[`Globe Button renders correctly 1`] = `
   justify-content: center;
 }
 
+.c3 > svg {
+  width: 100%;
+}
+
 .c1 {
   padding: 15px;
   background-color: transparent;
@@ -39,10 +43,6 @@ exports[`Globe Button renders correctly 1`] = `
 
 .c1:focus {
   outline: none;
-}
-
-.c4 svg {
-  width: 100%;
 }
 
 .c4.globe {

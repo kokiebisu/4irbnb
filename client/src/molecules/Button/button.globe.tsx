@@ -27,13 +27,6 @@ const Wrapper = styled(Button)`
 `;
 
 const StyledIcon = styled(Icon)`
-  svg {
-    width: 100%;
-    path,
-    polygon {
-      fill: ${stroke};
-    }
-  }
   &.globe {
     position: relative;
     top: 50%;
@@ -55,8 +48,8 @@ export default ({ name, ...props }: CustomProps) => {
   return (
     <Wrapper {...props}>
       <Flex>
-        <StyledIcon className='globe' name='Globe' />
-        <StyledIcon className='arrow' name='ChevronDown' />
+        <StyledIcon fillColor={stroke} className='globe' name='Globe' />
+        <StyledIcon fillColor={stroke} className='arrow' name='ChevronDown' />
       </Flex>
     </Wrapper>
   );

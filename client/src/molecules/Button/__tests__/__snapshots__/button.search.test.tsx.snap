@@ -30,6 +30,10 @@ exports[`Search Button renders correctly 1`] = `
   justify-content: center;
 }
 
+.c3 > svg {
+  width: 100%;
+}
+
 .c5 {
   margin: 0;
   font-family: 'Airbnb-Cereal';
