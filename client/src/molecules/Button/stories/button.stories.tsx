@@ -18,11 +18,7 @@ interface Props {
   inverse: boolean;
 }
 
-const Wrapper = styled(Box)`
-  &.cookie {
-    width: 200px;
-  }
-`;
+const Wrapper = styled(Box)``;
 
 const ButtonTemplate: Story<Props> = ({ className, ...args }) => {
   return (

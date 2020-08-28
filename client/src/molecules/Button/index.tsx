@@ -1,7 +1,7 @@
 import React from 'react';
-import SearchButton from 'molecules/Button/button.search';
-import CookieButton from 'molecules/Button/button.cookie';
-import MenuButton from 'molecules/Button/button.menu';
+import { SearchButton } from 'molecules/Button/button.search';
+import { CookieButton } from 'molecules/Button/button.cookie';
+import { MenuButton } from 'molecules/Button/button.menu';
 import { TransparentButton } from 'molecules/Button/button.transparent';
 import { ElementProps } from 'atoms/Button';
 
