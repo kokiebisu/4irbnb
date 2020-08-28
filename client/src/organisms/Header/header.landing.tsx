@@ -5,7 +5,8 @@ import styled, { css } from 'styled-components';
 import { Text, Box, Icon } from 'atoms';
 import { CustomButton } from 'molecules/Button';
 import { colors, sizes } from 'styles';
-import { globe, menu } from 'molecules/Button/stories/button.stories';
+import { menu } from 'molecules/Button/stories/button.stories';
+import { stroke, Flex, StyledIcon } from 'molecules/Button/button.transparent';
 
 const fill = theme('mode', {
   light: colors.white,
@@ -35,7 +36,16 @@ export default () => {
         <Text>header</Text>
       </Middle>
       <Right>
-        <CustomButton type='globe' onPress={() => console.log('pressed')} />
+        <CustomButton type='transparent' onPress={() => console.log('pressed')}>
+          <Flex>
+            <StyledIcon fillColor={stroke} className='globe' name='Globe' />
+            <StyledIcon
+              fillColor={stroke}
+              className='arrow'
+              name='ChevronDown'
+            />
+          </Flex>
+        </CustomButton>
         <CustomButton type='menu' onPress={() => console.log('pressed')} />
       </Right>
     </Wrapper>
