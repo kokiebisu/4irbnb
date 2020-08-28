@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { motion } from 'framer-motion';
 import theme from 'styled-theming';
 
 // svgs

@@ -40,7 +40,7 @@ const searchButtonStyles = {
   `,
 };
 
-export default ({ name, ...props }: CustomProps) => {
+export const SearchButton: React.FC<CustomProps> = ({ name, ...props }) => {
   return (
     <Button styles={searchButtonStyles.wrapper} {...props}>
       <Box styles={searchButtonStyles.content}>
