@@ -2,6 +2,9 @@
 
 exports[`Cookie Button renders correctly 1`] = `
 .c0 {
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
   color: #ffffff;
   padding: 14px 20px;
   font-size: 16px;
@@ -13,9 +16,6 @@ exports[`Cookie Button renders correctly 1`] = `
   white-space: nowrap;
   min-width: none;
   margin-top: 25px;
-  border-radius: 8px;
-  font-size: 18px;
-  border: none;
 }
 
 .c0:hover {

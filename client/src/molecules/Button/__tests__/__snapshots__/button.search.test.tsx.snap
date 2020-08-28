@@ -1,48 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search Button renders correctly 1`] = `
-.c0 {
-  border-radius: 8px;
-  font-size: 18px;
-  border: none;
-}
-
-.c0:hover {
-  cursor: pointer;
-}
-
-.c0:focus {
-  outline: none;
-}
-
-.c3 {
-  display: block;
-}
-
-.c3 > svg {
-  width: 100%;
-}
-
-.c5 {
-  margin: 0;
-  font-family: 'Airbnb-Cereal';
-}
-
 .c1 {
-  background-color: rgb(215,4,102);
-  border: none;
-  padding: 15px 22px;
-  color: white;
-  border-radius: 8px;
-  -webkit-transition: 0.8s;
-  transition: 0.8s;
-}
-
-.c1:hover {
-  background-color: #ff385c;
-}
-
-.c2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -57,39 +16,85 @@ exports[`Search Button renders correctly 1`] = `
   justify-content: center;
 }
 
-.c4 {
+.c2 {
   position: relative;
   margin-right: 8px;
 }
 
-.c4 svg {
+.c2 svg {
   width: 14px;
   height: 14px;
   stroke: white;
 }
 
-.c4 svg path {
+.c2 svg path {
   fill: white;
   stroke-width: 2;
 }
 
-.c6 {
-  font-weight: 300;
-  font-size: 16px;
+.c0 {
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(215,4,102);
+  border: none;
+  padding: 15px 22px;
+  color: white;
+  border-radius: 8px;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+}
+
+.c0:hover {
+  background-color: #ff385c;
+}
+
+.c0:hover {
+  cursor: pointer;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c3 {
+  display: block;
+  position: relative;
+  margin-right: 8px;
+}
+
+.c3 svg {
+  width: 14px;
+  height: 14px;
+  stroke: white;
+}
+
+.c3 svg path {
+  fill: white;
+  stroke-width: 2;
+}
+
+.c3 > svg {
+  width: 100%;
+}
+
+.c4 {
+  margin: 0;
+  font-family: 'Airbnb-Cereal';
 }
 
 <button
   action={[Function]}
-  className="c0 c1"
+  className="c0"
   onClick={[Function]}
   style={Object {}}
 >
   <div
-    className="c2"
+    className="c1"
     style={Object {}}
   >
     <div
-      className="c3 c4"
+      className="c2 c3"
       style={Object {}}
     >
       <svg
@@ -101,7 +106,7 @@ exports[`Search Button renders correctly 1`] = `
       </svg>
     </div>
     <p
-      className="c5 c6"
+      className="c4"
       style={Object {}}
     >
       Search
