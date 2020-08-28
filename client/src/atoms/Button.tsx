@@ -6,6 +6,7 @@ export interface ElementProps extends StyledProps {
   children?: React.ReactNode;
   onPress: () => void;
   className?: string;
+  styles?: any;
 }
 
 interface StyledProps {
@@ -14,6 +15,7 @@ interface StyledProps {
 }
 
 const Element = styled(motion.button)<StyledProps>`
+  ${({ styles }) => styles}
   border-radius: 8px;
   font-size: 18px;
   border: none;
@@ -46,19 +48,10 @@ const Element = styled(motion.button)<StyledProps>`
   }
 `;
 
-export default ({ size, children, onPress, ...props }: ElementProps) => {
+export default ({ children, onPress, ...props }: ElementProps) => {
   return (
-    <Element size={size} {...props} onClick={onPress}>
+    <Element {...props} onClick={onPress}>
       {children}
     </Element>
   );
 };
-
-// export type CustomProps = {
-//   type?: string;
-//   onPress: () => void;
-//   size?: 'small' | 'medium' | 'large';
-//   inverse?: boolean;
-//   name?: string;
-//   className?: string;
-// };

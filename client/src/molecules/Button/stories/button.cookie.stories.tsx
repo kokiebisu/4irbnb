@@ -16,6 +16,7 @@ interface Props {
   onPress: () => void;
   type: string;
   inverse: boolean;
+  styles?: any;
 }
 
 const Wrapper = styled(Box)`
@@ -24,21 +25,20 @@ const Wrapper = styled(Box)`
   }
 `;
 
-const ButtonTemplate: Story<Props> = ({ className, ...args }) => {
+const ButtonTemplate: Story<Props> = ({ type, ...args }) => {
   return (
-    <Wrapper className={className}>
-      <CustomButton {...args} />
+    <Wrapper className={type}>
+      <CustomButton type={type} {...args} />
     </Wrapper>
   );
 };
 
 export const cookie = ButtonTemplate.bind({});
-cookie.args = { type: 'cookie', name: 'Save Settings', className: 'cookie' };
+cookie.args = { type: 'cookie', name: 'Save Settings' };
 
 export const cookieInverse = ButtonTemplate.bind({});
 cookieInverse.args = {
   type: 'cookie',
   inverse: true,
   name: 'Cookie Preferences',
-  className: 'cookie',
 };
