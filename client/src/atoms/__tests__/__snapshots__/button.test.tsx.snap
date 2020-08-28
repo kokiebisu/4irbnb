@@ -2,9 +2,9 @@
 
 exports[`Button renders correctly 1`] = `
 .c0 {
-  border-radius: 8px;
   font-size: 18px;
   border: none;
+  border-radius: 8px;
   padding: 15px 50px;
 }
 

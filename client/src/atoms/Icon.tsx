@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { motion } from 'framer-motion';
 import theme from 'styled-theming';
 
 // svgs
@@ -21,6 +20,7 @@ interface ElementProps {
 }
 
 interface StyledProps {
+  styles?: any;
   fillColor?: theme.ThemeSet;
   width?: number;
   height?: number;
@@ -41,6 +41,7 @@ const items: MapProps = {
 };
 
 const Element = styled(Box)<StyledProps>`
+
   display: block;
   ${({ width }) =>
     width &&
@@ -52,7 +53,7 @@ const Element = styled(Box)<StyledProps>`
     css`
       height: ${height}px;
     `}
-
+  ${({ styles }) => styles}
   & > svg {
     width: 100%;
     path,

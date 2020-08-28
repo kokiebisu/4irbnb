@@ -9,14 +9,15 @@ export interface ElementProps extends StyledProps {
 }
 
 interface StyledProps {
+  styles?: any;
   size?: 'sm' | 'md' | 'lg';
   inverse?: boolean;
 }
 
 const Element = styled(motion.button)<StyledProps>`
-  border-radius: 8px;
   font-size: 18px;
   border: none;
+  border-radius: 8px;
   ${({ size }) =>
     size === 'sm' &&
     css`
@@ -38,6 +39,7 @@ const Element = styled(motion.button)<StyledProps>`
       border: 1px solid black;
       background-color: transparent !important;
     `};
+  ${({ styles }) => styles}
   &:hover {
     cursor: pointer;
   }
@@ -46,19 +48,10 @@ const Element = styled(motion.button)<StyledProps>`
   }
 `;
 
-export default ({ size, children, onPress, ...props }: ElementProps) => {
+export default ({ children, onPress, ...props }: ElementProps) => {
   return (
-    <Element size={size} {...props} onClick={onPress}>
+    <Element {...props} onClick={onPress}>
       {children}
     </Element>
   );
 };
-
-// export type CustomProps = {
-//   type?: string;
-//   onPress: () => void;
-//   size?: 'small' | 'medium' | 'large';
-//   inverse?: boolean;
-//   name?: string;
-//   className?: string;
-// };

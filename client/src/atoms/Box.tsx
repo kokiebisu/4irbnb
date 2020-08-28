@@ -1,15 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { AnimationInterface } from 'interface/animation';
 
-interface ElementProps extends AnimationInterface {
+interface ElementProps {
   children?: React.ReactNode;
-  styles?: any;
   layout?: any;
   className?: string;
 }
 
-export default ({ children, ...props }: ElementProps) => {
-  return <motion.div {...props}>{children}</motion.div>;
+interface StyledProps {
+  styles?: any;
+}
+
+interface Props extends ElementProps, StyledProps {}
+
+const Wrapper = styled(motion.div)<StyledProps>`
+  ${({ styles }) => styles}
+`;
+
+export default ({ children, ...props }: Props) => {
+  return <Wrapper {...props}>{children}</Wrapper>;
 };
