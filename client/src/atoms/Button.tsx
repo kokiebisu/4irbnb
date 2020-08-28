@@ -6,19 +6,18 @@ export interface ElementProps extends StyledProps {
   children?: React.ReactNode;
   onPress: () => void;
   className?: string;
-  styles?: any;
 }
 
 interface StyledProps {
+  styles?: any;
   size?: 'sm' | 'md' | 'lg';
   inverse?: boolean;
 }
 
 const Element = styled(motion.button)<StyledProps>`
-  ${({ styles }) => styles}
-  border-radius: 8px;
   font-size: 18px;
   border: none;
+  border-radius: 8px;
   ${({ size }) =>
     size === 'sm' &&
     css`
@@ -40,6 +39,7 @@ const Element = styled(motion.button)<StyledProps>`
       border: 1px solid black;
       background-color: transparent !important;
     `};
+  ${({ styles }) => styles}
   &:hover {
     cursor: pointer;
   }

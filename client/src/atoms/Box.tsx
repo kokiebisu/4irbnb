@@ -15,7 +15,7 @@ interface StyledProps {
 
 interface Props extends ElementProps, StyledProps {}
 
-const Wrapper = styled(Box)`
+const Wrapper = styled(motion.div)<StyledProps>`
   ${({ styles }) => styles}
 `;
 

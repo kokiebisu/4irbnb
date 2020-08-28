@@ -35,7 +35,7 @@ export const CustomIcon = styled(Icon)`
 const menuButtonStyles = {
   wrapper: css`
     background-color: ${menuButtonColors.background};
-    border-radius: 24px;
+    border-radius: 48px;
     padding: 5px 6px 5px 12px;
     transition: 0.2s ease-in;
     border: 1px solid ${menuButtonColors.border};
