@@ -13,6 +13,7 @@ import {
   Lock,
   NoColorLogo,
 } from 'assets/svg';
+import { Box } from 'atoms';
 
 interface ElementProps {
   name: string;
@@ -21,6 +22,8 @@ interface ElementProps {
 
 interface StyledProps {
   fillColor?: theme.ThemeSet;
+  width?: number;
+  height?: number;
 }
 
 interface MapProps {
@@ -37,10 +40,18 @@ const items: MapProps = {
   NoColorLogo: NoColorLogo,
 };
 
-const Element = styled(motion.div)<StyledProps>`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+const Element = styled(Box)<StyledProps>`
+  display: block;
+  ${({ width }) =>
+    width &&
+    css`
+      width: ${width}px;
+    `}
+  ${({ height }) =>
+    height &&
+    css`
+      height: ${height}px;
+    `}
 
   & > svg {
     width: 100%;
