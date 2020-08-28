@@ -13,7 +13,7 @@ export const hover = theme('mode', {
   light: 'rgba(190, 190, 190, 0.2)',
 });
 
-const transparentButtonColors = {
+export const transparentButtonColors = {
   stroke: theme('mode', {
     light: colors.white,
   }),
