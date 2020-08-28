@@ -33,8 +33,6 @@ export default () => {
       </Left>
       <Middle>
         <Text>header</Text>
-        <Text>header</Text>
-        <Text>header</Text>
       </Middle>
       <Right>
         <CustomButton type='globe' onPress={() => console.log('pressed')} />
