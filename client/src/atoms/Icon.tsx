@@ -42,7 +42,7 @@ const items: MapProps = {
 };
 
 const Element = styled(Box)<StyledProps>`
-  ${({ styles }) => styles}
+
   display: block;
   ${({ width }) =>
     width &&
@@ -54,7 +54,7 @@ const Element = styled(Box)<StyledProps>`
     css`
       height: ${height}px;
     `}
-
+  ${({ styles }) => styles}
   & > svg {
     width: 100%;
     path,
