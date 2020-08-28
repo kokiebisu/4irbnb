@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Globe Button renders correctly 1`] = `
+.c0 {
+  border-radius: 8px;
+  font-size: 18px;
+  border: none;
+}
+
+.c0:hover {
+  cursor: pointer;
+}
+
+.c0:focus {
+  outline: none;
+}
+
+.c1 {
+  padding: 15px;
+  background-color: transparent;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.c1:focus {
+  outline: none;
+}
+
+<button
+  action={[Function]}
+  className="c0 c1"
+  onClick={[Function]}
+  style={Object {}}
+/>
+`;
