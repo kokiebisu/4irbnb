@@ -14,7 +14,7 @@ describe('Globe Button', () => {
     const tree = renderer
       .create(
         <CustomButton
-          type='globe'
+          type='transparent'
           onPress={testingData.action}
           {...testingData}
         />
