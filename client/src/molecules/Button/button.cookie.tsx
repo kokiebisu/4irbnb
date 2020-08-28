@@ -1,18 +1,18 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import { css } from 'styled-components';
 import { Button, Text } from 'atoms';
 import { colors, sizes } from 'styles';
 import { CustomProps } from 'molecules/Button';
 import theme from 'styled-theming';
 import { darken } from 'polished';
 
-export const cookieColors = {
+export const cookieButtonColors = {
   primary: theme('mode', {
     light: darken(0.25, colors.gray),
   }),
 };
 
-export const cookieStyles = {
+export const cookieButtonStyles = {
   wrapper: css`
     padding: 14px 20px;
     font-size: 16px;
@@ -29,22 +29,26 @@ export const cookieStyles = {
     }
   `,
   inverse: css`
-    border: 1px solid ${cookieColors.primary};
+    border: 1px solid ${cookieButtonColors.primary};
     background-color: transparent;
   `,
   normal: css`
     color: ${colors.white};
-    background-color: ${cookieColors.primary};
+    background-color: ${cookieButtonColors.primary};
   `,
 };
 
-export default ({ inverse, name, ...props }: CustomProps) => {
+export const CookieButton: React.FC<CustomProps> = ({
+  inverse,
+  name,
+  ...props
+}) => {
   return (
     <Button
       styles={
         inverse
-          ? [...cookieStyles.inverse, ...cookieStyles.wrapper]
-          : [...cookieStyles.normal, ...cookieStyles.wrapper]
+          ? [...cookieButtonStyles.inverse, ...cookieButtonStyles.wrapper]
+          : [...cookieButtonStyles.normal, ...cookieButtonStyles.wrapper]
       }
       {...props}>
       <Text>{name}</Text>

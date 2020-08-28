@@ -53,7 +53,7 @@ const menuButtonStyles = {
   `,
 };
 
-export default ({ name, ...props }: CustomProps) => {
+export const MenuButton: React.FC<CustomProps> = ({ name, ...props }) => {
   return (
     <Button styles={menuButtonStyles.wrapper} {...props}>
       <Box styles={menuButtonStyles.flex}>

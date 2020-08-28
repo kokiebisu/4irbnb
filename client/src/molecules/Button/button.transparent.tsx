@@ -1,17 +1,9 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { Box, Icon, Button } from 'atoms';
+import { css } from 'styled-components';
+import { Button } from 'atoms';
 import { colors } from 'styles';
 import { CustomProps } from 'molecules/Button';
 import theme from 'styled-theming';
-
-export const stroke = theme('mode', {
-  light: colors.white,
-});
-
-export const hover = theme('mode', {
-  light: 'rgba(190, 190, 190, 0.2)',
-});
 
 export const transparentButtonColors = {
   stroke: theme('mode', {

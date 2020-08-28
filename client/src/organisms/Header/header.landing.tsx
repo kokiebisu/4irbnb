@@ -1,11 +1,10 @@
 import React from 'react';
 import theme from 'styled-theming';
-import styled, { css } from 'styled-components';
+import { css } from 'styled-components';
 import { Text, Box, Icon } from 'atoms';
 import { CustomButton } from 'molecules/Button';
 import { colors } from 'styles';
 import {
-  transparentButtonStyles,
   transparentButtonColors,
   globeButtonStyles,
 } from 'molecules/Button/button.transparent';
