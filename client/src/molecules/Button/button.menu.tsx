@@ -18,20 +18,6 @@ const menuButtonColors = {
   }),
 };
 
-export const Flex = styled(Box)``;
-
-export const CustomIcon = styled(Icon)`
-  &.bars {
-    margin-right: 12px;
-    height: 15px;
-    width: 17px;
-  }
-  &.avatar {
-    height: 32px;
-    width: 32px;
-  }
-`;
-
 const menuButtonStyles = {
   wrapper: css`
     background-color: ${menuButtonColors.background};
