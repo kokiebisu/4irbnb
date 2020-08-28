@@ -2,6 +2,17 @@
 
 exports[`Cookie Button renders correctly 1`] = `
 .c0 {
+  color: #ffffff;
+  padding: 14px 20px;
+  font-size: 16px;
+  -webkit-letter-spacing: 1.1;
+  -moz-letter-spacing: 1.1;
+  -ms-letter-spacing: 1.1;
+  letter-spacing: 1.1;
+  font-weight: 300;
+  white-space: nowrap;
+  min-width: none;
+  margin-top: 25px;
   border-radius: 8px;
   font-size: 18px;
   border: none;
@@ -15,35 +26,13 @@ exports[`Cookie Button renders correctly 1`] = `
   outline: none;
 }
 
-.c2 {
+.c1 {
   margin: 0;
   font-family: 'Airbnb-Cereal';
 }
 
-.c1 {
-  padding: 14px 20px;
-  font-size: 16px;
-  -webkit-letter-spacing: 1.1;
-  -moz-letter-spacing: 1.1;
-  -ms-letter-spacing: 1.1;
-  letter-spacing: 1.1;
-  font-weight: 300;
-  white-space: nowrap;
-  min-width: none;
-  margin-top: 25px;
-}
-
-.c1.inverse {
-  border: 1px solid;
-  background-color: transparent;
-}
-
-.c1.normal {
-  color: #ffffff;
-}
-
 @media (min-width:992px) {
-  .c1 {
+  .c0 {
     min-width: 125px;
     width: 100%;
     margin-top: initial;
@@ -52,12 +41,12 @@ exports[`Cookie Button renders correctly 1`] = `
 
 <button
   action={[Function]}
-  className="c0 c1 normal"
+  className="c0"
   onClick={[Function]}
   style={Object {}}
 >
   <p
-    className="c2"
+    className="c1"
     style={Object {}}
   />
 </button>
