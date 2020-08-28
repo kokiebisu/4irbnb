@@ -21,6 +21,7 @@ interface ElementProps {
 }
 
 interface StyledProps {
+  styles?: any;
   fillColor?: theme.ThemeSet;
   width?: number;
   height?: number;
@@ -41,6 +42,7 @@ const items: MapProps = {
 };
 
 const Element = styled(Box)<StyledProps>`
+  ${({ styles }) => styles}
   display: block;
   ${({ width }) =>
     width &&
