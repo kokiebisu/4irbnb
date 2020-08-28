@@ -13,41 +13,57 @@ export const hover = theme('mode', {
   light: 'rgba(190, 190, 190, 0.2)',
 });
 
-export const StyledIcon = styled(Icon)`
-  &.globe {
+const transparentButtonColors = {
+  stroke: theme('mode', {
+    light: colors.white,
+  }),
+  hover: theme('mode', {
+    light: 'rgba(190, 190, 190, 0.2)',
+  }),
+};
+
+const transparentButtonStyles = {
+  wrapper: css`
+    padding: 15px;
+    background-color: transparent;
+    border-radius: 24px;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background-color: ${transparentButtonColors.hover};
+    }
+  `,
+};
+
+export const globeButtonStyles = {
+  flex: css`
+    display: flex;
+    align-items: center;
+  `,
+  globe: css`
     position: relative;
     top: 50%;
     margin-right: 6px;
     width: 16px;
     height: 16px;
-  }
-  &.arrow {
+  `,
+  arrow: css`
     width: 10px;
-  }
-`;
+  `,
+};
 
-export const Flex = styled(Box)`
-  display: flex;
-  align-items: center;
-`;
-
-const Wrapper = styled(Button)`
-  padding: 15px;
-  background-color: transparent;
-  border-radius: 24px;
-  cursor: pointer;
-  &:focus {
-    outline: none;
-  }
-  &:hover {
-    background-color: ${hover};
-  }
-`;
+export const hostButtonStyles = {};
 
 export const TransparentButton: React.FC<CustomProps> = ({
   name,
   children,
   ...props
 }) => {
-  return <Wrapper {...props}>{children}</Wrapper>;
+  return (
+    <Button styles={transparentButtonStyles.wrapper} {...props}>
+      {children}
+    </Button>
+  );
 };

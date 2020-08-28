@@ -1,9 +1,12 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import styled from 'styled-components';
-import { Box, Text } from 'atoms';
+import { Box, Text, Icon } from 'atoms';
 import { CustomButton } from 'molecules/Button';
-import { stroke, StyledIcon, Flex } from 'molecules/Button/button.transparent';
+import {
+  globeButtonStyles,
+  transparentButtonColors,
+} from 'molecules/Button/button.transparent';
 
 export default {
   title: 'Design Systems/Button/Transparent',
@@ -33,10 +36,20 @@ export const globe = ButtonTemplate.bind({});
 globe.args = {
   type: 'transparent',
   children: (
-    <Flex>
-      <StyledIcon fillColor={stroke} className='globe' name='Globe' />
-      <StyledIcon fillColor={stroke} className='arrow' name='ChevronDown' />
-    </Flex>
+    <Box styles={globeButtonStyles.flex}>
+      <Icon
+        styles={globeButtonStyles.globe}
+        fillColor={transparentButtonColors.stroke}
+        className='globe'
+        name='Globe'
+      />
+      <Icon
+        styles={globeButtonStyles.arrow}
+        fillColor={transparentButtonColors.stroke}
+        className='arrow'
+        name='ChevronDown'
+      />
+    </Box>
   ),
 };
 
