@@ -23,7 +23,7 @@ const Wrapper = styled(Box)``;
 
 const ButtonTemplate: Story<Props> = ({ className, ...args }) => {
   return (
-    <Wrapper className={className}>
+    <Wrapper>
       <CustomButton {...args} />
     </Wrapper>
   );
