@@ -1,53 +1,67 @@
 import React from 'react';
 import theme from 'styled-theming';
-import { darken, lighten } from 'polished';
 import styled, { css } from 'styled-components';
 import { Text, Box, Icon } from 'atoms';
 import { CustomButton } from 'molecules/Button';
-import { colors, sizes } from 'styles';
-import { menu } from 'molecules/Button/stories/button.stories';
-import { stroke, Flex, StyledIcon } from 'molecules/Button/button.transparent';
+import { colors } from 'styles';
+import {
+  transparentButtonStyles,
+  transparentButtonColors,
+  globeButtonStyles,
+} from 'molecules/Button/button.transparent';
 
-const fill = theme('mode', {
-  light: colors.white,
-});
+const landingHeaderColors = {
+  fill: theme('mode', {
+    light: colors.white,
+  }),
+};
 
-const Wrapper = styled(Box)`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`;
-
-const Left = styled(Box)``;
-
-const Middle = styled(Box)`
-  display: flex;
-`;
-
-const Right = styled(Box)``;
+const landingHeaderStyles = {
+  wrapper: css`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  `,
+  left: css``,
+  middle: css`
+    display: flex;
+  `,
+  right: css``,
+};
 
 export default () => {
   return (
-    <Wrapper>
-      <Left>
-        <Icon name='NoColorLogo' fillColor={fill} width={102} height={32} />
-      </Left>
-      <Middle>
+    <Box styles={landingHeaderStyles.wrapper}>
+      <Box styles={landingHeaderStyles.left}>
+        <Icon
+          name='NoColorLogo'
+          fillColor={landingHeaderColors.fill}
+          width={102}
+          height={32}
+        />
+      </Box>
+      <Box styles={landingHeaderStyles.middle}>
         <Text>header</Text>
-      </Middle>
-      <Right>
+      </Box>
+      <Box styles={landingHeaderStyles.right}>
         <CustomButton type='transparent' onPress={() => console.log('pressed')}>
-          <Flex>
-            <StyledIcon fillColor={stroke} className='globe' name='Globe' />
-            <StyledIcon
-              fillColor={stroke}
+          <Box styles={globeButtonStyles.flex}>
+            <Icon
+              styles={globeButtonStyles.globe}
+              fillColor={transparentButtonColors.stroke}
+              className='globe'
+              name='Globe'
+            />
+            <Icon
+              styles={globeButtonStyles.arrow}
+              fillColor={transparentButtonColors.stroke}
               className='arrow'
               name='ChevronDown'
             />
-          </Flex>
+          </Box>
         </CustomButton>
         <CustomButton type='menu' onPress={() => console.log('pressed')} />
-      </Right>
-    </Wrapper>
+      </Box>
+    </Box>
   );
 };
