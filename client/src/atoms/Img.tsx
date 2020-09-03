@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export interface ElementProps {
+interface ElementProps {
   src: any;
   alt: string;
   className?: string;
@@ -12,6 +12,8 @@ const Element = styled.img`
   height: auto;
 `;
 
-export default ({ ...props }: ElementProps) => {
+export interface Props extends ElementProps {}
+
+export const Img: React.FC<Props> = ({ ...props }) => {
   return <Element {...props} />;
 };

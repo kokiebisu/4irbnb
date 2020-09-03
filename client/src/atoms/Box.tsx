@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text } from 'atoms';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -18,6 +19,9 @@ const Wrapper = styled(motion.div)<StyledProps>`
   ${({ styles }) => styles}
 `;
 
-export default ({ children, ...props }: Props) => {
+export const Box: React.FC<Props> = ({
+  children = <Text>Box</Text>,
+  ...props
+}) => {
   return <Wrapper {...props}>{children}</Wrapper>;
 };

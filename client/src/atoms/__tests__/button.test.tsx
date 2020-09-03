@@ -4,7 +4,7 @@ import 'jest-styled-components';
 
 // atoms
 import { Button } from 'atoms';
-import { Medium } from 'atoms/stories/button.stories';
+import { medium } from 'atoms/stories/button.stories';
 
 describe('Button', () => {
   it('renders correctly', () => {
@@ -17,7 +17,7 @@ describe('Button', () => {
         <Button
           onPress={testingData.action}
           {...testingData}
-          {...Medium.args}
+          {...medium.args}
         />
       )
       .toJSON();

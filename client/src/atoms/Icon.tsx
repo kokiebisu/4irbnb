@@ -69,7 +69,7 @@ const Element = styled(Box)<StyledProps>`
 
 interface Props extends ElementProps, StyledProps {}
 
-export default ({ name, ...props }: Props) => {
+export const Icon: React.FC<Props> = ({ name, ...props }) => {
   const Component: any = items[name];
   return (
     <Element {...props}>

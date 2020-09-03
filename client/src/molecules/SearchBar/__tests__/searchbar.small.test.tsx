@@ -10,7 +10,7 @@ describe('Small Searchbar', () => {
       type: 'sm',
       onPress: () => console.log('clicked'),
     };
-    const { getByText } = render(<SearchBar {...data} {...small.args} />);
+    const { getByText } = render(<SearchBar {...data} />);
     expect(getByText('Start your search')).toBeInTheDocument();
   });
 });

@@ -9,7 +9,7 @@ describe('Large Searchbar', () => {
     const data = {
       type: 'lg',
     };
-    const { getByText } = render(<SearchBar {...data} {...large.args} />);
+    const { getByText } = render(<SearchBar {...data} />);
     expect(getByText('Location')).toBeInTheDocument();
   });
 });

@@ -1,13 +1,10 @@
 import React from 'react';
 import theme from 'styled-theming';
 import { css } from 'styled-components';
-import { Text, Box, Icon } from 'atoms';
-import { CustomButton } from 'molecules/Button';
+import { Text, Box, Icon, Button } from 'atoms';
 import { colors } from 'styles';
-import {
-  transparentButtonColors,
-  globeButtonStyles,
-} from 'molecules/Button/button.transparent';
+import { buttonColors, globeButtonStyles } from 'atoms/Button';
+import { globe, host } from 'atoms/stories/button.stories';
 
 const landingHeaderColors = {
   fill: theme('mode', {
@@ -43,23 +40,23 @@ export default () => {
         <Text>header</Text>
       </Box>
       <Box styles={landingHeaderStyles.right}>
-        <CustomButton type='transparent' onPress={() => console.log('pressed')}>
+        <Button {...globe.args} onPress={() => console.log('pressed')}>
           <Box styles={globeButtonStyles.flex}>
             <Icon
               styles={globeButtonStyles.globe}
-              fillColor={transparentButtonColors.stroke}
+              fillColor={buttonColors.content}
               className='globe'
               name='Globe'
             />
             <Icon
               styles={globeButtonStyles.arrow}
-              fillColor={transparentButtonColors.stroke}
+              fillColor={buttonColors.content}
               className='arrow'
               name='ChevronDown'
             />
           </Box>
-        </CustomButton>
-        <CustomButton type='menu' onPress={() => console.log('pressed')} />
+        </Button>
+        <Button {...host.args} onPress={() => console.log('pressed')} />
       </Box>
     </Box>
   );
