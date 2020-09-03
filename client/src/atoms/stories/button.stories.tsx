@@ -9,7 +9,7 @@ import {
   menuButtonStyles,
   globeButtonStyles,
   buttonColors,
-} from 'atoms/Button';
+} from 'atoms/styles/button.styles';
 
 export default {
   title: 'Design Systems/Button',

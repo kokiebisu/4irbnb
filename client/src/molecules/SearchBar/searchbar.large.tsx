@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { css } from 'styled-components';
-import { Box, Button, Text } from 'atoms';
+import { Box, Button, Text, List } from 'atoms';
 
 import { AnimateSharedLayout, AnimatePresence, motion } from 'framer-motion';
 import { search } from 'atoms/stories/button.stories';
