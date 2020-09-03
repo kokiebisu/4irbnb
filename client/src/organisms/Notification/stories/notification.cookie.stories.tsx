@@ -3,6 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { css } from 'styled-components';
 import { Box } from 'atoms';
 import { Notification } from 'organisms/Notification';
+import { cookieButtonStyles } from 'atoms/styles/button.styles';
 
 export default {
   title: 'Design Systems/Notification',
@@ -22,9 +23,6 @@ const NotificationTemplate: Story<Props> = ({ styles, ...args }) => (
 
 export const cookie = NotificationTemplate.bind({});
 cookie.args = {
+  styles: cookieButtonStyles,
   type: 'cookie',
-  styles: css`
-    width: calc(100% - 30px);
-    margin: 0 auto;
-  `,
 };

@@ -3,8 +3,9 @@ import theme from 'styled-theming';
 import { darken, lighten } from 'polished';
 import styled, { css } from 'styled-components';
 import { Text, Box, Icon } from 'atoms';
-import { CustomButton } from 'molecules/Button';
+import { Button } from 'atoms';
 import { colors, sizes } from 'styles';
+import { cookie, cookieInverse } from 'atoms/stories/button.stories';
 
 const description = theme('mode', {
   light: lighten(0.025, colors.gray),
@@ -114,14 +115,13 @@ export default () => {
         </Content>
         <Content className='buttons'>
           <Buttons>
-            <CustomButton
-              type='cookie'
+            <Button
+              {...cookie.args}
               name='Save Settings'
               onPress={() => console.log('clicked')}
             />
-            <CustomButton
-              inverse
-              type='cookie'
+            <Button
+              {...cookieInverse.args}
               name='Cookie Preferences'
               onPress={() => console.log('clicked')}
             />

@@ -18,6 +18,6 @@ const Element = styled(motion.p)<StyledProps>`
 
 interface Props extends ElementProps, StyledProps {}
 
-export default ({ children, ...props }: Props) => {
+export const Text: React.FC<Props> = ({ children, ...props }) => {
   return <Element {...props}>{children}</Element>;
 };
