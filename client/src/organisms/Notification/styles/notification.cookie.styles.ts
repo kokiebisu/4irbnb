@@ -1,6 +1,6 @@
 import theme from 'styled-theming';
 import { lighten, darken } from 'polished';
-import { colors, sizes } from 'styles';
+import { colors, breakpoints } from 'styles';
 import { css } from 'styled-components';
 
 const notificationColors = {
@@ -24,7 +24,7 @@ export const cookieNotificationStyles = {
   `,
   inner: css`
     padding: 25px 20px;
-    @media ${sizes.lg} {
+    @media ${breakpoints.lg} {
       display: flex;
       justify-content: space-between;
     }
@@ -37,7 +37,7 @@ export const cookieNotificationStyles = {
     width: 100%;
 
     &.text {
-      @media ${sizes.lg} {
+      @media ${breakpoints.lg} {
         width: 60%;
         margin-right: 20px;
       }
@@ -48,7 +48,7 @@ export const cookieNotificationStyles = {
       align-items: center;
       margin-top: 15px;
 
-      @media ${sizes.sm} {
+      @media ${breakpoints.sm} {
         width: 40%;
         margin-top: 0px;
       }
