@@ -10,7 +10,7 @@ interface mapProps {
   [key: string]: JSX.Element;
 }
 
-export const Header: React.Props<HeaderProps> = ({ type, ...props }) => {
+export const Header: React.FC<HeaderProps> = ({ type, ...props }) => {
   if (!type) {
     return null;
   }

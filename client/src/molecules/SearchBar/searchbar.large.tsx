@@ -12,9 +12,10 @@ interface Props {
 interface ContentProps {
   title: string;
   description: string;
+  styles?: any;
 }
 
-const Content: React.FC<ContentProps> = ({ title, description }, styles) => {
+const Content: React.FC<ContentProps> = ({ title, description, styles }) => {
   return (
     <>
       <Box styles={styles.title}>
@@ -71,7 +72,11 @@ export const SearchbarLarge: React.FC<Props> = ({ styles }) => {
               styles={styles.select}
               className='first'
               onPress={() => console.log('pressed')}>
-              <Content title='Location' description='Where are you going?' />
+              <Content
+                title='Location'
+                description='Where are you going?'
+                styles={styles}
+              />
             </Button>
           </Box>
           <Box styles={styles.section} className='second'>
@@ -89,7 +94,11 @@ export const SearchbarLarge: React.FC<Props> = ({ styles }) => {
             <Button
               styles={styles.select}
               onPress={() => console.log('pressed')}>
-              <Content title='Check out' description='Add dates' />
+              <Content
+                title='Check out'
+                description='Add dates'
+                styles={styles}
+              />
             </Button>
           </Box>
           <Box styles={styles.section}>
@@ -97,7 +106,11 @@ export const SearchbarLarge: React.FC<Props> = ({ styles }) => {
               styles={styles.select}
               className='last'
               onPress={() => console.log('pressed')}>
-              <Content title='Guests' description='Add guests' />
+              <Content
+                title='Guests'
+                description='Add guests'
+                styles={styles}
+              />
             </Button>
             <Button {...search.args} onPress={() => console.log('pressed')} />
           </Box>

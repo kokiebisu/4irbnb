@@ -1,13 +1,13 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1483519e53a86065298a4db05bef405b",
+    "revision": "e4a69df82d8cdef78e0e1370f5379c0f",
     "url": "iframe.html"
   },
   {
-    "url": "main.eed4fe5fe111121b8418.bundle.js"
+    "url": "main.b23fba9e7088b92c4d40.bundle.js"
   },
   {
-    "url": "runtime~main.eed4fe5fe111121b8418.bundle.js"
+    "url": "runtime~main.b23fba9e7088b92c4d40.bundle.js"
   },
   {
     "revision": "b422e783c9b85cdee883ec8923ac12e3",
@@ -38,9 +38,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "static/media/darkcard-sm.bd175880.png"
   },
   {
-    "url": "vendors~main.eed4fe5fe111121b8418.bundle.js"
+    "url": "vendors~main.b23fba9e7088b92c4d40.bundle.js"
   },
   {
-    "url": "vendors~main.eed4fe5fe111121b8418.bundle.js.LICENSE.txt"
+    "url": "vendors~main.b23fba9e7088b92c4d40.bundle.js.LICENSE.txt"
   }
 ]);

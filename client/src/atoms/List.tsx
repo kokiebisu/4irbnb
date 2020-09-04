@@ -13,8 +13,8 @@ const Element = styled.li<StyledProps>`
   ${({ styles }) => styles}
 `;
 
-export interface Props extends ElementProps, StyledProps {}
+export interface ListProps extends ElementProps, StyledProps {}
 
-export const List: React.FC<Props> = ({ ...props }) => {
+export const List: React.FC<ListProps> = ({ ...props }) => {
   return <Element {...props} />;
 };

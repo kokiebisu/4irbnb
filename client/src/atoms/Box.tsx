@@ -13,13 +13,13 @@ interface StyledProps {
   styles?: any;
 }
 
-interface Props extends ElementProps, StyledProps {}
+export interface BoxProps extends ElementProps, StyledProps {}
 
 const Wrapper = styled(motion.div)<StyledProps>`
   ${({ styles }) => styles}
 `;
 
-export const Box: React.FC<Props> = ({
+export const Box: React.FC<BoxProps> = ({
   children = <Text>Box</Text>,
   ...props
 }) => {
