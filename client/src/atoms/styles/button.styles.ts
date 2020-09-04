@@ -109,9 +109,9 @@ export const searchButtonStyles = {
   wrapper: css`
     background-color: rgb(215, 4, 102);
     border: none;
-    padding: 15px 22px;
+    padding: 15px 20px;
     color: white;
-    border-radius: 8px;
+    border-radius: 26px;
     transition: 0.8s;
     &:hover {
       background-color: #ff385c;
@@ -122,13 +122,11 @@ export const searchButtonStyles = {
     align-items: center;
     justify-content: center;
   `,
-
   icon: css`
     position: relative;
     margin-right: 8px;
+    width: 15px;
     & svg {
-      width: 14px;
-      height: 14px;
       stroke: white;
       path {
         fill: white;
