@@ -13,24 +13,28 @@ export const buttonColors = {
   border: theme('mode', {
     light: lighten(0.4, colors.gray),
   }),
+  cookie: theme('mode', {
+    light: colors.bluegreen,
+  }),
 };
 
 export const cookieButtonStyles = {
   wrapper: css`
     padding: 14px 20px;
-    font-size: 16px;
+    font-size: 13px;
     letter-spacing: 1.1;
-    font-weight: 300;
+    font-weight: 500;
     white-space: nowrap;
     min-width: none;
   `,
   inverse: css`
-    border: 1px solid red;
+    color: ${buttonColors.cookie};
+    border: 1px solid ${buttonColors.cookie};
     background-color: transparent;
   `,
   normal: css`
     color: ${colors.white};
-    background-color: red;
+    background-color: ${buttonColors.cookie};
   `,
 };
 
