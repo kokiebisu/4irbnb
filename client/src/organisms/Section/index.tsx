@@ -12,6 +12,7 @@ interface mapProps {
 
 interface Props {
   type: string;
+  styles: any;
   children: React.ReactNode;
 }
 
