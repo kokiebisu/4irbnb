@@ -4,17 +4,12 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { Section } from 'organisms/Section';
 import { inverse } from 'atoms/stories/button.stories';
 import { sectionAStyles } from '../styles/section.a.styles';
+import { Props } from 'organisms/Section';
 
 export default {
   title: 'Design System/Section',
   component: Section,
 } as Meta;
-
-interface Props {
-  type: string;
-  styles: any;
-  children: React.ReactNode;
-}
 
 const SectionTemplate: Story<Props> = (args) => <Section {...args} />;
 
