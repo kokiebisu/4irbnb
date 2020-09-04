@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Text, Button, Box, Icon } from 'atoms';
-import { Props } from 'atoms/Button';
+import { ButtonProps } from 'atoms/Button';
 
 import {
   cookieButtonStyles,
@@ -18,7 +18,7 @@ export default {
   argTypes: { onPress: { action: 'clicked' }, label: { control: 'text' } },
 } as Meta;
 
-const Template: Story<Props> = (args) => <Button {...args} />;
+const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const small = Template.bind({});
 small.args = { size: 'sm' };

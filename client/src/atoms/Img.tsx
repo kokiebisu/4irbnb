@@ -7,14 +7,18 @@ interface ElementProps {
   className?: string;
 }
 
-const Element = styled.img`
+interface StyledProps {
+  styles?: any;
+}
+
+const Element = styled.img<StyledProps>`
   max-width: 100%;
   height: auto;
   ${({ styles }) => styles}
 `;
 
-export interface Props extends ElementProps {}
+export interface ImgProps extends ElementProps {}
 
-export const Img: React.FC<Props> = ({ ...props }) => {
+export const Img: React.FC<ImgProps> = ({ ...props }) => {
   return <Element {...props} />;
 };

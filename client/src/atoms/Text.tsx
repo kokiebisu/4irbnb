@@ -16,8 +16,8 @@ const Element = styled(motion.p)<StyledProps>`
   font-family: 'Airbnb-Cereal';
 `;
 
-interface Props extends ElementProps, StyledProps {}
+interface TextProps extends ElementProps, StyledProps {}
 
-export const Text: React.FC<Props> = ({ children, ...props }) => {
+export const Text: React.FC<TextProps> = ({ children, ...props }) => {
   return <Element {...props}>{children}</Element>;
 };
