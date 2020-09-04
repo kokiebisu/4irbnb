@@ -7,8 +7,8 @@
 <br/>
 
 <p align="center">
-  <a href="https://circleci.com/gh/kokiebisu/gobnb">
-    <img src="https://circleci.com/gh/kokiebisu/gobnb.svg?style=shield" alt="Build Status on CircleCI" />
+  <a href="https://circleci.com/gh/kokiebisu/airbnb">
+    <img src="https://circleci.com/gh/kokiebisu/airbnb.svg?style=shield" alt="Build Status on CircleCI" />
   </a>
   <a href="https://gobnb-storybook.netlify.app/">
     <img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg" alt="Build Status on CircleCI" />
