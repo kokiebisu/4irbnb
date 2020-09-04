@@ -10,7 +10,7 @@
   <a href="https://circleci.com/gh/kokiebisu/airbnb">
     <img src="https://circleci.com/gh/kokiebisu/airbnb.svg?style=shield" alt="Build Status on CircleCI" />
   </a>
-  <a href="https://gobnb-storybook.netlify.app/">
+  <a href="https://airbnb-storybook.netlify.app/">
     <img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg" alt="Build Status on CircleCI" />
   </a>
    <a href="">
@@ -51,14 +51,11 @@ docker-compose build
 
 ## Design System
 
-Check it out [here](https://gobnb-storybook.netlify.app/)
+Check it out [here](https://airbnb-storybook.netlify.app/)
 
 ## References
  - [atomic design](https://bradfrost.com/blog/post/atomic-web-design/)
  - [Design System for Developers](https://www.learnstorybook.com/design-systems-for-developers/)
-
-## Development
- - Check out the [Design System](https://gobnb-storybook.netlify.app)
 
 ### Keywords
 - [x] Component Driven Development 
