@@ -20,7 +20,7 @@ export const buttonColors = {
     light: colors.white,
   }),
   transparentHover: theme('mode', {
-    light: darken(0.02, colors.white),
+    light: darken(0.05, colors.white),
   }),
   cookieIcon: theme('mode', {
     light: darken(0.05, colors.gray),
@@ -146,5 +146,11 @@ export const searchButtonStyles = {
   text: css`
     font-weight: 300;
     font-size: 16px;
+  `,
+};
+
+export const hostButtonStyles = {
+  text: css`
+    font-size: 14px;
   `,
 };

@@ -8,6 +8,7 @@ import {
   searchButtonStyles,
   menuButtonStyles,
   globeButtonStyles,
+  hostButtonStyles,
   transparentButtonStyles,
   buttonColors,
 } from 'atoms/styles/button.styles';
@@ -99,5 +100,5 @@ globe.args = {
 export const host = Template.bind({});
 host.args = {
   styles: transparentButtonStyles,
-  children: <Text>Become a host</Text>,
+  children: <Text styles={hostButtonStyles.text}>Become a host</Text>,
 };
