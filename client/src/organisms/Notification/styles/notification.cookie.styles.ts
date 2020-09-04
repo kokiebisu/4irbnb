@@ -5,13 +5,13 @@ import { css } from 'styled-components';
 
 const notificationColors = {
   description: theme('mode', {
-    light: lighten(0.025, 'red'),
+    light: lighten(0.025, colors.gray),
   }),
   header: theme('mode', {
-    light: darken(0.05, 'red'),
+    light: darken(0.2, colors.gray),
   }),
   lock: theme('mode', {
-    light: lighten(0.025, 'red'),
+    light: lighten(0.025, colors.blue),
   }),
 };
 
@@ -48,7 +48,7 @@ export const cookieNotificationStyles = {
       align-items: center;
       margin-top: 15px;
 
-      @media ${breakpoints.sm} {
+      @media ${breakpoints.lg} {
         width: 40%;
         margin-top: 0px;
       }
