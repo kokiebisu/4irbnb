@@ -16,6 +16,15 @@ export const buttonColors = {
   cookie: theme('mode', {
     light: darken(0.2, colors.gray),
   }),
+  menu: theme('mode', {
+    light: colors.white,
+  }),
+  transparentHover: theme('mode', {
+    light: darken(0.05, colors.white),
+  }),
+  cookieIcon: theme('mode', {
+    light: darken(0.05, colors.gray),
+  }),
 };
 
 export const cookieButtonStyles = {
@@ -48,7 +57,7 @@ export const transparentButtonStyles = {
       outline: none;
     }
     &:hover {
-      background-color: red;
+      background-color: ${buttonColors.transparentHover};
     }
   `,
 };
@@ -72,11 +81,11 @@ export const globeButtonStyles = {
 
 export const menuButtonStyles = {
   wrapper: css`
-    background-color: red;
+    background-color: ${buttonColors.menu};
     border-radius: 48px;
     padding: 5px 6px 5px 12px;
     transition: 0.2s ease-in;
-    border: 1px solid red;
+    border: 1px solid ${buttonColors.border};
     &:hover {
       box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     }
@@ -90,7 +99,7 @@ export const menuButtonStyles = {
       width: 100%;
       height: 100%;
       path {
-        fill: red;
+        fill: ${buttonColors.cookieIcon};
       }
     }
   `,
@@ -137,5 +146,11 @@ export const searchButtonStyles = {
   text: css`
     font-weight: 300;
     font-size: 16px;
+  `,
+};
+
+export const hostButtonStyles = {
+  text: css`
+    font-size: 14px;
   `,
 };
