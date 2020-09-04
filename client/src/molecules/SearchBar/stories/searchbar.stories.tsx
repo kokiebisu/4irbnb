@@ -8,7 +8,7 @@ import {
 } from 'molecules/SearchBar/styles';
 
 export default {
-  title: 'Design Systems/SearchBar',
+  title: 'Design System/SearchBar',
   component: SearchBar,
   argTypes: { onPress: { action: 'clicked' } },
 } as Meta;
