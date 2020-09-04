@@ -4,7 +4,9 @@ import { Box, Text } from 'atoms';
 
 interface Props {
   children: React.ReactNode;
-  styles: ThemedCssFunction<DefaultTheme>;
+  styles: {
+    wrapper: ThemedCssFunction<DefaultTheme>;
+  };
 }
 
 export const SectionA: React.FC<Props> = ({
