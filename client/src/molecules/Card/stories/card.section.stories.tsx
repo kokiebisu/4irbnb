@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import Card from 'molecules/Card/card.section';
 
 export default {
-  title: 'Design Systems/Card/Section',
+  title: 'Design System/Card/Section',
   component: Card,
 } as Meta;
 

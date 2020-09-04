@@ -6,7 +6,7 @@ import { Notification } from 'organisms/Notification';
 import { cookieNotificationStyles } from 'organisms/Notification/styles/notification.cookie.styles';
 
 export default {
-  title: 'Design Systems/Notification',
+  title: 'Design System/Notification',
   component: Notification,
 } as Meta;
 

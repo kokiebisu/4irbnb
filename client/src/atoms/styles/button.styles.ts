@@ -3,6 +3,10 @@ import theme from 'styled-theming';
 import { darken, lighten } from 'polished';
 import { css } from 'styled-components';
 
+interface InverseProps {
+  inverse?: any;
+}
+
 export const buttonColors = {
   background: theme('mode', {
     light: darken(0.2, colors.gray),
@@ -35,15 +39,17 @@ export const cookieButtonStyles = {
     font-weight: 300;
     white-space: nowrap;
     min-width: none;
-  `,
-  inverse: css`
-    color: ${buttonColors.cookie};
-    border: 1px solid ${buttonColors.cookie};
-    background-color: transparent;
-  `,
-  normal: css`
-    color: ${colors.white};
-    background-color: ${buttonColors.cookie};
+    ${({ inverse }: InverseProps) =>
+      inverse
+        ? css`
+            color: ${buttonColors.cookie};
+            border: 1px solid ${buttonColors.cookie};
+            background-color: transparent;
+          `
+        : css`
+            color: ${colors.white};
+            background-color: ${buttonColors.cookie};
+          `}
   `,
 };
 

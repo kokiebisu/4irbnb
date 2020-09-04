@@ -5,8 +5,8 @@ exports[`Button renders correctly 1`] = `
   font-size: 18px;
   border: none;
   border-radius: 8px;
-  padding: 15px 50px;
   background-color: gray;
+  padding: 15px 50px;
 }
 
 .c0:hover {
