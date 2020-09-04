@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import styled from 'styled-components';
 import Card from 'molecules/Card';
 import { Box } from 'atoms';
-import { sizes } from 'styles';
+import { breakpoints } from 'styles';
 
 import cardImg from 'assets/img/card1.jpg';
 
@@ -34,7 +34,7 @@ const Wrapper = styled(Box)`
     padding: 0 20px;
     display: flex;
 
-    @media ${sizes.sm} {
+    @media ${breakpoints.sm} {
       display: grid;
       align-items: center;
       grid-template-columns: repeat(3, 1fr);
