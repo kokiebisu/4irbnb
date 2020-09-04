@@ -1,7 +1,4 @@
 import React from 'react';
-import theme from 'styled-theming';
-import { darken, lighten } from 'polished';
-import styled, { css } from 'styled-components';
 import { Text, Box, Icon } from 'atoms';
 import { Button } from 'atoms';
 import { cookie, cookieInverse } from 'atoms/stories/button.stories';
@@ -17,7 +14,7 @@ export const CookieNotification: React.FC<Props> = ({ styles }) => {
         <Box styles={styles.content} className='text'>
           <Box styles={styles.header}>
             <Text styles={styles.title}>Your Privacy</Text>
-            <Icon styles={styles.customicon} name='Lock' />
+            <Icon styles={styles.icon} name='Lock' />
           </Box>
           <Text styles={styles.description}>
             We use cookies to help personalize content, tailor and measure ads,
