@@ -8,7 +8,7 @@ import { breakpoints } from 'styles';
 import cardImg from 'assets/img/card1.jpg';
 
 export default {
-  title: 'Design Systems/Card/Light',
+  title: 'Design System/Card/Light',
   component: Card,
 } as Meta;
 
