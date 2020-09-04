@@ -16,6 +16,12 @@ export const buttonColors = {
   cookie: theme('mode', {
     light: darken(0.2, colors.gray),
   }),
+  menu: theme('mode', {
+    light: colors.white,
+  }),
+  cookieIcon: theme('mode', {
+    light: darken(0.05, colors.gray),
+  }),
 };
 
 export const cookieButtonStyles = {
@@ -72,11 +78,11 @@ export const globeButtonStyles = {
 
 export const menuButtonStyles = {
   wrapper: css`
-    background-color: red;
+    background-color: ${buttonColors.menu};
     border-radius: 48px;
     padding: 5px 6px 5px 12px;
     transition: 0.2s ease-in;
-    border: 1px solid red;
+    border: 1px solid ${buttonColors.border};
     &:hover {
       box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     }
@@ -90,7 +96,7 @@ export const menuButtonStyles = {
       width: 100%;
       height: 100%;
       path {
-        fill: red;
+        fill: ${buttonColors.cookieIcon};
       }
     }
   `,
