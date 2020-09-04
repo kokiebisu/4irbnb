@@ -6,7 +6,7 @@ import AirbnbCerealBold from 'assets/fonts/AirbnbCereal-Bold.woff2';
 import AirbnbCerealMedium from 'assets/fonts/AirbnbCereal-Medium.woff2';
 import AirbnbCerealBook from 'assets/fonts/AirbnbCereal-Book.woff2';
 
-export default createGlobalStyle`
+export const Fonts = createGlobalStyle`
     @font-face {
         font-family: 'Airbnb-Cereal';
         font-weight: 900;

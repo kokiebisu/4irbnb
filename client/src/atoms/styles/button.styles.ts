@@ -23,7 +23,6 @@ export const cookieButtonStyles = {
     font-weight: 300;
     white-space: nowrap;
     min-width: none;
-    margin-top: 25px;
   `,
   inverse: css`
     border: 1px solid red;

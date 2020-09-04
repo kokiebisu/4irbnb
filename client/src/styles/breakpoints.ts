@@ -4,7 +4,7 @@ const screen = {
   lg: 992,
 };
 
-export default {
+export const breakpoints = {
   sm: `(min-width: ${screen.sm}px)`,
   md: `(min-width: ${screen.md}px)`,
   lg: `(min-width: ${screen.lg}px)`,
