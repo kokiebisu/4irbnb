@@ -2,21 +2,21 @@
 
 exports[`Storyshots Design Systems/Button Cookie 1`] = `
 <button
-  className="sc-AxirZ jkKPVL"
+  className="sc-AxirZ iEqpAH"
   style={Object {}}
 >
   <p
     className="sc-AxhUy vsUGv"
     style={Object {}}
   >
-    OK
+    Save Settings
   </p>
 </button>
 `;
 
 exports[`Storyshots Design Systems/Button Cookie Inverse 1`] = `
 <button
-  className="sc-AxirZ LPQAb"
+  className="sc-AxirZ dcfssc"
   style={Object {}}
 >
   <p
@@ -38,7 +38,7 @@ exports[`Storyshots Design Systems/Button Globe 1`] = `
     style={Object {}}
   >
     <div
-      className="sc-AxjAm kDLsp sc-AxiKw ftNrVY globe"
+      className="sc-AxjAm kDLsp sc-AxiKw tzXey globe"
       style={Object {}}
     >
       <svg
@@ -50,7 +50,7 @@ exports[`Storyshots Design Systems/Button Globe 1`] = `
       </svg>
     </div>
     <div
-      className="sc-AxjAm dsgISk sc-AxiKw fCzoYR arrow"
+      className="sc-AxjAm dsgISk sc-AxiKw jqpmgn arrow"
       style={Object {}}
     >
       <svg
@@ -611,7 +611,7 @@ exports[`Storyshots Design Systems/Notification Cookie 1`] = `
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hZKumh text"
+      className="sc-AxjAm ddEaCb text"
       style={Object {}}
     >
       <div
@@ -619,13 +619,13 @@ exports[`Storyshots Design Systems/Notification Cookie 1`] = `
         style={Object {}}
       >
         <p
-          className="sc-AxhUy dOKOqD"
+          className="sc-AxhUy fIqlyO"
           style={Object {}}
         >
           Your Privacy
         </p>
         <div
-          className="sc-AxjAm hyNcgC sc-AxiKw dPbQki"
+          className="sc-AxjAm hdYBGy sc-AxiKw fUieqS"
           style={Object {}}
         >
           <svg
@@ -638,14 +638,14 @@ exports[`Storyshots Design Systems/Notification Cookie 1`] = `
         </div>
       </div>
       <p
-        className="sc-AxhUy knBzmp"
+        className="sc-AxhUy gudwKO"
         style={Object {}}
       >
         We use cookies to help personalize content, tailor and measure ads, and provide a safer experience. By navigating the site, you agree to the use of cookies to collect information on and off Airbnb. Read our Cookie Policy to learn more or go to Cookie Preferences to manage your settings
       </p>
     </div>
     <div
-      className="sc-AxjAm hZKumh buttons"
+      className="sc-AxjAm ddEaCb buttons"
       style={Object {}}
     >
       <div
@@ -653,7 +653,7 @@ exports[`Storyshots Design Systems/Notification Cookie 1`] = `
         style={Object {}}
       >
         <button
-          className="sc-AxirZ jkKPVL"
+          className="sc-AxirZ iEqpAH"
           onClick={[Function]}
           style={Object {}}
         >
@@ -661,11 +661,11 @@ exports[`Storyshots Design Systems/Notification Cookie 1`] = `
             className="sc-AxhUy vsUGv"
             style={Object {}}
           >
-            OK
+            Save Settings
           </p>
         </button>
         <button
-          className="sc-AxirZ LPQAb"
+          className="sc-AxirZ dcfssc"
           onClick={[Function]}
           style={Object {}}
         >
