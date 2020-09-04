@@ -42,15 +42,15 @@ cookie.args = {
 
 export const cookieInverse = Template.bind({});
 cookieInverse.args = {
-  styles: cookieButtonStyles,
   inverse: true,
+  styles: cookieButtonStyles,
   children: <Text>Cookie Preferences</Text>,
 };
 
 export const search = Template.bind({});
 search.args = {
-  styles: searchButtonStyles,
   inverse: false,
+  styles: searchButtonStyles,
   children: (
     <Box styles={searchButtonStyles.content}>
       <Icon styles={searchButtonStyles.icon} name='Search' />

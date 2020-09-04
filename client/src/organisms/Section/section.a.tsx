@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from 'styled-components';
+import { css, DefaultTheme, ThemedCssFunction } from 'styled-components';
 import { Box, Text } from 'atoms';
 
 interface Props {
