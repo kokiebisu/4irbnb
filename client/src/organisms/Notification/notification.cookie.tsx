@@ -4,7 +4,6 @@ import { darken, lighten } from 'polished';
 import styled, { css } from 'styled-components';
 import { Text, Box, Icon } from 'atoms';
 import { Button } from 'atoms';
-import { colors, sizes } from 'styles';
 import { cookie, cookieInverse } from 'atoms/stories/button.stories';
 
 interface Props {
