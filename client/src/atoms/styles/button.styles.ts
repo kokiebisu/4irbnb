@@ -1,11 +1,11 @@
 import { colors } from 'styles';
 import theme from 'styled-theming';
-import { lighten } from 'polished';
+import { darken, lighten } from 'polished';
 import { css } from 'styled-components';
 
 export const buttonColors = {
   background: theme('mode', {
-    light: colors.white,
+    light: darken(0.2, colors.gray),
   }),
   content: theme('mode', {
     light: colors.gray,
@@ -14,16 +14,16 @@ export const buttonColors = {
     light: lighten(0.4, colors.gray),
   }),
   cookie: theme('mode', {
-    light: colors.bluegreen,
+    light: darken(0.2, colors.gray),
   }),
 };
 
 export const cookieButtonStyles = {
   wrapper: css`
     padding: 14px 20px;
-    font-size: 13px;
+    font-size: 16px;
     letter-spacing: 1.1;
-    font-weight: 500;
+    font-weight: 300;
     white-space: nowrap;
     min-width: none;
   `,

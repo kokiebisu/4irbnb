@@ -36,7 +36,7 @@ export const cookie = Template.bind({});
 cookie.args = {
   styles: cookieButtonStyles,
   inverse: false,
-  children: <Text>OK</Text>,
+  children: <Text>Save Settings</Text>,
 };
 
 export const cookieInverse = Template.bind({});
