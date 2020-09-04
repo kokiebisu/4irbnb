@@ -1,6 +1,6 @@
 import React from 'react';
 
-import LandingHeader from 'organisms/Header/header.landing';
+import { LandingHeader } from 'organisms/Header/header.landing';
 
 export type HeaderProps = {
   type?: string;
@@ -10,7 +10,7 @@ interface mapProps {
   [key: string]: JSX.Element;
 }
 
-export const Header = ({ type, ...props }: HeaderProps) => {
+export const Header: React.FC<HeaderProps> = ({ type, ...props }) => {
   if (!type) {
     return null;
   }

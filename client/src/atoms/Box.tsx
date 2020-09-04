@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text } from 'atoms';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -12,12 +13,15 @@ interface StyledProps {
   styles?: any;
 }
 
-interface Props extends ElementProps, StyledProps {}
+export interface BoxProps extends ElementProps, StyledProps {}
 
 const Wrapper = styled(motion.div)<StyledProps>`
   ${({ styles }) => styles}
 `;
 
-export default ({ children, ...props }: Props) => {
+export const Box: React.FC<BoxProps> = ({
+  children = <Text>Box</Text>,
+  ...props
+}) => {
   return <Wrapper {...props}>{children}</Wrapper>;
 };

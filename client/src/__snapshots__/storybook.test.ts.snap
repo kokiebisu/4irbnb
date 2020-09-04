@@ -1,8 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Design Systems/Button Cookie 1`] = `
+<button
+  className="sc-AxirZ fXWcks"
+  style={Object {}}
+>
+  <p
+    className="sc-AxhUy fa-DQCS"
+    style={Object {}}
+  >
+    Button
+  </p>
+</button>
+`;
+
+exports[`Storyshots Design Systems/Button Cookie Inverse 1`] = `
+<button
+  className="sc-AxirZ lkOsUO"
+  style={Object {}}
+>
+  <p
+    className="sc-AxhUy fa-DQCS"
+    style={Object {}}
+  >
+    Button
+  </p>
+</button>
+`;
+
+exports[`Storyshots Design Systems/Button Globe 1`] = `
+<button
+  className="sc-AxirZ hbiklZ"
+  style={Object {}}
+>
+  <div
+    className="sc-AxjAm bpxrKE"
+    style={Object {}}
+  >
+    <div
+      className="sc-AxjAm kDLsp sc-AxiKw ftNrVY globe"
+      style={Object {}}
+    >
+      <svg
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
+        />
+      </svg>
+    </div>
+    <div
+      className="sc-AxjAm dsgISk sc-AxiKw fCzoYR arrow"
+      style={Object {}}
+    >
+      <svg
+        viewBox="0 0 256 256"
+      >
+        <g>
+          <g>
+            <polygon
+              points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
+            />
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Design Systems/Button Host 1`] = `
+<button
+  className="sc-AxirZ emGKrx"
+  style={Object {}}
+>
+  <p
+    className="sc-AxhUy fa-DQCS"
+    style={Object {}}
+  >
+    Become a host
+  </p>
+</button>
+`;
+
 exports[`Storyshots Design Systems/Button Inverse 1`] = `
 <button
-  className="sc-AxirZ bWMUHW"
+  className="sc-AxirZ fGwoZA"
   size="md"
   style={Object {}}
 >
@@ -17,7 +100,7 @@ exports[`Storyshots Design Systems/Button Inverse 1`] = `
 
 exports[`Storyshots Design Systems/Button Large 1`] = `
 <button
-  className="sc-AxirZ fDNXRE"
+  className="sc-AxirZ eFdsje"
   size="lg"
   style={Object {}}
 >
@@ -32,7 +115,7 @@ exports[`Storyshots Design Systems/Button Large 1`] = `
 
 exports[`Storyshots Design Systems/Button Medium 1`] = `
 <button
-  className="sc-AxirZ gQIpJs"
+  className="sc-AxirZ etJsUu"
   size="md"
   style={Object {}}
 >
@@ -45,9 +128,77 @@ exports[`Storyshots Design Systems/Button Medium 1`] = `
 </button>
 `;
 
+exports[`Storyshots Design Systems/Button Menu 1`] = `
+<button
+  className="sc-AxirZ edCxmd"
+  style={Object {}}
+>
+  <div
+    className="sc-AxjAm bpxrKE"
+    style={Object {}}
+  >
+    <div
+      className="sc-AxjAm icOptr sc-AxiKw ckjEdD"
+      style={Object {}}
+    >
+      <svg
+        viewBox="0 0 448 512"
+      >
+        <path
+          d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+        />
+      </svg>
+    </div>
+    <div
+      className="sc-AxjAm kJVZaC sc-AxiKw iQYcju"
+      style={Object {}}
+    >
+      <svg
+        viewBox="0 0 32 32"
+      >
+        <path
+          d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Design Systems/Button Search 1`] = `
+<button
+  className="sc-AxirZ dtWGGr"
+  style={Object {}}
+>
+  <div
+    className="sc-AxjAm jDopsC"
+    style={Object {}}
+  >
+    <div
+      className="sc-AxjAm dFCTdr sc-AxiKw gdKXZT"
+      style={Object {}}
+    >
+      <svg
+        viewBox="0 0 56.966 56.966"
+      >
+        <path
+          d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23 s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92 c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17 s-17-7.626-17-17S14.61,6,23.984,6z"
+        />
+      </svg>
+    </div>
+    <p
+      className="sc-AxhUy fa-DQCS"
+      style={Object {}}
+    >
+      Search
+    </p>
+  </div>
+</button>
+`;
+
 exports[`Storyshots Design Systems/Button Small 1`] = `
 <button
-  className="sc-AxirZ eSzAeR"
+  className="sc-AxirZ jhdZeP"
   size="sm"
   style={Object {}}
 >
@@ -60,212 +211,31 @@ exports[`Storyshots Design Systems/Button Small 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design Systems/Button/Cookie Cookie 1`] = `
-<div
-  className="sc-AxjAm hyNcgC sc-AxgMl gbubHC cookie"
-  style={Object {}}
->
-  <button
-    className="sc-AxirZ vQqiz"
-    style={Object {}}
-  >
-    <p
-      className="sc-AxhUy fa-DQCS"
-      style={Object {}}
-    >
-      Save Settings
-    </p>
-  </button>
-</div>
-`;
-
-exports[`Storyshots Design Systems/Button/Cookie Cookie Inverse 1`] = `
-<div
-  className="sc-AxjAm hyNcgC sc-AxgMl gbubHC cookie"
-  style={Object {}}
->
-  <button
-    className="sc-AxirZ hWeIqP"
-    style={Object {}}
-  >
-    <p
-      className="sc-AxhUy fa-DQCS"
-      style={Object {}}
-    >
-      Cookie Preferences
-    </p>
-  </button>
-</div>
-`;
-
-exports[`Storyshots Design Systems/Button/Custom Menu 1`] = `
-<div
-  className="sc-AxjAm hyNcgC sc-AxheI fniENP"
-  style={Object {}}
->
-  <button
-    className="sc-AxirZ hMtGyW"
-    style={Object {}}
-  >
-    <div
-      className="sc-AxjAm bpxrKE"
-      style={Object {}}
-    >
-      <div
-        className="sc-AxjAm cxbtmR sc-AxiKw YjmXB"
-        style={Object {}}
-      >
-        <svg
-          viewBox="0 0 448 512"
-        >
-          <path
-            d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
-          />
-        </svg>
-      </div>
-      <div
-        className="sc-AxjAm eDhFOk sc-AxiKw ibGYOE"
-        style={Object {}}
-      >
-        <svg
-          viewBox="0 0 32 32"
-        >
-          <path
-            d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"
-          />
-        </svg>
-      </div>
-    </div>
-  </button>
-</div>
-`;
-
-exports[`Storyshots Design Systems/Button/Custom Search 1`] = `
-<div
-  className="sc-AxjAm hyNcgC sc-AxheI fniENP"
-  style={Object {}}
->
-  <button
-    className="sc-AxirZ dtWGGr"
-    style={Object {}}
-  >
-    <div
-      className="sc-AxjAm jDopsC"
-      style={Object {}}
-    >
-      <div
-        className="sc-AxjAm dFCTdr sc-AxiKw gdKXZT"
-        style={Object {}}
-      >
-        <svg
-          viewBox="0 0 56.966 56.966"
-        >
-          <path
-            d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23 s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92 c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17 s-17-7.626-17-17S14.61,6,23.984,6z"
-          />
-        </svg>
-      </div>
-      <p
-        className="sc-AxhUy fa-DQCS"
-        style={Object {}}
-      >
-        Search
-      </p>
-    </div>
-  </button>
-</div>
-`;
-
-exports[`Storyshots Design Systems/Button/Transparent Globe 1`] = `
-<div
-  className="sc-AxjAm hyNcgC sc-Axmtr hBVTto"
-  style={Object {}}
->
-  <button
-    className="sc-AxirZ bUmbPt"
-    style={Object {}}
-  >
-    <div
-      className="sc-AxjAm bpxrKE"
-      style={Object {}}
-    >
-      <div
-        className="sc-AxjAm kDLsp sc-AxiKw ftNrVY globe"
-        style={Object {}}
-      >
-        <svg
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
-          />
-        </svg>
-      </div>
-      <div
-        className="sc-AxjAm dsgISk sc-AxiKw fCzoYR arrow"
-        style={Object {}}
-      >
-        <svg
-          viewBox="0 0 256 256"
-        >
-          <g>
-            <g>
-              <polygon
-                points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-              />
-            </g>
-          </g>
-        </svg>
-      </div>
-    </div>
-  </button>
-</div>
-`;
-
-exports[`Storyshots Design Systems/Button/Transparent Host 1`] = `
-<div
-  className="sc-AxjAm hyNcgC sc-Axmtr hBVTto"
-  style={Object {}}
->
-  <button
-    className="sc-AxirZ bUmbPt"
-    style={Object {}}
-  >
-    <p
-      className="sc-AxhUy fa-DQCS"
-      style={Object {}}
-    >
-      Become a host
-    </p>
-  </button>
-</div>
-`;
-
 exports[`Storyshots Design Systems/Card/Dark Large 1`] = `
 <div
-  className="sc-AxjAm hyNcgC sc-fznKkj bqZsaE large"
+  className="sc-AxjAm hyNcgC sc-fzplWN kYbozR large"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-AxmLO hMJVim"
+    className="sc-AxjAm hyNcgC sc-AxheI etkOSM"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzozJi dcxjVL"
+      className="sc-AxjAm hyNcgC sc-Axmtr hHBBAb"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb fYOfzf"
+        className="sc-AxhCb kRVorS"
         src="darkcard-sm.png"
       />
     </div>
     <div
-      className="sc-AxjAm hyNcgC sc-fzoLsD chFena large"
+      className="sc-AxjAm hyNcgC sc-AxmLO dJRPmB large"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy fa-DQCS sc-fzplWN blAtWe"
+        className="sc-AxhUy fa-DQCS sc-fzoLsD kiHMET"
         style={Object {}}
       >
         Fruits de mer with Michelin chef Marc Favier
@@ -277,29 +247,29 @@ exports[`Storyshots Design Systems/Card/Dark Large 1`] = `
 
 exports[`Storyshots Design Systems/Card/Dark Medium 1`] = `
 <div
-  className="sc-AxjAm hyNcgC sc-fznKkj bqZsaE medium"
+  className="sc-AxjAm hyNcgC sc-fzplWN kYbozR medium"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-AxmLO hMJVim"
+    className="sc-AxjAm hyNcgC sc-AxheI etkOSM"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzozJi dcxjVL"
+      className="sc-AxjAm hyNcgC sc-Axmtr hHBBAb"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb fYOfzf"
+        className="sc-AxhCb kRVorS"
         src="darkcard-sm.png"
       />
     </div>
     <div
-      className="sc-AxjAm hyNcgC sc-fzoLsD chFena normal"
+      className="sc-AxjAm hyNcgC sc-AxmLO dJRPmB normal"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy fa-DQCS sc-fzplWN blAtWe"
+        className="sc-AxhUy fa-DQCS sc-fzoLsD kiHMET"
         style={Object {}}
       >
         Fruits de mer with Michelin chef Marc Favier
@@ -311,29 +281,29 @@ exports[`Storyshots Design Systems/Card/Dark Medium 1`] = `
 
 exports[`Storyshots Design Systems/Card/Dark Small 1`] = `
 <div
-  className="sc-AxjAm hyNcgC sc-fznKkj bqZsaE small"
+  className="sc-AxjAm hyNcgC sc-fzplWN kYbozR small"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-AxmLO hMJVim"
+    className="sc-AxjAm hyNcgC sc-AxheI etkOSM"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzozJi dcxjVL"
+      className="sc-AxjAm hyNcgC sc-Axmtr hHBBAb"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb fYOfzf"
+        className="sc-AxhCb kRVorS"
         src="darkcard-sm.png"
       />
     </div>
     <div
-      className="sc-AxjAm hyNcgC sc-fzoLsD chFena normal"
+      className="sc-AxjAm hyNcgC sc-AxmLO dJRPmB normal"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy fa-DQCS sc-fzplWN blAtWe"
+        className="sc-AxhUy fa-DQCS sc-fzoLsD kiHMET"
         style={Object {}}
       >
         Fruits de mer with Michelin chef Marc Favier
@@ -345,35 +315,35 @@ exports[`Storyshots Design Systems/Card/Dark Small 1`] = `
 
 exports[`Storyshots Design Systems/Card/Light Base 1`] = `
 <div
-  className="sc-AxjAm hyNcgC sc-fznZeY coqEOl single"
+  className="sc-AxjAm hyNcgC sc-fznyAO exzcgI single"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-AxmLO fyrwhG"
+    className="sc-AxjAm hyNcgC sc-AxheI gdlxIo"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzozJi dcxjVL"
+      className="sc-AxjAm hyNcgC sc-Axmtr hHBBAb"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb fYOfzf"
+        className="sc-AxhCb kRVorS"
         src="card1.jpg"
       />
     </div>
     <div
-      className="sc-AxjAm hyNcgC sc-fzoLsD chFena normal"
+      className="sc-AxjAm hyNcgC sc-AxmLO dJRPmB normal"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy fa-DQCS sc-fzpans bEvJSQ"
+        className="sc-AxhUy fa-DQCS sc-fzozJi jVXInm"
         style={Object {}}
       >
         Online experiences
       </p>
       <p
-        className="sc-AxhUy fa-DQCS sc-fznyAO cPyniH"
+        className="sc-AxhUy fa-DQCS sc-fzpans jBwBO"
         style={Object {}}
       >
         Unique activities we can do together, led by a world of hosts
@@ -385,29 +355,29 @@ exports[`Storyshots Design Systems/Card/Light Base 1`] = `
 
 exports[`Storyshots Design Systems/Card/Light Multiple 1`] = `
 <div
-  className="sc-AxjAm hyNcgC sc-fznZeY coqEOl multiple"
+  className="sc-AxjAm hyNcgC sc-fznyAO exzcgI multiple"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-AxmLO fyrwhG"
+    className="sc-AxjAm hyNcgC sc-AxheI gdlxIo"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzozJi dcxjVL"
+      className="sc-AxjAm hyNcgC sc-Axmtr hHBBAb"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb fYOfzf"
+        className="sc-AxhCb kRVorS"
         src="card1.jpg"
       />
     </div>
     <div
-      className="sc-AxjAm hyNcgC sc-fzoLsD chFena normal"
+      className="sc-AxjAm hyNcgC sc-AxmLO dJRPmB normal"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy fa-DQCS sc-fznyAO cPyniH"
+        className="sc-AxhUy fa-DQCS sc-fzpans jBwBO"
         style={Object {}}
       >
         Unique activities we can do together, led by a world of hosts
@@ -415,25 +385,25 @@ exports[`Storyshots Design Systems/Card/Light Multiple 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxjAm hyNcgC sc-AxmLO fyrwhG"
+    className="sc-AxjAm hyNcgC sc-AxheI gdlxIo"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzozJi dcxjVL"
+      className="sc-AxjAm hyNcgC sc-Axmtr hHBBAb"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb fYOfzf"
+        className="sc-AxhCb kRVorS"
         src="card1.jpg"
       />
     </div>
     <div
-      className="sc-AxjAm hyNcgC sc-fzoLsD chFena normal"
+      className="sc-AxjAm hyNcgC sc-AxmLO dJRPmB normal"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy fa-DQCS sc-fznyAO cPyniH"
+        className="sc-AxhUy fa-DQCS sc-fzpans jBwBO"
         style={Object {}}
       >
         Unique activities we can do together, led by a world of hosts
@@ -441,25 +411,25 @@ exports[`Storyshots Design Systems/Card/Light Multiple 1`] = `
     </div>
   </div>
   <div
-    className="sc-AxjAm hyNcgC sc-AxmLO fyrwhG"
+    className="sc-AxjAm hyNcgC sc-AxheI gdlxIo"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzozJi dcxjVL"
+      className="sc-AxjAm hyNcgC sc-Axmtr hHBBAb"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb fYOfzf"
+        className="sc-AxhCb kRVorS"
         src="card1.jpg"
       />
     </div>
     <div
-      className="sc-AxjAm hyNcgC sc-fzoLsD chFena normal"
+      className="sc-AxjAm hyNcgC sc-AxmLO dJRPmB normal"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy fa-DQCS sc-fznyAO cPyniH"
+        className="sc-AxhUy fa-DQCS sc-fzpans jBwBO"
         style={Object {}}
       >
         Unique activities we can do together, led by a world of hosts
@@ -471,29 +441,29 @@ exports[`Storyshots Design Systems/Card/Light Multiple 1`] = `
 
 exports[`Storyshots Design Systems/Card/Light No Title 1`] = `
 <div
-  className="sc-AxjAm hyNcgC sc-fznZeY coqEOl single"
+  className="sc-AxjAm hyNcgC sc-fznyAO exzcgI single"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-AxmLO fyrwhG"
+    className="sc-AxjAm hyNcgC sc-AxheI gdlxIo"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzozJi dcxjVL"
+      className="sc-AxjAm hyNcgC sc-Axmtr hHBBAb"
       style={Object {}}
     >
       <img
         alt="card-image"
-        className="sc-AxhCb fYOfzf"
+        className="sc-AxhCb kRVorS"
         src="card1.jpg"
       />
     </div>
     <div
-      className="sc-AxjAm hyNcgC sc-fzoLsD chFena normal"
+      className="sc-AxjAm hyNcgC sc-AxmLO dJRPmB normal"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy fa-DQCS sc-fznyAO cPyniH"
+        className="sc-AxhUy fa-DQCS sc-fzpans jBwBO"
         style={Object {}}
       >
         Unique activities we can do together, led by a world of hosts
@@ -505,31 +475,31 @@ exports[`Storyshots Design Systems/Card/Light No Title 1`] = `
 
 exports[`Storyshots Design Systems/Card/Section Black Lives Matter 1`] = `
 <div
-  className="sc-AxjAm hyNcgC sc-fzokOt edMvOd"
+  className="sc-AxjAm hyNcgC sc-fznKkj kiJWii"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-fzqBZW jdmALV"
+    className="sc-AxjAm hyNcgC sc-fznZeY jCTaaL"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzqNJr duVJuO"
+      className="sc-AxjAm hyNcgC sc-fzokOt kxtQsO"
       style={Object {}}
     >
       <p
-        className="sc-AxhUy fa-DQCS sc-fzoyAV ildYuj"
+        className="sc-AxhUy fa-DQCS sc-fzqBZW hRyKRk"
         style={Object {}}
       >
         We stand with #BlackLivesMatter
       </p>
       <p
-        className="sc-AxhUy fa-DQCS sc-fzoLag cxFYrT"
+        className="sc-AxhUy fa-DQCS sc-fzqNJr rvBQl"
         style={Object {}}
       >
         We believe in a world where everyone belongs. We reject all racism that stands in the way.
       </p>
       <p
-        className="sc-AxhUy fa-DQCS sc-fzoXzr ipXbWl"
+        className="sc-AxhUy fa-DQCS sc-fzoyAV BKodj"
         style={Object {}}
       >
         Donate
@@ -541,204 +511,171 @@ exports[`Storyshots Design Systems/Card/Section Black Lives Matter 1`] = `
 
 exports[`Storyshots Design Systems/Header Landing 1`] = `
 <div
-  className="sc-AxjAm hyNcgC sc-fzoYkl cKXgIo"
+  className="sc-AxjAm iWIAfy"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm iWIAfy"
+    className="sc-AxjAm hyNcgC"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC"
+      className="sc-AxjAm hyNcgC sc-AxiKw ixSlIE"
+      height={32}
+      style={Object {}}
+      width={102}
+    >
+      <svg>
+        <path
+          d="M29.24 22.68c-.16-.39-.31-.8-.47-1.15l-.74-1.67-.03-.03c-2.2-4.8-4.55-9.68-7.04-14.48l-.1-.2c-.25-.47-.5-.99-.76-1.47-.32-.57-.63-1.18-1.14-1.76a5.3 5.3 0 00-8.2 0c-.47.58-.82 1.19-1.14 1.76-.25.52-.5 1.03-.76 1.5l-.1.2c-2.45 4.8-4.84 9.68-7.04 14.48l-.06.06c-.22.52-.48 1.06-.73 1.64-.16.35-.32.73-.48 1.15a6.8 6.8 0 007.2 9.23 8.38 8.38 0 003.18-1.1c1.3-.73 2.55-1.79 3.95-3.32 1.4 1.53 2.68 2.59 3.95 3.33A8.38 8.38 0 0022.75 32a6.79 6.79 0 006.75-5.83 5.94 5.94 0 00-.26-3.5zm-14.36 1.66c-1.72-2.2-2.84-4.22-3.22-5.95a5.2 5.2 0 01-.1-1.96c.07-.51.26-.96.52-1.34.6-.87 1.65-1.41 2.8-1.41a3.3 3.3 0 012.8 1.4c.26.4.45.84.51 1.35.1.58.06 1.25-.1 1.96-.38 1.7-1.5 3.74-3.21 5.95zm12.74 1.48a4.76 4.76 0 01-2.9 3.75c-.76.32-1.6.41-2.42.32-.8-.1-1.6-.36-2.42-.84a15.64 15.64 0 01-3.63-3.1c2.1-2.6 3.37-4.97 3.85-7.08.23-1 .26-1.9.16-2.73a5.53 5.53 0 00-.86-2.2 5.36 5.36 0 00-4.49-2.28c-1.85 0-3.5.86-4.5 2.27a5.18 5.18 0 00-.85 2.21c-.13.84-.1 1.77.16 2.73.48 2.11 1.78 4.51 3.85 7.1a14.33 14.33 0 01-3.63 3.12c-.83.48-1.62.73-2.42.83a4.76 4.76 0 01-5.32-4.07c-.1-.8-.03-1.6.29-2.5.1-.32.25-.64.41-1.02.22-.52.48-1.06.73-1.6l.04-.07c2.16-4.77 4.52-9.64 6.97-14.41l.1-.2c.25-.48.5-.99.76-1.47.26-.51.54-1 .9-1.4a3.32 3.32 0 015.09 0c.35.4.64.89.9 1.4.25.48.5 1 .76 1.47l.1.2c2.44 4.77 4.8 9.64 7 14.41l.03.03c.26.52.48 1.1.73 1.6.16.39.32.7.42 1.03.19.9.29 1.7.19 2.5zM41.54 24.12a5.02 5.02 0 01-3.95-1.83 6.55 6.55 0 01-1.6-4.48 6.96 6.96 0 011.66-4.58 5.3 5.3 0 014.08-1.86 4.3 4.3 0 013.7 1.92l.1-1.57h2.92V23.8h-2.93l-.1-1.76a4.52 4.52 0 01-3.88 2.08zm.76-2.88c.58 0 1.09-.16 1.57-.45.44-.32.8-.74 1.08-1.25.25-.51.38-1.12.38-1.8a3.42 3.42 0 00-1.47-3.04 2.95 2.95 0 00-3.12 0c-.44.32-.8.74-1.08 1.25a4.01 4.01 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.98.45 1.55.45zM53.45 8.46c0 .35-.06.67-.22.93-.16.25-.38.48-.67.64-.29.16-.6.22-.92.22-.32 0-.64-.06-.93-.22a1.84 1.84 0 01-.67-.64 1.82 1.82 0 01-.22-.93c0-.36.07-.68.22-.93.16-.3.39-.48.67-.64.29-.16.6-.23.93-.23a1.84 1.84 0 011.6.86 2 2 0 01.21.94zm-3.4 15.3V11.7h3.18v12.08h-3.19zm11.68-8.9v.04c-.15-.07-.35-.1-.5-.13-.2-.04-.36-.04-.55-.04-.89 0-1.56.26-2 .8-.48.55-.7 1.32-.7 2.31v5.93h-3.19V11.69h2.93l.1 1.83c.32-.64.7-1.12 1.24-1.48a3.1 3.1 0 011.81-.5c.23 0 .45.02.64.06.1.03.16.03.22.06v3.2zm1.28 8.9V6.74h3.18v6.5c.45-.58.96-1.03 1.6-1.38a5.02 5.02 0 016.08 1.31 6.55 6.55 0 011.6 4.49 6.96 6.96 0 01-1.66 4.58 5.3 5.3 0 01-4.08 1.86 4.3 4.3 0 01-3.7-1.92l-.1 1.57-2.92.03zm6.15-2.52c.57 0 1.08-.16 1.56-.45.44-.32.8-.74 1.08-1.25.26-.51.38-1.12.38-1.8 0-.67-.12-1.28-.38-1.79a3.75 3.75 0 00-1.08-1.25 2.95 2.95 0 00-3.12 0c-.45.32-.8.74-1.09 1.25a4.01 4.01 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.98.45 1.56.45zm7.51 2.53V11.69h2.93l.1 1.57a3.96 3.96 0 013.54-1.89 4.1 4.1 0 013.82 2.44c.35.76.54 1.7.54 2.75v7.24h-3.19v-6.82c0-.84-.19-1.5-.57-1.99-.38-.48-.9-.74-1.56-.74-.48 0-.9.1-1.27.32-.35.23-.64.52-.86.93a2.7 2.7 0 00-.32 1.35v6.92h-3.16zm12.52 0V6.73h3.19v6.5a4.67 4.67 0 013.73-1.89 5.02 5.02 0 013.95 1.83 6.57 6.57 0 011.59 4.48 6.95 6.95 0 01-1.66 4.58 5.3 5.3 0 01-4.08 1.86 4.3 4.3 0 01-3.7-1.92l-.09 1.57-2.93.03zm6.18-2.53c.58 0 1.09-.16 1.56-.45.45-.32.8-.74 1.09-1.25.25-.51.38-1.12.38-1.8a3.42 3.42 0 00-1.47-3.04 2.95 2.95 0 00-3.12 0c-.44.32-.8.74-1.08 1.25a3.63 3.63 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.95.45 1.55.45z"
+        />
+      </svg>
+    </div>
+  </div>
+  <div
+    className="sc-AxjAm coWkVm"
+    style={Object {}}
+  >
+    <p
+      className="sc-AxhUy fa-DQCS"
+      style={Object {}}
+    >
+      header
+    </p>
+  </div>
+  <div
+    className="sc-AxjAm hyNcgC"
+    style={Object {}}
+  >
+    <button
+      className="sc-AxirZ hbiklZ"
+      onClick={[Function]}
       style={Object {}}
     >
       <div
-        className="sc-AxjAm hyNcgC sc-AxiKw ixSlIE"
-        height={32}
+        className="sc-AxjAm bpxrKE"
         style={Object {}}
-        width={102}
       >
-        <svg>
-          <path
-            d="M29.24 22.68c-.16-.39-.31-.8-.47-1.15l-.74-1.67-.03-.03c-2.2-4.8-4.55-9.68-7.04-14.48l-.1-.2c-.25-.47-.5-.99-.76-1.47-.32-.57-.63-1.18-1.14-1.76a5.3 5.3 0 00-8.2 0c-.47.58-.82 1.19-1.14 1.76-.25.52-.5 1.03-.76 1.5l-.1.2c-2.45 4.8-4.84 9.68-7.04 14.48l-.06.06c-.22.52-.48 1.06-.73 1.64-.16.35-.32.73-.48 1.15a6.8 6.8 0 007.2 9.23 8.38 8.38 0 003.18-1.1c1.3-.73 2.55-1.79 3.95-3.32 1.4 1.53 2.68 2.59 3.95 3.33A8.38 8.38 0 0022.75 32a6.79 6.79 0 006.75-5.83 5.94 5.94 0 00-.26-3.5zm-14.36 1.66c-1.72-2.2-2.84-4.22-3.22-5.95a5.2 5.2 0 01-.1-1.96c.07-.51.26-.96.52-1.34.6-.87 1.65-1.41 2.8-1.41a3.3 3.3 0 012.8 1.4c.26.4.45.84.51 1.35.1.58.06 1.25-.1 1.96-.38 1.7-1.5 3.74-3.21 5.95zm12.74 1.48a4.76 4.76 0 01-2.9 3.75c-.76.32-1.6.41-2.42.32-.8-.1-1.6-.36-2.42-.84a15.64 15.64 0 01-3.63-3.1c2.1-2.6 3.37-4.97 3.85-7.08.23-1 .26-1.9.16-2.73a5.53 5.53 0 00-.86-2.2 5.36 5.36 0 00-4.49-2.28c-1.85 0-3.5.86-4.5 2.27a5.18 5.18 0 00-.85 2.21c-.13.84-.1 1.77.16 2.73.48 2.11 1.78 4.51 3.85 7.1a14.33 14.33 0 01-3.63 3.12c-.83.48-1.62.73-2.42.83a4.76 4.76 0 01-5.32-4.07c-.1-.8-.03-1.6.29-2.5.1-.32.25-.64.41-1.02.22-.52.48-1.06.73-1.6l.04-.07c2.16-4.77 4.52-9.64 6.97-14.41l.1-.2c.25-.48.5-.99.76-1.47.26-.51.54-1 .9-1.4a3.32 3.32 0 015.09 0c.35.4.64.89.9 1.4.25.48.5 1 .76 1.47l.1.2c2.44 4.77 4.8 9.64 7 14.41l.03.03c.26.52.48 1.1.73 1.6.16.39.32.7.42 1.03.19.9.29 1.7.19 2.5zM41.54 24.12a5.02 5.02 0 01-3.95-1.83 6.55 6.55 0 01-1.6-4.48 6.96 6.96 0 011.66-4.58 5.3 5.3 0 014.08-1.86 4.3 4.3 0 013.7 1.92l.1-1.57h2.92V23.8h-2.93l-.1-1.76a4.52 4.52 0 01-3.88 2.08zm.76-2.88c.58 0 1.09-.16 1.57-.45.44-.32.8-.74 1.08-1.25.25-.51.38-1.12.38-1.8a3.42 3.42 0 00-1.47-3.04 2.95 2.95 0 00-3.12 0c-.44.32-.8.74-1.08 1.25a4.01 4.01 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.98.45 1.55.45zM53.45 8.46c0 .35-.06.67-.22.93-.16.25-.38.48-.67.64-.29.16-.6.22-.92.22-.32 0-.64-.06-.93-.22a1.84 1.84 0 01-.67-.64 1.82 1.82 0 01-.22-.93c0-.36.07-.68.22-.93.16-.3.39-.48.67-.64.29-.16.6-.23.93-.23a1.84 1.84 0 011.6.86 2 2 0 01.21.94zm-3.4 15.3V11.7h3.18v12.08h-3.19zm11.68-8.9v.04c-.15-.07-.35-.1-.5-.13-.2-.04-.36-.04-.55-.04-.89 0-1.56.26-2 .8-.48.55-.7 1.32-.7 2.31v5.93h-3.19V11.69h2.93l.1 1.83c.32-.64.7-1.12 1.24-1.48a3.1 3.1 0 011.81-.5c.23 0 .45.02.64.06.1.03.16.03.22.06v3.2zm1.28 8.9V6.74h3.18v6.5c.45-.58.96-1.03 1.6-1.38a5.02 5.02 0 016.08 1.31 6.55 6.55 0 011.6 4.49 6.96 6.96 0 01-1.66 4.58 5.3 5.3 0 01-4.08 1.86 4.3 4.3 0 01-3.7-1.92l-.1 1.57-2.92.03zm6.15-2.52c.57 0 1.08-.16 1.56-.45.44-.32.8-.74 1.08-1.25.26-.51.38-1.12.38-1.8 0-.67-.12-1.28-.38-1.79a3.75 3.75 0 00-1.08-1.25 2.95 2.95 0 00-3.12 0c-.45.32-.8.74-1.09 1.25a4.01 4.01 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.98.45 1.56.45zm7.51 2.53V11.69h2.93l.1 1.57a3.96 3.96 0 013.54-1.89 4.1 4.1 0 013.82 2.44c.35.76.54 1.7.54 2.75v7.24h-3.19v-6.82c0-.84-.19-1.5-.57-1.99-.38-.48-.9-.74-1.56-.74-.48 0-.9.1-1.27.32-.35.23-.64.52-.86.93a2.7 2.7 0 00-.32 1.35v6.92h-3.16zm12.52 0V6.73h3.19v6.5a4.67 4.67 0 013.73-1.89 5.02 5.02 0 013.95 1.83 6.57 6.57 0 011.59 4.48 6.95 6.95 0 01-1.66 4.58 5.3 5.3 0 01-4.08 1.86 4.3 4.3 0 01-3.7-1.92l-.09 1.57-2.93.03zm6.18-2.53c.58 0 1.09-.16 1.56-.45.45-.32.8-.74 1.09-1.25.25-.51.38-1.12.38-1.8a3.42 3.42 0 00-1.47-3.04 2.95 2.95 0 00-3.12 0c-.44.32-.8.74-1.08 1.25a3.63 3.63 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.95.45 1.55.45z"
-          />
-        </svg>
+        <div
+          className="sc-AxjAm kDLsp sc-AxiKw gIOZnu globe"
+          style={Object {}}
+        >
+          <svg
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
+            />
+          </svg>
+        </div>
+        <div
+          className="sc-AxjAm dsgISk sc-AxiKw bSFasT arrow"
+          style={Object {}}
+        >
+          <svg
+            viewBox="0 0 256 256"
+          >
+            <g>
+              <g>
+                <polygon
+                  points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
+                />
+              </g>
+            </g>
+          </svg>
+        </div>
       </div>
-    </div>
-    <div
-      className="sc-AxjAm coWkVm"
+    </button>
+    <button
+      className="sc-AxirZ emGKrx"
+      onClick={[Function]}
       style={Object {}}
     >
       <p
         className="sc-AxhUy fa-DQCS"
         style={Object {}}
       >
-        header
+        Become a host
       </p>
-    </div>
-    <div
-      className="sc-AxjAm hyNcgC"
-      style={Object {}}
-    >
-      <button
-        className="sc-AxirZ bUmbPt"
-        onClick={[Function]}
-        style={Object {}}
-      >
-        <div
-          className="sc-AxjAm bpxrKE"
-          style={Object {}}
-        >
-          <div
-            className="sc-AxjAm kDLsp sc-AxiKw ftNrVY globe"
-            style={Object {}}
-          >
-            <svg
-              viewBox="0 0 16 16"
-            >
-              <path
-                d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
-              />
-            </svg>
-          </div>
-          <div
-            className="sc-AxjAm dsgISk sc-AxiKw fCzoYR arrow"
-            style={Object {}}
-          >
-            <svg
-              viewBox="0 0 256 256"
-            >
-              <g>
-                <g>
-                  <polygon
-                    points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-                  />
-                </g>
-              </g>
-            </svg>
-          </div>
-        </div>
-      </button>
-      <button
-        className="sc-AxirZ hMtGyW"
-        onClick={[Function]}
-        style={Object {}}
-      >
-        <div
-          className="sc-AxjAm bpxrKE"
-          style={Object {}}
-        >
-          <div
-            className="sc-AxjAm cxbtmR sc-AxiKw YjmXB"
-            style={Object {}}
-          >
-            <svg
-              viewBox="0 0 448 512"
-            >
-              <path
-                d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
-              />
-            </svg>
-          </div>
-          <div
-            className="sc-AxjAm eDhFOk sc-AxiKw ibGYOE"
-            style={Object {}}
-          >
-            <svg
-              viewBox="0 0 32 32"
-            >
-              <path
-                d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"
-              />
-            </svg>
-          </div>
-        </div>
-      </button>
-    </div>
+    </button>
   </div>
 </div>
 `;
 
 exports[`Storyshots Design Systems/Notification Cookie 1`] = `
 <div
-  className="sc-AxjAm kEoNHJ"
+  className="sc-AxjAm fIXBRY"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC sc-fzpkJw bwatuy"
+    className="sc-AxjAm hDaJRB"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fznzOf jhdWrf"
+      className="sc-AxjAm hZKumh text"
       style={Object {}}
     >
       <div
-        className="sc-AxjAm hyNcgC sc-fzoant kmMRix text"
+        className="sc-AxjAm guOSbs"
         style={Object {}}
       >
+        <p
+          className="sc-AxhUy fa-DQCS"
+          style={Object {}}
+        >
+          Your Privacy
+        </p>
         <div
-          className="sc-AxjAm hyNcgC sc-fznMnq bquJaQ"
+          className="sc-AxjAm hyNcgC sc-AxiKw dPbQki"
+          style={Object {}}
+        >
+          <svg
+            viewBox="0 0 448 512"
+          >
+            <path
+              d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"
+            />
+          </svg>
+        </div>
+      </div>
+      <p
+        className="sc-AxhUy fa-DQCS"
+        style={Object {}}
+      >
+        We use cookies to help personalize content, tailor and measure ads, and provide a safer experience. By navigating the site, you agree to the use of cookies to collect information on and off Airbnb. Read our Cookie Policy to learn more or go to Cookie Preferences to manage your settings
+      </p>
+    </div>
+    <div
+      className="sc-AxjAm hZKumh buttons"
+      style={Object {}}
+    >
+      <div
+        className="sc-AxjAm ivUTch"
+        style={Object {}}
+      >
+        <button
+          className="sc-AxirZ fXWcks"
+          onClick={[Function]}
           style={Object {}}
         >
           <p
-            className="sc-AxhUy fa-DQCS sc-fzqMAW fezFPa"
+            className="sc-AxhUy fa-DQCS"
             style={Object {}}
           >
-            Your Privacy
+            Button
           </p>
-          <div
-            className="sc-AxjAm hyNcgC sc-AxiKw dPbQki sc-fzomME eNbszT"
-            style={Object {}}
-          >
-            <svg
-              viewBox="0 0 448 512"
-            >
-              <path
-                d="M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z"
-              />
-            </svg>
-          </div>
-        </div>
-        <p
-          className="sc-AxhUy fa-DQCS sc-fzoydu cBytnj"
+        </button>
+        <button
+          className="sc-AxirZ lkOsUO"
+          onClick={[Function]}
           style={Object {}}
         >
-          We use cookies to help personalize content, tailor and measure ads, and provide a safer experience. By navigating the site, you agree to the use of cookies to collect information on and off Airbnb. Read our Cookie Policy to learn more or go to Cookie Preferences to manage your settings
-        </p>
-      </div>
-      <div
-        className="sc-AxjAm hyNcgC sc-fzoant kmMRix buttons"
-        style={Object {}}
-      >
-        <div
-          className="sc-AxjAm hyNcgC sc-fzqAbL cEdeib"
-          style={Object {}}
-        >
-          <button
-            className="sc-AxirZ vQqiz"
-            onClick={[Function]}
+          <p
+            className="sc-AxhUy fa-DQCS"
             style={Object {}}
           >
-            <p
-              className="sc-AxhUy fa-DQCS"
-              style={Object {}}
-            >
-              Save Settings
-            </p>
-          </button>
-          <button
-            className="sc-AxirZ hWeIqP"
-            onClick={[Function]}
-            style={Object {}}
-          >
-            <p
-              className="sc-AxhUy fa-DQCS"
-              style={Object {}}
-            >
-              Cookie Preferences
-            </p>
-          </button>
-        </div>
+            Button
+          </p>
+        </button>
       </div>
     </div>
   </div>
@@ -747,194 +684,210 @@ exports[`Storyshots Design Systems/Notification Cookie 1`] = `
 
 exports[`Storyshots Design Systems/SearchBar Large 1`] = `
 <div
-  className="sc-AxjAm emteCl"
+  className="sc-AxjAm hyNcgC"
   style={Object {}}
 >
   <div
-    className="sc-AxjAm hyNcgC"
+    className="sc-AxjAm UCvmD"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fzpjYC epCMUH"
+      className="sc-AxjAm bqvNTa"
       style={Object {}}
     >
       <div
-        className="sc-AxjAm hyNcgC sc-fzoXWK ilcZFJ"
+        className="sc-AxjAm cViXyO first"
         style={Object {}}
       >
-        <div
-          className="sc-AxjAm hyNcgC sc-fznxsB iuuPVs first"
+        <button
+          className="sc-AxirZ hbiklZ first"
+          onClick={[Function]}
           style={Object {}}
         >
-          <button
-            className="sc-AxirZ hbiklZ sc-fznJRM ImRKh first"
-            onClick={[Function]}
+          <div
+            className="sc-AxjAm hyNcgC"
             style={Object {}}
           >
-            <div
-              className="sc-AxjAm hyNcgC sc-fzqNqU kzBLzp"
+            <p
+              className="sc-AxhUy fa-DQCS"
               style={Object {}}
             >
-              <p
-                className="sc-AxhUy fa-DQCS"
-                style={Object {}}
-              >
-                Location
-              </p>
-            </div>
-            <div
-              className="sc-AxjAm hyNcgC sc-fzoyTs lcqWtj"
+              Location
+            </p>
+          </div>
+          <div
+            className="sc-AxjAm hyNcgC"
+            style={Object {}}
+          >
+            <p
+              className="sc-AxhUy fa-DQCS"
               style={Object {}}
             >
-              <p
-                className="sc-AxhUy fa-DQCS"
-                style={Object {}}
-              >
-                Where are you going?
-              </p>
-            </div>
-          </button>
-        </div>
-        <div
-          className="sc-AxjAm hyNcgC sc-fznxsB iuuPVs second"
+              Where are you going?
+            </p>
+          </div>
+        </button>
+      </div>
+      <div
+        className="sc-AxjAm cViXyO second"
+        style={Object {}}
+      >
+        <button
+          className="sc-AxirZ hbiklZ"
+          onClick={[Function]}
           style={Object {}}
         >
-          <button
-            className="sc-AxirZ hbiklZ sc-fznJRM ImRKh"
-            onClick={[Function]}
+          <div
+            className="sc-AxjAm hyNcgC"
             style={Object {}}
           >
-            <div
-              className="sc-AxjAm hyNcgC sc-fzqNqU kzBLzp"
+            <p
+              className="sc-AxhUy fa-DQCS"
               style={Object {}}
             >
-              <p
-                className="sc-AxhUy fa-DQCS"
-                style={Object {}}
-              >
-                Check in
-              </p>
-            </div>
-            <div
-              className="sc-AxjAm hyNcgC sc-fzoyTs lcqWtj"
+              Check in
+            </p>
+          </div>
+          <div
+            className="sc-AxjAm hyNcgC"
+            style={Object {}}
+          >
+            <p
+              className="sc-AxhUy fa-DQCS"
               style={Object {}}
             >
-              <p
-                className="sc-AxhUy fa-DQCS"
-                style={Object {}}
-              >
-                Add dates
-              </p>
-            </div>
-          </button>
-        </div>
-        <div
-          className="sc-AxjAm hyNcgC sc-fznxsB iuuPVs third"
+              Add dates
+            </p>
+          </div>
+        </button>
+      </div>
+      <div
+        className="sc-AxjAm cViXyO third"
+        style={Object {}}
+      >
+        <button
+          className="sc-AxirZ hbiklZ"
+          onClick={[Function]}
           style={Object {}}
         >
-          <button
-            className="sc-AxirZ hbiklZ sc-fznJRM ImRKh"
-            onClick={[Function]}
+          <div
+            className="sc-AxjAm hyNcgC"
             style={Object {}}
           >
-            <div
-              className="sc-AxjAm hyNcgC sc-fzqNqU kzBLzp"
+            <p
+              className="sc-AxhUy fa-DQCS"
               style={Object {}}
             >
-              <p
-                className="sc-AxhUy fa-DQCS"
-                style={Object {}}
-              >
-                Check out
-              </p>
-            </div>
-            <div
-              className="sc-AxjAm hyNcgC sc-fzoyTs lcqWtj"
+              Check out
+            </p>
+          </div>
+          <div
+            className="sc-AxjAm hyNcgC"
+            style={Object {}}
+          >
+            <p
+              className="sc-AxhUy fa-DQCS"
               style={Object {}}
             >
-              <p
-                className="sc-AxhUy fa-DQCS"
-                style={Object {}}
-              >
-                Add dates
-              </p>
-            </div>
-          </button>
-        </div>
-        <div
-          className="sc-AxjAm hyNcgC sc-fznWqX eYDvwF"
+              Add dates
+            </p>
+          </div>
+        </button>
+      </div>
+      <div
+        className="sc-AxjAm cViXyO"
+        style={Object {}}
+      >
+        <button
+          className="sc-AxirZ hbiklZ last"
+          onClick={[Function]}
           style={Object {}}
         >
-          <button
-            className="sc-AxirZ hbiklZ sc-fznJRM ImRKh last"
-            onClick={[Function]}
+          <div
+            className="sc-AxjAm hyNcgC"
+            style={Object {}}
+          >
+            <p
+              className="sc-AxhUy fa-DQCS"
+              style={Object {}}
+            >
+              Guests
+            </p>
+          </div>
+          <div
+            className="sc-AxjAm hyNcgC"
+            style={Object {}}
+          >
+            <p
+              className="sc-AxhUy fa-DQCS"
+              style={Object {}}
+            >
+              Add guests
+            </p>
+          </div>
+        </button>
+        <button
+          className="sc-AxirZ dtWGGr"
+          onClick={[Function]}
+          style={Object {}}
+        >
+          <div
+            className="sc-AxjAm jDopsC"
             style={Object {}}
           >
             <div
-              className="sc-AxjAm hyNcgC sc-fzqNqU kzBLzp"
+              className="sc-AxjAm dFCTdr sc-AxiKw gdKXZT"
               style={Object {}}
             >
-              <p
-                className="sc-AxhUy fa-DQCS"
-                style={Object {}}
+              <svg
+                viewBox="0 0 56.966 56.966"
               >
-                Guests
-              </p>
+                <path
+                  d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23 s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92 c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17 s-17-7.626-17-17S14.61,6,23.984,6z"
+                />
+              </svg>
             </div>
-            <div
-              className="sc-AxjAm hyNcgC sc-fzoyTs lcqWtj"
+            <p
+              className="sc-AxhUy fa-DQCS"
               style={Object {}}
             >
-              <p
-                className="sc-AxhUy fa-DQCS"
-                style={Object {}}
-              >
-                Add guests
-              </p>
-            </div>
-          </button>
-          <button
-            className="sc-AxirZ dtWGGr sc-fzqARJ eovwsK"
-            onClick={[Function]}
-            style={Object {}}
-          >
-            <div
-              className="sc-AxjAm jDopsC"
-              style={Object {}}
-            >
-              <div
-                className="sc-AxjAm dFCTdr sc-AxiKw gdKXZT"
-                style={Object {}}
-              >
-                <svg
-                  viewBox="0 0 56.966 56.966"
-                >
-                  <path
-                    d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23 s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92 c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17 s-17-7.626-17-17S14.61,6,23.984,6z"
-                  />
-                </svg>
-              </div>
-              <p
-                className="sc-AxhUy fa-DQCS"
-                style={Object {}}
-              >
-                Search
-              </p>
-            </div>
-          </button>
-        </div>
-        <div
-          className="sc-AxjAm hyNcgC sc-fzoiQi cqfuge first"
+              Search
+            </p>
+          </div>
+        </button>
+      </div>
+      <div
+        className="sc-AxjAm hKAHTn first"
+        style={Object {}}
+      >
+        <p
+          className="sc-AxhUy fa-DQCS"
           style={Object {}}
-        />
-        <div
-          className="sc-AxjAm hyNcgC sc-fzoiQi cqfuge second"
+        >
+          Box
+        </p>
+      </div>
+      <div
+        className="sc-AxjAm hKAHTn second"
+        style={Object {}}
+      >
+        <p
+          className="sc-AxhUy fa-DQCS"
           style={Object {}}
-        />
-        <div
-          className="sc-AxjAm hyNcgC sc-fzoiQi cqfuge third"
+        >
+          Box
+        </p>
+      </div>
+      <div
+        className="sc-AxjAm hKAHTn third"
+        style={Object {}}
+      >
+        <p
+          className="sc-AxhUy fa-DQCS"
           style={Object {}}
-        />
+        >
+          Box
+        </p>
       </div>
     </div>
   </div>
@@ -942,21 +895,59 @@ exports[`Storyshots Design Systems/SearchBar Large 1`] = `
 `;
 
 exports[`Storyshots Design Systems/SearchBar Medium 1`] = `
-<div
-  className="sc-AxjAm emteCl"
+<button
+  className="sc-AxirZ hbiklZ"
+  onClick={[Function]}
   style={Object {}}
 >
-  <button
-    className="sc-AxirZ hbiklZ sc-fzpmMD cPurVa"
-    onClick={[Function]}
+  <div
+    className="sc-AxjAm bpxrKE"
     style={Object {}}
   >
     <div
-      className="sc-AxjAm hyNcgC sc-fznxKY NngAs"
+      className="sc-AxjAm jsrUUM sc-AxiKw gZvrCA"
+      style={Object {}}
+    >
+      <svg
+        viewBox="0 0 56.966 56.966"
+      >
+        <path
+          d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23 s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92 c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17 s-17-7.626-17-17S14.61,6,23.984,6z"
+        />
+      </svg>
+    </div>
+    <p
+      className="sc-AxhUy fa-DQCS"
+      style={Object {}}
+    >
+      Where are you going?
+    </p>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Design Systems/SearchBar Small 1`] = `
+<button
+  className="sc-AxirZ hbiklZ"
+  onClick={[Function]}
+  style={Object {}}
+>
+  <div
+    className="sc-AxjAm fytIum"
+    style={Object {}}
+  >
+    <p
+      className="sc-AxhUy fa-DQCS"
+      style={Object {}}
+    >
+      Start your search
+    </p>
+    <div
+      className="sc-AxjAm kornSO"
       style={Object {}}
     >
       <div
-        className="sc-AxjAm hyNcgC sc-AxiKw dPbQki sc-fznMAR bZkJHg"
+        className="sc-AxjAm LspHv sc-AxiKw hDnNnj"
         style={Object {}}
       >
         <svg
@@ -967,55 +958,7 @@ exports[`Storyshots Design Systems/SearchBar Medium 1`] = `
           />
         </svg>
       </div>
-      <p
-        className="sc-AxhUy fa-DQCS sc-fznWOq cTyKHc"
-        style={Object {}}
-      >
-        Where are you going?
-      </p>
     </div>
-  </button>
-</div>
-`;
-
-exports[`Storyshots Design Systems/SearchBar Small 1`] = `
-<div
-  className="sc-AxjAm zmAEV"
-  style={Object {}}
->
-  <button
-    className="sc-AxirZ hbiklZ sc-fzolEj cQeGQz"
-    onClick={[Function]}
-    style={Object {}}
-  >
-    <div
-      className="sc-AxjAm hyNcgC sc-fzoKki hCnWkY"
-      style={Object {}}
-    >
-      <p
-        className="sc-AxhUy fa-DQCS sc-fzqBkg jidxuV"
-        style={Object {}}
-      >
-        Start your search
-      </p>
-      <div
-        className="sc-AxjAm hyNcgC sc-fzqPZZ fhzjkX"
-        style={Object {}}
-      >
-        <div
-          className="sc-AxjAm hyNcgC sc-AxiKw dPbQki sc-fzoxKX jsphqP"
-          style={Object {}}
-        >
-          <svg
-            viewBox="0 0 56.966 56.966"
-          >
-            <path
-              d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23 s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92 c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17 s-17-7.626-17-17S14.61,6,23.984,6z"
-            />
-          </svg>
-        </div>
-      </div>
-    </div>
-  </button>
-</div>
+  </div>
+</button>
 `;

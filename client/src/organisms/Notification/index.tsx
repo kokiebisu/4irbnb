@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CookieNotification from 'organisms/Notification/notification.cookie';
+import { CookieNotification } from 'organisms/Notification/notification.cookie';
 
 export type NotificationProps = {
   type?: string;
@@ -10,7 +10,11 @@ interface mapProps {
   [key: string]: JSX.Element;
 }
 
-export const Notification = ({ type, ...props }: NotificationProps) => {
+interface Props {
+  type: string;
+}
+
+export const Notification: React.FC<Props> = ({ type, ...props }) => {
   if (!type) {
     return null;
   }
