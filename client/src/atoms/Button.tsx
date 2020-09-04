@@ -40,7 +40,7 @@ const Element = styled(motion.button)<StyledProps>`
     inverse &&
     css`
       border: 1px solid black;
-      background-color: transparent !important;
+      background-color: transparent;
     `};
   ${({ styles }) => styles}
   &:hover {
@@ -64,7 +64,6 @@ export const Button: React.FC<ButtonProps> = ({
   inverse,
   ...props
 }) => {
-  console.log();
   return (
     <Element
       styles={
