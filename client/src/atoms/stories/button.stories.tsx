@@ -36,12 +36,14 @@ export const cookie = Template.bind({});
 cookie.args = {
   styles: cookieButtonStyles,
   inverse: false,
+  children: <Text>OK</Text>,
 };
 
 export const cookieInverse = Template.bind({});
 cookieInverse.args = {
   styles: cookieButtonStyles,
   inverse: true,
+  children: <Text>Cookie Preferences</Text>,
 };
 
 export const search = Template.bind({});

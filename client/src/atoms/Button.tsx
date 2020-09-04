@@ -61,10 +61,18 @@ export const Button: React.FC<ButtonProps> = ({
       background-color: gray;
     `,
   },
+  inverse,
   ...props
 }) => {
   return (
-    <Element styles={styles.wrapper} {...props} onClick={onPress}>
+    <Element
+      styles={
+        inverse
+          ? [...styles.inverse, ...styles.wrapper]
+          : [...styles.normal, ...styles.wrapper]
+      }
+      {...props}
+      onClick={onPress}>
       {children}
     </Element>
   );
