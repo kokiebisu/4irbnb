@@ -10,7 +10,7 @@ interface mapProps {
   [key: string]: JSX.Element;
 }
 
-interface Props {
+export interface Props {
   type: string;
   styles: any;
   children: React.ReactNode;
