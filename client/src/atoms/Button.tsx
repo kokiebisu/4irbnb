@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text } from 'atoms';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -13,6 +14,8 @@ interface StyledProps {
   size?: 'sm' | 'md' | 'lg';
   inverse?: boolean;
 }
+
+export const primaryButtonStyles = {};
 
 const Element = styled(motion.button)<StyledProps>`
   font-size: 18px;
@@ -48,9 +51,20 @@ const Element = styled(motion.button)<StyledProps>`
   }
 `;
 
-export default ({ children, onPress, ...props }: ElementProps) => {
+export interface ButtonProps extends ElementProps, StyledProps {}
+
+export const Button: React.FC<ButtonProps> = ({
+  children = <Text>Button</Text>,
+  onPress,
+  styles = {
+    wrapper: css`
+      background-color: gray;
+    `,
+  },
+  ...props
+}) => {
   return (
-    <Element {...props} onClick={onPress}>
+    <Element styles={styles.wrapper} {...props} onClick={onPress}>
       {children}
     </Element>
   );

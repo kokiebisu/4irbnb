@@ -7,7 +7,9 @@ import { cookie } from 'organisms/Notification/stories/notification.cookie.stori
 
 describe('Cookie Notification', () => {
   it('renders text correctly', () => {
-    const { getByText } = render(<Notification {...cookie.args} />);
+    const { getByText } = render(
+      <Notification type='cookie' {...cookie.args} />
+    );
     expect(getByText('Your Privacy')).toBeInTheDocument();
   });
 });
