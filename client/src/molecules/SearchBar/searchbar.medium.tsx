@@ -6,15 +6,15 @@ import { colors } from 'styles';
 import { Box, Button, Icon, Text } from 'atoms';
 
 interface Props {
-  extend?: any;
+  styles?: any;
 }
 
-export default ({ extend }: Props) => {
+export const SearchbarMedium: React.FC<Props> = ({ styles }) => {
   return (
-    <Button styles={extend.wrapper} onPress={() => console.log('clicked')}>
-      <Box styles={extend.flex}>
-        <Icon styles={extend.icon} name='Search' />
-        <Text styles={extend.label}>Where are you going?</Text>
+    <Button styles={styles.wrapper} onPress={() => console.log('clicked')}>
+      <Box styles={styles.flex}>
+        <Icon styles={styles.icon} name='Search' />
+        <Text styles={styles.label}>Where are you going?</Text>
       </Box>
     </Button>
   );

@@ -10,6 +10,7 @@ interface ElementProps {
 const Element = styled.img`
   max-width: 100%;
   height: auto;
+  ${({ styles }) => styles}
 `;
 
 export interface Props extends ElementProps {}

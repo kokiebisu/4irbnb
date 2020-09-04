@@ -56,7 +56,11 @@ export interface Props extends ElementProps, StyledProps {}
 export const Button: React.FC<Props> = ({
   children = <Text>Button</Text>,
   onPress,
-  styles,
+  styles = {
+    wrapper: css`
+      background-color: gray;
+    `,
+  },
   ...props
 }) => {
   return (

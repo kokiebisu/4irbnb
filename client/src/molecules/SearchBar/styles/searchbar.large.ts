@@ -1,6 +1,6 @@
 import theme from 'styled-theming';
 import { css } from 'styled-components';
-import { colors } from 'global';
+import { colors } from 'styles';
 import { darken, lighten } from 'polished';
 import * as mixins from 'styles/mixins';
 
