@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 
 interface ElementProps {
   children?: React.ReactNode;
-  className?: string;
 }
 
 interface StyledProps {
@@ -14,6 +13,7 @@ interface StyledProps {
 const Element = styled(motion.p)<StyledProps>`
   margin: 0;
   font-family: 'Airbnb-Cereal';
+  ${({ styles }) => styles}
 `;
 
 interface TextProps extends ElementProps, StyledProps {}
