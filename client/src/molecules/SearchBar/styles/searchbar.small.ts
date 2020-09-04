@@ -1,14 +1,14 @@
 import theme from 'styled-theming';
-import { colors } from 'global';
+import { colors } from 'styles';
 import { darken, lighten } from 'polished';
 import { css } from 'styled-components';
 
 const searchbarColors = {
   primary: theme('mode', {
-    light: lighten(0.25, colors.black),
+    light: lighten(0.25, 'red'),
   }),
   border: theme('mode', {
-    light: lighten(0.4, colors.gray),
+    light: lighten(0.4, 'black'),
   }),
 };
 

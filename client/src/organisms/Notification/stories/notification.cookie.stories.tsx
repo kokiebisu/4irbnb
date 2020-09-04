@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { css } from 'styled-components';
 import { Box } from 'atoms';
 import { Notification } from 'organisms/Notification';
-import { cookieButtonStyles } from 'atoms/styles/button.styles';
+import { cookieNotificationStyles } from 'organisms/Notification/styles/notification.cookie.styles';
 
 export default {
   title: 'Design Systems/Notification',
@@ -15,14 +15,12 @@ interface Props {
   styles?: any;
 }
 
-const NotificationTemplate: Story<Props> = ({ styles, ...args }) => (
-  <Box styles={styles}>
-    <Notification {...args} />
-  </Box>
+const NotificationTemplate: Story<Props> = ({ ...args }) => (
+  <Notification {...args} />
 );
 
 export const cookie = NotificationTemplate.bind({});
 cookie.args = {
-  styles: cookieButtonStyles,
+  styles: cookieNotificationStyles,
   type: 'cookie',
 };

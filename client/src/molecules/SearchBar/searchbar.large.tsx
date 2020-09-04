@@ -5,7 +5,16 @@ import { Box, Button, Text, List } from 'atoms';
 import { AnimateSharedLayout, AnimatePresence, motion } from 'framer-motion';
 import { search } from 'atoms/stories/button.stories';
 
-const Content = ({ title, description, styles }: any) => {
+interface Props {
+  styles?: any;
+}
+
+interface ContentProps {
+  title: string;
+  description: string;
+}
+
+const Content: React.FC<ContentProps> = ({ title, description }, styles) => {
   return (
     <>
       <Box styles={styles.title}>
@@ -38,28 +47,13 @@ const Categories = () => {
 };
 
 const Category = ({ category, onClick, isSelected }: any) => {
-  const extend = {
-    title: css`
-      font-weight: 300;
-      font-size: 15.5px;
-      &:hover {
-        color: ${category};
-      }
-    `,
-  };
-  const spring = {
-    type: 'spring',
-    stiffness: 500,
-    damping: 30,
-  };
   return (
-    <List onClick={onClick}>
+    <List>
       {isSelected && (
         <motion.div
           // layoutId='outline'
           className='outline'
-          animate={{ borderBottom: '2px solid black' }}
-          transition={spring}>
+          animate={{ borderBottom: '2px solid black' }}>
           {category}
         </motion.div>
       )}
@@ -67,16 +61,9 @@ const Category = ({ category, onClick, isSelected }: any) => {
   );
 };
 
-export default ({ styles }: any) => {
-  const extend = {
-    search: css`
-      position: relative;
-      z-index: 10;
-    `,
-  };
+export const SearchbarLarge: React.FC<Props> = ({ styles }) => {
   return (
     <Box>
-      {/* <Categories /> */}
       <Box styles={styles.inputs}>
         <Box styles={styles.options}>
           <Box styles={styles.section} className='first'>

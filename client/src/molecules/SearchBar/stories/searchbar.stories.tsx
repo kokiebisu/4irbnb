@@ -1,14 +1,11 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { css } from 'styled-components';
-import { Box } from 'atoms';
 import { SearchBar } from 'molecules/SearchBar';
-import { sizes } from 'styles';
 import {
   searchbarSmall,
   searchbarMedium,
   searchbarLarge,
-} from 'molecules/Searchbar/styles';
+} from 'molecules/SearchBar/styles';
 
 export default {
   title: 'Design Systems/SearchBar',
@@ -22,9 +19,7 @@ interface Props {
   styles?: any;
 }
 
-const SearchBarTemplate: Story<Props> = ({ styles, ...args }) => (
-  <SearchBar {...args} />
-);
+const SearchBarTemplate: Story<Props> = (args) => <SearchBar {...args} />;
 
 export const small = SearchBarTemplate.bind({});
 small.args = {

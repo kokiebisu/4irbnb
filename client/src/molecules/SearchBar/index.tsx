@@ -1,23 +1,22 @@
 import React from 'react';
-
-// block
-import SearchBarLarge from 'molecules/SearchBar/searchbar.large';
-import SearchBarMedium from 'molecules/SearchBar/searchbar.medium';
-import SearchBarSmall from 'molecules/SearchBar/searchbar.small';
+import { SearchbarLarge } from 'molecules/SearchBar/searchbar.large';
+import { SearchbarMedium } from 'molecules/SearchBar/searchbar.medium';
+import { SearchbarSmall } from 'molecules/SearchBar/searchbar.small';
 
 type SearchBarProps = {
   type: string;
+  styles?: any;
 };
 
 interface mapProps {
   [key: string]: JSX.Element;
 }
 
-export const SearchBar = ({ type, ...props }: SearchBarProps) => {
+export const SearchBar: React.FC<SearchBarProps> = ({ type, ...props }) => {
   const types: mapProps = {
-    sm: <SearchBarSmall {...props} />,
-    md: <SearchBarMedium {...props} />,
-    lg: <SearchBarLarge {...props} />,
+    sm: <SearchbarSmall {...props} />,
+    md: <SearchbarMedium {...props} />,
+    lg: <SearchbarLarge {...props} />,
   };
   return types[type];
 };

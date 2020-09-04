@@ -1,34 +1,17 @@
 import React from 'react';
-import theme from 'styled-theming';
-import { css } from 'styled-components';
 import { Text, Box, Icon, Button } from 'atoms';
-import { colors } from 'styles';
-import { buttonColors, globeButtonStyles } from 'atoms/Button';
+import { buttonColors, globeButtonStyles } from 'atoms/styles/button.styles';
 import { globe, host } from 'atoms/stories/button.stories';
+import { landingHeaderColors } from 'organisms/Header/styles/header.landing.styles';
 
-const landingHeaderColors = {
-  fill: theme('mode', {
-    light: colors.white,
-  }),
-};
+interface Props {
+  styles?: any;
+}
 
-const landingHeaderStyles = {
-  wrapper: css`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  `,
-  left: css``,
-  middle: css`
-    display: flex;
-  `,
-  right: css``,
-};
-
-export default () => {
+export const LandingHeader: React.FC<Props> = ({ styles }) => {
   return (
-    <Box styles={landingHeaderStyles.wrapper}>
-      <Box styles={landingHeaderStyles.left}>
+    <Box styles={styles.wrapper}>
+      <Box styles={styles.left}>
         <Icon
           name='NoColorLogo'
           fillColor={landingHeaderColors.fill}
@@ -36,10 +19,10 @@ export default () => {
           height={32}
         />
       </Box>
-      <Box styles={landingHeaderStyles.middle}>
+      <Box styles={styles.middle}>
         <Text>header</Text>
       </Box>
-      <Box styles={landingHeaderStyles.right}>
+      <Box styles={styles.right}>
         <Button {...globe.args} onPress={() => console.log('pressed')}>
           <Box styles={globeButtonStyles.flex}>
             <Icon
