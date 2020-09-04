@@ -3,7 +3,7 @@ import { Text } from 'atoms';
 import styled, { css } from 'styled-components';
 import { motion } from 'framer-motion';
 
-export interface ElementProps extends StyledProps {
+interface ElementProps {
   children?: React.ReactNode;
   onPress: () => void;
   className?: string;
@@ -15,12 +15,11 @@ interface StyledProps {
   inverse?: boolean;
 }
 
-export const primaryButtonStyles = {};
-
 const Element = styled(motion.button)<StyledProps>`
   font-size: 18px;
   border: none;
   border-radius: 8px;
+  background-color: gray;
   ${({ size }) =>
     size === 'sm' &&
     css`
@@ -56,23 +55,11 @@ export interface ButtonProps extends ElementProps, StyledProps {}
 export const Button: React.FC<ButtonProps> = ({
   children = <Text>Button</Text>,
   onPress,
-  styles = {
-    wrapper: css`
-      background-color: gray;
-    `,
-  },
-  inverse,
+  styles,
   ...props
 }) => {
   return (
-    <Element
-      styles={
-        inverse
-          ? [styles.wrapper, styles.inverse]
-          : [styles.wrapper, styles.normal]
-      }
-      {...props}
-      onClick={onPress}>
+    <Element styles={styles && styles.wrapper} {...props} onClick={onPress}>
       {children}
     </Element>
   );

@@ -14,7 +14,7 @@ import {
 } from 'atoms/styles/button.styles';
 
 export default {
-  title: 'Design Systems/Button',
+  title: 'Design System/Button',
   component: Button,
   argTypes: { onPress: { action: 'clicked' }, label: { control: 'text' } },
 } as Meta;
@@ -42,15 +42,15 @@ cookie.args = {
 
 export const cookieInverse = Template.bind({});
 cookieInverse.args = {
-  styles: cookieButtonStyles,
   inverse: true,
+  styles: cookieButtonStyles,
   children: <Text>Cookie Preferences</Text>,
 };
 
 export const search = Template.bind({});
 search.args = {
-  styles: searchButtonStyles,
   inverse: false,
+  styles: searchButtonStyles,
   children: (
     <Box styles={searchButtonStyles.content}>
       <Icon styles={searchButtonStyles.icon} name='Search' />

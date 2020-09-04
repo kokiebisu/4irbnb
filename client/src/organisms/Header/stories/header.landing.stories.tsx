@@ -4,7 +4,7 @@ import { Header } from 'organisms/Header';
 import { landingHeaderStyles } from 'organisms/Header/styles/header.landing.styles';
 
 export default {
-  title: 'Design Systems/Header',
+  title: 'Design System/Header',
   component: Header,
 } as Meta;
 

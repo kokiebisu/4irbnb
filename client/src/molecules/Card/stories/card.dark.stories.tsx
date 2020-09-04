@@ -7,7 +7,7 @@ import { Box } from 'atoms';
 import cardimg from 'assets/img/darkcard-sm.png';
 
 export default {
-  title: 'Design Systems/Card/Dark',
+  title: 'Design System/Card/Dark',
   component: Card,
 } as Meta;
 
