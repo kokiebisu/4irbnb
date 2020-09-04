@@ -30,7 +30,7 @@ exports[`Storyshots Design Systems/Button Cookie Inverse 1`] = `
 
 exports[`Storyshots Design Systems/Button Globe 1`] = `
 <button
-  className="sc-AxirZ hbiklZ"
+  className="sc-AxirZ ksMEny"
   style={Object {}}
 >
   <div
@@ -71,7 +71,7 @@ exports[`Storyshots Design Systems/Button Globe 1`] = `
 
 exports[`Storyshots Design Systems/Button Host 1`] = `
 <button
-  className="sc-AxirZ emGKrx"
+  className="sc-AxirZ ksMEny"
   style={Object {}}
 >
   <p
@@ -547,7 +547,7 @@ exports[`Storyshots Design Systems/Header Landing 1`] = `
     style={Object {}}
   >
     <button
-      className="sc-AxirZ hbiklZ"
+      className="sc-AxirZ ksMEny"
       onClick={[Function]}
       style={Object {}}
     >
@@ -586,7 +586,7 @@ exports[`Storyshots Design Systems/Header Landing 1`] = `
       </div>
     </button>
     <button
-      className="sc-AxirZ emGKrx"
+      className="sc-AxirZ ksMEny"
       onClick={[Function]}
       style={Object {}}
     >

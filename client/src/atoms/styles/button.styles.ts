@@ -19,6 +19,9 @@ export const buttonColors = {
   menu: theme('mode', {
     light: colors.white,
   }),
+  transparentHover: theme('mode', {
+    light: darken(0.02, colors.white),
+  }),
   cookieIcon: theme('mode', {
     light: darken(0.05, colors.gray),
   }),
@@ -54,7 +57,7 @@ export const transparentButtonStyles = {
       outline: none;
     }
     &:hover {
-      background-color: red;
+      background-color: ${buttonColors.transparentHover};
     }
   `,
 };

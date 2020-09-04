@@ -77,7 +77,7 @@ menu.args = {
 
 export const globe = Template.bind({});
 globe.args = {
-  styles: globeButtonStyles,
+  styles: transparentButtonStyles,
   children: (
     <Box styles={globeButtonStyles.flex}>
       <Icon
