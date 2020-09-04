@@ -130,7 +130,7 @@ exports[`Storyshots Design Systems/Button Medium 1`] = `
 
 exports[`Storyshots Design Systems/Button Menu 1`] = `
 <button
-  className="sc-AxirZ edCxmd"
+  className="sc-AxirZ hMtGyW"
   style={Object {}}
 >
   <div
@@ -138,7 +138,7 @@ exports[`Storyshots Design Systems/Button Menu 1`] = `
     style={Object {}}
   >
     <div
-      className="sc-AxjAm icOptr sc-AxiKw ckjEdD"
+      className="sc-AxjAm iidXvB sc-AxiKw jrjtHh"
       style={Object {}}
     >
       <svg
@@ -150,7 +150,7 @@ exports[`Storyshots Design Systems/Button Menu 1`] = `
       </svg>
     </div>
     <div
-      className="sc-AxjAm kJVZaC sc-AxiKw iQYcju"
+      className="sc-AxjAm jMDNXA sc-AxiKw GPzKA"
       style={Object {}}
     >
       <svg
