@@ -64,12 +64,13 @@ export const Button: React.FC<ButtonProps> = ({
   inverse,
   ...props
 }) => {
+  console.log();
   return (
     <Element
       styles={
         inverse
-          ? [...styles.inverse, ...styles.wrapper]
-          : [...styles.normal, ...styles.wrapper]
+          ? [styles.wrapper, styles.inverse]
+          : [styles.wrapper, styles.normal]
       }
       {...props}
       onClick={onPress}>
