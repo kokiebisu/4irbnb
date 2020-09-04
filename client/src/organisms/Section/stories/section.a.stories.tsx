@@ -12,7 +12,7 @@ export default {
 
 interface Props {
   type: string;
-  styles?: any;
+  styles: any;
   children: React.ReactNode;
 }
 
