@@ -31,7 +31,7 @@ export const large = Template.bind({});
 large.args = { size: 'lg' };
 
 export const inverse = Template.bind({});
-inverse.args = { size: 'md', inverse: true };
+inverse.args = { inverse: true };
 
 export const cookie = Template.bind({});
 cookie.args = {
