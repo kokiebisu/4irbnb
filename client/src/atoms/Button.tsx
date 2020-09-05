@@ -23,7 +23,8 @@ const Element = styled(motion.button)<StyledProps>`
   ${({ size }) =>
     size === 'sm' &&
     css`
-      padding: 15px 22px;
+      padding: 8px 14px;
+      font-size: 14px;
     `};
   ${({ size }) =>
     size === 'md' &&

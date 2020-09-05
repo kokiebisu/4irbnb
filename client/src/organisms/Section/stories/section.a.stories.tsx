@@ -19,22 +19,27 @@ typeA.args = {
   type: 'a',
   children: (
     <Box styles={sectionAStyles.flex}>
-      <Box styles={sectionAStyles.left}>
-        <Text styles={sectionAStyles.title}>
+      <Box styles={sectionAStyles.title}>
+        <Text>
           We embrace a world where everyone belongs, and stand with
           #BlackLivesMatter.
         </Text>
-        <Button onPress={() => console.log('what')} {...inverse.args}>
+        <Button size='sm' onPress={() => console.log('what')} {...inverse.args}>
           Donate
         </Button>
       </Box>
-      <Box styles={sectionAStyles.right}>
-        <Text styles={sectionAStyles.description}>
+      <Box styles={sectionAStyles.description}>
+        <Text>
           No one should have to encounter racism—no matter who you are, where
           you’re from, who you love, or who you worship. Discrimination is not
           tolerated in our community. Which is why when you agree to book or
           host on Airbnb, you pledge not to tolerate it either.
         </Text>
+      </Box>
+      <Box styles={sectionAStyles.button}>
+        <Button size='sm' onPress={() => console.log('what')} {...inverse.args}>
+          Donate
+        </Button>
       </Box>
     </Box>
   ),
