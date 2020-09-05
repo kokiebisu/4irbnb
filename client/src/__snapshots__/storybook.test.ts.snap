@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Design Systems/Button Cookie 1`] = `
+exports[`Storyshots Design System/Button Cookie 1`] = `
 <button
-  className="sc-AxirZ iEqpAH"
+  className="sc-AxirZ fyoWfN"
   style={Object {}}
 >
   <p
@@ -14,9 +14,9 @@ exports[`Storyshots Design Systems/Button Cookie 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design Systems/Button Cookie Inverse 1`] = `
+exports[`Storyshots Design System/Button Cookie Inverse 1`] = `
 <button
-  className="sc-AxirZ dcfssc"
+  className="sc-AxirZ fbORLr"
   style={Object {}}
 >
   <p
@@ -28,9 +28,9 @@ exports[`Storyshots Design Systems/Button Cookie Inverse 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design Systems/Button Globe 1`] = `
+exports[`Storyshots Design System/Button Globe 1`] = `
 <button
-  className="sc-AxirZ dGBfQx"
+  className="sc-AxirZ djwZrt"
   style={Object {}}
 >
   <div
@@ -69,9 +69,9 @@ exports[`Storyshots Design Systems/Button Globe 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design Systems/Button Host 1`] = `
+exports[`Storyshots Design System/Button Host 1`] = `
 <button
-  className="sc-AxirZ dGBfQx"
+  className="sc-AxirZ djwZrt"
   style={Object {}}
 >
   <p
@@ -83,10 +83,9 @@ exports[`Storyshots Design Systems/Button Host 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design Systems/Button Inverse 1`] = `
+exports[`Storyshots Design System/Button Inverse 1`] = `
 <button
-  className="sc-AxirZ etJsUu"
-  size="md"
+  className="sc-AxirZ hxnrXg"
   style={Object {}}
 >
   <p
@@ -98,9 +97,9 @@ exports[`Storyshots Design Systems/Button Inverse 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design Systems/Button Large 1`] = `
+exports[`Storyshots Design System/Button Large 1`] = `
 <button
-  className="sc-AxirZ eFdsje"
+  className="sc-AxirZ hofAiY"
   size="lg"
   style={Object {}}
 >
@@ -113,9 +112,9 @@ exports[`Storyshots Design Systems/Button Large 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design Systems/Button Medium 1`] = `
+exports[`Storyshots Design System/Button Medium 1`] = `
 <button
-  className="sc-AxirZ etJsUu"
+  className="sc-AxirZ eWhMqM"
   size="md"
   style={Object {}}
 >
@@ -128,9 +127,9 @@ exports[`Storyshots Design Systems/Button Medium 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design Systems/Button Menu 1`] = `
+exports[`Storyshots Design System/Button Menu 1`] = `
 <button
-  className="sc-AxirZ hMtGyW"
+  className="sc-AxirZ cjpOIG"
   style={Object {}}
 >
   <div
@@ -165,9 +164,9 @@ exports[`Storyshots Design Systems/Button Menu 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design Systems/Button Search 1`] = `
+exports[`Storyshots Design System/Button Search 1`] = `
 <button
-  className="sc-AxirZ jUPAgx"
+  className="sc-AxirZ cQlWDt"
   style={Object {}}
 >
   <div
@@ -196,9 +195,9 @@ exports[`Storyshots Design Systems/Button Search 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design Systems/Button Small 1`] = `
+exports[`Storyshots Design System/Button Small 1`] = `
 <button
-  className="sc-AxirZ jhdZeP"
+  className="sc-AxirZ gXmSrZ"
   size="sm"
   style={Object {}}
 >
@@ -211,7 +210,7 @@ exports[`Storyshots Design Systems/Button Small 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design Systems/Card/Dark Large 1`] = `
+exports[`Storyshots Design System/Card/Dark Large 1`] = `
 <div
   className="sc-AxjAm hyNcgC sc-fzplWN kYbozR large"
   style={Object {}}
@@ -245,7 +244,7 @@ exports[`Storyshots Design Systems/Card/Dark Large 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design Systems/Card/Dark Medium 1`] = `
+exports[`Storyshots Design System/Card/Dark Medium 1`] = `
 <div
   className="sc-AxjAm hyNcgC sc-fzplWN kYbozR medium"
   style={Object {}}
@@ -279,7 +278,7 @@ exports[`Storyshots Design Systems/Card/Dark Medium 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design Systems/Card/Dark Small 1`] = `
+exports[`Storyshots Design System/Card/Dark Small 1`] = `
 <div
   className="sc-AxjAm hyNcgC sc-fzplWN kYbozR small"
   style={Object {}}
@@ -313,7 +312,7 @@ exports[`Storyshots Design Systems/Card/Dark Small 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design Systems/Card/Light Base 1`] = `
+exports[`Storyshots Design System/Card/Light Base 1`] = `
 <div
   className="sc-AxjAm hyNcgC sc-fznyAO exzcgI single"
   style={Object {}}
@@ -353,7 +352,7 @@ exports[`Storyshots Design Systems/Card/Light Base 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design Systems/Card/Light Multiple 1`] = `
+exports[`Storyshots Design System/Card/Light Multiple 1`] = `
 <div
   className="sc-AxjAm hyNcgC sc-fznyAO exzcgI multiple"
   style={Object {}}
@@ -439,7 +438,7 @@ exports[`Storyshots Design Systems/Card/Light Multiple 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design Systems/Card/Light No Title 1`] = `
+exports[`Storyshots Design System/Card/Light No Title 1`] = `
 <div
   className="sc-AxjAm hyNcgC sc-fznyAO exzcgI single"
   style={Object {}}
@@ -473,7 +472,7 @@ exports[`Storyshots Design Systems/Card/Light No Title 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design Systems/Card/Section Black Lives Matter 1`] = `
+exports[`Storyshots Design System/Card/Section Black Lives Matter 1`] = `
 <div
   className="sc-AxjAm hyNcgC sc-fznKkj kiJWii"
   style={Object {}}
@@ -509,7 +508,7 @@ exports[`Storyshots Design Systems/Card/Section Black Lives Matter 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design Systems/Header Landing 1`] = `
+exports[`Storyshots Design System/Header Landing 1`] = `
 <div
   className="sc-AxjAm iWIAfy"
   style={Object {}}
@@ -547,7 +546,7 @@ exports[`Storyshots Design Systems/Header Landing 1`] = `
     style={Object {}}
   >
     <button
-      className="sc-AxirZ dGBfQx"
+      className="sc-AxirZ djwZrt"
       onClick={[Function]}
       style={Object {}}
     >
@@ -586,7 +585,7 @@ exports[`Storyshots Design Systems/Header Landing 1`] = `
       </div>
     </button>
     <button
-      className="sc-AxirZ dGBfQx"
+      className="sc-AxirZ djwZrt"
       onClick={[Function]}
       style={Object {}}
     >
@@ -601,7 +600,7 @@ exports[`Storyshots Design Systems/Header Landing 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design Systems/Notification Cookie 1`] = `
+exports[`Storyshots Design System/Notification Cookie 1`] = `
 <div
   className="sc-AxjAm fIXBRY"
   style={Object {}}
@@ -653,7 +652,7 @@ exports[`Storyshots Design Systems/Notification Cookie 1`] = `
         style={Object {}}
       >
         <button
-          className="sc-AxirZ iEqpAH"
+          className="sc-AxirZ fyoWfN"
           onClick={[Function]}
           style={Object {}}
         >
@@ -665,7 +664,7 @@ exports[`Storyshots Design Systems/Notification Cookie 1`] = `
           </p>
         </button>
         <button
-          className="sc-AxirZ dcfssc"
+          className="sc-AxirZ fbORLr"
           onClick={[Function]}
           style={Object {}}
         >
@@ -682,7 +681,7 @@ exports[`Storyshots Design Systems/Notification Cookie 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design Systems/SearchBar Large 1`] = `
+exports[`Storyshots Design System/SearchBar Large 1`] = `
 <div
   className="sc-AxjAm hyNcgC"
   style={Object {}}
@@ -700,7 +699,7 @@ exports[`Storyshots Design Systems/SearchBar Large 1`] = `
         style={Object {}}
       >
         <button
-          className="sc-AxirZ hbiklZ first"
+          className="sc-AxirZ fWinbt first"
           onClick={[Function]}
           style={Object {}}
         >
@@ -733,7 +732,7 @@ exports[`Storyshots Design Systems/SearchBar Large 1`] = `
         style={Object {}}
       >
         <button
-          className="sc-AxirZ hbiklZ"
+          className="sc-AxirZ fWinbt"
           onClick={[Function]}
           style={Object {}}
         >
@@ -766,7 +765,7 @@ exports[`Storyshots Design Systems/SearchBar Large 1`] = `
         style={Object {}}
       >
         <button
-          className="sc-AxirZ hbiklZ"
+          className="sc-AxirZ fWinbt"
           onClick={[Function]}
           style={Object {}}
         >
@@ -799,7 +798,7 @@ exports[`Storyshots Design Systems/SearchBar Large 1`] = `
         style={Object {}}
       >
         <button
-          className="sc-AxirZ hbiklZ last"
+          className="sc-AxirZ fWinbt last"
           onClick={[Function]}
           style={Object {}}
         >
@@ -827,7 +826,7 @@ exports[`Storyshots Design Systems/SearchBar Large 1`] = `
           </div>
         </button>
         <button
-          className="sc-AxirZ jUPAgx"
+          className="sc-AxirZ cQlWDt"
           onClick={[Function]}
           style={Object {}}
         >
@@ -894,9 +893,9 @@ exports[`Storyshots Design Systems/SearchBar Large 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design Systems/SearchBar Medium 1`] = `
+exports[`Storyshots Design System/SearchBar Medium 1`] = `
 <button
-  className="sc-AxirZ hbiklZ"
+  className="sc-AxirZ fWinbt"
   onClick={[Function]}
   style={Object {}}
 >
@@ -926,9 +925,9 @@ exports[`Storyshots Design Systems/SearchBar Medium 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design Systems/SearchBar Small 1`] = `
+exports[`Storyshots Design System/SearchBar Small 1`] = `
 <button
-  className="sc-AxirZ hbiklZ"
+  className="sc-AxirZ fWinbt"
   onClick={[Function]}
   style={Object {}}
 >
@@ -961,4 +960,60 @@ exports[`Storyshots Design Systems/SearchBar Small 1`] = `
     </div>
   </div>
 </button>
+`;
+
+exports[`Storyshots Design System/Section Type A 1`] = `
+<div
+  className="sc-AxjAm hyNcgC"
+  style={Object {}}
+>
+  <div
+    className="sc-AxjAm RBIXC"
+    style={Object {}}
+  >
+    <div
+      className="sc-AxjAm cnZeyn"
+      style={Object {}}
+    >
+      <p
+        className="sc-AxhUy vsUGv"
+        style={Object {}}
+      >
+        We embrace a world where everyone belongs, and stand with #BlackLivesMatter.
+      </p>
+      <button
+        className="sc-AxirZ ehBMzg"
+        onClick={[Function]}
+        size="sm"
+        style={Object {}}
+      >
+        Donate
+      </button>
+    </div>
+    <div
+      className="sc-AxjAm jrRtw"
+      style={Object {}}
+    >
+      <p
+        className="sc-AxhUy vsUGv"
+        style={Object {}}
+      >
+        No one should have to encounter racism—no matter who you are, where you’re from, who you love, or who you worship. Discrimination is not tolerated in our community. Which is why when you agree to book or host on Airbnb, you pledge not to tolerate it either.
+      </p>
+    </div>
+    <div
+      className="sc-AxjAm dxnUiT"
+      style={Object {}}
+    >
+      <button
+        className="sc-AxirZ ehBMzg"
+        onClick={[Function]}
+        size="sm"
+        style={Object {}}
+      >
+        Donate
+      </button>
+    </div>
+  </div>
+</div>
 `;
