@@ -1,9 +1,58 @@
 import React from 'react';
 import styles from 'styles/index.module.scss';
 import { MagnifyGlass, Lock } from '../components/svg/icon';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useToggleDispatch, useToggleState } from '../context/toggle';
 
-const Index = () => {
+const PrivacyModal = () => {
+  const toggleDispatch = useToggleDispatch();
+  return (
+    <motion.div
+      exit={{ opacity: 0 }}
+      initial={{ y: 25 }}
+      animate={{ y: 0 }}
+      className={styles['modal']}>
+      <div className={styles['modal__content']}>
+        <div className={styles['modal__title']}>
+          <div className={styles['modal__title--text']}>Your Privacy</div>
+          <div className={styles['modal__title--icon']}>
+            <Lock width={16} fill='#428BFF' />
+          </div>
+        </div>
+        <div className={styles['modal__description']}>
+          <p>
+            We use cookies to help personalize content, tailor and measure ads,
+            and provide a safer experience. By navigating the site, you agree to
+            the use of cookies to collect information on and off Airbnb. Read
+            our Cookie Policy to learn more or go to Cookie Preferences to
+            manage your settings.
+          </p>
+        </div>
+        <motion.div className={styles['modal__button']}>
+          <motion.button
+            whileTap={{ scale: 0.98 }}
+            onClick={() => toggleDispatch({ type: 'toggle_privacy' })}
+            className={styles['button--save']}>
+            Save Settings
+          </motion.button>
+        </motion.div>
+        <motion.div className={styles['modal__button']}>
+          <motion.button
+            whileTap={{ scale: 0.98 }}
+            onClick={() => console.log('pressed')}
+            className={styles['button--cookie']}>
+            Cookie Preferences
+          </motion.button>
+        </motion.div>
+      </div>
+    </motion.div>
+  );
+};
+
+const HomePage = () => {
+  const toggleState = useToggleState();
+  console.log('togglestate', toggleState);
+
   return (
     <>
       <aside className={styles['notice']}>
@@ -47,44 +96,12 @@ const Index = () => {
             <a>Explore nearby</a>
           </div>
         </div>
-        <div className={styles['modal']}>
-          <div className={styles['modal__content']}>
-            <div className={styles['modal__title']}>
-              <div className={styles['modal__title--text']}>Your Privacy</div>
-              <div className={styles['modal__title--icon']}>
-                <Lock width={16} fill='#428BFF' />
-              </div>
-            </div>
-            <div className={styles['modal__description']}>
-              <p>
-                We use cookies to help personalize content, tailor and measure
-                ads, and provide a safer experience. By navigating the site, you
-                agree to the use of cookies to collect information on and off
-                Airbnb. Read our Cookie Policy to learn more or go to Cookie
-                Preferences to manage your settings.
-              </p>
-            </div>
-            <motion.div className={styles['modal__button']}>
-              <motion.button
-                whileTap={{ scale: 0.98 }}
-                onClick={() => console.log('pressed')}
-                className={styles['button--save']}>
-                Save Settings
-              </motion.button>
-            </motion.div>
-            <motion.div className={styles['modal__button']}>
-              <motion.button
-                whileTap={{ scale: 0.98 }}
-                onClick={() => console.log('pressed')}
-                className={styles['button--cookie']}>
-                Cookie Preferences
-              </motion.button>
-            </motion.div>
-          </div>
-        </div>
+        <AnimatePresence>
+          {toggleState.privacy && <PrivacyModal />}
+        </AnimatePresence>
       </div>
     </>
   );
 };
 
-export default Index;
+export default HomePage;
