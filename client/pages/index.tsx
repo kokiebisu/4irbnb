@@ -1,8 +1,10 @@
 import React from 'react';
 import styles from 'styles/index.module.scss';
-import { MagnifyGlass, Lock } from '../components/svg/icon';
+import { MagnifyGlass, Lock, Saved, Login } from '../components/svg/icon';
+import { MenuBarLogo } from '../components/svg/logo';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useToggleDispatch, useToggleState } from '../context/toggle';
+import Link from 'next/link';
 
 const PrivacyModal = () => {
   const toggleDispatch = useToggleDispatch();
@@ -46,6 +48,39 @@ const PrivacyModal = () => {
         </motion.div>
       </div>
     </motion.div>
+  );
+};
+
+const MenuBar = () => {
+  const items = [
+    { component: <MenuBarLogo width={25} />, name: 'Explore', selected: true },
+    { component: <Saved width={25} />, name: 'Saved', selected: false },
+    { component: <Login width={25} />, name: 'Log in', selected: false },
+  ];
+  return (
+    <div className={styles['menubar']}>
+      {items.map((item) => {
+        return (
+          <Link href='/'>
+            <a>
+              <div
+                className={
+                  item.selected
+                    ? [styles['menubar__item'], styles['selected']].join(' ')
+                    : styles['menubar__item']
+                }>
+                <div className={styles['menubar__item--logo']}>
+                  {item.component}
+                </div>
+                <div className={styles['menubar__item--text']}>
+                  <p>{item.name}</p>
+                </div>
+              </div>
+            </a>
+          </Link>
+        );
+      })}
+    </div>
   );
 };
 
@@ -96,6 +131,8 @@ const HomePage = () => {
             <a>Explore nearby</a>
           </div>
         </div>
+        {/* Contenxt */}
+        <MenuBar />
         <AnimatePresence>
           {toggleState.privacy && <PrivacyModal />}
         </AnimatePresence>
