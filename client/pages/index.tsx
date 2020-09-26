@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from 'styles/index.module.scss';
-import { MagnifyGlass } from 'components/svg/icon';
+import { MagnifyGlass, Lock } from '../components/svg/icon';
 
 const Index = () => {
   return (
@@ -44,6 +44,39 @@ const Index = () => {
           </div>
           <div className={styles['explore__button']}>
             <a>Explore nearby</a>
+          </div>
+        </div>
+        <div className={styles['modal']}>
+          <div className={styles['modal__content']}>
+            <div className={styles['modal__title']}>
+              <div className={styles['modal__title--text']}>Your Privacy</div>
+              <div className={styles['modal__title--icon']}>
+                <Lock width={16} fill='#428BFF' />
+              </div>
+            </div>
+            <div className={styles['modal__description']}>
+              <p>
+                We use cookies to help personalize content, tailor and measure
+                ads, and provide a safer experience. By navigating the site, you
+                agree to the use of cookies to collect information on and off
+                Airbnb. Read our Cookie Policy to learn more or go to Cookie
+                Preferences to manage your settings.
+              </p>
+            </div>
+            <div className={styles['modal__button']}>
+              <button
+                onClick={() => console.log('pressed')}
+                className={styles['button--save']}>
+                Save Settings
+              </button>
+            </div>
+            <div className={styles['modal__button']}>
+              <button
+                onClick={() => console.log('pressed')}
+                className={styles['button--cookie']}>
+                Cookie Preferences
+              </button>
+            </div>
           </div>
         </div>
       </div>

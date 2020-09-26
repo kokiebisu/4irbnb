@@ -79,3 +79,75 @@
     }
   }
 }
+
+.modal {
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
+  margin: 20px;
+  display: block;
+  z-index: 9999;
+
+  &__content {
+    margin: 28px 25px;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    margin: 6px 0;
+
+    &--text {
+      margin-right: 10px;
+    }
+
+    &--icon {
+      position: relative;
+      top: 1px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    & p {
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.5;
+      color: #505050;
+    }
+  }
+
+  &__button {
+    margin: 6px 0;
+  }
+}
+
+.button {
+  &--save {
+    color: white;
+    background-color: black;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 300;
+    width: 100%;
+    padding: 13px 0;
+  }
+
+  &--cookie {
+    color: black;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 300;
+    width: 100%;
+    padding: 13px 0;
+
+    &:hover {
+      background-color: #f3f3f3;
+    }
+  }
+}
