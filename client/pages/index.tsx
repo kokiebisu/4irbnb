@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from 'styles/index.module.scss';
 import { MagnifyGlass, Lock } from '../components/svg/icon';
+import { motion } from 'framer-motion';
 
 const Index = () => {
   return (
@@ -63,20 +64,22 @@ const Index = () => {
                 Preferences to manage your settings.
               </p>
             </div>
-            <div className={styles['modal__button']}>
-              <button
+            <motion.div className={styles['modal__button']}>
+              <motion.button
+                whileTap={{ scale: 0.98 }}
                 onClick={() => console.log('pressed')}
                 className={styles['button--save']}>
                 Save Settings
-              </button>
-            </div>
-            <div className={styles['modal__button']}>
-              <button
+              </motion.button>
+            </motion.div>
+            <motion.div className={styles['modal__button']}>
+              <motion.button
+                whileTap={{ scale: 0.98 }}
                 onClick={() => console.log('pressed')}
                 className={styles['button--cookie']}>
                 Cookie Preferences
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
           </div>
         </div>
       </div>
