@@ -9,13 +9,13 @@
 }
 
 .background {
-  height: 700px;
+  height: 765px;
 }
 
 .image {
   width: 100%;
   height: 100%;
-  max-height: 700px;
+  max-height: 765px;
   position: absolute;
   background-size: cover;
 
@@ -289,6 +289,20 @@
     color: white;
     font-weight: 300;
   }
+
+  &__button {
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 8px;
+
+    & a {
+      display: block;
+      color: white;
+      font-size: 14px;
+      padding: 6px 15px;
+    }
+  }
 }
 
 .blm {
@@ -313,12 +327,14 @@
   }
 
   &__button {
+    display: inline-block;
     margin-top: 25px;
     margin-bottom: 40px;
     & a {
+      display: block;
       font-size: 14px;
       font-weight: 500;
-      border-radius: 10px;
+      border-radius: 6px;
       padding: 6px 14px;
       border: 1px solid black;
     }
@@ -400,6 +416,57 @@
 
   &__item {
     margin: 15px 0;
+    & a {
+      font-size: 14px;
+      font-weight: 300;
+    }
+  }
+
+  &__others {
+  }
+
+  &__buttons {
+    display: flex;
+    margin: 20px 0;
+  }
+
+  &__button {
+    & button {
+      display: flex;
+      align-items: center;
+      border: none;
+      background-color: transparent;
+      margin-right: 10px;
+
+      & svg {
+        margin-right: 5px;
+      }
+
+      & p {
+        color: black;
+        font-size: 14px;
+        margin-right: 7px;
+
+        &:last-child {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__rights {
+    & p {
+      font-size: 14px;
+      font-weight: 300;
+    }
+  }
+
+  &__services {
+    display: flex;
+  }
+
+  &__service {
+    margin-right: 10px;
     & a {
       font-size: 14px;
       font-weight: 300;
