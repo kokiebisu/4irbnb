@@ -9,8 +9,14 @@
 }
 
 .background {
+  height: 700px;
+}
+
+.image {
   width: 100%;
   height: 100%;
+  max-height: 700px;
+  position: absolute;
   background-size: cover;
 
   & img {
@@ -205,5 +211,165 @@
     & p {
       color: #f64f6f;
     }
+  }
+}
+
+.category-section {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  max-width: 1600px;
+  padding: 0 24px;
+  margin: 25px 0 50px 0;
+  &__carousel {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: mandatory;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin: 0 -24px;
+    padding: 4px 24px 4px;
+  }
+
+  &__card {
+    border-radius: 15px;
+    width: 270px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    &--img {
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      width: 100%;
+
+      & img {
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+      }
+    }
+
+    &--title {
+      padding: 10px 15px 0 15px;
+
+      & h3 {
+        color: #404040;
+        font-size: 17px;
+        font-weight: 500;
+      }
+    }
+
+    &--description {
+      padding: 5px 15px 15px 15px;
+
+      & p {
+        font-size: 15px;
+        font-weight: 100;
+        color: #757575;
+      }
+    }
+  }
+}
+
+.experiences {
+  background-color: black;
+
+  &__content {
+    padding: 25px;
+  }
+
+  &__title {
+    & h3 {
+      font-weight: 300;
+      color: white;
+      font-size: 22px;
+    }
+  }
+
+  &__description {
+    color: white;
+    font-weight: 300;
+  }
+}
+
+.blm {
+  &__content {
+    padding: 22px;
+  }
+
+  &__title {
+    & h3 {
+      color: #222222;
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+
+  &__description {
+    margin-top: 15px;
+    & p {
+      color: #a2a2a2;
+      font-weight: 300;
+    }
+  }
+
+  &__button {
+    margin-top: 25px;
+    margin-bottom: 40px;
+    & a {
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 10px;
+      padding: 6px 14px;
+      border: 1px solid black;
+    }
+  }
+}
+
+.destinations {
+  &__content {
+    padding: 22px;
+  }
+  &__title {
+    & h3 {
+      color: #222222;
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+
+  &__categories {
+    padding: 15px 0;
+    display: grid;
+    grid-auto-flow: column;
+    max-width: 1600px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-bottom: 1px solid #dddddd;
+    column-gap: 25px;
+  }
+
+  &__category {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  &__cities {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.destination {
+  padding: 15px 0;
+  &__city {
+    font-size: 14px;
+    font-weight: 300;
+    color: #363636;
+  }
+
+  &__state {
+    font-size: 14px;
+    font-weight: 300;
+    color: #7c7c7c;
   }
 }
