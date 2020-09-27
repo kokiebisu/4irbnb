@@ -32,4 +32,10 @@ p {
 button {
   cursor: pointer;
   font-family: 'AirbnbCereal';
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  max-height: auto;
 }
