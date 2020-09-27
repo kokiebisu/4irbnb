@@ -334,10 +334,114 @@ const DestinationTrips = () => {
 };
 
 const Footer = () => {
-  return <div>this is footer</div>;
+  const sections = [
+    {
+      name: 'About',
+      items: [
+        { url: '#', name: 'How Airbnb works' },
+        { url: '#', name: 'Newsroom' },
+        { url: '#', name: 'Airbnb Plus' },
+        { url: '#', name: 'Airbnb Luxe' },
+        { url: '#', name: 'Hotel Tonight' },
+        { url: '#', name: 'Airbnb for Work' },
+        { url: '#', name: 'Olympics' },
+        { url: '#', name: 'Careers' },
+      ],
+    },
+    {
+      name: 'Community',
+      items: [
+        { url: '#', name: 'Diversity & Belonging' },
+        { url: '#', name: 'Accessibility' },
+        { url: '#', name: 'Airbnb Associates' },
+        { url: '#', name: 'Frontline Stays' },
+        { url: '#', name: 'Invite friends' },
+      ],
+    },
+    {
+      name: 'Host',
+      items: [
+        { url: '#', name: 'Host your home' },
+        { url: '#', name: 'Host an Online Experience' },
+        { url: '#', name: 'Host an Experience' },
+        { url: '#', name: 'Message from CEO Brian Chesky' },
+        { url: '#', name: 'Responsible hosting' },
+        { url: '#', name: 'Open Homes' },
+        { url: '#', name: 'Resource Centre' },
+        { url: '#', name: 'Community Centre' },
+      ],
+    },
+    {
+      name: 'Support',
+      items: [
+        { url: '#', name: 'Updates for COVID-19' },
+        { url: '#', name: 'Help Centre' },
+        { url: '#', name: 'Cancellation options' },
+        { url: '#', name: 'Neighbourhood Support' },
+        { url: '#', name: 'Trust & Safety' },
+      ],
+    },
+  ];
+  return (
+    <footer className={styles['footer']}>
+      <div className={styles['footer__content']}>
+        <div className={styles['footer__sections']}>
+          {sections.map((section, index) => {
+            return (
+              <div key={index} className={styles['footer__section']}>
+                <div className={styles['footer__section--name']}>
+                  <h4>{section.name}</h4>
+                </div>
+                <div className='footer__section--items'>
+                  {section.items.map((item, index) => {
+                    return (
+                      <div className={styles['footer__item']} key={index}>
+                        <Link href={item.url}>
+                          <a>{item.name}</a>
+                        </Link>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div>
+          <div>
+            <div>
+              <button>
+                <p>English(CA)</p>
+              </button>
+            </div>
+            <div>
+              <button>
+                <p>$</p>
+                <p>CAD</p>
+              </button>
+            </div>
+          </div>
+          <div>
+            <p>&copy; 2020 Airbnb, Inc. All rights reserved</p>
+          </div>
+          <div>
+            <div>
+              <a>Privacy</a>
+            </div>
+            <div>
+              <a>Terms</a>
+            </div>
+            <div>
+              <a>Sitemap</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
-const HomePage = () => {
+const LandingPage = () => {
   const toggleState = useToggleState();
 
   return (
@@ -395,4 +499,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default LandingPage;

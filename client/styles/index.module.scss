@@ -357,19 +357,52 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .destination {
+    padding: 15px 0;
+    &__city {
+      font-size: 14px;
+      font-weight: 300;
+      color: #363636;
+    }
+
+    &__state {
+      font-size: 14px;
+      font-weight: 300;
+      color: #7c7c7c;
+    }
+  }
 }
 
-.destination {
-  padding: 15px 0;
-  &__city {
-    font-size: 14px;
-    font-weight: 300;
-    color: #363636;
+.footer {
+  border-top: 1px solid #dddddd;
+  &__content {
+    padding: 22px;
   }
 
-  &__state {
-    font-size: 14px;
-    font-weight: 300;
-    color: #7c7c7c;
+  &__section {
+    border-bottom: 1px solid #dddddd;
+
+    &:not(first-child) {
+      margin-top: 20px;
+    }
+
+    &--name {
+      & h4 {
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+    }
+
+    &--items {
+    }
+  }
+
+  &__item {
+    margin: 15px 0;
+    & a {
+      font-size: 14px;
+      font-weight: 300;
+    }
   }
 }
