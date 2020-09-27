@@ -499,10 +499,10 @@ const LandingPage = () => {
       <BlackLivesMatter />
       <DestinationTrips />
       <Footer />
-      {/* <MenuBar />
-      {/* <AnimatePresence>
+      <MenuBar />
+      <AnimatePresence>
         {toggleState.privacy && <PrivacyModal />}
-      </AnimatePresence> */}
+      </AnimatePresence>
     </>
   );
 };

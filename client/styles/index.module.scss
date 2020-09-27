@@ -163,6 +163,7 @@
 }
 
 .menubar {
+  z-index: 30;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -171,6 +172,7 @@
   bottom: 0;
   background-color: white;
   width: 100%;
+  border-top: 1px solid #dddddd;
 
   &__item {
     display: flex;
