@@ -1,10 +1,19 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import styles from 'styles/index.module.scss';
 import { MagnifyGlass, Lock, Saved, Login } from '../components/svg/icon';
 import { MenuBarLogo } from '../components/svg/logo';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useToggleDispatch, useToggleState } from '../context/toggle';
+import { createReadStream } from 'fs';
+
+const CovidNotice = () => {
+  return (
+    <aside className={styles['notice']}>
+      <a href=''>Get the latest on our COVID-19 response</a>
+    </aside>
+  );
+};
 
 const PrivacyModal = () => {
   const toggleDispatch = useToggleDispatch();
@@ -84,16 +93,258 @@ const MenuBar = () => {
   );
 };
 
+const CategorySection = () => {
+  const cards = [
+    {
+      imgUrl: '/img/unique_stays.jpg',
+      title: 'Unique stays',
+      description: 'Spaces that are more than just a place to sleep.',
+    },
+    {
+      imgUrl: '/img/unique_stays.jpg',
+      title: 'Unique stays',
+      description: 'Spaces that are more than just a place to sleep.',
+    },
+    {
+      imgUrl: '/img/unique_stays.jpg',
+      title: 'Unique stays',
+      description: 'Spaces that are more than just a place to sleep.',
+    },
+  ];
+  return (
+    <div className={styles['category-section']}>
+      <div className={styles['category-section__carousel']}>
+        {cards.map((card, index) => {
+          return (
+            <div className={styles['category-section__card']}>
+              <div className={styles['category-section__card--img']}>
+                <img src={card.imgUrl} alt='unique stays' />
+              </div>
+              <div className={styles['category-section__card--title']}>
+                <h3>{card.title}</h3>
+              </div>
+              <div className={styles['category-section__card--description']}>
+                <p>{card.description}</p>
+              </div>
+            </div>
+          );
+        })}
+        <div
+          style={{
+            width: '12px',
+            backgroundColor: 'transparent',
+            height: '100%',
+          }}></div>
+      </div>
+    </div>
+  );
+};
+
+const OnlineExperiences = () => {
+  const cards = [
+    { imgUrl: '', name: 'Decode the science of 2020 with Bill Nye' },
+  ];
+  return (
+    <div className={styles['experiences']}>
+      <div className={styles['experiences__content']}>
+        <div className={styles['experiences__title']}>
+          <h3>Online Experiences: Field Trips</h3>
+        </div>
+        <div className={styles['experiences__description']}>
+          <p>
+            Join interactive, global adventures with inspiring, kid-friendly
+            hosts
+          </p>
+        </div>
+        <div>
+          {cards.map((card, index) => {
+            return <div>{card.name}</div>;
+          })}
+        </div>
+        <div>
+          <button>Explore all</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const BlackLivesMatter = () => {
+  return (
+    <div className={styles['blm']}>
+      <div className={styles['blm__content']}>
+        <div className={styles['blm__title']}>
+          <h3>
+            We embrace a world where veryone belongs, and stand with
+            #BlackLivesMatter.
+          </h3>
+        </div>
+        <div className={styles['blm__description']}>
+          <p>
+            No one should have to encounter racism—no matter who you are, where
+            you’re from, who you love, or who you worship. Discrimination is not
+            tolerated in our community. Which is why when you agree to book or
+            host on Airbnb, you pledge not to tolerate it either.
+          </p>
+        </div>
+        <div className={styles['blm__button']}>
+          <a>Donate</a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const DestinationTrips = () => {
+  const destinations = [
+    { city: 'New York', state: 'New York' },
+    { city: 'Phoenix', state: 'Arizona' },
+    {
+      city: 'Atlanta',
+      state: 'Georgia',
+    },
+    {
+      city: 'Chicago',
+      state: 'Illinois',
+    },
+    {
+      city: 'Miami',
+      state: 'Florida',
+    },
+    {
+      city: 'San Diego',
+      state: 'California',
+    },
+    {
+      city: 'San Francisco',
+      state: 'California',
+    },
+    {
+      city: 'Nashville',
+      state: 'Tennessee',
+    },
+    {
+      city: 'Seattle',
+      state: 'Washington',
+    },
+    {
+      city: 'Boston',
+      state: 'Massachusetts',
+    },
+    {
+      city: 'Philadelphia',
+      state: 'Pennsylvania',
+    },
+    {
+      city: 'Dallas',
+      state: 'Texas',
+    },
+    {
+      city: 'Austin',
+      state: 'Texas',
+    },
+    {
+      city: 'Washington',
+      state: 'District of Columbia',
+    },
+    {
+      city: 'New Orleans',
+      state: 'Louisiana',
+    },
+    {
+      city: 'San Antonio',
+      state: 'Texas',
+    },
+    {
+      city: 'Houston',
+      state: 'Texas',
+    },
+    {
+      city: 'Los Angeles',
+      state: 'California',
+    },
+    {
+      city: 'London',
+      state: 'United Kingdom',
+    },
+    {
+      city: 'Paris',
+      state: 'France',
+    },
+    {
+      city: 'Memphis',
+      state: 'Tennessee',
+    },
+    {
+      city: 'Rome',
+      state: 'Italy',
+    },
+    {
+      city: 'Barcelona',
+      state: 'Spain',
+    },
+    {
+      city: 'Amsterdam',
+      state: 'Netherlands',
+    },
+    {
+      city: 'Lexington',
+      state: 'Kentucky',
+    },
+  ];
+  const categories = [
+    { name: 'Destinations for arts & culture' },
+    { name: 'Destinations for outdoor adventure' },
+    { name: 'Mountain cabins' },
+    { name: 'Beach destinations' },
+    { name: 'Popular destinations' },
+  ];
+  return (
+    <div className={styles['destinations']}>
+      <div className={styles['destinations__content']}>
+        <div className={styles['destinations__title']}>
+          <h3>Destinations for future trips</h3>
+        </div>
+        <div className={styles['destinations__categories']}>
+          {categories.map((category, index) => {
+            return (
+              <div className={styles['destinations__category']} key={index}>
+                {category.name}
+              </div>
+            );
+          })}
+        </div>
+        <div className={styles['destinations__cities']}>
+          {destinations.map((destination, index) => {
+            return (
+              <div key={index} className={styles['destination']}>
+                <div className={styles['destination__city']}>
+                  {destination.city}
+                </div>
+                <div className={styles['destination__state']}>
+                  {destination.state}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Footer = () => {
+  return <div>this is footer</div>;
+};
+
 const HomePage = () => {
   const toggleState = useToggleState();
 
   return (
     <>
-      <aside className={styles['notice']}>
-        <a href=''>Get the latest on our COVID-19 response</a>
-      </aside>
-      <div>
-        <div className={styles['background']}>
+      <CovidNotice />
+      <div className={styles['background']}>
+        <div className={styles['image']}>
           <picture>
             <source
               srcSet='/img/background1200.webp'
@@ -130,12 +381,16 @@ const HomePage = () => {
             <a>Explore nearby</a>
           </div>
         </div>
-        {/* Contenxt */}
-        <MenuBar />
-        <AnimatePresence>
-          {toggleState.privacy && <PrivacyModal />}
-        </AnimatePresence>
       </div>
+      <CategorySection />
+      <OnlineExperiences />
+      <BlackLivesMatter />
+      <DestinationTrips />
+      {/* <MenuBar />
+      {/* <AnimatePresence>
+        {toggleState.privacy && <PrivacyModal />}
+      </AnimatePresence> */}
+      <Footer />
     </>
   );
 };
