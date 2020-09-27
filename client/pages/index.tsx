@@ -6,6 +6,7 @@ import { MenuBarLogo } from '../components/svg/logo';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useToggleDispatch, useToggleState } from '../context/toggle';
 import { createReadStream } from 'fs';
+import { Globe } from '../public/svg/logo';
 
 const CovidNotice = () => {
   return (
@@ -161,8 +162,10 @@ const OnlineExperiences = () => {
             return <div>{card.name}</div>;
           })}
         </div>
-        <div>
-          <button>Explore all</button>
+        <div className={styles['experiences__button']}>
+          <Link href='#'>
+            <a>Explore all</a>
+          </Link>
         </div>
       </div>
     </div>
@@ -188,7 +191,9 @@ const BlackLivesMatter = () => {
           </p>
         </div>
         <div className={styles['blm__button']}>
-          <a>Donate</a>
+          <Link href='#'>
+            <a>Donate</a>
+          </Link>
         </div>
       </div>
     </div>
@@ -407,32 +412,35 @@ const Footer = () => {
             );
           })}
         </div>
-        <div>
-          <div>
-            <div>
+        <div className={styles['footer__others']}>
+          <div className={styles['footer__buttons']}>
+            <div className={styles['footer__button']}>
               <button>
+                <Globe width={16} />
                 <p>English(CA)</p>
               </button>
             </div>
-            <div>
+            <div className={styles['footer__button']}>
               <button>
                 <p>$</p>
                 <p>CAD</p>
               </button>
             </div>
           </div>
-          <div>
+          <div className={styles['footer__rights']}>
             <p>&copy; 2020 Airbnb, Inc. All rights reserved</p>
           </div>
-          <div>
-            <div>
+          <div className={styles['footer__services']}>
+            <div className={styles['footer__service']}>
               <a>Privacy</a>
             </div>
-            <div>
-              <a>Terms</a>
+            <div>&nbsp;· &nbsp;</div>
+            <div className={styles['footer__service']}>
+              <a>&nbsp;Terms</a>
             </div>
-            <div>
-              <a>Sitemap</a>
+            <div>&nbsp;· &nbsp;</div>
+            <div className={styles['footer__service']}>
+              <a>&nbsp;Sitemap</a>
             </div>
           </div>
         </div>
@@ -490,11 +498,11 @@ const LandingPage = () => {
       <OnlineExperiences />
       <BlackLivesMatter />
       <DestinationTrips />
+      <Footer />
       {/* <MenuBar />
       {/* <AnimatePresence>
         {toggleState.privacy && <PrivacyModal />}
       </AnimatePresence> */}
-      <Footer />
     </>
   );
 };
