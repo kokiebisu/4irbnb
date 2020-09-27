@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Link from 'next/link';
 import styles from 'styles/index.module.scss';
 import { MagnifyGlass, Lock, Saved, Login } from '../components/svg/icon';
 import { MenuBarLogo } from '../components/svg/logo';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useToggleDispatch, useToggleState } from '../context/toggle';
-import Link from 'next/link';
 
 const PrivacyModal = () => {
   const toggleDispatch = useToggleDispatch();
@@ -86,7 +86,6 @@ const MenuBar = () => {
 
 const HomePage = () => {
   const toggleState = useToggleState();
-  console.log('togglestate', toggleState);
 
   return (
     <>
