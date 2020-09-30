@@ -241,21 +241,7 @@
 }
 
 .category-section {
-  position: relative;
-  z-index: 20;
-  width: 100%;
-  max-width: 1600px;
-  padding: 0 24px;
   margin: 25px 0 50px 0;
-
-  @media screen and (min-width: 745px) {
-    max-width: initial;
-    padding: 0 25px;
-  }
-
-  @media screen and (min-width: 1128px) {
-    padding: 0 75px;
-  }
 
   &__carousel {
     display: grid;
@@ -323,10 +309,7 @@
 
 .experiences {
   background-color: black;
-
-  &__content {
-    padding: 25px;
-  }
+  padding: 25px 0;
 
   &__title {
     & h3 {
@@ -357,9 +340,7 @@
 }
 
 .blm {
-  &__content {
-    padding: 22px;
-  }
+  padding: 22px 0;
 
   &__title {
     & h3 {
@@ -393,9 +374,8 @@
 }
 
 .destinations {
-  &__content {
-    padding: 22px;
-  }
+  padding: 22px 0;
+
   &__title {
     & h3 {
       color: #222222;
@@ -443,9 +423,7 @@
 
 .footer {
   border-top: 1px solid #dddddd;
-  &__content {
-    padding: 22px;
-  }
+  padding: 22px 0;
 
   &__section {
     border-bottom: 1px solid #dddddd;

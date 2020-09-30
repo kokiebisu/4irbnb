@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from 'styles/index.module.scss';
+import layout from 'styles/layout.module.scss';
 import { MagnifyGlass, Lock, Saved, Login } from '../components/svg/icon';
 import { MenuBarLogo } from '../components/svg/logo';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -147,23 +148,25 @@ const MenuBar = () => {
 const CategorySection = () => {
   return (
     <div className={styles['category-section']}>
-      <div className={styles['category-section__carousel']}>
-        {cards.map((card, index) => {
-          return (
-            <div className={styles['category-section__card']}>
-              <div className={styles['category-section__card--img']}>
-                <img src={card.imgUrl} alt='unique stays' />
+      <div className={layout['container']}>
+        <div className={styles['category-section__carousel']}>
+          {cards.map((card, index) => {
+            return (
+              <div className={styles['category-section__card']}>
+                <div className={styles['category-section__card--img']}>
+                  <img src={card.imgUrl} alt='unique stays' />
+                </div>
+                <div className={styles['category-section__card--title']}>
+                  <h3>{card.title}</h3>
+                </div>
+                <div className={styles['category-section__card--description']}>
+                  <p>{card.description}</p>
+                </div>
               </div>
-              <div className={styles['category-section__card--title']}>
-                <h3>{card.title}</h3>
-              </div>
-              <div className={styles['category-section__card--description']}>
-                <p>{card.description}</p>
-              </div>
-            </div>
-          );
-        })}
-        <div className={styles['category-section__card--space']}></div>
+            );
+          })}
+          <div className={styles['category-section__card--space']}></div>
+        </div>
       </div>
     </div>
   );
@@ -175,7 +178,7 @@ const OnlineExperiences = () => {
   ];
   return (
     <div className={styles['experiences']}>
-      <div className={styles['experiences__content']}>
+      <div className={layout['container']}>
         <div className={styles['experiences__title']}>
           <h3>Online Experiences: Field Trips</h3>
         </div>
@@ -203,7 +206,7 @@ const OnlineExperiences = () => {
 const BlackLivesMatter = () => {
   return (
     <div className={styles['blm']}>
-      <div className={styles['blm__content']}>
+      <div className={layout['container']}>
         <div className={styles['blm__title']}>
           <h3>
             We embrace a world where veryone belongs, and stand with
@@ -231,7 +234,7 @@ const BlackLivesMatter = () => {
 const DestinationTrips = () => {
   return (
     <div className={styles['destinations']}>
-      <div className={styles['destinations__content']}>
+      <div className={layout['container']}>
         <div className={styles['destinations__title']}>
           <h3>Destinations for future trips</h3>
         </div>
@@ -266,7 +269,7 @@ const DestinationTrips = () => {
 const Footer = () => {
   return (
     <footer className={styles['footer']}>
-      <div className={styles['footer__content']}>
+      <div className={layout['container']}>
         <div className={styles['footer__sections']}>
           {sections.map((section, index) => {
             return (
