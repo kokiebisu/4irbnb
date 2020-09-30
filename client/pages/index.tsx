@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from 'styles/index.module.scss';
 import layout from 'styles/layout.module.scss';
 import { MagnifyGlass, Lock, Saved, Login } from '../components/svg/icon';
-import { MenuBarLogo } from '../components/svg/logo';
+import { MenuBarLogo, NameLogo, NoNameLogo } from '../components/svg/logo';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useToggleDispatch, useToggleState } from '../context/toggle';
 import { Globe } from '../public/svg/logo';
@@ -40,16 +40,20 @@ const Banner = () => {
             </picture>
           </div>
         </div>
-        <div className={styles['header']}>
-          <SearchbarSmall />
-          <SearchbarMedium />
+        <div className={styles['banner__content']}>
+          <div className={styles['header__wrapper--sm']}>
+            <HeaderSmall />
+          </div>
+          <div className={styles['header__wrapper--md']}>
+            <Header />
+          </div>
         </div>
       </div>
     </>
   );
 };
 
-const SearchbarSmall = () => {
+const HeaderSmall = () => {
   return (
     <>
       <div className={layout['container']}>
@@ -78,8 +82,39 @@ const SearchbarSmall = () => {
   );
 };
 
-const SearchbarMedium = () => {
-  return <header></header>;
+const Header = () => {
+  return (
+    <div className={layout['container']}>
+      <header className={styles['searchbar']}>
+        <div className={styles['searchbar__nav']}>
+          <div>
+            <div className={styles['searchbar__logo--md']}>
+              <NoNameLogo fill='white' width={30} height={32} />
+            </div>
+            <div className={styles['searchbar__logo--lg']}>
+              <NameLogo fill='white' width={102} height={32} />
+            </div>
+          </div>
+          <div></div>
+        </div>
+      </header>
+      <div className={styles['searchbar__md']}></div>
+      <div className={styles['explore']}>
+        <div className={styles['explore__title']}>
+          <h3>Go Near</h3>
+        </div>
+        <div className={styles['explore__subtitle']}>
+          <p>
+            Settle in somewhere new. Discover nearby stays to live, work, or
+            just relax.
+          </p>
+        </div>
+        <div className={styles['explore__button']}>
+          <a>Explore nearby</a>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 const PrivacyModal = () => {
@@ -370,7 +405,9 @@ const LandingPage = () => {
         }}>
         <div style={{ position: 'sticky' }}></div>
       </div> */}
-      <MenuBar />
+      <div className={styles['menubar__wrapper']}>
+        <MenuBar />
+      </div>
       <AnimatePresence>
         {toggleState.privacy && <PrivacyModal />}
       </AnimatePresence>

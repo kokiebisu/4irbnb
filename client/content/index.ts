@@ -105,17 +105,17 @@ export const categories = [
 
 export const cards = [
   {
-    imgUrl: '/img/unique_stays.jpg',
+    imgUrl: '/img/categories1.webp',
     title: 'Unique stays',
     description: 'Spaces that are more than just a place to sleep.',
   },
   {
-    imgUrl: '/img/unique_stays.jpg',
+    imgUrl: '/img/categories2.webp',
     title: 'Unique stays',
     description: 'Spaces that are more than just a place to sleep.',
   },
   {
-    imgUrl: '/img/unique_stays.jpg',
+    imgUrl: '/img/categories3.webp',
     title: 'Unique stays',
     description: 'Spaces that are more than just a place to sleep.',
   },
