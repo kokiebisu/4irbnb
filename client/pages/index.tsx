@@ -41,30 +41,45 @@ const Banner = () => {
           </div>
         </div>
         <div className={styles['header']}>
-          <header className={styles['searchbar']}>
-            <div className={styles['searchbar__sm']}>
-              <MagnifyGlass stroke={'black'} strokeWidth={4} width={17} />
-              <input placeholder='Where are you going' />
-            </div>
-          </header>
-          <div className={styles['explore']}>
-            <div className={styles['explore__title']}>
-              <h3>Go Near</h3>
-            </div>
-            <div className={styles['explore__subtitle']}>
-              <p>
-                Settle in somewhere new. Discover nearby stays to live, work, or
-                just relax.
-              </p>
-            </div>
-            <div className={styles['explore__button']}>
-              <a>Explore nearby</a>
-            </div>
+          <SearchbarSmall />
+          <SearchbarMedium />
+        </div>
+      </div>
+    </>
+  );
+};
+
+const SearchbarSmall = () => {
+  return (
+    <>
+      <div className={layout['container']}>
+        <header className={styles['searchbar']}>
+          <div className={styles['searchbar__sm']}>
+            <MagnifyGlass stroke={'black'} strokeWidth={4} width={17} />
+            <input placeholder='Where are you going' />
+          </div>
+        </header>
+        <div className={styles['explore']}>
+          <div className={styles['explore__title']}>
+            <h3>Go Near</h3>
+          </div>
+          <div className={styles['explore__subtitle']}>
+            <p>
+              Settle in somewhere new. Discover nearby stays to live, work, or
+              just relax.
+            </p>
+          </div>
+          <div className={styles['explore__button']}>
+            <a>Explore nearby</a>
           </div>
         </div>
       </div>
     </>
   );
+};
+
+const SearchbarMedium = () => {
+  return <header></header>;
 };
 
 const PrivacyModal = () => {
