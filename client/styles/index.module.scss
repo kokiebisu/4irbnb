@@ -53,7 +53,7 @@
 }
 
 .searchbar {
-  padding: 15px 30px;
+  padding: 15px 0;
 
   &__sm {
     display: flex;
@@ -80,6 +80,14 @@
   position: relative;
   z-index: 20;
   text-align: center;
+  height: 75%;
+
+  @media screen and (min-width: 728px) {
+    text-align: initial;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
   &__title {
     margin: 10px 0;
@@ -92,24 +100,44 @@
 
   &__subtitle {
     color: white;
+    width: 100%;
+    text-align: center;
+
+    @media screen and (min-width: 728px) {
+      width: 300px;
+      text-align: initial;
+    }
 
     & p {
       font-size: 12px;
       font-weight: 300;
       letter-spacing: 0.3px;
+
+      @media screen and (min-width: 728px) {
+        font-size: 14px;
+      }
     }
   }
 
   &__button {
-    display: inline-block;
-    padding: 6px 16px;
-    border-radius: 6px;
-    background-color: white;
     margin: 15px 0;
+    display: flex;
+    justify-content: center;
+
+    @media screen and (min-width: 728px) {
+      justify-content: flex-start;
+    }
 
     & a {
+      width: 140px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       letter-spacing: 0.1px;
       font-size: 14px;
+      background-color: white;
+      border-radius: 6px;
     }
   }
 }
