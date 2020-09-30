@@ -20,6 +20,14 @@
   position: relative;
   padding-top: 133.3%;
 
+  @media screen and (min-width: 728px) {
+    padding-top: 100%;
+  }
+
+  @media screen and (min-width: 960px) {
+    padding-top: 45%;
+  }
+
   &__background {
     position: absolute;
     top: 0;
@@ -46,7 +54,6 @@
 
 .searchbar {
   padding: 15px 30px;
-  position: sticky;
 
   &__sm {
     display: flex;

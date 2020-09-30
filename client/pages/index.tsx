@@ -340,6 +340,18 @@ const LandingPage = () => {
         <DestinationTrips />
         <Footer />
       </div>
+      {/* <div
+        style={{
+          width: '100%',
+          backgroundColor: 'transparent',
+          position: 'sticky',
+          top: 0,
+          zIndex: 9999,
+          height: '100%',
+          padding: 25,
+        }}>
+        <div style={{ position: 'sticky' }}></div>
+      </div> */}
       <MenuBar />
       <AnimatePresence>
         {toggleState.privacy && <PrivacyModal />}
