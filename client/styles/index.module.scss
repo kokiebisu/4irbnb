@@ -2,53 +2,70 @@
   text-align: center;
   font-size: 14px;
   padding: 16px 24px;
+  z-index: 9999;
+  position: relative;
+  background-color: white;
 
   & a {
     text-decoration: underline;
   }
 }
 
-.background {
-  height: 765px;
+.page {
+  position: relative;
+  min-height: 100vh;
 }
 
-.image {
-  width: 100%;
-  height: 100%;
-  max-height: 765px;
-  position: absolute;
-  background-size: cover;
+.banner {
+  position: relative;
+  padding-top: 133.3%;
 
-  & img {
+  &__background {
     position: absolute;
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    &--picture {
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      display: inline-block;
+    }
   }
 }
 
 .header {
-  padding: 15px 30px;
-  position: sticky;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
-.searchbar__sm {
-  display: flex;
-  align-items: center;
-  padding: 10px 25px;
-  border-radius: 30px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 12px;
-  background-color: white;
+.searchbar {
+  padding: 15px 30px;
+  position: sticky;
 
-  & svg {
-    margin-right: 15px;
-  }
+  &__sm {
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 12px;
+    background-color: white;
 
-  & input {
-    border: none;
-    font-size: 16px;
-    outline: none;
-    font-weight: 300;
+    & svg {
+      margin-right: 15px;
+    }
+
+    & input {
+      border: none;
+      font-size: 16px;
+      outline: none;
+      font-weight: 300;
+    }
   }
 }
 
@@ -223,6 +240,16 @@
   max-width: 1600px;
   padding: 0 24px;
   margin: 25px 0 50px 0;
+
+  @media screen and (min-width: 745px) {
+    max-width: initial;
+    padding: 0 25px;
+  }
+
+  @media screen and (min-width: 1128px) {
+    padding: 0 75px;
+  }
+
   &__carousel {
     display: grid;
     grid-auto-flow: column;
@@ -239,6 +266,11 @@
     border-radius: 15px;
     width: 270px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+
+    @media screen and (min-width: 745px) {
+      width: auto;
+    }
+
     &--img {
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
@@ -267,6 +299,16 @@
         font-size: 15px;
         font-weight: 100;
         color: #757575;
+      }
+    }
+
+    &--space {
+      width: 12px;
+      background-color: transparent;
+      height: 100%;
+
+      @media screen and (min-width: 745px) {
+        width: 0;
       }
     }
   }

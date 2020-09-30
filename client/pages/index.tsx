@@ -5,14 +5,64 @@ import { MagnifyGlass, Lock, Saved, Login } from '../components/svg/icon';
 import { MenuBarLogo } from '../components/svg/logo';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useToggleDispatch, useToggleState } from '../context/toggle';
-import { createReadStream } from 'fs';
 import { Globe } from '../public/svg/logo';
+import { destinations, categories, cards, sections } from '../content/index';
 
 const CovidNotice = () => {
   return (
     <aside className={styles['notice']}>
       <a href=''>Get the latest on our COVID-19 response</a>
     </aside>
+  );
+};
+
+const Banner = () => {
+  return (
+    <>
+      <div className={styles['banner']}>
+        <div className={styles['banner__background']}>
+          <div className={styles['banner__background--picture']} style={{}}>
+            <picture>
+              <source
+                srcSet='/img/background1200.webp'
+                media='(min-width:1200px)'></source>
+              <source
+                srcSet='/img/background960.jpg'
+                media='(min-width:960px)'></source>
+              <source
+                srcSet='/img/background720.jpg'
+                media='(min-width:720px)'></source>
+              <source
+                srcSet='/img/background320.webp'
+                media='(min-width:320px)'></source>
+              <img src='/img/background_default.png' alt='background'></img>
+            </picture>
+          </div>
+        </div>
+        <div className={styles['header']}>
+          <header className={styles['searchbar']}>
+            <div className={styles['searchbar__sm']}>
+              <MagnifyGlass stroke={'black'} strokeWidth={4} width={17} />
+              <input placeholder='Where are you going' />
+            </div>
+          </header>
+          <div className={styles['explore']}>
+            <div className={styles['explore__title']}>
+              <h3>Go Near</h3>
+            </div>
+            <div className={styles['explore__subtitle']}>
+              <p>
+                Settle in somewhere new. Discover nearby stays to live, work, or
+                just relax.
+              </p>
+            </div>
+            <div className={styles['explore__button']}>
+              <a>Explore nearby</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
@@ -95,23 +145,6 @@ const MenuBar = () => {
 };
 
 const CategorySection = () => {
-  const cards = [
-    {
-      imgUrl: '/img/unique_stays.jpg',
-      title: 'Unique stays',
-      description: 'Spaces that are more than just a place to sleep.',
-    },
-    {
-      imgUrl: '/img/unique_stays.jpg',
-      title: 'Unique stays',
-      description: 'Spaces that are more than just a place to sleep.',
-    },
-    {
-      imgUrl: '/img/unique_stays.jpg',
-      title: 'Unique stays',
-      description: 'Spaces that are more than just a place to sleep.',
-    },
-  ];
   return (
     <div className={styles['category-section']}>
       <div className={styles['category-section__carousel']}>
@@ -130,12 +163,7 @@ const CategorySection = () => {
             </div>
           );
         })}
-        <div
-          style={{
-            width: '12px',
-            backgroundColor: 'transparent',
-            height: '100%',
-          }}></div>
+        <div className={styles['category-section__card--space']}></div>
       </div>
     </div>
   );
@@ -201,109 +229,6 @@ const BlackLivesMatter = () => {
 };
 
 const DestinationTrips = () => {
-  const destinations = [
-    { city: 'New York', state: 'New York' },
-    { city: 'Phoenix', state: 'Arizona' },
-    {
-      city: 'Atlanta',
-      state: 'Georgia',
-    },
-    {
-      city: 'Chicago',
-      state: 'Illinois',
-    },
-    {
-      city: 'Miami',
-      state: 'Florida',
-    },
-    {
-      city: 'San Diego',
-      state: 'California',
-    },
-    {
-      city: 'San Francisco',
-      state: 'California',
-    },
-    {
-      city: 'Nashville',
-      state: 'Tennessee',
-    },
-    {
-      city: 'Seattle',
-      state: 'Washington',
-    },
-    {
-      city: 'Boston',
-      state: 'Massachusetts',
-    },
-    {
-      city: 'Philadelphia',
-      state: 'Pennsylvania',
-    },
-    {
-      city: 'Dallas',
-      state: 'Texas',
-    },
-    {
-      city: 'Austin',
-      state: 'Texas',
-    },
-    {
-      city: 'Washington',
-      state: 'District of Columbia',
-    },
-    {
-      city: 'New Orleans',
-      state: 'Louisiana',
-    },
-    {
-      city: 'San Antonio',
-      state: 'Texas',
-    },
-    {
-      city: 'Houston',
-      state: 'Texas',
-    },
-    {
-      city: 'Los Angeles',
-      state: 'California',
-    },
-    {
-      city: 'London',
-      state: 'United Kingdom',
-    },
-    {
-      city: 'Paris',
-      state: 'France',
-    },
-    {
-      city: 'Memphis',
-      state: 'Tennessee',
-    },
-    {
-      city: 'Rome',
-      state: 'Italy',
-    },
-    {
-      city: 'Barcelona',
-      state: 'Spain',
-    },
-    {
-      city: 'Amsterdam',
-      state: 'Netherlands',
-    },
-    {
-      city: 'Lexington',
-      state: 'Kentucky',
-    },
-  ];
-  const categories = [
-    { name: 'Destinations for arts & culture' },
-    { name: 'Destinations for outdoor adventure' },
-    { name: 'Mountain cabins' },
-    { name: 'Beach destinations' },
-    { name: 'Popular destinations' },
-  ];
   return (
     <div className={styles['destinations']}>
       <div className={styles['destinations__content']}>
@@ -339,54 +264,6 @@ const DestinationTrips = () => {
 };
 
 const Footer = () => {
-  const sections = [
-    {
-      name: 'About',
-      items: [
-        { url: '#', name: 'How Airbnb works' },
-        { url: '#', name: 'Newsroom' },
-        { url: '#', name: 'Airbnb Plus' },
-        { url: '#', name: 'Airbnb Luxe' },
-        { url: '#', name: 'Hotel Tonight' },
-        { url: '#', name: 'Airbnb for Work' },
-        { url: '#', name: 'Olympics' },
-        { url: '#', name: 'Careers' },
-      ],
-    },
-    {
-      name: 'Community',
-      items: [
-        { url: '#', name: 'Diversity & Belonging' },
-        { url: '#', name: 'Accessibility' },
-        { url: '#', name: 'Airbnb Associates' },
-        { url: '#', name: 'Frontline Stays' },
-        { url: '#', name: 'Invite friends' },
-      ],
-    },
-    {
-      name: 'Host',
-      items: [
-        { url: '#', name: 'Host your home' },
-        { url: '#', name: 'Host an Online Experience' },
-        { url: '#', name: 'Host an Experience' },
-        { url: '#', name: 'Message from CEO Brian Chesky' },
-        { url: '#', name: 'Responsible hosting' },
-        { url: '#', name: 'Open Homes' },
-        { url: '#', name: 'Resource Centre' },
-        { url: '#', name: 'Community Centre' },
-      ],
-    },
-    {
-      name: 'Support',
-      items: [
-        { url: '#', name: 'Updates for COVID-19' },
-        { url: '#', name: 'Help Centre' },
-        { url: '#', name: 'Cancellation options' },
-        { url: '#', name: 'Neighbourhood Support' },
-        { url: '#', name: 'Trust & Safety' },
-      ],
-    },
-  ];
   return (
     <footer className={styles['footer']}>
       <div className={styles['footer__content']}>
@@ -453,57 +330,21 @@ const LandingPage = () => {
   const toggleState = useToggleState();
 
   return (
-    <>
+    <div className={styles['page']}>
       <CovidNotice />
-      <div className={styles['background']}>
-        <div className={styles['image']}>
-          <picture>
-            <source
-              srcSet='/img/background1200.webp'
-              media='(min-width:1200px)'></source>
-            <source
-              srcSet='/img/background960.jpg'
-              media='(min-width:960px)'></source>
-            <source
-              srcSet='/img/background720.jpg'
-              media='(min-width:720px)'></source>
-            <source
-              srcSet='/img/background320.webp'
-              media='(min-width:320px)'></source>
-            <img src='/img/background_default.png' alt='background'></img>
-          </picture>
-        </div>
-        <header className={styles['header']}>
-          <div className={styles['searchbar__sm']}>
-            <MagnifyGlass stroke={'black'} strokeWidth={4} width={17} />
-            <input placeholder='Where are you going' />
-          </div>
-        </header>
-        <div className={styles['explore']}>
-          <div className={styles['explore__title']}>
-            <h3>Go Near</h3>
-          </div>
-          <div className={styles['explore__subtitle']}>
-            <p>
-              Settle in somewhere new. Discover nearby stays to live, work, or
-              just relax.
-            </p>
-          </div>
-          <div className={styles['explore__button']}>
-            <a>Explore nearby</a>
-          </div>
-        </div>
+      <div>
+        <Banner />
+        <CategorySection />
+        <OnlineExperiences />
+        <BlackLivesMatter />
+        <DestinationTrips />
+        <Footer />
       </div>
-      <CategorySection />
-      <OnlineExperiences />
-      <BlackLivesMatter />
-      <DestinationTrips />
-      <Footer />
       <MenuBar />
       <AnimatePresence>
         {toggleState.privacy && <PrivacyModal />}
       </AnimatePresence>
-    </>
+    </div>
   );
 };
 
