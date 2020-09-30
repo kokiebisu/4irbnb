@@ -1,0 +1,171 @@
+export const destinations = [
+  { city: 'New York', state: 'New York' },
+  { city: 'Phoenix', state: 'Arizona' },
+  {
+    city: 'Atlanta',
+    state: 'Georgia',
+  },
+  {
+    city: 'Chicago',
+    state: 'Illinois',
+  },
+  {
+    city: 'Miami',
+    state: 'Florida',
+  },
+  {
+    city: 'San Diego',
+    state: 'California',
+  },
+  {
+    city: 'San Francisco',
+    state: 'California',
+  },
+  {
+    city: 'Nashville',
+    state: 'Tennessee',
+  },
+  {
+    city: 'Seattle',
+    state: 'Washington',
+  },
+  {
+    city: 'Boston',
+    state: 'Massachusetts',
+  },
+  {
+    city: 'Philadelphia',
+    state: 'Pennsylvania',
+  },
+  {
+    city: 'Dallas',
+    state: 'Texas',
+  },
+  {
+    city: 'Austin',
+    state: 'Texas',
+  },
+  {
+    city: 'Washington',
+    state: 'District of Columbia',
+  },
+  {
+    city: 'New Orleans',
+    state: 'Louisiana',
+  },
+  {
+    city: 'San Antonio',
+    state: 'Texas',
+  },
+  {
+    city: 'Houston',
+    state: 'Texas',
+  },
+  {
+    city: 'Los Angeles',
+    state: 'California',
+  },
+  {
+    city: 'London',
+    state: 'United Kingdom',
+  },
+  {
+    city: 'Paris',
+    state: 'France',
+  },
+  {
+    city: 'Memphis',
+    state: 'Tennessee',
+  },
+  {
+    city: 'Rome',
+    state: 'Italy',
+  },
+  {
+    city: 'Barcelona',
+    state: 'Spain',
+  },
+  {
+    city: 'Amsterdam',
+    state: 'Netherlands',
+  },
+  {
+    city: 'Lexington',
+    state: 'Kentucky',
+  },
+];
+
+export const categories = [
+  { name: 'Destinations for arts & culture' },
+  { name: 'Destinations for outdoor adventure' },
+  { name: 'Mountain cabins' },
+  { name: 'Beach destinations' },
+  { name: 'Popular destinations' },
+];
+
+export const cards = [
+  {
+    imgUrl: '/img/unique_stays.jpg',
+    title: 'Unique stays',
+    description: 'Spaces that are more than just a place to sleep.',
+  },
+  {
+    imgUrl: '/img/unique_stays.jpg',
+    title: 'Unique stays',
+    description: 'Spaces that are more than just a place to sleep.',
+  },
+  {
+    imgUrl: '/img/unique_stays.jpg',
+    title: 'Unique stays',
+    description: 'Spaces that are more than just a place to sleep.',
+  },
+];
+
+export const sections = [
+  {
+    name: 'About',
+    items: [
+      { url: '#', name: 'How Airbnb works' },
+      { url: '#', name: 'Newsroom' },
+      { url: '#', name: 'Airbnb Plus' },
+      { url: '#', name: 'Airbnb Luxe' },
+      { url: '#', name: 'Hotel Tonight' },
+      { url: '#', name: 'Airbnb for Work' },
+      { url: '#', name: 'Olympics' },
+      { url: '#', name: 'Careers' },
+    ],
+  },
+  {
+    name: 'Community',
+    items: [
+      { url: '#', name: 'Diversity & Belonging' },
+      { url: '#', name: 'Accessibility' },
+      { url: '#', name: 'Airbnb Associates' },
+      { url: '#', name: 'Frontline Stays' },
+      { url: '#', name: 'Invite friends' },
+    ],
+  },
+  {
+    name: 'Host',
+    items: [
+      { url: '#', name: 'Host your home' },
+      { url: '#', name: 'Host an Online Experience' },
+      { url: '#', name: 'Host an Experience' },
+      { url: '#', name: 'Message from CEO Brian Chesky' },
+      { url: '#', name: 'Responsible hosting' },
+      { url: '#', name: 'Open Homes' },
+      { url: '#', name: 'Resource Centre' },
+      { url: '#', name: 'Community Centre' },
+    ],
+  },
+  {
+    name: 'Support',
+    items: [
+      { url: '#', name: 'Updates for COVID-19' },
+      { url: '#', name: 'Help Centre' },
+      { url: '#', name: 'Cancellation options' },
+      { url: '#', name: 'Neighbourhood Support' },
+      { url: '#', name: 'Trust & Safety' },
+    ],
+  },
+];
