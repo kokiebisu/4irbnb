@@ -1,10 +1,10 @@
 .notice {
   text-align: center;
   font-size: 14px;
-  padding: 16px 24px;
+  padding: 20px 24px;
   z-index: 9999;
   position: relative;
-  background-color: white;
+  background-color: #f7f7f7;
 
   & a {
     text-decoration: underline;
@@ -77,6 +77,53 @@
   &__nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    &--right {
+      display: flex;
+    }
+  }
+
+  &__host {
+    & a {
+      color: white;
+      font-size: 14px;
+      padding: 12px 15px;
+      font-weight: 300;
+      border-radius: 30px;
+      display: inline-block;
+
+      &:hover {
+        background-color: rgba(125, 125, 125, 0.5);
+      }
+    }
+  }
+
+  &__globe {
+    & button {
+      display: flex;
+      align-items: center;
+      padding: 12px 15px;
+      border-radius: 30px;
+      background-color: transparent;
+      &:hover {
+        background-color: rgba(125, 125, 125, 0.5);
+      }
+    }
+
+    &--icon {
+      display: flex;
+      align-items: center;
+      margin-right: 6px;
+    }
+
+    &--arrow {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__menu {
   }
 
   &__sm {

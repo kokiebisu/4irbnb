@@ -2,11 +2,17 @@ import React from 'react';
 import Link from 'next/link';
 import styles from 'styles/index.module.scss';
 import layout from 'styles/layout.module.scss';
-import { MagnifyGlass, Lock, Saved, Login } from '../components/svg/icon';
-import { MenuBarLogo, NameLogo, NoNameLogo } from '../components/svg/logo';
+import {
+  MagnifyGlass,
+  Lock,
+  Saved,
+  Login,
+  Globe,
+  ChevronDown,
+} from 'public/svg/regular';
+import { MenuBarLogo, NameLogo, NoNameLogo } from 'public/svg/logo';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useToggleDispatch, useToggleState } from '../context/toggle';
-import { Globe } from '../public/svg/logo';
 import { destinations, categories, cards, sections } from '../content/index';
 
 const CovidNotice = () => {
@@ -95,7 +101,26 @@ const Header = () => {
               <NameLogo fill='white' width={102} height={32} />
             </div>
           </div>
-          <div></div>
+          <div className={styles['searchbar__nav--right']}>
+            <div className={styles['searchbar__host']}>
+              <Link href='#'>
+                <a>Become a host</a>
+              </Link>
+            </div>
+            <div className={styles['searchbar__globe']}>
+              <button onClick={() => console.log('clicked')}>
+                <div className={styles['searchbar__globe--icon']}>
+                  <Globe width={16} fill='white' />
+                </div>
+                <div className={styles['searchbar__globe--arrow']}>
+                  <ChevronDown width={8} fill='white' />
+                </div>
+              </button>
+            </div>
+            <div className={styles['searchbar__menu']}>
+              <button>menu</button>
+            </div>
+          </div>
         </div>
       </header>
       <div className={styles['searchbar__md']}></div>
@@ -170,9 +195,9 @@ const MenuBar = () => {
   ];
   return (
     <div className={styles['menubar']}>
-      {items.map((item) => {
+      {items.map((item, index) => {
         return (
-          <Link href='/'>
+          <Link key={index} href='/'>
             <a>
               <div
                 className={
@@ -202,7 +227,7 @@ const CategorySection = () => {
         <div className={styles['category-section__carousel']}>
           {cards.map((card, index) => {
             return (
-              <div className={styles['category-section__card']}>
+              <div key={index} className={styles['category-section__card']}>
                 <div className={styles['category-section__card--img']}>
                   <img src={card.imgUrl} alt='unique stays' />
                 </div>
@@ -240,7 +265,7 @@ const OnlineExperiences = () => {
         </div>
         <div>
           {cards.map((card, index) => {
-            return <div>{card.name}</div>;
+            return <div key={index}>{card.name}</div>;
           })}
         </div>
         <div className={styles['experiences__button']}>
