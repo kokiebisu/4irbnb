@@ -16,8 +16,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useToggleDispatch, useToggleState } from '../context/toggle';
 import { destinations, categories, cards, sections } from '../content/index';
 import { Avatar } from 'public/svg/original';
-import { Button } from 'components/atoms/button/button';
-import { globe } from 'components/atoms/button/button.globe.stories';
+import { Button } from 'components/atoms/button/button.component';
+import { globe, host } from 'components/atoms/button/button.stories';
 
 const CovidNotice = () => {
   return (
@@ -107,9 +107,7 @@ const Header = () => {
           </div>
           <div className={styles['searchbar__nav--right']}>
             <div className={styles['searchbar__host']}>
-              <Link href='#'>
-                <a>Become a host</a>
-              </Link>
+              <Button {...host.args} to='/' />
             </div>
             <div className={styles['searchbar__globe']}>
               <Button {...globe.args} onPress={() => console.log('clicked')} />
