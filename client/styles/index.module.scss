@@ -84,23 +84,6 @@
     }
   }
 
-  &__host {
-    display: inline-block;
-    height: min-content;
-    & a {
-      color: white;
-      font-size: 14px;
-      padding: 13px 15px;
-      font-weight: 300;
-      border-radius: 30px;
-      display: inline-block;
-
-      &:hover {
-        background-color: rgba(125, 125, 125, 0.5);
-      }
-    }
-  }
-
   &__globe {
     margin: 0 12px 0 8px;
 

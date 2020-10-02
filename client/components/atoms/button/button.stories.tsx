@@ -1,8 +1,12 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { Button } from 'components/atoms/button/button';
+import { Button } from 'components/atoms/button/button.component';
+import shape from 'styles/shape.module.scss';
+import color from 'styles/color.module.scss';
+import font from 'styles/font.module.scss';
 import layout from 'styles/layout.module.scss';
 import space from 'styles/space.module.scss';
+import button from 'components/atoms/button/button.module.scss';
 import { Globe, ChevronDown } from 'public/svg/regular';
 
 export default {
@@ -14,6 +18,7 @@ export default {
 interface ButtonProps {
   onPress: () => void;
   children: React.ReactNode;
+  to: any;
 }
 
 const ButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
@@ -29,5 +34,26 @@ globe.args = {
         <ChevronDown width={8} fill='white' />
       </div>
     </>
+  ),
+};
+
+export const host = ButtonTemplate.bind({});
+host.args = {
+  children: (
+    <a
+      className={[
+        shape['br-30'],
+        font['weight-300'],
+        font['size-14'],
+        color['c-white'],
+        layout['inline-block'],
+        space['p-t-13'],
+        space['p-b-13'],
+        space['p-l-13'],
+        space['p-r-13'],
+        button['hover-transparent'],
+      ].join(' ')}>
+      Become a host
+    </a>
   ),
 };
