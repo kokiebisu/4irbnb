@@ -17,13 +17,18 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   if (to) {
     return (
-      <Link href={to} passHref>
-        {children}
-      </Link>
+      <div data-testid='button'>
+        <Link href={to} passHref>
+          {children}
+        </Link>
+      </div>
     );
   } else {
     return (
-      <button className={button[extendsTo]} onClick={onPress}>
+      <button
+        data-testid='button'
+        className={button[extendsTo]}
+        onClick={onPress}>
         {children}
       </button>
     );
