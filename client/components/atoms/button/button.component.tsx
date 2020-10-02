@@ -25,10 +25,7 @@ export const Button: React.FC<ButtonProps> = ({
     );
   } else {
     return (
-      <button
-        data-testid='button'
-        className={button[extendsTo]}
-        onClick={onPress}>
+      <button data-testid='button' className={extendsTo} onClick={onPress}>
         {children}
       </button>
     );

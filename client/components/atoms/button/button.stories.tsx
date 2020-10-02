@@ -9,6 +9,7 @@ import space from '../../../styles/space.module.scss';
 import button from '../../../components/atoms/button/button.module.scss';
 import { Globe, ChevronDown } from '../../../public/svg/regular';
 import { ButtonProps } from './button.component';
+import { Avatar, Bars } from '../../../public/svg/original';
 
 export default {
   title: 'Design System/Atoms/Button',
@@ -20,7 +21,7 @@ const ButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const globe = ButtonTemplate.bind({});
 globe.args = {
-  extendsTo: 'transparent-btn',
+  extendsTo: [color['bg-transparent'], shape['br-30']].join(' '),
   children: (
     <div
       className={[
@@ -57,9 +58,33 @@ host.args = {
         space['p-b-13'],
         space['p-l-13'],
         space['p-r-13'],
-        button['transparent-btn'],
+        button['hover-transparent'],
       ].join(' ')}>
       Become a host
     </a>
+  ),
+};
+
+export const menu = ButtonTemplate.bind({});
+menu.args = {
+  extendsTo: [
+    layout['items-center'],
+    space['p-t-6'],
+    space['p-b-6'],
+    space['p-r-8'],
+    space['p-l-10'],
+    color['bg-white'],
+    shape['br-30'],
+    button['hover-shadow'],
+  ].join(' '),
+  children: (
+    <>
+      <div className={space['m-r-8']}>
+        <Bars fill='black' width={12} />
+      </div>
+      <div>
+        <Avatar width={30} fill='gray' />
+      </div>
+    </>
   ),
 };

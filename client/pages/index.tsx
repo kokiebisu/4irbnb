@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import styles from 'styles/index.module.scss';
 import layout from 'styles/layout.module.scss';
+import space from 'styles/space.module.scss';
 import {
   MagnifyGlass,
   Lock,
@@ -17,7 +18,7 @@ import { useToggleDispatch, useToggleState } from '../context/toggle';
 import { destinations, categories, cards, sections } from '../content/index';
 import { Avatar } from 'public/svg/original';
 import { Button } from 'components/atoms/button/button.component';
-import { globe, host } from 'components/atoms/button/button.stories';
+import { globe, host, menu } from 'components/atoms/button/button.stories';
 
 const CovidNotice = () => {
   return (
@@ -112,15 +113,8 @@ const Header = () => {
             <div className={styles['searchbar__globe']}>
               <Button {...globe.args} onPress={() => console.log('clicked')} />
             </div>
-            <div className={styles['searchbar__menu']}>
-              <button>
-                <div className={styles['searchbar__icon--bars']}>
-                  <Bars fill='black' width={12} />
-                </div>
-                <div className={styles['searchbar__icon--avatar']}>
-                  <Avatar width={30} fill='gray' />
-                </div>
-              </button>
+            <div>
+              <Button {...menu.args} onPress={() => console.log('clicked')} />
             </div>
           </div>
         </div>
