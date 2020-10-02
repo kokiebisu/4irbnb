@@ -20,6 +20,7 @@ import { Avatar } from 'public/svg/original';
 import { Button } from 'components/atoms/button/button.component';
 import {
   cookie,
+  cookieInverse,
   globe,
   host,
   menu,
@@ -175,12 +176,11 @@ const PrivacyModal = () => {
           />
         </motion.div>
         <motion.div className={styles['modal__button']}>
-          <motion.button
-            whileTap={{ scale: 0.98 }}
-            onClick={() => console.log('pressed')}
-            className={styles['button--cookie']}>
-            Cookie Preferences
-          </motion.button>
+          <Button
+            tap={{ scale: 0.98 }}
+            {...cookieInverse.args}
+            onPress={() => toggleDispatch({ type: 'toggle_privacy' })}
+          />
         </motion.div>
       </div>
     </motion.div>
@@ -418,18 +418,6 @@ const LandingPage = () => {
         <DestinationTrips />
         <Footer />
       </div>
-      {/* <div
-        style={{
-          width: '100%',
-          backgroundColor: 'transparent',
-          position: 'sticky',
-          top: 0,
-          zIndex: 9999,
-          height: '100%',
-          padding: 25,
-        }}>
-        <div style={{ position: 'sticky' }}></div>
-      </div> */}
       <div className={styles['menubar__wrapper']}>
         <MenuBar />
       </div>

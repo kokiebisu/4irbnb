@@ -105,3 +105,19 @@ cookie.args = {
   children: <p>Save Settings</p>,
   tap: { scale: 0.98 },
 };
+
+export const cookieInverse = ButtonTemplate.bind({});
+cookieInverse.args = {
+  extendsTo: [
+    space['p-t-13'],
+    space['p-b-13'],
+    font['weight--300'],
+    color['bg--transparent'],
+    color['border--black'],
+    shape['br-6'],
+    shape['w-full'],
+    font['size--16'],
+  ].join(' '),
+  children: <p>Cookie Preferences</p>,
+  tap: { scale: 0.98 },
+};
