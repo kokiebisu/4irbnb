@@ -8,7 +8,8 @@
     "start": "next start",
     "storybook": "start-storybook -p 6006 -c .storybook watch-css -s .",
     "build-storybook": "build-storybook",
-    "test": "jest"
+    "test": "jest",
+    "snapshot": "jest --updateSnapshot"
   },
   "dependencies": {
     "framer-motion": "^2.7.5",

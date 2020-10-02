@@ -18,7 +18,12 @@ import { useToggleDispatch, useToggleState } from '../context/toggle';
 import { destinations, categories, cards, sections } from '../content/index';
 import { Avatar } from 'public/svg/original';
 import { Button } from 'components/atoms/button/button.component';
-import { globe, host, menu } from 'components/atoms/button/button.stories';
+import {
+  cookie,
+  globe,
+  host,
+  menu,
+} from 'components/atoms/button/button.stories';
 
 const CovidNotice = () => {
   return (
@@ -163,12 +168,11 @@ const PrivacyModal = () => {
           </p>
         </div>
         <motion.div className={styles['modal__button']}>
-          <motion.button
-            whileTap={{ scale: 0.98 }}
-            onClick={() => toggleDispatch({ type: 'toggle_privacy' })}
-            className={styles['button--save']}>
-            Save Settings
-          </motion.button>
+          <Button
+            tap={{ scale: 0.98 }}
+            {...cookie.args}
+            onPress={() => toggleDispatch({ type: 'toggle_privacy' })}
+          />
         </motion.div>
         <motion.div className={styles['modal__button']}>
           <motion.button
