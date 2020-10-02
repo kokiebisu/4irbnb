@@ -4,9 +4,22 @@ exports[`Storyshots Design System/Atoms/Button Cookie 1`] = `
 <button
   className="p-t-13 p-b-13 weight--300 c-white bg--black border--transparent br-6 w-full size--16"
   data-testid="button"
+  style={Object {}}
 >
   <p>
     Save Settings
+  </p>
+</button>
+`;
+
+exports[`Storyshots Design System/Atoms/Button Cookie Inverse 1`] = `
+<button
+  className="p-t-13 p-b-13 weight--300 bg--transparent border--black br-6 w-full size--16"
+  data-testid="button"
+  style={Object {}}
+>
+  <p>
+    Cookie Preferences
   </p>
 </button>
 `;
@@ -15,6 +28,7 @@ exports[`Storyshots Design System/Atoms/Button Globe 1`] = `
 <button
   className="bg--transparent br-30"
   data-testid="button"
+  style={Object {}}
 >
   <div
     className="items-center hover-transparent bg--transparent p-t-13 p-b-13 p-l-15 p-r-15"
@@ -72,6 +86,7 @@ exports[`Storyshots Design System/Atoms/Button Menu 1`] = `
 <button
   className="items-center p-t-6 p-b-6 p-r-8 p-l-10 bg--white br-30 hover-shadow"
   data-testid="button"
+  style={Object {}}
 >
   <div
     className="m-r-8"
