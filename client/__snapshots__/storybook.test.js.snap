@@ -1,12 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Design System/Atoms/Button Cookie 1`] = `
+<button
+  className="p-t-13 p-b-13 weight--300 c-white bg--black border--transparent br-6 w-full size--16"
+  data-testid="button"
+>
+  <p>
+    Save Settings
+  </p>
+</button>
+`;
+
 exports[`Storyshots Design System/Atoms/Button Globe 1`] = `
 <button
-  className="bg-transparent br-30"
+  className="bg--transparent br-30"
   data-testid="button"
 >
   <div
-    className="items-center hover-transparent bg-transparent p-t-13 p-b-13 p-l-15 p-r-15"
+    className="items-center hover-transparent bg--transparent p-t-13 p-b-13 p-l-15 p-r-15"
   >
     <div
       className="items-center m-r-8"
@@ -47,7 +58,7 @@ exports[`Storyshots Design System/Atoms/Button Host 1`] = `
   data-testid="button"
 >
   <a
-    className="br-30 weight-300 size-14 c-white inline-block p-t-13 p-b-13 p-l-13 p-r-13 hover-transparent"
+    className="br-30 weight--300 size--14 c-white inline-block p-t-13 p-b-13 p-l-13 p-r-13 hover-transparent"
     href="/"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -59,7 +70,7 @@ exports[`Storyshots Design System/Atoms/Button Host 1`] = `
 
 exports[`Storyshots Design System/Atoms/Button Menu 1`] = `
 <button
-  className="items-center p-t-6 p-b-6 p-r-8 p-l-10 bg-white br-30 hover-shadow"
+  className="items-center p-t-6 p-b-6 p-r-8 p-l-10 bg--white br-30 hover-shadow"
   data-testid="button"
 >
   <div

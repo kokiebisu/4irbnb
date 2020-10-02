@@ -21,13 +21,13 @@ const ButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const globe = ButtonTemplate.bind({});
 globe.args = {
-  extendsTo: [color['bg-transparent'], shape['br-30']].join(' '),
+  extendsTo: [color['bg--transparent'], shape['br-30']].join(' '),
   children: (
     <div
       className={[
         layout['items-center'],
         button['hover-transparent'],
-        color['bg-transparent'],
+        color['bg--transparent'],
         space['p-t-13'],
         space['p-b-13'],
         space['p-l-15'],
@@ -50,8 +50,8 @@ host.args = {
     <a
       className={[
         shape['br-30'],
-        font['weight-300'],
-        font['size-14'],
+        font['weight--300'],
+        font['size--14'],
         color['c-white'],
         layout['inline-block'],
         space['p-t-13'],
@@ -73,7 +73,7 @@ menu.args = {
     space['p-b-6'],
     space['p-r-8'],
     space['p-l-10'],
-    color['bg-white'],
+    color['bg--white'],
     shape['br-30'],
     button['hover-shadow'],
   ].join(' '),
@@ -87,4 +87,21 @@ menu.args = {
       </div>
     </>
   ),
+};
+
+export const cookie = ButtonTemplate.bind({});
+cookie.args = {
+  extendsTo: [
+    space['p-t-13'],
+    space['p-b-13'],
+    font['weight--300'],
+    color['c-white'],
+    color['bg--black'],
+    color['border--transparent'],
+    shape['br-6'],
+    shape['w-full'],
+    font['size--16'],
+  ].join(' '),
+  children: <p>Save Settings</p>,
+  tap: { scale: 0.98 },
 };

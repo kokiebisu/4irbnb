@@ -1,12 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
-import button from './button.module.scss';
+import { motion } from 'framer-motion';
 
 export interface ButtonProps {
   onPress: () => void;
   children: React.ReactNode;
   to?: string;
   extendsTo?: string;
+  tap?: {
+    scale: number;
+  };
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -14,6 +17,7 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   to,
   extendsTo,
+  tap,
 }) => {
   if (to) {
     return (
@@ -25,9 +29,13 @@ export const Button: React.FC<ButtonProps> = ({
     );
   } else {
     return (
-      <button data-testid='button' className={extendsTo} onClick={onPress}>
+      <motion.button
+        whileTap={tap}
+        data-testid='button'
+        className={extendsTo}
+        onClick={onPress}>
         {children}
-      </button>
+      </motion.button>
     );
   }
 };
