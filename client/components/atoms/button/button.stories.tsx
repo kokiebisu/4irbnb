@@ -19,21 +19,33 @@ interface ButtonProps {
   onPress: () => void;
   children: React.ReactNode;
   to: any;
+  extend: string;
 }
 
 const ButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const globe = ButtonTemplate.bind({});
 globe.args = {
+  extendTo: 'globe',
   children: (
-    <>
+    <div
+      className={[
+        shape['br-30'],
+        layout['items-center'],
+        button['hover-transparent'],
+        color['bg-transparent'],
+        space['p-t-13'],
+        space['p-b-13'],
+        space['p-l-15'],
+        space['p-r-15'],
+      ].join(' ')}>
       <div className={[layout['items-center'], space['m-r-8']].join(' ')}>
         <Globe width={16} fill='white' />
       </div>
       <div className={layout['items-center']}>
         <ChevronDown width={8} fill='white' />
       </div>
-    </>
+    </div>
   ),
 };
 
