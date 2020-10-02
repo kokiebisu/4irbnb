@@ -86,17 +86,6 @@
 
   &__globe {
     margin: 0 12px 0 8px;
-
-    & button {
-      display: flex;
-      align-items: center;
-      padding: 13px 15px;
-      border-radius: 30px;
-      background-color: transparent;
-      &:hover {
-        background-color: rgba(125, 125, 125, 0.5);
-      }
-    }
   }
 
   &__icon {
