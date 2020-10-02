@@ -1,19 +1,19 @@
 import React from 'react';
 import Link from 'next/link';
-import module from './button.module.scss';
+import button from './button.module.scss';
 
-interface ButtonProps {
+export interface ButtonProps {
   onPress: () => void;
   children: React.ReactNode;
   to?: string;
-  extendTo?: string;
+  extendsTo?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
   onPress,
   children,
   to,
-  extendTo = '',
+  extendsTo,
 }) => {
   if (to) {
     return (
@@ -23,7 +23,7 @@ export const Button: React.FC<ButtonProps> = ({
     );
   } else {
     return (
-      <button className={module[extendTo]} onClick={onPress}>
+      <button className={button[extendsTo]} onClick={onPress}>
         {children}
       </button>
     );

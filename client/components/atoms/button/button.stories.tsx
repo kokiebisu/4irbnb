@@ -8,6 +8,7 @@ import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import button from '../../../components/atoms/button/button.module.scss';
 import { Globe, ChevronDown } from '../../../public/svg/regular';
+import { ButtonProps } from './button.component';
 
 export default {
   title: 'Design System/Atoms/Button',
@@ -15,22 +16,14 @@ export default {
   argTypes: { onPress: { action: 'clicked' } },
 } as Meta;
 
-interface ButtonProps {
-  onPress: () => void;
-  children: React.ReactNode;
-  to: any;
-  extend: string;
-}
-
 const ButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const globe = ButtonTemplate.bind({});
 globe.args = {
-  extendTo: 'globe',
+  extendsTo: 'transparent-btn',
   children: (
     <div
       className={[
-        shape['br-30'],
         layout['items-center'],
         button['hover-transparent'],
         color['bg-transparent'],
@@ -64,7 +57,7 @@ host.args = {
         space['p-b-13'],
         space['p-l-13'],
         space['p-r-13'],
-        button['hover-transparent'],
+        button['transparent-btn'],
       ].join(' ')}>
       Become a host
     </a>

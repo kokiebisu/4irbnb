@@ -1,9 +1,10 @@
 .hover-transparent {
+}
+
+.transparent-btn {
+  background-color: transparent;
+  border-radius: 30px;
   &:hover {
     background-color: rgba(125, 125, 125, 0.5);
   }
-}
-
-.globe {
-  background-color: transparent;
 }
