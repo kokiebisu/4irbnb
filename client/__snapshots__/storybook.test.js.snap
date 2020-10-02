@@ -2,7 +2,7 @@
 
 exports[`Storyshots Design System/Atoms/Button Globe 1`] = `
 <button
-  className="transparent-btn"
+  className="bg-transparent br-30"
   data-testid="button"
 >
   <div
@@ -47,7 +47,7 @@ exports[`Storyshots Design System/Atoms/Button Host 1`] = `
   data-testid="button"
 >
   <a
-    className="br-30 weight-300 size-14 c-white inline-block p-t-13 p-b-13 p-l-13 p-r-13 transparent-btn"
+    className="br-30 weight-300 size-14 c-white inline-block p-t-13 p-b-13 p-l-13 p-r-13 hover-transparent"
     href="/"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -55,4 +55,36 @@ exports[`Storyshots Design System/Atoms/Button Host 1`] = `
     Become a host
   </a>
 </div>
+`;
+
+exports[`Storyshots Design System/Atoms/Button Menu 1`] = `
+<button
+  className="items-center p-t-6 p-b-6 p-r-8 p-l-10 bg-white br-30 hover-shadow"
+  data-testid="button"
+>
+  <div
+    className="m-r-8"
+  >
+    <svg
+      fill="black"
+      viewBox="0 0 448 512"
+      width={12}
+    >
+      <path
+        d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+      />
+    </svg>
+  </div>
+  <div>
+    <svg
+      fill="gray"
+      viewBox="0 0 32 32"
+      width={30}
+    >
+      <path
+        d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"
+      />
+    </svg>
+  </div>
+</button>
 `;

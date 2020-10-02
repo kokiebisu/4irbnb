@@ -109,15 +109,9 @@
   }
 
   &__menu {
-    display: inline-block;
-    height: min-content;
-
     & button {
-      display: flex;
-      align-items: center;
       padding: 6px 8px 6px 10px;
       border-radius: 30px;
-      background-color: white;
       &:hover {
         box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
       }
