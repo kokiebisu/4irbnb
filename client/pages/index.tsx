@@ -16,6 +16,8 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useToggleDispatch, useToggleState } from '../context/toggle';
 import { destinations, categories, cards, sections } from '../content/index';
 import { Avatar } from 'public/svg/original';
+import { Button } from 'components/atoms/button/button';
+import { globe } from 'components/atoms/button/button.globe.stories';
 
 const CovidNotice = () => {
   return (
@@ -110,14 +112,7 @@ const Header = () => {
               </Link>
             </div>
             <div className={styles['searchbar__globe']}>
-              <button onClick={() => console.log('clicked')}>
-                <div className={styles['searchbar__icon--globe']}>
-                  <Globe width={16} fill='white' />
-                </div>
-                <div className={styles['searchbar__icon--arrow']}>
-                  <ChevronDown width={8} fill='white' />
-                </div>
-              </button>
+              <Button {...globe.args} onPress={() => console.log('clicked')} />
             </div>
             <div className={styles['searchbar__menu']}>
               <button>
