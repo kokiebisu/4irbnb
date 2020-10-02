@@ -10,10 +10,12 @@ import {
   Globe,
   ChevronDown,
 } from 'public/svg/regular';
+import { Bars } from 'public/svg/original';
 import { MenuBarLogo, NameLogo, NoNameLogo } from 'public/svg/logo';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useToggleDispatch, useToggleState } from '../context/toggle';
 import { destinations, categories, cards, sections } from '../content/index';
+import { Avatar } from 'public/svg/original';
 
 const CovidNotice = () => {
   return (
@@ -109,16 +111,23 @@ const Header = () => {
             </div>
             <div className={styles['searchbar__globe']}>
               <button onClick={() => console.log('clicked')}>
-                <div className={styles['searchbar__globe--icon']}>
+                <div className={styles['searchbar__icon--globe']}>
                   <Globe width={16} fill='white' />
                 </div>
-                <div className={styles['searchbar__globe--arrow']}>
+                <div className={styles['searchbar__icon--arrow']}>
                   <ChevronDown width={8} fill='white' />
                 </div>
               </button>
             </div>
             <div className={styles['searchbar__menu']}>
-              <button>menu</button>
+              <button>
+                <div className={styles['searchbar__icon--bars']}>
+                  <Bars fill='black' width={12} />
+                </div>
+                <div className={styles['searchbar__icon--avatar']}>
+                  <Avatar width={30} fill='gray' />
+                </div>
+              </button>
             </div>
           </div>
         </div>

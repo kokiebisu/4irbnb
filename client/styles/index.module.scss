@@ -85,10 +85,12 @@
   }
 
   &__host {
+    display: inline-block;
+    height: min-content;
     & a {
       color: white;
       font-size: 14px;
-      padding: 12px 15px;
+      padding: 13px 15px;
       font-weight: 300;
       border-radius: 30px;
       display: inline-block;
@@ -100,18 +102,22 @@
   }
 
   &__globe {
+    margin: 0 12px 0 8px;
+
     & button {
       display: flex;
       align-items: center;
-      padding: 12px 15px;
+      padding: 13px 15px;
       border-radius: 30px;
       background-color: transparent;
       &:hover {
         background-color: rgba(125, 125, 125, 0.5);
       }
     }
+  }
 
-    &--icon {
+  &__icon {
+    &--globe {
       display: flex;
       align-items: center;
       margin-right: 6px;
@@ -121,9 +127,29 @@
       display: flex;
       align-items: center;
     }
+
+    &--bars {
+      margin-right: 8px;
+    }
+
+    &--avatar {
+    }
   }
 
   &__menu {
+    display: inline-block;
+    height: min-content;
+
+    & button {
+      display: flex;
+      align-items: center;
+      padding: 6px 8px 6px 10px;
+      border-radius: 30px;
+      background-color: white;
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
+      }
+    }
   }
 
   &__sm {
