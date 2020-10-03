@@ -17,7 +17,7 @@ export const Modal: React.FC<ModalProps> = ({ type, ...props }) => {
   const types: mapProps = {
     privacy: <PrivacyModal {...props} />,
   };
-  if (criteria) {
+  if (criteria !== undefined) {
     return <AnimatePresence>{criteria && types[type]}</AnimatePresence>;
   }
   return types[type];
