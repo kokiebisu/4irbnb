@@ -547,84 +547,21 @@
   }
 }
 
-.footer {
-  border-top: 1px solid #dddddd;
-  padding: 22px 0;
-
-  &__section {
-    border-bottom: 1px solid #dddddd;
-
-    &:not(first-child) {
-      margin-top: 20px;
-    }
-
-    &--name {
-      & h4 {
-        font-size: 12px;
-        text-transform: uppercase;
+.flex {
+  &__footer {
+    &--section {
+      @media screen and (min-width: 1128px) {
+        display: flex;
       }
     }
 
-    &--items {
-    }
-  }
-
-  &__item {
-    margin: 15px 0;
-    & a {
-      font-size: 14px;
-      font-weight: 300;
-    }
-  }
-
-  &__others {
-  }
-
-  &__buttons {
-    display: flex;
-    margin: 20px 0;
-  }
-
-  &__button {
-    & button {
-      display: flex;
-      align-items: center;
-      border: none;
-      background-color: transparent;
-      margin-right: 10px;
-
-      & svg {
-        margin-right: 5px;
+    &--others {
+      @media screen and (min-width: 1128px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row-reverse;
       }
-
-      & p {
-        color: black;
-        font-size: 14px;
-        margin-right: 7px;
-
-        &:last-child {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-
-  &__rights {
-    & p {
-      font-size: 14px;
-      font-weight: 300;
-    }
-  }
-
-  &__services {
-    display: flex;
-  }
-
-  &__service {
-    margin-right: 10px;
-    & a {
-      font-size: 14px;
-      font-weight: 300;
     }
   }
 }
@@ -643,6 +580,48 @@
     @media screen and (min-width: 1128px) {
       margin-left: 75px;
       margin-right: 75px;
+    }
+  }
+
+  &__footer--item {
+    @media (min-width: 728px) and (max-width: 1128px) {
+      margin-top: 7px !important;
+      margin-bottom: 7px !important;
+    }
+  }
+}
+
+.p {
+  &-b__footer--section {
+    @media screen and (min-width: 1128px) {
+      padding-bottom: 25px;
+      width: 25%;
+    }
+  }
+}
+
+.w {
+  &__footer--section {
+    @media screen and (min-width: 1128px) {
+      width: 25%;
+    }
+  }
+}
+
+.grid {
+  &__footer--items {
+    @media (min-width: 728px) and (max-width: 1128px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.block {
+  &__footer--dot {
+    display: none;
+    @media screen and (min-width: 1128px) {
+      display: block;
     }
   }
 }
