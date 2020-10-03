@@ -42,23 +42,40 @@
 $pixels: (0, 1);
 
 @each $pixel in $pixels {
-  .r-t--#{$pixel} {
+  .rt--#{$pixel} {
     position: relative;
     top: #{$pixel}px;
   }
 
-  .r-b--#{$pixel} {
+  .rb--#{$pixel} {
     position: relative;
     bottom: #{$pixel}px;
   }
 
-  .r-l--#{$pixel} {
+  .rl--#{$pixel} {
     position: relative;
     left: #{$pixel}px;
   }
 
-  .r-r--#{$pixel} {
+  .rr--#{$pixel} {
     position: relative;
     right: #{$pixel}px;
+  }
+
+  .ft--#{$pixel} {
+    position: fixed;
+    top: #{$pixel}px;
+  }
+
+  .fb--#{$pixel} {
+    position: fixed;
+    bottom: #{$pixel}px;
+  }
+}
+
+$indices: (9999);
+@each $index in $indices {
+  .z--#{$index} {
+    z-index: #{$index};
   }
 }
