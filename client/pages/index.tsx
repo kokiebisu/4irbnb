@@ -22,14 +22,15 @@ import {
   bannerButton,
   borderButton,
   borderButtonInverse,
-  cookie,
-  cookieInverse,
   globe,
   host,
   menu,
 } from 'components/atoms/button/button.stories';
-import { privacy } from 'components/organisms/modal/modal.stories';
+import { privacy as privacyModal } from 'components/organisms/modal/modal.stories';
 import { Modal } from 'components/organisms/modal/modal.component';
+import color from '../styles/color.module.scss';
+import shape from '../styles/shape.module.scss';
+import modal from '../styles/modal.module.scss';
 
 const CovidNotice = () => {
   return (
@@ -379,7 +380,17 @@ const LandingPage = () => {
       <div className={styles['menubar__wrapper']}>
         <MenuBar />
       </div>
-      <Modal {...privacy.args} criteria={toggleState.privacy} />
+      <div
+        className={[
+          color['bg--white'],
+          layout['fb--0'],
+          layout['z--9999'],
+          layout['block'],
+          styles['m__modal--privacy'],
+          shape['br--8'],
+        ].join(' ')}>
+        <Modal {...privacyModal.args} criteria={toggleState.privacy} />
+      </div>
     </div>
   );
 };

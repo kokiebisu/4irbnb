@@ -28,3 +28,7 @@ $lineheights: (15);
     line-height: #{$lineheight / 10};
   }
 }
+
+.no-wrap {
+  white-space: nowrap;
+}

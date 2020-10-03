@@ -284,7 +284,7 @@
     padding: 13px 0;
   }
 
-  &--cookie {
+  &--privacy {
     color: black;
     background-color: transparent;
     border: 1px solid black;
@@ -625,6 +625,24 @@
     & a {
       font-size: 14px;
       font-weight: 300;
+    }
+  }
+}
+
+.m {
+  &__modal--privacy {
+    margin-bottom: 20px;
+    margin-left: 24px;
+    margin-right: 24px;
+
+    @media screen and (min-width: 745px) {
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+
+    @media screen and (min-width: 1128px) {
+      margin-left: 75px;
+      margin-right: 75px;
     }
   }
 }
