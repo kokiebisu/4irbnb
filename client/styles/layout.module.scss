@@ -38,3 +38,27 @@
 .inline-block {
   display: inline-block;
 }
+
+$pixels: (0, 1);
+
+@each $pixel in $pixels {
+  .r-t--#{$pixel} {
+    position: relative;
+    top: #{$pixel}px;
+  }
+
+  .r-b--#{$pixel} {
+    position: relative;
+    bottom: #{$pixel}px;
+  }
+
+  .r-l--#{$pixel} {
+    position: relative;
+    left: #{$pixel}px;
+  }
+
+  .r-r--#{$pixel} {
+    position: relative;
+    right: #{$pixel}px;
+  }
+}
