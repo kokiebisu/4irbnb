@@ -1,35 +1,34 @@
-.c--white {
-  color: white;
+$colors: (
+  white__0: #ffffff,
+  white__1: #f7f7f7,
+  white__2: #dddddd,
+  gray: #868686,
+  black: #000000,
+  transparent: transparent,
+);
+
+@each $name, $color in $colors {
+  .c--#{$name} {
+    color: #{$color};
+  }
+
+  .bg--#{$name} {
+    background-color: #{$color};
+  }
+
+  .b--#{$name} {
+    border: 1px solid #{$color};
+  }
+
+  .b-t--#{$name} {
+    border-top: 1px solid #{$color};
+  }
+
+  .b-b--#{$name} {
+    border-bottom: 1px solid #{$color};
+  }
 }
 
-.c--gray {
-  color: #868686;
-}
-
-.bg--transparent {
-  background-color: transparent;
-}
-
-.bg--white {
-  background-color: white;
-}
-
-.bg--black {
-  background-color: black;
-}
-
-.border {
-  border: 1px solid black;
-}
-
-.border--white {
-  border: 1px solid white;
-}
-
-.border--transparent {
-  border: 1px solid transparent;
-}
-
-.border--black {
-  border: 1px solid black;
+.b--0 {
+  border: none;
 }

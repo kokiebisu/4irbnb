@@ -8,6 +8,7 @@ $spaceamounts: (
   14,
   15,
   20,
+  22,
   25,
   28,
   30,
@@ -25,17 +26,61 @@ $sides: (top, bottom, left, right); // Leave this variable alone
     margin: #{$space}px;
   }
 
+  .m-h--#{$space} {
+    margin-right: #{$space}px;
+    margin-left: #{$space}px;
+  }
+
+  .m-v--#{$space} {
+    margin-top: #{$space}px;
+    margin-bottom: #{$space}px;
+  }
+
   .p--#{$space} {
     padding: #{$space}px;
   }
 
+  .p-h--#{$space} {
+    padding-left: #{$space}px;
+    padding-right: #{$space}px;
+  }
+
+  .p-v--#{$space} {
+    padding-top: #{$space}px;
+    padding-bottom: #{$space}px;
+  }
+
+  .nf-m--#{$space} {
+    &:not(first-child) {
+      margin: #{$space}px;
+    }
+  }
+
+  .nf-p--#{$space} {
+    &:not(first-child) {
+      padding: #{$space}px;
+    }
+  }
+
   @each $side in $sides {
+    .nf-m-#{str-slice($side, 0, 1)}--#{$space} {
+      &:not(first-child) {
+        margin-top: #{$space}px;
+      }
+    }
+
+    .nf-p-#{str-slice($side, 0, 1)}--#{$space} {
+      &:not(first-child) {
+        padding-top: #{$space}px;
+      }
+    }
+
     .m-#{str-slice($side, 0, 1)}--#{$space} {
-      margin-#{$side}: #{$space}px !important;
+      margin-#{$side}: #{$space}px;
     }
 
     .p-#{str-slice($side, 0, 1)}--#{$space} {
-      padding-#{$side}: #{$space}px !important;
+      padding-#{$side}: #{$space}px;
     }
   }
 }
