@@ -1,4 +1,4 @@
-.c-white {
+.c--white {
   color: white;
 }
 
@@ -18,6 +18,14 @@
   border: 1px solid black;
 }
 
+.border--white {
+  border: 1px solid white;
+}
+
 .border--transparent {
   border: 1px solid transparent;
+}
+
+.border--black {
+  border: 1px solid black;
 }

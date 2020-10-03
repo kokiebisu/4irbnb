@@ -9,7 +9,8 @@
     "storybook": "start-storybook -p 6006 -c .storybook watch-css -s .",
     "build-storybook": "build-storybook",
     "test": "jest",
-    "snapshot": "jest --updateSnapshot"
+    "snapshot": "jest --updateSnapshot",
+    "chromatic": "npx chromatic --project-token e017nqnn22h --exit-zero-on-changes --auto-accept-changes"
   },
   "dependencies": {
     "framer-motion": "^2.7.5",
@@ -33,6 +34,7 @@
     "babel-jest": "^26.3.0",
     "babel-loader": "^8.1.0",
     "babel-preset-react-app": "^9.1.2",
+    "chromatic": "^5.2.0",
     "css-loader": "^4.3.0",
     "file-loader": "^6.1.0",
     "identity-obj-proxy": "^3.0.0",
