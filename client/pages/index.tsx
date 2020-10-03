@@ -311,7 +311,7 @@ const Footer = () => {
                 <div className={styles['footer__section--name']}>
                   <h4>{section.name}</h4>
                 </div>
-                <div className='footer__section--items'>
+                <div className={styles['footer__section--items']}>
                   {section.items.map((item, index) => {
                     return (
                       <div className={styles['footer__item']} key={index}>
@@ -341,20 +341,23 @@ const Footer = () => {
               </button>
             </div>
           </div>
-          <div className={styles['footer__rights']}>
-            <p>&copy; 2020 Airbnb, Inc. All rights reserved</p>
-          </div>
-          <div className={styles['footer__services']}>
-            <div className={styles['footer__service']}>
-              <a>Privacy</a>
+          <div className={styles['footer__left']}>
+            <div className={styles['footer__rights']}>
+              <p>&copy; 2020 Airbnb, Inc. All rights reserved</p>
             </div>
-            <div>&nbsp;· &nbsp;</div>
-            <div className={styles['footer__service']}>
-              <a>&nbsp;Terms</a>
-            </div>
-            <div>&nbsp;· &nbsp;</div>
-            <div className={styles['footer__service']}>
-              <a>&nbsp;Sitemap</a>
+            <div className={styles['footer__services']}>
+              <div className={styles['footer__dot']}>&nbsp;&nbsp;· &nbsp;</div>
+              <div className={styles['footer__service']}>
+                <a>Privacy</a>
+              </div>
+              <div>&nbsp;· &nbsp;</div>
+              <div className={styles['footer__service']}>
+                <a>&nbsp;Terms</a>
+              </div>
+              <div>&nbsp;· &nbsp;</div>
+              <div className={styles['footer__service']}>
+                <a>&nbsp;Sitemap</a>
+              </div>
             </div>
           </div>
         </div>
