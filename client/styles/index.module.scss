@@ -231,14 +231,15 @@
   background-color: white;
   position: fixed;
   bottom: 0;
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
+
   margin: 20px;
   display: block;
   z-index: 9999;
 
   &__content {
-    margin: 28px 25px;
+    padding: 28px 25px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
   }
 
   &__title {
@@ -262,7 +263,7 @@
       font-size: 14px;
       font-weight: 300;
       line-height: 1.5;
-      color: #505050;
+      color: #868686;
     }
   }
 

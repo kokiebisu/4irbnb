@@ -1,4 +1,5 @@
 $spaceamounts: (
+  0,
   5,
   6,
   8,
@@ -8,6 +9,7 @@ $spaceamounts: (
   15,
   20,
   25,
+  28,
   30,
   35,
   40,
@@ -19,6 +21,14 @@ $spaceamounts: (
 $sides: (top, bottom, left, right); // Leave this variable alone
 
 @each $space in $spaceamounts {
+  .m--#{$space} {
+    margin: #{$space}px;
+  }
+
+  .p--#{$space} {
+    padding: #{$space}px;
+  }
+
   @each $side in $sides {
     .m-#{str-slice($side, 0, 1)}--#{$space} {
       margin-#{$side}: #{$space}px !important;
