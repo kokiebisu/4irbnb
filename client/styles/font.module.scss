@@ -14,10 +14,17 @@ $sizes: (5, 6, 8, 10, 13, 14, 15, 16, 20, 25, 30, 35, 40, 45, 50, 75, 100);
   }
 }
 
-$spacings: (1);
+$spacings: (1, 15);
 
 @each $spacing in $spacings {
   .ls--#{$spacing} {
     letter-spacing: #{$spacing / 10}px;
+  }
+}
+
+$lineheights: (15);
+@each $lineheight in $lineheights {
+  .lh--#{$lineheight} {
+    line-height: #{$lineheight / 10};
   }
 }
