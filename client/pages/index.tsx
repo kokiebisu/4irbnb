@@ -19,6 +19,9 @@ import { destinations, categories, cards, sections } from '../content/index';
 import { Avatar } from 'public/svg/original';
 import { Button } from 'components/atoms/button/button.component';
 import {
+  bannerButton,
+  borderButton,
+  borderButtonInverse,
   cookie,
   cookieInverse,
   globe,
@@ -91,7 +94,7 @@ const HeaderSmall = () => {
             </p>
           </div>
           <div className={styles['explore__button']}>
-            <a>Explore nearby</a>
+            <Button {...bannerButton.args} to='/' />
           </div>
         </div>
       </div>
@@ -269,9 +272,7 @@ const OnlineExperiences = () => {
           })}
         </div>
         <div className={styles['experiences__button']}>
-          <Link href='#'>
-            <a>Explore all</a>
-          </Link>
+          <Button {...borderButtonInverse.args} to='/' />
         </div>
       </div>
     </div>
@@ -297,9 +298,7 @@ const BlackLivesMatter = () => {
           </p>
         </div>
         <div className={styles['blm__button']}>
-          <Link href='#'>
-            <a>Donate</a>
-          </Link>
+          <Button {...borderButton.args} to='/' />
         </div>
       </div>
     </div>

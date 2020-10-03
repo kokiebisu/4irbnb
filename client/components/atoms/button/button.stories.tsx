@@ -21,19 +21,19 @@ const ButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const globe = ButtonTemplate.bind({});
 globe.args = {
-  extendsTo: [color['bg--transparent'], shape['br-30']].join(' '),
+  extendsTo: [color['bg--transparent'], shape['br--30']].join(' '),
   children: (
     <div
       className={[
         layout['items-center'],
         button['hover-transparent'],
         color['bg--transparent'],
-        space['p-t-13'],
-        space['p-b-13'],
-        space['p-l-15'],
-        space['p-r-15'],
+        space['p-t--13'],
+        space['p-b--13'],
+        space['p-l--15'],
+        space['p-r--15'],
       ].join(' ')}>
-      <div className={[layout['items-center'], space['m-r-8']].join(' ')}>
+      <div className={[layout['items-center'], space['m-r--8']].join(' ')}>
         <Globe width={16} fill='white' />
       </div>
       <div className={layout['items-center']}>
@@ -49,15 +49,15 @@ host.args = {
   children: (
     <a
       className={[
-        shape['br-30'],
+        shape['br--30'],
         font['weight--300'],
         font['size--14'],
-        color['c-white'],
+        color['c--white'],
         layout['inline-block'],
-        space['p-t-13'],
-        space['p-b-13'],
-        space['p-l-13'],
-        space['p-r-13'],
+        space['p-t--13'],
+        space['p-b--13'],
+        space['p-l--13'],
+        space['p-r--13'],
         button['hover-transparent'],
       ].join(' ')}>
       Become a host
@@ -69,17 +69,17 @@ export const menu = ButtonTemplate.bind({});
 menu.args = {
   extendsTo: [
     layout['items-center'],
-    space['p-t-6'],
-    space['p-b-6'],
-    space['p-r-8'],
-    space['p-l-10'],
+    space['p-t--6'],
+    space['p-b--6'],
+    space['p-r--8'],
+    space['p-l--10'],
     color['bg--white'],
-    shape['br-30'],
+    shape['br--30'],
     button['hover-shadow'],
   ].join(' '),
   children: (
     <>
-      <div className={space['m-r-8']}>
+      <div className={space['m-r--8']}>
         <Bars fill='black' width={12} />
       </div>
       <div>
@@ -92,14 +92,14 @@ menu.args = {
 export const cookie = ButtonTemplate.bind({});
 cookie.args = {
   extendsTo: [
-    space['p-t-13'],
-    space['p-b-13'],
+    space['p-t--13'],
+    space['p-b--13'],
     font['weight--300'],
-    color['c-white'],
+    color['c--white'],
     color['bg--black'],
     color['border--transparent'],
-    shape['br-6'],
-    shape['w-full'],
+    shape['br--6'],
+    shape['w--full'],
     font['size--16'],
   ].join(' '),
   children: <p>Save Settings</p>,
@@ -109,15 +109,77 @@ cookie.args = {
 export const cookieInverse = ButtonTemplate.bind({});
 cookieInverse.args = {
   extendsTo: [
-    space['p-t-13'],
-    space['p-b-13'],
+    space['p-t--13'],
+    space['p-b--13'],
     font['weight--300'],
     color['bg--transparent'],
     color['border--black'],
-    shape['br-6'],
-    shape['w-full'],
+    shape['br--6'],
+    shape['w--full'],
     font['size--16'],
   ].join(' '),
   children: <p>Cookie Preferences</p>,
   tap: { scale: 0.98 },
+};
+
+export const borderButton = ButtonTemplate.bind({});
+borderButton.args = {
+  extendsTo: color['bg--transparent'],
+  children: (
+    <a
+      className={[
+        layout['block'],
+        font['size--14'],
+        font['weight--500'],
+        shape['br--6'],
+        space['p-t--6'],
+        space['p-b--6'],
+        space['p-l--14'],
+        space['p-r--14'],
+        color['border'],
+      ].join(' ')}>
+      Donate
+    </a>
+  ),
+};
+
+export const borderButtonInverse = ButtonTemplate.bind({});
+borderButtonInverse.args = {
+  extendsTo: color['bg--transparent'],
+  children: (
+    <a
+      className={[
+        layout['block'],
+        font['size--14'],
+        font['weight--500'],
+        shape['br--6'],
+        space['p-t--6'],
+        space['p-b--6'],
+        space['p-l--14'],
+        space['p-r--14'],
+        color['border--white'],
+        color['c--white'],
+      ].join(' ')}>
+      Explore all
+    </a>
+  ),
+};
+
+export const bannerButton = ButtonTemplate.bind({});
+bannerButton.args = {
+  extendsTo: color['bg--transparent'],
+  children: (
+    <a
+      className={[
+        layout['all-center'],
+        font['size--14'],
+        color['bg--white'],
+        shape['br--6'],
+        shape['w--140'],
+        shape['h--30'],
+        font['ls--1'],
+      ].join(' ')}>
+      Explore nearby
+    </a>
+  ),
 };
