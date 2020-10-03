@@ -89,33 +89,40 @@ menu.args = {
   ),
 };
 
-export const cookie = ButtonTemplate.bind({});
-cookie.args = {
+export const privacy = ButtonTemplate.bind({});
+privacy.args = {
   extendsTo: [
+    font['no-wrap'],
     space['p-t--13'],
     space['p-b--13'],
+    space['p-r--8'],
+    space['p-l--8'],
     font['weight--300'],
     color['c--white'],
     color['bg--black'],
     color['border--transparent'],
     shape['br--6'],
     shape['w--full'],
+    button['w--privacy'],
     font['size--16'],
   ].join(' '),
   children: <p>Save Settings</p>,
   tap: { scale: 0.98 },
 };
 
-export const cookieInverse = ButtonTemplate.bind({});
-cookieInverse.args = {
+export const privacyInverse = ButtonTemplate.bind({});
+privacyInverse.args = {
   extendsTo: [
+    font['no-wrap'],
     space['p-t--13'],
     space['p-b--13'],
+    space['p-r--8'],
+    space['p-l--8'],
     font['weight--300'],
     color['bg--transparent'],
     color['border--black'],
     shape['br--6'],
-    shape['w--full'],
+    button['w--privacy'],
     font['size--16'],
   ].join(' '),
   children: <p>Cookie Preferences</p>,

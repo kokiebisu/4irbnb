@@ -284,7 +284,7 @@
     padding: 13px 0;
   }
 
-  &--cookie {
+  &--privacy {
     color: black;
     background-color: transparent;
     border: 1px solid black;
@@ -373,6 +373,12 @@
     row-gap: 10px;
     margin: 0 -24px;
     padding: 4px 24px 4px;
+
+    @media screen and (min-width: 728px) {
+      width: 100%;
+      margin: 0;
+      padding: 4px 0 4px;
+    }
   }
 
   &__card {
@@ -421,7 +427,7 @@
       height: 100%;
 
       @media screen and (min-width: 745px) {
-        width: 0;
+        display: none;
       }
     }
   }
@@ -619,6 +625,24 @@
     & a {
       font-size: 14px;
       font-weight: 300;
+    }
+  }
+}
+
+.m {
+  &__modal--privacy {
+    margin-bottom: 20px;
+    margin-left: 24px;
+    margin-right: 24px;
+
+    @media screen and (min-width: 745px) {
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+
+    @media screen and (min-width: 1128px) {
+      margin-left: 75px;
+      margin-right: 75px;
     }
   }
 }

@@ -1,0 +1,26 @@
+@import '../../../styles/layout.module.scss';
+
+.flex__privacy--content {
+  display: block;
+
+  @media screen and (min-width: 1328px) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.flex__privacy--buttons {
+  display: block;
+
+  @media screen and (min-width: 728px) {
+    display: flex;
+  }
+}
+
+.m-r--privacy {
+  margin-right: 0px;
+
+  @media screen and (min-width: 728px) {
+    margin-right: 8px;
+  }
+}
