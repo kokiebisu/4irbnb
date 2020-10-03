@@ -3,7 +3,7 @@ WORKDIR /app
 COPY package*.json .
 RUN yarn
 COPY . .
-RUN yarn build --prod
+RUN yarn build
 
 FROM nginx:alpine
 WORKDIR /var/www/localhost/htdocs
