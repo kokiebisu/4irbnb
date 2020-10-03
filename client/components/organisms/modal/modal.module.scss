@@ -1,20 +1,26 @@
-.margin {
-  &--privacy {
-    margin-bottom: 20px;
-    margin-left: 24px;
-    margin-right: 24px;
+@import '../../../styles/layout.module.scss';
 
-    @media screen and (min-width: 745px) {
-      margin-left: 40px;
-      margin-right: 40px;
-    }
+.flex__privacy--content {
+  display: block;
 
-    @media screen and (min-width: 1128px) {
-      margin-left: 75px;
-      margin-right: 75px;
-    }
+  @media screen and (min-width: 1328px) {
+    display: flex;
+    align-items: center;
   }
 }
 
-.buttons--privacy {
+.flex__privacy--buttons {
+  display: block;
+
+  @media screen and (min-width: 728px) {
+    display: flex;
+  }
+}
+
+.m-r--privacy {
+  margin-right: 0px;
+
+  @media screen and (min-width: 728px) {
+    margin-right: 8px;
+  }
 }
