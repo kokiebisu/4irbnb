@@ -27,9 +27,7 @@ export const PrivacyModal: React.FC<Props> = ({ extendsTo, criteria }) => {
 
   const handlePress = () => {
     if (toggleDispatch) {
-      toggleDispatch({ type: 'toggle_privacy' });
-    } else {
-      console.log('clicked');
+      return toggleDispatch({ type: 'toggle_privacy' });
     }
   };
 
