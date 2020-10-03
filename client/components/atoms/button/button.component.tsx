@@ -21,7 +21,7 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   if (to) {
     return (
-      <div data-testid='button'>
+      <div className={extendsTo} data-testid='button'>
         <Link href={to} passHref>
           {children}
         </Link>
