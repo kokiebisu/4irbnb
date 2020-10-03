@@ -3,8 +3,8 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { Modal, ModalProps } from './modal.component';
 import color from '../../../styles/color.module.scss';
 import layout from '../../../styles/layout.module.scss';
-import space from '../../../styles/space.module.scss';
 import shape from '../../../styles/shape.module.scss';
+import modal from './modal.module.scss';
 
 export default {
   title: 'Design System/Organisms/Modal',
@@ -21,7 +21,7 @@ privacy.args = {
     layout['fb--0'],
     layout['z--9999'],
     layout['block'],
-    space['m--20'],
+    modal['margin--privacy'],
     shape['br--8'],
   ].join(' '),
   type: 'privacy',
