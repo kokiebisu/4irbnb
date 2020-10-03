@@ -12,13 +12,17 @@ interface mapProps {
   [key: string]: JSX.Element;
 }
 
-export const Modal: React.FC<ModalProps> = ({ type, ...props }) => {
+export const Modal: React.FC<ModalProps> = ({ type, extendsTo, ...props }) => {
   const { criteria } = props;
   const types: mapProps = {
     privacy: <PrivacyModal {...props} />,
   };
   if (criteria !== undefined) {
-    return <AnimatePresence>{criteria && types[type]}</AnimatePresence>;
+    return (
+      <AnimatePresence>
+        {criteria && <div className={extendsTo}>{types[type]}</div>}
+      </AnimatePresence>
+    );
   }
-  return types[type];
+  return <div className={extendsTo}>{types[type]}</div>;
 };

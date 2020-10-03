@@ -15,11 +15,10 @@ import {
 import { Lock } from '../../../public/svg/original';
 
 interface Props {
-  extendsTo?: string;
   criteria?: any;
 }
 
-export const PrivacyModal: React.FC<Props> = ({ extendsTo, criteria }) => {
+export const PrivacyModal: React.FC<Props> = ({ criteria }) => {
   let toggleDispatch;
   if (criteria) {
     toggleDispatch = useToggleDispatch();
@@ -36,8 +35,7 @@ export const PrivacyModal: React.FC<Props> = ({ extendsTo, criteria }) => {
       exit={{ opacity: 0 }}
       initial={{ y: 25 }}
       animate={{ y: 0 }}
-      data-testid='modal'
-      className={extendsTo}>
+      data-testid='modal'>
       <div
         className={[
           space['p-t--28'],

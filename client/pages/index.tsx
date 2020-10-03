@@ -422,12 +422,7 @@ const LandingPage = () => {
       <div className={styles['menubar__wrapper']}>
         <MenuBar />
       </div>
-      {/* <AnimatePresence>
-        {toggleState.privacy && <PrivacyModal />}
-      </AnimatePresence> */}
-      <div className={styles['modal']}>
-        <Modal {...privacy.args} criteria={toggleState.privacy} />
-      </div>
+      <Modal {...privacy.args} criteria={toggleState.privacy} />
     </div>
   );
 };
