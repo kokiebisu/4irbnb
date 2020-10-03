@@ -550,12 +550,24 @@
 .footer {
   border-top: 1px solid #dddddd;
   padding: 22px 0;
+  background-color: #f7f7f7;
+
+  &__sections {
+    @media screen and (min-width: 1128px) {
+      display: flex;
+    }
+  }
 
   &__section {
     border-bottom: 1px solid #dddddd;
 
     &:not(first-child) {
       margin-top: 20px;
+    }
+
+    @media screen and (min-width: 1128px) {
+      padding-bottom: 25px;
+      width: 25%;
     }
 
     &--name {
@@ -566,11 +578,23 @@
     }
 
     &--items {
+      display: block;
+      margin: 15px 0;
+      @media (min-width: 728px) and (max-width: 1128px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      display: block;
     }
   }
 
   &__item {
     margin: 15px 0;
+
+    @media (min-width: 728px) and (max-width: 1128px) {
+      margin: 7px 0;
+    }
+
     & a {
       font-size: 14px;
       font-weight: 300;
@@ -578,6 +602,12 @@
   }
 
   &__others {
+    @media screen {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+    }
   }
 
   &__buttons {
@@ -609,10 +639,22 @@
     }
   }
 
+  &__left {
+    display: flex;
+  }
+
+  &__dot {
+    display: none;
+    @media screen and (min-width: 1128px) {
+      display: block;
+    }
+  }
+
   &__rights {
     & p {
       font-size: 14px;
       font-weight: 300;
+      display: inline-block;
     }
   }
 
