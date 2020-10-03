@@ -73,7 +73,7 @@ menu.args = {
     space['p-b--6'],
     space['p-r--8'],
     space['p-l--10'],
-    color['bg--white'],
+    color['bg--white__0'],
     shape['br--30'],
     button['hover-shadow'],
   ].join(' '),
@@ -98,9 +98,9 @@ privacy.args = {
     space['p-r--8'],
     space['p-l--8'],
     font['weight--300'],
-    color['c--white'],
+    color['c--white__0'],
     color['bg--black'],
-    color['border--transparent'],
+    color['b--transparent'],
     shape['br--6'],
     shape['w--full'],
     button['w--privacy'],
@@ -120,7 +120,7 @@ privacyInverse.args = {
     space['p-l--8'],
     font['weight--300'],
     color['bg--transparent'],
-    color['border--black'],
+    color['b--black'],
     shape['br--6'],
     button['w--privacy'],
     font['size--16'],
@@ -143,7 +143,7 @@ borderButton.args = {
         space['p-b--6'],
         space['p-l--14'],
         space['p-r--14'],
-        color['border'],
+        color['b--black'],
       ].join(' ')}>
       Donate
     </a>
@@ -164,7 +164,7 @@ borderButtonInverse.args = {
         space['p-b--6'],
         space['p-l--14'],
         space['p-r--14'],
-        color['border--white'],
+        color['b--white'],
         color['c--white'],
       ].join(' ')}>
       Testing change
@@ -180,7 +180,7 @@ bannerButton.args = {
       className={[
         layout['all-center'],
         font['size--14'],
-        color['bg--white'],
+        color['bg--white__0'],
         shape['br--6'],
         shape['w--140'],
         shape['h--30'],

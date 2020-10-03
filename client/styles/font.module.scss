@@ -6,7 +6,7 @@ $weights: (100, 300, 500, 700, 900);
   }
 }
 
-$sizes: (5, 6, 8, 10, 13, 14, 15, 16, 20, 25, 30, 35, 40, 45, 50, 75, 100);
+$sizes: (5, 6, 8, 10, 12, 13, 14, 15, 16, 20, 25, 30, 35, 40, 45, 50, 75, 100);
 
 @each $size in $sizes {
   .size--#{$size} {
@@ -31,4 +31,8 @@ $lineheights: (15);
 
 .no-wrap {
   white-space: nowrap;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }

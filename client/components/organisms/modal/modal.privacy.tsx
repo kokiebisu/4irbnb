@@ -72,8 +72,11 @@ export const PrivacyModal: React.FC<Props> = ({ criteria }) => {
               We use cookies to help personalize content, tailor and measure
               ads, and provide a safer experience. By navigating the site, you
               agree to the use of cookies to collect information on and off
-              Airbnb. Read our Cookie Policy to learn more or go to Cookie
-              Preferences to manage your settings.
+              Airbnb. Read our{' '}
+              <u>
+                <b>Cookie Policy</b>
+              </u>{' '}
+              to learn more or go to Cookie Preferences to manage your settings.
             </p>
           </div>
         </div>
