@@ -160,7 +160,7 @@ borderButtonInverse.args = {
         color['border--white'],
         color['c--white'],
       ].join(' ')}>
-      Explore all
+      Testing change
     </a>
   ),
 };
