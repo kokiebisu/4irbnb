@@ -7,6 +7,7 @@ import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
+import modal from './modal.module.scss';
 import { Button } from '../../../components/atoms/button/button.component';
 import {
   cookie,
@@ -73,32 +74,34 @@ export const PrivacyModal: React.FC<Props> = ({ criteria }) => {
             manage your settings.
           </p>
         </div>
-        <motion.div
-          className={[
-            space['m-t--6'],
-            space['m-b--6'],
-            space['m-l--0'],
-            space['m-r--0'],
-          ].join(' ')}>
-          <Button
-            tap={{ scale: 0.98 }}
-            {...cookie.args}
-            onPress={handlePress}
-          />
-        </motion.div>
-        <motion.div
-          className={[
-            space['m-t--6'],
-            space['m-b--6'],
-            space['m-l--0'],
-            space['m-r--0'],
-          ].join(' ')}>
-          <Button
-            tap={{ scale: 0.98 }}
-            {...cookieInverse.args}
-            onPress={handlePress}
-          />
-        </motion.div>
+        <div className={modal['buttons--privacy']}>
+          <motion.div
+            className={[
+              space['m-t--6'],
+              space['m-b--6'],
+              space['m-l--0'],
+              space['m-r--0'],
+            ].join(' ')}>
+            <Button
+              tap={{ scale: 0.98 }}
+              {...cookie.args}
+              onPress={handlePress}
+            />
+          </motion.div>
+          <motion.div
+            className={[
+              space['m-t--6'],
+              space['m-b--6'],
+              space['m-l--0'],
+              space['m-r--0'],
+            ].join(' ')}>
+            <Button
+              tap={{ scale: 0.98 }}
+              {...cookieInverse.args}
+              onPress={handlePress}
+            />
+          </motion.div>
+        </div>
       </div>
     </motion.div>
   );

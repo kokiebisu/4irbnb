@@ -373,6 +373,12 @@
     row-gap: 10px;
     margin: 0 -24px;
     padding: 4px 24px 4px;
+
+    @media screen and (min-width: 728px) {
+      width: 100%;
+      margin: 0;
+      padding: 4px 0 4px;
+    }
   }
 
   &__card {
@@ -421,7 +427,7 @@
       height: 100%;
 
       @media screen and (min-width: 745px) {
-        width: 0;
+        display: none;
       }
     }
   }

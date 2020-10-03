@@ -149,49 +149,6 @@ const Header = () => {
   );
 };
 
-// const PrivacyModal = () => {
-//   const toggleDispatch = useToggleDispatch();
-//   return (
-//     <motion.div
-//       exit={{ opacity: 0 }}
-//       initial={{ y: 25 }}
-//       animate={{ y: 0 }}
-//       className={styles['modal']}>
-//       <div className={styles['modal__content']}>
-//         <div className={styles['modal__title']}>
-//           <div className={styles['modal__title--text']}>Your Privacy</div>
-//           <div className={styles['modal__title--icon']}>
-//             <Lock width={16} fill='#428BFF' />
-//           </div>
-//         </div>
-//         <div className={styles['modal__description']}>
-//           <p>
-//             We use cookies to help personalize content, tailor and measure ads,
-//             and provide a safer experience. By navigating the site, you agree to
-//             the use of cookies to collect information on and off Airbnb. Read
-//             our Cookie Policy to learn more or go to Cookie Preferences to
-//             manage your settings.
-//           </p>
-//         </div>
-//         <motion.div className={styles['modal__button']}>
-//           <Button
-//             tap={{ scale: 0.98 }}
-//             {...cookie.args}
-//             onPress={() => toggleDispatch({ type: 'toggle_privacy' })}
-//           />
-//         </motion.div>
-//         <motion.div className={styles['modal__button']}>
-//           <Button
-//             tap={{ scale: 0.98 }}
-//             {...cookieInverse.args}
-//             onPress={() => toggleDispatch({ type: 'toggle_privacy' })}
-//           />
-//         </motion.div>
-//       </div>
-//     </motion.div>
-//   );
-// };
-
 const MenuBar = () => {
   const items = [
     { component: <MenuBarLogo width={25} />, name: 'Explore', selected: true },
