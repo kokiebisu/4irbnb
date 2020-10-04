@@ -265,11 +265,7 @@ const CategorySection = () => {
       ].join(' ')}>
       <div
         className={[styles['container--carousel'], space['p-h--70']].join(' ')}>
-        <div
-          className={[
-            styles['category-section__carousel'],
-            space['p-h--5'],
-          ].join(' ')}>
+        <div className={[styles['category-section__carousel']].join(' ')}>
           {cards.map((card, index) => {
             return <Card type='landing' key={index} card={card} />;
           })}
@@ -301,7 +297,7 @@ const OnlineExperiences = () => {
           </h3>
         </div>
         <div>
-          <p className={[color['c--white__0'], font['weight--300']].join(' ')}>
+          <p className={[color['c--white__0'], font['weight--100']].join(' ')}>
             Join interactive, global adventures with inspiring, kid-friendly
             hosts
           </p>
