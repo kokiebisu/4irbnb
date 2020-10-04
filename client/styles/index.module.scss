@@ -146,23 +146,30 @@
     overflow-x: auto;
     overflow-y: hidden;
     grid-template-columns: repeat(3, 1fr);
-    scroll-snap-type: mandatory;
-    column-gap: 10px;
-    row-gap: 10px;
+    scroll-snap-type: x mandatory;
+    column-gap: 12px;
+    row-gap: 12px;
     margin: 0 -24px;
-    padding: 4px 28px 4px;
+    scroll-padding: 0 24px;
+    padding: 4px 28px 8px;
 
     @media screen and (min-width: 728px) {
       width: 100%;
       margin: 0;
       padding: 4px 5px 4px;
     }
+
+    &::-webkit-scrollbar {
+      width: 0px;
+      background: transparent; /* make scrollbar transparent */
+    }
   }
 
   &__card {
+    scroll-snap-align: start;
     border-radius: 15px;
     height: 100%;
-    width: 270px;
+    width: 250px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 
     @media screen and (min-width: 745px) {
@@ -182,6 +189,7 @@
     }
 
     &--space {
+      // scroll-snap-align: start;
       width: 12px;
       background-color: transparent;
       height: 100%;
