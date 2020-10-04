@@ -1,21 +1,3 @@
-.notice {
-  text-align: center;
-  font-size: 14px;
-  padding: 20px 24px;
-  z-index: 9999;
-  position: relative;
-  background-color: #f7f7f7;
-
-  & a {
-    text-decoration: underline;
-  }
-}
-
-.page {
-  position: relative;
-  min-height: 100vh;
-}
-
 .banner {
   position: relative;
   padding-top: 133.3%;
@@ -29,26 +11,12 @@
   }
 
   &__background {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-
     &--picture {
       height: 100%;
       width: 100%;
       background-size: cover;
       display: inline-block;
     }
-  }
-
-  &__content {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
   }
 }
 
@@ -72,50 +40,10 @@
 }
 
 .searchbar {
-  padding: 25px 0 15px 0;
-
   &__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    &--right {
-      display: flex;
-    }
-  }
-
-  &__globe {
-    margin: 0 12px 0 8px;
-  }
-
-  &__icon {
-    &--globe {
-      display: flex;
-      align-items: center;
-      margin-right: 6px;
-    }
-
-    &--arrow {
-      display: flex;
-      align-items: center;
-    }
-
-    &--bars {
-      margin-right: 8px;
-    }
-
-    &--avatar {
-    }
-  }
-
-  &__menu {
-    & button {
-      padding: 6px 8px 6px 10px;
-      border-radius: 30px;
-      &:hover {
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
-      }
-    }
   }
 
   &__sm {
@@ -138,10 +66,6 @@
     }
   }
 
-  &__md {
-    color: white;
-  }
-
   &__logo {
     &--md {
       display: none;
@@ -161,145 +85,6 @@
   }
 }
 
-.explore {
-  position: relative;
-  z-index: 20;
-  text-align: center;
-  height: 75%;
-
-  @media screen and (min-width: 728px) {
-    text-align: initial;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  &__title {
-    margin: 10px 0;
-
-    & h3 {
-      color: white;
-      font-size: 28px;
-    }
-  }
-
-  &__subtitle {
-    color: white;
-    width: 100%;
-    text-align: center;
-
-    @media screen and (min-width: 728px) {
-      width: 300px;
-      text-align: initial;
-    }
-
-    & p {
-      font-size: 12px;
-      font-weight: 300;
-      letter-spacing: 0.3px;
-
-      @media screen and (min-width: 728px) {
-        font-size: 14px;
-      }
-    }
-  }
-
-  &__button {
-    margin: 15px 0;
-    display: flex;
-    justify-content: center;
-
-    @media screen and (min-width: 728px) {
-      justify-content: flex-start;
-    }
-
-    & a {
-      width: 140px;
-      height: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      letter-spacing: 0.1px;
-      font-size: 14px;
-      background-color: white;
-      border-radius: 6px;
-    }
-  }
-}
-
-.modal {
-  background-color: white;
-  position: fixed;
-  bottom: 0;
-
-  margin: 20px;
-  display: block;
-  z-index: 9999;
-
-  &__content {
-    padding: 28px 25px;
-    border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
-  }
-
-  &__title {
-    display: flex;
-    align-items: center;
-    margin: 6px 0;
-
-    &--text {
-      margin-right: 10px;
-    }
-
-    &--icon {
-      position: relative;
-      top: 1px;
-    }
-  }
-
-  &__description {
-    margin-bottom: 30px;
-    & p {
-      font-size: 14px;
-      font-weight: 300;
-      line-height: 1.5;
-      color: #868686;
-    }
-  }
-
-  &__button {
-    margin: 6px 0;
-  }
-}
-
-.button {
-  &--save {
-    color: white;
-    background-color: black;
-    border: 1px solid transparent;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 300;
-    width: 100%;
-    padding: 13px 0;
-  }
-
-  &--privacy {
-    color: black;
-    background-color: transparent;
-    border: 1px solid black;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 300;
-    width: 100%;
-    padding: 13px 0;
-
-    &:hover {
-      background-color: #f3f3f3;
-    }
-  }
-}
-
 .menubar {
   z-index: 30;
   position: fixed;
@@ -311,12 +96,6 @@
   background-color: white;
   width: 100%;
   border-top: 1px solid #dddddd;
-
-  &__wrapper {
-    @media screen and (min-width: 728px) {
-      display: none;
-    }
-  }
 
   &__item {
     display: flex;
@@ -361,8 +140,6 @@
 }
 
 .category-section {
-  margin: 25px 0 50px 0;
-
   &__carousel {
     display: grid;
     grid-auto-flow: column;
@@ -401,26 +178,6 @@
       }
     }
 
-    &--title {
-      padding: 10px 15px 0 15px;
-
-      & h3 {
-        color: #404040;
-        font-size: 17px;
-        font-weight: 500;
-      }
-    }
-
-    &--description {
-      padding: 5px 15px 15px 15px;
-
-      & p {
-        font-size: 15px;
-        font-weight: 100;
-        color: #757575;
-      }
-    }
-
     &--space {
       width: 12px;
       background-color: transparent;
@@ -433,83 +190,7 @@
   }
 }
 
-.experiences {
-  background-color: black;
-  padding: 25px 0;
-
-  &__title {
-    & h3 {
-      font-weight: 300;
-      color: white;
-      font-size: 22px;
-    }
-  }
-
-  &__description {
-    color: white;
-    font-weight: 300;
-  }
-
-  &__button {
-    display: inline-block;
-    background-color: transparent;
-    border: 1px solid white;
-    border-radius: 8px;
-
-    & a {
-      display: block;
-      color: white;
-      font-size: 14px;
-      padding: 6px 15px;
-    }
-  }
-}
-
-.blm {
-  padding: 22px 0;
-
-  &__title {
-    & h3 {
-      color: #222222;
-      font-size: 24px;
-      font-weight: 500;
-    }
-  }
-
-  &__description {
-    margin-top: 15px;
-    & p {
-      color: #a2a2a2;
-      font-weight: 300;
-    }
-  }
-
-  &__button {
-    display: inline-block;
-    margin-top: 25px;
-    margin-bottom: 40px;
-    & a {
-      display: block;
-      font-size: 14px;
-      font-weight: 500;
-      border-radius: 6px;
-      padding: 6px 14px;
-      border: 1px solid black;
-    }
-  }
-}
-
 .destinations {
-  padding: 22px 0;
-
-  &__title {
-    & h3 {
-      color: #222222;
-      font-size: 24px;
-      font-weight: 500;
-    }
-  }
-
   &__categories {
     padding: 15px 0;
     display: grid;
@@ -520,34 +201,35 @@
     border-bottom: 1px solid #dddddd;
     column-gap: 25px;
   }
+}
 
-  &__category {
-    font-size: 14px;
-    white-space: nowrap;
+.container {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  padding: 0 24px;
+  height: 100%;
+
+  @media screen and (min-width: 745px) {
+    max-width: initial;
+    padding: 0 40px;
   }
 
-  &__cities {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .destination {
-    padding: 15px 0;
-    &__city {
-      font-size: 14px;
-      font-weight: 300;
-      color: #363636;
-    }
-
-    &__state {
-      font-size: 14px;
-      font-weight: 300;
-      color: #7c7c7c;
-    }
+  @media screen and (min-width: 1128px) {
+    padding: 0 75px;
   }
 }
 
 .flex {
+  &__explore {
+    text-align: center;
+    @media screen and (min-width: 728px) {
+      text-align: initial;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
   &__footer {
     &--section {
       @media screen and (min-width: 1128px) {
@@ -562,6 +244,17 @@
         justify-content: space-between;
         flex-direction: row-reverse;
       }
+    }
+  }
+}
+
+.justify {
+  &__explore--button {
+    display: flex;
+    justify-content: center;
+
+    @media screen and (min-width: 728px) {
+      justify-content: flex-start;
     }
   }
 }
@@ -601,6 +294,13 @@
 }
 
 .w {
+  &__explore--subtitle {
+    width: 100%;
+
+    @media screen and (min-width: 728px) {
+      width: 300px;
+    }
+  }
   &__footer--section {
     @media screen and (min-width: 1128px) {
       width: 25%;
@@ -622,6 +322,36 @@
     display: none;
     @media screen and (min-width: 1128px) {
       display: block;
+    }
+  }
+}
+
+.none {
+  &__menubar {
+    @media screen and (min-width: 728px) {
+      display: none;
+    }
+  }
+}
+
+.size {
+  &__explore {
+    &--subtitle {
+      font-size: 12px;
+
+      @media screen and (min-width: 728px) {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.text {
+  &__explore--subtitle {
+    text-align: center;
+
+    @media screen and (min-width: 728px) {
+      text-align: initial;
     }
   }
 }

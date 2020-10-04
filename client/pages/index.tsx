@@ -3,40 +3,39 @@ import Link from 'next/link';
 import styles from 'styles/index.module.scss';
 import layout from 'styles/layout.module.scss';
 import space from 'styles/space.module.scss';
-import {
-  MagnifyGlass,
-  Lock,
-  Saved,
-  Login,
-  Globe,
-  ChevronDown,
-} from 'public/svg/regular';
-import { Bars } from 'public/svg/original';
+import { MagnifyGlass, Lock, Saved, Login, Globe } from 'public/svg/regular';
 import { MenuBarLogo, NameLogo, NoNameLogo } from 'public/svg/logo';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useToggleDispatch, useToggleState } from '../context/toggle';
+import { useToggleState } from '../context/toggle';
 import { destinations, categories, cards, sections } from '../content/index';
-import { Avatar } from 'public/svg/original';
 import { Button } from 'components/atoms/button/button.component';
 import {
-  bannerButton,
-  borderButton,
-  borderButtonInverse,
-  globe,
-  host,
-  menu,
+  banner as bannerButton,
+  border as borderButton,
+  borderInverse as borderButtonInverse,
+  globe as globeButton,
+  host as hostButton,
+  menu as menuButton,
 } from 'components/atoms/button/button.stories';
 import { privacy as privacyModal } from 'components/organisms/modal/modal.stories';
 import { Modal } from 'components/organisms/modal/modal.component';
 import color from '../styles/color.module.scss';
 import shape from '../styles/shape.module.scss';
-import modal from '../styles/modal.module.scss';
 import font from '../styles/font.module.scss';
 
 const CovidNotice = () => {
   return (
-    <aside className={styles['notice']}>
-      <a href=''>Get the latest on our COVID-19 response</a>
+    <aside
+      className={[
+        font['size--14'],
+        color['bg--white__1'],
+        layout['text-center'],
+        space['p-v--20'],
+        space['p-h--24'],
+        layout['z--9999'],
+      ].join(' ')}>
+      <a href=''>
+        <u>Get the latest on our COVID-19 response</u>
+      </a>
     </aside>
   );
 };
@@ -45,7 +44,7 @@ const Banner = () => {
   return (
     <>
       <div className={styles['banner']}>
-        <div className={styles['banner__background']}>
+        <div className={[layout['all-sides']].join(' ')}>
           <div className={styles['banner__background--picture']} style={{}}>
             <picture>
               <source
@@ -64,7 +63,7 @@ const Banner = () => {
             </picture>
           </div>
         </div>
-        <div className={styles['banner__content']}>
+        <div className={[layout['all-sides']].join(' ')}>
           <div className={styles['header__wrapper--sm']}>
             <HeaderSmall />
           </div>
@@ -80,24 +79,53 @@ const Banner = () => {
 const HeaderSmall = () => {
   return (
     <>
-      <div className={layout['container']}>
-        <header className={styles['searchbar']}>
+      <div className={styles['container']}>
+        <header
+          className={[
+            space['p-t--25'],
+            space['p-r--0'],
+            space['p-b--15'],
+            space['p-l--0'],
+          ].join(' ')}>
           <div className={styles['searchbar__sm']}>
             <MagnifyGlass stroke={'black'} strokeWidth={4} width={17} />
             <input placeholder='Where are you going' />
           </div>
         </header>
-        <div className={styles['explore']}>
-          <div className={styles['explore__title']}>
-            <h3>Go Near</h3>
+        <div
+          className={[
+            layout['z--20'],
+            shape['h--75p'],
+            styles['flex__explore'],
+          ].join(' ')}>
+          <div className={[space['m-v--10'], space['m-h--0']].join(' ')}>
+            <h3 className={[color['c--white__0'], font['size--28']].join(' ')}>
+              Go Near
+            </h3>
           </div>
-          <div className={styles['explore__subtitle']}>
-            <p>
+          <div
+            className={[
+              font['c--white__0'],
+              styles['w__explore--subtitle'],
+              styles['text__explore--subtitle'],
+            ].join(' ')}>
+            <p
+              className={[
+                styles['size__explore--subtitle'],
+                font['weight--300'],
+                font['ls--3'],
+                color['c--white__0'],
+              ].join(' ')}>
               Settle in somewhere new. Discover nearby stays to live, work, or
               just relax.
             </p>
           </div>
-          <div className={styles['explore__button']}>
+          <div
+            className={[
+              space['m-v--15'],
+              space['m-h--0'],
+              styles['justify__explore--button'],
+            ].join(' ')}>
             <Button {...bannerButton.args} to='/' />
           </div>
         </div>
@@ -108,8 +136,14 @@ const HeaderSmall = () => {
 
 const Header = () => {
   return (
-    <div className={layout['container']}>
-      <header className={styles['searchbar']}>
+    <div className={styles['container']}>
+      <header
+        className={[
+          space['p-t--25'],
+          space['p-r--0'],
+          space['p-b--15'],
+          space['p-l--0'],
+        ].join(' ')}>
         <div className={styles['searchbar__nav']}>
           <div>
             <div className={styles['searchbar__logo--md']}>
@@ -119,32 +153,67 @@ const Header = () => {
               <NameLogo fill='white' width={102} height={32} />
             </div>
           </div>
-          <div className={styles['searchbar__nav--right']}>
+          <div className={[layout['items-center']].join(' ')}>
             <div className={styles['searchbar__host']}>
-              <Button {...host.args} to='/' />
+              <Button {...hostButton.args} to='/' />
             </div>
-            <div className={styles['searchbar__globe']}>
-              <Button {...globe.args} onPress={() => console.log('clicked')} />
+            <div
+              className={[
+                space['m-t--0'],
+                space['m-r--12'],
+                space['m-b--0'],
+                space['m-l--8'],
+              ].join(' ')}>
+              <Button
+                {...globeButton.args}
+                onPress={() => console.log('clicked')}
+              />
             </div>
             <div>
-              <Button {...menu.args} onPress={() => console.log('clicked')} />
+              <Button
+                {...menuButton.args}
+                onPress={() => console.log('clicked')}
+              />
             </div>
           </div>
         </div>
       </header>
-      <div className={styles['searchbar__md']}></div>
-      <div className={styles['explore']}>
-        <div className={styles['explore__title']}>
-          <h3>Go Near</h3>
+      <div className={[color['c--white__0']].join(' ')}></div>
+      <div
+        className={[
+          layout['z--20'],
+          shape['h--75p'],
+          styles['flex__explore'],
+        ].join(' ')}>
+        <div className={[space['m-v--10'], space['m-h--0']].join(' ')}>
+          <h3 className={[color['c--white__0'], font['size--28']].join(' ')}>
+            Go Near
+          </h3>
         </div>
-        <div className={styles['explore__subtitle']}>
-          <p>
+        <div
+          className={[
+            font['c--white__0'],
+            styles['w__explore--subtitle'],
+            styles['text__explore--subtitle'],
+          ].join(' ')}>
+          <p
+            className={[
+              styles['size__explore--subtitle'],
+              font['weight--300'],
+              font['ls--3'],
+              color['c--white__0'],
+            ].join(' ')}>
             Settle in somewhere new. Discover nearby stays to live, work, or
             just relax.
           </p>
         </div>
-        <div className={styles['explore__button']}>
-          <a>Explore nearby</a>
+        <div
+          className={[
+            space['m-v--15'],
+            space['m-h--0'],
+            styles['justify__explore--button'],
+          ].join(' ')}>
+          <Button {...bannerButton.args} to='/' />
         </div>
       </div>
     </div>
@@ -186,8 +255,14 @@ const MenuBar = () => {
 
 const CategorySection = () => {
   return (
-    <div className={styles['category-section']}>
-      <div className={layout['container']}>
+    <div
+      className={[
+        space['m-t--25'],
+        space['m-r--0'],
+        space['m-b--50'],
+        space['m-l--0'],
+      ].join(' ')}>
+      <div className={styles['container']}>
         <div className={styles['category-section__carousel']}>
           {cards.map((card, index) => {
             return (
@@ -195,11 +270,37 @@ const CategorySection = () => {
                 <div className={styles['category-section__card--img']}>
                   <img src={card.imgUrl} alt='unique stays' />
                 </div>
-                <div className={styles['category-section__card--title']}>
-                  <h3>{card.title}</h3>
+                <div
+                  className={[
+                    space['p-t--10'],
+                    space['p-r--15'],
+                    space['p-b--0'],
+                    space['p-l--15'],
+                  ].join(' ')}>
+                  <h3
+                    className={[
+                      font['weight--500'],
+                      font['size--17'],
+                      color['c--gray__4'],
+                    ].join(' ')}>
+                    {card.title}
+                  </h3>
                 </div>
-                <div className={styles['category-section__card--description']}>
-                  <p>{card.description}</p>
+                <div
+                  className={[
+                    space['p-t--5'],
+                    space['p-r--15'],
+                    space['p-b--15'],
+                    space['p-l--15'],
+                  ].join(' ')}>
+                  <p
+                    className={[
+                      font['size--15'],
+                      font['weight--300'],
+                      color['c--gray__1'],
+                    ].join(' ')}>
+                    {card.description}
+                  </p>
                 </div>
               </div>
             );
@@ -216,13 +317,23 @@ const OnlineExperiences = () => {
     { imgUrl: '', name: 'Decode the science of 2020 with Bill Nye' },
   ];
   return (
-    <div className={styles['experiences']}>
-      <div className={layout['container']}>
-        <div className={styles['experiences__title']}>
-          <h3>Online Experiences: Field Trips</h3>
+    <div
+      className={[color['bg--black'], space['p-v--25'], space['p-h--0']].join(
+        ' '
+      )}>
+      <div className={styles['container']}>
+        <div>
+          <h3
+            className={[
+              font['weight--300'],
+              color['c--white__0'],
+              font['size--22'],
+            ].join(' ')}>
+            Online Experiences: Field Trips
+          </h3>
         </div>
-        <div className={styles['experiences__description']}>
-          <p>
+        <div>
+          <p className={[color['c--white__0'], font['weight--300']].join(' ')}>
             Join interactive, global adventures with inspiring, kid-friendly
             hosts
           </p>
@@ -232,7 +343,13 @@ const OnlineExperiences = () => {
             return <div key={index}>{card.name}</div>;
           })}
         </div>
-        <div className={styles['experiences__button']}>
+        <div
+          className={[
+            layout['inline-block'],
+            color['bg--transparent'],
+            color['b--white'],
+            shape['br--8'],
+          ].join(' ')}>
           <Button {...borderButtonInverse.args} to='/' />
         </div>
       </div>
@@ -242,23 +359,28 @@ const OnlineExperiences = () => {
 
 const BlackLivesMatter = () => {
   return (
-    <div className={styles['blm']}>
-      <div className={layout['container']}>
+    <div className={[space['p-v--22'], space['p-h--0']].join(' ')}>
+      <div className={styles['container']}>
         <div className={styles['blm__title']}>
-          <h3>
+          <h3 className={[font['size--24'], font['weight--500']].join(' ')}>
             We embrace a world where veryone belongs, and stand with
             #BlackLivesMatter.
           </h3>
         </div>
-        <div className={styles['blm__description']}>
-          <p>
+        <div className={[space['m-t--15']].join(' ')}>
+          <p className={[font['weight--300'], font['c--gray']].join(' ')}>
             No one should have to encounter racism—no matter who you are, where
             you’re from, who you love, or who you worship. Discrimination is not
             tolerated in our community. Which is why when you agree to book or
             host on Airbnb, you pledge not to tolerate it either.
           </p>
         </div>
-        <div className={styles['blm__button']}>
+        <div
+          className={[
+            layout['inline-block'],
+            space['m-t--25'],
+            space['m-b--40'],
+          ].join(' ')}>
           <Button {...borderButton.args} to='/' />
         </div>
       </div>
@@ -268,29 +390,54 @@ const BlackLivesMatter = () => {
 
 const DestinationTrips = () => {
   return (
-    <div className={styles['destinations']}>
-      <div className={layout['container']}>
-        <div className={styles['destinations__title']}>
-          <h3>Destinations for future trips</h3>
+    <div className={[space['m-h--0'], space['m-v--22']].join(' ')}>
+      <div className={styles['container']}>
+        <div>
+          <h3 className={[font['size--24'], font['weight--500']].join(' ')}>
+            Destinations for future trips
+          </h3>
         </div>
         <div className={styles['destinations__categories']}>
           {categories.map((category, index) => {
             return (
-              <div className={styles['destinations__category']} key={index}>
-                {category.name}
+              <div key={index}>
+                <h5
+                  className={[
+                    font['size--14'],
+                    font['no-wrap'],
+                    color['c--gray__1'],
+                  ].join(' ')}>
+                  {category.name}
+                </h5>
               </div>
             );
           })}
         </div>
-        <div className={styles['destinations__cities']}>
+        <div className={layout['grid-c--2']}>
           {destinations.map((destination, index) => {
             return (
-              <div key={index} className={styles['destination']}>
-                <div className={styles['destination__city']}>
-                  {destination.city}
+              <div
+                key={index}
+                className={[space['p-v--15'], space['p-h--0']].join(' ')}>
+                <div>
+                  <p
+                    className={[
+                      font['size--14'],
+                      font['weight--300'],
+                      font['c--gray__4'],
+                    ].join(' ')}>
+                    {destination.city}
+                  </p>
                 </div>
-                <div className={styles['destination__state']}>
-                  {destination.state}
+                <div>
+                  <p
+                    className={[
+                      font['size--14'],
+                      font['weight--300'],
+                      color['c--gray__1'],
+                    ].join(' ')}>
+                    {destination.state}
+                  </p>
                 </div>
               </div>
             );
@@ -309,7 +456,7 @@ const Footer = () => {
         space['p-v--22'],
         color['bg--white__1'],
       ].join(' ')}>
-      <div className={layout['container']}>
+      <div className={styles['container']}>
         <div
           className={[
             font['b-b--white__1'],
@@ -333,7 +480,6 @@ const Footer = () => {
                 </div>
                 <div
                   className={[
-                    layout['block'],
                     space['m-v--15'],
                     space['m-h--0'],
                     styles['grid__footer--items'],
@@ -372,7 +518,7 @@ const Footer = () => {
               space['m-h--0'],
               space['m-v--20'],
             ].join(' ')}>
-            <div className={styles['footer__button']}>
+            <div>
               <button
                 className={[
                   layout['items-center'],
@@ -386,7 +532,7 @@ const Footer = () => {
                 </u>
               </button>
             </div>
-            <div className={styles['footer__button']}>
+            <div>
               <button
                 className={[
                   layout['items-center'],
@@ -449,7 +595,7 @@ const LandingPage = () => {
   const toggleState = useToggleState();
 
   return (
-    <div className={styles['page']}>
+    <div className={[layout['relative'], shape['min-h--fullv']].join(' ')}>
       <CovidNotice />
       <div>
         <Banner />
@@ -459,7 +605,7 @@ const LandingPage = () => {
         <DestinationTrips />
         <Footer />
       </div>
-      <div className={styles['menubar__wrapper']}>
+      <div className={styles['none__menubar']}>
         <MenuBar />
       </div>
       <div
