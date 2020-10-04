@@ -145,6 +145,7 @@
     grid-auto-flow: column;
     overflow-x: auto;
     overflow-y: hidden;
+    grid-template-columns: repeat(3, 1fr);
     scroll-snap-type: mandatory;
     column-gap: 10px;
     row-gap: 10px;
@@ -160,11 +161,13 @@
 
   &__card {
     border-radius: 15px;
+    height: 100%;
     width: 270px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 
     @media screen and (min-width: 745px) {
       width: auto;
+      max-width: 550px;
     }
 
     &--img {
