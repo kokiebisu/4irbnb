@@ -1,0 +1,12 @@
+.hover-transparent {
+  &:hover {
+    background-color: rgba(125, 125, 125, 0.5);
+  }
+}
+
+.hover-shadow {
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
+    transition: 0.6s all;
+  }
+}

@@ -6,6 +6,7 @@ import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
+import animation from '../../../styles/animation.module.scss';
 import button from '../../../components/atoms/button/button.module.scss';
 import { Globe, ChevronDown } from '../../../public/svg/regular';
 import { ButtonProps } from './button.component';
@@ -26,7 +27,7 @@ globe.args = {
     <div
       className={[
         layout['items-center'],
-        button['hover-transparent'],
+        animation['hover-transparent'],
         color['bg--transparent'],
         space['p-t--13'],
         space['p-b--13'],
@@ -58,7 +59,7 @@ host.args = {
         space['p-b--13'],
         space['p-l--13'],
         space['p-r--13'],
-        button['hover-transparent'],
+        animation['hover-transparent'],
       ].join(' ')}>
       Become a host
     </a>
@@ -75,7 +76,7 @@ menu.args = {
     space['p-l--10'],
     color['bg--white__0'],
     shape['br--30'],
-    button['hover-shadow'],
+    animation['hover-shadow'],
   ].join(' '),
   children: (
     <>

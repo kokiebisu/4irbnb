@@ -1,68 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Design System/Atoms/Button Banner Button 1`] = `
+exports[`Storyshots Design System/Atoms/Button Banner 1`] = `
 <button
   className="bg--transparent"
   data-testid="button"
   style={Object {}}
 >
   <a
-    className="all-center size--14 bg--white br--6 w--140 h--30 ls--1"
+    className="all-center size--14 bg--white__0 br--6 w--140 h--30 ls--1"
   >
     Explore nearby
   </a>
 </button>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Border Button 1`] = `
+exports[`Storyshots Design System/Atoms/Button Border 1`] = `
 <button
   className="bg--transparent"
   data-testid="button"
   style={Object {}}
 >
   <a
-    className="block size--14 weight--500 br--6 p-t--6 p-b--6 p-l--14 p-r--14 border"
+    className="block size--14 weight--500 br--6 p-t--6 p-b--6 p-l--14 p-r--14 b--black"
   >
     Donate
   </a>
 </button>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Border Button Inverse 1`] = `
+exports[`Storyshots Design System/Atoms/Button Border Inverse 1`] = `
 <button
   className="bg--transparent"
   data-testid="button"
   style={Object {}}
 >
   <a
-    className="block size--14 weight--500 br--6 p-t--6 p-b--6 p-l--14 p-r--14 border--white c--white"
+    className="block size--14 weight--500 br--6 p-t--6 p-b--6 p-l--14 p-r--14 b--white__0 c--white__0"
   >
     Explore all
   </a>
-</button>
-`;
-
-exports[`Storyshots Design System/Atoms/Button Cookie 1`] = `
-<button
-  className="p-t--13 p-b--13 weight--300 c--white bg--black border--transparent br--6 w--full size--16"
-  data-testid="button"
-  style={Object {}}
->
-  <p>
-    Save Settings
-  </p>
-</button>
-`;
-
-exports[`Storyshots Design System/Atoms/Button Cookie Inverse 1`] = `
-<button
-  className="p-t--13 p-b--13 weight--300 bg--transparent border--black br--6 w--full size--16"
-  data-testid="button"
-  style={Object {}}
->
-  <p>
-    Cookie Preferences
-  </p>
 </button>
 `;
 
@@ -114,7 +90,7 @@ exports[`Storyshots Design System/Atoms/Button Host 1`] = `
   data-testid="button"
 >
   <a
-    className="br--30 weight--300 size--14 c--white inline-block p-t--13 p-b--13 p-l--13 p-r--13 hover-transparent"
+    className="br--30 weight--300 size--14 c--white__0 inline-block p-t--13 p-b--13 p-l--13 p-r--13 hover-transparent"
     href="/"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -126,7 +102,7 @@ exports[`Storyshots Design System/Atoms/Button Host 1`] = `
 
 exports[`Storyshots Design System/Atoms/Button Menu 1`] = `
 <button
-  className="items-center p-t--6 p-b--6 p-r--8 p-l--10 bg--white br--30 hover-shadow"
+  className="items-center p-t--6 p-b--6 p-r--8 p-l--10 bg--white__0 br--30 hover-shadow"
   data-testid="button"
   style={Object {}}
 >
@@ -155,4 +131,161 @@ exports[`Storyshots Design System/Atoms/Button Menu 1`] = `
     </svg>
   </div>
 </button>
+`;
+
+exports[`Storyshots Design System/Atoms/Button Privacy 1`] = `
+<button
+  className="no-wrap p-t--13 p-b--13 p-r--8 p-l--8 weight--300 c--white__0 bg--black b--transparent br--6 w--full w--privacy size--16"
+  data-testid="button"
+  style={Object {}}
+>
+  <p>
+    Save Settings
+  </p>
+</button>
+`;
+
+exports[`Storyshots Design System/Atoms/Button Privacy Inverse 1`] = `
+<button
+  className="no-wrap p-t--13 p-b--13 p-r--8 p-l--8 weight--300 bg--transparent b--black br--6 w--privacy size--16"
+  data-testid="button"
+  style={Object {}}
+>
+  <p>
+    Cookie Preferences
+  </p>
+</button>
+`;
+
+exports[`Storyshots Design System/Atoms/Card Landing 1`] = `
+<a
+  data-testid="card"
+  href="/"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  <div
+    className="category-section__card"
+  >
+    <div
+      className="category-section__card--img"
+    >
+      <img
+        alt="unique stays"
+        src="img/card2.jpg"
+      />
+    </div>
+    <div
+      className="p-t--10 p-r--15 p-b--0 p-l--15"
+    >
+      <h3
+        className="weight--500 size--17 c--gray__4"
+      >
+        Unique stays
+      </h3>
+    </div>
+    <div
+      className="p-t--5 p-r--15 p-b--15 p-l--15"
+    >
+      <p
+        className="size--15 weight--300 c--gray__1"
+      >
+        Spaces that are more than just a place to sleep.
+      </p>
+    </div>
+  </div>
+</a>
+`;
+
+exports[`Storyshots Design System/Organisms/Modal Privacy 1`] = `
+<div>
+  <div
+    data-testid="modal"
+    style={
+      Object {
+        "transform": "translateY(25px) translateZ(0)",
+      }
+    }
+  >
+    <div
+      className="p-t--28 p-b--28 p-l--25 p-r--25 br--8 shadow flex__privacy--content"
+    >
+      <div>
+        <div
+          className="items-center m-t--6 m-b--6 m-l--0 m-r--0"
+        >
+          <div
+            className="m-r--10"
+          >
+            Your Privacy
+          </div>
+          <div
+            className="r-t--1"
+          >
+            <svg
+              fill="#428BFF"
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="M10.25 4a2.25 2.25 0 0 0-4.495-.154L5.75 4v2h-1.5V4a3.75 3.75 0 0 1 7.495-.2l.005.2v2H13a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h7.25V4z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div
+          className="m-b--30"
+        >
+          <p
+            className="size--14 weight--300 lh--15 c--gray__0"
+          >
+            We use cookies to help personalize content, tailor and measure ads, and provide a safer experience. By navigating the site, you agree to the use of cookies to collect information on and off Airbnb. Read our
+             
+            <u>
+              <b>
+                Cookie Policy
+              </b>
+            </u>
+             
+            to learn more or go to Cookie Preferences to manage your settings.
+          </p>
+        </div>
+      </div>
+      <div
+        className="flex__privacy--buttons"
+      >
+        <div
+          className="m-t--6 m-b--6 m-l--0 m-r--privacy"
+          style={Object {}}
+        >
+          <button
+            className="no-wrap p-t--13 p-b--13 p-r--8 p-l--8 weight--300 c--white__0 bg--black b--transparent br--6 w--full w--privacy size--16"
+            data-testid="button"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <p>
+              Save Settings
+            </p>
+          </button>
+        </div>
+        <div
+          className="m-t--6 m-b--6 m-l--0 m-r--0"
+          style={Object {}}
+        >
+          <button
+            className="no-wrap p-t--13 p-b--13 p-r--8 p-l--8 weight--300 bg--transparent b--black br--6 w--privacy size--16"
+            data-testid="button"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <p>
+              Cookie Preferences
+            </p>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 `;
