@@ -67,7 +67,7 @@ export const PrivacyModal: React.FC<Props> = ({ criteria }) => {
                 font['size--14'],
                 font['weight--300'],
                 font['lh--15'],
-                color['c--gray'],
+                color['c--gray__0'],
               ].join(' ')}>
               We use cookies to help personalize content, tailor and measure
               ads, and provide a safer experience. By navigating the site, you

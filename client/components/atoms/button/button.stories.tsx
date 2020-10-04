@@ -52,7 +52,7 @@ host.args = {
         shape['br--30'],
         font['weight--300'],
         font['size--14'],
-        color['c--white'],
+        color['c--white__0'],
         layout['inline-block'],
         space['p-t--13'],
         space['p-b--13'],
@@ -129,8 +129,8 @@ privacyInverse.args = {
   tap: { scale: 0.98 },
 };
 
-export const borderButton = ButtonTemplate.bind({});
-borderButton.args = {
+export const border = ButtonTemplate.bind({});
+border.args = {
   extendsTo: color['bg--transparent'],
   children: (
     <a
@@ -150,8 +150,8 @@ borderButton.args = {
   ),
 };
 
-export const borderButtonInverse = ButtonTemplate.bind({});
-borderButtonInverse.args = {
+export const borderInverse = ButtonTemplate.bind({});
+borderInverse.args = {
   extendsTo: color['bg--transparent'],
   children: (
     <a
@@ -164,16 +164,16 @@ borderButtonInverse.args = {
         space['p-b--6'],
         space['p-l--14'],
         space['p-r--14'],
-        color['b--white'],
-        color['c--white'],
+        color['b--white__0'],
+        color['c--white__0'],
       ].join(' ')}>
-      Testing change
+      Explore all
     </a>
   ),
 };
 
-export const bannerButton = ButtonTemplate.bind({});
-bannerButton.args = {
+export const banner = ButtonTemplate.bind({});
+banner.args = {
   extendsTo: color['bg--transparent'],
   children: (
     <a
