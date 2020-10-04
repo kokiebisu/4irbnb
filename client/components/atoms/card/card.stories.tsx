@@ -80,3 +80,19 @@ horizontalWithSave.args = {
   },
   save: true,
 };
+
+export const vertical = ButtonTemplate.bind({});
+vertical.args = {
+  type: 'vertical',
+  card: {
+    imgUrl:
+      'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1659111-active_media/original/4931efc9-f708-4619-9b25-51036194e1e1.jpg?aki_policy=poster',
+    title: 'Go on a Leopard Safari in Sri Lanka',
+    to: '/',
+    ratings: 4.98,
+    number_of_reviews: 259,
+    cost: 17,
+    country: 'Sri Lanka',
+  },
+  save: true,
+};
