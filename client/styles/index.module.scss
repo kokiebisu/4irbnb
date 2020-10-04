@@ -151,12 +151,17 @@
     row-gap: 12px;
     margin: 0 -24px;
     scroll-padding: 0 24px;
-    padding: 4px 28px 4px;
+    padding: 4px 28px 8px;
 
     @media screen and (min-width: 728px) {
       width: 100%;
       margin: 0;
       padding: 4px 5px 4px;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0px;
+      background: transparent; /* make scrollbar transparent */
     }
   }
 
