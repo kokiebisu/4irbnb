@@ -2,9 +2,11 @@ $colors: (
   white__0: #ffffff,
   white__1: #f7f7f7,
   white__2: #dddddd,
-  gray: #868686,
+  gray__0: #868686,
+  gray__1: #717171,
+  gray__4: #363636,
   black: #000000,
-  transparent: transparent,
+  'transparent': transparent,
 );
 
 @each $name, $color in $colors {
