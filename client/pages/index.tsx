@@ -263,7 +263,8 @@ const CategorySection = () => {
         space['m-b--50'],
         space['m-l--0'],
       ].join(' ')}>
-      <div className={[styles['container'], space['p-h--70']].join(' ')}>
+      <div
+        className={[styles['container--carousel'], space['p-h--70']].join(' ')}>
         <div
           className={[
             styles['category-section__carousel'],
@@ -328,19 +329,28 @@ const BlackLivesMatter = () => {
   return (
     <div className={[space['p-v--22'], space['p-h--0']].join(' ')}>
       <div className={styles['container']}>
-        <div className={styles['blm__title']}>
-          <h3 className={[font['size--24'], font['weight--500']].join(' ')}>
-            We embrace a world where veryone belongs, and stand with
-            #BlackLivesMatter.
-          </h3>
-        </div>
-        <div className={[space['m-t--15']].join(' ')}>
-          <p className={[font['weight--300'], font['c--gray']].join(' ')}>
-            No one should have to encounter racism—no matter who you are, where
-            you’re from, who you love, or who you worship. Discrimination is not
-            tolerated in our community. Which is why when you agree to book or
-            host on Airbnb, you pledge not to tolerate it either.
-          </p>
+        <div className={styles['flex__blm--content']}>
+          <div className={[styles['w__blm--content']].join(' ')}>
+            <h3
+              className={[
+                styles['size__blm--title'],
+                font['weight--500'],
+                color['c--gray__4'],
+              ].join(' ')}>
+              We embrace a world where veryone belongs, and stand with
+              #BlackLivesMatter.
+            </h3>
+          </div>
+          <div
+            className={[styles['w__blm--content'], space['m-t--15']].join(' ')}>
+            <p className={[font['weight--300'], color['c--gray__0']].join(' ')}>
+              No one should have to encounter racism—no matter who you are,
+              where you’re from, who you love, or who you worship.
+              Discrimination is not tolerated in our community. Which is why
+              when you agree to book or host on Airbnb, you pledge not to
+              tolerate it either.
+            </p>
+          </div>
         </div>
         <div
           className={[
@@ -360,11 +370,15 @@ const DestinationTrips = () => {
     <div className={[space['m-h--0'], space['m-v--22']].join(' ')}>
       <div className={styles['container']}>
         <div>
-          <h3 className={[font['size--24'], font['weight--500']].join(' ')}>
+          <h3 className={[font['size--21'], font['weight--500']].join(' ')}>
             Destinations for future trips
           </h3>
         </div>
-        <div className={styles['destinations__categories']}>
+        <div
+          className={[
+            styles['destinations__categories'],
+            space['m-t--12'],
+          ].join(' ')}>
           {categories.map((category, index) => {
             return (
               <div key={index}>
@@ -372,7 +386,8 @@ const DestinationTrips = () => {
                   className={[
                     font['size--14'],
                     font['no-wrap'],
-                    color['c--gray__1'],
+                    font['weight--500'],
+                    color['c--gray__0'],
                   ].join(' ')}>
                   {category.name}
                 </h5>
