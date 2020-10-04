@@ -24,13 +24,13 @@ const ButtonTemplate: Story<CardProps> = (args) => <Card {...args} />;
 
 export const landing = ButtonTemplate.bind({});
 landing.args = {
+  type: 'landing',
   card: {
     imgUrl: 'img/card2.jpg',
     title: 'Unique stays',
     description: 'Spaces that are more than just a place to sleep.',
     to: '/',
   },
-  type: 'landing',
 };
 
 export const horizontal = ButtonTemplate.bind({});

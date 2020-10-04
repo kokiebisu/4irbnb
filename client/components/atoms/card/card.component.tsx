@@ -10,18 +10,18 @@ interface CardObjectProps {
   to: string;
 }
 
-interface LandingCardObjectProps extends CardObjectProps {
+export interface LandingCardObjectProps extends CardObjectProps {
   description: string;
 }
 
-interface HorizontalCardObjectProps extends CardObjectProps {
+export interface HorizontalCardObjectProps extends CardObjectProps {
   superhost: boolean;
   ratings: number;
   number_of_reviews: number;
   type: string;
 }
 
-interface VerticalCardObjectProps extends CardObjectProps {
+export interface VerticalCardObjectProps extends CardObjectProps {
   ratings: number;
   number_of_reviews: number;
   cost: number;
@@ -35,7 +35,7 @@ export interface CardProps {
     | LandingCardObjectProps
     | HorizontalCardObjectProps
     | VerticalCardObjectProps;
-  save: boolean;
+  save?: boolean;
 }
 
 interface mapProps {
