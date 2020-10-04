@@ -35,7 +35,7 @@ $sizes: (
   }
 }
 
-$spacings: (1, 3, 15);
+$spacings: (1, 3, 4, 5, 15);
 
 @each $spacing in $spacings {
   .ls--#{$spacing} {

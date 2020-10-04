@@ -7,7 +7,11 @@ import space from '../../../styles/space.module.scss';
 import animation from '../../../styles/animation.module.scss';
 import styles from '../../../styles/index.module.scss';
 
-export const LandingCard = ({ card }) => {
+interface Props {
+  card: any;
+}
+
+export const LandingCard: React.FC<Props> = ({ card }) => {
   return (
     <div className={styles['category-section__card']}>
       <div className={styles['category-section__card--img']}>
