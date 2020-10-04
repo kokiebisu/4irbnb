@@ -21,6 +21,7 @@ import { Modal } from 'components/organisms/modal/modal.component';
 import color from '../styles/color.module.scss';
 import shape from '../styles/shape.module.scss';
 import font from '../styles/font.module.scss';
+import { Card } from 'components/atoms/card/card.component';
 
 const CovidNotice = () => {
   return (
@@ -262,48 +263,14 @@ const CategorySection = () => {
         space['m-b--50'],
         space['m-l--0'],
       ].join(' ')}>
-      <div className={styles['container']}>
-        <div className={styles['category-section__carousel']}>
+      <div className={[styles['container'], space['p-h--70']].join(' ')}>
+        <div
+          className={[
+            styles['category-section__carousel'],
+            space['p-h--5'],
+          ].join(' ')}>
           {cards.map((card, index) => {
-            return (
-              <div key={index} className={styles['category-section__card']}>
-                <div className={styles['category-section__card--img']}>
-                  <img src={card.imgUrl} alt='unique stays' />
-                </div>
-                <div
-                  className={[
-                    space['p-t--10'],
-                    space['p-r--15'],
-                    space['p-b--0'],
-                    space['p-l--15'],
-                  ].join(' ')}>
-                  <h3
-                    className={[
-                      font['weight--500'],
-                      font['size--17'],
-                      color['c--gray__4'],
-                    ].join(' ')}>
-                    {card.title}
-                  </h3>
-                </div>
-                <div
-                  className={[
-                    space['p-t--5'],
-                    space['p-r--15'],
-                    space['p-b--15'],
-                    space['p-l--15'],
-                  ].join(' ')}>
-                  <p
-                    className={[
-                      font['size--15'],
-                      font['weight--300'],
-                      color['c--gray__1'],
-                    ].join(' ')}>
-                    {card.description}
-                  </p>
-                </div>
-              </div>
-            );
+            return <Card type='landing' key={index} card={card} />;
           })}
           <div className={styles['category-section__card--space']}></div>
         </div>
