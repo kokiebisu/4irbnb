@@ -7,7 +7,12 @@ import shape from '../../../styles/shape.module.scss';
 import styles from './card.module.scss';
 import { Heart } from '../../../public/svg/original';
 
-export const VerticalCard = ({ card, save }) => {
+interface Props {
+  card: any;
+  save?: boolean;
+}
+
+export const VerticalCard: React.FC<Props> = ({ card, save }) => {
   return (
     <div className={[styles['w__vertical']].join(' ')}>
       <div className={[layout['relative']].join(' ')}>

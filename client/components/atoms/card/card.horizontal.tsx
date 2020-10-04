@@ -7,7 +7,12 @@ import shape from '../../../styles/shape.module.scss';
 import styles from './card.module.scss';
 import { Heart } from '../../../public/svg/original';
 
-export const HorizontalCard = ({ card, save }) => {
+interface Props {
+  card: any;
+  save?: boolean;
+}
+
+export const HorizontalCard: React.FC<Props> = ({ card, save }) => {
   return (
     <div className={[styles['w__horizontal']].join(' ')}>
       <div className={[layout['relative']].join(' ')}>
