@@ -8,8 +8,10 @@ import animation from '../../../styles/animation.module.scss';
 import modal from './modal.module.scss';
 import { motion } from 'framer-motion';
 import { Button } from '../../../components/atoms/button/button.component';
+import { useToggleDispatch } from '../../../context/toggle';
 
 export const MenuModal: React.FC<{}> = () => {
+  const toggleDispatch = useToggleDispatch();
   return (
     <motion.div
       exit={{ opacity: 0 }}
@@ -23,7 +25,10 @@ export const MenuModal: React.FC<{}> = () => {
       <div className={[shape['w--inherit']].join(' ')}>
         <div>
           <Button
-            onPress={() => console.log('clicked signup')}
+            onPress={() => {
+              toggleDispatch({ type: 'toggle_menu' });
+              console.log('clicked signup');
+            }}
             extendsTo={[
               shape['w--full'],
               font['text--left'],
@@ -39,7 +44,10 @@ export const MenuModal: React.FC<{}> = () => {
         </div>
         <div>
           <Button
-            onPress={() => console.log('clicked login')}
+            onPress={() => {
+              toggleDispatch({ type: 'toggle_menu' });
+              console.log('clicked login');
+            }}
             extendsTo={[
               font['weight--300'],
               shape['w--full'],
@@ -56,7 +64,10 @@ export const MenuModal: React.FC<{}> = () => {
         </div>
         <div>
           <Button
-            onPress={() => console.log('cliekd host your home')}
+            onPress={() => {
+              toggleDispatch({ type: 'toggle_menu' });
+              console.log('cliekd host your home');
+            }}
             to='/host/home'
             extendsTo={[
               font['weight--300'],
@@ -75,7 +86,10 @@ export const MenuModal: React.FC<{}> = () => {
         <div>
           <Button
             to='/host/experience'
-            onPress={() => console.log('clicked host an experience')}
+            onPress={() => {
+              toggleDispatch({ type: 'toggle_menu' });
+              console.log('clicked host an experience');
+            }}
             extendsTo={[
               font['weight--300'],
               shape['w--full'],
@@ -92,7 +106,10 @@ export const MenuModal: React.FC<{}> = () => {
         </div>
         <div>
           <Button
-            onPress={() => console.log('help clicked')}
+            onPress={() => {
+              toggleDispatch({ type: 'toggle_menu' });
+              console.log('help clicked');
+            }}
             extendsTo={[
               font['weight--300'],
               shape['w--full'],
