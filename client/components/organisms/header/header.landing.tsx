@@ -14,15 +14,14 @@ import { useToggleDispatch, useToggleState } from '../../../context/toggle';
 import { Button } from '../../../components/atoms/button/button.component';
 import { NameLogo, NoNameLogo } from '../../../public/svg/logo';
 
-export const LandingHeader = ({ criteria }) => {
+export const LandingHeader: React.FC<{}> = () => {
   let toggleState = useToggleState();
   let toggleDispatch = useToggleDispatch();
 
-  const handlePress = () => {
-    if (toggleDispatch) {
-      return toggleDispatch({ type: 'toggle_privacy' });
-    }
+  const openMenuModal = () => {
+    toggleDispatch({ type: 'toggle_menu' });
   };
+
   return (
     <header
       className={[
@@ -57,13 +56,7 @@ export const LandingHeader = ({ criteria }) => {
             />
           </div>
           <div>
-            <Button
-              {...menuButton.args}
-              onPress={() => {
-                toggleDispatch({ type: 'toggle_menu' });
-                console.log('togglestate', toggleState.menu);
-              }}
-            />
+            <Button {...menuButton.args} onPress={openMenuModal} />
           </div>
         </div>
         <Modal

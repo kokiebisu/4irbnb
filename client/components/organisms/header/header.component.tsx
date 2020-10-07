@@ -10,9 +10,13 @@ interface mapProps {
   [key: string]: JSX.Element;
 }
 
-export const Header = ({ type, ...props }) => {
+export const Header: React.FC<HeaderProps> = ({
+  type,
+  extendsTo,
+  ...props
+}) => {
   const types: mapProps = {
     landing: <LandingHeader {...props} />,
   };
-  return <div>{types[type]}</div>;
+  return <div className={extendsTo}>{types[type]}</div>;
 };
