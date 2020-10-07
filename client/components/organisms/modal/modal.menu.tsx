@@ -7,6 +7,7 @@ import space from '../../../styles/space.module.scss';
 import animation from '../../../styles/animation.module.scss';
 import modal from './modal.module.scss';
 import { motion } from 'framer-motion';
+import { Button } from '../../../components/atoms/button/button.component';
 
 export const MenuModal: React.FC<{}> = () => {
   return (
@@ -21,8 +22,9 @@ export const MenuModal: React.FC<{}> = () => {
       style={{ width: 245, height: 220 }}>
       <div className={[shape['w--inherit']].join(' ')}>
         <div>
-          <button
-            className={[
+          <Button
+            onPress={() => console.log('clicked signup')}
+            extendsTo={[
               shape['w--full'],
               font['text--left'],
               font['size--14'],
@@ -33,11 +35,12 @@ export const MenuModal: React.FC<{}> = () => {
               animation['hover-background--white__1'],
             ].join(' ')}>
             Sign up
-          </button>
+          </Button>
         </div>
         <div>
-          <button
-            className={[
+          <Button
+            onPress={() => console.log('clicked login')}
+            extendsTo={[
               font['weight--300'],
               shape['w--full'],
               font['text--left'],
@@ -49,11 +52,13 @@ export const MenuModal: React.FC<{}> = () => {
               animation['hover-background--white__1'],
             ].join(' ')}>
             Log in
-          </button>
+          </Button>
         </div>
         <div>
-          <button
-            className={[
+          <Button
+            onPress={() => console.log('cliekd host your home')}
+            to='/host/home'
+            extendsTo={[
               font['weight--300'],
               shape['w--full'],
               font['text--left'],
@@ -65,11 +70,13 @@ export const MenuModal: React.FC<{}> = () => {
               animation['hover-background--white__1'],
             ].join(' ')}>
             Host your home
-          </button>
+          </Button>
         </div>
         <div>
-          <button
-            className={[
+          <Button
+            to='/host/experience'
+            onPress={() => console.log('clicked host an experience')}
+            extendsTo={[
               font['weight--300'],
               shape['w--full'],
               font['text--left'],
@@ -81,11 +88,12 @@ export const MenuModal: React.FC<{}> = () => {
               animation['hover-background--white__1'],
             ].join(' ')}>
             Host an experience
-          </button>
+          </Button>
         </div>
         <div>
-          <button
-            className={[
+          <Button
+            onPress={() => console.log('help clicked')}
+            extendsTo={[
               font['weight--300'],
               shape['w--full'],
               font['text--left'],
@@ -97,7 +105,7 @@ export const MenuModal: React.FC<{}> = () => {
               animation['hover-background--white__1'],
             ].join(' ')}>
             Help
-          </button>
+          </Button>
         </div>
       </div>
     </motion.div>
