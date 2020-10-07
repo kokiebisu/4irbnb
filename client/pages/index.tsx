@@ -25,6 +25,7 @@ import shape from '../styles/shape.module.scss';
 import font from '../styles/font.module.scss';
 import { Card } from 'components/atoms/card/card.component';
 import { useToggleDispatch, useToggleState } from '../context/toggle';
+import { Header } from 'components/organisms/header/header.component';
 
 const CovidNotice = () => {
   return (
@@ -72,7 +73,7 @@ const Banner = () => {
             <HeaderSmall />
           </div>
           <div className={styles['header__wrapper--md']}>
-            <Header />
+            <HeaderComponent />
           </div>
         </div>
       </div>
@@ -138,67 +139,12 @@ const HeaderSmall = () => {
   );
 };
 
-const Header = () => {
+const HeaderComponent = () => {
   const dispatchToggle = useToggleDispatch();
   const toggleState = useToggleState();
   return (
     <div className={styles['container']}>
-      <header
-        className={[
-          space['p-t--25'],
-          space['p-r--0'],
-          space['p-b--15'],
-          space['p-l--0'],
-        ].join(' ')}>
-        <div
-          className={[styles['searchbar__nav'], layout['relative']].join(' ')}>
-          <div>
-            <div className={styles['searchbar__logo--md']}>
-              <NoNameLogo fill='white' width={30} height={32} />
-            </div>
-            <div className={styles['searchbar__logo--lg']}>
-              <NameLogo fill='white' width={102} height={32} />
-            </div>
-          </div>
-          <div className={[layout['items-center']].join(' ')}>
-            <div className={styles['searchbar__host']}>
-              <Button {...hostButton.args} to='/' />
-            </div>
-            <div
-              className={[
-                space['m-t--0'],
-                space['m-r--12'],
-                space['m-b--0'],
-                space['m-l--8'],
-              ].join(' ')}>
-              <Button
-                {...globeButton.args}
-                onPress={() => console.log('clicked')}
-              />
-            </div>
-            <div>
-              <Button
-                {...menuButton.args}
-                onPress={() => {
-                  dispatchToggle({ type: 'toggle_menu' });
-                  console.log('togglestate', toggleState.menu);
-                }}
-              />
-            </div>
-          </div>
-          {toggleState.menu && (
-            <Modal
-              {...menu.args}
-              extendsTo={[
-                layout['absolute'],
-                layout['r--0'],
-                layout['b---230'],
-                color['bg--transparent'],
-              ].join(' ')}
-            />
-          )}
-        </div>
-      </header>
+      <Header type='landing' />
       <div className={[color['c--white__0']].join(' ')}></div>
       <div
         className={[

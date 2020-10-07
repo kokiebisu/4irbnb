@@ -6,10 +6,12 @@ import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import animation from '../../../styles/animation.module.scss';
 import modal from './modal.module.scss';
+import { motion } from 'framer-motion';
 
-export const MenuModal = () => {
+export const MenuModal: React.FC<{}> = () => {
   return (
-    <div
+    <motion.div
+      exit={{ opacity: 0 }}
       className={[
         shape['br--15'],
         shape['shadow'],
@@ -98,6 +100,6 @@ export const MenuModal = () => {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
