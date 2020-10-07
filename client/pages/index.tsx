@@ -192,7 +192,7 @@ const Header = () => {
               extendsTo={[
                 layout['absolute'],
                 layout['r--0'],
-                layout['b---250'],
+                layout['b---230'],
                 color['bg--transparent'],
               ].join(' ')}
             />

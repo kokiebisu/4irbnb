@@ -16,7 +16,7 @@ export const MenuModal = () => {
         layout['items-center'],
         color['bg--white__0'],
       ].join(' ')}
-      style={{ width: 235, height: 235 }}>
+      style={{ width: 245, height: 220 }}>
       <div className={[shape['w--inherit']].join(' ')}>
         <div>
           <button
@@ -26,7 +26,7 @@ export const MenuModal = () => {
               font['size--14'],
               color['bg--white__0'],
               space['p-h--14'],
-              space['p-v--12'],
+              space['p-v--10'],
               layout['block'],
               animation['hover-background--white__1'],
             ].join(' ')}>
@@ -42,7 +42,7 @@ export const MenuModal = () => {
               font['size--14'],
               color['bg--white__0'],
               space['p-h--14'],
-              space['p-v--12'],
+              space['p-v--10'],
               layout['block'],
               animation['hover-background--white__1'],
             ].join(' ')}>
@@ -58,7 +58,7 @@ export const MenuModal = () => {
               font['size--14'],
               color['bg--white__0'],
               space['p-h--14'],
-              space['p-v--12'],
+              space['p-v--10'],
               layout['block'],
               animation['hover-background--white__1'],
             ].join(' ')}>
@@ -74,7 +74,7 @@ export const MenuModal = () => {
               font['size--14'],
               color['bg--white__0'],
               space['p-h--14'],
-              space['p-v--12'],
+              space['p-v--10'],
               layout['block'],
               animation['hover-background--white__1'],
             ].join(' ')}>
@@ -90,7 +90,7 @@ export const MenuModal = () => {
               font['size--14'],
               color['bg--white__0'],
               space['p-h--14'],
-              space['p-v--12'],
+              space['p-v--10'],
               layout['block'],
               animation['hover-background--white__1'],
             ].join(' ')}>
