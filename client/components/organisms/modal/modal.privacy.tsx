@@ -19,16 +19,11 @@ interface Props {
   criteria?: any;
 }
 
-export const PrivacyModal: React.FC<Props> = ({ criteria }) => {
-  let toggleDispatch;
-  if (criteria) {
-    toggleDispatch = useToggleDispatch();
-  }
+export const PrivacyModal: React.FC<Props> = () => {
+  const toggleDispatch = useToggleDispatch();
 
   const handlePress = () => {
-    if (toggleDispatch) {
-      return toggleDispatch({ type: 'toggle_privacy' });
-    }
+    return toggleDispatch({ type: 'toggle_privacy' });
   };
 
   return (
@@ -45,6 +40,7 @@ export const PrivacyModal: React.FC<Props> = ({ criteria }) => {
           space['p-r--25'],
           shape['br--8'],
           shape['shadow'],
+          color['bg--white__0'],
           modal['flex__privacy--content'],
         ].join(' ')}>
         <div>

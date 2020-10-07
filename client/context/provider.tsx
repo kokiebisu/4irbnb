@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ToggleProvider } from 'context/toggle';
+import { ToggleProvider } from './toggle';
 
 interface Props {
   children: React.ReactNode;

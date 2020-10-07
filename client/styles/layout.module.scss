@@ -55,7 +55,11 @@
   position: sticky;
 }
 
-$pixels: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+.absolute {
+  position: absolute;
+}
+
+$pixels: (-230, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
 @each $pixel in $pixels {
   .rt--#{$pixel} {
@@ -111,6 +115,22 @@ $pixels: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
   .st--#{$pixel} {
     position: sticky;
     top: #{$pixel}px;
+  }
+
+  .t--#{$pixel} {
+    top: #{$pixel}px;
+  }
+
+  .r--#{$pixel} {
+    right: #{$pixel}px;
+  }
+
+  .b--#{$pixel} {
+    bottom: #{$pixel}px;
+  }
+
+  .l--#{$pixel} {
+    left: #{$pixel}px;
   }
 }
 

@@ -51,8 +51,14 @@ $percents: (
   }
 }
 
-.w--full {
-  width: 100%;
+.w {
+  &--full {
+    width: 100%;
+  }
+
+  &--inherit {
+    width: inherit;
+  }
 }
 
 .shadow {

@@ -15,13 +15,17 @@ import {
   host as hostButton,
   menu as menuButton,
 } from 'components/atoms/button/button.stories';
-import { privacy as privacyModal } from 'components/organisms/modal/modal.stories';
+import {
+  menu,
+  privacy as privacyModal,
+} from 'components/organisms/modal/modal.stories';
 import { Modal } from 'components/organisms/modal/modal.component';
 import color from '../styles/color.module.scss';
 import shape from '../styles/shape.module.scss';
 import font from '../styles/font.module.scss';
 import { Card } from 'components/atoms/card/card.component';
 import { useToggleDispatch, useToggleState } from '../context/toggle';
+import { Header } from 'components/organisms/header/header.component';
 
 const CovidNotice = () => {
   return (
@@ -69,7 +73,7 @@ const Banner = () => {
             <HeaderSmall />
           </div>
           <div className={styles['header__wrapper--md']}>
-            <Header />
+            <HeaderComponent />
           </div>
         </div>
       </div>
@@ -135,110 +139,12 @@ const HeaderSmall = () => {
   );
 };
 
-const Header = () => {
+const HeaderComponent = () => {
   const dispatchToggle = useToggleDispatch();
   const toggleState = useToggleState();
   return (
     <div className={styles['container']}>
-      <header
-        className={[
-          space['p-t--25'],
-          space['p-r--0'],
-          space['p-b--15'],
-          space['p-l--0'],
-        ].join(' ')}>
-        <div
-          className={[styles['searchbar__nav'], layout['relative']].join(' ')}>
-          <div>
-            <div className={styles['searchbar__logo--md']}>
-              <NoNameLogo fill='white' width={30} height={32} />
-            </div>
-            <div className={styles['searchbar__logo--lg']}>
-              <NameLogo fill='white' width={102} height={32} />
-            </div>
-          </div>
-          <div className={[layout['items-center']].join(' ')}>
-            <div className={styles['searchbar__host']}>
-              <Button {...hostButton.args} to='/' />
-            </div>
-            <div
-              className={[
-                space['m-t--0'],
-                space['m-r--12'],
-                space['m-b--0'],
-                space['m-l--8'],
-              ].join(' ')}>
-              <Button
-                {...globeButton.args}
-                onPress={() => console.log('clicked')}
-              />
-            </div>
-            <div>
-              <Button
-                {...menuButton.args}
-                onPress={() => {
-                  dispatchToggle({ type: 'toggle_menu' });
-                  console.log('togglestate', toggleState.menu);
-                }}
-              />
-            </div>
-          </div>
-          {toggleState.menu && (
-            <div
-              style={{
-                position: 'absolute',
-                backgroundColor: 'white',
-                right: 0,
-                bottom: -200,
-              }}>
-              <div
-                className={[shape['br--15']].join(' ')}
-                style={{ width: 250 }}>
-                <button
-                  className={[
-                    font['size--14'],
-                    color['bg--white__0'],
-                    space['p--15'],
-                  ].join(' ')}>
-                  Sign up
-                </button>
-                <button
-                  className={[
-                    font['size--14'],
-                    color['bg--white__0'],
-                    space['p--15'],
-                  ].join(' ')}>
-                  Log in
-                </button>
-                <button
-                  className={[
-                    font['size--14'],
-                    color['bg--white__0'],
-                    space['p--15'],
-                  ].join(' ')}>
-                  Host your home
-                </button>
-                <button
-                  className={[
-                    font['size--14'],
-                    color['bg--white__0'],
-                    space['p--15'],
-                  ].join(' ')}>
-                  Host an experience
-                </button>
-                <button
-                  className={[
-                    font['size--14'],
-                    color['bg--white__0'],
-                    space['p--15'],
-                  ].join(' ')}>
-                  Help
-                </button>
-              </div>
-            </div>
-          )}
-        </div>
-      </header>
+      <Header type='landing' />
       <div className={[color['c--white__0']].join(' ')}></div>
       <div
         className={[
