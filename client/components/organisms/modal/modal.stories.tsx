@@ -27,3 +27,8 @@ export const menu = ModalTemplate.bind({});
 menu.args = {
   type: 'menu',
 };
+
+export const register = ModalTemplate.bind({});
+register.args = {
+  type: 'register',
+};
