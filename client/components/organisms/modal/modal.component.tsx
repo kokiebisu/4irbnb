@@ -1,5 +1,6 @@
 import { AnimatePresence } from 'framer-motion';
 import React from 'react';
+import { MenuModal } from './modal.menu';
 import { PrivacyModal } from './modal.privacy';
 
 export interface ModalProps {
@@ -16,6 +17,7 @@ export const Modal: React.FC<ModalProps> = ({ type, extendsTo, ...props }) => {
   const { criteria } = props;
   const types: mapProps = {
     privacy: <PrivacyModal {...props} />,
+    menu: <MenuModal {...props} />,
   };
   if (criteria !== undefined) {
     return (
