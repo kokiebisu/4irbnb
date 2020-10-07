@@ -27,7 +27,7 @@ describe('Base Button', () => {
     const { getByTestId } = render(
       <Button {...privacy.args} onPress={() => console.log('clicked')} />
     );
-    expect(getByTestId('button')).toHaveTextContent('Save Settings');
+    expect(getByTestId('button')).toHaveTextContent('OK');
   });
   it('renders correctly for border button', () => {
     const { getByTestId } = render(
