@@ -15,7 +15,10 @@ import {
   host as hostButton,
   menu as menuButton,
 } from 'components/atoms/button/button.stories';
-import { privacy as privacyModal } from 'components/organisms/modal/modal.stories';
+import {
+  menu,
+  privacy as privacyModal,
+} from 'components/organisms/modal/modal.stories';
 import { Modal } from 'components/organisms/modal/modal.component';
 import color from '../styles/color.module.scss';
 import shape from '../styles/shape.module.scss';
@@ -184,58 +187,15 @@ const Header = () => {
             </div>
           </div>
           {toggleState.menu && (
-            <div
-              style={{
-                position: 'absolute',
-                backgroundColor: 'white',
-                right: 0,
-                bottom: -200,
-              }}>
-              <div
-                className={[shape['br--15']].join(' ')}
-                style={{ width: 250 }}>
-                <button
-                  className={[
-                    font['size--14'],
-                    color['bg--white__0'],
-                    space['p--15'],
-                  ].join(' ')}>
-                  Sign up
-                </button>
-                <button
-                  className={[
-                    font['size--14'],
-                    color['bg--white__0'],
-                    space['p--15'],
-                  ].join(' ')}>
-                  Log in
-                </button>
-                <button
-                  className={[
-                    font['size--14'],
-                    color['bg--white__0'],
-                    space['p--15'],
-                  ].join(' ')}>
-                  Host your home
-                </button>
-                <button
-                  className={[
-                    font['size--14'],
-                    color['bg--white__0'],
-                    space['p--15'],
-                  ].join(' ')}>
-                  Host an experience
-                </button>
-                <button
-                  className={[
-                    font['size--14'],
-                    color['bg--white__0'],
-                    space['p--15'],
-                  ].join(' ')}>
-                  Help
-                </button>
-              </div>
-            </div>
+            <Modal
+              {...menu.args}
+              extendsTo={[
+                layout['absolute'],
+                layout['r--0'],
+                layout['b---250'],
+                color['bg--transparent'],
+              ].join(' ')}
+            />
           )}
         </div>
       </header>

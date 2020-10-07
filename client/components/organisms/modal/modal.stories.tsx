@@ -14,3 +14,8 @@ export const privacy = ModalTemplate.bind({});
 privacy.args = {
   type: 'privacy',
 };
+
+export const menu = ModalTemplate.bind({});
+menu.args = {
+  type: 'menu',
+};
