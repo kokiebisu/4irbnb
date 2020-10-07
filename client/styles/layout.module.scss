@@ -51,6 +51,10 @@
   position: fixed;
 }
 
+.sticky {
+  position: sticky;
+}
+
 $pixels: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
 @each $pixel in $pixels {
@@ -102,6 +106,11 @@ $pixels: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
   .fb--#{$pixel} {
     position: fixed;
     bottom: #{$pixel}px;
+  }
+
+  .st--#{$pixel} {
+    position: sticky;
+    top: #{$pixel}px;
   }
 }
 

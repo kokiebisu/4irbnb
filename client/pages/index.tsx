@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import styles from 'styles/index.module.scss';
 import layout from 'styles/layout.module.scss';
 import space from 'styles/space.module.scss';
 import { MagnifyGlass, Lock, Saved, Login, Globe } from 'public/svg/regular';
 import { MenuBarLogo, NameLogo, NoNameLogo } from 'public/svg/logo';
-import { useToggleState } from '../context/toggle';
 import { destinations, categories, cards, sections } from '../content/index';
 import { Button } from 'components/atoms/button/button.component';
 import {
@@ -22,6 +21,7 @@ import color from '../styles/color.module.scss';
 import shape from '../styles/shape.module.scss';
 import font from '../styles/font.module.scss';
 import { Card } from 'components/atoms/card/card.component';
+import { useToggleDispatch, useToggleState } from '../context/toggle';
 
 const CovidNotice = () => {
   return (
@@ -88,7 +88,7 @@ const HeaderSmall = () => {
             space['p-b--15'],
             space['p-l--0'],
           ].join(' ')}>
-          <div className={styles['searchbar__sm']}>
+          <div className={[styles['searchbar__sm']].join(' ')}>
             <MagnifyGlass stroke={'black'} strokeWidth={4} width={17} />
             <input placeholder='Where are you going' />
           </div>
@@ -136,6 +136,8 @@ const HeaderSmall = () => {
 };
 
 const Header = () => {
+  const dispatchToggle = useToggleDispatch();
+  const toggleState = useToggleState();
   return (
     <div className={styles['container']}>
       <header
@@ -145,7 +147,8 @@ const Header = () => {
           space['p-b--15'],
           space['p-l--0'],
         ].join(' ')}>
-        <div className={styles['searchbar__nav']}>
+        <div
+          className={[styles['searchbar__nav'], layout['relative']].join(' ')}>
           <div>
             <div className={styles['searchbar__logo--md']}>
               <NoNameLogo fill='white' width={30} height={32} />
@@ -173,10 +176,67 @@ const Header = () => {
             <div>
               <Button
                 {...menuButton.args}
-                onPress={() => console.log('clicked')}
+                onPress={() => {
+                  dispatchToggle({ type: 'toggle_menu' });
+                  console.log('togglestate', toggleState.menu);
+                }}
               />
             </div>
           </div>
+          {toggleState.menu && (
+            <div
+              style={{
+                position: 'absolute',
+                backgroundColor: 'white',
+                right: 0,
+                bottom: -200,
+              }}>
+              <div
+                className={[shape['br--15']].join(' ')}
+                style={{ width: 250 }}>
+                <button
+                  className={[
+                    font['size--14'],
+                    color['bg--white__0'],
+                    space['p--15'],
+                  ].join(' ')}>
+                  Sign up
+                </button>
+                <button
+                  className={[
+                    font['size--14'],
+                    color['bg--white__0'],
+                    space['p--15'],
+                  ].join(' ')}>
+                  Log in
+                </button>
+                <button
+                  className={[
+                    font['size--14'],
+                    color['bg--white__0'],
+                    space['p--15'],
+                  ].join(' ')}>
+                  Host your home
+                </button>
+                <button
+                  className={[
+                    font['size--14'],
+                    color['bg--white__0'],
+                    space['p--15'],
+                  ].join(' ')}>
+                  Host an experience
+                </button>
+                <button
+                  className={[
+                    font['size--14'],
+                    color['bg--white__0'],
+                    space['p--15'],
+                  ].join(' ')}>
+                  Help
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </header>
       <div className={[color['c--white__0']].join(' ')}></div>
