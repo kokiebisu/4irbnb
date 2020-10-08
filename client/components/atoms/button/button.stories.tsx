@@ -10,7 +10,8 @@ import animation from '../../../styles/animation.module.scss';
 import button from '../../../components/atoms/button/button.module.scss';
 import { Globe, ChevronDown } from '../../../public/svg/regular';
 import { ButtonProps } from './button.component';
-import { Avatar, Bars } from '../../../public/svg/original';
+import { Avatar, Bars, Email } from '../../../public/svg/original';
+import { Apple, Facebook, Google } from '../../../public/svg/logo';
 
 export default {
   title: 'Design System/Atoms/Button',
@@ -200,4 +201,32 @@ primary.args = {
     space['p-v--14'],
     shape['br--8'],
   ].join(' '),
+};
+
+export const emailLogin = ButtonTemplate.bind({});
+emailLogin.args = {
+  type: 'login',
+  platform: 'Email',
+  icon: <Email width={18} height={18} />,
+};
+
+export const facebookLogin = ButtonTemplate.bind({});
+facebookLogin.args = {
+  type: 'login',
+  platform: 'Facebook',
+  icon: <Facebook width={20} height={20} />,
+};
+
+export const googleLogin = ButtonTemplate.bind({});
+googleLogin.args = {
+  type: 'login',
+  platform: 'Google',
+  icon: <Google width={18} height={18} />,
+};
+
+export const appleLogin = ButtonTemplate.bind({});
+appleLogin.args = {
+  type: 'login',
+  platform: 'Apple',
+  icon: <Apple width={18} height={18} />,
 };
