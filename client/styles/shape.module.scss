@@ -31,6 +31,16 @@ $pixels: (
     border-radius: #{$pixel}px;
   }
 
+  .btr--#{$pixel} {
+    border-top-left-radius: #{$pixel}px;
+    border-top-right-radius: #{$pixel}px;
+  }
+
+  .bbr--#{$pixel} {
+    border-bottom-left-radius: #{$pixel}px;
+    border-bottom-right-radius: #{$pixel}px;
+  }
+
   .w--#{$pixel} {
     width: #{$pixel}px;
   }
@@ -48,6 +58,10 @@ $percents: (
   .h--#{$name}p {
     height: #{$percent};
   }
+}
+
+.h--full {
+  height: 100%;
 }
 
 .min-h {
@@ -78,4 +92,8 @@ $percents: (
 
 .hidden {
   visibility: hidden;
+}
+
+.none {
+  display: none;
 }
