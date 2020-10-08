@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import layout from '../../../styles/layout.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import color from '../../../styles/color.module.scss';
@@ -15,8 +15,11 @@ import {
   primary,
 } from '../../../components/atoms/button/button.stories';
 import { motion } from 'framer-motion';
+import { ChevronDown } from '../../../public/svg/regular';
 
 export const RegisterModal: React.FC<{}> = () => {
+  const [clicked, setClicked] = useState(false);
+
   const logins = [
     { args: emailLogin.args, press: () => console.log('clicked email') },
     { args: facebookLogin.args, press: () => console.log('clicked facebook') },
@@ -47,8 +50,89 @@ export const RegisterModal: React.FC<{}> = () => {
       <div
         style={{ height: 'calc(100% - 60px)' }}
         className={[space['p-h--24']].join(' ')}>
-        <div className={[shape['w-full']].join(' ')}>
-          <div></div>
+        <div className={[shape['w--full']].join(' ')}>
+          <div className={[space['m-b--8'], space['m-t--35']].join(' ')}>
+            <div>
+              <div
+                style={{ height: 65 }}
+                className={[
+                  layout['relative'],
+                  color['b-t--white__3'],
+                  color['b-r--white__3'],
+                  color['b-l--white__3'],
+                  shape['btr--10'],
+                  space['p-v--8'],
+                  space['p-h--12'],
+                  layout['items-center'],
+                  layout['justify-between'],
+                ].join(' ')}>
+                <div>
+                  <label
+                    className={[
+                      font['size--12'],
+                      color['c--gray__2'],
+                      font['weight--300'],
+                    ].join(' ')}>
+                    Country/Region
+                  </label>
+                  <input
+                    style={{ height: 20 }}
+                    className={[
+                      space['p--0'],
+                      shape['w--full'],
+                      layout['block'],
+                      color['b--0'],
+                      font['size--16'],
+                      font['weight--300'],
+                      color['c__placeholder--black'],
+                    ].join(' ')}
+                    placeholder='Canada (+1)'
+                  />
+                </div>
+                <div
+                  style={{ right: 17 }}
+                  className={[layout['absolute']].join(' ')}>
+                  <ChevronDown width={12} />
+                </div>
+              </div>
+              <div
+                style={{ height: 65 }}
+                className={[
+                  shape['bbr--10'],
+                  color['b--white__3'],
+                  space['p-v--8'],
+                  space['p-h--12'],
+                ].join(' ')}>
+                <div
+                  className={[layout['items-center'], shape['h--full']].join(
+                    ' '
+                  )}>
+                  <label
+                    className={
+                      clicked
+                        ? [].join(' ')
+                        : [
+                            font['weight--100'],
+                            color['c--gray__0'],
+                            layout['items-center'],
+                          ].join(' ')
+                    }>
+                    Phone number
+                  </label>
+                </div>
+                <input
+                  className={
+                    clicked
+                      ? [shape['w--full'], layout['block'], color['b--0']].join(
+                          ' '
+                        )
+                      : [shape['none']].join(' ')
+                  }
+                  placeholder='Phone number'
+                />
+              </div>
+            </div>
+          </div>
           <div>
             <p
               className={[
@@ -60,7 +144,7 @@ export const RegisterModal: React.FC<{}> = () => {
               and data rates apply.
             </p>
           </div>
-          <div className={[space['p-t--6'], space['p-b--8']].join(' ')}>
+          <div className={[space['m-t--18'], space['m-b--18']].join(' ')}>
             <Button
               {...primary.args}
               onPress={() => console.log('clicked Continue')}>
@@ -87,13 +171,37 @@ export const RegisterModal: React.FC<{}> = () => {
               or
             </span>
           </div>
-          {logins.map((login) => {
-            return (
-              <div className={[space['m-v--14']].join(' ')}>
-                <Button {...login.args} onPress={login.press} />
-              </div>
-            );
-          })}
+          <div>
+            {logins.map((login) => {
+              return (
+                <div className={[space['m-v--14']].join(' ')}>
+                  <Button {...login.args} onPress={login.press} />
+                </div>
+              );
+            })}
+          </div>
+          <div className={[space['m-t--4']].join(' ')}>
+            <div
+              className={[layout['inline-block'], space['m-r--6']].join(' ')}>
+              <p
+                className={[
+                  font['size--14'],
+                  font['weight--300'],
+                  color['c--gray__1'],
+                ].join(' ')}>
+                Already have an account?
+              </p>
+            </div>
+            <button
+              className={[
+                layout['inline-block'],
+                font['size--14'],
+                font['weight--500'],
+                color['bg--transparent'],
+              ].join(' ')}>
+              <u>Log in</u>
+            </button>
+          </div>
         </div>
       </div>
     </motion.div>

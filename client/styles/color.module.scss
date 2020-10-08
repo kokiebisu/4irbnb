@@ -16,6 +16,12 @@ $colors: (
     color: #{$color};
   }
 
+  .c__placeholder--#{$name} {
+    &::placeholder {
+      color: #{$color};
+    }
+  }
+
   .bg--#{$name} {
     background-color: #{$color};
   }
@@ -30,6 +36,14 @@ $colors: (
 
   .b-b--#{$name} {
     border-bottom: 1px solid #{$color};
+  }
+
+  .b-l--#{$name} {
+    border-left: 1px solid #{$color};
+  }
+
+  .b-r--#{$name} {
+    border-right: 1px solid #{$color};
   }
 }
 
