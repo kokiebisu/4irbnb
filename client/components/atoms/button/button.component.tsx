@@ -11,7 +11,7 @@ export interface ButtonProps {
   tap?: {
     scale: number;
   };
-  type: string;
+  type?: string;
   platform?: string;
   icon?: JSX.Element;
 }
