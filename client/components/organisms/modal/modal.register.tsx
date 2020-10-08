@@ -4,6 +4,7 @@ import shape from '../../../styles/shape.module.scss';
 import color from '../../../styles/color.module.scss';
 import space from '../../../styles/space.module.scss';
 import font from '../../../styles/font.module.scss';
+import modalStyles from './modal.module.scss';
 import { Close } from '../../../public/svg/original';
 import { Button } from '../../../components/atoms/button/button.component';
 import { primary } from '../../../components/atoms/button/button.stories';
@@ -17,7 +18,7 @@ export const RegisterModal: React.FC<{}> = () => {
         style={{ height: 60 }}
         className={[
           layout['items-center'],
-          color['b-b--white__1'],
+          color['b-b--white__2'],
           space['p-h--24'],
         ].join(' ')}>
         <div className={[layout['relative'], shape['w--full']].join(' ')}>
@@ -43,14 +44,33 @@ export const RegisterModal: React.FC<{}> = () => {
               and data rates apply.
             </p>
           </div>
-          <div>
+          <div className={[space['p-t--6'], space['p-b--8']].join(' ')}>
             <Button
               {...primary.args}
               onPress={() => console.log('clicked Continue')}>
               Continue
             </Button>
           </div>
-          <div>or</div>
+          <div
+            style={{ zIndex: 1 }}
+            className={[
+              modalStyles['ba'],
+              font['text--center'],
+              layout['relative'],
+            ].join(' ')}>
+            <span
+              style={{ zIndex: 3 }}
+              className={[
+                layout['relative'],
+                space['p-h--4'],
+                color['bg--white__0'],
+                font['weight--100'],
+                color['c--gray__0'],
+                font['size--12'],
+              ].join(' ')}>
+              or
+            </span>
+          </div>
           <div>Continue with email</div>
           <div>Continue with Facebook</div>
           <div>Continue with Google</div>
