@@ -24,3 +24,14 @@
     margin-right: 8px;
   }
 }
+
+.ba {
+  &::after {
+    content: '';
+    width: 100%;
+    position: absolute;
+    border-bottom: 1px solid black;
+    left: 0;
+    top: 50%;
+  }
+}

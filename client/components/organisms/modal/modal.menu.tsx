@@ -27,7 +27,7 @@ export const MenuModal: React.FC<{}> = () => {
           <Button
             onPress={() => {
               toggleDispatch({ type: 'toggle_menu' });
-              console.log('clicked signup');
+              toggleDispatch({ type: 'toggle_register' });
             }}
             extendsTo={[
               shape['w--full'],
@@ -46,7 +46,7 @@ export const MenuModal: React.FC<{}> = () => {
           <Button
             onPress={() => {
               toggleDispatch({ type: 'toggle_menu' });
-              console.log('clicked login');
+              toggleDispatch({ type: 'toggle_register' });
             }}
             extendsTo={[
               font['weight--300'],
