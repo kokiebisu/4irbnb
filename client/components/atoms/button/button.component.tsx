@@ -14,7 +14,7 @@ export interface ButtonProps {
 
 export const Button: React.FC<ButtonProps> = ({
   onPress,
-  children,
+  children = <p>Primary</p>,
   to,
   extendsTo,
   tap,

@@ -188,3 +188,16 @@ banner.args = {
     </a>
   ),
 };
+
+export const primary = ButtonTemplate.bind({});
+primary.args = {
+  extendsTo: [
+    color['bg--primary'],
+    color['c--white__0'],
+    shape['w--full'],
+    layout['block'],
+    font['size--16'],
+    space['p-v--14'],
+    shape['br--8'],
+  ].join(' '),
+};

@@ -2,11 +2,15 @@ import React from 'react';
 import { createContext, useReducer, useContext } from 'react';
 
 type Dispatch = (action: Action) => void;
-type Action = { type: 'toggle_privacy' } | { type: 'toggle_menu' };
+type Action =
+  | { type: 'toggle_privacy' }
+  | { type: 'toggle_menu' }
+  | { type: 'toggle_register' };
 
 type State = {
   privacy: boolean;
   menu: boolean;
+  register: boolean;
 };
 
 type ToggleProviderProps = { children: React.ReactNode };
@@ -20,6 +24,8 @@ const toggleReducer = (state: State, action: Action) => {
       return { ...state, privacy: !state.privacy };
     case 'toggle_menu':
       return { ...state, menu: !state.menu };
+    case 'toggle_privacy':
+      return { ...state, menu: !state.register };
     default:
       return state;
   }
@@ -29,6 +35,7 @@ const ToggleProvider = ({ children }: ToggleProviderProps) => {
   const [state, dispatch] = useReducer(toggleReducer, {
     privacy: true,
     menu: false,
+    register: false,
   });
 
   return (

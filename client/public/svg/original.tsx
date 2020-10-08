@@ -66,3 +66,12 @@ export const Heart = (props) => {
     </svg>
   );
 };
+
+export const Close = (props) => {
+  return (
+    <svg {...props} viewBox='0 0 32 32'>
+      <path d='m6 6 20 20' />
+      <path d='m26 6-20 20' />
+    </svg>
+  );
+};
