@@ -26,6 +26,7 @@ privacy.args = {
 export const menu = ModalTemplate.bind({});
 menu.args = {
   type: 'menu',
+  dispatchType: 'toggle_menu',
 };
 
 export const register = ModalTemplate.bind({});
