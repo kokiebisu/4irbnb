@@ -10,10 +10,15 @@ import { motion } from 'framer-motion';
 import { Button } from '../../../components/atoms/button/button.component';
 import { useToggleDispatch } from '../../../context/toggle';
 
-export const MenuModal: React.FC<{}> = () => {
+interface Props {
+  refProp?: any;
+}
+
+export const MenuModal: React.FC<Props> = ({ refProp }) => {
   const toggleDispatch = useToggleDispatch();
   return (
     <motion.div
+      ref={refProp}
       exit={{ opacity: 0 }}
       className={[
         shape['br--15'],
