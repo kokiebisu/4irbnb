@@ -2,10 +2,7 @@ import React from 'react';
 import { createContext, useReducer, useContext } from 'react';
 
 type Dispatch = (action: Action) => void;
-type Action =
-  | { type: 'toggle_privacy' }
-  | { type: 'toggle_menu' }
-  | { type: 'toggle_register' };
+type Action = { type: string };
 
 type State = {
   privacy: boolean;
