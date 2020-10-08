@@ -3,7 +3,10 @@ import layout from '../../../styles/layout.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import color from '../../../styles/color.module.scss';
 import space from '../../../styles/space.module.scss';
+import font from '../../../styles/font.module.scss';
 import { Close } from '../../../public/svg/original';
+import { Button } from '../../../components/atoms/button/button.component';
+import { primary } from '../../../components/atoms/button/button.stories';
 
 export const RegisterModal: React.FC<{}> = () => {
   return (
@@ -24,7 +27,36 @@ export const RegisterModal: React.FC<{}> = () => {
           <div className={[layout['all-center']].join(' ')}>Sign up</div>
         </div>
       </div>
-      <div>content</div>
+      <div
+        style={{ height: 'calc(100% - 60px)' }}
+        className={[space['p-h--24']].join(' ')}>
+        <div className={[shape['w-full']].join(' ')}>
+          <div></div>
+          <div>
+            <p
+              className={[
+                font['weight--100'],
+                color['c--gray__0'],
+                font['size--12'],
+              ].join(' ')}>
+              We’ll call or text you to confirm your number. Standard message
+              and data rates apply.
+            </p>
+          </div>
+          <div>
+            <Button
+              {...primary.args}
+              onPress={() => console.log('clicked Continue')}>
+              Continue
+            </Button>
+          </div>
+          <div>or</div>
+          <div>Continue with email</div>
+          <div>Continue with Facebook</div>
+          <div>Continue with Google</div>
+          <div>Continue with Apple</div>
+        </div>
+      </div>
     </div>
   );
 };
