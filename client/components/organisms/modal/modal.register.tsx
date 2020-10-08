@@ -7,11 +7,27 @@ import font from '../../../styles/font.module.scss';
 import modalStyles from './modal.module.scss';
 import { Close } from '../../../public/svg/original';
 import { Button } from '../../../components/atoms/button/button.component';
-import { primary } from '../../../components/atoms/button/button.stories';
+import {
+  emailLogin,
+  facebookLogin,
+  googleLogin,
+  appleLogin,
+  primary,
+} from '../../../components/atoms/button/button.stories';
+import { motion } from 'framer-motion';
 
 export const RegisterModal: React.FC<{}> = () => {
+  const logins = [
+    { args: emailLogin.args, press: () => console.log('clicked email') },
+    { args: facebookLogin.args, press: () => console.log('clicked facebook') },
+    { args: googleLogin.args, press: () => console.log('clicked google') },
+    { args: appleLogin.args, press: () => console.log('clicked apple') },
+  ];
   return (
-    <div
+    <motion.div
+      exit={{ opacity: 0 }}
+      initial={{ y: 25 }}
+      animate={{ y: 0 }}
       style={{ width: 550, height: 650 }}
       className={[shape['shadow'], shape['br--16']].join(' ')}>
       <div
@@ -71,12 +87,15 @@ export const RegisterModal: React.FC<{}> = () => {
               or
             </span>
           </div>
-          <div>Continue with email</div>
-          <div>Continue with Facebook</div>
-          <div>Continue with Google</div>
-          <div>Continue with Apple</div>
+          {logins.map((login) => {
+            return (
+              <div className={[space['m-v--14']].join(' ')}>
+                <Button {...login.args} onPress={login.press} />
+              </div>
+            );
+          })}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
