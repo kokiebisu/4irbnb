@@ -14,7 +14,7 @@ import { useToggleDispatch, useToggleState } from '../../../context/toggle';
 import { Button } from '../../../components/atoms/button/button.component';
 import { NameLogo, NoNameLogo } from '../../../public/svg/logo';
 
-export const LandingHeader: React.FC<{}> = () => {
+export const TransparentHeader: React.FC<{}> = () => {
   let toggleState = useToggleState();
   let toggleDispatch = useToggleDispatch();
 

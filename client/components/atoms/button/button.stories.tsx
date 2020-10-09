@@ -28,7 +28,7 @@ globe.args = {
     <div
       className={[
         layout['items-center'],
-        animation['hover-transparent'],
+        animation['hover-background--gray__1'],
         color['bg--transparent'],
         space['p-t--13'],
         space['p-b--13'],
@@ -45,6 +45,30 @@ globe.args = {
   ),
 };
 
+export const globeInverse = ButtonTemplate.bind({});
+globeInverse.args = {
+  extendsTo: [color['bg--transparent'], shape['br--30']].join(' '),
+  children: (
+    <div
+      className={[
+        layout['items-center'],
+        animation['hover-background--white__1'],
+        color['bg--transparent'],
+        space['p-t--13'],
+        space['p-b--13'],
+        space['p-l--15'],
+        space['p-r--15'],
+      ].join(' ')}>
+      <div className={[layout['items-center'], space['m-r--8']].join(' ')}>
+        <Globe width={16} fill='#363636' />
+      </div>
+      <div className={layout['items-center']}>
+        <ChevronDown width={8} fill='#363636' />
+      </div>
+    </div>
+  ),
+};
+
 export const host = ButtonTemplate.bind({});
 host.args = {
   to: '/',
@@ -52,7 +76,7 @@ host.args = {
     <a
       className={[
         shape['br--30'],
-        font['weight--300'],
+        font['weight--100'],
         font['size--14'],
         color['c--white__0'],
         layout['inline-block'],
@@ -60,7 +84,29 @@ host.args = {
         space['p-b--13'],
         space['p-l--13'],
         space['p-r--13'],
-        animation['hover-transparent'],
+        animation['hover-background--white__2'],
+      ].join(' ')}>
+      Become a host
+    </a>
+  ),
+};
+
+export const hostInverse = ButtonTemplate.bind({});
+hostInverse.args = {
+  to: '/',
+  children: (
+    <a
+      className={[
+        shape['br--30'],
+        font['weight--100'],
+        font['size--14'],
+        color['c--gray__4'],
+        layout['inline-block'],
+        space['p-t--13'],
+        space['p-b--13'],
+        space['p-l--13'],
+        space['p-r--13'],
+        animation['hover-background--white__1'],
       ].join(' ')}>
       Become a host
     </a>
@@ -77,6 +123,31 @@ menu.args = {
     space['p-l--10'],
     color['bg--white__0'],
     shape['br--30'],
+    animation['hover-shadow'],
+  ].join(' '),
+  children: (
+    <>
+      <div className={space['m-r--8']}>
+        <Bars fill='black' width={12} />
+      </div>
+      <div>
+        <Avatar width={30} fill='gray' />
+      </div>
+    </>
+  ),
+};
+
+export const menuInverse = ButtonTemplate.bind({});
+menuInverse.args = {
+  extendsTo: [
+    layout['items-center'],
+    space['p-t--6'],
+    space['p-b--6'],
+    space['p-r--8'],
+    space['p-l--10'],
+    color['bg--white__0'],
+    shape['br--30'],
+    color['b--white__2'],
     animation['hover-shadow'],
   ].join(' '),
   children: (

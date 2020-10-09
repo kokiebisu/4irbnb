@@ -1,5 +1,6 @@
 import React from 'react';
-import { LandingHeader } from './header.landing';
+import { TransparentHeader } from './header.transparent';
+import { WhiteHeader } from './header.white';
 
 export interface HeaderProps {
   extendsTo?: string;
@@ -16,7 +17,8 @@ export const Header: React.FC<HeaderProps> = ({
   ...props
 }) => {
   const types: mapProps = {
-    landing: <LandingHeader {...props} />,
+    transparent: <TransparentHeader {...props} />,
+    white: <WhiteHeader {...props} />,
   };
   return <div className={extendsTo}>{types[type]}</div>;
 };
