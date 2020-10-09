@@ -177,7 +177,25 @@ export const typeStays = [
   {
     title: 'Tree house',
     imgUrl:
-      'https://a0.muscache.com/im/pictures/175f945a-a4ac-416c-bb10-7e49a927c42f.jpg?im_w=720',
+      'https://a0.muscache.com/im/pictures/175f945a-a4ac-416c-bb10-7e49a927c42f.jpg?im_w=1200',
+    to: '/',
+  },
+  {
+    title: 'Floating homes',
+    imgUrl:
+      'https://a0.muscache.com/im/pictures/6568b09d-99ee-4f49-b9ca-afb90893d030.jpg?im_w=1200',
+    to: '/',
+  },
+  {
+    title: 'Huts',
+    imgUrl:
+      'https://a0.muscache.com/im/pictures/931f2a49-d25b-40d7-971c-f42aad36af44.jpg?im_w=1200',
+    to: '/',
+  },
+  {
+    title: 'Castles',
+    imgUrl:
+      'https://a0.muscache.com/im/pictures/a7450c1a-0562-4254-b6c9-ff2910d14fec.jpg?im_w=1200',
     to: '/',
   },
 ];
