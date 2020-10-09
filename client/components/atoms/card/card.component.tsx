@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { LandingCard } from './card.landing';
 import { HorizontalCard } from './card.horizontal';
 import { VerticalCard } from './card.vertical';
+import { TypeStayCard } from './card.typestay';
 
 interface CardObjectProps {
   imgUrl: string;
@@ -28,13 +29,16 @@ export interface VerticalCardObjectProps extends CardObjectProps {
   country: string;
 }
 
+export interface TypeStayCardObjectProps extends CardObjectProps {}
+
 export interface CardProps {
   extendsTo?: string;
   type: string;
   card:
     | LandingCardObjectProps
     | HorizontalCardObjectProps
-    | VerticalCardObjectProps;
+    | VerticalCardObjectProps
+    | TypeStayCardObjectProps;
   save?: boolean;
 }
 
@@ -48,7 +52,9 @@ export const Card: React.FC<CardProps> = ({ extendsTo, type, ...props }) => {
     landing: <LandingCard {...props} />,
     horizontal: <HorizontalCard {...props} />,
     vertical: <VerticalCard {...props} />,
+    typestay: <TypeStayCard {...props} />,
   };
+  console.log('card to', card.to);
   return (
     <Link href={card.to}>
       <a data-testid='card' className={extendsTo}>
