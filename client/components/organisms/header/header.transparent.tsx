@@ -30,7 +30,12 @@ export const TransparentHeader: React.FC<{}> = () => {
         space['p-b--15'],
         space['p-l--0'],
       ].join(' ')}>
-      <div className={[styles['searchbar__nav'], layout['relative']].join(' ')}>
+      <div
+        className={[
+          styles['container'],
+          styles['searchbar__nav'],
+          layout['relative'],
+        ].join(' ')}>
         <div>
           <div className={styles['searchbar__logo--md']}>
             <NoNameLogo fill='white' width={30} height={32} />
