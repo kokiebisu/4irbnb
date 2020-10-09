@@ -32,7 +32,7 @@ export const TypeStayCard: React.FC<Props> = ({ card }) => {
                   <img
                     decoding='async'
                     src={card.imgUrl}
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: 'cover', borderRadius: 12 }}
                   />
                 </picture>
               </div>
