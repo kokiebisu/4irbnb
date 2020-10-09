@@ -26,19 +26,20 @@ export const TypeStay: React.FC<{}> = () => {
             scrollSnapAlign: 'x mandatory',
             height: '100%',
           }}>
-          <li
-            style={{
-              maxWidth: '25%',
-              scrollSnapAlign: 'start',
-              flex: '0 0 25%',
-              marginTop: 5,
-              marginLeft: 5,
-              marginBottom: 5,
-            }}>
-            {typeStays.map((typeStay) => {
-              return <Card {...typeStayCard.args} card={typeStay} />;
-            })}
-          </li>
+          {typeStays.map((typeStay) => {
+            return (
+              <li
+                style={{
+                  maxWidth: '25%',
+                  scrollSnapAlign: 'start',
+                  flex: '0 0 25%',
+                  borderLeftStyle: 'solid',
+                  borderLeftColor: 'transparent',
+                }}>
+                <Card {...typeStayCard.args} card={typeStay} />;
+              </li>
+            );
+          })}
         </ul>
       </div>
     </div>
