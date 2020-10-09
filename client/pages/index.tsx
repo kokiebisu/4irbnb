@@ -11,13 +11,10 @@ import {
   banner as bannerButton,
   border as borderButton,
   borderInverse as borderButtonInverse,
-  globe as globeButton,
-  host as hostButton,
-  menu as menuButton,
 } from 'components/atoms/button/button.stories';
 import {
-  menu,
   privacy as privacyModal,
+  register as registerModal,
 } from 'components/organisms/modal/modal.stories';
 import { Modal } from 'components/organisms/modal/modal.component';
 import color from '../styles/color.module.scss';
@@ -26,6 +23,7 @@ import font from '../styles/font.module.scss';
 import { Card } from 'components/atoms/card/card.component';
 import { useToggleDispatch, useToggleState } from '../context/toggle';
 import { Header } from 'components/organisms/header/header.component';
+import { RegisterModal } from 'components/organisms/modal/modal.register';
 
 const CovidNotice = () => {
   return (
@@ -140,11 +138,9 @@ const HeaderSmall = () => {
 };
 
 const HeaderComponent = () => {
-  const dispatchToggle = useToggleDispatch();
-  const toggleState = useToggleState();
   return (
     <div className={styles['container']}>
-      <Header type='landing' />
+      <Header type='transparent' />
       <div className={[color['c--white__0']].join(' ')}></div>
       <div
         className={[
@@ -562,6 +558,9 @@ const LandingPage = () => {
           shape['br--8'],
         ].join(' ')}>
         <Modal {...privacyModal.args} criteria={toggleState.privacy} />
+      </div>
+      <div>
+        <Modal {...registerModal.args} criteria={toggleState.register} />
       </div>
     </div>
   );
