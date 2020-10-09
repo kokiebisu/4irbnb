@@ -31,6 +31,9 @@ export const TypeStay: React.FC<{}> = () => {
               maxWidth: '25%',
               scrollSnapAlign: 'start',
               flex: '0 0 25%',
+              marginTop: 5,
+              marginLeft: 5,
+              marginBottom: 5,
             }}>
             {typeStays.map((typeStay) => {
               return <Card {...typeStayCard.args} card={typeStay} />;
