@@ -4,7 +4,14 @@
   }
 }
 
-.hover-shadow {
+.hover-shadow--sm {
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    transition: 0.3s all;
+  }
+}
+
+.hover-shadow--lg {
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
     transition: 0.6s all;

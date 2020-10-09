@@ -86,7 +86,11 @@ $percents: (
   }
 }
 
-.shadow {
+.shadow--sm {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
+}
+
+.shadow--lg {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
 }
 

@@ -31,9 +31,11 @@ export const RegisterModal: React.FC<{}> = () => {
       initial={{ y: 25 }}
       animate={{ y: 0 }}
       style={{ width: 550, height: 650 }}
-      className={[shape['shadow'], shape['br--16'], color['bg--white__0']].join(
-        ' '
-      )}>
+      className={[
+        shape['shadow--lg'],
+        shape['br--16'],
+        color['bg--white__0'],
+      ].join(' ')}>
       <div
         style={{ height: 60 }}
         className={[
