@@ -140,7 +140,9 @@ const HeaderSmall = () => {
 const HeaderComponent = () => {
   return (
     <div style={{ height: '100%' }}>
-      <Header type='transparent' />
+      <div className={[space['p-t--14']].join(' ')}>
+        <Header type='transparent' />
+      </div>
       <div className={[color['c--white__0']].join(' ')}></div>
       <div
         className={[
