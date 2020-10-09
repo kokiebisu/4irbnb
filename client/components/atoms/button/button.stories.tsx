@@ -284,7 +284,7 @@ searchbar.args = {
   ].join(' '),
   children: (
     <div
-      style={{ width: 240 }}
+      style={{ width: 240, height: 45 }}
       className={[
         space['p-v--15'],
         space['p-l--18'],

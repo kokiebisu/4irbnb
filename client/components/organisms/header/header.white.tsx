@@ -35,7 +35,7 @@ export const WhiteHeader: React.FC<{}> = () => {
       <div className={[styles['searchbar__nav'], layout['relative']].join(' ')}>
         <div>
           <div className={styles['searchbar__logo--md']}>
-            <NoNameLogo fill='white' width={30} height={32} />
+            <NoNameLogo fill='#F5385D' width={30} height={32} />
           </div>
           <div className={styles['searchbar__logo--lg']}>
             <NameLogo fill='#F5385D' width={102} height={32} />
