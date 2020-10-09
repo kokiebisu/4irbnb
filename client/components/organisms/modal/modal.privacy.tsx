@@ -39,7 +39,7 @@ export const PrivacyModal: React.FC<Props> = () => {
           space['p-l--25'],
           space['p-r--25'],
           shape['br--8'],
-          shape['shadow'],
+          shape['shadow--lg'],
           color['bg--white__0'],
           modal['flex__privacy--content'],
         ].join(' ')}>

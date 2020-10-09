@@ -1,4 +1,5 @@
 import React from 'react';
+import shape from '../../../styles/shape.module.scss';
 import space from '../../../styles/space.module.scss';
 import styles from '../../../styles/index.module.scss';
 import layout from '../../../styles/layout.module.scss';
@@ -7,6 +8,7 @@ import {
   globeInverse as globeInverseButton,
   hostInverse as hostInverseButton,
   menuInverse as menuInverseButton,
+  searchbar,
 } from '../../atoms/button/button.stories';
 import { menu as menuModal } from '../../organisms/modal/modal.stories';
 import { Modal } from '../modal/modal.component';
@@ -24,9 +26,9 @@ export const WhiteHeader: React.FC<{}> = () => {
   return (
     <header
       className={[
-        space['p-t--25'],
+        space['p-v--15'],
         space['p-r--0'],
-        space['p-b--15'],
+        shape['shadow--sm'],
         space['p-l--0'],
         color['bg--white__0'],
       ].join(' ')}>
@@ -38,6 +40,12 @@ export const WhiteHeader: React.FC<{}> = () => {
           <div className={styles['searchbar__logo--lg']}>
             <NameLogo fill='#F5385D' width={102} height={32} />
           </div>
+        </div>
+        <div>
+          <Button
+            {...searchbar.args}
+            onPress={() => console.log('clicked searchbar small')}
+          />
         </div>
         <div className={[layout['items-center']].join(' ')}>
           <div className={styles['searchbar__host']}>
