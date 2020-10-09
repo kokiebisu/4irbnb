@@ -20,9 +20,9 @@ export default {
   argTypes: { onPress: { action: 'clicked' } },
 } as Meta;
 
-const ButtonTemplate: Story<CardProps> = (args) => <Card {...args} />;
+const CardTemplate: Story<CardProps> = (args) => <Card {...args} />;
 
-export const landing = ButtonTemplate.bind({});
+export const landing = CardTemplate.bind({});
 landing.args = {
   type: 'landing',
   card: {
@@ -33,7 +33,15 @@ landing.args = {
   },
 };
 
-export const horizontal = ButtonTemplate.bind({});
+landing.decorators = [
+  (Story) => (
+    <div style={{ width: 300 }}>
+      <Story />
+    </div>
+  ),
+];
+
+export const horizontal = CardTemplate.bind({});
 horizontal.args = {
   type: 'horizontal',
   card: {
@@ -49,7 +57,7 @@ horizontal.args = {
   save: false,
 };
 
-export const horizontalWithSuperhost = ButtonTemplate.bind({});
+export const horizontalWithSuperhost = CardTemplate.bind({});
 horizontalWithSuperhost.args = {
   type: 'horizontal',
   card: {
@@ -65,7 +73,7 @@ horizontalWithSuperhost.args = {
   save: false,
 };
 
-export const horizontalWithSave = ButtonTemplate.bind({});
+export const horizontalWithSave = CardTemplate.bind({});
 horizontalWithSave.args = {
   type: 'horizontal',
   card: {
@@ -81,7 +89,7 @@ horizontalWithSave.args = {
   save: true,
 };
 
-export const vertical = ButtonTemplate.bind({});
+export const vertical = CardTemplate.bind({});
 vertical.args = {
   type: 'vertical',
   card: {
@@ -96,3 +104,22 @@ vertical.args = {
   },
   save: true,
 };
+
+export const typeStay = CardTemplate.bind({});
+typeStay.args = {
+  type: 'typestay',
+  card: {
+    title: 'Tree house',
+    imgUrl:
+      'https://a0.muscache.com/im/pictures/175f945a-a4ac-416c-bb10-7e49a927c42f.jpg?im_w=720',
+    to: '/',
+  },
+};
+
+typeStay.decorators = [
+  (Story) => (
+    <div style={{ width: 200 }}>
+      <Story />
+    </div>
+  ),
+];
