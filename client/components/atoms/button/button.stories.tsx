@@ -274,8 +274,8 @@ primary.args = {
   ].join(' '),
 };
 
-export const searchbar = ButtonTemplate.bind({});
-searchbar.args = {
+export const searchbarSmall = ButtonTemplate.bind({});
+searchbarSmall.args = {
   extendsTo: [
     shape['br--25'],
     color['bg--white__0'],
@@ -312,6 +312,39 @@ searchbar.args = {
           }}>
           <MagnifyGlass width={12} height={12} stroke='white' strokeWidth={6} />
         </div>
+      </div>
+    </div>
+  ),
+};
+
+export const searchbarMedium = ButtonTemplate.bind({});
+searchbarMedium.args = {
+  extendsTo: [
+    shape['w--full'],
+    shape['br--25'],
+    color['bg--white__0'],
+    color['b--white__2'],
+    animation['hover-shadow--sm'],
+    shape['shadow--sm'],
+  ].join(' '),
+  children: (
+    <div
+      className={[
+        space['p-v--12'],
+        space['p-l--18'],
+        space['p-r--8'],
+        layout['all-center'],
+      ].join(' ')}>
+      <div className={[space['m-r--12']].join(' ')}>
+        <MagnifyGlass width={15} stroke='black' strokeWidth={4} />
+      </div>
+      <div
+        className={[
+          font['weight--100'],
+          font['size--15'],
+          color['c--gray__0'],
+        ].join(' ')}>
+        Search stays
       </div>
     </div>
   ),
