@@ -138,11 +138,9 @@ const HeaderSmall = () => {
 };
 
 const HeaderComponent = () => {
-  const dispatchToggle = useToggleDispatch();
-  const toggleState = useToggleState();
   return (
     <div className={styles['container']}>
-      <Header type='landing' />
+      <Header type='transparent' />
       <div className={[color['c--white__0']].join(' ')}></div>
       <div
         className={[

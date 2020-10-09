@@ -18,7 +18,12 @@ export default {
 
 const HeaderTemplate: Story<HeaderProps> = (args) => <Header {...args} />;
 
-export const landing = HeaderTemplate.bind({});
-landing.args = {
-  type: 'landing',
+export const transparent = HeaderTemplate.bind({});
+transparent.args = {
+  type: 'transparent',
+};
+
+export const white = HeaderTemplate.bind({});
+white.args = {
+  type: 'white',
 };
