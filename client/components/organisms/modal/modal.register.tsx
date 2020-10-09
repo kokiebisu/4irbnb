@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import layout from '../../../styles/layout.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import color from '../../../styles/color.module.scss';
@@ -19,7 +19,6 @@ import { ChevronDown } from '../../../public/svg/regular';
 
 export const RegisterModal: React.FC<{}> = () => {
   const [clicked, setClicked] = useState(false);
-
   const logins = [
     { args: emailLogin.args, press: () => console.log('clicked email') },
     { args: facebookLogin.args, press: () => console.log('clicked facebook') },
@@ -32,7 +31,9 @@ export const RegisterModal: React.FC<{}> = () => {
       initial={{ y: 25 }}
       animate={{ y: 0 }}
       style={{ width: 550, height: 650 }}
-      className={[shape['shadow'], shape['br--16']].join(' ')}>
+      className={[shape['shadow'], shape['br--16'], color['bg--white__0']].join(
+        ' '
+      )}>
       <div
         style={{ height: 60 }}
         className={[
