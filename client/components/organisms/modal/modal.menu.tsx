@@ -22,7 +22,7 @@ export const MenuModal: React.FC<Props> = ({ refProp }) => {
       exit={{ opacity: 0 }}
       className={[
         shape['br--15'],
-        shape['shadow'],
+        shape['shadow--lg'],
         layout['items-center'],
         color['bg--white__0'],
       ].join(' ')}

@@ -36,7 +36,7 @@ export const VerticalCard: React.FC<Props> = ({ card, save }) => {
                 space['p-h--8'],
                 space['p-v--4'],
                 color['bg--white__1'],
-                shape['shadow'],
+                shape['shadow--lg'],
                 shape['br--3'],
               ].join(' ')}>
               <p

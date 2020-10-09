@@ -8,7 +8,7 @@ import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import animation from '../../../styles/animation.module.scss';
 import button from '../../../components/atoms/button/button.module.scss';
-import { Globe, ChevronDown } from '../../../public/svg/regular';
+import { Globe, ChevronDown, MagnifyGlass } from '../../../public/svg/regular';
 import { ButtonProps } from './button.component';
 import { Avatar, Bars, Email } from '../../../public/svg/original';
 import { Apple, Facebook, Google } from '../../../public/svg/logo';
@@ -123,7 +123,7 @@ menu.args = {
     space['p-l--10'],
     color['bg--white__0'],
     shape['br--30'],
-    animation['hover-shadow'],
+    animation['hover-shadow--lg'],
   ].join(' '),
   children: (
     <>
@@ -148,7 +148,7 @@ menuInverse.args = {
     color['bg--white__0'],
     shape['br--30'],
     color['b--white__2'],
-    animation['hover-shadow'],
+    animation['hover-shadow--lg'],
   ].join(' '),
   children: (
     <>
@@ -272,6 +272,52 @@ primary.args = {
     space['p-v--14'],
     shape['br--8'],
   ].join(' '),
+};
+
+export const searchbar = ButtonTemplate.bind({});
+searchbar.args = {
+  extendsTo: [
+    shape['br--25'],
+    color['bg--white__0'],
+    color['b--white__2'],
+    animation['hover-shadow--sm'],
+  ].join(' '),
+  children: (
+    <div
+      style={{ width: 240 }}
+      className={[
+        space['p-v--15'],
+        space['p-l--18'],
+        space['p-r--8'],
+        layout['items-center'],
+        layout['justify-between'],
+      ].join(' ')}>
+      <div>
+        <p
+          className={[
+            font['no-wrap'],
+            font['size--14'],
+            font['weight--500'],
+          ].join(' ')}>
+          Start your search
+        </p>
+      </div>
+      <div>
+        <div
+          style={{
+            backgroundColor: 'red',
+            borderRadius: '50%',
+            height: 30,
+            width: 30,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <MagnifyGlass width={12} height={12} stroke='white' strokeWidth={6} />
+        </div>
+      </div>
+    </div>
+  ),
 };
 
 export const emailLogin = ButtonTemplate.bind({});
