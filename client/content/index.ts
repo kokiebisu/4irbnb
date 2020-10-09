@@ -172,3 +172,12 @@ export const sections = [
     ],
   },
 ];
+
+export const typeStays = [
+  {
+    title: 'Tree house',
+    imgUrl:
+      'https://a0.muscache.com/im/pictures/175f945a-a4ac-416c-bb10-7e49a927c42f.jpg?im_w=720',
+    to: '/',
+  },
+];

@@ -3,6 +3,8 @@ import space from '../../../styles/space.module.scss';
 import styles from '../../../styles/index.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import color from '../../../styles/color.module.scss';
+import shape from '../../../styles/shape.module.scss';
+import font from '../../../styles/font.module.scss';
 import {
   globe as globeButton,
   host as hostButton,
@@ -13,6 +15,7 @@ import { Modal } from '../modal/modal.component';
 import { useToggleDispatch, useToggleState } from '../../../context/toggle';
 import { Button } from '../../../components/atoms/button/button.component';
 import { NameLogo, NoNameLogo } from '../../../public/svg/logo';
+import { MagnifyGlass } from '../../../public/svg/original';
 
 export const TransparentHeader: React.FC<{}> = () => {
   let toggleState = useToggleState();
@@ -23,15 +26,10 @@ export const TransparentHeader: React.FC<{}> = () => {
   };
 
   return (
-    <header
-      className={[
-        space['p-t--25'],
-        space['p-r--0'],
-        space['p-b--15'],
-        space['p-l--0'],
-      ].join(' ')}>
+    <header className={[space['p-h--0'], space['p-v--11']].join(' ')}>
       <div
         className={[
+          shape['none--sm'],
           styles['container'],
           layout['items-center'],
           layout['justify-between'],
@@ -75,6 +73,31 @@ export const TransparentHeader: React.FC<{}> = () => {
             color['bg--transparent'],
           ].join(' ')}
         />
+      </div>
+      <div
+        className={[
+          shape['none--md'],
+          layout['items-center'],
+          space['p-v--10'],
+          space['p-h--25'],
+          shape['br--30'],
+          shape['shadow'],
+          color['bg--white__0'],
+        ].join(' ')}>
+        <div className={[space['m-r--15']].join(' ')}>
+          <MagnifyGlass stroke={'black'} strokeWidth={4} width={17} />
+        </div>
+        <div>
+          <input
+            className={[
+              color['b--0'],
+              font['size--16'],
+              font['weight--300'],
+              shape['outline--none'],
+            ].join(' ')}
+            placeholder='Where are you going'
+          />
+        </div>
       </div>
     </header>
   );
