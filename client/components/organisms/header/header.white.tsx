@@ -27,12 +27,15 @@ export const WhiteHeader: React.FC<{}> = () => {
     <header
       className={[
         space['p-v--15'],
-        space['p-r--0'],
         shape['shadow--sm'],
-        space['p-l--0'],
         color['bg--white__0'],
       ].join(' ')}>
-      <div className={[styles['searchbar__nav'], layout['relative']].join(' ')}>
+      <div
+        className={[
+          styles['container'],
+          styles['searchbar__nav'],
+          layout['relative'],
+        ].join(' ')}>
         <div>
           <div className={styles['searchbar__logo--md']}>
             <NoNameLogo fill='#F5385D' width={30} height={32} />
