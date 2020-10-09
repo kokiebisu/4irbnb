@@ -139,11 +139,13 @@ const HeaderSmall = () => {
 
 const HeaderComponent = () => {
   return (
-    <div className={styles['container']}>
+    <div style={{ height: '100%' }}>
       <Header type='transparent' />
       <div className={[color['c--white__0']].join(' ')}></div>
       <div
         className={[
+          styles['container'],
+          layout['justify-center'],
           layout['z--20'],
           shape['h--75p'],
           styles['flex__explore'],
