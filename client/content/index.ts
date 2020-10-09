@@ -108,19 +108,19 @@ export const cards = [
     imgUrl: '/img/categories1.webp',
     title: 'Unique stays',
     description: 'Spaces that are more than just a place to sleep.',
-    to: '/s/stays',
+    to: '/stays',
   },
   {
     imgUrl: '/img/categories2.webp',
     title: 'Online Experiences',
     description: 'A new way to travel from home.',
-    to: '/s/experiences',
+    to: '/experiences',
   },
   {
     imgUrl: '/img/categories3.webp',
     title: 'Entire homes',
     description: 'Comfortable private places, with room for friends or family.',
-    to: '/s/homes',
+    to: '/homes',
   },
 ];
 
