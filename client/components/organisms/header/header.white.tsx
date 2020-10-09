@@ -4,17 +4,20 @@ import space from '../../../styles/space.module.scss';
 import styles from '../../../styles/index.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import color from '../../../styles/color.module.scss';
+import headerStyles from './header.module.scss';
 import {
   globeInverse as globeInverseButton,
   hostInverse as hostInverseButton,
   menuInverse as menuInverseButton,
-  searchbar,
+  searchbarMedium,
+  searchbarSmall,
 } from '../../atoms/button/button.stories';
 import { menu as menuModal } from '../../organisms/modal/modal.stories';
 import { Modal } from '../modal/modal.component';
 import { useToggleDispatch, useToggleState } from '../../../context/toggle';
 import { Button } from '../../../components/atoms/button/button.component';
 import { NameLogo, NoNameLogo } from '../../../public/svg/logo';
+import { ChevronLeft } from '../../../public/svg/regular';
 
 export const WhiteHeader: React.FC<{}> = () => {
   let toggleState = useToggleState();
@@ -26,12 +29,13 @@ export const WhiteHeader: React.FC<{}> = () => {
   return (
     <header
       className={[
-        space['p-v--15'],
+        headerStyles['p__wrapper'],
         shape['shadow--sm'],
         color['bg--white__0'],
       ].join(' ')}>
       <div
         className={[
+          shape['none--sm'],
           styles['container'],
           styles['searchbar__nav'],
           layout['relative'],
@@ -46,7 +50,7 @@ export const WhiteHeader: React.FC<{}> = () => {
         </div>
         <div>
           <Button
-            {...searchbar.args}
+            {...searchbarSmall.args}
             onPress={() => console.log('clicked searchbar small')}
           />
         </div>
@@ -80,6 +84,20 @@ export const WhiteHeader: React.FC<{}> = () => {
             color['bg--transparent'],
           ].join(' ')}
         />
+      </div>
+      <div className={[shape['none--md']].join(' ')}>
+        <div className={[layout['all-center'], styles['container']].join(' ')}>
+          <div style={{ width: 30 }}>
+            <ChevronLeft width={12} />
+          </div>
+          <div style={{ width: '100%', flexGrow: 1 }}>
+            <Button
+              {...searchbarMedium.args}
+              onPress={() => console.log('pressed')}
+            />
+          </div>
+          <div style={{ width: 30, visibility: 'hidden' }}></div>
+        </div>
       </div>
     </header>
   );

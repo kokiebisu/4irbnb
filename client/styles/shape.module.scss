@@ -100,4 +100,20 @@ $percents: (
 
 .none {
   display: none;
+
+  &--sm {
+    display: none;
+
+    @media screen and (min-width: 728px) {
+      display: flex;
+    }
+  }
+
+  &--md {
+    display: flex;
+
+    @media screen and (min-width: 728px) {
+      display: none;
+    }
+  }
 }
