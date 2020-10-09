@@ -33,7 +33,8 @@ export const TransparentHeader: React.FC<{}> = () => {
       <div
         className={[
           styles['container'],
-          styles['searchbar__nav'],
+          layout['items-center'],
+          layout['justify-between'],
           layout['relative'],
         ].join(' ')}>
         <div>
