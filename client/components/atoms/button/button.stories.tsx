@@ -76,7 +76,7 @@ host.args = {
     <a
       className={[
         shape['br--30'],
-        font['weight--100'],
+        font['weight--300'],
         font['size--14'],
         color['c--white__0'],
         layout['inline-block'],
@@ -98,7 +98,7 @@ hostInverse.args = {
     <a
       className={[
         shape['br--30'],
-        font['weight--100'],
+        font['weight--500'],
         font['size--14'],
         color['c--gray__4'],
         layout['inline-block'],
@@ -304,14 +304,11 @@ searchbar.args = {
       </div>
       <div>
         <div
+          className={[color['bg--primary'], layout['all-center']].join(' ')}
           style={{
-            backgroundColor: 'red',
             borderRadius: '50%',
             height: 30,
             width: 30,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
           }}>
           <MagnifyGlass width={12} height={12} stroke='white' strokeWidth={6} />
         </div>
