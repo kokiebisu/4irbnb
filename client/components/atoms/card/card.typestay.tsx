@@ -1,6 +1,7 @@
 import React from 'react';
 import shape from '../../../styles/shape.module.scss';
 import layout from '../../../styles/layout.module.scss';
+import space from '../../../styles/space.module.scss';
 import { Button } from '../button/button.component';
 
 interface Props {
@@ -9,14 +10,23 @@ interface Props {
 
 export const TypeStayCard: React.FC<Props> = ({ card }) => {
   return (
-    <div style={{ height: '100%', minWidth: '100%' }}>
-      <div style={{ width: '100%' }}>
+    <div style={{ height: '100%', minWidth: '100%', display: 'flex' }}>
+      <div
+        style={{
+          width: '100%',
+          marginRight: 6,
+          marginTop: 4,
+          marginBottom: 8,
+        }}>
         <Button
           onPress={() => console.log('clicked ')}
           to='/'
-          extendsTo={[layout['block'], shape['h--full'], shape['w--full']].join(
-            ' '
-          )}>
+          extendsTo={[
+            layout['block'],
+            shape['h--full'],
+            shape['w--full'],
+            space['m-r--8'],
+          ].join(' ')}>
           <div className={[shape['br--12'], shape['shadow--sm']].join(' ')}>
             <div style={{ position: 'relative', paddingTop: '66.6667%' }}>
               <div
@@ -38,7 +48,7 @@ export const TypeStayCard: React.FC<Props> = ({ card }) => {
               </div>
             </div>
             <div style={{ padding: 16 }}>
-              <p>Tree houses</p>
+              <p>{card.title}</p>
             </div>
           </div>
         </Button>
