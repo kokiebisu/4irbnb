@@ -99,7 +99,7 @@ $percents: (
 }
 
 .none {
-  display: none;
+  display: none !important;
 
   &--sm {
     display: none;

@@ -37,8 +37,9 @@ export const WhiteHeader: React.FC<{}> = () => {
         className={[
           shape['none--sm'],
           styles['container'],
-          styles['searchbar__nav'],
           layout['relative'],
+          layout['justify-between'],
+          layout['items-center'],
         ].join(' ')}>
         <div>
           <div className={styles['searchbar__logo--md']}>
