@@ -1,9 +1,11 @@
+import { CardProps } from 'components/atoms/card/card.component';
 import React from 'react';
 import { StaySection } from './section.stay';
 
 export interface SectionProps {
   extendsTo?: string;
   type: string;
+  cards: CardProps[];
 }
 
 interface mapProps {

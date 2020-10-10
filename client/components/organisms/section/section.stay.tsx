@@ -4,11 +4,11 @@ import space from '../../../styles/space.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
 import color from '../../../styles/color.module.scss';
-import { Card } from '../../atoms/card/card.component';
+import { Card, CardProps } from '../../atoms/card/card.component';
 import { typeStays } from '../../../content';
 import { Button } from '../../../components/atoms/button/button.component';
 import sectionStyles from './section.module.scss';
-import { horizontals } from '../../../data';
+
 import { Heart } from '../../../public/svg/original';
 import { ChevronLeft, ChevronRight } from '../../../public/svg/regular';
 
@@ -20,6 +20,7 @@ interface Props {
   type?: string;
   carouselType?: string;
   save?: boolean;
+  cards: CardProps[];
 }
 
 export const StaySection: React.FC<Props> = ({
@@ -29,13 +30,14 @@ export const StaySection: React.FC<Props> = ({
   showAll,
   carouselType,
   save,
+  cards,
 }) => {
   const displayCarousel = (carouselType, save = false) => {
     switch (carouselType) {
       case 'stayTypes':
         return <TypeStayCarousel />;
       case 'pagination':
-        return <PaginationCarousel save={save} />;
+        return <PaginationCarousel save={save} cards={cards} />;
     }
   };
   return (
@@ -70,7 +72,7 @@ export const StaySection: React.FC<Props> = ({
                     className={[font['weight--300'], font['size--14']].join(
                       ' '
                     )}>
-                    1 / 9
+                    1 / {cards.length}
                   </p>
                 </div>
                 <div className={[space['m-r--6']].join(' ')}>
@@ -105,7 +107,7 @@ export const StaySection: React.FC<Props> = ({
       </div>
       <div className={[layout['relative']].join(' ')}>
         {showAll && (
-          <div className={space['m-v--12']}>
+          <div className={space['m-v--25']}>
             <Button
               extendsTo={[font['weight--500']].join(' ')}
               onPress={() => console.log('clicked')}
@@ -164,14 +166,14 @@ const TypeStayCarousel = () => {
   );
 };
 
-const PaginationCarousel = ({ ...props }) => {
+const PaginationCarousel = ({ save, cards }) => {
   return (
     <div style={{ paddingTop: 15, paddingBottom: 15 }}>
       <div style={{ display: 'flex', marginLeft: -6, marginRight: -6 }}>
-        {horizontals.map((horizontal) => {
+        {cards.map((card) => {
           return (
             <div style={{ width: '25%', paddingLeft: 6, paddingRight: 6 }}>
-              <Card type='horizontal' card={horizontal} {...props} />
+              <Card type='horizontal' card={card} save={save} />
             </div>
           );
         })}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Section, SectionProps } from './section.component';
+import { horizontals } from '../../../data';
 
 export default {
   title: 'Design System/Organisms/Section',
@@ -29,6 +30,7 @@ stayWithPagination.args = {
   carouselType: 'pagination',
   save: true,
   showAll: { url: '/', description: 'Show all nearby imaginative stays' },
+  cards: horizontals,
 };
 
 export const stayWithDescription = SectionTemplate.bind({});

@@ -57,6 +57,14 @@ horizontal.args = {
   save: false,
 };
 
+horizontal.decorators = [
+  (Story) => (
+    <div style={{ width: 300 }}>
+      <Story />
+    </div>
+  ),
+];
+
 export const horizontalWithSuperhost = CardTemplate.bind({});
 horizontalWithSuperhost.args = {
   type: 'horizontal',
@@ -73,6 +81,14 @@ horizontalWithSuperhost.args = {
   save: false,
 };
 
+horizontalWithSuperhost.decorators = [
+  (Story) => (
+    <div style={{ width: 300 }}>
+      <Story />
+    </div>
+  ),
+];
+
 export const horizontalWithSave = CardTemplate.bind({});
 horizontalWithSave.args = {
   type: 'horizontal',
@@ -88,6 +104,14 @@ horizontalWithSave.args = {
   },
   save: true,
 };
+
+horizontalWithSave.decorators = [
+  (Story) => (
+    <div style={{ width: 300 }}>
+      <Story />
+    </div>
+  ),
+];
 
 export const vertical = CardTemplate.bind({});
 vertical.args = {
