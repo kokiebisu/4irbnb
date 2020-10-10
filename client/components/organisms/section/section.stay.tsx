@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import shape from '../../../styles/shape.module.scss';
+import font from '../../../styles/font.module.scss';
+import color from '../../../styles/color.module.scss';
 import { Card } from '../../atoms/card/card.component';
 import { typeStays } from '../../../content';
 import { typeStay as typeStayCard } from '../../atoms/card/card.stories';
@@ -20,12 +22,18 @@ export const StaySection: React.FC<Props> = ({
   showAll,
 }) => {
   return (
-    <div>
-      {console.log('typeSta', typeStays)}
+    <div className={[space['m-v--38']].join(' ')}>
       <div className={[layout['justify-between']].join(' ')}>
         <div>
           <div>
-            <h2>Explore all types of unique stays</h2>
+            <h2
+              className={[
+                font['weight--500'],
+                color['c--gray__4'],
+                font['size--22'],
+              ].join(' ')}>
+              Explore all types of unique stays
+            </h2>
           </div>
           {description && (
             <div>
@@ -62,7 +70,7 @@ export const StaySection: React.FC<Props> = ({
                   borderLeftStyle: 'solid',
                   borderLeftColor: 'transparent',
                 }}>
-                <Card {...typeStayCard.args} card={typeStay} />;
+                <Card {...typeStayCard.args} card={typeStay} />
               </li>
             );
           })}
