@@ -5,6 +5,7 @@ import layout from '../styles/layout.module.scss';
 import stays from '../styles/stays.module.scss';
 import styles from '../styles/index.module.scss';
 import { Section } from '../components/organisms/section/section.component';
+import { stayTypes } from 'components/organisms/section/section.stories';
 
 const StaysPage = () => {
   return (
@@ -73,8 +74,10 @@ const StaysPage = () => {
             </div>
           </div>
         </div>
-        <div className={[styles['container'], layout['relative']].join(' ')}>
-          <Section type='stay' />
+        <div className={[space['p-v--38']].join(' ')}>
+          <div className={[styles['container'], layout['relative']].join(' ')}>
+            <Section type='stay' {...stayTypes.args} />
+          </div>
         </div>
       </div>
     </>
