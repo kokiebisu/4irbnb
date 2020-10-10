@@ -54,7 +54,6 @@ export const Card: React.FC<CardProps> = ({ extendsTo, type, ...props }) => {
     vertical: <VerticalCard {...props} />,
     typestay: <TypeStayCard {...props} />,
   };
-  console.log('card to', card.to);
   return (
     <Link href={card.to}>
       <a data-testid='card' className={extendsTo}>
