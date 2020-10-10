@@ -18,10 +18,11 @@ export const HorizontalCard = ({ card, save }) => {
             right: 0,
             left: 0,
           }}>
-          <div>
-            <div className={[layout['relative']].join(' ')}>
-              <div className={[shape['br--12']].join(' ')}>
+          <div style={{ height: '100%' }}>
+            <div className={[layout['relative'], shape['h--full']].join(' ')}>
+              <div className={[shape['br--12'], shape['h--full']].join(' ')}>
                 <img
+                  style={{ objectFit: 'cover' }}
                   className={[shape['br--12']].join(' ')}
                   src={card.imgUrl}
                 />
@@ -96,16 +97,32 @@ export const HorizontalCard = ({ card, save }) => {
             ].join(' ')}>{`(${card.number_of_reviews})`}</p>
         </div>
       </div>
-      <div>
-        <p
-          className={[
-            font['ls--4'],
-            font['weight--100'],
-            font['size--15'],
-            color['c--gray__4'],
-          ].join(' ')}>
-          {card.type}
-        </p>
+      <div className={[layout['items-center']].join(' ')}>
+        <div>
+          <p
+            className={[
+              font['ls--4'],
+              font['weight--100'],
+              font['size--15'],
+              color['c--gray__4'],
+            ].join(' ')}>
+            {card.type}
+          </p>
+        </div>
+        <div>
+          <p>&nbsp; · &nbsp; </p>
+        </div>
+        <div>
+          <p
+            className={[
+              font['ls--4'],
+              font['weight--100'],
+              font['size--15'],
+              color['c--gray__4'],
+            ].join(' ')}>
+            {card.location}
+          </p>
+        </div>
       </div>
       <div>
         <p

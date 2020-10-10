@@ -5,7 +5,10 @@ import layout from '../styles/layout.module.scss';
 import stays from '../styles/stays.module.scss';
 import styles from '../styles/index.module.scss';
 import { Section } from '../components/organisms/section/section.component';
-import { stayTypes } from 'components/organisms/section/section.stories';
+import {
+  stayTypes,
+  stayWithPagination,
+} from 'components/organisms/section/section.stories';
 
 const StaysPage = () => {
   return (
@@ -76,7 +79,18 @@ const StaysPage = () => {
         </div>
         <div className={[space['p-v--38']].join(' ')}>
           <div className={[styles['container'], layout['relative']].join(' ')}>
-            <Section type='stay' {...stayTypes.args} />
+            <div className={[space['m-v--16']].join(' ')}>
+              <Section type='stay' {...stayTypes.args} />
+            </div>
+            <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
+              <Section type='stay' {...stayWithPagination.args} />
+            </div>
+            <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
+              <Section type='stay' {...stayWithPagination.args} />
+            </div>
+            <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
+              <Section type='stay' {...stayWithPagination.args} />
+            </div>
           </div>
         </div>
       </div>
