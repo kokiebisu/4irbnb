@@ -2,6 +2,9 @@ import React from 'react';
 import shape from '../../../styles/shape.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
+import font from '../../../styles/font.module.scss';
+import cardStyles from './card.module.scss';
+import color from '../../../styles/color.module.scss';
 import { Button } from '../button/button.component';
 
 interface Props {
@@ -47,8 +50,17 @@ export const TypeStayCard: React.FC<Props> = ({ card }) => {
                 </picture>
               </div>
             </div>
-            <div style={{ padding: 16 }}>
-              <p>{card.title}</p>
+            <div
+              className={[cardStyles['h__card']].join(' ')}
+              style={{ padding: 16 }}>
+              <p
+                className={[
+                  font['weight--500'],
+                  font['size--14'],
+                  color['c--gray__3'],
+                ].join(' ')}>
+                {card.title}
+              </p>
             </div>
           </div>
         </Button>

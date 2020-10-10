@@ -198,4 +198,22 @@ export const typeStays = [
       'https://a0.muscache.com/im/pictures/a7450c1a-0562-4254-b6c9-ff2910d14fec.jpg?im_w=1200',
     to: '/',
   },
+  {
+    title: 'Barns',
+    imgUrl:
+      'https://a0.muscache.com/im/pictures/dbf3efc3-9e0f-46a6-a402-010b0b7499dc.jpg?im_w=1200',
+    to: '/',
+  },
+  {
+    title: 'Tiny houses',
+    imgUrl:
+      'https://a0.muscache.com/im/pictures/dce88618-109d-466b-b2b8-4e639c7aff36.jpg?im_w=1200',
+    to: '/',
+  },
+  {
+    title: 'Farm stays',
+    imgUrl:
+      'https://a0.muscache.com/im/pictures/16ce203b-dfbf-4134-bdb3-863e2894d00c.jpg?im_w=1200',
+    to: '/',
+  },
 ];
