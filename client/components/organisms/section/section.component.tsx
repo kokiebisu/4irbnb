@@ -1,5 +1,5 @@
 import React from 'react';
-import { TypeStay } from './section.typestay';
+import { StaySection } from './section.stay';
 
 export interface SectionProps {
   extendsTo?: string;
@@ -16,7 +16,7 @@ export const Section: React.FC<SectionProps> = ({
   ...props
 }) => {
   const types: mapProps = {
-    typestay: <TypeStay {...props} />,
+    stay: <StaySection {...props} />,
   };
   return <div className={extendsTo}>{types[type]}</div>;
 };

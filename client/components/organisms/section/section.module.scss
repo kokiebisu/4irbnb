@@ -1,0 +1,31 @@
+.w {
+  &__card {
+    width: 250px;
+
+    @media screen and (min-width: 728px) {
+      max-width: calc(100% / 4);
+    }
+
+    @media screen and (min-width: 1128px) {
+      max-width: calc(100% / 6);
+    }
+
+    @media screen and (min-width: 1440px) {
+      max-width: calc(100% / 7);
+    }
+  }
+}
+
+.flex {
+  &__card {
+    flex: 0 0 calc(100% / 4);
+
+    @media screen and (min-width: 1128px) {
+      flex: 0 0 calc(100% / 6);
+    }
+
+    @media screen and (min-width: 1440px) {
+      flex: 0 0 calc(100% / 7);
+    }
+  }
+}
