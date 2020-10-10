@@ -10,6 +10,7 @@ import { Button } from '../../../components/atoms/button/button.component';
 import sectionStyles from './section.module.scss';
 import { horizontals } from '../../../data';
 import { Heart } from '../../../public/svg/original';
+import { ChevronLeft, ChevronRight } from '../../../public/svg/regular';
 
 interface Props {
   title?: string;
@@ -39,7 +40,6 @@ export const StaySection: React.FC<Props> = ({
   };
   return (
     <div>
-      {console.log('carousel', carouselType)}
       <div
         className={[layout['items-center'], layout['justify-between']].join(
           ' '
@@ -61,7 +61,42 @@ export const StaySection: React.FC<Props> = ({
             </div>
           )}
         </div>
-        <div>{pagination && <div>pagination</div>}</div>
+        <div>
+          {pagination && (
+            <div className={[layout['items-center']].join(' ')}>
+              <div className={[space['m-r--6']].join(' ')}>
+                <p
+                  className={[font['weight--300'], font['size--14']].join(' ')}>
+                  1 / 9
+                </p>
+              </div>
+              <div className={[space['m-r--6']].join(' ')}>
+                <Button
+                  extendsTo={[
+                    color['b--white__2'],
+                    color['bg--transparent'],
+                    space['p--8'],
+                    shape['br--circle'],
+                  ].join(' ')}
+                  onPress={() => console.log('pressed left')}>
+                  <ChevronLeft width={10} stroke='black' strokeWidth={5} />
+                </Button>
+              </div>
+              <div>
+                <Button
+                  extendsTo={[
+                    color['b--white__2'],
+                    color['bg--transparent'],
+                    space['p--8'],
+                    shape['br--circle'],
+                  ].join(' ')}
+                  onPress={() => console.log('pressed right')}>
+                  <ChevronRight width={10} stroke='black' strokeWidth={5} />
+                </Button>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
       {displayCarousel(carouselType, save)}
       <div>
@@ -118,10 +153,10 @@ const TypeStayCarousel = () => {
 const PaginationCarousel = ({ save }) => {
   return (
     <div style={{ paddingTop: 15, paddingBottom: 15 }}>
-      <div style={{ display: 'flex' }}>
+      <div style={{ display: 'flex', marginLeft: -6, marginRight: -6 }}>
         {horizontals.map((horizontal) => {
           return (
-            <div style={{ width: '25%' }}>
+            <div style={{ width: '25%', paddingLeft: 6, paddingRight: 6 }}>
               <div style={{ position: 'relative', paddingTop: '66.6%' }}>
                 <div
                   style={{
@@ -131,7 +166,7 @@ const PaginationCarousel = ({ save }) => {
                     right: 0,
                     left: 0,
                   }}>
-                  <div style={{ marginRight: 10 }}>
+                  <div>
                     <div className={[layout['relative']].join(' ')}>
                       <div className={[shape['br--12']].join(' ')}>
                         <img
@@ -227,6 +262,12 @@ const PaginationCarousel = ({ save }) => {
                     </div>
                     <div>
                       <p
+                        style={{
+                          maxHeight: 250,
+                          whiteSpace: 'nowrap',
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis',
+                        }}
                         className={[
                           font['ls--4'],
                           font['weight--100'],
