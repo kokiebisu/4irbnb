@@ -35,11 +35,10 @@ export interface TypeStayCardObjectProps extends CardObjectProps {}
 export interface CardProps {
   extendsTo?: string;
   type: string;
-  card:
-    | LandingCardObjectProps
-    | HorizontalCardObjectProps
-    | VerticalCardObjectProps
-    | TypeStayCardObjectProps;
+  card: LandingCardObjectProps &
+    HorizontalCardObjectProps &
+    VerticalCardObjectProps &
+    TypeStayCardObjectProps;
   save?: boolean;
 }
 
