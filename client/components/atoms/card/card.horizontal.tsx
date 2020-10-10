@@ -5,19 +5,10 @@ import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import { Heart } from '../../../public/svg/original';
-import {
-  HorizontalCardObjectProps,
-  LandingCardObjectProps,
-  TypeStayCardObjectProps,
-  VerticalCardObjectProps,
-} from './card.component';
+import { HorizontalCardObjectProps } from './card.component';
 
 interface Props {
-  card:
-    | LandingCardObjectProps
-    | HorizontalCardObjectProps
-    | VerticalCardObjectProps
-    | TypeStayCardObjectProps;
+  card: HorizontalCardObjectProps;
   save?: boolean;
 }
 

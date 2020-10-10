@@ -20,6 +20,7 @@ export interface HorizontalCardObjectProps extends CardObjectProps {
   ratings: number;
   number_of_reviews: number;
   type: string;
+  location: string;
 }
 
 export interface VerticalCardObjectProps extends CardObjectProps {
