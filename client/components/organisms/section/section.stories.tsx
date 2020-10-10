@@ -28,6 +28,7 @@ stayWithPagination.args = {
     'Head outdoors for less crowded spaces with more room to connect.',
   carouselType: 'pagination',
   save: true,
+  showAll: { url: '/', description: 'Show all nearby imaginative stays' },
 };
 
 export const stayWithDescription = SectionTemplate.bind({});
@@ -36,4 +37,5 @@ stayWithDescription.args = {
   pagination: false,
   title: 'Unique stays around the world',
   description: 'Dream about your future vacation by saving these unique homes.',
+  showAll: { url: '/', description: 'Show all unique stays' },
 };
