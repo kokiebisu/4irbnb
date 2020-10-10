@@ -3,6 +3,8 @@ import { Header } from '../components/organisms/header/header.component';
 import space from '../styles/space.module.scss';
 import layout from '../styles/layout.module.scss';
 import stays from '../styles/stays.module.scss';
+import styles from '../styles/index.module.scss';
+import { Section } from '../components/organisms/section/section.component';
 
 const StaysPage = () => {
   return (
@@ -70,6 +72,9 @@ const StaysPage = () => {
               />
             </div>
           </div>
+        </div>
+        <div className={[styles['container'], layout['relative']].join(' ')}>
+          <Section type='stay' />
         </div>
       </div>
     </>
