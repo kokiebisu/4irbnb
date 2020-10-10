@@ -50,6 +50,12 @@ $pixels: (
   }
 }
 
+.br {
+  &--circle {
+    border-radius: 50%;
+  }
+}
+
 $percents: (
   75: percentage(0.75),
 );

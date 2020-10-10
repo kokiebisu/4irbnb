@@ -27,8 +27,20 @@ export const ChevronDown = (props) => {
 
 export const ChevronLeft = (props) => {
   return (
-    <svg {...props} viewBox='0 0 16 16'>
-      <path d='m10.8 16c-.4 0-.7-.1-.9-.4l-6.8-6.7c-.5-.5-.5-1.3 0-1.8l6.8-6.7c.5-.5 1.2-.5 1.7 0s .5 1.2 0 1.7l-5.8 5.9 5.8 5.9c.5.5.5 1.2 0 1.7-.2.3-.5.4-.8.4' />
+    <svg {...props} viewBox='0 0 32 32'>
+      <g fill='none'>
+        <path d='m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932' />
+      </g>
+    </svg>
+  );
+};
+
+export const ChevronRight = (props) => {
+  return (
+    <svg {...props} viewBox='0 0 32 32'>
+      <g fill='none'>
+        <path d='m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932' />
+      </g>
     </svg>
   );
 };
