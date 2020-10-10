@@ -18,7 +18,7 @@ interface Props {
     | HorizontalCardObjectProps
     | VerticalCardObjectProps
     | TypeStayCardObjectProps;
-  save: boolean;
+  save?: boolean;
 }
 
 export const HorizontalCard: React.FC<Props> = ({ card, save }) => {
