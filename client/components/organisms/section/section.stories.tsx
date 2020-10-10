@@ -10,10 +10,11 @@ export default {
 
 const SectionTemplate: Story<SectionProps> = (args) => <Section {...args} />;
 
-export const stay = SectionTemplate.bind({});
-stay.args = {
+export const stayTypes = SectionTemplate.bind({});
+stayTypes.args = {
   type: 'stay',
   pagination: false,
+  carouselType: 'stayTypes',
 };
 
 export const stayWithPagination = SectionTemplate.bind({});
