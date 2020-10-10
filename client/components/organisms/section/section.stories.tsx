@@ -14,6 +14,8 @@ export const stayTypes = SectionTemplate.bind({});
 stayTypes.args = {
   type: 'stay',
   pagination: false,
+  title: 'Explore all types of unique stays',
+  description: null,
   carouselType: 'stayTypes',
 };
 
@@ -21,12 +23,17 @@ export const stayWithPagination = SectionTemplate.bind({});
 stayWithPagination.args = {
   type: 'stay',
   pagination: true,
+  title: 'Nearby stays in nature',
+  description:
+    'Head outdoors for less crowded spaces with more room to connect.',
+  carouselType: 'pagination',
+  save: true,
 };
 
 export const stayWithDescription = SectionTemplate.bind({});
-stayWithPagination.args = {
+stayWithDescription.args = {
   type: 'stay',
   pagination: false,
-  description:
-    'Head outdoors for less crowded spaces with more room to connect.',
+  title: 'Unique stays around the world',
+  description: 'Dream about your future vacation by saving these unique homes.',
 };
