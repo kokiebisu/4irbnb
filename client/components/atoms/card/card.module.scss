@@ -5,3 +5,13 @@
 .w__vertical {
   width: 200px;
 }
+
+.h {
+  &__card {
+    height: 70px;
+
+    @media screen and (min-width: 720px) {
+      height: auto;
+    }
+  }
+}
