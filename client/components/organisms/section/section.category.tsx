@@ -18,7 +18,7 @@ export const CategorySection: React.FC<Props> = ({
         {items.map((item, index) => {
           return (
             <Card
-              type='landing'
+              type='category'
               key={index}
               card={item && item.card}
               to={item && item.to}
