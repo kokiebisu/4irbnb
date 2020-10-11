@@ -6,7 +6,7 @@ import styles from '../../../styles/index.module.scss';
 import font from '../../../styles/font.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import { sections } from '../../../content/index';
-import { Globe } from 'public/svg/original';
+import { Globe } from '../../../public/svg/original';
 
 export interface FooterProps {}
 
