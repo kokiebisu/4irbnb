@@ -542,6 +542,54 @@ exports[`Storyshots Design System/Atoms/Button Searchbar Small 1`] = `
 </button>
 `;
 
+exports[`Storyshots Design System/Atoms/Card Category 1`] = `
+<div
+  style={
+    Object {
+      "width": 300,
+    }
+  }
+>
+  <a
+    data-testid="card"
+    href="/"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    <div
+      className="category-section__card"
+    >
+      <div
+        className="category-section__card--img"
+      >
+        <img
+          alt="unique stays"
+          src="img/card2.jpg"
+        />
+      </div>
+      <div
+        className="p-t--10 p-r--15 p-b--0 p-l--15"
+      >
+        <h3
+          className="weight--500 size--17 c--gray__4"
+        >
+          Title should be here
+        </h3>
+      </div>
+      <div
+        className="p-t--5 p-r--15 p-b--15 p-l--15"
+      >
+        <p
+          className="size--15 weight--300 c--gray__1"
+        >
+          Description should be here
+        </p>
+      </div>
+    </div>
+  </a>
+</div>
+`;
+
 exports[`Storyshots Design System/Atoms/Card Horizontal 1`] = `
 <div
   style={
@@ -1064,54 +1112,6 @@ exports[`Storyshots Design System/Atoms/Card Horizontal With Superhost 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Atoms/Card Landing 1`] = `
-<div
-  style={
-    Object {
-      "width": 300,
-    }
-  }
->
-  <a
-    data-testid="card"
-    href="/"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
-  >
-    <div
-      className="category-section__card"
-    >
-      <div
-        className="category-section__card--img"
-      >
-        <img
-          alt="unique stays"
-          src="img/card2.jpg"
-        />
-      </div>
-      <div
-        className="p-t--10 p-r--15 p-b--0 p-l--15"
-      >
-        <h3
-          className="weight--500 size--17 c--gray__4"
-        >
-          Title should be here
-        </h3>
-      </div>
-      <div
-        className="p-t--5 p-r--15 p-b--15 p-l--15"
-      >
-        <p
-          className="size--15 weight--300 c--gray__1"
-        >
-          Description should be here
-        </p>
-      </div>
-    </div>
-  </a>
-</div>
-`;
-
 exports[`Storyshots Design System/Atoms/Card Type Stay 1`] = `
 <div
   style={
@@ -1344,7 +1344,7 @@ exports[`Storyshots Design System/Organisms/Header Transparent 1`] = `
     className="p-h--0 p-v--11"
   >
     <div
-      className="none--sm container items-center justify-between relative"
+      className="none--sm items-center justify-between relative"
     >
       <div>
         <div
