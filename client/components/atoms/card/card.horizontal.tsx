@@ -5,10 +5,16 @@ import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import { Heart } from '../../../public/svg/original';
-import { HorizontalCardObjectProps } from './card.component';
 
 interface Props {
-  card?: HorizontalCardObjectProps;
+  card?: {
+    imgUrl: string;
+    type: string;
+    ratings: number;
+    location: string;
+    title: string;
+    number_of_reviews: string;
+  };
   save?: boolean;
   superhost?: boolean;
 }
