@@ -1,15 +1,13 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
 import color from '../../../styles/color.module.scss';
-import { Card, CardProps } from '../../atoms/card/card.component';
-import { typeStays } from '../../../content';
+import { Card, CardObjectProps } from '../../atoms/card/card.component';
 import { Button } from '../../../components/atoms/button/button.component';
 import sectionStyles from './section.module.scss';
 
-import { Heart } from '../../../public/svg/original';
 import { ChevronLeft, ChevronRight } from '../../../public/svg/regular';
 
 interface Props {
@@ -20,24 +18,35 @@ interface Props {
   type?: string;
   carouselType?: string;
   save?: boolean;
-  cards: CardProps[];
+  cards: CardObjectProps[];
+  isDescription?: boolean;
 }
 
 export const StaySection: React.FC<Props> = ({
-  title,
-  description,
-  pagination,
-  showAll,
-  carouselType,
-  save,
-  cards,
+  title = 'Section Title',
+  description = 'Section Description',
+  pagination = false,
+  showAll = { description: 'Show all cards', to: '/' },
+  carouselType = '',
+  save = false,
+  isDescription = false,
+  cards = [
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+  ],
 }) => {
-  const displayCarousel = (carouselType, save = false) => {
+  const displayCarousel = (carouselType, save) => {
+    if (pagination) {
+      return <PaginationCarousel save={save} cards={cards} />;
+    }
     switch (carouselType) {
       case 'stayTypes':
-        return <TypeStayCarousel />;
-      case 'pagination':
-        return <PaginationCarousel save={save} cards={cards} />;
+        return <TypeStayCarousel cards={cards} />;
     }
   };
   return (
@@ -58,7 +67,7 @@ export const StaySection: React.FC<Props> = ({
                 {title}
               </h2>
             </div>
-            {description && (
+            {isDescription && (
               <div>
                 <p className={[font['weight--100']].join(' ')}>{description}</p>
               </div>
@@ -111,7 +120,7 @@ export const StaySection: React.FC<Props> = ({
             <Button
               extendsTo={[font['weight--500']].join(' ')}
               onPress={() => console.log('clicked')}
-              to={showAll.url}>
+              to={showAll.to}>
               <div className={[layout['items-center']].join(' ')}>
                 <div>
                   <u>{showAll.description}</u>
@@ -128,7 +137,7 @@ export const StaySection: React.FC<Props> = ({
   );
 };
 
-const TypeStayCarousel = () => {
+const TypeStayCarousel = ({ cards }) => {
   return (
     <div className={[layout['relative'], space['p-v--10']].join(' ')}>
       <ul
@@ -145,7 +154,7 @@ const TypeStayCarousel = () => {
           scrollSnapType: 'x mandatory',
           height: '100%',
         }}>
-        {typeStays.map((typeStay) => {
+        {cards.map((card) => {
           return (
             <li
               className={[
@@ -157,7 +166,7 @@ const TypeStayCarousel = () => {
                 borderLeftStyle: 'solid',
                 borderLeftColor: 'transparent',
               }}>
-              <Card type='typestay' card={typeStay} />
+              <Card type='typestay' card={card} />
             </li>
           );
         })}
@@ -169,10 +178,21 @@ const TypeStayCarousel = () => {
 const PaginationCarousel = ({ save, cards }) => {
   return (
     <div style={{ paddingTop: 15, paddingBottom: 15 }}>
-      <div style={{ display: 'flex', marginLeft: -6, marginRight: -6 }}>
+      <div
+        style={{
+          display: 'flex',
+          marginLeft: -6,
+          marginRight: -6,
+          overflow: 'auto',
+        }}>
         {cards.map((card) => {
           return (
-            <div style={{ width: '25%', paddingLeft: 6, paddingRight: 6 }}>
+            <div
+              style={{
+                minWidth: '25%',
+                paddingLeft: 6,
+                paddingRight: 6,
+              }}>
               <Card type='horizontal' card={card} save={save} />
             </div>
           );

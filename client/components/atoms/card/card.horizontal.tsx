@@ -8,11 +8,24 @@ import { Heart } from '../../../public/svg/original';
 import { HorizontalCardObjectProps } from './card.component';
 
 interface Props {
-  card: HorizontalCardObjectProps;
+  card?: HorizontalCardObjectProps;
   save?: boolean;
+  superhost?: boolean;
 }
 
-export const HorizontalCard: React.FC<Props> = ({ card, save }) => {
+export const HorizontalCard: React.FC<Props> = ({
+  card = {
+    imgUrl:
+      'https://a0.muscache.com/im/pictures/7e0063fa-d325-49ae-a6f6-285fe9928da4.jpg?im_w=720',
+    type: 'Type of Stay',
+    ratings: 5.0,
+    location: 'Location',
+    title: 'Title should be here',
+    number_of_reviews: 100,
+  },
+  superhost = false,
+  save = false,
+}) => {
   return (
     <div>
       <div style={{ position: 'relative', paddingTop: '66.6%' }}>
@@ -29,7 +42,7 @@ export const HorizontalCard: React.FC<Props> = ({ card, save }) => {
               <div className={[shape['br--12'], shape['h--full']].join(' ')}>
                 <img
                   style={{ objectFit: 'cover' }}
-                  className={[shape['br--12']].join(' ')}
+                  className={[shape['br--12'], shape['h--full']].join(' ')}
                   src={card.imgUrl}
                 />
               </div>
@@ -43,7 +56,7 @@ export const HorizontalCard: React.FC<Props> = ({ card, save }) => {
                 ].join(' ')}>
                 <div
                   className={
-                    card.superhost
+                    superhost
                       ? [].join(' ')
                       : [color['c--white__0'], shape['hidden']].join(' ')
                   }>
@@ -91,7 +104,7 @@ export const HorizontalCard: React.FC<Props> = ({ card, save }) => {
         </div>
         <div className={[space['m-r--3']].join(' ')}>
           <p className={[font['weight--100'], font['size--13']].join(' ')}>
-            {card.ratings}
+            {card.ratings.toFixed(2)}
           </p>
         </div>
         <div>

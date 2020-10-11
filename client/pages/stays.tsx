@@ -5,10 +5,8 @@ import layout from '../styles/layout.module.scss';
 import stays from '../styles/stays.module.scss';
 import styles from '../styles/index.module.scss';
 import { Section } from '../components/organisms/section/section.component';
-import {
-  stayTypes,
-  stayWithPagination,
-} from 'components/organisms/section/section.stories';
+import { typeStays } from 'content';
+import { horizontals } from 'data';
 
 const StaysPage = () => {
   return (
@@ -80,16 +78,36 @@ const StaysPage = () => {
         <div className={[space['p-v--38']].join(' ')}>
           <div className={[styles['container'], layout['relative']].join(' ')}>
             <div className={[space['m-v--16']].join(' ')}>
-              <Section type='stay' {...stayTypes.args} />
+              <Section
+                type='stay'
+                carouselType='stayTypes'
+                title='Explore all types of unique stays'
+                cards={typeStays}
+              />
             </div>
             <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
-              <Section type='stay' {...stayWithPagination.args} />
+              <Section
+                type='stay'
+                title='Nearby stays in nature'
+                description='Head outdoors for less crowded spaces with more room to connect.'
+                showAll={{
+                  to: '/',
+                  description: 'Show all nearby imaginative stays',
+                }}
+                cards={horizontals}
+                pagination
+                isDescription
+                save
+              />
             </div>
             <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
-              <Section type='stay' {...stayWithPagination.args} />
-            </div>
-            <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
-              <Section type='stay' {...stayWithPagination.args} />
+              <Section
+                type='stay'
+                title='Unique stays around the world'
+                description='Dream about your future vacation by saving these unique homes.'
+                showAll={{ to: '/', description: 'Show all unique stays' }}
+                isDescription
+              />
             </div>
           </div>
         </div>

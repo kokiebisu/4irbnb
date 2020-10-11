@@ -11,7 +11,14 @@ interface Props {
   card: any;
 }
 
-export const TypeStayCard: React.FC<Props> = ({ card }) => {
+export const TypeStayCard: React.FC<Props> = ({
+  card = {
+    title: 'Type',
+    imgUrl:
+      'https://a0.muscache.com/im/pictures/175f945a-a4ac-416c-bb10-7e49a927c42f.jpg?im_w=720',
+    to: '/',
+  },
+}) => {
   return (
     <div style={{ height: '100%', minWidth: '100%', display: 'flex' }}>
       <div
