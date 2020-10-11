@@ -82,7 +82,7 @@ const StaysPage = () => {
                 type='stay'
                 carouselType='stayTypes'
                 title='Explore all types of unique stays'
-                cards={typeStays}
+                items={typeStays}
               />
             </div>
             <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
@@ -94,7 +94,7 @@ const StaysPage = () => {
                   to: '/',
                   description: 'Show all nearby imaginative stays',
                 }}
-                cards={horizontals}
+                items={horizontals}
                 pagination
                 isDescription
                 save
