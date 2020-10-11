@@ -7,6 +7,7 @@ export const horizontals = [
     number_of_reviews: 238,
     type: 'Farm stay',
     to: '/',
+    location: 'Bowen Island',
     title: 'The Moulton Meadow Farm: Seaview Ca...',
   },
   {
@@ -17,6 +18,7 @@ export const horizontals = [
     number_of_reviews: 238,
     type: 'Farm stay',
     to: '/',
+    location: 'Bowen Island',
     title: 'The Moulton Meadow Farm: Seaview Ca...',
   },
   {
@@ -27,6 +29,7 @@ export const horizontals = [
     number_of_reviews: 238,
     type: 'Farm stay',
     to: '/',
+    location: 'Bowen Island',
     title: 'The Moulton Meadow Farm: Seaview Ca...',
   },
   {
@@ -37,6 +40,7 @@ export const horizontals = [
     number_of_reviews: 238,
     type: 'Farm stay',
     to: '/',
+    location: 'Bowen Island',
     title: 'The Moulton Meadow Farm: Seaview Ca...',
   },
 ];
