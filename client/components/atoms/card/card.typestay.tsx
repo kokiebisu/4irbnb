@@ -16,7 +16,6 @@ export const TypeStayCard: React.FC<Props> = ({
     title: 'Type',
     imgUrl:
       'https://a0.muscache.com/im/pictures/175f945a-a4ac-416c-bb10-7e49a927c42f.jpg?im_w=720',
-    to: '/',
   },
 }) => {
   return (
@@ -52,14 +51,23 @@ export const TypeStayCard: React.FC<Props> = ({
                   <img
                     decoding='async'
                     src={card.imgUrl}
-                    style={{ objectFit: 'cover', borderRadius: 12 }}
+                    style={{
+                      objectFit: 'cover',
+                      borderTopLeftRadius: 12,
+                      borderTopRightRadius: 12,
+                    }}
                   />
                 </picture>
               </div>
             </div>
             <div
               className={[cardStyles['h__card']].join(' ')}
-              style={{ padding: 16 }}>
+              style={{
+                padding: 16,
+                backgroundColor: 'white',
+                borderBottomLeftRadius: 12,
+                borderBottomRightRadius: 12,
+              }}>
               <p
                 className={[
                   font['weight--500'],

@@ -95,7 +95,7 @@ export const destinations = [
   },
 ];
 
-export const categories = [
+export const destinationByCategories = [
   { name: 'Destinations for arts & culture' },
   { name: 'Destinations for outdoor adventure' },
   { name: 'Mountain cabins' },
@@ -103,23 +103,30 @@ export const categories = [
   { name: 'Popular destinations' },
 ];
 
-export const cards = [
+export const categories = [
   {
-    imgUrl: '/img/categories1.webp',
-    title: 'Unique stays',
-    description: 'Spaces that are more than just a place to sleep.',
+    card: {
+      imgUrl: '/img/categories1.webp',
+      title: 'Unique stays',
+      description: 'Spaces that are more than just a place to sleep.',
+    },
     to: '/stays',
   },
   {
-    imgUrl: '/img/categories2.webp',
-    title: 'Online Experiences',
-    description: 'A new way to travel from home.',
+    card: {
+      imgUrl: '/img/categories2.webp',
+      title: 'Online Experiences',
+      description: 'A new way to travel from home.',
+    },
     to: '/experiences',
   },
   {
-    imgUrl: '/img/categories3.webp',
-    title: 'Entire homes',
-    description: 'Comfortable private places, with room for friends or family.',
+    card: {
+      imgUrl: '/img/categories3.webp',
+      title: 'Entire homes',
+      description:
+        'Comfortable private places, with room for friends or family.',
+    },
     to: '/homes',
   },
 ];
@@ -175,45 +182,59 @@ export const sections = [
 
 export const typeStays = [
   {
-    title: 'Tree house',
-    imgUrl:
-      'https://a0.muscache.com/im/pictures/175f945a-a4ac-416c-bb10-7e49a927c42f.jpg?im_w=1200',
+    card: {
+      title: 'Tree house',
+      imgUrl:
+        'https://a0.muscache.com/im/pictures/175f945a-a4ac-416c-bb10-7e49a927c42f.jpg?im_w=1200',
+    },
     to: '/',
   },
   {
-    title: 'Floating homes',
-    imgUrl:
-      'https://a0.muscache.com/im/pictures/6568b09d-99ee-4f49-b9ca-afb90893d030.jpg?im_w=1200',
+    card: {
+      title: 'Floating homes',
+      imgUrl:
+        'https://a0.muscache.com/im/pictures/6568b09d-99ee-4f49-b9ca-afb90893d030.jpg?im_w=1200',
+    },
     to: '/',
   },
   {
-    title: 'Huts',
-    imgUrl:
-      'https://a0.muscache.com/im/pictures/931f2a49-d25b-40d7-971c-f42aad36af44.jpg?im_w=1200',
+    card: {
+      title: 'Huts',
+      imgUrl:
+        'https://a0.muscache.com/im/pictures/931f2a49-d25b-40d7-971c-f42aad36af44.jpg?im_w=1200',
+    },
     to: '/',
   },
   {
-    title: 'Castles',
-    imgUrl:
-      'https://a0.muscache.com/im/pictures/a7450c1a-0562-4254-b6c9-ff2910d14fec.jpg?im_w=1200',
+    card: {
+      title: 'Castles',
+      imgUrl:
+        'https://a0.muscache.com/im/pictures/a7450c1a-0562-4254-b6c9-ff2910d14fec.jpg?im_w=1200',
+    },
     to: '/',
   },
   {
-    title: 'Barns',
-    imgUrl:
-      'https://a0.muscache.com/im/pictures/dbf3efc3-9e0f-46a6-a402-010b0b7499dc.jpg?im_w=1200',
+    card: {
+      title: 'Barns',
+      imgUrl:
+        'https://a0.muscache.com/im/pictures/dbf3efc3-9e0f-46a6-a402-010b0b7499dc.jpg?im_w=1200',
+    },
     to: '/',
   },
   {
-    title: 'Tiny houses',
-    imgUrl:
-      'https://a0.muscache.com/im/pictures/dce88618-109d-466b-b2b8-4e639c7aff36.jpg?im_w=1200',
+    card: {
+      title: 'Tiny houses',
+      imgUrl:
+        'https://a0.muscache.com/im/pictures/dce88618-109d-466b-b2b8-4e639c7aff36.jpg?im_w=1200',
+    },
     to: '/',
   },
   {
-    title: 'Farm stays',
-    imgUrl:
-      'https://a0.muscache.com/im/pictures/16ce203b-dfbf-4134-bdb3-863e2894d00c.jpg?im_w=1200',
+    card: {
+      title: 'Farm stays',
+      imgUrl:
+        'https://a0.muscache.com/im/pictures/16ce203b-dfbf-4134-bdb3-863e2894d00c.jpg?im_w=1200',
+    },
     to: '/',
   },
 ];

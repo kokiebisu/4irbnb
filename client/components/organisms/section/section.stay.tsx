@@ -18,7 +18,7 @@ interface Props {
   type?: string;
   carouselType?: string;
   save?: boolean;
-  cards: CardObjectProps[];
+  items: { card: any; to: string }[];
   isDescription?: boolean;
 }
 
@@ -30,7 +30,7 @@ export const StaySection: React.FC<Props> = ({
   carouselType = '',
   save = false,
   isDescription = false,
-  cards = [
+  items = [
     undefined,
     undefined,
     undefined,
@@ -42,11 +42,11 @@ export const StaySection: React.FC<Props> = ({
 }) => {
   const displayCarousel = (carouselType, save) => {
     if (pagination) {
-      return <PaginationCarousel save={save} cards={cards} />;
+      return <PaginationCarousel save={save} items={items} />;
     }
     switch (carouselType) {
       case 'stayTypes':
-        return <TypeStayCarousel cards={cards} />;
+        return <TypeStayCarousel items={items} />;
     }
   };
   return (
@@ -81,7 +81,7 @@ export const StaySection: React.FC<Props> = ({
                     className={[font['weight--300'], font['size--14']].join(
                       ' '
                     )}>
-                    1 / {cards.length}
+                    1 / {items.length}
                   </p>
                 </div>
                 <div className={[space['m-r--6']].join(' ')}>
@@ -137,7 +137,7 @@ export const StaySection: React.FC<Props> = ({
   );
 };
 
-const TypeStayCarousel = ({ cards }) => {
+const TypeStayCarousel = ({ items }) => {
   return (
     <div className={[layout['relative'], space['p-v--10']].join(' ')}>
       <ul
@@ -154,7 +154,7 @@ const TypeStayCarousel = ({ cards }) => {
           scrollSnapType: 'x mandatory',
           height: '100%',
         }}>
-        {cards.map((card) => {
+        {items.map((item) => {
           return (
             <li
               className={[
@@ -166,7 +166,11 @@ const TypeStayCarousel = ({ cards }) => {
                 borderLeftStyle: 'solid',
                 borderLeftColor: 'transparent',
               }}>
-              <Card type='typestay' card={card} />
+              <Card
+                type='typestay'
+                card={item && item.card}
+                to={item && item.to}
+              />
             </li>
           );
         })}
@@ -175,7 +179,7 @@ const TypeStayCarousel = ({ cards }) => {
   );
 };
 
-const PaginationCarousel = ({ save, cards }) => {
+const PaginationCarousel = ({ save, items }) => {
   return (
     <div style={{ paddingTop: 15, paddingBottom: 15 }}>
       <div
@@ -185,7 +189,7 @@ const PaginationCarousel = ({ save, cards }) => {
           marginRight: -6,
           overflow: 'auto',
         }}>
-        {cards.map((card) => {
+        {items.map((item) => {
           return (
             <div
               style={{
@@ -193,7 +197,12 @@ const PaginationCarousel = ({ save, cards }) => {
                 paddingLeft: 6,
                 paddingRight: 6,
               }}>
-              <Card type='horizontal' card={card} save={save} />
+              <Card
+                type='horizontal'
+                card={item && item.card}
+                to={item && item.to}
+                save={save}
+              />
             </div>
           );
         })}
