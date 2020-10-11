@@ -175,9 +175,9 @@ export const RegisterModal: React.FC<{}> = () => {
             </span>
           </div>
           <div>
-            {logins.map((login) => {
+            {logins.map((login, index) => {
               return (
-                <div className={[space['m-v--14']].join(' ')}>
+                <div key={index} className={[space['m-v--14']].join(' ')}>
                   <Button {...login.args} onPress={login.press} />
                 </div>
               );

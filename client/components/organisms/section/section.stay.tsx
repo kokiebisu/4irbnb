@@ -154,9 +154,10 @@ const TypeStayCarousel = ({ items }) => {
           scrollSnapType: 'x mandatory',
           height: '100%',
         }}>
-        {items.map((item) => {
+        {items.map((item, index) => {
           return (
             <li
+              key={index}
               className={[
                 sectionStyles['w__card'],
                 sectionStyles['flex__card'],
@@ -189,9 +190,10 @@ const PaginationCarousel = ({ save, items }) => {
           marginRight: -6,
           overflow: 'auto',
         }}>
-        {items.map((item) => {
+        {items.map((item, index) => {
           return (
             <div
+              key={index}
               style={{
                 minWidth: '25%',
                 paddingLeft: 6,
