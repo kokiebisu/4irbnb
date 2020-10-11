@@ -1,15 +1,13 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
 import color from '../../../styles/color.module.scss';
-import { Card } from '../../atoms/card/card.component';
-import { typeStays } from '../../../content';
+import { Card, CardObjectProps } from '../../atoms/card/card.component';
 import { Button } from '../../../components/atoms/button/button.component';
 import sectionStyles from './section.module.scss';
-import { horizontals } from '../../../data';
-import { Heart } from '../../../public/svg/original';
+
 import { ChevronLeft, ChevronRight } from '../../../public/svg/regular';
 
 interface Props {
@@ -20,90 +18,117 @@ interface Props {
   type?: string;
   carouselType?: string;
   save?: boolean;
+  cards: CardObjectProps[];
+  isDescription?: boolean;
 }
 
 export const StaySection: React.FC<Props> = ({
-  title,
-  description,
-  pagination,
-  showAll,
-  carouselType,
-  save,
+  title = 'Section Title',
+  description = 'Section Description',
+  pagination = false,
+  showAll = { description: 'Show all cards', to: '/' },
+  carouselType = '',
+  save = false,
+  isDescription = false,
+  cards = [
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+  ],
 }) => {
-  const displayCarousel = (carouselType, save = false) => {
+  const displayCarousel = (carouselType, save) => {
+    if (pagination) {
+      return <PaginationCarousel save={save} cards={cards} />;
+    }
     switch (carouselType) {
       case 'stayTypes':
-        return <TypeStayCarousel />;
-      case 'pagination':
-        return <PaginationCarousel save={save} />;
+        return <TypeStayCarousel cards={cards} />;
     }
   };
   return (
     <div>
-      <div
-        className={[layout['items-center'], layout['justify-between']].join(
-          ' '
-        )}>
-        <div>
-          <div>
-            <h2
-              className={[
-                font['weight--500'],
-                color['c--gray__4'],
-                font['size--22'],
-              ].join(' ')}>
-              {title}
-            </h2>
-          </div>
-          {description && (
-            <div>
-              <p className={[font['weight--100']].join(' ')}>{description}</p>
-            </div>
-          )}
-        </div>
-        <div>
-          {pagination && (
-            <div className={[layout['items-center']].join(' ')}>
-              <div className={[space['m-r--6']].join(' ')}>
-                <p
-                  className={[font['weight--300'], font['size--14']].join(' ')}>
-                  1 / 9
-                </p>
-              </div>
-              <div className={[space['m-r--6']].join(' ')}>
-                <Button
-                  extendsTo={[
-                    color['b--white__2'],
-                    color['bg--transparent'],
-                    space['p--8'],
-                    shape['br--circle'],
-                  ].join(' ')}
-                  onPress={() => console.log('pressed left')}>
-                  <ChevronLeft width={10} stroke='black' strokeWidth={5} />
-                </Button>
-              </div>
-              <div>
-                <Button
-                  extendsTo={[
-                    color['b--white__2'],
-                    color['bg--transparent'],
-                    space['p--8'],
-                    shape['br--circle'],
-                  ].join(' ')}
-                  onPress={() => console.log('pressed right')}>
-                  <ChevronRight width={10} stroke='black' strokeWidth={5} />
-                </Button>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-      {displayCarousel(carouselType, save)}
       <div>
-        {showAll && (
+        <div
+          className={[layout['items-center'], layout['justify-between']].join(
+            ' '
+          )}>
           <div>
-            <Button onPress={() => console.log('clicked')} to={showAll.url}>
-              {showAll.description}
+            <div>
+              <h2
+                className={[
+                  font['weight--500'],
+                  color['c--gray__4'],
+                  font['size--22'],
+                ].join(' ')}>
+                {title}
+              </h2>
+            </div>
+            {isDescription && (
+              <div>
+                <p className={[font['weight--100']].join(' ')}>{description}</p>
+              </div>
+            )}
+          </div>
+          <div>
+            {pagination && (
+              <div className={[layout['items-center']].join(' ')}>
+                <div className={[space['m-r--6']].join(' ')}>
+                  <p
+                    className={[font['weight--300'], font['size--14']].join(
+                      ' '
+                    )}>
+                    1 / {cards.length}
+                  </p>
+                </div>
+                <div className={[space['m-r--6']].join(' ')}>
+                  <Button
+                    extendsTo={[
+                      color['b--white__2'],
+                      color['bg--transparent'],
+                      space['p--8'],
+                      shape['br--circle'],
+                    ].join(' ')}
+                    onPress={() => console.log('pressed left')}>
+                    <ChevronLeft width={10} stroke='black' strokeWidth={5} />
+                  </Button>
+                </div>
+                <div>
+                  <Button
+                    extendsTo={[
+                      color['b--white__2'],
+                      color['bg--transparent'],
+                      space['p--8'],
+                      shape['br--circle'],
+                    ].join(' ')}
+                    onPress={() => console.log('pressed right')}>
+                    <ChevronRight width={10} stroke='black' strokeWidth={5} />
+                  </Button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+        {displayCarousel(carouselType, save)}
+      </div>
+      <div className={[layout['relative']].join(' ')}>
+        {showAll && (
+          <div className={space['m-v--25']}>
+            <Button
+              extendsTo={[font['weight--500']].join(' ')}
+              onPress={() => console.log('clicked')}
+              to={showAll.to}>
+              <div className={[layout['items-center']].join(' ')}>
+                <div>
+                  <u>{showAll.description}</u>
+                </div>
+                <div>
+                  <ChevronRight width={14} stroke='black' strokeWidth={5} />
+                </div>
+              </div>
             </Button>
           </div>
         )}
@@ -112,7 +137,7 @@ export const StaySection: React.FC<Props> = ({
   );
 };
 
-const TypeStayCarousel = () => {
+const TypeStayCarousel = ({ cards }) => {
   return (
     <div className={[layout['relative'], space['p-v--10']].join(' ')}>
       <ul
@@ -129,7 +154,7 @@ const TypeStayCarousel = () => {
           scrollSnapType: 'x mandatory',
           height: '100%',
         }}>
-        {typeStays.map((typeStay) => {
+        {cards.map((card) => {
           return (
             <li
               className={[
@@ -141,7 +166,7 @@ const TypeStayCarousel = () => {
                 borderLeftStyle: 'solid',
                 borderLeftColor: 'transparent',
               }}>
-              <Card type='typestay' card={typeStay} />
+              <Card type='typestay' card={card} />
             </li>
           );
         })}
@@ -150,136 +175,25 @@ const TypeStayCarousel = () => {
   );
 };
 
-const PaginationCarousel = ({ save }) => {
+const PaginationCarousel = ({ save, cards }) => {
   return (
     <div style={{ paddingTop: 15, paddingBottom: 15 }}>
-      <div style={{ display: 'flex', marginLeft: -6, marginRight: -6 }}>
-        {horizontals.map((horizontal) => {
+      <div
+        style={{
+          display: 'flex',
+          marginLeft: -6,
+          marginRight: -6,
+          overflow: 'auto',
+        }}>
+        {cards.map((card) => {
           return (
-            <div style={{ width: '25%', paddingLeft: 6, paddingRight: 6 }}>
-              <div style={{ position: 'relative', paddingTop: '66.6%' }}>
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    bottom: 0,
-                    right: 0,
-                    left: 0,
-                  }}>
-                  <div>
-                    <div className={[layout['relative']].join(' ')}>
-                      <div className={[shape['br--12']].join(' ')}>
-                        <img
-                          className={[shape['br--12']].join(' ')}
-                          src={horizontal.imgUrl}
-                        />
-                      </div>
-                      <div
-                        className={[
-                          space['p-v--8'],
-                          space['p-h--10'],
-                          layout['at--0'],
-                          layout['justify-between'],
-                          shape['w--full'],
-                        ].join(' ')}>
-                        <div
-                          className={
-                            horizontal.superhost
-                              ? [].join(' ')
-                              : [color['c--white__0'], shape['hidden']].join(
-                                  ' '
-                                )
-                          }>
-                          <div
-                            className={[
-                              space['p-h--8'],
-                              space['p-v--4'],
-                              color['bg--white__1'],
-                              shape['shadow--lg'],
-                              shape['br--3'],
-                            ].join(' ')}>
-                            <p
-                              className={[
-                                font['size--12'],
-                                font['uppercase'],
-                                font['ls--3'],
-                              ].join(' ')}>
-                              Superhost
-                            </p>
-                          </div>
-                        </div>
-                        <div
-                          className={
-                            save
-                              ? [color['c--white__0']].join(' ')
-                              : [color['c--white__0'], shape['hidden']].join(
-                                  ' '
-                                )
-                          }>
-                          <Heart
-                            fill='rgba(0, 0, 0, 0.5)'
-                            width={24}
-                            stroke='rgb(255, 255, 255)'
-                            strokeWidth={2}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div style={{ display: 'flex' }}>
-                      <div className={[space['m-r--3']].join(' ')}>
-                        <svg fill='#F5385D' width={14} viewBox='0 0 1000 1000'>
-                          <path d='M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z' />
-                        </svg>
-                      </div>
-                      <div className={[space['m-r--3']].join(' ')}>
-                        <p
-                          className={[
-                            font['weight--100'],
-                            font['size--13'],
-                          ].join(' ')}>
-                          {horizontal.ratings}
-                        </p>
-                      </div>
-                      <div>
-                        <p
-                          className={[
-                            font['weight--100'],
-                            font['size--13'],
-                            color['c--gray__0'],
-                          ].join(' ')}>{`(${horizontal.number_of_reviews})`}</p>
-                      </div>
-                    </div>
-                    <div>
-                      <p
-                        className={[
-                          font['ls--4'],
-                          font['weight--100'],
-                          font['size--15'],
-                          color['c--gray__4'],
-                        ].join(' ')}>
-                        {horizontal.type}
-                      </p>
-                    </div>
-                    <div>
-                      <p
-                        style={{
-                          maxHeight: 250,
-                          whiteSpace: 'nowrap',
-                          overflow: 'hidden',
-                          textOverflow: 'ellipsis',
-                        }}
-                        className={[
-                          font['ls--4'],
-                          font['weight--100'],
-                          font['size--15'],
-                          color['c--gray__4'],
-                        ].join(' ')}>
-                        {horizontal.title}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div
+              style={{
+                minWidth: '25%',
+                paddingLeft: 6,
+                paddingRight: 6,
+              }}>
+              <Card type='horizontal' card={card} save={save} />
             </div>
           );
         })}

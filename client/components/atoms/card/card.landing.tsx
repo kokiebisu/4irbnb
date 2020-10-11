@@ -11,7 +11,13 @@ interface Props {
   card: any;
 }
 
-export const LandingCard: React.FC<Props> = ({ card }) => {
+export const LandingCard: React.FC<Props> = ({
+  card = {
+    imgUrl: 'img/card2.jpg',
+    title: 'Title should be here',
+    description: 'Description should be here',
+  },
+}) => {
   return (
     <div className={styles['category-section__card']}>
       <div className={styles['category-section__card--img']}>
