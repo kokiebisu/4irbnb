@@ -22,12 +22,12 @@ export default {
 
 const CardTemplate: Story<CardProps> = (args) => <Card {...args} />;
 
-export const landing = CardTemplate.bind({});
-landing.args = {
-  type: 'landing',
+export const category = CardTemplate.bind({});
+category.args = {
+  type: 'category',
 };
 
-landing.decorators = [
+category.decorators = [
   (Story) => (
     <div style={{ width: 300 }}>
       <Story />
