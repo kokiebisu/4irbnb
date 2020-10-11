@@ -11,7 +11,7 @@ interface Props {
   card: any;
 }
 
-export const LandingCard: React.FC<Props> = ({
+export const CategoryCard: React.FC<Props> = ({
   card = {
     imgUrl: 'img/card2.jpg',
     title: 'Title should be here',

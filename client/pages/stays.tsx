@@ -100,6 +100,36 @@ const StaysPage = () => {
                 save
               />
             </div>
+            <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
+              <Section
+                type='stay'
+                title='Nearby stays in nature'
+                description='Head outdoors for less crowded spaces with more room to connect.'
+                showAll={{
+                  to: '/',
+                  description: 'Show all nearby imaginative stays',
+                }}
+                items={horizontals}
+                pagination
+                isDescription
+                save
+              />
+            </div>
+            <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
+              <Section
+                type='stay'
+                title='Nearby stays in nature'
+                description='Head outdoors for less crowded spaces with more room to connect.'
+                showAll={{
+                  to: '/',
+                  description: 'Show all nearby imaginative stays',
+                }}
+                items={horizontals}
+                pagination
+                isDescription
+                save
+              />
+            </div>
           </div>
         </div>
       </div>

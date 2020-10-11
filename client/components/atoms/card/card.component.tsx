@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { LandingCard } from './card.landing';
+import { CategoryCard } from './card.category';
 import { HorizontalCard } from './card.horizontal';
 import { VerticalCard } from './card.vertical';
 import { TypeStayCard } from './card.typestay';
@@ -56,7 +56,7 @@ export const Card: React.FC<CardProps> = ({
   ...props
 }) => {
   const types: mapProps = {
-    landing: <LandingCard {...props} />,
+    category: <CategoryCard {...props} />,
     horizontal: <HorizontalCard {...props} />,
     vertical: <VerticalCard {...props} />,
     typestay: <TypeStayCard {...props} />,
