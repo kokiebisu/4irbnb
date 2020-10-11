@@ -7,14 +7,7 @@ import font from '../../../styles/font.module.scss';
 import { Heart } from '../../../public/svg/original';
 
 interface Props {
-  card?: {
-    imgUrl: string;
-    type: string;
-    ratings: number;
-    location: string;
-    title: string;
-    number_of_reviews: string;
-  };
+  card?: any;
   save?: boolean;
   superhost?: boolean;
 }

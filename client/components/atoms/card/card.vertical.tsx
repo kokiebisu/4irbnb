@@ -8,14 +8,7 @@ import styles from './card.module.scss';
 import { Heart } from '../../../public/svg/original';
 
 interface Props {
-  card: {
-    imgUrl: string;
-    title: string;
-    ratings: number;
-    number_of_reviews: number;
-    cost: number;
-    country: string;
-  };
+  card: any;
   save?: boolean;
 }
 

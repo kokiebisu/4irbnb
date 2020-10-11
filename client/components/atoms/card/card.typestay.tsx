@@ -8,11 +8,7 @@ import color from '../../../styles/color.module.scss';
 import { Button } from '../button/button.component';
 
 interface Props {
-  card: {
-    title: string;
-    imgUrl: string;
-    to: string;
-  };
+  card: any;
 }
 
 export const TypeStayCard: React.FC<Props> = ({
