@@ -8,7 +8,7 @@ import { categories } from '../../../../content/index';
 describe('Base Button', () => {
   it('renders title correctly for host button', () => {
     const { getByTestId } = render(
-      <Card {...landing.args} card={categories[0]} />
+      <Card {...landing.args} card={categories[0].card} />
     );
     // expect(getByTestId('card')).toHaveTextContent(
     //   'Unique staysSpaces that are more than just a place to sleep.'
@@ -18,7 +18,7 @@ describe('Base Button', () => {
   });
   it('renders description correctly for host button', () => {
     const { getByTestId } = render(
-      <Card {...landing.args} card={categories[0]} />
+      <Card {...landing.args} card={categories[0].card} />
     );
     // expect(getByTestId('card')).toHaveTextContent(
     //   'Unique staysSpaces that are more than just a place to sleep.'
