@@ -12,7 +12,18 @@ interface Props {
   save?: boolean;
 }
 
-export const VerticalCard: React.FC<Props> = ({ card, save }) => {
+export const VerticalCard: React.FC<Props> = ({
+  card = {
+    imgUrl:
+      'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1659111-active_media/original/4931efc9-f708-4619-9b25-51036194e1e1.jpg?aki_policy=poster',
+    title: 'Title should be here',
+    ratings: 5.0,
+    number_of_reviews: 100,
+    cost: 100,
+    country: 'Country',
+  },
+  save,
+}) => {
   return (
     <div className={[styles['w__vertical']].join(' ')}>
       <div className={[layout['relative']].join(' ')}>
@@ -83,17 +94,19 @@ export const VerticalCard: React.FC<Props> = ({ card, save }) => {
               color['c--gray__0'],
             ].join(' ')}>{`(${card.number_of_reviews})`}</p>
         </div>
-      </div>
-      <div>
-        <p
-          className={[
-            font['ls--4'],
-            font['weight--100'],
-            font['size--15'],
-            color['c--gray__4'],
-          ].join(' ')}>
-          {card.type}
-        </p>
+        <div>
+          <p className={[color['c--gray__0']].join(' ')}>&nbsp; · &nbsp; </p>
+        </div>
+        <div>
+          <p
+            className={[
+              font['size--13'],
+              font['weight--100'],
+              color['c--gray__0'],
+            ].join(' ')}>
+            {card.country}
+          </p>
+        </div>
       </div>
       <div>
         <p
@@ -104,6 +117,14 @@ export const VerticalCard: React.FC<Props> = ({ card, save }) => {
             color['c--gray__4'],
           ].join(' ')}>
           {card.title}
+        </p>
+      </div>
+      <div>
+        <p className={[font['weight--100']].join(' ')}>
+          <span className={[font['weight--500']].join(' ')}>
+            From ${card.cost}
+          </span>
+          /person
         </p>
       </div>
     </div>

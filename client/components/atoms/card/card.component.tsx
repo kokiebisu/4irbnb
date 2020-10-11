@@ -5,49 +5,55 @@ import { HorizontalCard } from './card.horizontal';
 import { VerticalCard } from './card.vertical';
 import { TypeStayCard } from './card.typestay';
 
-interface CardObjectProps {
+export interface CardBasicProps {
   imgUrl: string;
   title: string;
-  to: string;
 }
 
-export interface LandingCardObjectProps extends CardObjectProps {
+export interface LandingCardObjectProps extends CardBasicProps {
   description: string;
 }
 
-export interface HorizontalCardObjectProps extends CardObjectProps {
-  superhost: boolean;
+export interface HorizontalCardObjectProps extends CardBasicProps {
   ratings: number;
   number_of_reviews: number;
   type: string;
   location: string;
 }
 
-export interface VerticalCardObjectProps extends CardObjectProps {
+export interface VerticalCardObjectProps extends CardBasicProps {
   ratings: number;
   number_of_reviews: number;
   cost: number;
   country: string;
 }
 
-export interface TypeStayCardObjectProps extends CardObjectProps {}
+export interface TypeStayCardObjectProps extends CardBasicProps {}
+
+export type CardObjectProps = LandingCardObjectProps &
+  HorizontalCardObjectProps &
+  VerticalCardObjectProps &
+  TypeStayCardObjectProps;
 
 export interface CardProps {
   extendsTo?: string;
   type: string;
-  card: LandingCardObjectProps &
-    HorizontalCardObjectProps &
-    VerticalCardObjectProps &
-    TypeStayCardObjectProps;
+  card: CardObjectProps;
   save?: boolean;
+  superhost?: boolean;
+  to?: string;
 }
 
 interface mapProps {
   [key: string]: JSX.Element;
 }
 
-export const Card: React.FC<CardProps> = ({ extendsTo, type, ...props }) => {
-  const { card } = props;
+export const Card: React.FC<CardProps> = ({
+  extendsTo,
+  type,
+  to = '/',
+  ...props
+}) => {
   const types: mapProps = {
     landing: <LandingCard {...props} />,
     horizontal: <HorizontalCard {...props} />,
@@ -55,7 +61,7 @@ export const Card: React.FC<CardProps> = ({ extendsTo, type, ...props }) => {
     typestay: <TypeStayCard {...props} />,
   };
   return (
-    <Link href={card.to}>
+    <Link href={to}>
       <a data-testid='card' className={extendsTo}>
         {types[type]}
       </a>
