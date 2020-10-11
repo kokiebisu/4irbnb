@@ -4,7 +4,9 @@ import { MenuBarLogo } from 'public/svg/logo';
 import { Login, Saved } from 'public/svg/regular';
 import React from 'react';
 
-export const MenuBar = () => {
+export interface MenuBarProps {}
+
+export const MenuBar: React.FC<MenuBarProps> = () => {
   const items = [
     { component: <MenuBarLogo width={25} />, name: 'Explore', selected: true },
     { component: <Saved width={25} />, name: 'Saved', selected: false },
