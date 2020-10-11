@@ -18,9 +18,7 @@ describe('Base Button', () => {
     const { getByTestId } = render(
       <Card {...category.args} card={categories[0].card} />
     );
-    // expect(getByTestId('card')).toHaveTextContent(
-    //   'Unique staysSpaces that are more than just a place to sleep.'
-    // );
+
     const { getByText } = within(getByTestId('card'));
     expect(
       getByText('Spaces that are more than just a place to sleep.')
