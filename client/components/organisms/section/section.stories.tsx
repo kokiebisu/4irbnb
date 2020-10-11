@@ -12,6 +12,11 @@ export default {
 
 const SectionTemplate: Story<SectionProps> = (args) => <Section {...args} />;
 
+export const categories = SectionTemplate.bind({});
+categories.args = {
+  type: 'category',
+};
+
 export const stayTypes = SectionTemplate.bind({});
 stayTypes.args = {
   type: 'stay',

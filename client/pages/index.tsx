@@ -5,7 +5,12 @@ import layout from 'styles/layout.module.scss';
 import space from 'styles/space.module.scss';
 import { MagnifyGlass, Lock, Saved, Login, Globe } from 'public/svg/regular';
 import { MenuBarLogo, NameLogo, NoNameLogo } from 'public/svg/logo';
-import { destinations, categories, cards, sections } from '../content/index';
+import {
+  destinations,
+  destinationByCategories,
+  categories,
+  sections,
+} from '../content/index';
 import { Button } from 'components/atoms/button/button.component';
 import {
   banner as bannerButton,
@@ -24,6 +29,7 @@ import { Card } from 'components/atoms/card/card.component';
 import { useToggleDispatch, useToggleState } from '../context/toggle';
 import { Header } from 'components/organisms/header/header.component';
 import { RegisterModal } from 'components/organisms/modal/modal.register';
+import { Section } from 'components/organisms/section/section.component';
 
 const CovidNotice = () => {
   return (
@@ -229,15 +235,7 @@ const CategorySection = () => {
         space['m-b--50'],
         space['m-l--0'],
       ].join(' ')}>
-      <div
-        className={[styles['container--carousel'], space['p-h--70']].join(' ')}>
-        <div className={[styles['category-section__carousel']].join(' ')}>
-          {cards.map((card, index) => {
-            return <Card type='landing' key={index} card={card} />;
-          })}
-          <div className={styles['category-section__card--space']}></div>
-        </div>
-      </div>
+      <Section type='category' items={categories} />
     </div>
   );
 };
@@ -341,7 +339,7 @@ const DestinationTrips = () => {
             styles['destinations__categories'],
             space['m-t--12'],
           ].join(' ')}>
-          {categories.map((category, index) => {
+          {destinationByCategories.map((destinationByCategory, index) => {
             return (
               <div key={index}>
                 <h5
@@ -351,7 +349,7 @@ const DestinationTrips = () => {
                     font['weight--500'],
                     color['c--gray__0'],
                   ].join(' ')}>
-                  {category.name}
+                  {destinationByCategory.name}
                 </h5>
               </div>
             );
