@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
-import Link from 'next/link';
+import React from 'react';
 import styles from 'styles/index.module.scss';
 import layout from 'styles/layout.module.scss';
 import space from 'styles/space.module.scss';
-import { MagnifyGlass, Lock, Saved, Login, Globe } from 'public/svg/regular';
-import { MenuBarLogo, NameLogo, NoNameLogo } from 'public/svg/logo';
 import {
   destinations,
   destinationByCategories,
   categories,
-  sections,
 } from '../content/index';
 import { Button } from 'components/atoms/button/button.component';
 import {
@@ -25,11 +21,11 @@ import { Modal } from 'components/organisms/modal/modal.component';
 import color from '../styles/color.module.scss';
 import shape from '../styles/shape.module.scss';
 import font from '../styles/font.module.scss';
-import { Card } from 'components/atoms/card/card.component';
-import { useToggleDispatch, useToggleState } from '../context/toggle';
+import { useToggleState } from '../context/toggle';
 import { Header } from 'components/organisms/header/header.component';
-import { RegisterModal } from 'components/organisms/modal/modal.register';
 import { Section } from 'components/organisms/section/section.component';
+import { Footer } from 'components/organisms/footer/footer.component';
+import { MenuBar } from 'components/organisms/menubar/menubar.component';
 
 const CovidNotice = () => {
   return (
@@ -73,170 +69,62 @@ const Banner = () => {
           </div>
         </div>
         <div className={[layout['all-sides']].join(' ')}>
-          <div className={styles['header__wrapper--sm']}>
-            <HeaderSmall />
-          </div>
-          <div className={styles['header__wrapper--md']}>
-            <HeaderComponent />
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
-
-const HeaderSmall = () => {
-  return (
-    <>
-      <div className={styles['container']}>
-        <header
-          className={[
-            space['p-t--25'],
-            space['p-r--0'],
-            space['p-b--15'],
-            space['p-l--0'],
-          ].join(' ')}>
-          <div className={[styles['searchbar__sm']].join(' ')}>
-            <MagnifyGlass stroke={'black'} strokeWidth={4} width={17} />
-            <input placeholder='Where are you going' />
-          </div>
-        </header>
-        <div
-          className={[
-            layout['z--20'],
-            shape['h--75p'],
-            styles['flex__explore'],
-          ].join(' ')}>
-          <div className={[space['m-v--10'], space['m-h--0']].join(' ')}>
-            <h3 className={[color['c--white__0'], font['size--28']].join(' ')}>
-              Go Near
-            </h3>
-          </div>
           <div
-            className={[
-              font['c--white__0'],
-              styles['w__explore--subtitle'],
-              styles['text__explore--subtitle'],
-            ].join(' ')}>
-            <p
-              className={[
-                styles['size__explore--subtitle'],
-                font['weight--300'],
-                font['ls--3'],
-                color['c--white__0'],
-              ].join(' ')}>
-              Settle in somewhere new. Discover nearby stays to live, work, or
-              just relax.
-            </p>
-          </div>
-          <div
-            className={[
-              space['m-v--15'],
-              space['m-h--0'],
-              styles['justify__explore--button'],
-            ].join(' ')}>
-            <Button {...bannerButton.args} to='/' />
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
-
-const HeaderComponent = () => {
-  return (
-    <div style={{ height: '100%' }}>
-      <div className={[space['p-t--14']].join(' ')}>
-        <Header type='transparent' />
-      </div>
-      <div className={[color['c--white__0']].join(' ')}></div>
-      <div
-        className={[
-          styles['container'],
-          layout['justify-center'],
-          layout['z--20'],
-          shape['h--75p'],
-          styles['flex__explore'],
-        ].join(' ')}>
-        <div className={[space['m-v--10'], space['m-h--0']].join(' ')}>
-          <h3 className={[color['c--white__0'], font['size--28']].join(' ')}>
-            Go Near
-          </h3>
-        </div>
-        <div
-          className={[
-            font['c--white__0'],
-            styles['w__explore--subtitle'],
-            styles['text__explore--subtitle'],
-          ].join(' ')}>
-          <p
-            className={[
-              styles['size__explore--subtitle'],
-              font['weight--300'],
-              font['ls--3'],
-              color['c--white__0'],
-            ].join(' ')}>
-            Settle in somewhere new. Discover nearby stays to live, work, or
-            just relax.
-          </p>
-        </div>
-        <div
-          className={[
-            space['m-v--15'],
-            space['m-h--0'],
-            styles['justify__explore--button'],
-          ].join(' ')}>
-          <Button {...bannerButton.args} to='/' />
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const MenuBar = () => {
-  const items = [
-    { component: <MenuBarLogo width={25} />, name: 'Explore', selected: true },
-    { component: <Saved width={25} />, name: 'Saved', selected: false },
-    { component: <Login width={25} />, name: 'Log in', selected: false },
-  ];
-  return (
-    <div className={styles['menubar']}>
-      {items.map((item, index) => {
-        return (
-          <Link key={index} href='/'>
-            <a>
+            className={[styles['header__wrapper--md'], shape['h--full']].join(
+              ' '
+            )}>
+            <div style={{ height: '100%' }}>
               <div
-                className={
-                  item.selected
-                    ? [styles['menubar__item'], styles['selected']].join(' ')
-                    : styles['menubar__item']
-                }>
-                <div className={styles['menubar__item--logo']}>
-                  {item.component}
+                className={[space['p-t--14'], styles['container']].join(' ')}>
+                <Header type='transparent' />
+              </div>
+              <div className={[color['c--white__0']].join(' ')}></div>
+              <div
+                className={[
+                  styles['container'],
+                  layout['z--20'],
+                  shape['h--75p'],
+                  styles['flex__explore'],
+                ].join(' ')}>
+                <div className={[space['m-v--10'], space['m-h--0']].join(' ')}>
+                  <h3
+                    className={[color['c--white__0'], font['size--28']].join(
+                      ' '
+                    )}>
+                    Go Near
+                  </h3>
                 </div>
-                <div className={styles['menubar__item--text']}>
-                  <p>{item.name}</p>
+                <div
+                  className={[
+                    font['c--white__0'],
+                    styles['w__explore--subtitle'],
+                    styles['text__explore--subtitle'],
+                  ].join(' ')}>
+                  <p
+                    className={[
+                      styles['size__explore--subtitle'],
+                      font['weight--300'],
+                      font['ls--3'],
+                      color['c--white__0'],
+                    ].join(' ')}>
+                    Settle in somewhere new. Discover nearby stays to live,
+                    work, or just relax.
+                  </p>
+                </div>
+                <div
+                  className={[
+                    space['m-v--15'],
+                    space['m-h--0'],
+                    styles['justify__explore--button'],
+                  ].join(' ')}>
+                  <Button {...bannerButton.args} to='/' />
                 </div>
               </div>
-            </a>
-          </Link>
-        );
-      })}
-    </div>
-  );
-};
-
-const CategorySection = () => {
-  return (
-    <div
-      className={[
-        space['m-t--25'],
-        space['m-r--0'],
-        space['m-b--50'],
-        space['m-l--0'],
-      ].join(' ')}>
-      <Section type='category' items={categories} />
-    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
@@ -390,149 +278,6 @@ const DestinationTrips = () => {
   );
 };
 
-const Footer = () => {
-  return (
-    <footer
-      className={[
-        color['b-t--white__2'],
-        space['p-v--22'],
-        color['bg--white__1'],
-      ].join(' ')}>
-      <div className={styles['container']}>
-        <div
-          className={[
-            font['b-b--white__1'],
-            styles['flex__footer--section'],
-          ].join(' ')}>
-          {sections.map((section, index) => {
-            return (
-              <div
-                key={index}
-                className={[
-                  color['bt--white__2'],
-                  space['nf-m-t--20'],
-                  styles['p-b__footer--section'],
-                  styles['w__footer--section'],
-                ].join(' ')}>
-                <div>
-                  <h4
-                    className={[font['size--12'], font['uppercase']].join(' ')}>
-                    {section.name}
-                  </h4>
-                </div>
-                <div
-                  className={[
-                    space['m-v--15'],
-                    space['m-h--0'],
-                    styles['grid__footer--items'],
-                  ].join(' ')}>
-                  {section.items.map((item, index) => {
-                    return (
-                      <div
-                        className={[
-                          space['m-v--15'],
-                          space['m-h--0'],
-                          space['m-v--15'],
-                          styles['m__footer--item'],
-                        ].join(' ')}
-                        key={index}>
-                        <Link href={item.url}>
-                          <a
-                            className={[
-                              font['size--14'],
-                              font['weight--300'],
-                            ].join(' ')}>
-                            {item.name}
-                          </a>
-                        </Link>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-        <div className={styles['flex__footer--others']}>
-          <div
-            className={[
-              layout['items-center'],
-              space['m-h--0'],
-              space['m-v--20'],
-            ].join(' ')}>
-            <div>
-              <button
-                className={[
-                  layout['items-center'],
-                  space['m-r--10'],
-                  color['bg--transparent'],
-                  color['b--0'],
-                ].join(' ')}>
-                <Globe width={16} className={space['m-r--5']} />
-                <u className={[font['size--14'], space['m-r--7']].join(' ')}>
-                  English(CA)
-                </u>
-              </button>
-            </div>
-            <div>
-              <button
-                className={[
-                  layout['items-center'],
-                  color['bg--transparent'],
-                  color['b--0'],
-                ].join(' ')}>
-                <u className={[font['size--14'], space['m-r--7']].join(' ')}>
-                  $
-                </u>
-                <u className={[font['size--14'], space['m-r--7']].join(' ')}>
-                  CAD
-                </u>
-              </button>
-            </div>
-          </div>
-          <div className={layout['items-center']}>
-            <div className={styles['footer__rights']}>
-              <p
-                className={[
-                  font['size--14'],
-                  font['weight--300'],
-                  layout['inline-block'],
-                ].join(' ')}>
-                &copy; 2020 Airbnb, Inc. All rights reserved
-              </p>
-            </div>
-            <div className={layout['items-center']}>
-              <div className={styles['block__footer--dot']}>
-                &nbsp;&nbsp;· &nbsp;
-              </div>
-              <div className={space['m-r--10']}>
-                <a
-                  className={[font['size--14'], font['weight--300']].join(' ')}>
-                  Privacy
-                </a>
-              </div>
-              <div>&nbsp;· &nbsp;</div>
-              <div className={space['m-r--10']}>
-                <a
-                  className={[font['size--14'], font['weight--300']].join(' ')}>
-                  &nbsp;Terms
-                </a>
-              </div>
-              <div>&nbsp;· &nbsp;</div>
-              <div className={space['m-r--10']}>
-                <a
-                  className={[font['size--14'], font['weight--300']].join(' ')}>
-                  &nbsp;Sitemap
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-};
-
 const LandingPage = () => {
   const toggleState = useToggleState();
 
@@ -541,7 +286,9 @@ const LandingPage = () => {
       <CovidNotice />
       <div>
         <Banner />
-        <CategorySection />
+        <div className={[space['m-v--25'], space['m-h--0']].join(' ')}>
+          <Section type='category' items={categories} />
+        </div>
         <OnlineExperiences />
         <BlackLivesMatter />
         <DestinationTrips />

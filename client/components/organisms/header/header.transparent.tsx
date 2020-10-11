@@ -30,7 +30,7 @@ export const TransparentHeader: React.FC<{}> = () => {
       <div
         className={[
           shape['none--sm'],
-          styles['container'],
+
           layout['items-center'],
           layout['justify-between'],
           layout['relative'],
