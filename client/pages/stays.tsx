@@ -4,9 +4,13 @@ import space from '../styles/space.module.scss';
 import layout from '../styles/layout.module.scss';
 import stays from '../styles/stays.module.scss';
 import styles from '../styles/index.module.scss';
+import shape from '../styles/shape.module.scss';
+import font from '../styles/font.module.scss';
+import color from '../styles/color.module.scss';
 import { Section } from '../components/organisms/section/section.component';
 import { typeStays } from 'content';
 import { horizontals } from 'data';
+import { Footer } from 'components/organisms/footer/footer.component';
 
 const StaysPage = () => {
   return (
@@ -74,6 +78,42 @@ const StaysPage = () => {
               />
             </div>
           </div>
+          <div className={[layout['all-sides']].join(' ')}>
+            <div
+              className={[
+                styles['container'],
+                layout['z--20'],
+                shape['h--full'],
+                styles['flex__explore'],
+              ].join(' ')}>
+              <div
+                className={[stays['m-v__banner'], space['m-h--0']].join(' ')}>
+                <h1
+                  className={[color['c--white__0'], stays['size__banner']].join(
+                    ' '
+                  )}>
+                  Unique stays
+                </h1>
+              </div>
+              <div
+                className={[
+                  font['c--white__0'],
+                  stays['w__banner'],
+                  stays['m__banner'],
+                ].join(' ')}>
+                <p
+                  className={[
+                    font['size--18'],
+                    font['weight--100'],
+                    font['ls--3'],
+                    color['c--white__0'],
+                  ].join(' ')}>
+                  Tents, tree houses, and more—these spaces are more than just a
+                  place to sleep.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
         <div className={[space['p-v--38']].join(' ')}>
           <div className={[styles['container'], layout['relative']].join(' ')}>
@@ -133,6 +173,7 @@ const StaysPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
