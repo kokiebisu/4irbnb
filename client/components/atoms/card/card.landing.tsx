@@ -8,7 +8,11 @@ import animation from '../../../styles/animation.module.scss';
 import styles from '../../../styles/index.module.scss';
 
 interface Props {
-  card: any;
+  card: {
+    imgUrl: string;
+    title: string;
+    description: string;
+  };
 }
 
 export const LandingCard: React.FC<Props> = ({

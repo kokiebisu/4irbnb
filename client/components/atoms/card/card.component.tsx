@@ -5,35 +5,25 @@ import { HorizontalCard } from './card.horizontal';
 import { VerticalCard } from './card.vertical';
 import { TypeStayCard } from './card.typestay';
 
-export interface CardBasicProps {
-  imgUrl: string;
-  title: string;
-}
-
-export interface LandingCardObjectProps extends CardBasicProps {
-  description: string;
-}
-
-export interface HorizontalCardObjectProps extends CardBasicProps {
-  ratings: number;
-  number_of_reviews: number;
-  type: string;
-  location: string;
-}
-
-export interface VerticalCardObjectProps extends CardBasicProps {
-  ratings: number;
-  number_of_reviews: number;
-  cost: number;
-  country: string;
-}
-
-export interface TypeStayCardObjectProps extends CardBasicProps {}
-
-export type CardObjectProps = LandingCardObjectProps &
-  HorizontalCardObjectProps &
-  VerticalCardObjectProps &
-  TypeStayCardObjectProps;
+export type CardObjectProps =
+  | { imgUrl: string; title: string; description: string }
+  | {
+      imgUrl: string;
+      title: string;
+      ratings: number;
+      number_of_reviews: number;
+      type: string;
+      location: string;
+    }
+  | {
+      imgUrl: string;
+      title: string;
+      ratings: number;
+      number_of_reviews: number;
+      cost: number;
+      country: string;
+    }
+  | { imgUrl: string; title: string };
 
 export interface CardProps {
   extendsTo?: string;
