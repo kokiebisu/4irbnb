@@ -197,8 +197,8 @@ const PaginationCarousel = ({ save, items }) => {
           return (
             <div
               key={index}
+              className={[sectionStyles['w__pagination--carousel']].join(' ')}
               style={{
-                minWidth: '25%',
                 paddingLeft: 6,
                 paddingRight: 6,
               }}>

@@ -32,6 +32,24 @@
       max-width: calc(100% / 7);
     }
   }
+
+  &__pagination {
+    &--carousel {
+      min-width: 400px;
+
+      @media screen and (min-width: 728px) {
+        min-width: calc(100% / 2);
+      }
+
+      @media screen and (min-width: 1158px) {
+        min-width: calc(100% / 3);
+      }
+
+      @media screen and (min-width: 1358px) {
+        min-width: calc(100% / 4);
+      }
+    }
+  }
 }
 
 .flex {
