@@ -30,3 +30,10 @@ stayWithPagination.args = {
   save: true,
   isDescription: true,
 };
+
+export const twoRows = SectionTemplate.bind({});
+twoRows.args = {
+  type: 'stay',
+  save: true,
+  isDescription: true,
+};

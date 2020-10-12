@@ -1,3 +1,21 @@
+.none {
+  &__cards {
+    &--sm {
+      display: none;
+      @media screen and (min-width: 728px) {
+        display: block;
+      }
+    }
+
+    &--lg {
+      display: none;
+      @media screen and (min-width: 1128px) {
+        display: block;
+      }
+    }
+  }
+}
+
 .w {
   &__card {
     width: 250px;
@@ -27,5 +45,20 @@
     @media screen and (min-width: 1440px) {
       flex: 0 0 calc(100% / 7);
     }
+  }
+}
+
+.multiplerows {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, 1fr);
+
+  @media screen and (min-width: 728px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media screen and (min-width: 1128px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
