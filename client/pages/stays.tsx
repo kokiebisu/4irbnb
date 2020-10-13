@@ -170,6 +170,22 @@ const StaysPage = () => {
                 save
               />
             </div>
+            <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
+              <div>
+                <Section
+                  type='stay'
+                  title='Unique stays around the world'
+                  description='Dream about your future vacation by saving these unique homes.'
+                  showAll={{
+                    to: '/',
+                    description: 'Show all unique stays',
+                  }}
+                  items={horizontals}
+                  isDescription
+                  save
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

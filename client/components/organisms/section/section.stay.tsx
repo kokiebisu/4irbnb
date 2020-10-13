@@ -4,10 +4,10 @@ import space from '../../../styles/space.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
 import color from '../../../styles/color.module.scss';
+import styles from './section.module.scss';
 import { Card, CardObjectProps } from '../../atoms/card/card.component';
 import { Button } from '../../../components/atoms/button/button.component';
 import sectionStyles from './section.module.scss';
-
 import { ChevronLeft, ChevronRight } from '../../../public/svg/regular';
 
 interface Props {
@@ -38,15 +38,18 @@ export const StaySection: React.FC<Props> = ({
     undefined,
     undefined,
     undefined,
+    undefined,
   ],
 }) => {
-  const displayCarousel = (carouselType, save) => {
+  const displayItems = (carouselType, save) => {
     if (pagination) {
       return <PaginationCarousel save={save} items={items} />;
     }
     switch (carouselType) {
       case 'stayTypes':
         return <TypeStayCarousel items={items} />;
+      default:
+        return <MultipleRows items={items} save={save} />;
     }
   };
   return (
@@ -112,7 +115,7 @@ export const StaySection: React.FC<Props> = ({
             )}
           </div>
         </div>
-        {displayCarousel(carouselType, save)}
+        {displayItems(carouselType, save)}
       </div>
       <div className={[layout['relative']].join(' ')}>
         {showAll && (
@@ -182,7 +185,7 @@ const TypeStayCarousel = ({ items }) => {
 
 const PaginationCarousel = ({ save, items }) => {
   return (
-    <div style={{ paddingTop: 15, paddingBottom: 15 }}>
+    <div className={[space['p-v--15']].join(' ')}>
       <div
         style={{
           display: 'flex',
@@ -199,6 +202,41 @@ const PaginationCarousel = ({ save, items }) => {
                 paddingLeft: 6,
                 paddingRight: 6,
               }}>
+              <Card
+                type='horizontal'
+                card={item && item.card}
+                to={item && item.to}
+                save={save}
+              />
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+const MultipleRows = ({ items, save }) => {
+  const evaluateNumber = (index) => {
+    if (index > 5) {
+      // should disappear below 1128px
+      return [sectionStyles['none__cards--lg']].join(' ');
+    } else if (index > 3) {
+      // should disappear below 728px
+      return [sectionStyles['none__cards--sm']].join(' ');
+    }
+    // doesn't disappear
+    return [].join(' ');
+  };
+  return (
+    <div style={{ paddingTop: 15, paddingBottom: 15 }}>
+      <div
+        style={{ display: 'grid' }}
+        className={[styles['multiplerows']].join(' ')}>
+        {items.map((item, index) => {
+          console.log('index', index);
+          return (
+            <div className={evaluateNumber(index)}>
               <Card
                 type='horizontal'
                 card={item && item.card}
