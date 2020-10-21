@@ -5,7 +5,7 @@ import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
 import color from '../../../styles/color.module.scss';
 import styles from './section.module.scss';
-import { Card, CardObjectProps } from '../../atoms/card/card.component';
+import { Card } from '../../atoms/card/card.component';
 import { Button } from '../../../components/atoms/button/button.component';
 import sectionStyles from './section.module.scss';
 import { ChevronLeft, ChevronRight } from '../../../public/svg/regular';
@@ -197,8 +197,8 @@ const PaginationCarousel = ({ save, items }) => {
           return (
             <div
               key={index}
+              className={[sectionStyles['w__pagination--carousel']].join(' ')}
               style={{
-                minWidth: '25%',
                 paddingLeft: 6,
                 paddingRight: 6,
               }}>
@@ -234,9 +234,8 @@ const MultipleRows = ({ items, save }) => {
         style={{ display: 'grid' }}
         className={[styles['multiplerows']].join(' ')}>
         {items.map((item, index) => {
-          console.log('index', index);
           return (
-            <div className={evaluateNumber(index)}>
+            <div key={index} className={evaluateNumber(index)}>
               <Card
                 type='horizontal'
                 card={item && item.card}
