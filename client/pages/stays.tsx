@@ -9,7 +9,7 @@ import font from '../styles/font.module.scss';
 import color from '../styles/color.module.scss';
 import { Section } from '../components/organisms/section/section.component';
 import { typeStays } from 'content';
-import { horizontals } from 'data';
+import { uniqueStays, natures, imaginatives, novelties } from 'data/stays';
 import { Footer } from 'components/organisms/footer/footer.component';
 
 const StaysPage = () => {
@@ -132,9 +132,9 @@ const StaysPage = () => {
                 description='Head outdoors for less crowded spaces with more room to connect.'
                 showAll={{
                   to: '/',
-                  description: 'Show all nearby imaginative stays',
+                  description: 'Show all nearby nature stays',
                 }}
-                items={horizontals}
+                items={natures}
                 pagination
                 isDescription
                 save
@@ -143,13 +143,13 @@ const StaysPage = () => {
             <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
               <Section
                 type='stay'
-                title='Nearby stays in nature'
-                description='Head outdoors for less crowded spaces with more room to connect.'
+                title='Imaginative stays close to home'
+                description='Get inspired by your surroundings in these architectural gems'
                 showAll={{
                   to: '/',
                   description: 'Show all nearby imaginative stays',
                 }}
-                items={horizontals}
+                items={imaginatives}
                 pagination
                 isDescription
                 save
@@ -158,13 +158,13 @@ const StaysPage = () => {
             <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
               <Section
                 type='stay'
-                title='Nearby stays in nature'
-                description='Head outdoors for less crowded spaces with more room to connect.'
+                title='Novelty stays near you'
+                description='From trailers to trains, transport yourself into a one-of-a-kind getaway.'
                 showAll={{
                   to: '/',
-                  description: 'Show all nearby imaginative stays',
+                  description: 'Show all nearby novelty stays',
                 }}
-                items={horizontals}
+                items={novelties}
                 pagination
                 isDescription
                 save
@@ -180,7 +180,7 @@ const StaysPage = () => {
                     to: '/',
                     description: 'Show all unique stays',
                   }}
-                  items={horizontals}
+                  items={uniqueStays}
                   isDescription
                   save
                 />
