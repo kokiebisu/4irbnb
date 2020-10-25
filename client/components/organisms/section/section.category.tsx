@@ -5,7 +5,7 @@ import space from '../../../styles/space.module.scss';
 import { Card } from '../../../components/atoms/card/card.component';
 
 interface Props {
-  items: any;
+  items?: any;
 }
 
 export const CategorySection: React.FC<Props> = ({
