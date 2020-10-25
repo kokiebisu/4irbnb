@@ -6,8 +6,7 @@ import { StaySection } from './section.stay';
 export interface SectionProps {
   extendsTo?: string;
   type: string;
-  // cards: CardObjectProps[];
-  items: {
+  items?: {
     card: any;
     to: string;
   }[];
@@ -21,6 +20,7 @@ export interface SectionProps {
   };
   pagination?: boolean;
   save?: boolean;
+  fetchUrl?: string;
 }
 
 interface mapProps {
