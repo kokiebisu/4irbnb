@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import shape from '../../../styles/shape.module.scss';
@@ -18,8 +18,9 @@ interface Props {
   type?: string;
   carouselType?: string;
   save?: boolean;
-  items: { card: any; to: string }[];
+  items?: { card: any; to: string }[];
   isDescription?: boolean;
+  fetchUrl?: string;
 }
 
 export const StaySection: React.FC<Props> = ({
@@ -30,8 +31,8 @@ export const StaySection: React.FC<Props> = ({
   carouselType = '',
   save = false,
   isDescription = false,
+  fetchUrl = '',
   items = [
-    undefined,
     undefined,
     undefined,
     undefined,
@@ -41,15 +42,29 @@ export const StaySection: React.FC<Props> = ({
     undefined,
   ],
 }) => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch(fetchUrl);
+      const resJson = await res.json();
+      setData(resJson);
+    };
+    if (carouselType !== 'stayTypes') {
+      fetchData();
+    } else {
+      setData(items);
+    }
+  }, []);
+
   const displayItems = (carouselType, save) => {
     if (pagination) {
-      return <PaginationCarousel save={save} items={items} />;
+      return <PaginationCarousel save={save} data={data} />;
     }
     switch (carouselType) {
       case 'stayTypes':
-        return <TypeStayCarousel items={items} />;
+        return <TypeStayCarousel data={data} />;
       default:
-        return <MultipleRows items={items} save={save} />;
+        return <MultipleRows data={data} save={save} />;
     }
   };
   return (
@@ -140,7 +155,7 @@ export const StaySection: React.FC<Props> = ({
   );
 };
 
-const TypeStayCarousel = ({ items }) => {
+const TypeStayCarousel = ({ data }) => {
   return (
     <div className={[layout['relative'], space['p-v--10']].join(' ')}>
       <ul
@@ -157,7 +172,7 @@ const TypeStayCarousel = ({ items }) => {
           scrollSnapType: 'x mandatory',
           height: '100%',
         }}>
-        {items.map((item, index) => {
+        {data.map((item, index) => {
           return (
             <li
               key={index}
@@ -183,7 +198,7 @@ const TypeStayCarousel = ({ items }) => {
   );
 };
 
-const PaginationCarousel = ({ save, items }) => {
+const PaginationCarousel = ({ save, data }) => {
   return (
     <div className={[space['p-v--15']].join(' ')}>
       <div
@@ -193,7 +208,7 @@ const PaginationCarousel = ({ save, items }) => {
           marginRight: -6,
           overflow: 'auto',
         }}>
-        {items.map((item, index) => {
+        {data.map((item, index) => {
           return (
             <div
               key={index}
@@ -216,7 +231,7 @@ const PaginationCarousel = ({ save, items }) => {
   );
 };
 
-const MultipleRows = ({ items, save }) => {
+const MultipleRows = ({ data, save }) => {
   const evaluateNumber = (index) => {
     if (index > 5) {
       // should disappear below 1128px
@@ -233,7 +248,7 @@ const MultipleRows = ({ items, save }) => {
       <div
         style={{ display: 'grid' }}
         className={[styles['multiplerows']].join(' ')}>
-        {items.map((item, index) => {
+        {data.map((item, index) => {
           return (
             <div key={index} className={evaluateNumber(index)}>
               <Card
