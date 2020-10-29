@@ -47,6 +47,7 @@ export const StaySection: React.FC<Props> = ({
     const fetchData = async () => {
       const res = await fetch(fetchUrl);
       const resJson = await res.json();
+      console.log('res', resJson);
       setData(resJson);
     };
     if (carouselType !== 'stayTypes') {
@@ -172,33 +173,35 @@ const TypeStayCarousel = ({ data }) => {
           scrollSnapType: 'x mandatory',
           height: '100%',
         }}>
-        {data.map((item, index) => {
-          return (
-            <li
-              key={index}
-              className={[
-                sectionStyles['w__card'],
-                sectionStyles['flex__card'],
-              ].join(' ')}
-              style={{
-                scrollSnapAlign: 'start',
-                borderLeftStyle: 'solid',
-                borderLeftColor: 'transparent',
-              }}>
-              <Card
-                type='typestay'
-                card={item && item.card}
-                to={item && item.to}
-              />
-            </li>
-          );
-        })}
+        {data.length &&
+          data.map((item, index) => {
+            return (
+              <li
+                key={index}
+                className={[
+                  sectionStyles['w__card'],
+                  sectionStyles['flex__card'],
+                ].join(' ')}
+                style={{
+                  scrollSnapAlign: 'start',
+                  borderLeftStyle: 'solid',
+                  borderLeftColor: 'transparent',
+                }}>
+                <Card
+                  type='typestay'
+                  card={item && item.card}
+                  to={item && item.to}
+                />
+              </li>
+            );
+          })}
       </ul>
     </div>
   );
 };
 
 const PaginationCarousel = ({ save, data }) => {
+  console.log('data', data);
   return (
     <div className={[space['p-v--15']].join(' ')}>
       <div
@@ -208,30 +211,32 @@ const PaginationCarousel = ({ save, data }) => {
           marginRight: -6,
           overflow: 'auto',
         }}>
-        {data.map((item, index) => {
-          return (
-            <div
-              key={index}
-              className={[sectionStyles['w__pagination--carousel']].join(' ')}
-              style={{
-                paddingLeft: 6,
-                paddingRight: 6,
-              }}>
-              <Card
-                type='horizontal'
-                card={item && item.card}
-                to={item && item.to}
-                save={save}
-              />
-            </div>
-          );
-        })}
+        {data.length &&
+          data.map((item, index) => {
+            return (
+              <div
+                key={index}
+                className={[sectionStyles['w__pagination--carousel']].join(' ')}
+                style={{
+                  paddingLeft: 6,
+                  paddingRight: 6,
+                }}>
+                <Card
+                  type='horizontal'
+                  card={item && item.card}
+                  to={item && item.to}
+                  save={save}
+                />
+              </div>
+            );
+          })}
       </div>
     </div>
   );
 };
 
 const MultipleRows = ({ data, save }) => {
+  const displayingData = data.slice(0, 8);
   const evaluateNumber = (index) => {
     if (index > 5) {
       // should disappear below 1128px
@@ -248,18 +253,19 @@ const MultipleRows = ({ data, save }) => {
       <div
         style={{ display: 'grid' }}
         className={[styles['multiplerows']].join(' ')}>
-        {data.map((item, index) => {
-          return (
-            <div key={index} className={evaluateNumber(index)}>
-              <Card
-                type='horizontal'
-                card={item && item.card}
-                to={item && item.to}
-                save={save}
-              />
-            </div>
-          );
-        })}
+        {displayingData.length &&
+          displayingData.map((item, index) => {
+            return (
+              <div key={index} className={evaluateNumber(index)}>
+                <Card
+                  type='horizontal'
+                  card={item && item.card}
+                  to={item && item.to}
+                  save={save}
+                />
+              </div>
+            );
+          })}
       </div>
     </div>
   );

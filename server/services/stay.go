@@ -1,15 +1,29 @@
 package services
 
 import (
+	"database/sql"
+	"fmt"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/kokiebisu/airbnb/database"
 	"github.com/kokiebisu/airbnb/models"
 )
 
 func GetStays(c *fiber.Ctx) error {
-	
+	var rows *sql.Rows
+	var err error
 	// Insert Employee into database
-	rows, err := database.Db.Query("SELECT * from stay")
+	switch typeParams := c.Query("type"); typeParams {
+	case "":
+		fmt.Println("entered empty")
+		rows, err = database.Db.Query("SELECT * FROM stay")
+	case "unique":
+		fmt.Println("entered unique")
+		rows, err = database.Db.Query("SELECT * FROM stay WHERE type = 'farm_stay' OR type = 'earth_house' OR type = 'barn' OR type = 'tent'")
+	default:
+		rows, err = database.Db.Query("SELECT * FROM stay WHERE type = $1", typeParams)
+	}
+
 	if err != nil {
 		return c.JSON(&fiber.Map{
 			"success": false,
@@ -23,7 +37,7 @@ func GetStays(c *fiber.Ctx) error {
 		stayInfo := models.StayInfo{}
 	
 		if err := rows.Scan(&stayInfo.ID, &stayInfo.Imgurl, &stayInfo.Superhost, &stayInfo.Ratings, &stayInfo.NumberOfReviews, &stayInfo.Type, &stayInfo.Location, &stayInfo.Title); err != nil {
-			return err // Exit if we get an error
+			panic(err) // Exit if we get an error
 		}
 
 		stay := models.Stay{
