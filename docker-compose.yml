@@ -1,17 +1,17 @@
 version: '3.7'
 
 services:
-  client:
-    build:
-      context: ./client
-      dockerfile: dev.Dockerfile
-    networks:
-      - gobnb
-    ports:
-      - 3000:3000
-    stdin_open: true
-    volumes:
-      - ./client:/app
+  # client:
+  #   build:
+  #     context: ./client
+  #     dockerfile: dev.Dockerfile
+  #   networks:
+  #     - gobnb
+  #   ports:
+  #     - 3000:3000
+  #   stdin_open: true
+  #   volumes:
+  #     - ./client:/app
   server:
     build:
       context: ./server
