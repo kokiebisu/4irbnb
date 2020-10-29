@@ -5,6 +5,7 @@ import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import { Heart } from '../../../public/svg/original';
+import '../../../helper/string';
 
 interface Props {
   card?: any;
@@ -25,6 +26,13 @@ export const HorizontalCard: React.FC<Props> = ({
   superhost = false,
   save = false,
 }) => {
+  const renderType = (type: string) => {
+    if (type === 'camper_rv') {
+      return 'Camper/RV';
+    }
+    return type.capitalize().split('_').join(' ');
+  };
+
   return (
     <div>
       <div style={{ position: 'relative', paddingTop: '66.6%' }}>
@@ -124,7 +132,7 @@ export const HorizontalCard: React.FC<Props> = ({
               font['size--15'],
               color['c--gray__4'],
             ].join(' ')}>
-            {card.type}
+            {renderType(card.type)}
           </p>
         </div>
         <div>
