@@ -12,6 +12,7 @@ import (
 func GetStays(c *fiber.Ctx) error {
 	var rows *sql.Rows
 	var err error
+	uniqueTypes := []string{"farm_stay", "earth_house", "barn", "tent"}
 	// Insert Employee into database
 	switch typeParams := c.Query("type"); typeParams {
 	case "":
@@ -19,7 +20,7 @@ func GetStays(c *fiber.Ctx) error {
 		rows, err = database.Db.Query("SELECT * FROM stay")
 	case "unique":
 		fmt.Println("entered unique")
-		rows, err = database.Db.Query("SELECT * FROM stay WHERE type = 'farm_stay' OR type = 'earth_house' OR type = 'barn' OR type = 'tent'")
+		rows, err = database.Db.Query("SELECT * FROM stay WHERE type = $1 OR type = $2 OR type = $3 OR type = $4", uniqueTypes[0], uniqueTypes[1], uniqueTypes[2], uniqueTypes[3])
 	default:
 		rows, err = database.Db.Query("SELECT * FROM stay WHERE type = $1", typeParams)
 	}
