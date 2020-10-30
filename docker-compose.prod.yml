@@ -34,6 +34,7 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
+    restart: always
     depends_on:
       # - proxy
       - db
