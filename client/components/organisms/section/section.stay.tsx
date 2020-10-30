@@ -201,7 +201,6 @@ const TypeStayCarousel = ({ data }) => {
 };
 
 const PaginationCarousel = ({ save, data }) => {
-  console.log('data', data);
   return (
     <div className={[space['p-v--15']].join(' ')}>
       <div
