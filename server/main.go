@@ -37,7 +37,8 @@ func init() {
 func main() {
 	http.HandleFunc("/", greetings)
 	http.HandleFunc("/stays", GetStays)
-	log.Fatal(http.ListenAndServe(":80", nil))
+
+	log.Fatal(http.ListenAndServeTLS(":443", "airbnb.crt", "airbnb.key", nil))
 }
 
 func greetings(w http.ResponseWriter, req *http.Request) {
