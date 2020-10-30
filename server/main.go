@@ -20,10 +20,7 @@ func main() {
 	app := fiber.New()
 
 
-	app.Use(cors.New(cors.Config{
-		AllowOrigins: "http://localhost:3000, https://airbnb-lemon.vercel.app",
-		AllowHeaders:  "Origin, Content-Type, Accept",
-	}))
+	app.Use(cors.New())
 
 	app.Get("/stays", services.GetStays)
 	app.Get("/", func (c *fiber.Ctx) error {
