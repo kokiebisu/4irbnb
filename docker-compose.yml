@@ -1,17 +1,17 @@
 version: '3.7'
 
 services:
-  # client:
-  #   build:
-  #     context: ./client
-  #     dockerfile: dev.Dockerfile
-  #   networks:
-  #     - gobnb
-  #   ports:
-  #     - 3000:3000
-  #   stdin_open: true
-  #   volumes:
-  #     - ./client:/app
+  client:
+    build:
+      context: ./client
+      dockerfile: dev.Dockerfile
+    networks:
+      - airbnb
+    ports:
+      - 80:3000
+    stdin_open: true
+    volumes:
+      - ./client:/app
   server:
     build:
       context: ./server
@@ -21,27 +21,24 @@ services:
     depends_on:
       - db
     networks:
-      - gobnb
+      - airbnb
     ports:
       - 8080:8080
-    environment:
-      - DB_HOST=db
-      - DB_PORT=5432
-      - DB_NAME=gobnb
-      - DB_USER=postgres
-      - DB_PASSWORD=postgres
   db:
     image: postgres:latest
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=gobnb
-    volumes:
-      - database_postgres:/var/lib/postgresql/data
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=airbnb
     networks:
-      - gobnb
+      - airbnb
+    ports:
+      - 5432:5432
+    restart: always
+    volumes:
+      - ./server/database/seed.sql:/docker-entrypoint-initdb.d/seed.sql
 volumes:
   # api:
   database_postgres:
 networks:
-  gobnb:
+  airbnb:
