@@ -45,7 +45,14 @@ export const StaySection: React.FC<Props> = ({
   const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(fetchUrl);
+      const res = await fetch(fetchUrl, {
+        method: 'GET', // *GET, POST, PUT, DELETE, etc.
+        mode: 'no-cors', // no-cors, *cors, same-origin
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'http://34.222.103.83',
+        },
+      });
       const resJson = await res.json();
       console.log('res', resJson);
       setData(resJson);
