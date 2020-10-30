@@ -3,15 +3,13 @@ FROM golang:alpine as builder
 LABEL maintainer="Kenichi Okiebisu <kenichikona@gmail.com>"
 
 # Install Git
-RUN apk update && apk add --no-cache git
+RUN apk update && apk add --no-cache ca-certificates git
 
 # Set the current working directory inside the container
 WORKDIR /usr/build
 
 # Copy go.mod, go.sum into the container's app directory
-COPY go.mod .
-
-COPY go.sum .
+COPY ./go.mod ./go.sum ./
 
 # Install all the dependencies
 RUN go mod download
@@ -24,14 +22,19 @@ RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o main .
 
 ## Production
 FROM alpine:latest
-RUN apk --no-cache add ca-certificates
 
 WORKDIR /usr/app
 
 # Move the entry point of the file (main.go) into the root folder 
 COPY --from=builder /usr/build/main .
+COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs
 
+EXPOSE 443
 EXPOSE 80
+
+# Mount the certificate cache directory as a volume, so it remains even after
+# we deploy a new version
+VOLUME ["/cert-cache"]
 
 CMD ["./main"]
 
