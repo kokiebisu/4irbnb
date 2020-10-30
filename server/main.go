@@ -19,8 +19,9 @@ func main() {
 	// Create a Fiber app
 	app := fiber.New()
 
+
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "*",
+		AllowOrigins: "http://localhost:3000, https://airbnb-lemon.vercel.app",
 		AllowHeaders:  "Origin, Content-Type, Accept",
 	}))
 
