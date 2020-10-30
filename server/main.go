@@ -33,5 +33,5 @@ func main() {
 	// app.Put("/stays", services.UpdateStay)
 	// app.Delete("/stays", services.DeleteStay)
 
-	log.Fatal(app.Listen(":8080"))
+	log.Fatal(app.Listen(":80"))
 }
