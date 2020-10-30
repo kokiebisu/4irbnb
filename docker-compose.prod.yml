@@ -16,7 +16,7 @@ services:
   #   networks:
   #     - gobnb
   db:
-    image: postgres
+    image: postgres:latest
     ports:
       - 5432:5432
     environment:
@@ -27,6 +27,9 @@ services:
       - database_postgres:/var/lib/postgresql/data
     networks:
       - airbnb
+    restart: always
+    volumes:
+      - ./server/database/seed.sql:/docker-entrypoint-initdb.d/seed.sql
   server:
     build:
       context: ./server
@@ -40,7 +43,7 @@ services:
       - 80:80
 
 volumes:
-  api:
+  # api:
   database_postgres:
 
 networks:
