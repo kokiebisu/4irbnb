@@ -24,7 +24,7 @@ services:
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=airbnb
     volumes:
-      - database_postgres:/var/lib/postgresql/data
+      - ./server:/app
     networks:
       - airbnb
     restart: always
@@ -41,6 +41,8 @@ services:
       - airbnb
     ports:
       - 80:80
+    volumes:
+      - ./server:/app
 
 volumes:
   # api:
