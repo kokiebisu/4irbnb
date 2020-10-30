@@ -13,7 +13,7 @@ var Db *sql.DB
 
 // Database settings
 const (
-	host     = "localhost"
+	host     = "db"
 	port     = 5432 // Default port
 	user     = "postgres"
 	password = "password"

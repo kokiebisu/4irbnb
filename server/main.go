@@ -25,6 +25,10 @@ func main() {
 	}))
 
 	app.Get("/stays", services.GetStays)
+	app.Get("/", func (c *fiber.Ctx) error {
+		c.SendString("hello")
+		return nil
+	})
 	// app.Post("/stays", services.CreateStay)
 	// app.Put("/stays", services.UpdateStay)
 	// app.Delete("/stays", services.DeleteStay)
