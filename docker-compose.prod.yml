@@ -1,45 +1,47 @@
 version: '3.7'
 services:
-  proxy:
-    build:
-      context: ./proxy
-      dockerfile: Dockerfile
-    restart: always
-    networks:
-      - gobnb
-    ports:
-      - 80:80
-  client:
-    build:
-      context: ./client
-      dockerfile: Dockerfile
-    networks:
-      - gobnb
+  # proxy:
+  #   build:
+  #     context: ./proxy
+  #     dockerfile: Dockerfile
+  #   restart: always
+  #   networks:
+  #     - gobnb
+  #   ports:
+  #     - 80:80
+  # client:
+  #   build:
+  #     context: ./client
+  #     dockerfile: Dockerfile
+  #   networks:
+  #     - gobnb
   db:
     image: postgres
     ports:
       - 5432:5432
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: gobnb
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=airbnb
     volumes:
       - database_postgres:/var/lib/postgresql/data
     networks:
-      - gobnb
+      - airbnb
   server:
     build:
       context: ./server
       dockerfile: Dockerfile
     depends_on:
-      - proxy
+      # - proxy
       - db
     networks:
-      - gobnb
+      - airbnb
+    ports:
+      - 80:80
 
 volumes:
   api:
   database_postgres:
 
 networks:
-  gobnb:
+  airbnb:

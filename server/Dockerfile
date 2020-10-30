@@ -31,7 +31,7 @@ WORKDIR /usr/app
 # Move the entry point of the file (main.go) into the root folder 
 COPY --from=builder /usr/build/main .
 
-EXPOSE 8080
+EXPOSE 80
 
 CMD ["./main"]
 
