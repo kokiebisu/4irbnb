@@ -36,6 +36,8 @@ services:
       - db
     networks:
       - airbnb
+    ports:
+      - 80:80
 
 volumes:
   api:
