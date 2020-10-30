@@ -37,7 +37,7 @@ func init() {
 func main() {
 	http.HandleFunc("/", greetings)
 	http.HandleFunc("/stays", GetStays)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":80", nil))
 }
 
 func greetings(w http.ResponseWriter, req *http.Request) {

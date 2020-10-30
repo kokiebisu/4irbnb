@@ -31,9 +31,7 @@ services:
     volumes:
       - ./server/database/seed.sql:/docker-entrypoint-initdb.d/seed.sql
   server:
-    build:
-      context: ./server
-      dockerfile: Dockerfile
+    image: kokiebisu/gobnb-server
     restart: always
     depends_on:
       # - proxy
