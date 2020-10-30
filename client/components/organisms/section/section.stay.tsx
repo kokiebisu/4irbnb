@@ -45,9 +45,9 @@ export const StaySection: React.FC<Props> = ({
   const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch(fetchUrl, { mode: 'no-cors' });
+      const res = await fetch(fetchUrl);
       const resJson = await res.json();
-      console.log('res', resJson);
+
       setData(resJson);
     };
     if (carouselType !== 'stayTypes') {
