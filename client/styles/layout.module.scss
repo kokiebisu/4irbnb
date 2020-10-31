@@ -1,3 +1,11 @@
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
 .items-center {
   display: flex;
   align-items: center;
