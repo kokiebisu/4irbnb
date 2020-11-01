@@ -2,19 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { LoginButton } from './button.login';
-
-export interface ButtonProps {
-  onPress: () => void;
-  children: React.ReactNode;
-  to?: string;
-  extendsTo?: string;
-  tap?: {
-    scale: number;
-  };
-  type?: string;
-  platform?: string;
-  icon?: JSX.Element;
-}
+import { ButtonProps } from './props';
 
 interface mapProps {
   [key: string]: JSX.Element;
