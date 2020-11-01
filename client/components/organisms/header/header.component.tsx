@@ -5,6 +5,7 @@ import { WhiteHeader } from './header.white';
 export interface HeaderProps {
   extendsTo?: string;
   type: string;
+  spread?: boolean;
 }
 
 interface mapProps {

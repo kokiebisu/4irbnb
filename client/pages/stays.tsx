@@ -18,7 +18,7 @@ const StaysPage = () => {
       <div
         style={{ top: 0, zIndex: 10 }}
         className={[layout['sticky']].join(' ')}>
-        <Header type='white' />
+        <Header type='white' spread />
       </div>
       <div
         style={{

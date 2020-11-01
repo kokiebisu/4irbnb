@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 // General
@@ -30,18 +29,14 @@ import { useState } from 'react';
 // const detail4 = require('../../../public/img/high/staydetail4.jpg');
 // const detail5 = require('../../../public/img/high/staydetail5.jpg');
 import { Header } from 'components/organisms/header/header.component';
-import { MainInfo } from 'components/MainInfo';
-import { ImagePanel } from 'components/ImagePanel';
 import { Footer } from 'components/organisms/footer/footer.component';
 
 import layout from '../../styles/layout.module.scss';
-
+import details from '../../styles/details.module.scss';
 import staysDetail from '../../styles/staysDetail.module.scss';
 import { Section } from 'components/organisms/section/section.component';
 
 const id: () => string | JSX.Element = () => {
-  const router = useRouter();
-
   const changeLength = () => {
     setLength(!length);
   };
@@ -53,22 +48,15 @@ const id: () => string | JSX.Element = () => {
       <div
         style={{ top: 0, zIndex: 10 }}
         className={[layout['sticky']].join(' ')}>
-        <Header type='white' />
+        <div className={[details['w__wrapper']].join(' ')}>
+          <Header type='white' />
+        </div>
       </div>
-
       <div
-        className={[
-          staysDetail['p__content'],
-          staysDetail['w__content'],
-          staysDetail['m__content'],
-        ].join(' ')}>
-        <div
-          className={[staysDetail['w__panel'], staysDetail['flex__panel']].join(
-            ' '
-          )}>
+        className={[details['container'], staysDetail['m__content']].join(' ')}>
+        <div className={[staysDetail['flex__panel']].join(' ')}>
           <Section type='panel' />
         </div>
-
         {/* <div className='w-full lg:w-7/12 '>
           {data && (
             <>
