@@ -37,6 +37,7 @@ import { Footer } from 'components/organisms/footer/footer.component';
 import layout from '../../styles/layout.module.scss';
 
 import staysDetail from '../../styles/staysDetail.module.scss';
+import { Section } from 'components/organisms/section/section.component';
 
 const id: () => string | JSX.Element = () => {
   const router = useRouter();
@@ -65,10 +66,7 @@ const id: () => string | JSX.Element = () => {
           className={[staysDetail['w__panel'], staysDetail['flex__panel']].join(
             ' '
           )}>
-          <>
-            <MainInfo />
-            <ImagePanel />
-          </>
+          <Section type='panel' />
         </div>
 
         {/* <div className='w-full lg:w-7/12 '>

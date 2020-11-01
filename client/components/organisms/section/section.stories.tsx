@@ -37,3 +37,14 @@ twoRows.args = {
   save: true,
   isDescription: true,
 };
+
+export const panel = SectionTemplate.bind({});
+panel.args = {
+  type: 'panel',
+};
+
+export const panelSuperhost = SectionTemplate.bind({});
+panelSuperhost.args = {
+  type: 'panel',
+  superhost: true,
+};

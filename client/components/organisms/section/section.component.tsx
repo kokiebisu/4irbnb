@@ -1,6 +1,6 @@
-import { CardObjectProps } from 'components/atoms/card/card.component';
 import React from 'react';
 import { CategorySection } from './section.category';
+import { PanelSection } from './section.panel';
 import { StaySection } from './section.stay';
 
 export interface SectionProps {
@@ -35,6 +35,7 @@ export const Section: React.FC<SectionProps> = ({
   const types: mapProps = {
     stay: <StaySection {...props} />,
     category: <CategorySection {...props} />,
+    panel: <PanelSection {...props} />,
   };
   return <div className={extendsTo}>{types[type]}</div>;
 };
