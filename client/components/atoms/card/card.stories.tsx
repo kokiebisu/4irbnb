@@ -85,3 +85,21 @@ typeStay.decorators = [
     </div>
   ),
 ];
+
+export const arrangements = CardTemplate.bind({});
+arrangements.args = {
+  type: 'arrangements',
+};
+
+export const checkin = CardTemplate.bind({});
+checkin.args = {
+  type: 'checkin',
+};
+
+checkin.decorators = [
+  (Story) => (
+    <div style={{ width: 500 }}>
+      <Story />
+    </div>
+  ),
+];

@@ -46,7 +46,7 @@ export const CharacteristicBullet: React.FC<CharacteristicBulletProps> = ({
   };
 
   return (
-    <div className={[layout['flex'], space['m-v--14']].join(' ')}>
+    <div className={[layout['flex'], space['m-v--8']].join(' ')}>
       <div className={[space['m-r--14']].join(' ')}>
         {icons[characteristicType].icon}
       </div>

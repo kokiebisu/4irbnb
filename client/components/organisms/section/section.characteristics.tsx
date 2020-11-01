@@ -86,8 +86,8 @@ export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
             style={{ objectFit: 'cover' }}
             className={[
               shape['br--circle'],
-              shape['h--55'],
-              shape['w--55'],
+              shape['h--60'],
+              shape['w--60'],
             ].join(' ')}
             src={imgUrl}
           />

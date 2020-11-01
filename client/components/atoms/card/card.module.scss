@@ -1,9 +1,17 @@
-.w__horizontal {
-  width: 380px;
-}
+.w {
+  &__horizontal {
+    width: 380px;
+  }
 
-.w__vertical {
-  width: 200px;
+  &__vertical {
+    width: 200px;
+  }
+
+  &__checkin {
+    &--wrapper {
+      width: 75%;
+    }
+  }
 }
 
 .h {
@@ -12,6 +20,73 @@
 
     @media screen and (min-width: 720px) {
       height: auto;
+    }
+  }
+}
+
+.m {
+  &__checkin--wrapper {
+    @media screen and (min-width: 1028px) {
+      margin-top: 10px;
+      margin-left: 20px;
+    }
+  }
+}
+
+.display {
+  &__checkin--wrapper {
+    display: fixed;
+
+    @media screen and (min-width: 1028px) {
+      display: sticky;
+    }
+  }
+}
+
+.position {
+  &__checkin--wrapper {
+    right: 0;
+    bottom: 0;
+    @media screen and (min-width: 1028px) {
+      top: 0;
+    }
+  }
+}
+
+.p {
+  &__checkin {
+    &--wrapper {
+      padding: 4px 0;
+
+      @media screen and (min-width: 1028px) {
+        padding: 0;
+      }
+    }
+
+    &--button {
+      padding: 6px 8px;
+
+      @media screen and (min-width: 1028px) {
+        padding: 6px 0;
+      }
+    }
+  }
+}
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
+
+  @media screen and (min-width: 1028px) {
+    box-shadow: none;
+  }
+}
+
+.flex {
+  &__checkin {
+    &--content {
+      @media screen and (min-width: 1028px) {
+        flex-direction: column;
+      }
     }
   }
 }

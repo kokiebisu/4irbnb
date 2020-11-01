@@ -17,13 +17,14 @@ import * as React from 'react';
 // import { CheckInCard } from '../../components/stays/functions/CheckInCard';
 // import { HostedBy } from '../../components/stays/functions/HostedBy';
 
-import { Header } from 'components/organisms/header/header.component';
-import { Footer } from 'components/organisms/footer/footer.component';
+import { Header } from '../../components/organisms/header/header.component';
+import { Footer } from '../../components/organisms/footer/footer.component';
 
 import layout from '../../styles/layout.module.scss';
 import details from '../../styles/details.module.scss';
 import staysDetail from '../../styles/staysDetail.module.scss';
-import { Section } from 'components/organisms/section/section.component';
+import { Section } from '../../components/organisms/section/section.component';
+import { Card } from '../../components/atoms/card/card.component';
 
 const id: () => string | JSX.Element = () => {
   return (
@@ -39,18 +40,22 @@ const id: () => string | JSX.Element = () => {
           extendsTo={[staysDetail['flex__panel']].join(' ')}
           type='panel'
         />
-        <div className='w-full lg:w-7/12 '>
-          <Section type='characteristics' />
-          <Section type='description' />
-          <Section type='details' />
-          <Section type='arrangements' />
-          {/* <Amenities /> */}
+        <div className={[details['flex__details']].join(' ')}>
+          <div className={[details['w__details--left']].join(' ')}>
+            <Section type='characteristics' />
+            <Section type='description' />
+            <Section type='details' />
+            <Section type='arrangements' />
+            {/* <Amenities /> */}
+          </div>
+          <div className={[details['w__details--right']].join(' ')}>
+            <Card
+              type='checkin'
+              extendsTo={[layout['flex'], layout['justify-end']].join(' ')}
+            />
+          </div>
         </div>
-        {/* {length ? (
-          <CheckInCard length={length} loading={loading} />
-        ) : (
-          <CheckInCard length={length} loading={loading} />
-        )} */}
+
         <>
           {/* <Reviews
             reviews_per_month={data.stay.reviews_per_month}

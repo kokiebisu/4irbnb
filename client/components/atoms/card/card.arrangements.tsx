@@ -17,27 +17,29 @@ export const ArrangementsCard: React.FC<ArrangementsCardProps> = ({
 }) => {
   return (
     <div
+      style={{ width: 200 }}
       className={[
         shape['w--48'],
-        space['p-t--4'],
-        space['p-l--12'],
-        space['p-b--4'],
-        space['p-r--4'],
+        space['p-v--25'],
+        color['b--white__2'],
+        shape['br--15'],
       ].join(' ')}>
-      <div className={[space['p-t--4'], space['p-b--8']].join(' ')}>
-        <DoubleBed width={14} />
-      </div>
-      <p className={[space['p-t--4'], color['c--gray__2']].join(' ')}>
-        Bedroom
-      </p>
-      <div>
-        {card.beds.map((bed) => {
-          return (
-            <p className={[color['c--gray__2']].join(' ')}>
-              {bed.count} {bed.type}
-            </p>
-          );
-        })}
+      <div className={[space['p-l--14']].join(' ')}>
+        <div className={[space['p-t--4'], space['p-b--8']].join(' ')}>
+          <DoubleBed width={24} />
+        </div>
+        <p className={[space['p-t--4'], color['c--gray__2']].join(' ')}>
+          Bedroom
+        </p>
+        <div>
+          {card.beds.map((bed) => {
+            return (
+              <p className={[color['c--gray__2']].join(' ')}>
+                {bed.count} {bed.type}
+              </p>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
