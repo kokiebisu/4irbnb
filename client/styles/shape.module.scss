@@ -57,10 +57,14 @@ $pixels: (
 }
 
 $percents: (
+  50: percentage(0.5),
   75: percentage(0.75),
 );
 
 @each $name, $percent in $percents {
+  .w--#{$name}p {
+    width: #{$percent};
+  }
   .h--#{$name}p {
     height: #{$percent};
   }
@@ -106,6 +110,14 @@ $percents: (
 
 .outline--none {
   outline: none;
+}
+
+.background-cover {
+  background-size: cover;
+}
+
+.background-repeat {
+  background-repeat: no-repeat;
 }
 
 .none {
