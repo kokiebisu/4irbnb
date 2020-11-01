@@ -6,12 +6,9 @@ import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import animation from '../../../styles/animation.module.scss';
 import styles from '../../../styles/index.module.scss';
+import { CategoryCardProps } from './props';
 
-interface Props {
-  card: any;
-}
-
-export const CategoryCard: React.FC<Props> = ({
+export const CategoryCard: React.FC<CategoryCardProps> = ({
   card = {
     imgUrl: 'img/card2.jpg',
     title: 'Title should be here',

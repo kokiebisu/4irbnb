@@ -5,40 +5,9 @@ import font from '../../../styles/font.module.scss';
 import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
 import shape from '../../../styles/shape.module.scss';
+import { DescriptionSectionProps } from './props';
 
-interface Props {
-  data: Stay;
-  setLength: () => void;
-}
-
-interface Stay {
-  picture_url: string;
-  name: string;
-  street: string;
-  reviews_per_month: number;
-  number_of_reviews: number;
-  country: string;
-  size: string;
-  description: string;
-  space: string;
-  access: string;
-  notes: string;
-  host_name: string;
-  hostDescription: string;
-  host_since: string;
-  duringStay: string;
-  host_is_superhost: string;
-  host_thumbnail_url: string;
-  host_picture_url: string;
-  host_response_rate: string;
-  host_response_time: string;
-  accommodates: number;
-  beds: number;
-  bedrooms: number;
-  bathrooms: number;
-}
-
-export const DescriptionSection: React.FC<Props> = ({
+export const DescriptionSection: React.FC<DescriptionSectionProps> = ({
   data = {
     description: 'Description here',
     space: 'Space here',

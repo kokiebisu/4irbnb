@@ -37,9 +37,23 @@ export type CategorySectionProps = SectionBasicProps & {
   items?: any;
 };
 
+export type DescriptionSectionProps = {
+  data?: {
+    description: string;
+    space: string;
+    access: string;
+  };
+};
+
+export type ArrangementsSectionProps = SectionBasicProps & {
+  arrangements?: { type: string; beds: { type: string; count: number }[] }[];
+};
+
 export type SectionProps = (
   | StaySectionProps
   | PanelSectionProps
   | CharacteristicsSectionProps
   | CategorySectionProps
+  | DescriptionSectionProps
+  | ArrangementsSectionProps
 ) & { extendsTo?: string; type: string };

@@ -53,7 +53,8 @@ const id: () => string | JSX.Element = () => {
         <div className='w-full lg:w-7/12 '>
           <Section type='characteristics' />
           <Section type='description' />
-
+          <Section type='details' />
+          <Section type='arrangements' />
           {/* <SleepingArrangements /> */}
           {/* <Amenities /> */}
         </div>
