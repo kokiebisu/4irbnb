@@ -1,0 +1,33 @@
+.w {
+  &__content {
+    &--wrapper {
+      @media screen and (min-width: 1028px) {
+        max-width: 1128px;
+      }
+    }
+  }
+}
+
+.container {
+  padding: 11px 40px;
+
+  @media screen and (min-width: 1128px) {
+    padding: 11px 80px;
+  }
+
+  @media screen and (min-width: 1276px) {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 15px 80px;
+  }
+
+  &--spread {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    @media screen and (min-width: 728px) {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+}

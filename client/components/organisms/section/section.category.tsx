@@ -3,12 +3,9 @@ import styles from '../../../styles/index.module.scss';
 import space from '../../../styles/space.module.scss';
 
 import { Card } from '../../../components/atoms/card/card.component';
+import { CategorySectionProps } from './props';
 
-interface Props {
-  items?: any;
-}
-
-export const CategorySection: React.FC<Props> = ({
+export const CategorySection: React.FC<CategorySectionProps> = ({
   items = [undefined, undefined, undefined],
 }) => {
   return (

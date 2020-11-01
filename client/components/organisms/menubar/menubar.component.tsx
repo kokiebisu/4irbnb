@@ -3,8 +3,7 @@ import styles from '../../../styles/index.module.scss';
 import { MenuBarLogo } from '../../../public/svg/logo';
 import { Login, Saved } from '../../../public/svg/regular';
 import React from 'react';
-
-export interface MenuBarProps {}
+import { MenuBarProps } from './props';
 
 export const MenuBar: React.FC<MenuBarProps> = () => {
   const items = [

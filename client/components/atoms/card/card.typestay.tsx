@@ -6,12 +6,9 @@ import font from '../../../styles/font.module.scss';
 import cardStyles from './card.module.scss';
 import color from '../../../styles/color.module.scss';
 import { Button } from '../button/button.component';
+import { TypeStayCardProps } from './props';
 
-interface Props {
-  card: any;
-}
-
-export const TypeStayCard: React.FC<Props> = ({
+export const TypeStayCard: React.FC<TypeStayCardProps> = ({
   card = {
     title: 'Type',
     imgUrl:

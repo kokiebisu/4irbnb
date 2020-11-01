@@ -1,18 +1,9 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { Button } from '../../../components/atoms/button/button.component';
-import shape from '../../../styles/shape.module.scss';
-import color from '../../../styles/color.module.scss';
-import font from '../../../styles/font.module.scss';
-import layout from '../../../styles/layout.module.scss';
-import space from '../../../styles/space.module.scss';
-import animation from '../../../styles/animation.module.scss';
-import styles from '../../../styles/index.module.scss';
-import button from '../../../components/atoms/button/button.module.scss';
-import { Globe, ChevronDown } from '../../../public/svg/regular';
-import { Card, CardProps } from './card.component';
-import { Avatar, Bars } from '../../../public/svg/original';
-import { url } from 'inspector';
+
+import { Card } from './card.component';
+
+import { CardProps } from './props';
 
 export default {
   title: 'Design System/Atoms/Card',
