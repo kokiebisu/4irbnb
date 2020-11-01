@@ -1,9 +1,4 @@
 import * as React from 'react';
-import { useState } from 'react';
-
-// General
-// import { ExploreHeader } from '../../components/layout/ExploreHeader';
-// import { NewFooter } from '../../components/layout/NewFooter';
 
 // Containers
 // import { Reviews } from '../../components/stays/containers/Reviews';
@@ -18,16 +13,10 @@ import { useState } from 'react';
 // import { SleepingArrangements } from '../../components/stays/containers/SleepingArrangements';
 
 // Functions
-// import { ImagePanel } from '../../components/stays/functions/ImagePanel';
 // import { MainInfo } from '../../components/stays/functions/MainInfo';
 // import { CheckInCard } from '../../components/stays/functions/CheckInCard';
 // import { HostedBy } from '../../components/stays/functions/HostedBy';
 
-// Images
-// const detail2 = require('../../../public/img/high/staydetail2.jpg');
-// const detail3 = require('../../../public/img/high/staydetail3.jpg');
-// const detail4 = require('../../../public/img/high/staydetail4.jpg');
-// const detail5 = require('../../../public/img/high/staydetail5.jpg');
 import { Header } from 'components/organisms/header/header.component';
 import { Footer } from 'components/organisms/footer/footer.component';
 
@@ -55,7 +44,6 @@ const id: () => string | JSX.Element = () => {
           <Section type='description' />
           <Section type='details' />
           <Section type='arrangements' />
-          {/* <SleepingArrangements /> */}
           {/* <Amenities /> */}
         </div>
         {/* {length ? (

@@ -10,21 +10,30 @@ import { DoubleBed } from 'public/svg/original';
 import { ArrangementsCardProps } from './props';
 
 export const ArrangementsCard: React.FC<ArrangementsCardProps> = ({
-  arrangement = { type: 'bedroom', beds: [{ type: 'double bed', count: 1 }] },
+  card = {
+    type: 'Bedroom',
+    beds: [{ type: 'double bed', count: 1 }],
+  },
 }) => {
-  const types = {
-    'double bed': <DoubleBed width={14} />,
-  };
   return (
-    <div className='w-48 p-2 pl-6'>
-      <div className='pt-2 pb-4'>{types[arrangement.type]}</div>
-      <p style={{ fontFamily: 'airbnb-medium' }} className='text-gray-750 pt-2'>
+    <div
+      className={[
+        shape['w--48'],
+        space['p-t--4'],
+        space['p-l--12'],
+        space['p-b--4'],
+        space['p-r--4'],
+      ].join(' ')}>
+      <div className={[space['p-t--4'], space['p-b--8']].join(' ')}>
+        <DoubleBed width={14} />
+      </div>
+      <p className={[space['p-t--4'], color['c--gray__2']].join(' ')}>
         Bedroom
       </p>
       <div>
-        {arrangement.beds.map((bed) => {
+        {card.beds.map((bed) => {
           return (
-            <p className='text-gray-750'>
+            <p className={[color['c--gray__2']].join(' ')}>
               {bed.count} {bed.type}
             </p>
           );
