@@ -54,6 +54,14 @@
       }
     }
   }
+
+  &__panel {
+    &--image {
+      @media screen and (min-width: 728px) {
+        width: 50%;
+      }
+    }
+  }
 }
 
 .flex {
@@ -82,5 +90,15 @@
 
   @media screen and (min-width: 1128px) {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.hidden {
+  &__options {
+    display: none;
+
+    @media screen and (min-width: 1028px) {
+      display: inline-block;
+    }
   }
 }

@@ -4,7 +4,7 @@ import space from '../../../styles/space.module.scss';
 import styles from '../../../styles/index.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import color from '../../../styles/color.module.scss';
-import headerStyles from './header.module.scss';
+import details from '../../../styles/details.module.scss';
 import {
   globeInverse as globeInverseButton,
   hostInverse as hostInverseButton,
@@ -18,8 +18,9 @@ import { useToggleDispatch, useToggleState } from '../../../context/toggle';
 import { Button } from '../../../components/atoms/button/button.component';
 import { NameLogo, NoNameLogo } from '../../../public/svg/logo';
 import { ChevronLeft } from '../../../public/svg/regular';
+import { HeaderWhiteProps } from './props';
 
-export const WhiteHeader: React.FC<{}> = () => {
+export const WhiteHeader: React.FC<HeaderWhiteProps> = ({ spread = false }) => {
   let toggleState = useToggleState();
   let toggleDispatch = useToggleDispatch();
 
@@ -28,76 +29,83 @@ export const WhiteHeader: React.FC<{}> = () => {
   };
   return (
     <header
-      className={[
-        headerStyles['p__wrapper'],
-        shape['shadow--sm'],
-        color['bg--white__0'],
-      ].join(' ')}>
+      className={
+        spread
+          ? [shape['shadow--sm'], color['bg--white__0']].join(' ')
+          : [shape['shadow--sm'], color['bg--white__0']].join(' ')
+      }>
       <div
-        className={[
-          shape['none--sm'],
-          styles['container'],
-          layout['relative'],
-          layout['justify-between'],
-          layout['items-center'],
-        ].join(' ')}>
-        <div>
-          <div className={styles['searchbar__logo--md']}>
-            <NoNameLogo fill='#F5385D' width={30} height={32} />
-          </div>
-          <div className={styles['searchbar__logo--lg']}>
-            <NameLogo fill='#F5385D' width={102} height={32} />
-          </div>
-        </div>
-        <div>
-          <Button
-            {...searchbarSmall.args}
-            onPress={() => console.log('clicked searchbar small')}
-          />
-        </div>
-        <div className={[layout['items-center']].join(' ')}>
-          <div className={styles['searchbar__host']}>
-            <Button {...hostInverseButton.args} to='/' />
-          </div>
-          <div
-            className={[
-              space['m-t--0'],
-              space['m-r--12'],
-              space['m-b--0'],
-              space['m-l--8'],
-            ].join(' ')}>
-            <Button
-              {...globeInverseButton.args}
-              onPress={() => console.log('clicked')}
-            />
+        className={
+          spread
+            ? [details['container--spread']].join(' ')
+            : [details['container']].join(' ')
+        }>
+        <div
+          className={[
+            shape['none--sm'],
+            layout['relative'],
+            layout['justify-between'],
+            layout['items-center'],
+          ].join(' ')}>
+          <div>
+            <div className={styles['searchbar__logo--md']}>
+              <NoNameLogo fill='#F5385D' width={30} height={32} />
+            </div>
+            <div className={styles['searchbar__logo--lg']}>
+              <NameLogo fill='#F5385D' width={102} height={32} />
+            </div>
           </div>
           <div>
-            <Button {...menuInverseButton.args} onPress={openMenuModal} />
-          </div>
-        </div>
-        <Modal
-          criteria={toggleState.menu}
-          {...menuModal.args}
-          extendsTo={[
-            layout['absolute'],
-            layout['r--0'],
-            layout['b---230'],
-            color['bg--transparent'],
-          ].join(' ')}
-        />
-      </div>
-      <div className={[shape['none--md']].join(' ')}>
-        <div className={[layout['all-center'], styles['container']].join(' ')}>
-          <div style={{ width: 30 }}>
-            <ChevronLeft width={12} />
-          </div>
-          <div style={{ width: '100%', flexGrow: 1 }}>
             <Button
-              {...searchbarMedium.args}
-              onPress={() => console.log('pressed')}
+              {...searchbarSmall.args}
+              onPress={() => console.log('clicked searchbar small')}
             />
           </div>
-          <div style={{ width: 30, visibility: 'hidden' }}></div>
+          <div className={[layout['items-center']].join(' ')}>
+            <div className={styles['searchbar__host']}>
+              <Button {...hostInverseButton.args} to='/' />
+            </div>
+            <div
+              className={[
+                space['m-t--0'],
+                space['m-r--12'],
+                space['m-b--0'],
+                space['m-l--8'],
+              ].join(' ')}>
+              <Button
+                {...globeInverseButton.args}
+                onPress={() => console.log('clicked')}
+              />
+            </div>
+            <div>
+              <Button {...menuInverseButton.args} onPress={openMenuModal} />
+            </div>
+          </div>
+          <Modal
+            criteria={toggleState.menu}
+            {...menuModal.args}
+            extendsTo={[
+              layout['absolute'],
+              layout['r--0'],
+              layout['b---230'],
+              color['bg--transparent'],
+            ].join(' ')}
+          />
+        </div>
+        <div className={[shape['none--md']].join(' ')}>
+          <div
+            className={[layout['all-center'], styles['container']].join(' ')}>
+            <div style={{ width: 30 }}>
+              <ChevronLeft width={12} />
+            </div>
+            <div style={{ width: '100%', flexGrow: 1 }}>
+              <Button
+                {...searchbarMedium.args}
+                onPress={() => console.log('pressed')}
+              />
+            </div>
+            <div style={{ width: 30, visibility: 'hidden' }}></div>
+          </div>
         </div>
       </div>
     </header>

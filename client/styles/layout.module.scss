@@ -1,3 +1,19 @@
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
 .items-center {
   display: flex;
   align-items: center;
@@ -57,6 +73,10 @@
 
 .absolute {
   position: absolute;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .hide-scrollbar {

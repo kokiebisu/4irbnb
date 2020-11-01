@@ -7,8 +7,7 @@ import font from '../../../styles/font.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import { sections } from '../../../content/index';
 import { Globe } from '../../../public/svg/original';
-
-export interface FooterProps {}
+import { FooterProps } from './props';
 
 export const Footer: React.FC<FooterProps> = () => {
   return (

@@ -5,14 +5,7 @@ import { MenuModal } from './modal.menu';
 import { PrivacyModal } from './modal.privacy';
 import { RegisterModal } from './modal.register';
 import { useToggleDispatch } from '../../../context/toggle';
-
-export interface ModalProps {
-  extendsTo?: string;
-  criteria?: any;
-  type: string;
-  refProp?: any;
-  dispatchType?: string;
-}
+import { ModalProps } from './props';
 
 interface mapProps {
   [key: string]: JSX.Element;

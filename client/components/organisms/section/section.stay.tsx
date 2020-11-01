@@ -9,21 +9,9 @@ import { Card } from '../../atoms/card/card.component';
 import { Button } from '../../../components/atoms/button/button.component';
 import sectionStyles from './section.module.scss';
 import { ChevronLeft, ChevronRight } from '../../../public/svg/regular';
+import { StaySectionProps } from './props';
 
-interface Props {
-  title?: string;
-  description?: string;
-  pagination?: boolean;
-  showAll?: any;
-  type?: string;
-  carouselType?: string;
-  save?: boolean;
-  items?: { card: any; to: string }[];
-  isDescription?: boolean;
-  fetchUrl?: string;
-}
-
-export const StaySection: React.FC<Props> = ({
+export const StaySection: React.FC<StaySectionProps> = ({
   title = 'Section Title',
   description = 'Section Description',
   pagination = false,

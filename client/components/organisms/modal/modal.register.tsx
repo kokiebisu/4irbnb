@@ -16,8 +16,9 @@ import {
 } from '../../../components/atoms/button/button.stories';
 import { motion } from 'framer-motion';
 import { ChevronDown } from '../../../public/svg/regular';
+import { RegisterModalProps } from './props';
 
-export const RegisterModal: React.FC<{}> = () => {
+export const RegisterModal: React.FC<RegisterModalProps> = () => {
   const [clicked, setClicked] = useState(false);
   const logins = [
     { args: emailLogin.args, press: () => console.log('clicked email') },

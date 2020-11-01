@@ -1,0 +1,42 @@
+.p {
+  &__content {
+    padding: 10px;
+
+    @media screen and (min-width: 728px) {
+      padding: 0 15px;
+    }
+
+    @media screen and (min-width: 1300px) {
+      padding: 0;
+    }
+  }
+}
+
+.m {
+  &__content {
+    @media screen and (min-width: 1028px) {
+      margin: 0 auto;
+    }
+  }
+}
+
+.flex {
+  &__panel {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @media screen and (min-width: 1028px) {
+      flex-direction: column;
+    }
+  }
+}
+
+.hidden {
+  &__panel {
+    display: none;
+
+    @media screen and (min-width: 728px) {
+      display: block;
+    }
+  }
+}

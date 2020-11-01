@@ -14,12 +14,9 @@ import {
   privacyInverse as privacyButtonInverse,
 } from '../../../components/atoms/button/button.stories';
 import { Lock } from '../../../public/svg/original';
+import { PrivacyModalProps } from './props';
 
-interface Props {
-  criteria?: any;
-}
-
-export const PrivacyModal: React.FC<Props> = () => {
+export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
   const toggleDispatch = useToggleDispatch();
 
   const handlePress = () => {
