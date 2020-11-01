@@ -1,8 +1,8 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { Section, SectionProps } from './section.component';
-import { horizontals } from '../../../data/stays';
-import { typeStays } from '../../../content';
+import { Section } from './section.component';
+
+import { SectionProps } from './props';
 
 export default {
   title: 'Design System/Organisms/Section',

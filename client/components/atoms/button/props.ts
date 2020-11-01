@@ -5,7 +5,7 @@ export type ButtonLoginProps = {
 
 export type ButtonProps = ButtonLoginProps & {
   extendsTo?: string;
-  type: string;
+  type?: string;
   onPress?: () => void;
   to?: string;
   tap?: {

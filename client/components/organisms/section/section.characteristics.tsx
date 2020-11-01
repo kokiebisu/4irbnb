@@ -5,7 +5,7 @@ import font from '../../../styles/font.module.scss';
 import color from '../../../styles/color.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import { CharacteristicsSectionProps } from './props';
-import { Bullet } from 'components/atoms/bullet/bullet.component';
+import { Bullet } from '../../../components/atoms/bullet/bullet.component';
 
 export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
   stayType = 'Type',
@@ -23,7 +23,6 @@ export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
           layout['items-center'],
           layout['justify-between'],
           space['m-t--4'],
-          color['b-b--white__2'],
         ].join(' ')}>
         <div
           className={[layout['flex'], space['p-v--8']].join(' ')}
@@ -79,7 +78,11 @@ export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
           />
         </div>
       </div>
-      <div className={[space['m-v--12'], color['b-b--gray__1']].join(' ')}>
+      <div className={[space['m-v--12'], color['b-t--white__3']].join(' ')}>
+        <Bullet type='characteristic' />
+        <Bullet type='characteristic' />
+        <Bullet type='characteristic' />
+        <Bullet type='characteristic' />
         <Bullet type='characteristic' />
       </div>
     </>

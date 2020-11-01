@@ -9,9 +9,10 @@ import space from '../../../styles/space.module.scss';
 import animation from '../../../styles/animation.module.scss';
 import button from '../../../components/atoms/button/button.module.scss';
 import { Globe, ChevronDown, MagnifyGlass } from '../../../public/svg/regular';
-import { ButtonProps } from './button.component';
+
 import { Avatar, Bars, Email } from '../../../public/svg/original';
 import { Apple, Facebook, Google } from '../../../public/svg/logo';
+import { ButtonProps } from './props';
 
 export default {
   title: 'Design System/Atoms/Button',

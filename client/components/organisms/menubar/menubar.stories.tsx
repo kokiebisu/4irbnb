@@ -1,6 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { MenuBar, MenuBarProps } from './menubar.component';
+import { MenuBar } from './menubar.component';
+import { MenuBarProps } from './props';
 
 export default {
   title: 'Design System/Organisms/MenuBar',
