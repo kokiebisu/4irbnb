@@ -4,13 +4,9 @@ import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import space from '../../../styles/space.module.scss';
+import { ButtonLoginProps } from './props';
 
-interface Props {
-  platform?: string;
-  icon?: any;
-}
-
-export const LoginButton: React.FC<Props> = ({ platform, icon }) => {
+export const LoginButton: React.FC<ButtonLoginProps> = ({ platform, icon }) => {
   return (
     <button
       style={{ border: '2px solid #B0B0B0' }}
