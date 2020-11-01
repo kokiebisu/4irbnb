@@ -1,10 +1,5 @@
 export type CharacteristicBulletProps = {
-  type?: string;
-  title?: string;
-  description?: string;
-  guestnumber?: number;
-  hostName?: string;
-  percentage?: number;
+  characteristicType?: string;
 };
 
 export type BulletProps = CharacteristicBulletProps & {

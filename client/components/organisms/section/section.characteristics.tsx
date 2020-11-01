@@ -79,11 +79,11 @@ export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
         </div>
       </div>
       <div className={[space['m-v--12'], color['b-t--white__3']].join(' ')}>
-        <Bullet type='characteristic' />
-        <Bullet type='characteristic' />
-        <Bullet type='characteristic' />
-        <Bullet type='characteristic' />
-        <Bullet type='characteristic' />
+        <Bullet type='characteristic' characteristicType='house' />
+        <Bullet type='characteristic' characteristicType='sparkle' />
+        <Bullet type='characteristic' characteristicType='door' />
+        <Bullet type='characteristic' characteristicType='calendar' />
+        <Bullet type='characteristic' characteristicType='guidelines' />
       </div>
     </>
   );

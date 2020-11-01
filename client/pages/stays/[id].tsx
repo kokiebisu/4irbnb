@@ -37,40 +37,31 @@ import staysDetail from '../../styles/staysDetail.module.scss';
 import { Section } from 'components/organisms/section/section.component';
 
 const id: () => string | JSX.Element = () => {
-  const changeLength = () => {
-    setLength(!length);
-  };
-
-  const [length, setLength] = useState<boolean>(false);
-
   return (
     <>
       <div
         style={{ top: 0, zIndex: 10 }}
         className={[layout['sticky']].join(' ')}>
-        <div className={[details['w__wrapper']].join(' ')}>
-          <Header type='white' />
-        </div>
+        <Header extendsTo={[details['w__wrapper']].join(' ')} type='white' />
       </div>
       <div
         className={[details['container'], staysDetail['m__content']].join(' ')}>
-        <div className={[staysDetail['flex__panel']].join(' ')}>
-          <Section type='panel' />
-        </div>
+        <Section
+          extendsTo={[staysDetail['flex__panel']].join(' ')}
+          type='panel'
+        />
         <div className='w-full lg:w-7/12 '>
           <Section type='characteristics' />
+          <Section type='description' />
 
-          {/* {data && <StayInfo data={data} setLength={changeLength} />}
-
-          <SleepingArrangements />
-          <Amenities /> */}
+          {/* <SleepingArrangements /> */}
+          {/* <Amenities /> */}
         </div>
         {/* {length ? (
           <CheckInCard length={length} loading={loading} />
         ) : (
           <CheckInCard length={length} loading={loading} />
         )} */}
-
         <>
           {/* <Reviews
             reviews_per_month={data.stay.reviews_per_month}

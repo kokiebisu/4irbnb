@@ -42,4 +42,4 @@ export type SectionProps = (
   | PanelSectionProps
   | CharacteristicsSectionProps
   | CategorySectionProps
-) & { extendsTo: string; type: string };
+) & { extendsTo?: string; type: string };
