@@ -31,6 +31,7 @@ import { useState } from 'react';
 // const detail5 = require('../../../public/img/high/staydetail5.jpg');
 import { Header } from 'components/organisms/header/header.component';
 import { MainInfo } from 'components/MainInfo';
+import { ImagePanel } from 'components/ImagePanel';
 import { Footer } from 'components/organisms/footer/footer.component';
 
 import layout from '../../styles/layout.module.scss';
@@ -66,13 +67,7 @@ const id: () => string | JSX.Element = () => {
           )}>
           <>
             <MainInfo />
-            {/* <ImagePanel
-              img1={data.stay.picture_url}
-              img2={detail2}
-              img3={detail3}
-              img4={detail4}
-              img5={detail5}
-            /> */}
+            <ImagePanel />
           </>
         </div>
 
