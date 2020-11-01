@@ -9,12 +9,9 @@ import modal from './modal.module.scss';
 import { motion } from 'framer-motion';
 import { Button } from '../../../components/atoms/button/button.component';
 import { useToggleDispatch } from '../../../context/toggle';
+import { MenuModalProps } from './props';
 
-interface Props {
-  refProp?: any;
-}
-
-export const MenuModal: React.FC<Props> = ({ refProp }) => {
+export const MenuModal: React.FC<MenuModalProps> = ({ refProp }) => {
   const toggleDispatch = useToggleDispatch();
   return (
     <motion.div
