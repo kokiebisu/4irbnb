@@ -35,6 +35,6 @@ export type CardProps = {
   superhost?: boolean;
   to?: string;
 } & {
-  extendsTo: string;
+  extendsTo?: string;
   type: string;
 };

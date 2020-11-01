@@ -1,7 +1,8 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { Modal, ModalProps } from './modal.component';
+import { Modal } from './modal.component';
 import { ContextProvider } from '../../../context/provider';
+import { ModalProps } from './props';
 
 export default {
   title: 'Design System/Organisms/Modal',
