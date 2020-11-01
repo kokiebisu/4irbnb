@@ -43,24 +43,39 @@ export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
                   color['c--gray__3'],
                 ].join(' ')}>
                 <div className={[space['m-r--4']].join(' ')}>
-                  <p>
+                  <span
+                    className={[color['c--gray__2'], font['weight--100']].join(
+                      ' '
+                    )}>
                     {guests} {guests > 1 ? 'guests' : 'guest'}
-                  </p>
+                  </span>
                 </div>
                 <div className={[space['m-r--4']].join(' ')}>
-                  <p>
+                  <span> · </span>
+                  <span
+                    className={[color['c--gray__2'], font['weight--100']].join(
+                      ' '
+                    )}>
                     {bedrooms} {bedrooms > 1 ? 'bedrooms' : 'bedroom'}
-                  </p>
+                  </span>
                 </div>
                 <div className={[space['m-r--4']].join(' ')}>
-                  <p>
+                  <span> · </span>
+                  <span
+                    className={[color['c--gray__2'], font['weight--100']].join(
+                      ' '
+                    )}>
                     {beds} {beds > 1 ? 'beds' : 'bed'}
-                  </p>
+                  </span>
                 </div>
                 <div className={[space['m-r--4']].join(' ')}>
-                  <p>
+                  <span> · </span>
+                  <span
+                    className={[color['c--gray__2'], font['weight--100']].join(
+                      ' '
+                    )}>
                     {bathrooms} {bathrooms > 1 ? 'baths' : 'bath'}
-                  </p>
+                  </span>
                 </div>
               </div>
             </div>
@@ -78,12 +93,34 @@ export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
           />
         </div>
       </div>
-      <div className={[space['m-v--12'], color['b-t--white__3']].join(' ')}>
-        <Bullet type='characteristic' characteristicType='house' />
-        <Bullet type='characteristic' characteristicType='sparkle' />
-        <Bullet type='characteristic' characteristicType='door' />
-        <Bullet type='characteristic' characteristicType='calendar' />
-        <Bullet type='characteristic' characteristicType='guidelines' />
+      <div className={[space['m-v--12'], color['b-t--white__2']].join(' ')}>
+        <div className={[space['p-v--4']].join(' ')}>
+          <Bullet
+            extendsTo={[space['m-t--24']].join(' ')}
+            type='characteristic'
+            characteristicType='house'
+          />
+          <Bullet
+            extendsTo={[space['m-t--24']].join(' ')}
+            type='characteristic'
+            characteristicType='sparkle'
+          />
+          <Bullet
+            extendsTo={[space['m-t--24']].join(' ')}
+            type='characteristic'
+            characteristicType='door'
+          />
+          <Bullet
+            extendsTo={[space['m-t--24']].join(' ')}
+            type='characteristic'
+            characteristicType='calendar'
+          />
+          <Bullet
+            extendsTo={[space['m-t--24']].join(' ')}
+            type='characteristic'
+            characteristicType='guidelines'
+          />
+        </div>
       </div>
     </>
   );
