@@ -6,7 +6,7 @@ import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import animation from '../../../styles/animation.module.scss';
 import styles from '../../../styles/index.module.scss';
-import { DoubleBed } from 'public/svg/original';
+import { DoubleBed } from '../../../public/svg/original';
 import { ArrangementsCardProps } from './props';
 
 export const ArrangementsCard: React.FC<ArrangementsCardProps> = ({
