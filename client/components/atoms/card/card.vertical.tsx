@@ -6,13 +6,9 @@ import space from '../../../styles/space.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import styles from './card.module.scss';
 import { Heart } from '../../../public/svg/original';
+import { VerticalCardProps } from './props';
 
-interface Props {
-  card: any;
-  save?: boolean;
-}
-
-export const VerticalCard: React.FC<Props> = ({
+export const VerticalCard: React.FC<VerticalCardProps> = ({
   card = {
     imgUrl:
       'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1659111-active_media/original/4931efc9-f708-4619-9b25-51036194e1e1.jpg?aki_policy=poster',

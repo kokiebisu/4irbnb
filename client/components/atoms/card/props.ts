@@ -1,62 +1,40 @@
-export type CardObjectBasicProps = {
-  imgUrl: string;
-  title: string;
-};
+/**
+ * Basic Props
+ */
 
-export type CardBasicProps = {
-  save?: boolean;
-  superhost?: boolean;
-  to?: string;
-};
+export type CardBasicProps = {};
 
-export type TypeStayCardProps = {
-  card?: CardObjectBasicProps;
-} & CardBasicProps;
+/**
+ * Card Categories
+ */
 
 export type ArrangementsCardProps = {
-  arrangement?: { type: string; beds: { type: string; count: number }[] };
+  card?: { type: string; beds: { type: string; count: number }[] };
 };
 
-export type LandingCardProps = {
-  card?: CardObjectBasicProps & {
-    description: string;
-  };
-} & CardBasicProps;
-
 export type HorizontalCardProps = {
-  card?: CardObjectBasicProps & {
-    ratings: number;
-    number_of_reviews: number;
-    type: string;
-    location: string;
-  };
-} & CardBasicProps;
+  card?: any;
+  save?: boolean;
+  superhost?: boolean;
+};
 
 export type VerticalCardProps = {
-  card?: CardObjectBasicProps & {
-    ratings: number;
-    number_of_reviews: number;
-    cost: number;
-    country: string;
-  };
-} & CardBasicProps;
+  card?: any;
+  save?: boolean;
+  superhost?: boolean;
+};
+export type TypeStayCardProps = {
+  card?: any;
+};
 
 export type CategoryCardProps = {
-  card?: {
-    imgUrl?: string;
-    title?: string;
-    description?: string;
-  };
+  card?: any;
 };
 
 export type CardProps = (
-  | TypeStayCardProps
-  | ArrangementsCardProps
-  | LandingCardProps
+  | CategoryCardProps
   | HorizontalCardProps
   | VerticalCardProps
-  | CategoryCardProps
-) & {
-  extendsTo?: string;
-  type: string;
-};
+  | TypeStayCardProps
+  | ArrangementsCardProps
+) & { extendsTo?: string; type?: string; to?: string };

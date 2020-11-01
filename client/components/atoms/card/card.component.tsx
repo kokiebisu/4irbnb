@@ -14,7 +14,7 @@ interface mapProps {
 export const Card: React.FC<CardProps> = ({
   extendsTo,
   type,
-  to = '/',
+  to,
   ...props
 }) => {
   const types: mapProps = {
@@ -33,5 +33,9 @@ export const Card: React.FC<CardProps> = ({
       </Link>
     );
   }
-  return types[type];
+  return (
+    <div data-testid='card' className={extendsTo}>
+      {types[type]}
+    </div>
+  );
 };

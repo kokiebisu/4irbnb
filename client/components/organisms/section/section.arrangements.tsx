@@ -32,7 +32,7 @@ export const ArrangementsSection: React.FC<ArrangementsSectionProps> = ({
       </div>
       <div>
         {arrangements.map((arrangement) => {
-          return <Card type='arrangements' {...arrangement} />;
+          return <Card type='arrangements' card={arrangement} />;
         })}
       </div>
     </div>
