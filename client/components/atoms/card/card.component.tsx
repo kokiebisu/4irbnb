@@ -5,6 +5,7 @@ import { HorizontalCard } from './card.horizontal';
 import { VerticalCard } from './card.vertical';
 import { TypeStayCard } from './card.typestay';
 import { CardProps } from './props';
+import { ArrangementsCard } from './card.arrangements';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -21,12 +22,16 @@ export const Card: React.FC<CardProps> = ({
     horizontal: <HorizontalCard {...props} />,
     vertical: <VerticalCard {...props} />,
     typestay: <TypeStayCard {...props} />,
+    arrangements: <ArrangementsCard {...props} />,
   };
-  return (
-    <Link href={to}>
-      <a data-testid='card' className={extendsTo}>
-        {types[type]}
-      </a>
-    </Link>
-  );
+  if (to) {
+    return (
+      <Link href={to}>
+        <a data-testid='card' className={extendsTo}>
+          {types[type]}
+        </a>
+      </Link>
+    );
+  }
+  return types[type];
 };

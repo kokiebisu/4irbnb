@@ -5,6 +5,7 @@ import { StaySection } from './section.stay';
 import { CharacteristicsSection } from './section.characteristics';
 import { DescriptionSection } from './section.description';
 import { SectionProps } from './props';
+import { ArrangementsSection } from './section.arrangements';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -21,6 +22,7 @@ export const Section: React.FC<SectionProps> = ({
     panel: <PanelSection {...props} />,
     characteristics: <CharacteristicsSection {...props} />,
     description: <DescriptionSection {...props} />,
+    arrangements: <ArrangementsSection {...props} />,
   };
   return <div className={extendsTo}>{types[type]}</div>;
 };
