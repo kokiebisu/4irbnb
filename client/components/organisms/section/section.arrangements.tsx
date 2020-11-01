@@ -3,7 +3,7 @@ import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import { ArrangementsSectionProps } from './props';
-import { Card } from 'components/atoms/card/card.component';
+import { Card } from '../../../components/atoms/card/card.component';
 
 export const ArrangementsSection: React.FC<ArrangementsSectionProps> = ({
   title = 'Title here',
