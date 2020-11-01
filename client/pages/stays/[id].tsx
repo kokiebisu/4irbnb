@@ -57,21 +57,14 @@ const id: () => string | JSX.Element = () => {
         <div className={[staysDetail['flex__panel']].join(' ')}>
           <Section type='panel' />
         </div>
-        {/* <div className='w-full lg:w-7/12 '>
-          {data && (
-            <>
-              <PlaceInfo data={data} />
-              <Characteristics
-                host_is_superhost={data.stay.host_is_superhost}
-                host_name={data.stay.host_name}
-              />
-            </>
-          )}
-          {data && <StayInfo data={data} setLength={changeLength} />}
+        <div className='w-full lg:w-7/12 '>
+          <Section type='characteristics' />
+
+          {/* {data && <StayInfo data={data} setLength={changeLength} />}
 
           <SleepingArrangements />
-          <Amenities />
-        </div> */}
+          <Amenities /> */}
+        </div>
         {/* {length ? (
           <CheckInCard length={length} loading={loading} />
         ) : (

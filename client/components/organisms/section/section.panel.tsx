@@ -7,18 +7,9 @@ import space from '../../../styles/space.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import { Heart, Star, Share, Superhost } from '../../../public/svg/original';
 import section from './section.module.scss';
+import { PanelSectionProps } from './props';
 
-interface Props {
-  title: string;
-  ratings: number;
-  numberOfReviews: number;
-  superhost: boolean;
-  location: string;
-  province: string;
-  country: string;
-}
-
-export const PanelSection: React.FC<Props> = ({
+export const PanelSection: React.FC<PanelSectionProps> = ({
   title = 'Title here',
   ratings = 5.0,
   numberOfReviews = 100,
