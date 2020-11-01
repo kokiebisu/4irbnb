@@ -18,12 +18,9 @@ import { useToggleDispatch, useToggleState } from '../../../context/toggle';
 import { Button } from '../../../components/atoms/button/button.component';
 import { NameLogo, NoNameLogo } from '../../../public/svg/logo';
 import { ChevronLeft } from '../../../public/svg/regular';
+import { HeaderWhiteProps } from './props';
 
-interface Props {
-  spread: boolean;
-}
-
-export const WhiteHeader: React.FC<Props> = ({ spread = false }) => {
+export const WhiteHeader: React.FC<HeaderWhiteProps> = ({ spread = false }) => {
   let toggleState = useToggleState();
   let toggleDispatch = useToggleDispatch();
 

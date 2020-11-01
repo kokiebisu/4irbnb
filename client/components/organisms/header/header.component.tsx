@@ -1,12 +1,7 @@
 import React from 'react';
 import { TransparentHeader } from './header.transparent';
 import { WhiteHeader } from './header.white';
-
-export interface HeaderProps {
-  extendsTo?: string;
-  type: string;
-  spread?: boolean;
-}
+import { HeaderProps } from './props';
 
 interface mapProps {
   [key: string]: JSX.Element;
