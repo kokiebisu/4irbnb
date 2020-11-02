@@ -3,13 +3,39 @@ export type ButtonLoginProps = {
   icon?: any;
 };
 
-export type ButtonProps = ButtonLoginProps & {
-  extendsTo?: string;
-  type?: string;
-  onPress?: () => void;
-  to?: string;
+export type GlobeButtonProps = {
   tap?: {
     scale: number;
   };
-  children?: React.ReactNode;
+  onPress?: () => void;
+  inverse?: boolean;
 };
+
+export type HostButtonProps = {
+  to?: string;
+  inverse?: boolean;
+};
+
+export type MenuButtonProps = {
+  tap?: string;
+  onPress?: () => void;
+  inverse?: boolean;
+};
+
+export type ButtonProps = (ButtonLoginProps & {
+  extendsTo?: string;
+  type?: string;
+  to?: string;
+}) &
+  (GlobeButtonProps & {
+    extendsTo?: string;
+    type?: string;
+  }) &
+  (HostButtonProps & {
+    extendsTo?: string;
+    type?: string;
+  }) &
+  (MenuButtonProps & {
+    extendsTo?: string;
+    type?: string;
+  });
