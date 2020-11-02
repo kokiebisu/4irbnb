@@ -29,7 +29,86 @@ export const CheckInCard: React.FC<CheckInCardProps> = () => {
     guests: false,
   });
 
-  console.log('selected.gu', selected.guests);
+  const checkInBorder = () => {
+    if (selected.checkin) {
+    } else if (selected.checkout) {
+    } else if (selected.guests) {
+      return [
+        shape['w--50p'],
+        shape['btlr--6'],
+        color['b-l--white__3'],
+        color['b-r--white__3'],
+        color['b-t--white__3'],
+        space['p-v--10'],
+      ].join(' ');
+    }
+    return [
+      shape['w--50p'],
+      shape['btlr--6'],
+      color['b-l--white__3'],
+      color['b-r--white__3'],
+      color['b-b--white__3'],
+      color['b-t--white__3'],
+      space['p-v--10'],
+    ].join(' ');
+  };
+
+  const checkOutBorder = () => {
+    if (selected.checkin) {
+    } else if (selected.checkout) {
+    } else if (selected.guests) {
+      return [
+        shape['w--50p'],
+        shape['btrr--6'],
+        color['b-r--white__3'],
+        color['b-t--white__3'],
+        space['p-v--10'],
+      ].join(' ');
+    }
+    return [
+      shape['w--50p'],
+      shape['btrr--6'],
+      color['b-r--white__3'],
+      color['b-b--white__3'],
+      color['b-t--white__3'],
+      space['p-v--10'],
+    ].join(' ');
+  };
+
+  const guestBorder = () => {
+    if (selected.checkin) {
+      return [
+        shape['h--full'],
+        color['b-t--transparent'],
+        color['b-b--transparent'],
+        color['b-l--transparent'],
+        color['b-r--transparent'],
+        space['p-v--12'],
+        shape['w--full'],
+        shape['bbr--6'],
+        color['bg--transparent'],
+      ].join(' ');
+    } else if (selected.checkout) {
+    } else if (selected.guests) {
+      return [
+        shape['h--full'],
+        color['b--gray__3'],
+        space['p-v--12'],
+        shape['br--6'],
+      ].join(' ');
+    }
+    return [
+      shape['h--full'],
+      color['b-t--transparent'],
+      color['b-b--transparent'],
+      color['b-l--transparent'],
+      color['b-r--transparent'],
+      space['p-v--12'],
+      shape['w--full'],
+      shape['bbr--6'],
+      color['bg--transparent'],
+    ].join(' ');
+  };
 
   return (
     <div
@@ -81,15 +160,21 @@ export const CheckInCard: React.FC<CheckInCardProps> = () => {
             </span>
           </div>
         </div>
-        <div className={[shape['br--8'], space['m-t--12']].join(' ')}>
-          <div className={[layout['flex'], shape['w--full']].join(' ')}>
+        <div
+          className={[
+            shape['br--8'],
+            space['m-t--12'],
+            color['b--white__2'],
+          ].join(' ')}>
+          <div
+            style={{ height: 60 }}
+            className={[layout['flex'], shape['w--full']].join(' ')}>
             <div
-              className={[
-                shape['w--50p'],
-                shape['btlr--6'],
-                color['b--white__3'],
-                space['p-v--12'],
-              ].join(' ')}>
+              onClick={() => {
+                console.log('clicked checin');
+                dispatchSelected({ type: 'checkin' });
+              }}
+              className={checkInBorder()}>
               <div className={[space['p-h--12']].join(' ')}>
                 <label
                   className={[
@@ -97,6 +182,7 @@ export const CheckInCard: React.FC<CheckInCardProps> = () => {
                     font['text--left'],
                     font['size--10'],
                     font['weight--700'],
+                    color['c--gray__3'],
                   ].join(' ')}>
                   CHECK-IN
                 </label>
@@ -113,12 +199,11 @@ export const CheckInCard: React.FC<CheckInCardProps> = () => {
               </div>
             </div>
             <div
-              className={[
-                shape['w--50p'],
-                shape['btrr--6'],
-                color['b--white__3'],
-                space['p-v--12'],
-              ].join(' ')}>
+              onClick={() => {
+                console.log('clicked checkout');
+                dispatchSelected({ type: 'checkout' });
+              }}
+              className={checkOutBorder()}>
               <div className={[space['p-h--12']].join(' ')}>
                 <label
                   className={[
@@ -126,8 +211,9 @@ export const CheckInCard: React.FC<CheckInCardProps> = () => {
                     font['text--left'],
                     font['size--10'],
                     font['weight--700'],
+                    color['c--gray__3'],
                   ].join(' ')}>
-                  CHECK-IN
+                  CHECK-OUT
                 </label>
                 <input
                   placeholder='Add date'
@@ -143,8 +229,9 @@ export const CheckInCard: React.FC<CheckInCardProps> = () => {
             </div>
           </div>
           <button
+            style={{ height: 60 }}
             onClick={() => {
-              console.log('clicked');
+              console.log('clicked guests');
               dispatchSelected({ type: 'guests' });
             }}
             className={
@@ -165,25 +252,7 @@ export const CheckInCard: React.FC<CheckInCardProps> = () => {
                     shape['w--full'],
                   ].join(' ')
             }>
-            <div
-              className={
-                selected.guests
-                  ? [
-                      color['b--gray__3'],
-                      space['p-v--12'],
-                      shape['br--6'],
-                    ].join(' ')
-                  : [
-                      color['b-t--transparent'],
-                      color['b-b--transparent'],
-                      color['b-l--transparent'],
-                      color['b-r--transparent'],
-                      space['p-v--12'],
-                      shape['w--full'],
-                      shape['bbr--6'],
-                      color['bg--transparent'],
-                    ].join(' ')
-              }>
+            <div className={guestBorder()}>
               <div
                 className={[
                   space['p-h--12'],
@@ -197,6 +266,7 @@ export const CheckInCard: React.FC<CheckInCardProps> = () => {
                       font['text--left'],
                       font['size--10'],
                       font['weight--700'],
+                      color['c--gray__3'],
                     ].join(' ')}>
                     GUESTS
                   </label>
@@ -214,7 +284,7 @@ export const CheckInCard: React.FC<CheckInCardProps> = () => {
             </div>
           </button>
         </div>
-        <div className={[space['m-t--14']].join(' ')}>
+        <div className={[space['m-t--24']].join(' ')}>
           <button
             className={[
               shape['w--full'],
