@@ -6,6 +6,20 @@
       }
     }
   }
+
+  &__details {
+    &--left {
+      @media screen and (min-width: 1028px) {
+        width: 58%;
+      }
+    }
+
+    &--right {
+      @media screen and (min-width: 1028px) {
+        width: 42%;
+      }
+    }
+  }
 }
 
 .container {
@@ -28,6 +42,16 @@
     @media screen and (min-width: 728px) {
       padding-top: 15px;
       padding-bottom: 15px;
+    }
+  }
+}
+
+.flex {
+  &__details {
+    display: block;
+
+    @media screen and (min-width: 1018px) {
+      display: flex;
     }
   }
 }

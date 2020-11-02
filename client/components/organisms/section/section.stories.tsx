@@ -43,6 +43,19 @@ panel.args = {
   type: 'panel',
 };
 
+export const description = SectionTemplate.bind({});
+description.args = {
+  type: 'description',
+};
+
+description.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 600 }}>
+      <Story />
+    </div>
+  ),
+];
+
 export const panelSuperhost = SectionTemplate.bind({});
 panelSuperhost.args = {
   type: 'panel',

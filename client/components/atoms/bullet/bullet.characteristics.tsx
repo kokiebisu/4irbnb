@@ -47,14 +47,26 @@ export const CharacteristicBullet: React.FC<CharacteristicBulletProps> = ({
 
   return (
     <div className={[layout['flex'], space['m-v--8']].join(' ')}>
-      <div className={[space['p-t--10'], space['m-r--8']].join(' ')}>
+      <div className={[space['m-r--14']].join(' ')}>
         {icons[characteristicType].icon}
       </div>
       <div>
-        <h3 className={[color['c--gray__2']].join(' ')}>
+        <h3
+          style={{ letterSpacing: 0.3 }}
+          className={[
+            space['m-b--4'],
+            color['c--gray__3'],
+            font['size--16'],
+            font['weight--500'],
+          ].join(' ')}>
           {icons[characteristicType].title}
         </h3>
-        <p className={[color['c--gray__3'], font['weight--300']].join(' ')}>
+        <p
+          className={[
+            color['c--gray__1'],
+            font['weight--100'],
+            font['size--14'],
+          ].join(' ')}>
           {icons[characteristicType].description}
         </p>
       </div>

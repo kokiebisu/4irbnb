@@ -16,5 +16,5 @@ export const Bullet: React.FC<BulletProps> = ({
     characteristic: <CharacteristicBullet {...props} />,
   };
 
-  return <div>{types[type]}</div>;
+  return <div className={extendsTo}>{types[type]}</div>;
 };

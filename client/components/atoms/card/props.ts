@@ -31,10 +31,15 @@ export type CategoryCardProps = {
   card?: any;
 };
 
+export type CheckInCardProps = {
+  length?: number;
+};
+
 export type CardProps = (
   | CategoryCardProps
   | HorizontalCardProps
   | VerticalCardProps
   | TypeStayCardProps
   | ArrangementsCardProps
+  | CheckInCardProps
 ) & { extendsTo?: string; type?: string; to?: string };

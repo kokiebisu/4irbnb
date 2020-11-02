@@ -6,6 +6,7 @@ import { VerticalCard } from './card.vertical';
 import { TypeStayCard } from './card.typestay';
 import { CardProps } from './props';
 import { ArrangementsCard } from './card.arrangements';
+import { CheckInCard } from './card.checkin';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -23,6 +24,7 @@ export const Card: React.FC<CardProps> = ({
     vertical: <VerticalCard {...props} />,
     typestay: <TypeStayCard {...props} />,
     arrangements: <ArrangementsCard {...props} />,
+    checkin: <CheckInCard {...props} />,
   };
   if (to) {
     return (

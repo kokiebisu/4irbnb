@@ -44,6 +44,32 @@ $pixels: (
     border-bottom-right-radius: #{$pixel}px;
   }
 
+  .blr--#{$pixel} {
+    border-top-left-radius: #{$pixel}px;
+    border-bottom-left-radius: #{$pixel}px;
+  }
+
+  .brr--#{$pixel} {
+    border-top-right-radius: #{$pixel}px;
+    border-bottom-right-radius: #{$pixel}px;
+  }
+
+  .btlr--#{$pixel} {
+    border-top-left-radius: #{$pixel}px;
+  }
+
+  .bblr--#{$pixel} {
+    border-bottom-left-radius: #{$pixel}px;
+  }
+
+  .btrr--#{$pixel} {
+    border-top-right-radius: #{$pixel}px;
+  }
+
+  .bbrr--#{$pixel} {
+    border-bottom-right-radius: #{$pixel}px;
+  }
+
   .w--#{$pixel} {
     width: #{$pixel}px;
   }
@@ -75,6 +101,10 @@ $percents: (
 
 .h--full {
   height: 100%;
+}
+
+.w--full {
+  width: 100%;
 }
 
 .min-h {

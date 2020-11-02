@@ -17,19 +17,22 @@ import * as React from 'react';
 // import { CheckInCard } from '../../components/stays/functions/CheckInCard';
 // import { HostedBy } from '../../components/stays/functions/HostedBy';
 
-import { Header } from 'components/organisms/header/header.component';
-import { Footer } from 'components/organisms/footer/footer.component';
+import { Header } from '../../components/organisms/header/header.component';
+import { Footer } from '../../components/organisms/footer/footer.component';
 
 import layout from '../../styles/layout.module.scss';
 import details from '../../styles/details.module.scss';
 import staysDetail from '../../styles/staysDetail.module.scss';
-import { Section } from 'components/organisms/section/section.component';
+import color from '../../styles/color.module.scss';
+import space from '../../styles/space.module.scss';
+import { Section } from '../../components/organisms/section/section.component';
+import { Card } from '../../components/atoms/card/card.component';
 
 const id: () => string | JSX.Element = () => {
   return (
     <>
       <div
-        style={{ top: 0, zIndex: 10 }}
+        style={{ top: 0, zIndex: 9999 }}
         className={[layout['sticky']].join(' ')}>
         <Header extendsTo={[details['w__wrapper']].join(' ')} type='white' />
       </div>
@@ -39,18 +42,33 @@ const id: () => string | JSX.Element = () => {
           extendsTo={[staysDetail['flex__panel']].join(' ')}
           type='panel'
         />
-        <div className='w-full lg:w-7/12 '>
-          <Section type='characteristics' />
-          <Section type='description' />
-          <Section type='details' />
-          <Section type='arrangements' />
-          {/* <Amenities /> */}
+        <div className={[details['flex__details']].join(' ')}>
+          <div className={[details['w__details--left']].join(' ')}>
+            <Section type='characteristics' />
+            <Section
+              type='description'
+              extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
+            />
+            <Section
+              type='details'
+              extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
+            />
+            <Section type='arrangements' />
+            {/* <Amenities /> */}
+          </div>
+          <div className={[details['w__details--right']].join(' ')}>
+            <Card
+              type='checkin'
+              extendsTo={[
+                layout['flex'],
+                layout['justify-end'],
+                layout['sticky'],
+                layout['t--78'],
+              ].join(' ')}
+            />
+          </div>
         </div>
-        {/* {length ? (
-          <CheckInCard length={length} loading={loading} />
-        ) : (
-          <CheckInCard length={length} loading={loading} />
-        )} */}
+
         <>
           {/* <Reviews
             reviews_per_month={data.stay.reviews_per_month}

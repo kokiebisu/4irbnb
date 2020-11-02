@@ -30,23 +30,33 @@ export const PanelSection: React.FC<PanelSectionProps> = ({
           {title}
         </h3>
         <div
-          className={[layout['items-center'], layout['justify-between']].join(
-            ' '
-          )}>
+          className={[
+            space['m-v--8'],
+            layout['items-center'],
+            layout['justify-between'],
+          ].join(' ')}>
           <div
             className={[layout['items-center'], layout['flex-wrap']].join(' ')}>
             <div>
               <Star height={14} />
             </div>
-            <p
+            <span
               className={[
                 space['p-l--4'],
                 color['c--g__2'],
                 font['size--14'],
+              ].join(' ')}>
+              {ratings}
+            </span>
+            <span
+              className={[
+                space['p-l--4'],
+                color['c--gray__1'],
+                font['size--14'],
                 font['weight--300'],
               ].join(' ')}>
-              {ratings} ({numberOfReviews})
-            </p>
+              ({numberOfReviews})
+            </span>
             {superhost && (
               <>
                 <span className={[color['c--gray__1']].join(' ')}>
@@ -66,7 +76,8 @@ export const PanelSection: React.FC<PanelSectionProps> = ({
                 </p>
               </>
             )}
-            <span className={[color['c--gray__1']].join(' ')}>
+            <span
+              className={[font['weight--300'], color['c--gray__1']].join(' ')}>
               &nbsp;·&nbsp;
             </span>
             <a
@@ -81,154 +92,164 @@ export const PanelSection: React.FC<PanelSectionProps> = ({
             className={[layout['flex'], section['hidden__options']].join(' ')}>
             <div
               className={[space['p-r--6'], layout['items-center']].join(' ')}>
-              <div
-                className={[space['p-l--6'], layout['items-center']].join(' ')}>
+              <a
+                href='#'
+                className={[
+                  layout['flex'],
+                  space['p-l--6'],
+                  layout['items-center'],
+                ].join(' ')}>
                 <div>
                   <Share height={14} fill='#484848' />
                 </div>
                 <p
                   className={[
-                    space['p-l--6'],
+                    space['p-l--10'],
                     font['size--14'],
-                    color['c--gray__1'],
+                    color['c--gray__2'],
                   ].join(' ')}>
                   <u>Share</u>
                 </p>
-              </div>
-              <div
-                className={[space['p-l--4'], layout['items-center']].join(' ')}>
+              </a>
+              <a
+                className={[
+                  layout['flex'],
+                  space['m-l--12'],
+                  layout['items-center'],
+                ].join(' ')}>
                 <div>
-                  <Heart fill='#484848' height={14} />
+                  <Heart fill='#484848' height={17} />
                 </div>
                 <u
                   className={[
-                    space['p-l--5'],
+                    space['p-l--10'],
                     font['size--14'],
-                    color['c--gray__1'],
+                    color['c--gray__2'],
                   ].join(' ')}>
                   Save
                 </u>
-              </div>
+              </a>
             </div>
           </div>
         </div>
       </div>
 
-      <div className={[layout['flex'], shape['h--50p']].join(' ')}>
-        <div
-          style={{
-            borderRight: '4px solid white',
-            borderRadius: 5,
-          }}
-          className={[
-            shape['background-cover'],
-            shape['background-repeat'],
-            layout['relative'],
-            layout['overflow-hidden'],
-            section['w__panel--image'],
-          ].join(' ')}>
-          <img
+      <div className={[space['m-b--20']].join(' ')}>
+        <div className={[layout['flex'], shape['h--50p']].join(' ')}>
+          <div
+            style={{
+              borderRight: '4px solid white',
+            }}
             className={[
+              shape['blr--15'],
               shape['background-cover'],
               shape['background-repeat'],
-            ].join(' ')}
-            src='https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large'
-          />
-        </div>
-        <div
-          className={[
-            shape['w--50p'],
-            layout['relative'],
-            staysDetail['hidden__panel'],
-          ].join(' ')}>
+              layout['relative'],
+              layout['overflow-hidden'],
+              section['w__panel--image'],
+            ].join(' ')}>
+            <img
+              className={[
+                shape['background-cover'],
+                shape['background-repeat'],
+              ].join(' ')}
+              src='https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large'
+            />
+          </div>
           <div
             className={[
-              shape['w--full'],
-              shape['h--full'],
-              layout['flex'],
-              layout['flex-wrap'],
+              shape['w--50p'],
+              layout['relative'],
+              staysDetail['hidden__panel'],
             ].join(' ')}>
             <div
-              style={{
-                borderRadius: 5,
-                borderLeft: '4px solid white',
-                borderRight: '4px solid white',
-                borderBottom: '4px solid white',
-              }}
               className={[
-                shape['h--50p'],
-                layout['overflow-hidden'],
-                layout['relative'],
-                section['w__panel--image'],
+                shape['w--full'],
+                shape['h--full'],
+                layout['flex'],
+                layout['flex-wrap'],
               ].join(' ')}>
-              <img
+              <div
+                style={{
+                  borderRadius: 5,
+                  borderLeft: '4px solid white',
+                  borderRight: '4px solid white',
+                  borderBottom: '4px solid white',
+                }}
                 className={[
-                  shape['background-cover'],
-                  shape['background-repeat'],
-                ].join(' ')}
-                src='https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large'
-              />
-            </div>
-            <div
-              style={{
-                borderRadius: 5,
-                borderLeft: '4px solid white',
-                borderBottom: '4px solid white',
-              }}
-              className={[
-                shape['h--50p'],
-                layout['overflow-hidden'],
-                layout['relative'],
-                section['w__panel--image'],
-              ].join(' ')}>
-              <img
+                  shape['h--50p'],
+                  layout['overflow-hidden'],
+                  layout['relative'],
+                  section['w__panel--image'],
+                ].join(' ')}>
+                <img
+                  className={[
+                    shape['background-cover'],
+                    shape['background-repeat'],
+                  ].join(' ')}
+                  src='https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large'
+                />
+              </div>
+              <div
+                style={{
+                  borderLeft: '4px solid white',
+                  borderBottom: '4px solid white',
+                }}
                 className={[
-                  shape['background-cover'],
-                  shape['background-repeat'],
-                ].join(' ')}
-                src='https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large'
-              />
-            </div>
-            <div
-              style={{
-                borderRadius: 5,
-                borderLeft: '4px solid white',
-                borderTop: '4px solid white',
-                borderRight: '4px solid white',
-              }}
-              className={[
-                shape['h--50p'],
-                layout['overflow-hidden'],
-                layout['relative'],
-                section['w__panel--image'],
-              ].join(' ')}>
-              <img
+                  shape['btrr--15'],
+                  shape['h--50p'],
+                  layout['overflow-hidden'],
+                  layout['relative'],
+                  section['w__panel--image'],
+                ].join(' ')}>
+                <img
+                  className={[
+                    shape['background-cover'],
+                    shape['background-repeat'],
+                  ].join(' ')}
+                  src='https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large'
+                />
+              </div>
+              <div
+                style={{
+                  borderLeft: '4px solid white',
+                  borderTop: '4px solid white',
+                  borderRight: '4px solid white',
+                }}
                 className={[
-                  shape['background-cover'],
-                  shape['background-repeat'],
-                ].join(' ')}
-                src='https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large'
-              />
-            </div>
-            <div
-              style={{
-                borderRadius: 5,
-                borderLeft: '4px solid white',
-                borderTop: '4px solid white',
-              }}
-              className={[
-                shape['h--50p'],
-                layout['overflow-hidden'],
-                layout['relative'],
-                section['w__panel--image'],
-              ].join(' ')}>
-              <img
+                  shape['h--50p'],
+                  layout['overflow-hidden'],
+                  layout['relative'],
+                  section['w__panel--image'],
+                ].join(' ')}>
+                <img
+                  className={[
+                    shape['background-cover'],
+                    shape['background-repeat'],
+                  ].join(' ')}
+                  src='https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large'
+                />
+              </div>
+              <div
+                style={{
+                  borderLeft: '4px solid white',
+                  borderTop: '4px solid white',
+                }}
                 className={[
-                  shape['background-cover'],
-                  shape['background-repeat'],
-                ].join(' ')}
-                src='https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large'
-              />
+                  shape['bbrr--15'],
+                  shape['h--50p'],
+                  layout['overflow-hidden'],
+                  layout['relative'],
+                  section['w__panel--image'],
+                ].join(' ')}>
+                <img
+                  className={[
+                    shape['background-cover'],
+                    shape['background-repeat'],
+                  ].join(' ')}
+                  src='https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large'
+                />
+              </div>
             </div>
           </div>
         </div>
