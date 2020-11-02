@@ -80,13 +80,3 @@
     box-shadow: none;
   }
 }
-
-.flex {
-  &__checkin {
-    &--content {
-      @media screen and (min-width: 1028px) {
-        flex-direction: column;
-      }
-    }
-  }
-}
