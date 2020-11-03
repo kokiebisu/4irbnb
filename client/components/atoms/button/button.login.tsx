@@ -5,8 +5,12 @@ import font from '../../../styles/font.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import space from '../../../styles/space.module.scss';
 import { ButtonLoginProps } from './props';
+import { Email } from '../../../public/svg/original';
 
-export const LoginButton: React.FC<ButtonLoginProps> = ({ platform, icon }) => {
+export const LoginButton: React.FC<ButtonLoginProps> = ({
+  platform = 'Email',
+  icon = <Email width={18} height={18} />,
+}) => {
   return (
     <button
       style={{ border: '2px solid #B0B0B0' }}

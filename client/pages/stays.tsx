@@ -134,7 +134,7 @@ const StaysPage = () => {
                   to: '/',
                   description: 'Show all nearby nature stays',
                 }}
-                fetchUrl='https://34.219.3.215/stays?type=unique'
+                // fetchUrl='https://34.219.3.215/stays?type=unique'
                 pagination
                 isDescription
                 save
@@ -149,7 +149,7 @@ const StaysPage = () => {
                   to: '/',
                   description: 'Show all nearby imaginative stays',
                 }}
-                fetchUrl='https://34.219.3.215/stays?type=tiny_house'
+                // fetchUrl='https://34.219.3.215/stays?type=tiny_house'
                 pagination
                 isDescription
                 save
@@ -165,7 +165,7 @@ const StaysPage = () => {
                   description: 'Show all nearby novelty stays',
                 }}
                 items={novelties}
-                fetchUrl='https://34.219.3.215/stays?type=camper_rv'
+                // fetchUrl='https://34.219.3.215/stays?type=camper_rv'
                 pagination
                 isDescription
                 save
@@ -181,8 +181,8 @@ const StaysPage = () => {
                     to: '/',
                     description: 'Show all unique stays',
                   }}
-                  fetchUrl='https://34.219.3.215/stays'
-                  // items={uniqueStays}
+                  // fetchUrl='https://34.219.3.215/stays'
+                  items={uniqueStays}
                   isDescription
                   save
                 />

@@ -5,13 +5,6 @@ import styles from '../../../styles/index.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import color from '../../../styles/color.module.scss';
 import details from '../../../styles/details.module.scss';
-import {
-  globeInverse as globeInverseButton,
-  hostInverse as hostInverseButton,
-  menuInverse as menuInverseButton,
-  searchbarMedium,
-  searchbarSmall,
-} from '../../atoms/button/button.stories';
 import { menu as menuModal } from '../../organisms/modal/modal.stories';
 import { Modal } from '../modal/modal.component';
 import { useToggleDispatch, useToggleState } from '../../../context/toggle';
@@ -22,11 +15,6 @@ import { HeaderWhiteProps } from './props';
 
 export const WhiteHeader: React.FC<HeaderWhiteProps> = ({ spread = false }) => {
   let toggleState = useToggleState();
-  let toggleDispatch = useToggleDispatch();
-
-  const openMenuModal = () => {
-    toggleDispatch({ type: 'toggle_menu' });
-  };
   return (
     <header
       className={
@@ -56,14 +44,11 @@ export const WhiteHeader: React.FC<HeaderWhiteProps> = ({ spread = false }) => {
             </div>
           </div>
           <div>
-            <Button
-              {...searchbarSmall.args}
-              onPress={() => console.log('clicked searchbar small')}
-            />
+            <Button type='searchbar' mini />
           </div>
           <div className={[layout['items-center']].join(' ')}>
             <div className={styles['searchbar__host']}>
-              <Button {...hostInverseButton.args} to='/' />
+              <Button type='host' to='/' />
             </div>
             <div
               className={[
@@ -72,13 +57,10 @@ export const WhiteHeader: React.FC<HeaderWhiteProps> = ({ spread = false }) => {
                 space['m-b--0'],
                 space['m-l--8'],
               ].join(' ')}>
-              <Button
-                {...globeInverseButton.args}
-                onPress={() => console.log('clicked')}
-              />
+              <Button type='globe' onPress={() => console.log('clicked')} />
             </div>
             <div>
-              <Button {...menuInverseButton.args} onPress={openMenuModal} />
+              <Button type='menu' />
             </div>
           </div>
           <Modal
@@ -99,10 +81,7 @@ export const WhiteHeader: React.FC<HeaderWhiteProps> = ({ spread = false }) => {
               <ChevronLeft width={12} />
             </div>
             <div style={{ width: '100%', flexGrow: 1 }}>
-              <Button
-                {...searchbarMedium.args}
-                onPress={() => console.log('pressed')}
-              />
+              <Button type='searchbar' onPress={() => console.log('pressed')} />
             </div>
             <div style={{ width: 30, visibility: 'hidden' }}></div>
           </div>

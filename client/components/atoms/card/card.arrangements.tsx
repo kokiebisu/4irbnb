@@ -32,9 +32,9 @@ export const ArrangementsCard: React.FC<ArrangementsCardProps> = ({
           Bedroom
         </p>
         <div>
-          {card.beds.map((bed) => {
+          {card.beds.map((bed, index) => {
             return (
-              <p className={[color['c--gray__2']].join(' ')}>
+              <p key={index} className={[color['c--gray__2']].join(' ')}>
                 {bed.count} {bed.type}
               </p>
             );
