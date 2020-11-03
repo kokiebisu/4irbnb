@@ -11,9 +11,9 @@ import space from '../../../styles/space.module.scss';
 import { GlobeButtonProps } from './props';
 
 export const GlobeButton: React.FC<GlobeButtonProps> = ({
-  tap,
-  onPress,
-  inverse,
+  tap = { scale: 0.98 },
+  onPress = () => console.log('Globe Button Clicked'),
+  inverse = false,
 }) => {
   return (
     <motion.button
@@ -32,14 +32,14 @@ export const GlobeButton: React.FC<GlobeButtonProps> = ({
           space['p-r--15'],
         ].join(' ')} ${
           inverse
-            ? [animation['hover-background--gray__1']].join(' ')
-            : [animation['hover-background--white__1']].join(' ')
+            ? [animation['hover-background--white__1']].join(' ')
+            : [animation['hover-background--gray__1']].join(' ')
         }`}>
         <div className={[layout['items-center'], space['m-r--8']].join(' ')}>
-          <Globe width={16} fill={inverse ? '#363636' : 'white'} />
+          <Globe width={16} fill={inverse ? 'white' : '#363636'} />
         </div>
         <div className={layout['items-center']}>
-          <ChevronDown width={8} fill={inverse ? '#363636' : 'white'} />
+          <ChevronDown width={8} fill={inverse ? 'white' : '#363636'} />
         </div>
       </div>
     </motion.button>

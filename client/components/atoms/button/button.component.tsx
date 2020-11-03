@@ -6,6 +6,13 @@ import { ButtonProps } from './props';
 import { GlobeButton } from './button.globe';
 import { HostButton } from './button.host';
 import { MenuButton } from './button.menu';
+import { PrivacyButton } from './button.privacy';
+import { BorderButton } from './button.border';
+import { BannerButton } from './button.banner';
+import { PlainButton } from './button.plain';
+import { SearchbarButton } from './button.searchbar';
+import { PaginateButton } from './button.paginate';
+import { ExpandButton } from './button.expand';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -13,7 +20,6 @@ interface mapProps {
 
 export const Button: React.FC<ButtonProps> = ({
   onPress,
-  children = <p>Primary</p>,
   to,
   extendsTo,
   tap,
@@ -25,27 +31,14 @@ export const Button: React.FC<ButtonProps> = ({
     globe: <GlobeButton {...props} />,
     host: <HostButton {...props} />,
     menu: <MenuButton {...props} />,
+    privacy: <PrivacyButton {...props} />,
+    border: <BorderButton {...props} />,
+    banner: <BannerButton {...props} />,
+    plain: <PlainButton {...props} />,
+    searchbar: <SearchbarButton {...props} />,
+    paginate: <PaginateButton {...props} />,
+    expand: <ExpandButton {...props} />,
   };
 
-  // if (to) {
-  //   return (
-  //     <div className={extendsTo} data-testid='button'>
-  //       <Link href={to} passHref>
-  //         {children}
-  //       </Link>
-  //     </div>
-  //   );
-  // }
-
   return types[type];
-
-  // return (
-  //   <motion.button
-  //     whileTap={tap}
-  //     data-testid='button'
-  //     className={extendsTo}
-  //     onClick={onPress}>
-  //     {children}
-  //   </motion.button>
-  // );
 };

@@ -27,7 +27,11 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
         color['bg--white__0'],
         shape['br--30'],
         animation['hover-shadow--lg'],
-      ].join(' ')} ${inverse && [color['b--white__2']].join(' ')}`}
+      ].join(' ')} ${
+        inverse
+          ? [color['b--transparent']].join(' ')
+          : [color['b--white__2']].join(' ')
+      }`}
       onClick={onPress}>
       <div className={space['m-r--8']}>
         <Bars fill='black' width={12} />

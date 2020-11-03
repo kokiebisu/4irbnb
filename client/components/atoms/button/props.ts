@@ -1,41 +1,66 @@
-export type ButtonLoginProps = {
-  platform?: string;
-  icon?: any;
-};
+interface BasicProps {
+  extendsTo?: string;
+  type: string;
+}
 
-export type GlobeButtonProps = {
+interface TitleProps {
+  title?: string;
+}
+
+interface LinkButtonProps {
+  to?: string;
+}
+
+interface ClickableButtonProps {
   tap?: {
     scale: number;
   };
   onPress?: () => void;
-  inverse?: boolean;
-};
+}
 
-export type HostButtonProps = {
-  to?: string;
-  inverse?: boolean;
-};
+interface MiniProps {
+  mini?: boolean;
+}
 
-export type MenuButtonProps = {
-  tap?: string;
-  onPress?: () => void;
+interface InverseProps {
   inverse?: boolean;
-};
+}
 
-export type ButtonProps = (ButtonLoginProps & {
+interface ButtonLoginProps {
+  platform?: string;
+  icon?: any;
+}
+
+export interface GlobeButtonProps extends InverseProps, ClickableButtonProps {}
+
+export interface HostButtonProps extends LinkButtonProps, InverseProps {}
+
+export interface MenuButtonProps extends InverseProps, ClickableButtonProps {}
+
+export interface PrivacyButtonProps
+  extends InverseProps,
+    ClickableButtonProps,
+    TitleProps {}
+
+export interface BorderButtonProps
+  extends LinkButtonProps,
+    InverseProps,
+    TitleProps {}
+
+export interface BannerButtonProps extends LinkButtonProps, TitleProps {}
+
+export interface PlainButtonProps extends ClickableButtonProps, TitleProps {}
+
+export interface SearchbarButtonProps extends ClickableButtonProps, MiniProps {}
+
+export interface PaginateButtonProps extends ClickableButtonProps {
+  direction?: string;
+}
+
+export interface ExpandButtonProps extends LinkButtonProps, TitleProps {}
+
+export type ButtonProps = {
   extendsTo?: string;
-  type?: string;
-  to?: string;
-}) &
-  (GlobeButtonProps & {
-    extendsTo?: string;
-    type?: string;
-  }) &
-  (HostButtonProps & {
-    extendsTo?: string;
-    type?: string;
-  }) &
-  (MenuButtonProps & {
-    extendsTo?: string;
-    type?: string;
-  });
+  type: string;
+  [x: string]: any;
+};

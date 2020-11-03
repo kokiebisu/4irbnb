@@ -117,7 +117,7 @@ const StaysPage = () => {
         </div>
         <div className={[space['p-v--38']].join(' ')}>
           <div className={[styles['container'], layout['relative']].join(' ')}>
-            <div className={[space['m-v--16']].join(' ')}>
+            {/* <div className={[space['m-v--16']].join(' ')}>
               <Section
                 type='stay'
                 carouselType='stayTypes'
@@ -139,8 +139,8 @@ const StaysPage = () => {
                 isDescription
                 save
               />
-            </div>
-            <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
+            </div> */}
+            {/* <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
               <Section
                 type='stay'
                 title='Imaginative stays close to home'
@@ -154,9 +154,9 @@ const StaysPage = () => {
                 isDescription
                 save
               />
-            </div>
+            </div> */}
             <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
-              <Section
+              {/* <Section
                 type='stay'
                 title='Novelty stays near you'
                 description='From trailers to trains, transport yourself into a one-of-a-kind getaway.'
@@ -169,10 +169,10 @@ const StaysPage = () => {
                 pagination
                 isDescription
                 save
-              />
+              /> */}
             </div>
             <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
-              <div>
+              {/* <div>
                 <Section
                   type='stay'
                   title='Unique stays around the world'
@@ -186,7 +186,7 @@ const StaysPage = () => {
                   isDescription
                   save
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

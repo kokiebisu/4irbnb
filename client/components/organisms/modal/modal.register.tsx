@@ -5,26 +5,24 @@ import color from '../../../styles/color.module.scss';
 import space from '../../../styles/space.module.scss';
 import font from '../../../styles/font.module.scss';
 import modalStyles from './modal.module.scss';
-import { Close } from '../../../public/svg/original';
+import { Close, Email } from '../../../public/svg/original';
 import { Button } from '../../../components/atoms/button/button.component';
-import {
-  emailLogin,
-  facebookLogin,
-  googleLogin,
-  appleLogin,
-  primary,
-} from '../../../components/atoms/button/button.stories';
+
 import { motion } from 'framer-motion';
 import { ChevronDown } from '../../../public/svg/regular';
 import { RegisterModalProps } from './props';
+import { Apple, Facebook, Google } from '../../../public/svg/logo';
 
 export const RegisterModal: React.FC<RegisterModalProps> = () => {
   const [clicked, setClicked] = useState(false);
   const logins = [
-    { args: emailLogin.args, press: () => console.log('clicked email') },
-    { args: facebookLogin.args, press: () => console.log('clicked facebook') },
-    { args: googleLogin.args, press: () => console.log('clicked google') },
-    { args: appleLogin.args, press: () => console.log('clicked apple') },
+    { icon: <Email width={17} />, press: () => console.log('clicked email') },
+    {
+      icon: <Facebook width={17} />,
+      press: () => console.log('clicked facebook'),
+    },
+    { args: <Google width={17} />, press: () => console.log('clicked google') },
+    { args: <Apple width={17} />, press: () => console.log('clicked apple') },
   ];
   return (
     <motion.div
@@ -150,7 +148,7 @@ export const RegisterModal: React.FC<RegisterModalProps> = () => {
           </div>
           <div className={[space['m-t--18'], space['m-b--18']].join(' ')}>
             <Button
-              {...primary.args}
+              type='plain'
               onPress={() => console.log('clicked Continue')}>
               Continue
             </Button>
@@ -179,7 +177,11 @@ export const RegisterModal: React.FC<RegisterModalProps> = () => {
             {logins.map((login, index) => {
               return (
                 <div key={index} className={[space['m-v--14']].join(' ')}>
-                  <Button {...login.args} onPress={login.press} />
+                  <Button
+                    type='login'
+                    icon={login.icon}
+                    onPress={login.press}
+                  />
                 </div>
               );
             })}
