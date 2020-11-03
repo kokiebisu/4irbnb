@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { AmenityBullet } from './bullet.amenity';
 import { CharacteristicBullet } from './bullet.characteristics';
 import { BulletProps } from './props';
 
@@ -14,6 +14,7 @@ export const Bullet: React.FC<BulletProps> = ({
 }) => {
   const types: mapProps = {
     characteristic: <CharacteristicBullet {...props} />,
+    amenity: <AmenityBullet {...props} />,
   };
 
   return <div className={extendsTo}>{types[type]}</div>;

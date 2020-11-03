@@ -138,6 +138,7 @@ export const CheckInCard: React.FC<CheckInCardProps> = () => {
               Add dates for prices
             </h3>
             <div
+              style={{ width: 100 }}
               className={[
                 space['p-v--10'],
                 color['c--gray__2'],
@@ -148,11 +149,17 @@ export const CheckInCard: React.FC<CheckInCardProps> = () => {
                 className={[layout['inline-block'], space['m-r--4']].join(' ')}>
                 <Star width={10} />
               </div>
-              <span className={[font['size--14'], space['m-r--4']].join(' ')}>
+              <span
+                className={[
+                  layout['inline-block'],
+                  font['size--14'],
+                  space['m-r--4'],
+                ].join(' ')}>
                 4.93
               </span>
               <span
                 className={[
+                  layout['inline-block'],
                   font['size--14'],
                   space['weight-100'],
                   color['c--white__3'],

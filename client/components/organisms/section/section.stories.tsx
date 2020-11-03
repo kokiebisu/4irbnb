@@ -61,3 +61,8 @@ panelSuperhost.args = {
   type: 'panel',
   superhost: true,
 };
+
+export const arrangements = SectionTemplate.bind({});
+arrangements.args = {
+  type: 'arrangements',
+};
