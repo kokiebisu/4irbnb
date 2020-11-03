@@ -8,11 +8,7 @@ import {
   categories,
 } from '../content/index';
 import { Button } from 'components/atoms/button/button.component';
-import {
-  banner as bannerButton,
-  border as borderButton,
-  borderInverse as borderButtonInverse,
-} from 'components/atoms/button/button.stories';
+
 import {
   privacy as privacyModal,
   register as registerModal,
@@ -117,7 +113,7 @@ const Banner = () => {
                     space['m-h--0'],
                     styles['justify__explore--button'],
                   ].join(' ')}>
-                  <Button {...bannerButton.args} to='/' />
+                  <Button type='banner' title='Explore all' to='/' />
                 </div>
               </div>
             </div>
@@ -166,7 +162,7 @@ const OnlineExperiences = () => {
             color['b--white'],
             shape['br--8'],
           ].join(' ')}>
-          <Button {...borderButtonInverse.args} to='/' />
+          <Button type='border' inverse to='/' />
         </div>
       </div>
     </div>
@@ -206,7 +202,7 @@ const BlackLivesMatter = () => {
             space['m-t--25'],
             space['m-b--40'],
           ].join(' ')}>
-          <Button {...borderButton.args} to='/' />
+          <Button type='border' to='/' />
         </div>
       </div>
     </div>

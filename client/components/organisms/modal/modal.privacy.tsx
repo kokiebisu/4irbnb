@@ -9,10 +9,7 @@ import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import modal from './modal.module.scss';
 import { Button } from '../../../components/atoms/button/button.component';
-import {
-  privacy as privacyButton,
-  privacyInverse as privacyButtonInverse,
-} from '../../../components/atoms/button/button.stories';
+
 import { Lock } from '../../../public/svg/original';
 import { PrivacyModalProps } from './props';
 
@@ -83,7 +80,8 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
             ].join(' ')}>
             <Button
               tap={{ scale: 0.98 }}
-              {...privacyButton.args}
+              title='Save'
+              type='privacy'
               onPress={handlePress}
             />
           </motion.div>
@@ -96,7 +94,9 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
             ].join(' ')}>
             <Button
               tap={{ scale: 0.98 }}
-              {...privacyButtonInverse.args}
+              title='Cookie Preferences'
+              type='privacy'
+              inverse
               onPress={handlePress}
             />
           </motion.div>

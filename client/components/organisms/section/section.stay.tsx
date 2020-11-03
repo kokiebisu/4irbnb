@@ -92,28 +92,10 @@ export const StaySection: React.FC<StaySectionProps> = ({
                   </p>
                 </div>
                 <div className={[space['m-r--6']].join(' ')}>
-                  <Button
-                    extendsTo={[
-                      color['b--white__2'],
-                      color['bg--transparent'],
-                      space['p--8'],
-                      shape['br--circle'],
-                    ].join(' ')}
-                    onPress={() => console.log('pressed left')}>
-                    <ChevronLeft width={10} stroke='black' strokeWidth={5} />
-                  </Button>
+                  <Button type='paginate' direction='left' />
                 </div>
                 <div>
-                  <Button
-                    extendsTo={[
-                      color['b--white__2'],
-                      color['bg--transparent'],
-                      space['p--8'],
-                      shape['br--circle'],
-                    ].join(' ')}
-                    onPress={() => console.log('pressed right')}>
-                    <ChevronRight width={10} stroke='black' strokeWidth={5} />
-                  </Button>
+                  <Button type='paginate' direction='right' />
                 </div>
               </div>
             )}
@@ -124,19 +106,7 @@ export const StaySection: React.FC<StaySectionProps> = ({
       <div className={[layout['relative']].join(' ')}>
         {showAll && (
           <div className={space['m-v--25']}>
-            <Button
-              extendsTo={[font['weight--500']].join(' ')}
-              onPress={() => console.log('clicked')}
-              to={showAll.to}>
-              <div className={[layout['items-center']].join(' ')}>
-                <div>
-                  <u>{showAll.description}</u>
-                </div>
-                <div>
-                  <ChevronRight width={14} stroke='black' strokeWidth={5} />
-                </div>
-              </div>
-            </Button>
+            <Button type='expand' to={showAll.to} title={showAll.description} />
           </div>
         )}
       </div>

@@ -1,380 +1,174 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Button } from '../../../components/atoms/button/button.component';
-import shape from '../../../styles/shape.module.scss';
-import color from '../../../styles/color.module.scss';
-import font from '../../../styles/font.module.scss';
-import layout from '../../../styles/layout.module.scss';
-import space from '../../../styles/space.module.scss';
-import animation from '../../../styles/animation.module.scss';
-import button from '../../../components/atoms/button/button.module.scss';
-import { Globe, ChevronDown, MagnifyGlass } from '../../../public/svg/regular';
 
-import { Avatar, Bars, Email } from '../../../public/svg/original';
-import { Apple, Facebook, Google } from '../../../public/svg/logo';
 import { ButtonProps } from './props';
+import { ContextProvider } from '../../../context/provider';
 
 export default {
   title: 'Design System/Atoms/Button',
   component: Button,
-  argTypes: { onPress: { action: 'clicked' } },
+  decorators: [
+    (Story) => (
+      <ContextProvider>
+        <Story />
+      </ContextProvider>
+    ),
+  ],
+  argTypes: {
+    inverse: {
+      control: 'boolean',
+    },
+    type: {
+      control: { disable: true },
+    },
+    platform: {
+      control: { disable: true },
+    },
+    icon: {
+      control: { disable: true },
+    },
+    to: {
+      control: { disable: true },
+    },
+    extendsTo: {
+      control: { disable: true },
+    },
+    tap: {
+      control: {
+        disable: true,
+      },
+    },
+  },
 } as Meta;
+
+const disableInverse = {
+  inverse: {
+    control: {
+      disable: true,
+    },
+  },
+};
+
+const disableTitle = {
+  title: {
+    control: {
+      disable: true,
+    },
+  },
+};
 
 const ButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const globe = ButtonTemplate.bind({});
 globe.args = {
-  extendsTo: [color['bg--transparent'], shape['br--30']].join(' '),
-  children: (
-    <div
-      className={[
-        layout['items-center'],
-        animation['hover-background--gray__1'],
-        color['bg--transparent'],
-        space['p-t--13'],
-        space['p-b--13'],
-        space['p-l--15'],
-        space['p-r--15'],
-      ].join(' ')}>
-      <div className={[layout['items-center'], space['m-r--8']].join(' ')}>
-        <Globe width={16} fill='white' />
-      </div>
-      <div className={layout['items-center']}>
-        <ChevronDown width={8} fill='white' />
-      </div>
-    </div>
-  ),
-};
-
-export const globeInverse = ButtonTemplate.bind({});
-globeInverse.args = {
-  extendsTo: [color['bg--transparent'], shape['br--30']].join(' '),
-  children: (
-    <div
-      className={[
-        layout['items-center'],
-        animation['hover-background--white__1'],
-        color['bg--transparent'],
-        space['p-t--13'],
-        space['p-b--13'],
-        space['p-l--15'],
-        space['p-r--15'],
-      ].join(' ')}>
-      <div className={[layout['items-center'], space['m-r--8']].join(' ')}>
-        <Globe width={16} fill='#363636' />
-      </div>
-      <div className={layout['items-center']}>
-        <ChevronDown width={8} fill='#363636' />
-      </div>
-    </div>
-  ),
+  type: 'globe',
 };
 
 export const host = ButtonTemplate.bind({});
 host.args = {
-  to: '/',
-  children: (
-    <a
-      className={[
-        shape['br--30'],
-        font['weight--300'],
-        font['size--14'],
-        color['c--white__0'],
-        layout['inline-block'],
-        space['p-t--13'],
-        space['p-b--13'],
-        space['p-l--13'],
-        space['p-r--13'],
-        animation['hover-background--white__2'],
-      ].join(' ')}>
-      Become a host
-    </a>
-  ),
-};
-
-export const hostInverse = ButtonTemplate.bind({});
-hostInverse.args = {
-  to: '/',
-  children: (
-    <a
-      className={[
-        shape['br--30'],
-        font['weight--500'],
-        font['size--14'],
-        color['c--gray__4'],
-        layout['inline-block'],
-        space['p-t--13'],
-        space['p-b--13'],
-        space['p-l--13'],
-        space['p-r--13'],
-        animation['hover-background--white__1'],
-      ].join(' ')}>
-      Become a host
-    </a>
-  ),
+  type: 'host',
 };
 
 export const menu = ButtonTemplate.bind({});
 menu.args = {
-  extendsTo: [
-    layout['items-center'],
-    space['p-t--6'],
-    space['p-b--6'],
-    space['p-r--8'],
-    space['p-l--10'],
-    color['bg--white__0'],
-    shape['br--30'],
-    animation['hover-shadow--lg'],
-  ].join(' '),
-  children: (
-    <>
-      <div className={space['m-r--8']}>
-        <Bars fill='black' width={12} />
-      </div>
-      <div>
-        <Avatar width={30} fill='gray' />
-      </div>
-    </>
-  ),
-};
-
-export const menuInverse = ButtonTemplate.bind({});
-menuInverse.args = {
-  extendsTo: [
-    layout['items-center'],
-    space['p-t--6'],
-    space['p-b--6'],
-    space['p-r--8'],
-    space['p-l--10'],
-    color['bg--white__0'],
-    shape['br--30'],
-    color['b--white__2'],
-    animation['hover-shadow--lg'],
-  ].join(' '),
-  children: (
-    <>
-      <div className={space['m-r--8']}>
-        <Bars fill='black' width={12} />
-      </div>
-      <div>
-        <Avatar width={30} fill='gray' />
-      </div>
-    </>
-  ),
+  type: 'menu',
 };
 
 export const privacy = ButtonTemplate.bind({});
 privacy.args = {
-  extendsTo: [
-    font['no-wrap'],
-    space['p-v--13'],
-    space['p-h--18'],
-    font['weight--500'],
-    color['c--white__0'],
-    color['bg--gray__4'],
-    color['b--transparent'],
-    shape['br--8'],
-    shape['w--full'],
-    shape['min-w--150'],
-    button['w--privacy'],
-    font['size--15'],
-  ].join(' '),
-  children: <p>OK</p>,
-  tap: { scale: 0.98 },
+  type: 'privacy',
 };
 
-export const privacyInverse = ButtonTemplate.bind({});
-privacyInverse.args = {
-  extendsTo: [
-    font['no-wrap'],
-    space['p-v--13'],
-    space['p-h--18'],
-    font['weight--500'],
-    color['bg--transparent'],
-    color['b--black'],
-    shape['br--8'],
-    button['w--privacy'],
-    font['size--15'],
-  ].join(' '),
-  children: <p>Cookie Preferences</p>,
-  tap: { scale: 0.98 },
-};
+privacy.decorators = [
+  (Story) => (
+    <div style={{ width: 300 }}>
+      <Story />
+    </div>
+  ),
+];
 
 export const border = ButtonTemplate.bind({});
 border.args = {
-  extendsTo: color['bg--transparent'],
-  children: (
-    <a
-      className={[
-        layout['block'],
-        font['size--14'],
-        font['weight--500'],
-        shape['br--6'],
-        space['p-t--6'],
-        space['p-b--6'],
-        space['p-l--14'],
-        space['p-r--14'],
-        color['b--black'],
-      ].join(' ')}>
-      Donate
-    </a>
-  ),
+  type: 'border',
 };
-
-export const borderInverse = ButtonTemplate.bind({});
-borderInverse.args = {
-  extendsTo: color['bg--transparent'],
-  children: (
-    <a
-      className={[
-        layout['block'],
-        font['size--14'],
-        font['weight--500'],
-        shape['br--6'],
-        space['p-t--6'],
-        space['p-b--6'],
-        space['p-l--14'],
-        space['p-r--14'],
-        color['b--white__0'],
-        color['c--white__0'],
-      ].join(' ')}>
-      Explore all
-    </a>
+border.decorators = [
+  (Story) => (
+    <div style={{ width: '100px' }}>
+      <Story />
+    </div>
   ),
-};
+];
 
 export const banner = ButtonTemplate.bind({});
 banner.args = {
-  extendsTo: color['bg--transparent'],
-  children: (
-    <a
-      className={[
-        layout['all-center'],
-        font['size--14'],
-        color['bg--white__0'],
-        shape['br--6'],
-        shape['w--140'],
-        shape['h--30'],
-        font['ls--1'],
-      ].join(' ')}>
-      Explore nearby
-    </a>
-  ),
+  type: 'banner',
 };
 
-export const primary = ButtonTemplate.bind({});
-primary.args = {
-  extendsTo: [
-    color['bg--primary'],
-    color['c--white__0'],
-    shape['w--full'],
-    layout['block'],
-    font['size--16'],
-    space['p-v--14'],
-    shape['br--8'],
-  ].join(' '),
+export const plain = ButtonTemplate.bind({});
+plain.args = {
+  type: 'plain',
 };
 
-export const searchbarSmall = ButtonTemplate.bind({});
-searchbarSmall.args = {
-  extendsTo: [
-    shape['br--25'],
-    color['bg--white__0'],
-    color['b--white__2'],
-    animation['hover-shadow--sm'],
-  ].join(' '),
-  children: (
-    <div
-      style={{ width: 240, height: 45 }}
-      className={[
-        space['p-v--15'],
-        space['p-l--18'],
-        space['p-r--8'],
-        layout['items-center'],
-        layout['justify-between'],
-      ].join(' ')}>
-      <div>
-        <p
-          className={[
-            font['no-wrap'],
-            font['size--14'],
-            font['weight--500'],
-          ].join(' ')}>
-          Start your search
-        </p>
-      </div>
-      <div>
-        <div
-          className={[color['bg--primary'], layout['all-center']].join(' ')}
-          style={{
-            borderRadius: '50%',
-            height: 30,
-            width: 30,
-          }}>
-          <MagnifyGlass width={12} height={12} stroke='white' strokeWidth={6} />
-        </div>
-      </div>
+plain.decorators = [
+  (Story) => (
+    <div style={{ width: 300 }}>
+      <Story />
     </div>
   ),
+];
+
+export const searchbar = ButtonTemplate.bind({});
+searchbar.args = {
+  type: 'searchbar',
 };
 
-export const searchbarMedium = ButtonTemplate.bind({});
-searchbarMedium.args = {
-  extendsTo: [
-    shape['w--full'],
-    shape['br--25'],
-    color['bg--white__0'],
-    color['b--white__2'],
-    animation['hover-shadow--sm'],
-    shape['shadow--sm'],
-  ].join(' '),
-  children: (
-    <div
-      className={[
-        space['p-v--12'],
-        space['p-l--18'],
-        space['p-r--8'],
-        layout['all-center'],
-      ].join(' ')}>
-      <div className={[space['m-r--12']].join(' ')}>
-        <MagnifyGlass width={15} stroke='black' strokeWidth={4} />
-      </div>
-      <div
-        className={[
-          font['weight--100'],
-          font['size--15'],
-          color['c--gray__0'],
-        ].join(' ')}>
-        Search stays
-      </div>
+export const login = ButtonTemplate.bind({});
+login.args = {
+  type: 'login',
+};
+
+login.decorators = [
+  (Story) => (
+    <div style={{ width: 300 }}>
+      <Story />
     </div>
   ),
+];
+
+export const paginate = ButtonTemplate.bind({});
+paginate.args = {
+  type: 'paginate',
 };
 
-export const emailLogin = ButtonTemplate.bind({});
-emailLogin.args = {
-  type: 'login',
-  platform: 'Email',
-  icon: <Email width={18} height={18} />,
+globe.argTypes = {
+  ...disableTitle,
 };
-
-export const facebookLogin = ButtonTemplate.bind({});
-facebookLogin.args = {
-  type: 'login',
-  platform: 'Facebook',
-  icon: <Facebook width={20} height={20} />,
+menu.argTypes = {
+  ...disableTitle,
 };
-
-export const googleLogin = ButtonTemplate.bind({});
-googleLogin.args = {
-  type: 'login',
-  platform: 'Google',
-  icon: <Google width={18} height={18} />,
+banner.argTypes = {
+  ...disableInverse,
 };
-
-export const appleLogin = ButtonTemplate.bind({});
-appleLogin.args = {
-  type: 'login',
-  platform: 'Apple',
-  icon: <Apple width={18} height={18} />,
+plain.argTypes = {
+  ...disableInverse,
+};
+searchbar.argTypes = {
+  ...disableInverse,
+};
+login.argTypes = {
+  ...disableInverse,
+};
+searchbar.argTypes = {
+  mini: {
+    control: 'boolean',
+  },
+};
+paginate.argTypes = {
+  direction: {
+    control: {
+      type: 'select',
+      options: ['left', 'right'],
+    },
+  },
 };
