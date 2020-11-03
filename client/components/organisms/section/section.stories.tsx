@@ -78,3 +78,8 @@ amenities.decorators = [
     </div>
   ),
 ];
+
+export const reviews = SectionTemplate.bind({});
+reviews.args = {
+  type: 'reviews',
+};

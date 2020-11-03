@@ -103,3 +103,8 @@ checkin.decorators = [
     </div>
   ),
 ];
+
+export const review = CardTemplate.bind({});
+review.args = {
+  type: 'review',
+};

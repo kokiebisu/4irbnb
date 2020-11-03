@@ -53,6 +53,12 @@ export interface AmenitySectionProps extends SectionBasicProps {
   amenities?: any;
 }
 
+export interface ReviewsSectionProps {
+  categories?: any;
+  total?: number;
+  reviews?: any;
+}
+
 export type SectionProps = (
   | StaySectionProps
   | PanelSectionProps

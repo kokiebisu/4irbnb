@@ -41,3 +41,15 @@ amenity.argTypes = {
     },
   },
 };
+
+export const review = BulletTemplate.bind({});
+review.args = {
+  type: 'score',
+};
+review.decorators = [
+  (Story) => (
+    <div style={{ width: 300 }}>
+      <Story />
+    </div>
+  ),
+];
