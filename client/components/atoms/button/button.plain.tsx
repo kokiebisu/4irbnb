@@ -1,0 +1,33 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+
+import color from '../../../styles/color.module.scss';
+import shape from '../../../styles/shape.module.scss';
+import layout from '../../../styles/layout.module.scss';
+import font from '../../../styles/font.module.scss';
+import space from '../../../styles/space.module.scss';
+import { PlainButtonProps } from './props';
+
+export const PlainButton: React.FC<PlainButtonProps> = ({
+  title = 'Button',
+  tap = { scale: 0.98 },
+  onPress = () => console.log('Plain Button Clicked'),
+}) => {
+  return (
+    <motion.button
+      whileTap={tap}
+      data-testid='button'
+      className={[
+        color['bg--primary'],
+        color['c--white__0'],
+        shape['w--full'],
+        layout['block'],
+        font['size--16'],
+        space['p-v--14'],
+        shape['br--8'],
+      ].join(' ')}
+      onClick={onPress}>
+      <p>{title}</p>
+    </motion.button>
+  );
+};

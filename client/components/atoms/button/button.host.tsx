@@ -19,7 +19,6 @@ export const HostButton: React.FC<HostButtonProps> = ({
         <a
           className={`${[
             shape['br--30'],
-
             font['size--14'],
             layout['inline-block'],
             space['p-t--13'],
