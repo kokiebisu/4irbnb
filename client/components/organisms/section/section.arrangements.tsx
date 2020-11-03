@@ -31,8 +31,8 @@ export const ArrangementsSection: React.FC<ArrangementsSectionProps> = ({
         </h3>
       </div>
       <div>
-        {arrangements.map((arrangement) => {
-          return <Card type='arrangements' card={arrangement} />;
+        {arrangements.map((arrangement, index) => {
+          return <Card key={index} type='arrangements' card={arrangement} />;
         })}
       </div>
     </div>
