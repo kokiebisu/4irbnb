@@ -14,8 +14,10 @@ import { SearchbarButtonProps } from './props';
 export const SearchbarButton: React.FC<SearchbarButtonProps> = ({
   mini = false,
   tap = { scale: 0.98 },
-  onPress = () => console.log('Searchbar Medium Button Pressed'),
 }) => {
+  const handlePress = () => {
+    console.log('searchbar button pressed');
+  };
   return (
     <>
       {mini ? (
@@ -28,7 +30,7 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({
             color['b--white__2'],
             animation['hover-shadow--sm'],
           ].join(' ')}
-          onClick={onPress}>
+          onClick={handlePress}>
           <div
             style={{ width: 240, height: 45 }}
             className={[
@@ -80,7 +82,7 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({
             animation['hover-shadow--sm'],
             shape['shadow--sm'],
           ].join(' ')}
-          onClick={onPress}>
+          onClick={handlePress}>
           <div
             className={[
               space['p-v--12'],

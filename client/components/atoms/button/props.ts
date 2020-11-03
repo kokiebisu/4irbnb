@@ -1,8 +1,3 @@
-interface BasicProps {
-  extendsTo?: string;
-  type: string;
-}
-
 interface TitleProps {
   title?: string;
 }
@@ -15,6 +10,9 @@ interface ClickableButtonProps {
   tap?: {
     scale: number;
   };
+}
+
+interface OnPressProps {
   onPress?: () => void;
 }
 
@@ -26,7 +24,7 @@ interface InverseProps {
   inverse?: boolean;
 }
 
-interface ButtonLoginProps {
+export interface ButtonLoginProps {
   platform?: string;
   icon?: any;
 }
@@ -49,7 +47,10 @@ export interface BorderButtonProps
 
 export interface BannerButtonProps extends LinkButtonProps, TitleProps {}
 
-export interface PlainButtonProps extends ClickableButtonProps, TitleProps {}
+export interface PlainButtonProps
+  extends ClickableButtonProps,
+    TitleProps,
+    OnPressProps {}
 
 export interface SearchbarButtonProps extends ClickableButtonProps, MiniProps {}
 
@@ -61,6 +62,6 @@ export interface ExpandButtonProps extends LinkButtonProps, TitleProps {}
 
 export type ButtonProps = {
   extendsTo?: string;
-  type: string;
+  type?: string;
   [x: string]: any;
 };
