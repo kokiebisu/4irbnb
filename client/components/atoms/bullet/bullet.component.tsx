@@ -17,5 +17,9 @@ export const Bullet: React.FC<BulletProps> = ({
     amenity: <AmenityBullet {...props} />,
   };
 
-  return <div className={extendsTo}>{types[type]}</div>;
+  return (
+    <div data-testid='bullet' className={extendsTo}>
+      {types[type]}
+    </div>
+  );
 };

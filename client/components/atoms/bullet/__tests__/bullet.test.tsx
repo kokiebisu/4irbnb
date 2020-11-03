@@ -9,6 +9,6 @@ describe('Base Button', () => {
     const { getByTestId } = render(
       <Bullet {...characteristic.args} onPress={() => console.log('clicked')} />
     );
-    expect(getByTestId('button')).toHaveTextContent('Become a host');
+    expect(getByTestId('bullet')).toBeInTheDocument();
   });
 });
