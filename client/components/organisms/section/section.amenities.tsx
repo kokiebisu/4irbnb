@@ -1,7 +1,6 @@
 import React from 'react';
 import { Bullet } from '../../atoms/bullet/bullet.component';
 
-import layout from '../../../styles/layout.module.scss';
 import font from '../../../styles/font.module.scss';
 import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
@@ -27,7 +26,11 @@ export const AmenitySection: React.FC<AmenitySectionProps> = ({
           {title}
         </h3>
       </div>
-      <div className={[section['display__amenities--wrapper']].join(' ')}>
+      <div
+        className={[
+          section['display__amenities--wrapper'],
+          space['m-b--32'],
+        ].join(' ')}>
         {amenities.map((amenity, index) => {
           return (
             <Bullet

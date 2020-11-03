@@ -54,7 +54,11 @@ const id: () => string | JSX.Element = () => {
               type='arrangements'
               title='Sleeping arrangements'
             />
-            {/* <Amenities /> */}
+            <Section
+              extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
+              type='amenities'
+              title='Amenities'
+            />
           </div>
           <div className={[details['w__details--right']].join(' ')}>
             <Card
