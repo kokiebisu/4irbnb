@@ -27,18 +27,18 @@ describe('Base Button', () => {
     const { getByTestId } = render(
       <Button {...privacy.args} onPress={() => console.log('clicked')} />
     );
-    expect(getByTestId('button')).toHaveTextContent('OK');
+    expect(getByTestId('button')).toHaveTextContent('Button');
   });
   it('renders correctly for border button', () => {
     const { getByTestId } = render(
       <Button {...border.args} onPress={() => console.log('clicked')} />
     );
-    expect(getByTestId('button')).toHaveTextContent('Donate');
+    expect(getByTestId('button')).toHaveTextContent('Button');
   });
   it('renders correctly for banner button', () => {
     const { getByTestId } = render(
       <Button {...banner.args} onPress={() => console.log('clicked')} />
     );
-    expect(getByTestId('button')).toHaveTextContent('Explore nearby');
+    expect(getByTestId('button')).toHaveTextContent('Button');
   });
 });
