@@ -117,7 +117,7 @@ const StaysPage = () => {
         </div>
         <div className={[space['p-v--38']].join(' ')}>
           <div className={[styles['container'], layout['relative']].join(' ')}>
-            {/* <div className={[space['m-v--16']].join(' ')}>
+            <div className={[space['m-v--16']].join(' ')}>
               <Section
                 type='stay'
                 carouselType='stayTypes'
@@ -134,13 +134,13 @@ const StaysPage = () => {
                   to: '/',
                   description: 'Show all nearby nature stays',
                 }}
-                fetchUrl='https://34.219.3.215/stays?type=unique'
+                // fetchUrl='https://34.219.3.215/stays?type=unique'
                 pagination
                 isDescription
                 save
               />
-            </div> */}
-            {/* <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
+            </div>
+            <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
               <Section
                 type='stay'
                 title='Imaginative stays close to home'
@@ -149,14 +149,14 @@ const StaysPage = () => {
                   to: '/',
                   description: 'Show all nearby imaginative stays',
                 }}
-                fetchUrl='https://34.219.3.215/stays?type=tiny_house'
+                // fetchUrl='https://34.219.3.215/stays?type=tiny_house'
                 pagination
                 isDescription
                 save
               />
-            </div> */}
+            </div>
             <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
-              {/* <Section
+              <Section
                 type='stay'
                 title='Novelty stays near you'
                 description='From trailers to trains, transport yourself into a one-of-a-kind getaway.'
@@ -165,14 +165,14 @@ const StaysPage = () => {
                   description: 'Show all nearby novelty stays',
                 }}
                 items={novelties}
-                fetchUrl='https://34.219.3.215/stays?type=camper_rv'
+                // fetchUrl='https://34.219.3.215/stays?type=camper_rv'
                 pagination
                 isDescription
                 save
-              /> */}
+              />
             </div>
             <div className={[space['m-t--8'], space['m-b--35']].join(' ')}>
-              {/* <div>
+              <div>
                 <Section
                   type='stay'
                   title='Unique stays around the world'
@@ -181,12 +181,12 @@ const StaysPage = () => {
                     to: '/',
                     description: 'Show all unique stays',
                   }}
-                  fetchUrl='https://34.219.3.215/stays'
-                  // items={uniqueStays}
+                  // fetchUrl='https://34.219.3.215/stays'
+                  items={uniqueStays}
                   isDescription
                   save
                 />
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
