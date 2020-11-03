@@ -3,7 +3,7 @@ export interface CharacteristicBulletProps {
 }
 
 export interface AmenityBulletProps {
-  type?: string;
+  amenityType?: string;
   title?: string;
   removed?: boolean;
 }

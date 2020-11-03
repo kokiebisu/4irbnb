@@ -41,8 +41,8 @@ export const ArrangementsSection: React.FC<ArrangementsSectionProps> = ({
           className={[layout['flex']].join(' ')}>
           {arrangements.map((arrangement, index) => {
             return (
-              <div style={{ marginRight: 12 }}>
-                <Card key={index} type='arrangements' card={arrangement} />
+              <div key={index} style={{ marginRight: 12 }}>
+                <Card type='arrangements' card={arrangement} />
               </div>
             );
           })}
