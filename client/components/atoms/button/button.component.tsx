@@ -20,10 +20,11 @@ interface mapProps {
 
 export const Button: React.FC<ButtonProps> = ({
   onPress,
-  to,
+  to = '/',
   extendsTo,
-  tap,
+  tap = { scale: 0.98 },
   type,
+  children,
   ...props
 }) => {
   const types: mapProps = {
@@ -40,5 +41,25 @@ export const Button: React.FC<ButtonProps> = ({
     expand: <ExpandButton {...props} />,
   };
 
-  return types[type];
+  if (type) {
+    return types[type];
+  }
+
+  if (to) {
+    return (
+      <div className={extendsTo} data-testid='button'>
+        <Link href={to}>{children}</Link>
+      </div>
+    );
+  }
+
+  return (
+    <motion.button
+      whileTap={tap}
+      data-testid='button'
+      className={extendsTo}
+      onClick={onPress}>
+      {children}
+    </motion.button>
+  );
 };

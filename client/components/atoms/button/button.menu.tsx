@@ -8,12 +8,16 @@ import shape from '../../../styles/shape.module.scss';
 import animation from '../../../styles/animation.module.scss';
 import { Avatar, Bars } from '../../../public/svg/original';
 import { MenuButtonProps } from './props';
+import { useToggleDispatch } from '../../../context/toggle';
 
 export const MenuButton: React.FC<MenuButtonProps> = ({
   tap,
-  onPress,
   inverse = false,
 }) => {
+  let toggleDispatch = useToggleDispatch();
+  const triggerModal = () => {
+    toggleDispatch({ type: 'toggle_menu' });
+  };
   return (
     <motion.button
       whileTap={tap}
@@ -32,7 +36,7 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
           ? [color['b--transparent']].join(' ')
           : [color['b--white__2']].join(' ')
       }`}
-      onClick={onPress}>
+      onClick={triggerModal}>
       <div className={space['m-r--8']}>
         <Bars fill='black' width={12} />
       </div>

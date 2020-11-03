@@ -30,7 +30,7 @@ export const HostButton: React.FC<HostButtonProps> = ({
               ? [
                   font['weight--300'],
                   color['c--white__0'],
-                  animation['hover-background--white__2'],
+                  animation['hover-background--gray__1'],
                 ].join(' ')
               : [
                   font['weight--500'],

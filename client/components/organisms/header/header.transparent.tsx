@@ -5,32 +5,22 @@ import layout from '../../../styles/layout.module.scss';
 import color from '../../../styles/color.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
-import {
-  globe as globeButton,
-  host as hostButton,
-  menu as menuButton,
-} from '../../atoms/button/button.stories';
+
 import { menu as menuModal } from '../../organisms/modal/modal.stories';
 import { Modal } from '../modal/modal.component';
-import { useToggleDispatch, useToggleState } from '../../../context/toggle';
+import { useToggleState } from '../../../context/toggle';
 import { Button } from '../../../components/atoms/button/button.component';
 import { NameLogo, NoNameLogo } from '../../../public/svg/logo';
 import { MagnifyGlass } from '../../../public/svg/original';
 
 export const TransparentHeader: React.FC<{}> = () => {
   let toggleState = useToggleState();
-  let toggleDispatch = useToggleDispatch();
-
-  const openMenuModal = () => {
-    toggleDispatch({ type: 'toggle_menu' });
-  };
 
   return (
     <header className={[space['p-h--0'], space['p-v--11']].join(' ')}>
       <div
         className={[
           shape['none--sm'],
-
           layout['items-center'],
           layout['justify-between'],
           layout['relative'],
@@ -45,7 +35,7 @@ export const TransparentHeader: React.FC<{}> = () => {
         </div>
         <div className={[layout['items-center']].join(' ')}>
           <div className={styles['searchbar__host']}>
-            <Button {...hostButton.args} to='/' />
+            <Button type='host' inverse to='/' />
           </div>
           <div
             className={[
@@ -55,12 +45,13 @@ export const TransparentHeader: React.FC<{}> = () => {
               space['m-l--8'],
             ].join(' ')}>
             <Button
-              {...globeButton.args}
+              type='globe'
+              inverse
               onPress={() => console.log('clicked')}
             />
           </div>
           <div>
-            <Button {...menuButton.args} onPress={openMenuModal} />
+            <Button type='menu' inverse />
           </div>
         </div>
         <Modal

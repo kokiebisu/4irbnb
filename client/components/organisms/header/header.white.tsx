@@ -15,11 +15,6 @@ import { HeaderWhiteProps } from './props';
 
 export const WhiteHeader: React.FC<HeaderWhiteProps> = ({ spread = false }) => {
   let toggleState = useToggleState();
-  let toggleDispatch = useToggleDispatch();
-
-  const openMenuModal = () => {
-    toggleDispatch({ type: 'toggle_menu' });
-  };
   return (
     <header
       className={
@@ -49,15 +44,11 @@ export const WhiteHeader: React.FC<HeaderWhiteProps> = ({ spread = false }) => {
             </div>
           </div>
           <div>
-            <Button
-              type='searchbar'
-              mini
-              onPress={() => console.log('clicked searchbar small')}
-            />
+            <Button type='searchbar' mini />
           </div>
           <div className={[layout['items-center']].join(' ')}>
             <div className={styles['searchbar__host']}>
-              <Button type='host' inverse to='/' />
+              <Button type='host' to='/' />
             </div>
             <div
               className={[
@@ -66,14 +57,10 @@ export const WhiteHeader: React.FC<HeaderWhiteProps> = ({ spread = false }) => {
                 space['m-b--0'],
                 space['m-l--8'],
               ].join(' ')}>
-              <Button
-                type='globe'
-                inverse
-                onPress={() => console.log('clicked')}
-              />
+              <Button type='globe' onPress={() => console.log('clicked')} />
             </div>
             <div>
-              <Button type='menu' inverse onPress={openMenuModal} />
+              <Button type='menu' />
             </div>
           </div>
           <Modal

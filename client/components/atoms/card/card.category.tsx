@@ -10,7 +10,8 @@ import { CategoryCardProps } from './props';
 
 export const CategoryCard: React.FC<CategoryCardProps> = ({
   card = {
-    imgUrl: 'img/card2.jpg',
+    imgUrl:
+      'https://a0.muscache.com/im/pictures/8e3d5167-55ca-4fbd-832d-e3b66dad54ec.jpg?im_w=1200',
     title: 'Title should be here',
     description: 'Description should be here',
   },

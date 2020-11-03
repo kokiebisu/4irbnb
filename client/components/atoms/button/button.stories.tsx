@@ -1,23 +1,20 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Button } from '../../../components/atoms/button/button.component';
-import shape from '../../../styles/shape.module.scss';
-import color from '../../../styles/color.module.scss';
-import font from '../../../styles/font.module.scss';
-import layout from '../../../styles/layout.module.scss';
-import space from '../../../styles/space.module.scss';
-import animation from '../../../styles/animation.module.scss';
-import button from '../../../components/atoms/button/button.module.scss';
-import { Globe, ChevronDown, MagnifyGlass } from '../../../public/svg/regular';
 
-import { Avatar, Bars, Email } from '../../../public/svg/original';
-import { Apple, Facebook, Google } from '../../../public/svg/logo';
 import { ButtonProps } from './props';
-import { Login } from 'storybook-static/svg/regular';
+import { ContextProvider } from '../../../context/provider';
 
 export default {
   title: 'Design System/Atoms/Button',
   component: Button,
+  decorators: [
+    (Story) => (
+      <ContextProvider>
+        <Story />
+      </ContextProvider>
+    ),
+  ],
   argTypes: {
     inverse: {
       control: 'boolean',
@@ -37,7 +34,6 @@ export default {
     extendsTo: {
       control: { disable: true },
     },
-
     tap: {
       control: {
         disable: true,
@@ -68,9 +64,6 @@ export const globe = ButtonTemplate.bind({});
 globe.args = {
   type: 'globe',
 };
-globe.argTypes = {
-  ...disableTitle,
-};
 
 export const host = ButtonTemplate.bind({});
 host.args = {
@@ -80,9 +73,6 @@ host.args = {
 export const menu = ButtonTemplate.bind({});
 menu.args = {
   type: 'menu',
-};
-menu.argTypes = {
-  ...disableTitle,
 };
 
 export const privacy = ButtonTemplate.bind({});
@@ -114,17 +104,12 @@ export const banner = ButtonTemplate.bind({});
 banner.args = {
   type: 'banner',
 };
-banner.argTypes = {
-  ...disableInverse,
-};
 
 export const plain = ButtonTemplate.bind({});
 plain.args = {
   type: 'plain',
 };
-plain.argTypes = {
-  ...disableInverse,
-};
+
 plain.decorators = [
   (Story) => (
     <div style={{ width: 300 }}>
@@ -133,32 +118,16 @@ plain.decorators = [
   ),
 ];
 
-export const searchbarMini = ButtonTemplate.bind({});
-searchbarMini.args = {
+export const searchbar = ButtonTemplate.bind({});
+searchbar.args = {
   type: 'searchbar',
-  mini: true,
-};
-searchbarMini.argTypes = {
-  ...disableInverse,
-};
-
-export const searchbarMedium = ButtonTemplate.bind({});
-searchbarMedium.args = {
-  type: 'searchbar',
-};
-searchbarMedium.argTypes = {
-  ...disableInverse,
 };
 
 export const login = ButtonTemplate.bind({});
 login.args = {
   type: 'login',
-  platform: 'Email',
-  icon: <Email width={18} height={18} />,
 };
-login.argTypes = {
-  ...disableInverse,
-};
+
 login.decorators = [
   (Story) => (
     <div style={{ width: 300 }}>
@@ -172,6 +141,29 @@ paginate.args = {
   type: 'paginate',
 };
 
+globe.argTypes = {
+  ...disableTitle,
+};
+menu.argTypes = {
+  ...disableTitle,
+};
+banner.argTypes = {
+  ...disableInverse,
+};
+plain.argTypes = {
+  ...disableInverse,
+};
+searchbar.argTypes = {
+  ...disableInverse,
+};
+login.argTypes = {
+  ...disableInverse,
+};
+searchbar.argTypes = {
+  mini: {
+    control: 'boolean',
+  },
+};
 paginate.argTypes = {
   direction: {
     control: {
