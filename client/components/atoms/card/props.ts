@@ -2,15 +2,15 @@
  * Basic Props
  */
 
-export type CardBasicProps = {};
+export interface CardBasicProps {}
 
 /**
  * Card Categories
  */
 
-export type ArrangementsCardProps = {
+export interface ArrangementsCardProps {
   card?: { type: string; beds: { type: string; count: number }[] };
-};
+}
 
 export type HorizontalCardProps = {
   card?: any;
@@ -18,28 +18,31 @@ export type HorizontalCardProps = {
   superhost?: boolean;
 };
 
-export type VerticalCardProps = {
+export interface VerticalCardProps {
   card?: any;
   save?: boolean;
   superhost?: boolean;
-};
-export type TypeStayCardProps = {
+}
+export interface TypeStayCardProps {
   card?: any;
-};
+}
 
-export type CategoryCardProps = {
+export interface CategoryCardProps {
   card?: any;
-};
+}
 
-export type CheckInCardProps = {
+export interface CheckInCardProps {
   length?: number;
-};
+}
 
-export type CardProps = (
-  | CategoryCardProps
-  | HorizontalCardProps
-  | VerticalCardProps
-  | TypeStayCardProps
-  | ArrangementsCardProps
-  | CheckInCardProps
-) & { extendsTo?: string; type?: string; to?: string };
+export interface ReviewCardProps {
+  imgUrl?: string;
+  description?: string;
+}
+
+export interface CardProps {
+  extendsTo?: string;
+  type?: string;
+  to?: string;
+  [x: string]: string;
+}

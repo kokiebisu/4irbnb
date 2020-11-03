@@ -112,4 +112,30 @@
       }
     }
   }
+
+  &__reviews {
+    &--wrapper {
+      display: block;
+
+      @media screen and (min-width: 728px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+
+.m {
+  &__review {
+    &--bullet {
+      @media screen and (min-width: 728px) {
+        margin-right: 48px;
+      }
+    }
+    &--card {
+      @media screen and (min-width: 728px) {
+        margin-right: 48px;
+      }
+    }
+  }
 }
