@@ -66,3 +66,15 @@ export const arrangements = SectionTemplate.bind({});
 arrangements.args = {
   type: 'arrangements',
 };
+
+export const amenities = SectionTemplate.bind({});
+amenities.args = {
+  type: 'amenities',
+};
+amenities.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 600 }}>
+      <Story />
+    </div>
+  ),
+];

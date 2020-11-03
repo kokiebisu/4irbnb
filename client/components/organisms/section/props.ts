@@ -49,6 +49,10 @@ export type ArrangementsSectionProps = SectionBasicProps & {
   arrangements?: { type: string; beds: { type: string; count: number }[] }[];
 };
 
+export interface AmenitySectionProps extends SectionBasicProps {
+  amenities?: any;
+}
+
 export type SectionProps = (
   | StaySectionProps
   | PanelSectionProps

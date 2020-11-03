@@ -6,6 +6,17 @@ import { Bullet } from './bullet.component';
 export default {
   title: 'Design System/Atoms/Bullet',
   component: Bullet,
+  argTypes: {
+    type: {
+      control: { disable: true },
+    },
+    characteristicType: {
+      control: { disable: true },
+    },
+    extendsTo: {
+      control: { disable: true },
+    },
+  },
 } as Meta;
 
 const BulletTemplate: Story<BulletProps> = (args) => <Bullet {...args} />;
@@ -22,5 +33,11 @@ amenity.args = {
 amenity.argTypes = {
   removed: {
     control: 'boolean',
+  },
+  amenityType: {
+    control: {
+      type: 'select',
+      options: ['smoke', 'tv', 'kitchen', 'heating', 'entrance', 'carbon'],
+    },
   },
 };

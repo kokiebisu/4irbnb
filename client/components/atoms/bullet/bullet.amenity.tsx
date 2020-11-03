@@ -14,17 +14,22 @@ import {
 import { AmenityBulletProps } from './props';
 
 export const AmenityBullet: React.FC<AmenityBulletProps> = ({
-  type = 'kitchen',
-  title = 'Bullet point here',
+  amenityType = 'kitchen',
   removed = false,
 }) => {
   const amenityTypes = {
-    smoke: <SmokeAlarm width={18} />,
-    tv: <TV width={18} />,
-    kitchen: <Kitchen width={24} />,
-    heating: <Heating width={18} />,
-    entrance: <PrivateEntrance width={18} />,
-    carbon: <CarbonMonoxideAlarm width={18} />,
+    smoke: { icon: <SmokeAlarm width={24} />, description: 'Smoke alarm' },
+    tv: { icon: <TV width={24} />, description: 'TV' },
+    kitchen: { icon: <Kitchen width={24} />, description: 'Kitchen' },
+    heating: { icon: <Heating width={24} />, description: 'Heating' },
+    entrance: {
+      icon: <PrivateEntrance width={24} />,
+      description: 'Private entrance',
+    },
+    carbon: {
+      icon: <CarbonMonoxideAlarm width={24} />,
+      description: 'Carbon monoxide alarm',
+    },
   };
   return (
     <div
@@ -34,14 +39,14 @@ export const AmenityBullet: React.FC<AmenityBulletProps> = ({
         space['p--4'],
         shape['w--50p'],
       ].join(' ')}>
-      {amenityTypes[type]}
+      {amenityTypes[amenityType].icon}
       {removed ? (
         <s className={[space['m-l--16'], font['weight--100']].join(' ')}>
-          {title}
+          {amenityTypes[amenityType].description}
         </s>
       ) : (
         <p className={[space['m-l--16'], font['weight--100']].join(' ')}>
-          {title}
+          {amenityTypes[amenityType].description}
         </p>
       )}
     </div>
