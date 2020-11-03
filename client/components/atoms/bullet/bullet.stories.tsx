@@ -10,7 +10,17 @@ export default {
 
 const BulletTemplate: Story<BulletProps> = (args) => <Bullet {...args} />;
 
-const characteristic = BulletTemplate.bind({});
+export const characteristic = BulletTemplate.bind({});
 characteristic.args = {
   type: 'characteristic',
+};
+
+export const amenity = BulletTemplate.bind({});
+amenity.args = {
+  type: 'amenity',
+};
+amenity.argTypes = {
+  removed: {
+    control: 'boolean',
+  },
 };
