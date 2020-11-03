@@ -44,7 +44,9 @@ export interface PrivacyButtonProps
 export interface BorderButtonProps
   extends LinkButtonProps,
     InverseProps,
-    TitleProps {}
+    TitleProps {
+  size?: 'sm' | 'md' | 'lg';
+}
 
 export interface BannerButtonProps extends LinkButtonProps, TitleProps {}
 

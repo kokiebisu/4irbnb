@@ -1,5 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Design System/Atoms/Bullet Amenity 1`] = `
+<div
+  data-testid="bullet"
+>
+  <div
+    className="flex items-center p--4 w--50p"
+  >
+    <svg
+      viewBox="0 0 32 32"
+      width={24}
+    >
+      <path
+        d="M26 1a5 5 0 0 1 5 5c0 6.389-1.592 13.187-4 14.693V31h-2V20.694c-2.364-1.478-3.942-8.062-3.998-14.349L21 6l.005-.217A5 5 0 0 1 26 1zm-9 0v18.118c2.317.557 4 3.01 4 5.882 0 3.27-2.183 6-5 6s-5-2.73-5-6c0-2.872 1.683-5.326 4-5.882V1zM2 1h1c4.47 0 6.934 6.365 6.999 18.505L10 21H3.999L4 31H2zm14 20c-1.602 0-3 1.748-3 4s1.398 4 3 4 3-1.748 3-4-1.398-4-3-4zM4 3.239V19h3.995l-.017-.964-.027-.949C7.673 9.157 6.235 4.623 4.224 3.364l-.12-.07zm19.005 2.585L23 6l.002.31c.045 4.321 1.031 9.133 1.999 11.39V3.17a3.002 3.002 0 0 0-1.996 2.654zm3.996-2.653v14.526C27.99 15.387 29 10.4 29 6a3.001 3.001 0 0 0-2-2.829z"
+      />
+    </svg>
+    <p
+      className="m-l--16 weight--100"
+    >
+      Kitchen
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Design System/Atoms/Bullet Characteristic 1`] = `
+<div
+  data-testid="bullet"
+>
+  <div
+    className="flex m-v--8"
+  >
+    <div
+      className="m-r--14"
+    >
+      <svg
+        viewBox="0 0 32 32"
+        width={24}
+      >
+        <path
+          d="M17.954 2.781l.175.164 13.072 12.842-1.402 1.426-1.8-1.768L28 29a2 2 0 0 1-1.85 1.994L26 31H6a2 2 0 0 1-1.995-1.85L4 29V15.446l-1.8 1.767-1.4-1.426L13.856 2.958a3 3 0 0 1 4.097-.177zm-2.586 1.503l-.096.088L6 13.48 6 29l5-.001V19a2 2 0 0 1 1.85-1.995L13 17h6a2 2 0 0 1 1.995 1.85L21 19v9.999h5V13.48l-9.3-9.135a1.001 1.001 0 0 0-1.332-.06zM19 19h-6v9.999h6z"
+        />
+      </svg>
+    </div>
+    <div>
+      <h3
+        className="m-b--4 c--gray__3 size--16 weight--500"
+        style={
+          Object {
+            "letterSpacing": 0.3,
+          }
+        }
+      >
+        Entire home
+      </h3>
+      <p
+        className="c--gray__1 weight--100 size--14"
+      >
+        You’ll have the farm stay to yourself.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Design System/Atoms/Button Banner 1`] = `
 <div
   className="bg--transparent"
@@ -18,25 +82,17 @@ exports[`Storyshots Design System/Atoms/Button Banner 1`] = `
 
 exports[`Storyshots Design System/Atoms/Button Border 1`] = `
 <div
-  style={
-    Object {
-      "width": "100px",
-    }
-  }
+  className="bg--transparent"
+  data-testid="button"
 >
-  <div
-    className="bg--transparent"
-    data-testid="button"
+  <a
+    className="inline-block text--center block size--16 weight--500 br--6 p-t--12 p-b--12 p-l--22 p-r--22 b--black"
+    href="/"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
   >
-    <a
-      className="text--center block size--14 weight--500 br--6 p-t--6 p-b--6 p-l--14 p-r--14 b--black"
-      href="/"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      Button
-    </a>
-  </div>
+    Button
+  </a>
 </div>
 `;
 
@@ -437,6 +493,11 @@ exports[`Storyshots Design System/Atoms/Card Checkin 1`] = `
           </h3>
           <div
             className="p-v--10 c--gray__2 size--21 weight--500"
+            style={
+              Object {
+                "width": 100,
+              }
+            }
           >
             <div
               className="inline-block m-r--4"
@@ -464,12 +525,12 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
               </svg>
             </div>
             <span
-              className="size--14 m-r--4"
+              className="inline-block size--14 m-r--4"
             >
               4.93
             </span>
             <span
-              className="size--14 weight-100 c--white__3"
+              className="inline-block size--14 weight-100 c--white__3"
             >
               (248)
             </span>
@@ -2903,6 +2964,289 @@ exports[`Storyshots Design System/Organisms/Modal Register 1`] = `
               Log in
             </u>
           </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Design System/Organisms/Section Amenities 1`] = `
+<div
+  style={
+    Object {
+      "maxWidth": 600,
+    }
+  }
+>
+  <div>
+    <div>
+      <div>
+        <h3
+          className="weight--500 m-b--20 c--gray__3 size--24"
+        >
+          Title here
+        </h3>
+      </div>
+      <div
+        className="display__amenities--wrapper m-b--32"
+      >
+        <div
+          data-testid="bullet"
+        >
+          <div
+            className="flex items-center p--4 w--50p"
+          >
+            <svg
+              viewBox="0 0 32 32"
+              width={24}
+            >
+              <path
+                d="M26 1a5 5 0 0 1 5 5c0 6.389-1.592 13.187-4 14.693V31h-2V20.694c-2.364-1.478-3.942-8.062-3.998-14.349L21 6l.005-.217A5 5 0 0 1 26 1zm-9 0v18.118c2.317.557 4 3.01 4 5.882 0 3.27-2.183 6-5 6s-5-2.73-5-6c0-2.872 1.683-5.326 4-5.882V1zM2 1h1c4.47 0 6.934 6.365 6.999 18.505L10 21H3.999L4 31H2zm14 20c-1.602 0-3 1.748-3 4s1.398 4 3 4 3-1.748 3-4-1.398-4-3-4zM4 3.239V19h3.995l-.017-.964-.027-.949C7.673 9.157 6.235 4.623 4.224 3.364l-.12-.07zm19.005 2.585L23 6l.002.31c.045 4.321 1.031 9.133 1.999 11.39V3.17a3.002 3.002 0 0 0-1.996 2.654zm3.996-2.653v14.526C27.99 15.387 29 10.4 29 6a3.001 3.001 0 0 0-2-2.829z"
+              />
+            </svg>
+            <p
+              className="m-l--16 weight--100"
+            >
+              Kitchen
+            </p>
+          </div>
+        </div>
+        <div
+          data-testid="bullet"
+        >
+          <div
+            className="flex items-center p--4 w--50p"
+          >
+            <svg
+              viewBox="0 0 32 32"
+              width={24}
+            >
+              <path
+                d="M16 1c8.284 0 15 6.716 15 15 0 8.284-6.716 15-15 15-8.284 0-15-6.716-15-15C1 7.716 7.716 1 16 1zm0 2C8.82 3 3 8.82 3 16s5.82 13 13 13 13-5.82 13-13S23.18 3 16 3zm-4.9 14a5.006 5.006 0 0 0 3.9 3.9v2.03A7.005 7.005 0 0 1 9.071 17zm9.8 0l2.029.001a7.005 7.005 0 0 1-5.928 5.928v-2.03A5.006 5.006 0 0 0 20.9 17zM16 13a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm1.001-5.929A7.005 7.005 0 0 1 22.929 15H20.9A5.006 5.006 0 0 0 17 11.1zm-2.001 0v2.03A5.006 5.006 0 0 0 11.1 15H9.07A7.005 7.005 0 0 1 15 9.07zM23 8a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+              />
+            </svg>
+            <p
+              className="m-l--16 weight--100"
+            >
+              Smoke alarm
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        className="m-t--14 m-b--14"
+        style={
+          Object {
+            "width": 300,
+          }
+        }
+      >
+        <div
+          className="bg--transparent"
+          data-testid="button"
+        >
+          <a
+            className="inline-block text--center block size--16 weight--500 br--6 p-t--12 p-b--12 p-l--22 p-r--22 b--black"
+            href="/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Show all 40 amenities
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Design System/Organisms/Section Arrangements 1`] = `
+<div>
+  <div>
+    <div>
+      <h3
+        className="weight--500 m-b--20 c--gray__3 size--24"
+      >
+        Title here
+      </h3>
+    </div>
+    <div
+      style={
+        Object {
+          "marginLeft": -8,
+          "marginRight": -8,
+        }
+      }
+    >
+      <div
+        className="flex"
+        style={
+          Object {
+            "marginLeft": 8,
+            "marginRight": 8,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "marginRight": 12,
+            }
+          }
+        >
+          <div
+            data-testid="card"
+          >
+            <div
+              className="w--48 p-v--25 b--white__2 br--15"
+              style={
+                Object {
+                  "width": 200,
+                }
+              }
+            >
+              <div
+                className="p-l--14"
+              >
+                <div
+                  className="p-t--4 p-b--8"
+                >
+                  <svg
+                    viewBox="0 0 480 480"
+                    width={24}
+                  >
+                    <g>
+                      <g>
+                        <path
+                          d="M472,272h-8v-24c-0.021-15.886-9.44-30.254-24-36.608V88c-0.002-3.18-1.886-6.056-4.8-7.328
+c3.121-5.002,4.783-10.776,4.8-16.672c0-17.673-14.327-32-32-32c-17.673,0-32,14.327-32,32c0.033,5.634,1.569,11.157,4.448,16
+H99.552c2.879-4.843,4.415-10.366,4.448-16c0-17.673-14.327-32-32-32S40,46.327,40,64c0.017,5.896,1.679,11.67,4.8,16.672
+C41.886,81.944,40.002,84.82,40,88v123.392C25.44,217.746,16.021,232.114,16,248v24H8c-4.418,0-8,3.582-8,8v112
+c0,4.418,3.582,8,8,8h8v40c0,4.418,3.582,8,8,8h32c4.418,0,8-3.582,8-8v-40h352v40c0,4.418,3.582,8,8,8h32c4.418,0,8-3.582,8-8
+v-40h8c4.418,0,8-3.582,8-8V280C480,275.582,476.418,272,472,272z M408,48c8.837,0,16,7.163,16,16s-7.163,16-16,16
+s-16-7.163-16-16S399.163,48,408,48z M72,48c8.837,0,16,7.163,16,16s-7.163,16-16,16s-16-7.163-16-16S63.163,48,72,48z M56,96h368
+v112h-32.208c5.294-6.883,8.179-15.316,8.208-24v-16c-0.026-22.08-17.92-39.974-40-40h-64c-22.08,0.026-39.974,17.92-40,40v16
+c0.029,8.684,2.914,17.117,8.208,24h-48.416c5.294-6.883,8.179-15.316,8.208-24v-16c-0.026-22.08-17.92-39.974-40-40h-64
+c-22.08,0.026-39.974,17.92-40,40v16c0.029,8.684,2.914,17.117,8.208,24H56V96z M384,168v16c0,13.255-10.745,24-24,24h-64
+c-13.255,0-24-10.745-24-24v-16c0-13.255,10.745-24,24-24h64C373.255,144,384,154.745,384,168z M208,168v16
+c0,13.255-10.745,24-24,24h-64c-13.255,0-24-10.745-24-24v-16c0-13.255,10.745-24,24-24h64C197.255,144,208,154.745,208,168z M32,248c0-13.255,10.745-24,24-24h368c13.255,0,24,10.745,24,24v24H32V248z M48,432H32v-32h16V432z M448,432h-16v-32h16V432z M464,384H16v-96h448V384z"
+                        />
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <path
+                          d="M72,352H40c-4.418,0-8,3.582-8,8s3.582,8,8,8h32c4.418,0,8-3.582,8-8S76.418,352,72,352z"
+                        />
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <path
+                          d="M440,352H104c-4.418,0-8,3.582-8,8s3.582,8,8,8h336c4.418,0,8-3.582,8-8S444.418,352,440,352z"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+                <p
+                  className="p-t--4 c--gray__2"
+                >
+                  Bedroom
+                </p>
+                <div>
+                  <p
+                    className="c--gray__2"
+                  >
+                    1
+                     
+                    double bed
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "marginRight": 12,
+            }
+          }
+        >
+          <div
+            data-testid="card"
+          >
+            <div
+              className="w--48 p-v--25 b--white__2 br--15"
+              style={
+                Object {
+                  "width": 200,
+                }
+              }
+            >
+              <div
+                className="p-l--14"
+              >
+                <div
+                  className="p-t--4 p-b--8"
+                >
+                  <svg
+                    viewBox="0 0 480 480"
+                    width={24}
+                  >
+                    <g>
+                      <g>
+                        <path
+                          d="M472,272h-8v-24c-0.021-15.886-9.44-30.254-24-36.608V88c-0.002-3.18-1.886-6.056-4.8-7.328
+c3.121-5.002,4.783-10.776,4.8-16.672c0-17.673-14.327-32-32-32c-17.673,0-32,14.327-32,32c0.033,5.634,1.569,11.157,4.448,16
+H99.552c2.879-4.843,4.415-10.366,4.448-16c0-17.673-14.327-32-32-32S40,46.327,40,64c0.017,5.896,1.679,11.67,4.8,16.672
+C41.886,81.944,40.002,84.82,40,88v123.392C25.44,217.746,16.021,232.114,16,248v24H8c-4.418,0-8,3.582-8,8v112
+c0,4.418,3.582,8,8,8h8v40c0,4.418,3.582,8,8,8h32c4.418,0,8-3.582,8-8v-40h352v40c0,4.418,3.582,8,8,8h32c4.418,0,8-3.582,8-8
+v-40h8c4.418,0,8-3.582,8-8V280C480,275.582,476.418,272,472,272z M408,48c8.837,0,16,7.163,16,16s-7.163,16-16,16
+s-16-7.163-16-16S399.163,48,408,48z M72,48c8.837,0,16,7.163,16,16s-7.163,16-16,16s-16-7.163-16-16S63.163,48,72,48z M56,96h368
+v112h-32.208c5.294-6.883,8.179-15.316,8.208-24v-16c-0.026-22.08-17.92-39.974-40-40h-64c-22.08,0.026-39.974,17.92-40,40v16
+c0.029,8.684,2.914,17.117,8.208,24h-48.416c5.294-6.883,8.179-15.316,8.208-24v-16c-0.026-22.08-17.92-39.974-40-40h-64
+c-22.08,0.026-39.974,17.92-40,40v16c0.029,8.684,2.914,17.117,8.208,24H56V96z M384,168v16c0,13.255-10.745,24-24,24h-64
+c-13.255,0-24-10.745-24-24v-16c0-13.255,10.745-24,24-24h64C373.255,144,384,154.745,384,168z M208,168v16
+c0,13.255-10.745,24-24,24h-64c-13.255,0-24-10.745-24-24v-16c0-13.255,10.745-24,24-24h64C197.255,144,208,154.745,208,168z M32,248c0-13.255,10.745-24,24-24h368c13.255,0,24,10.745,24,24v24H32V248z M48,432H32v-32h16V432z M448,432h-16v-32h16V432z M464,384H16v-96h448V384z"
+                        />
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <path
+                          d="M72,352H40c-4.418,0-8,3.582-8,8s3.582,8,8,8h32c4.418,0,8-3.582,8-8S76.418,352,72,352z"
+                        />
+                      </g>
+                    </g>
+                    <g>
+                      <g>
+                        <path
+                          d="M440,352H104c-4.418,0-8,3.582-8,8s3.582,8,8,8h336c4.418,0,8-3.582,8-8S444.418,352,440,352z"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+                <p
+                  className="p-t--4 c--gray__2"
+                >
+                  Bedroom
+                </p>
+                <div>
+                  <p
+                    className="c--gray__2"
+                  >
+                    1
+                     
+                    double bed
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
