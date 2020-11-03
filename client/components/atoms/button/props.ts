@@ -38,7 +38,8 @@ export interface MenuButtonProps extends InverseProps, ClickableButtonProps {}
 export interface PrivacyButtonProps
   extends InverseProps,
     ClickableButtonProps,
-    TitleProps {}
+    TitleProps,
+    OnPressProps {}
 
 export interface BorderButtonProps
   extends LinkButtonProps,

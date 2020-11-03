@@ -3,6 +3,7 @@ import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { Button } from '../button.component';
 import { privacy, menu, host, globe, border, banner } from '../button.stories';
+import { ContextProvider } from '../../../../context/provider';
 
 describe('Base Button', () => {
   it('renders correctly for host button', () => {
@@ -13,13 +14,17 @@ describe('Base Button', () => {
   });
   it('renders correctly for globe button', () => {
     const { getByTestId } = render(
-      <Button {...globe.args} onPress={() => console.log('clicked')} />
+      <ContextProvider>
+        <Button {...globe.args} onPress={() => console.log('clicked')} />
+      </ContextProvider>
     );
     expect(getByTestId('button')).toHaveTextContent('');
   });
   it('renders correctly for menu button', () => {
     const { getByTestId } = render(
-      <Button {...menu.args} onPress={() => console.log('clicked')} />
+      <ContextProvider>
+        <Button {...menu.args} onPress={() => console.log('clicked')} />
+      </ContextProvider>
     );
     expect(getByTestId('button')).toHaveTextContent('');
   });
