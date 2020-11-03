@@ -92,13 +92,6 @@ export const border = ButtonTemplate.bind({});
 border.args = {
   type: 'border',
 };
-border.decorators = [
-  (Story) => (
-    <div style={{ width: '100px' }}>
-      <Story />
-    </div>
-  ),
-];
 
 export const banner = ButtonTemplate.bind({});
 banner.args = {
@@ -162,6 +155,14 @@ login.argTypes = {
 searchbar.argTypes = {
   mini: {
     control: 'boolean',
+  },
+};
+border.argTypes = {
+  size: {
+    control: {
+      type: 'select',
+      options: ['sm', 'md', 'lg'],
+    },
   },
 };
 paginate.argTypes = {

@@ -50,11 +50,15 @@ const id: () => string | JSX.Element = () => {
               extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
             />
             <Section
-              type='details'
               extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
+              type='arrangements'
+              title='Sleeping arrangements'
             />
-            <Section type='arrangements' />
-            {/* <Amenities /> */}
+            <Section
+              extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
+              type='amenities'
+              title='Amenities'
+            />
           </div>
           <div className={[details['w__details--right']].join(' ')}>
             <Card
