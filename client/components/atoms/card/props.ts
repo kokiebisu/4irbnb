@@ -2,6 +2,8 @@
  * Basic Props
  */
 
+import { AnyPtrRecord } from 'dns';
+
 export interface CardBasicProps {}
 
 /**
@@ -9,14 +11,14 @@ export interface CardBasicProps {}
  */
 
 export interface ArrangementsCardProps {
-  card?: { type: string; beds: { type: string; count: number }[] };
+  card?: any;
 }
 
-export type HorizontalCardProps = {
+export interface HorizontalCardProps {
   card?: any;
   save?: boolean;
   superhost?: boolean;
-};
+}
 
 export interface VerticalCardProps {
   card?: any;
@@ -44,5 +46,5 @@ export interface CardProps {
   extendsTo?: string;
   type?: string;
   to?: string;
-  [x: string]: string;
+  [x: string]: any;
 }
