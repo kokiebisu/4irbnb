@@ -42,6 +42,22 @@ export interface ReviewCardProps {
   description?: string;
 }
 
+export interface StaysCardProps {
+  imgUrl: string;
+  typeStay: string;
+  location: string;
+  title: string;
+  accomodations?: {
+    guests: number;
+    bedroom: number;
+    beds: number;
+    bath: number;
+  };
+  characteristics?: string[];
+  ratings?: number;
+  reviews?: number;
+}
+
 export interface CardProps {
   extendsTo?: string;
   type?: string;

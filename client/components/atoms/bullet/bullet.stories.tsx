@@ -78,3 +78,8 @@ know.argTypes = {
     },
   },
 };
+
+export const rating = BulletTemplate.bind({});
+rating.args = {
+  type: 'rating',
+};
