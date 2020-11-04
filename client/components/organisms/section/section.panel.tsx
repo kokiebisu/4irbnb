@@ -21,127 +21,133 @@ export const PanelSection: React.FC<PanelSectionProps> = ({
   return (
     <>
       <div className={[space['p-v--15']].join(' ')}>
-        <h3
-          className={[
-            color['c--gray__4'],
-            font['size--28'],
-            font['weight--500'],
-          ].join(' ')}>
-          {title}
-        </h3>
-        <div
-          className={[
-            space['m-v--8'],
-            layout['items-center'],
-            layout['justify-between'],
-          ].join(' ')}>
+        <div className={[layout['container']].join(' ')}>
+          <h3
+            className={[
+              color['c--gray__4'],
+              font['size--28'],
+              font['weight--500'],
+            ].join(' ')}>
+            {title}
+          </h3>
           <div
-            className={[layout['items-center'], layout['flex-wrap']].join(' ')}>
-            <div>
-              <Star height={14} />
-            </div>
-            <span
-              className={[
-                space['p-l--4'],
-                color['c--g__2'],
-                font['size--14'],
-              ].join(' ')}>
-              {ratings}
-            </span>
-            <span
-              className={[
-                space['p-l--4'],
-                color['c--gray__1'],
-                font['size--14'],
-                font['weight--300'],
-              ].join(' ')}>
-              ({numberOfReviews})
-            </span>
-            {superhost && (
-              <>
-                <span className={[color['c--gray__1']].join(' ')}>
-                  &nbsp;·&nbsp;
-                </span>
-                <div>
-                  <Superhost height={14} fill='#E61E4D' />
-                </div>
-                <p
-                  className={[
-                    space['p-l--3'],
-                    color['c--gray__1'],
-                    font['size--14'],
-                    font['weight--300'],
-                  ].join(' ')}>
-                  Superhost
-                </p>
-              </>
-            )}
-            <span
-              className={[font['weight--300'], color['c--gray__1']].join(' ')}>
-              &nbsp;·&nbsp;
-            </span>
-            <a
-              className={[font['size--14'], color['c--gray__1']].join(' ')}
-              href=''>
-              <u>
-                {location}, {province}, {country}
-              </u>
-            </a>
-          </div>
-          <div
-            className={[layout['flex'], section['hidden__options']].join(' ')}>
+            className={[
+              space['m-v--8'],
+              layout['items-center'],
+              layout['justify-between'],
+            ].join(' ')}>
             <div
-              className={[space['p-r--6'], layout['items-center']].join(' ')}>
-              <a
-                href='#'
+              className={[layout['items-center'], layout['flex-wrap']].join(
+                ' '
+              )}>
+              <div>
+                <Star height={14} />
+              </div>
+              <span
                 className={[
-                  layout['flex'],
-                  space['p-l--6'],
-                  layout['items-center'],
+                  space['p-l--4'],
+                  color['c--g__2'],
+                  font['size--14'],
                 ].join(' ')}>
-                <div>
-                  <Share height={14} fill='#484848' />
-                </div>
-                <p
-                  className={[
-                    space['p-l--10'],
-                    font['size--14'],
-                    color['c--gray__2'],
-                  ].join(' ')}>
-                  <u>Share</u>
-                </p>
-              </a>
-              <a
+                {ratings}
+              </span>
+              <span
                 className={[
-                  layout['flex'],
-                  space['m-l--12'],
-                  layout['items-center'],
+                  space['p-l--4'],
+                  color['c--gray__1'],
+                  font['size--14'],
+                  font['weight--300'],
                 ].join(' ')}>
-                <div>
-                  <Heart fill='#484848' height={17} />
-                </div>
-                <u
-                  className={[
-                    space['p-l--10'],
-                    font['size--14'],
-                    color['c--gray__2'],
-                  ].join(' ')}>
-                  Save
+                ({numberOfReviews})
+              </span>
+              {superhost && (
+                <>
+                  <span className={[color['c--gray__1']].join(' ')}>
+                    &nbsp;·&nbsp;
+                  </span>
+                  <div>
+                    <Superhost height={14} fill='#E61E4D' />
+                  </div>
+                  <p
+                    className={[
+                      space['p-l--3'],
+                      color['c--gray__1'],
+                      font['size--14'],
+                      font['weight--300'],
+                    ].join(' ')}>
+                    Superhost
+                  </p>
+                </>
+              )}
+              <span
+                className={[font['weight--300'], color['c--gray__1']].join(
+                  ' '
+                )}>
+                &nbsp;·&nbsp;
+              </span>
+              <a
+                className={[font['size--14'], color['c--gray__1']].join(' ')}
+                href=''>
+                <u>
+                  {location}, {province}, {country}
                 </u>
               </a>
+            </div>
+            <div
+              className={[layout['flex'], section['hidden__options']].join(
+                ' '
+              )}>
+              <div
+                className={[space['p-r--6'], layout['items-center']].join(' ')}>
+                <a
+                  href='#'
+                  className={[
+                    layout['flex'],
+                    space['p-l--6'],
+                    layout['items-center'],
+                  ].join(' ')}>
+                  <div>
+                    <Share height={14} fill='#484848' />
+                  </div>
+                  <p
+                    className={[
+                      space['p-l--10'],
+                      font['size--14'],
+                      color['c--gray__2'],
+                    ].join(' ')}>
+                    <u>Share</u>
+                  </p>
+                </a>
+                <a
+                  className={[
+                    layout['flex'],
+                    space['m-l--12'],
+                    layout['items-center'],
+                  ].join(' ')}>
+                  <div>
+                    <Heart fill='#484848' height={17} />
+                  </div>
+                  <u
+                    className={[
+                      space['p-l--10'],
+                      font['size--14'],
+                      color['c--gray__2'],
+                    ].join(' ')}>
+                    Save
+                  </u>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className={[space['m-b--20']].join(' ')}>
+      <div className={[section['container__panel']].join(' ')}>
         <div className={[layout['flex'], shape['h--50p']].join(' ')}>
           <div
-            style={{
-              borderRight: '4px solid white',
-            }}
             className={[
-              shape['blr--15'],
+              section['br__panel'],
+              section['b__panel'],
               shape['background-cover'],
               shape['background-repeat'],
               layout['relative'],

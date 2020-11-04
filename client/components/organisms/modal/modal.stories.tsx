@@ -34,3 +34,8 @@ export const register = ModalTemplate.bind({});
 register.args = {
   type: 'register',
 };
+
+export const availability = ModalTemplate.bind({});
+availability.args = {
+  type: 'availability',
+};

@@ -21,9 +21,11 @@ import layout from '../../styles/layout.module.scss';
 import details from '../../styles/details.module.scss';
 import staysDetail from '../../styles/staysDetail.module.scss';
 import color from '../../styles/color.module.scss';
+import shape from '../../styles/shape.module.scss';
 import space from '../../styles/space.module.scss';
 import { Section } from '../../components/organisms/section/section.component';
 import { Card } from '../../components/atoms/card/card.component';
+import { Modal } from 'components/organisms/modal/modal.component';
 
 const id: () => string | JSX.Element = () => {
   return (
@@ -33,15 +35,20 @@ const id: () => string | JSX.Element = () => {
         className={[layout['sticky']].join(' ')}>
         <Header extendsTo={[details['w__wrapper']].join(' ')} type='white' />
       </div>
-      <div
-        className={[layout['container'], staysDetail['m__content']].join(' ')}>
+      <div className={[].join(' ')}>
         <Section
           extendsTo={[staysDetail['flex__panel']].join(' ')}
           type='panel'
         />
+      </div>
+      <div
+        className={[layout['container'], staysDetail['m__content']].join(' ')}>
         <div className={[details['flex__details']].join(' ')}>
           <div className={[details['w__details--left']].join(' ')}>
-            <Section type='characteristics' />
+            <Section
+              extendsTo={[staysDetail['b__characteristics']].join(' ')}
+              type='characteristics'
+            />
             <Section
               type='description'
               extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
@@ -97,6 +104,14 @@ const id: () => string | JSX.Element = () => {
         type='other'
       />
       <Footer />
+      <div
+        className={[
+          staysDetail['display__availability'],
+          shape['w--full'],
+        ].join(' ')}
+        style={{ position: 'fixed', bottom: 0, zIndex: 9999 }}>
+        <Modal type='availability' />
+      </div>
     </>
   );
 };

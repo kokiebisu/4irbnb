@@ -1,5 +1,6 @@
 import React from 'react';
 
+import section from './section.module.scss';
 import font from '../../../styles/font.module.scss';
 import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
@@ -92,10 +93,12 @@ export const OtherSection: React.FC<OtherSectionProps> = ({
           style={{
             padding: 0,
             listStyle: 'none',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
           }}
-          className={[shape['w--full']].join(' ')}>
+          className={[
+            section['display__other'],
+            shape['w--full'],
+            space['m-t--32'],
+          ].join(' ')}>
           {locations.map((location) => {
             return (
               <li
