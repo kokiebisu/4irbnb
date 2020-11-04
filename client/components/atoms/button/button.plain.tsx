@@ -24,7 +24,9 @@ export const PlainButton: React.FC<PlainButtonProps> = ({
         layout['block'],
         font['size--16'],
         space['p-v--14'],
+        space['p-h--20'],
         shape['br--8'],
+        font['weight--300'],
       ].join(' ')}
       onClick={onPress}>
       <p>{title}</p>

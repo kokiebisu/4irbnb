@@ -9,7 +9,7 @@ import { sections } from '../../../content/index';
 import { Globe } from '../../../public/svg/original';
 import { FooterProps } from './props';
 
-export const Footer: React.FC<FooterProps> = () => {
+export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
   return (
     <footer
       className={[
@@ -17,7 +17,8 @@ export const Footer: React.FC<FooterProps> = () => {
         space['p-v--22'],
         color['bg--white__1'],
       ].join(' ')}>
-      <div className={styles['container']}>
+      <div
+        className={spread ? layout['container--spread'] : layout['container']}>
         <div
           className={[
             font['b-b--white__1'],
