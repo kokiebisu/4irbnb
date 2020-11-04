@@ -6,6 +6,7 @@ import { PrivacyModal } from './modal.privacy';
 import { RegisterModal } from './modal.register';
 import { useToggleDispatch } from '../../../context/toggle';
 import { ModalProps } from './props';
+import { AvailabilityModal } from './modal.availability';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -26,6 +27,7 @@ export const Modal: React.FC<ModalProps> = ({
     privacy: <PrivacyModal {...props} />,
     menu: <MenuModal refProp={ref} {...props} />,
     register: <RegisterModal {...props} />,
+    availability: <AvailabilityModal {...props} />,
   };
   if (criteria !== undefined) {
     return (
