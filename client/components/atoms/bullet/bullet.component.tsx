@@ -1,6 +1,9 @@
 import React from 'react';
 import { AmenityBullet } from './bullet.amenity';
 import { CharacteristicBullet } from './bullet.characteristics';
+import { HostBullet } from './bullet.host';
+import { KnowBullet } from './bullet.know';
+import { ScoreBullet } from './bullet.score';
 import { BulletProps } from './props';
 
 interface mapProps {
@@ -15,6 +18,9 @@ export const Bullet: React.FC<BulletProps> = ({
   const types: mapProps = {
     characteristic: <CharacteristicBullet {...props} />,
     amenity: <AmenityBullet {...props} />,
+    score: <ScoreBullet {...props} />,
+    host: <HostBullet {...props} />,
+    know: <KnowBullet {...props} />,
   };
 
   return (

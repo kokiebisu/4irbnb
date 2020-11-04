@@ -6,6 +6,11 @@ export type MenuModalProps = {
 
 export type RegisterModalProps = {};
 
+export type AvailabilityModalProps = {
+  ratings?: number;
+  reviews?: number;
+};
+
 export type ModalProps = (
   | MenuModalProps
   | PrivacyModalProps

@@ -7,6 +7,7 @@ import { TypeStayCard } from './card.typestay';
 import { CardProps } from './props';
 import { ArrangementsCard } from './card.arrangements';
 import { CheckInCard } from './card.checkin';
+import { ReviewCard } from './card.review';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -25,6 +26,7 @@ export const Card: React.FC<CardProps> = ({
     typestay: <TypeStayCard {...props} />,
     arrangements: <ArrangementsCard {...props} />,
     checkin: <CheckInCard {...props} />,
+    review: <ReviewCard {...props} />,
   };
   if (to) {
     return (
