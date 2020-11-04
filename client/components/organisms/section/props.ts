@@ -76,6 +76,11 @@ export interface KnowSectionProps {
   healths?: string[];
 }
 
+export interface OtherSectionProps {
+  location?: any;
+  locations?: any;
+}
+
 export interface SectionProps {
   extendsTo?: string;
   type: string;

@@ -77,13 +77,25 @@ const id: () => string | JSX.Element = () => {
           extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
           type='host'
         />
+        <Section
+          extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
+          type='know'
+        />
         <>
-          {/* <KeepInMind />
+          {/* 
           <MoreHomes />
           <ToDoNear />
           <MoreLocations /> */}
         </>
       </div>
+      <Section
+        extendsTo={[
+          color['b-t--white__2'],
+          space['p-v--32'],
+          color['bg--white__1'],
+        ].join(' ')}
+        type='other'
+      />
       <Footer />
     </>
   );
