@@ -8,6 +8,7 @@ import { SectionProps } from './props';
 import { ArrangementsSection } from './section.arrangements';
 import { AmenitySection } from './section.amenities';
 import { ReviewsSection } from './section.reviews';
+import { HostSection } from './section.host';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -27,6 +28,7 @@ export const Section: React.FC<SectionProps> = ({
     arrangements: <ArrangementsSection {...props} />,
     amenities: <AmenitySection {...props} />,
     reviews: <ReviewsSection {...props} />,
+    host: <HostSection {...props} />,
   };
   return <div className={extendsTo}>{types[type]}</div>;
 };

@@ -83,3 +83,15 @@ export const reviews = SectionTemplate.bind({});
 reviews.args = {
   type: 'reviews',
 };
+
+export const host = SectionTemplate.bind({});
+host.args = {
+  type: 'host',
+};
+host.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 1280 }}>
+      <Story />
+    </div>
+  ),
+];
