@@ -53,9 +53,11 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({
       </div>
       <div className={space['m-v--12']}>
         {display || description.split(' ').length < 75 ? (
-          <p className={[font['weight--100']].join(' ')}>{description}</p>
+          <p className={[font['weight--100'], font['lh--15']].join(' ')}>
+            {description}
+          </p>
         ) : (
-          <p className={[font['weight--100']].join(' ')}>
+          <p className={[font['weight--100'], font['lh--15']].join(' ')}>
             {renderDescription(description)}
             <span
               className={[layout['inline-block'], space['m-l--6']].join(' ')}>

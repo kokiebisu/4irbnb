@@ -47,7 +47,7 @@ export const HostSection: React.FC<HostSectionProps> = ({
           className={[
             layout['flex'],
             layout['items-center'],
-            space['m-b--16'],
+            space['m-b--18'],
             layout['flex-wrap'],
           ].join(' ')}>
           <div className={[layout['flex'], layout['justify-center']].join(' ')}>
@@ -88,14 +88,29 @@ export const HostSection: React.FC<HostSectionProps> = ({
                   layout['items-center'],
                   layout['flex-wrap'],
                 ].join(' ')}>
-                <div className={[space['m-r--8'], space['p-r--4']].join(' ')}>
+                <div
+                  className={[
+                    space['m-r--8'],
+                    space['m-b--12'],
+                    space['p-r--4'],
+                  ].join(' ')}>
                   <Bullet type='host' categoryType='review' total={150} />
                 </div>
-                <div className={[space['m-r--8'], space['p-r--4']].join(' ')}>
+                <div
+                  className={[
+                    space['m-r--8'],
+                    space['m-b--12'],
+                    space['p-r--4'],
+                  ].join(' ')}>
                   <Bullet type='host' categoryType='verified' />
                 </div>
                 {isSuperhost && (
-                  <div className={[space['m-r--8'], space['p-r--4']].join(' ')}>
+                  <div
+                    className={[
+                      space['m-r--8'],
+                      space['m-b--12'],
+                      space['p-r--4'],
+                    ].join(' ')}>
                     <Bullet type='host' categoryType='superhost' />
                   </div>
                 )}
@@ -142,14 +157,16 @@ export const HostSection: React.FC<HostSectionProps> = ({
                       </p>
                     </div>
                   ) : (
-                    <p className={[font['weight--100']].join(' ')}>
+                    <p
+                      className={[font['weight--100'], font['lh--15']].join(
+                        ' '
+                      )}>
                       {`${defaultDuringStay.join(' ')}...`}
                       <button
                         className={[
                           space['m-l--4'],
                           color['bg--transparent'],
                           font['size--16'],
-                          font['lh--15'],
                         ].join(' ')}
                         onClick={() => setStayDisplay(true)}>
                         <u>read more</u>
@@ -167,7 +184,8 @@ export const HostSection: React.FC<HostSectionProps> = ({
                     )}>
                     {name} is a Superhost
                   </p>
-                  <p className={[font['weight--100']].join(' ')}>
+                  <p
+                    className={[font['weight--100'], font['lh--15']].join(' ')}>
                     Superhosts are experienced, highly rated hosts who are
                     committed to providing great stays for guests.
                   </p>
