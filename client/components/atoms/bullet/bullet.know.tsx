@@ -71,11 +71,11 @@ export const KnowBullet: React.FC<KnowBulletProps> = ({
   };
   return (
     <div className={[layout['flex']].join(' ')}>
-      <div className={[space['m-r--8']].join(' ')}>
+      <div className={[space['m-r--12']].join(' ')}>
         {categories[categoryType].icon}
       </div>
       <div>
-        <p className={[font['weight--300'], font['size--16']].join(' ')}>
+        <p className={[font['weight--100'], font['size--16']].join(' ')}>
           {categories[categoryType].description}
         </p>
       </div>

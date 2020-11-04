@@ -71,6 +71,11 @@ export interface HostSectionProps {
   responseRate?: number;
 }
 
+export interface KnowSectionProps {
+  houseRules?: string[];
+  healths?: string[];
+}
+
 export interface SectionProps {
   extendsTo?: string;
   type: string;

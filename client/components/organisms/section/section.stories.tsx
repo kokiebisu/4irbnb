@@ -95,3 +95,8 @@ host.decorators = [
     </div>
   ),
 ];
+
+export const know = SectionTemplate.bind({});
+know.args = {
+  type: 'know',
+};
