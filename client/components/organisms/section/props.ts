@@ -59,11 +59,20 @@ export interface ReviewsSectionProps {
   reviews?: any;
 }
 
-export type SectionProps = (
-  | StaySectionProps
-  | PanelSectionProps
-  | CharacteristicsSectionProps
-  | CategorySectionProps
-  | DescriptionSectionProps
-  | ArrangementsSectionProps
-) & { extendsTo?: string; type: string };
+export interface HostSectionProps {
+  name?: string;
+  isSuperhost?: boolean;
+  description?: string;
+  joined?: string;
+  duringStay?: string;
+  reviews?: number;
+  imgUrl?: string;
+  responseTime?: number;
+  responseRate?: number;
+}
+
+export interface SectionProps {
+  extendsTo?: string;
+  type: string;
+  [x: string]: any;
+}

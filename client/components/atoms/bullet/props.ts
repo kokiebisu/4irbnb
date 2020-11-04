@@ -19,6 +19,11 @@ export interface ScoreBulletProps {
   }[];
 }
 
+export interface HostBulletProps {
+  total?: number;
+  categoryType?: string;
+}
+
 export type BulletProps = CharacteristicBulletProps & {
   extendsTo?: string;
   type: string;

@@ -70,20 +70,8 @@ const id: () => string | JSX.Element = () => {
           </div>
         </div>
         <Section type='reviews' />
+        <Section type='host' />
         <>
-          {/* 
-          <HostedBy
-            host_name={data.stay.host_name}
-            host_description={data.stay.host_description}
-            host_since={data.stay.host_since}
-            during_stay={data.stay.during_stay}
-            host_is_superhost={data.stay.host_is_superhost}
-            reviews_per_month={data.stay.reviews_per_month}
-            host_picture_url={data.stay.host_picture_url}
-            host_thumbnail_url={data.stay.host_thumbnail_url}
-            host_response_rate={data.stay.host_response_rate}
-            host_response_time={data.stay.host_response_time}
-          /> */}
           {/* <KeepInMind />
           <MoreHomes />
           <ToDoNear />
