@@ -8,12 +8,12 @@ import { Star, Superhost, Verified } from '../../../public/svg/original';
 
 export const HostBullet = ({ categoryType = 'review', total = 100 }) => {
   const categories = {
-    review: { icon: <Star width={18} />, description: `${total} Reviews` },
+    review: { icon: <Star width={16} />, description: `${total} Reviews` },
     verified: {
-      icon: <Verified width={18} />,
+      icon: <Verified width={16} />,
       description: 'Identity verified',
     },
-    superhost: { icon: <Superhost width={18} />, description: 'Superhost' },
+    superhost: { icon: <Superhost width={16} />, description: 'Superhost' },
   };
   return (
     <div
