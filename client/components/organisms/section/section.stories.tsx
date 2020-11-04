@@ -100,3 +100,8 @@ export const know = SectionTemplate.bind({});
 know.args = {
   type: 'know',
 };
+
+export const other = SectionTemplate.bind({});
+other.args = {
+  type: 'other',
+};
