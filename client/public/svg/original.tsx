@@ -289,3 +289,47 @@ export const Shield = (props) => {
     </svg>
   );
 };
+
+export const Clock = (props) => {
+  return <span {...props}>󰀥</span>;
+};
+
+export const Checkin = (props) => {
+  return <span {...props}>󰄄</span>;
+};
+
+export const Children = (props) => {
+  return <span {...props}>󱤄</span>;
+};
+
+export const Smoking = (props) => {
+  return <span {...props}>󱤈</span>;
+};
+
+export const Pets = (props) => {
+  return <span {...props}>󱤆</span>;
+};
+
+export const Parties = (props) => {
+  return <span {...props}>󱤂</span>;
+};
+
+export const Cleaning = (props) => {
+  return <span {...props}>󹀁</span>;
+};
+
+export const Distancing = (props) => {
+  return (
+    <svg {...props} viewBox='0 0 32 32'>
+      <path d='M5 5v.414l4 4v3.172L4.464 17.12C3.527 18.06 3 18.674 3 20v9c0 1.644 1.356 2.982 3 3 6.645-.012 10.645-.012 12 0 1.657.014 3-1 3-3v-9c0-1.351-.547-2.126-1.516-3.067L15 12.577V9a2.99 2.99 0 0 1 2.083-2.842 8.957 8.957 0 0 0 2.17 4.798l1.499-1.324A6.959 6.959 0 0 1 19.078 6H23V0H10a5 5 0 0 0-5 5zm14-3h2v2h-2zm-1.032 22.686h.004c.348 0 .69-.034 1.028-.084v2.02c-.34.039-.682.064-1.028.064h-.004a8.946 8.946 0 0 1-6.362-2.636A6.948 6.948 0 0 0 6.659 22h-.003A7.07 7.07 0 0 0 5 22.204v-2.048c.54-.1 1.093-.156 1.655-.156h.005a8.94 8.94 0 0 1 6.36 2.636 6.956 6.956 0 0 0 4.948 2.05zM11 10h2v2h-2zm17-9a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm2 4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3-2a1 1 0 1 1-2 0 1 1 0 0 1 2 0z'></path>
+    </svg>
+  );
+};
+
+export const Caution = (props) => {
+  return <span {...props}>󱠃</span>;
+};
+
+export const Check = (props) => {
+  return <span>󱠁</span>;
+};

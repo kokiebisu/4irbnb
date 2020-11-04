@@ -152,3 +152,15 @@
     }
   }
 }
+
+.display {
+  &__host {
+    &--wrapper {
+      display: block;
+
+      @media screen and (min-width: 728px) {
+        display: flex;
+      }
+    }
+  }
+}

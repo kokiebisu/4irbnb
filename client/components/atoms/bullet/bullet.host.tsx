@@ -5,8 +5,12 @@ import space from '../../../styles/space.module.scss';
 import font from '../../../styles/font.module.scss';
 
 import { Star, Superhost, Verified } from '../../../public/svg/original';
+import { HostBulletProps } from './props';
 
-export const HostBullet = ({ categoryType = 'review', total = 100 }) => {
+export const HostBullet: React.FC<HostBulletProps> = ({
+  categoryType = 'review',
+  total = 100,
+}) => {
   const categories = {
     review: { icon: <Star width={16} />, description: `${total} Reviews` },
     verified: {
