@@ -24,6 +24,12 @@ export interface HostBulletProps {
   categoryType?: string;
 }
 
+export interface KnowBulletProps {
+  categoryType?: string;
+  checkin?: any;
+  checkout?: string;
+}
+
 export type BulletProps = CharacteristicBulletProps & {
   extendsTo?: string;
   type: string;

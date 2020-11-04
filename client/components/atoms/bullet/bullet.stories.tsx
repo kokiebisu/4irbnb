@@ -53,3 +53,28 @@ review.decorators = [
     </div>
   ),
 ];
+
+export const know = BulletTemplate.bind({});
+know.args = {
+  type: 'know',
+};
+know.argTypes = {
+  categoryType: {
+    control: {
+      type: 'select',
+      options: [
+        'checkin',
+        'checkout',
+        'self',
+        'children',
+        'smoking',
+        'pets',
+        'parties',
+        'cleaning',
+        'distancing',
+        'caution',
+        'check',
+      ],
+    },
+  },
+};

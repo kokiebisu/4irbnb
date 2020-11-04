@@ -34,7 +34,7 @@ const id: () => string | JSX.Element = () => {
         <Header extendsTo={[details['w__wrapper']].join(' ')} type='white' />
       </div>
       <div
-        className={[details['container'], staysDetail['m__content']].join(' ')}>
+        className={[layout['container'], staysDetail['m__content']].join(' ')}>
         <Section
           extendsTo={[staysDetail['flex__panel']].join(' ')}
           type='panel'

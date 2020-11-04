@@ -78,7 +78,7 @@ export const HostSection: React.FC<HostSectionProps> = ({
             </div>
           </div>
         </div>
-        <div className={[layout['flex']].join(' ')}>
+        <div className={section['display__host--wrapper']}>
           <div
             className={[space['p-r--50'], section['w__host--left']].join(' ')}>
             <div>
