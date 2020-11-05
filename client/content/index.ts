@@ -107,30 +107,61 @@ export const categories = [
   {
     card: {
       imgUrl:
-        'https://a0.muscache.com/im/pictures/15159c9c-9cf1-400e-b809-4e13f286fa38.jpg?im_w=1200',
-      title: 'Unique stays',
-      description: 'Spaces that are more than just a place to sleep.',
+        'https://a0.muscache.com/im/pictures/2a16f833-464c-446c-8d74-33eb8c643975.jpg?im_w=1200',
+      title: 'Host your home',
     },
     to: '/stays',
   },
   {
     card: {
       imgUrl:
-        'https://a0.muscache.com/im/pictures/8e3d5167-55ca-4fbd-832d-e3b66dad54ec.jpg?im_w=1200',
-      title: 'Online Experiences',
-      description: 'A new way to travel from home.',
+        'https://a0.muscache.com/im/pictures/426a8116-0b94-4407-ae87-924126c81d78.jpg?im_w=1200',
+      title: 'Host an Online Experience',
     },
     to: '/experiences',
   },
   {
     card: {
       imgUrl:
-        'https://a0.muscache.com/im/pictures/fdb46962-10c1-45fc-a228-d0b055411448.jpg?im_w=720',
-      title: 'Entire homes',
-      description:
-        'Comfortable private places, with room for friends or family.',
+        'https://a0.muscache.com/im/pictures/a84e92bd-68e6-4ce2-9fdf-b2ce1a377f53.jpg?im_w=1200',
+      title: 'Host an Experience',
     },
     to: '/homes',
+  },
+];
+
+export const anywhere = [
+  {
+    card: {
+      imgUrl:
+        'https://a0.muscache.com/im/pictures/a0316ecb-e49b-4b3a-b6b6-c2876b820e8c.jpg?im_w=1200',
+      title: 'Entire homes',
+    },
+    to: '/stays/entire',
+  },
+  {
+    card: {
+      imgUrl:
+        'https://a0.muscache.com/im/pictures/ff69ac49-64e7-4f4a-ae2b-ee01163d0790.jpg?im_w=1200',
+      title: 'Cabins and cottages',
+    },
+    to: '/stays/cabins',
+  },
+  {
+    card: {
+      imgUrl:
+        'https://a0.muscache.com/im/pictures/ce6814ba-ed53-4d6e-b8f8-c0bbcf821011.jpg?im_w=1200',
+      title: 'Unique stays',
+    },
+    to: '/stays/unique',
+  },
+  {
+    card: {
+      imgUrl:
+        'https://a0.muscache.com/im/pictures/fbe849a4-841a-41b3-b770-419402a6316f.jpg?im_w=1200',
+      title: 'Pets welcome',
+    },
+    to: '/stays/pets',
   },
 ];
 
@@ -240,4 +271,15 @@ export const typeStays = [
     },
     to: '/',
   },
+];
+
+export const nearbyPic = [
+  'https://a0.muscache.com/im/pictures/0445ba36-5684-4cca-9cb1-418a0ffdcd2f.jpg?im_q=medq&im_w=1200',
+  'https://a0.muscache.com/im/pictures/e8d3d6de-40b1-4341-89f2-afb2a1a4f71f.jpg?im_q=medq&im_w=1200',
+  'https://a0.muscache.com/im/pictures/c2eba2e9-0d80-4704-9e2c-34ac16316c53.jpg?im_q=medq&im_w=1200',
+  'https://a0.muscache.com/im/pictures/b948e0e0-c78f-4895-b433-c90401019981.jpg?im_q=medq&im_w=1200',
+  'https://a0.muscache.com/im/pictures/42901911-940b-45ac-997e-961ebf472195.jpg?im_q=medq&im_w=1200',
+  'https://a0.muscache.com/im/pictures/0810e005-87d3-4188-b95c-2d7fa2fc957b.jpg?im_q=medq&im_w=1200',
+  'https://a0.muscache.com/im/pictures/7d80bee1-a510-4950-a1a0-07a4fb25ec2e.jpg?im_q=medq&im_w=1200',
+  'https://a0.muscache.com/im/pictures/a7fe39da-3e57-44df-a744-9a73e482802d.jpg?im_q=medq&im_w=1200',
 ];

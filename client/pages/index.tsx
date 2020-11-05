@@ -1,11 +1,12 @@
 import React from 'react';
-import styles from 'styles/index.module.scss';
+import index from 'styles/index.module.scss';
 import layout from 'styles/layout.module.scss';
 import space from 'styles/space.module.scss';
 import {
   destinations,
   destinationByCategories,
   categories,
+  anywhere,
 } from '../content/index';
 import { Button } from 'components/atoms/button/button.component';
 
@@ -22,6 +23,8 @@ import { Header } from 'components/organisms/header/header.component';
 import { Section } from 'components/organisms/section/section.component';
 import { Footer } from 'components/organisms/footer/footer.component';
 import { MenuBar } from 'components/organisms/menubar/menubar.component';
+import { Layout } from 'layout/layout.component';
+import { nearby } from '../data/stays';
 
 const CovidNotice = () => {
   return (
@@ -44,9 +47,9 @@ const CovidNotice = () => {
 const Banner = () => {
   return (
     <>
-      <div className={styles['banner']}>
+      <div className={index['banner']}>
         <div className={[layout['all-sides']].join(' ')}>
-          <div className={styles['banner__background--picture']} style={{}}>
+          <div className={index['banner__background--picture']} style={{}}>
             <picture>
               <source
                 srcSet='/img/background1200.webp'
@@ -66,21 +69,20 @@ const Banner = () => {
         </div>
         <div className={[layout['all-sides']].join(' ')}>
           <div
-            className={[styles['header__wrapper--md'], shape['h--full']].join(
+            className={[index['header__wrapper--md'], shape['h--full']].join(
               ' '
             )}>
             <div style={{ height: '100%' }}>
-              <div
-                className={[space['p-t--14'], styles['container']].join(' ')}>
+              <div className={[space['p-t--14'], index['container']].join(' ')}>
                 <Header type='transparent' />
               </div>
               <div className={[color['c--white__0']].join(' ')}></div>
               <div
                 className={[
-                  styles['container'],
+                  index['container'],
                   layout['z--20'],
                   shape['h--75p'],
-                  styles['flex__explore'],
+                  index['flex__explore'],
                 ].join(' ')}>
                 <div className={[space['m-v--10'], space['m-h--0']].join(' ')}>
                   <h3
@@ -93,12 +95,12 @@ const Banner = () => {
                 <div
                   className={[
                     font['c--white__0'],
-                    styles['w__explore--subtitle'],
-                    styles['text__explore--subtitle'],
+                    index['w__explore--subtitle'],
+                    index['text__explore--subtitle'],
                   ].join(' ')}>
                   <p
                     className={[
-                      styles['size__explore--subtitle'],
+                      index['size__explore--subtitle'],
                       font['weight--300'],
                       font['ls--3'],
                       color['c--white__0'],
@@ -111,7 +113,7 @@ const Banner = () => {
                   className={[
                     space['m-v--15'],
                     space['m-h--0'],
-                    styles['justify__explore--button'],
+                    index['justify__explore--button'],
                   ].join(' ')}>
                   <Button type='banner' title='Explore all' to='/' />
                 </div>
@@ -133,7 +135,7 @@ const OnlineExperiences = () => {
       className={[color['bg--black'], space['p-v--25'], space['p-h--0']].join(
         ' '
       )}>
-      <div className={styles['container']}>
+      <div className={index['container']}>
         <div>
           <h3
             className={[
@@ -172,12 +174,12 @@ const OnlineExperiences = () => {
 const BlackLivesMatter = () => {
   return (
     <div className={[space['p-v--22'], space['p-h--0']].join(' ')}>
-      <div className={styles['container']}>
-        <div className={styles['flex__blm--content']}>
-          <div className={[styles['w__blm--content']].join(' ')}>
+      <div className={index['container']}>
+        <div className={index['flex__blm--content']}>
+          <div className={[index['w__blm--content']].join(' ')}>
             <h3
               className={[
-                styles['size__blm--title'],
+                index['size__blm--title'],
                 font['weight--500'],
                 color['c--gray__4'],
               ].join(' ')}>
@@ -186,7 +188,7 @@ const BlackLivesMatter = () => {
             </h3>
           </div>
           <div
-            className={[styles['w__blm--content'], space['m-t--15']].join(' ')}>
+            className={[index['w__blm--content'], space['m-t--15']].join(' ')}>
             <p className={[font['weight--300'], color['c--gray__0']].join(' ')}>
               No one should have to encounter racism—no matter who you are,
               where you’re from, who you love, or who you worship.
@@ -212,17 +214,16 @@ const BlackLivesMatter = () => {
 const DestinationTrips = () => {
   return (
     <div className={[space['m-h--0'], space['m-v--22']].join(' ')}>
-      <div className={styles['container']}>
+      <div className={index['container']}>
         <div>
           <h3 className={[font['size--21'], font['weight--500']].join(' ')}>
             Destinations for future trips
           </h3>
         </div>
         <div
-          className={[
-            styles['destinations__categories'],
-            space['m-t--12'],
-          ].join(' ')}>
+          className={[index['destinations__categories'], space['m-t--12']].join(
+            ' '
+          )}>
           {destinationByCategories.map((destinationByCategory, index) => {
             return (
               <div key={index}>
@@ -282,15 +283,20 @@ const LandingPage = () => {
       <CovidNotice />
       <div>
         <Banner />
-        <div className={[space['m-v--25'], space['m-h--0']].join(' ')}>
-          <Section type='category' items={categories} />
-        </div>
+        <Layout type='section'>
+          <Section type='nearby' items={nearby} />
+        </Layout>
+        <Layout type='section' title='Live anywhere'>
+          <Section type='category' items={anywhere} />
+        </Layout>
         <OnlineExperiences />
-        <BlackLivesMatter />
+        <Layout type='section' title='Join millions of hosts on Airbnb'>
+          <Section type='category' items={categories} />
+        </Layout>
         <DestinationTrips />
         <Footer />
       </div>
-      <div className={styles['none__menubar']}>
+      <div className={index['none__menubar']}>
         <MenuBar />
       </div>
       <div
@@ -299,7 +305,7 @@ const LandingPage = () => {
           layout['fb--0'],
           layout['z--9999'],
           layout['block'],
-          styles['m__modal--privacy'],
+          index['m__modal--privacy'],
           shape['br--8'],
         ].join(' ')}>
         <Modal {...privacyModal.args} criteria={toggleState.privacy} />

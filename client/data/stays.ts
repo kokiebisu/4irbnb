@@ -300,6 +300,17 @@ export const horizontals = [
   },
 ];
 
+export const nearby = [
+  { city: 'Tofino', hours: 6 },
+  { city: 'Sechelt', hours: 2.5 },
+  { city: 'Penticton', hours: 5 },
+  { city: 'Parksville', hours: 3.5 },
+  { city: 'Courtenay', hours: 4 },
+  { city: 'Vernon', hours: 5.5 },
+  { city: 'Campbell River', hours: 5 },
+  { city: 'Golden', hours: 9 },
+];
+
 export const natures = horizontals.filter(
   (horizontal) =>
     horizontal.card.type === 'Farm stay' ||

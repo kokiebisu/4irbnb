@@ -133,68 +133,6 @@
   }
 }
 
-.category-section {
-  &__carousel {
-    display: grid;
-    grid-auto-flow: column;
-    overflow-x: auto;
-    overflow-y: hidden;
-    grid-template-columns: repeat(3, 1fr);
-    scroll-snap-type: x mandatory;
-    column-gap: 12px;
-    row-gap: 12px;
-    margin: 0 -24px;
-    scroll-padding: 0 24px;
-    padding: 4px 28px 8px;
-
-    @media screen and (min-width: 728px) {
-      width: 100%;
-      margin: 0;
-      padding: 4px 5px 4px;
-    }
-
-    &::-webkit-scrollbar {
-      width: 0px;
-      background: transparent; /* make scrollbar transparent */
-    }
-  }
-
-  &__card {
-    scroll-snap-align: start;
-    border-radius: 15px;
-    height: 100%;
-    width: 250px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-
-    @media screen and (min-width: 745px) {
-      width: auto;
-      max-width: 550px;
-    }
-
-    &--img {
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
-      width: 100%;
-
-      & img {
-        border-top-left-radius: inherit;
-        border-top-right-radius: inherit;
-      }
-    }
-
-    &--space {
-      // scroll-snap-align: start;
-      width: 12px;
-      background-color: transparent;
-      height: 100%;
-
-      @media screen and (min-width: 745px) {
-        display: none;
-      }
-    }
-  }
-}
-
 .destinations {
   &__categories {
     padding: 15px 0;
@@ -406,6 +344,19 @@
 
     @media screen and (min-width: 728px) {
       text-align: initial;
+    }
+  }
+}
+
+.p {
+  &__category {
+    &--spread {
+      padding-top: 11px;
+      padding-bottom: 11px;
+      @media screen and (min-width: 728px) {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
     }
   }
 }

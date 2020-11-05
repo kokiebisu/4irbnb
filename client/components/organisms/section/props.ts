@@ -81,6 +81,10 @@ export interface OtherSectionProps {
   locations?: any;
 }
 
+export interface NearbySectionProps {
+  items?: any;
+}
+
 export interface SectionProps {
   extendsTo?: string;
   type: string;
