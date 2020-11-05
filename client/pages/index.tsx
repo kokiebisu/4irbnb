@@ -171,110 +171,6 @@ const OnlineExperiences = () => {
   );
 };
 
-const BlackLivesMatter = () => {
-  return (
-    <div className={[space['p-v--22'], space['p-h--0']].join(' ')}>
-      <div className={index['container']}>
-        <div className={index['flex__blm--content']}>
-          <div className={[index['w__blm--content']].join(' ')}>
-            <h3
-              className={[
-                index['size__blm--title'],
-                font['weight--500'],
-                color['c--gray__4'],
-              ].join(' ')}>
-              We embrace a world where veryone belongs, and stand with
-              #BlackLivesMatter.
-            </h3>
-          </div>
-          <div
-            className={[index['w__blm--content'], space['m-t--15']].join(' ')}>
-            <p className={[font['weight--300'], color['c--gray__0']].join(' ')}>
-              No one should have to encounter racism—no matter who you are,
-              where you’re from, who you love, or who you worship.
-              Discrimination is not tolerated in our community. Which is why
-              when you agree to book or host on Airbnb, you pledge not to
-              tolerate it either.
-            </p>
-          </div>
-        </div>
-        <div
-          className={[
-            layout['inline-block'],
-            space['m-t--25'],
-            space['m-b--40'],
-          ].join(' ')}>
-          <Button type='border' to='/' />
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const DestinationTrips = () => {
-  return (
-    <div className={[space['m-h--0'], space['m-v--22']].join(' ')}>
-      <div className={index['container']}>
-        <div>
-          <h3 className={[font['size--21'], font['weight--500']].join(' ')}>
-            Destinations for future trips
-          </h3>
-        </div>
-        <div
-          className={[index['destinations__categories'], space['m-t--12']].join(
-            ' '
-          )}>
-          {destinationByCategories.map((destinationByCategory, index) => {
-            return (
-              <div key={index}>
-                <h5
-                  className={[
-                    font['size--14'],
-                    font['no-wrap'],
-                    font['weight--500'],
-                    color['c--gray__0'],
-                  ].join(' ')}>
-                  {destinationByCategory.name}
-                </h5>
-              </div>
-            );
-          })}
-        </div>
-        <div className={layout['grid-c--2']}>
-          {destinations.map((destination, index) => {
-            return (
-              <div
-                key={index}
-                className={[space['p-v--15'], space['p-h--0']].join(' ')}>
-                <div>
-                  <p
-                    className={[
-                      font['size--14'],
-                      font['weight--300'],
-                      font['c--gray__4'],
-                    ].join(' ')}>
-                    {destination.city}
-                  </p>
-                </div>
-                <div>
-                  <p
-                    className={[
-                      font['size--14'],
-                      font['weight--300'],
-                      color['c--gray__1'],
-                    ].join(' ')}>
-                    {destination.state}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const LandingPage = () => {
   const toggleState = useToggleState();
 
@@ -293,7 +189,9 @@ const LandingPage = () => {
         <Layout type='section' title='Join millions of hosts on Airbnb'>
           <Section type='category' items={categories} />
         </Layout>
-        <DestinationTrips />
+        <Layout type='section' title='Destinations for future trips'>
+          <Section type='destinations' />
+        </Layout>
         <Footer />
       </div>
       <div className={index['none__menubar']}>

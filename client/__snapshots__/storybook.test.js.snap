@@ -1287,6 +1287,42 @@ exports[`Storyshots Design System/Atoms/Card Horizontal With Superhost 1`] = `
 </div>
 `;
 
+exports[`Storyshots Design System/Atoms/Card Nearby 1`] = `
+<div
+  data-testid="card"
+>
+  <div
+    className="flex items-center"
+  >
+    <div
+      className="w__nearby m-r--12"
+    >
+      <img
+        src="https://a0.muscache.com/im/pictures/0445ba36-5684-4cca-9cb1-418a0ffdcd2f.jpg?im_q=medq&im_w=1200"
+        style={
+          Object {
+            "borderRadius": 10,
+          }
+        }
+      />
+    </div>
+    <div>
+      <h3
+        className="size--15 m-b--4"
+      >
+        City
+      </h3>
+      <p
+        className="size--15"
+      >
+        1
+         hour drive
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Design System/Atoms/Card Review 1`] = `
 <div
   data-testid="card"
@@ -4549,6 +4585,333 @@ exports[`Storyshots Design System/Organisms/Section Know 1`] = `
             Add dates
           </u>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Design System/Organisms/Section Nearby 1`] = `
+<div>
+  <div>
+    <div
+      className="p-h--70"
+    >
+      <div
+        className="category-section__carousel"
+        style={
+          Object {
+            "gridTemplateColumns": "repeat(4, 1fr)",
+          }
+        }
+      >
+        <div
+          className="w__nearby"
+        >
+          <div
+            className="m-b--10"
+          >
+            <div
+              data-testid="card"
+            >
+              <div
+                className="flex items-center"
+              >
+                <div
+                  className="w__nearby m-r--12"
+                >
+                  <img
+                    src="https://a0.muscache.com/im/pictures/0445ba36-5684-4cca-9cb1-418a0ffdcd2f.jpg?im_q=medq&im_w=1200"
+                    style={
+                      Object {
+                        "borderRadius": 10,
+                      }
+                    }
+                  />
+                </div>
+                <div>
+                  <h3
+                    className="size--15 m-b--4"
+                  >
+                    City
+                  </h3>
+                  <p
+                    className="size--15"
+                  >
+                    1
+                     hour drive
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              data-testid="card"
+            >
+              <div
+                className="flex items-center"
+              >
+                <div
+                  className="w__nearby m-r--12"
+                >
+                  <img
+                    src="https://a0.muscache.com/im/pictures/42901911-940b-45ac-997e-961ebf472195.jpg?im_q=medq&im_w=1200"
+                    style={
+                      Object {
+                        "borderRadius": 10,
+                      }
+                    }
+                  />
+                </div>
+                <div>
+                  <h3
+                    className="size--15 m-b--4"
+                  >
+                    City
+                  </h3>
+                  <p
+                    className="size--15"
+                  >
+                    1
+                     hour drive
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="w__nearby"
+        >
+          <div
+            className="m-b--10"
+          >
+            <div
+              data-testid="card"
+            >
+              <div
+                className="flex items-center"
+              >
+                <div
+                  className="w__nearby m-r--12"
+                >
+                  <img
+                    src="https://a0.muscache.com/im/pictures/e8d3d6de-40b1-4341-89f2-afb2a1a4f71f.jpg?im_q=medq&im_w=1200"
+                    style={
+                      Object {
+                        "borderRadius": 10,
+                      }
+                    }
+                  />
+                </div>
+                <div>
+                  <h3
+                    className="size--15 m-b--4"
+                  >
+                    City
+                  </h3>
+                  <p
+                    className="size--15"
+                  >
+                    1
+                     hour drive
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              data-testid="card"
+            >
+              <div
+                className="flex items-center"
+              >
+                <div
+                  className="w__nearby m-r--12"
+                >
+                  <img
+                    src="https://a0.muscache.com/im/pictures/0810e005-87d3-4188-b95c-2d7fa2fc957b.jpg?im_q=medq&im_w=1200"
+                    style={
+                      Object {
+                        "borderRadius": 10,
+                      }
+                    }
+                  />
+                </div>
+                <div>
+                  <h3
+                    className="size--15 m-b--4"
+                  >
+                    City
+                  </h3>
+                  <p
+                    className="size--15"
+                  >
+                    1
+                     hour drive
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="w__nearby"
+        >
+          <div
+            className="m-b--10"
+          >
+            <div
+              data-testid="card"
+            >
+              <div
+                className="flex items-center"
+              >
+                <div
+                  className="w__nearby m-r--12"
+                >
+                  <img
+                    src="https://a0.muscache.com/im/pictures/c2eba2e9-0d80-4704-9e2c-34ac16316c53.jpg?im_q=medq&im_w=1200"
+                    style={
+                      Object {
+                        "borderRadius": 10,
+                      }
+                    }
+                  />
+                </div>
+                <div>
+                  <h3
+                    className="size--15 m-b--4"
+                  >
+                    City
+                  </h3>
+                  <p
+                    className="size--15"
+                  >
+                    1
+                     hour drive
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              data-testid="card"
+            >
+              <div
+                className="flex items-center"
+              >
+                <div
+                  className="w__nearby m-r--12"
+                >
+                  <img
+                    src="https://a0.muscache.com/im/pictures/7d80bee1-a510-4950-a1a0-07a4fb25ec2e.jpg?im_q=medq&im_w=1200"
+                    style={
+                      Object {
+                        "borderRadius": 10,
+                      }
+                    }
+                  />
+                </div>
+                <div>
+                  <h3
+                    className="size--15 m-b--4"
+                  >
+                    City
+                  </h3>
+                  <p
+                    className="size--15"
+                  >
+                    1
+                     hour drive
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="w__nearby"
+        >
+          <div
+            className="m-b--10"
+          >
+            <div
+              data-testid="card"
+            >
+              <div
+                className="flex items-center"
+              >
+                <div
+                  className="w__nearby m-r--12"
+                >
+                  <img
+                    src="https://a0.muscache.com/im/pictures/b948e0e0-c78f-4895-b433-c90401019981.jpg?im_q=medq&im_w=1200"
+                    style={
+                      Object {
+                        "borderRadius": 10,
+                      }
+                    }
+                  />
+                </div>
+                <div>
+                  <h3
+                    className="size--15 m-b--4"
+                  >
+                    City
+                  </h3>
+                  <p
+                    className="size--15"
+                  >
+                    1
+                     hour drive
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              data-testid="card"
+            >
+              <div
+                className="flex items-center"
+              >
+                <div
+                  className="w__nearby m-r--12"
+                >
+                  <img
+                    src="https://a0.muscache.com/im/pictures/a7fe39da-3e57-44df-a744-9a73e482802d.jpg?im_q=medq&im_w=1200"
+                    style={
+                      Object {
+                        "borderRadius": 10,
+                      }
+                    }
+                  />
+                </div>
+                <div>
+                  <h3
+                    className="size--15 m-b--4"
+                  >
+                    City
+                  </h3>
+                  <p
+                    className="size--15"
+                  >
+                    1
+                     hour drive
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="nearby-section__card--space"
+        />
       </div>
     </div>
   </div>

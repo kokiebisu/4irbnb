@@ -1,3 +1,13 @@
+export const destinationByCategories = [
+  {
+    name: 'Destinations for arts & culture',
+  },
+  { name: 'Destinations for outdoor adventure' },
+  { name: 'Mountain cabins' },
+  { name: 'Beach destinations' },
+  { name: 'Popular destinations' },
+];
+
 export const destinations = [
   { city: 'New York', state: 'New York' },
   { city: 'Phoenix', state: 'Arizona' },
@@ -93,14 +103,6 @@ export const destinations = [
     city: 'Lexington',
     state: 'Kentucky',
   },
-];
-
-export const destinationByCategories = [
-  { name: 'Destinations for arts & culture' },
-  { name: 'Destinations for outdoor adventure' },
-  { name: 'Mountain cabins' },
-  { name: 'Beach destinations' },
-  { name: 'Popular destinations' },
 ];
 
 export const categories = [
