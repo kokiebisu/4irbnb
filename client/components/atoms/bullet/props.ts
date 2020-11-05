@@ -30,6 +30,11 @@ export interface KnowBulletProps {
   checkout?: string;
 }
 
+export interface RatingBulletProps {
+  ratings?: number;
+  reviews?: number;
+}
+
 export type BulletProps = CharacteristicBulletProps & {
   extendsTo?: string;
   type: string;
