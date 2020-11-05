@@ -13,6 +13,7 @@ import { KnowSection } from './section.know';
 import { OtherSection } from './section.other';
 import { NearbySection } from './section.nearby';
 import { DestinationsSection } from './section.destinations';
+import { BannerSection } from './section.banner';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -37,6 +38,7 @@ export const Section: React.FC<SectionProps> = ({
     other: <OtherSection {...props} />,
     nearby: <NearbySection {...props} />,
     destinations: <DestinationsSection {...props} />,
+    banner: <BannerSection {...props} />,
   };
   return <div className={extendsTo}>{types[type]}</div>;
 };

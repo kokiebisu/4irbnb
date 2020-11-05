@@ -220,3 +220,27 @@ $gridAmount: (1, 2, 3, 4, 5, 6, 7);
     }
   }
 }
+
+.font {
+  &__section {
+    &--title {
+      font-size: 22px;
+
+      @media screen and (min-width: 728px) {
+        font-size: 30px;
+      }
+
+      @media screen and (min-width: 1028) {
+        font-size: 36px;
+      }
+    }
+
+    &--subtitle {
+      font-size: 14px;
+
+      @media screen and (min-width: 1028px) {
+        font-size: 16px;
+      }
+    }
+  }
+}
