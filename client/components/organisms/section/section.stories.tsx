@@ -115,3 +115,8 @@ export const destinations = SectionTemplate.bind({});
 destinations.args = {
   type: 'destinations',
 };
+
+export const banner = SectionTemplate.bind({});
+banner.args = {
+  type: 'banner',
+};

@@ -1,6 +1,8 @@
 export interface SectionLayoutProps {
   title?: string;
+  subtitle?: string;
   children?: React.ReactNode;
+  dark?: boolean;
 }
 
 export interface LayoutProps {

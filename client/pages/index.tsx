@@ -44,88 +44,6 @@ const CovidNotice = () => {
   );
 };
 
-const Banner = () => {
-  return (
-    <>
-      <div className={index['banner']}>
-        <div className={[layout['all-sides']].join(' ')}>
-          <div className={index['banner__background--picture']} style={{}}>
-            <picture>
-              <source
-                srcSet='/img/background1200.webp'
-                media='(min-width:1200px)'></source>
-              <source
-                srcSet='/img/background960.jpg'
-                media='(min-width:960px)'></source>
-              <source
-                srcSet='/img/background720.jpg'
-                media='(min-width:720px)'></source>
-              <source
-                srcSet='/img/background320.webp'
-                media='(min-width:320px)'></source>
-              <img src='/img/background_default.png' alt='background'></img>
-            </picture>
-          </div>
-        </div>
-        <div className={[layout['all-sides']].join(' ')}>
-          <div
-            className={[index['header__wrapper--md'], shape['h--full']].join(
-              ' '
-            )}>
-            <div style={{ height: '100%' }}>
-              <div className={[space['p-t--14'], index['container']].join(' ')}>
-                <Header type='transparent' />
-              </div>
-              <div className={[color['c--white__0']].join(' ')}></div>
-              <div
-                className={[
-                  index['container'],
-                  layout['z--20'],
-                  shape['h--75p'],
-                  index['flex__explore'],
-                ].join(' ')}>
-                <div className={[space['m-v--10'], space['m-h--0']].join(' ')}>
-                  <h3
-                    className={[color['c--white__0'], font['size--28']].join(
-                      ' '
-                    )}>
-                    Go Near
-                  </h3>
-                </div>
-                <div
-                  className={[
-                    font['c--white__0'],
-                    index['w__explore--subtitle'],
-                    index['text__explore--subtitle'],
-                  ].join(' ')}>
-                  <p
-                    className={[
-                      index['size__explore--subtitle'],
-                      font['weight--300'],
-                      font['ls--3'],
-                      color['c--white__0'],
-                    ].join(' ')}>
-                    Settle in somewhere new. Discover nearby stays to live,
-                    work, or just relax.
-                  </p>
-                </div>
-                <div
-                  className={[
-                    space['m-v--15'],
-                    space['m-h--0'],
-                    index['justify__explore--button'],
-                  ].join(' ')}>
-                  <Button type='banner' title='Explore all' to='/' />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
-
 const OnlineExperiences = () => {
   const cards = [
     { imgUrl: '', name: 'Decode the science of 2020 with Bill Nye' },
@@ -177,23 +95,28 @@ const LandingPage = () => {
   return (
     <div className={[layout['relative'], shape['min-h--fullv']].join(' ')}>
       <CovidNotice />
-      <div>
-        <Banner />
-        <Layout type='section'>
-          <Section type='nearby' items={nearby} />
-        </Layout>
-        <Layout type='section' title='Live anywhere'>
-          <Section type='category' items={anywhere} />
-        </Layout>
-        <OnlineExperiences />
-        <Layout type='section' title='Join millions of hosts on Airbnb'>
-          <Section type='category' items={categories} />
-        </Layout>
-        <Layout type='section' title='Destinations for future trips'>
-          <Section type='destinations' />
-        </Layout>
-        <Footer />
-      </div>
+      <Section type='banner' />
+      <Layout type='section'>
+        <Section type='nearby' items={nearby} />
+      </Layout>
+      <Layout type='section' title='Live anywhere'>
+        <Section type='category' items={anywhere} />
+      </Layout>
+      <Layout
+        type='section'
+        title='Online Experiences'
+        subtitle='Meet people all over the world while trying something new. Join live, interactive video sessions led by one-of-a-kind hosts—all without leaving home.'
+        dark>
+        <Section type='online' items={anywhere} />
+      </Layout>
+      {/* <OnlineExperiences /> */}
+      <Layout type='section' title='Join millions of hosts on Airbnb'>
+        <Section type='category' items={categories} />
+      </Layout>
+      <Layout type='section' title='Destinations for future trips'>
+        <Section type='destinations' />
+      </Layout>
+      <Footer />
       <div className={index['none__menubar']}>
         <MenuBar />
       </div>

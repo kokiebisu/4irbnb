@@ -90,6 +90,8 @@ export interface DestinationsSectionProps {
   locations?: any;
 }
 
+export interface BannerSectionProps {}
+
 export interface SectionProps {
   extendsTo?: string;
   type: string;
