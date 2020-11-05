@@ -110,3 +110,8 @@ export const nearby = SectionTemplate.bind({});
 nearby.args = {
   type: 'nearby',
 };
+
+export const destinations = SectionTemplate.bind({});
+destinations.args = {
+  type: 'destinations',
+};

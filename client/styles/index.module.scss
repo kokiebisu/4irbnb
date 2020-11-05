@@ -133,19 +133,6 @@
   }
 }
 
-.destinations {
-  &__categories {
-    padding: 15px 0;
-    display: grid;
-    grid-auto-flow: column;
-    max-width: 1600px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    border-bottom: 1px solid #dddddd;
-    column-gap: 25px;
-  }
-}
-
 .container {
   position: relative;
   z-index: 20;
