@@ -108,3 +108,8 @@ export const review = CardTemplate.bind({});
 review.args = {
   type: 'review',
 };
+
+export const stay = CardTemplate.bind({});
+stay.args = {
+  type: 'stay',
+};
