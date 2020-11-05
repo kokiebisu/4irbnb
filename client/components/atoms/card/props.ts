@@ -43,10 +43,10 @@ export interface ReviewCardProps {
 }
 
 export interface StaysCardProps {
-  imgUrl: string;
-  typeStay: string;
-  location: string;
-  title: string;
+  imgUrl?: string;
+  typeStay?: string;
+  location?: string;
+  title?: string;
   accomodations?: {
     guests: number;
     bedroom: number;
