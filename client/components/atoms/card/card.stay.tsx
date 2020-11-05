@@ -85,9 +85,10 @@ export const StayCard: React.FC<StaysCardProps> = ({
                 </span>
               </div>
               <div>
-                {characteristics.map((characteristic) => {
+                {characteristics.map((characteristic, index) => {
                   return (
                     <span
+                      key={index}
                       className={[color['c--gray__1'], font['size--14']].join(
                         ' '
                       )}>

@@ -189,26 +189,34 @@ $gridAmount: (1, 2, 3, 4, 5, 6, 7);
 }
 
 .container {
-  padding: 11px 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+
+  @media screen and (min-width: 728px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 
   @media screen and (min-width: 1128px) {
-    padding: 11px 80px;
+    padding-left: 80px;
+    padding-right: 80px;
   }
 
   @media screen and (min-width: 1276px) {
     width: 100%;
-    max-width: 1280px;
     margin: 0 auto;
-    padding: 15px 80px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  @media screen and (min-width: 1760px) {
+    max-width: 1760px;
   }
 
   &--spread {
-    padding-top: 11px;
-    padding-bottom: 11px;
     @media screen and (min-width: 728px) {
-      padding-top: 15px;
-      padding-bottom: 15px;
-      padding: 15px 75px;
+      padding-left: 75px;
+      padding-right: 75px;
     }
   }
 }

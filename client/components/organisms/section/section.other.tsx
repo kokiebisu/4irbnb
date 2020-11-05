@@ -99,9 +99,10 @@ export const OtherSection: React.FC<OtherSectionProps> = ({
             shape['w--full'],
             space['m-t--32'],
           ].join(' ')}>
-          {locations.map((location) => {
+          {locations.map((location, index) => {
             return (
               <li
+                key={index}
                 className={[font['weight--100'], color['c--gray__1']].join(
                   ' '
                 )}>

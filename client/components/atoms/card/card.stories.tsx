@@ -113,3 +113,8 @@ export const stay = CardTemplate.bind({});
 stay.args = {
   type: 'stay',
 };
+
+export const nearby = CardTemplate.bind({});
+nearby.args = {
+  type: 'nearby',
+};

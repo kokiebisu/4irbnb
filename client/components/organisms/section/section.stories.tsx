@@ -105,3 +105,8 @@ export const other = SectionTemplate.bind({});
 other.args = {
   type: 'other',
 };
+
+export const nearby = SectionTemplate.bind({});
+nearby.args = {
+  type: 'nearby',
+};
