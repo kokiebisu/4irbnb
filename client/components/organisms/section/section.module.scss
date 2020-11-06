@@ -306,3 +306,116 @@
     }
   }
 }
+
+.grid {
+  &__online {
+    display: grid;
+    grid-template-columns: calc(100% - 84px) calc(100% - 84px) calc(100% - 84px) calc(
+        100% - 84px
+      );
+    grid-template-rows: 1fr;
+    column-gap: 12px;
+    row-gap: 12px;
+    height: 100%;
+
+    @media screen and (min-width: 728px) {
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      column-gap: 16px;
+      row-gap: 16px;
+    }
+
+    @media screen and (min-width: 1128px) {
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      column-gap: 16px;
+      row-gap: 16px;
+    }
+
+    &--item {
+      flex-basis: auto;
+      flex-grow: 0;
+      flex-shrink: 0;
+      scroll-snap-align: center;
+    }
+
+    &--0 {
+      grid-column-start: 1;
+      grid-column-end: auto;
+      grid-row-start: 1;
+      grid-row-end: auto;
+
+      @media screen and (min-width: 728px) {
+        grid-column-start: 1;
+        grid-column-end: auto;
+        grid-row-start: 1;
+        grid-row-end: span 2;
+      }
+    }
+    &--1 {
+      grid-column-start: 2;
+      grid-column-end: auto;
+      grid-row-start: 1;
+      grid-row-end: auto;
+
+      @media screen and (min-width: 728px) {
+        grid-column-start: 2;
+        grid-column-end: auto;
+        grid-row-start: 1;
+        grid-row-end: auto;
+      }
+    }
+    &--2 {
+      grid-column-start: 3;
+      grid-column-end: auto;
+      grid-row-start: 1;
+      grid-row-end: auto;
+
+      @media screen and (min-width: 728px) {
+        grid-column-start: 2;
+        grid-column-end: auto;
+        grid-row-start: 2;
+        grid-row-end: auto;
+      }
+
+      @media screen and (min-width: 1128px) {
+        grid-column-start: 3;
+        grid-column-end: auto;
+        grid-row-start: 1;
+        grid-row-end: auto;
+      }
+    }
+    &--3 {
+      grid-column-start: 4;
+      grid-column-end: auto;
+      grid-row-start: 1;
+      grid-row-end: auto;
+
+      @media screen and (min-width: 728px) {
+        display: none;
+      }
+
+      @media screen and (min-width: 1128px) {
+        display: block;
+        grid-column-start: 2;
+        grid-column-end: span 2;
+        grid-row-start: 2;
+        grid-row-end: auto;
+      }
+    }
+  }
+}
+
+.p {
+  &__online {
+    padding-top: calc(-64px + (1.45 * (100% - 84px)));
+
+    @media screen and (min-width: 742px) {
+      padding-top: 68%;
+    }
+
+    @media screen and (min-width: 1128px) {
+      padding-top: 50%;
+    }
+  }
+}

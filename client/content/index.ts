@@ -285,3 +285,26 @@ export const nearbyPic = [
   'https://a0.muscache.com/im/pictures/7d80bee1-a510-4950-a1a0-07a4fb25ec2e.jpg?im_q=medq&im_w=1200',
   'https://a0.muscache.com/im/pictures/a7fe39da-3e57-44df-a744-9a73e482802d.jpg?im_q=medq&im_w=1200',
 ];
+
+export const onlines = [
+  {
+    imgUrl:
+      'https://a0.muscache.com/im/pictures/d1d7c836-e44a-429b-9f4c-aa03c381c0b9.jpg',
+    title: 'Learn to make soup dumplings in Shanghai',
+  },
+  {
+    imgUrl:
+      'https://a0.muscache.com/im/pictures/58ac59bc-43e3-442e-9f4c-c12a36ee41ab.jpg',
+    title: 'Explore feminism with street art and graffiti',
+  },
+  {
+    imgUrl:
+      'https://a0.muscache.com/im/pictures/6ca0b5de-8e0a-4116-b190-5cccff497108.jpg',
+    title: 'Go backstage with a New York magician',
+  },
+  {
+    imgUrl:
+      'https://a0.muscache.com/im/pictures/48f2a6c8-2875-48aa-8dcf-08e22a986466.jpg',
+    title: 'Craft cocktails and talk gender with a bartender',
+  },
+];

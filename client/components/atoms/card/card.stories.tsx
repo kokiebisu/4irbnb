@@ -120,3 +120,16 @@ export const nearby = CardTemplate.bind({});
 nearby.args = {
   type: 'nearby',
 };
+
+export const online = CardTemplate.bind({});
+online.args = {
+  type: 'online',
+};
+
+online.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 600 }}>
+      <Story />
+    </div>
+  ),
+];

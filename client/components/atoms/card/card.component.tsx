@@ -10,6 +10,7 @@ import { CheckInCard } from './card.checkin';
 import { ReviewCard } from './card.review';
 import { StayCard } from './card.stay';
 import { NearbyCard } from './card.nearby';
+import { OnlineCard } from './card.online';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -31,6 +32,7 @@ export const Card: React.FC<CardProps> = ({
     review: <ReviewCard {...props} />,
     stay: <StayCard {...props} />,
     nearby: <NearbyCard {...props} />,
+    online: <OnlineCard {...props} />,
   };
   if (to) {
     return (
