@@ -21,8 +21,10 @@ const toggleReducer = (state: State, action: Action) => {
       return { ...state, privacy: !state.privacy };
     case 'toggle_menu':
       return { ...state, menu: !state.menu };
-    case 'toggle_privacy':
-      return { ...state, menu: !state.register };
+    case 'toggle_register':
+      return { ...state, register: !state.register, menu: !state.menu };
+    case 'close_register':
+      return { ...state, register: !state.register };
     default:
       return state;
   }

@@ -142,6 +142,15 @@ paginate.args = {
   type: 'paginate',
 };
 
+export const option = ButtonTemplate.bind({});
+option.args = {
+  type: 'option',
+};
+
+/**
+ * Argtypes
+ */
+
 globe.argTypes = {
   ...disableTitle,
 };
