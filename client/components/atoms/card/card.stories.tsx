@@ -8,7 +8,24 @@ import { CardProps } from './props';
 export default {
   title: 'Design System/Atoms/Card',
   component: Card,
-  argTypes: { onPress: { action: 'clicked' } },
+  argTypes: {
+    onPress: { action: 'clicked' },
+    type: {
+      control: {
+        disable: true,
+      },
+    },
+    extendsTo: {
+      control: {
+        disable: true,
+      },
+    },
+    to: {
+      control: {
+        disable: true,
+      },
+    },
+  },
 } as Meta;
 
 const CardTemplate: Story<CardProps> = (args) => <Card {...args} />;
@@ -39,38 +56,23 @@ horizontal.decorators = [
   ),
 ];
 
-export const horizontalWithSuperhost = CardTemplate.bind({});
-horizontalWithSuperhost.args = {
-  type: 'horizontal',
-  superhost: true,
+horizontal.argTypes = {
+  superhost: {
+    control: 'boolean',
+  },
+  save: {
+    control: 'boolean',
+  },
 };
-
-horizontalWithSuperhost.decorators = [
-  (Story) => (
-    <div style={{ width: 300 }}>
-      <Story />
-    </div>
-  ),
-];
-
-export const horizontalWithSave = CardTemplate.bind({});
-horizontalWithSave.args = {
-  type: 'horizontal',
-  save: true,
-};
-
-horizontalWithSave.decorators = [
-  (Story) => (
-    <div style={{ width: 300 }}>
-      <Story />
-    </div>
-  ),
-];
 
 export const vertical = CardTemplate.bind({});
 vertical.args = {
   type: 'vertical',
-  save: true,
+};
+vertical.argTypes = {
+  save: {
+    control: 'boolean',
+  },
 };
 
 export const typeStay = CardTemplate.bind({});

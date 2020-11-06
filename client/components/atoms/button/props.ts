@@ -63,6 +63,11 @@ export interface PaginateButtonProps extends ClickableButtonProps {
 
 export interface ExpandButtonProps extends LinkButtonProps, TitleProps {}
 
+export interface OptionButtonProps {
+  option?: string;
+  bold?: boolean;
+}
+
 export type ButtonProps = {
   extendsTo?: string;
   type?: string;

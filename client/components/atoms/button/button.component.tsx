@@ -13,6 +13,7 @@ import { PlainButton } from './button.plain';
 import { SearchbarButton } from './button.searchbar';
 import { PaginateButton } from './button.paginate';
 import { ExpandButton } from './button.expand';
+import { OptionButton } from './button.option';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -20,7 +21,7 @@ interface mapProps {
 
 export const Button: React.FC<ButtonProps> = ({
   onPress,
-  to = '/',
+  to,
   extendsTo,
   tap = { scale: 0.98 },
   type,
@@ -39,6 +40,7 @@ export const Button: React.FC<ButtonProps> = ({
     searchbar: <SearchbarButton {...props} />,
     paginate: <PaginateButton {...props} />,
     expand: <ExpandButton {...props} />,
+    option: <OptionButton {...props} />,
   };
 
   if (type) {
