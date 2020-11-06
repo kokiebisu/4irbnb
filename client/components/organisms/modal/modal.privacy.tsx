@@ -14,12 +14,6 @@ import { Lock } from '../../../public/svg/original';
 import { PrivacyModalProps } from './props';
 
 export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
-  const toggleDispatch = useToggleDispatch();
-
-  const handlePress = () => {
-    return toggleDispatch({ type: 'toggle_privacy' });
-  };
-
   return (
     <motion.div
       exit={{ opacity: 0 }}
@@ -79,12 +73,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
               space['m-l--0'],
               modal['m-r--privacy'],
             ].join(' ')}>
-            <Button
-              tap={{ scale: 0.98 }}
-              title='Save'
-              type='privacy'
-              onPress={handlePress}
-            />
+            <Button tap={{ scale: 0.98 }} title='Save' type='privacy' />
           </motion.div>
           <motion.div
             className={[
@@ -98,7 +87,6 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
               title='Cookie Preferences'
               type='privacy'
               inverse
-              onPress={handlePress}
             />
           </motion.div>
         </div>

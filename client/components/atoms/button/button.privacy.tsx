@@ -1,19 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { PrivacyButtonProps } from './props';
+import { useToggleDispatch } from '../../../context/toggle';
 
 import font from '../../../styles/font.module.scss';
 import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
 import shape from '../../../styles/shape.module.scss';
-import button from './button.module.scss';
-import { PrivacyButtonProps } from './props';
 
 export const PrivacyButton: React.FC<PrivacyButtonProps> = ({
   tap,
   title = 'Button',
   inverse = false,
-  onPress,
 }) => {
+  const toggleDispatch = useToggleDispatch();
+
+  const handlePress = () => {
+    if (title === 'Save') {
+      /**
+       * Save the cookie
+       */
+      return toggleDispatch({ type: 'toggle_privacy' });
+    }
+    /**
+     * Open Cookie Preferences
+     */
+    return toggleDispatch({ type: 'toggle_privacy' });
+  };
   return (
     <motion.button
       whileTap={tap}
@@ -26,14 +39,13 @@ export const PrivacyButton: React.FC<PrivacyButtonProps> = ({
         shape['br--8'],
         shape['w--full'],
         shape['min-w--150'],
-        // button['w--privacy'],
         font['size--15'],
       ].join(' ')} ${
         inverse
           ? [color['bg--gray__4'], color['b--transparent']].join(' ')
           : [color['bg--transparent'], color['b--black']].join(' ')
       }`}
-      onClick={onPress}>
+      onClick={handlePress}>
       <p
         className={
           inverse

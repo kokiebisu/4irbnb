@@ -38,7 +38,7 @@ export const GlobeButton: React.FC<GlobeButtonProps> = ({
           space['p-r--15'],
         ].join(' ')} ${
           inverse
-            ? [animation['hover-background--gray__1']].join(' ')
+            ? [animation['hover-background--white__transparent']].join(' ')
             : [animation['hover-background--white__1']].join(' ')
         }`}>
         <div className={[layout['items-center'], space['m-r--8']].join(' ')}>
