@@ -11,32 +11,40 @@ import shape from '../../../styles/shape.module.scss';
 export const OnlineSection: React.FC<OnlineSectionProps> = ({
   items = [
     {
-      imgUrl:
-        'https://a0.muscache.com/im/pictures/50109909-bdb5-47d4-8883-e0e6fd00c18c.jpg',
+      small:
+        'https://a0.muscache.com/im/pictures/0e46f398-42f5-4897-9168-f84622aeba58.jpg',
+      large:
+        'https://a0.muscache.com/im/pictures/78010337-07f0-4154-9528-363b97b54699.jpg',
       title: 'Learn to make soup dumplings in Shanghai',
     },
     {
-      imgUrl:
-        'https://a0.muscache.com/im/pictures/50109909-bdb5-47d4-8883-e0e6fd00c18c.jpg',
-      title: 'Learn to make soup dumplings in Shanghai',
+      small:
+        'https://a0.muscache.com/im/pictures/50566ef1-6e6d-4672-be8c-33d132f69470.jpg',
+      large:
+        'https://a0.muscache.com/im/pictures/0735e435-3d1d-4aec-b536-9ee54f299ce6.jpg',
+      title: 'Explore feminism with street art and graffiti',
     },
     {
-      imgUrl:
-        'https://a0.muscache.com/im/pictures/50109909-bdb5-47d4-8883-e0e6fd00c18c.jpg',
-      title: 'Learn to make soup dumplings in Shanghai',
+      small:
+        'https://a0.muscache.com/im/pictures/7d7d02c0-fe0c-4e6c-974e-029b91656e00.jpg',
+      large:
+        'https://a0.muscache.com/im/pictures/1793b6aa-4c3c-4193-a65a-09b440b2ca2c.jpg',
+      title: 'Go backstage with a New York magician',
     },
     {
-      imgUrl:
-        'https://a0.muscache.com/im/pictures/50109909-bdb5-47d4-8883-e0e6fd00c18c.jpg',
-      title: 'Learn to make soup dumplings in Shanghai',
+      small:
+        'https://a0.muscache.com/im/pictures/701b98c5-0068-4bb7-9448-63d4275e679e.jpg',
+      large:
+        'https://a0.muscache.com/im/pictures/925f99bb-c5bc-4d82-9803-518abeef7e2e.jpg',
+      title: 'Craft cocktails and talk gender with a bartender',
     },
   ],
 }) => {
   return (
-    <div className={[color['bg--black']].join(' ')}>
+    <div className={[color['bg--black'], space['m-t--16']].join(' ')}>
       <div
+        className={[section['p__online']].join(' ')}
         style={{
-          paddingTop: 'calc(-64px + (1.45 * (100% - 84px)))',
           position: 'relative',
         }}>
         <div
@@ -62,20 +70,23 @@ export const OnlineSection: React.FC<OnlineSectionProps> = ({
               {items.map((item, index) => {
                 return (
                   <div
-                    className={[
+                    className={`${[
                       shape['w--full'],
                       section[`grid__online--${index}`],
                       section['grid__online--item'],
-                    ].join(' ')}>
+                    ].join(' ')}} ${
+                      index === 3 && [section['h__online--last']].join()
+                    }`}>
                     <Card
                       to='/'
                       type='online'
-                      imgUrl={item.imgUrl}
+                      small={item.small}
+                      large={item.large}
                       title={item.title}
                       extendsTo={[
                         layout['block'],
-                        shape['h-full'],
-                        shape['w-full'],
+                        shape['h--full'],
+                        shape['w--full'],
                       ].join(' ')}
                     />
                   </div>
@@ -85,7 +96,7 @@ export const OnlineSection: React.FC<OnlineSectionProps> = ({
           </div>
         </div>
       </div>
-      <div className={[space['m-v--16']].join(' ')}>
+      <div className={[space['m-v--32']].join(' ')}>
         <Button type='border' title='Explore all' inverse size='sm' />
       </div>
     </div>

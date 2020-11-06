@@ -53,7 +53,7 @@ const LandingPage = () => {
         title='Meet Online Experiences'
         subtitle='Interactive activities you can do together, led by expert hosts.'
         dark>
-        <Section type='online' items={onlines} />
+        <Section type='online' />
       </Layout>
       <Layout type='section' title='Join millions of hosts on Airbnb'>
         <Section type='category' items={categories} />
