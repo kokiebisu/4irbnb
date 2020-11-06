@@ -5,6 +5,7 @@ import layout from '../../../styles/layout.module.scss';
 import color from '../../../styles/color.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
+import header from './header.module.scss';
 
 import { menu as menuModal } from '../../organisms/modal/modal.stories';
 import { Modal } from '../modal/modal.component';
@@ -20,7 +21,7 @@ export const TransparentHeader: React.FC<{}> = () => {
     <header className={[space['p-h--0'], space['p-v--11']].join(' ')}>
       <div
         className={[
-          shape['none--sm'],
+          header['display__transparent--md'],
           layout['items-center'],
           layout['justify-between'],
           layout['relative'],
@@ -67,7 +68,7 @@ export const TransparentHeader: React.FC<{}> = () => {
       </div>
       <div
         className={[
-          shape['none--md'],
+          header['display__transparent--sm'],
           layout['items-center'],
           space['p-v--10'],
           space['p-h--25'],

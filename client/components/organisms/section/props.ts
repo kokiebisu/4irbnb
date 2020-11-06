@@ -81,6 +81,17 @@ export interface OtherSectionProps {
   locations?: any;
 }
 
+export interface NearbySectionProps {
+  items?: any;
+}
+
+export interface DestinationsSectionProps {
+  categories?: any;
+  locations?: any;
+}
+
+export interface BannerSectionProps {}
+
 export interface SectionProps {
   extendsTo?: string;
   type: string;

@@ -3,11 +3,19 @@ import { Story, Meta } from '@storybook/react/types-6-0';
 import { Section } from './section.component';
 
 import { SectionProps } from './props';
+import { ContextProvider } from '../../../context/provider';
 
 export default {
   title: 'Design System/Organisms/Section',
   component: Section,
   argTypes: { onPress: { action: 'clicked' } },
+  decorators: [
+    (Story) => (
+      <ContextProvider>
+        <Story />
+      </ContextProvider>
+    ),
+  ],
 } as Meta;
 
 const SectionTemplate: Story<SectionProps> = (args) => <Section {...args} />;
@@ -104,4 +112,19 @@ know.args = {
 export const other = SectionTemplate.bind({});
 other.args = {
   type: 'other',
+};
+
+export const nearby = SectionTemplate.bind({});
+nearby.args = {
+  type: 'nearby',
+};
+
+export const destinations = SectionTemplate.bind({});
+destinations.args = {
+  type: 'destinations',
+};
+
+export const banner = SectionTemplate.bind({});
+banner.args = {
+  type: 'banner',
 };

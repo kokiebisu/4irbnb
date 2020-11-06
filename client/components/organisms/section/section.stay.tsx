@@ -32,18 +32,21 @@ export const StaySection: React.FC<StaySectionProps> = ({
 }) => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch(fetchUrl);
-      const resJson = await res.json();
-      console.log('res', resJson);
-      setData(resJson);
-    };
-    if (carouselType !== 'stayTypes') {
-      fetchData();
-    } else {
-      setData(items);
-    }
+    setData(items);
   }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const res = await fetch(fetchUrl);
+  //     const resJson = await res.json();
+  //     console.log('res', resJson);
+  //     setData(resJson);
+  //   };
+  //   if (carouselType !== 'stayTypes') {
+  //     fetchData();
+  //   } else {
+  //     setData(items);
+  //   }
+  // }, []);
 
   const displayItems = (carouselType, save) => {
     if (pagination) {

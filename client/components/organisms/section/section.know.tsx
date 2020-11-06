@@ -43,9 +43,9 @@ export const KnowSection: React.FC<KnowSectionProps> = ({
             <h3>House rules</h3>
           </div>
           <div className={[space['m-b--32']].join(' ')}>
-            {houseRules.map((item) => {
+            {houseRules.map((item, index) => {
               return (
-                <div className={[space['m-b--6']].join(' ')}>
+                <div key={index} className={[space['m-b--6']].join(' ')}>
                   <Bullet type='know' categoryType={item} />
                 </div>
               );
@@ -61,9 +61,9 @@ export const KnowSection: React.FC<KnowSectionProps> = ({
             <h3>Health & safety</h3>
           </div>
           <div className={[space['m-b--32']].join(' ')}>
-            {healths.map((item) => {
+            {healths.map((item, index) => {
               return (
-                <div className={[space['m-b--6']].join(' ')}>
+                <div key={index} className={[space['m-b--6']].join(' ')}>
                   <Bullet type='know' categoryType={item} />
                 </div>
               );

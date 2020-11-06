@@ -8,7 +8,8 @@ import { CardProps } from './props';
 import { ArrangementsCard } from './card.arrangements';
 import { CheckInCard } from './card.checkin';
 import { ReviewCard } from './card.review';
-import { StayCard } from './card.stays';
+import { StayCard } from './card.stay';
+import { NearbyCard } from './card.nearby';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -29,6 +30,7 @@ export const Card: React.FC<CardProps> = ({
     checkin: <CheckInCard {...props} />,
     review: <ReviewCard {...props} />,
     stay: <StayCard {...props} />,
+    nearby: <NearbyCard {...props} />,
   };
   if (to) {
     return (
