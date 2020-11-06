@@ -2,7 +2,7 @@ import React from 'react';
 import index from 'styles/index.module.scss';
 import layout from 'styles/layout.module.scss';
 import space from 'styles/space.module.scss';
-import { categories, anywhere } from '../content/index';
+import { categories, anywhere, onlines } from '../content';
 
 import { Modal } from 'components/organisms/modal/modal.component';
 import color from '../styles/color.module.scss';
@@ -50,10 +50,10 @@ const LandingPage = () => {
       </Layout>
       <Layout
         type='section'
-        title='Online Experiences'
-        subtitle='Join interactive, global adventures with inspiring, kid-friendly hosts'
+        title='Meet Online Experiences'
+        subtitle='Interactive activities you can do together, led by expert hosts.'
         dark>
-        <Section type='online' items={anywhere} />
+        <Section type='online' />
       </Layout>
       <Layout type='section' title='Join millions of hosts on Airbnb'>
         <Section type='category' items={categories} />

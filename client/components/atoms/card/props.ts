@@ -64,6 +64,12 @@ export interface NearbyCardProps {
   hours?: number;
 }
 
+export interface OnlineCardProps {
+  small?: string;
+  large?: string;
+  title?: string;
+}
+
 export interface CardProps {
   extendsTo?: string;
   type?: string;
