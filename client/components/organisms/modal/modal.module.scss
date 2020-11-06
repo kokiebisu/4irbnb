@@ -25,24 +25,6 @@
   }
 }
 
-.m {
-  &__privacy {
-    margin: 0 20px 20px;
-
-    @media screen and (min-width: 728px) {
-      margin: 0 40px 20px;
-    }
-
-    @media screen and (min-width: 1128px) {
-      margin: 0 80px 20px;
-    }
-
-    @media screen and (min-width: 1760px) {
-      margin: 0 0 20px;
-    }
-  }
-}
-
 .ba {
   &::after {
     content: '';

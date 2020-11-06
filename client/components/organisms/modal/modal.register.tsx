@@ -12,8 +12,10 @@ import { motion } from 'framer-motion';
 import { ChevronDown } from '../../../public/svg/regular';
 import { RegisterModalProps } from './props';
 import { Apple, Facebook, Google } from '../../../public/svg/logo';
+import { useToggleDispatch } from 'context/toggle';
 
 export const RegisterModal: React.FC<RegisterModalProps> = () => {
+  const toggleDispatch = useToggleDispatch();
   const [clicked, setClicked] = useState(false);
   const logins = [
     { icon: <Email width={17} />, press: () => console.log('clicked email') },
@@ -24,6 +26,10 @@ export const RegisterModal: React.FC<RegisterModalProps> = () => {
     { args: <Google width={17} />, press: () => console.log('clicked google') },
     { args: <Apple width={17} />, press: () => console.log('clicked apple') },
   ];
+
+  const handleClose = () => {
+    toggleDispatch({ type: 'close_register' });
+  };
   return (
     <motion.div
       exit={{ opacity: 0 }}
@@ -43,9 +49,11 @@ export const RegisterModal: React.FC<RegisterModalProps> = () => {
           space['p-h--24'],
         ].join(' ')}>
         <div className={[layout['relative'], shape['w--full']].join(' ')}>
-          <div className={[layout['al--0'], layout['t--2']].join(' ')}>
+          <Button
+            onPress={handleClose}
+            extendsTo={[layout['al--0'], layout['t--2']].join(' ')}>
             <Close width={16} height={16} stroke='black' strokeWidth={2} />
-          </div>
+          </Button>
           <div className={[layout['all-center']].join(' ')}>Sign up</div>
         </div>
       </div>
