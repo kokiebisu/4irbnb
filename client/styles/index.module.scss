@@ -219,22 +219,6 @@
 }
 
 .m {
-  &__modal--privacy {
-    margin-bottom: 20px;
-    margin-left: 24px;
-    margin-right: 24px;
-
-    @media screen and (min-width: 745px) {
-      margin-left: 40px;
-      margin-right: 40px;
-    }
-
-    @media screen and (min-width: 1128px) {
-      margin-left: 75px;
-      margin-right: 75px;
-    }
-  }
-
   &__footer--item {
     @media (min-width: 728px) and (max-width: 1128px) {
       margin-top: 7px !important;
@@ -270,6 +254,12 @@
   &__footer--section {
     @media screen and (min-width: 1128px) {
       width: 25%;
+    }
+  }
+
+  &__modal {
+    @media screen and (min-width: 1760px) {
+      max-width: 1600px;
     }
   }
 }
@@ -345,5 +335,14 @@
         padding-bottom: 15px;
       }
     }
+  }
+}
+
+.modal__privacy {
+  @media screen and (min-width: 1760px) {
+    width: 100%;
+    max-width: 1600px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

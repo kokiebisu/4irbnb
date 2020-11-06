@@ -36,6 +36,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
           shape['shadow--lg'],
           color['bg--white__0'],
           modal['flex__privacy--content'],
+          modal['m__privacy'],
         ].join(' ')}>
         <div>
           <div
