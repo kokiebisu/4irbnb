@@ -35,10 +35,10 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
                   styles['w__footer--section'],
                 ].join(' ')}>
                 <div>
-                  <h4
+                  <h3
                     className={[font['size--12'], font['uppercase']].join(' ')}>
                     {section.name}
-                  </h4>
+                  </h3>
                 </div>
                 <div
                   className={[

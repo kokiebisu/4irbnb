@@ -58,6 +58,12 @@ export interface StaysCardProps {
   reviews?: number;
 }
 
+export interface NearbyCardProps {
+  imgUrl?: string;
+  city?: string;
+  hours?: number;
+}
+
 export interface CardProps {
   extendsTo?: string;
   type?: string;

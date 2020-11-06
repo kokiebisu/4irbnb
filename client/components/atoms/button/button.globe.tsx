@@ -17,16 +17,18 @@ export const GlobeButton: React.FC<GlobeButtonProps> = ({
 }) => {
   let toggleDispatch = useToggleDispatch();
   const openMenuModal = () => {
-    toggleDispatch({ type: 'toggle_menu' });
+    toggleDispatch({ type: 'toggle_language' });
   };
   return (
     <motion.button
       whileTap={tap}
       data-testid='button'
-      className={[color['bg--transparent'], shape['br--30']].join(' ')}
+      style={{ borderRadius: 30 }}
+      className={[color['bg--transparent']].join(' ')}
       onClick={openMenuModal}>
       <div
         className={`${[
+          shape['br--30'],
           layout['flex'],
           layout['items-center'],
           color['bg--transparent'],

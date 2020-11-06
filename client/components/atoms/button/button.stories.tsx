@@ -98,6 +98,14 @@ banner.args = {
   type: 'banner',
 };
 
+banner.decorators = [
+  (Story) => (
+    <div style={{ width: 200 }}>
+      <Story />
+    </div>
+  ),
+];
+
 export const plain = ButtonTemplate.bind({});
 plain.args = {
   type: 'plain',
