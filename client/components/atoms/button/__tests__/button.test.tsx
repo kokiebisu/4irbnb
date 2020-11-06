@@ -30,7 +30,9 @@ describe('Base Button', () => {
   });
   it('renders correctly for privacy button', () => {
     const { getByTestId } = render(
-      <Button {...privacy.args} onPress={() => console.log('clicked')} />
+      <ContextProvider>
+        <Button {...privacy.args} onPress={() => console.log('clicked')} />
+      </ContextProvider>
     );
     expect(getByTestId('button')).toHaveTextContent('Button');
   });
