@@ -105,7 +105,7 @@ const LandingPage = () => {
       <Layout
         type='section'
         title='Online Experiences'
-        subtitle='Meet people all over the world while trying something new. Join live, interactive video sessions led by one-of-a-kind hosts—all without leaving home.'
+        subtitle='Join interactive, global adventures with inspiring, kid-friendly hosts'
         dark>
         <Section type='online' items={anywhere} />
       </Layout>
@@ -120,17 +120,16 @@ const LandingPage = () => {
       <div className={index['none__menubar']}>
         <MenuBar />
       </div>
-      <div
-        className={[
-          color['bg--white__0'],
+      <Modal
+        extendsTo={[
           layout['fb--0'],
           layout['z--9999'],
           layout['block'],
-          index['m__modal--privacy'],
-          shape['br--8'],
-        ].join(' ')}>
-        <Modal {...privacyModal.args} criteria={toggleState.privacy} />
-      </div>
+          index['modal__privacy'],
+        ].join(' ')}
+        type='privacy'
+        criteria={toggleState.privacy}
+      />
       <div>
         <Modal {...registerModal.args} criteria={toggleState.register} />
       </div>

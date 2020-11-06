@@ -213,6 +213,31 @@ $gridAmount: (1, 2, 3, 4, 5, 6, 7);
     max-width: 1760px;
   }
 
+  &__modal {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: 728px) {
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+
+    @media screen and (min-width: 1128px) {
+      margin-left: 80px;
+      margin-right: 80px;
+    }
+
+    @media screen and (min-width: 1276px) {
+      margin-left: 80px;
+      margin-right: 80px;
+    }
+
+    @media screen and (min-width: 1760px) {
+      margin: 0 0 20px 0;
+    }
+  }
+
   &--spread {
     @media screen and (min-width: 728px) {
       padding-left: 75px;

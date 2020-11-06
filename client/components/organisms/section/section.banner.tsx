@@ -40,13 +40,13 @@ export const BannerSection: React.FC<BannerSectionProps> = () => {
             ' '
           )}>
           <div style={{ height: '100%' }}>
-            <div className={[space['p-t--14'], index['container']].join(' ')}>
+            <div className={[space['p-t--14'], layout['container']].join(' ')}>
               <Header type='transparent' />
             </div>
             <div className={[color['c--white__0']].join(' ')}></div>
             <div
               className={[
-                index['container'],
+                layout['container'],
                 layout['z--20'],
                 shape['h--75p'],
                 index['flex__explore'],
