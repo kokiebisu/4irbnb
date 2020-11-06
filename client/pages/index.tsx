@@ -44,53 +44,10 @@ const CovidNotice = () => {
   );
 };
 
-const OnlineExperiences = () => {
-  const cards = [
-    { imgUrl: '', name: 'Decode the science of 2020 with Bill Nye' },
-  ];
-  return (
-    <div
-      className={[color['bg--black'], space['p-v--25'], space['p-h--0']].join(
-        ' '
-      )}>
-      <div className={index['container']}>
-        <div>
-          <h3
-            className={[
-              font['weight--300'],
-              color['c--white__0'],
-              font['size--22'],
-            ].join(' ')}>
-            Online Experiences: Field Trips
-          </h3>
-        </div>
-        <div>
-          <p className={[color['c--white__0'], font['weight--100']].join(' ')}>
-            Join interactive, global adventures with inspiring, kid-friendly
-            hosts
-          </p>
-        </div>
-        <div>
-          {cards.map((card, index) => {
-            return <div key={index}>{card.name}</div>;
-          })}
-        </div>
-        <div
-          className={[
-            layout['inline-block'],
-            color['bg--transparent'],
-            color['b--white'],
-            shape['br--8'],
-          ].join(' ')}>
-          <Button type='border' inverse to='/' />
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const LandingPage = () => {
   const toggleState = useToggleState();
+
+  console.log('toggle', toggleState.privacy);
 
   return (
     <div className={[layout['relative'], shape['min-h--fullv']].join(' ')}>
