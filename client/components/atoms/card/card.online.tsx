@@ -1,12 +1,14 @@
 import React from 'react';
 import { OnlineCardProps } from './props';
 
+import card from './card.module.scss';
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import shape from '../../../styles/shape.module.scss';
 
 export const OnlineCard: React.FC<OnlineCardProps> = ({
-  imgUrl = 'https://a0.muscache.com/im/pictures/78010337-07f0-4154-9528-363b97b54699.jpg',
+  small = 'https://a0.muscache.com/im/pictures/0e46f398-42f5-4897-9168-f84622aeba58.jpg',
+  large = 'https://a0.muscache.com/im/pictures/78010337-07f0-4154-9528-363b97b54699.jpg',
   title = 'Learn to make soup dumplings in Shanghai',
 }) => {
   return (
@@ -21,22 +23,20 @@ export const OnlineCard: React.FC<OnlineCardProps> = ({
         }}>
         <picture>
           <source
-            srcSet={`${imgUrl}?im_w=320 1x, ${imgUrl}?im_w=720 2x`}
-            media='(max-width: 743px)'></source>
-          <source
-            srcSet={`${imgUrl}?im_w=480 1x, ${imgUrl}?im_w=960 2x`}
+            srcSet={`${large}?im_w=480 1x, ${large}?im_w=960 2x`}
             media='(min-width: 743.1px) and (max-width: 1127px)'></source>
           <source
-            srcSet={`${imgUrl}?im_w=480 1x, ${imgUrl}?im_w=1200 2x`}
+            srcSet={`${large}?im_w=480 1x, ${large}?im_w=1200 2x`}
             media='(min-width: 1127.1px) and (max-width: 1439px)'></source>
           <source
-            srcSet={`${imgUrl}?im_w=720 1x, ${imgUrl}?im_w=1680 2x`}
+            srcSet={`${large}?im_w=720 1x, ${large}?im_w=1680 2x`}
             media='(min-width: 1439.1px)'></source>
           <img
+            style={{ objectFit: 'cover', verticalAlign: 'bottom' }}
             className={[shape['br--20']].join(' ')}
             aria-hidden='true'
             decoding='async'
-            src={`${imgUrl}?im_w=720`}></img>
+            src={`${small}?im_w=720`}></img>
         </picture>
       </div>
       <div
@@ -50,7 +50,7 @@ export const OnlineCard: React.FC<OnlineCardProps> = ({
         <div
           style={{
             padding: '15px 15px 0 15px',
-            width: '75%',
+            width: '100%',
             minHeight: 75,
             borderBottomRightRadius: 15,
             borderBottomLeftRadius: 15,

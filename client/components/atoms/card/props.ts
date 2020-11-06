@@ -65,7 +65,8 @@ export interface NearbyCardProps {
 }
 
 export interface OnlineCardProps {
-  imgUrl?: string;
+  small?: string;
+  large?: string;
   title?: string;
 }
 
