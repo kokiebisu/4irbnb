@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import layout from '../../../styles/layout.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import color from '../../../styles/color.module.scss';
@@ -11,19 +11,17 @@ import { Button } from '../../../components/atoms/button/button.component';
 import { motion } from 'framer-motion';
 import { ChevronDown } from '../../../public/svg/regular';
 import { RegisterModalProps } from './props';
-import { Apple, Facebook, Google } from '../../../public/svg/logo';
+import { useToggleDispatch } from '../../../context/toggle';
 
 export const RegisterModal: React.FC<RegisterModalProps> = () => {
+  const toggleDispatch = useToggleDispatch();
   const [clicked, setClicked] = useState(false);
-  const logins = [
-    { icon: <Email width={17} />, press: () => console.log('clicked email') },
-    {
-      icon: <Facebook width={17} />,
-      press: () => console.log('clicked facebook'),
-    },
-    { args: <Google width={17} />, press: () => console.log('clicked google') },
-    { args: <Apple width={17} />, press: () => console.log('clicked apple') },
-  ];
+
+  const methods = ['email', 'facebook', 'google', 'apple'];
+
+  const handleClose = () => {
+    toggleDispatch({ type: 'close_register' });
+  };
   return (
     <motion.div
       exit={{ opacity: 0 }}
@@ -43,9 +41,11 @@ export const RegisterModal: React.FC<RegisterModalProps> = () => {
           space['p-h--24'],
         ].join(' ')}>
         <div className={[layout['relative'], shape['w--full']].join(' ')}>
-          <div className={[layout['al--0'], layout['t--2']].join(' ')}>
+          <Button
+            onPress={handleClose}
+            extendsTo={[layout['al--0'], layout['t--2']].join(' ')}>
             <Close width={16} height={16} stroke='black' strokeWidth={2} />
-          </div>
+          </Button>
           <div className={[layout['all-center']].join(' ')}>Sign up</div>
         </div>
       </div>
@@ -174,14 +174,10 @@ export const RegisterModal: React.FC<RegisterModalProps> = () => {
             </span>
           </div>
           <div>
-            {logins.map((login, index) => {
+            {methods.map((method, index) => {
               return (
                 <div key={index} className={[space['m-v--14']].join(' ')}>
-                  <Button
-                    type='login'
-                    icon={login.icon}
-                    onPress={login.press}
-                  />
+                  <Button type='login' platform={method} />
                 </div>
               );
             })}

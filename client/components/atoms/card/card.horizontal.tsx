@@ -75,14 +75,14 @@ export const HorizontalCard: React.FC<Props> = ({
                       shape['shadow--lg'],
                       shape['br--3'],
                     ].join(' ')}>
-                    <p
+                    <h3
                       className={[
                         font['size--12'],
                         font['uppercase'],
                         font['ls--3'],
                       ].join(' ')}>
                       Superhost
-                    </p>
+                    </h3>
                   </div>
                 </div>
                 <div
