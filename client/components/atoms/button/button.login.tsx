@@ -6,10 +6,10 @@ import shape from '../../../styles/shape.module.scss';
 import space from '../../../styles/space.module.scss';
 import { ButtonLoginProps } from './props';
 import { Email } from '../../../public/svg/original';
-import { Apple, Facebook, Google } from 'public/svg/logo';
+import { Apple, Facebook, Google } from '../../../public/svg/logo';
 
 export const LoginButton: React.FC<ButtonLoginProps> = ({
-  platform = 'Email',
+  platform = 'email',
 }) => {
   const categories = {
     email: {
