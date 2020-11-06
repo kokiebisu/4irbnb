@@ -46,14 +46,14 @@ export const PrivacyButton: React.FC<PrivacyButtonProps> = ({
           : [color['bg--transparent'], color['b--black']].join(' ')
       }`}
       onClick={handlePress}>
-      <p
+      <h3
         className={
           inverse
             ? [color['c--white__0']].join(' ')
             : [color['c--black']].join(' ')
         }>
         {title}
-      </p>
+      </h3>
     </motion.button>
   );
 };

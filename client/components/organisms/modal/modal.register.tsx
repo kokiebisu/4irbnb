@@ -11,8 +11,7 @@ import { Button } from '../../../components/atoms/button/button.component';
 import { motion } from 'framer-motion';
 import { ChevronDown } from '../../../public/svg/regular';
 import { RegisterModalProps } from './props';
-import { Apple, Facebook, Google } from '../../../public/svg/logo';
-import { useToggleDispatch } from 'context/toggle';
+import { useToggleDispatch } from '../../../context/toggle';
 
 export const RegisterModal: React.FC<RegisterModalProps> = () => {
   const toggleDispatch = useToggleDispatch();
