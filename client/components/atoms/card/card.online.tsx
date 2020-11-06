@@ -10,44 +10,54 @@ export const OnlineCard: React.FC<OnlineCardProps> = ({
   title = 'Learn to make soup dumplings in Shanghai',
 }) => {
   return (
-    <div>
-      <div>
+    <div style={{ height: '100%', width: '100%', position: 'relative' }}>
+      <div
+        style={{
+          display: 'inline-block',
+          verticalAlign: 'bottom',
+          minHeight: 1,
+          height: '100%',
+          width: '100%',
+        }}>
         <picture>
           <source
-            className={[shape['btr--15']].join(' ')}
-            style={{ verticalAlign: 'bottom' }}
-            srcSet={`${imgUrl}?im_w=320`}
+            srcSet={`${imgUrl}?im_w=320 1x, ${imgUrl}?im_w=720 2x`}
             media='(max-width: 743px)'></source>
           <source
-            className={[shape['btr--15']].join(' ')}
-            style={{ verticalAlign: 'bottom' }}
-            srcSet={`${imgUrl}?im_w=480`}
+            srcSet={`${imgUrl}?im_w=480 1x, ${imgUrl}?im_w=960 2x`}
             media='(min-width: 743.1px) and (max-width: 1127px)'></source>
           <source
-            className={[shape['btr--15']].join(' ')}
-            style={{ verticalAlign: 'bottom' }}
-            srcSet={`${imgUrl}?im_w=480`}
+            srcSet={`${imgUrl}?im_w=480 1x, ${imgUrl}?im_w=1200 2x`}
             media='(min-width: 1127.1px) and (max-width: 1439px)'></source>
           <source
-            className={[shape['btr--15']].join(' ')}
-            style={{ verticalAlign: 'bottom' }}
-            srcSet={`${imgUrl}?im_w=720`}
+            srcSet={`${imgUrl}?im_w=720 1x, ${imgUrl}?im_w=1680 2x`}
             media='(min-width: 1439.1px)'></source>
           <img
-            className={[shape['btr--15']].join(' ')}
-            style={{ verticalAlign: 'bottom' }}
+            className={[shape['br--20']].join(' ')}
             aria-hidden='true'
             decoding='async'
             src={`${imgUrl}?im_w=720`}></img>
         </picture>
       </div>
       <div
-        style={{ minHeight: 75 }}
-        className={[color['bg--gray__2'], shape['bbr--15']].join(' ')}>
-        <div style={{ padding: 15 }}>
-          <h3 className={[color['c--white__0'], font['size--15']].join(' ')}>
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+        }}
+        className={[color['bg--gray__4'], shape['bbr--15']].join(' ')}>
+        <div
+          style={{
+            padding: '15px 15px 0 15px',
+            width: '75%',
+            minHeight: 75,
+            borderBottomRightRadius: 15,
+            borderBottomLeftRadius: 15,
+          }}>
+          <h4 className={[color['c--white__0'], font['size--15']].join(' ')}>
             {title}
-          </h3>
+          </h4>
         </div>
       </div>
     </div>

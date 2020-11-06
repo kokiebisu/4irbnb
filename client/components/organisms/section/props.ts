@@ -92,6 +92,10 @@ export interface DestinationsSectionProps {
 
 export interface BannerSectionProps {}
 
+export interface OnlineSectionProps {
+  items?: any;
+}
+
 export interface SectionProps {
   extendsTo?: string;
   type: string;
