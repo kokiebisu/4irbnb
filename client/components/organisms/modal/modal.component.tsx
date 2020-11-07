@@ -4,11 +4,11 @@ import useOnClickOutside from '../../../hooks/useOnClickOutside';
 
 import { MenuModal } from './modal.menu';
 import { PrivacyModal } from './modal.privacy';
-import { RegisterModal } from './modal.register';
 import { AvailabilityModal } from './modal.availability';
 
 import { useToggleDispatch } from '../../../context/toggle';
 import { ModalProps } from './props';
+import { AuthModal } from './modal.auth';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -28,7 +28,7 @@ export const Modal: React.FC<ModalProps> = ({
   const types: mapProps = {
     privacy: <PrivacyModal {...props} />,
     menu: <MenuModal refProp={ref} {...props} />,
-    register: <RegisterModal {...props} />,
+    auth: <AuthModal {...props} />,
     availability: <AvailabilityModal {...props} />,
   };
   if (criteria !== undefined) {

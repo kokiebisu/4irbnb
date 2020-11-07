@@ -1,4 +1,5 @@
 import React from 'react';
+import { AuthProvider } from './auth';
 
 import { ToggleProvider } from './toggle';
 
@@ -7,5 +8,9 @@ interface Props {
 }
 
 export const ContextProvider = ({ children }: Props) => {
-  return <ToggleProvider>{children}</ToggleProvider>;
+  return (
+    <AuthProvider>
+      <ToggleProvider>{children}</ToggleProvider>
+    </AuthProvider>
+  );
 };

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
 import color from '../../../styles/color.module.scss';
@@ -8,35 +7,40 @@ import layout from '../../../styles/layout.module.scss';
 import animation from '../../../styles/animation.module.scss';
 import { OptionButtonProps } from './props';
 import { useToggleDispatch } from '../../../context/toggle';
+import { useAuthDispatch } from '../../../context/auth';
+import Router from 'next/router';
 
 export const OptionButton: React.FC<OptionButtonProps> = ({
   option = 'signup',
   bold = false,
 }) => {
   const toggleDispatch = useToggleDispatch();
+  const authDispatch = useAuthDispatch();
   const categories = {
     signup: {
       name: 'Sign up',
       handleClick() {
-        toggleDispatch({ type: 'toggle_register' });
+        authDispatch({ type: 'auth_signup' });
+        toggleDispatch({ type: 'toggle_auth' });
       },
     },
     login: {
       name: 'Log in',
       handleClick() {
-        toggleDispatch({ type: 'toggle_login' });
+        authDispatch({ type: 'auth_login' });
+        toggleDispatch({ type: 'toggle_auth' });
       },
     },
     home: {
       name: 'Host your home',
       handleClick() {
-        // redirect to host home page
+        Router.push('/host/homes');
       },
     },
     experience: {
       name: 'Host an experience',
       handleClick() {
-        // redirect to experience page
+        Router.push('/host/experiences');
       },
     },
     help: {
