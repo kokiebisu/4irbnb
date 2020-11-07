@@ -48,6 +48,7 @@ const LandingPage = () => {
       <Layout type='section' title='Live anywhere'>
         <Section type='category' items={anywhere} />
       </Layout>
+      <div className={space['m-v--32']}></div>
       <Layout
         type='section'
         title='Meet Online Experiences'
@@ -76,7 +77,7 @@ const LandingPage = () => {
         type='privacy'
         criteria={toggleState.privacy}
       />
-      {toggleState.register && (
+      {toggleState.auth && (
         <div
           style={{
             position: 'fixed',
@@ -94,7 +95,7 @@ const LandingPage = () => {
               layout['items-center'],
               shape['h--100v'],
             ].join(' ')}
-            type='register'
+            type='auth'
           />
         </div>
       )}

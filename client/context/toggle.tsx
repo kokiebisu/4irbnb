@@ -7,7 +7,7 @@ type Action = { type: string };
 type State = {
   privacy: boolean;
   menu: boolean;
-  register: boolean;
+  auth: boolean;
 };
 
 type ToggleProviderProps = { children: React.ReactNode };
@@ -21,10 +21,10 @@ const toggleReducer = (state: State, action: Action) => {
       return { ...state, privacy: !state.privacy };
     case 'toggle_menu':
       return { ...state, menu: !state.menu };
-    case 'toggle_register':
-      return { ...state, register: !state.register, menu: !state.menu };
+    case 'toggle_auth':
+      return { ...state, auth: !state.auth, menu: !state.menu };
     case 'close_register':
-      return { ...state, register: !state.register };
+      return { ...state, auth: !state.auth };
     default:
       return state;
   }
@@ -34,7 +34,7 @@ const ToggleProvider = ({ children }: ToggleProviderProps) => {
   const [state, dispatch] = useReducer(toggleReducer, {
     privacy: true,
     menu: false,
-    register: false,
+    auth: false,
   });
 
   return (
