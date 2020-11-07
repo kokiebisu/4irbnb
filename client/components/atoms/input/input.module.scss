@@ -1,0 +1,14 @@
+.label {
+  display: inline-block;
+  position: absolute;
+  left: 15px;
+  top: 16px;
+  transition: all 150ms ease-in;
+  color: #676767;
+}
+
+.field-active {
+  transform: traslateY(25px);
+  font-size: 0.9em;
+  color: #000;
+}

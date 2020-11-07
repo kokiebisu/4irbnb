@@ -36,8 +36,6 @@ const CovidNotice = () => {
 const LandingPage = () => {
   const toggleState = useToggleState();
 
-  console.log('toggle', toggleState.privacy);
-
   return (
     <div className={[layout['relative'], shape['min-h--fullv']].join(' ')}>
       <CovidNotice />

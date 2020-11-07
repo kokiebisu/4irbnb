@@ -13,10 +13,10 @@ export const PaginateButton: React.FC<PaginateButtonProps> = ({
   tap = { scale: 0.98 },
 }) => {
   const handleLeftPagination = () => {
-    console.log('handle left pressed');
+    alert('handle left pressed');
   };
   const handleRightPagination = () => {
-    console.log('handle right pressed');
+    alert('handle right pressed');
   };
   return (
     <>
