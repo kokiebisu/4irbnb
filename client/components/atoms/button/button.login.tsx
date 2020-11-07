@@ -44,6 +44,7 @@ export const LoginButton: React.FC<ButtonLoginProps> = ({
 
   return (
     <button
+      onClick={categories[platform].handleClick}
       style={{ border: '2px solid #B0B0B0' }}
       className={[
         color['bg--transparent'],
