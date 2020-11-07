@@ -30,9 +30,9 @@ menu.args = {
   dispatchType: 'toggle_menu',
 };
 
-export const register = ModalTemplate.bind({});
-register.args = {
-  type: 'register',
+export const auth = ModalTemplate.bind({});
+auth.args = {
+  type: 'auth',
 };
 
 export const availability = ModalTemplate.bind({});

@@ -15,40 +15,22 @@ import { useToggleDispatch } from '../../../context/toggle';
 
 export const RegisterModal: React.FC<RegisterModalProps> = () => {
   const toggleDispatch = useToggleDispatch();
-  const [clicked, setClicked] = useState(false);
+  const [display, setDisplay] = useState<'email' | 'login' | 'signup'>('email');
 
   const methods = ['email', 'facebook', 'google', 'apple'];
 
-  const handleClose = () => {
-    toggleDispatch({ type: 'close_register' });
+  const displayTitle = () => {
+    switch (display) {
+      case 'login':
+        return 'Log in';
+      case 'signup':
+        return 'Sign up';
+      case 'email':
+    }
   };
-  return (
-    <motion.div
-      exit={{ opacity: 0 }}
-      initial={{ y: 25 }}
-      animate={{ y: 0 }}
-      style={{ width: 550, height: 650 }}
-      className={[
-        shape['shadow--lg'],
-        shape['br--16'],
-        color['bg--white__0'],
-      ].join(' ')}>
-      <div
-        style={{ height: 60 }}
-        className={[
-          layout['items-center'],
-          color['b-b--white__2'],
-          space['p-h--24'],
-        ].join(' ')}>
-        <div className={[layout['relative'], shape['w--full']].join(' ')}>
-          <Button
-            onPress={handleClose}
-            extendsTo={[layout['al--0'], layout['t--2']].join(' ')}>
-            <Close width={16} height={16} stroke='black' strokeWidth={2} />
-          </Button>
-          <div className={[layout['all-center']].join(' ')}>Sign up</div>
-        </div>
-      </div>
+
+  const displayContent = () => {
+    return (
       <div
         style={{ height: 'calc(100% - 60px)' }}
         className={[space['p-h--24']].join(' ')}>
@@ -110,26 +92,20 @@ export const RegisterModal: React.FC<RegisterModalProps> = () => {
                     ' '
                   )}>
                   <label
-                    className={
-                      clicked
-                        ? [].join(' ')
-                        : [
-                            font['weight--100'],
-                            color['c--gray__0'],
-                            layout['items-center'],
-                          ].join(' ')
-                    }>
+                    className={[
+                      font['weight--100'],
+                      color['c--gray__0'],
+                      layout['items-center'],
+                    ].join(' ')}>
                     Phone number
                   </label>
                 </div>
                 <input
-                  className={
-                    clicked
-                      ? [shape['w--full'], layout['block'], color['b--0']].join(
-                          ' '
-                        )
-                      : [shape['none']].join(' ')
-                  }
+                  className={[
+                    shape['w--full'],
+                    layout['block'],
+                    color['b--0'],
+                  ].join(' ')}
                   placeholder='Phone number'
                 />
               </div>
@@ -149,9 +125,9 @@ export const RegisterModal: React.FC<RegisterModalProps> = () => {
           <div className={[space['m-t--18'], space['m-b--18']].join(' ')}>
             <Button
               type='plain'
-              onPress={() => console.log('clicked Continue')}>
-              Continue
-            </Button>
+              title='Continue'
+              onPress={() => console.log('clicked Continue')}
+            />
           </div>
           <div
             style={{ zIndex: 1 }}
@@ -206,6 +182,46 @@ export const RegisterModal: React.FC<RegisterModalProps> = () => {
           </div>
         </div>
       </div>
+    );
+  };
+
+  const handleClose = () => {
+    toggleDispatch({ type: 'close_register' });
+  };
+  return (
+    <motion.div
+      exit={{ opacity: 0 }}
+      initial={{ y: 25 }}
+      animate={{ y: 0 }}
+      style={{ width: 550, height: 650 }}
+      className={[
+        shape['shadow--lg'],
+        shape['br--16'],
+        color['bg--white__0'],
+      ].join(' ')}>
+      <div
+        style={{ height: 60 }}
+        className={[
+          layout['items-center'],
+          color['b-b--white__2'],
+          space['p-h--24'],
+        ].join(' ')}>
+        <div className={[layout['relative'], shape['w--full']].join(' ')}>
+          <Button
+            onPress={handleClose}
+            extendsTo={[
+              layout['al--0'],
+              layout['t--2'],
+              color['bg--transparent'],
+            ].join(' ')}>
+            <Close width={16} height={16} stroke='black' strokeWidth={2} />
+          </Button>
+          <div className={[layout['all-center']].join(' ')}>
+            {displayTitle()}
+          </div>
+        </div>
+      </div>
+      {displayContent()}
     </motion.div>
   );
 };
