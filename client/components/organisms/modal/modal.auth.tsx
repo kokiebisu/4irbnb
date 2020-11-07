@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import layout from '../../../styles/layout.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import color from '../../../styles/color.module.scss';
@@ -13,10 +13,26 @@ import { ChevronDown } from '../../../public/svg/regular';
 import { RegisterModalProps } from './props';
 import { useToggleDispatch } from '../../../context/toggle';
 import { useAuthState } from '../../../context/auth';
+import { Input } from '../../../components/atoms/input/input.component';
+
+import { useFormik } from 'formik';
 
 const Auth = () => {
   const authState = useAuthState();
   const methods = ['email', 'facebook', 'google', 'apple'];
+
+  const formik = useFormik({
+    initialValues: {
+      country: '',
+      tel: '',
+    },
+    onSubmit(values) {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
+
+  console.log('fotm', formik.values.tel);
+
   return (
     <div
       style={{ height: 'calc(100% - 60px)' }}
@@ -24,78 +40,58 @@ const Auth = () => {
       <div className={[shape['w--full']].join(' ')}>
         <div className={[space['m-b--8'], space['m-t--35']].join(' ')}>
           <div>
-            <div
-              style={{ height: 65 }}
-              className={[
-                layout['relative'],
-                color['b-t--white__3'],
-                color['b-r--white__3'],
-                color['b-l--white__3'],
-                shape['btr--10'],
-                space['p-v--8'],
-                space['p-h--12'],
-                layout['items-center'],
-                layout['justify-between'],
-              ].join(' ')}>
-              <div>
-                <label
-                  className={[
-                    font['size--12'],
-                    color['c--gray__2'],
-                    font['weight--300'],
-                  ].join(' ')}>
-                  Country/Region
-                </label>
-                <input
-                  style={{ height: 20 }}
-                  className={[
-                    space['p--0'],
-                    shape['w--full'],
-                    layout['block'],
-                    color['b--0'],
-                    font['size--16'],
-                    font['weight--300'],
-                    color['c__placeholder--black'],
-                  ].join(' ')}
-                  placeholder='Canada (+1)'
-                />
-              </div>
+            <form onSubmit={formik.handleSubmit}>
               <div
-                style={{ right: 17 }}
-                className={[layout['absolute']].join(' ')}>
-                <ChevronDown width={12} />
-              </div>
-            </div>
-            <div
-              style={{ height: 65 }}
-              className={[
-                shape['bbr--10'],
-                color['b--white__3'],
-                space['p-v--8'],
-                space['p-h--12'],
-              ].join(' ')}>
-              <div
-                className={[layout['items-center'], shape['h--full']].join(
-                  ' '
-                )}>
-                <label
-                  className={[
-                    font['weight--100'],
-                    color['c--gray__0'],
-                    layout['items-center'],
-                  ].join(' ')}>
-                  Phone number
-                </label>
-              </div>
-              <input
+                style={{ height: 65 }}
                 className={[
-                  shape['w--full'],
-                  layout['block'],
-                  color['b--0'],
-                ].join(' ')}
+                  layout['relative'],
+                  color['b-t--white__3'],
+                  color['b-r--white__3'],
+                  color['b-l--white__3'],
+                  shape['btr--10'],
+                  space['p-v--8'],
+                  space['p-h--12'],
+                  layout['items-center'],
+                  layout['justify-between'],
+                ].join(' ')}>
+                <div>
+                  <label
+                    className={[
+                      font['size--12'],
+                      color['c--gray__2'],
+                      font['weight--300'],
+                    ].join(' ')}>
+                    Country/Region
+                  </label>
+                  <input
+                    style={{ height: 20 }}
+                    className={[
+                      space['p--0'],
+                      shape['w--full'],
+                      layout['block'],
+                      color['b--0'],
+                      font['size--16'],
+                      font['weight--300'],
+                      color['c__placeholder--black'],
+                    ].join(' ')}
+                    placeholder='Canada (+1)'
+                  />
+                </div>
+                <div
+                  style={{ right: 17 }}
+                  className={[layout['absolute']].join(' ')}>
+                  <ChevronDown width={12} />
+                </div>
+              </div>
+              <Input
+                type='text'
+                category='tel'
                 placeholder='Phone number'
+                handleChange={formik.handleChange}
+                value={formik.values.tel}
               />
-            </div>
+              <button type='submit'>submit</button>
+            </form>
           </div>
         </div>
         <div>

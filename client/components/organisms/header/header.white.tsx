@@ -57,7 +57,7 @@ export const WhiteHeader: React.FC<HeaderWhiteProps> = ({ spread = false }) => {
                 space['m-b--0'],
                 space['m-l--8'],
               ].join(' ')}>
-              <Button type='globe' onPress={() => console.log('clicked')} />
+              <Button type='globe' />
             </div>
             <div>
               <Button type='menu' />
