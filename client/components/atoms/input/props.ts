@@ -1,7 +1,9 @@
-export interface SingleInputProps {
+export interface TextInputProps {
   category?: string;
   placeholder?: string;
   handleChange?: any;
+  value?: string;
+  direction?: string;
 }
 
 export interface DoubleInputProps {
