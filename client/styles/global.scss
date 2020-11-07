@@ -76,9 +76,3 @@ p {
 span {
   font-weight: 100;
 }
-
-input:focus ~ label,
-input:valid ~ label {
-  top: -12px;
-  font-size: 12px;
-}
