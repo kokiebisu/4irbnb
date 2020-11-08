@@ -11,7 +11,6 @@ export const UnderlineButton: React.FC<UnderlineButtonProps> = ({
 }) => {
   return (
     <button
-      //   onClick={switchAuth}
       onClick={onPress}
       className={[
         layout['inline-block'],

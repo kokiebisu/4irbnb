@@ -64,6 +64,10 @@ export interface UnderlineButtonProps {
   title?: string;
 }
 
+export interface CloseButtonProps {
+  onPress?: () => void;
+}
+
 export type ButtonProps = {
   extendsTo?: string;
   type?: string;
