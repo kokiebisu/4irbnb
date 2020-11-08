@@ -142,6 +142,11 @@ option.args = {
   type: 'option',
 };
 
+export const underline = ButtonTemplate.bind({});
+underline.args = {
+  type: 'underline',
+};
+
 /**
  * Argtypes
  */

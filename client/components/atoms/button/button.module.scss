@@ -18,3 +18,13 @@
     }
   }
 }
+
+.hover {
+  &__auth {
+    border: 2px solid #b0b0b0;
+
+    &:hover {
+      border: 2px solid black;
+    }
+  }
+}

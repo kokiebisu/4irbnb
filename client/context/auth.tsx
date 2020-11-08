@@ -23,7 +23,7 @@ const authReducer = (state: State, action: Action) => {
     case 'login':
       return { ...state, display: 'login', title: 'Log in' };
     case 'signup':
-      return { ...state, display: 'signup', title: 'Hurry up and sign' };
+      return { ...state, display: 'signup', title: 'Finish signing up' };
     default:
       return state;
   }

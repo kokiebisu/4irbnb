@@ -47,55 +47,6 @@ const Auth = () => {
         <form onSubmit={formik.handleSubmit}>
           <div className={[space['m-b--8'], space['m-t--35']].join(' ')}>
             <div>
-              {/* <div
-                style={{ height: 65 }}
-                className={[
-                  layout['relative'],
-                  color['b-t--white__3'],
-                  color['b-r--white__3'],
-                  color['b-l--white__3'],
-                  shape['btr--10'],
-                  space['p-v--8'],
-                  space['p-h--12'],
-                  layout['items-center'],
-                  layout['justify-between'],
-                ].join(' ')}>
-                <div>
-                  <label
-                    className={[
-                      font['size--12'],
-                      color['c--gray__2'],
-                      font['weight--300'],
-                    ].join(' ')}>
-                    Country/Region
-                  </label>
-                  <input
-                    style={{ height: 20 }}
-                    className={[
-                      space['p--0'],
-                      shape['w--full'],
-                      layout['block'],
-                      color['b--0'],
-                      font['size--16'],
-                      font['weight--300'],
-                      color['c__placeholder--black'],
-                    ].join(' ')}
-                    placeholder='Canada (+1)'
-                  />
-                </div>
-                <div
-                  style={{ right: 17 }}
-                  className={[layout['absolute']].join(' ')}>
-                  <ChevronDown width={12} />
-                </div>
-              </div> */}
-              {/* <Input
-                type='text'
-                category='tel'
-                placeholder='Phone number'
-                handleChange={formik.handleChange}
-                value={formik.values.tel}
-              /> */}
               <Input type='text' direction='bottom' />
               <Input type='text' direction='top' />
             </div>
@@ -139,7 +90,7 @@ const Auth = () => {
           {methods.map((method, index) => {
             return (
               <div key={index} className={[space['m-v--14']].join(' ')}>
-                <Button type='login' platform={method} />
+                <Button type='auth' platform={method} />
               </div>
             );
           })}
@@ -157,16 +108,11 @@ const Auth = () => {
                 : 'Already have an account?'}
             </p>
           </div>
-          <button
-            onClick={switchAuth}
-            className={[
-              layout['inline-block'],
-              font['size--14'],
-              font['weight--500'],
-              color['bg--transparent'],
-            ].join(' ')}>
-            <u>{authState.title === 'Log in' ? 'Sign up' : 'Log in'}</u>
-          </button>
+          <Button
+            type='underline'
+            onPress={switchAuth}
+            title={authState.title === 'Log in' ? 'Sign up' : 'Log in'}
+          />
         </div>
       </div>
     </div>
@@ -174,7 +120,22 @@ const Auth = () => {
 };
 
 export const Login = () => {
-  return <div>login</div>;
+  return (
+    <div
+      style={{ height: 'calc(100% - 60px)' }}
+      className={[space['p-h--24']].join(' ')}>
+      <form>
+        <div>
+          <Input type='text' direction='bottom' />
+          <Input type='text' direction='top' />
+        </div>
+        <div>
+          <Button type='primary' title='Log in' />
+        </div>
+        <div></div>
+      </form>
+    </div>
+  );
 };
 
 export const Signup = () => {
