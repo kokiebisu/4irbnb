@@ -119,12 +119,12 @@ searchbar.args = {
   type: 'searchbar',
 };
 
-export const login = ButtonTemplate.bind({});
-login.args = {
-  type: 'login',
+export const auth = ButtonTemplate.bind({});
+auth.args = {
+  type: 'auth',
 };
 
-login.decorators = [
+auth.decorators = [
   (Story) => (
     <div style={{ width: 300 }}>
       <Story />

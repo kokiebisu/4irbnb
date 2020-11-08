@@ -13,7 +13,7 @@ export const TextInput: React.FC<TextInputProps> = ({
   placeholder = 'Email',
   handleChange,
   value,
-  direction = 'bottom',
+  direction,
 }) => {
   const [fieldActive, setFieldActive] = useState(false);
 

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from '../../../styles/index.module.scss';
+import menubar from './menubar.module.scss';
 import { MenuBarLogo } from '../../../public/svg/logo';
 import { Login, Saved } from '../../../public/svg/regular';
 import React from 'react';
@@ -12,7 +12,7 @@ export const MenuBar: React.FC<MenuBarProps> = () => {
     { component: <Login width={25} />, name: 'Log in', selected: false },
   ];
   return (
-    <div className={styles['menubar']}>
+    <div className={menubar['menubar']}>
       {items.map((item, index) => {
         return (
           <Link key={index} href='/'>
@@ -20,13 +20,13 @@ export const MenuBar: React.FC<MenuBarProps> = () => {
               <div
                 className={
                   item.selected
-                    ? [styles['menubar__item'], styles['selected']].join(' ')
-                    : styles['menubar__item']
+                    ? [menubar['menubar__item'], menubar['selected']].join(' ')
+                    : menubar['menubar__item']
                 }>
-                <div className={styles['menubar__item--logo']}>
+                <div className={menubar['menubar__item--logo']}>
                   {item.component}
                 </div>
-                <div className={styles['menubar__item--text']}>
+                <div className={menubar['menubar__item--text']}>
                   <p>{item.name}</p>
                 </div>
               </div>
