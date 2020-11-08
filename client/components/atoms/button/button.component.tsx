@@ -20,7 +20,6 @@ interface mapProps {
 }
 
 export const Button: React.FC<ButtonProps> = ({
-  onPress,
   to,
   extendsTo,
   tap = { scale: 0.98 },
@@ -28,6 +27,7 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   ...props
 }) => {
+  const { onPress } = props;
   const types: mapProps = {
     login: <LoginButton {...props} />,
     globe: <GlobeButton {...props} />,
