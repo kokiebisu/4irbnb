@@ -179,7 +179,6 @@ export const CheckInCard: React.FC<CheckInCardProps> = () => {
               className={[layout['flex'], shape['w--full']].join(' ')}>
               <div
                 onClick={() => {
-                  console.log('clicked checin');
                   dispatchSelected({ type: 'checkin' });
                 }}
                 className={checkInBorder()}>
@@ -208,7 +207,6 @@ export const CheckInCard: React.FC<CheckInCardProps> = () => {
               </div>
               <div
                 onClick={() => {
-                  console.log('clicked checkout');
                   dispatchSelected({ type: 'checkout' });
                 }}
                 className={checkOutBorder()}>
@@ -239,7 +237,6 @@ export const CheckInCard: React.FC<CheckInCardProps> = () => {
             <button
               style={{ height: 60 }}
               onClick={() => {
-                console.log('clicked guests');
                 dispatchSelected({ type: 'guests' });
               }}
               className={

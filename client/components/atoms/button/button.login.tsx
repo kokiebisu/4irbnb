@@ -7,37 +7,43 @@ import space from '../../../styles/space.module.scss';
 import { ButtonLoginProps } from './props';
 import { Email } from '../../../public/svg/original';
 import { Apple, Facebook, Google } from '../../../public/svg/logo';
+import { useAuthDispatch, useAuthState } from '../../../context/auth';
 
 export const LoginButton: React.FC<ButtonLoginProps> = ({
   platform = 'email',
 }) => {
+  const authState = useAuthState();
+  const authDispatch = useAuthDispatch();
   const categories = {
     email: {
       name: 'Email',
       icon: <Email width={17} />,
       handleClick() {
-        console.log('clicked email');
+        if (authState.title === 'Log in') {
+          return authDispatch({ type: 'login' });
+        }
+        return authDispatch({ type: 'signup' });
       },
     },
     facebook: {
       name: 'Facebook',
       icon: <Facebook width={17} />,
       handleClick() {
-        console.log('clicked facebook');
+        alert('clicked facebook');
       },
     },
     google: {
       name: 'Google',
       icon: <Google width={17} />,
       handleClick() {
-        console.log('clicked google');
+        alert('clicked google');
       },
     },
     apple: {
       name: 'Apple',
       icon: <Apple width={17} />,
       handleClick() {
-        console.log('clicked apple');
+        alert('clicked apple');
       },
     },
   };

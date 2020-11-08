@@ -11,7 +11,7 @@ import { PlainButtonProps } from './props';
 export const PlainButton: React.FC<PlainButtonProps> = ({
   title = 'Button',
   tap = { scale: 0.98 },
-  onPress = () => console.log('Plain Button Clicked'),
+  onPress,
 }) => {
   return (
     <motion.button

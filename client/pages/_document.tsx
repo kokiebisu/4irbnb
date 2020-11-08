@@ -11,10 +11,6 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link rel='stylesheet' href='/styles/fonts.css' />
-          <meta
-            name='viewport'
-            content='width=device-width, user-scalable=no'
-          />
         </Head>
         <body>
           <Main />

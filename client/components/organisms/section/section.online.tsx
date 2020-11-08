@@ -70,6 +70,7 @@ export const OnlineSection: React.FC<OnlineSectionProps> = ({
               {items.map((item, index) => {
                 return (
                   <div
+                    key={index}
                     className={`${[
                       shape['w--full'],
                       section[`grid__online--${index}`],

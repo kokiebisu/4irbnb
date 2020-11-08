@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import layout from '../../../styles/layout.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import space from '../../../styles/space.module.scss';
@@ -6,6 +6,8 @@ import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import { Heart } from '../../../public/svg/original';
 import '../../../helper/string';
+import { Button } from '../button/button.component';
+import { ImageSlider } from '../../../components/particles/image.slider';
 
 interface Props {
   card?: any;
@@ -13,10 +15,16 @@ interface Props {
   superhost?: boolean;
 }
 
+/**
+ * @function HorizontalCard
+ */
 export const HorizontalCard: React.FC<Props> = ({
   card = {
-    imgUrl:
+    images: [
       'https://a0.muscache.com/im/pictures/7e0063fa-d325-49ae-a6f6-285fe9928da4.jpg?im_w=720',
+      'https://a0.muscache.com/im/pictures/682aa552-1a91-4736-86a2-3d12cb316d07.jpg?im_w=720',
+      'https://a0.muscache.com/im/pictures/924798e4-2fe1-47de-9636-947332829bcc.jpg?im_w=720',
+    ],
     type: 'Type of Stay',
     ratings: 5.0,
     location: 'Location',
@@ -47,11 +55,7 @@ export const HorizontalCard: React.FC<Props> = ({
           <div style={{ height: '100%' }}>
             <div className={[layout['relative'], shape['h--full']].join(' ')}>
               <div className={[shape['br--12'], shape['h--full']].join(' ')}>
-                <img
-                  style={{ objectFit: 'cover' }}
-                  className={[shape['br--12'], shape['h--full']].join(' ')}
-                  src={card.imgUrl}
-                />
+                <ImageSlider slides={card.images} />
               </div>
               <div
                 className={[

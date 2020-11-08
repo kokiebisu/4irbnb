@@ -45,11 +45,7 @@ export const TransparentHeader: React.FC<{}> = () => {
               space['m-b--0'],
               space['m-l--8'],
             ].join(' ')}>
-            <Button
-              type='globe'
-              inverse
-              onPress={() => console.log('clicked')}
-            />
+            <Button type='globe' inverse />
           </div>
           <div>
             <Button type='menu' inverse />
