@@ -52,7 +52,7 @@ export const ImageSlider = ({ slides }) => {
     // display: 'none',
     opacity: 0,
   });
-  const [width, setWidth] = useState(undefined);
+  const [width, setWidth] = useState(1000);
   const [state, setState] = useState({
     activeSlide: 0,
     translate: 0,
@@ -62,8 +62,9 @@ export const ImageSlider = ({ slides }) => {
   const containerRef = useRef<HTMLDivElement>();
 
   useLayoutEffect(() => {
-    console.log(containerRef.current.getBoundingClientRect());
-    setWidth(containerRef.current.getBoundingClientRect().width);
+    if (containerRef.current && containerRef.current.getBoundingClientRect()) {
+      setWidth(containerRef.current.getBoundingClientRect().width);
+    }
   }, []);
 
   const previousSlide = () => {
@@ -102,13 +103,11 @@ export const ImageSlider = ({ slides }) => {
       ref={containerRef}
       onMouseEnter={() =>
         setStyle({
-          //   display: 'block',
           opacity: 1,
         })
       }
       onMouseLeave={() =>
         setStyle({
-          //   display: 'none',
           opacity: 0,
         })
       }
@@ -129,8 +128,8 @@ export const ImageSlider = ({ slides }) => {
           width: width * slides.length,
           display: 'flex',
         }}>
-        {slides.map((slide) => {
-          return <Slide slide={slide} />;
+        {slides.map((slide, index) => {
+          return <Slide key={index} slide={slide} />;
         })}
       </div>
       <div
