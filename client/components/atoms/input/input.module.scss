@@ -22,18 +22,26 @@
 
 .input:focus ~ .label {
   top: -2px;
-  font-size: 14px !important;
+  font-size: 13px !important;
   color: gray !important;
 }
 
 .input:invalid ~ .label {
   top: -2px;
-  font-size: 14px !important;
+  font-size: 13px !important;
   color: gray !important;
 }
 
 .input {
   position: relative;
-  top: 20px;
-  font-size: 14px;
+  top: 0px;
+  outline: none;
+  width: 100%;
+  padding-top: 20px;
+  font-size: 16px;
+  color: rgb(104, 104, 104);
+}
+
+.input::placeholder {
+  color: rgb(104, 104, 104);
 }
