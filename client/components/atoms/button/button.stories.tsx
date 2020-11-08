@@ -171,7 +171,7 @@ primary.argTypes = {
 searchbar.argTypes = {
   ...disableInverse,
 };
-login.argTypes = {
+auth.argTypes = {
   ...disableInverse,
 };
 searchbar.argTypes = {
