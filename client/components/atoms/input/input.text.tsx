@@ -9,11 +9,11 @@ import input from './input.module.scss';
 import { TextInputProps } from './props';
 
 export const TextInput: React.FC<TextInputProps> = ({
-  category = 'email',
-  placeholder = 'email',
+  category = 'Email',
+  placeholder = 'Email',
   handleChange,
   value,
-  direction,
+  direction = 'bottom',
 }) => {
   const [fieldActive, setFieldActive] = useState(false);
 
@@ -21,8 +21,19 @@ export const TextInput: React.FC<TextInputProps> = ({
     setFieldActive(true);
   };
 
+  const deactivateField = () => {
+    setFieldActive(false);
+  };
+
   const renderShape = () => {
     switch (direction) {
+      case 'top':
+        return [
+          color['b-b--gray__3'],
+          color['b-l--gray__3'],
+          color['b-r--gray__3'],
+          shape['bbr--10'],
+        ].join(' ');
       case 'bottom':
         return [
           color['b-t--gray__3'],
@@ -39,20 +50,25 @@ export const TextInput: React.FC<TextInputProps> = ({
     <div
       style={{ height: 60 }}
       className={`${[
+        input['outside'],
         layout['relative'],
         space['p-v--6'],
         space['p-h--12'],
         layout['items-center'],
-      ].join(' ')} ${renderShape()}`}>
-      <div style={{ position: 'relative', height: '100%' }}>
+      ].join(' ')} ${renderShape()} ${
+        fieldActive
+          ? [[color['b-2--black'], shape['br--10']].join(' ')]
+          : renderShape()
+      }`}>
+      <div style={{ position: 'relative', height: '100%', width: '100%' }}>
         <input
-          style={{ height: 20, outline: 'none' }}
           id={category}
           name={category}
           type={category}
           onChange={handleChange}
           value={value}
           onFocus={activateField}
+          onBlur={deactivateField}
           className={[
             space['p--0'],
             shape['w--full'],
@@ -63,7 +79,7 @@ export const TextInput: React.FC<TextInputProps> = ({
             color['c__placeholder--black'],
             input['input'],
           ].join(' ')}
-          // placeholder='Canada (+1)'
+          placeholder={fieldActive ? placeholder : undefined}
         />
         <label
           htmlFor={category}
