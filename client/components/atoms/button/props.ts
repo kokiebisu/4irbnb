@@ -68,6 +68,8 @@ export interface CloseButtonProps {
   onPress?: () => void;
 }
 
+export interface FilterButtonProps {}
+
 export type ButtonProps = {
   extendsTo?: string;
   type?: string;
