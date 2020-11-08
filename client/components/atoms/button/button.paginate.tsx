@@ -11,13 +11,8 @@ import { PaginateButtonProps } from './props';
 export const PaginateButton: React.FC<PaginateButtonProps> = ({
   direction = 'left',
   tap = { scale: 0.98 },
+  onPress,
 }) => {
-  const handleLeftPagination = () => {
-    alert('handle left pressed');
-  };
-  const handleRightPagination = () => {
-    alert('handle right pressed');
-  };
   return (
     <>
       {direction === 'left' ? (
@@ -26,11 +21,11 @@ export const PaginateButton: React.FC<PaginateButtonProps> = ({
           data-testid='button'
           className={[
             color['b--white__2'],
-            color['bg--transparent'],
+            color['bg--white__0'],
             space['p--8'],
             shape['br--circle'],
           ].join(' ')}
-          onClick={handleLeftPagination}>
+          onClick={onPress}>
           <ChevronLeft width={10} stroke='black' strokeWidth={5} />
         </motion.button>
       ) : (
@@ -39,11 +34,11 @@ export const PaginateButton: React.FC<PaginateButtonProps> = ({
           data-testid='button'
           className={[
             color['b--white__2'],
-            color['bg--transparent'],
+            color['bg--white__0'],
             space['p--8'],
             shape['br--circle'],
           ].join(' ')}
-          onClick={handleRightPagination}>
+          onClick={onPress}>
           <ChevronRight width={10} stroke='black' strokeWidth={5} />
         </motion.button>
       )}

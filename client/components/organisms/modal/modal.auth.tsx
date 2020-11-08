@@ -33,7 +33,6 @@ const Auth = () => {
   });
 
   const switchAuth = () => {
-    console.log('clicked');
     if (authState.title === 'Log in') {
       return authDispatch({ type: 'auth_signup' });
     }

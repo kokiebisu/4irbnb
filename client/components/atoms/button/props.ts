@@ -59,6 +59,7 @@ export interface SearchbarButtonProps extends ClickableButtonProps, MiniProps {}
 
 export interface PaginateButtonProps extends ClickableButtonProps {
   direction?: string;
+  onPress?: () => void;
 }
 
 export interface ExpandButtonProps extends LinkButtonProps, TitleProps {}
