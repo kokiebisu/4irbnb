@@ -41,11 +41,11 @@ const Auth = () => {
 
   return (
     <div
-      style={{ height: 'calc(100% - 60px)' }}
-      className={[space['p-h--24']].join(' ')}>
+      // style={{ height: 'calc(100% - 60px)' }}
+      className={[space['p--24']].join(' ')}>
       <div className={[shape['w--full']].join(' ')}>
         <form onSubmit={formik.handleSubmit}>
-          <div className={[space['m-b--8'], space['m-t--35']].join(' ')}>
+          <div className={[space['m-b--8']].join(' ')}>
             <div>
               <Input type='text' direction='bottom' />
               <Input type='text' direction='top' />
@@ -122,17 +122,28 @@ const Auth = () => {
 export const Login = () => {
   return (
     <div
-      style={{ height: 'calc(100% - 60px)' }}
-      className={[space['p-h--24']].join(' ')}>
+      // style={{ height: 'calc(100% - 1000px)' }}
+      className={[space['p--24']].join(' ')}>
       <form>
         <div>
           <Input type='text' direction='bottom' />
           <Input type='text' direction='top' />
         </div>
-        <div>
+        <div className={[space['m-v--16']].join(' ')}>
           <Button type='primary' title='Log in' />
         </div>
-        <div></div>
+        <div className={[space['m-v--16']].join(' ')}>
+          <Button type='underline' title='Forgot password?' />
+        </div>
+        <div className={[space['m-v--16']].join(' ')}>
+          <Button type='underline' title='More login options' />
+        </div>
+        <div className={[layout['flex']].join(' ')}>
+          <p className={[font['size--14'], space['m-r--8']].join(' ')}>
+            Don't have an account?
+          </p>
+          <Button type='underline' title='Sign up' />
+        </div>
       </form>
     </div>
   );
@@ -171,7 +182,7 @@ export const AuthModal: React.FC<RegisterModalProps> = () => {
       exit={{ opacity: 0 }}
       initial={{ y: 25 }}
       animate={{ y: 0 }}
-      style={{ width: 550, height: 650 }}
+      style={{ width: 550 }}
       className={[
         shape['shadow--lg'],
         shape['br--16'],
@@ -185,17 +196,16 @@ export const AuthModal: React.FC<RegisterModalProps> = () => {
           space['p-h--24'],
         ].join(' ')}>
         <div className={[layout['relative'], shape['w--full']].join(' ')}>
-          <Button
-            onPress={handleClose}
-            extendsTo={[
+          <div
+            className={[
               layout['al--0'],
-              layout['t--2'],
+              layout['t---3'],
               color['bg--transparent'],
             ].join(' ')}>
-            <Close width={16} height={16} stroke='black' strokeWidth={2} />
-          </Button>
+            <Button type='close' onPress={handleClose} />
+          </div>
           <div className={[layout['all-center']].join(' ')}>
-            <h3>{authState.title}</h3>
+            <h3 className={[font['size--16']].join(' ')}>{authState.title}</h3>
           </div>
         </div>
       </div>

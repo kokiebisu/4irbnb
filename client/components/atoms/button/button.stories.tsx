@@ -147,6 +147,11 @@ underline.args = {
   type: 'underline',
 };
 
+export const close = ButtonTemplate.bind({});
+close.args = {
+  type: 'close',
+};
+
 /**
  * Argtypes
  */
