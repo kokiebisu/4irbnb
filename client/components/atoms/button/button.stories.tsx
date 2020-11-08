@@ -34,11 +34,6 @@ export default {
     extendsTo: {
       control: { disable: true },
     },
-    tap: {
-      control: {
-        disable: true,
-      },
-    },
   },
 } as Meta;
 
