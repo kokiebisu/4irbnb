@@ -18,7 +18,7 @@ interface InverseProps {
   inverse?: boolean;
 }
 
-export interface ButtonLoginProps {
+export interface AuthButtonProps {
   platform?: string;
   icon?: any;
 }
@@ -57,6 +57,11 @@ export interface ExpandButtonProps extends LinkButtonProps, TitleProps {}
 export interface OptionButtonProps {
   option?: string;
   bold?: boolean;
+}
+
+export interface UnderlineButtonProps {
+  onPress?: () => void;
+  title?: string;
 }
 
 export type ButtonProps = {

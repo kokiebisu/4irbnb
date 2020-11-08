@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { LoginButton } from './button.login';
+import { AuthButton } from './button.auth';
 import { ButtonProps } from './props';
 import { GlobeButton } from './button.globe';
 import { HostButton } from './button.host';
@@ -14,6 +14,7 @@ import { SearchbarButton } from './button.searchbar';
 import { PaginateButton } from './button.paginate';
 import { ExpandButton } from './button.expand';
 import { OptionButton } from './button.option';
+import { UnderlineButton } from './button.underline';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -28,7 +29,7 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   const { onPress } = props;
   const types: mapProps = {
-    login: <LoginButton {...props} />,
+    auth: <AuthButton {...props} />,
     globe: <GlobeButton {...props} />,
     host: <HostButton {...props} />,
     menu: <MenuButton {...props} />,
@@ -40,6 +41,7 @@ export const Button: React.FC<ButtonProps> = ({
     paginate: <PaginateButton {...props} />,
     expand: <ExpandButton {...props} />,
     option: <OptionButton {...props} />,
+    underline: <UnderlineButton {...props} />,
   };
 
   if (type) {
