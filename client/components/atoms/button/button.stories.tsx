@@ -152,6 +152,11 @@ close.args = {
   type: 'close',
 };
 
+export const filter = ButtonTemplate.bind({});
+filter.args = {
+  type: 'filter',
+};
+
 /**
  * Argtypes
  */
