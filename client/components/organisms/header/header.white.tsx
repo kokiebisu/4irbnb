@@ -12,16 +12,17 @@ import { Button } from '../../../components/atoms/button/button.component';
 import { NameLogo, NoNameLogo } from '../../../public/svg/logo';
 import { ChevronLeft } from '../../../public/svg/regular';
 import { HeaderWhiteProps } from './props';
+import Link from 'next/link';
 
 export const WhiteHeader: React.FC<HeaderWhiteProps> = ({ spread = false }) => {
   let toggleState = useToggleState();
   return (
     <header
-      className={
+      className={`${
         spread
           ? [shape['shadow--sm'], color['bg--white__0']].join(' ')
           : [shape['shadow--sm'], color['bg--white__0']].join(' ')
-      }>
+      } ${[space['p-v--12']].join(' ')}`}>
       <div
         className={
           spread
@@ -30,18 +31,26 @@ export const WhiteHeader: React.FC<HeaderWhiteProps> = ({ spread = false }) => {
         }>
         <div
           className={[
-            shape['none--sm'],
+            shape['from__md--flex'],
             layout['relative'],
             layout['justify-between'],
             layout['items-center'],
           ].join(' ')}>
           <div>
-            <div className={styles['searchbar__logo--md']}>
-              <NoNameLogo fill='#F5385D' width={30} height={32} />
-            </div>
-            <div className={styles['searchbar__logo--lg']}>
-              <NameLogo fill='#F5385D' width={102} height={32} />
-            </div>
+            <Link href='/'>
+              <a style={{ display: 'block' }}>
+                <div className={styles['searchbar__logo--md']}>
+                  <NoNameLogo fill='#F5385D' width={30} height={32} />
+                </div>
+              </a>
+            </Link>
+            <Link href='/'>
+              <a style={{ display: 'block' }}>
+                <div className={styles['searchbar__logo--lg']}>
+                  <NameLogo fill='#F5385D' width={102} height={32} />
+                </div>
+              </a>
+            </Link>
           </div>
           <div>
             <Button type='searchbar' mini />
@@ -74,7 +83,7 @@ export const WhiteHeader: React.FC<HeaderWhiteProps> = ({ spread = false }) => {
             ].join(' ')}
           />
         </div>
-        <div className={[shape['none--md']].join(' ')}>
+        <div className={[shape['only__sm']].join(' ')}>
           <div
             className={[layout['all-center'], styles['container']].join(' ')}>
             <div style={{ width: 30 }}>

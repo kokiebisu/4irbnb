@@ -160,3 +160,43 @@ $percents: (
 .none {
   display: none !important;
 }
+
+.from__md {
+  display: none;
+
+  @media screen and (min-width: 728px) {
+    display: block;
+  }
+
+  &--flex {
+    display: none;
+
+    @media screen and (min-width: 728px) {
+      display: flex;
+    }
+  }
+}
+
+.only__sm {
+  display: block;
+
+  @media screen and (min-width: 728px) {
+    display: none;
+  }
+}
+
+.from__lg {
+  display: none;
+
+  @media screen and (min-width: 1028px) {
+    display: block;
+  }
+}
+
+.until__lg {
+  display: block;
+
+  @media screen and (min-width: 1028px) {
+    display: none;
+  }
+}

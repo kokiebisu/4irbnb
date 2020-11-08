@@ -2,6 +2,35 @@ import { Button } from '../../components/atoms/button/button.component';
 import React, { useEffect, useLayoutEffect } from 'react';
 import { useRef } from 'react';
 import { useState } from 'react';
+import slider from './slider.module.scss';
+
+const Dots = ({ slides, activeSlide }) => {
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        bottom: 25,
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+      {slides.map((_, index) => (
+        <span
+          key={index}
+          style={{
+            transition: 'all 0.2s ease-in',
+            padding: 3,
+            marginRight: 5,
+            cursor: 'pointer',
+            borderRadius: '50%',
+            background: `${activeSlide === index ? 'white' : 'lightgray'}`,
+          }}
+        />
+      ))}
+    </div>
+  );
+};
 
 const Slide = ({ slide }) => {
   return (
@@ -19,6 +48,10 @@ const Slide = ({ slide }) => {
 };
 
 export const ImageSlider = ({ slides }) => {
+  const [style, setStyle] = useState({
+    // display: 'none',
+    opacity: 0,
+  });
   const [width, setWidth] = useState(undefined);
   const [state, setState] = useState({
     activeSlide: 0,
@@ -33,13 +66,11 @@ export const ImageSlider = ({ slides }) => {
     setWidth(containerRef.current.getBoundingClientRect().width);
   }, []);
 
-  console.log('width', width * slides.length);
-
   const previousSlide = () => {
     if (state.activeSlide === 0) {
       return setState({
         ...state,
-        translate: (slides.length - 1) & width,
+        translate: (slides.length - 1) * width,
         activeSlide: slides.length - 1,
       });
     }
@@ -69,14 +100,29 @@ export const ImageSlider = ({ slides }) => {
   return (
     <div
       ref={containerRef}
+      onMouseEnter={() =>
+        setStyle({
+          //   display: 'block',
+          opacity: 1,
+        })
+      }
+      onMouseLeave={() =>
+        setStyle({
+          //   display: 'none',
+          opacity: 0,
+        })
+      }
       style={{
         position: 'relative',
         width: '100%',
         height: '100%',
         overflow: 'hidden',
+        borderRadius: 12,
+        zIndex: 9999,
       }}>
       <div
         style={{
+          borderRadius: 12,
           transform: `translateX(-${state.translate}px)`,
           transition: `transform ease-out ${state.transition}s`,
           height: '100%',
@@ -89,21 +135,33 @@ export const ImageSlider = ({ slides }) => {
       </div>
       <div
         style={{
+          ...style,
+          transition: 'opacity 0.2s ease-out',
           position: 'absolute',
           top: '50%',
           transform: 'translateY(-50%)',
           left: 10,
+          zIndex: 9999,
         }}>
         <Button type='paginate' direction='left' onPress={previousSlide} />
       </div>
       <div
         style={{
+          ...style,
+          transition: 'opacity 0.2s ease-out',
           position: 'absolute',
           top: '50%',
           transform: 'translateY(-50%)',
           right: 10,
+          zIndex: 9999,
         }}>
         <Button type='paginate' direction='right' onPress={nextSlide} />
+      </div>
+
+      <div
+        style={{ ...style, transition: 'opacity 0.2s ease-out' }}
+        className={[slider['dots']].join(' ')}>
+        <Dots slides={slides} activeSlide={state.activeSlide} />
       </div>
     </div>
   );
