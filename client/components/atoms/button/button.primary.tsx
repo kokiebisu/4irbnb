@@ -28,7 +28,7 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
         font['weight--300'],
       ].join(' ')}
       onClick={onPress}>
-      <p>{title}</p>
+      <h4>{title}</h4>
     </motion.button>
   );
 };

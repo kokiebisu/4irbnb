@@ -29,20 +29,20 @@ export const TextInput: React.FC<TextInputProps> = ({
     switch (direction) {
       case 'top':
         return [
-          color['b-b--gray__3'],
-          color['b-l--gray__3'],
-          color['b-r--gray__3'],
+          color['b-b--white__3'],
+          color['b-l--white__3'],
+          color['b-r--white__3'],
           shape['bbr--10'],
         ].join(' ');
       case 'bottom':
         return [
-          color['b-t--gray__3'],
-          color['b-l--gray__3'],
-          color['b-r--gray__3'],
+          color['b-t--white__3'],
+          color['b-l--white__3'],
+          color['b-r--white__3'],
           shape['btr--10'],
         ].join(' ');
       default:
-        return [color['b--gray__3'], shape['br--10']].join(' ');
+        return [color['b--white__3'], shape['br--10']].join(' ');
     }
   };
 
@@ -86,8 +86,8 @@ export const TextInput: React.FC<TextInputProps> = ({
           className={`${[
             layout['absolute'],
             font['size--12'],
-            color['c--gray__2'],
-            font['weight--300'],
+            color['c--gray__1'],
+            font['weight--100'],
             input['label'],
           ].join(' ')} `}>
           {placeholder}

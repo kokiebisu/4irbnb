@@ -162,33 +162,57 @@ export const Signup = () => {
       <div>
         <Input type='text' direction='bottom' placeholder='First name' />
         <Input type='text' direction='top' placeholder='Last name' />
-        <p>Make sure it matches the name on your government ID.</p>
+        <p
+          className={[
+            space['m-t--8'],
+            font['size--11'],
+            color['c--gray__1'],
+          ].join(' ')}>
+          Make sure it matches the name on your government ID.
+        </p>
       </div>
-      <div>
-        <h3>Birth date</h3>
+      <div className={[space['m-t--22']].join(' ')}>
+        <h3 className={[font['size--16']].join(' ')}>Birth date</h3>
         <div>three inputs</div>
-        <p>
+        <p
+          className={[
+            space['m-t--8'],
+            font['size--11'],
+            color['c--gray__1'],
+          ].join(' ')}>
           To sign up, you need to be at least 18. Your birthday won't be shared
           with other people who use Airbnb.
         </p>
       </div>
-      <div>
+      <div className={[space['m-t--22']].join(' ')}>
         <div>
           <Input type='text' placeholder='Email' />
         </div>
-        <p>We'll email you trip confirmations and receipts</p>
+        <p
+          className={[
+            space['m-t--8'],
+            font['size--11'],
+            color['c--gray__1'],
+          ].join(' ')}>
+          We'll email you trip confirmations and receipts
+        </p>
       </div>
-      <div>
+      <div className={[space['m-t--22']].join(' ')}>
         <div>
           <Input type='text' placeholder='Password' />
         </div>
-        <p>
+        <p
+          className={[
+            space['m-t--22'],
+            font['size--11'],
+            color['c--gray__1'],
+          ].join(' ')}>
           By selecting <b>Agree and continue</b> below, I agree to Airbnb's{' '}
           <u>Terms of Service</u>, <u>Payments Terms of Service</u>,{' '}
           <u>Privacy Policy</u>, and <u>Nondiscrimination Policy</u>.
         </p>
       </div>
-      <div>
+      <div className={[space['m-t--16']].join(' ')}>
         <Button type='primary' title='Agree and continue' />
       </div>
     </div>
