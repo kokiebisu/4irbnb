@@ -120,10 +120,17 @@ const Auth = () => {
 };
 
 export const Login = () => {
+  const authState = useAuthState();
+  const authDispatch = useAuthDispatch();
+
+  const switchAuth = () => {
+    if (authState.title === 'Log in') {
+      return authDispatch({ type: 'auth_signup' });
+    }
+    return authDispatch({ type: 'auth_login' });
+  };
   return (
-    <div
-      // style={{ height: 'calc(100% - 1000px)' }}
-      className={[space['p--24']].join(' ')}>
+    <div className={[space['p--24']].join(' ')}>
       <form>
         <div>
           <Input type='text' direction='bottom' />
@@ -142,7 +149,7 @@ export const Login = () => {
           <p className={[font['size--14'], space['m-r--8']].join(' ')}>
             Don't have an account?
           </p>
-          <Button type='underline' title='Sign up' />
+          <Button type='underline' title='Sign up' onPress={switchAuth} />
         </div>
       </form>
     </div>
@@ -150,7 +157,42 @@ export const Login = () => {
 };
 
 export const Signup = () => {
-  return <div>register</div>;
+  return (
+    <div className={[space['p--24']].join(' ')}>
+      <div>
+        <Input type='text' direction='bottom' placeholder='First name' />
+        <Input type='text' direction='top' placeholder='Last name' />
+        <p>Make sure it matches the name on your government ID.</p>
+      </div>
+      <div>
+        <h3>Birth date</h3>
+        <div>three inputs</div>
+        <p>
+          To sign up, you need to be at least 18. Your birthday won't be shared
+          with other people who use Airbnb.
+        </p>
+      </div>
+      <div>
+        <div>
+          <Input type='text' placeholder='Email' />
+        </div>
+        <p>We'll email you trip confirmations and receipts</p>
+      </div>
+      <div>
+        <div>
+          <Input type='text' placeholder='Password' />
+        </div>
+        <p>
+          By selecting <b>Agree and continue</b> below, I agree to Airbnb's{' '}
+          <u>Terms of Service</u>, <u>Payments Terms of Service</u>,{' '}
+          <u>Privacy Policy</u>, and <u>Nondiscrimination Policy</u>.
+        </p>
+      </div>
+      <div>
+        <Button type='primary' title='Agree and continue' />
+      </div>
+    </div>
+  );
 };
 
 /**
