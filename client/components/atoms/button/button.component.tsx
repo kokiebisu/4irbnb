@@ -9,7 +9,7 @@ import { MenuButton } from './button.menu';
 import { PrivacyButton } from './button.privacy';
 import { BorderButton } from './button.border';
 import { BannerButton } from './button.banner';
-import { PlainButton } from './button.plain';
+import { PrimaryButton } from './button.primary';
 import { SearchbarButton } from './button.searchbar';
 import { PaginateButton } from './button.paginate';
 import { ExpandButton } from './button.expand';
@@ -22,7 +22,6 @@ interface mapProps {
 export const Button: React.FC<ButtonProps> = ({
   to,
   extendsTo,
-  tap = { scale: 0.98 },
   type,
   children,
   ...props
@@ -36,7 +35,7 @@ export const Button: React.FC<ButtonProps> = ({
     privacy: <PrivacyButton {...props} />,
     border: <BorderButton {...props} />,
     banner: <BannerButton {...props} />,
-    plain: <PlainButton {...props} />,
+    primary: <PrimaryButton {...props} />,
     searchbar: <SearchbarButton {...props} />,
     paginate: <PaginateButton {...props} />,
     expand: <ExpandButton {...props} />,

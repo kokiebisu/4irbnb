@@ -112,7 +112,7 @@ const Auth = () => {
             </p>
           </div>
           <div className={[space['m-t--18'], space['m-b--18']].join(' ')}>
-            <Button type='plain' title='Continue' />
+            <Button type='primary' title='Continue' />
           </div>
         </form>
         <div

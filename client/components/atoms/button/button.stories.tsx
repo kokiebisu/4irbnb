@@ -106,12 +106,12 @@ banner.decorators = [
   ),
 ];
 
-export const plain = ButtonTemplate.bind({});
-plain.args = {
-  type: 'plain',
+export const primary = ButtonTemplate.bind({});
+primary.args = {
+  type: 'primary',
 };
 
-plain.decorators = [
+primary.decorators = [
   (Story) => (
     <div style={{ width: 300 }}>
       <Story />
@@ -160,7 +160,7 @@ menu.argTypes = {
 banner.argTypes = {
   ...disableInverse,
 };
-plain.argTypes = {
+primary.argTypes = {
   ...disableInverse,
 };
 searchbar.argTypes = {
