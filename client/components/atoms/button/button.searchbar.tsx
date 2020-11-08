@@ -16,7 +16,7 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({
   tap = { scale: 0.98 },
 }) => {
   const handlePress = () => {
-    console.log('searchbar button pressed');
+    alert('searchbar button clicked');
   };
   return (
     <>
