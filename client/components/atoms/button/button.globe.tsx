@@ -12,7 +12,6 @@ import { GlobeButtonProps } from './props';
 import { useToggleDispatch } from '../../../context/toggle';
 
 export const GlobeButton: React.FC<GlobeButtonProps> = ({
-  tap = { scale: 0.98 },
   inverse = false,
 }) => {
   let toggleDispatch = useToggleDispatch();
@@ -21,7 +20,7 @@ export const GlobeButton: React.FC<GlobeButtonProps> = ({
   };
   return (
     <motion.button
-      whileTap={tap}
+      whileTap={{ scale: 0.98 }}
       data-testid='button'
       style={{ borderRadius: 30 }}
       className={[color['bg--transparent']].join(' ')}

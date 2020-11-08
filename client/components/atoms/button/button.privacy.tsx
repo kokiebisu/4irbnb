@@ -9,7 +9,6 @@ import color from '../../../styles/color.module.scss';
 import shape from '../../../styles/shape.module.scss';
 
 export const PrivacyButton: React.FC<PrivacyButtonProps> = ({
-  tap,
   title = 'Button',
   inverse = false,
 }) => {
@@ -29,7 +28,7 @@ export const PrivacyButton: React.FC<PrivacyButtonProps> = ({
   };
   return (
     <motion.button
-      whileTap={tap}
+      whileTap={{ scale: 0.98 }}
       data-testid='button'
       className={`${[
         font['no-wrap'],

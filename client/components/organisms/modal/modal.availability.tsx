@@ -50,7 +50,7 @@ export const AvailabilityModal: React.FC<AvailabilityModalProps> = ({
         </div>
       </div>
       <div>
-        <Button type='plain' title='Check availability' />
+        <Button type='primary' title='Check availability' />
       </div>
     </div>
   );
