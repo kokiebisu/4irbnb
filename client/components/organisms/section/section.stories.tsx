@@ -138,3 +138,8 @@ export const homes = SectionTemplate.bind({});
 homes.args = {
   type: 'homes',
 };
+
+export const also = SectionTemplate.bind({});
+also.args = {
+  type: 'also',
+};
