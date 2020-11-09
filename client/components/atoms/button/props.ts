@@ -49,6 +49,7 @@ export interface SearchbarButtonProps extends MiniProps {}
 
 export interface PaginateButtonProps {
   direction?: string;
+  disable?: boolean;
   onPress?: () => void;
 }
 
