@@ -96,7 +96,17 @@ export interface OnlineSectionProps {
   items?: any;
 }
 
-export interface HomesSectionProps {}
+export interface HomesSectionProps {
+  filterCount?: number;
+  location?: string;
+  guests?: number;
+  average?: number;
+  stays?: any;
+}
+
+export interface AlsoSectionProps {
+  items?: any;
+}
 
 export interface SectionProps {
   extendsTo?: string;

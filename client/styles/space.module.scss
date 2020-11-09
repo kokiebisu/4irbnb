@@ -31,6 +31,11 @@ $spaceamounts: (
   100
 ); // Adjust this to include the pixel amounts you need.
 $sides: (top, bottom, left, right); // Leave this variable alone
+$breakpoints: (
+  'sm': 728,
+  'md': 1028,
+  'lg': 1326,
+);
 
 @each $space in $spaceamounts {
   .m--#{$space} {
@@ -92,6 +97,45 @@ $sides: (top, bottom, left, right); // Leave this variable alone
 
     .p-#{str-slice($side, 0, 1)}--#{$space} {
       padding-#{$side}: #{$space}px;
+    }
+    @each $name, $value in $breakpoints {
+      .nf-m-#{str-slice($side, 0, 1)}--#{$space} {
+        &:not(first-child) {
+          margin-top: #{$space}px;
+        }
+      }
+
+      .nf-p-#{str-slice($side, 0, 1)}--#{$space} {
+        &:not(first-child) {
+          padding-top: #{$space}px;
+        }
+      }
+
+      .m-#{str-slice($side, 0, 1)}--#{$space}--#{$name} {
+        margin-#{$side}: #{$space}px;
+        @media screen and (min-width: #{$value}px) {
+          margin-#{$side}: 0px;
+        }
+      }
+
+      .m-#{str-slice($side, 0, 1)}--#{$space}--#{$name}- {
+        @media screen and (min-width: #{$value}px) {
+          margin-#{$side}: #{$space}px;
+        }
+      }
+
+      .p-#{str-slice($side, 0, 1)}--#{$space}--#{$name} {
+        padding-#{$side}: #{$space}px;
+        @media screen and (min-width: #{$value}px) {
+          padding-#{$side}: 0px;
+        }
+      }
+
+      .p-#{str-slice($side, 0, 1)}--#{$space}--#{$name}- {
+        @media screen and (min-width: #{$value}px) {
+          padding-#{$side}: #{$space}px;
+        }
+      }
     }
   }
 }

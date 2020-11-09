@@ -66,6 +66,7 @@ export const HorizontalCard: React.FC<Props> = ({
                   shape['w--full'],
                 ].join(' ')}>
                 <div
+                  style={{ zIndex: 9999 }}
                   className={
                     superhost
                       ? [].join(' ')
@@ -89,19 +90,22 @@ export const HorizontalCard: React.FC<Props> = ({
                     </h3>
                   </div>
                 </div>
-                <div
-                  className={
-                    save
-                      ? [color['c--white__0']].join(' ')
-                      : [color['c--white__0'], shape['hidden']].join(' ')
-                  }>
-                  <Heart
-                    fill='rgba(0, 0, 0, 0.5)'
-                    width={24}
-                    stroke='rgb(255, 255, 255)'
-                    strokeWidth={2}
-                  />
-                </div>
+                {save && (
+                  <div
+                    style={{ zIndex: 9999 }}
+                    className={[
+                      save
+                        ? [].join(' ')
+                        : [color['c--white__0'], shape['hidden']].join(' '),
+                    ].join(' ')}>
+                    <Heart
+                      fill='rgba(0, 0, 0, 0.5)'
+                      width={24}
+                      stroke='rgb(255, 255, 255)'
+                      strokeWidth={2}
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>
