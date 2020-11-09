@@ -41,61 +41,12 @@ const Auth = () => {
 
   return (
     <div
-      style={{ height: 'calc(100% - 60px)' }}
-      className={[space['p-h--24']].join(' ')}>
+      // style={{ height: 'calc(100% - 60px)' }}
+      className={[space['p--24']].join(' ')}>
       <div className={[shape['w--full']].join(' ')}>
         <form onSubmit={formik.handleSubmit}>
-          <div className={[space['m-b--8'], space['m-t--35']].join(' ')}>
+          <div className={[space['m-b--8']].join(' ')}>
             <div>
-              {/* <div
-                style={{ height: 65 }}
-                className={[
-                  layout['relative'],
-                  color['b-t--white__3'],
-                  color['b-r--white__3'],
-                  color['b-l--white__3'],
-                  shape['btr--10'],
-                  space['p-v--8'],
-                  space['p-h--12'],
-                  layout['items-center'],
-                  layout['justify-between'],
-                ].join(' ')}>
-                <div>
-                  <label
-                    className={[
-                      font['size--12'],
-                      color['c--gray__2'],
-                      font['weight--300'],
-                    ].join(' ')}>
-                    Country/Region
-                  </label>
-                  <input
-                    style={{ height: 20 }}
-                    className={[
-                      space['p--0'],
-                      shape['w--full'],
-                      layout['block'],
-                      color['b--0'],
-                      font['size--16'],
-                      font['weight--300'],
-                      color['c__placeholder--black'],
-                    ].join(' ')}
-                    placeholder='Canada (+1)'
-                  />
-                </div>
-                <div
-                  style={{ right: 17 }}
-                  className={[layout['absolute']].join(' ')}>
-                  <ChevronDown width={12} />
-                </div>
-              </div> */}
-              {/* <Input
-                type='text'
-                category='tel'
-                placeholder='Phone number'
-                handleChange={formik.handleChange}
-                value={formik.values.tel}
-              /> */}
               <Input type='text' direction='bottom' />
               <Input type='text' direction='top' />
             </div>
@@ -112,7 +63,7 @@ const Auth = () => {
             </p>
           </div>
           <div className={[space['m-t--18'], space['m-b--18']].join(' ')}>
-            <Button type='plain' title='Continue' />
+            <Button type='primary' title='Continue' />
           </div>
         </form>
         <div
@@ -139,7 +90,7 @@ const Auth = () => {
           {methods.map((method, index) => {
             return (
               <div key={index} className={[space['m-v--14']].join(' ')}>
-                <Button type='login' platform={method} />
+                <Button type='auth' platform={method} />
               </div>
             );
           })}
@@ -157,16 +108,11 @@ const Auth = () => {
                 : 'Already have an account?'}
             </p>
           </div>
-          <button
-            onClick={switchAuth}
-            className={[
-              layout['inline-block'],
-              font['size--14'],
-              font['weight--500'],
-              color['bg--transparent'],
-            ].join(' ')}>
-            <u>{authState.title === 'Log in' ? 'Sign up' : 'Log in'}</u>
-          </button>
+          <Button
+            type='underline'
+            onPress={switchAuth}
+            title={authState.title === 'Log in' ? 'Sign up' : 'Log in'}
+          />
         </div>
       </div>
     </div>
@@ -174,11 +120,103 @@ const Auth = () => {
 };
 
 export const Login = () => {
-  return <div>login</div>;
+  const authState = useAuthState();
+  const authDispatch = useAuthDispatch();
+
+  const switchAuth = () => {
+    if (authState.title === 'Log in') {
+      return authDispatch({ type: 'auth_signup' });
+    }
+    return authDispatch({ type: 'auth_login' });
+  };
+  return (
+    <div className={[space['p--24']].join(' ')}>
+      <form>
+        <div>
+          <Input type='text' direction='bottom' />
+          <Input type='text' direction='top' />
+        </div>
+        <div className={[space['m-v--16']].join(' ')}>
+          <Button type='primary' title='Log in' />
+        </div>
+        <div className={[space['m-v--16']].join(' ')}>
+          <Button type='underline' title='Forgot password?' />
+        </div>
+        <div className={[space['m-v--16']].join(' ')}>
+          <Button type='underline' title='More login options' />
+        </div>
+        <div className={[layout['flex']].join(' ')}>
+          <p className={[font['size--14'], space['m-r--8']].join(' ')}>
+            Don't have an account?
+          </p>
+          <Button type='underline' title='Sign up' onPress={switchAuth} />
+        </div>
+      </form>
+    </div>
+  );
 };
 
 export const Signup = () => {
-  return <div>register</div>;
+  return (
+    <div className={[space['p--24']].join(' ')}>
+      <div>
+        <Input type='text' direction='bottom' placeholder='First name' />
+        <Input type='text' direction='top' placeholder='Last name' />
+        <p
+          className={[
+            space['m-t--8'],
+            font['size--11'],
+            color['c--gray__1'],
+          ].join(' ')}>
+          Make sure it matches the name on your government ID.
+        </p>
+      </div>
+      <div className={[space['m-t--22']].join(' ')}>
+        <h3 className={[font['size--16']].join(' ')}>Birth date</h3>
+        <div>three inputs</div>
+        <p
+          className={[
+            space['m-t--8'],
+            font['size--11'],
+            color['c--gray__1'],
+          ].join(' ')}>
+          To sign up, you need to be at least 18. Your birthday won't be shared
+          with other people who use Airbnb.
+        </p>
+      </div>
+      <div className={[space['m-t--22']].join(' ')}>
+        <div>
+          <Input type='text' placeholder='Email' />
+        </div>
+        <p
+          className={[
+            space['m-t--8'],
+            font['size--11'],
+            color['c--gray__1'],
+          ].join(' ')}>
+          We'll email you trip confirmations and receipts
+        </p>
+      </div>
+      <div className={[space['m-t--22']].join(' ')}>
+        <div>
+          <Input type='text' placeholder='Password' />
+        </div>
+        <p
+          className={[
+            space['m-t--22'],
+            font['size--11'],
+            color['c--gray__1'],
+          ].join(' ')}>
+          By selecting <b>Agree and continue</b> below, I agree to Airbnb's{' '}
+          <u>Terms of Service</u>, <u>Payments Terms of Service</u>,{' '}
+          <u>Privacy Policy</u>, and <u>Nondiscrimination Policy</u>.
+        </p>
+      </div>
+      <div className={[space['m-t--16']].join(' ')}>
+        <Button type='primary' title='Agree and continue' />
+      </div>
+    </div>
+  );
 };
 
 /**
@@ -210,7 +248,7 @@ export const AuthModal: React.FC<RegisterModalProps> = () => {
       exit={{ opacity: 0 }}
       initial={{ y: 25 }}
       animate={{ y: 0 }}
-      style={{ width: 550, height: 650 }}
+      style={{ width: 550 }}
       className={[
         shape['shadow--lg'],
         shape['br--16'],
@@ -224,17 +262,16 @@ export const AuthModal: React.FC<RegisterModalProps> = () => {
           space['p-h--24'],
         ].join(' ')}>
         <div className={[layout['relative'], shape['w--full']].join(' ')}>
-          <Button
-            onPress={handleClose}
-            extendsTo={[
+          <div
+            className={[
               layout['al--0'],
-              layout['t--2'],
+              layout['t---3'],
               color['bg--transparent'],
             ].join(' ')}>
-            <Close width={16} height={16} stroke='black' strokeWidth={2} />
-          </Button>
+            <Button type='close' onPress={handleClose} />
+          </div>
           <div className={[layout['all-center']].join(' ')}>
-            <h3>{authState.title}</h3>
+            <h3 className={[font['size--16']].join(' ')}>{authState.title}</h3>
           </div>
         </div>
       </div>

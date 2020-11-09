@@ -10,17 +10,14 @@ import { Avatar, Bars } from '../../../public/svg/original';
 import { MenuButtonProps } from './props';
 import { useToggleDispatch } from '../../../context/toggle';
 
-export const MenuButton: React.FC<MenuButtonProps> = ({
-  tap,
-  inverse = false,
-}) => {
+export const MenuButton: React.FC<MenuButtonProps> = ({ inverse = false }) => {
   let toggleDispatch = useToggleDispatch();
   const triggerModal = () => {
     toggleDispatch({ type: 'toggle_menu' });
   };
   return (
     <motion.button
-      whileTap={tap}
+      whileTap={{ scale: 0.98 }}
       data-testid='button'
       className={`${[
         layout['items-center'],

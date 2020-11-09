@@ -117,7 +117,7 @@ export const ImageSlider = ({ slides }) => {
         height: '100%',
         overflow: 'hidden',
         borderRadius: 12,
-        zIndex: 9999,
+        zIndex: 500,
       }}>
       <div
         style={{

@@ -11,7 +11,6 @@ import { PaginateButtonProps } from './props';
 
 export const PaginateButton: React.FC<PaginateButtonProps> = ({
   direction = 'left',
-  tap = { scale: 0.98 },
   onPress,
 }) => {
   return (
@@ -19,7 +18,7 @@ export const PaginateButton: React.FC<PaginateButtonProps> = ({
       {direction === 'left' ? (
         <motion.button
           whileHover={{ scale: 1.04 }}
-          whileTap={tap}
+          whileTap={{ scale: 0.98 }}
           data-testid='button'
           className={[
             button['bg__paginate'],
@@ -33,7 +32,7 @@ export const PaginateButton: React.FC<PaginateButtonProps> = ({
       ) : (
         <motion.button
           whileHover={{ scale: 1.04 }}
-          whileTap={tap}
+          whileTap={{ scale: 0.98 }}
           data-testid='button'
           className={[
             button['bg__paginate'],

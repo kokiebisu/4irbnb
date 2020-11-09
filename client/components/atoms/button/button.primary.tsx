@@ -6,16 +6,15 @@ import shape from '../../../styles/shape.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import font from '../../../styles/font.module.scss';
 import space from '../../../styles/space.module.scss';
-import { PlainButtonProps } from './props';
+import { PrimaryButtonProps } from './props';
 
-export const PlainButton: React.FC<PlainButtonProps> = ({
+export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   title = 'Button',
-  tap = { scale: 0.98 },
   onPress,
 }) => {
   return (
     <motion.button
-      whileTap={tap}
+      whileTap={{ scale: 0.98 }}
       data-testid='button'
       className={[
         color['bg--primary'],
@@ -29,7 +28,7 @@ export const PlainButton: React.FC<PlainButtonProps> = ({
         font['weight--300'],
       ].join(' ')}
       onClick={onPress}>
-      <p>{title}</p>
+      <h4>{title}</h4>
     </motion.button>
   );
 };

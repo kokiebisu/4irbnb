@@ -34,11 +34,6 @@ export default {
     extendsTo: {
       control: { disable: true },
     },
-    tap: {
-      control: {
-        disable: true,
-      },
-    },
   },
 } as Meta;
 
@@ -106,12 +101,12 @@ banner.decorators = [
   ),
 ];
 
-export const plain = ButtonTemplate.bind({});
-plain.args = {
-  type: 'plain',
+export const primary = ButtonTemplate.bind({});
+primary.args = {
+  type: 'primary',
 };
 
-plain.decorators = [
+primary.decorators = [
   (Story) => (
     <div style={{ width: 300 }}>
       <Story />
@@ -124,12 +119,12 @@ searchbar.args = {
   type: 'searchbar',
 };
 
-export const login = ButtonTemplate.bind({});
-login.args = {
-  type: 'login',
+export const auth = ButtonTemplate.bind({});
+auth.args = {
+  type: 'auth',
 };
 
-login.decorators = [
+auth.decorators = [
   (Story) => (
     <div style={{ width: 300 }}>
       <Story />
@@ -147,6 +142,21 @@ option.args = {
   type: 'option',
 };
 
+export const underline = ButtonTemplate.bind({});
+underline.args = {
+  type: 'underline',
+};
+
+export const close = ButtonTemplate.bind({});
+close.args = {
+  type: 'close',
+};
+
+export const filter = ButtonTemplate.bind({});
+filter.args = {
+  type: 'filter',
+};
+
 /**
  * Argtypes
  */
@@ -160,13 +170,13 @@ menu.argTypes = {
 banner.argTypes = {
   ...disableInverse,
 };
-plain.argTypes = {
+primary.argTypes = {
   ...disableInverse,
 };
 searchbar.argTypes = {
   ...disableInverse,
 };
-login.argTypes = {
+auth.argTypes = {
   ...disableInverse,
 };
 searchbar.argTypes = {
