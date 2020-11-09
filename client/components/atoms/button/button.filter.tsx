@@ -5,6 +5,7 @@ import space from '../../../styles/space.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
+import button from './button.module.scss';
 
 export const FilterButton = ({ name = 'Cancellation flexibility' }) => {
   return (
@@ -12,7 +13,7 @@ export const FilterButton = ({ name = 'Cancellation flexibility' }) => {
       whileTap={{ scale: 0.98 }}
       whileHover={{ scale: 1.04 }}
       className={[
-        color['b--white__3'],
+        button['hover__filter'],
         space['p-v--8'],
         space['p-h--14'],
         shape['br--20'],

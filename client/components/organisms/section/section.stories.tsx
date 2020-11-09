@@ -133,3 +133,8 @@ export const online = SectionTemplate.bind({});
 online.args = {
   type: 'online',
 };
+
+export const homes = SectionTemplate.bind({});
+homes.args = {
+  type: 'homes',
+};
