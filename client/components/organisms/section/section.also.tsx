@@ -92,10 +92,20 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
         </div>
         <div className={[layout['flex'], layout['items-center']].join(' ')}>
           <div className={[space['m-h--4']].join(' ')}>
-            <Button type='paginate' direction='left' onPress={previous} />
+            <Button
+              type='paginate'
+              direction='left'
+              onPress={previous}
+              disable={state.activeSlide === 0}
+            />
           </div>
           <div className={[space['m-h--4']].join(' ')}>
-            <Button type='paginate' direction='right' onPress={next} />
+            <Button
+              type='paginate'
+              direction='right'
+              onPress={next}
+              disable={state.activeSlide === items.length / 2 - 2}
+            />
           </div>
         </div>
       </div>

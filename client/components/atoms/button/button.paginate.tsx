@@ -12,14 +12,17 @@ import { PaginateButtonProps } from './props';
 export const PaginateButton: React.FC<PaginateButtonProps> = ({
   direction = 'left',
   onPress,
+  disable = false,
 }) => {
   return (
     <>
       {direction === 'left' ? (
         <motion.button
-          whileHover={{ scale: 1.04 }}
-          whileTap={{ scale: 0.98 }}
+          whileHover={{ scale: disable ? 1 : 1.04 }}
+          whileTap={{ scale: disable ? 1 : 0.98 }}
           data-testid='button'
+          disabled={disable}
+          style={{ cursor: disable ? 'default' : 'pointer' }}
           className={[
             button['bg__paginate'],
             space['p--8'],
@@ -27,13 +30,19 @@ export const PaginateButton: React.FC<PaginateButtonProps> = ({
             shape['br--circle'],
           ].join(' ')}
           onClick={onPress}>
-          <ChevronLeft width={10} stroke='black' strokeWidth={5} />
+          <ChevronLeft
+            width={10}
+            stroke={`${disable ? 'lightgray' : 'black'}`}
+            strokeWidth={5}
+          />
         </motion.button>
       ) : (
         <motion.button
-          whileHover={{ scale: 1.04 }}
-          whileTap={{ scale: 0.98 }}
+          whileHover={!disable && { scale: 1.04 }}
+          whileTap={!disable && { scale: 0.98 }}
           data-testid='button'
+          style={{ cursor: disable ? 'default' : 'pointer' }}
+          disabled={disable}
           className={[
             button['bg__paginate'],
             color['b--white__2'],
@@ -41,7 +50,11 @@ export const PaginateButton: React.FC<PaginateButtonProps> = ({
             shape['br--circle'],
           ].join(' ')}
           onClick={onPress}>
-          <ChevronRight width={10} stroke='black' strokeWidth={5} />
+          <ChevronRight
+            width={10}
+            stroke={`${disable ? 'lightgray' : 'black'}`}
+            strokeWidth={5}
+          />
         </motion.button>
       )}
     </>
