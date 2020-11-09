@@ -63,7 +63,7 @@ const LandingPage = () => {
       <Footer />
       <div className={index['none__menubar']}>
         <div style={{ zIndex: 30, position: 'fixed', bottom: 0 }}>
-          <MenuBar />
+          <MenuBar extendsTo={[color['b-t--white__3']].join(' ')} />
         </div>
       </div>
       <Modal
