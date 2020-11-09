@@ -2,8 +2,6 @@
  * Basic Props
  */
 
-import { AnyPtrRecord } from 'dns';
-
 export interface CardBasicProps {}
 
 /**
@@ -43,7 +41,7 @@ export interface ReviewCardProps {
 }
 
 export interface StaysCardProps {
-  imgUrl?: string;
+  images?: string[];
   typeStay?: string;
   location?: string;
   title?: string;
