@@ -1,1 +1,3 @@
-export type MenuBarProps = {};
+export type MenuBarProps = {
+  extendsTo?: string;
+};
