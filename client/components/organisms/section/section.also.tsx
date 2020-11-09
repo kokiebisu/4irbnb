@@ -20,15 +20,15 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
     'city7',
     'city8',
   ],
-  locations = 8,
 }) => {
+  const [width, setWidth] = useState(500);
   const containerRef = useRef<HTMLDivElement>();
   const [state, setState] = useState({
     activeSlide: 0,
     translate: 0,
     transition: 0.45,
   });
-  const [width, setWidth] = useState(500);
+
   const handleRef = () => {
     if (containerRef.current && containerRef.current.getBoundingClientRect()) {
       console.log('width', containerRef.current.getBoundingClientRect().width);
@@ -44,6 +44,37 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
     };
   });
 
+  const previous = () => {
+    if (state.activeSlide === 0) {
+      return setState({
+        ...state,
+        translate: (items.length / 2 - 1) * (width / 2),
+        activeSlide: items.length / 2 - 1,
+      });
+    }
+
+    setState({
+      ...state,
+      activeSlide: state.activeSlide - 1,
+      translate: (state.activeSlide - 1) * (width / 2),
+    });
+  };
+
+  const next = () => {
+    if (state.activeSlide === items.length / 2 - 2) {
+      return setState({
+        ...state,
+        translate: 0,
+        activeSlide: 0,
+      });
+    }
+    setState({
+      ...state,
+      activeSlide: state.activeSlide + 1,
+      translate: (state.activeSlide + 1) * (width / 2),
+    });
+  };
+
   const displayingItems = groupByTwo(items);
   return (
     <div>
@@ -54,24 +85,24 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
           layout['items-center'],
           layout['justify-between'],
         ].join(' ')}>
-        <div>
+        <div className={[space['m-v--16']].join(' ')}>
           <h3 className={[font['size--20']].join(' ')}>
             People also search for
           </h3>
         </div>
         <div className={[layout['flex'], layout['items-center']].join(' ')}>
           <div className={[space['m-h--4']].join(' ')}>
-            <Button type='paginate' direction='left' />
+            <Button type='paginate' direction='left' onPress={previous} />
           </div>
           <div className={[space['m-h--4']].join(' ')}>
-            <Button type='paginate' direction='right' />
+            <Button type='paginate' direction='right' onPress={next} />
           </div>
         </div>
       </div>
       <div
         style={{
           height: '100%',
-          width: width * (locations / 2),
+          width: width * (items.length / 2),
           transform: `translateX(-${state.translate}px)`,
           transition: `transform ease-out ${state.transition}s`,
         }}>
