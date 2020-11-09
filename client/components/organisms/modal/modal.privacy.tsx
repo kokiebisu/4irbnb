@@ -72,7 +72,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
               space['m-l--0'],
               modal['m-r--privacy'],
             ].join(' ')}>
-            <Button tap={{ scale: 0.98 }} title='Save' type='privacy' />
+            <Button title='Save' type='privacy' />
           </motion.div>
           <motion.div
             className={[
@@ -81,12 +81,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
               space['m-l--0'],
               space['m-r--0'],
             ].join(' ')}>
-            <Button
-              tap={{ scale: 0.98 }}
-              title='Cookie Preferences'
-              type='privacy'
-              inverse
-            />
+            <Button title='Cookie Preferences' type='privacy' inverse />
           </motion.div>
         </div>
       </div>

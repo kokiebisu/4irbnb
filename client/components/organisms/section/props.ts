@@ -96,6 +96,8 @@ export interface OnlineSectionProps {
   items?: any;
 }
 
+export interface HomesSectionProps {}
+
 export interface SectionProps {
   extendsTo?: string;
   type: string;

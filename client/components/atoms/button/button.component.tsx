@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { LoginButton } from './button.login';
+import { AuthButton } from './button.auth';
 import { ButtonProps } from './props';
 import { GlobeButton } from './button.globe';
 import { HostButton } from './button.host';
@@ -9,11 +9,14 @@ import { MenuButton } from './button.menu';
 import { PrivacyButton } from './button.privacy';
 import { BorderButton } from './button.border';
 import { BannerButton } from './button.banner';
-import { PlainButton } from './button.plain';
+import { PrimaryButton } from './button.primary';
 import { SearchbarButton } from './button.searchbar';
 import { PaginateButton } from './button.paginate';
 import { ExpandButton } from './button.expand';
 import { OptionButton } from './button.option';
+import { UnderlineButton } from './button.underline';
+import { CloseButton } from './button.close';
+import { FilterButton } from './button.filter';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -22,25 +25,27 @@ interface mapProps {
 export const Button: React.FC<ButtonProps> = ({
   to,
   extendsTo,
-  tap = { scale: 0.98 },
   type,
   children,
   ...props
 }) => {
   const { onPress } = props;
   const types: mapProps = {
-    login: <LoginButton {...props} />,
+    auth: <AuthButton {...props} />,
     globe: <GlobeButton {...props} />,
     host: <HostButton {...props} />,
     menu: <MenuButton {...props} />,
     privacy: <PrivacyButton {...props} />,
     border: <BorderButton {...props} />,
     banner: <BannerButton {...props} />,
-    plain: <PlainButton {...props} />,
+    primary: <PrimaryButton {...props} />,
     searchbar: <SearchbarButton {...props} />,
     paginate: <PaginateButton {...props} />,
     expand: <ExpandButton {...props} />,
     option: <OptionButton {...props} />,
+    underline: <UnderlineButton {...props} />,
+    close: <CloseButton {...props} />,
+    filter: <FilterButton {...props} />,
   };
 
   if (type) {
@@ -57,7 +62,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <motion.button
-      whileTap={tap}
+      whileTap={{ scale: 0.98 }}
       data-testid='button'
       className={extendsTo}
       onClick={onPress}>

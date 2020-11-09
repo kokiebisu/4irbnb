@@ -201,6 +201,47 @@ exports[`Storyshots Design System/Atoms/Bullet Review 1`] = `
 </div>
 `;
 
+exports[`Storyshots Design System/Atoms/Button Auth 1`] = `
+<div
+  style={
+    Object {
+      "width": 300,
+    }
+  }
+>
+  <button
+    className="hover__auth bg--transparent block w--full p-h--12 p-v--12 br--8"
+    onClick={[Function]}
+  >
+    <div
+      className="relative all-center"
+    >
+      <div
+        className="al--0"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          width={17}
+        >
+          <path
+            d="m22.5 4h-21c-.83 0-1.5.67-1.5 1.51v12.99c0 .83.67 1.5 1.5 1.5h20.99a1.5 1.5 0 0 0 1.51-1.51v-12.98c0-.84-.67-1.51-1.5-1.51zm.5 14.2-6.14-7.91 6.14-4.66v12.58zm-.83-13.2-9.69 7.36c-.26.2-.72.2-.98 0l-9.67-7.36h20.35zm-21.17.63 6.14 4.67-6.14 7.88zm.63 13.37 6.3-8.1 2.97 2.26c.62.47 1.57.47 2.19 0l2.97-2.26 6.29 8.1z"
+            fillRule="evenodd"
+          />
+        </svg>
+      </div>
+      <div>
+        <h3
+          className="size--14 c--gray__2"
+        >
+          Continue with 
+          Email
+        </h3>
+      </div>
+    </div>
+  </button>
+</div>
+`;
+
 exports[`Storyshots Design System/Atoms/Button Banner 1`] = `
 <div
   style={
@@ -239,6 +280,29 @@ exports[`Storyshots Design System/Atoms/Button Border 1`] = `
     Button
   </a>
 </div>
+`;
+
+exports[`Storyshots Design System/Atoms/Button Close 1`] = `
+<button
+  className="bg--transparent p--8 br--circle hover__close"
+  onClick={[Function]}
+  style={Object {}}
+>
+  <svg
+    height={16}
+    stroke="black"
+    strokeWidth={2}
+    viewBox="0 0 32 32"
+    width={16}
+  >
+    <path
+      d="m6 6 20 20"
+    />
+    <path
+      d="m26 6-20 20"
+    />
+  </svg>
+</button>
 `;
 
 exports[`Storyshots Design System/Atoms/Button Globe 1`] = `
@@ -301,52 +365,6 @@ exports[`Storyshots Design System/Atoms/Button Host 1`] = `
   >
     Become a host
   </a>
-</div>
-`;
-
-exports[`Storyshots Design System/Atoms/Button Login 1`] = `
-<div
-  style={
-    Object {
-      "width": 300,
-    }
-  }
->
-  <button
-    className="bg--transparent block w--full p-h--12 p-v--12 br--8"
-    onClick={[Function]}
-    style={
-      Object {
-        "border": "2px solid #B0B0B0",
-      }
-    }
-  >
-    <div
-      className="relative all-center"
-    >
-      <div
-        className="al--0"
-      >
-        <svg
-          viewBox="0 0 24 24"
-          width={17}
-        >
-          <path
-            d="m22.5 4h-21c-.83 0-1.5.67-1.5 1.51v12.99c0 .83.67 1.5 1.5 1.5h20.99a1.5 1.5 0 0 0 1.51-1.51v-12.98c0-.84-.67-1.51-1.5-1.51zm.5 14.2-6.14-7.91 6.14-4.66v12.58zm-.83-13.2-9.69 7.36c-.26.2-.72.2-.98 0l-9.67-7.36h20.35zm-21.17.63 6.14 4.67-6.14 7.88zm.63 13.37 6.3-8.1 2.97 2.26c.62.47 1.57.47 2.19 0l2.97-2.26 6.29 8.1z"
-            fillRule="evenodd"
-          />
-        </svg>
-      </div>
-      <div>
-        <h3
-          className="size--14 c--gray__2"
-        >
-          Continue with 
-          Email
-        </h3>
-      </div>
-    </div>
-  </button>
 </div>
 `;
 
@@ -416,7 +434,7 @@ exports[`Storyshots Design System/Atoms/Button Paginate 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Plain 1`] = `
+exports[`Storyshots Design System/Atoms/Button Primary 1`] = `
 <div
   style={
     Object {
@@ -429,9 +447,9 @@ exports[`Storyshots Design System/Atoms/Button Plain 1`] = `
     data-testid="button"
     style={Object {}}
   >
-    <p>
+    <h4>
       Button
-    </p>
+    </h4>
   </button>
 </div>
 `;
@@ -493,6 +511,17 @@ exports[`Storyshots Design System/Atoms/Button Searchbar 1`] = `
       Search stays
     </div>
   </div>
+</button>
+`;
+
+exports[`Storyshots Design System/Atoms/Button Underline 1`] = `
+<button
+  className="inline-block size--14 weight--500 bg--transparent"
+  onClick={[Function]}
+>
+  <u>
+    Title here
+  </u>
 </button>
 `;
 
@@ -1756,7 +1785,7 @@ exports[`Storyshots Design System/Atoms/Input Text 1`] = `
     data-testid="input"
   >
     <div
-      className="outside relative p-v--6 p-h--12 items-center b-t--gray__3 b-l--gray__3 b-r--gray__3 btr--10 b-t--gray__3 b-l--gray__3 b-r--gray__3 btr--10"
+      className="outside relative p-v--6 p-h--12 items-center b--white__3 br--10 b--white__3 br--10"
       style={
         Object {
           "height": 60,
@@ -1781,7 +1810,7 @@ exports[`Storyshots Design System/Atoms/Input Text 1`] = `
           type="Email"
         />
         <label
-          className="absolute size--12 c--gray__2 weight--300 label "
+          className="absolute size--12 c--gray__1 weight--100 label "
           htmlFor="Email"
         >
           Email
@@ -2863,7 +2892,6 @@ exports[`Storyshots Design System/Organisms/Modal Auth 1`] = `
     className="shadow--lg br--16 bg--white__0"
     style={
       Object {
-        "height": 650,
         "transform": "translateY(25px) translateZ(0)",
         "width": 550,
       }
@@ -2880,43 +2908,43 @@ exports[`Storyshots Design System/Organisms/Modal Auth 1`] = `
       <div
         className="relative w--full"
       >
-        <button
-          className="al--0 t--2 bg--transparent"
-          data-testid="button"
-          onClick={[Function]}
-          style={Object {}}
+        <div
+          className="al--0 t---3 bg--transparent"
         >
-          <svg
-            height={16}
-            stroke="black"
-            strokeWidth={2}
-            viewBox="0 0 32 32"
-            width={16}
+          <button
+            className="bg--transparent p--8 br--circle hover__close"
+            onClick={[Function]}
+            style={Object {}}
           >
-            <path
-              d="m6 6 20 20"
-            />
-            <path
-              d="m26 6-20 20"
-            />
-          </svg>
-        </button>
+            <svg
+              height={16}
+              stroke="black"
+              strokeWidth={2}
+              viewBox="0 0 32 32"
+              width={16}
+            >
+              <path
+                d="m6 6 20 20"
+              />
+              <path
+                d="m26 6-20 20"
+              />
+            </svg>
+          </button>
+        </div>
         <div
           className="all-center"
         >
-          <h3>
+          <h3
+            className="size--16"
+          >
             Log in
           </h3>
         </div>
       </div>
     </div>
     <div
-      className="p-h--24"
-      style={
-        Object {
-          "height": "calc(100% - 60px)",
-        }
-      }
+      className="p--24"
     >
       <div
         className="w--full"
@@ -2925,14 +2953,14 @@ exports[`Storyshots Design System/Organisms/Modal Auth 1`] = `
           onSubmit={[Function]}
         >
           <div
-            className="m-b--8 m-t--35"
+            className="m-b--8"
           >
             <div>
               <div
                 data-testid="input"
               >
                 <div
-                  className="outside relative p-v--6 p-h--12 items-center b-t--gray__3 b-l--gray__3 b-r--gray__3 btr--10 b-t--gray__3 b-l--gray__3 b-r--gray__3 btr--10"
+                  className="outside relative p-v--6 p-h--12 items-center b-t--white__3 b-l--white__3 b-r--white__3 btr--10 b-t--white__3 b-l--white__3 b-r--white__3 btr--10"
                   style={
                     Object {
                       "height": 60,
@@ -2957,7 +2985,7 @@ exports[`Storyshots Design System/Organisms/Modal Auth 1`] = `
                       type="Email"
                     />
                     <label
-                      className="absolute size--12 c--gray__2 weight--300 label "
+                      className="absolute size--12 c--gray__1 weight--100 label "
                       htmlFor="Email"
                     >
                       Email
@@ -2969,7 +2997,7 @@ exports[`Storyshots Design System/Organisms/Modal Auth 1`] = `
                 data-testid="input"
               >
                 <div
-                  className="outside relative p-v--6 p-h--12 items-center b-b--gray__3 b-l--gray__3 b-r--gray__3 bbr--10 b-b--gray__3 b-l--gray__3 b-r--gray__3 bbr--10"
+                  className="outside relative p-v--6 p-h--12 items-center b-b--white__3 b-l--white__3 b-r--white__3 bbr--10 b-b--white__3 b-l--white__3 b-r--white__3 bbr--10"
                   style={
                     Object {
                       "height": 60,
@@ -2994,7 +3022,7 @@ exports[`Storyshots Design System/Organisms/Modal Auth 1`] = `
                       type="Email"
                     />
                     <label
-                      className="absolute size--12 c--gray__2 weight--300 label "
+                      className="absolute size--12 c--gray__1 weight--100 label "
                       htmlFor="Email"
                     >
                       Email
@@ -3019,9 +3047,9 @@ exports[`Storyshots Design System/Organisms/Modal Auth 1`] = `
               data-testid="button"
               style={Object {}}
             >
-              <p>
+              <h4>
                 Continue
-              </p>
+              </h4>
             </button>
           </div>
         </form>
@@ -3049,13 +3077,8 @@ exports[`Storyshots Design System/Organisms/Modal Auth 1`] = `
             className="m-v--14"
           >
             <button
-              className="bg--transparent block w--full p-h--12 p-v--12 br--8"
+              className="hover__auth bg--transparent block w--full p-h--12 p-v--12 br--8"
               onClick={[Function]}
-              style={
-                Object {
-                  "border": "2px solid #B0B0B0",
-                }
-              }
             >
               <div
                 className="relative all-center"
@@ -3088,13 +3111,8 @@ exports[`Storyshots Design System/Organisms/Modal Auth 1`] = `
             className="m-v--14"
           >
             <button
-              className="bg--transparent block w--full p-h--12 p-v--12 br--8"
+              className="hover__auth bg--transparent block w--full p-h--12 p-v--12 br--8"
               onClick={[Function]}
-              style={
-                Object {
-                  "border": "2px solid #B0B0B0",
-                }
-              }
             >
               <div
                 className="relative all-center"
@@ -3148,13 +3166,8 @@ exports[`Storyshots Design System/Organisms/Modal Auth 1`] = `
             className="m-v--14"
           >
             <button
-              className="bg--transparent block w--full p-h--12 p-v--12 br--8"
+              className="hover__auth bg--transparent block w--full p-h--12 p-v--12 br--8"
               onClick={[Function]}
-              style={
-                Object {
-                  "border": "2px solid #B0B0B0",
-                }
-              }
             >
               <div
                 className="relative all-center"
@@ -3207,13 +3220,8 @@ exports[`Storyshots Design System/Organisms/Modal Auth 1`] = `
             className="m-v--14"
           >
             <button
-              className="bg--transparent block w--full p-h--12 p-v--12 br--8"
+              className="hover__auth bg--transparent block w--full p-h--12 p-v--12 br--8"
               onClick={[Function]}
-              style={
-                Object {
-                  "border": "2px solid #B0B0B0",
-                }
-              }
             >
               <div
                 className="relative all-center"
@@ -3326,9 +3334,9 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
         data-testid="button"
         style={Object {}}
       >
-        <p>
+        <h4>
           Check availability
-        </p>
+        </h4>
       </button>
     </div>
   </div>

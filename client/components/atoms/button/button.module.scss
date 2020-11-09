@@ -18,3 +18,26 @@
     }
   }
 }
+
+.hover {
+  &__auth {
+    border: 2px solid #b0b0b0;
+
+    &:hover {
+      border: 2px solid black;
+    }
+  }
+
+  &__close {
+    &:hover {
+      background-color: #f7f7f7;
+    }
+  }
+
+  &__filter {
+    border: 2px solid #b0b0b0;
+    &:hover {
+      border: 2px solid black;
+    }
+  }
+}

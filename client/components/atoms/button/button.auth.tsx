@@ -4,12 +4,13 @@ import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import space from '../../../styles/space.module.scss';
-import { ButtonLoginProps } from './props';
+import button from './button.module.scss';
+import { AuthButtonProps } from './props';
 import { Email } from '../../../public/svg/original';
 import { Apple, Facebook, Google } from '../../../public/svg/logo';
 import { useAuthDispatch, useAuthState } from '../../../context/auth';
 
-export const LoginButton: React.FC<ButtonLoginProps> = ({
+export const AuthButton: React.FC<AuthButtonProps> = ({
   platform = 'email',
 }) => {
   const authState = useAuthState();
@@ -51,8 +52,8 @@ export const LoginButton: React.FC<ButtonLoginProps> = ({
   return (
     <button
       onClick={categories[platform].handleClick}
-      style={{ border: '2px solid #B0B0B0' }}
       className={[
+        button['hover__auth'],
         color['bg--transparent'],
         layout['block'],
         shape['w--full'],

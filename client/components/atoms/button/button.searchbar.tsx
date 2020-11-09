@@ -13,7 +13,6 @@ import { SearchbarButtonProps } from './props';
 
 export const SearchbarButton: React.FC<SearchbarButtonProps> = ({
   mini = false,
-  tap = { scale: 0.98 },
 }) => {
   const handlePress = () => {
     alert('searchbar button clicked');
@@ -22,7 +21,7 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({
     <>
       {mini ? (
         <motion.button
-          whileTap={tap}
+          whileTap={{ scale: 0.98 }}
           data-testid='button'
           className={[
             shape['br--25'],
@@ -72,7 +71,7 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({
         </motion.button>
       ) : (
         <motion.button
-          whileTap={tap}
+          whileTap={{ scale: 0.98 }}
           data-testid='button'
           className={[
             shape['w--full'],

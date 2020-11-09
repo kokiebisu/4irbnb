@@ -6,12 +6,6 @@ interface LinkButtonProps {
   to?: string;
 }
 
-interface ClickableButtonProps {
-  tap?: {
-    scale: number;
-  };
-}
-
 interface OnPressProps {
   onPress?: () => void;
 }
@@ -24,20 +18,19 @@ interface InverseProps {
   inverse?: boolean;
 }
 
-export interface ButtonLoginProps {
+export interface AuthButtonProps {
   platform?: string;
   icon?: any;
 }
 
-export interface GlobeButtonProps extends InverseProps, ClickableButtonProps {}
+export interface GlobeButtonProps extends InverseProps {}
 
 export interface HostButtonProps extends LinkButtonProps, InverseProps {}
 
-export interface MenuButtonProps extends InverseProps, ClickableButtonProps {}
+export interface MenuButtonProps extends InverseProps {}
 
 export interface PrivacyButtonProps
   extends InverseProps,
-    ClickableButtonProps,
     TitleProps,
     OnPressProps {}
 
@@ -50,14 +43,11 @@ export interface BorderButtonProps
 
 export interface BannerButtonProps extends LinkButtonProps, TitleProps {}
 
-export interface PlainButtonProps
-  extends ClickableButtonProps,
-    TitleProps,
-    OnPressProps {}
+export interface PrimaryButtonProps extends TitleProps, OnPressProps {}
 
-export interface SearchbarButtonProps extends ClickableButtonProps, MiniProps {}
+export interface SearchbarButtonProps extends MiniProps {}
 
-export interface PaginateButtonProps extends ClickableButtonProps {
+export interface PaginateButtonProps {
   direction?: string;
   onPress?: () => void;
 }
@@ -68,6 +58,17 @@ export interface OptionButtonProps {
   option?: string;
   bold?: boolean;
 }
+
+export interface UnderlineButtonProps {
+  onPress?: () => void;
+  title?: string;
+}
+
+export interface CloseButtonProps {
+  onPress?: () => void;
+}
+
+export interface FilterButtonProps {}
 
 export type ButtonProps = {
   extendsTo?: string;
