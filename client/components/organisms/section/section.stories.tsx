@@ -8,7 +8,11 @@ import { ContextProvider } from '../../../context/provider';
 export default {
   title: 'Design System/Organisms/Section',
   component: Section,
-  argTypes: { onPress: { action: 'clicked' } },
+  argTypes: {
+    onPress: { action: 'clicked' },
+    type: { control: { disable: true } },
+    extendsTo: { control: { disable: true } },
+  },
   decorators: [
     (Story) => (
       <ContextProvider>
@@ -132,6 +136,12 @@ banner.args = {
 export const online = SectionTemplate.bind({});
 online.args = {
   type: 'online',
+};
+
+online.argTypes = {
+  dark: {
+    control: 'boolean',
+  },
 };
 
 export const homes = SectionTemplate.bind({});

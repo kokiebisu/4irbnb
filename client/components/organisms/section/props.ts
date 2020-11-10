@@ -94,6 +94,7 @@ export interface BannerSectionProps {}
 
 export interface OnlineSectionProps {
   items?: any;
+  dark?: boolean;
 }
 
 export interface HomesSectionProps {
@@ -102,6 +103,7 @@ export interface HomesSectionProps {
   guests?: number;
   average?: number;
   stays?: any;
+  title?: string;
   layout?: 'vertical' | 'horizontal';
 }
 
