@@ -12,6 +12,7 @@ export const SectionLayout: React.FC<SectionLayoutProps> = ({
   subtitle,
   children,
   dark = false,
+  spread = false,
 }) => {
   return (
     <div
@@ -19,9 +20,11 @@ export const SectionLayout: React.FC<SectionLayoutProps> = ({
         dark ? [color['bg--black']].join() : [].join()
       }`}>
       <div
-        className={`${[layout['container']].join(' ')} ${
-          dark ? [color['bg--black']].join(' ') : [].join(' ')
-        }`}>
+        className={`${
+          spread
+            ? [layout['container--spread']].join(' ')
+            : [layout['container']].join(' ')
+        }  ${dark ? [color['bg--black']].join(' ') : [].join(' ')}`}>
         <div className={[space['p-v--16']].join(' ')}>
           {title && (
             <h3
