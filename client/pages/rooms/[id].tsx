@@ -1,19 +1,5 @@
 import * as React from 'react';
 
-// Containers
-// import { ToDoNear } from '../../components/stays/containers/ToDoNear';
-// import { MoreLocations } from '../../components/stays/containers/MoreLocations';
-// import { PlaceInfo } from '../../components/stays/containers/PlaceInfo';
-// import { StayInfo } from '../../components/stays/containers/StayInfo';
-// import { MoreHomes } from '../../components/stays/containers/MoreHomes';
-// import { KeepInMind } from '../../components/stays/containers/KeepInMind';
-// import { Characteristics } from '../../components/stays/containers/Characteristics';
-
-// Functions
-// import { MainInfo } from '../../components/stays/functions/MainInfo';
-// import { CheckInCard } from '../../components/stays/functions/CheckInCard';
-// import { HostedBy } from '../../components/stays/functions/HostedBy';
-
 import { Header } from '../../components/organisms/header/header.component';
 import { Footer } from '../../components/organisms/footer/footer.component';
 
@@ -30,9 +16,7 @@ import { Modal } from 'components/organisms/modal/modal.component';
 const id: () => string | JSX.Element = () => {
   return (
     <>
-      <div
-        style={{ top: 0, zIndex: 9999 }}
-        className={[layout['sticky']].join(' ')}>
+      <div>
         <Header extendsTo={[details['w__wrapper']].join(' ')} type='white' />
       </div>
       <div className={[].join(' ')}>
@@ -46,8 +30,16 @@ const id: () => string | JSX.Element = () => {
         <div className={[details['flex__details']].join(' ')}>
           <div className={[details['w__details--left']].join(' ')}>
             <Section
+              layoutType='room'
               extendsTo={[staysDetail['b__characteristics']].join(' ')}
               type='characteristics'
+              characteristics={[
+                'house',
+                'sparkle',
+                'door',
+                'calendar',
+                'guidelines',
+              ]}
             />
             <Section
               type='description'
@@ -64,7 +56,9 @@ const id: () => string | JSX.Element = () => {
               title='Amenities'
             />
           </div>
-          <div className={[details['w__details--right']].join(' ')}>
+          <div
+            style={{ paddingBottom: 56 }}
+            className={[details['w__details--right']].join(' ')}>
             <Card
               type='checkin'
               extendsTo={[

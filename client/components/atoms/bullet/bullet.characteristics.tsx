@@ -5,15 +5,23 @@ import space from '../../../styles/space.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import {
   Calendar,
+  Devices,
   Door,
   Guidelines,
   House,
+  Language,
+  People,
   Sparkle,
+  Time,
 } from '../../../public/svg/original';
 import { CharacteristicBulletProps } from './props';
 
 export const CharacteristicBullet: React.FC<CharacteristicBulletProps> = ({
   characteristicType = 'house',
+  time = 1,
+  limit = 10,
+  privateLimit = 100,
+  languages = ['English', 'Chinese'],
 }) => {
   const icons = {
     house: {
@@ -43,32 +51,60 @@ export const CharacteristicBullet: React.FC<CharacteristicBulletProps> = ({
       title: 'House rules',
       description: 'The host doesn’t allow pets, parties, or smoking.',
     },
+    time: {
+      icon: <Time width={32} />,
+      title: time > 1 ? `${time} hours` : '1 hour',
+    },
+    devices: {
+      icon: <Devices width={32} />,
+      title: 'Join from your computer, phone, or tablet.',
+    },
+    people: {
+      icon: <People width={32} />,
+      title: `Up to ${limit} people. Private groups available for up to ${privateLimit}`,
+    },
+    language: {
+      icon: <Language width={32} />,
+      title: `Hosted in ${languages.join(', ')} (Simplified)`,
+    },
   };
 
   return (
-    <div className={[layout['flex'], space['m-v--8']].join(' ')}>
+    <div
+      className={[
+        layout['flex'],
+        space['m-v--8'],
+        layout['items-center'],
+        space['p-r--8'],
+      ].join(' ')}>
       <div className={[space['m-r--14']].join(' ')}>
         {icons[characteristicType].icon}
       </div>
       <div>
-        <h3
-          style={{ letterSpacing: 0.3 }}
-          className={[
-            space['m-b--4'],
-            color['c--gray__3'],
-            font['size--16'],
-            font['weight--500'],
-          ].join(' ')}>
-          {icons[characteristicType].title}
-        </h3>
-        <p
-          className={[
-            color['c--gray__1'],
-            font['weight--100'],
-            font['size--14'],
-          ].join(' ')}>
-          {icons[characteristicType].description}
-        </p>
+        {icons[characteristicType].description ? (
+          <h3
+            style={{ letterSpacing: 0.3 }}
+            className={[
+              space['m-b--4'],
+              color['c--gray__3'],
+              font['size--16'],
+              font['weight--500'],
+            ].join(' ')}>
+            {icons[characteristicType].title}
+          </h3>
+        ) : (
+          <p>{icons[characteristicType].title}</p>
+        )}
+        {icons[characteristicType].description && (
+          <p
+            className={[
+              color['c--gray__1'],
+              font['weight--100'],
+              font['size--14'],
+            ].join(' ')}>
+            {icons[characteristicType].description}
+          </p>
+        )}
       </div>
     </div>
   );

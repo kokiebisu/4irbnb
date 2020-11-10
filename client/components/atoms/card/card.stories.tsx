@@ -133,3 +133,16 @@ online.decorators = [
     </div>
   ),
 ];
+
+export const participate = CardTemplate.bind({});
+participate.args = {
+  type: 'participate',
+};
+participate.argTypes = {
+  categoryType: {
+    control: {
+      type: 'select',
+      options: ['call', 'private'],
+    },
+  },
+};

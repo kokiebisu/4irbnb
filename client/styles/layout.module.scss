@@ -189,28 +189,21 @@ $gridAmount: (1, 2, 3, 4, 5, 6, 7);
 }
 
 .container {
-  padding-left: 25px;
-  padding-right: 25px;
+  padding: 11px 20px;
 
   @media screen and (min-width: 728px) {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 11px 40px;
   }
 
   @media screen and (min-width: 1128px) {
-    padding-left: 80px;
-    padding-right: 80px;
+    padding: 11px 80px;
   }
 
   @media screen and (min-width: 1276px) {
     width: 100%;
+    max-width: 1280px;
     margin: 0 auto;
-    padding-left: 80px;
-    padding-right: 80px;
-  }
-
-  @media screen and (min-width: 1760px) {
-    max-width: 1760px;
+    padding: 15px 80px;
   }
 
   &__modal {

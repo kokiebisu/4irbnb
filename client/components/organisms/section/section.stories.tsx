@@ -55,6 +55,11 @@ panel.args = {
   type: 'panel',
 };
 
+export const characteristics = SectionTemplate.bind({});
+characteristics.args = {
+  type: 'characteristics',
+};
+
 export const description = SectionTemplate.bind({});
 description.args = {
   type: 'description',
@@ -152,4 +157,14 @@ homes.args = {
 export const also = SectionTemplate.bind({});
 also.args = {
   type: 'also',
+};
+
+export const participate = SectionTemplate.bind({});
+participate.args = {
+  type: 'participate',
+};
+
+export const bring = SectionTemplate.bind({});
+bring.args = {
+  type: 'bring',
 };

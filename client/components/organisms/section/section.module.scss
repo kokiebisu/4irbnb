@@ -127,6 +127,15 @@
       }
     }
   }
+
+  &__characteristics {
+    display: flex;
+
+    @media screen and (min-width: 560px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 }
 
 .m {
@@ -185,21 +194,21 @@
 
 .container {
   &__panel {
-    padding: 11px 0;
+    padding: 0px 0;
 
     @media screen and (min-width: 728px) {
-      padding: 11px 20px;
+      padding: 0px 40px;
     }
 
     @media screen and (min-width: 1128px) {
-      padding: 11px 80px;
+      padding: 0px 80px;
     }
 
     @media screen and (min-width: 1276px) {
       width: 100%;
       max-width: 1280px;
       margin: 0 auto;
-      padding: 15px 80px;
+      padding: 0px 80px;
     }
   }
 }
