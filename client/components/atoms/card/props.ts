@@ -70,6 +70,14 @@ export interface OnlineCardProps {
   inverse?: boolean;
 }
 
+export interface AvailableCardProps {
+  date?: string;
+  from?: string;
+  to?: string;
+  standard?: string;
+  price?: number;
+}
+
 export interface ParticipateCardProps {
   categoryType?: string;
 }

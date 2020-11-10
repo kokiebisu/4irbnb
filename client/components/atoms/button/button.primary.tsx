@@ -11,24 +11,66 @@ import { PrimaryButtonProps } from './props';
 export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   title = 'Button',
   onPress,
+  size = 'md',
 }) => {
-  return (
-    <motion.button
-      whileTap={{ scale: 0.98 }}
-      data-testid='button'
-      className={[
-        color['bg--primary'],
-        color['c--white__0'],
-        shape['w--full'],
-        layout['block'],
-        font['size--16'],
-        space['p-v--14'],
-        space['p-h--20'],
-        shape['br--8'],
-        font['weight--300'],
-      ].join(' ')}
-      onClick={onPress}>
-      <h4>{title}</h4>
-    </motion.button>
-  );
+  const components = {
+    sm: (
+      <motion.button
+        whileTap={{ scale: 0.98 }}
+        data-testid='button'
+        className={[
+          layout['inline-block'],
+          color['bg--primary'],
+          color['c--white__0'],
+          shape['w--full'],
+          font['size--14'],
+          space['p-v--8'],
+          space['p-h--14'],
+          shape['br--8'],
+          font['weight--300'],
+        ].join(' ')}
+        onClick={onPress}>
+        <h4>{title}</h4>
+      </motion.button>
+    ),
+    md: (
+      <motion.button
+        whileTap={{ scale: 0.98 }}
+        data-testid='button'
+        className={[
+          layout['inline-block'],
+          color['bg--primary'],
+          color['c--white__0'],
+          shape['w--full'],
+          font['size--16'],
+          space['p-v--14'],
+          space['p-h--20'],
+          shape['br--8'],
+          font['weight--300'],
+        ].join(' ')}
+        onClick={onPress}>
+        <h4>{title}</h4>
+      </motion.button>
+    ),
+    lg: (
+      <motion.button
+        whileTap={{ scale: 0.98 }}
+        data-testid='button'
+        className={[
+          color['bg--primary'],
+          color['c--white__0'],
+          shape['w--full'],
+          layout['block'],
+          font['size--16'],
+          space['p-v--14'],
+          space['p-h--20'],
+          shape['br--8'],
+          font['weight--300'],
+        ].join(' ')}
+        onClick={onPress}>
+        <h4>{title}</h4>
+      </motion.button>
+    ),
+  };
+  return components[size];
 };

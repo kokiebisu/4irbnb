@@ -146,3 +146,8 @@ participate.argTypes = {
     },
   },
 };
+
+export const available = CardTemplate.bind({});
+available.args = {
+  type: 'available',
+};
