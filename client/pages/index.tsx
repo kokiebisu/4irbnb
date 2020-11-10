@@ -62,32 +62,33 @@ const LandingPage = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             style={{ position: 'fixed', top: 0, zIndex: 99999, width: '100%' }}>
-            <Header type='white' />
+            <Header spread type='white' />
           </motion.div>
         )}
       </AnimatePresence>
       <Section type='banner' />
-      <Layout type='section'>
+      <Layout type='section' spread>
         <Section type='nearby' items={nearby} />
       </Layout>
-      <Layout type='section' title='Live anywhere'>
+      <Layout type='section' title='Live anywhere' spread>
         <Section type='category' items={anywhere} />
       </Layout>
       <div className={space['m-v--32']}></div>
       <Layout
         dark
+        spread
         type='section'
         title='Meet Online Experiences'
         subtitle='Interactive activities you can do together, led by expert hosts.'>
         <Section type='online' dark />
       </Layout>
-      <Layout type='section' title='Join millions of hosts on Airbnb'>
+      <Layout spread type='section' title='Join millions of hosts on Airbnb'>
         <Section type='category' items={categories} />
       </Layout>
-      <Layout type='section' title='Destinations for future trips'>
+      <Layout spread type='section' title='Destinations for future trips'>
         <Section type='destinations' />
       </Layout>
-      <Footer />
+      <Footer spread />
       <div className={index['none__menubar']}>
         <div style={{ zIndex: 30, position: 'fixed', bottom: 0 }}>
           <MenuBar extendsTo={[color['b-t--white__3']].join(' ')} />

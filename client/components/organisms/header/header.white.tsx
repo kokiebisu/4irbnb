@@ -18,15 +18,15 @@ export const WhiteHeader: React.FC<HeaderWhiteProps> = ({ spread = false }) => {
   let toggleState = useToggleState();
   return (
     <header
-      className={`${
-        spread
-          ? [shape['shadow--sm'], color['bg--white__0']].join(' ')
-          : [shape['shadow--sm'], color['bg--white__0']].join(' ')
-      }`}>
+      className={`${[
+        space['p-v--16'],
+        color['bg--white__0'],
+        shape['shadow--sm'],
+      ].join(' ')}`}>
       <div
         className={
           spread
-            ? [space['p-h--24']].join(' ')
+            ? [layout['container--spread']].join(' ')
             : [layout['container']].join(' ')
         }>
         <div
