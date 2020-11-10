@@ -77,7 +77,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
 
   const displayingItems = groupByTwo(items);
   return (
-    <div>
+    <div style={{ overflowX: 'hidden' }}>
       <div
         ref={containerRef}
         className={[
@@ -116,7 +116,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
           transform: `translateX(-${state.translate}px)`,
           transition: `transform ease-out ${state.transition}s`,
         }}>
-        <div style={{ display: 'flex', overflowX: 'hidden' }}>
+        <div style={{ display: 'flex' }}>
           {displayingItems.map((item, index) => {
             return (
               <div
@@ -130,6 +130,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
                     imgUrl={nearbyPic[index]}
                     city={item[0].city}
                     hours={item[0].hours}
+                    size='lg'
                   />
                 </div>
                 <div>
@@ -139,6 +140,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
                     imgUrl={nearbyPic[index + 4]}
                     city={item[1].city}
                     hours={item[1].hours}
+                    size='lg'
                   />
                 </div>
               </div>

@@ -150,14 +150,6 @@ export const HomesSection: React.FC<HomesSectionProps> = ({
           );
         })}
       </div>
-      <div
-        className={[
-          space['m-t--16'],
-          layout['flex'],
-          layout['justify-center'],
-        ].join(' ')}>
-        <Bar type='paginate' />
-      </div>
     </div>
   );
 };
