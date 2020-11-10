@@ -131,6 +131,8 @@ export interface BringSectionProps {
   necessities?: string[];
 }
 
+export interface ExperiencesSectionProps {}
+
 export interface SectionProps {
   extendsTo?: string;
   type: string;

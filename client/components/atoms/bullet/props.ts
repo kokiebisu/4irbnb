@@ -43,6 +43,10 @@ export interface BringBulletProps {
   title?: string;
 }
 
+export interface ExperienceBulletProps {
+  experienceType?: 'hosts' | 'activities' | 'global';
+}
+
 export type BulletProps = CharacteristicBulletProps & {
   extendsTo?: string;
   type: string;
