@@ -10,82 +10,116 @@ import staysDetail from '../../styles/staysDetail.module.scss';
 import { Card } from '../../components/atoms/card/card.component';
 import { Modal } from '../../components/organisms/modal/modal.component';
 import { Footer } from '../../components/organisms/footer/footer.component';
+import { useToggleState } from 'context/toggle';
 
 const id: () => string | JSX.Element = () => {
+  const toggleState = useToggleState();
   return (
     <>
       <div>
-        <Header extendsTo={[details['w__wrapper']].join(' ')} type='white' />
-      </div>
-      <div className={[].join(' ')}>
-        <Section
-          extendsTo={[staysDetail['flex__panel']].join(' ')}
-          type='panel'
-        />
-      </div>
-      <div
-        className={[layout['container'], staysDetail['m__content']].join(' ')}>
-        <div className={[details['flex__details']].join(' ')}>
-          <div className={[details['w__details--left']].join(' ')}>
-            <div className={[staysDetail['b__characteristics']].join(' ')}>
-              <Section
-                layoutType='experience'
-                type='characteristics'
-                characteristics={['time', 'devices', 'people', 'language']}
+        <div style={{ position: 'relative', zIndex: 9000 }}>
+          <Header type='white' />
+        </div>
+        <div className={[].join(' ')}>
+          <Section
+            extendsTo={[staysDetail['flex__panel']].join(' ')}
+            type='panel'
+          />
+        </div>
+        <div
+          className={[layout['container'], staysDetail['m__content']].join(
+            ' '
+          )}>
+          <div className={[details['flex__details']].join(' ')}>
+            <div className={[details['w__details--left']].join(' ')}>
+              <div className={[staysDetail['b__characteristics']].join(' ')}>
+                <Section
+                  layoutType='experience'
+                  type='characteristics'
+                  characteristics={['time', 'devices', 'people', 'language']}
+                />
+              </div>
+              <div
+                className={[color['b-t--white__2'], space['p-v--32']].join(
+                  ' '
+                )}>
+                <Section layoutType='experience' type='description' />
+              </div>
+              <div
+                className={[color['b-t--white__2'], space['p-v--32']].join(
+                  ' '
+                )}>
+                <Section type='participate' />
+              </div>
+              <div
+                className={[color['b-t--white__2'], space['p-v--32']].join(
+                  ' '
+                )}>
+                <Section type='bring' />
+              </div>
+            </div>
+            <div
+              style={{ padding: 20, paddingBottom: 56 }}
+              className={[details['w__details--right']].join(' ')}>
+              <Card
+                type='checkin'
+                extendsTo={[
+                  layout['flex'],
+                  layout['justify-end'],
+                  layout['sticky'],
+                  layout['t--78'],
+                ].join(' ')}
               />
             </div>
-            <div
-              className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
-              <Section layoutType='experience' type='description' />
-            </div>
-            <div
-              className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
-              <Section type='participate' />
-            </div>
-            <div
-              className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
-              <Section type='bring' />
-            </div>
           </div>
-          <div
-            style={{ paddingBottom: 56 }}
-            className={[details['w__details--right']].join(' ')}>
-            <Card
-              type='checkin'
-              extendsTo={[
-                layout['flex'],
-                layout['justify-end'],
-                layout['sticky'],
-                layout['t--78'],
-              ].join(' ')}
-            />
-          </div>
+          <Section
+            layoutType='experience'
+            extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
+            type='host'
+          />
+          <Section
+            layoutType='experience'
+            extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
+            type='reviews'
+          />
+          <Section
+            layoutType='experience'
+            extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
+            type='know'
+          />
         </div>
-        <Section
-          layoutType='experience'
-          extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
-          type='host'
-        />
-        <Section
-          layoutType='experience'
-          extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
-          type='reviews'
-        />
-        <Section
-          layoutType='experience'
-          extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
-          type='know'
-        />
+        <Footer />
+        <div
+          className={[
+            staysDetail['display__availability'],
+            shape['w--full'],
+          ].join(' ')}
+          style={{ position: 'fixed', bottom: 0, zIndex: 9999 }}>
+          <Modal type='availability' />
+        </div>
       </div>
-      <Footer />
-      <div
-        className={[
-          staysDetail['display__availability'],
-          shape['w--full'],
-        ].join(' ')}
-        style={{ position: 'fixed', bottom: 0, zIndex: 9999 }}>
-        <Modal type='availability' />
-      </div>
+      {toggleState.auth && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            zIndex: 9999,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            backgroundColor: 'rgba(0, 0, 0, 0.6)',
+          }}>
+          <Modal
+            extendsTo={[
+              layout['flex'],
+              layout['justify-center'],
+              layout['items-center'],
+              shape['h--100v'],
+            ].join(' ')}
+            type='auth'
+          />
+        </div>
+      )}
     </>
   );
 };

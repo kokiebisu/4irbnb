@@ -141,6 +141,7 @@ export const PanelSection: React.FC<PanelSectionProps> = ({
     ),
     experience: (
       <div
+        style={{ position: 'relative', zIndex: 500 }}
         className={[
           space['m-v--8'],
           layout['items-center'],
