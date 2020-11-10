@@ -82,11 +82,10 @@ const id: () => string | JSX.Element = () => {
             <Section layoutType='experience' type='reviews' />
           </div>
           <div className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
-            <Section
-              layoutType='experience'
-              extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
-              type='know'
-            />
+            <Section layoutType='experience' type='available' />
+          </div>
+          <div className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
+            <Section layoutType='experience' type='know' />
           </div>
         </div>
         <Footer />
