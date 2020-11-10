@@ -11,7 +11,7 @@ export const FilterButton = ({ name = 'Cancellation flexibility' }) => {
   return (
     <motion.button
       whileTap={{ scale: 0.98 }}
-      whileHover={{ scale: 1.04 }}
+      whileHover={{ scale: 1.02 }}
       className={[
         button['hover__filter'],
         space['p-v--8'],

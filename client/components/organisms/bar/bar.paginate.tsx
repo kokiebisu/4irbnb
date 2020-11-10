@@ -448,7 +448,12 @@ export const PaginateBar: React.FC<PaginateBarProps> = ({
         </p>
       </div>
       <div className={[space['m-t--28']].join(' ')}>
-        <p className={[font['size--12'], layout['text-center']].join(' ')}>
+        <p
+          className={[
+            font['size--12'],
+            layout['text-center'],
+            color['c--gray__1'],
+          ].join(' ')}>
           Enter dates to see full pricing. Additional fees apply. Taxes may be
           added.
         </p>

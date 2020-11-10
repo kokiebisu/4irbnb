@@ -21,7 +21,7 @@ export const NearbyTemplate: React.FC<NearbyTemplateProps> = ({
   guests = 8000,
   average = 4.9,
   filters = [
-    { name: 'Cacellation flexibility' },
+    { name: 'Cancellation flexibility' },
     { name: 'Type of place' },
     { name: 'Price' },
     { name: 'Instant Book' },
