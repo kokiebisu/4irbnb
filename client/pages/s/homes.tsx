@@ -10,7 +10,7 @@ const Homes = () => {
   return (
     <div>
       <div style={{ zIndex: 9999, position: 'sticky', top: 0 }}>
-        <Header type='white' />
+        <Header type='white' spread />
       </div>
       <div
         className={[layout['relative'], homes['display__content']].join(' ')}>
