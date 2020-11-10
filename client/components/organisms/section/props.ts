@@ -98,14 +98,16 @@ export interface OnlineSectionProps {
 
 export interface HomesSectionProps {
   filterCount?: number;
-  location?: string;
+  place?: string;
   guests?: number;
   average?: number;
   stays?: any;
+  layout?: 'vertical' | 'horizontal';
 }
 
 export interface AlsoSectionProps {
   items?: any;
+  title?: string;
 }
 
 export interface SectionProps {

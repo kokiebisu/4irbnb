@@ -301,14 +301,30 @@ export const horizontals = [
 ];
 
 export const nearby = [
-  { city: 'Tofino', hours: 6, to: '/s/homes?location=tofino' },
-  { city: 'Sechelt', hours: 2.5, to: '/s/homes?location=sechelt' },
-  { city: 'Penticton', hours: 5, to: '/s/homes?location=penticton' },
-  { city: 'Parksville', hours: 3.5, to: '/s/homes?location=parksville' },
-  { city: 'Courtenay', hours: 4, to: '/s/homes?location=courtenay' },
-  { city: 'Vernon', hours: 5.5, to: '/s/homes?location=vernon' },
-  { city: 'Campbell River', hours: 5, to: '/s/homes?location=campbell_river' },
-  { city: 'Golden', hours: 9, to: '/s/homes?location=golden' },
+  { city: 'Tofino', hours: 6, to: '/s/homes?type=nearby&city=tofino' },
+  { city: 'Sechelt', hours: 2.5, to: '/s/homes?type=nearby&city=sechelt' },
+  {
+    city: 'Penticton',
+    hours: 5,
+    to: '/s/homes?type=nearby&city=penticton',
+  },
+  {
+    city: 'Parksville',
+    hours: 3.5,
+    to: '/s/homes?type=nearby&city=parksville',
+  },
+  {
+    city: 'Courtenay',
+    hours: 4,
+    to: '/s/homes?type=nearby&city=courtenay',
+  },
+  { city: 'Vernon', hours: 5.5, to: '/s/homes?type=nearby&city=vernon' },
+  {
+    city: 'Campbell River',
+    hours: 5,
+    to: '/s/homes?type=nearby&city=campbell_river',
+  },
+  { city: 'Golden', hours: 9, to: '/s/homes?type=nearby&city=golden' },
 ];
 
 export const natures = horizontals.filter(
