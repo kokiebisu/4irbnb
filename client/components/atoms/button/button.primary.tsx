@@ -12,14 +12,14 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   title = 'Button',
   onPress,
   size = 'md',
+  spread = false,
 }) => {
   const components = {
     sm: (
       <motion.button
         whileTap={{ scale: 0.98 }}
         data-testid='button'
-        className={[
-          layout['inline-block'],
+        className={`${[
           color['bg--primary'],
           color['c--white__0'],
           shape['w--full'],
@@ -28,7 +28,7 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
           space['p-h--14'],
           shape['br--8'],
           font['weight--300'],
-        ].join(' ')}
+        ].join(' ')} ${spread ? layout['block'] : layout['inline-block']}`}
         onClick={onPress}>
         <h4>{title}</h4>
       </motion.button>
@@ -37,8 +37,7 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
       <motion.button
         whileTap={{ scale: 0.98 }}
         data-testid='button'
-        className={[
-          layout['inline-block'],
+        className={`${[
           color['bg--primary'],
           color['c--white__0'],
           shape['w--full'],
@@ -47,7 +46,7 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
           space['p-h--20'],
           shape['br--8'],
           font['weight--300'],
-        ].join(' ')}
+        ].join(' ')} ${spread ? layout['block'] : layout['inline-block']}`}
         onClick={onPress}>
         <h4>{title}</h4>
       </motion.button>
@@ -56,7 +55,7 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
       <motion.button
         whileTap={{ scale: 0.98 }}
         data-testid='button'
-        className={[
+        className={`${[
           color['bg--primary'],
           color['c--white__0'],
           shape['w--full'],
@@ -66,7 +65,7 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
           space['p-h--20'],
           shape['br--8'],
           font['weight--300'],
-        ].join(' ')}
+        ].join(' ')} ${spread ? layout['block'] : layout['inline-block']}`}
         onClick={onPress}>
         <h4>{title}</h4>
       </motion.button>
