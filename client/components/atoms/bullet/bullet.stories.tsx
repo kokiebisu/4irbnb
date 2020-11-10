@@ -10,9 +10,6 @@ export default {
     type: {
       control: { disable: true },
     },
-    characteristicType: {
-      control: { disable: true },
-    },
     extendsTo: {
       control: { disable: true },
     },
@@ -24,6 +21,14 @@ const BulletTemplate: Story<BulletProps> = (args) => <Bullet {...args} />;
 export const characteristic = BulletTemplate.bind({});
 characteristic.args = {
   type: 'characteristic',
+};
+characteristic.argTypes = {
+  characteristicType: {
+    control: {
+      type: 'select',
+      options: ['house', 'sparkle', 'door', 'calendar', 'guidelines', 'time'],
+    },
+  },
 };
 
 export const amenity = BulletTemplate.bind({});
@@ -82,4 +87,9 @@ know.argTypes = {
 export const rating = BulletTemplate.bind({});
 rating.args = {
   type: 'rating',
+};
+
+export const bring = BulletTemplate.bind({});
+bring.args = {
+  type: 'bring',
 };

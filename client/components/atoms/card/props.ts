@@ -70,6 +70,10 @@ export interface OnlineCardProps {
   inverse?: boolean;
 }
 
+export interface ParticipateCardProps {
+  categoryType?: string;
+}
+
 export interface CardProps {
   extendsTo?: string;
   type?: string;

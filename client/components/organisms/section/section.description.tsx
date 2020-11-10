@@ -16,6 +16,7 @@ export const DescriptionSection: React.FC<DescriptionSectionProps> = ({
     access:
       'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
   },
+  layoutType = 'room',
 }) => {
   const [display, setDisplay] = useState<boolean>(false);
 
@@ -35,6 +36,11 @@ export const DescriptionSection: React.FC<DescriptionSectionProps> = ({
   const newArray = renderDescription(data.description);
   return (
     <div>
+      {layoutType === 'experience' && (
+        <div className={[space['m-v--16']].join(' ')}>
+          <h3>What you'll do</h3>
+        </div>
+      )}
       {display ? (
         <div>
           <p
