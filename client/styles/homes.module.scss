@@ -1,10 +1,9 @@
 .display {
   &__content {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: block;
 
-    @media screen and (min-width: 1128px) {
-      grid-template-columns: 840px 1fr;
+    @media screen and (min-width: 1028px) {
+      display: flex;
     }
   }
 }
@@ -13,7 +12,7 @@
   &__section {
     width: 100%;
 
-    @media screen and (min-width: 1128px) {
+    @media screen and (min-width: 1028px) {
       width: 840px;
     }
   }

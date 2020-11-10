@@ -84,13 +84,23 @@ export const HomesSection: React.FC<HomesSectionProps> = ({
     { name: 'Instant Book' },
     { name: 'More filters' },
   ];
+
+  const displayingLocation = location.split('_').join(' ');
+
   return (
     <div className={[space['m-t--24']].join(' ')}>
       <div>
         <p className={[font['size--14']].join(' ')}>300+ stays</p>
       </div>
       <div>
-        <h3 className={[font['size--32']].join(' ')}>Stays in Sechelt</h3>
+        <h3 className={[font['size--32']].join(' ')}>
+          Stays in{' '}
+          <span
+            className={[font['weight--500']].join(' ')}
+            style={{ textTransform: 'capitalize' }}>
+            {displayingLocation}
+          </span>
+        </h3>
       </div>
       <div className={[space['m-v--22']].join(' ')}>
         <div className={[shape['from__md--flex']].join(' ')}>
@@ -130,8 +140,13 @@ export const HomesSection: React.FC<HomesSectionProps> = ({
             </div>
             <div>
               <h3 className={[font['size--14']].join(' ')}>
-                More than {guests} guests have stayed in {location}. On average
-                they rated their stays {average} out of 5 stars.
+                More than {guests} guests have stayed in{' '}
+                <span
+                  className={[font['weight--500']].join(' ')}
+                  style={{ textTransform: 'capitalize' }}>
+                  {displayingLocation}
+                </span>
+                . On average they rated their stays {average} out of 5 stars.
               </h3>
             </div>
           </div>
@@ -149,14 +164,6 @@ export const HomesSection: React.FC<HomesSectionProps> = ({
             </div>
           );
         })}
-      </div>
-      <div
-        className={[
-          space['m-t--16'],
-          layout['flex'],
-          layout['justify-center'],
-        ].join(' ')}>
-        <Bar type='paginate' />
       </div>
     </div>
   );

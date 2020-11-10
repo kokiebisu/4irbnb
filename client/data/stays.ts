@@ -301,14 +301,14 @@ export const horizontals = [
 ];
 
 export const nearby = [
-  { city: 'Tofino', hours: 6 },
-  { city: 'Sechelt', hours: 2.5 },
-  { city: 'Penticton', hours: 5 },
-  { city: 'Parksville', hours: 3.5 },
-  { city: 'Courtenay', hours: 4 },
-  { city: 'Vernon', hours: 5.5 },
-  { city: 'Campbell River', hours: 5 },
-  { city: 'Golden', hours: 9 },
+  { city: 'Tofino', hours: 6, to: '/s/homes?location=tofino' },
+  { city: 'Sechelt', hours: 2.5, to: '/s/homes?location=sechelt' },
+  { city: 'Penticton', hours: 5, to: '/s/homes?location=penticton' },
+  { city: 'Parksville', hours: 3.5, to: '/s/homes?location=parksville' },
+  { city: 'Courtenay', hours: 4, to: '/s/homes?location=courtenay' },
+  { city: 'Vernon', hours: 5.5, to: '/s/homes?location=vernon' },
+  { city: 'Campbell River', hours: 5, to: '/s/homes?location=campbell_river' },
+  { city: 'Golden', hours: 9, to: '/s/homes?location=golden' },
 ];
 
 export const natures = horizontals.filter(
