@@ -39,3 +39,8 @@ export const availability = ModalTemplate.bind({});
 availability.args = {
   type: 'availability',
 };
+
+export const booking = ModalTemplate.bind({});
+booking.args = {
+  type: 'booking',
+};

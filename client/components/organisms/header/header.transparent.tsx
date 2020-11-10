@@ -53,7 +53,7 @@ export const TransparentHeader: React.FC<{}> = () => {
         </div>
         <Modal
           criteria={toggleState.menu}
-          {...menuModal.args}
+          type='menu'
           extendsTo={[
             layout['absolute'],
             layout['r--0'],
