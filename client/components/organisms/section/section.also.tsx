@@ -21,7 +21,6 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
     'city8',
   ],
   title = 'People also search for',
-  columns = 2,
 }) => {
   const [width, setWidth] = useState(500);
   const containerRef = useRef<HTMLDivElement>();
@@ -49,7 +48,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
     if (state.activeSlide === 0) {
       return setState({
         ...state,
-        translate: (items.length / 2 - 1) * (width / columns),
+        translate: (items.length / 2 - 1) * (width / (width > 728 ? 3 : 2)),
         activeSlide: items.length / 2 - 1,
       });
     }
@@ -57,12 +56,12 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
     setState({
       ...state,
       activeSlide: state.activeSlide - 1,
-      translate: (state.activeSlide - 1) * (width / columns),
+      translate: (state.activeSlide - 1) * (width / (width > 728 ? 3 : 2)),
     });
   };
 
   const next = () => {
-    if (state.activeSlide === items.length / 2 - columns) {
+    if (state.activeSlide === items.length / 2 - (width > 728 ? 3 : 2)) {
       return setState({
         ...state,
         translate: 0,
@@ -72,7 +71,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
     setState({
       ...state,
       activeSlide: state.activeSlide + 1,
-      translate: (state.activeSlide + 1) * (width / columns),
+      translate: (state.activeSlide + 1) * (width / (width > 728 ? 3 : 2)),
     });
   };
 
@@ -103,7 +102,9 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
               type='paginate'
               direction='right'
               onPress={next}
-              disable={state.activeSlide === items.length / 2 - columns}
+              disable={
+                state.activeSlide === items.length / 2 - (width > 728 ? 3 : 2)
+              }
             />
           </div>
         </div>
@@ -119,7 +120,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
           {displayingItems.map((item, index) => {
             return (
               <div
-                style={{ width: width / columns }}
+                style={{ width: width / (width > 728 ? 3 : 2) }}
                 key={index}
                 className={[section['w__nearby']].join(' ')}>
                 <div className={[space['m-b--10']].join(' ')}>

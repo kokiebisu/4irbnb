@@ -107,29 +107,14 @@ export const StaySection: React.FC<StaySectionProps> = ({
     });
 
     const previous = () => {
-      if (state.activeSlide === 0) {
-        return setState({
-          ...state,
-          translate: (items.length / 2 - 1) * (width / 3),
-          activeSlide: items.length / 2 - 1,
-        });
-      }
-
       setState({
         ...state,
         activeSlide: state.activeSlide - 1,
-        translate: (state.activeSlide - 1) * (width / 3),
+        translate: (state.activeSlide - 1) * width,
       });
     };
 
     const next = () => {
-      if (state.activeSlide === items.length / 2 - 3) {
-        return setState({
-          ...state,
-          translate: 0,
-          activeSlide: 0,
-        });
-      }
       setState({
         ...state,
         activeSlide: state.activeSlide + 1,
@@ -163,7 +148,7 @@ export const StaySection: React.FC<StaySectionProps> = ({
                 type='paginate'
                 direction='right'
                 onPress={next}
-                disable={state.activeSlide === items.length / 2 - 3}
+                disable={state.activeSlide === Math.floor(items.length / 2) - 1}
               />
             </div>
           </div>
@@ -179,7 +164,7 @@ export const StaySection: React.FC<StaySectionProps> = ({
             {items.map((item, index) => {
               return (
                 <div
-                  style={{ width: width / 3 }}
+                  style={{ width: width / (width > 1128 ? 3 : 2) }}
                   key={index}
                   className={[section['w__nearby']].join(' ')}>
                   <div
