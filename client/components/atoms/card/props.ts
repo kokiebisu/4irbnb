@@ -67,6 +67,7 @@ export interface OnlineCardProps {
   small?: string;
   large?: string;
   title?: string;
+  inverse?: boolean;
 }
 
 export interface CardProps {
