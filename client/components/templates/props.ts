@@ -8,6 +8,8 @@ export interface NearbyTemplateProps {
 
 export interface CategoryTemplateProps {
   stayType?: string | string[];
+  filterCount?: number;
+  filters?: any;
 }
 
 export interface TemplateProps {
