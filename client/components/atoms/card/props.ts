@@ -60,6 +60,7 @@ export interface NearbyCardProps {
   imgUrl?: string;
   city?: string;
   hours?: number;
+  size?: 'sm' | 'lg';
 }
 
 export interface OnlineCardProps {

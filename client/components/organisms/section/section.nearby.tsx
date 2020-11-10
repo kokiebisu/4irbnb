@@ -20,6 +20,7 @@ export const NearbySection: React.FC<NearbySectionProps> = ({
   ],
 }) => {
   const displayingItems = groupByTwo(items);
+  console.log('displayingitme', displayingItems);
   return (
     <div>
       <div className={[space['p-h--70']].join(' ')}>
@@ -36,6 +37,7 @@ export const NearbySection: React.FC<NearbySectionProps> = ({
                     imgUrl={nearbyPic[index]}
                     city={item[0].city}
                     hours={item[0].hours}
+                    size='sm'
                   />
                 </div>
                 <div>
@@ -45,6 +47,7 @@ export const NearbySection: React.FC<NearbySectionProps> = ({
                     imgUrl={nearbyPic[index + 4]}
                     city={item[1].city}
                     hours={item[1].hours}
+                    size='sm'
                   />
                 </div>
               </div>

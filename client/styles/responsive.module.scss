@@ -1,7 +1,7 @@
 $breakpoints: (
-  'sm': 728,
-  'md': 1028,
-  'lg': 1326,
+  sm: 728,
+  md: 1028,
+  lg: 1326,
 );
 
 @each $name, $point in $breakpoints {

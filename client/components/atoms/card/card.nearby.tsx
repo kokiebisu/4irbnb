@@ -11,10 +11,21 @@ export const NearbyCard: React.FC<NearbyCardProps> = ({
   imgUrl = nearbyPic[0],
   city = 'City',
   hours = 1,
+  size = 'sm',
 }) => {
+  const renderSize = () => {
+    switch (size) {
+      case 'sm':
+        return [card['w__nearby--sm']].join(' ');
+      case 'lg':
+        return [card['w__nearby--lg']].join(' ');
+      default:
+        return;
+    }
+  };
   return (
     <div className={[layout['flex'], layout['items-center']].join(' ')}>
-      <div className={[card['w__nearby'], space['m-r--12']].join(' ')}>
+      <div className={`${renderSize()} ${[space['m-r--12']].join(' ')}`}>
         <img src={imgUrl} style={{ borderRadius: 10 }} />
       </div>
       <div>

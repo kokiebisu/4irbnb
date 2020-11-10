@@ -14,11 +14,22 @@
   }
 
   &__nearby {
-    scroll-snap-align: start;
-    width: 75px;
+    &--sm {
+      scroll-snap-align: start;
+      width: 75px;
 
-    @media screen and (min-width: 728px) {
-      width: 55px;
+      @media screen and (min-width: 728px) {
+        width: 55px;
+      }
+    }
+
+    &--lg {
+      scroll-snap-align: start;
+      width: 85px;
+
+      @media screen and (min-width: 728px) {
+        width: 50px;
+      }
     }
   }
 }
