@@ -26,7 +26,7 @@ export const WhiteHeader: React.FC<HeaderWhiteProps> = ({ spread = false }) => {
       <div
         className={
           spread
-            ? [layout['container--spread']].join(' ')
+            ? [space['p-h--24']].join(' ')
             : [layout['container']].join(' ')
         }>
         <div

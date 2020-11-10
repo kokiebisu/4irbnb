@@ -48,13 +48,13 @@ horizontal.args = {
   type: 'horizontal',
 };
 
-horizontal.decorators = [
-  (Story) => (
-    <div style={{ width: 300 }}>
-      <Story />
-    </div>
-  ),
-];
+// horizontal.decorators = [
+//   (Story) => (
+//     <div style={{ width: 300 }}>
+//       <Story />
+//     </div>
+//   ),
+// ];
 
 horizontal.argTypes = {
   superhost: {

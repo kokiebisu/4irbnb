@@ -16,6 +16,7 @@ import { DestinationsSection } from './section.destinations';
 import { BannerSection } from './section.banner';
 import { OnlineSection } from './section.online';
 import { HomesSection } from './section.homes';
+import { AlsoSection } from './section.also';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -43,6 +44,7 @@ export const Section: React.FC<SectionProps> = ({
     banner: <BannerSection {...props} />,
     online: <OnlineSection {...props} />,
     homes: <HomesSection {...props} />,
+    also: <AlsoSection {...props} />,
   };
   return <div className={extendsTo}>{types[type]}</div>;
 };

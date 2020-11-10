@@ -2,7 +2,7 @@ import { Button } from '../../components/atoms/button/button.component';
 import React, { useEffect, useLayoutEffect } from 'react';
 import { useRef } from 'react';
 import { useState } from 'react';
-import slider from './slider.module.scss';
+import particle from './particle.module.scss';
 
 const Dots = ({ slides, activeSlide }) => {
   return (
@@ -49,7 +49,6 @@ const Slide = ({ slide }) => {
 
 export const ImageSlider = ({ slides }) => {
   const [style, setStyle] = useState({
-    // display: 'none',
     opacity: 0,
   });
   const [width, setWidth] = useState(1000);
@@ -61,11 +60,19 @@ export const ImageSlider = ({ slides }) => {
 
   const containerRef = useRef<HTMLDivElement>();
 
-  useLayoutEffect(() => {
+  const handleRef = () => {
     if (containerRef.current && containerRef.current.getBoundingClientRect()) {
       setWidth(containerRef.current.getBoundingClientRect().width);
     }
-  }, []);
+  };
+
+  useLayoutEffect(() => {
+    window.addEventListener('resize', handleRef);
+    handleRef();
+    return () => {
+      window.removeEventListener('resize', handleRef);
+    };
+  });
 
   const previousSlide = () => {
     if (state.activeSlide === 0) {
@@ -159,7 +166,7 @@ export const ImageSlider = ({ slides }) => {
 
       <div
         style={{ ...style, transition: 'opacity 0.2s ease-out' }}
-        className={[slider['dots']].join(' ')}>
+        className={[particle['dots']].join(' ')}>
         <Dots slides={slides} activeSlide={state.activeSlide} />
       </div>
     </div>
