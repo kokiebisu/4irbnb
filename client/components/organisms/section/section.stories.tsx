@@ -173,3 +173,8 @@ export const experiences = SectionTemplate.bind({});
 experiences.args = {
   type: 'experiences',
 };
+
+export const available = SectionTemplate.bind({});
+available.args = {
+  type: 'available',
+};
