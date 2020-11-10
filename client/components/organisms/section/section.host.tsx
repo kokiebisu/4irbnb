@@ -35,6 +35,7 @@ export const HostSection: React.FC<HostSectionProps> = ({
   imgUrl = 'https://a0.muscache.com/im/pictures/user/ca3ae8e3-997b-4ec6-b3af-139dd46be44b.jpg?im_w=240',
   responseTime = 'within an hour',
   responseRate = 54,
+  layoutType = 'room',
 }) => {
   const [descriptionDisplay, setDescriptionDisplay] = useState<boolean>(false);
   const [stayDisplay, setStayDisplay] = useState<boolean>(false);
@@ -65,7 +66,9 @@ export const HostSection: React.FC<HostSectionProps> = ({
           <div>
             <div className={[shape['h--50p']].join(' ')}>
               <h3 className={[font['size--24'], space['m-b--6']].join(' ')}>
-                Hosted By {name}
+                {layoutType === 'room'
+                  ? `Hosted By ${name}`
+                  : `Meet your host, ${name}`}
               </h3>
               <p
                 className={[
@@ -73,14 +76,18 @@ export const HostSection: React.FC<HostSectionProps> = ({
                   color['c--gray__1'],
                   font['size--13'],
                 ].join(' ')}>
-                Joined in {joined}
+                {layoutType === 'room'
+                  ? `Joined in ${joined}`
+                  : `Host on Airbnb since ${joined}`}
               </p>
             </div>
           </div>
         </div>
-        <div className={section['display__host--wrapper']}>
+        <div>
           <div
-            className={[space['p-r--50'], section['w__host--left']].join(' ')}>
+            className={`${layoutType === 'room' && section['w__host--left']} ${[
+              space['p-r--50'],
+            ].join(' ')}`}>
             <div>
               <div
                 className={[
@@ -104,7 +111,7 @@ export const HostSection: React.FC<HostSectionProps> = ({
                   ].join(' ')}>
                   <Bullet type='host' categoryType='verified' />
                 </div>
-                {isSuperhost && (
+                {layoutType === 'room' && isSuperhost && (
                   <div
                     className={[
                       space['m-r--8'],
@@ -137,7 +144,7 @@ export const HostSection: React.FC<HostSectionProps> = ({
                   </p>
                 )}
               </div>
-              {duringStay && (
+              {layoutType === 'room' && duringStay && (
                 <div className={[space['m-v--16']].join(' ')}>
                   <h3
                     className={[
@@ -176,7 +183,7 @@ export const HostSection: React.FC<HostSectionProps> = ({
                 </div>
               )}
 
-              {isSuperhost && (
+              {layoutType === 'room' && isSuperhost && (
                 <div className={[space['p-v--6']].join(' ')}>
                   <p
                     className={[space['p-v--6'], font['weight--500']].join(
@@ -195,33 +202,51 @@ export const HostSection: React.FC<HostSectionProps> = ({
           </div>
           <div
             className={[section['w__host--right'], space['p-r--50']].join(' ')}>
-            <div>
-              <div className={[space['m-b--16']].join(' ')}>
-                <p
-                  className={[font['weight--100'], space['p-b--12']].join(' ')}>
-                  Languages:&nbsp;
-                  <span>English, Espanol</span>
-                </p>
-                <p
-                  className={[font['weight--100'], space['p-b--12']].join(' ')}>
-                  Response rate:&nbsp;
-                  <span>{responseRate}%</span>
-                </p>
-                <p
-                  className={[font['weight--100'], space['p-b--12']].join(' ')}>
-                  Response time:&nbsp;
-                  <span>{responseTime}</span>
-                </p>
+            {layoutType === 'room' && (
+              <div>
+                <div className={[space['m-b--16']].join(' ')}>
+                  <p
+                    className={[font['weight--100'], space['p-b--12']].join(
+                      ' '
+                    )}>
+                    Languages:&nbsp;
+                    <span>English, Espanol</span>
+                  </p>
+                  <p
+                    className={[font['weight--100'], space['p-b--12']].join(
+                      ' '
+                    )}>
+                    Response rate:&nbsp;
+                    <span>{responseRate}%</span>
+                  </p>
+                  <p
+                    className={[font['weight--100'], space['p-b--12']].join(
+                      ' '
+                    )}>
+                    Response time:&nbsp;
+                    <span>{responseTime}</span>
+                  </p>
+                </div>
               </div>
-            </div>
-            <div>
-              <Button type='border' size='md' title='Contact host' />
+            )}
+            <div
+              className={
+                layoutType === 'experience' &&
+                [space['m-t--32'], layout['flex'], layout['items-center']].join(
+                  ' '
+                )
+              }>
               <div
-                className={[
+                className={
+                  layoutType === 'experience' && [space['m-r--16']].join(' ')
+                }>
+                <Button type='border' size='md' title='Contact host' />
+              </div>
+              <div
+                className={`${layoutType === 'room' && space['m-t--32']} ${[
                   layout['flex'],
                   layout['items-center'],
-                  space['m-t--32'],
-                ].join(' ')}>
+                ].join(' ')}`}>
                 <div>
                   <Shield width={24} />
                 </div>

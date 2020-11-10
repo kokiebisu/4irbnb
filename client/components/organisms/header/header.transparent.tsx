@@ -18,7 +18,7 @@ export const TransparentHeader: React.FC<{}> = () => {
   let toggleState = useToggleState();
 
   return (
-    <header className={[space['p-h--0'], space['p-v--11']].join(' ')}>
+    <header className={[space['p-h--0'], space['p-v--12']].join(' ')}>
       <div
         className={[
           header['display__transparent--md'],

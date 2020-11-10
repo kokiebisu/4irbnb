@@ -19,6 +19,7 @@ export const BorderButton: React.FC<BorderButtonProps> = ({
       <div className={color['bg--transparent']} data-testid='button'>
         <Link href={to}>
           <a
+            style={{ whiteSpace: 'nowrap' }}
             className={`${[
               layout['inline-block'],
               font['text--center'],
@@ -44,6 +45,7 @@ export const BorderButton: React.FC<BorderButtonProps> = ({
       <div className={color['bg--transparent']} data-testid='button'>
         <Link href={to}>
           <a
+            style={{ whiteSpace: 'nowrap' }}
             className={`${[
               layout['inline-block'],
               font['text--center'],
@@ -69,6 +71,7 @@ export const BorderButton: React.FC<BorderButtonProps> = ({
       <div className={color['bg--transparent']} data-testid='button'>
         <Link href={to}>
           <a
+            style={{ whiteSpace: 'nowrap' }}
             className={`${[
               font['text--center'],
               layout['block'],

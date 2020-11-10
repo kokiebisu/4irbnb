@@ -16,8 +16,10 @@ import { useAuthDispatch, useAuthState } from '../../../context/auth';
 import { Input } from '../../../components/atoms/input/input.component';
 
 import { useFormik } from 'formik';
+import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
 
 const Auth = () => {
+  useLockBodyScroll();
   const authState = useAuthState();
   const authDispatch = useAuthDispatch();
   const methods = ['email', 'facebook', 'google', 'apple'];

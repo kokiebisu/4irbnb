@@ -21,6 +21,7 @@ export type PanelSectionProps = SectionBasicProps & {
   location?: string;
   province?: string;
   country?: string;
+  layoutType?: string;
 };
 
 export type CharacteristicsSectionProps = SectionBasicProps & {
@@ -31,6 +32,12 @@ export type CharacteristicsSectionProps = SectionBasicProps & {
   beds?: number;
   bathrooms?: number;
   imgUrl?: string;
+  layoutType?: string;
+  ratings?: number;
+  numberOfReviews?: number;
+  location?: string;
+  country?: string;
+  characteristics?: string[];
 };
 
 export type CategorySectionProps = SectionBasicProps & {
@@ -43,6 +50,7 @@ export type DescriptionSectionProps = {
     space: string;
     access: string;
   };
+  layoutType?: string;
 };
 
 export type ArrangementsSectionProps = SectionBasicProps & {
@@ -57,6 +65,7 @@ export interface ReviewsSectionProps {
   categories?: any;
   total?: number;
   reviews?: any;
+  layoutType?: string;
 }
 
 export interface HostSectionProps {
@@ -69,11 +78,13 @@ export interface HostSectionProps {
   imgUrl?: string;
   responseTime?: number;
   responseRate?: number;
+  layoutType?: string;
 }
 
 export interface KnowSectionProps {
   houseRules?: string[];
   healths?: string[];
+  layoutType?: string;
 }
 
 export interface OtherSectionProps {
@@ -110,6 +121,14 @@ export interface HomesSectionProps {
 export interface AlsoSectionProps {
   items?: any;
   title?: string;
+}
+
+export interface ParticipateSectionProps {
+  categories?: string[];
+}
+
+export interface BringSectionProps {
+  necessities?: string[];
 }
 
 export interface SectionProps {
