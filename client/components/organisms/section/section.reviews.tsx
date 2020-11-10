@@ -43,6 +43,7 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({
     },
   ],
   total = 100,
+  layoutType = 'room',
 }) => {
   return (
     <>
@@ -57,43 +58,46 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({
             <div className={[space['m-r--6']].join(' ')}>
               <Star width={20} />
             </div>
-            <p
+            <h3
               className={[
                 space['m-r--6'],
                 font['size--22'],
                 color['c--gray__3'],
               ].join(' ')}>
               4.93
-            </p>
-            <p
+            </h3>
+            <h3
               className={[
                 space['m-l--2'],
                 font['size--22'],
                 color['c--gray__3'],
               ].join(' ')}>
               (1 reviews)
-            </p>
+            </h3>
           </div>
         </div>
-        <div
-          style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}
-          className={[space['m-t--12'], space['m-r--24']].join(' ')}>
-          {categories.map((category, index) => {
-            return (
-              <div
-                key={index}
-                className={[section['m__review--bullet'], space['p-v--8']].join(
-                  ' '
-                )}>
-                <Bullet
-                  type='score'
-                  category={category.type}
-                  average={category.average}
-                />
-              </div>
-            );
-          })}
-        </div>
+        {layoutType === 'room' && (
+          <div
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}
+            className={[space['m-t--12'], space['m-r--24']].join(' ')}>
+            {categories.map((category, index) => {
+              return (
+                <div
+                  key={index}
+                  className={[
+                    section['m__review--bullet'],
+                    space['p-v--8'],
+                  ].join(' ')}>
+                  <Bullet
+                    type='score'
+                    category={category.type}
+                    average={category.average}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        )}
         <div
           className={[
             shape['w-full'],

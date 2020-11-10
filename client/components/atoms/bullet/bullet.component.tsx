@@ -1,5 +1,6 @@
 import React from 'react';
 import { AmenityBullet } from './bullet.amenity';
+import { BringBullet } from './bullet.bring';
 import { CharacteristicBullet } from './bullet.characteristics';
 import { HostBullet } from './bullet.host';
 import { KnowBullet } from './bullet.know';
@@ -23,6 +24,7 @@ export const Bullet: React.FC<BulletProps> = ({
     host: <HostBullet {...props} />,
     know: <KnowBullet {...props} />,
     rating: <RatingBullet {...props} />,
+    bring: <BringBullet {...props} />,
   };
 
   return (

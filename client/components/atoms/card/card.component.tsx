@@ -11,6 +11,7 @@ import { ReviewCard } from './card.review';
 import { StayCard } from './card.stay';
 import { NearbyCard } from './card.nearby';
 import { OnlineCard } from './card.online';
+import { ParticipateCard } from './card.participate';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -33,6 +34,7 @@ export const Card: React.FC<CardProps> = ({
     stay: <StayCard {...props} />,
     nearby: <NearbyCard {...props} />,
     online: <OnlineCard {...props} />,
+    participate: <ParticipateCard {...props} />,
   };
   if (to) {
     return (

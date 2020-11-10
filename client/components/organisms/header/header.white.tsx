@@ -22,7 +22,7 @@ export const WhiteHeader: React.FC<HeaderWhiteProps> = ({ spread = false }) => {
         spread
           ? [shape['shadow--sm'], color['bg--white__0']].join(' ')
           : [shape['shadow--sm'], color['bg--white__0']].join(' ')
-      } ${[space['p-v--16']].join(' ')}`}>
+      }`}>
       <div
         className={
           spread
