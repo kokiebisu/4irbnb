@@ -1,15 +1,10 @@
-import { Header } from '../../components/organisms/header/header.component';
-import homes from '../../styles/homes.module.scss';
-import space from '../../styles/space.module.scss';
 import React from 'react';
 import layout from '../../styles/layout.module.scss';
-import { Section } from '../../components/organisms/section/section.component';
-import { Footer } from '../../components/organisms/footer/footer.component';
-import { Bar } from '../../components/organisms/bar/bar.component';
-import color from '../../styles/color.module.scss';
-import responsive from '../../styles/responsive.module.scss';
 import { useRouter } from 'next/router';
 import { Template } from '../../components/templates/template.component';
+import { useToggleState } from 'context/toggle';
+import { Modal } from '../../components/organisms/modal/modal.component';
+import shape from '../../styles/shape.module.scss';
 
 const Homes = () => {
   const router = useRouter();
@@ -24,14 +19,38 @@ const Homes = () => {
     stayType?: string[] | string;
     characteristics?: string;
   } = router.query;
-
+  const toggleState = useToggleState();
   return (
-    <Template
-      type={type}
-      city={city}
-      stayType={stayType}
-      characteristics={characteristics}
-    />
+    <>
+      <Template
+        type={type}
+        city={city}
+        stayType={stayType}
+        characteristics={characteristics}
+      />
+      {toggleState.auth && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            zIndex: 9999,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            backgroundColor: 'rgba(0, 0, 0, 0.6)',
+          }}>
+          <Modal
+            extendsTo={[
+              layout['flex'],
+              layout['justify-center'],
+              layout['items-center'],
+              shape['h--100v'],
+            ].join(' ')}
+            type='auth'
+          />
+        </div>
+      )}
+    </>
   );
 };
 
