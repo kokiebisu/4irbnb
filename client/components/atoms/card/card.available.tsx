@@ -16,12 +16,9 @@ export const AvailableCard: React.FC<AvailableCardProps> = ({
 }) => {
   return (
     <div
-      className={[
-        layout['inline-block'],
-        space['p--24'],
-        color['b--white__2'],
-        shape['br--6'],
-      ].join(' ')}>
+      className={[space['p--24'], color['b--white__2'], shape['br--6']].join(
+        ' '
+      )}>
       <div className={[space['m-b--6']].join(' ')}>
         <h3 className={[font['size--15']].join(' ')}>{date}</h3>
       </div>
