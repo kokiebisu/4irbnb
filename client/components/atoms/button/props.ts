@@ -39,6 +39,7 @@ export interface BorderButtonProps
     InverseProps,
     TitleProps {
   size?: 'sm' | 'md' | 'lg';
+  spread?: boolean;
 }
 
 export interface BannerButtonProps extends LinkButtonProps, TitleProps {}

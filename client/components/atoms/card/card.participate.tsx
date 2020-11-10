@@ -1,7 +1,7 @@
 import React from 'react';
 import { ParticipateCardProps } from './props';
 import space from '../../../styles/space.module.scss';
-import { Computer, People } from '../../../public/svg/original';
+import { Calendar, Computer, People } from '../../../public/svg/original';
 import color from '../../../styles/color.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
@@ -22,6 +22,13 @@ export const ParticipateCard: React.FC<ParticipateCardProps> = ({
       title: 'Book a private group',
       description:
         'Cici can host private groups of any size, up to 100 guests. Private group rates start at $340.',
+    },
+    request: {
+      icon: <Calendar width={32} />,
+      title: 'Request availability',
+      description:
+        'Can’t find a date that works? Cici can schedule and customize an experience based on your preferences.',
+      more: 'Contact Cici',
     },
   };
   return (
@@ -46,7 +53,7 @@ export const ParticipateCard: React.FC<ParticipateCardProps> = ({
       {types[categoryType].more && (
         <div>
           <h3 className={[font['size--16']].join(' ')}>
-            <u>Show more</u>
+            <u>{types[categoryType].more}</u>
           </h3>
         </div>
       )}
