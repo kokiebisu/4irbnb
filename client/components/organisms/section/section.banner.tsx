@@ -40,7 +40,7 @@ export const BannerSection: React.FC<BannerSectionProps> = () => {
             ' '
           )}>
           <div style={{ height: '100%' }}>
-            <div className={[space['p-t--14'], layout['container']].join(' ')}>
+            <div className={[space['p-t--6'], layout['container']].join(' ')}>
               <Header type='transparent' />
             </div>
             <div className={[color['c--white__0']].join(' ')}></div>

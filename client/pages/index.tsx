@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import index from 'styles/index.module.scss';
 import layout from 'styles/layout.module.scss';
 import space from 'styles/space.module.scss';
@@ -14,6 +14,8 @@ import { Footer } from 'components/organisms/footer/footer.component';
 import { MenuBar } from 'components/organisms/menubar/menubar.component';
 import { Layout } from 'layout/layout.component';
 import { nearby } from '../data/stays';
+import { AnimatePresence, motion } from 'framer-motion';
+import { Header } from 'components/organisms/header/header.component';
 
 const CovidNotice = () => {
   return (
@@ -36,9 +38,34 @@ const CovidNotice = () => {
 const LandingPage = () => {
   const toggleState = useToggleState();
 
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className={[layout['relative'], shape['min-h--fullv']].join(' ')}>
       <CovidNotice />
+      <AnimatePresence>
+        {scrollPosition > 56 && (
+          <motion.div
+            exit={{ opacity: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            style={{ position: 'fixed', top: 0, zIndex: 99999, width: '100%' }}>
+            <Header type='white' />
+          </motion.div>
+        )}
+      </AnimatePresence>
       <Section type='banner' />
       <Layout type='section'>
         <Section type='nearby' items={nearby} />
@@ -48,11 +75,11 @@ const LandingPage = () => {
       </Layout>
       <div className={space['m-v--32']}></div>
       <Layout
+        dark
         type='section'
         title='Meet Online Experiences'
-        subtitle='Interactive activities you can do together, led by expert hosts.'
-        dark>
-        <Section type='online' />
+        subtitle='Interactive activities you can do together, led by expert hosts.'>
+        <Section type='online' dark />
       </Layout>
       <Layout type='section' title='Join millions of hosts on Airbnb'>
         <Section type='category' items={categories} />
