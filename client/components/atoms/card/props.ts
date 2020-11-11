@@ -82,6 +82,8 @@ export interface ParticipateCardProps {
   categoryType?: string;
 }
 
+export interface HomeCardProps {}
+
 export interface CardProps {
   extendsTo?: string;
   type?: string;
