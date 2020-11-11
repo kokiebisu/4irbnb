@@ -12,8 +12,8 @@ import Router from 'next/router';
 import bar from './bar.module.scss';
 
 export const PaginateBar: React.FC<PaginateBarProps> = ({
-  page = 2,
-  total = 5,
+  page = 1,
+  total = 15,
 }) => {
   const displayContent = () => {
     if (page > 4 && page + 3 < total) {
