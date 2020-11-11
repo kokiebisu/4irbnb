@@ -11,6 +11,7 @@ import { Card } from '../../components/atoms/card/card.component';
 import { Modal } from '../../components/organisms/modal/modal.component';
 import { Footer } from '../../components/organisms/footer/footer.component';
 import { useToggleState } from 'context/toggle';
+import responsive from '../../styles/responsive.module.scss';
 
 const id: () => string | JSX.Element = () => {
   const toggleState = useToggleState();
@@ -22,6 +23,7 @@ const id: () => string | JSX.Element = () => {
         </div>
         <div className={[].join(' ')}>
           <Section
+            layoutType='experience'
             extendsTo={[staysDetail['flex__panel']].join(' ')}
             type='panel'
           />
@@ -59,17 +61,20 @@ const id: () => string | JSX.Element = () => {
               </div>
             </div>
             <div
-              style={{ padding: 20, paddingBottom: 56 }}
-              className={[details['w__details--right']].join(' ')}>
-              <Card
-                type='checkin'
-                extendsTo={[
+              style={{ paddingTop: 20, paddingBottom: 56, width: '36%' }}
+              className={[responsive['n_to_b--sm']].join(' ')}>
+              <div
+                style={{ top: 20 }}
+                className={[
                   layout['flex'],
                   layout['justify-end'],
                   layout['sticky'],
-                  layout['t--78'],
-                ].join(' ')}
-              />
+                ].join(' ')}>
+                <Modal
+                  type='booking'
+                  extendsTo={[shape['w--full']].join(' ')}
+                />
+              </div>
             </div>
           </div>
           <div className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>

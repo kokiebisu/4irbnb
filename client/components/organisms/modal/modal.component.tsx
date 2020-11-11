@@ -9,6 +9,7 @@ import { AvailabilityModal } from './modal.availability';
 import { useToggleDispatch } from '../../../context/toggle';
 import { ModalProps } from './props';
 import { AuthModal } from './modal.auth';
+import { BookingModal } from './modal.booking';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -30,6 +31,7 @@ export const Modal: React.FC<ModalProps> = ({
     menu: <MenuModal refProp={ref} {...props} />,
     auth: <AuthModal {...props} />,
     availability: <AvailabilityModal {...props} />,
+    booking: <BookingModal {...props} />,
   };
   if (criteria !== undefined) {
     return (
