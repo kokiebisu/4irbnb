@@ -6,6 +6,7 @@ export interface WhiteHeaderProps {
 
 export interface DetailsHeaderProps {
   layoutType?: string;
+  spread?: boolean;
 }
 
 export interface HeaderProps {
