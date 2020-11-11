@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from 'components/organisms/header/header.component';
 import { Section } from 'components/organisms/section/section.component';
 import layout from '../../styles/layout.module.scss';
@@ -12,15 +12,46 @@ import { Modal } from '../../components/organisms/modal/modal.component';
 import { Footer } from '../../components/organisms/footer/footer.component';
 import { useToggleState } from 'context/toggle';
 import responsive from '../../styles/responsive.module.scss';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const id: () => string | JSX.Element = () => {
   const toggleState = useToggleState();
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <div>
         <div style={{ position: 'relative', zIndex: 9000 }}>
           <Header type='white' />
         </div>
+        <AnimatePresence>
+          {scrollPosition > 470 && (
+            <motion.div
+              exit={{ opacity: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              style={{
+                position: 'fixed',
+                top: 0,
+                zIndex: 99999,
+                width: '100%',
+              }}>
+              <Header type='details' />
+            </motion.div>
+          )}
+        </AnimatePresence>
         <div className={[].join(' ')}>
           <Section
             layoutType='experience'
@@ -64,7 +95,7 @@ const id: () => string | JSX.Element = () => {
               style={{ paddingTop: 20, paddingBottom: 56, width: '36%' }}
               className={[responsive['n_to_b--sm']].join(' ')}>
               <div
-                style={{ top: 20 }}
+                style={{ top: 82 }}
                 className={[
                   layout['flex'],
                   layout['justify-end'],
