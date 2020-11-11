@@ -5,6 +5,22 @@ $breakpoints: (
 );
 
 @each $name, $point in $breakpoints {
+  .i_to_b--#{$name} {
+    display: inline-block;
+
+    @media screen and (min-width: #{$point}px) {
+      display: block;
+    }
+  }
+
+  .b_to_i--#{$name} {
+    display: block;
+
+    @media screen and (min-width: #{$point}px) {
+      display: inline-block;
+    }
+  }
+
   .b_to_f--#{$name} {
     display: block;
 

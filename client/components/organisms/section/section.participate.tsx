@@ -9,7 +9,7 @@ import { ParticipateSectionProps } from './props';
 import layout from '../../../styles/layout.module.scss';
 
 export const ParticipateSection: React.FC<ParticipateSectionProps> = ({
-  categories = ['call', 'private'],
+  categories = ['call', 'private', 'request'],
 }) => {
   return (
     <div>
