@@ -11,10 +11,10 @@ import { useToggleDispatch, useToggleState } from '../../../context/toggle';
 import { Button } from '../../../components/atoms/button/button.component';
 import { NameLogo, NoNameLogo } from '../../../public/svg/logo';
 import { ChevronLeft } from '../../../public/svg/regular';
-import { HeaderWhiteProps } from './props';
+import { WhiteHeaderProps } from './props';
 import Link from 'next/link';
 
-export const WhiteHeader: React.FC<HeaderWhiteProps> = ({ spread = false }) => {
+export const WhiteHeader: React.FC<WhiteHeaderProps> = ({ spread = false }) => {
   let toggleState = useToggleState();
   return (
     <header
