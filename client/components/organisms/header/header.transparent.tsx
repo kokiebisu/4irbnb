@@ -13,8 +13,9 @@ import { useToggleState } from '../../../context/toggle';
 import { Button } from '../../../components/atoms/button/button.component';
 import { NameLogo, NoNameLogo } from '../../../public/svg/logo';
 import { MagnifyGlass } from '../../../public/svg/original';
+import { TransparentHeaderProps } from './props';
 
-export const TransparentHeader: React.FC<{}> = () => {
+export const TransparentHeader: React.FC<TransparentHeaderProps> = () => {
   let toggleState = useToggleState();
 
   return (
