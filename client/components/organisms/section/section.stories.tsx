@@ -168,3 +168,13 @@ export const bring = SectionTemplate.bind({});
 bring.args = {
   type: 'bring',
 };
+
+export const experiences = SectionTemplate.bind({});
+experiences.args = {
+  type: 'experiences',
+};
+
+export const available = SectionTemplate.bind({});
+available.args = {
+  type: 'available',
+};
