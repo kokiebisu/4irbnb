@@ -44,14 +44,6 @@
       @media screen and (min-width: 1158px) {
         min-width: calc(100% / 3);
       }
-
-      @media screen and (min-width: 1358px) {
-        min-width: calc(100% / 4);
-      }
-
-      @media screen and (min-width: 1660px) {
-        min-width: calc(100% / 5);
-      }
     }
   }
 
@@ -135,6 +127,15 @@
       }
     }
   }
+
+  &__characteristics {
+    display: flex;
+
+    @media screen and (min-width: 560px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 }
 
 .m {
@@ -193,21 +194,21 @@
 
 .container {
   &__panel {
-    padding: 11px 0;
+    padding: 0px 0;
 
     @media screen and (min-width: 728px) {
-      padding: 11px 20px;
+      padding: 0px 40px;
     }
 
     @media screen and (min-width: 1128px) {
-      padding: 11px 80px;
+      padding: 0px 80px;
     }
 
     @media screen and (min-width: 1276px) {
       width: 100%;
       max-width: 1280px;
       margin: 0 auto;
-      padding: 15px 80px;
+      padding: 0px 80px;
     }
   }
 }
@@ -340,6 +341,7 @@
     }
 
     &--0 {
+      padding: 10px;
       grid-column-start: 1;
       grid-column-end: auto;
       grid-row-start: 1;
@@ -353,6 +355,7 @@
       }
     }
     &--1 {
+      padding: 10px;
       grid-column-start: 2;
       grid-column-end: auto;
       grid-row-start: 1;
@@ -366,6 +369,7 @@
       }
     }
     &--2 {
+      padding: 10px;
       grid-column-start: 3;
       grid-column-end: auto;
       grid-row-start: 1;
@@ -386,6 +390,7 @@
       }
     }
     &--3 {
+      padding: 10px;
       grid-column-start: 4;
       grid-column-end: auto;
       grid-row-start: 1;

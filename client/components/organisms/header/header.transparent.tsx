@@ -13,12 +13,13 @@ import { useToggleState } from '../../../context/toggle';
 import { Button } from '../../../components/atoms/button/button.component';
 import { NameLogo, NoNameLogo } from '../../../public/svg/logo';
 import { MagnifyGlass } from '../../../public/svg/original';
+import { TransparentHeaderProps } from './props';
 
-export const TransparentHeader: React.FC<{}> = () => {
+export const TransparentHeader: React.FC<TransparentHeaderProps> = () => {
   let toggleState = useToggleState();
 
   return (
-    <header className={[space['p-h--0'], space['p-v--11']].join(' ')}>
+    <header className={[space['p-h--0'], space['p-v--12']].join(' ')}>
       <div
         className={[
           header['display__transparent--md'],
@@ -53,7 +54,7 @@ export const TransparentHeader: React.FC<{}> = () => {
         </div>
         <Modal
           criteria={toggleState.menu}
-          {...menuModal.args}
+          type='menu'
           extendsTo={[
             layout['absolute'],
             layout['r--0'],

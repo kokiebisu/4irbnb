@@ -1,23 +1,24 @@
-export type PrivacyModalProps = {};
+export interface PrivacyModalProps {}
 
-export type MenuModalProps = {
+export interface MenuModalProps {
   refProp?: any;
-};
+}
 
-export type RegisterModalProps = {};
+export interface RegisterModalProps {}
 
-export type AvailabilityModalProps = {
+export interface AvailabilityModalProps {
   ratings?: number;
   reviews?: number;
-};
+}
 
-export type ModalProps = (
-  | MenuModalProps
-  | PrivacyModalProps
-  | RegisterModalProps
-) & {
+export interface BookingModalProps {
+  availables?: any;
+}
+
+export interface ModalProps {
   extendsTo?: string;
   type: string;
   dispatchType?: string;
   criteria?: any;
-};
+  [x: string]: any;
+}

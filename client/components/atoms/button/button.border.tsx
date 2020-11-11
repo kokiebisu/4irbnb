@@ -13,16 +13,16 @@ export const BorderButton: React.FC<BorderButtonProps> = ({
   title = 'Button',
   inverse = false,
   size = 'md',
+  spread = false,
 }) => {
   const components = {
     sm: (
       <div className={color['bg--transparent']} data-testid='button'>
         <Link href={to}>
           <a
-            className={`${[
-              layout['inline-block'],
+            style={{ whiteSpace: 'nowrap' }}
+            className={`${spread ? layout['block'] : layout['inline-block']} ${[
               font['text--center'],
-              layout['block'],
               font['size--14'],
               font['weight--500'],
               shape['br--6'],
@@ -44,10 +44,9 @@ export const BorderButton: React.FC<BorderButtonProps> = ({
       <div className={color['bg--transparent']} data-testid='button'>
         <Link href={to}>
           <a
-            className={`${[
-              layout['inline-block'],
+            style={{ whiteSpace: 'nowrap' }}
+            className={`${spread ? layout['block'] : layout['inline-block']} ${[
               font['text--center'],
-              layout['block'],
               font['size--16'],
               font['weight--500'],
               shape['br--6'],
@@ -69,9 +68,9 @@ export const BorderButton: React.FC<BorderButtonProps> = ({
       <div className={color['bg--transparent']} data-testid='button'>
         <Link href={to}>
           <a
-            className={`${[
+            style={{ whiteSpace: 'nowrap' }}
+            className={`${spread ? layout['block'] : layout['inline-block']} ${[
               font['text--center'],
-              layout['block'],
               font['size--18'],
               font['weight--500'],
               shape['br--6'],

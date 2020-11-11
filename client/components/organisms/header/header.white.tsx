@@ -11,22 +11,22 @@ import { useToggleDispatch, useToggleState } from '../../../context/toggle';
 import { Button } from '../../../components/atoms/button/button.component';
 import { NameLogo, NoNameLogo } from '../../../public/svg/logo';
 import { ChevronLeft } from '../../../public/svg/regular';
-import { HeaderWhiteProps } from './props';
+import { WhiteHeaderProps } from './props';
 import Link from 'next/link';
 
-export const WhiteHeader: React.FC<HeaderWhiteProps> = ({ spread = false }) => {
+export const WhiteHeader: React.FC<WhiteHeaderProps> = ({ spread = false }) => {
   let toggleState = useToggleState();
   return (
     <header
-      className={`${
-        spread
-          ? [shape['shadow--sm'], color['bg--white__0']].join(' ')
-          : [shape['shadow--sm'], color['bg--white__0']].join(' ')
-      } ${[space['p-v--12']].join(' ')}`}>
+      className={`${[
+        space['p-v--16'],
+        color['bg--white__0'],
+        shape['shadow--sm'],
+      ].join(' ')}`}>
       <div
         className={
           spread
-            ? [space['p-h--24']].join(' ')
+            ? [layout['container--spread']].join(' ')
             : [layout['container']].join(' ')
         }>
         <div

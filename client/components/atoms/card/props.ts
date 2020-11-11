@@ -67,6 +67,19 @@ export interface OnlineCardProps {
   small?: string;
   large?: string;
   title?: string;
+  inverse?: boolean;
+}
+
+export interface AvailableCardProps {
+  date?: string;
+  from?: string;
+  to?: string;
+  standard?: string;
+  price?: number;
+}
+
+export interface ParticipateCardProps {
+  categoryType?: string;
 }
 
 export interface CardProps {

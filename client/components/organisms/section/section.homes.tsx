@@ -13,10 +13,9 @@ import { Card } from '../../../components/atoms/card/card.component';
 import { Bar } from '../bar/bar.component';
 
 export const HomesSection: React.FC<HomesSectionProps> = ({
-  filterCount = 1,
-  location = 'Location',
-  guests = 8000,
-  average = 4.9,
+  layout = 'vertical',
+  place = 'Location',
+  title = 'Explore all 300+ stays',
   stays = [
     {
       images: [
@@ -77,94 +76,33 @@ export const HomesSection: React.FC<HomesSectionProps> = ({
     },
   ],
 }) => {
-  const filters = [
-    { name: 'Cacellation flexibility' },
-    { name: 'Type of place' },
-    { name: 'Price' },
-    { name: 'Instant Book' },
-    { name: 'More filters' },
-  ];
-
-  const displayingLocation = location.split('_').join(' ');
-
-  return (
-    <div className={[space['m-t--24']].join(' ')}>
-      <div>
-        <p className={[font['size--14']].join(' ')}>300+ stays</p>
-      </div>
-      <div>
-        <h3 className={[font['size--32']].join(' ')}>
-          Stays in{' '}
-          <span
-            className={[font['weight--500']].join(' ')}
-            style={{ textTransform: 'capitalize' }}>
-            {displayingLocation}
-          </span>
-        </h3>
-      </div>
-      <div className={[space['m-v--22']].join(' ')}>
-        <div className={[shape['from__md--flex']].join(' ')}>
-          {filters.map((filter, index) => {
+  const layouts = {
+    vertical: (
+      <div
+        className={
+          title ? [space['m-t--45']].join(' ') : [space['m-t--24']].join(' ')
+        }>
+        {title && (
+          <div>
+            <h3 className={[font['size--22']].join(' ')}>{title}</h3>
+          </div>
+        )}
+        <div>
+          {stays.map((stay, index) => {
             return (
-              <div key={index} className={[space['m-r--8']].join(' ')}>
-                <Button type='filter' name={filter.name} />
+              <div key={index}>
+                <Card
+                  extendsTo={!title && [color['b-t--white__2']].join(' ')}
+                  type='stay'
+                  {...stay}
+                />
               </div>
             );
           })}
         </div>
-        <div className={[shape['only__sm']].join(' ')}>
-          <Button type='filter' name={`filters ${filterCount}`} />
-        </div>
       </div>
-      {location && (
-        <div>
-          <div className={[space['m-b--16']].join(' ')}>
-            <p className={[color['c--gray__1'], font['size--14']].join(' ')}>
-              Enter dates and number of guests to see the total price per night.
-            </p>
-          </div>
-          <div
-            style={{ backgroundColor: 'lightgray', height: 1, width: '100%' }}
-          />
-          <div className={[layout['flex'], layout['items-center']].join(' ')}>
-            <div
-              className={[
-                space['m-r--12'],
-                space['p-v--8'],
-                space['m-v--8'],
-              ].join(' ')}>
-              <img
-                src='https://a0.muscache.com/airbnb/static/packages/icon-uc-trophy.9ee78aa1.gif'
-                style={{ width: 40 }}
-              />
-            </div>
-            <div>
-              <h3 className={[font['size--14']].join(' ')}>
-                More than {guests} guests have stayed in{' '}
-                <span
-                  className={[font['weight--500']].join(' ')}
-                  style={{ textTransform: 'capitalize' }}>
-                  {displayingLocation}
-                </span>
-                . On average they rated their stays {average} out of 5 stars.
-              </h3>
-            </div>
-          </div>
-        </div>
-      )}
-      <div>
-        {stays.map((stay, index) => {
-          return (
-            <div key={index}>
-              <Card
-                extendsTo={[color['b-t--white__2']].join(' ')}
-                type='stay'
-                {...stay}
-              />
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
+    ),
+  };
+
+  return layouts[layout];
 };

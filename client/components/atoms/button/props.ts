@@ -39,11 +39,15 @@ export interface BorderButtonProps
     InverseProps,
     TitleProps {
   size?: 'sm' | 'md' | 'lg';
+  spread?: boolean;
 }
 
 export interface BannerButtonProps extends LinkButtonProps, TitleProps {}
 
-export interface PrimaryButtonProps extends TitleProps, OnPressProps {}
+export interface PrimaryButtonProps extends TitleProps, OnPressProps {
+  size?: 'sm' | 'md' | 'lg';
+  spread?: boolean;
+}
 
 export interface SearchbarButtonProps extends MiniProps {}
 

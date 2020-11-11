@@ -20,7 +20,6 @@ export const NearbySection: React.FC<NearbySectionProps> = ({
   ],
 }) => {
   const displayingItems = groupByTwo(items);
-  console.log('displayingitme', displayingItems);
   return (
     <div>
       <div className={[space['p-h--70']].join(' ')}>

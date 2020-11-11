@@ -9,14 +9,14 @@
 
   &__details {
     &--left {
-      @media screen and (min-width: 1028px) {
+      @media screen and (min-width: 728px) {
         width: 58%;
       }
     }
 
     &--right {
       display: none;
-      @media screen and (min-width: 1028px) {
+      @media screen and (min-width: 728px) {
         display: block;
         width: 42%;
       }
@@ -28,8 +28,9 @@
   &__details {
     display: block;
 
-    @media screen and (min-width: 1018px) {
+    @media screen and (min-width: 728px) {
       display: flex;
+      justify-content: space-between;
     }
   }
 }

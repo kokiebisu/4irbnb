@@ -28,3 +28,8 @@ export const white = HeaderTemplate.bind({});
 white.args = {
   type: 'white',
 };
+
+export const details = HeaderTemplate.bind({});
+details.args = {
+  type: 'details',
+};
