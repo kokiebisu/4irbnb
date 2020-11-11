@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Header } from '../../components/organisms/header/header.component';
 import { Footer } from '../../components/organisms/footer/footer.component';
 
+import responsive from '../../styles/responsive.module.scss';
 import layout from '../../styles/layout.module.scss';
 import details from '../../styles/details.module.scss';
 import staysDetail from '../../styles/staysDetail.module.scss';
@@ -13,15 +14,47 @@ import { Section } from '../../components/organisms/section/section.component';
 import { Card } from '../../components/atoms/card/card.component';
 import { Modal } from 'components/organisms/modal/modal.component';
 import { useToggleState } from 'context/toggle';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
 const id: () => string | JSX.Element = () => {
   const toggleState = useToggleState();
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <>
       <div>
         <div style={{ position: 'relative', zIndex: 9000 }}>
           <Header extendsTo={[details['w__wrapper']].join(' ')} type='white' />
         </div>
+        <AnimatePresence>
+          {scrollPosition > 506 && (
+            <motion.div
+              exit={{ opacity: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className={[responsive['n_to_b--sm']].join(' ')}
+              style={{
+                position: 'fixed',
+                top: 0,
+                zIndex: 99999,
+                width: '100%',
+              }}>
+              <Header type='details' />
+            </motion.div>
+          )}
+        </AnimatePresence>
         <div className={[].join(' ')}>
           <Section
             extendsTo={[staysDetail['flex__panel']].join(' ')}
@@ -70,7 +103,7 @@ const id: () => string | JSX.Element = () => {
                   layout['flex'],
                   layout['justify-end'],
                   layout['sticky'],
-                  layout['t--78'],
+                  layout['t--80'],
                 ].join(' ')}
               />
             </div>

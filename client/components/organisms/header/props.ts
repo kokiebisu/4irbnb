@@ -1,8 +1,13 @@
-export type HeaderWhiteProps = {
-  spread?: boolean;
-};
+export interface TransparentHeaderProps {}
 
-export type HeaderProps = HeaderWhiteProps & {
+export interface WhiteHeaderProps {
+  spread?: boolean;
+}
+
+export interface DetailsHeaderProps {}
+
+export interface HeaderProps {
   extendsTo?: string;
   type: string;
-};
+  [x: string]: any;
+}
