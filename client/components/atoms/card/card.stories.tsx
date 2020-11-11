@@ -151,3 +151,8 @@ export const available = CardTemplate.bind({});
 available.args = {
   type: 'available',
 };
+
+export const home = CardTemplate.bind({});
+home.args = {
+  type: 'home',
+};
