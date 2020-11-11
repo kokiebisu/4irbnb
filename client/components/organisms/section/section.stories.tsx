@@ -8,7 +8,11 @@ import { ContextProvider } from '../../../context/provider';
 export default {
   title: 'Design System/Organisms/Section',
   component: Section,
-  argTypes: { onPress: { action: 'clicked' } },
+  argTypes: {
+    onPress: { action: 'clicked' },
+    type: { control: { disable: true } },
+    extendsTo: { control: { disable: true } },
+  },
   decorators: [
     (Story) => (
       <ContextProvider>
@@ -49,6 +53,11 @@ twoRows.args = {
 export const panel = SectionTemplate.bind({});
 panel.args = {
   type: 'panel',
+};
+
+export const characteristics = SectionTemplate.bind({});
+characteristics.args = {
+  type: 'characteristics',
 };
 
 export const description = SectionTemplate.bind({});
@@ -134,6 +143,12 @@ online.args = {
   type: 'online',
 };
 
+online.argTypes = {
+  dark: {
+    control: 'boolean',
+  },
+};
+
 export const homes = SectionTemplate.bind({});
 homes.args = {
   type: 'homes',
@@ -142,4 +157,24 @@ homes.args = {
 export const also = SectionTemplate.bind({});
 also.args = {
   type: 'also',
+};
+
+export const participate = SectionTemplate.bind({});
+participate.args = {
+  type: 'participate',
+};
+
+export const bring = SectionTemplate.bind({});
+bring.args = {
+  type: 'bring',
+};
+
+export const experiences = SectionTemplate.bind({});
+experiences.args = {
+  type: 'experiences',
+};
+
+export const available = SectionTemplate.bind({});
+available.args = {
+  type: 'available',
 };

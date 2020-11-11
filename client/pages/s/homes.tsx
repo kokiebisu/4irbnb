@@ -1,61 +1,56 @@
-import { Header } from '../../components/organisms/header/header.component';
-import homes from '../../styles/homes.module.scss';
-import space from '../../styles/space.module.scss';
 import React from 'react';
 import layout from '../../styles/layout.module.scss';
-import { Section } from '../../components/organisms/section/section.component';
-import { Footer } from '../../components/organisms/footer/footer.component';
-import { Bar } from '../../components/organisms/bar/bar.component';
-import color from '../../styles/color.module.scss';
-import responsive from '../../styles/responsive.module.scss';
 import { useRouter } from 'next/router';
+import { Template } from '../../components/templates/template.component';
+import { useToggleState } from 'context/toggle';
+import { Modal } from '../../components/organisms/modal/modal.component';
+import shape from '../../styles/shape.module.scss';
 
 const Homes = () => {
   const router = useRouter();
-  const { location } = router.query;
+  const {
+    type,
+    city,
+    stayType,
+    characteristics,
+  }: {
+    type?: string;
+    city?: string;
+    stayType?: string[] | string;
+    characteristics?: string;
+  } = router.query;
+  const toggleState = useToggleState();
   return (
-    <div>
-      <div style={{ zIndex: 9999, position: 'sticky', top: 0 }}>
-        <Header type='white' spread />
-      </div>
-      <div
-        className={[layout['relative'], homes['display__content']].join(' ')}>
-        <div className={[homes['w__section']].join(' ')}>
-          <div className={[space['p--24']].join(' ')}>
-            <div>
-              <Section type='homes' location={location} />
-            </div>
-            <div
-              className={[
-                space['m-t--16'],
-                layout['flex'],
-                layout['justify-center'],
-              ].join(' ')}>
-              <Bar type='paginate' />
-            </div>
-          </div>
-          <div className={[space['p--24'], color['bg--white__1']].join(' ')}>
-            <Section type='also' />
-          </div>
-        </div>
+    <>
+      <Template
+        type={type}
+        city={city}
+        stayType={stayType}
+        characteristics={characteristics}
+      />
+      {toggleState.auth && (
         <div
-          className={[responsive['n_to_b--md']].join(' ')}
           style={{
-            position: 'absolute',
-            backgroundColor: 'gray',
-            overflow: 'hidden',
-            width: 'calc(100% - 840px)',
-            height: '100%',
+            position: 'fixed',
             top: 0,
+            zIndex: 9999,
             bottom: 0,
+            left: 0,
             right: 0,
-            left: 'auto',
+            backgroundColor: 'rgba(0, 0, 0, 0.6)',
           }}>
-          map
+          <Modal
+            extendsTo={[
+              layout['flex'],
+              layout['justify-center'],
+              layout['items-center'],
+              shape['h--100v'],
+            ].join(' ')}
+            type='auth'
+          />
         </div>
-      </div>
-      <Footer />
-    </div>
+      )}
+    </>
   );
 };
 

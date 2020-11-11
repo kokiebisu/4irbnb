@@ -10,6 +10,7 @@ export const OnlineCard: React.FC<OnlineCardProps> = ({
   small = 'https://a0.muscache.com/im/pictures/0e46f398-42f5-4897-9168-f84622aeba58.jpg',
   large = 'https://a0.muscache.com/im/pictures/78010337-07f0-4154-9528-363b97b54699.jpg',
   title = 'Learn to make soup dumplings in Shanghai',
+  inverse = false,
 }) => {
   return (
     <div style={{ height: '100%', width: '100%', position: 'relative' }}>
@@ -46,7 +47,9 @@ export const OnlineCard: React.FC<OnlineCardProps> = ({
           left: 0,
           right: 0,
         }}
-        className={[color['bg--gray__4'], shape['bbr--15']].join(' ')}>
+        className={`${
+          inverse ? color['bg--gray__4'] : color['bg--white__0']
+        } ${[shape['bbr--15'], [shape['shadow--lg']].join(' ')].join(' ')}`}>
         <div
           style={{
             padding: '15px 15px 0 15px',
@@ -55,7 +58,10 @@ export const OnlineCard: React.FC<OnlineCardProps> = ({
             borderBottomRightRadius: 15,
             borderBottomLeftRadius: 15,
           }}>
-          <h4 className={[color['c--white__0'], font['size--15']].join(' ')}>
+          <h4
+            className={`${
+              inverse ? color['c--white__0'] : font['weight--500']
+            } ${[font['size--15']].join(' ')}`}>
             {title}
           </h4>
         </div>

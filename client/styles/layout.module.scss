@@ -93,7 +93,7 @@
   scrollbar-width: none; /* Firefox */
 }
 
-$pixels: (-230, -3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 78);
+$pixels: (-230, -3, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 80);
 
 @each $pixel in $pixels {
   .rt--#{$pixel} {
@@ -189,28 +189,21 @@ $gridAmount: (1, 2, 3, 4, 5, 6, 7);
 }
 
 .container {
-  padding-left: 25px;
-  padding-right: 25px;
+  padding: 0px 20px;
 
   @media screen and (min-width: 728px) {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 0px 40px;
   }
 
   @media screen and (min-width: 1128px) {
-    padding-left: 80px;
-    padding-right: 80px;
+    padding: 0px 80px;
   }
 
   @media screen and (min-width: 1276px) {
     width: 100%;
+    max-width: 1280px;
     margin: 0 auto;
-    padding-left: 80px;
-    padding-right: 80px;
-  }
-
-  @media screen and (min-width: 1760px) {
-    max-width: 1760px;
+    padding: 0px 80px;
   }
 
   &__modal {
@@ -240,8 +233,14 @@ $gridAmount: (1, 2, 3, 4, 5, 6, 7);
 
   &--spread {
     @media screen and (min-width: 728px) {
-      padding-left: 75px;
-      padding-right: 75px;
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+
+    @media screen and (min-width: 1760px) {
+      max-width: 1600px;
+      width: 100%;
+      margin: 0 auto;
     }
   }
 }

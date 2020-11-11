@@ -20,6 +20,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
     'city7',
     'city8',
   ],
+  title = 'People also search for',
 }) => {
   const [width, setWidth] = useState(500);
   const containerRef = useRef<HTMLDivElement>();
@@ -31,7 +32,6 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
 
   const handleRef = () => {
     if (containerRef.current && containerRef.current.getBoundingClientRect()) {
-      console.log('width', containerRef.current.getBoundingClientRect().width);
       setWidth(containerRef.current.getBoundingClientRect().width);
     }
   };
@@ -48,7 +48,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
     if (state.activeSlide === 0) {
       return setState({
         ...state,
-        translate: (items.length / 2 - 1) * (width / 2),
+        translate: (items.length / 2 - 1) * (width / (width > 728 ? 3 : 2)),
         activeSlide: items.length / 2 - 1,
       });
     }
@@ -56,12 +56,12 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
     setState({
       ...state,
       activeSlide: state.activeSlide - 1,
-      translate: (state.activeSlide - 1) * (width / 2),
+      translate: (state.activeSlide - 1) * (width / (width > 728 ? 3 : 2)),
     });
   };
 
   const next = () => {
-    if (state.activeSlide === items.length / 2 - 2) {
+    if (state.activeSlide === items.length / 2 - (width > 728 ? 3 : 2)) {
       return setState({
         ...state,
         translate: 0,
@@ -71,7 +71,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
     setState({
       ...state,
       activeSlide: state.activeSlide + 1,
-      translate: (state.activeSlide + 1) * (width / 2),
+      translate: (state.activeSlide + 1) * (width / (width > 728 ? 3 : 2)),
     });
   };
 
@@ -86,9 +86,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
           layout['justify-between'],
         ].join(' ')}>
         <div className={[space['m-v--16']].join(' ')}>
-          <h3 className={[font['size--20']].join(' ')}>
-            People also search for
-          </h3>
+          <h3 className={[font['size--20']].join(' ')}>{title}</h3>
         </div>
         <div className={[layout['flex'], layout['items-center']].join(' ')}>
           <div className={[space['m-h--4']].join(' ')}>
@@ -104,7 +102,9 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
               type='paginate'
               direction='right'
               onPress={next}
-              disable={state.activeSlide === items.length / 2 - 2}
+              disable={
+                state.activeSlide === items.length / 2 - (width > 728 ? 3 : 2)
+              }
             />
           </div>
         </div>
@@ -120,7 +120,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
           {displayingItems.map((item, index) => {
             return (
               <div
-                style={{ width: width / 2 }}
+                style={{ width: width / (width > 728 ? 3 : 2) }}
                 key={index}
                 className={[section['w__nearby']].join(' ')}>
                 <div className={[space['m-b--10']].join(' ')}>

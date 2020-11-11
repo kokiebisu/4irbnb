@@ -39,9 +39,13 @@ export const OnlineSection: React.FC<OnlineSectionProps> = ({
       title: 'Craft cocktails and talk gender with a bartender',
     },
   ],
+  dark = false,
 }) => {
   return (
-    <div className={[color['bg--black'], space['m-t--16']].join(' ')}>
+    <div
+      className={`${dark && color['bg--black']} ${[space['m-t--16']].join(
+        ' '
+      )}`}>
       <div
         className={[section['p__online']].join(' ')}
         style={{
@@ -84,6 +88,7 @@ export const OnlineSection: React.FC<OnlineSectionProps> = ({
                       small={item.small}
                       large={item.large}
                       title={item.title}
+                      inverse={dark}
                       extendsTo={[
                         layout['block'],
                         shape['h--full'],
@@ -98,7 +103,7 @@ export const OnlineSection: React.FC<OnlineSectionProps> = ({
         </div>
       </div>
       <div className={[space['m-v--32']].join(' ')}>
-        <Button type='border' title='Explore all' inverse size='sm' />
+        <Button type='border' title='Explore all' size='sm' inverse={dark} />
       </div>
     </div>
   );

@@ -5,7 +5,6 @@ import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import { Heart } from '../../../public/svg/original';
-import '../../../helper/string';
 import { Button } from '../button/button.component';
 import { ImageSlider } from '../../../components/particles/image.slider';
 
@@ -34,11 +33,11 @@ export const HorizontalCard: React.FC<Props> = ({
   superhost = false,
   save = false,
 }) => {
-  const renderType = (type: string) => {
-    if (type === 'camper_rv') {
+  const renderType = () => {
+    if (card.type === 'camper_rv') {
       return 'Camper/RV';
     }
-    return type.capitalize().split('_').join(' ');
+    return card.type;
   };
 
   return (
@@ -134,13 +133,14 @@ export const HorizontalCard: React.FC<Props> = ({
       <div className={[layout['items-center']].join(' ')}>
         <div>
           <p
+            style={{ textTransform: 'capitalize' }}
             className={[
               font['ls--4'],
               font['weight--100'],
               font['size--15'],
               color['c--gray__4'],
             ].join(' ')}>
-            {renderType(card.type)}
+            {renderType()}
           </p>
         </div>
         <div>

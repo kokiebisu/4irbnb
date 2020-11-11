@@ -1,5 +1,9 @@
 export interface CharacteristicBulletProps {
   characteristicType?: string;
+  time?: number;
+  limit?: number;
+  privateLimit?: number;
+  languages?: string[];
 }
 
 export interface AmenityBulletProps {
@@ -33,6 +37,14 @@ export interface KnowBulletProps {
 export interface RatingBulletProps {
   ratings?: number;
   reviews?: number;
+}
+
+export interface BringBulletProps {
+  title?: string;
+}
+
+export interface ExperienceBulletProps {
+  experienceType?: 'hosts' | 'activities' | 'global';
 }
 
 export type BulletProps = CharacteristicBulletProps & {
