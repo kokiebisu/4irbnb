@@ -37,36 +37,36 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
     };
   });
 
-  const previousSlide = () => {
-    if (state.activeSlide === 0) {
-      return setState({
-        ...state,
-        translate: (hosts.length - 1) * width,
-        activeSlide: hosts.length - 1,
-      });
-    }
+  //   const previousSlide = () => {
+  //     if (state.activeSlide === 0) {
+  //       return setState({
+  //         ...state,
+  //         translate: (hosts.length - 1) * width,
+  //         activeSlide: hosts.length - 1,
+  //       });
+  //     }
 
-    setState({
-      ...state,
-      activeSlide: state.activeSlide - 1,
-      translate: (state.activeSlide - 1) * width,
-    });
-  };
+  //     setState({
+  //       ...state,
+  //       activeSlide: state.activeSlide - 1,
+  //       translate: (state.activeSlide - 1) * width,
+  //     });
+  //   };
 
-  const nextSlide = () => {
-    if (state.activeSlide === hosts.length - 1) {
-      return setState({
-        ...state,
-        translate: 0,
-        activeSlide: 0,
-      });
-    }
-    setState({
-      ...state,
-      activeSlide: state.activeSlide + 1,
-      translate: (state.activeSlide + 1) * width,
-    });
-  };
+  //   const nextSlide = () => {
+  //     if (state.activeSlide === hosts.length - 1) {
+  //       return setState({
+  //         ...state,
+  //         translate: 0,
+  //         activeSlide: 0,
+  //       });
+  //     }
+  //     setState({
+  //       ...state,
+  //       activeSlide: state.activeSlide + 1,
+  //       translate: (state.activeSlide + 1) * width,
+  //     });
+  //   };
 
   return (
     <div>
