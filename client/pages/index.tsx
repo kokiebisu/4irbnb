@@ -67,14 +67,12 @@ const LandingPage = () => {
     };
   }, []);
 
-  console.log('scrollposition', scrollPosition);
-  console.log('pageheight', pageHeight);
-
   return (
-    <div className={[layout['relative'], shape['min-h--fullv']].join(' ')}>
+    <div
+      style={{ overflowX: 'hidden' }}
+      className={[layout['relative'], shape['min-h--fullv']].join(' ')}>
       <div ref={wrapperRef}>
         <CovidNotice />
-
         <Section type='banner' />
         <Layout type='section' spread>
           <Section type='nearby' items={nearby} />
@@ -98,72 +96,74 @@ const LandingPage = () => {
           <Section type='destinations' />
         </Layout>
         <Footer spread />
-      </div>
-      <Modal
-        extendsTo={[
-          layout['fb--0'],
-          layout['z--9999'],
-          layout['block'],
-          index['modal__privacy'],
-          index['m__privacy'],
-        ].join(' ')}
-        type='privacy'
-        criteria={toggleState.privacy}
-      />
-      <AnimatePresence>
-        {scrollPosition > 56 && (
-          <motion.div
-            exit={{ opacity: 0 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+        <Modal
+          extendsTo={[
+            layout['fb--0'],
+            layout['z--9999'],
+            layout['block'],
+            index['modal__privacy'],
+            index['m__privacy'],
+          ].join(' ')}
+          type='privacy'
+          criteria={toggleState.privacy}
+        />
+        <AnimatePresence>
+          {scrollPosition > 56 && (
+            <motion.div
+              exit={{ opacity: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              style={{
+                position: 'fixed',
+                top: 0,
+                zIndex: 99999,
+                width: '100%',
+              }}>
+              <Header spread type='white' />
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {scrollPosition < pageHeight && (
+            <motion.div
+              animate={{ y: 0 }}
+              exit={{ y: 60 }}
+              initial={{ y: 0 }}
+              transition={{ duration: 0.5 }}
+              className={index['none__menubar']}>
+              <div
+                className={[layout['fixed'], shape['w--full']].join(' ')}
+                style={{ zIndex: 30, bottom: 0 }}>
+                <MenuBar extendsTo={[color['b-t--white__2']].join(' ')} />
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {toggleState.auth && (
+          <div
             style={{
               position: 'fixed',
               top: 0,
-              zIndex: 99999,
-              width: '100%',
+              zIndex: 9999,
+              bottom: 0,
+              left: 0,
+              right: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.6)',
             }}>
-            <Header spread type='white' />
-          </motion.div>
+            <Modal
+              extendsTo={[
+                layout['flex'],
+                layout['justify-center'],
+                layout['items-center'],
+                shape['h--100v'],
+              ].join(' ')}
+              type='auth'
+            />
+          </div>
         )}
-      </AnimatePresence>
-      <AnimatePresence>
-        {scrollPosition < pageHeight && (
-          <motion.div
-            animate={{ y: 0 }}
-            exit={{ y: 60 }}
-            initial={{ y: 0 }}
-            transition={{ duration: 0.5 }}
-            className={index['none__menubar']}>
-            <div
-              className={[layout['fixed'], shape['w--full']].join(' ')}
-              style={{ zIndex: 30, bottom: 0 }}>
-              <MenuBar extendsTo={[color['b-t--white__2']].join(' ')} />
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-      {toggleState.auth && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            zIndex: 9999,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.6)',
-          }}>
-          <Modal
-            extendsTo={[
-              layout['flex'],
-              layout['justify-center'],
-              layout['items-center'],
-              shape['h--100v'],
-            ].join(' ')}
-            type='auth'
-          />
-        </div>
-      )}
+      </div>
     </div>
   );
 };
