@@ -4,7 +4,9 @@ export interface WhiteHeaderProps {
   spread?: boolean;
 }
 
-export interface DetailsHeaderProps {}
+export interface DetailsHeaderProps {
+  layoutType?: string;
+}
 
 export interface HeaderProps {
   extendsTo?: string;
