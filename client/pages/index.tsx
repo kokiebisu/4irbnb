@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import index from 'styles/index.module.scss';
 import layout from 'styles/layout.module.scss';
 import space from 'styles/space.module.scss';
@@ -37,62 +37,67 @@ const CovidNotice = () => {
 
 const LandingPage = () => {
   const toggleState = useToggleState();
-
+  const wrapperRef = useRef(null);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [pageHeight, setPageHeight] = useState(0);
+
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
   };
 
+  const handleResize = () => {
+    const height = document.body.scrollHeight - document.body.clientHeight;
+    setPageHeight(height);
+  };
+
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
-
+    handleScroll();
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
+  useEffect(() => {
+    window.addEventListener('resize', handleResize, { passive: true });
+    handleResize();
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  console.log('scrollposition', scrollPosition);
+  console.log('pageheight', pageHeight);
+
   return (
     <div className={[layout['relative'], shape['min-h--fullv']].join(' ')}>
-      <CovidNotice />
-      <AnimatePresence>
-        {scrollPosition > 56 && (
-          <motion.div
-            exit={{ opacity: 0 }}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            style={{ position: 'fixed', top: 0, zIndex: 99999, width: '100%' }}>
-            <Header spread type='white' />
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <Section type='banner' />
-      <Layout type='section' spread>
-        <Section type='nearby' items={nearby} />
-      </Layout>
-      <Layout type='section' title='Live anywhere' spread>
-        <Section type='category' items={anywhere} />
-      </Layout>
-      <div className={space['m-v--32']}></div>
-      <Layout
-        dark
-        spread
-        type='section'
-        title='Meet Online Experiences'
-        subtitle='Interactive activities you can do together, led by expert hosts.'>
-        <Section type='online' dark />
-      </Layout>
-      <Layout spread type='section' title='Join millions of hosts on Airbnb'>
-        <Section type='category' items={categories} />
-      </Layout>
-      <Layout spread type='section' title='Destinations for future trips'>
-        <Section type='destinations' />
-      </Layout>
-      <Footer spread />
-      <div className={index['none__menubar']}>
-        <div style={{ zIndex: 30, position: 'fixed', bottom: 0 }}>
-          <MenuBar extendsTo={[color['b-t--white__3']].join(' ')} />
-        </div>
+      <div ref={wrapperRef}>
+        <CovidNotice />
+
+        <Section type='banner' />
+        <Layout type='section' spread>
+          <Section type='nearby' items={nearby} />
+        </Layout>
+        <Layout type='section' title='Live anywhere' spread>
+          <Section type='category' items={anywhere} />
+        </Layout>
+        <div className={space['m-v--32']}></div>
+        <Layout
+          dark
+          spread
+          type='section'
+          title='Meet Online Experiences'
+          subtitle='Interactive activities you can do together, led by expert hosts.'>
+          <Section type='online' dark />
+        </Layout>
+        <Layout spread type='section' title='Join millions of hosts on Airbnb'>
+          <Section type='category' items={categories} />
+        </Layout>
+        <Layout spread type='section' title='Destinations for future trips'>
+          <Section type='destinations' />
+        </Layout>
+        <Footer spread />
       </div>
       <Modal
         extendsTo={[
@@ -105,6 +110,38 @@ const LandingPage = () => {
         type='privacy'
         criteria={toggleState.privacy}
       />
+      <AnimatePresence>
+        {scrollPosition > 56 && (
+          <motion.div
+            exit={{ opacity: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            style={{
+              position: 'fixed',
+              top: 0,
+              zIndex: 99999,
+              width: '100%',
+            }}>
+            <Header spread type='white' />
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {scrollPosition < pageHeight && (
+          <motion.div
+            animate={{ y: 0 }}
+            exit={{ y: 60 }}
+            initial={{ y: 0 }}
+            transition={{ duration: 0.5 }}
+            className={index['none__menubar']}>
+            <div
+              className={[layout['fixed'], shape['w--full']].join(' ')}
+              style={{ zIndex: 30, bottom: 0 }}>
+              <MenuBar extendsTo={[color['b-t--white__2']].join(' ')} />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       {toggleState.auth && (
         <div
           style={{
