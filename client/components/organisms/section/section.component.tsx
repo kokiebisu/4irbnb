@@ -19,6 +19,8 @@ import { HomesSection } from './section.homes';
 import { AlsoSection } from './section.also';
 import { ParticipateSection } from './section.participate';
 import { BringSection } from './section.bring';
+import { ExperiencesSection } from './section.experiences';
+import { AvailableSection } from './section.available';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -49,6 +51,8 @@ export const Section: React.FC<SectionProps> = ({
     also: <AlsoSection {...props} />,
     participate: <ParticipateSection {...props} />,
     bring: <BringSection {...props} />,
+    experiences: <ExperiencesSection {...props} />,
+    available: <AvailableSection {...props} />,
   };
   return <div className={extendsTo}>{types[type]}</div>;
 };

@@ -72,21 +72,21 @@ const id: () => string | JSX.Element = () => {
               />
             </div>
           </div>
-          <Section
-            layoutType='experience'
-            extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
-            type='host'
-          />
-          <Section
-            layoutType='experience'
-            extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
-            type='reviews'
-          />
-          <Section
-            layoutType='experience'
-            extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
-            type='know'
-          />
+          <div className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
+            <Section layoutType='experience' type='host' />
+          </div>
+          <div className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
+            <Section type='experiences' />
+          </div>
+          <div className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
+            <Section layoutType='experience' type='reviews' />
+          </div>
+          <div className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
+            <Section layoutType='experience' type='available' />
+          </div>
+          <div className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
+            <Section layoutType='experience' type='know' />
+          </div>
         </div>
         <Footer />
         <div

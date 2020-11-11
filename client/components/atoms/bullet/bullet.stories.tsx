@@ -93,3 +93,16 @@ export const bring = BulletTemplate.bind({});
 bring.args = {
   type: 'bring',
 };
+
+export const experiences = BulletTemplate.bind({});
+experiences.args = {
+  type: 'experiences',
+};
+experiences.argTypes = {
+  experienceType: {
+    control: {
+      type: 'select',
+      options: ['host', 'activities', 'global'],
+    },
+  },
+};

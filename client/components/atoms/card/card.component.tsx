@@ -12,6 +12,7 @@ import { StayCard } from './card.stay';
 import { NearbyCard } from './card.nearby';
 import { OnlineCard } from './card.online';
 import { ParticipateCard } from './card.participate';
+import { AvailableCard } from './card.available';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -35,6 +36,7 @@ export const Card: React.FC<CardProps> = ({
     nearby: <NearbyCard {...props} />,
     online: <OnlineCard {...props} />,
     participate: <ParticipateCard {...props} />,
+    available: <AvailableCard {...props} />,
   };
   if (to) {
     return (
