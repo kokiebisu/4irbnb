@@ -33,3 +33,8 @@ export const details = HeaderTemplate.bind({});
 details.args = {
   type: 'details',
 };
+
+export const homes = HeaderTemplate.bind({});
+homes.args = {
+  type: 'homes',
+};
