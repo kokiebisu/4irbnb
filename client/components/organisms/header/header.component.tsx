@@ -1,5 +1,6 @@
 import React from 'react';
 import { DetailsHeader } from './header.details';
+import { HomesHeader } from './header.homes';
 import { TransparentHeader } from './header.transparent';
 import { WhiteHeader } from './header.white';
 import { HeaderProps } from './props';
@@ -17,6 +18,7 @@ export const Header: React.FC<HeaderProps> = ({
     transparent: <TransparentHeader {...props} />,
     white: <WhiteHeader {...props} />,
     details: <DetailsHeader {...props} />,
+    homes: <HomesHeader {...props} />,
   };
   return <div className={extendsTo}>{types[type]}</div>;
 };

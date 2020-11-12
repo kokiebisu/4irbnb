@@ -1,0 +1,136 @@
+import React, { useLayoutEffect, useRef, useState } from 'react';
+import layout from '../../../styles/layout.module.scss';
+import { HomesBannerProps } from './props';
+import space from '../../../styles/space.module.scss';
+import font from '../../../styles/font.module.scss';
+import { Button } from '../../../components/atoms/button/button.component';
+import { Card } from '../../../components/atoms/card/card.component';
+
+export const HomesBanner: React.FC<HomesBannerProps> = ({
+  hosts = [
+    { host: 'Darrel', stayType: 'tiny house', location: 'Atlanta' },
+    { host: 'Darrel', stayType: 'tiny house', location: 'Atlanta' },
+  ],
+}) => {
+  const sliderWrapper = useRef(null);
+
+  const [width, setWidth] = useState(1000);
+  const [state, setState] = useState({
+    activeSlide: 0,
+    translate: 0,
+    transition: 0.45,
+  });
+
+  const containerRef = useRef<HTMLDivElement>();
+
+  const handleRef = () => {
+    if (containerRef.current && containerRef.current.getBoundingClientRect()) {
+      setWidth(containerRef.current.getBoundingClientRect().width);
+    }
+  };
+
+  useLayoutEffect(() => {
+    window.addEventListener('resize', handleRef);
+    handleRef();
+    return () => {
+      window.removeEventListener('resize', handleRef);
+    };
+  });
+
+  //   const previousSlide = () => {
+  //     if (state.activeSlide === 0) {
+  //       return setState({
+  //         ...state,
+  //         translate: (hosts.length - 1) * width,
+  //         activeSlide: hosts.length - 1,
+  //       });
+  //     }
+
+  //     setState({
+  //       ...state,
+  //       activeSlide: state.activeSlide - 1,
+  //       translate: (state.activeSlide - 1) * width,
+  //     });
+  //   };
+
+  //   const nextSlide = () => {
+  //     if (state.activeSlide === hosts.length - 1) {
+  //       return setState({
+  //         ...state,
+  //         translate: 0,
+  //         activeSlide: 0,
+  //       });
+  //     }
+  //     setState({
+  //       ...state,
+  //       activeSlide: state.activeSlide + 1,
+  //       translate: (state.activeSlide + 1) * width,
+  //     });
+  //   };
+
+  return (
+    <div>
+      <div className={[space['p-l--64']].join(' ')} style={{ width: '45%' }}>
+        <div style={{ width: '35%' }}>
+          <div
+            className={[
+              layout['flex'],
+              layout['flex-col'],
+              layout['justify-center'],
+            ].join(' ')}>
+            <div className={[space['m-b--32']].join(' ')}>
+              <h1
+                style={{ lineHeight: 1 }}
+                className={[font['size--45']].join(' ')}>
+                Host your home on Airbnb
+              </h1>
+            </div>
+            <div className={[space['m-b--32']].join(' ')}>
+              <h4 className={[font['size--18'], font['lh--15']].join(' ')}>
+                Join a vibrant community of hosts, create memorable experiences
+                for travellers, and earn money to pursue the things you love.
+              </h4>
+            </div>
+            <div>
+              <Button type='primary' size='md' />
+            </div>
+          </div>
+        </div>
+        <div style={{ width: '65%' }}>
+          <div
+            ref={sliderWrapper}
+            style={{
+              position: 'relative',
+              width: '100%',
+              height: '100%',
+              overflow: 'hidden',
+              borderRadius: 12,
+              zIndex: 500,
+            }}>
+            <div
+              style={{
+                borderRadius: 12,
+                transform: `translateX(-${state.translate}px)`,
+                transition: `transform ease-out ${state.transition}s`,
+                height: '100%',
+                width: width * hosts.length,
+                display: 'flex',
+              }}>
+              {hosts.map((host, index) => {
+                return (
+                  <Card
+                    type='host'
+                    key={index}
+                    host='Darrel'
+                    stayType='tiny house'
+                    location='Atlanta'
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
