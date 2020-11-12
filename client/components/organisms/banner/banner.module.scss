@@ -1,0 +1,30 @@
+.shadow___homes {
+  box-shadow: 10px 0 5px -2px red !important;
+  //   background-color: red !important;
+}
+
+.w__homes {
+  &--left {
+    width: 100%;
+
+    @media screen and (min-width: 728px) {
+      width: 50%;
+    }
+
+    @media screen and (min-width: 1028px) {
+      width: 43%;
+    }
+  }
+
+  &--right {
+    width: 100%;
+
+    @media screen and (min-width: 728px) {
+      width: 50%;
+    }
+
+    @media screen and (min-width: 1028px) {
+      width: 57%;
+    }
+  }
+}
