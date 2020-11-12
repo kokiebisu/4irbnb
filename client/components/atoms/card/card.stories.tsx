@@ -152,7 +152,14 @@ available.args = {
   type: 'available',
 };
 
-export const home = CardTemplate.bind({});
-home.args = {
-  type: 'home',
+export const host = CardTemplate.bind({});
+host.args = {
+  type: 'host',
 };
+host.decorators = [
+  (Story) => (
+    <div style={{ width: 400 }}>
+      <Story />
+    </div>
+  ),
+];
