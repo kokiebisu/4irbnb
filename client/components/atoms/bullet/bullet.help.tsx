@@ -41,11 +41,11 @@ export const HelpBullet: React.FC<HelpBulletProps> = ({ help = 'support' }) => {
     <div className={[layout['flex']].join(' ')}>
       <div className={[space['m-r--16']].join(' ')}>{helps[help].icon}</div>
       <div>
-        <div>
+        <div className={[space['m-b--6']].join(' ')}>
           <h3>{helps[help].title}</h3>
         </div>
         <div>
-          <h4 className={[font['size--16']].join(' ')}>
+          <h4 className={[font['size--16'], font['lh--15']].join(' ')}>
             {helps[help].description}
           </h4>
         </div>

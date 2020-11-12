@@ -13,7 +13,7 @@ export const HomesLayout: React.FC<HomesLayoutProps> = ({
 }) => {
   return (
     <div className={[space['p-v--32']].join(' ')}>
-      <div className={`${[space['p__homes']].join(' ')}`}>
+      <div>
         <div>
           <div className={[space['m-b--32']].join(' ')}>
             {title && (
