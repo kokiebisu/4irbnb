@@ -21,7 +21,8 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
               <Card
                 type='category'
                 key={index}
-                card={item && item.card}
+                imgUrl={item && item.imgUrl}
+                title={item && item.title}
                 to={item && item.to}
               />
             );
