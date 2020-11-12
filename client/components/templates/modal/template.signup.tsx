@@ -29,8 +29,9 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
         </p>
       </div>
       <div className={[space['m-t--22']].join(' ')}>
-        <h3 className={[font['size--16']].join(' ')}>Birth date</h3>
-        <div>three inputs</div>
+        <div>
+          <Input type='text' placeholder='Birth date' category='date' />
+        </div>
         <p
           className={[
             space['m-t--8'],
@@ -43,7 +44,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
       </div>
       <div className={[space['m-t--22']].join(' ')}>
         <div>
-          <Input type='text' placeholder='Email' />
+          <Input type='text' placeholder='Email' category='text' />
         </div>
         <p
           className={[
@@ -56,7 +57,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
       </div>
       <div className={[space['m-t--22']].join(' ')}>
         <div>
-          <Input type='text' placeholder='Password' />
+          <Input type='text' placeholder='Password' category='password' />
         </div>
         <p
           className={[

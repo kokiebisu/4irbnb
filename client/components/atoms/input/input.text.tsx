@@ -9,7 +9,7 @@ import input from './input.module.scss';
 import { TextInputProps } from './props';
 
 export const TextInput: React.FC<TextInputProps> = ({
-  category = 'Email',
+  category = 'text',
   placeholder = 'Email',
   handleChange,
   value,
@@ -62,6 +62,8 @@ export const TextInput: React.FC<TextInputProps> = ({
       }`}>
       <div style={{ position: 'relative', height: '100%', width: '100%' }}>
         <input
+          required
+          autoFocus={true}
           id={category}
           name={category}
           type={category}

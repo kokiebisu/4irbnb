@@ -1,34 +1,30 @@
-// .label {
-//   display: inline-block;
-//   position: absolute;
-//   left: 15px;
-//   top: 16px;
-//   transition: all 150ms ease-in;
-//   color: #676767;
-// }
-
-// .field-active {
-//   transform: translateY(25px) !important;
-//   font-size: 0.9em !important;
-//   color: #000 !important;
-// }
-
 .label {
+  position: absolute;
+  transition: all 150ms ease-in;
+  font-size: 13px;
+  top: 2px;
+}
+
+.input:invalid ~ .label {
   position: absolute;
   transition: all 150ms ease-in;
   font-size: 16px;
   top: 11px;
+  color: gray !important;
 }
-
 .input:focus ~ .label {
-  top: -2px;
-  font-size: 13px !important;
+  position: absolute;
+  transition: all 150ms ease-in;
+  font-size: 13px;
+  top: 2px;
   color: gray !important;
 }
 
-.input:invalid ~ .label {
-  top: -2px;
-  font-size: 13px !important;
+.input:invalid:focus ~ .label {
+  position: absolute;
+  transition: all 150ms ease-in;
+  font-size: 13px;
+  top: 2px;
   color: gray !important;
 }
 
@@ -42,6 +38,14 @@
   color: rgb(104, 104, 104);
 }
 
-.input::placeholder {
+.input::placeholder:focus {
+  color: rgb(104, 104, 104);
+}
+
+.input[type='date']:invalid::-webkit-datetime-edit {
+  color: transparent;
+}
+
+.input[type='date']:focus::-webkit-datetime-edit {
   color: rgb(104, 104, 104);
 }
