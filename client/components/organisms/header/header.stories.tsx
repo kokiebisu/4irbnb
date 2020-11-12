@@ -38,3 +38,8 @@ export const homes = HeaderTemplate.bind({});
 homes.args = {
   type: 'homes',
 };
+
+export const experiences = HeaderTemplate.bind({});
+experiences.args = {
+  type: 'experiences',
+};
