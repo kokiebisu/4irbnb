@@ -23,13 +23,12 @@ interface mapProps {
 }
 
 export const Button: React.FC<ButtonProps> = ({
-  to,
   extendsTo,
   type,
   children,
   ...props
 }) => {
-  const { onPress } = props;
+  const { onPress, to } = props;
   const types: mapProps = {
     auth: <AuthButton {...props} />,
     globe: <GlobeButton {...props} />,
