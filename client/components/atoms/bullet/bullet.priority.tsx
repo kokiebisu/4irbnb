@@ -7,9 +7,9 @@ import React from 'react';
 import { Button } from '../button/button.component';
 import space from '../../../styles/space.module.scss';
 import font from '../../../styles/font.module.scss';
-import { PriorityCardProps } from './props';
+import { PriorityBulletProps } from './props';
 
-export const PriorityCard: React.FC<PriorityCardProps> = ({
+export const PriorityBullet: React.FC<PriorityBulletProps> = ({
   priority = 'protection',
 }) => {
   const categories = {
