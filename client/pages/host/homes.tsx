@@ -17,12 +17,19 @@ const Homes = () => {
         <Banner type='homes' />
       </div>
       <div className={[space['p-v--64'], color['b-b--white__2']].join(' ')}>
-        <div>
+        <div className={`${[space['p__homes']].join(' ')}`}>
           <Section type='all' />
         </div>
       </div>
       <div className={[space['p-v--64']].join(' ')}>
-        <Section type='priority' />
+        <div className={`${[space['p__homes']].join(' ')}`}>
+          <Section type='priority' />
+        </div>
+      </div>
+      <div className={[space['p-v--64'], color['b-b--white__2']].join(' ')}>
+        <div className={`${[space['p__homes']].join(' ')}`}>
+          <Section type='help' />
+        </div>
       </div>
     </div>
   );
