@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionLayout } from './layout.section';
+import { SectionLayout } from './section/layout.section';
 import { LayoutProps } from './props';
 
 export const Layout: React.FC<LayoutProps> = ({

@@ -1,13 +1,11 @@
 import React from 'react';
-import { SectionLayoutProps } from './props';
+import space from '../../styles/space.module.scss';
+import layout from '../../styles/layout.module.scss';
+import index from '../../styles/index.module.scss';
+import color from '../../styles/color.module.scss';
+import { LandingLayoutProps } from './props';
 
-import space from '../styles/space.module.scss';
-import section from '../components/organisms/section/section.module.scss';
-import layout from '../styles/layout.module.scss';
-import index from '../styles/index.module.scss';
-import color from '../styles/color.module.scss';
-
-export const SectionLayout: React.FC<SectionLayoutProps> = ({
+export const LandingLayout: React.FC<LandingLayoutProps> = ({
   title,
   subtitle,
   children,
