@@ -7,8 +7,11 @@ import React from 'react';
 import { Button } from '../button/button.component';
 import space from '../../../styles/space.module.scss';
 import font from '../../../styles/font.module.scss';
+import { PriorityCardProps } from './props';
 
-export const PriorityCard = ({ priority = 'protection' }) => {
+export const PriorityCard: React.FC<PriorityCardProps> = ({
+  priority = 'protection',
+}) => {
   const categories = {
     protection: {
       icon: <Protection width={40} />,
