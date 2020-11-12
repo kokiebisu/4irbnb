@@ -133,6 +133,8 @@ export interface BringSectionProps {
 
 export interface ExperiencesSectionProps {}
 
+export interface AllSectionProps {}
+
 export interface AvailableSectionProps {
   availables?: any;
 }
