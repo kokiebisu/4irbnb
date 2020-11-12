@@ -193,3 +193,8 @@ export const help = SectionTemplate.bind({});
 help.args = {
   type: 'help',
 };
+
+export const ready = SectionTemplate.bind({});
+ready.args = {
+  type: 'ready',
+};
