@@ -29,7 +29,7 @@ export const MenuModal: React.FC<MenuModalProps> = ({ refProp }) => {
           <Button type='option' option='login' />
         </div>
         <div>
-          <Button type='option' option='home'>
+          <Button to='/host/homes' type='option' option='home'>
             Host your home
           </Button>
         </div>
