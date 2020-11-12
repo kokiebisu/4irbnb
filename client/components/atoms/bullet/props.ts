@@ -47,6 +47,10 @@ export interface ExperienceBulletProps {
   experienceType?: 'hosts' | 'activities' | 'global';
 }
 
+export interface PriorityBulletProps {
+  priority?: 'protection' | 'guidance' | 'requirements';
+}
+
 export type BulletProps = CharacteristicBulletProps & {
   extendsTo?: string;
   type: string;
