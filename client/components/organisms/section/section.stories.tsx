@@ -183,3 +183,8 @@ export const all = SectionTemplate.bind({});
 all.args = {
   type: 'all',
 };
+
+export const priority = SectionTemplate.bind({});
+priority.args = {
+  type: 'priority',
+};
