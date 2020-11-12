@@ -17,6 +17,16 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
   const authState = useAuthState();
   const authDispatch = useAuthDispatch();
 
+  const formik = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+    },
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
+
   const switchAuth = () => {
     if (authState.title === 'Log in') {
       return authDispatch({ type: 'auth_signup' });
@@ -25,10 +35,26 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
   };
   return (
     <div className={[space['p--24']].join(' ')}>
-      <form>
+      <form onSubmit={formik.handleSubmit}>
         <div>
-          <Input type='text' direction='bottom' />
-          <Input type='text' direction='top' />
+          <Input
+            type='text'
+            direction='bottom'
+            name='email'
+            placeholder='Email'
+            inputType='text'
+            handleChange={formik.handleChange}
+            value={formik.values.email}
+          />
+          <Input
+            type='text'
+            direction='top'
+            name='password'
+            inputType='password'
+            placeholder='Password'
+            handleChange={formik.handleChange}
+            value={formik.values.password}
+          />
         </div>
         <div className={[space['m-v--16']].join(' ')}>
           <Button type='primary' title='Log in' />
