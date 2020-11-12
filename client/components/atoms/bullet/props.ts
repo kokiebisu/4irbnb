@@ -51,6 +51,10 @@ export interface PriorityBulletProps {
   priority?: 'protection' | 'guidance' | 'requirements';
 }
 
+export interface HelpBulletProps {
+  help?: 'support' | 'tools' | 'insights' | 'education';
+}
+
 export type BulletProps = CharacteristicBulletProps & {
   extendsTo?: string;
   type: string;
