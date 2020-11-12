@@ -10,10 +10,10 @@ import layout from '../../../styles/layout.module.scss';
 import color from '../../../styles/color.module.scss';
 import modalStyles from '../../organisms/modal/modal.module.scss';
 import { Input } from '../../../components/atoms/input/input.component';
-import { LoginTemplateProps } from '../props';
+import { AuthTemplateProps } from '../props';
 import { Button } from '../../../components/atoms/button/button.component';
 
-export const AuthTemplate: React.FC<LoginTemplateProps> = () => {
+export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
   useLockBodyScroll();
   const authState = useAuthState();
   const authDispatch = useAuthDispatch();
