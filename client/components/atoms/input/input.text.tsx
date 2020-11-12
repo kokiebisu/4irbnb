@@ -9,11 +9,12 @@ import input from './input.module.scss';
 import { TextInputProps } from './props';
 
 export const TextInput: React.FC<TextInputProps> = ({
-  category = 'text',
+  name = 'email',
   placeholder = 'Email',
   handleChange,
   value,
   direction,
+  inputType = 'text',
 }) => {
   const [fieldActive, setFieldActive] = useState(false);
 
@@ -64,9 +65,9 @@ export const TextInput: React.FC<TextInputProps> = ({
         <input
           required
           autoFocus={true}
-          id={category}
-          name={category}
-          type={category}
+          id={name}
+          name={name}
+          type={inputType}
           onChange={handleChange}
           value={value}
           onFocus={activateField}
@@ -84,7 +85,7 @@ export const TextInput: React.FC<TextInputProps> = ({
           placeholder={fieldActive ? placeholder : undefined}
         />
         <label
-          htmlFor={category}
+          htmlFor={name}
           className={`${[
             layout['absolute'],
             font['size--12'],

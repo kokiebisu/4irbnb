@@ -44,8 +44,22 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
         <form onSubmit={formik.handleSubmit}>
           <div className={[space['m-b--8']].join(' ')}>
             <div>
-              <Input type='text' direction='bottom' />
-              <Input type='text' direction='top' />
+              <Input
+                type='text'
+                direction='bottom'
+                name='country'
+                inputType='country'
+                onChange={formik.handleChange}
+                value={formik.values.country}
+              />
+              <Input
+                type='text'
+                direction='top'
+                name='tel'
+                inputType='tel'
+                onChange={formik.handleChange}
+                value={formik.values.tel}
+              />
             </div>
           </div>
           <div>

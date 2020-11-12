@@ -1,5 +1,6 @@
 export interface TextInputProps {
-  category?: string;
+  name?: string;
+  inputType?: string;
   placeholder?: string;
   handleChange?: any;
   value?: string;
