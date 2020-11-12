@@ -90,9 +90,13 @@ export interface HostCardProps {
   location?: string;
 }
 
+
+export interface PriorityCardProps {
+  category?: 'protection' | 'guidance' | 'requirements';
+}
+
 export interface CardProps {
   extendsTo?: string;
   type?: string;
   to?: string;
   [x: string]: any;
-}
