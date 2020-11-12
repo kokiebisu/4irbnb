@@ -54,7 +54,10 @@ export const Button: React.FC<ButtonProps> = ({
 
   if (to) {
     return (
-      <div className={extendsTo} data-testid='button'>
+      <div
+        style={{ pointer: 'cursor' }}
+        className={extendsTo}
+        data-testid='button'>
         <Link href={to}>{children}</Link>
       </div>
     );

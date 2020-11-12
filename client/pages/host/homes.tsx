@@ -6,6 +6,7 @@ import space from '../../styles/space.module.scss';
 import color from '../../styles/color.module.scss';
 import { Layout } from '../../layout/layout.component';
 import { Section } from '../../components/organisms/section/section.component';
+import { Footer } from '../../components/organisms/footer/footer.component';
 
 const Homes = () => {
   return (
@@ -30,6 +31,14 @@ const Homes = () => {
         <div className={`${[space['p__homes']].join(' ')}`}>
           <Section type='help' />
         </div>
+      </div>
+      <div className={[space['p-v--64'], color['b-b--white__2']].join(' ')}>
+        <div className={`${[space['p__homes']].join(' ')}`}>
+          <Section type='ready' />
+        </div>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ export const HomesHeader: React.FC<HomesHeaderProps> = ({ spread = false }) => {
         style={{ padding: 20 }}
         className={` ${[shape['h--full']].join(' ')}`}>
         <div>
-          <Button to='/'>
+          <Button extendsTo={[layout['inline-block']].join(' ')} to='/'>
             <NoNameLogo fill='black' width={30} height={32} />
           </Button>
         </div>
