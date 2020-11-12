@@ -4,19 +4,15 @@ import shape from '../../../styles/shape.module.scss';
 import color from '../../../styles/color.module.scss';
 import space from '../../../styles/space.module.scss';
 import font from '../../../styles/font.module.scss';
-import modalStyles from './modal.module.scss';
-import { Close } from '../../../public/svg/original';
+import modal from './modal.module.scss';
+
 import { Button } from '../../../components/atoms/button/button.component';
 
 import { motion } from 'framer-motion';
-import { ChevronDown } from '../../../public/svg/regular';
+
 import { RegisterModalProps } from './props';
 import { useToggleDispatch } from '../../../context/toggle';
-import { useAuthDispatch, useAuthState } from '../../../context/auth';
-import { Input } from '../../../components/atoms/input/input.component';
-
-import { useFormik } from 'formik';
-import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
+import { useAuthState } from '../../../context/auth';
 import { Template } from '../../../components/templates/template.component';
 
 /**
@@ -48,8 +44,8 @@ export const AuthModal: React.FC<RegisterModalProps> = () => {
       exit={{ opacity: 0 }}
       initial={{ y: 25 }}
       animate={{ y: 0 }}
-      style={{ width: 550 }}
       className={[
+        modal['w__auth'],
         shape['shadow--lg'],
         shape['br--16'],
         color['bg--white__0'],
