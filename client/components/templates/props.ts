@@ -12,6 +12,12 @@ export interface CategoryTemplateProps {
   filters?: any;
 }
 
+export interface SignupTemplateProps {}
+
+export interface LoginTemplateProps {}
+
+export interface AuthTemplateProps {}
+
 export interface TemplateProps {
   type?: string;
   place?: string;
