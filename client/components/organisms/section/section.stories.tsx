@@ -188,3 +188,8 @@ export const priority = SectionTemplate.bind({});
 priority.args = {
   type: 'priority',
 };
+
+export const help = SectionTemplate.bind({});
+help.args = {
+  type: 'help',
+};
