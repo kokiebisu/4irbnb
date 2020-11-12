@@ -14,11 +14,8 @@ export const HomesHeader: React.FC<HomesHeaderProps> = ({ spread = false }) => {
   return (
     <header style={{ height: 80 }} className={[space['p-h--0']].join(' ')}>
       <div
-        className={`${
-          spread
-            ? [layout['container--spread']].join(' ')
-            : [layout['container']].join(' ')
-        } ${[shape['h--full']].join(' ')}`}>
+        style={{ padding: 20 }}
+        className={` ${[shape['h--full']].join(' ')}`}>
         <div>
           <Button to='/'>
             <NoNameLogo fill='black' width={30} height={32} />
