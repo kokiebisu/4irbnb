@@ -1,8 +1,9 @@
 import { Layout } from '../../../layout/layout.component';
 import React from 'react';
 import { PrioritySectionProps } from './props';
-import { Card } from '../../../components/atoms/card/card.component';
+
 import space from '../../../styles/space.module.scss';
+import { Bullet } from '../../../components/atoms/bullet/bullet.component';
 
 export const PrioritySection: React.FC<PrioritySectionProps> = () => {
   const priorities = ['protection', 'guidance', 'requirements'];
@@ -19,7 +20,7 @@ export const PrioritySection: React.FC<PrioritySectionProps> = () => {
           {priorities.map((priority, index) => {
             return (
               <div key={index}>
-                <Card type='priority' priority={priority} />
+                <Bullet type='priority' priority={priority} />
               </div>
             );
           })}
