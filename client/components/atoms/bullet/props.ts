@@ -48,7 +48,7 @@ export interface ExperienceBulletProps {
 }
 
 export interface PriorityBulletProps {
-  category?: 'protection' | 'guidance' | 'requirements';
+  priority?: 'protection' | 'guidance' | 'requirements';
 }
 
 export type BulletProps = CharacteristicBulletProps & {
