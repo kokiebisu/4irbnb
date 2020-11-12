@@ -23,3 +23,8 @@ export const homes = BannerTemplate.bind({});
 homes.args = {
   type: 'homes',
 };
+
+export const experiences = BannerTemplate.bind({});
+experiences.args = {
+  type: 'experiences',
+};
