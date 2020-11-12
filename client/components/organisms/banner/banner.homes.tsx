@@ -132,6 +132,7 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
         <div
           className={[
             space['m-t--16'],
+            space['m-r--32'],
             layout['flex'],
             layout['justify-end'],
           ].join(' ')}>
