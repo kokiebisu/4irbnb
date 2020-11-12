@@ -115,6 +115,7 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
             {hosts.map((host, index) => {
               return (
                 <div
+                  key={index}
                   ref={sliderWrapper}
                   className={[space['m-r--16']].join(' ')}>
                   <Card

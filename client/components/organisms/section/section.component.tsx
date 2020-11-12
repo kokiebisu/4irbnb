@@ -22,6 +22,7 @@ import { BringSection } from './section.bring';
 import { ExperiencesSection } from './section.experiences';
 import { AvailableSection } from './section.available';
 import { AllSection } from './section.all';
+import { PrioritySection } from './section.priority';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -55,6 +56,7 @@ export const Section: React.FC<SectionProps> = ({
     experiences: <ExperiencesSection {...props} />,
     available: <AvailableSection {...props} />,
     all: <AllSection {...props} />,
+    priority: <PrioritySection {...props} />,
   };
   return <div className={extendsTo}>{types[type]}</div>;
 };
