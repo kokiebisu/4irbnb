@@ -158,20 +158,17 @@ const LandingPage = () => {
           <div
             style={{
               position: 'fixed',
-              top: 0,
               zIndex: 9999,
               bottom: 0,
               left: 0,
               right: 0,
+              top: 0,
               backgroundColor: 'rgba(0, 0, 0, 0.6)',
             }}>
             <Modal
-              extendsTo={[
-                layout['flex'],
-                layout['justify-center'],
-                layout['items-center'],
-                shape['h--100v'],
-              ].join(' ')}
+              extendsTo={[index['modal__auth'], shape['h--100v'], index].join(
+                ' '
+              )}
               type='auth'
             />
           </div>
