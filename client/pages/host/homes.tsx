@@ -21,6 +21,9 @@ const Homes = () => {
           <Section type='all' />
         </div>
       </div>
+      <div className={[space['p-v--64']].join(' ')}>
+        <Section type='priority' />
+      </div>
     </div>
   );
 };

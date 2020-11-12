@@ -163,16 +163,3 @@ host.decorators = [
     </div>
   ),
 ];
-
-export const priority = CardTemplate.bind({});
-priority.args = {
-  type: 'priority',
-};
-priority.argTypes = {
-  priority: {
-    control: {
-      type: 'select',
-      options: ['protection', 'guidance', 'requirements'],
-    },
-  },
-};

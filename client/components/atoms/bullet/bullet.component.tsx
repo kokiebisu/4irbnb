@@ -5,6 +5,7 @@ import { CharacteristicBullet } from './bullet.characteristics';
 import { ExperienceBullet } from './bullet.experience';
 import { HostBullet } from './bullet.host';
 import { KnowBullet } from './bullet.know';
+import { PriorityBullet } from './bullet.priority';
 import { RatingBullet } from './bullet.rating';
 import { ScoreBullet } from './bullet.score';
 import { BulletProps } from './props';
@@ -27,6 +28,7 @@ export const Bullet: React.FC<BulletProps> = ({
     rating: <RatingBullet {...props} />,
     bring: <BringBullet {...props} />,
     experience: <ExperienceBullet {...props} />,
+    priority: <PriorityBullet {...props} />,
   };
 
   return (
