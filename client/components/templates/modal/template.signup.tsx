@@ -1,7 +1,7 @@
 import { useAuthDispatch, useAuthState } from '../../../context/auth';
 import { useFormik } from 'formik';
 import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
-import React from 'react';
+import React, { useState } from 'react';
 
 import space from '../../../styles/space.module.scss';
 import shape from '../../../styles/shape.module.scss';
@@ -12,8 +12,10 @@ import modalStyles from '../../organisms/modal/modal.module.scss';
 import { Input } from '../../../components/atoms/input/input.component';
 import { Button } from '../../../components/atoms/button/button.component';
 import { SignupTemplateProps } from '../props';
+import { Animation } from '../../animation/animation.component';
 
 export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
+  const [loading, setLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
       firstname: '',
@@ -23,7 +25,8 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
       password: '',
     },
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      setLoading(true);
+      // alert(JSON.stringify(values, null, 2));
     },
   });
 
@@ -117,12 +120,50 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
               color['c--gray__1'],
             ].join(' ')}>
             By selecting <b>Agree and continue</b> below, I agree to Airbnb's{' '}
-            <u>Terms of Service</u>, <u>Payments Terms of Service</u>,{' '}
-            <u>Privacy Policy</u>, and <u>Nondiscrimination Policy</u>.
+            <u
+              className={[font['weight--500']].join(' ')}
+              style={{ color: '#1B4CC4' }}>
+              Terms of Service
+            </u>
+            ,{' '}
+            <u
+              className={[font['weight--500']].join(' ')}
+              style={{ color: '#1B4CC4' }}>
+              Payments Terms of Service
+            </u>
+            ,{' '}
+            <u
+              className={[font['weight--500']].join(' ')}
+              style={{ color: '#1B4CC4' }}>
+              Privacy Policy
+            </u>
+            , and{' '}
+            <u
+              className={[font['weight--500']].join(' ')}
+              style={{ color: '#1B4CC4' }}>
+              Nondiscrimination Policy
+            </u>
+            .
           </p>
         </div>
         <div className={[space['m-t--16']].join(' ')}>
-          <Button type='primary' title='Agree and continue' />
+          <Button
+            type='primary'
+            title={
+              loading ? (
+                <div
+                  className={[
+                    layout['flex'],
+                    layout['items-center'],
+                    layout['justify-center'],
+                  ].join(' ')}>
+                  <Animation type='loading' />
+                </div>
+              ) : (
+                <h4>Agree and continue</h4>
+              )
+            }
+          />
         </div>
       </div>
     </form>
