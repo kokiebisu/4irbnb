@@ -82,6 +82,13 @@ export interface ParticipateCardProps {
   categoryType?: string;
 }
 
+export interface HostCardProps {
+  imgUrl?: string;
+  host?: string;
+  stayType?: string;
+  location?: string;
+}
+
 export interface CardProps {
   extendsTo?: string;
   type?: string;
