@@ -143,6 +143,8 @@ export interface PrioritySectionProps {}
 
 export interface HelpSectionProps {}
 
+export interface ReadySectionProps {}
+
 export interface SectionProps {
   extendsTo?: string;
   type: string;
