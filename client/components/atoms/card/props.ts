@@ -28,7 +28,8 @@ export interface TypeStayCardProps {
 }
 
 export interface CategoryCardProps {
-  card?: any;
+  imgUrl?: string;
+  title?: string;
 }
 
 export interface CheckInCardProps {

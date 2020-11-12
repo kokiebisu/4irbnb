@@ -5,17 +5,13 @@ import styles from './card.module.scss';
 import { CategoryCardProps } from './props';
 
 export const CategoryCard: React.FC<CategoryCardProps> = ({
-  card = {
-    imgUrl:
-      'https://a0.muscache.com/im/pictures/2a16f833-464c-446c-8d74-33eb8c643975.jpg?im_w=1200',
-    title: 'Title should be here',
-    description: 'Description should be here',
-  },
+  imgUrl = 'https://a0.muscache.com/im/pictures/2a16f833-464c-446c-8d74-33eb8c643975.jpg?im_w=1200',
+  title = 'Title should be here',
 }) => {
   return (
     <div className={styles['category-section__card']}>
       <div className={styles['category-section__card--img']}>
-        <img src={card.imgUrl} alt='unique stays' />
+        <img src={imgUrl} alt='unique stays' />
       </div>
       <div>
         <h3
@@ -24,7 +20,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({
             font['size--17'],
             color['c--gray__4'],
           ].join(' ')}>
-          {card.title}
+          {title}
         </h3>
       </div>
     </div>
