@@ -28,3 +28,18 @@ export const category = TemplateStory.bind({});
 category.args = {
   type: 'category',
 };
+
+export const auth = TemplateStory.bind({});
+auth.args = {
+  type: 'auth',
+};
+
+export const login = TemplateStory.bind({});
+login.args = {
+  type: 'login',
+};
+
+export const signup = TemplateStory.bind({});
+signup.args = {
+  type: 'signup',
+};
