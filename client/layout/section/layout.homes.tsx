@@ -2,6 +2,7 @@ import React from 'react';
 import space from '../../styles/space.module.scss';
 import layout from '../../styles/layout.module.scss';
 import index from '../../styles/index.module.scss';
+import font from '../../styles/font.module.scss';
 
 import { HomesLayoutProps } from './props';
 
@@ -11,21 +12,16 @@ export const HomesLayout: React.FC<HomesLayoutProps> = ({
   spread = false,
 }) => {
   return (
-    <div className={`${[space['p-v--25'], index['p__category']].join(' ')}`}>
-      <div
-        className={`${
-          spread
-            ? [layout['container--spread']].join(' ')
-            : [layout['container']].join(' ')
-        } `}>
-        <div className={[space['p-v--16']].join(' ')}>
-          {title && (
-            <h3 className={`${[layout['font__section--title']].join(' ')} `}>
-              {title}
-            </h3>
-          )}
+    <div className={[space['p-v--32']].join(' ')}>
+      <div className={`${[space['p__homes']].join(' ')}`}>
+        <div>
+          <div className={[space['m-b--32']].join(' ')}>
+            {title && (
+              <h1 className={`${[font['size--40']].join(' ')} `}>{title}</h1>
+            )}
+          </div>
+          {children}
         </div>
-        {children}
       </div>
     </div>
   );
