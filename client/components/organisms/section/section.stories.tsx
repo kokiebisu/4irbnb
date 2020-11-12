@@ -178,3 +178,8 @@ export const available = SectionTemplate.bind({});
 available.args = {
   type: 'available',
 };
+
+export const all = SectionTemplate.bind({});
+all.args = {
+  type: 'all',
+};
