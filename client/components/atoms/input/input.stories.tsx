@@ -23,3 +23,8 @@ export const text = InputTemplate.bind({});
 text.args = {
   type: 'text',
 };
+
+export const password = InputTemplate.bind({});
+password.args = {
+  type: 'password',
+};

@@ -16,6 +16,7 @@ import { Animation } from '../../animation/animation.component';
 
 export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
   const [loading, setLoading] = useState(false);
+
   const formik = useFormik({
     initialValues: {
       firstname: '',
@@ -24,9 +25,13 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
       email: '',
       password: '',
     },
-    onSubmit: (values) => {
-      setLoading(true);
-      // alert(JSON.stringify(values, null, 2));
+
+    onSubmit: async () => {
+      const response = await fetch('http://localhost:8080/users/signup', {
+        method: 'POST',
+        body: JSON.stringify(formik.values),
+      });
+      console.log('response', response);
     },
   });
 
@@ -35,6 +40,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
       <div className={[space['p--24']].join(' ')}>
         <div>
           <Input
+            criteria=''
             type='text'
             direction='bottom'
             placeholder='First name'
@@ -105,10 +111,11 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
         <div className={[space['m-t--22']].join(' ')}>
           <div>
             <Input
-              type='text'
+              type='password'
               placeholder='Password'
               name='password'
               inputType='password'
+              errors={formik.errors.password}
               handleChange={formik.handleChange}
               value={formik.values.password}
             />
@@ -149,6 +156,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
         <div className={[space['m-t--16']].join(' ')}>
           <Button
             type='primary'
+            size='md'
             title={
               loading ? (
                 <div
