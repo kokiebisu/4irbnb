@@ -6,7 +6,7 @@ type Stay struct {
 }
 
 type StayInfo struct {
-	ID int `json:"id"`
+	ID string `json:"id"`
 	Imgurl string `json:"imgUrl"`
 	Superhost bool `json:"superhost"`
 	Ratings float32 `json:"ratings"`
@@ -14,24 +14,4 @@ type StayInfo struct {
 	Type string `json:"type"`
 	Location string `json:"location"`
 	Title string `json:"title"`
-}
-
-var stays = []Stay{
-	{
-		StayInfo{
-			1,
-			"www.google.com",
-			true,
-			4.5,
-			432,
-			"tiny house",
-			"Paris",
-			"The home sweet home",
-		},
-		"/stays",
-	},
-}
-
-func GetStays() []Stay {
-	return stays
 }

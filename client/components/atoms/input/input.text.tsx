@@ -15,6 +15,7 @@ export const TextInput: React.FC<TextInputProps> = ({
   value,
   direction,
   inputType = 'text',
+  pattern = '',
 }) => {
   const [fieldActive, setFieldActive] = useState(false);
 
