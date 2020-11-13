@@ -27,11 +27,11 @@ func (u *Users) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		u.AddUsers(w, req)
 		return 
 	}
-
 	w.WriteHeader(http.StatusMethodNotAllowed)
 }
 
 func (u *Users) GetUsers(rw http.ResponseWriter, req *http.Request) {
+	rw.Header().Set("Content-Type", "application/json")
 	u.l.Println("Handle GET user")
 	data := models.GetUsers()
 	fmt.Println("data from users", data)
@@ -49,7 +49,7 @@ func (u *Users) AddUsers(rw http.ResponseWriter, req *http.Request) {
 	err := d.Decode(&user)
 	if err != nil {
 		http.Error(rw, "Unable to unmarshal json", http.StatusBadRequest)
-
+	}
+	models.AddUsers(user)
 	u.l.Println("User: %v", user)
-}
 }

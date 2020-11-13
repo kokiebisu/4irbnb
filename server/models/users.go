@@ -31,3 +31,13 @@ var users = []User{
 func GetUsers() []User {
 	return users
 }
+
+func AddUsers(u User) {
+	u.ID = GetNextId()
+	users = append(users, u)
+}
+
+func GetNextId() int {
+	lu := users[len(users) - 1]
+	return lu.ID + 1
+}
