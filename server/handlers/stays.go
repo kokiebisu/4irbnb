@@ -2,7 +2,6 @@ package handlers
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"net/http"
 
@@ -30,9 +29,9 @@ func (s *Stays) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 }
 
 func (s *Stays) GetStays(rw http.ResponseWriter, req *http.Request) {
+	rw.Header().Set("Content-Type", "application/json")
 	s.l.Println("Handle GET Products")
 	data := models.GetStays()
-	fmt.Println("data from stays", data)
 	e := json.NewEncoder(rw)
 	err := e.Encode(data)
 	if err != nil {
@@ -52,5 +51,6 @@ func (s *Stays) AddStays(rw http.ResponseWriter, req *http.Request) {
 	if err != nil {
 		http.Error(rw, "Unable to unmarshal json", http.StatusInternalServerError)
 	}
+	models.AddStays(stay)
 	s.l.Println("Stays: %v", stay)
 }
