@@ -28,6 +28,30 @@
   color: gray !important;
 }
 
+// email
+.input[type='email']:invalid ~ .label {
+  position: absolute;
+  transition: all 150ms ease-in;
+  font-size: 16px;
+  top: 11px;
+  color: gray !important;
+}
+.input[type='email']:focus ~ .label {
+  position: absolute;
+  transition: all 150ms ease-in;
+  font-size: 13px;
+  top: 2px;
+  color: gray !important;
+}
+
+.input[type='email']:invalid:focus ~ .label {
+  position: absolute;
+  transition: all 150ms ease-in;
+  font-size: 13px;
+  top: 2px;
+  color: gray !important;
+}
+
 .input {
   position: relative;
   top: 0px;

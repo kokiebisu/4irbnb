@@ -48,7 +48,7 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
           font['weight--300'],
         ].join(' ')} ${spread ? layout['block'] : layout['inline-block']}`}
         onClick={onPress}>
-        <h4>{title}</h4>
+        {title}
       </motion.button>
     ),
     lg: (
@@ -67,7 +67,7 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
           font['weight--300'],
         ].join(' ')} ${spread ? layout['block'] : layout['inline-block']}`}
         onClick={onPress}>
-        <h4>{title}</h4>
+        {title}
       </motion.button>
     ),
   };

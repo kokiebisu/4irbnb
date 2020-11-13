@@ -45,3 +45,11 @@
     }
   }
 }
+
+.w__auth {
+  width: 100%;
+
+  @media screen and (min-width: 728px) {
+    width: 550px;
+  }
+}

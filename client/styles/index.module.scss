@@ -347,6 +347,15 @@
   }
 }
 
+.modal__auth {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  @media screen and (min-width: 728px) {
+    align-items: center;
+  }
+}
+
 .m {
   &__privacy {
     margin: 0 20px 20px;

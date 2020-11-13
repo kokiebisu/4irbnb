@@ -48,16 +48,19 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
                 type='text'
                 direction='bottom'
                 name='country'
+                placeholder='Country/Region'
                 inputType='country'
-                onChange={formik.handleChange}
+                handleChange={formik.handleChange}
                 value={formik.values.country}
               />
               <Input
                 type='text'
                 direction='top'
                 name='tel'
+                placeholder='Phone number'
                 inputType='tel'
-                onChange={formik.handleChange}
+                // pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}'
+                handleChange={formik.handleChange}
                 value={formik.values.tel}
               />
             </div>
