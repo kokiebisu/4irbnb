@@ -1,18 +1,40 @@
-import { useAuthDispatch, useAuthState } from '../../../context/auth';
-import { useFormik } from 'formik';
-import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
 import React from 'react';
+import { useFormik } from 'formik';
 
+/**
+ * Contexts
+ */
+import { useAuthDispatch, useAuthState } from '../../../context/auth';
+
+/**
+ * Hooks
+ */
+import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
+
+/**
+ * Styles
+ */
 import space from '../../../styles/space.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import color from '../../../styles/color.module.scss';
 import modalStyles from '../../organisms/modal/modal.module.scss';
-import { Input } from '../../../components/atoms/input/input.component';
-import { AuthTemplateProps } from '../props';
-import { Button } from '../../../components/atoms/button/button.component';
 
+/**
+ * Components
+ */
+import { Input } from '../../atoms/input/input.component';
+import { Button } from '../../atoms/button/button.component';
+
+/**
+ * Props
+ */
+import { AuthTemplateProps } from '../props';
+
+/**
+ * Renders the auth template component
+ */
 export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
   useLockBodyScroll();
   const authState = useAuthState();

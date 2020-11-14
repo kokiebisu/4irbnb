@@ -1,20 +1,34 @@
 import React from 'react';
 
-import layout from '../../styles/layout.module.scss';
-import homes from '../../styles/homes.module.scss';
-import space from '../../styles/space.module.scss';
-import color from '../../styles/color.module.scss';
-import responsive from '../../styles/responsive.module.scss';
-import font from '../../styles/font.module.scss';
-import shape from '../../styles/shape.module.scss';
+/**
+ * Styles
+ */
+import layout from '../../../styles/layout.module.scss';
+import homes from '../../../styles/homes.module.scss';
+import space from '../../../styles/space.module.scss';
+import color from '../../../styles/color.module.scss';
+import responsive from '../../../styles/responsive.module.scss';
+import font from '../../../styles/font.module.scss';
+import shape from '../../../styles/shape.module.scss';
 
-import { Header } from '../../components/organisms/header/header.component';
-import { Section } from '../../components/organisms/section/section.component';
-import { Bar } from '../../components/organisms/bar/bar.component';
-import { Footer } from '../../components/organisms/footer/footer.component';
-import { NearbyTemplateProps } from './props';
-import { Button } from '../../components/atoms/button/button.component';
+/**
+ * Props
+ */
+import { NearbyTemplateProps } from '../props';
 
+/**
+ * Components
+ */
+import { Header } from '../../../components/organisms/header/header.component';
+import { Section } from '../../../components/organisms/section/section.component';
+import { Bar } from '../../../components/organisms/bar/bar.component';
+import { Footer } from '../../../components/organisms/footer/footer.component';
+import { Button } from '../../../components/atoms/button/button.component';
+
+/**
+ * Renders the nearby template component
+ * @param param0 Prop
+ */
 export const NearbyTemplate: React.FC<NearbyTemplateProps> = ({
   city,
   filterCount = 1,

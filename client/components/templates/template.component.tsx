@@ -1,10 +1,10 @@
 import React from 'react';
-import { AuthTemplate } from './modal/template.auth';
-import { LoginTemplate } from './modal/template.login';
-import { SignupTemplate } from './modal/template.signup';
+import { AuthTemplate } from './auth/template.auth';
+import { LoginTemplate } from './auth/template.login';
+import { SignupTemplate } from './auth/template.signup';
 import { TemplateProps } from './props';
-import { CategoryTemplate } from './template.category';
-import { NearbyTemplate } from './template.nearby';
+import { CategoryTemplate } from './homes/template.category';
+import { NearbyTemplate } from './homes/template.nearby';
 
 export const Template: React.FC<TemplateProps> = ({
   type = 'nearby',

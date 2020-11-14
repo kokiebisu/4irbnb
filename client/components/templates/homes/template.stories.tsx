@@ -1,11 +1,11 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
-import { Template } from './template.component';
-import { ContextProvider } from '../../context/provider';
-import { TemplateProps } from './props';
+import { Template } from '../template.component';
+import { ContextProvider } from '../../../context/provider';
+import { TemplateProps } from '../props';
 
 export default {
-  title: 'Design System/Templates',
+  title: 'Design System/Templates/Homes',
   component: Template,
   argTypes: { onPress: { action: 'clicked' } },
   decorators: [
@@ -27,19 +27,4 @@ nearby.args = {
 export const category = TemplateStory.bind({});
 category.args = {
   type: 'category',
-};
-
-export const auth = TemplateStory.bind({});
-auth.args = {
-  type: 'auth',
-};
-
-export const login = TemplateStory.bind({});
-login.args = {
-  type: 'login',
-};
-
-export const signup = TemplateStory.bind({});
-signup.args = {
-  type: 'signup',
 };

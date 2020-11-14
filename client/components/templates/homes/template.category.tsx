@@ -1,18 +1,39 @@
-import { Header } from '../../components/organisms/header/header.component';
 import React from 'react';
 
-import layout from '../../styles/layout.module.scss';
-import homes from '../../styles/homes.module.scss';
-import space from '../../styles/space.module.scss';
-import { Section } from '../../components/organisms/section/section.component';
-import responsive from '../../styles/responsive.module.scss';
-import { Bar } from '../../components/organisms/bar/bar.component';
-import { Footer } from '../../components/organisms/footer/footer.component';
-import { CategoryTemplateProps } from './props';
-import font from '../../styles/font.module.scss';
-import shape from '../../styles/shape.module.scss';
-import { Button } from '../../components/atoms/button/button.component';
+/**
+ * Components
+ */
+import { Header } from '../../organisms/header/header.component';
 
+/**
+ * Styles
+ */
+import layout from '../../../styles/layout.module.scss';
+import homes from '../../../styles/homes.module.scss';
+import space from '../../../styles/space.module.scss';
+import responsive from '../../../styles/responsive.module.scss';
+import font from '../../../styles/font.module.scss';
+import shape from '../../../styles/shape.module.scss';
+
+/**
+ * Components
+ */
+import { Section } from '../../organisms/section/section.component';
+import { Bar } from '../../organisms/bar/bar.component';
+import { Footer } from '../../organisms/footer/footer.component';
+import { Button } from '../../atoms/button/button.component';
+
+/**
+ * Props
+ */
+import { CategoryTemplateProps } from '../props';
+
+/**
+ * Renders the category template component
+ * @param {string} stayType - Type of stay
+ * @param {number} filterCount - Number of filters
+ * @param {Object[]} filters - List of filters
+ */
 export const CategoryTemplate: React.FC<CategoryTemplateProps> = ({
   stayType = 'house',
   filterCount = 1,
