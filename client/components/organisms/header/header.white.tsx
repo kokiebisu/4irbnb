@@ -1,19 +1,43 @@
 import React from 'react';
+import Link from 'next/link';
+
+/**
+ * Styles
+ */
 import shape from '../../../styles/shape.module.scss';
 import space from '../../../styles/space.module.scss';
 import styles from '../../../styles/index.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import color from '../../../styles/color.module.scss';
 import details from '../../../styles/details.module.scss';
+
+/**
+ * Components
+ */
 import { menu as menuModal } from '../../organisms/modal/modal.stories';
 import { Modal } from '../modal/modal.component';
-import { useToggleDispatch, useToggleState } from '../../../context/toggle';
 import { Button } from '../../../components/atoms/button/button.component';
+
+/**
+ * Contexts
+ */
+import { useToggleState } from '../../../context/toggle';
+
+/**
+ * Vectors
+ */
 import { NameLogo, NoNameLogo } from '../../../public/svg/logo';
 import { ChevronLeft } from '../../../public/svg/regular';
-import { WhiteHeaderProps } from './props';
-import Link from 'next/link';
 
+/**
+ * Props
+ */
+import { WhiteHeaderProps } from './props';
+
+/**
+ * Renders the white header
+ * @param {boolean} spread - Whether if the layout should be spread out or not
+ */
 export const WhiteHeader: React.FC<WhiteHeaderProps> = ({ spread = false }) => {
   let toggleState = useToggleState();
   return (
