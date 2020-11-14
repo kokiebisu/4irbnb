@@ -1,10 +1,26 @@
-import { Activities, Computer, Host } from '../../../public/svg/original';
 import React from 'react';
+
+/**
+ * Vectors
+ */
+import { Activities, Computer, Host } from '../../../public/svg/original';
+
+/**
+ * Props
+ */
 import { ExperienceBulletProps } from './props';
+
+/**
+ * Styles
+ */
 import layout from '../../../styles/layout.module.scss';
 import font from '../../../styles/font.module.scss';
 import space from '../../../styles/space.module.scss';
 
+/**
+ * Renders the experience bullet
+ * @param {string} experienceType - Type of experience bullet
+ */
 export const ExperienceBullet: React.FC<ExperienceBulletProps> = ({
   experienceType = 'hosts',
 }) => {

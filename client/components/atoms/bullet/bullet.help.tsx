@@ -1,15 +1,31 @@
+import React from 'react';
+
+/**
+ * Vectors
+ */
 import {
   Analytics,
   CustomerService,
   Education,
   ToolBox,
 } from '../../../public/svg/original';
-import React from 'react';
-import layout from '../../../styles/layout.module.scss';
+
+/**
+ * Props
+ */
 import { HelpBulletProps } from './props';
+
+/**
+ * Styles
+ */
+import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import font from '../../../styles/font.module.scss';
 
+/**
+ * Renders the help bullet
+ * @param {string} help - Type of help bullet
+ */
 export const HelpBullet: React.FC<HelpBulletProps> = ({ help = 'support' }) => {
   const helps = {
     support: {
