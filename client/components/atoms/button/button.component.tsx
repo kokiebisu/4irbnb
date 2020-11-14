@@ -23,13 +23,12 @@ interface mapProps {
 }
 
 export const Button: React.FC<ButtonProps> = ({
-  to,
   extendsTo,
   type,
   children,
   ...props
 }) => {
-  const { onPress } = props;
+  const { onPress, to } = props;
   const types: mapProps = {
     auth: <AuthButton {...props} />,
     globe: <GlobeButton {...props} />,
@@ -54,7 +53,10 @@ export const Button: React.FC<ButtonProps> = ({
 
   if (to) {
     return (
-      <div className={extendsTo} data-testid='button'>
+      <div
+        style={{ cursor: 'pointer' }}
+        className={extendsTo}
+        data-testid='button'>
         <Link href={to}>{children}</Link>
       </div>
     );

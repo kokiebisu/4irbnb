@@ -133,9 +133,17 @@ export interface BringSectionProps {
 
 export interface ExperiencesSectionProps {}
 
+export interface AllSectionProps {}
+
 export interface AvailableSectionProps {
   availables?: any;
 }
+
+export interface PrioritySectionProps {}
+
+export interface HelpSectionProps {}
+
+export interface ReadySectionProps {}
 
 export interface SectionProps {
   extendsTo?: string;

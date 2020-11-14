@@ -178,3 +178,23 @@ export const available = SectionTemplate.bind({});
 available.args = {
   type: 'available',
 };
+
+export const all = SectionTemplate.bind({});
+all.args = {
+  type: 'all',
+};
+
+export const priority = SectionTemplate.bind({});
+priority.args = {
+  type: 'priority',
+};
+
+export const help = SectionTemplate.bind({});
+help.args = {
+  type: 'help',
+};
+
+export const ready = SectionTemplate.bind({});
+ready.args = {
+  type: 'ready',
+};

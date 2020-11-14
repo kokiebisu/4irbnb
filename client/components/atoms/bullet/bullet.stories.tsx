@@ -94,15 +94,41 @@ bring.args = {
   type: 'bring',
 };
 
-export const experiences = BulletTemplate.bind({});
-experiences.args = {
-  type: 'experiences',
+export const experience = BulletTemplate.bind({});
+experience.args = {
+  type: 'experience',
 };
-experiences.argTypes = {
+experience.argTypes = {
   experienceType: {
     control: {
       type: 'select',
       options: ['host', 'activities', 'global'],
+    },
+  },
+};
+
+export const priority = BulletTemplate.bind({});
+priority.args = {
+  type: 'priority',
+};
+priority.argTypes = {
+  priority: {
+    control: {
+      type: 'select',
+      options: ['protection', 'guidance', 'requirements'],
+    },
+  },
+};
+
+export const help = BulletTemplate.bind({});
+help.args = {
+  type: 'help',
+};
+help.argTypes = {
+  help: {
+    control: {
+      type: 'select',
+      options: ['support', 'tools', 'insights', 'education'],
     },
   },
 };

@@ -37,7 +37,7 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = () => {
         </div>
         <div className={[layout['items-center']].join(' ')}>
           <div className={styles['searchbar__host']}>
-            <Button type='host' inverse to='/' />
+            <Button type='host' inverse to='/host/homes' />
           </div>
           <div
             className={[

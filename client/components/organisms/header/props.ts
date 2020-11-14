@@ -9,6 +9,12 @@ export interface DetailsHeaderProps {
   spread?: boolean;
 }
 
+export interface HomesHeaderProps {
+  spread?: boolean;
+}
+
+export interface ExperiencesHeaderProps {}
+
 export interface HeaderProps {
   extendsTo?: string;
   type: string;
