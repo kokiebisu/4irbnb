@@ -74,7 +74,7 @@ export const KnowSection: React.FC<KnowSectionProps> = ({
     ),
     experience: (
       <>
-        <div>
+        <div style={{ width: '50%' }} className={[space['m-r--32']].join(' ')}>
           <div className={[space['m-b--16']].join(' ')}>
             <h3 className={[font['size--16']].join(' ')}>
               Cancellation policy
@@ -91,7 +91,7 @@ export const KnowSection: React.FC<KnowSectionProps> = ({
           </div>
         </div>
 
-        <div>
+        <div style={{ width: '50%' }} className={[space['m-r--32']].join(' ')}>
           <div className={[space['m-b--16']].join(' ')}>
             <h3 className={[font['size--16']].join(' ')}>Guest requirements</h3>
           </div>
@@ -104,18 +104,6 @@ export const KnowSection: React.FC<KnowSectionProps> = ({
           </div>
           <div>
             <u>Show more</u>
-          </div>
-        </div>
-        <div>
-          <div className={[space['m-b--16']].join(' ')}>
-            <h3 className={[font['size--16']].join(' ')}>More tips</h3>
-          </div>
-          <div className={[space['m-b--32']].join(' ')}>
-            <p className={[font['weight--100']].join(' ')}>
-              Please prepare all the ingredients that I listed. This experience
-              is a live broadcast, please ensure your networking device connect
-              with network!
-            </p>
           </div>
         </div>
       </>
@@ -137,9 +125,7 @@ export const KnowSection: React.FC<KnowSectionProps> = ({
       </div>
       <div
         style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
-          columnGap: 20,
+          display: 'flex',
         }}
         className={[].join(' ')}>
         {types[layoutType]}

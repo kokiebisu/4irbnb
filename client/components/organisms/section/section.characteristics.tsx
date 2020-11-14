@@ -166,7 +166,7 @@ export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
                       color['c--g__2'],
                       font['size--14'],
                     ].join(' ')}>
-                    {ratings}
+                    {ratings.toFixed(1)}
                   </h3>
                   <p
                     className={[
