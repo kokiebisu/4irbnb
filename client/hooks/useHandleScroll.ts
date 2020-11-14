@@ -1,5 +1,8 @@
-import { useState, useLayoutEffect, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
+/**
+ * A custom hook which calculates the scroll position
+ */
 export const useHandleScroll = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const handleScroll = () => {
