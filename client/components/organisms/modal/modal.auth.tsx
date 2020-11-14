@@ -1,4 +1,9 @@
-import React, { useReducer } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
+
+/**
+ * Styles
+ */
 import layout from '../../../styles/layout.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import color from '../../../styles/color.module.scss';
@@ -6,17 +11,25 @@ import space from '../../../styles/space.module.scss';
 import font from '../../../styles/font.module.scss';
 import modal from './modal.module.scss';
 
+/**
+ * Components
+ */
 import { Button } from '../../../components/atoms/button/button.component';
-
-import { motion } from 'framer-motion';
-
-import { RegisterModalProps } from './props';
-import { useToggleDispatch } from '../../../context/toggle';
-import { useAuthState } from '../../../context/auth';
 import { Template } from '../../../components/templates/template.component';
 
 /**
- * Wrapper
+ * Props
+ */
+import { RegisterModalProps } from './props';
+
+/**
+ * Contexts
+ */
+import { useToggleDispatch } from '../../../context/toggle';
+import { useAuthState } from '../../../context/auth';
+
+/**
+ * Renders the auth modal
  */
 export const AuthModal: React.FC<RegisterModalProps> = () => {
   const toggleDispatch = useToggleDispatch();

@@ -1,13 +1,29 @@
 import React from 'react';
 
+/**
+ * Components
+ */
 import { Button } from '../../../components/atoms/button/button.component';
 import layout from '../../../styles/layout.module.scss';
 import font from '../../../styles/font.module.scss';
 import color from '../../../styles/color.module.scss';
 import space from '../../../styles/space.module.scss';
+
+/**
+ * Vectors
+ */
 import { Star } from '../../../public/svg/original';
+
+/**
+ * Props
+ */
 import { AvailabilityModalProps } from './props';
 
+/**
+ * Renders the modal which gives all the available options
+ * @param {number} ratings - Average ratings from the users
+ * @param {number} reviews - Total number of reviews from the users
+ */
 export const AvailabilityModal: React.FC<AvailabilityModalProps> = ({
   ratings = 4.99,
   reviews = 271,
