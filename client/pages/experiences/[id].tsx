@@ -38,6 +38,8 @@ const id: () => string | JSX.Element = () => {
       hostImgUrl:
         'https://a0.muscache.com/im/pictures/user/aab93790-0a1a-4131-a5fc-e794b394fe18.jpg?im_w=240',
       host: 'Cici',
+      mainDescription:
+        'Join us in a class to learn how to make famous Shanghainese xiǎolóngbāo soup dumplings from start to finish. You’ll learn how to knead a dough, how to roll wrappers and how to pinch a dumpling by your hands! Of cause I’ll even reveal how the soup gets wrapped up inside the dumpling! You will also learn how to make a yummy dipping sauce that complements the dumplings. Finally, we will enjoy our handmade xiǎolóngbāo together. You will also get to take home an easy-to-follow recipe so you can recreate the cooking experience in your own kitchen. This experience will live broadcast on zoom, you will get all the information and details after your booking. This Experience is GOOD for Team Building & Family Party!Other things to notePlease prepare all the ingredients that I listed.This experience is a live broadcast, please ensure your networking device connect with network!',
     },
   };
   const toggleState = useToggleState();
@@ -106,7 +108,11 @@ const id: () => string | JSX.Element = () => {
                 className={[color['b-t--white__2'], space['p-v--32']].join(
                   ' '
                 )}>
-                <Section layoutType='experience' type='description' />
+                <Section
+                  layoutType='experience'
+                  type='description'
+                  {...experiences[experienceID]}
+                />
               </div>
               <div
                 className={[color['b-t--white__2'], space['p-v--32']].join(

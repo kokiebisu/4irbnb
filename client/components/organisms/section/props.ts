@@ -46,11 +46,9 @@ export type CategorySectionProps = SectionBasicProps & {
 };
 
 export type DescriptionSectionProps = {
-  data?: {
-    description: string;
-    space: string;
-    access: string;
-  };
+  mainDescription?: string;
+  spaceDescription?: string;
+  accessDescription?: string;
   layoutType?: string;
 };
 
