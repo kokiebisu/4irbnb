@@ -105,7 +105,7 @@ export const experiences = {
       'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1755988-media_library/original/bc33a598-9f2c-42d3-9473-6fccec6b6c18.jpeg?im_w=480',
     ],
     characteristics: {
-      time: 120,
+      time: 90,
       devices: ['computer', 'phone', 'tablet'],
       people: 10,
       group: 100,
@@ -197,7 +197,7 @@ export const experiences = {
       'https://a0.muscache.com/im/pictures/de09a803-94be-4a47-b734-33f0762eab60.jpg?im_w=480',
     ],
     characteristics: {
-      time: 75,
+      time: 60,
       devices: ['computer', 'phone', 'tablet'],
       people: 10,
       group: 30,
