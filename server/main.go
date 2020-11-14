@@ -20,8 +20,8 @@ func main() {
 	uh := handlers.NewUsers(l)
 
 	sm := http.NewServeMux()
-	sm.Handle("/stays", sh)
-	sm.Handle("/users", uh)
+	sm.Handle("/stays/", sh)
+	sm.Handle("/users/", uh)
 
 	server := &http.Server{
 		Addr: ":8080",
