@@ -42,7 +42,8 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     },
   ],
-  total = 100,
+  ratings = 5.0,
+  numberOfReviews = 100,
   layoutType = 'room',
 }) => {
   return (
@@ -64,7 +65,7 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({
                 font['size--22'],
                 color['c--gray__3'],
               ].join(' ')}>
-              4.93
+              {ratings.toFixed(1)}
             </h3>
             <h3
               className={[
@@ -72,7 +73,7 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({
                 font['size--22'],
                 color['c--gray__3'],
               ].join(' ')}>
-              (1 reviews)
+              ({numberOfReviews} reviews)
             </h3>
           </div>
         </div>
@@ -119,7 +120,11 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({
           })}
         </div>
         <div className={[space['m-t--16']].join(' ')}>
-          <Button type='border' size='md' title={`Show all ${total} reviews`} />
+          <Button
+            type='border'
+            size='md'
+            title={`Show all ${numberOfReviews} reviews`}
+          />
         </div>
       </div>
     </>
