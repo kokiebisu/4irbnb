@@ -30,7 +30,7 @@ import { Button } from '../../../components/atoms/button/button.component';
 /**
  * Hooks
  */
-import { useHandleScroll } from 'hooks/useHandleScroll';
+import { useHandleScroll } from '../../../hooks/useHandleScroll';
 
 /**
  * Renders the details header

@@ -29,7 +29,7 @@ import * as Helpers from '../../../helper/array';
  */
 import { nearbyPic } from '../../../content';
 import { useSlider } from '../../../hooks/useSlider';
-import { useHandleContainerWidthResize } from 'hooks/useHandleContainerWidthResize';
+import { useHandleContainerWidthResize } from '../../../hooks/useHandleContainerWidthResize';
 
 /**
  * Renders the also section
