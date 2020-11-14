@@ -1,6 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+
+/**
+ * Components
+ */
 import { AuthButton } from './button.auth';
 import { ButtonProps } from './props';
 import { GlobeButton } from './button.globe';
@@ -22,6 +26,12 @@ interface mapProps {
   [key: string]: JSX.Element;
 }
 
+/**
+ * Bundles the button components
+ * @param {string} extendsTo - Add custom styling to the specified component
+ * @param {string} type - Specifies the type of button component
+ * @param {Object} children - A JSX that will be part of the component
+ */
 export const Button: React.FC<ButtonProps> = ({
   extendsTo,
   type,

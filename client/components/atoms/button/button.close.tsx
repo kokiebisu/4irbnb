@@ -1,13 +1,28 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+
+/**
+ * Vectors
+ */
 import { Close } from '../../../public/svg/original';
 
+/**
+ * Styles
+ */
 import color from '../../../styles/color.module.scss';
 import space from '../../../styles/space.module.scss';
-import { CloseButtonProps } from './props';
 import button from './button.module.scss';
 import shape from '../../../styles/shape.module.scss';
 
+/**
+ * Props
+ */
+import { CloseButtonProps } from './props';
+
+/**
+ * Renders the close button component
+ * @param {function} onPress - The action taken when the button is pressed
+ */
 export const CloseButton: React.FC<CloseButtonProps> = ({
   onPress = () => alert('close button pressed'),
 }) => {

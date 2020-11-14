@@ -1,6 +1,9 @@
 import React from 'react';
-
 import { motion } from 'framer-motion';
+
+/**
+ * Styles
+ */
 import shape from '../../../styles/shape.module.scss';
 import color from '../../../styles/color.module.scss';
 import animation from '../../../styles/animation.module.scss';
@@ -8,9 +11,20 @@ import space from '../../../styles/space.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import font from '../../../styles/font.module.scss';
 
+/**
+ * Vectors
+ */
 import { MagnifyGlass } from '../../../public/svg/original';
+
+/**
+ * Props
+ */
 import { SearchbarButtonProps } from './props';
 
+/**
+ * Renders the searchbar button component
+ * @param {boolean} mini - Whether if the button is the minified version or not
+ */
 export const SearchbarButton: React.FC<SearchbarButtonProps> = ({
   mini = false,
 }) => {

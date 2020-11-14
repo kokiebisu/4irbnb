@@ -1,7 +1,19 @@
-import { Flag } from 'public/svg/original';
 import React from 'react';
 
-export const ReportButton = () => {
+/**
+ * Vectors
+ */
+import { Flag } from 'public/svg/original';
+
+/**
+ * Props
+ */
+import { ReportButtonProps } from './props';
+
+/**
+ * Renders the report button
+ */
+export const ReportButton: React.FC<ReportButtonProps> = () => {
   return (
     <button>
       <div>
