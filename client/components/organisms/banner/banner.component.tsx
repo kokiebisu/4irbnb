@@ -1,4 +1,8 @@
 import React from 'react';
+
+/**
+ * Components
+ */
 import { ExperiencesBanner } from './banner.experiences';
 import { HomesBanner } from './banner.homes';
 

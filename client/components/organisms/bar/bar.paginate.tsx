@@ -7,6 +7,9 @@ import Router from 'next/router';
  */
 import { Button } from '../../../components/atoms/button/button.component';
 
+/**
+ * Props
+ */
 import { PaginateBarProps } from './props';
 
 /**
@@ -19,6 +22,11 @@ import shape from '../../../styles/shape.module.scss';
 import bar from './bar.module.scss';
 import font from '../../../styles/font.module.scss';
 
+/**
+ * Renders paginate bar component
+ * @param {number} page - Current page
+ * @param {number} total - Total number of pages
+ */
 export const PaginateBar: React.FC<PaginateBarProps> = ({
   page = 1,
   total = 15,
