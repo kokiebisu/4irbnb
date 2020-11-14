@@ -1,15 +1,34 @@
-import { motion } from 'framer-motion';
 import React from 'react';
+import { motion } from 'framer-motion';
 
+/**
+ * Styles
+ */
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import animation from '../../../styles/animation.module.scss';
+
+/**
+ * Vectors
+ */
 import { Avatar, Bars } from '../../../public/svg/original';
+
+/**
+ * Props
+ */
 import { MenuButtonProps } from './props';
+
+/**
+ * Contexts
+ */
 import { useToggleDispatch } from '../../../context/toggle';
 
+/**
+ * Renders the menu button components
+ * @param {boolean} inverse - Whether if the button takes the inverse styling or not
+ */
 export const MenuButton: React.FC<MenuButtonProps> = ({ inverse = false }) => {
   let toggleDispatch = useToggleDispatch();
   const triggerModal = () => {

@@ -1,14 +1,30 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+
+/**
+ * Styles
+ */
 import shape from '../../../styles/shape.module.scss';
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import animation from '../../../styles/animation.module.scss';
-import { motion } from 'framer-motion';
+
+/**
+ * Components
+ */
 import { Button } from '../../../components/atoms/button/button.component';
+
+/**
+ * Props
+ */
 import { MenuModalProps } from './props';
 
+/**
+ * Renders the menu modal
+ * @param refProp
+ */
 export const MenuModal: React.FC<MenuModalProps> = ({ refProp }) => {
   return (
     <motion.div

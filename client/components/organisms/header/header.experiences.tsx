@@ -1,11 +1,30 @@
 import React from 'react';
+
+/**
+ * Styles
+ */
 import shape from '../../../styles/shape.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
+
+/**
+ * Components
+ */
 import { Button } from '../../../components/atoms/button/button.component';
+
+/**
+ * Vectors
+ */
 import { NoNameLogo } from '../../../public/svg/logo';
+
+/**
+ * Props
+ */
 import { ExperiencesHeaderProps } from './props';
 
+/**
+ * Renders the experiences header
+ */
 export const ExperiencesHeader: React.FC<ExperiencesHeaderProps> = () => {
   return (
     <header style={{ height: 80 }} className={[space['p-h--0']].join(' ')}>

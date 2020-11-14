@@ -1,10 +1,26 @@
+import React from 'react';
 import Link from 'next/link';
+
+/**
+ * Styles
+ */
 import menubar from './menubar.module.scss';
+
+/**
+ * Vectors
+ */
 import { MenuBarLogo } from '../../../public/svg/logo';
 import { Login, Saved } from '../../../public/svg/regular';
-import React from 'react';
+
+/**
+ * Props
+ */
 import { MenuBarProps } from './props';
 
+/**
+ * Renders the menubar component
+ * @param {Object[]} items - The categories for the menubar
+ */
 export const MenuBar: React.FC<MenuBarProps> = ({ extendsTo = '' }) => {
   const items = [
     { component: <MenuBarLogo width={25} />, name: 'Explore', selected: true },
