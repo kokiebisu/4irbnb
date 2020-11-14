@@ -1,8 +1,16 @@
 import React from 'react';
+
+/**
+ * Styles
+ */
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
+
+/**
+ * Vectors
+ */
 import {
   CarbonMonoxideAlarm,
   Kitchen,
@@ -11,8 +19,17 @@ import {
   Heating,
   TV,
 } from '../../../public/svg/original';
+
+/**
+ * Props
+ */
 import { AmenityBulletProps } from './props';
 
+/**
+ * Renders the amenity bullet
+ * @param {string} amenityType - Type of amenity
+ * @param {boolean} removed - Strikes through if removed
+ */
 export const AmenityBullet: React.FC<AmenityBulletProps> = ({
   amenityType = 'kitchen',
   removed = false,

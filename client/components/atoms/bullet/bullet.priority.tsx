@@ -1,14 +1,34 @@
+import React from 'react';
+
+/**
+ * Vectors
+ */
 import {
   Guidance,
   Protection,
   Requirements,
 } from '../../../public/svg/original';
-import React from 'react';
+
+/**
+ * Components
+ */
 import { Button } from '../button/button.component';
+
+/**
+ * Styles
+ */
 import space from '../../../styles/space.module.scss';
 import font from '../../../styles/font.module.scss';
+
+/**
+ * Props
+ */
 import { PriorityBulletProps } from './props';
 
+/**
+ * Renders the priority bullet
+ * @param {string} priority - Type of priority bullet
+ */
 export const PriorityBullet: React.FC<PriorityBulletProps> = ({
   priority = 'protection',
 }) => {

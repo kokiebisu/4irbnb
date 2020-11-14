@@ -1,11 +1,23 @@
 import React from 'react';
 
+/**
+ * Styles
+ */
 import font from '../../../styles/font.module.scss';
 import space from '../../../styles/space.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import shape from '../../../styles/space.module.scss';
+
+/**
+ * Props
+ */
 import { ScoreBulletProps } from './props';
 
+/**
+ * Renders the score bullet
+ * @param {string} category - Type of score bullet
+ * @param {number} average - Average score
+ */
 export const ScoreBullet: React.FC<ScoreBulletProps> = ({
   category = 'Aspect',
   average = 5.0,

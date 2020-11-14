@@ -1,4 +1,8 @@
 import React from 'react';
+
+/**
+ * Components
+ */
 import { AmenityBullet } from './bullet.amenity';
 import { BringBullet } from './bullet.bring';
 import { CharacteristicBullet } from './bullet.characteristics';
@@ -15,6 +19,11 @@ interface mapProps {
   [key: string]: JSX.Element;
 }
 
+/**
+ * Bundles the bullet components
+ * @param {string} extendsTo - Adds custom styling to the bullet component
+ * @param {string} type - Specifies the type of section component
+ */
 export const Bullet: React.FC<BulletProps> = ({
   extendsTo,
   type,
