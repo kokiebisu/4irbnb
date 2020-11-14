@@ -15,12 +15,14 @@ import {
   Time,
 } from '../../../public/svg/original';
 import { CharacteristicBulletProps } from './props';
+import * as Helper from '../../../helper/time';
 
 export const CharacteristicBullet: React.FC<CharacteristicBulletProps> = ({
   characteristicType = 'house',
-  time = 1,
-  limit = 10,
-  privateLimit = 100,
+  time = 60,
+  devices = ['computer', 'smartphone'],
+  people = 10,
+  group = 100,
   languages = ['English', 'Chinese'],
 }) => {
   const icons = {
@@ -53,19 +55,19 @@ export const CharacteristicBullet: React.FC<CharacteristicBulletProps> = ({
     },
     time: {
       icon: <Time width={32} />,
-      title: time > 1 ? `${time} hours` : '1 hour',
+      title: Helper.displayDuration(time),
     },
     devices: {
       icon: <Devices width={32} />,
-      title: 'Join from your computer, phone, or tablet.',
+      title: `Join from your ${devices}`,
     },
     people: {
       icon: <People width={32} />,
-      title: `Up to ${limit} people. Private groups available for up to ${privateLimit}`,
+      title: `Up to ${people} people. Private groups available for up to ${group}`,
     },
     language: {
       icon: <Language width={32} />,
-      title: `Hosted in ${languages.join(', ')} (Simplified)`,
+      title: `Hosted in ${languages} (Simplified)`,
     },
   };
 
