@@ -1,17 +1,53 @@
-import * as React from 'react';
+import React from 'react';
+
+/**
+ * Styles
+ */
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import font from '../../../styles/font.module.scss';
 import color from '../../../styles/color.module.scss';
 import shape from '../../../styles/shape.module.scss';
+
+/**
+ * Props
+ */
 import { CharacteristicsSectionProps } from './props';
+
+/**
+ * Components
+ */
 import { Bullet } from '../../../components/atoms/bullet/bullet.component';
+
+/**
+ * Vectors
+ */
 import { DevicesInverse, Star } from '../../../public/svg/original';
+
+/**
+ * Styles
+ */
 import section from './section.module.scss';
 
+/**
+ * Renders the characteristics of the room/experience
+ * @param {string} title - Title of the room/experience
+ * @param {string} stayType - Type of stay
+ * @param {string} host - Name of the host
+ * @param {number} guests - Number of guests
+ * @param {number} bedrooms - Number of bedrooms
+ * @param {number} beds - Number of beds
+ * @param {string} hostImgUrl - Image of the host
+ * @param {string} layoutType - Type of page it should display
+ * @param {number} ratings - Ratings for the room/experience
+ * @param {number} numberOfReviews - Number of reviews received
+ * @param {string} location - Location of the room/experience
+ * @param {string} country - Country of the room/experience
+ * @param {Object} characteristics - The characteristics of the room/experience
+ */
 export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
   title = 'Making & Eating Soup Dumplings vegan Ok',
-  stayType = 'Type',
+  stayType = 'Tiny house',
   host = 'Host',
   guests = 1,
   bedrooms = 1,

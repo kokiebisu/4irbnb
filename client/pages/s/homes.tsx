@@ -1,11 +1,30 @@
 import React from 'react';
-import layout from '../../styles/layout.module.scss';
 import { useRouter } from 'next/router';
+
+/**
+ * Context
+ */
+import { useToggleState } from '../../context/toggle';
+
+/**
+ * Layout
+ */
+import layout from '../../styles/layout.module.scss';
+
+/**
+ * Components
+ */
 import { Template } from '../../components/templates/template.component';
-import { useToggleState } from 'context/toggle';
 import { Modal } from '../../components/organisms/modal/modal.component';
+
+/**
+ * Styles
+ */
 import shape from '../../styles/shape.module.scss';
 
+/**
+ * Renders the component for path /s/homes
+ */
 const Homes = () => {
   const router = useRouter();
   const {

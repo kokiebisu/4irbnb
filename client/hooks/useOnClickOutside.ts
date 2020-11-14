@@ -1,6 +1,10 @@
 import { useEffect } from 'react';
 
-// Hook
+/**
+ * A custom hook which allows modals to close when clicked outside of itself
+ * @param ref
+ * @param handler
+ */
 export const useOnClickOutside = (ref, handler) => {
   useEffect(
     () => {
