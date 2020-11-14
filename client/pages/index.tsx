@@ -2,7 +2,7 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import index from '../styles/index.module.scss';
 import layout from '../styles/layout.module.scss';
 import space from '../styles/space.module.scss';
-import { categories, anywhere, onlines } from '../content';
+import { categories, anywhere } from '../content';
 import { Animation } from '../components/animation/animation.component';
 import { Modal } from '../components/organisms/modal/modal.component';
 import color from '../styles/color.module.scss';
@@ -16,7 +16,10 @@ import { Layout } from '../layout/layout.component';
 import { nearby } from '../data/stays';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Header } from '../components/organisms/header/header.component';
-import { time } from 'console';
+
+import { useHandleScroll } from '../hooks/useHandleScroll';
+import { useHandleResize } from '../hooks/useHandleResize';
+import { useTimeout } from '../hooks/useTimeout';
 
 const CovidNotice = () => {
   return (
@@ -37,49 +40,16 @@ const CovidNotice = () => {
 };
 
 const LandingPage = () => {
-  const [loading, setLoading] = useState(false);
+  const loading = useTimeout(5000);
   const toggleState = useToggleState();
-  const wrapperRef = useRef(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [pageHeight, setPageHeight] = useState(0);
-
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  };
-
-  const handleResize = () => {
-    const height = document.body.scrollHeight - document.body.clientHeight;
-    setPageHeight(height);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(true);
-    }, 5000);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize, { passive: true });
-    handleResize();
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const scrollPosition = useHandleScroll();
+  const pageHeight = useHandleResize();
 
   return (
     <div
       style={{ overflowX: 'hidden' }}
       className={[layout['relative'], shape['min-h--fullv']].join(' ')}>
-      <div ref={wrapperRef}>
+      <div>
         <CovidNotice />
         <Section type='banner' />
         {loading ? (
@@ -162,7 +132,6 @@ const LandingPage = () => {
             </motion.div>
           )}
         </AnimatePresence>
-
         <AnimatePresence>
           {scrollPosition < pageHeight && (
             <motion.div
@@ -179,7 +148,6 @@ const LandingPage = () => {
             </motion.div>
           )}
         </AnimatePresence>
-
         {toggleState.auth && (
           <div
             style={{
