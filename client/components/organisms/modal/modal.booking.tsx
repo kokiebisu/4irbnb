@@ -1,15 +1,30 @@
 import React from 'react';
 
+/**
+ * Styles
+ */
 import modal from './modal.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import color from '../../../styles/color.module.scss';
 import space from '../../../styles/space.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import font from '../../../styles/font.module.scss';
-import { BookingModalProps } from './props';
-import { Button } from '../../../components/atoms/button/button.component';
 import responsive from '../../../styles/responsive.module.scss';
 
+/**
+ * Props
+ */
+import { BookingModalProps } from './props';
+
+/**
+ * Components
+ */
+import { Button } from '../../../components/atoms/button/button.component';
+
+/**
+ * Renders the booking modal
+ * @param {Object[]} availables - Lists all the available dates
+ */
 export const BookingModal: React.FC<BookingModalProps> = ({
   availables = [
     {
