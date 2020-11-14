@@ -6,7 +6,6 @@ import { ModalProps } from './props';
 
 export default {
   title: 'Design System/Organisms/Modal',
-  component: Modal,
   argTypes: { onPress: { action: 'clicked' } },
   decorators: [
     (Story) => (

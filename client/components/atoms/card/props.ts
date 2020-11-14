@@ -28,7 +28,8 @@ export interface TypeStayCardProps {
 }
 
 export interface CategoryCardProps {
-  card?: any;
+  imgUrl?: string;
+  title?: string;
 }
 
 export interface CheckInCardProps {
@@ -80,6 +81,13 @@ export interface AvailableCardProps {
 
 export interface ParticipateCardProps {
   categoryType?: string;
+}
+
+export interface HostCardProps {
+  imgUrl?: string;
+  host?: string;
+  stayType?: string;
+  location?: string;
 }
 
 export interface CardProps {

@@ -1,4 +1,4 @@
-import { Header } from 'components/organisms/header/header.component';
+import { Header } from '../../components/organisms/header/header.component';
 import React from 'react';
 
 import layout from '../../styles/layout.module.scss';
@@ -11,7 +11,7 @@ import { Footer } from '../../components/organisms/footer/footer.component';
 import { CategoryTemplateProps } from './props';
 import font from '../../styles/font.module.scss';
 import shape from '../../styles/shape.module.scss';
-import { Button } from 'components/atoms/button/button.component';
+import { Button } from '../../components/atoms/button/button.component';
 
 export const CategoryTemplate: React.FC<CategoryTemplateProps> = ({
   stayType = 'house',

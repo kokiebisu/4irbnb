@@ -76,3 +76,7 @@ p {
 span {
   font-weight: 100;
 }
+
+input[type='date']:invalid::-webkit-datetime-edit {
+  color: transparent;
+}

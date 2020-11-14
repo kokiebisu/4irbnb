@@ -8,7 +8,7 @@ import { categories } from '../../../../content/index';
 describe('Base Button', () => {
   it('renders title correctly for host button', () => {
     const { getByTestId } = render(
-      <Card {...category.args} card={categories[0].card} />
+      <Card {...category.args} title={categories[0].title} />
     );
 
     const { getByText } = within(getByTestId('card'));

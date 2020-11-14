@@ -151,3 +151,15 @@ export const available = CardTemplate.bind({});
 available.args = {
   type: 'available',
 };
+
+export const host = CardTemplate.bind({});
+host.args = {
+  type: 'host',
+};
+host.decorators = [
+  (Story) => (
+    <div style={{ width: 400 }}>
+      <Story />
+    </div>
+  ),
+];
