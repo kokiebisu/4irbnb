@@ -1,14 +1,29 @@
 import React from 'react';
-import { Bullet } from '../../atoms/bullet/bullet.component';
 
+/**
+ * Components
+ */
+import { Bullet } from '../../atoms/bullet/bullet.component';
+import { Button } from '../../atoms/button/button.component';
+
+/**
+ * Styles
+ */
 import font from '../../../styles/font.module.scss';
 import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
 import section from './section.module.scss';
-// Function
-import { AmenitySectionProps } from './props';
-import { Button } from '../../atoms/button/button.component';
 
+/**
+ * Props
+ */
+import { AmenitySectionProps } from './props';
+
+/**
+ * Renders the amenity section
+ * @param {string} title - Title of the section
+ * @param {Object[]} amenities - List of amenities
+ */
 export const AmenitySection: React.FC<AmenitySectionProps> = ({
   title = 'Title here',
   amenities = [{ amenityType: 'kitchen' }, { amenityType: 'smoke' }],

@@ -1,10 +1,25 @@
-import { Layout } from '../../../layout/layout.component';
 import React from 'react';
-import { PrioritySectionProps } from './props';
 
-import space from '../../../styles/space.module.scss';
+/**
+ * Components
+ */
+import { Layout } from '../../../layout/layout.component';
 import { Bullet } from '../../../components/atoms/bullet/bullet.component';
 
+/**
+ * Props
+ */
+import { PrioritySectionProps } from './props';
+
+/**
+ * Styles
+ */
+import space from '../../../styles/space.module.scss';
+
+/**
+ * Renders the priority section
+ * @param {string[]} priorities - The priorities
+ */
 export const PrioritySection: React.FC<PrioritySectionProps> = () => {
   const priorities = ['protection', 'guidance', 'requirements'];
   return (

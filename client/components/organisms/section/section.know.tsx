@@ -1,11 +1,28 @@
 import React from 'react';
 
+/**
+ * Styles
+ */
 import font from '../../../styles/font.module.scss';
 import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
+
+/**
+ * Props
+ */
 import { KnowSectionProps } from './props';
+
+/**
+ * Components
+ */
 import { Bullet } from '../../../components/atoms/bullet/bullet.component';
 
+/**
+ * Renders the know section
+ * @param {string[]} houseRules - List of rules the users must follow
+ * @param {string[]} healths - List of health guidelines
+ * @param {string} layoutType - The type of layout
+ */
 export const KnowSection: React.FC<KnowSectionProps> = ({
   houseRules = [
     'checkin',

@@ -1,11 +1,28 @@
 import React from 'react';
+
+/**
+ * Components
+ */
+import { Card } from '../../../components/atoms/card/card.component';
+
+/**
+ * Styles
+ */
 import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import layout from '../../../styles/layout.module.scss';
-import { ArrangementsSectionProps } from './props';
-import { Card } from '../../../components/atoms/card/card.component';
 
+/**
+ * Props
+ */
+import { ArrangementsSectionProps } from './props';
+
+/**
+ * Renders the arrangement section
+ * @param {string} title - Title of the section
+ * @param {Object[]} arrangements - List of amenities
+ */
 export const ArrangementsSection: React.FC<ArrangementsSectionProps> = ({
   title = 'Title here',
   arrangements = [

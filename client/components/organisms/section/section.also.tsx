@@ -1,14 +1,38 @@
-import { Button } from '../../../components/atoms/button/button.component';
 import React, { useLayoutEffect, useRef, useState } from 'react';
+
+/**
+ * Props
+ */
+import { AlsoSectionProps } from './props';
+
+/**
+ * Components
+ */
+import { Card } from '../../../components/atoms/card/card.component';
+import { Button } from '../../../components/atoms/button/button.component';
+
+/**
+ * Styles
+ */
 import layout from '../../../styles/layout.module.scss';
 import font from '../../../styles/font.module.scss';
-import { AlsoSectionProps } from './props';
 import space from '../../../styles/space.module.scss';
-import { groupByTwo } from '../../../helper/array';
-import { Card } from '../../../components/atoms/card/card.component';
-import { nearbyPic } from '../../../content';
 import section from './section.module.scss';
 
+/**
+ * Helpers
+ */
+import { groupByTwo } from '../../../helper/array';
+
+/**
+ * Content
+ */
+import { nearbyPic } from '../../../content';
+
+/**
+ * Renders the also section
+ * @param {string[]} items - List of suggested cities
+ */
 export const AlsoSection: React.FC<AlsoSectionProps> = ({
   items = [
     'city1',

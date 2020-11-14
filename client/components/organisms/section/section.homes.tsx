@@ -1,17 +1,28 @@
-import { Button } from '../../../components/atoms/button/button.component';
 import React from 'react';
 
+/**
+ * Styles
+ */
 import font from '../../../styles/font.module.scss';
-import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
-import shape from '../../../styles/shape.module.scss';
-import responsive from '../../../styles/responsive.module.scss';
 
+/**
+ * Props
+ */
 import { HomesSectionProps } from './props';
-import { Card } from '../../../components/atoms/card/card.component';
-import { Bar } from '../bar/bar.component';
 
+/**
+ * Components
+ */
+import { Card } from '../../../components/atoms/card/card.component';
+
+/**
+ * Renders the homes section
+ * @param {string} layout - Layout of how to list the items
+ * @param {string} title - Title of the section
+ * @param {Object[]} stays - List of objects containing the stays
+ */
 export const HomesSection: React.FC<HomesSectionProps> = ({
   layout = 'vertical',
   place = 'Location',
