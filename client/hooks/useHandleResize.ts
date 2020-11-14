@@ -1,5 +1,8 @@
-import { useState, useLayoutEffect, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
+/**
+ * A custom hook to calculate the height of the page
+ */
 export const useHandleResize = () => {
   const [pageHeight, setPageHeight] = useState(0);
 
