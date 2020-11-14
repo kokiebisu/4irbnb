@@ -1,17 +1,38 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+
+/**
+ * Styles
+ */
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
-import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
 import color from '../../../styles/color.module.scss';
 import styles from './section.module.scss';
-import { Card } from '../../atoms/card/card.component';
-import { Button } from '../../../components/atoms/button/button.component';
 import sectionStyles from './section.module.scss';
-import { ChevronLeft, ChevronRight } from '../../../public/svg/regular';
-import { StaySectionProps } from './props';
 import section from './section.module.scss';
 
+/**
+ * Components
+ */
+import { Card } from '../../atoms/card/card.component';
+import { Button } from '../../../components/atoms/button/button.component';
+
+/**
+ * Props
+ */
+import { StaySectionProps } from './props';
+
+/**
+ * Renders the stay section
+ * @param {string} title - Title of the section
+ * @param {string} description - Subtitle of the section
+ * @param {boolean} pagination - Whether if the section includes the pagination
+ * @param {Object} showAll - The link to expand the section
+ * @param {string} carouselType - The type of carousel
+ * @param {boolean} save - Whether if the section can be saved
+ * @param {boolean} isDescription - Whether if the section includes a subtitle
+ * @param {Object[]} items - Displaying items
+ */
 export const StaySection: React.FC<StaySectionProps> = ({
   title = 'Section Title',
   description = 'Section Description',

@@ -1,14 +1,24 @@
-import { Header } from '../../components/organisms/header/header.component';
 import React from 'react';
-import responsive from '../../styles/responsive.module.scss';
-import { Banner } from '../../components/organisms/banner/banner.component';
+
+/**
+ * Styles
+ */
 import space from '../../styles/space.module.scss';
 import color from '../../styles/color.module.scss';
-import { Layout } from '../../layout/layout.component';
+import responsive from '../../styles/responsive.module.scss';
+
+/**
+ * Components
+ */
+import { Header } from '../../components/organisms/header/header.component';
 import { Section } from '../../components/organisms/section/section.component';
 import { Footer } from '../../components/organisms/footer/footer.component';
+import { Banner } from '../../components/organisms/banner/banner.component';
 
-const Homes = () => {
+/**
+ * Renders the component for path /host/homes
+ */
+const Homes: () => string | JSX.Element = () => {
   return (
     <div>
       <div className={[responsive['n_to_b--md']].join(' ')}>

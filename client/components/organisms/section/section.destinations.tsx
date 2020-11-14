@@ -1,15 +1,29 @@
 import React from 'react';
 
+/**
+ * Styles
+ */
 import section from './section.module.scss';
 import space from '../../../styles/space.module.scss';
 import font from '../../../styles/font.module.scss';
 import color from '../../../styles/color.module.scss';
 import layout from '../../../styles/layout.module.scss';
+
+/**
+ * Props
+ */
 import { DestinationsSectionProps } from './props';
 
-import { destinationByCategories } from '../../../content';
-import { destinations } from '../../../content';
+/**
+ * Content
+ */
+import { destinationByCategories, destinations } from '../../../content';
 
+/**
+ * Renders the destinations section
+ * @param {Object[]} categories - List of categories for the travel
+ * @param {Object[]} locations - List of locations under the category
+ */
 export const DestinationsSection: React.FC<DestinationsSectionProps> = ({
   categories = destinationByCategories,
   locations = destinations,

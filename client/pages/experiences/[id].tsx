@@ -2,12 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 
-import { Header } from 'components/organisms/header/header.component';
-import { Section } from 'components/organisms/section/section.component';
+/**
+ * Component
+ */
+import { Header } from '../../components/organisms/header/header.component';
+import { Section } from '../../components/organisms/section/section.component';
 import { Modal } from '../../components/organisms/modal/modal.component';
 import { Footer } from '../../components/organisms/footer/footer.component';
+
+/**
+ * Context
+ */
 import { useToggleState } from '../../context/toggle';
 
+/**
+ * Styles
+ */
 import layout from '../../styles/layout.module.scss';
 import details from '../../styles/details.module.scss';
 import color from '../../styles/color.module.scss';
@@ -16,8 +26,14 @@ import shape from '../../styles/shape.module.scss';
 import staysDetail from '../../styles/staysDetail.module.scss';
 import responsive from '../../styles/responsive.module.scss';
 
+/**
+ * Sample Data
+ */
 import { experiences } from '../../data/experiences';
 
+/**
+ * Renders the component for path /experiences/[id]
+ */
 const id: () => string | JSX.Element = () => {
   const router = useRouter();
   const { id: experienceID }: { id?: string } = router.query;
