@@ -1,11 +1,27 @@
 import React from 'react';
+
+/**
+ * Props
+ */
 import { ParticipateCardProps } from './props';
+
+/**
+ * Styles
+ */
 import space from '../../../styles/space.module.scss';
-import { Calendar, Computer, People } from '../../../public/svg/original';
 import color from '../../../styles/color.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
 
+/**
+ * Vectors
+ */
+import { Calendar, Computer, People } from '../../../public/svg/original';
+
+/**
+ * Renders the participate card component
+ * @param {string} categoryType - Type of participate card
+ */
 export const ParticipateCard: React.FC<ParticipateCardProps> = ({
   categoryType = 'call',
 }) => {

@@ -1,8 +1,16 @@
 import React from 'react';
+
+/**
+ * Styles
+ */
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import space from '../../../styles/space.module.scss';
 import layout from '../../../styles/layout.module.scss';
+
+/**
+ * Vectors
+ */
 import {
   Calendar,
   Devices,
@@ -14,9 +22,26 @@ import {
   Sparkle,
   Time,
 } from '../../../public/svg/original';
+
+/**
+ * Props
+ */
 import { CharacteristicBulletProps } from './props';
+
+/**
+ * Helpers
+ */
 import * as Helper from '../../../helper/time';
 
+/**
+ * Renders the characteristic bullet
+ * @param {string} characteristicType - Type of characteristics
+ * @param {number} time - Time it takes for the experience
+ * @param {string[]} devices - Devices allowed for the experience
+ * @param {number} people - Number of people that can join
+ * @param {group} group - Number of people that can join a private group
+ * @param {string[]} languages - Languages the host can speak
+ */
 export const CharacteristicBullet: React.FC<CharacteristicBulletProps> = ({
   characteristicType = 'house',
   time = 60,

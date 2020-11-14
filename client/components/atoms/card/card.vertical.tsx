@@ -1,13 +1,30 @@
 import React from 'react';
+
+/**
+ * Styles
+ */
 import layout from '../../../styles/layout.module.scss';
 import font from '../../../styles/font.module.scss';
 import color from '../../../styles/color.module.scss';
 import space from '../../../styles/space.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import styles from './card.module.scss';
+
+/**
+ * Vectors
+ */
 import { Heart } from '../../../public/svg/original';
+
+/**
+ * Props
+ */
 import { VerticalCardProps } from './props';
 
+/**
+ * Renders the vertical card component
+ * @param {Object} card - Information about the card
+ * @param {boolean} save - Whether if the card can be saved
+ */
 export const VerticalCard: React.FC<VerticalCardProps> = ({
   card = {
     imgUrl:

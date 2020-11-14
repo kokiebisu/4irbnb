@@ -1,5 +1,12 @@
 import React from 'react';
 
+/**
+ * Renders the select input component
+ * @param category
+ * @param placeholder
+ * @param handleChange
+ * @param handleValue
+ */
 export const SelectInput = ({
   category,
   placeholder,

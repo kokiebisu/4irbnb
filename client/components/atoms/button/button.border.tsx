@@ -1,13 +1,28 @@
-import Link from 'next/link';
 import React from 'react';
+import Link from 'next/link';
 
+/**
+ * Styles
+ */
 import layout from '../../../styles/layout.module.scss';
 import font from '../../../styles/font.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
+
+/**
+ * Props
+ */
 import { BorderButtonProps } from './props';
 
+/**
+ * Renders the border button props
+ * @param {string} to - The link to which it redirects
+ * @param {string} title - The title of the button
+ * @param {boolean} inverse - Whether if the button takes an inverse styling
+ * @param {string} size - The size of the button
+ * @param {boolean} spread - Whether if the button takes full width of the parent
+ */
 export const BorderButton: React.FC<BorderButtonProps> = ({
   to = '/',
   title = 'Button',

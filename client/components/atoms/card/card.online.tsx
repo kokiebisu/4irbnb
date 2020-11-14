@@ -1,11 +1,25 @@
 import React from 'react';
+
+/**
+ * Props
+ */
 import { OnlineCardProps } from './props';
 
+/**
+ * Styles
+ */
 import card from './card.module.scss';
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import shape from '../../../styles/shape.module.scss';
 
+/**
+ * Renders the online card component
+ * @param {string} small - Image with smaller pixels
+ * @param {string} large - Image with larger pixels
+ * @param {string} title - Title of the card
+ * @param {boolean} inverse - Whether if the component takes the inverse styling or not
+ */
 export const OnlineCard: React.FC<OnlineCardProps> = ({
   small = 'https://a0.muscache.com/im/pictures/0e46f398-42f5-4897-9168-f84622aeba58.jpg',
   large = 'https://a0.muscache.com/im/pictures/78010337-07f0-4154-9528-363b97b54699.jpg',

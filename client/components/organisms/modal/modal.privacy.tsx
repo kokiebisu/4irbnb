@@ -1,18 +1,34 @@
 import React from 'react';
-
 import { motion } from 'framer-motion';
-import { useToggleDispatch } from '../../../context/toggle';
+
+/**
+ * Styles
+ */
 import shape from '../../../styles/shape.module.scss';
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import modal from './modal.module.scss';
+
+/**
+ * Components
+ */
 import { Button } from '../../../components/atoms/button/button.component';
 
+/**
+ * Vectors
+ */
 import { Lock } from '../../../public/svg/original';
+
+/**
+ * Props
+ */
 import { PrivacyModalProps } from './props';
 
+/**
+ * Renders the privacy modal
+ */
 export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
   return (
     <motion.div

@@ -1,12 +1,28 @@
 import React from 'react';
 
+/**
+ * Vectors
+ */
 import { Star } from '../../../public/svg/original';
+
+/**
+ * Styles
+ */
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import font from '../../../styles/font.module.scss';
 import color from '../../../styles/color.module.scss';
+
+/**
+ * Props
+ */
 import { RatingBulletProps } from './props';
 
+/**
+ * Renders the rating bullet
+ * @param {number} ratings - Average ratings from users
+ * @param {number} reviews - Total number of reviews
+ */
 export const RatingBullet: React.FC<RatingBulletProps> = ({
   ratings = 5,
   reviews = 100,

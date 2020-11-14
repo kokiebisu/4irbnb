@@ -1,11 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
+
+/**
+ * Styles
+ */
 import layout from '../../../styles/layout.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
+
+/**
+ * Vectirs
+ */
 import { Heart } from '../../../public/svg/original';
-import { Button } from '../button/button.component';
+
+/**
+ * Particles
+ */
 import { ImageSlider } from '../../../components/particles/image.slider';
 
 interface Props {
@@ -15,7 +26,10 @@ interface Props {
 }
 
 /**
- * @function HorizontalCard
+ * Renders the horizontal card component
+ * @param {Object} card - Information about the card
+ * @param {boolean} superhost - Whether if host is the superhost or not
+ * @param {boolean} save - Whether if the card can be saved or not
  */
 export const HorizontalCard: React.FC<Props> = ({
   card = {
