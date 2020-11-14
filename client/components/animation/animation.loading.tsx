@@ -1,7 +1,18 @@
 import React from 'react';
+
+/**
+ * Props
+ */
 import { LoadingAnimationProps } from './props';
+
+/**
+ * Styles
+ */
 import animation from './animation.module.scss';
 
+/**
+ * Renders the loading animation
+ */
 export const LoadingAnimation: React.FC<LoadingAnimationProps> = () => {
   return (
     <div className={[animation['circle__wrapper']].join(' ')}>
