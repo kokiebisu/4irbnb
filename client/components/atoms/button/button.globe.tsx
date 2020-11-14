@@ -1,16 +1,35 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+
+/**
+ * Vectors
+ */
 import { Globe } from '../../../public/svg/original';
 import { ChevronDown } from '../../../public/svg/regular';
 
+/**
+ * Styles
+ */
 import color from '../../../styles/color.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import animation from '../../../styles/animation.module.scss';
 import space from '../../../styles/space.module.scss';
+
+/**
+ * Props
+ */
 import { GlobeButtonProps } from './props';
+
+/**
+ * Contexts
+ */
 import { useToggleDispatch } from '../../../context/toggle';
 
+/**
+ * Renders the globe button component
+ * @param {boolean} inverse - Whether if the globe button is styled in inverse
+ */
 export const GlobeButton: React.FC<GlobeButtonProps> = ({
   inverse = false,
 }) => {

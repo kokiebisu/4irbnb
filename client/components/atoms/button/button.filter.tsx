@@ -1,12 +1,19 @@
-import { motion } from 'framer-motion';
 import React from 'react';
+import { motion } from 'framer-motion';
 
+/**
+ * Styles
+ */
 import space from '../../../styles/space.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import button from './button.module.scss';
 
+/**
+ * Renders the filter button
+ * @param {string} name - Name of the filter button
+ */
 export const FilterButton = ({ name = 'Cancellation flexibility' }) => {
   return (
     <motion.button
