@@ -3,7 +3,7 @@ import index from '../styles/index.module.scss';
 import layout from '../styles/layout.module.scss';
 import space from '../styles/space.module.scss';
 import { categories, anywhere, onlines } from '../content';
-
+import { Animation } from '../components/animation/animation.component';
 import { Modal } from '../components/organisms/modal/modal.component';
 import color from '../styles/color.module.scss';
 import shape from '../styles/shape.module.scss';
@@ -16,6 +16,7 @@ import { Layout } from '../layout/layout.component';
 import { nearby } from '../data/stays';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Header } from '../components/organisms/header/header.component';
+import { time } from 'console';
 
 const CovidNotice = () => {
   return (
@@ -36,6 +37,7 @@ const CovidNotice = () => {
 };
 
 const LandingPage = () => {
+  const [loading, setLoading] = useState(false);
   const toggleState = useToggleState();
   const wrapperRef = useRef(null);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -60,6 +62,12 @@ const LandingPage = () => {
   }, []);
 
   useEffect(() => {
+    setTimeout(() => {
+      setLoading(true);
+    }, 5000);
+  }, []);
+
+  useEffect(() => {
     window.addEventListener('resize', handleResize, { passive: true });
     handleResize();
     return () => {
@@ -74,40 +82,58 @@ const LandingPage = () => {
       <div ref={wrapperRef}>
         <CovidNotice />
         <Section type='banner' />
-        <Layout type='section' sectionType='landing' spread>
-          <Section type='nearby' items={nearby} />
-        </Layout>
-        <Layout
-          type='section'
-          sectionType='landing'
-          title='Live anywhere'
-          spread>
-          <Section type='category' items={anywhere} />
-        </Layout>
-        <div className={space['m-v--32']}></div>
-        <Layout
-          dark
-          spread
-          sectionType='landing'
-          type='section'
-          title='Meet Online Experiences'
-          subtitle='Interactive activities you can do together, led by expert hosts.'>
-          <Section type='online' sectionType='landing' dark />
-        </Layout>
-        <Layout
-          sectionType='landing'
-          spread
-          type='section'
-          title='Join millions of hosts on Airbnb'>
-          <Section type='category' sectionType='landing' items={categories} />
-        </Layout>
-        <Layout
-          sectionType='landing'
-          spread
-          type='section'
-          title='Destinations for future trips'>
-          <Section type='destinations' sectionType='landing' />
-        </Layout>
+        {loading ? (
+          <>
+            <Layout type='section' sectionType='landing' spread>
+              <Section type='nearby' items={nearby} />
+            </Layout>
+            <Layout
+              type='section'
+              sectionType='landing'
+              title='Live anywhere'
+              spread>
+              <Section type='category' items={anywhere} />
+            </Layout>
+            <div className={space['m-v--32']}></div>
+            <Layout
+              dark
+              spread
+              sectionType='landing'
+              type='section'
+              title='Meet Online Experiences'
+              subtitle='Interactive activities you can do together, led by expert hosts.'>
+              <Section type='online' sectionType='landing' dark />
+            </Layout>
+            <Layout
+              sectionType='landing'
+              spread
+              type='section'
+              title='Join millions of hosts on Airbnb'>
+              <Section
+                type='category'
+                sectionType='landing'
+                items={categories}
+              />
+            </Layout>
+            <Layout
+              sectionType='landing'
+              spread
+              type='section'
+              title='Destinations for future trips'>
+              <Section type='destinations' sectionType='landing' />
+            </Layout>
+          </>
+        ) : (
+          <div
+            className={[
+              space['m-t--22'],
+              layout['flex'],
+              layout['items-center'],
+              layout['justify-center'],
+            ].join(' ')}>
+            <Animation type='loading' />
+          </div>
+        )}
         <Footer spread />
         <Modal
           extendsTo={[
