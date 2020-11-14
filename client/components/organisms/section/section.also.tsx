@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 
 /**
  * Props
@@ -22,12 +22,14 @@ import section from './section.module.scss';
 /**
  * Helpers
  */
-import { groupByTwo } from '../../../helper/array';
+import * as Helpers from '../../../helper/array';
 
 /**
  * Content
  */
 import { nearbyPic } from '../../../content';
+import { useSlider } from '../../../hooks/useSlider';
+import { useHandleContainerWidthResize } from '../../../hooks/useHandleContainerWidthResize';
 
 /**
  * Renders the also section
@@ -46,60 +48,11 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
   ],
   title = 'People also search for',
 }) => {
-  const [width, setWidth] = useState(500);
   const containerRef = useRef<HTMLDivElement>();
-  const [state, setState] = useState({
-    activeSlide: 0,
-    translate: 0,
-    transition: 0.45,
-  });
+  const width: number = useHandleContainerWidthResize(containerRef);
+  const { state, previousSlide, nextSlide } = useSlider(items, width, 'also');
+  const displayingItems = Helpers.groupByTwo(items);
 
-  const handleRef = () => {
-    if (containerRef.current && containerRef.current.getBoundingClientRect()) {
-      setWidth(containerRef.current.getBoundingClientRect().width);
-    }
-  };
-
-  useLayoutEffect(() => {
-    window.addEventListener('resize', handleRef);
-    handleRef();
-    return () => {
-      window.removeEventListener('resize', handleRef);
-    };
-  });
-
-  const previous = () => {
-    if (state.activeSlide === 0) {
-      return setState({
-        ...state,
-        translate: (items.length / 2 - 1) * (width / (width > 728 ? 3 : 2)),
-        activeSlide: items.length / 2 - 1,
-      });
-    }
-
-    setState({
-      ...state,
-      activeSlide: state.activeSlide - 1,
-      translate: (state.activeSlide - 1) * (width / (width > 728 ? 3 : 2)),
-    });
-  };
-
-  const next = () => {
-    if (state.activeSlide === items.length / 2 - (width > 728 ? 3 : 2)) {
-      return setState({
-        ...state,
-        translate: 0,
-        activeSlide: 0,
-      });
-    }
-    setState({
-      ...state,
-      activeSlide: state.activeSlide + 1,
-      translate: (state.activeSlide + 1) * (width / (width > 728 ? 3 : 2)),
-    });
-  };
-
-  const displayingItems = groupByTwo(items);
   return (
     <div style={{ overflowX: 'hidden' }}>
       <div
@@ -117,7 +70,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
             <Button
               type='paginate'
               direction='left'
-              onPress={previous}
+              onPress={previousSlide}
               disable={state.activeSlide === 0}
             />
           </div>
@@ -125,7 +78,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
             <Button
               type='paginate'
               direction='right'
-              onPress={next}
+              onPress={nextSlide}
               disable={
                 state.activeSlide === items.length / 2 - (width > 728 ? 3 : 2)
               }

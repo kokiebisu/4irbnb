@@ -8,7 +8,6 @@ import { OnlineCardProps } from './props';
 /**
  * Styles
  */
-import card from './card.module.scss';
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import shape from '../../../styles/shape.module.scss';
