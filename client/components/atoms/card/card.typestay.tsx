@@ -1,13 +1,25 @@
 import React from 'react';
+import Link from 'next/link';
+
+/**
+ * Styles
+ */
 import shape from '../../../styles/shape.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import font from '../../../styles/font.module.scss';
 import cardStyles from './card.module.scss';
 import color from '../../../styles/color.module.scss';
-import { TypeStayCardProps } from './props';
-import Link from 'next/link';
 
+/**
+ * Props
+ */
+import { TypeStayCardProps } from './props';
+
+/**
+ * Renders the typestay card
+ * @param {Object} card - Information about the card
+ */
 export const TypeStayCard: React.FC<TypeStayCardProps> = ({
   card = {
     title: 'Type',
