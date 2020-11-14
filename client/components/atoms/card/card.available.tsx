@@ -1,12 +1,32 @@
 import React from 'react';
+
+/**
+ * Components
+ */
 import { Button } from '../button/button.component';
+
+/**
+ * Props
+ */
 import { AvailableCardProps } from './props';
+
+/**
+ * Styles
+ */
 import color from '../../../styles/color.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import font from '../../../styles/font.module.scss';
 
+/**
+ * Renders the available card component
+ * @param {string} date - The date which the experience is available
+ * @param {string} from - The time which the experience starts
+ * @param {string} to - The time which the experience ends
+ * @param {string} standard - The time standard
+ * @param {number} price - The price of the experience
+ */
 export const AvailableCard: React.FC<AvailableCardProps> = ({
   date = 'Tue., Nov. 10',
   from = '1:00 a.m. ',

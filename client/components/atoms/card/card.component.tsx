@@ -1,5 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
+
+/**
+ * Components
+ */
 import { CategoryCard } from './card.category';
 import { HorizontalCard } from './card.horizontal';
 import { VerticalCard } from './card.vertical';
@@ -19,6 +23,12 @@ interface mapProps {
   [key: string]: JSX.Element;
 }
 
+/**
+ * Bundles the card components
+ * @param {string} extendsTo - Adds custom styling to the specified component
+ * @param {string} type - Specifies the type of card component
+ * @param {string} to - Redirects to the path when clicked
+ */
 export const Card: React.FC<CardProps> = ({
   extendsTo,
   type,

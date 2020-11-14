@@ -1,17 +1,41 @@
 import React from 'react';
 
+/**
+ * Styles
+ */
 import shape from '../../../styles/shape.module.scss';
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import space from '../../../styles/space.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import responsive from '../../../styles/responsive.module.scss';
+
+/**
+ * Props
+ */
 import { StaysCardProps } from './props';
+
+/**
+ * Vectors
+ */
 import { Heart } from '../../../public/svg/original';
+
+/**
+ * Components
+ */
 import { Bullet } from '../bullet/bullet.component';
 import { ImageSlider } from '../../../components/particles/image.slider';
 import { Card } from './card.component';
 
+/**
+ * Renders the stay card component
+ * @param {string[]} images - List of images to be displayed
+ * @param {string} typeStay - Type of stay
+ * @param {string} location - Location of the stay
+ * @param {string} title - Title of the stay
+ * @param {Object} accomodations - Information about the accomodations of the stay
+ * @param {string[]} characteristics - List of characteristics
+ */
 export const StayCard: React.FC<StaysCardProps> = ({
   images = [
     'https://a0.muscache.com/im/pictures/miso/Hosting-46142496/original/f81fdaca-1791-4de6-ba56-d3e5ce9406d1.jpeg?im_w=720',
@@ -28,8 +52,6 @@ export const StayCard: React.FC<StaysCardProps> = ({
     bath: 1,
   },
   characteristics = ['wifi'],
-  ratings = 5,
-  reviews = 249,
 }) => {
   return (
     <div>

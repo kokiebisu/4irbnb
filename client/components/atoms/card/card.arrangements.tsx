@@ -1,14 +1,26 @@
 import React from 'react';
+
+/**
+ * Styles
+ */
 import shape from '../../../styles/shape.module.scss';
 import color from '../../../styles/color.module.scss';
-import font from '../../../styles/font.module.scss';
-import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
-import animation from '../../../styles/animation.module.scss';
-import styles from '../../../styles/index.module.scss';
+
+/**
+ * Vectors
+ */
 import { DoubleBed } from '../../../public/svg/original';
+
+/**
+ * Props
+ */
 import { ArrangementsCardProps } from './props';
 
+/**
+ * Renders the arrangements card component
+ * @param {Object} card - Information of the card
+ */
 export const ArrangementsCard: React.FC<ArrangementsCardProps> = ({
   card = {
     type: 'Bedroom',

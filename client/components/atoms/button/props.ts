@@ -75,6 +75,8 @@ export interface CloseButtonProps {
 
 export interface FilterButtonProps {}
 
+export interface ReportButtonProps {}
+
 export type ButtonProps = {
   extendsTo?: string;
   type?: string;
