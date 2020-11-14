@@ -8,7 +8,10 @@ import layout from '../../../styles/layout.module.scss';
 import { sections } from '../../../content/index';
 import { Globe } from '../../../public/svg/original';
 import { FooterProps } from './props';
-
+/**
+ * Renders the footer
+ * @param {boolean} spread - Whether if the layout should be spread out or not
+ */
 export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
   return (
     <footer
