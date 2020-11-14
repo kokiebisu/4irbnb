@@ -1,4 +1,8 @@
 import React from 'react';
+
+/**
+ * Components
+ */
 import { DetailsHeader } from './header.details';
 import { ExperiencesHeader } from './header.experiences';
 import { HomesHeader } from './header.homes';
@@ -10,6 +14,11 @@ interface mapProps {
   [key: string]: JSX.Element;
 }
 
+/**
+ * Bundles the header components
+ * @param {string} extendsTo - Add custom styling to the specified component
+ * @param {string} type - Specifies the type of header component
+ */
 export const Header: React.FC<HeaderProps> = ({
   type,
   extendsTo,
