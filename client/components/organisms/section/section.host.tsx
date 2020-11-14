@@ -26,16 +26,17 @@ const renderContent = (content: string) => {
 };
 
 export const HostSection: React.FC<HostSectionProps> = ({
-  name = 'Host Name',
-  isSuperhost = true,
+  host = 'Host Name',
+  isSuperhost = false,
   description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
   joined = 'February 2016',
   duringStay = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-  reviews = 100,
-  imgUrl = 'https://a0.muscache.com/im/pictures/user/ca3ae8e3-997b-4ec6-b3af-139dd46be44b.jpg?im_w=240',
+  numberOfReviews = 100,
+  hostImgUrl = 'https://a0.muscache.com/im/pictures/user/ca3ae8e3-997b-4ec6-b3af-139dd46be44b.jpg?im_w=240',
   responseTime = 'within an hour',
   responseRate = 54,
   layoutType = 'room',
+  verified = false,
 }) => {
   const [descriptionDisplay, setDescriptionDisplay] = useState<boolean>(false);
   const [stayDisplay, setStayDisplay] = useState<boolean>(false);
@@ -60,15 +61,15 @@ export const HostSection: React.FC<HostSectionProps> = ({
                 borderRadius: 9999,
               }}
               className={[space['m-r--14']].join(' ')}
-              src={imgUrl}
+              src={hostImgUrl}
             />
           </div>
           <div>
             <div className={[shape['h--50p']].join(' ')}>
               <h3 className={[font['size--24'], space['m-b--6']].join(' ')}>
                 {layoutType === 'room'
-                  ? `Hosted By ${name}`
-                  : `Meet your host, ${name}`}
+                  ? `Hosted By ${host}`
+                  : `Meet your host, ${host}`}
               </h3>
               <p
                 className={[
@@ -101,16 +102,22 @@ export const HostSection: React.FC<HostSectionProps> = ({
                     space['m-b--12'],
                     space['p-r--4'],
                   ].join(' ')}>
-                  <Bullet type='host' categoryType='review' total={150} />
+                  <Bullet
+                    type='host'
+                    categoryType='review'
+                    total={numberOfReviews}
+                  />
                 </div>
-                <div
-                  className={[
-                    space['m-r--8'],
-                    space['m-b--12'],
-                    space['p-r--4'],
-                  ].join(' ')}>
-                  <Bullet type='host' categoryType='verified' />
-                </div>
+                {verified && (
+                  <div
+                    className={[
+                      space['m-r--8'],
+                      space['m-b--12'],
+                      space['p-r--4'],
+                    ].join(' ')}>
+                    <Bullet type='host' categoryType='verified' />
+                  </div>
+                )}
                 {layoutType === 'room' && isSuperhost && (
                   <div
                     className={[
@@ -189,7 +196,7 @@ export const HostSection: React.FC<HostSectionProps> = ({
                     className={[space['p-v--6'], font['weight--500']].join(
                       ' '
                     )}>
-                    {name} is a Superhost
+                    {host} is a Superhost
                   </p>
                   <p
                     className={[font['weight--100'], font['lh--15']].join(' ')}>

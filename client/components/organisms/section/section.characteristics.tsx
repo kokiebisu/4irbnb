@@ -10,19 +10,26 @@ import { DevicesInverse, Star } from '../../../public/svg/original';
 import section from './section.module.scss';
 
 export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
+  title = 'Making & Eating Soup Dumplings vegan Ok',
   stayType = 'Type',
   host = 'Host',
   guests = 1,
   bedrooms = 1,
   beds = 1,
   bathrooms = 1,
-  imgUrl = 'https://a0.muscache.com/im/pictures/user/ca3ae8e3-997b-4ec6-b3af-139dd46be44b.jpg?im_w=240',
+  hostImgUrl = 'https://a0.muscache.com/im/pictures/user/ca3ae8e3-997b-4ec6-b3af-139dd46be44b.jpg?im_w=240',
   layoutType = 'experience',
   ratings = 4.9,
   numberOfReviews = 100,
   location = 'Shanghai',
   country = 'China',
-  characteristics = ['time', 'devices', 'people', 'language'],
+  characteristics = {
+    time: 75,
+    devices: ['computer', 'phone', 'tablet'],
+    people: 10,
+    private: 100,
+    languages: ['English'],
+  },
 }) => {
   const types = {
     room: (
@@ -102,22 +109,19 @@ export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
                 shape['h--60'],
                 shape['w--60'],
               ].join(' ')}
-              src={imgUrl}
+              src={hostImgUrl}
             />
           </div>
         </div>
         <div className={[space['m-v--12'], color['b-t--white__2']].join(' ')}>
           <div className={[space['p-v--4']].join(' ')}>
-            {characteristics.map((characteristic, index) => {
-              return (
-                <div key={index} className={[space['m-t--24']].join(' ')}>
-                  <Bullet
-                    type='characteristic'
-                    characteristicType={characteristic}
-                  />
-                </div>
-              );
-            })}
+            {/* <div key={index} className={[space['m-t--24']].join(' ')}>
+              <Bullet
+                type='characteristic'
+                characteristicType={key}
+                characteristicValue={characteristics[key]}
+              />
+            </div> */}
           </div>
         </div>
       </>
@@ -150,9 +154,7 @@ export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
                   </div>
                 </div>
                 <div className={[space['m-v--8']].join(' ')}>
-                  <h3 className={[font['size--24']].join(' ')}>
-                    Making & Eating Soup Dumplings vegan Ok
-                  </h3>
+                  <h3 className={[font['size--24']].join(' ')}>{title}</h3>
                 </div>
                 <div
                   className={[layout['items-center'], layout['flex-wrap']].join(
@@ -167,7 +169,7 @@ export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
                       color['c--g__2'],
                       font['size--14'],
                     ].join(' ')}>
-                    {ratings}
+                    {ratings.toFixed(1)}
                   </h3>
                   <p
                     className={[
@@ -222,7 +224,7 @@ export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
                 shape['h--60'],
                 shape['w--60'],
               ].join(' ')}
-              src={imgUrl}
+              src={hostImgUrl}
             />
           </div>
         </div>
@@ -237,17 +239,31 @@ export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
               section['display__characteristics'],
               space['p-v--4'],
             ].join(' ')}>
-            {characteristics.map((characteristic, index) => {
-              return (
-                <div key={index}>
-                  <Bullet
-                    extendsTo={[space['m-t--24']].join(' ')}
-                    type='characteristic'
-                    characteristicType={characteristic}
-                  />
-                </div>
-              );
-            })}
+            <Bullet
+              extendsTo={[space['m-t--24']].join(' ')}
+              type='characteristic'
+              characteristicType='time'
+              time={characteristics['time']}
+            />
+            <Bullet
+              extendsTo={[space['m-t--24']].join(' ')}
+              type='characteristic'
+              characteristicType='devices'
+              devices={characteristics['devices'].join(', ')}
+            />
+            <Bullet
+              extendsTo={[space['m-t--24']].join(' ')}
+              type='characteristic'
+              characteristicType='people'
+              people={characteristics['people']}
+              private={characteristics['group']}
+            />
+            <Bullet
+              extendsTo={[space['m-t--24']].join(' ')}
+              type='characteristic'
+              characteristicType='language'
+              languages={characteristics['languages'].join(', ')}
+            />
           </div>
         </div>
       </>

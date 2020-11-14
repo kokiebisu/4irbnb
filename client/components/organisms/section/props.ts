@@ -14,7 +14,7 @@ export type StaySectionProps = SectionBasicProps & {
   fetchUrl?: string;
 };
 
-export type PanelSectionProps = SectionBasicProps & {
+export interface PanelSectionProps extends SectionBasicProps {
   ratings?: number;
   numberOfReviews?: number;
   superhost?: boolean;
@@ -22,7 +22,8 @@ export type PanelSectionProps = SectionBasicProps & {
   province?: string;
   country?: string;
   layoutType?: string;
-};
+  images?: string[];
+}
 
 export type CharacteristicsSectionProps = SectionBasicProps & {
   stayType?: string;
@@ -31,7 +32,7 @@ export type CharacteristicsSectionProps = SectionBasicProps & {
   bedrooms?: number;
   beds?: number;
   bathrooms?: number;
-  imgUrl?: string;
+  hostImgUrl?: string;
   layoutType?: string;
   ratings?: number;
   numberOfReviews?: number;
@@ -45,11 +46,9 @@ export type CategorySectionProps = SectionBasicProps & {
 };
 
 export type DescriptionSectionProps = {
-  data?: {
-    description: string;
-    space: string;
-    access: string;
-  };
+  mainDescription?: string;
+  spaceDescription?: string;
+  accessDescription?: string;
   layoutType?: string;
 };
 
@@ -62,23 +61,25 @@ export interface AmenitySectionProps extends SectionBasicProps {
 }
 
 export interface ReviewsSectionProps {
+  ratings?: number;
   categories?: any;
-  total?: number;
+  numberOfReviews?: number;
   reviews?: any;
   layoutType?: string;
 }
 
 export interface HostSectionProps {
-  name?: string;
+  host?: string;
   isSuperhost?: boolean;
   description?: string;
   joined?: string;
   duringStay?: string;
-  reviews?: number;
-  imgUrl?: string;
+  numberOfReviews?: number;
+  hostImgUrl?: string;
   responseTime?: number;
   responseRate?: number;
   layoutType?: string;
+  verified?: boolean;
 }
 
 export interface KnowSectionProps {
@@ -124,7 +125,7 @@ export interface AlsoSectionProps {
 }
 
 export interface ParticipateSectionProps {
-  categories?: string[];
+  participates?: string[];
 }
 
 export interface BringSectionProps {

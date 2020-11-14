@@ -9,7 +9,7 @@ import { ParticipateSectionProps } from './props';
 import layout from '../../../styles/layout.module.scss';
 
 export const ParticipateSection: React.FC<ParticipateSectionProps> = ({
-  categories = ['call', 'private', 'request'],
+  participates = ['call', 'private', 'request'],
 }) => {
   return (
     <div>
@@ -25,10 +25,10 @@ export const ParticipateSection: React.FC<ParticipateSectionProps> = ({
         </h3>
       </div>
       <div className={[layout['flex'], space['m-b--32']].join(' ')}>
-        {categories.map((category, index) => {
+        {participates.map((participate, index) => {
           return (
             <div key={index} className={[space['m-r--16']].join(' ')}>
-              <Card type='participate' categoryType={category} />
+              <Card type='participate' categoryType={participate} />
             </div>
           );
         })}

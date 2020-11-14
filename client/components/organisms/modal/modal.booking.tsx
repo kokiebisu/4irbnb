@@ -35,6 +35,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
     },
   ],
 }) => {
+  const displayingAvailables = [...availables].splice(0, 3);
   return (
     <div
       className={[
@@ -78,7 +79,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
         </div>
         <div>input</div>
         <div className={[].join(' ')}>
-          {availables.map((available, index) => {
+          {displayingAvailables.map((available, index) => {
             return (
               <div
                 key={index}
