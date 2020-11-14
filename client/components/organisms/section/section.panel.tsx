@@ -1,15 +1,39 @@
 import React from 'react';
+import Link from 'next/link';
+
+/**
+ * Styles
+ */
 import layout from '../../../styles/layout.module.scss';
 import staysDetail from '../../../styles/staysDetail.module.scss';
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import space from '../../../styles/space.module.scss';
 import shape from '../../../styles/shape.module.scss';
-import { Heart, Star, Share, Superhost } from '../../../public/svg/original';
 import section from './section.module.scss';
-import { PanelSectionProps } from './props';
-import Link from 'next/link';
 
+/**
+ * Vectors
+ */
+import { Heart, Star, Share, Superhost } from '../../../public/svg/original';
+
+/**
+ * Props
+ */
+import { PanelSectionProps } from './props';
+
+/**
+ * Renders the panel section
+ * @param {string} title - Title of the section
+ * @param {number} ratings - Rating of the room/experience
+ * @param {number} numberOfReviews - Number of reviews for the room/experience
+ * @param {boolean} superhost - Whether if the host is superhost or not
+ * @param {string} location - Location of the room/experience
+ * @param {string} province - Province of the room/experience
+ * @param {string} country - Country of the room/experience
+ * @param {string} layoutType - Type of layout
+ * @param {string[]} images - Images for the panel
+ */
 export const PanelSection: React.FC<PanelSectionProps> = ({
   title = 'Title here',
   ratings = 5.0,

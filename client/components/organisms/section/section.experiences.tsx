@@ -1,9 +1,24 @@
 import React from 'react';
-import { ExperiencesSectionProps } from './props';
-import font from '../../../styles/font.module.scss';
+
+/**
+ * Components
+ */
 import { Bullet } from '../../../components/atoms/bullet/bullet.component';
+
+/**
+ * Props
+ */
+import { ExperiencesSectionProps } from './props';
+
+/**
+ * Styles
+ */
+import font from '../../../styles/font.module.scss';
 import space from '../../../styles/space.module.scss';
 
+/**
+ * Renders the experiences section
+ */
 export const ExperiencesSection: React.FC<ExperiencesSectionProps> = () => {
   const experiences = ['hosts', 'activities', 'global'];
   return (

@@ -1,17 +1,28 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+
+/**
+ * Styles
+ */
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
-import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
-import color from '../../../styles/color.module.scss';
-import styles from './section.module.scss';
-import { Card } from '../../atoms/card/card.component';
-import { Button } from '../../../components/atoms/button/button.component';
-import sectionStyles from './section.module.scss';
-import { ChevronLeft, ChevronRight } from '../../../public/svg/regular';
-import { AvailableSectionProps } from './props';
 import section from './section.module.scss';
 
+/**
+ * Components
+ */
+import { Card } from '../../atoms/card/card.component';
+import { Button } from '../../../components/atoms/button/button.component';
+
+/**
+ * Props
+ */
+import { AvailableSectionProps } from './props';
+
+/**
+ * Renders the available section
+ * @param {Object[]} availables - List of available dates for the experience
+ */
 export const AvailableSection: React.FC<AvailableSectionProps> = ({
   availables = [
     {

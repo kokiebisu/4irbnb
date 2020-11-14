@@ -1,17 +1,40 @@
 import React from 'react';
+
+/**
+ * Vectors
+ */
 import { Star } from '../../../public/svg/original';
 
+/**
+ * Styles
+ */
 import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
 import section from './section.module.scss';
+
+/**
+ * Props
+ */
 import { ReviewsSectionProps } from './props';
+
+/**
+ * Components
+ */
 import { Button } from '../../../components/atoms/button/button.component';
 import { Bullet } from '../../../components/atoms/bullet/bullet.component';
 import { Card } from '../../../components/atoms/card/card.component';
 
+/**
+ * Renders the reviews section
+ * @param {Object[]} categories - Aspects of the ratings
+ * @param {Object[]} reviews - Reviews by the users
+ * @param {number} ratings - The average ratings
+ * @param {number} numberOfReviews - The total number of reviews
+ * @param {string} layoutType - The type of layout
+ */
 export const ReviewsSection: React.FC<ReviewsSectionProps> = ({
   categories = [
     { type: 'Cleanliness', average: 5.0 },

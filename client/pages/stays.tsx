@@ -1,5 +1,25 @@
 import React from 'react';
+
+/**
+ * Content
+ */
+import { typeStays } from 'content';
+
+/**
+ * Temporary Data
+ */
+import { uniqueStays, novelties } from 'data/stays';
+
+/**
+ * Components
+ */
 import { Header } from '../components/organisms/header/header.component';
+import { Section } from '../components/organisms/section/section.component';
+import { Footer } from 'components/organisms/footer/footer.component';
+
+/**
+ * Styles
+ */
 import space from '../styles/space.module.scss';
 import layout from '../styles/layout.module.scss';
 import stays from '../styles/stays.module.scss';
@@ -7,12 +27,11 @@ import styles from '../styles/index.module.scss';
 import shape from '../styles/shape.module.scss';
 import font from '../styles/font.module.scss';
 import color from '../styles/color.module.scss';
-import { Section } from '../components/organisms/section/section.component';
-import { typeStays } from 'content';
-import { uniqueStays, natures, imaginatives, novelties } from 'data/stays';
-import { Footer } from 'components/organisms/footer/footer.component';
 
-const StaysPage = () => {
+/**
+ * Renders /stays
+ */
+const StaysPage: () => string | JSX.Element = () => {
   return (
     <>
       <div
@@ -116,7 +135,7 @@ const StaysPage = () => {
           </div>
         </div>
         <div className={[space['p-v--38']].join(' ')}>
-          <div className={[styles['container'], layout['relative']].join(' ')}>
+          {/* <div className={[styles['container'], layout['relative']].join(' ')}>
             <div className={[space['m-v--16']].join(' ')}>
               <Section
                 type='stay'
@@ -188,7 +207,7 @@ const StaysPage = () => {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <Footer />

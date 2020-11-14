@@ -1,11 +1,25 @@
-import { Layout } from '../../../layout/layout.component';
 import React from 'react';
+
+/**
+ * Components
+ */
 import { Bullet } from '../../../components/atoms/bullet/bullet.component';
+
+/**
+ * Props
+ */
 import { HelpSectionProps } from './props';
+
+/**
+ * Styles
+ */
 import layout from '../../../styles/layout.module.scss';
 import font from '../../../styles/font.module.scss';
 import space from '../../../styles/space.module.scss';
 
+/**
+ * Renders the help section
+ */
 export const HelpSection: React.FC<HelpSectionProps> = () => {
   const helps = ['support', 'tools', 'insights', 'education'];
   return (

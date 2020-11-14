@@ -1,26 +1,42 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+
+/* contents */
+import { categories, anywhere } from '../content';
+
+/* context */
+import { useToggleState } from '../context/toggle';
+
+/* styles */
 import index from '../styles/index.module.scss';
 import layout from '../styles/layout.module.scss';
 import space from '../styles/space.module.scss';
-import { categories, anywhere } from '../content';
-import { Animation } from '../components/animation/animation.component';
-import { Modal } from '../components/organisms/modal/modal.component';
 import color from '../styles/color.module.scss';
 import shape from '../styles/shape.module.scss';
 import font from '../styles/font.module.scss';
-import { useToggleState } from '../context/toggle';
+
+/* data */
+import { nearby } from '../data/stays';
+
+/* layout */
+import { Layout } from '../layout/layout.component';
+
+/* components */
+import { Animation } from '../components/animation/animation.component';
+import { Modal } from '../components/organisms/modal/modal.component';
+import { Header } from '../components/organisms/header/header.component';
 import { Section } from '../components/organisms/section/section.component';
 import { Footer } from '../components/organisms/footer/footer.component';
 import { MenuBar } from '../components/organisms/menubar/menubar.component';
-import { Layout } from '../layout/layout.component';
-import { nearby } from '../data/stays';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Header } from '../components/organisms/header/header.component';
 
+/* hooks */
 import { useHandleScroll } from '../hooks/useHandleScroll';
 import { useHandleResize } from '../hooks/useHandleResize';
 import { useTimeout } from '../hooks/useTimeout';
 
+/**
+ * Renders /
+ */
 const CovidNotice = () => {
   return (
     <aside
@@ -39,8 +55,8 @@ const CovidNotice = () => {
   );
 };
 
-const LandingPage = () => {
-  const loading = useTimeout(5000);
+const LandingPage: () => string | JSX.Element = () => {
+  const loading = useTimeout(3000);
   const toggleState = useToggleState();
   const scrollPosition = useHandleScroll();
   const pageHeight = useHandleResize();

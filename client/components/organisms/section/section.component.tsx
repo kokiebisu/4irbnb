@@ -1,4 +1,8 @@
 import React from 'react';
+
+/**
+ * Components
+ */
 import { CategorySection } from './section.category';
 import { PanelSection } from './section.panel';
 import { StaySection } from './section.stay';
@@ -30,6 +34,11 @@ interface mapProps {
   [key: string]: JSX.Element;
 }
 
+/**
+ * Bundles the section components
+ * @param {string} extendsTo - Add custom styling to the selected component
+ * @param {string} type - Specifies the type of section component
+ */
 export const Section: React.FC<SectionProps> = ({
   extendsTo,
   type,

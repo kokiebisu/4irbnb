@@ -1,21 +1,35 @@
 import React, { useState } from 'react';
 
-import {
-  Shield,
-  Star,
-  Superhost,
-  Verified,
-} from '../../../public/svg/original';
+/**
+ * Styles
+ */
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import space from '../../../styles/space.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import section from './section.module.scss';
+
+/**
+ * Props
+ */
 import { HostSectionProps } from './props';
+
+/**
+ * Components
+ */
 import { Button } from '../../../components/atoms/button/button.component';
 import { Bullet } from '../../../components/atoms/bullet/bullet.component';
 
+/**
+ * Vectors
+ */
+import { Shield } from '../../../public/svg/original';
+
+/**
+ * Modifies the content which should be displayed initially
+ * @param {string} content - The content which must be hidden
+ */
 const renderContent = (content: string) => {
   const wordArray = content.split(' ');
   const newArray = [];
@@ -25,6 +39,20 @@ const renderContent = (content: string) => {
   return newArray;
 };
 
+/**
+ * Renders the host section
+ * @param {string} host - Name of host
+ * @param {boolean} isSuperhost - Whether is the host is a superhost or not
+ * @param {string} description - Description of the host
+ * @param {string} joined - Date which the host joined
+ * @param {string} duringStay - Description about during the stay
+ * @param {number} numberOfReviews - Number of reviews by the users
+ * @param {string} hostImgUrl - Image of the host
+ * @param {string} responseTime - How soon the host responds
+ * @param {string} responseRate - The percentage in which the host responds
+ * @param {string} layoutType - Type of either room or experience
+ * @param {boolean} verified - Whether is the user if verified or not
+ */
 export const HostSection: React.FC<HostSectionProps> = ({
   host = 'Host Name',
   isSuperhost = false,
