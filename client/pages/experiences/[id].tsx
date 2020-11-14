@@ -13,8 +13,33 @@ import { Footer } from '../../components/organisms/footer/footer.component';
 import { useToggleState } from 'context/toggle';
 import responsive from '../../styles/responsive.module.scss';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 
 const id: () => string | JSX.Element = () => {
+  const router = useRouter();
+  const { id: experienceID }: { id?: string } = router.query;
+  console.log('experienceID', experienceID);
+  const experiences = {
+    1715106: {
+      title: 'Making & Eating Soup Dumplings vegan Ok',
+      ratings: 5.0,
+      numberOfReviews: 174,
+      location: 'Shanghai',
+      country: 'China',
+      layoutType: 'experience',
+      images: [
+        'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1715106-active_media/original/fb488b57-a64f-4bdc-86f2-a3324937f2e3.jpg?im_w=320',
+        'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1715106-active_media/original/7d50d37f-69c2-4410-943b-4937a6c36f2e.jpg?im_w=240',
+        'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1715106-active_media/original/e209bc04-77ab-4a90-bf6b-e8a3880801da.jpg?im_w=240',
+        'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1715106-active_media/original/0b0037b3-e4e2-4f66-9863-f549aae0e2e0.jpg?im_w=320',
+        'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1715106-active_media/original/501aae7d-d881-4d64-be3b-67c81ab14bc1.jpeg?im_w=1200',
+      ],
+      characteristics: ['time', 'devices', 'people', 'language'],
+      hostImgUrl:
+        'https://a0.muscache.com/im/pictures/user/aab93790-0a1a-4131-a5fc-e794b394fe18.jpg?im_w=240',
+      host: 'Cici',
+    },
+  };
   const toggleState = useToggleState();
   const [scrollPosition, setScrollPosition] = useState(0);
   const handleScroll = () => {
@@ -53,11 +78,14 @@ const id: () => string | JSX.Element = () => {
           )}
         </AnimatePresence>
         <div className={[].join(' ')}>
-          <Section
-            layoutType='experience'
-            extendsTo={[staysDetail['flex__panel']].join(' ')}
-            type='panel'
-          />
+          {experiences[experienceID] ? (
+            <Section
+              layoutType='experience'
+              extendsTo={[staysDetail['flex__panel']].join(' ')}
+              type='panel'
+              {...experiences[experienceID]}
+            />
+          ) : null}
         </div>
         <div
           className={[layout['container'], staysDetail['m__content']].join(
@@ -66,11 +94,13 @@ const id: () => string | JSX.Element = () => {
           <div className={[details['flex__details']].join(' ')}>
             <div className={[details['w__details--left']].join(' ')}>
               <div className={[staysDetail['b__characteristics']].join(' ')}>
-                <Section
-                  layoutType='experience'
-                  type='characteristics'
-                  characteristics={['time', 'devices', 'people', 'language']}
-                />
+                {experiences[experienceID] ? (
+                  <Section
+                    layoutType='experience'
+                    type='characteristics'
+                    {...experiences[experienceID]}
+                  />
+                ) : null}
               </div>
               <div
                 className={[color['b-t--white__2'], space['p-v--32']].join(

@@ -19,6 +19,13 @@ export const PanelSection: React.FC<PanelSectionProps> = ({
   province = 'Province',
   country = 'Country',
   layoutType = 'room',
+  images = [
+    'https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large',
+    'https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large',
+    'https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large',
+    'https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large',
+    'https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large',
+  ],
 }) => {
   const header = {
     room: (
@@ -229,7 +236,7 @@ export const PanelSection: React.FC<PanelSectionProps> = ({
                   shape['background-cover'],
                   shape['background-repeat'],
                 ].join(' ')}
-                src='https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large'
+                src={images[0]}
               />
             </div>
             <div
@@ -263,7 +270,7 @@ export const PanelSection: React.FC<PanelSectionProps> = ({
                       shape['background-cover'],
                       shape['background-repeat'],
                     ].join(' ')}
-                    src='https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large'
+                    src={images[1]}
                   />
                 </div>
                 <div
@@ -283,7 +290,7 @@ export const PanelSection: React.FC<PanelSectionProps> = ({
                       shape['background-cover'],
                       shape['background-repeat'],
                     ].join(' ')}
-                    src='https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large'
+                    src={images[2]}
                   />
                 </div>
                 <div
@@ -303,7 +310,7 @@ export const PanelSection: React.FC<PanelSectionProps> = ({
                       shape['background-cover'],
                       shape['background-repeat'],
                     ].join(' ')}
-                    src='https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large'
+                    src={images[3]}
                   />
                 </div>
                 <div
@@ -323,7 +330,7 @@ export const PanelSection: React.FC<PanelSectionProps> = ({
                       shape['background-cover'],
                       shape['background-repeat'],
                     ].join(' ')}
-                    src='https://a0.muscache.com/im/pictures/2ad05257-9bda-4dec-b39e-709d0442ee68.jpg?aki_policy=x_large'
+                    src={images[4]}
                   />
                 </div>
               </div>

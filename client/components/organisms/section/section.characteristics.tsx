@@ -10,13 +10,14 @@ import { DevicesInverse, Star } from '../../../public/svg/original';
 import section from './section.module.scss';
 
 export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
+  title = 'Making & Eating Soup Dumplings vegan Ok',
   stayType = 'Type',
   host = 'Host',
   guests = 1,
   bedrooms = 1,
   beds = 1,
   bathrooms = 1,
-  imgUrl = 'https://a0.muscache.com/im/pictures/user/ca3ae8e3-997b-4ec6-b3af-139dd46be44b.jpg?im_w=240',
+  hostImgUrl = 'https://a0.muscache.com/im/pictures/user/ca3ae8e3-997b-4ec6-b3af-139dd46be44b.jpg?im_w=240',
   layoutType = 'experience',
   ratings = 4.9,
   numberOfReviews = 100,
@@ -102,7 +103,7 @@ export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
                 shape['h--60'],
                 shape['w--60'],
               ].join(' ')}
-              src={imgUrl}
+              src={hostImgUrl}
             />
           </div>
         </div>
@@ -150,9 +151,7 @@ export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
                   </div>
                 </div>
                 <div className={[space['m-v--8']].join(' ')}>
-                  <h3 className={[font['size--24']].join(' ')}>
-                    Making & Eating Soup Dumplings vegan Ok
-                  </h3>
+                  <h3 className={[font['size--24']].join(' ')}>{title}</h3>
                 </div>
                 <div
                   className={[layout['items-center'], layout['flex-wrap']].join(
@@ -222,7 +221,7 @@ export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
                 shape['h--60'],
                 shape['w--60'],
               ].join(' ')}
-              src={imgUrl}
+              src={hostImgUrl}
             />
           </div>
         </div>
