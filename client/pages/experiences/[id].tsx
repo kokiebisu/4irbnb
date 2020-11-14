@@ -40,6 +40,14 @@ const id: () => string | JSX.Element = () => {
       host: 'Cici',
       mainDescription:
         'Join us in a class to learn how to make famous Shanghainese xiǎolóngbāo soup dumplings from start to finish. You’ll learn how to knead a dough, how to roll wrappers and how to pinch a dumpling by your hands! Of cause I’ll even reveal how the soup gets wrapped up inside the dumpling! You will also learn how to make a yummy dipping sauce that complements the dumplings. Finally, we will enjoy our handmade xiǎolóngbāo together. You will also get to take home an easy-to-follow recipe so you can recreate the cooking experience in your own kitchen. This experience will live broadcast on zoom, you will get all the information and details after your booking. This Experience is GOOD for Team Building & Family Party!Other things to notePlease prepare all the ingredients that I listed.This experience is a live broadcast, please ensure your networking device connect with network!',
+      participates: ['call', 'private', 'request'],
+      necessities: [
+        'All purpose flour 100g',
+        'water 50g',
+        '160g minced pork(40%fat),can be subbed with chicken, shrimp.If your meat is too much lean, keep the fat cut off from skin(the skin for making pork jelly)',
+        '80g pork skin jelly, can be sunned with chicken feet, gelatin with stock. (Will give you instructions and video how to make it',
+        'Chopped very fine ginger and spring onions 3g each.',
+      ],
     },
   };
   const toggleState = useToggleState();
@@ -118,13 +126,13 @@ const id: () => string | JSX.Element = () => {
                 className={[color['b-t--white__2'], space['p-v--32']].join(
                   ' '
                 )}>
-                <Section type='participate' />
+                <Section type='participate' {...experiences[experienceID]} />
               </div>
               <div
                 className={[color['b-t--white__2'], space['p-v--32']].join(
                   ' '
                 )}>
-                <Section type='bring' />
+                <Section type='bring' {...experiences[experienceID]} />
               </div>
             </div>
             <div
