@@ -1,13 +1,29 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
+
+/**
+ * Styles
+ */
 import layout from '../../../styles/layout.module.scss';
-import { HomesBannerProps } from './props';
 import space from '../../../styles/space.module.scss';
 import font from '../../../styles/font.module.scss';
-import { Button } from '../../../components/atoms/button/button.component';
-import { Card } from '../../../components/atoms/card/card.component';
 import banner from './banner.module.scss';
 import responsive from '../../../styles/responsive.module.scss';
 
+/**
+ * Props
+ */
+import { HomesBannerProps } from './props';
+
+/**
+ * Components
+ */
+import { Button } from '../../../components/atoms/button/button.component';
+import { Card } from '../../../components/atoms/card/card.component';
+
+/**
+ * Renders the homes banner
+ * @param {Object[]} hosts - List of hosts
+ */
 export const HomesBanner: React.FC<HomesBannerProps> = ({
   hosts = [
     { host: 'Darrel', stayType: 'tiny house', location: 'Atlanta' },
@@ -24,8 +40,6 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
     translate: 0,
     transition: 0.45,
   });
-
-  const containerRef = useRef<HTMLDivElement>();
 
   const previousSlide = () => {
     if (state.activeSlide === 0) {
