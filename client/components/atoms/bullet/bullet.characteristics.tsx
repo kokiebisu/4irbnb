@@ -15,6 +15,7 @@ import {
   Time,
 } from '../../../public/svg/original';
 import { CharacteristicBulletProps } from './props';
+import * as Helper from '../../../helper/time';
 
 export const CharacteristicBullet: React.FC<CharacteristicBulletProps> = ({
   characteristicType = 'house',
@@ -54,7 +55,7 @@ export const CharacteristicBullet: React.FC<CharacteristicBulletProps> = ({
     },
     time: {
       icon: <Time width={32} />,
-      title: `${time} mins`,
+      title: Helper.displayDuration(time),
     },
     devices: {
       icon: <Devices width={32} />,
