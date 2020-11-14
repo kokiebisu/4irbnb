@@ -13,7 +13,13 @@ export const experiences = {
       'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1715106-active_media/original/0b0037b3-e4e2-4f66-9863-f549aae0e2e0.jpg?im_w=320',
       'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1715106-active_media/original/501aae7d-d881-4d64-be3b-67c81ab14bc1.jpeg?im_w=1200',
     ],
-    characteristics: ['time', 'devices', 'people', 'language'],
+    characteristics: {
+      time: 120,
+      devices: ['computer', 'phone', 'tablet'],
+      people: 10,
+      group: 100,
+      languages: ['English', 'Chinese'],
+    },
     hostImgUrl:
       'https://a0.muscache.com/im/pictures/user/aab93790-0a1a-4131-a5fc-e794b394fe18.jpg?im_w=240',
     host: 'Cici',
@@ -98,7 +104,13 @@ export const experiences = {
       'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1755988-media_library/original/383a2977-aa6e-4ed6-86ab-11e927792cb9.jpeg?im_w=240',
       'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1755988-media_library/original/bc33a598-9f2c-42d3-9473-6fccec6b6c18.jpeg?im_w=480',
     ],
-    characteristics: ['time', 'devices', 'people', 'language'],
+    characteristics: {
+      time: 120,
+      devices: ['computer', 'phone', 'tablet'],
+      people: 10,
+      group: 100,
+      languages: ['English'],
+    },
     hostImgUrl:
       'https://a0.muscache.com/im/pictures/user/e354a237-1aa9-4335-8ff2-a738089be77f.jpg?im_w=240',
     host: 'Adriana',
@@ -184,7 +196,13 @@ export const experiences = {
       'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1661222-active_media/original/35bc7791-7851-481b-99a6-1df36856619b.jpg?im_w=240',
       'https://a0.muscache.com/im/pictures/de09a803-94be-4a47-b734-33f0762eab60.jpg?im_w=480',
     ],
-    characteristics: ['time', 'devices', 'people', 'language'],
+    characteristics: {
+      time: 75,
+      devices: ['computer', 'phone', 'tablet'],
+      people: 10,
+      group: 30,
+      languages: ['English'],
+    },
     hostImgUrl:
       'https://a0.muscache.com/im/pictures/user/0b2abbf9-9b4a-4f43-82e6-50e73cc0924b.jpg?im_w=240',
     host: 'Noah',
@@ -276,7 +294,13 @@ export const experiences = {
       'https://a0.muscache.com/im/pictures/bd97b0f2-c7b2-4f30-897d-354f7d46575e.jpg?im_w=240',
       'https://a0.muscache.com/im/pictures/4dd26532-4c2a-4b3b-8e42-e7dbffaf1950.jpg?im_w=480',
     ],
-    characteristics: ['time', 'devices', 'people', 'language'],
+    characteristics: {
+      time: 75,
+      devices: ['computer', 'phone', 'tablet'],
+      people: 10,
+      group: 30,
+      languages: ['English'],
+    },
     hostImgUrl:
       'https://a0.muscache.com/im/pictures/user/4f39cfe4-1260-432c-8940-ed2cb5c1e54a.jpg?im_w=240',
     host: 'Alejandra',
