@@ -14,7 +14,7 @@ export type StaySectionProps = SectionBasicProps & {
   fetchUrl?: string;
 };
 
-export type PanelSectionProps = SectionBasicProps & {
+export interface PanelSectionProps extends SectionBasicProps {
   ratings?: number;
   numberOfReviews?: number;
   superhost?: boolean;
@@ -22,7 +22,8 @@ export type PanelSectionProps = SectionBasicProps & {
   province?: string;
   country?: string;
   layoutType?: string;
-};
+  images?: string[];
+}
 
 export type CharacteristicsSectionProps = SectionBasicProps & {
   stayType?: string;
@@ -31,7 +32,7 @@ export type CharacteristicsSectionProps = SectionBasicProps & {
   bedrooms?: number;
   beds?: number;
   bathrooms?: number;
-  imgUrl?: string;
+  hostImgUrl?: string;
   layoutType?: string;
   ratings?: number;
   numberOfReviews?: number;
