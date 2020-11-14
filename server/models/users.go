@@ -1,5 +1,7 @@
 package models
 
+import "fmt"
+
 type User struct {
 	ID int `json:"id"`
 	Birthdate string `json:"birthdate"`
@@ -9,8 +11,10 @@ type User struct {
 	Email string `json:"email"`
 }
 
-var users = []User{
-	User{
+type Users []*User
+
+var users = Users{
+	&User{
 		1,
 		"2020-08-19",
 		"Kenichi",
@@ -18,7 +22,7 @@ var users = []User{
 		"password",
 		"ken@gmail.com",
 	},
-	User{
+	&User{
 		1,
 		"2020-08-19",
 		"Kenichi",
@@ -28,13 +32,38 @@ var users = []User{
 	},
 }
 
-func GetUsers() []User {
+func GetUsers() Users{
 	return users
 }
 
-func AddUsers(u User) {
+func AddUsers(u *User) {
 	u.ID = GetNextId()
 	users = append(users, u)
+}
+
+// func Errorf(format string, a ...interface{}) error
+var ErrorProductNotFound = fmt.Errorf("Product not found")
+
+func FindUser(id int) (int, *User, error) {
+	for i, u := range users {
+		if u.ID == id {
+			return i, u, nil
+		}
+	}
+
+	return -1, nil, ErrorProductNotFound
+}
+
+func UpdateUser(id int, u *User) error {
+	i, fu, err := FindUser(id)
+	if err != nil {
+		return err
+	}
+
+	// just in case
+	fu.ID = id
+	users[i] = u
+	return nil
 }
 
 func GetNextId() int {
