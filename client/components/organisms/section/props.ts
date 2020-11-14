@@ -61,23 +61,25 @@ export interface AmenitySectionProps extends SectionBasicProps {
 }
 
 export interface ReviewsSectionProps {
+  ratings?: number;
   categories?: any;
-  total?: number;
+  numberOfReviews?: number;
   reviews?: any;
   layoutType?: string;
 }
 
 export interface HostSectionProps {
-  name?: string;
+  host?: string;
   isSuperhost?: boolean;
   description?: string;
   joined?: string;
   duringStay?: string;
-  reviews?: number;
-  imgUrl?: string;
+  numberOfReviews?: number;
+  hostImgUrl?: string;
   responseTime?: number;
   responseRate?: number;
   layoutType?: string;
+  verified?: boolean;
 }
 
 export interface KnowSectionProps {

@@ -48,6 +48,62 @@ const id: () => string | JSX.Element = () => {
         '80g pork skin jelly, can be sunned with chicken feet, gelatin with stock. (Will give you instructions and video how to make it',
         'Chopped very fine ginger and spring onions 3g each.',
       ],
+      availables: [
+        {
+          date: 'Tue., Nov. 10',
+          from: '1:00 a.m. ',
+          to: '3:00 a.m. ',
+          standard: 'PST',
+          price: 31,
+        },
+        {
+          date: 'Tue., Nov. 10',
+          from: '1:00 a.m. ',
+          to: '3:00 a.m. ',
+          standard: 'PST',
+          price: 31,
+        },
+        {
+          date: 'Tue., Nov. 11',
+          from: '1:00 a.m. ',
+          to: '3:00 a.m. ',
+          standard: 'PST',
+          price: 31,
+        },
+        {
+          date: 'Tue., Nov. 12',
+          from: '1:00 a.m. ',
+          to: '3:00 a.m. ',
+          standard: 'PST',
+          price: 31,
+        },
+        {
+          date: 'Tue., Nov. 13',
+          from: '1:00 a.m. ',
+          to: '3:00 a.m. ',
+          standard: 'PST',
+          price: 31,
+        },
+      ],
+      verified: true,
+      reviews: [
+        {
+          imgUrl:
+            'https://a0.muscache.com/im/pictures/user/fa293fcb-4f3e-4965-8d46-c6371c885a98.jpg?im_w=240',
+          name: 'Amanda',
+          date: 'November 2020',
+          description:
+            'This was such a great activity!! Always wanted to learn how to make these dumplings and now I am confident I can do it again!!',
+        },
+        {
+          imgUrl:
+            'https://a0.muscache.com/defaults/user_pic-225x225.png?im_w=240',
+          name: 'Renee',
+          date: 'November 2020',
+          description:
+            'This was a great class. Cici shared wonderful stories about life and cooking in China. And, she guided us through the process of making delicious soup dumplings! I really enjoyed the experience!',
+        },
+      ],
     },
   };
   const toggleState = useToggleState();
@@ -116,23 +172,29 @@ const id: () => string | JSX.Element = () => {
                 className={[color['b-t--white__2'], space['p-v--32']].join(
                   ' '
                 )}>
-                <Section
-                  layoutType='experience'
-                  type='description'
-                  {...experiences[experienceID]}
-                />
+                {experiences[experienceID] ? (
+                  <Section
+                    layoutType='experience'
+                    type='description'
+                    {...experiences[experienceID]}
+                  />
+                ) : null}
               </div>
               <div
                 className={[color['b-t--white__2'], space['p-v--32']].join(
                   ' '
                 )}>
-                <Section type='participate' {...experiences[experienceID]} />
+                {experiences[experienceID] ? (
+                  <Section type='participate' {...experiences[experienceID]} />
+                ) : null}
               </div>
               <div
                 className={[color['b-t--white__2'], space['p-v--32']].join(
                   ' '
                 )}>
-                <Section type='bring' {...experiences[experienceID]} />
+                {experiences[experienceID] ? (
+                  <Section type='bring' {...experiences[experienceID]} />
+                ) : null}
               </div>
             </div>
             <div
@@ -145,27 +207,50 @@ const id: () => string | JSX.Element = () => {
                   layout['justify-end'],
                   layout['sticky'],
                 ].join(' ')}>
-                <Modal
-                  type='booking'
-                  extendsTo={[shape['w--full']].join(' ')}
-                />
+                {experiences[experienceID] ? (
+                  <Modal
+                    type='booking'
+                    extendsTo={[shape['w--full']].join(' ')}
+                    {...experiences[experienceID]}
+                  />
+                ) : null}
               </div>
             </div>
           </div>
           <div className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
-            <Section layoutType='experience' type='host' />
+            {experiences[experienceID] ? (
+              <Section
+                layoutType='experience'
+                type='host'
+                {...experiences[experienceID]}
+              />
+            ) : null}
           </div>
           <div className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
-            <Section type='experiences' />
+            {experiences[experienceID] ? <Section type='experiences' /> : null}
           </div>
           <div className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
-            <Section layoutType='experience' type='reviews' />
+            {experiences[experienceID] ? (
+              <Section
+                layoutType='experience'
+                type='reviews'
+                {...experiences[experienceID]}
+              />
+            ) : null}
           </div>
           <div className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
-            <Section layoutType='experience' type='available' />
+            {experiences[experienceID] ? (
+              <Section
+                layoutType='experience'
+                type='available'
+                {...experiences[experienceID]}
+              />
+            ) : null}
           </div>
           <div className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
-            <Section layoutType='experience' type='know' />
+            {experiences[experienceID] ? (
+              <Section layoutType='experience' type='know' />
+            ) : null}
           </div>
         </div>
         <Footer />
