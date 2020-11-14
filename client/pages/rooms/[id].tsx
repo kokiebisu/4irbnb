@@ -67,7 +67,7 @@ const id: () => string | JSX.Element = () => {
           )}>
           <div className={[details['flex__details']].join(' ')}>
             <div className={[details['w__details--left']].join(' ')}>
-              <Section
+              {/* <Section
                 layoutType='room'
                 extendsTo={[staysDetail['b__characteristics']].join(' ')}
                 type='characteristics'
@@ -78,7 +78,7 @@ const id: () => string | JSX.Element = () => {
                   'calendar',
                   'guidelines',
                 ]}
-              />
+              /> */}
               <Section
                 type='description'
                 extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}
