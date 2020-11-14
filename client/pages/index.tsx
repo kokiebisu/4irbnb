@@ -31,7 +31,7 @@ import { MenuBar } from '../components/organisms/menubar/menubar.component';
 
 /* hooks */
 import { useHandleScroll } from '../hooks/useHandleScroll';
-import { useHandleResize } from '../hooks/useHandleResize';
+import { useHandleDocumentResize } from '../hooks/useHandleDocumentResize';
 import { useTimeout } from '../hooks/useTimeout';
 
 /**
@@ -59,7 +59,7 @@ const LandingPage: () => string | JSX.Element = () => {
   const loading = useTimeout(3000);
   const toggleState = useToggleState();
   const scrollPosition = useHandleScroll();
-  const pageHeight = useHandleResize();
+  const pageHeight = useHandleDocumentResize();
 
   return (
     <div

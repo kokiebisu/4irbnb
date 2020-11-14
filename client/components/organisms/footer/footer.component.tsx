@@ -1,13 +1,30 @@
 import React from 'react';
 import Link from 'next/link';
+
+/**
+ * Styles
+ */
 import color from '../../../styles/color.module.scss';
 import space from '../../../styles/space.module.scss';
 import styles from '../../../styles/index.module.scss';
 import font from '../../../styles/font.module.scss';
 import layout from '../../../styles/layout.module.scss';
+
+/**
+ * Contents
+ */
 import { sections } from '../../../content/index';
+
+/**
+ * Vectors
+ */
 import { Globe } from '../../../public/svg/original';
+
+/**
+ * Props
+ */
 import { FooterProps } from './props';
+
 /**
  * Renders the footer
  * @param {boolean} spread - Whether if the layout should be spread out or not

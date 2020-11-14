@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -28,6 +28,11 @@ import { Star } from '../../../public/svg/original';
 import { Button } from '../../../components/atoms/button/button.component';
 
 /**
+ * Hooks
+ */
+import { useHandleScroll } from 'hooks/useHandleScroll';
+
+/**
  * Renders the details header
  * @param {stirng} layoutType - Type of layout
  * @param {boolean} spread - Whether if the layout should be spread out or not
@@ -36,19 +41,7 @@ export const DetailsHeader: React.FC<DetailsHeaderProps> = ({
   layoutType = 'room',
   spread = false,
 }) => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const scrollPosition = useHandleScroll();
   const items =
     layoutType === 'experience'
       ? [

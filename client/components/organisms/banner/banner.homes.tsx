@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 
 /**
  * Styles
@@ -21,56 +21,29 @@ import { Button } from '../../../components/atoms/button/button.component';
 import { Card } from '../../../components/atoms/card/card.component';
 
 /**
+ * Hooks
+ */
+import { useSlider, SliderProps } from '../../../hooks/useSlider';
+
+/**
  * Renders the homes banner
  * @param {Object[]} hosts - List of hosts
  */
 export const HomesBanner: React.FC<HomesBannerProps> = ({
   hosts = [
-    { host: 'Darrel', stayType: 'tiny house', location: 'Atlanta' },
-    { host: 'Darrel', stayType: 'tiny house', location: 'Atlanta' },
-    { host: 'Darrel', stayType: 'tiny house', location: 'Atlanta' },
-    { host: 'Darrel', stayType: 'tiny house', location: 'Atlanta' },
+    { name: 'Darrel', stayType: 'tiny house', location: 'Atlanta' },
+    { name: 'Darrel', stayType: 'tiny house', location: 'Atlanta' },
+    { name: 'Darrel', stayType: 'tiny house', location: 'Atlanta' },
+    { name: 'Darrel', stayType: 'tiny house', location: 'Atlanta' },
   ],
 }) => {
-  const sliderWrapper = useRef(null);
-
   const width = 366;
-  const [state, setState] = useState({
-    activeSlide: 0,
-    translate: 0,
-    transition: 0.45,
-  });
-
-  const previousSlide = () => {
-    if (state.activeSlide === 0) {
-      return setState({
-        ...state,
-        translate: (hosts.length - 1) * width,
-        activeSlide: hosts.length - 1,
-      });
-    }
-
-    setState({
-      ...state,
-      activeSlide: state.activeSlide - 1,
-      translate: (state.activeSlide - 1) * width,
-    });
-  };
-
-  const nextSlide = () => {
-    if (state.activeSlide === hosts.length - 1) {
-      return setState({
-        ...state,
-        translate: 0,
-        activeSlide: 0,
-      });
-    }
-    setState({
-      ...state,
-      activeSlide: state.activeSlide + 1,
-      translate: (state.activeSlide + 1) * width,
-    });
-  };
+  const sliderRef = useRef(null);
+  const { state, previousSlide, nextSlide }: SliderProps = useSlider(
+    hosts,
+    width,
+    'banner'
+  );
 
   return (
     <div
@@ -130,14 +103,14 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
               return (
                 <div
                   key={index}
-                  ref={sliderWrapper}
+                  ref={sliderRef}
                   className={[space['m-r--16']].join(' ')}>
                   <Card
                     type='host'
                     key={index}
-                    host='Darrel'
-                    stayType='tiny house'
-                    location='Atlanta'
+                    host={host.name}
+                    stayType={host.stayType}
+                    location={host.location}
                   />
                 </div>
               );
