@@ -123,7 +123,7 @@ export interface AlsoSectionProps {
 }
 
 export interface ParticipateSectionProps {
-  categories?: string[];
+  participates?: string[];
 }
 
 export interface BringSectionProps {
