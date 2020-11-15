@@ -1,4 +1,4 @@
-import { checkEmail } from 'helper/regex';
+import { checkEmail } from '../../../helper/regex';
 import input from './input.module.scss';
 
 export const styleInput = (value, fieldActive) => {
