@@ -8,9 +8,8 @@ import (
 	"github.com/kokiebisu/airbnb/repository"
 )
 
-// repository.UserRepository is the type
 var (
-	repo repository.UserRepository = repository.NewUserRepository()
+	repo repository.UserRepository
 )
 
 type UserService interface {
@@ -21,7 +20,8 @@ type UserService interface {
 
 type userService struct {}
 
-func NewUserService() UserService {
+func NewUserService(ur repository.UserRepository) UserService {
+	repo = ur
 	return &userService{}
 }
 
@@ -30,7 +30,7 @@ func (*userService) Validate(user *entity.User) error {
 		err := errors.New("The user is empty")
 		return err
 	}
-	if user.Email == "" {
+	if (*user).Email == "" {
 		err := errors.New("The email is empty")
 		return err
 	}
@@ -38,7 +38,7 @@ func (*userService) Validate(user *entity.User) error {
 }
  
 func (*userService) Create(user *entity.User) (*entity.User, error) {
-	user.ID = rand.Intn(100)
+	(*user).ID = rand.Intn(100)
 	return repo.Save(user)
 }
 

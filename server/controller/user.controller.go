@@ -10,7 +10,7 @@ import (
 )
 
 var (
-	userService service.UserService = service.NewUserService()
+	userService service.UserService
 )
 
 type UserController interface {
@@ -20,7 +20,8 @@ type UserController interface {
 
 type controller struct {}
 
-func NewUserController() UserController {
+func NewUserController(us service.UserService) UserController {
+	userService = us
 	return &controller{}
 }
 
