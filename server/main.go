@@ -1,35 +1,22 @@
 package main
 
 import (
-	"log"
+	"fmt"
 	"net/http"
-	"os"
-	"time"
 
-	"github.com/kokiebisu/airbnb/handlers"
+	"github.com/kokiebisu/airbnb/controller"
+	"github.com/kokiebisu/airbnb/router"
+)
+
+var (
+	httpRouter router.Router = router.NewMuxRouter()
+	userController controller.UserController = controller.NewUserController()
 )
 
 func main() {
-
-	// where to log
-	// prefix appears the beginning of each log
-	// lstdFlags -> date & time
-	l := log.New(os.Stdout, "api", log.LstdFlags)
-
-	sh := handlers.NewStays(l)
-	uh := handlers.NewUsers(l)
-
-	sm := http.NewServeMux()
-	sm.Handle("/stays/", sh)
-	sm.Handle("/users/", uh)
-
-	server := &http.Server{
-		Addr: ":8080",
-		Handler: sm,
-		ReadTimeout: 10 * time.Second,
-		WriteTimeout: 10 * time.Second,
-		MaxHeaderBytes: 1 << 20,
-	}
-
-	server.ListenAndServe()
+	httpRouter.GET("/", func (rw http.ResponseWriter, r *http.Request) {
+		fmt.Fprintln(rw, "Up and running")
+	})
+	// httpRouter.GET("/users", userController.GetUsers())
+	httpRouter.SERVE(":8080")
 }
