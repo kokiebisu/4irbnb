@@ -30,6 +30,7 @@ export interface NameInputProps {
   value?: string;
   direction?: string;
   name?: 'first' | 'last';
+  errors?: boolean;
 }
 
 export interface InputProps {

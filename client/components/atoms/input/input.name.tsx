@@ -34,7 +34,7 @@ export const NameInput: React.FC<NameInputProps> = ({
   value,
   direction,
   name = 'first',
-  errors,
+  errors = false,
 }) => {
   console.log('errors', errors);
   const names = {
