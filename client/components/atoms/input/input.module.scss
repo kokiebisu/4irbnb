@@ -56,10 +56,18 @@
 
   &__active {
     background-color: white;
+
+    &::placeholder {
+      color: rgb(104, 104, 104);
+    }
   }
 
   &__inactive {
     background-color: white;
+
+    &::placeholder {
+      color: rgb(104, 104, 104);
+    }
   }
 
   &__error {

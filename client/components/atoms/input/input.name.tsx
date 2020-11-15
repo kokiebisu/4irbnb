@@ -13,16 +13,12 @@ import input from './input.module.scss';
 /**
  * Props
  */
-import { EmailInputProps } from './props';
+import { NameInputProps } from './props';
 
 /**
  * Styling
  */
-import {
-  styleEmailInput,
-  styleEmailLabel,
-  styleEmailContainer,
-} from './styling';
+import { styleNameInput, styleNameLabel, styleNameContainer } from './styling';
 
 /**
  * Renders the text input component
@@ -33,11 +29,18 @@ import {
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const EmailInput: React.FC<EmailInputProps> = ({
+export const NameInput: React.FC<NameInputProps> = ({
   handleChange,
   value,
   direction,
+  name = 'first',
+  errors,
 }) => {
+  console.log('errors', errors);
+  const names = {
+    firstname: 'First name',
+    lastname: 'Last name',
+  };
   const [fieldActive, setFieldActive] = useState(false);
 
   const activateField = () => {
@@ -78,9 +81,10 @@ export const EmailInput: React.FC<EmailInputProps> = ({
         space['p-v--6'],
         space['p-h--12'],
         layout['items-center'],
-      ].join(' ')} ${renderShape()} ${styleEmailContainer(
-        value,
-        fieldActive
+      ].join(' ')} ${renderShape()} ${styleNameContainer(
+        errors,
+        fieldActive,
+        value
       )}`}>
       <div
         style={{
@@ -90,8 +94,8 @@ export const EmailInput: React.FC<EmailInputProps> = ({
         }}>
         <input
           autoFocus={true}
-          id='email'
-          name='email'
+          id={name}
+          name={name}
           type='text'
           onChange={handleChange}
           value={value}
@@ -106,19 +110,19 @@ export const EmailInput: React.FC<EmailInputProps> = ({
             font['weight--300'],
             color['c__placeholder--black'],
             input['input'],
-          ].join(' ')} ${styleEmailInput(value, fieldActive)}`}
-          placeholder={fieldActive ? 'Email' : undefined}
+          ].join(' ')} ${styleNameInput(errors, value, fieldActive)}`}
+          placeholder={fieldActive ? names[name] : undefined}
         />
         <label
-          htmlFor='email'
+          htmlFor={name}
           className={`${[
             layout['absolute'],
             font['size--12'],
             color['c--gray__1'],
             font['weight--100'],
             input['label'],
-          ].join(' ')} ${styleEmailLabel(value, fieldActive)}`}>
-          Email
+          ].join(' ')} ${styleNameLabel(errors, value, fieldActive)}`}>
+          {names[name]}
         </label>
       </div>
     </div>

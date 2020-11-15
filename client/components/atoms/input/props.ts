@@ -25,6 +25,13 @@ export interface PasswordInputProps {
   direction?: string;
 }
 
+export interface NameInputProps {
+  handleChange?: any;
+  value?: string;
+  direction?: string;
+  name?: 'first' | 'last';
+}
+
 export interface InputProps {
   extendsTo?: string;
   [x: string]: any;
