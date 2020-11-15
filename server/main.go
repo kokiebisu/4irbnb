@@ -13,10 +13,12 @@ var (
 	userController controller.UserController = controller.NewUserController()
 )
 
+
 func main() {
 	httpRouter.GET("/", func (rw http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(rw, "Up and running")
 	})
-	// httpRouter.GET("/users", userController.GetUsers())
+	httpRouter.GET("/users", userController.GetUsers)
+	httpRouter.POST("/users", userController.AddUsers)
 	httpRouter.SERVE(":8080")
 }
