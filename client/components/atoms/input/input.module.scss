@@ -1,55 +1,48 @@
+.container {
+  &__active {
+    border: 2px solid black;
+  }
+
+  &__inactive {
+    border: 1px solid black;
+    background-color: white;
+  }
+
+  &__error {
+    &--active {
+      border: 2px solid #c13514;
+      background-color: white;
+    }
+
+    &--inactive {
+      border: 1px solid #c13514;
+      background-color: #fef8f6;
+    }
+  }
+}
+
 .label {
   position: absolute;
   transition: all 150ms ease-in;
-  font-size: 13px;
-  top: 2px;
-}
-
-.input:invalid ~ .label {
-  position: absolute;
-  transition: all 150ms ease-in;
   font-size: 16px;
-  top: 11px;
-  color: gray !important;
-}
-.input:focus ~ .label {
-  position: absolute;
-  transition: all 150ms ease-in;
-  font-size: 13px;
-  top: 2px;
-  color: gray !important;
-}
+  top: 12px;
 
-.input:invalid:focus ~ .label {
-  position: absolute;
-  transition: all 150ms ease-in;
-  font-size: 13px;
-  top: 2px;
-  color: gray !important;
-}
+  &__active {
+    position: absolute;
+    transition: all 150ms ease-in;
+    font-size: 13px;
+    top: 2px;
+    color: gray !important;
+  }
 
-// email
-.input[type='email']:invalid ~ .label {
-  position: absolute;
-  transition: all 150ms ease-in;
-  font-size: 16px;
-  top: 11px;
-  color: gray !important;
-}
-.input[type='email']:focus ~ .label {
-  position: absolute;
-  transition: all 150ms ease-in;
-  font-size: 13px;
-  top: 2px;
-  color: gray !important;
-}
-
-.input[type='email']:invalid:focus ~ .label {
-  position: absolute;
-  transition: all 150ms ease-in;
-  font-size: 13px;
-  top: 2px;
-  color: gray !important;
+  &__error {
+    position: absolute;
+    transition: all 150ms ease-in;
+    font-size: 13px;
+    top: 2px;
+    color: #c13514 !important;
+    font-weight: 500;
+  }
 }
 
 .input {
@@ -60,16 +53,22 @@
   padding-top: 20px;
   font-size: 16px;
   color: rgb(104, 104, 104);
-}
 
-.input:focus::placeholder {
-  color: rgb(104, 104, 104);
-}
+  &__active {
+    background-color: white;
+  }
 
-.input[type='date']:invalid::-webkit-datetime-edit {
-  color: transparent;
-}
+  &__inactive {
+    background-color: white;
+  }
 
-.input[type='date']:focus::-webkit-datetime-edit {
-  color: rgb(104, 104, 104);
+  &__error {
+    &--active {
+      background-color: white;
+    }
+
+    &--inactive {
+      background-color: #fef8f6;
+    }
+  }
 }
