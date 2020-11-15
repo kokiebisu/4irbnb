@@ -13,23 +13,16 @@ import input from './input.module.scss';
 /**
  * Props
  */
-import { EmailInputProps } from './props';
-
-/**
- * Styling
- */
-import { styleInput, styleLabel, styleContainer } from './styling';
+import { PasswordInputProps } from './props';
 
 /**
  * Renders the text input component
- * @param {string} name - Type of input
- * @param {string} placeholder - Placeholder
  * @param handleChange
  * @param {string} value - Current value of the input
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const EmailInput: React.FC<EmailInputProps> = ({
+export const PasswordInput: React.FC<PasswordInputProps> = ({
   handleChange,
   value,
   direction,
@@ -66,6 +59,12 @@ export const EmailInput: React.FC<EmailInputProps> = ({
     }
   };
 
+  const styleLabel = () => {
+    if (fieldActive || value) {
+      return [input['label__active']].join(' ');
+    }
+  };
+
   return (
     <div
       style={{ height: 60 }}
@@ -75,17 +74,17 @@ export const EmailInput: React.FC<EmailInputProps> = ({
         space['p-v--6'],
         space['p-h--12'],
         layout['items-center'],
-      ].join(' ')} ${renderShape()} ${styleContainer(value, fieldActive)}`}>
-      <div
-        style={{
-          position: 'relative',
-          height: '100%',
-          width: '100%',
-        }}>
+      ].join(' ')} ${renderShape()} ${
+        fieldActive
+          ? [[color['b-2--black'], shape['br--10']].join(' ')]
+          : renderShape()
+      }`}>
+      <div style={{ position: 'relative', height: '100%', width: '100%' }}>
         <input
+          required
           autoFocus={true}
-          id='email'
-          name='email'
+          id='password'
+          name='password'
           type={inputType}
           onChange={handleChange}
           value={value}
@@ -100,19 +99,21 @@ export const EmailInput: React.FC<EmailInputProps> = ({
             font['weight--300'],
             color['c__placeholder--black'],
             input['input'],
-          ].join(' ')} ${styleInput(value, fieldActive)}`}
-          placeholder={fieldActive ? 'Email' : undefined}
+          ].join(' ')} ${
+            fieldActive ? [input['active']].join(' ') : [].join(' ')
+          }`}
+          placeholder={fieldActive ? 'Password' : undefined}
         />
         <label
-          htmlFor='email'
+          htmlFor='password'
           className={`${[
             layout['absolute'],
             font['size--12'],
             color['c--gray__1'],
             font['weight--100'],
             input['label'],
-          ].join(' ')} ${styleLabel(value, fieldActive)}`}>
-          Email
+          ].join(' ')} ${styleLabel()}`}>
+          Password
         </label>
       </div>
     </div>

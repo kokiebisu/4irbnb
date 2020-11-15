@@ -99,9 +99,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
         <div className={[space['m-t--22']].join(' ')}>
           <div>
             <Input
-              type='text'
-              placeholder='Email'
-              name='email'
+              type='email'
               inputType='text'
               handleChange={formik.handleChange}
               value={formik.values.email}
