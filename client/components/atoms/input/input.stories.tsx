@@ -33,3 +33,16 @@ export const password = InputTemplate.bind({});
 password.args = {
   type: 'password',
 };
+
+export const name = InputTemplate.bind({});
+name.args = {
+  type: 'name',
+};
+name.argTypes = {
+  name: {
+    control: {
+      type: 'select',
+      options: ['first', 'last'],
+    },
+  },
+};
