@@ -31,9 +31,15 @@ import { Animation } from '../../animation/animation.component';
 import { validateSignup as validate } from '../../../helper/auth';
 
 /**
+ * Hooks
+ */
+import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
+
+/**
  * Renders the signup template component
  */
 export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
+  useLockBodyScroll();
   const [loading, setLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
