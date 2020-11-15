@@ -36,7 +36,6 @@ export const NameInput: React.FC<NameInputProps> = ({
   name = 'first',
   errors = false,
 }) => {
-  console.log('errors', errors);
   const names = {
     firstname: 'First name',
     lastname: 'Last name',
