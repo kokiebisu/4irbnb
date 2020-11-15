@@ -25,9 +25,15 @@ import { Button } from '../../atoms/button/button.component';
 import { LoginTemplateProps } from '../props';
 
 /**
+ * Hooks
+ */
+import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
+
+/**
  * Renders the login template component
  */
 export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
+  useLockBodyScroll();
   const authState = useAuthState();
   const authDispatch = useAuthDispatch();
 
