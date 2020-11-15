@@ -77,16 +77,16 @@ export const styleNameContainer = (errors, fieldActive, value) => {
   if (errors && fieldActive && value) {
     return [input['container__active']].join(' ');
   }
-  if (errors && fieldActive) {
-    return [input['container__error--active']].join(' ');
-  }
   if (errors && value) {
     return [input['container__inactive']].join(' ');
+  }
+  if (errors && fieldActive) {
+    return [input['container__error--active']].join(' ');
   }
   if (errors) {
     return [input['container__error--inactive']].join(' ');
   }
-  if (value || fieldActive) {
+  if (fieldActive) {
     return [input['container__active']].join(' ');
   }
 };
