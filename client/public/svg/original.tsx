@@ -505,3 +505,13 @@ export const Education = (props) => {
     </svg>
   );
 };
+
+export const Exclamation = (props) => {
+  return (
+    <svg {...props} viewBox='0 0 32 32'>
+      <circle cx='16' cy='16' r='14' fill='none'></circle>
+      <path d='m16 8v10' fill='none'></path>
+      <circle cx='16' cy='22.5' fill='#000' r='.5'></circle>
+    </svg>
+  );
+};
