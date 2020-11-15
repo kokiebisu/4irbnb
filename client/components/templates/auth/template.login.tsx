@@ -31,9 +31,15 @@ import { validateLogin as validate } from '../../../helper/auth';
 import { Bullet } from 'components/atoms/bullet/bullet.component';
 
 /**
+ * Hooks
+ */
+import { useLockBodyScroll } from 'hooks/useLockBodyScroll';
+
+/**
  * Renders the login template component
  */
 export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
+  useLockBodyScroll();
   const authState = useAuthState();
   const authDispatch = useAuthDispatch();
 
