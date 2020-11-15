@@ -12,9 +12,14 @@ export interface DoubleInputProps {
 }
 
 export interface EmailInputProps {
-  name?: string;
   inputType?: string;
-  placeholder?: string;
+  handleChange?: any;
+  value?: string;
+  direction?: string;
+}
+
+export interface PasswordInputProps {
+  inputType?: string;
   handleChange?: any;
   value?: string;
   direction?: string;
