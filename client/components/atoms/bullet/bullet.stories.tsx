@@ -132,3 +132,8 @@ help.argTypes = {
     },
   },
 };
+
+export const required = BulletTemplate.bind({});
+required.args = {
+  type: 'required',
+};
