@@ -20,6 +20,7 @@ type UserService interface {
 
 type userService struct {}
 
+// NewUserService creates a new userservice intance
 func NewUserService(ur repository.UserRepository) UserService {
 	repo = ur
 	return &userService{}
