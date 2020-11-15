@@ -5,12 +5,16 @@ import (
 	"net/http"
 
 	"github.com/kokiebisu/airbnb/controller"
-	"github.com/kokiebisu/airbnb/router"
+	router "github.com/kokiebisu/airbnb/http"
+	"github.com/kokiebisu/airbnb/repository"
+	"github.com/kokiebisu/airbnb/service"
 )
 
 var (
+	userRepository repository.UserRepository = repository.NewUserRepository()
+	userService service.UserService = service.NewUserService(userRepository)
+	userController controller.UserController = controller.NewUserController(userService)
 	httpRouter router.Router = router.NewMuxRouter()
-	userController controller.UserController = controller.NewUserController()
 )
 
 
