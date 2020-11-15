@@ -18,11 +18,17 @@ import layout from '../../../styles/layout.module.scss';
  */
 import { Input } from '../../atoms/input/input.component';
 import { Button } from '../../atoms/button/button.component';
+import { Bullet } from '../../atoms/bullet/bullet.component';
 
 /**
  * Props
  */
 import { LoginTemplateProps } from '../props';
+
+/**
+ * Helper
+ */
+import { validateLogin as validate } from '../../../helper/auth';
 
 /**
  * Hooks
@@ -42,8 +48,10 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
       email: '',
       password: '',
     },
+    validate,
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
+      formik.resetForm();
     },
   });
 
@@ -57,24 +65,36 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
     <div className={[space['p--24']].join(' ')}>
       <form onSubmit={formik.handleSubmit}>
         <div>
-          <Input
-            type='text'
-            direction='bottom'
-            name='email'
-            placeholder='Email'
-            inputType='text'
-            handleChange={formik.handleChange}
-            value={formik.values.email}
-          />
-          <Input
-            type='text'
-            direction='top'
-            name='password'
-            inputType='password'
-            placeholder='Password'
-            handleChange={formik.handleChange}
-            value={formik.values.password}
-          />
+          <div>
+            <Input
+              type='email'
+              direction='bottom'
+              handleChange={formik.handleChange}
+              value={formik.values.email}
+              errors={formik.errors.email !== undefined}
+            />
+            <Input
+              type='password'
+              direction='top'
+              handleChange={formik.handleChange}
+              value={formik.values.password}
+              errors={formik.errors.password !== undefined}
+            />
+          </div>
+          <div>
+            {formik.errors.email !== undefined && (
+              <div className={[space['m-t--6']].join(' ')}>
+                <Bullet type='required' message={formik.errors.email} />
+              </div>
+            )}
+          </div>
+          <div>
+            {formik.errors.password !== undefined && (
+              <div className={[space['m-t--6']].join(' ')}>
+                <Bullet type='required' message={formik.errors.password} />
+              </div>
+            )}
+          </div>
         </div>
         <div className={[space['m-v--16']].join(' ')}>
           <Button type='primary' title='Log in' />
