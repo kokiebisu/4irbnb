@@ -1,19 +1,33 @@
-import { useAuthDispatch, useAuthState } from '../../../context/auth';
-import { useFormik } from 'formik';
-import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
 import React, { useState } from 'react';
+import { useFormik } from 'formik';
 
+/**
+ * Styles
+ */
 import space from '../../../styles/space.module.scss';
-import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import color from '../../../styles/color.module.scss';
-import modalStyles from '../../organisms/modal/modal.module.scss';
-import { Input } from '../../../components/atoms/input/input.component';
-import { Button } from '../../../components/atoms/button/button.component';
+
+/**
+ * Components
+ */
+import { Input } from '../../atoms/input/input.component';
+import { Button } from '../../atoms/button/button.component';
+
+/**
+ * Props
+ */
 import { SignupTemplateProps } from '../props';
+
+/**
+ * Animations
+ */
 import { Animation } from '../../animation/animation.component';
 
+/**
+ * Renders the signup template component
+ */
 export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
   const [loading, setLoading] = useState(false);
   const formik = useFormik({
