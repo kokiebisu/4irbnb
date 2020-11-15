@@ -18,6 +18,7 @@ import layout from '../../../styles/layout.module.scss';
  */
 import { Input } from '../../atoms/input/input.component';
 import { Button } from '../../atoms/button/button.component';
+import { Bullet } from '../../atoms/bullet/bullet.component';
 
 /**
  * Props
@@ -28,12 +29,11 @@ import { LoginTemplateProps } from '../props';
  * Helper
  */
 import { validateLogin as validate } from '../../../helper/auth';
-import { Bullet } from 'components/atoms/bullet/bullet.component';
 
 /**
  * Hooks
  */
-import { useLockBodyScroll } from 'hooks/useLockBodyScroll';
+import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
 
 /**
  * Renders the login template component
