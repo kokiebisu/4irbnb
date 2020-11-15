@@ -57,7 +57,7 @@ export interface HelpBulletProps {
 }
 
 export interface RequiredBulletProps {
-  name?: string;
+  message?: string;
 }
 
 export interface BulletProps {
