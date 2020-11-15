@@ -24,10 +24,10 @@ export const UnderlineButton: React.FC<UnderlineButtonProps> = ({
 }) => {
   return (
     <button
+      style={{ fontSize: font }}
       onClick={onPress}
       className={[
         layout['inline-block'],
-        font[`size--${font}`],
         font['weight--500'],
         color['bg--transparent'],
       ].join(' ')}>
