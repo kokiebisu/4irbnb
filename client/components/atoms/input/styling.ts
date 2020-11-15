@@ -1,24 +1,29 @@
 import { checkEmail } from '../../../helper/regex';
 import input from './input.module.scss';
 
-export const styleEmailInput = (value, fieldActive) => {
-  if (value && checkEmail(value) && fieldActive) {
+export const styleEmailInput = (errors, fieldActive, value) => {
+  if (errors && fieldActive && value && checkEmail(value)) {
     return [input['input__active']].join(' ');
   }
-  if (value && checkEmail(value)) {
+  if (errors && value && checkEmail(value)) {
     return [input['input__inactive']].join(' ');
   }
-  if (value && fieldActive) {
+  if (errors && fieldActive) {
     return [input['input__error--active']].join(' ');
   }
-  if (value) {
+  if (errors) {
     return [input['input__error--inactive']].join(' ');
   }
 };
 
-export const styleEmailLabel = (value, fieldActive) => {
-  // Doesn't have the @ but there is value
-  if (!checkEmail(value) && value) {
+export const styleEmailLabel = (errors, fieldActive, value) => {
+  if (errors && value && checkEmail(value)) {
+    return [input['label__active']].join(' ');
+  }
+  if (errors && fieldActive) {
+    return [input['label__error']].join(' ');
+  }
+  if (errors) {
     return [input['label__error']].join(' ');
   }
   if (fieldActive || value) {
@@ -26,18 +31,17 @@ export const styleEmailLabel = (value, fieldActive) => {
   }
 };
 
-export const styleEmailContainer = (value, fieldActive) => {
-  // when it is focused and there is value and @
-  if (value && checkEmail(value) && fieldActive) {
+export const styleEmailContainer = (errors, fieldActive, value) => {
+  if (errors && fieldActive && value && checkEmail(value)) {
     return [input['container__active']].join(' ');
   }
-  if (value && checkEmail(value)) {
+  if (errors && value && checkEmail(value)) {
     return [input['container__inactive']].join(' ');
   }
-  if (value && fieldActive) {
+  if (errors && fieldActive) {
     return [input['container__error--active']].join(' ');
   }
-  if (value) {
+  if (errors) {
     return [input['container__error--inactive']].join(' ');
   }
 };

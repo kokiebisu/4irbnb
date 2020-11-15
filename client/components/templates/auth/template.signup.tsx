@@ -125,6 +125,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
               type='email'
               handleChange={formik.handleChange}
               value={formik.values.email}
+              errors={formik.errors.email !== undefined}
             />
           </div>
           <div>

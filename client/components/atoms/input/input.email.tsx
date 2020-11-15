@@ -37,8 +37,10 @@ export const EmailInput: React.FC<EmailInputProps> = ({
   handleChange,
   value,
   direction,
+  errors = false,
 }) => {
   const [fieldActive, setFieldActive] = useState(false);
+  console.log('errors ena', errors);
 
   const activateField = () => {
     setFieldActive(true);
@@ -79,8 +81,9 @@ export const EmailInput: React.FC<EmailInputProps> = ({
         space['p-h--12'],
         layout['items-center'],
       ].join(' ')} ${renderShape()} ${styleEmailContainer(
-        value,
-        fieldActive
+        errors,
+        fieldActive,
+        value
       )}`}>
       <div
         style={{
@@ -106,7 +109,7 @@ export const EmailInput: React.FC<EmailInputProps> = ({
             font['weight--300'],
             color['c__placeholder--black'],
             input['input'],
-          ].join(' ')} ${styleEmailInput(value, fieldActive)}`}
+          ].join(' ')} ${styleEmailInput(errors, fieldActive, value)}`}
           placeholder={fieldActive ? 'Email' : undefined}
         />
         <label
@@ -117,7 +120,7 @@ export const EmailInput: React.FC<EmailInputProps> = ({
             color['c--gray__1'],
             font['weight--100'],
             input['label'],
-          ].join(' ')} ${styleEmailLabel(value, fieldActive)}`}>
+          ].join(' ')} ${styleEmailLabel(errors, fieldActive, value)}`}>
           Email
         </label>
       </div>

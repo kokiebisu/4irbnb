@@ -16,6 +16,7 @@ export interface EmailInputProps {
   handleChange?: any;
   value?: string;
   direction?: string;
+  errors?: boolean;
 }
 
 export interface PasswordInputProps {
