@@ -7,12 +7,7 @@ export interface TextInputProps {
   direction?: string;
 }
 
-export interface DoubleInputProps {
-  placeholder?: string;
-}
-
 export interface EmailInputProps {
-  inputType?: string;
   handleChange?: any;
   value?: string;
   direction?: string;
@@ -20,10 +15,10 @@ export interface EmailInputProps {
 }
 
 export interface PasswordInputProps {
-  inputType?: string;
   handleChange?: any;
   value?: string;
   direction?: string;
+  errors?: boolean;
 }
 
 export interface NameInputProps {

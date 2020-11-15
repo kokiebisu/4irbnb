@@ -20,13 +20,14 @@ import { UnderlineButtonProps } from './props';
 export const UnderlineButton: React.FC<UnderlineButtonProps> = ({
   onPress = () => alert('Underline button pressed!'),
   title = 'Title here',
+  font = 14,
 }) => {
   return (
     <button
       onClick={onPress}
       className={[
         layout['inline-block'],
-        font['size--14'],
+        font[`size--${font}`],
         font['weight--500'],
         color['bg--transparent'],
       ].join(' ')}>

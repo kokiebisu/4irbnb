@@ -16,7 +16,23 @@ import input from './input.module.scss';
 import { PasswordInputProps } from './props';
 
 /**
+ * Styling
+ */
+import {
+  stylePasswordInput,
+  stylePasswordLabel,
+  stylePasswordContainer,
+} from './styling';
+
+/**
+ * Components
+ */
+import { Button } from '../button/button.component';
+
+/**
  * Renders the text input component
+ * @param {string} name - Type of input
+ * @param {string} placeholder - Placeholder
  * @param handleChange
  * @param {string} value - Current value of the input
  * @param {string} direction - direction in which the input if attached to another
@@ -26,9 +42,10 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
   handleChange,
   value,
   direction,
-  inputType = 'text',
+  errors = false,
 }) => {
   const [fieldActive, setFieldActive] = useState(false);
+  const [hide, setHide] = useState(true);
 
   const activateField = () => {
     setFieldActive(true);
@@ -59,12 +76,6 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
     }
   };
 
-  const styleLabel = () => {
-    if (fieldActive || value) {
-      return [input['label__active']].join(' ');
-    }
-  };
-
   return (
     <div
       style={{ height: 60 }}
@@ -74,18 +85,22 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
         space['p-v--6'],
         space['p-h--12'],
         layout['items-center'],
-      ].join(' ')} ${renderShape()} ${
-        fieldActive
-          ? [[color['b-2--black'], shape['br--10']].join(' ')]
-          : renderShape()
-      }`}>
-      <div style={{ position: 'relative', height: '100%', width: '100%' }}>
+      ].join(' ')} ${renderShape()} ${stylePasswordContainer(
+        errors,
+        fieldActive,
+        value
+      )}`}>
+      <div
+        style={{
+          position: 'relative',
+          height: '100%',
+          width: '100%',
+        }}>
         <input
-          required
           autoFocus={true}
           id='password'
           name='password'
-          type={inputType}
+          type={hide ? 'password' : 'text'}
           onChange={handleChange}
           value={value}
           onFocus={activateField}
@@ -99,9 +114,7 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
             font['weight--300'],
             color['c__placeholder--black'],
             input['input'],
-          ].join(' ')} ${
-            fieldActive ? [input['active']].join(' ') : [].join(' ')
-          }`}
+          ].join(' ')} ${stylePasswordInput(errors, fieldActive, value)}`}
           placeholder={fieldActive ? 'Password' : undefined}
         />
         <label
@@ -112,9 +125,23 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
             color['c--gray__1'],
             font['weight--100'],
             input['label'],
-          ].join(' ')} ${styleLabel()}`}>
+          ].join(' ')} ${stylePasswordLabel(errors, fieldActive, value)}`}>
           Password
         </label>
+      </div>
+      <div
+        style={{ height: 80 }}
+        className={[
+          layout['flex'],
+          layout['items-center'],
+          layout['justify-center'],
+        ].join(' ')}>
+        <Button
+          onPress={() => setHide((prevHide) => !prevHide)}
+          font={13}
+          type='underline'
+          title={hide ? 'Show' : 'Hide'}
+        />
       </div>
     </div>
   );
