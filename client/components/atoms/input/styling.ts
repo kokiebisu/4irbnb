@@ -1,4 +1,4 @@
-import { checkEmail } from '../../../helper/regex';
+import { checkEmail, checkPassword } from '../../../helper/auth';
 import input from './input.module.scss';
 
 export const styleEmailInput = (errors, fieldActive, value) => {
@@ -88,5 +88,56 @@ export const styleNameContainer = (errors, fieldActive, value) => {
   }
   if (fieldActive) {
     return [input['container__active']].join(' ');
+  }
+};
+
+/**
+ * Password Input
+ */
+export const stylePasswordInput = (errors, fieldActive, value) => {
+  if (errors && fieldActive && checkPassword(value)) {
+    return [input['input__active']].join(' ');
+  }
+  if (errors && checkPassword(value)) {
+    return [input['input__inactive']].join(' ');
+  }
+  if (errors && fieldActive) {
+    return [input['input__error--active']].join(' ');
+  }
+  if (errors) {
+    return [input['input__error--inactive']].join(' ');
+  }
+};
+
+export const stylePasswordLabel = (errors, fieldActive, value) => {
+  if (errors && checkPassword(value) && fieldActive) {
+    return [input['label__active']].join(' ');
+  }
+  if (errors && checkPassword(value)) {
+    return [input['label__active']].join(' ');
+  }
+  if (errors && fieldActive) {
+    return [input['label__error']].join(' ');
+  }
+  if (errors) {
+    return [input['label__error']].join(' ');
+  }
+  if (fieldActive || value) {
+    return [input['label__active']].join(' ');
+  }
+};
+
+export const stylePasswordContainer = (errors, fieldActive, value) => {
+  if (errors && fieldActive && value && checkPassword(value)) {
+    return [input['container__active']].join(' ');
+  }
+  if (errors && value && checkPassword(value)) {
+    return [input['container__inactive']].join(' ');
+  }
+  if (errors && fieldActive) {
+    return [input['container__error--active']].join(' ');
+  }
+  if (errors) {
+    return [input['container__error--inactive']].join(' ');
   }
 };

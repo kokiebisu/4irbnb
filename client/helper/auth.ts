@@ -1,4 +1,17 @@
-import { checkEmail } from './regex';
+import { emailRegex } from './regex';
+
+export const checkEmail = (value) => {
+  const re = emailRegex;
+  return re.test(String(value).toLowerCase());
+};
+
+export const checkPassword = (value) => {
+  console.log('vale', value.length < 8);
+  if (value.length < 8) {
+    return false;
+  }
+  return true;
+};
 
 export const validateSignup = (values) => {
   const errors: any = {};
@@ -12,6 +25,9 @@ export const validateSignup = (values) => {
   }
   if (!values.lastname) {
     errors.lastname = 'Last name is required';
+  }
+  if (!values.password) {
+    errors.password = 'Password is required';
   }
 
   return errors;

@@ -47,6 +47,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
     onSubmit: (values) => {
       // setLoading(true);
       alert(JSON.stringify(values, null, 2));
+      formik.resetForm();
     },
   });
 
@@ -148,14 +149,21 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
         <div className={[space['m-t--22']].join(' ')}>
           <div>
             <Input
-              type='text'
-              placeholder='Password'
-              name='password'
-              inputType='password'
+              type='password'
               handleChange={formik.handleChange}
               value={formik.values.password}
+              errors={formik.errors.password !== undefined}
             />
           </div>
+          <div>
+            {formik.errors.password !== undefined && (
+              <div className={[space['m-t--6']].join(' ')}>
+                <Bullet type='required' message={formik.errors.password} />
+              </div>
+            )}
+          </div>
+        </div>
+        <div>
           <p
             className={[
               space['m-t--22'],

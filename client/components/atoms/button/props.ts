@@ -67,6 +67,7 @@ export interface OptionButtonProps {
 export interface UnderlineButtonProps {
   onPress?: () => void;
   title?: string;
+  font?: number;
 }
 
 export interface CloseButtonProps {
