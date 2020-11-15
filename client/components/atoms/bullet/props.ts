@@ -56,6 +56,10 @@ export interface HelpBulletProps {
   help?: 'support' | 'tools' | 'insights' | 'education';
 }
 
+export interface RequiredBulletProps {
+  name?: string;
+}
+
 export interface BulletProps {
   extendsTo?: string;
   type: string;
