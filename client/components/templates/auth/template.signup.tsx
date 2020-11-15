@@ -14,7 +14,7 @@ import color from '../../../styles/color.module.scss';
  */
 import { Input } from '../../atoms/input/input.component';
 import { Button } from '../../atoms/button/button.component';
-
+import { Bullet } from '../../atoms/bullet/bullet.component';
 /**
  * Props
  */
@@ -24,6 +24,11 @@ import { SignupTemplateProps } from '../props';
  * Animations
  */
 import { Animation } from '../../animation/animation.component';
+
+/**
+ * Helper
+ */
+import { validateSignup as validate } from '../../../helper/auth';
 
 /**
  * Renders the signup template component
@@ -38,9 +43,10 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
       email: '',
       password: '',
     },
+    validate,
     onSubmit: (values) => {
-      setLoading(true);
-      // alert(JSON.stringify(values, null, 2));
+      // setLoading(true);
+      alert(JSON.stringify(values, null, 2));
     },
   });
 
@@ -105,14 +111,23 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
               value={formik.values.email}
             />
           </div>
-          <p
-            className={[
-              space['m-t--8'],
-              font['size--11'],
-              color['c--gray__1'],
-            ].join(' ')}>
-            We'll email you trip confirmations and receipts
-          </p>
+          <div>
+            {console.log('e', formik.errors.email)}
+            {formik.errors.email !== undefined ? (
+              <div className={[space['m-t--6']].join(' ')}>
+                <Bullet type='required' message={formik.errors.email} />
+              </div>
+            ) : (
+              <p
+                className={[
+                  space['m-t--8'],
+                  font['size--11'],
+                  color['c--gray__1'],
+                ].join(' ')}>
+                We'll email you trip confirmations and receipts
+              </p>
+            )}
+          </div>
         </div>
         <div className={[space['m-t--22']].join(' ')}>
           <div>

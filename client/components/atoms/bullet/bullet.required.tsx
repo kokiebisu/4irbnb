@@ -5,7 +5,7 @@ import font from '../../../styles/font.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 
-export const RequiredBullet: React.FC<RequiredBulletProps> = ({ name }) => {
+export const RequiredBullet: React.FC<RequiredBulletProps> = ({ message }) => {
   return (
     <div className={[layout['flex'], layout['items-center']].join(' ')}>
       <div className={[space['m-r--4']].join(' ')}>
@@ -15,7 +15,7 @@ export const RequiredBullet: React.FC<RequiredBulletProps> = ({ name }) => {
         <p
           style={{ color: '#C54A32' }}
           className={[font['size--12']].join(' ')}>
-          {name} is required
+          {message}
         </p>
       </div>
     </div>
