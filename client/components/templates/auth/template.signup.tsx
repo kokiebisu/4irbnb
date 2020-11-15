@@ -61,31 +61,48 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
       <div className={[space['p--24']].join(' ')}>
         <div>
           <Input
-            type='text'
+            type='name'
             direction='bottom'
-            placeholder='First name'
             name='firstname'
-            inputType='text'
+            errors={formik.errors.firstname !== undefined}
             handleChange={formik.handleChange}
             value={formik.values.firstname}
           />
           <Input
-            type='text'
+            type='name'
             direction='top'
-            placeholder='Last name'
             name='lastname'
-            inputType='text'
+            errors={formik.errors.lastname !== undefined}
             handleChange={formik.handleChange}
             value={formik.values.lastname}
           />
-          <p
-            className={[
-              space['m-t--8'],
-              font['size--11'],
-              color['c--gray__1'],
-            ].join(' ')}>
-            Make sure it matches the name on your government ID.
-          </p>
+          <div>
+            {formik.errors.firstname !== undefined ? (
+              <div className={[space['m-t--6']].join(' ')}>
+                <Bullet type='required' message={formik.errors.firstname} />
+              </div>
+            ) : null}
+          </div>
+          <div>
+            {formik.errors.lastname !== undefined ? (
+              <div className={[space['m-t--6']].join(' ')}>
+                <Bullet type='required' message={formik.errors.lastname} />
+              </div>
+            ) : null}
+          </div>
+          <div>
+            {formik.errors.firstname === undefined &&
+              formik.errors.lastname === undefined && (
+                <p
+                  className={[
+                    space['m-t--8'],
+                    font['size--11'],
+                    color['c--gray__1'],
+                  ].join(' ')}>
+                  Make sure it matches the name on your government ID.
+                </p>
+              )}
+          </div>
         </div>
         <div className={[space['m-t--22']].join(' ')}>
           <div>
@@ -112,13 +129,12 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
           <div>
             <Input
               type='email'
-              inputType='text'
               handleChange={formik.handleChange}
               value={formik.values.email}
+              errors={formik.errors.email !== undefined}
             />
           </div>
           <div>
-            {console.log('e', formik.errors.email)}
             {formik.errors.email !== undefined ? (
               <div className={[space['m-t--6']].join(' ')}>
                 <Bullet type='required' message={formik.errors.email} />
