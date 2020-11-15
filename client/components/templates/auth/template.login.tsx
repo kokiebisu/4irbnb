@@ -1,18 +1,32 @@
-import { useAuthDispatch, useAuthState } from '../../../context/auth';
-import { useFormik } from 'formik';
-import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
 import React from 'react';
+import { useFormik } from 'formik';
 
+/**
+ * Contexts
+ */
+import { useAuthDispatch, useAuthState } from '../../../context/auth';
+
+/**
+ * Styles
+ */
 import space from '../../../styles/space.module.scss';
-import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
 import layout from '../../../styles/layout.module.scss';
-import color from '../../../styles/color.module.scss';
-import modalStyles from '../../organisms/modal/modal.module.scss';
-import { Input } from '../../../components/atoms/input/input.component';
-import { Button } from '../../../components/atoms/button/button.component';
+
+/**
+ * Components
+ */
+import { Input } from '../../atoms/input/input.component';
+import { Button } from '../../atoms/button/button.component';
+
+/**
+ * Props
+ */
 import { LoginTemplateProps } from '../props';
 
+/**
+ * Renders the login template component
+ */
 export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
   const authState = useAuthState();
   const authDispatch = useAuthDispatch();
