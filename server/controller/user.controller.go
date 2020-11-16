@@ -38,7 +38,8 @@ func (c *controller) GetUsers(rw http.ResponseWriter, r *http.Request) {
 }
 
 func (c *controller) AddUsers(rw http.ResponseWriter, r *http.Request) {
-	rw.Header().Set("Content-Type", "application/json")
+    rw.Header().Set("Access-Control-Allow-Origin", "*")
+    rw.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	var user entity.User
 	err := json.NewDecoder(r.Body).Decode(&user)
 	if err != nil {

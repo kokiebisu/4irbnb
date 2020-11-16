@@ -2,7 +2,6 @@ package service
 
 import (
 	"errors"
-	"math/rand"
 
 	"github.com/kokiebisu/airbnb/entity"
 	"github.com/kokiebisu/airbnb/repository"
@@ -39,7 +38,6 @@ func (*userService) Validate(user *entity.User) error {
 }
  
 func (*userService) Create(user *entity.User) (*entity.User, error) {
-	(*user).ID = rand.Intn(100)
 	return repo.Save(user)
 }
 

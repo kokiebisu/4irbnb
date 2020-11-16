@@ -80,3 +80,27 @@
     }
   }
 }
+
+.select-label {
+  position: absolute;
+  transition: all 150ms ease-in;
+  font-size: 16px;
+  top: 12px;
+
+  &__active {
+    position: absolute;
+    transition: all 150ms ease-in;
+    font-size: 13px;
+    top: 2px;
+    color: gray !important;
+  }
+
+  &__error {
+    position: absolute;
+    transition: all 150ms ease-in;
+    font-size: 13px;
+    top: 9px;
+    color: #c13514 !important;
+    font-weight: 500;
+  }
+}
