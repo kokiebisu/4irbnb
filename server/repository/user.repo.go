@@ -23,8 +23,8 @@ func NewUserRepository() UserRepository {
 }
 
 func (r *repo) Save(user *entity.User) (*entity.User, error) {
-	query := `INSERT INTO "user" (id, email) VALUES ($1, $2) returning *`
-	_, err := r.db.Exec(query, (*user).ID, (*user).Email)
+	query := `INSERT INTO "user" (email, firstname, lastname, password) VALUES ($1, $2, $3, $4) returning *`
+	_, err := r.db.Exec(query, (*user).Email, (*user).FirstName, (*user).LastName, (*user).Password)
 	if err != nil {
 		return nil, err
 	}

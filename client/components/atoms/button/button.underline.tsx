@@ -23,7 +23,7 @@ export const UnderlineButton: React.FC<UnderlineButtonProps> = ({
   font = 14,
 }) => {
   return (
-    <button
+    <div
       style={{ fontSize: font }}
       onClick={onPress}
       className={[
@@ -32,6 +32,6 @@ export const UnderlineButton: React.FC<UnderlineButtonProps> = ({
         color['bg--transparent'],
       ].join(' ')}>
       <u>{title}</u>
-    </button>
+    </div>
   );
 };
