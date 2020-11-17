@@ -33,3 +33,8 @@ export const signup = TemplateStory.bind({});
 signup.args = {
   type: 'signup',
 };
+
+export const forgotpassword = TemplateStory.bind({});
+forgotpassword.args = {
+  type: 'forgotpassword',
+};
