@@ -6,10 +6,10 @@ export const checkEmail = (value) => {
 };
 
 export const checkPassword = (value) => {
-  if (value && value.length && value.length < 8) {
-    return false;
+  if (value && value.length && value.length > 8) {
+    return true;
   }
-  return true;
+  return false;
 };
 
 export const validateAuth = (values) => {
