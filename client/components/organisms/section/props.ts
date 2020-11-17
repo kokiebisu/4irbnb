@@ -102,8 +102,6 @@ export interface DestinationsSectionProps {
   locations?: any;
 }
 
-export interface BannerSectionProps {}
-
 export interface OnlineSectionProps {
   items?: any;
   dark?: boolean;

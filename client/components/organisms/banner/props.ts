@@ -4,6 +4,8 @@ export interface HomesBannerProps {
 
 export interface ExperiencesBannerProps {}
 
+export interface LandingBannerProps {}
+
 export interface BannerProps {
   extendsTo?: string;
   type?: string;

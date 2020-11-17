@@ -17,7 +17,6 @@ import { KnowSection } from './section.know';
 import { OtherSection } from './section.other';
 import { NearbySection } from './section.nearby';
 import { DestinationsSection } from './section.destinations';
-import { BannerSection } from './section.banner';
 import { OnlineSection } from './section.online';
 import { HomesSection } from './section.homes';
 import { AlsoSection } from './section.also';
@@ -58,7 +57,6 @@ export const Section: React.FC<SectionProps> = ({
     other: <OtherSection {...props} />,
     nearby: <NearbySection {...props} />,
     destinations: <DestinationsSection {...props} />,
-    banner: <BannerSection {...props} />,
     online: <OnlineSection {...props} />,
     homes: <HomesSection {...props} />,
     also: <AlsoSection {...props} />,
