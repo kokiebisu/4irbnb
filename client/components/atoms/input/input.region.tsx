@@ -74,7 +74,7 @@ export const RegionInput: React.FC<RegionInputProps> = ({
           value
         )}`}
         style={{
-          padding: '0 15px',
+          padding: '0 12px',
           position: 'relative',
           height: '100%',
           width: '100%',
