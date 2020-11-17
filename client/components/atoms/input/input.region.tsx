@@ -95,7 +95,7 @@ export const RegionInput: React.FC<RegionInputProps> = ({
             font['size--16'],
             font['weight--300'],
             input['input'],
-          ].join(' ')} ${styleInput(errors, fieldActive, value)}`}>
+          ].join(' ')} ${styleInput(errors, fieldActive)}`}>
           <option value='canada'>Canada (+1)</option>
           <option value='japan'>Afghanistan (+1)</option>
           <option value='japan'>United States (+1)</option>
@@ -110,7 +110,7 @@ export const RegionInput: React.FC<RegionInputProps> = ({
             color['c--gray__1'],
             font['weight--100'],
             input['label'],
-          ].join(' ')} ${styleLabel(errors, fieldActive, value)}`}>
+          ].join(' ')} ${styleLabel(errors, fieldActive)}`}>
           Country/Region
         </label>
       </div>
