@@ -116,7 +116,12 @@ export const EmailInput: React.FC<EmailInputProps> = ({
             color['c--gray__1'],
             font['weight--100'],
             input['label'],
-          ].join(' ')} ${styleLabel(errors, fieldActive, checkEmail(value))}`}>
+          ].join(' ')} ${styleLabel(
+            errors,
+            fieldActive,
+            checkEmail(value),
+            value
+          )}`}>
           Email
         </label>
       </div>

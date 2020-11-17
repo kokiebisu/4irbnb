@@ -69,7 +69,6 @@ export const BirthdateInput: React.FC<BirthdateInputProps> = ({
         className={`${renderShape()} ${styleContainer(
           errors,
           fieldActive,
-          value === '',
           direction
         )}`}
         style={{

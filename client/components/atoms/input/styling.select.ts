@@ -4,7 +4,7 @@ import shape from '../../../styles/shape.module.scss';
 /**
  * Birthdate Input
  */
-export const styleInput = (errors, fieldActive, value) => {
+export const styleInput = (errors, fieldActive) => {
   if (errors && fieldActive) {
     return [input['select-input__error--active']].join(' ');
   }
@@ -14,7 +14,7 @@ export const styleInput = (errors, fieldActive, value) => {
   return [input['select-input__active']].join(' ');
 };
 
-export const styleLabel = (errors, fieldActive, value) => {
+export const styleLabel = (errors, fieldActive) => {
   if (errors && fieldActive) {
     return [input['select-label__error']].join(' ');
   }
@@ -24,7 +24,7 @@ export const styleLabel = (errors, fieldActive, value) => {
   return [input['select-label__active']].join(' ');
 };
 
-export const styleContainer = (errors, fieldActive, value, direction) => {
+export const styleContainer = (errors, fieldActive, direction) => {
   if (errors && fieldActive) {
     return [input['select-container__error--active']].join(' ');
   }

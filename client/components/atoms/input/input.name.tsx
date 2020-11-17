@@ -120,7 +120,7 @@ export const NameInput: React.FC<NameInputProps> = ({
             color['c--gray__1'],
             font['weight--100'],
             input['label'],
-          ].join(' ')} ${styleLabel(errors, fieldActive, value)}`}>
+          ].join(' ')} ${styleLabel(errors, fieldActive, value, value)}`}>
           {names[name]}
         </label>
       </div>

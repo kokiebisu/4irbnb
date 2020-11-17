@@ -19,6 +19,7 @@ export const styleInput = (errors, fieldActive, value) => {
   if (errors) {
     return [input['input__error--inactive']].join(' ');
   }
+  return '';
 };
 
 /**
@@ -27,12 +28,15 @@ export const styleInput = (errors, fieldActive, value) => {
  * @param fieldActive
  * @param value
  */
-export const styleLabel = (errors, fieldActive, value) => {
-  if (errors && value) {
+export const styleLabel = (errors, fieldActive, evaluate, value) => {
+  if (errors && fieldActive && evaluate) {
     return [input['label__active']].join(' ');
   }
   if (errors && fieldActive) {
     return [input['label__error']].join(' ');
+  }
+  if (errors && evaluate) {
+    return [input['label__active']].join(' ');
   }
   if (errors) {
     return [input['label__error']].join(' ');
@@ -40,6 +44,7 @@ export const styleLabel = (errors, fieldActive, value) => {
   if (fieldActive || value) {
     return [input['label__active']].join(' ');
   }
+  return '';
 };
 
 /**
@@ -64,4 +69,5 @@ export const styleContainer = (errors, fieldActive, value) => {
   if (fieldActive) {
     return [input['container__active']].join(' ');
   }
+  return '';
 };
