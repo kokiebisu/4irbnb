@@ -28,7 +28,7 @@ import {
   styleBirthDayInput,
   styleBirthDayLabel,
   styleBirthDayContainer,
-} from './styling';
+} from './styling.select';
 
 /**
  * Renders the text input component

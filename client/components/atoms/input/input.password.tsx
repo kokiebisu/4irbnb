@@ -18,16 +18,13 @@ import { PasswordInputProps } from './props';
 /**
  * Styling
  */
-import {
-  stylePasswordInput,
-  stylePasswordLabel,
-  stylePasswordContainer,
-} from './styling';
+import { styleInput, styleLabel, styleContainer } from './styling.text';
 
 /**
  * Components
  */
 import { Button } from '../button/button.component';
+import { checkPassword } from '../../../helper/auth';
 
 /**
  * Renders the text input component
@@ -85,10 +82,10 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
         space['p-v--6'],
         space['p-h--12'],
         layout['items-center'],
-      ].join(' ')} ${renderShape()} ${stylePasswordContainer(
+      ].join(' ')} ${renderShape()} ${styleContainer(
         errors,
         fieldActive,
-        value
+        checkPassword(value)
       )}`}>
       <div
         style={{
@@ -114,7 +111,11 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
             font['weight--300'],
             color['c__placeholder--black'],
             input['input'],
-          ].join(' ')} ${stylePasswordInput(errors, fieldActive, value)}`}
+          ].join(' ')} ${styleInput(
+            errors,
+            fieldActive,
+            checkPassword(value)
+          )}`}
           placeholder={fieldActive ? 'Password' : undefined}
         />
         <label
@@ -125,7 +126,11 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
             color['c--gray__1'],
             font['weight--100'],
             input['label'],
-          ].join(' ')} ${stylePasswordLabel(errors, fieldActive, value)}`}>
+          ].join(' ')} ${styleLabel(
+            errors,
+            fieldActive,
+            checkPassword(value)
+          )}`}>
           Password
         </label>
       </div>

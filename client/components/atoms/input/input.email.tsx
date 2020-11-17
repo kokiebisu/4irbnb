@@ -18,11 +18,8 @@ import { EmailInputProps } from './props';
 /**
  * Styling
  */
-import {
-  styleEmailInput,
-  styleEmailLabel,
-  styleEmailContainer,
-} from './styling';
+import { styleInput, styleLabel, styleContainer } from './styling.text';
+import { checkEmail } from '../../../helper/auth';
 
 /**
  * Renders the text input component
@@ -80,10 +77,10 @@ export const EmailInput: React.FC<EmailInputProps> = ({
         space['p-v--6'],
         space['p-h--12'],
         layout['items-center'],
-      ].join(' ')} ${renderShape()} ${styleEmailContainer(
+      ].join(' ')} ${renderShape()} ${styleContainer(
         errors,
         fieldActive,
-        value
+        checkEmail(value)
       )}`}>
       <div
         style={{
@@ -109,7 +106,7 @@ export const EmailInput: React.FC<EmailInputProps> = ({
             font['weight--300'],
             color['c__placeholder--black'],
             input['input'],
-          ].join(' ')} ${styleEmailInput(errors, fieldActive, value)}`}
+          ].join(' ')} ${styleInput(errors, fieldActive, checkEmail(value))}`}
           placeholder={fieldActive ? 'Email' : undefined}
         />
         <label
@@ -120,7 +117,7 @@ export const EmailInput: React.FC<EmailInputProps> = ({
             color['c--gray__1'],
             font['weight--100'],
             input['label'],
-          ].join(' ')} ${styleEmailLabel(errors, fieldActive, value)}`}>
+          ].join(' ')} ${styleLabel(errors, fieldActive, checkEmail(value))}`}>
           Email
         </label>
       </div>
