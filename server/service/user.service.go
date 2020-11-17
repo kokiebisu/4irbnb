@@ -14,7 +14,7 @@ var (
 type UserService interface {
 	ValidateSignup(user *entity.User) error
 	ValidateLogin(user *entity.User) error
-	Authenticate(user *entity.UserLogin) (*entity.User, error)
+	Authenticate(user *entity.UserLogin) error
 	Create(user *entity.User) (*entity.User, error)
 	FindAll() ([]*entity.User, error)
 }
@@ -63,20 +63,20 @@ func (*userService) ValidateLogin(user *entity.User) error {
 	return nil
 }
 
-func (*userService) Authenticate(user *entity.UserLogin) (*entity.User, error) {
+func (*userService) Authenticate(user *entity.UserLogin) error {
 	result, err := repo.FindByEmail((*user).Email)
 	if err != nil {
-		return nil, err
+		return err
 	}
 	if result == nil {
 		err = errors.New("No users were found from the specified email")
-		return nil, err
+		return err
 	}
 	if (*result).Password != (*user).Password {
 		err = errors.New("The password doesn't match")
-		return nil, err
+		return err
 	}
-	return result, nil
+	return nil
 }
  
 func (*userService) Create(user *entity.User) (*entity.User, error) {
