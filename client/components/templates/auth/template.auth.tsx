@@ -33,6 +33,11 @@ import { Button } from '../../atoms/button/button.component';
 import { AuthTemplateProps } from '../props';
 
 /**
+ *
+ */
+import { validateAuth } from '../../../helper/auth';
+
+/**
  * Renders the auth template component
  */
 export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
@@ -43,9 +48,10 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
 
   const formik = useFormik({
     initialValues: {
-      country: '',
-      tel: '',
+      region: '',
+      phone: '',
     },
+    validateAuth,
     onSubmit(values) {
       alert(JSON.stringify(values, null, 2));
     },
@@ -67,23 +73,18 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
           <div className={[space['m-b--8']].join(' ')}>
             <div>
               <Input
-                type='text'
+                type='region'
                 direction='bottom'
-                name='country'
-                placeholder='Country/Region'
-                inputType='country'
-                handleChange={formik.handleChange}
-                value={formik.values.country}
-              />
-              <Input
-                type='text'
-                direction='top'
-                name='tel'
-                placeholder='Phone number'
-                inputType='tel'
-                // pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}'
                 handleChange={formik.handleChange}
                 value={formik.values.tel}
+                errors={formik.errors.region}
+              />
+              <Input
+                type='phone'
+                direction='top'
+                handleChange={formik.handleChange}
+                value={formik.values.country}
+                errors={formik.errors.phone}
               />
             </div>
           </div>

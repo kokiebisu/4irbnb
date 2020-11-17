@@ -51,3 +51,13 @@ export const birthdate = InputTemplate.bind({});
 birthdate.args = {
   type: 'birthdate',
 };
+
+export const phone = InputTemplate.bind({});
+phone.args = {
+  type: 'phone',
+};
+
+export const region = InputTemplate.bind({});
+region.args = {
+  type: 'region',
+};

@@ -13,18 +13,22 @@ import input from './input.module.scss';
 /**
  * Props
  */
-import { PasswordInputProps } from './props';
+import { RegionInputProps } from './props';
 
 /**
  * Styling
  */
-import { styleInput, styleLabel, styleContainer } from './styling.text';
-
-/**
- * Components
- */
-import { Button } from '../button/button.component';
-import { checkPassword } from '../../../helper/auth';
+import {
+  styleBirthYearInput,
+  styleBirthYearLabel,
+  styleBirthYearContainer,
+  styleBirthMonthInput,
+  styleBirthMonthLabel,
+  styleBirthMonthContainer,
+  styleBirthDayInput,
+  styleBirthDayLabel,
+  styleBirthDayContainer,
+} from './styling.select';
 
 /**
  * Renders the text input component
@@ -35,22 +39,13 @@ import { checkPassword } from '../../../helper/auth';
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const PasswordInput: React.FC<PasswordInputProps> = ({
+export const RegionInput: React.FC<BirthdateInputProps> = ({
   handleChange,
   value,
   direction,
   errors = false,
 }) => {
   const [fieldActive, setFieldActive] = useState(false);
-  const [hide, setHide] = useState(true);
-
-  const activateField = () => {
-    setFieldActive(true);
-  };
-
-  const deactivateField = () => {
-    setFieldActive(false);
-  };
 
   const renderShape = () => {
     switch (direction) {
@@ -77,76 +72,54 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
     <div
       style={{ height: 60 }}
       className={`${[
+        layout['flex'],
         input['outside'],
         layout['relative'],
-        space['p-v--6'],
-        space['p-h--12'],
         layout['items-center'],
-      ].join(' ')} ${renderShape()} ${styleContainer(
-        errors,
-        fieldActive,
-        checkPassword(value)
-      )}`}>
+      ].join(' ')} `}>
       <div
+        className={`${renderShape()} ${styleBirthDayContainer(
+          errors,
+          fieldActive,
+          value
+        )}`}
         style={{
+          padding: '0 15px',
           position: 'relative',
           height: '100%',
           width: '100%',
         }}>
-        <input
-          autoFocus={true}
-          id='password'
-          name='password'
-          type={hide ? 'password' : 'text'}
+        <select
+          style={{ height: '100%' }}
+          id='region'
           onChange={handleChange}
           value={value}
-          onFocus={activateField}
-          onBlur={deactivateField}
+          onFocus={() => setDayActive(true)}
+          onBlur={() => setDayActive(false)}
           className={`${[
+            shape['br--10'],
             space['p--0'],
             shape['w--full'],
             layout['block'],
             color['b--0'],
             font['size--16'],
             font['weight--300'],
-            color['c__placeholder--black'],
             input['input'],
-          ].join(' ')} ${styleInput(
-            errors,
-            fieldActive,
-            checkPassword(value)
-          )}`}
-          placeholder={fieldActive ? 'Password' : undefined}
-        />
+          ].join(' ')} ${styleBirthDayInput(errors, fieldActive, value)}`}>
+          <option disabled selected value=''></option>
+          <option value='1'>1</option>
+        </select>
         <label
-          htmlFor='password'
+          htmlFor='region'
           className={`${[
             layout['absolute'],
             font['size--12'],
             color['c--gray__1'],
             font['weight--100'],
             input['label'],
-          ].join(' ')} ${styleLabel(
-            errors,
-            fieldActive,
-            checkPassword(value)
-          )}`}>
-          Password
+          ].join(' ')} ${styleBirthDayLabel(errors, fieldActive, value)}`}>
+          Country/Region
         </label>
-      </div>
-      <div
-        className={[
-          layout['flex'],
-          layout['items-center'],
-          layout['justify-center'],
-          space['m-l--18'],
-        ].join(' ')}>
-        <Button
-          onPress={() => setHide((prevHide) => !prevHide)}
-          font={13}
-          type='underline'
-          title={hide ? 'Show' : 'Hide'}
-        />
       </div>
     </div>
   );
