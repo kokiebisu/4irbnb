@@ -18,17 +18,7 @@ import { BirthdateInputProps } from './props';
 /**
  * Styling
  */
-import {
-  styleBirthYearInput,
-  styleBirthYearLabel,
-  styleBirthYearContainer,
-  styleBirthMonthInput,
-  styleBirthMonthLabel,
-  styleBirthMonthContainer,
-  styleBirthDayInput,
-  styleBirthDayLabel,
-  styleBirthDayContainer,
-} from './styling.select';
+import { styleInput, styleLabel, styleContainer } from './styling.select';
 
 /**
  * Renders the text input component
@@ -44,27 +34,23 @@ export const BirthdateInput: React.FC<BirthdateInputProps> = ({
   value,
   direction,
   errors = false,
+  dateType = 'year',
 }) => {
-  const [dayActive, setDayActive] = useState(false);
-  const [monthActive, setMonthActive] = useState(false);
-  const [yearActive, setYearActive] = useState(false);
+  const birthdate = {
+    year: 'Year',
+    month: 'Month',
+    day: 'Day',
+  };
+  const [fieldActive, setFieldActive] = useState(false);
 
   const renderShape = () => {
     switch (direction) {
-      case 'top':
-        return [
-          color['b-b--white__3'],
-          color['b-l--white__3'],
-          color['b-r--white__3'],
-          shape['bbr--10'],
-        ].join(' ');
-      case 'bottom':
-        return [
-          color['b-t--white__3'],
-          color['b-l--white__3'],
-          color['b-r--white__3'],
-          shape['btr--10'],
-        ].join(' ');
+      case 'left':
+        return [color['b-r--white__3']].join(' ');
+      case 'center':
+        return [].join(' ');
+      case 'right':
+        return [color['b-l--white__3']].join(' ');
       default:
         return [color['b--white__3'], shape['br--10']].join(' ');
     }
@@ -80,10 +66,11 @@ export const BirthdateInput: React.FC<BirthdateInputProps> = ({
         layout['items-center'],
       ].join(' ')} `}>
       <div
-        className={`${renderShape()} ${styleBirthDayContainer(
+        className={`${renderShape()} ${styleContainer(
           errors,
-          dayActive,
-          value
+          fieldActive,
+          value === '',
+          direction
         )}`}
         style={{
           padding: '0 15px',
@@ -93,11 +80,13 @@ export const BirthdateInput: React.FC<BirthdateInputProps> = ({
         }}>
         <select
           style={{ height: '100%' }}
-          id='day'
+          id={dateType}
+          name={dateType}
           onChange={handleChange}
           value={value}
-          onFocus={() => setDayActive(true)}
-          onBlur={() => setDayActive(false)}
+          defaultValue=''
+          onFocus={() => setFieldActive(true)}
+          onBlur={() => setFieldActive(false)}
           className={`${[
             shape['br--10'],
             space['p--0'],
@@ -107,116 +96,31 @@ export const BirthdateInput: React.FC<BirthdateInputProps> = ({
             font['size--16'],
             font['weight--300'],
             input['input'],
-          ].join(' ')} ${styleBirthDayInput(errors, dayActive, value)}`}>
-          <option disabled selected value=''></option>
-          <option value='1'>1</option>
+          ].join(' ')} ${styleInput(errors, fieldActive)}`}>
+          {dateType === 'year' &&
+            new Array(99).fill(null).map((_, index) => {
+              return <option value={index + 1920}>{index + 1920}</option>;
+            })}
+          {dateType === 'month' &&
+            new Array(12).fill(null).map((_, index) => {
+              return <option value={index + 1}>{index + 1}</option>;
+            })}
+          {dateType === 'day' &&
+            new Array(31).fill(null).map((_, index) => {
+              return <option value={index + 1}>{index + 1}</option>;
+            })}
         </select>
         <label
-          htmlFor='day'
+          htmlFor={dateType}
           className={`${[
             layout['absolute'],
             font['size--12'],
             color['c--gray__1'],
             font['weight--100'],
             input['label'],
-          ].join(' ')} ${styleBirthDayLabel(errors, dayActive, value)}`}>
-          Day
+          ].join(' ')} ${styleLabel(errors, fieldActive)}`}>
+          {birthdate[dateType]}
         </label>
-      </div>
-      <div
-        className={`${renderShape()} ${styleBirthDayContainer(
-          errors,
-          monthActive,
-          value
-        )}`}
-        style={{
-          padding: '0 15px',
-          position: 'relative',
-          height: '100%',
-          width: '100%',
-        }}>
-        <select
-          style={{ height: '100%' }}
-          id='month'
-          onChange={handleChange}
-          value={value}
-          onFocus={() => setMonthActive(true)}
-          onBlur={() => setMonthActive(false)}
-          className={`${[
-            shape['br--10'],
-            space['p--0'],
-            shape['w--full'],
-            layout['block'],
-            color['b--0'],
-            font['size--16'],
-            font['weight--300'],
-            // color['c__placeholder--black'],
-            input['input'],
-          ].join(' ')} ${styleBirthMonthInput(errors, monthActive, value)}`}>
-          <option disabled selected value=''></option>
-          {new Array(12).fill(null).map((_, index) => {
-            return <option value={index + 1}>{index + 1}</option>;
-          })}
-        </select>
-        <label
-          htmlFor='birthdate'
-          className={`${[
-            layout['absolute'],
-            font['size--12'],
-            color['c--gray__1'],
-            font['weight--100'],
-            input['label'],
-          ].join(' ')} ${styleBirthYearLabel(errors, monthActive, value)}`}>
-          Month
-        </label>
-      </div>
-      <div
-        className={`${renderShape()} ${styleBirthYearContainer(
-          errors,
-          yearActive,
-          value
-        )}`}
-        style={{
-          padding: '0 15px',
-          position: 'relative',
-          height: '100%',
-          width: '100%',
-        }}>
-        <select
-          id='year'
-          onChange={handleChange}
-          value={value}
-          onFocus={() => setYearActive(true)}
-          onBlur={() => setYearActive(false)}
-          className={`${[
-            shape['br--10'],
-            space['p--0'],
-            shape['w--full'],
-            layout['block'],
-            color['b--0'],
-            font['size--16'],
-            font['weight--300'],
-            // color['c__placeholder--black'],
-            input['input'],
-          ].join(' ')} ${styleBirthDayInput(errors, yearActive, value)}`}>
-          <option disabled selected value=''></option>
-          {new Array(50).fill(null).map((_, index) => {
-            return <option value={index + 1950}>{index + 1950}</option>;
-          })}
-        </select>
-        <label
-          htmlFor='birthdate'
-          className={`${[
-            layout['absolute'],
-            font['size--12'],
-            color['c--gray__1'],
-            font['weight--100'],
-            input['label'],
-          ].join(' ')} ${styleBirthYearLabel(
-            errors,
-            yearActive,
-            value
-          )}`}></label>
       </div>
     </div>
   );

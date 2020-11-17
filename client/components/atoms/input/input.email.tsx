@@ -37,7 +37,6 @@ export const EmailInput: React.FC<EmailInputProps> = ({
   errors = false,
 }) => {
   const [fieldActive, setFieldActive] = useState(false);
-  console.log('errors ena', errors);
 
   const activateField = () => {
     setFieldActive(true);

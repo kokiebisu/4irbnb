@@ -18,17 +18,7 @@ import { RegionInputProps } from './props';
 /**
  * Styling
  */
-import {
-  styleBirthYearInput,
-  styleBirthYearLabel,
-  styleBirthYearContainer,
-  styleBirthMonthInput,
-  styleBirthMonthLabel,
-  styleBirthMonthContainer,
-  styleBirthDayInput,
-  styleBirthDayLabel,
-  styleBirthDayContainer,
-} from './styling.select';
+import { styleInput, styleLabel, styleContainer } from './styling.select';
 
 /**
  * Renders the text input component
@@ -39,7 +29,7 @@ import {
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const RegionInput: React.FC<BirthdateInputProps> = ({
+export const RegionInput: React.FC<RegionInputProps> = ({
   handleChange,
   value,
   direction,
@@ -78,7 +68,7 @@ export const RegionInput: React.FC<BirthdateInputProps> = ({
         layout['items-center'],
       ].join(' ')} `}>
       <div
-        className={`${renderShape()} ${styleBirthDayContainer(
+        className={`${renderShape()} ${styleContainer(
           errors,
           fieldActive,
           value
@@ -94,8 +84,8 @@ export const RegionInput: React.FC<BirthdateInputProps> = ({
           id='region'
           onChange={handleChange}
           value={value}
-          onFocus={() => setDayActive(true)}
-          onBlur={() => setDayActive(false)}
+          onFocus={() => setFieldActive(true)}
+          onBlur={() => setFieldActive(false)}
           className={`${[
             shape['br--10'],
             space['p--0'],
@@ -105,9 +95,12 @@ export const RegionInput: React.FC<BirthdateInputProps> = ({
             font['size--16'],
             font['weight--300'],
             input['input'],
-          ].join(' ')} ${styleBirthDayInput(errors, fieldActive, value)}`}>
-          <option disabled selected value=''></option>
-          <option value='1'>1</option>
+          ].join(' ')} ${styleInput(errors, fieldActive, value)}`}>
+          <option value='canada'>Canada (+1)</option>
+          <option value='japan'>Afghanistan (+1)</option>
+          <option value='japan'>United States (+1)</option>
+          <option value='japan'>Korea (+1)</option>
+          <option value='japan'>Mexico (+1)</option>
         </select>
         <label
           htmlFor='region'
@@ -117,7 +110,7 @@ export const RegionInput: React.FC<BirthdateInputProps> = ({
             color['c--gray__1'],
             font['weight--100'],
             input['label'],
-          ].join(' ')} ${styleBirthDayLabel(errors, fieldActive, value)}`}>
+          ].join(' ')} ${styleLabel(errors, fieldActive, value)}`}>
           Country/Region
         </label>
       </div>

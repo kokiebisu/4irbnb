@@ -20,7 +20,7 @@ import { PhoneNumberInput } from './input.phone';
  * Bundles the input components
  * @param {string} type - Specifies the type of input component
  */
-export const Input: React.FC<InputProps> = ({ type, ...props }) => {
+export const Input: React.FC<InputProps> = ({ type, spread, ...props }) => {
   const types = {
     text: <TextInput {...props} />,
     email: <EmailInput {...props} />,
@@ -31,5 +31,9 @@ export const Input: React.FC<InputProps> = ({ type, ...props }) => {
     region: <RegionInput {...props} />,
   };
 
-  return <div data-testid='input'>{types[type]}</div>;
+  return (
+    <div style={{ width: spread && '100%' }} data-testid='input'>
+      {types[type]}
+    </div>
+  );
 };
