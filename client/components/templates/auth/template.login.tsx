@@ -34,6 +34,7 @@ import { validateLogin as validate } from '../../../helper/auth';
  * Hooks
  */
 import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
+import { redirect } from 'next/dist/next-server/server/api-utils';
 
 /**
  * Renders the login template component
@@ -61,6 +62,15 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
     }
     return authDispatch({ type: 'auth_login' });
   };
+
+  const switchBack = () => {
+    return authDispatch({ type: 'auth_login' });
+  };
+
+  const redirectTo = () => {
+    return authDispatch({ type: 'forgot_password' });
+  };
+
   return (
     <div className={[space['p--24']].join(' ')}>
       <form onSubmit={formik.handleSubmit}>
@@ -100,10 +110,18 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
           <Button type='primary' title='Log in' />
         </div>
         <div className={[space['m-v--16']].join(' ')}>
-          <Button type='underline' title='Forgot password?' />
+          <Button
+            type='underline'
+            title='Forgot password?'
+            onPress={redirectTo}
+          />
         </div>
         <div className={[space['m-v--16']].join(' ')}>
-          <Button type='underline' title='More login options' />
+          <Button
+            type='underline'
+            title='More login options'
+            onPress={switchBack}
+          />
         </div>
         <div className={[layout['flex']].join(' ')}>
           <p className={[font['size--14'], space['m-r--8']].join(' ')}>

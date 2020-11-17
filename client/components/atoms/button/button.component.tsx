@@ -19,8 +19,8 @@ import { PaginateButton } from './button.paginate';
 import { ExpandButton } from './button.expand';
 import { OptionButton } from './button.option';
 import { UnderlineButton } from './button.underline';
-import { CloseButton } from './button.close';
 import { FilterButton } from './button.filter';
+import { ModalButton } from './button.modal';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -53,8 +53,8 @@ export const Button: React.FC<ButtonProps> = ({
     expand: <ExpandButton {...props} />,
     option: <OptionButton {...props} />,
     underline: <UnderlineButton {...props} />,
-    close: <CloseButton {...props} />,
     filter: <FilterButton {...props} />,
+    modal: <ModalButton {...props} />,
   };
 
   if (type) {
