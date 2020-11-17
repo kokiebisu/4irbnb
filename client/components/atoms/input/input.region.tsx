@@ -13,7 +13,7 @@ import input from './input.module.scss';
 /**
  * Props
  */
-import { BirthdateInputProps } from './props';
+import { RegionInputProps } from './props';
 
 /**
  * Styling
@@ -29,28 +29,30 @@ import { styleInput, styleLabel, styleContainer } from './styling.select';
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const BirthdateInput: React.FC<BirthdateInputProps> = ({
+export const RegionInput: React.FC<RegionInputProps> = ({
   handleChange,
   value,
   direction,
   errors = false,
-  dateType = 'year',
 }) => {
-  const birthdate = {
-    year: 'Year',
-    month: 'Month',
-    day: 'Day',
-  };
   const [fieldActive, setFieldActive] = useState(false);
 
   const renderShape = () => {
     switch (direction) {
-      case 'left':
-        return [color['b-r--white__3']].join(' ');
-      case 'center':
-        return [].join(' ');
-      case 'right':
-        return [color['b-l--white__3']].join(' ');
+      case 'top':
+        return [
+          color['b-b--white__3'],
+          color['b-l--white__3'],
+          color['b-r--white__3'],
+          shape['bbr--10'],
+        ].join(' ');
+      case 'bottom':
+        return [
+          color['b-t--white__3'],
+          color['b-l--white__3'],
+          color['b-r--white__3'],
+          shape['btr--10'],
+        ].join(' ');
       default:
         return [color['b--white__3'], shape['br--10']].join(' ');
     }
@@ -69,7 +71,7 @@ export const BirthdateInput: React.FC<BirthdateInputProps> = ({
         className={`${renderShape()} ${styleContainer(
           errors,
           fieldActive,
-          direction
+          value
         )}`}
         style={{
           padding: '0 15px',
@@ -79,11 +81,9 @@ export const BirthdateInput: React.FC<BirthdateInputProps> = ({
         }}>
         <select
           style={{ height: '100%' }}
-          id={dateType}
-          name={dateType}
+          id='region'
           onChange={handleChange}
           value={value}
-          defaultValue=''
           onFocus={() => setFieldActive(true)}
           onBlur={() => setFieldActive(false)}
           className={`${[
@@ -96,21 +96,14 @@ export const BirthdateInput: React.FC<BirthdateInputProps> = ({
             font['weight--300'],
             input['input'],
           ].join(' ')} ${styleInput(errors, fieldActive)}`}>
-          {dateType === 'year' &&
-            new Array(99).fill(null).map((_, index) => {
-              return <option value={index + 1920}>{index + 1920}</option>;
-            })}
-          {dateType === 'month' &&
-            new Array(12).fill(null).map((_, index) => {
-              return <option value={index + 1}>{index + 1}</option>;
-            })}
-          {dateType === 'day' &&
-            new Array(31).fill(null).map((_, index) => {
-              return <option value={index + 1}>{index + 1}</option>;
-            })}
+          <option value='canada'>Canada (+1)</option>
+          <option value='japan'>Afghanistan (+1)</option>
+          <option value='japan'>United States (+1)</option>
+          <option value='japan'>Korea (+1)</option>
+          <option value='japan'>Mexico (+1)</option>
         </select>
         <label
-          htmlFor={dateType}
+          htmlFor='region'
           className={`${[
             layout['absolute'],
             font['size--12'],
@@ -118,7 +111,7 @@ export const BirthdateInput: React.FC<BirthdateInputProps> = ({
             font['weight--100'],
             input['label'],
           ].join(' ')} ${styleLabel(errors, fieldActive)}`}>
-          {birthdate[dateType]}
+          Country/Region
         </label>
       </div>
     </div>

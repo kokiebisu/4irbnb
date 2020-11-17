@@ -6,11 +6,21 @@ export const checkEmail = (value) => {
 };
 
 export const checkPassword = (value) => {
-  console.log('vale', value.length < 8);
-  if (value.length < 8) {
+  if (value && value.length && value.length < 8) {
     return false;
   }
   return true;
+};
+
+export const validateAuth = (values) => {
+  const errors: any = {};
+  if (!values.phone) {
+    errors.phone = 'Phone number is required';
+  }
+  if (!values.region) {
+    errors.region = 'Region is required';
+  }
+  return errors;
 };
 
 export const validateSignup = (values) => {
@@ -28,6 +38,9 @@ export const validateSignup = (values) => {
   }
   if (!values.password) {
     errors.password = 'Password is required';
+  }
+  if (parseInt(values.year) > 2002) {
+    errors.year = 'You must be older that 18';
   }
 
   return errors;

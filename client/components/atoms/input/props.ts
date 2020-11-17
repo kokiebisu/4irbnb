@@ -21,6 +21,13 @@ export interface PasswordInputProps {
   errors?: boolean;
 }
 
+export interface PhoneNumberInputProps {
+  handleChange?: any;
+  value?: string;
+  direction?: string;
+  errors?: boolean;
+}
+
 export interface NameInputProps {
   handleChange?: any;
   value?: string;
@@ -34,9 +41,18 @@ export interface BirthdateInputProps {
   value?: string;
   direction?: string;
   errors?: boolean;
+  dateType?: 'year' | 'month' | 'day';
+}
+
+export interface RegionInputProps {
+  handleChange?: any;
+  value?: string;
+  direction?: string;
+  errors?: boolean;
 }
 
 export interface InputProps {
   extendsTo?: string;
+  spread?: boolean;
   [x: string]: any;
 }
