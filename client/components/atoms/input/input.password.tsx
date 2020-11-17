@@ -129,7 +129,8 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
           ].join(' ')} ${styleLabel(
             errors,
             fieldActive,
-            checkPassword(value)
+            checkPassword(value),
+            value
           )}`}>
           Password
         </label>
