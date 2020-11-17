@@ -14,6 +14,12 @@ export const checkPassword = (value) => {
 
 export const validateAuth = (values) => {
   const errors: any = {};
+  if (!values.phone) {
+    errors.phone = 'Phone number is required';
+  }
+  if (!values.region) {
+    errors.region = 'Region is required';
+  }
   return errors;
 };
 

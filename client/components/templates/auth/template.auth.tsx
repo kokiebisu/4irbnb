@@ -35,7 +35,7 @@ import { AuthTemplateProps } from '../props';
 /**
  *
  */
-import { validateAuth } from '../../../helper/auth';
+import { validateAuth as validate } from '../../../helper/auth';
 
 /**
  * Renders the auth template component
@@ -51,7 +51,7 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
       region: '',
       phone: '',
     },
-    validateAuth,
+    validate,
     onSubmit(values) {
       alert(JSON.stringify(values, null, 2));
     },
@@ -76,14 +76,14 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
                 type='region'
                 direction='bottom'
                 handleChange={formik.handleChange}
-                value={formik.values.tel}
+                value={formik.values.region}
                 errors={formik.errors.region}
               />
               <Input
                 type='phone'
                 direction='top'
                 handleChange={formik.handleChange}
-                value={formik.values.country}
+                value={formik.values.phone}
                 errors={formik.errors.phone}
               />
             </div>
