@@ -24,7 +24,7 @@ export const UnderlineButton: React.FC<UnderlineButtonProps> = ({
 }) => {
   return (
     <div
-      style={{ fontSize: font }}
+      style={{ fontSize: font, cursor: 'pointer' }}
       onClick={onPress}
       className={[
         layout['inline-block'],
