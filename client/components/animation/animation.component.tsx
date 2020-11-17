@@ -1,7 +1,19 @@
-import { AnimationProps } from './props';
 import React from 'react';
+
+/**
+ * Props
+ */
+import { AnimationProps } from './props';
+
+/**
+ * Components
+ */
 import { LoadingAnimation } from './animation.loading';
 
+/**
+ * Bundles the animation components
+ * @param {string} type - Specifies the type of animation component
+ */
 export const Animation: React.FC<AnimationProps> = ({
   type = 'loading',
   ...props

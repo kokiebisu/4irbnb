@@ -12,6 +12,15 @@ export default {
     onPress: { action: 'clicked' },
     type: { control: { disable: true } },
     extendsTo: { control: { disable: true } },
+    layoutType: {
+      control: {
+        type: 'select',
+        options: ['room', 'experience'],
+      },
+    },
+    superhost: {
+      control: 'boolean',
+    },
   },
   decorators: [
     (Story) => (
@@ -72,12 +81,6 @@ description.decorators = [
     </div>
   ),
 ];
-
-export const panelSuperhost = SectionTemplate.bind({});
-panelSuperhost.args = {
-  type: 'panel',
-  superhost: true,
-};
 
 export const arrangements = SectionTemplate.bind({});
 arrangements.args = {

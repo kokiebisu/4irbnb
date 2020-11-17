@@ -1,15 +1,32 @@
 import React from 'react';
+import Router from 'next/router';
+
+/**
+ * Styles
+ */
 import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
 import color from '../../../styles/color.module.scss';
 import space from '../../../styles/space.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import animation from '../../../styles/animation.module.scss';
+
+/**
+ * Props
+ */
 import { OptionButtonProps } from './props';
+
+/**
+ * Contexts
+ */
 import { useToggleDispatch } from '../../../context/toggle';
 import { useAuthDispatch } from '../../../context/auth';
-import Router from 'next/router';
 
+/**
+ * Renders the option button components
+ * @param {string} options - Type of option button
+ * @param {boolean} bold - Whether if the option button is styled bold
+ */
 export const OptionButton: React.FC<OptionButtonProps> = ({
   option = 'signup',
   bold = false,

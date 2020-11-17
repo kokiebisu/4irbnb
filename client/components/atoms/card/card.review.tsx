@@ -1,11 +1,23 @@
 import React, { useState } from 'react';
+
+/**
+ * Props
+ */
 import { ReviewCardProps } from './props';
 
+/**
+ * Styles
+ */
 import space from '../../../styles/space.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 
+/**
+ * Renders the review card component
+ * @param {string} imgUrl - Image of the review card
+ * @param {string} description - Description of the review card
+ */
 export const ReviewCard: React.FC<ReviewCardProps> = ({
   imgUrl = 'https://a0.muscache.com/im/pictures/user/04d3499b-6cca-4d1a-acc4-1fc4444e1002.jpg?im_w=240',
   description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",

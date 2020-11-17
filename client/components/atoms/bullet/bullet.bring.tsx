@@ -1,10 +1,25 @@
 import React from 'react';
 
+/**
+ * Styles
+ */
 import layout from '../../../styles/layout.module.scss';
-import { CheckInverse } from '../../../public/svg/original';
-import { BringBulletProps } from './props';
 import space from '../../../styles/space.module.scss';
 
+/**
+ * Vectors
+ */
+import { CheckInverse } from '../../../public/svg/original';
+
+/**
+ * Props
+ */
+import { BringBulletProps } from './props';
+
+/**
+ * Renders the bring bullet
+ * @param {string} title - Description of the bullet
+ */
 export const BringBullet: React.FC<BringBulletProps> = ({
   title = 'Description here',
 }) => {

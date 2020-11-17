@@ -1,8 +1,23 @@
-import { Card } from '../../../components/atoms/card/card.component';
 import React from 'react';
+
+/**
+ * Components
+ */
+import { Card } from '../../../components/atoms/card/card.component';
+
+/**
+ * Props
+ */
 import { AllSectionProps } from './props';
+
+/**
+ * Layouts
+ */
 import { Layout } from '../../../layout/layout.component';
 
+/**
+ * Renders the All section
+ */
 export const AllSection: React.FC<AllSectionProps> = () => {
   const stayTypes = [
     {

@@ -1,55 +1,47 @@
+.container {
+  &__active {
+    border: 2px solid black;
+  }
+
+  &__inactive {
+    background-color: white;
+  }
+
+  &__error {
+    &--active {
+      border: 2px solid #c13514;
+      background-color: white;
+    }
+
+    &--inactive {
+      border: 1px solid #c13514;
+      background-color: #fef8f6;
+    }
+  }
+}
+
 .label {
   position: absolute;
   transition: all 150ms ease-in;
-  font-size: 13px;
-  top: 2px;
-}
-
-.input:invalid ~ .label {
-  position: absolute;
-  transition: all 150ms ease-in;
   font-size: 16px;
-  top: 11px;
-  color: gray !important;
-}
-.input:focus ~ .label {
-  position: absolute;
-  transition: all 150ms ease-in;
-  font-size: 13px;
-  top: 2px;
-  color: gray !important;
-}
+  top: 12px;
 
-.input:invalid:focus ~ .label {
-  position: absolute;
-  transition: all 150ms ease-in;
-  font-size: 13px;
-  top: 2px;
-  color: gray !important;
-}
+  &__active {
+    position: absolute;
+    transition: all 150ms ease-in;
+    font-size: 13px;
+    top: 2px;
+    color: gray !important;
+  }
 
-// email
-.input[type='email']:invalid ~ .label {
-  position: absolute;
-  transition: all 150ms ease-in;
-  font-size: 16px;
-  top: 11px;
-  color: gray !important;
-}
-.input[type='email']:focus ~ .label {
-  position: absolute;
-  transition: all 150ms ease-in;
-  font-size: 13px;
-  top: 2px;
-  color: gray !important;
-}
-
-.input[type='email']:invalid:focus ~ .label {
-  position: absolute;
-  transition: all 150ms ease-in;
-  font-size: 13px;
-  top: 2px;
-  color: gray !important;
+  &__error {
+    position: absolute;
+    transition: all 150ms ease-in;
+    font-size: 13px;
+    top: 2px;
+    color: #c13514 !important;
+    font-weight: 500;
+  }
 }
 
 .input {
@@ -60,16 +52,117 @@
   padding-top: 20px;
   font-size: 16px;
   color: rgb(104, 104, 104);
+
+  &__active {
+    background-color: white;
+
+    &::placeholder {
+      color: rgb(104, 104, 104);
+    }
+  }
+
+  &__inactive {
+    background-color: white;
+
+    &::placeholder {
+      color: rgb(104, 104, 104);
+    }
+  }
+
+  &__error {
+    &--active {
+      background-color: white;
+    }
+
+    &--inactive {
+      background-color: #fef8f6;
+    }
+  }
 }
 
-.input:focus::placeholder {
+.select-input {
+  position: relative;
+  top: 0px;
+  outline: none;
+  width: 100%;
+  padding-top: 20px;
+  font-size: 16px;
   color: rgb(104, 104, 104);
+
+  &__active {
+    background-color: white;
+
+    &::placeholder {
+      color: rgb(104, 104, 104);
+    }
+  }
+
+  &__inactive {
+    background-color: white;
+
+    &::placeholder {
+      color: rgb(104, 104, 104);
+    }
+  }
+
+  &__error {
+    &--active {
+      background-color: white;
+    }
+
+    &--inactive {
+      background-color: #fef8f6;
+    }
+  }
 }
 
-.input[type='date']:invalid::-webkit-datetime-edit {
-  color: transparent;
+.select-label {
+  position: absolute;
+  transition: all 150ms ease-in;
+  font-size: 13px;
+  top: 2px;
+  color: gray !important;
+
+  &__active {
+    position: absolute;
+    transition: all 150ms ease-in;
+    font-size: 13px;
+    top: 7px;
+    color: gray !important;
+  }
+
+  &__error {
+    position: absolute;
+    transition: all 150ms ease-in;
+    font-size: 13px;
+    top: 9px;
+    color: #c13514 !important;
+    font-weight: 500;
+  }
 }
 
-.input[type='date']:focus::-webkit-datetime-edit {
-  color: rgb(104, 104, 104);
+.select-container {
+  &__active {
+    border: 2px solid black;
+    border-radius: 14px;
+  }
+
+  &__inactive {
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 14px;
+  }
+
+  &__error {
+    &--active {
+      border: 2px solid #c13514;
+      background-color: white;
+      border-radius: 14px;
+    }
+
+    &--inactive {
+      border: 1px solid #c13514;
+      background-color: #fef8f6;
+    }
+  }
 }

@@ -1,15 +1,35 @@
 import React from 'react';
+
+/**
+ * Styles
+ */
 import layout from '../../../styles/layout.module.scss';
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import space from '../../../styles/space.module.scss';
 import button from './button.module.scss';
+
+/**
+ * Props
+ */
 import { AuthButtonProps } from './props';
+
+/**
+ * Vectors
+ */
 import { Email } from '../../../public/svg/original';
 import { Apple, Facebook, Google } from '../../../public/svg/logo';
+
+/**
+ * Contexts
+ */
 import { useAuthDispatch, useAuthState } from '../../../context/auth';
 
+/**
+ * Renders the auth button component
+ * @param {string} platform - Platform for the authentication
+ */
 export const AuthButton: React.FC<AuthButtonProps> = ({
   platform = 'email',
 }) => {

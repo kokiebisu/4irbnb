@@ -1,10 +1,25 @@
-import { Button } from '../../../components/atoms/button/button.component';
 import React from 'react';
+
+/**
+ * Components
+ */
+import { Button } from '../../../components/atoms/button/button.component';
+
+/**
+ * Props
+ */
 import { ReadySectionProps } from './props';
+
+/**
+ * Styles
+ */
 import space from '../../../styles/space.module.scss';
 import font from '../../../styles/font.module.scss';
 import layout from '../../../styles/layout.module.scss';
 
+/**
+ * Renders the ready section
+ */
 export const ReadySection: React.FC<ReadySectionProps> = () => {
   return (
     <div className={[layout['flex']].join(' ')}>

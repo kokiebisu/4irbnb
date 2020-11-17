@@ -1,17 +1,40 @@
 import React from 'react';
+
+/**
+ * Vectors
+ */
 import { Star } from '../../../public/svg/original';
 
+/**
+ * Styles
+ */
 import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
 import section from './section.module.scss';
+
+/**
+ * Props
+ */
 import { ReviewsSectionProps } from './props';
+
+/**
+ * Components
+ */
 import { Button } from '../../../components/atoms/button/button.component';
 import { Bullet } from '../../../components/atoms/bullet/bullet.component';
 import { Card } from '../../../components/atoms/card/card.component';
 
+/**
+ * Renders the reviews section
+ * @param {Object[]} categories - Aspects of the ratings
+ * @param {Object[]} reviews - Reviews by the users
+ * @param {number} ratings - The average ratings
+ * @param {number} numberOfReviews - The total number of reviews
+ * @param {string} layoutType - The type of layout
+ */
 export const ReviewsSection: React.FC<ReviewsSectionProps> = ({
   categories = [
     { type: 'Cleanliness', average: 5.0 },
@@ -42,7 +65,8 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     },
   ],
-  total = 100,
+  ratings = 5.0,
+  numberOfReviews = 100,
   layoutType = 'room',
 }) => {
   return (
@@ -64,7 +88,7 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({
                 font['size--22'],
                 color['c--gray__3'],
               ].join(' ')}>
-              4.93
+              {ratings.toFixed(1)}
             </h3>
             <h3
               className={[
@@ -72,7 +96,7 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({
                 font['size--22'],
                 color['c--gray__3'],
               ].join(' ')}>
-              (1 reviews)
+              ({numberOfReviews} reviews)
             </h3>
           </div>
         </div>
@@ -119,7 +143,11 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({
           })}
         </div>
         <div className={[space['m-t--16']].join(' ')}>
-          <Button type='border' size='md' title={`Show all ${total} reviews`} />
+          <Button
+            type='border'
+            size='md'
+            title={`Show all ${numberOfReviews} reviews`}
+          />
         </div>
       </div>
     </>
