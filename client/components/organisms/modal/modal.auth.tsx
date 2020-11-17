@@ -26,13 +26,14 @@ import { RegisterModalProps } from './props';
  * Contexts
  */
 import { useToggleDispatch } from '../../../context/toggle';
-import { useAuthState } from '../../../context/auth';
+import { useAuthDispatch, useAuthState } from '../../../context/auth';
 
 /**
  * Renders the auth modal
  */
 export const AuthModal: React.FC<RegisterModalProps> = () => {
   const toggleDispatch = useToggleDispatch();
+  const authDispatch = useAuthDispatch();
   const authState = useAuthState();
 
   const displayContent = () => {
@@ -52,6 +53,10 @@ export const AuthModal: React.FC<RegisterModalProps> = () => {
 
   const handleClose = () => {
     toggleDispatch({ type: 'close_register' });
+  };
+
+  const handlePrevious = () => {
+    authDispatch({ type: 'auth_login' });
   };
 
   return (
@@ -79,7 +84,11 @@ export const AuthModal: React.FC<RegisterModalProps> = () => {
               layout['t---3'],
               color['bg--transparent'],
             ].join(' ')}>
-            <Button type='close' onPress={handleClose} />
+            {authState.title === 'Forgot password' ? (
+              <Button type='modal' modalType='back' onPress={handlePrevious} />
+            ) : (
+              <Button type='modal' modalType='close' onPress={handleClose} />
+            )}
           </div>
           <div className={[layout['all-center']].join(' ')}>
             <h3 className={[font['size--16']].join(' ')}>{authState.title}</h3>

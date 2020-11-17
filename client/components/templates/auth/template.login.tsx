@@ -63,6 +63,10 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
     return authDispatch({ type: 'auth_login' });
   };
 
+  const switchBack = () => {
+    return authDispatch({ type: 'auth_login' });
+  };
+
   const redirectTo = () => {
     return authDispatch({ type: 'forgot_password' });
   };
@@ -113,7 +117,11 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
           />
         </div>
         <div className={[space['m-v--16']].join(' ')}>
-          <Button type='underline' title='More login options' />
+          <Button
+            type='underline'
+            title='More login options'
+            onPress={switchBack}
+          />
         </div>
         <div className={[layout['flex']].join(' ')}>
           <p className={[font['size--14'], space['m-r--8']].join(' ')}>

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
  * Vectors
  */
 import { Close } from '../../../public/svg/original';
+import { ChevronLeft } from '../../../public/svg/regular';
 
 /**
  * Styles
@@ -17,15 +18,20 @@ import shape from '../../../styles/shape.module.scss';
 /**
  * Props
  */
-import { CloseButtonProps } from './props';
+import { ModalButtonProps } from './props';
 
 /**
  * Renders the close button component
  * @param {function} onPress - The action taken when the button is pressed
  */
-export const CloseButton: React.FC<CloseButtonProps> = ({
+export const ModalButton: React.FC<ModalButtonProps> = ({
   onPress = () => alert('close button pressed'),
+  modalType = 'close',
 }) => {
+  const types = {
+    close: <Close width={16} height={16} stroke='black' strokeWidth={2} />,
+    back: <ChevronLeft width={16} height={16} stroke='black' strokeWidth={4} />,
+  };
   return (
     <motion.button
       className={[
@@ -37,7 +43,7 @@ export const CloseButton: React.FC<CloseButtonProps> = ({
       whileHover={{ scale: 1.04 }}
       whileTap={{ scale: 0.98 }}
       onClick={onPress}>
-      <Close width={16} height={16} stroke='black' strokeWidth={2} />
+      {types[modalType]}
     </motion.button>
   );
 };
