@@ -28,3 +28,8 @@ export const experiences = BannerTemplate.bind({});
 experiences.args = {
   type: 'experiences',
 };
+
+export const landing = BannerTemplate.bind({});
+landing.args = {
+  type: 'landing',
+};
