@@ -12,7 +12,7 @@
     <img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg" alt="Build Status on CircleCI" />
   </a>
    <a href="">
-      <img src="https://api.netlify.com/api/v1/badges/c5a86ae5-e8cb-4c3c-adf2-337e7bceee46/deploy-status" />
+      <img src="https://api.netlify.com/api/v1/badges/dda49c15-af6f-485b-bd6b-5b88b45a5466/deploy-status" />
     </a>
   <br/>
 </p>
