@@ -13,18 +13,12 @@ import input from './input.module.scss';
 /**
  * Props
  */
-import { PasswordInputProps } from './props';
+import { PhoneNumberInputProps } from './props';
 
 /**
  * Styling
  */
-import { styleInput, styleLabel, styleContainer } from './styling.text';
-
-/**
- * Components
- */
-import { Button } from '../button/button.component';
-import { checkPassword } from '../../../helper/auth';
+import { styleLabel, styleContainer, styleInput } from './styling.text';
 
 /**
  * Renders the text input component
@@ -35,14 +29,13 @@ import { checkPassword } from '../../../helper/auth';
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const PasswordInput: React.FC<PasswordInputProps> = ({
+export const PhoneNumberInput: React.FC<PhoneNumberInputProps> = ({
   handleChange,
   value,
   direction,
   errors = false,
 }) => {
   const [fieldActive, setFieldActive] = useState(false);
-  const [hide, setHide] = useState(true);
 
   const activateField = () => {
     setFieldActive(true);
@@ -85,7 +78,7 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
       ].join(' ')} ${renderShape()} ${styleContainer(
         errors,
         fieldActive,
-        checkPassword(value)
+        value
       )}`}>
       <div
         style={{
@@ -95,9 +88,9 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
         }}>
         <input
           autoFocus={true}
-          id='password'
-          name='password'
-          type={hide ? 'password' : 'text'}
+          id='tel'
+          name='tel'
+          type='text'
           onChange={handleChange}
           value={value}
           onFocus={activateField}
@@ -111,42 +104,20 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
             font['weight--300'],
             color['c__placeholder--black'],
             input['input'],
-          ].join(' ')} ${styleInput(
-            errors,
-            fieldActive,
-            checkPassword(value)
-          )}`}
-          placeholder={fieldActive ? 'Password' : undefined}
+          ].join(' ')} ${styleInput(errors, fieldActive, value)}`}
+          placeholder={fieldActive ? '090-999-9999' : undefined}
         />
         <label
-          htmlFor='password'
+          htmlFor='tel'
           className={`${[
             layout['absolute'],
             font['size--12'],
             color['c--gray__1'],
             font['weight--100'],
             input['label'],
-          ].join(' ')} ${styleLabel(
-            errors,
-            fieldActive,
-            checkPassword(value)
-          )}`}>
-          Password
+          ].join(' ')} ${styleLabel(errors, fieldActive, value)}`}>
+          Phone number
         </label>
-      </div>
-      <div
-        className={[
-          layout['flex'],
-          layout['items-center'],
-          layout['justify-center'],
-          space['m-l--18'],
-        ].join(' ')}>
-        <Button
-          onPress={() => setHide((prevHide) => !prevHide)}
-          font={13}
-          type='underline'
-          title={hide ? 'Show' : 'Hide'}
-        />
       </div>
     </div>
   );

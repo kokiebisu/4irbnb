@@ -13,6 +13,11 @@ export const checkPassword = (value) => {
   return true;
 };
 
+export const validateAuth = (values) => {
+  const errors: any = {};
+  return errors;
+};
+
 export const validateSignup = (values) => {
   const errors: any = {};
   if (!values.email) {
