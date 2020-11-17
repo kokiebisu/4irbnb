@@ -11,6 +11,7 @@ import { HomesHeaderProps } from './props';
 import space from '../../../styles/space.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import shape from '../../../styles/shape.module.scss';
+import header from './header.module.scss';
 
 /**
  * Vectors
@@ -33,7 +34,14 @@ export const HomesHeader: React.FC<HomesHeaderProps> = ({ spread = false }) => {
         style={{ padding: 20 }}
         className={` ${[shape['h--full']].join(' ')}`}>
         <div>
-          <Button extendsTo={[layout['inline-block']].join(' ')} to='/'>
+          <Button
+            extendsTo={[
+              layout['inline-block'],
+              header['hover__logo'],
+              space['p--14'],
+              shape['br--circle'],
+            ].join(' ')}
+            to='/'>
             <NoNameLogo fill='black' width={30} height={32} />
           </Button>
         </div>

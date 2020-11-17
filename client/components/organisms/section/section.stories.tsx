@@ -136,11 +136,6 @@ destinations.args = {
   type: 'destinations',
 };
 
-export const banner = SectionTemplate.bind({});
-banner.args = {
-  type: 'banner',
-};
-
 export const online = SectionTemplate.bind({});
 online.args = {
   type: 'online',

@@ -13,7 +13,7 @@ import color from '../../../styles/color.module.scss';
 /**
  * Props
  */
-import { BannerSectionProps } from './props';
+import { LandingBannerProps } from './props';
 
 /**
  * Components
@@ -24,7 +24,7 @@ import { Button } from '../../../components/atoms/button/button.component';
 /**
  * Renders the banner section
  */
-export const BannerSection: React.FC<BannerSectionProps> = () => {
+export const LandingBanner: React.FC<LandingBannerProps> = () => {
   return (
     <div className={index['banner']}>
       <div className={[layout['all-sides']].join(' ')}>
