@@ -58,9 +58,6 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
       const signup = async () => {
         const response = await fetch('http://localhost:8080/users', {
           method: 'POST',
-          // headers: {
-          //   'Content-Type': 'application/json',
-          // },
           body: JSON.stringify(values),
         });
         const data = await response.json();
