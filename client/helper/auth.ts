@@ -6,7 +6,7 @@ export const checkEmail = (value) => {
 };
 
 export const checkPassword = (value) => {
-  if (value.length < 8) {
+  if (value && value.length && value.length < 8) {
     return false;
   }
   return true;
