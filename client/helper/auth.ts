@@ -59,3 +59,14 @@ export const validateLogin = (values) => {
 
   return errors;
 };
+
+export const validateForgotPassword = (values) => {
+  const errors: any = {};
+  if (!values.email) {
+    errors.email = 'Email is required';
+  } else if (!checkEmail(values.email)) {
+    errors.email = 'Enter a valid email.';
+  }
+
+  return errors;
+};
