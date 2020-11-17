@@ -29,6 +29,13 @@ export interface NameInputProps {
   errors?: boolean;
 }
 
+export interface BirthdateInputProps {
+  handleChange?: any;
+  value?: string;
+  direction?: string;
+  errors?: boolean;
+}
+
 export interface InputProps {
   extendsTo?: string;
   [x: string]: any;

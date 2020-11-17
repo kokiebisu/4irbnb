@@ -46,3 +46,8 @@ name.argTypes = {
     },
   },
 };
+
+export const birthdate = InputTemplate.bind({});
+birthdate.args = {
+  type: 'birthdate',
+};

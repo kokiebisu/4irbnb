@@ -35,5 +35,8 @@
   
 CREATE TABLE "user" (
     id BIGSERIAL PRIMARY KEY NOT NULL,
-    email VARCHAR
+    email VARCHAR,
+    firstname VARCHAR,
+    lastname VARCHAR,
+    password VARCHAR
 );

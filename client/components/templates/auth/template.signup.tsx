@@ -34,6 +34,7 @@ import { validateSignup as validate } from '../../../helper/auth';
  * Hooks
  */
 import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
+import { signup } from './template.stories';
 
 /**
  * Renders the signup template component
@@ -45,15 +46,27 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
     initialValues: {
       firstname: '',
       lastname: '',
-      birthdate: '',
+      day: '',
+      month: '',
+      year: '',
       email: '',
       password: '',
     },
     validate,
     onSubmit: (values) => {
       // setLoading(true);
-      alert(JSON.stringify(values, null, 2));
-      formik.resetForm();
+      const signup = async () => {
+        const response = await fetch('http://localhost:8080/users', {
+          method: 'POST',
+          // headers: {
+          //   'Content-Type': 'application/json',
+          // },
+          body: JSON.stringify(values),
+        });
+        const data = await response.json();
+      };
+      signup();
+      // formik.resetForm();
     },
   });
 
@@ -105,15 +118,13 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
               )}
           </div>
         </div>
-        <div className={[space['m-t--22']].join(' ')}>
+        {/* <div className={[space['m-t--22']].join(' ')}>
           <div>
             <Input
-              type='text'
-              placeholder='Birth date'
-              name='birthdate'
-              inputType='date'
+              type='birthdate'
               handleChange={formik.handleChange}
               value={formik.values.birthdate}
+              errors={formik.errors.birthdate !== undefined}
             />
           </div>
           <p
@@ -125,7 +136,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
             To sign up, you need to be at least 18. Your birthday won't be
             shared with other people who use Airbnb.
           </p>
-        </div>
+        </div> */}
         <div className={[space['m-t--22']].join(' ')}>
           <div>
             <Input
