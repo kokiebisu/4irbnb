@@ -147,14 +147,22 @@ underline.args = {
   type: 'underline',
 };
 
-export const close = ButtonTemplate.bind({});
-close.args = {
-  type: 'close',
-};
-
 export const filter = ButtonTemplate.bind({});
 filter.args = {
   type: 'filter',
+};
+
+export const modal = ButtonTemplate.bind({});
+modal.args = {
+  type: 'modal',
+};
+modal.argTypes = {
+  modalType: {
+    control: {
+      type: 'select',
+      options: ['close', 'back'],
+    },
+  },
 };
 
 /**
