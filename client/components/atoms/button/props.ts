@@ -47,6 +47,7 @@ export interface BannerButtonProps extends LinkButtonProps, TitleProps {}
 export interface PrimaryButtonProps extends TitleProps, OnPressProps {
   size?: 'sm' | 'md' | 'lg';
   spread?: boolean;
+  fill?: string;
 }
 
 export interface SearchbarButtonProps extends MiniProps {}
@@ -55,6 +56,11 @@ export interface PaginateButtonProps {
   direction?: string;
   disable?: boolean;
   onPress?: () => void;
+}
+
+export interface ModalButtonProps {
+  onPress?: () => void;
+  modalType?: 'close' | 'back';
 }
 
 export interface ExpandButtonProps extends LinkButtonProps, TitleProps {}

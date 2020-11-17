@@ -18,6 +18,8 @@ export interface LoginTemplateProps {}
 
 export interface AuthTemplateProps {}
 
+export interface ForgotPasswordTemplateProps {}
+
 export interface TemplateProps {
   type?: string;
   place?: string;
