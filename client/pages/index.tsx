@@ -28,6 +28,7 @@ import { Header } from '../components/organisms/header/header.component';
 import { Section } from '../components/organisms/section/section.component';
 import { Footer } from '../components/organisms/footer/footer.component';
 import { MenuBar } from '../components/organisms/menubar/menubar.component';
+import { Banner } from '../components/organisms/banner/banner.component';
 
 /* hooks */
 import { useHandleScroll } from '../hooks/useHandleScroll';
@@ -67,7 +68,7 @@ const LandingPage: () => string | JSX.Element = () => {
       className={[layout['relative'], shape['min-h--fullv']].join(' ')}>
       <div>
         <CovidNotice />
-        <Section type='banner' />
+        <Banner type='landing' />
         {loading ? (
           <>
             <Layout type='section' sectionType='landing' spread>
