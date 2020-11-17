@@ -24,6 +24,8 @@ const authReducer = (state: State, action: Action) => {
       return { ...state, display: 'login', title: 'Log in' };
     case 'signup':
       return { ...state, display: 'signup', title: 'Finish signing up' };
+    case 'forgot_password':
+      return { ...state, display: 'forgot_password', title: 'Forgot password' };
     default:
       return state;
   }
