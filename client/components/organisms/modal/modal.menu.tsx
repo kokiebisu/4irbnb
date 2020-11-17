@@ -17,12 +17,16 @@ import { Button } from '../../../components/atoms/button/button.component';
  * Props
  */
 import { MenuModalProps } from './props';
+import useOnClickOutside from '../../../hooks/useOnClickOutside';
+import { useToggleDispatch } from '../../../context/toggle';
 
 /**
  * Renders the menu modal
  * @param refProp
  */
 export const MenuModal: React.FC<MenuModalProps> = ({ refProp }) => {
+  const toggleDispatch = useToggleDispatch();
+  useOnClickOutside(refProp, () => toggleDispatch({ type: 'toggle_menu' }));
   return (
     <motion.div
       ref={refProp}
