@@ -27,14 +27,15 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   onPress,
   size = 'md',
   spread = false,
+  fill,
 }) => {
   const components = {
     sm: (
       <motion.button
         whileTap={{ scale: 0.98 }}
         data-testid='button'
+        style={fill && { backgroundColor: fill }}
         className={`${[
-          color['bg--primary'],
           color['c--white__0'],
           shape['w--full'],
           font['size--14'],
@@ -42,7 +43,9 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
           space['p-h--14'],
           shape['br--8'],
           font['weight--300'],
-        ].join(' ')} ${spread ? layout['block'] : layout['inline-block']}`}
+        ].join(' ')} ${spread ? layout['block'] : layout['inline-block']} ${
+          !fill && [color['bg--primary']].join(' ')
+        }`}
         onClick={onPress}>
         <h4>{title}</h4>
       </motion.button>
@@ -51,8 +54,8 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
       <motion.button
         whileTap={{ scale: 0.98 }}
         data-testid='button'
+        style={fill && { backgroundColor: fill }}
         className={`${[
-          color['bg--primary'],
           color['c--white__0'],
           shape['w--full'],
           font['size--16'],
@@ -60,7 +63,9 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
           space['p-h--20'],
           shape['br--8'],
           font['weight--300'],
-        ].join(' ')} ${spread ? layout['block'] : layout['inline-block']}`}
+        ].join(' ')} ${spread ? layout['block'] : layout['inline-block']} ${
+          !fill && [color['bg--primary']].join(' ')
+        }`}
         onClick={onPress}>
         {title}
       </motion.button>
@@ -69,8 +74,8 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
       <motion.button
         whileTap={{ scale: 0.98 }}
         data-testid='button'
+        style={fill && { backgroundColor: fill }}
         className={`${[
-          color['bg--primary'],
           color['c--white__0'],
           shape['w--full'],
           layout['block'],
@@ -79,7 +84,9 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
           space['p-h--20'],
           shape['br--8'],
           font['weight--300'],
-        ].join(' ')} ${spread ? layout['block'] : layout['inline-block']}`}
+        ].join(' ')} ${spread ? layout['block'] : layout['inline-block']} ${
+          !fill && [color['bg--primary']].join(' ')
+        }`}
         onClick={onPress}>
         {title}
       </motion.button>
