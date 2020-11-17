@@ -55,11 +55,12 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
     onSubmit: (values) => {
       // setLoading(true);
       const signup = async () => {
-        const response = await fetch('http://localhost:8080/users', {
+        const response = await fetch('http://localhost:8080/api/users/signup', {
           method: 'POST',
           body: JSON.stringify(values),
         });
         const data = await response.json();
+        console.log('data from signup', data);
       };
       signup();
       // formik.resetForm();
