@@ -7,6 +7,7 @@ import { TextInput } from './input.text';
 import { EmailInput } from './input.email';
 import { PasswordInput } from './input.password';
 import { NameInput } from './input.name';
+import { BirthdateInput } from './input.birthdate';
 
 /**
  * Props
@@ -23,6 +24,7 @@ export const Input: React.FC<InputProps> = ({ type, ...props }) => {
     email: <EmailInput {...props} />,
     password: <PasswordInput {...props} />,
     name: <NameInput {...props} />,
+    birthdate: <BirthdateInput {...props} />,
   };
 
   return <div data-testid='input'>{types[type]}</div>;
