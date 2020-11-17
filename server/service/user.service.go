@@ -12,7 +12,9 @@ var (
 )
 
 type UserService interface {
-	Validate(user *entity.User) error
+	ValidateSignup(user *entity.User) error
+	ValidateLogin(user *entity.User) error
+	Authenticate(user *entity.UserLogin) (*entity.User, error)
 	Create(user *entity.User) (*entity.User, error)
 	FindAll() ([]*entity.User, error)
 }
@@ -25,7 +27,7 @@ func NewUserService(ur repository.UserRepository) UserService {
 	return &userService{}
 }
 
-func (*userService) Validate(user *entity.User) error {
+func (*userService) ValidateSignup(user *entity.User) error {
 	if user == nil {
 		err := errors.New("The user is empty")
 		return err
@@ -34,7 +36,47 @@ func (*userService) Validate(user *entity.User) error {
 		err := errors.New("The email is empty")
 		return err
 	}
+	if (*user).FirstName == "" {
+		err := errors.New("The firstname is empty")
+		return err
+	}
+	if (*user).LastName == "" {
+		err := errors.New("The lastname is empty")
+		return err
+	}
+	if (*user).Password == "" {
+		err := errors.New("The password is empty")
+		return err
+	}
 	return nil
+}
+
+func (*userService) ValidateLogin(user *entity.User) error {
+	if (*user).Email == "" {
+		err := errors.New("The email is empty")
+		return err
+	}
+	if (*user).Password == "" {
+		err := errors.New("The password is empty")
+		return err
+	}
+	return nil
+}
+
+func (*userService) Authenticate(user *entity.UserLogin) (*entity.User, error) {
+	result, err := repo.FindByEmail((*user).Email)
+	if err != nil {
+		return nil, err
+	}
+	if result == nil {
+		err = errors.New("No users were found from the specified email")
+		return nil, err
+	}
+	if (*result).Password != (*user).Password {
+		err = errors.New("The password doesn't match")
+		return nil, err
+	}
+	return result, nil
 }
  
 func (*userService) Create(user *entity.User) (*entity.User, error) {

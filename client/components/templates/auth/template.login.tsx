@@ -51,8 +51,16 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
     },
     validate,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-      formik.resetForm();
+      const login = async () => {
+        const response = await fetch('http://localhost:8080/api/users/login', {
+          method: 'POST',
+          body: JSON.stringify(values),
+        });
+        const data = await response.json();
+        console.log('data from login', data);
+      };
+      login();
+      // formik.resetForm();
     },
   });
 
