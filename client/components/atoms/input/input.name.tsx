@@ -18,7 +18,7 @@ import { NameInputProps } from './props';
 /**
  * Styling
  */
-import { styleNameInput, styleNameLabel, styleNameContainer } from './styling';
+import { styleLabel, styleContainer, styleInput } from './styling.text';
 
 /**
  * Renders the text input component
@@ -80,7 +80,7 @@ export const NameInput: React.FC<NameInputProps> = ({
         space['p-v--6'],
         space['p-h--12'],
         layout['items-center'],
-      ].join(' ')} ${renderShape()} ${styleNameContainer(
+      ].join(' ')} ${renderShape()} ${styleContainer(
         errors,
         fieldActive,
         value
@@ -109,7 +109,7 @@ export const NameInput: React.FC<NameInputProps> = ({
             font['weight--300'],
             color['c__placeholder--black'],
             input['input'],
-          ].join(' ')} ${styleNameInput(errors, value, fieldActive)}`}
+          ].join(' ')} ${styleInput(errors, fieldActive, value)}`}
           placeholder={fieldActive ? names[name] : undefined}
         />
         <label
@@ -120,7 +120,7 @@ export const NameInput: React.FC<NameInputProps> = ({
             color['c--gray__1'],
             font['weight--100'],
             input['label'],
-          ].join(' ')} ${styleNameLabel(errors, value, fieldActive)}`}>
+          ].join(' ')} ${styleLabel(errors, fieldActive, value, value)}`}>
           {names[name]}
         </label>
       </div>

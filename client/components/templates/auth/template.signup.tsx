@@ -34,7 +34,6 @@ import { validateSignup as validate } from '../../../helper/auth';
  * Hooks
  */
 import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
-import { signup } from './template.stories';
 
 /**
  * Renders the signup template component
@@ -58,9 +57,6 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
       const signup = async () => {
         const response = await fetch('http://localhost:8080/users', {
           method: 'POST',
-          // headers: {
-          //   'Content-Type': 'application/json',
-          // },
           body: JSON.stringify(values),
         });
         const data = await response.json();
@@ -118,25 +114,67 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
               )}
           </div>
         </div>
-        {/* <div className={[space['m-t--22']].join(' ')}>
-          <div>
+        <div className={[space['m-t--22']].join(' ')}>
+          <div
+            style={{ border: '1px solid gray', borderRadius: 14 }}
+            className={[layout['flex']].join(' ')}>
             <Input
+              spread
+              dateType='day'
               type='birthdate'
+              direction='left'
               handleChange={formik.handleChange}
-              value={formik.values.birthdate}
-              errors={formik.errors.birthdate !== undefined}
+              value={formik.values.day}
+              errors={formik.errors.year !== undefined}
+            />
+            <Input
+              spread
+              dateType='month'
+              type='birthdate'
+              direction='center'
+              handleChange={formik.handleChange}
+              value={formik.values.month}
+              errors={formik.errors.year !== undefined}
+            />
+            <Input
+              spread
+              dateType='year'
+              type='birthdate'
+              direction='right'
+              handleChange={formik.handleChange}
+              value={formik.values.year}
+              errors={formik.errors.year !== undefined}
             />
           </div>
-          <p
-            className={[
-              space['m-t--8'],
-              font['size--11'],
-              color['c--gray__1'],
-            ].join(' ')}>
-            To sign up, you need to be at least 18. Your birthday won't be
-            shared with other people who use Airbnb.
-          </p>
-        </div> */}
+          {formik.errors.day !== undefined && (
+            <div className={[space['m-t--6']].join(' ')}>
+              <Bullet type='required' message={formik.errors.day} />
+            </div>
+          )}
+          {formik.errors.month !== undefined && (
+            <div className={[space['m-t--6']].join(' ')}>
+              <Bullet type='required' message={formik.errors.month} />
+            </div>
+          )}
+          {formik.errors.year !== undefined && (
+            <div className={[space['m-t--6']].join(' ')}>
+              <Bullet type='required' message={formik.errors.year} />
+            </div>
+          )}
+        </div>
+        {formik.errors.day !== undefined &&
+          formik.errors.month !== undefined &&
+          formik.errors.year !== undefined && (
+            <p
+              className={[
+                space['m-t--8'],
+                font['size--11'],
+                color['c--gray__1'],
+              ].join(' ')}>
+              To sign up, you need to be at least 18. Your birthday won't be
+              shared with other people who use Airbnb.
+            </p>
+          )}
         <div className={[space['m-t--22']].join(' ')}>
           <div>
             <Input
