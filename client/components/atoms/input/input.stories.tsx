@@ -19,11 +19,6 @@ export default {
 
 const InputTemplate: Story<InputProps> = (args) => <Input {...args} />;
 
-export const text = InputTemplate.bind({});
-text.args = {
-  type: 'text',
-};
-
 export const email = InputTemplate.bind({});
 email.args = {
   type: 'email',
@@ -42,7 +37,7 @@ name.argTypes = {
   name: {
     control: {
       type: 'select',
-      options: ['first', 'last'],
+      options: ['firstname', 'lastname'],
     },
   },
 };
