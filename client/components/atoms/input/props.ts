@@ -41,6 +41,7 @@ export interface BirthdateInputProps {
   value?: string;
   direction?: string;
   errors?: boolean;
+  dateType?: 'year' | 'month' | 'day';
 }
 
 export interface RegionInputProps {
@@ -52,5 +53,6 @@ export interface RegionInputProps {
 
 export interface InputProps {
   extendsTo?: string;
+  spread?: boolean;
   [x: string]: any;
 }
