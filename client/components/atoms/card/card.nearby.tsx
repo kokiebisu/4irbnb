@@ -1,12 +1,30 @@
 import React from 'react';
 
+/**
+ * Styles
+ */
 import space from '../../../styles/space.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import font from '../../../styles/font.module.scss';
-import { nearbyPic } from '../../../content';
-import { NearbyCardProps } from './props';
 import card from './card.module.scss';
 
+/**
+ * Contents
+ */
+import { nearbyPic } from '../../../content';
+
+/**
+ * Props
+ */
+import { NearbyCardProps } from './props';
+
+/**
+ * Renders the nearby card component
+ * @param {string} imgUrl - Image of the card
+ * @param {string} city - Name of the city
+ * @param {number} hours - Time it takes to reach the destination
+ * @param {string} size - Size of the component
+ */
 export const NearbyCard: React.FC<NearbyCardProps> = ({
   imgUrl = nearbyPic[0],
   city = 'City',

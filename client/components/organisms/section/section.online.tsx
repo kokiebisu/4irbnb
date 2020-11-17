@@ -1,13 +1,30 @@
 import React from 'react';
+
+/**
+ * Components
+ */
 import { Card } from '../../../components/atoms/card/card.component';
+import { Button } from '../../../components/atoms/button/button.component';
+
+/**
+ * Props
+ */
 import { OnlineSectionProps } from './props';
+
+/**
+ * Styles
+ */
 import section from './section.module.scss';
 import color from '../../../styles/color.module.scss';
-import { Button } from '../../../components/atoms/button/button.component';
 import space from '../../../styles/space.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import shape from '../../../styles/shape.module.scss';
 
+/**
+ * Renders the online section
+ * @param {Object[]} items - List of online experiences for the landing page
+ * @param {boolean} dark - Whether if the section is dark mode or not
+ */
 export const OnlineSection: React.FC<OnlineSectionProps> = ({
   items = [
     {
@@ -16,6 +33,7 @@ export const OnlineSection: React.FC<OnlineSectionProps> = ({
       large:
         'https://a0.muscache.com/im/pictures/78010337-07f0-4154-9528-363b97b54699.jpg',
       title: 'Learn to make soup dumplings in Shanghai',
+      to: '/experiences/1715106',
     },
     {
       small:
@@ -23,6 +41,7 @@ export const OnlineSection: React.FC<OnlineSectionProps> = ({
       large:
         'https://a0.muscache.com/im/pictures/0735e435-3d1d-4aec-b536-9ee54f299ce6.jpg',
       title: 'Explore feminism with street art and graffiti',
+      to: '/experiences/1755988',
     },
     {
       small:
@@ -30,6 +49,7 @@ export const OnlineSection: React.FC<OnlineSectionProps> = ({
       large:
         'https://a0.muscache.com/im/pictures/1793b6aa-4c3c-4193-a65a-09b440b2ca2c.jpg',
       title: 'Go backstage with a New York magician',
+      to: '/experiences/1661222',
     },
     {
       small:
@@ -37,6 +57,7 @@ export const OnlineSection: React.FC<OnlineSectionProps> = ({
       large:
         'https://a0.muscache.com/im/pictures/925f99bb-c5bc-4d82-9803-518abeef7e2e.jpg',
       title: 'Craft cocktails and talk gender with a bartender',
+      to: '/experiences/1785860',
     },
   ],
   dark = false,
@@ -83,7 +104,7 @@ export const OnlineSection: React.FC<OnlineSectionProps> = ({
                       index === 3 && [section['h__online--last']].join()
                     }`}>
                     <Card
-                      to='/'
+                      to={item.to}
                       type='online'
                       small={item.small}
                       large={item.large}

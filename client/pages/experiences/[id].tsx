@@ -1,20 +1,43 @@
 import React, { useEffect, useState } from 'react';
-import { Header } from 'components/organisms/header/header.component';
-import { Section } from 'components/organisms/section/section.component';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useRouter } from 'next/router';
+
+/**
+ * Component
+ */
+import { Header } from '../../components/organisms/header/header.component';
+import { Section } from '../../components/organisms/section/section.component';
+import { Modal } from '../../components/organisms/modal/modal.component';
+import { Footer } from '../../components/organisms/footer/footer.component';
+
+/**
+ * Context
+ */
+import { useToggleState } from '../../context/toggle';
+
+/**
+ * Styles
+ */
 import layout from '../../styles/layout.module.scss';
 import details from '../../styles/details.module.scss';
 import color from '../../styles/color.module.scss';
 import space from '../../styles/space.module.scss';
 import shape from '../../styles/shape.module.scss';
 import staysDetail from '../../styles/staysDetail.module.scss';
-import { Card } from '../../components/atoms/card/card.component';
-import { Modal } from '../../components/organisms/modal/modal.component';
-import { Footer } from '../../components/organisms/footer/footer.component';
-import { useToggleState } from 'context/toggle';
 import responsive from '../../styles/responsive.module.scss';
-import { AnimatePresence, motion } from 'framer-motion';
 
+/**
+ * Sample Data
+ */
+import { experiences } from '../../data/experiences';
+
+/**
+ * Renders the component for path /experiences/[id]
+ */
 const id: () => string | JSX.Element = () => {
+  const router = useRouter();
+  const { id: experienceID }: { id?: string } = router.query;
+
   const toggleState = useToggleState();
   const [scrollPosition, setScrollPosition] = useState(0);
   const handleScroll = () => {
@@ -53,11 +76,14 @@ const id: () => string | JSX.Element = () => {
           )}
         </AnimatePresence>
         <div className={[].join(' ')}>
-          <Section
-            layoutType='experience'
-            extendsTo={[staysDetail['flex__panel']].join(' ')}
-            type='panel'
-          />
+          {experiences[experienceID] ? (
+            <Section
+              layoutType='experience'
+              extendsTo={[staysDetail['flex__panel']].join(' ')}
+              type='panel'
+              {...experiences[experienceID]}
+            />
+          ) : null}
         </div>
         <div
           className={[layout['container'], staysDetail['m__content']].join(
@@ -66,30 +92,43 @@ const id: () => string | JSX.Element = () => {
           <div className={[details['flex__details']].join(' ')}>
             <div className={[details['w__details--left']].join(' ')}>
               <div className={[staysDetail['b__characteristics']].join(' ')}>
-                <Section
-                  layoutType='experience'
-                  type='characteristics'
-                  characteristics={['time', 'devices', 'people', 'language']}
-                />
+                {experiences[experienceID] ? (
+                  <Section
+                    layoutType='experience'
+                    type='characteristics'
+                    {...experiences[experienceID]}
+                  />
+                ) : null}
               </div>
-              <div
-                className={[color['b-t--white__2'], space['p-v--32']].join(
-                  ' '
-                )}>
-                <Section layoutType='experience' type='description' />
-              </div>
-              <div
-                className={[color['b-t--white__2'], space['p-v--32']].join(
-                  ' '
-                )}>
-                <Section type='participate' />
-              </div>
-              <div
-                className={[color['b-t--white__2'], space['p-v--32']].join(
-                  ' '
-                )}>
-                <Section type='bring' />
-              </div>
+              {experiences[experienceID] ? (
+                <div
+                  className={[color['b-t--white__2'], space['p-v--32']].join(
+                    ' '
+                  )}>
+                  <Section
+                    layoutType='experience'
+                    type='description'
+                    {...experiences[experienceID]}
+                  />
+                </div>
+              ) : null}
+              {experiences[experienceID] ? (
+                <div
+                  className={[color['b-t--white__2'], space['p-v--32']].join(
+                    ' '
+                  )}>
+                  <Section type='participate' {...experiences[experienceID]} />
+                </div>
+              ) : null}
+              {experiences[experienceID] &&
+              experiences[experienceID].necessities ? (
+                <div
+                  className={[color['b-t--white__2'], space['p-v--32']].join(
+                    ' '
+                  )}>
+                  <Section type='bring' {...experiences[experienceID]} />
+                </div>
+              ) : null}
             </div>
             <div
               style={{ paddingTop: 20, paddingBottom: 56, width: '36%' }}
@@ -101,28 +140,62 @@ const id: () => string | JSX.Element = () => {
                   layout['justify-end'],
                   layout['sticky'],
                 ].join(' ')}>
-                <Modal
-                  type='booking'
-                  extendsTo={[shape['w--full']].join(' ')}
-                />
+                {experiences[experienceID] ? (
+                  <Modal
+                    type='booking'
+                    extendsTo={[shape['w--full']].join(' ')}
+                    {...experiences[experienceID]}
+                  />
+                ) : null}
               </div>
             </div>
           </div>
-          <div className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
-            <Section layoutType='experience' type='host' />
-          </div>
-          <div className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
-            <Section type='experiences' />
-          </div>
-          <div className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
-            <Section layoutType='experience' type='reviews' />
-          </div>
-          <div className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
-            <Section layoutType='experience' type='available' />
-          </div>
-          <div className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
-            <Section layoutType='experience' type='know' />
-          </div>
+          {experiences[experienceID] ? (
+            <div
+              className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
+              <Section
+                layoutType='experience'
+                type='host'
+                {...experiences[experienceID]}
+              />
+            </div>
+          ) : null}
+          {experiences[experienceID] ? (
+            <div
+              className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
+              <Section type='experiences' />
+            </div>
+          ) : null}
+          {experiences[experienceID] ? (
+            <div
+              className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
+              <Section
+                layoutType='experience'
+                type='reviews'
+                {...experiences[experienceID]}
+              />
+            </div>
+          ) : null}
+          {experiences[experienceID] ? (
+            <div
+              className={[color['b-t--white__2'], space['p-v--32']].join(' ')}>
+              <Section
+                layoutType='experience'
+                type='available'
+                {...experiences[experienceID]}
+              />
+            </div>
+          ) : null}
+          {experiences[experienceID] ? (
+            <div
+              className={[
+                color['b-t--white__2'],
+                space['p-t--32'],
+                space['p-b--64'],
+              ].join(' ')}>
+              <Section layoutType='experience' type='know' />
+            </div>
+          ) : null}
         </div>
         <Footer />
         <div

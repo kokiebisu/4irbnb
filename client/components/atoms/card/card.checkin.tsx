@@ -1,11 +1,23 @@
 import React, { useReducer } from 'react';
+
+/**
+ * Props
+ */
 import { CheckInCardProps } from './props';
+
+/**
+ * Styles
+ */
 import card from './card.module.scss';
 import space from '../../../styles/space.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
+
+/**
+ * Vectors
+ */
 import { Flag, Star } from '../../../public/svg/original';
 import { ChevronDown } from '../../../public/svg/regular';
 
@@ -22,6 +34,9 @@ const reducer = (state, action) => {
   }
 };
 
+/**
+ * Renders the checkin card
+ */
 export const CheckInCard: React.FC<CheckInCardProps> = () => {
   const [selected, dispatchSelected] = useReducer(reducer, {
     checkin: false,

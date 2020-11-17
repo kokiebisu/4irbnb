@@ -1,16 +1,32 @@
-import { Button } from '../../../components/atoms/button/button.component';
 import React from 'react';
+import Link from 'next/link';
+import Router from 'next/router';
+
+/**
+ * Components
+ */
+import { Button } from '../../../components/atoms/button/button.component';
+
+/**
+ * Props
+ */
 import { PaginateBarProps } from './props';
-import { useState } from 'react';
+
+/**
+ * Styles
+ */
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
 import shape from '../../../styles/shape.module.scss';
-import Link from 'next/link';
-import font from '../../../styles/font.module.scss';
-import Router from 'next/router';
 import bar from './bar.module.scss';
+import font from '../../../styles/font.module.scss';
 
+/**
+ * Renders paginate bar component
+ * @param {number} page - Current page
+ * @param {number} total - Total number of pages
+ */
 export const PaginateBar: React.FC<PaginateBarProps> = ({
   page = 1,
   total = 15,

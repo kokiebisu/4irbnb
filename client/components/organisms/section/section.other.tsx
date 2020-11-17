@@ -1,13 +1,25 @@
 import React from 'react';
 
+/**
+ * Styles
+ */
 import section from './section.module.scss';
 import font from '../../../styles/font.module.scss';
 import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import shape from '../../../styles/shape.module.scss';
+
+/**
+ * Props
+ */
 import { OtherSectionProps } from './props';
 
+/**
+ * Renders the other section
+ * @param {string} location - Location of the page
+ * @param {Object[]} locations - List of other locations
+ */
 export const OtherSection: React.FC<OtherSectionProps> = ({
   location = 'Location',
   locations = [

@@ -1,18 +1,45 @@
-import { useAuthDispatch, useAuthState } from '../../../context/auth';
-import { useFormik } from 'formik';
-import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
 import React from 'react';
+import { useFormik } from 'formik';
 
+/**
+ * Contexts
+ */
+import { useAuthDispatch, useAuthState } from '../../../context/auth';
+
+/**
+ * Hooks
+ */
+import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
+
+/**
+ * Styles
+ */
 import space from '../../../styles/space.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import color from '../../../styles/color.module.scss';
 import modalStyles from '../../organisms/modal/modal.module.scss';
-import { Input } from '../../../components/atoms/input/input.component';
-import { AuthTemplateProps } from '../props';
-import { Button } from '../../../components/atoms/button/button.component';
 
+/**
+ * Components
+ */
+import { Input } from '../../atoms/input/input.component';
+import { Button } from '../../atoms/button/button.component';
+
+/**
+ * Props
+ */
+import { AuthTemplateProps } from '../props';
+
+/**
+ *
+ */
+import { validateAuth as validate } from '../../../helper/auth';
+
+/**
+ * Renders the auth template component
+ */
 export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
   useLockBodyScroll();
   const authState = useAuthState();
@@ -21,9 +48,10 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
 
   const formik = useFormik({
     initialValues: {
-      country: '',
-      tel: '',
+      region: '',
+      phone: '',
     },
+    validate,
     onSubmit(values) {
       alert(JSON.stringify(values, null, 2));
     },
@@ -45,23 +73,18 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
           <div className={[space['m-b--8']].join(' ')}>
             <div>
               <Input
-                type='text'
+                type='region'
                 direction='bottom'
-                name='country'
-                placeholder='Country/Region'
-                inputType='country'
                 handleChange={formik.handleChange}
-                value={formik.values.country}
+                value={formik.values.region}
+                errors={formik.errors.region}
               />
               <Input
-                type='text'
+                type='phone'
                 direction='top'
-                name='tel'
-                placeholder='Phone number'
-                inputType='tel'
-                // pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}'
                 handleChange={formik.handleChange}
-                value={formik.values.tel}
+                value={formik.values.phone}
+                errors={formik.errors.phone}
               />
             </div>
           </div>

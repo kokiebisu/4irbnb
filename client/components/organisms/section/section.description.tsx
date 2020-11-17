@@ -1,21 +1,28 @@
-import * as React from 'react';
+import React from 'react';
 import { useState } from 'react';
 
+/**
+ * Styles
+ */
 import font from '../../../styles/font.module.scss';
 import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
-import shape from '../../../styles/shape.module.scss';
+
+/**
+ * Props
+ */
 import { DescriptionSectionProps } from './props';
 
+/**
+ * Renders the description section
+ * @param {string} mainDescription - The description under the main section
+ * @param {string} spaceDescription - The description under the space section
+ * @param {string} accessDescription - The description under the access section
+ */
 export const DescriptionSection: React.FC<DescriptionSectionProps> = ({
-  data = {
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    space:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-    access:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-  },
+  mainDescription = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  spaceDescription,
+  accessDescription,
   layoutType = 'room',
 }) => {
   const [display, setDisplay] = useState<boolean>(false);
@@ -33,7 +40,7 @@ export const DescriptionSection: React.FC<DescriptionSectionProps> = ({
     return newArray;
   };
 
-  const newArray = renderDescription(data.description);
+  const newArray = renderDescription(mainDescription);
   return (
     <div>
       {layoutType === 'experience' && (
@@ -49,36 +56,46 @@ export const DescriptionSection: React.FC<DescriptionSectionProps> = ({
               font['weight--300'],
               color['c--gray__2'],
             ].join(' ')}>
-            {data.description}
+            {mainDescription}
           </p>
-          <div className={[space['m-v--22']].join(' ')}>
-            <h3
-              className={[
-                font['size--16'],
-                space['m-b--6'],
-                color['c--gray__3'],
-                font['weight--300'],
-              ].join(' ')}>
-              The space
-            </h3>
-            <p className={[font['weight--100'], color['c--gray__2']].join(' ')}>
-              {data.space}
-            </p>
-          </div>
-          <div className={[space['p-v--8']].join(' ')}>
-            <h3
-              className={[
-                font['size--16'],
-                space['m-b--6'],
-                color['c--gray__3'],
-                font['weight--300'],
-              ].join(' ')}>
-              Guest access
-            </h3>
-            <p className={[font['weight--100'], color['c--gray__2']].join(' ')}>
-              {data.access}
-            </p>
-          </div>
+          {spaceDescription && (
+            <div className={[space['m-v--22']].join(' ')}>
+              <h3
+                className={[
+                  font['size--16'],
+                  space['m-b--6'],
+                  color['c--gray__3'],
+                  font['weight--300'],
+                ].join(' ')}>
+                The space
+              </h3>
+              <p
+                className={[font['weight--100'], color['c--gray__2']].join(
+                  ' '
+                )}>
+                {spaceDescription}
+              </p>
+            </div>
+          )}
+          {accessDescription && (
+            <div className={[space['p-v--8']].join(' ')}>
+              <h3
+                className={[
+                  font['size--16'],
+                  space['m-b--6'],
+                  color['c--gray__3'],
+                  font['weight--300'],
+                ].join(' ')}>
+                Guest access
+              </h3>
+              <p
+                className={[font['weight--100'], color['c--gray__2']].join(
+                  ' '
+                )}>
+                {accessDescription}
+              </p>
+            </div>
+          )}
         </div>
       ) : (
         <>
@@ -109,21 +126,23 @@ export const DescriptionSection: React.FC<DescriptionSectionProps> = ({
           </p>
         </>
       )}
-      <div className={[space['m-t--20']].join(' ')}>
-        <a
-          onClick={() => {
-            setDisplay(true);
-            changeLength();
-          }}
-          className={[
-            space['m-l--4'],
-            color['b-b--gray__2'],
-            color['c--gray__2'],
-            color['bg--transparent'],
-          ].join(' ')}>
-          Contact host
-        </a>
-      </div>
+      {layoutType === 'room' && (
+        <div className={[space['m-t--20']].join(' ')}>
+          <a
+            onClick={() => {
+              setDisplay(true);
+              changeLength();
+            }}
+            className={[
+              space['m-l--4'],
+              color['b-b--gray__2'],
+              color['c--gray__2'],
+              color['bg--transparent'],
+            ].join(' ')}>
+            Contact host
+          </a>
+        </div>
+      )}
     </div>
   );
 };

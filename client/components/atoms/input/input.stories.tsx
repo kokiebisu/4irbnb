@@ -23,3 +23,41 @@ export const text = InputTemplate.bind({});
 text.args = {
   type: 'text',
 };
+
+export const email = InputTemplate.bind({});
+email.args = {
+  type: 'email',
+};
+
+export const password = InputTemplate.bind({});
+password.args = {
+  type: 'password',
+};
+
+export const name = InputTemplate.bind({});
+name.args = {
+  type: 'name',
+};
+name.argTypes = {
+  name: {
+    control: {
+      type: 'select',
+      options: ['first', 'last'],
+    },
+  },
+};
+
+export const birthdate = InputTemplate.bind({});
+birthdate.args = {
+  type: 'birthdate',
+};
+
+export const phone = InputTemplate.bind({});
+phone.args = {
+  type: 'phone',
+};
+
+export const region = InputTemplate.bind({});
+region.args = {
+  type: 'region',
+};

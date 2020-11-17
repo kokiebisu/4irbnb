@@ -1,9 +1,10 @@
 export interface CharacteristicBulletProps {
   characteristicType?: string;
   time?: number;
-  limit?: number;
-  privateLimit?: number;
   languages?: string[];
+  devices?: string[];
+  people?: number;
+  group?: number;
 }
 
 export interface AmenityBulletProps {
@@ -55,8 +56,12 @@ export interface HelpBulletProps {
   help?: 'support' | 'tools' | 'insights' | 'education';
 }
 
-export type BulletProps = CharacteristicBulletProps & {
+export interface RequiredBulletProps {
+  message?: string;
+}
+
+export interface BulletProps {
   extendsTo?: string;
   type: string;
   [x: string]: any;
-};
+}

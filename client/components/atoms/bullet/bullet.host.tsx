@@ -1,12 +1,27 @@
 import React from 'react';
 
+/**
+ * Styles
+ */
 import layout from '../../../styles/layout.module.scss';
 import space from '../../../styles/space.module.scss';
 import font from '../../../styles/font.module.scss';
 
+/**
+ * Vectors
+ */
 import { Star, Superhost, Verified } from '../../../public/svg/original';
+
+/**
+ * Props
+ */
 import { HostBulletProps } from './props';
 
+/**
+ * Renders the host bullet
+ * @param {string} categoryType - Type of host bullet
+ * @param {number} total - Number of reviews
+ */
 export const HostBullet: React.FC<HostBulletProps> = ({
   categoryType = 'review',
   total = 100,

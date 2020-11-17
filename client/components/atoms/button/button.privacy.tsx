@@ -1,13 +1,29 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+
+/**
+ * Props
+ */
 import { PrivacyButtonProps } from './props';
+
+/**
+ * Contexts
+ */
 import { useToggleDispatch } from '../../../context/toggle';
 
+/**
+ * Styles
+ */
 import font from '../../../styles/font.module.scss';
 import space from '../../../styles/space.module.scss';
 import color from '../../../styles/color.module.scss';
 import shape from '../../../styles/shape.module.scss';
 
+/**
+ * Renders the privacy button component
+ * @param {string} title - Title of the button
+ * @param {boolean} inverse - Whether if the button takes the inverse style or not
+ */
 export const PrivacyButton: React.FC<PrivacyButtonProps> = ({
   title = 'Button',
   inverse = false,

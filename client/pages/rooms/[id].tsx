@@ -1,8 +1,23 @@
-import * as React from 'react';
+import React from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
+/**
+ * Context
+ */
+import { useToggleState } from 'context/toggle';
+
+/**
+ * Components
+ */
 import { Header } from '../../components/organisms/header/header.component';
 import { Footer } from '../../components/organisms/footer/footer.component';
+import { Section } from '../../components/organisms/section/section.component';
+import { Card } from '../../components/atoms/card/card.component';
+import { Modal } from '../../components/organisms/modal/modal.component';
 
+/**
+ * Styles
+ */
 import responsive from '../../styles/responsive.module.scss';
 import layout from '../../styles/layout.module.scss';
 import details from '../../styles/details.module.scss';
@@ -10,28 +25,18 @@ import staysDetail from '../../styles/staysDetail.module.scss';
 import color from '../../styles/color.module.scss';
 import shape from '../../styles/shape.module.scss';
 import space from '../../styles/space.module.scss';
-import { Section } from '../../components/organisms/section/section.component';
-import { Card } from '../../components/atoms/card/card.component';
-import { Modal } from 'components/organisms/modal/modal.component';
-import { useToggleState } from 'context/toggle';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
 
+/**
+ * Hooks
+ */
+import { useHandleScroll } from 'hooks/useHandleScroll';
+
+/**
+ * Render the component for path /rooms/[id]
+ */
 const id: () => string | JSX.Element = () => {
   const toggleState = useToggleState();
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const scrollPosition = useHandleScroll();
   return (
     <>
       <div>
@@ -67,7 +72,7 @@ const id: () => string | JSX.Element = () => {
           )}>
           <div className={[details['flex__details']].join(' ')}>
             <div className={[details['w__details--left']].join(' ')}>
-              <Section
+              {/* <Section
                 layoutType='room'
                 extendsTo={[staysDetail['b__characteristics']].join(' ')}
                 type='characteristics'
@@ -78,7 +83,7 @@ const id: () => string | JSX.Element = () => {
                   'calendar',
                   'guidelines',
                 ]}
-              />
+              /> */}
               <Section
                 type='description'
                 extendsTo={[color['b-t--white__2'], space['p-v--32']].join(' ')}

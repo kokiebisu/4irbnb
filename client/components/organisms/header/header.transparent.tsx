@@ -1,4 +1,8 @@
 import React from 'react';
+
+/**
+ * Styles
+ */
 import space from '../../../styles/space.module.scss';
 import styles from '../../../styles/index.module.scss';
 import layout from '../../../styles/layout.module.scss';
@@ -7,14 +11,32 @@ import shape from '../../../styles/shape.module.scss';
 import font from '../../../styles/font.module.scss';
 import header from './header.module.scss';
 
+/**
+ * Components
+ */
 import { menu as menuModal } from '../../organisms/modal/modal.stories';
 import { Modal } from '../modal/modal.component';
-import { useToggleState } from '../../../context/toggle';
 import { Button } from '../../../components/atoms/button/button.component';
+
+/**
+ * Vectors
+ */
 import { NameLogo, NoNameLogo } from '../../../public/svg/logo';
 import { MagnifyGlass } from '../../../public/svg/original';
+
+/**
+ * Props
+ */
 import { TransparentHeaderProps } from './props';
 
+/**
+ * Contexts
+ */
+import { useToggleState } from '../../../context/toggle';
+
+/**
+ * Renders the transparent header
+ */
 export const TransparentHeader: React.FC<TransparentHeaderProps> = () => {
   let toggleState = useToggleState();
 

@@ -1,21 +1,35 @@
 import React, { useState } from 'react';
 
-import {
-  Shield,
-  Star,
-  Superhost,
-  Verified,
-} from '../../../public/svg/original';
+/**
+ * Styles
+ */
 import color from '../../../styles/color.module.scss';
 import font from '../../../styles/font.module.scss';
 import space from '../../../styles/space.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import shape from '../../../styles/shape.module.scss';
 import section from './section.module.scss';
+
+/**
+ * Props
+ */
 import { HostSectionProps } from './props';
+
+/**
+ * Components
+ */
 import { Button } from '../../../components/atoms/button/button.component';
 import { Bullet } from '../../../components/atoms/bullet/bullet.component';
 
+/**
+ * Vectors
+ */
+import { Shield } from '../../../public/svg/original';
+
+/**
+ * Modifies the content which should be displayed initially
+ * @param {string} content - The content which must be hidden
+ */
 const renderContent = (content: string) => {
   const wordArray = content.split(' ');
   const newArray = [];
@@ -25,17 +39,32 @@ const renderContent = (content: string) => {
   return newArray;
 };
 
+/**
+ * Renders the host section
+ * @param {string} host - Name of host
+ * @param {boolean} isSuperhost - Whether is the host is a superhost or not
+ * @param {string} description - Description of the host
+ * @param {string} joined - Date which the host joined
+ * @param {string} duringStay - Description about during the stay
+ * @param {number} numberOfReviews - Number of reviews by the users
+ * @param {string} hostImgUrl - Image of the host
+ * @param {string} responseTime - How soon the host responds
+ * @param {string} responseRate - The percentage in which the host responds
+ * @param {string} layoutType - Type of either room or experience
+ * @param {boolean} verified - Whether is the user if verified or not
+ */
 export const HostSection: React.FC<HostSectionProps> = ({
-  name = 'Host Name',
-  isSuperhost = true,
+  host = 'Host Name',
+  isSuperhost = false,
   description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
   joined = 'February 2016',
   duringStay = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-  reviews = 100,
-  imgUrl = 'https://a0.muscache.com/im/pictures/user/ca3ae8e3-997b-4ec6-b3af-139dd46be44b.jpg?im_w=240',
+  numberOfReviews = 100,
+  hostImgUrl = 'https://a0.muscache.com/im/pictures/user/ca3ae8e3-997b-4ec6-b3af-139dd46be44b.jpg?im_w=240',
   responseTime = 'within an hour',
   responseRate = 54,
   layoutType = 'room',
+  verified = false,
 }) => {
   const [descriptionDisplay, setDescriptionDisplay] = useState<boolean>(false);
   const [stayDisplay, setStayDisplay] = useState<boolean>(false);
@@ -60,15 +89,15 @@ export const HostSection: React.FC<HostSectionProps> = ({
                 borderRadius: 9999,
               }}
               className={[space['m-r--14']].join(' ')}
-              src={imgUrl}
+              src={hostImgUrl}
             />
           </div>
           <div>
             <div className={[shape['h--50p']].join(' ')}>
               <h3 className={[font['size--24'], space['m-b--6']].join(' ')}>
                 {layoutType === 'room'
-                  ? `Hosted By ${name}`
-                  : `Meet your host, ${name}`}
+                  ? `Hosted By ${host}`
+                  : `Meet your host, ${host}`}
               </h3>
               <p
                 className={[
@@ -101,16 +130,22 @@ export const HostSection: React.FC<HostSectionProps> = ({
                     space['m-b--12'],
                     space['p-r--4'],
                   ].join(' ')}>
-                  <Bullet type='host' categoryType='review' total={150} />
+                  <Bullet
+                    type='host'
+                    categoryType='review'
+                    total={numberOfReviews}
+                  />
                 </div>
-                <div
-                  className={[
-                    space['m-r--8'],
-                    space['m-b--12'],
-                    space['p-r--4'],
-                  ].join(' ')}>
-                  <Bullet type='host' categoryType='verified' />
-                </div>
+                {verified && (
+                  <div
+                    className={[
+                      space['m-r--8'],
+                      space['m-b--12'],
+                      space['p-r--4'],
+                    ].join(' ')}>
+                    <Bullet type='host' categoryType='verified' />
+                  </div>
+                )}
                 {layoutType === 'room' && isSuperhost && (
                   <div
                     className={[
@@ -189,7 +224,7 @@ export const HostSection: React.FC<HostSectionProps> = ({
                     className={[space['p-v--6'], font['weight--500']].join(
                       ' '
                     )}>
-                    {name} is a Superhost
+                    {host} is a Superhost
                   </p>
                   <p
                     className={[font['weight--100'], font['lh--15']].join(' ')}>
