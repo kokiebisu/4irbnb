@@ -28,7 +28,7 @@ import { ForgotPasswordTemplateProps } from '../props';
 /**
  * Helper
  */
-import { validateLogin as validate } from '../../../helper/auth';
+import { validateForgotPassword as validate } from '../../../helper/auth';
 
 /**
  * Hooks
@@ -46,7 +46,6 @@ export const ForgotPasswordTemplate: React.FC<ForgotPasswordTemplateProps> = () 
   const formik = useFormik({
     initialValues: {
       email: '',
-      password: '',
     },
     validate,
     onSubmit: (values) => {
@@ -55,12 +54,6 @@ export const ForgotPasswordTemplate: React.FC<ForgotPasswordTemplateProps> = () 
     },
   });
 
-  const switchAuth = () => {
-    if (authState.title === 'Log in') {
-      return authDispatch({ type: 'auth_signup' });
-    }
-    return authDispatch({ type: 'auth_login' });
-  };
   return (
     <div className={[space['p--24']].join(' ')}>
       <form onSubmit={formik.handleSubmit}>
@@ -97,7 +90,12 @@ export const ForgotPasswordTemplate: React.FC<ForgotPasswordTemplateProps> = () 
             </div>
           </div>
           <div className={[].join(' ')}>
-            <Button type='primary' title='Send reset link' />
+            <Button
+              size='md'
+              type='primary'
+              fill='black'
+              title='Send reset link'
+            />
           </div>
         </div>
       </form>
