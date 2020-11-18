@@ -16,10 +16,15 @@ import { LoadingAnimation } from './animation.loading';
  */
 export const Animation: React.FC<AnimationProps> = ({
   type = 'loading',
+  extendsTo,
   ...props
 }) => {
   const types = {
     loading: <LoadingAnimation {...props} />,
   };
-  return <div data-testid='animation'>{types[type]}</div>;
+  return (
+    <div data-testid='animation' className={extendsTo}>
+      {types[type]}
+    </div>
+  );
 };

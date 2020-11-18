@@ -118,7 +118,7 @@ const LandingPage: () => string | JSX.Element = () => {
               layout['items-center'],
               layout['justify-center'],
             ].join(' ')}>
-            <Animation type='loading' />
+            <Animation type='loading' dark />
           </div>
         )}
         <Footer spread />
