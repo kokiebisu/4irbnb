@@ -163,3 +163,13 @@ host.decorators = [
     </div>
   ),
 ];
+
+export const set = CardTemplate.bind({});
+set.args = {
+  type: 'set',
+};
+
+export const again = CardTemplate.bind({});
+again.args = {
+  type: 'again',
+};
