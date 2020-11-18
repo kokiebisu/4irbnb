@@ -1,7 +1,6 @@
 package service
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/kokiebisu/airbnb/entity"
@@ -20,7 +19,6 @@ func (mock *MockRepository) Save(user *entity.User) (*entity.User, error) {
 
 func (mock *MockRepository) FindAll() ([]*entity.User, error) {
 	args := mock.Called()
-	fmt.Println("args", args)
 	return args.Get(0).([]*entity.User), args.Error(1)
 }
 

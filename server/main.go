@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
+	"github.com/joho/godotenv"
 	"github.com/kokiebisu/airbnb/controller"
 	router "github.com/kokiebisu/airbnb/http"
 	"github.com/kokiebisu/airbnb/repository"
@@ -19,6 +21,10 @@ var (
 
 
 func main() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
 	httpRouter.GET("/", func (rw http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(rw, "Up and running")
 	})

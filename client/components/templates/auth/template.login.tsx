@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
 
 /**
@@ -19,6 +19,9 @@ import layout from '../../../styles/layout.module.scss';
 import { Input } from '../../atoms/input/input.component';
 import { Button } from '../../atoms/button/button.component';
 import { Bullet } from '../../atoms/bullet/bullet.component';
+import { Animation } from '../../animation/animation.component';
+
+import ReCAPTCHA from 'react-google-recaptcha';
 
 /**
  * Props
@@ -34,7 +37,6 @@ import { validateLogin as validate } from '../../../helper/auth';
  * Hooks
  */
 import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
-import { redirect } from 'next/dist/next-server/server/api-utils';
 
 /**
  * Renders the login template component
@@ -43,6 +45,31 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
   useLockBodyScroll();
   const authState = useAuthState();
   const authDispatch = useAuthDispatch();
+  const [loading, setLoading] = useState(false);
+  const [show, setShow] = useState(false);
+  let token;
+
+  const onChange = (value) => {
+    console.log('Captcha value:', value);
+    token = value;
+    const body = JSON.stringify({
+      ...formik.values,
+      'g-recaptcha-response': token,
+    });
+    console.log('body', body);
+    const login = async () => {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/users/login`,
+        {
+          method: 'POST',
+          body,
+        }
+      );
+      const data = await response.json();
+      console.log('data', data);
+    };
+    login();
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -50,16 +77,9 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
       password: '',
     },
     validate,
-    onSubmit: (values) => {
-      const login = async () => {
-        const response = await fetch('http://localhost:8080/api/users/login', {
-          method: 'POST',
-          body: JSON.stringify(values),
-        });
-        const data = await response.json();
-        console.log('data from login', data);
-      };
-      login();
+    onSubmit: () => {
+      setShow(true);
+      setLoading(true);
       // formik.resetForm();
     },
   });
@@ -100,6 +120,14 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
             />
           </div>
           <div>
+            {show && (
+              <ReCAPTCHA
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                onChange={onChange}
+              />
+            )}
+          </div>
+          <div>
             {formik.errors.email !== undefined && (
               <div className={[space['m-t--6']].join(' ')}>
                 <Bullet type='required' message={formik.errors.email} />
@@ -115,7 +143,18 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
           </div>
         </div>
         <div className={[space['m-v--16']].join(' ')}>
-          <Button type='primary' title='Log in' />
+          <Button
+            type='primary'
+            title={
+              loading ? (
+                <div>
+                  <Animation type='loading' />
+                </div>
+              ) : (
+                'Log in'
+              )
+            }
+          />
         </div>
         <div className={[space['m-v--16']].join(' ')}>
           <Button
