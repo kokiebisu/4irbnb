@@ -3,7 +3,6 @@ import React from 'react';
 /**
  * Components
  */
-import { TextInput } from './input.text';
 import { EmailInput } from './input.email';
 import { PasswordInput } from './input.password';
 import { NameInput } from './input.name';
@@ -22,7 +21,6 @@ import { PhoneNumberInput } from './input.phone';
  */
 export const Input: React.FC<InputProps> = ({ type, spread, ...props }) => {
   const types = {
-    text: <TextInput {...props} />,
     email: <EmailInput {...props} />,
     password: <PasswordInput {...props} />,
     name: <NameInput {...props} />,

@@ -48,7 +48,7 @@ export const AuthButton: React.FC<AuthButtonProps> = ({
     },
     facebook: {
       name: 'Facebook',
-      icon: <Facebook width={17} />,
+      icon: <Facebook width={19} />,
       handleClick() {
         alert('clicked facebook');
       },
