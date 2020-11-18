@@ -1,10 +1,12 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer } from 'react';
 import { useFormik } from 'formik';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 /**
  * Contexts
  */
 import { useAuthDispatch, useAuthState } from '../../../context/auth';
+import { useToggleDispatch } from '../../../context/toggle';
 
 /**
  * Styles
@@ -22,8 +24,6 @@ import { Bullet } from '../../atoms/bullet/bullet.component';
 import { Animation } from '../../animation/animation.component';
 import { Card } from '../../atoms/card/card.component';
 
-import ReCAPTCHA from 'react-google-recaptcha';
-
 /**
  * Props
  */
@@ -38,7 +38,6 @@ import { validateLogin as validate } from '../../../helper/auth';
  * Hooks
  */
 import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
-import { useToggleDispatch } from 'context/toggle';
 
 const reducer = (state, action) => {
   switch (action.type) {
