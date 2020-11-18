@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useReducer, useState } from 'react';
 import { useFormik } from 'formik';
 
 /**
@@ -38,25 +38,40 @@ import { validateLogin as validate } from '../../../helper/auth';
  */
 import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
 
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'recaptcha_start':
+      return { ...state, recaptcha: true, loading: true };
+    case 'recaptcha_success':
+      return { ...state, recaptcha: false, loading: false, status: 'success' };
+    case 'recaptcha_fail':
+      return { ...state, recaptcha: false, loading: false, status: 'fail' };
+    default:
+      return state;
+  }
+};
+
 /**
  * Renders the login template component
  */
 export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
   useLockBodyScroll();
   const authState = useAuthState();
+  const [state, dispatch] = useReducer(reducer, {
+    loading: false,
+    recaptcha: false,
+    status: '',
+  });
   const authDispatch = useAuthDispatch();
-  const [loading, setLoading] = useState(false);
-  const [show, setShow] = useState(false);
+
   let token;
 
   const onChange = (value) => {
-    console.log('Captcha value:', value);
     token = value;
     const body = JSON.stringify({
       ...formik.values,
       'g-recaptcha-response': token,
     });
-    console.log('body', body);
     const login = async () => {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/users/login`,
@@ -65,8 +80,12 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
           body,
         }
       );
-      const data = await response.json();
-      console.log('data', data);
+      console.log('reponsstat', response.status);
+      if (response.status === 200) {
+        dispatch({ type: 'recaptcha_success' });
+        return;
+      }
+      dispatch({ type: 'recaptcha_fail' });
     };
     login();
   };
@@ -78,8 +97,7 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
     },
     validate,
     onSubmit: () => {
-      setShow(true);
-      setLoading(true);
+      dispatch({ type: 'recaptcha_start' });
       // formik.resetForm();
     },
   });
@@ -101,6 +119,7 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
 
   return (
     <div className={[space['p--24']].join(' ')}>
+      {state.status === 'fail' && <div>fail</div>}
       <form onSubmit={formik.handleSubmit}>
         <div>
           <div>
@@ -120,7 +139,7 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
             />
           </div>
           <div>
-            {show && (
+            {state.recaptcha && (
               <ReCAPTCHA
                 sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
                 onChange={onChange}
@@ -141,12 +160,13 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
               </div>
             )}
           </div>
+          {state.status === 'success' && <div>success</div>}
         </div>
         <div className={[space['m-v--16']].join(' ')}>
           <Button
             type='primary'
             title={
-              loading ? (
+              state.loading ? (
                 <div>
                   <Animation type='loading' />
                 </div>
