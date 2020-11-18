@@ -92,6 +92,8 @@ export interface HostCardProps {
 
 export interface SetCardProps {}
 
+export interface AgainCardProps {}
+
 export interface CardProps {
   extendsTo?: string;
   type?: string;
