@@ -1,10 +1,12 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer } from 'react';
 import { useFormik } from 'formik';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 /**
  * Contexts
  */
 import { useAuthDispatch, useAuthState } from '../../../context/auth';
+import { useToggleDispatch } from '../../../context/toggle';
 
 /**
  * Styles
@@ -21,8 +23,6 @@ import { Button } from '../../atoms/button/button.component';
 import { Bullet } from '../../atoms/bullet/bullet.component';
 import { Animation } from '../../animation/animation.component';
 import { Card } from '../../atoms/card/card.component';
-
-import ReCAPTCHA from 'react-google-recaptcha';
 
 /**
  * Props
@@ -58,6 +58,7 @@ const reducer = (state, action) => {
 export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
   useLockBodyScroll();
   const authState = useAuthState();
+  const toggleDispatch = useToggleDispatch();
   const [state, dispatch] = useReducer(reducer, {
     loading: false,
     recaptcha: false,
@@ -84,6 +85,7 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
       console.log('reponsstat', response.status);
       if (response.status === 200) {
         dispatch({ type: 'recaptcha_success' });
+        toggleDispatch({ type: 'toggle_auth' });
         return;
       }
       dispatch({ type: 'recaptcha_fail' });
@@ -179,7 +181,14 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
             title={
               state.loading ? (
                 <div>
-                  <Animation type='loading' />
+                  <Animation
+                    extendsTo={[
+                      layout['flex'],
+                      layout['items-center'],
+                      layout['justify-center'],
+                    ].join(' ')}
+                    type='loading'
+                  />
                 </div>
               ) : (
                 'Log in'
