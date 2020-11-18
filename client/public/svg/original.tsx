@@ -331,7 +331,11 @@ export const Caution = (props) => {
 };
 
 export const Check = (props) => {
-  return <span {...props}>󱠁</span>;
+  return (
+    <svg {...props} viewBox='0 0 32 32'>
+      <path d='M16 1C7.729 1 1 7.729 1 16s6.729 15 15 15 15-6.729 15-15S24.271 1 16 1zm-2.5 22.621L6.879 17 9 14.879l4.5 4.5 9.5-9.5L25.121 12 13.5 23.621z'></path>
+    </svg>
+  );
 };
 
 export const CheckInverse = (props) => {

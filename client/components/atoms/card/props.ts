@@ -90,6 +90,8 @@ export interface HostCardProps {
   location?: string;
 }
 
+export interface SetCardProps {}
+
 export interface CardProps {
   extendsTo?: string;
   type?: string;

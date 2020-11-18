@@ -20,6 +20,7 @@ import { Input } from '../../atoms/input/input.component';
 import { Button } from '../../atoms/button/button.component';
 import { Bullet } from '../../atoms/bullet/bullet.component';
 import { Animation } from '../../animation/animation.component';
+import { Card } from '../../atoms/card/card.component';
 
 import ReCAPTCHA from 'react-google-recaptcha';
 
@@ -140,10 +141,12 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
           </div>
           <div>
             {state.recaptcha && (
-              <ReCAPTCHA
-                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                onChange={onChange}
-              />
+              <div className={[space['m-t--16']].join(' ')}>
+                <ReCAPTCHA
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                  onChange={onChange}
+                />
+              </div>
             )}
           </div>
           <div>
@@ -160,7 +163,11 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
               </div>
             )}
           </div>
-          {state.status === 'success' && <div>success</div>}
+          {(state.status === 'success' || state.status === 'fail') && (
+            <div className={[space['m-t--16']].join(' ')}>
+              <Card type='set' />
+            </div>
+          )}
         </div>
         <div className={[space['m-v--16']].join(' ')}>
           <Button
