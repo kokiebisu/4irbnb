@@ -13,3 +13,8 @@ export const loading = AnimationStory.bind({});
 loading.args = {
   type: 'loading',
 };
+loading.argTypes = {
+  dark: {
+    control: 'boolean',
+  },
+};
