@@ -5,6 +5,7 @@ import React from 'react';
  */
 import { ExperiencesBanner } from './banner.experiences';
 import { HomesBanner } from './banner.homes';
+import { LandingBanner } from './banner.landing';
 
 /**
  * Props
@@ -24,6 +25,7 @@ export const Banner: React.FC<BannerProps> = ({
   const types = {
     homes: <HomesBanner {...props} />,
     experiences: <ExperiencesBanner {...props} />,
+    landing: <LandingBanner {...props} />,
   };
   return <div className={extendsTo}>{types[type]}</div>;
 };
