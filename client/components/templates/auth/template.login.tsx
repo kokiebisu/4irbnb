@@ -38,6 +38,7 @@ import { validateLogin as validate } from '../../../helper/auth';
  * Hooks
  */
 import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
+import { useToggleDispatch } from 'context/toggle';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -58,6 +59,7 @@ const reducer = (state, action) => {
 export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
   useLockBodyScroll();
   const authState = useAuthState();
+  const toggleDispatch = useToggleDispatch();
   const [state, dispatch] = useReducer(reducer, {
     loading: false,
     recaptcha: false,
@@ -84,6 +86,7 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
       console.log('reponsstat', response.status);
       if (response.status === 200) {
         dispatch({ type: 'recaptcha_success' });
+        toggleDispatch({ type: 'toggle_auth' });
         return;
       }
       dispatch({ type: 'recaptcha_fail' });
@@ -179,7 +182,14 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
             title={
               state.loading ? (
                 <div>
-                  <Animation type='loading' />
+                  <Animation
+                    extendsTo={[
+                      layout['flex'],
+                      layout['items-center'],
+                      layout['justify-center'],
+                    ].join(' ')}
+                    type='loading'
+                  />
                 </div>
               ) : (
                 'Log in'
