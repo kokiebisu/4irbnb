@@ -19,6 +19,7 @@ import { ParticipateCard } from './card.participate';
 import { AvailableCard } from './card.available';
 import { HostCard } from './card.host';
 import { SetCard } from './card.set';
+import { AgainCard } from './card.again';
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -51,6 +52,7 @@ export const Card: React.FC<CardProps> = ({
     available: <AvailableCard {...props} />,
     host: <HostCard {...props} />,
     set: <SetCard {...props} />,
+    again: <AgainCard {...props} />,
   };
   if (to) {
     return (

@@ -519,3 +519,11 @@ export const Exclamation = (props) => {
     </svg>
   );
 };
+
+export const Warning = (props) => {
+  return (
+    <svg {...props} viewBox='0 0 16 16'>
+      <path d='m8 12c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2zm1.6-12v9.6h-3.2v-9.6z'></path>
+    </svg>
+  );
+};
