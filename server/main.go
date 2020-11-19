@@ -19,12 +19,15 @@ var (
 	httpRouter router.Router = router.NewMuxRouter()
 )
 
-
-func main() {
+func init() {
 	err := godotenv.Load()
 	if err != nil {
 		log.Fatal("Error loading .env file")
 	}
+}
+
+
+func main() {
 	httpRouter.GET("/", func (rw http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(rw, "Up and running")
 	})
