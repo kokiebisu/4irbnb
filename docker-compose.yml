@@ -16,14 +16,14 @@ services:
     build:
       context: ./server
       dockerfile: dev.Dockerfile
-    volumes:
-      - ./server:/app
+    # volumes:
+    #   - ./server:/app
     depends_on:
       - db
     networks:
       - airbnb
     ports:
-      - 443:443
+      - 443:8080
   db:
     image: postgres:latest
     environment:

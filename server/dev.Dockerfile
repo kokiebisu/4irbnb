@@ -11,15 +11,13 @@ WORKDIR /app
 # Copy go.mod, go.sum into the container's app directory
 COPY ./go.mod ./go.sum ./
 
-COPY ./airbnb.key ./airbnb.crt ./
-
 # Install all the dependencies
 RUN go mod download
 
 # Copy all the files to the container's app directory
 COPY . .
 
-EXPOSE 443
+EXPOSE 8080
 
 CMD ["go", "run", "main.go"]
 
