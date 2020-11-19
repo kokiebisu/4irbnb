@@ -11,6 +11,8 @@ WORKDIR /app
 # Copy go.mod, go.sum into the container's app directory
 COPY ./go.mod ./go.sum ./
 
+COPY ./.env .
+
 # Install all the dependencies
 RUN go mod download
 
