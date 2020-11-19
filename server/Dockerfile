@@ -27,7 +27,6 @@ WORKDIR /usr/app
 
 # Move the entry point of the file (main.go) into the root folder 
 COPY --from=builder /usr/build/main .
-COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs
 
 EXPOSE 443
 EXPOSE 80
