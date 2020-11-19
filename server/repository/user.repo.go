@@ -42,7 +42,7 @@ func (r *repo) FindAll() ([]*entity.User, error) {
 	var users []*entity.User
 	for rows.Next() {
 		var user entity.User
-		err := rows.Scan(&user.ID, &user.Email)
+		err := rows.Scan(&user.ID, &user.Email, &user.FirstName, &user.LastName, &user.Password)
 		if err != nil {
 			return nil, err
 		}
