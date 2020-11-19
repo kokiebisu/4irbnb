@@ -35,6 +35,7 @@ func (r *router) POST(uri string, f func(rw http.ResponseWriter, r *http.Request
 
 func (r *router) SERVE(port string) {
 	fmt.Printf("Server running on port %v", port)
+
 	server := &http.Server{
 		Addr: port,
 		Handler: muxDispatcher,
@@ -42,5 +43,5 @@ func (r *router) SERVE(port string) {
 		WriteTimeout: 10 * time.Second,
 		MaxHeaderBytes: 1 << 20,
 	}
-	log.Fatal(server.ListenAndServe())
+	log.Fatal(server.ListenAndServeTLS("server.crt", "server.key"))
 }
