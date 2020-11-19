@@ -19,7 +19,7 @@ RUN go mod download
 # Copy all the files to the container's app directory
 COPY . .
 
-EXPOSE 8080
+EXPOSE 443
 
 CMD ["go", "run", "main.go"]
 

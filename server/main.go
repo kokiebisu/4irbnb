@@ -34,5 +34,6 @@ func main() {
 	httpRouter.GET("/api/users", userController.GetUsers)
 	httpRouter.POST("/api/users/signup", userController.Signup)
 	httpRouter.POST("/api/users/login", userController.Login)
-	httpRouter.SERVE(":8080")
+	httpRouter.SERVE(":443")
+
 }
