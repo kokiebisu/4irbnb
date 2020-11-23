@@ -2,7 +2,7 @@ import express from 'express';
 
 const router = express.Router();
 
-router.get('/api/signin', (req, res) => {
+router.get('/api/users/signin', (req, res) => {
   res.send('signin here');
 });
 
