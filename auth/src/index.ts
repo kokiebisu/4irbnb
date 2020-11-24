@@ -1,10 +1,12 @@
 import express, { json, NextFunction } from 'express';
+require('express-async-errors');
 import { currentUserRouter } from './routes/current_user';
 import { signinRouter } from './routes/signin';
 import { signoutRouter } from './routes/signout';
 import { signupRouter } from './routes/signup';
 import { errorHandler } from './middlewares/error';
 import { NotFoundError } from './errors/not_found';
+
 import mongoose from 'mongoose';
 
 const app = express();
@@ -16,8 +18,8 @@ app.use(signinRouter);
 app.use(signoutRouter);
 app.use(signupRouter);
 
-app.all('*', async (req, res, next: NextFunction) => {
-  next(new NotFoundError());
+app.all('*', async () => {
+  throw new NotFoundError();
 });
 
 app.use(errorHandler);
