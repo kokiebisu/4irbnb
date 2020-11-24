@@ -173,3 +173,23 @@ export const again = CardTemplate.bind({});
 again.args = {
   type: 'again',
 };
+
+export const works = CardTemplate.bind({});
+works.args = {
+  type: 'works',
+};
+works.argTypes = {
+  work: {
+    control: {
+      type: 'select',
+      options: ['choose', 'decide', 'own', 'welcome'],
+    },
+  },
+};
+works.decorators = [
+  (Story) => (
+    <div style={{ width: '25%' }}>
+      <Story />
+    </div>
+  ),
+];
