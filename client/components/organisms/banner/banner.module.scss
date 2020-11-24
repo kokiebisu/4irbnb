@@ -50,3 +50,17 @@
     }
   }
 }
+
+.display {
+  &__onlinehost {
+    &--points {
+      display: block;
+
+      @media screen and (min-width: 728px) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 20px;
+      }
+    }
+  }
+}
