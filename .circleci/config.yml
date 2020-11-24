@@ -25,17 +25,11 @@ jobs:
           name: Building Client Image
           command: docker build -t kokiebisu/airbnb-client ./client
       - run:
-          name: Building Server Image
-          command: docker build -t kokiebisu/airbnb-server ./server
-      - run:
           name: Login
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run:
           name: Pushing to Client
           command: docker push kokiebisu/airbnb-client
-      - run:
-          name: Pushing to Server
-          command: docker push kokiebisu/airbnb-server
 
 workflows:
   version: 2
