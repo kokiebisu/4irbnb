@@ -182,14 +182,7 @@ works.argTypes = {
   work: {
     control: {
       type: 'select',
-      options: ['choose', 'decide', 'own', 'welcome'],
+      options: ['design', 'share', 'submit', 'setup'],
     },
   },
 };
-works.decorators = [
-  (Story) => (
-    <div style={{ width: '25%' }}>
-      <Story />
-    </div>
-  ),
-];

@@ -6,8 +6,10 @@ import font from '../../../styles/font.module.scss';
 import color from '../../../styles/color.module.scss';
 import space from '../../../styles/space.module.scss';
 import banner from './banner.module.scss';
+import { Bullet } from '../../../components/atoms/bullet/bullet.component';
 
 export const OnlineHostBanner: React.FC<OnlineHostBannerProps> = () => {
+  const bullets = ['home', 'global', 'business'];
   return (
     <div
       className={[
@@ -56,6 +58,19 @@ export const OnlineHostBanner: React.FC<OnlineHostBannerProps> = () => {
           beyond the typical tour or class. And now you can host them for
           anyone, from anywhere.
         </h4>
+      </div>
+      <div
+        className={[
+          space['m-v--16'],
+          banner['display__onlinehost--points'],
+        ].join(' ')}>
+        {bullets.map((bullet, index) => {
+          return (
+            <div key={index} className={[space['m-b--16']].join(' ')}>
+              <Bullet type='onlinehost' bullet={bullet} />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

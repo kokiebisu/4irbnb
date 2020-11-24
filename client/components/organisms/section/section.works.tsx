@@ -7,16 +7,14 @@ import section from './section.module.scss';
 import space from '../../../styles/space.module.scss';
 
 export const WorksSection: React.FC<WorksSectionProps> = () => {
-  const categories = ['choose', 'decide', 'own', 'welcome'];
+  const categories = ['design', 'share', 'submit', 'setup'];
   return (
     <div>
       <Layout type='section' sectionType='homes' title='How hosting works'>
-        <div className={[layout['flex'], layout['flex-wrap']].join(' ')}>
+        <div>
           {categories.map((category, index) => {
             return (
-              <div
-                className={[section['w__works'], space['m-b--8']].join(' ')}
-                key={index}>
+              <div className={[space['m-b--8']].join(' ')} key={index}>
                 <Card type='works' work={category} />
               </div>
             );
