@@ -95,7 +95,7 @@ export interface SetCardProps {}
 export interface AgainCardProps {}
 
 export interface WorksCardProps {
-  type?: string;
+  work?: string;
 }
 
 export interface CardProps {
