@@ -1,5 +1,0 @@
-.vercel
-server/.env
-client/.env
-server.crt
-server.key
