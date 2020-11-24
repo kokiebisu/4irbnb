@@ -28,3 +28,25 @@
     }
   }
 }
+
+.w {
+  &__onlinehost {
+    &--explanation {
+      width: 550px;
+    }
+    &--subtitle {
+      width: 600px;
+    }
+  }
+}
+
+.text {
+  &__onlinehost {
+    &--explanation {
+      text-align: center;
+    }
+    &--subtitle {
+      text-align: center;
+    }
+  }
+}
