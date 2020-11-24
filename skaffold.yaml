@@ -8,7 +8,7 @@ build:
   local:
     push: false
   artifacts:
-    - image: kokiebisu/airbnb-auth
+    - image: kokiebisu/nextbnb-auth
       context: auth
       docker:
         dockerfile: Dockerfile
@@ -16,3 +16,11 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
+    - image: kokiebisu/nextbnb-client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      # sync:
+      #   manual:
+      #     - src: '*'
+      #       dest: .
