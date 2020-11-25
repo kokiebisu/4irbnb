@@ -12,13 +12,15 @@ export const useFetch = ({
   url: string;
   method: string;
   body: any;
-  triggerLoading: (state: boolean) => void;
+  triggerLoading?: (state: boolean) => void;
   onSuccess: (data?: any) => void;
   onFail?: () => void;
 }) => {
   const doFetch = async () => {
     try {
-      triggerLoading(true);
+      if (triggerLoading) {
+        triggerLoading(true);
+      }
       const response = await axios[method](url, body);
       console.log('response: ', response.data);
       if (onSuccess) {
@@ -27,7 +29,9 @@ export const useFetch = ({
       return response.data;
     } catch (err) {
       setTimeout(() => {
-        triggerLoading(false);
+        if (triggerLoading) {
+          triggerLoading(false);
+        }
         if (onFail) {
           onFail();
         }
