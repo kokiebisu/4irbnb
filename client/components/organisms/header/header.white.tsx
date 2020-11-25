@@ -38,7 +38,10 @@ import { WhiteHeaderProps } from './props';
  * Renders the white header
  * @param {boolean} spread - Whether if the layout should be spread out or not
  */
-export const WhiteHeader: React.FC<WhiteHeaderProps> = ({ spread = false }) => {
+export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
+  spread = false,
+  data,
+}) => {
   let toggleState = useToggleState();
   return (
     <header
@@ -93,10 +96,11 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({ spread = false }) => {
               <Button type='globe' />
             </div>
             <div>
-              <Button type='menu' />
+              <Button type='menu' authenticated={data} />
             </div>
           </div>
           <Modal
+            authenticated={data}
             criteria={toggleState.menu}
             {...menuModal.args}
             extendsTo={[
