@@ -37,7 +37,9 @@ import { useToggleState } from '../../../context/toggle';
 /**
  * Renders the transparent header
  */
-export const TransparentHeader: React.FC<TransparentHeaderProps> = () => {
+export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
+  data,
+}) => {
   let toggleState = useToggleState();
 
   return (
@@ -71,16 +73,17 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = () => {
             <Button type='globe' inverse />
           </div>
           <div>
-            <Button type='menu' inverse />
+            <Button authenticated={data} type='menu' inverse />
           </div>
         </div>
         <Modal
+          authenticated={data}
           criteria={toggleState.menu}
           type='menu'
           extendsTo={[
             layout['absolute'],
             layout['r--0'],
-            layout['b---230'],
+            layout['t--55'],
             color['bg--transparent'],
           ].join(' ')}
         />

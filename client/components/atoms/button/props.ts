@@ -27,7 +27,12 @@ export interface GlobeButtonProps extends InverseProps {}
 
 export interface HostButtonProps extends LinkButtonProps, InverseProps {}
 
-export interface MenuButtonProps extends InverseProps {}
+export interface MenuButtonProps extends InverseProps {
+  authenticated?: boolean;
+  data?: {
+    imgUrl: string;
+  };
+}
 
 export interface PrivacyButtonProps
   extends InverseProps,
@@ -74,6 +79,7 @@ export interface UnderlineButtonProps {
   onPress?: () => void;
   title?: string;
   font?: number;
+  color?: string;
 }
 
 export interface CloseButtonProps {

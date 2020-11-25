@@ -1,5 +1,6 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import axios from 'axios';
 
 /* contents */
 import { categories, anywhere } from '../content';
@@ -13,7 +14,6 @@ import layout from '../styles/layout.module.scss';
 import space from '../styles/space.module.scss';
 import color from '../styles/color.module.scss';
 import shape from '../styles/shape.module.scss';
-import font from '../styles/font.module.scss';
 
 /* data */
 import { nearby } from '../data/stays';
@@ -29,34 +29,15 @@ import { Section } from '../components/organisms/section/section.component';
 import { Footer } from '../components/organisms/footer/footer.component';
 import { MenuBar } from '../components/organisms/menubar/menubar.component';
 import { Banner } from '../components/organisms/banner/banner.component';
+import { Bar } from 'components/organisms/bar/bar.component';
 
 /* hooks */
 import { useHandleScroll } from '../hooks/useHandleScroll';
 import { useHandleDocumentResize } from '../hooks/useHandleDocumentResize';
 import { useTimeout } from '../hooks/useTimeout';
 
-/**
- * Renders /
- */
-const CovidNotice = () => {
-  return (
-    <aside
-      className={[
-        font['size--14'],
-        color['bg--white__1'],
-        layout['text-center'],
-        space['p-v--20'],
-        space['p-h--24'],
-        layout['z--9999'],
-      ].join(' ')}>
-      <a href=''>
-        <u>Get the latest on our COVID-19 response</u>
-      </a>
-    </aside>
-  );
-};
-
-const LandingPage: () => string | JSX.Element = () => {
+const LandingPage = (data) => {
+  console.log('from page: ', data);
   const loading = useTimeout(3000);
   const toggleState = useToggleState();
   const scrollPosition = useHandleScroll();
@@ -67,8 +48,10 @@ const LandingPage: () => string | JSX.Element = () => {
       style={{ overflowX: 'hidden' }}
       className={[layout['relative'], shape['min-h--fullv']].join(' ')}>
       <div>
-        <CovidNotice />
-        <Banner type='landing' />
+        <div>
+          <Bar type='covid' />
+        </div>
+        <Banner type='landing' data={data} />
         {loading ? (
           <>
             <Layout type='section' sectionType='landing' spread>
@@ -133,7 +116,7 @@ const LandingPage: () => string | JSX.Element = () => {
           type='privacy'
           criteria={toggleState.privacy}
         />
-        <AnimatePresence>
+        {/* <AnimatePresence>
           {scrollPosition > 56 && (
             <motion.div
               exit={{ opacity: 0 }}
@@ -145,10 +128,10 @@ const LandingPage: () => string | JSX.Element = () => {
                 zIndex: 99999,
                 width: '100%',
               }}>
-              <Header spread type='white' />
+              <Header spread type='white' data={data} />
             </motion.div>
           )}
-        </AnimatePresence>
+        </AnimatePresence> */}
         <AnimatePresence>
           {scrollPosition < pageHeight && (
             <motion.div
@@ -187,6 +170,28 @@ const LandingPage: () => string | JSX.Element = () => {
       </div>
     </div>
   );
+};
+
+LandingPage.getInitialProps = async ({ req }) => {
+  try {
+    if (typeof window === 'undefined') {
+      const { data } = await axios.get(
+        'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local/api/users/currentuser',
+        {
+          headers: req.headers,
+        }
+      );
+      console.log('from server', data);
+      return data;
+    } else {
+      // on the browser
+      const { data } = await axios.get('/api/users/currentuser');
+      console.log('from browser', data);
+      return data;
+    }
+  } catch (err) {
+    return {};
+  }
 };
 
 export default LandingPage;
