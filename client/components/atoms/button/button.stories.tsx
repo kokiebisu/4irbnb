@@ -111,7 +111,6 @@ export const primary = ButtonTemplate.bind({});
 primary.args = {
   type: 'primary',
 };
-
 primary.decorators = [
   (Story) => (
     <div style={{ width: 300 }}>
@@ -119,6 +118,12 @@ primary.decorators = [
     </div>
   ),
 ];
+primary.argTypes = {
+  ...disableInverse,
+  loading: {
+    control: 'boolean',
+  },
+};
 
 export const searchbar = ButtonTemplate.bind({});
 searchbar.args = {
@@ -182,9 +187,7 @@ globe.argTypes = {
 banner.argTypes = {
   ...disableInverse,
 };
-primary.argTypes = {
-  ...disableInverse,
-};
+
 searchbar.argTypes = {
   ...disableInverse,
 };
