@@ -60,7 +60,7 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
           : [color['b--white__2']].join(' ')
       }`}
       onClick={triggerModal}>
-      <div className={space['m-r--12']}>
+      <div className={[space['m-r--12'], space['m-l--4']].join(' ')}>
         <Bars fill='black' width={12} />
       </div>
       <div>
