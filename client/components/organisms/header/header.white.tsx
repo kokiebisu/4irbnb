@@ -101,8 +101,8 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({ spread = false }) => {
             {...menuModal.args}
             extendsTo={[
               layout['absolute'],
+              layout['t--55'],
               layout['r--0'],
-              layout['b---230'],
               color['bg--transparent'],
             ].join(' ')}
           />

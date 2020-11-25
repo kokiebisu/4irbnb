@@ -34,6 +34,42 @@ export const OptionButton: React.FC<OptionButtonProps> = ({
   const toggleDispatch = useToggleDispatch();
   const authDispatch = useAuthDispatch();
   const categories = {
+    messages: {
+      name: 'Messages',
+      handleClick() {
+        alert('messages button clicked');
+      },
+    },
+    notifications: {
+      name: 'Notifications',
+      handleClick() {
+        alert('notifications button clicked');
+      },
+    },
+    trips: {
+      name: 'Trips',
+      handleClick() {
+        alert('trips button clicked');
+      },
+    },
+    saved: {
+      name: 'Saved',
+      handleClick() {
+        alert('saved button clicked');
+      },
+    },
+    refer: {
+      name: 'Refer a host',
+      handleClick() {
+        alert('refer button clicked');
+      },
+    },
+    account: {
+      name: 'Account',
+      handleClick() {
+        alert('account button clicked');
+      },
+    },
     signup: {
       name: 'Sign up',
       handleClick() {
@@ -63,7 +99,13 @@ export const OptionButton: React.FC<OptionButtonProps> = ({
     help: {
       name: 'Help',
       handleClick() {
-        // open help toggle on right
+        alert('help button clicked');
+      },
+    },
+    logout: {
+      name: 'Logout',
+      handleClick() {
+        alert('logout button clicked');
       },
     },
   };
@@ -73,7 +115,7 @@ export const OptionButton: React.FC<OptionButtonProps> = ({
       className={`${[
         shape['w--full'],
         font['text--left'],
-        font['size--14'],
+        font['size--13'],
         color['bg--white__0'],
         space['p-h--14'],
         space['p-v--10'],

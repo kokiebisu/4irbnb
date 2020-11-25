@@ -71,7 +71,7 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = () => {
             <Button type='globe' inverse />
           </div>
           <div>
-            <Button type='menu' inverse />
+            <Button authenticated type='menu' inverse />
           </div>
         </div>
         <Modal
@@ -80,7 +80,7 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = () => {
           extendsTo={[
             layout['absolute'],
             layout['r--0'],
-            layout['b---230'],
+            layout['t--55'],
             color['bg--transparent'],
           ].join(' ')}
         />
