@@ -28,7 +28,9 @@ export const useFetch = ({
     } catch (err) {
       setTimeout(() => {
         triggerLoading(false);
-        onFail();
+        if (onFail) {
+          onFail();
+        }
       }, 2000);
     }
   };
