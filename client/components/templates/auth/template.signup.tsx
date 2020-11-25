@@ -35,7 +35,7 @@ import { validateSignup as validate } from '../../../helper/auth';
  */
 import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
 import { useFetch } from '../../../hooks/useFetch';
-import { useToggleDispatch } from 'context/toggle';
+import { useToggleDispatch } from '../../../context/toggle';
 
 /**
  * Renders the signup template component
