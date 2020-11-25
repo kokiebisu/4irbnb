@@ -38,7 +38,7 @@ import { validateLogin as validate } from '../../../helper/auth';
  * Hooks
  */
 import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
-import { useFetch } from 'hooks/useFetch';
+import { useFetch } from '../../../hooks/useFetch';
 
 /**
  * Renders the login template component
