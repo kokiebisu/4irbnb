@@ -51,7 +51,7 @@ const LandingPage = (data) => {
         <div>
           <Bar type='covid' />
         </div>
-        <Banner type='landing' />
+        <Banner type='landing' data={data} />
         {loading ? (
           <>
             <Layout type='section' sectionType='landing' spread>
@@ -116,7 +116,7 @@ const LandingPage = (data) => {
           type='privacy'
           criteria={toggleState.privacy}
         />
-        <AnimatePresence>
+        {/* <AnimatePresence>
           {scrollPosition > 56 && (
             <motion.div
               exit={{ opacity: 0 }}
@@ -128,10 +128,10 @@ const LandingPage = (data) => {
                 zIndex: 99999,
                 width: '100%',
               }}>
-              <Header spread type='white' />
+              <Header spread type='white' data={data} />
             </motion.div>
           )}
-        </AnimatePresence>
+        </AnimatePresence> */}
         <AnimatePresence>
           {scrollPosition < pageHeight && (
             <motion.div
