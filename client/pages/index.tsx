@@ -1,5 +1,6 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import axios from 'axios';
 
 /* contents */
 import { categories, anywhere } from '../content';
@@ -13,7 +14,6 @@ import layout from '../styles/layout.module.scss';
 import space from '../styles/space.module.scss';
 import color from '../styles/color.module.scss';
 import shape from '../styles/shape.module.scss';
-import font from '../styles/font.module.scss';
 
 /* data */
 import { nearby } from '../data/stays';
@@ -36,7 +36,8 @@ import { useHandleScroll } from '../hooks/useHandleScroll';
 import { useHandleDocumentResize } from '../hooks/useHandleDocumentResize';
 import { useTimeout } from '../hooks/useTimeout';
 
-const LandingPage: () => string | JSX.Element = () => {
+const LandingPage = (data) => {
+  console.log('from page: ', data);
   const loading = useTimeout(3000);
   const toggleState = useToggleState();
   const scrollPosition = useHandleScroll();
@@ -169,6 +170,28 @@ const LandingPage: () => string | JSX.Element = () => {
       </div>
     </div>
   );
+};
+
+LandingPage.getInitialProps = async ({ req }) => {
+  try {
+    if (typeof window === 'undefined') {
+      const { data } = await axios.get(
+        'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local/api/users/currentuser',
+        {
+          headers: req.headers,
+        }
+      );
+      console.log('from server', data);
+      return data;
+    } else {
+      // on the browser
+      const { data } = await axios.get('/api/users/currentuser');
+      console.log('from browser', data);
+      return data;
+    }
+  } catch (err) {
+    return {};
+  }
 };
 
 export default LandingPage;

@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import { useFormik } from 'formik';
 import ReCAPTCHA from 'react-google-recaptcha';
 
@@ -38,19 +38,7 @@ import { validateLogin as validate } from '../../../helper/auth';
  * Hooks
  */
 import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'recaptcha_start':
-      return { ...state, recaptcha: true, loading: true };
-    case 'recaptcha_success':
-      return { ...state, recaptcha: false, loading: false, status: 'success' };
-    case 'recaptcha_fail':
-      return { ...state, recaptcha: false, loading: false, status: 'fail' };
-    default:
-      return state;
-  }
-};
+import { useFetch } from '../../../hooks/useFetch';
 
 /**
  * Renders the login template component
@@ -59,39 +47,9 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
   useLockBodyScroll();
   const authState = useAuthState();
   const toggleDispatch = useToggleDispatch();
-  const [state, dispatch] = useReducer(reducer, {
-    loading: false,
-    recaptcha: false,
-    status: '',
-  });
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState('pending');
   const authDispatch = useAuthDispatch();
-
-  let token;
-
-  const onChange = (value) => {
-    token = value;
-    const body = JSON.stringify({
-      ...formik.values,
-      'g-recaptcha-response': token,
-    });
-    const login = async () => {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/users/login`,
-        {
-          method: 'POST',
-          body,
-        }
-      );
-      console.log('reponsstat', response.status);
-      if (response.status === 200) {
-        dispatch({ type: 'recaptcha_success' });
-        toggleDispatch({ type: 'toggle_auth' });
-        return;
-      }
-      dispatch({ type: 'recaptcha_fail' });
-    };
-    login();
-  };
 
   const formik = useFormik({
     initialValues: {
@@ -99,9 +57,21 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
       password: '',
     },
     validate,
-    onSubmit: () => {
-      dispatch({ type: 'recaptcha_start' });
-      // formik.resetForm();
+    onSubmit: (values) => {
+      setLoading(true);
+      const doFetch = useFetch({
+        url: '/api/users/login',
+        method: 'post',
+        body: values,
+        onSuccess() {
+          toggleDispatch({ type: 'toggle_auth' });
+          formik.resetForm();
+        },
+        onFail() {
+          setStatus('fail');
+        },
+      });
+      doFetch();
     },
   });
 
@@ -122,7 +92,7 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
 
   return (
     <div className={[space['p--24']].join(' ')}>
-      {state.status === 'fail' && (
+      {status === 'fail' && (
         <div className={[space['m-b--16']].join(' ')}>
           <Card type='again' />
         </div>
@@ -146,16 +116,6 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
             />
           </div>
           <div>
-            {state.recaptcha && (
-              <div className={[space['m-t--16']].join(' ')}>
-                <ReCAPTCHA
-                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                  onChange={onChange}
-                />
-              </div>
-            )}
-          </div>
-          <div>
             {formik.errors.email !== undefined && (
               <div className={[space['m-t--6']].join(' ')}>
                 <Bullet type='required' message={formik.errors.email} />
@@ -169,7 +129,7 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
               </div>
             )}
           </div>
-          {(state.status === 'success' || state.status === 'fail') && (
+          {status === 'success' && (
             <div className={[space['m-t--16']].join(' ')}>
               <Card type='set' />
             </div>
@@ -179,7 +139,7 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
           <Button
             type='primary'
             title={
-              state.loading ? (
+              loading ? (
                 <div>
                   <Animation
                     extendsTo={[

@@ -20,7 +20,8 @@ build:
       context: client
       docker:
         dockerfile: Dockerfile
-      # sync:
-      #   manual:
-      #     - src: '*'
-      #       dest: .
+      sync:
+        infer:
+          - '**/*.ts'
+          - '**/*.tsx'
+          - '**/*.css'
