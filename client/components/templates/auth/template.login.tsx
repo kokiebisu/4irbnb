@@ -26,7 +26,7 @@ import { Card } from '../../atoms/card/card.component';
 /**
  * Props
  */
-import { LoginTemplateProps } from '../props';
+import { LoginTemplateProps } from './props';
 
 /**
  * Helper
