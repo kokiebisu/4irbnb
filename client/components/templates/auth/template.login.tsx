@@ -1,6 +1,6 @@
-import React, { useReducer, useState } from 'react';
+import React, { useState } from 'react';
 import { useFormik } from 'formik';
-import ReCAPTCHA from 'react-google-recaptcha';
+import Router from 'next/router';
 
 /**
  * Contexts
@@ -58,14 +58,15 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
     },
     validate,
     onSubmit: (values) => {
-      setLoading(true);
       const doFetch = useFetch({
-        url: '/api/users/login',
+        url: '/api/users/signin',
         method: 'post',
         body: values,
+        triggerLoading(state) {
+          setLoading(state);
+        },
         onSuccess() {
-          toggleDispatch({ type: 'toggle_auth' });
-          formik.resetForm();
+          Router.reload();
         },
         onFail() {
           setStatus('fail');
