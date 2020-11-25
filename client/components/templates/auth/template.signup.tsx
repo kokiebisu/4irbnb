@@ -64,6 +64,9 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
           toggleDispatch({ type: 'toggle_auth' });
           formik.resetForm();
         },
+        onFail() {
+          return;
+        },
       });
       doFetch();
     },
