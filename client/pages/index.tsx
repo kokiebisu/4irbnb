@@ -1,6 +1,5 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import axios from 'axios';
 
 /* contents */
 import { categories, anywhere } from '../content';
@@ -24,7 +23,6 @@ import { Layout } from '../layout/layout.component';
 /* components */
 import { Animation } from '../components/animation/animation.component';
 import { Modal } from '../components/organisms/modal/modal.component';
-import { Header } from '../components/organisms/header/header.component';
 import { Section } from '../components/organisms/section/section.component';
 import { Footer } from '../components/organisms/footer/footer.component';
 import { MenuBar } from '../components/organisms/menubar/menubar.component';
@@ -36,10 +34,10 @@ import { useHandleScroll } from '../hooks/useHandleScroll';
 import { useHandleDocumentResize } from '../hooks/useHandleDocumentResize';
 import { useTimeout } from '../hooks/useTimeout';
 
+/* helper */
 import { APIClient } from '../api/client';
 
 const LandingPage = ({ currentUser }) => {
-  console.log('from page: ', currentUser);
   const loading = useTimeout(3000);
   const toggleState = useToggleState();
   const scrollPosition = useHandleScroll();

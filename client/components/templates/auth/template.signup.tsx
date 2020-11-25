@@ -61,12 +61,11 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
         url: '/api/users/signup',
         method: 'post',
         body: values,
-        onSuccess: () => {
-          setLoading(true);
-          Router.reload();
+        triggerLoading: (state) => {
+          setLoading(state);
         },
-        onFail() {
-          return;
+        onSuccess: () => {
+          Router.reload();
         },
       });
       await doFetch();
