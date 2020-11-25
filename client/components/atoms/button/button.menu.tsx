@@ -29,7 +29,14 @@ import { useToggleDispatch } from '../../../context/toggle';
  * Renders the menu button components
  * @param {boolean} inverse - Whether if the button takes the inverse styling or not
  */
-export const MenuButton: React.FC<MenuButtonProps> = ({ inverse = false }) => {
+export const MenuButton: React.FC<MenuButtonProps> = ({
+  inverse = false,
+  user = false,
+  data = {
+    imgUrl:
+      'https://images.unsplash.com/photo-1562124638-724e13052daf?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OTV8fGZhY2V8ZW58MHwyfDB8&auto=format&fit=crop&w=500&q=60',
+  },
+}) => {
   let toggleDispatch = useToggleDispatch();
   const triggerModal = () => {
     toggleDispatch({ type: 'toggle_menu' });
@@ -57,7 +64,15 @@ export const MenuButton: React.FC<MenuButtonProps> = ({ inverse = false }) => {
         <Bars fill='black' width={12} />
       </div>
       <div>
-        <Avatar width={30} fill='gray' />
+        {user && data ? (
+          <img
+            className={[shape['br--circle']].join(' ')}
+            style={{ width: 30, verticalAlign: 'bottom' }}
+            src={data.imgUrl}
+          />
+        ) : (
+          <Avatar width={30} fill='gray' />
+        )}
       </div>
     </motion.button>
   );
