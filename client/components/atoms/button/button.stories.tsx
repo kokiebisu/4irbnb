@@ -69,6 +69,12 @@ export const menu = ButtonTemplate.bind({});
 menu.args = {
   type: 'menu',
 };
+menu.argTypes = {
+  ...disableTitle,
+  user: {
+    control: 'boolean',
+  },
+};
 
 export const privacy = ButtonTemplate.bind({});
 privacy.args = {
@@ -172,9 +178,7 @@ modal.argTypes = {
 globe.argTypes = {
   ...disableTitle,
 };
-menu.argTypes = {
-  ...disableTitle,
-};
+
 banner.argTypes = {
   ...disableInverse,
 };

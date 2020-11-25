@@ -1,0 +1,27 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+deploy:
+  kubectl:
+    manifests:
+      - ./infrastructure/kubernetes/*
+build:
+  local:
+    push: false
+  artifacts:
+    - image: kokiebisu/nextbnb-auth
+      context: auth
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: kokiebisu/nextbnb-client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        infer:
+          - '**/*.ts'
+          - '**/*.tsx'
+          - '**/*.css'

@@ -1,7 +1,10 @@
-export interface TransparentHeaderProps {}
+export interface TransparentHeaderProps {
+  data?: any;
+}
 
 export interface WhiteHeaderProps {
   spread?: boolean;
+  data?: any;
 }
 
 export interface DetailsHeaderProps {
@@ -14,6 +17,8 @@ export interface HomesHeaderProps {
 }
 
 export interface ExperiencesHeaderProps {}
+
+export interface OnlineHostHeaderProps {}
 
 export interface HeaderProps {
   extendsTo?: string;
