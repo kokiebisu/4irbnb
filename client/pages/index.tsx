@@ -29,32 +29,12 @@ import { Section } from '../components/organisms/section/section.component';
 import { Footer } from '../components/organisms/footer/footer.component';
 import { MenuBar } from '../components/organisms/menubar/menubar.component';
 import { Banner } from '../components/organisms/banner/banner.component';
+import { Bar } from 'components/organisms/bar/bar.component';
 
 /* hooks */
 import { useHandleScroll } from '../hooks/useHandleScroll';
 import { useHandleDocumentResize } from '../hooks/useHandleDocumentResize';
 import { useTimeout } from '../hooks/useTimeout';
-
-/**
- * Renders /
- */
-const CovidNotice = () => {
-  return (
-    <aside
-      className={[
-        font['size--14'],
-        color['bg--white__1'],
-        layout['text-center'],
-        space['p-v--20'],
-        space['p-h--24'],
-        layout['z--9999'],
-      ].join(' ')}>
-      <a href=''>
-        <u>Get the latest on our COVID-19 response</u>
-      </a>
-    </aside>
-  );
-};
 
 const LandingPage: () => string | JSX.Element = () => {
   const loading = useTimeout(3000);
@@ -67,7 +47,9 @@ const LandingPage: () => string | JSX.Element = () => {
       style={{ overflowX: 'hidden' }}
       className={[layout['relative'], shape['min-h--fullv']].join(' ')}>
       <div>
-        <CovidNotice />
+        <div>
+          <Bar type='covid' />
+        </div>
         <Banner type='landing' />
         {loading ? (
           <>
