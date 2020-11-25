@@ -28,7 +28,7 @@ export interface GlobeButtonProps extends InverseProps {}
 export interface HostButtonProps extends LinkButtonProps, InverseProps {}
 
 export interface MenuButtonProps extends InverseProps {
-  user?: boolean;
+  authenticated?: boolean;
   data?: {
     imgUrl: string;
   };
