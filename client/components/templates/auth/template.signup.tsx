@@ -1,49 +1,38 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
+import Router from 'next/router';
 
-/**
- * Styles
- */
+/** Styles */
 import space from '../../../styles/space.module.scss';
 import font from '../../../styles/font.module.scss';
 import layout from '../../../styles/layout.module.scss';
 import color from '../../../styles/color.module.scss';
 
-/**
- * Components
- */
+/** Components */
 import { Input } from '../../atoms/input/input.component';
 import { Button } from '../../atoms/button/button.component';
 import { Bullet } from '../../atoms/bullet/bullet.component';
-/**
- * Props
- */
-import { SignupTemplateProps } from '../props';
 
-/**
- * Animations
- */
-import { Animation } from '../../animation/animation.component';
+/** Props */
+import { SignupTemplateProps } from './props';
 
-/**
- * Helper
- */
+/** Helper */
 import { validateSignup as validate } from '../../../helper/auth';
 
-/**
- * Hooks
- */
+/** Hooks */
 import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
 import { useFetch } from '../../../hooks/useFetch';
 import { useToggleDispatch } from '../../../context/toggle';
-import Router from 'next/router';
+
+/** Context */
+import { useAuthDispatch } from '../../../context/auth';
 
 /**
  * Renders the signup template component
  */
 export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
   useLockBodyScroll();
-  const toggleDispatch = useToggleDispatch();
+  const authDispatch = useAuthDispatch();
   const [loading, setLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
@@ -66,6 +55,9 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
         },
         onSuccess: () => {
           Router.reload();
+        },
+        onFail: () => {
+          authDispatch({ type: 'exists' });
         },
       });
       await doFetch();
@@ -259,23 +251,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
           </p>
         </div>
         <div className={[space['m-t--16']].join(' ')}>
-          <Button
-            type='primary'
-            title={
-              loading ? (
-                <div
-                  className={[
-                    layout['flex'],
-                    layout['items-center'],
-                    layout['justify-center'],
-                  ].join(' ')}>
-                  <Animation type='loading' />
-                </div>
-              ) : (
-                <h4>Agree and continue</h4>
-              )
-            }
-          />
+          <Button type='primary' title='Agree and continue' loading={loading} />
         </div>
       </div>
     </form>

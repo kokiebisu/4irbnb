@@ -53,6 +53,7 @@ export interface PrimaryButtonProps extends TitleProps, OnPressProps {
   size?: 'sm' | 'md' | 'lg';
   spread?: boolean;
   fill?: string;
+  loading?: boolean;
 }
 
 export interface SearchbarButtonProps extends MiniProps {}

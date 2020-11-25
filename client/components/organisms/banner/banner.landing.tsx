@@ -78,6 +78,9 @@ export const LandingBanner: React.FC<LandingBannerProps> = ({ data }) => {
                   }}>
                   <Header spread type='white' data={data} />
                 </motion.div>
+              ) : null}
+              {scrollPosition > 56 ? (
+                <div style={{ padding: '38px 0' }}></div>
               ) : (
                 <Header type='transparent' data={data} />
               )}
