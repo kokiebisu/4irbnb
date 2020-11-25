@@ -5,7 +5,7 @@ type Dispatch = (action: Action) => void;
 type Action = { type: string };
 
 type State = {
-  display: 'auth' | 'login' | 'signup' | 'forgot_password' | 'exists';
+  display: string;
   title: string;
 };
 
