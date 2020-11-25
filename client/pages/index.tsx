@@ -36,6 +36,8 @@ import { useHandleScroll } from '../hooks/useHandleScroll';
 import { useHandleDocumentResize } from '../hooks/useHandleDocumentResize';
 import { useTimeout } from '../hooks/useTimeout';
 
+import { APIClient } from '../api/client';
+
 const LandingPage = (data) => {
   console.log('from page: ', data);
   const loading = useTimeout(3000);
@@ -116,22 +118,6 @@ const LandingPage = (data) => {
           type='privacy'
           criteria={toggleState.privacy}
         />
-        {/* <AnimatePresence>
-          {scrollPosition > 56 && (
-            <motion.div
-              exit={{ opacity: 0 }}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              style={{
-                position: 'fixed',
-                top: 0,
-                zIndex: 99999,
-                width: '100%',
-              }}>
-              <Header spread type='white' data={data} />
-            </motion.div>
-          )}
-        </AnimatePresence> */}
         <AnimatePresence>
           {scrollPosition < pageHeight && (
             <motion.div
@@ -172,26 +158,11 @@ const LandingPage = (data) => {
   );
 };
 
-LandingPage.getInitialProps = async ({ req }) => {
-  try {
-    if (typeof window === 'undefined') {
-      const { data } = await axios.get(
-        'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local/api/users/currentuser',
-        {
-          headers: req.headers,
-        }
-      );
-      console.log('from server', data);
-      return data;
-    } else {
-      // on the browser
-      const { data } = await axios.get('/api/users/currentuser');
-      console.log('from browser', data);
-      return data;
-    }
-  } catch (err) {
-    return {};
-  }
+LandingPage.getInitialProps = async (context) => {
+  const client = APIClient(context);
+  const { data } = await client.get('/api/users/currentuser');
+
+  return data;
 };
 
 export default LandingPage;
