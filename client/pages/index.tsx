@@ -38,8 +38,8 @@ import { useTimeout } from '../hooks/useTimeout';
 
 import { APIClient } from '../api/client';
 
-const LandingPage = (data) => {
-  console.log('from page: ', data);
+const LandingPage = ({ currentUser }) => {
+  console.log('from page: ', currentUser);
   const loading = useTimeout(3000);
   const toggleState = useToggleState();
   const scrollPosition = useHandleScroll();
@@ -53,7 +53,7 @@ const LandingPage = (data) => {
         <div>
           <Bar type='covid' />
         </div>
-        <Banner type='landing' data={data} />
+        <Banner type='landing' data={currentUser || null} />
         {loading ? (
           <>
             <Layout type='section' sectionType='landing' spread>
@@ -160,9 +160,13 @@ const LandingPage = (data) => {
 
 LandingPage.getInitialProps = async (context) => {
   const client = APIClient(context);
-  const { data } = await client.get('/api/users/currentuser');
 
-  return data;
+  try {
+    const { data } = await client.get('/api/users/currentuser');
+    return data;
+  } catch (err) {
+    return {};
+  }
 };
 
 export default LandingPage;

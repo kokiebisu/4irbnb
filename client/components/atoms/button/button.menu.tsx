@@ -41,6 +41,7 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
   const triggerModal = () => {
     toggleDispatch({ type: 'toggle_menu' });
   };
+
   return (
     <motion.button
       whileTap={{ scale: 0.98 }}
