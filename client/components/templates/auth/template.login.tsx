@@ -6,7 +6,6 @@ import Router from 'next/router';
  * Contexts
  */
 import { useAuthDispatch, useAuthState } from '../../../context/auth';
-import { useToggleDispatch } from '../../../context/toggle';
 
 /**
  * Styles
@@ -46,7 +45,6 @@ import { useFetch } from '../../../hooks/useFetch';
 export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
   useLockBodyScroll();
   const authState = useAuthState();
-  const toggleDispatch = useToggleDispatch();
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState('pending');
   const authDispatch = useAuthDispatch();
@@ -137,25 +135,7 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
           )}
         </div>
         <div className={[space['m-v--16']].join(' ')}>
-          <Button
-            type='primary'
-            title={
-              loading ? (
-                <div>
-                  <Animation
-                    extendsTo={[
-                      layout['flex'],
-                      layout['items-center'],
-                      layout['justify-center'],
-                    ].join(' ')}
-                    type='loading'
-                  />
-                </div>
-              ) : (
-                'Log in'
-              )
-            }
-          />
+          <Button type='primary' title='Log in' loading={loading} />
         </div>
         <div className={[space['m-v--16']].join(' ')}>
           <Button

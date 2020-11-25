@@ -259,23 +259,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
           </p>
         </div>
         <div className={[space['m-t--16']].join(' ')}>
-          <Button
-            type='primary'
-            title={
-              loading ? (
-                <div
-                  className={[
-                    layout['flex'],
-                    layout['items-center'],
-                    layout['justify-center'],
-                  ].join(' ')}>
-                  <Animation type='loading' />
-                </div>
-              ) : (
-                <h4>Agree and continue</h4>
-              )
-            }
-          />
+          <Button type='primary' title='Agree and continue' loading={loading} />
         </div>
       </div>
     </form>
