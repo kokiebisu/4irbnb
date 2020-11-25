@@ -41,7 +41,7 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
   data,
 }) => {
   let toggleState = useToggleState();
-
+  console.log('header data ', data);
   return (
     <header className={[space['p-h--0'], space['p-v--12']].join(' ')}>
       <div

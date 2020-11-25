@@ -30,7 +30,7 @@ import { useHandleScroll } from '../../../hooks/useHandleScroll';
 /**
  * Renders the banner section
  */
-export const LandingBanner: React.FC<LandingBannerProps> = (data) => {
+export const LandingBanner: React.FC<LandingBannerProps> = ({ data }) => {
   const scrollPosition = useHandleScroll();
   return (
     <div className={index['banner']}>

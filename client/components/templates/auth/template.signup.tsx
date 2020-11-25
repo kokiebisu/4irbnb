@@ -36,6 +36,7 @@ import { validateSignup as validate } from '../../../helper/auth';
 import { useLockBodyScroll } from '../../../hooks/useLockBodyScroll';
 import { useFetch } from '../../../hooks/useFetch';
 import { useToggleDispatch } from '../../../context/toggle';
+import Router from 'next/router';
 
 /**
  * Renders the signup template component
@@ -55,20 +56,20 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
       password: '',
     },
     validate,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       const doFetch = useFetch({
         url: '/api/users/signup',
         method: 'post',
         body: values,
-        onSuccess() {
-          toggleDispatch({ type: 'toggle_auth' });
-          formik.resetForm();
+        onSuccess: () => {
+          setLoading(true);
+          Router.reload();
         },
         onFail() {
           return;
         },
       });
-      doFetch();
+      await doFetch();
     },
   });
 
