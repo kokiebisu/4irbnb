@@ -15,6 +15,9 @@ git pull origin develop --no-edit
 git checkout shared
 git pull origin develop --no-edit
 
+git checkout test
+git pull origin develop --no-edit
+
 git checkout storybook
 git pull origin develop --no-edit
 
