@@ -346,6 +346,21 @@ export const CheckInverse = (props) => {
   );
 };
 
+export const Checked = (props) => {
+  return (
+    <svg
+      {...props}
+      fillOpacity={0}
+      stroke='black'
+      strokeWidth={3}
+      strokeLinecap='round'
+      strokeLinejoin='round'
+      viewBox='0 0 52 52'>
+      <path d='m19.1 25.2 4.7 6.2 12.1-11.2'></path>
+    </svg>
+  );
+};
+
 export const Time = (props) => {
   return (
     <svg {...props} viewBox='0 0 32 32'>
