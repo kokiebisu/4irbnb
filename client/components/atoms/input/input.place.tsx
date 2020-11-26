@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer } from 'react';
 
 /**
  * Styles
@@ -18,8 +18,8 @@ import { PlaceInputProps } from './props';
 /**
  * Styling
  */
-import { styleInput, styleLabel, styleContainer } from './styling.select';
 import { Checked } from '../../../public/svg/original';
+import { ChevronDown, ChevronTop } from '../../../public/svg/regular';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -50,8 +50,6 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
     expanded: false,
   });
 
-  console.log('state selected', state.selected);
-
   const renderShape = () => {
     switch (direction) {
       case 'top':
@@ -75,7 +73,7 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
 
   return (
     <div
-      style={{ height: 60 }}
+      style={{ height: 50 }}
       className={`${[
         layout['flex'],
         input['outside'],
@@ -92,37 +90,49 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
           width: '100%',
         }}>
         <button
-          style={{ height: '100%' }}
+          style={{ height: '100%', padding: '0 12px' }}
           onChange={handleChange}
           onClick={() => dispatch({ type: 'expand' })}
           className={`${[
+            layout['flex'],
+            layout['justify-between'],
+            layout['items-center'],
             color['bg--transparent'],
             shape['br--10'],
             space['p--0'],
             shape['w--full'],
-            layout['block'],
             color['b--0'],
             font['size--16'],
             font['weight--300'],
-            input['input'],
+            // input['input'],
           ].join(' ')}`}>
-          <label
-            style={{ left: 0, top: 18, cursor: 'pointer', padding: '0 12px' }}
-            htmlFor='place'
-            className={`${[
-              layout['absolute'],
-              font['size--16'],
-              color['c--gray__1'],
-              font['weight--100'],
-            ].join(' ')}`}>
-            {state.selected}
-          </label>
+          <div>
+            <label
+              style={{ left: 0, top: 15, cursor: 'pointer', padding: '0 12px' }}
+              htmlFor='place'
+              className={`${[
+                layout['absolute'],
+                font['size--14'],
+                color['c--gray__3'],
+                font['weight--100'],
+              ].join(' ')}`}>
+              {state.selected}
+            </label>
+          </div>
+          <div>
+            {state.expanded ? (
+              <ChevronTop width={13} />
+            ) : (
+              <ChevronDown width={13} />
+            )}
+          </div>
         </button>
         {state.expanded && (
           <div
             style={{
               position: 'absolute',
-              top: 59,
+              top: 48,
+              zIndex: 9999,
             }}>
             <div
               style={{
