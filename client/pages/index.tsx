@@ -96,7 +96,7 @@ const LandingPage = ({ currentUser }) => {
         ) : (
           <div
             className={[
-              space['m-t--22'],
+              space['m-v--22'],
               layout['flex'],
               layout['items-center'],
               layout['justify-center'],
