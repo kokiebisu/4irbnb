@@ -8,14 +8,6 @@ build:
   local:
     push: false
   artifacts:
-    - image: kokiebisu/nextbnb-auth
-      context: auth
-      docker:
-        dockerfile: Dockerfile
-      sync:
-        manual:
-          - src: 'src/**/*.ts'
-            dest: .
     - image: kokiebisu/nextbnb-client
       context: client
       docker:
@@ -25,3 +17,19 @@ build:
           - '**/*.ts'
           - '**/*.tsx'
           - '**/*.css'
+    - image: kokiebisu/nextbnb-auth
+      context: auth
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: kokiebisu/nextbnb-stay
+      context: stay
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
