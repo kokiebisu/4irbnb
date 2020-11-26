@@ -1,11 +1,10 @@
-import express, { json, NextFunction } from 'express';
+import express, { json } from 'express';
 require('express-async-errors');
 import { currentUserRouter } from './routes/current_user';
 import { signinRouter } from './routes/signin';
 import { signoutRouter } from './routes/signout';
 import { signupRouter } from './routes/signup';
-import { errorHandler } from './middlewares/error';
-import { NotFoundError } from './errors/not_found';
+import { errorHandler, NotFoundError } from '@doitsimple/shared';
 
 import mongoose from 'mongoose';
 import cookieSession from 'cookie-session';
