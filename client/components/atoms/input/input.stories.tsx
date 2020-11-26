@@ -56,3 +56,8 @@ export const region = InputTemplate.bind({});
 region.args = {
   type: 'region',
 };
+
+export const place = InputTemplate.bind({});
+place.args = {
+  type: 'place',
+};

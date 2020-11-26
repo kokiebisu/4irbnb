@@ -51,6 +51,13 @@ export interface RegionInputProps {
   errors?: boolean;
 }
 
+export interface PlaceInputProps {
+  handleChange?: any;
+  value?: string;
+  direction?: string;
+  errors?: boolean;
+}
+
 export interface InputProps {
   extendsTo?: string;
   spread?: boolean;
