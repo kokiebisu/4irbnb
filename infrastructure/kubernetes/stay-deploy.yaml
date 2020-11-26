@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: auth-deploy
+  name: stay-deploy
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: auth
+      app: stay
   template:
     metadata:
       labels:
-        app: auth
+        app: stay
     spec:
       containers:
-        - name: auth
-          image: kokiebisu/nextbnb-auth
+        - name: stay
+          image: kokiebisu/nextbnb-stay
           env:
             - name: MONGO_URI
-              value: 'mongodb://auth-mongo-service:27017/auth'
+              value: 'mongodb://stay-mongo-service:27017/stay'
             - name: JWT_KEY
               valueFrom:
                 secretKeyRef:
@@ -27,12 +27,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: auth-service
+  name: stay-service
 spec:
   selector:
-    app: auth
+    app: stay
   ports:
-    - name: auth
+    - name: stay
       protocol: TCP
       port: 3000
       targetPort: 3000
