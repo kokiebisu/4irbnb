@@ -20,6 +20,10 @@ export interface ExperiencesHeaderProps {}
 
 export interface OnlineHostHeaderProps {}
 
+export interface StayHeaderProps {
+  title?: string;
+}
+
 export interface HeaderProps {
   extendsTo?: string;
   type: string;
