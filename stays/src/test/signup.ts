@@ -1,11 +1,13 @@
 import jwt from 'jsonwebtoken';
 
 export const signup = () => {
+  const id = '239jf0934jg';
   const email = 'test@gmail.com';
   const password = 'password';
 
   const token = jwt.sign(
     {
+      id,
       email,
       password,
     },
