@@ -30,16 +30,14 @@ export const styleContainer = (errors, fieldActive, direction) => {
   }
   if (errors) {
     if (direction === 'left') {
-      return [
-        input['select-container__error--inactive'],
-        shape['blr--15'],
-      ].join(' ');
+      return [input['select-container__error--inactive'], shape['blr--8']].join(
+        ' '
+      );
     }
     if (direction === 'right') {
-      return [
-        input['select-container__error--inactive'],
-        shape['brr--15'],
-      ].join(' ');
+      return [input['select-container__error--inactive'], shape['brr--8']].join(
+        ' '
+      );
     }
     return [input['select-container__error--inactive']].join(' ');
   }

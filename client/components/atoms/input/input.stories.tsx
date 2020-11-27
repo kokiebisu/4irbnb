@@ -15,6 +15,13 @@ export default {
       </div>
     ),
   ],
+  argTypes: {
+    extendsTo: {
+      control: {
+        disable: true,
+      },
+    },
+  },
 } as Meta;
 
 const InputTemplate: Story<InputProps> = (args) => <Input {...args} />;
@@ -60,4 +67,14 @@ region.args = {
 export const place = InputTemplate.bind({});
 place.args = {
   type: 'place',
+};
+
+export const guests = InputTemplate.bind({});
+guests.args = {
+  type: 'guests',
+};
+
+export const address = InputTemplate.bind({});
+address.args = {
+  type: 'address',
 };
