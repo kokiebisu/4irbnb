@@ -51,6 +51,13 @@ export interface RegionInputProps {
   errors?: boolean;
 }
 
+export interface GuestsInputProps {
+  handleChange?: any;
+  value?: string;
+  direction?: string;
+  errors?: boolean;
+}
+
 export interface PlaceInputProps {
   handleChange?: any;
   value?: string;

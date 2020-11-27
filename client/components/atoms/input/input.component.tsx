@@ -15,6 +15,7 @@ import { RegionInput } from './input.region';
 import { InputProps } from './props';
 import { PhoneNumberInput } from './input.phone';
 import { PlaceInput } from './input.place';
+import { GuestsInput } from './input.guests';
 
 /**
  * Bundles the input components
@@ -29,6 +30,7 @@ export const Input: React.FC<InputProps> = ({ type, spread, ...props }) => {
     phone: <PhoneNumberInput {...props} />,
     region: <RegionInput {...props} />,
     place: <PlaceInput {...props} />,
+    guests: <GuestsInput {...props} />,
   };
 
   return (
