@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useRef } from 'react';
 
 /**
  * Styles
@@ -20,6 +20,7 @@ import { PlaceInputProps } from './props';
  */
 import { Checked } from '../../../public/svg/original';
 import { ChevronDown, ChevronTop } from '../../../public/svg/regular';
+import useOnClickOutside from '../../../hooks/useOnClickOutside';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -45,11 +46,16 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
   direction,
   errors = false,
 }) => {
+  const containerRef = useRef();
   const [state, dispatch] = useReducer(reducer, {
     selected: 'Entire place',
     expanded: false,
   });
-
+  useOnClickOutside(containerRef, () => {
+    if (state.expanded) {
+      dispatch({ type: 'expand' });
+    }
+  });
   const renderShape = () => {
     switch (direction) {
       case 'top':
@@ -73,6 +79,7 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
 
   return (
     <div
+      ref={containerRef}
       style={{ height: 50 }}
       className={`${[
         layout['flex'],
@@ -89,7 +96,7 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
           height: '100%',
           width: '100%',
         }}>
-        <button
+        <div
           style={{ height: '100%', padding: '0 12px' }}
           onChange={handleChange}
           onClick={() => dispatch({ type: 'expand' })}
@@ -104,7 +111,6 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
             color['b--0'],
             font['size--16'],
             font['weight--300'],
-            // input['input'],
           ].join(' ')}`}>
           <div>
             <label
@@ -126,7 +132,7 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
               <ChevronDown width={13} />
             )}
           </div>
-        </button>
+        </div>
         {state.expanded && (
           <div
             style={{
