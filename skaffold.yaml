@@ -16,7 +16,7 @@ build:
         infer:
           - '**/*.ts'
           - '**/*.tsx'
-          - '**/*.css'
+          - '**/*.scss'
     - image: kokiebisu/nextbnb-auth
       context: auth
       docker:
