@@ -13,14 +13,16 @@ describe('/api/stays POST', () => {
     await request(server).post('/api/stays').send().expect(401);
   });
 
-  it('returns a status 200 if the user is signed in', async () => {
+  it('returns a status 201 if the user is signed in', async () => {
     const cookie = signup();
     const response = await request(server)
       .post('/api/stays')
       .set('Cookie', cookie)
-      .send();
-
-    expect(response.status).toEqual(200);
+      .send({
+        title: 'Test Title',
+        price: 80,
+      });
+    expect(response.status).toEqual(201);
   });
 
   it('created a ticket with valid inputs', async () => {
@@ -28,14 +30,14 @@ describe('/api/stays POST', () => {
     expect(stays.length).toEqual(0);
 
     const cookie = signup();
-    const response = await request(server)
+    await request(server)
       .post('/api/stays')
       .set('Cookie', cookie)
       .send({
         title: 'Test Stay',
         price: 80,
-      });
-    expect(response.status).toEqual(201);
+      })
+      .expect(201);
 
     stays = await Stay.find({});
     expect(stays.length).toEqual(1);
