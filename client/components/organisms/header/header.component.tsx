@@ -1,14 +1,15 @@
 import React from 'react';
 
-/**
- * Components
- */
+/** Components */
 import { DetailsHeader } from './header.details';
 import { ExperiencesHeader } from './header.experiences';
 import { HomesHeader } from './header.homes';
 import { OnlineHostHeader } from './header.onlinehost';
+import { StayHeader } from './header.stay';
 import { TransparentHeader } from './header.transparent';
 import { WhiteHeader } from './header.white';
+
+/** Props */
 import { HeaderProps } from './props';
 
 interface mapProps {
@@ -32,6 +33,7 @@ export const Header: React.FC<HeaderProps> = ({
     homes: <HomesHeader {...props} />,
     experiences: <ExperiencesHeader {...props} />,
     onlinehost: <OnlineHostHeader {...props} />,
+    stay: <StayHeader {...props} />,
   };
   return <div className={extendsTo}>{types[type]}</div>;
 };
