@@ -2,10 +2,24 @@ import request from 'supertest';
 import server from '../../app';
 import { Stay } from '../../models/stay';
 import { signup } from '../../test/signup';
+import mongoose from 'mongoose';
+import { createStay } from '../../test/create';
+
+describe('/api/stays GET', () => {
+  it('can fetch a list of stays', async () => {
+    await createStay();
+    await createStay();
+
+    const response = await request(server).get('/api/stays').send().expect(200);
+
+    expect(response.body.length).toBeGreaterThan(0);
+  });
+});
 
 describe('/api/stays/:id GET', () => {
   it('returns a 404 if the stay is not found', async () => {
-    const response = await request(server).get('/api/stays/1').send({});
+    const id = new mongoose.Types.ObjectId().toHexString();
+    const response = await request(server).get(`/api/stays/${id}`).send({});
     console.log('response', response.body);
     expect(response.status).toEqual(404);
   });
