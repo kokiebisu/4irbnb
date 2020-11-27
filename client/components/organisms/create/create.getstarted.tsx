@@ -41,22 +41,22 @@ export const GetStartedCreate: React.FC<GetStartedCreateProps> = () => {
         </div>
         <div className={[space['m-b--10']].join(' ')}>
           <form onSubmit={formik.handleSubmit}>
-            <div>
-              <Input type='place' />
-            </div>
             <div
-              className={[space['m-t--10']].join(' ')}
+              className={[space['m-b--10']].join(' ')}
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
+                gridTemplateColumns: '1fr 130px',
                 columnGap: 10,
               }}>
               <div>
-                <Input type='address' />
+                <Input type='place' />
               </div>
               <div>
                 <Input type='guests' />
               </div>
+            </div>
+            <div>
+              <Input type='address' />
             </div>
           </form>
         </div>
