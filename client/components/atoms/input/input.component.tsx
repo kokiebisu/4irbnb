@@ -1,21 +1,18 @@
 import React from 'react';
 
-/**
- * Components
- */
+/** Components */
 import { EmailInput } from './input.email';
 import { PasswordInput } from './input.password';
 import { NameInput } from './input.name';
 import { BirthdateInput } from './input.birthdate';
 import { RegionInput } from './input.region';
-
-/**
- * Props
- */
-import { InputProps } from './props';
 import { PhoneNumberInput } from './input.phone';
 import { PlaceInput } from './input.place';
 import { GuestsInput } from './input.guests';
+import { AddressInput } from './input.address';
+
+/** Props */
+import { InputProps } from './props';
 
 /**
  * Bundles the input components
@@ -31,6 +28,7 @@ export const Input: React.FC<InputProps> = ({ type, spread, ...props }) => {
     region: <RegionInput {...props} />,
     place: <PlaceInput {...props} />,
     guests: <GuestsInput {...props} />,
+    address: <AddressInput {...props} />,
   };
 
   return (

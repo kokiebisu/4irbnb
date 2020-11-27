@@ -73,3 +73,8 @@ export const guests = InputTemplate.bind({});
 guests.args = {
   type: 'guests',
 };
+
+export const address = InputTemplate.bind({});
+address.args = {
+  type: 'address',
+};

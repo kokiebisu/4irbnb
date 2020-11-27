@@ -21,6 +21,13 @@ export interface PasswordInputProps {
   errors?: boolean;
 }
 
+export interface AddressInputProps {
+  handleChange?: any;
+  value?: string;
+  direction?: string;
+  errors?: boolean;
+}
+
 export interface PhoneNumberInputProps {
   handleChange?: any;
   value?: string;
