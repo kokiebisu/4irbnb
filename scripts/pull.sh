@@ -6,5 +6,6 @@ for b in "${branches[@]}"
 do
     git checkout $b
     git pull origin develop --no-edit
+    ./update.sh
 done
 git checkout ${branch_name}
