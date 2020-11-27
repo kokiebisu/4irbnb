@@ -1,9 +1,10 @@
 import express, { json } from 'express';
 require('express-async-errors');
 
-import { errorHandler, NotFoundError } from '@doitsimple/shared';
+import { errorHandler, NotFoundError, currentUser } from '@doitsimple/shared';
 
 import cookieSession from 'cookie-session';
+import { createStaysRouter } from './routes/create';
 
 const app = express();
 
@@ -17,6 +18,10 @@ app.use(
     secure: true, // must be on https connection
   })
 );
+
+app.use(currentUser);
+
+app.use(createStaysRouter);
 
 app.all('*', async () => {
   throw new NotFoundError();
