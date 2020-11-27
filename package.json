@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "cd scripts && ./run.sh",
     "push": "cd scripts && ./push.sh",
-    "pull": "cd scripts && ./pull.sh"
+    "pull": "cd scripts && ./pull.sh",
+    "test:auth": "yarn --cwd auth test",
+    "test:stays": "yarn --cwd stays test"
   },
   "repository": {
     "type": "git",
