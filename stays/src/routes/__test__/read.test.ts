@@ -19,8 +19,9 @@ describe('/api/stays GET', () => {
 describe('/api/stays/:id GET', () => {
   it('returns a 404 if the stay is not found', async () => {
     const id = new mongoose.Types.ObjectId().toHexString();
+
     const response = await request(server).get(`/api/stays/${id}`).send({});
-    console.log('response', response.body);
+
     expect(response.status).toEqual(404);
   });
 
