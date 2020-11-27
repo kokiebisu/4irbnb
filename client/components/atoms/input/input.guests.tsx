@@ -96,9 +96,8 @@ export const GuestsInput: React.FC<GuestsInputProps> = ({
             shape['w--full'],
             layout['block'],
             color['b--0'],
-            font['size--16'],
+            font['size--14'],
             font['weight--300'],
-            // input['input'],
           ].join(' ')}`}>
           <option value='1'>1 guest</option>
           <option value='2'>2 guests</option>

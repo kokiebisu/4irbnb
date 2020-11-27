@@ -96,7 +96,7 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
           height: '100%',
           width: '100%',
         }}>
-        <button
+        <div
           style={{ height: '100%', padding: '0 12px' }}
           onChange={handleChange}
           onClick={() => dispatch({ type: 'expand' })}
@@ -132,7 +132,7 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
               <ChevronDown width={13} />
             )}
           </div>
-        </button>
+        </div>
         {state.expanded && (
           <div
             style={{

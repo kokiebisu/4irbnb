@@ -4,6 +4,10 @@ $breakpoints: (
   lg: 1326,
 );
 
+$percentage: (
+  55: percentage(0.55),
+);
+
 @each $name, $point in $breakpoints {
   .i_to_b--#{$name} {
     display: inline-block;
@@ -66,6 +70,16 @@ $breakpoints: (
 
     @media screen and (min-width: #{$point}px) {
       display: none;
+    }
+  }
+
+  @each $name, $value in $percentage {
+    .w#{$name}p_to_100--#{$name} {
+      width: #{value};
+
+      @media screen and (min-width: #{$point}px) {
+        width: 100%;
+      }
     }
   }
 }

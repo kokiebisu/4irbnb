@@ -99,8 +99,8 @@ export const AddressInput: React.FC<AddressInputProps> = ({
             shape['w--full'],
             layout['block'],
             color['b--0'],
-            font['size--16'],
-            font['weight--300'],
+            font['size--14'],
+            font['weight--100'],
             color['c__placeholder--black'],
           ].join(' ')}`}
           style={{ outline: 'none' }}
