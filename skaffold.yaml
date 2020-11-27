@@ -26,7 +26,7 @@ build:
           - src: 'src/**/*.ts'
             dest: .
     - image: kokiebisu/nextbnb-stay
-      context: stay
+      context: stays
       docker:
         dockerfile: Dockerfile
       sync:

@@ -2,7 +2,7 @@ import request from 'supertest';
 import server from '../../app';
 import { signup } from '../../test/helper';
 
-describe('Current user handler', () => {
+describe('api/users/currentuser GET', () => {
   it('responds with id of the current user', async () => {
     const cookie = await signup();
 

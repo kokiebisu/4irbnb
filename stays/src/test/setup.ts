@@ -5,8 +5,10 @@ let mongo: any;
 
 // runs before all tests
 beforeAll(async () => {
+  process.env.NODE_ENV = 'test';
+  process.env.JWT_KEY = 'test';
   mongo = new MongoMemoryServer();
-  const mongoUri = mongo.getUri();
+  const mongoUri = await mongo.getUri();
 
   await mongoose.connect(mongoUri, {
     useNewUrlParser: true,
