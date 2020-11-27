@@ -4,7 +4,8 @@ require('express-async-errors');
 import { errorHandler, NotFoundError, currentUser } from '@doitsimple/shared';
 
 import cookieSession from 'cookie-session';
-import { createStaysRouter } from './routes/create';
+import { CreateStaysRouter } from './routes/create';
+import { ReadStaysRouter } from './routes/read';
 
 const app = express();
 
@@ -21,7 +22,8 @@ app.use(
 
 app.use(currentUser);
 
-app.use(createStaysRouter);
+app.use(CreateStaysRouter);
+app.use(ReadStaysRouter);
 
 app.all('*', async () => {
   throw new NotFoundError();

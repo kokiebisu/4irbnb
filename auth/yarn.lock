@@ -280,9 +280,9 @@
     minimist "^1.2.0"
 
 "@doitsimple/shared@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@doitsimple/shared/-/shared-1.0.6.tgz#bf1d09288b63b13ee3a5f257e8a69ffb9e520626"
-  integrity sha512-oRBiqYbQOQUccp+z1X85Bo/5LR1kUGXBBH8+HZy8d8tu/bTRZmEbWF0SRKKgQZiWQszMelLXcHrCP7+wOnzVTQ==
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@doitsimple/shared/-/shared-1.0.9.tgz#68cc7aa3520cefe09ed11553e45de522c97ca23a"
+  integrity sha512-au0POcs0VXbFkMkqXgx1HoxPc5fANKKDMJ2+vrzmcXQ6LWmHPjmZEz7PaQYF1SlfGItbZ8UDORGDSl3Khy6weg==
   dependencies:
     "@types/cookie-session" "^2.0.41"
     "@types/express" "^4.17.9"
