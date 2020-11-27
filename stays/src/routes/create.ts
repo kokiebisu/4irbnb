@@ -11,4 +11,4 @@ router.post('/api/stays', requireAuth, async (req: Request, res: Response) => {
   res.status(201).send(stay);
 });
 
-export { router as createStaysRouter };
+export { router as CreateStaysRouter };

@@ -1,8 +1,6 @@
 #! /bin/zsh
 
-# auth
-cd ../auth
-yarn upgrade
+./update.sh
 
 # run development server
 cd ..
