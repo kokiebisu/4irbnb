@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "cd scripts && ./run.sh",
-    "push": "cd scripts && ./push.sh"
+    "push": "cd scripts && ./push.sh",
+    "pull": "cd scripts && ./pull.sh"
   },
   "repository": {
     "type": "git",

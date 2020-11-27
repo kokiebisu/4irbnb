@@ -1,7 +1,7 @@
 import request from 'supertest';
 import server from '../../app';
 
-describe('Signin handler', () => {
+describe('/api/users/signin POST', () => {
   it('fails when a non existing email is provided', async () => {
     return request(server)
       .post('/api/users/signin')
