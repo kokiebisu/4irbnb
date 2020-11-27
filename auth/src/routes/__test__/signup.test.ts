@@ -1,7 +1,7 @@
 import request from 'supertest';
 import server from '../../app';
 
-describe('Signup Handler', () => {
+describe('/api/users/signup POST', () => {
   it('returns a status of 201 on success', async () => {
     return request(server)
       .post('/api/users/signup')
