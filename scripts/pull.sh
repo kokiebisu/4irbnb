@@ -1,6 +1,6 @@
 #! /bin/zsh
 
-branches = ( master client stay shared test storybook develop )
+branches=( master client stay shared test storybook develop )
 
 for b in "${branches[@]}"
 do
