@@ -1,6 +1,6 @@
 #! /bin/zsh
 branch_name=$(git symbolic-ref --short -q HEAD)
-branches=( master client stay shared test storybook develop )
+branches=( master client stay storybook develop )
 
 for b in "${branches[@]}"
 do
