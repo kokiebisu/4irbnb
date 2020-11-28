@@ -1,4 +1,4 @@
-export const Places = [
+const Properties = [
   "Apartment",
   "House",
   "Secondary unit",
@@ -7,6 +7,8 @@ export const Places = [
   "Boutique hotel",
 ];
 
-export const PlaceOptions = Places.map((option, index) => {
+const Options = Properties.map((option, index) => {
   return <option value={option}>{option}</option>;
 });
+
+export { Properties, Options };

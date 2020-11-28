@@ -16,10 +16,11 @@ import { SelectInputProps } from "./props";
 import { ChevronDown, ChevronTop } from "../../../public/svg/regular";
 
 /** Components */
-import { GuestOptions } from "./options/option.guest";
-import { PlaceOptions } from "./options/option.place";
-import { ApartmentOptions } from "./options/option.apartment";
-import { BedAndBreakfastOptions } from "./options/option.bedbreakfast";
+import { Options as GuestOptions } from "./options/option.guest";
+import { Options as PlaceOptions } from "./options/option.place";
+import { Options as ApartmentOptions } from "./options/option.apartment";
+import { Options as BedAndBreakfastOptions } from "./options/option.bedbreakfast";
+import { Options as HouseOptions } from "./options/option.house";
 
 /**
  * Renders the text input component
@@ -35,7 +36,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({
   value,
   direction,
   errors = false,
-  inputType = "Bed and breakfast",
+  inputType = "House",
 }): JSX.Element => {
   const [fieldActive, setFieldActive] = useState(false);
 
@@ -44,6 +45,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({
     place: PlaceOptions,
     Apartment: ApartmentOptions,
     "Bed and breakfast": BedAndBreakfastOptions,
+    House: HouseOptions,
   };
 
   const renderShape = () => {
