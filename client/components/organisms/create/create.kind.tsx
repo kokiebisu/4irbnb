@@ -2,19 +2,33 @@ import { Input } from "../../../components/atoms/input/input.component";
 import React, { useState } from "react";
 import { KindCreateProps } from "./props";
 
+import font from "../../../styles/font.module.scss";
+import color from "../../../styles/color.module.scss";
+import space from "../../../styles/space.module.scss";
+
+/** Components */
+import { properties } from "../../../components/atoms/input/options/option.types";
+
 export const KindCreate: React.FC<KindCreateProps> = () => {
   const [place, setPlace] = useState(undefined);
   const [property, setProperty] = useState(undefined);
-  console.log("place", place);
-  console.log("property", property);
+
+  const displayDescription = () => {
+    return properties[place].find((type) => type.name === property).description;
+  };
+
   return (
     <div>
-      <div>
-        <h3>What kind of place are you listing?</h3>
+      <div className={[space["m-b--45"]].join(" ")}>
+        <h3 className={[font["size--20"], color["c--gray__2"]].join(" ")}>
+          What kind of place are you listing?
+        </h3>
       </div>
-      <div>
-        <div>
-          <h3>First, let's narrow things down</h3>
+      <div style={{ width: 250 }} className={[space["m-b--22"]].join(" ")}>
+        <div className={[space["m-b--8"]].join(" ")}>
+          <h4 className={[font["size--14"], color["c--gray__0"]].join(" ")}>
+            First, let's narrow things down
+          </h4>
         </div>
         <div>
           <Input
@@ -27,9 +41,11 @@ export const KindCreate: React.FC<KindCreateProps> = () => {
           />
         </div>
       </div>
-      <div>
-        <div>
-          <h3>Now choose a property type</h3>
+      <div className={[space["m-b--8"]].join(" ")} style={{ width: 250 }}>
+        <div className={[space["m-b--8"]].join(" ")}>
+          <h4 className={[font["size--14"], color["c--gray__0"]].join(" ")}>
+            Now choose a property type
+          </h4>
         </div>
         <div>
           <Input
@@ -43,6 +59,13 @@ export const KindCreate: React.FC<KindCreateProps> = () => {
           />
         </div>
       </div>
+      {property && (
+        <div>
+          <h4 className={[font["size--12"], color["c--gray__0"]].join(" ")}>
+            {displayDescription()}
+          </h4>
+        </div>
+      )}
     </div>
   );
 };
