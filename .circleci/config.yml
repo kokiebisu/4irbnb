@@ -72,4 +72,4 @@ workflows:
       - test-auth
   stays:
     jobs:
-      - test-stay
+      - test-stays
