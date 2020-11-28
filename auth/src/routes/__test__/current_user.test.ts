@@ -1,6 +1,6 @@
 import request from 'supertest';
 import server from '../../app';
-import { signup } from '../../test/helper';
+import { user as data, signup } from '../../test/helper';
 
 describe('api/users/currentuser GET', () => {
   it('responds with id of the current user', async () => {
@@ -21,7 +21,7 @@ describe('api/users/currentuser GET', () => {
       .set('Cookie', cookie)
       .send();
 
-    expect(response.body.currentUser.email).toEqual('test@gmail.com');
+    expect(response.body.currentUser.email).toEqual(data.email);
   });
   it('responds with undefined if not authenticated', async () => {
     const response = await request(server).get('/api/users/currentuser').send();

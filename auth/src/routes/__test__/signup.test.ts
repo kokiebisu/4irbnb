@@ -1,15 +1,10 @@
 import request from 'supertest';
 import server from '../../app';
+import { user as data } from '../../test/helper';
 
 describe('/api/users/signup POST', () => {
   it('returns a status of 201 on success', async () => {
-    return request(server)
-      .post('/api/users/signup')
-      .send({
-        email: 'example@gmail.com',
-        password: 'password',
-      })
-      .expect(201);
+    return request(server).post('/api/users/signup').send(data).expect(201);
   });
 
   it('prohibits request with missing email', () => {
@@ -17,7 +12,7 @@ describe('/api/users/signup POST', () => {
       .post('/api/users/signup')
       .send({
         email: '',
-        password: 'password',
+        password: data.password,
       })
       .expect(400);
   });
@@ -26,32 +21,20 @@ describe('/api/users/signup POST', () => {
     return request(server)
       .post('/api/users/signup')
       .send({
-        email: 'test@gmail.com',
+        email: data.email,
         password: '',
       })
       .expect(400);
   });
 
   it('prohibits usage of duplicate emails', async () => {
-    await request(server).post('/api/users/signup').send({
-      email: 'example@gmail.com',
-      password: 'password',
-    });
+    await request(server).post('/api/users/signup').send(data);
 
-    return request(server)
-      .post('/api/users/signup')
-      .send({
-        email: 'example@gmail.com',
-        password: 'password',
-      })
-      .expect(400);
+    return request(server).post('/api/users/signup').send(data).expect(400);
   });
 
   it('includes cookie inside the header when signup was successful', async () => {
-    const response = await request(server).post('/api/users/signup').send({
-      email: 'example@gmail.com',
-      password: 'password',
-    });
+    const response = await request(server).post('/api/users/signup').send(data);
 
     expect(response.get('Set-Cookie')).toBeDefined();
   });
