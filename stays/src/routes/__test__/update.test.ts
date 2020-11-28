@@ -1,13 +1,7 @@
 import request from 'supertest';
 import server from '../../app';
 import mongoose from 'mongoose';
-import { createStay } from '../../test/create';
-import { signup } from '../../test/signup';
-
-const data = {
-  title: 'Updated stay',
-  price: 150,
-};
+import { createStay, signup, updatedStay as data } from '../../test/helper';
 
 describe('/api/stays/:id PUT', () => {
   it('fails if the user is not authenticated', async () => {
