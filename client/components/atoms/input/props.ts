@@ -81,6 +81,10 @@ export interface SelectInputProps {
   disabled?: boolean;
 }
 
+export interface RadioInputProps {
+  content?: string;
+}
+
 export interface InputProps {
   extendsTo?: string;
   spread?: boolean;
