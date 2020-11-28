@@ -15,3 +15,8 @@ export const getStarted = CreateStories.bind({});
 getStarted.args = {
   type: 'getstarted',
 };
+
+export const kind = CreateStories.bind({});
+kind.args = {
+  type: 'kind'
+}

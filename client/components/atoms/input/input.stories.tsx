@@ -24,19 +24,19 @@ export default {
   },
 } as Meta;
 
-const InputTemplate: Story<InputProps> = (args) => <Input {...args} />;
+const InputStories: Story<InputProps> = (args) => <Input {...args} />;
 
-export const email = InputTemplate.bind({});
+export const email = InputStories.bind({});
 email.args = {
   type: 'email',
 };
 
-export const password = InputTemplate.bind({});
+export const password = InputStories.bind({});
 password.args = {
   type: 'password',
 };
 
-export const name = InputTemplate.bind({});
+export const name = InputStories.bind({});
 name.args = {
   type: 'name',
 };
@@ -49,32 +49,37 @@ name.argTypes = {
   },
 };
 
-export const birthdate = InputTemplate.bind({});
+export const birthdate = InputStories.bind({});
 birthdate.args = {
   type: 'birthdate',
 };
 
-export const phone = InputTemplate.bind({});
+export const phone = InputStories.bind({});
 phone.args = {
   type: 'phone',
 };
 
-export const region = InputTemplate.bind({});
+export const region = InputStories.bind({});
 region.args = {
   type: 'region',
 };
 
-export const place = InputTemplate.bind({});
+export const place = InputStories.bind({});
 place.args = {
   type: 'place',
 };
 
-export const guests = InputTemplate.bind({});
+export const guests = InputStories.bind({});
 guests.args = {
   type: 'guests',
 };
 
-export const address = InputTemplate.bind({});
+export const address = InputStories.bind({});
 address.args = {
   type: 'address',
 };
+
+export const select = InputStories.bind({});
+select.args = {
+  type: 'select'
+}

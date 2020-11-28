@@ -39,7 +39,7 @@ export interface NameInputProps {
   handleChange?: any;
   value?: string;
   direction?: string;
-  name?: 'first' | 'last';
+  name?: "first" | "last";
   errors?: boolean;
 }
 
@@ -48,7 +48,7 @@ export interface BirthdateInputProps {
   value?: string;
   direction?: string;
   errors?: boolean;
-  dateType?: 'year' | 'month' | 'day';
+  dateType?: "year" | "month" | "day";
 }
 
 export interface RegionInputProps {
@@ -70,6 +70,15 @@ export interface PlaceInputProps {
   value?: string;
   direction?: string;
   errors?: boolean;
+}
+
+export interface SelectInputProps {
+  handleChange?: any;
+  value?: any;
+  direction?: any;
+  errors?: any;
+  inputType?: string;
+  disabled?: boolean;
 }
 
 export interface InputProps {

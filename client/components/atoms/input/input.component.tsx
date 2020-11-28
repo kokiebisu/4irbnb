@@ -10,9 +10,11 @@ import { PhoneNumberInput } from './input.phone';
 import { PlaceInput } from './input.place';
 import { GuestsInput } from './input.guests';
 import { AddressInput } from './input.address';
+import { SelectInput } from './input.select';
 
 /** Props */
 import { InputProps } from './props';
+
 
 /**
  * Bundles the input components
@@ -29,6 +31,7 @@ export const Input: React.FC<InputProps> = ({ type, spread, ...props }) => {
     place: <PlaceInput {...props} />,
     guests: <GuestsInput {...props} />,
     address: <AddressInput {...props} />,
+    select: <SelectInput {...props} />
   };
 
   return (
