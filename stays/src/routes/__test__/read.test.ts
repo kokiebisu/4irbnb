@@ -1,9 +1,7 @@
 import request from 'supertest';
 import server from '../../app';
-import { Stay } from '../../models/stay';
-import { signup } from '../../test/signup';
 import mongoose from 'mongoose';
-import { createStay } from '../../test/create';
+import { createStay, signup, stay as data } from '../../test/helper';
 
 describe('/api/stays GET', () => {
   it('can fetch a list of stays', async () => {
@@ -26,17 +24,12 @@ describe('/api/stays/:id GET', () => {
   });
 
   it('returns the stay if the stay is found', async () => {
-    const title = 'Title stay';
-    const price = 80;
     const cookie = signup();
 
     const response = await request(server)
       .post('/api/stays')
       .set('Cookie', cookie)
-      .send({
-        title,
-        price,
-      })
+      .send(data)
       .expect(201);
 
     const ticketResponse = await request(server)
@@ -48,17 +41,12 @@ describe('/api/stays/:id GET', () => {
   });
 
   it('returns the corret title of the stay which was queried', async () => {
-    const title = 'Title stay';
-    const price = 80;
     const cookie = signup();
 
     const response = await request(server)
       .post('/api/stays')
       .set('Cookie', cookie)
-      .send({
-        title,
-        price,
-      })
+      .send(data)
       .expect(201);
 
     const ticketResponse = await request(server)
@@ -66,21 +54,16 @@ describe('/api/stays/:id GET', () => {
       .send()
       .expect(200);
 
-    expect(ticketResponse.body.title).toEqual('Title stay');
+    expect(ticketResponse.body.title).toEqual(data.title);
   });
 
   it('returns the corret price of the stay which was queried', async () => {
-    const title = 'Title stay';
-    const price = 80;
     const cookie = signup();
 
     const response = await request(server)
       .post('/api/stays')
       .set('Cookie', cookie)
-      .send({
-        title,
-        price,
-      })
+      .send(data)
       .expect(201);
 
     const ticketResponse = await request(server)
@@ -88,6 +71,6 @@ describe('/api/stays/:id GET', () => {
       .send()
       .expect(200);
 
-    expect(ticketResponse.body.price).toEqual(80);
+    expect(ticketResponse.body.price).toEqual(data.price);
   });
 });
