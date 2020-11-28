@@ -140,26 +140,3 @@
     font-weight: 500;
   }
 }
-
-.select-container {
-  &__active {
-    border: 2px solid black;
-  }
-
-  &__inactive {
-    border: 1px solid black;
-    background-color: white;
-  }
-
-  &__error {
-    &--active {
-      border: 2px solid #c13514;
-      background-color: white;
-    }
-
-    &--inactive {
-      border: 1px solid #c13514;
-      background-color: #fef8f6;
-    }
-  }
-}

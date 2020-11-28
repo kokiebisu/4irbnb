@@ -75,12 +75,14 @@ export const SelectInput: React.FC<SelectInputProps> = ({
           value
         )}`}
         style={{
+          borderColor: disabled ? "#EBEBEB" : "#B0B0B0",
           padding: "0 12px",
           position: "relative",
           height: "100%",
           width: "100%",
           display: "flex",
           justifyContent: "space-between",
+          backgroundColor: disabled ? "#F7F7F7" : "white",
         }}
       >
         <select
@@ -93,6 +95,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({
           onFocus={() => setFieldActive(true)}
           onBlur={() => setFieldActive(false)}
           className={`${[
+            color["bg--transparent"],
             layout["justify-between"],
             shape["br--4"],
             space["p--0"],
@@ -109,7 +112,11 @@ export const SelectInput: React.FC<SelectInputProps> = ({
           {inputTypes[inputType].options}
         </select>
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
-          {fieldActive ? <ChevronTop width={13} /> : <ChevronDown width={13} />}
+          {fieldActive ? (
+            <ChevronTop width={13} />
+          ) : (
+            <ChevronDown width={13} fill={disabled ? "#DDDDDD" : "black"} />
+          )}
         </div>
       </div>
     </div>
