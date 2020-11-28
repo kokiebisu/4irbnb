@@ -66,7 +66,7 @@ workflows:
       - test-client
       - docker_hub:
           requires:
-            - test
+            - test-client
   auth:
     jobs:
       - test-auth
