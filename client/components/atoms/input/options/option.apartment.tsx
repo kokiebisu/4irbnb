@@ -1,4 +1,4 @@
-export const ApartmentProperties = [
+const Properties: { name: string; description: string }[] = [
   {
     name: "Apartment",
     description:
@@ -26,6 +26,8 @@ export const ApartmentProperties = [
   },
 ];
 
-export const ApartmentOptions = ApartmentProperties.map((option, index) => {
+const Options = Properties.map((option, index) => {
   return <option value={option.name}>{option.name}</option>;
 });
+
+export { Properties, Options };
