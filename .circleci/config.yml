@@ -1,6 +1,34 @@
 version: 2
 jobs:
-  test:
+  test-auth:
+    working_directory: ~/airbnb/auth
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout:
+          path: ~/airbnb
+      - run:
+          name: install dependencies
+          command: yarn install
+      - run:
+          name: testing
+          command: yarn test
+
+  test-stays:
+    working_directory: ~/airbnb/stays
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout:
+          path: ~/airbnb
+      - run:
+          name: install dependencies
+          command: yarn install
+      - run:
+          name: testing
+          command: yarn test
+
+  test-client:
     working_directory: ~/airbnb/client
     docker:
       - image: circleci/node:10
@@ -8,13 +36,13 @@ jobs:
       - checkout:
           path: ~/airbnb
       - run:
-          name: Install Dependencies
+          name: install dependencies
           command: yarn install
       - run:
-          name: Testing
+          name: testing snapshot
           command: yarn snapshot
       - run:
-          name: Comparing Snapshots
+          name: comparing snapshots
           command: npx chromatic --project-token=e017nqnn22h --exit-zero-on-changes
   docker_hub:
     working_directory: ~/app
@@ -33,9 +61,15 @@ jobs:
 
 workflows:
   version: 2
-  build-test-and-deploy:
+  client:
     jobs:
-      - test
+      - test-client
       - docker_hub:
           requires:
             - test
+  auth:
+    jobs:
+      - test-auth
+  stays:
+    jobs:
+      - test-stay
