@@ -1,5 +1,6 @@
 import React from 'react';
 import { GetStartedCreate } from './create.getstarted';
+import { KindCreate } from './create.kind';
 import { CreateProps } from './props';
 
 export const Create: React.FC<CreateProps> = ({
@@ -8,6 +9,7 @@ export const Create: React.FC<CreateProps> = ({
 }) => {
   const types = {
     getstarted: <GetStartedCreate {...props} />,
+    kind: <KindCreate {...props} />
   };
   return types[type];
 };

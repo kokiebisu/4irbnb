@@ -72,6 +72,15 @@ export interface PlaceInputProps {
   errors?: boolean;
 }
 
+export interface SelectInputProps {
+  handleChange?: any;
+  value?: any;
+  direction?: any;
+  errors?: any;
+  options?: any;
+  inputType?: string;
+}
+
 export interface InputProps {
   extendsTo?: string;
   spread?: boolean;
