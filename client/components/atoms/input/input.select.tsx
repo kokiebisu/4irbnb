@@ -15,12 +15,8 @@ import { SelectInputProps } from "./props";
 /** Vectors */
 import { ChevronDown, ChevronTop } from "../../../public/svg/regular";
 
-/** Components */
-import { Options as GuestOptions } from "./options/option.guest";
-import { Options as PlaceOptions } from "./options/option.place";
-import { Options as ApartmentOptions } from "./options/option.apartment";
-import { Options as BedAndBreakfastOptions } from "./options/option.bedbreakfast";
-import { Options as HouseOptions } from "./options/option.house";
+/** Options */
+import { inputTypes } from "./options/option.types";
 
 /**
  * Renders the text input component
@@ -36,17 +32,10 @@ export const SelectInput: React.FC<SelectInputProps> = ({
   value,
   direction,
   errors = false,
-  inputType = "House",
+  disabled = false,
+  inputType = "Bed and breakfast",
 }): JSX.Element => {
   const [fieldActive, setFieldActive] = useState(false);
-
-  const inputTypes = {
-    guest: GuestOptions,
-    place: PlaceOptions,
-    Apartment: ApartmentOptions,
-    "Bed and breakfast": BedAndBreakfastOptions,
-    House: HouseOptions,
-  };
 
   const renderShape = () => {
     switch (direction) {
@@ -96,9 +85,11 @@ export const SelectInput: React.FC<SelectInputProps> = ({
       >
         <select
           style={{ height: "100%", outline: "none" }}
-          id="guests"
+          id={inputType}
+          disabled={disabled}
           onChange={handleChange}
           value={value}
+          defaultValue={inputTypes[inputType].default || "Select"}
           onFocus={() => setFieldActive(true)}
           onBlur={() => setFieldActive(false)}
           className={`${[
@@ -112,7 +103,10 @@ export const SelectInput: React.FC<SelectInputProps> = ({
             font["weight--300"],
           ].join(" ")}`}
         >
-          {inputTypes[inputType]}
+          <option disabled value={inputTypes[inputType].default}>
+            {inputTypes[inputType].default}
+          </option>
+          {inputTypes[inputType].options}
         </select>
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           {fieldActive ? <ChevronTop width={13} /> : <ChevronDown width={13} />}

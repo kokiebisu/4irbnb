@@ -1,4 +1,4 @@
-const Properties = [
+const Properties: { name: string; description: string }[] = [
   {
     name: "Guesthouse",
     description:
