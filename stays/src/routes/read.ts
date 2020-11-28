@@ -18,4 +18,4 @@ router.get('/api/stays/:id', async (req: Request, res: Response) => {
   res.status(200).send(stay);
 });
 
-export { router as ReadStaysRouter };
+export { router as ReadRouter };
