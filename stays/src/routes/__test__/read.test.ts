@@ -19,8 +19,9 @@ describe('/api/stays GET', () => {
 describe('/api/stays/:id GET', () => {
   it('returns a 404 if the stay is not found', async () => {
     const id = new mongoose.Types.ObjectId().toHexString();
+
     const response = await request(server).get(`/api/stays/${id}`).send({});
-    console.log('response', response.body);
+
     expect(response.status).toEqual(404);
   });
 
@@ -35,11 +36,13 @@ describe('/api/stays/:id GET', () => {
       .send({
         title,
         price,
-      });
+      })
+      .expect(201);
 
     const ticketResponse = await request(server)
       .get(`/api/stays/${response.body.id}`)
-      .send();
+      .send()
+      .expect(200);
 
     expect(ticketResponse.body).toBeDefined();
   });
@@ -55,11 +58,13 @@ describe('/api/stays/:id GET', () => {
       .send({
         title,
         price,
-      });
+      })
+      .expect(201);
 
     const ticketResponse = await request(server)
       .get(`/api/stays/${response.body.id}`)
-      .send();
+      .send()
+      .expect(200);
 
     expect(ticketResponse.body.title).toEqual('Title stay');
   });
@@ -75,11 +80,13 @@ describe('/api/stays/:id GET', () => {
       .send({
         title,
         price,
-      });
+      })
+      .expect(201);
 
     const ticketResponse = await request(server)
       .get(`/api/stays/${response.body.id}`)
-      .send();
+      .send()
+      .expect(200);
 
     expect(ticketResponse.body.price).toEqual(80);
   });
