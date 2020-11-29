@@ -12,7 +12,7 @@ spec:
         paths:
           - path: /api/stays/?(.*)
             backend:
-              serviceName: stay-service
+              serviceName: stays-service
               servicePort: 3000
           - path: /api/users/?(.*)
             backend:
