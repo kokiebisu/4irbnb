@@ -1,18 +1,20 @@
-import React from 'react';
+import React from "react";
 
 /** Components */
-import { EmailInput } from './input.email';
-import { PasswordInput } from './input.password';
-import { NameInput } from './input.name';
-import { BirthdateInput } from './input.birthdate';
-import { RegionInput } from './input.region';
-import { PhoneNumberInput } from './input.phone';
-import { PlaceInput } from './input.place';
-import { GuestsInput } from './input.guests';
-import { AddressInput } from './input.address';
+import { EmailInput } from "./input.email";
+import { PasswordInput } from "./input.password";
+import { NameInput } from "./input.name";
+import { BirthdateInput } from "./input.birthdate";
+import { RegionInput } from "./input.region";
+import { PhoneNumberInput } from "./input.phone";
+import { PlaceInput } from "./input.place";
+import { GuestsInput } from "./input.guests";
+import { AddressInput } from "./input.address";
+import { SelectInput } from "./input.select";
+import { RadioInput } from "./input.radio";
 
 /** Props */
-import { InputProps } from './props';
+import { InputProps } from "./props";
 
 /**
  * Bundles the input components
@@ -29,10 +31,12 @@ export const Input: React.FC<InputProps> = ({ type, spread, ...props }) => {
     place: <PlaceInput {...props} />,
     guests: <GuestsInput {...props} />,
     address: <AddressInput {...props} />,
+    select: <SelectInput {...props} />,
+    radio: <RadioInput {...props} />,
   };
 
   return (
-    <div style={{ width: spread && '100%' }} data-testid='input'>
+    <div style={{ width: spread && "100%" }} data-testid="input">
       {types[type]}
     </div>
   );

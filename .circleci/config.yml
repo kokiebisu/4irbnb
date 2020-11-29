@@ -1,6 +1,64 @@
 version: 2
 jobs:
-  test:
+  test-auth:
+    working_directory: ~/airbnb/auth
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout:
+          path: ~/airbnb
+      - run:
+          name: install dependencies
+          command: yarn install
+      - run:
+          name: testing
+          command: yarn test:ci
+
+  deploy-auth:
+    working_directory: ~/app
+    machine: true
+    steps:
+      - checkout:
+      - run:
+          name: building auth image
+          command: docker build -t kokiebisu/nextbnb-auth ./auth
+      - run:
+          name: logging
+          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run:
+          name: pushing to docker hub
+          command: docker push kokiebisu/nextbnb-auth
+
+  test-stays:
+    working_directory: ~/airbnb/stays
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout:
+          path: ~/airbnb
+      - run:
+          name: install dependencies
+          command: yarn install
+      - run:
+          name: testing
+          command: yarn test:ci
+
+  deploy-stays:
+    working_directory: ~/app
+    machine: true
+    steps:
+      - checkout:
+      - run:
+          name: building stays image
+          command: docker build -t kokiebisu/nextbnb-stays ./stays
+      - run:
+          name: logging
+          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run:
+          name: pushing to docker hub
+          command: docker push kokiebisu/nextbnb-stays
+
+  test-client:
     working_directory: ~/airbnb/client
     docker:
       - image: circleci/node:10
@@ -8,34 +66,46 @@ jobs:
       - checkout:
           path: ~/airbnb
       - run:
-          name: Install Dependencies
+          name: installing dependencies
           command: yarn install
       - run:
-          name: Testing
+          name: testing snapshot
           command: yarn snapshot
       - run:
-          name: Comparing Snapshots
+          name: comparing snapshots
           command: npx chromatic --project-token=e017nqnn22h --exit-zero-on-changes
-  docker_hub:
+  deploy-client:
     working_directory: ~/app
     machine: true
     steps:
       - checkout:
       - run:
-          name: Building Client Image
-          command: docker build -t kokiebisu/airbnb-client ./client
+          name: building client image
+          command: docker build -t kokiebisu/nextbnb-client ./client
       - run:
-          name: Login
+          name: logging into docker hub
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run:
-          name: Pushing to Client
-          command: docker push kokiebisu/airbnb-client
+          name: pushing to docker hub
+          command: docker push kokiebisu/nextbnb-client
 
 workflows:
   version: 2
-  build-test-and-deploy:
+  auth:
     jobs:
-      - test
-      - docker_hub:
+      - test-auth
+      - deploy-auth:
           requires:
-            - test
+            - test-auth
+  stays:
+    jobs:
+      - test-stays
+      - deploy-stays:
+          requires:
+            - test-stays
+  client:
+    jobs:
+      - test-client
+      - deploy-client:
+          requires:
+            - test-client
