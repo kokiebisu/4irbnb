@@ -95,13 +95,14 @@ workflows:
     jobs:
       - test-auth
       - deploy-auth:
-        requires:
-          - test-auth
+          requires:
+            - test-auth
   stays:
     jobs:
       - test-stays
       - deploy-stays:
-          - test-stays
+          requires:
+            - test-stays
   client:
     jobs:
       - test-client
