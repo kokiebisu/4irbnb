@@ -1,17 +1,14 @@
-import React from 'react';
+import React from "react";
 
-/**
- * Styles
- */
-import font from '../../../styles/font.module.scss';
-import space from '../../../styles/space.module.scss';
-import layout from '../../../styles/layout.module.scss';
-import shape from '../../../styles/space.module.scss';
+/** Styles */
+import font from "../../../styles/font.module.scss";
+import space from "../../../styles/space.module.scss";
+import layout from "../../../styles/layout.module.scss";
+import shape from "../../../styles/space.module.scss";
+import color from "../../../styles/color.module.scss";
 
-/**
- * Props
- */
-import { ScoreBulletProps } from './props';
+/** Props */
+import { ScoreBulletProps } from "./props";
 
 /**
  * Renders the score bullet
@@ -19,45 +16,48 @@ import { ScoreBulletProps } from './props';
  * @param {number} average - Average score
  */
 export const ScoreBullet: React.FC<ScoreBulletProps> = ({
-  category = 'Aspect',
+  category = "Aspect",
   average = 5.0,
 }) => {
   return (
     <div
       className={[
-        space['p-v--2'],
-        layout['flex'],
-        layout['items-center'],
-        layout['justify-between'],
-        shape['w--50p'],
-      ].join(' ')}>
-      <p className={[font['weight--300']].join(' ')}>{category}</p>
+        space["p-v--2"],
+        layout["flex"],
+        layout["items-center"],
+        layout["justify-between"],
+        shape["w--50p"],
+      ].join(" ")}
+    >
+      <p className={[font["weight--300"]].join(" ")}>{category}</p>
       <div
         className={[
-          layout['flex'],
-          layout['items-center'],
-          shape['w-full'],
-        ].join(' ')}>
-        <div style={{ width: '100%' }}>
+          layout["flex"],
+          layout["items-center"],
+          shape["w-full"],
+        ].join(" ")}
+      >
+        <div>
           <div
-            style={{
-              backgroundColor: 'lightgray',
-              position: 'relative',
-              height: 4,
-              width: '100%',
-            }}>
+            className={[
+              color["bg--white__3"],
+              layout["relative"],
+              shape["h__4"],
+            ].join(" ")}
+          >
             <span
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                bottom: 0,
-                backgroundColor: 'black',
-                width: '50%',
-              }}></span>
+              className={[
+                layout["absolute"],
+                layout["t--0"],
+                layout["l--0"],
+                layout["b--0"],
+                layout["bg--black"],
+                shape["w--50p"],
+              ].join(" ")}
+            ></span>
           </div>
         </div>
-        <p className={[space['p-r--16'], font['size--12']].join(' ')}>
+        <p className={[space["p-r--16"], font["size--12"]].join(" ")}>
           {average}
         </p>
       </div>
