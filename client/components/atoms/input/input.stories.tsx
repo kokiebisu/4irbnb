@@ -1,12 +1,12 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import React from "react";
+import { Story, Meta } from "@storybook/react/types-6-0";
 
-import { Input } from './input.component';
+import { Input } from "./input.component";
 
-import { InputProps } from './props';
+import { InputProps } from "./props";
 
 export default {
-  title: 'Design System/Atoms/Input',
+  title: "Design System/Atoms/Input",
   component: Input,
   decorators: [
     (Story) => (
@@ -24,57 +24,67 @@ export default {
   },
 } as Meta;
 
-const InputTemplate: Story<InputProps> = (args) => <Input {...args} />;
+const InputStories: Story<InputProps> = (args) => <Input {...args} />;
 
-export const email = InputTemplate.bind({});
+export const email = InputStories.bind({});
 email.args = {
-  type: 'email',
+  type: "email",
 };
 
-export const password = InputTemplate.bind({});
+export const password = InputStories.bind({});
 password.args = {
-  type: 'password',
+  type: "password",
 };
 
-export const name = InputTemplate.bind({});
+export const name = InputStories.bind({});
 name.args = {
-  type: 'name',
+  type: "name",
 };
 name.argTypes = {
   name: {
     control: {
-      type: 'select',
-      options: ['firstname', 'lastname'],
+      type: "select",
+      options: ["firstname", "lastname"],
     },
   },
 };
 
-export const birthdate = InputTemplate.bind({});
+export const birthdate = InputStories.bind({});
 birthdate.args = {
-  type: 'birthdate',
+  type: "birthdate",
 };
 
-export const phone = InputTemplate.bind({});
+export const phone = InputStories.bind({});
 phone.args = {
-  type: 'phone',
+  type: "phone",
 };
 
-export const region = InputTemplate.bind({});
+export const region = InputStories.bind({});
 region.args = {
-  type: 'region',
+  type: "region",
 };
 
-export const place = InputTemplate.bind({});
+export const place = InputStories.bind({});
 place.args = {
-  type: 'place',
+  type: "place",
 };
 
-export const guests = InputTemplate.bind({});
+export const guests = InputStories.bind({});
 guests.args = {
-  type: 'guests',
+  type: "guests",
 };
 
-export const address = InputTemplate.bind({});
+export const address = InputStories.bind({});
 address.args = {
-  type: 'address',
+  type: "address",
+};
+
+export const select = InputStories.bind({});
+select.args = {
+  type: "select",
+};
+
+export const radio = InputStories.bind({});
+radio.args = {
+  type: "radio",
 };
