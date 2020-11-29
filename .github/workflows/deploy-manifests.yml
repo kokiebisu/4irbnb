@@ -16,4 +16,4 @@ jobs:
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
       - run: doctl kubernetes cluster kubeconfig save nextbnb
-      - run: kubectl apply -f infrastructure/kubernetes
+      - run: kubectl apply -f infrastructure/kubernetes && kubectl apply -f infrastructure/prod
