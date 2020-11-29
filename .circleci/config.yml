@@ -14,6 +14,21 @@ jobs:
           name: testing
           command: yarn test:ci
 
+  deploy-auth:
+    working_directory: ~/app
+    machine: true
+    steps:
+      - checkout:
+      - run:
+          name: building auth image
+          command: docker build -t kokiebisu/nextbnb-auth ./auth
+      - run:
+          name: logging
+          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run:
+          name: pushing to docker hub
+          command: docker push kokiebisu/nextbnb-auth
+
   test-stays:
     working_directory: ~/airbnb/stays
     docker:
@@ -28,6 +43,21 @@ jobs:
           name: testing
           command: yarn test:ci
 
+  deploy-stays:
+    working_directory: ~/app
+    machine: true
+    steps:
+      - checkout:
+      - run:
+          name: building stays image
+          command: docker build -t kokiebisu/nextbnb-stays ./stays
+      - run:
+          name: logging
+          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run:
+          name: pushing to docker hub
+          command: docker push kokiebisu/nextbnb-stays
+
   test-client:
     working_directory: ~/airbnb/client
     docker:
@@ -36,7 +66,7 @@ jobs:
       - checkout:
           path: ~/airbnb
       - run:
-          name: install dependencies
+          name: installing dependencies
           command: yarn install
       - run:
           name: testing snapshot
@@ -44,32 +74,37 @@ jobs:
       - run:
           name: comparing snapshots
           command: npx chromatic --project-token=e017nqnn22h --exit-zero-on-changes
-  docker_hub:
+  deploy-client:
     working_directory: ~/app
     machine: true
     steps:
       - checkout:
       - run:
-          name: Building Client Image
-          command: docker build -t kokiebisu/airbnb-client ./client
+          name: building client image
+          command: docker build -t kokiebisu/nextbnb-client ./client
       - run:
-          name: Login
+          name: logging into docker hub
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run:
-          name: Pushing to Client
-          command: docker push kokiebisu/airbnb-client
+          name: pushing to docker hub
+          command: docker push kokiebisu/nextbnb-client
 
 workflows:
   version: 2
-  client:
-    jobs:
-      - test-client
-      - docker_hub:
-          requires:
-            - test-client
   auth:
     jobs:
       - test-auth
+      - deploy-auth:
+        requires:
+          - test-auth
   stays:
     jobs:
       - test-stays
+      - deploy-stays:
+          - test-stays
+  client:
+    jobs:
+      - test-client
+      - deploy-client:
+          requires:
+            - test-client
