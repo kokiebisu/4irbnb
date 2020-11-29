@@ -4,6 +4,7 @@ deploy:
   kubectl:
     manifests:
       - ./infrastructure/kubernetes/*
+      - ./infrastructure/dev/*
 build:
   local:
     push: false
@@ -14,16 +15,16 @@ build:
         dockerfile: Dockerfile
       sync:
         infer:
-          - '**/*.ts'
-          - '**/*.tsx'
-          - '**/*.scss'
+          - "**/*.ts"
+          - "**/*.tsx"
+          - "**/*.scss"
     - image: kokiebisu/nextbnb-auth
       context: auth
       docker:
         dockerfile: Dockerfile
       sync:
         manual:
-          - src: 'src/**/*.ts'
+          - src: "src/**/*.ts"
             dest: .
     - image: kokiebisu/nextbnb-stay
       context: stays
@@ -31,5 +32,5 @@ build:
         dockerfile: Dockerfile
       sync:
         manual:
-          - src: 'src/**/*.ts'
+          - src: "src/**/*.ts"
             dest: .
