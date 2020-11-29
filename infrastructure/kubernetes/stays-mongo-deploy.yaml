@@ -1,28 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: stay-mongo-deploy
+  name: stays-mongo-deploy
 spec:
   replicas:
   selector:
     matchLabels:
-      app: stay-mongo
+      app: stays-mongo
   template:
     metadata:
       labels:
-        app: stay-mongo
+        app: stays-mongo
     spec:
       containers:
-        - name: stay-mongo
+        - name: stays-mongo
           image: mongo
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: stay-mongo-service
+  name: stays-mongo-service
 spec:
   selector:
-    app: stay-mongo
+    app: stays-mongo
   ports:
     - name: db
       protocol: TCP
