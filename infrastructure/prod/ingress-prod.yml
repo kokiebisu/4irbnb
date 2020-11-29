@@ -7,7 +7,7 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   rules:
-    - host: nextbnb.ca
+    - host: www.nextbnb.dev
       http:
         paths:
           - path: /api/stays/?(.*)
