@@ -1,23 +1,23 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 /**
  * Styles
  */
-import layout from '../../../styles/layout.module.scss';
-import space from '../../../styles/space.module.scss';
-import font from '../../../styles/font.module.scss';
-import section from './section.module.scss';
+import layout from "../../../styles/layout.module.scss";
+import space from "../../../styles/space.module.scss";
+import font from "../../../styles/font.module.scss";
+import section from "./section.module.scss";
 
 /**
  * Components
  */
-import { Card } from '../../atoms/card/card.component';
-import { Button } from '../../../components/atoms/button/button.component';
+import { Card } from "../../molecules/card/card.component";
+import { Button } from "../../../components/atoms/button/button.component";
 
 /**
  * Props
  */
-import { AvailableSectionProps } from './props';
+import { AvailableSectionProps } from "./props";
 
 /**
  * Renders the available section
@@ -26,38 +26,38 @@ import { AvailableSectionProps } from './props';
 export const AvailableSection: React.FC<AvailableSectionProps> = ({
   availables = [
     {
-      date: 'Tue., Nov. 10',
-      from: '1:00 a.m. ',
-      to: '3:00 a.m. ',
-      standard: 'PST',
+      date: "Tue., Nov. 10",
+      from: "1:00 a.m. ",
+      to: "3:00 a.m. ",
+      standard: "PST",
       price: 31,
     },
     {
-      date: 'Tue., Nov. 10',
-      from: '1:00 a.m. ',
-      to: '3:00 a.m. ',
-      standard: 'PST',
+      date: "Tue., Nov. 10",
+      from: "1:00 a.m. ",
+      to: "3:00 a.m. ",
+      standard: "PST",
       price: 31,
     },
     {
-      date: 'Tue., Nov. 11',
-      from: '1:00 a.m. ',
-      to: '3:00 a.m. ',
-      standard: 'PST',
+      date: "Tue., Nov. 11",
+      from: "1:00 a.m. ",
+      to: "3:00 a.m. ",
+      standard: "PST",
       price: 31,
     },
     {
-      date: 'Tue., Nov. 12',
-      from: '1:00 a.m. ',
-      to: '3:00 a.m. ',
-      standard: 'PST',
+      date: "Tue., Nov. 12",
+      from: "1:00 a.m. ",
+      to: "3:00 a.m. ",
+      standard: "PST",
       price: 31,
     },
     {
-      date: 'Tue., Nov. 13',
-      from: '1:00 a.m. ',
-      to: '3:00 a.m. ',
-      standard: 'PST',
+      date: "Tue., Nov. 13",
+      from: "1:00 a.m. ",
+      to: "3:00 a.m. ",
+      standard: "PST",
       price: 31,
     },
   ],
@@ -91,10 +91,10 @@ export const AvailableSection: React.FC<AvailableSectionProps> = ({
   };
 
   useLayoutEffect(() => {
-    window.addEventListener('resize', handleRef);
+    window.addEventListener("resize", handleRef);
     handleRef();
     return () => {
-      window.removeEventListener('resize', handleRef);
+      window.removeEventListener("resize", handleRef);
     };
   });
 
@@ -115,32 +115,33 @@ export const AvailableSection: React.FC<AvailableSectionProps> = ({
   };
 
   return (
-    <div style={{ overflowX: 'hidden' }}>
+    <div style={{ overflowX: "hidden" }}>
       <div
         ref={containerRef}
         className={[
-          layout['flex'],
-          layout['items-center'],
-          layout['justify-between'],
-        ].join(' ')}>
-        <div className={[space['m-v--16']].join(' ')}>
-          <h3 className={[font['size--20']].join(' ')}>
+          layout["flex"],
+          layout["items-center"],
+          layout["justify-between"],
+        ].join(" ")}
+      >
+        <div className={[space["m-v--16"]].join(" ")}>
+          <h3 className={[font["size--20"]].join(" ")}>
             Choose from available dates
           </h3>
         </div>
-        <div className={[layout['flex'], layout['items-center']].join(' ')}>
-          <div className={[space['m-h--4']].join(' ')}>
+        <div className={[layout["flex"], layout["items-center"]].join(" ")}>
+          <div className={[space["m-h--4"]].join(" ")}>
             <Button
-              type='paginate'
-              direction='left'
+              type="paginate"
+              direction="left"
               onPress={previous}
               disable={state.activeSlide === 0}
             />
           </div>
-          <div className={[space['m-h--4']].join(' ')}>
+          <div className={[space["m-h--4"]].join(" ")}>
             <Button
-              type='paginate'
-              direction='right'
+              type="paginate"
+              direction="right"
               onPress={next}
               disable={
                 state.activeSlide ===
@@ -152,21 +153,23 @@ export const AvailableSection: React.FC<AvailableSectionProps> = ({
       </div>
       <div
         style={{
-          height: '100%',
+          height: "100%",
           width: width * (availables.length / displayingColumns),
           transform: `translateX(-${state.translate}px)`,
           transition: `transform ease-out ${state.transition}s`,
-        }}>
-        <div style={{ display: 'flex' }}>
+        }}
+      >
+        <div style={{ display: "flex" }}>
           {availables.map((available, index) => {
             return (
               <div
                 style={{ width: width / displayingColumns }}
                 key={index}
-                className={[section['w__nearby']].join(' ')}>
-                <div className={[space['m-b--10'], space['m-r--16']].join(' ')}>
+                className={[section["w__nearby"]].join(" ")}
+              >
+                <div className={[space["m-b--10"], space["m-r--16"]].join(" ")}>
                   <Card
-                    type='available'
+                    type="available"
                     date={available.date}
                     from={available.from}
                     to={available.to}
@@ -179,8 +182,8 @@ export const AvailableSection: React.FC<AvailableSectionProps> = ({
           })}
         </div>
       </div>
-      <div className={[space['m-t--32']].join(' ')}>
-        <Button type='border' title='See more dates' />
+      <div className={[space["m-t--32"]].join(" ")}>
+        <Button type="border" title="See more dates" />
       </div>
     </div>
   );

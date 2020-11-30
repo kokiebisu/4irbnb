@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import 'components/molecules/card/__tests__/node_modules/@testing-library/jest-dom/extend-expect';
 import { Button } from '../button.component';
 import { privacy, menu, host, globe, border, banner } from '../button.stories';
 import { ContextProvider } from '../../../../context/provider';
