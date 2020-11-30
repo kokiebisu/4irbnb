@@ -3,7 +3,7 @@ import React from 'react';
 /**
  * Components
  */
-import { Card } from '../../../components/atoms/card/card.component';
+import { Card } from '../../molecules/card/card.component';
 
 /**
  * Props

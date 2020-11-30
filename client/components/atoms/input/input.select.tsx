@@ -16,7 +16,8 @@ import { SelectInputProps } from "./props";
 import { ChevronDown, ChevronTop } from "../../../public/svg/regular";
 
 /** Options */
-import { inputTypes } from "./options/option.types";
+import { inputTypes } from "./logic/logic.types";
+import { renderShape } from "./logic/logic.select";
 
 /**
  * Renders the text input component
@@ -37,31 +38,10 @@ export const SelectInput: React.FC<SelectInputProps> = ({
 }): JSX.Element => {
   const [fieldActive, setFieldActive] = useState(false);
 
-  const renderShape = () => {
-    switch (direction) {
-      case "top":
-        return [
-          color["b-b--white__3"],
-          color["b-l--white__3"],
-          color["b-r--white__3"],
-          shape["bbr--6"],
-        ].join(" ");
-      case "bottom":
-        return [
-          color["b-t--white__3"],
-          color["b-l--white__3"],
-          color["b-r--white__3"],
-          shape["btr--6"],
-        ].join(" ");
-      default:
-        return [color["b--white__3"], shape["br--8"]].join(" ");
-    }
-  };
-
   return (
     <div
-      style={{ height: 50 }}
       className={`${[
+        shape["h--50"],
         layout["flex"],
         input["outside"],
         layout["relative"],
@@ -69,7 +49,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({
       ].join(" ")} `}
     >
       <div
-        className={`${renderShape()} ${styleContainer(
+        className={`${renderShape(direction)} ${styleContainer(
           errors,
           fieldActive,
           value

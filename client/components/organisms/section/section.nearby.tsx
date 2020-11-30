@@ -9,7 +9,7 @@ import section from './section.module.scss';
 /**
  * Components
  */
-import { Card } from '../../../components/atoms/card/card.component';
+import { Card } from '../../molecules/card/card.component';
 
 /**
  * Props
