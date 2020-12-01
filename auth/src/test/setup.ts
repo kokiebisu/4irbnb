@@ -1,11 +1,11 @@
-import { MongoMemoryServer } from 'mongodb-memory-server';
-import mongoose from 'mongoose';
+import { MongoMemoryServer } from "mongodb-memory-server";
+import mongoose from "mongoose";
 
 let mongo: any;
 
 // runs before all tests
 beforeAll(async () => {
-  process.env.JWT_KEY = 'test';
+  process.env.JWT_KEY = "test";
   mongo = new MongoMemoryServer();
   const mongoUri = await mongo.getUri();
 
