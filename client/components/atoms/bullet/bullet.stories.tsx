@@ -1,10 +1,10 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { BulletProps } from './props';
-import { Bullet } from './bullet.component';
+import React from "react";
+import { Story, Meta } from "@storybook/react/types-6-0";
+import { BulletProps } from "./props";
+import { Bullet } from "./bullet.component";
 
 export default {
-  title: 'Design System/Atoms/Bullet',
+  title: "Design System/Atoms/Bullet",
   component: Bullet,
   argTypes: {
     type: {
@@ -20,36 +20,36 @@ const BulletTemplate: Story<BulletProps> = (args) => <Bullet {...args} />;
 
 export const characteristic = BulletTemplate.bind({});
 characteristic.args = {
-  type: 'characteristic',
+  type: "characteristic",
 };
 characteristic.argTypes = {
   characteristicType: {
     control: {
-      type: 'select',
-      options: ['house', 'sparkle', 'door', 'calendar', 'guidelines', 'time'],
+      type: "select",
+      options: ["house", "sparkle", "door", "calendar", "guidelines", "time"],
     },
   },
 };
 
 export const amenity = BulletTemplate.bind({});
 amenity.args = {
-  type: 'amenity',
+  type: "amenity",
 };
 amenity.argTypes = {
   removed: {
-    control: 'boolean',
+    control: "boolean",
   },
   amenityType: {
     control: {
-      type: 'select',
-      options: ['smoke', 'tv', 'kitchen', 'heating', 'entrance', 'carbon'],
+      type: "select",
+      options: ["smoke", "tv", "kitchen", "heating", "entrance", "carbon"],
     },
   },
 };
 
 export const review = BulletTemplate.bind({});
 review.args = {
-  type: 'score',
+  type: "score",
 };
 review.decorators = [
   (Story) => (
@@ -61,24 +61,24 @@ review.decorators = [
 
 export const know = BulletTemplate.bind({});
 know.args = {
-  type: 'know',
+  type: "know",
 };
 know.argTypes = {
   categoryType: {
     control: {
-      type: 'select',
+      type: "select",
       options: [
-        'checkin',
-        'checkout',
-        'self',
-        'children',
-        'smoking',
-        'pets',
-        'parties',
-        'cleaning',
-        'distancing',
-        'caution',
-        'check',
+        "checkin",
+        "checkout",
+        "self",
+        "children",
+        "smoking",
+        "pets",
+        "parties",
+        "cleaning",
+        "distancing",
+        "caution",
+        "check",
       ],
     },
   },
@@ -86,67 +86,72 @@ know.argTypes = {
 
 export const rating = BulletTemplate.bind({});
 rating.args = {
-  type: 'rating',
+  type: "rating",
 };
 
 export const bring = BulletTemplate.bind({});
 bring.args = {
-  type: 'bring',
+  type: "bring",
 };
 
 export const experience = BulletTemplate.bind({});
 experience.args = {
-  type: 'experience',
+  type: "experience",
 };
 experience.argTypes = {
-  experienceType: {
+  experience: {
     control: {
-      type: 'select',
-      options: ['host', 'activities', 'global'],
+      type: "select",
+      options: ["host", "activities", "global"],
     },
   },
 };
 
 export const priority = BulletTemplate.bind({});
 priority.args = {
-  type: 'priority',
+  type: "priority",
 };
 priority.argTypes = {
   priority: {
     control: {
-      type: 'select',
-      options: ['protection', 'guidance', 'requirements'],
+      type: "select",
+      options: ["protection", "guidance", "requirements"],
     },
   },
 };
 
 export const help = BulletTemplate.bind({});
 help.args = {
-  type: 'help',
+  type: "help",
 };
 help.argTypes = {
   help: {
     control: {
-      type: 'select',
-      options: ['support', 'tools', 'insights', 'education'],
+      type: "select",
+      options: ["support", "tools", "insights", "education"],
     },
   },
 };
 
 export const required = BulletTemplate.bind({});
 required.args = {
-  type: 'required',
+  type: "required",
 };
 
 export const onlinehost = BulletTemplate.bind({});
 onlinehost.args = {
-  type: 'onlinehost',
+  type: "onlinehost",
 };
 onlinehost.argTypes = {
   bullet: {
     control: {
-      type: 'select',
-      options: ['home', 'global', 'business'],
+      type: "select",
+      options: ["home", "global", "business"],
     },
   },
+};
+
+export const score = BulletTemplate.bind({});
+score.args = {
+  type: "score",
 };

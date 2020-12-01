@@ -1,21 +1,15 @@
-import React from 'react';
+import React from "react";
 
-/**
- * Styles
- */
-import layout from '../../../styles/layout.module.scss';
-import space from '../../../styles/space.module.scss';
-import font from '../../../styles/font.module.scss';
+/** Styles */
+import layout from "../../../styles/layout.module.scss";
+import space from "../../../styles/space.module.scss";
+import font from "../../../styles/font.module.scss";
 
-/**
- * Vectors
- */
-import { Star, Superhost, Verified } from '../../../public/svg/original';
+/** Vectors */
+import { Star, Superhost, Verified } from "../../../public/svg/original";
 
-/**
- * Props
- */
-import { HostBulletProps } from './props';
+/** Props */
+import { HostBulletProps } from "./props";
 
 /**
  * Renders the host bullet
@@ -23,28 +17,29 @@ import { HostBulletProps } from './props';
  * @param {number} total - Number of reviews
  */
 export const HostBullet: React.FC<HostBulletProps> = ({
-  categoryType = 'review',
+  categoryType = "review",
   total = 100,
 }) => {
   const categories = {
     review: { icon: <Star width={16} />, description: `${total} Reviews` },
     verified: {
       icon: <Verified width={16} />,
-      description: 'Identity verified',
+      description: "Identity verified",
     },
-    superhost: { icon: <Superhost width={16} />, description: 'Superhost' },
+    superhost: { icon: <Superhost width={16} />, description: "Superhost" },
   };
   return (
     <div
       className={[
-        layout['flex'],
-        layout['items-center'],
-        space['m-r--18'],
-      ].join(' ')}>
-      <div className={[space['m-r--8']].join(' ')}>
+        layout["flex"],
+        layout["items-center"],
+        space["m-r--18"],
+      ].join(" ")}
+    >
+      <div className={[space["m-r--8"]].join(" ")}>
         {categories[categoryType].icon}
       </div>
-      <p className={[font['weight--100']].join(' ')}>
+      <p className={[font["weight--100"]].join(" ")}>
         {categories[categoryType].description}
       </p>
     </div>

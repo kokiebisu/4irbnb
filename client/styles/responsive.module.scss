@@ -1,83 +1,53 @@
-$breakpoints: (
-  sm: 728,
-  md: 1028,
-  lg: 1326,
+$breakpoint--sm: 728px;
+$breakpoint--md: 1028px;
+$breakpoint--lg: 1326px;
+
+$breakpoints: (sm, md, lg);
+
+$displays: (
+  b: block,
+  i: inline-block,
+  f: flex,
+  n: none,
 );
 
-$percentage: (
-  55: percentage(0.55),
+$percentages: (
+  55: percentage(55),
 );
+@mixin respond-to($media) {
+  @if $media == sm {
+    @media only screen and (min-width: $breakpoint--sm) {
+      @content;
+    }
+  } @else if $media == md {
+    @media only screen and (min-width: $breakpoint--md) {
+      @content;
+    }
+  } @else if $media == lg {
+    @media only screen and (min-width: $breakpoint--lg) {
+      @content;
+    }
+  }
+}
 
-@each $name, $point in $breakpoints {
-  .i_to_b--#{$name} {
-    display: inline-block;
+@each $breakpoint in $breakpoints {
+  @each $display_name_1, $display_value_1 in $displays {
+    @each $display_name_2, $display_value_2 in $displays {
+      .#{$display_name_1}_to_#{$display_name_2}--#{$breakpoint} {
+        display: #{$display_value_1};
 
-    @media screen and (min-width: #{$point}px) {
-      display: block;
+        @include respond-to(#{$breakpoint}) {
+          display: #{$display_value_2};
+        }
+      }
     }
   }
 
-  .b_to_i--#{$name} {
-    display: block;
+  @each $percentage_name, $percentage_value in $percentages {
+    .w#{$percentage_name}p_to_100--#{$breakpoint} {
+      width: #{$percentage_value};
 
-    @media screen and (min-width: #{$point}px) {
-      display: inline-block;
-    }
-  }
-
-  .b_to_f--#{$name} {
-    display: block;
-
-    @media screen and (min-width: #{$point}px) {
-      display: flex;
-    }
-  }
-
-  .f_to_b--#{$name} {
-    display: flex;
-
-    @media screen and (min-width: #{$point}px) {
-      display: block;
-    }
-  }
-
-  .n_to_b--#{$name} {
-    display: none;
-
-    @media screen and (min-width: #{$point}px) {
-      display: block;
-    }
-  }
-
-  .b_to_n--#{$name} {
-    display: block;
-
-    @media screen and (min-width: #{$point}px) {
-      display: none;
-    }
-  }
-
-  .n_to_f--#{$name} {
-    display: none;
-
-    @media screen and (min-width: #{$point}px) {
-      display: flex;
-    }
-  }
-
-  .f_to_n--#{$name} {
-    display: flex;
-
-    @media screen and (min-width: #{$point}px) {
-      display: none;
-    }
-  }
-
-  @each $name, $value in $percentage {
-    .w#{$name}p_to_100--#{$name} {
-      width: #{value};
-
-      @media screen and (min-width: #{$point}px) {
+      @include respond-to(#{$breakpoint}) {
         width: 100%;
       }
     }

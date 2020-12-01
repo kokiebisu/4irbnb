@@ -7,7 +7,7 @@ import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
 /** Components */
-import { properties } from "../../../components/atoms/input/options/option.types";
+import { properties } from "../../atoms/input/logic/logic.types";
 
 export const KindCreate: React.FC<KindCreateProps> = () => {
   const [place, setPlace] = useState(undefined);

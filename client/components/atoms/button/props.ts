@@ -19,7 +19,7 @@ interface InverseProps {
 }
 
 export interface AuthButtonProps {
-  platform?: string;
+  auth?: string;
   icon?: any;
 }
 
@@ -43,14 +43,14 @@ export interface BorderButtonProps
   extends LinkButtonProps,
     InverseProps,
     TitleProps {
-  size?: 'sm' | 'md' | 'lg';
+  size?: "sm" | "md" | "lg";
   spread?: boolean;
 }
 
 export interface BannerButtonProps extends LinkButtonProps, TitleProps {}
 
 export interface PrimaryButtonProps extends TitleProps, OnPressProps {
-  size?: 'sm' | 'md' | 'lg';
+  size?: "sm" | "md" | "lg";
   spread?: boolean;
   fill?: string;
   loading?: boolean;
@@ -66,7 +66,7 @@ export interface PaginateButtonProps {
 
 export interface ModalButtonProps {
   onPress?: () => void;
-  modalType?: 'close' | 'back';
+  modalType?: "close" | "back";
 }
 
 export interface ExpandButtonProps extends LinkButtonProps, TitleProps {}

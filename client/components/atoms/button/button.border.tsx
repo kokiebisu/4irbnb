@@ -1,19 +1,15 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 
-/**
- * Styles
- */
-import layout from '../../../styles/layout.module.scss';
-import font from '../../../styles/font.module.scss';
-import shape from '../../../styles/shape.module.scss';
-import space from '../../../styles/space.module.scss';
-import color from '../../../styles/color.module.scss';
+/** Styles */
+import layout from "../../../styles/layout.module.scss";
+import font from "../../../styles/font.module.scss";
+import shape from "../../../styles/shape.module.scss";
+import space from "../../../styles/space.module.scss";
+import color from "../../../styles/color.module.scss";
 
-/**
- * Props
- */
-import { BorderButtonProps } from './props';
+/** Props */
+import { BorderButtonProps } from "./props";
 
 /**
  * Renders the border button props
@@ -24,80 +20,83 @@ import { BorderButtonProps } from './props';
  * @param {boolean} spread - Whether if the button takes full width of the parent
  */
 export const BorderButton: React.FC<BorderButtonProps> = ({
-  to = '/',
-  title = 'Button',
+  to = "/",
+  title = "Button",
   inverse = false,
-  size = 'md',
+  size = "md",
   spread = false,
 }) => {
   const components = {
     sm: (
-      <div className={color['bg--transparent']} data-testid='button'>
+      <div className={color["bg--transparent"]} data-testid="button">
         <Link href={to}>
           <a
-            style={{ whiteSpace: 'nowrap' }}
-            className={`${spread ? layout['block'] : layout['inline-block']} ${[
-              font['text--center'],
-              font['size--14'],
-              font['weight--500'],
-              shape['br--6'],
-              space['p-t--6'],
-              space['p-b--6'],
-              space['p-l--14'],
-              space['p-r--14'],
-            ].join(' ')} ${
+            className={`${spread ? layout["block"] : layout["inline-block"]} ${[
+              font["text--center"],
+              font["size--14"],
+              font["weight--500"],
+              shape["br--6"],
+              space["p-t--6"],
+              space["p-b--6"],
+              space["p-l--14"],
+              space["p-r--14"],
+              font["no-wrap"],
+            ].join(" ")} ${
               inverse
-                ? [color['b--white__0'], color['c--white__0']].join(' ')
-                : [color['b--black']].join(' ')
-            }`}>
+                ? [color["b--white__0"], color["c--white__0"]].join(" ")
+                : [color["b--black"]].join(" ")
+            }`}
+          >
             {title}
           </a>
         </Link>
       </div>
     ),
     md: (
-      <div className={color['bg--transparent']} data-testid='button'>
+      <div className={color["bg--transparent"]} data-testid="button">
         <Link href={to}>
           <a
-            style={{ whiteSpace: 'nowrap' }}
-            className={`${spread ? layout['block'] : layout['inline-block']} ${[
-              font['text--center'],
-              font['size--16'],
-              font['weight--500'],
-              shape['br--6'],
-              space['p-t--12'],
-              space['p-b--12'],
-              space['p-l--22'],
-              space['p-r--22'],
-            ].join(' ')} ${
+            className={`${spread ? layout["block"] : layout["inline-block"]} ${[
+              font["text--center"],
+              font["size--16"],
+              font["weight--500"],
+              shape["br--6"],
+              space["p-t--12"],
+              space["p-b--12"],
+              space["p-l--22"],
+              space["p-r--22"],
+              font["no-wrap"],
+            ].join(" ")} ${
               inverse
-                ? [color['b--white__0'], color['c--white__0']].join(' ')
-                : [color['b--black']].join(' ')
-            }`}>
+                ? [color["b--white__0"], color["c--white__0"]].join(" ")
+                : [color["b--black"]].join(" ")
+            }`}
+          >
             {title}
           </a>
         </Link>
       </div>
     ),
     lg: (
-      <div className={color['bg--transparent']} data-testid='button'>
+      <div className={color["bg--transparent"]} data-testid="button">
         <Link href={to}>
           <a
-            style={{ whiteSpace: 'nowrap' }}
-            className={`${spread ? layout['block'] : layout['inline-block']} ${[
-              font['text--center'],
-              font['size--18'],
-              font['weight--500'],
-              shape['br--6'],
-              space['p-t--16'],
-              space['p-b--16'],
-              space['p-l--14'],
-              space['p-r--14'],
-            ].join(' ')} ${
+            className={`${spread ? layout["block"] : layout["inline-block"]} ${[
+              font["text--center"],
+              font["size--18"],
+              font["weight--500"],
+              shape["br--6"],
+              space["p-t--16"],
+              space["p-b--16"],
+              space["p-l--14"],
+              space["p-r--14"],
+              font["no-wrap"],
+            ].join(" ")} ${
               inverse
-                ? [color['b--white__0'], color['c--white__0']].join(' ')
-                : [color['b--black']].join(' ')
-            }`}>
+                ? [color["b--white__0"], color["c--white__0"]].join(" ")
+                : [color["b--black"]].join(" ")
+            }`}
+          >
             {title}
           </a>
         </Link>

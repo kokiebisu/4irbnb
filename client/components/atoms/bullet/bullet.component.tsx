@@ -1,21 +1,19 @@
-import React from 'react';
+import React from "react";
 
-/**
- * Components
- */
-import { AmenityBullet } from './bullet.amenity';
-import { BringBullet } from './bullet.bring';
-import { CharacteristicBullet } from './bullet.characteristics';
-import { ExperienceBullet } from './bullet.experience';
-import { HelpBullet } from './bullet.help';
-import { HostBullet } from './bullet.host';
-import { KnowBullet } from './bullet.know';
-import { OnlineHostBullet } from './bullet.onlinehost';
-import { PriorityBullet } from './bullet.priority';
-import { RatingBullet } from './bullet.rating';
-import { RequiredBullet } from './bullet.required';
-import { ScoreBullet } from './bullet.score';
-import { BulletProps } from './props';
+/** Components */
+import { AmenityBullet } from "./bullet.amenity";
+import { BringBullet } from "./bullet.bring";
+import { CharacteristicBullet } from "./bullet.characteristics";
+import { ExperienceBullet } from "./bullet.experience";
+import { HelpBullet } from "./bullet.help";
+import { HostBullet } from "./bullet.host";
+import { KnowBullet } from "./bullet.know";
+import { OnlineHostBullet } from "./bullet.onlinehost";
+import { PriorityBullet } from "./bullet.priority";
+import { RatingBullet } from "./bullet.rating";
+import { RequiredBullet } from "./bullet.required";
+import { ScoreBullet } from "./bullet.score";
+import { BulletProps } from "./props";
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -47,7 +45,7 @@ export const Bullet: React.FC<BulletProps> = ({
   };
 
   return (
-    <div data-testid='bullet' className={extendsTo}>
+    <div data-testid="bullet" className={extendsTo}>
       {types[type]}
     </div>
   );
