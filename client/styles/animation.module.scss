@@ -4,22 +4,14 @@
   }
 }
 
-.hover-shadow--sm {
-  &:hover {
-    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-    transition: 0.3s all;
-  }
-}
-
-.hover-shadow--lg {
-  &:hover {
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
-    transition: 0.6s all;
-  }
-}
+$pixels: (
+  sm: 2,
+  md: 3,
+  lg: 4,
+);
 
 $colors: (
-  white__transparent: 'rgba(255, 255, 255, 0.2)',
+  white__transparent: "rgba(255, 255, 255, 0.2)",
   white__0: #ffffff,
   white__1: #f7f7f7,
   white__2: #dddddd,
@@ -27,8 +19,16 @@ $colors: (
   gray__1: #717171,
   gray__4: #363636,
   black: #000000,
-  'transparent': transparent,
+  "transparent": transparent,
 );
+
+@each $name, $value in $pixels {
+  .hover-shadow--#{$name} {
+    box-shadow: rgba(0, 0, 0, 0.18) 0px #{$value}px #{$value * 2}px;
+    transition: 0.3s all;
+  }
+}
+
 @each $color, $value in $colors {
   .hover-background--#{$color} {
     &:hover {

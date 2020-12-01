@@ -16,6 +16,9 @@ import { RadioInput } from "./input.radio";
 /** Props */
 import { InputProps } from "./props";
 
+/** Styles */
+import shape from "../../../styles/shape.module.scss";
+
 /**
  * Bundles the input components
  * @param {string} type - Specifies the type of input component
@@ -36,7 +39,7 @@ export const Input: React.FC<InputProps> = ({ type, spread, ...props }) => {
   };
 
   return (
-    <div style={{ width: spread && "100%" }} data-testid="input">
+    <div className={spread && [shape["w--full"]].join(" ")} data-testid="input">
       {types[type]}
     </div>
   );

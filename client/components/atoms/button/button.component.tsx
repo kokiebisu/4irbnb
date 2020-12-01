@@ -1,26 +1,24 @@
-import React from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
+import React from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
-/**
- * Components
- */
-import { AuthButton } from './button.auth';
-import { ButtonProps } from './props';
-import { GlobeButton } from './button.globe';
-import { HostButton } from './button.host';
-import { MenuButton } from './button.menu';
-import { PrivacyButton } from './button.privacy';
-import { BorderButton } from './button.border';
-import { BannerButton } from './button.banner';
-import { PrimaryButton } from './button.primary';
-import { SearchbarButton } from './button.searchbar';
-import { PaginateButton } from './button.paginate';
-import { ExpandButton } from './button.expand';
-import { OptionButton } from './button.option';
-import { UnderlineButton } from './button.underline';
-import { FilterButton } from './button.filter';
-import { ModalButton } from './button.modal';
+/** Components */
+import { AuthButton } from "./button.auth";
+import { ButtonProps } from "./props";
+import { GlobeButton } from "./button.globe";
+import { HostButton } from "./button.host";
+import { MenuButton } from "./button.menu";
+import { PrivacyButton } from "./button.privacy";
+import { BorderButton } from "./button.border";
+import { BannerButton } from "./button.banner";
+import { PrimaryButton } from "./button.primary";
+import { SearchbarButton } from "./button.searchbar";
+import { PaginateButton } from "./button.paginate";
+import { ExpandButton } from "./button.expand";
+import { OptionButton } from "./button.option";
+import { UnderlineButton } from "./button.underline";
+import { FilterButton } from "./button.filter";
+import { ModalButton } from "./button.modal";
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -64,10 +62,13 @@ export const Button: React.FC<ButtonProps> = ({
   if (to) {
     return (
       <div
-        style={{ cursor: 'pointer' }}
+        style={{ cursor: "pointer" }}
         className={extendsTo}
-        data-testid='button'>
-        <Link href={to}>{children}</Link>
+        data-testid="button"
+      >
+        <Link href={to}>
+          <a>{children}</a>
+        </Link>
       </div>
     );
   }
@@ -75,9 +76,10 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <motion.button
       whileTap={{ scale: 0.98 }}
-      data-testid='button'
+      data-testid="button"
       className={extendsTo}
-      onClick={onPress}>
+      onClick={onPress}
+    >
       {children}
     </motion.button>
   );

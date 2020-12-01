@@ -25,7 +25,7 @@ import { ReviewsSectionProps } from './props';
  */
 import { Button } from '../../../components/atoms/button/button.component';
 import { Bullet } from '../../../components/atoms/bullet/bullet.component';
-import { Card } from '../../../components/atoms/card/card.component';
+import { Card } from '../../molecules/card/card.component';
 
 /**
  * Renders the reviews section

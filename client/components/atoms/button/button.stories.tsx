@@ -1,12 +1,12 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { Button } from '../../../components/atoms/button/button.component';
+import React from "react";
+import { Story, Meta } from "@storybook/react/types-6-0";
+import { Button } from "../../../components/atoms/button/button.component";
 
-import { ButtonProps } from './props';
-import { ContextProvider } from '../../../context/provider';
+import { ButtonProps } from "./props";
+import { ContextProvider } from "../../../context/provider";
 
 export default {
-  title: 'Design System/Atoms/Button',
+  title: "Design System/Atoms/Button",
   component: Button,
   decorators: [
     (Story) => (
@@ -17,12 +17,9 @@ export default {
   ],
   argTypes: {
     inverse: {
-      control: 'boolean',
+      control: "boolean",
     },
     type: {
-      control: { disable: true },
-    },
-    platform: {
       control: { disable: true },
     },
     icon: {
@@ -57,28 +54,31 @@ const ButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const globe = ButtonTemplate.bind({});
 globe.args = {
-  type: 'globe',
+  type: "globe",
+};
+globe.argTypes = {
+  ...disableTitle,
 };
 
 export const host = ButtonTemplate.bind({});
 host.args = {
-  type: 'host',
+  type: "host",
 };
 
 export const menu = ButtonTemplate.bind({});
 menu.args = {
-  type: 'menu',
+  type: "menu",
 };
 menu.argTypes = {
   ...disableTitle,
   user: {
-    control: 'boolean',
+    control: "boolean",
   },
 };
 
 export const privacy = ButtonTemplate.bind({});
 privacy.args = {
-  type: 'privacy',
+  type: "privacy",
 };
 
 privacy.decorators = [
@@ -91,12 +91,23 @@ privacy.decorators = [
 
 export const border = ButtonTemplate.bind({});
 border.args = {
-  type: 'border',
+  type: "border",
+};
+border.argTypes = {
+  size: {
+    control: {
+      type: "select",
+      options: ["sm", "md", "lg"],
+    },
+  },
 };
 
 export const banner = ButtonTemplate.bind({});
 banner.args = {
-  type: 'banner',
+  type: "banner",
+};
+banner.argTypes = {
+  ...disableInverse,
 };
 
 banner.decorators = [
@@ -109,7 +120,7 @@ banner.decorators = [
 
 export const primary = ButtonTemplate.bind({});
 primary.args = {
-  type: 'primary',
+  type: "primary",
 };
 primary.decorators = [
   (Story) => (
@@ -121,18 +132,25 @@ primary.decorators = [
 primary.argTypes = {
   ...disableInverse,
   loading: {
-    control: 'boolean',
+    control: "boolean",
   },
 };
 
 export const searchbar = ButtonTemplate.bind({});
 searchbar.args = {
-  type: 'searchbar',
+  type: "searchbar",
+};
+searchbar.argTypes = {
+  ...disableInverse,
+  mini: {
+    control: "boolean",
+  },
 };
 
 export const auth = ButtonTemplate.bind({});
 auth.args = {
-  type: 'auth',
+  type: "auth",
+  ...disableInverse,
 };
 
 auth.decorators = [
@@ -143,75 +161,52 @@ auth.decorators = [
   ),
 ];
 
+auth.argTypes = {
+  auth: {
+    control: {
+      type: "select",
+      options: ["email", "facebook", "google", "apple"],
+    },
+  },
+};
+
 export const paginate = ButtonTemplate.bind({});
 paginate.args = {
-  type: 'paginate',
-};
-
-export const option = ButtonTemplate.bind({});
-option.args = {
-  type: 'option',
-};
-
-export const underline = ButtonTemplate.bind({});
-underline.args = {
-  type: 'underline',
-};
-
-export const filter = ButtonTemplate.bind({});
-filter.args = {
-  type: 'filter',
-};
-
-export const modal = ButtonTemplate.bind({});
-modal.args = {
-  type: 'modal',
-};
-modal.argTypes = {
-  modalType: {
-    control: {
-      type: 'select',
-      options: ['close', 'back'],
-    },
-  },
-};
-
-/**
- * Argtypes
- */
-
-globe.argTypes = {
-  ...disableTitle,
-};
-
-banner.argTypes = {
-  ...disableInverse,
-};
-
-searchbar.argTypes = {
-  ...disableInverse,
-};
-auth.argTypes = {
-  ...disableInverse,
-};
-searchbar.argTypes = {
-  mini: {
-    control: 'boolean',
-  },
-};
-border.argTypes = {
-  size: {
-    control: {
-      type: 'select',
-      options: ['sm', 'md', 'lg'],
-    },
-  },
+  type: "paginate",
 };
 paginate.argTypes = {
   direction: {
     control: {
-      type: 'select',
-      options: ['left', 'right'],
+      type: "select",
+      options: ["left", "right"],
+    },
+  },
+};
+
+export const option = ButtonTemplate.bind({});
+option.args = {
+  type: "option",
+};
+
+export const underline = ButtonTemplate.bind({});
+underline.args = {
+  type: "underline",
+};
+
+export const filter = ButtonTemplate.bind({});
+filter.args = {
+  type: "filter",
+};
+
+export const modal = ButtonTemplate.bind({});
+modal.args = {
+  type: "modal",
+};
+modal.argTypes = {
+  modalType: {
+    control: {
+      type: "select",
+      options: ["close", "back"],
     },
   },
 };

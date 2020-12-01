@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import { Password } from '../services/password';
+import mongoose from "mongoose";
+import { Password } from "../services/password";
 
 interface UserAttributes {
   email: string;
@@ -44,10 +44,10 @@ const userSchema = new mongoose.Schema(
  * being called. It hashes the newly built User document. When only
  * the email changes, it will not enter into the if condition.
  */
-userSchema.pre('save', async function (done) {
-  if (this.isModified('password')) {
-    const hashed = await Password.toHash(this.get('password'));
-    this.set('password', hashed);
+userSchema.pre("save", async function (done) {
+  if (this.isModified("password")) {
+    const hashed = await Password.toHash(this.get("password"));
+    this.set("password", hashed);
   }
   done();
 });
@@ -56,7 +56,7 @@ userSchema.statics.build = (attributes: UserAttributes) => {
   return new User(attributes);
 };
 
-const User = mongoose.model<UserDocument, UserModel>('User', userSchema);
+const User = mongoose.model<UserDocument, UserModel>("User", userSchema);
 
 const buildUser = (attributes: UserAttributes) => {
   return new User(attributes);
