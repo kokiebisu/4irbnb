@@ -45,6 +45,7 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({
               space["p-v--15"],
               space["p-l--18"],
               space["p-r--8"],
+              layout["flex"],
               layout["items-center"],
               layout["justify-between"],
             ].join(" ")}

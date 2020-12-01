@@ -66,7 +66,9 @@ export const Button: React.FC<ButtonProps> = ({
         className={extendsTo}
         data-testid="button"
       >
-        <Link href={to}>{children}</Link>
+        <Link href={to}>
+          <a>{children}</a>
+        </Link>
       </div>
     );
   }

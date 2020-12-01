@@ -51,7 +51,9 @@ export const CheckInCard: React.FC<CheckInCardProps> = () => {
         }}
       >
         <div className={[space["p-h--24"]].join(" ")}>
-          <div className={[layout["justify-between"]].join(" ")}>
+          <div
+            className={[layout["flex"], layout["justify-between"]].join(" ")}
+          >
             <h3
               className={[
                 space["p-v--10"],
@@ -197,6 +199,7 @@ export const CheckInCard: React.FC<CheckInCardProps> = () => {
                 <div
                   className={[
                     space["p-h--12"],
+                    layout["flex"],
                     layout["justify-between"],
                     layout["items-center"],
                   ].join(" ")}
