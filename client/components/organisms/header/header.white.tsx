@@ -1,36 +1,26 @@
 import React from "react";
 import Link from "next/link";
 
-/**
- * Styles
- */
+/** Styles */
 import shape from "../../../styles/shape.module.scss";
 import space from "../../../styles/space.module.scss";
 import styles from "../../../styles/index.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/**
- * Components
- */
+/** Components */
 import { menu as menuModal } from "../../organisms/modal/modal.stories";
 import { Modal } from "../modal/modal.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/**
- * Contexts
- */
+/** Contexts */
 import { useToggleState } from "../../../context/toggle";
 
-/**
- * Vectors
- */
+/** Vectors */
 import { NameLogo, NoNameLogo } from "../../../public/svg/logo";
 import { ChevronLeft } from "../../../public/svg/regular";
 
-/**
- * Props
- */
+/** Props */
 import { WhiteHeaderProps } from "./props";
 
 /**
@@ -41,6 +31,7 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
   spread = false,
   data,
 }) => {
+  console.log("white header data", data);
   let toggleState = useToggleState();
   return (
     <header
