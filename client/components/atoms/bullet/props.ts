@@ -45,15 +45,15 @@ export interface BringBulletProps {
 }
 
 export interface ExperienceBulletProps {
-  experienceType?: 'hosts' | 'activities' | 'global';
+  experience?: "hosts" | "activities" | "global";
 }
 
 export interface PriorityBulletProps {
-  priority?: 'protection' | 'guidance' | 'requirements';
+  priority?: "protection" | "guidance" | "requirements";
 }
 
 export interface HelpBulletProps {
-  help?: 'support' | 'tools' | 'insights' | 'education';
+  help?: "support" | "tools" | "insights" | "education";
 }
 
 export interface RequiredBulletProps {
