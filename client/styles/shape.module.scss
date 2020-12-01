@@ -1,4 +1,5 @@
 $pixels: (
+  1,
   3,
   4,
   5,
@@ -26,7 +27,10 @@ $pixels: (
   75,
   100,
   130,
-  140
+  140,
+  200,
+  210,
+  300
 );
 
 @each $pixel in $pixels {
@@ -74,8 +78,16 @@ $pixels: (
     width: #{$pixel}px;
   }
 
+  .min-w--#{$pixel} {
+    min-width: #{$pixel}px;
+  }
+
   .h--#{$pixel} {
     height: #{$pixel}px;
+  }
+
+  .min-h--#{$pixel} {
+    min-height: #{$pixel}px;
   }
 }
 

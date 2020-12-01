@@ -1,31 +1,25 @@
-import React from 'react';
+import React from "react";
 
-/**
- * Styles
- */
-import layout from '../../../styles/layout.module.scss';
-import space from '../../../styles/space.module.scss';
+/** Styles */
+import layout from "../../../styles/layout.module.scss";
+import space from "../../../styles/space.module.scss";
 
-/**
- * Vectors
- */
-import { CheckInverse } from '../../../public/svg/original';
+/** Vectors */
+import { CheckInverse } from "../../../public/svg/original";
 
-/**
- * Props
- */
-import { BringBulletProps } from './props';
+/** Props */
+import { BringBulletProps } from "./props";
 
 /**
  * Renders the bring bullet
  * @param {string} title - Description of the bullet
  */
 export const BringBullet: React.FC<BringBulletProps> = ({
-  title = 'Description here',
+  title = "Description here",
 }) => {
   return (
-    <div className={[layout['flex']].join(' ')}>
-      <div className={[space['m-r--16']].join(' ')}>
+    <div className={[layout["flex"]].join(" ")}>
+      <div className={[space["m-r--16"]].join(" ")}>
         <CheckInverse width={24} />
       </div>
       <div>

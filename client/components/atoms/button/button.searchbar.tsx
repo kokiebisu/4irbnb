@@ -1,25 +1,19 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
-/**
- * Styles
- */
-import shape from '../../../styles/shape.module.scss';
-import color from '../../../styles/color.module.scss';
-import animation from '../../../styles/animation.module.scss';
-import space from '../../../styles/space.module.scss';
-import layout from '../../../styles/layout.module.scss';
-import font from '../../../styles/font.module.scss';
+/** Styles */
+import shape from "../../../styles/shape.module.scss";
+import color from "../../../styles/color.module.scss";
+import animation from "../../../styles/animation.module.scss";
+import space from "../../../styles/space.module.scss";
+import layout from "../../../styles/layout.module.scss";
+import font from "../../../styles/font.module.scss";
 
-/**
- * Vectors
- */
-import { MagnifyGlass } from '../../../public/svg/original';
+/** Vectors */
+import { MagnifyGlass } from "../../../public/svg/original";
 
-/**
- * Props
- */
-import { SearchbarButtonProps } from './props';
+/** Props */
+import { SearchbarButtonProps } from "./props";
 
 /**
  * Renders the searchbar button component
@@ -29,54 +23,59 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({
   mini = false,
 }) => {
   const handlePress = () => {
-    alert('searchbar button clicked');
+    alert("searchbar button clicked");
   };
   return (
     <>
       {mini ? (
         <motion.button
           whileTap={{ scale: 0.98 }}
-          data-testid='button'
+          data-testid="button"
           className={[
-            shape['br--25'],
-            color['bg--white__0'],
-            color['b--white__2'],
-            animation['hover-shadow--sm'],
-          ].join(' ')}
-          onClick={handlePress}>
+            shape["br--25"],
+            color["bg--white__0"],
+            color["b--white__2"],
+            animation["hover-shadow--sm"],
+          ].join(" ")}
+          onClick={handlePress}
+        >
           <div
             style={{ width: 240, height: 45 }}
             className={[
-              space['p-v--15'],
-              space['p-l--18'],
-              space['p-r--8'],
-              layout['items-center'],
-              layout['justify-between'],
-            ].join(' ')}>
+              space["p-v--15"],
+              space["p-l--18"],
+              space["p-r--8"],
+              layout["flex"],
+              layout["items-center"],
+              layout["justify-between"],
+            ].join(" ")}
+          >
             <div>
               <p
                 className={[
-                  font['no-wrap'],
-                  font['size--14'],
-                  font['weight--500'],
-                ].join(' ')}>
+                  font["no-wrap"],
+                  font["size--14"],
+                  font["weight--500"],
+                ].join(" ")}
+              >
                 Start your search
               </p>
             </div>
             <div>
               <div
-                className={[color['bg--primary'], layout['all-center']].join(
-                  ' '
+                className={[color["bg--primary"], layout["all-center"]].join(
+                  " "
                 )}
                 style={{
-                  borderRadius: '50%',
+                  borderRadius: "50%",
                   height: 30,
                   width: 30,
-                }}>
+                }}
+              >
                 <MagnifyGlass
                   width={12}
                   height={12}
-                  stroke='white'
+                  stroke="white"
                   strokeWidth={6}
                 />
               </div>
@@ -86,32 +85,35 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({
       ) : (
         <motion.button
           whileTap={{ scale: 0.98 }}
-          data-testid='button'
+          data-testid="button"
           className={[
-            shape['w--full'],
-            shape['br--25'],
-            color['bg--white__0'],
-            color['b--white__2'],
-            animation['hover-shadow--sm'],
-            shape['shadow--sm'],
-          ].join(' ')}
-          onClick={handlePress}>
+            shape["w--full"],
+            shape["br--25"],
+            color["bg--white__0"],
+            color["b--white__2"],
+            animation["hover-shadow--sm"],
+            shape["shadow--sm"],
+          ].join(" ")}
+          onClick={handlePress}
+        >
           <div
             className={[
-              space['p-v--12'],
-              space['p-l--18'],
-              space['p-r--8'],
-              layout['all-center'],
-            ].join(' ')}>
-            <div className={[space['m-r--12']].join(' ')}>
-              <MagnifyGlass width={15} stroke='black' strokeWidth={4} />
+              space["p-v--12"],
+              space["p-l--18"],
+              space["p-r--8"],
+              layout["all-center"],
+            ].join(" ")}
+          >
+            <div className={[space["m-r--12"]].join(" ")}>
+              <MagnifyGlass width={15} stroke="black" strokeWidth={4} />
             </div>
             <div
               className={[
-                font['weight--100'],
-                font['size--15'],
-                color['c--gray__0'],
-              ].join(' ')}>
+                font["weight--100"],
+                font["size--15"],
+                color["c--gray__0"],
+              ].join(" ")}
+            >
               Search stays
             </div>
           </div>

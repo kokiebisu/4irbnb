@@ -14,7 +14,7 @@ import section from './section.module.scss';
 /**
  * Components
  */
-import { Card } from '../../atoms/card/card.component';
+import { Card } from '../../molecules/card/card.component';
 import { Button } from '../../../components/atoms/button/button.component';
 
 /**
