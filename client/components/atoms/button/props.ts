@@ -45,6 +45,7 @@ export interface BorderButtonProps
     TitleProps {
   size?: "sm" | "md" | "lg";
   spread?: boolean;
+  bold?: boolean;
 }
 
 export interface BannerButtonProps extends LinkButtonProps, TitleProps {}
