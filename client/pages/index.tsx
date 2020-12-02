@@ -169,10 +169,11 @@ LandingPage.getInitialProps = async (context) => {
   const client = APIClient(context);
 
   try {
-    const { data } = await client.get("/api/users/currentuser");
-    console.log("get initial props", data);
-    return data;
+    const response = await client.get("/api/users/currentuser");
+    console.log("response data here: ", response.data);
+    return response.data;
   } catch (err) {
+    console.log("there was an error ", err.message);
     return {};
   }
 };

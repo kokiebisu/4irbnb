@@ -279,7 +279,7 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@doitsimple/shared@^1.0.6":
+"@doitsimple/shared@^1.0.9":
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/@doitsimple/shared/-/shared-1.0.9.tgz#68cc7aa3520cefe09ed11553e45de522c97ca23a"
   integrity sha512-au0POcs0VXbFkMkqXgx1HoxPc5fANKKDMJ2+vrzmcXQ6LWmHPjmZEz7PaQYF1SlfGItbZ8UDORGDSl3Khy6weg==

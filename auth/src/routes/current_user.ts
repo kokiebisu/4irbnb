@@ -1,9 +1,9 @@
-import express, { Request, Response } from 'express';
-import { currentUser, requireAuth } from '@doitsimple/shared';
+import express, { Request, Response } from "express";
+import { currentUser, requireAuth } from "@doitsimple/shared";
 const router = express.Router();
 
 router.get(
-  '/api/users/currentuser',
+  "/api/users/currentuser",
   currentUser,
   requireAuth,
   (req: Request, res: Response) => {

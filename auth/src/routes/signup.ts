@@ -1,17 +1,17 @@
-import express, { Request, Response } from 'express';
-import { BadRequestError } from '@doitsimple/shared';
-import { User } from '../models/user';
-import jwt from 'jsonwebtoken';
+import express, { Request, Response } from "express";
+import { BadRequestError } from "@doitsimple/shared";
+import { User } from "../models/user";
+import jwt from "jsonwebtoken";
 
 const router = express.Router();
 
-router.post('/api/users/signup', async (req: Request, res: Response) => {
+router.post("/api/users/signup", async (req: Request, res: Response) => {
   const { email, password } = req.body;
 
   const existingUser = await User.findOne({ email });
 
   if (existingUser) {
-    throw new BadRequestError('Email in use');
+    throw new BadRequestError("Email in use");
   }
 
   const user = User.build({ email, password });
