@@ -1,7 +1,8 @@
-import React from 'react';
-import { SectionLayoutProps } from './props';
-import { HomesLayout } from './layout.homes';
-import { LandingLayout } from './layout.landing';
+import React from "react";
+import { SectionLayoutProps } from "./props";
+import { HomesLayout } from "./layout.homes";
+import { LandingLayout } from "./layout.landing";
+import { OnlineHostLayout } from "./layout.onlinehost";
 
 export const SectionLayout: React.FC<SectionLayoutProps> = ({
   extendsTo,
@@ -11,9 +12,10 @@ export const SectionLayout: React.FC<SectionLayoutProps> = ({
   const types = {
     homes: <HomesLayout {...props} />,
     landing: <LandingLayout {...props} />,
+    onlinehost: <OnlineHostLayout {...props} />,
   };
   return (
-    <div className={extendsTo} data-testid='section'>
+    <div className={extendsTo} data-testid="section">
       {types[sectionType]}
     </div>
   );
