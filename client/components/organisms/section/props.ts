@@ -148,6 +148,10 @@ export interface WorksSectionProps {}
 
 export interface SharingSectionProps {}
 
+export interface BackSectionProps {
+  back?: string;
+}
+
 export interface SectionProps {
   extendsTo?: string;
   type: string;

@@ -206,3 +206,8 @@ export const sharing = SectionTemplate.bind({});
 sharing.args = {
   type: "sharing",
 };
+
+export const back = SectionTemplate.bind({});
+back.args = {
+  type: "back",
+};
