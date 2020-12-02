@@ -25,7 +25,18 @@ export const BorderButton: React.FC<BorderButtonProps> = ({
   inverse = false,
   size = "md",
   spread = false,
+  bold = true,
 }) => {
+  const renderBorder = () => {
+    if (inverse) {
+      return [color["b--white__0"], color["c--white__0"]].join(" ");
+    }
+    if (bold) {
+      return [color["b-2--black"]].join(" ");
+    }
+    return [color["b--black"]].join(" ");
+  };
+
   const components = {
     sm: (
       <div className={color["bg--transparent"]} data-testid="button">
@@ -41,11 +52,7 @@ export const BorderButton: React.FC<BorderButtonProps> = ({
               space["p-l--14"],
               space["p-r--14"],
               font["no-wrap"],
-            ].join(" ")} ${
-              inverse
-                ? [color["b--white__0"], color["c--white__0"]].join(" ")
-                : [color["b--black"]].join(" ")
-            }`}
+            ].join(" ")} ${renderBorder()}`}
           >
             {title}
           </a>
@@ -61,16 +68,12 @@ export const BorderButton: React.FC<BorderButtonProps> = ({
               font["size--16"],
               font["weight--500"],
               shape["br--6"],
-              space["p-t--12"],
-              space["p-b--12"],
-              space["p-l--22"],
-              space["p-r--22"],
+              space["p-t--10"],
+              space["p-b--10"],
+              space["p-l--18"],
+              space["p-r--18"],
               font["no-wrap"],
-            ].join(" ")} ${
-              inverse
-                ? [color["b--white__0"], color["c--white__0"]].join(" ")
-                : [color["b--black"]].join(" ")
-            }`}
+            ].join(" ")} ${renderBorder()}`}
           >
             {title}
           </a>
@@ -86,16 +89,12 @@ export const BorderButton: React.FC<BorderButtonProps> = ({
               font["size--18"],
               font["weight--500"],
               shape["br--6"],
-              space["p-t--16"],
-              space["p-b--16"],
-              space["p-l--14"],
-              space["p-r--14"],
+              space["p-t--12"],
+              space["p-b--12"],
+              space["p-l--22"],
+              space["p-r--22"],
               font["no-wrap"],
-            ].join(" ")} ${
-              inverse
-                ? [color["b--white__0"], color["c--white__0"]].join(" ")
-                : [color["b--black"]].join(" ")
-            }`}
+            ].join(" ")} ${renderBorder()}`}
           >
             {title}
           </a>
