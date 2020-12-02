@@ -90,6 +90,10 @@ export interface WorksCardProps {
   work?: string;
 }
 
+export interface SharingCardProps {
+  sharing?: string;
+}
+
 export interface CardProps {
   extendsTo?: string;
   type?: string;
