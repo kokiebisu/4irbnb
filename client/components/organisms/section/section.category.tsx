@@ -1,20 +1,14 @@
-import React from 'react';
+import React from "react";
 
-/**
- * Styles
- */
-import section from './section.module.scss';
-import space from '../../../styles/space.module.scss';
+/** Styles */
+import section from "./section.module.scss";
+import space from "../../../styles/space.module.scss";
 
-/**
- * Components
- */
-import { Card } from '../../molecules/card/card.component';
+/** Components */
+import { Card } from "../../molecules/card/card.component";
 
-/**
- * Props
- */
-import { CategorySectionProps } from './props';
+/** Props */
+import { CategorySectionProps } from "./props";
 
 /**
  *
@@ -27,14 +21,15 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
 
   return (
     <div>
-      <div className={[space['p-h--70']].join(' ')}>
+      <div className={[space["p-h--70"]].join(" ")}>
         <div
           style={{ gridTemplateColumns: `repeat(${totalCards}, 1fr)` }}
-          className={[section['category-section__carousel']].join(' ')}>
+          className={[section["category-section__carousel"]].join(" ")}
+        >
           {items.map((item, index) => {
             return (
               <Card
-                type='category'
+                type="category"
                 key={index}
                 imgUrl={item && item.imgUrl}
                 title={item && item.title}
@@ -42,7 +37,7 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
               />
             );
           })}
-          <div className={section['category-section__card--space']}></div>
+          <div className={section["category-section__card--space"]}></div>
         </div>
       </div>
     </div>
