@@ -5,6 +5,7 @@ export const APIClient = ({ req }) => {
     return axios.create({
       baseURL:
         "http://ingress-nginx-controller.ingress-nginx.svc.cluster.local",
+      // baseURL: "https://www.nextbnb.dev",
       headers: req.headers,
     });
   } else {

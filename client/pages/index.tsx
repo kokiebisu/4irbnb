@@ -173,7 +173,7 @@ LandingPage.getInitialProps = async (context) => {
     console.log("response data here: ", response.data);
     return response.data;
   } catch (err) {
-    console.log("there was an error ", err.message);
+    console.log("there was an error: ", err);
     return {};
   }
 };
