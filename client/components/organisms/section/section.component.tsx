@@ -1,34 +1,35 @@
-import React from 'react';
+import React from "react";
 
 /**
  * Components
  */
-import { CategorySection } from './section.category';
-import { PanelSection } from './section.panel';
-import { StaySection } from './section.stay';
-import { CharacteristicsSection } from './section.characteristics';
-import { DescriptionSection } from './section.description';
-import { SectionProps } from './props';
-import { ArrangementsSection } from './section.arrangements';
-import { AmenitySection } from './section.amenities';
-import { ReviewsSection } from './section.reviews';
-import { HostSection } from './section.host';
-import { KnowSection } from './section.know';
-import { OtherSection } from './section.other';
-import { NearbySection } from './section.nearby';
-import { DestinationsSection } from './section.destinations';
-import { OnlineSection } from './section.online';
-import { HomesSection } from './section.homes';
-import { AlsoSection } from './section.also';
-import { ParticipateSection } from './section.participate';
-import { BringSection } from './section.bring';
-import { ExperiencesSection } from './section.experiences';
-import { AvailableSection } from './section.available';
-import { AllSection } from './section.all';
-import { PrioritySection } from './section.priority';
-import { HelpSection } from './section.help';
-import { ReadySection } from './section.ready';
-import { WorksSection } from './section.works';
+import { CategorySection } from "./section.category";
+import { PanelSection } from "./section.panel";
+import { StaySection } from "./section.stay";
+import { CharacteristicsSection } from "./section.characteristics";
+import { DescriptionSection } from "./section.description";
+import { SectionProps } from "./props";
+import { ArrangementsSection } from "./section.arrangements";
+import { AmenitySection } from "./section.amenities";
+import { ReviewsSection } from "./section.reviews";
+import { HostSection } from "./section.host";
+import { KnowSection } from "./section.know";
+import { OtherSection } from "./section.other";
+import { NearbySection } from "./section.nearby";
+import { DestinationsSection } from "./section.destinations";
+import { OnlineSection } from "./section.online";
+import { HomesSection } from "./section.homes";
+import { AlsoSection } from "./section.also";
+import { ParticipateSection } from "./section.participate";
+import { BringSection } from "./section.bring";
+import { ExperiencesSection } from "./section.experiences";
+import { AvailableSection } from "./section.available";
+import { AllSection } from "./section.all";
+import { PrioritySection } from "./section.priority";
+import { HelpSection } from "./section.help";
+import { ReadySection } from "./section.ready";
+import { WorksSection } from "./section.works";
+import { SharingSection } from "./section.sharing";
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -70,6 +71,7 @@ export const Section: React.FC<SectionProps> = ({
     help: <HelpSection {...props} />,
     ready: <ReadySection {...props} />,
     works: <WorksSection {...props} />,
+    sharing: <SharingSection {...props} />,
   };
   return <div className={extendsTo}>{types[type]}</div>;
 };
