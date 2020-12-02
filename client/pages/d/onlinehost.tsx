@@ -4,7 +4,7 @@ import { Header } from "../../components/organisms/header/header.component";
 import { Section } from "../../components/organisms/section/section.component";
 import layout from "../../styles/layout.module.scss";
 import { Footer } from "../../components/organisms/footer/footer.component";
-import { Layout } from "../../layout/layout.component";
+import space from "../../styles/space.module.scss";
 
 const OnlineHost = () => {
   return (
@@ -20,8 +20,13 @@ const OnlineHost = () => {
       <div className={[layout["container"]].join(" ")}>
         <Section type="works" />
       </div>
-      <div>
+      <div
+        className={[layout["container--shrink"], space["p-v--64"]].join(" ")}
+      >
         <Section type="sharing" />
+      </div>
+      <div className={[layout["container"]].join(" ")}>
+        <Section type="back" />
       </div>
       <div>
         <Footer />

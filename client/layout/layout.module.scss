@@ -1,0 +1,15 @@
+.font {
+  &__section {
+    &--title {
+      font-size: 22px;
+
+      @media screen and (min-width: 728px) {
+        font-size: 30px;
+      }
+
+      @media screen and (min-width: 1028) {
+        font-size: 45px;
+      }
+    }
+  }
+}
