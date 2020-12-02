@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { useState } from 'react';
+import axios from "axios";
+import { useState } from "react";
 
 export const useFetch = ({
   url,
@@ -22,7 +22,6 @@ export const useFetch = ({
         triggerLoading(true);
       }
       const response = await axios[method](url, body);
-      console.log('response: ', response.data);
       if (onSuccess) {
         onSuccess(response.data);
       }

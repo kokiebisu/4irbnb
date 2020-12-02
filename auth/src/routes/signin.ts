@@ -1,16 +1,16 @@
-import express, { Request, Response } from 'express';
-import { BadRequestError } from '@doitsimple/shared';
-import { User } from '../models/user';
-import { Password } from '../services/password';
-import jwt from 'jsonwebtoken';
+import express, { Request, Response } from "express";
+import { BadRequestError } from "@doitsimple/shared";
+import { User } from "../models/user";
+import { Password } from "../services/password";
+import jwt from "jsonwebtoken";
 
 const router = express.Router();
 
-router.post('/api/users/signin', async (req: Request, res: Response) => {
+router.post("/api/users/signin", async (req: Request, res: Response) => {
   const { email, password } = req.body;
   const existingUser = await User.findOne({ email });
   if (!existingUser) {
-    throw new BadRequestError('Invalid credentials');
+    throw new BadRequestError("Invalid credentials");
   }
 
   const passwordMatch = await Password.compare(existingUser.password, password);
