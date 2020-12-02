@@ -6,7 +6,10 @@ export const APIClient = ({ req }) => {
       baseURL:
         "http://ingress-nginx-controller.ingress-nginx.svc.cluster.local",
       // baseURL: "https://www.nextbnb.dev",
-      headers: req.headers,
+      headers: {
+        ...req.headers,
+        Host: "www.nextbnb.dev",
+      },
     });
   } else {
     // on the browser
