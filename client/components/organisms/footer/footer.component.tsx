@@ -1,29 +1,29 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 
 /**
  * Styles
  */
-import color from '../../../styles/color.module.scss';
-import space from '../../../styles/space.module.scss';
-import styles from '../../../styles/index.module.scss';
-import font from '../../../styles/font.module.scss';
-import layout from '../../../styles/layout.module.scss';
+import color from "../../../styles/color.module.scss";
+import space from "../../../styles/space.module.scss";
+import styles from "../../../styles/index.module.scss";
+import font from "../../../styles/font.module.scss";
+import layout from "../../../styles/layout.module.scss";
 
 /**
  * Contents
  */
-import { sections } from '../../../content/index';
+import { sections } from "../../../content/index";
 
 /**
  * Vectors
  */
-import { Globe } from '../../../public/svg/original';
+import { Globe } from "../../../public/svg/original";
 
 /**
  * Props
  */
-import { FooterProps } from './props';
+import { FooterProps } from "./props";
 
 /**
  * Renders the footer
@@ -33,55 +33,63 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
   return (
     <footer
       className={[
-        color['b-t--white__2'],
-        space['p-v--22'],
-        color['bg--white__1'],
-      ].join(' ')}>
+        color["b-t--white__2"],
+        space["p-v--22"],
+        color["bg--white__1"],
+      ].join(" ")}
+    >
       <div
-        className={spread ? layout['container--spread'] : layout['container']}>
+        className={spread ? layout["container--spread"] : layout["container"]}
+      >
         <div
           className={[
-            font['b-b--white__1'],
-            styles['flex__footer--section'],
-          ].join(' ')}>
+            font["b-b--white__1"],
+            styles["flex__footer--section"],
+          ].join(" ")}
+        >
           {sections.map((section, index) => {
             return (
               <div
                 key={index}
                 className={[
-                  color['bt--white__2'],
-                  space['nf-m-t--20'],
-                  styles['p-b__footer--section'],
-                  styles['w__footer--section'],
-                ].join(' ')}>
+                  color["bt--white__2"],
+                  space["nf-m-t--20"],
+                  styles["p-b__footer--section"],
+                  styles["w__footer--section"],
+                ].join(" ")}
+              >
                 <div>
                   <h3
-                    className={[font['size--12'], font['uppercase']].join(' ')}>
+                    className={[font["size--12"], font["uppercase"]].join(" ")}
+                  >
                     {section.name}
                   </h3>
                 </div>
                 <div
                   className={[
-                    space['m-v--15'],
-                    space['m-h--0'],
-                    styles['grid__footer--items'],
-                  ].join(' ')}>
+                    space["m-v--15"],
+                    space["m-h--0"],
+                    styles["grid__footer--items"],
+                  ].join(" ")}
+                >
                   {section.items.map((item, index) => {
                     return (
                       <div
                         className={[
-                          space['m-v--15'],
-                          space['m-h--0'],
-                          space['m-v--15'],
-                          styles['m__footer--item'],
-                        ].join(' ')}
-                        key={index}>
+                          space["m-v--15"],
+                          space["m-h--0"],
+                          space["m-v--15"],
+                          styles["m__footer--item"],
+                        ].join(" ")}
+                        key={index}
+                      >
                         <Link href={item.url}>
                           <a
                             className={[
-                              font['size--14'],
-                              font['weight--300'],
-                            ].join(' ')}>
+                              font["size--14"],
+                              font["weight--300"],
+                            ].join(" ")}
+                          >
                             {item.name}
                           </a>
                         </Link>
@@ -93,23 +101,27 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
             );
           })}
         </div>
-        <div className={styles['flex__footer--others']}>
+        <div className={styles["flex__footer--others"]}>
           <div
             className={[
-              layout['items-center'],
-              space['m-h--0'],
-              space['m-v--20'],
-            ].join(' ')}>
+              layout["flex"],
+              layout["items-center"],
+              space["m-h--0"],
+              space["m-v--20"],
+            ].join(" ")}
+          >
             <div>
               <button
                 className={[
-                  layout['items-center'],
-                  space['m-r--10'],
-                  color['bg--transparent'],
-                  color['b--0'],
-                ].join(' ')}>
-                <Globe width={16} className={space['m-r--5']} />
-                <u className={[font['size--14'], space['m-r--7']].join(' ')}>
+                  layout["flex"],
+                  layout["items-center"],
+                  space["m-r--10"],
+                  color["bg--transparent"],
+                  color["b--0"],
+                ].join(" ")}
+              >
+                <Globe width={16} className={space["m-r--5"]} />
+                <u className={[font["size--14"], space["m-r--7"]].join(" ")}>
                   English(CA)
                 </u>
               </button>
@@ -117,51 +129,57 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
             <div>
               <button
                 className={[
-                  layout['items-center'],
-                  color['bg--transparent'],
-                  color['b--0'],
-                ].join(' ')}>
-                <u className={[font['size--14'], space['m-r--7']].join(' ')}>
+                  layout["flex"],
+                  layout["items-center"],
+                  color["bg--transparent"],
+                  color["b--0"],
+                ].join(" ")}
+              >
+                <u className={[font["size--14"], space["m-r--7"]].join(" ")}>
                   $
                 </u>
-                <u className={[font['size--14'], space['m-r--7']].join(' ')}>
+                <u className={[font["size--14"], space["m-r--7"]].join(" ")}>
                   CAD
                 </u>
               </button>
             </div>
           </div>
-          <div className={layout['items-center']}>
-            <div className={styles['footer__rights']}>
+          <div className={[layout["flex"], layout["items-center"]].join(" ")}>
+            <div className={styles["footer__rights"]}>
               <p
                 className={[
-                  font['size--14'],
-                  font['weight--300'],
-                  layout['inline-block'],
-                ].join(' ')}>
+                  font["size--14"],
+                  font["weight--300"],
+                  layout["inline-block"],
+                ].join(" ")}
+              >
                 &copy; 2020 Airbnb, Inc. All rights reserved
               </p>
             </div>
-            <div className={layout['items-center']}>
-              <div className={styles['block__footer--dot']}>
+            <div className={[layout["flex"], layout["items-center"]].join(" ")}>
+              <div className={styles["block__footer--dot"]}>
                 &nbsp;&nbsp;· &nbsp;
               </div>
-              <div className={space['m-r--10']}>
+              <div className={space["m-r--10"]}>
                 <a
-                  className={[font['size--14'], font['weight--300']].join(' ')}>
+                  className={[font["size--14"], font["weight--300"]].join(" ")}
+                >
                   Privacy
                 </a>
               </div>
               <div>&nbsp;· &nbsp;</div>
-              <div className={space['m-r--10']}>
+              <div className={space["m-r--10"]}>
                 <a
-                  className={[font['size--14'], font['weight--300']].join(' ')}>
+                  className={[font["size--14"], font["weight--300"]].join(" ")}
+                >
                   &nbsp;Terms
                 </a>
               </div>
               <div>&nbsp;· &nbsp;</div>
-              <div className={space['m-r--10']}>
+              <div className={space["m-r--10"]}>
                 <a
-                  className={[font['size--14'], font['weight--300']].join(' ')}>
+                  className={[font["size--14"], font["weight--300"]].join(" ")}
+                >
                   &nbsp;Sitemap
                 </a>
               </div>

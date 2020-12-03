@@ -114,7 +114,7 @@ export interface HomesSectionProps {
   average?: number;
   stays?: any;
   title?: string;
-  layout?: 'vertical' | 'horizontal';
+  layout?: "vertical" | "horizontal";
 }
 
 export interface AlsoSectionProps {
@@ -145,6 +145,12 @@ export interface HelpSectionProps {}
 export interface ReadySectionProps {}
 
 export interface WorksSectionProps {}
+
+export interface SharingSectionProps {}
+
+export interface BackSectionProps {
+  back?: string;
+}
 
 export interface SectionProps {
   extendsTo?: string;

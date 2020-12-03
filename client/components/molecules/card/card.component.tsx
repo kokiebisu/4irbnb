@@ -19,6 +19,7 @@ import { HostCard } from "./card.host";
 import { SetCard } from "./card.set";
 import { AgainCard } from "./card.again";
 import { WorksCard } from "./card.works";
+import { SharingCard } from "./card.sharing";
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -53,6 +54,7 @@ export const Card: React.FC<CardProps> = ({
     set: <SetCard {...props} />,
     again: <AgainCard {...props} />,
     works: <WorksCard {...props} />,
+    sharing: <SharingCard {...props} />,
   };
   if (to) {
     return (
