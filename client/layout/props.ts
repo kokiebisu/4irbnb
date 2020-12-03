@@ -14,6 +14,11 @@ export interface OnlineHostLayoutProps {
   spread?: boolean;
 }
 
+export interface InputLayoutProps {
+  title?: string;
+  children?: React.ReactNode;
+}
+
 export interface LayoutProps {
   extendsTo?: string;
   type: string;

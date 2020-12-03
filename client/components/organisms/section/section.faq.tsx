@@ -47,7 +47,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
           return (
             <div
               style={{ width: "100%" }}
-              className={[space["m-v--16"]].join(" ")}
+              className={[space["m-v--22"]].join(" ")}
               key={index}
             >
               <Bullet type="question" title={question} answer={answer} />

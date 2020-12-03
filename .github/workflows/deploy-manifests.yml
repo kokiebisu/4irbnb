@@ -1,11 +1,9 @@
 name: deploy-manifests
 
 on:
-  pull_request:
+  push:
     branches:
       - master
-    paths:
-      - "infrastructure/**"
 
 jobs:
   build:
