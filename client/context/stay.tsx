@@ -24,7 +24,6 @@ const stayReducer = (
   state: State,
   { type, payload: { place, guests, address } }: Action
 ) => {
-  console.log("stay reducer", state);
   switch (type) {
     case "reset":
       return { ...state, place: "Entire place", guests: 0, address: "" };
@@ -41,8 +40,6 @@ const StayProvider = ({ children }: StayProviderProps) => {
     guests: 0,
     address: "",
   });
-
-  console.log("from provider: ", state);
 
   return (
     <StayStateContext.Provider value={state}>
