@@ -213,3 +213,8 @@ modal.argTypes = {
     },
   },
 };
+
+export const back = ButtonTemplate.bind({});
+back.args = {
+  type: "back",
+};
