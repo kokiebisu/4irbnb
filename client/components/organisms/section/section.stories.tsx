@@ -1,25 +1,25 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { Section } from './section.component';
+import React from "react";
+import { Story, Meta } from "@storybook/react/types-6-0";
+import { Section } from "./section.component";
 
-import { SectionProps } from './props';
-import { ContextProvider } from '../../../context/provider';
+import { SectionProps } from "./props";
+import { ContextProvider } from "../../../context/provider";
 
 export default {
-  title: 'Design System/Organisms/Section',
+  title: "Design System/Organisms/Section",
   component: Section,
   argTypes: {
-    onPress: { action: 'clicked' },
+    onPress: { action: "clicked" },
     type: { control: { disable: true } },
     extendsTo: { control: { disable: true } },
     layoutType: {
       control: {
-        type: 'select',
-        options: ['room', 'experience'],
+        type: "select",
+        options: ["room", "experience"],
       },
     },
     superhost: {
-      control: 'boolean',
+      control: "boolean",
     },
   },
   decorators: [
@@ -35,18 +35,18 @@ const SectionTemplate: Story<SectionProps> = (args) => <Section {...args} />;
 
 export const categories = SectionTemplate.bind({});
 categories.args = {
-  type: 'category',
+  type: "category",
 };
 
 export const stayTypes = SectionTemplate.bind({});
 stayTypes.args = {
-  type: 'stay',
-  carouselType: 'stayTypes',
+  type: "stay",
+  carouselType: "stayTypes",
 };
 
 export const stayWithPagination = SectionTemplate.bind({});
 stayWithPagination.args = {
-  type: 'stay',
+  type: "stay",
   pagination: true,
   save: true,
   isDescription: true,
@@ -54,24 +54,24 @@ stayWithPagination.args = {
 
 export const twoRows = SectionTemplate.bind({});
 twoRows.args = {
-  type: 'stay',
+  type: "stay",
   save: true,
   isDescription: true,
 };
 
 export const panel = SectionTemplate.bind({});
 panel.args = {
-  type: 'panel',
+  type: "panel",
 };
 
 export const characteristics = SectionTemplate.bind({});
 characteristics.args = {
-  type: 'characteristics',
+  type: "characteristics",
 };
 
 export const description = SectionTemplate.bind({});
 description.args = {
-  type: 'description',
+  type: "description",
 };
 
 description.decorators = [
@@ -84,12 +84,12 @@ description.decorators = [
 
 export const arrangements = SectionTemplate.bind({});
 arrangements.args = {
-  type: 'arrangements',
+  type: "arrangements",
 };
 
 export const amenities = SectionTemplate.bind({});
 amenities.args = {
-  type: 'amenities',
+  type: "amenities",
 };
 amenities.decorators = [
   (Story) => (
@@ -101,12 +101,12 @@ amenities.decorators = [
 
 export const reviews = SectionTemplate.bind({});
 reviews.args = {
-  type: 'reviews',
+  type: "reviews",
 };
 
 export const host = SectionTemplate.bind({});
 host.args = {
-  type: 'host',
+  type: "host",
 };
 host.decorators = [
   (Story) => (
@@ -118,86 +118,106 @@ host.decorators = [
 
 export const know = SectionTemplate.bind({});
 know.args = {
-  type: 'know',
+  type: "know",
 };
 
 export const other = SectionTemplate.bind({});
 other.args = {
-  type: 'other',
+  type: "other",
 };
 
 export const nearby = SectionTemplate.bind({});
 nearby.args = {
-  type: 'nearby',
+  type: "nearby",
 };
 
 export const destinations = SectionTemplate.bind({});
 destinations.args = {
-  type: 'destinations',
+  type: "destinations",
 };
 
 export const online = SectionTemplate.bind({});
 online.args = {
-  type: 'online',
+  type: "online",
 };
 
 online.argTypes = {
   dark: {
-    control: 'boolean',
+    control: "boolean",
   },
 };
 
 export const homes = SectionTemplate.bind({});
 homes.args = {
-  type: 'homes',
+  type: "homes",
 };
 
 export const also = SectionTemplate.bind({});
 also.args = {
-  type: 'also',
+  type: "also",
 };
 
 export const participate = SectionTemplate.bind({});
 participate.args = {
-  type: 'participate',
+  type: "participate",
 };
 
 export const bring = SectionTemplate.bind({});
 bring.args = {
-  type: 'bring',
+  type: "bring",
 };
 
 export const experiences = SectionTemplate.bind({});
 experiences.args = {
-  type: 'experiences',
+  type: "experiences",
 };
 
 export const available = SectionTemplate.bind({});
 available.args = {
-  type: 'available',
+  type: "available",
 };
 
 export const all = SectionTemplate.bind({});
 all.args = {
-  type: 'all',
+  type: "all",
 };
 
 export const priority = SectionTemplate.bind({});
 priority.args = {
-  type: 'priority',
+  type: "priority",
 };
 
 export const help = SectionTemplate.bind({});
 help.args = {
-  type: 'help',
+  type: "help",
 };
 
 export const ready = SectionTemplate.bind({});
 ready.args = {
-  type: 'ready',
+  type: "ready",
 };
 
 export const works = SectionTemplate.bind({});
 works.args = {
-  type: 'works',
+  type: "works",
+};
+
+export const sharing = SectionTemplate.bind({});
+sharing.args = {
+  type: "sharing",
+};
+
+export const back = SectionTemplate.bind({});
+back.args = {
+  type: "back",
+};
+
+export const faq = SectionTemplate.bind({});
+faq.args = {
+  type: "faq",
+};
+
+export const more = SectionTemplate.bind({});
+more.args = {
+  type: "more",
 };

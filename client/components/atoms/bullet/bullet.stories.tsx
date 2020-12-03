@@ -155,3 +155,8 @@ export const score = BulletTemplate.bind({});
 score.args = {
   type: "score",
 };
+
+export const question = BulletTemplate.bind({});
+question.args = {
+  type: "question",
+};

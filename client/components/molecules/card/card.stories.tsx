@@ -48,13 +48,13 @@ horizontal.args = {
   type: "horizontal",
 };
 
-// horizontal.decorators = [
-//   (Story) => (
-//     <div style={{ width: 300 }}>
-//       <Story />
-//     </div>
-//   ),
-// ];
+horizontal.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 600 }}>
+      <Story />
+    </div>
+  ),
+];
 
 horizontal.argTypes = {
   superhost: {
@@ -183,6 +183,19 @@ works.argTypes = {
     control: {
       type: "select",
       options: ["design", "share", "submit", "setup"],
+    },
+  },
+};
+
+export const sharing = CardTemplate.bind({});
+sharing.args = {
+  type: "sharing",
+};
+sharing.argsTypes = {
+  sharing: {
+    control: {
+      type: "select",
+      options: ["meditate", "baking", "magic"],
     },
   },
 };

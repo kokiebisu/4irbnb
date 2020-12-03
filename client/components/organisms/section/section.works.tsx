@@ -1,10 +1,11 @@
-import { Layout } from "../../../layout/layout.component";
 import React from "react";
-import { WorksSectionProps } from "./props";
-import { Card } from "../../molecules/card/card.component";
+
 import layout from "../../../styles/layout.module.scss";
-import section from "./section.module.scss";
+import { WorksSectionProps } from "./props";
+import { Layout } from "../../../layout/layout.component";
+import { Card } from "../../molecules/card/card.component";
 import space from "../../../styles/space.module.scss";
+import { Button } from "../../atoms/button/button.component";
 
 export const WorksSection: React.FC<WorksSectionProps> = () => {
   const categories = ["design", "share", "submit", "setup"];
@@ -19,6 +20,15 @@ export const WorksSection: React.FC<WorksSectionProps> = () => {
               </div>
             );
           })}
+        </div>
+        <div
+          className={[
+            space["m-t--32"],
+            layout["flex"],
+            layout["justify-center"],
+          ].join(" ")}
+        >
+          <Button type="border" bold title="Start creating your experience" />
         </div>
       </Layout>
     </div>
