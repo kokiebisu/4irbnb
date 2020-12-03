@@ -25,8 +25,14 @@ const OnlineHost = () => {
       >
         <Section type="sharing" />
       </div>
-      <div className={[layout["container"]].join(" ")}>
+      <div className={[layout["container"], space["p-v--64"]].join(" ")}>
         <Section type="back" />
+      </div>
+      <div className={[layout["container"], space["p-v--64"]].join(" ")}>
+        <Section type="faq" />
+      </div>
+      <div>
+        <Section type="more" />
       </div>
       <div>
         <Footer />

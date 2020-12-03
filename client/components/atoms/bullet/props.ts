@@ -64,6 +64,11 @@ export interface OnlineHostBulletProps {
   bullet?: string;
 }
 
+export interface QuestionBulletProps {
+  title?: string;
+  answer?: string;
+}
+
 export interface BulletProps {
   extendsTo?: string;
   type: string;

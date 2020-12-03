@@ -211,3 +211,13 @@ export const back = SectionTemplate.bind({});
 back.args = {
   type: "back",
 };
+
+export const faq = SectionTemplate.bind({});
+faq.args = {
+  type: "faq",
+};
+
+export const more = SectionTemplate.bind({});
+more.args = {
+  type: "more",
+};
