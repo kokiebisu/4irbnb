@@ -28,7 +28,7 @@ const OnlineHost = () => {
       <div className={[layout["container"], space["p-v--64"]].join(" ")}>
         <Section type="back" />
       </div>
-      <div className={[layout["container"], space["p-v--64"]].join(" ")}>
+      <div className={[layout["container"], space["p-v--100"]].join(" ")}>
         <Section type="faq" />
       </div>
       <div>

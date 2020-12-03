@@ -55,10 +55,6 @@ export const Button: React.FC<ButtonProps> = ({
     modal: <ModalButton {...props} />,
   };
 
-  if (type) {
-    return types[type];
-  }
-
   if (to) {
     return (
       <div
@@ -67,10 +63,14 @@ export const Button: React.FC<ButtonProps> = ({
         data-testid="button"
       >
         <Link href={to}>
-          <a>{children}</a>
+          <a>{type ? types[type] : children}</a>
         </Link>
       </div>
     );
+  }
+
+  if (type) {
+    return types[type];
   }
 
   return (
