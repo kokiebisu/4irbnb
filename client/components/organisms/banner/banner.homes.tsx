@@ -108,7 +108,12 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
               </h4>
             </div>
             <div className={[layout["inline-block"]].join(" ")}>
-              <Button type="primary" size="md" title="Get started" />
+              <Button
+                type="primary"
+                size="md"
+                title="Get started"
+                to="/become-a-host"
+              />
             </div>
           </div>
         </div>
