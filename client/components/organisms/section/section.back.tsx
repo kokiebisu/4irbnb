@@ -18,8 +18,8 @@ export const BackSection: React.FC<BackSectionProps> = () => {
     <Layout
       type="section"
       sectionType="onlinehost"
-      title="How hosts are sharing their world"
-      subtitle="These hosts bring the spirit of experiences to the screen with unique small group activities to do together while we're apart."
+      title="We've got your back"
+      subtitle="You’re not alone—you'll have access to educational tools and opportunities to help you grow as a host and entrepreneur."
     >
       <div
         style={{
@@ -27,7 +27,7 @@ export const BackSection: React.FC<BackSectionProps> = () => {
           gridTemplateColumns: "repeat(3, 1fr)",
           columnGap: 20,
         }}
-        className={[space["m-v--16"]].join(" ")}
+        className={[space["m-v--32"]].join(" ")}
       >
         {bullets.map((bullet, index) => {
           return (
