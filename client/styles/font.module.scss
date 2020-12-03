@@ -57,7 +57,7 @@ $spacings: (1, 3, 4, 5, 15);
   }
 }
 
-$lineheights: (15, 20);
+$lineheights: (10, 15, 20);
 @each $lineheight in $lineheights {
   .lh--#{$lineheight} {
     line-height: #{$lineheight / 10};
