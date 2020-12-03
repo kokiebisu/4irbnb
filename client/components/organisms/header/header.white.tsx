@@ -31,7 +31,6 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
   spread = false,
   data,
 }) => {
-  console.log("white header data", data);
   let toggleState = useToggleState();
   return (
     <header

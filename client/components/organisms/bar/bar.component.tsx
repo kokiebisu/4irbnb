@@ -1,15 +1,16 @@
-import React from 'react';
-import { CovidBar } from './bar.covid';
+import React from "react";
+import { CovidBar } from "./bar.covid";
 
 /**
  * Components
  */
-import { PaginateBar } from './bar.paginate';
+import { PaginateBar } from "./bar.paginate";
+import { ProgressBar } from "./bar.progress";
 
 /**
  * Props
  */
-import { BarProps } from './props';
+import { BarProps } from "./props";
 
 /**
  * Bundles the bar components
@@ -19,6 +20,7 @@ export const Bar: React.FC<BarProps> = ({ type, ...props }) => {
   const types = {
     paginate: <PaginateBar {...props} />,
     covid: <CovidBar {...props} />,
+    progress: <ProgressBar {...props} />,
   };
   return types[type];
 };

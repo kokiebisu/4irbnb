@@ -1,7 +1,9 @@
-import React from 'react';
-import { AuthProvider } from './auth';
+import React from "react";
 
-import { ToggleProvider } from './toggle';
+/** Provider */
+import { AuthProvider } from "./auth";
+import { StayProvider } from "./stay";
+import { ToggleProvider } from "./toggle";
 
 interface Props {
   children: React.ReactNode;
@@ -10,7 +12,9 @@ interface Props {
 export const ContextProvider = ({ children }: Props) => {
   return (
     <AuthProvider>
-      <ToggleProvider>{children}</ToggleProvider>
+      <ToggleProvider>
+        <StayProvider>{children}</StayProvider>
+      </ToggleProvider>
     </AuthProvider>
   );
 };

@@ -22,7 +22,6 @@ import { validateSignup as validate } from "../../../helper/auth";
 /** Hooks */
 import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
 import { useFetch } from "../../../hooks/useFetch";
-import { useToggleDispatch } from "../../../context/toggle";
 
 /** Context */
 import { useAuthDispatch } from "../../../context/auth";
