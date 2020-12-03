@@ -1,8 +1,16 @@
-import { Layout } from "layout/layout.component";
-import space from "../../../styles/space.module.scss";
 import React from "react";
-import { banner } from "components/atoms/button/button.stories";
-import { Bullet } from "components/atoms/bullet/bullet.component";
+
+/** Styles */
+import space from "../../../styles/space.module.scss";
+
+/** Layout */
+import { Layout } from "../../../layout/layout.component";
+
+/** Components */
+import { banner } from "../../../components/atoms/button/button.stories";
+import { Bullet } from "../../../components/atoms/bullet/bullet.component";
+
+/** Props */
 import { BackSectionProps } from "./props";
 
 export const BackSection: React.FC<BackSectionProps> = () => {
