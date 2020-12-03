@@ -7,7 +7,6 @@ router.get(
   currentUser,
   requireAuth,
   (req: Request, res: Response) => {
-    console.log("entered /api/users/currentuser");
     res.send({ currentUser: req.currentUser || null });
   }
 );

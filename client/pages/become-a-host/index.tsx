@@ -9,7 +9,14 @@ import responsive from "../../styles/responsive.module.scss";
 import layout from "../../styles/layout.module.scss";
 import space from "../../styles/space.module.scss";
 
+/** Hooks */
+import { useTabTitle } from "../../hooks/useTabTitle";
+
 const BecomeAHostPage = () => {
+  useTabTitle(
+    "Become a Host and Rent Out Your Room, House or Apartment on Airbnb"
+  );
+
   return (
     <div style={{ height: "100vh" }}>
       <div style={{ zIndex: 9999, height: 65 }}>

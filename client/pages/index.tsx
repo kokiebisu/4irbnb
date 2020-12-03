@@ -33,11 +33,13 @@ import { Bar } from "components/organisms/bar/bar.component";
 import { useHandleScroll } from "../hooks/useHandleScroll";
 import { useHandleDocumentResize } from "../hooks/useHandleDocumentResize";
 import { useTimeout } from "../hooks/useTimeout";
+import { useTabTitle } from "../hooks/useTabTitle";
 
 /* helper */
 import { APIClient } from "../api/client";
 
 const LandingPage = ({ currentUser }) => {
+  useTabTitle("Vacation Rentals, Homes, Experiences & Places - Airbnb");
   const loading = useTimeout(3000);
   const toggleState = useToggleState();
   const scrollPosition = useHandleScroll();
