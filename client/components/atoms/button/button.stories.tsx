@@ -100,6 +100,9 @@ border.argTypes = {
       options: ["sm", "md", "lg"],
     },
   },
+  bold: {
+    control: "boolean",
+  },
 };
 
 export const banner = ButtonTemplate.bind({});
