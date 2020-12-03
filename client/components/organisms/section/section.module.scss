@@ -306,6 +306,16 @@
       width: auto;
     }
   }
+
+  &__more {
+    &--title {
+      width: 80vw;
+
+      @media screen and (min-width: 728px) {
+        width: 45vw;
+      }
+    }
+  }
 }
 
 .grid {
@@ -466,6 +476,18 @@
 
     @media screen and (min-width: 1128px) {
       padding-top: 50%;
+    }
+  }
+}
+
+.font {
+  &__more {
+    &--title {
+      font-size: 36px;
+
+      @media screen and (min-width: 728px) {
+        font-size: 50px;
+      }
     }
   }
 }

@@ -31,6 +31,8 @@ import { ReadySection } from "./section.ready";
 import { WorksSection } from "./section.works";
 import { SharingSection } from "./section.sharing";
 import { BackSection } from "./section.back";
+import { FAQSection } from "./section.faq";
+import { MoreSection } from "./section.more";
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -74,6 +76,8 @@ export const Section: React.FC<SectionProps> = ({
     works: <WorksSection {...props} />,
     sharing: <SharingSection {...props} />,
     back: <BackSection {...props} />,
+    faq: <FAQSection {...props} />,
+    more: <MoreSection {...props} />,
   };
   return <div className={extendsTo}>{types[type]}</div>;
 };

@@ -152,6 +152,12 @@ export interface BackSectionProps {
   back?: string;
 }
 
+export interface MoreSectionProps {}
+
+export interface FAQSectionProps {
+  questions?: { question: string; answer: string }[];
+}
+
 export interface SectionProps {
   extendsTo?: string;
   type: string;
