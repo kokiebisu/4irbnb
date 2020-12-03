@@ -70,6 +70,7 @@ export interface PlaceInputProps {
   value?: string;
   direction?: string;
   errors?: boolean;
+  changePlace?: () => void;
 }
 
 export interface SelectInputProps {
