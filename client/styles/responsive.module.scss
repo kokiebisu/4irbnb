@@ -12,6 +12,7 @@ $displays: (
 );
 
 $percentages: (
+  50: percentage(50),
   55: percentage(55),
 );
 @mixin respond-to($media) {
