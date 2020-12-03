@@ -7,14 +7,13 @@ import space from "../../../styles/space.module.scss";
 import { Layout } from "../../../layout/layout.component";
 
 /** Components */
-import { banner } from "../../../components/atoms/button/button.stories";
 import { Bullet } from "../../../components/atoms/bullet/bullet.component";
 
 /** Props */
 import { BackSectionProps } from "./props";
 
 export const BackSection: React.FC<BackSectionProps> = () => {
-  const bullets = [undefined, undefined, undefined];
+  const bullets = ["resources", "events", "community"];
   return (
     <Layout
       type="section"
@@ -23,10 +22,12 @@ export const BackSection: React.FC<BackSectionProps> = () => {
       subtitle="These hosts bring the spirit of experiences to the screen with unique small group activities to do together while we're apart."
     >
       <div
-        className={[
-          space["m-v--16"],
-          banner["display__onlinehost--points"],
-        ].join(" ")}
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)",
+          columnGap: 20,
+        }}
+        className={[space["m-v--16"]].join(" ")}
       >
         {bullets.map((bullet, index) => {
           return (
