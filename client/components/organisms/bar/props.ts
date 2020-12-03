@@ -5,6 +5,8 @@ export interface PaginateBarProps {
 
 export interface CovidNoticeProps {}
 
+export interface ProgressBarProps {}
+
 export interface BarProps {
   type?: string;
   [x: string]: any;

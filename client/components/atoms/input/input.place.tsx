@@ -1,8 +1,6 @@
 import React, { useReducer, useRef, useState } from "react";
 
-/**
- * Styles
- */
+/** Styles */
 import shape from "../../../styles/shape.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
@@ -10,39 +8,26 @@ import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import input from "./input.module.scss";
 
-/**
- * Props
- */
+/** Props */
 import { PlaceInputProps } from "./props";
 
-/**
- * Styling
- */
+/** Styling */
 import { Checked } from "../../../public/svg/original";
 import { ChevronDown, ChevronTop } from "../../../public/svg/regular";
-import useOnClickOutside from "../../../hooks/useOnClickOutside";
-import { select } from "./input.stories";
 
-// const reducer = (state, action) => {
-//   switch (action.type) {
-//     case "expand":
-//       return { ...state, expanded: !state.expanded };
-//     case "select":
-//       return { ...state, expanded: !state.expanded, selected: action.payload };
-//   }
-// };
+/** Hooks */
+import useOnClickOutside from "../../../hooks/useOnClickOutside";
 
 /**
  * Renders the text input component
  * @param {string} name - Type of input
  * @param {string} placeholder - Placeholder
- * @param handleChange
+ * @param {function} changePlace - Change the place type
  * @param {string} value - Current value of the input
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
 export const PlaceInput: React.FC<PlaceInputProps> = ({
-  handleChange,
   value,
   direction,
   errors = false,
@@ -50,10 +35,6 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
 }) => {
   const containerRef = useRef();
   const [expanded, setExpanded] = useState(false);
-  // const [state, dispatch] = useReducer(reducer, {
-  //   selected: "Entire place",
-  //   expanded: false,
-  // });
   useOnClickOutside(containerRef, () => {
     if (expanded) {
       setExpanded(!expanded);
@@ -103,7 +84,6 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
       >
         <div
           style={{ height: "100%", padding: "0 12px" }}
-          onChange={handleChange}
           onClick={() => setExpanded(!expanded)}
           className={`${[
             layout["flex"],

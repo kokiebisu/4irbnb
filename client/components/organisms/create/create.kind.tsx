@@ -1,12 +1,18 @@
-import { Input } from "../../../components/atoms/input/input.component";
 import React, { useState } from "react";
+
+/** Components */
+import { Input } from "../../../components/atoms/input/input.component";
+import { Layout } from "../../../layout/layout.component";
+
+/** Props */
 import { KindCreateProps } from "./props";
 
+/** Styles */
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
-/** Components */
+/** Logic */
 import { properties } from "../../atoms/input/logic/logic.types";
 
 export const KindCreate: React.FC<KindCreateProps> = () => {
@@ -20,17 +26,12 @@ export const KindCreate: React.FC<KindCreateProps> = () => {
   return (
     <div>
       <div className={[space["m-b--45"]].join(" ")}>
-        <h3 className={[font["size--20"], color["c--gray__2"]].join(" ")}>
+        <h3 className={[font["size--28"], color["c--gray__2"]].join(" ")}>
           What kind of place are you listing?
         </h3>
       </div>
       <div style={{ width: 250 }} className={[space["m-b--22"]].join(" ")}>
-        <div className={[space["m-b--8"]].join(" ")}>
-          <h4 className={[font["size--14"], color["c--gray__0"]].join(" ")}>
-            First, let's narrow things down
-          </h4>
-        </div>
-        <div>
+        <Layout type="input" title="First, let's narrow things down">
           <Input
             inputType="place"
             type="select"
@@ -39,15 +40,10 @@ export const KindCreate: React.FC<KindCreateProps> = () => {
               setPlace(e.target.value);
             }}
           />
-        </div>
+        </Layout>
       </div>
       <div className={[space["m-b--8"]].join(" ")} style={{ width: 250 }}>
-        <div className={[space["m-b--8"]].join(" ")}>
-          <h4 className={[font["size--14"], color["c--gray__0"]].join(" ")}>
-            Now choose a property type
-          </h4>
-        </div>
-        <div>
+        <Layout type="input" title="Now choose a property type">
           <Input
             disabled={!place}
             inputType={place && place}
@@ -57,13 +53,20 @@ export const KindCreate: React.FC<KindCreateProps> = () => {
               setProperty(e.target.value);
             }}
           />
-        </div>
+        </Layout>
       </div>
       {property && (
         <div>
-          <h4 className={[font["size--12"], color["c--gray__0"]].join(" ")}>
-            {displayDescription()}
-          </h4>
+          <div className={[space["m-t--16"]].join(" ")}>
+            <h4 className={[font["size--14"], color["c--gray__0"]].join(" ")}>
+              {displayDescription()}
+            </h4>
+          </div>
+          <div className={[space["m-v--32"]].join(" ")}>
+            <Layout type="input" title="What will guests have?">
+              something
+            </Layout>
+          </div>
         </div>
       )}
     </div>

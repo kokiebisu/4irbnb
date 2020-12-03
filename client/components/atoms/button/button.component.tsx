@@ -19,6 +19,7 @@ import { OptionButton } from "./button.option";
 import { UnderlineButton } from "./button.underline";
 import { FilterButton } from "./button.filter";
 import { ModalButton } from "./button.modal";
+import { BackButton } from "./button.back";
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -53,6 +54,7 @@ export const Button: React.FC<ButtonProps> = ({
     underline: <UnderlineButton {...props} />,
     filter: <FilterButton {...props} />,
     modal: <ModalButton {...props} />,
+    back: <BackButton {...props} />,
   };
 
   if (to) {

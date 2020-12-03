@@ -66,11 +66,10 @@ export interface GuestsInputProps {
 }
 
 export interface PlaceInputProps {
-  handleChange?: any;
   value?: string;
   direction?: string;
   errors?: boolean;
-  changePlace?: () => void;
+  changePlace?: (type: string) => void;
 }
 
 export interface SelectInputProps {

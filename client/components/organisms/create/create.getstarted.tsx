@@ -15,7 +15,8 @@ import { Button } from "../../../components/atoms/button/button.component";
 import { Input } from "../../../components/atoms/input/input.component";
 
 /** Contexts */
-import { useStayDispatch, useStayState } from "context/stay";
+import { useStayDispatch, useStayState } from "../../../context/stay";
+import { useTimeout } from "hooks/useTimeout";
 
 export const GetStartedCreate: React.FC<GetStartedCreateProps> = () => {
   const [loading, setLoading] = useState(false);
@@ -32,7 +33,9 @@ export const GetStartedCreate: React.FC<GetStartedCreateProps> = () => {
         type: "get_started",
         payload: { place, guests, address },
       });
-      Router.push("/become-a-host/room");
+      setTimeout(() => {
+        Router.push("/become-a-host/room");
+      }, 2000);
     },
   });
 
