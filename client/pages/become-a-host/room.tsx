@@ -63,7 +63,13 @@ const RoomPage = () => {
     <Layout
       type="create"
       left={
-        <Create type="kind" data={data} setData={setData} next={saveData} />
+        <Create
+          title="Property and guests"
+          type="kind"
+          data={data}
+          setData={setData}
+          next={saveData}
+        />
       }
     />
   );
