@@ -106,7 +106,7 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
             className={[
               layout["relative"],
               space["p-h--4"],
-              color["bg--white__0"],
+              color["bg--white"],
               font["weight--100"],
               color["c--gray__0"],
               font["size--12"],

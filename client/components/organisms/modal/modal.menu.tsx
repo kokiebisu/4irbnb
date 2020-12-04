@@ -1,22 +1,24 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-/**
- * Styles
- */
+/** Styles */
 import shape from "../../../styles/shape.module.scss";
 import color from "../../../styles/color.module.scss";
 import layout from "../../../styles/layout.module.scss";
 
 /** Components */
 import { Button } from "../../../components/atoms/button/button.component";
+import { getOptionContents } from "../../../components/atoms/button/content/content.option";
+import { option } from "../../../components/atoms/button/button.stories";
 
 /** Props */
 import { MenuModalProps } from "./props";
+
+/** Hooks */
 import useOnClickOutside from "../../../hooks/useOnClickOutside";
+
+/** Contexts */
 import { useToggleDispatch } from "../../../context/toggle";
-import { getOptionContents } from "components/atoms/button/content/content.option";
-import { option } from "components/atoms/button/button.stories";
 
 const Options: React.FC<{
   params?: {
@@ -61,7 +63,7 @@ export const MenuModal: React.FC<MenuModalProps> = ({
         shape["shadow--lg"],
         layout["flex"],
         layout["items-center"],
-        color["bg--white__0"],
+        color["bg--white"],
       ].join(" ")}
       style={{ width: 230, height: authenticated ? 420 : 230 }}
     >

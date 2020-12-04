@@ -61,9 +61,10 @@ export const OnlineCard: React.FC<OnlineCardProps> = ({
           left: 0,
           right: 0,
         }}
-        className={`${
-          inverse ? color["bg--gray__4"] : color["bg--white__0"]
-        } ${[shape["bbr--15"], [shape["shadow--lg"]].join(" ")].join(" ")}`}
+        className={`${inverse ? color["bg--gray__4"] : color["bg--white"]} ${[
+          shape["bbr--15"],
+          [shape["shadow--lg"]].join(" "),
+        ].join(" ")}`}
       >
         <div
           style={{
@@ -75,9 +76,9 @@ export const OnlineCard: React.FC<OnlineCardProps> = ({
           }}
         >
           <h4
-            className={`${
-              inverse ? color["c--white__0"] : font["weight--500"]
-            } ${[font["size--15"]].join(" ")}`}
+            className={`${inverse ? color["c--white"] : font["weight--500"]} ${[
+              font["size--15"],
+            ].join(" ")}`}
           >
             {title}
           </h4>

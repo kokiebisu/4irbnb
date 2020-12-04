@@ -26,7 +26,7 @@ export const StayHeader: React.FC<StayHeaderProps> = ({ title }) => {
       style={{ height: 65 }}
       className={[
         space["p-h--0"],
-        color["bg--white__0"],
+        color["bg--white"],
         shape["shadow--sm"],
       ].join(" ")}
     >

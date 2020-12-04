@@ -29,10 +29,10 @@ export const BorderButton: React.FC<BorderButtonProps> = ({
 }) => {
   const renderBorder = () => {
     if (inverse && bold) {
-      return [color["b-2--white__0"], color["c--white__0"]].join(" ");
+      return [color["b-2--white"], color["c--white"]].join(" ");
     }
     if (inverse) {
-      return [color["b--white__0"], color["c--white__0"]].join(" ");
+      return [color["b--white"], color["c--white"]].join(" ");
     }
     if (bold) {
       return [color["b-2--black"]].join(" ");

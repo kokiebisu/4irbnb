@@ -33,7 +33,7 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
         space["p-b--6"],
         space["p-r--8"],
         space["p-l--10"],
-        color["bg--white__0"],
+        color["bg--white"],
       ].join(" ")} ${
         inverse
           ? [color["b--transparent"]].join(" ")

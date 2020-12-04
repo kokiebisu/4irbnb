@@ -41,7 +41,7 @@ export const Button: React.FC<ButtonProps> = ({
   const types: mapProps = {
     auth: <AuthButton {...props} />,
     // globe: <GlobeButton {...props} />,
-    // host: <HostButton {...props} />,
+    host: <HostButton {...props} />,
     menu: <MenuButton {...props} />,
     // privacy: <PrivacyButton {...props} />,
     // border: <BorderButton {...props} />,
@@ -73,7 +73,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <motion.button
-      whileTap={{ scale: 0.98 }}
+      whileTap={{ scale: 0.99 }}
       data-testid="button"
       className={extendsTo}
       onClick={onPress}

@@ -24,7 +24,7 @@ export const OptionButton: React.FC<OptionButtonProps> = ({
       className={`${[
         font["text--left"],
         font["size--13"],
-        color["bg--white__0"],
+        color["bg--white"],
         space["p-h--14"],
         space["p-v--10"],
         layout["block"],

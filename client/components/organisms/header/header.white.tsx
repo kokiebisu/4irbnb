@@ -22,7 +22,7 @@ import { ChevronLeft } from "../../../public/svg/regular";
 
 /** Props */
 import { WhiteHeaderProps } from "./props";
-import { menu } from "components/atoms/button/button.stories";
+import { host, menu } from "components/atoms/button/button.stories";
 
 /**
  * Renders the white header
@@ -38,7 +38,7 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
     <header
       className={`${[
         space["p-v--16"],
-        color["bg--white__0"],
+        color["bg--white"],
         shape["shadow--sm"],
       ].join(" ")}`}
     >
@@ -82,7 +82,7 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
                 " "
               )}
             >
-              <Button type="host" to="/host/homes" />
+              <Button {...host.args} />
             </div>
             {/* <div
               className={[

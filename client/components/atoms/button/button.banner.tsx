@@ -21,11 +21,11 @@ export const BannerButton: React.FC<BannerButtonProps> = ({
   return (
     <motion.button
       data-testid="button"
-      className={[color["bg--white__0"], shape["br--6"]].join(" ")}
+      className={[color["bg--white"], shape["br--6"]].join(" ")}
     >
       <div
         className={[
-          color["bg--white__0"],
+          color["bg--white"],
           space["p-h--16"],
           space["p-v--8"],
           shape["br--6"],
