@@ -34,9 +34,7 @@ export interface MenuButtonProps extends InverseProps {
   };
 }
 
-export interface BackButtonProps {
-  onPress?: () => void;
-}
+export interface BackButtonProps {}
 
 export interface PrivacyButtonProps
   extends InverseProps,
