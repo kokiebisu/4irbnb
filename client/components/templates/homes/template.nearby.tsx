@@ -20,7 +20,7 @@ import { Footer } from "../../../components/organisms/footer/footer.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
 /** Stories */
-import { filter } from "components/atoms/button/button.stories";
+import { filter } from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the nearby template component

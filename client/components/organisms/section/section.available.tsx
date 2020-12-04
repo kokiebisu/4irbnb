@@ -14,7 +14,10 @@ import { Button } from "../../../components/atoms/button/button.component";
 import { AvailableSectionProps } from "./props";
 
 /** Stories */
-import { border, paginate } from "components/atoms/button/button.stories";
+import {
+  border,
+  paginate,
+} from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the available section

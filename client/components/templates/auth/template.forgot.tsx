@@ -24,7 +24,7 @@ import { validateForgotPassword as validate } from "../../../helper/auth";
 import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
 
 /** Stories */
-import { primary } from "components/atoms/button/button.stories";
+import { primary } from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the login template component

@@ -17,7 +17,11 @@ import { Lock } from "../../../public/svg/original";
 
 /** Props */
 import { PrivacyModalProps } from "./props";
-import { useToggleDispatch } from "context/toggle";
+
+/** Contexts */
+import { useToggleDispatch } from "../../../context/toggle";
+
+/** Stories */
 import { privacy } from "../../atoms/button/button.stories";
 
 /**

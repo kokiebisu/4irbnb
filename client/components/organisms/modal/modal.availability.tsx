@@ -12,7 +12,9 @@ import { Star } from "../../../public/svg/original";
 
 /** Props */
 import { AvailabilityModalProps } from "./props";
-import { primary } from "components/atoms/button/button.stories";
+
+/** Stories */
+import { primary } from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the modal which gives all the available options
