@@ -1,4 +1,5 @@
 import React from "react";
+import { BathroomsCreate } from "./create.bathrooms";
 import { BedroomsCreate } from "./create.bedrooms";
 import { GetStartedCreate } from "./create.getstarted";
 import { KindCreate } from "./create.kind";
@@ -12,6 +13,7 @@ export const Create: React.FC<CreateProps> = ({
     getstarted: <GetStartedCreate {...props} />,
     kind: <KindCreate {...props} />,
     bedrooms: <BedroomsCreate {...props} />,
+    bathrooms: <BathroomsCreate {...props} />,
   };
   return types[type];
 };
