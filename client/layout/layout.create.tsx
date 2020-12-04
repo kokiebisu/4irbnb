@@ -15,6 +15,9 @@ import responsive from "../styles/responsive.module.scss";
 /** Props */
 import { CreateLayoutProps } from "./props";
 
+/** Stories */
+import { primary } from "../components/atoms/button/button.stories";
+
 export const CreateLayout: React.FC<CreateLayoutProps> = ({
   title = "Property and guests",
   left,
@@ -89,10 +92,10 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
                   </div>
                   <div>
                     <Button
-                      type="primary"
+                      {...primary.args}
                       title="Next"
                       size="md"
-                      disabled={criteria}
+                      disable={criteria}
                       fill="#018489"
                       onPress={next}
                     />

@@ -26,19 +26,19 @@ export const StayHeader: React.FC<StayHeaderProps> = ({ title }) => {
       style={{ height: 65 }}
       className={[
         space["p-h--0"],
-        color["bg--white__0"],
+        color["bg--white"],
         shape["shadow--sm"],
       ].join(" ")}
     >
       <div className={[layout["flex"], layout["items-center"]].join(" ")}>
         <div>
           <Button
+            onPress={() => alert("button pressed")}
             extendsTo={[
               layout["inline-block"],
               space["p--14"],
               shape["br--circle"],
             ].join(" ")}
-            to="/"
           >
             <NoNameLogo fill="#008489" width={34} />
           </Button>

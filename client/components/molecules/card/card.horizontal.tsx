@@ -75,7 +75,7 @@ export const HorizontalCard: React.FC<Props> = ({
                   className={
                     superhost
                       ? [].join(" ")
-                      : [color["c--white__0"], shape["hidden"]].join(" ")
+                      : [color["c--white"], shape["hidden"]].join(" ")
                   }
                 >
                   <div
@@ -104,7 +104,7 @@ export const HorizontalCard: React.FC<Props> = ({
                     className={[
                       save
                         ? [].join(" ")
-                        : [color["c--white__0"], shape["hidden"]].join(" "),
+                        : [color["c--white"], shape["hidden"]].join(" "),
                     ].join(" ")}
                   >
                     <Heart

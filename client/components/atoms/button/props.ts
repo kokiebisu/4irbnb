@@ -19,13 +19,13 @@ interface InverseProps {
 }
 
 export interface AuthButtonProps {
-  auth?: string;
   icon?: any;
+  name?: string;
 }
 
 export interface GlobeButtonProps extends InverseProps {}
 
-export interface HostButtonProps extends LinkButtonProps, InverseProps {}
+export interface HostButtonProps extends InverseProps {}
 
 export interface MenuButtonProps extends InverseProps {
   authenticated?: boolean;
@@ -34,9 +34,7 @@ export interface MenuButtonProps extends InverseProps {
   };
 }
 
-export interface BackButtonProps {
-  onPress?: () => void;
-}
+export interface BackButtonProps {}
 
 export interface PrivacyButtonProps
   extends InverseProps,
@@ -59,7 +57,7 @@ export interface PrimaryButtonProps extends TitleProps, OnPressProps {
   spread?: boolean;
   fill?: string;
   loading?: boolean;
-  disabled?: boolean;
+  disable?: boolean;
 }
 
 export interface SearchbarButtonProps extends MiniProps {}
@@ -72,13 +70,13 @@ export interface PaginateButtonProps {
 
 export interface ModalButtonProps {
   onPress?: () => void;
-  modalType?: "close" | "back";
+  modal?: "close" | "back";
 }
 
 export interface ExpandButtonProps extends LinkButtonProps, TitleProps {}
 
 export interface OptionButtonProps {
-  option?: string;
+  name?: string;
   bold?: boolean;
 }
 
@@ -100,5 +98,8 @@ export interface ReportButtonProps {}
 export type ButtonProps = {
   extendsTo?: string;
   type?: string;
+  onPress?: () => void;
+  block?: boolean;
+  animate?: boolean;
   [x: string]: any;
 };
