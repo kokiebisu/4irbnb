@@ -28,7 +28,7 @@ getStarted.args = {
   type: "getstarted",
 };
 
-export const kind = CreateStories.bind({});
-kind.args = {
-  type: "kind",
+export const room = CreateStories.bind({});
+room.args = {
+  type: "room",
 };

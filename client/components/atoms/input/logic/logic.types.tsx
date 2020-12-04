@@ -28,6 +28,7 @@ import {
   Options as BoutiqueHotelOptions,
   Properties as BoutiqueHotelProperties,
 } from "./logic.boutique";
+import { Options as BedroomsOptions } from "./logic.bedrooms";
 
 export const properties = {
   place: PlaceProperties,
@@ -60,4 +61,5 @@ export const inputTypes = {
     default: "Select property type",
     options: BoutiqueHotelOptions,
   },
+  bedrooms: { options: BedroomsOptions },
 };

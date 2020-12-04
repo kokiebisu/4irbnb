@@ -9,6 +9,9 @@ type Payload = {
   guests?: number;
   address?: string;
   property?: string;
+  bedrooms?: number;
+  beds?: number;
+  bathrooms?: number;
 };
 
 type State = {
@@ -17,6 +20,9 @@ type State = {
   guests: number;
   address: string;
   property: string;
+  bedrooms?: number;
+  beds?: number;
+  bathrooms?: number;
 };
 
 type StayProviderProps = { children: React.ReactNode };
@@ -42,6 +48,9 @@ const StayProvider = ({ children }: StayProviderProps) => {
     address: "",
     property: "",
     stay: "Entire place",
+    bedrooms: 0,
+    beds: 0,
+    bathrooms: 0,
   });
 
   console.log("stay provider", state);

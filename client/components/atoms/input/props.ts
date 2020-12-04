@@ -89,6 +89,15 @@ export interface RadioInputProps {
   value?: string;
 }
 
+export interface CounterInputProps {
+  title?: string;
+  value?: number;
+  add?: () => void;
+  subtract?: () => void;
+  min?: number;
+  max?: number;
+}
+
 export interface InputProps {
   extendsTo?: string;
   spread?: boolean;
