@@ -16,7 +16,9 @@ import { Input } from "../../../components/atoms/input/input.component";
 
 /** Contexts */
 import { useStayDispatch } from "../../../context/stay";
-import { primary } from "components/atoms/button/button.stories";
+
+/** Stories */
+import { primary } from "../../../components/atoms/button/button.stories";
 
 export const GetStartedCreate: React.FC<GetStartedCreateProps> = () => {
   const [loading, setLoading] = useState(false);

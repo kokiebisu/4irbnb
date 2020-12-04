@@ -1,13 +1,21 @@
 import React from "react";
+
+/** Props */
 import { OnlineHostBannerProps } from "./props";
+
+/** Styles */
 import layout from "../../../styles/layout.module.scss";
-import { Button } from "../../../components/atoms/button/button.component";
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 import banner from "./banner.module.scss";
+
+/** Components */
+import { Button } from "../../../components/atoms/button/button.component";
 import { Bullet } from "../../../components/atoms/bullet/bullet.component";
-import { primary } from "components/atoms/button/button.stories";
+
+/** Stories */
+import { primary } from "../../../components/atoms/button/button.stories";
 
 export const OnlineHostBanner: React.FC<OnlineHostBannerProps> = () => {
   const bullets = ["home", "global", "business"];

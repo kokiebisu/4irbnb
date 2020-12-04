@@ -14,7 +14,7 @@ import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 
 /** Stories */
-import { primary } from "components/atoms/button/button.stories";
+import { primary } from "../../atoms/button/button.stories";
 
 /**
  * Renders the available card component

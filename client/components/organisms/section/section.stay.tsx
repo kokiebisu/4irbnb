@@ -17,7 +17,7 @@ import { Button } from "../../../components/atoms/button/button.component";
 import { StaySectionProps } from "./props";
 
 /** Stories */
-import { paginate } from "components/atoms/button/button.stories";
+import { paginate } from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the stay section

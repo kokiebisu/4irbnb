@@ -21,7 +21,7 @@ import { Button } from "../../atoms/button/button.component";
 import { CategoryTemplateProps } from "../props";
 
 /** Stories */
-import { filter } from "components/atoms/button/button.stories";
+import { filter } from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the category template component
