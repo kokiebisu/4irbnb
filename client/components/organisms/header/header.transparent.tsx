@@ -1,4 +1,5 @@
 import React from "react";
+import Router from "next/router";
 
 /** Styles */
 import space from "../../../styles/space.module.scss";
@@ -23,7 +24,7 @@ import { TransparentHeaderProps } from "./props";
 
 /** Contexts */
 import { useToggleDispatch, useToggleState } from "../../../context/toggle";
-import { menu } from "components/atoms/button/button.stories";
+import { host, menu } from "components/atoms/button/button.stories";
 
 /**
  * Renders the transparent header
@@ -55,7 +56,7 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
           <div
             className={[styles["searchbar__host"], space["m-r--16"]].join(" ")}
           >
-            <Button type="host" inverse to="/host/homes" />
+            <Button {...host.args} inverse />
           </div>
           {/* <div
             className={[
@@ -96,7 +97,7 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
           space["p-h--25"],
           shape["br--30"],
           shape["shadow"],
-          color["bg--white__0"],
+          color["bg--white"],
         ].join(" ")}
       >
         <div className={[space["m-r--15"]].join(" ")}>

@@ -40,7 +40,7 @@ export const MoreSection: React.FC<MoreSectionProps> = () => {
                   className={[
                     font["lh--10"],
                     font["text--center"],
-                    color["c--white__0"],
+                    color["c--white"],
                     section["font__more--title"],
                   ].join(" ")}
                 >

@@ -45,7 +45,7 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
         data-testid="button"
         style={!disabled && fill && { backgroundColor: fill }}
         className={`${[
-          color["c--white__0"],
+          color["c--white"],
           shape["w--full"],
           font["size--14"],
           space["p-v--8"],
@@ -80,7 +80,7 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
         data-testid="button"
         style={!disabled && fill && { backgroundColor: fill }}
         className={`${[
-          color["c--white__0"],
+          color["c--white"],
           shape["w--full"],
           font["size--16"],
           space["p-v--14"],
@@ -115,7 +115,7 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
         data-testid="button"
         style={!disabled && fill && { backgroundColor: fill }}
         className={`${[
-          color["c--white__0"],
+          color["c--white"],
           shape["w--full"],
           layout["block"],
           font["size--16"],

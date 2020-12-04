@@ -25,7 +25,7 @@ export interface AuthButtonProps {
 
 export interface GlobeButtonProps extends InverseProps {}
 
-export interface HostButtonProps extends LinkButtonProps, InverseProps {}
+export interface HostButtonProps extends InverseProps {}
 
 export interface MenuButtonProps extends InverseProps {
   authenticated?: boolean;

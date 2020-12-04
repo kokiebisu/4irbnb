@@ -55,7 +55,7 @@ export const PrivacyButton: React.FC<PrivacyButtonProps> = ({
       <h4
         className={
           inverse
-            ? [color["c--white__0"]].join(" ")
+            ? [color["c--white"]].join(" ")
             : [color["c--black"]].join(" ")
         }
       >

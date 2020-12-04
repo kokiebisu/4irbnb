@@ -12,6 +12,7 @@ import layout from "../../../styles/layout.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import space from "../../../styles/space.module.scss";
 import animation from "../../../styles/animation.module.scss";
+import Router from "next/router";
 
 export default {
   title: "Design System/Atoms/Button",
@@ -68,10 +69,11 @@ const ButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
 //   ...disableTitle,
 // };
 
-// export const host = ButtonTemplate.bind({});
-// host.args = {
-//   type: "host",
-// };
+export const host = ButtonTemplate.bind({});
+host.args = {
+  type: "host",
+  onPress: () => Router.push("/host/homes"),
+};
 
 export const menu = ButtonTemplate.bind({});
 menu.args = {
