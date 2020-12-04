@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { Layout } from "layout/layout.component";
 import { useStayDispatch } from "context/stay";
 import Router from "next/router";
+import { Create } from "../../components/organisms/create/create.component";
 
 const BedRoomsPage = () => {
   const stayDispatch = useStayDispatch();
   const [data, setData] = useState({
     guests: 1,
-    bedrooms: "Studio",
+    bedrooms: 0,
     beds: 1,
   });
 
@@ -29,7 +30,13 @@ const BedRoomsPage = () => {
     <Layout
       type="create"
       left={
-        <Create type="bedrooms" data={data} setData={setData} next={saveData} />
+        <Create
+          title="Property and guests"
+          type="bedrooms"
+          data={data}
+          setData={setData}
+          next={saveData}
+        />
       }
     />
   );
