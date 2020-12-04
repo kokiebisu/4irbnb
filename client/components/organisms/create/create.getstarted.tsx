@@ -15,12 +15,11 @@ import { Button } from "../../../components/atoms/button/button.component";
 import { Input } from "../../../components/atoms/input/input.component";
 
 /** Contexts */
-import { useStayDispatch, useStayState } from "../../../context/stay";
-import { useTimeout } from "hooks/useTimeout";
+import { useStayDispatch } from "../../../context/stay";
 
 export const GetStartedCreate: React.FC<GetStartedCreateProps> = () => {
   const [loading, setLoading] = useState(false);
-  const [place, setPlace] = useState("Entire place");
+  const [stay, setStay] = useState("Entire place");
   const dispatchStay = useStayDispatch();
   const formik = useFormik({
     initialValues: {
@@ -30,8 +29,8 @@ export const GetStartedCreate: React.FC<GetStartedCreateProps> = () => {
     onSubmit: async ({ guests, address }) => {
       setLoading(true);
       dispatchStay({
-        type: "get_started",
-        payload: { place, guests, address },
+        type: "add",
+        payload: { stay, guests, address },
       });
       setTimeout(() => {
         Router.push("/become-a-host/room");
@@ -75,7 +74,7 @@ export const GetStartedCreate: React.FC<GetStartedCreateProps> = () => {
               }}
             >
               <div>
-                <Input type="place" value={place} changePlace={setPlace} />
+                <Input type="place" value={stay} changePlace={setStay} />
               </div>
               <div>
                 <Input

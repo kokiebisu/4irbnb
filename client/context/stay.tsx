@@ -4,15 +4,19 @@ import { createContext, useReducer, useContext } from "react";
 type Dispatch = (action: Action) => void;
 type Action = { type: string; payload: Payload };
 type Payload = {
-  place: string;
-  guests: number;
-  address: string;
+  stay?: string;
+  place?: string;
+  guests?: number;
+  address?: string;
+  property?: string;
 };
 
 type State = {
+  stay: string;
   place: string;
   guests: number;
   address: string;
+  property: string;
 };
 
 type StayProviderProps = { children: React.ReactNode };
@@ -20,15 +24,12 @@ type StayProviderProps = { children: React.ReactNode };
 const StayStateContext = createContext<State | undefined>(undefined);
 const StayDispatchContext = createContext<Dispatch | undefined>(undefined);
 
-const stayReducer = (
-  state: State,
-  { type, payload: { place, guests, address } }: Action
-) => {
+const stayReducer = (state: State, { type, payload }: Action) => {
   switch (type) {
     case "reset":
-      return { ...state, place: "Entire place", guests: 0, address: "" };
-    case "get_started":
-      return { ...state, place, guests, address };
+      return { ...state, stay: "Entire place", guests: 0, address: "" };
+    case "add":
+      return { ...state, ...payload };
     default:
       return state;
   }
@@ -36,10 +37,14 @@ const stayReducer = (
 
 const StayProvider = ({ children }: StayProviderProps) => {
   const [state, dispatch] = useReducer(stayReducer, {
-    place: "Entire place",
+    place: "",
     guests: 0,
     address: "",
+    property: "",
+    stay: "Entire place",
   });
+
+  console.log("stay provider", state);
 
   return (
     <StayStateContext.Provider value={state}>
