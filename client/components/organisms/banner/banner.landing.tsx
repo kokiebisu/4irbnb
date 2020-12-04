@@ -1,9 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Router from "next/router";
 
-/**
- * Styles
- */
+/** Styles */
 import layout from "../../../styles/layout.module.scss";
 import index from "../../../styles/index.module.scss";
 import space from "../../../styles/space.module.scss";
@@ -11,20 +10,14 @@ import shape from "../../../styles/shape.module.scss";
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/**
- * Props
- */
+/** Props */
 import { LandingBannerProps } from "./props";
 
-/**
- * Components
- */
+/** Components */
 import { Header } from "../../../components/organisms/header/header.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/**
- * Hooks
- */
+/** Hooks */
 import { useHandleScroll } from "../../../hooks/useHandleScroll";
 
 /**
@@ -130,7 +123,11 @@ export const LandingBanner: React.FC<LandingBannerProps> = ({ data }) => {
                   index["justify__explore--button"],
                 ].join(" ")}
               >
-                <Button type="banner" title="Explore nearby" to="/" />
+                <Button
+                  type="banner"
+                  title="Explore nearby"
+                  onPress={() => Router.push("/")}
+                />
               </div>
             </div>
           </div>

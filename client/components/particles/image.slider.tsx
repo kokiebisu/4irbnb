@@ -153,7 +153,12 @@ export const ImageSlider = ({ slides }) => {
           zIndex: 9999,
         }}
       >
-        <Button type="paginate" direction="left" onPress={previousSlide} />
+        <Button
+          type="paginate"
+          animate
+          direction="left"
+          onPress={previousSlide}
+        />
       </div>
       <div
         style={{
@@ -166,7 +171,7 @@ export const ImageSlider = ({ slides }) => {
           zIndex: 9999,
         }}
       >
-        <Button type="paginate" direction="right" onPress={nextSlide} />
+        <Button type="paginate" animate direction="right" onPress={nextSlide} />
       </div>
 
       <div

@@ -133,6 +133,7 @@ export const AvailableSection: React.FC<AvailableSectionProps> = ({
           <div className={[space["m-h--4"]].join(" ")}>
             <Button
               type="paginate"
+              animate
               direction="left"
               onPress={previous}
               disable={state.activeSlide === 0}
@@ -141,6 +142,7 @@ export const AvailableSection: React.FC<AvailableSectionProps> = ({
           <div className={[space["m-h--4"]].join(" ")}>
             <Button
               type="paginate"
+              animate
               direction="right"
               onPress={next}
               disable={

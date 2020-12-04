@@ -465,6 +465,7 @@ export const PaginateBar: React.FC<PaginateBarProps> = ({
         {page !== 1 && (
           <Button
             type="paginate"
+            animate
             direction="left"
             onPress={() => Router.push(`/s/homes/page/${page - 1}`)}
           />
@@ -473,6 +474,7 @@ export const PaginateBar: React.FC<PaginateBarProps> = ({
         {page !== total && (
           <Button
             type="paginate"
+            animate
             direction="right"
             onPress={() => Router.push(`/s/homes/page/${page + 1}`)}
           />

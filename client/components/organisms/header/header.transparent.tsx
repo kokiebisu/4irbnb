@@ -56,7 +56,7 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
           <div
             className={[styles["searchbar__host"], space["m-r--16"]].join(" ")}
           >
-            <Button {...host.args} inverse />
+            <Button {...host.args} inverse animate />
           </div>
           {/* <div
             className={[
