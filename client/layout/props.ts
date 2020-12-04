@@ -19,6 +19,13 @@ export interface InputLayoutProps {
   children?: React.ReactNode;
 }
 
+export interface CreateLayoutProps {
+  title?: string;
+  left?: React.ReactNode;
+  right?: React.ReactNode;
+  next?: () => void;
+}
+
 export interface LayoutProps {
   extendsTo?: string;
   type: string;
