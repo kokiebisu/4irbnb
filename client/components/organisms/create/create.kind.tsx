@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 /** Components */
 import { Input } from "../../../components/atoms/input/input.component";
@@ -13,15 +13,11 @@ import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
 /** Logic */
-import { properties } from "../../atoms/input/logic/logic.types";
+import { inputTypes, properties } from "../../atoms/input/logic/logic.types";
+import { getLogic } from "./logic/logic.kind";
 
 export const KindCreate: React.FC<KindCreateProps> = () => {
-  const [place, setPlace] = useState(undefined);
-  const [property, setProperty] = useState(undefined);
-
-  const displayDescription = () => {
-    return properties[place].find((type) => type.name === property).description;
-  };
+  const [place, property, description, setPlace, setProperty] = getLogic();
 
   return (
     <div>
@@ -55,17 +51,15 @@ export const KindCreate: React.FC<KindCreateProps> = () => {
           />
         </Layout>
       </div>
-      {property && (
+      {property && description && (
         <div>
           <div className={[space["m-t--16"]].join(" ")}>
             <h4 className={[font["size--14"], color["c--gray__0"]].join(" ")}>
-              {displayDescription()}
+              {description}
             </h4>
           </div>
           <div className={[space["m-v--32"]].join(" ")}>
-            <Layout type="input" title="What will guests have?">
-              something
-            </Layout>
+            <Layout type="input" title="What will guests have?"></Layout>
           </div>
         </div>
       )}
