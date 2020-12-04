@@ -45,7 +45,7 @@ export const LocationCreate: React.FC<LocationCreateProps> = ({
           <Input
             type="select"
             handleChange={(e) => setData({ ...data, country: e.target.value })}
-            value={data.country}
+            value={data?.country}
             inputType="country"
           />
         </div>
@@ -57,7 +57,7 @@ export const LocationCreate: React.FC<LocationCreateProps> = ({
             name="postal"
             type="text"
             handleChange={(e) => setData({ ...data, postal: e.target.value })}
-            value={data.postal}
+            value={data?.postal}
           />
         </div>
       </div>
@@ -70,7 +70,7 @@ export const LocationCreate: React.FC<LocationCreateProps> = ({
             name="street"
             type="text"
             handleChange={(e) => setData({ ...data, street: e.target.value })}
-            value={data.street}
+            value={data?.street}
           />
         </div>
         <div className={[space["m-t--4"]].join(" ")}>
@@ -88,7 +88,7 @@ export const LocationCreate: React.FC<LocationCreateProps> = ({
             name="apt"
             type="text"
             handleChange={(e) => setData({ ...data, apt: e.target.value })}
-            value={data.apt}
+            value={data?.apt}
           />
         </div>
         <div className={[space["m-t--4"]].join(" ")}>
@@ -111,7 +111,7 @@ export const LocationCreate: React.FC<LocationCreateProps> = ({
             <Input
               type="text"
               handleChange={(e) => setData({ ...data, city: e.target.value })}
-              value={data.city}
+              value={data?.city}
               inputType="city"
             />
           </div>
@@ -128,7 +128,7 @@ export const LocationCreate: React.FC<LocationCreateProps> = ({
               name="state"
               type="text"
               handleChange={(e) => setData({ ...data, state: e.target.value })}
-              value={data.state}
+              value={data?.state}
             />
           </div>
           <div className={[space["m-t--4"]].join(" ")}>
