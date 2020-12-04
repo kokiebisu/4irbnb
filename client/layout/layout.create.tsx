@@ -20,6 +20,7 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
   right,
   next,
   back,
+  criteria = false,
   percentage,
 }) => {
   return (
@@ -82,6 +83,7 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
                       type="primary"
                       title="Next"
                       size="md"
+                      disabled={criteria}
                       fill="#018489"
                       onPress={next}
                     />

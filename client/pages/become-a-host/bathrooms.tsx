@@ -19,13 +19,13 @@ const BathroomsPage = () => {
     });
     setTimeout(() => {
       Router.push("/become-a-host/location");
-    }, 2000);
+    }, 1000);
   };
 
   const revert = () => {
     setTimeout(() => {
       Router.push("/become-a-host/bedrooms");
-    }, 2000);
+    }, 1000);
   };
 
   return (
