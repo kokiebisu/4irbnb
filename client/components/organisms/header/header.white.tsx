@@ -71,14 +71,18 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
               </a>
             </Link>
           </div>
-          <div>
+          {/* <div>
             <Button type="searchbar" mini />
-          </div>
+          </div> */}
           <div className={[layout["flex"], layout["items-center"]].join(" ")}>
-            <div className={styles["searchbar__host"]}>
+            <div
+              className={[styles["searchbar__host"], space["m-r--16"]].join(
+                " "
+              )}
+            >
               <Button type="host" to="/host/homes" />
             </div>
-            <div
+            {/* <div
               className={[
                 space["m-t--0"],
                 space["m-r--12"],
@@ -87,7 +91,7 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
               ].join(" ")}
             >
               <Button type="globe" />
-            </div>
+            </div> */}
             <div>
               <Button type="menu" authenticated={data} />
             </div>

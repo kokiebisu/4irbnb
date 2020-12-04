@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { Layout } from "layout/layout.component";
-import { useStayDispatch } from "context/stay";
+import { useStayDispatch, useStayState } from "context/stay";
 import Router from "next/router";
 import { Create } from "../../components/organisms/create/create.component";
 
 const BedRoomsPage = () => {
   const stayDispatch = useStayDispatch();
+  const { guests, bedrooms, beds } = useStayState();
   const [data, setData] = useState({
-    guests: 1,
-    bedrooms: 0,
-    beds: 1,
+    guests,
+    bedrooms,
+    beds,
   });
 
   const proceed = () => {
@@ -23,13 +24,13 @@ const BedRoomsPage = () => {
     });
     setTimeout(() => {
       Router.push("/become-a-host/bathrooms");
-    }, 1000);
+    }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
       Router.push("/become-a-host/room");
-    }, 1000);
+    }, 500);
   };
 
   return (

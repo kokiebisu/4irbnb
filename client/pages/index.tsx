@@ -91,14 +91,6 @@ const LandingPage = ({ currentUser }) => {
                 items={categories}
               />
             </Layout>
-            <Layout
-              sectionType="landing"
-              spread
-              type="section"
-              title="Destinations for future trips"
-            >
-              <Section type="destinations" sectionType="landing" />
-            </Layout>
           </>
         ) : (
           <div

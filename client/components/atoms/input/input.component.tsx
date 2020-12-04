@@ -19,6 +19,7 @@ import { InputProps } from "./props";
 
 /** Styles */
 import shape from "../../../styles/shape.module.scss";
+import { TextInput } from "./input.text";
 
 /**
  * Bundles the input components
@@ -38,6 +39,7 @@ export const Input: React.FC<InputProps> = ({ type, spread, ...props }) => {
     select: <SelectInput {...props} />,
     radio: <RadioInput {...props} />,
     counter: <CounterInput {...props} />,
+    text: <TextInput {...props} />,
   };
 
   return (

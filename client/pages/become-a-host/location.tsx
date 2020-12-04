@@ -1,31 +1,34 @@
 import React, { useState } from "react";
 import { Layout } from "layout/layout.component";
-import { useStayDispatch, useStayState } from "context/stay";
+import { useStayDispatch, useStayState } from "../../context/stay";
 import Router from "next/router";
 import { Create } from "../../components/organisms/create/create.component";
 
-const BathroomsPage = () => {
+const BedRoomsPage = () => {
   const stayDispatch = useStayDispatch();
-  const { bathrooms } = useStayState();
+  const { country, street, apt, city, state, postal } = useStayState();
   const [data, setData] = useState({
-    bathrooms,
+    country,
+    street,
+    apt,
+    city,
+    state,
+    postal,
   });
 
   const proceed = () => {
     stayDispatch({
       type: "add",
-      payload: {
-        bathrooms: data.bathrooms,
-      },
+      payload: data,
     });
     setTimeout(() => {
-      Router.push("/become-a-host/location");
+      Router.push("/become-a-host/amenities");
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push("/become-a-host/bedrooms");
+      Router.push("/become-a-host/bathrooms");
     }, 500);
   };
 
@@ -34,17 +37,17 @@ const BathroomsPage = () => {
       type="create"
       left={
         <Create
-          title="Property and guests"
-          type="bathrooms"
+          title="Location"
+          type="location"
           data={data}
           setData={setData}
         />
       }
-      percentage={30}
+      percentage={40}
       next={proceed}
       back={revert}
     />
   );
 };
 
-export default BathroomsPage;
+export default BedRoomsPage;

@@ -24,8 +24,10 @@ $colors: (
 
 @each $name, $value in $pixels {
   .hover-shadow--#{$name} {
-    box-shadow: rgba(0, 0, 0, 0.18) 0px #{$value}px #{$value * 2}px;
-    transition: 0.3s all;
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.18) 0px #{$value}px #{$value * 2}px;
+      transition: 0.3s all;
+    }
   }
 }
 

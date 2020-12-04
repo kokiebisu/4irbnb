@@ -1,8 +1,6 @@
 import React from "react";
 
-/**
- * Styles
- */
+/** Styles */
 import space from "../../../styles/space.module.scss";
 import styles from "../../../styles/index.module.scss";
 import layout from "../../../styles/layout.module.scss";
@@ -11,27 +9,19 @@ import shape from "../../../styles/shape.module.scss";
 import font from "../../../styles/font.module.scss";
 import header from "./header.module.scss";
 
-/**
- * Components
- */
+/** Components */
 import { menu as menuModal } from "../../organisms/modal/modal.stories";
 import { Modal } from "../modal/modal.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/**
- * Vectors
- */
+/** Vectors */
 import { NameLogo, NoNameLogo } from "../../../public/svg/logo";
 import { MagnifyGlass } from "../../../public/svg/original";
 
-/**
- * Props
- */
+/** Props */
 import { TransparentHeaderProps } from "./props";
 
-/**
- * Contexts
- */
+/** Contexts */
 import { useToggleState } from "../../../context/toggle";
 
 /**
@@ -60,10 +50,12 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
           </div>
         </div>
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
-          <div className={styles["searchbar__host"]}>
+          <div
+            className={[styles["searchbar__host"], space["m-r--16"]].join(" ")}
+          >
             <Button type="host" inverse to="/host/homes" />
           </div>
-          <div
+          {/* <div
             className={[
               space["m-t--0"],
               space["m-r--12"],
@@ -72,7 +64,7 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
             ].join(" ")}
           >
             <Button type="globe" inverse />
-          </div>
+          </div> */}
           <div>
             <Button authenticated={data} type="menu" inverse />
           </div>

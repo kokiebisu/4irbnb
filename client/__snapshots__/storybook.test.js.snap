@@ -551,8 +551,8 @@ exports[`Storyshots Design System/Atoms/Button Auth 1`] = `
 `;
 
 exports[`Storyshots Design System/Atoms/Button Back 1`] = `
-<div
-  className="flex items-center"
+<button
+  className="flex items-center bg--transparent"
 >
   <div>
     <svg
@@ -572,12 +572,12 @@ exports[`Storyshots Design System/Atoms/Button Back 1`] = `
   </div>
   <div>
     <h4
-      className="c--darkgreen__3"
+      className="size--15 c--darkgreen__3"
     >
       Back
     </h4>
   </div>
-</div>
+</button>
 `;
 
 exports[`Storyshots Design System/Atoms/Button Banner 1`] = `
@@ -795,6 +795,7 @@ exports[`Storyshots Design System/Atoms/Button Primary 1`] = `
   <button
     className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
     data-testid="button"
+    disabled={false}
     style={Object {}}
   >
     Button
@@ -1457,6 +1458,113 @@ exports[`Storyshots Design System/Atoms/Input Birthdate 1`] = `
 </div>
 `;
 
+exports[`Storyshots Design System/Atoms/Input Counter 1`] = `
+<div
+  style={
+    Object {
+      "width": 300,
+    }
+  }
+>
+  <div
+    data-testid="input"
+  >
+    <div
+      className="flex items-center justify-between"
+    >
+      <div>
+        <h3
+          className="size--15"
+        >
+          Counter
+        </h3>
+      </div>
+      <div
+        className="flex items-center"
+      >
+        <div>
+          <button
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "white",
+                "border": "2px solid #0B8A8F",
+                "borderRadius": 9999,
+                "padding": 5,
+              }
+            }
+          >
+            <svg
+              stroke="#0B8A8F"
+              viewBox="0 0 24 24"
+              width={15}
+            >
+              <rect
+                height="2"
+                rx="1"
+                width="12"
+                x="6"
+                y="11"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="flex justify-center"
+          style={
+            Object {
+              "width": 50,
+            }
+          }
+        >
+          <h3
+            className="size--14"
+          >
+            0
+          </h3>
+        </div>
+        <div>
+          <button
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "white",
+                "border": "2px solid #0B8A8F",
+                "borderRadius": 9999,
+                "padding": 5,
+              }
+            }
+          >
+            <svg
+              stroke="#0B8A8F"
+              viewBox="0 0 24 24"
+              width={15}
+            >
+              <rect
+                height="2"
+                rx="1"
+                width="12"
+                x="6"
+                y="11"
+              />
+              <rect
+                height="12"
+                rx="1"
+                width="2"
+                x="11"
+                y="6"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Design System/Atoms/Input Email 1`] = `
 <div
   style={
@@ -2005,7 +2113,6 @@ exports[`Storyshots Design System/Atoms/Input Select 1`] = `
       >
         <select
           className="bg--transparent justify-between br--4 p--0 w--full block b--0 size--14 weight--300"
-          defaultValue="Select Property"
           disabled={false}
           id="Bed and breakfast"
           onBlur={[Function]}
@@ -2071,6 +2178,51 @@ exports[`Storyshots Design System/Atoms/Input Select 1`] = `
             </g>
           </svg>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Design System/Atoms/Input Text 1`] = `
+<div
+  style={
+    Object {
+      "width": 300,
+    }
+  }
+>
+  <div
+    data-testid="input"
+  >
+    <div
+      className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "height": "100%",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <input
+          autoFocus={true}
+          className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+          id="text"
+          name="text"
+          onBlur={[Function]}
+          onFocus={[Function]}
+          style={
+            Object {
+              "outline": "none",
+            }
+          }
+          type="text"
+        />
       </div>
     </div>
   </div>
@@ -2260,6 +2412,7 @@ exports[`Storyshots Design System/Molecules/Card Available 1`] = `
       <button
         className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 inline-block bg--primary"
         data-testid="button"
+        disabled={false}
         style={Object {}}
       >
         Choose
@@ -4334,6 +4487,7 @@ exports[`Storyshots Design System/Organisms/Banner Homes 1`] = `
                 <button
                   className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
                   data-testid="button"
+                  disabled={false}
                   style={Object {}}
                 >
                   Get started
@@ -4896,7 +5050,7 @@ exports[`Storyshots Design System/Organisms/Banner Landing 1`] = `
                     className="flex items-center"
                   >
                     <div
-                      className="searchbar__host"
+                      className="searchbar__host m-r--16"
                     >
                       <div
                         data-testid="button"
@@ -4925,51 +5079,6 @@ exports[`Storyshots Design System/Organisms/Banner Landing 1`] = `
                           </div>
                         </a>
                       </div>
-                    </div>
-                    <div
-                      className="m-t--0 m-r--12 m-b--0 m-l--8"
-                    >
-                      <button
-                        className="bg--transparent br--30"
-                        data-testid="button"
-                        onClick={[Function]}
-                        style={Object {}}
-                      >
-                        <div
-                          className="br--30 flex items-center bg--transparent p-t--13 p-b--13 p-l--15 p-r--15 hover-background--white__transparent"
-                        >
-                          <div
-                            className="items-center m-r--8"
-                          >
-                            <svg
-                              fill="white"
-                              viewBox="0 0 16 16"
-                              width={16}
-                            >
-                              <path
-                                d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
-                              />
-                            </svg>
-                          </div>
-                          <div
-                            className="items-center"
-                          >
-                            <svg
-                              fill="white"
-                              viewBox="0 0 256 256"
-                              width={8}
-                            >
-                              <g>
-                                <g>
-                                  <polygon
-                                    points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-                                  />
-                                </g>
-                              </g>
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
                     </div>
                     <div>
                       <button
@@ -5137,6 +5246,7 @@ exports[`Storyshots Design System/Organisms/Banner Online Host 1`] = `
       <button
         className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
         data-testid="button"
+        disabled={false}
         style={Object {}}
       >
         Get started
@@ -5474,10 +5584,277 @@ exports[`Storyshots Design System/Organisms/Bar Progress 1`] = `
     Object {
       "backgroundColor": "#EDEFED",
       "height": 10,
+      "position": "relative",
       "width": "100%",
+      "zIndex": 1,
     }
   }
-/>
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "height": 10,
+        "width": "100%",
+        "zIndex": 500,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "none",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "#278489",
+          "borderBottomRightRadius": 9999,
+          "borderTopRightRadius": 9999,
+          "height": "100%",
+          "position": "absolute",
+          "width": "50%",
+          "zIndex": 9999,
+        }
+      }
+    />
+  </div>
+</div>
 `;
 
 exports[`Storyshots Design System/Organisms/Create Get Started 1`] = `
@@ -5734,6 +6111,7 @@ exports[`Storyshots Design System/Organisms/Create Get Started 1`] = `
             <button
               className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 inline-block bg--primary"
               data-testid="button"
+              disabled={false}
               style={Object {}}
             >
               Continue
@@ -5746,7 +6124,415 @@ exports[`Storyshots Design System/Organisms/Create Get Started 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Organisms/Create Kind 1`] = `
+exports[`Storyshots Design System/Organisms/Create Location 1`] = `
+<div>
+  <div
+    className="m-b--8"
+  >
+    <h3
+      className="size--28 c--gray__2"
+    >
+      Where's your place located?
+    </h3>
+  </div>
+  <div
+    className="m-b--16"
+  >
+    <p
+      className="size--14 c--gray__2"
+    >
+      Guests will only get your exact address once they've booked a reservation.
+    </p>
+  </div>
+  <div
+    className="m-t--32 m-b--18"
+    style={
+      Object {
+        "columnGap": 15,
+        "display": "grid",
+        "gridTemplateColumns": "repeat(2, 1fr)",
+      }
+    }
+  >
+    <div
+      className="m-b--8"
+    >
+      <div
+        className="m-b--8"
+      >
+        <p
+          className="size--14"
+        >
+          Country
+        </p>
+      </div>
+      <div
+        data-testid="input"
+      >
+        <div
+          className="h--50 flex outside relative items-center "
+        >
+          <div
+            className="b--white__3 br--8 undefined"
+            style={
+              Object {
+                "backgroundColor": "white",
+                "borderColor": "#B0B0B0",
+                "display": "flex",
+                "height": "100%",
+                "justifyContent": "space-between",
+                "padding": "0 12px",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
+          >
+            <select
+              className="bg--transparent justify-between br--4 p--0 w--full block b--0 size--14 weight--300"
+              disabled={false}
+              id="country"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              style={
+                Object {
+                  "height": "100%",
+                  "outline": "none",
+                }
+              }
+            >
+              <option
+                value="Canada"
+              >
+                Canada
+              </option>
+              <option
+                value="Japan"
+              >
+                Japan
+              </option>
+            </select>
+            <div
+              className="flex items-center"
+            >
+              <svg
+                fill="black"
+                viewBox="0 0 256 256"
+                width={13}
+              >
+                <g>
+                  <g>
+                    <polygon
+                      points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="m-b--8"
+    >
+      <div
+        className="m-b--8"
+      >
+        <p
+          className="size--14"
+        >
+          Postal Code
+        </p>
+      </div>
+      <div
+        data-testid="input"
+      >
+        <div
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
+          >
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="postal"
+              name="postal"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                }
+              }
+              type="text"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="m-b--30"
+  >
+    <div
+      className="m-b--8"
+    >
+      <p
+        className="size--14"
+      >
+        Street
+      </p>
+    </div>
+    <div>
+      <div
+        data-testid="input"
+      >
+        <div
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
+          >
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="street"
+              name="street"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                }
+              }
+              type="text"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="m-t--4"
+    >
+      <p
+        className="size--10"
+      >
+        e.g. 111108 108th Avenue
+      </p>
+    </div>
+  </div>
+  <div
+    className="m-b--8"
+  >
+    <div
+      className="m-b--8"
+    >
+      <p
+        className="size--14"
+      >
+        Apt, Suite (optional)
+      </p>
+    </div>
+    <div>
+      <div
+        data-testid="input"
+      >
+        <div
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
+          >
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="apt"
+              name="apt"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                }
+              }
+              type="text"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="m-t--4"
+    >
+      <p
+        className="size--10"
+      >
+        e.g. Suite #7
+      </p>
+    </div>
+  </div>
+  <div
+    className="m-t--32 m-b--18"
+    style={
+      Object {
+        "columnGap": 15,
+        "display": "grid",
+        "gridTemplateColumns": "repeat(2, 1fr)",
+      }
+    }
+  >
+    <div
+      className="m-b--8"
+    >
+      <div
+        className="m-b--8"
+      >
+        <p
+          className="size--14"
+        >
+          City
+        </p>
+      </div>
+      <div>
+        <div
+          data-testid="input"
+        >
+          <div
+            className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+          >
+            <div
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
+                  "height": "100%",
+                  "position": "relative",
+                  "width": "100%",
+                }
+              }
+            >
+              <input
+                autoFocus={true}
+                className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                id="text"
+                name="text"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                style={
+                  Object {
+                    "outline": "none",
+                  }
+                }
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="m-t--4"
+      >
+        <p
+          className="size--10"
+        >
+          e.g. Edmonton
+        </p>
+      </div>
+    </div>
+    <div
+      className="m-b--8"
+    >
+      <div
+        className="m-b--8"
+      >
+        <p
+          className="size--14"
+        >
+          State
+        </p>
+      </div>
+      <div>
+        <div
+          data-testid="input"
+        >
+          <div
+            className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+          >
+            <div
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
+                  "height": "100%",
+                  "position": "relative",
+                  "width": "100%",
+                }
+              }
+            >
+              <input
+                autoFocus={true}
+                className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                id="state"
+                name="state"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                style={
+                  Object {
+                    "outline": "none",
+                  }
+                }
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="m-t--4"
+      >
+        <p
+          className="size--10"
+        >
+          e.g. Alberta
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Design System/Organisms/Create Room 1`] = `
 <div>
   <div
     className="m-b--45"
@@ -5802,7 +6588,6 @@ exports[`Storyshots Design System/Organisms/Create Kind 1`] = `
               >
                 <select
                   className="bg--transparent justify-between br--4 p--0 w--full block b--0 size--14 weight--300"
-                  defaultValue="Select one"
                   disabled={false}
                   id="place"
                   onBlur={[Function]}
@@ -5921,7 +6706,6 @@ exports[`Storyshots Design System/Organisms/Create Kind 1`] = `
               >
                 <select
                   className="bg--transparent justify-between br--4 p--0 w--full block b--0 size--14 weight--300"
-                  defaultValue="Select Property"
                   disabled={true}
                   id="Bed and breakfast"
                   onBlur={[Function]}
@@ -6851,7 +7635,7 @@ exports[`Storyshots Design System/Organisms/Header Transparent 1`] = `
         className="flex items-center"
       >
         <div
-          className="searchbar__host"
+          className="searchbar__host m-r--16"
         >
           <div
             data-testid="button"
@@ -6880,51 +7664,6 @@ exports[`Storyshots Design System/Organisms/Header Transparent 1`] = `
               </div>
             </a>
           </div>
-        </div>
-        <div
-          className="m-t--0 m-r--12 m-b--0 m-l--8"
-        >
-          <button
-            className="bg--transparent br--30"
-            data-testid="button"
-            onClick={[Function]}
-            style={Object {}}
-          >
-            <div
-              className="br--30 flex items-center bg--transparent p-t--13 p-b--13 p-l--15 p-r--15 hover-background--white__transparent"
-            >
-              <div
-                className="items-center m-r--8"
-              >
-                <svg
-                  fill="white"
-                  viewBox="0 0 16 16"
-                  width={16}
-                >
-                  <path
-                    d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="items-center"
-              >
-                <svg
-                  fill="white"
-                  viewBox="0 0 256 256"
-                  width={8}
-                >
-                  <g>
-                    <g>
-                      <polygon
-                        points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-                      />
-                    </g>
-                  </g>
-                </svg>
-              </div>
-            </div>
-          </button>
         </div>
         <div>
           <button
@@ -7055,65 +7794,11 @@ exports[`Storyshots Design System/Organisms/Header White 1`] = `
             </div>
           </a>
         </div>
-        <div>
-          <button
-            className="br--25 bg--white__0 b--white__2 hover-shadow--sm"
-            data-testid="button"
-            onClick={[Function]}
-            style={Object {}}
-          >
-            <div
-              className="p-v--15 p-l--18 p-r--8 flex items-center justify-between"
-              style={
-                Object {
-                  "height": 45,
-                  "width": 240,
-                }
-              }
-            >
-              <div>
-                <p
-                  className="no-wrap size--14 weight--500"
-                >
-                  Start your search
-                </p>
-              </div>
-              <div>
-                <div
-                  className="bg--primary all-center"
-                  style={
-                    Object {
-                      "borderRadius": "50%",
-                      "height": 30,
-                      "width": 30,
-                    }
-                  }
-                >
-                  <svg
-                    height={12}
-                    stroke="white"
-                    strokeWidth={6}
-                    viewBox="0 0 32 32"
-                    width={12}
-                  >
-                    <g
-                      fill="none"
-                    >
-                      <path
-                        d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"
-                      />
-                    </g>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </button>
-        </div>
         <div
           className="flex items-center"
         >
           <div
-            className="searchbar__host"
+            className="searchbar__host m-r--16"
           >
             <div
               data-testid="button"
@@ -7124,7 +7809,7 @@ exports[`Storyshots Design System/Organisms/Header White 1`] = `
               }
             >
               <a
-                href="/"
+                href="/host/homes"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
@@ -7133,7 +7818,7 @@ exports[`Storyshots Design System/Organisms/Header White 1`] = `
                 >
                   <a
                     className="br--30 size--14 inline-block p-t--13 p-b--13 p-l--13 p-r--13 weight--500 c--gray__4 hover-background--white__1"
-                    href="/"
+                    href="/host/homes"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -7142,51 +7827,6 @@ exports[`Storyshots Design System/Organisms/Header White 1`] = `
                 </div>
               </a>
             </div>
-          </div>
-          <div
-            className="m-t--0 m-r--12 m-b--0 m-l--8"
-          >
-            <button
-              className="bg--transparent br--30"
-              data-testid="button"
-              onClick={[Function]}
-              style={Object {}}
-            >
-              <div
-                className="br--30 flex items-center bg--transparent p-t--13 p-b--13 p-l--15 p-r--15 hover-background--white__1"
-              >
-                <div
-                  className="items-center m-r--8"
-                >
-                  <svg
-                    fill="#363636"
-                    viewBox="0 0 16 16"
-                    width={16}
-                  >
-                    <path
-                      d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
-                    />
-                  </svg>
-                </div>
-                <div
-                  className="items-center"
-                >
-                  <svg
-                    fill="#363636"
-                    viewBox="0 0 256 256"
-                    width={8}
-                  >
-                    <g>
-                      <g>
-                        <polygon
-                          points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-                        />
-                      </g>
-                    </g>
-                  </svg>
-                </div>
-              </div>
-            </button>
           </div>
           <div>
             <button
@@ -7611,6 +8251,7 @@ exports[`Storyshots Design System/Organisms/Modal Auth 1`] = `
             <button
               className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
               data-testid="button"
+              disabled={false}
               style={Object {}}
             >
               Continue
@@ -7894,6 +8535,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
       <button
         className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
         data-testid="button"
+        disabled={false}
         style={Object {}}
       >
         Check availability
@@ -8002,6 +8644,7 @@ exports[`Storyshots Design System/Organisms/Modal Booking 1`] = `
               <button
                 className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 block bg--primary"
                 data-testid="button"
+                disabled={false}
                 style={Object {}}
               >
                 Choose
@@ -8064,6 +8707,7 @@ exports[`Storyshots Design System/Organisms/Modal Booking 1`] = `
               <button
                 className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 block bg--primary"
                 data-testid="button"
+                disabled={false}
                 style={Object {}}
               >
                 Choose
@@ -8126,6 +8770,7 @@ exports[`Storyshots Design System/Organisms/Modal Booking 1`] = `
               <button
                 className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 block bg--primary"
                 data-testid="button"
+                disabled={false}
                 style={Object {}}
               >
                 Choose
@@ -9397,6 +10042,7 @@ exports[`Storyshots Design System/Organisms/Section Available 1`] = `
                   <button
                     className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 inline-block bg--primary"
                     data-testid="button"
+                    disabled={false}
                     style={Object {}}
                   >
                     Choose
@@ -9478,6 +10124,7 @@ exports[`Storyshots Design System/Organisms/Section Available 1`] = `
                   <button
                     className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 inline-block bg--primary"
                     data-testid="button"
+                    disabled={false}
                     style={Object {}}
                   >
                     Choose
@@ -9559,6 +10206,7 @@ exports[`Storyshots Design System/Organisms/Section Available 1`] = `
                   <button
                     className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 inline-block bg--primary"
                     data-testid="button"
+                    disabled={false}
                     style={Object {}}
                   >
                     Choose
@@ -9640,6 +10288,7 @@ exports[`Storyshots Design System/Organisms/Section Available 1`] = `
                   <button
                     className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 inline-block bg--primary"
                     data-testid="button"
+                    disabled={false}
                     style={Object {}}
                   >
                     Choose
@@ -9721,6 +10370,7 @@ exports[`Storyshots Design System/Organisms/Section Available 1`] = `
                   <button
                     className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 inline-block bg--primary"
                     data-testid="button"
+                    disabled={false}
                     style={Object {}}
                   >
                     Choose
@@ -16011,6 +16661,7 @@ exports[`Storyshots Design System/Organisms/Section Ready 1`] = `
         <button
           className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
           data-testid="button"
+          disabled={false}
           style={Object {}}
         >
           Get started
@@ -17282,6 +17933,7 @@ exports[`Storyshots Design System/Templates/Auth Auth 1`] = `
         <button
           className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
           data-testid="button"
+          disabled={false}
           style={Object {}}
         >
           Continue
@@ -17628,6 +18280,7 @@ exports[`Storyshots Design System/Templates/Auth Exists 1`] = `
       <button
         className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
         data-testid="button"
+        disabled={false}
         style={Object {}}
       >
         Log in
@@ -17751,6 +18404,7 @@ exports[`Storyshots Design System/Templates/Auth Forgotpassword 1`] = `
         <button
           className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block false"
           data-testid="button"
+          disabled={false}
           style={
             Object {
               "backgroundColor": "black",
@@ -17883,6 +18537,7 @@ exports[`Storyshots Design System/Templates/Auth Login 1`] = `
       <button
         className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
         data-testid="button"
+        disabled={false}
         style={Object {}}
       >
         Log in
@@ -19050,6 +19705,7 @@ exports[`Storyshots Design System/Templates/Auth Signup 1`] = `
       <button
         className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
         data-testid="button"
+        disabled={false}
         style={Object {}}
       >
         Agree and continue
@@ -19131,65 +19787,11 @@ exports[`Storyshots Design System/Templates/Homes Category 1`] = `
                 </div>
               </a>
             </div>
-            <div>
-              <button
-                className="br--25 bg--white__0 b--white__2 hover-shadow--sm"
-                data-testid="button"
-                onClick={[Function]}
-                style={Object {}}
-              >
-                <div
-                  className="p-v--15 p-l--18 p-r--8 flex items-center justify-between"
-                  style={
-                    Object {
-                      "height": 45,
-                      "width": 240,
-                    }
-                  }
-                >
-                  <div>
-                    <p
-                      className="no-wrap size--14 weight--500"
-                    >
-                      Start your search
-                    </p>
-                  </div>
-                  <div>
-                    <div
-                      className="bg--primary all-center"
-                      style={
-                        Object {
-                          "borderRadius": "50%",
-                          "height": 30,
-                          "width": 30,
-                        }
-                      }
-                    >
-                      <svg
-                        height={12}
-                        stroke="white"
-                        strokeWidth={6}
-                        viewBox="0 0 32 32"
-                        width={12}
-                      >
-                        <g
-                          fill="none"
-                        >
-                          <path
-                            d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"
-                          />
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </button>
-            </div>
             <div
               className="flex items-center"
             >
               <div
-                className="searchbar__host"
+                className="searchbar__host m-r--16"
               >
                 <div
                   data-testid="button"
@@ -19200,7 +19802,7 @@ exports[`Storyshots Design System/Templates/Homes Category 1`] = `
                   }
                 >
                   <a
-                    href="/"
+                    href="/host/homes"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -19209,7 +19811,7 @@ exports[`Storyshots Design System/Templates/Homes Category 1`] = `
                     >
                       <a
                         className="br--30 size--14 inline-block p-t--13 p-b--13 p-l--13 p-r--13 weight--500 c--gray__4 hover-background--white__1"
-                        href="/"
+                        href="/host/homes"
                         onClick={[Function]}
                         onMouseEnter={[Function]}
                       >
@@ -19218,51 +19820,6 @@ exports[`Storyshots Design System/Templates/Homes Category 1`] = `
                     </div>
                   </a>
                 </div>
-              </div>
-              <div
-                className="m-t--0 m-r--12 m-b--0 m-l--8"
-              >
-                <button
-                  className="bg--transparent br--30"
-                  data-testid="button"
-                  onClick={[Function]}
-                  style={Object {}}
-                >
-                  <div
-                    className="br--30 flex items-center bg--transparent p-t--13 p-b--13 p-l--15 p-r--15 hover-background--white__1"
-                  >
-                    <div
-                      className="items-center m-r--8"
-                    >
-                      <svg
-                        fill="#363636"
-                        viewBox="0 0 16 16"
-                        width={16}
-                      >
-                        <path
-                          d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
-                        />
-                      </svg>
-                    </div>
-                    <div
-                      className="items-center"
-                    >
-                      <svg
-                        fill="#363636"
-                        viewBox="0 0 256 256"
-                        width={8}
-                      >
-                        <g>
-                          <g>
-                            <polygon
-                              points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-                            />
-                          </g>
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                </button>
               </div>
               <div>
                 <button
@@ -22987,65 +23544,11 @@ exports[`Storyshots Design System/Templates/Homes Nearby 1`] = `
                 </div>
               </a>
             </div>
-            <div>
-              <button
-                className="br--25 bg--white__0 b--white__2 hover-shadow--sm"
-                data-testid="button"
-                onClick={[Function]}
-                style={Object {}}
-              >
-                <div
-                  className="p-v--15 p-l--18 p-r--8 flex items-center justify-between"
-                  style={
-                    Object {
-                      "height": 45,
-                      "width": 240,
-                    }
-                  }
-                >
-                  <div>
-                    <p
-                      className="no-wrap size--14 weight--500"
-                    >
-                      Start your search
-                    </p>
-                  </div>
-                  <div>
-                    <div
-                      className="bg--primary all-center"
-                      style={
-                        Object {
-                          "borderRadius": "50%",
-                          "height": 30,
-                          "width": 30,
-                        }
-                      }
-                    >
-                      <svg
-                        height={12}
-                        stroke="white"
-                        strokeWidth={6}
-                        viewBox="0 0 32 32"
-                        width={12}
-                      >
-                        <g
-                          fill="none"
-                        >
-                          <path
-                            d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"
-                          />
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </button>
-            </div>
             <div
               className="flex items-center"
             >
               <div
-                className="searchbar__host"
+                className="searchbar__host m-r--16"
               >
                 <div
                   data-testid="button"
@@ -23056,7 +23559,7 @@ exports[`Storyshots Design System/Templates/Homes Nearby 1`] = `
                   }
                 >
                   <a
-                    href="/"
+                    href="/host/homes"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
@@ -23065,7 +23568,7 @@ exports[`Storyshots Design System/Templates/Homes Nearby 1`] = `
                     >
                       <a
                         className="br--30 size--14 inline-block p-t--13 p-b--13 p-l--13 p-r--13 weight--500 c--gray__4 hover-background--white__1"
-                        href="/"
+                        href="/host/homes"
                         onClick={[Function]}
                         onMouseEnter={[Function]}
                       >
@@ -23074,51 +23577,6 @@ exports[`Storyshots Design System/Templates/Homes Nearby 1`] = `
                     </div>
                   </a>
                 </div>
-              </div>
-              <div
-                className="m-t--0 m-r--12 m-b--0 m-l--8"
-              >
-                <button
-                  className="bg--transparent br--30"
-                  data-testid="button"
-                  onClick={[Function]}
-                  style={Object {}}
-                >
-                  <div
-                    className="br--30 flex items-center bg--transparent p-t--13 p-b--13 p-l--15 p-r--15 hover-background--white__1"
-                  >
-                    <div
-                      className="items-center m-r--8"
-                    >
-                      <svg
-                        fill="#363636"
-                        viewBox="0 0 16 16"
-                        width={16}
-                      >
-                        <path
-                          d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
-                        />
-                      </svg>
-                    </div>
-                    <div
-                      className="items-center"
-                    >
-                      <svg
-                        fill="#363636"
-                        viewBox="0 0 256 256"
-                        width={8}
-                      >
-                        <g>
-                          <g>
-                            <polygon
-                              points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-                            />
-                          </g>
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                </button>
               </div>
               <div>
                 <button

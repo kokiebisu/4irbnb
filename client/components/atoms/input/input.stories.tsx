@@ -93,3 +93,8 @@ export const counter = InputStory.bind({});
 counter.args = {
   type: "counter",
 };
+
+export const text = InputStory.bind({});
+text.args = {
+  type: "text",
+};
