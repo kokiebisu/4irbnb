@@ -155,7 +155,7 @@ export const DetailsHeader: React.FC<DetailsHeaderProps> = ({
                     </div>
                   </div>
                   <div>
-                    <Button type="primary" title="Check availability" />
+                    <Button {...primary.args} title="Check availability" />
                   </div>
                 </div>
               </motion.div>

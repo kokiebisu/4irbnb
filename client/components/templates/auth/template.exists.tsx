@@ -1,16 +1,32 @@
+import React, { useState } from "react";
+import Router from "next/router";
+import { useFormik } from "formik";
+
+/** Components */
 import { Bullet } from "../../../components/atoms/bullet/bullet.component";
 import { Button } from "../../../components/atoms/button/button.component";
 import { Input } from "../../../components/atoms/input/input.component";
-import { useFormik } from "formik";
-import React, { useState } from "react";
+
+/** Props */
 import { ExistsTemplateProps } from "./props";
-import space from "../../../styles/space.module.scss";
+
+/** Helpers */
 import { validateExists as validate } from "../../../helper/auth";
-import Router from "next/router";
+
+/** Hooks */
 import { useFetch } from "../../../hooks/useFetch";
+
+/** Styles */
+import space from "../../../styles/space.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import font from "../../../styles/font.module.scss";
 import layout from "../../../styles/layout.module.scss";
+
+/** Stories */
+import {
+  primary,
+  underline,
+} from "../../../components/atoms/button/button.stories";
 
 export const ExistsTemplate: React.FC<ExistsTemplateProps> = ({
   data = {
@@ -86,7 +102,7 @@ export const ExistsTemplate: React.FC<ExistsTemplateProps> = ({
           />
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
-          <Button type="primary" loading={loading} title="Log in" />
+          <Button {...primary.args} loading={loading} title="Log in" />
         </div>
         <div>
           {formik.errors.password !== undefined && (
@@ -98,14 +114,14 @@ export const ExistsTemplate: React.FC<ExistsTemplateProps> = ({
       </form>
       <div className={[space["m-v--16"]].join(" ")}>
         <Button
-          type="underline"
+          {...underline.args}
           title="Login with a different account"
           onPress={() => alert("button pressed")}
         />
       </div>
       <div className={[space["m-v--16"]].join(" ")}>
         <Button
-          type="underline"
+          {...underline.args}
           title="Forgot password?"
           onPress={() => alert("button pressed")}
         />

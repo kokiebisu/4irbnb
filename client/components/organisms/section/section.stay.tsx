@@ -1,8 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
-/**
- * Styles
- */
+/** Styles */
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
@@ -11,16 +9,15 @@ import styles from "./section.module.scss";
 import sectionStyles from "./section.module.scss";
 import section from "./section.module.scss";
 
-/**
- * Components
- */
+/** Components */
 import { Card } from "../../molecules/card/card.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/**
- * Props
- */
+/** Props */
 import { StaySectionProps } from "./props";
+
+/** Stories */
+import { paginate } from "components/atoms/button/button.stories";
 
 /**
  * Renders the stay section
@@ -161,7 +158,7 @@ export const StaySection: React.FC<StaySectionProps> = ({
           <div className={[layout["flex"], layout["items-center"]].join(" ")}>
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
-                type="paginate"
+                {...paginate.args}
                 animate
                 direction="left"
                 onPress={previous}
@@ -170,7 +167,7 @@ export const StaySection: React.FC<StaySectionProps> = ({
             </div>
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
-                type="paginate"
+                {...paginate.args}
                 animate
                 direction="right"
                 onPress={next}
@@ -256,10 +253,10 @@ export const StaySection: React.FC<StaySectionProps> = ({
                     </p>
                   </div>
                   <div className={[space["m-r--6"]].join(" ")}>
-                    <Button type="paginate" animate direction="left" />
+                    <Button {...paginate.args} animate direction="left" />
                   </div>
                   <div>
-                    <Button type="paginate" animate direction="right" />
+                    <Button {...paginate.args} animate direction="right" />
                   </div>
                 </div>
               )}

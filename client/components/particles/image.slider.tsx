@@ -1,8 +1,13 @@
+import React, { useLayoutEffect, useState, useRef } from "react";
+
+/** Components */
 import { Button } from "../../components/atoms/button/button.component";
-import React, { useEffect, useLayoutEffect } from "react";
-import { useRef } from "react";
-import { useState } from "react";
+
+/** Styles */
 import particle from "./particle.module.scss";
+
+/** Stories */
+import { paginate } from "../../components/atoms/button/button.stories";
 
 const Dots = ({ slides, activeSlide }) => {
   return (
@@ -154,7 +159,7 @@ export const ImageSlider = ({ slides }) => {
         }}
       >
         <Button
-          type="paginate"
+          {...paginate.args}
           animate
           direction="left"
           onPress={previousSlide}

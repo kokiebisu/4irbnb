@@ -2,25 +2,22 @@ import React from "react";
 import Link from "next/link";
 import Router from "next/router";
 
-/**
- * Components
- */
+/** Components */
 import { Button } from "../../../components/atoms/button/button.component";
 
-/**
- * Props
- */
+/** Props */
 import { PaginateBarProps } from "./props";
 
-/**
- * Styles
- */
+/** Styles */
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 import color from "../../../styles/color.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import bar from "./bar.module.scss";
 import font from "../../../styles/font.module.scss";
+
+/** Stories */
+import { paginate } from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders paginate bar component
@@ -464,7 +461,7 @@ export const PaginateBar: React.FC<PaginateBarProps> = ({
       <div className={[layout["flex"], layout["items-center"]].join(" ")}>
         {page !== 1 && (
           <Button
-            type="paginate"
+            {...paginate.args}
             animate
             direction="left"
             onPress={() => Router.push(`/s/homes/page/${page - 1}`)}
@@ -473,7 +470,7 @@ export const PaginateBar: React.FC<PaginateBarProps> = ({
         <div className={[space["m-h--8"]].join(" ")}>{displayContent()}</div>
         {page !== total && (
           <Button
-            type="paginate"
+            {...paginate.args}
             animate
             direction="right"
             onPress={() => Router.push(`/s/homes/page/${page + 1}`)}

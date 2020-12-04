@@ -18,6 +18,7 @@ import { Lock } from "../../../public/svg/original";
 /** Props */
 import { PrivacyModalProps } from "./props";
 import { useToggleDispatch } from "context/toggle";
+import { privacy } from "../../atoms/button/button.stories";
 
 /**
  * Renders the privacy modal
@@ -97,7 +98,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
               modal["m-r--privacy"],
             ].join(" ")}
           >
-            <Button title="Save" type="privacy" onPress={handleSave} />
+            <Button {...privacy.args} title="Save" onPress={handleSave} />
           </motion.div>
           <motion.div
             className={[

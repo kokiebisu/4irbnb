@@ -20,6 +20,9 @@ import { Button } from "../../../components/atoms/button/button.component";
 /** Hooks */
 import { useHandleScroll } from "../../../hooks/useHandleScroll";
 
+/** Stories */
+import { banner } from "../../../components/atoms/button/button.stories";
+
 /**
  * Renders the banner section
  */
@@ -124,7 +127,7 @@ export const LandingBanner: React.FC<LandingBannerProps> = ({ data }) => {
                 ].join(" ")}
               >
                 <Button
-                  type="banner"
+                  {...banner.args}
                   title="Explore nearby"
                   onPress={() => Router.push("/")}
                 />

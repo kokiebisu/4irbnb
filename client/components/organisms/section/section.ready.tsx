@@ -1,21 +1,18 @@
 import React from "react";
 
-/**
- * Components
- */
+/** Components */
 import { Button } from "../../../components/atoms/button/button.component";
 
-/**
- * Props
- */
+/** Props */
 import { ReadySectionProps } from "./props";
 
-/**
- * Styles
- */
+/** Styles */
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 import layout from "../../../styles/layout.module.scss";
+
+/** Stories */
+import { primary } from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the ready section
@@ -34,7 +31,7 @@ export const ReadySection: React.FC<ReadySectionProps> = () => {
           </h4>
         </div>
         <div style={{ display: "inline-block" }}>
-          <Button size="md" type="primary" title="Get started" />
+          <Button {...primary.args} size="md" title="Get started" />
         </div>
       </div>
     </div>

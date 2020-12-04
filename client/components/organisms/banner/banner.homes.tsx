@@ -18,6 +18,12 @@ import { Card } from "../../molecules/card/card.component";
 /** Hooks */
 import { useSlider, SliderProps } from "../../../hooks/useSlider";
 
+/** Stories */
+import {
+  paginate,
+  primary,
+} from "../../../components/atoms/button/button.stories";
+
 /**
  * Renders the homes banner
  * @param {Object[]} hosts - List of hosts
@@ -102,7 +108,7 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
             </div>
             <div className={[layout["inline-block"]].join(" ")}>
               <Button
-                type="primary"
+                {...primary.args}
                 size="md"
                 title="Get started"
                 onPress={() => Router.push("/become-a-host")}
@@ -167,7 +173,7 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
           <div className={[layout["items-center"], layout["flex"]].join(" ")}>
             <div className={[space["m-r--8"]].join(" ")}>
               <Button
-                type="paginate"
+                {...paginate.args}
                 animate
                 direction="left"
                 onPress={previousSlide}
@@ -175,7 +181,7 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
             </div>
             <div>
               <Button
-                type="paginate"
+                {...paginate.args}
                 animate
                 direction="right"
                 onPress={nextSlide}

@@ -1,8 +1,6 @@
 import React from "react";
 
-/**
- * Styles
- */
+/** Styles */
 import layout from "../../../styles/layout.module.scss";
 import homes from "../../../styles/homes.module.scss";
 import space from "../../../styles/space.module.scss";
@@ -11,19 +9,18 @@ import responsive from "../../../styles/responsive.module.scss";
 import font from "../../../styles/font.module.scss";
 import shape from "../../../styles/shape.module.scss";
 
-/**
- * Props
- */
+/** Props */
 import { NearbyTemplateProps } from "../props";
 
-/**
- * Components
- */
+/** Components */
 import { Header } from "../../../components/organisms/header/header.component";
 import { Section } from "../../../components/organisms/section/section.component";
 import { Bar } from "../../../components/organisms/bar/bar.component";
 import { Footer } from "../../../components/organisms/footer/footer.component";
 import { Button } from "../../../components/atoms/button/button.component";
+
+/** Stories */
+import { filter } from "components/atoms/button/button.stories";
 
 /**
  * Renders the nearby template component
@@ -73,13 +70,13 @@ export const NearbyTemplate: React.FC<NearbyTemplateProps> = ({
                 {filters.map((filter, index) => {
                   return (
                     <div key={index} className={[space["m-r--8"]].join(" ")}>
-                      <Button type="filter" name={filter.name} />
+                      <Button {...filter.args} name={filter.name} />
                     </div>
                   );
                 })}
               </div>
               <div className={[shape["only__sm"]].join(" ")}>
-                <Button type="filter" name={`filters ${filterCount}`} />
+                <Button {...filter.args} name={`filters ${filterCount}`} />
               </div>
             </div>
             {city && (

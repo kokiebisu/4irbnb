@@ -48,7 +48,7 @@ export const Button: React.FC<ButtonProps> = ({
   const { disable = false } = props;
   const types: mapProps = {
     auth: <AuthButton {...props} />,
-    // globe: <GlobeButton {...props} />,
+    globe: <GlobeButton {...props} />,
     host: <HostButton {...props} />,
     menu: <MenuButton {...props} />,
     privacy: <PrivacyButton {...props} />,
