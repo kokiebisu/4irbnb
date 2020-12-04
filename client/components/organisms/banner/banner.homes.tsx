@@ -1,28 +1,21 @@
 import React, { useRef } from "react";
+import Router from "next/router";
 
-/**
- * Styles
- */
+/** Styles */
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 import banner from "./banner.module.scss";
 import responsive from "../../../styles/responsive.module.scss";
 
-/**
- * Props
- */
+/** Props */
 import { HomesBannerProps } from "./props";
 
-/**
- * Components
- */
+/** Components */
 import { Button } from "../../../components/atoms/button/button.component";
 import { Card } from "../../molecules/card/card.component";
 
-/**
- * Hooks
- */
+/** Hooks */
 import { useSlider, SliderProps } from "../../../hooks/useSlider";
 
 /**
@@ -112,7 +105,7 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
                 type="primary"
                 size="md"
                 title="Get started"
-                to="/become-a-host"
+                onPress={() => Router.push("/become-a-host")}
               />
             </div>
           </div>
