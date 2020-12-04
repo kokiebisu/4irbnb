@@ -70,6 +70,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
           <div className={[space["m-h--4"]].join(" ")}>
             <Button
               type="paginate"
+              animate
               direction="left"
               onPress={previousSlide}
               disable={state.activeSlide === 0}
@@ -78,6 +79,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
           <div className={[space["m-h--4"]].join(" ")}>
             <Button
               type="paginate"
+              animate
               direction="right"
               onPress={nextSlide}
               disable={

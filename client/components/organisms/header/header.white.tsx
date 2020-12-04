@@ -82,7 +82,7 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
                 " "
               )}
             >
-              <Button {...host.args} />
+              <Button {...host.args} animate />
             </div>
             {/* <div
               className={[

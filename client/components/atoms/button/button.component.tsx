@@ -42,6 +42,7 @@ export const Button: React.FC<ButtonProps> = ({
   onPress,
   to,
   block,
+  animate,
   ...props
 }) => {
   const { disable = false } = props;
@@ -51,8 +52,8 @@ export const Button: React.FC<ButtonProps> = ({
     host: <HostButton {...props} />,
     menu: <MenuButton {...props} />,
     privacy: <PrivacyButton {...props} />,
-    // border: <BorderButton {...props} />,
-    // banner: <BannerButton {...props} />,
+    border: <BorderButton {...props} />,
+    banner: <BannerButton {...props} />,
     primary: <PrimaryButton {...props} />,
     // searchbar: <SearchbarButton {...props} />,
     paginate: <PaginateButton {...props} />,
@@ -81,8 +82,8 @@ export const Button: React.FC<ButtonProps> = ({
   return (
     <motion.button
       transition={{ duration: 0.1, ease: "easeInOut" }}
-      whileTap={{ scale: disable ? 1 : 0.995 }}
-      whileHover={{ scale: disable ? 1 : 1.005 }}
+      whileTap={{ scale: disable || !animate ? 1 : 0.995 }}
+      whileHover={{ scale: disable || !animate ? 1 : 1.005 }}
       data-testid="button"
       className={`${extendsTo} ${
         block

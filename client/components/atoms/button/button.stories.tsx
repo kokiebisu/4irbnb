@@ -100,37 +100,39 @@ menu.argTypes = {
 //   ),
 // ];
 
-// export const border = ButtonTemplate.bind({});
-// border.args = {
-//   type: "border",
-// };
-// border.argTypes = {
-//   size: {
-//     control: {
-//       type: "select",
-//       options: ["sm", "md", "lg"],
-//     },
-//   },
-//   bold: {
-//     control: "boolean",
-//   },
-// };
+export const border = ButtonTemplate.bind({});
+border.args = {
+  type: "border",
+  extendsTo: [color["bg--transparent"]].join(" "),
+};
+border.argTypes = {
+  size: {
+    control: {
+      type: "select",
+      options: ["sm", "md", "lg"],
+    },
+  },
+  bold: {
+    control: "boolean",
+  },
+};
 
-// export const banner = ButtonTemplate.bind({});
-// banner.args = {
-//   type: "banner",
-// };
-// banner.argTypes = {
-//   ...disableInverse,
-// };
+export const banner = ButtonTemplate.bind({});
+banner.args = {
+  type: "banner",
+  extendsTo: [color["bg--white"], shape["br--6"]].join(" "),
+};
+banner.argTypes = {
+  ...disableInverse,
+};
 
-// banner.decorators = [
-//   (Story) => (
-//     <div style={{ width: 200 }}>
-//       <Story />
-//     </div>
-//   ),
-// ];
+banner.decorators = [
+  (Story) => (
+    <div style={{ width: 200 }}>
+      <Story />
+    </div>
+  ),
+];
 
 // export const primary = ButtonTemplate.bind({});
 // primary.args = {

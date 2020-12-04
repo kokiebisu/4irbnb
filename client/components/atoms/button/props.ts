@@ -100,5 +100,6 @@ export type ButtonProps = {
   type?: string;
   onPress?: () => void;
   block?: boolean;
+  animate?: boolean;
   [x: string]: any;
 };
