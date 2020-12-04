@@ -76,7 +76,7 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
           </div>
           <div className={[layout["flex"], layout["items-center"]].join(" ")}>
             <div className={styles["searchbar__host"]}>
-              <Button type="host" to="/" />
+              <Button type="host" to="/host/homes" />
             </div>
             <div
               className={[

@@ -1,7 +1,7 @@
 import React from "react";
 
 /** Components */
-import { Input } from "../../../components/atoms/input/input.component";
+import { Input } from "../../atoms/input/input.component";
 import { Layout } from "../../../layout/layout.component";
 
 /** Props */
@@ -12,7 +12,7 @@ import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
-export const KindCreate: React.FC<KindCreateProps> = ({ data, setData }) => {
+export const RoomCreate: React.FC<KindCreateProps> = ({ data, setData }) => {
   return (
     <div>
       <div className={[space["m-b--45"]].join(" ")}>

@@ -36,7 +36,7 @@ const RoomPage = () => {
       });
       setTimeout(() => {
         Router.push("/become-a-host/bedrooms");
-      }, 2000);
+      }, 1000);
     }
   };
 
@@ -44,7 +44,7 @@ const RoomPage = () => {
     console.log("revert called");
     setTimeout(() => {
       Router.push("/become-a-host");
-    }, 2000);
+    }, 1000);
   };
 
   useEffect(() => {
@@ -72,7 +72,7 @@ const RoomPage = () => {
       left={
         <Create
           title="Property and guests"
-          type="kind"
+          type="room"
           data={data}
           setData={setData}
         />
@@ -80,6 +80,7 @@ const RoomPage = () => {
       percentage={10}
       next={proceed}
       back={revert}
+      criteria={!data.place || !data.property}
     />
   );
 };

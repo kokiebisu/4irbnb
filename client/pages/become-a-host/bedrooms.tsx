@@ -23,13 +23,13 @@ const BedRoomsPage = () => {
     });
     setTimeout(() => {
       Router.push("/become-a-host/bathrooms");
-    }, 2000);
+    }, 1000);
   };
 
   const revert = () => {
     setTimeout(() => {
       Router.push("/become-a-host/room");
-    }, 2000);
+    }, 1000);
   };
 
   return (

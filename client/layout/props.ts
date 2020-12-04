@@ -26,6 +26,7 @@ export interface CreateLayoutProps {
   next?: () => void;
   back?: () => void;
   percentage?: number;
+  criteria?: boolean;
 }
 
 export interface LayoutProps {
