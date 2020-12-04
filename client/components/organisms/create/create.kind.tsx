@@ -25,7 +25,7 @@ export const KindCreate: React.FC<KindCreateProps> = ({ data, setData }) => {
           <Input
             inputType="place"
             type="select"
-            value={data.place}
+            value={data?.place}
             handleChange={(e) => {
               setData({ ...data, place: e.target.value });
             }}
@@ -35,17 +35,17 @@ export const KindCreate: React.FC<KindCreateProps> = ({ data, setData }) => {
       <div className={[space["m-b--8"]].join(" ")} style={{ width: 250 }}>
         <Layout type="input" title="Now choose a property type">
           <Input
-            disabled={!data.place}
-            inputType={data.place && data.place}
+            disabled={!data?.place}
+            inputType={data?.place}
             type="select"
-            value={data.property}
+            value={data?.property}
             handleChange={(e) => {
               setData({ ...data, property: e.target.value });
             }}
           />
         </Layout>
       </div>
-      {data.property && data.description && (
+      {data?.property && data?.description && (
         <div>
           <div className={[space["m-t--16"]].join(" ")}>
             <h4 className={[font["size--14"], color["c--gray__0"]].join(" ")}>

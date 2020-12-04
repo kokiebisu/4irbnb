@@ -85,7 +85,7 @@ export interface RadioInputProps {
   title?: string;
   subtitle?: string;
   selected?: boolean;
-  select: (params: string) => void;
+  select?: (params: string) => void;
   value?: string;
 }
 
