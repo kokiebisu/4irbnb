@@ -47,7 +47,7 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
         >
           <div
             style={{
-              maxWidth: 600,
+              maxWidth: 550,
               width: "100%",
               paddingBottom: 100,
             }}
@@ -69,7 +69,7 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
             }}
           >
             <div
-              style={{ width: "100%", maxWidth: 600 }}
+              style={{ width: "100%", maxWidth: 550 }}
               className={[space["p-h--32"]].join(" ")}
             >
               <div

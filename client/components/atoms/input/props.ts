@@ -28,6 +28,13 @@ export interface AddressInputProps {
   errors?: boolean;
 }
 
+export interface TextInputProps {
+  handleChange?: any;
+  value?: string;
+  direction?: string;
+  errors?: boolean;
+}
+
 export interface PhoneNumberInputProps {
   handleChange?: any;
   value?: string;

@@ -1,4 +1,4 @@
-const Properties: { name: string; description: string }[] = [
+export const Properties: { name: string; description: string }[] = [
   {
     name: "Apartment",
     description:
@@ -26,8 +26,10 @@ const Properties: { name: string; description: string }[] = [
   },
 ];
 
-const Options = Properties.map((option, index) => {
-  return <option value={option.name}>{option.name}</option>;
+export const Options = Properties.map(({ name }, index) => {
+  return (
+    <option key={index} value={name}>
+      {name}
+    </option>
+  );
 });
-
-export { Properties, Options };

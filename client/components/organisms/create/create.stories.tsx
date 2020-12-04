@@ -32,3 +32,8 @@ export const room = CreateStories.bind({});
 room.args = {
   type: "room",
 };
+
+export const location = CreateStories.bind({});
+location.args = {
+  type: "location",
+};
