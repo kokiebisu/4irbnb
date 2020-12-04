@@ -135,7 +135,7 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
           )}
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
-          <Button type="primary" title="Log in" loading={loading} />
+          <Button type="primary" title="Log in" loading={loading} block />
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
           <Button

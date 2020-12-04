@@ -61,7 +61,7 @@ export const Button: React.FC<ButtonProps> = ({
     option: <OptionButton {...props} />,
     underline: <UnderlineButton {...props} />,
     filter: <FilterButton {...props} />,
-    // modal: <ModalButton {...props} />,
+    modal: <ModalButton {...props} />,
     back: <BackButton {...props} />,
   };
 
