@@ -28,13 +28,22 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   spread = false,
   fill,
   loading = false,
+  disabled = false,
 }) => {
+  const renderBackgroundColor = () => {
+    if (disabled) {
+      return { backgroundColor: "lightgray" };
+    }
+    return !fill && !disabled && [color["bg--primary"]].join(" ");
+  };
+
   const components = {
     sm: (
       <motion.button
+        disabled={disabled}
         whileTap={{ scale: 0.98 }}
         data-testid="button"
-        style={fill && { backgroundColor: fill }}
+        style={!disabled && fill && { backgroundColor: fill }}
         className={`${[
           color["c--white__0"],
           shape["w--full"],
@@ -43,9 +52,9 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
           space["p-h--14"],
           shape["br--8"],
           font["weight--300"],
-        ].join(" ")} ${spread ? layout["block"] : layout["inline-block"]} ${
-          !fill && [color["bg--primary"]].join(" ")
-        }`}
+        ].join(" ")} ${
+          spread ? layout["block"] : layout["inline-block"]
+        } ${renderBackgroundColor()}`}
         onClick={onPress}
       >
         {loading ? (
@@ -66,9 +75,10 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
     ),
     md: (
       <motion.button
+        disabled={disabled}
         whileTap={{ scale: 0.98 }}
         data-testid="button"
-        style={fill && { backgroundColor: fill }}
+        style={!disabled && fill && { backgroundColor: fill }}
         className={`${[
           color["c--white__0"],
           shape["w--full"],
@@ -77,9 +87,9 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
           space["p-h--20"],
           shape["br--8"],
           font["weight--300"],
-        ].join(" ")} ${spread ? layout["block"] : layout["inline-block"]} ${
-          !fill && [color["bg--primary"]].join(" ")
-        }`}
+        ].join(" ")} ${
+          spread ? layout["block"] : layout["inline-block"]
+        } ${renderBackgroundColor()}`}
         onClick={onPress}
       >
         {loading ? (
@@ -100,9 +110,10 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
     ),
     lg: (
       <motion.button
+        disabled={disabled}
         whileTap={{ scale: 0.98 }}
         data-testid="button"
-        style={fill && { backgroundColor: fill }}
+        style={!disabled && fill && { backgroundColor: fill }}
         className={`${[
           color["c--white__0"],
           shape["w--full"],
@@ -112,9 +123,9 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
           space["p-h--20"],
           shape["br--8"],
           font["weight--300"],
-        ].join(" ")} ${spread ? layout["block"] : layout["inline-block"]} ${
-          !fill && [color["bg--primary"]].join(" ")
-        }`}
+        ].join(" ")} ${
+          spread ? layout["block"] : layout["inline-block"]
+        } ${renderBackgroundColor()}`}
         onClick={onPress}
       >
         {loading ? (
