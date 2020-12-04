@@ -36,4 +36,11 @@ $colors: (
       transition: 0.4s background-color;
     }
   }
+
+  .hover-border--#{$color} {
+    &:hover {
+      border: 1px solid #{$value} !important;
+      transition: 0.4s border-color;
+    }
+  }
 }

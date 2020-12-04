@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 /** Components */
 import { Input } from "../../../components/atoms/input/input.component";
@@ -12,13 +12,7 @@ import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
-/** Logic */
-import { inputTypes, properties } from "../../atoms/input/logic/logic.types";
-import { getLogic } from "./logic/logic.kind";
-
-export const KindCreate: React.FC<KindCreateProps> = () => {
-  const [place, property, description, setPlace, setProperty] = getLogic();
-
+export const KindCreate: React.FC<KindCreateProps> = ({ data, setData }) => {
   return (
     <div>
       <div className={[space["m-b--45"]].join(" ")}>
@@ -31,9 +25,9 @@ export const KindCreate: React.FC<KindCreateProps> = () => {
           <Input
             inputType="place"
             type="select"
-            value={place}
+            value={data.place}
             handleChange={(e) => {
-              setPlace(e.target.value);
+              setData({ ...data, place: e.target.value });
             }}
           />
         </Layout>
@@ -41,25 +35,55 @@ export const KindCreate: React.FC<KindCreateProps> = () => {
       <div className={[space["m-b--8"]].join(" ")} style={{ width: 250 }}>
         <Layout type="input" title="Now choose a property type">
           <Input
-            disabled={!place}
-            inputType={place && place}
+            disabled={!data.place}
+            inputType={data.place && data.place}
             type="select"
-            value={property}
+            value={data.property}
             handleChange={(e) => {
-              setProperty(e.target.value);
+              setData({ ...data, property: e.target.value });
             }}
           />
         </Layout>
       </div>
-      {property && description && (
+      {data.property && data.description && (
         <div>
           <div className={[space["m-t--16"]].join(" ")}>
             <h4 className={[font["size--14"], color["c--gray__0"]].join(" ")}>
-              {description}
+              {data.description}
             </h4>
           </div>
           <div className={[space["m-v--32"]].join(" ")}>
-            <Layout type="input" title="What will guests have?"></Layout>
+            <Layout type="input" title="What will guests have?">
+              <div className={[space["m-t--22"]].join(" ")}>
+                <div className={[space["m-b--22"]].join(" ")}>
+                  <Input
+                    type="radio"
+                    title="Entire place"
+                    subtitle="Guests have the whole place to themselves. This usually includes a bedroom, a bathroom, and a kitchen."
+                    selected={data.stay === "Entire place"}
+                    select={() => setData({ ...data, stay: "Entire place" })}
+                  />
+                </div>
+                <div className={[space["m-b--22"]].join(" ")}>
+                  <Input
+                    type="radio"
+                    title="Private place"
+                    subtitle="Guests have their own private room for sleeping. Other areas could be shared."
+                    selected={data.stay === "Private place"}
+                    select={() => setData({ ...data, stay: "Private place" })}
+                  />
+                </div>
+                <div className={[space["m-b--22"]].join(" ")}>
+                  <Input
+                    type="radio"
+                    title="Shared room"
+                    subtitle="Guests sleep in a bedroom or a common area that could be shared with others."
+                    selected={data.stay === "Shared room"}
+                    select={() => setData({ ...data, stay: "Shared room" })}
+                  />
+                </div>
+              </div>
+            </Layout>
           </div>
         </div>
       )}
