@@ -24,6 +24,8 @@ export interface CreateLayoutProps {
   left?: React.ReactNode;
   right?: React.ReactNode;
   next?: () => void;
+  back?: () => void;
+  percentage?: number;
 }
 
 export interface LayoutProps {

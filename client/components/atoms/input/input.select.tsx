@@ -37,7 +37,6 @@ export const SelectInput: React.FC<SelectInputProps> = ({
   inputType = "Bed and breakfast",
 }): JSX.Element => {
   const [fieldActive, setFieldActive] = useState(false);
-
   return (
     <div
       className={`${[
@@ -86,9 +85,12 @@ export const SelectInput: React.FC<SelectInputProps> = ({
             font["weight--300"],
           ].join(" ")}`}
         >
-          <option disabled value={inputTypes[inputType].default}>
-            {inputTypes[inputType].default}
-          </option>
+          {console.log("defa", inputTypes[inputType].default)}
+          {inputTypes[inputType].default && (
+            <option disabled value={inputTypes[inputType].default}>
+              {inputTypes[inputType].default}
+            </option>
+          )}
           {inputTypes[inputType].options}
         </select>
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>

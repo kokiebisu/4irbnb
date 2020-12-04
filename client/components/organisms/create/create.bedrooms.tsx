@@ -29,14 +29,40 @@ export const BedroomsCreate: React.FC<BedroomsCreateProps> = ({
           comfortably.
         </p>
       </div>
-      <div style={{ width: 250 }} className={[space["m-b--22"]].join(" ")}>
-        input directly
+      <div style={{ width: 300 }} className={[space["m-b--30"]].join(" ")}>
+        <div className={[space["m-b--8"]].join(" ")}>
+          <Input
+            title="Guests"
+            type="counter"
+            value={data.guests}
+            add={() => setData({ ...data, guests: data.guests + 1 })}
+            subtract={() => setData({ ...data, guests: data.guests - 1 })}
+            min={1}
+            max={16}
+          />
+        </div>
       </div>
-      <div className={[space["m-b--8"]].join(" ")} style={{ width: 250 }}>
-        <Layout type="input" title="How many bedrooms can guests use?"></Layout>
+      <div className={[space["m-b--32"]].join(" ")} style={{ width: 300 }}>
+        <Layout type="input" title="How many bedrooms can guests use?">
+          <div className={[space["m-t--16"]].join(" ")}>
+            <Input type="select" inputType="bedrooms" />
+          </div>
+        </Layout>
       </div>
-      <div className={[space["m-b--8"]].join(" ")} style={{ width: 250 }}>
-        <Layout type="input" title="How many beds can guests use?"></Layout>
+      <div className={[space["m-b--8"]].join(" ")} style={{ width: 300 }}>
+        <Layout type="input" title="How many beds can guests use?">
+          <div className={[space["m-t--16"]].join(" ")}>
+            <Input
+              title="Beds"
+              type="counter"
+              value={data.beds}
+              add={() => setData({ ...data, beds: data.beds + 1 })}
+              subtract={() => setData({ ...data, beds: data.beds - 1 })}
+              min={1}
+              max={50}
+            />
+          </div>
+        </Layout>
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
 import React from "react";
 
 /** Components */
-import { Bar } from "components/organisms/bar/bar.component";
-import { Header } from "components/organisms/header/header.component";
-import { Button } from "components/atoms/button/button.component";
+import { Bar } from "../components/organisms/bar/bar.component";
+import { Header } from "../components/organisms/header/header.component";
+import { Button } from "../components/atoms/button/button.component";
 
 /** Styles */
 import layout from "../styles/layout.module.scss";
@@ -19,6 +19,8 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
   left,
   right,
   next,
+  back,
+  percentage,
 }) => {
   return (
     <div>
@@ -27,7 +29,7 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
           <Header type="stay" title={title} />
         </div>
         <div>
-          <Bar type="progress" />
+          <Bar type="progress" percentage={percentage} />
         </div>
       </div>
       <div
@@ -73,7 +75,7 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
                   ].join(" ")}
                 >
                   <div>
-                    <Button type="back" to="/become-a-host" />
+                    <Button type="back" onPress={back} />
                   </div>
                   <div>
                     <Button
