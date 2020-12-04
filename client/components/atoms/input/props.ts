@@ -94,6 +94,7 @@ export interface CounterInputProps {
   value?: number;
   add?: () => void;
   subtract?: () => void;
+  min?: number;
   max?: number;
 }
 
