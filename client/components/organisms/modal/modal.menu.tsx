@@ -1,20 +1,47 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-/**
- * Styles
- */
+/** Styles */
 import shape from "../../../styles/shape.module.scss";
 import color from "../../../styles/color.module.scss";
 import layout from "../../../styles/layout.module.scss";
 
 /** Components */
 import { Button } from "../../../components/atoms/button/button.component";
+import { getOptionContents } from "../../../components/atoms/button/content/content.option";
+import { option } from "../../../components/atoms/button/button.stories";
 
 /** Props */
 import { MenuModalProps } from "./props";
+
+/** Hooks */
 import useOnClickOutside from "../../../hooks/useOnClickOutside";
+
+/** Contexts */
 import { useToggleDispatch } from "../../../context/toggle";
+
+const Options: React.FC<{
+  params?: {
+    kind: string;
+    bold: boolean;
+  }[];
+}> = ({ params }) => {
+  const options = getOptionContents();
+  return (
+    <>
+      {params.map(({ kind, bold }, index) => (
+        <div key={index}>
+          <Button
+            {...option.args}
+            bold={bold}
+            onPress={options[kind].handleClick}
+            name={options[kind].name}
+          />
+        </div>
+      ))}
+    </>
+  );
+};
 
 /**
  * Renders the menu modal
@@ -26,6 +53,7 @@ export const MenuModal: React.FC<MenuModalProps> = ({
 }) => {
   const toggleDispatch = useToggleDispatch();
   useOnClickOutside(refProp, () => toggleDispatch({ type: "toggle_menu" }));
+
   return (
     <motion.div
       ref={refProp}
@@ -35,35 +63,27 @@ export const MenuModal: React.FC<MenuModalProps> = ({
         shape["shadow--lg"],
         layout["flex"],
         layout["items-center"],
-        color["bg--white__0"],
+        color["bg--white"],
       ].join(" ")}
       style={{ width: 230, height: authenticated ? 420 : 230 }}
     >
       <div className={[shape["w--inherit"]].join(" ")}>
         {authenticated ? (
-          <>
-            <div>
-              <Button type="option" option="messages" bold />
-            </div>
-            <div>
-              <Button type="option" option="notifications" bold />
-            </div>
-            <div>
-              <Button type="option" option="trips" bold />
-            </div>
-            <div>
-              <Button type="option" option="saved" bold />
-            </div>
-          </>
+          <Options
+            params={[
+              { kind: "messages", bold: true },
+              { kind: "notifications", bold: false },
+              { kind: "trips", bold: false },
+              { kind: "saved", bold: false },
+            ]}
+          />
         ) : (
-          <>
-            <div>
-              <Button type="option" option="signup" bold />
-            </div>
-            <div>
-              <Button type="option" option="login" />
-            </div>
-          </>
+          <Options
+            params={[
+              { kind: "signup", bold: true },
+              { kind: "login", bold: false },
+            ]}
+          />
         )}
         <div
           style={{
@@ -74,34 +94,22 @@ export const MenuModal: React.FC<MenuModalProps> = ({
           }}
         ></div>
         {authenticated ? (
-          <div>
-            <div>
-              <Button to="/host/homes" type="option" option="home">
-                Host your home
-              </Button>
-            </div>
-            <div>
-              <Button type="option" option="experience" />
-            </div>
-            <div>
-              <Button type="option" option="refer" />
-            </div>
-            <div>
-              <Button type="option" option="account" />
-            </div>
-          </div>
+          <Options
+            params={[
+              { kind: "home", bold: false },
+              { kind: "experience", bold: false },
+              { kind: "refer", bold: false },
+              { kind: "account", bold: false },
+            ]}
+          />
         ) : (
-          <div>
-            <div>
-              <Button type="option" option="home" />
-            </div>
-            <div>
-              <Button type="option" option="experience" />
-            </div>
-            <div>
-              <Button type="option" option="help" />
-            </div>
-          </div>
+          <Options
+            params={[
+              { kind: "home", bold: false },
+              { kind: "experience", bold: false },
+              { kind: "help", bold: false },
+            ]}
+          />
         )}
         {authenticated && (
           <>
@@ -113,14 +121,12 @@ export const MenuModal: React.FC<MenuModalProps> = ({
                 margin: "6px 0",
               }}
             ></div>
-            <div>
-              <div>
-                <Button type="option" option="help" />
-              </div>
-              <div>
-                <Button type="option" option="logout" />
-              </div>
-            </div>
+            <Options
+              params={[
+                { kind: "help", bold: false },
+                { kind: "logout", bold: false },
+              ]}
+            />
           </>
         )}
       </div>

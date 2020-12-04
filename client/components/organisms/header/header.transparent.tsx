@@ -1,4 +1,5 @@
 import React from "react";
+import Router from "next/router";
 
 /** Styles */
 import space from "../../../styles/space.module.scss";
@@ -22,7 +23,14 @@ import { MagnifyGlass } from "../../../public/svg/original";
 import { TransparentHeaderProps } from "./props";
 
 /** Contexts */
-import { useToggleState } from "../../../context/toggle";
+import { useToggleDispatch, useToggleState } from "../../../context/toggle";
+
+/** Stories */
+import {
+  host,
+  menu,
+  globe,
+} from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the transparent header
@@ -30,7 +38,9 @@ import { useToggleState } from "../../../context/toggle";
 export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
   data,
 }) => {
-  let toggleState = useToggleState();
+  const toggleState = useToggleState();
+  const toggleDispatch = useToggleDispatch();
+
   return (
     <header className={[space["p-h--0"], space["p-v--16"]].join(" ")}>
       <div
@@ -51,22 +61,24 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
         </div>
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div
-            className={[styles["searchbar__host"], space["m-r--16"]].join(" ")}
+            className={[styles["searchbar__host"], space["m-h--4"]].join(" ")}
           >
-            <Button type="host" inverse to="/host/homes" />
+            <Button {...host.args} inverse animate />
           </div>
-          {/* <div
-            className={[
-              space["m-t--0"],
-              space["m-r--12"],
-              space["m-b--0"],
-              space["m-l--8"],
-            ].join(" ")}
-          >
-            <Button type="globe" inverse />
-          </div> */}
-          <div>
-            <Button authenticated={data} type="menu" inverse />
+          <div className={[space["m-h--4"]].join(" ")}>
+            <Button
+              {...globe.args}
+              inverse
+              onPress={() => toggleDispatch({ type: "toggle_language" })}
+            />
+          </div>
+          <div className={[space["m-l--4"]].join(" ")}>
+            <Button
+              {...menu.args}
+              inverse
+              authenticated={data}
+              onPress={() => toggleDispatch({ type: "toggle_menu" })}
+            />
           </div>
         </div>
         <Modal
@@ -89,7 +101,7 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
           space["p-h--25"],
           shape["br--30"],
           shape["shadow"],
-          color["bg--white__0"],
+          color["bg--white"],
         ].join(" ")}
       >
         <div className={[space["m-r--15"]].join(" ")}>

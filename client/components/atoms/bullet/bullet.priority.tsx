@@ -1,4 +1,5 @@
 import React from "react";
+import Router from "next/router";
 
 /** Vectors */
 import {
@@ -59,7 +60,7 @@ export const PriorityBullet: React.FC<PriorityBulletProps> = ({
         <p>{categories[priority].description}</p>
       </div>
       <div>
-        <Button to="/">
+        <Button onPress={() => Router.push("/")}>
           <u className={[font["size--14"]].join(" ")}>
             {categories[priority].link}
           </u>

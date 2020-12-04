@@ -239,7 +239,7 @@ export const CheckInCard: React.FC<CheckInCardProps> = () => {
                 font["size--15"],
                 shape["br--5"],
                 color["bg--primary"],
-                color["c--white__0"],
+                color["c--white"],
                 font["weight--300"],
               ].join(" ")}
             >
