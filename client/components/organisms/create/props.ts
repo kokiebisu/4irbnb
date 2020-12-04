@@ -10,6 +10,11 @@ export interface BedroomsCreateProps {
   setData?: (params: any) => void;
 }
 
+export interface BathroomsCreateProps {
+  data?: any;
+  setData?: (params: any) => void;
+}
+
 export interface CreateProps {
   type?: string;
   [x: string]: any;
