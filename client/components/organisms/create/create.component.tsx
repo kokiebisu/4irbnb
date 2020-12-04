@@ -2,6 +2,7 @@ import React from "react";
 import { BathroomsCreate } from "./create.bathrooms";
 import { BedroomsCreate } from "./create.bedrooms";
 import { GetStartedCreate } from "./create.getstarted";
+import { LocationCreate } from "./create.location";
 import { RoomCreate } from "./create.room";
 import { CreateProps } from "./props";
 
@@ -14,6 +15,7 @@ export const Create: React.FC<CreateProps> = ({
     room: <RoomCreate {...props} />,
     bedrooms: <BedroomsCreate {...props} />,
     bathrooms: <BathroomsCreate {...props} />,
+    location: <LocationCreate {...props} />,
   };
   return types[type];
 };

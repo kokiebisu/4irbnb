@@ -15,6 +15,11 @@ export interface BathroomsCreateProps {
   setData?: (params: any) => void;
 }
 
+export interface LocationCreateProps {
+  data?: any;
+  setData?: (params: any) => void;
+}
+
 export interface CreateProps {
   type?: string;
   [x: string]: any;

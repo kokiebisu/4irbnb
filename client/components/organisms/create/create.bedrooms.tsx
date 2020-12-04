@@ -45,7 +45,14 @@ export const BedroomsCreate: React.FC<BedroomsCreateProps> = ({
       <div className={[space["m-b--32"]].join(" ")} style={{ width: 300 }}>
         <Layout type="input" title="How many bedrooms can guests use?">
           <div className={[space["m-t--16"]].join(" ")}>
-            <Input type="select" inputType="bedrooms" />
+            <Input
+              type="select"
+              inputType="bedrooms"
+              value={data.bedrooms}
+              handleChange={(e) =>
+                setData({ ...data, bedrooms: e.target.value })
+              }
+            />
           </div>
         </Layout>
       </div>
