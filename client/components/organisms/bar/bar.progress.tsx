@@ -18,6 +18,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
         {Array.from(Array(24).keys()).map((_, index) => {
           return (
             <div
+              key={index}
               style={{
                 width: "10%",
                 height: 10,
