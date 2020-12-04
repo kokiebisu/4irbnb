@@ -12,7 +12,7 @@ const BedRoomsPage = () => {
     beds: 1,
   });
 
-  const saveData = () => {
+  const proceed = () => {
     stayDispatch({
       type: "add",
       payload: {
@@ -26,6 +26,12 @@ const BedRoomsPage = () => {
     }, 2000);
   };
 
+  const revert = () => {
+    setTimeout(() => {
+      Router.push("/become-a-host/room");
+    }, 2000);
+  };
+
   return (
     <Layout
       type="create"
@@ -35,9 +41,11 @@ const BedRoomsPage = () => {
           type="bedrooms"
           data={data}
           setData={setData}
-          next={saveData}
         />
       }
+      percentage={20}
+      next={proceed}
+      back={revert}
     />
   );
 };

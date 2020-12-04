@@ -24,7 +24,7 @@ const RoomPage = () => {
     stay: "Entire place",
   });
 
-  const saveData = () => {
+  const proceed = () => {
     if (data.stay && data.property) {
       stayDispatch({
         type: "add",
@@ -38,6 +38,13 @@ const RoomPage = () => {
         Router.push("/become-a-host/bedrooms");
       }, 2000);
     }
+  };
+
+  const revert = () => {
+    console.log("revert called");
+    setTimeout(() => {
+      Router.push("/become-a-host");
+    }, 2000);
   };
 
   useEffect(() => {
@@ -68,9 +75,11 @@ const RoomPage = () => {
           type="kind"
           data={data}
           setData={setData}
-          next={saveData}
         />
       }
+      percentage={10}
+      next={proceed}
+      back={revert}
     />
   );
 };

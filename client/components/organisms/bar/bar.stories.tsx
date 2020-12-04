@@ -25,3 +25,8 @@ export const progress = BarStory.bind({});
 progress.args = {
   type: "progress",
 };
+progress.argTypes = {
+  percentage: {
+    control: "number",
+  },
+};
