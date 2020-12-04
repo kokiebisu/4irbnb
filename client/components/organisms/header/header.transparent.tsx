@@ -22,7 +22,8 @@ import { MagnifyGlass } from "../../../public/svg/original";
 import { TransparentHeaderProps } from "./props";
 
 /** Contexts */
-import { useToggleState } from "../../../context/toggle";
+import { useToggleDispatch, useToggleState } from "../../../context/toggle";
+import { menu } from "components/atoms/button/button.stories";
 
 /**
  * Renders the transparent header
@@ -30,7 +31,8 @@ import { useToggleState } from "../../../context/toggle";
 export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
   data,
 }) => {
-  let toggleState = useToggleState();
+  const toggleState = useToggleState();
+  const toggleDispatch = useToggleDispatch();
   return (
     <header className={[space["p-h--0"], space["p-v--16"]].join(" ")}>
       <div
@@ -66,7 +68,12 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
             <Button type="globe" inverse />
           </div> */}
           <div>
-            <Button authenticated={data} type="menu" inverse />
+            <Button
+              {...menu.args}
+              inverse
+              authenticated={data}
+              onPress={() => toggleDispatch({ type: "toggle_menu" })}
+            />
           </div>
         </div>
         <Modal

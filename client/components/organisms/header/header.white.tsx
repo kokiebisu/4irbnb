@@ -14,7 +14,7 @@ import { Modal } from "../modal/modal.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
 /** Contexts */
-import { useToggleState } from "../../../context/toggle";
+import { useToggleDispatch, useToggleState } from "../../../context/toggle";
 
 /** Vectors */
 import { NameLogo, NoNameLogo } from "../../../public/svg/logo";
@@ -22,6 +22,7 @@ import { ChevronLeft } from "../../../public/svg/regular";
 
 /** Props */
 import { WhiteHeaderProps } from "./props";
+import { menu } from "components/atoms/button/button.stories";
 
 /**
  * Renders the white header
@@ -31,7 +32,8 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
   spread = false,
   data,
 }) => {
-  let toggleState = useToggleState();
+  const toggleState = useToggleState();
+  const toggleDispatch = useToggleDispatch();
   return (
     <header
       className={`${[
@@ -93,7 +95,12 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
               <Button type="globe" />
             </div> */}
             <div>
-              <Button type="menu" authenticated={data} />
+              <Button
+                {...menu.args}
+                authenticated={data}
+                inverse
+                onPress={() => toggleDispatch({ type: "toggle_menu" })}
+              />
             </div>
           </div>
           <Modal

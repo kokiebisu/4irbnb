@@ -1,19 +1,13 @@
 import React from "react";
 import { useFormik } from "formik";
 
-/**
- * Contexts
- */
+/** Contexts */
 import { useAuthDispatch, useAuthState } from "../../../context/auth";
 
-/**
- * Hooks
- */
+/** Hooks */
 import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
 
-/**
- * Styles
- */
+/** Styles */
 import space from "../../../styles/space.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import font from "../../../styles/font.module.scss";
@@ -21,27 +15,24 @@ import layout from "../../../styles/layout.module.scss";
 import color from "../../../styles/color.module.scss";
 import modalStyles from "../../organisms/modal/modal.module.scss";
 
-/**
- * Components
- */
+/** Components */
 import { Input } from "../../atoms/input/input.component";
 import { Button } from "../../atoms/button/button.component";
+import { getAuthContents } from "../../atoms/button/content/content.auth";
 
-/**
- * Props
- */
+/** Props */
 import { AuthTemplateProps } from "./props";
 
-/**
- *
- */
+/** Helpers */
 import { validateAuth as validate } from "../../../helper/auth";
+import { auth } from "components/atoms/button/button.stories";
 
 /**
  * Renders the auth template component
  */
 export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
   useLockBodyScroll();
+  const auths = getAuthContents();
   const authState = useAuthState();
   const authDispatch = useAuthDispatch();
   const methods = ["email", "facebook", "google", "apple"];
@@ -65,10 +56,7 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
   };
 
   return (
-    <div
-      // style={{ height: 'calc(100% - 60px)' }}
-      className={[space["p--24"]].join(" ")}
-    >
+    <div className={[space["p--24"]].join(" ")}>
       <div className={[shape["w--full"]].join(" ")}>
         <form onSubmit={formik.handleSubmit}>
           <div className={[space["m-b--8"]].join(" ")}>
@@ -131,7 +119,13 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
           {methods.map((method, index) => {
             return (
               <div key={index} className={[space["m-v--14"]].join(" ")}>
-                <Button type="auth" auth={method} />
+                <Button
+                  {...auth.args}
+                  auth={method}
+                  onPress={auths[method].handleClick}
+                  icon={auths[method].icon}
+                  name={auths[method].name}
+                />
               </div>
             );
           })}
