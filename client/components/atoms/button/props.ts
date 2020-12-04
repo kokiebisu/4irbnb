@@ -19,8 +19,8 @@ interface InverseProps {
 }
 
 export interface AuthButtonProps {
-  auth?: string;
   icon?: any;
+  name?: string;
 }
 
 export interface GlobeButtonProps extends InverseProps {}
@@ -78,7 +78,7 @@ export interface ModalButtonProps {
 export interface ExpandButtonProps extends LinkButtonProps, TitleProps {}
 
 export interface OptionButtonProps {
-  option?: string;
+  name?: string;
   bold?: boolean;
 }
 

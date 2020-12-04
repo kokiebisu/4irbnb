@@ -40,21 +40,21 @@ export const Button: React.FC<ButtonProps> = ({
   const { onPress, to } = props;
   const types: mapProps = {
     auth: <AuthButton {...props} />,
-    globe: <GlobeButton {...props} />,
-    host: <HostButton {...props} />,
+    // globe: <GlobeButton {...props} />,
+    // host: <HostButton {...props} />,
     menu: <MenuButton {...props} />,
-    privacy: <PrivacyButton {...props} />,
-    border: <BorderButton {...props} />,
-    banner: <BannerButton {...props} />,
-    primary: <PrimaryButton {...props} />,
-    searchbar: <SearchbarButton {...props} />,
-    paginate: <PaginateButton {...props} />,
-    expand: <ExpandButton {...props} />,
+    // privacy: <PrivacyButton {...props} />,
+    // border: <BorderButton {...props} />,
+    // banner: <BannerButton {...props} />,
+    // primary: <PrimaryButton {...props} />,
+    // searchbar: <SearchbarButton {...props} />,
+    // paginate: <PaginateButton {...props} />,
+    // expand: <ExpandButton {...props} />,
     option: <OptionButton {...props} />,
-    underline: <UnderlineButton {...props} />,
-    filter: <FilterButton {...props} />,
-    modal: <ModalButton {...props} />,
-    back: <BackButton {...props} />,
+    // underline: <UnderlineButton {...props} />,
+    // filter: <FilterButton {...props} />,
+    // modal: <ModalButton {...props} />,
+    // back: <BackButton {...props} />,
   };
 
   if (to) {
@@ -71,10 +71,6 @@ export const Button: React.FC<ButtonProps> = ({
     );
   }
 
-  if (type) {
-    return types[type];
-  }
-
   return (
     <motion.button
       whileTap={{ scale: 0.98 }}
@@ -82,7 +78,7 @@ export const Button: React.FC<ButtonProps> = ({
       className={extendsTo}
       onClick={onPress}
     >
-      {children}
+      {type ? types[type] : children}
     </motion.button>
   );
 };
