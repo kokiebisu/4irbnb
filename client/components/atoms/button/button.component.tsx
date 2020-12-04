@@ -35,6 +35,7 @@ export const Button: React.FC<ButtonProps> = ({
   extendsTo,
   type,
   children,
+  disable = false,
   ...props
 }) => {
   const { onPress, to } = props;
@@ -48,7 +49,7 @@ export const Button: React.FC<ButtonProps> = ({
     // banner: <BannerButton {...props} />,
     // primary: <PrimaryButton {...props} />,
     // searchbar: <SearchbarButton {...props} />,
-    // paginate: <PaginateButton {...props} />,
+    paginate: <PaginateButton {...props} />,
     // expand: <ExpandButton {...props} />,
     option: <OptionButton {...props} />,
     // underline: <UnderlineButton {...props} />,
@@ -73,10 +74,13 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <motion.button
-      whileTap={{ scale: 0.99 }}
+      whileTap={{ scale: disable ? 1 : 0.99 }}
+      whileHover={{ scale: disable ? 1 : 1.01 }}
       data-testid="button"
       className={extendsTo}
       onClick={onPress}
+      disabled={disable}
+      style={{ cursor: disable ? "default" : "pointer" }}
     >
       {type ? types[type] : children}
     </motion.button>
