@@ -1,6 +1,9 @@
 export interface GetStartedCreateProps {}
 
-export interface KindCreateProps {}
+export interface KindCreateProps {
+  data?: any;
+  setData?: (params: any) => void;
+}
 
 export interface CreateProps {
   type?: string;

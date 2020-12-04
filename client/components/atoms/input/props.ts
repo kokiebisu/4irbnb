@@ -82,7 +82,11 @@ export interface SelectInputProps {
 }
 
 export interface RadioInputProps {
-  content?: string;
+  title?: string;
+  subtitle?: string;
+  selected?: boolean;
+  select?: (params: string) => void;
+  value?: string;
 }
 
 export interface InputProps {
