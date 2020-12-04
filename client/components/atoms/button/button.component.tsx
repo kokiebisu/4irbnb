@@ -21,6 +21,10 @@ import { FilterButton } from "./button.filter";
 import { ModalButton } from "./button.modal";
 import { BackButton } from "./button.back";
 
+/** Styles */
+import layout from "../../../styles/layout.module.scss";
+import shape from "../../../styles/shape.module.scss";
+
 interface mapProps {
   [key: string]: JSX.Element;
 }
@@ -35,10 +39,12 @@ export const Button: React.FC<ButtonProps> = ({
   extendsTo,
   type,
   children,
-  disable = false,
+  onPress,
+  to,
+  block,
   ...props
 }) => {
-  const { onPress, to } = props;
+  const { disable = false } = props;
   const types: mapProps = {
     auth: <AuthButton {...props} />,
     // globe: <GlobeButton {...props} />,
@@ -47,7 +53,7 @@ export const Button: React.FC<ButtonProps> = ({
     privacy: <PrivacyButton {...props} />,
     // border: <BorderButton {...props} />,
     // banner: <BannerButton {...props} />,
-    // primary: <PrimaryButton {...props} />,
+    primary: <PrimaryButton {...props} />,
     // searchbar: <SearchbarButton {...props} />,
     paginate: <PaginateButton {...props} />,
     // expand: <ExpandButton {...props} />,
@@ -74,10 +80,15 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <motion.button
-      whileTap={{ scale: disable ? 1 : 0.99 }}
-      whileHover={{ scale: disable ? 1 : 1.01 }}
+      transition={{ duration: 0.1, ease: "easeInOut" }}
+      whileTap={{ scale: disable ? 1 : 0.995 }}
+      whileHover={{ scale: disable ? 1 : 1.005 }}
       data-testid="button"
-      className={extendsTo}
+      className={`${extendsTo} ${
+        block
+          ? [layout["block"], shape["w--full"]].join(" ")
+          : layout["inline-block"]
+      }`}
       onClick={onPress}
       disabled={disable}
       style={{ cursor: disable ? "default" : "pointer" }}

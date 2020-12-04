@@ -92,7 +92,7 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
                       type="primary"
                       title="Next"
                       size="md"
-                      disabled={criteria}
+                      disable={criteria}
                       fill="#018489"
                       onPress={next}
                     />
