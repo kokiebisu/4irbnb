@@ -97,10 +97,18 @@ export const ExistsTemplate: React.FC<ExistsTemplateProps> = ({
         </div>
       </form>
       <div className={[space["m-v--16"]].join(" ")}>
-        <Button type="underline" title="Login with a different account" />
+        <Button
+          type="underline"
+          title="Login with a different account"
+          onPress={() => alert("button pressed")}
+        />
       </div>
       <div className={[space["m-v--16"]].join(" ")}>
-        <Button type="underline" title="Forgot password?" />
+        <Button
+          type="underline"
+          title="Forgot password?"
+          onPress={() => alert("button pressed")}
+        />
       </div>
     </div>
   );
