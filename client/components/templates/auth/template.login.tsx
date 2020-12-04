@@ -2,42 +2,36 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import Router from "next/router";
 
-/**
- * Contexts
- */
+/** Contexts */
 import { useAuthDispatch, useAuthState } from "../../../context/auth";
 
-/**
- * Styles
- */
+/** Styles */
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 import layout from "../../../styles/layout.module.scss";
 
-/**
- * Components
- */
+/** Components */
 import { Input } from "../../atoms/input/input.component";
 import { Button } from "../../atoms/button/button.component";
 import { Bullet } from "../../atoms/bullet/bullet.component";
 import { Animation } from "../../animation/animation.component";
 import { Card } from "../../molecules/card/card.component";
 
-/**
- * Props
- */
+/** Props */
 import { LoginTemplateProps } from "./props";
 
-/**
- * Helper
- */
+/** Helper */
 import { validateLogin as validate } from "../../../helper/auth";
 
-/**
- * Hooks
- */
+/** Hooks */
 import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
 import { useFetch } from "../../../hooks/useFetch";
+
+/** Stories */
+import {
+  primary,
+  underline,
+} from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the login template component
@@ -135,18 +129,18 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
           )}
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
-          <Button type="primary" title="Log in" loading={loading} />
+          <Button {...primary.args} title="Log in" loading={loading} block />
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
           <Button
-            type="underline"
+            {...underline.args}
             title="Forgot password?"
             onPress={redirectTo}
           />
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
           <Button
-            type="underline"
+            {...underline.args}
             title="More login options"
             onPress={switchBack}
           />
@@ -155,7 +149,7 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
           <p className={[font["size--14"], space["m-r--8"]].join(" ")}>
             Don't have an account?
           </p>
-          <Button type="underline" title="Sign up" onPress={switchAuth} />
+          <Button {...underline.args} title="Sign up" onPress={switchAuth} />
         </div>
       </form>
     </div>

@@ -33,7 +33,7 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({
           data-testid="button"
           className={[
             shape["br--25"],
-            color["bg--white__0"],
+            color["bg--white"],
             color["b--white__2"],
             animation["hover-shadow--sm"],
           ].join(" ")}
@@ -89,7 +89,7 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({
           className={[
             shape["w--full"],
             shape["br--25"],
-            color["bg--white__0"],
+            color["bg--white"],
             color["b--white__2"],
             animation["hover-shadow--sm"],
             shape["shadow--sm"],

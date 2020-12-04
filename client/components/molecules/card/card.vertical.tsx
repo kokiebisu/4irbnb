@@ -49,7 +49,7 @@ export const VerticalCard: React.FC<VerticalCardProps> = ({
             className={
               card.superhost
                 ? [].join(" ")
-                : [color["c--white__0"], shape["hidden"]].join(" ")
+                : [color["c--white"], shape["hidden"]].join(" ")
             }
           >
             <div
@@ -75,8 +75,8 @@ export const VerticalCard: React.FC<VerticalCardProps> = ({
           <div
             className={
               save
-                ? [color["c--white__0"]].join(" ")
-                : [color["c--white__0"], shape["hidden"]].join(" ")
+                ? [color["c--white"]].join(" ")
+                : [color["c--white"], shape["hidden"]].join(" ")
             }
           >
             <Heart

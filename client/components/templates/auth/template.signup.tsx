@@ -23,8 +23,11 @@ import { validateSignup as validate } from "../../../helper/auth";
 import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
 import { useFetch } from "../../../hooks/useFetch";
 
-/** Context */
+/** Contexts */
 import { useAuthDispatch } from "../../../context/auth";
+
+/** Stories */
+import { primary } from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the signup template component
@@ -260,7 +263,12 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
           </p>
         </div>
         <div className={[space["m-t--16"]].join(" ")}>
-          <Button type="primary" title="Agree and continue" loading={loading} />
+          <Button
+            {...primary.args}
+            title="Agree and continue"
+            loading={loading}
+            block
+          />
         </div>
       </div>
     </form>

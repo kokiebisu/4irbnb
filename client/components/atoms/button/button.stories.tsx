@@ -5,6 +5,15 @@ import { Button } from "../../../components/atoms/button/button.component";
 import { ButtonProps } from "./props";
 import { ContextProvider } from "../../../context/provider";
 
+import font from "../../../styles/font.module.scss";
+import button from "./button.module.scss";
+import color from "../../../styles/color.module.scss";
+import layout from "../../../styles/layout.module.scss";
+import shape from "../../../styles/shape.module.scss";
+import space from "../../../styles/space.module.scss";
+import animation from "../../../styles/animation.module.scss";
+import Router from "next/router";
+
 export default {
   title: "Design System/Atoms/Button",
   component: Button,
@@ -55,6 +64,7 @@ const ButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
 export const globe = ButtonTemplate.bind({});
 globe.args = {
   type: "globe",
+  extendsTo: [color["bg--transparent"], shape["br--30"]].join(" "),
 };
 globe.argTypes = {
   ...disableTitle,
@@ -63,11 +73,13 @@ globe.argTypes = {
 export const host = ButtonTemplate.bind({});
 host.args = {
   type: "host",
+  onPress: () => Router.push("/host/homes"),
 };
 
 export const menu = ButtonTemplate.bind({});
 menu.args = {
   type: "menu",
+  extendsTo: [shape["br--30"], animation["hover-shadow--lg"]].join(" "),
 };
 menu.argTypes = {
   ...disableTitle,
@@ -92,6 +104,7 @@ privacy.decorators = [
 export const border = ButtonTemplate.bind({});
 border.args = {
   type: "border",
+  extendsTo: [color["bg--transparent"]].join(" "),
 };
 border.argTypes = {
   size: {
@@ -108,6 +121,7 @@ border.argTypes = {
 export const banner = ButtonTemplate.bind({});
 banner.args = {
   type: "banner",
+  extendsTo: [color["bg--white"], shape["br--6"]].join(" "),
 };
 banner.argTypes = {
   ...disableInverse,
@@ -153,7 +167,15 @@ searchbar.argTypes = {
 export const auth = ButtonTemplate.bind({});
 auth.args = {
   type: "auth",
-  ...disableInverse,
+  extendsTo: [
+    button["hover__auth"],
+    color["bg--transparent"],
+    layout["block"],
+    shape["w--full"],
+    space["p-h--12"],
+    space["p-v--12"],
+    shape["br--8"],
+  ].join(" "),
 };
 
 auth.decorators = [
@@ -189,6 +211,7 @@ paginate.argTypes = {
 export const option = ButtonTemplate.bind({});
 option.args = {
   type: "option",
+  extendsTo: [shape["w--full"]].join(" "),
 };
 
 export const underline = ButtonTemplate.bind({});

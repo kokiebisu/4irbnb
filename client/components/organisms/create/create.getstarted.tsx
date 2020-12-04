@@ -17,6 +17,9 @@ import { Input } from "../../../components/atoms/input/input.component";
 /** Contexts */
 import { useStayDispatch } from "../../../context/stay";
 
+/** Stories */
+import { primary } from "../../../components/atoms/button/button.stories";
+
 export const GetStartedCreate: React.FC<GetStartedCreateProps> = () => {
   const [loading, setLoading] = useState(false);
   const [stay, setStay] = useState("Entire place");
@@ -97,7 +100,7 @@ export const GetStartedCreate: React.FC<GetStartedCreateProps> = () => {
             >
               <div style={{ width: "100%" }}>
                 <Button
-                  type="primary"
+                  {...primary.args}
                   title="Continue"
                   size="sm"
                   loading={loading}

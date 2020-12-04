@@ -32,7 +32,7 @@ export const OnlineHostLayout: React.FC<OnlineHostLayoutProps> = ({
           <div>
             <h3
               className={`${[layout["font__onlinehost--title"]].join(" ")} ${
-                dark ? [color["c--white__0"]].join(" ") : [].join(" ")
+                dark ? [color["c--white"]].join(" ") : [].join(" ")
               }`}
             >
               {title}
@@ -43,7 +43,7 @@ export const OnlineHostLayout: React.FC<OnlineHostLayoutProps> = ({
           <div className={[space["m-t--16"]].join(" ")}>
             <p
               className={`${[layout["font__onlinehost--subtitle"]].join(" ")} ${
-                dark ? [color["c--white__0"]].join(" ") : [].join(" ")
+                dark ? [color["c--white"]].join(" ") : [].join(" ")
               }`}
             >
               {subtitle}
