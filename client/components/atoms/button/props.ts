@@ -70,7 +70,7 @@ export interface PaginateButtonProps {
 
 export interface ModalButtonProps {
   onPress?: () => void;
-  modalType?: "close" | "back";
+  modal?: "close" | "back";
 }
 
 export interface ExpandButtonProps extends LinkButtonProps, TitleProps {}

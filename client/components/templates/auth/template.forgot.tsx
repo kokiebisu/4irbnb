@@ -96,6 +96,7 @@ export const ForgotPasswordTemplate: React.FC<ForgotPasswordTemplateProps> = () 
               type="primary"
               fill="black"
               title="Send reset link"
+              block
             />
           </div>
         </div>

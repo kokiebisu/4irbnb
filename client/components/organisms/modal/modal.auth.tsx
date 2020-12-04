@@ -83,9 +83,9 @@ export const AuthModal: React.FC<RegisterModalProps> = () => {
             ].join(" ")}
           >
             {authState.title === "Forgot password" ? (
-              <Button type="modal" modalType="back" onPress={handlePrevious} />
+              <Button type="modal" modal="back" onPress={handlePrevious} />
             ) : (
-              <Button type="modal" modalType="close" onPress={handleClose} />
+              <Button type="modal" modal="close" onPress={handleClose} />
             )}
           </div>
           <div className={[layout["all-center"]].join(" ")}>
