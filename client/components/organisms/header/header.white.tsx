@@ -14,7 +14,7 @@ import { Modal } from "../modal/modal.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
 /** Contexts */
-import { useToggleState } from "../../../context/toggle";
+import { useToggleDispatch, useToggleState } from "../../../context/toggle";
 
 /** Vectors */
 import { NameLogo, NoNameLogo } from "../../../public/svg/logo";
@@ -22,6 +22,13 @@ import { ChevronLeft } from "../../../public/svg/regular";
 
 /** Props */
 import { WhiteHeaderProps } from "./props";
+
+/** Stories */
+import {
+  host,
+  menu,
+  globe,
+} from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the white header
@@ -31,12 +38,13 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
   spread = false,
   data,
 }) => {
-  let toggleState = useToggleState();
+  const toggleState = useToggleState();
+  const toggleDispatch = useToggleDispatch();
   return (
     <header
       className={`${[
         space["p-v--16"],
-        color["bg--white__0"],
+        color["bg--white"],
         shape["shadow--sm"],
       ].join(" ")}`}
     >
@@ -76,24 +84,23 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
           </div> */}
           <div className={[layout["flex"], layout["items-center"]].join(" ")}>
             <div
-              className={[styles["searchbar__host"], space["m-r--16"]].join(
-                " "
-              )}
+              className={[styles["searchbar__host"], space["m-h--4"]].join(" ")}
             >
-              <Button type="host" to="/host/homes" />
+              <Button {...host.args} animate />
             </div>
-            {/* <div
-              className={[
-                space["m-t--0"],
-                space["m-r--12"],
-                space["m-b--0"],
-                space["m-l--8"],
-              ].join(" ")}
-            >
-              <Button type="globe" />
-            </div> */}
-            <div>
-              <Button type="menu" authenticated={data} />
+            <div className={[space["m-h--4"]].join(" ")}>
+              <Button
+                {...globe.args}
+                onPress={() => toggleDispatch({ type: "toggle_language" })}
+              />
+            </div>
+            <div className={[space["m-l--4"]].join(" ")}>
+              <Button
+                {...menu.args}
+                authenticated={data}
+                inverse
+                onPress={() => toggleDispatch({ type: "toggle_menu" })}
+              />
             </div>
           </div>
           <Modal
@@ -115,9 +122,9 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
             <div style={{ width: 30 }}>
               <ChevronLeft width={12} />
             </div>
-            <div style={{ width: "100%", flexGrow: 1 }}>
+            {/* <div style={{ width: "100%", flexGrow: 1 }}>
               <Button type="searchbar" onPress={() => console.log("pressed")} />
-            </div>
+            </div> */}
             <div style={{ width: 30, visibility: "hidden" }}></div>
           </div>
         </div>

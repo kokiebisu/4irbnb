@@ -1,11 +1,21 @@
 import React from "react";
 
+/** Layouts */
 import { Layout } from "../../../layout/layout.component";
+
+/** Styles */
 import layout from "../../../styles/layout.module.scss";
-import { Card } from "../../../components/molecules/card/card.component";
-import { SharingSectionProps } from "./props";
 import space from "../../../styles/space.module.scss";
+
+/** Components */
+import { Card } from "../../../components/molecules/card/card.component";
 import { Button } from "../../../components/atoms/button/button.component";
+
+/** Props */
+import { SharingSectionProps } from "./props";
+
+/** Stories */
+import { border } from "../../../components/atoms/button/button.stories";
 
 export const SharingSection: React.FC<SharingSectionProps> = () => {
   const sharings = ["meditate", "baking", "magic"];
@@ -33,7 +43,7 @@ export const SharingSection: React.FC<SharingSectionProps> = () => {
         })}
       </div>
       <div className={[layout["flex"], layout["justify-center"]].join(" ")}>
-        <Button type="border" bold title="Start creating your experience" />
+        <Button {...border.args} bold title="Start creating your experience" />
       </div>
     </Layout>
   );

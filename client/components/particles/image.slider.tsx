@@ -1,30 +1,36 @@
-import { Button } from '../../components/atoms/button/button.component';
-import React, { useEffect, useLayoutEffect } from 'react';
-import { useRef } from 'react';
-import { useState } from 'react';
-import particle from './particle.module.scss';
+import React, { useLayoutEffect, useState, useRef } from "react";
+
+/** Components */
+import { Button } from "../../components/atoms/button/button.component";
+
+/** Styles */
+import particle from "./particle.module.scss";
+
+/** Stories */
+import { paginate } from "../../components/atoms/button/button.stories";
 
 const Dots = ({ slides, activeSlide }) => {
   return (
     <div
       style={{
-        position: 'absolute',
+        position: "absolute",
         bottom: 25,
-        width: '100%',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
+        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       {slides.map((_, index) => (
         <span
           key={index}
           style={{
-            transition: 'all 0.2s ease-in',
+            transition: "all 0.2s ease-in",
             padding: 3,
             marginRight: 5,
-            cursor: 'pointer',
-            borderRadius: '50%',
-            background: `${activeSlide === index ? 'white' : 'lightgray'}`,
+            cursor: "pointer",
+            borderRadius: "50%",
+            background: `${activeSlide === index ? "white" : "lightgray"}`,
           }}
         />
       ))}
@@ -36,12 +42,12 @@ const Slide = ({ slide }) => {
   return (
     <div
       style={{
-        height: '100%',
-        width: '100%',
+        height: "100%",
+        width: "100%",
         backgroundImage: `url(${slide})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
       }}
     />
   );
@@ -67,10 +73,10 @@ export const ImageSlider = ({ slides }) => {
   };
 
   useLayoutEffect(() => {
-    window.addEventListener('resize', handleRef);
+    window.addEventListener("resize", handleRef);
     handleRef();
     return () => {
-      window.removeEventListener('resize', handleRef);
+      window.removeEventListener("resize", handleRef);
     };
   });
 
@@ -119,22 +125,24 @@ export const ImageSlider = ({ slides }) => {
         })
       }
       style={{
-        position: 'relative',
-        width: '100%',
-        height: '100%',
-        overflow: 'hidden',
+        position: "relative",
+        width: "100%",
+        height: "100%",
+        overflow: "hidden",
         borderRadius: 12,
         zIndex: 500,
-      }}>
+      }}
+    >
       <div
         style={{
           borderRadius: 12,
           transform: `translateX(-${state.translate}px)`,
           transition: `transform ease-out ${state.transition}s`,
-          height: '100%',
+          height: "100%",
           width: width * slides.length,
-          display: 'flex',
-        }}>
+          display: "flex",
+        }}
+      >
         {slides.map((slide, index) => {
           return <Slide key={index} slide={slide} />;
         })}
@@ -142,31 +150,39 @@ export const ImageSlider = ({ slides }) => {
       <div
         style={{
           ...style,
-          transition: 'opacity 0.2s ease-out',
-          position: 'absolute',
-          top: '50%',
-          transform: 'translateY(-50%)',
+          transition: "opacity 0.2s ease-out",
+          position: "absolute",
+          top: "50%",
+          transform: "translateY(-50%)",
           left: 10,
           zIndex: 9999,
-        }}>
-        <Button type='paginate' direction='left' onPress={previousSlide} />
+        }}
+      >
+        <Button
+          {...paginate.args}
+          animate
+          direction="left"
+          onPress={previousSlide}
+        />
       </div>
       <div
         style={{
           ...style,
-          transition: 'opacity 0.2s ease-out',
-          position: 'absolute',
-          top: '50%',
-          transform: 'translateY(-50%)',
+          transition: "opacity 0.2s ease-out",
+          position: "absolute",
+          top: "50%",
+          transform: "translateY(-50%)",
           right: 10,
           zIndex: 9999,
-        }}>
-        <Button type='paginate' direction='right' onPress={nextSlide} />
+        }}
+      >
+        <Button type="paginate" animate direction="right" onPress={nextSlide} />
       </div>
 
       <div
-        style={{ ...style, transition: 'opacity 0.2s ease-out' }}
-        className={[particle['dots']].join(' ')}>
+        style={{ ...style, transition: "opacity 0.2s ease-out" }}
+        className={[particle["dots"]].join(" ")}
+      >
         <Dots slides={slides} activeSlide={state.activeSlide} />
       </div>
     </div>
