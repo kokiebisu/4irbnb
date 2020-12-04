@@ -1,11 +1,7 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 /** Props */
 import { PrivacyButtonProps } from "./props";
-
-/** Contexts */
-import { useToggleDispatch } from "../../../context/toggle";
 
 /** Styles */
 import font from "../../../styles/font.module.scss";
@@ -22,20 +18,8 @@ export const PrivacyButton: React.FC<PrivacyButtonProps> = ({
   title = "Button",
   inverse = false,
 }) => {
-  const toggleDispatch = useToggleDispatch();
-
-  const handlePress = () => {
-    if (title === "Save") {
-      // save the cookie
-      return toggleDispatch({ type: "toggle_privacy" });
-    }
-    // open cookie preferences
-    return toggleDispatch({ type: "toggle_privacy" });
-  };
   return (
-    <motion.button
-      whileTap={{ scale: 0.98 }}
-      data-testid="button"
+    <div
       className={`${[
         font["no-wrap"],
         space["p-v--13"],
@@ -50,7 +34,6 @@ export const PrivacyButton: React.FC<PrivacyButtonProps> = ({
           ? [color["bg--gray__4"], color["b--transparent"]].join(" ")
           : [color["bg--transparent"], color["b--black"]].join(" ")
       }`}
-      onClick={handlePress}
     >
       <h4
         className={
@@ -61,6 +44,6 @@ export const PrivacyButton: React.FC<PrivacyButtonProps> = ({
       >
         {title}
       </h4>
-    </motion.button>
+    </div>
   );
 };
