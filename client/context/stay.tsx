@@ -5,13 +5,19 @@ type Dispatch = (action: Action) => void;
 type Action = { type: string; payload: Payload };
 type Payload = {
   stay?: string;
-  place?: string;
+  place?: string | undefined;
   guests?: number;
   address?: string;
-  property?: string;
+  property?: string | undefined;
   bedrooms?: number;
   beds?: number;
   bathrooms?: number;
+  country?: string;
+  street?: string;
+  apt?: string;
+  city?: string;
+  state?: string;
+  postal?: string;
 };
 
 type State = {
@@ -23,6 +29,12 @@ type State = {
   bedrooms?: number;
   beds?: number;
   bathrooms?: number;
+  country?: string;
+  street?: string;
+  apt?: string;
+  city?: string;
+  state?: string;
+  postal?: string;
 };
 
 type StayProviderProps = { children: React.ReactNode };
@@ -43,14 +55,20 @@ const stayReducer = (state: State, { type, payload }: Action) => {
 
 const StayProvider = ({ children }: StayProviderProps) => {
   const [state, dispatch] = useReducer(stayReducer, {
-    place: "",
-    guests: 0,
+    place: undefined,
+    guests: 1,
     address: "",
-    property: "",
+    property: undefined,
     stay: "Entire place",
-    bedrooms: 0,
-    beds: 0,
-    bathrooms: 0,
+    bedrooms: 1,
+    beds: 1,
+    bathrooms: 1,
+    country: "Canada",
+    street: "",
+    apt: "",
+    city: "",
+    state: "",
+    postal: "",
   });
 
   console.log("stay provider", state);

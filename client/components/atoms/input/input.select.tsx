@@ -70,7 +70,6 @@ export const SelectInput: React.FC<SelectInputProps> = ({
           disabled={disabled}
           onChange={handleChange}
           value={value}
-          defaultValue={inputTypes[inputType].default || "Select"}
           onFocus={() => setFieldActive(true)}
           onBlur={() => setFieldActive(false)}
           className={`${[
@@ -85,7 +84,6 @@ export const SelectInput: React.FC<SelectInputProps> = ({
             font["weight--300"],
           ].join(" ")}`}
         >
-          {console.log("defa", inputTypes[inputType].default)}
           {inputTypes[inputType].default && (
             <option disabled value={inputTypes[inputType].default}>
               {inputTypes[inputType].default}

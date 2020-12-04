@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Router from "next/router";
 
 /** Contexts */
-import { useStayDispatch } from "../../context/stay";
+import { useStayDispatch, useStayState } from "../../context/stay";
 
 /** Components */
 import { Create } from "../../components/organisms/create/create.component";
@@ -16,12 +16,13 @@ import { Layout } from "../../layout/layout.component";
 
 const RoomPage = () => {
   const stayDispatch = useStayDispatch();
+  const { place, property, stay } = useStayState();
 
   const [data, setData] = useState({
-    place: undefined,
-    property: undefined,
+    place,
+    property,
     description: undefined,
-    stay: "Entire place",
+    stay,
   });
 
   const proceed = () => {
@@ -36,7 +37,7 @@ const RoomPage = () => {
       });
       setTimeout(() => {
         Router.push("/become-a-host/bedrooms");
-      }, 1000);
+      }, 500);
     }
   };
 
@@ -44,7 +45,7 @@ const RoomPage = () => {
     console.log("revert called");
     setTimeout(() => {
       Router.push("/become-a-host");
-    }, 1000);
+    }, 500);
   };
 
   useEffect(() => {
