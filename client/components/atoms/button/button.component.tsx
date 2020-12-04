@@ -44,7 +44,7 @@ export const Button: React.FC<ButtonProps> = ({
     // globe: <GlobeButton {...props} />,
     host: <HostButton {...props} />,
     menu: <MenuButton {...props} />,
-    // privacy: <PrivacyButton {...props} />,
+    privacy: <PrivacyButton {...props} />,
     // border: <BorderButton {...props} />,
     // banner: <BannerButton {...props} />,
     // primary: <PrimaryButton {...props} />,
