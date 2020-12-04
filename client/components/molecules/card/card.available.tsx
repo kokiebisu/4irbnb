@@ -13,6 +13,9 @@ import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 
+/** Stories */
+import { primary } from "components/atoms/button/button.stories";
+
 /**
  * Renders the available card component
  * @param {string} date - The date which the experience is available
@@ -52,7 +55,7 @@ export const AvailableCard: React.FC<AvailableCardProps> = ({
         <span className={[font["size--15"]].join(" ")}> /person</span>
       </div>
       <div className={[layout["inline-block"]].join(" ")}>
-        <Button size="sm" type="primary" title="Choose" />
+        <Button {...primary.args} size="sm" title="Choose" />
       </div>
     </div>
   );

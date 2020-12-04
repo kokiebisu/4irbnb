@@ -22,7 +22,13 @@ import { ChevronLeft } from "../../../public/svg/regular";
 
 /** Props */
 import { WhiteHeaderProps } from "./props";
-import { host, menu } from "components/atoms/button/button.stories";
+
+/** Stories */
+import {
+  host,
+  menu,
+  globe,
+} from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the white header
@@ -78,23 +84,17 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
           </div> */}
           <div className={[layout["flex"], layout["items-center"]].join(" ")}>
             <div
-              className={[styles["searchbar__host"], space["m-r--16"]].join(
-                " "
-              )}
+              className={[styles["searchbar__host"], space["m-h--4"]].join(" ")}
             >
               <Button {...host.args} animate />
             </div>
-            {/* <div
-              className={[
-                space["m-t--0"],
-                space["m-r--12"],
-                space["m-b--0"],
-                space["m-l--8"],
-              ].join(" ")}
-            >
-              <Button type="globe" />
-            </div> */}
-            <div>
+            <div className={[space["m-h--4"]].join(" ")}>
+              <Button
+                {...globe.args}
+                onPress={() => toggleDispatch({ type: "toggle_language" })}
+              />
+            </div>
+            <div className={[space["m-l--4"]].join(" ")}>
               <Button
                 {...menu.args}
                 authenticated={data}
@@ -122,9 +122,9 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
             <div style={{ width: 30 }}>
               <ChevronLeft width={12} />
             </div>
-            <div style={{ width: "100%", flexGrow: 1 }}>
+            {/* <div style={{ width: "100%", flexGrow: 1 }}>
               <Button type="searchbar" onPress={() => console.log("pressed")} />
-            </div>
+            </div> */}
             <div style={{ width: 30, visibility: "hidden" }}></div>
           </div>
         </div>

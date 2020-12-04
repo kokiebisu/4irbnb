@@ -1,23 +1,18 @@
 import React from "react";
 
-/**
- * Components
- */
+/** Components */
 import { Button } from "../../../components/atoms/button/button.component";
 import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
-/**
- * Vectors
- */
+/** Vectors */
 import { Star } from "../../../public/svg/original";
 
-/**
- * Props
- */
+/** Props */
 import { AvailabilityModalProps } from "./props";
+import { primary } from "components/atoms/button/button.stories";
 
 /**
  * Renders the modal which gives all the available options
@@ -69,7 +64,7 @@ export const AvailabilityModal: React.FC<AvailabilityModalProps> = ({
         </div>
       </div>
       <div>
-        <Button type="primary" title="Check availability" />
+        <Button {...primary.args} title="Check availability" />
       </div>
     </div>
   );

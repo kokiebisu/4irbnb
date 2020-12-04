@@ -61,13 +61,14 @@ const disableTitle = {
 
 const ButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
 
-// export const globe = ButtonTemplate.bind({});
-// globe.args = {
-//   type: "globe",
-// };
-// globe.argTypes = {
-//   ...disableTitle,
-// };
+export const globe = ButtonTemplate.bind({});
+globe.args = {
+  type: "globe",
+  extendsTo: [color["bg--transparent"], shape["br--30"]].join(" "),
+};
+globe.argTypes = {
+  ...disableTitle,
+};
 
 export const host = ButtonTemplate.bind({});
 host.args = {
@@ -87,18 +88,18 @@ menu.argTypes = {
   },
 };
 
-// export const privacy = ButtonTemplate.bind({});
-// privacy.args = {
-//   type: "privacy",
-// };
+export const privacy = ButtonTemplate.bind({});
+privacy.args = {
+  type: "privacy",
+};
 
-// privacy.decorators = [
-//   (Story) => (
-//     <div style={{ width: 300 }}>
-//       <Story />
-//     </div>
-//   ),
-// ];
+privacy.decorators = [
+  (Story) => (
+    <div style={{ width: 300 }}>
+      <Story />
+    </div>
+  ),
+];
 
 export const border = ButtonTemplate.bind({});
 border.args = {
@@ -134,34 +135,34 @@ banner.decorators = [
   ),
 ];
 
-// export const primary = ButtonTemplate.bind({});
-// primary.args = {
-//   type: "primary",
-// };
-// primary.decorators = [
-//   (Story) => (
-//     <div style={{ width: 300 }}>
-//       <Story />
-//     </div>
-//   ),
-// ];
-// primary.argTypes = {
-//   ...disableInverse,
-//   loading: {
-//     control: "boolean",
-//   },
-// };
+export const primary = ButtonTemplate.bind({});
+primary.args = {
+  type: "primary",
+};
+primary.decorators = [
+  (Story) => (
+    <div style={{ width: 300 }}>
+      <Story />
+    </div>
+  ),
+];
+primary.argTypes = {
+  ...disableInverse,
+  loading: {
+    control: "boolean",
+  },
+};
 
-// export const searchbar = ButtonTemplate.bind({});
-// searchbar.args = {
-//   type: "searchbar",
-// };
-// searchbar.argTypes = {
-//   ...disableInverse,
-//   mini: {
-//     control: "boolean",
-//   },
-// };
+export const searchbar = ButtonTemplate.bind({});
+searchbar.args = {
+  type: "searchbar",
+};
+searchbar.argTypes = {
+  ...disableInverse,
+  mini: {
+    control: "boolean",
+  },
+};
 
 export const auth = ButtonTemplate.bind({});
 auth.args = {
@@ -194,18 +195,18 @@ auth.argTypes = {
   },
 };
 
-// export const paginate = ButtonTemplate.bind({});
-// paginate.args = {
-//   type: "paginate",
-// };
-// paginate.argTypes = {
-//   direction: {
-//     control: {
-//       type: "select",
-//       options: ["left", "right"],
-//     },
-//   },
-// };
+export const paginate = ButtonTemplate.bind({});
+paginate.args = {
+  type: "paginate",
+};
+paginate.argTypes = {
+  direction: {
+    control: {
+      type: "select",
+      options: ["left", "right"],
+    },
+  },
+};
 
 export const option = ButtonTemplate.bind({});
 option.args = {
@@ -213,30 +214,30 @@ option.args = {
   extendsTo: [shape["w--full"]].join(" "),
 };
 
-// export const underline = ButtonTemplate.bind({});
-// underline.args = {
-//   type: "underline",
-// };
+export const underline = ButtonTemplate.bind({});
+underline.args = {
+  type: "underline",
+};
 
-// export const filter = ButtonTemplate.bind({});
-// filter.args = {
-//   type: "filter",
-// };
+export const filter = ButtonTemplate.bind({});
+filter.args = {
+  type: "filter",
+};
 
-// export const modal = ButtonTemplate.bind({});
-// modal.args = {
-//   type: "modal",
-// };
-// modal.argTypes = {
-//   modalType: {
-//     control: {
-//       type: "select",
-//       options: ["close", "back"],
-//     },
-//   },
-// };
+export const modal = ButtonTemplate.bind({});
+modal.args = {
+  type: "modal",
+};
+modal.argTypes = {
+  modalType: {
+    control: {
+      type: "select",
+      options: ["close", "back"],
+    },
+  },
+};
 
-// export const back = ButtonTemplate.bind({});
-// back.args = {
-//   type: "back",
-// };
+export const back = ButtonTemplate.bind({});
+back.args = {
+  type: "back",
+};

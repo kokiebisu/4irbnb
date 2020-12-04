@@ -1,13 +1,9 @@
 import React from "react";
 
-/**
- * Components
- */
+/** Components */
 import { Header } from "../../organisms/header/header.component";
 
-/**
- * Styles
- */
+/** Styles */
 import layout from "../../../styles/layout.module.scss";
 import homes from "../../../styles/homes.module.scss";
 import space from "../../../styles/space.module.scss";
@@ -15,18 +11,17 @@ import responsive from "../../../styles/responsive.module.scss";
 import font from "../../../styles/font.module.scss";
 import shape from "../../../styles/shape.module.scss";
 
-/**
- * Components
- */
+/** Components */
 import { Section } from "../../organisms/section/section.component";
 import { Bar } from "../../organisms/bar/bar.component";
 import { Footer } from "../../organisms/footer/footer.component";
 import { Button } from "../../atoms/button/button.component";
 
-/**
- * Props
- */
+/** Props */
 import { CategoryTemplateProps } from "../props";
+
+/** Stories */
+import { filter } from "components/atoms/button/button.stories";
 
 /**
  * Renders the category template component
@@ -79,13 +74,13 @@ export const CategoryTemplate: React.FC<CategoryTemplateProps> = ({
                 {filters.map((filter, index) => {
                   return (
                     <div key={index} className={[space["m-r--8"]].join(" ")}>
-                      <Button type="filter" name={filter.name} />
+                      <Button {...filter.args} name={filter.name} />
                     </div>
                   );
                 })}
               </div>
               <div className={[shape["only__sm"]].join(" ")}>
-                <Button type="filter" name={`filters ${filterCount}`} />
+                <Button {...filter.args} name={`filters ${filterCount}`} />
               </div>
             </div>
             <div className={[space["m-b--32"]].join(" ")}>

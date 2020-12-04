@@ -1,8 +1,6 @@
 import React from "react";
 
-/**
- * Styles
- */
+/** Styles */
 import modal from "./modal.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import color from "../../../styles/color.module.scss";
@@ -11,15 +9,15 @@ import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import responsive from "../../../styles/responsive.module.scss";
 
-/**
- * Props
- */
+/** Props */
 import { BookingModalProps } from "./props";
 
-/**
- * Components
- */
+/** Components */
 import { Button } from "../../../components/atoms/button/button.component";
+import {
+  primary,
+  border,
+} from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the booking modal
@@ -135,7 +133,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                     </span>
                   </div>
                   <div>
-                    <Button size="sm" type="primary" title="Choose" spread />
+                    <Button {...primary.args} size="sm" title="Choose" spread />
                   </div>
                 </div>
               </div>
@@ -144,7 +142,7 @@ export const BookingModal: React.FC<BookingModalProps> = ({
         </div>
         <div className={[space["m-t--24"]].join(" ")}>
           <div>
-            <Button type="border" size="md" title="See more dates" block />
+            <Button {...border.args} size="md" title="See more dates" block />
           </div>
         </div>
       </div>

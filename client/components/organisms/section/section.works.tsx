@@ -1,11 +1,21 @@
 import React from "react";
 
-import layout from "../../../styles/layout.module.scss";
+/** Props */
 import { WorksSectionProps } from "./props";
+
+/** Layouts */
 import { Layout } from "../../../layout/layout.component";
-import { Card } from "../../molecules/card/card.component";
+
+/** Styles */
 import space from "../../../styles/space.module.scss";
+import layout from "../../../styles/layout.module.scss";
+
+/** Components */
 import { Button } from "../../atoms/button/button.component";
+import { Card } from "../../molecules/card/card.component";
+
+/** Stories */
+import { border } from "../../../components/atoms/button/button.stories";
 
 export const WorksSection: React.FC<WorksSectionProps> = () => {
   const categories = ["design", "share", "submit", "setup"];
@@ -28,7 +38,11 @@ export const WorksSection: React.FC<WorksSectionProps> = () => {
             layout["justify-center"],
           ].join(" ")}
         >
-          <Button type="border" bold title="Start creating your experience" />
+          <Button
+            {...border.args}
+            bold
+            title="Start creating your experience"
+          />
         </div>
       </Layout>
     </div>

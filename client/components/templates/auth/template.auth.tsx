@@ -25,7 +25,9 @@ import { AuthTemplateProps } from "./props";
 
 /** Helpers */
 import { validateAuth as validate } from "../../../helper/auth";
-import { auth } from "components/atoms/button/button.stories";
+
+/** Stories */
+import { auth, primary, underline } from "../../atoms/button/button.stories";
 
 /**
  * Renders the auth template component
@@ -90,7 +92,7 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
             </p>
           </div>
           <div className={[space["m-t--18"], space["m-b--18"]].join(" ")}>
-            <Button type="primary" title="Continue" block />
+            <Button {...primary.args} title="Continue" block />
           </div>
         </form>
         <div
@@ -145,7 +147,7 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
             </p>
           </div>
           <Button
-            type="underline"
+            {...underline.args}
             onPress={switchAuth}
             title={authState.title === "Log in" ? "Sign up" : "Log in"}
           />

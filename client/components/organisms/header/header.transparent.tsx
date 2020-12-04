@@ -24,7 +24,13 @@ import { TransparentHeaderProps } from "./props";
 
 /** Contexts */
 import { useToggleDispatch, useToggleState } from "../../../context/toggle";
-import { host, menu } from "components/atoms/button/button.stories";
+
+/** Stories */
+import {
+  host,
+  menu,
+  globe,
+} from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the transparent header
@@ -34,6 +40,7 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
 }) => {
   const toggleState = useToggleState();
   const toggleDispatch = useToggleDispatch();
+
   return (
     <header className={[space["p-h--0"], space["p-v--16"]].join(" ")}>
       <div
@@ -54,21 +61,18 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
         </div>
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div
-            className={[styles["searchbar__host"], space["m-r--16"]].join(" ")}
+            className={[styles["searchbar__host"], space["m-h--4"]].join(" ")}
           >
             <Button {...host.args} inverse animate />
           </div>
-          {/* <div
-            className={[
-              space["m-t--0"],
-              space["m-r--12"],
-              space["m-b--0"],
-              space["m-l--8"],
-            ].join(" ")}
-          >
-            <Button type="globe" inverse />
-          </div> */}
-          <div>
+          <div className={[space["m-h--4"]].join(" ")}>
+            <Button
+              {...globe.args}
+              inverse
+              onPress={() => toggleDispatch({ type: "toggle_language" })}
+            />
+          </div>
+          <div className={[space["m-l--4"]].join(" ")}>
             <Button
               {...menu.args}
               inverse

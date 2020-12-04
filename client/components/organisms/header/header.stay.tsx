@@ -33,12 +33,12 @@ export const StayHeader: React.FC<StayHeaderProps> = ({ title }) => {
       <div className={[layout["flex"], layout["items-center"]].join(" ")}>
         <div>
           <Button
+            onPress={() => alert("button pressed")}
             extendsTo={[
               layout["inline-block"],
               space["p--14"],
               shape["br--circle"],
             ].join(" ")}
-            to="/"
           >
             <NoNameLogo fill="#008489" width={34} />
           </Button>

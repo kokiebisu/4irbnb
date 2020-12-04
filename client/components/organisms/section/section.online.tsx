@@ -1,24 +1,21 @@
 import React from "react";
 
-/**
- * Components
- */
+/** Components */
 import { Card } from "../../molecules/card/card.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/**
- * Props
- */
+/** Props */
 import { OnlineSectionProps } from "./props";
 
-/**
- * Styles
- */
+/** Styles */
 import section from "./section.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import shape from "../../../styles/shape.module.scss";
+
+/** Components */
+import { border } from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the online section
@@ -129,7 +126,7 @@ export const OnlineSection: React.FC<OnlineSectionProps> = ({
         </div>
       </div>
       <div className={[space["m-v--32"]].join(" ")}>
-        <Button type="border" title="Explore all" size="sm" inverse={dark} />
+        <Button {...border.args} title="Explore all" size="sm" inverse={dark} />
       </div>
     </div>
   );

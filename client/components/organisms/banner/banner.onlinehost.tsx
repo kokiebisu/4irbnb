@@ -7,6 +7,7 @@ import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 import banner from "./banner.module.scss";
 import { Bullet } from "../../../components/atoms/bullet/bullet.component";
+import { primary } from "components/atoms/button/button.stories";
 
 export const OnlineHostBanner: React.FC<OnlineHostBannerProps> = () => {
   const bullets = ["home", "global", "business"];
@@ -41,7 +42,7 @@ export const OnlineHostBanner: React.FC<OnlineHostBannerProps> = () => {
         </h4>
       </div>
       <div className={[space["m-v--40"]].join(" ")}>
-        <Button type="primary" title="Get started" />
+        <Button {...primary.args} title="Get started" />
       </div>
       <div className={[space["m-v--32"]].join(" ")}>
         <img
