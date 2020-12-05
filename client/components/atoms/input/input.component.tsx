@@ -21,6 +21,7 @@ import { InputProps } from "./props";
 /** styles **/
 import shape from "../../../styles/shape.module.scss";
 import { TextInput } from "./input.text";
+import { TextAreaInput } from "./input.textarea";
 
 /**
  * Bundles the input components
@@ -42,6 +43,7 @@ export const Input: React.FC<InputProps> = ({ type, spread, ...props }) => {
     counter: <CounterInput {...props} />,
     text: <TextInput {...props} />,
     checkbox: <CheckboxInput {...props} />,
+    textarea: <TextAreaInput {...props} />,
   };
 
   return (
