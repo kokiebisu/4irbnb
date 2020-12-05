@@ -19,6 +19,7 @@ $colors: (
   gray__1: #717171,
   gray__4: #363636,
   black: #000000,
+  darkgreen__3: #008489,
   "transparent": transparent,
 );
 
@@ -45,4 +46,19 @@ $colors: (
       transition: 0.4s border-color;
     }
   }
+
+  .focus-border--#{$color} {
+    &:focus {
+      border: 1px solid #{$value} !important;
+      transition: 0.4s border-color;
+    }
+  }
+}
+
+.transition {
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -ms-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
 }
