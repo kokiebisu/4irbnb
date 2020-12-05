@@ -12,42 +12,84 @@ export const TextAreaInput: React.FC<{
   value?: string;
   handleChange?: () => void;
 }> = ({ value = "", handleChange }) => {
-  return (
-    <div
-      style={{ minHeight: 300 }}
-      className={[layout["relative"], shape["w--full"]].join(" ")}
-    >
-      <textarea
-        onChange={handleChange}
-        className={`${[
-          layout["relative"],
-          font["weight--300"],
-          color["b--white__2"],
-          shape["br--6"],
-          font["size--15"],
-          color["c--gray__2"],
-          shape["h--full"],
-          shape["w--full"],
-          space["p--12"],
-          animation["focus-border--darkgreen__3"],
-          animation["transition"],
-        ].join(" ")} `}
-        style={{
-          outline: "none",
-          resize: "vertical",
-          minHeight: 300,
-        }}
-      ></textarea>
+  const [active, setActive] = useState(false);
 
+  const renderBorder = () => {
+    if (value.length >= 500) {
+      return animation["border--warning"];
+    }
+    if (active) {
+      return animation["focus-border--darkgreen__3"];
+    }
+    return "";
+  };
+
+  const renderBackground = () => {
+    if (value.length >= 500) {
+      return animation["background--lightred__0"];
+    }
+    if (active) {
+      return animation["background--white"];
+    }
+    return "";
+  };
+
+  const renderColor = () => {
+    if (value.length >= 500) {
+      return animation["c--warning"];
+    }
+    return animation["c--darkgreen__3"];
+  };
+
+  return (
+    <div>
       <div
-        className={[layout["absolute"], layout["b--15"], layout["r--15"]].join(
-          " "
-        )}
+        style={{ minHeight: 300 }}
+        className={[layout["relative"], shape["w--full"]].join(" ")}
       >
-        <h3 className={[font["size--12"], color["c--darkgreen__3"]].join(" ")}>
-          {500 - value.length}
-        </h3>
+        <textarea
+          spellCheck
+          onFocus={() => setActive(true)}
+          onBlur={() => setActive(false)}
+          onChange={handleChange}
+          className={`${[
+            layout["relative"],
+            font["weight--300"],
+            color["b--white__2"],
+            shape["br--6"],
+            font["size--15"],
+            color["c--gray__2"],
+            shape["h--full"],
+            shape["w--full"],
+            space["p--12"],
+            animation["transition"],
+          ].join(" ")} ${renderBorder()} ${renderBackground()}`}
+          style={{
+            outline: "none",
+            resize: "vertical",
+            minHeight: 300,
+          }}
+        ></textarea>
+
+        <div
+          className={[
+            layout["absolute"],
+            layout["b--15"],
+            layout["r--15"],
+          ].join(" ")}
+        >
+          <h3 className={`${[font["size--12"]].join(" ")} ${renderColor()}`}>
+            {500 - value.length}
+          </h3>
+        </div>
       </div>
+      {value.length >= 500 && (
+        <div>
+          <h3 className={[font["size--14"], color["c--warning"]].join(" ")}>
+            Please shorten your title to 500 characters or less.
+          </h3>
+        </div>
+      )}
     </div>
   );
 };

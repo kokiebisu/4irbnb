@@ -19,6 +19,8 @@ $colors: (
   gray__1: #717171,
   gray__4: #363636,
   black: #000000,
+  lightred__0: #fef8f6,
+  warning: #c54a32,
   darkgreen__3: #008489,
   "transparent": transparent,
 );
@@ -45,6 +47,21 @@ $colors: (
       border: 1px solid #{$value} !important;
       transition: 0.4s border-color;
     }
+  }
+
+  .background--#{$color} {
+    background-color: #{$value} !important;
+    transition: 0.4s border-color;
+  }
+
+  .c--#{$color} {
+    color: #{$value} !important;
+    transition: 0.4s border-color;
+  }
+
+  .border--#{$color} {
+    border: 1px solid #{$value} !important;
+    transition: 0.4s border-color;
   }
 
   .focus-border--#{$color} {
