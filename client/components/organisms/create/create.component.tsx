@@ -8,6 +8,7 @@ import { DescriptionCreate } from "./create.description";
 import { GetStartedCreate } from "./create.getstarted";
 import { LocationCreate } from "./create.location";
 import { PhoneCreate } from "./create.phone";
+import { RequirementsCreate } from "./create.requirements";
 import { RoomCreate } from "./create.room";
 import { SpacesCreate } from "./create.spaces";
 import { TitleCreate } from "./create.title";
@@ -30,6 +31,7 @@ export const Create: React.FC<CreateProps> = ({
     description: <DescriptionCreate {...props} />,
     title: <TitleCreate {...props} />,
     phone: <PhoneCreate {...props} />,
+    requirements: <RequirementsCreate {...props} />,
   };
   return types[type];
 };
