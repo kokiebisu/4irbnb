@@ -160,3 +160,8 @@ export const question = BulletTemplate.bind({});
 question.args = {
   type: "question",
 };
+
+export const check = BulletTemplate.bind({});
+check.args = {
+  type: "check",
+};
