@@ -16,6 +16,9 @@ $percentages: (
   50: percentage(0.5),
   55: percentage(0.55),
 );
+
+$pixels: (550);
+
 @mixin respond-to($media) {
   @if $media == xs {
     @media only screen and (min-width: $breakpoint--xs) {
@@ -73,5 +76,22 @@ $percentages: (
         max-width: #{$percentage_value};
       }
     }
+  }
+
+  @each $pixel in $pixels {
+    .full_to_maxw#{$pixel}--#{$breakpoint} {
+      width: 100%;
+      @include respond-to(#{$breakpoint}) {
+        max-width: #{$pixel}px;
+      }
+    }
+  }
+}
+
+.justify--center_to_end--xs {
+  justify-content: center;
+
+  @include respond-to(xs) {
+    justify-content: flex-end;
   }
 }
