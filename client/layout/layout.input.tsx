@@ -1,11 +1,11 @@
 import React from "react";
 
-/** Styles */
+/** styles **/
 import space from "../styles/space.module.scss";
 import font from "../styles/font.module.scss";
 import color from "../styles/color.module.scss";
 
-/** Props */
+/** props */
 import { InputLayoutProps } from "./props";
 
 export const InputLayout: React.FC<InputLayoutProps> = ({

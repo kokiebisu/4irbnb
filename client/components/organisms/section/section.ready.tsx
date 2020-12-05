@@ -1,17 +1,17 @@
 import React from "react";
 
-/** Components */
+/** components */
 import { Button } from "../../../components/atoms/button/button.component";
 
-/** Props */
+/** props */
 import { ReadySectionProps } from "./props";
 
-/** Styles */
+/** styles **/
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 import layout from "../../../styles/layout.module.scss";
 
-/** Stories */
+/** stories */
 import { primary } from "../../../components/atoms/button/button.stories";
 
 /**

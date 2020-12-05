@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-/** Components */
+/** components */
 import { AuthButton } from "./button.auth";
 import { ButtonProps } from "./props";
 import { GlobeButton } from "./button.globe";
@@ -21,7 +21,7 @@ import { FilterButton } from "./button.filter";
 import { ModalButton } from "./button.modal";
 import { BackButton } from "./button.back";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import shape from "../../../styles/shape.module.scss";
 

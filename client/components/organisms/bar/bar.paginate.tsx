@@ -2,13 +2,13 @@ import React from "react";
 import Link from "next/link";
 import Router from "next/router";
 
-/** Components */
+/** components */
 import { Button } from "../../../components/atoms/button/button.component";
 
-/** Props */
+/** props */
 import { PaginateBarProps } from "./props";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 import color from "../../../styles/color.module.scss";
@@ -16,7 +16,7 @@ import shape from "../../../styles/shape.module.scss";
 import bar from "./bar.module.scss";
 import font from "../../../styles/font.module.scss";
 
-/** Stories */
+/** stories */
 import { paginate } from "../../../components/atoms/button/button.stories";
 
 /**

@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
@@ -9,14 +9,14 @@ import styles from "./section.module.scss";
 import sectionStyles from "./section.module.scss";
 import section from "./section.module.scss";
 
-/** Components */
+/** components */
 import { Card } from "../../molecules/card/card.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/** Props */
+/** props */
 import { StaySectionProps } from "./props";
 
-/** Stories */
+/** stories */
 import { paginate } from "../../../components/atoms/button/button.stories";
 
 /**

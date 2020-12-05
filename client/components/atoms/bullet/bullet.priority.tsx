@@ -1,21 +1,21 @@
 import React from "react";
 import Router from "next/router";
 
-/** Vectors */
+/** vectors */
 import {
   Guidance,
   Protection,
   Requirements,
 } from "../../../public/svg/original";
 
-/** Components */
+/** components */
 import { Button } from "../button/button.component";
 
-/** Styles */
+/** styles **/
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 
-/** Props */
+/** props */
 import { PriorityBulletProps } from "./props";
 
 /**

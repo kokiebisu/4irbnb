@@ -1,9 +1,9 @@
 import React from "react";
 
-/** Props */
+/** props */
 import { OnlineCardProps } from "./props";
 
-/** Styles */
+/** styles **/
 import color from "../../../styles/color.module.scss";
 import font from "../../../styles/font.module.scss";
 import shape from "../../../styles/shape.module.scss";

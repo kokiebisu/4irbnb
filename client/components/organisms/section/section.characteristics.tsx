@@ -1,22 +1,22 @@
 import React from "react";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import shape from "../../../styles/shape.module.scss";
 
-/** Props */
+/** props */
 import { CharacteristicsSectionProps } from "./props";
 
-/** Components */
+/** components */
 import { Bullet } from "../../../components/atoms/bullet/bullet.component";
 
-/** Vectors */
+/** vectors */
 import { DevicesInverse, Star } from "../../../public/svg/original";
 
-/** Styles */
+/** styles **/
 import section from "./section.module.scss";
 
 /**

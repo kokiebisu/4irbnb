@@ -1,11 +1,11 @@
 import React from "react";
 
-/** Styles */
+/** styles **/
 import space from "../../styles/space.module.scss";
 import color from "../../styles/color.module.scss";
 import responsive from "../../styles/responsive.module.scss";
 
-/** Components */
+/** components */
 import { Header } from "../../components/organisms/header/header.component";
 import { Section } from "../../components/organisms/section/section.component";
 import { Footer } from "../../components/organisms/footer/footer.component";

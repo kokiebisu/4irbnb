@@ -4,7 +4,7 @@ import React from "react";
 import { SectionLayout } from "./section/layout.section";
 import { InputLayout } from "./layout.input";
 
-/** Props */
+/** props */
 import { LayoutProps } from "./props";
 import { CreateLayout } from "./layout.create";
 

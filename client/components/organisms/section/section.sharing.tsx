@@ -3,18 +3,18 @@ import React from "react";
 /** Layouts */
 import { Layout } from "../../../layout/layout.component";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 
-/** Components */
+/** components */
 import { Card } from "../../../components/molecules/card/card.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/** Props */
+/** props */
 import { SharingSectionProps } from "./props";
 
-/** Stories */
+/** stories */
 import { border } from "../../../components/atoms/button/button.stories";
 
 export const SharingSection: React.FC<SharingSectionProps> = () => {

@@ -1,9 +1,9 @@
 import React from "react";
 
-/** Vectors */
+/** vectors */
 import { Star } from "../../../public/svg/original";
 
-/** Styles */
+/** styles **/
 import space from "../../../styles/space.module.scss";
 import color from "../../../styles/color.module.scss";
 import layout from "../../../styles/layout.module.scss";
@@ -11,15 +11,15 @@ import shape from "../../../styles/shape.module.scss";
 import font from "../../../styles/font.module.scss";
 import section from "./section.module.scss";
 
-/** Props */
+/** props */
 import { ReviewsSectionProps } from "./props";
 
-/** Components */
+/** components */
 import { Button } from "../../../components/atoms/button/button.component";
 import { Bullet } from "../../../components/atoms/bullet/bullet.component";
 import { Card } from "../../molecules/card/card.component";
 
-/** Stories */
+/** stories */
 import { border } from "../../../components/atoms/button/button.stories";
 
 /**

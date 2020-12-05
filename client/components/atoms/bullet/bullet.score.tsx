@@ -1,13 +1,13 @@
 import React from "react";
 
-/** Styles */
+/** styles **/
 import font from "../../../styles/font.module.scss";
 import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import shape from "../../../styles/space.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/** Props */
+/** props */
 import { ScoreBulletProps } from "./props";
 
 /**

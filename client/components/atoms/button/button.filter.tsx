@@ -1,6 +1,6 @@
 import React from "react";
 
-/** Styles */
+/** styles **/
 import space from "../../../styles/space.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import color from "../../../styles/color.module.scss";

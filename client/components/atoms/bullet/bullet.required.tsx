@@ -1,12 +1,12 @@
 import React from "react";
 
-/** Vectors */
+/** vectors */
 import { Exclamation } from "../../../public/svg/original";
 
-/** Props */
+/** props */
 import { RequiredBulletProps } from "./props";
 
-/** Styles */
+/** styles **/
 import font from "../../../styles/font.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";

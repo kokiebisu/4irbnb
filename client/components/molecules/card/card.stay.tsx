@@ -1,6 +1,6 @@
 import React from "react";
 
-/** Styles */
+/** styles **/
 import shape from "../../../styles/shape.module.scss";
 import color from "../../../styles/color.module.scss";
 import font from "../../../styles/font.module.scss";
@@ -8,13 +8,13 @@ import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import responsive from "../../../styles/responsive.module.scss";
 
-/** Props */
+/** props */
 import { StaysCardProps } from "./props";
 
-/** Vectors */
+/** vectors */
 import { Heart } from "../../../public/svg/original";
 
-/** Components */
+/** components */
 import { Bullet } from "../../atoms/bullet/bullet.component";
 import { ImageSlider } from "../../particles/image.slider";
 import { Card } from "./card.component";

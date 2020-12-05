@@ -1,13 +1,13 @@
 import React from "react";
 
-/** Components */
+/** components */
 import { Input } from "../../atoms/input/input.component";
 import { Layout } from "../../../layout/layout.component";
 
-/** Props */
+/** props */
 import { KindCreateProps } from "./props";
 
-/** Styles */
+/** styles **/
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";

@@ -1,24 +1,24 @@
 import React, { useRef } from "react";
 import Router from "next/router";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 import banner from "./banner.module.scss";
 import responsive from "../../../styles/responsive.module.scss";
 
-/** Props */
+/** props */
 import { HomesBannerProps } from "./props";
 
-/** Components */
+/** components */
 import { Button } from "../../../components/atoms/button/button.component";
 import { Card } from "../../molecules/card/card.component";
 
-/** Hooks */
+/** hooks */
 import { useSlider, SliderProps } from "../../../hooks/useSlider";
 
-/** Stories */
+/** stories */
 import {
   paginate,
   primary,

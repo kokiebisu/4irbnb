@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-/** Styles */
+/** styles **/
 import shape from "../../../styles/shape.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
@@ -9,10 +9,10 @@ import font from "../../../styles/font.module.scss";
 import input from "./input.module.scss";
 import { styleContainer } from "./styling.select";
 
-/** Props */
+/** props */
 import { SelectInputProps } from "./props";
 
-/** Vectors */
+/** vectors */
 import { ChevronDown, ChevronTop } from "../../../public/svg/regular";
 
 /** Options */

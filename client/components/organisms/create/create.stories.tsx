@@ -2,10 +2,10 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Create } from "./create.component";
 
-/** Props */
+/** props */
 import { CreateProps } from "./props";
 
-/** Contexts */
+/** contexts */
 import { StayProvider } from "../../../context/stay";
 
 export default {

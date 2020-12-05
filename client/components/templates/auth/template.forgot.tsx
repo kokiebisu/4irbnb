@@ -1,29 +1,29 @@
 import React from "react";
 import { useFormik } from "formik";
 
-/** Contexts */
+/** contexts */
 import { useAuthDispatch, useAuthState } from "../../../context/auth";
 
-/** Styles */
+/** styles **/
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 import layout from "../../../styles/layout.module.scss";
 
-/** Components */
+/** components */
 import { Input } from "../../atoms/input/input.component";
 import { Button } from "../../atoms/button/button.component";
 import { Bullet } from "../../atoms/bullet/bullet.component";
 
-/** Props */
+/** props */
 import { ForgotPasswordTemplateProps } from "./props";
 
 /** Helpers */
 import { validateForgotPassword as validate } from "../../../helper/auth";
 
-/** Hooks */
+/** hooks */
 import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
 
-/** Stories */
+/** stories */
 import { primary } from "../../../components/atoms/button/button.stories";
 
 /**

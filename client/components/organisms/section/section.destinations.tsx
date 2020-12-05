@@ -1,13 +1,13 @@
 import React from "react";
 
-/** Styles */
+/** styles **/
 import section from "./section.module.scss";
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import layout from "../../../styles/layout.module.scss";
 
-/** Props */
+/** props */
 import { DestinationsSectionProps } from "./props";
 
 /** Content */

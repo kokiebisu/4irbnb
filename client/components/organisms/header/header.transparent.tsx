@@ -1,7 +1,7 @@
 import React from "react";
 import Router from "next/router";
 
-/** Styles */
+/** styles */
 import space from "../../../styles/space.module.scss";
 import styles from "../../../styles/index.module.scss";
 import layout from "../../../styles/layout.module.scss";
@@ -10,26 +10,26 @@ import shape from "../../../styles/shape.module.scss";
 import font from "../../../styles/font.module.scss";
 import header from "./header.module.scss";
 
-/** Components */
+/** components */
 import { menu as menuModal } from "../../organisms/modal/modal.stories";
 import { Modal } from "../modal/modal.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/** Vectors */
+/** vectors */
 import { NameLogo, NoNameLogo } from "../../../public/svg/logo";
 import { MagnifyGlass } from "../../../public/svg/original";
 
-/** Props */
+/** props */
 import { TransparentHeaderProps } from "./props";
 
-/** Contexts */
+/** contexts */
 import { useToggleDispatch, useToggleState } from "../../../context/toggle";
 
-/** Stories */
+/** stories */
 import {
-  host,
-  menu,
-  globe,
+  host as hostButton,
+  menu as menuButton,
+  globe as globeButton,
 } from "../../../components/atoms/button/button.stories";
 
 /**
@@ -63,35 +63,38 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
           <div
             className={[styles["searchbar__host"], space["m-h--4"]].join(" ")}
           >
-            <Button {...host.args} inverse animate />
+            <Button {...hostButton.args} inverse animate />
           </div>
           <div className={[space["m-h--4"]].join(" ")}>
             <Button
-              {...globe.args}
+              {...globeButton.args}
               inverse
               onPress={() => toggleDispatch({ type: "toggle_language" })}
             />
           </div>
           <div className={[space["m-l--4"]].join(" ")}>
             <Button
-              {...menu.args}
+              {...menuButton.args}
               inverse
               authenticated={data}
               onPress={() => toggleDispatch({ type: "toggle_menu" })}
             />
           </div>
         </div>
-        <Modal
-          authenticated={data}
-          criteria={toggleState.menu}
-          type="menu"
-          extendsTo={[
+        <div
+          className={[
             layout["absolute"],
             layout["r--0"],
             layout["t--55"],
             color["bg--transparent"],
           ].join(" ")}
-        />
+        >
+          <Modal
+            {...menuModal.args}
+            authenticated={data}
+            criteria={toggleState.menu}
+          />
+        </div>
       </div>
       <div
         className={[

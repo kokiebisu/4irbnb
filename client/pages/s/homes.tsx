@@ -1,24 +1,25 @@
 import React from "react";
 import { useRouter } from "next/router";
 
-/** Contexts */
+/** contexts */
 import { useToggleState } from "../../context/toggle";
 
 /** Layouts */
 import layout from "../../styles/layout.module.scss";
 
-/** Components */
+/** components */
 import { Template } from "../../components/templates/template.component";
 import { Modal } from "../../components/organisms/modal/modal.component";
 
-/** Styles */
+/** styles */
 import shape from "../../styles/shape.module.scss";
 
-/** Hooks */
+/** hooks */
 import { useTabTitle } from "../../hooks/useTabTitle";
 
-/** Prototypes */
+/** prototypes */
 import "../../prototype/string";
+import { menu } from "components/organisms/modal/modal.stories";
 
 /**
  * Renders the component for path /s/homes
@@ -58,15 +59,16 @@ const Homes = () => {
             backgroundColor: "rgba(0, 0, 0, 0.6)",
           }}
         >
-          <Modal
-            extendsTo={[
+          <div
+            className={[
               layout["flex"],
               layout["justify-center"],
               layout["items-center"],
               shape["h--100v"],
             ].join(" ")}
-            type="auth"
-          />
+          >
+            <Modal {...menu.args} animate="slideup" />
+          </div>
         </div>
       )}
     </>
