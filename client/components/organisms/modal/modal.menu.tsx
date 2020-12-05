@@ -47,8 +47,8 @@ export const MenuModal: React.FC<MenuModalProps> = ({
         {authenticated ? (
           <Options
             params={[
-              { kind: "messages", bold: true },
-              { kind: "notifications", bold: false },
+              // { kind: "messages", bold: true },
+              // { kind: "notifications", bold: false },
               { kind: "trips", bold: false },
               { kind: "saved", bold: false },
             ]}
@@ -73,17 +73,17 @@ export const MenuModal: React.FC<MenuModalProps> = ({
           <Options
             params={[
               { kind: "home", bold: false },
-              { kind: "experience", bold: false },
-              { kind: "refer", bold: false },
-              { kind: "account", bold: false },
+              // { kind: "experience", bold: false },
+              // { kind: "refer", bold: false },
+              // { kind: "account", bold: false },
             ]}
           />
         ) : (
           <Options
             params={[
               { kind: "home", bold: false },
-              { kind: "experience", bold: false },
-              { kind: "help", bold: false },
+              // { kind: "experience", bold: false },
+              // { kind: "help", bold: false },
             ]}
           />
         )}
@@ -99,7 +99,7 @@ export const MenuModal: React.FC<MenuModalProps> = ({
             ></div>
             <Options
               params={[
-                { kind: "help", bold: false },
+                // { kind: "help", bold: false },
                 { kind: "logout", bold: false },
               ]}
             />

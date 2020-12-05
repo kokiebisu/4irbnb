@@ -1,5 +1,6 @@
-import React from 'react';
-import { createContext, useReducer, useContext } from 'react';
+import { stat } from "fs/promises";
+import React from "react";
+import { createContext, useReducer, useContext } from "react";
 
 type Dispatch = (action: Action) => void;
 type Action = { type: string };
@@ -17,13 +18,13 @@ const ToggleDispatchContext = createContext<Dispatch | undefined>(undefined);
 
 const toggleReducer = (state: State, action: Action) => {
   switch (action.type) {
-    case 'toggle_privacy':
+    case "toggle_privacy":
       return { ...state, privacy: !state.privacy };
-    case 'toggle_menu':
+    case "toggle_menu":
       return { ...state, menu: !state.menu };
-    case 'toggle_auth':
+    case "toggle_auth":
       return { ...state, auth: !state.auth, menu: !state.menu };
-    case 'close_register':
+    case "close_register":
       return { ...state, auth: !state.auth };
     default:
       return state;
@@ -49,7 +50,7 @@ const ToggleProvider = ({ children }: ToggleProviderProps) => {
 const useToggleState = () => {
   const context = useContext(ToggleStateContext);
   if (!context) {
-    throw new Error('useToggleState must be used within a ToggleProvider');
+    throw new Error("useToggleState must be used within a ToggleProvider");
   }
   return context;
 };
@@ -57,7 +58,7 @@ const useToggleState = () => {
 const useToggleDispatch = () => {
   const context = useContext(ToggleDispatchContext);
   if (!context) {
-    throw new Error('useToggleDispatch must be used within a ToggleProvider');
+    throw new Error("useToggleDispatch must be used within a ToggleProvider");
   }
   return context;
 };
