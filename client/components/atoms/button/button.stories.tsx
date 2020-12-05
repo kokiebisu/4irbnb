@@ -25,11 +25,9 @@ export default {
   component: Button,
   decorators: [
     (Story) => (
-      <ToggleProvider>
-        <ContextProvider>
-          <Story />
-        </ContextProvider>
-      </ToggleProvider>
+      <ContextProvider>
+        <Story />
+      </ContextProvider>
     ),
   ],
   argTypes: {
