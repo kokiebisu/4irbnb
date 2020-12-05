@@ -14,21 +14,6 @@ export const AmenitiesCreate: React.FC<{
   data?: any;
   setData?: any;
 }> = ({ data, setData }) => {
-  const [state, setState] = useState({
-    essentials: false,
-  });
-  const validateChecked = () => {
-    if (data.amenities.length === 0 || !data.amenities.includes("essentials")) {
-      setState({ ...state, essentials: false });
-      return;
-    }
-    setState({ ...state, essentials: true });
-  };
-
-  useEffect(() => {
-    validateChecked();
-  }, [state.essentials]);
-
   const modify = (type: string, params: string) => {
     if (data[type].includes(params)) {
       setData({
