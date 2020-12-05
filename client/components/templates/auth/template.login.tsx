@@ -2,32 +2,32 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import Router from "next/router";
 
-/** Contexts */
+/** contexts */
 import { useAuthDispatch, useAuthState } from "../../../context/auth";
 
-/** Styles */
+/** styles **/
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 import layout from "../../../styles/layout.module.scss";
 
-/** Components */
+/** components */
 import { Input } from "../../atoms/input/input.component";
 import { Button } from "../../atoms/button/button.component";
 import { Bullet } from "../../atoms/bullet/bullet.component";
 import { Animation } from "../../animation/animation.component";
 import { Card } from "../../molecules/card/card.component";
 
-/** Props */
+/** props */
 import { LoginTemplateProps } from "./props";
 
 /** Helper */
 import { validateLogin as validate } from "../../../helper/auth";
 
-/** Hooks */
+/** hooks */
 import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
 import { useFetch } from "../../../hooks/useFetch";
 
-/** Stories */
+/** stories */
 import {
   primary,
   underline,

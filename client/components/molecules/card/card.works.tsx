@@ -1,9 +1,9 @@
 import React from "react";
 
-/** Props */
+/** props */
 import { WorksCardProps } from "./props";
 
-/** Styles */
+/** styles **/
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 import card from "./card.module.scss";

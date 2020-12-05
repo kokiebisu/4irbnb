@@ -1,13 +1,13 @@
 import React from "react";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 
-/** Vectors */
+/** vectors */
 import { CheckInverse } from "../../../public/svg/original";
 
-/** Props */
+/** props */
 import { BringBulletProps } from "./props";
 
 /**

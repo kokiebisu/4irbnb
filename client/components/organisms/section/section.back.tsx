@@ -1,15 +1,15 @@
 import React from "react";
 
-/** Styles */
+/** styles **/
 import space from "../../../styles/space.module.scss";
 
-/** Layout */
+/** layout */
 import { Layout } from "../../../layout/layout.component";
 
-/** Components */
+/** components */
 import { Bullet } from "../../../components/atoms/bullet/bullet.component";
 
-/** Props */
+/** props */
 import { BackSectionProps } from "./props";
 
 export const BackSection: React.FC<BackSectionProps> = () => {

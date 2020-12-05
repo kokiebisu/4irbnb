@@ -1,6 +1,6 @@
 import React from "react";
 
-/** Styles */
+/** styles **/
 import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
@@ -9,7 +9,7 @@ import card from "./card.module.scss";
 /** Contents */
 import { nearbyPic } from "../../../content";
 
-/** Props */
+/** props */
 import { NearbyCardProps } from "./props";
 
 /** Logic */

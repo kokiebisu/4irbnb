@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Router from "next/router";
 
-/** Contexts */
+/** contexts */
 import { useStayDispatch, useStayState } from "../../context/stay";
 
-/** Components */
+/** components */
 import { Create } from "../../components/organisms/create/create.component";
 import {
   inputTypes,
   properties,
 } from "../../components/atoms/input/logic/logic.types";
 
-/** Styles */
+/** styles **/
 import { Layout } from "../../layout/layout.component";
 
 const RoomPage = () => {

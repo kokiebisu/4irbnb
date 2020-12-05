@@ -1,9 +1,9 @@
 import React from "react";
 
-/** Components */
+/** components */
 import { Header } from "../../organisms/header/header.component";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import homes from "../../../styles/homes.module.scss";
 import space from "../../../styles/space.module.scss";
@@ -11,16 +11,16 @@ import responsive from "../../../styles/responsive.module.scss";
 import font from "../../../styles/font.module.scss";
 import shape from "../../../styles/shape.module.scss";
 
-/** Components */
+/** components */
 import { Section } from "../../organisms/section/section.component";
 import { Bar } from "../../organisms/bar/bar.component";
 import { Footer } from "../../organisms/footer/footer.component";
 import { Button } from "../../atoms/button/button.component";
 
-/** Props */
+/** props */
 import { CategoryTemplateProps } from "../props";
 
-/** Stories */
+/** stories */
 import { filter } from "../../../components/atoms/button/button.stories";
 
 /**

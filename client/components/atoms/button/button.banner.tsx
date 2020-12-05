@@ -1,12 +1,12 @@
 import React from "react";
 
-/** Styles */
+/** styles */
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import font from "../../../styles/font.module.scss";
 
-/** Props */
+/** props */
 import { BannerButtonProps } from "./props";
 
 /**

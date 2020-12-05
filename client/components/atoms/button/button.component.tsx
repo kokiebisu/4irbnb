@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-/** Components */
+/** components */
 import { AuthButton } from "./button.auth";
 import { ButtonProps } from "./props";
 import { GlobeButton } from "./button.globe";
@@ -21,7 +21,7 @@ import { FilterButton } from "./button.filter";
 import { ModalButton } from "./button.modal";
 import { BackButton } from "./button.back";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import shape from "../../../styles/shape.module.scss";
 
@@ -45,7 +45,7 @@ export const Button: React.FC<ButtonProps> = ({
   animate,
   ...props
 }) => {
-  const { disable = false } = props;
+  const { disable } = props;
   const types: mapProps = {
     auth: <AuthButton {...props} />,
     globe: <GlobeButton {...props} />,
@@ -90,7 +90,7 @@ export const Button: React.FC<ButtonProps> = ({
           ? [layout["block"], shape["w--full"]].join(" ")
           : layout["inline-block"]
       }`}
-      onClick={onPress}
+      onClick={!disable && onPress}
       disabled={disable}
       style={{ cursor: disable ? "default" : "pointer" }}
     >

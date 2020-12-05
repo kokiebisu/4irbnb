@@ -1,19 +1,19 @@
 import React from "react";
 
-/** Components */
+/** components */
 import { Bullet } from "../../atoms/bullet/bullet.component";
 import { Button } from "../../atoms/button/button.component";
 
-/** Styles */
+/** styles **/
 import font from "../../../styles/font.module.scss";
 import space from "../../../styles/space.module.scss";
 import color from "../../../styles/color.module.scss";
 import section from "./section.module.scss";
 
-/** Props */
+/** props */
 import { AmenitySectionProps } from "./props";
 
-/** Stories */
+/** stories */
 import { border } from "../../../components/atoms/button/button.stories";
 
 /**

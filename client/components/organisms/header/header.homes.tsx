@@ -1,19 +1,20 @@
 import React from "react";
 
-/** Props */
+/** props */
 import { HomesHeaderProps } from "./props";
 
-/** Styles */
+/** styles */
 import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import header from "./header.module.scss";
 
-/** Vectors */
+/** vectors */
 import { NoNameLogo } from "../../../public/svg/logo";
 
-/** Components */
+/** components */
 import { Button } from "../../../components/atoms/button/button.component";
+import Router from "next/router";
 
 /**
  * Renders the header for the homes page
@@ -34,7 +35,7 @@ export const HomesHeader: React.FC<HomesHeaderProps> = ({ spread = false }) => {
               space["p--14"],
               shape["br--circle"],
             ].join(" ")}
-            onPress={() => alert("butten pressed")}
+            onPress={() => Router.push("/")}
           >
             <NoNameLogo fill="black" width={30} height={32} />
           </Button>

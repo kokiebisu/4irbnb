@@ -47,8 +47,8 @@ export const getOptionContents = () => {
     signup: {
       name: "Sign up",
       handleClick: () => {
-        authDispatch({ type: "auth_signup" });
         toggleDispatch({ type: "toggle_auth" });
+        authDispatch({ type: "auth_signup" });
       },
     },
     login: {

@@ -1,15 +1,15 @@
 import React from "react";
 
-/** Vectors */
+/** vectors */
 import { Star } from "../../../public/svg/original";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/** Props */
+/** props */
 import { RatingBulletProps } from "./props";
 
 /**

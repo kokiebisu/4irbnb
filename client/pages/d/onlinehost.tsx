@@ -1,16 +1,16 @@
 import React from "react";
 
-/** Components */
+/** components */
 import { Banner } from "../../components/organisms/banner/banner.component";
 import { Header } from "../../components/organisms/header/header.component";
 import { Section } from "../../components/organisms/section/section.component";
 import { Footer } from "../../components/organisms/footer/footer.component";
 
-/** Styles */
+/** styles **/
 import layout from "../../styles/layout.module.scss";
 import space from "../../styles/space.module.scss";
 
-/** Hooks */
+/** hooks */
 import { useTabTitle } from "hooks/useTabTitle";
 
 const OnlineHost = () => {

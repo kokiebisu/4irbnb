@@ -1,29 +1,21 @@
-import React, { useRef } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import React, { useRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
-/**
- * Hooks
- */
-import useOnClickOutside from '../../../hooks/useOnClickOutside';
+/** hooks */
+import useOnClickOutside from "../../../hooks/useOnClickOutside";
 
-/**
- * Components
- */
-import { MenuModal } from './modal.menu';
-import { PrivacyModal } from './modal.privacy';
-import { AvailabilityModal } from './modal.availability';
-import { AuthModal } from './modal.auth';
-import { BookingModal } from './modal.booking';
+/** components */
+import { MenuModal } from "./modal.menu";
+import { PrivacyModal } from "./modal.privacy";
+import { AvailabilityModal } from "./modal.availability";
+import { AuthModal } from "./modal.auth";
+import { BookingModal } from "./modal.booking";
 
-/**
- * Contexts
- */
-import { useToggleDispatch } from '../../../context/toggle';
+/** contexts */
+import { useToggleDispatch } from "../../../context/toggle";
 
-/**
- * Props
- */
-import { ModalProps } from './props';
+/** props */
+import { ModalProps } from "./props";
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -38,27 +30,60 @@ interface mapProps {
 export const Modal: React.FC<ModalProps> = ({
   type,
   extendsTo,
-  dispatchType,
+  dispatch,
+  animate = "default",
   ...props
 }) => {
   const { criteria } = props;
-  const ref = useRef();
+  const containerRef = useRef();
   const toggleDispatch = useToggleDispatch();
-  useOnClickOutside(ref, () => toggleDispatch({ type: `${dispatchType}` }));
+  useOnClickOutside(containerRef, () =>
+    toggleDispatch({ type: `${dispatch}` })
+  );
+
+  const animation = {
+    slideup: {
+      initial: { y: 200, opacity: 0 },
+      animate: { y: 0, opacity: 1 },
+      transition: { duration: 0.4, ease: "easeOut" },
+    },
+    default: {
+      initial: { opacity: 0 },
+      animate: { opacity: 1 },
+      transition: { duration: 0.1, ease: "easeInOut" },
+    },
+  };
 
   const types: mapProps = {
     privacy: <PrivacyModal {...props} />,
-    menu: <MenuModal refProp={ref} {...props} />,
+    menu: <MenuModal {...props} />,
     auth: <AuthModal {...props} />,
     availability: <AvailabilityModal {...props} />,
     booking: <BookingModal {...props} />,
   };
+
   if (criteria !== undefined) {
     return (
       <AnimatePresence>
-        {criteria && <div className={extendsTo}>{types[type]}</div>}
+        {criteria && (
+          <motion.div
+            data-testid="modal"
+            exit={{ opacity: 0 }}
+            initial={animation[animate].initial}
+            animate={animation[animate].animate}
+            transition={animation[animate].transition}
+            ref={containerRef}
+            className={extendsTo}
+          >
+            {types[type]}
+          </motion.div>
+        )}
       </AnimatePresence>
     );
   }
-  return <div className={extendsTo}>{types[type]}</div>;
+  return (
+    <div className={extendsTo} data-testid="modal">
+      {types[type]}
+    </div>
+  );
 };

@@ -1,20 +1,20 @@
 import React from "react";
 
-/** Components */
+/** components */
 import { Card } from "../../molecules/card/card.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/** Props */
+/** props */
 import { OnlineSectionProps } from "./props";
 
-/** Styles */
+/** styles **/
 import section from "./section.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import shape from "../../../styles/shape.module.scss";
 
-/** Components */
+/** components */
 import { border } from "../../../components/atoms/button/button.stories";
 
 /**

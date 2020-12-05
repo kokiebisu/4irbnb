@@ -1,17 +1,17 @@
 import React from "react";
 import { Router } from "next/router";
 
-/** Props */
+/** props */
 import { HostCardProps } from "./props";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import space from "../../../styles/space.module.scss";
 import color from "../../../styles/color.module.scss";
 import font from "../../../styles/font.module.scss";
 
-/** Components */
+/** components */
 import { Button } from "../../atoms/button/button.component";
 
 /**

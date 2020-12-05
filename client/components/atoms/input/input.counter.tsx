@@ -1,14 +1,14 @@
 import React from "react";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 
-/** Props */
+/** props */
 import { CounterInputProps } from "./props";
 
-/** Vectors */
+/** vectors */
 import { Minus, Plus } from "../../../public/svg/original";
 
 export const CounterInput: React.FC<CounterInputProps> = ({

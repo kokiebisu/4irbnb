@@ -1,4 +1,4 @@
-/** Components */
+/** components */
 import { Options as GuestOptions } from "./logic.guest";
 import {
   Options as PlaceOptions,
