@@ -4,11 +4,11 @@ import { useStayDispatch, useStayState } from "context/stay";
 import Router from "next/router";
 import { Create } from "../../components/organisms/create/create.component";
 
-const DescriptionPage = () => {
+const TitlePage = () => {
   const stayDispatch = useStayDispatch();
-  const { description } = useStayState();
+  const { title } = useStayState();
   const [data, setData] = useState({
-    description,
+    title,
   });
 
   const proceed = () => {
@@ -16,9 +16,9 @@ const DescriptionPage = () => {
       type: "add",
       payload: data,
     });
-    setTimeout(() => {
-      Router.push("/become-a-host/title");
-    }, 500);
+    // setTimeout(() => {
+    //   Router.push("/become-a-host/title");
+    // }, 500);
   };
 
   const revert = () => {
@@ -33,17 +33,17 @@ const DescriptionPage = () => {
       left={
         <Create
           title="Description and title"
-          type="description"
+          type="title"
           data={data}
           setData={setData}
         />
       }
-      percentage={60}
+      percentage={70}
       next={proceed}
       back={revert}
-      criteria={data.description.length === 0 || data.description.length >= 500}
+      criteria={data.title === "" || data.title.length >= 50}
     />
   );
 };
 
-export default DescriptionPage;
+export default TitlePage;

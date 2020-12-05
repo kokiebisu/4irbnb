@@ -22,6 +22,7 @@ type Payload = {
   safeties?: string[];
   spaces?: string[];
   description?: string;
+  title?: string;
 };
 
 type State = {
@@ -43,6 +44,7 @@ type State = {
   safeties?: string[];
   spaces?: string[];
   description?: string;
+  title?: string;
 };
 
 type StayProviderProps = { children: React.ReactNode };
@@ -73,6 +75,7 @@ const stayReducer = (state: State, { type, payload }: Action) => {
         safeties: [],
         spaces: [],
         description: "",
+        title: "",
       };
     case "add":
       return { ...state, ...payload };
@@ -101,6 +104,7 @@ const StayProvider = ({ children }: StayProviderProps) => {
     safeties: [],
     spaces: [],
     description: "",
+    title: "",
   });
 
   console.log("stay provider", state);

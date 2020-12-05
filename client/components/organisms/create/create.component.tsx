@@ -9,6 +9,9 @@ import { GetStartedCreate } from "./create.getstarted";
 import { LocationCreate } from "./create.location";
 import { RoomCreate } from "./create.room";
 import { SpacesCreate } from "./create.spaces";
+import { TitleCreate } from "./create.title";
+
+/** props */
 import { CreateProps } from "./props";
 
 export const Create: React.FC<CreateProps> = ({
@@ -24,6 +27,7 @@ export const Create: React.FC<CreateProps> = ({
     amenities: <AmenitiesCreate {...props} />,
     spaces: <SpacesCreate {...props} />,
     description: <DescriptionCreate {...props} />,
+    title: <TitleCreate {...props} />,
   };
   return types[type];
 };

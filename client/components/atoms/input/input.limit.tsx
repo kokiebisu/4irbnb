@@ -8,11 +8,11 @@ import shape from "../../../styles/shape.module.scss";
 import space from "../../../styles/space.module.scss";
 import animation from "../../../styles/animation.module.scss";
 
-export const TextAreaInput: React.FC<{
+export const LimitInput: React.FC<{
   value?: string;
   handleChange?: () => void;
   limit?: number;
-}> = ({ value = "", handleChange, limit = 500 }) => {
+}> = ({ value = "", handleChange, limit = 50 }) => {
   const [active, setActive] = useState(false);
 
   const renderBorder = () => {
@@ -45,10 +45,12 @@ export const TextAreaInput: React.FC<{
   return (
     <div>
       <div
-        style={{ minHeight: 300 }}
-        className={[layout["relative"], shape["w--full"]].join(" ")}
+        style={{ minHeight: 50 }}
+        className={[layout["relative"], shape["w--full"], space["m-b--4"]].join(
+          " "
+        )}
       >
-        <textarea
+        <input
           spellCheck
           onFocus={() => setActive(true)}
           onBlur={() => setActive(false)}
@@ -67,10 +69,9 @@ export const TextAreaInput: React.FC<{
           ].join(" ")} ${renderBorder()} ${renderBackground()}`}
           style={{
             outline: "none",
-            resize: "vertical",
-            minHeight: 300,
+            minHeight: 50,
           }}
-        ></textarea>
+        ></input>
 
         <div
           className={[
@@ -87,7 +88,7 @@ export const TextAreaInput: React.FC<{
       {value.length >= limit && (
         <div>
           <h3 className={[font["size--14"], color["c--warning"]].join(" ")}>
-            Please shorten your description to {limit} characters or less.
+            Please shorten your title to {limit} characters or less.
           </h3>
         </div>
       )}
