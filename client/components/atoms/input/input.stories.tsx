@@ -113,3 +113,8 @@ export const textarea = InputStory.bind({});
 textarea.args = {
   type: "textarea",
 };
+
+export const verify = InputStory.bind({});
+verify.args = {
+  type: "verify",
+};
