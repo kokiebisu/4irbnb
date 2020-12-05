@@ -1,10 +1,10 @@
 import React from "react";
 
-/** Styles */
+/** styles */
 import layout from "../../../styles/layout.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/** Props */
+/** props */
 import { UnderlineButtonProps } from "./props";
 
 /**

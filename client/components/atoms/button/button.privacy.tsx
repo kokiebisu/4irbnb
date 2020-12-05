@@ -1,9 +1,9 @@
 import React from "react";
 
-/** Props */
+/** props */
 import { PrivacyButtonProps } from "./props";
 
-/** Styles */
+/** styles **/
 import font from "../../../styles/font.module.scss";
 import space from "../../../styles/space.module.scss";
 import color from "../../../styles/color.module.scss";

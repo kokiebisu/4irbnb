@@ -2,31 +2,31 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import Router from "next/router";
 
-/** Styles */
+/** styles **/
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/** Components */
+/** components */
 import { Input } from "../../atoms/input/input.component";
 import { Button } from "../../atoms/button/button.component";
 import { Bullet } from "../../atoms/bullet/bullet.component";
 
-/** Props */
+/** props */
 import { SignupTemplateProps } from "./props";
 
 /** Helper */
 import { validateSignup as validate } from "../../../helper/auth";
 
-/** Hooks */
+/** hooks */
 import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
 import { useFetch } from "../../../hooks/useFetch";
 
-/** Contexts */
+/** contexts */
 import { useAuthDispatch } from "../../../context/auth";
 
-/** Stories */
+/** stories */
 import { primary } from "../../../components/atoms/button/button.stories";
 
 /**

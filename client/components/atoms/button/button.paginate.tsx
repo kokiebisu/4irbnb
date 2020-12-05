@@ -1,16 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-/** Styles */
+/** styles **/
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import button from "./button.module.scss";
 
-/** Vectors */
+/** vectors */
 import { ChevronLeft, ChevronRight } from "../../../public/svg/regular";
 
-/** Props */
+/** props */
 import { PaginateButtonProps } from "./props";
 
 /**

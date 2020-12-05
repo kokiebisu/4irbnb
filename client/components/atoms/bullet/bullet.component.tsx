@@ -1,6 +1,6 @@
 import React from "react";
 
-/** Components */
+/** components */
 import { AmenityBullet } from "./bullet.amenity";
 import { BringBullet } from "./bullet.bring";
 import { CharacteristicBullet } from "./bullet.characteristics";

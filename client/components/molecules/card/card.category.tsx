@@ -1,11 +1,11 @@
 import React from "react";
 
-/** Styles */
+/** styles **/
 import color from "../../../styles/color.module.scss";
 import font from "../../../styles/font.module.scss";
 import styles from "./card.module.scss";
 
-/** Props */
+/** props */
 import { CategoryCardProps } from "./props";
 
 /** Renders the category card component

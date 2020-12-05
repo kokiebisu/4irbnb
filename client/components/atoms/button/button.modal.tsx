@@ -1,16 +1,16 @@
 import React from "react";
 
-/** Vectors */
+/** vectors */
 import { Close } from "../../../public/svg/original";
 import { ChevronLeft } from "../../../public/svg/regular";
 
-/** Styles */
+/** styles **/
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 import button from "./button.module.scss";
 import shape from "../../../styles/shape.module.scss";
 
-/** Props */
+/** props */
 import { ModalButtonProps } from "./props";
 
 /**

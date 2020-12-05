@@ -1,12 +1,23 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { Modal } from './modal.component';
-import { ContextProvider } from '../../../context/provider';
-import { ModalProps } from './props';
+import React from "react";
+import { Story, Meta } from "@storybook/react/types-6-0";
+
+/** components */
+import { Modal } from "./modal.component";
+
+/** contexts */
+import { ContextProvider } from "../../../context/provider";
+
+/** props */
+import { ModalProps } from "./props";
+
+/** styles */
+import shape from "../../../styles/shape.module.scss";
+import layout from "../../../styles/layout.module.scss";
+import color from "../../../styles/color.module.scss";
 
 export default {
-  title: 'Design System/Organisms/Modal',
-  argTypes: { onPress: { action: 'clicked' } },
+  title: "Design System/Organisms/Modal",
+  argTypes: { onPress: { action: "clicked" } },
   decorators: [
     (Story) => (
       <ContextProvider>
@@ -20,31 +31,40 @@ const ModalTemplate: Story<ModalProps> = (args) => <Modal {...args} />;
 
 export const privacy = ModalTemplate.bind({});
 privacy.args = {
-  type: 'privacy',
+  type: "privacy",
 };
 
 export const menu = ModalTemplate.bind({});
 menu.args = {
-  type: 'menu',
-  dispatchType: 'toggle_menu',
+  type: "menu",
+  dispatch: "toggle_menu",
+  extendsTo: [
+    shape["br--15"],
+    shape["shadow--lg"],
+    layout["flex"],
+    layout["items-center"],
+    color["bg--white"],
+    shape["w--230"],
+  ].join(" "),
 };
 menu.argTypes = {
   authenticated: {
-    control: 'boolean',
+    control: "boolean",
   },
 };
 
 export const auth = ModalTemplate.bind({});
 auth.args = {
-  type: 'auth',
+  type: "auth",
+  dispatch: "toggle_auth",
 };
 
 export const availability = ModalTemplate.bind({});
 availability.args = {
-  type: 'availability',
+  type: "availability",
 };
 
 export const booking = ModalTemplate.bind({});
 booking.args = {
-  type: 'booking',
+  type: "booking",
 };

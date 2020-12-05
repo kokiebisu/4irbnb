@@ -1,15 +1,15 @@
 import React from "react";
 
-/** Styles */
+/** styles */
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/** Vectors */
+/** vectors */
 import { Avatar, Bars } from "../../../public/svg/original";
 
-/** Props */
+/** props */
 import { MenuButtonProps } from "./props";
 
 /**

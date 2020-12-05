@@ -1,6 +1,6 @@
 import React from "react";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import homes from "../../../styles/homes.module.scss";
 import space from "../../../styles/space.module.scss";
@@ -9,17 +9,17 @@ import responsive from "../../../styles/responsive.module.scss";
 import font from "../../../styles/font.module.scss";
 import shape from "../../../styles/shape.module.scss";
 
-/** Props */
+/** props */
 import { NearbyTemplateProps } from "../props";
 
-/** Components */
+/** components */
 import { Header } from "../../../components/organisms/header/header.component";
 import { Section } from "../../../components/organisms/section/section.component";
 import { Bar } from "../../../components/organisms/bar/bar.component";
 import { Footer } from "../../../components/organisms/footer/footer.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/** Stories */
+/** stories */
 import { filter } from "../../../components/atoms/button/button.stories";
 
 /**

@@ -2,27 +2,27 @@ import React, { useState } from "react";
 import Router from "next/router";
 import { useFormik } from "formik";
 
-/** Components */
+/** components */
 import { Bullet } from "../../../components/atoms/bullet/bullet.component";
 import { Button } from "../../../components/atoms/button/button.component";
 import { Input } from "../../../components/atoms/input/input.component";
 
-/** Props */
+/** props */
 import { ExistsTemplateProps } from "./props";
 
 /** Helpers */
 import { validateExists as validate } from "../../../helper/auth";
 
-/** Hooks */
+/** hooks */
 import { useFetch } from "../../../hooks/useFetch";
 
-/** Styles */
+/** styles **/
 import space from "../../../styles/space.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import font from "../../../styles/font.module.scss";
 import layout from "../../../styles/layout.module.scss";
 
-/** Stories */
+/** stories */
 import {
   primary,
   underline,

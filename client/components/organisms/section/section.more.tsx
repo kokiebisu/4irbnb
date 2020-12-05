@@ -1,9 +1,9 @@
 import React from "react";
 
-/** Props */
+/** props */
 import { MoreSectionProps } from "./props";
 
-/** Styles */
+/** styles **/
 import color from "../../../styles/color.module.scss";
 import font from "../../../styles/font.module.scss";
 import layout from "../../../styles/layout.module.scss";
@@ -11,10 +11,10 @@ import shape from "../../../styles/shape.module.scss";
 import space from "../../../styles/space.module.scss";
 import section from "./section.module.scss";
 
-/** Stories */
+/** stories */
 import { border } from "../../../components/atoms/button/button.stories";
 
-/** Components */
+/** components */
 import { Button } from "../../../components/atoms/button/button.component";
 
 export const MoreSection: React.FC<MoreSectionProps> = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 
-/** Components */
+/** components */
 import { EmailInput } from "./input.email";
 import { PasswordInput } from "./input.password";
 import { NameInput } from "./input.name";
@@ -14,10 +14,10 @@ import { SelectInput } from "./input.select";
 import { RadioInput } from "./input.radio";
 import { CounterInput } from "./input.counter";
 
-/** Props */
+/** props */
 import { InputProps } from "./props";
 
-/** Styles */
+/** styles **/
 import shape from "../../../styles/shape.module.scss";
 import { TextInput } from "./input.text";
 

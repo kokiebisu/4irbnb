@@ -1,9 +1,9 @@
 import React, { useReducer } from "react";
 
-/** Props */
+/** props */
 import { CheckInCardProps } from "./props";
 
-/** Styles */
+/** styles **/
 import card from "./card.module.scss";
 import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";

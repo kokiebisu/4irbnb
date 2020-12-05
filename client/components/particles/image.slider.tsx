@@ -1,12 +1,12 @@
 import React, { useLayoutEffect, useState, useRef } from "react";
 
-/** Components */
+/** components */
 import { Button } from "../../components/atoms/button/button.component";
 
-/** Styles */
+/** styles **/
 import particle from "./particle.module.scss";
 
-/** Stories */
+/** stories */
 import { paginate } from "../../components/atoms/button/button.stories";
 
 const Dots = ({ slides, activeSlide }) => {

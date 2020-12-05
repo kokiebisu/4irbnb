@@ -1,12 +1,12 @@
 import React from "react";
 
-/** Vectors */
+/** vectors */
 import { Activities, Computer, Host } from "../../../public/svg/original";
 
-/** Props */
+/** props */
 import { ExperienceBulletProps } from "./props";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import space from "../../../styles/space.module.scss";

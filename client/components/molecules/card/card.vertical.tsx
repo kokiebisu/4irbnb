@@ -1,6 +1,6 @@
 import React from "react";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
@@ -8,10 +8,10 @@ import space from "../../../styles/space.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import styles from "./card.module.scss";
 
-/** Vectors */
+/** vectors */
 import { Heart, Star } from "../../../public/svg/original";
 
-/** Props */
+/** props */
 import { VerticalCardProps } from "./props";
 
 /**

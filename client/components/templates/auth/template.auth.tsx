@@ -1,13 +1,13 @@
 import React from "react";
 import { useFormik } from "formik";
 
-/** Contexts */
+/** contexts */
 import { useAuthDispatch, useAuthState } from "../../../context/auth";
 
-/** Hooks */
+/** hooks */
 import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
 
-/** Styles */
+/** styles **/
 import space from "../../../styles/space.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import font from "../../../styles/font.module.scss";
@@ -15,18 +15,18 @@ import layout from "../../../styles/layout.module.scss";
 import color from "../../../styles/color.module.scss";
 import modalStyles from "../../organisms/modal/modal.module.scss";
 
-/** Components */
+/** components */
 import { Input } from "../../atoms/input/input.component";
 import { Button } from "../../atoms/button/button.component";
 import { getAuthContents } from "../../atoms/button/content/content.auth";
 
-/** Props */
+/** props */
 import { AuthTemplateProps } from "./props";
 
 /** Helpers */
 import { validateAuth as validate } from "../../../helper/auth";
 
-/** Stories */
+/** stories */
 import { auth, primary, underline } from "../../atoms/button/button.stories";
 
 /**

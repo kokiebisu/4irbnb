@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Router from "next/router";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import index from "../../../styles/index.module.scss";
 import space from "../../../styles/space.module.scss";
@@ -10,17 +10,17 @@ import shape from "../../../styles/shape.module.scss";
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/** Props */
+/** props */
 import { LandingBannerProps } from "./props";
 
-/** Components */
+/** components */
 import { Header } from "../../../components/organisms/header/header.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/** Hooks */
+/** hooks */
 import { useHandleScroll } from "../../../hooks/useHandleScroll";
 
-/** Stories */
+/** stories */
 import { banner } from "../../../components/atoms/button/button.stories";
 
 /**

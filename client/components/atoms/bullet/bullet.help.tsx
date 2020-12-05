@@ -1,6 +1,6 @@
 import React from "react";
 
-/** Vectors */
+/** vectors */
 import {
   Analytics,
   CustomerService,
@@ -8,10 +8,10 @@ import {
   ToolBox,
 } from "../../../public/svg/original";
 
-/** Props */
+/** props */
 import { HelpBulletProps } from "./props";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";

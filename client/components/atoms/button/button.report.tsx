@@ -1,9 +1,9 @@
 import React from "react";
 
-/** Vectors */
+/** vectors */
 import { Flag } from "public/svg/original";
 
-/** Props */
+/** props */
 import { ReportButtonProps } from "./props";
 
 /** Renders the report button */

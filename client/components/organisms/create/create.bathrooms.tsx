@@ -1,12 +1,12 @@
 import React from "react";
 
-/** Components */
+/** components */
 import { Input } from "../../../components/atoms/input/input.component";
 
-/** Props */
+/** props */
 import { BathroomsCreateProps } from "./props";
 
-/** Styles */
+/** styles **/
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";

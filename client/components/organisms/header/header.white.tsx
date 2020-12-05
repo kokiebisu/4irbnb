@@ -1,29 +1,29 @@
 import React from "react";
 import Link from "next/link";
 
-/** Styles */
+/** styles */
 import shape from "../../../styles/shape.module.scss";
 import space from "../../../styles/space.module.scss";
 import styles from "../../../styles/index.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/** Components */
+/** components */
 import { menu as menuModal } from "../../organisms/modal/modal.stories";
 import { Modal } from "../modal/modal.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/** Contexts */
+/** contexts */
 import { useToggleDispatch, useToggleState } from "../../../context/toggle";
 
-/** Vectors */
+/** vectors */
 import { NameLogo, NoNameLogo } from "../../../public/svg/logo";
 import { ChevronLeft } from "../../../public/svg/regular";
 
-/** Props */
+/** props */
 import { WhiteHeaderProps } from "./props";
 
-/** Stories */
+/** stories */
 import {
   host,
   menu,
@@ -103,17 +103,20 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
               />
             </div>
           </div>
-          <Modal
-            authenticated={data}
-            criteria={toggleState.menu}
-            {...menuModal.args}
-            extendsTo={[
+          <div
+            className={[
               layout["absolute"],
-              layout["t--55"],
               layout["r--0"],
+              layout["t--55"],
               color["bg--transparent"],
             ].join(" ")}
-          />
+          >
+            <Modal
+              authenticated={data}
+              criteria={toggleState.menu}
+              {...menuModal.args}
+            />
+          </div>
         </div>
         <div className={[shape["only__sm"]].join(" ")}>
           <div
