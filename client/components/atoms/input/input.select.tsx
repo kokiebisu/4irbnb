@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 /** styles **/
 import shape from "../../../styles/shape.module.scss";
@@ -8,9 +8,6 @@ import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import input from "./input.module.scss";
 import { styleContainer } from "./styling.select";
-
-/** props */
-import { SelectInputProps } from "./props";
 
 /** vectors */
 import { ChevronDown, ChevronTop } from "../../../public/svg/regular";
@@ -28,7 +25,14 @@ import { renderShape } from "./logic/logic.select";
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const SelectInput: React.FC<SelectInputProps> = ({
+export const SelectInput: React.FC<{
+  handleChange?: () => void;
+  value?: string;
+  direction?: string;
+  errors?: boolean;
+  disabled?: boolean;
+  inputType?: string;
+}> = ({
   handleChange,
   value,
   direction,
