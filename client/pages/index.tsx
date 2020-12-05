@@ -108,18 +108,25 @@ const LandingPage = ({ currentUser }) => {
           </div>
         )}
         <Footer spread />
-        <Modal
-          {...privacy.args}
-          extendsTo={[
+        <div
+          style={{ position: "fixed", width: "100%" }}
+          className={[
             layout["fb--0"],
             layout["z--9999"],
-            layout["block"],
-            index["modal__privacy"],
-            index["m__privacy"],
+            layout["flex"],
+            layout["justify-center"],
           ].join(" ")}
-          criteria={toggleState.privacy}
-          animate="slideup"
-        />
+        >
+          <div className={[index["m__privacy"]].join(" ")}>
+            <Modal
+              {...privacy.args}
+              extendsTo={[index["modal__privacy"]].join(" ")}
+              criteria={toggleState.privacy}
+              animate="slideup"
+            />
+          </div>
+        </div>
+
         <AnimatePresence>
           {scrollPosition < pageHeight && (
             <motion.div
