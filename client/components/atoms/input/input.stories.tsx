@@ -108,3 +108,8 @@ checkbox.argTypes = {
     control: "boolean",
   },
 };
+
+export const textarea = InputStory.bind({});
+textarea.args = {
+  type: "textarea",
+};
