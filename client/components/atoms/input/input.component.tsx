@@ -13,6 +13,7 @@ import { AddressInput } from "./input.address";
 import { SelectInput } from "./input.select";
 import { RadioInput } from "./input.radio";
 import { CounterInput } from "./input.counter";
+import { CheckboxInput } from "./input.checkbox";
 
 /** props */
 import { InputProps } from "./props";
@@ -20,7 +21,6 @@ import { InputProps } from "./props";
 /** styles **/
 import shape from "../../../styles/shape.module.scss";
 import { TextInput } from "./input.text";
-import { CheckboxInput } from "./input.checkbox";
 
 /**
  * Bundles the input components

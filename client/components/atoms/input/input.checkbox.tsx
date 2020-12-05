@@ -13,13 +13,15 @@ import { CheckPlain } from "../../../public/svg/original";
 export const CheckboxInput: React.FC<{
   check?: () => void;
   checked?: boolean;
-}> = ({ check, checked = true }) => {
+  title?: string;
+  description?: string;
+}> = ({ check, checked = true, title = "Title here", description }) => {
   return (
-    <div className={[layout["flex"], layout["items-center"]].join(" ")}>
+    <div className={[layout["flex"]].join(" ")}>
       <div className={[space["m-r--16"]].join(" ")}>
         <div
           onClick={check}
-          style={{ height: 24, width: 24 }}
+          style={{ cursor: "pointer", height: 24, width: 24 }}
           className={`${[
             layout["flex"],
             layout["items-center"],
@@ -45,11 +47,11 @@ export const CheckboxInput: React.FC<{
       </div>
       <div className={[layout["relative"], layout["t--2"]].join(" ")}>
         <div>
-          <h4>Title here</h4>
+          <h4>{title}</h4>
         </div>
         <div>
           <h4 className={[font["size--14"], color["c--gray__0"]].join(" ")}>
-            Description here
+            {description}
           </h4>
         </div>
       </div>
