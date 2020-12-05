@@ -1,9 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-/**
- * Styles
- */
+/** styles */
 import shape from "../../../styles/shape.module.scss";
 import color from "../../../styles/color.module.scss";
 import font from "../../../styles/font.module.scss";
@@ -11,32 +9,39 @@ import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 import modal from "./modal.module.scss";
 
-/**
- * Components
- */
+/** components */
 import { Button } from "../../../components/atoms/button/button.component";
 
-/**
- * Vectors
- */
+/** vectors */
 import { Lock } from "../../../public/svg/original";
 
-/**
- * Props
- */
+/** props */
 import { PrivacyModalProps } from "./props";
+
+/** contexts */
+import { useToggleDispatch } from "../../../context/toggle";
+
+/** stories */
+import { privacy } from "../../atoms/button/button.stories";
 
 /**
  * Renders the privacy modal
  */
 export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
+  const toggleDispatch = useToggleDispatch();
+
+  const handleSave = () => {
+    // add cookie
+    return toggleDispatch({ type: "toggle_privacy" });
+  };
+
+  const handleSettings = () => {
+    // open settings
+    return toggleDispatch({ type: "toggle_privacy" });
+  };
+
   return (
-    <motion.div
-      exit={{ opacity: 0 }}
-      initial={{ y: 25 }}
-      animate={{ y: 0 }}
-      data-testid="modal"
-    >
+    <div>
       <div
         className={[
           space["p-t--28"],
@@ -45,7 +50,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
           space["p-r--25"],
           shape["br--8"],
           shape["shadow--lg"],
-          color["bg--white__0"],
+          color["bg--white"],
           modal["flex__privacy--content"],
         ].join(" ")}
       >
@@ -94,7 +99,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
               modal["m-r--privacy"],
             ].join(" ")}
           >
-            <Button title="Save" type="privacy" />
+            <Button {...privacy.args} title="Save" onPress={handleSave} />
           </motion.div>
           <motion.div
             className={[
@@ -104,10 +109,15 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
               space["m-r--0"],
             ].join(" ")}
           >
-            <Button title="Cookie Preferences" type="privacy" inverse />
+            <Button
+              {...privacy.args}
+              title="Cookie Preferences"
+              inverse
+              onPress={handleSettings}
+            />
           </motion.div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };

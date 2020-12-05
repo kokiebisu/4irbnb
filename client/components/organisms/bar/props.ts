@@ -5,6 +5,10 @@ export interface PaginateBarProps {
 
 export interface CovidNoticeProps {}
 
+export interface ProgressBarProps {
+  percentage?: number;
+}
+
 export interface BarProps {
   type?: string;
   [x: string]: any;

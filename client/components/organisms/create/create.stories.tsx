@@ -1,12 +1,24 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Create } from "./create.component";
+
+/** props */
 import { CreateProps } from "./props";
+
+/** contexts */
+import { StayProvider } from "../../../context/stay";
 
 export default {
   title: "Design System/Organisms/Create",
   component: Create,
   argTypes: { onPress: { action: "clicked" } },
+  decorators: [
+    (Story) => (
+      <StayProvider>
+        <Story />
+      </StayProvider>
+    ),
+  ],
 } as Meta;
 
 const CreateStories: Story<CreateProps> = (args) => <Create {...args} />;
@@ -16,7 +28,12 @@ getStarted.args = {
   type: "getstarted",
 };
 
-export const kind = CreateStories.bind({});
-kind.args = {
-  type: "kind",
+export const room = CreateStories.bind({});
+room.args = {
+  type: "room",
+};
+
+export const location = CreateStories.bind({});
+location.args = {
+  type: "location",
 };

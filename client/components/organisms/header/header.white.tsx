@@ -1,27 +1,34 @@
 import React from "react";
 import Link from "next/link";
 
-/** Styles */
+/** styles */
 import shape from "../../../styles/shape.module.scss";
 import space from "../../../styles/space.module.scss";
 import styles from "../../../styles/index.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/** Components */
+/** components */
 import { menu as menuModal } from "../../organisms/modal/modal.stories";
 import { Modal } from "../modal/modal.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/** Contexts */
-import { useToggleState } from "../../../context/toggle";
+/** contexts */
+import { useToggleDispatch, useToggleState } from "../../../context/toggle";
 
-/** Vectors */
+/** vectors */
 import { NameLogo, NoNameLogo } from "../../../public/svg/logo";
 import { ChevronLeft } from "../../../public/svg/regular";
 
-/** Props */
+/** props */
 import { WhiteHeaderProps } from "./props";
+
+/** stories */
+import {
+  host as hostButton,
+  menu as menuButton,
+  globe as globeButton,
+} from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the white header
@@ -31,13 +38,13 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
   spread = false,
   data,
 }) => {
-  console.log("white header data", data);
-  let toggleState = useToggleState();
+  const toggleState = useToggleState();
+  const toggleDispatch = useToggleDispatch();
   return (
     <header
       className={`${[
         space["p-v--16"],
-        color["bg--white__0"],
+        color["bg--white"],
         shape["shadow--sm"],
       ].join(" ")}`}
     >
@@ -72,38 +79,44 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
               </a>
             </Link>
           </div>
-          <div>
+          {/* <div>
             <Button type="searchbar" mini />
-          </div>
+          </div> */}
           <div className={[layout["flex"], layout["items-center"]].join(" ")}>
-            <div className={styles["searchbar__host"]}>
-              <Button type="host" to="/" />
-            </div>
             <div
-              className={[
-                space["m-t--0"],
-                space["m-r--12"],
-                space["m-b--0"],
-                space["m-l--8"],
-              ].join(" ")}
+              className={[styles["searchbar__host"], space["m-h--4"]].join(" ")}
             >
-              <Button type="globe" />
+              <Button {...hostButton.args} animate />
             </div>
-            <div>
-              <Button type="menu" authenticated={data} />
+            <div className={[space["m-h--4"]].join(" ")}>
+              <Button
+                {...globeButton.args}
+                onPress={() => toggleDispatch({ type: "toggle_language" })}
+              />
+            </div>
+            <div className={[space["m-l--4"]].join(" ")}>
+              <Button
+                {...menuButton.args}
+                authenticated={data}
+                inverse
+                onPress={() => toggleDispatch({ type: "toggle_menu" })}
+              />
             </div>
           </div>
-          <Modal
-            authenticated={data}
-            criteria={toggleState.menu}
-            {...menuModal.args}
-            extendsTo={[
+          <div
+            className={[
               layout["absolute"],
-              layout["t--55"],
               layout["r--0"],
+              layout["t--55"],
               color["bg--transparent"],
             ].join(" ")}
-          />
+          >
+            <Modal
+              authenticated={data}
+              criteria={toggleState.menu}
+              {...menuModal.args}
+            />
+          </div>
         </div>
         <div className={[shape["only__sm"]].join(" ")}>
           <div

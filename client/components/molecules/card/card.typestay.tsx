@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-/** Styles */
+/** styles **/
 import shape from "../../../styles/shape.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
@@ -9,7 +9,7 @@ import font from "../../../styles/font.module.scss";
 import cardStyles from "./card.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/** Props */
+/** props */
 import { TypeStayCardProps } from "./props";
 
 /**

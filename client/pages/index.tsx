@@ -4,23 +4,23 @@ import { AnimatePresence, motion } from "framer-motion";
 /* contents */
 import { categories, anywhere } from "../content";
 
-/* context */
+/** contexts */
 import { useToggleState } from "../context/toggle";
 
-/* styles */
+/** styles */
 import index from "../styles/index.module.scss";
 import layout from "../styles/layout.module.scss";
 import space from "../styles/space.module.scss";
 import color from "../styles/color.module.scss";
 import shape from "../styles/shape.module.scss";
 
-/* data */
+/** data */
 import { nearby } from "../data/stays";
 
-/* layout */
+/** layout */
 import { Layout } from "../layout/layout.component";
 
-/* components */
+/** components */
 import { Animation } from "../components/animation/animation.component";
 import { Modal } from "../components/organisms/modal/modal.component";
 import { Section } from "../components/organisms/section/section.component";
@@ -29,15 +29,20 @@ import { MenuBar } from "../components/organisms/menubar/menubar.component";
 import { Banner } from "../components/organisms/banner/banner.component";
 import { Bar } from "components/organisms/bar/bar.component";
 
-/* hooks */
+/** hooks */
 import { useHandleScroll } from "../hooks/useHandleScroll";
 import { useHandleDocumentResize } from "../hooks/useHandleDocumentResize";
 import { useTimeout } from "../hooks/useTimeout";
+import { useTabTitle } from "../hooks/useTabTitle";
 
-/* helper */
+/** helper */
 import { APIClient } from "../api/client";
 
+/** stories */
+import { auth, privacy } from "../components/organisms/modal/modal.stories";
+
 const LandingPage = ({ currentUser }) => {
+  useTabTitle("Vacation Rentals, Homes, Experiences & Places - Airbnb");
   const loading = useTimeout(3000);
   const toggleState = useToggleState();
   const scrollPosition = useHandleScroll();
@@ -89,14 +94,6 @@ const LandingPage = ({ currentUser }) => {
                 items={categories}
               />
             </Layout>
-            <Layout
-              sectionType="landing"
-              spread
-              type="section"
-              title="Destinations for future trips"
-            >
-              <Section type="destinations" sectionType="landing" />
-            </Layout>
           </>
         ) : (
           <div
@@ -112,6 +109,7 @@ const LandingPage = ({ currentUser }) => {
         )}
         <Footer spread />
         <Modal
+          {...privacy.args}
           extendsTo={[
             layout["fb--0"],
             layout["z--9999"],
@@ -119,8 +117,8 @@ const LandingPage = ({ currentUser }) => {
             index["modal__privacy"],
             index["m__privacy"],
           ].join(" ")}
-          type="privacy"
           criteria={toggleState.privacy}
+          animate="slideup"
         />
         <AnimatePresence>
           {scrollPosition < pageHeight && (
@@ -152,12 +150,20 @@ const LandingPage = ({ currentUser }) => {
               backgroundColor: "rgba(0, 0, 0, 0.6)",
             }}
           >
-            <Modal
-              extendsTo={[index["modal__auth"], shape["h--100v"], index].join(
-                " "
-              )}
-              type="auth"
-            />
+            <div
+              className={[
+                layout["flex"],
+                layout["justify-center"],
+                layout["items-center"],
+                shape["h--100v"],
+              ].join(" ")}
+            >
+              <Modal
+                {...auth.args}
+                animate="slideup"
+                criteria={toggleState.auth}
+              />
+            </div>
           </div>
         )}
       </div>

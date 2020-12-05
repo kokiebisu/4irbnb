@@ -1,4 +1,4 @@
-/** Components */
+/** components */
 import { Options as GuestOptions } from "./logic.guest";
 import {
   Options as PlaceOptions,
@@ -28,6 +28,8 @@ import {
   Options as BoutiqueHotelOptions,
   Properties as BoutiqueHotelProperties,
 } from "./logic.boutique";
+import { Options as BedroomsOptions } from "./logic.bedrooms";
+import { Options as CountryOptions } from "./logic.country";
 
 export const properties = {
   place: PlaceProperties,
@@ -60,4 +62,6 @@ export const inputTypes = {
     default: "Select property type",
     options: BoutiqueHotelOptions,
   },
+  bedrooms: { options: BedroomsOptions },
+  country: { options: CountryOptions },
 };

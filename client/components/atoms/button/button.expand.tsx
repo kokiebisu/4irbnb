@@ -1,14 +1,14 @@
 import React from "react";
 import Link from "next/link";
 
-/** Styles */
+/** styles */
 import font from "../../../styles/font.module.scss";
 import layout from "../../../styles/layout.module.scss";
 
-/** Vectors */
+/** vectors */
 import { ChevronRight } from "../../../public/svg/regular";
 
-/** Props */
+/** props */
 import { ExpandButtonProps } from "./props";
 
 /**

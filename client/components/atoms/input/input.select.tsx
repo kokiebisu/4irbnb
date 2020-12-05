@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-/** Styles */
+/** styles **/
 import shape from "../../../styles/shape.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
@@ -9,10 +9,10 @@ import font from "../../../styles/font.module.scss";
 import input from "./input.module.scss";
 import { styleContainer } from "./styling.select";
 
-/** Props */
+/** props */
 import { SelectInputProps } from "./props";
 
-/** Vectors */
+/** vectors */
 import { ChevronDown, ChevronTop } from "../../../public/svg/regular";
 
 /** Options */
@@ -37,7 +37,6 @@ export const SelectInput: React.FC<SelectInputProps> = ({
   inputType = "Bed and breakfast",
 }): JSX.Element => {
   const [fieldActive, setFieldActive] = useState(false);
-
   return (
     <div
       className={`${[
@@ -71,7 +70,6 @@ export const SelectInput: React.FC<SelectInputProps> = ({
           disabled={disabled}
           onChange={handleChange}
           value={value}
-          defaultValue={inputTypes[inputType].default || "Select"}
           onFocus={() => setFieldActive(true)}
           onBlur={() => setFieldActive(false)}
           className={`${[
@@ -86,9 +84,11 @@ export const SelectInput: React.FC<SelectInputProps> = ({
             font["weight--300"],
           ].join(" ")}`}
         >
-          <option disabled value={inputTypes[inputType].default}>
-            {inputTypes[inputType].default}
-          </option>
+          {inputTypes[inputType].default && (
+            <option disabled value={inputTypes[inputType].default}>
+              {inputTypes[inputType].default}
+            </option>
+          )}
           {inputTypes[inputType].options}
         </select>
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>

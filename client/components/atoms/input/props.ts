@@ -28,6 +28,13 @@ export interface AddressInputProps {
   errors?: boolean;
 }
 
+export interface TextInputProps {
+  handleChange?: any;
+  value?: string;
+  direction?: string;
+  errors?: boolean;
+}
+
 export interface PhoneNumberInputProps {
   handleChange?: any;
   value?: string;
@@ -66,10 +73,10 @@ export interface GuestsInputProps {
 }
 
 export interface PlaceInputProps {
-  handleChange?: any;
   value?: string;
   direction?: string;
   errors?: boolean;
+  changePlace?: (type: string) => void;
 }
 
 export interface SelectInputProps {
@@ -82,7 +89,20 @@ export interface SelectInputProps {
 }
 
 export interface RadioInputProps {
-  content?: string;
+  title?: string;
+  subtitle?: string;
+  selected?: boolean;
+  select?: (params: string) => void;
+  value?: string;
+}
+
+export interface CounterInputProps {
+  title?: string;
+  value?: number;
+  add?: () => void;
+  subtract?: () => void;
+  min?: number;
+  max?: number;
 }
 
 export interface InputProps {

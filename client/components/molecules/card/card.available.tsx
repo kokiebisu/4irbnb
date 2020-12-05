@@ -1,17 +1,20 @@
 import React from "react";
 
-/** Components */
+/** components */
 import { Button } from "../../atoms/button/button.component";
 
-/** Props */
+/** props */
 import { AvailableCardProps } from "./props";
 
-/** Styles */
+/** styles **/
 import color from "../../../styles/color.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
+
+/** stories */
+import { primary } from "../../atoms/button/button.stories";
 
 /**
  * Renders the available card component
@@ -52,7 +55,7 @@ export const AvailableCard: React.FC<AvailableCardProps> = ({
         <span className={[font["size--15"]].join(" ")}> /person</span>
       </div>
       <div className={[layout["inline-block"]].join(" ")}>
-        <Button size="sm" type="primary" title="Choose" />
+        <Button {...primary.args} size="sm" title="Choose" />
       </div>
     </div>
   );

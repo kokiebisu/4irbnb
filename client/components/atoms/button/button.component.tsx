@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-/** Components */
+/** components */
 import { AuthButton } from "./button.auth";
 import { ButtonProps } from "./props";
 import { GlobeButton } from "./button.globe";
@@ -19,6 +19,11 @@ import { OptionButton } from "./button.option";
 import { UnderlineButton } from "./button.underline";
 import { FilterButton } from "./button.filter";
 import { ModalButton } from "./button.modal";
+import { BackButton } from "./button.back";
+
+/** styles **/
+import layout from "../../../styles/layout.module.scss";
+import shape from "../../../styles/shape.module.scss";
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -34,9 +39,13 @@ export const Button: React.FC<ButtonProps> = ({
   extendsTo,
   type,
   children,
+  onPress,
+  to,
+  block,
+  animate,
   ...props
 }) => {
-  const { onPress, to } = props;
+  const { disable } = props;
   const types: mapProps = {
     auth: <AuthButton {...props} />,
     globe: <GlobeButton {...props} />,
@@ -46,18 +55,15 @@ export const Button: React.FC<ButtonProps> = ({
     border: <BorderButton {...props} />,
     banner: <BannerButton {...props} />,
     primary: <PrimaryButton {...props} />,
-    searchbar: <SearchbarButton {...props} />,
+    // searchbar: <SearchbarButton {...props} />,
     paginate: <PaginateButton {...props} />,
-    expand: <ExpandButton {...props} />,
+    // expand: <ExpandButton {...props} />,
     option: <OptionButton {...props} />,
     underline: <UnderlineButton {...props} />,
     filter: <FilterButton {...props} />,
     modal: <ModalButton {...props} />,
+    back: <BackButton {...props} />,
   };
-
-  if (type) {
-    return types[type];
-  }
 
   if (to) {
     return (
@@ -67,7 +73,7 @@ export const Button: React.FC<ButtonProps> = ({
         data-testid="button"
       >
         <Link href={to}>
-          <a>{children}</a>
+          <a>{type ? types[type] : children}</a>
         </Link>
       </div>
     );
@@ -75,12 +81,20 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <motion.button
-      whileTap={{ scale: 0.98 }}
+      transition={{ duration: 0.1, ease: "easeInOut" }}
+      whileTap={{ scale: disable || !animate ? 1 : 0.995 }}
+      whileHover={{ scale: disable || !animate ? 1 : 1.005 }}
       data-testid="button"
-      className={extendsTo}
-      onClick={onPress}
+      className={`${extendsTo} ${
+        block
+          ? [layout["block"], shape["w--full"]].join(" ")
+          : layout["inline-block"]
+      }`}
+      onClick={!disable && onPress}
+      disabled={disable}
+      style={{ cursor: disable ? "default" : "pointer" }}
     >
-      {children}
+      {type ? types[type] : children}
     </motion.button>
   );
 };

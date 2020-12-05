@@ -32,7 +32,11 @@ const Properties: { name: string; description: string }[] = [
 ];
 
 const Options = Properties.map((option, index) => {
-  return <option value={option.name}>{option.name}</option>;
+  return (
+    <option key={index} value={option.name}>
+      {option.name}
+    </option>
+  );
 });
 
 export { Properties, Options };

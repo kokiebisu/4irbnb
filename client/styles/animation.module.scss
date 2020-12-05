@@ -12,7 +12,7 @@ $pixels: (
 
 $colors: (
   white__transparent: "rgba(255, 255, 255, 0.2)",
-  white__0: #ffffff,
+  white: #ffffff,
   white__1: #f7f7f7,
   white__2: #dddddd,
   gray__0: #868686,
@@ -24,8 +24,10 @@ $colors: (
 
 @each $name, $value in $pixels {
   .hover-shadow--#{$name} {
-    box-shadow: rgba(0, 0, 0, 0.18) 0px #{$value}px #{$value * 2}px;
-    transition: 0.3s all;
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.18) 0px #{$value}px #{$value * 2}px;
+      transition: 0.3s all;
+    }
   }
 }
 
@@ -34,6 +36,13 @@ $colors: (
     &:hover {
       background-color: #{$value};
       transition: 0.4s background-color;
+    }
+  }
+
+  .hover-border--#{$color} {
+    &:hover {
+      border: 1px solid #{$value} !important;
+      transition: 0.4s border-color;
     }
   }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-/** Styles */
+/** styles */
 import shape from "../../../styles/shape.module.scss";
 import color from "../../../styles/color.module.scss";
 import animation from "../../../styles/animation.module.scss";
@@ -9,10 +9,10 @@ import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 
-/** Vectors */
+/** vectors */
 import { MagnifyGlass } from "../../../public/svg/original";
 
-/** Props */
+/** props */
 import { SearchbarButtonProps } from "./props";
 
 /**
@@ -33,7 +33,7 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({
           data-testid="button"
           className={[
             shape["br--25"],
-            color["bg--white__0"],
+            color["bg--white"],
             color["b--white__2"],
             animation["hover-shadow--sm"],
           ].join(" ")}
@@ -89,7 +89,7 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({
           className={[
             shape["w--full"],
             shape["br--25"],
-            color["bg--white__0"],
+            color["bg--white"],
             color["b--white__2"],
             animation["hover-shadow--sm"],
             shape["shadow--sm"],

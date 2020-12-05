@@ -1,6 +1,6 @@
 import React from "react";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
@@ -8,10 +8,10 @@ import space from "../../../styles/space.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import styles from "./card.module.scss";
 
-/** Vectors */
+/** vectors */
 import { Heart, Star } from "../../../public/svg/original";
 
-/** Props */
+/** props */
 import { VerticalCardProps } from "./props";
 
 /**
@@ -49,7 +49,7 @@ export const VerticalCard: React.FC<VerticalCardProps> = ({
             className={
               card.superhost
                 ? [].join(" ")
-                : [color["c--white__0"], shape["hidden"]].join(" ")
+                : [color["c--white"], shape["hidden"]].join(" ")
             }
           >
             <div
@@ -75,8 +75,8 @@ export const VerticalCard: React.FC<VerticalCardProps> = ({
           <div
             className={
               save
-                ? [color["c--white__0"]].join(" ")
-                : [color["c--white__0"], shape["hidden"]].join(" ")
+                ? [color["c--white"]].join(" ")
+                : [color["c--white"], shape["hidden"]].join(" ")
             }
           >
             <Heart

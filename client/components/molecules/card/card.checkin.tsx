@@ -1,9 +1,9 @@
 import React, { useReducer } from "react";
 
-/** Props */
+/** props */
 import { CheckInCardProps } from "./props";
 
-/** Styles */
+/** styles **/
 import card from "./card.module.scss";
 import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
@@ -239,7 +239,7 @@ export const CheckInCard: React.FC<CheckInCardProps> = () => {
                 font["size--15"],
                 shape["br--5"],
                 color["bg--primary"],
-                color["c--white__0"],
+                color["c--white"],
                 font["weight--300"],
               ].join(" ")}
             >
