@@ -13,6 +13,7 @@ import { AddressInput } from "./input.address";
 import { SelectInput } from "./input.select";
 import { RadioInput } from "./input.radio";
 import { CounterInput } from "./input.counter";
+import { CheckboxInput } from "./input.checkbox";
 
 /** props */
 import { InputProps } from "./props";
@@ -40,6 +41,7 @@ export const Input: React.FC<InputProps> = ({ type, spread, ...props }) => {
     radio: <RadioInput {...props} />,
     counter: <CounterInput {...props} />,
     text: <TextInput {...props} />,
+    checkbox: <CheckboxInput {...props} />,
   };
 
   return (

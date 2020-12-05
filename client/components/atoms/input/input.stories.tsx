@@ -98,3 +98,13 @@ export const text = InputStory.bind({});
 text.args = {
   type: "text",
 };
+
+export const checkbox = InputStory.bind({});
+checkbox.args = {
+  type: "checkbox",
+};
+checkbox.argTypes = {
+  checked: {
+    control: "boolean",
+  },
+};
