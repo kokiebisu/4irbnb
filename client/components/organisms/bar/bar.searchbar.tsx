@@ -9,7 +9,7 @@ import color from "../../../styles/color.module.scss";
 import font from "../../../styles/font.module.scss";
 
 /** vectors */
-import { MagnifyGlass } from "public/svg/original";
+import { MagnifyGlass } from "../../../public/svg/original";
 
 export const SearchbarBar: React.FC<{}> = () => {
   return (
