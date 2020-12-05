@@ -1,9 +1,11 @@
 import React from "react";
+import { AmenitiesCreate } from "./create.amenities";
 import { BathroomsCreate } from "./create.bathrooms";
 import { BedroomsCreate } from "./create.bedrooms";
 import { GetStartedCreate } from "./create.getstarted";
 import { LocationCreate } from "./create.location";
 import { RoomCreate } from "./create.room";
+import { SpacesCreate } from "./create.spaces";
 import { CreateProps } from "./props";
 
 export const Create: React.FC<CreateProps> = ({
@@ -16,6 +18,8 @@ export const Create: React.FC<CreateProps> = ({
     bedrooms: <BedroomsCreate {...props} />,
     bathrooms: <BathroomsCreate {...props} />,
     location: <LocationCreate {...props} />,
+    amenities: <AmenitiesCreate {...props} />,
+    spaces: <SpacesCreate {...props} />,
   };
   return types[type];
 };
