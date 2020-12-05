@@ -40,8 +40,9 @@ export const TextAreaInput: React.FC<{
       ></textarea>
 
       <div
-        style={{ bottom: 15, right: 15 }}
-        className={[layout["absolute"]].join(" ")}
+        className={[layout["absolute"], layout["b--15"], layout["r--15"]].join(
+          " "
+        )}
       >
         <h3 className={[font["size--12"], color["c--darkgreen__3"]].join(" ")}>
           {500 - value.length}
