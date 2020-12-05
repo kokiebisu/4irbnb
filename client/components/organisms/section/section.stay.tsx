@@ -1,26 +1,23 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
-/**
- * Styles
- */
-import layout from '../../../styles/layout.module.scss';
-import space from '../../../styles/space.module.scss';
-import font from '../../../styles/font.module.scss';
-import color from '../../../styles/color.module.scss';
-import styles from './section.module.scss';
-import sectionStyles from './section.module.scss';
-import section from './section.module.scss';
+/** styles **/
+import layout from "../../../styles/layout.module.scss";
+import space from "../../../styles/space.module.scss";
+import font from "../../../styles/font.module.scss";
+import color from "../../../styles/color.module.scss";
+import styles from "./section.module.scss";
+import sectionStyles from "./section.module.scss";
+import section from "./section.module.scss";
 
-/**
- * Components
- */
-import { Card } from '../../molecules/card/card.component';
-import { Button } from '../../../components/atoms/button/button.component';
+/** components */
+import { Card } from "../../molecules/card/card.component";
+import { Button } from "../../../components/atoms/button/button.component";
 
-/**
- * Props
- */
-import { StaySectionProps } from './props';
+/** props */
+import { StaySectionProps } from "./props";
+
+/** stories */
+import { paginate } from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the stay section
@@ -34,14 +31,14 @@ import { StaySectionProps } from './props';
  * @param {Object[]} items - Displaying items
  */
 export const StaySection: React.FC<StaySectionProps> = ({
-  title = 'Section Title',
-  description = 'Section Description',
+  title = "Section Title",
+  description = "Section Description",
   pagination = false,
-  showAll = { description: 'Show all cards', to: '/' },
-  carouselType = '',
+  showAll = { description: "Show all cards", to: "/" },
+  carouselType = "",
   save = false,
   isDescription = false,
-  fetchUrl = '',
+  fetchUrl = "",
   items = [
     undefined,
     undefined,
@@ -59,37 +56,39 @@ export const StaySection: React.FC<StaySectionProps> = ({
 
   const TypeStayCarousel = ({ data }) => {
     return (
-      <div className={[layout['relative'], space['p-v--10']].join(' ')}>
+      <div className={[layout["relative"], space["p-v--10"]].join(" ")}>
         <ul
-          className={[layout['hide-scrollbar']].join(' ')}
+          className={[layout["hide-scrollbar"]].join(" ")}
           style={{
             marginLeft: -5,
             marginRight: -5,
-            display: 'flex',
-            listStyle: 'none',
+            display: "flex",
+            listStyle: "none",
             padding: 0,
-            overflowX: 'auto',
-            overflowY: 'hidden',
-            minWidth: '100%',
-            scrollSnapType: 'x mandatory',
-            height: '100%',
-          }}>
+            overflowX: "auto",
+            overflowY: "hidden",
+            minWidth: "100%",
+            scrollSnapType: "x mandatory",
+            height: "100%",
+          }}
+        >
           {data.length &&
             data.map((item, index) => {
               return (
                 <li
                   key={index}
                   className={[
-                    sectionStyles['w__card'],
-                    sectionStyles['flex__card'],
-                  ].join(' ')}
+                    sectionStyles["w__card"],
+                    sectionStyles["flex__card"],
+                  ].join(" ")}
                   style={{
-                    scrollSnapAlign: 'start',
-                    borderLeftStyle: 'solid',
-                    borderLeftColor: 'transparent',
-                  }}>
+                    scrollSnapAlign: "start",
+                    borderLeftStyle: "solid",
+                    borderLeftColor: "transparent",
+                  }}
+                >
                   <Card
-                    type='typestay'
+                    type="typestay"
                     card={item && item.card}
                     to={item && item.to}
                   />
@@ -120,10 +119,10 @@ export const StaySection: React.FC<StaySectionProps> = ({
     };
 
     useLayoutEffect(() => {
-      window.addEventListener('resize', handleRef);
+      window.addEventListener("resize", handleRef);
       handleRef();
       return () => {
-        window.removeEventListener('resize', handleRef);
+        window.removeEventListener("resize", handleRef);
       };
     });
 
@@ -144,30 +143,33 @@ export const StaySection: React.FC<StaySectionProps> = ({
     };
 
     return (
-      <div style={{ overflowX: 'hidden' }}>
+      <div style={{ overflowX: "hidden" }}>
         <div
           ref={containerRef}
           className={[
-            layout['flex'],
-            layout['items-center'],
-            layout['justify-between'],
-          ].join(' ')}>
-          <div className={[space['m-v--16']].join(' ')}>
-            <h3 className={[font['size--20']].join(' ')}>{title}</h3>
+            layout["flex"],
+            layout["items-center"],
+            layout["justify-between"],
+          ].join(" ")}
+        >
+          <div className={[space["m-v--16"]].join(" ")}>
+            <h3 className={[font["size--20"]].join(" ")}>{title}</h3>
           </div>
-          <div className={[layout['flex'], layout['items-center']].join(' ')}>
-            <div className={[space['m-h--4']].join(' ')}>
+          <div className={[layout["flex"], layout["items-center"]].join(" ")}>
+            <div className={[space["m-h--4"]].join(" ")}>
               <Button
-                type='paginate'
-                direction='left'
+                {...paginate.args}
+                animate
+                direction="left"
                 onPress={previous}
                 disable={state.activeSlide === 0}
               />
             </div>
-            <div className={[space['m-h--4']].join(' ')}>
+            <div className={[space["m-h--4"]].join(" ")}>
               <Button
-                type='paginate'
-                direction='right'
+                {...paginate.args}
+                animate
+                direction="right"
                 onPress={next}
                 disable={state.activeSlide === Math.floor(items.length / 2) - 1}
               />
@@ -176,22 +178,25 @@ export const StaySection: React.FC<StaySectionProps> = ({
         </div>
         <div
           style={{
-            height: '100%',
+            height: "100%",
             width: width * (items.length / 2),
             transform: `translateX(-${state.translate}px)`,
             transition: `transform ease-out ${state.transition}s`,
-          }}>
-          <div style={{ display: 'flex' }}>
+          }}
+        >
+          <div style={{ display: "flex" }}>
             {items.map((item, index) => {
               return (
                 <div
                   style={{ width: width / (width > 1128 ? 3 : 2) }}
                   key={index}
-                  className={[section['w__nearby']].join(' ')}>
+                  className={[section["w__nearby"]].join(" ")}
+                >
                   <div
-                    className={[space['m-b--10'], space['m-r--16']].join(' ')}>
+                    className={[space["m-b--10"], space["m-r--16"]].join(" ")}
+                  >
                     <Card
-                      type='horizontal'
+                      type="horizontal"
                       card={item && item.card}
                       to={item && item.to}
                       save={save}
@@ -211,23 +216,25 @@ export const StaySection: React.FC<StaySectionProps> = ({
       <div>
         <div>
           <div
-            className={[layout['items-center'], layout['justify-between']].join(
-              ' '
-            )}>
+            className={[layout["items-center"], layout["justify-between"]].join(
+              " "
+            )}
+          >
             <div>
               <div>
                 <h2
                   className={[
-                    font['weight--500'],
-                    color['c--gray__4'],
-                    font['size--22'],
-                  ].join(' ')}>
+                    font["weight--500"],
+                    color["c--gray__4"],
+                    font["size--22"],
+                  ].join(" ")}
+                >
                   {title}
                 </h2>
               </div>
               {isDescription && (
                 <div>
-                  <p className={[font['weight--100']].join(' ')}>
+                  <p className={[font["weight--100"]].join(" ")}>
                     {description}
                   </p>
                 </div>
@@ -235,20 +242,21 @@ export const StaySection: React.FC<StaySectionProps> = ({
             </div>
             <div>
               {pagination && (
-                <div className={[layout['items-center']].join(' ')}>
-                  <div className={[space['m-r--6']].join(' ')}>
+                <div className={[layout["items-center"]].join(" ")}>
+                  <div className={[space["m-r--6"]].join(" ")}>
                     <p
-                      className={[font['weight--300'], font['size--14']].join(
-                        ' '
-                      )}>
+                      className={[font["weight--300"], font["size--14"]].join(
+                        " "
+                      )}
+                    >
                       1 / {items.length}
                     </p>
                   </div>
-                  <div className={[space['m-r--6']].join(' ')}>
-                    <Button type='paginate' direction='left' />
+                  <div className={[space["m-r--6"]].join(" ")}>
+                    <Button {...paginate.args} animate direction="left" />
                   </div>
                   <div>
-                    <Button type='paginate' direction='right' />
+                    <Button {...paginate.args} animate direction="right" />
                   </div>
                 </div>
               )}
@@ -256,11 +264,11 @@ export const StaySection: React.FC<StaySectionProps> = ({
           </div>
           {displayItems(carouselType, save)}
         </div>
-        <div className={[layout['relative']].join(' ')}>
+        <div className={[layout["relative"]].join(" ")}>
           {showAll && (
-            <div className={space['m-v--25']}>
+            <div className={space["m-v--25"]}>
               <Button
-                type='expand'
+                type="expand"
                 to={showAll.to}
                 title={showAll.description}
               />
@@ -276,25 +284,26 @@ export const StaySection: React.FC<StaySectionProps> = ({
     const evaluateNumber = (index) => {
       if (index > 5) {
         // should disappear below 1128px
-        return [sectionStyles['none__cards--lg']].join(' ');
+        return [sectionStyles["none__cards--lg"]].join(" ");
       } else if (index > 3) {
         // should disappear below 728px
-        return [sectionStyles['none__cards--sm']].join(' ');
+        return [sectionStyles["none__cards--sm"]].join(" ");
       }
       // doesn't disappear
-      return [].join(' ');
+      return [].join(" ");
     };
     return (
       <div style={{ paddingTop: 15, paddingBottom: 15 }}>
         <div
-          style={{ display: 'grid' }}
-          className={[styles['multiplerows']].join(' ')}>
+          style={{ display: "grid" }}
+          className={[styles["multiplerows"]].join(" ")}
+        >
           {displayingData.length &&
             displayingData.map((item, index) => {
               return (
                 <div key={index} className={evaluateNumber(index)}>
                   <Card
-                    type='horizontal'
+                    type="horizontal"
                     card={item && item.card}
                     to={item && item.to}
                     save={save}
@@ -309,7 +318,7 @@ export const StaySection: React.FC<StaySectionProps> = ({
 
   const displayItems = (carouselType, save) => {
     switch (carouselType) {
-      case 'stayTypes':
+      case "stayTypes":
         return <TypeStayCarousel data={data} />;
       default:
         return <MultipleRows data={data} save={save} />;

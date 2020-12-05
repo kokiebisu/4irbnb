@@ -1,7 +1,12 @@
 import React from "react";
+
+/** Layouts */
 import { SectionLayout } from "./section/layout.section";
+import { InputLayout } from "./layout.input";
+
+/** props */
 import { LayoutProps } from "./props";
-import { OnlineHostLayout } from "./section/layout.onlinehost";
+import { CreateLayout } from "./layout.create";
 
 export const Layout: React.FC<LayoutProps> = ({
   extendsTo,
@@ -10,6 +15,8 @@ export const Layout: React.FC<LayoutProps> = ({
 }) => {
   const types = {
     section: <SectionLayout {...props} />,
+    input: <InputLayout {...props} />,
+    create: <CreateLayout {...props} />,
   };
 
   return (

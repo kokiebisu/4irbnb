@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-/** Components */
+/** components */
 import { CategoryCard } from "./card.category";
 import { HorizontalCard } from "./card.horizontal";
 import { VerticalCard } from "./card.vertical";

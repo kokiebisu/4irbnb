@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
 
-/** Components */
-import { DetailsHeader } from './header.details';
-import { ExperiencesHeader } from './header.experiences';
-import { HomesHeader } from './header.homes';
-import { OnlineHostHeader } from './header.onlinehost';
-import { StayHeader } from './header.stay';
-import { TransparentHeader } from './header.transparent';
-import { WhiteHeader } from './header.white';
+/** components */
+import { DetailsHeader } from "./header.details";
+import { ExperiencesHeader } from "./header.experiences";
+import { HomesHeader } from "./header.homes";
+import { OnlineHostHeader } from "./header.onlinehost";
+import { StayHeader } from "./header.stay";
+import { TransparentHeader } from "./header.transparent";
+import { WhiteHeader } from "./header.white";
 
-/** Props */
-import { HeaderProps } from './props';
+/** props */
+import { HeaderProps } from "./props";
 
 interface mapProps {
   [key: string]: JSX.Element;

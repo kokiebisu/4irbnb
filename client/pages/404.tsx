@@ -4,20 +4,23 @@ import Link from "next/link";
 /** Component */
 import { Header } from "../components/organisms/header/header.component";
 
-/** Styles */
+/** styles */
 import layout from "../styles/layout.module.scss";
 import font from "../styles/font.module.scss";
 import color from "../styles/color.module.scss";
-import shape from "../styles/shape.module.scss";
 import space from "../styles/space.module.scss";
 import responsive from "../styles/responsive.module.scss";
 
+import { useTabTitle } from "../hooks/useTabTitle";
+
 // pages/404.js
 const ErrorPage = () => {
+  useTabTitle("Page not found - Airbnb");
   const links = [
     { name: "Home", url: "/" },
     { name: "Hosting on Airbnb", url: "/d/onlinehost" },
   ];
+
   return (
     <div>
       <div>

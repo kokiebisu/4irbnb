@@ -1,23 +1,17 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-/**
- * Context
- */
+/** contexts */
 import { useToggleState } from "context/toggle";
 
-/**
- * Components
- */
+/** components */
 import { Header } from "../../components/organisms/header/header.component";
 import { Footer } from "../../components/organisms/footer/footer.component";
 import { Section } from "../../components/organisms/section/section.component";
 import { Card } from "../../components/molecules/card/card.component";
 import { Modal } from "../../components/organisms/modal/modal.component";
 
-/**
- * Styles
- */
+/** styles */
 import responsive from "../../styles/responsive.module.scss";
 import layout from "../../styles/layout.module.scss";
 import details from "../../styles/details.module.scss";
@@ -26,10 +20,11 @@ import color from "../../styles/color.module.scss";
 import shape from "../../styles/shape.module.scss";
 import space from "../../styles/space.module.scss";
 
-/**
- * Hooks
- */
+/** hooks */
 import { useHandleScroll } from "hooks/useHandleScroll";
+
+/** stories */
+import { menu } from "../../components/organisms/modal/modal.stories";
 
 /**
  * Render the component for path /rooms/[id]
@@ -53,7 +48,7 @@ const id: () => string | JSX.Element = () => {
               style={{
                 position: "fixed",
                 top: 0,
-                zIndex: 99999,
+                zIndex: 5000,
                 width: "100%",
               }}
             >
@@ -159,13 +154,13 @@ const id: () => string | JSX.Element = () => {
           }}
         >
           <Modal
+            {...menu.args}
             extendsTo={[
               layout["flex"],
               layout["justify-center"],
               layout["items-center"],
               shape["h--100v"],
             ].join(" ")}
-            type="auth"
           />
         </div>
       )}

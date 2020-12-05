@@ -1,8 +1,9 @@
+$breakpoint--xs: 665px;
 $breakpoint--sm: 728px;
 $breakpoint--md: 1028px;
 $breakpoint--lg: 1326px;
 
-$breakpoints: (sm, md, lg);
+$breakpoints: (xs, sm, md, lg);
 
 $displays: (
   b: block,
@@ -12,11 +13,15 @@ $displays: (
 );
 
 $percentages: (
-  50: percentage(50),
-  55: percentage(55),
+  50: percentage(0.5),
+  55: percentage(0.55),
 );
 @mixin respond-to($media) {
-  @if $media == sm {
+  @if $media == xs {
+    @media only screen and (min-width: $breakpoint--xs) {
+      @content;
+    }
+  } @else if $media == sm {
     @media only screen and (min-width: $breakpoint--sm) {
       @content;
     }
@@ -50,6 +55,22 @@ $percentages: (
 
       @include respond-to(#{$breakpoint}) {
         width: 100%;
+      }
+    }
+
+    .w100p_to_#{$percentage_name}--#{$breakpoint} {
+      width: 100%;
+
+      @include respond-to(#{$breakpoint}) {
+        width: #{$percentage_value};
+      }
+    }
+
+    .maxw100p_to_#{$percentage_name}--#{$breakpoint} {
+      max-width: 100%;
+
+      @include respond-to(#{$breakpoint}) {
+        max-width: #{$percentage_value};
       }
     }
   }

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-/** Props */
+/** props */
 import { ReviewCardProps } from "./props";
 
-/** Styles */
+/** styles **/
 import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import color from "../../../styles/color.module.scss";

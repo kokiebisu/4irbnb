@@ -1,23 +1,23 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 
-/**
- * Styles
- */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 import section from "./section.module.scss";
 
-/**
- * Components
- */
+/** components */
 import { Card } from "../../molecules/card/card.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/**
- * Props
- */
+/** props */
 import { AvailableSectionProps } from "./props";
+
+/** stories */
+import {
+  border,
+  paginate,
+} from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the available section
@@ -132,7 +132,8 @@ export const AvailableSection: React.FC<AvailableSectionProps> = ({
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div className={[space["m-h--4"]].join(" ")}>
             <Button
-              type="paginate"
+              {...paginate.args}
+              animate
               direction="left"
               onPress={previous}
               disable={state.activeSlide === 0}
@@ -140,7 +141,8 @@ export const AvailableSection: React.FC<AvailableSectionProps> = ({
           </div>
           <div className={[space["m-h--4"]].join(" ")}>
             <Button
-              type="paginate"
+              {...paginate.args}
+              animate
               direction="right"
               onPress={next}
               disable={
@@ -183,7 +185,7 @@ export const AvailableSection: React.FC<AvailableSectionProps> = ({
         </div>
       </div>
       <div className={[space["m-t--32"]].join(" ")}>
-        <Button type="border" title="See more dates" />
+        <Button {...border.args} title="See more dates" />
       </div>
     </div>
   );

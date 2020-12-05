@@ -8,5 +8,9 @@ export const Properties = [
 ];
 
 export const Options = Properties.map((option, index) => {
-  return <option value={option}>{option}</option>;
+  return (
+    <option key={index} value={option}>
+      {option}
+    </option>
+  );
 });

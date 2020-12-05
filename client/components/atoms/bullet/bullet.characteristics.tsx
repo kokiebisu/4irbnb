@@ -1,12 +1,12 @@
 import React from "react";
 
-/** Styles */
+/** styles **/
 import color from "../../../styles/color.module.scss";
 import font from "../../../styles/font.module.scss";
 import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
 
-/** Vectors */
+/** vectors */
 import {
   Calendar,
   Devices,
@@ -19,7 +19,7 @@ import {
   Time,
 } from "../../../public/svg/original";
 
-/** Props */
+/** props */
 import { CharacteristicBulletProps } from "./props";
 
 /** Helpers */

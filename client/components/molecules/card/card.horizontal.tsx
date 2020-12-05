@@ -1,13 +1,13 @@
 import React from "react";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import space from "../../../styles/space.module.scss";
 import color from "../../../styles/color.module.scss";
 import font from "../../../styles/font.module.scss";
 
-/** Vectors */
+/** vectors */
 import { Heart } from "../../../public/svg/original";
 
 /** Particles */
@@ -75,7 +75,7 @@ export const HorizontalCard: React.FC<Props> = ({
                   className={
                     superhost
                       ? [].join(" ")
-                      : [color["c--white__0"], shape["hidden"]].join(" ")
+                      : [color["c--white"], shape["hidden"]].join(" ")
                   }
                 >
                   <div
@@ -104,7 +104,7 @@ export const HorizontalCard: React.FC<Props> = ({
                     className={[
                       save
                         ? [].join(" ")
-                        : [color["c--white__0"], shape["hidden"]].join(" "),
+                        : [color["c--white"], shape["hidden"]].join(" "),
                     ].join(" ")}
                   >
                     <Heart

@@ -2,30 +2,32 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import Router from "next/router";
 
-/** Styles */
+/** styles **/
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/** Components */
+/** components */
 import { Input } from "../../atoms/input/input.component";
 import { Button } from "../../atoms/button/button.component";
 import { Bullet } from "../../atoms/bullet/bullet.component";
 
-/** Props */
+/** props */
 import { SignupTemplateProps } from "./props";
 
 /** Helper */
 import { validateSignup as validate } from "../../../helper/auth";
 
-/** Hooks */
+/** hooks */
 import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
 import { useFetch } from "../../../hooks/useFetch";
-import { useToggleDispatch } from "../../../context/toggle";
 
-/** Context */
+/** contexts */
 import { useAuthDispatch } from "../../../context/auth";
+
+/** stories */
+import { primary } from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the signup template component
@@ -261,7 +263,12 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
           </p>
         </div>
         <div className={[space["m-t--16"]].join(" ")}>
-          <Button type="primary" title="Agree and continue" loading={loading} />
+          <Button
+            {...primary.args}
+            title="Agree and continue"
+            loading={loading}
+            block
+          />
         </div>
       </div>
     </form>

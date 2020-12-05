@@ -1,35 +1,28 @@
 import React, { useRef } from "react";
 
-/**
- * Props
- */
+/** props */
 import { AlsoSectionProps } from "./props";
 
-/**
- * Components
- */
+/** components */
 import { Card } from "../../molecules/card/card.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/**
- * Styles
- */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import space from "../../../styles/space.module.scss";
 import section from "./section.module.scss";
 
-/**
- * Helpers
- */
+/** Helpers */
 import * as Helpers from "../../../helper/array";
 
-/**
- * Content
- */
+/** Contents */
 import { nearbyPic } from "../../../content";
 import { useSlider } from "../../../hooks/useSlider";
 import { useHandleContainerWidthResize } from "../../../hooks/useHandleContainerWidthResize";
+
+/** stories */
+import { paginate } from "../../../components/atoms/button/button.stories";
 
 /**
  * Renders the also section
@@ -69,7 +62,8 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div className={[space["m-h--4"]].join(" ")}>
             <Button
-              type="paginate"
+              {...paginate.args}
+              animate
               direction="left"
               onPress={previousSlide}
               disable={state.activeSlide === 0}
@@ -77,7 +71,8 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
           </div>
           <div className={[space["m-h--4"]].join(" ")}>
             <Button
-              type="paginate"
+              {...paginate.args}
+              animate
               direction="right"
               onPress={nextSlide}
               disable={

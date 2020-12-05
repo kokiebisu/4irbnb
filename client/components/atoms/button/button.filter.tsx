@@ -1,7 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
 
-/** Styles */
+/** styles **/
 import space from "../../../styles/space.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import color from "../../../styles/color.module.scss";
@@ -14,9 +13,7 @@ import button from "./button.module.scss";
  */
 export const FilterButton = ({ name = "Cancellation flexibility" }) => {
   return (
-    <motion.button
-      whileTap={{ scale: 0.98 }}
-      whileHover={{ scale: 1.02 }}
+    <div
       className={[
         button["hover__filter"],
         space["p-v--8"],
@@ -26,6 +23,6 @@ export const FilterButton = ({ name = "Cancellation flexibility" }) => {
       ].join(" ")}
     >
       <p className={[font["size--15"]].join(" ")}>{name}</p>
-    </motion.button>
+    </div>
   );
 };

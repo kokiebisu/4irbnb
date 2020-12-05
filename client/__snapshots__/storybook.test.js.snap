@@ -326,6 +326,24 @@ exports[`Storyshots Design System/Atoms/Bullet Priority 1`] = `
 </div>
 `;
 
+exports[`Storyshots Design System/Atoms/Bullet Question 1`] = `
+<div
+  data-testid="bullet"
+>
+  <div
+    className="p-v--16 b-b--white__1"
+  >
+    <div>
+      <h4
+        className="size--17 c--darkgreen__3"
+      >
+        Question here
+      </h4>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Design System/Atoms/Bullet Rating 1`] = `
 <div
   data-testid="bullet"
@@ -532,6 +550,36 @@ exports[`Storyshots Design System/Atoms/Button Auth 1`] = `
 </div>
 `;
 
+exports[`Storyshots Design System/Atoms/Button Back 1`] = `
+<button
+  className="flex items-center bg--transparent"
+>
+  <div>
+    <svg
+      stroke="#61AFB2"
+      strokeWidth={3}
+      viewBox="0 0 32 32"
+      width={20}
+    >
+      <g
+        fill="none"
+      >
+        <path
+          d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"
+        />
+      </g>
+    </svg>
+  </div>
+  <div>
+    <h4
+      className="size--15 c--darkgreen__3"
+    >
+      Back
+    </h4>
+  </div>
+</button>
+`;
+
 exports[`Storyshots Design System/Atoms/Button Banner 1`] = `
 <div
   style={
@@ -560,7 +608,7 @@ exports[`Storyshots Design System/Atoms/Button Border 1`] = `
   data-testid="button"
 >
   <a
-    className="inline-block text--center size--16 weight--500 br--6 p-t--12 p-b--12 p-l--22 p-r--22 no-wrap b--black"
+    className="inline-block text--center size--16 weight--500 br--6 p-t--10 p-b--10 p-l--18 p-r--18 no-wrap b-2--black"
     href="/"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -747,6 +795,7 @@ exports[`Storyshots Design System/Atoms/Button Primary 1`] = `
   <button
     className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
     data-testid="button"
+    disabled={false}
     style={Object {}}
   >
     Button
@@ -1409,6 +1458,113 @@ exports[`Storyshots Design System/Atoms/Input Birthdate 1`] = `
 </div>
 `;
 
+exports[`Storyshots Design System/Atoms/Input Counter 1`] = `
+<div
+  style={
+    Object {
+      "width": 300,
+    }
+  }
+>
+  <div
+    data-testid="input"
+  >
+    <div
+      className="flex items-center justify-between"
+    >
+      <div>
+        <h3
+          className="size--15"
+        >
+          Counter
+        </h3>
+      </div>
+      <div
+        className="flex items-center"
+      >
+        <div>
+          <button
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "white",
+                "border": "2px solid #0B8A8F",
+                "borderRadius": 9999,
+                "padding": 5,
+              }
+            }
+          >
+            <svg
+              stroke="#0B8A8F"
+              viewBox="0 0 24 24"
+              width={15}
+            >
+              <rect
+                height="2"
+                rx="1"
+                width="12"
+                x="6"
+                y="11"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          className="flex justify-center"
+          style={
+            Object {
+              "width": 50,
+            }
+          }
+        >
+          <h3
+            className="size--14"
+          >
+            0
+          </h3>
+        </div>
+        <div>
+          <button
+            disabled={false}
+            onClick={[Function]}
+            style={
+              Object {
+                "backgroundColor": "white",
+                "border": "2px solid #0B8A8F",
+                "borderRadius": 9999,
+                "padding": 5,
+              }
+            }
+          >
+            <svg
+              stroke="#0B8A8F"
+              viewBox="0 0 24 24"
+              width={15}
+            >
+              <rect
+                height="2"
+                rx="1"
+                width="12"
+                x="6"
+                y="11"
+              />
+              <rect
+                height="12"
+                rx="1"
+                width="2"
+                x="11"
+                y="6"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Design System/Atoms/Input Email 1`] = `
 <div
   style={
@@ -1767,9 +1923,7 @@ exports[`Storyshots Design System/Atoms/Input Place 1`] = `
                   "top": 15,
                 }
               }
-            >
-              Entire place
-            </label>
+            />
           </div>
           <div>
             <svg
@@ -1803,17 +1957,47 @@ exports[`Storyshots Design System/Atoms/Input Radio 1`] = `
   <div
     data-testid="input"
   >
-    <div>
-      <input
-        id="radio1"
-        name="radio"
-        type="radio"
-      />
-      <label
-        htmlFor="radio1"
+    <div
+      className="flex"
+    >
+      <div
+        className="m-r--12"
+        style={
+          Object {
+            "position": "relative",
+          }
+        }
       >
-        Foo
-      </label>
+        <button
+          className="hover-border--black"
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "white",
+              "border": "1px solid lightgray",
+              "borderRadius": "50%",
+              "height": 20,
+              "width": 20,
+            }
+          }
+        />
+      </div>
+      <div>
+        <div
+          className="m-b--8"
+        >
+          <p
+            className="size--14 c--black"
+          >
+            title here
+          </p>
+        </div>
+        <div>
+          <p
+            className="size--13 c--gray__0"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -1929,7 +2113,6 @@ exports[`Storyshots Design System/Atoms/Input Select 1`] = `
       >
         <select
           className="bg--transparent justify-between br--4 p--0 w--full block b--0 size--14 weight--300"
-          defaultValue="Select Property"
           disabled={false}
           id="Bed and breakfast"
           onBlur={[Function]}
@@ -1995,6 +2178,51 @@ exports[`Storyshots Design System/Atoms/Input Select 1`] = `
             </g>
           </svg>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Design System/Atoms/Input Text 1`] = `
+<div
+  style={
+    Object {
+      "width": 300,
+    }
+  }
+>
+  <div
+    data-testid="input"
+  >
+    <div
+      className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+    >
+      <div
+        style={
+          Object {
+            "alignItems": "center",
+            "display": "flex",
+            "height": "100%",
+            "position": "relative",
+            "width": "100%",
+          }
+        }
+      >
+        <input
+          autoFocus={true}
+          className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+          id="text"
+          name="text"
+          onBlur={[Function]}
+          onFocus={[Function]}
+          style={
+            Object {
+              "outline": "none",
+            }
+          }
+          type="text"
+        />
       </div>
     </div>
   </div>
@@ -2184,6 +2412,7 @@ exports[`Storyshots Design System/Molecules/Card Available 1`] = `
       <button
         className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 inline-block bg--primary"
         data-testid="button"
+        disabled={false}
         style={Object {}}
       >
         Choose
@@ -2414,351 +2643,359 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
 
 exports[`Storyshots Design System/Molecules/Card Horizontal 1`] = `
 <div
-  data-testid="card"
+  style={
+    Object {
+      "maxWidth": 600,
+    }
+  }
 >
-  <div>
-    <div
-      style={
-        Object {
-          "paddingTop": "66.6%",
-          "position": "relative",
-        }
-      }
-    >
+  <div
+    data-testid="card"
+  >
+    <div>
       <div
         style={
           Object {
-            "bottom": 0,
-            "left": 0,
-            "position": "absolute",
-            "right": 0,
-            "top": 0,
+            "paddingTop": "66.6%",
+            "position": "relative",
           }
         }
       >
         <div
           style={
             Object {
-              "height": "100%",
+              "bottom": 0,
+              "left": 0,
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
             }
           }
         >
           <div
-            className="relative h--full"
+            style={
+              Object {
+                "height": "100%",
+              }
+            }
           >
             <div
-              className="br--12 h--full"
+              className="relative h--full"
             >
               <div
-                onMouseEnter={[Function]}
-                onMouseLeave={[Function]}
-                style={
-                  Object {
-                    "borderRadius": 12,
-                    "height": "100%",
-                    "overflow": "hidden",
-                    "position": "relative",
-                    "width": "100%",
-                    "zIndex": 500,
-                  }
-                }
+                className="br--12 h--full"
               >
                 <div
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
                   style={
                     Object {
                       "borderRadius": 12,
-                      "display": "flex",
                       "height": "100%",
-                      "transform": "translateX(-0px)",
-                      "transition": "transform ease-out 0.45s",
-                      "width": 3000,
+                      "overflow": "hidden",
+                      "position": "relative",
+                      "width": "100%",
+                      "zIndex": 500,
                     }
                   }
                 >
                   <div
                     style={
                       Object {
-                        "backgroundImage": "url(https://a0.muscache.com/im/pictures/7e0063fa-d325-49ae-a6f6-285fe9928da4.jpg?im_w=720)",
-                        "backgroundPosition": "center",
-                        "backgroundRepeat": "no-repeat",
-                        "backgroundSize": "cover",
-                        "height": "100%",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                  <div
-                    style={
-                      Object {
-                        "backgroundImage": "url(https://a0.muscache.com/im/pictures/682aa552-1a91-4736-86a2-3d12cb316d07.jpg?im_w=720)",
-                        "backgroundPosition": "center",
-                        "backgroundRepeat": "no-repeat",
-                        "backgroundSize": "cover",
-                        "height": "100%",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                  <div
-                    style={
-                      Object {
-                        "backgroundImage": "url(https://a0.muscache.com/im/pictures/924798e4-2fe1-47de-9636-947332829bcc.jpg?im_w=720)",
-                        "backgroundPosition": "center",
-                        "backgroundRepeat": "no-repeat",
-                        "backgroundSize": "cover",
-                        "height": "100%",
-                        "width": "100%",
-                      }
-                    }
-                  />
-                </div>
-                <div
-                  style={
-                    Object {
-                      "left": 10,
-                      "opacity": 0,
-                      "position": "absolute",
-                      "top": "50%",
-                      "transform": "translateY(-50%)",
-                      "transition": "opacity 0.2s ease-out",
-                      "zIndex": 9999,
-                    }
-                  }
-                >
-                  <button
-                    className="bg__paginate p--8 b--white__2 br--circle"
-                    data-testid="button"
-                    disabled={false}
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "cursor": "pointer",
-                      }
-                    }
-                  >
-                    <svg
-                      stroke="black"
-                      strokeWidth={5}
-                      viewBox="0 0 32 32"
-                      width={10}
-                    >
-                      <g
-                        fill="none"
-                      >
-                        <path
-                          d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"
-                        />
-                      </g>
-                    </svg>
-                  </button>
-                </div>
-                <div
-                  style={
-                    Object {
-                      "opacity": 0,
-                      "position": "absolute",
-                      "right": 10,
-                      "top": "50%",
-                      "transform": "translateY(-50%)",
-                      "transition": "opacity 0.2s ease-out",
-                      "zIndex": 9999,
-                    }
-                  }
-                >
-                  <button
-                    className="bg__paginate b--white__2 p--8 br--circle"
-                    data-testid="button"
-                    disabled={false}
-                    onClick={[Function]}
-                    style={
-                      Object {
-                        "cursor": "pointer",
-                      }
-                    }
-                  >
-                    <svg
-                      stroke="black"
-                      strokeWidth={5}
-                      viewBox="0 0 32 32"
-                      width={10}
-                    >
-                      <g
-                        fill="none"
-                      >
-                        <path
-                          d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"
-                        />
-                      </g>
-                    </svg>
-                  </button>
-                </div>
-                <div
-                  className="dots"
-                  style={
-                    Object {
-                      "opacity": 0,
-                      "transition": "opacity 0.2s ease-out",
-                    }
-                  }
-                >
-                  <div
-                    style={
-                      Object {
-                        "alignItems": "center",
-                        "bottom": 25,
+                        "borderRadius": 12,
                         "display": "flex",
-                        "justifyContent": "center",
-                        "position": "absolute",
-                        "width": "100%",
+                        "height": "100%",
+                        "transform": "translateX(-0px)",
+                        "transition": "transform ease-out 0.45s",
+                        "width": 3000,
                       }
                     }
                   >
-                    <span
+                    <div
                       style={
                         Object {
-                          "background": "white",
-                          "borderRadius": "50%",
-                          "cursor": "pointer",
-                          "marginRight": 5,
-                          "padding": 3,
-                          "transition": "all 0.2s ease-in",
+                          "backgroundImage": "url(https://a0.muscache.com/im/pictures/7e0063fa-d325-49ae-a6f6-285fe9928da4.jpg?im_w=720)",
+                          "backgroundPosition": "center",
+                          "backgroundRepeat": "no-repeat",
+                          "backgroundSize": "cover",
+                          "height": "100%",
+                          "width": "100%",
                         }
                       }
                     />
-                    <span
+                    <div
                       style={
                         Object {
-                          "background": "lightgray",
-                          "borderRadius": "50%",
-                          "cursor": "pointer",
-                          "marginRight": 5,
-                          "padding": 3,
-                          "transition": "all 0.2s ease-in",
+                          "backgroundImage": "url(https://a0.muscache.com/im/pictures/682aa552-1a91-4736-86a2-3d12cb316d07.jpg?im_w=720)",
+                          "backgroundPosition": "center",
+                          "backgroundRepeat": "no-repeat",
+                          "backgroundSize": "cover",
+                          "height": "100%",
+                          "width": "100%",
                         }
                       }
                     />
-                    <span
+                    <div
                       style={
                         Object {
-                          "background": "lightgray",
-                          "borderRadius": "50%",
-                          "cursor": "pointer",
-                          "marginRight": 5,
-                          "padding": 3,
-                          "transition": "all 0.2s ease-in",
+                          "backgroundImage": "url(https://a0.muscache.com/im/pictures/924798e4-2fe1-47de-9636-947332829bcc.jpg?im_w=720)",
+                          "backgroundPosition": "center",
+                          "backgroundRepeat": "no-repeat",
+                          "backgroundSize": "cover",
+                          "height": "100%",
+                          "width": "100%",
                         }
                       }
                     />
                   </div>
+                  <div
+                    style={
+                      Object {
+                        "left": 10,
+                        "opacity": 0,
+                        "position": "absolute",
+                        "top": "50%",
+                        "transform": "translateY(-50%)",
+                        "transition": "opacity 0.2s ease-out",
+                        "zIndex": 9999,
+                      }
+                    }
+                  >
+                    <button
+                      className="bg__paginate p--8 b--white__2 br--circle"
+                      data-testid="button"
+                      disabled={false}
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "cursor": "pointer",
+                        }
+                      }
+                    >
+                      <svg
+                        stroke="black"
+                        strokeWidth={5}
+                        viewBox="0 0 32 32"
+                        width={10}
+                      >
+                        <g
+                          fill="none"
+                        >
+                          <path
+                            d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"
+                          />
+                        </g>
+                      </svg>
+                    </button>
+                  </div>
+                  <div
+                    style={
+                      Object {
+                        "opacity": 0,
+                        "position": "absolute",
+                        "right": 10,
+                        "top": "50%",
+                        "transform": "translateY(-50%)",
+                        "transition": "opacity 0.2s ease-out",
+                        "zIndex": 9999,
+                      }
+                    }
+                  >
+                    <button
+                      className="bg__paginate b--white__2 p--8 br--circle"
+                      data-testid="button"
+                      disabled={false}
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "cursor": "pointer",
+                        }
+                      }
+                    >
+                      <svg
+                        stroke="black"
+                        strokeWidth={5}
+                        viewBox="0 0 32 32"
+                        width={10}
+                      >
+                        <g
+                          fill="none"
+                        >
+                          <path
+                            d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"
+                          />
+                        </g>
+                      </svg>
+                    </button>
+                  </div>
+                  <div
+                    className="dots"
+                    style={
+                      Object {
+                        "opacity": 0,
+                        "transition": "opacity 0.2s ease-out",
+                      }
+                    }
+                  >
+                    <div
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "bottom": 25,
+                          "display": "flex",
+                          "justifyContent": "center",
+                          "position": "absolute",
+                          "width": "100%",
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "background": "white",
+                            "borderRadius": "50%",
+                            "cursor": "pointer",
+                            "marginRight": 5,
+                            "padding": 3,
+                            "transition": "all 0.2s ease-in",
+                          }
+                        }
+                      />
+                      <span
+                        style={
+                          Object {
+                            "background": "lightgray",
+                            "borderRadius": "50%",
+                            "cursor": "pointer",
+                            "marginRight": 5,
+                            "padding": 3,
+                            "transition": "all 0.2s ease-in",
+                          }
+                        }
+                      />
+                      <span
+                        style={
+                          Object {
+                            "background": "lightgray",
+                            "borderRadius": "50%",
+                            "cursor": "pointer",
+                            "marginRight": 5,
+                            "padding": 3,
+                            "transition": "all 0.2s ease-in",
+                          }
+                        }
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div
-              className="p-v--8 p-h--10 at--0 justify-between w--full"
-            >
               <div
-                className="c--white__0 hidden"
-                style={
-                  Object {
-                    "zIndex": 9999,
-                  }
-                }
+                className="p-v--8 p-h--10 at--0 justify-between w--full"
               >
                 <div
-                  className="p-h--8 p-v--4 bg--white__1 shadow--lg br--3"
+                  className="c--white__0 hidden"
+                  style={
+                    Object {
+                      "zIndex": 9999,
+                    }
+                  }
                 >
-                  <h3
-                    className="size--12 uppercase ls--3"
+                  <div
+                    className="p-h--8 p-v--4 bg--white__1 shadow--lg br--3"
                   >
-                    Superhost
-                  </h3>
+                    <h3
+                      className="size--12 uppercase ls--3"
+                    >
+                      Superhost
+                    </h3>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div
-      style={
-        Object {
-          "display": "flex",
-          "marginTop": 6,
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "marginTop": 6,
+          }
         }
-      }
-    >
-      <div
-        className="m-r--3"
       >
-        <svg
-          fill="#F5385D"
-          viewBox="0 0 1000 1000"
-          width={14}
+        <div
+          className="m-r--3"
         >
-          <path
-            d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"
-          />
-        </svg>
+          <svg
+            fill="#F5385D"
+            viewBox="0 0 1000 1000"
+            width={14}
+          >
+            <path
+              d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"
+            />
+          </svg>
+        </div>
+        <div
+          className="m-r--3"
+        >
+          <p
+            className="weight--100 size--13"
+          >
+            5.00
+          </p>
+        </div>
+        <div>
+          <p
+            className="weight--100 size--13 c--gray__0"
+          >
+            (100)
+          </p>
+        </div>
       </div>
       <div
-        className="m-r--3"
+        className="flex items-center"
       >
-        <p
-          className="weight--100 size--13"
-        >
-          5.00
-        </p>
+        <div>
+          <p
+            className="ls--4 weight--100 size--15 c--gray__4"
+            style={
+              Object {
+                "textTransform": "capitalize",
+              }
+            }
+          >
+            Type of Stay
+          </p>
+        </div>
+        <div>
+          <p>
+              ·   
+          </p>
+        </div>
+        <div>
+          <p
+            className="ls--4 weight--100 size--15 c--gray__4"
+          >
+            Location
+          </p>
+        </div>
       </div>
-      <div>
-        <p
-          className="weight--100 size--13 c--gray__0"
-        >
-          (100)
-        </p>
-      </div>
-    </div>
-    <div
-      className="flex items-center"
-    >
       <div>
         <p
           className="ls--4 weight--100 size--15 c--gray__4"
           style={
             Object {
-              "textTransform": "capitalize",
+              "maxHeight": 250,
+              "overflow": "hidden",
+              "textOverflow": "ellipsis",
+              "whiteSpace": "nowrap",
             }
           }
         >
-          Type of Stay
+          Title should be here
         </p>
       </div>
-      <div>
-        <p>
-            ·   
-        </p>
-      </div>
-      <div>
-        <p
-          className="ls--4 weight--100 size--15 c--gray__4"
-        >
-          Location
-        </p>
-      </div>
-    </div>
-    <div>
-      <p
-        className="ls--4 weight--100 size--15 c--gray__4"
-        style={
-          Object {
-            "maxHeight": 250,
-            "overflow": "hidden",
-            "textOverflow": "ellipsis",
-            "whiteSpace": "nowrap",
-          }
-        }
-      >
-        Title should be here
-      </p>
     </div>
   </div>
 </div>
@@ -3140,6 +3377,43 @@ exports[`Storyshots Design System/Molecules/Card Set 1`] = `
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Design System/Molecules/Card Sharing 1`] = `
+<div
+  data-testid="card"
+>
+  <div>
+    <div>
+      <img
+        src="https://a0.muscache.com/pictures/1f129c2b-4da0-463e-a918-ff3f9f8fa325.jpg"
+      />
+    </div>
+    <div
+      className="m-v--8"
+    >
+      <h3>
+        Meditate with Sheep
+      </h3>
+    </div>
+    <div
+      className="m-b--8"
+    >
+      <p
+        className="size--14 lh--15"
+      >
+        Mindfulness straight from a Scottish farm, accompanied by encounters with some fuzzy friends.
+      </p>
+    </div>
+    <div>
+      <p
+        className="size--14 c--darkgreen__3"
+      >
+        Go to experience
+      </p>
     </div>
   </div>
 </div>
@@ -4197,13 +4471,29 @@ exports[`Storyshots Design System/Organisms/Banner Homes 1`] = `
           <div
             className="inline-block"
           >
-            <button
-              className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
+            <div
               data-testid="button"
-              style={Object {}}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
             >
-              Get started
-            </button>
+              <a
+                href="/become-a-host"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                <button
+                  className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
+                  data-testid="button"
+                  disabled={false}
+                  style={Object {}}
+                >
+                  Get started
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -4760,65 +5050,35 @@ exports[`Storyshots Design System/Organisms/Banner Landing 1`] = `
                     className="flex items-center"
                   >
                     <div
-                      className="searchbar__host"
+                      className="searchbar__host m-r--16"
                     >
                       <div
                         data-testid="button"
+                        style={
+                          Object {
+                            "cursor": "pointer",
+                          }
+                        }
                       >
                         <a
-                          className="br--30 size--14 inline-block p-t--13 p-b--13 p-l--13 p-r--13 weight--300 c--white__0 hover-background--white__transparent"
                           href="/host/homes"
                           onClick={[Function]}
                           onMouseEnter={[Function]}
                         >
-                          Become a host
+                          <div
+                            data-testid="button"
+                          >
+                            <a
+                              className="br--30 size--14 inline-block p-t--13 p-b--13 p-l--13 p-r--13 weight--300 c--white__0 hover-background--white__transparent"
+                              href="/host/homes"
+                              onClick={[Function]}
+                              onMouseEnter={[Function]}
+                            >
+                              Become a host
+                            </a>
+                          </div>
                         </a>
                       </div>
-                    </div>
-                    <div
-                      className="m-t--0 m-r--12 m-b--0 m-l--8"
-                    >
-                      <button
-                        className="bg--transparent br--30"
-                        data-testid="button"
-                        onClick={[Function]}
-                        style={Object {}}
-                      >
-                        <div
-                          className="br--30 flex items-center bg--transparent p-t--13 p-b--13 p-l--15 p-r--15 hover-background--white__transparent"
-                        >
-                          <div
-                            className="items-center m-r--8"
-                          >
-                            <svg
-                              fill="white"
-                              viewBox="0 0 16 16"
-                              width={16}
-                            >
-                              <path
-                                d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
-                              />
-                            </svg>
-                          </div>
-                          <div
-                            className="items-center"
-                          >
-                            <svg
-                              fill="white"
-                              viewBox="0 0 256 256"
-                              width={8}
-                            >
-                              <g>
-                                <g>
-                                  <polygon
-                                    points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-                                  />
-                                </g>
-                              </g>
-                            </svg>
-                          </div>
-                        </div>
-                      </button>
                     </div>
                     <div>
                       <button
@@ -4913,17 +5173,32 @@ exports[`Storyshots Design System/Organisms/Banner Landing 1`] = `
             <div
               className="m-v--15 m-h--0 justify__explore--button"
             >
-              <button
-                className="bg--white__0 br--6"
+              <div
                 data-testid="button"
-                style={Object {}}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
               >
-                <div
-                  className="bg--white__0 p-h--16 p-v--8 br--6 size--14"
+                <a
+                  href="/"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
                 >
-                  Explore nearby
-                </div>
-              </button>
+                  <button
+                    className="bg--white__0 br--6"
+                    data-testid="button"
+                    style={Object {}}
+                  >
+                    <div
+                      className="bg--white__0 p-h--16 p-v--8 br--6 size--14"
+                    >
+                      Explore nearby
+                    </div>
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -4971,6 +5246,7 @@ exports[`Storyshots Design System/Organisms/Banner Online Host 1`] = `
       <button
         className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
         data-testid="button"
+        disabled={false}
         style={Object {}}
       >
         Get started
@@ -5302,6 +5578,285 @@ exports[`Storyshots Design System/Organisms/Bar Paginate 1`] = `
 </div>
 `;
 
+exports[`Storyshots Design System/Organisms/Bar Progress 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#EDEFED",
+      "height": 10,
+      "position": "relative",
+      "width": "100%",
+      "zIndex": 1,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "height": 10,
+        "width": "100%",
+        "zIndex": 500,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "1px solid #DCE0E0",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderRight": "none",
+          "height": 10,
+          "width": "10%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "backgroundColor": "#278489",
+          "borderBottomRightRadius": 9999,
+          "borderTopRightRadius": 9999,
+          "height": "100%",
+          "position": "absolute",
+          "width": "50%",
+          "zIndex": 9999,
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots Design System/Organisms/Create Get Started 1`] = `
 <div>
   <div>
@@ -5444,6 +5999,7 @@ exports[`Storyshots Design System/Organisms/Create Get Started 1`] = `
                     className="justify-between br--4 p--0 w--full block b--0 size--14 weight--300"
                     id="guests"
                     onBlur={[Function]}
+                    onChange={[Function]}
                     onFocus={[Function]}
                     style={
                       Object {
@@ -5451,6 +6007,7 @@ exports[`Storyshots Design System/Organisms/Create Get Started 1`] = `
                         "outline": "none",
                       }
                     }
+                    value={1}
                   >
                     <option
                       value="1"
@@ -5522,6 +6079,7 @@ exports[`Storyshots Design System/Organisms/Create Get Started 1`] = `
                   className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black"
                   id="address"
                   name="address"
+                  onChange={[Function]}
                   placeholder="Address"
                   style={
                     Object {
@@ -5529,69 +6087,85 @@ exports[`Storyshots Design System/Organisms/Create Get Started 1`] = `
                     }
                   }
                   type="text"
+                  value=""
                 />
               </div>
             </div>
           </div>
         </div>
+        <div
+          className="m-t--16"
+          style={
+            Object {
+              "width": 150,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "width": "100%",
+              }
+            }
+          >
+            <button
+              className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 inline-block bg--primary"
+              data-testid="button"
+              disabled={false}
+              style={Object {}}
+            >
+              Continue
+            </button>
+          </div>
+        </div>
       </form>
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "width": 150,
-      }
-    }
-  >
-    <div
-      style={
-        Object {
-          "width": "100%",
-        }
-      }
-    >
-      <button
-        className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 inline-block bg--primary"
-        data-testid="button"
-        style={Object {}}
-      >
-        Continue
-      </button>
     </div>
   </div>
 </div>
 `;
 
-exports[`Storyshots Design System/Organisms/Create Kind 1`] = `
+exports[`Storyshots Design System/Organisms/Create Location 1`] = `
 <div>
   <div
-    className="m-b--45"
+    className="m-b--8"
   >
     <h3
-      className="size--20 c--gray__2"
+      className="size--28 c--gray__2"
     >
-      What kind of place are you listing?
+      Where's your place located?
     </h3>
   </div>
   <div
-    className="m-b--22"
+    className="m-b--16"
+  >
+    <p
+      className="size--14 c--gray__2"
+    >
+      Guests will only get your exact address once they've booked a reservation.
+    </p>
+  </div>
+  <div
+    className="m-t--32 m-b--18"
     style={
       Object {
-        "width": 250,
+        "columnGap": 15,
+        "display": "grid",
+        "gridTemplateColumns": "repeat(2, 1fr)",
       }
     }
   >
     <div
       className="m-b--8"
     >
-      <h4
-        className="size--14 c--gray__0"
+      <div
+        className="m-b--8"
       >
-        First, let's narrow things down
-      </h4>
-    </div>
-    <div>
+        <p
+          className="size--14"
+        >
+          Country
+        </p>
+      </div>
       <div
         data-testid="input"
       >
@@ -5615,9 +6189,8 @@ exports[`Storyshots Design System/Organisms/Create Kind 1`] = `
           >
             <select
               className="bg--transparent justify-between br--4 p--0 w--full block b--0 size--14 weight--300"
-              defaultValue="Select one"
               disabled={false}
-              id="place"
+              id="country"
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
@@ -5629,40 +6202,14 @@ exports[`Storyshots Design System/Organisms/Create Kind 1`] = `
               }
             >
               <option
-                disabled={true}
-                value="Select one"
+                value="Canada"
               >
-                Select one
+                Canada
               </option>
               <option
-                value="Apartment"
+                value="Japan"
               >
-                Apartment
-              </option>
-              <option
-                value="House"
-              >
-                House
-              </option>
-              <option
-                value="Secondary unit"
-              >
-                Secondary unit
-              </option>
-              <option
-                value="Unique space"
-              >
-                Unique space
-              </option>
-              <option
-                value="Bed and breakfast"
-              >
-                Bed and breakfast
-              </option>
-              <option
-                value="Boutique hotel"
-              >
-                Boutique hotel
+                Japan
               </option>
             </select>
             <div
@@ -5686,6 +6233,433 @@ exports[`Storyshots Design System/Organisms/Create Kind 1`] = `
         </div>
       </div>
     </div>
+    <div
+      className="m-b--8"
+    >
+      <div
+        className="m-b--8"
+      >
+        <p
+          className="size--14"
+        >
+          Postal Code
+        </p>
+      </div>
+      <div
+        data-testid="input"
+      >
+        <div
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
+          >
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="postal"
+              name="postal"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                }
+              }
+              type="text"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="m-b--30"
+  >
+    <div
+      className="m-b--8"
+    >
+      <p
+        className="size--14"
+      >
+        Street
+      </p>
+    </div>
+    <div>
+      <div
+        data-testid="input"
+      >
+        <div
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
+          >
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="street"
+              name="street"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                }
+              }
+              type="text"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="m-t--4"
+    >
+      <p
+        className="size--10"
+      >
+        e.g. 111108 108th Avenue
+      </p>
+    </div>
+  </div>
+  <div
+    className="m-b--8"
+  >
+    <div
+      className="m-b--8"
+    >
+      <p
+        className="size--14"
+      >
+        Apt, Suite (optional)
+      </p>
+    </div>
+    <div>
+      <div
+        data-testid="input"
+      >
+        <div
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
+          >
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="apt"
+              name="apt"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              style={
+                Object {
+                  "outline": "none",
+                }
+              }
+              type="text"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="m-t--4"
+    >
+      <p
+        className="size--10"
+      >
+        e.g. Suite #7
+      </p>
+    </div>
+  </div>
+  <div
+    className="m-t--32 m-b--18"
+    style={
+      Object {
+        "columnGap": 15,
+        "display": "grid",
+        "gridTemplateColumns": "repeat(2, 1fr)",
+      }
+    }
+  >
+    <div
+      className="m-b--8"
+    >
+      <div
+        className="m-b--8"
+      >
+        <p
+          className="size--14"
+        >
+          City
+        </p>
+      </div>
+      <div>
+        <div
+          data-testid="input"
+        >
+          <div
+            className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+          >
+            <div
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
+                  "height": "100%",
+                  "position": "relative",
+                  "width": "100%",
+                }
+              }
+            >
+              <input
+                autoFocus={true}
+                className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                id="text"
+                name="text"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                style={
+                  Object {
+                    "outline": "none",
+                  }
+                }
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="m-t--4"
+      >
+        <p
+          className="size--10"
+        >
+          e.g. Edmonton
+        </p>
+      </div>
+    </div>
+    <div
+      className="m-b--8"
+    >
+      <div
+        className="m-b--8"
+      >
+        <p
+          className="size--14"
+        >
+          State
+        </p>
+      </div>
+      <div>
+        <div
+          data-testid="input"
+        >
+          <div
+            className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+          >
+            <div
+              style={
+                Object {
+                  "alignItems": "center",
+                  "display": "flex",
+                  "height": "100%",
+                  "position": "relative",
+                  "width": "100%",
+                }
+              }
+            >
+              <input
+                autoFocus={true}
+                className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                id="state"
+                name="state"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                style={
+                  Object {
+                    "outline": "none",
+                  }
+                }
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="m-t--4"
+      >
+        <p
+          className="size--10"
+        >
+          e.g. Alberta
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Design System/Organisms/Create Room 1`] = `
+<div>
+  <div
+    className="m-b--45"
+  >
+    <h3
+      className="size--28 c--gray__2"
+    >
+      What kind of place are you listing?
+    </h3>
+  </div>
+  <div
+    className="m-b--22"
+    style={
+      Object {
+        "width": 250,
+      }
+    }
+  >
+    <div
+      data-testid="layout"
+    >
+      <div>
+        <div
+          className="m-b--8"
+        >
+          <h3
+            className="size--16 c--gray__0"
+          >
+            First, let's narrow things down
+          </h3>
+        </div>
+        <div>
+          <div
+            data-testid="input"
+          >
+            <div
+              className="h--50 flex outside relative items-center "
+            >
+              <div
+                className="b--white__3 br--8 undefined"
+                style={
+                  Object {
+                    "backgroundColor": "white",
+                    "borderColor": "#B0B0B0",
+                    "display": "flex",
+                    "height": "100%",
+                    "justifyContent": "space-between",
+                    "padding": "0 12px",
+                    "position": "relative",
+                    "width": "100%",
+                  }
+                }
+              >
+                <select
+                  className="bg--transparent justify-between br--4 p--0 w--full block b--0 size--14 weight--300"
+                  disabled={false}
+                  id="place"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  style={
+                    Object {
+                      "height": "100%",
+                      "outline": "none",
+                    }
+                  }
+                >
+                  <option
+                    disabled={true}
+                    value="Select one"
+                  >
+                    Select one
+                  </option>
+                  <option
+                    value="Apartment"
+                  >
+                    Apartment
+                  </option>
+                  <option
+                    value="House"
+                  >
+                    House
+                  </option>
+                  <option
+                    value="Secondary unit"
+                  >
+                    Secondary unit
+                  </option>
+                  <option
+                    value="Unique space"
+                  >
+                    Unique space
+                  </option>
+                  <option
+                    value="Bed and breakfast"
+                  >
+                    Bed and breakfast
+                  </option>
+                  <option
+                    value="Boutique hotel"
+                  >
+                    Boutique hotel
+                  </option>
+                </select>
+                <div
+                  className="flex items-center"
+                >
+                  <svg
+                    fill="black"
+                    viewBox="0 0 256 256"
+                    width={13}
+                  >
+                    <g>
+                      <g>
+                        <polygon
+                          points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div
     className="m-b--8"
@@ -5696,104 +6670,109 @@ exports[`Storyshots Design System/Organisms/Create Kind 1`] = `
     }
   >
     <div
-      className="m-b--8"
+      data-testid="layout"
     >
-      <h4
-        className="size--14 c--gray__0"
-      >
-        Now choose a property type
-      </h4>
-    </div>
-    <div>
-      <div
-        data-testid="input"
-      >
+      <div>
         <div
-          className="h--50 flex outside relative items-center "
+          className="m-b--8"
         >
-          <div
-            className="b--white__3 br--8 undefined"
-            style={
-              Object {
-                "backgroundColor": "#F7F7F7",
-                "borderColor": "#EBEBEB",
-                "display": "flex",
-                "height": "100%",
-                "justifyContent": "space-between",
-                "padding": "0 12px",
-                "position": "relative",
-                "width": "100%",
-              }
-            }
+          <h3
+            className="size--16 c--gray__0"
           >
-            <select
-              className="bg--transparent justify-between br--4 p--0 w--full block b--0 size--14 weight--300"
-              defaultValue="Select Property"
-              disabled={true}
-              id="Bed and breakfast"
-              onBlur={[Function]}
-              onChange={[Function]}
-              onFocus={[Function]}
-              style={
-                Object {
-                  "height": "100%",
-                  "outline": "none",
-                }
-              }
-            >
-              <option
-                disabled={true}
-                value="Select Property"
-              >
-                Select Property
-              </option>
-              <option
-                value="Bed and breakfast"
-              >
-                Bed and breakfast
-              </option>
-              <option
-                value="Casa particular (Cuba)"
-              >
-                Casa particular (Cuba)
-              </option>
-              <option
-                value="Farm stay"
-              >
-                Farm stay
-              </option>
-              <option
-                value="Minsu (Taiwan)"
-              >
-                Minsu (Taiwan)
-              </option>
-              <option
-                value="Nature lodge"
-              >
-                Nature lodge
-              </option>
-              <option
-                value="Ryokan (Japan)"
-              >
-                Ryokan (Japan)
-              </option>
-            </select>
+            Now choose a property type
+          </h3>
+        </div>
+        <div>
+          <div
+            data-testid="input"
+          >
             <div
-              className="flex items-center"
+              className="h--50 flex outside relative items-center "
             >
-              <svg
-                fill="#DDDDDD"
-                viewBox="0 0 256 256"
-                width={13}
+              <div
+                className="b--white__3 br--8 undefined"
+                style={
+                  Object {
+                    "backgroundColor": "#F7F7F7",
+                    "borderColor": "#EBEBEB",
+                    "display": "flex",
+                    "height": "100%",
+                    "justifyContent": "space-between",
+                    "padding": "0 12px",
+                    "position": "relative",
+                    "width": "100%",
+                  }
+                }
               >
-                <g>
-                  <g>
-                    <polygon
-                      points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-                    />
-                  </g>
-                </g>
-              </svg>
+                <select
+                  className="bg--transparent justify-between br--4 p--0 w--full block b--0 size--14 weight--300"
+                  disabled={true}
+                  id="Bed and breakfast"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  style={
+                    Object {
+                      "height": "100%",
+                      "outline": "none",
+                    }
+                  }
+                >
+                  <option
+                    disabled={true}
+                    value="Select Property"
+                  >
+                    Select Property
+                  </option>
+                  <option
+                    value="Bed and breakfast"
+                  >
+                    Bed and breakfast
+                  </option>
+                  <option
+                    value="Casa particular (Cuba)"
+                  >
+                    Casa particular (Cuba)
+                  </option>
+                  <option
+                    value="Farm stay"
+                  >
+                    Farm stay
+                  </option>
+                  <option
+                    value="Minsu (Taiwan)"
+                  >
+                    Minsu (Taiwan)
+                  </option>
+                  <option
+                    value="Nature lodge"
+                  >
+                    Nature lodge
+                  </option>
+                  <option
+                    value="Ryokan (Japan)"
+                  >
+                    Ryokan (Japan)
+                  </option>
+                </select>
+                <div
+                  className="flex items-center"
+                >
+                  <svg
+                    fill="#DDDDDD"
+                    viewBox="0 0 256 256"
+                    width={13}
+                  >
+                    <g>
+                      <g>
+                        <polygon
+                          points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -6190,11 +7169,11 @@ exports[`Storyshots Design System/Organisms/Footer Basic 1`] = `
       className="flex__footer--others"
     >
       <div
-        className="items-center m-h--0 m-v--20"
+        className="flex items-center m-h--0 m-v--20"
       >
         <div>
           <button
-            className="items-center m-r--10 bg--transparent b--0"
+            className="flex items-center m-r--10 bg--transparent b--0"
           >
             <svg
               className="m-r--5"
@@ -6214,7 +7193,7 @@ exports[`Storyshots Design System/Organisms/Footer Basic 1`] = `
         </div>
         <div>
           <button
-            className="items-center bg--transparent b--0"
+            className="flex items-center bg--transparent b--0"
           >
             <u
               className="size--14 m-r--7"
@@ -6230,7 +7209,7 @@ exports[`Storyshots Design System/Organisms/Footer Basic 1`] = `
         </div>
       </div>
       <div
-        className="items-center"
+        className="flex items-center"
       >
         <div
           className="footer__rights"
@@ -6242,7 +7221,7 @@ exports[`Storyshots Design System/Organisms/Footer Basic 1`] = `
           </p>
         </div>
         <div
-          className="items-center"
+          className="flex items-center"
         >
           <div
             className="block__footer--dot"
@@ -6656,65 +7635,35 @@ exports[`Storyshots Design System/Organisms/Header Transparent 1`] = `
         className="flex items-center"
       >
         <div
-          className="searchbar__host"
+          className="searchbar__host m-r--16"
         >
           <div
             data-testid="button"
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
           >
             <a
-              className="br--30 size--14 inline-block p-t--13 p-b--13 p-l--13 p-r--13 weight--300 c--white__0 hover-background--white__transparent"
               href="/host/homes"
               onClick={[Function]}
               onMouseEnter={[Function]}
             >
-              Become a host
+              <div
+                data-testid="button"
+              >
+                <a
+                  className="br--30 size--14 inline-block p-t--13 p-b--13 p-l--13 p-r--13 weight--300 c--white__0 hover-background--white__transparent"
+                  href="/host/homes"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  Become a host
+                </a>
+              </div>
             </a>
           </div>
-        </div>
-        <div
-          className="m-t--0 m-r--12 m-b--0 m-l--8"
-        >
-          <button
-            className="bg--transparent br--30"
-            data-testid="button"
-            onClick={[Function]}
-            style={Object {}}
-          >
-            <div
-              className="br--30 flex items-center bg--transparent p-t--13 p-b--13 p-l--15 p-r--15 hover-background--white__transparent"
-            >
-              <div
-                className="items-center m-r--8"
-              >
-                <svg
-                  fill="white"
-                  viewBox="0 0 16 16"
-                  width={16}
-                >
-                  <path
-                    d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
-                  />
-                </svg>
-              </div>
-              <div
-                className="items-center"
-              >
-                <svg
-                  fill="white"
-                  viewBox="0 0 256 256"
-                  width={8}
-                >
-                  <g>
-                    <g>
-                      <polygon
-                        points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-                      />
-                    </g>
-                  </g>
-                </svg>
-              </div>
-            </div>
-          </button>
         </div>
         <div>
           <button
@@ -6845,123 +7794,39 @@ exports[`Storyshots Design System/Organisms/Header White 1`] = `
             </div>
           </a>
         </div>
-        <div>
-          <button
-            className="br--25 bg--white__0 b--white__2 hover-shadow--sm"
-            data-testid="button"
-            onClick={[Function]}
-            style={Object {}}
-          >
-            <div
-              className="p-v--15 p-l--18 p-r--8 flex items-center justify-between"
-              style={
-                Object {
-                  "height": 45,
-                  "width": 240,
-                }
-              }
-            >
-              <div>
-                <p
-                  className="no-wrap size--14 weight--500"
-                >
-                  Start your search
-                </p>
-              </div>
-              <div>
-                <div
-                  className="bg--primary all-center"
-                  style={
-                    Object {
-                      "borderRadius": "50%",
-                      "height": 30,
-                      "width": 30,
-                    }
-                  }
-                >
-                  <svg
-                    height={12}
-                    stroke="white"
-                    strokeWidth={6}
-                    viewBox="0 0 32 32"
-                    width={12}
-                  >
-                    <g
-                      fill="none"
-                    >
-                      <path
-                        d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"
-                      />
-                    </g>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </button>
-        </div>
         <div
           className="flex items-center"
         >
           <div
-            className="searchbar__host"
+            className="searchbar__host m-r--16"
           >
             <div
               data-testid="button"
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
             >
               <a
-                className="br--30 size--14 inline-block p-t--13 p-b--13 p-l--13 p-r--13 weight--500 c--gray__4 hover-background--white__1"
-                href="/"
+                href="/host/homes"
                 onClick={[Function]}
                 onMouseEnter={[Function]}
               >
-                Become a host
+                <div
+                  data-testid="button"
+                >
+                  <a
+                    className="br--30 size--14 inline-block p-t--13 p-b--13 p-l--13 p-r--13 weight--500 c--gray__4 hover-background--white__1"
+                    href="/host/homes"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Become a host
+                  </a>
+                </div>
               </a>
             </div>
-          </div>
-          <div
-            className="m-t--0 m-r--12 m-b--0 m-l--8"
-          >
-            <button
-              className="bg--transparent br--30"
-              data-testid="button"
-              onClick={[Function]}
-              style={Object {}}
-            >
-              <div
-                className="br--30 flex items-center bg--transparent p-t--13 p-b--13 p-l--15 p-r--15 hover-background--white__1"
-              >
-                <div
-                  className="items-center m-r--8"
-                >
-                  <svg
-                    fill="#363636"
-                    viewBox="0 0 16 16"
-                    width={16}
-                  >
-                    <path
-                      d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
-                    />
-                  </svg>
-                </div>
-                <div
-                  className="items-center"
-                >
-                  <svg
-                    fill="#363636"
-                    viewBox="0 0 256 256"
-                    width={8}
-                  >
-                    <g>
-                      <g>
-                        <polygon
-                          points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-                        />
-                      </g>
-                    </g>
-                  </svg>
-                </div>
-              </div>
-            </button>
           </div>
           <div>
             <button
@@ -7386,6 +8251,7 @@ exports[`Storyshots Design System/Organisms/Modal Auth 1`] = `
             <button
               className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
               data-testid="button"
+              disabled={false}
               style={Object {}}
             >
               Continue
@@ -7669,6 +8535,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
       <button
         className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
         data-testid="button"
+        disabled={false}
         style={Object {}}
       >
         Check availability
@@ -7777,6 +8644,7 @@ exports[`Storyshots Design System/Organisms/Modal Booking 1`] = `
               <button
                 className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 block bg--primary"
                 data-testid="button"
+                disabled={false}
                 style={Object {}}
               >
                 Choose
@@ -7839,6 +8707,7 @@ exports[`Storyshots Design System/Organisms/Modal Booking 1`] = `
               <button
                 className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 block bg--primary"
                 data-testid="button"
+                disabled={false}
                 style={Object {}}
               >
                 Choose
@@ -7901,6 +8770,7 @@ exports[`Storyshots Design System/Organisms/Modal Booking 1`] = `
               <button
                 className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 block bg--primary"
                 data-testid="button"
+                disabled={false}
                 style={Object {}}
               >
                 Choose
@@ -7918,7 +8788,7 @@ exports[`Storyshots Design System/Organisms/Modal Booking 1`] = `
             data-testid="button"
           >
             <a
-              className="block text--center size--16 weight--500 br--6 p-t--12 p-b--12 p-l--22 p-r--22 no-wrap b--black"
+              className="block text--center size--16 weight--500 br--6 p-t--10 p-b--10 p-l--18 p-r--18 no-wrap b-2--black"
               href="/"
               onClick={[Function]}
               onMouseEnter={[Function]}
@@ -8800,7 +9670,7 @@ exports[`Storyshots Design System/Organisms/Section Amenities 1`] = `
           data-testid="button"
         >
           <a
-            className="inline-block text--center size--16 weight--500 br--6 p-t--12 p-b--12 p-l--22 p-r--22 no-wrap b--black"
+            className="inline-block text--center size--16 weight--500 br--6 p-t--10 p-b--10 p-l--18 p-r--18 no-wrap b-2--black"
             href="/"
             onClick={[Function]}
             onMouseEnter={[Function]}
@@ -9172,6 +10042,7 @@ exports[`Storyshots Design System/Organisms/Section Available 1`] = `
                   <button
                     className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 inline-block bg--primary"
                     data-testid="button"
+                    disabled={false}
                     style={Object {}}
                   >
                     Choose
@@ -9253,6 +10124,7 @@ exports[`Storyshots Design System/Organisms/Section Available 1`] = `
                   <button
                     className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 inline-block bg--primary"
                     data-testid="button"
+                    disabled={false}
                     style={Object {}}
                   >
                     Choose
@@ -9334,6 +10206,7 @@ exports[`Storyshots Design System/Organisms/Section Available 1`] = `
                   <button
                     className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 inline-block bg--primary"
                     data-testid="button"
+                    disabled={false}
                     style={Object {}}
                   >
                     Choose
@@ -9415,6 +10288,7 @@ exports[`Storyshots Design System/Organisms/Section Available 1`] = `
                   <button
                     className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 inline-block bg--primary"
                     data-testid="button"
+                    disabled={false}
                     style={Object {}}
                   >
                     Choose
@@ -9496,6 +10370,7 @@ exports[`Storyshots Design System/Organisms/Section Available 1`] = `
                   <button
                     className="c--white__0 w--full size--14 p-v--8 p-h--14 br--8 weight--300 inline-block bg--primary"
                     data-testid="button"
+                    disabled={false}
                     style={Object {}}
                   >
                     Choose
@@ -9515,13 +10390,163 @@ exports[`Storyshots Design System/Organisms/Section Available 1`] = `
         data-testid="button"
       >
         <a
-          className="inline-block text--center size--16 weight--500 br--6 p-t--12 p-b--12 p-l--22 p-r--22 no-wrap b--black"
+          className="inline-block text--center size--16 weight--500 br--6 p-t--10 p-b--10 p-l--18 p-r--18 no-wrap b-2--black"
           href="/"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           See more dates
         </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Design System/Organisms/Section Back 1`] = `
+<div>
+  <div
+    data-testid="layout"
+  >
+    <div
+      data-testid="section"
+    >
+      <div
+        className="b_to_f--sm flex-col items-center"
+      >
+        <div
+          className="b_to_f--sm flex-col items-center p-v--16"
+        >
+          <div>
+            <h3
+              className="font__onlinehost--title "
+            >
+              We've got your back
+            </h3>
+          </div>
+          <div
+            className="m-t--16"
+          >
+            <p
+              className="font__onlinehost--subtitle "
+            >
+              You’re not alone—you'll have access to educational tools and opportunities to help you grow as a host and entrepreneur.
+            </p>
+          </div>
+        </div>
+        <div
+          className="m-v--32"
+          style={
+            Object {
+              "columnGap": 20,
+              "display": "grid",
+              "gridTemplateColumns": "repeat(3, 1fr)",
+            }
+          }
+        >
+          <div
+            className="m-b--16"
+          >
+            <div
+              data-testid="bullet"
+            >
+              <div>
+                <div>
+                  <img
+                    src="https://a0.muscache.com/pictures/6fccb4f8-e134-40a9-9863-b0d42923db62.jpg"
+                    style={
+                      Object {
+                        "width": 40,
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  className="m-v--16"
+                >
+                  <h3>
+                    Resources
+                  </h3>
+                </div>
+                <div
+                  className="size--14"
+                >
+                  <p>
+                    Guidelines, tips, and tricks for hosting successful online experiences.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="m-b--16"
+          >
+            <div
+              data-testid="bullet"
+            >
+              <div>
+                <div>
+                  <img
+                    src="https://a0.muscache.com/pictures/11f05488-4ea5-4b54-a1a2-755c006e803f.jpg"
+                    style={
+                      Object {
+                        "width": 40,
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  className="m-v--16"
+                >
+                  <h3>
+                    Online events
+                  </h3>
+                </div>
+                <div
+                  className="size--14"
+                >
+                  <p>
+                    Learn to master the art of hosting, online and otherwise.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="m-b--16"
+          >
+            <div
+              data-testid="bullet"
+            >
+              <div>
+                <div>
+                  <img
+                    src="https://a0.muscache.com/pictures/639bef93-4cc4-4676-9d83-705093a3d2e6.jpg"
+                    style={
+                      Object {
+                        "width": 40,
+                      }
+                    }
+                  />
+                </div>
+                <div
+                  className="m-v--16"
+                >
+                  <h3>
+                    Community support
+                  </h3>
+                </div>
+                <div
+                  className="size--14"
+                >
+                  <p>
+                    Connect with other hosts through Facebook groups and meetups.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -10717,6 +11742,142 @@ exports[`Storyshots Design System/Organisms/Section Experiences 1`] = `
                 >
                   Join easily and participate from home without a lot of prep.
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Design System/Organisms/Section Faq 1`] = `
+<div>
+  <div
+    data-testid="layout"
+  >
+    <div
+      data-testid="section"
+    >
+      <div
+        className="b_to_f--sm flex-col items-center"
+      >
+        <div
+          className="b_to_f--sm flex-col items-center p-v--16"
+        >
+          <div>
+            <h3
+              className="font__onlinehost--title "
+            >
+              Frequently asked questions
+            </h3>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "columnGap": 13,
+              "display": "grid",
+              "gridTemplateColumns": "repeat(2, 1fr)",
+              "maxWidth": 900,
+              "width": "100%",
+            }
+          }
+        >
+          <div
+            className="m-v--22"
+            style={
+              Object {
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              data-testid="bullet"
+            >
+              <div
+                className="p-v--16 b-b--white__1"
+              >
+                <div>
+                  <h4
+                    className="size--17 c--darkgreen__3"
+                  >
+                    How do I sign up?
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="m-v--22"
+            style={
+              Object {
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              data-testid="bullet"
+            >
+              <div
+                className="p-v--16 b-b--white__1"
+              >
+                <div>
+                  <h4
+                    className="size--17 c--darkgreen__3"
+                  >
+                    How will I stream my experience online?
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="m-v--22"
+            style={
+              Object {
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              data-testid="bullet"
+            >
+              <div
+                className="p-v--16 b-b--white__1"
+              >
+                <div>
+                  <h4
+                    className="size--17 c--darkgreen__3"
+                  >
+                    What's different about hosting an online experience?
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="m-v--22"
+            style={
+              Object {
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              data-testid="bullet"
+            >
+              <div
+                className="p-v--16 b-b--white__1"
+              >
+                <div>
+                  <h4
+                    className="size--17 c--darkgreen__3"
+                  >
+                    What are Online Experiences?
+                  </h4>
+                </div>
               </div>
             </div>
           </div>
@@ -13290,7 +14451,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
                 data-testid="button"
               >
                 <a
-                  className="inline-block text--center size--16 weight--500 br--6 p-t--12 p-b--12 p-l--22 p-r--22 no-wrap b--black"
+                  className="inline-block text--center size--16 weight--500 br--6 p-t--10 p-b--10 p-l--18 p-r--18 no-wrap b-2--black"
                   href="/"
                   onClick={[Function]}
                   onMouseEnter={[Function]}
@@ -13720,6 +14881,70 @@ exports[`Storyshots Design System/Organisms/Section Know 1`] = `
           <u>
             Add dates
           </u>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Design System/Organisms/Section More 1`] = `
+<div>
+  <div>
+    <div
+      style={
+        Object {
+          "height": 0,
+          "paddingTop": "50%",
+          "position": "relative",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "backgroundImage": "url(https://a0.muscache.com/pictures/2a5bb9ec-a33d-4913-a00b-16fc007b15c4.jpg)",
+            "backgroundPosition": "center",
+            "backgroundSize": "cover",
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <div
+          className="flex items-center justify-center h--full"
+        >
+          <div>
+            <div
+              className="w__more--title"
+            >
+              <h2
+                className="lh--10 text--center c--white__0 font__more--title"
+              >
+                Learn more about hosting with Airbnb Experiences
+              </h2>
+            </div>
+            <div
+              className="m-t--32 flex justify-center"
+            >
+              <div
+                className="bg--transparent"
+                data-testid="button"
+              >
+                <a
+                  className="inline-block text--center size--16 weight--500 br--6 p-t--10 p-b--10 p-l--18 p-r--18 no-wrap b-2--white__0 c--white__0"
+                  href="/"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                >
+                  Let's go
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -14463,7 +15688,7 @@ exports[`Storyshots Design System/Organisms/Section Online 1`] = `
         data-testid="button"
       >
         <a
-          className="inline-block text--center size--14 weight--500 br--6 p-t--6 p-b--6 p-l--14 p-r--14 no-wrap b--black"
+          className="inline-block text--center size--14 weight--500 br--6 p-t--6 p-b--6 p-l--14 p-r--14 no-wrap b-2--black"
           href="/"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -15436,6 +16661,7 @@ exports[`Storyshots Design System/Organisms/Section Ready 1`] = `
         <button
           className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
           data-testid="button"
+          disabled={false}
           style={Object {}}
         >
           Get started
@@ -15850,13 +17076,186 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
         data-testid="button"
       >
         <a
-          className="inline-block text--center size--16 weight--500 br--6 p-t--12 p-b--12 p-l--22 p-r--22 no-wrap b--black"
+          className="inline-block text--center size--16 weight--500 br--6 p-t--10 p-b--10 p-l--18 p-r--18 no-wrap b-2--black"
           href="/"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
           Show all 100 reviews
         </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Design System/Organisms/Section Sharing 1`] = `
+<div>
+  <div
+    data-testid="layout"
+  >
+    <div
+      data-testid="section"
+    >
+      <div
+        className="b_to_f--sm flex-col items-center"
+      >
+        <div
+          className="b_to_f--sm flex-col items-center p-v--16"
+        >
+          <div>
+            <h3
+              className="font__onlinehost--title "
+            >
+              How hosts are sharing their world
+            </h3>
+          </div>
+          <div
+            className="m-t--16"
+          >
+            <p
+              className="font__onlinehost--subtitle "
+            >
+              These hosts bring the spirit of experiences to the screen with unique small group activities to do together while we're apart.
+            </p>
+          </div>
+        </div>
+        <div
+          className="m-v--100"
+          style={
+            Object {
+              "columnGap": 25,
+              "display": "grid",
+              "gridTemplateColumns": "repeat(3, 1fr)",
+            }
+          }
+        >
+          <div>
+            <div
+              data-testid="card"
+            >
+              <div>
+                <div>
+                  <img
+                    src="https://a0.muscache.com/pictures/1f129c2b-4da0-463e-a918-ff3f9f8fa325.jpg"
+                  />
+                </div>
+                <div
+                  className="m-v--8"
+                >
+                  <h3>
+                    Meditate with Sheep
+                  </h3>
+                </div>
+                <div
+                  className="m-b--8"
+                >
+                  <p
+                    className="size--14 lh--15"
+                  >
+                    Mindfulness straight from a Scottish farm, accompanied by encounters with some fuzzy friends.
+                  </p>
+                </div>
+                <div>
+                  <p
+                    className="size--14 c--darkgreen__3"
+                  >
+                    Go to experience
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              data-testid="card"
+            >
+              <div>
+                <div>
+                  <img
+                    src="https://a0.muscache.com/pictures/1f96d01b-e5c0-409f-a01f-5c83e2632987.jpg"
+                  />
+                </div>
+                <div
+                  className="m-v--8"
+                >
+                  <h3>
+                    Family Baking Fun
+                  </h3>
+                </div>
+                <div
+                  className="m-b--8"
+                >
+                  <p
+                    className="size--14 lh--15"
+                  >
+                    A good time in the kitchen for kids and grown-ups alike that ends with a batch of freshly baked cookies.
+                  </p>
+                </div>
+                <div>
+                  <p
+                    className="size--14 c--darkgreen__3"
+                  >
+                    Go to experience
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              data-testid="card"
+            >
+              <div>
+                <div>
+                  <img
+                    src="https://a0.muscache.com/pictures/18518c4e-5c84-43f3-91b0-485207a931c0.jpg"
+                  />
+                </div>
+                <div
+                  className="m-v--8"
+                >
+                  <h3>
+                    Secrets of Magic
+                  </h3>
+                </div>
+                <div
+                  className="m-b--8"
+                >
+                  <p
+                    className="size--14 lh--15"
+                  >
+                    Part show and part masterclass, guests learn magic psychology and tricks they can do at home.
+                  </p>
+                </div>
+                <div>
+                  <p
+                    className="size--14 c--darkgreen__3"
+                  >
+                    Go to experience
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="flex justify-center"
+        >
+          <div
+            className="bg--transparent"
+            data-testid="button"
+          >
+            <a
+              className="inline-block text--center size--16 weight--500 br--6 p-t--10 p-b--10 p-l--18 p-r--18 no-wrap b-2--black"
+              href="/"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              Start creating your experience
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -15913,37 +17312,52 @@ exports[`Storyshots Design System/Organisms/Section Stay Types 1`] = `
       >
         <div
           data-testid="button"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
         >
           <a
-            className="weight--500"
             href="/"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="items-center"
+              data-testid="button"
             >
-              <div>
-                <u>
-                  Show all cards
-                </u>
-              </div>
-              <div>
-                <svg
-                  stroke="black"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={14}
+              <a
+                className="weight--500"
+                href="/"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                <div
+                  className="items-center"
                 >
-                  <g
-                    fill="none"
-                  >
-                    <path
-                      d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"
-                    />
-                  </g>
-                </svg>
-              </div>
+                  <div>
+                    <u>
+                      Show all cards
+                    </u>
+                  </div>
+                  <div>
+                    <svg
+                      stroke="black"
+                      strokeWidth={5}
+                      viewBox="0 0 32 32"
+                      width={14}
+                    >
+                      <g
+                        fill="none"
+                      >
+                        <path
+                          d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </a>
             </div>
           </a>
         </div>
@@ -16114,37 +17528,52 @@ exports[`Storyshots Design System/Organisms/Section Two Rows 1`] = `
       >
         <div
           data-testid="button"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
         >
           <a
-            className="weight--500"
             href="/"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
             <div
-              className="items-center"
+              data-testid="button"
             >
-              <div>
-                <u>
-                  Show all cards
-                </u>
-              </div>
-              <div>
-                <svg
-                  stroke="black"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={14}
+              <a
+                className="weight--500"
+                href="/"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+              >
+                <div
+                  className="items-center"
                 >
-                  <g
-                    fill="none"
-                  >
-                    <path
-                      d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"
-                    />
-                  </g>
-                </svg>
-              </div>
+                  <div>
+                    <u>
+                      Show all cards
+                    </u>
+                  </div>
+                  <div>
+                    <svg
+                      stroke="black"
+                      strokeWidth={5}
+                      viewBox="0 0 32 32"
+                      width={14}
+                    >
+                      <g
+                        fill="none"
+                      >
+                        <path
+                          d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </a>
             </div>
           </a>
         </div>
@@ -16339,6 +17768,23 @@ exports[`Storyshots Design System/Organisms/Section Works 1`] = `
                   </div>
                 </div>
               </div>
+              <div
+                className="m-t--32 flex justify-center"
+              >
+                <div
+                  className="bg--transparent"
+                  data-testid="button"
+                >
+                  <a
+                    className="inline-block text--center size--16 weight--500 br--6 p-t--10 p-b--10 p-l--18 p-r--18 no-wrap b-2--black"
+                    href="/"
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                  >
+                    Start creating your experience
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -16487,6 +17933,7 @@ exports[`Storyshots Design System/Templates/Auth Auth 1`] = `
         <button
           className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
           data-testid="button"
+          disabled={false}
           style={Object {}}
         >
           Continue
@@ -16833,6 +18280,7 @@ exports[`Storyshots Design System/Templates/Auth Exists 1`] = `
       <button
         className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
         data-testid="button"
+        disabled={false}
         style={Object {}}
       >
         Log in
@@ -16956,6 +18404,7 @@ exports[`Storyshots Design System/Templates/Auth Forgotpassword 1`] = `
         <button
           className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block false"
           data-testid="button"
+          disabled={false}
           style={
             Object {
               "backgroundColor": "black",
@@ -17088,6 +18537,7 @@ exports[`Storyshots Design System/Templates/Auth Login 1`] = `
       <button
         className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
         data-testid="button"
+        disabled={false}
         style={Object {}}
       >
         Log in
@@ -18255,6 +19705,7 @@ exports[`Storyshots Design System/Templates/Auth Signup 1`] = `
       <button
         className="c--white__0 w--full size--16 p-v--14 p-h--20 br--8 weight--300 inline-block bg--primary"
         data-testid="button"
+        disabled={false}
         style={Object {}}
       >
         Agree and continue
@@ -18336,123 +19787,39 @@ exports[`Storyshots Design System/Templates/Homes Category 1`] = `
                 </div>
               </a>
             </div>
-            <div>
-              <button
-                className="br--25 bg--white__0 b--white__2 hover-shadow--sm"
-                data-testid="button"
-                onClick={[Function]}
-                style={Object {}}
-              >
-                <div
-                  className="p-v--15 p-l--18 p-r--8 flex items-center justify-between"
-                  style={
-                    Object {
-                      "height": 45,
-                      "width": 240,
-                    }
-                  }
-                >
-                  <div>
-                    <p
-                      className="no-wrap size--14 weight--500"
-                    >
-                      Start your search
-                    </p>
-                  </div>
-                  <div>
-                    <div
-                      className="bg--primary all-center"
-                      style={
-                        Object {
-                          "borderRadius": "50%",
-                          "height": 30,
-                          "width": 30,
-                        }
-                      }
-                    >
-                      <svg
-                        height={12}
-                        stroke="white"
-                        strokeWidth={6}
-                        viewBox="0 0 32 32"
-                        width={12}
-                      >
-                        <g
-                          fill="none"
-                        >
-                          <path
-                            d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"
-                          />
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </button>
-            </div>
             <div
               className="flex items-center"
             >
               <div
-                className="searchbar__host"
+                className="searchbar__host m-r--16"
               >
                 <div
                   data-testid="button"
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
                 >
                   <a
-                    className="br--30 size--14 inline-block p-t--13 p-b--13 p-l--13 p-r--13 weight--500 c--gray__4 hover-background--white__1"
-                    href="/"
+                    href="/host/homes"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
-                    Become a host
+                    <div
+                      data-testid="button"
+                    >
+                      <a
+                        className="br--30 size--14 inline-block p-t--13 p-b--13 p-l--13 p-r--13 weight--500 c--gray__4 hover-background--white__1"
+                        href="/host/homes"
+                        onClick={[Function]}
+                        onMouseEnter={[Function]}
+                      >
+                        Become a host
+                      </a>
+                    </div>
                   </a>
                 </div>
-              </div>
-              <div
-                className="m-t--0 m-r--12 m-b--0 m-l--8"
-              >
-                <button
-                  className="bg--transparent br--30"
-                  data-testid="button"
-                  onClick={[Function]}
-                  style={Object {}}
-                >
-                  <div
-                    className="br--30 flex items-center bg--transparent p-t--13 p-b--13 p-l--15 p-r--15 hover-background--white__1"
-                  >
-                    <div
-                      className="items-center m-r--8"
-                    >
-                      <svg
-                        fill="#363636"
-                        viewBox="0 0 16 16"
-                        width={16}
-                      >
-                        <path
-                          d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
-                        />
-                      </svg>
-                    </div>
-                    <div
-                      className="items-center"
-                    >
-                      <svg
-                        fill="#363636"
-                        viewBox="0 0 256 256"
-                        width={8}
-                      >
-                        <g>
-                          <g>
-                            <polygon
-                              points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-                            />
-                          </g>
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                </button>
               </div>
               <div>
                 <button
@@ -22005,11 +23372,11 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
         className="flex__footer--others"
       >
         <div
-          className="items-center m-h--0 m-v--20"
+          className="flex items-center m-h--0 m-v--20"
         >
           <div>
             <button
-              className="items-center m-r--10 bg--transparent b--0"
+              className="flex items-center m-r--10 bg--transparent b--0"
             >
               <svg
                 className="m-r--5"
@@ -22029,7 +23396,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
           </div>
           <div>
             <button
-              className="items-center bg--transparent b--0"
+              className="flex items-center bg--transparent b--0"
             >
               <u
                 className="size--14 m-r--7"
@@ -22045,7 +23412,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
           </div>
         </div>
         <div
-          className="items-center"
+          className="flex items-center"
         >
           <div
             className="footer__rights"
@@ -22057,7 +23424,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
             </p>
           </div>
           <div
-            className="items-center"
+            className="flex items-center"
           >
             <div
               className="block__footer--dot"
@@ -22177,123 +23544,39 @@ exports[`Storyshots Design System/Templates/Homes Nearby 1`] = `
                 </div>
               </a>
             </div>
-            <div>
-              <button
-                className="br--25 bg--white__0 b--white__2 hover-shadow--sm"
-                data-testid="button"
-                onClick={[Function]}
-                style={Object {}}
-              >
-                <div
-                  className="p-v--15 p-l--18 p-r--8 flex items-center justify-between"
-                  style={
-                    Object {
-                      "height": 45,
-                      "width": 240,
-                    }
-                  }
-                >
-                  <div>
-                    <p
-                      className="no-wrap size--14 weight--500"
-                    >
-                      Start your search
-                    </p>
-                  </div>
-                  <div>
-                    <div
-                      className="bg--primary all-center"
-                      style={
-                        Object {
-                          "borderRadius": "50%",
-                          "height": 30,
-                          "width": 30,
-                        }
-                      }
-                    >
-                      <svg
-                        height={12}
-                        stroke="white"
-                        strokeWidth={6}
-                        viewBox="0 0 32 32"
-                        width={12}
-                      >
-                        <g
-                          fill="none"
-                        >
-                          <path
-                            d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"
-                          />
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </button>
-            </div>
             <div
               className="flex items-center"
             >
               <div
-                className="searchbar__host"
+                className="searchbar__host m-r--16"
               >
                 <div
                   data-testid="button"
+                  style={
+                    Object {
+                      "cursor": "pointer",
+                    }
+                  }
                 >
                   <a
-                    className="br--30 size--14 inline-block p-t--13 p-b--13 p-l--13 p-r--13 weight--500 c--gray__4 hover-background--white__1"
-                    href="/"
+                    href="/host/homes"
                     onClick={[Function]}
                     onMouseEnter={[Function]}
                   >
-                    Become a host
+                    <div
+                      data-testid="button"
+                    >
+                      <a
+                        className="br--30 size--14 inline-block p-t--13 p-b--13 p-l--13 p-r--13 weight--500 c--gray__4 hover-background--white__1"
+                        href="/host/homes"
+                        onClick={[Function]}
+                        onMouseEnter={[Function]}
+                      >
+                        Become a host
+                      </a>
+                    </div>
                   </a>
                 </div>
-              </div>
-              <div
-                className="m-t--0 m-r--12 m-b--0 m-l--8"
-              >
-                <button
-                  className="bg--transparent br--30"
-                  data-testid="button"
-                  onClick={[Function]}
-                  style={Object {}}
-                >
-                  <div
-                    className="br--30 flex items-center bg--transparent p-t--13 p-b--13 p-l--15 p-r--15 hover-background--white__1"
-                  >
-                    <div
-                      className="items-center m-r--8"
-                    >
-                      <svg
-                        fill="#363636"
-                        viewBox="0 0 16 16"
-                        width={16}
-                      >
-                        <path
-                          d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
-                        />
-                      </svg>
-                    </div>
-                    <div
-                      className="items-center"
-                    >
-                      <svg
-                        fill="#363636"
-                        viewBox="0 0 256 256"
-                        width={8}
-                      >
-                        <g>
-                          <g>
-                            <polygon
-                              points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-                            />
-                          </g>
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                </button>
               </div>
               <div>
                 <button
@@ -25805,11 +27088,11 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
         className="flex__footer--others"
       >
         <div
-          className="items-center m-h--0 m-v--20"
+          className="flex items-center m-h--0 m-v--20"
         >
           <div>
             <button
-              className="items-center m-r--10 bg--transparent b--0"
+              className="flex items-center m-r--10 bg--transparent b--0"
             >
               <svg
                 className="m-r--5"
@@ -25829,7 +27112,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
           </div>
           <div>
             <button
-              className="items-center bg--transparent b--0"
+              className="flex items-center bg--transparent b--0"
             >
               <u
                 className="size--14 m-r--7"
@@ -25845,7 +27128,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
           </div>
         </div>
         <div
-          className="items-center"
+          className="flex items-center"
         >
           <div
             className="footer__rights"
@@ -25857,7 +27140,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
             </p>
           </div>
           <div
-            className="items-center"
+            className="flex items-center"
           >
             <div
               className="block__footer--dot"

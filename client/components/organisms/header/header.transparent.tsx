@@ -1,8 +1,7 @@
 import React from "react";
+import Router from "next/router";
 
-/**
- * Styles
- */
+/** styles */
 import space from "../../../styles/space.module.scss";
 import styles from "../../../styles/index.module.scss";
 import layout from "../../../styles/layout.module.scss";
@@ -11,28 +10,28 @@ import shape from "../../../styles/shape.module.scss";
 import font from "../../../styles/font.module.scss";
 import header from "./header.module.scss";
 
-/**
- * Components
- */
+/** components */
 import { menu as menuModal } from "../../organisms/modal/modal.stories";
 import { Modal } from "../modal/modal.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/**
- * Vectors
- */
+/** vectors */
 import { NameLogo, NoNameLogo } from "../../../public/svg/logo";
 import { MagnifyGlass } from "../../../public/svg/original";
 
-/**
- * Props
- */
+/** props */
 import { TransparentHeaderProps } from "./props";
 
-/**
- * Contexts
- */
-import { useToggleState } from "../../../context/toggle";
+/** contexts */
+import { useToggleDispatch, useToggleState } from "../../../context/toggle";
+
+/** stories */
+import {
+  host as hostButton,
+  menu as menuButton,
+  globe as globeButton,
+} from "../../../components/atoms/button/button.stories";
+import { Bar } from "../bar/bar.component";
 
 /**
  * Renders the transparent header
@@ -40,7 +39,9 @@ import { useToggleState } from "../../../context/toggle";
 export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
   data,
 }) => {
-  let toggleState = useToggleState();
+  const toggleState = useToggleState();
+  const toggleDispatch = useToggleDispatch();
+
   return (
     <header className={[space["p-h--0"], space["p-v--16"]].join(" ")}>
       <div
@@ -60,60 +61,44 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
           </div>
         </div>
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
-          <div className={styles["searchbar__host"]}>
-            <Button type="host" inverse to="/host/homes" />
-          </div>
           <div
-            className={[
-              space["m-t--0"],
-              space["m-r--12"],
-              space["m-b--0"],
-              space["m-l--8"],
-            ].join(" ")}
+            className={[styles["searchbar__host"], space["m-h--4"]].join(" ")}
           >
-            <Button type="globe" inverse />
+            <Button {...hostButton.args} inverse animate />
           </div>
-          <div>
-            <Button authenticated={data} type="menu" inverse />
+          <div className={[space["m-h--4"]].join(" ")}>
+            <Button
+              {...globeButton.args}
+              inverse
+              onPress={() => toggleDispatch({ type: "toggle_language" })}
+            />
+          </div>
+          <div className={[space["m-l--4"]].join(" ")}>
+            <Button
+              {...menuButton.args}
+              inverse
+              authenticated={data}
+              onPress={() => toggleDispatch({ type: "toggle_menu" })}
+            />
           </div>
         </div>
-        <Modal
-          authenticated={data}
-          criteria={toggleState.menu}
-          type="menu"
-          extendsTo={[
+        <div
+          className={[
             layout["absolute"],
             layout["r--0"],
             layout["t--55"],
             color["bg--transparent"],
           ].join(" ")}
-        />
-      </div>
-      <div
-        className={[
-          header["display__transparent--sm"],
-          layout["items-center"],
-          space["p-v--10"],
-          space["p-h--25"],
-          shape["br--30"],
-          shape["shadow"],
-          color["bg--white__0"],
-        ].join(" ")}
-      >
-        <div className={[space["m-r--15"]].join(" ")}>
-          <MagnifyGlass stroke={"black"} strokeWidth={4} width={17} />
-        </div>
-        <div>
-          <input
-            className={[
-              color["b--0"],
-              font["size--16"],
-              font["weight--300"],
-              shape["outline--none"],
-            ].join(" ")}
-            placeholder="Where are you going"
+        >
+          <Modal
+            {...menuModal.args}
+            authenticated={data}
+            criteria={toggleState.menu}
           />
         </div>
+      </div>
+      <div>
+        <Bar type="searchbar" />
       </div>
     </header>
   );

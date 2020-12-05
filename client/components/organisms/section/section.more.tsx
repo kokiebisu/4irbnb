@@ -1,14 +1,21 @@
-import { Button } from "../../../components/atoms/button/button.component";
 import React from "react";
+
+/** props */
 import { MoreSectionProps } from "./props";
 
-/** Styles */
+/** styles **/
 import color from "../../../styles/color.module.scss";
 import font from "../../../styles/font.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import space from "../../../styles/space.module.scss";
 import section from "./section.module.scss";
+
+/** stories */
+import { border } from "../../../components/atoms/button/button.stories";
+
+/** components */
+import { Button } from "../../../components/atoms/button/button.component";
 
 export const MoreSection: React.FC<MoreSectionProps> = () => {
   return (
@@ -40,7 +47,7 @@ export const MoreSection: React.FC<MoreSectionProps> = () => {
                   className={[
                     font["lh--10"],
                     font["text--center"],
-                    color["c--white__0"],
+                    color["c--white"],
                     section["font__more--title"],
                   ].join(" ")}
                 >
@@ -54,7 +61,7 @@ export const MoreSection: React.FC<MoreSectionProps> = () => {
                   layout["justify-center"],
                 ].join(" ")}
               >
-                <Button type="border" title="Let's go" inverse bold />
+                <Button {...border.args} title="Let's go" inverse bold />
               </div>
             </div>
           </div>

@@ -1,20 +1,21 @@
 import React from "react";
+import Router from "next/router";
 
-/** Vectors */
+/** vectors */
 import {
   Guidance,
   Protection,
   Requirements,
 } from "../../../public/svg/original";
 
-/** Components */
+/** components */
 import { Button } from "../button/button.component";
 
-/** Styles */
+/** styles **/
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 
-/** Props */
+/** props */
 import { PriorityBulletProps } from "./props";
 
 /**
@@ -59,7 +60,7 @@ export const PriorityBullet: React.FC<PriorityBulletProps> = ({
         <p>{categories[priority].description}</p>
       </div>
       <div>
-        <Button to="/">
+        <Button onPress={() => Router.push("/")}>
           <u className={[font["size--14"]].join(" ")}>
             {categories[priority].link}
           </u>
