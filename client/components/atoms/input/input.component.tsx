@@ -22,6 +22,7 @@ import { InputProps } from "./props";
 import shape from "../../../styles/shape.module.scss";
 import { TextInput } from "./input.text";
 import { TextAreaInput } from "./input.textarea";
+import { LimitInput } from "./input.limit";
 
 /**
  * Bundles the input components
@@ -44,6 +45,7 @@ export const Input: React.FC<InputProps> = ({ type, spread, ...props }) => {
     text: <TextInput {...props} />,
     checkbox: <CheckboxInput {...props} />,
     textarea: <TextAreaInput {...props} />,
+    limit: <LimitInput {...props} />,
   };
 
   return (

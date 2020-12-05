@@ -90,7 +90,7 @@ export const Button: React.FC<ButtonProps> = ({
           ? [layout["block"], shape["w--full"]].join(" ")
           : layout["inline-block"]
       }`}
-      onClick={!disable && onPress}
+      onClick={!disable ? onPress : undefined}
       disabled={disable}
       style={{ cursor: disable ? "default" : "pointer" }}
     >
