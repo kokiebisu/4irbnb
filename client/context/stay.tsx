@@ -18,6 +18,8 @@ type Payload = {
   city?: string;
   state?: string;
   postal?: string;
+  amenities?: string[];
+  safeties?: string[];
 };
 
 type State = {
@@ -35,6 +37,8 @@ type State = {
   city?: string;
   state?: string;
   postal?: string;
+  amenities?: string[];
+  safeties?: string[];
 };
 
 type StayProviderProps = { children: React.ReactNode };
@@ -45,7 +49,25 @@ const StayDispatchContext = createContext<Dispatch | undefined>(undefined);
 const stayReducer = (state: State, { type, payload }: Action) => {
   switch (type) {
     case "reset":
-      return { ...state, stay: "Entire place", guests: 0, address: "" };
+      return {
+        ...state,
+        place: undefined,
+        guests: 1,
+        address: "",
+        property: undefined,
+        stay: "Entire place",
+        bedrooms: 1,
+        beds: 1,
+        bathrooms: 1,
+        country: "Canada",
+        street: "",
+        apt: "",
+        city: "",
+        state: "",
+        postal: "",
+        amenities: [],
+        safeties: [],
+      };
     case "add":
       return { ...state, ...payload };
     default:
@@ -69,6 +91,8 @@ const StayProvider = ({ children }: StayProviderProps) => {
     city: "",
     state: "",
     postal: "",
+    amenities: [],
+    safeties: [],
   });
 
   console.log("stay provider", state);
