@@ -1,19 +1,19 @@
 import React from "react";
 
-/** Components */
+/** components */
 import { Button } from "../../atoms/button/button.component";
 
-/** Props */
+/** props */
 import { AvailableCardProps } from "./props";
 
-/** Styles */
+/** styles **/
 import color from "../../../styles/color.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 
-/** Stories */
+/** stories */
 import { primary } from "../../atoms/button/button.stories";
 
 /**

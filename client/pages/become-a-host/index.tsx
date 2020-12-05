@@ -1,15 +1,15 @@
 import React from "react";
 
-/** Components */
+/** components */
 import { Header } from "../../components/organisms/header/header.component";
 import { Create } from "../../components/organisms/create/create.component";
 
-/** Styles */
+/** styles **/
 import responsive from "../../styles/responsive.module.scss";
 import layout from "../../styles/layout.module.scss";
 import space from "../../styles/space.module.scss";
 
-/** Hooks */
+/** hooks */
 import { useTabTitle } from "../../hooks/useTabTitle";
 
 const BecomeAHostPage = () => {

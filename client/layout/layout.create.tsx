@@ -1,21 +1,21 @@
 import React from "react";
 
-/** Components */
+/** components */
 import { Bar } from "../components/organisms/bar/bar.component";
 import { Header } from "../components/organisms/header/header.component";
 import { Button } from "../components/atoms/button/button.component";
 
-/** Styles */
+/** styles **/
 import layout from "../styles/layout.module.scss";
 import space from "../styles/space.module.scss";
 import color from "../styles/color.module.scss";
 import shape from "../styles/shape.module.scss";
 import responsive from "../styles/responsive.module.scss";
 
-/** Props */
+/** props */
 import { CreateLayoutProps } from "./props";
 
-/** Stories */
+/** stories */
 import { primary } from "../components/atoms/button/button.stories";
 
 export const CreateLayout: React.FC<CreateLayoutProps> = ({

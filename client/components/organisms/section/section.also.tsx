@@ -1,13 +1,13 @@
 import React, { useRef } from "react";
 
-/** Props */
+/** props */
 import { AlsoSectionProps } from "./props";
 
-/** Components */
+/** components */
 import { Card } from "../../molecules/card/card.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/** Styles */
+/** styles **/
 import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import space from "../../../styles/space.module.scss";
@@ -21,7 +21,7 @@ import { nearbyPic } from "../../../content";
 import { useSlider } from "../../../hooks/useSlider";
 import { useHandleContainerWidthResize } from "../../../hooks/useHandleContainerWidthResize";
 
-/** Stories */
+/** stories */
 import { paginate } from "../../../components/atoms/button/button.stories";
 
 /**

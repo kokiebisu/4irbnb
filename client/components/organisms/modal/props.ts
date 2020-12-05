@@ -5,8 +5,6 @@ export interface MenuModalProps {
   authenticated?: boolean;
 }
 
-export interface RegisterModalProps {}
-
 export interface AvailabilityModalProps {
   ratings?: number;
   reviews?: number;

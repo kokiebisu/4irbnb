@@ -1,12 +1,12 @@
 import React from "react";
 
-/** Vectors */
+/** vectors */
 import { Global, Home, Lightening } from "../../../public/svg/original";
 
-/** Props */
+/** props */
 import { OnlineHostBulletProps } from "./props";
 
-/** Styles */
+/** styles **/
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 

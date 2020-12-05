@@ -2,22 +2,22 @@ import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import Router from "next/router";
 
-/** Props */
+/** props */
 import { GetStartedCreateProps } from "./props";
 
-/** Styles */
+/** styles **/
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
-/** Components */
+/** components */
 import { Button } from "../../../components/atoms/button/button.component";
 import { Input } from "../../../components/atoms/input/input.component";
 
-/** Contexts */
+/** contexts */
 import { useStayDispatch } from "../../../context/stay";
 
-/** Stories */
+/** stories */
 import { primary } from "../../../components/atoms/button/button.stories";
 
 export const GetStartedCreate: React.FC<GetStartedCreateProps> = () => {

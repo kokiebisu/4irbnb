@@ -1,21 +1,21 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-/** Vectors */
+/** vectors */
 import { Globe } from "../../../public/svg/original";
 import { ChevronDown } from "../../../public/svg/regular";
 
-/** Styles */
+/** styles **/
 import color from "../../../styles/color.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import animation from "../../../styles/animation.module.scss";
 import space from "../../../styles/space.module.scss";
 
-/** Props */
+/** props */
 import { GlobeButtonProps } from "./props";
 
-/** Contexts */
+/** contexts */
 import { useToggleDispatch } from "../../../context/toggle";
 
 /**

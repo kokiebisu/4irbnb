@@ -1,20 +1,20 @@
 import React from "react";
 
-/** Props */
+/** props */
 import { WorksSectionProps } from "./props";
 
 /** Layouts */
 import { Layout } from "../../../layout/layout.component";
 
-/** Styles */
+/** styles **/
 import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
 
-/** Components */
+/** components */
 import { Button } from "../../atoms/button/button.component";
 import { Card } from "../../molecules/card/card.component";
 
-/** Stories */
+/** stories */
 import { border } from "../../../components/atoms/button/button.stories";
 
 export const WorksSection: React.FC<WorksSectionProps> = () => {

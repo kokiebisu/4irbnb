@@ -1,7 +1,6 @@
 import React from "react";
-import { motion } from "framer-motion";
 
-/** Styles */
+/** styles */
 import layout from "../../../styles/layout.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import color from "../../../styles/color.module.scss";
@@ -9,55 +8,23 @@ import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 import modal from "./modal.module.scss";
 
-/** Components */
+/** components */
 import { Button } from "../../../components/atoms/button/button.component";
-import { Template } from "../../../components/templates/template.component";
 
-/** Props */
-import { RegisterModalProps } from "./props";
-
-/** Contexts */
+/** contexts */
 import { useToggleDispatch } from "../../../context/toggle";
 import { useAuthDispatch, useAuthState } from "../../../context/auth";
+import { AuthContent } from "./content/content.auth";
 
 /**
  * Renders the auth modal
  */
-export const AuthModal: React.FC<RegisterModalProps> = () => {
+export const AuthModal: React.FC<{}> = () => {
   const toggleDispatch = useToggleDispatch();
   const authDispatch = useAuthDispatch();
   const authState = useAuthState();
-
-  const displayContent = () => {
-    switch (authState.display) {
-      case "login":
-        return <Template type="login" />;
-      case "signup":
-        return <Template type="signup" />;
-      case "auth":
-        return <Template type="auth" />;
-      case "forgot_password":
-        return <Template type="forgotpassword" />;
-      case "exists":
-        return <Template type="exists" />;
-      default:
-        return;
-    }
-  };
-
-  const handleClose = () => {
-    toggleDispatch({ type: "close_register" });
-  };
-
-  const handlePrevious = () => {
-    authDispatch({ type: "auth_login" });
-  };
-
   return (
-    <motion.div
-      exit={{ opacity: 0 }}
-      initial={{ y: 25 }}
-      animate={{ y: 0 }}
+    <div
       className={[
         modal["w__auth"],
         shape["shadow--lg"],
@@ -83,9 +50,17 @@ export const AuthModal: React.FC<RegisterModalProps> = () => {
             ].join(" ")}
           >
             {authState.title === "Forgot password" ? (
-              <Button type="modal" modal="back" onPress={handlePrevious} />
+              <Button
+                type="modal"
+                modal="back"
+                onPress={() => authDispatch({ type: "auth_login" })}
+              />
             ) : (
-              <Button type="modal" modal="close" onPress={handleClose} />
+              <Button
+                type="modal"
+                modal="close"
+                onPress={() => toggleDispatch({ type: "close_register" })}
+              />
             )}
           </div>
           <div className={[layout["all-center"]].join(" ")}>
@@ -93,7 +68,7 @@ export const AuthModal: React.FC<RegisterModalProps> = () => {
           </div>
         </div>
       </div>
-      {displayContent()}
-    </motion.div>
+      <AuthContent />
+    </div>
   );
 };

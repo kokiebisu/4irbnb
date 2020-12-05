@@ -1,6 +1,6 @@
 import React from "react";
 
-/** Vectors */
+/** vectors */
 import {
   Checkin,
   Clock,
@@ -14,12 +14,12 @@ import {
   Cleaning,
 } from "../../../public/svg/original";
 
-/** Styles */
+/** styles **/
 import font from "../../../styles/font.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 
-/** Props */
+/** props */
 import { KnowBulletProps } from "./props";
 
 /**

@@ -4,7 +4,7 @@ import Link from "next/link";
 /** Component */
 import { Header } from "../components/organisms/header/header.component";
 
-/** Styles */
+/** styles */
 import layout from "../styles/layout.module.scss";
 import font from "../styles/font.module.scss";
 import color from "../styles/color.module.scss";

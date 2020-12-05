@@ -1,15 +1,15 @@
 import React from "react";
 
-/** Props */
+/** props */
 import { ParticipateCardProps } from "./props";
 
-/** Styles */
+/** styles **/
 import space from "../../../styles/space.module.scss";
 import color from "../../../styles/color.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import font from "../../../styles/font.module.scss";
 
-/** Vectors */
+/** vectors */
 import { getParticipateContent } from "./logic/logic.participate";
 
 /**

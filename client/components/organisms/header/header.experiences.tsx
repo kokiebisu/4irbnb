@@ -1,18 +1,18 @@
 import React from "react";
 import Router from "next/router";
 
-/** Styles */
+/** styles */
 import shape from "../../../styles/shape.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 
-/** Components */
+/** components */
 import { Button } from "../../../components/atoms/button/button.component";
 
-/** Vectors */
+/** vectors */
 import { NoNameLogo } from "../../../public/svg/logo";
 
-/** Props */
+/** props */
 import { ExperiencesHeaderProps } from "./props";
 
 /**

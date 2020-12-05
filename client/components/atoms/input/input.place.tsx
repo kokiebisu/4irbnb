@@ -1,6 +1,6 @@
 import React, { useReducer, useRef, useState } from "react";
 
-/** Styles */
+/** styles **/
 import shape from "../../../styles/shape.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
@@ -8,14 +8,14 @@ import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import input from "./input.module.scss";
 
-/** Props */
+/** props */
 import { PlaceInputProps } from "./props";
 
 /** Styling */
 import { Checked } from "../../../public/svg/original";
 import { ChevronDown, ChevronTop } from "../../../public/svg/regular";
 
-/** Hooks */
+/** hooks */
 import useOnClickOutside from "../../../hooks/useOnClickOutside";
 
 /**

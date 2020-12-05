@@ -1,14 +1,14 @@
 import React from "react";
 
-/** Props */
+/** props */
 import { BackButtonProps } from "./props";
 
-/** Styles */
+/** styles */
 import font from "../../../styles/font.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/** Vectors */
+/** vectors */
 import { ChevronLeft } from "../../../public/svg/regular";
 
 export const BackButton: React.FC<BackButtonProps> = () => {

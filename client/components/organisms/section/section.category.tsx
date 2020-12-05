@@ -1,13 +1,13 @@
 import React from "react";
 
-/** Styles */
+/** styles **/
 import section from "./section.module.scss";
 import space from "../../../styles/space.module.scss";
 
-/** Components */
+/** components */
 import { Card } from "../../molecules/card/card.component";
 
-/** Props */
+/** props */
 import { CategorySectionProps } from "./props";
 
 /**
