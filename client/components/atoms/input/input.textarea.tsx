@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 /** styles */
 import layout from "../../../styles/layout.module.scss";
@@ -6,6 +6,7 @@ import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import space from "../../../styles/space.module.scss";
+import animation from "../../../styles/animation.module.scss";
 
 export const TextAreaInput: React.FC<{
   value?: string;
@@ -13,30 +14,34 @@ export const TextAreaInput: React.FC<{
 }> = ({ value = "", handleChange }) => {
   return (
     <div
-      className={[layout["relative"], shape["h--300"], shape["w--full"]].join(
-        " "
-      )}
+      style={{ minHeight: 300 }}
+      className={[layout["relative"], shape["w--full"]].join(" ")}
     >
       <textarea
         onChange={handleChange}
-        className={[
+        className={`${[
+          layout["relative"],
+          font["weight--300"],
           color["b--white__2"],
           shape["br--6"],
           font["size--15"],
-          color["c--gray__0"],
+          color["c--gray__2"],
           shape["h--full"],
           shape["w--full"],
           space["p--12"],
-        ].join(" ")}
+          animation["focus-border--darkgreen__3"],
+          animation["transition"],
+        ].join(" ")} `}
         style={{
           outline: "none",
           resize: "vertical",
+          minHeight: 300,
         }}
-      />
+      ></textarea>
+
       <div
-        className={[layout["absolute"], layout["b--15"], layout["r--10"]].join(
-          " "
-        )}
+        style={{ bottom: 15, right: 15 }}
+        className={[layout["absolute"]].join(" ")}
       >
         <h3 className={[font["size--12"], color["c--darkgreen__3"]].join(" ")}>
           {500 - value.length}
