@@ -73,7 +73,7 @@ export const LandingBanner: React.FC<LandingBannerProps> = ({ data }) => {
                     right: 0,
                     position: "fixed",
                     top: 0,
-                    zIndex: 99999,
+                    zIndex: 5000,
                     width: "100%",
                   }}
                 >

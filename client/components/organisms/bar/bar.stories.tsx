@@ -30,3 +30,8 @@ progress.argTypes = {
     control: "number",
   },
 };
+
+export const searchbar = BarStory.bind({});
+searchbar.args = {
+  type: "searchbar",
+};

@@ -45,7 +45,7 @@ export const Button: React.FC<ButtonProps> = ({
   animate,
   ...props
 }) => {
-  const { disable = false } = props;
+  const { disable } = props;
   const types: mapProps = {
     auth: <AuthButton {...props} />,
     globe: <GlobeButton {...props} />,
@@ -90,7 +90,7 @@ export const Button: React.FC<ButtonProps> = ({
           ? [layout["block"], shape["w--full"]].join(" ")
           : layout["inline-block"]
       }`}
-      onClick={onPress}
+      onClick={!disable && onPress}
       disabled={disable}
       style={{ cursor: disable ? "default" : "pointer" }}
     >

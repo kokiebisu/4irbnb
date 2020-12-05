@@ -31,6 +31,7 @@ import {
   menu as menuButton,
   globe as globeButton,
 } from "../../../components/atoms/button/button.stories";
+import { Bar } from "../bar/bar.component";
 
 /**
  * Renders the transparent header
@@ -96,31 +97,8 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
           />
         </div>
       </div>
-      <div
-        className={[
-          header["display__transparent--sm"],
-          layout["items-center"],
-          space["p-v--10"],
-          space["p-h--25"],
-          shape["br--30"],
-          shape["shadow"],
-          color["bg--white"],
-        ].join(" ")}
-      >
-        <div className={[space["m-r--15"]].join(" ")}>
-          <MagnifyGlass stroke={"black"} strokeWidth={4} width={17} />
-        </div>
-        <div>
-          <input
-            className={[
-              color["b--0"],
-              font["size--16"],
-              font["weight--300"],
-              shape["outline--none"],
-            ].join(" ")}
-            placeholder="Where are you going"
-          />
-        </div>
+      <div>
+        <Bar type="searchbar" />
       </div>
     </header>
   );

@@ -25,9 +25,9 @@ import { WhiteHeaderProps } from "./props";
 
 /** stories */
 import {
-  host,
-  menu,
-  globe,
+  host as hostButton,
+  menu as menuButton,
+  globe as globeButton,
 } from "../../../components/atoms/button/button.stories";
 
 /**
@@ -86,17 +86,17 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
             <div
               className={[styles["searchbar__host"], space["m-h--4"]].join(" ")}
             >
-              <Button {...host.args} animate />
+              <Button {...hostButton.args} animate />
             </div>
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
-                {...globe.args}
+                {...globeButton.args}
                 onPress={() => toggleDispatch({ type: "toggle_language" })}
               />
             </div>
             <div className={[space["m-l--4"]].join(" ")}>
               <Button
-                {...menu.args}
+                {...menuButton.args}
                 authenticated={data}
                 inverse
                 onPress={() => toggleDispatch({ type: "toggle_menu" })}
@@ -125,9 +125,9 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
             <div style={{ width: 30 }}>
               <ChevronLeft width={12} />
             </div>
-            {/* <div style={{ width: "100%", flexGrow: 1 }}>
+            <div style={{ width: "100%", flexGrow: 1 }}>
               <Button type="searchbar" onPress={() => console.log("pressed")} />
-            </div> */}
+            </div>
             <div style={{ width: 30, visibility: "hidden" }}></div>
           </div>
         </div>

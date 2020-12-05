@@ -48,7 +48,7 @@ const id: () => string | JSX.Element = () => {
               style={{
                 position: "fixed",
                 top: 0,
-                zIndex: 99999,
+                zIndex: 5000,
                 width: "100%",
               }}
             >
