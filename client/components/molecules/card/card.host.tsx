@@ -1,5 +1,5 @@
 import React from "react";
-import { Router } from "next/router";
+import Router from "next/router";
 
 /** props */
 import { HostCardProps } from "./props";
@@ -56,9 +56,11 @@ export const HostCard: React.FC<HostCardProps> = ({
         </h4>
       </div>
       <div>
-        <Button onPress={() => Router.push("/")}>
-          <u>Check out some tiny houses</u>
-        </Button>
+        <Button
+          onPress={() => Router.push("/")}
+          type="underline"
+          title={`Check out some ${stayType}s`}
+        />
       </div>
     </div>
   );
