@@ -68,3 +68,8 @@ export const booking = ModalTemplate.bind({});
 booking.args = {
   type: "booking",
 };
+
+export const globe = ModalTemplate.bind({});
+globe.args = {
+  type: "globe",
+};
