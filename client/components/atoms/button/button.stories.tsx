@@ -73,14 +73,18 @@ const ButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
 export const transparent = ButtonTemplate.bind({});
 transparent.args = {
   type: "transparent",
-  inverse: true,
-  content: <h4>Button</h4>,
-  onPress: () => Router.push("/host/homes"),
+  content: <h3 className={[font["size--15"]].join(" ")}>Button</h3>,
 };
 
 export const globe = ButtonTemplate.bind({});
 globe.args = {
   type: "globe",
+  extendsTo: [font["text--left"]].join(" "),
+};
+globe.argTypes = {
+  selected: {
+    control: "boolean",
+  },
 };
 
 export const menu = ButtonTemplate.bind({});

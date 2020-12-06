@@ -11,7 +11,9 @@ import color from "../../../styles/color.module.scss";
 
 /** templates */
 import { Template } from "../../../components/templates/template.component";
-import { useToggleDispatch } from "context/toggle";
+
+/** contexts */
+import { useToggleDispatch } from "../../../context/toggle";
 
 export const GlobeModal: React.FC<{}> = () => {
   const toggleDispatch = useToggleDispatch();
