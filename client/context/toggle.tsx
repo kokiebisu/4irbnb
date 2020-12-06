@@ -9,6 +9,7 @@ type State = {
   privacy: boolean;
   menu: boolean;
   auth: boolean;
+  globe: boolean;
 };
 
 type ToggleProviderProps = { children: React.ReactNode };
@@ -24,6 +25,8 @@ const toggleReducer = (state: State, action: Action) => {
       return { ...state, menu: !state.menu };
     case "toggle_auth":
       return { ...state, auth: !state.auth, menu: !state.menu };
+    case "toggle_globe":
+      return { ...state, globe: !state.globe };
     case "close_register":
       return { ...state, auth: !state.auth };
     default:
@@ -36,6 +39,7 @@ const ToggleProvider = ({ children }: ToggleProviderProps) => {
     privacy: true,
     menu: false,
     auth: false,
+    globe: false,
   });
 
   return (

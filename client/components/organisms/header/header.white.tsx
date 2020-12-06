@@ -30,6 +30,10 @@ import {
   globe as globeButton,
 } from "../../../components/atoms/button/button.stories";
 
+/** contents */
+import { Content } from "../../../components/atoms/button/content/content.transparent";
+import Router from "next/router";
+
 /**
  * Renders the white header
  * @param {boolean} spread - Whether if the layout should be spread out or not
@@ -86,12 +90,18 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
             <div
               className={[styles["searchbar__host"], space["m-h--4"]].join(" ")}
             >
-              <Button {...hostButton.args} animate />
+              <Button
+                type="transparent"
+                animate
+                content={<Content kind="host" />}
+                onPress={() => Router.push("/host/homes")}
+              />
             </div>
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
-                {...globeButton.args}
-                onPress={() => toggleDispatch({ type: "toggle_language" })}
+                type="transparent"
+                content={<Content kind="globe" />}
+                onPress={() => toggleDispatch({ type: "toggle_globe" })}
               />
             </div>
             <div className={[space["m-l--4"]].join(" ")}>
