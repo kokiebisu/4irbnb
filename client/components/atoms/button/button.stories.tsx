@@ -20,6 +20,9 @@ import shape from "../../../styles/shape.module.scss";
 import space from "../../../styles/space.module.scss";
 import animation from "../../../styles/animation.module.scss";
 
+/** content */
+import { Content } from "./content/content.transparent";
+
 export default {
   title: "Design System/Atoms/Button",
   component: Button,
@@ -67,19 +70,17 @@ const disableTitle = {
 
 const ButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
 
+export const transparent = ButtonTemplate.bind({});
+transparent.args = {
+  type: "transparent",
+  inverse: true,
+  content: <h4>Button</h4>,
+  onPress: () => Router.push("/host/homes"),
+};
+
 export const globe = ButtonTemplate.bind({});
 globe.args = {
   type: "globe",
-  extendsTo: [color["bg--transparent"], shape["br--30"]].join(" "),
-};
-globe.argTypes = {
-  ...disableTitle,
-};
-
-export const host = ButtonTemplate.bind({});
-host.args = {
-  type: "host",
-  onPress: () => Router.push("/host/homes"),
 };
 
 export const menu = ButtonTemplate.bind({});

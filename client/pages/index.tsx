@@ -39,7 +39,11 @@ import { useTabTitle } from "../hooks/useTabTitle";
 import { APIClient } from "../api/client";
 
 /** stories */
-import { auth, privacy } from "../components/organisms/modal/modal.stories";
+import {
+  auth,
+  globe,
+  privacy,
+} from "../components/organisms/modal/modal.stories";
 
 const LandingPage = ({ currentUser }) => {
   useTabTitle("Vacation Rentals, Homes, Experiences & Places - Airbnb");
@@ -169,6 +173,40 @@ const LandingPage = ({ currentUser }) => {
                 {...auth.args}
                 animate="slideup"
                 criteria={toggleState.auth}
+              />
+            </div>
+          </div>
+        )}
+        {toggleState.globe && (
+          <div
+            style={{
+              position: "fixed",
+              zIndex: 9999,
+              bottom: 0,
+              left: 0,
+              right: 0,
+              top: 0,
+              backgroundColor: "rgba(0, 0, 0, 0.6)",
+            }}
+          >
+            <div
+              className={[
+                layout["flex"],
+                layout["justify-center"],
+                layout["items-center"],
+                shape["h--100v"],
+              ].join(" ")}
+            >
+              <Modal
+                extendsTo={[
+                  shape["w--full"],
+                  shape["h--full"],
+                  space["p--40"],
+                  shape["max-w--1200"],
+                ].join(" ")}
+                {...globe.args}
+                animate="slideup"
+                criteria={toggleState.globe}
               />
             </div>
           </div>
