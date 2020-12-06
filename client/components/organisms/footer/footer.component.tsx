@@ -1,29 +1,25 @@
 import React from "react";
 import Link from "next/link";
+import Router from "next/router";
 
-/**
- * Styles
- */
+/** styles */
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 import styles from "../../../styles/index.module.scss";
 import font from "../../../styles/font.module.scss";
 import layout from "../../../styles/layout.module.scss";
 
-/**
- * Contents
- */
+/** content */
 import { sections } from "../../../content/index";
 
-/**
- * Vectors
- */
+/** vectors */
 import { Globe } from "../../../public/svg/original";
 
-/**
- * Props
- */
+/** props */
 import { FooterProps } from "./props";
+
+/** components */
+import { Button } from "../../../components/atoms/button/button.component";
 
 /**
  * Renders the footer
@@ -68,31 +64,23 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
                 <div
                   className={[
                     space["m-v--15"],
-                    space["m-h--0"],
                     styles["grid__footer--items"],
                   ].join(" ")}
                 >
-                  {section.items.map((item, index) => {
+                  {section.items.map(({ name, url }, index) => {
                     return (
                       <div
                         className={[
-                          space["m-v--15"],
-                          space["m-h--0"],
                           space["m-v--15"],
                           styles["m__footer--item"],
                         ].join(" ")}
                         key={index}
                       >
-                        <Link href={item.url}>
-                          <a
-                            className={[
-                              font["size--14"],
-                              font["weight--300"],
-                            ].join(" ")}
-                          >
-                            {item.name}
-                          </a>
-                        </Link>
+                        <Button
+                          type="link"
+                          onPress={() => Router.push(url)}
+                          title={name}
+                        />
                       </div>
                     );
                   })}
@@ -127,61 +115,41 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
               </button>
             </div>
             <div>
-              <button
-                className={[
-                  layout["flex"],
-                  layout["items-center"],
-                  color["bg--transparent"],
-                  color["b--0"],
-                ].join(" ")}
-              >
-                <u className={[font["size--14"], space["m-r--7"]].join(" ")}>
-                  $
-                </u>
-                <u className={[font["size--14"], space["m-r--7"]].join(" ")}>
-                  CAD
-                </u>
-              </button>
+              <Button type="underline" title={`$ CAD`} bold />
             </div>
           </div>
           <div className={[layout["flex"], layout["items-center"]].join(" ")}>
             <div className={styles["footer__rights"]}>
-              <p
-                className={[
-                  font["size--14"],
-                  font["weight--300"],
-                  layout["inline-block"],
-                ].join(" ")}
-              >
+              <h4 className={[font["size--15"]].join(" ")}>
                 &copy; 2020 Airbnb, Inc. All rights reserved
-              </p>
+              </h4>
             </div>
             <div className={[layout["flex"], layout["items-center"]].join(" ")}>
               <div className={styles["block__footer--dot"]}>
                 &nbsp;&nbsp;· &nbsp;
               </div>
               <div className={space["m-r--10"]}>
-                <a
-                  className={[font["size--14"], font["weight--300"]].join(" ")}
-                >
-                  Privacy
-                </a>
+                <Button
+                  type="link"
+                  title="Privacy"
+                  onPress={() => Router.push("/")}
+                />
               </div>
               <div>&nbsp;· &nbsp;</div>
               <div className={space["m-r--10"]}>
-                <a
-                  className={[font["size--14"], font["weight--300"]].join(" ")}
-                >
-                  &nbsp;Terms
-                </a>
+                <Button
+                  type="link"
+                  title="Terms"
+                  onPress={() => Router.push("/")}
+                />
               </div>
               <div>&nbsp;· &nbsp;</div>
               <div className={space["m-r--10"]}>
-                <a
-                  className={[font["size--14"], font["weight--300"]].join(" ")}
-                >
-                  &nbsp;Sitemap
-                </a>
+                <Button
+                  type="link"
+                  title="Sitemap"
+                  onPress={() => Router.push("/")}
+                />
               </div>
             </div>
           </div>

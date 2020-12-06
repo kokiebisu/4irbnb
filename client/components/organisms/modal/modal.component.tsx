@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 /** hooks */
 import useOnClickOutside from "../../../hooks/useOnClickOutside";
+import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
 
 /** components */
 import { MenuModal } from "./modal.menu";
@@ -10,14 +11,10 @@ import { PrivacyModal } from "./modal.privacy";
 import { AvailabilityModal } from "./modal.availability";
 import { AuthModal } from "./modal.auth";
 import { BookingModal } from "./modal.booking";
+import { GlobeModal } from "./modal.globe";
 
 /** contexts */
 import { useToggleDispatch } from "../../../context/toggle";
-
-/** props */
-import { ModalProps } from "./props";
-import { GlobeModal } from "./modal.globe";
-import { useLockBodyScroll } from "hooks/useLockBodyScroll";
 
 interface mapProps {
   [key: string]: JSX.Element;
