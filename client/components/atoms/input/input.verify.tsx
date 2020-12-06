@@ -8,17 +8,19 @@ import shape from "../../../styles/shape.module.scss";
 import space from "../../../styles/space.module.scss";
 import animation from "../../../styles/animation.module.scss";
 
-export const TextAreaInput: React.FC<{
+/** components */
+import { Button } from "../button/button.component";
+
+export const VerifyInput: React.FC<{
   value?: string;
   handleChange?: () => void;
-  limit?: number;
-}> = ({ value = "", handleChange, limit = 500 }) => {
+}> = ({ value = "", handleChange }) => {
   const [active, setActive] = useState(false);
 
   const renderBorder = () => {
-    if (value.length >= limit) {
-      return animation["border--warning"];
-    }
+    // if (value.length > 0 && !valid) {
+    //   return animation["border--warning"];
+    // }
     if (active) {
       return animation["focus-border--darkgreen__3"];
     }
@@ -26,9 +28,9 @@ export const TextAreaInput: React.FC<{
   };
 
   const renderBackground = () => {
-    if (value.length >= limit) {
-      return animation["background--lightred__0"];
-    }
+    // if (value.length > 0 && !valid) {
+    //   return animation["background--lightred__0"];
+    // }
     if (active) {
       return animation["background--white"];
     }
@@ -36,19 +38,21 @@ export const TextAreaInput: React.FC<{
   };
 
   const renderColor = () => {
-    if (value.length >= limit) {
-      return animation["c--warning"];
-    }
+    // if (value.length > 0 && !valid) {
+    //   return animation["c--warning"];
+    // }
     return animation["c--darkgreen__3"];
   };
 
   return (
     <div>
       <div
-        style={{ minHeight: 300 }}
-        className={[layout["relative"], shape["w--full"]].join(" ")}
+        style={{ minHeight: 50 }}
+        className={[layout["relative"], shape["w--full"], space["m-b--4"]].join(
+          " "
+        )}
       >
-        <textarea
+        <input
           spellCheck
           onFocus={() => setActive(true)}
           onBlur={() => setActive(false)}
@@ -67,10 +71,9 @@ export const TextAreaInput: React.FC<{
           ].join(" ")} ${renderBorder()} ${renderBackground()}`}
           style={{
             outline: "none",
-            resize: "vertical",
-            minHeight: 300,
+            minHeight: 50,
           }}
-        ></textarea>
+        ></input>
 
         <div
           className={[
@@ -79,18 +82,13 @@ export const TextAreaInput: React.FC<{
             layout["r--15"],
           ].join(" ")}
         >
-          <h3 className={`${[font["size--12"]].join(" ")} ${renderColor()}`}>
-            {limit - value.length}
-          </h3>
+          <Button onPress={() => alert("verify")}>
+            <h4 className={`${[font["size--16"]].join(" ")} ${renderColor()}`}>
+              Verify
+            </h4>
+          </Button>
         </div>
       </div>
-      {value.length >= limit && (
-        <div>
-          <h3 className={[font["size--14"], color["c--warning"]].join(" ")}>
-            Please shorten your description to {limit} characters or less.
-          </h3>
-        </div>
-      )}
     </div>
   );
 };
