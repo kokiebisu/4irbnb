@@ -19,7 +19,7 @@ import * as Helpers from "../../../helper/array";
 /** Contents */
 import { nearbyPic } from "../../../content";
 import { useSlider } from "../../../hooks/useSlider";
-import { useHandleContainerWidthResize } from "../../../hooks/useHandleContainerWidthResize";
+import { useHandleContainerResize } from "../../../hooks/useHandleContainerResize";
 
 /** stories */
 import { paginate } from "../../../components/atoms/button/button.stories";
@@ -42,7 +42,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
   title = "People also search for",
 }) => {
   const containerRef = useRef<HTMLDivElement>();
-  const width: number = useHandleContainerWidthResize(containerRef);
+  const width: number = useHandleContainerResize(containerRef)[0];
   const { state, previousSlide, nextSlide } = useSlider(items, width, "also");
   const displayingItems = Helpers.groupByTwo(items);
 

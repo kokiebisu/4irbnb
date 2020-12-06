@@ -26,12 +26,9 @@ import { TransparentHeaderProps } from "./props";
 import { useToggleDispatch, useToggleState } from "../../../context/toggle";
 
 /** stories */
-import {
-  host as hostButton,
-  menu as menuButton,
-  globe as globeButton,
-} from "../../../components/atoms/button/button.stories";
+import { menu as menuButton } from "../../../components/atoms/button/button.stories";
 import { Bar } from "../bar/bar.component";
+import { Content } from "../../../components/atoms/button/content/content.transparent";
 
 /**
  * Renders the transparent header
@@ -64,13 +61,20 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
           <div
             className={[styles["searchbar__host"], space["m-h--4"]].join(" ")}
           >
-            <Button {...hostButton.args} inverse animate />
+            <Button
+              type="transparent"
+              content={<Content kind="host" inverse />}
+              inverse
+              animate
+              onPress={() => Router.push("/host/homes")}
+            />
           </div>
           <div className={[space["m-h--4"]].join(" ")}>
             <Button
-              {...globeButton.args}
+              type="transparent"
+              content={<Content kind="globe" inverse />}
               inverse
-              onPress={() => toggleDispatch({ type: "toggle_language" })}
+              onPress={() => toggleDispatch({ type: "toggle_globe" })}
             />
           </div>
           <div className={[space["m-l--4"]].join(" ")}>

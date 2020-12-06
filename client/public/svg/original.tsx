@@ -348,6 +348,14 @@ export const CheckInverse = (props) => {
   );
 };
 
+export const CheckPlain = (props) => {
+  return (
+    <svg {...props} viewBox="0 0 32 32">
+      <path fill="none" d="m4 16.5 8 8 16-16" />
+    </svg>
+  );
+};
+
 export const Checked = (props) => {
   return (
     <svg

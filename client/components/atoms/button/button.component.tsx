@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 /** components */
 import { AuthButton } from "./button.auth";
 import { ButtonProps } from "./props";
-import { GlobeButton } from "./button.globe";
-import { HostButton } from "./button.host";
 import { MenuButton } from "./button.menu";
 import { PrivacyButton } from "./button.privacy";
 import { BorderButton } from "./button.border";
@@ -24,6 +22,8 @@ import { BackButton } from "./button.back";
 /** styles **/
 import layout from "../../../styles/layout.module.scss";
 import shape from "../../../styles/shape.module.scss";
+import { TransparentButton } from "./button.transparent";
+import { GlobeButton } from "./button.globe";
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -48,8 +48,6 @@ export const Button: React.FC<ButtonProps> = ({
   const { disable } = props;
   const types: mapProps = {
     auth: <AuthButton {...props} />,
-    globe: <GlobeButton {...props} />,
-    host: <HostButton {...props} />,
     menu: <MenuButton {...props} />,
     privacy: <PrivacyButton {...props} />,
     border: <BorderButton {...props} />,
@@ -63,6 +61,8 @@ export const Button: React.FC<ButtonProps> = ({
     filter: <FilterButton {...props} />,
     modal: <ModalButton {...props} />,
     back: <BackButton {...props} />,
+    transparent: <TransparentButton {...props} />,
+    globe: <GlobeButton {...props} />,
   };
 
   if (to) {
@@ -90,7 +90,7 @@ export const Button: React.FC<ButtonProps> = ({
           ? [layout["block"], shape["w--full"]].join(" ")
           : layout["inline-block"]
       }`}
-      onClick={!disable && onPress}
+      onClick={!disable ? onPress : undefined}
       disabled={disable}
       style={{ cursor: disable ? "default" : "pointer" }}
     >

@@ -16,6 +16,7 @@ import { useToggleDispatch } from "../../../context/toggle";
 
 /** props */
 import { ModalProps } from "./props";
+import { GlobeModal } from "./modal.globe";
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -60,6 +61,7 @@ export const Modal: React.FC<ModalProps> = ({
     auth: <AuthModal {...props} />,
     availability: <AvailabilityModal {...props} />,
     booking: <BookingModal {...props} />,
+    globe: <GlobeModal {...props} />,
   };
 
   if (criteria !== undefined) {
