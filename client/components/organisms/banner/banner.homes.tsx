@@ -120,7 +120,11 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
       </div>
       <div
         style={{ position: "relative", zIndex: 500 }}
-        className={[banner["w__homes--right"]].join(" ")}
+        className={[
+          banner["w__homes--right"],
+          space["m-l--64"],
+          space["m-t--50"],
+        ].join(" ")}
       >
         <div
           style={{
@@ -142,7 +146,7 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
               display: "flex",
             }}
           >
-            {hosts.map((host, index) => {
+            {hosts.map(({ name, imgUrl, stayType, location }, index) => {
               return (
                 <div
                   key={index}
@@ -151,11 +155,10 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
                 >
                   <Card
                     type="host"
-                    key={index}
-                    host={host.name}
-                    imgUrl={host.imgUrl}
-                    stayType={host.stayType}
-                    location={host.location}
+                    host={name}
+                    imgUrl={imgUrl}
+                    stayType={stayType}
+                    location={location}
                   />
                 </div>
               );
@@ -167,7 +170,7 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
             space["m-t--32"],
             space["m-r--32"],
             layout["flex"],
-            layout["justify-end"],
+            responsive["justify--start_to_end--sm"],
           ].join(" ")}
         >
           <div className={[layout["items-center"], layout["flex"]].join(" ")}>

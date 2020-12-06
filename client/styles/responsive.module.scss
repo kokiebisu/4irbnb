@@ -10,6 +10,7 @@ $displays: (
   i: inline-block,
   f: flex,
   n: none,
+  g: grid,
 );
 
 $percentages: (
@@ -61,7 +62,7 @@ $pixels: (550);
       }
     }
 
-    .w100p_to_#{$percentage_name}--#{$breakpoint} {
+    .w100p_to_#{$percentage_name}p--#{$breakpoint} {
       width: 100%;
 
       @include respond-to(#{$breakpoint}) {
@@ -69,7 +70,7 @@ $pixels: (550);
       }
     }
 
-    .maxw100p_to_#{$percentage_name}--#{$breakpoint} {
+    .maxw100p_to_#{$percentage_name}p--#{$breakpoint} {
       max-width: 100%;
 
       @include respond-to(#{$breakpoint}) {
@@ -92,6 +93,14 @@ $pixels: (550);
   justify-content: center;
 
   @include respond-to(xs) {
+    justify-content: flex-end;
+  }
+}
+
+.justify--start_to_end--sm {
+  justify-content: flex-start;
+
+  @include respond-to(sm) {
     justify-content: flex-end;
   }
 }

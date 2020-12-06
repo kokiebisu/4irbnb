@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 /** styles */
 import shape from "../../../styles/shape.module.scss";
@@ -102,7 +101,9 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
           >
             <Button
               {...privacy.args}
-              extendsTo={[responsive["b_to_f--sm"]].join(" ")}
+              extendsTo={[responsive["b_to_f--sm"], font["text--center"]].join(
+                " "
+              )}
               title="Save"
               onPress={handleSave}
             />
@@ -117,7 +118,9 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
           >
             <Button
               {...privacy.args}
-              extendsTo={[responsive["b_to_f--sm"]].join(" ")}
+              extendsTo={[responsive["b_to_f--sm"], font["text--center"]].join(
+                " "
+              )}
               title="Cookie Preferences"
               inverse
               onPress={handleSettings}

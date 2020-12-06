@@ -4,6 +4,7 @@ import React from "react";
 import { PrivacyButtonProps } from "./props";
 
 /** styles **/
+import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import space from "../../../styles/space.module.scss";
 import color from "../../../styles/color.module.scss";
@@ -31,6 +32,7 @@ export const PrivacyButton: React.FC<PrivacyButtonProps> = ({
         shape["w--full"],
         shape["min-w--150"],
         font["size--15"],
+        layout["justify-center"],
       ].join(" ")} ${
         inverse
           ? [color["bg--gray__4"], color["b--transparent"]].join(" ")
