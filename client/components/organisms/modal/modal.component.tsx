@@ -17,6 +17,7 @@ import { useToggleDispatch } from "../../../context/toggle";
 /** props */
 import { ModalProps } from "./props";
 import { GlobeModal } from "./modal.globe";
+import { useLockBodyScroll } from "hooks/useLockBodyScroll";
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -28,23 +29,34 @@ interface mapProps {
  * @param {string} extendsTo - Adds custom styling to the specified component
  * @param {string} dispatchType - The type of dispatch
  */
-export const Modal: React.FC<ModalProps> = ({
+export const Modal: React.FC<{
+  type?: string;
+  extendsTo?: string;
+  dispatch?: any;
+  animate?: string;
+  lock?: boolean;
+  criteria?: any;
+}> = ({
   type,
   extendsTo,
   dispatch,
   animate = "default",
+  lock = false,
   ...props
 }) => {
   const { criteria } = props;
   const containerRef = useRef();
   const toggleDispatch = useToggleDispatch();
+  if (lock) {
+    useLockBodyScroll();
+  }
   useOnClickOutside(containerRef, () =>
     toggleDispatch({ type: `${dispatch}` })
   );
 
   const animation = {
     slideup: {
-      initial: { y: 200, opacity: 0 },
+      initial: { y: 400, opacity: 0 },
       animate: { y: 0, opacity: 1 },
       transition: { duration: 0.4, ease: "easeOut" },
     },

@@ -8,6 +8,7 @@ import font from "../../../styles/font.module.scss";
 import space from "../../../styles/space.module.scss";
 import color from "../../../styles/color.module.scss";
 import shape from "../../../styles/shape.module.scss";
+import responsive from "../../../styles/responsive.module.scss";
 
 /**
  * Renders the privacy button component
@@ -21,6 +22,7 @@ export const PrivacyButton: React.FC<PrivacyButtonProps> = ({
   return (
     <div
       className={`${[
+        responsive["b_to_f--sm"],
         font["no-wrap"],
         space["p-v--13"],
         space["p-h--18"],
