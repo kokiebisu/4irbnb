@@ -56,20 +56,6 @@ const Layout: React.FC<{
 export const LanguageTemplate: React.FC<{}> = () => {
   return (
     <div>
-      <div
-        className={[
-          layout["flex"],
-          layout["items-center"],
-          space["m-b--50"],
-        ].join(" ")}
-      >
-        <div className={[space["m-r--32"]].join(" ")}>
-          <Button type="underline" title="Language and region" font={16} bold />
-        </div>
-        <div>
-          <Button type="underline" title="Currency" font={16} bold unselected />
-        </div>
-      </div>
       {/* <div className={[space["m-b--24"]].join(" ")}>
         <Layout
           type="suggested"
