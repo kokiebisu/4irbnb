@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { Layout } from "layout/layout.component";
-import { useStayDispatch, useStayState } from "context/stay";
+import { Layout } from "../../layout/layout.component";
+import { useStayDispatch, useStayState } from "../../context/stay";
 import Router from "next/router";
 import { Create } from "../../components/organisms/create/create.component";
 
-const DescriptionPage = () => {
+const TitlePage = () => {
   const stayDispatch = useStayDispatch();
-  const { description } = useStayState();
+  const { phone } = useStayState();
   const [data, setData] = useState({
-    description,
+    phone,
   });
 
   const proceed = () => {
@@ -17,13 +17,13 @@ const DescriptionPage = () => {
       payload: data,
     });
     setTimeout(() => {
-      Router.push("/become-a-host/title");
+      Router.push("/become-a-host/requirements");
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push("/become-a-host/spaces");
+      Router.push("/become-a-host/description");
     }, 500);
   };
 
@@ -33,17 +33,18 @@ const DescriptionPage = () => {
       left={
         <Create
           title="Description and title"
-          type="description"
+          type="phone"
           data={data}
           setData={setData}
         />
       }
-      percentage={60}
+      percentage={80}
       next={proceed}
       back={revert}
-      criteria={data.description.length === 0 || data.description.length >= 500}
+      criteria={data.phone === 0}
+      // criteria={...verify the number}
     />
   );
 };
 
-export default DescriptionPage;
+export default TitlePage;
