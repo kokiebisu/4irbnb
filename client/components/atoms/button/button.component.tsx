@@ -24,6 +24,7 @@ import layout from "../../../styles/layout.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import { TransparentButton } from "./button.transparent";
 import { GlobeButton } from "./button.globe";
+import { LinkButton } from "./button.link";
 
 interface mapProps {
   [key: string]: JSX.Element;
@@ -63,21 +64,8 @@ export const Button: React.FC<ButtonProps> = ({
     back: <BackButton {...props} />,
     transparent: <TransparentButton {...props} />,
     globe: <GlobeButton {...props} />,
+    link: <LinkButton {...props} />,
   };
-
-  if (to) {
-    return (
-      <div
-        style={{ cursor: "pointer" }}
-        className={extendsTo}
-        data-testid="button"
-      >
-        <Link href={to}>
-          <a>{type ? types[type] : children}</a>
-        </Link>
-      </div>
-    );
-  }
 
   return (
     <motion.button
