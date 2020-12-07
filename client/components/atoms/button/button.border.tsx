@@ -65,7 +65,7 @@ export const BorderButton: React.FC<BorderButtonProps> = ({
 
   return (
     <div className={`${styles["common"]} ${styles[size]} ${renderBorder()}`}>
-      <h4 className={inverse && color["c--white"]}>{title}</h4>
+      <h4 className={inverse ? color["c--white"] : undefined}>{title}</h4>
     </div>
   );
 };

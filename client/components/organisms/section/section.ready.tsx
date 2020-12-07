@@ -1,4 +1,5 @@
 import React from "react";
+import Router from "next/router";
 
 /** components */
 import { Button } from "../../../components/atoms/button/button.component";
@@ -31,7 +32,12 @@ export const ReadySection: React.FC<ReadySectionProps> = () => {
           </h4>
         </div>
         <div style={{ display: "inline-block" }}>
-          <Button {...primary.args} size="md" title="Get started" />
+          <Button
+            {...primary.args}
+            size="md"
+            title="Get started"
+            onPress={() => Router.push("/become-a-host")}
+          />
         </div>
       </div>
     </div>

@@ -1,41 +1,37 @@
-import React from 'react';
+import React from "react";
 
-/**
- * Components
- */
-import { Layout } from '../../../layout/layout.component';
-import { Bullet } from '../../../components/atoms/bullet/bullet.component';
+/** styles */
+import responsive from "../../../styles/responsive.module.scss";
 
-/**
- * Props
- */
-import { PrioritySectionProps } from './props';
+/** components */
+import { Layout } from "../../../layout/layout.component";
+import { Bullet } from "../../../components/atoms/bullet/bullet.component";
 
-/**
- * Styles
- */
-import space from '../../../styles/space.module.scss';
+/** props */
+import { PrioritySectionProps } from "./props";
+
+/** styles */
+import space from "../../../styles/space.module.scss";
 
 /**
  * Renders the priority section
  * @param {string[]} priorities - The priorities
  */
 export const PrioritySection: React.FC<PrioritySectionProps> = () => {
-  const priorities = ['protection', 'guidance', 'requirements'];
   return (
-    <Layout type='section' sectionType='homes' title='Safety is our priority'>
-      <div className={[space['m-t--16']].join(' ')}>
+    <Layout type="section" sectionType="homes" title="Safety is our priority">
+      <div className={[space["m-t--16"]].join(" ")}>
         <div
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
+            gridTemplateColumns: "repeat(3, 1fr)",
             columnGap: 12,
           }}
-          className={[].join(' ')}>
-          {priorities.map((priority, index) => {
+          className={[responsive["b_to_g--sm"]].join(" ")}
+        >
+          {["protection", "guidance", "requirements"].map((priority, index) => {
             return (
-              <div key={index}>
-                <Bullet type='priority' priority={priority} />
+              <div key={index} className={[space["m-b--64"]].join(" ")}>
+                <Bullet type="priority" priority={priority} />
               </div>
             );
           })}

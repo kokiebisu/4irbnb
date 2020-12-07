@@ -13,11 +13,3 @@ export interface AvailabilityModalProps {
 export interface BookingModalProps {
   availables?: any;
 }
-
-export interface ModalProps {
-  extendsTo?: string;
-  type: string;
-  dispatchType?: string;
-  criteria?: any;
-  [x: string]: any;
-}

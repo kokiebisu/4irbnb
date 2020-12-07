@@ -4,6 +4,7 @@ import React from "react";
 import { AmenityBullet } from "./bullet.amenity";
 import { BringBullet } from "./bullet.bring";
 import { CharacteristicBullet } from "./bullet.characteristics";
+import { CheckBullet } from "./bullet.check";
 import { ExperienceBullet } from "./bullet.experience";
 import { HelpBullet } from "./bullet.help";
 import { HostBullet } from "./bullet.host";
@@ -44,6 +45,7 @@ export const Bullet: React.FC<BulletProps> = ({
     required: <RequiredBullet {...props} />,
     onlinehost: <OnlineHostBullet {...props} />,
     question: <QuestionBullet {...props} />,
+    check: <CheckBullet {...props} />,
   };
 
   return (

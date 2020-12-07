@@ -43,15 +43,14 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
       >
         <div
           className={[
-            responsive["w100p_to_55--xs"],
+            responsive["w100p_to_55p--xs"],
             layout["flex"],
             layout["justify-end"],
           ].join(" ")}
         >
           <div
+            className={[responsive["full_to_maxw550--xs"]].join(" ")}
             style={{
-              maxWidth: 550,
-              width: "100%",
               paddingBottom: 100,
             }}
           >
@@ -60,7 +59,10 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
             </div>
           </div>
           <div
-            className={[responsive["maxw100p_to_55--xs"]].join(" ")}
+            className={[
+              responsive["maxw100p_to_55p--xs"],
+              responsive["justify--center_to_end--xs"],
+            ].join(" ")}
             style={{
               backgroundColor: "white",
               width: "100%",
@@ -68,7 +70,6 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
               bottom: 0,
               zIndex: 9999,
               display: "flex",
-              justifyContent: "flex-end",
             }}
           >
             <div
