@@ -173,6 +173,7 @@ const LandingPage = ({ currentUser }) => {
                 {...auth.args}
                 animate="slideup"
                 criteria={toggleState.auth}
+                lock
               />
             </div>
           </div>
@@ -202,11 +203,12 @@ const LandingPage = ({ currentUser }) => {
                   shape["w--full"],
                   shape["h--full"],
                   space["p--40"],
-                  shape["max-w--1200"],
+                  shape["max-w--1100"],
                 ].join(" ")}
                 {...globe.args}
                 animate="slideup"
                 criteria={toggleState.globe}
+                lock
               />
             </div>
           </div>

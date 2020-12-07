@@ -43,7 +43,7 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
       >
         <div
           className={[
-            responsive["w100p_to_55--xs"],
+            responsive["w100p_to_55p--xs"],
             layout["flex"],
             layout["justify-end"],
           ].join(" ")}
@@ -60,7 +60,7 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
           </div>
           <div
             className={[
-              responsive["maxw100p_to_55--xs"],
+              responsive["maxw100p_to_55p--xs"],
               responsive["justify--center_to_end--xs"],
             ].join(" ")}
             style={{
