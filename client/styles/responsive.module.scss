@@ -104,3 +104,10 @@ $pixels: (550);
     justify-content: flex-end;
   }
 }
+
+.p-l--24_to_64--sm {
+  padding-left: 24px;
+  @include respond-to(sm) {
+    padding-left: 64px;
+  }
+}

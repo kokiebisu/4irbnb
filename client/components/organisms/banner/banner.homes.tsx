@@ -83,7 +83,7 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
         style={{ position: "relative", zIndex: 500 }}
         className={[banner["w__homes--left"]].join(" ")}
       >
-        <div className={`${[space["p-l--64"]].join(" ")} `}>
+        <div className={`${[responsive["p-l--24_to_64--sm"]].join(" ")} `}>
           <div
             style={{ maxWidth: 360, width: "100%" }}
             className={`${[
@@ -122,8 +122,8 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
         style={{ position: "relative", zIndex: 500 }}
         className={[
           banner["w__homes--right"],
-          space["m-l--64"],
-          space["m-t--50"],
+          responsive["p-l--24_to_64--sm"],
+          space["p-t--50"],
         ].join(" ")}
       >
         <div
