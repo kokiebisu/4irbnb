@@ -2,14 +2,10 @@ import React from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 
-/**
- * Props
- */
+/** props */
 import { DetailsHeaderProps } from "./props";
 
-/**
- * Styles
- */
+/** styles */
 import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import color from "../../../styles/color.module.scss";
@@ -17,19 +13,13 @@ import font from "../../../styles/font.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import header from "./header.module.scss";
 
-/**
- * Vectors
- */
+/** vectors */
 import { Star } from "../../../public/svg/original";
 
-/**
- * Components
- */
+/** components */
 import { Button } from "../../../components/atoms/button/button.component";
 
-/**
- * Hooks
- */
+/** hooks */
 import { useHandleScroll } from "../../../hooks/useHandleScroll";
 
 /**
@@ -155,7 +145,7 @@ export const DetailsHeader: React.FC<DetailsHeaderProps> = ({
                     </div>
                   </div>
                   <div>
-                    <Button {...primary.args} title="Check availability" />
+                    <Button type="primary" title="Check availability" />
                   </div>
                 </div>
               </motion.div>

@@ -1,4 +1,5 @@
 import React from "react";
+import Router from "next/router";
 
 /** props */
 import { StayHeaderProps } from "./props";
@@ -33,7 +34,7 @@ export const StayHeader: React.FC<StayHeaderProps> = ({ title }) => {
       <div className={[layout["flex"], layout["items-center"]].join(" ")}>
         <div>
           <Button
-            onPress={() => alert("button pressed")}
+            onPress={() => Router.push("/")}
             extendsTo={[
               layout["inline-block"],
               space["p--14"],
