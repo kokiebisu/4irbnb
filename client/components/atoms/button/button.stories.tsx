@@ -256,3 +256,8 @@ export const back = ButtonTemplate.bind({});
 back.args = {
   type: "back",
 };
+
+export const link = ButtonTemplate.bind({});
+link.args = {
+  type: "link",
+};

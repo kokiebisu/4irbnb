@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 /** components */
 import { Button } from "../../../components/atoms/button/button.component";
@@ -17,6 +17,7 @@ import { useToggleDispatch } from "../../../context/toggle";
 
 export const GlobeModal: React.FC<{}> = () => {
   const toggleDispatch = useToggleDispatch();
+  const [template, setTemplate] = useState("language");
   return (
     <div
       className={[
@@ -35,8 +36,37 @@ export const GlobeModal: React.FC<{}> = () => {
           />
         </div>
       </div>
+
       <div className={[space["p-h--20"], space["p-v--8"]].join(" ")}>
-        <Template type="language" />
+        <div
+          className={[
+            layout["flex"],
+            layout["items-center"],
+            space["m-b--50"],
+          ].join(" ")}
+        >
+          <div className={[space["m-r--32"]].join(" ")}>
+            <Button
+              type="underline"
+              title="Language and region"
+              font={16}
+              bold
+              unselected={template !== "language"}
+              onPress={() => setTemplate("language")}
+            />
+          </div>
+          <div>
+            <Button
+              type="underline"
+              title="Currency"
+              font={16}
+              bold
+              unselected={template !== "currency"}
+              onPress={() => setTemplate("currency")}
+            />
+          </div>
+        </div>
+        <Template type={template} />
       </div>
     </div>
   );
