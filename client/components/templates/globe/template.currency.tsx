@@ -12,7 +12,7 @@ import animation from "../../../styles/animation.module.scss";
 import shape from "../../../styles/shape.module.scss";
 
 const Layout: React.FC<{
-  items?: { language?: string; region?: string }[];
+  items?: { name?: string; abbreviation?: string; symbol?: string }[];
   title?: string;
 }> = ({ items, title }) => {
   return (
@@ -30,7 +30,7 @@ const Layout: React.FC<{
           padding: 10,
         }}
       >
-        {items.map(({ language, region }, index) => {
+        {items.map(({ name, abbreviation, symbol }, index) => {
           return (
             <div key={index}>
               <Button extendsTo={[font["text--left"]].join(" ")} block>
@@ -47,7 +47,7 @@ const Layout: React.FC<{
                         " "
                       )}
                     >
-                      {language}
+                      {name}
                     </p>
                   </div>
                   <div>
@@ -56,7 +56,9 @@ const Layout: React.FC<{
                         " "
                       )}
                     >
-                      {region}
+                      <span>{abbreviation}</span>
+                      <span> - </span>
+                      <span>{symbol}</span>
                     </p>
                   </div>
                 </div>
@@ -72,36 +74,12 @@ const Layout: React.FC<{
 export const CurrencyTemplate: React.FC<{}> = () => {
   return (
     <div>
-      <div
-        className={[
-          layout["flex"],
-          layout["items-center"],
-          space["m-b--50"],
-        ].join(" ")}
-      >
-        <div className={[space["m-r--32"]].join(" ")}>
-          <Button
-            type="underline"
-            title="Language and region"
-            font={16}
-            bold
-            unselected
-          />
-        </div>
-        <div>
-          <Button type="underline" title="Currency" font={16} bold />
-        </div>
-      </div>
       <div className={[space["m-b--24"]].join(" ")}>
         <Layout
-          title="Suggested languages and regions"
-          items={[{ language: "English", region: "Canada" }]}
-        />
-      </div>
-      <div>
-        <Layout
-          title="Choose a language and region"
-          items={[{ language: "English", region: "Canada" }]}
+          title="Choose a currency"
+          items={[
+            { name: "Canadian dollar", abbreviation: "CAD", symbol: "$" },
+          ]}
         />
       </div>
     </div>

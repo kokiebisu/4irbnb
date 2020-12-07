@@ -4,9 +4,6 @@ import { useFormik } from "formik";
 /** contexts */
 import { useAuthDispatch, useAuthState } from "../../../context/auth";
 
-/** hooks */
-import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
-
 /** styles **/
 import space from "../../../styles/space.module.scss";
 import shape from "../../../styles/shape.module.scss";
@@ -33,7 +30,6 @@ import { auth, primary, underline } from "../../atoms/button/button.stories";
  * Renders the auth template component
  */
 export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
-  useLockBodyScroll();
   const auths = getAuthContents();
   const authState = useAuthState();
   const authDispatch = useAuthDispatch();

@@ -24,7 +24,6 @@ import { LoginTemplateProps } from "./props";
 import { validateLogin as validate } from "../../../helper/auth";
 
 /** hooks */
-import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
 import { useFetch } from "../../../hooks/useFetch";
 
 /** stories */
@@ -37,7 +36,6 @@ import {
  * Renders the login template component
  */
 export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
-  useLockBodyScroll();
   const authState = useAuthState();
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("pending");
