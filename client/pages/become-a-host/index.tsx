@@ -28,7 +28,7 @@ const BecomeAHostPage = () => {
         <div className={[responsive["b_to_f--sm"]].join(" ")}>
           <div
             style={{ paddingRight: 60, marginTop: 60 }}
-            className={[responsive["w100p_to_55--sm"]].join(" ")}
+            className={[responsive["w100p_to_55p--sm"]].join(" ")}
           >
             <div
               style={{

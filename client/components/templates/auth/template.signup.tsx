@@ -20,7 +20,6 @@ import { SignupTemplateProps } from "./props";
 import { validateSignup as validate } from "../../../helper/auth";
 
 /** hooks */
-import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
 import { useFetch } from "../../../hooks/useFetch";
 
 /** contexts */
@@ -33,7 +32,6 @@ import { primary } from "../../../components/atoms/button/button.stories";
  * Renders the signup template component
  */
 export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
-  useLockBodyScroll();
   const authDispatch = useAuthDispatch();
   const [loading, setLoading] = useState(false);
   const formik = useFormik({

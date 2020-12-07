@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 /** styles */
 import shape from "../../../styles/shape.module.scss";
@@ -8,6 +7,7 @@ import font from "../../../styles/font.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 import modal from "./modal.module.scss";
+import responsive from "../../../styles/responsive.module.scss";
 
 /** components */
 import { Button } from "../../../components/atoms/button/button.component";
@@ -91,7 +91,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
           </div>
         </div>
         <div className={modal["flex__privacy--buttons"]}>
-          <motion.div
+          <div
             className={[
               space["m-t--6"],
               space["m-b--6"],
@@ -99,9 +99,16 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
               modal["m-r--privacy"],
             ].join(" ")}
           >
-            <Button {...privacy.args} title="Save" onPress={handleSave} />
-          </motion.div>
-          <motion.div
+            <Button
+              {...privacy.args}
+              extendsTo={[responsive["b_to_f--sm"], font["text--center"]].join(
+                " "
+              )}
+              title="Save"
+              onPress={handleSave}
+            />
+          </div>
+          <div
             className={[
               space["m-t--6"],
               space["m-b--6"],
@@ -111,11 +118,14 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
           >
             <Button
               {...privacy.args}
+              extendsTo={[responsive["b_to_f--sm"], font["text--center"]].join(
+                " "
+              )}
               title="Cookie Preferences"
               inverse
               onPress={handleSettings}
             />
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>

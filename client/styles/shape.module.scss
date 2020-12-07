@@ -31,7 +31,8 @@ $pixels: (
   200,
   210,
   230,
-  300
+  300,
+  1100
 );
 
 @each $pixel in $pixels {
@@ -77,6 +78,10 @@ $pixels: (
 
   .w--#{$pixel} {
     width: #{$pixel}px;
+  }
+
+  .max-w--#{$pixel} {
+    max-width: #{$pixel}px;
   }
 
   .min-w--#{$pixel} {

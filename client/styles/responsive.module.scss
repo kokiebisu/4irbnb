@@ -10,12 +10,16 @@ $displays: (
   i: inline-block,
   f: flex,
   n: none,
+  g: grid,
 );
 
 $percentages: (
   50: percentage(0.5),
   55: percentage(0.55),
 );
+
+$pixels: (550);
+
 @mixin respond-to($media) {
   @if $media == xs {
     @media only screen and (min-width: $breakpoint--xs) {
@@ -58,7 +62,7 @@ $percentages: (
       }
     }
 
-    .w100p_to_#{$percentage_name}--#{$breakpoint} {
+    .w100p_to_#{$percentage_name}p--#{$breakpoint} {
       width: 100%;
 
       @include respond-to(#{$breakpoint}) {
@@ -66,12 +70,44 @@ $percentages: (
       }
     }
 
-    .maxw100p_to_#{$percentage_name}--#{$breakpoint} {
+    .maxw100p_to_#{$percentage_name}p--#{$breakpoint} {
       max-width: 100%;
 
       @include respond-to(#{$breakpoint}) {
         max-width: #{$percentage_value};
       }
     }
+  }
+
+  @each $pixel in $pixels {
+    .full_to_maxw#{$pixel}--#{$breakpoint} {
+      width: 100%;
+      @include respond-to(#{$breakpoint}) {
+        max-width: #{$pixel}px;
+      }
+    }
+  }
+}
+
+.justify--center_to_end--xs {
+  justify-content: center;
+
+  @include respond-to(xs) {
+    justify-content: flex-end;
+  }
+}
+
+.justify--start_to_end--sm {
+  justify-content: flex-start;
+
+  @include respond-to(sm) {
+    justify-content: flex-end;
+  }
+}
+
+.p-l--24_to_64--sm {
+  padding-left: 24px;
+  @include respond-to(sm) {
+    padding-left: 64px;
   }
 }
