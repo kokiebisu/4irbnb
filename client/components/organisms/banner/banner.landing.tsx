@@ -10,9 +10,6 @@ import shape from "../../../styles/shape.module.scss";
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/** props */
-import { LandingBannerProps } from "./props";
-
 /** components */
 import { Header } from "../../../components/organisms/header/header.component";
 import { Button } from "../../../components/atoms/button/button.component";
@@ -62,11 +59,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
           className={[index["header__wrapper--md"], shape["h--full"]].join(" ")}
         >
           <div style={{ height: "100%" }}>
-            <div
-              className={[space["p-t--6"], layout["container--spread"]].join(
-                " "
-              )}
-            >
+            <div className={[layout["container--spread"]].join(" ")}>
               {scrollPosition > 56 ? (
                 <motion.div
                   exit={{ opacity: 0 }}
@@ -85,7 +78,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
                 </motion.div>
               ) : null}
               {scrollPosition > 56 ? (
-                <div style={{ padding: "38px 0" }}></div>
+                <div style={{ padding: "39px 0" }}></div>
               ) : (
                 <Header type="transparent" data={data} />
               )}
