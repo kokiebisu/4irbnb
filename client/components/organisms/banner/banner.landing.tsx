@@ -26,30 +26,34 @@ import { banner } from "../../../components/atoms/button/button.stories";
 /**
  * Renders the banner section
  */
-export const LandingBanner: React.FC<LandingBannerProps> = ({ data }) => {
+export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
   const scrollPosition = useHandleScroll();
   return (
     <div className={index["banner"]}>
       <div className={[layout["all-sides"]].join(" ")}>
         <div className={index["banner__background--picture"]}>
           <picture>
-            <source
+            {/* <source
               srcSet="/img/background1200.webp"
               media="(min-width:1200px)"
-            ></source>
+            ></source> */}
             <source
-              srcSet="/img/background960.jpg"
+              srcSet="https://a0.muscache.com/im/pictures/cf39f4c4-e860-43d4-85be-deddd7b2da90.jpg?im_w=1920"
               media="(min-width:960px)"
             ></source>
             <source
-              srcSet="/img/background720.jpg"
+              srcSet="https://a0.muscache.com/im/pictures/3c23cdc9-b2bc-45e2-8bbd-930bf3076449.jpg?im_w=1440"
               media="(min-width:720px)"
             ></source>
             <source
-              srcSet="/img/background320.webp"
+              srcSet="https://a0.muscache.com/im/pictures/c8dd7889-d579-49c7-9650-24ff71a82190.jpg?im_w=720"
               media="(min-width:320px)"
             ></source>
-            <img src="/img/background_default.png" alt="background"></img>
+            <img
+              style={{ backgroundSize: "cover" }}
+              src="https://a0.muscache.com/im/pictures/c8dd7889-d579-49c7-9650-24ff71a82190.jpg?im_w=320"
+              alt="background"
+            ></img>
           </picture>
         </div>
       </div>

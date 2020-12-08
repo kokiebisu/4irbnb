@@ -1,17 +1,13 @@
-import React from 'react';
+import React from "react";
 
-/**
- * Components
- */
-import { ExperiencesBanner } from './banner.experiences';
-import { HomesBanner } from './banner.homes';
-import { LandingBanner } from './banner.landing';
-import { OnlineHostBanner } from './banner.onlinehost';
+/** components */
+import { ExperiencesBanner } from "./banner.experiences";
+import { HomesBanner } from "./banner.homes";
+import { LandingBanner } from "./banner.landing";
+import { OnlineHostBanner } from "./banner.onlinehost";
 
-/**
- * Props
- */
-import { BannerProps } from './props';
+/** props */
+import { BannerProps } from "./props";
 
 /**
  * Bundles the banner components
