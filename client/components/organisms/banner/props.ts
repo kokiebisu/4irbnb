@@ -4,10 +4,6 @@ export interface HomesBannerProps {
 
 export interface ExperiencesBannerProps {}
 
-export interface LandingBannerProps {
-  data?: any;
-}
-
 export interface OnlineHostBannerProps {}
 
 export interface BannerProps {
