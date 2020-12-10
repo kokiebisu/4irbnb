@@ -13,7 +13,7 @@ import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
 export const BedroomsCreate: React.FC<BedroomsCreateProps> = ({
-  data,
+  data = { guests: 0 },
   setData,
 }) => {
   return (

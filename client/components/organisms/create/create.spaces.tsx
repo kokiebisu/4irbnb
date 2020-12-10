@@ -11,7 +11,7 @@ import space from "../../../styles/space.module.scss";
 export const SpacesCreate: React.FC<{
   data?: any;
   setData?: any;
-}> = ({ data, setData }) => {
+}> = ({ data = { spaces: [] }, setData }) => {
   const modify = (type: string, params: string) => {
     if (data[type].includes(params)) {
       setData({
