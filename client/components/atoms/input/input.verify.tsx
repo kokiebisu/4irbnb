@@ -53,7 +53,9 @@ export const VerifyInput: React.FC<{
         )}
       >
         <input
+          type="tel"
           spellCheck
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           onFocus={() => setActive(true)}
           onBlur={() => setActive(false)}
           onChange={handleChange}

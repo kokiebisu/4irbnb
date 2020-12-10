@@ -14,16 +14,17 @@ import { SelectInput } from "./input.select";
 import { RadioInput } from "./input.radio";
 import { CounterInput } from "./input.counter";
 import { CheckboxInput } from "./input.checkbox";
+import { TextInput } from "./input.text";
+import { TextAreaInput } from "./input.textarea";
+import { LimitInput } from "./input.limit";
+import { VerifyInput } from "./input.verify";
+import { ClosedInput } from "./input.closed";
 
 /** props */
 import { InputProps } from "./props";
 
 /** styles **/
 import shape from "../../../styles/shape.module.scss";
-import { TextInput } from "./input.text";
-import { TextAreaInput } from "./input.textarea";
-import { LimitInput } from "./input.limit";
-import { VerifyInput } from "./input.verify";
 
 /**
  * Bundles the input components
@@ -48,6 +49,7 @@ export const Input: React.FC<InputProps> = ({ type, spread, ...props }) => {
     textarea: <TextAreaInput {...props} />,
     limit: <LimitInput {...props} />,
     verify: <VerifyInput {...props} />,
+    closed: <ClosedInput {...props} />,
   };
 
   return (

@@ -13,7 +13,7 @@ import { useEffect } from "react";
 export const AmenitiesCreate: React.FC<{
   data?: any;
   setData?: any;
-}> = ({ data, setData }) => {
+}> = ({ data = { amenities: ["essentials"], safeties: ["kit"] }, setData }) => {
   const modify = (type: string, params: string) => {
     if (data[type].includes(params)) {
       setData({
