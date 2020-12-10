@@ -14,7 +14,13 @@ export const ClosedInput: React.FC<{
   selected?: true;
   value?: string;
   setData?: any;
-}> = ({ title = "Title here", data, selected = false, setData, value }) => {
+}> = ({
+  title = "Title here",
+  data = { value: false },
+  selected = false,
+  setData,
+  value,
+}) => {
   return (
     <div
       className={[
