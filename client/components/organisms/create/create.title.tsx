@@ -9,7 +9,7 @@ import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
 export const TitleCreate: React.FC<{ data?: any; setData?: any }> = ({
-  data,
+  data = { title: "Title here" },
   setData,
 }) => {
   return (
