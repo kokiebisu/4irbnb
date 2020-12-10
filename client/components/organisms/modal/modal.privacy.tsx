@@ -100,10 +100,12 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
             ].join(" ")}
           >
             <Button
-              {...privacy.args}
-              extendsTo={[responsive["b_to_f--sm"], font["text--center"]].join(
-                " "
-              )}
+              type="privacy"
+              extendsTo={[
+                shape["w--full"],
+                responsive["b_to_f--sm"],
+                font["text--center"],
+              ].join(" ")}
               title="Save"
               onPress={handleSave}
             />
@@ -117,10 +119,12 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
             ].join(" ")}
           >
             <Button
-              {...privacy.args}
-              extendsTo={[responsive["b_to_f--sm"], font["text--center"]].join(
-                " "
-              )}
+              type="privacy"
+              extendsTo={[
+                shape["w--full"],
+                responsive["b_to_f--sm"],
+                font["text--center"],
+              ].join(" ")}
               title="Cookie Preferences"
               inverse
               onPress={handleSettings}
