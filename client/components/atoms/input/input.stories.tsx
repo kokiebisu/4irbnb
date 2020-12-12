@@ -118,3 +118,8 @@ export const verify = InputStory.bind({});
 verify.args = {
   type: "verify",
 };
+
+export const closed = InputStory.bind({});
+closed.args = {
+  type: "closed",
+};

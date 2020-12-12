@@ -18,6 +18,7 @@ import { UnderlineButton } from "./button.underline";
 import { FilterButton } from "./button.filter";
 import { ModalButton } from "./button.modal";
 import { BackButton } from "./button.back";
+import { ClosedButton } from "./button.closed";
 
 /** styles **/
 import layout from "../../../styles/layout.module.scss";
@@ -65,6 +66,7 @@ export const Button: React.FC<ButtonProps> = ({
     transparent: <TransparentButton {...props} />,
     globe: <GlobeButton {...props} />,
     link: <LinkButton {...props} />,
+    closed: <ClosedButton {...props} />,
   };
 
   return (
