@@ -10,7 +10,7 @@ import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
 export const DescriptionCreate: React.FC<{ data?: any; setData?: any }> = ({
-  data,
+  data = { description: "Description here" },
   setData,
 }) => {
   return (

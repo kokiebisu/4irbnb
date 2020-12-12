@@ -93,7 +93,7 @@ menu.args = {
   extendsTo: [
     shape["br--30"],
     animation["hover-shadow--lg"],
-    color["b--white__2"],
+    color["b-2--white__2"],
   ].join(" "),
 };
 menu.argTypes = {
