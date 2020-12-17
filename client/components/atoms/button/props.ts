@@ -18,20 +18,9 @@ interface InverseProps {
   inverse?: boolean;
 }
 
-export interface AuthButtonProps {}
-
 export interface GlobeButtonProps extends InverseProps {}
 
 export interface HostButtonProps extends InverseProps {}
-
-export interface BackButtonProps {}
-
-export interface PrivacyButtonProps
-  extends InverseProps,
-    TitleProps,
-    onClickProps {}
-
-export interface BannerButtonProps extends LinkButtonProps, TitleProps {}
 
 export interface PrimaryButtonProps extends TitleProps, onClickProps {
   size?: "sm" | "md" | "lg";
@@ -43,30 +32,12 @@ export interface PrimaryButtonProps extends TitleProps, onClickProps {
 
 export interface SearchbarButtonProps extends MiniProps {}
 
-export interface PaginateButtonProps {
-  direction?: string;
-  disable?: boolean;
-  onClick?: () => void;
-}
-
 export interface ModalButtonProps {
   onClick?: () => void;
   modal?: "close" | "back";
 }
 
 export interface ExpandButtonProps extends LinkButtonProps, TitleProps {}
-
-export interface OptionButtonProps {
-  name?: string;
-  bold?: boolean;
-}
-
-export interface UnderlineButtonProps {
-  onClick?: () => void;
-  title?: string;
-  font?: number;
-  color?: string;
-}
 
 export interface CloseButtonProps {
   onClick?: () => void;

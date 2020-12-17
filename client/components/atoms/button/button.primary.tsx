@@ -7,20 +7,24 @@ import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import space from "../../../styles/space.module.scss";
 
-/** props */
-import { PrimaryButtonProps } from "./props";
-
 /** components */
 import { Animation } from "../../animation/animation.component";
 
 /**
  * Renders the primary button component
  * @param {string} title - Title of the button
- * @param {function} onClick - Action being taken when the button is clicked
  * @param {string} size - Size of the button
- * @param {boolean} spread - Whether if the button takes the full width of the parent
+ * @param {string} fill - Any custom color you want to add
+ * @param {boolean} loading - Show the loading animation if true
+ * @param {boolean} disable - Shows gray appearance and disabled users from pressing
  */
-export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
+export const PrimaryButton: React.FC<{
+  title?: string;
+  size?: string;
+  fill?: string;
+  loading?: boolean;
+  disable?: boolean;
+}> = ({
   title = "Button",
   size = "md",
   fill,

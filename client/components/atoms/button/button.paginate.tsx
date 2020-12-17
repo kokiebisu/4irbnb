@@ -10,19 +10,15 @@ import button from "./button.module.scss";
 /** vectors */
 import { ChevronLeft, ChevronRight } from "../../../public/svg/regular";
 
-/** props */
-import { PaginateButtonProps } from "./props";
-
 /**
  * Renders the paginate button component
  * @param {string} direction - The direction in which the arrow points
- * @param {function} onClick - The action being taken when the button is clicked
  * @param {boolean} disable - Whether if the button is disabled or not
  */
-export const PaginateButton: React.FC<PaginateButtonProps> = ({
-  direction = "left",
-  disable = false,
-}) => {
+export const PaginateButton: React.FC<{
+  direction?: string;
+  disable?: boolean;
+}> = ({ direction = "left", disable = false }) => {
   const icons = {
     left: (
       <ChevronLeft
