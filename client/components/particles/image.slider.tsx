@@ -162,7 +162,7 @@ export const ImageSlider = ({ slides }) => {
           {...paginate.args}
           animate
           direction="left"
-          onPress={previousSlide}
+          onClick={previousSlide}
         />
       </div>
       <div
@@ -176,7 +176,12 @@ export const ImageSlider = ({ slides }) => {
           zIndex: 9999,
         }}
       >
-        <Button type="paginate" animate direction="right" onPress={nextSlide} />
+        <Button
+          variant="paginate"
+          animate
+          direction="right"
+          onClick={nextSlide}
+        />
       </div>
 
       <div

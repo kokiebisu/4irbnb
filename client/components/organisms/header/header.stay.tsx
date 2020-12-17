@@ -34,7 +34,7 @@ export const StayHeader: React.FC<StayHeaderProps> = ({ title }) => {
       <div className={[layout["flex"], layout["items-center"]].join(" ")}>
         <div>
           <Button
-            onPress={() => Router.push("/")}
+            onClick={() => Router.push("/")}
             extendsTo={[
               layout["inline-block"],
               space["p--14"],

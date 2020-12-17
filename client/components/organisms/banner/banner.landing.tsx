@@ -10,9 +10,6 @@ import shape from "../../../styles/shape.module.scss";
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/** props */
-import { LandingBannerProps } from "./props";
-
 /** components */
 import { Header } from "../../../components/organisms/header/header.component";
 import { Button } from "../../../components/atoms/button/button.component";
@@ -23,6 +20,9 @@ import { useHandleScroll } from "../../../hooks/useHandleScroll";
 /** stories */
 import { banner } from "../../../components/atoms/button/button.stories";
 
+/** helper */
+import { ResponsiveImage } from "../../../helper/img";
+
 /**
  * Renders the banner section
  */
@@ -32,29 +32,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
     <div className={index["banner"]}>
       <div className={[layout["all-sides"]].join(" ")}>
         <div className={index["banner__background--picture"]}>
-          <picture>
-            {/* <source
-              srcSet="/img/background1200.webp"
-              media="(min-width:1200px)"
-            ></source> */}
-            <source
-              srcSet="https://a0.muscache.com/im/pictures/cf39f4c4-e860-43d4-85be-deddd7b2da90.jpg?im_w=1920"
-              media="(min-width:960px)"
-            ></source>
-            <source
-              srcSet="https://a0.muscache.com/im/pictures/3c23cdc9-b2bc-45e2-8bbd-930bf3076449.jpg?im_w=1440"
-              media="(min-width:720px)"
-            ></source>
-            <source
-              srcSet="https://a0.muscache.com/im/pictures/c8dd7889-d579-49c7-9650-24ff71a82190.jpg?im_w=720"
-              media="(min-width:320px)"
-            ></source>
-            <img
-              style={{ backgroundSize: "cover" }}
-              src="https://a0.muscache.com/im/pictures/c8dd7889-d579-49c7-9650-24ff71a82190.jpg?im_w=320"
-              alt="background"
-            ></img>
-          </picture>
+          <ResponsiveImage imgUrl="https://a0.muscache.com/im/pictures/cf39f4c4-e860-43d4-85be-deddd7b2da90.jpg" />
         </div>
       </div>
       <div className={[layout["all-sides"]].join(" ")}>
@@ -62,11 +40,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
           className={[index["header__wrapper--md"], shape["h--full"]].join(" ")}
         >
           <div style={{ height: "100%" }}>
-            <div
-              className={[space["p-t--6"], layout["container--spread"]].join(
-                " "
-              )}
-            >
+            <div className={[layout["container--spread"]].join(" ")}>
               {scrollPosition > 56 ? (
                 <motion.div
                   exit={{ opacity: 0 }}
@@ -85,7 +59,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
                 </motion.div>
               ) : null}
               {scrollPosition > 56 ? (
-                <div style={{ padding: "38px 0" }}></div>
+                <div style={{ padding: "39px 0" }}></div>
               ) : (
                 <Header type="transparent" data={data} />
               )}
@@ -133,7 +107,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
                 <Button
                   {...banner.args}
                   title="Explore nearby"
-                  onPress={() => Router.push("/")}
+                  onClick={() => Router.push("/")}
                 />
               </div>
             </div>

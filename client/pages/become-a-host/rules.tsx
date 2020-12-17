@@ -1,19 +1,16 @@
 import React, { useState } from "react";
 import { Layout } from "layout/layout.component";
-import { useStayDispatch, useStayState } from "../../context/stay";
+import { useStayDispatch, useStayState } from "context/stay";
 import Router from "next/router";
 import { Create } from "../../components/organisms/create/create.component";
 
-const BedRoomsPage = () => {
+const DescriptionPage = () => {
   const stayDispatch = useStayDispatch();
-  const { country, street, apt, city, state, postal } = useStayState();
+  const { smoking, events, details } = useStayState();
   const [data, setData] = useState({
-    country,
-    street,
-    apt,
-    city,
-    state,
-    postal,
+    smoking,
+    events,
+    details,
   });
 
   const proceed = () => {
@@ -22,38 +19,39 @@ const BedRoomsPage = () => {
       payload: data,
     });
     setTimeout(() => {
-      Router.push("/become-a-host/amenities");
+      Router.push("/become-a-host/title");
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push("/become-a-host/bathrooms");
+      Router.push("/become-a-host/spaces");
     }, 500);
   };
+
+  console.log("data.events", typeof data.events);
+  console.log("data.smoking", typeof data.smoking);
 
   return (
     <Layout
       type="create"
       left={
         <Create
-          title="Location"
-          type="location"
+          title="Booking settings"
+          type="rules"
           data={data}
           setData={setData}
         />
       }
-      percentage={40}
+      percentage={70}
       next={proceed}
       back={revert}
       criteria={
-        data.street === "" ||
-        data.city === "" ||
-        data.state === "" ||
-        data.postal === ""
+        typeof data.events === "undefined" &&
+        typeof data.smoking === "undefined"
       }
     />
   );
 };
 
-export default BedRoomsPage;
+export default DescriptionPage;
