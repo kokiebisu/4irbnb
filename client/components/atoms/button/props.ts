@@ -31,15 +31,6 @@ export interface PrivacyButtonProps
     TitleProps,
     onClickProps {}
 
-export interface BorderButtonProps
-  extends LinkButtonProps,
-    InverseProps,
-    TitleProps {
-  size?: "sm" | "md" | "lg";
-  spread?: boolean;
-  bold?: boolean;
-}
-
 export interface BannerButtonProps extends LinkButtonProps, TitleProps {}
 
 export interface PrimaryButtonProps extends TitleProps, onClickProps {

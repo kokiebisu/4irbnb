@@ -8,9 +8,6 @@ import shape from "../../../styles/shape.module.scss";
 import space from "../../../styles/space.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/** props */
-import { BorderButtonProps } from "./props";
-
 /**
  * Renders the border button props
  * @param {string} to - The link to which it redirects
@@ -19,12 +16,13 @@ import { BorderButtonProps } from "./props";
  * @param {string} size - The size of the button
  * @param {boolean} spread - Whether if the button takes full width of the parent
  */
-export const BorderButton: React.FC<BorderButtonProps> = ({
-  title = "Button",
-  inverse = false,
-  size = "md",
-  bold = true,
-}) => {
+export const BorderButton: React.FC<{
+  title?: string;
+  inverse?: boolean;
+  size?: "sm" | "md" | "lg";
+  spread?: boolean;
+  bold?: boolean;
+}> = ({ title = "Button", inverse = false, size = "md", bold = true }) => {
   const renderBorder = () => {
     if (inverse && bold) {
       return [color["b-2--white"]].join(" ");
