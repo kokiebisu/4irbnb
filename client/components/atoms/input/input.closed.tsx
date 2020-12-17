@@ -35,7 +35,7 @@ export const ClosedInput: React.FC<{
       <div className={[layout["flex"]].join(" ")}>
         <div className={[space["m-r--12"]].join(" ")}>
           <Button
-            type="closed"
+            variant="closed"
             content="close"
             onClick={() => setData({ ...data, [value]: false })}
             selected={data[value] === false}
@@ -43,7 +43,7 @@ export const ClosedInput: React.FC<{
         </div>
         <div>
           <Button
-            type="closed"
+            variant="closed"
             content="check"
             onClick={() => setData({ ...data, [value]: true })}
             selected={data[value] === true}

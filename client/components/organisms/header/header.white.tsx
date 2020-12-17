@@ -91,7 +91,7 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
               className={[styles["searchbar__host"], space["m-h--4"]].join(" ")}
             >
               <Button
-                type="transparent"
+                variant="transparent"
                 animate
                 content={<Content kind="host" />}
                 onClick={() => Router.push("/host/homes")}
@@ -99,7 +99,7 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
             </div>
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
-                type="transparent"
+                variant="transparent"
                 content={<Content kind="globe" />}
                 onClick={() => toggleDispatch({ type: "toggle_globe" })}
               />
@@ -136,7 +136,10 @@ export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
               <ChevronLeft width={12} />
             </div>
             <div style={{ width: "100%", flexGrow: 1 }}>
-              <Button type="searchbar" onClick={() => console.log("pressed")} />
+              <Button
+                variant="searchbar"
+                onClick={() => console.log("pressed")}
+              />
             </div>
             <div style={{ width: 30, visibility: "hidden" }}></div>
           </div>

@@ -77,7 +77,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
                         key={index}
                       >
                         <Button
-                          type="link"
+                          variant="link"
                           onClick={() => Router.push(url)}
                           title={name}
                         />
@@ -115,7 +115,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
               </button>
             </div>
             <div>
-              <Button type="underline" title={`$ CAD`} bold />
+              <Button variant="underline" title={`$ CAD`} bold />
             </div>
           </div>
           <div className={[layout["flex"], layout["items-center"]].join(" ")}>
@@ -130,7 +130,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
               </div>
               <div className={space["m-r--10"]}>
                 <Button
-                  type="link"
+                  variant="link"
                   title="Privacy"
                   onClick={() => Router.push("/")}
                 />
@@ -138,7 +138,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
               <div>&nbsp;· &nbsp;</div>
               <div className={space["m-r--10"]}>
                 <Button
-                  type="link"
+                  variant="link"
                   title="Terms"
                   onClick={() => Router.push("/")}
                 />
@@ -146,7 +146,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
               <div>&nbsp;· &nbsp;</div>
               <div className={space["m-r--10"]}>
                 <Button
-                  type="link"
+                  variant="link"
                   title="Sitemap"
                   onClick={() => Router.push("/")}
                 />
