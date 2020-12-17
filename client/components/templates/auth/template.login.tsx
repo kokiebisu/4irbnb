@@ -133,21 +133,21 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
           <Button
             {...underline.args}
             title="Forgot password?"
-            onPress={redirectTo}
+            onClick={redirectTo}
           />
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
           <Button
             {...underline.args}
             title="More login options"
-            onPress={switchBack}
+            onClick={switchBack}
           />
         </div>
         <div className={[layout["flex"]].join(" ")}>
           <p className={[font["size--14"], space["m-r--8"]].join(" ")}>
             Don't have an account?
           </p>
-          <Button {...underline.args} title="Sign up" onPress={switchAuth} />
+          <Button {...underline.args} title="Sign up" onClick={switchAuth} />
         </div>
       </form>
     </div>

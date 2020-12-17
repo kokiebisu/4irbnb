@@ -31,7 +31,7 @@ export const OnlineHostHeader: React.FC<OnlineHostHeaderProps> = () => {
               space["p--14"],
               shape["br--circle"],
             ].join(" ")}
-            onPress={() => Router.push("/")}
+            onClick={() => Router.push("/")}
           >
             <NoNameLogo fill="black" width={30} height={32} />
           </Button>

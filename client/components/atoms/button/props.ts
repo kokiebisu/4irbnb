@@ -6,8 +6,8 @@ interface LinkButtonProps {
   to?: string;
 }
 
-interface OnPressProps {
-  onPress?: () => void;
+interface onClickProps {
+  onClick?: () => void;
 }
 
 interface MiniProps {
@@ -18,41 +18,11 @@ interface InverseProps {
   inverse?: boolean;
 }
 
-export interface AuthButtonProps {
-  icon?: any;
-  name?: string;
-}
-
 export interface GlobeButtonProps extends InverseProps {}
 
 export interface HostButtonProps extends InverseProps {}
 
-export interface MenuButtonProps extends InverseProps {
-  authenticated?: boolean;
-  data?: {
-    imgUrl: string;
-  };
-}
-
-export interface BackButtonProps {}
-
-export interface PrivacyButtonProps
-  extends InverseProps,
-    TitleProps,
-    OnPressProps {}
-
-export interface BorderButtonProps
-  extends LinkButtonProps,
-    InverseProps,
-    TitleProps {
-  size?: "sm" | "md" | "lg";
-  spread?: boolean;
-  bold?: boolean;
-}
-
-export interface BannerButtonProps extends LinkButtonProps, TitleProps {}
-
-export interface PrimaryButtonProps extends TitleProps, OnPressProps {
+export interface PrimaryButtonProps extends TitleProps, onClickProps {
   size?: "sm" | "md" | "lg";
   spread?: boolean;
   fill?: string;
@@ -62,44 +32,17 @@ export interface PrimaryButtonProps extends TitleProps, OnPressProps {
 
 export interface SearchbarButtonProps extends MiniProps {}
 
-export interface PaginateButtonProps {
-  direction?: string;
-  disable?: boolean;
-  onPress?: () => void;
-}
-
 export interface ModalButtonProps {
-  onPress?: () => void;
+  onClick?: () => void;
   modal?: "close" | "back";
 }
 
 export interface ExpandButtonProps extends LinkButtonProps, TitleProps {}
 
-export interface OptionButtonProps {
-  name?: string;
-  bold?: boolean;
-}
-
-export interface UnderlineButtonProps {
-  onPress?: () => void;
-  title?: string;
-  font?: number;
-  color?: string;
-}
-
 export interface CloseButtonProps {
-  onPress?: () => void;
+  onClick?: () => void;
 }
 
 export interface FilterButtonProps {}
 
 export interface ReportButtonProps {}
-
-export type ButtonProps = {
-  extendsTo?: string;
-  type?: string;
-  onPress?: () => void;
-  block?: boolean;
-  animate?: boolean;
-  [x: string]: any;
-};

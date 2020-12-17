@@ -120,7 +120,7 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
                 <Button
                   {...auth.args}
                   auth={method}
-                  onPress={auths[method].handleClick}
+                  onClick={auths[method].handleClick}
                   icon={auths[method].icon}
                   name={auths[method].name}
                 />
@@ -144,7 +144,7 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
           </div>
           <Button
             {...underline.args}
-            onPress={switchAuth}
+            onClick={switchAuth}
             title={authState.title === "Log in" ? "Sign up" : "Log in"}
           />
         </div>

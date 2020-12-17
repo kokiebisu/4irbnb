@@ -11,7 +11,7 @@ import { StayProvider } from "../../../context/stay";
 export default {
   title: "Design System/Organisms/Create",
   component: Create,
-  argTypes: { onPress: { action: "clicked" } },
+  argTypes: { onClick: { action: "clicked" } },
   decorators: [
     (Story) => (
       <StayProvider>

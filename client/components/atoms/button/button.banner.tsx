@@ -6,14 +6,11 @@ import space from "../../../styles/space.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import font from "../../../styles/font.module.scss";
 
-/** props */
-import { BannerButtonProps } from "./props";
-
 /**
  * Renders the banner button component
  * @param {string} title - Title of the button
  */
-export const BannerButton: React.FC<BannerButtonProps> = ({
+export const BannerButton: React.FC<{ title?: string }> = ({
   title = "Button",
 }) => {
   return (

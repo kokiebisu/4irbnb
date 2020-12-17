@@ -1,8 +1,5 @@
 import React from "react";
 
-/** props */
-import { PrivacyButtonProps } from "./props";
-
 /** styles **/
 import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
@@ -16,7 +13,7 @@ import responsive from "../../../styles/responsive.module.scss";
  * @param {string} title - Title of the button
  * @param {boolean} inverse - Whether if the button takes the inverse style or not
  */
-export const PrivacyButton: React.FC<PrivacyButtonProps> = ({
+export const PrivacyButton: React.FC<{ title?: string; inverse?: boolean }> = ({
   title = "Button",
   inverse = false,
 }) => {
