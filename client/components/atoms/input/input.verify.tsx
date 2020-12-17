@@ -84,7 +84,7 @@ export const VerifyInput: React.FC<{
             layout["r--15"],
           ].join(" ")}
         >
-          <Button onPress={() => alert("verify")}>
+          <Button onClick={() => alert("verify")}>
             <h4 className={`${[font["size--16"]].join(" ")} ${renderColor()}`}>
               Verify
             </h4>

@@ -9,7 +9,7 @@ export default {
   title: "Design System/Organisms/Section",
   component: Section,
   argTypes: {
-    onPress: { action: "clicked" },
+    onClick: { action: "clicked" },
     type: { control: { disable: true } },
     extendsTo: { control: { disable: true } },
     layoutType: {

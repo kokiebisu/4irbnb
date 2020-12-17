@@ -51,15 +51,15 @@ export const AuthModal: React.FC<{}> = () => {
           >
             {authState.title === "Forgot password" ? (
               <Button
-                type="modal"
+                variant="modal"
                 modal="back"
-                onPress={() => authDispatch({ type: "auth_login" })}
+                onClick={() => authDispatch({ type: "auth_login" })}
               />
             ) : (
               <Button
-                type="modal"
+                variant="modal"
                 modal="close"
-                onPress={() => toggleDispatch({ type: "close_register" })}
+                onClick={() => toggleDispatch({ type: "close_register" })}
               />
             )}
           </div>

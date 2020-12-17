@@ -26,7 +26,7 @@ const Options: React.FC<{
           <Button
             {...option.args}
             bold={bold}
-            onPress={options[kind].handleClick}
+            onClick={options[kind].handleClick}
             name={options[kind].name}
           />
         </div>
