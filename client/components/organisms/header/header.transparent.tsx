@@ -62,7 +62,7 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
             className={[styles["searchbar__host"], space["m-h--4"]].join(" ")}
           >
             <Button
-              type="transparent"
+              variant="transparent"
               content={<Content kind="host" inverse />}
               inverse
               animate
@@ -71,7 +71,7 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
           </div>
           <div className={[space["m-h--4"]].join(" ")}>
             <Button
-              type="transparent"
+              variant="transparent"
               content={<Content kind="globe" inverse />}
               inverse
               onClick={() => toggleDispatch({ type: "toggle_globe" })}

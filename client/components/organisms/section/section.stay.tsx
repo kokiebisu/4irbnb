@@ -268,7 +268,7 @@ export const StaySection: React.FC<StaySectionProps> = ({
           {showAll && (
             <div className={space["m-v--25"]}>
               <Button
-                type="expand"
+                variant="expand"
                 to={showAll.to}
                 title={showAll.description}
               />

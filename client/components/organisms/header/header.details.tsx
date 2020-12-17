@@ -145,7 +145,7 @@ export const DetailsHeader: React.FC<DetailsHeaderProps> = ({
                     </div>
                   </div>
                   <div>
-                    <Button type="primary" title="Check availability" />
+                    <Button variant="primary" title="Check availability" />
                   </div>
                 </div>
               </motion.div>

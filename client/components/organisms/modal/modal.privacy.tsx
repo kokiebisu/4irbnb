@@ -100,7 +100,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
             ].join(" ")}
           >
             <Button
-              type="privacy"
+              variant="privacy"
               extendsTo={[
                 shape["w--full"],
                 responsive["b_to_f--sm"],
@@ -119,7 +119,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
             ].join(" ")}
           >
             <Button
-              type="privacy"
+              variant="privacy"
               extendsTo={[
                 shape["w--full"],
                 responsive["b_to_f--sm"],

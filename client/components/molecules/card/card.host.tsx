@@ -58,7 +58,7 @@ export const HostCard: React.FC<HostCardProps> = ({
       <div>
         <Button
           onClick={() => Router.push("/")}
-          type="underline"
+          variant="underline"
           title={`Check out some ${stayType}s`}
         />
       </div>

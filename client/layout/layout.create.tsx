@@ -89,7 +89,7 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
                   ].join(" ")}
                 >
                   <div>
-                    <Button type="back" onClick={back} />
+                    <Button variant="back" onClick={back} />
                   </div>
                   <div>
                     <Button

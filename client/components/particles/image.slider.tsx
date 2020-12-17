@@ -176,7 +176,12 @@ export const ImageSlider = ({ slides }) => {
           zIndex: 9999,
         }}
       >
-        <Button type="paginate" animate direction="right" onClick={nextSlide} />
+        <Button
+          variant="paginate"
+          animate
+          direction="right"
+          onClick={nextSlide}
+        />
       </div>
 
       <div
