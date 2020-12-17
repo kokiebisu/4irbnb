@@ -566,6 +566,7 @@ exports[`Storyshots Design System/Atoms/Button Auth 1`] = `
           className="size--14 c--gray__2"
         >
           Continue with 
+          Email
         </h3>
       </div>
     </div>
@@ -583,35 +584,33 @@ exports[`Storyshots Design System/Atoms/Button Back 1`] = `
     }
   }
 >
-  <button>
-    <div
-      className="flex items-center bg--transparent"
-    >
-      <div>
-        <svg
-          stroke="#61AFB2"
-          strokeWidth={3}
-          viewBox="0 0 32 32"
-          width={20}
+  <div
+    className="flex items-center bg--transparent"
+  >
+    <div>
+      <svg
+        stroke="#61AFB2"
+        strokeWidth={3}
+        viewBox="0 0 32 32"
+        width={20}
+      >
+        <g
+          fill="none"
         >
-          <g
-            fill="none"
-          >
-            <path
-              d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"
-            />
-          </g>
-        </svg>
-      </div>
-      <div>
-        <h4
-          className="size--15 c--darkgreen__3"
-        >
-          Back
-        </h4>
-      </div>
+          <path
+            d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"
+          />
+        </g>
+      </svg>
     </div>
-  </button>
+    <div>
+      <h4
+        className="size--15 c--darkgreen__3"
+      >
+        Back
+      </h4>
+    </div>
+  </div>
 </button>
 `;
 
