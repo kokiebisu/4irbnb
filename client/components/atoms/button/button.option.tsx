@@ -7,15 +7,12 @@ import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import animation from "../../../styles/animation.module.scss";
 
-/** props */
-import { OptionButtonProps } from "./props";
-
 /**
  * Renders the option button components
  * @param {string} options - Type of option button
  * @param {boolean} bold - Whether if the option button is styled bold
  */
-export const OptionButton: React.FC<OptionButtonProps> = ({
+export const OptionButton: React.FC<{ name?: string; bold?: boolean }> = ({
   name = "Option",
   bold = false,
 }) => {
