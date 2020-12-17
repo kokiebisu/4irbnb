@@ -11,7 +11,7 @@ import font from "../../../styles/font.module.scss";
  */
 export const AuthButton: React.FC<{ icon?: any; name?: string }> = ({
   icon,
-  name,
+  name = "Email",
 }) => {
   return (
     <div className={[layout["relative"], layout["all-center"]].join(" ")}>
