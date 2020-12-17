@@ -1,12 +1,12 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { MenuBar } from './menubar.component';
-import { MenuBarProps } from './props';
+import React from "react";
+import { Story, Meta } from "@storybook/react/types-6-0";
+import { MenuBar } from "./menubar.component";
+import { MenuBarProps } from "./props";
 
 export default {
-  title: 'Design System/Organisms/MenuBar',
+  title: "Design System/Organisms/MenuBar",
   component: MenuBar,
-  argTypes: { onPress: { action: 'clicked' } },
+  argTypes: { onClick: { action: "clicked" } },
 } as Meta;
 
 const MenuBarTemplate: Story<MenuBarProps> = (args) => <MenuBar {...args} />;

@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 
 /** components */
 import { AuthButton } from "./button.auth";
-import { ButtonProps } from "./props";
 import { MenuButton } from "./button.menu";
 import { PrivacyButton } from "./button.privacy";
 import { BorderButton } from "./button.border";
@@ -19,16 +18,21 @@ import { FilterButton } from "./button.filter";
 import { ModalButton } from "./button.modal";
 import { BackButton } from "./button.back";
 import { ClosedButton } from "./button.closed";
-
-/** styles **/
-import layout from "../../../styles/layout.module.scss";
-import shape from "../../../styles/shape.module.scss";
 import { TransparentButton } from "./button.transparent";
 import { GlobeButton } from "./button.globe";
 import { LinkButton } from "./button.link";
 
-interface mapProps {
-  [key: string]: JSX.Element;
+/** styles **/
+import layout from "../../../styles/layout.module.scss";
+import shape from "../../../styles/shape.module.scss";
+
+export interface ButtonProps {
+  extendsTo?: string;
+  variant?: string;
+  onClick?: () => void;
+  block?: boolean;
+  animate?: boolean;
+  [x: string]: any;
 }
 
 /**
@@ -39,16 +43,16 @@ interface mapProps {
  */
 export const Button: React.FC<ButtonProps> = ({
   extendsTo,
-  type,
+  variant,
   children,
-  onPress,
+  onClick,
   to,
   block,
   animate,
   ...props
 }) => {
   const { disable } = props;
-  const types: mapProps = {
+  const variants: { [key: string]: JSX.Element } = {
     auth: <AuthButton {...props} />,
     menu: <MenuButton {...props} />,
     privacy: <PrivacyButton {...props} />,
@@ -74,17 +78,17 @@ export const Button: React.FC<ButtonProps> = ({
       transition={{ duration: 0.1, ease: "easeInOut" }}
       whileTap={{ scale: disable || !animate ? 1 : 0.995 }}
       whileHover={{ scale: disable || !animate ? 1 : 1.005 }}
-      data-testid="button"
+      data-testid={`button--${variant}`}
       className={`${extendsTo} ${
         block
           ? [layout["block"], shape["w--full"]].join(" ")
           : layout["inline-block"]
       }`}
-      onClick={!disable ? onPress : undefined}
+      onClick={!disable ? onClick : undefined}
       disabled={disable}
       style={{ cursor: disable ? "default" : "pointer" }}
     >
-      {type ? types[type] : children}
+      {variant ? variants[variant] : children}
     </motion.button>
   );
 };

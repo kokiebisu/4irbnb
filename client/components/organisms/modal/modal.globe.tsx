@@ -30,9 +30,9 @@ export const GlobeModal: React.FC<{}> = () => {
       <div className={[space["p--12"]].join(" ")}>
         <div>
           <Button
-            type="modal"
+            variant="modal"
             modal="close"
-            onPress={() => toggleDispatch({ type: "toggle_globe" })}
+            onClick={() => toggleDispatch({ type: "toggle_globe" })}
           />
         </div>
       </div>
@@ -47,22 +47,22 @@ export const GlobeModal: React.FC<{}> = () => {
         >
           <div className={[space["m-r--32"]].join(" ")}>
             <Button
-              type="underline"
+              variant="underline"
               title="Language and region"
               font={16}
               bold
               unselected={template !== "language"}
-              onPress={() => setTemplate("language")}
+              onClick={() => setTemplate("language")}
             />
           </div>
           <div>
             <Button
-              type="underline"
+              variant="underline"
               title="Currency"
               font={16}
               bold
               unselected={template !== "currency"}
-              onPress={() => setTemplate("currency")}
+              onClick={() => setTemplate("currency")}
             />
           </div>
         </div>
