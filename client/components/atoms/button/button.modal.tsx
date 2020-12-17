@@ -10,14 +10,11 @@ import space from "../../../styles/space.module.scss";
 import button from "./button.module.scss";
 import shape from "../../../styles/shape.module.scss";
 
-/** props */
-import { ModalButtonProps } from "./props";
-
 /**
  * Renders the close button component
- * @param {function} onPress - The action taken when the button is pressed
+ * @param {function} onClick - The action taken when the button is pressed
  */
-export const ModalButton: React.FC<ModalButtonProps> = ({
+export const ModalButton: React.FC<{ modal?: string }> = ({
   modal = "close",
 }) => {
   const types = {

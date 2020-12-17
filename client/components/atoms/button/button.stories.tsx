@@ -6,7 +6,7 @@ import Router from "next/router";
 import { Button } from "../../../components/atoms/button/button.component";
 
 /** props */
-import { ButtonProps } from "./props";
+import { ButtonProps } from "./button.component";
 
 /** contexts */
 import { ContextProvider } from "../../../context/provider";
@@ -19,9 +19,6 @@ import layout from "../../../styles/layout.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import space from "../../../styles/space.module.scss";
 import animation from "../../../styles/animation.module.scss";
-
-/** content */
-import { Content } from "./content/content.transparent";
 
 export default {
   title: "Design System/Atoms/Button",
@@ -72,13 +69,13 @@ const ButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const transparent = ButtonTemplate.bind({});
 transparent.args = {
-  type: "transparent",
+  variant: "transparent",
   content: <h3 className={[font["size--15"]].join(" ")}>Button</h3>,
 };
 
 export const globe = ButtonTemplate.bind({});
 globe.args = {
-  type: "globe",
+  variant: "globe",
   extendsTo: [font["text--left"]].join(" "),
 };
 globe.argTypes = {
@@ -89,11 +86,11 @@ globe.argTypes = {
 
 export const menu = ButtonTemplate.bind({});
 menu.args = {
-  type: "menu",
+  variant: "menu",
   extendsTo: [
     shape["br--30"],
     animation["hover-shadow--lg"],
-    color["b--white__2"],
+    color["b-2--white__2"],
   ].join(" "),
 };
 menu.argTypes = {
@@ -105,7 +102,7 @@ menu.argTypes = {
 
 export const privacy = ButtonTemplate.bind({});
 privacy.args = {
-  type: "privacy",
+  variant: "privacy",
 };
 
 privacy.decorators = [
@@ -118,7 +115,7 @@ privacy.decorators = [
 
 export const border = ButtonTemplate.bind({});
 border.args = {
-  type: "border",
+  variant: "border",
   extendsTo: [color["bg--transparent"]].join(" "),
 };
 border.argTypes = {
@@ -135,7 +132,7 @@ border.argTypes = {
 
 export const banner = ButtonTemplate.bind({});
 banner.args = {
-  type: "banner",
+  variant: "banner",
   extendsTo: [color["bg--white"], shape["br--6"]].join(" "),
 };
 banner.argTypes = {
@@ -152,7 +149,7 @@ banner.decorators = [
 
 export const primary = ButtonTemplate.bind({});
 primary.args = {
-  type: "primary",
+  variant: "primary",
 };
 primary.decorators = [
   (Story) => (
@@ -170,7 +167,7 @@ primary.argTypes = {
 
 export const searchbar = ButtonTemplate.bind({});
 searchbar.args = {
-  type: "searchbar",
+  variant: "searchbar",
 };
 searchbar.argTypes = {
   ...disableInverse,
@@ -181,7 +178,7 @@ searchbar.argTypes = {
 
 export const auth = ButtonTemplate.bind({});
 auth.args = {
-  type: "auth",
+  variant: "auth",
   extendsTo: [
     button["hover__auth"],
     color["bg--transparent"],
@@ -212,7 +209,7 @@ auth.argTypes = {
 
 export const paginate = ButtonTemplate.bind({});
 paginate.args = {
-  type: "paginate",
+  variant: "paginate",
 };
 paginate.argTypes = {
   direction: {
@@ -225,23 +222,23 @@ paginate.argTypes = {
 
 export const option = ButtonTemplate.bind({});
 option.args = {
-  type: "option",
+  variant: "option",
   extendsTo: [shape["w--full"]].join(" "),
 };
 
 export const underline = ButtonTemplate.bind({});
 underline.args = {
-  type: "underline",
+  variant: "underline",
 };
 
 export const filter = ButtonTemplate.bind({});
 filter.args = {
-  type: "filter",
+  variant: "filter",
 };
 
 export const modal = ButtonTemplate.bind({});
 modal.args = {
-  type: "modal",
+  variant: "modal",
 };
 modal.argTypes = {
   modalType: {
@@ -254,10 +251,10 @@ modal.argTypes = {
 
 export const back = ButtonTemplate.bind({});
 back.args = {
-  type: "back",
+  variant: "back",
 };
 
 export const link = ButtonTemplate.bind({});
 link.args = {
-  type: "link",
+  variant: "link",
 };

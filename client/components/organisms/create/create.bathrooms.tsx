@@ -12,7 +12,7 @@ import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
 export const BathroomsCreate: React.FC<BathroomsCreateProps> = ({
-  data,
+  data = { bathrooms: 0 },
   setData,
 }) => {
   return (

@@ -10,7 +10,7 @@ import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
 export const PhoneCreate: React.FC<{ data?: any; setData?: any }> = ({
-  data,
+  data = { phone: "000-000-0000" },
   setData,
 }) => {
   return (

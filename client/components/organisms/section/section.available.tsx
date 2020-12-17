@@ -135,7 +135,7 @@ export const AvailableSection: React.FC<AvailableSectionProps> = ({
               {...paginate.args}
               animate
               direction="left"
-              onPress={previous}
+              onClick={previous}
               disable={state.activeSlide === 0}
             />
           </div>
@@ -144,7 +144,7 @@ export const AvailableSection: React.FC<AvailableSectionProps> = ({
               {...paginate.args}
               animate
               direction="right"
-              onPress={next}
+              onClick={next}
               disable={
                 state.activeSlide ===
                 Math.ceil(availables.length / displayingColumns) - 1

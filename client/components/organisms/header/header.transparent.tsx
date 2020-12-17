@@ -62,19 +62,19 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
             className={[styles["searchbar__host"], space["m-h--4"]].join(" ")}
           >
             <Button
-              type="transparent"
+              variant="transparent"
               content={<Content kind="host" inverse />}
               inverse
               animate
-              onPress={() => Router.push("/host/homes")}
+              onClick={() => Router.push("/host/homes")}
             />
           </div>
           <div className={[space["m-h--4"]].join(" ")}>
             <Button
-              type="transparent"
+              variant="transparent"
               content={<Content kind="globe" inverse />}
               inverse
-              onPress={() => toggleDispatch({ type: "toggle_globe" })}
+              onClick={() => toggleDispatch({ type: "toggle_globe" })}
             />
           </div>
           <div className={[space["m-l--4"]].join(" ")}>
@@ -82,7 +82,7 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
               {...menuButton.args}
               inverse
               authenticated={data}
-              onPress={() => toggleDispatch({ type: "toggle_menu" })}
+              onClick={() => toggleDispatch({ type: "toggle_menu" })}
             />
           </div>
         </div>

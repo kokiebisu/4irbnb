@@ -38,7 +38,7 @@ const Layout: React.FC<{
           return (
             <div key={index}>
               <Button
-                type="globe"
+                variant="globe"
                 language={language}
                 region={region}
                 extendsTo={[font["text--left"]].join(" ")}

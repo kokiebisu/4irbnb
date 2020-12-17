@@ -33,7 +33,7 @@ export const ExperiencesHeader: React.FC<ExperiencesHeaderProps> = () => {
         <div>
           <Button
             extendsTo={[layout["inline-block"]].join(" ")}
-            onPress={() => Router.push("/")}
+            onClick={() => Router.push("/")}
           >
             <NoNameLogo fill="black" width={30} height={32} />
           </Button>

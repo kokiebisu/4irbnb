@@ -464,7 +464,7 @@ export const PaginateBar: React.FC<PaginateBarProps> = ({
             {...paginate.args}
             animate
             direction="left"
-            onPress={() => Router.push(`/s/homes/page/${page - 1}`)}
+            onClick={() => Router.push(`/s/homes/page/${page - 1}`)}
           />
         )}
         <div className={[space["m-h--8"]].join(" ")}>{displayContent()}</div>
@@ -473,7 +473,7 @@ export const PaginateBar: React.FC<PaginateBarProps> = ({
             {...paginate.args}
             animate
             direction="right"
-            onPress={() => Router.push(`/s/homes/page/${page + 1}`)}
+            onClick={() => Router.push(`/s/homes/page/${page + 1}`)}
           />
         )}
       </div>
