@@ -9,7 +9,7 @@ export default {
   title: "Design System/Molecules/Card",
   component: Card,
   argTypes: {
-    onPress: { action: "clicked" },
+    onClick: { action: "clicked" },
     type: {
       control: {
         disable: true,

@@ -7,7 +7,7 @@ import { characteristic } from "../bullet.stories";
 describe("Base Button", () => {
   it("renders correctly for host button", () => {
     const { getByTestId } = render(
-      <Bullet {...characteristic.args} onPress={() => console.log("clicked")} />
+      <Bullet {...characteristic.args} onClick={() => console.log("clicked")} />
     );
     expect(getByTestId("bullet")).toBeInTheDocument();
   });

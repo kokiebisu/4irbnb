@@ -116,14 +116,14 @@ export const ExistsTemplate: React.FC<ExistsTemplateProps> = ({
         <Button
           {...underline.args}
           title="Login with a different account"
-          onPress={() => alert("button pressed")}
+          onClick={() => alert("button pressed")}
         />
       </div>
       <div className={[space["m-v--16"]].join(" ")}>
         <Button
           {...underline.args}
           title="Forgot password?"
-          onPress={() => alert("button pressed")}
+          onClick={() => alert("button pressed")}
         />
       </div>
     </div>

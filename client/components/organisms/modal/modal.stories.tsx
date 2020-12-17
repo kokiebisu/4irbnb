@@ -17,7 +17,7 @@ import color from "../../../styles/color.module.scss";
 
 export default {
   title: "Design System/Organisms/Modal",
-  argTypes: { onPress: { action: "clicked" } },
+  argTypes: { onClick: { action: "clicked" } },
   decorators: [
     (Story) => (
       <ContextProvider>

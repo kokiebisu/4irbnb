@@ -161,7 +161,7 @@ export const StaySection: React.FC<StaySectionProps> = ({
                 {...paginate.args}
                 animate
                 direction="left"
-                onPress={previous}
+                onClick={previous}
                 disable={state.activeSlide === 0}
               />
             </div>
@@ -170,7 +170,7 @@ export const StaySection: React.FC<StaySectionProps> = ({
                 {...paginate.args}
                 animate
                 direction="right"
-                onPress={next}
+                onClick={next}
                 disable={state.activeSlide === Math.floor(items.length / 2) - 1}
               />
             </div>
@@ -268,7 +268,7 @@ export const StaySection: React.FC<StaySectionProps> = ({
           {showAll && (
             <div className={space["m-v--25"]}>
               <Button
-                type="expand"
+                variant="expand"
                 to={showAll.to}
                 title={showAll.description}
               />

@@ -1,5 +1,7 @@
-import { CheckPlain, Close } from "../../../public/svg/original";
 import React from "react";
+
+/** vectors */
+import { CheckPlain, Close } from "../../../public/svg/original";
 
 export const ClosedButton: React.FC<{
   selected?: boolean;

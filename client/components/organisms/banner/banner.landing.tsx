@@ -107,7 +107,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
                 <Button
                   {...banner.args}
                   title="Explore nearby"
-                  onPress={() => Router.push("/")}
+                  onClick={() => Router.push("/")}
                 />
               </div>
             </div>
