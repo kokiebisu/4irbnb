@@ -65,7 +65,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
               {...paginate.args}
               animate
               direction="left"
-              onPress={previousSlide}
+              onClick={previousSlide}
               disable={state.activeSlide === 0}
             />
           </div>
@@ -74,7 +74,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
               {...paginate.args}
               animate
               direction="right"
-              onPress={nextSlide}
+              onClick={nextSlide}
               disable={
                 state.activeSlide === items.length / 2 - (width > 728 ? 3 : 2)
               }

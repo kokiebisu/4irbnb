@@ -111,7 +111,7 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
                 {...primary.args}
                 size="md"
                 title="Get started"
-                onPress={() => Router.push("/become-a-host")}
+                onClick={() => Router.push("/become-a-host")}
                 animate
               />
             </div>
@@ -179,7 +179,7 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
                 {...paginate.args}
                 animate
                 direction="left"
-                onPress={previousSlide}
+                onClick={previousSlide}
               />
             </div>
             <div>
@@ -187,7 +187,7 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
                 {...paginate.args}
                 animate
                 direction="right"
-                onPress={nextSlide}
+                onClick={nextSlide}
               />
             </div>
           </div>

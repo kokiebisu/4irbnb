@@ -16,7 +16,7 @@ import { PaginateButtonProps } from "./props";
 /**
  * Renders the paginate button component
  * @param {string} direction - The direction in which the arrow points
- * @param {function} onPress - The action being taken when the button is clicked
+ * @param {function} onClick - The action being taken when the button is clicked
  * @param {boolean} disable - Whether if the button is disabled or not
  */
 export const PaginateButton: React.FC<PaginateButtonProps> = ({

@@ -10,13 +10,18 @@ import color from "../../../styles/color.module.scss";
 import { Avatar, Bars } from "../../../public/svg/original";
 
 /** props */
-import { MenuButtonProps } from "./props";
 
 /**
  * Renders the menu button components
  * @param {boolean} inverse - Whether if the button takes the inverse styling or not
  */
-export const MenuButton: React.FC<MenuButtonProps> = ({
+export const MenuButton: React.FC<{
+  authenticated?: boolean;
+  data?: {
+    imgUrl: string;
+  };
+  inverse?: boolean;
+}> = ({
   authenticated = false,
   data = {
     imgUrl:

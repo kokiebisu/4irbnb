@@ -7,7 +7,7 @@ import { TemplateProps } from "../props";
 export default {
   title: "Design System/Templates/Auth",
   component: Template,
-  argTypes: { onPress: { action: "clicked" } },
+  argTypes: { onClick: { action: "clicked" } },
   decorators: [
     (Story) => (
       <ContextProvider>

@@ -37,7 +37,7 @@ export const ClosedInput: React.FC<{
           <Button
             type="closed"
             content="close"
-            onPress={() => setData({ ...data, [value]: false })}
+            onClick={() => setData({ ...data, [value]: false })}
             selected={data[value] === false}
           />
         </div>
@@ -45,7 +45,7 @@ export const ClosedInput: React.FC<{
           <Button
             type="closed"
             content="check"
-            onPress={() => setData({ ...data, [value]: true })}
+            onClick={() => setData({ ...data, [value]: true })}
             selected={data[value] === true}
           />
         </div>

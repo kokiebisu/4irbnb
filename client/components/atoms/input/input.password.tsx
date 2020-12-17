@@ -146,7 +146,7 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
       >
         <Button
           {...underline.args}
-          onPress={() => setHide((prevHide) => !prevHide)}
+          onClick={() => setHide((prevHide) => !prevHide)}
           font={13}
           title={hide ? "Show" : "Hide"}
         />

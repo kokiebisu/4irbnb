@@ -15,7 +15,7 @@ import { ModalButtonProps } from "./props";
 
 /**
  * Renders the close button component
- * @param {function} onPress - The action taken when the button is pressed
+ * @param {function} onClick - The action taken when the button is pressed
  */
 export const ModalButton: React.FC<ModalButtonProps> = ({
   modal = "close",

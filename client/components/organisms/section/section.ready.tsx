@@ -36,7 +36,7 @@ export const ReadySection: React.FC<ReadySectionProps> = () => {
             {...primary.args}
             size="md"
             title="Get started"
-            onPress={() => Router.push("/become-a-host")}
+            onClick={() => Router.push("/become-a-host")}
           />
         </div>
       </div>
