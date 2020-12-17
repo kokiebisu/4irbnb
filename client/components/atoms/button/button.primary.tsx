@@ -16,7 +16,7 @@ import { Animation } from "../../animation/animation.component";
 /**
  * Renders the primary button component
  * @param {string} title - Title of the button
- * @param {function} onPress - Action being taken when the button is clicked
+ * @param {function} onClick - Action being taken when the button is clicked
  * @param {string} size - Size of the button
  * @param {boolean} spread - Whether if the button takes the full width of the parent
  */

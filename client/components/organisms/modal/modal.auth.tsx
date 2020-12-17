@@ -53,13 +53,13 @@ export const AuthModal: React.FC<{}> = () => {
               <Button
                 type="modal"
                 modal="back"
-                onPress={() => authDispatch({ type: "auth_login" })}
+                onClick={() => authDispatch({ type: "auth_login" })}
               />
             ) : (
               <Button
                 type="modal"
                 modal="close"
-                onPress={() => toggleDispatch({ type: "close_register" })}
+                onClick={() => toggleDispatch({ type: "close_register" })}
               />
             )}
           </div>

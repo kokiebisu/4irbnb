@@ -89,7 +89,7 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
                   ].join(" ")}
                 >
                   <div>
-                    <Button type="back" onPress={back} />
+                    <Button type="back" onClick={back} />
                   </div>
                   <div>
                     <Button
@@ -98,7 +98,7 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
                       size="md"
                       disable={criteria}
                       fill="#018489"
-                      onPress={next}
+                      onClick={next}
                     />
                   </div>
                 </div>

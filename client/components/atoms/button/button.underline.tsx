@@ -9,7 +9,7 @@ import { UnderlineButtonProps } from "./props";
 
 /**
  * Renders the underline button component
- * @param {function} onPress - Action taken when the button is pressed
+ * @param {function} onClick - Action taken when the button is pressed
  * @param {string} title - Title of the button
  */
 export const UnderlineButton: React.FC<{

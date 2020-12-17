@@ -78,7 +78,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
                       >
                         <Button
                           type="link"
-                          onPress={() => Router.push(url)}
+                          onClick={() => Router.push(url)}
                           title={name}
                         />
                       </div>
@@ -132,7 +132,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
                 <Button
                   type="link"
                   title="Privacy"
-                  onPress={() => Router.push("/")}
+                  onClick={() => Router.push("/")}
                 />
               </div>
               <div>&nbsp;· &nbsp;</div>
@@ -140,7 +140,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
                 <Button
                   type="link"
                   title="Terms"
-                  onPress={() => Router.push("/")}
+                  onClick={() => Router.push("/")}
                 />
               </div>
               <div>&nbsp;· &nbsp;</div>
@@ -148,7 +148,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
                 <Button
                   type="link"
                   title="Sitemap"
-                  onPress={() => Router.push("/")}
+                  onClick={() => Router.push("/")}
                 />
               </div>
             </div>

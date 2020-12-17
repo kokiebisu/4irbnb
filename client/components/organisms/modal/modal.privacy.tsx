@@ -107,7 +107,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
                 font["text--center"],
               ].join(" ")}
               title="Save"
-              onPress={handleSave}
+              onClick={handleSave}
             />
           </div>
           <div
@@ -127,7 +127,7 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
               ].join(" ")}
               title="Cookie Preferences"
               inverse
-              onPress={handleSettings}
+              onClick={handleSettings}
             />
           </div>
         </div>
