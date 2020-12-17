@@ -9,8 +9,6 @@ import color from "../../../styles/color.module.scss";
 /** vectors */
 import { Avatar, Bars } from "../../../public/svg/original";
 
-/** props */
-
 /**
  * Renders the menu button components
  * @param {boolean} inverse - Whether if the button takes the inverse styling or not
