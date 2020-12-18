@@ -9,6 +9,7 @@ import shape from "../../styles/shape.module.scss";
 import layout from "../../styles/layout.module.scss";
 import space from "../../styles/space.module.scss";
 import { Card } from "components/molecules/card/card.component";
+import { Protected } from "public/svg/original";
 
 const HowGuestsWillBookPage = () => {
   return (
@@ -41,16 +42,18 @@ const HowGuestsWillBookPage = () => {
             ))}
           </div>
           <div className={[space["m-v--64"]].join(" ")}>
-            <div>
+            <div className={[space["m-b--16"]].join(" ")}>
               <h3 className={[font["size--14"], color["c--gray__2"]].join(" ")}>
                 You're protected throughout
               </h3>
             </div>
-            <div>
-              <div></div>
+            <div className={[layout["flex"]].join(" ")}>
+              <div className={[space["m-r--32"]].join(" ")}>
+                <Protected width={50} />
+              </div>
               <div style={{ width: "65%" }}>
                 <h3
-                  className={[font["size--14"], color["c--gray__1"]].join(" ")}
+                  className={[font["size--14"], color["c--gray__0"]].join(" ")}
                 >
                   In the rare case there are issues, Airbnb has you covered with
                   24/7 customer support, a $1,000,000 CAD Host Guarantee, and
