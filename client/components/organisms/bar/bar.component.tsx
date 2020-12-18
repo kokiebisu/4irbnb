@@ -5,6 +5,7 @@ import { PaginateBar } from "./bar.paginate";
 import { ProgressBar } from "./bar.progress";
 import { SearchbarBar } from "./bar.searchbar";
 import { CovidBar } from "./bar.covid";
+import { CreateBar } from "./bar.create";
 
 /** props */
 import { BarProps } from "./props";
@@ -19,6 +20,7 @@ export const Bar: React.FC<BarProps> = ({ type, ...props }) => {
     covid: <CovidBar {...props} />,
     progress: <ProgressBar {...props} />,
     searchbar: <SearchbarBar {...props} />,
+    create: <CreateBar {...props} />,
   };
   return types[type];
 };
