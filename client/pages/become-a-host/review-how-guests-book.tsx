@@ -1,17 +1,33 @@
 import React from "react";
+
+/** components */
 import { Bar } from "components/organisms/bar/bar.component";
 import { Header } from "components/organisms/header/header.component";
+import { Card } from "components/molecules/card/card.component";
 
+/** styles */
 import font from "../../styles/font.module.scss";
 import responsive from "../../styles/responsive.module.scss";
 import color from "../../styles/color.module.scss";
-import shape from "../../styles/shape.module.scss";
 import layout from "../../styles/layout.module.scss";
 import space from "../../styles/space.module.scss";
-import { Card } from "components/molecules/card/card.component";
+
+/** vectors */
 import { Protected } from "public/svg/original";
+import Router from "next/router";
 
 const HowGuestsWillBookPage = () => {
+  const proceed = () => {
+    setTimeout(() => {
+      Router.push("/become-a-host/availability-questions");
+    }, 500);
+  };
+
+  const revert = () => {
+    setTimeout(() => {
+      Router.push("/become-a-host/house-rules");
+    }, 500);
+  };
   return (
     <div>
       <div style={{ position: "sticky", zIndex: 9999, top: 0 }}>
@@ -79,7 +95,7 @@ const HowGuestsWillBookPage = () => {
             }}
           >
             <div style={{ width: "100%", maxWidth: 700, margin: "0 auto" }}>
-              <Bar type="create" />
+              <Bar type="create" next={proceed} back={revert} />
             </div>
           </div>
         </div>
