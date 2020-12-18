@@ -8,15 +8,11 @@ import { Button } from "../components/atoms/button/button.component";
 /** styles **/
 import layout from "../styles/layout.module.scss";
 import space from "../styles/space.module.scss";
-import color from "../styles/color.module.scss";
-import shape from "../styles/shape.module.scss";
+
 import responsive from "../styles/responsive.module.scss";
 
 /** props */
 import { CreateLayoutProps } from "./props";
-
-/** stories */
-import { primary } from "../components/atoms/button/button.stories";
 
 export const CreateLayout: React.FC<CreateLayoutProps> = ({
   title = "Property and guests",
