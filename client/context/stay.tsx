@@ -30,6 +30,7 @@ type Payload = {
   notice?: number;
   checkinFrom?: number;
   checkinTo?: number;
+  advance?: number | string;
 };
 
 type State = {
@@ -59,6 +60,7 @@ type State = {
   notice?: number;
   checkinFrom?: number;
   checkinTo?: number;
+  advance?: number | string;
 };
 
 type StayProviderProps = { children: React.ReactNode };
@@ -97,6 +99,7 @@ const stayReducer = (state: State, { type, payload }: Action) => {
         notice: 0,
         checkinFrom: 3,
         checkinTo: undefined,
+        advance: 0,
       };
     case "add":
       return { ...state, ...payload };
@@ -133,6 +136,7 @@ const StayProvider = ({ children }: StayProviderProps) => {
     notice: 0,
     checkinFrom: 3,
     checkinTo: undefined,
+    advance: 0,
   });
 
   console.log("stay provider", state);
