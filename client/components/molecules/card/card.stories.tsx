@@ -199,3 +199,23 @@ sharing.argsTypes = {
     },
   },
 };
+
+export const how = CardTemplate.bind({});
+how.args = {
+  type: "how",
+};
+how.argTypes = {
+  how: {
+    control: {
+      type: "select",
+      options: ["qualified", "control", "notified"],
+    },
+  },
+};
+how.decorators = [
+  (Story) => (
+    <div style={{ width: 300 }}>
+      <Story />
+    </div>
+  ),
+];
