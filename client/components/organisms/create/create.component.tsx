@@ -1,4 +1,5 @@
 import React from "react";
+import { AdvanceCreate } from "./create.advance";
 
 /** components */
 import { AmenitiesCreate } from "./create.amenities";
@@ -36,6 +37,7 @@ export const Create: React.FC<CreateProps> = ({
     requirements: <RequirementsCreate {...props} />,
     rules: <RulesCreate {...props} />,
     checkin: <CheckInCreate {...props} />,
+    advance: <AdvanceCreate {...props} />,
   };
   return types[type];
 };
