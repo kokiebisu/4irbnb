@@ -33,14 +33,8 @@ const CheckInPage = () => {
   return (
     <Layout
       type="create"
-      left={
-        <Create
-          title="Calendar and availability"
-          type="checkin"
-          data={data}
-          setData={setData}
-        />
-      }
+      title="Calendar and availability"
+      left={<Create type="checkin" data={data} setData={setData} />}
       percentage={80}
       next={proceed}
       back={revert}
