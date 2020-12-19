@@ -4,6 +4,7 @@ import React from "react";
 import { AmenitiesCreate } from "./create.amenities";
 import { BathroomsCreate } from "./create.bathrooms";
 import { BedroomsCreate } from "./create.bedrooms";
+import { CheckInCreate } from "./create.checkin";
 import { DescriptionCreate } from "./create.description";
 import { GetStartedCreate } from "./create.getstarted";
 import { LocationCreate } from "./create.location";
@@ -34,6 +35,7 @@ export const Create: React.FC<CreateProps> = ({
     phone: <PhoneCreate {...props} />,
     requirements: <RequirementsCreate {...props} />,
     rules: <RulesCreate {...props} />,
+    checkin: <CheckInCreate {...props} />,
   };
   return types[type];
 };
