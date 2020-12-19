@@ -11,7 +11,9 @@ import { Input } from "../../../components/atoms/input/input.component";
 import { Layout } from "../../../layout/layout.component";
 
 export const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
-  setData,
+  setData = {
+    advance: 0,
+  },
   data,
 }) => {
   return (
@@ -23,8 +25,8 @@ export const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
               <Input
                 type="radio"
                 title="Any time"
-                selected={data.notice === 0}
-                select={() => setData({ ...data, notice: 0 })}
+                selected={data.advance === 0}
+                select={() => setData({ ...data, advance: 0 })}
               />
             </div>
             {[{ months: 3 }, { months: 6 }, { months: 9 }, { months: 12 }].map(
