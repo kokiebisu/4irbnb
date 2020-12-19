@@ -27,6 +27,9 @@ type Payload = {
   smoking?: boolean;
   events?: boolean;
   details?: string[];
+  notice?: number;
+  checkinFrom?: number;
+  checkinTo?: number;
 };
 
 type State = {
@@ -53,6 +56,9 @@ type State = {
   smoking?: boolean;
   events?: boolean;
   details?: string[];
+  notice?: number;
+  checkinFrom?: number;
+  checkinTo?: number;
 };
 
 type StayProviderProps = { children: React.ReactNode };
@@ -88,6 +94,9 @@ const stayReducer = (state: State, { type, payload }: Action) => {
         smoking: undefined,
         events: undefined,
         details: [],
+        notice: 0,
+        checkinFrom: 3,
+        checkinTo: undefined,
       };
     case "add":
       return { ...state, ...payload };
@@ -121,6 +130,9 @@ const StayProvider = ({ children }: StayProviderProps) => {
     smoking: undefined,
     events: undefined,
     details: [],
+    notice: 0,
+    checkinFrom: 3,
+    checkinTo: undefined,
   });
 
   console.log("stay provider", state);
