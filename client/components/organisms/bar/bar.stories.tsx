@@ -35,3 +35,8 @@ export const searchbar = BarStory.bind({});
 searchbar.args = {
   type: "searchbar",
 };
+
+export const create = BarStory.bind({});
+create.args = {
+  type: "create",
+};
