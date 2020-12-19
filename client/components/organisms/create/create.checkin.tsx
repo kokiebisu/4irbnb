@@ -12,7 +12,9 @@ import { Layout } from "../../../layout/layout.component";
 
 export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
   setData,
-  data,
+  data = {
+    notice: 0,
+  },
 }) => {
   return (
     <div>
