@@ -82,3 +82,13 @@ export const rules = Template.bind({});
 rules.args = {
   type: "rules",
 };
+
+export const checkin = Template.bind({});
+checkin.args = {
+  type: "checkin",
+};
+
+export const advance = Template.bind({});
+advance.args = {
+  type: "advance",
+};
