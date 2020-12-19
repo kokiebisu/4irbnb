@@ -19,7 +19,7 @@ import Router from "next/router";
 const HowGuestsWillBookPage = () => {
   const proceed = () => {
     setTimeout(() => {
-      Router.push("/become-a-host/availability-questions");
+      Router.push("/become-a-host/checkin");
     }, 500);
   };
 
