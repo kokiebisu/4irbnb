@@ -8,15 +8,11 @@ import { Button } from "../components/atoms/button/button.component";
 /** styles **/
 import layout from "../styles/layout.module.scss";
 import space from "../styles/space.module.scss";
-import color from "../styles/color.module.scss";
-import shape from "../styles/shape.module.scss";
+
 import responsive from "../styles/responsive.module.scss";
 
 /** props */
 import { CreateLayoutProps } from "./props";
-
-/** stories */
-import { primary } from "../components/atoms/button/button.stories";
 
 export const CreateLayout: React.FC<CreateLayoutProps> = ({
   title = "Property and guests",
@@ -76,33 +72,7 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
               style={{ width: "100%", maxWidth: 550 }}
               className={[space["p-h--32"]].join(" ")}
             >
-              <div
-                className={[color["b-t--white__1"], space["p-v--16"]].join(" ")}
-                style={{ width: "100%" }}
-              >
-                <div
-                  className={[
-                    shape["w-full"],
-                    layout["flex"],
-                    layout["items-center"],
-                    layout["justify-between"],
-                  ].join(" ")}
-                >
-                  <div>
-                    <Button variant="back" onClick={back} />
-                  </div>
-                  <div>
-                    <Button
-                      {...primary.args}
-                      title="Next"
-                      size="md"
-                      disable={criteria}
-                      fill="#018489"
-                      onClick={next}
-                    />
-                  </div>
-                </div>
-              </div>
+              <Bar type="create" next={next} back={back} criteria={criteria} />
             </div>
           </div>
         </div>
