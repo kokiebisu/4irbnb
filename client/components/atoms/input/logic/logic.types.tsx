@@ -30,6 +30,10 @@ import {
 } from "./logic.boutique";
 import { Options as BedroomsOptions } from "./logic.bedrooms";
 import { Options as CountryOptions } from "./logic.country";
+import {
+  FromOptions as CheckInFromOptions,
+  ToOptions as CheckInToOptions,
+} from "./logic.checkin";
 
 export const properties = {
   place: PlaceProperties,
@@ -64,4 +68,6 @@ export const inputTypes = {
   },
   bedrooms: { options: BedroomsOptions },
   country: { options: CountryOptions },
+  checkinFrom: { default: "Select a time", options: CheckInFromOptions },
+  checkinTo: { default: "Select a time", options: CheckInToOptions },
 };
