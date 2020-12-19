@@ -11,10 +11,10 @@ import { Input } from "../../../components/atoms/input/input.component";
 import { Layout } from "../../../layout/layout.component";
 
 export const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
-  setData = {
+  setData,
+  data = {
     advance: 0,
   },
-  data,
 }) => {
   return (
     <div>
