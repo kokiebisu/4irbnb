@@ -1,21 +1,20 @@
-import React from 'react';
+import React from "react";
 
-/**
- * Props
- */
-import { AnimationProps } from './props';
+/** components */
+import { LoadingAnimation } from "./animation.loading";
 
-/**
- * Components
- */
-import { LoadingAnimation } from './animation.loading';
+export interface AnimationProps {
+  type?: string;
+  extends?: any;
+  [x: string]: any;
+}
 
 /**
  * Bundles the animation components
  * @param {string} type - Specifies the type of animation component
  */
 export const Animation: React.FC<AnimationProps> = ({
-  type = 'loading',
+  type = "loading",
   extendsTo,
   ...props
 }) => {
@@ -23,7 +22,7 @@ export const Animation: React.FC<AnimationProps> = ({
     loading: <LoadingAnimation {...props} />,
   };
   return (
-    <div data-testid='animation' className={extendsTo}>
+    <div data-testid="animation" className={extendsTo}>
       {types[type]}
     </div>
   );
