@@ -20,35 +20,35 @@ const TemplateStory: Story<HeaderProps> = (args) => <Header {...args} />;
 
 export const transparent = TemplateStory.bind({});
 transparent.args = {
-  type: "transparent",
+  variant: "transparent",
 };
 
 export const white = TemplateStory.bind({});
 white.args = {
-  type: "white",
+  variant: "white",
 };
 
 export const details = TemplateStory.bind({});
 details.args = {
-  type: "details",
+  variant: "details",
 };
 
 export const homes = TemplateStory.bind({});
 homes.args = {
-  type: "homes",
+  variant: "homes",
 };
 
 export const experiences = TemplateStory.bind({});
 experiences.args = {
-  type: "experiences",
+  variant: "experiences",
 };
 
 export const onlineHost = TemplateStory.bind({});
 onlineHost.args = {
-  type: "onlinehost",
+  variant: "onlinehost",
 };
 
 export const stay = TemplateStory.bind({});
 stay.args = {
-  type: "stay",
+  variant: "stay",
 };
