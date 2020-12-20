@@ -18,7 +18,7 @@
       "@bullet/*": ["components/atoms/bullet/*"],
       "@button/*": ["components/atoms/button/*"],
       "@input/*": ["components/atoms/input/*"],
-      "@molecules/*": ["components/molecules/*"],
+      "@card/*": ["components/molecules/card/*"],
       "@organisms/*": ["components/organisms/*"],
       "@particles/*": ["components/particles/*"],
       "@templates/*": ["components/templates/*"],
@@ -27,7 +27,9 @@
       "@svg/*": ["public/svg/*"],
       "@helper/*": ["helper/*"],
       "@hooks/*": ["hooks/*"],
-      "@context/*": ["context/*"]
+      "@context/*": ["context/*"],
+      "@content": ["content/index.ts"],
+      "@particles": ["components/particles/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".storybook/**/*"],

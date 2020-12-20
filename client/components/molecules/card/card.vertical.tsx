@@ -1,15 +1,15 @@
 import React from "react";
 
 /** styles **/
-import layout from "../../../styles/layout.module.scss";
-import font from "../../../styles/font.module.scss";
-import color from "../../../styles/color.module.scss";
-import space from "../../../styles/space.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import styles from "./card.module.scss";
+import layout from "@styles/layout.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
+import shape from "@styles/shape.module.scss";
+import styles from "@card/card.module.scss";
 
 /** vectors */
-import { Heart, Star } from "../../../public/svg/original";
+import { Heart, Star } from "@svg/original";
 
 /**
  * Renders the vertical card component

@@ -1,9 +1,9 @@
 import React from "react";
 
 /** styles **/
-import space from "../../../styles/space.module.scss";
-import font from "../../../styles/font.module.scss";
-import card from "./card.module.scss";
+import space from "@styles/space.module.scss";
+import font from "@styles/font.module.scss";
+import card from "@card/card.module.scss";
 
 /** Logic */
 import { getWorkContent } from "./logic/logic.work";
