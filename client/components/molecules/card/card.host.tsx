@@ -1,9 +1,6 @@
 import React from "react";
 import Router from "next/router";
 
-/** props */
-import { HostCardProps } from "./props";
-
 /** styles **/
 import layout from "../../../styles/layout.module.scss";
 import shape from "../../../styles/shape.module.scss";
@@ -21,7 +18,12 @@ import { Button } from "../../atoms/button/button.component";
  * @param {string} stayType - Type of stay
  * @param {string} location - Location of the stay
  */
-export const HostCard: React.FC<HostCardProps> = ({
+export const HostCard: React.FC<{
+  imgUrl?: string;
+  host?: string;
+  stayType?: string;
+  location?: string;
+}> = ({
   imgUrl = "https://a0.muscache.com/im/pictures/92acd468-73bf-4ca1-a956-277c4a94b3a3.jpg?im_q=highq&im_w=960",
   host = "Darrel",
   stayType = "tiny house",

@@ -11,18 +11,14 @@ import space from "../../../styles/space.module.scss";
 import { Card } from "../../../components/molecules/card/card.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/** props */
-import { SharingSectionProps } from "./props";
-
 /** stories */
 import { border } from "../../../components/atoms/button/button.stories";
 
-export const SharingSection: React.FC<SharingSectionProps> = () => {
+export const SharingSection: React.FC<{}> = () => {
   const sharings = ["meditate", "baking", "magic"];
   return (
     <Layout
-      type="section"
-      sectionType="onlinehost"
+      variant="onlinehost"
       title="How hosts are sharing their world"
       subtitle="These hosts bring the spirit of experiences to the screen with unique small group activities to do together while we're apart."
     >
@@ -37,7 +33,7 @@ export const SharingSection: React.FC<SharingSectionProps> = () => {
         {sharings.map((sharing, index) => {
           return (
             <div key={index}>
-              <Card type="sharing" sharing={sharing} />
+              <Card variant="sharing" sharing={sharing} />
             </div>
           );
         })}

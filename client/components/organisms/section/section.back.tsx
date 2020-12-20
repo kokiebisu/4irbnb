@@ -9,15 +9,12 @@ import { Layout } from "../../../layout/layout.component";
 /** components */
 import { Bullet } from "../../../components/atoms/bullet/bullet.component";
 
-/** props */
-import { BackSectionProps } from "./props";
-
-export const BackSection: React.FC<BackSectionProps> = () => {
-  const bullets = ["resources", "events", "community"];
+export const BackSection: React.FC<{
+  back?: string;
+}> = () => {
   return (
     <Layout
-      type="section"
-      sectionType="onlinehost"
+      variant="onlinehost"
       title="We've got your back"
       subtitle="You’re not alone—you'll have access to educational tools and opportunities to help you grow as a host and entrepreneur."
     >
@@ -29,10 +26,10 @@ export const BackSection: React.FC<BackSectionProps> = () => {
         }}
         className={[space["m-v--32"]].join(" ")}
       >
-        {bullets.map((bullet, index) => {
+        {["resources", "events", "community"].map((bullet, index) => {
           return (
             <div key={index} className={[space["m-b--16"]].join(" ")}>
-              <Bullet type="onlinehost" bullet={bullet} />
+              <Bullet variant="onlinehost" bullet={bullet} />
             </div>
           );
         })}

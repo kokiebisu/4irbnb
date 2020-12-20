@@ -1,24 +1,35 @@
 import React from "react";
 
-/** templates */
+/** auth templates */
 import { AuthTemplate } from "./auth/template.auth";
 import { LoginTemplate } from "./auth/template.login";
 import { SignupTemplate } from "./auth/template.signup";
-import { TemplateProps } from "./props";
-import { CategoryTemplate } from "./homes/template.category";
-import { NearbyTemplate } from "./homes/template.nearby";
 import { ForgotPasswordTemplate } from "./auth/template.forgot";
 import { ExistsTemplate } from "./auth/template.exists";
+
+/** homes templates */
+import { CategoryTemplate } from "./homes/template.category";
+import { NearbyTemplate } from "./homes/template.nearby";
+
+/** globe templates */
 import { LanguageTemplate } from "./globe/template.language";
 import { CurrencyTemplate } from "./globe/template.currency";
 
+export interface TemplateProps {
+  variant?: string;
+  place?: string;
+  stayType?: string | string[];
+  characteristics?: string;
+  [property: string]: any;
+}
+
 export const Template: React.FC<TemplateProps> = ({
-  type = "nearby",
+  variant = "nearby",
   city = "Paris",
   stayType = "house",
   characteristics,
 }) => {
-  const types = {
+  const variants: { [variant: string]: JSX.Element } = {
     nearby: <NearbyTemplate city={city} />,
     category: <CategoryTemplate stayType={stayType} />,
     login: <LoginTemplate />,
@@ -29,5 +40,5 @@ export const Template: React.FC<TemplateProps> = ({
     language: <LanguageTemplate />,
     currency: <CurrencyTemplate />,
   };
-  return types[type];
+  return <div data-testid={`${variant}-template`}>{variants[variant]}</div>;
 };

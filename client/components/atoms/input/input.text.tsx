@@ -8,27 +8,26 @@ import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import input from "./input.module.scss";
 
-/** props */
-import { TextInputProps } from "./props";
+/** logic */
 import { renderShape } from "./logic/logic.address";
 
 /**
  * Renders the text input component
  * @param {string} name - Type of input
  * @param {string} placeholder - Placeholder
- * @param handleChange
+ * @param {function} handleChange - handles key press event
  * @param {string} value - Current value of the input
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const TextInput: React.FC<TextInputProps> = ({
-  name = "text",
-  handleChange,
-  value,
-  direction,
-  placeholder,
-  errors = false,
-}) => {
+export const TextInput: React.FC<{
+  name?: string;
+  inputType?: string;
+  placeholder?: string;
+  handleChange?: any;
+  value?: string;
+  direction?: string;
+}> = ({ name = "text", handleChange, value, direction, placeholder }) => {
   const [active, setActive] = useState(false);
   return (
     <div

@@ -20,15 +20,8 @@ import { useToggleDispatch, useToggleState } from "../../../context/toggle";
 import { NameLogo, NoNameLogo } from "../../../public/svg/logo";
 import { ChevronLeft } from "../../../public/svg/regular";
 
-/** props */
-import { WhiteHeaderProps } from "./props";
-
 /** stories */
-import {
-  host as hostButton,
-  menu as menuButton,
-  globe as globeButton,
-} from "../../../components/atoms/button/button.stories";
+import { menu as menuButton } from "../../../components/atoms/button/button.stories";
 
 /** contents */
 import { Content } from "../../../components/atoms/button/content/content.transparent";
@@ -38,10 +31,10 @@ import Router from "next/router";
  * Renders the white header
  * @param {boolean} spread - Whether if the layout should be spread out or not
  */
-export const WhiteHeader: React.FC<WhiteHeaderProps> = ({
-  spread = false,
-  data,
-}) => {
+export const WhiteHeader: React.FC<{
+  spread?: boolean;
+  data?: any;
+}> = ({ spread = false, data }) => {
   const toggleState = useToggleState();
   const toggleDispatch = useToggleDispatch();
   return (

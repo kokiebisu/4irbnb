@@ -31,11 +31,11 @@ const BathroomsPage = () => {
 
   return (
     <Layout
-      type="create"
+      variant="create"
       left={
         <Create
           title="Property and guests"
-          type="bathrooms"
+          variant="bathrooms"
           data={data}
           setData={setData}
         />

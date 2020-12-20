@@ -8,18 +8,15 @@ import font from "../../../styles/font.module.scss";
 /** vectors */
 import { Star, Superhost, Verified } from "../../../public/svg/original";
 
-/** props */
-import { HostBulletProps } from "./props";
-
 /**
  * Renders the host bullet
  * @param {string} categoryType - Type of host bullet
  * @param {number} total - Number of reviews
  */
-export const HostBullet: React.FC<HostBulletProps> = ({
-  categoryType = "review",
-  total = 100,
-}) => {
+export const HostBullet: React.FC<{
+  total?: number;
+  categoryType?: string;
+}> = ({ categoryType = "review", total = 100 }) => {
   const categories = {
     review: { icon: <Star width={16} />, description: `${total} Reviews` },
     verified: {

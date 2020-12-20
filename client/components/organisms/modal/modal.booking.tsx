@@ -9,9 +9,6 @@ import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import responsive from "../../../styles/responsive.module.scss";
 
-/** props */
-import { BookingModalProps } from "./props";
-
 /** components */
 import { Button } from "../../../components/atoms/button/button.component";
 import {
@@ -23,7 +20,9 @@ import {
  * Renders the booking modal
  * @param {Object[]} availables - Lists all the available dates
  */
-export const BookingModal: React.FC<BookingModalProps> = ({
+export const BookingModal: React.FC<{
+  availables?: any;
+}> = ({
   availables = [
     {
       date: "Tue., Nov. 10",

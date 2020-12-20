@@ -9,14 +9,13 @@ import font from "../../../styles/font.module.scss";
 import cardStyles from "./card.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/** props */
-import { TypeStayCardProps } from "./props";
-
 /**
  * Renders the typestay card
  * @param {Object} card - Information about the card
  */
-export const TypeStayCard: React.FC<TypeStayCardProps> = ({
+export const TypeStayCard: React.FC<{
+  card?: any;
+}> = ({
   card = {
     title: "Type",
     imgUrl:

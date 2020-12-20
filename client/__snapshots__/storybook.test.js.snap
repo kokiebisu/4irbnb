@@ -22,7 +22,7 @@ exports[`Storyshots Design System/Animation Loading 1`] = `
 
 exports[`Storyshots Design System/Atoms/Bullet Amenity 1`] = `
 <div
-  data-testid="bullet"
+  data-testid="amenity-bullet"
 >
   <div
     className="flex items-center p--4 w--50p"
@@ -46,7 +46,7 @@ exports[`Storyshots Design System/Atoms/Bullet Amenity 1`] = `
 
 exports[`Storyshots Design System/Atoms/Bullet Bring 1`] = `
 <div
-  data-testid="bullet"
+  data-testid="bring-bullet"
 >
   <div
     className="flex"
@@ -74,7 +74,7 @@ exports[`Storyshots Design System/Atoms/Bullet Bring 1`] = `
 
 exports[`Storyshots Design System/Atoms/Bullet Characteristic 1`] = `
 <div
-  data-testid="bullet"
+  data-testid="characteristic-bullet"
 >
   <div
     className="flex m-v--8 items-center p-r--8"
@@ -109,7 +109,7 @@ exports[`Storyshots Design System/Atoms/Bullet Characteristic 1`] = `
 
 exports[`Storyshots Design System/Atoms/Bullet Check 1`] = `
 <div
-  data-testid="bullet"
+  data-testid="check-bullet"
 >
   <div
     className="flex items-center"
@@ -142,7 +142,7 @@ exports[`Storyshots Design System/Atoms/Bullet Check 1`] = `
 
 exports[`Storyshots Design System/Atoms/Bullet Experience 1`] = `
 <div
-  data-testid="bullet"
+  data-testid="experience-bullet"
 >
   <div
     className="flex items-center"
@@ -181,7 +181,7 @@ exports[`Storyshots Design System/Atoms/Bullet Experience 1`] = `
 
 exports[`Storyshots Design System/Atoms/Bullet Help 1`] = `
 <div
-  data-testid="bullet"
+  data-testid="help-bullet"
 >
   <div
     className="flex"
@@ -220,7 +220,7 @@ exports[`Storyshots Design System/Atoms/Bullet Help 1`] = `
 
 exports[`Storyshots Design System/Atoms/Bullet Know 1`] = `
 <div
-  data-testid="bullet"
+  data-testid="know-bullet"
 >
   <div
     className="flex"
@@ -247,7 +247,7 @@ exports[`Storyshots Design System/Atoms/Bullet Know 1`] = `
 
 exports[`Storyshots Design System/Atoms/Bullet Onlinehost 1`] = `
 <div
-  data-testid="bullet"
+  data-testid="onlinehost-bullet"
 >
   <div>
     <div>
@@ -281,7 +281,7 @@ exports[`Storyshots Design System/Atoms/Bullet Onlinehost 1`] = `
 
 exports[`Storyshots Design System/Atoms/Bullet Priority 1`] = `
 <div
-  data-testid="bullet"
+  data-testid="priority-bullet"
 >
   <div>
     <div>
@@ -357,7 +357,7 @@ exports[`Storyshots Design System/Atoms/Bullet Priority 1`] = `
 
 exports[`Storyshots Design System/Atoms/Bullet Question 1`] = `
 <div
-  data-testid="bullet"
+  data-testid="question-bullet"
 >
   <div
     className="p-v--16 b-b--white__1"
@@ -375,7 +375,7 @@ exports[`Storyshots Design System/Atoms/Bullet Question 1`] = `
 
 exports[`Storyshots Design System/Atoms/Bullet Rating 1`] = `
 <div
-  data-testid="bullet"
+  data-testid="rating-bullet"
 >
   <div
     className="flex flex"
@@ -421,7 +421,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
 
 exports[`Storyshots Design System/Atoms/Bullet Required 1`] = `
 <div
-  data-testid="bullet"
+  data-testid="required-bullet"
 >
   <div
     className="flex items-center"
@@ -471,7 +471,7 @@ exports[`Storyshots Design System/Atoms/Bullet Review 1`] = `
   }
 >
   <div
-    data-testid="bullet"
+    data-testid="score-bullet"
   >
     <div
       className="p-v--2 flex items-center justify-between w--50p"
@@ -506,7 +506,7 @@ exports[`Storyshots Design System/Atoms/Bullet Review 1`] = `
 
 exports[`Storyshots Design System/Atoms/Bullet Score 1`] = `
 <div
-  data-testid="bullet"
+  data-testid="score-bullet"
 >
   <div
     className="p-v--2 flex items-center justify-between w--50p"
@@ -991,7 +991,7 @@ exports[`Storyshots Design System/Atoms/Input Address 1`] = `
   }
 >
   <div
-    data-testid="input"
+    data-testid="address-input"
   >
     <div
       className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8"
@@ -1035,7 +1035,7 @@ exports[`Storyshots Design System/Atoms/Input Birthdate 1`] = `
   }
 >
   <div
-    data-testid="input"
+    data-testid="birthdate-input"
   >
     <div
       className="h--60 flex outside relative items-center "
@@ -1568,7 +1568,7 @@ exports[`Storyshots Design System/Atoms/Input Checkbox 1`] = `
   }
 >
   <div
-    data-testid="input"
+    data-testid="checkbox-input"
   >
     <div
       className="flex"
@@ -1631,7 +1631,7 @@ exports[`Storyshots Design System/Atoms/Input Closed 1`] = `
   }
 >
   <div
-    data-testid="input"
+    data-testid="closed-input"
   >
     <div
       className="flex items-center justify-between"
@@ -1743,7 +1743,7 @@ exports[`Storyshots Design System/Atoms/Input Counter 1`] = `
   }
 >
   <div
-    data-testid="input"
+    data-testid="counter-input"
   >
     <div
       className="flex items-center justify-between"
@@ -1850,7 +1850,7 @@ exports[`Storyshots Design System/Atoms/Input Email 1`] = `
   }
 >
   <div
-    data-testid="input"
+    data-testid="email-input"
   >
     <div
       className="outside relative p-v--6 p-h--12 items-center b--white__3 br--10 "
@@ -1899,7 +1899,7 @@ exports[`Storyshots Design System/Atoms/Input Guests 1`] = `
   }
 >
   <div
-    data-testid="input"
+    data-testid="guests-input"
   >
     <div
       className="flex outside relative items-center "
@@ -1991,7 +1991,7 @@ exports[`Storyshots Design System/Atoms/Input Name 1`] = `
   }
 >
   <div
-    data-testid="input"
+    data-testid="name-input"
   >
     <div
       className="outside relative p-v--6 p-h--12 items-center b--white__3 br--10 "
@@ -2040,7 +2040,7 @@ exports[`Storyshots Design System/Atoms/Input Password 1`] = `
   }
 >
   <div
-    data-testid="input"
+    data-testid="password-input"
   >
     <div
       className="outside relative p-v--6 p-h--12 flex items-center b--white__3 br--10 "
@@ -2120,7 +2120,7 @@ exports[`Storyshots Design System/Atoms/Input Phone 1`] = `
   }
 >
   <div
-    data-testid="input"
+    data-testid="phone-input"
   >
     <div
       className="outside relative p-v--6 p-h--12 items-center b--white__3 br--10 "
@@ -2169,7 +2169,7 @@ exports[`Storyshots Design System/Atoms/Input Place 1`] = `
   }
 >
   <div
-    data-testid="input"
+    data-testid="place-input"
   >
     <div
       className="flex outside relative items-center"
@@ -2243,7 +2243,7 @@ exports[`Storyshots Design System/Atoms/Input Radio 1`] = `
   }
 >
   <div
-    data-testid="input"
+    data-testid="radio-input"
   >
     <div
       className="flex"
@@ -2300,7 +2300,7 @@ exports[`Storyshots Design System/Atoms/Input Region 1`] = `
   }
 >
   <div
-    data-testid="input"
+    data-testid="region-input"
   >
     <div
       className="flex outside relative items-center "
@@ -2379,7 +2379,7 @@ exports[`Storyshots Design System/Atoms/Input Select 1`] = `
   }
 >
   <div
-    data-testid="input"
+    data-testid="select-input"
   >
     <div
       className="h--50 flex outside relative items-center "
@@ -2481,7 +2481,7 @@ exports[`Storyshots Design System/Atoms/Input Text 1`] = `
   }
 >
   <div
-    data-testid="input"
+    data-testid="text-input"
   >
     <div
       className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
@@ -2526,7 +2526,7 @@ exports[`Storyshots Design System/Atoms/Input Textarea 1`] = `
   }
 >
   <div
-    data-testid="input"
+    data-testid="textarea-input"
   >
     <div>
       <div
@@ -2574,7 +2574,7 @@ exports[`Storyshots Design System/Atoms/Input Verify 1`] = `
   }
 >
   <div
-    data-testid="input"
+    data-testid="verify-input"
   >
     <div>
       <div
@@ -3500,6 +3500,70 @@ exports[`Storyshots Design System/Molecules/Card Host 1`] = `
             </h4>
           </div>
         </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Design System/Molecules/Card How 1`] = `
+<div
+  style={
+    Object {
+      "width": 300,
+    }
+  }
+>
+  <div
+    data-testid="card"
+  >
+    <div
+      className="min-h--300 h--full p--22 b--white__2 br--6"
+      style={
+        Object {
+          "minHeight": 350,
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "justifyContent": "center",
+            "padding": "10px auto 20px",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "backgroundImage": "url(https://a0.muscache.com/airbnb/static/list_your_space/scenarios-meet-guest-eaa389217c2acc8887e3f88cc197f9fe.png)",
+              "backgroundPosition": "center",
+              "backgroundRepeat": "no-repeat",
+              "backgroundSize": "cover",
+              "height": 100,
+              "width": 120,
+            }
+          }
+        />
+      </div>
+      <div
+        className="m-v--12"
+      >
+        <h3
+          className="size--16"
+        >
+          Qualified guests find your listing
+        </h3>
+      </div>
+      <div
+        className="m-b--12"
+      >
+        <p
+          className="size--14"
+        >
+          Anyone who wants to book with you needs to confirm their contact information, provide payment details, and tell you about their trip.
+        </p>
       </div>
     </div>
   </div>
@@ -4515,7 +4579,7 @@ exports[`Storyshots Design System/Molecules/Card Stay 1`] = `
               </div>
               <div>
                 <div
-                  data-testid="bullet"
+                  data-testid="rating-bullet"
                 >
                   <div
                     className="flex flex"
@@ -5834,7 +5898,7 @@ exports[`Storyshots Design System/Organisms/Banner Online Host 1`] = `
         className="m-b--16"
       >
         <div
-          data-testid="bullet"
+          data-testid="onlinehost-bullet"
         >
           <div>
             <div>
@@ -5869,7 +5933,7 @@ exports[`Storyshots Design System/Organisms/Banner Online Host 1`] = `
         className="m-b--16"
       >
         <div
-          data-testid="bullet"
+          data-testid="onlinehost-bullet"
         >
           <div>
             <div>
@@ -5904,7 +5968,7 @@ exports[`Storyshots Design System/Organisms/Banner Online Host 1`] = `
         className="m-b--16"
       >
         <div
-          data-testid="bullet"
+          data-testid="onlinehost-bullet"
         >
           <div>
             <div>
@@ -5952,6 +6016,89 @@ exports[`Storyshots Design System/Organisms/Bar Covid 1`] = `
     </u>
   </a>
 </aside>
+`;
+
+exports[`Storyshots Design System/Organisms/Bar Create 1`] = `
+<div
+  className="b-t--white__1 p-v--16"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
+>
+  <div
+    className="w-full flex items-center justify-between"
+  >
+    <div>
+      <button
+        className="undefined inline-block"
+        data-testid="button--back"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+      >
+        <div
+          className="flex items-center bg--transparent"
+        >
+          <div>
+            <svg
+              stroke="#61AFB2"
+              strokeWidth={3}
+              viewBox="0 0 32 32"
+              width={20}
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"
+                />
+              </g>
+            </svg>
+          </div>
+          <div>
+            <h4
+              className="size--15 c--darkgreen__3"
+            >
+              Back
+            </h4>
+          </div>
+        </div>
+      </button>
+    </div>
+    <div>
+      <button
+        className="undefined inline-block"
+        data-testid="button--primary"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+      >
+        <div
+          className="c--white w--full br--8 size--16 p-v--14 p-h--20 false"
+          style={
+            Object {
+              "backgroundColor": "#018489",
+            }
+          }
+        >
+          <h4
+            className="c--white"
+          >
+            Next
+          </h4>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
 `;
 
 exports[`Storyshots Design System/Organisms/Bar Paginate 1`] = `
@@ -6449,6 +6596,414 @@ exports[`Storyshots Design System/Organisms/Bar Searchbar 1`] = `
 </div>
 `;
 
+exports[`Storyshots Design System/Organisms/Create Advance 1`] = `
+<div>
+  <div
+    className="m-b--30"
+    style={
+      Object {
+        "width": 300,
+      }
+    }
+  >
+    <div
+      data-testid="layout"
+    >
+      <div>
+        <div
+          className="m-b--8"
+        >
+          <h3
+            className="size--16 c--gray__0"
+          >
+            How far in advance can guests book?
+          </h3>
+        </div>
+        <div>
+          <div
+            className="m-t--22"
+          >
+            <div
+              className="m-b--10"
+            >
+              <div
+                data-testid="text-input"
+              >
+                <div
+                  className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+                >
+                  <div
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "height": "100%",
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <input
+                      autoFocus={true}
+                      className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                      id="text"
+                      name="text"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      style={
+                        Object {
+                          "outline": "none",
+                        }
+                      }
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="m-b--10"
+            >
+              <div
+                data-testid="text-input"
+              >
+                <div
+                  className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+                >
+                  <div
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "height": "100%",
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <input
+                      autoFocus={true}
+                      className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                      id="text"
+                      name="text"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      style={
+                        Object {
+                          "outline": "none",
+                        }
+                      }
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="m-b--10"
+            >
+              <div
+                data-testid="text-input"
+              >
+                <div
+                  className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+                >
+                  <div
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "height": "100%",
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <input
+                      autoFocus={true}
+                      className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                      id="text"
+                      name="text"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      style={
+                        Object {
+                          "outline": "none",
+                        }
+                      }
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="m-b--10"
+            >
+              <div
+                data-testid="text-input"
+              >
+                <div
+                  className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+                >
+                  <div
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "height": "100%",
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <input
+                      autoFocus={true}
+                      className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                      id="text"
+                      name="text"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      style={
+                        Object {
+                          "outline": "none",
+                        }
+                      }
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="m-b--10"
+            >
+              <div
+                data-testid="text-input"
+              >
+                <div
+                  className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+                >
+                  <div
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "height": "100%",
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <input
+                      autoFocus={true}
+                      className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                      id="text"
+                      name="text"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      style={
+                        Object {
+                          "outline": "none",
+                        }
+                      }
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="m-b--10"
+            >
+              <div
+                data-testid="text-input"
+              >
+                <div
+                  className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+                >
+                  <div
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "height": "100%",
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <input
+                      autoFocus={true}
+                      className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                      id="text"
+                      name="text"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      style={
+                        Object {
+                          "outline": "none",
+                        }
+                      }
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "maxWidth": 300,
+      }
+    }
+  >
+    <h4
+      className="size--13 c--gray__1"
+    >
+      <span
+        className="c--darkgreen__3 weight--300"
+      >
+        Tip:
+         
+      </span>
+      You’ll get more reservations if you keep your calendar available and only block days you can’t host.
+    </h4>
+  </div>
+  <div
+    className="bg--white__2 m-v--32"
+    style={
+      Object {
+        "height": 1,
+        "width": "100%",
+      }
+    }
+  />
+  <div>
+    <div
+      className="m-b--12"
+    >
+      <h4>
+        When can guests check in?
+      </h4>
+    </div>
+    <div
+      style={
+        Object {
+          "columnGap": 10,
+          "display": "grid",
+          "gridTemplateColumns": "repeat(2, 1fr)",
+        }
+      }
+    >
+      <div>
+        <div
+          className="m-b--8"
+        >
+          <h4
+            className="c--gray__0 size--13"
+          >
+            From:
+             
+          </h4>
+        </div>
+        <div>
+          <div
+            data-testid="text-input"
+          >
+            <div
+              className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+            >
+              <div
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "height": "100%",
+                    "position": "relative",
+                    "width": "100%",
+                  }
+                }
+              >
+                <input
+                  autoFocus={true}
+                  className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                  id="text"
+                  name="text"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  style={
+                    Object {
+                      "outline": "none",
+                    }
+                  }
+                  type="text"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="m-b--8"
+        >
+          <h4
+            className="c--gray__0 size--13"
+          >
+            To:
+             
+          </h4>
+        </div>
+        <div>
+          <div
+            data-testid="text-input"
+          >
+            <div
+              className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+            >
+              <div
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "height": "100%",
+                    "position": "relative",
+                    "width": "100%",
+                  }
+                }
+              >
+                <input
+                  autoFocus={true}
+                  className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                  id="text"
+                  name="text"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  style={
+                    Object {
+                      "outline": "none",
+                    }
+                  }
+                  type="text"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Design System/Organisms/Create Amenities 1`] = `
 <div>
   <div
@@ -6476,57 +7031,36 @@ exports[`Storyshots Design System/Organisms/Create Amenities 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--black"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Essentials
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              >
-                Towels, bed sheets, soap, toilet papaer, and pillows
-              </h4>
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -6535,55 +7069,36 @@ exports[`Storyshots Design System/Organisms/Create Amenities 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Wifi
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -6592,55 +7107,36 @@ exports[`Storyshots Design System/Organisms/Create Amenities 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                TV
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -6649,55 +7145,36 @@ exports[`Storyshots Design System/Organisms/Create Amenities 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Heat
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -6706,55 +7183,36 @@ exports[`Storyshots Design System/Organisms/Create Amenities 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Air conditioning
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -6763,55 +7221,36 @@ exports[`Storyshots Design System/Organisms/Create Amenities 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Iron
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -6820,55 +7259,36 @@ exports[`Storyshots Design System/Organisms/Create Amenities 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Shampoo
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -6877,55 +7297,36 @@ exports[`Storyshots Design System/Organisms/Create Amenities 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Hair dryer
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -6934,55 +7335,36 @@ exports[`Storyshots Design System/Organisms/Create Amenities 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Breakfast, coffee, tea
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -6991,55 +7373,36 @@ exports[`Storyshots Design System/Organisms/Create Amenities 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Desk/workspace
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -7048,55 +7411,36 @@ exports[`Storyshots Design System/Organisms/Create Amenities 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Fireplace
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -7105,55 +7449,36 @@ exports[`Storyshots Design System/Organisms/Create Amenities 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Closet / drawers
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -7162,55 +7487,36 @@ exports[`Storyshots Design System/Organisms/Create Amenities 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Private entrance
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -7232,57 +7538,36 @@ exports[`Storyshots Design System/Organisms/Create Amenities 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Smoke detector
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              >
-                Check your local laws, which may rquire a working smoke detector in every room
-              </h4>
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -7291,57 +7576,36 @@ exports[`Storyshots Design System/Organisms/Create Amenities 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Carbon monoxide detector
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              >
-                Check your local laws, which may require a working carbon monoxide detector in every room
-              </h4>
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -7350,55 +7614,36 @@ exports[`Storyshots Design System/Organisms/Create Amenities 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--black"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                First aid kit
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -7407,55 +7652,36 @@ exports[`Storyshots Design System/Organisms/Create Amenities 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Fire extinguisher
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -7464,55 +7690,36 @@ exports[`Storyshots Design System/Organisms/Create Amenities 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Lock on bedroom door
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -7553,98 +7760,37 @@ exports[`Storyshots Design System/Organisms/Create Bathrooms 1`] = `
       className="m-b--8"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex items-center justify-between"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
-          <div>
-            <h3
-              className="size--15"
-            >
-              Bathrooms
-            </h3>
-          </div>
           <div
-            className="flex items-center"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div>
-              <button
-                disabled={false}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "backgroundColor": "white",
-                    "border": "2px solid #0B8A8F",
-                    "borderRadius": 9999,
-                    "padding": 5,
-                  }
-                }
-              >
-                <svg
-                  stroke="#0B8A8F"
-                  viewBox="0 0 24 24"
-                  width={15}
-                >
-                  <rect
-                    height="2"
-                    rx="1"
-                    width="12"
-                    x="6"
-                    y="11"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
-              className="flex justify-center"
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "width": 50,
+                  "outline": "none",
                 }
               }
-            >
-              <h3
-                className="size--14"
-              >
-                0
-              </h3>
-            </div>
-            <div>
-              <button
-                disabled={false}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "backgroundColor": "white",
-                    "border": "2px solid #0B8A8F",
-                    "borderRadius": 9999,
-                    "padding": 5,
-                  }
-                }
-              >
-                <svg
-                  stroke="#0B8A8F"
-                  viewBox="0 0 24 24"
-                  width={15}
-                >
-                  <rect
-                    height="2"
-                    rx="1"
-                    width="12"
-                    x="6"
-                    y="11"
-                  />
-                  <rect
-                    height="12"
-                    rx="1"
-                    width="2"
-                    x="11"
-                    y="6"
-                  />
-                </svg>
-              </button>
-            </div>
+              type="text"
+              value={0}
+            />
           </div>
         </div>
       </div>
@@ -7685,98 +7831,37 @@ exports[`Storyshots Design System/Organisms/Create Bedrooms 1`] = `
       className="m-b--8"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex items-center justify-between"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
-          <div>
-            <h3
-              className="size--15"
-            >
-              Guests
-            </h3>
-          </div>
           <div
-            className="flex items-center"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div>
-              <button
-                disabled={false}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "backgroundColor": "white",
-                    "border": "2px solid #0B8A8F",
-                    "borderRadius": 9999,
-                    "padding": 5,
-                  }
-                }
-              >
-                <svg
-                  stroke="#0B8A8F"
-                  viewBox="0 0 24 24"
-                  width={15}
-                >
-                  <rect
-                    height="2"
-                    rx="1"
-                    width="12"
-                    x="6"
-                    y="11"
-                  />
-                </svg>
-              </button>
-            </div>
-            <div
-              className="flex justify-center"
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "width": 50,
+                  "outline": "none",
                 }
               }
-            >
-              <h3
-                className="size--14"
-              >
-                0
-              </h3>
-            </div>
-            <div>
-              <button
-                disabled={false}
-                onClick={[Function]}
-                style={
-                  Object {
-                    "backgroundColor": "white",
-                    "border": "2px solid #0B8A8F",
-                    "borderRadius": 9999,
-                    "padding": 5,
-                  }
-                }
-              >
-                <svg
-                  stroke="#0B8A8F"
-                  viewBox="0 0 24 24"
-                  width={15}
-                >
-                  <rect
-                    height="2"
-                    rx="1"
-                    width="12"
-                    x="6"
-                    y="11"
-                  />
-                  <rect
-                    height="12"
-                    rx="1"
-                    width="2"
-                    x="11"
-                    y="6"
-                  />
-                </svg>
-              </button>
-            </div>
+              type="text"
+              value={0}
+            />
           </div>
         </div>
       </div>
@@ -7808,98 +7893,37 @@ exports[`Storyshots Design System/Organisms/Create Bedrooms 1`] = `
             className="m-t--16"
           >
             <div
-              data-testid="input"
+              data-testid="text-input"
             >
               <div
-                className="h--50 flex outside relative items-center "
+                className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
               >
                 <div
-                  className="b--white__3 br--8 undefined"
                   style={
                     Object {
-                      "backgroundColor": "white",
-                      "borderColor": "#B0B0B0",
+                      "alignItems": "center",
                       "display": "flex",
                       "height": "100%",
-                      "justifyContent": "space-between",
-                      "padding": "0 12px",
                       "position": "relative",
                       "width": "100%",
                     }
                   }
                 >
-                  <select
-                    className="bg--transparent justify-between br--4 p--0 w--full block b--0 size--14 weight--300"
-                    disabled={false}
-                    id="bedrooms"
+                  <input
+                    autoFocus={true}
+                    className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                    id="text"
+                    name="text"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
                     style={
                       Object {
-                        "height": "100%",
                         "outline": "none",
                       }
                     }
-                  >
-                    <option
-                      value={1}
-                    >
-                      Studio
-                    </option>
-                    <option
-                      value={2}
-                    >
-                      2 guests
-                    </option>
-                    <option
-                      value={3}
-                    >
-                      3 guests
-                    </option>
-                    <option
-                      value={4}
-                    >
-                      4 guests
-                    </option>
-                    <option
-                      value={5}
-                    >
-                      5 guests
-                    </option>
-                    <option
-                      value={6}
-                    >
-                      6 guests
-                    </option>
-                    <option
-                      value={7}
-                    >
-                      7 guests
-                    </option>
-                    <option
-                      value={8}
-                    >
-                      8 guests
-                    </option>
-                  </select>
-                  <div
-                    className="flex items-center"
-                  >
-                    <svg
-                      fill="black"
-                      viewBox="0 0 256 256"
-                      width={13}
-                    >
-                      <g>
-                        <g>
-                          <polygon
-                            points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-                          />
-                        </g>
-                      </g>
-                    </svg>
-                  </div>
+                    type="text"
+                  />
                 </div>
               </div>
             </div>
@@ -7934,99 +7958,407 @@ exports[`Storyshots Design System/Organisms/Create Bedrooms 1`] = `
             className="m-t--16"
           >
             <div
-              data-testid="input"
+              data-testid="text-input"
             >
               <div
-                className="flex items-center justify-between"
+                className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
               >
-                <div>
-                  <h3
-                    className="size--15"
-                  >
-                    Beds
-                  </h3>
-                </div>
                 <div
-                  className="flex items-center"
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "display": "flex",
+                      "height": "100%",
+                      "position": "relative",
+                      "width": "100%",
+                    }
+                  }
                 >
-                  <div>
-                    <button
-                      disabled={false}
-                      onClick={[Function]}
-                      style={
-                        Object {
-                          "backgroundColor": "white",
-                          "border": "2px solid #0B8A8F",
-                          "borderRadius": 9999,
-                          "padding": 5,
-                        }
-                      }
-                    >
-                      <svg
-                        stroke="#0B8A8F"
-                        viewBox="0 0 24 24"
-                        width={15}
-                      >
-                        <rect
-                          height="2"
-                          rx="1"
-                          width="12"
-                          x="6"
-                          y="11"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                  <div
-                    className="flex justify-center"
+                  <input
+                    autoFocus={true}
+                    className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                    id="text"
+                    name="text"
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     style={
                       Object {
-                        "width": 50,
+                        "outline": "none",
+                      }
+                    }
+                    type="text"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Design System/Organisms/Create Checkin 1`] = `
+<div>
+  <div
+    className="m-b--30"
+    style={
+      Object {
+        "width": 300,
+      }
+    }
+  >
+    <div
+      data-testid="layout"
+    >
+      <div>
+        <div
+          className="m-b--8"
+        >
+          <h3
+            className="size--16 c--gray__0"
+          >
+            How much notice do you need before a guest arrives?
+          </h3>
+        </div>
+        <div>
+          <div
+            className="m-t--22"
+          >
+            <div
+              className="m-b--10"
+            >
+              <div
+                data-testid="text-input"
+              >
+                <div
+                  className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+                >
+                  <div
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "height": "100%",
+                        "position": "relative",
+                        "width": "100%",
                       }
                     }
                   >
-                    <h3
-                      className="size--14"
-                    >
-                      0
-                    </h3>
-                  </div>
-                  <div>
-                    <button
-                      disabled={false}
-                      onClick={[Function]}
+                    <input
+                      autoFocus={true}
+                      className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                      id="text"
+                      name="text"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
                       style={
                         Object {
-                          "backgroundColor": "white",
-                          "border": "2px solid #0B8A8F",
-                          "borderRadius": 9999,
-                          "padding": 5,
+                          "outline": "none",
                         }
                       }
-                    >
-                      <svg
-                        stroke="#0B8A8F"
-                        viewBox="0 0 24 24"
-                        width={15}
-                      >
-                        <rect
-                          height="2"
-                          rx="1"
-                          width="12"
-                          x="6"
-                          y="11"
-                        />
-                        <rect
-                          height="12"
-                          rx="1"
-                          width="2"
-                          x="11"
-                          y="6"
-                        />
-                      </svg>
-                    </button>
+                      type="text"
+                    />
                   </div>
                 </div>
+              </div>
+            </div>
+            <div
+              className="m-b--10"
+            >
+              <div
+                data-testid="text-input"
+              >
+                <div
+                  className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+                >
+                  <div
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "height": "100%",
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <input
+                      autoFocus={true}
+                      className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                      id="text"
+                      name="text"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      style={
+                        Object {
+                          "outline": "none",
+                        }
+                      }
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="m-b--10"
+            >
+              <div
+                data-testid="text-input"
+              >
+                <div
+                  className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+                >
+                  <div
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "height": "100%",
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <input
+                      autoFocus={true}
+                      className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                      id="text"
+                      name="text"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      style={
+                        Object {
+                          "outline": "none",
+                        }
+                      }
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="m-b--10"
+            >
+              <div
+                data-testid="text-input"
+              >
+                <div
+                  className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+                >
+                  <div
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "height": "100%",
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <input
+                      autoFocus={true}
+                      className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                      id="text"
+                      name="text"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      style={
+                        Object {
+                          "outline": "none",
+                        }
+                      }
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="m-b--10"
+            >
+              <div
+                data-testid="text-input"
+              >
+                <div
+                  className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+                >
+                  <div
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "height": "100%",
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <input
+                      autoFocus={true}
+                      className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                      id="text"
+                      name="text"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      style={
+                        Object {
+                          "outline": "none",
+                        }
+                      }
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "maxWidth": 300,
+      }
+    }
+  >
+    <h4
+      className="size--13 c--gray__1"
+    >
+      <span
+        className="c--darkgreen__3 weight--300"
+      >
+        Tip:
+         
+      </span>
+      Letting guests book same-day reservations can help you get guests who book last-minute trips.
+    </h4>
+  </div>
+  <div
+    className="bg--white__2 m-v--32"
+    style={
+      Object {
+        "height": 1,
+        "width": "100%",
+      }
+    }
+  />
+  <div>
+    <div
+      className="m-b--12"
+    >
+      <h4>
+        When can guests check in?
+      </h4>
+    </div>
+    <div
+      style={
+        Object {
+          "columnGap": 10,
+          "display": "grid",
+          "gridTemplateColumns": "repeat(2, 1fr)",
+        }
+      }
+    >
+      <div>
+        <div
+          className="m-b--8"
+        >
+          <h4
+            className="c--gray__0 size--13"
+          >
+            From:
+             
+          </h4>
+        </div>
+        <div>
+          <div
+            data-testid="text-input"
+          >
+            <div
+              className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+            >
+              <div
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "height": "100%",
+                    "position": "relative",
+                    "width": "100%",
+                  }
+                }
+              >
+                <input
+                  autoFocus={true}
+                  className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                  id="text"
+                  name="text"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  style={
+                    Object {
+                      "outline": "none",
+                    }
+                  }
+                  type="text"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="m-b--8"
+        >
+          <h4
+            className="c--gray__0 size--13"
+          >
+            To:
+             
+          </h4>
+        </div>
+        <div>
+          <div
+            data-testid="text-input"
+          >
+            <div
+              className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+            >
+              <div
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "height": "100%",
+                    "position": "relative",
+                    "width": "100%",
+                  }
+                }
+              >
+                <input
+                  autoFocus={true}
+                  className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                  id="text"
+                  name="text"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  style={
+                    Object {
+                      "outline": "none",
+                    }
+                  }
+                  type="text"
+                />
               </div>
             </div>
           </div>
@@ -8064,40 +8396,38 @@ exports[`Storyshots Design System/Organisms/Create Description 1`] = `
       className="m-b--8"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
-        <div>
+        <div
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+        >
           <div
-            className="relative w--full"
             style={
               Object {
-                "minHeight": 300,
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
               }
             }
           >
-            <textarea
-              className="relative weight--300 b--white__2 br--6 size--15 c--gray__2 h--full w--full p--12 transition  "
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
-              spellCheck={true}
               style={
                 Object {
-                  "minHeight": 300,
                   "outline": "none",
-                  "resize": "vertical",
                 }
               }
+              type="text"
+              value="Description here"
             />
-            <div
-              className="absolute b--15 r--15"
-            >
-              <h3
-                className="size--12 c--darkgreen__3"
-              >
-                484
-              </h3>
-            </div>
           </div>
         </div>
       </div>
@@ -8154,152 +8484,75 @@ exports[`Storyshots Design System/Organisms/Create Get Started 1`] = `
         >
           <div>
             <div
-              data-testid="input"
+              data-testid="text-input"
             >
               <div
-                className="flex outside relative items-center"
-                style={
-                  Object {
-                    "height": 50,
-                  }
-                }
+                className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
               >
                 <div
-                  className="b--white__3 br--10 false"
                   style={
                     Object {
+                      "alignItems": "center",
+                      "display": "flex",
                       "height": "100%",
                       "position": "relative",
                       "width": "100%",
                     }
                   }
                 >
-                  <div
-                    className="flex justify-between items-center bg--transparent br--10 p--0 w--full b--0 size--16 weight--300"
-                    onClick={[Function]}
+                  <input
+                    autoFocus={true}
+                    className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                    id="text"
+                    name="text"
+                    onBlur={[Function]}
+                    onFocus={[Function]}
                     style={
                       Object {
-                        "height": "100%",
-                        "padding": "0 12px",
+                        "outline": "none",
                       }
                     }
-                  >
-                    <div>
-                      <label
-                        className="absolute size--14 c--gray__3 weight--100"
-                        htmlFor="place"
-                        style={
-                          Object {
-                            "cursor": "pointer",
-                            "left": 0,
-                            "padding": "0 12px",
-                            "top": 15,
-                          }
-                        }
-                      >
-                        Entire place
-                      </label>
-                    </div>
-                    <div>
-                      <svg
-                        viewBox="0 0 256 256"
-                        width={13}
-                      >
-                        <g>
-                          <g>
-                            <polygon
-                              points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-                            />
-                          </g>
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
+                    type="text"
+                    value="Entire place"
+                  />
                 </div>
               </div>
             </div>
           </div>
           <div>
             <div
-              data-testid="input"
+              data-testid="text-input"
             >
               <div
-                className="flex outside relative items-center "
-                style={
-                  Object {
-                    "height": 50,
-                  }
-                }
+                className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
               >
                 <div
-                  className="b--white__3 br--8 undefined"
                   style={
                     Object {
+                      "alignItems": "center",
                       "display": "flex",
                       "height": "100%",
-                      "justifyContent": "space-between",
-                      "padding": "0 12px",
                       "position": "relative",
                       "width": "100%",
                     }
                   }
                 >
-                  <select
-                    className="justify-between br--4 p--0 w--full block b--0 size--14 weight--300"
-                    id="guests"
+                  <input
+                    autoFocus={true}
+                    className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                    id="text"
+                    name="text"
                     onBlur={[Function]}
                     onChange={[Function]}
                     onFocus={[Function]}
                     style={
                       Object {
-                        "height": "100%",
                         "outline": "none",
                       }
                     }
+                    type="text"
                     value={1}
-                  >
-                    <option
-                      value="1"
-                    >
-                      1 guest
-                    </option>
-                    <option
-                      value="2"
-                    >
-                      2 guests
-                    </option>
-                    <option
-                      value="3"
-                    >
-                      3 guests
-                    </option>
-                    <option
-                      value="4"
-                    >
-                      4 guests
-                    </option>
-                    <option
-                      value="5"
-                    >
-                      5 guests
-                    </option>
-                  </select>
-                  <div
-                    className="flex items-center"
-                  >
-                    <svg
-                      viewBox="0 0 256 256"
-                      width={13}
-                    >
-                      <g>
-                        <g>
-                          <polygon
-                            points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-                          />
-                        </g>
-                      </g>
-                    </svg>
-                  </div>
+                  />
                 </div>
               </div>
             </div>
@@ -8307,10 +8560,10 @@ exports[`Storyshots Design System/Organisms/Create Get Started 1`] = `
         </div>
         <div>
           <div
-            data-testid="input"
+            data-testid="text-input"
           >
             <div
-              className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8"
+              className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
             >
               <div
                 style={
@@ -8325,11 +8578,12 @@ exports[`Storyshots Design System/Organisms/Create Get Started 1`] = `
               >
                 <input
                   autoFocus={true}
-                  className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black"
-                  id="address"
-                  name="address"
+                  className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                  id="text"
+                  name="text"
+                  onBlur={[Function]}
                   onChange={[Function]}
-                  placeholder="Address"
+                  onFocus={[Function]}
                   style={
                     Object {
                       "outline": "none",
@@ -8432,68 +8686,37 @@ exports[`Storyshots Design System/Organisms/Create Location 1`] = `
         </p>
       </div>
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="h--50 flex outside relative items-center "
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="b--white__3 br--8 undefined"
             style={
               Object {
-                "backgroundColor": "white",
-                "borderColor": "#B0B0B0",
+                "alignItems": "center",
                 "display": "flex",
                 "height": "100%",
-                "justifyContent": "space-between",
-                "padding": "0 12px",
                 "position": "relative",
                 "width": "100%",
               }
             }
           >
-            <select
-              className="bg--transparent justify-between br--4 p--0 w--full block b--0 size--14 weight--300"
-              disabled={false}
-              id="country"
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
               style={
                 Object {
-                  "height": "100%",
                   "outline": "none",
                 }
               }
-            >
-              <option
-                value="Canada"
-              >
-                Canada
-              </option>
-              <option
-                value="Japan"
-              >
-                Japan
-              </option>
-            </select>
-            <div
-              className="flex items-center"
-            >
-              <svg
-                fill="black"
-                viewBox="0 0 256 256"
-                width={13}
-              >
-                <g>
-                  <g>
-                    <polygon
-                      points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-                    />
-                  </g>
-                </g>
-              </svg>
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -8511,7 +8734,7 @@ exports[`Storyshots Design System/Organisms/Create Location 1`] = `
         </p>
       </div>
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
           className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
@@ -8561,7 +8784,7 @@ exports[`Storyshots Design System/Organisms/Create Location 1`] = `
     </div>
     <div>
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
           className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
@@ -8620,7 +8843,7 @@ exports[`Storyshots Design System/Organisms/Create Location 1`] = `
     </div>
     <div>
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
           className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
@@ -8689,7 +8912,7 @@ exports[`Storyshots Design System/Organisms/Create Location 1`] = `
       </div>
       <div>
         <div
-          data-testid="input"
+          data-testid="text-input"
         >
           <div
             className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
@@ -8748,7 +8971,7 @@ exports[`Storyshots Design System/Organisms/Create Location 1`] = `
       </div>
       <div>
         <div
-          data-testid="input"
+          data-testid="text-input"
         >
           <div
             className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
@@ -8824,52 +9047,38 @@ exports[`Storyshots Design System/Organisms/Create Phone 1`] = `
       className="m-b--8"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
-        <div>
+        <div
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+        >
           <div
-            className="relative w--full m-b--4"
             style={
               Object {
-                "minHeight": 50,
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
               }
             }
           >
             <input
-              className="relative weight--300 b--white__2 br--6 size--15 c--gray__2 h--full w--full p--12 transition  "
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-              spellCheck={true}
               style={
                 Object {
-                  "minHeight": 50,
                   "outline": "none",
                 }
               }
-              type="tel"
+              type="text"
+              value="000-000-0000"
             />
-            <div
-              className="absolute b--15 r--15"
-            >
-              <button
-                className="undefined inline-block"
-                data-testid="button--undefined"
-                onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
-                }
-              >
-                <h4
-                  className="size--16 c--darkgreen__3"
-                >
-                  Verify
-                </h4>
-              </button>
-            </div>
           </div>
         </div>
       </div>
@@ -8914,7 +9123,7 @@ exports[`Storyshots Design System/Organisms/Create Requirements 1`] = `
       className="m-b--8"
     >
       <div
-        data-testid="bullet"
+        data-testid="check-bullet"
       >
         <div
           className="flex items-center"
@@ -8948,7 +9157,7 @@ exports[`Storyshots Design System/Organisms/Create Requirements 1`] = `
       className="m-b--8"
     >
       <div
-        data-testid="bullet"
+        data-testid="check-bullet"
       >
         <div
           className="flex items-center"
@@ -8982,7 +9191,7 @@ exports[`Storyshots Design System/Organisms/Create Requirements 1`] = `
       className="m-b--8"
     >
       <div
-        data-testid="bullet"
+        data-testid="check-bullet"
       >
         <div
           className="flex items-center"
@@ -9035,7 +9244,7 @@ exports[`Storyshots Design System/Organisms/Create Requirements 1`] = `
     className="m-b--8"
   >
     <div
-      data-testid="bullet"
+      data-testid="check-bullet"
     >
       <div
         className="flex items-center"
@@ -9069,7 +9278,7 @@ exports[`Storyshots Design System/Organisms/Create Requirements 1`] = `
     className="m-b--8"
   >
     <div
-      data-testid="bullet"
+      data-testid="check-bullet"
     >
       <div
         className="flex items-center"
@@ -9103,7 +9312,7 @@ exports[`Storyshots Design System/Organisms/Create Requirements 1`] = `
     className="m-b--8"
   >
     <div
-      data-testid="bullet"
+      data-testid="check-bullet"
     >
       <div
         className="flex items-center"
@@ -9137,7 +9346,7 @@ exports[`Storyshots Design System/Organisms/Create Requirements 1`] = `
     className="m-b--8"
   >
     <div
-      data-testid="bullet"
+      data-testid="check-bullet"
     >
       <div
         className="flex items-center"
@@ -9204,94 +9413,37 @@ exports[`Storyshots Design System/Organisms/Create Room 1`] = `
         </div>
         <div>
           <div
-            data-testid="input"
+            data-testid="text-input"
           >
             <div
-              className="h--50 flex outside relative items-center "
+              className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
             >
               <div
-                className="b--white__3 br--8 undefined"
                 style={
                   Object {
-                    "backgroundColor": "white",
-                    "borderColor": "#B0B0B0",
+                    "alignItems": "center",
                     "display": "flex",
                     "height": "100%",
-                    "justifyContent": "space-between",
-                    "padding": "0 12px",
                     "position": "relative",
                     "width": "100%",
                   }
                 }
               >
-                <select
-                  className="bg--transparent justify-between br--4 p--0 w--full block b--0 size--14 weight--300"
-                  disabled={false}
-                  id="place"
+                <input
+                  autoFocus={true}
+                  className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                  id="text"
+                  name="text"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
                   style={
                     Object {
-                      "height": "100%",
                       "outline": "none",
                     }
                   }
-                >
-                  <option
-                    disabled={true}
-                    value="Select one"
-                  >
-                    Select one
-                  </option>
-                  <option
-                    value="Apartment"
-                  >
-                    Apartment
-                  </option>
-                  <option
-                    value="House"
-                  >
-                    House
-                  </option>
-                  <option
-                    value="Secondary unit"
-                  >
-                    Secondary unit
-                  </option>
-                  <option
-                    value="Unique space"
-                  >
-                    Unique space
-                  </option>
-                  <option
-                    value="Bed and breakfast"
-                  >
-                    Bed and breakfast
-                  </option>
-                  <option
-                    value="Boutique hotel"
-                  >
-                    Boutique hotel
-                  </option>
-                </select>
-                <div
-                  className="flex items-center"
-                >
-                  <svg
-                    fill="black"
-                    viewBox="0 0 256 256"
-                    width={13}
-                  >
-                    <g>
-                      <g>
-                        <polygon
-                          points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-                        />
-                      </g>
-                    </g>
-                  </svg>
-                </div>
+                  type="text"
+                />
               </div>
             </div>
           </div>
@@ -9322,94 +9474,37 @@ exports[`Storyshots Design System/Organisms/Create Room 1`] = `
         </div>
         <div>
           <div
-            data-testid="input"
+            data-testid="text-input"
           >
             <div
-              className="h--50 flex outside relative items-center "
+              className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
             >
               <div
-                className="b--white__3 br--8 undefined"
                 style={
                   Object {
-                    "backgroundColor": "#F7F7F7",
-                    "borderColor": "#EBEBEB",
+                    "alignItems": "center",
                     "display": "flex",
                     "height": "100%",
-                    "justifyContent": "space-between",
-                    "padding": "0 12px",
                     "position": "relative",
                     "width": "100%",
                   }
                 }
               >
-                <select
-                  className="bg--transparent justify-between br--4 p--0 w--full block b--0 size--14 weight--300"
-                  disabled={true}
-                  id="Bed and breakfast"
+                <input
+                  autoFocus={true}
+                  className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                  id="text"
+                  name="text"
                   onBlur={[Function]}
                   onChange={[Function]}
                   onFocus={[Function]}
                   style={
                     Object {
-                      "height": "100%",
                       "outline": "none",
                     }
                   }
-                >
-                  <option
-                    disabled={true}
-                    value="Select Property"
-                  >
-                    Select Property
-                  </option>
-                  <option
-                    value="Bed and breakfast"
-                  >
-                    Bed and breakfast
-                  </option>
-                  <option
-                    value="Casa particular (Cuba)"
-                  >
-                    Casa particular (Cuba)
-                  </option>
-                  <option
-                    value="Farm stay"
-                  >
-                    Farm stay
-                  </option>
-                  <option
-                    value="Minsu (Taiwan)"
-                  >
-                    Minsu (Taiwan)
-                  </option>
-                  <option
-                    value="Nature lodge"
-                  >
-                    Nature lodge
-                  </option>
-                  <option
-                    value="Ryokan (Japan)"
-                  >
-                    Ryokan (Japan)
-                  </option>
-                </select>
-                <div
-                  className="flex items-center"
-                >
-                  <svg
-                    fill="#DDDDDD"
-                    viewBox="0 0 256 256"
-                    width={13}
-                  >
-                    <g>
-                      <g>
-                        <polygon
-                          points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
-                        />
-                      </g>
-                    </g>
-                  </svg>
-                </div>
+                  type="text"
+                />
               </div>
             </div>
           </div>
@@ -9443,103 +9538,37 @@ exports[`Storyshots Design System/Organisms/Create Rules 1`] = `
       className="m-v--12"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex items-center justify-between"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
-          <div>
-            <h4
-              className="size--15"
-            >
-              Smoking allowed
-            </h4>
-          </div>
           <div
-            className="flex"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="m-r--12"
-            >
-              <button
-                className="undefined inline-block"
-                data-testid="button--closed"
-                onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              style={
+                Object {
+                  "outline": "none",
                 }
-              >
-                <div
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "white",
-                      "border": "1px solid lightgray",
-                      "borderRadius": 9999,
-                      "display": "flex",
-                      "justifyContent": "center",
-                      "padding": 5,
-                    }
-                  }
-                >
-                  <svg
-                    fill={false}
-                    stroke="black"
-                    strokeWidth={2}
-                    viewBox="0 0 32 32"
-                    width={16}
-                  >
-                    <path
-                      d="m6 6 20 20"
-                    />
-                    <path
-                      d="m26 6-20 20"
-                    />
-                  </svg>
-                </div>
-              </button>
-            </div>
-            <div>
-              <button
-                className="undefined inline-block"
-                data-testid="button--closed"
-                onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
-                }
-              >
-                <div
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "white",
-                      "border": "1px solid lightgray",
-                      "borderRadius": 9999,
-                      "display": "flex",
-                      "justifyContent": "center",
-                      "padding": 5,
-                    }
-                  }
-                >
-                  <svg
-                    fill={false}
-                    stroke="black"
-                    strokeWidth={2}
-                    viewBox="0 0 32 32"
-                    width={16}
-                  >
-                    <path
-                      d="m4 16.5 8 8 16-16"
-                      fill="none"
-                    />
-                  </svg>
-                </div>
-              </button>
-            </div>
+              }
+              type="text"
+              value="smoking"
+            />
           </div>
         </div>
       </div>
@@ -9548,103 +9577,37 @@ exports[`Storyshots Design System/Organisms/Create Rules 1`] = `
       className="m-v--12"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex items-center justify-between"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
-          <div>
-            <h4
-              className="size--15"
-            >
-              Events allowed
-            </h4>
-          </div>
           <div
-            className="flex"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="m-r--12"
-            >
-              <button
-                className="undefined inline-block"
-                data-testid="button--closed"
-                onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              style={
+                Object {
+                  "outline": "none",
                 }
-              >
-                <div
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "white",
-                      "border": "1px solid lightgray",
-                      "borderRadius": 9999,
-                      "display": "flex",
-                      "justifyContent": "center",
-                      "padding": 5,
-                    }
-                  }
-                >
-                  <svg
-                    fill={false}
-                    stroke="black"
-                    strokeWidth={2}
-                    viewBox="0 0 32 32"
-                    width={16}
-                  >
-                    <path
-                      d="m6 6 20 20"
-                    />
-                    <path
-                      d="m26 6-20 20"
-                    />
-                  </svg>
-                </div>
-              </button>
-            </div>
-            <div>
-              <button
-                className="undefined inline-block"
-                data-testid="button--closed"
-                onClick={[Function]}
-                style={
-                  Object {
-                    "cursor": "pointer",
-                  }
-                }
-              >
-                <div
-                  style={
-                    Object {
-                      "alignItems": "center",
-                      "backgroundColor": "white",
-                      "border": "1px solid lightgray",
-                      "borderRadius": 9999,
-                      "display": "flex",
-                      "justifyContent": "center",
-                      "padding": 5,
-                    }
-                  }
-                >
-                  <svg
-                    fill={false}
-                    stroke="black"
-                    strokeWidth={2}
-                    viewBox="0 0 32 32"
-                    width={16}
-                  >
-                    <path
-                      d="m4 16.5 8 8 16-16"
-                      fill="none"
-                    />
-                  </svg>
-                </div>
-              </button>
-            </div>
+              }
+              type="text"
+              value="event"
+            />
           </div>
         </div>
       </div>
@@ -9664,55 +9627,36 @@ exports[`Storyshots Design System/Organisms/Create Rules 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Must climb stairs
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -9721,55 +9665,36 @@ exports[`Storyshots Design System/Organisms/Create Rules 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Potential for noise
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -9778,55 +9703,36 @@ exports[`Storyshots Design System/Organisms/Create Rules 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Pet(s) live on property
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -9862,55 +9768,36 @@ exports[`Storyshots Design System/Organisms/Create Spaces 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Kitchen
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -9919,55 +9806,36 @@ exports[`Storyshots Design System/Organisms/Create Spaces 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Laundry - washer
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -9976,55 +9844,36 @@ exports[`Storyshots Design System/Organisms/Create Spaces 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Laundry - dryer
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -10033,55 +9882,36 @@ exports[`Storyshots Design System/Organisms/Create Spaces 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Parking
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -10090,55 +9920,36 @@ exports[`Storyshots Design System/Organisms/Create Spaces 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Gym
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -10147,55 +9958,36 @@ exports[`Storyshots Design System/Organisms/Create Spaces 1`] = `
       className="m-b--16"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
         <div
-          className="flex"
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
         >
           <div
-            className="m-r--16"
+            style={
+              Object {
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
           >
-            <div
-              className="flex items-center justify-center b--white__3 br--4 bg--white"
-              onClick={[Function]}
+            <input
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
+              onBlur={[Function]}
+              onFocus={[Function]}
               style={
                 Object {
-                  "cursor": "pointer",
-                  "height": 24,
-                  "width": 24,
+                  "outline": "none",
                 }
               }
-            >
-              <div
-                className="relative b--1 p--12"
-              >
-                <svg
-                  stroke="white"
-                  strokeWidth={5}
-                  viewBox="0 0 32 32"
-                  width={15}
-                >
-                  <path
-                    d="m4 16.5 8 8 16-16"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div
-            className="relative t--2"
-          >
-            <div>
-              <h4>
-                Pool
-              </h4>
-            </div>
-            <div>
-              <h4
-                className="size--14 c--gray__0"
-              />
-            </div>
+              type="text"
+            />
           </div>
         </div>
       </div>
@@ -10231,39 +10023,38 @@ exports[`Storyshots Design System/Organisms/Create Title 1`] = `
       className="m-b--8"
     >
       <div
-        data-testid="input"
+        data-testid="text-input"
       >
-        <div>
+        <div
+          className="h--50 outside relative p-v--6 p-h--12 items-center b--white__3 br--8 b--white__3"
+        >
           <div
-            className="relative w--full m-b--4"
             style={
               Object {
-                "minHeight": 50,
+                "alignItems": "center",
+                "display": "flex",
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
               }
             }
           >
             <input
-              className="relative weight--300 b--white__2 br--6 size--15 c--gray__2 h--full w--full p--12 transition  "
+              autoFocus={true}
+              className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+              id="text"
+              name="text"
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
-              spellCheck={true}
               style={
                 Object {
-                  "minHeight": 50,
                   "outline": "none",
                 }
               }
+              type="text"
+              value="Title here"
             />
-            <div
-              className="absolute b--15 r--15"
-            >
-              <h3
-                className="size--12 c--darkgreen__3"
-              >
-                40
-              </h3>
-            </div>
           </div>
         </div>
       </div>
@@ -12002,89 +11793,16 @@ exports[`Storyshots Design System/Organisms/Modal Auth 1`] = `
           >
             <div>
               <div
-                data-testid="input"
+                data-testid="text-input"
               >
                 <div
-                  className="flex outside relative items-center "
-                  style={
-                    Object {
-                      "height": 60,
-                    }
-                  }
-                >
-                  <div
-                    className="b-t--white__3 b-l--white__3 b-r--white__3 btr--10 undefined"
-                    style={
-                      Object {
-                        "height": "100%",
-                        "padding": "0 12px",
-                        "position": "relative",
-                        "width": "100%",
-                      }
-                    }
-                  >
-                    <select
-                      className="br--10 p--0 w--full block b--0 size--16 weight--300 input select-input__active"
-                      id="region"
-                      onBlur={[Function]}
-                      onChange={[Function]}
-                      onFocus={[Function]}
-                      style={
-                        Object {
-                          "height": "100%",
-                        }
-                      }
-                      value=""
-                    >
-                      <option
-                        value="canada"
-                      >
-                        Canada (+1)
-                      </option>
-                      <option
-                        value="japan"
-                      >
-                        Afghanistan (+1)
-                      </option>
-                      <option
-                        value="japan"
-                      >
-                        United States (+1)
-                      </option>
-                      <option
-                        value="japan"
-                      >
-                        Korea (+1)
-                      </option>
-                      <option
-                        value="japan"
-                      >
-                        Mexico (+1)
-                      </option>
-                    </select>
-                    <label
-                      className="absolute size--12 c--gray__1 weight--100 label select-label__active"
-                      htmlFor="region"
-                    >
-                      Country/Region
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div
-                data-testid="input"
-              >
-                <div
-                  className="outside relative p-v--6 p-h--12 items-center b-b--white__3 b-l--white__3 b-r--white__3 bbr--10 "
-                  style={
-                    Object {
-                      "height": 60,
-                    }
-                  }
+                  className="h--50 outside relative p-v--6 p-h--12 items-center b-t--white__3 b-l--white__3 b-r--white__3 btr--8 b--white__3"
                 >
                   <div
                     style={
                       Object {
+                        "alignItems": "center",
+                        "display": "flex",
                         "height": "100%",
                         "position": "relative",
                         "width": "100%",
@@ -12093,21 +11811,56 @@ exports[`Storyshots Design System/Organisms/Modal Auth 1`] = `
                   >
                     <input
                       autoFocus={true}
-                      className="p--0 w--full block b--0 size--16 weight--300 c__placeholder--black input "
-                      id="tel"
-                      name="tel"
+                      className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                      id="text"
+                      name="text"
                       onBlur={[Function]}
                       onChange={[Function]}
                       onFocus={[Function]}
+                      style={
+                        Object {
+                          "outline": "none",
+                        }
+                      }
                       type="text"
                       value=""
                     />
-                    <label
-                      className="absolute size--12 c--gray__1 weight--100 label "
-                      htmlFor="tel"
-                    >
-                      Phone number
-                    </label>
+                  </div>
+                </div>
+              </div>
+              <div
+                data-testid="text-input"
+              >
+                <div
+                  className="h--50 outside relative p-v--6 p-h--12 items-center b-b--white__3 b-l--white__3 b-r--white__3 bbr--8 b--white__3"
+                >
+                  <div
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "display": "flex",
+                        "height": "100%",
+                        "position": "relative",
+                        "width": "100%",
+                      }
+                    }
+                  >
+                    <input
+                      autoFocus={true}
+                      className="p--0 w--full block b--0 size--14 weight--100 c__placeholder--black "
+                      id="text"
+                      name="text"
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onFocus={[Function]}
+                      style={
+                        Object {
+                          "outline": "none",
+                        }
+                      }
+                      type="text"
+                      value=""
+                    />
                   </div>
                 </div>
               </div>
@@ -13847,7 +13600,7 @@ exports[`Storyshots Design System/Organisms/Section Amenities 1`] = `
         className="display__amenities--wrapper m-b--32"
       >
         <div
-          data-testid="bullet"
+          data-testid="amenity-bullet"
         >
           <div
             className="flex items-center p--4 w--50p"
@@ -13868,7 +13621,7 @@ exports[`Storyshots Design System/Organisms/Section Amenities 1`] = `
           </div>
         </div>
         <div
-          data-testid="bullet"
+          data-testid="amenity-bullet"
         >
           <div
             className="flex items-center p--4 w--50p"
@@ -14775,7 +14528,7 @@ exports[`Storyshots Design System/Organisms/Section Back 1`] = `
             className="m-b--16"
           >
             <div
-              data-testid="bullet"
+              data-testid="onlinehost-bullet"
             >
               <div>
                 <div>
@@ -14809,7 +14562,7 @@ exports[`Storyshots Design System/Organisms/Section Back 1`] = `
             className="m-b--16"
           >
             <div
-              data-testid="bullet"
+              data-testid="onlinehost-bullet"
             >
               <div>
                 <div>
@@ -14843,7 +14596,7 @@ exports[`Storyshots Design System/Organisms/Section Back 1`] = `
             className="m-b--16"
           >
             <div
-              data-testid="bullet"
+              data-testid="onlinehost-bullet"
             >
               <div>
                 <div>
@@ -14897,7 +14650,7 @@ exports[`Storyshots Design System/Organisms/Section Bring 1`] = `
         className="m-b--16"
       >
         <div
-          data-testid="bullet"
+          data-testid="bring-bullet"
         >
           <div
             className="flex"
@@ -14926,7 +14679,7 @@ exports[`Storyshots Design System/Organisms/Section Bring 1`] = `
         className="m-b--16"
       >
         <div
-          data-testid="bullet"
+          data-testid="bring-bullet"
         >
           <div
             className="flex"
@@ -14955,7 +14708,7 @@ exports[`Storyshots Design System/Organisms/Section Bring 1`] = `
         className="m-b--16"
       >
         <div
-          data-testid="bullet"
+          data-testid="bring-bullet"
         >
           <div
             className="flex"
@@ -14984,7 +14737,7 @@ exports[`Storyshots Design System/Organisms/Section Bring 1`] = `
         className="m-b--16"
       >
         <div
-          data-testid="bullet"
+          data-testid="bring-bullet"
         >
           <div
             className="flex"
@@ -15013,7 +14766,7 @@ exports[`Storyshots Design System/Organisms/Section Bring 1`] = `
         className="m-b--16"
       >
         <div
-          data-testid="bullet"
+          data-testid="bring-bullet"
         >
           <div
             className="flex"
@@ -15292,7 +15045,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
     >
       <div
         className="m-t--24"
-        data-testid="bullet"
+        data-testid="characteristic-bullet"
       >
         <div
           className="flex m-v--8 items-center p-r--8"
@@ -15318,7 +15071,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
       </div>
       <div
         className="m-t--24"
-        data-testid="bullet"
+        data-testid="characteristic-bullet"
       >
         <div
           className="flex m-v--8 items-center p-r--8"
@@ -15344,7 +15097,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
       </div>
       <div
         className="m-t--24"
-        data-testid="bullet"
+        data-testid="characteristic-bullet"
       >
         <div
           className="flex m-v--8 items-center p-r--8"
@@ -15370,7 +15123,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
       </div>
       <div
         className="m-t--24"
-        data-testid="bullet"
+        data-testid="characteristic-bullet"
       >
         <div
           className="flex m-v--8 items-center p-r--8"
@@ -15962,7 +15715,7 @@ exports[`Storyshots Design System/Organisms/Section Experiences 1`] = `
     >
       <div>
         <div
-          data-testid="bullet"
+          data-testid="experience-bullet"
         >
           <div
             className="flex items-center"
@@ -16000,7 +15753,7 @@ exports[`Storyshots Design System/Organisms/Section Experiences 1`] = `
       </div>
       <div>
         <div
-          data-testid="bullet"
+          data-testid="experience-bullet"
         >
           <div
             className="flex items-center"
@@ -16038,7 +15791,7 @@ exports[`Storyshots Design System/Organisms/Section Experiences 1`] = `
       </div>
       <div>
         <div
-          data-testid="bullet"
+          data-testid="experience-bullet"
         >
           <div
             className="flex items-center"
@@ -16121,7 +15874,7 @@ exports[`Storyshots Design System/Organisms/Section Faq 1`] = `
             }
           >
             <div
-              data-testid="bullet"
+              data-testid="question-bullet"
             >
               <div
                 className="p-v--16 b-b--white__1"
@@ -16145,7 +15898,7 @@ exports[`Storyshots Design System/Organisms/Section Faq 1`] = `
             }
           >
             <div
-              data-testid="bullet"
+              data-testid="question-bullet"
             >
               <div
                 className="p-v--16 b-b--white__1"
@@ -16169,7 +15922,7 @@ exports[`Storyshots Design System/Organisms/Section Faq 1`] = `
             }
           >
             <div
-              data-testid="bullet"
+              data-testid="question-bullet"
             >
               <div
                 className="p-v--16 b-b--white__1"
@@ -16193,7 +15946,7 @@ exports[`Storyshots Design System/Organisms/Section Faq 1`] = `
             }
           >
             <div
-              data-testid="bullet"
+              data-testid="question-bullet"
             >
               <div
                 className="p-v--16 b-b--white__1"
@@ -16237,7 +15990,7 @@ exports[`Storyshots Design System/Organisms/Section Help 1`] = `
           className="m-b--24"
         >
           <div
-            data-testid="bullet"
+            data-testid="help-bullet"
           >
             <div
               className="flex"
@@ -16277,7 +16030,7 @@ exports[`Storyshots Design System/Organisms/Section Help 1`] = `
           className="m-b--24"
         >
           <div
-            data-testid="bullet"
+            data-testid="help-bullet"
           >
             <div
               className="flex"
@@ -16317,7 +16070,7 @@ exports[`Storyshots Design System/Organisms/Section Help 1`] = `
           className="m-b--24"
         >
           <div
-            data-testid="bullet"
+            data-testid="help-bullet"
           >
             <div
               className="flex"
@@ -16357,7 +16110,7 @@ exports[`Storyshots Design System/Organisms/Section Help 1`] = `
           className="m-b--24"
         >
           <div
-            data-testid="bullet"
+            data-testid="help-bullet"
           >
             <div
               className="flex"
@@ -17082,7 +16835,7 @@ exports[`Storyshots Design System/Organisms/Section Homes 1`] = `
                       </div>
                       <div>
                         <div
-                          data-testid="bullet"
+                          data-testid="rating-bullet"
                         >
                           <div
                             className="flex flex"
@@ -17816,7 +17569,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
                       </div>
                       <div>
                         <div
-                          data-testid="bullet"
+                          data-testid="rating-bullet"
                         >
                           <div
                             className="flex flex"
@@ -18550,7 +18303,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
                       </div>
                       <div>
                         <div
-                          data-testid="bullet"
+                          data-testid="rating-bullet"
                         >
                           <div
                             className="flex flex"
@@ -18679,7 +18432,7 @@ exports[`Storyshots Design System/Organisms/Section Host 1`] = `
                 className="m-r--8 m-b--12 p-r--4"
               >
                 <div
-                  data-testid="bullet"
+                  data-testid="host-bullet"
                 >
                   <div
                     className="flex items-center m-r--18"
@@ -18882,7 +18635,7 @@ exports[`Storyshots Design System/Organisms/Section Know 1`] = `
             className="m-b--6"
           >
             <div
-              data-testid="bullet"
+              data-testid="know-bullet"
             >
               <div
                 className="flex"
@@ -18910,7 +18663,7 @@ exports[`Storyshots Design System/Organisms/Section Know 1`] = `
             className="m-b--6"
           >
             <div
-              data-testid="bullet"
+              data-testid="know-bullet"
             >
               <div
                 className="flex"
@@ -18938,7 +18691,7 @@ exports[`Storyshots Design System/Organisms/Section Know 1`] = `
             className="m-b--6"
           >
             <div
-              data-testid="bullet"
+              data-testid="know-bullet"
             >
               <div
                 className="flex"
@@ -18966,7 +18719,7 @@ exports[`Storyshots Design System/Organisms/Section Know 1`] = `
             className="m-b--6"
           >
             <div
-              data-testid="bullet"
+              data-testid="know-bullet"
             >
               <div
                 className="flex"
@@ -18994,7 +18747,7 @@ exports[`Storyshots Design System/Organisms/Section Know 1`] = `
             className="m-b--6"
           >
             <div
-              data-testid="bullet"
+              data-testid="know-bullet"
             >
               <div
                 className="flex"
@@ -19022,7 +18775,7 @@ exports[`Storyshots Design System/Organisms/Section Know 1`] = `
             className="m-b--6"
           >
             <div
-              data-testid="bullet"
+              data-testid="know-bullet"
             >
               <div
                 className="flex"
@@ -19050,7 +18803,7 @@ exports[`Storyshots Design System/Organisms/Section Know 1`] = `
             className="m-b--6"
           >
             <div
-              data-testid="bullet"
+              data-testid="know-bullet"
             >
               <div
                 className="flex"
@@ -19096,7 +18849,7 @@ exports[`Storyshots Design System/Organisms/Section Know 1`] = `
             className="m-b--6"
           >
             <div
-              data-testid="bullet"
+              data-testid="know-bullet"
             >
               <div
                 className="flex"
@@ -19124,7 +18877,7 @@ exports[`Storyshots Design System/Organisms/Section Know 1`] = `
             className="m-b--6"
           >
             <div
-              data-testid="bullet"
+              data-testid="know-bullet"
             >
               <div
                 className="flex"
@@ -19155,7 +18908,7 @@ exports[`Storyshots Design System/Organisms/Section Know 1`] = `
             className="m-b--6"
           >
             <div
-              data-testid="bullet"
+              data-testid="know-bullet"
             >
               <div
                 className="flex"
@@ -19183,7 +18936,7 @@ exports[`Storyshots Design System/Organisms/Section Know 1`] = `
             className="m-b--6"
           >
             <div
-              data-testid="bullet"
+              data-testid="know-bullet"
             >
               <div
                 className="flex"
@@ -20740,7 +20493,7 @@ exports[`Storyshots Design System/Organisms/Section Priority 1`] = `
                   className="m-b--64"
                 >
                   <div
-                    data-testid="bullet"
+                    data-testid="priority-bullet"
                   >
                     <div>
                       <div>
@@ -20817,7 +20570,7 @@ exports[`Storyshots Design System/Organisms/Section Priority 1`] = `
                   className="m-b--64"
                 >
                   <div
-                    data-testid="bullet"
+                    data-testid="priority-bullet"
                   >
                     <div>
                       <div>
@@ -20891,7 +20644,7 @@ exports[`Storyshots Design System/Organisms/Section Priority 1`] = `
                   className="m-b--64"
                 >
                   <div
-                    data-testid="bullet"
+                    data-testid="priority-bullet"
                   >
                     <div>
                       <div>
@@ -21112,7 +20865,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
         className="m__review--bullet p-v--8"
       >
         <div
-          data-testid="bullet"
+          data-testid="score-bullet"
         >
           <div
             className="p-v--2 flex items-center justify-between w--50p"
@@ -21147,7 +20900,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
         className="m__review--bullet p-v--8"
       >
         <div
-          data-testid="bullet"
+          data-testid="score-bullet"
         >
           <div
             className="p-v--2 flex items-center justify-between w--50p"
@@ -21182,7 +20935,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
         className="m__review--bullet p-v--8"
       >
         <div
-          data-testid="bullet"
+          data-testid="score-bullet"
         >
           <div
             className="p-v--2 flex items-center justify-between w--50p"
@@ -21217,7 +20970,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
         className="m__review--bullet p-v--8"
       >
         <div
-          data-testid="bullet"
+          data-testid="score-bullet"
         >
           <div
             className="p-v--2 flex items-center justify-between w--50p"
@@ -21252,7 +21005,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
         className="m__review--bullet p-v--8"
       >
         <div
-          data-testid="bullet"
+          data-testid="score-bullet"
         >
           <div
             className="p-v--2 flex items-center justify-between w--50p"
@@ -21287,7 +21040,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
         className="m__review--bullet p-v--8"
       >
         <div
-          data-testid="bullet"
+          data-testid="score-bullet"
         >
           <div
             className="p-v--2 flex items-center justify-between w--50p"
@@ -23854,7 +23607,7 @@ exports[`Storyshots Design System/Templates/Homes Category 1`] = `
                                 </div>
                                 <div>
                                   <div
-                                    data-testid="bullet"
+                                    data-testid="rating-bullet"
                                   >
                                     <div
                                       className="flex flex"
@@ -24588,7 +24341,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
                                 </div>
                                 <div>
                                   <div
-                                    data-testid="bullet"
+                                    data-testid="rating-bullet"
                                   >
                                     <div
                                       className="flex flex"
@@ -25322,7 +25075,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
                                 </div>
                                 <div>
                                   <div
-                                    data-testid="bullet"
+                                    data-testid="rating-bullet"
                                   >
                                     <div
                                       className="flex flex"
@@ -27521,7 +27274,7 @@ exports[`Storyshots Design System/Templates/Homes Nearby 1`] = `
                                 </div>
                                 <div>
                                   <div
-                                    data-testid="bullet"
+                                    data-testid="rating-bullet"
                                   >
                                     <div
                                       className="flex flex"
@@ -28255,7 +28008,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
                                 </div>
                                 <div>
                                   <div
-                                    data-testid="bullet"
+                                    data-testid="rating-bullet"
                                   >
                                     <div
                                       className="flex flex"
@@ -28989,7 +28742,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
                                 </div>
                                 <div>
                                   <div
-                                    data-testid="bullet"
+                                    data-testid="rating-bullet"
                                   >
                                     <div
                                       className="flex flex"

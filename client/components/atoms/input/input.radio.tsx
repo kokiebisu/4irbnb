@@ -1,17 +1,19 @@
 import React from "react";
-import { RadioInputProps } from "./props";
+
+/** styles */
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import animation from "../../../styles/animation.module.scss";
 
-export const RadioInput: React.FC<RadioInputProps> = ({
-  title = "title here",
-  subtitle,
-  selected = false,
-  select,
-}) => {
+export const RadioInput: React.FC<{
+  title?: string;
+  subtitle?: string;
+  selected?: boolean;
+  select?: (params: string) => void;
+  value?: string;
+}> = ({ title = "title here", subtitle, selected = false, select }) => {
   return (
     <div className={[layout["flex"]].join(" ")}>
       <div

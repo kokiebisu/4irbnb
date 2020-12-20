@@ -8,9 +8,6 @@ import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import input from "./input.module.scss";
 
-/** props */
-import { PasswordInputProps } from "./props";
-
 /** Styling */
 import { styleInput, styleLabel, styleContainer } from "./styling.text";
 
@@ -32,12 +29,12 @@ import { underline } from "../button/button.stories";
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const PasswordInput: React.FC<PasswordInputProps> = ({
-  handleChange,
-  value,
-  direction,
-  errors = false,
-}) => {
+export const PasswordInput: React.FC<{
+  handleChange?: any;
+  value?: string;
+  direction?: string;
+  errors?: boolean;
+}> = ({ handleChange, value, direction, errors = false }) => {
   const [fieldActive, setFieldActive] = useState(false);
   const [hide, setHide] = useState(true);
 

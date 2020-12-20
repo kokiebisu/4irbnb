@@ -4,15 +4,20 @@ import React from "react";
 import { Input } from "../../atoms/input/input.component";
 import { Layout } from "../../../layout/layout.component";
 
-/** props */
-import { KindCreateProps } from "./props";
-
 /** styles **/
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
-export const RoomCreate: React.FC<KindCreateProps> = ({ data, setData }) => {
+/**
+ * Renders the /become-a-host/room page content
+ * @param {object} data - Input data
+ * @param {function} setData - Changes the input data
+ */
+export const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
+  data,
+  setData,
+}) => {
   return (
     <div>
       <div className={[space["m-b--45"]].join(" ")}>
@@ -21,10 +26,10 @@ export const RoomCreate: React.FC<KindCreateProps> = ({ data, setData }) => {
         </h3>
       </div>
       <div style={{ width: 250 }} className={[space["m-b--22"]].join(" ")}>
-        <Layout type="input" title="First, let's narrow things down">
+        <Layout variant="input" title="First, let's narrow things down">
           <Input
             inputType="place"
-            type="select"
+            variant="select"
             value={data?.place}
             handleChange={(e) => {
               setData({ ...data, place: e.target.value });
@@ -33,11 +38,11 @@ export const RoomCreate: React.FC<KindCreateProps> = ({ data, setData }) => {
         </Layout>
       </div>
       <div className={[space["m-b--8"]].join(" ")} style={{ width: 250 }}>
-        <Layout type="input" title="Now choose a property type">
+        <Layout variant="input" title="Now choose a property type">
           <Input
             disabled={!data?.place}
             inputType={data?.place}
-            type="select"
+            variant="select"
             value={data?.property}
             handleChange={(e) => {
               setData({ ...data, property: e.target.value });
@@ -53,11 +58,11 @@ export const RoomCreate: React.FC<KindCreateProps> = ({ data, setData }) => {
             </h4>
           </div>
           <div className={[space["m-v--32"]].join(" ")}>
-            <Layout type="input" title="What will guests have?">
+            <Layout variant="input" title="What will guests have?">
               <div className={[space["m-t--22"]].join(" ")}>
                 <div className={[space["m-b--22"]].join(" ")}>
                   <Input
-                    type="radio"
+                    variant="radio"
                     title="Entire place"
                     subtitle="Guests have the whole place to themselves. This usually includes a bedroom, a bathroom, and a kitchen."
                     selected={data.stay === "Entire place"}
@@ -66,7 +71,7 @@ export const RoomCreate: React.FC<KindCreateProps> = ({ data, setData }) => {
                 </div>
                 <div className={[space["m-b--22"]].join(" ")}>
                   <Input
-                    type="radio"
+                    variant="radio"
                     title="Private place"
                     subtitle="Guests have their own private room for sleeping. Other areas could be shared."
                     selected={data.stay === "Private place"}
@@ -75,7 +80,7 @@ export const RoomCreate: React.FC<KindCreateProps> = ({ data, setData }) => {
                 </div>
                 <div className={[space["m-b--22"]].join(" ")}>
                   <Input
-                    type="radio"
+                    variant="radio"
                     title="Shared room"
                     subtitle="Guests sleep in a bedroom or a common area that could be shared with others."
                     selected={data.stay === "Shared room"}

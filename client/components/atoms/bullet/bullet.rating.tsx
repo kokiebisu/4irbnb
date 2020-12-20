@@ -9,18 +9,15 @@ import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/** props */
-import { RatingBulletProps } from "./props";
-
 /**
  * Renders the rating bullet
  * @param {number} ratings - Average ratings from users
  * @param {number} reviews - Total number of reviews
  */
-export const RatingBullet: React.FC<RatingBulletProps> = ({
-  ratings = 5,
-  reviews = 100,
-}) => {
+export const RatingBullet: React.FC<{
+  ratings?: number;
+  reviews?: number;
+}> = ({ ratings = 5, reviews = 100 }) => {
   return (
     <div className={[layout["flex"], layout["flex"]].join(" ")}>
       <div>

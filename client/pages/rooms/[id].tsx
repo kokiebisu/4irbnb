@@ -36,7 +36,10 @@ const id: () => string | JSX.Element = () => {
     <>
       <div>
         <div style={{ position: "relative", zIndex: 9000 }}>
-          <Header extendsTo={[details["w__wrapper"]].join(" ")} type="white" />
+          <Header
+            extendsTo={[details["w__wrapper"]].join(" ")}
+            variant="white"
+          />
         </div>
         <AnimatePresence>
           {scrollPosition > 506 && (
@@ -52,14 +55,14 @@ const id: () => string | JSX.Element = () => {
                 width: "100%",
               }}
             >
-              <Header type="details" />
+              <Header variant="details" />
             </motion.div>
           )}
         </AnimatePresence>
         <div className={[].join(" ")}>
           <Section
             extendsTo={[staysDetail["flex__panel"]].join(" ")}
-            type="panel"
+            variant="panel"
           />
         </div>
         <div
@@ -80,17 +83,17 @@ const id: () => string | JSX.Element = () => {
                 ]}
               /> */}
               <Section
-                type="description"
+                variant="description"
                 extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
               />
               <Section
                 extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-                type="arrangements"
+                variant="arrangements"
                 title="Sleeping arrangements"
               />
               <Section
                 extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-                type="amenities"
+                variant="amenities"
                 title="Amenities"
               />
             </div>
@@ -99,7 +102,7 @@ const id: () => string | JSX.Element = () => {
               className={[details["w__details--right"]].join(" ")}
             >
               <Card
-                type="checkin"
+                variant="checkin"
                 extendsTo={[
                   layout["flex"],
                   layout["justify-end"],
@@ -111,15 +114,15 @@ const id: () => string | JSX.Element = () => {
           </div>
           <Section
             extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-            type="reviews"
+            variant="reviews"
           />
           <Section
             extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-            type="host"
+            variant="host"
           />
           <Section
             extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-            type="know"
+            variant="know"
           />
         </div>
         <Section
@@ -128,7 +131,7 @@ const id: () => string | JSX.Element = () => {
             space["p-v--32"],
             color["bg--white__1"],
           ].join(" ")}
-          type="other"
+          variant="other"
         />
         <Footer />
         <div
@@ -138,7 +141,7 @@ const id: () => string | JSX.Element = () => {
           ].join(" ")}
           style={{ position: "fixed", bottom: 0, zIndex: 9999 }}
         >
-          <Modal type="availability" />
+          <Modal variant="availability" />
         </div>
       </div>
       {toggleState.auth && (

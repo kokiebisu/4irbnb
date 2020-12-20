@@ -24,7 +24,7 @@ const ErrorPage = () => {
   return (
     <div>
       <div>
-        <Header type="homes" />
+        <Header variant="homes" />
       </div>
       <div
         style={{ height: "calc(100vh - 80px)" }}

@@ -13,9 +13,6 @@ import { Input } from "../../atoms/input/input.component";
 import { Button } from "../../atoms/button/button.component";
 import { Bullet } from "../../atoms/bullet/bullet.component";
 
-/** props */
-import { SignupTemplateProps } from "./props";
-
 /** Helper */
 import { validateSignup as validate } from "../../../helper/auth";
 
@@ -31,7 +28,7 @@ import { primary } from "../../../components/atoms/button/button.stories";
 /**
  * Renders the signup template component
  */
-export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
+export const SignupTemplate: React.FC<{}> = () => {
   const authDispatch = useAuthDispatch();
   const [loading, setLoading] = useState(false);
   const formik = useFormik({
@@ -70,7 +67,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
       <div className={[space["p--24"]].join(" ")}>
         <div>
           <Input
-            type="name"
+            variant="name"
             direction="bottom"
             name="firstname"
             errors={formik.errors.firstname !== undefined}
@@ -78,7 +75,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
             value={formik.values.firstname}
           />
           <Input
-            type="name"
+            variant="name"
             direction="top"
             name="lastname"
             errors={formik.errors.lastname !== undefined}
@@ -88,14 +85,14 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
           <div>
             {formik.errors.firstname !== undefined ? (
               <div className={[space["m-t--6"]].join(" ")}>
-                <Bullet type="required" message={formik.errors.firstname} />
+                <Bullet variant="required" message={formik.errors.firstname} />
               </div>
             ) : null}
           </div>
           <div>
             {formik.errors.lastname !== undefined ? (
               <div className={[space["m-t--6"]].join(" ")}>
-                <Bullet type="required" message={formik.errors.lastname} />
+                <Bullet variant="required" message={formik.errors.lastname} />
               </div>
             ) : null}
           </div>
@@ -122,7 +119,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
             <Input
               spread
               dateType="day"
-              type="birthdate"
+              variant="birthdate"
               direction="left"
               handleChange={formik.handleChange}
               value={formik.values.day}
@@ -131,7 +128,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
             <Input
               spread
               dateType="month"
-              type="birthdate"
+              variant="birthdate"
               direction="center"
               handleChange={formik.handleChange}
               value={formik.values.month}
@@ -140,7 +137,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
             <Input
               spread
               dateType="year"
-              type="birthdate"
+              variant="birthdate"
               direction="right"
               handleChange={formik.handleChange}
               value={formik.values.year}
@@ -149,17 +146,17 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
           </div>
           {formik.errors.day !== undefined && (
             <div className={[space["m-t--6"]].join(" ")}>
-              <Bullet type="required" message={formik.errors.day} />
+              <Bullet variant="required" message={formik.errors.day} />
             </div>
           )}
           {formik.errors.month !== undefined && (
             <div className={[space["m-t--6"]].join(" ")}>
-              <Bullet type="required" message={formik.errors.month} />
+              <Bullet variant="required" message={formik.errors.month} />
             </div>
           )}
           {formik.errors.year !== undefined && (
             <div className={[space["m-t--6"]].join(" ")}>
-              <Bullet type="required" message={formik.errors.year} />
+              <Bullet variant="required" message={formik.errors.year} />
             </div>
           )}
         </div>
@@ -180,7 +177,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
         <div className={[space["m-t--22"]].join(" ")}>
           <div>
             <Input
-              type="email"
+              variant="email"
               handleChange={formik.handleChange}
               value={formik.values.email}
               errors={formik.errors.email !== undefined}
@@ -189,7 +186,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
           <div>
             {formik.errors.email !== undefined ? (
               <div className={[space["m-t--6"]].join(" ")}>
-                <Bullet type="required" message={formik.errors.email} />
+                <Bullet variant="required" message={formik.errors.email} />
               </div>
             ) : (
               <p
@@ -207,7 +204,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
         <div className={[space["m-t--22"]].join(" ")}>
           <div>
             <Input
-              type="password"
+              variant="password"
               handleChange={formik.handleChange}
               value={formik.values.password}
               errors={formik.errors.password !== undefined}
@@ -216,7 +213,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
           <div>
             {formik.errors.password !== undefined && (
               <div className={[space["m-t--6"]].join(" ")}>
-                <Bullet type="required" message={formik.errors.password} />
+                <Bullet variant="required" message={formik.errors.password} />
               </div>
             )}
           </div>
