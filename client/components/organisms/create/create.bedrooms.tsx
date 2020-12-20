@@ -33,7 +33,7 @@ export const BedroomsCreate: React.FC<BedroomsCreateProps> = ({
         <div className={[space["m-b--8"]].join(" ")}>
           <Input
             title="Guests"
-            type="counter"
+            variant="counter"
             value={data.guests}
             add={() => setData({ ...data, guests: data.guests + 1 })}
             subtract={() => setData({ ...data, guests: data.guests - 1 })}
@@ -46,7 +46,7 @@ export const BedroomsCreate: React.FC<BedroomsCreateProps> = ({
         <Layout type="input" title="How many bedrooms can guests use?">
           <div className={[space["m-t--16"]].join(" ")}>
             <Input
-              type="select"
+              variant="select"
               inputType="bedrooms"
               value={data.bedrooms}
               handleChange={(e) =>
@@ -61,7 +61,7 @@ export const BedroomsCreate: React.FC<BedroomsCreateProps> = ({
           <div className={[space["m-t--16"]].join(" ")}>
             <Input
               title="Beds"
-              type="counter"
+              variant="counter"
               value={data.beds}
               add={() => setData({ ...data, beds: data.beds + 1 })}
               subtract={() => setData({ ...data, beds: data.beds - 1 })}

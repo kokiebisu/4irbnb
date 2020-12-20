@@ -29,7 +29,7 @@ export const DescriptionCreate: React.FC<{ data?: any; setData?: any }> = ({
       <div className={[space["m-b--30"]].join(" ")}>
         <div className={[space["m-b--8"]].join(" ")}>
           <Input
-            type="textarea"
+            variant="textarea"
             limit={500}
             value={data.description}
             handleChange={(e) =>

@@ -95,7 +95,7 @@ export const ExistsTemplate: React.FC<ExistsTemplateProps> = ({
       <form onSubmit={formik.handleSubmit}>
         <div className={[space["m-v--16"]].join(" ")}>
           <Input
-            type="password"
+            variant="password"
             handleChange={formik.handleChange}
             value={formik.values.password}
             errors={formik.errors.password !== undefined}

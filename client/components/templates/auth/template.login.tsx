@@ -92,14 +92,14 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
         <div>
           <div>
             <Input
-              type="email"
+              variant="email"
               direction="bottom"
               handleChange={formik.handleChange}
               value={formik.values.email}
               errors={formik.errors.email !== undefined}
             />
             <Input
-              type="password"
+              variant="password"
               direction="top"
               handleChange={formik.handleChange}
               value={formik.values.password}

@@ -44,7 +44,7 @@ export const RulesCreate: React.FC<{
       <div className={[space["m-b--22"]].join(" ")}>
         <div className={[space["m-v--12"]].join(" ")}>
           <Input
-            type="closed"
+            variant="closed"
             title="Smoking allowed"
             data={data}
             setData={setData}
@@ -53,7 +53,7 @@ export const RulesCreate: React.FC<{
         </div>
         <div className={[space["m-v--12"]].join(" ")}>
           <Input
-            type="closed"
+            variant="closed"
             title="Events allowed"
             data={data}
             setData={setData}
@@ -84,7 +84,7 @@ export const RulesCreate: React.FC<{
               <Input
                 check={() => modify("details", item)}
                 checked={data.details.includes(item)}
-                type="checkbox"
+                variant="checkbox"
                 title={title}
               />
             </div>
