@@ -6,6 +6,7 @@ import { ProgressBar } from "./bar.progress";
 import { SearchbarBar } from "./bar.searchbar";
 import { CovidBar } from "./bar.covid";
 import { CreateBar } from "./bar.create";
+import { MenuBar } from "./bar.menu";
 
 export interface BarProps {
   variant: string;
@@ -23,6 +24,7 @@ export const Bar: React.FC<BarProps> = ({ variant = "paginate", ...props }) => {
     progress: <ProgressBar {...props} />,
     searchbar: <SearchbarBar {...props} />,
     create: <CreateBar {...props} />,
+    menu: <MenuBar {...props} />,
   };
   return <div data-testid={`${variant}-bar`}>{variants[variant]}</div>;
 };

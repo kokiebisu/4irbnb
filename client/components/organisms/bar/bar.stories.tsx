@@ -39,3 +39,8 @@ export const create = TemplateStory.bind({});
 create.args = {
   variant: "create",
 };
+
+export const menu = TemplateStory.bind({});
+menu.args = {
+  variant: "menu",
+};
