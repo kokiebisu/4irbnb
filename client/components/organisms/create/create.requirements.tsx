@@ -8,6 +8,9 @@ import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
+/**
+ * Renders the /become-a-host/requirements page content
+ */
 export const RequirementsCreate: React.FC<{}> = () => {
   return (
     <div>

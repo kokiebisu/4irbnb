@@ -7,8 +7,6 @@ import { Input } from "../../../components/atoms/input/input.component";
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
-import { useState } from "react";
-import { useEffect } from "react";
 
 export const AmenitiesCreate: React.FC<{
   data?: any;

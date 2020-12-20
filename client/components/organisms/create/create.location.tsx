@@ -4,19 +4,21 @@ import React from "react";
 import { Input } from "../../../components/atoms/input/input.component";
 import { Layout } from "../../../layout/layout.component";
 
-/** props */
-import { LocationCreateProps } from "./props";
-
 /** styles **/
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
 
-export const LocationCreate: React.FC<LocationCreateProps> = ({
-  data,
-  setData,
-}) => {
+/**
+ * Renders the /become-a-host/location page content
+ * @param {object} data - Input data
+ * @param {function} setData - Changes the input data
+ */
+export const LocationCreate: React.FC<{
+  data?: any;
+  setData?: (params: any) => void;
+}> = ({ data, setData }) => {
   return (
     <div>
       <div className={[space["m-b--8"]].join(" ")}>

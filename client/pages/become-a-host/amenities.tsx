@@ -34,7 +34,7 @@ const AmenitiesPage = () => {
       left={
         <Create
           title="Amenities"
-          type="amenities"
+          variant="amenities"
           data={data}
           setData={setData}
         />

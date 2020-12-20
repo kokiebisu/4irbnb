@@ -4,18 +4,15 @@ import React from "react";
 import { Input } from "../../../components/atoms/input/input.component";
 import { Layout } from "../../../layout/layout.component";
 
-/** props */
-import { BedroomsCreateProps } from "./props";
-
 /** styles **/
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
-export const BedroomsCreate: React.FC<BedroomsCreateProps> = ({
-  data = { guests: 0 },
-  setData,
-}) => {
+export const BedroomsCreate: React.FC<{
+  data?: any;
+  setData?: (params: any) => void;
+}> = ({ data = { guests: 0 }, setData }) => {
   return (
     <div>
       <div className={[space["m-b--45"]].join(" ")}>

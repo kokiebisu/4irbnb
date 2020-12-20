@@ -4,15 +4,20 @@ import React from "react";
 import { Input } from "../../atoms/input/input.component";
 import { Layout } from "../../../layout/layout.component";
 
-/** props */
-import { KindCreateProps } from "./props";
-
 /** styles **/
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
-export const RoomCreate: React.FC<KindCreateProps> = ({ data, setData }) => {
+/**
+ * Renders the /become-a-host/room page content
+ * @param {object} data - Input data
+ * @param {function} setData - Changes the input data
+ */
+export const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
+  data,
+  setData,
+}) => {
   return (
     <div>
       <div className={[space["m-b--45"]].join(" ")}>
