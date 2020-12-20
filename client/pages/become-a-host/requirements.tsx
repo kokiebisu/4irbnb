@@ -19,8 +19,8 @@ const RequirementsPage = () => {
 
   return (
     <Layout
-      type="create"
-      left={<Create title="Booking settings" type="requirements" />}
+      variant="create"
+      left={<Create title="Booking settings" variant="requirements" />}
       percentage={80}
       next={proceed}
       back={revert}

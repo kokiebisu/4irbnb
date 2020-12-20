@@ -8,9 +8,6 @@ import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import input from "./input.module.scss";
 
-/** props */
-import { RegionInputProps } from "./props";
-
 /** Styling */
 import { styleInput, styleLabel, styleContainer } from "./styling.select";
 import { renderShape } from "./logic/logic.region";
@@ -19,17 +16,17 @@ import { renderShape } from "./logic/logic.region";
  * Renders the text input component
  * @param {string} name - Type of input
  * @param {string} placeholder - Placeholder
- * @param handleChange
+ * @param {function} handleChange
  * @param {string} value - Current value of the input
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const RegionInput: React.FC<RegionInputProps> = ({
-  handleChange,
-  value,
-  direction,
-  errors = false,
-}) => {
+export const RegionInput: React.FC<{
+  handleChange?: any;
+  value?: string;
+  direction?: string;
+  errors?: boolean;
+}> = ({ handleChange, value, direction, errors = false }) => {
   const [fieldActive, setFieldActive] = useState(false);
 
   return (

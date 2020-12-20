@@ -24,12 +24,12 @@ import { ChevronDown, ChevronTop } from "../../../public/svg/regular";
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const GuestsInput: React.FC<GuestsInputProps> = ({
-  handleChange,
-  value,
-  direction,
-  errors = false,
-}): JSX.Element => {
+export const GuestsInput: React.FC<{
+  handleChange?: any;
+  value?: string;
+  direction?: string;
+  errors?: boolean;
+}> = ({ handleChange, value, direction, errors = false }): JSX.Element => {
   const [fieldActive, setFieldActive] = useState(false);
 
   const renderShape = () => {

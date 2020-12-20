@@ -8,6 +8,9 @@ import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
+/**
+ * Renders the /become-a-host/spaces page content
+ */
 export const SpacesCreate: React.FC<{
   data?: any;
   setData?: any;
@@ -71,7 +74,7 @@ export const SpacesCreate: React.FC<{
               <Input
                 check={() => modify("spaces", item)}
                 checked={data.spaces.includes(item)}
-                type="checkbox"
+                variant="checkbox"
                 title={title}
               />
             </div>

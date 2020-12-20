@@ -20,7 +20,10 @@ import { useStayDispatch } from "../../../context/stay";
 /** stories */
 import { primary } from "../../../components/atoms/button/button.stories";
 
-export const GetStartedCreate: React.FC<GetStartedCreateProps> = () => {
+/**
+ * Renders the /become-a-host/get-started page content
+ */
+export const GetStartedCreate: React.FC<{}> = () => {
   const [loading, setLoading] = useState(false);
   const [stay, setStay] = useState("Entire place");
   const dispatchStay = useStayDispatch();
@@ -77,11 +80,11 @@ export const GetStartedCreate: React.FC<GetStartedCreateProps> = () => {
               }}
             >
               <div>
-                <Input type="place" value={stay} changePlace={setStay} />
+                <Input variant="place" value={stay} changePlace={setStay} />
               </div>
               <div>
                 <Input
-                  type="guests"
+                  variant="guests"
                   handleChange={formik.handleChange}
                   value={formik.values.guests}
                 />
@@ -89,7 +92,7 @@ export const GetStartedCreate: React.FC<GetStartedCreateProps> = () => {
             </div>
             <div>
               <Input
-                type="address"
+                variant="address"
                 handleChange={formik.handleChange}
                 value={formik.values.address}
               />

@@ -66,7 +66,7 @@ export const GlobeModal: React.FC<{}> = () => {
             />
           </div>
         </div>
-        <Template type={template} />
+        <Template variant={template} />
       </div>
     </div>
   );

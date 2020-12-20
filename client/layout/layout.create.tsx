@@ -3,18 +3,21 @@ import React from "react";
 /** components */
 import { Bar } from "../components/organisms/bar/bar.component";
 import { Header } from "../components/organisms/header/header.component";
-import { Button } from "../components/atoms/button/button.component";
 
 /** styles **/
 import layout from "../styles/layout.module.scss";
 import space from "../styles/space.module.scss";
-
 import responsive from "../styles/responsive.module.scss";
 
-/** props */
-import { CreateLayoutProps } from "./props";
-
-export const CreateLayout: React.FC<CreateLayoutProps> = ({
+export const CreateLayout: React.FC<{
+  title?: string;
+  left?: React.ReactNode;
+  right?: React.ReactNode;
+  next?: () => void;
+  back?: () => void;
+  percentage?: number;
+  criteria?: boolean;
+}> = ({
   title = "Property and guests",
   left,
   right,
@@ -27,10 +30,10 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
     <div>
       <div style={{ position: "sticky", zIndex: 9999, top: 0 }}>
         <div>
-          <Header type="stay" title={title} />
+          <Header variant="stay" title={title} />
         </div>
         <div>
-          <Bar type="progress" percentage={percentage} />
+          <Bar variant="progress" percentage={percentage} />
         </div>
       </div>
       <div
@@ -72,7 +75,12 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
               style={{ width: "100%", maxWidth: 550 }}
               className={[space["p-h--32"]].join(" ")}
             >
-              <Bar type="create" next={next} back={back} criteria={criteria} />
+              <Bar
+                variant="create"
+                next={next}
+                back={back}
+                criteria={criteria}
+              />
             </div>
           </div>
         </div>

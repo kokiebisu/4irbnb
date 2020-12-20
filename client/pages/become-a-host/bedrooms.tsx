@@ -35,11 +35,11 @@ const BedRoomsPage = () => {
 
   return (
     <Layout
-      type="create"
+      variant="create"
       left={
         <Create
           title="Property and guests"
-          type="bedrooms"
+          variant="bedrooms"
           data={data}
           setData={setData}
         />

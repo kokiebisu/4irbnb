@@ -1,15 +1,14 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Footer } from "./footer.component";
-import { FooterProps } from "./props";
+import { Footer, FooterProps } from "./footer.component";
 
 export default {
-  title: "Design System/Organisms/Footer",
+  title: "Design System/Organisms",
   component: Footer,
   argTypes: { onClick: { action: "clicked" } },
 } as Meta;
 
 const FooterTemplate: Story<FooterProps> = (args) => <Footer {...args} />;
 
-export const basic = FooterTemplate.bind({});
-basic.args = {};
+export const footer = FooterTemplate.bind({});
+footer.args = {};

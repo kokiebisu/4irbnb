@@ -11,6 +11,9 @@ import font from "../../../styles/font.module.scss";
 /** vectors */
 import { MagnifyGlass } from "../../../public/svg/original";
 
+/**
+ * Renders the Searchbar
+ */
 export const SearchbarBar: React.FC<{}> = () => {
   return (
     <div

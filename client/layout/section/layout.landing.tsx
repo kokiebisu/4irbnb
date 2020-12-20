@@ -1,17 +1,18 @@
 import React from "react";
+
+/** styles */
 import space from "../../styles/space.module.scss";
 import layout from "../../styles/layout.module.scss";
 import index from "../../styles/index.module.scss";
 import color from "../../styles/color.module.scss";
-import { LandingLayoutProps } from "./props";
 
-export const LandingLayout: React.FC<LandingLayoutProps> = ({
-  title,
-  subtitle,
-  children,
-  dark = false,
-  spread = false,
-}) => {
+export const LandingLayout: React.FC<{
+  title?: string;
+  subtitle?: string;
+  children?: React.ReactNode;
+  dark?: boolean;
+  spread?: boolean;
+}> = ({ title, subtitle, children, dark = false, spread = false }) => {
   return (
     <div
       className={`${[space["p-v--25"], index["p__category"]].join(" ")} ${

@@ -2,13 +2,10 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
 /** components */
-import { Modal } from "./modal.component";
+import { Modal, ModalProps } from "./modal.component";
 
 /** contexts */
 import { ContextProvider } from "../../../context/provider";
-
-/** props */
-import { ModalProps } from "./props";
 
 /** styles */
 import shape from "../../../styles/shape.module.scss";
@@ -27,16 +24,16 @@ export default {
   ],
 } as Meta;
 
-const ModalTemplate: Story<ModalProps> = (args) => <Modal {...args} />;
+const TemplateStory: Story<ModalProps> = (args) => <Modal {...args} />;
 
-export const privacy = ModalTemplate.bind({});
+export const privacy = TemplateStory.bind({});
 privacy.args = {
-  type: "privacy",
+  variant: "privacy",
 };
 
-export const menu = ModalTemplate.bind({});
+export const menu = TemplateStory.bind({});
 menu.args = {
-  type: "menu",
+  variant: "menu",
   dispatch: "toggle_menu",
   extendsTo: [
     shape["br--15"],
@@ -53,23 +50,23 @@ menu.argTypes = {
   },
 };
 
-export const auth = ModalTemplate.bind({});
+export const auth = TemplateStory.bind({});
 auth.args = {
-  type: "auth",
+  variant: "auth",
   dispatch: "toggle_auth",
 };
 
-export const availability = ModalTemplate.bind({});
+export const availability = TemplateStory.bind({});
 availability.args = {
-  type: "availability",
+  variant: "availability",
 };
 
-export const booking = ModalTemplate.bind({});
+export const booking = TemplateStory.bind({});
 booking.args = {
-  type: "booking",
+  variant: "booking",
 };
 
-export const globe = ModalTemplate.bind({});
+export const globe = TemplateStory.bind({});
 globe.args = {
-  type: "globe",
+  variant: "globe",
 };

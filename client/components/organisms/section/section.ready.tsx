@@ -4,9 +4,6 @@ import Router from "next/router";
 /** components */
 import { Button } from "../../../components/atoms/button/button.component";
 
-/** props */
-import { ReadySectionProps } from "./props";
-
 /** styles **/
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
@@ -18,7 +15,7 @@ import { primary } from "../../../components/atoms/button/button.stories";
 /**
  * Renders the ready section
  */
-export const ReadySection: React.FC<ReadySectionProps> = () => {
+export const ReadySection: React.FC<{}> = () => {
   return (
     <div className={[layout["flex"]].join(" ")}>
       <div style={{ width: "50%" }} className={[].join(" ")}>
