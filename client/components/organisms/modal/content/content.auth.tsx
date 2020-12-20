@@ -6,15 +6,15 @@ export const AuthContent = () => {
   const authState = useAuthState();
   switch (authState.display) {
     case "login":
-      return <Template type="login" />;
+      return <Template variant="login" />;
     case "signup":
-      return <Template type="signup" />;
+      return <Template variant="signup" />;
     case "auth":
-      return <Template type="auth" />;
+      return <Template variant="auth" />;
     case "forgot_password":
-      return <Template type="forgotpassword" />;
+      return <Template variant="forgotpassword" />;
     case "exists":
-      return <Template type="exists" />;
+      return <Template variant="exists" />;
     default:
       return;
   }
