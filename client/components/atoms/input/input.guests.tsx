@@ -8,9 +8,6 @@ import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import input from "./input.module.scss";
 
-/** props */
-import { GuestsInputProps } from "./props";
-
 /** Styling */
 import { styleInput, styleLabel, styleContainer } from "./styling.select";
 import { ChevronDown, ChevronTop } from "../../../public/svg/regular";

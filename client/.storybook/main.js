@@ -1,24 +1,32 @@
-const path = require('path');
+const path = require("path");
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
-  stories: ['../components/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: ["../components/**/*.stories.@(js|jsx|ts|tsx)"],
+  logLevel: "debug",
   addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/preset-scss',
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/preset-scss",
   ],
-  webpackFinal: async (config, { configType }) => {
+  webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.(png|woff|woff2|eot|ttf|svg)$/,
       use: [
         {
-          loader: 'file-loader',
+          loader: "file-loader",
           query: {
-            name: '[name].[ext]',
+            name: "[name].[ext]",
           },
         },
       ],
     });
+
+    config.resolve.plugins = [
+      new TsconfigPathsPlugin({
+        configFile: path.resolve(__dirname, "../tsconfig.json"),
+      }),
+    ];
 
     return config;
   },

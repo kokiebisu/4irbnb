@@ -35,7 +35,7 @@ const Options: React.FC<{
 /**
  * Renders the menu modal
  */
-export const MenuModal: React.FC<MenuModalProps> = ({
+export const MenuModal: React.FC<{ authenticated?: boolean }> = ({
   authenticated = false,
 }) => {
   return (
