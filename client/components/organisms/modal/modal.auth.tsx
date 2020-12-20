@@ -1,20 +1,22 @@
 import React from "react";
 
 /** styles */
-import layout from "../../../styles/layout.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import color from "../../../styles/color.module.scss";
-import space from "../../../styles/space.module.scss";
-import font from "../../../styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
+import shape from "@styles/shape.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
+import font from "@styles/font.module.scss";
 import modal from "./modal.module.scss";
 
 /** components */
-import { Button } from "../../../components/atoms/button/button.component";
+import { Button } from "@button/button.component";
 
 /** contexts */
-import { useToggleDispatch } from "../../../context/toggle";
-import { useAuthDispatch, useAuthState } from "../../../context/auth";
-import { AuthContent } from "./content/content.auth";
+import { useToggleDispatch } from "@context/toggle";
+import { useAuthDispatch, useAuthState } from "@context/auth";
+
+/** content */
+import { AuthContent } from "@modal/content/content.auth";
 
 /**
  * Renders the auth modal
