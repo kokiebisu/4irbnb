@@ -1,8 +1,5 @@
 import React from "react";
 
-/** props */
-import { BringSectionProps } from "./props";
-
 /** styles */
 import font from "../../../styles/font.module.scss";
 import space from "../../../styles/space.module.scss";
@@ -15,7 +12,9 @@ import { Bullet } from "../../../components/atoms/bullet/bullet.component";
  * Renders the 'What to bring' section
  * @param {Object[]} necessities - List of things the users have to bring
  */
-export const BringSection: React.FC<BringSectionProps> = ({
+export const BringSection: React.FC<{
+  necessities?: string[];
+}> = ({
   necessities = [
     "All purpose flour 100g",
     "water 50g",

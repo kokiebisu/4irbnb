@@ -1,8 +1,5 @@
 import React from "react";
 
-/** props */
-import { WorksSectionProps } from "./props";
-
 /** Layouts */
 import { Layout } from "../../../layout/layout.component";
 
@@ -17,7 +14,7 @@ import { Card } from "../../molecules/card/card.component";
 /** stories */
 import { border } from "../../../components/atoms/button/button.stories";
 
-export const WorksSection: React.FC<WorksSectionProps> = () => {
+export const WorksSection: React.FC<{}> = () => {
   const categories = ["design", "share", "submit", "setup"];
   return (
     <div>

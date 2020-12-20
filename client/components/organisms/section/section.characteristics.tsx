@@ -7,9 +7,6 @@ import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import shape from "../../../styles/shape.module.scss";
 
-/** props */
-import { CharacteristicsSectionProps } from "./props";
-
 /** components */
 import { Bullet } from "../../../components/atoms/bullet/bullet.component";
 
@@ -35,7 +32,22 @@ import section from "./section.module.scss";
  * @param {string} country - Country of the room/experience
  * @param {Object} characteristics - The characteristics of the room/experience
  */
-export const CharacteristicsSection: React.FC<CharacteristicsSectionProps> = ({
+export const CharacteristicsSection: React.FC<{
+  title?: string;
+  stayType?: string;
+  host?: string;
+  guests?: number;
+  bedrooms?: number;
+  beds?: number;
+  bathrooms?: number;
+  hostImgUrl?: string;
+  layoutType?: string;
+  ratings?: number;
+  numberOfReviews?: number;
+  location?: string;
+  country?: string;
+  characteristics?: string[];
+}> = ({
   title = "Making & Eating Soup Dumplings vegan Ok",
   stayType = "Tiny house",
   host = "Host",

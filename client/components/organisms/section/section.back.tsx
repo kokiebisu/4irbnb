@@ -9,10 +9,9 @@ import { Layout } from "../../../layout/layout.component";
 /** components */
 import { Bullet } from "../../../components/atoms/bullet/bullet.component";
 
-/** props */
-import { BackSectionProps } from "./props";
-
-export const BackSection: React.FC<BackSectionProps> = () => {
+export const BackSection: React.FC<{
+  back?: string;
+}> = () => {
   return (
     <Layout
       type="section"

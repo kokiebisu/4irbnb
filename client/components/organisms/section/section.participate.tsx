@@ -1,30 +1,21 @@
 import React from "react";
 
-/**
- * Styles
- */
+/** styles */
 import font from "../../../styles/font.module.scss";
 import space from "../../../styles/space.module.scss";
 import color from "../../../styles/color.module.scss";
 import layout from "../../../styles/layout.module.scss";
 
-/**
- * Components
- */
+/** components */
 import { Card } from "../../molecules/card/card.component";
-
-/**
- * Props
- */
-import { ParticipateSectionProps } from "./props";
 
 /**
  * Renders the participate section
  * @param {string[]} participates - Ways to participate
  */
-export const ParticipateSection: React.FC<ParticipateSectionProps> = ({
-  participates = ["call", "private", "request"],
-}) => {
+export const ParticipateSection: React.FC<{
+  participates?: string[];
+}> = ({ participates = ["call", "private", "request"] }) => {
   return (
     <div>
       <div>

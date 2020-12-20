@@ -62,7 +62,7 @@ const id: () => string | JSX.Element = () => {
         <div className={[].join(" ")}>
           <Section
             extendsTo={[staysDetail["flex__panel"]].join(" ")}
-            type="panel"
+            variant="panel"
           />
         </div>
         <div
@@ -83,17 +83,17 @@ const id: () => string | JSX.Element = () => {
                 ]}
               /> */}
               <Section
-                type="description"
+                variant="description"
                 extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
               />
               <Section
                 extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-                type="arrangements"
+                variant="arrangements"
                 title="Sleeping arrangements"
               />
               <Section
                 extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-                type="amenities"
+                variant="amenities"
                 title="Amenities"
               />
             </div>
@@ -114,15 +114,15 @@ const id: () => string | JSX.Element = () => {
           </div>
           <Section
             extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-            type="reviews"
+            variant="reviews"
           />
           <Section
             extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-            type="host"
+            variant="host"
           />
           <Section
             extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-            type="know"
+            variant="know"
           />
         </div>
         <Section
@@ -131,7 +131,7 @@ const id: () => string | JSX.Element = () => {
             space["p-v--32"],
             color["bg--white__1"],
           ].join(" ")}
-          type="other"
+          variant="other"
         />
         <Footer />
         <div

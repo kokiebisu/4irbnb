@@ -1,8 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Section } from "./section.component";
-
-import { SectionProps } from "./props";
+import { Section, SectionProps } from "./section.component";
 import { ContextProvider } from "../../../context/provider";
 
 export default {
@@ -31,20 +29,20 @@ export default {
   ],
 } as Meta;
 
-const SectionTemplate: Story<SectionProps> = (args) => <Section {...args} />;
+const TemplateStory: Story<SectionProps> = (args) => <Section {...args} />;
 
-export const categories = SectionTemplate.bind({});
+export const categories = TemplateStory.bind({});
 categories.args = {
   type: "category",
 };
 
-export const stayTypes = SectionTemplate.bind({});
+export const stayTypes = TemplateStory.bind({});
 stayTypes.args = {
   type: "stay",
   carouselType: "stayTypes",
 };
 
-export const stayWithPagination = SectionTemplate.bind({});
+export const stayWithPagination = TemplateStory.bind({});
 stayWithPagination.args = {
   type: "stay",
   pagination: true,
@@ -52,24 +50,24 @@ stayWithPagination.args = {
   isDescription: true,
 };
 
-export const twoRows = SectionTemplate.bind({});
+export const twoRows = TemplateStory.bind({});
 twoRows.args = {
   type: "stay",
   save: true,
   isDescription: true,
 };
 
-export const panel = SectionTemplate.bind({});
+export const panel = TemplateStory.bind({});
 panel.args = {
   type: "panel",
 };
 
-export const characteristics = SectionTemplate.bind({});
+export const characteristics = TemplateStory.bind({});
 characteristics.args = {
   type: "characteristics",
 };
 
-export const description = SectionTemplate.bind({});
+export const description = TemplateStory.bind({});
 description.args = {
   type: "description",
 };
@@ -82,12 +80,12 @@ description.decorators = [
   ),
 ];
 
-export const arrangements = SectionTemplate.bind({});
+export const arrangements = TemplateStory.bind({});
 arrangements.args = {
   type: "arrangements",
 };
 
-export const amenities = SectionTemplate.bind({});
+export const amenities = TemplateStory.bind({});
 amenities.args = {
   type: "amenities",
 };
@@ -99,12 +97,12 @@ amenities.decorators = [
   ),
 ];
 
-export const reviews = SectionTemplate.bind({});
+export const reviews = TemplateStory.bind({});
 reviews.args = {
   type: "reviews",
 };
 
-export const host = SectionTemplate.bind({});
+export const host = TemplateStory.bind({});
 host.args = {
   type: "host",
 };
@@ -116,27 +114,27 @@ host.decorators = [
   ),
 ];
 
-export const know = SectionTemplate.bind({});
+export const know = TemplateStory.bind({});
 know.args = {
   type: "know",
 };
 
-export const other = SectionTemplate.bind({});
+export const other = TemplateStory.bind({});
 other.args = {
   type: "other",
 };
 
-export const nearby = SectionTemplate.bind({});
+export const nearby = TemplateStory.bind({});
 nearby.args = {
   type: "nearby",
 };
 
-export const destinations = SectionTemplate.bind({});
+export const destinations = TemplateStory.bind({});
 destinations.args = {
   type: "destinations",
 };
 
-export const online = SectionTemplate.bind({});
+export const online = TemplateStory.bind({});
 online.args = {
   type: "online",
 };
@@ -147,77 +145,77 @@ online.argTypes = {
   },
 };
 
-export const homes = SectionTemplate.bind({});
+export const homes = TemplateStory.bind({});
 homes.args = {
   type: "homes",
 };
 
-export const also = SectionTemplate.bind({});
+export const also = TemplateStory.bind({});
 also.args = {
   type: "also",
 };
 
-export const participate = SectionTemplate.bind({});
+export const participate = TemplateStory.bind({});
 participate.args = {
   type: "participate",
 };
 
-export const bring = SectionTemplate.bind({});
+export const bring = TemplateStory.bind({});
 bring.args = {
   type: "bring",
 };
 
-export const experiences = SectionTemplate.bind({});
+export const experiences = TemplateStory.bind({});
 experiences.args = {
   type: "experiences",
 };
 
-export const available = SectionTemplate.bind({});
+export const available = TemplateStory.bind({});
 available.args = {
   type: "available",
 };
 
-export const all = SectionTemplate.bind({});
+export const all = TemplateStory.bind({});
 all.args = {
   type: "all",
 };
 
-export const priority = SectionTemplate.bind({});
+export const priority = TemplateStory.bind({});
 priority.args = {
   type: "priority",
 };
 
-export const help = SectionTemplate.bind({});
+export const help = TemplateStory.bind({});
 help.args = {
   type: "help",
 };
 
-export const ready = SectionTemplate.bind({});
+export const ready = TemplateStory.bind({});
 ready.args = {
   type: "ready",
 };
 
-export const works = SectionTemplate.bind({});
+export const works = TemplateStory.bind({});
 works.args = {
   type: "works",
 };
 
-export const sharing = SectionTemplate.bind({});
+export const sharing = TemplateStory.bind({});
 sharing.args = {
   type: "sharing",
 };
 
-export const back = SectionTemplate.bind({});
+export const back = TemplateStory.bind({});
 back.args = {
   type: "back",
 };
 
-export const faq = SectionTemplate.bind({});
+export const faq = TemplateStory.bind({});
 faq.args = {
   type: "faq",
 };
 
-export const more = SectionTemplate.bind({});
+export const more = TemplateStory.bind({});
 more.args = {
   type: "more",
 };

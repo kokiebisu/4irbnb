@@ -84,13 +84,13 @@ export const CategoryTemplate: React.FC<CategoryTemplateProps> = ({
               </div>
             </div>
             <div className={[space["m-b--32"]].join(" ")}>
-              <Section type="stay" title="Paris" pagination />
+              <Section variant="stay" title="Paris" pagination />
             </div>
             <div className={[space["m-b--50"]].join(" ")}>
-              <Section type="also" title="Other popular destinations" />
+              <Section variant="also" title="Other popular destinations" />
             </div>
             <div className={[space["m-b--45"]].join(" ")}>
-              <Section type="homes" layout="vertical" location={location} />
+              <Section variant="homes" layout="vertical" location={location} />
             </div>
             <div
               className={[

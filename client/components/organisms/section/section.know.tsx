@@ -1,20 +1,11 @@
 import React from "react";
 
-/**
- * Styles
- */
+/** styles */
 import font from "../../../styles/font.module.scss";
 import space from "../../../styles/space.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/**
- * Props
- */
-import { KnowSectionProps } from "./props";
-
-/**
- * Components
- */
+/** components */
 import { Bullet } from "../../../components/atoms/bullet/bullet.component";
 
 /**
@@ -23,7 +14,11 @@ import { Bullet } from "../../../components/atoms/bullet/bullet.component";
  * @param {string[]} healths - List of health guidelines
  * @param {string} layoutType - The type of layout
  */
-export const KnowSection: React.FC<KnowSectionProps> = ({
+export const KnowSection: React.FC<{
+  houseRules?: string[];
+  healths?: string[];
+  layoutType?: string;
+}> = ({
   houseRules = [
     "checkin",
     "checkout",
