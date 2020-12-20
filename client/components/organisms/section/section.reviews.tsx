@@ -1,23 +1,23 @@
 import React from "react";
 
 /** vectors */
-import { Star } from "../../../public/svg/original";
+import { Star } from "@svg/original";
 
 /** styles **/
-import space from "../../../styles/space.module.scss";
-import color from "../../../styles/color.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import font from "../../../styles/font.module.scss";
-import section from "./section.module.scss";
+import space from "@styles/space.module.scss";
+import color from "@styles/color.module.scss";
+import layout from "@styles/layout.module.scss";
+import shape from "@styles/shape.module.scss";
+import font from "@styles/font.module.scss";
+import section from "@section/section.module.scss";
 
 /** components */
-import { Button } from "../../../components/atoms/button/button.component";
-import { Bullet } from "../../../components/atoms/bullet/bullet.component";
-import { Card } from "../../molecules/card/card.component";
+import { Button } from "@button/button.component";
+import { Bullet } from "@bullet/bullet.component";
+import { Card } from "@card/card.component";
 
 /** stories */
-import { border } from "../../../components/atoms/button/button.stories";
+import { border } from "@button/button.stories";
 
 /**
  * Renders the reviews section
