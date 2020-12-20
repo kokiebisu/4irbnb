@@ -40,7 +40,7 @@ export const BedroomsCreate: React.FC<{
         </div>
       </div>
       <div className={[space["m-b--32"]].join(" ")} style={{ width: 300 }}>
-        <Layout type="input" title="How many bedrooms can guests use?">
+        <Layout variant="input" title="How many bedrooms can guests use?">
           <div className={[space["m-t--16"]].join(" ")}>
             <Input
               variant="select"
@@ -54,7 +54,7 @@ export const BedroomsCreate: React.FC<{
         </Layout>
       </div>
       <div className={[space["m-b--8"]].join(" ")} style={{ width: 300 }}>
-        <Layout type="input" title="How many beds can guests use?">
+        <Layout variant="input" title="How many beds can guests use?">
           <div className={[space["m-t--16"]].join(" ")}>
             <Input
               title="Beds"

@@ -14,8 +14,7 @@ export const BackSection: React.FC<{
 }> = () => {
   return (
     <Layout
-      type="section"
-      sectionType="onlinehost"
+      variant="onlinehost"
       title="We've got your back"
       subtitle="You’re not alone—you'll have access to educational tools and opportunities to help you grow as a host and entrepreneur."
     >

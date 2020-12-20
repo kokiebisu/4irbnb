@@ -26,7 +26,7 @@ export const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
         </h3>
       </div>
       <div style={{ width: 250 }} className={[space["m-b--22"]].join(" ")}>
-        <Layout type="input" title="First, let's narrow things down">
+        <Layout variant="input" title="First, let's narrow things down">
           <Input
             inputType="place"
             variant="select"
@@ -38,7 +38,7 @@ export const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
         </Layout>
       </div>
       <div className={[space["m-b--8"]].join(" ")} style={{ width: 250 }}>
-        <Layout type="input" title="Now choose a property type">
+        <Layout variant="input" title="Now choose a property type">
           <Input
             disabled={!data?.place}
             inputType={data?.place}
@@ -58,7 +58,7 @@ export const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
             </h4>
           </div>
           <div className={[space["m-v--32"]].join(" ")}>
-            <Layout type="input" title="What will guests have?">
+            <Layout variant="input" title="What will guests have?">
               <div className={[space["m-t--22"]].join(" ")}>
                 <div className={[space["m-b--22"]].join(" ")}>
                   <Input

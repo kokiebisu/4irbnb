@@ -29,7 +29,7 @@ const DescriptionPage = () => {
 
   return (
     <Layout
-      type="create"
+      variant="create"
       left={
         <Create
           title="Description and title"

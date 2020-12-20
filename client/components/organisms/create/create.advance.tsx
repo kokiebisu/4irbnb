@@ -19,7 +19,7 @@ export const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
   return (
     <div>
       <div style={{ width: 300 }} className={[space["m-b--30"]].join(" ")}>
-        <Layout type="input" title="How far in advance can guests book?">
+        <Layout variant="input" title="How far in advance can guests book?">
           <div className={[space["m-t--22"]].join(" ")}>
             <div className={[space["m-b--10"]].join(" ")}>
               <Input

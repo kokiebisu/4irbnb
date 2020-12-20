@@ -35,7 +35,7 @@ const BedRoomsPage = () => {
 
   return (
     <Layout
-      type="create"
+      variant="create"
       left={
         <Create
           title="Property and guests"

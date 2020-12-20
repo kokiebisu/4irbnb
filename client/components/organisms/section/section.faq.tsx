@@ -34,11 +34,7 @@ export const FAQSection: React.FC<{
   ],
 }) => {
   return (
-    <Layout
-      type="section"
-      sectionType="onlinehost"
-      title="Frequently asked questions"
-    >
+    <Layout variant="onlinehost" title="Frequently asked questions">
       <div
         style={{
           maxWidth: 900,
