@@ -1,8 +1,8 @@
 import React from "react";
 import { screen, fireEvent, render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import { Button } from "../button.component";
-import { back } from "../button.stories";
+import { Button } from "@button/button.component";
+import { back } from "@button/button.stories";
 
 describe("back button", () => {
   it("renders correctly", () => {

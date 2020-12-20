@@ -1,11 +1,11 @@
 import React from "react";
 
 /** styles */
-import font from "../../../styles/font.module.scss";
-import color from "../../../styles/color.module.scss";
-import space from "../../../styles/space.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import animation from "../../../styles/animation.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import animation from "@styles/animation.module.scss";
 
 /**
  * Renders the option button components
