@@ -1,8 +1,5 @@
 import React from "react";
 
-/** props */
-import { HomesHeaderProps } from "./props";
-
 /** styles */
 import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
@@ -20,7 +17,9 @@ import Router from "next/router";
  * Renders the header for the homes page
  * @param {boolean} spread - Whether if the layout should be spread out or not
  */
-export const HomesHeader: React.FC<HomesHeaderProps> = ({ spread = false }) => {
+export const HomesHeader: React.FC<{
+  spread?: boolean;
+}> = ({ spread = false }) => {
   return (
     <header style={{ height: 80 }} className={[space["p-h--0"]].join(" ")}>
       <div
