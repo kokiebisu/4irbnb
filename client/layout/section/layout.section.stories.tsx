@@ -1,28 +1,27 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Layout } from "layout/layout.component";
-import { LayoutProps } from "../props";
+import { Layout, LayoutProps } from "../../layout/layout.component";
 
 export default {
   title: "Design System/Layout/Section",
   component: Layout,
 } as Meta;
 
-const SectionLayoutStory: Story<LayoutProps> = (args) => (
+const TemplateStory: Story<LayoutProps> = (args) => (
   <Layout type="section" {...args} />
 );
 
-export const landing = SectionLayoutStory.bind({});
+export const landing = TemplateStory.bind({});
 landing.args = {
-  sectionType: "landing",
+  variant: "landing",
 };
 
-export const homes = SectionLayoutStory.bind({});
+export const homes = TemplateStory.bind({});
 homes.args = {
-  sectionType: "homes",
+  variant: "homes",
 };
 
-export const onlinehost = SectionLayoutStory.bind({});
+export const onlinehost = TemplateStory.bind({});
 onlinehost.args = {
-  sectionType: "onlinehost",
+  variant: "onlinehost",
 };
