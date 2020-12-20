@@ -3,9 +3,6 @@ import React from "react";
 /** components */
 import { Button } from "../../atoms/button/button.component";
 
-/** props */
-import { AvailableCardProps } from "./props";
-
 /** styles **/
 import color from "../../../styles/color.module.scss";
 import shape from "../../../styles/shape.module.scss";
@@ -24,7 +21,13 @@ import { primary } from "../../atoms/button/button.stories";
  * @param {string} standard - The time standard
  * @param {number} price - The price of the experience
  */
-export const AvailableCard: React.FC<AvailableCardProps> = ({
+export const AvailableCard: React.FC<{
+  date?: string;
+  from?: string;
+  to?: string;
+  standard?: string;
+  price?: number;
+}> = ({
   date = "Tue., Nov. 10",
   from = "1:00 a.m. ",
   to = "3:00 a.m. ",

@@ -53,7 +53,7 @@ const HowGuestsWillBookPage = () => {
           >
             {["qualified", "control", "notified"].map((how, index) => (
               <div>
-                <Card type="how" how={how} />
+                <Card variant="how" how={how} />
               </div>
             ))}
           </div>

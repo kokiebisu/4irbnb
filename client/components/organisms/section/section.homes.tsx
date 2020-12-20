@@ -105,7 +105,7 @@ export const HomesSection: React.FC<HomesSectionProps> = ({
               <div key={index}>
                 <Card
                   extendsTo={!title && [color["b-t--white__2"]].join(" ")}
-                  type="stay"
+                  variant="stay"
                   {...stay}
                 />
               </div>

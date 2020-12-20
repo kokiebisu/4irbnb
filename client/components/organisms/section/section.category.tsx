@@ -29,7 +29,7 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
           {items.map((item, index) => {
             return (
               <Card
-                type="category"
+                variant="category"
                 key={index}
                 imgUrl={item && item.imgUrl}
                 title={item && item.title}

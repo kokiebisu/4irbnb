@@ -37,7 +37,7 @@ export const SharingSection: React.FC<SharingSectionProps> = () => {
         {sharings.map((sharing, index) => {
           return (
             <div key={index}>
-              <Card type="sharing" sharing={sharing} />
+              <Card variant="sharing" sharing={sharing} />
             </div>
           );
         })}

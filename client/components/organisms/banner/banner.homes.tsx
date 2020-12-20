@@ -154,7 +154,7 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
                   className={[space["m-r--16"]].join(" ")}
                 >
                   <Card
-                    type="host"
+                    variant="host"
                     host={name}
                     imgUrl={imgUrl}
                     stayType={stayType}

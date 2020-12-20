@@ -8,9 +8,6 @@ import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import responsive from "../../../styles/responsive.module.scss";
 
-/** props */
-import { StaysCardProps } from "./props";
-
 /** vectors */
 import { Heart } from "../../../public/svg/original";
 
@@ -28,7 +25,21 @@ import { Card } from "./card.component";
  * @param {Object} accomodations - Information about the accomodations of the stay
  * @param {string[]} characteristics - List of characteristics
  */
-export const StayCard: React.FC<StaysCardProps> = ({
+export const StayCard: React.FC<{
+  images?: string[];
+  typeStay?: string;
+  location?: string;
+  title?: string;
+  accomodations?: {
+    guests: number;
+    bedroom: number;
+    beds: number;
+    bath: number;
+  };
+  characteristics?: string[];
+  ratings?: number;
+  reviews?: number;
+}> = ({
   images = [
     "https://a0.muscache.com/im/pictures/miso/Hosting-46142496/original/f81fdaca-1791-4de6-ba56-d3e5ce9406d1.jpeg?im_w=720",
     "https://a0.muscache.com/im/pictures/miso/Hosting-46142496/original/f81fdaca-1791-4de6-ba56-d3e5ce9406d1.jpeg?im_w=720",
@@ -50,7 +61,7 @@ export const StayCard: React.FC<StaysCardProps> = ({
       <div
         className={[responsive["b_to_n--sm"], space["m-b--32--sm"]].join(" ")}
       >
-        <Card type="horizontal" />
+        <Card variant="horizontal" />
       </div>
       <div className={[responsive["n_to_b--sm"]].join(" ")}>
         <div className={[space["p-v--22"]].join(" ")}>

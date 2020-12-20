@@ -1,9 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-
-import { Card } from "./card.component";
-
-import { CardProps } from "./props";
+import { Card, CardProps } from "./card.component";
 
 export default {
   title: "Design System/Molecules/Card",
@@ -32,7 +29,7 @@ const CardTemplate: Story<CardProps> = (args) => <Card {...args} />;
 
 export const category = CardTemplate.bind({});
 category.args = {
-  type: "category",
+  variant: "category",
 };
 
 category.decorators = [
@@ -45,7 +42,7 @@ category.decorators = [
 
 export const horizontal = CardTemplate.bind({});
 horizontal.args = {
-  type: "horizontal",
+  variant: "horizontal",
 };
 
 horizontal.decorators = [
@@ -67,7 +64,7 @@ horizontal.argTypes = {
 
 export const vertical = CardTemplate.bind({});
 vertical.args = {
-  type: "vertical",
+  variant: "vertical",
 };
 vertical.argTypes = {
   save: {
@@ -77,7 +74,7 @@ vertical.argTypes = {
 
 export const typeStay = CardTemplate.bind({});
 typeStay.args = {
-  type: "typestay",
+  variant: "typestay",
 };
 
 typeStay.decorators = [
@@ -90,12 +87,12 @@ typeStay.decorators = [
 
 export const arrangements = CardTemplate.bind({});
 arrangements.args = {
-  type: "arrangements",
+  variant: "arrangements",
 };
 
 export const checkin = CardTemplate.bind({});
 checkin.args = {
-  type: "checkin",
+  variant: "checkin",
 };
 
 checkin.decorators = [
@@ -108,22 +105,22 @@ checkin.decorators = [
 
 export const review = CardTemplate.bind({});
 review.args = {
-  type: "review",
+  variant: "review",
 };
 
 export const stay = CardTemplate.bind({});
 stay.args = {
-  type: "stay",
+  variant: "stay",
 };
 
 export const nearby = CardTemplate.bind({});
 nearby.args = {
-  type: "nearby",
+  variant: "nearby",
 };
 
 export const online = CardTemplate.bind({});
 online.args = {
-  type: "online",
+  variant: "online",
 };
 
 online.decorators = [
@@ -136,7 +133,7 @@ online.decorators = [
 
 export const participate = CardTemplate.bind({});
 participate.args = {
-  type: "participate",
+  variant: "participate",
 };
 participate.argTypes = {
   categoryType: {
@@ -149,12 +146,12 @@ participate.argTypes = {
 
 export const available = CardTemplate.bind({});
 available.args = {
-  type: "available",
+  variant: "available",
 };
 
 export const host = CardTemplate.bind({});
 host.args = {
-  type: "host",
+  variant: "host",
 };
 host.decorators = [
   (Story) => (
@@ -166,17 +163,17 @@ host.decorators = [
 
 export const set = CardTemplate.bind({});
 set.args = {
-  type: "set",
+  variant: "set",
 };
 
 export const again = CardTemplate.bind({});
 again.args = {
-  type: "again",
+  variant: "again",
 };
 
 export const works = CardTemplate.bind({});
 works.args = {
-  type: "works",
+  variant: "works",
 };
 works.argTypes = {
   work: {
@@ -189,7 +186,7 @@ works.argTypes = {
 
 export const sharing = CardTemplate.bind({});
 sharing.args = {
-  type: "sharing",
+  variant: "sharing",
 };
 sharing.argsTypes = {
   sharing: {
@@ -202,7 +199,7 @@ sharing.argsTypes = {
 
 export const how = CardTemplate.bind({});
 how.args = {
-  type: "how",
+  variant: "how",
 };
 how.argTypes = {
   how: {

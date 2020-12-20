@@ -43,7 +43,7 @@ export const ParticipateSection: React.FC<ParticipateSectionProps> = ({
         {participates.map((participate, index) => {
           return (
             <div key={index} className={[space["m-r--16"]].join(" ")}>
-              <Card type="participate" categoryType={participate} />
+              <Card variant="participate" categoryType={participate} />
             </div>
           );
         })}

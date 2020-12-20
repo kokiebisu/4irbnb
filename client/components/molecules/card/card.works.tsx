@@ -1,8 +1,5 @@
 import React from "react";
 
-/** props */
-import { WorksCardProps } from "./props";
-
 /** styles **/
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
@@ -11,7 +8,9 @@ import card from "./card.module.scss";
 /** Logic */
 import { getWorkContent } from "./logic/logic.work";
 
-export const WorksCard: React.FC<WorksCardProps> = ({ work = "design" }) => {
+export const WorksCard: React.FC<{
+  work?: string;
+}> = ({ work = "design" }) => {
   const works = getWorkContent();
   return (
     <div>

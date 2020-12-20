@@ -85,7 +85,7 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
     <div className={[space["p--24"]].join(" ")}>
       {status === "fail" && (
         <div className={[space["m-b--16"]].join(" ")}>
-          <Card type="again" />
+          <Card variant="again" />
         </div>
       )}
       <form onSubmit={formik.handleSubmit}>
@@ -122,7 +122,7 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
           </div>
           {status === "success" && (
             <div className={[space["m-t--16"]].join(" ")}>
-              <Card type="set" />
+              <Card variant="set" />
             </div>
           )}
         </div>
