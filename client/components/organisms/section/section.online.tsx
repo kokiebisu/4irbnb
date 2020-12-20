@@ -107,7 +107,7 @@ export const OnlineSection: React.FC<OnlineSectionProps> = ({
                   >
                     <Card
                       to={item.to}
-                      type="online"
+                      variant="online"
                       small={item.small}
                       large={item.large}
                       title={item.title}

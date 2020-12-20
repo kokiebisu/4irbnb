@@ -171,7 +171,7 @@ export const AvailableSection: React.FC<AvailableSectionProps> = ({
               >
                 <div className={[space["m-b--10"], space["m-r--16"]].join(" ")}>
                   <Card
-                    type="available"
+                    variant="available"
                     date={available.date}
                     from={available.from}
                     to={available.to}

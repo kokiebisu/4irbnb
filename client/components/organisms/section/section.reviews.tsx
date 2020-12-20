@@ -136,7 +136,7 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({
                 key={index}
               >
                 <Card
-                  type="review"
+                  variant="review"
                   imgUrl={review.imgUrl}
                   description={review.description}
                 />

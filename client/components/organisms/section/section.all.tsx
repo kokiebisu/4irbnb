@@ -64,7 +64,7 @@ export const AllSection: React.FC<AllSectionProps> = () => {
           return (
             <div key={index} style={{ scrollSnapAlign: "start" }}>
               <Card
-                type="category"
+                variant="category"
                 imgUrl={stayType.imgUrl}
                 title={stayType.name}
               />

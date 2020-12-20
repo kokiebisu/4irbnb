@@ -61,7 +61,7 @@ export const ArrangementsSection: React.FC<ArrangementsSectionProps> = ({
           {arrangements.map((arrangement, index) => {
             return (
               <div key={index} style={{ marginRight: 12 }}>
-                <Card type="arrangements" card={arrangement} />
+                <Card variant="arrangements" card={arrangement} />
               </div>
             );
           })}

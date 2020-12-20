@@ -99,7 +99,7 @@ const id: () => string | JSX.Element = () => {
               className={[details["w__details--right"]].join(" ")}
             >
               <Card
-                type="checkin"
+                variant="checkin"
                 extendsTo={[
                   layout["flex"],
                   layout["justify-end"],

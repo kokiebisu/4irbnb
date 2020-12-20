@@ -100,7 +100,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
               >
                 <div className={[space["m-b--10"]].join(" ")}>
                   <Card
-                    type="nearby"
+                    variant="nearby"
                     to={item[0] && item[0].to}
                     imgUrl={nearbyPic[index]}
                     city={item[0].city}
@@ -110,7 +110,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
                 </div>
                 <div>
                   <Card
-                    type="nearby"
+                    variant="nearby"
                     to={item[1] && item[1].to}
                     imgUrl={nearbyPic[index + 4]}
                     city={item[1].city}

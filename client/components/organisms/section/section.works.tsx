@@ -26,7 +26,7 @@ export const WorksSection: React.FC<WorksSectionProps> = () => {
           {categories.map((category, index) => {
             return (
               <div className={[space["m-b--8"]].join(" ")} key={index}>
-                <Card type="works" work={category} />
+                <Card variant="works" work={category} />
               </div>
             );
           })}

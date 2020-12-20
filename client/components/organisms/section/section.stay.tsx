@@ -88,7 +88,7 @@ export const StaySection: React.FC<StaySectionProps> = ({
                   }}
                 >
                   <Card
-                    type="typestay"
+                    variant="typestay"
                     card={item && item.card}
                     to={item && item.to}
                   />
@@ -196,7 +196,7 @@ export const StaySection: React.FC<StaySectionProps> = ({
                     className={[space["m-b--10"], space["m-r--16"]].join(" ")}
                   >
                     <Card
-                      type="horizontal"
+                      variant="horizontal"
                       card={item && item.card}
                       to={item && item.to}
                       save={save}
@@ -303,7 +303,7 @@ export const StaySection: React.FC<StaySectionProps> = ({
               return (
                 <div key={index} className={evaluateNumber(index)}>
                   <Card
-                    type="horizontal"
+                    variant="horizontal"
                     card={item && item.card}
                     to={item && item.to}
                     save={save}
