@@ -3,27 +3,24 @@ import Router from "next/router";
 import { useFormik } from "formik";
 
 /** components */
-import { Bullet } from "../../../components/atoms/bullet/bullet.component";
-import { Button } from "../../../components/atoms/button/button.component";
-import { Input } from "../../../components/atoms/input/input.component";
+import { Bullet } from "@bullet/bullet.component";
+import { Button } from "@button/button.component";
+import { Input } from "@input/input.component";
 
 /** Helpers */
-import { validateExists as validate } from "../../../helper/auth";
+import { validateExists as validate } from "@helper/auth";
 
 /** hooks */
-import { useFetch } from "../../../hooks/useFetch";
+import { useFetch } from "@hooks/useFetch";
 
 /** styles **/
-import space from "../../../styles/space.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import font from "../../../styles/font.module.scss";
-import layout from "../../../styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import shape from "@styles/shape.module.scss";
+import font from "@styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
 
 /** stories */
-import {
-  primary,
-  underline,
-} from "../../../components/atoms/button/button.stories";
+import { primary, underline } from "@button/button.stories";
 
 export const ExistsTemplate: React.FC<{
   data?: {

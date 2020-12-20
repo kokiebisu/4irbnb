@@ -1,19 +1,19 @@
 import React from "react";
 
 /** auth templates */
-import { AuthTemplate } from "./auth/template.auth";
-import { LoginTemplate } from "./auth/template.login";
-import { SignupTemplate } from "./auth/template.signup";
-import { ForgotPasswordTemplate } from "./auth/template.forgot";
-import { ExistsTemplate } from "./auth/template.exists";
+import { AuthTemplate } from "@template/auth/template.auth";
+import { LoginTemplate } from "@template/auth/template.login";
+import { SignupTemplate } from "@template/auth/template.signup";
+import { ForgotPasswordTemplate } from "@template/auth/template.forgot";
+import { ExistsTemplate } from "@template/auth/template.exists";
 
 /** homes templates */
-import { CategoryTemplate } from "./homes/template.category";
-import { NearbyTemplate } from "./homes/template.nearby";
+import { CategoryTemplate } from "@template/homes/template.category";
+import { NearbyTemplate } from "@template/homes/template.nearby";
 
 /** globe templates */
-import { LanguageTemplate } from "./globe/template.language";
-import { CurrencyTemplate } from "./globe/template.currency";
+import { LanguageTemplate } from "@template/globe/template.language";
+import { CurrencyTemplate } from "@template/globe/template.currency";
 
 export interface TemplateProps {
   variant?: string;
