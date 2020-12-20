@@ -1,9 +1,12 @@
 import React from "react";
-import { ProgressBarProps } from "./props";
 
-export const ProgressBar: React.FC<ProgressBarProps> = ({
-  percentage = 50,
-}) => {
+/**
+ * Renders the Progress Bar
+ * @param {number} percentage - percentage of the progress bar
+ */
+export const ProgressBar: React.FC<{
+  percentage?: number;
+}> = ({ percentage = 50 }) => {
   return (
     <div
       style={{

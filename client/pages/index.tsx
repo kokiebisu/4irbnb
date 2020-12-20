@@ -59,7 +59,7 @@ const LandingPage = ({ currentUser }) => {
     >
       <div>
         <div>
-          <Bar type="covid" />
+          <Bar variant="covid" />
         </div>
         <Banner variant="landing" data={currentUser || null} />
         {loading ? (

@@ -5,9 +5,6 @@ import Router from "next/router";
 /** components */
 import { Button } from "../../../components/atoms/button/button.component";
 
-/** props */
-import { PaginateBarProps } from "./props";
-
 /** styles **/
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
@@ -24,10 +21,10 @@ import { paginate } from "../../../components/atoms/button/button.stories";
  * @param {number} page - Current page
  * @param {number} total - Total number of pages
  */
-export const PaginateBar: React.FC<PaginateBarProps> = ({
-  page = 1,
-  total = 15,
-}) => {
+export const PaginateBar: React.FC<{
+  page?: number;
+  total?: number;
+}> = ({ page = 1, total = 15 }) => {
   const displayContent = () => {
     if (page > 4 && page + 3 < total) {
       return (

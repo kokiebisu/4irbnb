@@ -102,7 +102,7 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
         </div>
       </div>
       <div>
-        <Bar type="searchbar" />
+        <Bar variant="searchbar" />
       </div>
     </header>
   );

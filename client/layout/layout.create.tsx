@@ -30,7 +30,7 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
           <Header type="stay" title={title} />
         </div>
         <div>
-          <Bar type="progress" percentage={percentage} />
+          <Bar variant="progress" percentage={percentage} />
         </div>
       </div>
       <div
@@ -72,7 +72,12 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
               style={{ width: "100%", maxWidth: 550 }}
               className={[space["p-h--32"]].join(" ")}
             >
-              <Bar type="create" next={next} back={back} criteria={criteria} />
+              <Bar
+                variant="create"
+                next={next}
+                back={back}
+                criteria={criteria}
+              />
             </div>
           </div>
         </div>
