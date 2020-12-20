@@ -141,7 +141,7 @@ const id: () => string | JSX.Element = () => {
           ].join(" ")}
           style={{ position: "fixed", bottom: 0, zIndex: 9999 }}
         >
-          <Modal type="availability" />
+          <Modal variant="availability" />
         </div>
       </div>
       {toggleState.auth && (
