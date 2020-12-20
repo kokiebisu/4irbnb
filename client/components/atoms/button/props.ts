@@ -30,19 +30,13 @@ export interface PrimaryButtonProps extends TitleProps, onClickProps {
   disable?: boolean;
 }
 
-export interface SearchbarButtonProps extends MiniProps {}
-
 export interface ModalButtonProps {
   onClick?: () => void;
   modal?: "close" | "back";
 }
-
-export interface ExpandButtonProps extends LinkButtonProps, TitleProps {}
 
 export interface CloseButtonProps {
   onClick?: () => void;
 }
 
 export interface FilterButtonProps {}
-
-export interface ReportButtonProps {}

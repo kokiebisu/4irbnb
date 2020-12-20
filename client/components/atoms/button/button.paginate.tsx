@@ -1,14 +1,13 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 /** styles **/
-import color from "../../../styles/color.module.scss";
-import space from "../../../styles/space.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import button from "./button.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
+import shape from "@styles/shape.module.scss";
+import button from "@button/button.module.scss";
 
 /** vectors */
-import { ChevronLeft, ChevronRight } from "../../../public/svg/regular";
+import { ChevronLeft, ChevronRight } from "@svg/regular";
 
 /**
  * Renders the paginate button component

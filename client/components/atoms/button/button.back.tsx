@@ -1,12 +1,12 @@
 import React from "react";
 
 /** styles */
-import font from "../../../styles/font.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import color from "../../../styles/color.module.scss";
+import font from "@styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
+import color from "@styles/color.module.scss";
 
 /** vectors */
-import { ChevronLeft } from "../../../public/svg/regular";
+import { ChevronLeft } from "@svg/regular";
 
 export const BackButton: React.FC<{}> = () => {
   return (

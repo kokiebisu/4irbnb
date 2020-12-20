@@ -1,8 +1,8 @@
 import React from "react";
 
 /** styles */
-import layout from "../../../styles/layout.module.scss";
-import color from "../../../styles/color.module.scss";
+import layout from "@styles/layout.module.scss";
+import color from "@styles/color.module.scss";
 
 /**
  * Renders the underline button component

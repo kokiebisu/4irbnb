@@ -21,9 +21,10 @@
       "@organisms/*": ["components/organisms/*"],
       "@particles/*": ["components/particles/*"],
       "@templates/*": ["components/templates/*"],
+      "@animation/*": ["components/animation/*"],
       "@styles/*": ["styles/*"],
       "@svg/*": ["public/svg/*"],
-      "@helper/*": ["helper/*.ts"]
+      "@helper/*": ["helper/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".storybook/**/*"],
