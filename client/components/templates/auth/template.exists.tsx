@@ -7,9 +7,6 @@ import { Bullet } from "../../../components/atoms/bullet/bullet.component";
 import { Button } from "../../../components/atoms/button/button.component";
 import { Input } from "../../../components/atoms/input/input.component";
 
-/** props */
-import { ExistsTemplateProps } from "./props";
-
 /** Helpers */
 import { validateExists as validate } from "../../../helper/auth";
 
@@ -28,7 +25,13 @@ import {
   underline,
 } from "../../../components/atoms/button/button.stories";
 
-export const ExistsTemplate: React.FC<ExistsTemplateProps> = ({
+export const ExistsTemplate: React.FC<{
+  data?: {
+    imgUrl: string;
+    firstname: string;
+    email: string;
+  };
+}> = ({
   data = {
     imgUrl: "https://a0.muscache.com/defaults/user_pic-225x225.png?v=3",
     firstname: "Kenichi",

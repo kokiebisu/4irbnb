@@ -17,9 +17,6 @@ import { Bar } from "../../organisms/bar/bar.component";
 import { Footer } from "../../organisms/footer/footer.component";
 import { Button } from "../../atoms/button/button.component";
 
-/** props */
-import { CategoryTemplateProps } from "../props";
-
 /** stories */
 import { filter } from "../../../components/atoms/button/button.stories";
 
@@ -29,7 +26,11 @@ import { filter } from "../../../components/atoms/button/button.stories";
  * @param {number} filterCount - Number of filters
  * @param {Object[]} filters - List of filters
  */
-export const CategoryTemplate: React.FC<CategoryTemplateProps> = ({
+export const CategoryTemplate: React.FC<{
+  stayType?: string | string[];
+  filterCount?: number;
+  filters?: any;
+}> = ({
   stayType = "house",
   filterCount = 1,
   filters = [

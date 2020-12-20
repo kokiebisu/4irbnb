@@ -14,11 +14,7 @@ import layout from "../../../styles/layout.module.scss";
 import { Input } from "../../atoms/input/input.component";
 import { Button } from "../../atoms/button/button.component";
 import { Bullet } from "../../atoms/bullet/bullet.component";
-import { Animation } from "../../animation/animation.component";
 import { Card } from "../../molecules/card/card.component";
-
-/** props */
-import { LoginTemplateProps } from "./props";
 
 /** Helper */
 import { validateLogin as validate } from "../../../helper/auth";
@@ -35,7 +31,7 @@ import {
 /**
  * Renders the login template component
  */
-export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
+export const LoginTemplate: React.FC<{}> = () => {
   const authState = useAuthState();
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("pending");
