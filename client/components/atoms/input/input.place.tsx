@@ -1,4 +1,4 @@
-import React, { useReducer, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 /** styles **/
 import shape from "../../../styles/shape.module.scss";
@@ -7,9 +7,6 @@ import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import input from "./input.module.scss";
-
-/** props */
-import { PlaceInputProps } from "./props";
 
 /** Styling */
 import { Checked } from "../../../public/svg/original";
@@ -27,12 +24,12 @@ import useOnClickOutside from "../../../hooks/useOnClickOutside";
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const PlaceInput: React.FC<PlaceInputProps> = ({
-  value,
-  direction,
-  errors = false,
-  changePlace,
-}) => {
+export const PlaceInput: React.FC<{
+  value?: string;
+  direction?: string;
+  errors?: boolean;
+  changePlace?: (type: string) => void;
+}> = ({ value, direction, errors = false, changePlace }) => {
   const containerRef = useRef();
   const [expanded, setExpanded] = useState(false);
   useOnClickOutside(containerRef, () => {
