@@ -3,8 +3,8 @@ import React from "react";
 /** styles */
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import font from "../../../styles/font.module.scss";
+import shape from "@styles/shape.module.scss";
+import font from "@styles/font.module.scss";
 
 /** vectors */
 import {
@@ -14,7 +14,7 @@ import {
   SmokeAlarm,
   Heating,
   TV,
-} from "../../../public/svg/original";
+} from "@svg/original";
 
 /**
  * Renders the amenity bullet
