@@ -2,20 +2,20 @@ import React from "react";
 import Router from "next/router";
 
 /** styles */
-import color from "../../../styles/color.module.scss";
-import space from "../../../styles/space.module.scss";
-import styles from "../../../styles/index.module.scss";
-import font from "../../../styles/font.module.scss";
-import layout from "../../../styles/layout.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
+import styles from "@styles/index.module.scss";
+import font from "@styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
 
 /** content */
-import { sections } from "../../../content/index";
+import { sections } from "@content";
 
 /** vectors */
-import { Globe } from "../../../public/svg/original";
+import { Globe } from "@svg/original";
 
 /** components */
-import { Button } from "../../../components/atoms/button/button.component";
+import { Button } from "@button/button.component";
 
 export interface FooterProps {
   spread?: boolean;

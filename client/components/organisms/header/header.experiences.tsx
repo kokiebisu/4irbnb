@@ -2,15 +2,15 @@ import React from "react";
 import Router from "next/router";
 
 /** styles */
-import shape from "../../../styles/shape.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import space from "../../../styles/space.module.scss";
+import shape from "@styles/shape.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
 
 /** components */
-import { Button } from "../../../components/atoms/button/button.component";
+import { Button } from "@button/button.component";
 
 /** vectors */
-import { NoNameLogo } from "../../../public/svg/logo";
+import { NoNameLogo } from "@svg/logo";
 
 /**
  * Renders the experiences header
