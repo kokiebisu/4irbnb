@@ -17,9 +17,6 @@ import { Input } from "../../atoms/input/input.component";
 import { Button } from "../../atoms/button/button.component";
 import { getAuthContents } from "../../atoms/button/content/content.auth";
 
-/** props */
-import { AuthTemplateProps } from "./props";
-
 /** Helpers */
 import { validateAuth as validate } from "../../../helper/auth";
 
@@ -29,7 +26,7 @@ import { auth, primary, underline } from "../../atoms/button/button.stories";
 /**
  * Renders the auth template component
  */
-export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
+export const AuthTemplate: React.FC<{}> = () => {
   const auths = getAuthContents();
   const authState = useAuthState();
   const authDispatch = useAuthDispatch();

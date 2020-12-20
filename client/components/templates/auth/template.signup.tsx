@@ -13,9 +13,6 @@ import { Input } from "../../atoms/input/input.component";
 import { Button } from "../../atoms/button/button.component";
 import { Bullet } from "../../atoms/bullet/bullet.component";
 
-/** props */
-import { SignupTemplateProps } from "./props";
-
 /** Helper */
 import { validateSignup as validate } from "../../../helper/auth";
 
@@ -31,7 +28,7 @@ import { primary } from "../../../components/atoms/button/button.stories";
 /**
  * Renders the signup template component
  */
-export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
+export const SignupTemplate: React.FC<{}> = () => {
   const authDispatch = useAuthDispatch();
   const [loading, setLoading] = useState(false);
   const formik = useFormik({

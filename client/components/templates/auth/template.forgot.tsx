@@ -26,10 +26,7 @@ import { primary } from "../../../components/atoms/button/button.stories";
 /**
  * Renders the login template component
  */
-export const ForgotPasswordTemplate: React.FC<ForgotPasswordTemplateProps> = () => {
-  const authState = useAuthState();
-  const authDispatch = useAuthDispatch();
-
+export const ForgotPasswordTemplate: React.FC<{}> = () => {
   const formik = useFormik({
     initialValues: {
       email: "",

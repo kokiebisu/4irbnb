@@ -26,7 +26,13 @@ import { filter } from "../../../components/atoms/button/button.stories";
  * Renders the nearby template component
  * @param param0 Prop
  */
-export const NearbyTemplate: React.FC<NearbyTemplateProps> = ({
+export const NearbyTemplate: React.FC<{
+  city?: string;
+  filterCount?: number;
+  guests?: number;
+  average?: number;
+  filters?: any;
+}> = ({
   city,
   filterCount = 1,
   guests = 8000,
