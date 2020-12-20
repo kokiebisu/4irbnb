@@ -2,11 +2,11 @@ import React from "react";
 import Link from "next/link";
 
 /** styles */
-import menubar from "./bar.module.scss";
+import menubar from "@bar/bar.module.scss";
 
 /** vectors */
-import { MenuBarLogo } from "../../../public/svg/logo";
-import { Login, Saved } from "../../../public/svg/regular";
+import { MenuBarLogo } from "@svg/logo";
+import { Login, Saved } from "@svg/regular";
 
 /**
  * Renders the menubar component
