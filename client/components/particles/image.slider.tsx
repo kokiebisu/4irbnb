@@ -1,13 +1,13 @@
 import React, { useLayoutEffect, useState, useRef } from "react";
 
 /** components */
-import { Button } from "../../components/atoms/button/button.component";
+import { Button } from "@button/button.component";
 
 /** styles **/
-import particle from "./particle.module.scss";
+import particle from "@particle/particle.module.scss";
 
 /** stories */
-import { paginate } from "../../components/atoms/button/button.stories";
+import { paginate } from "@button/button.stories";
 
 const Dots = ({ slides, activeSlide }) => {
   return (
