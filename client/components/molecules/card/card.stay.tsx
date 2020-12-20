@@ -13,7 +13,7 @@ import { Heart } from "@svg/original";
 
 /** components */
 import { Bullet } from "@bullet/bullet.component";
-import { ImageSlider } from "@particles/image.slider";
+import { ImageSlider } from "@particle/image.slider";
 import { Card } from "@card/card.component";
 
 /**

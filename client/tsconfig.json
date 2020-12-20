@@ -20,7 +20,7 @@
       "@input/*": ["components/atoms/input/*"],
       "@card/*": ["components/molecules/card/*"],
       "@organisms/*": ["components/organisms/*"],
-      "@particles/*": ["components/particles/*"],
+      "@particle/*": ["components/particles/*"],
       "@templates/*": ["components/templates/*"],
       "@animation/*": ["components/animation/*"],
       "@banner/*": ["components/organisms/banner/*"],

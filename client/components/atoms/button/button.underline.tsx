@@ -27,7 +27,7 @@ export const UnderlineButton: React.FC<{
       {bold ? (
         <h3
           style={{ fontSize: font }}
-          className={unselected && [color["c--white__3"]].join(" ")}
+          className={unselected ? [color["c--white__3"]].join(" ") : undefined}
         >
           {unselected ? title : <u>{title}</u>}
         </h3>
