@@ -5,13 +5,9 @@ import space from "../styles/space.module.scss";
 import font from "../styles/font.module.scss";
 import color from "../styles/color.module.scss";
 
-/** props */
-import { InputLayoutProps } from "./props";
-
-export const InputLayout: React.FC<InputLayoutProps> = ({
-  title = "Title here",
-  children,
-}) => {
+export const InputLayout: React.FC<{
+  title?: string;
+}> = ({ title = "Title here", children }) => {
   return (
     <div>
       <div className={[space["m-b--8"]].join(" ")}>
