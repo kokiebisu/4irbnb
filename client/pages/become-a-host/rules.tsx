@@ -34,11 +34,11 @@ const DescriptionPage = () => {
 
   return (
     <Layout
-      type="create"
+      variant="create"
       left={
         <Create
           title="Booking settings"
-          type="rules"
+          variant="rules"
           data={data}
           setData={setData}
         />

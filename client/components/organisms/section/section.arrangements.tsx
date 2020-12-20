@@ -1,29 +1,23 @@
 import React from "react";
 
-/**
- * Components
- */
+/** components */
 import { Card } from "../../molecules/card/card.component";
 
-/**
- * Styles
- */
+/** styles */
 import space from "../../../styles/space.module.scss";
 import color from "../../../styles/color.module.scss";
 import font from "../../../styles/font.module.scss";
 import layout from "../../../styles/layout.module.scss";
 
 /**
- * Props
- */
-import { ArrangementsSectionProps } from "./props";
-
-/**
  * Renders the arrangement section
  * @param {string} title - Title of the section
  * @param {Object[]} arrangements - List of amenities
  */
-export const ArrangementsSection: React.FC<ArrangementsSectionProps> = ({
+export const ArrangementsSection: React.FC<{
+  title?: string;
+  arrangements?: { type: string; beds: { type: string; count: number }[] }[];
+}> = ({
   title = "Title here",
   arrangements = [
     {
@@ -61,7 +55,7 @@ export const ArrangementsSection: React.FC<ArrangementsSectionProps> = ({
           {arrangements.map((arrangement, index) => {
             return (
               <div key={index} style={{ marginRight: 12 }}>
-                <Card type="arrangements" card={arrangement} />
+                <Card variant="arrangements" card={arrangement} />
               </div>
             );
           })}

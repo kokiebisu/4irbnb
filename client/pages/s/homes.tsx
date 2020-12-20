@@ -42,7 +42,7 @@ const Homes = () => {
   return (
     <>
       <Template
-        type={type}
+        variant={type}
         city={city}
         stayType={stayType}
         characteristics={characteristics}

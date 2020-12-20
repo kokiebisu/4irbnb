@@ -9,24 +9,25 @@ import { StayHeader } from "./header.stay";
 import { TransparentHeader } from "./header.transparent";
 import { WhiteHeader } from "./header.white";
 
-/** props */
-import { HeaderProps } from "./props";
-
-interface mapProps {
-  [key: string]: JSX.Element;
+export interface HeaderProps {
+  extendsTo?: string;
+  variant: string;
+  [property: string]: any;
 }
 
 /**
  * Bundles the header components
  * @param {string} extendsTo - Add custom styling to the specified component
- * @param {string} type - Specifies the type of header component
+ * @param {string} variant - Specifies the type of header component
  */
 export const Header: React.FC<HeaderProps> = ({
-  type,
+  variant,
   extendsTo,
   ...props
 }) => {
-  const types: mapProps = {
+  const variants: {
+    [variant: string]: JSX.Element;
+  } = {
     transparent: <TransparentHeader {...props} />,
     white: <WhiteHeader {...props} />,
     details: <DetailsHeader {...props} />,
@@ -35,5 +36,9 @@ export const Header: React.FC<HeaderProps> = ({
     onlinehost: <OnlineHostHeader {...props} />,
     stay: <StayHeader {...props} />,
   };
-  return <div className={extendsTo}>{types[type]}</div>;
+  return (
+    <div className={extendsTo} data-testid={`${variant}-header`}>
+      {variants[variant]}
+    </div>
+  );
 };

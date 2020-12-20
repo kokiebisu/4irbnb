@@ -8,14 +8,11 @@ import space from "../../../styles/space.module.scss";
 /** vectors */
 import { DoubleBed } from "../../../public/svg/original";
 
-/** props */
-import { ArrangementsCardProps } from "./props";
-
 /**
  * Renders the arrangements card component
  * @param {Object} card - Information of the card
  */
-export const ArrangementsCard: React.FC<ArrangementsCardProps> = ({
+export const ArrangementsCard: React.FC<{ card?: any }> = ({
   card = {
     type: "Bedroom",
     beds: [{ type: "double bed", count: 1 }],

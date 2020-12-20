@@ -1,18 +1,9 @@
 import React from "react";
 
-/**
- * Components
- */
+/** components */
 import { Bullet } from "../../../components/atoms/bullet/bullet.component";
 
-/**
- * Props
- */
-import { HelpSectionProps } from "./props";
-
-/**
- * Styles
- */
+/** styles */
 import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import space from "../../../styles/space.module.scss";
@@ -21,7 +12,7 @@ import responsive from "../../../styles/responsive.module.scss";
 /**
  * Renders the help section
  */
-export const HelpSection: React.FC<HelpSectionProps> = () => {
+export const HelpSection: React.FC<{}> = () => {
   const helps = ["support", "tools", "insights", "education"];
   return (
     <div className={[responsive["b_to_f--sm"]].join(" ")}>
@@ -35,7 +26,7 @@ export const HelpSection: React.FC<HelpSectionProps> = () => {
           {helps.map((help, index) => {
             return (
               <div key={index} className={[space["m-b--24"]].join(" ")}>
-                <Bullet type="help" help={help} />
+                <Bullet variant="help" help={help} />
               </div>
             );
           })}

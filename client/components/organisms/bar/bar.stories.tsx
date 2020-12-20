@@ -1,7 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { BarProps } from "./props";
-import { Bar } from "./bar.component";
+import { Bar, BarProps } from "./bar.component";
 
 export default {
   title: "Design System/Organisms/Bar",
@@ -9,21 +8,21 @@ export default {
   argTypes: { type: { control: { disable: true } } },
 } as Meta;
 
-const BarStory: Story<BarProps> = (args) => <Bar {...args} />;
+const TemplateStory: Story<BarProps> = (args) => <Bar {...args} />;
 
-export const paginate = BarStory.bind({});
+export const paginate = TemplateStory.bind({});
 paginate.args = {
-  type: "paginate",
+  variant: "paginate",
 };
 
-export const covid = BarStory.bind({});
+export const covid = TemplateStory.bind({});
 covid.args = {
-  type: "covid",
+  variant: "covid",
 };
 
-export const progress = BarStory.bind({});
+export const progress = TemplateStory.bind({});
 progress.args = {
-  type: "progress",
+  variant: "progress",
 };
 progress.argTypes = {
   percentage: {
@@ -31,12 +30,17 @@ progress.argTypes = {
   },
 };
 
-export const searchbar = BarStory.bind({});
+export const searchbar = TemplateStory.bind({});
 searchbar.args = {
-  type: "searchbar",
+  variant: "searchbar",
 };
 
-export const create = BarStory.bind({});
+export const create = TemplateStory.bind({});
 create.args = {
-  type: "create",
+  variant: "create",
+};
+
+export const menu = TemplateStory.bind({});
+menu.args = {
+  variant: "menu",
 };

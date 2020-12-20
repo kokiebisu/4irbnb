@@ -15,19 +15,13 @@ import { Button } from "../../../components/atoms/button/button.component";
 /** vectors */
 import { Lock } from "../../../public/svg/original";
 
-/** props */
-import { PrivacyModalProps } from "./props";
-
 /** contexts */
 import { useToggleDispatch } from "../../../context/toggle";
-
-/** stories */
-import { privacy } from "../../atoms/button/button.stories";
 
 /**
  * Renders the privacy modal
  */
-export const PrivacyModal: React.FC<PrivacyModalProps> = () => {
+export const PrivacyModal: React.FC<{}> = () => {
   const toggleDispatch = useToggleDispatch();
 
   const handleSave = () => {

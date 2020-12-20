@@ -21,7 +21,7 @@ const BecomeAHostPage = () => {
     <div style={{ height: "100vh" }}>
       <div style={{ zIndex: 9999, height: 65 }}>
         <div className={[responsive["b_to_n--sm"]].join(" ")}>
-          <Header type="stay" />
+          <Header variant="stay" />
         </div>
       </div>
       <div className={[space["m-t--6"], layout["container"]].join(" ")}>
@@ -37,7 +37,7 @@ const BecomeAHostPage = () => {
                 width: "100%",
               }}
             >
-              <Create type="getstarted" />
+              <Create variant="getstarted" />
             </div>
           </div>
           <div

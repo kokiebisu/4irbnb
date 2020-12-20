@@ -30,11 +30,11 @@ const AmenitiesPage = () => {
 
   return (
     <Layout
-      type="create"
+      variant="create"
       left={
         <Create
           title="Amenities"
-          type="amenities"
+          variant="amenities"
           data={data}
           setData={setData}
         />

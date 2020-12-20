@@ -11,15 +11,16 @@ import styles from "./card.module.scss";
 /** vectors */
 import { Heart, Star } from "../../../public/svg/original";
 
-/** props */
-import { VerticalCardProps } from "./props";
-
 /**
  * Renders the vertical card component
  * @param {Object} card - Information about the card
  * @param {boolean} save - Whether if the card can be saved
  */
-export const VerticalCard: React.FC<VerticalCardProps> = ({
+export const VerticalCard: React.FC<{
+  card?: any;
+  save?: boolean;
+  superhost?: boolean;
+}> = ({
   card = {
     imgUrl:
       "https://a0.muscache.com/im/pictures/lombard/MtTemplate-1659111-active_media/original/4931efc9-f708-4619-9b25-51036194e1e1.jpg?aki_policy=poster",

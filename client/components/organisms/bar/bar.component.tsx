@@ -6,21 +6,25 @@ import { ProgressBar } from "./bar.progress";
 import { SearchbarBar } from "./bar.searchbar";
 import { CovidBar } from "./bar.covid";
 import { CreateBar } from "./bar.create";
+import { MenuBar } from "./bar.menu";
 
-/** props */
-import { BarProps } from "./props";
+export interface BarProps {
+  variant: string;
+  [property: string]: any;
+}
 
 /**
  * Bundles the bar components
  * @param {string} type - Specifies the type of bar component
  */
-export const Bar: React.FC<BarProps> = ({ type, ...props }) => {
-  const types = {
+export const Bar: React.FC<BarProps> = ({ variant = "paginate", ...props }) => {
+  const variants = {
     paginate: <PaginateBar {...props} />,
     covid: <CovidBar {...props} />,
     progress: <ProgressBar {...props} />,
     searchbar: <SearchbarBar {...props} />,
     create: <CreateBar {...props} />,
+    menu: <MenuBar {...props} />,
   };
-  return types[type];
+  return <div data-testid={`${variant}-bar`}>{variants[variant]}</div>;
 };

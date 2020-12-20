@@ -4,19 +4,21 @@ import React from "react";
 import { Input } from "../../../components/atoms/input/input.component";
 import { Layout } from "../../../layout/layout.component";
 
-/** props */
-import { LocationCreateProps } from "./props";
-
 /** styles **/
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
 
-export const LocationCreate: React.FC<LocationCreateProps> = ({
-  data,
-  setData,
-}) => {
+/**
+ * Renders the /become-a-host/location page content
+ * @param {object} data - Input data
+ * @param {function} setData - Changes the input data
+ */
+export const LocationCreate: React.FC<{
+  data?: any;
+  setData?: (params: any) => void;
+}> = ({ data, setData }) => {
   return (
     <div>
       <div className={[space["m-b--8"]].join(" ")}>
@@ -43,7 +45,7 @@ export const LocationCreate: React.FC<LocationCreateProps> = ({
             <p className={[font["size--14"]].join(" ")}>Country</p>
           </div>
           <Input
-            type="select"
+            variant="select"
             handleChange={(e) => setData({ ...data, country: e.target.value })}
             value={data?.country}
             inputType="country"
@@ -55,7 +57,7 @@ export const LocationCreate: React.FC<LocationCreateProps> = ({
           </div>
           <Input
             name="postal"
-            type="text"
+            variant="text"
             handleChange={(e) => setData({ ...data, postal: e.target.value })}
             value={data?.postal}
           />
@@ -68,7 +70,7 @@ export const LocationCreate: React.FC<LocationCreateProps> = ({
         <div>
           <Input
             name="street"
-            type="text"
+            variant="text"
             handleChange={(e) => setData({ ...data, street: e.target.value })}
             value={data?.street}
           />
@@ -86,7 +88,7 @@ export const LocationCreate: React.FC<LocationCreateProps> = ({
         <div>
           <Input
             name="apt"
-            type="text"
+            variant="text"
             handleChange={(e) => setData({ ...data, apt: e.target.value })}
             value={data?.apt}
           />
@@ -109,7 +111,7 @@ export const LocationCreate: React.FC<LocationCreateProps> = ({
           </div>
           <div>
             <Input
-              type="text"
+              variant="text"
               handleChange={(e) => setData({ ...data, city: e.target.value })}
               value={data?.city}
               inputType="city"
@@ -126,7 +128,7 @@ export const LocationCreate: React.FC<LocationCreateProps> = ({
           <div>
             <Input
               name="state"
-              type="text"
+              variant="text"
               handleChange={(e) => setData({ ...data, state: e.target.value })}
               value={data?.state}
             />

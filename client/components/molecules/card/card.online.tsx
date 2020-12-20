@@ -1,8 +1,5 @@
 import React from "react";
 
-/** props */
-import { OnlineCardProps } from "./props";
-
 /** styles **/
 import color from "../../../styles/color.module.scss";
 import font from "../../../styles/font.module.scss";
@@ -15,7 +12,12 @@ import shape from "../../../styles/shape.module.scss";
  * @param {string} title - Title of the card
  * @param {boolean} inverse - Whether if the component takes the inverse styling or not
  */
-export const OnlineCard: React.FC<OnlineCardProps> = ({
+export const OnlineCard: React.FC<{
+  small?: string;
+  large?: string;
+  title?: string;
+  inverse?: boolean;
+}> = ({
   small = "https://a0.muscache.com/im/pictures/0e46f398-42f5-4897-9168-f84622aeba58.jpg",
   large = "https://a0.muscache.com/im/pictures/78010337-07f0-4154-9528-363b97b54699.jpg",
   title = "Learn to make soup dumplings in Shanghai",

@@ -9,6 +9,6 @@ describe("Base Button", () => {
     const { getByTestId } = render(
       <Bullet {...characteristic.args} onClick={() => console.log("clicked")} />
     );
-    expect(getByTestId("bullet")).toBeInTheDocument();
+    expect(getByTestId("characteristic-bullet")).toBeInTheDocument();
   });
 });

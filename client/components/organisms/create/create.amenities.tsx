@@ -7,8 +7,6 @@ import { Input } from "../../../components/atoms/input/input.component";
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
-import { useState } from "react";
-import { useEffect } from "react";
 
 export const AmenitiesCreate: React.FC<{
   data?: any;
@@ -102,7 +100,7 @@ export const AmenitiesCreate: React.FC<{
               <Input
                 check={() => modify("amenities", item)}
                 checked={data.amenities.includes(item)}
-                type="checkbox"
+                variant="checkbox"
                 title={title}
                 description={description}
               />
@@ -147,7 +145,7 @@ export const AmenitiesCreate: React.FC<{
               <Input
                 check={() => modify("safeties", item)}
                 checked={data.safeties.includes(item)}
-                type="checkbox"
+                variant="checkbox"
                 title={title}
                 description={description}
               />

@@ -29,11 +29,11 @@ const DescriptionPage = () => {
 
   return (
     <Layout
-      type="create"
+      variant="create"
       left={
         <Create
           title="Description and title"
-          type="description"
+          variant="description"
           data={data}
           setData={setData}
         />

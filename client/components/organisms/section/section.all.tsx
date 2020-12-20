@@ -3,16 +3,13 @@ import React from "react";
 /** components */
 import { Card } from "../../molecules/card/card.component";
 
-/** props */
-import { AllSectionProps } from "./props";
-
 /** layouts */
 import { Layout } from "../../../layout/layout.component";
 
 /**
  * Renders the All section
  */
-export const AllSection: React.FC<AllSectionProps> = () => {
+export const AllSection: React.FC<{}> = () => {
   const stayTypes = [
     {
       name: "Houses",
@@ -46,11 +43,7 @@ export const AllSection: React.FC<AllSectionProps> = () => {
     },
   ];
   return (
-    <Layout
-      type="section"
-      sectionType="homes"
-      title="From castles to condos, guests book it all"
-    >
+    <Layout variant="homes" title="From castles to condos, guests book it all">
       <div
         style={{
           display: "grid",
@@ -64,7 +57,7 @@ export const AllSection: React.FC<AllSectionProps> = () => {
           return (
             <div key={index} style={{ scrollSnapAlign: "start" }}>
               <Card
-                type="category"
+                variant="category"
                 imgUrl={stayType.imgUrl}
                 title={stayType.name}
               />

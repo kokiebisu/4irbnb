@@ -6,7 +6,6 @@ import { CategoryCard } from "./card.category";
 import { HorizontalCard } from "./card.horizontal";
 import { VerticalCard } from "./card.vertical";
 import { TypeStayCard } from "./card.typestay";
-import { CardProps } from "./props";
 import { ArrangementsCard } from "./card.arrangements";
 import { CheckInCard } from "./card.checkin";
 import { ReviewCard } from "./card.review";
@@ -22,23 +21,28 @@ import { WorksCard } from "./card.works";
 import { SharingCard } from "./card.sharing";
 import { HowCard } from "./card.how";
 
-interface mapProps {
-  [key: string]: JSX.Element;
+export interface CardProps {
+  extendsTo?: string;
+  variant?: string;
+  to?: string;
+  [property: string]: any;
 }
 
 /**
  * Bundles the card components
  * @param {string} extendsTo - Adds custom styling to the specified component
- * @param {string} type - Specifies the type of card component
+ * @param {string} variant - Specifies the variant of card component
  * @param {string} to - Redirects to the path when clicked
  */
 export const Card: React.FC<CardProps> = ({
   extendsTo,
-  type,
+  variant,
   to,
   ...props
 }) => {
-  const types: mapProps = {
+  const variants: {
+    [variant: string]: JSX.Element;
+  } = {
     category: <CategoryCard {...props} />,
     horizontal: <HorizontalCard {...props} />,
     vertical: <VerticalCard {...props} />,
@@ -61,15 +65,15 @@ export const Card: React.FC<CardProps> = ({
   if (to) {
     return (
       <Link href={to}>
-        <a data-testid="card" className={extendsTo}>
-          {types[type]}
+        <a data-testid={`${variant}-card`} className={extendsTo}>
+          {variants[variant]}
         </a>
       </Link>
     );
   }
   return (
-    <div data-testid="card" className={extendsTo}>
-      {types[type]}
+    <div data-testid={`${variant}-card`} className={extendsTo}>
+      {variants[variant]}
     </div>
   );
 };
