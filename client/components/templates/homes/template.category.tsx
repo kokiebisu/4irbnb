@@ -1,24 +1,24 @@
 import React from "react";
 
 /** components */
-import { Header } from "../../organisms/header/header.component";
+import { Header } from "@header/header.component";
 
 /** styles **/
-import layout from "../../../styles/layout.module.scss";
-import homes from "../../../styles/homes.module.scss";
-import space from "../../../styles/space.module.scss";
-import responsive from "../../../styles/responsive.module.scss";
-import font from "../../../styles/font.module.scss";
-import shape from "../../../styles/shape.module.scss";
+import layout from "@styles/layout.module.scss";
+import homes from "@styles/homes.module.scss";
+import space from "@styles/space.module.scss";
+import responsive from "@styles/responsive.module.scss";
+import font from "@styles/font.module.scss";
+import shape from "@styles/shape.module.scss";
 
 /** components */
-import { Section } from "../../organisms/section/section.component";
-import { Bar } from "../../organisms/bar/bar.component";
-import { Footer } from "../../organisms/footer/footer.component";
-import { Button } from "../../atoms/button/button.component";
+import { Section } from "@section/section.component";
+import { Bar } from "@bar/bar.component";
+import { Footer } from "@footer/footer.component";
+import { Button } from "@button/button.component";
 
 /** stories */
-import { filter } from "../../../components/atoms/button/button.stories";
+import { filter } from "@button/button.stories";
 
 /**
  * Renders the category template component
