@@ -27,21 +27,21 @@ const OnlineHost = () => {
         </div>
       </div>
       <div className={[layout["container"]].join(" ")}>
-        <Section type="works" />
+        <Section variant="works" />
       </div>
       <div
         className={[layout["container--shrink"], space["p-v--64"]].join(" ")}
       >
-        <Section type="sharing" />
+        <Section variant="sharing" />
       </div>
       <div className={[layout["container"], space["p-v--64"]].join(" ")}>
-        <Section type="back" />
+        <Section variant="back" />
       </div>
       <div className={[layout["container"], space["p-v--100"]].join(" ")}>
-        <Section type="faq" />
+        <Section variant="faq" />
       </div>
       <div>
-        <Section type="more" />
+        <Section variant="more" />
       </div>
       <div>
         <Footer />

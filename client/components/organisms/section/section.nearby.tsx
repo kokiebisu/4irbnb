@@ -1,36 +1,25 @@
 import React from "react";
 
-/**
- * Styles
- */
+/** styles */
 import space from "../../../styles/space.module.scss";
 import section from "./section.module.scss";
 
-/**
- * Components
- */
+/** components */
 import { Card } from "../../molecules/card/card.component";
 
-/**
- * Props
- */
-import { NearbySectionProps } from "./props";
-
-/**
- * Helpers
- */
+/** helpers */
 import { groupByTwo } from "../../../helper/array";
 
-/**
- * Contents
- */
+/** contents */
 import { nearbyPic } from "../../../content";
 
 /**
  * Renders the nearby section
  * @param {string[]} items - List of cities which are nearby
  */
-export const NearbySection: React.FC<NearbySectionProps> = ({
+export const NearbySection: React.FC<{
+  items?: string[];
+}> = ({
   items = [
     "city1",
     "city2",

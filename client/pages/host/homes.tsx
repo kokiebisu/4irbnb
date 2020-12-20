@@ -28,22 +28,22 @@ const Homes: () => string | JSX.Element = () => {
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
         <div className={`${[space["p__homes"]].join(" ")}`}>
-          <Section type="all" />
+          <Section variant="all" />
         </div>
       </div>
       <div className={[space["p-v--64"]].join(" ")}>
         <div className={`${[space["p__homes"]].join(" ")}`}>
-          <Section type="priority" />
+          <Section variant="priority" />
         </div>
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
         <div className={`${[space["p__homes"]].join(" ")}`}>
-          <Section type="help" />
+          <Section variant="help" />
         </div>
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
         <div className={`${[space["p__homes"]].join(" ")}`}>
-          <Section type="ready" />
+          <Section variant="ready" />
         </div>
       </div>
       <div>

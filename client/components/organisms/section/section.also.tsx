@@ -1,8 +1,5 @@
 import React, { useRef } from "react";
 
-/** props */
-import { AlsoSectionProps } from "./props";
-
 /** components */
 import { Card } from "../../molecules/card/card.component";
 import { Button } from "../../../components/atoms/button/button.component";
@@ -28,7 +25,10 @@ import { paginate } from "../../../components/atoms/button/button.stories";
  * Renders the also section
  * @param {string[]} items - List of suggested cities
  */
-export const AlsoSection: React.FC<AlsoSectionProps> = ({
+export const AlsoSection: React.FC<{
+  items?: any;
+  title?: string;
+}> = ({
   items = [
     "city1",
     "city2",

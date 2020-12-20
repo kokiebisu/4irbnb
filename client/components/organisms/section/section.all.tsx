@@ -3,16 +3,13 @@ import React from "react";
 /** components */
 import { Card } from "../../molecules/card/card.component";
 
-/** props */
-import { AllSectionProps } from "./props";
-
 /** layouts */
 import { Layout } from "../../../layout/layout.component";
 
 /**
  * Renders the All section
  */
-export const AllSection: React.FC<AllSectionProps> = () => {
+export const AllSection: React.FC<{}> = () => {
   const stayTypes = [
     {
       name: "Houses",

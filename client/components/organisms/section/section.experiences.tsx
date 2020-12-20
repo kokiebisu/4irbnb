@@ -1,25 +1,16 @@
 import React from "react";
 
-/**
- * Components
- */
+/** components */
 import { Bullet } from "../../../components/atoms/bullet/bullet.component";
 
-/**
- * Props
- */
-import { ExperiencesSectionProps } from "./props";
-
-/**
- * Styles
- */
+/** styles */
 import font from "../../../styles/font.module.scss";
 import space from "../../../styles/space.module.scss";
 
 /**
  * Renders the experiences section
  */
-export const ExperiencesSection: React.FC<ExperiencesSectionProps> = () => {
+export const ExperiencesSection: React.FC<{}> = () => {
   const experiences = ["hosts", "activities", "global"];
   return (
     <div className={[space["m-v--32"]].join(" ")}>

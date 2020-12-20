@@ -11,9 +11,6 @@ import shape from "../../../styles/shape.module.scss";
 import font from "../../../styles/font.module.scss";
 import section from "./section.module.scss";
 
-/** props */
-import { ReviewsSectionProps } from "./props";
-
 /** components */
 import { Button } from "../../../components/atoms/button/button.component";
 import { Bullet } from "../../../components/atoms/bullet/bullet.component";
@@ -30,7 +27,13 @@ import { border } from "../../../components/atoms/button/button.stories";
  * @param {number} numberOfReviews - The total number of reviews
  * @param {string} layoutType - The type of layout
  */
-export const ReviewsSection: React.FC<ReviewsSectionProps> = ({
+export const ReviewsSection: React.FC<{
+  ratings?: number;
+  categories?: any;
+  numberOfReviews?: number;
+  reviews?: any;
+  layoutType?: string;
+}> = ({
   categories = [
     { type: "Cleanliness", average: 5.0 },
     { type: "Accuracy", average: 4.3 },

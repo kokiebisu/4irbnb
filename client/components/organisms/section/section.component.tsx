@@ -1,14 +1,11 @@
 import React from "react";
 
-/**
- * Components
- */
+/** components */
 import { CategorySection } from "./section.category";
 import { PanelSection } from "./section.panel";
 import { StaySection } from "./section.stay";
 import { CharacteristicsSection } from "./section.characteristics";
 import { DescriptionSection } from "./section.description";
-import { SectionProps } from "./props";
 import { ArrangementsSection } from "./section.arrangements";
 import { AmenitySection } from "./section.amenities";
 import { ReviewsSection } from "./section.reviews";
@@ -34,21 +31,25 @@ import { BackSection } from "./section.back";
 import { FAQSection } from "./section.faq";
 import { MoreSection } from "./section.more";
 
-interface mapProps {
-  [key: string]: JSX.Element;
+export interface SectionProps {
+  extendsTo?: string;
+  variant: string;
+  [property: string]: any;
 }
 
 /**
  * Bundles the section components
  * @param {string} extendsTo - Add custom styling to the selected component
- * @param {string} type - Specifies the type of section component
+ * @param {string} variant - Specifies the type of section component
  */
 export const Section: React.FC<SectionProps> = ({
   extendsTo,
-  type,
+  variant,
   ...props
 }) => {
-  const types: mapProps = {
+  const variants: {
+    [variant: string]: JSX.Element;
+  } = {
     stay: <StaySection {...props} />,
     category: <CategorySection {...props} />,
     panel: <PanelSection {...props} />,
@@ -79,5 +80,9 @@ export const Section: React.FC<SectionProps> = ({
     faq: <FAQSection {...props} />,
     more: <MoreSection {...props} />,
   };
-  return <div className={extendsTo}>{types[type]}</div>;
+  return (
+    <div className={extendsTo} data-testid={`${variant}-section`}>
+      {variants[variant]}
+    </div>
+  );
 };

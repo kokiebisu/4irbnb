@@ -4,9 +4,6 @@ import React from "react";
 import { Card } from "../../molecules/card/card.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/** props */
-import { OnlineSectionProps } from "./props";
-
 /** styles **/
 import section from "./section.module.scss";
 import color from "../../../styles/color.module.scss";
@@ -22,7 +19,10 @@ import { border } from "../../../components/atoms/button/button.stories";
  * @param {Object[]} items - List of online experiences for the landing page
  * @param {boolean} dark - Whether if the section is dark mode or not
  */
-export const OnlineSection: React.FC<OnlineSectionProps> = ({
+export const OnlineSection: React.FC<{
+  items?: any;
+  dark?: boolean;
+}> = ({
   items = [
     {
       small:

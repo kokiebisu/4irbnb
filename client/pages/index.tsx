@@ -65,7 +65,7 @@ const LandingPage = ({ currentUser }) => {
         {loading ? (
           <>
             <Layout type="section" sectionType="landing" spread>
-              <Section type="nearby" items={nearby} />
+              <Section variant="nearby" items={nearby} />
             </Layout>
             <Layout
               type="section"
@@ -73,7 +73,7 @@ const LandingPage = ({ currentUser }) => {
               title="Live anywhere"
               spread
             >
-              <Section type="category" items={anywhere} />
+              <Section variant="category" items={anywhere} />
             </Layout>
             <div className={space["m-v--32"]}></div>
             <Layout
@@ -84,7 +84,7 @@ const LandingPage = ({ currentUser }) => {
               title="Meet Online Experiences"
               subtitle="Interactive activities you can do together, led by expert hosts."
             >
-              <Section type="online" sectionType="landing" dark />
+              <Section variant="online" sectionType="landing" dark />
             </Layout>
             <Layout
               sectionType="landing"

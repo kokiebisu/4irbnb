@@ -8,9 +8,6 @@ import layout from "../../../styles/layout.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import section from "./section.module.scss";
 
-/** props */
-import { HostSectionProps } from "./props";
-
 /** components */
 import { Button } from "../../../components/atoms/button/button.component";
 import { Bullet } from "../../../components/atoms/bullet/bullet.component";
@@ -48,7 +45,19 @@ const renderContent = (content: string) => {
  * @param {string} layoutType - Type of either room or experience
  * @param {boolean} verified - Whether is the user if verified or not
  */
-export const HostSection: React.FC<HostSectionProps> = ({
+export const HostSection: React.FC<{
+  host?: string;
+  isSuperhost?: boolean;
+  description?: string;
+  joined?: string;
+  duringStay?: string;
+  numberOfReviews?: number;
+  hostImgUrl?: string;
+  responseTime?: number;
+  responseRate?: number;
+  layoutType?: string;
+  verified?: boolean;
+}> = ({
   host = "Host Name",
   isSuperhost = false,
   description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",

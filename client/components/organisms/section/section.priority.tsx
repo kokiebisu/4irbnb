@@ -7,9 +7,6 @@ import responsive from "../../../styles/responsive.module.scss";
 import { Layout } from "../../../layout/layout.component";
 import { Bullet } from "../../../components/atoms/bullet/bullet.component";
 
-/** props */
-import { PrioritySectionProps } from "./props";
-
 /** styles */
 import space from "../../../styles/space.module.scss";
 
@@ -17,7 +14,7 @@ import space from "../../../styles/space.module.scss";
  * Renders the priority section
  * @param {string[]} priorities - The priorities
  */
-export const PrioritySection: React.FC<PrioritySectionProps> = () => {
+export const PrioritySection: React.FC<{}> = () => {
   return (
     <Layout type="section" sectionType="homes" title="Safety is our priority">
       <div className={[space["m-t--16"]].join(" ")}>

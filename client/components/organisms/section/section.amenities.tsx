@@ -10,9 +10,6 @@ import space from "../../../styles/space.module.scss";
 import color from "../../../styles/color.module.scss";
 import section from "./section.module.scss";
 
-/** props */
-import { AmenitySectionProps } from "./props";
-
 /** stories */
 import { border } from "../../../components/atoms/button/button.stories";
 
@@ -21,10 +18,10 @@ import { border } from "../../../components/atoms/button/button.stories";
  * @param {string} title - Title of the section
  * @param {Object[]} amenities - List of amenities
  */
-export const AmenitySection: React.FC<AmenitySectionProps> = ({
-  title = "Title here",
-  amenities = ["kitchen", "smoke"],
-}) => {
+export const AmenitySection: React.FC<{
+  title?: string;
+  amenities?: string[];
+}> = ({ title = "Title here", amenities = ["kitchen", "smoke"] }) => {
   return (
     <div>
       <div>

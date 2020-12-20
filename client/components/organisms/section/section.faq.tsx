@@ -1,10 +1,15 @@
 import React from "react";
-import { FAQSectionProps } from "./props";
+
+/** components */
 import { Layout } from "../../../layout/layout.component";
 import { Bullet } from "../../../components/atoms/bullet/bullet.component";
+
+/** styles */
 import space from "../../../styles/space.module.scss";
 
-export const FAQSection: React.FC<FAQSectionProps> = ({
+export const FAQSection: React.FC<{
+  questions?: { question: string; answer: string }[];
+}> = ({
   questions = [
     {
       question: "How do I sign up?",

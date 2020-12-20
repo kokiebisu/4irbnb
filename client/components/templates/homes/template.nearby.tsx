@@ -130,7 +130,7 @@ export const NearbyTemplate: React.FC<NearbyTemplateProps> = ({
               </div>
             )}
             <div>
-              <Section type="homes" />
+              <Section variant="homes" />
             </div>
             <div
               className={[
@@ -143,7 +143,7 @@ export const NearbyTemplate: React.FC<NearbyTemplateProps> = ({
             </div>
           </div>
           <div className={[space["p--24"], color["bg--white__1"]].join(" ")}>
-            <Section type="also" />
+            <Section variant="also" />
           </div>
         </div>
         <div
