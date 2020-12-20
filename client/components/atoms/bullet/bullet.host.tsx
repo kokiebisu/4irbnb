@@ -1,12 +1,12 @@
 import React from "react";
 
 /** styles **/
-import layout from "../../../styles/layout.module.scss";
-import space from "../../../styles/space.module.scss";
-import font from "../../../styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import font from "@styles/font.module.scss";
 
 /** vectors */
-import { Star, Superhost, Verified } from "../../../public/svg/original";
+import { Star, Superhost, Verified } from "@svg/original";
 
 /**
  * Renders the host bullet
