@@ -1,9 +1,9 @@
 import React from "react";
 
 /** styles **/
-import color from "../../../styles/color.module.scss";
-import font from "../../../styles/font.module.scss";
-import styles from "./card.module.scss";
+import color from "@styles/color.module.scss";
+import font from "@styles/font.module.scss";
+import styles from "@card/card.module.scss";
 
 /** Renders the category card component
  * @param {string} imgUrl - Image of the card

@@ -1,17 +1,17 @@
 import React from "react";
 
 /** components */
-import { Button } from "../../atoms/button/button.component";
+import { Button } from "@button/button.component";
 
 /** styles **/
-import color from "../../../styles/color.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import space from "../../../styles/space.module.scss";
-import font from "../../../styles/font.module.scss";
+import color from "@styles/color.module.scss";
+import shape from "@styles/shape.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import font from "@styles/font.module.scss";
 
 /** stories */
-import { primary } from "../../atoms/button/button.stories";
+import { primary } from "@button/button.stories";
 
 /**
  * Renders the available card component
