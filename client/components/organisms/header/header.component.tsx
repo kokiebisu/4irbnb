@@ -1,13 +1,13 @@
 import React from "react";
 
 /** components */
-import { DetailsHeader } from "./header.details";
-import { ExperiencesHeader } from "./header.experiences";
-import { HomesHeader } from "./header.homes";
-import { OnlineHostHeader } from "./header.onlinehost";
-import { StayHeader } from "./header.stay";
-import { TransparentHeader } from "./header.transparent";
-import { WhiteHeader } from "./header.white";
+import { DetailsHeader } from "@header/header.details";
+import { ExperiencesHeader } from "@header/header.experiences";
+import { HomesHeader } from "@header/header.homes";
+import { OnlineHostHeader } from "@header/header.onlinehost";
+import { StayHeader } from "@header/header.stay";
+import { TransparentHeader } from "@header/header.transparent";
+import { WhiteHeader } from "@header/header.white";
 
 export interface HeaderProps {
   extendsTo?: string;

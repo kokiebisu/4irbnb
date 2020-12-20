@@ -2,9 +2,9 @@ import React from "react";
 import { useState } from "react";
 
 /** styles */
-import font from "../../../styles/font.module.scss";
-import space from "../../../styles/space.module.scss";
-import color from "../../../styles/color.module.scss";
+import font from "@styles/font.module.scss";
+import space from "@styles/space.module.scss";
+import color from "@styles/color.module.scss";
 
 /**
  * Renders the description section

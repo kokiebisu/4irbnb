@@ -2,24 +2,21 @@ import React from "react";
 import { motion } from "framer-motion";
 
 /** styles */
-import shape from "../../../styles/shape.module.scss";
-import color from "../../../styles/color.module.scss";
-import animation from "../../../styles/animation.module.scss";
-import space from "../../../styles/space.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import font from "../../../styles/font.module.scss";
+import shape from "@styles/shape.module.scss";
+import color from "@styles/color.module.scss";
+import animation from "@styles/animation.module.scss";
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import font from "@styles/font.module.scss";
 
 /** vectors */
-import { MagnifyGlass } from "../../../public/svg/original";
-
-/** props */
-import { SearchbarButtonProps } from "./props";
+import { MagnifyGlass } from "@svg/original";
 
 /**
  * Renders the searchbar button component
  * @param {boolean} mini - Whether if the button is the minified version or not
  */
-export const SearchbarButton: React.FC<SearchbarButtonProps> = ({
+export const SearchbarButton: React.FC<{ mini?: boolean }> = ({
   mini = false,
 }) => {
   const handlePress = () => {

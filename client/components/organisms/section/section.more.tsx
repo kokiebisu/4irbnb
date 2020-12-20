@@ -1,18 +1,18 @@
 import React from "react";
 
 /** styles **/
-import color from "../../../styles/color.module.scss";
-import font from "../../../styles/font.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import space from "../../../styles/space.module.scss";
-import section from "./section.module.scss";
+import color from "@styles/color.module.scss";
+import font from "@styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
+import shape from "@styles/shape.module.scss";
+import space from "@styles/space.module.scss";
+import section from "@section/section.module.scss";
 
 /** stories */
-import { border } from "../../../components/atoms/button/button.stories";
+import { border } from "@button/button.stories";
 
 /** components */
-import { Button } from "../../../components/atoms/button/button.component";
+import { Button } from "@button/button.component";
 
 export const MoreSection: React.FC<{}> = () => {
   return (

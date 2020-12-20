@@ -3,27 +3,27 @@ import { useFormik } from "formik";
 import Router from "next/router";
 
 /** styles **/
-import space from "../../../styles/space.module.scss";
-import font from "../../../styles/font.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import color from "../../../styles/color.module.scss";
+import space from "@styles/space.module.scss";
+import font from "@styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
+import color from "@styles/color.module.scss";
 
 /** components */
-import { Input } from "../../atoms/input/input.component";
-import { Button } from "../../atoms/button/button.component";
-import { Bullet } from "../../atoms/bullet/bullet.component";
+import { Input } from "@input/input.component";
+import { Button } from "@button/button.component";
+import { Bullet } from "@bullet/bullet.component";
 
 /** Helper */
-import { validateSignup as validate } from "../../../helper/auth";
+import { validateSignup as validate } from "@helper/auth";
 
 /** hooks */
-import { useFetch } from "../../../hooks/useFetch";
+import { useFetch } from "@hooks/useFetch";
 
 /** contexts */
-import { useAuthDispatch } from "../../../context/auth";
+import { useAuthDispatch } from "@context/auth";
 
 /** stories */
-import { primary } from "../../../components/atoms/button/button.stories";
+import { primary } from "@button/button.stories";
 
 /**
  * Renders the signup template component

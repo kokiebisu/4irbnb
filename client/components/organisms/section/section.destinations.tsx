@@ -1,14 +1,14 @@
 import React from "react";
 
 /** styles **/
-import section from "./section.module.scss";
-import space from "../../../styles/space.module.scss";
-import font from "../../../styles/font.module.scss";
-import color from "../../../styles/color.module.scss";
-import layout from "../../../styles/layout.module.scss";
+import section from "@section/section.module.scss";
+import space from "@styles/space.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
+import layout from "@styles/layout.module.scss";
 
 /** Content */
-import { destinationByCategories, destinations } from "../../../content";
+import { destinationByCategories, destinations } from "@content";
 
 /**
  * Renders the destinations section

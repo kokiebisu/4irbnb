@@ -1,8 +1,8 @@
 import React from "react";
 
 /** styles */
-import layout from "../../../styles/layout.module.scss";
-import color from "../../../styles/color.module.scss";
+import layout from "@styles/layout.module.scss";
+import color from "@styles/color.module.scss";
 
 /**
  * Renders the underline button component
@@ -27,7 +27,7 @@ export const UnderlineButton: React.FC<{
       {bold ? (
         <h3
           style={{ fontSize: font }}
-          className={unselected && [color["c--white__3"]].join(" ")}
+          className={unselected ? [color["c--white__3"]].join(" ") : undefined}
         >
           {unselected ? title : <u>{title}</u>}
         </h3>

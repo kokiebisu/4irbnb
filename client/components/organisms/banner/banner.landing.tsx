@@ -3,25 +3,25 @@ import { motion } from "framer-motion";
 import Router from "next/router";
 
 /** styles **/
-import layout from "../../../styles/layout.module.scss";
-import index from "../../../styles/index.module.scss";
-import space from "../../../styles/space.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import font from "../../../styles/font.module.scss";
-import color from "../../../styles/color.module.scss";
+import layout from "@styles/layout.module.scss";
+import index from "@styles/index.module.scss";
+import space from "@styles/space.module.scss";
+import shape from "@styles/shape.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
 
 /** components */
-import { Header } from "../../../components/organisms/header/header.component";
-import { Button } from "../../../components/atoms/button/button.component";
+import { Header } from "@header/header.component";
+import { Button } from "@button/button.component";
 
 /** hooks */
-import { useHandleScroll } from "../../../hooks/useHandleScroll";
+import { useHandleScroll } from "@hooks/useHandleScroll";
 
 /** stories */
-import { banner } from "../../../components/atoms/button/button.stories";
+import { banner } from "@button/button.stories";
 
 /** helper */
-import { ResponsiveImage } from "../../../helper/img";
+import { ResponsiveImage } from "@helper/img";
 
 /**
  * Renders the banner section

@@ -25,7 +25,7 @@ import { Animation } from "../components/animation/animation.component";
 import { Modal } from "../components/organisms/modal/modal.component";
 import { Section } from "../components/organisms/section/section.component";
 import { Footer } from "../components/organisms/footer/footer.component";
-import { MenuBar } from "../components/organisms/menubar/menubar.component";
+
 import { Banner } from "../components/organisms/banner/banner.component";
 import { Bar } from "components/organisms/bar/bar.component";
 
@@ -133,7 +133,10 @@ const LandingPage = ({ currentUser }) => {
                 className={[layout["fixed"], shape["w--full"]].join(" ")}
                 style={{ zIndex: 30, bottom: 0 }}
               >
-                <MenuBar extendsTo={[color["b-t--white__2"]].join(" ")} />
+                <Bar
+                  variant="menu"
+                  extendsTo={[color["b-t--white__2"]].join(" ")}
+                />
               </div>
             </motion.div>
           )}

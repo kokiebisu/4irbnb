@@ -1,11 +1,11 @@
 import React from "react";
 
 /** vectors */
-import { Global, Home, Lightening } from "../../../public/svg/original";
+import { Global, Home, Lightening } from "@svg/original";
 
 /** styles **/
-import space from "../../../styles/space.module.scss";
-import font from "../../../styles/font.module.scss";
+import space from "@styles/space.module.scss";
+import font from "@styles/font.module.scss";
 
 export const OnlineHostBullet: React.FC<{
   bullet?: string;

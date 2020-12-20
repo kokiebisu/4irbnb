@@ -1,9 +1,9 @@
 import React from "react";
 
 /** styles */
-import layout from "../../../styles/layout.module.scss";
-import color from "../../../styles/color.module.scss";
-import font from "../../../styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
+import color from "@styles/color.module.scss";
+import font from "@styles/font.module.scss";
 
 /**
  * Renders the auth button component

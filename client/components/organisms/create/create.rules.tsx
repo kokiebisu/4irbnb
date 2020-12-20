@@ -1,12 +1,12 @@
 import React from "react";
 
 /** components */
-import { Input } from "../../atoms/input/input.component";
+import { Input } from "@input/input.component";
 
 /** styles **/
-import font from "../../../styles/font.module.scss";
-import color from "../../../styles/color.module.scss";
-import space from "../../../styles/space.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
 
 /**
  * Renders the /become-a-host/rules page content

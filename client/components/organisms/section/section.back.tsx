@@ -1,13 +1,13 @@
 import React from "react";
 
 /** styles **/
-import space from "../../../styles/space.module.scss";
+import space from "@styles/space.module.scss";
 
 /** layout */
-import { Layout } from "../../../layout/layout.component";
+import { Layout } from "@layout/layout.component";
 
 /** components */
-import { Bullet } from "../../../components/atoms/bullet/bullet.component";
+import { Bullet } from "@bullet/bullet.component";
 
 export const BackSection: React.FC<{
   back?: string;

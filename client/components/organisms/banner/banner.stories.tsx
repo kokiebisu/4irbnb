@@ -1,7 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Banner, BannerProps } from "./banner.component";
-import { ContextProvider } from "../../../context/provider";
+import { Banner, BannerProps } from "@banner/banner.component";
+import { ContextProvider } from "@context/provider";
 
 export default {
   title: "Design System/Organisms/Banner",

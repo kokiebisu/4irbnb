@@ -1,12 +1,12 @@
 import React from "react";
 
 /** components */
-import { Bullet } from "../../../components/atoms/bullet/bullet.component";
+import { Bullet } from "@bullet/bullet.component";
 
 /** styles **/
-import font from "../../../styles/font.module.scss";
-import color from "../../../styles/color.module.scss";
-import space from "../../../styles/space.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
 
 /**
  * Renders the /become-a-host/requirements page content

@@ -1,20 +1,20 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 /** styles **/
-import layout from "../../../styles/layout.module.scss";
-import space from "../../../styles/space.module.scss";
-import font from "../../../styles/font.module.scss";
-import color from "../../../styles/color.module.scss";
-import styles from "./section.module.scss";
-import sectionStyles from "./section.module.scss";
-import section from "./section.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
+import styles from "@section/section.module.scss";
+import sectionStyles from "@section/section.module.scss";
+import section from "@section/section.module.scss";
 
 /** components */
-import { Card } from "../../molecules/card/card.component";
-import { Button } from "../../../components/atoms/button/button.component";
+import { Card } from "@card/card.component";
+import { Button } from "@button/button.component";
 
 /** stories */
-import { paginate } from "../../../components/atoms/button/button.stories";
+import { paginate } from "@button/button.stories";
 
 /**
  * Renders the stay section

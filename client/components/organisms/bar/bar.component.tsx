@@ -1,12 +1,12 @@
 import React from "react";
 
 /** components */
-import { PaginateBar } from "./bar.paginate";
-import { ProgressBar } from "./bar.progress";
-import { SearchbarBar } from "./bar.searchbar";
-import { CovidBar } from "./bar.covid";
-import { CreateBar } from "./bar.create";
-import { MenuBar } from "./bar.menu";
+import { PaginateBar } from "@bar/bar.paginate";
+import { ProgressBar } from "@bar/bar.progress";
+import { SearchbarBar } from "@bar/bar.searchbar";
+import { CovidBar } from "@bar/bar.covid";
+import { CreateBar } from "@bar/bar.create";
+import { MenuBar } from "@bar/bar.menu";
 
 export interface BarProps {
   variant: string;

@@ -1,13 +1,13 @@
 import React from "react";
 
 /** components */
-import { Input } from "../../../components/atoms/input/input.component";
-import { Layout } from "../../../layout/layout.component";
+import { Input } from "@input/input.component";
+import { Layout } from "@layout/layout.component";
 
 /** styles **/
-import font from "../../../styles/font.module.scss";
-import color from "../../../styles/color.module.scss";
-import space from "../../../styles/space.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
 
 export const DescriptionCreate: React.FC<{ data?: any; setData?: any }> = ({
   data = { description: "Description here" },

@@ -1,14 +1,14 @@
 import React from "react";
 
 /** styles */
-import space from "../../../styles/space.module.scss";
-import font from "../../../styles/font.module.scss";
-import color from "../../../styles/color.module.scss";
-import layout from "../../../styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
+import layout from "@styles/layout.module.scss";
 
 /** components */
-import { Input } from "../../../components/atoms/input/input.component";
-import { Layout } from "../../../layout/layout.component";
+import { Input } from "@input/input.component";
+import { Layout } from "@layout/layout.component";
 
 export const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
   setData,

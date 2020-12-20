@@ -1,14 +1,14 @@
 import React from "react";
 
 /** styles */
-import color from "../../../styles/color.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import space from "../../../styles/space.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import font from "../../../styles/font.module.scss";
+import color from "@styles/color.module.scss";
+import shape from "@styles/shape.module.scss";
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import font from "@styles/font.module.scss";
 
 /** vectors */
-import { CheckPlain } from "../../../public/svg/original";
+import { CheckPlain } from "@svg/original";
 
 export const CheckboxInput: React.FC<{
   check?: () => void;
