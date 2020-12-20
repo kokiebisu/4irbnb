@@ -9,9 +9,6 @@ import { Button } from "../../../components/atoms/button/button.component";
 import { getOptionContents } from "../../../components/atoms/button/content/content.option";
 import { option } from "../../../components/atoms/button/button.stories";
 
-/** props */
-import { MenuModalProps } from "./props";
-
 const Options: React.FC<{
   params?: {
     kind: string;

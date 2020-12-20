@@ -19,16 +19,17 @@ import font from "../../../styles/font.module.scss";
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
 
-/** props */
-import { KnowBulletProps } from "./props";
-
 /**
  * Renders the know bullet
  * @param {string} categoryType - Type of know bullet
  * @param {Object[]} checkin - Time range for checkin
  * @param {string} checkout - Time for checkin
  */
-export const KnowBullet: React.FC<KnowBulletProps> = ({
+export const KnowBullet: React.FC<{
+  categoryType?: string;
+  checkin?: any;
+  checkout?: string;
+}> = ({
   categoryType = "checkin",
   checkin = { min: "3:00 p.m.", max: "12:00 a.m." },
   checkout = "11:00 a.m.",

@@ -8,9 +8,6 @@ import {
   ToolBox,
 } from "../../../public/svg/original";
 
-/** props */
-import { HelpBulletProps } from "./props";
-
 /** styles **/
 import layout from "../../../styles/layout.module.scss";
 import space from "../../../styles/space.module.scss";
@@ -20,7 +17,9 @@ import font from "../../../styles/font.module.scss";
  * Renders the help bullet
  * @param {string} help - Type of help bullet
  */
-export const HelpBullet: React.FC<HelpBulletProps> = ({ help = "support" }) => {
+export const HelpBullet: React.FC<{
+  help?: "support" | "tools" | "insights" | "education";
+}> = ({ help = "support" }) => {
   const helps = {
     support: {
       icon: <CustomerService width={28} />,

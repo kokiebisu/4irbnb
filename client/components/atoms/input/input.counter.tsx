@@ -2,16 +2,19 @@ import React from "react";
 
 /** styles **/
 import layout from "../../../styles/layout.module.scss";
-import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
-
-/** props */
-import { CounterInputProps } from "./props";
 
 /** vectors */
 import { Minus, Plus } from "../../../public/svg/original";
 
-export const CounterInput: React.FC<CounterInputProps> = ({
+export const CounterInput: React.FC<{
+  title?: string;
+  value?: number;
+  add?: () => void;
+  subtract?: () => void;
+  min?: number;
+  max?: number;
+}> = ({
   title = "Counter",
   value = 0,
   add = () => alert("add"),

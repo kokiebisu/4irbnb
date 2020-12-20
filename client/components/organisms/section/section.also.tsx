@@ -1,8 +1,5 @@
 import React, { useRef } from "react";
 
-/** props */
-import { AlsoSectionProps } from "./props";
-
 /** components */
 import { Card } from "../../molecules/card/card.component";
 import { Button } from "../../../components/atoms/button/button.component";
@@ -28,7 +25,10 @@ import { paginate } from "../../../components/atoms/button/button.stories";
  * Renders the also section
  * @param {string[]} items - List of suggested cities
  */
-export const AlsoSection: React.FC<AlsoSectionProps> = ({
+export const AlsoSection: React.FC<{
+  items?: any;
+  title?: string;
+}> = ({
   items = [
     "city1",
     "city2",
@@ -100,7 +100,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
               >
                 <div className={[space["m-b--10"]].join(" ")}>
                   <Card
-                    type="nearby"
+                    variant="nearby"
                     to={item[0] && item[0].to}
                     imgUrl={nearbyPic[index]}
                     city={item[0].city}
@@ -110,7 +110,7 @@ export const AlsoSection: React.FC<AlsoSectionProps> = ({
                 </div>
                 <div>
                   <Card
-                    type="nearby"
+                    variant="nearby"
                     to={item[1] && item[1].to}
                     imgUrl={nearbyPic[index + 4]}
                     city={item[1].city}

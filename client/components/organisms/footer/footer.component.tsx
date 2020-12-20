@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import Router from "next/router";
 
 /** styles */
@@ -15,11 +14,12 @@ import { sections } from "../../../content/index";
 /** vectors */
 import { Globe } from "../../../public/svg/original";
 
-/** props */
-import { FooterProps } from "./props";
-
 /** components */
 import { Button } from "../../../components/atoms/button/button.component";
+
+export interface FooterProps {
+  spread?: boolean;
+}
 
 /**
  * Renders the footer

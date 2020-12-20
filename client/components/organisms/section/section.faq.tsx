@@ -1,10 +1,15 @@
 import React from "react";
-import { FAQSectionProps } from "./props";
+
+/** components */
 import { Layout } from "../../../layout/layout.component";
 import { Bullet } from "../../../components/atoms/bullet/bullet.component";
+
+/** styles */
 import space from "../../../styles/space.module.scss";
 
-export const FAQSection: React.FC<FAQSectionProps> = ({
+export const FAQSection: React.FC<{
+  questions?: { question: string; answer: string }[];
+}> = ({
   questions = [
     {
       question: "How do I sign up?",
@@ -29,11 +34,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
   ],
 }) => {
   return (
-    <Layout
-      type="section"
-      sectionType="onlinehost"
-      title="Frequently asked questions"
-    >
+    <Layout variant="onlinehost" title="Frequently asked questions">
       <div
         style={{
           maxWidth: 900,
@@ -50,7 +51,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
               className={[space["m-v--22"]].join(" ")}
               key={index}
             >
-              <Bullet type="question" title={question} answer={answer} />
+              <Bullet variant="question" title={question} answer={answer} />
             </div>
           );
         })}

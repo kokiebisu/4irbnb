@@ -1,20 +1,11 @@
 import React from "react";
 
-/**
- * Styles
- */
+/** styles */
 import font from "../../../styles/font.module.scss";
 import space from "../../../styles/space.module.scss";
 import color from "../../../styles/color.module.scss";
 
-/**
- * Props
- */
-import { HomesSectionProps } from "./props";
-
-/**
- * Components
- */
+/** components */
 import { Card } from "../../molecules/card/card.component";
 
 /**
@@ -23,7 +14,15 @@ import { Card } from "../../molecules/card/card.component";
  * @param {string} title - Title of the section
  * @param {Object[]} stays - List of objects containing the stays
  */
-export const HomesSection: React.FC<HomesSectionProps> = ({
+export const HomesSection: React.FC<{
+  filterCount?: number;
+  place?: string;
+  guests?: number;
+  average?: number;
+  stays?: any;
+  title?: string;
+  layout?: "vertical" | "horizontal";
+}> = ({
   layout = "vertical",
   place = "Location",
   title = "Explore all 300+ stays",
@@ -105,7 +104,7 @@ export const HomesSection: React.FC<HomesSectionProps> = ({
               <div key={index}>
                 <Card
                   extendsTo={!title && [color["b-t--white__2"]].join(" ")}
-                  type="stay"
+                  variant="stay"
                   {...stay}
                 />
               </div>

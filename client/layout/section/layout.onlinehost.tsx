@@ -1,17 +1,18 @@
 import React from "react";
+
+/** styles */
 import space from "../../styles/space.module.scss";
 import layout from "../../styles/layout.module.scss";
 import color from "../../styles/color.module.scss";
 import responsive from "../../styles/responsive.module.scss";
-import { OnlineHostLayoutProps } from "layout/props";
 
-export const OnlineHostLayout: React.FC<OnlineHostLayoutProps> = ({
-  title,
-  subtitle,
-  children,
-  dark = false,
-  spread = false,
-}) => {
+export const OnlineHostLayout: React.FC<{
+  title?: string;
+  subtitle?: string;
+  children?: React.ReactNode;
+  dark?: boolean;
+  spread?: boolean;
+}> = ({ title, subtitle, children, dark = false, spread = false }) => {
   return (
     <div
       className={[

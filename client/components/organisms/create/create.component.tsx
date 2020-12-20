@@ -1,7 +1,7 @@
 import React from "react";
-import { AdvanceCreate } from "./create.advance";
 
 /** components */
+import { AdvanceCreate } from "./create.advance";
 import { AmenitiesCreate } from "./create.amenities";
 import { BathroomsCreate } from "./create.bathrooms";
 import { BedroomsCreate } from "./create.bedrooms";
@@ -16,14 +16,16 @@ import { RulesCreate } from "./create.rules";
 import { SpacesCreate } from "./create.spaces";
 import { TitleCreate } from "./create.title";
 
-/** props */
-import { CreateProps } from "./props";
+export interface CreateProps {
+  variant?: string;
+  [property: string]: any;
+}
 
 export const Create: React.FC<CreateProps> = ({
-  type = "getstarted",
+  variant = "getstarted",
   ...props
 }) => {
-  const types = {
+  const variants = {
     getstarted: <GetStartedCreate {...props} />,
     room: <RoomCreate {...props} />,
     bedrooms: <BedroomsCreate {...props} />,
@@ -39,5 +41,5 @@ export const Create: React.FC<CreateProps> = ({
     checkin: <CheckInCreate {...props} />,
     advance: <AdvanceCreate {...props} />,
   };
-  return types[type];
+  return <div data-testid={`${variant}-create`}>{variants[variant]}</div>;
 };

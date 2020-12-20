@@ -12,13 +12,10 @@ import { Button } from "../../../components/atoms/button/button.component";
 /** vectors */
 import { NoNameLogo } from "../../../public/svg/logo";
 
-/** props */
-import { ExperiencesHeaderProps } from "./props";
-
 /**
  * Renders the experiences header
  */
-export const ExperiencesHeader: React.FC<ExperiencesHeaderProps> = () => {
+export const ExperiencesHeader: React.FC<{}> = () => {
   return (
     <header style={{ height: 80 }} className={[space["p-h--0"]].join(" ")}>
       <div

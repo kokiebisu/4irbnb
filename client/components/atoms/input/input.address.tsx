@@ -8,10 +8,7 @@ import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import input from "./input.module.scss";
 
-/**
- * Props
- */
-import { AddressInputProps } from "./props";
+/** props */
 import { renderShape } from "./logic/logic.address";
 
 /**
@@ -23,12 +20,12 @@ import { renderShape } from "./logic/logic.address";
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const AddressInput: React.FC<AddressInputProps> = ({
-  handleChange,
-  value,
-  direction,
-  errors = false,
-}) => {
+export const AddressInput: React.FC<{
+  handleChange?: any;
+  value?: string;
+  direction?: string;
+  errors?: boolean;
+}> = ({ handleChange, value, direction }) => {
   return (
     <div
       className={`${[

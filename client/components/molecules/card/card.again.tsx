@@ -1,8 +1,5 @@
 import React from "react";
 
-/** props */
-import { AgainCardProps } from "./props";
-
 /** styles **/
 import shape from "../../../styles/shape.module.scss";
 import space from "../../../styles/space.module.scss";
@@ -13,7 +10,7 @@ import font from "../../../styles/font.module.scss";
 /** vectors */
 import { Warning } from "../../../public/svg/original";
 
-export const AgainCard: React.FC<AgainCardProps> = () => {
+export const AgainCard: React.FC<{}> = () => {
   return (
     <div className={[shape["br--15"], color["b--white__2"]].join(" ")}>
       <div className={[space["p--18"]].join(" ")}>

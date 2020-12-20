@@ -1,12 +1,13 @@
 import React from "react";
-import { SharingCardProps } from "./props";
+
+/** styles */
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 
-export const SharingCard: React.FC<SharingCardProps> = ({
-  sharing = "meditate",
-}) => {
+export const SharingCard: React.FC<{
+  sharing?: string;
+}> = ({ sharing = "meditate" }) => {
   const sharings = {
     meditate: {
       imgUrl:

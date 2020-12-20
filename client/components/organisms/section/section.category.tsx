@@ -7,16 +7,13 @@ import space from "../../../styles/space.module.scss";
 /** components */
 import { Card } from "../../molecules/card/card.component";
 
-/** props */
-import { CategorySectionProps } from "./props";
-
 /**
  *
  * @param {Object[]} items - List of categories to be displayed
  */
-export const CategorySection: React.FC<CategorySectionProps> = ({
-  items = [undefined, undefined, undefined],
-}) => {
+export const CategorySection: React.FC<{
+  items?: any;
+}> = ({ items = [undefined, undefined, undefined] }) => {
   const totalCards = items.length;
 
   return (
@@ -29,7 +26,7 @@ export const CategorySection: React.FC<CategorySectionProps> = ({
           {items.map((item, index) => {
             return (
               <Card
-                type="category"
+                variant="category"
                 key={index}
                 imgUrl={item && item.imgUrl}
                 title={item && item.title}

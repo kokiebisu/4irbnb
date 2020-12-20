@@ -1,8 +1,5 @@
 import React from "react";
 
-/** props */
-import { OnlineHostBannerProps } from "./props";
-
 /** styles **/
 import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
@@ -17,8 +14,7 @@ import { Bullet } from "../../../components/atoms/bullet/bullet.component";
 /** stories */
 import { primary } from "../../../components/atoms/button/button.stories";
 
-export const OnlineHostBanner: React.FC<OnlineHostBannerProps> = () => {
-  const bullets = ["home", "global", "business"];
+export const OnlineHostBanner: React.FC<{}> = () => {
   return (
     <div
       className={[
@@ -77,10 +73,10 @@ export const OnlineHostBanner: React.FC<OnlineHostBannerProps> = () => {
           banner["display__onlinehost--points"],
         ].join(" ")}
       >
-        {bullets.map((bullet, index) => {
+        {["home", "global", "business"].map((bullet, index) => {
           return (
             <div key={index} className={[space["m-b--16"]].join(" ")}>
-              <Bullet type="onlinehost" bullet={bullet} />
+              <Bullet variant="onlinehost" bullet={bullet} />
             </div>
           );
         })}

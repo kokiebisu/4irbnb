@@ -8,9 +8,6 @@ import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
 import input from "./input.module.scss";
 
-/** styles **/
-import { BirthdateInputProps } from "./props";
-
 /** Styling */
 import { styleInput, styleLabel, styleContainer } from "./styling.select";
 import { birthdate, renderShape } from "./logic/logic.birthdate";
@@ -24,7 +21,13 @@ import { birthdate, renderShape } from "./logic/logic.birthdate";
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const BirthdateInput: React.FC<BirthdateInputProps> = ({
+export const BirthdateInput: React.FC<{
+  handleChange?: any;
+  value?: string;
+  direction?: string;
+  errors?: boolean;
+  dateType?: "year" | "month" | "day";
+}> = ({
   handleChange,
   value,
   direction,

@@ -26,7 +26,13 @@ import { filter } from "../../../components/atoms/button/button.stories";
  * Renders the nearby template component
  * @param param0 Prop
  */
-export const NearbyTemplate: React.FC<NearbyTemplateProps> = ({
+export const NearbyTemplate: React.FC<{
+  city?: string;
+  filterCount?: number;
+  guests?: number;
+  average?: number;
+  filters?: any;
+}> = ({
   city,
   filterCount = 1,
   guests = 8000,
@@ -44,7 +50,7 @@ export const NearbyTemplate: React.FC<NearbyTemplateProps> = ({
   return (
     <div>
       <div style={{ zIndex: 9999, position: "sticky", top: 0 }}>
-        <Header type="white" spread />
+        <Header variant="white" spread />
       </div>
       <div
         className={[layout["relative"], homes["display__content"]].join(" ")}
@@ -130,7 +136,7 @@ export const NearbyTemplate: React.FC<NearbyTemplateProps> = ({
               </div>
             )}
             <div>
-              <Section type="homes" />
+              <Section variant="homes" />
             </div>
             <div
               className={[
@@ -139,11 +145,11 @@ export const NearbyTemplate: React.FC<NearbyTemplateProps> = ({
                 layout["justify-center"],
               ].join(" ")}
             >
-              <Bar type="paginate" animate />
+              <Bar variant="paginate" animate />
             </div>
           </div>
           <div className={[space["p--24"], color["bg--white__1"]].join(" ")}>
-            <Section type="also" />
+            <Section variant="also" />
           </div>
         </div>
         <div

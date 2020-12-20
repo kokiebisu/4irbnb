@@ -1,8 +1,5 @@
 import React from "react";
 
-/** props */
-import { WorksSectionProps } from "./props";
-
 /** Layouts */
 import { Layout } from "../../../layout/layout.component";
 
@@ -17,16 +14,16 @@ import { Card } from "../../molecules/card/card.component";
 /** stories */
 import { border } from "../../../components/atoms/button/button.stories";
 
-export const WorksSection: React.FC<WorksSectionProps> = () => {
+export const WorksSection: React.FC<{}> = () => {
   const categories = ["design", "share", "submit", "setup"];
   return (
     <div>
-      <Layout type="section" sectionType="homes" title="How hosting works">
+      <Layout variant="homes" title="How hosting works">
         <div>
           {categories.map((category, index) => {
             return (
               <div className={[space["m-b--8"]].join(" ")} key={index}>
-                <Card type="works" work={category} />
+                <Card variant="works" work={category} />
               </div>
             );
           })}

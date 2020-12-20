@@ -13,10 +13,7 @@ import { Button } from "../../../components/atoms/button/button.component";
 /** vectors */
 import { NoNameLogo } from "../../../public/svg/logo";
 
-/** props */
-import { OnlineHostHeaderProps } from "./props";
-
-export const OnlineHostHeader: React.FC<OnlineHostHeaderProps> = () => {
+export const OnlineHostHeader: React.FC<{}> = () => {
   return (
     <header style={{ height: 80 }} className={[space["p-h--0"]].join(" ")}>
       <div

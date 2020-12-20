@@ -21,29 +21,29 @@ const Homes: () => string | JSX.Element = () => {
   return (
     <div>
       <div className={[responsive["n_to_b--md"]].join(" ")}>
-        <Header type="homes" />
+        <Header variant="homes" />
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
-        <Banner type="homes" />
+        <Banner variant="homes" />
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
         <div className={`${[space["p__homes"]].join(" ")}`}>
-          <Section type="all" />
+          <Section variant="all" />
         </div>
       </div>
       <div className={[space["p-v--64"]].join(" ")}>
         <div className={`${[space["p__homes"]].join(" ")}`}>
-          <Section type="priority" />
+          <Section variant="priority" />
         </div>
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
         <div className={`${[space["p__homes"]].join(" ")}`}>
-          <Section type="help" />
+          <Section variant="help" />
         </div>
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
         <div className={`${[space["p__homes"]].join(" ")}`}>
-          <Section type="ready" />
+          <Section variant="ready" />
         </div>
       </div>
       <div>
