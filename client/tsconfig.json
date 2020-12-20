@@ -27,6 +27,8 @@
       "@header/*": ["components/organisms/header/*"],
       "@create/*": ["components/organisms/create/*"],
       "@bar/*": ["components/organisms/bar/*"],
+      "@footer/*": ["components/organisms/footer/*"],
+      "@modal/*": ["components/organisms/modal/*"],
       "@layout/*": ["layout/*"],
       "@styles/*": ["styles/*"],
       "@svg/*": ["public/svg/*"],
