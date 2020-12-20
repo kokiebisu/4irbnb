@@ -1,10 +1,10 @@
 import React from "react";
 
 /** components */
-import { ExperiencesBanner } from "./banner.experiences";
-import { HomesBanner } from "./banner.homes";
-import { LandingBanner } from "./banner.landing";
-import { OnlineHostBanner } from "./banner.onlinehost";
+import { ExperiencesBanner } from "@banner/banner.experiences";
+import { HomesBanner } from "@banner/banner.homes";
+import { LandingBanner } from "@banner/banner.landing";
+import { OnlineHostBanner } from "@banner/banner.onlinehost";
 
 export interface BannerProps {
   extendsTo?: string;

@@ -23,13 +23,15 @@
       "@particles/*": ["components/particles/*"],
       "@templates/*": ["components/templates/*"],
       "@animation/*": ["components/animation/*"],
+      "@banner": ["components/organisms/banner/*"],
+      "@header": ["components/organisms/header/*"],
+      "@particles": ["components/particles/*"],
       "@styles/*": ["styles/*"],
       "@svg/*": ["public/svg/*"],
       "@helper/*": ["helper/*"],
       "@hooks/*": ["hooks/*"],
       "@context/*": ["context/*"],
-      "@content": ["content/index.ts"],
-      "@particles": ["components/particles/*"]
+      "@content": ["content/index.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".storybook/**/*"],
