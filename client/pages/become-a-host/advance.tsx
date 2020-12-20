@@ -30,7 +30,7 @@ const AdvancePage = () => {
   };
   return (
     <Layout
-      type="create"
+      variant="create"
       title="Calendar and availability"
       left={<Create type="advance" data={data} setData={setData} />}
       percentage={85}

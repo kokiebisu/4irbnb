@@ -64,39 +64,28 @@ const LandingPage = ({ currentUser }) => {
         <Banner variant="landing" data={currentUser || null} />
         {loading ? (
           <>
-            <Layout type="section" sectionType="landing" spread>
+            <Layout variant="landing" spread>
               <Section variant="nearby" items={nearby} />
             </Layout>
-            <Layout
-              type="section"
-              sectionType="landing"
-              title="Live anywhere"
-              spread
-            >
+            <Layout variant="landing" title="Live anywhere" spread>
               <Section variant="category" items={anywhere} />
             </Layout>
             <div className={space["m-v--32"]}></div>
             <Layout
               dark
               spread
-              sectionType="landing"
-              type="section"
+              variant="landing"
               title="Meet Online Experiences"
               subtitle="Interactive activities you can do together, led by expert hosts."
             >
               <Section variant="online" sectionType="landing" dark />
             </Layout>
             <Layout
-              sectionType="landing"
+              variant="landing"
               spread
-              type="section"
               title="Join millions of hosts on Airbnb"
             >
-              <Section
-                type="category"
-                sectionType="landing"
-                items={categories}
-              />
+              <Section variant="category" items={categories} />
             </Layout>
           </>
         ) : (

@@ -18,8 +18,7 @@ export const SharingSection: React.FC<{}> = () => {
   const sharings = ["meditate", "baking", "magic"];
   return (
     <Layout
-      type="section"
-      sectionType="onlinehost"
+      variant="onlinehost"
       title="How hosts are sharing their world"
       subtitle="These hosts bring the spirit of experiences to the screen with unique small group activities to do together while we're apart."
     >

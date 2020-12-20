@@ -20,7 +20,7 @@ export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
     <div>
       <div style={{ width: 300 }} className={[space["m-b--30"]].join(" ")}>
         <Layout
-          type="input"
+          variant="input"
           title="How much notice do you need before a guest arrives?"
         >
           <div className={[space["m-t--22"]].join(" ")}>

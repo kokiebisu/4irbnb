@@ -43,11 +43,7 @@ export const AllSection: React.FC<{}> = () => {
     },
   ];
   return (
-    <Layout
-      type="section"
-      sectionType="homes"
-      title="From castles to condos, guests book it all"
-    >
+    <Layout variant="homes" title="From castles to condos, guests book it all">
       <div
         style={{
           display: "grid",

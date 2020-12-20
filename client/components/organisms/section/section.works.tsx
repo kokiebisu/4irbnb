@@ -18,7 +18,7 @@ export const WorksSection: React.FC<{}> = () => {
   const categories = ["design", "share", "submit", "setup"];
   return (
     <div>
-      <Layout type="section" sectionType="homes" title="How hosting works">
+      <Layout variant="homes" title="How hosting works">
         <div>
           {categories.map((category, index) => {
             return (

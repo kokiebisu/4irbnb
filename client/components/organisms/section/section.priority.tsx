@@ -16,7 +16,7 @@ import space from "../../../styles/space.module.scss";
  */
 export const PrioritySection: React.FC<{}> = () => {
   return (
-    <Layout type="section" sectionType="homes" title="Safety is our priority">
+    <Layout variant="homes" title="Safety is our priority">
       <div className={[space["m-t--16"]].join(" ")}>
         <div
           style={{

@@ -6,6 +6,8 @@ import { CreateLayout } from "./layout.create";
 import { HomesLayout } from "./section/layout.homes";
 import { LandingLayout } from "./section/layout.landing";
 import { OnlineHostLayout } from "./section/layout.onlinehost";
+import { CurrencyLayout } from "./layout.currency";
+
 
 export interface LayoutProps {
   extendsTo?: string;
@@ -29,6 +31,7 @@ export const Layout: React.FC<LayoutProps> = ({
     homes: <HomesLayout {...props} />,
     landing: <LandingLayout {...props} />,
     onlinehost: <OnlineHostLayout {...props} />,
+    currency: <CurrencyLayout {...props} />,
   };
 
   return (
