@@ -61,7 +61,7 @@ const LandingPage = ({ currentUser }) => {
         <div>
           <Bar type="covid" />
         </div>
-        <Banner type="landing" data={currentUser || null} />
+        <Banner variant="landing" data={currentUser || null} />
         {loading ? (
           <>
             <Layout type="section" sectionType="landing" spread>

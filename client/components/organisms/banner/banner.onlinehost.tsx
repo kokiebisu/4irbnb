@@ -1,8 +1,5 @@
 import React from "react";
 
-/** props */
-import { OnlineHostBannerProps } from "./props";
-
 /** styles **/
 import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
@@ -17,7 +14,7 @@ import { Bullet } from "../../../components/atoms/bullet/bullet.component";
 /** stories */
 import { primary } from "../../../components/atoms/button/button.stories";
 
-export const OnlineHostBanner: React.FC<OnlineHostBannerProps> = () => {
+export const OnlineHostBanner: React.FC<{}> = () => {
   return (
     <div
       className={[

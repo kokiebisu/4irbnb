@@ -32,7 +32,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
     <div className={index["banner"]}>
       <div className={[layout["all-sides"]].join(" ")}>
         <div className={index["banner__background--picture"]}>
-          <ResponsiveImage imgUrl="https://a0.muscache.com/im/pictures/cf39f4c4-e860-43d4-85be-deddd7b2da90.jpg" />
+          <ResponsiveImage />
         </div>
       </div>
       <div className={[layout["all-sides"]].join(" ")}>
