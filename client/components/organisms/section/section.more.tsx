@@ -1,8 +1,5 @@
 import React from "react";
 
-/** props */
-import { MoreSectionProps } from "./props";
-
 /** styles **/
 import color from "../../../styles/color.module.scss";
 import font from "../../../styles/font.module.scss";
@@ -17,7 +14,7 @@ import { border } from "../../../components/atoms/button/button.stories";
 /** components */
 import { Button } from "../../../components/atoms/button/button.component";
 
-export const MoreSection: React.FC<MoreSectionProps> = () => {
+export const MoreSection: React.FC<{}> = () => {
   return (
     <div>
       <div style={{ height: 0, paddingTop: "50%", position: "relative" }}>

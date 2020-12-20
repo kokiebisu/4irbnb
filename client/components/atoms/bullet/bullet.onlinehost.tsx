@@ -3,16 +3,13 @@ import React from "react";
 /** vectors */
 import { Global, Home, Lightening } from "../../../public/svg/original";
 
-/** props */
-import { OnlineHostBulletProps } from "./props";
-
 /** styles **/
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 
-export const OnlineHostBullet: React.FC<OnlineHostBulletProps> = ({
-  bullet = "home",
-}) => {
+export const OnlineHostBullet: React.FC<{
+  bullet?: string;
+}> = ({ bullet = "home" }) => {
   const types = {
     home: {
       icon: <Home />,

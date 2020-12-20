@@ -17,9 +17,6 @@ import { Bar } from "../../organisms/bar/bar.component";
 import { Footer } from "../../organisms/footer/footer.component";
 import { Button } from "../../atoms/button/button.component";
 
-/** props */
-import { CategoryTemplateProps } from "../props";
-
 /** stories */
 import { filter } from "../../../components/atoms/button/button.stories";
 
@@ -29,7 +26,11 @@ import { filter } from "../../../components/atoms/button/button.stories";
  * @param {number} filterCount - Number of filters
  * @param {Object[]} filters - List of filters
  */
-export const CategoryTemplate: React.FC<CategoryTemplateProps> = ({
+export const CategoryTemplate: React.FC<{
+  stayType?: string | string[];
+  filterCount?: number;
+  filters?: any;
+}> = ({
   stayType = "house",
   filterCount = 1,
   filters = [
@@ -56,7 +57,7 @@ export const CategoryTemplate: React.FC<CategoryTemplateProps> = ({
   return (
     <div>
       <div style={{ zIndex: 9999, position: "sticky", top: 0 }}>
-        <Header type="white" spread />
+        <Header variant="white" spread />
       </div>
       <div
         className={[layout["relative"], homes["display__content"]].join(" ")}
@@ -84,13 +85,13 @@ export const CategoryTemplate: React.FC<CategoryTemplateProps> = ({
               </div>
             </div>
             <div className={[space["m-b--32"]].join(" ")}>
-              <Section type="stay" title="Paris" pagination />
+              <Section variant="stay" title="Paris" pagination />
             </div>
             <div className={[space["m-b--50"]].join(" ")}>
-              <Section type="also" title="Other popular destinations" />
+              <Section variant="also" title="Other popular destinations" />
             </div>
             <div className={[space["m-b--45"]].join(" ")}>
-              <Section type="homes" layout="vertical" location={location} />
+              <Section variant="homes" layout="vertical" location={location} />
             </div>
             <div
               className={[
@@ -99,7 +100,7 @@ export const CategoryTemplate: React.FC<CategoryTemplateProps> = ({
                 layout["justify-center"],
               ].join(" ")}
             >
-              <Bar type="paginate" animate />
+              <Bar variant="paginate" animate />
             </div>
           </div>
         </div>

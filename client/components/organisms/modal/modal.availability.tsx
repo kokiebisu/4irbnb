@@ -10,9 +10,6 @@ import space from "../../../styles/space.module.scss";
 /** vectors */
 import { Star } from "../../../public/svg/original";
 
-/** props */
-import { AvailabilityModalProps } from "./props";
-
 /** stories */
 import { primary } from "../../../components/atoms/button/button.stories";
 
@@ -21,10 +18,10 @@ import { primary } from "../../../components/atoms/button/button.stories";
  * @param {number} ratings - Average ratings from the users
  * @param {number} reviews - Total number of reviews from the users
  */
-export const AvailabilityModal: React.FC<AvailabilityModalProps> = ({
-  ratings = 4.99,
-  reviews = 271,
-}) => {
+export const AvailabilityModal: React.FC<{
+  ratings?: number;
+  reviews?: number;
+}> = ({ ratings = 4.99, reviews = 271 }) => {
   return (
     <div
       className={[

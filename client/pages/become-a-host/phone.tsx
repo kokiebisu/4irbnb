@@ -29,11 +29,11 @@ const TitlePage = () => {
 
   return (
     <Layout
-      type="create"
+      variant="create"
       left={
         <Create
           title="Description and title"
-          type="phone"
+          variant="phone"
           data={data}
           setData={setData}
         />

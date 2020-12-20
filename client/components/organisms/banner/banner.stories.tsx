@@ -1,8 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Banner } from "./banner.component";
+import { Banner, BannerProps } from "./banner.component";
 import { ContextProvider } from "../../../context/provider";
-import { BannerProps } from "./props";
 
 export default {
   title: "Design System/Organisms/Banner",
@@ -17,24 +16,24 @@ export default {
   ],
 } as Meta;
 
-const BannerTemplate: Story<BannerProps> = (args) => <Banner {...args} />;
+const TemplateStory: Story<BannerProps> = (args) => <Banner {...args} />;
 
-export const homes = BannerTemplate.bind({});
+export const homes = TemplateStory.bind({});
 homes.args = {
-  type: "homes",
+  variant: "homes",
 };
 
-export const experiences = BannerTemplate.bind({});
+export const experiences = TemplateStory.bind({});
 experiences.args = {
-  type: "experiences",
+  variant: "experiences",
 };
 
-export const landing = BannerTemplate.bind({});
+export const landing = TemplateStory.bind({});
 landing.args = {
-  type: "landing",
+  variant: "landing",
 };
 
-export const onlineHost = BannerTemplate.bind({});
+export const onlineHost = TemplateStory.bind({});
 onlineHost.args = {
-  type: "onlinehost",
+  variant: "onlinehost",
 };

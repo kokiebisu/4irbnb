@@ -19,9 +19,6 @@ import { Button } from "../../../components/atoms/button/button.component";
 import { NameLogo, NoNameLogo } from "../../../public/svg/logo";
 import { MagnifyGlass } from "../../../public/svg/original";
 
-/** props */
-import { TransparentHeaderProps } from "./props";
-
 /** contexts */
 import { useToggleDispatch, useToggleState } from "../../../context/toggle";
 
@@ -33,9 +30,9 @@ import { Content } from "../../../components/atoms/button/content/content.transp
 /**
  * Renders the transparent header
  */
-export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
-  data,
-}) => {
+export const TransparentHeader: React.FC<{
+  data?: any;
+}> = ({ data }) => {
   const toggleState = useToggleState();
   const toggleDispatch = useToggleDispatch();
 
@@ -102,7 +99,7 @@ export const TransparentHeader: React.FC<TransparentHeaderProps> = ({
         </div>
       </div>
       <div>
-        <Bar type="searchbar" />
+        <Bar variant="searchbar" />
       </div>
     </header>
   );

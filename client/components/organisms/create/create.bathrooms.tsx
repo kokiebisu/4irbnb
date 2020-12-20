@@ -3,18 +3,15 @@ import React from "react";
 /** components */
 import { Input } from "../../../components/atoms/input/input.component";
 
-/** props */
-import { BathroomsCreateProps } from "./props";
-
 /** styles **/
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
-export const BathroomsCreate: React.FC<BathroomsCreateProps> = ({
-  data = { bathrooms: 0 },
-  setData,
-}) => {
+export const BathroomsCreate: React.FC<{
+  data?: any;
+  setData?: (params: any) => void;
+}> = ({ data = { bathrooms: 0 }, setData }) => {
   return (
     <div>
       <div className={[space["m-b--45"]].join(" ")}>
@@ -32,7 +29,7 @@ export const BathroomsCreate: React.FC<BathroomsCreateProps> = ({
         <div className={[space["m-b--8"]].join(" ")}>
           <Input
             title="Bathrooms"
-            type="counter"
+            variant="counter"
             value={data.bathrooms}
             add={() => setData({ ...data, bathrooms: data.bathrooms + 1 })}
             subtract={() => setData({ ...data, bathrooms: data.bathrooms - 1 })}

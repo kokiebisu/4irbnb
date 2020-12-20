@@ -19,9 +19,6 @@ import {
   Time,
 } from "../../../public/svg/original";
 
-/** props */
-import { CharacteristicBulletProps } from "./props";
-
 /** Helpers */
 import * as Helper from "../../../helper/time";
 
@@ -34,7 +31,14 @@ import * as Helper from "../../../helper/time";
  * @param {group} group - Number of people that can join a private group
  * @param {string[]} languages - Languages the host can speak
  */
-export const CharacteristicBullet: React.FC<CharacteristicBulletProps> = ({
+export const CharacteristicBullet: React.FC<{
+  characteristic?: string;
+  time?: number;
+  languages?: string[];
+  devices?: string[];
+  people?: number;
+  group?: number;
+}> = ({
   characteristic = "house",
   time = 60,
   devices = ["computer", "smartphone"],

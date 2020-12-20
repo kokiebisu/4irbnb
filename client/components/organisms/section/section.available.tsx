@@ -10,9 +10,6 @@ import section from "./section.module.scss";
 import { Card } from "../../molecules/card/card.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/** props */
-import { AvailableSectionProps } from "./props";
-
 /** stories */
 import {
   border,
@@ -23,7 +20,9 @@ import {
  * Renders the available section
  * @param {Object[]} availables - List of available dates for the experience
  */
-export const AvailableSection: React.FC<AvailableSectionProps> = ({
+export const AvailableSection: React.FC<{
+  availables?: any;
+}> = ({
   availables = [
     {
       date: "Tue., Nov. 10",
@@ -171,7 +170,7 @@ export const AvailableSection: React.FC<AvailableSectionProps> = ({
               >
                 <div className={[space["m-b--10"], space["m-r--16"]].join(" ")}>
                   <Card
-                    type="available"
+                    variant="available"
                     date={available.date}
                     from={available.from}
                     to={available.to}

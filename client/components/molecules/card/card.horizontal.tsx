@@ -16,19 +16,17 @@ import { ImageSlider } from "../../particles/image.slider";
 /** Logic */
 import { renderType } from "./logic/logic.horizontal";
 
-interface Props {
-  card?: any;
-  save?: boolean;
-  superhost?: boolean;
-}
-
 /**
  * Renders the horizontal card component
  * @param {Object} card - Information about the card
  * @param {boolean} superhost - Whether if host is the superhost or not
  * @param {boolean} save - Whether if the card can be saved or not
  */
-export const HorizontalCard: React.FC<Props> = ({
+export const HorizontalCard: React.FC<{
+  card?: any;
+  save?: boolean;
+  superhost?: boolean;
+}> = ({
   card = {
     images: [
       "https://a0.muscache.com/im/pictures/7e0063fa-d325-49ae-a6f6-285fe9928da4.jpg?im_w=720",

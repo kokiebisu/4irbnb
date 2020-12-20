@@ -56,7 +56,7 @@ const id: () => string | JSX.Element = () => {
     <>
       <div>
         <div style={{ position: "relative", zIndex: 9000 }}>
-          <Header type="white" />
+          <Header variant="white" />
         </div>
         <AnimatePresence>
           {scrollPosition > 470 && (
@@ -71,7 +71,7 @@ const id: () => string | JSX.Element = () => {
                 width: "100%",
               }}
             >
-              <Header type="details" />
+              <Header variant="details" />
             </motion.div>
           )}
         </AnimatePresence>
@@ -80,7 +80,7 @@ const id: () => string | JSX.Element = () => {
             <Section
               layoutType="experience"
               extendsTo={[staysDetail["flex__panel"]].join(" ")}
-              type="panel"
+              variant="panel"
               {...experiences[experienceID]}
             />
           ) : null}
@@ -94,7 +94,7 @@ const id: () => string | JSX.Element = () => {
                 {experiences[experienceID] ? (
                   <Section
                     layoutType="experience"
-                    type="characteristics"
+                    variant="characteristics"
                     {...experiences[experienceID]}
                   />
                 ) : null}
@@ -107,7 +107,7 @@ const id: () => string | JSX.Element = () => {
                 >
                   <Section
                     layoutType="experience"
-                    type="description"
+                    variant="description"
                     {...experiences[experienceID]}
                   />
                 </div>
@@ -118,7 +118,10 @@ const id: () => string | JSX.Element = () => {
                     " "
                   )}
                 >
-                  <Section type="participate" {...experiences[experienceID]} />
+                  <Section
+                    variant="participate"
+                    {...experiences[experienceID]}
+                  />
                 </div>
               ) : null}
               {experiences[experienceID] &&
@@ -128,7 +131,7 @@ const id: () => string | JSX.Element = () => {
                     " "
                   )}
                 >
-                  <Section type="bring" {...experiences[experienceID]} />
+                  <Section variant="bring" {...experiences[experienceID]} />
                 </div>
               ) : null}
             </div>
@@ -146,7 +149,7 @@ const id: () => string | JSX.Element = () => {
               >
                 {experiences[experienceID] ? (
                   <Modal
-                    type="booking"
+                    variant="booking"
                     extendsTo={[shape["w--full"]].join(" ")}
                     {...experiences[experienceID]}
                   />
@@ -160,7 +163,7 @@ const id: () => string | JSX.Element = () => {
             >
               <Section
                 layoutType="experience"
-                type="host"
+                variant="host"
                 {...experiences[experienceID]}
               />
             </div>
@@ -169,7 +172,7 @@ const id: () => string | JSX.Element = () => {
             <div
               className={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
             >
-              <Section type="experiences" />
+              <Section variant="experiences" />
             </div>
           ) : null}
           {experiences[experienceID] ? (
@@ -178,7 +181,7 @@ const id: () => string | JSX.Element = () => {
             >
               <Section
                 layoutType="experience"
-                type="reviews"
+                variant="reviews"
                 {...experiences[experienceID]}
               />
             </div>
@@ -189,7 +192,7 @@ const id: () => string | JSX.Element = () => {
             >
               <Section
                 layoutType="experience"
-                type="available"
+                variant="available"
                 {...experiences[experienceID]}
               />
             </div>
@@ -202,7 +205,7 @@ const id: () => string | JSX.Element = () => {
                 space["p-b--64"],
               ].join(" ")}
             >
-              <Section layoutType="experience" type="know" />
+              <Section layoutType="experience" variant="know" />
             </div>
           ) : null}
         </div>
@@ -214,7 +217,7 @@ const id: () => string | JSX.Element = () => {
           ].join(" ")}
           style={{ position: "fixed", bottom: 0, zIndex: 9999 }}
         >
-          <Modal type="availability" />
+          <Modal variant="availability" />
         </div>
       </div>
       {toggleState.auth && (
