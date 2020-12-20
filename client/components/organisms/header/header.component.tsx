@@ -9,11 +9,10 @@ import { StayHeader } from "./header.stay";
 import { TransparentHeader } from "./header.transparent";
 import { WhiteHeader } from "./header.white";
 
-/** props */
-import { HeaderProps } from "./props";
-
-interface mapProps {
-  [key: string]: JSX.Element;
+export interface HeaderProps {
+  extendsTo?: string;
+  type: string;
+  [x: string]: any;
 }
 
 /**
@@ -26,7 +25,9 @@ export const Header: React.FC<HeaderProps> = ({
   extendsTo,
   ...props
 }) => {
-  const types: mapProps = {
+  const types: {
+    [variant: string]: JSX.Element;
+  } = {
     transparent: <TransparentHeader {...props} />,
     white: <WhiteHeader {...props} />,
     details: <DetailsHeader {...props} />,

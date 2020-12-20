@@ -1,9 +1,6 @@
 import React from "react";
 import Router from "next/router";
 
-/** props */
-import { StayHeaderProps } from "./props";
-
 /** styles */
 import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
@@ -21,7 +18,9 @@ import { Button } from "../../../components/atoms/button/button.component";
  * Renders the header for the homes page
  * @param {boolean} spread - Whether if the layout should be spread out or not
  */
-export const StayHeader: React.FC<StayHeaderProps> = ({ title }) => {
+export const StayHeader: React.FC<{
+  title?: string;
+}> = ({ title }) => {
   return (
     <header
       style={{ height: 65 }}

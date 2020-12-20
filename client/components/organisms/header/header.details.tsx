@@ -2,9 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 
-/** props */
-import { DetailsHeaderProps } from "./props";
-
 /** styles */
 import space from "../../../styles/space.module.scss";
 import layout from "../../../styles/layout.module.scss";
@@ -27,10 +24,10 @@ import { useHandleScroll } from "../../../hooks/useHandleScroll";
  * @param {stirng} layoutType - Type of layout
  * @param {boolean} spread - Whether if the layout should be spread out or not
  */
-export const DetailsHeader: React.FC<DetailsHeaderProps> = ({
-  layoutType = "room",
-  spread = false,
-}) => {
+export const DetailsHeader: React.FC<{
+  layoutType?: string;
+  spread?: boolean;
+}> = ({ layoutType = "room", spread = false }) => {
   const scrollPosition = useHandleScroll();
   const items =
     layoutType === "experience"
