@@ -1,9 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Create } from "./create.component";
-
-/** props */
-import { CreateProps } from "./props";
+import { Create, CreateProps } from "./create.component";
 
 /** contexts */
 import { StayProvider } from "../../../context/stay";
@@ -21,74 +18,74 @@ export default {
   ],
 } as Meta;
 
-const Template: Story<CreateProps> = (args) => <Create {...args} />;
+const TemplateStory: Story<CreateProps> = (args) => <Create {...args} />;
 
-export const getStarted = Template.bind({});
+export const getStarted = TemplateStory.bind({});
 getStarted.args = {
-  type: "getstarted",
+  variant: "getstarted",
 };
 
-export const room = Template.bind({});
+export const room = TemplateStory.bind({});
 room.args = {
-  type: "room",
+  variant: "room",
 };
 
-export const bedrooms = Template.bind({});
+export const bedrooms = TemplateStory.bind({});
 bedrooms.args = {
-  type: "bedrooms",
+  variant: "bedrooms",
 };
 
-export const bathrooms = Template.bind({});
+export const bathrooms = TemplateStory.bind({});
 bathrooms.args = {
-  type: "bathrooms",
+  variant: "bathrooms",
 };
 
-export const location = Template.bind({});
+export const location = TemplateStory.bind({});
 location.args = {
-  type: "location",
+  variant: "location",
 };
 
-export const amenities = Template.bind({});
+export const amenities = TemplateStory.bind({});
 amenities.args = {
-  type: "amenities",
+  variant: "amenities",
 };
 
-export const spaces = Template.bind({});
+export const spaces = TemplateStory.bind({});
 spaces.args = {
-  type: "spaces",
+  variant: "spaces",
 };
 
-export const description = Template.bind({});
+export const description = TemplateStory.bind({});
 description.args = {
-  type: "description",
+  variant: "description",
 };
 
-export const title = Template.bind({});
+export const title = TemplateStory.bind({});
 title.args = {
-  type: "title",
+  variant: "title",
 };
 
-export const phone = Template.bind({});
+export const phone = TemplateStory.bind({});
 phone.args = {
-  type: "phone",
+  variant: "phone",
 };
 
-export const requirements = Template.bind({});
+export const requirements = TemplateStory.bind({});
 requirements.args = {
-  type: "requirements",
+  variant: "requirements",
 };
 
-export const rules = Template.bind({});
+export const rules = TemplateStory.bind({});
 rules.args = {
-  type: "rules",
+  variant: "rules",
 };
 
-export const checkin = Template.bind({});
+export const checkin = TemplateStory.bind({});
 checkin.args = {
-  type: "checkin",
+  variant: "checkin",
 };
 
-export const advance = Template.bind({});
+export const advance = TemplateStory.bind({});
 advance.args = {
-  type: "advance",
+  variant: "advance",
 };

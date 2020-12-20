@@ -33,7 +33,7 @@ const TitlePage = () => {
       left={
         <Create
           title="Description and title"
-          type="title"
+          variant="title"
           data={data}
           setData={setData}
         />

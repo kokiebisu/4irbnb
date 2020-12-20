@@ -35,7 +35,7 @@ const BathroomsPage = () => {
       left={
         <Create
           title="Property and guests"
-          type="bathrooms"
+          variant="bathrooms"
           data={data}
           setData={setData}
         />

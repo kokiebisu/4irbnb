@@ -16,8 +16,10 @@ import { RulesCreate } from "./create.rules";
 import { SpacesCreate } from "./create.spaces";
 import { TitleCreate } from "./create.title";
 
-/** props */
-import { CreateProps } from "./props";
+export interface CreateProps {
+  type?: string;
+  [x: string]: any;
+}
 
 export const Create: React.FC<CreateProps> = ({
   type = "getstarted",

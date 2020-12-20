@@ -38,7 +38,7 @@ const DescriptionPage = () => {
       left={
         <Create
           title="Booking settings"
-          type="rules"
+          variant="rules"
           data={data}
           setData={setData}
         />

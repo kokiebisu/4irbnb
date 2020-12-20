@@ -8,6 +8,9 @@ import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
+/**
+ * Renders the /become-a-host/spaces page content
+ */
 export const SpacesCreate: React.FC<{
   data?: any;
   setData?: any;

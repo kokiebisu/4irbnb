@@ -37,7 +37,7 @@ const BecomeAHostPage = () => {
                 width: "100%",
               }}
             >
-              <Create type="getstarted" />
+              <Create variant="getstarted" />
             </div>
           </div>
           <div

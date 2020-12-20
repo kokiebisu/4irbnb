@@ -38,7 +38,7 @@ const BedRoomsPage = () => {
       left={
         <Create
           title="Location"
-          type="location"
+          variant="location"
           data={data}
           setData={setData}
         />

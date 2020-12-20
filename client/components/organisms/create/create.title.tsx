@@ -8,6 +8,11 @@ import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
+/**
+ * Renders the /become-a-host/title
+ * @param {object} data - Input data
+ * @param {function} setData - Changes the input data
+ */
 export const TitleCreate: React.FC<{ data?: any; setData?: any }> = ({
   data = { title: "Title here" },
   setData,
