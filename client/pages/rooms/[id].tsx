@@ -36,7 +36,10 @@ const id: () => string | JSX.Element = () => {
     <>
       <div>
         <div style={{ position: "relative", zIndex: 9000 }}>
-          <Header extendsTo={[details["w__wrapper"]].join(" ")} type="white" />
+          <Header
+            extendsTo={[details["w__wrapper"]].join(" ")}
+            variant="white"
+          />
         </div>
         <AnimatePresence>
           {scrollPosition > 506 && (
@@ -52,7 +55,7 @@ const id: () => string | JSX.Element = () => {
                 width: "100%",
               }}
             >
-              <Header type="details" />
+              <Header variant="details" />
             </motion.div>
           )}
         </AnimatePresence>

@@ -32,7 +32,7 @@ const HowGuestsWillBookPage = () => {
     <div>
       <div style={{ position: "sticky", zIndex: 9999, top: 0 }}>
         <div>
-          <Header type="stay" title="Booking settings" />
+          <Header variant="stay" title="Booking settings" />
         </div>
         <div>
           <Bar variant="progress" percentage={80} />

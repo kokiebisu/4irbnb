@@ -27,7 +27,7 @@ export const CreateLayout: React.FC<CreateLayoutProps> = ({
     <div>
       <div style={{ position: "sticky", zIndex: 9999, top: 0 }}>
         <div>
-          <Header type="stay" title={title} />
+          <Header variant="stay" title={title} />
         </div>
         <div>
           <Bar variant="progress" percentage={percentage} />
