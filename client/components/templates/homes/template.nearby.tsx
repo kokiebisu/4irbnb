@@ -139,7 +139,7 @@ export const NearbyTemplate: React.FC<NearbyTemplateProps> = ({
                 layout["justify-center"],
               ].join(" ")}
             >
-              <Bar type="paginate" animate />
+              <Bar variant="paginate" animate />
             </div>
           </div>
           <div className={[space["p--24"], color["bg--white__1"]].join(" ")}>

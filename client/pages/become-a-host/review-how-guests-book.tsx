@@ -35,7 +35,7 @@ const HowGuestsWillBookPage = () => {
           <Header type="stay" title="Booking settings" />
         </div>
         <div>
-          <Bar type="progress" percentage={80} />
+          <Bar variant="progress" percentage={80} />
         </div>
       </div>
       <div style={{ padding: "50px 0" }}>
@@ -95,7 +95,7 @@ const HowGuestsWillBookPage = () => {
             }}
           >
             <div style={{ width: "100%", maxWidth: 700, margin: "0 auto" }}>
-              <Bar type="create" next={proceed} back={revert} />
+              <Bar variant="create" next={proceed} back={revert} />
             </div>
           </div>
         </div>

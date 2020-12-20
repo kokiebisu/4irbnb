@@ -99,7 +99,7 @@ export const CategoryTemplate: React.FC<CategoryTemplateProps> = ({
                 layout["justify-center"],
               ].join(" ")}
             >
-              <Bar type="paginate" animate />
+              <Bar variant="paginate" animate />
             </div>
           </div>
         </div>
