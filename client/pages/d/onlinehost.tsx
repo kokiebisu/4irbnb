@@ -23,7 +23,7 @@ const OnlineHost = () => {
       </div>
       <div>
         <div className={[layout["container"]].join(" ")}>
-          <Banner type="onlinehost" />
+          <Banner variant="onlinehost" />
         </div>
       </div>
       <div className={[layout["container"]].join(" ")}>

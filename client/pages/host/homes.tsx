@@ -24,7 +24,7 @@ const Homes: () => string | JSX.Element = () => {
         <Header type="homes" />
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
-        <Banner type="homes" />
+        <Banner variant="homes" />
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
         <div className={`${[space["p__homes"]].join(" ")}`}>
