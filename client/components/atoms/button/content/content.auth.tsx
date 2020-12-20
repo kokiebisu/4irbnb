@@ -1,7 +1,7 @@
 import React from "react";
 
 /** contexts */
-import { useAuthDispatch, useAuthState } from "../../../../context/auth";
+import { useAuthDispatch, useAuthState } from "@context/auth";
 
 /** vectors */
 import { Email } from "@svg/original";

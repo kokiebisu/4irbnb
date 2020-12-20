@@ -17,6 +17,7 @@
     "paths": {
       "@bullet/*": ["components/atoms/bullet/*"],
       "@button/*": ["components/atoms/button/*"],
+      "@input/*": ["components/atoms/input/*"],
       "@molecules/*": ["components/molecules/*"],
       "@organisms/*": ["components/organisms/*"],
       "@particles/*": ["components/particles/*"],
@@ -24,7 +25,9 @@
       "@animation/*": ["components/animation/*"],
       "@styles/*": ["styles/*"],
       "@svg/*": ["public/svg/*"],
-      "@helper/*": ["helper/*"]
+      "@helper/*": ["helper/*"],
+      "@hooks/*": ["hooks/*"],
+      "@context/*": ["context/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".storybook/**/*"],
