@@ -29,9 +29,14 @@ const AmenitiesPage = () => {
 
   return (
     <Layout
-      type="create"
+      variant="create"
       left={
-        <Create title="Amenities" type="spaces" data={data} setData={setData} />
+        <Create
+          title="Amenities"
+          variant="spaces"
+          data={data}
+          setData={setData}
+        />
       }
       percentage={50}
       next={proceed}

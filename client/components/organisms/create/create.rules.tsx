@@ -8,6 +8,11 @@ import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
+/**
+ * Renders the /become-a-host/rules page content
+ * @param {object} data - Input data
+ * @param {function} setData - Changes the input data
+ */
 export const RulesCreate: React.FC<{
   data?: any;
   setData?: (params: any) => void;
@@ -26,9 +31,6 @@ export const RulesCreate: React.FC<{
     }
   };
 
-  console.log("data.events", data.event);
-  console.log("data smoking", data.smoking);
-
   return (
     <div>
       <div>
@@ -44,7 +46,7 @@ export const RulesCreate: React.FC<{
       <div className={[space["m-b--22"]].join(" ")}>
         <div className={[space["m-v--12"]].join(" ")}>
           <Input
-            type="closed"
+            variant="closed"
             title="Smoking allowed"
             data={data}
             setData={setData}
@@ -53,7 +55,7 @@ export const RulesCreate: React.FC<{
         </div>
         <div className={[space["m-v--12"]].join(" ")}>
           <Input
-            type="closed"
+            variant="closed"
             title="Events allowed"
             data={data}
             setData={setData}
@@ -84,7 +86,7 @@ export const RulesCreate: React.FC<{
               <Input
                 check={() => modify("details", item)}
                 checked={data.details.includes(item)}
-                type="checkbox"
+                variant="checkbox"
                 title={title}
               />
             </div>

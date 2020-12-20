@@ -20,18 +20,26 @@ import { LimitInput } from "./input.limit";
 import { VerifyInput } from "./input.verify";
 import { ClosedInput } from "./input.closed";
 
-/** props */
-import { InputProps } from "./props";
-
 /** styles **/
 import shape from "../../../styles/shape.module.scss";
 
+export interface InputProps {
+  extendsTo?: string;
+  variant?: string;
+  spread?: boolean;
+  [property: string]: any;
+}
+
 /**
  * Bundles the input components
- * @param {string} type - Specifies the type of input component
+ * @param {string} variant - Specifies the variant of input component
  */
-export const Input: React.FC<InputProps> = ({ type, spread, ...props }) => {
-  const types = {
+export const Input: React.FC<InputProps> = ({
+  variant = "text",
+  spread,
+  ...props
+}) => {
+  const variants = {
     email: <EmailInput {...props} />,
     password: <PasswordInput {...props} />,
     name: <NameInput {...props} />,
@@ -53,8 +61,11 @@ export const Input: React.FC<InputProps> = ({ type, spread, ...props }) => {
   };
 
   return (
-    <div className={spread && [shape["w--full"]].join(" ")} data-testid="input">
-      {types[type]}
+    <div
+      className={spread && [shape["w--full"]].join(" ")}
+      data-testid={`${variant}-input`}
+    >
+      {variants[variant]}
     </div>
   );
 };

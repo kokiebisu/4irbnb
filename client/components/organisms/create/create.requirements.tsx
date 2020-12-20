@@ -8,6 +8,9 @@ import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";
 import space from "../../../styles/space.module.scss";
 
+/**
+ * Renders the /become-a-host/requirements page content
+ */
 export const RequirementsCreate: React.FC<{}> = () => {
   return (
     <div>
@@ -31,7 +34,7 @@ export const RequirementsCreate: React.FC<{}> = () => {
           (content, index) => {
             return (
               <div key={index} className={[space["m-b--8"]].join(" ")}>
-                <Bullet type="check" title={content} />
+                <Bullet variant="check" title={content} />
               </div>
             );
           }
@@ -54,7 +57,7 @@ export const RequirementsCreate: React.FC<{}> = () => {
       ].map((content, index) => {
         return (
           <div key={index} className={[space["m-b--8"]].join(" ")}>
-            <Bullet type="check" title={content} />
+            <Bullet variant="check" title={content} />
           </div>
         );
       })}

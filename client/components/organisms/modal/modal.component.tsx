@@ -16,25 +16,23 @@ import { GlobeModal } from "./modal.globe";
 /** contexts */
 import { useToggleDispatch } from "../../../context/toggle";
 
-interface mapProps {
-  [key: string]: JSX.Element;
-}
-
-/**
- * Bundles all the modal components
- * @param {string} type - Type of modal component
- * @param {string} extendsTo - Adds custom styling to the specified component
- * @param {string} dispatchType - The type of dispatch
- */
-export const Modal: React.FC<{
-  type?: string;
+export interface ModalProps {
+  variant: string;
   extendsTo?: string;
   dispatch?: any;
   animate?: string;
   lock?: boolean;
   criteria?: any;
-}> = ({
-  type,
+}
+
+/**
+ * Bundles all the modal components
+ * @param {string} variant - Variant of modal component
+ * @param {string} extendsTo - Adds custom styling to the specified component
+ * @param {string} dispatchType - The type of dispatch
+ */
+export const Modal: React.FC<ModalProps> = ({
+  variant,
   extendsTo,
   dispatch,
   animate = "default",
@@ -64,7 +62,9 @@ export const Modal: React.FC<{
     },
   };
 
-  const types: mapProps = {
+  const variants: {
+    [variant: string]: JSX.Element;
+  } = {
     privacy: <PrivacyModal {...props} />,
     menu: <MenuModal {...props} />,
     auth: <AuthModal {...props} />,
@@ -75,26 +75,28 @@ export const Modal: React.FC<{
 
   if (criteria !== undefined) {
     return (
-      <AnimatePresence>
-        {criteria && (
-          <motion.div
-            data-testid="modal"
-            exit={{ opacity: 0 }}
-            initial={animation[animate].initial}
-            animate={animation[animate].animate}
-            transition={animation[animate].transition}
-            ref={containerRef}
-            className={extendsTo}
-          >
-            {types[type]}
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div className={extendsTo} data-testid={`${variant}-modal`}>
+        <AnimatePresence>
+          {criteria && (
+            <motion.div
+              data-testid="modal"
+              exit={{ opacity: 0 }}
+              initial={animation[animate].initial}
+              animate={animation[animate].animate}
+              transition={animation[animate].transition}
+              ref={containerRef}
+              className={extendsTo}
+            >
+              {variants[variant]}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     );
   }
   return (
-    <div className={extendsTo} data-testid="modal">
-      {types[type]}
+    <div className={extendsTo} data-testid={`${variant}-modal`}>
+      {variants[variant]}
     </div>
   );
 };

@@ -32,10 +32,10 @@ const HowGuestsWillBookPage = () => {
     <div>
       <div style={{ position: "sticky", zIndex: 9999, top: 0 }}>
         <div>
-          <Header type="stay" title="Booking settings" />
+          <Header variant="stay" title="Booking settings" />
         </div>
         <div>
-          <Bar type="progress" percentage={80} />
+          <Bar variant="progress" percentage={80} />
         </div>
       </div>
       <div style={{ padding: "50px 0" }}>
@@ -53,7 +53,7 @@ const HowGuestsWillBookPage = () => {
           >
             {["qualified", "control", "notified"].map((how, index) => (
               <div>
-                <Card type="how" how={how} />
+                <Card variant="how" how={how} />
               </div>
             ))}
           </div>
@@ -95,7 +95,7 @@ const HowGuestsWillBookPage = () => {
             }}
           >
             <div style={{ width: "100%", maxWidth: 700, margin: "0 auto" }}>
-              <Bar type="create" next={proceed} back={revert} />
+              <Bar variant="create" next={proceed} back={revert} />
             </div>
           </div>
         </div>

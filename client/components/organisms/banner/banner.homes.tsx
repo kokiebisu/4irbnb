@@ -8,9 +8,6 @@ import font from "../../../styles/font.module.scss";
 import banner from "./banner.module.scss";
 import responsive from "../../../styles/responsive.module.scss";
 
-/** props */
-import { HomesBannerProps } from "./props";
-
 /** components */
 import { Button } from "../../../components/atoms/button/button.component";
 import { Card } from "../../molecules/card/card.component";
@@ -28,7 +25,14 @@ import {
  * Renders the homes banner
  * @param {Object[]} hosts - List of hosts
  */
-export const HomesBanner: React.FC<HomesBannerProps> = ({
+export const HomesBanner: React.FC<{
+  hosts?: {
+    name: string;
+    stayType: string;
+    location: string;
+    imgUrl: string;
+  }[];
+}> = ({
   hosts = [
     {
       name: "Darrel",
@@ -154,7 +158,7 @@ export const HomesBanner: React.FC<HomesBannerProps> = ({
                   className={[space["m-r--16"]].join(" ")}
                 >
                   <Card
-                    type="host"
+                    variant="host"
                     host={name}
                     imgUrl={imgUrl}
                     stayType={stayType}

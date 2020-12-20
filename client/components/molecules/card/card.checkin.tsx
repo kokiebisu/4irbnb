@@ -1,7 +1,4 @@
-import React, { useReducer } from "react";
-
-/** props */
-import { CheckInCardProps } from "./props";
+import React from "react";
 
 /** styles **/
 import card from "./card.module.scss";
@@ -10,6 +7,13 @@ import layout from "../../../styles/layout.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import color from "../../../styles/color.module.scss";
 import font from "../../../styles/font.module.scss";
+
+/** vectors */
+import { Star } from "../../../public/svg/original";
+import { ChevronDown } from "../../../public/svg/regular";
+
+/** logic */
+import { useCheckin } from "./logic/logic.checkin";
 import {
   checkInBorder,
   checkOutBorder,
@@ -17,20 +21,11 @@ import {
 } from "./logic/logic.checkin";
 
 /**
- * Vectors
- */
-import { Star } from "../../../public/svg/original";
-import { ChevronDown } from "../../../public/svg/regular";
-
-/**
- * Logic
- */
-import { useCheckin } from "./logic/logic.checkin";
-
-/**
  * Renders the checkin card
  */
-export const CheckInCard: React.FC<CheckInCardProps> = () => {
+export const CheckInCard: React.FC<{
+  length?: number;
+}> = () => {
   const [selected, dispatchSelected] = useCheckin();
 
   return (

@@ -1,8 +1,5 @@
 import React from "react";
 
-/** props */
-import { ParticipateCardProps } from "./props";
-
 /** styles **/
 import space from "../../../styles/space.module.scss";
 import color from "../../../styles/color.module.scss";
@@ -16,9 +13,9 @@ import { getParticipateContent } from "./logic/logic.participate";
  * Renders the participate card component
  * @param {string} categoryType - Type of participate card
  */
-export const ParticipateCard: React.FC<ParticipateCardProps> = ({
-  categoryType = "call",
-}) => {
+export const ParticipateCard: React.FC<{
+  categoryType?: string;
+}> = ({ categoryType = "call" }) => {
   const participates = getParticipateContent();
   return (
     <div

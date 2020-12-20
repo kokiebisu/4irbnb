@@ -38,7 +38,7 @@ const StaysPage: () => string | JSX.Element = () => {
         style={{ top: 0, zIndex: 10 }}
         className={[layout["sticky"]].join(" ")}
       >
-        <Header type="white" spread />
+        <Header variant="white" spread />
       </div>
       <div
         style={{

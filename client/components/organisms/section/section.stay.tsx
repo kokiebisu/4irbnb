@@ -13,9 +13,6 @@ import section from "./section.module.scss";
 import { Card } from "../../molecules/card/card.component";
 import { Button } from "../../../components/atoms/button/button.component";
 
-/** props */
-import { StaySectionProps } from "./props";
-
 /** stories */
 import { paginate } from "../../../components/atoms/button/button.stories";
 
@@ -30,7 +27,18 @@ import { paginate } from "../../../components/atoms/button/button.stories";
  * @param {boolean} isDescription - Whether if the section includes a subtitle
  * @param {Object[]} items - Displaying items
  */
-export const StaySection: React.FC<StaySectionProps> = ({
+export const StaySection: React.FC<{
+  title?: string;
+  description?: string;
+  pagination?: boolean;
+  showAll?: any;
+  type?: string;
+  carouselType?: string;
+  save?: boolean;
+  items?: { card: any; to: string }[];
+  isDescription?: boolean;
+  fetchUrl?: string;
+}> = ({
   title = "Section Title",
   description = "Section Description",
   pagination = false,
@@ -88,7 +96,7 @@ export const StaySection: React.FC<StaySectionProps> = ({
                   }}
                 >
                   <Card
-                    type="typestay"
+                    variant="typestay"
                     card={item && item.card}
                     to={item && item.to}
                   />
@@ -196,7 +204,7 @@ export const StaySection: React.FC<StaySectionProps> = ({
                     className={[space["m-b--10"], space["m-r--16"]].join(" ")}
                   >
                     <Card
-                      type="horizontal"
+                      variant="horizontal"
                       card={item && item.card}
                       to={item && item.to}
                       save={save}
@@ -303,7 +311,7 @@ export const StaySection: React.FC<StaySectionProps> = ({
               return (
                 <div key={index} className={evaluateNumber(index)}>
                   <Card
-                    type="horizontal"
+                    variant="horizontal"
                     card={item && item.card}
                     to={item && item.to}
                     save={save}

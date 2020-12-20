@@ -6,24 +6,27 @@ import { HomesBanner } from "./banner.homes";
 import { LandingBanner } from "./banner.landing";
 import { OnlineHostBanner } from "./banner.onlinehost";
 
-/** props */
-import { BannerProps } from "./props";
+export interface BannerProps {
+  extendsTo?: string;
+  variant: string;
+  [property: string]: any;
+}
 
 /**
  * Bundles the banner components
  * @param {string} extendsTo - Adds custom style to the selected component
- * @param {type} type - Specifies type of section component
+ * @param {string} variant - Specifies type of section component
  */
 export const Banner: React.FC<BannerProps> = ({
-  type,
+  variant = "homes",
   extendsTo,
   ...props
 }) => {
-  const types = {
+  const variants = {
     homes: <HomesBanner {...props} />,
     experiences: <ExperiencesBanner {...props} />,
     landing: <LandingBanner {...props} />,
     onlinehost: <OnlineHostBanner {...props} />,
   };
-  return <div className={extendsTo}>{types[type]}</div>;
+  return <div className={extendsTo}>{variants[variant]}</div>;
 };

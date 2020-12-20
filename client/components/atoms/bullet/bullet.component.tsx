@@ -15,23 +15,26 @@ import { QuestionBullet } from "./bullet.question";
 import { RatingBullet } from "./bullet.rating";
 import { RequiredBullet } from "./bullet.required";
 import { ScoreBullet } from "./bullet.score";
-import { BulletProps } from "./props";
 
-interface mapProps {
-  [key: string]: JSX.Element;
+export interface BulletProps {
+  extendsTo?: string;
+  variant: string;
+  [x: string]: any;
 }
 
 /**
  * Bundles the bullet components
- * @param {string} extendsTo - Adds custom styling to the bullet component
- * @param {string} type - Specifies the type of section component
+ * @param {string} extendsTo - Adds custom styyling to the bullet component
+ * @param {string} variant - Specify the variant of the bullet
  */
 export const Bullet: React.FC<BulletProps> = ({
   extendsTo,
-  type,
+  variant,
   ...props
 }) => {
-  const types: mapProps = {
+  const variants: {
+    [property: string]: JSX.Element;
+  } = {
     characteristic: <CharacteristicBullet {...props} />,
     amenity: <AmenityBullet {...props} />,
     score: <ScoreBullet {...props} />,
@@ -49,8 +52,8 @@ export const Bullet: React.FC<BulletProps> = ({
   };
 
   return (
-    <div data-testid="bullet" className={extendsTo}>
-      {types[type]}
+    <div data-testid={`${variant}-bullet`} className={extendsTo}>
+      {variants[variant]}
     </div>
   );
 };

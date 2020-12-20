@@ -14,11 +14,7 @@ import layout from "../../../styles/layout.module.scss";
 import { Input } from "../../atoms/input/input.component";
 import { Button } from "../../atoms/button/button.component";
 import { Bullet } from "../../atoms/bullet/bullet.component";
-import { Animation } from "../../animation/animation.component";
 import { Card } from "../../molecules/card/card.component";
-
-/** props */
-import { LoginTemplateProps } from "./props";
 
 /** Helper */
 import { validateLogin as validate } from "../../../helper/auth";
@@ -35,7 +31,7 @@ import {
 /**
  * Renders the login template component
  */
-export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
+export const LoginTemplate: React.FC<{}> = () => {
   const authState = useAuthState();
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("pending");
@@ -85,21 +81,21 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
     <div className={[space["p--24"]].join(" ")}>
       {status === "fail" && (
         <div className={[space["m-b--16"]].join(" ")}>
-          <Card type="again" />
+          <Card variant="again" />
         </div>
       )}
       <form onSubmit={formik.handleSubmit}>
         <div>
           <div>
             <Input
-              type="email"
+              variant="email"
               direction="bottom"
               handleChange={formik.handleChange}
               value={formik.values.email}
               errors={formik.errors.email !== undefined}
             />
             <Input
-              type="password"
+              variant="password"
               direction="top"
               handleChange={formik.handleChange}
               value={formik.values.password}
@@ -109,20 +105,20 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
           <div>
             {formik.errors.email !== undefined && (
               <div className={[space["m-t--6"]].join(" ")}>
-                <Bullet type="required" message={formik.errors.email} />
+                <Bullet variant="required" message={formik.errors.email} />
               </div>
             )}
           </div>
           <div>
             {formik.errors.password !== undefined && (
               <div className={[space["m-t--6"]].join(" ")}>
-                <Bullet type="required" message={formik.errors.password} />
+                <Bullet variant="required" message={formik.errors.password} />
               </div>
             )}
           </div>
           {status === "success" && (
             <div className={[space["m-t--16"]].join(" ")}>
-              <Card type="set" />
+              <Card variant="set" />
             </div>
           )}
         </div>

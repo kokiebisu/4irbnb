@@ -1,8 +1,14 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Template } from "../template.component";
+import { Template, TemplateProps } from "../template.component";
 import { ContextProvider } from "../../../context/provider";
-import { TemplateProps } from "../props";
+
+/** styles */
+import button from "../../atoms/button/button.module.scss";
+import color from "../../../styles/color.module.scss";
+import layout from "../../../styles/layout.module.scss";
+import shape from "../../../styles/shape.module.scss";
+import space from "../../../styles/space.module.scss";
 
 export default {
   title: "Design System/Templates/Auth",
@@ -17,11 +23,11 @@ export default {
   ],
 } as Meta;
 
-const TemplateStories: Story<TemplateProps> = (args) => <Template {...args} />;
+const TemplateStory: Story<TemplateProps> = (args) => <Template {...args} />;
 
-export const auth = TemplateStories.bind({});
+export const auth = TemplateStory.bind({});
 auth.args = {
-  type: "auth",
+  variant: "auth",
   extendsTo: [
     button["hover__auth"],
     color["bg--transparent"],
@@ -33,22 +39,22 @@ auth.args = {
   ].join(" "),
 };
 
-// export const login = TemplateStories.bind({});
-// login.args = {
-//   type: 'login',
-// };
+export const login = TemplateStory.bind({});
+login.args = {
+  variant: "login",
+};
 
-// export const signup = TemplateStories.bind({});
-// signup.args = {
-//   type: 'signup',
-// };
+export const signup = TemplateStory.bind({});
+signup.args = {
+  variant: "signup",
+};
 
-// export const forgotpassword = TemplateStories.bind({});
-// forgotpassword.args = {
-//   type: 'forgotpassword',
-// };
+export const forgotpassword = TemplateStory.bind({});
+forgotpassword.args = {
+  variant: "forgotpassword",
+};
 
-// export const exists = TemplateStories.bind({});
-// exists.args = {
-//   type: 'exists',
-// };
+export const exists = TemplateStory.bind({});
+exists.args = {
+  variant: "exists",
+};
