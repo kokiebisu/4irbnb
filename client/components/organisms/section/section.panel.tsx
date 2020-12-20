@@ -2,16 +2,16 @@ import React from "react";
 import Link from "next/link";
 
 /** styles */
-import layout from "../../../styles/layout.module.scss";
-import staysDetail from "../../../styles/staysDetail.module.scss";
-import color from "../../../styles/color.module.scss";
-import font from "../../../styles/font.module.scss";
-import space from "../../../styles/space.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import section from "./section.module.scss";
+import layout from "@styles/layout.module.scss";
+import staysDetail from "@styles/staysDetail.module.scss";
+import color from "@styles/color.module.scss";
+import font from "@styles/font.module.scss";
+import space from "@styles/space.module.scss";
+import shape from "@styles/shape.module.scss";
+import section from "@section/section.module.scss";
 
 /** vectors */
-import { Heart, Star, Share, Superhost } from "../../../public/svg/original";
+import { Heart, Star, Share, Superhost } from "@svg/original";
 
 /**
  * Renders the panel section

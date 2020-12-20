@@ -1,20 +1,20 @@
 import React from "react";
 
 /** components */
-import { AdvanceCreate } from "./create.advance";
-import { AmenitiesCreate } from "./create.amenities";
-import { BathroomsCreate } from "./create.bathrooms";
-import { BedroomsCreate } from "./create.bedrooms";
-import { CheckInCreate } from "./create.checkin";
-import { DescriptionCreate } from "./create.description";
-import { GetStartedCreate } from "./create.getstarted";
-import { LocationCreate } from "./create.location";
-import { PhoneCreate } from "./create.phone";
-import { RequirementsCreate } from "./create.requirements";
-import { RoomCreate } from "./create.room";
-import { RulesCreate } from "./create.rules";
-import { SpacesCreate } from "./create.spaces";
-import { TitleCreate } from "./create.title";
+import { AdvanceCreate } from "@create/create.advance";
+import { AmenitiesCreate } from "@create/create.amenities";
+import { BathroomsCreate } from "@create/create.bathrooms";
+import { BedroomsCreate } from "@create/create.bedrooms";
+import { CheckInCreate } from "@create/create.checkin";
+import { DescriptionCreate } from "@create/create.description";
+import { GetStartedCreate } from "@create/create.getstarted";
+import { LocationCreate } from "@create/create.location";
+import { PhoneCreate } from "@create/create.phone";
+import { RequirementsCreate } from "@create/create.requirements";
+import { RoomCreate } from "@create/create.room";
+import { RulesCreate } from "@create/create.rules";
+import { SpacesCreate } from "@create/create.spaces";
+import { TitleCreate } from "@create/create.title";
 
 export interface CreateProps {
   variant?: string;

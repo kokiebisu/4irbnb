@@ -12,12 +12,12 @@ import {
   Caution,
   Check,
   Cleaning,
-} from "../../../public/svg/original";
+} from "@svg/original";
 
 /** styles **/
-import font from "../../../styles/font.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import space from "../../../styles/space.module.scss";
+import font from "@styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
 
 /**
  * Renders the know bullet

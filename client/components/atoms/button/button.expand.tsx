@@ -2,21 +2,18 @@ import React from "react";
 import Link from "next/link";
 
 /** styles */
-import font from "../../../styles/font.module.scss";
-import layout from "../../../styles/layout.module.scss";
+import font from "@styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
 
 /** vectors */
-import { ChevronRight } from "../../../public/svg/regular";
-
-/** props */
-import { ExpandButtonProps } from "./props";
+import { ChevronRight } from "@svg/regular";
 
 /**
  * Renders the expand button
  * @param {string} to - Redirects to the path being specified
  * @param {string} title - Title of the button
  */
-export const ExpandButton: React.FC<ExpandButtonProps> = ({
+export const ExpandButton: React.FC<{ to?: string; title?: string }> = ({
   to = "/",
   title = "Button",
 }) => {

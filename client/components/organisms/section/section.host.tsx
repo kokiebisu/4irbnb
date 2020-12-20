@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 
 /** styles **/
-import color from "../../../styles/color.module.scss";
-import font from "../../../styles/font.module.scss";
-import space from "../../../styles/space.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import section from "./section.module.scss";
+import color from "@styles/color.module.scss";
+import font from "@styles/font.module.scss";
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import shape from "@styles/shape.module.scss";
+import section from "@section/section.module.scss";
 
 /** components */
-import { Button } from "../../../components/atoms/button/button.component";
-import { Bullet } from "../../../components/atoms/bullet/bullet.component";
+import { Button } from "@button/button.component";
+import { Bullet } from "@bullet/bullet.component";
 
 /** vectors */
-import { Shield } from "../../../public/svg/original";
+import { Shield } from "@svg/original";
 
 /** stories */
-import { border } from "../../../components/atoms/button/button.stories";
+import { border } from "@button/button.stories";
 
 /**
  * Modifies the content which should be displayed initially

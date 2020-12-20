@@ -3,30 +3,27 @@ import { useFormik } from "formik";
 import Router from "next/router";
 
 /** contexts */
-import { useAuthDispatch, useAuthState } from "../../../context/auth";
+import { useAuthDispatch, useAuthState } from "@context/auth";
 
 /** styles **/
-import space from "../../../styles/space.module.scss";
-import font from "../../../styles/font.module.scss";
-import layout from "../../../styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import font from "@styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
 
 /** components */
-import { Input } from "../../atoms/input/input.component";
-import { Button } from "../../atoms/button/button.component";
-import { Bullet } from "../../atoms/bullet/bullet.component";
-import { Card } from "../../molecules/card/card.component";
+import { Input } from "@input/input.component";
+import { Button } from "@button/button.component";
+import { Bullet } from "@bullet/bullet.component";
+import { Card } from "@card/card.component";
 
 /** Helper */
-import { validateLogin as validate } from "../../../helper/auth";
+import { validateLogin as validate } from "@helper/auth";
 
 /** hooks */
-import { useFetch } from "../../../hooks/useFetch";
+import { useFetch } from "@hooks/useFetch";
 
 /** stories */
-import {
-  primary,
-  underline,
-} from "../../../components/atoms/button/button.stories";
+import { primary, underline } from "@button/button.stories";
 
 /**
  * Renders the login template component

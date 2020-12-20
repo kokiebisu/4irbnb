@@ -1,20 +1,17 @@
 import React from "react";
 
 /** styles */
-import modal from "./modal.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import color from "../../../styles/color.module.scss";
-import space from "../../../styles/space.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import font from "../../../styles/font.module.scss";
-import responsive from "../../../styles/responsive.module.scss";
+import modal from "@modal/modal.module.scss";
+import shape from "@styles/shape.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import font from "@styles/font.module.scss";
+import responsive from "@styles/responsive.module.scss";
 
 /** components */
-import { Button } from "../../../components/atoms/button/button.component";
-import {
-  primary,
-  border,
-} from "../../../components/atoms/button/button.stories";
+import { Button } from "@button/button.component";
+import { primary, border } from "@button/button.stories";
 
 /**
  * Renders the booking modal

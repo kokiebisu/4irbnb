@@ -2,30 +2,30 @@ import React from "react";
 import Router from "next/router";
 
 /** styles */
-import space from "../../../styles/space.module.scss";
-import styles from "../../../styles/index.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import color from "../../../styles/color.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import font from "../../../styles/font.module.scss";
-import header from "./header.module.scss";
+import space from "@styles/space.module.scss";
+import styles from "@styles/index.module.scss";
+import layout from "@styles/layout.module.scss";
+import color from "@styles/color.module.scss";
+import shape from "@styles/shape.module.scss";
+import font from "@styles/font.module.scss";
+import header from "@header/header.module.scss";
 
 /** components */
-import { menu as menuModal } from "../../organisms/modal/modal.stories";
-import { Modal } from "../modal/modal.component";
-import { Button } from "../../../components/atoms/button/button.component";
+import { menu as menuModal } from "@modal/modal.stories";
+import { Modal } from "@modal/modal.component";
+import { Button } from "@button/button.component";
 
 /** vectors */
-import { NameLogo, NoNameLogo } from "../../../public/svg/logo";
-import { MagnifyGlass } from "../../../public/svg/original";
+import { NameLogo, NoNameLogo } from "@svg/logo";
+import { MagnifyGlass } from "@svg/original";
 
 /** contexts */
-import { useToggleDispatch, useToggleState } from "../../../context/toggle";
+import { useToggleDispatch, useToggleState } from "@context/toggle";
 
 /** stories */
-import { menu as menuButton } from "../../../components/atoms/button/button.stories";
-import { Bar } from "../bar/bar.component";
-import { Content } from "../../../components/atoms/button/content/content.transparent";
+import { menu as menuButton } from "@button/button.stories";
+import { Bar } from "@bar/bar.component";
+import { Content } from "@button/content/content.transparent";
 
 /**
  * Renders the transparent header

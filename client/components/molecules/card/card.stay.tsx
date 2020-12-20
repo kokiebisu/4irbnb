@@ -1,20 +1,20 @@
 import React from "react";
 
 /** styles **/
-import shape from "../../../styles/shape.module.scss";
-import color from "../../../styles/color.module.scss";
-import font from "../../../styles/font.module.scss";
-import space from "../../../styles/space.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import responsive from "../../../styles/responsive.module.scss";
+import shape from "@styles/shape.module.scss";
+import color from "@styles/color.module.scss";
+import font from "@styles/font.module.scss";
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import responsive from "@styles/responsive.module.scss";
 
 /** vectors */
-import { Heart } from "../../../public/svg/original";
+import { Heart } from "@svg/original";
 
 /** components */
-import { Bullet } from "../../atoms/bullet/bullet.component";
-import { ImageSlider } from "../../particles/image.slider";
-import { Card } from "./card.component";
+import { Bullet } from "@bullet/bullet.component";
+import { ImageSlider } from "@particle/image.slider";
+import { Card } from "@card/card.component";
 
 /**
  * Renders the stay card component

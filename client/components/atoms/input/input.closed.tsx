@@ -1,9 +1,9 @@
 import React from "react";
 
 /** styles */
-import layout from "../../../styles/layout.module.scss";
-import space from "../../../styles/space.module.scss";
-import font from "../../../styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import font from "@styles/font.module.scss";
 
 /** components */
 import { Button } from "../button/button.component";

@@ -1,10 +1,10 @@
 import React from "react";
 
 /** styles */
-import font from "../../../styles/font.module.scss";
-import color from "../../../styles/color.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import space from "../../../styles/space.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
 
 export const CovidBar: React.FC<{}> = () => {
   return (

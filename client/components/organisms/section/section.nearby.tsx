@@ -1,17 +1,17 @@
 import React from "react";
 
 /** styles */
-import space from "../../../styles/space.module.scss";
-import section from "./section.module.scss";
+import space from "@styles/space.module.scss";
+import section from "@section/section.module.scss";
 
 /** components */
-import { Card } from "../../molecules/card/card.component";
+import { Card } from "@card/card.component";
 
 /** helpers */
-import { groupByTwo } from "../../../helper/array";
+import { groupByTwo } from "@helper/array";
 
 /** contents */
-import { nearbyPic } from "../../../content";
+import { nearbyPic } from "@content";
 
 /**
  * Renders the nearby section

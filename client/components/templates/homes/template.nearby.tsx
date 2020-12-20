@@ -1,26 +1,23 @@
 import React from "react";
 
 /** styles **/
-import layout from "../../../styles/layout.module.scss";
-import homes from "../../../styles/homes.module.scss";
-import space from "../../../styles/space.module.scss";
-import color from "../../../styles/color.module.scss";
-import responsive from "../../../styles/responsive.module.scss";
-import font from "../../../styles/font.module.scss";
-import shape from "../../../styles/shape.module.scss";
-
-/** props */
-import { NearbyTemplateProps } from "../props";
+import layout from "@styles/layout.module.scss";
+import homes from "@styles/homes.module.scss";
+import space from "@styles/space.module.scss";
+import color from "@styles/color.module.scss";
+import responsive from "@styles/responsive.module.scss";
+import font from "@styles/font.module.scss";
+import shape from "@styles/shape.module.scss";
 
 /** components */
-import { Header } from "../../../components/organisms/header/header.component";
-import { Section } from "../../../components/organisms/section/section.component";
-import { Bar } from "../../../components/organisms/bar/bar.component";
-import { Footer } from "../../../components/organisms/footer/footer.component";
-import { Button } from "../../../components/atoms/button/button.component";
+import { Header } from "@header/header.component";
+import { Section } from "@section/section.component";
+import { Bar } from "@bar/bar.component";
+import { Footer } from "@footer/footer.component";
+import { Button } from "@button/button.component";
 
 /** stories */
-import { filter } from "../../../components/atoms/button/button.stories";
+import { filter } from "@button/button.stories";
 
 /**
  * Renders the nearby template component

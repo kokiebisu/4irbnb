@@ -1,13 +1,13 @@
 import React from "react";
 
 /** styles */
-import layout from "../../../styles/layout.module.scss";
-import font from "../../../styles/font.module.scss";
-import space from "../../../styles/space.module.scss";
-import color from "../../../styles/color.module.scss";
+import layout from "@styles/layout.module.scss";
+import font from "@styles/font.module.scss";
+import space from "@styles/space.module.scss";
+import color from "@styles/color.module.scss";
 
 /** vectors */
-import { CheckPlain } from "../../../public/svg/original";
+import { CheckPlain } from "@svg/original";
 
 export const CheckBullet: React.FC<{ title?: string }> = ({
   title = "Title here",
