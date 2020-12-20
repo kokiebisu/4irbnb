@@ -1,9 +1,13 @@
 import React from "react";
-import { ChevronDown, Globe } from "../../../../public/svg/regular";
-import layout from "../../../../styles/layout.module.scss";
-import space from "../../../../styles/space.module.scss";
-import font from "../../../../styles/font.module.scss";
-import color from "../../../../styles/color.module.scss";
+
+/** vectors */
+import { ChevronDown, Globe } from "@svg/regular";
+
+/** styles */
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
 
 export const Content: React.FC<{ kind?: string; inverse?: boolean }> = ({
   kind = "globe",

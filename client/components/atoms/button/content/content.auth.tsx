@@ -4,8 +4,8 @@ import React from "react";
 import { useAuthDispatch, useAuthState } from "../../../../context/auth";
 
 /** vectors */
-import { Email } from "../../../../public/svg/original";
-import { Apple, Facebook, Google } from "../../../../public/svg/logo";
+import { Email } from "@svg/original";
+import { Apple, Facebook, Google } from "@svg/logo";
 
 export const getAuthContents = () => {
   const authState = useAuthState();
