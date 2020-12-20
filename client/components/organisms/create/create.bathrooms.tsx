@@ -32,7 +32,7 @@ export const BathroomsCreate: React.FC<BathroomsCreateProps> = ({
         <div className={[space["m-b--8"]].join(" ")}>
           <Input
             title="Bathrooms"
-            type="counter"
+            variant="counter"
             value={data.bathrooms}
             add={() => setData({ ...data, bathrooms: data.bathrooms + 1 })}
             subtract={() => setData({ ...data, bathrooms: data.bathrooms - 1 })}

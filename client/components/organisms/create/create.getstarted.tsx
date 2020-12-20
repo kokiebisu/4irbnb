@@ -77,11 +77,11 @@ export const GetStartedCreate: React.FC<GetStartedCreateProps> = () => {
               }}
             >
               <div>
-                <Input type="place" value={stay} changePlace={setStay} />
+                <Input variant="place" value={stay} changePlace={setStay} />
               </div>
               <div>
                 <Input
-                  type="guests"
+                  variant="guests"
                   handleChange={formik.handleChange}
                   value={formik.values.guests}
                 />
@@ -89,7 +89,7 @@ export const GetStartedCreate: React.FC<GetStartedCreateProps> = () => {
             </div>
             <div>
               <Input
-                type="address"
+                variant="address"
                 handleChange={formik.handleChange}
                 value={formik.values.address}
               />

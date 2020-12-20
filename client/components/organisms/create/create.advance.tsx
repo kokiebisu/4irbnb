@@ -23,7 +23,7 @@ export const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
           <div className={[space["m-t--22"]].join(" ")}>
             <div className={[space["m-b--10"]].join(" ")}>
               <Input
-                type="radio"
+                variant="radio"
                 title="Any time"
                 selected={data.advance === 0}
                 select={() => setData({ ...data, advance: 0 })}
@@ -33,7 +33,7 @@ export const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
               ({ months }, index) => (
                 <div key={index} className={[space["m-b--10"]].join(" ")}>
                   <Input
-                    type="radio"
+                    variant="radio"
                     title={`${months === 12 ? 1 : months} ${
                       months === 12 ? "year" : "months in advance"
                     }`}
@@ -45,7 +45,7 @@ export const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
             )}
             <div className={[space["m-b--10"]].join(" ")}>
               <Input
-                type="radio"
+                variant="radio"
                 title="Dates unavailable by default"
                 subtitle="Your entire calendar will be blocked by default, which means you’ll have to manually unblock dates to get booked."
                 selected={data.advance === "unavailable"}
@@ -91,7 +91,7 @@ export const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
             </div>
             <div>
               <Input
-                type="select"
+                variant="select"
                 inputType="checkinFrom"
                 value={data.checkinFrom}
                 handleChange={(e) =>
@@ -108,7 +108,7 @@ export const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
             </div>
             <div>
               <Input
-                type="select"
+                variant="select"
                 inputType="checkinTo"
                 value={data.checkinTo}
                 handleChange={(e) =>

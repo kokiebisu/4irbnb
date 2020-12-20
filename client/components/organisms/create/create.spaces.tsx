@@ -71,7 +71,7 @@ export const SpacesCreate: React.FC<{
               <Input
                 check={() => modify("spaces", item)}
                 checked={data.spaces.includes(item)}
-                type="checkbox"
+                variant="checkbox"
                 title={title}
               />
             </div>

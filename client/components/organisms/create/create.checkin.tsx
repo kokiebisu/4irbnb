@@ -26,7 +26,7 @@ export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
           <div className={[space["m-t--22"]].join(" ")}>
             <div className={[space["m-b--10"]].join(" ")}>
               <Input
-                type="radio"
+                variant="radio"
                 title="Same day"
                 selected={data.notice === 0}
                 select={() => setData({ ...data, notice: 0 })}
@@ -36,7 +36,7 @@ export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
               ({ day }, index) => (
                 <div key={index} className={[space["m-b--10"]].join(" ")}>
                   <Input
-                    type="radio"
+                    variant="radio"
                     title={`${day} ${day > 1 ? "days" : "day"}`}
                     selected={data.notice === day}
                     select={() => setData({ ...data, notice: day })}
@@ -83,7 +83,7 @@ export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
             </div>
             <div>
               <Input
-                type="select"
+                variant="select"
                 inputType="checkinFrom"
                 value={data.checkinFrom}
                 handleChange={(e) =>
@@ -100,7 +100,7 @@ export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
             </div>
             <div>
               <Input
-                type="select"
+                variant="select"
                 inputType="checkinTo"
                 value={data.checkinTo}
                 handleChange={(e) =>

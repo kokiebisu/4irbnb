@@ -28,7 +28,7 @@ export const TitleCreate: React.FC<{ data?: any; setData?: any }> = ({
       <div className={[space["m-b--30"]].join(" ")}>
         <div className={[space["m-b--8"]].join(" ")}>
           <Input
-            type="limit"
+            variant="limit"
             limit={50}
             value={data.title}
             handleChange={(e) => setData({ ...data, title: e.target.value })}

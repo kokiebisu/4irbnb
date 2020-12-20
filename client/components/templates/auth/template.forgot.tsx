@@ -62,7 +62,7 @@ export const ForgotPasswordTemplate: React.FC<ForgotPasswordTemplateProps> = () 
             <div>
               <div>
                 <Input
-                  type="email"
+                  variant="email"
                   handleChange={formik.handleChange}
                   value={formik.values.email}
                   errors={formik.errors.email !== undefined}

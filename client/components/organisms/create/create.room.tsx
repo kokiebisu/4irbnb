@@ -24,7 +24,7 @@ export const RoomCreate: React.FC<KindCreateProps> = ({ data, setData }) => {
         <Layout type="input" title="First, let's narrow things down">
           <Input
             inputType="place"
-            type="select"
+            variant="select"
             value={data?.place}
             handleChange={(e) => {
               setData({ ...data, place: e.target.value });
@@ -37,7 +37,7 @@ export const RoomCreate: React.FC<KindCreateProps> = ({ data, setData }) => {
           <Input
             disabled={!data?.place}
             inputType={data?.place}
-            type="select"
+            variant="select"
             value={data?.property}
             handleChange={(e) => {
               setData({ ...data, property: e.target.value });
@@ -57,7 +57,7 @@ export const RoomCreate: React.FC<KindCreateProps> = ({ data, setData }) => {
               <div className={[space["m-t--22"]].join(" ")}>
                 <div className={[space["m-b--22"]].join(" ")}>
                   <Input
-                    type="radio"
+                    variant="radio"
                     title="Entire place"
                     subtitle="Guests have the whole place to themselves. This usually includes a bedroom, a bathroom, and a kitchen."
                     selected={data.stay === "Entire place"}
@@ -66,7 +66,7 @@ export const RoomCreate: React.FC<KindCreateProps> = ({ data, setData }) => {
                 </div>
                 <div className={[space["m-b--22"]].join(" ")}>
                   <Input
-                    type="radio"
+                    variant="radio"
                     title="Private place"
                     subtitle="Guests have their own private room for sleeping. Other areas could be shared."
                     selected={data.stay === "Private place"}
@@ -75,7 +75,7 @@ export const RoomCreate: React.FC<KindCreateProps> = ({ data, setData }) => {
                 </div>
                 <div className={[space["m-b--22"]].join(" ")}>
                   <Input
-                    type="radio"
+                    variant="radio"
                     title="Shared room"
                     subtitle="Guests sleep in a bedroom or a common area that could be shared with others."
                     selected={data.stay === "Shared room"}

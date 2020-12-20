@@ -60,14 +60,14 @@ export const AuthTemplate: React.FC<AuthTemplateProps> = () => {
           <div className={[space["m-b--8"]].join(" ")}>
             <div>
               <Input
-                type="region"
+                variant="region"
                 direction="bottom"
                 handleChange={formik.handleChange}
                 value={formik.values.region}
                 errors={formik.errors.region}
               />
               <Input
-                type="phone"
+                variant="phone"
                 direction="top"
                 handleChange={formik.handleChange}
                 value={formik.values.phone}

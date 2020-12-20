@@ -43,7 +43,7 @@ export const LocationCreate: React.FC<LocationCreateProps> = ({
             <p className={[font["size--14"]].join(" ")}>Country</p>
           </div>
           <Input
-            type="select"
+            variant="select"
             handleChange={(e) => setData({ ...data, country: e.target.value })}
             value={data?.country}
             inputType="country"
@@ -55,7 +55,7 @@ export const LocationCreate: React.FC<LocationCreateProps> = ({
           </div>
           <Input
             name="postal"
-            type="text"
+            variant="text"
             handleChange={(e) => setData({ ...data, postal: e.target.value })}
             value={data?.postal}
           />
@@ -68,7 +68,7 @@ export const LocationCreate: React.FC<LocationCreateProps> = ({
         <div>
           <Input
             name="street"
-            type="text"
+            variant="text"
             handleChange={(e) => setData({ ...data, street: e.target.value })}
             value={data?.street}
           />
@@ -86,7 +86,7 @@ export const LocationCreate: React.FC<LocationCreateProps> = ({
         <div>
           <Input
             name="apt"
-            type="text"
+            variant="text"
             handleChange={(e) => setData({ ...data, apt: e.target.value })}
             value={data?.apt}
           />
@@ -109,7 +109,7 @@ export const LocationCreate: React.FC<LocationCreateProps> = ({
           </div>
           <div>
             <Input
-              type="text"
+              variant="text"
               handleChange={(e) => setData({ ...data, city: e.target.value })}
               value={data?.city}
               inputType="city"
@@ -126,7 +126,7 @@ export const LocationCreate: React.FC<LocationCreateProps> = ({
           <div>
             <Input
               name="state"
-              type="text"
+              variant="text"
               handleChange={(e) => setData({ ...data, state: e.target.value })}
               value={data?.state}
             />

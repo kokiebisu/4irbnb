@@ -70,7 +70,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
       <div className={[space["p--24"]].join(" ")}>
         <div>
           <Input
-            type="name"
+            variant="name"
             direction="bottom"
             name="firstname"
             errors={formik.errors.firstname !== undefined}
@@ -78,7 +78,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
             value={formik.values.firstname}
           />
           <Input
-            type="name"
+            variant="name"
             direction="top"
             name="lastname"
             errors={formik.errors.lastname !== undefined}
@@ -122,7 +122,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
             <Input
               spread
               dateType="day"
-              type="birthdate"
+              variant="birthdate"
               direction="left"
               handleChange={formik.handleChange}
               value={formik.values.day}
@@ -131,7 +131,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
             <Input
               spread
               dateType="month"
-              type="birthdate"
+              variant="birthdate"
               direction="center"
               handleChange={formik.handleChange}
               value={formik.values.month}
@@ -140,7 +140,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
             <Input
               spread
               dateType="year"
-              type="birthdate"
+              variant="birthdate"
               direction="right"
               handleChange={formik.handleChange}
               value={formik.values.year}
@@ -180,7 +180,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
         <div className={[space["m-t--22"]].join(" ")}>
           <div>
             <Input
-              type="email"
+              variant="email"
               handleChange={formik.handleChange}
               value={formik.values.email}
               errors={formik.errors.email !== undefined}
@@ -207,7 +207,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
         <div className={[space["m-t--22"]].join(" ")}>
           <div>
             <Input
-              type="password"
+              variant="password"
               handleChange={formik.handleChange}
               value={formik.values.password}
               errors={formik.errors.password !== undefined}

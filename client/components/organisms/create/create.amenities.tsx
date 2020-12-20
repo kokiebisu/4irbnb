@@ -102,7 +102,7 @@ export const AmenitiesCreate: React.FC<{
               <Input
                 check={() => modify("amenities", item)}
                 checked={data.amenities.includes(item)}
-                type="checkbox"
+                variant="checkbox"
                 title={title}
                 description={description}
               />
@@ -147,7 +147,7 @@ export const AmenitiesCreate: React.FC<{
               <Input
                 check={() => modify("safeties", item)}
                 checked={data.safeties.includes(item)}
-                type="checkbox"
+                variant="checkbox"
                 title={title}
                 description={description}
               />

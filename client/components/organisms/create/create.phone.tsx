@@ -29,7 +29,7 @@ export const PhoneCreate: React.FC<{ data?: any; setData?: any }> = ({
       <div className={[space["m-b--30"]].join(" ")}>
         <div className={[space["m-b--8"]].join(" ")}>
           <Input
-            type="verify"
+            variant="verify"
             value={data.phone}
             handleChange={(e) => setData({ ...data, phone: e.target.value })}
           />
