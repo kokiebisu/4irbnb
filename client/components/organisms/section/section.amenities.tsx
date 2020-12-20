@@ -23,7 +23,7 @@ import { border } from "../../../components/atoms/button/button.stories";
  */
 export const AmenitySection: React.FC<AmenitySectionProps> = ({
   title = "Title here",
-  amenities = [{ amenityType: "kitchen" }, { amenityType: "smoke" }],
+  amenities = ["kitchen", "smoke"],
 }) => {
   return (
     <div>
@@ -46,13 +46,7 @@ export const AmenitySection: React.FC<AmenitySectionProps> = ({
         ].join(" ")}
       >
         {amenities.map((amenity, index) => {
-          return (
-            <Bullet
-              key={index}
-              type="amenity"
-              amenityType={amenity.amenityType}
-            />
-          );
+          return <Bullet key={index} variant="amenity" amenityType={amenity} />;
         })}
       </div>
       <div

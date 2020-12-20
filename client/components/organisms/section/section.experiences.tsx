@@ -38,7 +38,7 @@ export const ExperiencesSection: React.FC<ExperiencesSectionProps> = () => {
         {experiences.map((experience, index) => {
           return (
             <div key={index}>
-              <Bullet type="experience" experience={experience} />
+              <Bullet variant="experience" experience={experience} />
             </div>
           );
         })}

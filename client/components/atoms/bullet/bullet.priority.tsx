@@ -15,16 +15,13 @@ import { Button } from "../button/button.component";
 import space from "../../../styles/space.module.scss";
 import font from "../../../styles/font.module.scss";
 
-/** props */
-import { PriorityBulletProps } from "./props";
-
 /**
  * Renders the priority bullet
  * @param {string} priority - Type of priority bullet
  */
-export const PriorityBullet: React.FC<PriorityBulletProps> = ({
-  priority = "protection",
-}) => {
+export const PriorityBullet: React.FC<{
+  priority?: "protection" | "guidance" | "requirements";
+}> = ({ priority = "protection" }) => {
   const categories = {
     protection: {
       icon: <Protection width={40} />,

@@ -88,14 +88,14 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
           <div>
             {formik.errors.firstname !== undefined ? (
               <div className={[space["m-t--6"]].join(" ")}>
-                <Bullet type="required" message={formik.errors.firstname} />
+                <Bullet variant="required" message={formik.errors.firstname} />
               </div>
             ) : null}
           </div>
           <div>
             {formik.errors.lastname !== undefined ? (
               <div className={[space["m-t--6"]].join(" ")}>
-                <Bullet type="required" message={formik.errors.lastname} />
+                <Bullet variant="required" message={formik.errors.lastname} />
               </div>
             ) : null}
           </div>
@@ -149,17 +149,17 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
           </div>
           {formik.errors.day !== undefined && (
             <div className={[space["m-t--6"]].join(" ")}>
-              <Bullet type="required" message={formik.errors.day} />
+              <Bullet variant="required" message={formik.errors.day} />
             </div>
           )}
           {formik.errors.month !== undefined && (
             <div className={[space["m-t--6"]].join(" ")}>
-              <Bullet type="required" message={formik.errors.month} />
+              <Bullet variant="required" message={formik.errors.month} />
             </div>
           )}
           {formik.errors.year !== undefined && (
             <div className={[space["m-t--6"]].join(" ")}>
-              <Bullet type="required" message={formik.errors.year} />
+              <Bullet variant="required" message={formik.errors.year} />
             </div>
           )}
         </div>
@@ -189,7 +189,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
           <div>
             {formik.errors.email !== undefined ? (
               <div className={[space["m-t--6"]].join(" ")}>
-                <Bullet type="required" message={formik.errors.email} />
+                <Bullet variant="required" message={formik.errors.email} />
               </div>
             ) : (
               <p
@@ -216,7 +216,7 @@ export const SignupTemplate: React.FC<SignupTemplateProps> = () => {
           <div>
             {formik.errors.password !== undefined && (
               <div className={[space["m-t--6"]].join(" ")}>
-                <Bullet type="required" message={formik.errors.password} />
+                <Bullet variant="required" message={formik.errors.password} />
               </div>
             )}
           </div>

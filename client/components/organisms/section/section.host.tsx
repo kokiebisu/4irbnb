@@ -131,7 +131,7 @@ export const HostSection: React.FC<HostSectionProps> = ({
                   ].join(" ")}
                 >
                   <Bullet
-                    type="host"
+                    variant="host"
                     categoryType="review"
                     total={numberOfReviews}
                   />
@@ -144,7 +144,7 @@ export const HostSection: React.FC<HostSectionProps> = ({
                       space["p-r--4"],
                     ].join(" ")}
                   >
-                    <Bullet type="host" categoryType="verified" />
+                    <Bullet variant="host" categoryType="verified" />
                   </div>
                 )}
                 {layoutType === "room" && isSuperhost && (
@@ -155,7 +155,7 @@ export const HostSection: React.FC<HostSectionProps> = ({
                       space["p-r--4"],
                     ].join(" ")}
                   >
-                    <Bullet type="host" categoryType="superhost" />
+                    <Bullet variant="host" categoryType="superhost" />
                   </div>
                 )}
               </div>

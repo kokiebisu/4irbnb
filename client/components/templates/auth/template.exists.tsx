@@ -107,7 +107,7 @@ export const ExistsTemplate: React.FC<ExistsTemplateProps> = ({
         <div>
           {formik.errors.password !== undefined && (
             <div className={[space["m-t--6"]].join(" ")}>
-              <Bullet type="required" message={formik.errors.password} />
+              <Bullet variant="required" message={formik.errors.password} />
             </div>
           )}
         </div>

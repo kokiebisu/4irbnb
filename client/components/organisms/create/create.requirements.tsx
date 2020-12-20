@@ -31,7 +31,7 @@ export const RequirementsCreate: React.FC<{}> = () => {
           (content, index) => {
             return (
               <div key={index} className={[space["m-b--8"]].join(" ")}>
-                <Bullet type="check" title={content} />
+                <Bullet variant="check" title={content} />
               </div>
             );
           }
@@ -54,7 +54,7 @@ export const RequirementsCreate: React.FC<{}> = () => {
       ].map((content, index) => {
         return (
           <div key={index} className={[space["m-b--8"]].join(" ")}>
-            <Bullet type="check" title={content} />
+            <Bullet variant="check" title={content} />
           </div>
         );
       })}
