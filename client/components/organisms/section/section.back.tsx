@@ -13,7 +13,6 @@ import { Bullet } from "../../../components/atoms/bullet/bullet.component";
 import { BackSectionProps } from "./props";
 
 export const BackSection: React.FC<BackSectionProps> = () => {
-  const bullets = ["resources", "events", "community"];
   return (
     <Layout
       type="section"
@@ -29,10 +28,10 @@ export const BackSection: React.FC<BackSectionProps> = () => {
         }}
         className={[space["m-v--32"]].join(" ")}
       >
-        {bullets.map((bullet, index) => {
+        {["resources", "events", "community"].map((bullet, index) => {
           return (
             <div key={index} className={[space["m-b--16"]].join(" ")}>
-              <Bullet type="onlinehost" bullet={bullet} />
+              <Bullet variant="onlinehost" bullet={bullet} />
             </div>
           );
         })}

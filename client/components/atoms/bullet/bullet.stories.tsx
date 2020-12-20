@@ -1,7 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { BulletProps } from "./props";
-import { Bullet } from "./bullet.component";
+import { Bullet, BulletProps } from "./bullet.component";
 
 export default {
   title: "Design System/Atoms/Bullet",
@@ -16,11 +15,11 @@ export default {
   },
 } as Meta;
 
-const BulletTemplate: Story<BulletProps> = (args) => <Bullet {...args} />;
+const TemplateStory: Story<BulletProps> = (args) => <Bullet {...args} />;
 
-export const characteristic = BulletTemplate.bind({});
+export const characteristic = TemplateStory.bind({});
 characteristic.args = {
-  type: "characteristic",
+  variant: "characteristic",
 };
 characteristic.argTypes = {
   characteristicType: {
@@ -31,9 +30,9 @@ characteristic.argTypes = {
   },
 };
 
-export const amenity = BulletTemplate.bind({});
+export const amenity = TemplateStory.bind({});
 amenity.args = {
-  type: "amenity",
+  variant: "amenity",
 };
 amenity.argTypes = {
   removed: {
@@ -47,9 +46,9 @@ amenity.argTypes = {
   },
 };
 
-export const review = BulletTemplate.bind({});
+export const review = TemplateStory.bind({});
 review.args = {
-  type: "score",
+  variant: "score",
 };
 review.decorators = [
   (Story) => (
@@ -59,9 +58,9 @@ review.decorators = [
   ),
 ];
 
-export const know = BulletTemplate.bind({});
+export const know = TemplateStory.bind({});
 know.args = {
-  type: "know",
+  variant: "know",
 };
 know.argTypes = {
   categoryType: {
@@ -84,19 +83,19 @@ know.argTypes = {
   },
 };
 
-export const rating = BulletTemplate.bind({});
+export const rating = TemplateStory.bind({});
 rating.args = {
-  type: "rating",
+  variant: "rating",
 };
 
-export const bring = BulletTemplate.bind({});
+export const bring = TemplateStory.bind({});
 bring.args = {
-  type: "bring",
+  variant: "bring",
 };
 
-export const experience = BulletTemplate.bind({});
+export const experience = TemplateStory.bind({});
 experience.args = {
-  type: "experience",
+  variant: "experience",
 };
 experience.argTypes = {
   experience: {
@@ -107,9 +106,9 @@ experience.argTypes = {
   },
 };
 
-export const priority = BulletTemplate.bind({});
+export const priority = TemplateStory.bind({});
 priority.args = {
-  type: "priority",
+  variant: "priority",
 };
 priority.argTypes = {
   priority: {
@@ -120,9 +119,9 @@ priority.argTypes = {
   },
 };
 
-export const help = BulletTemplate.bind({});
+export const help = TemplateStory.bind({});
 help.args = {
-  type: "help",
+  variant: "help",
 };
 help.argTypes = {
   help: {
@@ -133,14 +132,14 @@ help.argTypes = {
   },
 };
 
-export const required = BulletTemplate.bind({});
+export const required = TemplateStory.bind({});
 required.args = {
-  type: "required",
+  variant: "required",
 };
 
-export const onlinehost = BulletTemplate.bind({});
+export const onlinehost = TemplateStory.bind({});
 onlinehost.args = {
-  type: "onlinehost",
+  variant: "onlinehost",
 };
 onlinehost.argTypes = {
   bullet: {
@@ -151,17 +150,17 @@ onlinehost.argTypes = {
   },
 };
 
-export const score = BulletTemplate.bind({});
+export const score = TemplateStory.bind({});
 score.args = {
-  type: "score",
+  variant: "score",
 };
 
-export const question = BulletTemplate.bind({});
+export const question = TemplateStory.bind({});
 question.args = {
-  type: "question",
+  variant: "question",
 };
 
-export const check = BulletTemplate.bind({});
+export const check = TemplateStory.bind({});
 check.args = {
-  type: "check",
+  variant: "check",
 };

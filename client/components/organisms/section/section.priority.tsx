@@ -31,7 +31,7 @@ export const PrioritySection: React.FC<PrioritySectionProps> = () => {
           {["protection", "guidance", "requirements"].map((priority, index) => {
             return (
               <div key={index} className={[space["m-b--64"]].join(" ")}>
-                <Bullet type="priority" priority={priority} />
+                <Bullet variant="priority" priority={priority} />
               </div>
             );
           })}

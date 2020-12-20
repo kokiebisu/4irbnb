@@ -113,7 +113,7 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({
                   ].join(" ")}
                 >
                   <Bullet
-                    type="score"
+                    variant="score"
                     category={category.type}
                     average={category.average}
                   />

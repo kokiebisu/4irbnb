@@ -71,7 +71,7 @@ export const ForgotPasswordTemplate: React.FC<ForgotPasswordTemplateProps> = () 
               <div>
                 {formik.errors.email !== undefined && (
                   <div className={[space["m-t--6"]].join(" ")}>
-                    <Bullet type="required" message={formik.errors.email} />
+                    <Bullet variant="required" message={formik.errors.email} />
                   </div>
                 )}
               </div>

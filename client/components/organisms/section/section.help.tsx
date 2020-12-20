@@ -35,7 +35,7 @@ export const HelpSection: React.FC<HelpSectionProps> = () => {
           {helps.map((help, index) => {
             return (
               <div key={index} className={[space["m-b--24"]].join(" ")}>
-                <Bullet type="help" help={help} />
+                <Bullet variant="help" help={help} />
               </div>
             );
           })}

@@ -172,7 +172,7 @@ export const StayCard: React.FC<StaysCardProps> = ({
                   </div>
                 </div>
                 <div>
-                  <Bullet type="rating" />
+                  <Bullet variant="rating" />
                 </div>
               </div>
             </div>

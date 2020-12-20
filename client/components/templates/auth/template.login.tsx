@@ -109,14 +109,14 @@ export const LoginTemplate: React.FC<LoginTemplateProps> = () => {
           <div>
             {formik.errors.email !== undefined && (
               <div className={[space["m-t--6"]].join(" ")}>
-                <Bullet type="required" message={formik.errors.email} />
+                <Bullet variant="required" message={formik.errors.email} />
               </div>
             )}
           </div>
           <div>
             {formik.errors.password !== undefined && (
               <div className={[space["m-t--6"]].join(" ")}>
-                <Bullet type="required" message={formik.errors.password} />
+                <Bullet variant="required" message={formik.errors.password} />
               </div>
             )}
           </div>

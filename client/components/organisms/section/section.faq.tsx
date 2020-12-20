@@ -50,7 +50,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({
               className={[space["m-v--22"]].join(" ")}
               key={index}
             >
-              <Bullet type="question" title={question} answer={answer} />
+              <Bullet variant="question" title={question} answer={answer} />
             </div>
           );
         })}

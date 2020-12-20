@@ -3,9 +3,6 @@ import React from "react";
 /** vectors */
 import { Activities, Computer, Host } from "../../../public/svg/original";
 
-/** props */
-import { ExperienceBulletProps } from "./props";
-
 /** styles **/
 import layout from "../../../styles/layout.module.scss";
 import font from "../../../styles/font.module.scss";
@@ -15,9 +12,9 @@ import space from "../../../styles/space.module.scss";
  * Renders the experience bullet
  * @param {string} experience - Type of experience bullet
  */
-export const ExperienceBullet: React.FC<ExperienceBulletProps> = ({
-  experience = "hosts",
-}) => {
+export const ExperienceBullet: React.FC<{
+  experience?: "hosts" | "activities" | "global";
+}> = ({ experience = "hosts" }) => {
   const experiences = {
     hosts: {
       icon: <Host width={36} />,
