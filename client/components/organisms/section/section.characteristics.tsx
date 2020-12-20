@@ -1,20 +1,20 @@
 import React from "react";
 
 /** styles **/
-import layout from "../../../styles/layout.module.scss";
-import space from "../../../styles/space.module.scss";
-import font from "../../../styles/font.module.scss";
-import color from "../../../styles/color.module.scss";
-import shape from "../../../styles/shape.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
+import shape from "@styles/shape.module.scss";
 
 /** components */
-import { Bullet } from "../../../components/atoms/bullet/bullet.component";
+import { Bullet } from "@bullet/bullet.component";
 
 /** vectors */
-import { DevicesInverse, Star } from "../../../public/svg/original";
+import { DevicesInverse, Star } from "@svg/original";
 
 /** styles **/
-import section from "./section.module.scss";
+import section from "@section/section.module.scss";
 
 /**
  * Renders the characteristics of the room/experience

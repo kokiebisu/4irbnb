@@ -1,10 +1,10 @@
 import React from "react";
 
 /** components */
-import { Card } from "../../molecules/card/card.component";
+import { Card } from "@card/card.component";
 
 /** layouts */
-import { Layout } from "../../../layout/layout.component";
+import { Layout } from "@layout/layout.component";
 
 /**
  * Renders the All section

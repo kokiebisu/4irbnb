@@ -1,17 +1,17 @@
 import React from "react";
 
 /** components */
-import { Bullet } from "../../atoms/bullet/bullet.component";
-import { Button } from "../../atoms/button/button.component";
+import { Bullet } from "@bullet/bullet.component";
+import { Button } from "@button/button.component";
 
 /** styles **/
-import font from "../../../styles/font.module.scss";
-import space from "../../../styles/space.module.scss";
-import color from "../../../styles/color.module.scss";
-import section from "./section.module.scss";
+import font from "@styles/font.module.scss";
+import space from "@styles/space.module.scss";
+import color from "@styles/color.module.scss";
+import section from "@section/section.module.scss";
 
 /** stories */
-import { border } from "../../../components/atoms/button/button.stories";
+import { border } from "@button/button.stories";
 
 /**
  * Renders the amenity section

@@ -1,11 +1,11 @@
 import React from "react";
 
 /** components */
-import { Bullet } from "../../../components/atoms/bullet/bullet.component";
+import { Bullet } from "@bullet/bullet.component";
 
 /** styles */
-import font from "../../../styles/font.module.scss";
-import space from "../../../styles/space.module.scss";
+import font from "@styles/font.module.scss";
+import space from "@styles/space.module.scss";
 
 /**
  * Renders the experiences section

@@ -29,6 +29,7 @@
       "@bar/*": ["components/organisms/bar/*"],
       "@footer/*": ["components/organisms/footer/*"],
       "@modal/*": ["components/organisms/modal/*"],
+      "@section/*": ["components/organisms/section/*"],
       "@template/*": ["components/templates/*"],
       "@layout/*": ["layout/*"],
       "@styles/*": ["styles/*"],

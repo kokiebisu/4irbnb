@@ -1,18 +1,18 @@
 import React from "react";
 
 /** Layouts */
-import { Layout } from "../../../layout/layout.component";
+import { Layout } from "@layout/layout.component";
 
 /** styles **/
-import space from "../../../styles/space.module.scss";
-import layout from "../../../styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
 
 /** components */
-import { Button } from "../../atoms/button/button.component";
-import { Card } from "../../molecules/card/card.component";
+import { Button } from "@button/button.component";
+import { Card } from "@card/card.component";
 
 /** stories */
-import { border } from "../../../components/atoms/button/button.stories";
+import { border } from "@button/button.stories";
 
 export const WorksSection: React.FC<{}> = () => {
   const categories = ["design", "share", "submit", "setup"];
