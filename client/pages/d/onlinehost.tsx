@@ -19,7 +19,7 @@ const OnlineHost = () => {
   return (
     <div>
       <div>
-        <Header type="onlinehost" />
+        <Header variant="onlinehost" />
       </div>
       <div>
         <div className={[layout["container"]].join(" ")}>

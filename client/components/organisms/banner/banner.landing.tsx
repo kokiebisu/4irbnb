@@ -55,13 +55,13 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
                     width: "100%",
                   }}
                 >
-                  <Header spread type="white" data={data} />
+                  <Header spread variant="white" data={data} />
                 </motion.div>
               ) : null}
               {scrollPosition > 56 ? (
                 <div style={{ padding: "39px 0" }}></div>
               ) : (
-                <Header type="transparent" data={data} />
+                <Header variant="transparent" data={data} />
               )}
             </div>
             <div className={[color["c--white"]].join(" ")}></div>

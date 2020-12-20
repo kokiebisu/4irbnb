@@ -44,7 +44,7 @@ export const NearbyTemplate: React.FC<NearbyTemplateProps> = ({
   return (
     <div>
       <div style={{ zIndex: 9999, position: "sticky", top: 0 }}>
-        <Header type="white" spread />
+        <Header variant="white" spread />
       </div>
       <div
         className={[layout["relative"], homes["display__content"]].join(" ")}
