@@ -9,9 +9,6 @@ import responsive from "../../../styles/responsive.module.scss";
 import font from "../../../styles/font.module.scss";
 import shape from "../../../styles/shape.module.scss";
 
-/** props */
-import { NearbyTemplateProps } from "../props";
-
 /** components */
 import { Header } from "../../../components/organisms/header/header.component";
 import { Section } from "../../../components/organisms/section/section.component";

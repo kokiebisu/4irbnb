@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import Router from "next/router";
 
-/** props */
-import { GetStartedCreateProps } from "./props";
-
 /** styles **/
 import font from "../../../styles/font.module.scss";
 import color from "../../../styles/color.module.scss";

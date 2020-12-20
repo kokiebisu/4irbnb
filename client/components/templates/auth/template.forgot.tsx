@@ -14,9 +14,6 @@ import { Input } from "../../atoms/input/input.component";
 import { Button } from "../../atoms/button/button.component";
 import { Bullet } from "../../atoms/bullet/bullet.component";
 
-/** props */
-import { ForgotPasswordTemplateProps } from "./props";
-
 /** Helpers */
 import { validateForgotPassword as validate } from "../../../helper/auth";
 

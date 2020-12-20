@@ -1,8 +1,8 @@
 import React from "react";
 
 /** styles */
-import layout from "../../../styles/layout.module.scss";
-import space from "../../../styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
 import shape from "../../../styles/shape.module.scss";
 import font from "../../../styles/font.module.scss";
 
