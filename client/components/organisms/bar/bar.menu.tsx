@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 /** styles */
-import menubar from "./menubar.module.scss";
+import menubar from "./bar.module.scss";
 
 /** vectors */
 import { MenuBarLogo } from "../../../public/svg/logo";
