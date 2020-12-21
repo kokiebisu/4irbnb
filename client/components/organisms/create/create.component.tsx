@@ -17,6 +17,7 @@ import { SpacesCreate } from "@create/create.spaces";
 import { TitleCreate } from "@create/create.title";
 import { PeriodCreate } from "@create/create.period";
 import { PriceCreate } from "./create.price";
+import { ScenariosCreate } from "./create.scenarios";
 
 export interface CreateProps {
   variant?: string;
@@ -44,6 +45,7 @@ export const Create: React.FC<CreateProps> = ({
     advance: <AdvanceCreate {...props} />,
     period: <PeriodCreate {...props} />,
     price: <PriceCreate {...props} />,
+    scenarios: <ScenariosCreate {...props} />,
   };
   return <div data-testid={`${variant}-create`}>{variants[variant]}</div>;
 };

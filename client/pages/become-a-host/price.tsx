@@ -17,9 +17,9 @@ const PricePage = () => {
       type: "add",
       payload: data,
     });
-    // setTimeout(() => {
-    //   Router.push("/become-a-host/price");
-    // }, 500);
+    setTimeout(() => {
+      Router.push("/become-a-host/booking-scenarios");
+    }, 500);
   };
 
   const revert = () => {
