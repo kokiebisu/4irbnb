@@ -19,6 +19,8 @@ import { TextAreaInput } from "@input/input.textarea";
 import { LimitInput } from "@input/input.limit";
 import { VerifyInput } from "@input/input.verify";
 import { ClosedInput } from "@input/input.closed";
+import { PriceInput } from "@input/input.price";
+import { PhotoInput } from "@input/input.photo";
 
 /** styles **/
 import shape from "@styles/shape.module.scss";
@@ -58,6 +60,8 @@ export const Input: React.FC<InputProps> = ({
     limit: <LimitInput {...props} />,
     verify: <VerifyInput {...props} />,
     closed: <ClosedInput {...props} />,
+    price: <PriceInput {...props} />,
+    photo: <PhotoInput {...props} />,
   };
 
   return (

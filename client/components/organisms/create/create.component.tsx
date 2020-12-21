@@ -15,6 +15,9 @@ import { RoomCreate } from "@create/create.room";
 import { RulesCreate } from "@create/create.rules";
 import { SpacesCreate } from "@create/create.spaces";
 import { TitleCreate } from "@create/create.title";
+import { PeriodCreate } from "@create/create.period";
+import { PriceCreate } from "./create.price";
+import { ScenariosCreate } from "./create.scenarios";
 
 export interface CreateProps {
   variant?: string;
@@ -40,6 +43,9 @@ export const Create: React.FC<CreateProps> = ({
     rules: <RulesCreate {...props} />,
     checkin: <CheckInCreate {...props} />,
     advance: <AdvanceCreate {...props} />,
+    period: <PeriodCreate {...props} />,
+    price: <PriceCreate {...props} />,
+    scenarios: <ScenariosCreate {...props} />,
   };
   return <div data-testid={`${variant}-create`}>{variants[variant]}</div>;
 };
