@@ -6,13 +6,6 @@ import { Input, InputProps } from "@input/input.component";
 export default {
   title: "Design System/Atoms/Input",
   component: Input,
-  decorators: [
-    (Story) => (
-      <div style={{ width: 300 }}>
-        <Story />
-      </div>
-    ),
-  ],
   argTypes: {
     extendsTo: {
       control: {
@@ -120,4 +113,14 @@ verify.args = {
 export const closed = TemplateStory.bind({});
 closed.args = {
   variant: "closed",
+};
+
+export const price = TemplateStory.bind({});
+price.args = {
+  variant: "price",
+};
+
+export const photo = TemplateStory.bind({});
+photo.args = {
+  variant: "photo",
 };
