@@ -36,6 +36,7 @@ type Payload = {
   minPrice?: number;
   maxPrice?: number;
   currency?: string;
+  photo?: string;
 };
 
 type State = {
@@ -72,6 +73,7 @@ type State = {
   minPrice?: number;
   maxPrice?: number;
   currency?: string;
+  photo?: string;
 };
 
 type StayProviderProps = { children: React.ReactNode };
@@ -117,6 +119,7 @@ const stayReducer = (state: State, { type, payload }: Action) => {
         minPrice: undefined,
         maxPrice: undefined,
         currency: "USD",
+        photo: undefined,
       };
     case "add":
       return { ...state, ...payload };
@@ -156,6 +159,7 @@ const StayProvider = ({ children }: StayProviderProps) => {
     advance: 0,
     min: 0,
     max: 0,
+    photo: undefined,
   });
 
   console.log("stay provider", state);

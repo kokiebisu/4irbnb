@@ -15,6 +15,7 @@ import { QuestionBullet } from "@bullet/bullet.question";
 import { RatingBullet } from "@bullet/bullet.rating";
 import { RequiredBullet } from "@bullet/bullet.required";
 import { ScoreBullet } from "@bullet/bullet.score";
+import { ScenarioBullet } from "./bullet.scenario";
 
 export interface BulletProps {
   extendsTo?: string;
@@ -49,6 +50,7 @@ export const Bullet: React.FC<BulletProps> = ({
     onlinehost: <OnlineHostBullet {...props} />,
     question: <QuestionBullet {...props} />,
     check: <CheckBullet {...props} />,
+    scenario: <ScenarioBullet {...props} />,
   };
 
   return (
