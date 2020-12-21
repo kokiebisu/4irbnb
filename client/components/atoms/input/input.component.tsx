@@ -22,6 +22,7 @@ import { ClosedInput } from "@input/input.closed";
 
 /** styles **/
 import shape from "@styles/shape.module.scss";
+import { PriceInput } from "./input.price";
 
 export interface InputProps {
   extendsTo?: string;
@@ -58,6 +59,7 @@ export const Input: React.FC<InputProps> = ({
     limit: <LimitInput {...props} />,
     verify: <VerifyInput {...props} />,
     closed: <ClosedInput {...props} />,
+    price: <PriceInput {...props} />,
   };
 
   return (

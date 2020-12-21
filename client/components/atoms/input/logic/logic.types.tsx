@@ -34,6 +34,7 @@ import {
   FromOptions as CheckInFromOptions,
   ToOptions as CheckInToOptions,
 } from "./logic.checkin";
+import { Options as CurrencyOptions } from "./logic.currency";
 
 export const properties = {
   place: PlaceProperties,
@@ -70,4 +71,5 @@ export const inputTypes = {
   country: { options: CountryOptions },
   checkinFrom: { default: "Select a time", options: CheckInFromOptions },
   checkinTo: { default: "Select a time", options: CheckInToOptions },
+  currency: { options: CurrencyOptions },
 };

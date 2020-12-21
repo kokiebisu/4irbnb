@@ -14,8 +14,6 @@ export const PriceCreate: React.FC<{ setData?: any; data?: any }> = ({
   setData,
   data = {
     basePrice: undefined,
-    minPrice: undefined,
-    maxPrice: undefined,
     currency: "USD",
   },
 }) => {
@@ -77,6 +75,14 @@ export const PriceCreate: React.FC<{ setData?: any; data?: any }> = ({
             subtitle="This will be your default price gor days when you decide to turn off Smart Pricing."
             tip={17}
           />
+        </div>
+        <div>
+          <div>
+            <h3>Currency</h3>
+          </div>
+          <div>
+            <Input variant="select" inputType="currency" />
+          </div>
         </div>
       </div>
     </div>

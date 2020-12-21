@@ -121,3 +121,8 @@ export const closed = TemplateStory.bind({});
 closed.args = {
   variant: "closed",
 };
+
+export const price = TemplateStory.bind({});
+price.args = {
+  variant: "price",
+};
