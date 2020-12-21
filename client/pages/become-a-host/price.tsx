@@ -6,11 +6,9 @@ import { Create } from "../../components/organisms/create/create.component";
 
 const PricePage = () => {
   const stayDispatch = useStayDispatch();
-  const { basePrice, minPrice, maxPrice, currency } = useStayState();
+  const { basePrice, currency } = useStayState();
   const [data, setData] = useState({
     basePrice,
-    minPrice,
-    maxPrice,
     currency,
   });
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 /** styles **/
 import shape from "@styles/shape.module.scss";
@@ -7,9 +7,6 @@ import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";
 import input from "@input/input.module.scss";
-
-/** logic */
-import { renderShape } from "./logic/logic.address";
 
 /**
  * Renders the text input component
@@ -23,9 +20,12 @@ import { renderShape } from "./logic/logic.address";
 export const PriceInput: React.FC<{
   name?: string;
   handleChange?: any;
+  handleKeyPress?: any;
   value?: string;
-}> = ({ name = "text", handleChange, value }) => {
+}> = ({ name = "text", handleChange, handleKeyPress, value }) => {
+  const inputRef = useRef();
   const [active, setActive] = useState(false);
+
   return (
     <div
       className={`${[
@@ -51,16 +51,19 @@ export const PriceInput: React.FC<{
         }}
       >
         <input
+          ref={inputRef}
           autoFocus={true}
           id={name}
           name={name}
           type="text"
+          pattern="[0-9. -]*"
           onChange={handleChange}
           onFocus={() => setActive(true)}
           onBlur={() => setActive(false)}
           value={value}
+          onKeyPress={handleKeyPress}
           className={`${[
-            space["p--0"],
+            space["p-l--12"],
             shape["w--full"],
             layout["block"],
             color["b--0"],
@@ -71,6 +74,11 @@ export const PriceInput: React.FC<{
           style={{ outline: "none" }}
         />
       </div>
+      {(active || value) && (
+        <div style={{ position: "absolute", top: 14, left: 7 }}>
+          <h4 className={[font["size--14"]].join(" ")}>$</h4>
+        </div>
+      )}
     </div>
   );
 };
