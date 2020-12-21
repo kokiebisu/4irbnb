@@ -74,6 +74,14 @@ export const PriceCreate: React.FC<{ setData?: any; data?: any }> = ({
             title="Base price"
             subtitle="This will be your default price gor days when you decide to turn off Smart Pricing."
             tip={17}
+            name="basePrice"
+            value={data.basePrice}
+            handleChange={(e) => {
+              const onlyNumbers = /^[0-9\b]+$/;
+              if (e.target.value == "" || onlyNumbers.test(e.target.value)) {
+                setData({ ...data, basePrice: e.target.value });
+              }
+            }}
           />
         </div>
         <div>
