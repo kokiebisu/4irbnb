@@ -1,11 +1,11 @@
 import React from "react";
 
 /** styles */
-import space from "../../../styles/space.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import animation from "../../../styles/animation.module.scss";
-import font from "../../../styles/font.module.scss";
-import color from "../../../styles/color.module.scss";
+import space from "@styles/space.module.scss";
+import shape from "@styles/shape.module.scss";
+import animation from "@styles/animation.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
 
 export const GlobeButton: React.FC<{
   language?: string;

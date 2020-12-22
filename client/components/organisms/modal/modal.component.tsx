@@ -2,19 +2,19 @@ import React, { useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 /** hooks */
-import useOnClickOutside from "../../../hooks/useOnClickOutside";
-import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
+import useOnClickOutside from "@hooks/useOnClickOutside";
+import { useLockBodyScroll } from "@hooks/useLockBodyScroll";
 
 /** components */
-import { MenuModal } from "./modal.menu";
-import { PrivacyModal } from "./modal.privacy";
-import { AvailabilityModal } from "./modal.availability";
-import { AuthModal } from "./modal.auth";
-import { BookingModal } from "./modal.booking";
-import { GlobeModal } from "./modal.globe";
+import { MenuModal } from "@modal/modal.menu";
+import { PrivacyModal } from "@modal/modal.privacy";
+import { AvailabilityModal } from "@modal/modal.availability";
+import { AuthModal } from "@modal/modal.auth";
+import { BookingModal } from "@modal/modal.booking";
+import { GlobeModal } from "@modal/modal.globe";
 
 /** contexts */
-import { useToggleDispatch } from "../../../context/toggle";
+import { useToggleDispatch } from "@context/toggle";
 
 export interface ModalProps {
   variant: string;

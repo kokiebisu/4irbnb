@@ -3,18 +3,18 @@ import Link from "next/link";
 import Router from "next/router";
 
 /** components */
-import { Button } from "../../../components/atoms/button/button.component";
+import { Button } from "@button/button.component";
 
 /** styles **/
-import layout from "../../../styles/layout.module.scss";
-import space from "../../../styles/space.module.scss";
-import color from "../../../styles/color.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import bar from "./bar.module.scss";
-import font from "../../../styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import color from "@styles/color.module.scss";
+import shape from "@styles/shape.module.scss";
+import bar from "@bar/bar.module.scss";
+import font from "@styles/font.module.scss";
 
 /** stories */
-import { paginate } from "../../../components/atoms/button/button.stories";
+import { paginate } from "@button/button.stories";
 
 /**
  * Renders paginate bar component

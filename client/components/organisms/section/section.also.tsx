@@ -1,25 +1,25 @@
 import React, { useRef } from "react";
 
 /** components */
-import { Card } from "../../molecules/card/card.component";
-import { Button } from "../../../components/atoms/button/button.component";
+import { Card } from "@card/card.component";
+import { Button } from "@button/button.component";
 
 /** styles **/
-import layout from "../../../styles/layout.module.scss";
-import font from "../../../styles/font.module.scss";
-import space from "../../../styles/space.module.scss";
-import section from "./section.module.scss";
+import layout from "@styles/layout.module.scss";
+import font from "@styles/font.module.scss";
+import space from "@styles/space.module.scss";
+import section from "@section/section.module.scss";
 
 /** Helpers */
-import * as Helpers from "../../../helper/array";
+import * as Helpers from "@helper/array";
 
 /** Contents */
-import { nearbyPic } from "../../../content";
-import { useSlider } from "../../../hooks/useSlider";
-import { useHandleContainerResize } from "../../../hooks/useHandleContainerResize";
+import { nearbyPic } from "@content";
+import { useSlider } from "@hooks/useSlider";
+import { useHandleContainerResize } from "@hooks/useHandleContainerResize";
 
 /** stories */
-import { paginate } from "../../../components/atoms/button/button.stories";
+import { paginate } from "@button/button.stories";
 
 /**
  * Renders the also section

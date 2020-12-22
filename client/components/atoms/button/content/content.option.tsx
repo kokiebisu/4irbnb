@@ -1,6 +1,6 @@
-import { useAuthDispatch } from "../../../../context/auth";
-import { useToggleDispatch } from "../../../../context/toggle";
-import { useFetch } from "../../../../hooks/useFetch";
+import { useAuthDispatch } from "@context/auth";
+import { useToggleDispatch } from "@context/toggle";
+import { useFetch } from "@hooks/useFetch";
 import Router from "next/router";
 
 export const getOptionContents = () => {

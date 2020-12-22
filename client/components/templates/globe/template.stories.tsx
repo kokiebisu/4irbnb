@@ -2,10 +2,10 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
 /** templates */
-import { Template, TemplateProps } from "../template.component";
+import { Template, TemplateProps } from "@template/template.component";
 
 /** providers */
-import { ContextProvider } from "../../../context/provider";
+import { ContextProvider } from "@context/provider";
 
 export default {
   title: "Design System/Templates/Globe",

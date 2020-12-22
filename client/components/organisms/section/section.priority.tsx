@@ -1,14 +1,12 @@
 import React from "react";
 
 /** styles */
-import responsive from "../../../styles/responsive.module.scss";
+import responsive from "@styles/responsive.module.scss";
+import space from "@styles/space.module.scss";
 
 /** components */
-import { Layout } from "../../../layout/layout.component";
-import { Bullet } from "../../../components/atoms/bullet/bullet.component";
-
-/** styles */
-import space from "../../../styles/space.module.scss";
+import { Layout } from "@layout/layout.component";
+import { Bullet } from "@bullet/bullet.component";
 
 /**
  * Renders the priority section
