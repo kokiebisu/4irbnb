@@ -44,7 +44,7 @@ const BedRoomsPage = () => {
           setData={setData}
         />
       }
-      percentage={20}
+      percentage={10}
       next={proceed}
       back={revert}
     />

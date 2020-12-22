@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 /** styles */
 import space from "@styles/space.module.scss";
@@ -8,10 +8,12 @@ import color from "@styles/color.module.scss";
 /** components */
 import { Input } from "@input/input.component";
 
-export const PhotosCreate: React.FC<{ data?: any; setData?: any }> = ({
-  data,
-  setData,
-}) => {
+export const PhotosCreate: React.FC<{
+  data?: any;
+  setData?: any;
+  setPreview?: any;
+}> = ({ data, setData }) => {
+  const [preview, setPreview] = useState("");
   return (
     <div>
       <div className={[space["m-b--12"]].join(" ")}>
@@ -27,11 +29,23 @@ export const PhotosCreate: React.FC<{ data?: any; setData?: any }> = ({
       </div>
       <div className={[space["m-b--30"]].join(" ")}>
         <div className={[space["m-b--8"]].join(" ")}>
-          <Input
-            variant="photo"
-            value={data.phone}
-            handleChange={(e) => setData({ ...data, phone: e.target.value })}
-          />
+          {preview ? (
+            <div>
+              <img src={preview} />
+            </div>
+          ) : (
+            <Input
+              variant="photo"
+              value={data.phone}
+              handleChange={(e) => {
+                setData({
+                  ...data,
+                  photo: e.target.files[0],
+                });
+                setPreview(URL.createObjectURL(e.target.files[0]));
+              }}
+            />
+          )}
         </div>
       </div>
     </div>
