@@ -7,13 +7,12 @@ import { Create } from "@organisms/create/create.component";
 
 const PhotosPage = () => {
   const stayDispatch = useStayDispatch();
-  const { photo } = useStayState();
+  const { photos } = useStayState();
   const [data, setData] = useState({
-    photo,
+    photos,
   });
-  const [preview, setPreview] = useState("");
 
-  console.log("photos data", data.photo);
+  console.log("photos data", data.photos);
 
   const proceed = () => {
     stayDispatch({

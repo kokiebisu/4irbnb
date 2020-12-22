@@ -13,7 +13,7 @@ export const PhotosCreate: React.FC<{
   setData?: any;
   setPreview?: any;
 }> = ({ data, setData }) => {
-  const [preview, setPreview] = useState("");
+  const [preview, setPreview] = useState([]);
   return (
     <div>
       <div className={[space["m-b--12"]].join(" ")}>
@@ -29,20 +29,48 @@ export const PhotosCreate: React.FC<{
       </div>
       <div className={[space["m-b--30"]].join(" ")}>
         <div className={[space["m-b--8"]].join(" ")}>
-          {preview ? (
+          {preview.length > 0 ? (
             <div>
-              <img src={preview} />
+              <div>
+                <img src={preview[0]} />
+              </div>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(2, 1fr)",
+                  columnGap: 10,
+                }}
+                className={[space["m-t--16"]].join(" ")}
+              >
+                <div>
+                  <Input
+                    variant="another"
+                    handleChange={(e) => {
+                      setData({
+                        ...data,
+                        photo: [...data.photos, e.target.files[0]],
+                      });
+                      setPreview([
+                        ...preview,
+                        URL.createObjectURL(e.target.files[0]),
+                      ]);
+                    }}
+                  />
+                </div>
+              </div>
             </div>
           ) : (
             <Input
               variant="photo"
-              value={data.phone}
               handleChange={(e) => {
                 setData({
                   ...data,
-                  photo: e.target.files[0],
+                  photos: [...data.photos, e.target.files[0]],
                 });
-                setPreview(URL.createObjectURL(e.target.files[0]));
+                setPreview([
+                  ...preview,
+                  URL.createObjectURL(e.target.files[0]),
+                ]);
               }}
             />
           )}

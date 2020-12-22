@@ -24,6 +24,7 @@ import { PhotoInput } from "@input/input.photo";
 
 /** styles **/
 import shape from "@styles/shape.module.scss";
+import { AnotherInput } from "./input.another";
 
 export interface InputProps {
   extendsTo?: string;
@@ -62,6 +63,7 @@ export const Input: React.FC<InputProps> = ({
     closed: <ClosedInput {...props} />,
     price: <PriceInput {...props} />,
     photo: <PhotoInput {...props} />,
+    another: <AnotherInput {...props} />,
   };
 
   return (
