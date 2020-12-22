@@ -78,7 +78,7 @@ const RoomPage = () => {
           setData={setData}
         />
       }
-      percentage={10}
+      percentage={5}
       next={proceed}
       back={revert}
       criteria={!data.place || !data.property}

@@ -23,11 +23,16 @@ export const PhotoInput: React.FC<{
   handleChange?: any;
   handleKeyPress?: any;
   value?: string;
-}> = ({ handleChange, handleKeyPress, value }) => {
+}> = ({ handleChange, value }) => {
   return (
     <div>
       <form>
-        <input type="file" id="upload" style={{ display: "none" }} />
+        <input
+          type="file"
+          id="upload"
+          style={{ display: "none" }}
+          onChange={handleChange}
+        />
         <label htmlFor="upload">
           <div
             style={{
