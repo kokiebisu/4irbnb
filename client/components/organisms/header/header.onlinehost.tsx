@@ -2,16 +2,16 @@ import React from "react";
 import Router from "next/router";
 
 /** styles */
-import shape from "../../../styles/shape.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import header from "./header.module.scss";
-import space from "../../../styles/space.module.scss";
+import shape from "@styles/shape.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import header from "@header/header.module.scss";
 
 /** components */
-import { Button } from "../../../components/atoms/button/button.component";
+import { Button } from "@button/button.component";
 
 /** vectors */
-import { NoNameLogo } from "../../../public/svg/logo";
+import { NoNameLogo } from "@svg/logo";
 
 export const OnlineHostHeader: React.FC<{}> = () => {
   return (

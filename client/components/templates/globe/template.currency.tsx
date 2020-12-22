@@ -1,10 +1,10 @@
 import React from "react";
 
 /** components */
-import { Layout } from "../../../layout/layout.component";
+import { Layout } from "@layout/layout.component";
 
 /** styles */
-import space from "../../../styles/space.module.scss";
+import space from "@styles/space.module.scss";
 
 export const CurrencyTemplate: React.FC<{}> = () => {
   return (

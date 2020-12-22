@@ -1,15 +1,11 @@
 import React from "react";
 
 /** components */
-import { Button } from "../../../components/atoms/button/button.component";
+import { Button } from "@button/button.component";
 
 /** styles */
-import layout from "../../../styles/layout.module.scss";
-import space from "../../../styles/space.module.scss";
-import font from "../../../styles/font.module.scss";
-import color from "../../../styles/color.module.scss";
-import animation from "../../../styles/animation.module.scss";
-import shape from "../../../styles/shape.module.scss";
+import space from "@styles/space.module.scss";
+import font from "@styles/font.module.scss";
 
 const Layout: React.FC<{
   items?: { language?: string; region?: string }[];

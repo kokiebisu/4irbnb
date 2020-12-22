@@ -1,13 +1,13 @@
 import React from "react";
 
 /** styles */
-import font from "../../../styles/font.module.scss";
-import space from "../../../styles/space.module.scss";
-import color from "../../../styles/color.module.scss";
-import layout from "../../../styles/layout.module.scss";
+import font from "@styles/font.module.scss";
+import space from "@styles/space.module.scss";
+import color from "@styles/color.module.scss";
+import layout from "@styles/layout.module.scss";
 
 /** components */
-import { Card } from "../../molecules/card/card.component";
+import { Card } from "@card/card.component";
 
 /**
  * Renders the participate section

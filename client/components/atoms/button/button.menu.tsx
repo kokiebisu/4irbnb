@@ -1,13 +1,13 @@
 import React from "react";
 
 /** styles */
-import layout from "../../../styles/layout.module.scss";
-import space from "../../../styles/space.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import color from "../../../styles/color.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import shape from "@styles/shape.module.scss";
+import color from "@styles/color.module.scss";
 
 /** vectors */
-import { Avatar, Bars } from "../../../public/svg/original";
+import { Avatar, Bars } from "@svg/original";
 
 /**
  * Renders the menu button components

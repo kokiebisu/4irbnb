@@ -19,7 +19,7 @@ const DescriptionPage = () => {
       payload: data,
     });
     setTimeout(() => {
-      Router.push("/become-a-host/title");
+      Router.push("/become-a-host/review-how-guests-book");
     }, 500);
   };
 
@@ -28,9 +28,6 @@ const DescriptionPage = () => {
       Router.push("/become-a-host/spaces");
     }, 500);
   };
-
-  console.log("data.events", typeof data.events);
-  console.log("data.smoking", typeof data.smoking);
 
   return (
     <Layout

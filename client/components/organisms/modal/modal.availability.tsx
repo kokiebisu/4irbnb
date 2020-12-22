@@ -1,17 +1,17 @@
 import React from "react";
 
 /** components */
-import { Button } from "../../../components/atoms/button/button.component";
-import layout from "../../../styles/layout.module.scss";
-import font from "../../../styles/font.module.scss";
-import color from "../../../styles/color.module.scss";
-import space from "../../../styles/space.module.scss";
+import { Button } from "@button/button.component";
+import layout from "@styles/layout.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
 
 /** vectors */
-import { Star } from "../../../public/svg/original";
+import { Star } from "@svg/original";
 
 /** stories */
-import { primary } from "../../../components/atoms/button/button.stories";
+import { primary } from "@button/button.stories";
 
 /**
  * Renders the modal which gives all the available options

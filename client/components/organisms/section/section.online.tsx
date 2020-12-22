@@ -1,18 +1,18 @@
 import React from "react";
 
 /** components */
-import { Card } from "../../molecules/card/card.component";
-import { Button } from "../../../components/atoms/button/button.component";
+import { Card } from "@card/card.component";
+import { Button } from "@button/button.component";
 
 /** styles **/
-import section from "./section.module.scss";
-import color from "../../../styles/color.module.scss";
-import space from "../../../styles/space.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import shape from "../../../styles/shape.module.scss";
+import section from "@section/section.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import shape from "@styles/shape.module.scss";
 
 /** components */
-import { border } from "../../../components/atoms/button/button.stories";
+import { border } from "@button/button.stories";
 
 /**
  * Renders the online section

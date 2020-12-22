@@ -1,6 +1,6 @@
 import React from "react";
-import { useAuthState } from "../../../../context/auth";
-import { Template } from "../../../../components/templates/template.component";
+import { useAuthState } from "@context/auth";
+import { Template } from "@template/template.component";
 
 export const AuthContent = () => {
   const authState = useAuthState();

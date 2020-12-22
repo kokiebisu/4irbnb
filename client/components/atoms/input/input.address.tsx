@@ -1,12 +1,12 @@
 import React from "react";
 
 /** styles **/
-import shape from "../../../styles/shape.module.scss";
-import color from "../../../styles/color.module.scss";
-import space from "../../../styles/space.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import font from "../../../styles/font.module.scss";
-import input from "./input.module.scss";
+import shape from "@styles/shape.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import font from "@styles/font.module.scss";
+import input from "@input/input.module.scss";
 
 /** props */
 import { renderShape } from "./logic/logic.address";

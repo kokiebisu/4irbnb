@@ -1,8 +1,8 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import { Bullet } from "../bullet.component";
-import { characteristic } from "../bullet.stories";
+import { Bullet } from "../../bullet/bullet.component";
+import { characteristic } from "../../bullet/bullet.stories";
 
 describe("Base Button", () => {
   it("renders correctly for host button", () => {

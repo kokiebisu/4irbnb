@@ -1,13 +1,13 @@
 import React from "react";
 
 /** styles */
-import shape from "../../../styles/shape.module.scss";
-import space from "../../../styles/space.module.scss";
+import shape from "@styles/shape.module.scss";
+import space from "@styles/space.module.scss";
 
 /** components */
-import { Button } from "../../../components/atoms/button/button.component";
-import { getOptionContents } from "../../../components/atoms/button/content/content.option";
-import { option } from "../../../components/atoms/button/button.stories";
+import { Button } from "@button/button.component";
+import { getOptionContents } from "@button/content/content.option";
+import { option } from "@button/button.stories";
 
 const Options: React.FC<{
   params?: {
@@ -35,7 +35,7 @@ const Options: React.FC<{
 /**
  * Renders the menu modal
  */
-export const MenuModal: React.FC<MenuModalProps> = ({
+export const MenuModal: React.FC<{ authenticated?: boolean }> = ({
   authenticated = false,
 }) => {
   return (

@@ -1,11 +1,11 @@
 import React from "react";
 
 /** styles **/
-import layout from "../../../styles/layout.module.scss";
-import space from "../../../styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
 
 /** vectors */
-import { CheckInverse } from "../../../public/svg/original";
+import { CheckInverse } from "@svg/original";
 
 /**
  * Renders the bring bullet

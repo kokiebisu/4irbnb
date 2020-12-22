@@ -3,24 +3,24 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 /** components */
-import { AuthButton } from "./button.auth";
-import { MenuButton } from "./button.menu";
-import { PrivacyButton } from "./button.privacy";
-import { BorderButton } from "./button.border";
-import { BannerButton } from "./button.banner";
-import { PrimaryButton } from "./button.primary";
-import { SearchbarButton } from "./button.searchbar";
-import { PaginateButton } from "./button.paginate";
-import { ExpandButton } from "./button.expand";
-import { OptionButton } from "./button.option";
-import { UnderlineButton } from "./button.underline";
-import { FilterButton } from "./button.filter";
-import { ModalButton } from "./button.modal";
-import { BackButton } from "./button.back";
-import { ClosedButton } from "./button.closed";
-import { TransparentButton } from "./button.transparent";
-import { GlobeButton } from "./button.globe";
-import { LinkButton } from "./button.link";
+import { AuthButton } from "@button/button.auth";
+import { MenuButton } from "@button/button.menu";
+import { PrivacyButton } from "@button/button.privacy";
+import { BorderButton } from "@button/button.border";
+import { BannerButton } from "@button/button.banner";
+import { PrimaryButton } from "@button/button.primary";
+import { SearchbarButton } from "@button/button.searchbar";
+import { PaginateButton } from "@button/button.paginate";
+import { ExpandButton } from "@button/button.expand";
+import { OptionButton } from "@button/button.option";
+import { UnderlineButton } from "@button/button.underline";
+import { FilterButton } from "@button/button.filter";
+import { ModalButton } from "@button/button.modal";
+import { BackButton } from "@button/button.back";
+import { ClosedButton } from "@button/button.closed";
+import { TransparentButton } from "@button/button.transparent";
+import { GlobeButton } from "@button/button.globe";
+import { LinkButton } from "@button/button.link";
 
 /** styles **/
 import layout from "../../../styles/layout.module.scss";

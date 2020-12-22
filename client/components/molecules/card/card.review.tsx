@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 
 /** styles **/
-import space from "../../../styles/space.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import color from "../../../styles/color.module.scss";
-import font from "../../../styles/font.module.scss";
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import color from "@styles/color.module.scss";
+import font from "@styles/font.module.scss";
 
 /** Logic */
 import { renderDescription } from "./logic/logic.review";

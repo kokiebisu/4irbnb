@@ -1,13 +1,13 @@
 import React from "react";
 
 /** components */
-import { Card } from "../../molecules/card/card.component";
+import { Card } from "@card/card.component";
 
 /** styles */
-import space from "../../../styles/space.module.scss";
-import color from "../../../styles/color.module.scss";
-import font from "../../../styles/font.module.scss";
-import layout from "../../../styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import color from "@styles/color.module.scss";
+import font from "@styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
 
 /**
  * Renders the arrangement section

@@ -1,5 +1,5 @@
-import color from "../../../../styles/color.module.scss";
-import shape from "../../../../styles/shape.module.scss";
+import color from "@styles/color.module.scss";
+import shape from "@styles/shape.module.scss";
 
 export const renderShape = (direction: string) => {
   switch (direction) {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Bar, BarProps } from "./bar.component";
+import { Bar, BarProps } from "@bar/bar.component";
 
 export default {
   title: "Design System/Organisms/Bar",
