@@ -40,7 +40,7 @@ const BathroomsPage = () => {
           setData={setData}
         />
       }
-      percentage={30}
+      percentage={15}
       next={proceed}
       back={revert}
     />
