@@ -43,7 +43,7 @@ const BedRoomsPage = () => {
           setData={setData}
         />
       }
-      percentage={40}
+      percentage={20}
       next={proceed}
       back={revert}
       criteria={

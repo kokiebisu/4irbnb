@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 /** styles */
 import space from "@styles/space.module.scss";
@@ -8,10 +8,12 @@ import color from "@styles/color.module.scss";
 /** components */
 import { Input } from "@input/input.component";
 
-export const PhotosCreate: React.FC<{ data?: any; setData?: any }> = ({
-  data,
-  setData,
-}) => {
+export const PhotosCreate: React.FC<{
+  data?: any;
+  setData?: any;
+  setPreview?: any;
+}> = ({ data, setData }) => {
+  const [preview, setPreview] = useState([]);
   return (
     <div>
       <div className={[space["m-b--12"]].join(" ")}>
@@ -27,11 +29,51 @@ export const PhotosCreate: React.FC<{ data?: any; setData?: any }> = ({
       </div>
       <div className={[space["m-b--30"]].join(" ")}>
         <div className={[space["m-b--8"]].join(" ")}>
-          <Input
-            variant="photo"
-            value={data.phone}
-            handleChange={(e) => setData({ ...data, phone: e.target.value })}
-          />
+          {preview.length > 0 ? (
+            <div>
+              <div>
+                <img src={preview[0]} />
+              </div>
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(2, 1fr)",
+                  columnGap: 10,
+                }}
+                className={[space["m-t--16"]].join(" ")}
+              >
+                <div>
+                  <Input
+                    variant="another"
+                    handleChange={(e) => {
+                      setData({
+                        ...data,
+                        photo: [...data.photos, e.target.files[0]],
+                      });
+                      setPreview([
+                        ...preview,
+                        URL.createObjectURL(e.target.files[0]),
+                      ]);
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+          ) : (
+            <Input
+              variant="photo"
+              handleChange={(e) => {
+                setData({
+                  ...data,
+                  photos: [...data.photos, e.target.files[0]],
+                });
+                setPreview([
+                  ...preview,
+                  URL.createObjectURL(e.target.files[0]),
+                ]);
+              }}
+            />
+          )}
         </div>
       </div>
     </div>
