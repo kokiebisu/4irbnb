@@ -36,7 +36,9 @@ export const SearchBar: React.FC<{
       }}
     >
       <button
-        className={[animation["hover-background--white__1"]].join(" ")}
+        className={`${
+          selected === "location" && [shape["shadow--lg"]].join(" ")
+        } ${[animation["hover-background--white__1"]].join(" ")}`}
         style={{
           display: "block",
           padding: "5px 24px",
@@ -45,9 +47,7 @@ export const SearchBar: React.FC<{
         onClick={() => setSelected("location")}
       >
         <div
-          className={`${
-            selected === "location" && [shape["shadow--lg"]].join(" ")
-          } ${[layout["flex"], layout["items-center"]].join(" ")}`}
+          className={`${[layout["flex"], layout["items-center"]].join(" ")}`}
         >
           <div>
             <div>
@@ -70,13 +70,13 @@ export const SearchBar: React.FC<{
           padding: "5px 24px",
           borderRadius: "50px",
         }}
-        className={[animation["hover-background--white__1"]].join(" ")}
+        className={`${
+          selected === "checkin" && [shape["shadow--lg"]].join(" ")
+        }  ${[animation["hover-background--white__1"]].join(" ")}`}
         onClick={() => setSelected("checkin")}
       >
         <div
-          className={`${
-            selected === "checkin" && [shape["shadow--lg"]].join(" ")
-          } ${[layout["flex"], layout["items-center"]].join(" ")}`}
+          className={`${[layout["flex"], layout["items-center"]].join(" ")}`}
           style={{
             borderRadius: selected === "checkin" && 50,
           }}
@@ -114,13 +114,13 @@ export const SearchBar: React.FC<{
           padding: "5px 24px",
           borderRadius: "50px",
         }}
-        className={[animation["hover-background--white__1"]].join(" ")}
+        className={`${
+          selected === "checkout" && [shape["shadow--lg"]].join(" ")
+        }  ${[animation["hover-background--white__1"]].join(" ")}`}
         onClick={() => setSelected("checkout")}
       >
         <div
-          className={`${
-            selected === "checkout" && [shape["shadow--lg"]].join(" ")
-          } ${[layout["flex"], layout["items-center"]].join(" ")}`}
+          className={`${[layout["flex"], layout["items-center"]].join(" ")}`}
           style={{
             borderRadius: selected === "checkout" && 50,
           }}
@@ -158,13 +158,12 @@ export const SearchBar: React.FC<{
           padding: "5px 8px 5px 24px",
           borderRadius: "50px",
         }}
-        className={[animation["hover-background--white__1"]].join(" ")}
+        className={`${
+          selected === "guests" && [shape["shadow--lg"]].join(" ")
+        } ${[animation["hover-background--white__1"]].join(" ")}`}
         onClick={() => setSelected("guests")}
       >
         <div
-          className={`${
-            selected === "guests" && [shape["shadow--lg"]].join(" ")
-          } `}
           style={{
             display: "flex",
             justifyContent: "space-between",
