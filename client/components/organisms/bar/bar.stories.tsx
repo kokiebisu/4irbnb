@@ -30,10 +30,17 @@ progress.argTypes = {
   },
 };
 
-export const searchbar = TemplateStory.bind({});
-searchbar.args = {
-  variant: "searchbar",
+export const search = TemplateStory.bind({});
+search.args = {
+  variant: "search",
 };
+search.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 750 }}>
+      <Story />
+    </div>
+  ),
+];
 
 export const create = TemplateStory.bind({});
 create.args = {
