@@ -254,3 +254,13 @@ export const link = ButtonTemplate.bind({});
 link.args = {
   variant: "link",
 };
+
+export const search = ButtonTemplate.bind({});
+search.args = {
+  variant: "search",
+};
+search.argTypes = {
+  expand: {
+    control: "boolean",
+  },
+};

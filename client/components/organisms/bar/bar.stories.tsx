@@ -30,9 +30,24 @@ progress.argTypes = {
   },
 };
 
-export const searchbar = TemplateStory.bind({});
-searchbar.args = {
-  variant: "searchbar",
+export const search = TemplateStory.bind({});
+search.args = {
+  variant: "search",
+};
+search.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 720 }}>
+      <Story />
+    </div>
+  ),
+];
+search.argTypes = {
+  selected: {
+    control: {
+      type: "select",
+      options: ["location", "checkin", "checkout", "guests"],
+    },
+  },
 };
 
 export const create = TemplateStory.bind({});

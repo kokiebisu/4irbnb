@@ -3,7 +3,7 @@ import React from "react";
 /** components */
 import { PaginateBar } from "@bar/bar.paginate";
 import { ProgressBar } from "@bar/bar.progress";
-import { SearchbarBar } from "@bar/bar.searchbar";
+import { SearchBar } from "@bar/bar.search";
 import { CovidBar } from "@bar/bar.covid";
 import { CreateBar } from "@bar/bar.create";
 import { MenuBar } from "@bar/bar.menu";
@@ -22,7 +22,7 @@ export const Bar: React.FC<BarProps> = ({ variant = "paginate", ...props }) => {
     paginate: <PaginateBar {...props} />,
     covid: <CovidBar {...props} />,
     progress: <ProgressBar {...props} />,
-    searchbar: <SearchbarBar {...props} />,
+    search: <SearchBar {...props} />,
     create: <CreateBar {...props} />,
     menu: <MenuBar {...props} />,
   };
