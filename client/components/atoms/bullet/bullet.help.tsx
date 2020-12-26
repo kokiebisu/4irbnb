@@ -1,17 +1,12 @@
 import React from "react";
 
 /** vectors */
-import {
-  Analytics,
-  CustomerService,
-  Education,
-  ToolBox,
-} from "../../../public/svg/original";
+import { Analytics, CustomerService, Education, ToolBox } from "@svg/original";
 
 /** styles **/
-import layout from "../../../styles/layout.module.scss";
-import space from "../../../styles/space.module.scss";
-import font from "../../../styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import font from "@styles/font.module.scss";
 
 /**
  * Renders the help bullet

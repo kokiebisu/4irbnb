@@ -1,7 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Template, TemplateProps } from "../template.component";
-import { ContextProvider } from "../../../context/provider";
+import { Template, TemplateProps } from "@template/template.component";
+import { ContextProvider } from "@context/provider";
 
 export default {
   title: "Design System/Templates/Homes",

@@ -1,20 +1,15 @@
 import React from "react";
 
-/**
- * Props
- */
-import { LoadingAnimationProps } from "./props";
-
-/**
- * Styles
- */
+/** styles */
 import animation from "./animation.module.scss";
 import color from "../../styles/color.module.scss";
 
 /**
  * Renders the loading animation
  */
-export const LoadingAnimation: React.FC<LoadingAnimationProps> = ({ dark }) => {
+export const LoadingAnimation: React.FC<{
+  dark?: boolean;
+}> = ({ dark }) => {
   return (
     <div className={[animation["circle__wrapper"]].join(" ")}>
       <span

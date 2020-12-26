@@ -1,13 +1,13 @@
 import React from "react";
 
 /** vectors */
-import { Exclamation } from "../../../public/svg/original";
+import { Exclamation } from "@svg/original";
 
 /** styles **/
-import font from "../../../styles/font.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import space from "../../../styles/space.module.scss";
-import color from "../../../styles/color.module.scss";
+import font from "@styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import color from "@styles/color.module.scss";
 
 export const RequiredBullet: React.FC<{
   message?: string;

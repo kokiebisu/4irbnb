@@ -1,6 +1,6 @@
-import shape from "../../../../styles/shape.module.scss";
-import color from "../../../../styles/color.module.scss";
-import space from "../../../../styles/space.module.scss";
+import shape from "@styles/shape.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
 import { useReducer } from "react";
 
 export const checkInBorder = (selected) => {

@@ -2,23 +2,20 @@ import React, { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import Router from "next/router";
 
-/** props */
-import { GetStartedCreateProps } from "./props";
-
 /** styles **/
-import font from "../../../styles/font.module.scss";
-import color from "../../../styles/color.module.scss";
-import space from "../../../styles/space.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
 
 /** components */
-import { Button } from "../../../components/atoms/button/button.component";
-import { Input } from "../../../components/atoms/input/input.component";
+import { Button } from "@button/button.component";
+import { Input } from "@input/input.component";
 
 /** contexts */
-import { useStayDispatch } from "../../../context/stay";
+import { useStayDispatch } from "@context/stay";
 
 /** stories */
-import { primary } from "../../../components/atoms/button/button.stories";
+import { primary } from "@button/button.stories";
 
 /**
  * Renders the /become-a-host/get-started page content

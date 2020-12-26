@@ -2,26 +2,26 @@ import React from "react";
 import { useFormik } from "formik";
 
 /** contexts */
-import { useAuthDispatch, useAuthState } from "../../../context/auth";
+import { useAuthDispatch, useAuthState } from "@context/auth";
 
 /** styles **/
-import space from "../../../styles/space.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import font from "../../../styles/font.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import color from "../../../styles/color.module.scss";
-import modalStyles from "../../organisms/modal/modal.module.scss";
+import space from "@styles/space.module.scss";
+import shape from "@styles/shape.module.scss";
+import font from "@styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
+import color from "@styles/color.module.scss";
+import modalStyles from "@modal/modal.module.scss";
 
 /** components */
-import { Input } from "../../atoms/input/input.component";
-import { Button } from "../../atoms/button/button.component";
-import { getAuthContents } from "../../atoms/button/content/content.auth";
+import { Input } from "@input/input.component";
+import { Button } from "@button/button.component";
+import { getAuthContents } from "@button/content/content.auth";
 
 /** Helpers */
-import { validateAuth as validate } from "../../../helper/auth";
+import { validateAuth as validate } from "@helper/auth";
 
 /** stories */
-import { auth, primary, underline } from "../../atoms/button/button.stories";
+import { auth, primary, underline } from "@button/button.stories";
 
 /**
  * Renders the auth template component

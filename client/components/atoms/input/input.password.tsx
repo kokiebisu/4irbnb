@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 
 /** styles **/
-import shape from "../../../styles/shape.module.scss";
-import color from "../../../styles/color.module.scss";
-import space from "../../../styles/space.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import font from "../../../styles/font.module.scss";
-import input from "./input.module.scss";
+import shape from "@styles/shape.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import font from "@styles/font.module.scss";
+import input from "@input/input.module.scss";
 
 /** Styling */
 import { styleInput, styleLabel, styleContainer } from "./styling.text";
 
 /** components */
-import { Button } from "../button/button.component";
+import { Button } from "@button/button.component";
 
 /** Helper */
-import { checkPassword } from "../../../helper/auth";
+import { checkPassword } from "@helper/auth";
 
 /** stories */
-import { underline } from "../button/button.stories";
+import { underline } from "@button/button.stories";
 
 /**
  * Renders the text input component

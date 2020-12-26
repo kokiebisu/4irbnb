@@ -39,7 +39,7 @@ const AmenitiesPage = () => {
           setData={setData}
         />
       }
-      percentage={40}
+      percentage={25}
       next={proceed}
       back={revert}
     />

@@ -2,15 +2,15 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
 /** components */
-import { Modal, ModalProps } from "./modal.component";
+import { Modal, ModalProps } from "@modal/modal.component";
 
 /** contexts */
-import { ContextProvider } from "../../../context/provider";
+import { ContextProvider } from "@context/provider";
 
 /** styles */
-import shape from "../../../styles/shape.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import color from "../../../styles/color.module.scss";
+import shape from "@styles/shape.module.scss";
+import layout from "@styles/layout.module.scss";
+import color from "@styles/color.module.scss";
 
 export default {
   title: "Design System/Organisms/Modal",

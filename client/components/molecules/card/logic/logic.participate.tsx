@@ -1,4 +1,4 @@
-import { Calendar, Computer, People } from "../../../../public/svg/original";
+import { Calendar, Computer, People } from "@svg/original";
 import React from "react";
 
 export const getParticipateContent = () => {

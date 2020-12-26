@@ -1,13 +1,13 @@
 import React from "react";
 
 /** styles **/
-import space from "../../../styles/space.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import font from "../../../styles/font.module.scss";
-import card from "./card.module.scss";
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import font from "@styles/font.module.scss";
+import card from "@card/card.module.scss";
 
 /** Contents */
-import { nearbyPic } from "../../../content";
+import { nearbyPic } from "@content";
 
 /** Logic */
 import { renderSize } from "./logic/logic.nearby";
