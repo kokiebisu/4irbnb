@@ -21,6 +21,7 @@ import { TransparentButton } from "@button/button.transparent";
 import { GlobeButton } from "@button/button.globe";
 import { LinkButton } from "@button/button.link";
 import { SearchButton } from "@button/button.search";
+import { LocationButton } from "@button/button.location";
 
 /** styles **/
 import layout from "@styles/layout.module.scss";
@@ -73,6 +74,7 @@ export const Button: React.FC<ButtonProps> = ({
     link: <LinkButton {...props} />,
     closed: <ClosedButton {...props} />,
     search: <SearchButton {...props} />,
+    location: <LocationButton {...props} />,
   };
 
   return (

@@ -30,7 +30,7 @@ export default {
     inverse: {
       control: "boolean",
     },
-    type: {
+    variant: {
       control: { disable: true },
     },
     icon: {
@@ -262,5 +262,18 @@ search.args = {
 search.argTypes = {
   expand: {
     control: "boolean",
+  },
+};
+
+export const location = ButtonTemplate.bind({});
+location.args = {
+  variant: "location",
+};
+location.argTypes = {
+  type: {
+    control: {
+      type: "select",
+      options: ["explore", "recent"],
+    },
   },
 };
