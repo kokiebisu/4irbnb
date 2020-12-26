@@ -7,13 +7,6 @@ export default {
   title: "Design System/Organisms/Header",
   component: Header,
   argTypes: { onClick: { action: "clicked" } },
-  decorators: [
-    (Story) => (
-      <ContextProvider>
-        <Story />
-      </ContextProvider>
-    ),
-  ],
 } as Meta;
 
 const TemplateStory: Story<HeaderProps> = (args) => <Header {...args} />;
