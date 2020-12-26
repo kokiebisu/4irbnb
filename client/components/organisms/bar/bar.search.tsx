@@ -12,7 +12,6 @@ import font from "@styles/font.module.scss";
 import animation from "@styles/animation.module.scss";
 
 /** vectors */
-import { MagnifyGlass } from "@svg/original";
 import { Button } from "@button/button.component";
 
 /**

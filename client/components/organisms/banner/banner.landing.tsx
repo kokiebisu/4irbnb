@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Router from "next/router";
 
@@ -13,9 +13,11 @@ import color from "@styles/color.module.scss";
 /** components */
 import { Header } from "@header/header.component";
 import { Button } from "@button/button.component";
+import { Bar } from "@bar/bar.component";
 
 /** hooks */
 import { useHandleScroll } from "@hooks/useHandleScroll";
+import useOnClickOutside from "@hooks/useOnClickOutside";
 
 /** stories */
 import { banner } from "@button/button.stories";
@@ -27,7 +29,15 @@ import { ResponsiveImage } from "@helper/img";
  * Renders the banner section
  */
 export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
+  const searchbarRef = useRef();
   const scrollPosition = useHandleScroll();
+  const [selected, setSelected] = useState(null);
+  useOnClickOutside(searchbarRef, () => {
+    if (selected) {
+      setSelected(!selected);
+    }
+  });
+
   return (
     <div className={index["banner"]}>
       <div className={[layout["all-sides"]].join(" ")}>
@@ -64,7 +74,13 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
                 <Header variant="transparent" data={data} />
               )}
             </div>
-            <div className={[color["c--white"]].join(" ")}></div>
+            <div ref={searchbarRef} style={{ maxWidth: 720, margin: "0 auto" }}>
+              <Bar
+                variant="search"
+                selected={selected}
+                setSelected={setSelected}
+              />
+            </div>
             <div
               className={[
                 layout["container--spread"],
