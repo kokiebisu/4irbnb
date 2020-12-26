@@ -124,3 +124,22 @@ export const photo = TemplateStory.bind({});
 photo.args = {
   variant: "photo",
 };
+photo.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 450 }}>
+      <Story />
+    </div>
+  ),
+];
+
+export const another = TemplateStory.bind({});
+another.args = {
+  variant: "another",
+};
+another.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 250 }}>
+      <Story />
+    </div>
+  ),
+];

@@ -3,13 +3,16 @@ import Router from "next/router";
 
 import { useStayDispatch, useStayState } from "@context/stay";
 import { Layout } from "@layout/layout.component";
+import { Create } from "@organisms/create/create.component";
 
 const PhotosPage = () => {
   const stayDispatch = useStayDispatch();
-  const { photo } = useStayState();
+  const { photos } = useStayState();
   const [data, setData] = useState({
-    photo,
+    photos,
   });
+
+  console.log("photos data", data.photos);
 
   const proceed = () => {
     stayDispatch({
@@ -17,7 +20,7 @@ const PhotosPage = () => {
       payload: data,
     });
     setTimeout(() => {
-      Router.push("/become-a-host/title");
+      Router.push("/become-a-host/description");
     }, 500);
   };
 
@@ -31,8 +34,8 @@ const PhotosPage = () => {
     <Layout
       variant="create"
       title="Photos"
-      left={<Create variant="photo" data={data} setData={setData} />}
-      percentage={90}
+      left={<Create variant="photos" data={data} setData={setData} />}
+      percentage={35}
       next={proceed}
       back={revert}
     />

@@ -17,7 +17,7 @@ const AmenitiesPage = () => {
       payload: data,
     });
     setTimeout(() => {
-      Router.push("/become-a-host/description");
+      Router.push("/become-a-host/photos");
     }, 500);
   };
 
@@ -38,7 +38,7 @@ const AmenitiesPage = () => {
           setData={setData}
         />
       }
-      percentage={50}
+      percentage={30}
       next={proceed}
       back={revert}
     />
