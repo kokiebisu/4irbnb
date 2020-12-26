@@ -15,13 +15,6 @@ import color from "@styles/color.module.scss";
 export default {
   title: "Design System/Organisms/Modal",
   argTypes: { onClick: { action: "clicked" } },
-  decorators: [
-    (Story) => (
-      <ContextProvider>
-        <Story />
-      </ContextProvider>
-    ),
-  ],
 } as Meta;
 
 const TemplateStory: Story<ModalProps> = (args) => <Modal {...args} />;

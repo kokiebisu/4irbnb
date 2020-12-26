@@ -9,13 +9,6 @@ export default {
   title: "Design System/Organisms/Create",
   component: Create,
   argTypes: { onClick: { action: "clicked" } },
-  decorators: [
-    (Story) => (
-      <StayProvider>
-        <Story />
-      </StayProvider>
-    ),
-  ],
 } as Meta;
 
 const TemplateStory: Story<CreateProps> = (args) => <Create {...args} />;
