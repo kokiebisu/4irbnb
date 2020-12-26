@@ -20,17 +20,17 @@ export const SearchButton: React.FC<{ expand?: boolean }> = ({
       style={{
         transitionDelay: expand ? "0s" : "0.5s",
         transition: "0.5s all ease",
-        width: expand ? 110 : 50,
-        height: 50,
+        width: expand ? 95 : 40,
+        height: 40,
         borderRadius: 50,
       }}
     >
       <div
-        className={`${[space["p-l--18"]].join(" ")} ${[space["m-r--4"]].join(
+        className={`${[space["p-l--14"]].join(" ")} ${[space["m-r--4"]].join(
           " "
         )}`}
       >
-        <MagnifyGlass width={15} height={15} stroke="white" strokeWidth={4} />
+        <MagnifyGlass width={13} height={13} stroke="white" strokeWidth={4} />
       </div>
       <div
         style={{
@@ -40,9 +40,9 @@ export const SearchButton: React.FC<{ expand?: boolean }> = ({
           visibility: expand ? "visible" : "hidden",
         }}
       >
-        <h4 className={[font["size--16"], color["c--white"]].join(" ")}>
+        <p className={[font["size--15"], color["c--white"]].join(" ")}>
           Search
-        </h4>
+        </p>
       </div>
     </div>
   );

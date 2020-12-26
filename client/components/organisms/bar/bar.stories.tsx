@@ -36,11 +36,19 @@ search.args = {
 };
 search.decorators = [
   (Story) => (
-    <div style={{ maxWidth: 750 }}>
+    <div style={{ maxWidth: 720 }}>
       <Story />
     </div>
   ),
 ];
+search.argTypes = {
+  selected: {
+    control: {
+      type: "select",
+      options: ["location", "checkin", "checkout", "guests"],
+    },
+  },
+};
 
 export const create = TemplateStory.bind({});
 create.args = {
