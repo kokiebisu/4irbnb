@@ -1,12 +1,12 @@
 import React from "react";
 
 /** styles **/
-import shape from "../../../styles/shape.module.scss";
-import color from "../../../styles/color.module.scss";
-import space from "../../../styles/space.module.scss";
+import shape from "@styles/shape.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
 
 /** vectors */
-import { DoubleBed } from "../../../public/svg/original";
+import { DoubleBed } from "@svg/original";
 
 /**
  * Renders the arrangements card component

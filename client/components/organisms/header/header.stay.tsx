@@ -2,17 +2,17 @@ import React from "react";
 import Router from "next/router";
 
 /** styles */
-import space from "../../../styles/space.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import color from "../../../styles/color.module.scss";
-import font from "../../../styles/font.module.scss";
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import shape from "@styles/shape.module.scss";
+import color from "@styles/color.module.scss";
+import font from "@styles/font.module.scss";
 
 /** vectors */
-import { NoNameLogo } from "../../../public/svg/logo";
+import { NoNameLogo } from "@svg/logo";
 
 /** components */
-import { Button } from "../../../components/atoms/button/button.component";
+import { Button } from "@button/button.component";
 
 /**
  * Renders the header for the homes page

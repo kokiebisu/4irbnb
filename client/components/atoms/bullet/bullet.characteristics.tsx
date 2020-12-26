@@ -1,10 +1,10 @@
 import React from "react";
 
 /** styles **/
-import color from "../../../styles/color.module.scss";
-import font from "../../../styles/font.module.scss";
-import space from "../../../styles/space.module.scss";
-import layout from "../../../styles/layout.module.scss";
+import color from "@styles/color.module.scss";
+import font from "@styles/font.module.scss";
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
 
 /** vectors */
 import {
@@ -17,10 +17,10 @@ import {
   People,
   Sparkle,
   Time,
-} from "../../../public/svg/original";
+} from "@svg/original";
 
 /** Helpers */
-import * as Helper from "../../../helper/time";
+import * as Helper from "@helper/time";
 
 /**
  * Renders the characteristic bullet

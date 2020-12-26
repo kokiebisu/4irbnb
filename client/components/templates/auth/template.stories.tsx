@@ -1,14 +1,14 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Template, TemplateProps } from "../template.component";
-import { ContextProvider } from "../../../context/provider";
+import { Template, TemplateProps } from "@template/template.component";
+import { ContextProvider } from "@context/provider";
 
 /** styles */
-import button from "../../atoms/button/button.module.scss";
-import color from "../../../styles/color.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import space from "../../../styles/space.module.scss";
+import color from "@styles/color.module.scss";
+import layout from "@styles/layout.module.scss";
+import shape from "@styles/shape.module.scss";
+import space from "@styles/space.module.scss";
+import button from "@button/button.module.scss";
 
 export default {
   title: "Design System/Templates/Auth",

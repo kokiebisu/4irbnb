@@ -1,18 +1,11 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
-import { Input, InputProps } from "./input.component";
+import { Input, InputProps } from "@input/input.component";
 
 export default {
   title: "Design System/Atoms/Input",
   component: Input,
-  decorators: [
-    (Story) => (
-      <div style={{ width: 300 }}>
-        <Story />
-      </div>
-    ),
-  ],
   argTypes: {
     extendsTo: {
       control: {
@@ -121,3 +114,32 @@ export const closed = TemplateStory.bind({});
 closed.args = {
   variant: "closed",
 };
+
+export const price = TemplateStory.bind({});
+price.args = {
+  variant: "price",
+};
+
+export const photo = TemplateStory.bind({});
+photo.args = {
+  variant: "photo",
+};
+photo.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 450 }}>
+      <Story />
+    </div>
+  ),
+];
+
+export const another = TemplateStory.bind({});
+another.args = {
+  variant: "another",
+};
+another.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 250 }}>
+      <Story />
+    </div>
+  ),
+];

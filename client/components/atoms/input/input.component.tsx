@@ -1,27 +1,30 @@
 import React from "react";
 
 /** components */
-import { EmailInput } from "./input.email";
-import { PasswordInput } from "./input.password";
-import { NameInput } from "./input.name";
-import { BirthdateInput } from "./input.birthdate";
-import { RegionInput } from "./input.region";
-import { PhoneNumberInput } from "./input.phone";
-import { PlaceInput } from "./input.place";
-import { GuestsInput } from "./input.guests";
-import { AddressInput } from "./input.address";
-import { SelectInput } from "./input.select";
-import { RadioInput } from "./input.radio";
-import { CounterInput } from "./input.counter";
-import { CheckboxInput } from "./input.checkbox";
-import { TextInput } from "./input.text";
-import { TextAreaInput } from "./input.textarea";
-import { LimitInput } from "./input.limit";
-import { VerifyInput } from "./input.verify";
-import { ClosedInput } from "./input.closed";
+import { EmailInput } from "@input/input.email";
+import { PasswordInput } from "@input/input.password";
+import { NameInput } from "@input/input.name";
+import { BirthdateInput } from "@input/input.birthdate";
+import { RegionInput } from "@input/input.region";
+import { PhoneNumberInput } from "@input/input.phone";
+import { PlaceInput } from "@input/input.place";
+import { GuestsInput } from "@input/input.guests";
+import { AddressInput } from "@input/input.address";
+import { SelectInput } from "@input/input.select";
+import { RadioInput } from "@input/input.radio";
+import { CounterInput } from "@input/input.counter";
+import { CheckboxInput } from "@input/input.checkbox";
+import { TextInput } from "@input/input.text";
+import { TextAreaInput } from "@input/input.textarea";
+import { LimitInput } from "@input/input.limit";
+import { VerifyInput } from "@input/input.verify";
+import { ClosedInput } from "@input/input.closed";
+import { PriceInput } from "@input/input.price";
+import { PhotoInput } from "@input/input.photo";
 
 /** styles **/
-import shape from "../../../styles/shape.module.scss";
+import shape from "@styles/shape.module.scss";
+import { AnotherInput } from "./input.another";
 
 export interface InputProps {
   extendsTo?: string;
@@ -58,6 +61,9 @@ export const Input: React.FC<InputProps> = ({
     limit: <LimitInput {...props} />,
     verify: <VerifyInput {...props} />,
     closed: <ClosedInput {...props} />,
+    price: <PriceInput {...props} />,
+    photo: <PhotoInput {...props} />,
+    another: <AnotherInput {...props} />,
   };
 
   return (

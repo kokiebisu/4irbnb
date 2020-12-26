@@ -1,14 +1,14 @@
 import React from "react";
 
 /** styles */
-import space from "../../../styles/space.module.scss";
-import font from "../../../styles/font.module.scss";
-import color from "../../../styles/color.module.scss";
-import layout from "../../../styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
+import layout from "@styles/layout.module.scss";
 
 /** components */
-import { Input } from "../../../components/atoms/input/input.component";
-import { Layout } from "../../../layout/layout.component";
+import { Input } from "@input/input.component";
+import { Layout } from "@layout/layout.component";
 
 export const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
   setData,
@@ -64,60 +64,8 @@ export const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
           >
             Tip:{" "}
           </span>
-          You’ll get more reservations if you keep your calendar available and
-          only block days you can’t host.
+          Most hosts can keep their calendars updated up to 6 months out.
         </h4>
-      </div>
-      <div
-        className={[color["bg--white__2"], space["m-v--32"]].join(" ")}
-        style={{ width: "100%", height: 1 }}
-      />
-      <div>
-        <div className={[space["m-b--12"]].join(" ")}>
-          <h4>When can guests check in?</h4>
-        </div>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            columnGap: 10,
-          }}
-        >
-          <div>
-            <div className={[space["m-b--8"]].join(" ")}>
-              <h4 className={[color["c--gray__0"], font["size--13"]].join(" ")}>
-                From:{" "}
-              </h4>
-            </div>
-            <div>
-              <Input
-                variant="select"
-                inputType="checkinFrom"
-                value={data.checkinFrom}
-                handleChange={(e) =>
-                  setData({ ...data, checkinFrom: e.target.value })
-                }
-              />
-            </div>
-          </div>
-          <div>
-            <div className={[space["m-b--8"]].join(" ")}>
-              <h4 className={[color["c--gray__0"], font["size--13"]].join(" ")}>
-                To:{" "}
-              </h4>
-            </div>
-            <div>
-              <Input
-                variant="select"
-                inputType="checkinTo"
-                value={data.checkinTo}
-                handleChange={(e) =>
-                  setData({ ...data, checkinTo: e.target.value })
-                }
-              />
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

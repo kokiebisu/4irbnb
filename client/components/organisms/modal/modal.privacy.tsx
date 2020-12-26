@@ -1,22 +1,22 @@
 import React from "react";
 
 /** styles */
-import shape from "../../../styles/shape.module.scss";
-import color from "../../../styles/color.module.scss";
-import font from "../../../styles/font.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import space from "../../../styles/space.module.scss";
-import modal from "./modal.module.scss";
-import responsive from "../../../styles/responsive.module.scss";
+import shape from "@styles/shape.module.scss";
+import color from "@styles/color.module.scss";
+import font from "@styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import responsive from "@styles/responsive.module.scss";
+import modal from "@modal/modal.module.scss";
 
 /** components */
-import { Button } from "../../../components/atoms/button/button.component";
+import { Button } from "@button/button.component";
 
 /** vectors */
-import { Lock } from "../../../public/svg/original";
+import { Lock } from "@svg/original";
 
 /** contexts */
-import { useToggleDispatch } from "../../../context/toggle";
+import { useToggleDispatch } from "@context/toggle";
 
 /**
  * Renders the privacy modal

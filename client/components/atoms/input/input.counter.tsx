@@ -1,11 +1,11 @@
 import React from "react";
 
 /** styles **/
-import layout from "../../../styles/layout.module.scss";
-import font from "../../../styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
+import font from "@styles/font.module.scss";
 
 /** vectors */
-import { Minus, Plus } from "../../../public/svg/original";
+import { Minus, Plus } from "@svg/original";
 
 export const CounterInput: React.FC<{
   title?: string;

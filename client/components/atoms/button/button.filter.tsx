@@ -1,17 +1,19 @@
 import React from "react";
 
 /** styles **/
-import space from "../../../styles/space.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import color from "../../../styles/color.module.scss";
-import font from "../../../styles/font.module.scss";
-import button from "./button.module.scss";
+import space from "@styles/space.module.scss";
+import shape from "@styles/shape.module.scss";
+import color from "@styles/color.module.scss";
+import font from "@styles/font.module.scss";
+import button from "@button/button.module.scss";
 
 /**
  * Renders the filter button
  * @param {string} name - Name of the filter button
  */
-export const FilterButton = ({ name = "Cancellation flexibility" }) => {
+export const FilterButton: React.FC<{ name?: string }> = ({
+  name = "Cancellation flexibility",
+}) => {
   return (
     <div
       className={[

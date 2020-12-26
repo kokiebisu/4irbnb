@@ -1,16 +1,16 @@
 import React from "react";
 
 /** styles **/
-import card from "./card.module.scss";
-import space from "../../../styles/space.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import color from "../../../styles/color.module.scss";
-import font from "../../../styles/font.module.scss";
+import card from "@card/card.module.scss";
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import shape from "@styles/shape.module.scss";
+import color from "@styles/color.module.scss";
+import font from "@styles/font.module.scss";
 
 /** vectors */
-import { Star } from "../../../public/svg/original";
-import { ChevronDown } from "../../../public/svg/regular";
+import { Star } from "@svg/original";
+import { ChevronDown } from "@svg/regular";
 
 /** logic */
 import { useCheckin } from "./logic/logic.checkin";

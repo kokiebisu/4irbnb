@@ -2,24 +2,21 @@ import React, { useRef } from "react";
 import Router from "next/router";
 
 /** styles **/
-import layout from "../../../styles/layout.module.scss";
-import space from "../../../styles/space.module.scss";
-import font from "../../../styles/font.module.scss";
-import banner from "./banner.module.scss";
-import responsive from "../../../styles/responsive.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import font from "@styles/font.module.scss";
+import banner from "@banner/banner.module.scss";
+import responsive from "@styles/responsive.module.scss";
 
 /** components */
-import { Button } from "../../../components/atoms/button/button.component";
-import { Card } from "../../molecules/card/card.component";
+import { Button } from "@button/button.component";
+import { Card } from "@card/card.component";
 
 /** hooks */
-import { useSlider, SliderProps } from "../../../hooks/useSlider";
+import { useSlider, SliderProps } from "@hooks/useSlider";
 
 /** stories */
-import {
-  paginate,
-  primary,
-} from "../../../components/atoms/button/button.stories";
+import { paginate, primary } from "@button/button.stories";
 
 /**
  * Renders the homes banner

@@ -13,8 +13,33 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": "."
+    "baseUrl": "./",
+    "paths": {
+      "@bullet/*": ["components/atoms/bullet/*"],
+      "@button/*": ["components/atoms/button/*"],
+      "@input/*": ["components/atoms/input/*"],
+      "@card/*": ["components/molecules/card/*"],
+      "@organisms/*": ["components/organisms/*"],
+      "@particle/*": ["components/particles/*"],
+      "@templates/*": ["components/templates/*"],
+      "@animation/*": ["components/animation/*"],
+      "@banner/*": ["components/organisms/banner/*"],
+      "@header/*": ["components/organisms/header/*"],
+      "@create/*": ["components/organisms/create/*"],
+      "@bar/*": ["components/organisms/bar/*"],
+      "@footer/*": ["components/organisms/footer/*"],
+      "@modal/*": ["components/organisms/modal/*"],
+      "@section/*": ["components/organisms/section/*"],
+      "@template/*": ["components/templates/*"],
+      "@layout/*": ["layout/*"],
+      "@styles/*": ["styles/*"],
+      "@svg/*": ["public/svg/*"],
+      "@helper/*": ["helper/*"],
+      "@hooks/*": ["hooks/*"],
+      "@context/*": ["context/*"],
+      "@content": ["content/index.ts"]
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".storybook/**/*"],
   "exclude": ["node_modules"]
 }

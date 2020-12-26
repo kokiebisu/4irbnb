@@ -1,24 +1,20 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import Router from "next/router";
 
 /** components */
-import { Button } from "../../../components/atoms/button/button.component";
-
-/** props */
-import { ButtonProps } from "./button.component";
+import { Button, ButtonProps } from "@button/button.component";
 
 /** contexts */
 import { ContextProvider } from "../../../context/provider";
 
 /** styles */
-import font from "../../../styles/font.module.scss";
-import button from "./button.module.scss";
-import color from "../../../styles/color.module.scss";
-import layout from "../../../styles/layout.module.scss";
-import shape from "../../../styles/shape.module.scss";
-import space from "../../../styles/space.module.scss";
-import animation from "../../../styles/animation.module.scss";
+import button from "@button/button.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
+import layout from "@styles/layout.module.scss";
+import shape from "@styles/shape.module.scss";
+import space from "@styles/space.module.scss";
+import animation from "@styles/animation.module.scss";
 
 export default {
   title: "Design System/Atoms/Button",
@@ -257,4 +253,14 @@ back.args = {
 export const link = ButtonTemplate.bind({});
 link.args = {
   variant: "link",
+};
+
+export const search = ButtonTemplate.bind({});
+search.args = {
+  variant: "search",
+};
+search.argTypes = {
+  expand: {
+    control: "boolean",
+  },
 };

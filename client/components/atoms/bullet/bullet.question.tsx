@@ -1,9 +1,9 @@
 import React from "react";
 
 /** styles */
-import space from "../../../styles/space.module.scss";
-import color from "../../../styles/color.module.scss";
-import font from "../../../styles/font.module.scss";
+import space from "@styles/space.module.scss";
+import color from "@styles/color.module.scss";
+import font from "@styles/font.module.scss";
 
 export const QuestionBullet: React.FC<{
   title?: string;

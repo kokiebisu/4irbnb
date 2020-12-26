@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Bullet, BulletProps } from "./bullet.component";
+import { Bullet, BulletProps } from "@bullet/bullet.component";
 
 export default {
   title: "Design System/Atoms/Bullet",
