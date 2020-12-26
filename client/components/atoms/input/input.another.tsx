@@ -8,7 +8,7 @@ import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";
 import input from "@input/input.module.scss";
 
-import { Upload } from "@svg/original";
+import { Plus, Upload } from "@svg/original";
 
 /**
  * Renders the text input component
@@ -19,27 +19,30 @@ import { Upload } from "@svg/original";
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const PhotoInput: React.FC<{
+export const AnotherInput: React.FC<{
   handleChange?: any;
   handleKeyPress?: any;
   value?: string;
 }> = ({ handleChange, value }) => {
   return (
-    <div style={{ height: 350 }}>
+    <div
+      style={{
+        height: 130,
+        padding: 15,
+        border: "1px dashed lightgray",
+      }}
+    >
       <form className={[shape["h--full"]].join(" ")}>
         <input
           type="file"
           id="upload"
           style={{ display: "none" }}
-          className={[shape["h--full"]].join(" ")}
           onChange={handleChange}
         />
         <label htmlFor="upload" className={[shape["h--full"]].join(" ")}>
           <div
             style={{
               cursor: "pointer",
-              padding: 15,
-              border: "1px dashed lightgray",
             }}
             className={[shape["h--full"]].join(" ")}
           >
@@ -48,8 +51,6 @@ export const PhotoInput: React.FC<{
                 position: "relative",
                 width: "100%",
                 height: "100%",
-                backgroundImage:
-                  "url(https://a0.muscache.com/airbnb/static/packages/upload-photos-ghosts.56fe723d.png)",
               }}
             >
               <div
@@ -68,43 +69,26 @@ export const PhotoInput: React.FC<{
                   }}
                 >
                   <div>
-                    <div
-                      style={{
-                        padding: "14px 22px",
-                        backgroundColor: "#FF5A5F",
-                        borderRadius: 4,
-                      }}
-                    >
+                    <div>
                       <div
                         className={[
                           layout["flex"],
                           layout["items-center"],
                         ].join(" ")}
                       >
-                        <div className={[space["m-r--8"]].join(" ")}>
-                          <Upload width={20} stroke="white" />
-                        </div>
-                        <div>
-                          <h3
-                            style={{
-                              fontSize: 14,
-                              whiteSpace: "nowrap",
-                              color: "white",
-                            }}
-                          >
-                            Upload Photos
-                          </h3>
-                        </div>
+                        <Plus width={45} fill="#D8D8D8" />
                       </div>
                     </div>
                   </div>
-                  <div className={[space["m-t--8"]].join(" ")}>
+                  <div>
                     <h4
-                      className={[font["size--15"], color["c--gray__0"]].join(
-                        " "
-                      )}
+                      className={[
+                        font["size--14"],
+                        color["c--white__3"],
+                        font["no-wrap"],
+                      ].join(" ")}
                     >
-                      or drag them in
+                      Add another
                     </h4>
                   </div>
                 </div>
