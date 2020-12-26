@@ -70,3 +70,8 @@ export const globe = TemplateStory.bind({});
 globe.args = {
   variant: "globe",
 };
+
+export const location = TemplateStory.bind({});
+location.args = {
+  variant: "location",
+};
