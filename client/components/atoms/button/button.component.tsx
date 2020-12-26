@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 /** components */
@@ -21,10 +20,12 @@ import { ClosedButton } from "@button/button.closed";
 import { TransparentButton } from "@button/button.transparent";
 import { GlobeButton } from "@button/button.globe";
 import { LinkButton } from "@button/button.link";
+import { SearchButton } from "@button/button.search";
 
 /** styles **/
-import layout from "../../../styles/layout.module.scss";
-import shape from "../../../styles/shape.module.scss";
+import layout from "@styles/layout.module.scss";
+import shape from "@styles/shape.module.scss";
+import animation from "@styles/animation.module.scss";
 
 export interface ButtonProps {
   extendsTo?: string;
@@ -42,7 +43,7 @@ export interface ButtonProps {
  * @param {Object} children - A JSX that will be part of the component
  */
 export const Button: React.FC<ButtonProps> = ({
-  extendsTo,
+  extendsTo = "",
   variant,
   children,
   onClick,
@@ -71,6 +72,7 @@ export const Button: React.FC<ButtonProps> = ({
     globe: <GlobeButton {...props} />,
     link: <LinkButton {...props} />,
     closed: <ClosedButton {...props} />,
+    search: <SearchButton {...props} />,
   };
 
   return (
@@ -83,7 +85,7 @@ export const Button: React.FC<ButtonProps> = ({
         block
           ? [layout["block"], shape["w--full"]].join(" ")
           : layout["inline-block"]
-      }`}
+      } ${[animation["transition"]].join(" ")}`}
       onClick={!disable ? onClick : undefined}
       disabled={disable}
       style={{ cursor: disable ? "default" : "pointer" }}
