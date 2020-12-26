@@ -18,8 +18,8 @@ export const SearchButton: React.FC<{ expand?: boolean }> = ({
         color["bg--primary"],
       ].join(" ")}
       style={{
-        transitionDelay: expand ? "0s" : "0.5s",
-        transition: "0.5s all ease",
+        transitionDelay: expand ? "0s" : "0.25s",
+        transition: "0.25s all ease",
         width: expand ? 95 : 40,
         height: 40,
         borderRadius: 50,
@@ -34,8 +34,8 @@ export const SearchButton: React.FC<{ expand?: boolean }> = ({
       </div>
       <div
         style={{
-          transition: "0.5s all ease",
-          transitionDelay: expand ? "0s" : "0.5s",
+          transition: "0.25s all ease",
+          transitionDelay: expand ? "0.25s" : "0s",
           opacity: expand ? 1 : 0,
           visibility: expand ? "visible" : "hidden",
         }}
