@@ -70,67 +70,69 @@ export const TransparentHeader: React.FC<{
         >
           <div ref={searchbarRef}>
             <div style={{ position: "relative", zIndex: 50, left: 70 }}>
-              <Bar
-                variant="search"
-                selected={selected}
-                setSelected={setSelected}
-                category={category}
-                setCategory={setCategory}
-              />
+              <div>
+                <Bar
+                  variant="search"
+                  selected={selected}
+                  setSelected={setSelected}
+                  category={category}
+                  setCategory={setCategory}
+                />
+              </div>
+              <div
+                style={{
+                  position: "absolute",
+                  top: 110,
+                  left: 0,
+                  zIndex: 70,
+                  width: "100%",
+                  maxWidth: 400,
+                }}
+              >
+                <Modal
+                  variant="location"
+                  dispatch="toggle_location"
+                  extendsTo={[shape["w--full"]].join(" ")}
+                  criteria={toggleState.location}
+                />
+              </div>
+              <div
+                style={{
+                  position: "absolute",
+                  top: 110,
+                  left: 0,
+                  zIndex: 70,
+                  width: "100%",
+                  maxWidth: 720,
+                }}
+              >
+                <Modal
+                  variant="check"
+                  dispatch="toggle_check"
+                  extendsTo={[shape["w--full"]].join(" ")}
+                  criteria={toggleState.check}
+                />
+              </div>
+              <div
+                style={{
+                  position: "absolute",
+                  top: 110,
+                  right: 0,
+                  zIndex: 70,
+                  width: "100%",
+                  maxWidth: 325,
+                  display: "flex",
+                  justifyContent: "flex-end",
+                }}
+              >
+                <Modal
+                  variant="guests"
+                  dispatch="toggle_guests"
+                  extendsTo={[shape["w--full"]].join(" ")}
+                  criteria={toggleState.guests}
+                />
+              </div>
             </div>
-            {/* <div
-              style={{
-                position: "relative",
-                top: 110,
-                left: 0,
-                zIndex: 70,
-                width: "100%",
-                maxWidth: 400,
-              }}
-            >
-              <Modal
-                variant="location"
-                dispatch="toggle_location"
-                extendsTo={[shape["w--full"]].join(" ")}
-                criteria={toggleState.location}
-              />
-            </div> */}
-            {/* <div
-              style={{
-                position: "absolute",
-                top: 110,
-                left: 0,
-                zIndex: 70,
-                width: "100%",
-                maxWidth: 720,
-              }}
-            >
-              <Modal
-                variant="check"
-                dispatch="toggle_check"
-                extendsTo={[shape["w--full"]].join(" ")}
-                criteria={toggleState.check}
-              />
-            </div> */}
-            {/* <div
-              style={{
-                position: "absolute",
-                top: 110,
-                right: 0,
-                zIndex: 70,
-                width: "100%",
-                maxWidth: 325,
-                display: "flex",
-                justifyContent: "flex-end",
-              }}
-            >
-              <Modal
-                variant="guests"
-                dispatch="toggle_guests"
-                extendsTo={[shape["w--full"]].join(" ")}
-                criteria={toggleState.guests}
-              />
-            </div> */}
           </div>
         </div>
         <div style={{ position: "relative" }}>
