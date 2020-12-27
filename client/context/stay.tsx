@@ -162,8 +162,6 @@ const StayProvider = ({ children }: StayProviderProps) => {
     photos: [],
   });
 
-  console.log("stay provider", state);
-
   return (
     <StayStateContext.Provider value={state}>
       <StayDispatchContext.Provider value={dispatch}>

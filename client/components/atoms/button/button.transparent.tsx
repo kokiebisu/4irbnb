@@ -22,10 +22,8 @@ export const TransparentButton: React.FC<{
         layout["flex"],
         layout["items-center"],
         color["bg--transparent"],
-        space["p-t--13"],
-        space["p-b--13"],
-        space["p-l--15"],
-        space["p-r--15"],
+        space["p-v--10"],
+        space["p-h--12"],
       ].join(" ")} ${
         inverse
           ? [animation["hover-background--white__transparent"]].join(" ")
