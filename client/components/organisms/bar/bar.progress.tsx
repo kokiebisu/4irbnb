@@ -39,7 +39,7 @@ export const ProgressBar: React.FC<{
             borderTopRightRadius: 9999,
             borderBottomRightRadius: 9999,
             backgroundColor: "#278489",
-            zIndex: 9999,
+            zIndex: 60,
           }}
         ></div>
       </div>

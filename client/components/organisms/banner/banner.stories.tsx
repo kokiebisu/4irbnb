@@ -7,13 +7,6 @@ export default {
   title: "Design System/Organisms/Banner",
   component: Banner,
   argTypes: { onClick: { action: "clicked" } },
-  decorators: [
-    (Story) => (
-      <ContextProvider>
-        <Story />
-      </ContextProvider>
-    ),
-  ],
 } as Meta;
 
 const TemplateStory: Story<BannerProps> = (args) => <Banner {...args} />;

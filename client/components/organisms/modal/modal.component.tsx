@@ -12,6 +12,7 @@ import { AvailabilityModal } from "@modal/modal.availability";
 import { AuthModal } from "@modal/modal.auth";
 import { BookingModal } from "@modal/modal.booking";
 import { GlobeModal } from "@modal/modal.globe";
+import { LocationModal } from "@modal/modal.location";
 
 /** contexts */
 import { useToggleDispatch } from "@context/toggle";
@@ -71,6 +72,7 @@ export const Modal: React.FC<ModalProps> = ({
     availability: <AvailabilityModal {...props} />,
     booking: <BookingModal {...props} />,
     globe: <GlobeModal {...props} />,
+    location: <LocationModal {...props} />,
   };
 
   if (criteria !== undefined) {

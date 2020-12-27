@@ -21,11 +21,13 @@ import { TransparentButton } from "@button/button.transparent";
 import { GlobeButton } from "@button/button.globe";
 import { LinkButton } from "@button/button.link";
 import { SearchButton } from "@button/button.search";
+import { LocationButton } from "@button/button.location";
 
 /** styles **/
 import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 import animation from "@styles/animation.module.scss";
+import { NearbyButton } from "./button.nearby";
 
 export interface ButtonProps {
   extendsTo?: string;
@@ -33,7 +35,7 @@ export interface ButtonProps {
   onClick?: () => void;
   block?: boolean;
   animate?: boolean;
-  [x: string]: any;
+  [property: string]: any;
 }
 
 /**
@@ -73,6 +75,8 @@ export const Button: React.FC<ButtonProps> = ({
     link: <LinkButton {...props} />,
     closed: <ClosedButton {...props} />,
     search: <SearchButton {...props} />,
+    location: <LocationButton {...props} />,
+    nearby: <NearbyButton {...props} />,
   };
 
   return (
