@@ -42,77 +42,96 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
       </div>
       <div className={[layout["all-sides"]].join(" ")}>
         <div
-          style={{ display: "grid", gridTemplateRows: "auto 1fr" }}
-          className={[index["header__wrapper--md"], shape["h--full"]].join(" ")}
+          style={{
+            display: "grid",
+            gridTemplateRows: "auto 1fr",
+            height: "100%",
+          }}
         >
-          <div className={[layout["container--spread"]].join(" ")}>
-            {scrollPosition > 56 && (
-              <motion.div
-                exit={{ opacity: 0 }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                style={{
-                  left: 0,
-                  right: 0,
-                  position: "fixed",
-                  top: 0,
-                  zIndex: 50,
-                  width: "100%",
-                }}
-              >
-                <Header spread variant="white" data={data} />
-              </motion.div>
-            )}
-            {scrollPosition > 56 ? (
-              <div style={{ padding: "39px 0" }}></div>
-            ) : (
-              <Header variant="transparent" data={data} />
-            )}
+          <div>
+            <div>
+              {/* {scrollPosition > 56 && (
+                <motion.div
+                  exit={{ opacity: 0 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  style={{
+                    left: 0,
+                    right: 0,
+                    position: "fixed",
+                    top: 0,
+                    zIndex: 50,
+                    width: "100%",
+                  }}
+                >
+                  <Header spread variant="white" data={data} />
+                </motion.div>
+              )} */}
+            </div>
+            <div>
+              <Header
+                variant="transparent"
+                data={data}
+                extendsTo={`${[layout["container--spread"]].join(" ")} ${
+                  scrollPosition < 56
+                    ? [color["bg--transparent"]].join(" ")
+                    : [
+                        color["bg--white"],
+                        layout["fixed"],
+                        layout["t--0"],
+                        layout["l--0"],
+                        layout["r--0"],
+                      ].join(" ")
+                }`}
+              />
+            </div>
           </div>
           <div
-            className={[
-              layout["container--spread"],
-              layout["z--20"],
-              shape["h--75p"],
-              index["flex__explore"],
-            ].join(" ")}
+            className={[layout["container--spread"]].join(" ")}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
           >
-            <div className={[space["m-v--10"], space["m-h--0"]].join(" ")}>
-              <h3 className={[color["c--white"], font["size--28"]].join(" ")}>
-                Go Near
-              </h3>
-            </div>
-            <div
-              className={[
-                font["c--white"],
-                index["w__explore--subtitle"],
-                index["text__explore--subtitle"],
-              ].join(" ")}
-            >
-              <p
+            <div style={{ position: "relative", bottom: 80 }}>
+              <div>
+                <h3 className={[color["c--white"], font["size--28"]].join(" ")}>
+                  Go Near
+                </h3>
+              </div>
+              <div
                 className={[
-                  index["size__explore--subtitle"],
-                  font["weight--300"],
-                  font["ls--3"],
-                  color["c--white"],
+                  index["w__explore--subtitle"],
+                  index["text__explore--subtitle"],
                 ].join(" ")}
               >
-                Settle in somewhere new. Discover nearby stays to live, work, or
-                just relax.
-              </p>
-            </div>
-            <div
-              className={[
-                space["m-v--15"],
-                space["m-h--0"],
-                index["justify__explore--button"],
-              ].join(" ")}
-            >
-              <Button
-                {...banner.args}
-                title="Explore nearby"
-                onClick={() => Router.push("/")}
-              />
+                <p
+                  className={[
+                    font["c--white"],
+                    index["size__explore--subtitle"],
+                    font["weight--300"],
+                    font["ls--3"],
+                    color["c--white"],
+                  ].join(" ")}
+                >
+                  Settle in somewhere new. Discover nearby stays to live, work,
+                  or just relax.
+                </p>
+              </div>
+              <div
+                className={[
+                  space["m-t--15"],
+                  space["m-h--0"],
+                  index["justify__explore--button"],
+                ].join(" ")}
+              >
+                <Button
+                  {...banner.args}
+                  title="Explore nearby"
+                  onClick={() => Router.push("/")}
+                />
+              </div>
             </div>
           </div>
         </div>
