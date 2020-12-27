@@ -9,6 +9,7 @@ type State = {
   auth: boolean;
   globe: boolean;
   location: boolean;
+  guests: boolean;
 };
 
 type ToggleProviderProps = { children: React.ReactNode };
@@ -29,6 +30,8 @@ const toggleReducer = (state: State, action: Action) => {
       return { ...state, globe: !state.globe };
     case "toggle_location":
       return { ...state, location: !state.location };
+    case "toggle_guests":
+      return { ...state, guests: !state.guests };
     case "close_register":
       return { ...state, auth: !state.auth };
     default:
@@ -43,6 +46,7 @@ const ToggleProvider = ({ children }: ToggleProviderProps) => {
     auth: false,
     globe: false,
     location: false,
+    guests: false,
   });
 
   return (

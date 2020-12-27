@@ -16,6 +16,7 @@ import { LocationModal } from "@modal/modal.location";
 
 /** contexts */
 import { useToggleDispatch } from "@context/toggle";
+import { GuestsModal } from "./modal.guests";
 
 export interface ModalProps {
   variant: string;
@@ -73,6 +74,7 @@ export const Modal: React.FC<ModalProps> = ({
     booking: <BookingModal {...props} />,
     globe: <GlobeModal {...props} />,
     location: <LocationModal {...props} />,
+    guests: <GuestsModal {...props} />,
   };
 
   if (criteria !== undefined) {
