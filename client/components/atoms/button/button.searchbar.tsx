@@ -25,60 +25,48 @@ export const SearchbarButton: React.FC<{ mini?: boolean }> = ({
   return (
     <>
       {mini ? (
-        <motion.button
-          whileTap={{ scale: 0.98 }}
-          data-testid="button"
+        <div
+          style={{ width: "100%", height: 45 }}
           className={[
-            shape["br--25"],
-            color["bg--white"],
-            color["b--white__2"],
-            animation["hover-shadow--sm"],
+            space["p-v--15"],
+            space["p-l--18"],
+            space["p-r--8"],
+            layout["flex"],
+            layout["items-center"],
+            layout["justify-between"],
+            color["b--white__3"],
+            shape["br--30"],
           ].join(" ")}
-          onClick={handlePress}
         >
-          <div
-            style={{ width: 240, height: 45 }}
-            className={[
-              space["p-v--15"],
-              space["p-l--18"],
-              space["p-r--8"],
-              layout["flex"],
-              layout["items-center"],
-              layout["justify-between"],
-            ].join(" ")}
-          >
-            <div>
-              <p
-                className={[
-                  font["no-wrap"],
-                  font["size--14"],
-                  font["weight--500"],
-                ].join(" ")}
-              >
-                Start your search
-              </p>
-            </div>
-            <div>
-              <div
-                className={[color["bg--primary"], layout["all-center"]].join(
-                  " "
-                )}
-                style={{
-                  borderRadius: "50%",
-                  height: 30,
-                  width: 30,
-                }}
-              >
-                <MagnifyGlass
-                  width={12}
-                  height={12}
-                  stroke="white"
-                  strokeWidth={6}
-                />
-              </div>
+          <div>
+            <p
+              className={[
+                font["no-wrap"],
+                font["size--14"],
+                font["weight--500"],
+              ].join(" ")}
+            >
+              Start your search
+            </p>
+          </div>
+          <div>
+            <div
+              className={[color["bg--primary"], layout["all-center"]].join(" ")}
+              style={{
+                borderRadius: "50%",
+                height: 30,
+                width: 30,
+              }}
+            >
+              <MagnifyGlass
+                width={12}
+                height={12}
+                stroke="white"
+                strokeWidth={6}
+              />
             </div>
           </div>
-        </motion.button>
+        </div>
       ) : (
         <motion.button
           whileTap={{ scale: 0.98 }}

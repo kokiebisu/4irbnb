@@ -21,31 +21,77 @@ import { useToggleDispatch } from "@context/toggle";
 export const SearchBar: React.FC<{
   selected?: string;
   setSelected?: (param: string) => void;
-}> = ({ selected = null, setSelected = () => console.log("clicked") }) => {
+  category?: string;
+  setCategory?: (param: string) => void;
+}> = ({
+  selected = null,
+  setSelected = () => console.log("clicked"),
+  category,
+  setCategory,
+}) => {
   const dispatchToggle = useToggleDispatch();
   return (
     <div>
       <div className={[space["m-b--16"], space["m-t--12"]].join(" ")}>
         <div className={[layout["flex"], layout["justify-center"]].join(" ")}>
           <div className={[space["m-h--16"]].join(" ")}>
-            <button>
-              <p className={[color["c--white"], font["size--14"]].join(" ")}>
-                Places to stay
-              </p>
+            <button onClick={() => setCategory("stay")}>
+              <div className={[space["p-b--8"]].join(" ")}>
+                <p className={[color["c--white"], font["size--14"]].join(" ")}>
+                  Places to stay
+                </p>
+              </div>
+              <div
+                className={[layout["flex"], layout["justify-center"]].join(" ")}
+              >
+                {category === "stay" && (
+                  <motion.div
+                    initial={{ width: 3 }}
+                    animate={{ width: 15 }}
+                    style={{ height: 2, backgroundColor: "white" }}
+                  />
+                )}
+              </div>
             </button>
           </div>
           <div className={[space["m-h--16"]].join(" ")}>
-            <button>
-              <p className={[color["c--white"], font["size--14"]].join(" ")}>
-                Experiences
-              </p>
+            <button onClick={() => setCategory("experiences")}>
+              <div className={[space["p-b--8"]].join(" ")}>
+                <p className={[color["c--white"], font["size--14"]].join(" ")}>
+                  Experiences
+                </p>
+              </div>
+              <div
+                className={[layout["flex"], layout["justify-center"]].join(" ")}
+              >
+                {category === "experiences" && (
+                  <motion.div
+                    initial={{ width: 3 }}
+                    animate={{ width: 15 }}
+                    style={{ height: 2, backgroundColor: "white" }}
+                  />
+                )}
+              </div>
             </button>
           </div>
           <div className={[space["m-h--16"]].join(" ")}>
-            <button>
-              <p className={[color["c--white"], font["size--14"]].join(" ")}>
-                Online Experiences
-              </p>
+            <button onClick={() => setCategory("online")}>
+              <div className={[space["p-b--8"]].join(" ")}>
+                <p className={[color["c--white"], font["size--14"]].join(" ")}>
+                  Online Experiences
+                </p>
+              </div>
+              <div
+                className={[layout["flex"], layout["justify-center"]].join(" ")}
+              >
+                {category === "online" && (
+                  <motion.div
+                    initial={{ width: 3 }}
+                    animate={{ width: 15 }}
+                    style={{ height: 2, backgroundColor: "white" }}
+                  />
+                )}
+              </div>
             </button>
           </div>
         </div>
@@ -105,7 +151,10 @@ export const SearchBar: React.FC<{
           className={`${
             selected === "checkin" && [shape["shadow--lg"]].join(" ")
           }  ${[animation["hover-background--white__1"]].join(" ")}`}
-          onClick={() => setSelected("checkin")}
+          onClick={() => {
+            setSelected("checkin");
+            dispatchToggle({ type: "toggle_check" });
+          }}
         >
           <div
             className={`${[layout["flex"], layout["items-center"]].join(" ")}`}
@@ -149,7 +198,10 @@ export const SearchBar: React.FC<{
           className={`${
             selected === "checkout" && [shape["shadow--lg"]].join(" ")
           }  ${[animation["hover-background--white__1"]].join(" ")}`}
-          onClick={() => setSelected("checkout")}
+          onClick={() => {
+            setSelected("checkout");
+            dispatchToggle({ type: "toggle_check" });
+          }}
         >
           <div
             className={`${[layout["flex"], layout["items-center"]].join(" ")}`}
@@ -193,7 +245,10 @@ export const SearchBar: React.FC<{
           className={`${
             selected === "guests" && [shape["shadow--lg"]].join(" ")
           } ${[animation["hover-background--white__1"]].join(" ")}`}
-          onClick={() => setSelected("guests")}
+          onClick={() => {
+            setSelected("guests");
+            dispatchToggle({ type: "toggle_guests" });
+          }}
         >
           <div
             style={{
