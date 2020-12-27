@@ -72,7 +72,6 @@ export const TransparentHeader: React.FC<{
             />
           </div>
         </div>
-
         <div
           style={{
             position: "absolute",
@@ -161,63 +160,60 @@ export const TransparentHeader: React.FC<{
             ) : (
               <motion.div
                 key="minimodal"
-                // exit={{
-                //   y: -100,
-                //   scale: 0.3,
-                //   opacity: 0,
-                // }}
-                // initial={{ y: -100, scale: 0.3, opacity: 0 }}
-                // animate={{ y: 0, scale: 1, opacity: 1 }}
                 style={{
                   position: "absolute",
                   width: "100%",
-                  left: "50%",
-                  transform: "translate(-50%, 0)",
+                  top: 0,
                   display: "flex",
                   justifyContent: "center",
                 }}
               >
-                {/* <Bar
-                      variant="search"
-                      selected={selected}
-                      setSelected={setSelected}
-                      category={category}
-                      setCategory={setCategory}
-                    /> */}
-                <div>hello</div>
+                <motion.div
+                  exit={{
+                    width: 720,
+                    y: 50,
+                    opacity: 0,
+                  }}
+                  initial={{ width: 720, y: 50, opacity: 0 }}
+                  animate={{ width: 240, y: 0, opacity: 1 }}
+                >
+                  <Button
+                    variant="searchbar"
+                    mini
+                    extendsTo={[shape["w--full"]].join(" ")}
+                  />
+                </motion.div>
               </motion.div>
             )}
           </AnimatePresence>
         </div>
-        <div style={{ position: "relative" }}>
-          <div className={[layout["flex"], layout["items-center"]].join(" ")}>
-            <div
-              className={[styles["searchbar__host"], space["m-h--2"]].join(" ")}
-            >
-              <Button
-                variant="transparent"
-                content={<Content kind="host" inverse />}
-                inverse
-                animate
-                onClick={() => Router.push("/host/homes")}
-              />
-            </div>
-            <div className={[space["m-h--2"]].join(" ")}>
-              <Button
-                variant="transparent"
-                content={<Content kind="globe" inverse />}
-                inverse
-                onClick={() => toggleDispatch({ type: "toggle_globe" })}
-              />
-            </div>
-            <div className={[space["m-l--4"]].join(" ")}>
-              <Button
-                {...menuInverseButton.args}
-                inverse
-                authenticated={data}
-                onClick={() => toggleDispatch({ type: "toggle_menu" })}
-              />
-            </div>
+        <div className={[layout["flex"], layout["items-center"]].join(" ")}>
+          <div
+            className={[styles["searchbar__host"], space["m-h--2"]].join(" ")}
+          >
+            <Button
+              variant="transparent"
+              content={<Content kind="host" inverse />}
+              inverse
+              animate
+              onClick={() => Router.push("/host/homes")}
+            />
+          </div>
+          <div className={[space["m-h--2"]].join(" ")}>
+            <Button
+              variant="transparent"
+              content={<Content kind="globe" inverse />}
+              inverse
+              onClick={() => toggleDispatch({ type: "toggle_globe" })}
+            />
+          </div>
+          <div className={[space["m-l--4"]].join(" ")}>
+            <Button
+              {...menuInverseButton.args}
+              inverse
+              authenticated={data}
+              onClick={() => toggleDispatch({ type: "toggle_menu" })}
+            />
           </div>
         </div>
         {/* <div
