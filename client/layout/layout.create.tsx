@@ -67,7 +67,7 @@ export const CreateLayout: React.FC<{
               width: "100%",
               position: "fixed",
               bottom: 0,
-              zIndex: 9999,
+              zIndex: 60,
               display: "flex",
             }}
           >

@@ -69,7 +69,7 @@ export const HorizontalCard: React.FC<{
                 ].join(" ")}
               >
                 <div
-                  style={{ zIndex: 9999 }}
+                  style={{ zIndex: 50 }}
                   className={
                     superhost
                       ? [].join(" ")
@@ -98,7 +98,7 @@ export const HorizontalCard: React.FC<{
                 </div>
                 {save && (
                   <div
-                    style={{ zIndex: 9999 }}
+                    style={{ zIndex: 50 }}
                     className={[
                       save
                         ? [].join(" ")

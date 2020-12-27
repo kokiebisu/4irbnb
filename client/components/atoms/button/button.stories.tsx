@@ -19,18 +19,11 @@ import animation from "@styles/animation.module.scss";
 export default {
   title: "Design System/Atoms/Button",
   component: Button,
-  decorators: [
-    (Story) => (
-      <ContextProvider>
-        <Story />
-      </ContextProvider>
-    ),
-  ],
   argTypes: {
     inverse: {
       control: "boolean",
     },
-    type: {
+    variant: {
       control: { disable: true },
     },
     icon: {
@@ -90,6 +83,22 @@ menu.args = {
   ].join(" "),
 };
 menu.argTypes = {
+  ...disableTitle,
+  user: {
+    control: "boolean",
+  },
+};
+
+export const menuInverse = ButtonTemplate.bind({});
+menuInverse.args = {
+  variant: "menu",
+  extendsTo: [
+    shape["br--30"],
+    animation["hover-shadow--lg"],
+    color["b-2--transparent"],
+  ].join(" "),
+};
+menuInverse.argTypes = {
   ...disableTitle,
   user: {
     control: "boolean",
@@ -263,4 +272,22 @@ search.argTypes = {
   expand: {
     control: "boolean",
   },
+};
+
+export const location = ButtonTemplate.bind({});
+location.args = {
+  variant: "location",
+};
+location.argTypes = {
+  type: {
+    control: {
+      type: "select",
+      options: ["explore", "recent"],
+    },
+  },
+};
+
+export const nearby = ButtonTemplate.bind({});
+nearby.args = {
+  variant: "nearby",
 };

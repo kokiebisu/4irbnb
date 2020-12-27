@@ -130,7 +130,7 @@ export const ImageSlider = ({ slides }) => {
         height: "100%",
         overflow: "hidden",
         borderRadius: 12,
-        zIndex: 500,
+        zIndex: 50,
       }}
     >
       <div
@@ -155,7 +155,7 @@ export const ImageSlider = ({ slides }) => {
           top: "50%",
           transform: "translateY(-50%)",
           left: 10,
-          zIndex: 9999,
+          zIndex: 60,
         }}
       >
         <Button
@@ -173,7 +173,7 @@ export const ImageSlider = ({ slides }) => {
           top: "50%",
           transform: "translateY(-50%)",
           right: 10,
-          zIndex: 9999,
+          zIndex: 60,
         }}
       >
         <Button

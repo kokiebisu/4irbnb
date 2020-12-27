@@ -51,7 +51,7 @@ const id: () => string | JSX.Element = () => {
               style={{
                 position: "fixed",
                 top: 0,
-                zIndex: 5000,
+                zIndex: 50,
                 width: "100%",
               }}
             >
@@ -149,7 +149,7 @@ const id: () => string | JSX.Element = () => {
           style={{
             position: "fixed",
             top: 0,
-            zIndex: 9999,
+            zIndex: 60,
             bottom: 0,
             left: 0,
             right: 0,

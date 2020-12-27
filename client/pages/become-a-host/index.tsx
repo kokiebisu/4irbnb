@@ -19,7 +19,7 @@ const BecomeAHostPage = () => {
 
   return (
     <div style={{ height: "100vh" }}>
-      <div style={{ zIndex: 9999, height: 65 }}>
+      <div style={{ zIndex: 60, height: 65 }}>
         <div className={[responsive["b_to_n--sm"]].join(" ")}>
           <Header variant="stay" />
         </div>

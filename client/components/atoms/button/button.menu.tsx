@@ -32,18 +32,13 @@ export const MenuButton: React.FC<{
       className={`${[
         layout["flex"],
         layout["items-center"],
-        space["p-t--6"],
-        space["p-b--6"],
-        space["p-r--8"],
+        space["p-v--4"],
         space["p-l--10"],
+        space["p-r--6"],
         color["bg--white"],
-      ].join(" ")} ${
-        inverse
-          ? [color["b--transparent"]].join(" ")
-          : [color["b--white__2"]].join(" ")
-      }`}
+      ].join(" ")}`}
     >
-      <div className={[space["m-r--12"], space["m-l--4"]].join(" ")}>
+      <div className={[space["m-r--10"]].join(" ")}>
         <Bars fill="black" width={12} />
       </div>
       <div>

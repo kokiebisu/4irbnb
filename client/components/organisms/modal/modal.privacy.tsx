@@ -26,6 +26,7 @@ export const PrivacyModal: React.FC<{}> = () => {
 
   const handleSave = () => {
     // add cookie
+    console.log("entered");
     return toggleDispatch({ type: "toggle_privacy" });
   };
 
