@@ -25,7 +25,11 @@ export const ChevronDown = (props) => {
   );
 };
 
-export const ChevronLeft = ({ stroke, strokeWidth, ...props }) => {
+export const ChevronLeft: React.FC<{
+  stroke?: string;
+  strokeWidth?: number;
+  [property: string]: any;
+}> = ({ stroke, strokeWidth, ...props }) => {
   return (
     <svg {...props} viewBox="0 0 32 32">
       <g fill="none">
