@@ -111,3 +111,15 @@ $pixels: (550);
     padding-left: 64px;
   }
 }
+
+.h--300_to_auto--md {
+  height: auto;
+
+  @include respond-to(sm) {
+    height: 300px;
+  }
+
+  @include respond-to(md) {
+    height: auto;
+  }
+}

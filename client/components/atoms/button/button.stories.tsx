@@ -76,29 +76,9 @@ globe.argTypes = {
 export const menu = ButtonTemplate.bind({});
 menu.args = {
   variant: "menu",
-  extendsTo: [
-    shape["br--30"],
-    animation["hover-shadow--lg"],
-    color["b-2--white__2"],
-  ].join(" "),
+  extendsTo: [animation["hover-shadow--lg"], shape["br--30"]].join(" "),
 };
 menu.argTypes = {
-  ...disableTitle,
-  user: {
-    control: "boolean",
-  },
-};
-
-export const menuInverse = ButtonTemplate.bind({});
-menuInverse.args = {
-  variant: "menu",
-  extendsTo: [
-    shape["br--30"],
-    animation["hover-shadow--lg"],
-    color["b-2--transparent"],
-  ].join(" "),
-};
-menuInverse.argTypes = {
   ...disableTitle,
   user: {
     control: "boolean",
