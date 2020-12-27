@@ -107,6 +107,7 @@ export const WhiteHeader: React.FC<{
             </div>
           </div>
           <div
+            style={{ zIndex: 70 }}
             className={[
               layout["absolute"],
               layout["r--0"],

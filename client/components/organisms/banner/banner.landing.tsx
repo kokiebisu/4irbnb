@@ -66,7 +66,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
                     right: 0,
                     position: "fixed",
                     top: 0,
-                    zIndex: 5000,
+                    zIndex: 50,
                     width: "100%",
                   }}
                 >
@@ -87,7 +87,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
                 margin: "0 auto",
               }}
             >
-              <div>
+              <div style={{ zIndex: 50 }}>
                 <Bar
                   variant="search"
                   selected={selected}
@@ -95,7 +95,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
                 />
               </div>
               {toggleState.location && (
-                <div style={{ position: "absolute", top: 65 }}>
+                <div style={{ position: "absolute", top: 65, zIndex: 70 }}>
                   <div style={{ maxWidth: 400 }}>
                     <Modal variant="location" />
                   </div>
