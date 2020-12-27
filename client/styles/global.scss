@@ -86,3 +86,15 @@ select {
   appearance: none;
   -ms-appearance: none; /* get rid of default appearance for IE8, 9 and 10*/
 }
+
+table {
+  border-collapse: collapse;
+  -webkit-border-horizontal-spacing: 0;
+  -webkit-border-vertical-spacing: 0;
+}
+
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
