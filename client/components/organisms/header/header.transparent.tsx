@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Router from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -69,12 +69,16 @@ export const TransparentHeader: React.FC<{
       >
         <div>
           <div
-            className={[responsive["b_to_n--lg"], space["m-t--8"]].join(" ")}
+            className={[responsive["b_to_n--lg"], space["m-t--4"]].join(" ")}
           >
-            <NoNameLogo fill="white" width={30} height={32} />
+            <NoNameLogo
+              fill={scrollPosition < 56 ? "white" : "red"}
+              width={30}
+              height={32}
+            />
           </div>
           <div
-            className={[responsive["n_to_b--lg"], space["m-t--8"]].join(" ")}
+            className={[responsive["n_to_b--lg"], space["m-t--4"]].join(" ")}
           >
             <NameLogo
               fill={scrollPosition < 56 ? "white" : "red"}
@@ -155,10 +159,11 @@ export const TransparentHeader: React.FC<{
               exit={{
                 y: -100,
                 scale: 0.3,
+                width: 400,
                 opacity: 0,
               }}
-              initial={{ y: -100, scale: 0.3, opacity: 0 }}
-              animate={{ y: 0, scale: 1, opacity: 1 }}
+              initial={{ y: -100, scale: 0.3, opacity: 0, width: 400 }}
+              animate={{ y: 0, scale: 1, opacity: 1, width: "auto" }}
               style={{ position: "relative" }}
             >
               <Bar
@@ -237,12 +242,17 @@ export const TransparentHeader: React.FC<{
               }}
             >
               <motion.div
+                className={[
+                  layout["relative"],
+                  responsive["l__30_to_0--md"],
+                ].join(" ")}
                 exit={{
-                  width: 720,
+                  width: 240,
                   y: 50,
                   opacity: 0,
                 }}
-                initial={{ width: 720, y: 50, opacity: 0 }}
+                // transition={{ type: "spring", stiffness: 30, duration: 0.03 }}
+                initial={{ width: 500, y: 0, opacity: 0 }}
                 animate={{ width: 240, y: 0, opacity: 1 }}
               >
                 <Button
