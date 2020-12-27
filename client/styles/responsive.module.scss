@@ -136,6 +136,14 @@ $pixels: (550);
   }
 }
 
+.l__30_to_0--md {
+  left: 30px;
+
+  @include respond-to(md) {
+    left: 0;
+  }
+}
+
 .size__12_to_14--md {
   font-size: 12px;
 
