@@ -40,7 +40,6 @@ export const TransparentHeader: React.FC<{
   useOnClickOutside(searchbarRef, () => {
     if (selected) {
       setSelected(!selected);
-      toggleDispatch({ type: `toggle_${selected}` });
     }
   });
   return (
@@ -77,34 +76,59 @@ export const TransparentHeader: React.FC<{
                 setSelected={setSelected}
               />
             </div>
-            {toggleState.location && (
-              <div
-                style={{
-                  position: "absolute",
-                  top: 110,
-                  left: 0,
-                  zIndex: 70,
-                  maxWidth: 400,
-                  width: "100%",
-                }}
-              >
-                <Modal variant="location" dispatch="toggle_location" />
-              </div>
-            )}
-            {toggleState.guests && (
-              <div
-                style={{
-                  position: "absolute",
-                  top: 110,
-                  right: 0,
-                  zIndex: 70,
-                  maxWidth: 325,
-                  width: "100%",
-                }}
-              >
-                <Modal variant="guests" dispatch="toggle_guests" />
-              </div>
-            )}
+            <div
+              style={{
+                position: "absolute",
+                top: 110,
+                left: 0,
+                zIndex: 70,
+                width: "100%",
+                maxWidth: 400,
+              }}
+            >
+              <Modal
+                variant="location"
+                dispatch="toggle_location"
+                extendsTo={[shape["w--full"]].join(" ")}
+                criteria={toggleState.location}
+              />
+            </div>
+            <div
+              style={{
+                position: "absolute",
+                top: 110,
+                left: 0,
+                zIndex: 70,
+                width: "100%",
+                maxWidth: 720,
+              }}
+            >
+              <Modal
+                variant="check"
+                dispatch="toggle_check"
+                extendsTo={[shape["w--full"]].join(" ")}
+                criteria={toggleState.check}
+              />
+            </div>
+            <div
+              style={{
+                position: "absolute",
+                top: 110,
+                right: 0,
+                zIndex: 70,
+                width: "100%",
+                maxWidth: 325,
+                display: "flex",
+                justifyContent: "flex-end",
+              }}
+            >
+              <Modal
+                variant="guests"
+                dispatch="toggle_guests"
+                extendsTo={[shape["w--full"]].join(" ")}
+                criteria={toggleState.guests}
+              />
+            </div>
           </div>
         </div>
         <div>

@@ -81,11 +81,11 @@ export const Modal: React.FC<ModalProps> = ({
 
   if (criteria !== undefined) {
     return (
-      <div className={extendsTo} data-testid={`${variant}-modal`}>
+      <div className={extendsTo}>
         <AnimatePresence>
           {criteria && (
             <motion.div
-              data-testid="modal"
+              data-testid={`${variant}-modal`}
               exit={{ opacity: 0 }}
               initial={animation[animate].initial}
               animate={animation[animate].animate}
@@ -101,7 +101,11 @@ export const Modal: React.FC<ModalProps> = ({
     );
   }
   return (
-    <div className={extendsTo} data-testid={`${variant}-modal`}>
+    <div
+      ref={containerRef}
+      className={extendsTo}
+      data-testid={`${variant}-modal`}
+    >
       {variants[variant]}
     </div>
   );

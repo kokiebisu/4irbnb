@@ -25,7 +25,7 @@ export const CheckTemplate: React.FC<{
           layout["justify-center"],
           layout["items-center"],
           layout["relative"],
-          space["p-v--25"],
+          space["m-t--8"],
           space["m-b--16"],
         ].join(" ")}
       >
