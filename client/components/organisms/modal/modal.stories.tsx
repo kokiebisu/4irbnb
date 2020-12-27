@@ -84,3 +84,15 @@ guests.decorators = [
     </div>
   ),
 ];
+
+export const check = TemplateStory.bind({});
+check.args = {
+  variant: "check",
+};
+check.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 720 }}>
+      <Story />
+    </div>
+  ),
+];

@@ -17,6 +17,7 @@ import { LocationModal } from "@modal/modal.location";
 /** contexts */
 import { useToggleDispatch } from "@context/toggle";
 import { GuestsModal } from "./modal.guests";
+import { CheckModal } from "./modal.check";
 
 export interface ModalProps {
   variant: string;
@@ -75,6 +76,7 @@ export const Modal: React.FC<ModalProps> = ({
     globe: <GlobeModal {...props} />,
     location: <LocationModal {...props} />,
     guests: <GuestsModal {...props} />,
+    check: <CheckModal {...props} />,
   };
 
   if (criteria !== undefined) {

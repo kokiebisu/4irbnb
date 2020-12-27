@@ -14,3 +14,15 @@ export const location = TemplateStory.bind({});
 location.args = {
   variant: "location",
 };
+
+export const check = TemplateStory.bind({});
+check.args = {
+  variant: "check",
+};
+check.decorators = [
+  (Story) => (
+    <div>
+      <Story />
+    </div>
+  ),
+];

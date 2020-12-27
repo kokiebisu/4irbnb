@@ -111,7 +111,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
               </div>
               <div
                 className={[
-                  space["m-v--15"],
+                  space["m-t--15"],
                   space["m-h--0"],
                   index["justify__explore--button"],
                 ].join(" ")}
