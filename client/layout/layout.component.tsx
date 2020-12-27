@@ -1,13 +1,13 @@
 import React from "react";
 
 /** layouts */
-import { InputLayout } from "./layout.input";
-import { CreateLayout } from "./layout.create";
-import { HomesLayout } from "./section/layout.homes";
-import { LandingLayout } from "./section/layout.landing";
-import { OnlineHostLayout } from "./section/layout.onlinehost";
-import { CurrencyLayout } from "./layout.currency";
-
+import { InputLayout } from "@layout/layout.input";
+import { CreateLayout } from "@layout/layout.create";
+import { HomesLayout } from "@layout/section/layout.homes";
+import { LandingLayout } from "@layout/section/layout.landing";
+import { OnlineHostLayout } from "@layout/section/layout.onlinehost";
+import { CurrencyLayout } from "@layout/layout.currency";
+import { LocationLayout } from "@layout/modal/layout.location";
 
 export interface LayoutProps {
   extendsTo?: string;
@@ -22,7 +22,7 @@ export interface LayoutProps {
  */
 export const Layout: React.FC<LayoutProps> = ({
   extendsTo,
-  variant,
+  variant = "input",
   ...props
 }) => {
   const variants: { [variant: string]: JSX.Element } = {
@@ -32,6 +32,7 @@ export const Layout: React.FC<LayoutProps> = ({
     landing: <LandingLayout {...props} />,
     onlinehost: <OnlineHostLayout {...props} />,
     currency: <CurrencyLayout {...props} />,
+    location: <LocationLayout {...props} />,
   };
 
   return (
