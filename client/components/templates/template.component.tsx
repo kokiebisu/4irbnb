@@ -15,6 +15,7 @@ import { NearbyTemplate } from "@template/homes/template.nearby";
 import { LanguageTemplate } from "@template/globe/template.language";
 import { CurrencyTemplate } from "@template/globe/template.currency";
 import { LocationTemplate } from "@template/modal/template.location";
+import { CheckTemplate } from "./modal/template.check";
 
 export interface TemplateProps {
   variant?: string;
@@ -42,6 +43,7 @@ export const Template: React.FC<TemplateProps> = ({
     language: <LanguageTemplate {...props} />,
     currency: <CurrencyTemplate {...props} />,
     location: <LocationTemplate {...props} />,
+    check: <CheckTemplate {...props} />,
   };
   return <div data-testid={`${variant}-template`}>{variants[variant]}</div>;
 };

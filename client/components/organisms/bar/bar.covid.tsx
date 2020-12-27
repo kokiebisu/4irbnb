@@ -11,7 +11,7 @@ export const CovidBar: React.FC<{}> = () => {
     <aside
       className={[
         font["size--14"],
-        color["bg--white__1"],
+        color["bg--black"],
         layout["text-center"],
         space["p-v--20"],
         space["p-h--24"],
@@ -19,7 +19,9 @@ export const CovidBar: React.FC<{}> = () => {
       ].join(" ")}
     >
       <a href="">
-        <u>Get the latest on our COVID-19 response</u>
+        <p className={[font["size--12"], color["c--white"]].join(" ")}>
+          <u>Get the latest on our COVID-19 response</u>
+        </p>
       </a>
     </aside>
   );
