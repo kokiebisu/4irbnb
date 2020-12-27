@@ -52,7 +52,7 @@ const Homes = () => {
           style={{
             position: "fixed",
             top: 0,
-            zIndex: 9999,
+            zIndex: 60,
             bottom: 0,
             left: 0,
             right: 0,
