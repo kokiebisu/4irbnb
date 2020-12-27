@@ -28,6 +28,7 @@ import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 import animation from "@styles/animation.module.scss";
 import { NearbyButton } from "./button.nearby";
+import { CalendarButton } from "./button.calendar";
 
 export interface ButtonProps {
   extendsTo?: string;
@@ -77,6 +78,7 @@ export const Button: React.FC<ButtonProps> = ({
     search: <SearchButton {...props} />,
     location: <LocationButton {...props} />,
     nearby: <NearbyButton {...props} />,
+    calendar: <CalendarButton {...props} />,
   };
 
   return (
