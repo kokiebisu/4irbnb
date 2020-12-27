@@ -89,6 +89,22 @@ menu.argTypes = {
   },
 };
 
+export const menuInverse = ButtonTemplate.bind({});
+menuInverse.args = {
+  variant: "menu",
+  extendsTo: [
+    shape["br--30"],
+    animation["hover-shadow--lg"],
+    color["b-2--transparent"],
+  ].join(" "),
+};
+menuInverse.argTypes = {
+  ...disableTitle,
+  user: {
+    control: "boolean",
+  },
+};
+
 export const privacy = ButtonTemplate.bind({});
 privacy.args = {
   variant: "privacy",
