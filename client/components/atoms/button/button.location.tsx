@@ -34,7 +34,16 @@ export const LocationButton: React.FC<
       title: "Explore nearby destinations",
     },
     recent: {
-      icon: "",
+      icon: (
+        <div
+          style={{
+            borderRadius: 5,
+            backgroundColor: "lightgray",
+            width: "100%",
+            height: "100%",
+          }}
+        ></div>
+      ),
       location,
       from,
       to,
@@ -43,13 +52,19 @@ export const LocationButton: React.FC<
   };
 
   return (
-    <div className={[layout["flex"], layout["items-center"]].join(" ")}>
+    <div
+      className={[layout["flex"], layout["items-center"], space["p-v--8"]].join(
+        " "
+      )}
+    >
       <div className={[space["m-r--16"]].join(" ")}>
-        <div style={{ width: 40 }}>{types[type].icon}</div>
+        <div style={{ width: 40, height: 40 }}>{types[type].icon}</div>
       </div>
       <div>
         <div>
-          <h4 className={[font["size--15"]].join(" ")}>{types[type].title}</h4>
+          <h4 className={[font["text--left"], font["size--15"]].join(" ")}>
+            {types[type].title || `${location} · Stays`}
+          </h4>
         </div>
         {type === "recent" && (
           <div>

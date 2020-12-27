@@ -68,3 +68,10 @@ export const location = TemplateStory.bind({});
 location.args = {
   variant: "location",
 };
+location.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 400 }}>
+      <Story />
+    </div>
+  ),
+];

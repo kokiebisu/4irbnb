@@ -11,13 +11,6 @@ export default {
   title: "Design System/Templates/Globe",
   component: Template,
   argTypes: { onClick: { action: "clicked" } },
-  decorators: [
-    (Story) => (
-      <ContextProvider>
-        <Story />
-      </ContextProvider>
-    ),
-  ],
 } as Meta;
 
 const TemplateStory: Story<TemplateProps> = (args) => <Template {...args} />;
