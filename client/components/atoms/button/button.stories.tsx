@@ -270,3 +270,8 @@ location.argTypes = {
     },
   },
 };
+
+export const nearby = ButtonTemplate.bind({});
+nearby.args = {
+  variant: "nearby",
+};

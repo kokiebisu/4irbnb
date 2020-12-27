@@ -6,23 +6,13 @@ import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 
-export const LocationButton: React.FC<
-  {
-    type: "explore";
-  } & {
-    type: "recent";
-    location: string;
-    from?: string;
-    to?: string;
-    guests?: number;
-  }
-> = ({
-  type = "explore",
-  location = "Whistler",
-  from = "Jan. 7",
-  to = "Jan. 15",
-  guests = 2,
-}) => {
+export const LocationButton: React.FC<{
+  type?: "explore" | "recent";
+  location?: string;
+  from?: string;
+  to?: string;
+  guests?: number | null;
+}> = ({ type = "explore", location, from, to, guests }) => {
   const types = {
     explore: {
       icon: (
@@ -44,10 +34,7 @@ export const LocationButton: React.FC<
           }}
         ></div>
       ),
-      location,
-      from,
-      to,
-      guests,
+      title: `${location} · Stays`,
     },
   };
 
@@ -63,7 +50,7 @@ export const LocationButton: React.FC<
       <div>
         <div>
           <h4 className={[font["text--left"], font["size--15"]].join(" ")}>
-            {types[type].title || `${location} · Stays`}
+            {types[type].title}
           </h4>
         </div>
         {type === "recent" && (
@@ -75,7 +62,13 @@ export const LocationButton: React.FC<
                 color["c--gray__0"],
               ].join(" ")}
             >
-              {from} - {to} · {guests} {guests > 1 ? "guests" : "guest"}
+              {from ? from : ""}
+              {to ? ` - ${to}` : ""}
+              {guests
+                ? guests > 0
+                  ? ` · ${guests} guests`
+                  : ` · ${guests} guest`
+                : ""}
             </h4>
           </div>
         )}

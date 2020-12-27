@@ -8,19 +8,33 @@ import { Layout } from "@layout/layout.component";
 import shape from "@styles/shape.module.scss";
 import space from "@styles/space.module.scss";
 import animation from "@styles/animation.module.scss";
+import layout from "@styles/layout.module.scss";
+import color from "@styles/color.module.scss";
 
 export const LocationModal: React.FC<{}> = () => {
   const recentLocations = [
-    { name: "Chilliwack", from: "Jan. 7", to: "Jan. 21", guests: 4 },
-    { name: "Chilliwack", from: "Jan. 7", to: "Jan. 21", guests: 4 },
-    { name: "Chilliwack", from: "Jan. 7", to: "Jan. 21", guests: 4 },
+    { location: "Chilliwack", from: "Jan. 7", to: "Jan. 21", guests: 4 },
+    { location: "Tofino" },
+    { location: "Nanaimo" },
   ];
-  const nearbyLocations = ["Whistler", "Victoria"];
+  const nearbyLocations = [
+    "Whistler",
+    "Victora",
+    "Tofino",
+    "Kelowna",
+    "Uclulet",
+    "Chilliwack",
+    "Sooke",
+    "Pemberton",
+  ];
   return (
     <div
-      className={[shape["shadow--sm"], shape["br--20"], space["p-v--25"]].join(
-        " "
-      )}
+      className={[
+        shape["shadow--sm"],
+        shape["br--20"],
+        space["p-v--25"],
+        color["bg--white"],
+      ].join(" ")}
     >
       <div>
         <Button
@@ -60,9 +74,24 @@ export const LocationModal: React.FC<{}> = () => {
           variant="location"
           title="Nearby Getaways"
           content={
-            <div className={[space["m-h--25"]].join(" ")}>
+            <div
+              style={{ position: "relative", right: 3 }}
+              className={[
+                space["m-h--25"],
+                layout["flex"],
+                layout["flex-wrap"],
+              ].join(" ")}
+            >
               {nearbyLocations.map((nearbyLocation) => {
-                return <div>nearby</div>;
+                return (
+                  <div>
+                    <Button
+                      variant="nearby"
+                      label={nearbyLocation}
+                      onClick={() => alert(`clicked ${nearbyLocation}`)}
+                    />
+                  </div>
+                );
               })}
             </div>
           }
