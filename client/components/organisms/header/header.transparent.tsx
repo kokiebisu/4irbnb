@@ -78,10 +78,31 @@ export const TransparentHeader: React.FC<{
               />
             </div>
             {toggleState.location && (
-              <div style={{ position: "absolute", top: 110, zIndex: 70 }}>
-                <div style={{ maxWidth: 400 }}>
-                  <Modal variant="location" />
-                </div>
+              <div
+                style={{
+                  position: "absolute",
+                  top: 110,
+                  left: 0,
+                  zIndex: 70,
+                  maxWidth: 400,
+                  width: "100%",
+                }}
+              >
+                <Modal variant="location" dispatch="toggle_location" />
+              </div>
+            )}
+            {toggleState.guests && (
+              <div
+                style={{
+                  position: "absolute",
+                  top: 110,
+                  right: 0,
+                  zIndex: 70,
+                  maxWidth: 325,
+                  width: "100%",
+                }}
+              >
+                <Modal variant="guests" dispatch="toggle_guests" />
               </div>
             )}
           </div>

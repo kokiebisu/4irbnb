@@ -193,7 +193,11 @@ export const SearchBar: React.FC<{
           className={`${
             selected === "guests" && [shape["shadow--lg"]].join(" ")
           } ${[animation["hover-background--white__1"]].join(" ")}`}
-          onClick={() => setSelected("guests")}
+          onClick={() => {
+            console.log("entered guests");
+            setSelected("guests");
+            dispatchToggle({ type: "toggle_guests" });
+          }}
         >
           <div
             style={{
