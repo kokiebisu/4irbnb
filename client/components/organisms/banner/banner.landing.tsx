@@ -47,11 +47,10 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
             gridTemplateRows: "auto 1fr",
             height: "100%",
           }}
-          className={[layout["container--spread"]].join(" ")}
         >
           <div>
             <div>
-              {scrollPosition > 56 && (
+              {/* {scrollPosition > 56 && (
                 <motion.div
                   exit={{ opacity: 0 }}
                   initial={{ opacity: 0 }}
@@ -67,17 +66,22 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
                 >
                   <Header spread variant="white" data={data} />
                 </motion.div>
-              )}
+              )} */}
             </div>
             <div>
-              {scrollPosition > 56 ? (
-                <div style={{ padding: "39px 0" }}></div>
-              ) : (
-                <Header variant="transparent" data={data} />
-              )}
+              <Header
+                variant="transparent"
+                data={data}
+                extendsTo={`${[layout["container--spread"]].join(" ")} ${
+                  scrollPosition < 56
+                    ? [color["bg--transparent"]].join(" ")
+                    : [color["bg--white"]].join(" ")
+                }`}
+              />
             </div>
           </div>
           <div
+            className={[layout["container--spread"]].join(" ")}
             style={{
               display: "flex",
               flexDirection: "column",
