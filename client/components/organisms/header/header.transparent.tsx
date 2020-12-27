@@ -11,6 +11,7 @@ import shape from "@styles/shape.module.scss";
 import font from "@styles/font.module.scss";
 import header from "@header/header.module.scss";
 import animation from "@styles/animation.module.scss";
+import responsive from "@styles/responsive.module.scss";
 
 /** components */
 import { menu as menuModal } from "@modal/modal.stories";
@@ -24,7 +25,6 @@ import { NameLogo, NoNameLogo } from "@svg/logo";
 import { useToggleDispatch, useToggleState } from "@context/toggle";
 
 /** stories */
-import { menu as menuButton } from "@button/button.stories";
 import { Bar } from "@bar/bar.component";
 import { Content } from "@button/content/content.transparent";
 import useOnClickOutside from "@hooks/useOnClickOutside";
@@ -54,7 +54,7 @@ export const TransparentHeader: React.FC<{
       className={`${[
         [
           layout["relative"],
-          space["p-h--0"],
+          responsive["h--300_to_auto--md"],
           space["p-v--16"],
           layout["container--spread"],
         ].join(" "),
@@ -68,10 +68,14 @@ export const TransparentHeader: React.FC<{
         ].join(" ")}
       >
         <div>
-          <div className={styles["searchbar__logo--md"]}>
+          <div
+            className={[responsive["b_to_n--lg"], space["m-t--8"]].join(" ")}
+          >
             <NoNameLogo fill="white" width={30} height={32} />
           </div>
-          <div className={(styles["searchbar__logo--lg"], space["m-t--8"])}>
+          <div
+            className={[responsive["n_to_b--lg"], space["m-t--8"]].join(" ")}
+          >
             <NameLogo
               fill={scrollPosition < 56 ? "white" : "red"}
               width={102}
@@ -128,6 +132,7 @@ export const TransparentHeader: React.FC<{
         </div>
       </div>
       <div
+        className={[responsive["n_to_b--sm"]].join(" ")}
         style={{
           position: "absolute",
           width: "100%",
@@ -159,6 +164,7 @@ export const TransparentHeader: React.FC<{
                 setSelected={setSelected}
                 category={category}
                 setCategory={setCategory}
+                extendsTo={[space["p-h--12"]].join(" ")}
               />
               <div
                 style={{

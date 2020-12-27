@@ -9,6 +9,7 @@ import space from "@styles/space.module.scss";
 import shape from "@styles/shape.module.scss";
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
+import responsive from "@styles/responsive.module.scss";
 
 /** components */
 import { Header } from "@header/header.component";
@@ -53,7 +54,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
               <Header
                 variant="transparent"
                 data={data}
-                extendsTo={`${
+                extendsTo={`${[shape["z__80"]].join(" ")} ${
                   scrollPosition < 56
                     ? [color["bg--transparent"]].join(" ")
                     : [
@@ -76,7 +77,12 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
             }}
           >
             <div style={{ position: "relative", bottom: 80 }}>
-              <div>
+              <div
+                className={[
+                  responsive["f_to_b--sm"],
+                  layout["justify-center"],
+                ].join(" ")}
+              >
                 <h3 className={[color["c--white"], font["size--28"]].join(" ")}>
                   Go Near
                 </h3>
