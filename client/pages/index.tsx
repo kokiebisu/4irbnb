@@ -102,10 +102,10 @@ const LandingPage = ({ currentUser }) => {
         )}
         <Footer spread />
         <div
-          style={{ position: "fixed", width: "100%" }}
+          style={{ position: "fixed", width: "100%", zIndex: 50 }}
           className={[
             layout["fb--0"],
-            layout["z--9999"],
+
             layout["flex"],
             layout["justify-center"],
           ].join(" ")}
@@ -145,7 +145,7 @@ const LandingPage = ({ currentUser }) => {
           <div
             style={{
               position: "fixed",
-              zIndex: 9999,
+              zIndex: 60,
               bottom: 0,
               left: 0,
               right: 0,
@@ -174,7 +174,7 @@ const LandingPage = ({ currentUser }) => {
           <div
             style={{
               position: "fixed",
-              zIndex: 9999,
+              zIndex: 60,
               bottom: 0,
               left: 0,
               right: 0,

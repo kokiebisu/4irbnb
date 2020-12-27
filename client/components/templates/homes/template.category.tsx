@@ -56,7 +56,7 @@ export const CategoryTemplate: React.FC<{
   };
   return (
     <div>
-      <div style={{ zIndex: 9999, position: "sticky", top: 0 }}>
+      <div style={{ zIndex: 60, position: "sticky", top: 0 }}>
         <Header variant="white" spread />
       </div>
       <div
