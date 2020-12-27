@@ -35,6 +35,7 @@ export const TransparentHeader: React.FC<{
 }> = ({ data }) => {
   const [selected, setSelected] = useState(null);
   const searchbarRef = useRef();
+  const [category, setCategory] = useState("stay");
   const toggleState = useToggleState();
   const toggleDispatch = useToggleDispatch();
   useOnClickOutside(searchbarRef, () => {
@@ -65,20 +66,21 @@ export const TransparentHeader: React.FC<{
             width: "100%",
             maxWidth: 720,
             margin: "0 auto",
-            left: 60,
           }}
         >
           <div ref={searchbarRef}>
-            <div style={{ zIndex: 50 }}>
+            <div style={{ position: "relative", zIndex: 50, left: 70 }}>
               <Bar
                 variant="search"
                 selected={selected}
                 setSelected={setSelected}
+                category={category}
+                setCategory={setCategory}
               />
             </div>
-            <div
+            {/* <div
               style={{
-                position: "absolute",
+                position: "relative",
                 top: 110,
                 left: 0,
                 zIndex: 70,
@@ -92,8 +94,8 @@ export const TransparentHeader: React.FC<{
                 extendsTo={[shape["w--full"]].join(" ")}
                 criteria={toggleState.location}
               />
-            </div>
-            <div
+            </div> */}
+            {/* <div
               style={{
                 position: "absolute",
                 top: 110,
@@ -109,8 +111,8 @@ export const TransparentHeader: React.FC<{
                 extendsTo={[shape["w--full"]].join(" ")}
                 criteria={toggleState.check}
               />
-            </div>
-            <div
+            </div> */}
+            {/* <div
               style={{
                 position: "absolute",
                 top: 110,
@@ -128,10 +130,10 @@ export const TransparentHeader: React.FC<{
                 extendsTo={[shape["w--full"]].join(" ")}
                 criteria={toggleState.guests}
               />
-            </div>
+            </div> */}
           </div>
         </div>
-        <div>
+        <div style={{ position: "relative" }}>
           <div className={[layout["flex"], layout["items-center"]].join(" ")}>
             <div
               className={[styles["searchbar__host"], space["m-h--2"]].join(" ")}
@@ -162,7 +164,7 @@ export const TransparentHeader: React.FC<{
             </div>
           </div>
         </div>
-        <div
+        {/* <div
           style={{ zIndex: 70 }}
           className={[
             layout["absolute"],
@@ -176,7 +178,7 @@ export const TransparentHeader: React.FC<{
             authenticated={data}
             criteria={toggleState.menu}
           />
-        </div>
+        </div> */}
       </div>
       <div>
         <Bar variant="searchbar" />
