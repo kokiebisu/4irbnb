@@ -8,42 +8,38 @@ import { categories, anywhere } from "../content";
 import { useToggleState } from "../context/toggle";
 
 /** styles */
-import index from "../styles/index.module.scss";
-import layout from "../styles/layout.module.scss";
-import space from "../styles/space.module.scss";
-import color from "../styles/color.module.scss";
-import shape from "../styles/shape.module.scss";
+import index from "@styles/index.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import color from "@styles/color.module.scss";
+import shape from "@styles/shape.module.scss";
 
 /** data */
 import { nearby } from "../data/stays";
 
 /** layout */
-import { Layout } from "../layout/layout.component";
+import { Layout } from "@layout/layout.component";
 
 /** components */
-import { Animation } from "../components/animation/animation.component";
-import { Modal } from "../components/organisms/modal/modal.component";
-import { Section } from "../components/organisms/section/section.component";
-import { Footer } from "../components/organisms/footer/footer.component";
+import { Animation } from "@animation/animation.component";
+import { Modal } from "@modal/modal.component";
+import { Section } from "@section/section.component";
+import { Footer } from "@footer/footer.component";
 
-import { Banner } from "../components/organisms/banner/banner.component";
-import { Bar } from "components/organisms/bar/bar.component";
+import { Banner } from "@banner/banner.component";
+import { Bar } from "@bar/bar.component";
+
+/** stories */
+import { auth, globe, privacy } from "@modal/modal.stories";
 
 /** hooks */
-import { useHandleScroll } from "../hooks/useHandleScroll";
-import { useHandleDocumentResize } from "../hooks/useHandleDocumentResize";
-import { useTimeout } from "../hooks/useTimeout";
-import { useTabTitle } from "../hooks/useTabTitle";
+import { useHandleScroll } from "@hooks/useHandleScroll";
+import { useHandleDocumentResize } from "@hooks/useHandleDocumentResize";
+import { useTimeout } from "@hooks/useTimeout";
+import { useTabTitle } from "@hooks/useTabTitle";
 
 /** helper */
 import { APIClient } from "../api/client";
-
-/** stories */
-import {
-  auth,
-  globe,
-  privacy,
-} from "../components/organisms/modal/modal.stories";
 
 const LandingPage = ({ currentUser }) => {
   useTabTitle("Vacation Rentals, Homes, Experiences & Places - Airbnb");
