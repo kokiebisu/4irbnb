@@ -13,6 +13,7 @@ import animation from "@styles/animation.module.scss";
 
 /** vectors */
 import { Button } from "@button/button.component";
+import { useToggleDispatch } from "@context/toggle";
 
 /**
  * Renders the Searchbar
@@ -21,6 +22,7 @@ export const SearchBar: React.FC<{
   selected?: string;
   setSelected?: (param: string) => void;
 }> = ({ selected = null, setSelected = () => console.log("clicked") }) => {
+  const dispatchToggle = useToggleDispatch();
   return (
     <div
       className={[shape["shadow--sm"]].join(" ")}
@@ -43,7 +45,10 @@ export const SearchBar: React.FC<{
           padding: "5px 24px",
           borderRadius: "50px",
         }}
-        onClick={() => setSelected("location")}
+        onClick={() => {
+          setSelected("location");
+          dispatchToggle({ type: "toggle_location" });
+        }}
       >
         <div
           className={`${[layout["flex"], layout["items-center"]].join(" ")}`}
@@ -199,13 +204,11 @@ export const SearchBar: React.FC<{
             </div>
           </div>
           <div>
-            <div>
-              <Button
-                variant="search"
-                onClick={() => alert("hello")}
-                expand={selected}
-              />
-            </div>
+            <Button
+              variant="search"
+              onClick={() => alert("hello")}
+              expand={selected}
+            />
           </div>
         </div>
       </button>

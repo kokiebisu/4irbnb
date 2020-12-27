@@ -27,6 +27,7 @@ import { LocationButton } from "@button/button.location";
 import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 import animation from "@styles/animation.module.scss";
+import { NearbyButton } from "./button.nearby";
 
 export interface ButtonProps {
   extendsTo?: string;
@@ -34,7 +35,7 @@ export interface ButtonProps {
   onClick?: () => void;
   block?: boolean;
   animate?: boolean;
-  [x: string]: any;
+  [property: string]: any;
 }
 
 /**
@@ -75,6 +76,7 @@ export const Button: React.FC<ButtonProps> = ({
     closed: <ClosedButton {...props} />,
     search: <SearchButton {...props} />,
     location: <LocationButton {...props} />,
+    nearby: <NearbyButton {...props} />,
   };
 
   return (

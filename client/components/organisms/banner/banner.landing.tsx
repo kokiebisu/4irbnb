@@ -24,6 +24,8 @@ import { banner } from "@button/button.stories";
 
 /** helper */
 import { ResponsiveImage } from "@helper/img";
+import { useToggleDispatch, useToggleState } from "@context/toggle";
+import { Modal } from "@organisms/modal/modal.component";
 
 /**
  * Renders the banner section
@@ -32,9 +34,12 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
   const searchbarRef = useRef();
   const scrollPosition = useHandleScroll();
   const [selected, setSelected] = useState(null);
+  const toggleState = useToggleState();
+  const toggleDispatch = useToggleDispatch();
   useOnClickOutside(searchbarRef, () => {
     if (selected) {
       setSelected(!selected);
+      toggleDispatch({ type: `toggle_${selected}` });
     }
   });
 
@@ -51,7 +56,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
         >
           <div style={{ height: "100%" }}>
             <div className={[layout["container--spread"]].join(" ")}>
-              {scrollPosition > 56 ? (
+              {scrollPosition > 56 && (
                 <motion.div
                   exit={{ opacity: 0 }}
                   initial={{ opacity: 0 }}
@@ -67,19 +72,35 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
                 >
                   <Header spread variant="white" data={data} />
                 </motion.div>
-              ) : null}
+              )}
               {scrollPosition > 56 ? (
                 <div style={{ padding: "39px 0" }}></div>
               ) : (
                 <Header variant="transparent" data={data} />
               )}
             </div>
-            <div ref={searchbarRef} style={{ maxWidth: 720, margin: "0 auto" }}>
-              <Bar
-                variant="search"
-                selected={selected}
-                setSelected={setSelected}
-              />
+            <div
+              ref={searchbarRef}
+              style={{
+                position: "relative",
+                maxWidth: 720,
+                margin: "0 auto",
+              }}
+            >
+              <div>
+                <Bar
+                  variant="search"
+                  selected={selected}
+                  setSelected={setSelected}
+                />
+              </div>
+              {toggleState.location && (
+                <div style={{ position: "absolute", top: 65 }}>
+                  <div style={{ maxWidth: 400 }}>
+                    <Modal variant="location" />
+                  </div>
+                </div>
+              )}
             </div>
             <div
               className={[
