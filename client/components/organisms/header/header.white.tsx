@@ -81,7 +81,7 @@ export const WhiteHeader: React.FC<{
           </div> */}
           <div className={[layout["flex"], layout["items-center"]].join(" ")}>
             <div
-              className={[styles["searchbar__host"], space["m-h--4"]].join(" ")}
+              className={[styles["searchbar__host"], space["m-h--2"]].join(" ")}
             >
               <Button
                 variant="transparent"
@@ -90,7 +90,7 @@ export const WhiteHeader: React.FC<{
                 onClick={() => Router.push("/host/homes")}
               />
             </div>
-            <div className={[space["m-h--4"]].join(" ")}>
+            <div className={[space["m-h--2"]].join(" ")}>
               <Button
                 variant="transparent"
                 content={<Content kind="globe" />}

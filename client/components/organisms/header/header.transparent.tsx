@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import Router from "next/router";
 
 /** styles */
@@ -17,15 +17,15 @@ import { Button } from "@button/button.component";
 
 /** vectors */
 import { NameLogo, NoNameLogo } from "@svg/logo";
-import { MagnifyGlass } from "@svg/original";
 
 /** contexts */
 import { useToggleDispatch, useToggleState } from "@context/toggle";
 
 /** stories */
-import { menu as menuButton } from "@button/button.stories";
+import { menuInverse as menuInverseButton } from "@button/button.stories";
 import { Bar } from "@bar/bar.component";
 import { Content } from "@button/content/content.transparent";
+import useOnClickOutside from "@hooks/useOnClickOutside";
 
 /**
  * Renders the transparent header
@@ -33,15 +33,21 @@ import { Content } from "@button/content/content.transparent";
 export const TransparentHeader: React.FC<{
   data?: any;
 }> = ({ data }) => {
+  const [selected, setSelected] = useState(null);
+  const searchbarRef = useRef();
   const toggleState = useToggleState();
   const toggleDispatch = useToggleDispatch();
-
+  useOnClickOutside(searchbarRef, () => {
+    if (selected) {
+      setSelected(!selected);
+      toggleDispatch({ type: `toggle_${selected}` });
+    }
+  });
   return (
     <header className={[space["p-h--0"], space["p-v--16"]].join(" ")}>
       <div
         className={[
           header["display__transparent--md"],
-          layout["items-center"],
           layout["justify-between"],
           layout["relative"],
         ].join(" ")}
@@ -50,37 +56,65 @@ export const TransparentHeader: React.FC<{
           <div className={styles["searchbar__logo--md"]}>
             <NoNameLogo fill="white" width={30} height={32} />
           </div>
-          <div className={styles["searchbar__logo--lg"]}>
+          <div className={(styles["searchbar__logo--lg"], space["m-t--8"])}>
             <NameLogo fill="white" width={102} height={32} />
           </div>
         </div>
-        <div className={[layout["flex"], layout["items-center"]].join(" ")}>
-          <div
-            className={[styles["searchbar__host"], space["m-h--4"]].join(" ")}
-          >
-            <Button
-              variant="transparent"
-              content={<Content kind="host" inverse />}
-              inverse
-              animate
-              onClick={() => Router.push("/host/homes")}
-            />
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            maxWidth: 720,
+            margin: "0 auto",
+            left: 60,
+          }}
+        >
+          <div ref={searchbarRef}>
+            <div style={{ zIndex: 50 }}>
+              <Bar
+                variant="search"
+                selected={selected}
+                setSelected={setSelected}
+              />
+            </div>
+            {toggleState.location && (
+              <div style={{ position: "absolute", top: 110, zIndex: 70 }}>
+                <div style={{ maxWidth: 400 }}>
+                  <Modal variant="location" />
+                </div>
+              </div>
+            )}
           </div>
-          <div className={[space["m-h--4"]].join(" ")}>
-            <Button
-              variant="transparent"
-              content={<Content kind="globe" inverse />}
-              inverse
-              onClick={() => toggleDispatch({ type: "toggle_globe" })}
-            />
-          </div>
-          <div className={[space["m-l--4"]].join(" ")}>
-            <Button
-              {...menuButton.args}
-              inverse
-              authenticated={data}
-              onClick={() => toggleDispatch({ type: "toggle_menu" })}
-            />
+        </div>
+        <div>
+          <div className={[layout["flex"], layout["items-center"]].join(" ")}>
+            <div
+              className={[styles["searchbar__host"], space["m-h--2"]].join(" ")}
+            >
+              <Button
+                variant="transparent"
+                content={<Content kind="host" inverse />}
+                inverse
+                animate
+                onClick={() => Router.push("/host/homes")}
+              />
+            </div>
+            <div className={[space["m-h--2"]].join(" ")}>
+              <Button
+                variant="transparent"
+                content={<Content kind="globe" inverse />}
+                inverse
+                onClick={() => toggleDispatch({ type: "toggle_globe" })}
+              />
+            </div>
+            <div className={[space["m-l--4"]].join(" ")}>
+              <Button
+                {...menuInverseButton.args}
+                inverse
+                authenticated={data}
+                onClick={() => toggleDispatch({ type: "toggle_menu" })}
+              />
+            </div>
           </div>
         </div>
         <div

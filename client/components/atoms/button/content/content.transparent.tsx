@@ -17,16 +17,13 @@ export const Content: React.FC<{ kind?: string; inverse?: boolean }> = ({
     globe: (
       <>
         <div className={[layout["items-center"], space["m-r--8"]].join(" ")}>
-          <Globe width={16} fill={inverse ? "white" : "#363636"} />
-        </div>
-        <div className={layout["items-center"]}>
-          <ChevronDown width={8} fill={inverse ? "white" : "#363636"} />
+          <Globe width={14} fill={inverse ? "white" : "#363636"} />
         </div>
       </>
     ),
     host: (
       <h4
-        className={`${[font["size--14"]].join(" ")} ${
+        className={`${[font["size--12"]].join(" ")} ${
           inverse ? color["c--white"] : color["c--gray__4"]
         }`}
       >
