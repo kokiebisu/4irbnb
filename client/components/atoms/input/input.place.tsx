@@ -118,7 +118,7 @@ export const PlaceInput: React.FC<{
             style={{
               position: "absolute",
               top: 48,
-              zIndex: 9999,
+              zIndex: 60,
             }}
           >
             <div

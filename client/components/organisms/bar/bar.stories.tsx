@@ -45,7 +45,7 @@ search.argTypes = {
   selected: {
     control: {
       type: "select",
-      options: ["location", "checkin", "checkout", "guests"],
+      options: [null, "location", "checkin", "checkout", "guests"],
     },
   },
 };
