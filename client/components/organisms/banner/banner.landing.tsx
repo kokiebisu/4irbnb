@@ -76,7 +76,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
               justifyContent: "center",
             }}
           >
-            <div style={{ position: "relative", bottom: 80 }}>
+            <div>
               <div
                 className={[
                   responsive["f_to_b--sm"],

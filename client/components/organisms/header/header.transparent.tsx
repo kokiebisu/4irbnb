@@ -54,7 +54,7 @@ export const TransparentHeader: React.FC<{
       className={`${[
         [
           layout["relative"],
-          responsive["h--300_to_auto--md"],
+
           space["p-v--16"],
           layout["container--spread"],
         ].join(" "),
@@ -132,13 +132,16 @@ export const TransparentHeader: React.FC<{
         </div>
       </div>
       <div
-        className={[responsive["n_to_b--sm"]].join(" ")}
+        className={[
+          responsive["n_to_b--sm"],
+          space["p-h--20"],
+          responsive["t--80p_to_20p--sm"],
+        ].join(" ")}
         style={{
           position: "absolute",
           width: "100%",
           maxWidth: 720,
           left: "50%",
-          top: "20%",
           bottom: 0,
           zIndex: 50,
           transform: "translate(-50%, 0)",
@@ -223,12 +226,14 @@ export const TransparentHeader: React.FC<{
           ) : (
             <motion.div
               key="minimodal"
+              className={[
+                responsive["justify--start_to_center--md"],
+                responsive["t__-45_to_0--md"],
+              ].join(" ")}
               style={{
                 position: "absolute",
                 width: "100%",
-                top: 0,
                 display: "flex",
-                justifyContent: "center",
               }}
             >
               <motion.div
