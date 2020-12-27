@@ -105,7 +105,10 @@ export const SearchBar: React.FC<{
           className={`${
             selected === "checkin" && [shape["shadow--lg"]].join(" ")
           }  ${[animation["hover-background--white__1"]].join(" ")}`}
-          onClick={() => setSelected("checkin")}
+          onClick={() => {
+            setSelected("checkin");
+            dispatchToggle({ type: "toggle_check" });
+          }}
         >
           <div
             className={`${[layout["flex"], layout["items-center"]].join(" ")}`}
@@ -149,7 +152,10 @@ export const SearchBar: React.FC<{
           className={`${
             selected === "checkout" && [shape["shadow--lg"]].join(" ")
           }  ${[animation["hover-background--white__1"]].join(" ")}`}
-          onClick={() => setSelected("checkout")}
+          onClick={() => {
+            setSelected("checkout");
+            dispatchToggle({ type: "toggle_check" });
+          }}
         >
           <div
             className={`${[layout["flex"], layout["items-center"]].join(" ")}`}
@@ -194,7 +200,6 @@ export const SearchBar: React.FC<{
             selected === "guests" && [shape["shadow--lg"]].join(" ")
           } ${[animation["hover-background--white__1"]].join(" ")}`}
           onClick={() => {
-            console.log("entered guests");
             setSelected("guests");
             dispatchToggle({ type: "toggle_guests" });
           }}

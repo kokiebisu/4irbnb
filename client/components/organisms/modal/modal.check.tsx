@@ -17,7 +17,7 @@ export const CheckModal: React.FC<{}> = () => {
         layout["justify-center"],
         space["p-v--25"],
         shape["shadow--sm"],
-        shape["br--50"],
+        shape["br--30"],
         color["bg--white"],
       ].join(" ")}
     >
