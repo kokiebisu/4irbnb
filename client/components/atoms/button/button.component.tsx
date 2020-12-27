@@ -79,6 +79,7 @@ export const Button: React.FC<ButtonProps> = ({
     location: <LocationButton {...props} />,
     nearby: <NearbyButton {...props} />,
     calendar: <CalendarButton {...props} />,
+    searchbar: <SearchbarButton {...props} />,
   };
 
   return (

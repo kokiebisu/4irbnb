@@ -75,7 +75,13 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
                 extendsTo={`${[layout["container--spread"]].join(" ")} ${
                   scrollPosition < 56
                     ? [color["bg--transparent"]].join(" ")
-                    : [color["bg--white"]].join(" ")
+                    : [
+                        color["bg--white"],
+                        layout["fixed"],
+                        layout["t--0"],
+                        layout["l--0"],
+                        layout["r--0"],
+                      ].join(" ")
                 }`}
               />
             </div>
