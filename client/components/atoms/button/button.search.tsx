@@ -1,7 +1,9 @@
 import React from "react";
 
+/** vectors */
 import { MagnifyGlass } from "@svg/original";
 
+/** styles */
 import color from "@styles/color.module.scss";
 import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";

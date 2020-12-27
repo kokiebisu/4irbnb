@@ -2,20 +2,10 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Create, CreateProps } from "@create/create.component";
 
-/** contexts */
-import { StayProvider } from "@context/stay";
-
 export default {
   title: "Design System/Organisms/Create",
   component: Create,
   argTypes: { onClick: { action: "clicked" } },
-  decorators: [
-    (Story) => (
-      <StayProvider>
-        <Story />
-      </StayProvider>
-    ),
-  ],
 } as Meta;
 
 const TemplateStory: Story<CreateProps> = (args) => <Create {...args} />;

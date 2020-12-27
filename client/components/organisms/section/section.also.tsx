@@ -60,7 +60,7 @@ export const AlsoSection: React.FC<{
           <h3 className={[font["size--20"]].join(" ")}>{title}</h3>
         </div>
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
-          <div className={[space["m-h--4"]].join(" ")}>
+          <div className={[space["m-h--2"]].join(" ")}>
             <Button
               {...paginate.args}
               animate
@@ -69,7 +69,7 @@ export const AlsoSection: React.FC<{
               disable={state.activeSlide === 0}
             />
           </div>
-          <div className={[space["m-h--4"]].join(" ")}>
+          <div className={[space["m-h--2"]].join(" ")}>
             <Button
               {...paginate.args}
               animate

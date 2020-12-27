@@ -335,7 +335,7 @@ exports[`Storyshots Design System/Atoms/Bullet Priority 1`] = `
     </div>
     <div>
       <button
-        className="undefined inline-block"
+        className=" inline-block transition"
         data-testid="button--undefined"
         onClick={[Function]}
         style={
@@ -547,7 +547,7 @@ exports[`Storyshots Design System/Atoms/Button Auth 1`] = `
   }
 >
   <button
-    className="hover__auth bg--transparent block w--full p-h--12 p-v--12 br--8 inline-block"
+    className="hover__auth bg--transparent block w--full p-h--12 p-v--12 br--8 inline-block transition"
     data-testid="button--auth"
     style={
       Object {
@@ -576,7 +576,7 @@ exports[`Storyshots Design System/Atoms/Button Auth 1`] = `
 
 exports[`Storyshots Design System/Atoms/Button Back 1`] = `
 <button
-  className="undefined inline-block"
+  className=" inline-block transition"
   data-testid="button--back"
   style={
     Object {
@@ -623,7 +623,7 @@ exports[`Storyshots Design System/Atoms/Button Banner 1`] = `
   }
 >
   <button
-    className="bg--white br--6 inline-block"
+    className="bg--white br--6 inline-block transition"
     data-testid="button--banner"
     style={
       Object {
@@ -644,7 +644,7 @@ exports[`Storyshots Design System/Atoms/Button Banner 1`] = `
 
 exports[`Storyshots Design System/Atoms/Button Border 1`] = `
 <button
-  className="bg--transparent inline-block"
+  className="bg--transparent inline-block transition"
   data-testid="button--border"
   style={
     Object {
@@ -664,7 +664,7 @@ exports[`Storyshots Design System/Atoms/Button Border 1`] = `
 
 exports[`Storyshots Design System/Atoms/Button Filter 1`] = `
 <button
-  className="undefined inline-block"
+  className=" inline-block transition"
   data-testid="button--filter"
   style={
     Object {
@@ -686,7 +686,7 @@ exports[`Storyshots Design System/Atoms/Button Filter 1`] = `
 
 exports[`Storyshots Design System/Atoms/Button Globe 1`] = `
 <button
-  className="text--left inline-block"
+  className="text--left inline-block transition"
   data-testid="button--globe"
   style={
     Object {
@@ -717,7 +717,7 @@ exports[`Storyshots Design System/Atoms/Button Globe 1`] = `
 
 exports[`Storyshots Design System/Atoms/Button Link 1`] = `
 <button
-  className="undefined inline-block"
+  className=" inline-block transition"
   data-testid="button--link"
   style={
     Object {
@@ -733,9 +733,57 @@ exports[`Storyshots Design System/Atoms/Button Link 1`] = `
 </button>
 `;
 
+exports[`Storyshots Design System/Atoms/Button Location 1`] = `
+<button
+  className=" inline-block transition"
+  data-testid="button--location"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="flex items-center p-v--8"
+  >
+    <div
+      className="m-r--16"
+    >
+      <div
+        style={
+          Object {
+            "height": 40,
+            "width": 40,
+          }
+        }
+      >
+        <img
+          src="https://a0.muscache.com/im/pictures/fc42dde0-36a7-460e-af89-10b5e44e48d8.jpg?im_w=240&im_q=lowq"
+          style={
+            Object {
+              "borderRadius": 5,
+              "verticalAlign": "bottom",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div>
+      <div>
+        <h4
+          className="text--left size--15"
+        >
+          Explore nearby destinations
+        </h4>
+      </div>
+    </div>
+  </div>
+</button>
+`;
+
 exports[`Storyshots Design System/Atoms/Button Menu 1`] = `
 <button
-  className="br--30 hover-shadow--lg b-2--white__2 inline-block"
+  className="br--30 hover-shadow--lg b-2--white__2 inline-block transition"
   data-testid="button--menu"
   style={
     Object {
@@ -744,10 +792,51 @@ exports[`Storyshots Design System/Atoms/Button Menu 1`] = `
   }
 >
   <div
-    className="flex items-center p-t--6 p-b--6 p-r--8 p-l--10 bg--white b--white__2"
+    className="flex items-center p-v--4 p-l--10 p-r--6 bg--white"
   >
     <div
-      className="m-r--12 m-l--4"
+      className="m-r--10"
+    >
+      <svg
+        fill="black"
+        viewBox="0 0 448 512"
+        width={12}
+      >
+        <path
+          d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+        />
+      </svg>
+    </div>
+    <div>
+      <svg
+        fill="gray"
+        viewBox="0 0 32 32"
+        width={30}
+      >
+        <path
+          d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Design System/Atoms/Button Menu Inverse 1`] = `
+<button
+  className="br--30 hover-shadow--lg b-2--transparent inline-block transition"
+  data-testid="button--menu"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="flex items-center p-v--4 p-l--10 p-r--6 bg--white"
+  >
+    <div
+      className="m-r--10"
     >
       <svg
         fill="black"
@@ -776,7 +865,7 @@ exports[`Storyshots Design System/Atoms/Button Menu 1`] = `
 
 exports[`Storyshots Design System/Atoms/Button Modal 1`] = `
 <button
-  className="undefined inline-block"
+  className=" inline-block transition"
   data-testid="button--modal"
   style={
     Object {
@@ -805,9 +894,35 @@ exports[`Storyshots Design System/Atoms/Button Modal 1`] = `
 </button>
 `;
 
+exports[`Storyshots Design System/Atoms/Button Nearby 1`] = `
+<button
+  className=" inline-block transition"
+  data-testid="button--nearby"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="p--3 hover-border--gray__4 b--transparent br--10"
+  >
+    <div
+      className="b--white__3 p-h--15 p-v--10 br--10"
+    >
+      <h4
+        className="size--12"
+      >
+        Nearby
+      </h4>
+    </div>
+  </div>
+</button>
+`;
+
 exports[`Storyshots Design System/Atoms/Button Option 1`] = `
 <button
-  className="w--full inline-block"
+  className="w--full inline-block transition"
   data-testid="button--option"
   style={
     Object {
@@ -825,7 +940,7 @@ exports[`Storyshots Design System/Atoms/Button Option 1`] = `
 
 exports[`Storyshots Design System/Atoms/Button Paginate 1`] = `
 <button
-  className="undefined inline-block"
+  className=" inline-block transition"
   data-testid="button--paginate"
   style={
     Object {
@@ -863,7 +978,7 @@ exports[`Storyshots Design System/Atoms/Button Primary 1`] = `
   }
 >
   <button
-    className="undefined inline-block"
+    className=" inline-block transition"
     data-testid="button--primary"
     style={
       Object {
@@ -898,7 +1013,7 @@ exports[`Storyshots Design System/Atoms/Button Privacy 1`] = `
   }
 >
   <button
-    className="undefined inline-block"
+    className=" inline-block transition"
     data-testid="button--privacy"
     style={
       Object {
@@ -919,9 +1034,70 @@ exports[`Storyshots Design System/Atoms/Button Privacy 1`] = `
 </div>
 `;
 
+exports[`Storyshots Design System/Atoms/Button Search 1`] = `
+<button
+  className=" inline-block transition"
+  data-testid="button--search"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="flex items-center bg--primary"
+    style={
+      Object {
+        "borderRadius": 50,
+        "height": 40,
+        "transition": "0.25s all ease",
+        "transitionDelay": "0.25s",
+        "width": 40,
+      }
+    }
+  >
+    <div
+      className="p-l--14 m-r--4"
+    >
+      <svg
+        height={13}
+        viewBox="0 0 32 32"
+        width={13}
+      >
+        <g
+          fill="none"
+        >
+          <path
+            d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"
+            stroke="white"
+            strokeWidth={4}
+          />
+        </g>
+      </svg>
+    </div>
+    <div
+      style={
+        Object {
+          "opacity": 0,
+          "transition": "0.25s all ease",
+          "transitionDelay": "0s",
+          "visibility": "hidden",
+        }
+      }
+    >
+      <p
+        className="size--15 c--white"
+      >
+        Search
+      </p>
+    </div>
+  </div>
+</button>
+`;
+
 exports[`Storyshots Design System/Atoms/Button Searchbar 1`] = `
 <button
-  className="undefined inline-block"
+  className=" inline-block transition"
   data-testid="button--searchbar"
   style={
     Object {
@@ -933,7 +1109,7 @@ exports[`Storyshots Design System/Atoms/Button Searchbar 1`] = `
 
 exports[`Storyshots Design System/Atoms/Button Transparent 1`] = `
 <button
-  className="undefined inline-block"
+  className=" inline-block transition"
   data-testid="button--transparent"
   style={
     Object {
@@ -942,7 +1118,7 @@ exports[`Storyshots Design System/Atoms/Button Transparent 1`] = `
   }
 >
   <div
-    className="br--30 flex items-center bg--transparent p-t--13 p-b--13 p-l--15 p-r--15 hover-background--white__1"
+    className="br--30 flex items-center bg--transparent p-v--10 p-h--12 hover-background--white__1"
   >
     <h3
       className="size--15"
@@ -955,7 +1131,7 @@ exports[`Storyshots Design System/Atoms/Button Transparent 1`] = `
 
 exports[`Storyshots Design System/Atoms/Button Underline 1`] = `
 <button
-  className="undefined inline-block"
+  className=" inline-block transition"
   data-testid="button--underline"
   style={
     Object {
@@ -1163,7 +1339,7 @@ exports[`Storyshots Design System/Molecules/Card Available 1`] = `
       className="inline-block"
     >
       <button
-        className="undefined inline-block"
+        className=" inline-block transition"
         data-testid="button--primary"
         style={
           Object {
@@ -1464,7 +1640,7 @@ exports[`Storyshots Design System/Molecules/Card Horizontal 1`] = `
                       "overflow": "hidden",
                       "position": "relative",
                       "width": "100%",
-                      "zIndex": 500,
+                      "zIndex": 50,
                     }
                   }
                 >
@@ -1526,12 +1702,12 @@ exports[`Storyshots Design System/Molecules/Card Horizontal 1`] = `
                         "top": "50%",
                         "transform": "translateY(-50%)",
                         "transition": "opacity 0.2s ease-out",
-                        "zIndex": 9999,
+                        "zIndex": 60,
                       }
                     }
                   >
                     <button
-                      className="undefined inline-block"
+                      className=" inline-block transition"
                       data-testid="button--paginate"
                       onClick={[Function]}
                       style={
@@ -1569,12 +1745,12 @@ exports[`Storyshots Design System/Molecules/Card Horizontal 1`] = `
                         "top": "50%",
                         "transform": "translateY(-50%)",
                         "transition": "opacity 0.2s ease-out",
-                        "zIndex": 9999,
+                        "zIndex": 60,
                       }
                     }
                   >
                     <button
-                      className="undefined inline-block"
+                      className=" inline-block transition"
                       data-testid="button--paginate"
                       onClick={[Function]}
                       style={
@@ -1671,7 +1847,7 @@ exports[`Storyshots Design System/Molecules/Card Horizontal 1`] = `
                   className="c--white hidden"
                   style={
                     Object {
-                      "zIndex": 9999,
+                      "zIndex": 50,
                     }
                   }
                 >
@@ -1831,7 +2007,7 @@ exports[`Storyshots Design System/Molecules/Card Host 1`] = `
       </div>
       <div>
         <button
-          className="undefined inline-block"
+          className=" inline-block transition"
           data-testid="button--underline"
           onClick={[Function]}
           style={
@@ -2321,7 +2497,7 @@ exports[`Storyshots Design System/Molecules/Card Stay 1`] = `
                           "overflow": "hidden",
                           "position": "relative",
                           "width": "100%",
-                          "zIndex": 500,
+                          "zIndex": 50,
                         }
                       }
                     >
@@ -2383,12 +2559,12 @@ exports[`Storyshots Design System/Molecules/Card Stay 1`] = `
                             "top": "50%",
                             "transform": "translateY(-50%)",
                             "transition": "opacity 0.2s ease-out",
-                            "zIndex": 9999,
+                            "zIndex": 60,
                           }
                         }
                       >
                         <button
-                          className="undefined inline-block"
+                          className=" inline-block transition"
                           data-testid="button--paginate"
                           onClick={[Function]}
                           style={
@@ -2426,12 +2602,12 @@ exports[`Storyshots Design System/Molecules/Card Stay 1`] = `
                             "top": "50%",
                             "transform": "translateY(-50%)",
                             "transition": "opacity 0.2s ease-out",
-                            "zIndex": 9999,
+                            "zIndex": 60,
                           }
                         }
                       >
                         <button
-                          className="undefined inline-block"
+                          className=" inline-block transition"
                           data-testid="button--paginate"
                           onClick={[Function]}
                           style={
@@ -2528,7 +2704,7 @@ exports[`Storyshots Design System/Molecules/Card Stay 1`] = `
                       className="c--white hidden"
                       style={
                         Object {
-                          "zIndex": 9999,
+                          "zIndex": 50,
                         }
                       }
                     >
@@ -2659,7 +2835,7 @@ exports[`Storyshots Design System/Molecules/Card Stay 1`] = `
                       "overflow": "hidden",
                       "position": "relative",
                       "width": "100%",
-                      "zIndex": 500,
+                      "zIndex": 50,
                     }
                   }
                 >
@@ -2721,12 +2897,12 @@ exports[`Storyshots Design System/Molecules/Card Stay 1`] = `
                         "top": "50%",
                         "transform": "translateY(-50%)",
                         "transition": "opacity 0.2s ease-out",
-                        "zIndex": 9999,
+                        "zIndex": 60,
                       }
                     }
                   >
                     <button
-                      className="undefined inline-block"
+                      className=" inline-block transition"
                       data-testid="button--paginate"
                       onClick={[Function]}
                       style={
@@ -2764,12 +2940,12 @@ exports[`Storyshots Design System/Molecules/Card Stay 1`] = `
                         "top": "50%",
                         "transform": "translateY(-50%)",
                         "transition": "opacity 0.2s ease-out",
-                        "zIndex": 9999,
+                        "zIndex": 60,
                       }
                     }
                   >
                     <button
-                      className="undefined inline-block"
+                      className=" inline-block transition"
                       data-testid="button--paginate"
                       onClick={[Function]}
                       style={
