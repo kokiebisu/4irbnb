@@ -19,13 +19,6 @@ import animation from "@styles/animation.module.scss";
 export default {
   title: "Design System/Atoms/Button",
   component: Button,
-  decorators: [
-    (Story) => (
-      <ContextProvider>
-        <Story />
-      </ContextProvider>
-    ),
-  ],
   argTypes: {
     inverse: {
       control: "boolean",

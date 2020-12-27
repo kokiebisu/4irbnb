@@ -33,3 +33,8 @@ export const input = TemplateStory.bind({});
 input.args = {
   variant: "input",
 };
+
+export const location = TemplateStory.bind({});
+location.args = {
+  variant: "location",
+};
