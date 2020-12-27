@@ -8,6 +8,9 @@ type State = {
   menu: boolean;
   auth: boolean;
   globe: boolean;
+  location: boolean;
+  guests: boolean;
+  check: boolean;
 };
 
 type ToggleProviderProps = { children: React.ReactNode };
@@ -18,6 +21,7 @@ const ToggleDispatchContext = createContext<Dispatch | undefined>(undefined);
 const toggleReducer = (state: State, action: Action) => {
   switch (action.type) {
     case "toggle_privacy":
+      console.log("entered privacy");
       return { ...state, privacy: !state.privacy };
     case "toggle_menu":
       return { ...state, menu: !state.menu };
@@ -25,6 +29,12 @@ const toggleReducer = (state: State, action: Action) => {
       return { ...state, auth: !state.auth, menu: !state.menu };
     case "toggle_globe":
       return { ...state, globe: !state.globe };
+    case "toggle_location":
+      return { ...state, location: !state.location };
+    case "toggle_guests":
+      return { ...state, guests: !state.guests };
+    case "toggle_check":
+      return { ...state, check: !state.check };
     case "close_register":
       return { ...state, auth: !state.auth };
     default:
@@ -38,7 +48,12 @@ const ToggleProvider = ({ children }: ToggleProviderProps) => {
     menu: false,
     auth: false,
     globe: false,
+    location: false,
+    guests: false,
+    check: false,
   });
+
+  console.log("state", state);
 
   return (
     <ToggleStateContext.Provider value={state}>

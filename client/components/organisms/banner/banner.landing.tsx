@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Router from "next/router";
 
@@ -13,21 +13,26 @@ import color from "@styles/color.module.scss";
 /** components */
 import { Header } from "@header/header.component";
 import { Button } from "@button/button.component";
+import { Bar } from "@bar/bar.component";
 
 /** hooks */
 import { useHandleScroll } from "@hooks/useHandleScroll";
+import useOnClickOutside from "@hooks/useOnClickOutside";
 
 /** stories */
 import { banner } from "@button/button.stories";
 
 /** helper */
 import { ResponsiveImage } from "@helper/img";
+import { useToggleDispatch, useToggleState } from "@context/toggle";
+import { Modal } from "@organisms/modal/modal.component";
 
 /**
  * Renders the banner section
  */
 export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
   const scrollPosition = useHandleScroll();
+
   return (
     <div className={index["banner"]}>
       <div className={[layout["all-sides"]].join(" ")}>
@@ -37,11 +42,15 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
       </div>
       <div className={[layout["all-sides"]].join(" ")}>
         <div
-          className={[index["header__wrapper--md"], shape["h--full"]].join(" ")}
+          style={{
+            display: "grid",
+            gridTemplateRows: "auto 1fr",
+            height: "100%",
+          }}
         >
-          <div style={{ height: "100%" }}>
-            <div className={[layout["container--spread"]].join(" ")}>
-              {scrollPosition > 56 ? (
+          <div>
+            <div>
+              {/* {scrollPosition > 56 && (
                 <motion.div
                   exit={{ opacity: 0 }}
                   initial={{ opacity: 0 }}
@@ -51,42 +60,55 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
                     right: 0,
                     position: "fixed",
                     top: 0,
-                    zIndex: 5000,
+                    zIndex: 50,
                     width: "100%",
                   }}
                 >
                   <Header spread variant="white" data={data} />
                 </motion.div>
-              ) : null}
-              {scrollPosition > 56 ? (
-                <div style={{ padding: "39px 0" }}></div>
-              ) : (
-                <Header variant="transparent" data={data} />
-              )}
+              )} */}
             </div>
-            <div className={[color["c--white"]].join(" ")}></div>
-            <div
-              className={[
-                layout["container--spread"],
-                layout["z--20"],
-                shape["h--75p"],
-                index["flex__explore"],
-              ].join(" ")}
-            >
-              <div className={[space["m-v--10"], space["m-h--0"]].join(" ")}>
+            <div>
+              <Header
+                variant="transparent"
+                data={data}
+                extendsTo={`${[layout["container--spread"]].join(" ")} ${
+                  scrollPosition < 56
+                    ? [color["bg--transparent"]].join(" ")
+                    : [
+                        color["bg--white"],
+                        layout["fixed"],
+                        layout["t--0"],
+                        layout["l--0"],
+                        layout["r--0"],
+                      ].join(" ")
+                }`}
+              />
+            </div>
+          </div>
+          <div
+            className={[layout["container--spread"]].join(" ")}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <div style={{ position: "relative", bottom: 80 }}>
+              <div>
                 <h3 className={[color["c--white"], font["size--28"]].join(" ")}>
                   Go Near
                 </h3>
               </div>
               <div
                 className={[
-                  font["c--white"],
                   index["w__explore--subtitle"],
                   index["text__explore--subtitle"],
                 ].join(" ")}
               >
                 <p
                   className={[
+                    font["c--white"],
                     index["size__explore--subtitle"],
                     font["weight--300"],
                     font["ls--3"],
@@ -99,7 +121,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
               </div>
               <div
                 className={[
-                  space["m-v--15"],
+                  space["m-t--15"],
                   space["m-h--0"],
                   index["justify__explore--button"],
                 ].join(" ")}

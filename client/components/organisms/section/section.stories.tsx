@@ -20,13 +20,6 @@ export default {
       control: "boolean",
     },
   },
-  decorators: [
-    (Story) => (
-      <ContextProvider>
-        <Story />
-      </ContextProvider>
-    ),
-  ],
 } as Meta;
 
 const TemplateStory: Story<SectionProps> = (args) => <Section {...args} />;

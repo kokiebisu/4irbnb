@@ -134,7 +134,7 @@ export const HomesBanner: React.FC<{
             height: "100%",
             overflow: "hidden",
             borderRadius: 12,
-            zIndex: 500,
+            zIndex: 50,
           }}
         >
           <div
