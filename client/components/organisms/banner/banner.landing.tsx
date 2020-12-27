@@ -50,29 +50,10 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
         >
           <div>
             <div>
-              {/* {scrollPosition > 56 && (
-                <motion.div
-                  exit={{ opacity: 0 }}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  style={{
-                    left: 0,
-                    right: 0,
-                    position: "fixed",
-                    top: 0,
-                    zIndex: 50,
-                    width: "100%",
-                  }}
-                >
-                  <Header spread variant="white" data={data} />
-                </motion.div>
-              )} */}
-            </div>
-            <div>
               <Header
                 variant="transparent"
                 data={data}
-                extendsTo={`${[layout["container--spread"]].join(" ")} ${
+                extendsTo={`${
                   scrollPosition < 56
                     ? [color["bg--transparent"]].join(" ")
                     : [

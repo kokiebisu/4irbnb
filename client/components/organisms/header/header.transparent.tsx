@@ -52,7 +52,16 @@ export const TransparentHeader: React.FC<{
     }
   });
   return (
-    <header className={`${[[space["p-h--0"], space["p-v--16"]].join(" ")]}`}>
+    <header
+      className={`${[
+        [
+          layout["relative"],
+          space["p-h--0"],
+          space["p-v--16"],
+          layout["container--spread"],
+        ].join(" "),
+      ]}`}
+    >
       <div
         className={[
           header["display__transparent--md"],
@@ -71,121 +80,6 @@ export const TransparentHeader: React.FC<{
               height={32}
             />
           </div>
-        </div>
-        <div
-          style={{
-            position: "absolute",
-            width: "100%",
-            maxWidth: 720,
-            left: "50%",
-            zIndex: 50,
-            transform: "translate(-50%, 0)",
-          }}
-        >
-          <AnimatePresence>
-            {scrollPosition < 56 ? (
-              <motion.div
-                ref={searchbarRef}
-                key="modal"
-                exit={{
-                  y: -100,
-                  scale: 0.3,
-                  opacity: 0,
-                }}
-                initial={{ y: -100, scale: 0.3, opacity: 0 }}
-                animate={{ y: 0, scale: 1, opacity: 1 }}
-                style={{ position: "relative" }}
-              >
-                <Bar
-                  variant="search"
-                  selected={selected}
-                  setSelected={setSelected}
-                  category={category}
-                  setCategory={setCategory}
-                />
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 110,
-                    left: 0,
-                    zIndex: 80,
-                    width: "100%",
-                    maxWidth: 400,
-                  }}
-                >
-                  <Modal
-                    variant="location"
-                    dispatch="toggle_location"
-                    extendsTo={[shape["w--full"]].join(" ")}
-                    criteria={toggleState.location}
-                  />
-                </div>
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 110,
-                    left: 0,
-                    zIndex: 80,
-                    width: "100%",
-                    maxWidth: 720,
-                  }}
-                >
-                  <Modal
-                    variant="check"
-                    dispatch="toggle_check"
-                    extendsTo={[shape["w--full"]].join(" ")}
-                    criteria={toggleState.check}
-                  />
-                </div>
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 110,
-                    right: 0,
-                    zIndex: 80,
-                    width: "100%",
-                    maxWidth: 325,
-                    display: "flex",
-                    justifyContent: "flex-end",
-                  }}
-                >
-                  <Modal
-                    variant="guests"
-                    dispatch="toggle_guests"
-                    extendsTo={[shape["w--full"]].join(" ")}
-                    criteria={toggleState.guests}
-                  />
-                </div>
-              </motion.div>
-            ) : (
-              <motion.div
-                key="minimodal"
-                style={{
-                  position: "absolute",
-                  width: "100%",
-                  top: 0,
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
-                <motion.div
-                  exit={{
-                    width: 720,
-                    y: 50,
-                    opacity: 0,
-                  }}
-                  initial={{ width: 720, y: 50, opacity: 0 }}
-                  animate={{ width: 240, y: 0, opacity: 1 }}
-                >
-                  <Button
-                    variant="searchbar"
-                    mini
-                    extendsTo={[shape["w--full"]].join(" ")}
-                  />
-                </motion.div>
-              </motion.div>
-            )}
-          </AnimatePresence>
         </div>
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div
@@ -216,7 +110,7 @@ export const TransparentHeader: React.FC<{
             />
           </div>
         </div>
-        {/* <div
+        <div
           style={{ zIndex: 70 }}
           className={[
             layout["absolute"],
@@ -230,7 +124,124 @@ export const TransparentHeader: React.FC<{
             authenticated={data}
             criteria={toggleState.menu}
           />
-        </div> */}
+        </div>
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          width: "100%",
+          maxWidth: 720,
+          left: "50%",
+          top: "20%",
+          bottom: 0,
+          zIndex: 50,
+          transform: "translate(-50%, 0)",
+        }}
+      >
+        <AnimatePresence>
+          {scrollPosition < 56 ? (
+            <motion.div
+              ref={searchbarRef}
+              key="modal"
+              exit={{
+                y: -100,
+                scale: 0.3,
+                opacity: 0,
+              }}
+              initial={{ y: -100, scale: 0.3, opacity: 0 }}
+              animate={{ y: 0, scale: 1, opacity: 1 }}
+              style={{ position: "relative" }}
+            >
+              <Bar
+                variant="search"
+                selected={selected}
+                setSelected={setSelected}
+                category={category}
+                setCategory={setCategory}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  top: 110,
+                  left: 0,
+                  zIndex: 80,
+                  width: "100%",
+                  maxWidth: 400,
+                }}
+              >
+                <Modal
+                  variant="location"
+                  dispatch="toggle_location"
+                  extendsTo={[shape["w--full"]].join(" ")}
+                  criteria={toggleState.location}
+                />
+              </div>
+              <div
+                style={{
+                  position: "absolute",
+                  top: 110,
+                  left: 0,
+                  zIndex: 80,
+                  width: "100%",
+                  maxWidth: 720,
+                }}
+              >
+                <Modal
+                  variant="check"
+                  dispatch="toggle_check"
+                  extendsTo={[shape["w--full"]].join(" ")}
+                  criteria={toggleState.check}
+                />
+              </div>
+              <div
+                style={{
+                  position: "absolute",
+                  top: 110,
+                  right: 0,
+                  zIndex: 80,
+                  width: "100%",
+                  maxWidth: 325,
+                  display: "flex",
+                  justifyContent: "flex-end",
+                }}
+              >
+                <Modal
+                  variant="guests"
+                  dispatch="toggle_guests"
+                  extendsTo={[shape["w--full"]].join(" ")}
+                  criteria={toggleState.guests}
+                />
+              </div>
+            </motion.div>
+          ) : (
+            <motion.div
+              key="minimodal"
+              style={{
+                position: "absolute",
+                width: "100%",
+                top: 0,
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <motion.div
+                exit={{
+                  width: 720,
+                  y: 50,
+                  opacity: 0,
+                }}
+                initial={{ width: 720, y: 50, opacity: 0 }}
+                animate={{ width: 240, y: 0, opacity: 1 }}
+              >
+                <Button
+                  variant="searchbar"
+                  mini
+                  extendsTo={[shape["w--full"]].join(" ")}
+                />
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
       <div>
         <Bar variant="searchbar" />
