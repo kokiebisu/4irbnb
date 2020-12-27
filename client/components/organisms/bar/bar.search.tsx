@@ -10,6 +10,7 @@ import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 import font from "@styles/font.module.scss";
 import animation from "@styles/animation.module.scss";
+import responsive from "@styles/responsive.module.scss";
 
 /** vectors */
 import { Button } from "@button/button.component";
@@ -37,7 +38,13 @@ export const SearchBar: React.FC<{
           <div className={[space["m-h--16"]].join(" ")}>
             <button onClick={() => setCategory("stay")}>
               <div className={[space["p-b--8"]].join(" ")}>
-                <p className={[color["c--white"], font["size--14"]].join(" ")}>
+                <p
+                  className={[
+                    color["c--white"],
+                    responsive["size__12_to_14--md"],
+                    responsive["weight__500_to_300--md"],
+                  ].join(" ")}
+                >
                   Places to stay
                 </p>
               </div>
@@ -57,7 +64,13 @@ export const SearchBar: React.FC<{
           <div className={[space["m-h--16"]].join(" ")}>
             <button onClick={() => setCategory("experiences")}>
               <div className={[space["p-b--8"]].join(" ")}>
-                <p className={[color["c--white"], font["size--14"]].join(" ")}>
+                <p
+                  className={[
+                    color["c--white"],
+                    responsive["size__12_to_14--md"],
+                    responsive["weight__500_to_300--md"],
+                  ].join(" ")}
+                >
                   Experiences
                 </p>
               </div>
@@ -77,7 +90,13 @@ export const SearchBar: React.FC<{
           <div className={[space["m-h--16"]].join(" ")}>
             <button onClick={() => setCategory("online")}>
               <div className={[space["p-b--8"]].join(" ")}>
-                <p className={[color["c--white"], font["size--14"]].join(" ")}>
+                <p
+                  className={[
+                    color["c--white"],
+                    responsive["size__12_to_14--md"],
+                    responsive["weight__500_to_300--md"],
+                  ].join(" ")}
+                >
                   Online Experiences
                 </p>
               </div>
