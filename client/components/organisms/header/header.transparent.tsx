@@ -10,6 +10,7 @@ import color from "@styles/color.module.scss";
 import shape from "@styles/shape.module.scss";
 import font from "@styles/font.module.scss";
 import header from "@header/header.module.scss";
+import animation from "@styles/animation.module.scss";
 
 /** components */
 import { menu as menuModal } from "@modal/modal.stories";
@@ -23,7 +24,7 @@ import { NameLogo, NoNameLogo } from "@svg/logo";
 import { useToggleDispatch, useToggleState } from "@context/toggle";
 
 /** stories */
-import { menuInverse as menuInverseButton } from "@button/button.stories";
+import { menu as menuButton } from "@button/button.stories";
 import { Bar } from "@bar/bar.component";
 import { Content } from "@button/content/content.transparent";
 import useOnClickOutside from "@hooks/useOnClickOutside";
@@ -42,9 +43,6 @@ export const TransparentHeader: React.FC<{
   const toggleState = useToggleState();
   const scrollPosition = useHandleScroll();
 
-  useEffect(() => {
-    console.log("pos", scrollPosition);
-  }, [scrollPosition]);
   const toggleDispatch = useToggleDispatch();
   useOnClickOutside(searchbarRef, () => {
     if (selected) {
@@ -87,8 +85,8 @@ export const TransparentHeader: React.FC<{
           >
             <Button
               variant="transparent"
-              content={<Content kind="host" inverse />}
-              inverse
+              content={<Content kind="host" inverse={scrollPosition < 56} />}
+              inverse={scrollPosition < 56}
               animate
               onClick={() => Router.push("/host/homes")}
             />
@@ -96,15 +94,18 @@ export const TransparentHeader: React.FC<{
           <div className={[space["m-h--2"]].join(" ")}>
             <Button
               variant="transparent"
-              content={<Content kind="globe" inverse />}
-              inverse
+              content={<Content kind="globe" inverse={scrollPosition < 56} />}
+              inverse={scrollPosition < 56}
               onClick={() => toggleDispatch({ type: "toggle_globe" })}
             />
           </div>
           <div className={[space["m-l--4"]].join(" ")}>
             <Button
-              {...menuInverseButton.args}
-              inverse
+              variant="menu"
+              extendsTo={[animation["hover-shadow--lg"], shape["br--30"]].join(
+                " "
+              )}
+              inverse={scrollPosition < 56}
               authenticated={data}
               onClick={() => toggleDispatch({ type: "toggle_menu" })}
             />
