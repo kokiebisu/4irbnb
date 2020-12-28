@@ -1,5 +1,3 @@
-import React from "react";
-
 /** styles */
 import responsive from "@styles/responsive.module.scss";
 import space from "@styles/space.module.scss";

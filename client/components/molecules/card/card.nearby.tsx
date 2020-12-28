@@ -1,5 +1,3 @@
-import React from "react";
-
 /** styles **/
 import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
