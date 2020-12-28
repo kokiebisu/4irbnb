@@ -24,11 +24,13 @@ export const SearchBar: React.FC<{
   setSelected?: (param: string) => void;
   category?: string;
   setCategory?: (param: string) => void;
+  transparent?: boolean;
 }> = ({
   selected = null,
   setSelected = () => console.log("clicked"),
   category,
   setCategory,
+  transparent,
 }) => {
   const dispatchToggle = useToggleDispatch();
   return (
@@ -39,11 +41,14 @@ export const SearchBar: React.FC<{
             <button onClick={() => setCategory("stay")}>
               <div className={[space["p-b--8"]].join(" ")}>
                 <p
-                  className={[
-                    color["c--white"],
+                  className={`${
+                    transparent
+                      ? [color["c--white"]].join(" ")
+                      : [color["c--black"]].join(" ")
+                  } ${[
                     responsive["size__12_to_14--md"],
                     responsive["weight__500_to_300--md"],
-                  ].join(" ")}
+                  ].join(" ")}`}
                 >
                   Places to stay
                 </p>
@@ -55,7 +60,10 @@ export const SearchBar: React.FC<{
                   <motion.div
                     initial={{ width: 3 }}
                     animate={{ width: 15 }}
-                    style={{ height: 2, backgroundColor: "white" }}
+                    style={{
+                      height: 2,
+                      backgroundColor: transparent ? "white" : "black",
+                    }}
                   />
                 )}
               </div>
@@ -65,11 +73,14 @@ export const SearchBar: React.FC<{
             <button onClick={() => setCategory("experiences")}>
               <div className={[space["p-b--8"]].join(" ")}>
                 <p
-                  className={[
-                    color["c--white"],
+                  className={`${
+                    transparent
+                      ? [color["c--white"]].join(" ")
+                      : [color["c--black"]].join(" ")
+                  } ${[
                     responsive["size__12_to_14--md"],
                     responsive["weight__500_to_300--md"],
-                  ].join(" ")}
+                  ].join(" ")}`}
                 >
                   Experiences
                 </p>
@@ -81,7 +92,10 @@ export const SearchBar: React.FC<{
                   <motion.div
                     initial={{ width: 3 }}
                     animate={{ width: 15 }}
-                    style={{ height: 2, backgroundColor: "white" }}
+                    style={{
+                      height: 2,
+                      backgroundColor: transparent ? "white" : "black",
+                    }}
                   />
                 )}
               </div>
@@ -91,11 +105,14 @@ export const SearchBar: React.FC<{
             <button onClick={() => setCategory("online")}>
               <div className={[space["p-b--8"]].join(" ")}>
                 <p
-                  className={[
-                    color["c--white"],
+                  className={`${
+                    transparent
+                      ? [color["c--white"]].join(" ")
+                      : [color["c--black"]].join(" ")
+                  } ${[
                     responsive["size__12_to_14--md"],
                     responsive["weight__500_to_300--md"],
-                  ].join(" ")}
+                  ].join(" ")}`}
                 >
                   Online Experiences
                 </p>
@@ -107,7 +124,10 @@ export const SearchBar: React.FC<{
                   <motion.div
                     initial={{ width: 3 }}
                     animate={{ width: 15 }}
-                    style={{ height: 2, backgroundColor: "white" }}
+                    style={{
+                      height: 2,
+                      backgroundColor: transparent ? "white" : "black",
+                    }}
                   />
                 )}
               </div>
@@ -116,7 +136,7 @@ export const SearchBar: React.FC<{
         </div>
       </div>
       <div
-        className={[shape["shadow--sm"]].join(" ")}
+        className={transparent ? [shape["shadow--sm"]].join(" ") : null}
         style={{
           border: "1px solid lightgray",
           display: "grid",

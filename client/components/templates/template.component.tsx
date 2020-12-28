@@ -14,6 +14,7 @@ import { LanguageTemplate } from "@template/globe/template.language";
 import { CurrencyTemplate } from "@template/globe/template.currency";
 import { LocationTemplate } from "@template/modal/template.location";
 import { CheckTemplate } from "./modal/template.check";
+import { SearchbarTemplate } from "./template.searchbar";
 
 export interface TemplateProps {
   variant?: string;
@@ -42,6 +43,7 @@ export const Template: React.FC<TemplateProps> = ({
     currency: <CurrencyTemplate {...props} />,
     location: <LocationTemplate {...props} />,
     check: <CheckTemplate {...props} />,
+    searchbar: <SearchbarTemplate {...props} />,
   };
   return <div data-testid={`${variant}-template`}>{variants[variant]}</div>;
 };
