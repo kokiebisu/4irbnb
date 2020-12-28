@@ -1,5 +1,5 @@
+/** components */
 import { Input } from "@input/input.component";
-import React from "react";
 
 /** styles */
 import shape from "@styles/shape.module.scss";

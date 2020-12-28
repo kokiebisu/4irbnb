@@ -1,5 +1,3 @@
-import React from "react";
-
 /** components */
 import { AmenityBullet } from "@bullet/bullet.amenity";
 import { BringBullet } from "@bullet/bullet.bring";

@@ -1,5 +1,3 @@
-import React from "react";
-
 /** auth templates */
 import { AuthTemplate } from "@template/auth/template.auth";
 import { LoginTemplate } from "@template/auth/template.login";

@@ -1,5 +1,3 @@
-import React from "react";
-
 /** styles **/
 import shape from "@styles/shape.module.scss";
 import space from "@styles/space.module.scss";
