@@ -1,5 +1,3 @@
-import React from "react";
-
 /** styles **/
 import section from "@section/section.module.scss";
 import space from "@styles/space.module.scss";

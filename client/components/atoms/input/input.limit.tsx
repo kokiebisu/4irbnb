@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 /** styles */
 import layout from "@styles/layout.module.scss";

@@ -1,5 +1,3 @@
-import React from "react";
-
 /** components */
 import { DetailsHeader } from "@header/header.details";
 import { ExperiencesHeader } from "@header/header.experiences";

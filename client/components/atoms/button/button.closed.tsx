@@ -1,5 +1,3 @@
-import React from "react";
-
 /** vectors */
 import { CheckPlain, Close } from "@svg/original";
 

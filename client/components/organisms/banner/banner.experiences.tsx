@@ -1,5 +1,3 @@
-import React from "react";
-
 /**
  * Renders the experiences banner
  */

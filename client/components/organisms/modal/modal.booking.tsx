@@ -1,5 +1,3 @@
-import React from "react";
-
 /** styles */
 import modal from "@modal/modal.module.scss";
 import shape from "@styles/shape.module.scss";

@@ -1,5 +1,3 @@
-import React from "react";
-
 /** styles **/
 import color from "@styles/color.module.scss";
 import shape from "@styles/shape.module.scss";

@@ -1,5 +1,4 @@
-import React, { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { useRef, useState } from "react";
 import Router from "next/router";
 
 /** styles **/
@@ -14,7 +13,6 @@ import responsive from "@styles/responsive.module.scss";
 /** components */
 import { Header } from "@header/header.component";
 import { Button } from "@button/button.component";
-import { Bar } from "@bar/bar.component";
 
 /** hooks */
 import { useHandleScroll } from "@hooks/useHandleScroll";
