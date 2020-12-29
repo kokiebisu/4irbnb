@@ -1,8 +1,8 @@
 import React from "react";
 import { screen, fireEvent, render, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import { Button } from "../../button/button.component";
-import { banner } from "../../button/button.stories";
+import { Button } from "../button.component";
+import { banner } from "../button.stories";
 
 afterEach(cleanup);
 
