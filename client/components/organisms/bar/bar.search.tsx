@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 import { motion } from "framer-motion";
 
@@ -10,6 +10,7 @@ import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 import font from "@styles/font.module.scss";
 import animation from "@styles/animation.module.scss";
+import responsive from "@styles/responsive.module.scss";
 
 /** vectors */
 import { Button } from "@button/button.component";
@@ -23,11 +24,13 @@ export const SearchBar: React.FC<{
   setSelected?: (param: string) => void;
   category?: string;
   setCategory?: (param: string) => void;
+  transparent?: boolean;
 }> = ({
   selected = null,
   setSelected = () => console.log("clicked"),
   category,
   setCategory,
+  transparent,
 }) => {
   const dispatchToggle = useToggleDispatch();
   return (
@@ -37,7 +40,16 @@ export const SearchBar: React.FC<{
           <div className={[space["m-h--16"]].join(" ")}>
             <button onClick={() => setCategory("stay")}>
               <div className={[space["p-b--8"]].join(" ")}>
-                <p className={[color["c--white"], font["size--14"]].join(" ")}>
+                <p
+                  className={`${
+                    transparent
+                      ? [color["c--white"]].join(" ")
+                      : [color["c--black"]].join(" ")
+                  } ${[
+                    responsive["size__12_to_14--md"],
+                    responsive["weight__500_to_300--md"],
+                  ].join(" ")}`}
+                >
                   Places to stay
                 </p>
               </div>
@@ -48,7 +60,10 @@ export const SearchBar: React.FC<{
                   <motion.div
                     initial={{ width: 3 }}
                     animate={{ width: 15 }}
-                    style={{ height: 2, backgroundColor: "white" }}
+                    style={{
+                      height: 2,
+                      backgroundColor: transparent ? "white" : "black",
+                    }}
                   />
                 )}
               </div>
@@ -57,7 +72,16 @@ export const SearchBar: React.FC<{
           <div className={[space["m-h--16"]].join(" ")}>
             <button onClick={() => setCategory("experiences")}>
               <div className={[space["p-b--8"]].join(" ")}>
-                <p className={[color["c--white"], font["size--14"]].join(" ")}>
+                <p
+                  className={`${
+                    transparent
+                      ? [color["c--white"]].join(" ")
+                      : [color["c--black"]].join(" ")
+                  } ${[
+                    responsive["size__12_to_14--md"],
+                    responsive["weight__500_to_300--md"],
+                  ].join(" ")}`}
+                >
                   Experiences
                 </p>
               </div>
@@ -68,7 +92,10 @@ export const SearchBar: React.FC<{
                   <motion.div
                     initial={{ width: 3 }}
                     animate={{ width: 15 }}
-                    style={{ height: 2, backgroundColor: "white" }}
+                    style={{
+                      height: 2,
+                      backgroundColor: transparent ? "white" : "black",
+                    }}
                   />
                 )}
               </div>
@@ -77,7 +104,16 @@ export const SearchBar: React.FC<{
           <div className={[space["m-h--16"]].join(" ")}>
             <button onClick={() => setCategory("online")}>
               <div className={[space["p-b--8"]].join(" ")}>
-                <p className={[color["c--white"], font["size--14"]].join(" ")}>
+                <p
+                  className={`${
+                    transparent
+                      ? [color["c--white"]].join(" ")
+                      : [color["c--black"]].join(" ")
+                  } ${[
+                    responsive["size__12_to_14--md"],
+                    responsive["weight__500_to_300--md"],
+                  ].join(" ")}`}
+                >
                   Online Experiences
                 </p>
               </div>
@@ -88,7 +124,10 @@ export const SearchBar: React.FC<{
                   <motion.div
                     initial={{ width: 3 }}
                     animate={{ width: 15 }}
-                    style={{ height: 2, backgroundColor: "white" }}
+                    style={{
+                      height: 2,
+                      backgroundColor: transparent ? "white" : "black",
+                    }}
                   />
                 )}
               </div>
@@ -97,7 +136,7 @@ export const SearchBar: React.FC<{
         </div>
       </div>
       <div
-        className={[shape["shadow--sm"]].join(" ")}
+        className={transparent ? [shape["shadow--sm"]].join(" ") : null}
         style={{
           border: "1px solid lightgray",
           display: "grid",

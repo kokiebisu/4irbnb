@@ -1,5 +1,3 @@
-import React from "react";
-
 /** components */
 import { Input } from "@input/input.component";
 import { Layout } from "@layout/layout.component";

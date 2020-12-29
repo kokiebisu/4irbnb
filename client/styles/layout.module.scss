@@ -233,7 +233,13 @@ $gridAmount: (1, 2, 3, 4, 5, 6, 7);
   &--spread {
     padding-left: 19px;
     padding-right: 19px;
+
     @media screen and (min-width: 728px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    @media screen and (min-width: 1128px) {
       padding-left: 70px;
       padding-right: 70px;
     }

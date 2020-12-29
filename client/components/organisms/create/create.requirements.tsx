@@ -1,5 +1,3 @@
-import React from "react";
-
 /** components */
 import { Bullet } from "@bullet/bullet.component";
 

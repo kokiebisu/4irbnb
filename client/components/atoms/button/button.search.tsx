@@ -1,5 +1,3 @@
-import React from "react";
-
 /** vectors */
 import { MagnifyGlass } from "@svg/original";
 

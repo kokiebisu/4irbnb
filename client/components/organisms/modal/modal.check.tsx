@@ -1,5 +1,3 @@
-import React from "react";
-
 /** components */
 import { Template } from "@templates/template.component";
 

@@ -1,5 +1,3 @@
-import React from "react";
-
 /** vectors */
 import { Exclamation } from "@svg/original";
 
