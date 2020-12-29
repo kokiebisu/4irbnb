@@ -21,6 +21,9 @@ jobs:
       - checkout:
           path: ~/airbnb
       - run:
+          name: show path
+          command: pwd
+      - run:
           name: building auth image
           command: docker build -t kokiebisu/nextbnb-auth ./packages/auth
       - run:
