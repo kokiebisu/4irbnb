@@ -10,7 +10,7 @@ build:
     push: false
   artifacts:
     - image: kokiebisu/nextbnb-web
-      context: packages/web
+      context: ui/web
       docker:
         dockerfile: Dockerfile
       sync:
