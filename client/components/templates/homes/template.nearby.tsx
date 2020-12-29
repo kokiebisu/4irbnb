@@ -28,7 +28,7 @@ export const NearbyTemplate: React.FC<{
   average?: number;
   filters?: any;
 }> = ({
-  city,
+  city = "location",
   filterCount = 1,
   guests = 8000,
   average = 4.9,

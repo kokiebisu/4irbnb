@@ -1,10 +1,9 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Banner, BannerProps } from "@banner/banner.component";
-import { ContextProvider } from "@context/provider";
 
 export default {
-  title: "Design System/Organisms/Banner",
+  title: "Organisms/Banner",
   component: Banner,
   argTypes: { onClick: { action: "clicked" } },
 } as Meta;
