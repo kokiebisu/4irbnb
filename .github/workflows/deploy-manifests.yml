@@ -17,4 +17,4 @@ jobs:
       - run: kubectl apply -f infrastructure/kubernetes && kubectl apply -f infrastructure/prod
       - run: kubectl rollout restart deployment stays-deploy
       - run: kubectl rollout restart deployment auth-deploy
-      - run: kubectl rollout restart deployment client-deploy
+      - run: kubectl rollout restart deployment web-deploy

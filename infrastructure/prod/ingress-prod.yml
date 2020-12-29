@@ -27,7 +27,7 @@ spec:
               servicePort: 3000
           - path: /
             backend:
-              serviceName: client-service
+              serviceName: web-service
               servicePort: 3000
 ---
 apiVersion: v1
