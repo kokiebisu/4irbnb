@@ -30,6 +30,7 @@ import { Modal } from "@organisms/modal/modal.component";
  * Renders the banner section
  */
 export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
+  const searchbarRef = useRef();
   const scrollPosition = useHandleScroll();
 
   return (
