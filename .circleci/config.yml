@@ -22,7 +22,7 @@ jobs:
           path: ~/airbnb
       - run:
           name: building auth image
-          command: docker build -t kokiebisu/nextbnb-auth ./auth
+          command: docker build -t kokiebisu/nextbnb-auth ./packages/auth
       - run:
           name: logging
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
@@ -52,7 +52,7 @@ jobs:
           path: ~/airbnb
       - run:
           name: building stays image
-          command: docker build -t kokiebisu/nextbnb-stays ./stays
+          command: docker build -t kokiebisu/nextbnb-stays ./packages/stays
       - run:
           name: logging
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
@@ -84,7 +84,7 @@ jobs:
           path: ~/airbnb
       - run:
           name: building web image
-          command: docker build -t kokiebisu/nextbnb-web ./web
+          command: docker build -t kokiebisu/nextbnb-web ./packages/web
       - run:
           name: logging into docker hub
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
