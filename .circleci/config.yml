@@ -15,7 +15,7 @@ jobs:
           command: yarn test:ci
 
   deploy-auth:
-    working_directory: ~/airbnb/services/auth
+    working_directory: ~/airbnb
     machine: true
     steps:
       - checkout:
@@ -48,7 +48,7 @@ jobs:
           command: yarn test:ci
 
   deploy-stays:
-    working_directory: ~/airbnb/services/stays
+    working_directory: ~/airbnb
     machine: true
     steps:
       - checkout:
