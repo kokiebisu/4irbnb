@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import { Bullet, BulletProps } from "@bullet/bullet.component";
 
 export default {
-  title: "Design System/Atoms/Bullet",
+  title: "Atoms/Bullet",
   component: Bullet,
   argTypes: {
     type: {
