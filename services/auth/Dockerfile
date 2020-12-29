@@ -1,8 +1,14 @@
 FROM node:alpine
 
 WORKDIR /app
-COPY package.json .
-RUN npm install
-COPY . . 
+COPY packages/middleware packages/middleware
+COPY packages/error packages/error
 
-CMD ["npm", "start"]
+COPY services/auth services/auth
+
+COPY package.json .
+COPY yarn.lock .
+
+RUN yarn --production --pure-lockfile --non-interactive
+
+CMD ["yarn", "start"]
