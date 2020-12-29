@@ -9,6 +9,10 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/preset-scss",
   ],
+  babel: async (options) => ({
+    ...options,
+    plugins: [...options.plugins, "@babel/plugin-transform-react-jsx"],
+  }),
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.(png|woff|woff2|eot|ttf|svg)$/,
