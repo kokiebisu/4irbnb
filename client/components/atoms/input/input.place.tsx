@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 /** styles **/
 import shape from "@styles/shape.module.scss";

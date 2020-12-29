@@ -1,5 +1,3 @@
-import React from "react";
-
 /**
  * Renders the Progress Bar
  * @param {number} percentage - percentage of the progress bar

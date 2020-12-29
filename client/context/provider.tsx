@@ -1,5 +1,3 @@
-import React from "react";
-
 /** Provider */
 import { AuthProvider } from "./auth";
 import { StayProvider } from "./stay";
