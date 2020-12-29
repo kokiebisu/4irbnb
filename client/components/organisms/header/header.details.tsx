@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 
 /** styles */
@@ -68,16 +67,15 @@ export const DetailsHeader: React.FC<{
             {items.map((item, index) => {
               return (
                 <div key={index} className={[space["m-r--16"]].join(" ")}>
-                  <Link href="">
-                    <a
-                      style={{ display: "block" }}
-                      className={[font["size--14"], color["c--gray__2"]].join(
-                        " "
-                      )}
-                    >
-                      {item.name}
-                    </a>
-                  </Link>
+                  <button
+                    style={{ display: "block" }}
+                    className={[font["size--14"], color["c--gray__2"]].join(
+                      " "
+                    )}
+                    onClick={() => alert("hello")}
+                  >
+                    {item.name}
+                  </button>
                 </div>
               );
             })}
