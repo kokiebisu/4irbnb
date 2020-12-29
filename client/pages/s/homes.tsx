@@ -28,7 +28,7 @@ const Homes = () => {
   const router = useRouter();
   const {
     type,
-    city,
+    city = "location",
     stayType,
     characteristics,
   }: {

@@ -1,5 +1,3 @@
-import React from "react";
-
 /** vectors */
 import { Global, Home, Lightening } from "@svg/original";
 

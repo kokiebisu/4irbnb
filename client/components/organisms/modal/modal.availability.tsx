@@ -1,5 +1,3 @@
-import React from "react";
-
 /** components */
 import { Button } from "@button/button.component";
 import layout from "@styles/layout.module.scss";

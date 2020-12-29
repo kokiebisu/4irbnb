@@ -1,5 +1,3 @@
-import React from "react";
-
 /** components */
 import { EmailInput } from "@input/input.email";
 import { PasswordInput } from "@input/input.password";
