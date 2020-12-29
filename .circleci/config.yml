@@ -15,7 +15,7 @@ jobs:
           command: yarn test:ci
 
   deploy-auth:
-    working_directory: ~/airbnb/packages
+    working_directory: ~/airbnb/services/auth
     machine: true
     steps:
       - checkout:
@@ -25,7 +25,7 @@ jobs:
           command: pwd
       - run:
           name: building auth image
-          command: docker build -t kokiebisu/nextbnb-auth ./auth
+          command: docker build -t kokiebisu/nextbnb-auth .
       - run:
           name: logging
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
@@ -48,14 +48,14 @@ jobs:
           command: yarn test:ci
 
   deploy-stays:
-    working_directory: ~/airbnb/packages
+    working_directory: ~/airbnb/services/stays
     machine: true
     steps:
       - checkout:
           path: ~/airbnb
       - run:
           name: building stays image
-          command: docker build -t kokiebisu/nextbnb-stays ./stays
+          command: docker build -t kokiebisu/nextbnb-stays .
       - run:
           name: logging
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
