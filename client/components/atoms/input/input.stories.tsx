@@ -4,7 +4,7 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import { Input, InputProps } from "@input/input.component";
 
 export default {
-  title: "Design System/Atoms/Input",
+  title: "Atoms/Input",
   component: Input,
   argTypes: {
     extendsTo: {

@@ -20,16 +20,6 @@ export const TypeStayCard: React.FC<{
   },
 }) => {
   return (
-    // <div style={{ height: "100%", minWidth: "100%", display: "flex" }}>
-    //   <div
-    //     style={{
-    //       width: "100%",
-    //       marginRight: 6,
-    //       marginTop: 4,
-    //       marginBottom: 8,
-    //     }}
-    //   >
-    //     <Link href="/">
     <div
       className={[
         layout["block"],

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Router from "next/router";
 
 /** styles */
@@ -17,7 +16,6 @@ import { Button } from "@button/button.component";
 import { useToggleDispatch, useToggleState } from "@context/toggle";
 
 /** vectors */
-import { NameLogo, NoNameLogo } from "@svg/logo";
 import { ChevronLeft } from "@svg/regular";
 
 /** stories */
@@ -59,22 +57,13 @@ export const WhiteHeader: React.FC<{
             layout["items-center"],
           ].join(" ")}
         >
-          <div>
-            <Link href="/">
-              <a style={{ display: "block" }}>
-                <div className={styles["searchbar__logo--md"]}>
-                  <NoNameLogo fill="#F5385D" width={30} height={32} />
-                </div>
-              </a>
-            </Link>
-            <Link href="/">
-              <a style={{ display: "block" }}>
-                <div className={styles["searchbar__logo--lg"]}>
-                  <NameLogo fill="#F5385D" width={102} height={32} />
-                </div>
-              </a>
-            </Link>
+          <div className={[styles["searchbar__logo--md"]].join(" ")}>
+            <Button variant="logo" />
           </div>
+          <div className={[styles["searchbar__logo--lg"]].join(" ")}>
+            <Button variant="logo" noName />
+          </div>
+
           {/* <div>
             <Button type="searchbar" mini />
           </div> */}

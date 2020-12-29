@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import { Animation, AnimationProps } from "@animation/animation.component";
 
 export default {
-  title: "Design System/Animation",
+  title: "Particles/Animation",
 } as Meta;
 
 const AnimationStory: Story<AnimationProps> = (args) => <Animation {...args} />;

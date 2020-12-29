@@ -4,7 +4,7 @@ import { Section, SectionProps } from "@section/section.component";
 import { ContextProvider } from "@context/provider";
 
 export default {
-  title: "Design System/Organisms/Section",
+  title: "Organisms/Section",
   component: Section,
   argTypes: {
     onClick: { action: "clicked" },

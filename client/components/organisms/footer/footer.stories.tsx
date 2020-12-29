@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import { Footer, FooterProps } from "@footer/footer.component";
 
 export default {
-  title: "Design System/Organisms",
+  title: "Organisms",
   component: Footer,
   argTypes: { onClick: { action: "clicked" } },
 } as Meta;
