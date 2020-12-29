@@ -1,5 +1,3 @@
-import React from "react";
-
 /** styles **/
 import card from "@card/card.module.scss";
 import space from "@styles/space.module.scss";

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 /** styles **/
 import color from "@styles/color.module.scss";

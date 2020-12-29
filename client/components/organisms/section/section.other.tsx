@@ -1,5 +1,3 @@
-import React from "react";
-
 /** styles */
 import section from "@section/section.module.scss";
 import font from "@styles/font.module.scss";
