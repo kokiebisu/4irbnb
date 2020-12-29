@@ -251,6 +251,11 @@ search.argTypes = {
   },
 };
 
+export const expand = ButtonTemplate.bind({});
+expand.args = {
+  variant: "expand",
+};
+
 export const location = ButtonTemplate.bind({});
 location.args = {
   variant: "location",

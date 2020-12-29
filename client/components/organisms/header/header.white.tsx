@@ -60,7 +60,7 @@ export const WhiteHeader: React.FC<{
           ].join(" ")}
         >
           <div>
-            <Link href="/">
+            {/* <Link href="/">
               <a style={{ display: "block" }}>
                 <div className={styles["searchbar__logo--md"]}>
                   <NoNameLogo fill="#F5385D" width={30} height={32} />
@@ -73,7 +73,7 @@ export const WhiteHeader: React.FC<{
                   <NameLogo fill="#F5385D" width={102} height={32} />
                 </div>
               </a>
-            </Link>
+            </Link> */}
           </div>
           {/* <div>
             <Button type="searchbar" mini />
