@@ -1,5 +1,3 @@
-import React from "react";
-
 /** vectors */
 import { Close } from "@svg/original";
 import { ChevronLeft } from "@svg/regular";

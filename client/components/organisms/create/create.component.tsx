@@ -1,5 +1,3 @@
-import React from "react";
-
 /** components */
 import { AdvanceCreate } from "@create/create.advance";
 import { AmenitiesCreate } from "@create/create.amenities";

@@ -1,5 +1,3 @@
-import React from "react";
-
 /** vectors */
 import { Analytics, CustomerService, Education, ToolBox } from "@svg/original";
 

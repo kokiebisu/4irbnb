@@ -1,5 +1,3 @@
-import React from "react";
-
 /** components */
 import { ExperiencesBanner } from "@banner/banner.experiences";
 import { HomesBanner } from "@banner/banner.homes";

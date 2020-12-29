@@ -1,5 +1,3 @@
-import React from "react";
-
 /** vectors */
 import { Flag } from "@svg/original";
 

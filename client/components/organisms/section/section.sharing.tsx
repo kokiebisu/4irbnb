@@ -1,5 +1,3 @@
-import React from "react";
-
 /** Layouts */
 import { Layout } from "@layout/layout.component";
 
