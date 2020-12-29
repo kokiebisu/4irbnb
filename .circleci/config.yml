@@ -25,7 +25,7 @@ jobs:
           command: pwd
       - run:
           name: building auth image
-          command: docker build -t kokiebisu/nextbnb-auth .
+          command: docker build -t kokiebisu/nextbnb-auth -f ./services/auth/Dockerfile .
       - run:
           name: logging
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
@@ -55,7 +55,7 @@ jobs:
           path: ~/airbnb
       - run:
           name: building stays image
-          command: docker build -t kokiebisu/nextbnb-stays .
+          command: docker build -t kokiebisu/nextbnb-stays -f ./services/stays/Dockerfile .
       - run:
           name: logging
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
