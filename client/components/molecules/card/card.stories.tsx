@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import { Card, CardProps } from "@card/card.component";
 
 export default {
-  title: "Design System/Molecules/Card",
+  title: "Molecules/Card",
   component: Card,
   argTypes: {
     onClick: { action: "clicked" },

@@ -21,6 +21,7 @@ import { GlobeButton } from "@button/button.globe";
 import { LinkButton } from "@button/button.link";
 import { SearchButton } from "@button/button.search";
 import { LocationButton } from "@button/button.location";
+import { LogoButton } from "@button/button.logo";
 
 /** styles **/
 import layout from "@styles/layout.module.scss";
@@ -64,7 +65,7 @@ export const Button: React.FC<ButtonProps> = ({
     primary: <PrimaryButton {...props} />,
     // searchbar: <SearchbarButton {...props} />,
     paginate: <PaginateButton {...props} />,
-    // expand: <ExpandButton {...props} />,
+    expand: <ExpandButton {...props} />,
     option: <OptionButton {...props} />,
     underline: <UnderlineButton {...props} />,
     filter: <FilterButton {...props} />,
@@ -79,6 +80,7 @@ export const Button: React.FC<ButtonProps> = ({
     nearby: <NearbyButton {...props} />,
     calendar: <CalendarButton {...props} />,
     searchbar: <SearchbarButton {...props} />,
+    logo: <LogoButton {...props} />,
   };
 
   return (
