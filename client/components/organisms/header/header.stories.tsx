@@ -1,10 +1,9 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Header, HeaderProps } from "@header/header.component";
-import { ContextProvider } from "@context/provider";
 
 export default {
-  title: "Design System/Organisms/Header",
+  title: "Organisms/Header",
   component: Header,
   argTypes: { onClick: { action: "clicked" } },
 } as Meta;

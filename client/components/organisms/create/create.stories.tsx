@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import { Create, CreateProps } from "@create/create.component";
 
 export default {
-  title: "Design System/Organisms/Create",
+  title: "Organisms/Create",
   component: Create,
   argTypes: { onClick: { action: "clicked" } },
 } as Meta;

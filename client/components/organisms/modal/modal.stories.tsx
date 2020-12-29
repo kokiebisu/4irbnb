@@ -10,7 +10,7 @@ import layout from "@styles/layout.module.scss";
 import color from "@styles/color.module.scss";
 
 export default {
-  title: "Design System/Organisms/Modal",
+  title: "Organisms/Modal",
   argTypes: { onClick: { action: "clicked" } },
 } as Meta;
 
