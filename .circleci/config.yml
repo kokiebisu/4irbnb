@@ -1,7 +1,7 @@
 version: 2
 jobs:
   test-auth:
-    working_directory: ~/airbnb/auth
+    working_directory: ~/airbnb/packages/auth
     docker:
       - image: circleci/node:10
     steps:
@@ -30,7 +30,7 @@ jobs:
           command: docker push kokiebisu/nextbnb-auth
 
   test-stays:
-    working_directory: ~/airbnb/stays
+    working_directory: ~/airbnb/packages/stays
     docker:
       - image: circleci/node:10
     steps:
@@ -58,8 +58,8 @@ jobs:
           name: pushing to docker hub
           command: docker push kokiebisu/nextbnb-stays
 
-  test-client:
-    working_directory: ~/airbnb/client
+  test-web:
+    working_directory: ~/airbnb/packages/web
     docker:
       - image: circleci/node:10
     steps:
@@ -74,20 +74,20 @@ jobs:
       - run:
           name: comparing snapshots
           command: npx chromatic --project-token=e017nqnn22h --exit-zero-on-changes
-  deploy-client:
+  deploy-web:
     working_directory: ~/app
     machine: true
     steps:
       - checkout:
       - run:
-          name: building client image
-          command: docker build -t kokiebisu/nextbnb-client ./client
+          name: building web image
+          command: docker build -t kokiebisu/nextbnb-web ./web
       - run:
           name: logging into docker hub
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run:
           name: pushing to docker hub
-          command: docker push kokiebisu/nextbnb-client
+          command: docker push kokiebisu/nextbnb-web
 
 workflows:
   version: 2
@@ -103,9 +103,9 @@ workflows:
       - deploy-stays:
           requires:
             - test-stays
-  client:
+  web:
     jobs:
-      - test-client
-      - deploy-client:
+      - test-web
+      - deploy-web:
           requires:
-            - test-client
+            - test-web
