@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 /** components */
 import { CategoryCard } from "@card/card.category";
 import { HorizontalCard } from "@card/card.horizontal";
@@ -61,15 +59,7 @@ export const Card: React.FC<CardProps> = ({
     sharing: <SharingCard {...props} />,
     how: <HowCard {...props} />,
   };
-  if (to) {
-    return (
-      <Link href={to}>
-        <a data-testid={`${variant}-card`} className={extendsTo}>
-          {variants[variant]}
-        </a>
-      </Link>
-    );
-  }
+
   return (
     <div data-testid={`${variant}-card`} className={extendsTo}>
       {variants[variant]}
