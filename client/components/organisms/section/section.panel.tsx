@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 /** styles */
 import layout from "@styles/layout.module.scss";
 import staysDetail from "@styles/staysDetail.module.scss";
@@ -201,11 +199,11 @@ export const PanelSection: React.FC<{
         ].join(" ")}
       >
         <div>
-          <Link href="/">
-            <a className={[font["size--14"], font["weight--100"]].join(" ")}>
-              <u>All online experiences</u>
-            </a>
-          </Link>
+          <div>
+            <u className={[font["size--14"], font["weight--100"]].join(" ")}>
+              All online experiences
+            </u>
+          </div>
         </div>
         <div className={[layout["flex"], section["hidden__options"]].join(" ")}>
           <div

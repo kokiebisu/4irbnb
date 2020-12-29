@@ -1,7 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Template, TemplateProps } from "@template/template.component";
-import { ContextProvider } from "@context/provider";
 
 /** styles */
 import color from "@styles/color.module.scss";
@@ -11,7 +10,7 @@ import space from "@styles/space.module.scss";
 import button from "@button/button.module.scss";
 
 export default {
-  title: "Design System/Templates/Auth",
+  title: "Templates/Auth",
   component: Template,
   argTypes: { onClick: { action: "clicked" } },
 } as Meta;

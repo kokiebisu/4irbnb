@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import { Template, TemplateProps } from "@template/template.component";
 
 export default {
-  title: "Design System/Templates/Modal",
+  title: "Templates/Modal",
   component: Template,
   argTypes: { onClick: { action: "clicked" } },
 } as Meta;

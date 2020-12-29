@@ -4,9 +4,6 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 /** components */
 import { Button, ButtonProps } from "@button/button.component";
 
-/** contexts */
-import { ContextProvider } from "../../../context/provider";
-
 /** styles */
 import button from "@button/button.module.scss";
 import font from "@styles/font.module.scss";
@@ -17,7 +14,7 @@ import space from "@styles/space.module.scss";
 import animation from "@styles/animation.module.scss";
 
 export default {
-  title: "Design System/Atoms/Button",
+  title: "Atoms/Button",
   component: Button,
   argTypes: {
     inverse: {
@@ -252,6 +249,11 @@ search.argTypes = {
   expand: {
     control: "boolean",
   },
+};
+
+export const expand = ButtonTemplate.bind({});
+expand.args = {
+  variant: "expand",
 };
 
 export const location = ButtonTemplate.bind({});
