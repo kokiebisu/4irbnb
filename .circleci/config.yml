@@ -1,7 +1,7 @@
 version: 2
 jobs:
   test-auth:
-    working_directory: ~/airbnb/packages/auth
+    working_directory: ~/airbnb/services/auth
     docker:
       - image: circleci/node:10
     steps:
@@ -34,7 +34,7 @@ jobs:
           command: docker push kokiebisu/nextbnb-auth
 
   test-stays:
-    working_directory: ~/airbnb/packages/stays
+    working_directory: ~/airbnb/services/stays
     docker:
       - image: circleci/node:10
     steps:
