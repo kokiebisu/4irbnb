@@ -3,7 +3,7 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import { Bar, BarProps } from "@bar/bar.component";
 
 export default {
-  title: "Design System/Organisms/Bar",
+  title: "Organisms/Bar",
   component: Bar,
   argTypes: { type: { control: { disable: true } } },
 } as Meta;

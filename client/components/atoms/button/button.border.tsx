@@ -1,7 +1,4 @@
-import Link from "next/link";
-
 /** styles **/
-import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";
 import shape from "@styles/shape.module.scss";
 import space from "@styles/space.module.scss";
