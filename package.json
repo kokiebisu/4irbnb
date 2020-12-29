@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/kokiebisu/airbnb#readme",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "ui/*"
   ],
   "private": true
 }
