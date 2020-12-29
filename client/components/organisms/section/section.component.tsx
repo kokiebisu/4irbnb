@@ -1,5 +1,3 @@
-import React from "react";
-
 /** components */
 import { CategorySection } from "@section/section.category";
 import { PanelSection } from "@section/section.panel";

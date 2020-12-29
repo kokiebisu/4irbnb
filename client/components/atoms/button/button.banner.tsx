@@ -1,5 +1,3 @@
-import React from "react";
-
 /** styles */
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";

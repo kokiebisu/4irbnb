@@ -1,5 +1,3 @@
-import React from "react";
-
 /** components */
 import { PaginateBar } from "@bar/bar.paginate";
 import { ProgressBar } from "@bar/bar.progress";
