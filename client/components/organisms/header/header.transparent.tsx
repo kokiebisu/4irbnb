@@ -213,12 +213,12 @@ export const TransparentHeader: React.FC<{
                       responsive["l__30_to_0--md"],
                     ].join(" ")}
                     exit={{
-                      width: 240,
+                      width: 0,
                       y: 50,
                       opacity: 0,
                     }}
                     // transition={{ type: "spring", stiffness: 30, duration: 0.03 }}
-                    initial={{ width: 500, y: 0, opacity: 0 }}
+                    initial={{ width: 0, y: 50, opacity: 0 }}
                     animate={{ width: 240, y: 0, opacity: 1 }}
                   >
                     <Button
