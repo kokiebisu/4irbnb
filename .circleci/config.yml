@@ -61,7 +61,7 @@ jobs:
           command: docker push kokiebisu/nextbnb-stays
 
   test-web:
-    working_directory: ~/airbnb/packages/web
+    working_directory: ~/airbnb/ui/web
     docker:
       - image: circleci/node:10
     steps:
@@ -77,7 +77,7 @@ jobs:
           name: Comparing snapshots
           command: npx chromatic --project-token=e017nqnn22h --exit-zero-on-changes
   deploy-web:
-    working_directory: ~/airbnb/packages
+    working_directory: ~/airbnb/ui
     machine: true
     steps:
       - checkout:
