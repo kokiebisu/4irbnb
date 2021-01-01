@@ -30,9 +30,8 @@ import { Modal } from "@organisms/modal/modal.component";
  * Renders the banner section
  */
 export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
-  const searchbarRef = useRef();
   const scrollPosition = useHandleScroll();
-
+  const [category, setCategory] = useState("stay");
   return (
     <div className={index["banner"]}>
       <div className={[layout["all-sides"]].join(" ")}>
@@ -52,6 +51,8 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
             <div>
               <Header
                 variant="transparent"
+                category={category}
+                setCategory={setCategory}
                 data={data}
                 extendsTo={`${[shape["z__80"]].join(" ")} ${
                   scrollPosition < 56

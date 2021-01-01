@@ -17,7 +17,7 @@ import responsive from "@styles/responsive.module.scss";
 import { menu as menuModal } from "@modal/modal.stories";
 import { Modal } from "@modal/modal.component";
 import { Button } from "@button/button.component";
-import { Prototype } from "@prototype/searchbar";
+import { Prototype as SearchbarPrototype } from "@prototype/searchbar";
 
 /** vectors */
 import { NameLogo, NoNameLogo } from "@svg/logo";
@@ -27,6 +27,8 @@ import { useToggleDispatch, useToggleState } from "@context/toggle";
 
 /** stories */
 import { Content } from "@button/content/content.transparent";
+
+/** hooks */
 import useOnClickOutside from "@hooks/useOnClickOutside";
 import { useHandleScroll } from "@hooks/useHandleScroll";
 
@@ -34,24 +36,35 @@ import { useHandleScroll } from "@hooks/useHandleScroll";
  * Renders the transparent header
  */
 export const TransparentHeader: React.FC<{
+  category?: string;
+  setCategory?: (param: string) => void;
   data?: any;
-}> = ({ data }) => {
-  const [selected, setSelected] = useState(null);
-  const searchbarRef = useRef();
-  const [expanded, setExpanded] = useState(false);
-  const [category, setCategory] = useState("stay");
+}> = ({ data, category, setCategory }) => {
   const toggleState = useToggleState();
+  const searchbarRef = useRef();
   const scrollPosition = useHandleScroll();
-
+  const [expanded, setExpanded] = useState(false);
   const toggleDispatch = useToggleDispatch();
+
   useOnClickOutside(searchbarRef, () => {
-    if (selected) {
-      setSelected(!selected);
-    }
-    if (expanded) {
-      setExpanded(!expanded);
-    }
+    toggleDispatch({
+      type: "toggle_reset",
+    });
+    setExpanded(!expanded);
   });
+
+  const types = {
+    stay: {
+      title: "Places to stay",
+    },
+    experiences: {
+      title: "Experiences",
+    },
+    online: {
+      title: "Online Experiences",
+    },
+  };
+
   return (
     <header
       className={`${
@@ -59,12 +72,10 @@ export const TransparentHeader: React.FC<{
           ? [space["p-t--16"], space["p-b--100"]].join(" ")
           : [space["p-v--16"]].join(" ")
       } ${[
-        [
-          animation["transition--fast"],
-          layout["relative"],
-          layout["container--spread"],
-        ].join(" "),
-      ]}`}
+        animation["transition--fast"],
+        layout["relative"],
+        layout["container--spread"],
+      ].join(" ")}`}
     >
       <div
         className={[
@@ -155,15 +166,15 @@ export const TransparentHeader: React.FC<{
           bottom: 0,
           zIndex: 50,
           transform: "translate(-50%, 0)",
+          height: "fit-content",
         }}
       >
         <AnimatePresence>
           {scrollPosition < 56 ? (
             <motion.div
-              ref={searchbarRef}
               key="transparentmodal"
               exit={{
-                y: -100,
+                y: 0,
                 scale: 0.3,
                 width: 500,
                 opacity: 0,
@@ -175,13 +186,60 @@ export const TransparentHeader: React.FC<{
                 position: "relative",
               }}
             >
-              <Prototype variant="searchbar" transparent />
+              <div className={[layout["relative"]].join(" ")}>
+                <div className={[space["m-b--16"], space["m-t--12"]].join(" ")}>
+                  <div
+                    className={[layout["flex"], layout["justify-center"]].join(
+                      " "
+                    )}
+                  >
+                    {Object.keys(types).map((type, index) => {
+                      return (
+                        <div
+                          key={index}
+                          className={[space["m-h--16"]].join(" ")}
+                        >
+                          <button onClick={() => setCategory("stay")}>
+                            <div className={[space["p-b--8"]].join(" ")}>
+                              <p
+                                className={`${[color["c--white"]].join(" ")} ${[
+                                  responsive["size__12_to_14--md"],
+                                  responsive["weight__500_to_300--md"],
+                                ].join(" ")}`}
+                              >
+                                {types[type].title}
+                              </p>
+                            </div>
+                            <div
+                              className={[
+                                layout["flex"],
+                                layout["justify-center"],
+                              ].join(" ")}
+                            >
+                              {category === type && (
+                                <motion.div
+                                  initial={{ width: 3 }}
+                                  animate={{ width: 15 }}
+                                  style={{
+                                    height: 2,
+                                    backgroundColor: "white",
+                                  }}
+                                />
+                              )}
+                            </div>
+                          </button>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+                <SearchbarPrototype variant="stay" transparent />
+              </div>
             </motion.div>
           ) : (
             <div>
               {expanded ? (
                 <motion.div
-                  ref={searchbarRef}
                   key="modal"
                   exit={{
                     opacity: 0,
@@ -191,7 +249,64 @@ export const TransparentHeader: React.FC<{
                   animate={{ opacity: 1, y: 0 }}
                   style={{ position: "relative" }}
                 >
-                  <Prototype variant="stay" />
+                  <div className={[layout["relative"]].join(" ")}>
+                    <div
+                      className={[space["m-b--16"], space["m-t--12"]].join(" ")}
+                    >
+                      <div
+                        className={[
+                          layout["flex"],
+                          layout["justify-center"],
+                        ].join(" ")}
+                      >
+                        {Object.keys(types).map((type, index) => {
+                          return (
+                            <div
+                              key={index}
+                              className={[space["m-h--16"]].join(" ")}
+                            >
+                              <button onClick={() => setCategory("stay")}>
+                                <div className={[space["p-b--8"]].join(" ")}>
+                                  <p
+                                    className={`${
+                                      expanded
+                                        ? [color["c--black"]].join(" ")
+                                        : [color["c--white"]].join(" ")
+                                    } ${[
+                                      responsive["size__12_to_14--md"],
+                                      responsive["weight__500_to_300--md"],
+                                    ].join(" ")}`}
+                                  >
+                                    {types[type].title}
+                                  </p>
+                                </div>
+                                <div
+                                  className={[
+                                    layout["flex"],
+                                    layout["justify-center"],
+                                  ].join(" ")}
+                                >
+                                  {category === type && (
+                                    <motion.div
+                                      initial={{ width: 3 }}
+                                      animate={{ width: 15 }}
+                                      style={{
+                                        height: 2,
+                                        backgroundColor: "white",
+                                      }}
+                                    />
+                                  )}
+                                </div>
+                              </button>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                    <div ref={searchbarRef}>
+                      <SearchbarPrototype variant={category} />
+                    </div>
+                  </div>
                 </motion.div>
               ) : (
                 <motion.div

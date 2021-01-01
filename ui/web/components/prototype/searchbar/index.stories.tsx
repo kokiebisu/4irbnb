@@ -12,7 +12,7 @@ const TemplateStory: Story<PrototypeProps> = (args) => <Prototype {...args} />;
 
 export const Stay = TemplateStory.bind({});
 Stay.args = {
-  variant: "searchbar",
+  variant: "stay",
 };
 Stay.decorators = [
   (Story) => (

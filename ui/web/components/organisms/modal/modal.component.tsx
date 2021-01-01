@@ -76,7 +76,8 @@ export const Modal: React.FC<ModalProps> = ({
     globe: <GlobeModal {...props} />,
     location: <LocationModal {...props} />,
     guests: <GuestsModal {...props} />,
-    check: <CheckModal {...props} />,
+    checkin: <CheckModal {...props} />,
+    checkout: <CheckModal {...props} />,
   };
 
   if (criteria !== undefined) {
