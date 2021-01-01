@@ -21,6 +21,7 @@ module.exports = {
     "@content": "<rootDir>/content",
     "@template": "<rootDir>/components/templates",
     "@template/(.*)": "<rootDir>/components/templates/$1",
+    "@prototype": "<rootDir>/components/prototype",
   },
   moduleDirectories: ["node_modules", "components"],
 };

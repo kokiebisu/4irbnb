@@ -22,7 +22,7 @@ import layout from "@styles/layout.module.scss";
 /** stories */
 import { primary, underline } from "@button/button.stories";
 
-export const ExistsTemplate: React.FC<{
+export const ExistsPrototype: React.FC<{
   data?: {
     imgUrl: string;
     firstname: string;

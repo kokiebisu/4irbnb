@@ -17,7 +17,7 @@ import responsive from "@styles/responsive.module.scss";
 import { menu as menuModal } from "@modal/modal.stories";
 import { Modal } from "@modal/modal.component";
 import { Button } from "@button/button.component";
-import { Template } from "@template";
+import { Prototype } from "@prototype";
 
 /** vectors */
 import { NameLogo, NoNameLogo } from "@svg/logo";
@@ -176,7 +176,7 @@ export const TransparentHeader: React.FC<{
                 position: "relative",
               }}
             >
-              <Template variant="searchbar" transparent />
+              <Prototype variant="searchbar" transparent />
             </motion.div>
           ) : (
             <div>
@@ -192,7 +192,7 @@ export const TransparentHeader: React.FC<{
                   animate={{ opacity: 1, y: 0 }}
                   style={{ position: "relative" }}
                 >
-                  <Template variant="searchbar" />
+                  <Prototype variant="searchbar" />
                 </motion.div>
               ) : (
                 <motion.div

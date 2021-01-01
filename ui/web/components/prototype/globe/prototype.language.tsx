@@ -47,7 +47,7 @@ const Layout: React.FC<{
   );
 };
 
-export const LanguageTemplate: React.FC<{}> = () => {
+export const LanguagePrototype: React.FC<{}> = () => {
   return (
     <div>
       {/* <div className={[space["m-b--24"]].join(" ")}>

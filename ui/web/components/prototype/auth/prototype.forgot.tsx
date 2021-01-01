@@ -22,7 +22,7 @@ import { primary } from "@button/button.stories";
 /**
  * Renders the login template component
  */
-export const ForgotPasswordTemplate: React.FC<{}> = () => {
+export const ForgotPasswordPrototype: React.FC<{}> = () => {
   const formik = useFormik({
     initialValues: {
       email: "",

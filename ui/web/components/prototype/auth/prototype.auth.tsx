@@ -25,7 +25,7 @@ import { auth, primary, underline } from "@button/button.stories";
 /**
  * Renders the auth template component
  */
-export const AuthTemplate: React.FC<{}> = () => {
+export const AuthPrototype: React.FC<{}> = () => {
   const auths = getAuthContents();
   const authState = useAuthState();
   const authDispatch = useAuthDispatch();
