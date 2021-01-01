@@ -65,6 +65,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
                         layout["r--0"],
                       ].join(" ")
                 }`}
+                criteria={scrollPosition < 56}
               />
             </div>
           </div>

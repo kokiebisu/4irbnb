@@ -39,10 +39,10 @@ export const TransparentHeader: React.FC<{
   category?: string;
   setCategory?: (param: string) => void;
   data?: any;
-}> = ({ data, category, setCategory }) => {
+  criteria?: boolean;
+}> = ({ data, category, setCategory, criteria }) => {
   const toggleState = useToggleState();
   const searchbarRef = useRef();
-  const scrollPosition = useHandleScroll();
   const [expanded, setExpanded] = useState(false);
   const toggleDispatch = useToggleDispatch();
 
@@ -68,6 +68,8 @@ export const TransparentHeader: React.FC<{
   return (
     <header
       className={`${
+        criteria ? [].join(" ") : [shape["shadow--sm"]].join(" ")
+      } ${
         expanded
           ? [space["p-t--16"], space["p-b--100"]].join(" ")
           : [space["p-v--16"]].join(" ")
@@ -89,7 +91,7 @@ export const TransparentHeader: React.FC<{
             className={[responsive["b_to_n--lg"], space["m-t--4"]].join(" ")}
           >
             <NoNameLogo
-              fill={scrollPosition < 56 ? "white" : "red"}
+              fill={criteria ? "white" : "red"}
               width={30}
               height={32}
             />
@@ -98,7 +100,7 @@ export const TransparentHeader: React.FC<{
             className={[responsive["n_to_b--lg"], space["m-t--4"]].join(" ")}
           >
             <NameLogo
-              fill={scrollPosition < 56 ? "white" : "red"}
+              fill={criteria ? "white" : "red"}
               width={102}
               height={32}
             />
@@ -110,8 +112,8 @@ export const TransparentHeader: React.FC<{
           >
             <Button
               variant="transparent"
-              content={<Content kind="host" inverse={scrollPosition < 56} />}
-              inverse={scrollPosition < 56}
+              content={<Content kind="host" inverse={criteria} />}
+              inverse={criteria}
               animate
               onClick={() => Router.push("/host/homes")}
             />
@@ -119,8 +121,8 @@ export const TransparentHeader: React.FC<{
           <div className={[space["m-h--2"]].join(" ")}>
             <Button
               variant="transparent"
-              content={<Content kind="globe" inverse={scrollPosition < 56} />}
-              inverse={scrollPosition < 56}
+              content={<Content kind="globe" inverse={criteria} />}
+              inverse={criteria}
               onClick={() => toggleDispatch({ type: "toggle_globe" })}
             />
           </div>
@@ -130,7 +132,7 @@ export const TransparentHeader: React.FC<{
               extendsTo={[animation["hover-shadow--lg"], shape["br--30"]].join(
                 " "
               )}
-              inverse={scrollPosition < 56}
+              inverse={criteria}
               authenticated={data}
               onClick={() => toggleDispatch({ type: "toggle_menu" })}
             />
@@ -170,7 +172,7 @@ export const TransparentHeader: React.FC<{
         }}
       >
         <AnimatePresence>
-          {scrollPosition < 56 ? (
+          {criteria ? (
             <motion.div
               key="transparentmodal"
               exit={{
@@ -202,7 +204,7 @@ export const TransparentHeader: React.FC<{
                           <button onClick={() => setCategory("stay")}>
                             <div className={[space["p-b--8"]].join(" ")}>
                               <p
-                                className={`${[color["c--white"]].join(" ")} ${[
+                                className={`${[color["c--black"]].join(" ")} ${[
                                   responsive["size__12_to_14--md"],
                                   responsive["weight__500_to_300--md"],
                                 ].join(" ")}`}
