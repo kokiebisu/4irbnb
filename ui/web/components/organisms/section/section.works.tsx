@@ -1,12 +1,12 @@
 /** Layouts */
-import { Layout } from "@layout/layout.component";
+import { Layout } from "@layout";
 
 /** styles **/
 import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 import { Card } from "@card/card.component";
 
 /** stories */

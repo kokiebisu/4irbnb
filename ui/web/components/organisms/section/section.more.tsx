@@ -10,7 +10,7 @@ import section from "@section/section.module.scss";
 import { border } from "@button/button.stories";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 export const MoreSection: React.FC<{}> = () => {
   return (

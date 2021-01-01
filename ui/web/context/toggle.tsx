@@ -10,7 +10,8 @@ type State = {
   globe: boolean;
   location: boolean;
   guests: boolean;
-  check: boolean;
+  checkin: boolean;
+  checkout: boolean;
 };
 
 type ToggleProviderProps = { children: React.ReactNode };
@@ -21,8 +22,10 @@ const ToggleDispatchContext = createContext<Dispatch | undefined>(undefined);
 const toggleReducer = (state: State, action: Action) => {
   switch (action.type) {
     case "toggle_privacy":
-      console.log("entered privacy");
-      return { ...state, privacy: !state.privacy };
+      return {
+        ...state,
+        privacy: !state.privacy,
+      };
     case "toggle_menu":
       return { ...state, menu: !state.menu };
     case "toggle_auth":
@@ -30,11 +33,30 @@ const toggleReducer = (state: State, action: Action) => {
     case "toggle_globe":
       return { ...state, globe: !state.globe };
     case "toggle_location":
-      return { ...state, location: !state.location };
+      return {
+        ...state,
+        location: !state.location,
+        guests: false,
+        check: false,
+      };
     case "toggle_guests":
-      return { ...state, guests: !state.guests };
-    case "toggle_check":
-      return { ...state, check: !state.check };
+      return { ...state, guests: !state.guests, location: false, check: false };
+    case "toggle_checkin":
+      return {
+        ...state,
+        checkin: !state.checkin,
+        checkout: false,
+        location: false,
+        guests: false,
+      };
+    case "toggle_checkout":
+      return {
+        ...state,
+        checkout: !state.checkout,
+        checkin: false,
+        location: false,
+        guests: false,
+      };
     case "close_register":
       return { ...state, auth: !state.auth };
     default:
@@ -50,10 +72,9 @@ const ToggleProvider = ({ children }: ToggleProviderProps) => {
     globe: false,
     location: false,
     guests: false,
-    check: false,
+    checkin: false,
+    checkout: false,
   });
-
-  console.log("state", state);
 
   return (
     <ToggleStateContext.Provider value={state}>

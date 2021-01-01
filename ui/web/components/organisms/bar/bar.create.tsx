@@ -5,7 +5,7 @@ import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 import { primary } from "@button/button.stories";
 
 export const CreateBar: React.FC<{
@@ -35,7 +35,7 @@ export const CreateBar: React.FC<{
         </div>
         <div>
           <Button
-            {...primary.args}
+            variant="primary"
             title="Next"
             size="md"
             fill="#018489"

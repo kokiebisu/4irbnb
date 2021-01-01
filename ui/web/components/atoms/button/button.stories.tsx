@@ -2,7 +2,7 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
 /** components */
-import { Button, ButtonProps } from "@button/button.component";
+import { Button, ButtonProps } from "@button";
 
 /** styles */
 import button from "@button/button.module.scss";
@@ -51,43 +51,43 @@ const disableTitle = {
   },
 };
 
-const ButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
+const TemplateStory: Story<ButtonProps> = (args) => <Button {...args} />;
 
-export const transparent = ButtonTemplate.bind({});
-transparent.args = {
+export const Transparent = TemplateStory.bind({});
+Transparent.args = {
   variant: "transparent",
   content: <h3 className={[font["size--15"]].join(" ")}>Button</h3>,
 };
 
-export const globe = ButtonTemplate.bind({});
-globe.args = {
+export const Globe = TemplateStory.bind({});
+Globe.args = {
   variant: "globe",
   extendsTo: [font["text--left"]].join(" "),
 };
-globe.argTypes = {
+Globe.argTypes = {
   selected: {
     control: "boolean",
   },
 };
 
-export const menu = ButtonTemplate.bind({});
-menu.args = {
+export const Menu = TemplateStory.bind({});
+Menu.args = {
   variant: "menu",
   extendsTo: [animation["hover-shadow--lg"], shape["br--30"]].join(" "),
 };
-menu.argTypes = {
+Menu.argTypes = {
   ...disableTitle,
   user: {
     control: "boolean",
   },
 };
 
-export const privacy = ButtonTemplate.bind({});
-privacy.args = {
+export const Privacy = TemplateStory.bind({});
+Privacy.args = {
   variant: "privacy",
 };
 
-privacy.decorators = [
+Privacy.decorators = [
   (Story) => (
     <div style={{ width: 300 }}>
       <Story />
@@ -95,12 +95,12 @@ privacy.decorators = [
   ),
 ];
 
-export const border = ButtonTemplate.bind({});
-border.args = {
+export const Border = TemplateStory.bind({});
+Border.args = {
   variant: "border",
   extendsTo: [color["bg--transparent"]].join(" "),
 };
-border.argTypes = {
+Border.argTypes = {
   size: {
     control: {
       type: "select",
@@ -112,16 +112,16 @@ border.argTypes = {
   },
 };
 
-export const banner = ButtonTemplate.bind({});
-banner.args = {
+export const Banner = TemplateStory.bind({});
+Banner.args = {
   variant: "banner",
   extendsTo: [color["bg--white"], shape["br--6"]].join(" "),
 };
-banner.argTypes = {
+Banner.argTypes = {
   ...disableInverse,
 };
 
-banner.decorators = [
+Banner.decorators = [
   (Story) => (
     <div style={{ width: 200 }}>
       <Story />
@@ -129,37 +129,37 @@ banner.decorators = [
   ),
 ];
 
-export const primary = ButtonTemplate.bind({});
-primary.args = {
+export const Primary = TemplateStory.bind({});
+Primary.args = {
   variant: "primary",
 };
-primary.decorators = [
+Primary.decorators = [
   (Story) => (
     <div style={{ width: 300 }}>
       <Story />
     </div>
   ),
 ];
-primary.argTypes = {
+Primary.argTypes = {
   ...disableInverse,
   loading: {
     control: "boolean",
   },
 };
 
-export const searchbar = ButtonTemplate.bind({});
-searchbar.args = {
+export const Searchbar = TemplateStory.bind({});
+Searchbar.args = {
   variant: "searchbar",
 };
-searchbar.argTypes = {
+Searchbar.argTypes = {
   ...disableInverse,
   mini: {
     control: "boolean",
   },
 };
 
-export const auth = ButtonTemplate.bind({});
-auth.args = {
+export const Auth = TemplateStory.bind({});
+Auth.args = {
   variant: "auth",
   extendsTo: [
     button["hover__auth"],
@@ -172,7 +172,7 @@ auth.args = {
   ].join(" "),
 };
 
-auth.decorators = [
+Auth.decorators = [
   (Story) => (
     <div style={{ width: 300 }}>
       <Story />
@@ -180,7 +180,7 @@ auth.decorators = [
   ),
 ];
 
-auth.argTypes = {
+Auth.argTypes = {
   auth: {
     control: {
       type: "select",
@@ -189,11 +189,11 @@ auth.argTypes = {
   },
 };
 
-export const paginate = ButtonTemplate.bind({});
-paginate.args = {
+export const Paginate = TemplateStory.bind({});
+Paginate.args = {
   variant: "paginate",
 };
-paginate.argTypes = {
+Paginate.argTypes = {
   direction: {
     control: {
       type: "select",
@@ -202,27 +202,27 @@ paginate.argTypes = {
   },
 };
 
-export const option = ButtonTemplate.bind({});
-option.args = {
+export const Option = TemplateStory.bind({});
+Option.args = {
   variant: "option",
   extendsTo: [shape["w--full"]].join(" "),
 };
 
-export const underline = ButtonTemplate.bind({});
-underline.args = {
+export const Underline = TemplateStory.bind({});
+Underline.args = {
   variant: "underline",
 };
 
-export const filter = ButtonTemplate.bind({});
-filter.args = {
+export const Filter = TemplateStory.bind({});
+Filter.args = {
   variant: "filter",
 };
 
-export const modal = ButtonTemplate.bind({});
-modal.args = {
+export const Modal = TemplateStory.bind({});
+Modal.args = {
   variant: "modal",
 };
-modal.argTypes = {
+Modal.argTypes = {
   modalType: {
     control: {
       type: "select",
@@ -231,36 +231,36 @@ modal.argTypes = {
   },
 };
 
-export const back = ButtonTemplate.bind({});
-back.args = {
+export const Back = TemplateStory.bind({});
+Back.args = {
   variant: "back",
 };
 
-export const link = ButtonTemplate.bind({});
-link.args = {
+export const Link = TemplateStory.bind({});
+Link.args = {
   variant: "link",
 };
 
-export const search = ButtonTemplate.bind({});
-search.args = {
+export const Search = TemplateStory.bind({});
+Search.args = {
   variant: "search",
 };
-search.argTypes = {
+Search.argTypes = {
   expand: {
     control: "boolean",
   },
 };
 
-export const expand = ButtonTemplate.bind({});
-expand.args = {
+export const Expand = TemplateStory.bind({});
+Expand.args = {
   variant: "expand",
 };
 
-export const location = ButtonTemplate.bind({});
-location.args = {
+export const Location = TemplateStory.bind({});
+Location.args = {
   variant: "location",
 };
-location.argTypes = {
+Location.argTypes = {
   type: {
     control: {
       type: "select",
@@ -269,7 +269,7 @@ location.argTypes = {
   },
 };
 
-export const nearby = ButtonTemplate.bind({});
-nearby.args = {
+export const Nearby = TemplateStory.bind({});
+Nearby.args = {
   variant: "nearby",
 };

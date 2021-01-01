@@ -85,11 +85,23 @@ guests.decorators = [
   ),
 ];
 
-export const check = TemplateStory.bind({});
-check.args = {
-  variant: "check",
+export const checkin = TemplateStory.bind({});
+checkin.args = {
+  variant: "checkin",
 };
-check.decorators = [
+checkin.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 720 }}>
+      <Story />
+    </div>
+  ),
+];
+
+export const checkout = TemplateStory.bind({});
+checkout.args = {
+  variant: "checkout",
+};
+checkout.decorators = [
   (Story) => (
     <div style={{ maxWidth: 720 }}>
       <Story />

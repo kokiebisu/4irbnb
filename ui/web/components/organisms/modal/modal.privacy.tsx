@@ -8,7 +8,7 @@ import responsive from "@styles/responsive.module.scss";
 import modal from "@modal/modal.module.scss";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** vectors */
 import { Lock } from "@svg/original";

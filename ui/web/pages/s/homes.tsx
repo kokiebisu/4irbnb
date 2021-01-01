@@ -8,17 +8,19 @@ import { useToggleState } from "../../context/toggle";
 import layout from "../../styles/layout.module.scss";
 
 /** components */
-import { Template } from "../../components/templates/template.component";
+import { Prototype as HomesPrototype } from "@prototype/homes";
 import { Modal } from "../../components/organisms/modal/modal.component";
 
 /** styles */
-import shape from "../../styles/shape.module.scss";
+import shape from "@styles/shape.module.scss";
+import responsive from "@styles/responsive.module.scss";
+import homes from "@styles/homes.module.scss";
 
 /** hooks */
 import { useTabTitle } from "../../hooks/useTabTitle";
 
 /** prototypes */
-import "../../prototype/string";
+import "../../global/string";
 import { menu } from "components/organisms/modal/modal.stories";
 
 /**
@@ -40,38 +42,56 @@ const Homes = () => {
   const toggleState = useToggleState();
   useTabTitle(`${city.capitalize()} · Stays · Airbnb`);
   return (
-    <>
-      <Template
-        variant={type}
-        city={city}
-        stayType={stayType}
-        characteristics={characteristics}
-      />
-      {toggleState.auth && (
+    <div className={[homes["display__content"]].join(" ")}>
+      <div className={[homes["w__section"]].join(" ")}>
+        <HomesPrototype
+          variant={type}
+          city={city}
+          stayType={stayType}
+          characteristics={characteristics}
+        />
         <div
+          className={[responsive["n_to_b--md"]].join(" ")}
           style={{
-            position: "fixed",
+            position: "absolute",
+            backgroundColor: "gray",
+            overflow: "hidden",
+            width: "calc(100% - 840px)",
+            height: "100%",
             top: 0,
-            zIndex: 60,
             bottom: 0,
-            left: 0,
             right: 0,
-            backgroundColor: "rgba(0, 0, 0, 0.6)",
+            left: "auto",
           }}
         >
-          <div
-            className={[
-              layout["flex"],
-              layout["justify-center"],
-              layout["items-center"],
-              shape["h--100v"],
-            ].join(" ")}
-          >
-            <Modal {...menu.args} animate="slideup" />
-          </div>
+          map
         </div>
-      )}
-    </>
+        {toggleState.auth && (
+          <div
+            style={{
+              position: "fixed",
+              top: 0,
+              zIndex: 60,
+              bottom: 0,
+              left: 0,
+              right: 0,
+              backgroundColor: "rgba(0, 0, 0, 0.6)",
+            }}
+          >
+            <div
+              className={[
+                layout["flex"],
+                layout["justify-center"],
+                layout["items-center"],
+                shape["h--100v"],
+              ].join(" ")}
+            >
+              <Modal {...menu.args} animate="slideup" />
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
   );
 };
 

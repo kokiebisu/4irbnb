@@ -12,7 +12,7 @@ import input from "@input/input.module.scss";
 import { styleInput, styleLabel, styleContainer } from "./styling.text";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** Helper */
 import { checkPassword } from "@helper/auth";

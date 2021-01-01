@@ -14,7 +14,7 @@ import { sections } from "@content";
 import { Globe } from "@svg/original";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 export interface FooterProps {
   spread?: boolean;

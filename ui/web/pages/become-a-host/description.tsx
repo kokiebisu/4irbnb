@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import { Layout } from "layout/layout.component";
-import { useStayDispatch, useStayState } from "context/stay";
 import Router from "next/router";
-import { Create } from "../../components/organisms/create/create.component";
+
+/** components */
+import { Layout } from "@layout";
+import { Prototype as CreatePrototype } from "@prototype/create";
+
+/** contexts */
+import { useStayDispatch, useStayState } from "@context/stay";
 
 const DescriptionPage = () => {
   const stayDispatch = useStayDispatch();
@@ -31,7 +35,7 @@ const DescriptionPage = () => {
     <Layout
       variant="create"
       left={
-        <Create
+        <CreatePrototype
           title="Description and title"
           variant="description"
           data={data}

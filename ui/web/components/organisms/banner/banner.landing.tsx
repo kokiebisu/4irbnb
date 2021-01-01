@@ -12,7 +12,7 @@ import responsive from "@styles/responsive.module.scss";
 
 /** components */
 import { Header } from "@header/header.component";
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** hooks */
 import { useHandleScroll } from "@hooks/useHandleScroll";
@@ -30,9 +30,8 @@ import { Modal } from "@organisms/modal/modal.component";
  * Renders the banner section
  */
 export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
-  const searchbarRef = useRef();
   const scrollPosition = useHandleScroll();
-
+  const [category, setCategory] = useState("stay");
   return (
     <div className={index["banner"]}>
       <div className={[layout["all-sides"]].join(" ")}>
@@ -51,7 +50,9 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
           <div>
             <div>
               <Header
-                variant="transparent"
+                variant="landing"
+                category={category}
+                setCategory={setCategory}
                 data={data}
                 extendsTo={`${[shape["z__80"]].join(" ")} ${
                   scrollPosition < 56
@@ -64,6 +65,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
                         layout["r--0"],
                       ].join(" ")
                 }`}
+                criteria={scrollPosition < 56}
               />
             </div>
           </div>

@@ -1,7 +1,7 @@
 import Router from "next/router";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** styles **/
 import space from "@styles/space.module.scss";
@@ -29,7 +29,7 @@ export const ReadySection: React.FC<{}> = () => {
         </div>
         <div style={{ display: "inline-block" }}>
           <Button
-            {...primary.args}
+            variant="primary"
             size="md"
             title="Get started"
             onClick={() => Router.push("/become-a-host")}
