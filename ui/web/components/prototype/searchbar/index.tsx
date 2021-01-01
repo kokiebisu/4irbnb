@@ -2,17 +2,11 @@ import { StayPrototype } from "@prototype/searchbar/searchbar.stay";
 
 export interface PrototypeProps {
   variant?: string;
-  place?: string;
-  stayType?: string | string[];
-  characteristics?: string;
   [property: string]: any;
 }
 
 export const Prototype: React.FC<PrototypeProps> = ({
-  variant = "nearby",
-  city = "Paris",
-  stayType = "house",
-  characteristics,
+  variant = "stay",
   ...props
 }) => {
   const variants: { [variant: string]: JSX.Element } = {
