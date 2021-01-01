@@ -5,7 +5,7 @@ import Router from "next/router";
 import { useStayDispatch, useStayState } from "../../context/stay";
 
 /** components */
-import { Create } from "../../components/organisms/create/create.component";
+import { Create } from "../../components/prototype/create/create.component";
 import {
   inputTypes,
   properties,

@@ -2,7 +2,7 @@ import React from "react";
 
 /** components */
 import { Header } from "../../components/organisms/header/header.component";
-import { Create } from "../../components/organisms/create/create.component";
+import { Create } from "../../components/prototype/create/create.component";
 
 /** styles **/
 import responsive from "../../styles/responsive.module.scss";

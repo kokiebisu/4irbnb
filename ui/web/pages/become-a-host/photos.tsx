@@ -3,7 +3,7 @@ import Router from "next/router";
 
 import { useStayDispatch, useStayState } from "@context/stay";
 import { Layout } from "@layout/layout.component";
-import { Create } from "@organisms/create/create.component";
+import { Create } from "@prototype/create/create.component";
 
 const PhotosPage = () => {
   const stayDispatch = useStayDispatch();

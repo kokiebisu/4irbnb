@@ -26,7 +26,7 @@
       "@animation/*": ["components/animation/*"],
       "@banner/*": ["components/organisms/banner/*"],
       "@header/*": ["components/organisms/header/*"],
-      "@create/*": ["components/organisms/create/*"],
+      "@create/*": ["components/prototype/create/*"],
       "@bar/*": ["components/organisms/bar/*"],
       "@footer/*": ["components/organisms/footer/*"],
       "@modal/*": ["components/organisms/modal/*"],

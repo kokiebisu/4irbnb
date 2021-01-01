@@ -1,9 +1,9 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Create, CreateProps } from "@create/create.component";
+import { Create, CreateProps } from "@prototype/create/create.component";
 
 export default {
-  title: "Organisms/Create",
+  title: "Prototypes/Create",
   component: Create,
   argTypes: { onClick: { action: "clicked" } },
 } as Meta;

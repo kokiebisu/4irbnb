@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout } from "layout/layout.component";
 import Router from "next/router";
-import { Create } from "../../components/organisms/create/create.component";
+import { Create } from "../../components/prototype/create/create.component";
 
 const BookingScenariosPage = () => {
   const proceed = () => {
