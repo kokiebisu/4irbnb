@@ -1,20 +1,20 @@
 import React from "react";
 import { useAuthState } from "@context/auth";
-import { Template } from "@template";
+import { Prototype } from "@prototype";
 
 export const AuthContent = () => {
   const authState = useAuthState();
   switch (authState.display) {
     case "login":
-      return <Template variant="login" />;
+      return <Prototype variant="login" />;
     case "signup":
-      return <Template variant="signup" />;
+      return <Prototype variant="signup" />;
     case "auth":
-      return <Template variant="auth" />;
+      return <Prototype variant="auth" />;
     case "forgot_password":
-      return <Template variant="forgotpassword" />;
+      return <Prototype variant="forgotpassword" />;
     case "exists":
-      return <Template variant="exists" />;
+      return <Prototype variant="exists" />;
     default:
       return;
   }

@@ -4,7 +4,7 @@ import { Layout } from "@layout/layout.component";
 /** styles */
 import space from "@styles/space.module.scss";
 
-export const CurrencyTemplate: React.FC<{}> = () => {
+export const CurrencyPrototype: React.FC<{}> = () => {
   return (
     <div>
       <div className={[space["m-b--24"]].join(" ")}>

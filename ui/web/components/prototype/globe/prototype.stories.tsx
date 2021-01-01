@@ -1,16 +1,16 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
-/** templates */
-import { Template, TemplateProps } from "@template";
+/** Prototypes */
+import { Prototype, PrototypeProps } from "@prototype";
 
 export default {
-  title: "Templates/Globe",
-  component: Template,
+  title: "Prototypes/Globe",
+  component: Prototype,
   argTypes: { onClick: { action: "clicked" } },
 } as Meta;
 
-const TemplateStory: Story<TemplateProps> = (args) => <Template {...args} />;
+const TemplateStory: Story<PrototypeProps> = (args) => <Prototype {...args} />;
 
 export const language = TemplateStory.bind({});
 language.args = {

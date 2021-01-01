@@ -9,15 +9,15 @@ import space from "@styles/space.module.scss";
 import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 
-/** templates */
-import { Template } from "@template";
+/** Prototypes */
+import { Prototype } from "@prototype";
 
 /** contexts */
 import { useToggleDispatch } from "@context/toggle";
 
 export const GlobeModal: React.FC<{}> = () => {
   const toggleDispatch = useToggleDispatch();
-  const [template, setTemplate] = useState("language");
+  const [Prototype, setPrototype] = useState("language");
   return (
     <div
       className={[
@@ -51,8 +51,8 @@ export const GlobeModal: React.FC<{}> = () => {
               title="Language and region"
               font={16}
               bold
-              unselected={template !== "language"}
-              onClick={() => setTemplate("language")}
+              unselected={Prototype !== "language"}
+              onClick={() => setPrototype("language")}
             />
           </div>
           <div>
@@ -61,12 +61,12 @@ export const GlobeModal: React.FC<{}> = () => {
               title="Currency"
               font={16}
               bold
-              unselected={template !== "currency"}
-              onClick={() => setTemplate("currency")}
+              unselected={Prototype !== "currency"}
+              onClick={() => setPrototype("currency")}
             />
           </div>
         </div>
-        <Template variant={template} />
+        <Prototype variant={Prototype} />
       </div>
     </div>
   );

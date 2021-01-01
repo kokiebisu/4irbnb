@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Template, TemplateProps } from "@template";
+import { Prototype, PrototypeProps } from "@prototype";
 
 /** styles */
 import color from "@styles/color.module.scss";
@@ -10,12 +10,12 @@ import space from "@styles/space.module.scss";
 import button from "@button/button.module.scss";
 
 export default {
-  title: "Templates/Auth",
-  component: Template,
+  title: "Prototypes/Auth",
+  component: Prototype,
   argTypes: { onClick: { action: "clicked" } },
 } as Meta;
 
-const TemplateStory: Story<TemplateProps> = (args) => <Template {...args} />;
+const TemplateStory: Story<PrototypeProps> = (args) => <Prototype {...args} />;
 
 export const auth = TemplateStory.bind({});
 auth.args = {

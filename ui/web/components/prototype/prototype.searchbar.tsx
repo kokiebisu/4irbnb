@@ -1,12 +1,15 @@
 import space from "@styles/space.module.scss";
 import shape from "@styles/shape.module.scss";
+import layout from "@styles/layout.module.scss";
+
+/** context */
 import { useToggleState } from "@context/toggle";
 
 /** components */
 import { Bar } from "@organisms/bar/bar.component";
 import { Modal } from "@organisms/modal/modal.component";
 
-export const SearchbarTemplate: React.FC<{
+export const SearchbarPrototype: React.FC<{
   selected?: any;
   setSelected?: any;
   category?: any;
@@ -16,7 +19,7 @@ export const SearchbarTemplate: React.FC<{
   const toggleState = useToggleState();
 
   return (
-    <div>
+    <div className={[layout["relative"]].join(" ")}>
       <Bar
         variant="search"
         selected={selected}
