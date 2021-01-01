@@ -8,10 +8,10 @@ jobs:
       - checkout:
           path: ~/airbnb
       - run:
-          name: install dependencies
+          name: Install dependencies
           command: yarn install
       - run:
-          name: testing
+          name: Testing
           command: yarn test:ci
 
   deploy-auth:
@@ -21,16 +21,13 @@ jobs:
       - checkout:
           path: ~/airbnb
       - run:
-          name: show path
-          command: pwd
-      - run:
           name: building auth image
           command: docker build -t kokiebisu/nextbnb-auth -f ./services/auth/Dockerfile .
       - run:
-          name: logging
+          name: Log in
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run:
-          name: pushing to docker hub
+          name: Pushing to docker hub
           command: docker push kokiebisu/nextbnb-auth
 
   test-stays:
@@ -41,10 +38,10 @@ jobs:
       - checkout:
           path: ~/airbnb
       - run:
-          name: install dependencies
+          name: Install dependencies
           command: yarn install
       - run:
-          name: testing
+          name: Testing
           command: yarn test:ci
 
   deploy-stays:
@@ -57,42 +54,42 @@ jobs:
           name: building stays image
           command: docker build -t kokiebisu/nextbnb-stays -f ./services/stays/Dockerfile .
       - run:
-          name: logging
+          name: Log in
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run:
-          name: pushing to docker hub
+          name: Pushing to docker hub
           command: docker push kokiebisu/nextbnb-stays
 
   test-web:
-    working_directory: ~/airbnb/packages/web
+    working_directory: ~/airbnb/ui/web
     docker:
       - image: circleci/node:10
     steps:
       - checkout:
           path: ~/airbnb
       - run:
-          name: installing dependencies
+          name: Installing dependencies
           command: yarn install
       - run:
-          name: testing snapshot
+          name: Testing snapshot
           command: yarn snapshot
       - run:
-          name: comparing snapshots
+          name: Comparing snapshots
           command: npx chromatic --project-token=e017nqnn22h --exit-zero-on-changes
   deploy-web:
-    working_directory: ~/airbnb/packages
+    working_directory: ~/airbnb/ui
     machine: true
     steps:
       - checkout:
           path: ~/airbnb
       - run:
-          name: building web image
+          name: Building web image
           command: docker build -t kokiebisu/nextbnb-web ./web
       - run:
-          name: logging into docker hub
+          name: Log in
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
       - run:
-          name: pushing to docker hub
+          name: Pushing to docker hub
           command: docker push kokiebisu/nextbnb-web
 
 workflows:
