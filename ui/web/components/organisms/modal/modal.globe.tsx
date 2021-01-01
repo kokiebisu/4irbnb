@@ -10,7 +10,7 @@ import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 
 /** Prototypes */
-import { Prototype } from "@prototype";
+import { Prototype as GlobePrototype } from "@prototype/globe";
 
 /** contexts */
 import { useToggleDispatch } from "@context/toggle";
@@ -66,7 +66,7 @@ export const GlobeModal: React.FC<{}> = () => {
             />
           </div>
         </div>
-        <Prototype variant={Prototype} />
+        <GlobePrototype variant={Prototype} />
       </div>
     </div>
   );

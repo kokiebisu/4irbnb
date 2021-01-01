@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import Router from "next/router";
 
 /** components */
-import { Create } from "@prototype/create/create.component";
-import { Layout } from "layout/layout.component";
-import { useStayDispatch, useStayState } from "context/stay";
+import { Prototype as CreatePrototype } from "@prototype/create";
+import { Layout } from "@layout/layout.component";
+
+/** contexts */
+import { useStayDispatch, useStayState } from "@context/stay";
 
 const CheckInPage = () => {
   const stayDispatch = useStayDispatch();
@@ -34,7 +36,7 @@ const CheckInPage = () => {
     <Layout
       variant="create"
       title="Calendar and availability"
-      left={<Create variant="checkin" data={data} setData={setData} />}
+      left={<CreatePrototype variant="checkin" data={data} setData={setData} />}
       percentage={80}
       next={proceed}
       back={revert}

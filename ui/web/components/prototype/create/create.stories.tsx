@@ -1,81 +1,81 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Create, CreateProps } from "@prototype/create/create.component";
+import { Prototype, CreateProps } from "@prototype/create";
 
 export default {
   title: "Prototypes/Create",
-  component: Create,
+  component: Prototype,
   argTypes: { onClick: { action: "clicked" } },
 } as Meta;
 
-const TemplateStory: Story<CreateProps> = (args) => <Create {...args} />;
+const TemplateStory: Story<CreateProps> = (args) => <Prototype {...args} />;
 
-export const getStarted = TemplateStory.bind({});
-getStarted.args = {
+export const GetStarted = TemplateStory.bind({});
+GetStarted.args = {
   variant: "getstarted",
 };
 
-export const room = TemplateStory.bind({});
-room.args = {
+export const Room = TemplateStory.bind({});
+Room.args = {
   variant: "room",
 };
 
-export const bedrooms = TemplateStory.bind({});
-bedrooms.args = {
+export const Bedrooms = TemplateStory.bind({});
+Bedrooms.args = {
   variant: "bedrooms",
 };
 
-export const bathrooms = TemplateStory.bind({});
-bathrooms.args = {
+export const Bathrooms = TemplateStory.bind({});
+Bathrooms.args = {
   variant: "bathrooms",
 };
 
-export const location = TemplateStory.bind({});
-location.args = {
+export const Location = TemplateStory.bind({});
+Location.args = {
   variant: "location",
 };
 
-export const amenities = TemplateStory.bind({});
-amenities.args = {
+export const Amenities = TemplateStory.bind({});
+Amenities.args = {
   variant: "amenities",
 };
 
-export const spaces = TemplateStory.bind({});
-spaces.args = {
+export const Spaces = TemplateStory.bind({});
+Spaces.args = {
   variant: "spaces",
 };
 
-export const description = TemplateStory.bind({});
-description.args = {
+export const Description = TemplateStory.bind({});
+Description.args = {
   variant: "description",
 };
 
-export const title = TemplateStory.bind({});
-title.args = {
+export const Title = TemplateStory.bind({});
+Title.args = {
   variant: "title",
 };
 
-export const phone = TemplateStory.bind({});
-phone.args = {
+export const Phone = TemplateStory.bind({});
+Phone.args = {
   variant: "phone",
 };
 
-export const requirements = TemplateStory.bind({});
-requirements.args = {
+export const Requirements = TemplateStory.bind({});
+Requirements.args = {
   variant: "requirements",
 };
 
-export const rules = TemplateStory.bind({});
-rules.args = {
+export const Rules = TemplateStory.bind({});
+Rules.args = {
   variant: "rules",
 };
 
-export const checkin = TemplateStory.bind({});
-checkin.args = {
+export const Checkin = TemplateStory.bind({});
+Checkin.args = {
   variant: "checkin",
 };
 
-export const advance = TemplateStory.bind({});
-advance.args = {
+export const Advance = TemplateStory.bind({});
+Advance.args = {
   variant: "advance",
 };

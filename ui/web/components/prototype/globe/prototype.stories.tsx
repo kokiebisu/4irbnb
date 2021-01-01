@@ -1,8 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-
-/** Prototypes */
-import { Prototype, PrototypeProps } from "@prototype";
+import { Prototype, PrototypeProps } from "@prototype/globe";
 
 export default {
   title: "Prototypes/Globe",
@@ -12,12 +10,12 @@ export default {
 
 const TemplateStory: Story<PrototypeProps> = (args) => <Prototype {...args} />;
 
-export const language = TemplateStory.bind({});
-language.args = {
+export const Language = TemplateStory.bind({});
+Language.args = {
   variant: "language",
 };
 
-export const currency = TemplateStory.bind({});
-currency.args = {
+export const Currency = TemplateStory.bind({});
+Currency.args = {
   variant: "currency",
 };

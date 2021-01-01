@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Prototype, PrototypeProps } from "@prototype";
+import { Prototype, PrototypeProps } from "@prototype/auth";
 
 /** styles */
 import color from "@styles/color.module.scss";
@@ -31,22 +31,22 @@ auth.args = {
   ].join(" "),
 };
 
-export const login = TemplateStory.bind({});
-login.args = {
+export const Login = TemplateStory.bind({});
+Login.args = {
   variant: "login",
 };
 
-export const signup = TemplateStory.bind({});
-signup.args = {
+export const Signup = TemplateStory.bind({});
+Signup.args = {
   variant: "signup",
 };
 
-export const forgotpassword = TemplateStory.bind({});
-forgotpassword.args = {
+export const ForgotPassword = TemplateStory.bind({});
+ForgotPassword.args = {
   variant: "forgotpassword",
 };
 
-export const exists = TemplateStory.bind({});
-exists.args = {
+export const Exists = TemplateStory.bind({});
+Exists.args = {
   variant: "exists",
 };

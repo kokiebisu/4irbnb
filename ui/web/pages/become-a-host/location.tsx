@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import { Layout } from "layout/layout.component";
-import { useStayDispatch, useStayState } from "../../context/stay";
 import Router from "next/router";
-import { Create } from "../../components/prototype/create/create.component";
+
+/** components */
+import { Layout } from "@layout/layout.component";
+import { Prototype as CreatePrototype } from "@prototype/create";
+
+/** context */
+import { useStayDispatch, useStayState } from "@context/stay";
 
 const BedRoomsPage = () => {
   const stayDispatch = useStayDispatch();
@@ -36,7 +40,7 @@ const BedRoomsPage = () => {
     <Layout
       variant="create"
       left={
-        <Create
+        <CreatePrototype
           title="Location"
           variant="location"
           data={data}
