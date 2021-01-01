@@ -50,7 +50,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
           <div>
             <div>
               <Header
-                variant="transparent"
+                variant="landing"
                 category={category}
                 setCategory={setCategory}
                 data={data}
