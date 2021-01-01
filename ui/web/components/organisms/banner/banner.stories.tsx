@@ -15,11 +15,6 @@ homes.args = {
   variant: "homes",
 };
 
-export const experiences = TemplateStory.bind({});
-experiences.args = {
-  variant: "experiences",
-};
-
 export const landing = TemplateStory.bind({});
 landing.args = {
   variant: "landing",
