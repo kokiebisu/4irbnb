@@ -15,6 +15,7 @@
     "jsx": "preserve",
     "baseUrl": "./",
     "paths": {
+      "@bullet": ["components/atoms/bullet"],
       "@bullet/*": ["components/atoms/bullet/*"],
       "@button/*": ["components/atoms/button/*"],
       "@input/*": ["components/atoms/input/*"],

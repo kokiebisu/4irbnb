@@ -13,12 +13,12 @@ import { QuestionBullet } from "@bullet/bullet.question";
 import { RatingBullet } from "@bullet/bullet.rating";
 import { RequiredBullet } from "@bullet/bullet.required";
 import { ScoreBullet } from "@bullet/bullet.score";
-import { ScenarioBullet } from "./bullet.scenario";
+import { ScenarioBullet } from "@bullet/bullet.scenario";
 
 export interface BulletProps {
   extendsTo?: string;
   variant: string;
-  [x: string]: any;
+  [property: string]: any;
 }
 
 /**
@@ -52,7 +52,7 @@ export const Bullet: React.FC<BulletProps> = ({
   };
 
   return (
-    <div data-testid={`${variant}-bullet`} className={extendsTo}>
+    <div data-testid={`${variant}-bullet--atom`} className={extendsTo}>
       {variants[variant]}
     </div>
   );

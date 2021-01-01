@@ -10,6 +10,7 @@ module.exports = {
   transformIgnorePatterns: ["/node_modules/"],
   moduleNameMapper: {
     "\\.(css|less|scss)$": "identity-obj-proxy",
+    "@bullet": "<rootDir>/components/atoms/bullet",
     "@bullet/(.*)": "<rootDir>/components/atoms/bullet/$1",
     "@button/(.*)": "<rootDir>/components/atoms/button/$1",
     "@card/(.*)": "<rootDir>/components/molecules/card/$1",

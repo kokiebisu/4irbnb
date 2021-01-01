@@ -5,7 +5,7 @@ import space from "@styles/space.module.scss";
 import { Layout } from "@layout/layout.component";
 
 /** components */
-import { Bullet } from "@bullet/bullet.component";
+import { Bullet } from "@bullet";
 
 export const BackSection: React.FC<{
   back?: string;
