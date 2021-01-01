@@ -1,6 +1,6 @@
 /** components */
-import { Bullet } from "@bullet/bullet.component";
-import { Button } from "@button/button.component";
+import { Bullet } from "@bullet";
+import { Button } from "@button";
 
 /** styles **/
 import font from "@styles/font.module.scss";

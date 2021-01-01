@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import Router from "next/router";
 
+/** context */
 import { useStayDispatch, useStayState } from "@context/stay";
-import { Layout } from "@layout/layout.component";
-import { Create } from "@organisms/create/create.component";
+
+/** components */
+import { Layout } from "@layout";
+import { Prototype as CreatePrototype } from "@prototype/create";
 
 const PhotosPage = () => {
   const stayDispatch = useStayDispatch();
@@ -11,8 +14,6 @@ const PhotosPage = () => {
   const [data, setData] = useState({
     photos,
   });
-
-  console.log("photos data", data.photos);
 
   const proceed = () => {
     stayDispatch({
@@ -34,7 +35,7 @@ const PhotosPage = () => {
     <Layout
       variant="create"
       title="Photos"
-      left={<Create variant="photos" data={data} setData={setData} />}
+      left={<CreatePrototype variant="photos" data={data} setData={setData} />}
       percentage={35}
       next={proceed}
       back={revert}

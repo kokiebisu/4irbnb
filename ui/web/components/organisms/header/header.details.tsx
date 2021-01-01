@@ -12,7 +12,7 @@ import header from "@header/header.module.scss";
 import { Star } from "@svg/original";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** hooks */
 import { useHandleScroll } from "@hooks/useHandleScroll";

@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Bullet, BulletProps } from "@bullet/bullet.component";
+import { Bullet, BulletProps } from "@bullet";
 
 export default {
   title: "Atoms/Bullet",
@@ -17,11 +17,11 @@ export default {
 
 const TemplateStory: Story<BulletProps> = (args) => <Bullet {...args} />;
 
-export const characteristic = TemplateStory.bind({});
-characteristic.args = {
+export const Characteristic = TemplateStory.bind({});
+Characteristic.args = {
   variant: "characteristic",
 };
-characteristic.argTypes = {
+Characteristic.argTypes = {
   characteristicType: {
     control: {
       type: "select",
@@ -30,11 +30,11 @@ characteristic.argTypes = {
   },
 };
 
-export const amenity = TemplateStory.bind({});
-amenity.args = {
+export const Amenity = TemplateStory.bind({});
+Amenity.args = {
   variant: "amenity",
 };
-amenity.argTypes = {
+Amenity.argTypes = {
   removed: {
     control: "boolean",
   },
@@ -46,11 +46,11 @@ amenity.argTypes = {
   },
 };
 
-export const review = TemplateStory.bind({});
-review.args = {
+export const Review = TemplateStory.bind({});
+Review.args = {
   variant: "score",
 };
-review.decorators = [
+Review.decorators = [
   (Story) => (
     <div style={{ width: 300 }}>
       <Story />
@@ -58,11 +58,11 @@ review.decorators = [
   ),
 ];
 
-export const know = TemplateStory.bind({});
-know.args = {
+export const Know = TemplateStory.bind({});
+Know.args = {
   variant: "know",
 };
-know.argTypes = {
+Know.argTypes = {
   categoryType: {
     control: {
       type: "select",
@@ -83,21 +83,21 @@ know.argTypes = {
   },
 };
 
-export const rating = TemplateStory.bind({});
-rating.args = {
+export const Rating = TemplateStory.bind({});
+Rating.args = {
   variant: "rating",
 };
 
-export const bring = TemplateStory.bind({});
-bring.args = {
+export const Bring = TemplateStory.bind({});
+Bring.args = {
   variant: "bring",
 };
 
-export const experience = TemplateStory.bind({});
-experience.args = {
+export const Experience = TemplateStory.bind({});
+Experience.args = {
   variant: "experience",
 };
-experience.argTypes = {
+Experience.argTypes = {
   experience: {
     control: {
       type: "select",
@@ -106,11 +106,11 @@ experience.argTypes = {
   },
 };
 
-export const priority = TemplateStory.bind({});
-priority.args = {
+export const Priority = TemplateStory.bind({});
+Priority.args = {
   variant: "priority",
 };
-priority.argTypes = {
+Priority.argTypes = {
   priority: {
     control: {
       type: "select",
@@ -119,11 +119,11 @@ priority.argTypes = {
   },
 };
 
-export const help = TemplateStory.bind({});
-help.args = {
+export const Help = TemplateStory.bind({});
+Help.args = {
   variant: "help",
 };
-help.argTypes = {
+Help.argTypes = {
   help: {
     control: {
       type: "select",
@@ -132,16 +132,16 @@ help.argTypes = {
   },
 };
 
-export const required = TemplateStory.bind({});
-required.args = {
+export const Required = TemplateStory.bind({});
+Required.args = {
   variant: "required",
 };
 
-export const onlinehost = TemplateStory.bind({});
-onlinehost.args = {
+export const OnlineHost = TemplateStory.bind({});
+OnlineHost.args = {
   variant: "onlinehost",
 };
-onlinehost.argTypes = {
+OnlineHost.argTypes = {
   bullet: {
     control: {
       type: "select",
@@ -150,17 +150,17 @@ onlinehost.argTypes = {
   },
 };
 
-export const score = TemplateStory.bind({});
-score.args = {
+export const Score = TemplateStory.bind({});
+Score.args = {
   variant: "score",
 };
 
-export const question = TemplateStory.bind({});
-question.args = {
+export const Question = TemplateStory.bind({});
+Question.args = {
   variant: "question",
 };
 
-export const check = TemplateStory.bind({});
-check.args = {
+export const Check = TemplateStory.bind({});
+Check.args = {
   variant: "check",
 };

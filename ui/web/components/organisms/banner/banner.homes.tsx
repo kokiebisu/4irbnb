@@ -9,7 +9,7 @@ import banner from "@banner/banner.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 import { Card } from "@card/card.component";
 
 /** hooks */
@@ -109,7 +109,7 @@ export const HomesBanner: React.FC<{
             </div>
             <div className={[layout["inline-block"]].join(" ")}>
               <Button
-                {...primary.args}
+                variant="primary"
                 size="md"
                 title="Get started"
                 onClick={() => Router.push("/become-a-host")}
@@ -177,7 +177,7 @@ export const HomesBanner: React.FC<{
           <div className={[layout["items-center"], layout["flex"]].join(" ")}>
             <div className={[space["m-r--8"]].join(" ")}>
               <Button
-                {...paginate.args}
+                variant="paginate"
                 animate
                 direction="left"
                 onClick={previousSlide}
@@ -185,7 +185,7 @@ export const HomesBanner: React.FC<{
             </div>
             <div>
               <Button
-                {...paginate.args}
+                variant="paginate"
                 animate
                 direction="right"
                 onClick={nextSlide}

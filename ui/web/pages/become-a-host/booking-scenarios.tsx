@@ -1,7 +1,9 @@
 import React from "react";
-import { Layout } from "layout/layout.component";
 import Router from "next/router";
-import { Create } from "../../components/organisms/create/create.component";
+
+/** components */
+import { Layout } from "@layout";
+import { Prototype as CreatePrototype } from "@prototype/create";
 
 const BookingScenariosPage = () => {
   const proceed = () => {
@@ -20,7 +22,7 @@ const BookingScenariosPage = () => {
     <Layout
       variant="create"
       title="Review"
-      left={<Create variant="scenarios" />}
+      left={<CreatePrototype variant="scenarios" />}
       percentage={95}
       next={proceed}
       back={revert}

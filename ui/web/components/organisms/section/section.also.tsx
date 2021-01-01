@@ -2,7 +2,7 @@ import { useRef } from "react";
 
 /** components */
 import { Card } from "@card/card.component";
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** styles **/
 import layout from "@styles/layout.module.scss";
@@ -14,12 +14,9 @@ import section from "@section/section.module.scss";
 import * as Helpers from "@helper/array";
 
 /** Contents */
-import { nearbyPic } from "@content";
+// import { nearbyPic } from "@content";
 import { useSlider } from "@hooks/useSlider";
 import { useHandleContainerResize } from "@hooks/useHandleContainerResize";
-
-/** stories */
-import { paginate } from "@button/button.stories";
 
 /**
  * Renders the also section
@@ -30,16 +27,16 @@ export const AlsoSection: React.FC<{
   title?: string;
 }> = ({
   items = [
-    "city1",
-    "city2",
-    "city3",
-    "city4",
-    "city5",
-    "city6",
-    "city7",
-    "city8",
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
   ],
-  title = "People also search for",
+  title = "Section title",
 }) => {
   const containerRef = useRef<HTMLDivElement>();
   const width: number = useHandleContainerResize(containerRef)[0];
@@ -62,7 +59,7 @@ export const AlsoSection: React.FC<{
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div className={[space["m-h--2"]].join(" ")}>
             <Button
-              {...paginate.args}
+              variant="paginate"
               animate
               direction="left"
               onClick={previousSlide}
@@ -71,7 +68,7 @@ export const AlsoSection: React.FC<{
           </div>
           <div className={[space["m-h--2"]].join(" ")}>
             <Button
-              {...paginate.args}
+              variant="paginate"
               animate
               direction="right"
               onClick={nextSlide}
@@ -101,20 +98,20 @@ export const AlsoSection: React.FC<{
                 <div className={[space["m-b--10"]].join(" ")}>
                   <Card
                     variant="nearby"
-                    to={item[0] && item[0].to}
-                    imgUrl={nearbyPic[index]}
-                    city={item[0].city}
-                    hours={item[0].hours}
+                    to={item[0]?.to}
+                    imgUrl={item?.pic}
+                    title={item[0]?.city || "Item"}
+                    subtitle={`${item[0]?.hours || 1} hour drive`}
                     size="lg"
                   />
                 </div>
                 <div>
                   <Card
                     variant="nearby"
-                    to={item[1] && item[1].to}
-                    imgUrl={nearbyPic[index + 4]}
-                    city={item[1].city}
-                    hours={item[1].hours}
+                    to={item[1]?.to}
+                    imgUrl={item?.pic}
+                    title={item[1]?.city || "Item"}
+                    subtitle={`${item[0]?.hours || 1} hour drive`}
                     size="lg"
                   />
                 </div>

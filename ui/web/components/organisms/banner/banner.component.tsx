@@ -1,5 +1,4 @@
 /** components */
-import { ExperiencesBanner } from "@banner/banner.experiences";
 import { HomesBanner } from "@banner/banner.homes";
 import { LandingBanner } from "@banner/banner.landing";
 import { OnlineHostBanner } from "@banner/banner.onlinehost";
@@ -22,7 +21,6 @@ export const Banner: React.FC<BannerProps> = ({
 }) => {
   const variants = {
     homes: <HomesBanner {...props} />,
-    experiences: <ExperiencesBanner {...props} />,
     landing: <LandingBanner {...props} />,
     onlinehost: <OnlineHostBanner {...props} />,
   };

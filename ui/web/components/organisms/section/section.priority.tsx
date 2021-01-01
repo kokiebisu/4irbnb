@@ -3,8 +3,8 @@ import responsive from "@styles/responsive.module.scss";
 import space from "@styles/space.module.scss";
 
 /** components */
-import { Layout } from "@layout/layout.component";
-import { Bullet } from "@bullet/bullet.component";
+import { Layout } from "@layout";
+import { Bullet } from "@bullet";
 
 /**
  * Renders the priority section
