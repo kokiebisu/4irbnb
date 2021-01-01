@@ -8,7 +8,7 @@ import { useToggleState } from "../../context/toggle";
 import layout from "../../styles/layout.module.scss";
 
 /** components */
-import { Template } from "../../components/templates/template.component";
+import { Template } from "@template";
 import { Modal } from "../../components/organisms/modal/modal.component";
 
 /** styles */
@@ -18,7 +18,7 @@ import shape from "../../styles/shape.module.scss";
 import { useTabTitle } from "../../hooks/useTabTitle";
 
 /** prototypes */
-import "../../prototype/string";
+import "../../global/string";
 import { menu } from "components/organisms/modal/modal.stories";
 
 /**

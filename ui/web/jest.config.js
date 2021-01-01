@@ -19,6 +19,8 @@ module.exports = {
     "@helper/(.*)": "<rootDir>/helper/$1",
     "@particle/(.*)": "<rootDir>/components/particles/$1",
     "@content": "<rootDir>/content",
+    "@template": "<rootDir>/components/templates",
+    "@template/(.*)": "<rootDir>/components/templates/$1",
   },
   moduleDirectories: ["node_modules", "components"],
 };

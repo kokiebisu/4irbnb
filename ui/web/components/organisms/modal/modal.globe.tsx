@@ -10,7 +10,7 @@ import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 
 /** templates */
-import { Template } from "@template/template.component";
+import { Template } from "@template";
 
 /** contexts */
 import { useToggleDispatch } from "@context/toggle";

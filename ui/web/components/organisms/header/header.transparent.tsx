@@ -17,6 +17,7 @@ import responsive from "@styles/responsive.module.scss";
 import { menu as menuModal } from "@modal/modal.stories";
 import { Modal } from "@modal/modal.component";
 import { Button } from "@button/button.component";
+import { Template } from "@template";
 
 /** vectors */
 import { NameLogo, NoNameLogo } from "@svg/logo";
@@ -29,7 +30,6 @@ import { Bar } from "@bar/bar.component";
 import { Content } from "@button/content/content.transparent";
 import useOnClickOutside from "@hooks/useOnClickOutside";
 import { useHandleScroll } from "@hooks/useHandleScroll";
-import { Template } from "@templates/template.component";
 
 /**
  * Renders the transparent header
