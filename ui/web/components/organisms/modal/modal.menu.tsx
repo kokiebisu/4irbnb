@@ -3,8 +3,12 @@ import shape from "@styles/shape.module.scss";
 import space from "@styles/space.module.scss";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
+
+/** contents */
 import { getOptionContents } from "@button/content/content.option";
+
+/** stories */
 import { option } from "@button/button.stories";
 
 const Options: React.FC<{

@@ -1,7 +1,7 @@
 import { useLayoutEffect, useState, useRef } from "react";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** styles **/
 import particle from "@particle/particle.module.scss";
@@ -159,7 +159,7 @@ export const ImageSlider = ({ slides }) => {
         }}
       >
         <Button
-          {...paginate.args}
+          variant="paginate"
           animate
           direction="left"
           onClick={previousSlide}

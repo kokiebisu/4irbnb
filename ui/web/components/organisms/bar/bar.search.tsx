@@ -6,7 +6,7 @@ import font from "@styles/font.module.scss";
 import animation from "@styles/animation.module.scss";
 
 /** vectors */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 import { useToggleDispatch } from "@context/toggle";
 
 /**
@@ -53,7 +53,7 @@ export const SearchBar: React.FC<{
       />
       <Seperator />
       <Option
-        title="Add dataes"
+        title="Add dates"
         subtitle="Check out"
         selected={selected}
         setSelected={setSelected}

@@ -25,14 +25,14 @@ export default {
   },
 } as Meta;
 
-const CardTemplate: Story<CardProps> = (args) => <Card {...args} />;
+const TemplateStory: Story<CardProps> = (args) => <Card {...args} />;
 
-export const category = CardTemplate.bind({});
-category.args = {
+export const Category = TemplateStory.bind({});
+Category.args = {
   variant: "category",
 };
 
-category.decorators = [
+Category.decorators = [
   (Story) => (
     <div style={{ width: 300 }}>
       <Story />
@@ -40,12 +40,12 @@ category.decorators = [
   ),
 ];
 
-export const horizontal = CardTemplate.bind({});
-horizontal.args = {
+export const Horizontal = TemplateStory.bind({});
+Horizontal.args = {
   variant: "horizontal",
 };
 
-horizontal.decorators = [
+Horizontal.decorators = [
   (Story) => (
     <div style={{ maxWidth: 600 }}>
       <Story />
@@ -53,7 +53,7 @@ horizontal.decorators = [
   ),
 ];
 
-horizontal.argTypes = {
+Horizontal.argTypes = {
   superhost: {
     control: "boolean",
   },
@@ -62,22 +62,22 @@ horizontal.argTypes = {
   },
 };
 
-export const vertical = CardTemplate.bind({});
-vertical.args = {
+export const Vertical = TemplateStory.bind({});
+Vertical.args = {
   variant: "vertical",
 };
-vertical.argTypes = {
+Vertical.argTypes = {
   save: {
     control: "boolean",
   },
 };
 
-export const typeStay = CardTemplate.bind({});
-typeStay.args = {
+export const TypeStay = TemplateStory.bind({});
+TypeStay.args = {
   variant: "typestay",
 };
 
-typeStay.decorators = [
+TypeStay.decorators = [
   (Story) => (
     <div style={{ width: 200 }}>
       <Story />
@@ -85,17 +85,17 @@ typeStay.decorators = [
   ),
 ];
 
-export const arrangements = CardTemplate.bind({});
-arrangements.args = {
+export const Arrangements = TemplateStory.bind({});
+Arrangements.args = {
   variant: "arrangements",
 };
 
-export const checkin = CardTemplate.bind({});
-checkin.args = {
+export const Checkin = TemplateStory.bind({});
+Checkin.args = {
   variant: "checkin",
 };
 
-checkin.decorators = [
+Checkin.decorators = [
   (Story) => (
     <div style={{ width: 500 }}>
       <Story />
@@ -103,27 +103,27 @@ checkin.decorators = [
   ),
 ];
 
-export const review = CardTemplate.bind({});
-review.args = {
+export const Review = TemplateStory.bind({});
+Review.args = {
   variant: "review",
 };
 
-export const stay = CardTemplate.bind({});
-stay.args = {
+export const Stay = TemplateStory.bind({});
+Stay.args = {
   variant: "stay",
 };
 
-export const nearby = CardTemplate.bind({});
-nearby.args = {
+export const Nearby = TemplateStory.bind({});
+Nearby.args = {
   variant: "nearby",
 };
 
-export const online = CardTemplate.bind({});
-online.args = {
+export const Online = TemplateStory.bind({});
+Online.args = {
   variant: "online",
 };
 
-online.decorators = [
+Online.decorators = [
   (Story) => (
     <div style={{ maxWidth: 600 }}>
       <Story />
@@ -131,11 +131,11 @@ online.decorators = [
   ),
 ];
 
-export const participate = CardTemplate.bind({});
-participate.args = {
+export const Participate = TemplateStory.bind({});
+Participate.args = {
   variant: "participate",
 };
-participate.argTypes = {
+Participate.argTypes = {
   categoryType: {
     control: {
       type: "select",
@@ -144,16 +144,16 @@ participate.argTypes = {
   },
 };
 
-export const available = CardTemplate.bind({});
-available.args = {
+export const Available = TemplateStory.bind({});
+Available.args = {
   variant: "available",
 };
 
-export const host = CardTemplate.bind({});
-host.args = {
+export const Host = TemplateStory.bind({});
+Host.args = {
   variant: "host",
 };
-host.decorators = [
+Host.decorators = [
   (Story) => (
     <div style={{ width: 400 }}>
       <Story />
@@ -161,21 +161,21 @@ host.decorators = [
   ),
 ];
 
-export const set = CardTemplate.bind({});
-set.args = {
+export const Set = TemplateStory.bind({});
+Set.args = {
   variant: "set",
 };
 
-export const again = CardTemplate.bind({});
-again.args = {
+export const Again = TemplateStory.bind({});
+Again.args = {
   variant: "again",
 };
 
-export const works = CardTemplate.bind({});
-works.args = {
+export const Works = TemplateStory.bind({});
+Works.args = {
   variant: "works",
 };
-works.argTypes = {
+Works.argTypes = {
   work: {
     control: {
       type: "select",
@@ -184,11 +184,11 @@ works.argTypes = {
   },
 };
 
-export const sharing = CardTemplate.bind({});
-sharing.args = {
+export const Sharing = TemplateStory.bind({});
+Sharing.args = {
   variant: "sharing",
 };
-sharing.argsTypes = {
+Sharing.argsTypes = {
   sharing: {
     control: {
       type: "select",
@@ -197,11 +197,11 @@ sharing.argsTypes = {
   },
 };
 
-export const how = CardTemplate.bind({});
-how.args = {
+export const How = TemplateStory.bind({});
+How.args = {
   variant: "how",
 };
-how.argTypes = {
+How.argTypes = {
   how: {
     control: {
       type: "select",
@@ -209,7 +209,7 @@ how.argTypes = {
     },
   },
 };
-how.decorators = [
+How.decorators = [
   (Story) => (
     <div style={{ width: 300 }}>
       <Story />

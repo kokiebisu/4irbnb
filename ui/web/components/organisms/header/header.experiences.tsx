@@ -6,7 +6,7 @@ import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** vectors */
 import { NoNameLogo } from "@svg/logo";

@@ -1,5 +1,7 @@
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
+
+/** styles */
 import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
@@ -61,7 +63,7 @@ export const AvailabilityModal: React.FC<{
         </div>
       </div>
       <div>
-        <Button {...primary.args} title="Check availability" />
+        <Button variant="primary" title="Check availability" />
       </div>
     </div>
   );

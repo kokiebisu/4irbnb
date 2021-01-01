@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Router from "next/router";
 
 /** components */
-import { Layout } from "layout/layout.component";
+import { Layout } from "@layout";
 import { Prototype as CreatePrototype } from "../../components/prototype/create";
 
 /** context */

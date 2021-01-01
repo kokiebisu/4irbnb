@@ -13,7 +13,7 @@ import modalStyles from "@modal/modal.module.scss";
 
 /** components */
 import { Input } from "@input/input.component";
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 import { getAuthContents } from "@button/content/content.auth";
 
 /** Helpers */
@@ -84,7 +84,7 @@ export const AuthPrototype: React.FC<{}> = () => {
             </p>
           </div>
           <div className={[space["m-t--18"], space["m-b--18"]].join(" ")}>
-            <Button {...primary.args} title="Continue" block />
+            <Button variant="primary" title="Continue" block />
           </div>
         </form>
         <div

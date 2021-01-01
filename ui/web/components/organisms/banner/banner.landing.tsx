@@ -12,7 +12,7 @@ import responsive from "@styles/responsive.module.scss";
 
 /** components */
 import { Header } from "@header/header.component";
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** hooks */
 import { useHandleScroll } from "@hooks/useHandleScroll";

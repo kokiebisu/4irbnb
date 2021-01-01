@@ -1,5 +1,5 @@
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** styles **/
 import color from "@styles/color.module.scss";
@@ -56,7 +56,7 @@ export const AvailableCard: React.FC<{
         <span className={[font["size--15"]].join(" ")}> /person</span>
       </div>
       <div className={[layout["inline-block"]].join(" ")}>
-        <Button {...primary.args} size="sm" title="Choose" />
+        <Button variant="primary" size="sm" title="Choose" />
       </div>
     </div>
   );

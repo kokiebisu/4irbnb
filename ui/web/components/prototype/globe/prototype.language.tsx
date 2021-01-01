@@ -1,5 +1,5 @@
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** styles */
 import space from "@styles/space.module.scss";

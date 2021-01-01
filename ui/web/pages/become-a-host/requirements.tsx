@@ -2,8 +2,8 @@ import React from "react";
 import Router from "next/router";
 
 /** components */
-import { Layout } from "../../layout/layout.component";
-import { Prototype as CreatePrototype } from "../../components/prototype/create";
+import { Layout } from "@layout";
+import { Prototype as CreatePrototype } from "@prototype/create";
 
 const RequirementsPage = () => {
   const proceed = () => {

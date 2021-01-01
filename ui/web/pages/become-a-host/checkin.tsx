@@ -3,7 +3,7 @@ import Router from "next/router";
 
 /** components */
 import { Prototype as CreatePrototype } from "@prototype/create";
-import { Layout } from "@layout/layout.component";
+import { Layout } from "@layout";
 
 /** contexts */
 import { useStayDispatch, useStayState } from "@context/stay";

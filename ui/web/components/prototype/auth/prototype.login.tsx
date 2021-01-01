@@ -12,7 +12,7 @@ import layout from "@styles/layout.module.scss";
 
 /** components */
 import { Input } from "@input/input.component";
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 import { Bullet } from "@bullet";
 import { Card } from "@card/card.component";
 
@@ -120,7 +120,7 @@ export const LoginTemplate: React.FC<{}> = () => {
           )}
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
-          <Button {...primary.args} title="Log in" loading={loading} block />
+          <Button variant="primary" title="Log in" loading={loading} block />
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
           <Button

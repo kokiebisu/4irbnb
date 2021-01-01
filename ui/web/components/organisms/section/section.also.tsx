@@ -2,7 +2,7 @@ import { useRef } from "react";
 
 /** components */
 import { Card } from "@card/card.component";
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** styles **/
 import layout from "@styles/layout.module.scss";
@@ -62,7 +62,7 @@ export const AlsoSection: React.FC<{
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div className={[space["m-h--2"]].join(" ")}>
             <Button
-              {...paginate.args}
+              variant="paginate"
               animate
               direction="left"
               onClick={previousSlide}
@@ -71,7 +71,7 @@ export const AlsoSection: React.FC<{
           </div>
           <div className={[space["m-h--2"]].join(" ")}>
             <Button
-              {...paginate.args}
+              variant="paginate"
               animate
               direction="right"
               onClick={nextSlide}

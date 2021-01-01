@@ -10,7 +10,7 @@ import font from "@styles/font.module.scss";
 import section from "@section/section.module.scss";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 import { Bullet } from "@bullet";
 import { Card } from "@card/card.component";
 

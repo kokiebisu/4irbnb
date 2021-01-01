@@ -5,7 +5,7 @@ import Router from "next/router";
 import { useStayDispatch, useStayState } from "@context/stay";
 
 /** components */
-import { Layout } from "@layout/layout.component";
+import { Layout } from "@layout";
 import { Prototype as CreatePrototype } from "@prototype/create";
 
 const PhotosPage = () => {

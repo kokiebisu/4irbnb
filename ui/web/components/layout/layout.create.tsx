@@ -1,13 +1,11 @@
-import React from "react";
-
 /** components */
-import { Bar } from "../components/organisms/bar/bar.component";
-import { Header } from "../components/organisms/header/header.component";
+import { Bar } from "@bar/bar.component";
+import { Header } from "@header/header.component";
 
 /** styles **/
-import layout from "../styles/layout.module.scss";
-import space from "../styles/space.module.scss";
-import responsive from "../styles/responsive.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import responsive from "@styles/responsive.module.scss";
 
 export const CreateLayout: React.FC<{
   title?: string;

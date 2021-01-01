@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Router from "next/router";
 
 /** components */
-import { Layout } from "layout/layout.component";
+import { Layout } from "@layout";
 
 /** context */
 import { useStayDispatch, useStayState } from "@context/stay";

@@ -12,7 +12,7 @@ import { Header } from "@header/header.component";
 import { Section } from "@section/section.component";
 import { Bar } from "@bar/bar.component";
 import { Footer } from "@footer/footer.component";
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** stories */
 import { filter } from "@button/button.stories";

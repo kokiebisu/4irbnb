@@ -4,7 +4,7 @@ import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 
 /** components */
-import { Button } from "../button/button.component";
+import { Button } from "@button";
 
 export const ClosedInput: React.FC<{
   title?: string;

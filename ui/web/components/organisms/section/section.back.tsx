@@ -2,7 +2,7 @@
 import space from "@styles/space.module.scss";
 
 /** layout */
-import { Layout } from "@layout/layout.component";
+import { Layout } from "@layout";
 
 /** components */
 import { Bullet } from "@bullet";

@@ -1,6 +1,6 @@
 /** components */
 import { Card } from "@card/card.component";
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** styles **/
 import section from "@section/section.module.scss";

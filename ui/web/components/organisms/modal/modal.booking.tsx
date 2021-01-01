@@ -8,7 +8,7 @@ import font from "@styles/font.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 import { primary, border } from "@button/button.stories";
 
 /**
@@ -127,7 +127,7 @@ export const BookingModal: React.FC<{
                     </span>
                   </div>
                   <div>
-                    <Button {...primary.args} size="sm" title="Choose" spread />
+                    <Button variant="primary" size="sm" title="Choose" spread />
                   </div>
                 </div>
               </div>

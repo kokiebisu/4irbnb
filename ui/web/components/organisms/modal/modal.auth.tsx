@@ -4,10 +4,10 @@ import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
-import modal from "./modal.module.scss";
+import modal from "@modal/modal.module.scss";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 import { Prototype as AuthPrototype } from "@prototype/auth";
 
 /** contexts */

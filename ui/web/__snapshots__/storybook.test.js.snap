@@ -1,28 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Design System/Animation Loading 1`] = `
+exports[`Storyshots Atoms/Bullet Amenity 1`] = `
 <div
-  data-testid="animation"
->
-  <div
-    className="circle__wrapper"
-  >
-    <span
-      className="circle__content circle__1 bg--white"
-    />
-    <span
-      className="circle__content circle__2 bg--white"
-    />
-    <span
-      className="circle__content circle__3 bg--white"
-    />
-  </div>
-</div>
-`;
-
-exports[`Storyshots Design System/Atoms/Bullet Amenity 1`] = `
-<div
-  data-testid="amenity-bullet"
+  data-testid="amenity-bullet--atom"
 >
   <div
     className="flex items-center p--4 w--50p"
@@ -44,9 +24,9 @@ exports[`Storyshots Design System/Atoms/Bullet Amenity 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Atoms/Bullet Bring 1`] = `
+exports[`Storyshots Atoms/Bullet Bring 1`] = `
 <div
-  data-testid="bring-bullet"
+  data-testid="bring-bullet--atom"
 >
   <div
     className="flex"
@@ -72,9 +52,9 @@ exports[`Storyshots Design System/Atoms/Bullet Bring 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Atoms/Bullet Characteristic 1`] = `
+exports[`Storyshots Atoms/Bullet Characteristic 1`] = `
 <div
-  data-testid="characteristic-bullet"
+  data-testid="characteristic-bullet--atom"
 >
   <div
     className="flex m-v--8 items-center p-r--8"
@@ -107,9 +87,9 @@ exports[`Storyshots Design System/Atoms/Bullet Characteristic 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Atoms/Bullet Check 1`] = `
+exports[`Storyshots Atoms/Bullet Check 1`] = `
 <div
-  data-testid="check-bullet"
+  data-testid="check-bullet--atom"
 >
   <div
     className="flex items-center"
@@ -140,9 +120,9 @@ exports[`Storyshots Design System/Atoms/Bullet Check 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Atoms/Bullet Experience 1`] = `
+exports[`Storyshots Atoms/Bullet Experience 1`] = `
 <div
-  data-testid="experience-bullet"
+  data-testid="experience-bullet--atom"
 >
   <div
     className="flex items-center"
@@ -179,9 +159,9 @@ exports[`Storyshots Design System/Atoms/Bullet Experience 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Atoms/Bullet Help 1`] = `
+exports[`Storyshots Atoms/Bullet Help 1`] = `
 <div
-  data-testid="help-bullet"
+  data-testid="help-bullet--atom"
 >
   <div
     className="flex"
@@ -218,9 +198,9 @@ exports[`Storyshots Design System/Atoms/Bullet Help 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Atoms/Bullet Know 1`] = `
+exports[`Storyshots Atoms/Bullet Know 1`] = `
 <div
-  data-testid="know-bullet"
+  data-testid="know-bullet--atom"
 >
   <div
     className="flex"
@@ -245,9 +225,9 @@ exports[`Storyshots Design System/Atoms/Bullet Know 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Atoms/Bullet Onlinehost 1`] = `
+exports[`Storyshots Atoms/Bullet Online Host 1`] = `
 <div
-  data-testid="onlinehost-bullet"
+  data-testid="onlinehost-bullet--atom"
 >
   <div>
     <div>
@@ -279,9 +259,9 @@ exports[`Storyshots Design System/Atoms/Bullet Onlinehost 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Atoms/Bullet Priority 1`] = `
+exports[`Storyshots Atoms/Bullet Priority 1`] = `
 <div
-  data-testid="priority-bullet"
+  data-testid="priority-bullet--atom"
 >
   <div>
     <div>
@@ -336,7 +316,7 @@ exports[`Storyshots Design System/Atoms/Bullet Priority 1`] = `
     <div>
       <button
         className=" inline-block transition"
-        data-testid="button--undefined"
+        data-testid="auth-button--atom"
         onClick={[Function]}
         style={
           Object {
@@ -344,20 +324,30 @@ exports[`Storyshots Design System/Atoms/Bullet Priority 1`] = `
           }
         }
       >
-        <u
-          className="size--14"
+        <div
+          className="relative all-center"
         >
-          How you're protected while hosting
-        </u>
+          <div
+            className="al--0"
+          />
+          <div>
+            <h3
+              className="size--14 c--gray__2"
+            >
+              Continue with 
+              Email
+            </h3>
+          </div>
+        </div>
       </button>
     </div>
   </div>
 </div>
 `;
 
-exports[`Storyshots Design System/Atoms/Bullet Question 1`] = `
+exports[`Storyshots Atoms/Bullet Question 1`] = `
 <div
-  data-testid="question-bullet"
+  data-testid="question-bullet--atom"
 >
   <div
     className="p-v--16 b-b--white__1"
@@ -373,9 +363,9 @@ exports[`Storyshots Design System/Atoms/Bullet Question 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Atoms/Bullet Rating 1`] = `
+exports[`Storyshots Atoms/Bullet Rating 1`] = `
 <div
-  data-testid="rating-bullet"
+  data-testid="rating-bullet--atom"
 >
   <div
     className="flex flex"
@@ -419,9 +409,9 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
 </div>
 `;
 
-exports[`Storyshots Design System/Atoms/Bullet Required 1`] = `
+exports[`Storyshots Atoms/Bullet Required 1`] = `
 <div
-  data-testid="required-bullet"
+  data-testid="required-bullet--atom"
 >
   <div
     className="flex items-center"
@@ -462,7 +452,7 @@ exports[`Storyshots Design System/Atoms/Bullet Required 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Atoms/Bullet Review 1`] = `
+exports[`Storyshots Atoms/Bullet Review 1`] = `
 <div
   style={
     Object {
@@ -471,7 +461,7 @@ exports[`Storyshots Design System/Atoms/Bullet Review 1`] = `
   }
 >
   <div
-    data-testid="score-bullet"
+    data-testid="score-bullet--atom"
   >
     <div
       className="p-v--2 flex items-center justify-between w--50p"
@@ -504,9 +494,9 @@ exports[`Storyshots Design System/Atoms/Bullet Review 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Atoms/Bullet Score 1`] = `
+exports[`Storyshots Atoms/Bullet Score 1`] = `
 <div
-  data-testid="score-bullet"
+  data-testid="score-bullet--atom"
 >
   <div
     className="p-v--2 flex items-center justify-between w--50p"
@@ -538,7 +528,7 @@ exports[`Storyshots Design System/Atoms/Bullet Score 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Auth 1`] = `
+exports[`Storyshots Atoms/Button Auth 1`] = `
 <div
   style={
     Object {
@@ -548,7 +538,7 @@ exports[`Storyshots Design System/Atoms/Button Auth 1`] = `
 >
   <button
     className="hover__auth bg--transparent block w--full p-h--12 p-v--12 br--8 inline-block transition"
-    data-testid="button--auth"
+    data-testid="auth-button--atom"
     style={
       Object {
         "cursor": "pointer",
@@ -574,10 +564,10 @@ exports[`Storyshots Design System/Atoms/Button Auth 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Back 1`] = `
+exports[`Storyshots Atoms/Button Back 1`] = `
 <button
   className=" inline-block transition"
-  data-testid="button--back"
+  data-testid="back-button--atom"
   style={
     Object {
       "cursor": "pointer",
@@ -614,7 +604,7 @@ exports[`Storyshots Design System/Atoms/Button Back 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Banner 1`] = `
+exports[`Storyshots Atoms/Button Banner 1`] = `
 <div
   style={
     Object {
@@ -624,7 +614,7 @@ exports[`Storyshots Design System/Atoms/Button Banner 1`] = `
 >
   <button
     className="bg--white br--6 inline-block transition"
-    data-testid="button--banner"
+    data-testid="banner-button--atom"
     style={
       Object {
         "cursor": "pointer",
@@ -642,10 +632,10 @@ exports[`Storyshots Design System/Atoms/Button Banner 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Border 1`] = `
+exports[`Storyshots Atoms/Button Border 1`] = `
 <button
   className="bg--transparent inline-block transition"
-  data-testid="button--border"
+  data-testid="border-button--atom"
   style={
     Object {
       "cursor": "pointer",
@@ -662,10 +652,52 @@ exports[`Storyshots Design System/Atoms/Button Border 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Filter 1`] = `
+exports[`Storyshots Atoms/Button Expand 1`] = `
 <button
   className=" inline-block transition"
-  data-testid="button--filter"
+  data-testid="expand-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div>
+    <div
+      className="flex items-center"
+    >
+      <div>
+        <u
+          className="size--15 weight--500"
+        >
+          Button
+        </u>
+      </div>
+      <div>
+        <svg
+          stroke="black"
+          strokeWidth={5}
+          viewBox="0 0 32 32"
+          width={14}
+        >
+          <g
+            fill="none"
+          >
+            <path
+              d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Filter 1`] = `
+<button
+  className=" inline-block transition"
+  data-testid="filter-button--atom"
   style={
     Object {
       "cursor": "pointer",
@@ -684,10 +716,10 @@ exports[`Storyshots Design System/Atoms/Button Filter 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Globe 1`] = `
+exports[`Storyshots Atoms/Button Globe 1`] = `
 <button
   className="text--left inline-block transition"
-  data-testid="button--globe"
+  data-testid="globe-button--atom"
   style={
     Object {
       "cursor": "pointer",
@@ -715,10 +747,10 @@ exports[`Storyshots Design System/Atoms/Button Globe 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Link 1`] = `
+exports[`Storyshots Atoms/Button Link 1`] = `
 <button
   className=" inline-block transition"
-  data-testid="button--link"
+  data-testid="link-button--atom"
   style={
     Object {
       "cursor": "pointer",
@@ -733,10 +765,10 @@ exports[`Storyshots Design System/Atoms/Button Link 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Location 1`] = `
+exports[`Storyshots Atoms/Button Location 1`] = `
 <button
   className=" inline-block transition"
-  data-testid="button--location"
+  data-testid="location-button--atom"
   style={
     Object {
       "cursor": "pointer",
@@ -781,10 +813,10 @@ exports[`Storyshots Design System/Atoms/Button Location 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Menu 1`] = `
+exports[`Storyshots Atoms/Button Menu 1`] = `
 <button
   className="hover-shadow--lg br--30 inline-block transition"
-  data-testid="button--menu"
+  data-testid="menu-button--atom"
   style={
     Object {
       "cursor": "pointer",
@@ -822,10 +854,10 @@ exports[`Storyshots Design System/Atoms/Button Menu 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Modal 1`] = `
+exports[`Storyshots Atoms/Button Modal 1`] = `
 <button
   className=" inline-block transition"
-  data-testid="button--modal"
+  data-testid="modal-button--atom"
   style={
     Object {
       "cursor": "pointer",
@@ -853,10 +885,10 @@ exports[`Storyshots Design System/Atoms/Button Modal 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Nearby 1`] = `
+exports[`Storyshots Atoms/Button Nearby 1`] = `
 <button
   className=" inline-block transition"
-  data-testid="button--nearby"
+  data-testid="nearby-button--atom"
   style={
     Object {
       "cursor": "pointer",
@@ -879,10 +911,10 @@ exports[`Storyshots Design System/Atoms/Button Nearby 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Option 1`] = `
+exports[`Storyshots Atoms/Button Option 1`] = `
 <button
   className="w--full inline-block transition"
-  data-testid="button--option"
+  data-testid="option-button--atom"
   style={
     Object {
       "cursor": "pointer",
@@ -897,10 +929,10 @@ exports[`Storyshots Design System/Atoms/Button Option 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Paginate 1`] = `
+exports[`Storyshots Atoms/Button Paginate 1`] = `
 <button
   className=" inline-block transition"
-  data-testid="button--paginate"
+  data-testid="paginate-button--atom"
   style={
     Object {
       "cursor": "pointer",
@@ -928,7 +960,7 @@ exports[`Storyshots Design System/Atoms/Button Paginate 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Primary 1`] = `
+exports[`Storyshots Atoms/Button Primary 1`] = `
 <div
   style={
     Object {
@@ -938,7 +970,7 @@ exports[`Storyshots Design System/Atoms/Button Primary 1`] = `
 >
   <button
     className=" inline-block transition"
-    data-testid="button--primary"
+    data-testid="primary-button--atom"
     style={
       Object {
         "cursor": "pointer",
@@ -963,7 +995,7 @@ exports[`Storyshots Design System/Atoms/Button Primary 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Privacy 1`] = `
+exports[`Storyshots Atoms/Button Privacy 1`] = `
 <div
   style={
     Object {
@@ -973,7 +1005,7 @@ exports[`Storyshots Design System/Atoms/Button Privacy 1`] = `
 >
   <button
     className=" inline-block transition"
-    data-testid="button--privacy"
+    data-testid="privacy-button--atom"
     style={
       Object {
         "cursor": "pointer",
@@ -993,10 +1025,10 @@ exports[`Storyshots Design System/Atoms/Button Privacy 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Search 1`] = `
+exports[`Storyshots Atoms/Button Search 1`] = `
 <button
   className=" inline-block transition"
-  data-testid="button--search"
+  data-testid="search-button--atom"
   style={
     Object {
       "cursor": "pointer",
@@ -1054,10 +1086,10 @@ exports[`Storyshots Design System/Atoms/Button Search 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Searchbar 1`] = `
+exports[`Storyshots Atoms/Button Searchbar 1`] = `
 <button
   className=" inline-block transition"
-  data-testid="button--searchbar"
+  data-testid="searchbar-button--atom"
   style={
     Object {
       "cursor": "pointer",
@@ -1101,10 +1133,10 @@ exports[`Storyshots Design System/Atoms/Button Searchbar 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Transparent 1`] = `
+exports[`Storyshots Atoms/Button Transparent 1`] = `
 <button
   className=" inline-block transition"
-  data-testid="button--transparent"
+  data-testid="transparent-button--atom"
   style={
     Object {
       "cursor": "pointer",
@@ -1123,10 +1155,10 @@ exports[`Storyshots Design System/Atoms/Button Transparent 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design System/Atoms/Button Underline 1`] = `
+exports[`Storyshots Atoms/Button Underline 1`] = `
 <button
   className=" inline-block transition"
-  data-testid="button--underline"
+  data-testid="underline-button--atom"
   style={
     Object {
       "cursor": "pointer",
@@ -1152,7 +1184,7 @@ exports[`Storyshots Design System/Atoms/Button Underline 1`] = `
 </button>
 `;
 
-exports[`Storyshots Design System/Molecules/Card Again 1`] = `
+exports[`Storyshots Molecules/Card Again 1`] = `
 <div
   data-testid="again-card"
 >
@@ -1206,7 +1238,7 @@ exports[`Storyshots Design System/Molecules/Card Again 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Molecules/Card Arrangements 1`] = `
+exports[`Storyshots Molecules/Card Arrangements 1`] = `
 <div
   data-testid="arrangements-card"
 >
@@ -1276,7 +1308,7 @@ c0,13.255-10.745,24-24,24h-64c-13.255,0-24-10.745-24-24v-16c0-13.255,10.745-24,2
 </div>
 `;
 
-exports[`Storyshots Design System/Molecules/Card Available 1`] = `
+exports[`Storyshots Molecules/Card Available 1`] = `
 <div
   data-testid="available-card"
 >
@@ -1334,7 +1366,7 @@ exports[`Storyshots Design System/Molecules/Card Available 1`] = `
     >
       <button
         className=" inline-block transition"
-        data-testid="button--primary"
+        data-testid="primary-button--atom"
         style={
           Object {
             "cursor": "pointer",
@@ -1361,7 +1393,7 @@ exports[`Storyshots Design System/Molecules/Card Available 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Molecules/Card Category 1`] = `
+exports[`Storyshots Molecules/Card Category 1`] = `
 <div
   style={
     Object {
@@ -1395,7 +1427,7 @@ exports[`Storyshots Design System/Molecules/Card Category 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Molecules/Card Checkin 1`] = `
+exports[`Storyshots Molecules/Card Checkin 1`] = `
 <div
   style={
     Object {
@@ -1580,7 +1612,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
 </div>
 `;
 
-exports[`Storyshots Design System/Molecules/Card Horizontal 1`] = `
+exports[`Storyshots Molecules/Card Horizontal 1`] = `
 <div
   style={
     Object {
@@ -1702,7 +1734,7 @@ exports[`Storyshots Design System/Molecules/Card Horizontal 1`] = `
                   >
                     <button
                       className=" inline-block transition"
-                      data-testid="button--paginate"
+                      data-testid="paginate-button--atom"
                       onClick={[Function]}
                       style={
                         Object {
@@ -1745,7 +1777,7 @@ exports[`Storyshots Design System/Molecules/Card Horizontal 1`] = `
                   >
                     <button
                       className=" inline-block transition"
-                      data-testid="button--paginate"
+                      data-testid="paginate-button--atom"
                       onClick={[Function]}
                       style={
                         Object {
@@ -1946,7 +1978,7 @@ exports[`Storyshots Design System/Molecules/Card Horizontal 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Molecules/Card Host 1`] = `
+exports[`Storyshots Molecules/Card Host 1`] = `
 <div
   style={
     Object {
@@ -2002,7 +2034,7 @@ exports[`Storyshots Design System/Molecules/Card Host 1`] = `
       <div>
         <button
           className=" inline-block transition"
-          data-testid="button--underline"
+          data-testid="underline-button--atom"
           onClick={[Function]}
           style={
             Object {
@@ -2033,7 +2065,7 @@ exports[`Storyshots Design System/Molecules/Card Host 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Molecules/Card How 1`] = `
+exports[`Storyshots Molecules/Card How 1`] = `
 <div
   style={
     Object {
@@ -2097,7 +2129,7 @@ exports[`Storyshots Design System/Molecules/Card How 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Molecules/Card Nearby 1`] = `
+exports[`Storyshots Molecules/Card Nearby 1`] = `
 <div
   data-testid="nearby-card"
 >
@@ -2133,7 +2165,7 @@ exports[`Storyshots Design System/Molecules/Card Nearby 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Molecules/Card Online 1`] = `
+exports[`Storyshots Molecules/Card Online 1`] = `
 <div
   style={
     Object {
@@ -2225,7 +2257,7 @@ exports[`Storyshots Design System/Molecules/Card Online 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Molecules/Card Participate 1`] = `
+exports[`Storyshots Molecules/Card Participate 1`] = `
 <div
   data-testid="participate-card"
 >
@@ -2275,7 +2307,7 @@ exports[`Storyshots Design System/Molecules/Card Participate 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Molecules/Card Review 1`] = `
+exports[`Storyshots Molecules/Card Review 1`] = `
 <div
   data-testid="review-card"
 >
@@ -2347,7 +2379,7 @@ exports[`Storyshots Design System/Molecules/Card Review 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Molecules/Card Set 1`] = `
+exports[`Storyshots Molecules/Card Set 1`] = `
 <div
   data-testid="set-card"
 >
@@ -2400,7 +2432,7 @@ exports[`Storyshots Design System/Molecules/Card Set 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Molecules/Card Sharing 1`] = `
+exports[`Storyshots Molecules/Card Sharing 1`] = `
 <div
   data-testid="sharing-card"
 >
@@ -2437,7 +2469,7 @@ exports[`Storyshots Design System/Molecules/Card Sharing 1`] = `
 </div>
 `;
 
-exports[`Storyshots Design System/Molecules/Card Stay 1`] = `
+exports[`Storyshots Molecules/Card Stay 1`] = `
 <div
   data-testid="stay-card"
 >
@@ -2559,7 +2591,7 @@ exports[`Storyshots Design System/Molecules/Card Stay 1`] = `
                       >
                         <button
                           className=" inline-block transition"
-                          data-testid="button--paginate"
+                          data-testid="paginate-button--atom"
                           onClick={[Function]}
                           style={
                             Object {
@@ -2602,7 +2634,7 @@ exports[`Storyshots Design System/Molecules/Card Stay 1`] = `
                       >
                         <button
                           className=" inline-block transition"
-                          data-testid="button--paginate"
+                          data-testid="paginate-button--atom"
                           onClick={[Function]}
                           style={
                             Object {
@@ -2897,7 +2929,7 @@ exports[`Storyshots Design System/Molecules/Card Stay 1`] = `
                   >
                     <button
                       className=" inline-block transition"
-                      data-testid="button--paginate"
+                      data-testid="paginate-button--atom"
                       onClick={[Function]}
                       style={
                         Object {
@@ -2940,7 +2972,7 @@ exports[`Storyshots Design System/Molecules/Card Stay 1`] = `
                   >
                     <button
                       className=" inline-block transition"
-                      data-testid="button--paginate"
+                      data-testid="paginate-button--atom"
                       onClick={[Function]}
                       style={
                         Object {
@@ -3106,7 +3138,7 @@ exports[`Storyshots Design System/Molecules/Card Stay 1`] = `
               </div>
               <div>
                 <div
-                  data-testid="rating-bullet"
+                  data-testid="rating-bullet--atom"
                 >
                   <div
                     className="flex flex"
@@ -3171,7 +3203,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
 </div>
 `;
 
-exports[`Storyshots Design System/Molecules/Card Type Stay 1`] = `
+exports[`Storyshots Molecules/Card Type Stay 1`] = `
 <div
   style={
     Object {
@@ -3183,96 +3215,72 @@ exports[`Storyshots Design System/Molecules/Card Type Stay 1`] = `
     data-testid="typestay-card"
   >
     <div
-      style={
-        Object {
-          "display": "flex",
-          "height": "100%",
-          "minWidth": "100%",
-        }
-      }
+      className="block h--full w--full m-r--8"
     >
       <div
-        style={
-          Object {
-            "marginBottom": 8,
-            "marginRight": 6,
-            "marginTop": 4,
-            "width": "100%",
-          }
-        }
+        className="br--12 shadow--sm"
       >
-        <a
-          className="block h--full w--full m-r--8"
-          href="/"
-          onClick={[Function]}
-          onMouseEnter={[Function]}
+        <div
+          style={
+            Object {
+              "paddingTop": "66.6667%",
+              "position": "relative",
+            }
+          }
         >
           <div
-            className="br--12 shadow--sm"
-          >
-            <div
-              style={
-                Object {
-                  "paddingTop": "66.6667%",
-                  "position": "relative",
-                }
+            style={
+              Object {
+                "bottom": 0,
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
               }
-            >
-              <div
+            }
+          >
+            <picture>
+              <source
+                srcSet="https://a0.muscache.com/im/pictures/175f945a-a4ac-416c-bb10-7e49a927c42f.jpg?im_w=720"
+              />
+              <img
+                decoding="async"
+                src="https://a0.muscache.com/im/pictures/175f945a-a4ac-416c-bb10-7e49a927c42f.jpg?im_w=720"
                 style={
                   Object {
-                    "bottom": 0,
-                    "left": 0,
-                    "position": "absolute",
-                    "right": 0,
-                    "top": 0,
+                    "borderTopLeftRadius": 12,
+                    "borderTopRightRadius": 12,
+                    "objectFit": "cover",
                   }
                 }
-              >
-                <picture>
-                  <source
-                    srcSet="https://a0.muscache.com/im/pictures/175f945a-a4ac-416c-bb10-7e49a927c42f.jpg?im_w=720"
-                  />
-                  <img
-                    decoding="async"
-                    src="https://a0.muscache.com/im/pictures/175f945a-a4ac-416c-bb10-7e49a927c42f.jpg?im_w=720"
-                    style={
-                      Object {
-                        "borderTopLeftRadius": 12,
-                        "borderTopRightRadius": 12,
-                        "objectFit": "cover",
-                      }
-                    }
-                  />
-                </picture>
-              </div>
-            </div>
-            <div
-              className="h__card"
-              style={
-                Object {
-                  "backgroundColor": "white",
-                  "borderBottomLeftRadius": 12,
-                  "borderBottomRightRadius": 12,
-                  "padding": 16,
-                }
-              }
-            >
-              <p
-                className="weight--500 size--14 c--gray__3"
-              >
-                Type
-              </p>
-            </div>
+              />
+            </picture>
           </div>
-        </a>
+        </div>
+        <div
+          className="h__card"
+          style={
+            Object {
+              "backgroundColor": "white",
+              "borderBottomLeftRadius": 12,
+              "borderBottomRightRadius": 12,
+              "padding": 16,
+            }
+          }
+        >
+          <p
+            className="weight--500 size--14 c--gray__3"
+          >
+            Type
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`Storyshots Design System/Molecules/Card Vertical 1`] = `
+exports[`Storyshots Molecules/Card Vertical 1`] = `
 <div
   data-testid="vertical-card"
 >
@@ -3402,7 +3410,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
 </div>
 `;
 
-exports[`Storyshots Design System/Molecules/Card Works 1`] = `
+exports[`Storyshots Molecules/Card Works 1`] = `
 <div
   data-testid="works-card"
 >
@@ -3437,6 +3445,26 @@ exports[`Storyshots Design System/Molecules/Card Works 1`] = `
         </div>
       </div>
     </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Particles/Animation Loading 1`] = `
+<div
+  data-testid="animation"
+>
+  <div
+    className="circle__wrapper"
+  >
+    <span
+      className="circle__content circle__1 bg--white"
+    />
+    <span
+      className="circle__content circle__2 bg--white"
+    />
+    <span
+      className="circle__content circle__3 bg--white"
+    />
   </div>
 </div>
 `;

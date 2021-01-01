@@ -2,7 +2,7 @@
 import menubar from "@bar/bar.module.scss";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /**
  * Renders the menubar component

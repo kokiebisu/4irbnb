@@ -10,7 +10,7 @@ import color from "@styles/color.module.scss";
 
 /** components */
 import { Input } from "@input/input.component";
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 import { Bullet } from "@bullet";
 
 /** Helper */
@@ -259,7 +259,7 @@ export const SignupTemplate: React.FC<{}> = () => {
         </div>
         <div className={[space["m-t--16"]].join(" ")}>
           <Button
-            {...primary.args}
+            variant="primary"
             title="Agree and continue"
             loading={loading}
             block

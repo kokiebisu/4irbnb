@@ -1,9 +1,7 @@
-import React from "react";
-
 /** styles **/
-import space from "../styles/space.module.scss";
-import font from "../styles/font.module.scss";
-import color from "../styles/color.module.scss";
+import space from "@styles/space.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
 
 /**
  * Renders the Input which appears in the /become-a-host

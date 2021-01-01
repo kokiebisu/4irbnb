@@ -6,7 +6,7 @@ import layout from "@styles/layout.module.scss";
 
 /** components */
 import { Input } from "@input/input.component";
-import { Layout } from "@layout/layout.component";
+import { Layout } from "@layout";
 
 export const PeriodCreate: React.FC<{ setData?: any; data?: any }> = ({
   setData,
