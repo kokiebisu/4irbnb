@@ -7,7 +7,7 @@ import layout from "@styles/layout.module.scss";
 /** components */
 import { Input } from "@input/input.component";
 import { Layout } from "@layout/layout.component";
-import { Bullet } from "@bullet/bullet.component";
+import { Bullet } from "@bullet";
 
 export const ScenariosCreate: React.FC<{}> = () => {
   return (

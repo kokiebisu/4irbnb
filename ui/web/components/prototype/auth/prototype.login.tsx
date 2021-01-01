@@ -13,7 +13,7 @@ import layout from "@styles/layout.module.scss";
 /** components */
 import { Input } from "@input/input.component";
 import { Button } from "@button/button.component";
-import { Bullet } from "@bullet/bullet.component";
+import { Bullet } from "@bullet";
 import { Card } from "@card/card.component";
 
 /** Helper */

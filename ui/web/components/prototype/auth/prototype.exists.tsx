@@ -3,7 +3,7 @@ import Router from "next/router";
 import { useFormik } from "formik";
 
 /** components */
-import { Bullet } from "@bullet/bullet.component";
+import { Bullet } from "@bullet";
 import { Button } from "@button/button.component";
 import { Input } from "@input/input.component";
 

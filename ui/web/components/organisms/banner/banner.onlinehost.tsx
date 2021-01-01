@@ -7,7 +7,7 @@ import banner from "@banner/banner.module.scss";
 
 /** components */
 import { Button } from "@button/button.component";
-import { Bullet } from "@bullet/bullet.component";
+import { Bullet } from "@bullet";
 
 /** stories */
 import { primary } from "@button/button.stories";

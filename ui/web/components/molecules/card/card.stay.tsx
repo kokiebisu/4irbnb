@@ -10,7 +10,7 @@ import responsive from "@styles/responsive.module.scss";
 import { Heart } from "@svg/original";
 
 /** components */
-import { Bullet } from "@bullet/bullet.component";
+import { Bullet } from "@bullet";
 import { ImageSlider } from "@particle/image.slider";
 import { Card } from "@card/card.component";
 

@@ -1,5 +1,5 @@
 /** components */
-import { Bullet } from "@bullet/bullet.component";
+import { Bullet } from "@bullet";
 
 /** styles */
 import layout from "@styles/layout.module.scss";

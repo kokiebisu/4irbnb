@@ -6,7 +6,7 @@ import color from "@styles/color.module.scss";
 import shape from "@styles/shape.module.scss";
 
 /** components */
-import { Bullet } from "@bullet/bullet.component";
+import { Bullet } from "@bullet";
 
 /** vectors */
 import { DevicesInverse, Star } from "@svg/original";
