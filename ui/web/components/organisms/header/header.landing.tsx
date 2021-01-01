@@ -204,7 +204,7 @@ export const TransparentHeader: React.FC<{
                           <button onClick={() => setCategory("stay")}>
                             <div className={[space["p-b--8"]].join(" ")}>
                               <p
-                                className={`${[color["c--black"]].join(" ")} ${[
+                                className={`${[color["c--white"]].join(" ")} ${[
                                   responsive["size__12_to_14--md"],
                                   responsive["weight__500_to_300--md"],
                                 ].join(" ")}`}

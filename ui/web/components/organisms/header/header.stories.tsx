@@ -12,11 +12,11 @@ export default {
 
 const TemplateStory: Story<HeaderProps> = (args) => <Header {...args} />;
 
-export const transparent = TemplateStory.bind({});
-transparent.args = {
-  variant: "transparent",
+export const landing = TemplateStory.bind({});
+landing.args = {
+  variant: "landing",
 };
-transparent.argTypes = {
+landing.argTypes = {
   criteria: {
     control: "boolean",
   },
