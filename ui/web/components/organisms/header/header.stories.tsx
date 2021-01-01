@@ -2,6 +2,8 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Header, HeaderProps } from "@header/header.component";
 
+import shape from "@styles/shape.module.scss";
+
 export default {
   title: "Organisms/Header",
   component: Header,
@@ -13,6 +15,11 @@ const TemplateStory: Story<HeaderProps> = (args) => <Header {...args} />;
 export const transparent = TemplateStory.bind({});
 transparent.args = {
   variant: "transparent",
+};
+transparent.argTypes = {
+  criteria: {
+    control: "boolean",
+  },
 };
 
 export const white = TemplateStory.bind({});
