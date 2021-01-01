@@ -38,21 +38,17 @@ export const StayCard: React.FC<{
   ratings?: number;
   reviews?: number;
 }> = ({
-  images = [
-    "https://a0.muscache.com/im/pictures/miso/Hosting-46142496/original/f81fdaca-1791-4de6-ba56-d3e5ce9406d1.jpeg?im_w=720",
-    "https://a0.muscache.com/im/pictures/miso/Hosting-46142496/original/f81fdaca-1791-4de6-ba56-d3e5ce9406d1.jpeg?im_w=720",
-    "https://a0.muscache.com/im/pictures/miso/Hosting-46142496/original/f81fdaca-1791-4de6-ba56-d3e5ce9406d1.jpeg?im_w=720",
-  ],
-  typeStay = "Entire apartment",
-  location = "Vacation",
-  title = "Exquisite Home In The Heart Of YALETOWN",
+  images,
+  typeStay = "Type of stay",
+  location = "Location",
+  title = "Title of stay",
   accomodations = {
     guests: 1,
     bedroom: 1,
     beds: 1,
     bath: 1,
   },
-  characteristics = ["wifi"],
+  characteristics = ["characteristic"],
 }) => {
   return (
     <div>

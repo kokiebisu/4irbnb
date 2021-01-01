@@ -4,7 +4,7 @@ import { ExperiencesHeader } from "@header/header.experiences";
 import { HomesHeader } from "@header/header.homes";
 import { OnlineHostHeader } from "@header/header.onlinehost";
 import { StayHeader } from "@header/header.stay";
-import { TransparentHeader } from "@organisms/header/header.landing";
+import { TransparentHeader } from "@header/header.landing";
 import { WhiteHeader } from "@header/header.white";
 
 export interface HeaderProps {

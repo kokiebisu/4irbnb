@@ -4,9 +4,6 @@ import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";
 import card from "@card/card.module.scss";
 
-/** Contents */
-import { nearbyPic } from "@content";
-
 /** Logic */
 import { renderSize } from "./logic/logic.nearby";
 
@@ -19,22 +16,39 @@ import { renderSize } from "./logic/logic.nearby";
  */
 export const NearbyCard: React.FC<{
   imgUrl?: string;
-  city?: string;
-  hours?: number;
+  title?: string;
+  description?: string;
   size?: "sm" | "lg";
-}> = ({ imgUrl = nearbyPic[0], city = "City", hours = 1, size = "sm" }) => {
+}> = ({
+  imgUrl,
+  title = "Title",
+  description = "Description",
+  size = "sm",
+}) => {
+  console.log(imgUrl);
   return (
     <div className={[layout["flex"], layout["items-center"]].join(" ")}>
       <div
         className={`${renderSize(card, size)} ${[space["m-r--12"]].join(" ")}`}
       >
-        <img src={imgUrl} style={{ borderRadius: 10 }} />
+        {imgUrl ? (
+          <img src={imgUrl} style={{ borderRadius: 10 }} />
+        ) : (
+          <div
+            style={{
+              height: 50,
+              width: 50,
+              borderRadius: 10,
+              backgroundColor: "lightgray",
+            }}
+          />
+        )}
       </div>
       <div>
         <h3 className={[font["size--15"], space["m-b--4"]].join(" ")}>
-          {city}
+          {title}
         </h3>
-        <p className={[font["size--15"]].join(" ")}>{hours} hour drive</p>
+        <p className={[font["size--15"]].join(" ")}>{description}</p>
       </div>
     </div>
   );
