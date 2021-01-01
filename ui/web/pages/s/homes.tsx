@@ -8,7 +8,7 @@ import { useToggleState } from "../../context/toggle";
 import layout from "../../styles/layout.module.scss";
 
 /** components */
-import { Prototype } from "@prototype";
+import { Prototype as HomesPrototype } from "@prototype/homes";
 import { Modal } from "../../components/organisms/modal/modal.component";
 
 /** styles */
@@ -44,7 +44,7 @@ const Homes = () => {
   return (
     <div className={[homes["display__content"]].join(" ")}>
       <div className={[homes["w__section"]].join(" ")}>
-        <Prototype
+        <HomesPrototype
           variant={type}
           city={city}
           stayType={stayType}

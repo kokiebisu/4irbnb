@@ -1,16 +1,16 @@
 import React from "react";
 
 /** components */
-import { Header } from "../../components/organisms/header/header.component";
-import { Create } from "../../components/prototype/create/create.component";
+import { Header } from "@organisms/header/header.component";
+import { Prototype as CreatePrototype } from "@prototype/create";
 
 /** styles **/
-import responsive from "../../styles/responsive.module.scss";
-import layout from "../../styles/layout.module.scss";
-import space from "../../styles/space.module.scss";
+import responsive from "@styles/responsive.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
 
 /** hooks */
-import { useTabTitle } from "../../hooks/useTabTitle";
+import { useTabTitle } from "@hooks/useTabTitle";
 
 const BecomeAHostPage = () => {
   useTabTitle(
@@ -37,7 +37,7 @@ const BecomeAHostPage = () => {
                 width: "100%",
               }}
             >
-              <Create variant="getstarted" />
+              <CreatePrototype variant="getstarted" />
             </div>
           </div>
           <div

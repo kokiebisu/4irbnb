@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import { Layout } from "layout/layout.component";
-import { useStayDispatch, useStayState } from "../../context/stay";
 import Router from "next/router";
-import { Create } from "../../components/prototype/create/create.component";
+
+/** components */
+import { Layout } from "layout/layout.component";
+import { Prototype as CreatePrototype } from "../../components/prototype/create";
+
+/** context */
+import { useStayDispatch, useStayState } from "../../context/stay";
 
 const PeriodPage = () => {
   const stayDispatch = useStayDispatch();
@@ -32,7 +36,7 @@ const PeriodPage = () => {
     <Layout
       variant="create"
       title="Calendar and availability"
-      left={<Create variant="period" data={data} setData={setData} />}
+      left={<CreatePrototype variant="period" data={data} setData={setData} />}
       percentage={90}
       next={proceed}
       back={revert}

@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import Router from "next/router";
 
 /** components */
-import { Create } from "@prototype/create/create.component";
+import { Prototype as CreatePrototype } from "@prototype/create";
 import { Layout } from "layout/layout.component";
+
+/** contexts */
 import { useStayDispatch, useStayState } from "context/stay";
 
 const AdvancePage = () => {
@@ -32,7 +34,7 @@ const AdvancePage = () => {
     <Layout
       variant="create"
       title="Calendar and availability"
-      left={<Create variant="advance" data={data} setData={setData} />}
+      left={<CreatePrototype variant="advance" data={data} setData={setData} />}
       percentage={85}
       next={proceed}
       back={revert}

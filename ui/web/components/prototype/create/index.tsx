@@ -23,7 +23,7 @@ export interface CreateProps {
   [property: string]: any;
 }
 
-export const Create: React.FC<CreateProps> = ({
+export const Prototype: React.FC<CreateProps> = ({
   variant = "getstarted",
   ...props
 }) => {
@@ -47,5 +47,7 @@ export const Create: React.FC<CreateProps> = ({
     scenarios: <ScenariosCreate {...props} />,
     photos: <PhotosCreate {...props} />,
   };
-  return <div data-testid={`${variant}-create`}>{variants[variant]}</div>;
+  return (
+    <div data-testid={`${variant}-create-prototype`}>{variants[variant]}</div>
+  );
 };

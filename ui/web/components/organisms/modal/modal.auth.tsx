@@ -8,13 +8,11 @@ import modal from "./modal.module.scss";
 
 /** components */
 import { Button } from "@button/button.component";
+import { Prototype as AuthPrototype } from "@prototype/auth";
 
 /** contexts */
 import { useToggleDispatch } from "@context/toggle";
 import { useAuthDispatch, useAuthState } from "@context/auth";
-
-/** content */
-import { AuthContent } from "@modal/content/content.auth";
 
 /**
  * Renders the auth modal
@@ -68,7 +66,7 @@ export const AuthModal: React.FC<{}> = () => {
           </div>
         </div>
       </div>
-      <AuthContent />
+      <AuthPrototype variant={authState.display} />
     </div>
   );
 };

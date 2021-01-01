@@ -17,7 +17,7 @@ import responsive from "@styles/responsive.module.scss";
 import { menu as menuModal } from "@modal/modal.stories";
 import { Modal } from "@modal/modal.component";
 import { Button } from "@button/button.component";
-import { Prototype } from "@prototype";
+import { Prototype } from "@prototype/searchbar";
 
 /** vectors */
 import { NameLogo, NoNameLogo } from "@svg/logo";
@@ -26,7 +26,6 @@ import { NameLogo, NoNameLogo } from "@svg/logo";
 import { useToggleDispatch, useToggleState } from "@context/toggle";
 
 /** stories */
-import { Bar } from "@bar/bar.component";
 import { Content } from "@button/content/content.transparent";
 import useOnClickOutside from "@hooks/useOnClickOutside";
 import { useHandleScroll } from "@hooks/useHandleScroll";
@@ -192,7 +191,7 @@ export const TransparentHeader: React.FC<{
                   animate={{ opacity: 1, y: 0 }}
                   style={{ position: "relative" }}
                 >
-                  <Prototype variant="searchbar" />
+                  <Prototype variant="stay" />
                 </motion.div>
               ) : (
                 <motion.div

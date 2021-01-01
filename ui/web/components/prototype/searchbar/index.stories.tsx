@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Prototype, PrototypeProps } from "@prototype";
+import { Prototype, PrototypeProps } from "@prototype/searchbar";
 
 export default {
   title: "Prototypes/Searchbar",
@@ -10,11 +10,11 @@ export default {
 
 const TemplateStory: Story<PrototypeProps> = (args) => <Prototype {...args} />;
 
-export const Searchbar = TemplateStory.bind({});
-Searchbar.args = {
+export const Stay = TemplateStory.bind({});
+Stay.args = {
   variant: "searchbar",
 };
-Searchbar.decorators = [
+Stay.decorators = [
   (Story) => (
     <div style={{ maxWidth: 720 }}>
       <Story />

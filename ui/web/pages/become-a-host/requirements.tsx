@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import { Layout } from "../../layout/layout.component";
-import { useStayDispatch, useStayState } from "../../context/stay";
+import React from "react";
 import Router from "next/router";
-import { Create } from "../../components/prototype/create/create.component";
+
+/** components */
+import { Layout } from "../../layout/layout.component";
+import { Prototype as CreatePrototype } from "../../components/prototype/create";
 
 const RequirementsPage = () => {
   const proceed = () => {
@@ -20,7 +21,7 @@ const RequirementsPage = () => {
   return (
     <Layout
       variant="create"
-      left={<Create title="Booking settings" variant="requirements" />}
+      left={<CreatePrototype title="Booking settings" variant="requirements" />}
       percentage={80}
       next={proceed}
       back={revert}

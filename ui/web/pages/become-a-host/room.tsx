@@ -5,14 +5,9 @@ import Router from "next/router";
 import { useStayDispatch, useStayState } from "../../context/stay";
 
 /** components */
-import { Create } from "../../components/prototype/create/create.component";
-import {
-  inputTypes,
-  properties,
-} from "../../components/atoms/input/logic/logic.types";
-
-/** styles **/
-import { Layout } from "../../layout/layout.component";
+import { Prototype as CreatePrototype } from "@prototype/create";
+import { inputTypes, properties } from "@input/logic/logic.types";
+import { Layout } from "@layout/layout.component";
 
 const RoomPage = () => {
   const stayDispatch = useStayDispatch();
@@ -71,7 +66,7 @@ const RoomPage = () => {
     <Layout
       variant="create"
       left={
-        <Create
+        <CreatePrototype
           title="Property and guests"
           variant="room"
           data={data}
