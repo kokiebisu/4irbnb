@@ -3,7 +3,7 @@ import React from "react";
 import { Layout, LayoutProps } from ".";
 
 export default {
-  title: "Design Systems/Layout",
+  title: "Layout",
   component: Layout,
 } as Meta;
 

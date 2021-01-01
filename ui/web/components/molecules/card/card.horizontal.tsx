@@ -26,11 +26,7 @@ export const HorizontalCard: React.FC<{
   superhost?: boolean;
 }> = ({
   card = {
-    images: [
-      "https://a0.muscache.com/im/pictures/7e0063fa-d325-49ae-a6f6-285fe9928da4.jpg?im_w=720",
-      "https://a0.muscache.com/im/pictures/682aa552-1a91-4736-86a2-3d12cb316d07.jpg?im_w=720",
-      "https://a0.muscache.com/im/pictures/924798e4-2fe1-47de-9636-947332829bcc.jpg?im_w=720",
-    ],
+    images: undefined,
     type: "Type of Stay",
     ratings: 5.0,
     location: "Location",
@@ -54,14 +50,26 @@ export const HorizontalCard: React.FC<{
         >
           <div style={{ height: "100%" }}>
             <div className={[layout["relative"], shape["h--full"]].join(" ")}>
-              <div className={[shape["br--12"], shape["h--full"]].join(" ")}>
-                <ImageSlider slides={card.images} />
-              </div>
+              {card.images ? (
+                <div className={[shape["br--12"], shape["h--full"]].join(" ")}>
+                  <ImageSlider slides={card.images} />
+                </div>
+              ) : (
+                <div
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    borderRadius: 12,
+                    backgroundColor: "lightgray",
+                  }}
+                />
+              )}
               <div
                 className={[
                   space["p-v--8"],
                   space["p-h--10"],
                   layout["at--0"],
+                  layout["flex"],
                   layout["justify-between"],
                   shape["w--full"],
                 ].join(" ")}

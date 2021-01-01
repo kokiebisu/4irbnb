@@ -7,7 +7,7 @@ import { Button } from "@button";
 import particle from "@particle/particle.module.scss";
 
 /** stories */
-import { paginate } from "@button/button.stories";
+import { Paginate } from "@button/button.stories";
 
 const Dots = ({ slides, activeSlide }) => {
   return (
@@ -44,16 +44,17 @@ const Slide = ({ slide }) => {
       style={{
         height: "100%",
         width: "100%",
-        backgroundImage: `url(${slide})`,
+        backgroundImage: slide && `url(${slide})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
+        backgroundColor: !slide && "lightgray",
       }}
     />
   );
 };
 
-export const ImageSlider = ({ slides }) => {
+export const ImageSlider = ({ slides = [undefined, undefined, undefined] }) => {
   const [style, setStyle] = useState({
     opacity: 0,
   });
@@ -159,7 +160,7 @@ export const ImageSlider = ({ slides }) => {
         }}
       >
         <Button
-          variant="paginate"
+          {...Paginate.args}
           animate
           direction="left"
           onClick={previousSlide}

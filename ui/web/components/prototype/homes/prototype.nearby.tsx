@@ -15,7 +15,7 @@ import { Footer } from "@footer/footer.component";
 import { Button } from "@button";
 
 /** stories */
-import { filter } from "@button/button.stories";
+import { Filter } from "@button/button.stories";
 
 /**
  * Renders the nearby template component
@@ -64,13 +64,13 @@ export const NearbyPrototype: React.FC<{
             {filters.map((filter, index) => {
               return (
                 <div key={index} className={[space["m-r--8"]].join(" ")}>
-                  <Button {...filter.args} name={filter.name} />
+                  <Button {...Filter.args} name={filter.name} />
                 </div>
               );
             })}
           </div>
           <div className={[shape["only__sm"]].join(" ")}>
-            <Button {...filter.args} name={`filters ${filterCount}`} />
+            <Button {...Filter.args} name={`filters ${filterCount}`} />
           </div>
         </div>
         {city && (
