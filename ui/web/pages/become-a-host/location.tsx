@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Layout } from "layout/layout.component";
 import { useStayDispatch, useStayState } from "../../context/stay";
 import Router from "next/router";
-import { Create } from "../../components/organisms/create/create.component";
+import { Create } from "../../components/prototype/create/create.component";
 
 const BedRoomsPage = () => {
   const stayDispatch = useStayDispatch();

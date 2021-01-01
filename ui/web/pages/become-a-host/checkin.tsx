@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Router from "next/router";
 
 /** components */
-import { Create } from "components/organisms/create/create.component";
+import { Create } from "@prototype/create/create.component";
 import { Layout } from "layout/layout.component";
 import { useStayDispatch, useStayState } from "context/stay";
 
