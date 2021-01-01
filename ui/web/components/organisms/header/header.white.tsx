@@ -10,7 +10,7 @@ import color from "@styles/color.module.scss";
 /** components */
 import { menu as menuModal } from "@modal/modal.stories";
 import { Modal } from "@modal/modal.component";
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** contexts */
 import { useToggleDispatch, useToggleState } from "@context/toggle";

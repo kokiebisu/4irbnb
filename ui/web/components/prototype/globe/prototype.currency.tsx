@@ -1,5 +1,5 @@
 /** components */
-import { Layout } from "@layout/layout.component";
+import { Layout } from "@layout";
 
 /** styles */
 import space from "@styles/space.module.scss";

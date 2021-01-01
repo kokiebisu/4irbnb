@@ -1,6 +1,6 @@
 /** components */
 import { Input } from "@input/input.component";
-import { Layout } from "@layout/layout.component";
+import { Layout } from "@layout";
 
 /** styles **/
 import font from "@styles/font.module.scss";

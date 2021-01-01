@@ -1,10 +1,8 @@
-import React from "react";
-
 /** styles */
-import space from "../../styles/space.module.scss";
-import layout from "../../styles/layout.module.scss";
-import index from "../../styles/index.module.scss";
-import color from "../../styles/color.module.scss";
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import index from "@styles/index.module.scss";
+import color from "@styles/color.module.scss";
 
 export const LandingLayout: React.FC<{
   title?: string;

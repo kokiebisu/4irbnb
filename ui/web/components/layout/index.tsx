@@ -1,5 +1,3 @@
-import React from "react";
-
 /** layouts */
 import { InputLayout } from "@layout/layout.input";
 import { CreateLayout } from "@layout/layout.create";

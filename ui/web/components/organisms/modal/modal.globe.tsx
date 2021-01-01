@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** styles */
 import layout from "@styles/layout.module.scss";

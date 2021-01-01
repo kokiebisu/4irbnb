@@ -18,7 +18,7 @@ import shape from "@styles/shape.module.scss";
 import { nearby } from "../data/stays";
 
 /** layout */
-import { Layout } from "@layout/layout.component";
+import { Layout } from "@layout";
 
 /** components */
 import { Animation } from "@animation/animation.component";

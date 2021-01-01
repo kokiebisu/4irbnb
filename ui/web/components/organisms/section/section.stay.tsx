@@ -11,7 +11,7 @@ import section from "@section/section.module.scss";
 
 /** components */
 import { Card } from "@card/card.component";
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** stories */
 import { paginate } from "@button/button.stories";
@@ -166,7 +166,7 @@ export const StaySection: React.FC<{
           <div className={[layout["flex"], layout["items-center"]].join(" ")}>
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
-                {...paginate.args}
+                variant="paginate"
                 animate
                 direction="left"
                 onClick={previous}
@@ -175,7 +175,7 @@ export const StaySection: React.FC<{
             </div>
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
-                {...paginate.args}
+                variant="paginate"
                 animate
                 direction="right"
                 onClick={next}
@@ -261,10 +261,10 @@ export const StaySection: React.FC<{
                     </p>
                   </div>
                   <div className={[space["m-r--6"]].join(" ")}>
-                    <Button {...paginate.args} animate direction="left" />
+                    <Button variant="paginate" animate direction="left" />
                   </div>
                   <div>
-                    <Button {...paginate.args} animate direction="right" />
+                    <Button variant="paginate" animate direction="right" />
                   </div>
                 </div>
               )}

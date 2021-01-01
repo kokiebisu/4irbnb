@@ -1,16 +1,12 @@
 import { useFormik } from "formik";
 
-/** contexts */
-import { useAuthDispatch, useAuthState } from "@context/auth";
-
 /** styles **/
 import space from "@styles/space.module.scss";
-import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 
 /** components */
 import { Input } from "@input/input.component";
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 import { Bullet } from "@bullet";
 
 /** Helpers */
@@ -72,7 +68,7 @@ export const ForgotPasswordPrototype: React.FC<{}> = () => {
           </div>
           <div className={[].join(" ")}>
             <Button
-              {...primary.args}
+              variant="primary"
               size="md"
               fill="black"
               title="Send reset link"

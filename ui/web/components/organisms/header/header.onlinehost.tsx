@@ -7,7 +7,7 @@ import space from "@styles/space.module.scss";
 import header from "@header/header.module.scss";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** vectors */
 import { NoNameLogo } from "@svg/logo";

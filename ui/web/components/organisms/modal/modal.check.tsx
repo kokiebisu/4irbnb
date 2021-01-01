@@ -9,7 +9,7 @@ import font from "@styles/font.module.scss";
 import { ChevronLeft, ChevronRight } from "@svg/regular";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 export const CheckModal: React.FC<{}> = () => {
   return (

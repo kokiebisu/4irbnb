@@ -76,8 +76,6 @@ const ToggleProvider = ({ children }: ToggleProviderProps) => {
     checkout: false,
   });
 
-  console.log("state", state);
-
   return (
     <ToggleStateContext.Provider value={state}>
       <ToggleDispatchContext.Provider value={dispatch}>

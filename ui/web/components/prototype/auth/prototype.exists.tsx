@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 
 /** components */
 import { Bullet } from "@bullet";
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 import { Input } from "@input/input.component";
 
 /** Helpers */
@@ -102,7 +102,7 @@ export const ExistsPrototype: React.FC<{
           />
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
-          <Button {...primary.args} loading={loading} title="Log in" />
+          <Button variant="primary" loading={loading} title="Log in" />
         </div>
         <div>
           {formik.errors.password !== undefined && (

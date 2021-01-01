@@ -8,7 +8,7 @@ import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 import { Input } from "@input/input.component";
 
 /** contexts */
@@ -100,7 +100,7 @@ export const GetStartedCreate: React.FC<{}> = () => {
             >
               <div style={{ width: "100%" }}>
                 <Button
-                  {...primary.args}
+                  variant="primary"
                   title="Continue"
                   size="sm"
                   loading={loading}

@@ -9,7 +9,7 @@ import space from "@styles/space.module.scss";
 import animation from "@styles/animation.module.scss";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 export const VerifyInput: React.FC<{
   value?: string;

@@ -1,5 +1,5 @@
 /** components */
-import { Layout } from "@layout/layout.component";
+import { Layout } from "@layout";
 import { Bullet } from "@bullet";
 
 /** styles */

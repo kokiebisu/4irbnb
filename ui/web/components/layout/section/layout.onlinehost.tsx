@@ -1,10 +1,8 @@
-import React from "react";
-
 /** styles */
-import space from "../../styles/space.module.scss";
-import layout from "../../styles/layout.module.scss";
-import color from "../../styles/color.module.scss";
-import responsive from "../../styles/responsive.module.scss";
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import color from "@styles/color.module.scss";
+import responsive from "@styles/responsive.module.scss";
 
 export const OnlineHostLayout: React.FC<{
   title?: string;

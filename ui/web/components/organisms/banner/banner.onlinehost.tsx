@@ -6,7 +6,7 @@ import space from "@styles/space.module.scss";
 import banner from "@banner/banner.module.scss";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 import { Bullet } from "@bullet";
 
 /** stories */
@@ -44,7 +44,7 @@ export const OnlineHostBanner: React.FC<{}> = () => {
         </h4>
       </div>
       <div className={[space["m-v--40"]].join(" ")}>
-        <Button {...primary.args} title="Get started" />
+        <Button variant="primary" title="Get started" />
       </div>
       <div className={[space["m-v--32"]].join(" ")}>
         <img

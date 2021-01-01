@@ -16,7 +16,7 @@ import responsive from "@styles/responsive.module.scss";
 /** components */
 import { menu as menuModal } from "@modal/modal.stories";
 import { Modal } from "@modal/modal.component";
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 import { Prototype as SearchbarPrototype } from "@prototype/searchbar";
 
 /** vectors */

@@ -10,7 +10,7 @@ import header from "@header/header.module.scss";
 import { NoNameLogo } from "@svg/logo";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /**
  * Renders the header for the homes page

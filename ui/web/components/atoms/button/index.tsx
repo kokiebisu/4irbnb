@@ -22,13 +22,13 @@ import { LinkButton } from "@button/button.link";
 import { SearchButton } from "@button/button.search";
 import { LocationButton } from "@button/button.location";
 import { LogoButton } from "@button/button.logo";
+import { NearbyButton } from "@button/button.nearby";
+import { CalendarButton } from "@button/button.calendar";
 
 /** styles **/
 import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 import animation from "@styles/animation.module.scss";
-import { NearbyButton } from "./button.nearby";
-import { CalendarButton } from "./button.calendar";
 
 export interface ButtonProps {
   extendsTo?: string;
@@ -47,7 +47,7 @@ export interface ButtonProps {
  */
 export const Button: React.FC<ButtonProps> = ({
   extendsTo = "",
-  variant,
+  variant = "auth",
   children,
   onClick,
   to,
@@ -88,7 +88,7 @@ export const Button: React.FC<ButtonProps> = ({
       transition={{ duration: 0.1, ease: "easeInOut" }}
       whileTap={{ scale: disable || !animate ? 1 : 0.995 }}
       whileHover={{ scale: disable || !animate ? 1 : 1.005 }}
-      data-testid={`button--${variant}`}
+      data-testid={`${variant}-button--atom`}
       className={`${extendsTo} ${
         block
           ? [layout["block"], shape["w--full"]].join(" ")

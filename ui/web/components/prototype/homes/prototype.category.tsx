@@ -7,7 +7,7 @@ import shape from "@styles/shape.module.scss";
 /** components */
 import { Section } from "@section/section.component";
 import { Bar } from "@bar/bar.component";
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** stories */
 import { filter } from "@button/button.stories";

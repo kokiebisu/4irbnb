@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/react/types-6-0";
 import React from "react";
-import { Layout, LayoutProps } from "./layout.component";
+import { Layout, LayoutProps } from ".";
 
 export default {
   title: "Design Systems/Layout",

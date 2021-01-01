@@ -1,5 +1,5 @@
 /** Layouts */
-import { Layout } from "@layout/layout.component";
+import { Layout } from "@layout";
 
 /** styles **/
 import layout from "@styles/layout.module.scss";
@@ -7,7 +7,7 @@ import space from "@styles/space.module.scss";
 
 /** components */
 import { Card } from "@card/card.component";
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** stories */
 import { border } from "@button/button.stories";

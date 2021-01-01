@@ -1,8 +1,6 @@
 /** components */
 import { Card } from "@card/card.component";
-
-/** layouts */
-import { Layout } from "@layout/layout.component";
+import { Layout } from "@layout";
 
 /**
  * Renders the All section

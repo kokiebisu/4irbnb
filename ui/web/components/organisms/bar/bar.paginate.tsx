@@ -1,7 +1,7 @@
 import Router from "next/router";
 
 /** components */
-import { Button } from "@button/button.component";
+import { Button } from "@button";
 
 /** styles **/
 import layout from "@styles/layout.module.scss";
@@ -440,7 +440,7 @@ export const PaginateBar: React.FC<{
       <div className={[layout["flex"], layout["items-center"]].join(" ")}>
         {page !== 1 && (
           <Button
-            {...paginate.args}
+            variant="paginate"
             animate
             direction="left"
             onClick={() => Router.push(`/s/homes/page/${page - 1}`)}
@@ -449,7 +449,7 @@ export const PaginateBar: React.FC<{
         <div className={[space["m-h--8"]].join(" ")}>{displayContent()}</div>
         {page !== total && (
           <Button
-            {...paginate.args}
+            variant="paginate"
             animate
             direction="right"
             onClick={() => Router.push(`/s/homes/page/${page + 1}`)}

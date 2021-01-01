@@ -1,22 +1,21 @@
 import React from "react";
 import { screen, fireEvent, render, cleanup } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import { Button } from "../button.component";
-import { banner } from "../button.stories";
+import { Button } from "@button";
 
 afterEach(cleanup);
 
 describe("banner button", () => {
   it("renders correctly", () => {
     const { getByTestId } = render(
-      <Button {...banner.args} onClick={() => console.log("clicked")} />
+      <Button variant="banner" onClick={() => console.log("clicked")} />
     );
-    expect(getByTestId("button--banner")).toHaveTextContent("Button");
+    expect(getByTestId("banner-button--atom")).toHaveTextContent("Button");
   });
 
   it("calls onClick prop when clicked", () => {
     const handleClick = jest.fn();
-    render(<Button {...banner.args} onClick={handleClick} />);
+    render(<Button variant="banner" onClick={handleClick} />);
     fireEvent.click(screen.getByText(/Button/i));
     expect(handleClick).toHaveBeenCalledTimes(1);
   });

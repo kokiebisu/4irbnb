@@ -6,9 +6,8 @@ import layout from "@styles/layout.module.scss";
 import animation from "@styles/animation.module.scss";
 
 /** components */
-import { Button } from "@button/button.component";
-import React from "react";
-import { Layout } from "@layout/layout.component";
+import { Button } from "@button";
+import { Layout } from "@layout";
 
 export const LocationModal: React.FC<{}> = () => {
   const recentLocations = [
