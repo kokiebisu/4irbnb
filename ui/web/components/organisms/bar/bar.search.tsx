@@ -1,9 +1,6 @@
-import { useState } from "react";
-
 import { motion } from "framer-motion";
 
 /** styles */
-import header from "@header/header.module.scss";
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import shape from "@styles/shape.module.scss";
@@ -33,106 +30,60 @@ export const SearchBar: React.FC<{
   transparent,
 }) => {
   const dispatchToggle = useToggleDispatch();
+  const types = {
+    stay: {
+      title: "Places to stay",
+    },
+    experiences: {
+      title: "Experiences",
+    },
+    online: {
+      title: "Online Experiences",
+    },
+  };
+
   return (
     <div>
       <div className={[space["m-b--16"], space["m-t--12"]].join(" ")}>
         <div className={[layout["flex"], layout["justify-center"]].join(" ")}>
-          <div className={[space["m-h--16"]].join(" ")}>
-            <button onClick={() => setCategory("stay")}>
-              <div className={[space["p-b--8"]].join(" ")}>
-                <p
-                  className={`${
-                    transparent
-                      ? [color["c--white"]].join(" ")
-                      : [color["c--black"]].join(" ")
-                  } ${[
-                    responsive["size__12_to_14--md"],
-                    responsive["weight__500_to_300--md"],
-                  ].join(" ")}`}
-                >
-                  Places to stay
-                </p>
+          {Object.keys(types).map((type, index) => {
+            return (
+              <div key={index} className={[space["m-h--16"]].join(" ")}>
+                <button onClick={() => setCategory("stay")}>
+                  <div className={[space["p-b--8"]].join(" ")}>
+                    <p
+                      className={`${
+                        transparent
+                          ? [color["c--white"]].join(" ")
+                          : [color["c--black"]].join(" ")
+                      } ${[
+                        responsive["size__12_to_14--md"],
+                        responsive["weight__500_to_300--md"],
+                      ].join(" ")}`}
+                    >
+                      {types[type].title}
+                    </p>
+                  </div>
+                  <div
+                    className={[layout["flex"], layout["justify-center"]].join(
+                      " "
+                    )}
+                  >
+                    {category === type && (
+                      <motion.div
+                        initial={{ width: 3 }}
+                        animate={{ width: 15 }}
+                        style={{
+                          height: 2,
+                          backgroundColor: transparent ? "white" : "black",
+                        }}
+                      />
+                    )}
+                  </div>
+                </button>
               </div>
-              <div
-                className={[layout["flex"], layout["justify-center"]].join(" ")}
-              >
-                {category === "stay" && (
-                  <motion.div
-                    initial={{ width: 3 }}
-                    animate={{ width: 15 }}
-                    style={{
-                      height: 2,
-                      backgroundColor: transparent ? "white" : "black",
-                    }}
-                  />
-                )}
-              </div>
-            </button>
-          </div>
-          <div className={[space["m-h--16"]].join(" ")}>
-            <button onClick={() => setCategory("experiences")}>
-              <div className={[space["p-b--8"]].join(" ")}>
-                <p
-                  className={`${
-                    transparent
-                      ? [color["c--white"]].join(" ")
-                      : [color["c--black"]].join(" ")
-                  } ${[
-                    responsive["size__12_to_14--md"],
-                    responsive["weight__500_to_300--md"],
-                  ].join(" ")}`}
-                >
-                  Experiences
-                </p>
-              </div>
-              <div
-                className={[layout["flex"], layout["justify-center"]].join(" ")}
-              >
-                {category === "experiences" && (
-                  <motion.div
-                    initial={{ width: 3 }}
-                    animate={{ width: 15 }}
-                    style={{
-                      height: 2,
-                      backgroundColor: transparent ? "white" : "black",
-                    }}
-                  />
-                )}
-              </div>
-            </button>
-          </div>
-          <div className={[space["m-h--16"]].join(" ")}>
-            <button onClick={() => setCategory("online")}>
-              <div className={[space["p-b--8"]].join(" ")}>
-                <p
-                  className={`${
-                    transparent
-                      ? [color["c--white"]].join(" ")
-                      : [color["c--black"]].join(" ")
-                  } ${[
-                    responsive["size__12_to_14--md"],
-                    responsive["weight__500_to_300--md"],
-                  ].join(" ")}`}
-                >
-                  Online Experiences
-                </p>
-              </div>
-              <div
-                className={[layout["flex"], layout["justify-center"]].join(" ")}
-              >
-                {category === "online" && (
-                  <motion.div
-                    initial={{ width: 3 }}
-                    animate={{ width: 15 }}
-                    style={{
-                      height: 2,
-                      backgroundColor: transparent ? "white" : "black",
-                    }}
-                  />
-                )}
-              </div>
-            </button>
-          </div>
+            );
+          })}
         </div>
       </div>
       <div
@@ -147,133 +98,29 @@ export const SearchBar: React.FC<{
           backgroundColor: "white",
         }}
       >
-        <button
-          className={`${
-            selected === "location" && [shape["shadow--lg"]].join(" ")
-          } ${[animation["hover-background--white__1"]].join(" ")}`}
-          style={{
-            display: "block",
-            padding: "5px 24px",
-            borderRadius: "50px",
-          }}
-          onClick={() => {
-            setSelected("location");
-            dispatchToggle({ type: "toggle_location" });
-          }}
-        >
-          <div
-            className={`${[layout["flex"], layout["items-center"]].join(" ")}`}
-          >
-            <div>
-              <div>
-                <h3
-                  className={[font["text--left"], font["size--12"]].join(" ")}
-                >
-                  Location
-                </h3>
-              </div>
-              <div>
-                <p className={[font["text--left"], font["size--12"]].join(" ")}>
-                  Where are you going?
-                </p>
-              </div>
-            </div>
-          </div>
-        </button>
+        <Option
+          title="Where are you going?"
+          subtitle="Location"
+          selected={selected}
+          setSelected={setSelected}
+          name="location"
+        />
         <Seperator />
-        <button
-          style={{
-            display: "block",
-            padding: "5px 24px",
-            borderRadius: "50px",
-          }}
-          className={`${
-            selected === "checkin" && [shape["shadow--lg"]].join(" ")
-          }  ${[animation["hover-background--white__1"]].join(" ")}`}
-          onClick={() => {
-            setSelected("checkin");
-            dispatchToggle({ type: "toggle_check" });
-          }}
-        >
-          <div
-            className={`${[layout["flex"], layout["items-center"]].join(" ")}`}
-            style={{
-              borderRadius: selected === "checkin" && 50,
-            }}
-          >
-            <div>
-              <div>
-                <h3
-                  className={[
-                    font["text--left"],
-                    font["no-wrap"],
-                    font["size--12"],
-                  ].join(" ")}
-                >
-                  Check in
-                </h3>
-              </div>
-              <div>
-                <p
-                  className={[
-                    font["text--left"],
-                    font["no-wrap"],
-                    font["size--12"],
-                  ].join(" ")}
-                >
-                  Add dates
-                </p>
-              </div>
-            </div>
-          </div>
-        </button>
+        <Option
+          title="Add dates"
+          subtitle="Check in"
+          selected={selected}
+          setSelected={setSelected}
+          name="checkin"
+        />
         <Seperator />
-        <button
-          style={{
-            display: "block",
-            padding: "5px 24px",
-            borderRadius: "50px",
-          }}
-          className={`${
-            selected === "checkout" && [shape["shadow--lg"]].join(" ")
-          }  ${[animation["hover-background--white__1"]].join(" ")}`}
-          onClick={() => {
-            setSelected("checkout");
-            dispatchToggle({ type: "toggle_check" });
-          }}
-        >
-          <div
-            className={`${[layout["flex"], layout["items-center"]].join(" ")}`}
-            style={{
-              borderRadius: selected === "checkout" && 50,
-            }}
-          >
-            <div>
-              <div>
-                <h3
-                  className={[
-                    font["text--left"],
-                    font["no-wrap"],
-                    font["size--12"],
-                  ].join(" ")}
-                >
-                  Check out
-                </h3>
-              </div>
-              <div>
-                <p
-                  className={[
-                    font["text--left"],
-                    font["no-wrap"],
-                    font["size--12"],
-                  ].join(" ")}
-                >
-                  Add dates
-                </p>
-              </div>
-            </div>
-          </div>
-        </button>
+        <Option
+          title="Add dataes"
+          subtitle="Check out"
+          selected={selected}
+          setSelected={setSelected}
+          name="checkout"
+        />
         <Seperator />
         <button
           style={{
@@ -341,7 +188,7 @@ export const SearchBar: React.FC<{
   );
 };
 
-const Seperator = () => {
+const Seperator: React.FC<{}> = () => {
   return (
     <div style={{ height: "100%", display: "flex", alignItems: "center" }}>
       <div
@@ -349,5 +196,46 @@ const Seperator = () => {
         style={{ width: "100%", height: 25 }}
       ></div>
     </div>
+  );
+};
+
+const Option: React.FC<{
+  name: string;
+  subtitle: string;
+  title: string;
+  selected: string;
+  setSelected: (param: string) => void;
+}> = ({ name, subtitle, title, selected, setSelected }) => {
+  const dispatchToggle = useToggleDispatch();
+  return (
+    <button
+      className={`${selected === name && [shape["shadow--lg"]].join(" ")} ${[
+        animation["hover-background--white__1"],
+      ].join(" ")}`}
+      style={{
+        display: "block",
+        padding: "5px 24px",
+        borderRadius: "50px",
+      }}
+      onClick={() => {
+        setSelected(name);
+        dispatchToggle({ type: `toggle_${name}` });
+      }}
+    >
+      <div className={`${[layout["flex"], layout["items-center"]].join(" ")}`}>
+        <div>
+          <div>
+            <h3 className={[font["text--left"], font["size--12"]].join(" ")}>
+              {title}
+            </h3>
+          </div>
+          <div>
+            <p className={[font["text--left"], font["size--12"]].join(" ")}>
+              {subtitle}
+            </p>
+          </div>
+        </div>
+      </div>
+    </button>
   );
 };

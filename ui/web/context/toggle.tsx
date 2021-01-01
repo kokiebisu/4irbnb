@@ -33,7 +33,8 @@ const toggleReducer = (state: State, action: Action) => {
       return { ...state, location: !state.location };
     case "toggle_guests":
       return { ...state, guests: !state.guests };
-    case "toggle_check":
+    case "toggle_checkin":
+    case "toggle_checkout":
       return { ...state, check: !state.check };
     case "close_register":
       return { ...state, auth: !state.auth };
