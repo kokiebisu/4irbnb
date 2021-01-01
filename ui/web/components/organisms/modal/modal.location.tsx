@@ -4,7 +4,7 @@ import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 
 /** templates */
-import { Template } from "@templates/template.component";
+import { Template } from "@template";
 
 export const LocationModal: React.FC<{}> = () => {
   return (

@@ -1,5 +1,5 @@
 /** components */
-import { Template } from "@templates/template.component";
+import { Template } from "@template";
 
 /** styles */
 import layout from "@styles/layout.module.scss";

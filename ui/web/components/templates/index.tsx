@@ -13,8 +13,8 @@ import { NearbyTemplate } from "@template/homes/template.nearby";
 import { LanguageTemplate } from "@template/globe/template.language";
 import { CurrencyTemplate } from "@template/globe/template.currency";
 import { LocationTemplate } from "@template/modal/template.location";
-import { CheckTemplate } from "./modal/template.check";
-import { SearchbarTemplate } from "./template.searchbar";
+import { CheckTemplate } from "@template/modal/template.check";
+import { SearchbarTemplate } from "@template/template.searchbar";
 
 export interface TemplateProps {
   variant?: string;

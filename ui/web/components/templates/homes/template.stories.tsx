@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Template, TemplateProps } from "@template/template.component";
+import { Template, TemplateProps } from "@template";
 
 export default {
   title: "Templates/Homes",
