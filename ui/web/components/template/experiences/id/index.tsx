@@ -1,13 +1,8 @@
-import { ExperiencesTemplate } from "@template/onlinehost/template.experiences";
-import { ParticipateTemplate } from "@template/onlinehost/template.participate";
-import { BringTemplate } from "@template/onlinehost/template.bring";
-import { CharacteristicsTemplate } from "@template/onlinehost/template.characteristics";
-import { AvailableTemplate } from "@template/onlinehost/template.available";
-
-/** styles **/
-import layout from "@styles/layout.module.scss";
-import shape from "@styles/shape.module.scss";
-import animation from "@styles/animation.module.scss";
+import { ExperiencesTemplate } from "@template/experiences/id/template.experiences";
+import { ParticipateTemplate } from "@template/experiences/id/template.participate";
+import { BringTemplate } from "@template/experiences/id/template.bring";
+import { CharacteristicsTemplate } from "@template/experiences/id/template.characteristics";
+import { AvailableTemplate } from "@template/experiences/id/template.available";
 
 export interface TemplateProps {
   extendsTo?: string;

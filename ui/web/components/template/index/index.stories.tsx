@@ -1,10 +1,10 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
-import { Template, TemplateProps } from "@template/landing";
+import { Template, TemplateProps } from "@template/index";
 
 export default {
-  title: "Templates/Landing",
+  title: "Templates/Index",
   component: Template,
   argTypes: {
     onClick: { action: "clicked" },
@@ -14,6 +14,11 @@ export default {
 } as Meta;
 
 const TemplateStory: Story<TemplateProps> = (args) => <Template {...args} />;
+
+export const Banner = TemplateStory.bind({});
+Banner.args = {
+  variant: "banner",
+};
 
 export const Categories = TemplateStory.bind({});
 Categories.args = {

@@ -15,14 +15,11 @@ import { Card } from "@card/card.component";
 /** hooks */
 import { useSlider, SliderProps } from "@hooks/useSlider";
 
-/** stories */
-import { paginate, primary } from "@button/button.stories";
-
 /**
  * Renders the homes banner
  * @param {Object[]} hosts - List of hosts
  */
-export const HomesBanner: React.FC<{
+export const CommunityTemplate: React.FC<{
   hosts?: {
     name: string;
     stayType: string;

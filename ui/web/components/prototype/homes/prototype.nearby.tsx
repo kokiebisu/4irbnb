@@ -9,7 +9,7 @@ import shape from "@styles/shape.module.scss";
 
 /** components */
 import { Header } from "@header/header.component";
-import { Template } from "@template/stays";
+import { Template } from "@template/s/homes";
 import { Bar } from "@bar/bar.component";
 import { Footer } from "@footer/footer.component";
 import { Button } from "@button";

@@ -9,10 +9,7 @@ import banner from "@banner/banner.module.scss";
 import { Button } from "@button";
 import { Bullet } from "@bullet";
 
-/** stories */
-import { primary } from "@button/button.stories";
-
-export const OnlineHostBanner: React.FC<{}> = () => {
+export const BannerTemplate: React.FC<{}> = () => {
   return (
     <div
       className={[

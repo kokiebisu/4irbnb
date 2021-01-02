@@ -1,10 +1,10 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
-import { Template, TemplateProps } from "@template/onlinehosts";
+import { Template, TemplateProps } from "@template/d/onlinehost";
 
 export default {
-  title: "Templates/OnlineHosts",
+  title: "Templates/D/OnlineHosts",
   component: Template,
   argTypes: {
     onClick: { action: "clicked" },
@@ -33,4 +33,14 @@ Sharing.args = {
 export const Works = TemplateStory.bind({});
 Works.args = {
   variant: "works",
+};
+
+export const Faq = TemplateStory.bind({});
+Faq.args = {
+  variant: "faq",
+};
+
+export const Banner = TemplateStory.bind({});
+Banner.args = {
+  variant: "banner",
 };

@@ -6,7 +6,7 @@ import { useToggleState } from "@context/toggle";
 /** components */
 import { Header } from "@header/header.component";
 import { Footer } from "@footer/footer.component";
-import { Template } from "@template/stay";
+import { Template } from "@template/rooms/id";
 import { Card } from "@card/card.component";
 import { Modal } from "@modal/modal.component";
 

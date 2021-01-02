@@ -8,7 +8,7 @@ import { uniqueStays, novelties } from "data/stays";
 
 /** components */
 import { Header } from "../components/organisms/header/header.component";
-import { Template } from "@template/stays";
+import { Template } from "@template/s/homes";
 import { Footer } from "components/organisms/footer/footer.component";
 
 /**

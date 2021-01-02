@@ -1,11 +1,11 @@
 /** landing */
-import { ReviewsTemplate } from "@template/stay/template.reviews";
-import { ArrangementsTemplate } from "@template/stay/template.arrangements";
-import { AmenitiesTemplate } from "@template/stay/template.amenities";
-import { KnowTemplate } from "@template/stay/template.know";
-import { HostTemplate } from "@template/stay/template.host";
-import { PanelTemplate } from "@template/stay/template.panel";
-import { OtherTemplate } from "@template/stay/template.other";
+import { ReviewsTemplate } from "@template/rooms/id/template.reviews";
+import { ArrangementsTemplate } from "@template/rooms/id/template.arrangements";
+import { AmenitiesTemplate } from "@template/rooms/id/template.amenities";
+import { KnowTemplate } from "@template/rooms/id/template.know";
+import { HostTemplate } from "@template/rooms/id/template.host";
+import { PanelTemplate } from "@template/rooms/id/template.panel";
+import { OtherTemplate } from "@template/rooms/id/template.other";
 import { DescriptionTemplate } from "./template.description";
 
 /** styles **/

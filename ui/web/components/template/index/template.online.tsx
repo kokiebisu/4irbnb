@@ -17,7 +17,7 @@ import { Border } from "@button/button.stories";
  * @param {Object[]} items - List of online experiences for the landing page
  * @param {boolean} dark - Whether if the section is dark mode or not
  */
-export const OnlineSection: React.FC<{
+export const OnlineTemplate: React.FC<{
   items?: any;
   dark?: boolean;
 }> = ({

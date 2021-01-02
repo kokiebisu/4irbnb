@@ -4,11 +4,7 @@ import { FAQTemplate } from "./template.faq";
 import { BackTemplate } from "./template.back";
 import { SharingTemplate } from "./template.sharing";
 import { WorksTemplate } from "./template.works";
-
-/** styles **/
-import layout from "@styles/layout.module.scss";
-import shape from "@styles/shape.module.scss";
-import animation from "@styles/animation.module.scss";
+import { BannerTemplate } from "./template.banner";
 
 export interface TemplateProps {
   extendsTo?: string;
@@ -38,6 +34,7 @@ export const Template: React.FC<TemplateProps> = ({
     back: <BackTemplate {...props} />,
     sharing: <SharingTemplate {...props} />,
     works: <WorksTemplate {...props} />,
+    banner: <BannerTemplate {...props} />,
   };
 
   return (
