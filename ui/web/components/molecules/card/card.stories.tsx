@@ -34,7 +34,7 @@ Category.args = {
 
 Category.decorators = [
   (Story) => (
-    <div style={{ width: 300 }}>
+    <div style={{ width: "33.3%" }}>
       <Story />
     </div>
   ),
@@ -148,6 +148,13 @@ export const Available = TemplateStory.bind({});
 Available.args = {
   variant: "available",
 };
+Available.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: "25%" }}>
+      <Story />
+    </div>
+  ),
+];
 
 export const Host = TemplateStory.bind({});
 Host.args = {
@@ -211,7 +218,7 @@ How.argTypes = {
 };
 How.decorators = [
   (Story) => (
-    <div style={{ width: 300 }}>
+    <div style={{ width: 225 }}>
       <Story />
     </div>
   ),

@@ -9,7 +9,7 @@ import responsive from "@styles/responsive.module.scss";
 
 /** components */
 import { Button } from "@button";
-import { primary, border } from "@button/button.stories";
+import { Primary, Border } from "@button/button.stories";
 
 /**
  * Renders the booking modal
@@ -136,7 +136,7 @@ export const BookingModal: React.FC<{
         </div>
         <div className={[space["m-t--24"]].join(" ")}>
           <div>
-            <Button {...border.args} size="md" title="See more dates" block />
+            <Button {...Border.args} size="md" title="See more dates" block />
           </div>
         </div>
       </div>

@@ -9,9 +9,6 @@ import header from "@header/header.module.scss";
 /** components */
 import { Button } from "@button";
 
-/** vectors */
-import { NoNameLogo } from "@svg/logo";
-
 export const OnlineHostHeader: React.FC<{}> = () => {
   return (
     <header style={{ height: 80 }} className={[space["p-h--0"]].join(" ")}>
@@ -21,6 +18,9 @@ export const OnlineHostHeader: React.FC<{}> = () => {
       >
         <div>
           <Button
+            variant="logo"
+            noName
+            fill="black"
             extendsTo={[
               layout["inline-block"],
               header["hover__logo"],
@@ -28,9 +28,7 @@ export const OnlineHostHeader: React.FC<{}> = () => {
               shape["br--circle"],
             ].join(" ")}
             onClick={() => Router.push("/")}
-          >
-            <NoNameLogo fill="black" width={30} height={32} />
-          </Button>
+          />
         </div>
       </div>
     </header>

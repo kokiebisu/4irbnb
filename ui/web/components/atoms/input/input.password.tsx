@@ -18,7 +18,7 @@ import { Button } from "@button";
 import { checkPassword } from "@helper/auth";
 
 /** stories */
-import { underline } from "@button/button.stories";
+import { Underline } from "@button/button.stories";
 
 /**
  * Renders the text input component
@@ -142,7 +142,7 @@ export const PasswordInput: React.FC<{
         ].join(" ")}
       >
         <Button
-          {...underline.args}
+          {...Underline.args}
           onClick={() => setHide((prevHide) => !prevHide)}
           font={13}
           title={hide ? "Show" : "Hide"}

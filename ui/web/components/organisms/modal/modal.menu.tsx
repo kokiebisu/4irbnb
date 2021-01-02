@@ -9,7 +9,7 @@ import { Button } from "@button";
 import { getOptionContents } from "@button/content/content.option";
 
 /** stories */
-import { option } from "@button/button.stories";
+import { Option } from "@button/button.stories";
 
 const Options: React.FC<{
   params?: {
@@ -23,7 +23,7 @@ const Options: React.FC<{
       {params.map(({ kind, bold }, index) => (
         <div key={index}>
           <Button
-            {...option.args}
+            {...Option.args}
             bold={bold}
             onClick={options[kind].handleClick}
             name={options[kind].name}

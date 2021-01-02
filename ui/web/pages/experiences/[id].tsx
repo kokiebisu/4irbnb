@@ -3,29 +3,29 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 
 /** components */
-import { Header } from "../../components/organisms/header/header.component";
-import { Section } from "../../components/organisms/section/section.component";
-import { Modal } from "../../components/organisms/modal/modal.component";
-import { Footer } from "../../components/organisms/footer/footer.component";
+import { Header } from "@header/header.component";
+import { Template } from "@template/experiences/id";
+import { Modal } from "@modal/modal.component";
+import { Footer } from "@footer/footer.component";
 
 /** contexts */
-import { useToggleState } from "../../context/toggle";
+import { useToggleState } from "@context/toggle";
 
 /** styles */
-import layout from "../../styles/layout.module.scss";
-import details from "../../styles/details.module.scss";
-import color from "../../styles/color.module.scss";
-import space from "../../styles/space.module.scss";
-import shape from "../../styles/shape.module.scss";
-import staysDetail from "../../styles/staysDetail.module.scss";
-import responsive from "../../styles/responsive.module.scss";
+import layout from "@styles/layout.module.scss";
+import details from "@styles/details.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
+import shape from "@styles/shape.module.scss";
+import staysDetail from "@styles/staysDetail.module.scss";
+import responsive from "@styles/responsive.module.scss";
 
 /** sample data */
 import { experiences } from "../../data/experiences";
-import { useTabTitle } from "hooks/useTabTitle";
+import { useTabTitle } from "@hooks/useTabTitle";
 
 /** stories */
-import { menu } from "../../components/organisms/modal/modal.stories";
+import { menu } from "@modal/modal.stories";
 
 /**
  * Renders the component for path /experiences/[id]
@@ -77,7 +77,7 @@ const id: () => string | JSX.Element = () => {
         </AnimatePresence>
         <div className={[].join(" ")}>
           {experiences[experienceID] ? (
-            <Section
+            <Template
               layoutType="experience"
               extendsTo={[staysDetail["flex__panel"]].join(" ")}
               variant="panel"
@@ -92,7 +92,7 @@ const id: () => string | JSX.Element = () => {
             <div className={[details["w__details--left"]].join(" ")}>
               <div className={[staysDetail["b__characteristics"]].join(" ")}>
                 {experiences[experienceID] ? (
-                  <Section
+                  <Template
                     layoutType="experience"
                     variant="characteristics"
                     {...experiences[experienceID]}
@@ -105,7 +105,7 @@ const id: () => string | JSX.Element = () => {
                     " "
                   )}
                 >
-                  <Section
+                  <Template
                     layoutType="experience"
                     variant="description"
                     {...experiences[experienceID]}
@@ -118,7 +118,7 @@ const id: () => string | JSX.Element = () => {
                     " "
                   )}
                 >
-                  <Section
+                  <Template
                     variant="participate"
                     {...experiences[experienceID]}
                   />
@@ -131,7 +131,7 @@ const id: () => string | JSX.Element = () => {
                     " "
                   )}
                 >
-                  <Section variant="bring" {...experiences[experienceID]} />
+                  <Template variant="bring" {...experiences[experienceID]} />
                 </div>
               ) : null}
             </div>
@@ -161,7 +161,7 @@ const id: () => string | JSX.Element = () => {
             <div
               className={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
             >
-              <Section
+              <Template
                 layoutType="experience"
                 variant="host"
                 {...experiences[experienceID]}
@@ -172,14 +172,14 @@ const id: () => string | JSX.Element = () => {
             <div
               className={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
             >
-              <Section variant="experiences" />
+              <Template variant="experiences" />
             </div>
           ) : null}
           {experiences[experienceID] ? (
             <div
               className={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
             >
-              <Section
+              <Template
                 layoutType="experience"
                 variant="reviews"
                 {...experiences[experienceID]}
@@ -190,7 +190,7 @@ const id: () => string | JSX.Element = () => {
             <div
               className={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
             >
-              <Section
+              <Template
                 layoutType="experience"
                 variant="available"
                 {...experiences[experienceID]}
@@ -205,7 +205,7 @@ const id: () => string | JSX.Element = () => {
                 space["p-b--64"],
               ].join(" ")}
             >
-              <Section layoutType="experience" variant="know" />
+              <Template layoutType="experience" variant="know" />
             </div>
           ) : null}
         </div>

@@ -5,6 +5,7 @@ import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 import color from "@styles/color.module.scss";
 import font from "@styles/font.module.scss";
+import shape from "@styles/shape.module.scss";
 
 /** Logic */
 import { renderDescription } from "./logic/logic.review";
@@ -17,9 +18,13 @@ import { renderDescription } from "./logic/logic.review";
 export const ReviewCard: React.FC<{
   imgUrl?: string;
   description?: string;
+  commentedDate?: string;
+  user?: string;
 }> = ({
-  imgUrl = "https://a0.muscache.com/im/pictures/user/04d3499b-6cca-4d1a-acc4-1fc4444e1002.jpg?im_w=240",
+  imgUrl,
+  user = "User",
   description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+  commentedDate = "Month, Year",
 }) => {
   const [display, setDisplay] = useState(false);
 
@@ -33,7 +38,18 @@ export const ReviewCard: React.FC<{
         ].join(" ")}
       >
         <div style={{ height: 55, width: 55, borderRadius: 9999 }}>
-          <img src={imgUrl} style={{ borderRadius: 9999 }} />
+          {imgUrl ? (
+            <img src={imgUrl} style={{ borderRadius: 9999 }} />
+          ) : (
+            <div
+              className={[
+                shape["w--full"],
+                shape["h--full"],
+                shape["br--circle"],
+                color["bg--white__2"],
+              ].join(" ")}
+            />
+          )}
         </div>
         <div
           className={[
@@ -44,7 +60,7 @@ export const ReviewCard: React.FC<{
           ].join(" ")}
         >
           <div className={[layout["flex"], layout["flex-col"]].join(" ")}>
-            <p className={[color["c--gray__3"]].join(" ")}>Maureen</p>
+            <p className={[color["c--gray__3"]].join(" ")}>{user}</p>
             <p
               className={[
                 font["size--14"],
@@ -52,7 +68,7 @@ export const ReviewCard: React.FC<{
                 font["weight--300"],
               ].join(" ")}
             >
-              October 2019
+              {commentedDate}
             </p>
           </div>
         </div>
