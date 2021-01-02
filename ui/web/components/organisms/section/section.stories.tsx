@@ -199,10 +199,5 @@ back.args = {
 
 export const faq = TemplateStory.bind({});
 faq.args = {
-  type: "faq",
-};
-
-export const more = TemplateStory.bind({});
-more.args = {
-  type: "more",
+  variant: "faq",
 };

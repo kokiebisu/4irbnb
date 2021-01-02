@@ -26,8 +26,6 @@ import { ReadySection } from "@section/section.ready";
 import { WorksSection } from "@section/section.works";
 import { SharingSection } from "@section/section.sharing";
 import { BackSection } from "@section/section.back";
-import { FAQSection } from "@section/section.faq";
-import { MoreSection } from "@section/section.more";
 
 export interface SectionProps {
   extendsTo?: string;
@@ -74,8 +72,6 @@ export const Section: React.FC<SectionProps> = ({
     works: <WorksSection {...props} />,
     sharing: <SharingSection {...props} />,
     back: <BackSection {...props} />,
-    faq: <FAQSection {...props} />,
-    more: <MoreSection {...props} />,
   };
   return (
     <div className={extendsTo} data-testid={`${variant}-section`}>

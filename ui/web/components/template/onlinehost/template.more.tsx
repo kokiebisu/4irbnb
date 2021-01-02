@@ -12,7 +12,7 @@ import { Border } from "@button/button.stories";
 /** components */
 import { Button } from "@button";
 
-export const MoreSection: React.FC<{}> = () => {
+export const MoreTemplate: React.FC<{ imgUrl?: string }> = ({ imgUrl }) => {
   return (
     <div>
       <div style={{ height: 0, paddingTop: "50%", position: "relative" }}>
@@ -25,7 +25,8 @@ export const MoreSection: React.FC<{}> = () => {
             right: 0,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            backgroundImage: `url(https://a0.muscache.com/pictures/2a5bb9ec-a33d-4913-a00b-16fc007b15c4.jpg)`,
+            backgroundImage: imgUrl && `url(${imgUrl})`,
+            backgroundColor: !imgUrl && "lightgray",
           }}
         >
           <div

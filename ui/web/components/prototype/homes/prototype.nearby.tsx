@@ -30,14 +30,14 @@ export const NearbyPrototype: React.FC<{
 }> = ({
   city = "location",
   filterCount = 1,
-  guests = 8000,
-  average = 4.9,
+  guests = 1000,
+  average = 5.0,
   filters = [
-    { name: "Cancellation flexibility" },
-    { name: "Type of place" },
-    { name: "Price" },
-    { name: "Instant Book" },
-    { name: "More filters" },
+    { name: "Filter" },
+    { name: "Filter" },
+    { name: "Filter" },
+    { name: "Filter" },
+    { name: "Filter" },
   ],
 }) => {
   const displayPlace = city.match(/_/g) ? city.split("_").join(" ") : city;
