@@ -23,10 +23,9 @@ import { Layout } from "@layout";
 /** components */
 import { Animation } from "@animation/animation.component";
 import { Modal } from "@modal/modal.component";
-import { Template } from "@template/landing";
+import { Template } from "@template/index";
 import { Footer } from "@footer/footer.component";
 
-import { Banner } from "@banner/banner.component";
 import { Bar } from "@bar/bar.component";
 
 /** stories */
@@ -57,7 +56,7 @@ const LandingPage = ({ currentUser }) => {
         <div>
           <Bar variant="covid" />
         </div>
-        <Banner variant="landing" data={currentUser || null} />
+        <Template variant="banner" data={currentUser || null} />
         {loading ? (
           <>
             <Layout variant="landing" spread>

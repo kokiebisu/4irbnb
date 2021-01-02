@@ -1,9 +1,9 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Template, TemplateProps } from "@template/onlinehost";
+import { Template, TemplateProps } from "@template/experiences/id";
 
 export default {
-  title: "Templates/OnlineHost",
+  title: "Templates/Experiences/ID",
   component: Template,
   argTypes: {
     onClick: { action: "clicked" },

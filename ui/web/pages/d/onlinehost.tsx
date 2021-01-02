@@ -3,7 +3,7 @@ import React from "react";
 /** components */
 import { Banner } from "../../components/organisms/banner/banner.component";
 import { Header } from "../../components/organisms/header/header.component";
-import { Template } from "@template/onlinehosts";
+import { Template } from "@template/d/onlinehost";
 import { Footer } from "../../components/organisms/footer/footer.component";
 
 /** styles **/

@@ -1,6 +1,6 @@
 /** styles */
 import space from "@styles/space.module.scss";
-import template from "@template/landing/index.module.scss";
+import template from "@template/index/index.module.scss";
 
 /** components */
 import { Card } from "@card/card.component";

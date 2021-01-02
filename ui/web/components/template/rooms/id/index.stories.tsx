@@ -1,10 +1,10 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
-import { Template, TemplateProps } from "@template/stay";
+import { Template, TemplateProps } from "@template/rooms/id";
 
 export default {
-  title: "Templates/Stay",
+  title: "Templates/Rooms/ID",
   component: Template,
   argTypes: {
     onClick: { action: "clicked" },
@@ -59,17 +59,17 @@ Other.args = {
   variant: "other",
 };
 
-export const StayWithPagination = TemplateStory.bind({});
-StayWithPagination.args = {
-  variant: "stay",
-  pagination: true,
-  save: true,
-  isDescription: true,
-};
+// export const StayWithPagination = TemplateStory.bind({});
+// StayWithPagination.args = {
+//   variant: "stay",
+//   pagination: true,
+//   save: true,
+//   isDescription: true,
+// };
 
-export const TwoRows = TemplateStory.bind({});
-TwoRows.args = {
-  variant: "stay",
-  save: true,
-  isDescription: true,
-};
+// export const TwoRows = TemplateStory.bind({});
+// TwoRows.args = {
+//   variant: "stay",
+//   save: true,
+//   isDescription: true,
+// };

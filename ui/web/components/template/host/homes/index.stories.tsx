@@ -1,9 +1,9 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Template, TemplateProps } from "@template/stays";
+import { Template, TemplateProps } from "@template/host/homes";
 
 export default {
-  title: "Templates/Stays",
+  title: "Templates/Host/Homes",
   component: Template,
   argTypes: {
     onClick: { action: "clicked" },
@@ -19,24 +19,9 @@ Help.args = {
   variant: "help",
 };
 
-export const Multiple = TemplateStory.bind({});
-Multiple.args = {
-  variant: "multiple",
-};
-
-export const Homes = TemplateStory.bind({});
-Homes.args = {
-  variant: "homes",
-};
-
-export const All = TemplateStory.bind({});
-All.args = {
-  variant: "All",
-};
-
-export const Also = TemplateStory.bind({});
-Also.args = {
-  variant: "also",
+export const Community = TemplateStory.bind({});
+Community.args = {
+  variant: "community",
 };
 
 export const Priority = TemplateStory.bind({});

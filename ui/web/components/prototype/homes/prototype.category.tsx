@@ -5,7 +5,7 @@ import font from "@styles/font.module.scss";
 import shape from "@styles/shape.module.scss";
 
 /** components */
-import { Template } from "@template/stays";
+import { Template } from "@template/s/homes";
 import { Bar } from "@bar/bar.component";
 import { Button } from "@button";
 

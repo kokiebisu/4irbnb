@@ -1,16 +1,11 @@
 /** landing */
-import { HelpTemplate } from "@template/stays/template.help";
-import { MultipleTemplate } from "@template/stays/template.multiple";
-import { HomesTemplate } from "@template/stays/template.homes";
-import { AllTemplate } from "@template/stays/template.all";
-import { AlsoTemplate } from "@template/stays/template.also";
-import { PriorityTemplate } from "@template/stays/template.priority";
-import { ReadyTemplate } from "./template.ready";
-
-/** styles **/
-import layout from "@styles/layout.module.scss";
-import shape from "@styles/shape.module.scss";
-import animation from "@styles/animation.module.scss";
+import { HelpTemplate } from "@template/host/homes/template.help";
+import { MultipleTemplate } from "@template/s/homes/template.multiple";
+import { HomesTemplate } from "@template/s/homes/template.homes";
+import { AllTemplate } from "@template/s/homes/template.all";
+import { AlsoTemplate } from "@template/s/homes/template.also";
+import { PriorityTemplate } from "@template/host/homes/template.priority";
+import { ReadyTemplate } from "../../host/homes/template.ready";
 
 export interface TemplateProps {
   extendsTo?: string;
@@ -35,13 +30,10 @@ export const Template: React.FC<TemplateProps> = ({
   ...props
 }) => {
   const variants: { [key: string]: JSX.Element } = {
-    help: <HelpTemplate {...props} />,
     multiple: <MultipleTemplate {...props} />,
     homes: <HomesTemplate {...props} />,
     all: <AllTemplate {...props} />,
     also: <AlsoTemplate {...props} />,
-    priority: <PriorityTemplate {...props} />,
-    ready: <ReadyTemplate {...props} />,
   };
 
   return (

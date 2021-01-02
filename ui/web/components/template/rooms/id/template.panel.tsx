@@ -77,7 +77,11 @@ export const PanelTemplate: React.FC<{
             {title}
           </h3>
           <div
-            className={[layout["items-center"], layout["flex-wrap"]].join(" ")}
+            className={[
+              layout["flex"],
+              layout["items-center"],
+              layout["flex-wrap"],
+            ].join(" ")}
           >
             <div>
               <Star height={14} />

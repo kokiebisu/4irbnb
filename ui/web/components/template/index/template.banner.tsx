@@ -29,7 +29,7 @@ import { Modal } from "@modal/modal.component";
 /**
  * Renders the banner section
  */
-export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
+export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
   const scrollPosition = useHandleScroll();
   const [category, setCategory] = useState("stay");
   return (

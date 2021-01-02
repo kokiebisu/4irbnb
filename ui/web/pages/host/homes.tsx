@@ -7,7 +7,7 @@ import responsive from "../../styles/responsive.module.scss";
 
 /** components */
 import { Header } from "../../components/organisms/header/header.component";
-import { Template } from "@template/stays";
+import { Template } from "@template/s/homes";
 import { Footer } from "../../components/organisms/footer/footer.component";
 import { Banner } from "../../components/organisms/banner/banner.component";
 import { useTabTitle } from "hooks/useTabTitle";
