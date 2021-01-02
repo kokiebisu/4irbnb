@@ -15,7 +15,7 @@ import color from "@styles/color.module.scss";
 import shape from "@styles/shape.module.scss";
 
 /** data */
-import { nearby } from "../data/stays";
+import { nearbyItems } from "@content";
 
 /** layout */
 import { Layout } from "@layout";
@@ -60,7 +60,7 @@ const LandingPage = ({ currentUser }) => {
         {loading ? (
           <>
             <Layout variant="landing" spread>
-              <Template variant="nearby" items={nearby} />
+              <Template variant="nearby" items={nearbyItems} />
             </Layout>
             <Layout variant="landing" title="Live anywhere" spread>
               <Template variant="anywhere" items={anywhere} />
