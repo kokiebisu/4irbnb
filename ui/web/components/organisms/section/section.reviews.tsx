@@ -15,7 +15,7 @@ import { Bullet } from "@bullet";
 import { Card } from "@card/card.component";
 
 /** stories */
-import { border } from "@button/button.stories";
+import { Border } from "@button/button.stories";
 
 /**
  * Renders the reviews section
@@ -147,7 +147,7 @@ export const ReviewsSection: React.FC<{
         </div>
         <div className={[space["m-t--16"]].join(" ")}>
           <Button
-            {...border.args}
+            {...Border.args}
             size="md"
             title={`Show all ${numberOfReviews} reviews`}
           />

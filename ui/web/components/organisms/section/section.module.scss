@@ -226,7 +226,7 @@
   }
 }
 
-.category-section {
+.category {
   &__carousel {
     display: grid;
     grid-auto-flow: column;
@@ -260,14 +260,6 @@
     @media screen and (min-width: 745px) {
       width: auto;
       max-width: 550px;
-    }
-
-    &--img {
-      width: 100%;
-
-      & img {
-        border-radius: 7px;
-      }
     }
 
     &--space {

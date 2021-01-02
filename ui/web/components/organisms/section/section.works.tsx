@@ -10,7 +10,7 @@ import { Button } from "@button";
 import { Card } from "@card/card.component";
 
 /** stories */
-import { border } from "@button/button.stories";
+import { Border } from "@button/button.stories";
 
 export const WorksSection: React.FC<{}> = () => {
   const categories = ["design", "share", "submit", "setup"];
@@ -34,7 +34,7 @@ export const WorksSection: React.FC<{}> = () => {
           ].join(" ")}
         >
           <Button
-            {...border.args}
+            {...Border.args}
             bold
             title="Start creating your experience"
           />

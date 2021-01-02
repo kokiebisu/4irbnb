@@ -19,12 +19,12 @@ import { useHandleScroll } from "@hooks/useHandleScroll";
 import useOnClickOutside from "@hooks/useOnClickOutside";
 
 /** stories */
-import { banner } from "@button/button.stories";
+import { Banner } from "@button/button.stories";
 
 /** helper */
 import { ResponsiveImage } from "@helper/img";
 import { useToggleDispatch, useToggleState } from "@context/toggle";
-import { Modal } from "@organisms/modal/modal.component";
+import { Modal } from "@modal/modal.component";
 
 /**
  * Renders the banner section
@@ -115,7 +115,7 @@ export const LandingBanner: React.FC<{ data?: any }> = ({ data }) => {
                 ].join(" ")}
               >
                 <Button
-                  {...banner.args}
+                  {...Banner.args}
                   title="Explore nearby"
                   onClick={() => Router.push("/")}
                 />

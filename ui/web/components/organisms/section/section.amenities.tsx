@@ -9,7 +9,7 @@ import color from "@styles/color.module.scss";
 import section from "@section/section.module.scss";
 
 /** stories */
-import { border } from "@button/button.stories";
+import { Border } from "@button/button.stories";
 
 /**
  * Renders the amenity section
@@ -48,7 +48,7 @@ export const AmenitySection: React.FC<{
         style={{ width: 300 }}
         className={[space["m-t--14"], space["m-b--14"]].join(" ")}
       >
-        <Button {...border.args} size="md" title="Show all 40 amenities" />
+        <Button {...Border.args} size="md" title="Show all 40 amenities" />
       </div>
     </div>
   );

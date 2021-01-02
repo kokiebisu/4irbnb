@@ -1,7 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Section, SectionProps } from "@section/section.component";
-import { ContextProvider } from "@context/provider";
 
 export default {
   title: "Organisms/Section",
@@ -23,11 +22,6 @@ export default {
 } as Meta;
 
 const TemplateStory: Story<SectionProps> = (args) => <Section {...args} />;
-
-export const categories = TemplateStory.bind({});
-categories.args = {
-  type: "category",
-};
 
 export const stayTypes = TemplateStory.bind({});
 stayTypes.args = {

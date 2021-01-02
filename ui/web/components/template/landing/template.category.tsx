@@ -1,6 +1,6 @@
 /** styles **/
-import section from "@section/section.module.scss";
 import space from "@styles/space.module.scss";
+import template from "@template/landing/index.module.scss";
 
 /** components */
 import { Card } from "@card/card.component";
@@ -9,7 +9,7 @@ import { Card } from "@card/card.component";
  *
  * @param {Object[]} items - List of categories to be displayed
  */
-export const CategorySection: React.FC<{
+export const CategoryTemplate: React.FC<{
   items?: any;
 }> = ({ items = [undefined, undefined, undefined] }) => {
   const totalCards = items.length;
@@ -19,20 +19,21 @@ export const CategorySection: React.FC<{
       <div className={[space["p-h--70"]].join(" ")}>
         <div
           style={{ gridTemplateColumns: `repeat(${totalCards}, 1fr)` }}
-          className={[section["category-section__carousel"]].join(" ")}
+          className={[template["category__carousel"]].join(" ")}
         >
           {items.map((item, index) => {
             return (
               <Card
                 variant="category"
                 key={index}
-                imgUrl={item && item.imgUrl}
-                title={item && item.title}
-                to={item && item.to}
+                imgUrl={item?.imgUrl}
+                title={item?.title}
+                to={item?.to}
+                extendsTo={[template["category__card"]].join(" ")}
               />
             );
           })}
-          <div className={section["category-section__card--space"]}></div>
+          <div className={template["category__space"]}></div>
         </div>
       </div>
     </div>

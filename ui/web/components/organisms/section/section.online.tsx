@@ -10,7 +10,7 @@ import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 
 /** components */
-import { border } from "@button/button.stories";
+import { Border } from "@button/button.stories";
 
 /**
  * Renders the online section
@@ -124,7 +124,7 @@ export const OnlineSection: React.FC<{
         </div>
       </div>
       <div className={[space["m-v--32"]].join(" ")}>
-        <Button {...border.args} title="Explore all" size="sm" inverse={dark} />
+        <Button {...Border.args} title="Explore all" size="sm" inverse={dark} />
       </div>
     </div>
   );
