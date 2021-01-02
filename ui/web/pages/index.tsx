@@ -63,7 +63,7 @@ const LandingPage = ({ currentUser }) => {
               <Template variant="nearby" items={nearby} />
             </Layout>
             <Layout variant="landing" title="Live anywhere" spread>
-              <Template variant="category" items={anywhere} />
+              <Template variant="anywhere" items={anywhere} />
             </Layout>
             <div className={space["m-v--32"]}></div>
             <Layout

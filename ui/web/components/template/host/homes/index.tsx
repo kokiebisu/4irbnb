@@ -3,6 +3,7 @@ import { PriorityTemplate } from "./template.priority";
 import { HelpTemplate } from "./template.help";
 import { ReadyTemplate } from "./template.ready";
 import { CommunityTemplate } from "./template.community";
+import { AllTemplate } from "./template.all";
 
 export interface TemplateProps {
   extendsTo?: string;
@@ -31,6 +32,7 @@ export const Template: React.FC<TemplateProps> = ({
     priority: <PriorityTemplate {...props} />,
     community: <CommunityTemplate {...props} />,
     ready: <ReadyTemplate {...props} />,
+    all: <AllTemplate {...props} />,
   };
 
   return (

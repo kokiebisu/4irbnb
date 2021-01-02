@@ -3,6 +3,7 @@ import { CategoryTemplate } from "./template.category";
 import { NearbyTemplate } from "./template.nearby";
 import { BannerTemplate } from "./template.banner";
 import { OnlineTemplate } from "./template.online";
+import { AnywhereTemplate } from "./template.anywhere";
 
 export interface TemplateProps {
   extendsTo?: string;
@@ -31,6 +32,7 @@ export const Template: React.FC<TemplateProps> = ({
     nearby: <NearbyTemplate {...props} />,
     banner: <BannerTemplate {...props} />,
     online: <OnlineTemplate {...props} />,
+    anywhere: <AnywhereTemplate {...props} />,
   };
 
   return (
