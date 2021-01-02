@@ -3,7 +3,7 @@ import React from "react";
 /** components */
 import { Banner } from "../../components/organisms/banner/banner.component";
 import { Header } from "../../components/organisms/header/header.component";
-import { Section } from "../../components/organisms/section/section.component";
+import { Template } from "@template/onlinehosts";
 import { Footer } from "../../components/organisms/footer/footer.component";
 
 /** styles **/
@@ -27,21 +27,21 @@ const OnlineHost = () => {
         </div>
       </div>
       <div className={[layout["container"]].join(" ")}>
-        <Section variant="works" />
+        <Template variant="works" />
       </div>
       <div
         className={[layout["container--shrink"], space["p-v--64"]].join(" ")}
       >
-        <Section variant="sharing" />
+        <Template variant="sharing" />
       </div>
       <div className={[layout["container"], space["p-v--64"]].join(" ")}>
-        <Section variant="back" />
+        <Template variant="back" />
       </div>
       <div className={[layout["container"], space["p-v--100"]].join(" ")}>
-        <Section variant="faq" />
+        <Template variant="faq" />
       </div>
       <div>
-        <Section variant="more" />
+        <Template variant="more" />
       </div>
       <div>
         <Footer />

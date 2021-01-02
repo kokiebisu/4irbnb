@@ -1,6 +1,8 @@
-/** landing */
-import { MoreTemplate } from "./template.more";
-import { FAQTemplate } from "./template.faq";
+import { ExperiencesTemplate } from "@template/onlinehost/template.experiences";
+import { ParticipateTemplate } from "@template/onlinehost/template.participate";
+import { BringTemplate } from "@template/onlinehost/template.bring";
+import { CharacteristicsTemplate } from "@template/onlinehost/template.characteristics";
+import { AvailableTemplate } from "@template/onlinehost/template.available";
 
 /** styles **/
 import layout from "@styles/layout.module.scss";
@@ -30,8 +32,11 @@ export const Template: React.FC<TemplateProps> = ({
   ...props
 }) => {
   const variants: { [key: string]: JSX.Element } = {
-    more: <MoreTemplate {...props} />,
-    faq: <FAQTemplate {...props} />,
+    experiences: <ExperiencesTemplate {...props} />,
+    participate: <ParticipateTemplate {...props} />,
+    bring: <BringTemplate {...props} />,
+    characteristics: <CharacteristicsTemplate {...props} />,
+    available: <AvailableTemplate {...props} />,
   };
 
   return (

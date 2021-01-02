@@ -5,7 +5,7 @@ import font from "@styles/font.module.scss";
 import shape from "@styles/shape.module.scss";
 
 /** components */
-import { Section } from "@section/section.component";
+import { Template } from "@template/stays";
 import { Bar } from "@bar/bar.component";
 import { Button } from "@button";
 
@@ -73,13 +73,13 @@ export const CategoryPrototype: React.FC<{
         </div>
       </div>
       <div className={[space["m-b--32"]].join(" ")}>
-        <Section variant="stay" pagination />
+        <Template variant="stay" pagination />
       </div>
       <div className={[space["m-b--50"]].join(" ")}>
-        <Section variant="also" />
+        <Template variant="also" />
       </div>
       <div className={[space["m-b--45"]].join(" ")}>
-        <Section variant="homes" layout="vertical" location={location} />
+        <Template variant="homes" layout="vertical" location={location} />
       </div>
       <div
         className={[

@@ -1,4 +1,6 @@
-import Link from "next/link";
+import Router from "next/router";
+
+import { Button } from "@button";
 
 /** components */
 import { CategoryCard } from "@card/card.category";
@@ -64,13 +66,13 @@ export const Card: React.FC<CardProps> = ({
 
   if (to) {
     return (
-      <Link href={to}>
+      <Button onClick={() => Router.push(to)}>
         <a>
           <div data-testid={`${variant}-card`} className={extendsTo}>
             {variants[variant]}
           </div>
         </a>
-      </Link>
+      </Button>
     );
   }
 

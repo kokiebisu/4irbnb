@@ -9,7 +9,7 @@ import shape from "@styles/shape.module.scss";
 
 /** components */
 import { Header } from "@header/header.component";
-import { Section } from "@section/section.component";
+import { Template } from "@template/stays";
 import { Bar } from "@bar/bar.component";
 import { Footer } from "@footer/footer.component";
 import { Button } from "@button";
@@ -117,7 +117,7 @@ export const NearbyPrototype: React.FC<{
           </div>
         )}
         <div>
-          <Section variant="homes" />
+          <Template variant="homes" />
         </div>
         <div
           className={[
@@ -130,7 +130,7 @@ export const NearbyPrototype: React.FC<{
         </div>
       </div>
       <div className={[space["p--24"], color["bg--white__1"]].join(" ")}>
-        <Section variant="also" />
+        <Template variant="also" />
       </div>
     </div>
   );
