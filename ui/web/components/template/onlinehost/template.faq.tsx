@@ -5,7 +5,7 @@ import { Bullet } from "@bullet";
 /** styles */
 import space from "@styles/space.module.scss";
 
-export const FAQSection: React.FC<{
+export const FAQTemplate: React.FC<{
   questions?: { question: string; answer: string }[];
 }> = ({
   questions = [
