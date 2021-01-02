@@ -33,34 +33,14 @@ export const ReviewsTemplate: React.FC<{
   layoutType?: string;
 }> = ({
   categories = [
-    { type: "Cleanliness", average: 5.0 },
-    { type: "Accuracy", average: 4.3 },
-    { type: "Communication", average: 4.4 },
-    { type: "Location", average: 4.8 },
-    { type: "Check-in", average: 4.9 },
-    {
-      type: "Value",
-      average: 4.9,
-    },
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
   ],
-  reviews = [
-    {
-      imgUrl:
-        "https://a0.muscache.com/im/pictures/user/04d3499b-6cca-4d1a-acc4-1fc4444e1002.jpg?im_w=240",
-      name: "Person Name",
-      date: "October 2020",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    },
-    {
-      imgUrl:
-        "https://a0.muscache.com/im/pictures/user/04d3499b-6cca-4d1a-acc4-1fc4444e1002.jpg?im_w=240",
-      name: "Person Name",
-      date: "October 2020",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-    },
-  ],
+  reviews = [undefined, undefined, undefined, undefined],
   ratings = 5.0,
   numberOfReviews = 100,
   layoutType = "room",
@@ -115,8 +95,8 @@ export const ReviewsTemplate: React.FC<{
                 >
                   <Bullet
                     variant="score"
-                    category={category.type}
-                    average={category.average}
+                    category={category?.type}
+                    average={category?.average}
                   />
                 </div>
               );
@@ -138,8 +118,8 @@ export const ReviewsTemplate: React.FC<{
               >
                 <Card
                   variant="review"
-                  imgUrl={review.imgUrl}
-                  description={review.description}
+                  imgUrl={review?.imgUrl}
+                  description={review?.description}
                 />
               </div>
             );

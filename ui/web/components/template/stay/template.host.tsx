@@ -64,7 +64,7 @@ export const HostTemplate: React.FC<{
   joined = "February 2016",
   duringStay = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
   numberOfReviews = 100,
-  hostImgUrl = "https://a0.muscache.com/im/pictures/user/ca3ae8e3-997b-4ec6-b3af-139dd46be44b.jpg?im_w=240",
+  hostImgUrl,
   responseTime = "within an hour",
   responseRate = 54,
   layoutType = "room",
@@ -86,16 +86,30 @@ export const HostTemplate: React.FC<{
           ].join(" ")}
         >
           <div className={[layout["flex"], layout["justify-center"]].join(" ")}>
-            <img
-              style={{
-                objectFit: "cover",
-                width: 64,
-                height: 64,
-                borderRadius: 9999,
-              }}
-              className={[space["m-r--14"]].join(" ")}
-              src={hostImgUrl}
-            />
+            {hostImgUrl ? (
+              <img
+                style={{
+                  objectFit: "cover",
+                  width: 64,
+                  height: 64,
+                  borderRadius: 9999,
+                }}
+                className={[space["m-r--14"]].join(" ")}
+                src={hostImgUrl}
+              />
+            ) : (
+              <div
+                style={{
+                  width: 64,
+                  height: 64,
+                }}
+                className={[
+                  color["bg--white__2"],
+                  shape["br--circle"],
+                  space["m-r--14"],
+                ].join(" ")}
+              />
+            )}
           </div>
           <div>
             <div className={[shape["h--50p"]].join(" ")}>
