@@ -20,6 +20,8 @@ import { useSlider, SliderProps } from "@hooks/useSlider";
  * @param {Object[]} hosts - List of hosts
  */
 export const CommunityTemplate: React.FC<{
+  title?: string;
+  description?: string;
   hosts?: {
     name: string;
     stayType: string;
@@ -27,43 +29,9 @@ export const CommunityTemplate: React.FC<{
     imgUrl: string;
   }[];
 }> = ({
-  hosts = [
-    {
-      name: "Darrel",
-      stayType: "tiny house",
-      location: "Atlanta",
-      imgUrl:
-        "https://a0.muscache.com/im/pictures/92acd468-73bf-4ca1-a956-277c4a94b3a3.jpg?im_q=highq&im_w=960",
-    },
-    {
-      name: "Candida & Jeff",
-      stayType: "House",
-      location: "Joshua Tree",
-      imgUrl:
-        "https://a0.muscache.com/im/pictures/8a09fe60-64e5-4461-bb80-aaf8bc3238a7.jpg?im_q=highq&im_w=960",
-    },
-    {
-      name: "Ryo",
-      stayType: "farm stay",
-      location: "Komatsu",
-      imgUrl:
-        "https://a0.muscache.com/im/pictures/d95dc425-2606-4727-9a2b-861709479fb9.jpg?im_q=highq&im_w=960",
-    },
-    {
-      name: "Sophie",
-      stayType: "loft",
-      location: "Paris",
-      imgUrl:
-        "https://a0.muscache.com/im/pictures/17d27522-7f79-4a82-9225-74c737800641.jpg?im_q=highq&im_w=960",
-    },
-    {
-      name: "Nancy",
-      stayType: "private room",
-      location: "San Francisco",
-      imgUrl:
-        "https://a0.muscache.com/im/pictures/e4ad8c8e-ccf9-473c-856b-0b3c5dfe0662.jpg?im_q=highq&im_w=960",
-    },
-  ],
+  title = "Title",
+  description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+  hosts = [undefined, undefined, undefined, undefined, undefined],
 }) => {
   const width = 366;
   const sliderRef = useRef(null);
@@ -95,13 +63,12 @@ export const CommunityTemplate: React.FC<{
                 style={{ lineHeight: 1 }}
                 className={[font["size--45"]].join(" ")}
               >
-                Host your home on Airbnb
+                {title}
               </h1>
             </div>
             <div className={[space["m-b--32"]].join(" ")}>
               <h4 className={[font["size--18"], font["lh--15"]].join(" ")}>
-                Join a vibrant community of hosts, create memorable experiences
-                for travellers, and earn money to pursue the things you love.
+                {description}
               </h4>
             </div>
             <div className={[layout["inline-block"]].join(" ")}>
@@ -144,7 +111,7 @@ export const CommunityTemplate: React.FC<{
               display: "flex",
             }}
           >
-            {hosts.map(({ name, imgUrl, stayType, location }, index) => {
+            {hosts.map((host, index) => {
               return (
                 <div
                   key={index}
@@ -153,10 +120,10 @@ export const CommunityTemplate: React.FC<{
                 >
                   <Card
                     variant="host"
-                    host={name}
-                    imgUrl={imgUrl}
-                    stayType={stayType}
-                    location={location}
+                    host={host?.name}
+                    imgUrl={host?.imgUrl}
+                    stayType={host?.stayType}
+                    location={host?.location}
                   />
                 </div>
               );
