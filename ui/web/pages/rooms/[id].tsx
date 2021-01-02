@@ -1,30 +1,29 @@
-import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 /** contexts */
-import { useToggleState } from "context/toggle";
+import { useToggleState } from "@context/toggle";
 
 /** components */
-import { Header } from "../../components/organisms/header/header.component";
-import { Footer } from "../../components/organisms/footer/footer.component";
-import { Section } from "../../components/organisms/section/section.component";
-import { Card } from "../../components/molecules/card/card.component";
-import { Modal } from "../../components/organisms/modal/modal.component";
+import { Header } from "@header/header.component";
+import { Footer } from "@footer/footer.component";
+import { Template } from "@template/rooms/id";
+import { Card } from "@card/card.component";
+import { Modal } from "@modal/modal.component";
 
 /** styles */
-import responsive from "../../styles/responsive.module.scss";
-import layout from "../../styles/layout.module.scss";
-import details from "../../styles/details.module.scss";
-import staysDetail from "../../styles/staysDetail.module.scss";
-import color from "../../styles/color.module.scss";
-import shape from "../../styles/shape.module.scss";
-import space from "../../styles/space.module.scss";
+import responsive from "@styles/responsive.module.scss";
+import layout from "@styles/layout.module.scss";
+import details from "@styles/details.module.scss";
+import staysDetail from "@styles/staysDetail.module.scss";
+import color from "@styles/color.module.scss";
+import shape from "@styles/shape.module.scss";
+import space from "@styles/space.module.scss";
 
 /** hooks */
-import { useHandleScroll } from "hooks/useHandleScroll";
+import { useHandleScroll } from "@hooks/useHandleScroll";
 
 /** stories */
-import { menu } from "../../components/organisms/modal/modal.stories";
+import { menu } from "@modal/modal.stories";
 
 /**
  * Render the component for path /rooms/[id]
@@ -60,7 +59,7 @@ const id: () => string | JSX.Element = () => {
           )}
         </AnimatePresence>
         <div className={[].join(" ")}>
-          <Section
+          <Template
             extendsTo={[staysDetail["flex__panel"]].join(" ")}
             variant="panel"
           />
@@ -82,16 +81,16 @@ const id: () => string | JSX.Element = () => {
                   'guidelines',
                 ]}
               /> */}
-              <Section
+              <Template
                 variant="description"
                 extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
               />
-              <Section
+              <Template
                 extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
                 variant="arrangements"
                 title="Sleeping arrangements"
               />
-              <Section
+              <Template
                 extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
                 variant="amenities"
                 title="Amenities"
@@ -112,20 +111,20 @@ const id: () => string | JSX.Element = () => {
               />
             </div>
           </div>
-          <Section
+          <Template
             extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
             variant="reviews"
           />
-          <Section
+          <Template
             extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
             variant="host"
           />
-          <Section
+          <Template
             extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
             variant="know"
           />
         </div>
-        <Section
+        <Template
           extendsTo={[
             color["b-t--white__2"],
             space["p-v--32"],

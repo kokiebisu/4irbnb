@@ -1,3 +1,8 @@
+import Router from "next/router";
+
+/** styles */
+import font from "@styles/font.module.scss";
+
 /** components */
 import { CategoryCard } from "@card/card.category";
 import { HorizontalCard } from "@card/card.horizontal";
@@ -17,6 +22,7 @@ import { AgainCard } from "@card/card.again";
 import { WorksCard } from "@card/card.works";
 import { SharingCard } from "@card/card.sharing";
 import { HowCard } from "@card/card.how";
+import { AnywhereCard } from "./card.anywhere";
 
 export interface CardProps {
   extendsTo?: string;
@@ -58,7 +64,22 @@ export const Card: React.FC<CardProps> = ({
     works: <WorksCard {...props} />,
     sharing: <SharingCard {...props} />,
     how: <HowCard {...props} />,
+    anywhere: <AnywhereCard {...props} />,
   };
+
+  if (to) {
+    return (
+      <button
+        className={[font["text--left"]].join(" ")}
+        data-testid={`${variant}-card--molecule`}
+        onClick={() => Router.push(to)}
+      >
+        <div data-testid={`${variant}-card`} className={extendsTo}>
+          {variants[variant]}
+        </div>
+      </button>
+    );
+  }
 
   return (
     <div data-testid={`${variant}-card`} className={extendsTo}>

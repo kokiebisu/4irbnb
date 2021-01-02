@@ -20,7 +20,7 @@ import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 
 /** stories */
-import { primary, underline } from "@button/button.stories";
+import { Underline } from "@button/button.stories";
 
 export const ExistsPrototype: React.FC<{
   data?: {
@@ -114,14 +114,14 @@ export const ExistsPrototype: React.FC<{
       </form>
       <div className={[space["m-v--16"]].join(" ")}>
         <Button
-          {...underline.args}
+          {...Underline.args}
           title="Login with a different account"
           onClick={() => alert("button pressed")}
         />
       </div>
       <div className={[space["m-v--16"]].join(" ")}>
         <Button
-          {...underline.args}
+          {...Underline.args}
           title="Forgot password?"
           onClick={() => alert("button pressed")}
         />

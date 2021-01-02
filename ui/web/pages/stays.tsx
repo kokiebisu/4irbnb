@@ -1,20 +1,14 @@
 import React from "react";
 
-/**
- * Content
- */
+/** content */
 import { typeStays } from "content";
 
-/**
- * Temporary Data
- */
+/** temporary data */
 import { uniqueStays, novelties } from "data/stays";
 
-/**
- * Components
- */
+/** components */
 import { Header } from "../components/organisms/header/header.component";
-import { Section } from "../components/organisms/section/section.component";
+import { Template } from "@template/s/homes";
 import { Footer } from "components/organisms/footer/footer.component";
 
 /**

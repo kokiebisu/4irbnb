@@ -19,7 +19,7 @@ import { useToggleDispatch, useToggleState } from "@context/toggle";
 import { ChevronLeft } from "@svg/regular";
 
 /** stories */
-import { menu as menuButton } from "@button/button.stories";
+import { Menu as menuButton } from "@button/button.stories";
 
 /** contents */
 import { Content } from "@button/content/content.transparent";
@@ -58,10 +58,10 @@ export const WhiteHeader: React.FC<{
           ].join(" ")}
         >
           <div className={[styles["searchbar__logo--md"]].join(" ")}>
-            <Button variant="logo" />
+            <Button variant="logo" onClick={() => Router.push("/")} />
           </div>
           <div className={[styles["searchbar__logo--lg"]].join(" ")}>
-            <Button variant="logo" noName />
+            <Button variant="logo" noName onClick={() => Router.push("/")} />
           </div>
 
           {/* <div>

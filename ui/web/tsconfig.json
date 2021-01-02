@@ -37,6 +37,8 @@
       "@section/*": ["components/organisms/section/*"],
       "@layout": ["components/layout"],
       "@layout/*": ["components/layout/*"],
+      "@template": ["components/template"],
+      "@template/*": ["components/template/*"],
       "@styles/*": ["styles/*"],
       "@svg/*": ["public/svg/*"],
       "@helper/*": ["helper/*"],

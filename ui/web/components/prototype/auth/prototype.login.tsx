@@ -23,7 +23,7 @@ import { validateLogin as validate } from "@helper/auth";
 import { useFetch } from "@hooks/useFetch";
 
 /** stories */
-import { primary, underline } from "@button/button.stories";
+import { primary, Underline } from "@button/button.stories";
 
 /**
  * Renders the login template component
@@ -124,14 +124,14 @@ export const LoginTemplate: React.FC<{}> = () => {
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
           <Button
-            {...underline.args}
+            {...Underline.args}
             title="Forgot password?"
             onClick={redirectTo}
           />
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
           <Button
-            {...underline.args}
+            {...Underline.args}
             title="More login options"
             onClick={switchBack}
           />
@@ -140,7 +140,7 @@ export const LoginTemplate: React.FC<{}> = () => {
           <p className={[font["size--14"], space["m-r--8"]].join(" ")}>
             Don't have an account?
           </p>
-          <Button {...underline.args} title="Sign up" onClick={switchAuth} />
+          <Button {...Underline.args} title="Sign up" onClick={switchAuth} />
         </div>
       </form>
     </div>
