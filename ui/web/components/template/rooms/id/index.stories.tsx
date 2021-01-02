@@ -59,6 +59,16 @@ Other.args = {
   variant: "other",
 };
 
+export const Description = TemplateStory.bind({});
+Description.args = {
+  variant: "description",
+};
+
+export const Know = TemplateStory.bind({});
+Know.args = {
+  variant: "know",
+};
+
 // export const StayWithPagination = TemplateStory.bind({});
 // StayWithPagination.args = {
 //   variant: "stay",
