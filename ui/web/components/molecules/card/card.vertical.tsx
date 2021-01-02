@@ -15,85 +15,112 @@ import { Heart, Star } from "@svg/original";
  * @param {boolean} save - Whether if the card can be saved
  */
 export const VerticalCard: React.FC<{
-  card?: any;
-  save?: boolean;
+  imgUrl?: string;
   superhost?: boolean;
+  ratings?: number;
+  save?: boolean;
+  number_of_reviews?: number;
+  country?: string;
+  title?: string;
+  cost?: number;
 }> = ({
-  card = {
-    imgUrl:
-      "https://a0.muscache.com/im/pictures/lombard/MtTemplate-1659111-active_media/original/4931efc9-f708-4619-9b25-51036194e1e1.jpg?aki_policy=poster",
-    title: "Title should be here",
-    ratings: 5.0,
-    number_of_reviews: 100,
-    cost: 100,
-    country: "Country",
-  },
+  imgUrl,
+  superhost,
+  ratings = 5.0,
+  number_of_reviews = 100,
   save,
+  country = "Country",
+  title = "Title",
+  cost = 10,
 }) => {
   return (
     <div className={[styles["w__vertical"]].join(" ")}>
-      <div className={[layout["relative"]].join(" ")}>
-        <img className={[shape["br--12"]].join(" ")} src={card.imgUrl} />
+      <div
+        style={{ paddingTop: "135%" }}
+        className={[layout["relative"]].join(" ")}
+      >
         <div
-          className={[
-            layout["flex"],
-            space["p-v--8"],
-            space["p-h--10"],
-            layout["at--0"],
-            layout["justify-between"],
-            shape["w--full"],
-          ].join(" ")}
+          style={{ position: "absolute", top: 0, bottom: 0, right: 0, left: 0 }}
         >
+          {imgUrl ? (
+            <img className={[shape["br--12"]].join(" ")} src={imgUrl} />
+          ) : (
+            <div
+              className={[shape["br--12"]].join(" ")}
+              style={{
+                width: "100%",
+                height: "100%",
+                backgroundColor: "lightgray",
+              }}
+            />
+          )}
           <div
-            className={
-              card.superhost
-                ? [].join(" ")
-                : [color["c--white"], shape["hidden"]].join(" ")
-            }
+            className={[
+              layout["flex"],
+              space["p-v--8"],
+              space["p-h--10"],
+              layout["at--0"],
+              layout["justify-between"],
+              shape["w--full"],
+            ].join(" ")}
           >
             <div
-              className={[
-                space["p-h--8"],
-                space["p-v--4"],
-                color["bg--white__1"],
-                shape["shadow--lg"],
-                shape["br--3"],
-              ].join(" ")}
+              className={
+                superhost
+                  ? [].join(" ")
+                  : [color["c--white"], shape["hidden"]].join(" ")
+              }
             >
-              <p
+              <div
                 className={[
-                  font["size--12"],
-                  font["uppercase"],
-                  font["ls--3"],
+                  space["p-h--8"],
+                  space["p-v--4"],
+                  color["bg--white__1"],
+                  shape["shadow--lg"],
+                  shape["br--3"],
                 ].join(" ")}
               >
-                Superhost
-              </p>
+                <p
+                  className={[
+                    font["size--12"],
+                    font["uppercase"],
+                    font["ls--3"],
+                  ].join(" ")}
+                >
+                  Superhost
+                </p>
+              </div>
             </div>
-          </div>
-          <div
-            className={
-              save
-                ? [color["c--white"]].join(" ")
-                : [color["c--white"], shape["hidden"]].join(" ")
-            }
-          >
-            <Heart
-              fill="rgba(0, 0, 0, 0.5)"
-              width={24}
-              stroke="rgb(255, 255, 255)"
-              strokeWidth={2}
-            />
+            <div
+              className={
+                save
+                  ? [color["c--white"]].join(" ")
+                  : [color["c--white"], shape["hidden"]].join(" ")
+              }
+            >
+              <Heart
+                fill="rgba(0, 0, 0, 0.5)"
+                width={24}
+                stroke="rgb(255, 255, 255)"
+                strokeWidth={2}
+              />
+            </div>
           </div>
         </div>
       </div>
-      <div className={[layout["flex"], layout["items-center"]].join(" ")}>
+      <div
+        className={[
+          space["m-t--4"],
+          layout["flex"],
+          layout["items-center"],
+        ].join(" ")}
+      >
         <div className={[space["m-r--3"]].join(" ")}>
           <Star width={15} />
         </div>
         <div className={[space["m-r--3"]].join(" ")}>
           <p className={[font["weight--100"], font["size--13"]].join(" ")}>
-            {card.ratings}
+            {ratings}
           </p>
         </div>
         <div>
@@ -103,7 +130,7 @@ export const VerticalCard: React.FC<{
               font["size--13"],
               color["c--gray__0"],
             ].join(" ")}
-          >{`(${card.number_of_reviews})`}</p>
+          >{`(${number_of_reviews})`}</p>
         </div>
         <div>
           <p className={[color["c--gray__0"]].join(" ")}>&nbsp; · &nbsp; </p>
@@ -116,7 +143,7 @@ export const VerticalCard: React.FC<{
               color["c--gray__0"],
             ].join(" ")}
           >
-            {card.country}
+            {country}
           </p>
         </div>
       </div>
@@ -129,14 +156,12 @@ export const VerticalCard: React.FC<{
             color["c--gray__4"],
           ].join(" ")}
         >
-          {card.title}
+          {title}
         </p>
       </div>
       <div>
         <p className={[font["weight--100"]].join(" ")}>
-          <span className={[font["weight--500"]].join(" ")}>
-            From ${card.cost}
-          </span>
+          <span className={[font["weight--500"]].join(" ")}>From ${cost}</span>
           /person
         </p>
       </div>
