@@ -33,3 +33,8 @@ export const Ready = TemplateStory.bind({});
 Ready.args = {
   variant: "ready",
 };
+
+export const All = TemplateStory.bind({});
+All.args = {
+  variant: "all",
+};

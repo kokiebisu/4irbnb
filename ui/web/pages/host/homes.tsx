@@ -1,16 +1,17 @@
 import React from "react";
 
 /** styles **/
-import space from "../../styles/space.module.scss";
-import color from "../../styles/color.module.scss";
-import responsive from "../../styles/responsive.module.scss";
+import space from "@styles/space.module.scss";
+import color from "@styles/color.module.scss";
+import responsive from "@styles/responsive.module.scss";
 
 /** components */
-import { Header } from "../../components/organisms/header/header.component";
-import { Template } from "@template/s/homes";
-import { Footer } from "../../components/organisms/footer/footer.component";
-import { Banner } from "../../components/organisms/banner/banner.component";
-import { useTabTitle } from "hooks/useTabTitle";
+import { Header } from "@header/header.component";
+import { Template } from "@template/host/homes";
+import { Footer } from "@footer/footer.component";
+
+/** hooks */
+import { useTabTitle } from "@hooks/useTabTitle";
 
 /**
  * Renders the component for path /host/homes
@@ -24,7 +25,7 @@ const Homes: () => string | JSX.Element = () => {
         <Header variant="homes" />
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
-        <Banner variant="homes" />
+        <Template variant="community" />
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
         <div className={`${[space["p__homes"]].join(" ")}`}>
