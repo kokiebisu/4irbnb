@@ -4,6 +4,7 @@ import Router from "next/router";
 import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 import font from "@styles/font.module.scss";
+import shape from "@styles/shape.module.scss";
 
 /** components */
 import { Button } from "@button";
@@ -20,24 +21,26 @@ export const HostCard: React.FC<{
   host?: string;
   stayType?: string;
   location?: string;
-}> = ({
-  imgUrl = "https://a0.muscache.com/im/pictures/92acd468-73bf-4ca1-a956-277c4a94b3a3.jpg?im_q=highq&im_w=960",
-  host = "Darrel",
-  stayType = "tiny house",
-  location = "Atlanta",
-}) => {
+}> = ({ imgUrl, host = "Host", stayType = "Type", location = "Location" }) => {
   return (
     <div>
       <div>
-        <img
-          style={{
-            height: 434,
-            objectFit: "cover",
-            width: 350,
-            borderRadius: 12,
-          }}
-          src={imgUrl}
-        />
+        {imgUrl ? (
+          <img
+            className={[shape["br--20"]].join(" ")}
+            style={{
+              objectFit: "cover",
+              height: 434,
+              width: 350,
+            }}
+            src={imgUrl}
+          />
+        ) : (
+          <div
+            className={[shape["br--20"], color["bg--white__2"]].join(" ")}
+            style={{ height: 434, width: 350 }}
+          />
+        )}
       </div>
       <div style={{ marginTop: 6 }}>
         <h3>{host}</h3>

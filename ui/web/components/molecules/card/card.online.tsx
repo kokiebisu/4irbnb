@@ -16,8 +16,8 @@ export const OnlineCard: React.FC<{
   title?: string;
   inverse?: boolean;
 }> = ({
-  small = "https://a0.muscache.com/im/pictures/0e46f398-42f5-4897-9168-f84622aeba58.jpg",
-  large = "https://a0.muscache.com/im/pictures/78010337-07f0-4154-9528-363b97b54699.jpg",
+  small,
+  large,
   title = "Learn to make soup dumplings in Shanghai",
   inverse = false,
 }) => {
@@ -32,27 +32,40 @@ export const OnlineCard: React.FC<{
           width: "100%",
         }}
       >
-        <picture>
-          <source
-            srcSet={`${large}?im_w=480 1x, ${large}?im_w=960 2x`}
-            media="(min-width: 743.1px) and (max-width: 1127px)"
-          ></source>
-          <source
-            srcSet={`${large}?im_w=480 1x, ${large}?im_w=1200 2x`}
-            media="(min-width: 1127.1px) and (max-width: 1439px)"
-          ></source>
-          <source
-            srcSet={`${large}?im_w=720 1x, ${large}?im_w=1680 2x`}
-            media="(min-width: 1439.1px)"
-          ></source>
-          <img
-            style={{ objectFit: "cover", verticalAlign: "bottom" }}
-            className={[shape["br--20"]].join(" ")}
-            aria-hidden="true"
-            decoding="async"
-            src={`${small}?im_w=720`}
-          ></img>
-        </picture>
+        {small && large ? (
+          <picture>
+            <source
+              srcSet={`${large}?im_w=480 1x, ${large}?im_w=960 2x`}
+              media="(min-width: 743.1px) and (max-width: 1127px)"
+            ></source>
+            <source
+              srcSet={`${large}?im_w=480 1x, ${large}?im_w=1200 2x`}
+              media="(min-width: 1127.1px) and (max-width: 1439px)"
+            ></source>
+            <source
+              srcSet={`${large}?im_w=720 1x, ${large}?im_w=1680 2x`}
+              media="(min-width: 1439.1px)"
+            ></source>
+            <img
+              style={{ objectFit: "cover", verticalAlign: "bottom" }}
+              className={[shape["br--20"]].join(" ")}
+              aria-hidden="true"
+              decoding="async"
+              src={`${small}?im_w=720`}
+            ></img>
+          </picture>
+        ) : (
+          <div
+            className={[
+              shape["w--full"],
+              color["bg--white__2"],
+              shape["br--20"],
+            ].join(" ")}
+            style={{
+              paddingTop: "100%",
+            }}
+          />
+        )}
       </div>
       <div
         style={{
