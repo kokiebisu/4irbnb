@@ -1,0 +1,17 @@
+.host {
+  &__wrapper {
+    display: block;
+    @media screen and (min-width: 728px) {
+      display: flex;
+    }
+  }
+}
+
+.other {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media screen and (min-width: 1028px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

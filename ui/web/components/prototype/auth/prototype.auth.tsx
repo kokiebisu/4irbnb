@@ -20,7 +20,7 @@ import { getAuthContents } from "@button/content/content.auth";
 import { validateAuth as validate } from "@helper/auth";
 
 /** stories */
-import { auth, primary, underline } from "@button/button.stories";
+import { Auth, Underline } from "@button/button.stories";
 
 /**
  * Renders the auth template component
@@ -114,7 +114,7 @@ export const AuthPrototype: React.FC<{}> = () => {
             return (
               <div key={index} className={[space["m-v--14"]].join(" ")}>
                 <Button
-                  {...auth.args}
+                  {...Auth.args}
                   auth={method}
                   onClick={auths[method].handleClick}
                   icon={auths[method].icon}
@@ -139,7 +139,7 @@ export const AuthPrototype: React.FC<{}> = () => {
             </p>
           </div>
           <Button
-            {...underline.args}
+            {...Underline.args}
             onClick={switchAuth}
             title={authState.title === "Log in" ? "Sign up" : "Log in"}
           />

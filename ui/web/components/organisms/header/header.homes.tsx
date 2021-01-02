@@ -27,6 +27,7 @@ export const HomesHeader: React.FC<{
       >
         <div>
           <Button
+            variant="logo"
             extendsTo={[
               layout["inline-block"],
               header["hover__logo"],
@@ -34,9 +35,9 @@ export const HomesHeader: React.FC<{
               shape["br--circle"],
             ].join(" ")}
             onClick={() => Router.push("/")}
-          >
-            <NoNameLogo fill="black" width={30} height={32} />
-          </Button>
+            noName
+            fill="black"
+          />
         </div>
       </div>
     </header>

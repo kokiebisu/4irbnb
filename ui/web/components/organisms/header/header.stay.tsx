@@ -32,15 +32,16 @@ export const StayHeader: React.FC<{
       <div className={[layout["flex"], layout["items-center"]].join(" ")}>
         <div>
           <Button
+            variant="logo"
+            noName
+            fill="##008489"
             onClick={() => Router.push("/")}
             extendsTo={[
               layout["inline-block"],
               space["p--14"],
               shape["br--circle"],
             ].join(" ")}
-          >
-            <NoNameLogo fill="#008489" width={34} />
-          </Button>
+          />
         </div>
         {title && (
           <div className={[layout["relative"], layout["b--2"]].join(" ")}>

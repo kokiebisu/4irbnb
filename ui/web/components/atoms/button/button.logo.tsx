@@ -4,12 +4,13 @@ import styles from "@styles/index.module.scss";
 /** vectors */
 import { NameLogo, NoNameLogo } from "@svg/logo";
 
-export const LogoButton: React.FC<{ noName?: boolean }> = ({
+export const LogoButton: React.FC<{ noName?: boolean; fill?: string }> = ({
   noName = false,
+  fill = "#F5385D",
 }) => {
   return noName ? (
-    <NoNameLogo fill="#F5385D" width={30} height={32} />
+    <NoNameLogo fill={fill} width={30} height={32} />
   ) : (
-    <NameLogo fill="#F5385D" width={102} height={32} />
+    <NameLogo fill={fill} width={102} height={32} />
   );
 };
