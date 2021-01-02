@@ -76,14 +76,14 @@ const id: () => string | JSX.Element = () => {
           )}
         </AnimatePresence>
         <div className={[].join(" ")}>
-          {experiences[experienceID] ? (
+          {experiences[experienceID] && (
             <Template
               layoutType="experience"
               extendsTo={[staysDetail["flex__panel"]].join(" ")}
               variant="panel"
               {...experiences[experienceID]}
             />
-          ) : null}
+          )}
         </div>
         <div
           className={[layout["container"], staysDetail["m__content"]].join(" ")}
@@ -91,15 +91,15 @@ const id: () => string | JSX.Element = () => {
           <div className={[details["flex__details"]].join(" ")}>
             <div className={[details["w__details--left"]].join(" ")}>
               <div className={[staysDetail["b__characteristics"]].join(" ")}>
-                {experiences[experienceID] ? (
+                {experiences[experienceID] && (
                   <Template
                     layoutType="experience"
                     variant="characteristics"
                     {...experiences[experienceID]}
                   />
-                ) : null}
+                )}
               </div>
-              {experiences[experienceID] ? (
+              {experiences[experienceID] && (
                 <div
                   className={[color["b-t--white__2"], space["p-v--32"]].join(
                     " "
@@ -111,8 +111,8 @@ const id: () => string | JSX.Element = () => {
                     {...experiences[experienceID]}
                   />
                 </div>
-              ) : null}
-              {experiences[experienceID] ? (
+              )}
+              {experiences[experienceID] && (
                 <div
                   className={[color["b-t--white__2"], space["p-v--32"]].join(
                     " "
@@ -123,9 +123,8 @@ const id: () => string | JSX.Element = () => {
                     {...experiences[experienceID]}
                   />
                 </div>
-              ) : null}
-              {experiences[experienceID] &&
-              experiences[experienceID].necessities ? (
+              )}
+              {experiences[experienceID]?.necessities && (
                 <div
                   className={[color["b-t--white__2"], space["p-v--32"]].join(
                     " "
@@ -133,7 +132,7 @@ const id: () => string | JSX.Element = () => {
                 >
                   <Template variant="bring" {...experiences[experienceID]} />
                 </div>
-              ) : null}
+              )}
             </div>
             <div
               style={{ paddingTop: 20, paddingBottom: 56, width: "36%" }}
@@ -147,27 +146,23 @@ const id: () => string | JSX.Element = () => {
                   layout["sticky"],
                 ].join(" ")}
               >
-                {experiences[experienceID] ? (
+                {experiences[experienceID] && (
                   <Modal
                     variant="booking"
                     extendsTo={[shape["w--full"]].join(" ")}
                     {...experiences[experienceID]}
                   />
-                ) : null}
+                )}
               </div>
             </div>
           </div>
-          {experiences[experienceID] ? (
+          {experiences[experienceID] && (
             <div
               className={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
             >
-              <Template
-                layoutType="experience"
-                variant="host"
-                {...experiences[experienceID]}
-              />
+              <Template variant="host" {...experiences[experienceID]} />
             </div>
-          ) : null}
+          )}
           {experiences[experienceID] ? (
             <div
               className={[color["b-t--white__2"], space["p-v--32"]].join(" ")}

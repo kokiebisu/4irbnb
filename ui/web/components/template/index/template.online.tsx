@@ -83,7 +83,7 @@ export const OnlineTemplate: React.FC<{
               height: "100%",
               overflowX: "auto",
               overflowY: "hidden",
-              paddingRight: 24,
+              padding: "0 12px",
               paddingTop: 0,
               scrollPaddingTop: 0,
               scrollPaddingRight: 24,

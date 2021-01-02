@@ -43,3 +43,23 @@ export const Panel = TemplateStory.bind({});
 Panel.args = {
   variant: "panel",
 };
+
+export const Description = TemplateStory.bind({});
+Description.args = {
+  variant: "description",
+};
+
+export const Host = TemplateStory.bind({});
+Host.args = {
+  variant: "host",
+};
+
+export const Know = TemplateStory.bind({});
+Know.args = {
+  variant: "know",
+};
+
+export const Reviews = TemplateStory.bind({});
+Reviews.args = {
+  variant: "reviews",
+};
