@@ -1,110 +1,3 @@
-export const destinationByCategories = [
-  {
-    name: "Destinations for arts & culture",
-  },
-  { name: "Destinations for outdoor adventure" },
-  { name: "Mountain cabins" },
-  { name: "Beach destinations" },
-  { name: "Popular destinations" },
-];
-
-export const destinations = [
-  { city: "New York", state: "New York" },
-  { city: "Phoenix", state: "Arizona" },
-  {
-    city: "Atlanta",
-    state: "Georgia",
-  },
-  {
-    city: "Chicago",
-    state: "Illinois",
-  },
-  {
-    city: "Miami",
-    state: "Florida",
-  },
-  {
-    city: "San Diego",
-    state: "California",
-  },
-  {
-    city: "San Francisco",
-    state: "California",
-  },
-  {
-    city: "Nashville",
-    state: "Tennessee",
-  },
-  {
-    city: "Seattle",
-    state: "Washington",
-  },
-  {
-    city: "Boston",
-    state: "Massachusetts",
-  },
-  {
-    city: "Philadelphia",
-    state: "Pennsylvania",
-  },
-  {
-    city: "Dallas",
-    state: "Texas",
-  },
-  {
-    city: "Austin",
-    state: "Texas",
-  },
-  {
-    city: "Washington",
-    state: "District of Columbia",
-  },
-  {
-    city: "New Orleans",
-    state: "Louisiana",
-  },
-  {
-    city: "San Antonio",
-    state: "Texas",
-  },
-  {
-    city: "Houston",
-    state: "Texas",
-  },
-  {
-    city: "Los Angeles",
-    state: "California",
-  },
-  {
-    city: "London",
-    state: "United Kingdom",
-  },
-  {
-    city: "Paris",
-    state: "France",
-  },
-  {
-    city: "Memphis",
-    state: "Tennessee",
-  },
-  {
-    city: "Rome",
-    state: "Italy",
-  },
-  {
-    city: "Barcelona",
-    state: "Spain",
-  },
-  {
-    city: "Amsterdam",
-    state: "Netherlands",
-  },
-  {
-    city: "Lexington",
-    state: "Kentucky",
-  },
-];
-
 export const categories = [
   {
     imgUrl:
@@ -203,74 +96,122 @@ export const sections = [
   },
 ];
 
-export const typeStays = [
-  {
-    card: {
-      title: "Tree house",
-      imgUrl:
-        "https://a0.muscache.com/im/pictures/175f945a-a4ac-416c-bb10-7e49a927c42f.jpg?im_w=1200",
-    },
-    to: "/",
-  },
-  {
-    card: {
-      title: "Floating homes",
-      imgUrl:
-        "https://a0.muscache.com/im/pictures/6568b09d-99ee-4f49-b9ca-afb90893d030.jpg?im_w=1200",
-    },
-    to: "/",
-  },
-  {
-    card: {
-      title: "Huts",
-      imgUrl:
-        "https://a0.muscache.com/im/pictures/931f2a49-d25b-40d7-971c-f42aad36af44.jpg?im_w=1200",
-    },
-    to: "/",
-  },
-  {
-    card: {
-      title: "Castles",
-      imgUrl:
-        "https://a0.muscache.com/im/pictures/a7450c1a-0562-4254-b6c9-ff2910d14fec.jpg?im_w=1200",
-    },
-    to: "/",
-  },
-  {
-    card: {
-      title: "Barns",
-      imgUrl:
-        "https://a0.muscache.com/im/pictures/dbf3efc3-9e0f-46a6-a402-010b0b7499dc.jpg?im_w=1200",
-    },
-    to: "/",
-  },
-  {
-    card: {
-      title: "Tiny houses",
-      imgUrl:
-        "https://a0.muscache.com/im/pictures/dce88618-109d-466b-b2b8-4e639c7aff36.jpg?im_w=1200",
-    },
-    to: "/",
-  },
-  {
-    card: {
-      title: "Farm stays",
-      imgUrl:
-        "https://a0.muscache.com/im/pictures/16ce203b-dfbf-4134-bdb3-863e2894d00c.jpg?im_w=1200",
-    },
-    to: "/",
-  },
-];
+// export const typeStays = [
+//   {
+//     card: {
+//       title: "Tree house",
+//       imgUrl:
+//         "https://a0.muscache.com/im/pictures/175f945a-a4ac-416c-bb10-7e49a927c42f.jpg?im_w=1200",
+//     },
+//     to: "/",
+//   },
+//   {
+//     card: {
+//       title: "Floating homes",
+//       imgUrl:
+//         "https://a0.muscache.com/im/pictures/6568b09d-99ee-4f49-b9ca-afb90893d030.jpg?im_w=1200",
+//     },
+//     to: "/",
+//   },
+//   {
+//     card: {
+//       title: "Huts",
+//       imgUrl:
+//         "https://a0.muscache.com/im/pictures/931f2a49-d25b-40d7-971c-f42aad36af44.jpg?im_w=1200",
+//     },
+//     to: "/",
+//   },
+//   {
+//     card: {
+//       title: "Castles",
+//       imgUrl:
+//         "https://a0.muscache.com/im/pictures/a7450c1a-0562-4254-b6c9-ff2910d14fec.jpg?im_w=1200",
+//     },
+//     to: "/",
+//   },
+//   {
+//     card: {
+//       title: "Barns",
+//       imgUrl:
+//         "https://a0.muscache.com/im/pictures/dbf3efc3-9e0f-46a6-a402-010b0b7499dc.jpg?im_w=1200",
+//     },
+//     to: "/",
+//   },
+//   {
+//     card: {
+//       title: "Tiny houses",
+//       imgUrl:
+//         "https://a0.muscache.com/im/pictures/dce88618-109d-466b-b2b8-4e639c7aff36.jpg?im_w=1200",
+//     },
+//     to: "/",
+//   },
+//   {
+//     card: {
+//       title: "Farm stays",
+//       imgUrl:
+//         "https://a0.muscache.com/im/pictures/16ce203b-dfbf-4134-bdb3-863e2894d00c.jpg?im_w=1200",
+//     },
+//     to: "/",
+//   },
+// ];
 
-export const nearbyPic = [
-  "https://a0.muscache.com/im/pictures/0445ba36-5684-4cca-9cb1-418a0ffdcd2f.jpg?im_q=medq&im_w=1200",
-  "https://a0.muscache.com/im/pictures/e8d3d6de-40b1-4341-89f2-afb2a1a4f71f.jpg?im_q=medq&im_w=1200",
-  "https://a0.muscache.com/im/pictures/c2eba2e9-0d80-4704-9e2c-34ac16316c53.jpg?im_q=medq&im_w=1200",
-  "https://a0.muscache.com/im/pictures/b948e0e0-c78f-4895-b433-c90401019981.jpg?im_q=medq&im_w=1200",
-  "https://a0.muscache.com/im/pictures/42901911-940b-45ac-997e-961ebf472195.jpg?im_q=medq&im_w=1200",
-  "https://a0.muscache.com/im/pictures/0810e005-87d3-4188-b95c-2d7fa2fc957b.jpg?im_q=medq&im_w=1200",
-  "https://a0.muscache.com/im/pictures/7d80bee1-a510-4950-a1a0-07a4fb25ec2e.jpg?im_q=medq&im_w=1200",
-  "https://a0.muscache.com/im/pictures/a7fe39da-3e57-44df-a744-9a73e482802d.jpg?im_q=medq&im_w=1200",
+export const nearbyItems = [
+  {
+    imgUrl:
+      "https://a0.muscache.com/im/pictures/0445ba36-5684-4cca-9cb1-418a0ffdcd2f.jpg?im_q=medq&im_w=1200",
+    hours: 6,
+    city: "Tofino",
+    to: "/",
+  },
+  {
+    imgUrl:
+      "https://a0.muscache.com/im/pictures/e8d3d6de-40b1-4341-89f2-afb2a1a4f71f.jpg?im_q=medq&im_w=1200",
+    hours: 2.5,
+    city: "Sechelt",
+    to: "/",
+  },
+  {
+    imgUrl:
+      "https://a0.muscache.com/im/pictures/c2eba2e9-0d80-4704-9e2c-34ac16316c53.jpg?im_q=medq&im_w=1200",
+    hours: 4.5,
+    city: "Kamloops",
+    to: "/",
+  },
+  {
+    imgUrl:
+      "https://a0.muscache.com/im/pictures/b948e0e0-c78f-4895-b433-c90401019981.jpg?im_q=medq&im_w=1200",
+    hours: 5.5,
+    city: "Uculelet",
+    to: "/",
+  },
+  {
+    imgUrl:
+      "https://a0.muscache.com/im/pictures/42901911-940b-45ac-997e-961ebf472195.jpg?im_q=medq&im_w=1200",
+    hours: 9,
+    city: "Golden",
+    to: "/",
+  },
+  {
+    imgUrl:
+      "https://a0.muscache.com/im/pictures/0810e005-87d3-4188-b95c-2d7fa2fc957b.jpg?im_q=medq&im_w=1200",
+    hours: 3.5,
+    city: "Victoria",
+    to: "/",
+  },
+  {
+    imgUrl:
+      "https://a0.muscache.com/im/pictures/7d80bee1-a510-4950-a1a0-07a4fb25ec2e.jpg?im_q=medq&im_w=1200",
+    hours: 3.5,
+    city: "Parksville",
+    to: "/",
+  },
+  {
+    imgUrl:
+      "https://a0.muscache.com/im/pictures/a7fe39da-3e57-44df-a744-9a73e482802d.jpg?im_q=medq&im_w=1200",
+    hours: 9.5,
+    city: "Nelson",
+    to: "/",
+  },
 ];
 
 export const onlines = [
