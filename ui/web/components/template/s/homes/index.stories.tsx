@@ -24,11 +24,6 @@ Homes.args = {
   variant: "homes",
 };
 
-export const All = TemplateStory.bind({});
-All.args = {
-  variant: "all",
-};
-
 export const Also = TemplateStory.bind({});
 Also.args = {
   variant: "also",
