@@ -25,7 +25,6 @@ export const NearbyCard: React.FC<{
   description = "Description",
   size = "sm",
 }) => {
-  console.log(imgUrl);
   return (
     <div className={[layout["flex"], layout["items-center"]].join(" ")}>
       <div

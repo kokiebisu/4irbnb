@@ -8,9 +8,6 @@ import space from "@styles/space.module.scss";
 /** components */
 import { Button } from "@button";
 
-/** vectors */
-import { NoNameLogo } from "@svg/logo";
-
 /**
  * Renders the experiences header
  */
@@ -28,11 +25,15 @@ export const ExperiencesHeader: React.FC<{}> = () => {
       >
         <div>
           <Button
+            variant="logo"
+            fill="black"
+            noName
             extendsTo={[layout["inline-block"]].join(" ")}
-            onClick={() => Router.push("/")}
-          >
-            <NoNameLogo fill="black" width={30} height={32} />
-          </Button>
+            onClick={() => {
+              console.log("he");
+              Router.push("/");
+            }}
+          />
         </div>
         <div className={[layout["flex"]].join(" ")}>
           <div className={[space["m-h--8"]].join(" ")}>English (CA)</div>

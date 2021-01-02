@@ -9,7 +9,7 @@ import shape from "@styles/shape.module.scss";
 
 /** components */
 import { Header } from "@header/header.component";
-import { Section } from "@section/section.component";
+import { Template } from "@template/s/homes";
 import { Bar } from "@bar/bar.component";
 import { Footer } from "@footer/footer.component";
 import { Button } from "@button";
@@ -30,14 +30,14 @@ export const NearbyPrototype: React.FC<{
 }> = ({
   city = "location",
   filterCount = 1,
-  guests = 8000,
-  average = 4.9,
+  guests = 1000,
+  average = 5.0,
   filters = [
-    { name: "Cancellation flexibility" },
-    { name: "Type of place" },
-    { name: "Price" },
-    { name: "Instant Book" },
-    { name: "More filters" },
+    { name: "Filter" },
+    { name: "Filter" },
+    { name: "Filter" },
+    { name: "Filter" },
+    { name: "Filter" },
   ],
 }) => {
   const displayPlace = city.match(/_/g) ? city.split("_").join(" ") : city;
@@ -117,7 +117,7 @@ export const NearbyPrototype: React.FC<{
           </div>
         )}
         <div>
-          <Section variant="homes" />
+          <Template variant="homes" />
         </div>
         <div
           className={[
@@ -130,7 +130,7 @@ export const NearbyPrototype: React.FC<{
         </div>
       </div>
       <div className={[space["p--24"], color["bg--white__1"]].join(" ")}>
-        <Section variant="also" />
+        <Template variant="also" />
       </div>
     </div>
   );

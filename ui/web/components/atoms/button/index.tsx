@@ -47,7 +47,7 @@ export interface ButtonProps {
  */
 export const Button: React.FC<ButtonProps> = ({
   extendsTo = "",
-  variant = "auth",
+  variant,
   children,
   onClick,
   to,
