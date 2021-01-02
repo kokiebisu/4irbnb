@@ -8,9 +8,6 @@ import space from "@styles/space.module.scss";
 /** components */
 import { Button } from "@button";
 
-/** vectors */
-import { NoNameLogo } from "@svg/logo";
-
 /**
  * Renders the experiences header
  */
