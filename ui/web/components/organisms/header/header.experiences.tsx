@@ -32,7 +32,10 @@ export const ExperiencesHeader: React.FC<{}> = () => {
             fill="black"
             noName
             extendsTo={[layout["inline-block"]].join(" ")}
-            onClick={() => Router.push("/")}
+            onClick={() => {
+              console.log("he");
+              Router.push("/");
+            }}
           />
         </div>
         <div className={[layout["flex"]].join(" ")}>

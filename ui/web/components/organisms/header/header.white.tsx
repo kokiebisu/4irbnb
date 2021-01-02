@@ -58,10 +58,10 @@ export const WhiteHeader: React.FC<{
           ].join(" ")}
         >
           <div className={[styles["searchbar__logo--md"]].join(" ")}>
-            <Button variant="logo" />
+            <Button variant="logo" onClick={() => Router.push("/")} />
           </div>
           <div className={[styles["searchbar__logo--lg"]].join(" ")}>
-            <Button variant="logo" noName />
+            <Button variant="logo" noName onClick={() => Router.push("/")} />
           </div>
 
           {/* <div>

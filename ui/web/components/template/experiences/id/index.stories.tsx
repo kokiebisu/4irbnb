@@ -38,3 +38,8 @@ export const Available = TemplateStory.bind({});
 Available.args = {
   variant: "available",
 };
+
+export const Panel = TemplateStory.bind({});
+Panel.args = {
+  variant: "panel",
+};

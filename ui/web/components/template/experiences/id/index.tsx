@@ -3,6 +3,7 @@ import { ParticipateTemplate } from "@template/experiences/id/template.participa
 import { BringTemplate } from "@template/experiences/id/template.bring";
 import { CharacteristicsTemplate } from "@template/experiences/id/template.characteristics";
 import { AvailableTemplate } from "@template/experiences/id/template.available";
+import { PanelTemplate } from "@template/experiences/id/template.panel";
 
 export interface TemplateProps {
   extendsTo?: string;
@@ -32,6 +33,7 @@ export const Template: React.FC<TemplateProps> = ({
     bring: <BringTemplate {...props} />,
     characteristics: <CharacteristicsTemplate {...props} />,
     available: <AvailableTemplate {...props} />,
+    panel: <PanelTemplate {...props} />,
   };
 
   return (
