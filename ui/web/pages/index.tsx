@@ -23,13 +23,11 @@ import { Layout } from "@layout";
 /** components */
 import { Animation } from "@animation/animation.component";
 import { Modal } from "@modal/modal.component";
-import { Section } from "@section/section.component";
+import { Template } from "@template/landing";
 import { Footer } from "@footer/footer.component";
 
 import { Banner } from "@banner/banner.component";
 import { Bar } from "@bar/bar.component";
-
-import { Template } from "@template/landing";
 
 /** stories */
 import { auth, globe, privacy } from "@modal/modal.stories";
@@ -63,7 +61,7 @@ const LandingPage = ({ currentUser }) => {
         {loading ? (
           <>
             <Layout variant="landing" spread>
-              <Section variant="nearby" items={nearby} />
+              <Template variant="nearby" items={nearby} />
             </Layout>
             <Layout variant="landing" title="Live anywhere" spread>
               <Template variant="category" items={anywhere} />
@@ -76,14 +74,14 @@ const LandingPage = ({ currentUser }) => {
               title="Meet Online Experiences"
               subtitle="Interactive activities you can do together, led by expert hosts."
             >
-              <Section variant="online" sectionType="landing" dark />
+              <Template variant="online" sectionType="landing" dark />
             </Layout>
             <Layout
               variant="landing"
               spread
               title="Join millions of hosts on Airbnb"
             >
-              <Section variant="category" items={categories} />
+              <Template variant="category" items={categories} />
             </Layout>
           </>
         ) : (

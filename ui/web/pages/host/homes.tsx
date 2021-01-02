@@ -7,7 +7,7 @@ import responsive from "../../styles/responsive.module.scss";
 
 /** components */
 import { Header } from "../../components/organisms/header/header.component";
-import { Section } from "../../components/organisms/section/section.component";
+import { Template } from "@template/stays";
 import { Footer } from "../../components/organisms/footer/footer.component";
 import { Banner } from "../../components/organisms/banner/banner.component";
 import { useTabTitle } from "hooks/useTabTitle";
@@ -28,22 +28,22 @@ const Homes: () => string | JSX.Element = () => {
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
         <div className={`${[space["p__homes"]].join(" ")}`}>
-          <Section variant="all" />
+          <Template variant="all" />
         </div>
       </div>
       <div className={[space["p-v--64"]].join(" ")}>
         <div className={`${[space["p__homes"]].join(" ")}`}>
-          <Section variant="priority" />
+          <Template variant="priority" />
         </div>
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
         <div className={`${[space["p__homes"]].join(" ")}`}>
-          <Section variant="help" />
+          <Template variant="help" />
         </div>
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
         <div className={`${[space["p__homes"]].join(" ")}`}>
-          <Section variant="ready" />
+          <Template variant="ready" />
         </div>
       </div>
       <div>

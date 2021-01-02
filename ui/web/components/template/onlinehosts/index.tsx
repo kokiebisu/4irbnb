@@ -1,6 +1,9 @@
 /** landing */
-import { CategoryTemplate } from "./template.category";
-import { NearbyTemplate } from "./template.nearby";
+import { MoreTemplate } from "./template.more";
+import { FAQTemplate } from "./template.faq";
+import { BackTemplate } from "./template.back";
+import { SharingTemplate } from "./template.sharing";
+import { WorksTemplate } from "./template.works";
 
 /** styles **/
 import layout from "@styles/layout.module.scss";
@@ -30,11 +33,16 @@ export const Template: React.FC<TemplateProps> = ({
   ...props
 }) => {
   const variants: { [key: string]: JSX.Element } = {
-    category: <CategoryTemplate {...props} />,
-    nearby: <NearbyTemplate {...props} />,
+    more: <MoreTemplate {...props} />,
+    faq: <FAQTemplate {...props} />,
+    back: <BackTemplate {...props} />,
+    sharing: <SharingTemplate {...props} />,
+    works: <WorksTemplate {...props} />,
   };
 
   return (
-    <div data-testid={`${variant}-landing--template`}>{variants[variant]}</div>
+    <div data-testid={`${variant}-onlinehost--template`}>
+      {variants[variant]}
+    </div>
   );
 };

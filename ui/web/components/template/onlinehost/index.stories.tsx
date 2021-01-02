@@ -1,10 +1,9 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-
 import { Template, TemplateProps } from "@template/onlinehost";
 
 export default {
-  title: "Template/OnlineHost",
+  title: "Templates/OnlineHost",
   component: Template,
   argTypes: {
     onClick: { action: "clicked" },
@@ -15,7 +14,27 @@ export default {
 
 const TemplateStory: Story<TemplateProps> = (args) => <Template {...args} />;
 
-export const more = TemplateStory.bind({});
-more.args = {
-  variant: "more",
+export const Experiences = TemplateStory.bind({});
+Experiences.args = {
+  variant: "experiences",
+};
+
+export const Participate = TemplateStory.bind({});
+Participate.args = {
+  variant: "participate",
+};
+
+export const Bring = TemplateStory.bind({});
+Bring.args = {
+  variant: "bring",
+};
+
+export const Characteristics = TemplateStory.bind({});
+Characteristics.args = {
+  variant: "characteristics",
+};
+
+export const Available = TemplateStory.bind({});
+Available.args = {
+  variant: "available",
 };

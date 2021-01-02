@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 
 /** components */
 import { Header } from "../../components/organisms/header/header.component";
-import { Section } from "../../components/organisms/section/section.component";
+import { Template } from "@template/onlinehosts";
 import { Modal } from "../../components/organisms/modal/modal.component";
 import { Footer } from "../../components/organisms/footer/footer.component";
 
