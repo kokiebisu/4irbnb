@@ -29,6 +29,8 @@ import { Footer } from "@footer/footer.component";
 import { Banner } from "@banner/banner.component";
 import { Bar } from "@bar/bar.component";
 
+import { Template } from "@template/landing";
+
 /** stories */
 import { auth, globe, privacy } from "@modal/modal.stories";
 
@@ -64,7 +66,7 @@ const LandingPage = ({ currentUser }) => {
               <Section variant="nearby" items={nearby} />
             </Layout>
             <Layout variant="landing" title="Live anywhere" spread>
-              <Section variant="category" items={anywhere} />
+              <Template variant="category" items={anywhere} />
             </Layout>
             <div className={space["m-v--32"]}></div>
             <Layout

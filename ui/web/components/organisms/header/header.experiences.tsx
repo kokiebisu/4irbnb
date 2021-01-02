@@ -28,11 +28,12 @@ export const ExperiencesHeader: React.FC<{}> = () => {
       >
         <div>
           <Button
+            variant="logo"
+            fill="black"
+            noName
             extendsTo={[layout["inline-block"]].join(" ")}
             onClick={() => Router.push("/")}
-          >
-            <NoNameLogo fill="black" width={30} height={32} />
-          </Button>
+          />
         </div>
         <div className={[layout["flex"]].join(" ")}>
           <div className={[space["m-h--8"]].join(" ")}>English (CA)</div>

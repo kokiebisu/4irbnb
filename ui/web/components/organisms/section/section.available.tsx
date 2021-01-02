@@ -11,7 +11,7 @@ import { Card } from "@card/card.component";
 import { Button } from "@button";
 
 /** stories */
-import { border, paginate } from "@button/button.stories";
+import { Border } from "@button/button.stories";
 
 /**
  * Renders the available section
@@ -181,7 +181,7 @@ export const AvailableSection: React.FC<{
         </div>
       </div>
       <div className={[space["m-t--32"]].join(" ")}>
-        <Button {...border.args} title="See more dates" />
+        <Button {...Border.args} title="See more dates" />
       </div>
     </div>
   );

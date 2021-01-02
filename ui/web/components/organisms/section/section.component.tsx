@@ -1,5 +1,5 @@
 /** components */
-import { CategorySection } from "@section/section.category";
+
 import { PanelSection } from "@section/section.panel";
 import { StaySection } from "@section/section.stay";
 import { CharacteristicsSection } from "@section/section.characteristics";
@@ -49,7 +49,6 @@ export const Section: React.FC<SectionProps> = ({
     [variant: string]: JSX.Element;
   } = {
     stay: <StaySection {...props} />,
-    category: <CategorySection {...props} />,
     panel: <PanelSection {...props} />,
     characteristics: <CharacteristicsSection {...props} />,
     description: <DescriptionSection {...props} />,

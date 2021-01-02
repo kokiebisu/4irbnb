@@ -10,7 +10,7 @@ import { Card } from "@card/card.component";
 import { Button } from "@button";
 
 /** stories */
-import { border } from "@button/button.stories";
+import { Border } from "@button/button.stories";
 
 export const SharingSection: React.FC<{}> = () => {
   const sharings = ["meditate", "baking", "magic"];
@@ -37,7 +37,7 @@ export const SharingSection: React.FC<{}> = () => {
         })}
       </div>
       <div className={[layout["flex"], layout["justify-center"]].join(" ")}>
-        <Button {...border.args} bold title="Start creating your experience" />
+        <Button {...Border.args} bold title="Start creating your experience" />
       </div>
     </Layout>
   );

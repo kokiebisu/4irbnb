@@ -19,7 +19,7 @@ import { useToggleDispatch, useToggleState } from "@context/toggle";
 import { ChevronLeft } from "@svg/regular";
 
 /** stories */
-import { menu as menuButton } from "@button/button.stories";
+import { Menu as menuButton } from "@button/button.stories";
 
 /** contents */
 import { Content } from "@button/content/content.transparent";

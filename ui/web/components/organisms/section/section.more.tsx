@@ -7,7 +7,7 @@ import space from "@styles/space.module.scss";
 import section from "@section/section.module.scss";
 
 /** stories */
-import { border } from "@button/button.stories";
+import { Border } from "@button/button.stories";
 
 /** components */
 import { Button } from "@button";
@@ -56,7 +56,7 @@ export const MoreSection: React.FC<{}> = () => {
                   layout["justify-center"],
                 ].join(" ")}
               >
-                <Button {...border.args} title="Let's go" inverse bold />
+                <Button {...Border.args} title="Let's go" inverse bold />
               </div>
             </div>
           </div>

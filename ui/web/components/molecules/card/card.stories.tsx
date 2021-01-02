@@ -34,7 +34,7 @@ Category.args = {
 
 Category.decorators = [
   (Story) => (
-    <div style={{ width: 300 }}>
+    <div style={{ width: "33.3%" }}>
       <Story />
     </div>
   ),

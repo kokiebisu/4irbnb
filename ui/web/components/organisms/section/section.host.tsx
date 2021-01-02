@@ -16,7 +16,7 @@ import { Bullet } from "@bullet";
 import { Shield } from "@svg/original";
 
 /** stories */
-import { border } from "@button/button.stories";
+import { Border } from "@button/button.stories";
 
 /**
  * Modifies the content which should be displayed initially
@@ -299,7 +299,7 @@ export const HostSection: React.FC<{
                   layoutType === "experience" && [space["m-r--16"]].join(" ")
                 }
               >
-                <Button {...border.args} size="md" title="Contact host" />
+                <Button {...Border.args} size="md" title="Contact host" />
               </div>
               <div
                 className={`${layoutType === "room" && space["m-t--32"]} ${[
