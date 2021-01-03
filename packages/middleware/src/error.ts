@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { CustomError } from "../errors/custom";
+import { CustomError } from "@airbnb/error";
 
 interface ErrorResponse {
   message: string;
