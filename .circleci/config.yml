@@ -10,9 +10,9 @@ jobs:
       - run:
           name: Install dependencies
           command: yarn
-      - run:
-          name: Testing
-          command: yarn test:auth
+      # - run:
+      #     name: Testing
+      #     command: yarn test:auth
 
   deploy-auth:
     working_directory: ~/airbnb
@@ -40,9 +40,9 @@ jobs:
       - run:
           name: Install dependencies
           command: yarn install
-      - run:
-          name: Testing
-          command: yarn test:stays
+      # - run:
+      #     name: Testing
+      #     command: yarn test:stays
 
   deploy-stays:
     working_directory: ~/airbnb
