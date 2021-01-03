@@ -11,13 +11,12 @@ ENV NODE_ENV=production
 WORKDIR /app
 COPY --from=base /app ./
 RUN yarn build
+RUN ls
 
 FROM node:alpine as production
 ENV NODE_ENV=production
 WORKDIR /app
-COPY --from=build /app/package.json ./
-COPY --from=build /app/.next ./.next
-COPY --from=build /app/public ./public
+COPY --from=build /app/build ./
 RUN yarn add next
 
 EXPOSE 3000
