@@ -4,7 +4,9 @@ import { currentUserRouter } from "./routes/current_user";
 import { signinRouter } from "./routes/signin";
 import { signoutRouter } from "./routes/signout";
 import { signupRouter } from "./routes/signup";
-import { errorHandler, NotFoundError } from "@doitsimple/shared";
+// import { errorHandler, NotFoundError } from "@doitsimple/shared";
+import { errorHandler } from "@airbnb/middleware";
+import { NotFoundError } from "@airbnb/error";
 import cookieSession from "cookie-session";
 
 const app = express();
