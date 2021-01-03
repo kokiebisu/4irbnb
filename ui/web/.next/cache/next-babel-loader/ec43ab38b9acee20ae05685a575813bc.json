@@ -1,1 +1,0 @@
-{"ast":null,"code":"export var renderSize = function renderSize(card, size) {\n  switch (size) {\n    case \"sm\":\n      return [card[\"w__nearby--sm\"]].join(\" \");\n\n    case \"lg\":\n      return [card[\"w__nearby--lg\"]].join(\" \");\n\n    default:\n      return;\n  }\n};","map":null,"metadata":{},"sourceType":"module"}

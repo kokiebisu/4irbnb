@@ -11,7 +11,6 @@ ENV NODE_ENV=production
 WORKDIR /app
 COPY --from=base /app ./
 RUN yarn build
-RUN ls
 
 FROM node:alpine as production
 ENV NODE_ENV=production
