@@ -5,4 +5,5 @@ COPY package.json ./
 COPY tsconfig.json ./
 RUN yarn
 COPY . .
-CMD ["yarn", "dev"]
+RUN yarn build
+CMD ["yarn", "start"]
