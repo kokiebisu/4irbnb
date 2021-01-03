@@ -13,4 +13,4 @@ RUN yarn --production --pure-lockfile --non-interactive
 
 COPY services/auth services/auth
 
-CMD ["yarn", "start:auth"]
+CMD ["yarn", "dev:auth"]
