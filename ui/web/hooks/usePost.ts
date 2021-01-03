@@ -1,4 +1,4 @@
-import axios from "axios";
+import { APIClient } from "api/client";
 
 /**
  * Fetches based on the given request method and body (optional)
@@ -27,8 +27,8 @@ export const usePost = ({
       if (triggerLoading) {
         triggerLoading(true);
       }
-      const { data } = await axios.post(url, body);
-      console.log("response data", data);
+      const client = APIClient();
+      const { data } = await client.post(url, body);
       if (onSuccess) {
         onSuccess(data);
       }

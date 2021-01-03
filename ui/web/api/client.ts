@@ -1,12 +1,12 @@
 import axios from "axios";
 import { config } from "@config";
 
-export const APIClient = ({ req }) => {
+export const APIClient = (context?: any) => {
   if (typeof window === "undefined") {
     return axios.create({
       baseURL: config.SERVER_BASEURL,
       headers: {
-        ...req.headers,
+        ...context.req.headers,
         Host: config.HOST,
       },
     });
