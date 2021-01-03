@@ -77,14 +77,14 @@ jobs:
           name: Comparing snapshots
           command: npx chromatic --project-token=e017nqnn22h --exit-zero-on-changes
   deploy-web:
-    working_directory: ~/airbnb
+    working_directory: ~/airbnb/ui/web
     machine: true
     steps:
       - checkout:
           path: ~/airbnb
       - run:
           name: Building web image
-          command: docker build -t kokiebisu/nextbnb-web -f ./ui/web/Dockerfile .
+          command: docker build -t kokiebisu/nextbnb-web .
       - run:
           name: Log in
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
