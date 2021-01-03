@@ -4,6 +4,9 @@
   "description": "",
   "main": "./src/index.ts",
   "scripts": {
+    "clean": "del ./build/*",
+    "build": "yarn clean && tsc",
+    "start": "node ./build/index.js",
     "dev": "ts-node-dev --poll src/index.ts",
     "test": "jest --watchAll --no-cache",
     "test:ci": "jest"
@@ -38,7 +41,8 @@
     "@types/jest": "^26.0.15",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/mongoose": "^5.10.3",
-    "@types/supertest": "^2.0.10"
+    "@types/supertest": "^2.0.10",
+    "del-cli": "^3.0.1"
   },
   "private": true,
   "workspaces": {

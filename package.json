@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev:web": "cd ui/web && yarn dev",
+    "start:auth": "node build/index.js",
     "dev:stays": "cd services/stays && yarn dev",
     "dev:auth": "cd services/auth && yarn dev",
     "test:auth": "cd services/auth && yarn test:ci",

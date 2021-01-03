@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { jsx as _jsx } from \"react/jsx-runtime\";\nexport const Options = [1, 2, 3, 4, 5, 6, 7, 8].map((option, index) => {\n  return /*#__PURE__*/_jsx(\"option\", {\n    value: option,\n    children: index > 0 ? `${option} ${index > 0 ? \"guests\" : \"guest\"}` : \"Studio\"\n  }, index);\n});","map":null,"metadata":{},"sourceType":"module"}
