@@ -11,9 +11,6 @@ jobs:
           name: Install dependencies
           command: yarn
       - run:
-          name: List
-          command: ls
-      - run:
           name: Testing
           command: yarn test:auth
 
@@ -45,7 +42,7 @@ jobs:
           command: yarn install
       - run:
           name: Testing
-          command: cd services/stays && yarn test:ci
+          command: yarn test:stays
 
   deploy-stays:
     working_directory: ~/airbnb
