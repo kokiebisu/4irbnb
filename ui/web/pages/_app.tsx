@@ -25,7 +25,6 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
   // Can send requests for app
   // const client = APIClient(ctx);
   // const { data } = await client.get('...');
-  console.log("entered _app initial props");
   let pageProps = {};
   if (Component.getInitialProps) {
     pageProps = await Component.getInitialProps(ctx);

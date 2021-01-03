@@ -21,7 +21,7 @@ build:
     - image: kokiebisu/nextbnb-auth
       context: .
       docker:
-        dockerfile: services/auth/Dockerfile
+        dockerfile: services/auth/dev.Dockerfile
       sync:
         manual:
           - src: "src/**/*.ts"
@@ -29,7 +29,7 @@ build:
     - image: kokiebisu/nextbnb-stays
       context: .
       docker:
-        dockerfile: services/stays/Dockerfile
+        dockerfile: services/stays/dev.Dockerfile
       sync:
         manual:
           - src: "src/**/*.ts"
