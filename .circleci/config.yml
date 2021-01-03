@@ -14,11 +14,8 @@ jobs:
           name: List
           command: ls
       - run:
-          name: Install inner dependencies
-          command: cd services/auth && yarn
-      - run:
           name: Testing
-          command: yarn test:ci
+          command: yarn test:auth
 
   deploy-auth:
     working_directory: ~/airbnb
