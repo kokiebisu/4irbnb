@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev --poll src/index.ts",
+    "dev": "ts-node-dev --poll src/index.ts",
     "test": "jest --watchAll --no-cache",
     "test:ci": "jest"
   },
@@ -19,8 +19,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@doitsimple/shared": "^1.0.9",
-    "@types/mongoose": "5.7.8",
+    "@airbnb/middleware": "1.0.0",
+    "@airbnb/error": "1.0.0",
     "cookie-session": "^1.4.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
@@ -36,6 +36,7 @@
   "devDependencies": {
     "@types/cookie-session": "^2.0.41",
     "@types/jsonwebtoken": "^8.5.0",
+    "@types/mongoose": "^5.10.3",
     "@types/supertest": "^2.0.10"
   }
 }

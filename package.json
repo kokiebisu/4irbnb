@@ -4,11 +4,13 @@
   "description": "<p align=\"center\">     <img src=\"https://user-images.githubusercontent.com/43525282/86524021-e1d52400-be29-11ea-9943-6affd2b8038c.png\" alt=\"airbnb\" width=\"100\" /> </p>",
   "main": "index.js",
   "scripts": {
+    "dev:stays": "cd services/stays && yarn dev",
+    "dev:auth": "cd services/auth && yarn dev",
+    "test:auth": "cd services/auth && yarn test:ci",
+    "test:stays": "cd services/stays && yarn test:ci",
     "dev": "cd scripts && ./run.sh",
     "push": "cd scripts && ./push.sh",
     "pull": "cd scripts && ./pull.sh",
-    "test:auth": "yarn --cwd auth test",
-    "test:stays": "yarn --cwd stays test",
     "update": "cd scripts && ./update.sh"
   },
   "repository": {
@@ -22,9 +24,14 @@
     "url": "https://github.com/kokiebisu/airbnb/issues"
   },
   "homepage": "https://github.com/kokiebisu/airbnb#readme",
-  "workspaces": [
-    "packages/*",
-    "ui/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "ui/*"
+    ],
+    "nohoist": [
+      "**/jest/**"
+    ]
+  },
   "private": true
 }

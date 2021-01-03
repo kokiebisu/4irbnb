@@ -9,8 +9,8 @@ COPY services/auth/tsconfig.json services/auth
 
 COPY package.json .
 
-RUN yarn --production --pure-lockfile --non-interactive
+RUN yarn --pure-lockfile --non-interactive
 
 COPY services/auth services/auth
 
-CMD ["yarn", "start:auth"]
+CMD ["yarn", "dev:auth"]
