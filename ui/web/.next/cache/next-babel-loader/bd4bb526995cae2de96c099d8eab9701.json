@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { jsx as _jsx } from \"react/jsx-runtime\";\nexport const Properties = [\"Canada\", \"Japan\"];\nexport const Options = Properties.map((name, index) => {\n  return /*#__PURE__*/_jsx(\"option\", {\n    value: name,\n    children: name\n  }, index);\n});","map":null,"metadata":{},"sourceType":"module"}

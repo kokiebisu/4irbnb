@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const renderType = card => {\n  if (card.type === \"camper_rv\") {\n    return \"Camper/RV\";\n  }\n\n  return card.type;\n};","map":null,"metadata":{},"sourceType":"module"}

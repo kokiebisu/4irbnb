@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var groupByTwo = function groupByTwo(items) {\n  return items.reduce(function (accumulator, currentValue, currentIndex, items) {\n    if (currentIndex % 2 === 0) {\n      accumulator.push(items.slice(currentIndex, currentIndex + 2));\n    }\n\n    return accumulator;\n  }, []);\n};","map":null,"metadata":{},"sourceType":"module"}
