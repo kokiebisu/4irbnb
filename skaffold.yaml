@@ -19,17 +19,17 @@ build:
           - "**/*.tsx"
           - "**/*.scss"
     - image: kokiebisu/nextbnb-auth
-      context: services/auth
+      context: .
       docker:
-        dockerfile: Dockerfile
+        dockerfile: services/auth/Dockerfile
       sync:
         manual:
           - src: "src/**/*.ts"
             dest: .
     - image: kokiebisu/nextbnb-stays
-      context: services/stays
+      context: .
       docker:
-        dockerfile: Dockerfile
+        dockerfile: services/stays/Dockerfile
       sync:
         manual:
           - src: "src/**/*.ts"

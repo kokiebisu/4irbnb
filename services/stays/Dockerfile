@@ -1,8 +1,14 @@
 FROM node:alpine
 
 WORKDIR /app
-COPY package.json .
-RUN npm install
-COPY . . 
+COPY packages/middleware packages/middleware
+COPY packages/error packages/error
 
-CMD ["npm", "start"]
+COPY services/stays/package.json .
+COPY services/stays/tsconfig.json .
+
+RUN yarn --production --pure-lockfile --non-interactive
+
+COPY services/stays services/stays
+
+CMD ["yarn", "start:skaffold"]

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node-dev --poll src/index.ts",
+    "start:skaffold": "ts-node-dev --poll services/stays/src/index.ts",
     "test": "jest --watchAll --no-cache",
     "test:ci": "jest"
   },
@@ -21,7 +22,7 @@
   "dependencies": {
     "@doitsimple/shared": "^1.0.6",
     "@types/cookie-session": "^2.0.41",
-    "@types/mongoose": "5.7.8",
+    "@types/mongoose": "^5.10.3",
     "cookie-session": "^1.4.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
