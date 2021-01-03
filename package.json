@@ -13,6 +13,13 @@
     "pull": "cd scripts && ./pull.sh",
     "update": "cd scripts && ./update.sh"
   },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "./src/test/setup.ts"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kokiebisu/airbnb.git"
