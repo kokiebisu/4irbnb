@@ -11,7 +11,7 @@ import { Input } from "@input/input.component";
 import { validateExists as validate } from "@helper/auth";
 
 /** hooks */
-import { useFetch } from "@hooks/useFetch";
+import { usePost } from "@hooks/usePost";
 
 /** styles **/
 import space from "@styles/space.module.scss";
@@ -43,9 +43,8 @@ export const ExistsPrototype: React.FC<{
     },
     validate,
     onSubmit: (values) => {
-      const doFetch = useFetch({
+      const submit = usePost({
         url: "/api/users/signin",
-        method: "post",
         body: values,
         triggerLoading(state) {
           setLoading(state);
@@ -54,7 +53,7 @@ export const ExistsPrototype: React.FC<{
           Router.reload();
         },
       });
-      doFetch();
+      submit();
     },
   });
 

@@ -2,6 +2,8 @@ import Router from "next/router";
 
 /** styles */
 import font from "@styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
+import shape from "@styles/shape.module.scss";
 
 /** components */
 import { CategoryCard } from "@card/card.category";
@@ -69,15 +71,19 @@ export const Card: React.FC<CardProps> = ({
 
   if (to) {
     return (
-      <button
-        className={[font["text--left"]].join(" ")}
+      <div
+        style={{ cursor: "pointer" }}
+        className={`${[
+          font["text--left"],
+          layout["block"],
+          shape["h--full"],
+          shape["w--full"],
+        ].join(" ")} ${extendsTo}`}
         data-testid={`${variant}-card--molecule`}
         onClick={() => Router.push(to)}
       >
-        <div data-testid={`${variant}-card`} className={extendsTo}>
-          {variants[variant]}
-        </div>
-      </button>
+        {variants[variant]}
+      </div>
     );
   }
 

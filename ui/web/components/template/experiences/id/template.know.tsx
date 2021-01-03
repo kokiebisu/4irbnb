@@ -49,52 +49,36 @@ export const KnowTemplate: React.FC<{
         }}
         className={[].join(" ")}
       >
-        <div>
+        <div style={{ width: "50%" }} className={[space["m-r--32"]].join(" ")}>
           <div className={[space["m-b--16"]].join(" ")}>
-            <h3>House rules</h3>
+            <h3 className={[font["size--16"]].join(" ")}>
+              Cancellation policy
+            </h3>
           </div>
           <div className={[space["m-b--32"]].join(" ")}>
-            {houseRules.map((item, index) => {
-              return (
-                <div key={index} className={[space["m-b--6"]].join(" ")}>
-                  <Bullet variant="know" categoryType={item} />
-                </div>
-              );
-            })}
-          </div>
-          <div>
-            <u>Show all</u>
-          </div>
-        </div>
-
-        <div>
-          <div className={[space["m-b--16"]].join(" ")}>
-            <h3>Health & safety</h3>
-          </div>
-          <div className={[space["m-b--32"]].join(" ")}>
-            {healths.map((item, index) => {
-              return (
-                <div key={index} className={[space["m-b--6"]].join(" ")}>
-                  <Bullet variant="know" categoryType={item} />
-                </div>
-              );
-            })}
-          </div>
-          <div>
-            <u>Show all</u>
-          </div>
-        </div>
-        <div>
-          <div className={[space["m-b--16"]].join(" ")}>
-            <h3>Cancellation policy</h3>
-          </div>
-          <div className={[space["m-b--32"]].join(" ")}>
-            <p className={[font["weight--100"]].join(" ")}>
-              Add your trip to get the cancellation details for this stay.
+            <p>
+              Any experience can be cancelled and fully refunded within 24 hours
+              of purchase, or at least 7 days before the experience starts.
             </p>
           </div>
           <div>
-            <u>Add dates</u>
+            <u>Learn more</u>
+          </div>
+        </div>
+
+        <div style={{ width: "50%" }} className={[space["m-r--32"]].join(" ")}>
+          <div className={[space["m-b--16"]].join(" ")}>
+            <h3 className={[font["size--16"]].join(" ")}>Guest requirements</h3>
+          </div>
+          <div className={[space["m-b--32"]].join(" ")}>
+            <p>
+              You’ll need an internet connection and the ability to stream audio
+              and video to participate. A link and details on how to join will
+              be included in your booking confirmation email.
+            </p>
+          </div>
+          <div>
+            <u>Show more</u>
           </div>
         </div>
       </div>

@@ -2,7 +2,6 @@ import React from "react";
 import { ContextProvider } from "../context/provider";
 import "../styles/global.scss";
 import Head from "next/head";
-import { APIClient } from "api/client";
 
 const MyApp = ({ Component, pageProps }) => {
   return (

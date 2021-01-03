@@ -16,15 +16,10 @@ import { renderSize } from "./logic/logic.nearby";
  */
 export const NearbyCard: React.FC<{
   imgUrl?: string;
-  title?: string;
-  description?: string;
+  city?: string;
+  hours?: number;
   size?: "sm" | "lg";
-}> = ({
-  imgUrl,
-  title = "Title",
-  description = "Description",
-  size = "sm",
-}) => {
+}> = ({ imgUrl, city = "City", hours = 1, size = "sm" }) => {
   return (
     <div className={[layout["flex"], layout["items-center"]].join(" ")}>
       <div
@@ -45,9 +40,9 @@ export const NearbyCard: React.FC<{
       </div>
       <div>
         <h3 className={[font["size--15"], space["m-b--4"]].join(" ")}>
-          {title}
+          {city}
         </h3>
-        <p className={[font["size--15"]].join(" ")}>{description}</p>
+        <p className={[font["size--15"]].join(" ")}>{hours} hour drive</p>
       </div>
     </div>
   );

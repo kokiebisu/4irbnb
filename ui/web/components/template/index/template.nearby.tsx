@@ -8,9 +8,6 @@ import { Card } from "@card/card.component";
 /** helpers */
 import { groupByTwo } from "@helper/array";
 
-/** contents */
-import { nearbyPic } from "@content";
-
 /**
  * Renders the nearby section
  * @param {string[]} items - List of cities which are nearby
@@ -19,14 +16,14 @@ export const NearbyTemplate: React.FC<{
   items?: string[];
 }> = ({
   items = [
-    "city1",
-    "city2",
-    "city3",
-    "city4",
-    "city5",
-    "city6",
-    "city7",
-    "city8",
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
   ],
 }) => {
   const displayingItems = groupByTwo(items);
@@ -43,20 +40,20 @@ export const NearbyTemplate: React.FC<{
                 <div className={[space["m-b--10"]].join(" ")}>
                   <Card
                     variant="nearby"
-                    to={item[0] && item[0].to}
-                    imgUrl={nearbyPic[index]}
-                    city={item[0].city}
-                    hours={item[0].hours}
+                    to={item[0]?.to}
+                    imgUrl={item[0]?.imgUrl}
+                    city={item[0]?.city}
+                    hours={item[0]?.hours}
                     size="sm"
                   />
                 </div>
                 <div>
                   <Card
                     variant="nearby"
-                    to={item[1] && item[1].to}
-                    imgUrl={nearbyPic[index + 4]}
-                    city={item[1].city}
-                    hours={item[1].hours}
+                    to={item[1]?.to}
+                    imgUrl={item[1]?.imgUrl}
+                    city={item[1]?.city}
+                    hours={item[1]?.hours}
                     size="sm"
                   />
                 </div>

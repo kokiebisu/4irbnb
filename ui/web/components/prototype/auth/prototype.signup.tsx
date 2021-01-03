@@ -17,13 +17,10 @@ import { Bullet } from "@bullet";
 import { validateSignup as validate } from "@helper/auth";
 
 /** hooks */
-import { useFetch } from "@hooks/useFetch";
+import { usePost } from "@hooks/usePost";
 
 /** contexts */
 import { useAuthDispatch } from "@context/auth";
-
-/** stories */
-import { primary } from "@button/button.stories";
 
 /**
  * Renders the signup template component
@@ -43,9 +40,8 @@ export const SignupTemplate: React.FC<{}> = () => {
     },
     validate,
     onSubmit: async (values) => {
-      const doFetch = useFetch({
+      const submit = await usePost({
         url: "/api/users/signup",
-        method: "post",
         body: values,
         triggerLoading: (state) => {
           setLoading(state);
@@ -58,7 +54,7 @@ export const SignupTemplate: React.FC<{}> = () => {
         },
       });
 
-      await doFetch();
+      await submit();
     },
   });
 

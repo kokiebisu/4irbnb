@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { NotAuthorizedError } from "../errors/not_authorized";
+import { NotAuthorizedError } from "@airbnb/error";
 
 export const requireAuth = (
   req: Request,

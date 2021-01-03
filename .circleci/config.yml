@@ -9,7 +9,7 @@ jobs:
           path: ~/airbnb
       - run:
           name: Install dependencies
-          command: yarn install
+          command: yarn
       - run:
           name: Testing
           command: yarn test:ci
@@ -31,7 +31,7 @@ jobs:
           command: docker push kokiebisu/nextbnb-auth
 
   test-stays:
-    working_directory: ~/airbnb/services/stays
+    working_directory: ~/airbnb/services/auth
     docker:
       - image: circleci/node:10
     steps:

@@ -4,6 +4,10 @@ import { BringTemplate } from "@template/experiences/id/template.bring";
 import { CharacteristicsTemplate } from "@template/experiences/id/template.characteristics";
 import { AvailableTemplate } from "@template/experiences/id/template.available";
 import { PanelTemplate } from "@template/experiences/id/template.panel";
+import { ReviewsTemplate } from "@template/experiences/id/template.reviews";
+import { HostTemplate } from "@template/experiences/id/template.host";
+import { DescriptionTemplate } from "@template/experiences/id/template.description";
+import { KnowTemplate } from "@template/experiences/id/template.know";
 
 export interface TemplateProps {
   extendsTo?: string;
@@ -34,6 +38,10 @@ export const Template: React.FC<TemplateProps> = ({
     characteristics: <CharacteristicsTemplate {...props} />,
     available: <AvailableTemplate {...props} />,
     panel: <PanelTemplate {...props} />,
+    reviews: <ReviewsTemplate {...props} />,
+    host: <HostTemplate {...props} />,
+    description: <DescriptionTemplate {...props} />,
+    know: <KnowTemplate {...props} />,
   };
 
   return (
