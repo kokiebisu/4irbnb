@@ -13,4 +13,4 @@ RUN yarn --production --pure-lockfile --non-interactive
 
 COPY services/stays services/stays
 
-CMD ["yarn", "start:stays"]
+CMD ["yarn", "dev:stays"]

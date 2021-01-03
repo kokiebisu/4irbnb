@@ -84,7 +84,7 @@ jobs:
           path: ~/airbnb
       - run:
           name: Building web image
-          command: docker build -t kokiebisu/nextbnb-web ./web
+          command: docker build -t kokiebisu/nextbnb-web -f ./ui/web/Dockerfile .
       - run:
           name: Log in
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
