@@ -16,8 +16,8 @@ FROM node:alpine as production
 ENV NODE_ENV=production
 WORKDIR /app
 
-COPY --from=build /build/package.json ./
-COPY --from=build /build/public ./public
+COPY --from=build /app/package.json ./
+COPY --from=build /app/public ./public
 RUN yarn add next
 
 EXPOSE 3000
