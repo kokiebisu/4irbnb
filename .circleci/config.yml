@@ -9,10 +9,13 @@ jobs:
           path: ~/airbnb
       - run:
           name: Install dependencies
-          command: cd services/auth && yarn install
+          command: yarn
       - run:
           name: List
           command: ls
+      - run:
+          name: Install inner dependencies
+          command: cd services/auth && yarn
       - run:
           name: Testing
           command: yarn test:ci
