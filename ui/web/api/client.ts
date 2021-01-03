@@ -1,19 +1,19 @@
 import axios from "axios";
+import { config } from "@config";
 
 export const APIClient = ({ req }) => {
   if (typeof window === "undefined") {
     return axios.create({
-      baseURL:
-        "http://ingress-nginx-controller.ingress-nginx.svc.cluster.local",
+      baseURL: config.SERVER_BASEURL,
       headers: {
         ...req.headers,
-        Host: "www.nextbnb.dev",
+        Host: config.HOST,
       },
     });
   } else {
     // on the browser
     return axios.create({
-      baseURL: "/",
+      baseURL: config.CLIENT_BASEURL,
     });
   }
 };

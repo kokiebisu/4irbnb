@@ -2,7 +2,6 @@ import React from "react";
 import { ContextProvider } from "../context/provider";
 import "../styles/global.scss";
 import Head from "next/head";
-import { APIClient } from "api/client";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
@@ -26,6 +25,7 @@ MyApp.getInitialProps = async ({ Component, ctx }) => {
   // Can send requests for app
   // const client = APIClient(ctx);
   // const { data } = await client.get('...');
+  console.log("entered _app initial props");
   let pageProps = {};
   if (Component.getInitialProps) {
     pageProps = await Component.getInitialProps(ctx);
