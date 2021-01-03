@@ -20,10 +20,10 @@ import { Card } from "@card/card.component";
 import { validateLogin as validate } from "@helper/auth";
 
 /** hooks */
-import { useFetch } from "@hooks/useFetch";
+import { usePost } from "@hooks/usePost";
 
 /** stories */
-import { primary, Underline } from "@button/button.stories";
+import { Underline } from "@button/button.stories";
 
 /**
  * Renders the login template component
@@ -41,9 +41,8 @@ export const LoginTemplate: React.FC<{}> = () => {
     },
     validate,
     onSubmit: (values) => {
-      const doFetch = useFetch({
+      const submit = usePost({
         url: "/api/users/signin",
-        method: "post",
         body: values,
         triggerLoading(state) {
           setLoading(state);
@@ -55,7 +54,7 @@ export const LoginTemplate: React.FC<{}> = () => {
           setStatus("fail");
         },
       });
-      doFetch();
+      submit();
     },
   });
 

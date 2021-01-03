@@ -9,8 +9,8 @@ COPY services/stays/tsconfig.json services/stays/
 
 COPY package.json .
 
-RUN yarn --production --pure-lockfile --non-interactive
+RUN yarn --pure-lockfile --non-interactive
 
 COPY services/stays services/stays
 
-CMD ["yarn", "start:stays"]
+CMD ["yarn", "dev:stays"]

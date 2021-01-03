@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
-import { currentUser, requireAuth } from "@doitsimple/shared";
+// import { currentUser, requireAuth } from "@doitsimple/shared";
+import { currentUser, requireAuth } from "@airbnb/middleware";
 const router = express.Router();
 
 router.get(
