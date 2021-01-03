@@ -12,7 +12,7 @@ build:
     - image: kokiebisu/nextbnb-web
       context: ui/web
       docker:
-        dockerfile: Dockerfile
+        dockerfile: dev.Dockerfile
       sync:
         infer:
           - "**/*.ts"

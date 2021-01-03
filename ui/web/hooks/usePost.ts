@@ -27,12 +27,12 @@ export const usePost = ({
       if (triggerLoading) {
         triggerLoading(true);
       }
-      const response = await axios.post(url, body);
-      console.log("response", response);
+      const { data } = await axios.post(url, body);
+      console.log("response data", data);
       if (onSuccess) {
-        onSuccess(response.data);
+        onSuccess(data);
       }
-      return response.data;
+      return { data };
     } catch (err) {
       setTimeout(() => {
         if (triggerLoading) {
