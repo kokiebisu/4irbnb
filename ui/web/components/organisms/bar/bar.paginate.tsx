@@ -11,9 +11,6 @@ import shape from "@styles/shape.module.scss";
 import bar from "@bar/bar.module.scss";
 import font from "@styles/font.module.scss";
 
-/** stories */
-import { paginate } from "@button/button.stories";
-
 /**
  * Renders paginate bar component
  * @param {number} page - Current page

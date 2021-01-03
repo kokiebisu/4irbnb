@@ -14,9 +14,6 @@ import { Input } from "@input/input.component";
 /** contexts */
 import { useStayDispatch } from "@context/stay";
 
-/** stories */
-import { primary } from "@button/button.stories";
-
 /**
  * Renders the /become-a-host/get-started page content
  */
