@@ -10,9 +10,6 @@ import space from "@styles/space.module.scss";
 /** vectors */
 import { Star } from "@svg/original";
 
-/** stories */
-import { primary } from "@button/button.stories";
-
 /**
  * Renders the modal which gives all the available options
  * @param {number} ratings - Average ratings from the users

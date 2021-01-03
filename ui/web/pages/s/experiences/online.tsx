@@ -1,3 +1,5 @@
-export const OnlinePage = () => {
+const OnlinePage = () => {
   return <div>online</div>;
 };
+
+export default OnlinePage;
