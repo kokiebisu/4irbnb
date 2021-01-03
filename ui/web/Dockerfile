@@ -15,8 +15,8 @@ RUN yarn build
 FROM node:alpine as production
 ENV NODE_ENV=production
 WORKDIR /app
-
 COPY --from=build /app/package.json ./
+COPY --from=build /app/.next ./.next
 COPY --from=build /app/public ./public
 RUN yarn add next
 
