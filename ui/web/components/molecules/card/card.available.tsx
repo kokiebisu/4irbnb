@@ -8,9 +8,6 @@ import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 
-/** stories */
-import { primary } from "@button/button.stories";
-
 /**
  * Renders the available card component
  * @param {string} date - The date which the experience is available

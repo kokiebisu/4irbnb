@@ -1,14 +1,14 @@
 import React from "react";
 
 /** components */
-import { Banner } from "../../components/organisms/banner/banner.component";
-import { Header } from "../../components/organisms/header/header.component";
+
+import { Header } from "@header/header.component";
 import { Template } from "@template/d/onlinehost";
-import { Footer } from "../../components/organisms/footer/footer.component";
+import { Footer } from "@footer/footer.component";
 
 /** styles **/
-import layout from "../../styles/layout.module.scss";
-import space from "../../styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
 
 /** hooks */
 import { useTabTitle } from "hooks/useTabTitle";
@@ -23,7 +23,7 @@ const OnlineHost = () => {
       </div>
       <div>
         <div className={[layout["container"]].join(" ")}>
-          <Banner variant="onlinehost" />
+          <Template variant="banner" />
         </div>
       </div>
       <div className={[layout["container"]].join(" ")}>

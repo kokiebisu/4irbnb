@@ -12,9 +12,6 @@ import { Bullet } from "@bullet";
 /** Helpers */
 import { validateForgotPassword as validate } from "@helper/auth";
 
-/** stories */
-import { primary } from "@button/button.stories";
-
 /**
  * Renders the login template component
  */

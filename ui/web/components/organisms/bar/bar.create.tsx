@@ -6,7 +6,6 @@ import space from "@styles/space.module.scss";
 
 /** components */
 import { Button } from "@button";
-import { primary } from "@button/button.stories";
 
 export const CreateBar: React.FC<{
   next?: () => void;
