@@ -2,8 +2,11 @@
   "name": "@airbnb/auth",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.ts",
+  "main": "./build/index.js",
   "scripts": {
+    "clean": "del ./build/*",
+    "build": "yarn clean && tsc",
+    "start": "node ./build/index.js",
     "dev": "ts-node-dev --poll src/index.ts",
     "test": "jest --watchAll --no-cache",
     "test:ci": "jest"
@@ -19,8 +22,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@airbnb/middleware": "1.0.0",
     "@airbnb/error": "1.0.0",
+    "@airbnb/middleware": "1.0.0",
     "cookie-session": "^1.4.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
@@ -37,7 +40,8 @@
     "@types/cookie-session": "^2.0.41",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/mongoose": "^5.10.3",
-    "@types/supertest": "^2.0.10"
+    "@types/supertest": "^2.0.10",
+    "del-cli": "^3.0.1"
   },
   "private": true,
   "workspaces": {

@@ -1,1 +1,0 @@
-{"ast":null,"code":"export var renderDescription = function renderDescription(description) {\n  return \"\".concat(description.split(\" \").slice(0, 30).join(\" \"), \"...\");\n};","map":null,"metadata":{},"sourceType":"module"}
