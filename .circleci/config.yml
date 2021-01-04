@@ -145,18 +145,27 @@ workflows:
   auth:
     jobs:
       - test-auth
-      - deploy-auth:
+      - push-dev-auth:
+          requires:
+            - test-auth
+      - push-prod-auth:
           requires:
             - test-auth
   stays:
     jobs:
       - test-stays
-      - deploy-stays:
+      - push-dev-stays:
           requires:
             - test-stays
+      - push-prod-stays:
+          requires:
+            - test-auth
   web:
     jobs:
       - test-web
-      - deploy-web:
+      - push-dev-web:
+          requires:
+            - test-web
+      - push-prod-web:
           requires:
             - test-web
