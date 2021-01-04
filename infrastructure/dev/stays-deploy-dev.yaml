@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stays-deploy-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stays
+  template:
+    metadata:
+      labels:
+        app: stays
+    spec:
+      containers:
+        - name: stays
+          image: kokiebisu/nextbnb-stays-dev
+          env:
+            - name: MONGO_URI
+              value: "mongodb://stays-mongo-service:27017/stays"
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_KEY
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: stays-service-dev
+spec:
+  selector:
+    app: stays
+  ports:
+    - name: stays
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
