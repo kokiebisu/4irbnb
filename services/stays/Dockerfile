@@ -1,30 +1,81 @@
-FROM node:alpine
-
+FROM node:alpine as builder
 WORKDIR /app
-
-RUN echo "Building Root package..."
 COPY package.json .
-RUN yarn 
+COPY yarn.lock .
+RUN yarn
 
-RUN echo "Building Error package..."
-COPY packages/error packages/error
-RUN cd packages/error && yarn
-RUN cd packages/error && yarn build
+FROM node:alpine as error
+WORKDIR /app
+COPY --from=builder /app/package.json .
+COPY --from=builder /app/yarn.lock .
+COPY --from=builder /app .
+WORKDIR /app/packages/error
+COPY packages/error/package.json .
+COPY packages/error/yarn.lock .
+COPY packages/error .
+RUN yarn
+RUN yarn build
 
-RUN echo "Building Middleware package..."
-COPY packages/middleware packages/middleware
-RUN cd packages/middleware && yarn
-RUN cd packages/middleware && yarn build
+FROM node:alpine as middleware
+WORKDIR /app
+COPY --from=builder /app/package.json .
+COPY --from=builder /app/yarn.lock .
+COPY --from=builder /app .
+WORKDIR /app/packages/error
+COPY --from=error /app/packages/error/package.json .
+COPY --from=error /app/packages/error/yarn.lock .
+COPY --from=error /app/packages/error/build ./build
+WORKDIR /app/packages/middleware
+COPY packages/middleware/package.json .
+COPY packages/middleware/yarn.lock .
+COPY packages/middleware .
+RUN yarn
+RUN yarn build
 
-RUN echo "Building Stays services..."
-COPY services/stays services/stays
-COPY services/stays/package.json services/stays
-COPY services/stays/tsconfig.json services/stays
-RUN cd services/stays && yarn
-RUN cd services/stays && yarn build
+FROM node:alpine as stays
+WORKDIR /app
+COPY --from=builder /app/package.json .
+COPY --from=builder /app/yarn.lock .
+COPY --from=builder /app .
+WORKDIR /app/packages/error
+COPY --from=error /app/packages/error/package.json .
+COPY --from=error /app/packages/error/yarn.lock .
+COPY --from=error /app/packages/error/build ./build
+WORKDIR /app/packages/middleware
+COPY --from=middleware /app/packages/middleware/package.json .
+COPY --from=middleware /app/packages/middleware/yarn.lock .
+COPY --from=middleware /app/packages/middleware/build ./build
+WORKDIR /app/services/stays
+COPY services/stays/package.json .
+COPY services/stays/yarn.lock .
+COPY services/stays/tsconfig.json .
+COPY services/stays .
+RUN yarn
+RUN yarn build
+
+FROM node:alpine as production
+WORKDIR /app
+COPY --from=builder /app .
+RUN yarn --production
+
+# # # error
+WORKDIR /app/packages/error
+COPY --from=stays /app/packages/error/package.json .
+COPY --from=stays /app/packages/error/yarn.lock .
+COPY --from=stays /app/packages/error/build ./build
+
+
+# # # middleware
+WORKDIR /app/packages/middleware
+COPY --from=stays /app/packages/middleware/package.json .
+COPY --from=stays /app/packages/middleware/yarn.lock .
+COPY --from=stays /app/packages/middleware/build ./build
 
 
 WORKDIR /app/services/stays
-RUN yarn build
+COPY --from=stays /app/services/stays/package.json .
+COPY --from=stays /app/services/stays/yarn.lock .
+COPY --from=stays /app/services/stays/build ./build
+RUN yarn --production
 
 CMD ["yarn", "start"]
