@@ -12,9 +12,11 @@ spec:
       labels:
         app: web
     spec:
+      terminationGracePeriodSeconds: 30
       containers:
         - name: web
-          image: kokiebisu/nextbnb-web
+          image: kokiebisu/nextbnb-web:latest
+          imagePullPolicy: "Always"
 ---
 apiVersion: v1
 kind: Service
