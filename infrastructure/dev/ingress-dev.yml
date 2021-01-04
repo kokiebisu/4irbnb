@@ -13,13 +13,13 @@ spec:
         paths:
           - path: /api/stays/?(.*)
             backend:
-              serviceName: stays-service
+              serviceName: stays-service-dev
               servicePort: 3000
           - path: /api/users/?(.*)
             backend:
-              serviceName: auth-service
+              serviceName: auth-service-dev
               servicePort: 3000
           - path: /?(.*)
             backend:
-              serviceName: web-service
+              serviceName: web-service-dev
               servicePort: 3000
