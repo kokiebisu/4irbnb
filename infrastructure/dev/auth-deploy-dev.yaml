@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: auth-deploy
+  name: auth-deploy-dev
 spec:
   replicas: 1
   selector:
@@ -14,10 +14,10 @@ spec:
     spec:
       containers:
         - name: auth
-          image: kokiebisu/nextbnb-auth
+          image: kokiebisu/nextbnb-auth-dev
           env:
             - name: MONGO_URI
-              value: 'mongodb://auth-mongo-service:27017/auth'
+              value: "mongodb://auth-mongo-service:27017/auth"
             - name: JWT_KEY
               valueFrom:
                 secretKeyRef:
@@ -27,7 +27,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: auth-service
+  name: auth-service-dev
 spec:
   selector:
     app: auth
