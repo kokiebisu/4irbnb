@@ -159,7 +159,7 @@ workflows:
   version: 2
   auth:
     jobs:
-      - test-auth:
+      - test-auth
       - push-dev-auth:
           requires:
             - test-auth
@@ -174,7 +174,7 @@ workflows:
                 - master
   stays:
     jobs:
-      - test-stays:
+      - test-stays
       - push-dev-stays:
           requires:
             - test-stays
@@ -189,8 +189,8 @@ workflows:
                 - master
   web:
     jobs:
-      - storybook:
-      - test-web:
+      - storybook
+      - test-web
       - push-dev-web:
           requires:
             - test-web
