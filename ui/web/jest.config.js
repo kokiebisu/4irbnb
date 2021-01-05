@@ -27,6 +27,8 @@ module.exports = {
     "@prototype": "<rootDir>/components/prototype",
     "@layout/(.*)": "<rootDir>/components/layout/$1",
     "@layout": "<rootDir>/components/layout",
+    "@panel/(.*)": "<rootDir>/components/molecules/$1",
+    "@panel": "<rootDir>/components/molecules",
   },
   moduleDirectories: ["node_modules", "components"],
 };
