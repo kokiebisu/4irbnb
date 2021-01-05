@@ -35,89 +35,77 @@ export const PreviewTemplate: React.FC<{
   images?: string[];
 }> = ({ images = [] }) => {
   return (
-    <>
-      <div className={[space["p-v--15"]].join(" ")}>
-        <div className={[layout["container"]].join(" ")}>
+    <div>
+      <div
+        style={{ position: "relative", zIndex: 500 }}
+        className={[
+          space["m-v--32"],
+          layout["flex"],
+          layout["items-center"],
+          layout["justify-between"],
+        ].join(" ")}
+      >
+        <div>
+          <u className={[font["size--14"], font["weight--100"]].join(" ")}>
+            All online experiences
+          </u>
+        </div>
+
+        <div className={[layout["flex"], section["hidden__options"]].join(" ")}>
           <div
-            style={{ position: "relative", zIndex: 500 }}
             className={[
-              space["m-v--8"],
+              space["p-r--6"],
+              layout["flex"],
               layout["items-center"],
-              layout["justify-between"],
             ].join(" ")}
           >
-            <div>
-              <div>
-                <u
-                  className={[font["size--14"], font["weight--100"]].join(" ")}
-                >
-                  All online experiences
-                </u>
-              </div>
-            </div>
-            <div
-              className={[layout["flex"], section["hidden__options"]].join(" ")}
+            <a
+              href="#"
+              className={[
+                layout["flex"],
+                space["p-l--6"],
+                layout["items-center"],
+              ].join(" ")}
             >
-              <div
+              <div>
+                <Share height={14} fill="#484848" />
+              </div>
+              <p
                 className={[
-                  space["p-r--6"],
-                  layout["flex"],
-                  layout["items-center"],
+                  space["p-l--10"],
+                  font["size--14"],
+                  color["c--gray__2"],
                 ].join(" ")}
               >
-                <a
-                  href="#"
-                  className={[
-                    layout["flex"],
-                    space["p-l--6"],
-                    layout["items-center"],
-                  ].join(" ")}
-                >
-                  <div>
-                    <Share height={14} fill="#484848" />
-                  </div>
-                  <p
-                    className={[
-                      space["p-l--10"],
-                      font["size--14"],
-                      color["c--gray__2"],
-                    ].join(" ")}
-                  >
-                    <u>Share</u>
-                  </p>
-                </a>
-                <a
-                  className={[
-                    layout["flex"],
-                    space["m-l--12"],
-                    layout["items-center"],
-                  ].join(" ")}
-                >
-                  <div>
-                    <Heart fill="#484848" height={17} />
-                  </div>
-                  <u
-                    className={[
-                      space["p-l--10"],
-                      font["size--14"],
-                      color["c--gray__2"],
-                    ].join(" ")}
-                  >
-                    Save
-                  </u>
-                </a>
+                <u>Share</u>
+              </p>
+            </a>
+            <a
+              className={[
+                layout["flex"],
+                space["m-l--12"],
+                layout["items-center"],
+              ].join(" ")}
+            >
+              <div>
+                <Heart fill="#484848" height={17} />
               </div>
-            </div>
+              <u
+                className={[
+                  space["p-l--10"],
+                  font["size--14"],
+                  color["c--gray__2"],
+                ].join(" ")}
+              >
+                Save
+              </u>
+            </a>
           </div>
         </div>
       </div>
       <div>
-        <div className={[section["container__panel"]].join(" ")}>
-          <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-            <Panel images={images} variant="experience" />
-          </div>
-        </div>
+        <Panel images={images} variant="experience" />
       </div>
-    </>
+    </div>
   );
 };
