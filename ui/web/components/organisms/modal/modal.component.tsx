@@ -142,6 +142,9 @@ export const Modal: React.FC<ModalProps> = ({
     },
     listing: {
       component: <ListingModal {...props} />,
+      extendsTo: [shape["max-w--500"], space["p--25"], shape["br--20"]].join(
+        " "
+      ),
     },
   };
 
