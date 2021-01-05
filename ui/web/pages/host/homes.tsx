@@ -92,8 +92,8 @@ const Homes: () => string | JSX.Element = () => {
 
   return (
     <div>
-      <div className={[responsive["n_to_b--md"]].join(" ")}>
-        <Header variant="homes" />
+      <div>
+        <Template variant="banner" />
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
         <Template

@@ -60,6 +60,7 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
                         layout["t--0"],
                         layout["l--0"],
                         layout["r--0"],
+                        shape["shadow--sm"],
                       ].join(" ")
                 }`}
                 criteria={scrollPosition < 56}

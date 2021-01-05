@@ -5,6 +5,7 @@ import { ReadyTemplate } from "@template/host/homes/template.ready";
 import { CommunityTemplate } from "@template/host/homes/template.community";
 import { AllTemplate } from "@template/host/homes/template.all";
 import { BannerTemplate } from "@template/host/homes/template.banner";
+import { HostingTemplate } from "@template/host/homes/template.hosting";
 
 export interface TemplateProps {
   extendsTo?: string;
@@ -35,6 +36,7 @@ export const Template: React.FC<TemplateProps> = ({
     ready: <ReadyTemplate {...props} />,
     all: <AllTemplate {...props} />,
     banner: <BannerTemplate {...props} />,
+    hosting: <HostingTemplate {...props} />,
   };
 
   return (

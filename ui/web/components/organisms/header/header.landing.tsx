@@ -66,8 +66,6 @@ export const TransparentHeader: React.FC<{
   return (
     <header
       className={`${
-        criteria ? [].join(" ") : [shape["shadow--sm"]].join(" ")
-      } ${
         expanded
           ? [space["p-t--16"], space["p-b--100"]].join(" ")
           : [space["p-v--16"]].join(" ")
