@@ -13,16 +13,7 @@ import { Button } from "@button";
 
 export const CheckModal: React.FC<{}> = () => {
   return (
-    <div
-      className={[
-        layout["flex"],
-        layout["justify-center"],
-        space["p-v--25"],
-        shape["shadow--sm"],
-        shape["br--30"],
-        color["bg--white"],
-      ].join(" ")}
-    >
+    <div className={[layout["flex"], layout["justify-center"]].join(" ")}>
       <div
         style={{
           display: "grid",

@@ -8,6 +8,7 @@ import { Modal, ModalProps } from "@modal/modal.component";
 import shape from "@styles/shape.module.scss";
 import layout from "@styles/layout.module.scss";
 import color from "@styles/color.module.scss";
+import modal from "@modal/modal.module.scss";
 
 export default {
   title: "Organisms/Modal",
@@ -16,56 +17,50 @@ export default {
 
 const TemplateStory: Story<ModalProps> = (args) => <Modal {...args} />;
 
-export const privacy = TemplateStory.bind({});
-privacy.args = {
+export const Privacy = TemplateStory.bind({});
+Privacy.args = {
   variant: "privacy",
 };
 
-export const menu = TemplateStory.bind({});
-menu.args = {
+export const Menu = TemplateStory.bind({});
+Menu.args = {
   variant: "menu",
-  dispatch: "toggle_menu",
-  extendsTo: [
-    shape["br--15"],
-    shape["shadow--lg"],
-    layout["flex"],
-    layout["items-center"],
-    color["bg--white"],
-    shape["w--230"],
-  ].join(" "),
+  noPadding: true,
+  extendsTo: [shape["w--200"]].join(" "),
 };
-menu.argTypes = {
+Menu.argTypes = {
   authenticated: {
     control: "boolean",
   },
 };
 
-export const auth = TemplateStory.bind({});
-auth.args = {
+export const Auth = TemplateStory.bind({});
+Auth.args = {
   variant: "auth",
-  dispatch: "toggle_auth",
+  noPadding: true,
+  extendsTo: [modal["w__auth"]].join(" "),
 };
 
-export const availability = TemplateStory.bind({});
-availability.args = {
+export const Availability = TemplateStory.bind({});
+Availability.args = {
   variant: "availability",
 };
 
-export const booking = TemplateStory.bind({});
-booking.args = {
+export const Booking = TemplateStory.bind({});
+Booking.args = {
   variant: "booking",
 };
 
-export const globe = TemplateStory.bind({});
-globe.args = {
+export const Globe = TemplateStory.bind({});
+Globe.args = {
   variant: "globe",
 };
 
-export const location = TemplateStory.bind({});
-location.args = {
+export const Location = TemplateStory.bind({});
+Location.args = {
   variant: "location",
 };
-location.decorators = [
+Location.decorators = [
   (Story) => (
     <div style={{ maxWidth: 400 }}>
       <Story />
@@ -73,11 +68,11 @@ location.decorators = [
   ),
 ];
 
-export const guests = TemplateStory.bind({});
-guests.args = {
+export const Guests = TemplateStory.bind({});
+Guests.args = {
   variant: "guests",
 };
-guests.decorators = [
+Guests.decorators = [
   (Story) => (
     <div style={{ maxWidth: 325 }}>
       <Story />
@@ -85,11 +80,11 @@ guests.decorators = [
   ),
 ];
 
-export const checkin = TemplateStory.bind({});
-checkin.args = {
+export const Checkin = TemplateStory.bind({});
+Checkin.args = {
   variant: "checkin",
 };
-checkin.decorators = [
+Checkin.decorators = [
   (Story) => (
     <div style={{ maxWidth: 720 }}>
       <Story />
@@ -97,14 +92,19 @@ checkin.decorators = [
   ),
 ];
 
-export const checkout = TemplateStory.bind({});
-checkout.args = {
+export const Checkout = TemplateStory.bind({});
+Checkout.args = {
   variant: "checkout",
 };
-checkout.decorators = [
+Checkout.decorators = [
   (Story) => (
     <div style={{ maxWidth: 720 }}>
       <Story />
     </div>
   ),
 ];
+
+export const Listing = TemplateStory.bind({});
+Listing.args = {
+  variant: "listing",
+};
