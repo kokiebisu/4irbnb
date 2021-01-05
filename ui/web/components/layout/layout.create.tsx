@@ -1,5 +1,5 @@
 /** components */
-import { Bar } from "@bar/";
+import { Bar } from "@bar";
 import { Header } from "@header";
 
 /** styles **/
