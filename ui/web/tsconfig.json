@@ -15,6 +15,8 @@
     "jsx": "preserve",
     "baseUrl": "./",
     "paths": {
+      "@panel": ["components/molecules/panel"],
+      "@panel/*": ["components/molecules/panel/*"],
       "@bullet": ["components/atoms/bullet"],
       "@bullet/*": ["components/atoms/bullet/*"],
       "@button": ["components/atoms/button"],
