@@ -39,9 +39,9 @@ Available.args = {
   variant: "available",
 };
 
-export const Panel = TemplateStory.bind({});
-Panel.args = {
-  variant: "panel",
+export const Preview = TemplateStory.bind({});
+Preview.args = {
+  variant: "preview",
 };
 
 export const Description = TemplateStory.bind({});

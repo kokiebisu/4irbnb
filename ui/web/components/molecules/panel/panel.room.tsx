@@ -3,7 +3,7 @@ import shape from "@styles/shape.module.scss";
 
 export const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
   return (
-    <div style={{ paddingTop: "38%", position: "relative" }}>
+    <div style={{ paddingTop: "42%", position: "relative" }}>
       <div
         style={{ position: "absolute", top: 0, bottom: 0, left: 0, right: 0 }}
       >
