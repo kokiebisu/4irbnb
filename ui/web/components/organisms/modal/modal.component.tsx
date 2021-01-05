@@ -159,9 +159,11 @@ export const Modal: React.FC<ModalProps> = ({
             animate={animation[animate].animate}
             transition={animation[animate].transition}
             ref={containerRef}
-            className={`${[shape["shadow--sm"], color["bg--white"]].join(
-              " "
-            )}  ${variants[variant].extendsTo} ${extendsTo}`}
+            className={`${[
+              shape["shadow--sm"],
+              color["bg--white"],
+              shape["w--full"],
+            ].join(" ")}  ${variants[variant].extendsTo} ${extendsTo}`}
           >
             {variants[variant].component}
           </motion.div>
@@ -172,9 +174,11 @@ export const Modal: React.FC<ModalProps> = ({
   return (
     <div
       ref={containerRef}
-      className={`${[shape["shadow--sm"], color["bg--white"]].join(" ")}  ${
-        variants[variant].extendsTo
-      } ${extendsTo}`}
+      className={`${[
+        shape["shadow--sm"],
+        color["bg--white"],
+        shape["w--full"],
+      ].join(" ")}  ${variants[variant].extendsTo} ${extendsTo}`}
       data-testid={`${variant}-modal`}
     >
       {variants[variant].component}
