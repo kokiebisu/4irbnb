@@ -23,7 +23,7 @@ import { Panel } from "@panel";
  * @param {string} layoutType - Type of layout
  * @param {string[]} images - Images for the panel
  */
-export const PanelTemplate: React.FC<{
+export const PreviewTemplate: React.FC<{
   title?: string;
   ratings?: number;
   numberOfReviews?: number;

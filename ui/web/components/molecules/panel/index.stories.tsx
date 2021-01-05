@@ -25,10 +25,3 @@ export const Room = TemplateStory.bind({});
 Room.args = {
   variant: "room",
 };
-Room.decorators = [
-  (Story) => (
-    <div style={{ maxWidth: 1280 }}>
-      <Story />
-    </div>
-  ),
-];

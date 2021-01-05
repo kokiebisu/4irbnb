@@ -3,7 +3,7 @@ import { ParticipateTemplate } from "@template/experiences/id/template.participa
 import { BringTemplate } from "@template/experiences/id/template.bring";
 import { CharacteristicsTemplate } from "@template/experiences/id/template.characteristics";
 import { AvailableTemplate } from "@template/experiences/id/template.available";
-import { PanelTemplate } from "@template/experiences/id/template.panel";
+import { PreviewTemplate } from "@template/experiences/id/template.preview";
 import { ReviewsTemplate } from "@template/experiences/id/template.reviews";
 import { HostTemplate } from "@template/experiences/id/template.host";
 import { DescriptionTemplate } from "@template/experiences/id/template.description";
@@ -37,7 +37,7 @@ export const Template: React.FC<TemplateProps> = ({
     bring: <BringTemplate {...props} />,
     characteristics: <CharacteristicsTemplate {...props} />,
     available: <AvailableTemplate {...props} />,
-    panel: <PanelTemplate {...props} />,
+    preview: <PreviewTemplate {...props} />,
     reviews: <ReviewsTemplate {...props} />,
     host: <HostTemplate {...props} />,
     description: <DescriptionTemplate {...props} />,
