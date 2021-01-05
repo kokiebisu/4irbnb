@@ -11,7 +11,7 @@ import color from "@styles/color.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
 /** components */
-import { Header } from "@header/header.component";
+import { Header } from "@header";
 import { Button } from "@button";
 
 /** hooks */

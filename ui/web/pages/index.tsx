@@ -22,11 +22,11 @@ import { Layout } from "@layout";
 
 /** components */
 import { Animation } from "@animation/animation.component";
-import { Modal } from "@modal/modal.component";
+import { Modal } from "@modal";
 import { Template } from "@template/index";
-import { Footer } from "@footer/footer.component";
+import { Footer } from "@footer";
 
-import { Bar } from "@bar/bar.component";
+import { Bar } from "@bar";
 
 /** hooks */
 import { useHandleScroll } from "@hooks/useHandleScroll";

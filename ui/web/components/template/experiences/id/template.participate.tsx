@@ -5,7 +5,7 @@ import color from "@styles/color.module.scss";
 import layout from "@styles/layout.module.scss";
 
 /** components */
-import { Card } from "@card/card.component";
+import { Card } from "@card";
 
 /**
  * Renders the participate section

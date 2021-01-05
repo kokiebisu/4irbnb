@@ -9,8 +9,8 @@ import layout from "@styles/layout.module.scss";
 import { useToggleState } from "@context/toggle";
 
 /** components */
-import { Bar } from "@bar/bar.component";
-import { Modal } from "@modal/modal.component";
+import { Bar } from "@bar";
+import { Modal } from "@modal";
 
 /** hooks */
 import { useOnClickOutside } from "@hooks/useOnClickOutside";

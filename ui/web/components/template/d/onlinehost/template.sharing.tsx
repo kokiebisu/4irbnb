@@ -6,7 +6,7 @@ import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 
 /** components */
-import { Card } from "@card/card.component";
+import { Card } from "@card";
 import { Button } from "@button";
 
 /** stories */

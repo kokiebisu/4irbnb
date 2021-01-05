@@ -1,5 +1,5 @@
 /** components */
-import { Input } from "@input/input.component";
+import { Input } from "@input";
 
 /** styles **/
 import font from "@styles/font.module.scss";

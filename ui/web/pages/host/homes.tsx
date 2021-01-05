@@ -6,9 +6,9 @@ import color from "@styles/color.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
 /** components */
-import { Header } from "@header/header.component";
+import { Header } from "@header";
 import { Template } from "@template/host/homes";
-import { Footer } from "@footer/footer.component";
+import { Footer } from "@footer";
 
 /** hooks */
 import { useTabTitle } from "@hooks/useTabTitle";
@@ -94,6 +94,11 @@ const Homes: () => string | JSX.Element = () => {
     <div>
       <div>
         <Template variant="banner" />
+      </div>
+      <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
+        <div className={`${[space["p__homes"]].join(" ")}`}>
+          <Template variant="hosting" />
+        </div>
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
         <Template

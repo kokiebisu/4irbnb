@@ -10,7 +10,7 @@ import responsive from "@styles/responsive.module.scss";
 
 /** components */
 import { Button } from "@button";
-import { Card } from "@card/card.component";
+import { Card } from "@card";
 
 /** hooks */
 import { useSlider, SliderProps } from "@hooks/useSlider";

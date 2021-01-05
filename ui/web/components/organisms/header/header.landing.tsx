@@ -14,7 +14,7 @@ import animation from "@styles/animation.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
 /** components */
-import { Modal } from "@modal/modal.component";
+import { Modal } from "@modal";
 import { Button } from "@button";
 import { Prototype as SearchbarPrototype } from "@prototype/searchbar";
 

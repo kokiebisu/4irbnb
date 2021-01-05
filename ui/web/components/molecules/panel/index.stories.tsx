@@ -13,13 +13,6 @@ export const Experience = TemplateStory.bind({});
 Experience.args = {
   variant: "experience",
 };
-Experience.decorators = [
-  (Story) => (
-    <div style={{ maxWidth: 1280 }}>
-      <Story />
-    </div>
-  ),
-];
 
 export const Room = TemplateStory.bind({});
 Room.args = {

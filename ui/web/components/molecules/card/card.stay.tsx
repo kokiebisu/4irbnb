@@ -12,7 +12,7 @@ import { Heart } from "@svg/original";
 /** components */
 import { Bullet } from "@bullet";
 import { ImageSlider } from "@particle/image.slider";
-import { Card } from "@card/card.component";
+import { Card } from "@card";
 
 /**
  * Renders the stay card component

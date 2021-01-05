@@ -16,6 +16,8 @@ module.exports = {
     "@button": "<rootDir>/components/atoms/button",
     "@card/(.*)": "<rootDir>/components/molecules/card/$1",
     "@card": "<rootDir>/components/molecules/card",
+    "@footer/(.*)": "<rootDir>/components/organisms/footer/$1",
+    "@footer": "<rootDir>/components/organisms/footer",
     "@styles/(.*)": "<rootDir>/styles/$1",
     "@svg/(.*)": "<rootDir>/public/svg/$1",
     "@animation/(.*)": "<rootDir>/components/animation/$1",
