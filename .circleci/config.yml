@@ -151,61 +151,63 @@ workflows:
   version: 2
   auth:
     jobs:
-      - test-auth:
-        filters:
-          branches:
-            only:
-              - develop
-      - push-dev-auth:
-        requires:
-          - test-auth
-        filters:
-          branches:
-            only:
-              - develop
-      - push-prod-auth:
-        requires:
-          - test-auth
-        filters:
-          branches:
-            only:
-              - master
+      - test-auth
+          filters:
+            branches:
+              only:
+                - develop
+      - push-dev-auth
+          requires:
+            - test-auth
+          filters:
+            branches:
+              only:
+                - develop
+      - push-prod-auth
+          filters:
+            branches:
+              only:
+                - master
   stays:
     jobs:
-      - test-stays:
-        filters:
-          branches:
-            only:
-              - develop
-      - push-dev-stays:
+      - test-stays
+          filters:
+            branches:
+              only:
+                - develop
+      - push-dev-stays
           requires:
             - test-stays
           filters:
-            only:
-              - develop
-      - push-prod-stays:
-          requires:
-            - test-stays
+            branches:
+              only:
+                - develop
+      - push-prod-stays
           filters:
-            only:
-              - master
+            branches:
+              only:
+                - master
   web:
     jobs:
-      - storybook:
-        filters:
-          only:
-            - storybook
-      - test-web:
-        filters:
-          only:
-            - develop
-      - push-dev-web:
+      - storybook
+          filters:
+            branches:
+              only:
+                - storybook
+      - test-web
+          filters:
+            branches:
+              only:
+                - develop
+      - push-dev-web
           requires:
             - test-web
-          only:
-            - develop
-      - push-prod-web:
-          requires:
-            - test-web
-          only:
-            - master
+          filters:
+            branches:
+              only:
+                - develop
+      - push-prod-web
+          filters:
+            branches:
+              only:
+                - master
