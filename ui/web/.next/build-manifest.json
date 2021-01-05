@@ -29,10 +29,10 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/d/onlinehost": [
+    "/host/homes": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/d/onlinehost.js"
+      "static/chunks/pages/host/homes.js"
     ]
   },
   "ampFirstPages": []

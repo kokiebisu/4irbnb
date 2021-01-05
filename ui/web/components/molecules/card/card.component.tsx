@@ -25,6 +25,7 @@ import { WorksCard } from "@card/card.works";
 import { SharingCard } from "@card/card.sharing";
 import { HowCard } from "@card/card.how";
 import { AnywhereCard } from "./card.anywhere";
+import { HostingCard } from "./card.hosting";
 
 export interface CardProps {
   extendsTo?: string;
@@ -67,6 +68,7 @@ export const Card: React.FC<CardProps> = ({
     sharing: <SharingCard {...props} />,
     how: <HowCard {...props} />,
     anywhere: <AnywhereCard {...props} />,
+    hosting: <HostingCard {...props} />,
   };
 
   if (to) {

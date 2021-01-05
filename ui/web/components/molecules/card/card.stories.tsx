@@ -1,13 +1,16 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Card, CardProps } from "@card/card.component";
+import { HostingCard } from "./card.hosting";
+
+import { types as HostingTypes } from "@card/card.hosting";
 
 export default {
   title: "Molecules/Card",
   component: Card,
   argTypes: {
     onClick: { action: "clicked" },
-    type: {
+    variant: {
       control: {
         disable: true,
       },
@@ -223,3 +226,16 @@ How.decorators = [
     </div>
   ),
 ];
+
+export const Hosting = TemplateStory.bind({});
+Hosting.args = {
+  variant: "hosting",
+};
+Hosting.argTypes = {
+  type: {
+    control: {
+      type: "select",
+      options: Object.keys(HostingTypes),
+    },
+  },
+};

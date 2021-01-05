@@ -41,7 +41,12 @@ export const ListingModal: React.FC<{}> = () => {
         </div>
       </div>
       <div>
-        <Button variant="primary" fill="black" block />
+        <Button
+          variant="primary"
+          fill="black"
+          block
+          title="Start your listing"
+        />
       </div>
     </div>
   );
