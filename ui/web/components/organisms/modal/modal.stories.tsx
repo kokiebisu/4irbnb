@@ -2,13 +2,7 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
 /** components */
-import { Modal, ModalProps } from "@modal/modal.component";
-
-/** styles */
-import shape from "@styles/shape.module.scss";
-import layout from "@styles/layout.module.scss";
-import color from "@styles/color.module.scss";
-import modal from "@modal/modal.module.scss";
+import { Modal, ModalProps } from "@modal";
 
 export default {
   title: "Organisms/Modal",

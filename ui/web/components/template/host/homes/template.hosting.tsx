@@ -5,7 +5,7 @@ import layout from "@styles/layout.module.scss";
 
 /** components */
 import { Layout } from "@layout";
-import { Card } from "@card/card.component";
+import { Card } from "@card";
 
 /** types */
 import { types } from "@card/card.hosting";

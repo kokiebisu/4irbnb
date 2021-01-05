@@ -1,5 +1,5 @@
 /** components */
-import { Input } from "@input/input.component";
+import { Input } from "@input";
 import { Layout } from "@layout";
 
 /** styles **/

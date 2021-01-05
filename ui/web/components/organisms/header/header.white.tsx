@@ -8,7 +8,7 @@ import layout from "@styles/layout.module.scss";
 import color from "@styles/color.module.scss";
 
 /** components */
-import { Modal } from "@modal/modal.component";
+import { Modal } from "@modal";
 import { Button } from "@button";
 
 /** contexts */

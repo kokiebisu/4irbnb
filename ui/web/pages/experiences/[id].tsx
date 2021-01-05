@@ -3,10 +3,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 
 /** components */
-import { Header } from "@header/header.component";
+import { Header } from "@header";
 import { Template } from "@template/experiences/id";
-import { Modal } from "@modal/modal.component";
-import { Footer } from "@footer/footer.component";
+import { Modal } from "@modal";
+import { Footer } from "@footer";
 
 /** contexts */
 import { useToggleState } from "@context/toggle";
@@ -23,9 +23,6 @@ import responsive from "@styles/responsive.module.scss";
 /** sample data */
 import { experiences } from "../../data/experiences";
 import { useTabTitle } from "@hooks/useTabTitle";
-
-/** stories */
-import { menu } from "@modal/modal.stories";
 
 /**
  * Renders the component for path /experiences/[id]

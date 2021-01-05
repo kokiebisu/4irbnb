@@ -12,7 +12,7 @@ import section from "@template/index.module.scss";
 /** components */
 import { Button } from "@button";
 import { Bullet } from "@bullet";
-import { Card } from "@card/card.component";
+import { Card } from "@card";
 
 /** stories */
 import { Border } from "@button/button.stories";

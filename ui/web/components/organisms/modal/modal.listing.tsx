@@ -1,6 +1,6 @@
 /** components */
 import { Button } from "@button";
-import { Input } from "@input/input.component";
+import { Input } from "@input";
 
 /** vectors */
 import { Plus } from "@svg/original";

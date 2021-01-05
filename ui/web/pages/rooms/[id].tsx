@@ -4,11 +4,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useToggleState } from "@context/toggle";
 
 /** components */
-import { Header } from "@header/header.component";
-import { Footer } from "@footer/footer.component";
+import { Header } from "@header";
+import { Footer } from "@footer";
 import { Template } from "@template/rooms/id";
-import { Card } from "@card/card.component";
-import { Modal } from "@modal/modal.component";
+import { Card } from "@card";
+import { Modal } from "@modal";
 
 /** styles */
 import responsive from "@styles/responsive.module.scss";
@@ -121,14 +121,16 @@ const id: () => string | JSX.Element = () => {
             variant="know"
           />
         </div>
-        <Template
-          extendsTo={[
-            color["b-t--white__2"],
-            space["p-v--32"],
-            color["bg--white__1"],
-          ].join(" ")}
-          variant="other"
-        />
+        <div className={[layout["container"]].join(" ")}>
+          <Template
+            extendsTo={[
+              color["b-t--white__2"],
+              space["p-v--32"],
+              color["bg--white__1"],
+            ].join(" ")}
+            variant="other"
+          />
+        </div>
         <Footer />
         <div
           className={[

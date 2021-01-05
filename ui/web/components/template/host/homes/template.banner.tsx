@@ -4,8 +4,8 @@ import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 
 /** components */
-import { Modal } from "@modal/modal.component";
-import { Header } from "@header/header.component";
+import { Modal } from "@modal";
+import { Header } from "@header";
 
 export const BannerTemplate = () => {
   return (
