@@ -11,20 +11,17 @@ import color from "@styles/color.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
 /** components */
-import { Header } from "@header/header.component";
+import { Header } from "@header";
 import { Button } from "@button";
 
 /** hooks */
 import { useHandleScroll } from "@hooks/useHandleScroll";
-import useOnClickOutside from "@hooks/useOnClickOutside";
 
 /** stories */
 import { Banner } from "@button/button.stories";
 
 /** helper */
 import { ResponsiveImage } from "@helper/img";
-import { useToggleDispatch, useToggleState } from "@context/toggle";
-import { Modal } from "@modal/modal.component";
 
 /**
  * Renders the banner section
@@ -63,6 +60,7 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
                         layout["t--0"],
                         layout["l--0"],
                         layout["r--0"],
+                        shape["shadow--sm"],
                       ].join(" ")
                 }`}
                 criteria={scrollPosition < 56}

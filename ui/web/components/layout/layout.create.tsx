@@ -1,6 +1,6 @@
 /** components */
-import { Bar } from "@bar/bar.component";
-import { Header } from "@header/header.component";
+import { Bar } from "@bar";
+import { Header } from "@header";
 
 /** styles **/
 import layout from "@styles/layout.module.scss";

@@ -1,7 +1,7 @@
 import React from "react";
 
 /** components */
-import { Header } from "@header/header.component";
+import { Header } from "@header";
 import { Prototype as CreatePrototype } from "@prototype/create";
 
 /** styles **/

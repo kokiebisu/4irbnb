@@ -22,14 +22,11 @@ import { Layout } from "@layout";
 
 /** components */
 import { Animation } from "@animation/animation.component";
-import { Modal } from "@modal/modal.component";
+import { Modal } from "@modal";
 import { Template } from "@template/index";
-import { Footer } from "@footer/footer.component";
+import { Footer } from "@footer";
 
-import { Bar } from "@bar/bar.component";
-
-/** stories */
-import { auth, globe, privacy } from "@modal/modal.stories";
+import { Bar } from "@bar";
 
 /** hooks */
 import { useHandleScroll } from "@hooks/useHandleScroll";
@@ -107,8 +104,7 @@ const LandingPage = ({ currentUser }) => {
         >
           <div className={[index["m__privacy"]].join(" ")}>
             <Modal
-              {...privacy.args}
-              extendsTo={[index["modal__privacy"]].join(" ")}
+              variant="privacy"
               criteria={toggleState.privacy}
               animate="slideup"
             />
@@ -157,7 +153,7 @@ const LandingPage = ({ currentUser }) => {
               ].join(" ")}
             >
               <Modal
-                {...auth.args}
+                variant="auth"
                 animate="slideup"
                 criteria={toggleState.auth}
                 lock
@@ -186,13 +182,13 @@ const LandingPage = ({ currentUser }) => {
               ].join(" ")}
             >
               <Modal
+                variant="globe"
                 extendsTo={[
                   shape["w--full"],
                   shape["h--full"],
                   space["p--40"],
                   shape["max-w--1100"],
                 ].join(" ")}
-                {...globe.args}
                 animate="slideup"
                 criteria={toggleState.globe}
                 lock

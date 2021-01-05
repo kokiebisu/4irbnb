@@ -102,6 +102,17 @@ jobs:
       - run:
           name: Installing dependencies
           command: yarn install
+
+  storybook:
+    working_directory: ~/airbnb/ui/web
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout:
+          path: ~/airbnb
+      - run:
+          name: Installing dependencies
+          command: yarn install
       - run:
           name: Testing snapshot
           command: yarn snapshot
@@ -150,8 +161,10 @@ workflows:
           requires:
             - test-auth
       - push-prod-auth:
-          requires:
-            - test-auth
+          filters:
+            branches:
+              only:
+                - develop
   stays:
     jobs:
       - test-stays
@@ -159,14 +172,19 @@ workflows:
           requires:
             - test-stays
       - push-prod-stays:
-          requires:
-            - test-stays
+          filters:
+            branches:
+              only:
+                - develop
   web:
     jobs:
+      - storybook
       - test-web
       - push-dev-web:
           requires:
             - test-web
       - push-prod-web:
-          requires:
-            - test-web
+          filters:
+            branches:
+              only:
+                - develop

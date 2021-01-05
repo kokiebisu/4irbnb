@@ -68,10 +68,10 @@ export const BannerTemplate: React.FC<{}> = () => {
           banner["display__onlinehost--points"],
         ].join(" ")}
       >
-        {["home", "global", "business"].map((bullet, index) => {
+        {["home", "global", "business"].map((type, index) => {
           return (
             <div key={index} className={[space["m-b--16"]].join(" ")}>
-              <Bullet variant="onlinehost" bullet={bullet} />
+              <Bullet variant="onlinehost" type={type} />
             </div>
           );
         })}

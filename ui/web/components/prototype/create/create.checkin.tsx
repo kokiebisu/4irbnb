@@ -5,7 +5,7 @@ import color from "@styles/color.module.scss";
 import layout from "@styles/layout.module.scss";
 
 /** components */
-import { Input } from "@input/input.component";
+import { Input } from "@input";
 import { Layout } from "@layout";
 
 export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({

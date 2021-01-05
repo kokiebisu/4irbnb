@@ -5,6 +5,7 @@ import { SearchBar } from "@bar/bar.search";
 import { CovidBar } from "@bar/bar.covid";
 import { CreateBar } from "@bar/bar.create";
 import { MenuBar } from "@bar/bar.menu";
+import { AvailabilityBar } from "@bar/bar.availability";
 
 export interface BarProps {
   variant: string;
@@ -17,6 +18,7 @@ export interface BarProps {
  */
 export const Bar: React.FC<BarProps> = ({ variant = "paginate", ...props }) => {
   const variants = {
+    availability: <AvailabilityBar {...props} />,
     paginate: <PaginateBar {...props} />,
     covid: <CovidBar {...props} />,
     progress: <ProgressBar {...props} />,

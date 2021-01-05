@@ -2,16 +2,16 @@ import React from "react";
 import Link from "next/link";
 
 /** Component */
-import { Header } from "../components/organisms/header/header.component";
+import { Header } from "@header";
 
 /** styles */
-import layout from "../styles/layout.module.scss";
-import font from "../styles/font.module.scss";
-import color from "../styles/color.module.scss";
-import space from "../styles/space.module.scss";
-import responsive from "../styles/responsive.module.scss";
+import layout from "@styles/layout.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
+import responsive from "@styles/responsive.module.scss";
 
-import { useTabTitle } from "../hooks/useTabTitle";
+import { useTabTitle } from "@hooks/useTabTitle";
 
 // pages/404.js
 const ErrorPage = () => {

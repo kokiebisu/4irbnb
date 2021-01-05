@@ -1,5 +1,5 @@
 /** components */
-import { Card } from "@card/card.component";
+import { Card } from "@card";
 import { Layout } from "@layout";
 
 /**

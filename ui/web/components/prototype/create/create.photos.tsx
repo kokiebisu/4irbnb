@@ -6,7 +6,7 @@ import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 
 /** components */
-import { Input } from "@input/input.component";
+import { Input } from "@input";
 
 export const PhotosCreate: React.FC<{
   data?: any;
