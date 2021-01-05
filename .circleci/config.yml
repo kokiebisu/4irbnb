@@ -1,6 +1,9 @@
 version: 2
 jobs:
   test-auth:
+    branches:
+      only:
+        - develop
     working_directory: ~/airbnb/services/auth
     docker:
       - image: circleci/node:10
@@ -15,6 +18,9 @@ jobs:
           command: yarn test:ci
 
   push-prod-auth:
+    branches:
+      only:
+        - master
     working_directory: ~/airbnb
     machine: true
     steps:
@@ -31,6 +37,9 @@ jobs:
           command: docker push kokiebisu/nextbnb-auth
 
   push-dev-auth:
+    branches:
+      only:
+        - develop
     working_directory: ~/airbnb
     machine: true
     steps:
@@ -47,6 +56,9 @@ jobs:
           command: docker push kokiebisu/nextbnb-auth-dev
 
   test-stays:
+    branches:
+      only:
+        - develop
     working_directory: ~/airbnb/services/stays
     docker:
       - image: circleci/node:10
@@ -61,6 +73,9 @@ jobs:
           command: yarn test:ci
 
   push-prod-stays:
+    branches:
+      only:
+        - master
     working_directory: ~/airbnb
     machine: true
     steps:
@@ -77,6 +92,9 @@ jobs:
           command: docker push kokiebisu/nextbnb-stays
 
   push-dev-stays:
+    branches:
+      only:
+        - develop
     working_directory: ~/airbnb
     machine: true
     steps:
@@ -93,6 +111,9 @@ jobs:
           command: docker push kokiebisu/nextbnb-stays-dev
 
   test-web:
+    branches:
+      only:
+        - develop
     working_directory: ~/airbnb/ui/web
     docker:
       - image: circleci/node:10
@@ -102,6 +123,11 @@ jobs:
       - run:
           name: Installing dependencies
           command: yarn install
+  
+  storybook:
+    branches:
+      only:
+        - storybook
       - run:
           name: Testing snapshot
           command: yarn snapshot
@@ -110,6 +136,9 @@ jobs:
           command: npx chromatic --project-token=e017nqnn22h --exit-zero-on-changes
 
   push-prod-web:
+    branches:
+      only:
+        - master
     working_directory: ~/airbnb/ui/web
     machine: true
     steps:
@@ -126,6 +155,9 @@ jobs:
           command: docker push kokiebisu/nextbnb-web
 
   push-dev-web:
+    branches:
+      only:
+        - develop
     working_directory: ~/airbnb/ui/web
     machine: true
     steps:
