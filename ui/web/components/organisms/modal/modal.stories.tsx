@@ -25,8 +25,6 @@ Privacy.args = {
 export const Menu = TemplateStory.bind({});
 Menu.args = {
   variant: "menu",
-  noPadding: true,
-  extendsTo: [shape["w--200"]].join(" "),
 };
 Menu.argTypes = {
   authenticated: {
@@ -37,13 +35,6 @@ Menu.argTypes = {
 export const Auth = TemplateStory.bind({});
 Auth.args = {
   variant: "auth",
-  noPadding: true,
-  extendsTo: [modal["w__auth"]].join(" "),
-};
-
-export const Availability = TemplateStory.bind({});
-Availability.args = {
-  variant: "availability",
 };
 
 export const Booking = TemplateStory.bind({});
@@ -59,51 +50,22 @@ Globe.args = {
 export const Location = TemplateStory.bind({});
 Location.args = {
   variant: "location",
-  noPadding: true,
 };
-Location.decorators = [
-  (Story) => (
-    <div style={{ maxWidth: 400 }}>
-      <Story />
-    </div>
-  ),
-];
 
 export const Guests = TemplateStory.bind({});
 Guests.args = {
   variant: "guests",
 };
-Guests.decorators = [
-  (Story) => (
-    <div style={{ maxWidth: 325 }}>
-      <Story />
-    </div>
-  ),
-];
 
 export const Checkin = TemplateStory.bind({});
 Checkin.args = {
   variant: "checkin",
 };
-Checkin.decorators = [
-  (Story) => (
-    <div style={{ maxWidth: 720 }}>
-      <Story />
-    </div>
-  ),
-];
 
 export const Checkout = TemplateStory.bind({});
 Checkout.args = {
   variant: "checkout",
 };
-Checkout.decorators = [
-  (Story) => (
-    <div style={{ maxWidth: 720 }}>
-      <Story />
-    </div>
-  ),
-];
 
 export const Listing = TemplateStory.bind({});
 Listing.args = {

@@ -227,7 +227,7 @@ const id: () => string | JSX.Element = () => {
             backgroundColor: "rgba(0, 0, 0, 0.6)",
           }}
         >
-          <Modal {...menu.args} />
+          <Modal variant="menu" />
         </div>
       )}
     </>

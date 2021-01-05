@@ -21,7 +21,6 @@ import { useTabTitle } from "../../hooks/useTabTitle";
 
 /** prototypes */
 import "../../global/string";
-import { menu } from "components/organisms/modal/modal.stories";
 
 /**
  * Renders the component for path /s/homes
@@ -86,7 +85,7 @@ const Homes = () => {
                 shape["h--100v"],
               ].join(" ")}
             >
-              <Modal {...menu.args} animate="slideup" />
+              <Modal variant="menu" animate="slideup" />
             </div>
           </div>
         )}

@@ -8,22 +8,22 @@ import { useLockBodyScroll } from "@hooks/useLockBodyScroll";
 /** components */
 import { MenuModal } from "@modal/modal.menu";
 import { PrivacyModal } from "@modal/modal.privacy";
-import { AvailabilityModal } from "@modal/modal.availability";
 import { AuthModal } from "@modal/modal.auth";
 import { BookingModal } from "@modal/modal.booking";
 import { GlobeModal } from "@modal/modal.globe";
 import { LocationModal } from "@modal/modal.location";
+import { GuestsModal } from "@modal/modal.guests";
+import { CheckModal } from "@modal/modal.check";
+import { ListingModal } from "@modal/modal.listing";
 
 /** contexts */
 import { useToggleDispatch } from "@context/toggle";
-import { GuestsModal } from "./modal.guests";
-import { CheckModal } from "./modal.check";
-import { ListingModal } from "./modal.listing";
 
 /** styles */
 import space from "@styles/space.module.scss";
 import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
+import modal from "@modal/modal.module.scss";
 
 export interface ModalProps {
   variant: string;
@@ -75,53 +75,106 @@ export const Modal: React.FC<ModalProps> = ({
   };
 
   const variants: {
-    [variant: string]: JSX.Element;
+    [variant: string]: {
+      component: JSX.Element;
+      extendsTo?: string;
+      noPadding?: boolean;
+    };
   } = {
-    privacy: <PrivacyModal {...props} />,
-    menu: <MenuModal {...props} />,
-    auth: <AuthModal {...props} />,
-    availability: <AvailabilityModal {...props} />,
-    booking: <BookingModal {...props} />,
-    globe: <GlobeModal {...props} />,
-    location: <LocationModal {...props} />,
-    guests: <GuestsModal {...props} />,
-    checkin: <CheckModal {...props} />,
-    checkout: <CheckModal {...props} />,
-    listing: <ListingModal {...props} />,
+    privacy: {
+      component: <PrivacyModal {...props} />,
+      extendsTo: [modal["modal__privacy"], shape["br--8"], space["p--25"]].join(
+        " "
+      ),
+    },
+    menu: {
+      component: <MenuModal {...props} />,
+      extendsTo: [shape["w--200"], shape["br--16"]].join(" "),
+    },
+    auth: {
+      component: <AuthModal {...props} />,
+      extendsTo: [modal["w__auth"], shape["br--16"]].join(" "),
+    },
+    booking: {
+      component: <BookingModal {...props} />,
+      extendsTo: [space["p--24"], color["b--white__2"], shape["br--10"]].join(
+        " "
+      ),
+    },
+    globe: {
+      component: <GlobeModal {...props} />,
+      extendsTo: [
+        shape["max-w--720"],
+        space["p--25"],
+        shape["h--fit"],
+        shape["br--16"],
+      ].join(" "),
+    },
+    location: {
+      component: <LocationModal {...props} />,
+      extendsTo: [shape["max-w--400"], shape["br--16"], space["p-v--25"]].join(
+        " "
+      ),
+    },
+    guests: {
+      component: <GuestsModal {...props} />,
+      extendsTo: [shape["max-w--325"], shape["br--32"], space["p--25"]].join(
+        " "
+      ),
+    },
+    checkin: {
+      component: <CheckModal {...props} />,
+      extendsTo: [
+        shape["max-w--720"],
+        shape["br--32"],
+        space["p-h--45"],
+        space["p-v--30"],
+      ].join(" "),
+    },
+    checkout: {
+      component: <CheckModal {...props} />,
+      extendsTo: [
+        shape["max-w--720"],
+        shape["br--32"],
+        space["p-h--45"],
+        space["p-v--30"],
+      ].join(" "),
+    },
+    listing: {
+      component: <ListingModal {...props} />,
+    },
   };
 
   if (criteria !== undefined) {
     return (
-      <div className={extendsTo}>
-        <AnimatePresence>
-          {criteria && (
-            <motion.div
-              data-testid={`${variant}-modal`}
-              exit={{ opacity: 0 }}
-              initial={animation[animate].initial}
-              animate={animation[animate].animate}
-              transition={animation[animate].transition}
-              ref={containerRef}
-              className={extendsTo}
-            >
-              {variants[variant]}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+      <AnimatePresence>
+        {criteria && (
+          <motion.div
+            data-testid={`${variant}-modal`}
+            exit={{ opacity: 0 }}
+            initial={animation[animate].initial}
+            animate={animation[animate].animate}
+            transition={animation[animate].transition}
+            ref={containerRef}
+            className={`${[shape["shadow--sm"], color["bg--white"]].join(
+              " "
+            )}  ${variants[variant].extendsTo} ${extendsTo}`}
+          >
+            {variants[variant].component}
+          </motion.div>
+        )}
+      </AnimatePresence>
     );
   }
   return (
     <div
       ref={containerRef}
-      className={`${[
-        shape["shadow--sm"],
-        shape["br--16"],
-        color["bg--white"],
-      ].join(" ")} ${!noPadding && [space["p--25"]].join(" ")} ${extendsTo}`}
+      className={`${[shape["shadow--sm"], color["bg--white"]].join(" ")}  ${
+        variants[variant].extendsTo
+      } ${extendsTo}`}
       data-testid={`${variant}-modal`}
     >
-      {variants[variant]}
+      {variants[variant].component}
     </div>
   );
 };

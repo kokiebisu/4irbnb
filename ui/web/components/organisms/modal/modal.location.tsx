@@ -26,7 +26,7 @@ export const LocationModal: React.FC<{}> = () => {
     "Pemberton",
   ];
   return (
-    <div className={[space["p-v--25"]].join(" ")}>
+    <div>
       <div>
         <Button
           variant="location"

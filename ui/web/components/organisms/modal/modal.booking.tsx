@@ -49,15 +49,9 @@ export const BookingModal: React.FC<{
         shape["w--full"],
         layout["inline-block"],
         modal["position__checkin--wrapper"],
-        color["b--white__2"],
       ].join(" ")}
-      style={{
-        backgroundColor: "white",
-        zIndex: 50,
-        borderRadius: 10,
-      }}
     >
-      <div className={[space["p-h--24"]].join(" ")}>
+      <div>
         <div>
           <div>
             <span className={[space["p-v--10"], font["size--21"]].join(" ")}>
