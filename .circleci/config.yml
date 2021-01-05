@@ -102,7 +102,7 @@ jobs:
       - run:
           name: Installing dependencies
           command: yarn install
-  
+
   storybook:
     working_directory: ~/airbnb/ui/web
     docker:
@@ -151,17 +151,17 @@ workflows:
   version: 2
   auth:
     jobs:
-      - test-auth
+      - test-auth:
         filters:
           branches:
-            only: 
+            only:
               - develop
       - push-dev-auth:
         requires:
           - test-auth
         filters:
           branches:
-            only: 
+            only:
               - develop
       - push-prod-auth:
         requires:
@@ -172,7 +172,7 @@ workflows:
               - master
   stays:
     jobs:
-      - test-stays
+      - test-stays:
         filters:
           branches:
             only:
@@ -191,13 +191,13 @@ workflows:
               - master
   web:
     jobs:
-      - storybook
+      - storybook:
         filters:
           only:
             - storybook
-      - test-web
+      - test-web:
         filters:
-          only: 
+          only:
             - develop
       - push-dev-web:
           requires:
