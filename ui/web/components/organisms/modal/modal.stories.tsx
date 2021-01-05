@@ -59,6 +59,7 @@ Globe.args = {
 export const Location = TemplateStory.bind({});
 Location.args = {
   variant: "location",
+  noPadding: true,
 };
 Location.decorators = [
   (Story) => (

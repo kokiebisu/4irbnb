@@ -26,76 +26,67 @@ export const LocationModal: React.FC<{}> = () => {
     "Pemberton",
   ];
   return (
-    <div
-      className={[
-        shape["shadow--sm"],
-        shape["br--20"],
-        space["p-v--25"],
-        color["bg--white"],
-      ].join(" ")}
-    >
+    <div className={[space["p-v--25"]].join(" ")}>
       <div>
-        <div>
-          <Button
-            variant="location"
-            type="explore"
-            extendsTo={[
-              space["p-h--25"],
-              animation["hover-background--white__1"],
-            ].join(" ")}
-            block
-          />
-        </div>
-        <div>
-          <Layout
-            variant="location"
-            title="Recent Searches"
-            content={recentLocations.map((recentLocations) => {
-              return (
-                <div>
-                  <Button
-                    variant="location"
-                    type="recent"
-                    {...recentLocations}
-                    extendsTo={[
-                      space["p-h--25"],
-                      animation["hover-background--white__1"],
-                    ].join(" ")}
-                    block
-                  />
-                </div>
-              );
-            })}
-          />
-        </div>
-        <div>
-          <Layout
-            variant="location"
-            title="Nearby Getaways"
-            content={
-              <div
-                style={{ position: "relative", right: 3 }}
-                className={[
-                  space["m-h--25"],
-                  layout["flex"],
-                  layout["flex-wrap"],
-                ].join(" ")}
-              >
-                {nearbyLocations.map((nearbyLocation) => {
-                  return (
-                    <div>
-                      <Button
-                        variant="nearby"
-                        label={nearbyLocation}
-                        onClick={() => alert(`clicked ${nearbyLocation}`)}
-                      />
-                    </div>
-                  );
-                })}
+        <Button
+          variant="location"
+          type="explore"
+          extendsTo={[
+            space["p-h--25"],
+            animation["hover-background--white__1"],
+          ].join(" ")}
+          block
+        />
+      </div>
+      <div>
+        <Layout
+          variant="location"
+          title="Recent Searches"
+          content={recentLocations.map((recentLocations) => {
+            return (
+              <div>
+                <Button
+                  variant="location"
+                  type="recent"
+                  {...recentLocations}
+                  extendsTo={[
+                    space["p-h--25"],
+                    animation["hover-background--white__1"],
+                  ].join(" ")}
+                  block
+                />
               </div>
-            }
-          />
-        </div>
+            );
+          })}
+        />
+      </div>
+      <div>
+        <Layout
+          variant="location"
+          title="Nearby Getaways"
+          content={
+            <div
+              style={{ position: "relative", right: 3 }}
+              className={[
+                space["m-h--25"],
+                layout["flex"],
+                layout["flex-wrap"],
+              ].join(" ")}
+            >
+              {nearbyLocations.map((nearbyLocation) => {
+                return (
+                  <div>
+                    <Button
+                      variant="nearby"
+                      label={nearbyLocation}
+                      onClick={() => alert(`clicked ${nearbyLocation}`)}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          }
+        />
       </div>
     </div>
   );
