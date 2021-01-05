@@ -92,19 +92,16 @@ jobs:
           name: Pushing to docker hub
           command: docker push kokiebisu/nextbnb-stays-dev
 
-  # test-web:
-  #   working_directory: ~/airbnb/ui/web
-  #   docker:
-  #     - image: circleci/node:10
-  #   steps:
-  #     - checkout:
-  #         path: ~/airbnb
-  #     - run:
-  #         name: Installing dependencies
-  #         command: yarn install
-  #     - run:
-  #         name: Testing
-  #         command: jest
+  test-web:
+    working_directory: ~/airbnb/ui/web
+    docker:
+      - image: circleci/node:10
+    steps:
+      - checkout:
+          path: ~/airbnb
+      - run:
+          name: Installing dependencies
+          command: yarn install
 
   storybook:
     working_directory: ~/airbnb/ui/web
