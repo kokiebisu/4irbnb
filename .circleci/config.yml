@@ -1,9 +1,6 @@
 version: 2
 jobs:
   test-auth:
-    branches:
-      only:
-        - develop
     working_directory: ~/airbnb/services/auth
     docker:
       - image: circleci/node:10
@@ -18,9 +15,6 @@ jobs:
           command: yarn test:ci
 
   push-prod-auth:
-    branches:
-      only:
-        - master
     working_directory: ~/airbnb
     machine: true
     steps:
@@ -37,9 +31,6 @@ jobs:
           command: docker push kokiebisu/nextbnb-auth
 
   push-dev-auth:
-    branches:
-      only:
-        - develop
     working_directory: ~/airbnb
     machine: true
     steps:
@@ -56,9 +47,6 @@ jobs:
           command: docker push kokiebisu/nextbnb-auth-dev
 
   test-stays:
-    branches:
-      only:
-        - develop
     working_directory: ~/airbnb/services/stays
     docker:
       - image: circleci/node:10
@@ -73,9 +61,6 @@ jobs:
           command: yarn test:ci
 
   push-prod-stays:
-    branches:
-      only:
-        - master
     working_directory: ~/airbnb
     machine: true
     steps:
@@ -92,9 +77,6 @@ jobs:
           command: docker push kokiebisu/nextbnb-stays
 
   push-dev-stays:
-    branches:
-      only:
-        - develop
     working_directory: ~/airbnb
     machine: true
     steps:
@@ -111,9 +93,6 @@ jobs:
           command: docker push kokiebisu/nextbnb-stays-dev
 
   test-web:
-    branches:
-      only:
-        - develop
     working_directory: ~/airbnb/ui/web
     docker:
       - image: circleci/node:10
@@ -125,9 +104,10 @@ jobs:
           command: yarn install
   
   storybook:
-    branches:
-      only:
-        - storybook
+    working_directory: ~/airbnb/ui/web
+    docker:
+      - image: circleci/node:10
+    steps:
       - run:
           name: Testing snapshot
           command: yarn snapshot
@@ -136,9 +116,6 @@ jobs:
           command: npx chromatic --project-token=e017nqnn22h --exit-zero-on-changes
 
   push-prod-web:
-    branches:
-      only:
-        - master
     working_directory: ~/airbnb/ui/web
     machine: true
     steps:
@@ -155,9 +132,6 @@ jobs:
           command: docker push kokiebisu/nextbnb-web
 
   push-dev-web:
-    branches:
-      only:
-        - develop
     working_directory: ~/airbnb/ui/web
     machine: true
     steps:
@@ -178,27 +152,60 @@ workflows:
   auth:
     jobs:
       - test-auth
+        filters:
+          branches:
+            only: 
+              - develop
       - push-dev-auth:
-          requires:
-            - test-auth
+        requires:
+          - test-auth
+        filters:
+          branches:
+            only: 
+              - develop
       - push-prod-auth:
-          requires:
-            - test-auth
+        requires:
+          - test-auth
+        filters:
+          branches:
+            only:
+              - master
   stays:
     jobs:
       - test-stays
+        filters:
+          branches:
+            only:
+              - develop
       - push-dev-stays:
           requires:
             - test-stays
+          filters:
+            only:
+              - develop
       - push-prod-stays:
           requires:
             - test-stays
+          filters:
+            only:
+              - master
   web:
     jobs:
+      - storybook
+        filters:
+          only:
+            - storybook
       - test-web
+        filters:
+          only: 
+            - develop
       - push-dev-web:
           requires:
             - test-web
+          only:
+            - develop
       - push-prod-web:
           requires:
             - test-web
+          only:
+            - master
