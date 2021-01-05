@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { jsxs as _jsxs } from \"react/jsx-runtime\";\nexport const Options = [1, 2, 3, 4, 5, 6, 7, 8].map((option, index) => {\n  return /*#__PURE__*/_jsxs(\"option\", {\n    value: option,\n    children: [option, \" \", index > 0 ? \"guests\" : \"guest\"]\n  });\n});","map":null,"metadata":{},"sourceType":"module"}

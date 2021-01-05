@@ -6,7 +6,7 @@ import shape from "@styles/shape.module.scss";
 
 /** components */
 import { Template } from "@template/s/homes";
-import { Bar } from "@bar/";
+import { Bar } from "@bar";
 import { Button } from "@button";
 
 /** stories */
