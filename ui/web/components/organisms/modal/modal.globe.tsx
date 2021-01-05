@@ -6,8 +6,6 @@ import { Button } from "@button";
 /** styles */
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
-import shape from "@styles/shape.module.scss";
-import color from "@styles/color.module.scss";
 
 /** Prototypes */
 import { Prototype as GlobePrototype } from "@prototype/globe";
@@ -19,15 +17,8 @@ export const GlobeModal: React.FC<{}> = () => {
   const toggleDispatch = useToggleDispatch();
   const [Prototype, setPrototype] = useState("language");
   return (
-    <div
-      className={[
-        shape["h--full"],
-        shape["shadow--lg"],
-        shape["br--16"],
-        color["bg--white"],
-      ].join(" ")}
-    >
-      <div className={[space["p--12"]].join(" ")}>
+    <div>
+      <div>
         <div>
           <Button
             variant="modal"
@@ -37,7 +28,7 @@ export const GlobeModal: React.FC<{}> = () => {
         </div>
       </div>
 
-      <div className={[space["p-h--20"], space["p-v--8"]].join(" ")}>
+      <div>
         <div
           className={[
             layout["flex"],

@@ -24,9 +24,6 @@ import { NameLogo, NoNameLogo } from "@svg/logo";
 /** contexts */
 import { useToggleDispatch, useToggleState } from "@context/toggle";
 
-/** stories */
-import { Menu } from "@modal/modal.stories";
-
 /** contents */
 import { Content } from "@button/content/content.transparent";
 
@@ -152,7 +149,7 @@ export const TransparentHeader: React.FC<{
             variant="menu"
             authenticated={data}
             criteria={toggleState.menu}
-            {...Menu.args}
+            dispatch="toggle_menu"
           />
         </div>
       </div>
@@ -165,7 +162,7 @@ export const TransparentHeader: React.FC<{
         style={{
           position: "absolute",
           width: "100%",
-          maxWidth: 720,
+          maxWidth: 760,
           left: "50%",
           bottom: 0,
           zIndex: 50,

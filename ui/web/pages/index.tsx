@@ -28,9 +28,6 @@ import { Footer } from "@footer/footer.component";
 
 import { Bar } from "@bar/bar.component";
 
-/** stories */
-import { Auth, globe, privacy } from "@modal/modal.stories";
-
 /** hooks */
 import { useHandleScroll } from "@hooks/useHandleScroll";
 import { useHandleDocumentResize } from "@hooks/useHandleDocumentResize";
@@ -107,8 +104,7 @@ const LandingPage = ({ currentUser }) => {
         >
           <div className={[index["m__privacy"]].join(" ")}>
             <Modal
-              {...privacy.args}
-              extendsTo={[index["modal__privacy"]].join(" ")}
+              variant="privacy"
               criteria={toggleState.privacy}
               animate="slideup"
             />
@@ -157,7 +153,7 @@ const LandingPage = ({ currentUser }) => {
               ].join(" ")}
             >
               <Modal
-                {...Auth.args}
+                variant="auth"
                 animate="slideup"
                 criteria={toggleState.auth}
                 lock
@@ -186,13 +182,13 @@ const LandingPage = ({ currentUser }) => {
               ].join(" ")}
             >
               <Modal
+                variant="globe"
                 extendsTo={[
                   shape["w--full"],
                   shape["h--full"],
                   space["p--40"],
                   shape["max-w--1100"],
                 ].join(" ")}
-                {...globe.args}
                 animate="slideup"
                 criteria={toggleState.globe}
                 lock

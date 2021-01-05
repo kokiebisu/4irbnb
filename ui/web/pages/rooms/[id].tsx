@@ -22,9 +22,6 @@ import space from "@styles/space.module.scss";
 /** hooks */
 import { useHandleScroll } from "@hooks/useHandleScroll";
 
-/** stories */
-import { menu } from "@modal/modal.stories";
-
 /**
  * Render the component for path /rooms/[id]
  */
@@ -156,7 +153,7 @@ const id: () => string | JSX.Element = () => {
           }}
         >
           <Modal
-            {...menu.args}
+            variant="menu"
             extendsTo={[
               layout["flex"],
               layout["justify-center"],

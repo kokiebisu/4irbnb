@@ -15,6 +15,8 @@ import { Modal } from "@modal/modal.component";
 /** hooks */
 import { useOnClickOutside } from "@hooks/useOnClickOutside";
 
+import { Location } from "@modal/modal.stories";
+
 export const StayPrototype: React.FC<{
   expanded?: boolean;
   setExpanded?: any;
@@ -51,13 +53,13 @@ export const StayPrototype: React.FC<{
     checkin: {
       styles: {
         left: 0,
-        maxWidth: 720,
+        maxWidth: 780,
       },
     },
     checkout: {
       styles: {
         left: 0,
-        maxWidth: 720,
+        maxWidth: 780,
       },
     },
     guests: {

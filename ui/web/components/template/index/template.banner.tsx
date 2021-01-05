@@ -16,15 +16,12 @@ import { Button } from "@button";
 
 /** hooks */
 import { useHandleScroll } from "@hooks/useHandleScroll";
-import useOnClickOutside from "@hooks/useOnClickOutside";
 
 /** stories */
 import { Banner } from "@button/button.stories";
 
 /** helper */
 import { ResponsiveImage } from "@helper/img";
-import { useToggleDispatch, useToggleState } from "@context/toggle";
-import { Modal } from "@modal/modal.component";
 
 /**
  * Renders the banner section

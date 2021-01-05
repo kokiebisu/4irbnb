@@ -59,3 +59,8 @@ export const menu = TemplateStory.bind({});
 menu.args = {
   variant: "menu",
 };
+
+export const Availability = TemplateStory.bind({});
+Availability.args = {
+  variant: "availability",
+};
