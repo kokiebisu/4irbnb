@@ -1,1 +1,0 @@
-{"ast":null,"code":"String.prototype.capitalize = function () {\n  console.log(\"this\", this);\n  return this.charAt(0).toUpperCase() + this.slice(1);\n};\n\nexport {};","map":null,"metadata":{},"sourceType":"module"}
