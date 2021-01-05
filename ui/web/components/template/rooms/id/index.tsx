@@ -4,14 +4,9 @@ import { ArrangementsTemplate } from "@template/rooms/id/template.arrangements";
 import { AmenitiesTemplate } from "@template/rooms/id/template.amenities";
 import { KnowTemplate } from "@template/rooms/id/template.know";
 import { HostTemplate } from "@template/rooms/id/template.host";
-import { PanelTemplate } from "@template/rooms/id/template.panel";
+import { PreviewTemplate } from "@template/rooms/id/template.preview";
 import { OtherTemplate } from "@template/rooms/id/template.other";
 import { DescriptionTemplate } from "./template.description";
-
-/** styles **/
-import layout from "@styles/layout.module.scss";
-import shape from "@styles/shape.module.scss";
-import animation from "@styles/animation.module.scss";
 
 export interface TemplateProps {
   extendsTo?: string;
@@ -41,7 +36,7 @@ export const Template: React.FC<TemplateProps> = ({
     amenities: <AmenitiesTemplate {...props} />,
     know: <KnowTemplate {...props} />,
     host: <HostTemplate {...props} />,
-    panel: <PanelTemplate {...props} />,
+    preview: <PreviewTemplate {...props} />,
     other: <OtherTemplate {...props} />,
     description: <DescriptionTemplate {...props} />,
   };

@@ -29,7 +29,7 @@ export const PlaceInput: React.FC<{
   direction?: string;
   errors?: boolean;
   changePlace?: (type: string) => void;
-}> = ({ value, direction, errors = false, changePlace }) => {
+}> = ({ value = "Entire place", direction, errors = false, changePlace }) => {
   const containerRef = useRef();
   const [expanded, setExpanded] = useState(false);
   useOnClickOutside(containerRef, () => {
@@ -53,6 +53,8 @@ export const PlaceInput: React.FC<{
           color["b-r--white__3"],
           shape["btr--10"],
         ].join(" ");
+      case "middle":
+        return [color["b--white__3"]].join(" ");
       default:
         return [color["b--white__3"], shape["br--10"]].join(" ");
     }
@@ -87,7 +89,6 @@ export const PlaceInput: React.FC<{
             layout["justify-between"],
             layout["items-center"],
             color["bg--transparent"],
-            shape["br--10"],
             space["p--0"],
             shape["w--full"],
             color["b--0"],

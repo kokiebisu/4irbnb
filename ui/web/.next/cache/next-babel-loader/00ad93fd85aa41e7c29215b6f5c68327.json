@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const displayDuration = time => {\n  if (time % 60 !== 0) {\n    return `${time} mins`;\n  }\n\n  if (time / 60 > 1) {\n    return `${time / 60} hours`;\n  }\n\n  return '1 hour';\n};","map":null,"metadata":{},"sourceType":"module"}

@@ -4,7 +4,7 @@ import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 
 /** components */
-import { Card } from "@card/card.component";
+import { Card } from "@card";
 
 /**
  * Renders the homes section

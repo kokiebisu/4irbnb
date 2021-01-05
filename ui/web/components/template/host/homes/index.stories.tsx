@@ -7,7 +7,6 @@ export default {
   component: Template,
   argTypes: {
     onClick: { action: "clicked" },
-    type: { control: { disable: true } },
     extendsTo: { control: { disable: true } },
   },
 } as Meta;
@@ -37,4 +36,14 @@ Ready.args = {
 export const All = TemplateStory.bind({});
 All.args = {
   variant: "all",
+};
+
+export const Banner = TemplateStory.bind({});
+Banner.args = {
+  variant: "banner",
+};
+
+export const Hosting = TemplateStory.bind({});
+Hosting.args = {
+  variant: "hosting",
 };

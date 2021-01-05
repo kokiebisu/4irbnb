@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const config = {\n  HOST: true ? \"www.nextbnb.dev\" : \"nextbnb.ca\",\n  SERVER_BASEURL: \"http://ingress-nginx-controller.ingress-nginx.svc.cluster.local\",\n  CLIENT_BASEURL: \"/\"\n};","map":null,"metadata":{},"sourceType":"module"}

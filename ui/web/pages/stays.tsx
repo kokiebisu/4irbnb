@@ -1,20 +1,20 @@
 import React from "react";
 
 /** components */
-import { Header } from "../components/organisms/header/header.component";
+import { Header } from "@header";
 
-import { Footer } from "components/organisms/footer/footer.component";
+import { Footer } from "@footer";
 
 /**
  * Styles
  */
-import space from "../styles/space.module.scss";
-import layout from "../styles/layout.module.scss";
-import stays from "../styles/stays.module.scss";
-import styles from "../styles/index.module.scss";
-import shape from "../styles/shape.module.scss";
-import font from "../styles/font.module.scss";
-import color from "../styles/color.module.scss";
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import stays from "@styles/stays.module.scss";
+import styles from "@styles/index.module.scss";
+import shape from "@styles/shape.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
 
 /**
  * Renders /stays

@@ -9,11 +9,13 @@ import layout from "@styles/layout.module.scss";
 import { useToggleState } from "@context/toggle";
 
 /** components */
-import { Bar } from "@bar/bar.component";
-import { Modal } from "@modal/modal.component";
+import { Bar } from "@bar";
+import { Modal } from "@modal";
 
 /** hooks */
 import { useOnClickOutside } from "@hooks/useOnClickOutside";
+
+import { Location } from "@modal/modal.stories";
 
 export const StayPrototype: React.FC<{
   expanded?: boolean;
@@ -51,13 +53,13 @@ export const StayPrototype: React.FC<{
     checkin: {
       styles: {
         left: 0,
-        maxWidth: 720,
+        maxWidth: 780,
       },
     },
     checkout: {
       styles: {
         left: 0,
-        maxWidth: 720,
+        maxWidth: 780,
       },
     },
     guests: {

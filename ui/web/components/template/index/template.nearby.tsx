@@ -3,7 +3,7 @@ import space from "@styles/space.module.scss";
 import template from "@template/index/index.module.scss";
 
 /** components */
-import { Card } from "@card/card.component";
+import { Card } from "@card";
 
 /** helpers */
 import { groupByTwo } from "@helper/array";

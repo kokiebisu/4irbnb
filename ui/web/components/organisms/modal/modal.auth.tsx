@@ -4,7 +4,6 @@ import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
-import modal from "@modal/modal.module.scss";
 
 /** components */
 import { Button } from "@button";
@@ -22,14 +21,7 @@ export const AuthModal: React.FC<{}> = () => {
   const authDispatch = useAuthDispatch();
   const authState = useAuthState();
   return (
-    <div
-      className={[
-        modal["w__auth"],
-        shape["shadow--lg"],
-        shape["br--16"],
-        color["bg--white"],
-      ].join(" ")}
-    >
+    <div>
       <div
         style={{ height: 60 }}
         className={[

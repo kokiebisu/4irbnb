@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
 /** components */
-import { Card } from "@card/card.component";
+import { Card } from "@card";
 import { Button } from "@button";
 
 /** styles **/

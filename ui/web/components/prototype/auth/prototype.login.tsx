@@ -11,10 +11,10 @@ import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 
 /** components */
-import { Input } from "@input/input.component";
+import { Input } from "@input";
 import { Button } from "@button";
 import { Bullet } from "@bullet";
-import { Card } from "@card/card.component";
+import { Card } from "@card";
 
 /** Helper */
 import { validateLogin as validate } from "@helper/auth";

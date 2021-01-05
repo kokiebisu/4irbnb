@@ -12,7 +12,7 @@ import color from "@styles/color.module.scss";
 import modalStyles from "@modal/modal.module.scss";
 
 /** components */
-import { Input } from "@input/input.component";
+import { Input } from "@input";
 import { Button } from "@button";
 import { getAuthContents } from "@button/content/content.auth";
 

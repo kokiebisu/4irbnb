@@ -5,7 +5,7 @@ import { useFormik } from "formik";
 /** components */
 import { Bullet } from "@bullet";
 import { Button } from "@button";
-import { Input } from "@input/input.component";
+import { Input } from "@input";
 
 /** Helpers */
 import { validateExists as validate } from "@helper/auth";

@@ -1,5 +1,5 @@
 /** components */
-import { Input } from "@input/input.component";
+import { Input } from "@input";
 
 /** styles */
 import shape from "@styles/shape.module.scss";
@@ -8,14 +8,7 @@ import color from "@styles/color.module.scss";
 
 export const GuestsModal: React.FC<{}> = () => {
   return (
-    <div
-      className={[
-        shape["shadow--sm"],
-        shape["br--30"],
-        space["p--25"],
-        color["bg--white"],
-      ].join(" ")}
-    >
+    <div>
       <div>
         <Input
           variant="counter"
