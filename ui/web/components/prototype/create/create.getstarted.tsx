@@ -9,7 +9,7 @@ import space from "@styles/space.module.scss";
 
 /** components */
 import { Button } from "@button";
-import { Input } from "@input/input.component";
+import { Input } from "@input";
 
 /** contexts */
 import { useStayDispatch } from "@context/stay";

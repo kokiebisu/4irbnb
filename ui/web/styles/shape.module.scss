@@ -17,6 +17,7 @@ $pixels: (
   20,
   25,
   30,
+  32,
   35,
   40,
   45,
@@ -34,6 +35,8 @@ $pixels: (
   300,
   325,
   400,
+  480,
+  500,
   720,
   1100
 );
@@ -132,14 +135,14 @@ $percents: (
   height: 100vh;
 }
 
+.h--fit {
+  height: fit-content;
+}
+
 .min-h {
   &--fullv {
     min-height: 100vh;
   }
-}
-
-.max-h--500 {
-  max-height: 500px;
 }
 
 .w {
@@ -156,6 +159,9 @@ $percents: (
   &--150 {
     min-width: 150px;
   }
+}
+
+.max-w-400 {
 }
 
 .shadow--sm {

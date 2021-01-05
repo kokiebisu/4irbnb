@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Bar, BarProps } from "@bar/bar.component";
+import { Bar, BarProps } from "@bar";
 
 export default {
   title: "Organisms/Bar",
@@ -58,4 +58,9 @@ create.args = {
 export const menu = TemplateStory.bind({});
 menu.args = {
   variant: "menu",
+};
+
+export const Availability = TemplateStory.bind({});
+Availability.args = {
+  variant: "availability",
 };

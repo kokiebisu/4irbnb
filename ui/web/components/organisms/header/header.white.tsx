@@ -8,8 +8,7 @@ import layout from "@styles/layout.module.scss";
 import color from "@styles/color.module.scss";
 
 /** components */
-import { menu as menuModal } from "@modal/modal.stories";
-import { Modal } from "@modal/modal.component";
+import { Modal } from "@modal";
 import { Button } from "@button";
 
 /** contexts */
@@ -104,9 +103,10 @@ export const WhiteHeader: React.FC<{
             ].join(" ")}
           >
             <Modal
+              variant="menu"
               authenticated={data}
               criteria={toggleState.menu}
-              {...menuModal.args}
+              dispatch="toggle_menu"
             />
           </div>
         </div>

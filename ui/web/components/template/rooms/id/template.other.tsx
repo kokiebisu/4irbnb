@@ -32,7 +32,7 @@ export const OtherTemplate: React.FC<{
   ],
 }) => {
   return (
-    <div className={[layout["container"]].join(" ")}>
+    <div>
       <div>
         <h3
           className={[

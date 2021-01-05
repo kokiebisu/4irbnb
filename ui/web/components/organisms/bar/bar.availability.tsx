@@ -15,7 +15,7 @@ import { Star } from "@svg/original";
  * @param {number} ratings - Average ratings from the users
  * @param {number} reviews - Total number of reviews from the users
  */
-export const AvailabilityModal: React.FC<{
+export const AvailabilityBar: React.FC<{
   ratings?: number;
   reviews?: number;
 }> = ({ ratings = 4.99, reviews = 271 }) => {
@@ -26,11 +26,9 @@ export const AvailabilityModal: React.FC<{
         layout["justify-between"],
         layout["flex"],
         color["b-t--white__2"],
-        space["p--16"],
-        color["bg--white"],
       ].join(" ")}
     >
-      <div>
+      <div className={[space["p-v--16"]].join(" ")}>
         <p>Add dates for prices</p>
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div>

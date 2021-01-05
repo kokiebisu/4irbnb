@@ -2,14 +2,14 @@ import React from "react";
 import { useRouter } from "next/router";
 
 /** contexts */
-import { useToggleState } from "../../context/toggle";
+import { useToggleState } from "@context/toggle";
 
 /** Layouts */
-import layout from "../../styles/layout.module.scss";
+import layout from "@styles/layout.module.scss";
 
 /** components */
 import { Prototype as HomesPrototype } from "@prototype/homes";
-import { Modal } from "../../components/organisms/modal/modal.component";
+import { Modal } from "@modal";
 
 /** styles */
 import shape from "@styles/shape.module.scss";
@@ -17,11 +17,10 @@ import responsive from "@styles/responsive.module.scss";
 import homes from "@styles/homes.module.scss";
 
 /** hooks */
-import { useTabTitle } from "../../hooks/useTabTitle";
+import { useTabTitle } from "@hooks/useTabTitle";
 
 /** prototypes */
 import "../../global/string";
-import { menu } from "components/organisms/modal/modal.stories";
 
 /**
  * Renders the component for path /s/homes
@@ -86,7 +85,7 @@ const Homes = () => {
                 shape["h--100v"],
               ].join(" ")}
             >
-              <Modal {...menu.args} animate="slideup" />
+              <Modal variant="menu" animate="slideup" />
             </div>
           </div>
         )}

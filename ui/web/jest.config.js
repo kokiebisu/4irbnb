@@ -16,6 +16,8 @@ module.exports = {
     "@button": "<rootDir>/components/atoms/button",
     "@card/(.*)": "<rootDir>/components/molecules/card/$1",
     "@card": "<rootDir>/components/molecules/card",
+    "@footer/(.*)": "<rootDir>/components/organisms/footer/$1",
+    "@footer": "<rootDir>/components/organisms/footer",
     "@styles/(.*)": "<rootDir>/styles/$1",
     "@svg/(.*)": "<rootDir>/public/svg/$1",
     "@animation/(.*)": "<rootDir>/components/animation/$1",
@@ -27,6 +29,8 @@ module.exports = {
     "@prototype": "<rootDir>/components/prototype",
     "@layout/(.*)": "<rootDir>/components/layout/$1",
     "@layout": "<rootDir>/components/layout",
+    "@panel/(.*)": "<rootDir>/components/molecules/$1",
+    "@panel": "<rootDir>/components/molecules",
   },
   moduleDirectories: ["node_modules", "components"],
 };

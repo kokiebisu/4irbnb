@@ -8,10 +8,10 @@ import font from "@styles/font.module.scss";
 import shape from "@styles/shape.module.scss";
 
 /** components */
-import { Header } from "@header/header.component";
+import { Header } from "@header";
 import { Template } from "@template/s/homes";
-import { Bar } from "@bar/bar.component";
-import { Footer } from "@footer/footer.component";
+import { Bar } from "@bar";
+import { Footer } from "@footer";
 import { Button } from "@button";
 
 /** stories */

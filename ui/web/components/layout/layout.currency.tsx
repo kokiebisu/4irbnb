@@ -18,7 +18,7 @@ import shape from "@styles/shape.module.scss";
 export const CurrencyLayout: React.FC<{
   items?: { name?: string; abbreviation?: string; symbol?: string }[];
   title?: string;
-}> = ({ items, title }) => {
+}> = ({ items = [], title = "Title here" }) => {
   return (
     <div>
       <div className={[space["m-b--18"]].join(" ")}>
@@ -34,7 +34,7 @@ export const CurrencyLayout: React.FC<{
           padding: 10,
         }}
       >
-        {items.map(({ name, abbreviation, symbol }, index) => {
+        {items?.map(({ name, abbreviation, symbol }, index) => {
           return (
             <div key={index}>
               <Button extendsTo={[font["text--left"]].join(" ")} block>
