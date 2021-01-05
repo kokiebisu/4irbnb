@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Header, HeaderProps } from "@header/header.component";
+import { Header, HeaderProps } from "@header";
 
 import shape from "@styles/shape.module.scss";
 

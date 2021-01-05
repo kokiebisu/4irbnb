@@ -10,7 +10,7 @@ import sectionStyles from "@template/index.module.scss";
 import section from "@template/index.module.scss";
 
 /** components */
-import { Card } from "@card/card.component";
+import { Card } from "@card";
 import { Button } from "@button";
 
 /**

@@ -1,4 +1,4 @@
-@import '../../../styles/layout.module.scss';
+@import "../../../styles/layout.module.scss";
 
 .flex__privacy--content {
   display: block;
@@ -27,7 +27,7 @@
 
 .ba {
   &::after {
-    content: '';
+    content: "";
     width: 100%;
     position: absolute;
     border-bottom: 1px solid #868686;
@@ -51,5 +51,12 @@
 
   @media screen and (min-width: 728px) {
     width: 550px;
+  }
+}
+
+.modal__privacy {
+  @media screen and (min-width: 1760px) {
+    width: 100%;
+    max-width: 1600px;
   }
 }

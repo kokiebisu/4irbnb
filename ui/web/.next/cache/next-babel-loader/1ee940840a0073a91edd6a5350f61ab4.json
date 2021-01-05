@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { useEffect } from \"react\";\n/**\n * Custom hook that modifies the tab title for the page\n * @param {string} title - Tab name you want to add\n */\n\nexport var useTabTitle = function useTabTitle(title) {\n  useEffect(function () {\n    document.title = title;\n  }, []);\n};","map":null,"metadata":{},"sourceType":"module"}

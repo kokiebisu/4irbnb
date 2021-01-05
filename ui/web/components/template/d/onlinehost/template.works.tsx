@@ -7,7 +7,7 @@ import layout from "@styles/layout.module.scss";
 
 /** components */
 import { Button } from "@button";
-import { Card } from "@card/card.component";
+import { Card } from "@card";
 
 /** stories */
 import { Border } from "@button/button.stories";

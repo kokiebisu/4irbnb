@@ -24,10 +24,10 @@ export const BackTemplate: React.FC<{
         }}
         className={[space["m-v--32"]].join(" ")}
       >
-        {["resources", "events", "community"].map((bullet, index) => {
+        {["resources", "events", "community"].map((type, index) => {
           return (
             <div key={index} className={[space["m-b--16"]].join(" ")}>
-              <Bullet variant="onlinehost" bullet={bullet} />
+              <Bullet variant="onlinehost" type={type} />
             </div>
           );
         })}

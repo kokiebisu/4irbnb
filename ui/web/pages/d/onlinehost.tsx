@@ -2,9 +2,9 @@ import React from "react";
 
 /** components */
 
-import { Header } from "@header/header.component";
+import { Header } from "@header";
 import { Template } from "@template/d/onlinehost";
-import { Footer } from "@footer/footer.component";
+import { Footer } from "@footer";
 
 /** styles **/
 import layout from "@styles/layout.module.scss";

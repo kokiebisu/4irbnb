@@ -5,7 +5,7 @@ import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 
 /** components */
-import { Input } from "@input/input.component";
+import { Input } from "@input";
 import { Button } from "@button";
 import { Bullet } from "@bullet";
 
