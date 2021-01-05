@@ -108,6 +108,8 @@ jobs:
     docker:
       - image: circleci/node:10
     steps:
+      - checkout:
+          path: ~/airbnb
       - run:
           name: Testing snapshot
           command: yarn snapshot
