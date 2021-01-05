@@ -18,6 +18,12 @@ import { LocationModal } from "@modal/modal.location";
 import { useToggleDispatch } from "@context/toggle";
 import { GuestsModal } from "./modal.guests";
 import { CheckModal } from "./modal.check";
+import { ListingModal } from "./modal.listing";
+
+/** styles */
+import space from "@styles/space.module.scss";
+import shape from "@styles/shape.module.scss";
+import color from "@styles/color.module.scss";
 
 export interface ModalProps {
   variant: string;
@@ -26,6 +32,8 @@ export interface ModalProps {
   animate?: string;
   lock?: boolean;
   criteria?: any;
+  noPadding?: boolean;
+  [property: string]: any;
 }
 
 /**
@@ -40,6 +48,7 @@ export const Modal: React.FC<ModalProps> = ({
   dispatch,
   animate = "default",
   lock = false,
+  noPadding = false,
   ...props
 }) => {
   const { criteria } = props;
@@ -78,6 +87,7 @@ export const Modal: React.FC<ModalProps> = ({
     guests: <GuestsModal {...props} />,
     checkin: <CheckModal {...props} />,
     checkout: <CheckModal {...props} />,
+    listing: <ListingModal {...props} />,
   };
 
   if (criteria !== undefined) {
@@ -104,7 +114,11 @@ export const Modal: React.FC<ModalProps> = ({
   return (
     <div
       ref={containerRef}
-      className={extendsTo}
+      className={`${[
+        shape["shadow--sm"],
+        shape["br--16"],
+        color["bg--white"],
+      ].join(" ")} ${!noPadding && [space["p--25"]].join(" ")} ${extendsTo}`}
       data-testid={`${variant}-modal`}
     >
       {variants[variant]}

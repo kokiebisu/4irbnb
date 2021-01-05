@@ -14,7 +14,6 @@ import animation from "@styles/animation.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
 /** components */
-import { menu as menuModal } from "@modal/modal.stories";
 import { Modal } from "@modal/modal.component";
 import { Button } from "@button";
 import { Prototype as SearchbarPrototype } from "@prototype/searchbar";
@@ -26,11 +25,13 @@ import { NameLogo, NoNameLogo } from "@svg/logo";
 import { useToggleDispatch, useToggleState } from "@context/toggle";
 
 /** stories */
+import { Menu } from "@modal/modal.stories";
+
+/** contents */
 import { Content } from "@button/content/content.transparent";
 
 /** hooks */
-import useOnClickOutside from "@hooks/useOnClickOutside";
-import { useHandleScroll } from "@hooks/useHandleScroll";
+import { useOnClickOutside } from "@hooks/useOnClickOutside";
 
 /**
  * Renders the transparent header
@@ -148,9 +149,10 @@ export const TransparentHeader: React.FC<{
           ].join(" ")}
         >
           <Modal
-            {...menuModal.args}
+            variant="menu"
             authenticated={data}
             criteria={toggleState.menu}
+            {...Menu.args}
           />
         </div>
       </div>

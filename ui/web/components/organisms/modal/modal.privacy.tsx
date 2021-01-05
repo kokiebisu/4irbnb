@@ -35,18 +35,7 @@ export const PrivacyModal: React.FC<{}> = () => {
 
   return (
     <div>
-      <div
-        className={[
-          space["p-t--28"],
-          space["p-b--28"],
-          space["p-l--25"],
-          space["p-r--25"],
-          shape["br--8"],
-          shape["shadow--lg"],
-          color["bg--white"],
-          modal["flex__privacy--content"],
-        ].join(" ")}
-      >
+      <div className={[modal["flex__privacy--content"]].join(" ")}>
         <div>
           <div
             className={[

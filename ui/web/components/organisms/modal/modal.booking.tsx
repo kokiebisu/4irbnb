@@ -49,9 +49,7 @@ export const BookingModal: React.FC<{
         shape["w--full"],
         layout["inline-block"],
         modal["position__checkin--wrapper"],
-        shape["shadow--lg"],
         color["b--white__2"],
-        space["p-v--22"],
       ].join(" ")}
       style={{
         backgroundColor: "white",

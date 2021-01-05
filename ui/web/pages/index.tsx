@@ -29,7 +29,7 @@ import { Footer } from "@footer/footer.component";
 import { Bar } from "@bar/bar.component";
 
 /** stories */
-import { auth, globe, privacy } from "@modal/modal.stories";
+import { Auth, globe, privacy } from "@modal/modal.stories";
 
 /** hooks */
 import { useHandleScroll } from "@hooks/useHandleScroll";
@@ -157,7 +157,7 @@ const LandingPage = ({ currentUser }) => {
               ].join(" ")}
             >
               <Modal
-                {...auth.args}
+                {...Auth.args}
                 animate="slideup"
                 criteria={toggleState.auth}
                 lock

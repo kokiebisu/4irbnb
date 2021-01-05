@@ -26,8 +26,6 @@ export const AvailabilityModal: React.FC<{
         layout["justify-between"],
         layout["flex"],
         color["b-t--white__2"],
-        space["p--16"],
-        color["bg--white"],
       ].join(" ")}
     >
       <div>
