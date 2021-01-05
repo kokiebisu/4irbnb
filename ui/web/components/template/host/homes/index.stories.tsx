@@ -38,3 +38,8 @@ export const All = TemplateStory.bind({});
 All.args = {
   variant: "all",
 };
+
+export const Banner = TemplateStory.bind({});
+Banner.args = {
+  variant: "banner",
+};
