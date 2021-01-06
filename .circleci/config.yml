@@ -179,6 +179,10 @@ workflows:
   web:
     jobs:
       - storybook
+          filters:
+            branches:
+              only:
+                - storybook
       - test-web
       - push-dev-web:
           requires:
