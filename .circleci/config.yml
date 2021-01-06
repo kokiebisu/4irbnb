@@ -178,7 +178,7 @@ workflows:
                 - develop
   web:
     jobs:
-      - storybook
+      - storybook:
           filters:
             branches:
               only:
