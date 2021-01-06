@@ -30,7 +30,7 @@ RUN yarn --production
 WORKDIR /app/ui/web
 COPY --from=builder /app/ui/web/package.json .
 COPY --from=builder /app/ui/web/.next ./.next
-COPY --from=builder /app/ui/web/public ./
+COPY --from=builder /app/ui/web/public ./public
 RUN yarn --production
 
 EXPOSE 3000
