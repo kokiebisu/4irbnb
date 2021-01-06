@@ -178,12 +178,12 @@ workflows:
                 - develop
   web:
     jobs:
+      - test-web
       - storybook:
           filters:
             branches:
               only:
                 - storybook
-      - test-web
       - push-dev-web:
           requires:
             - test-web
