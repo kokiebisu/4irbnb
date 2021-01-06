@@ -1,15 +1,10 @@
-import React from "react";
-
-/** components */
 import { Header } from "@header";
 import { Prototype as CreatePrototype } from "@prototype/create";
 
-/** styles **/
 import responsive from "@styles/responsive.module.scss";
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 
-/** hooks */
 import { useTabTitle } from "@hooks/useTabTitle";
 
 const BecomeAHostPage = () => {
