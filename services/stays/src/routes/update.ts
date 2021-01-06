@@ -1,9 +1,4 @@
 import express, { Request, Response } from "express";
-// import {
-//   NotAuthorizedError,
-//   NotFoundError,
-//   requireAuth,
-// } from '@doitsimple/shared';
 import { NotAuthorizedError, NotFoundError } from "@airbnb/error";
 import { requireAuth } from "@airbnb/middleware";
 import { Stay } from "../models/stay";
