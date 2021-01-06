@@ -1,17 +1,11 @@
-import React from "react";
-
-/** components */
-
 import { Header } from "@header";
 import { Template } from "@template/d/onlinehost";
 import { Footer } from "@footer";
 
-/** styles **/
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 
-/** hooks */
-import { useTabTitle } from "hooks/useTabTitle";
+import { useTabTitle } from "@hooks/useTabTitle";
 
 const OnlineHost = () => {
   useTabTitle("Airbnb Experiences: Host an Online Experience");
