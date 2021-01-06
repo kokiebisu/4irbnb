@@ -1,7 +1,15 @@
 FROM node:alpine as builder
+
 WORKDIR /app
-COPY package.json ./
-COPY tsconfig.json ./
-RUN yarn
-COPY . .
+COPY package.json .
+RUN yarn --pure-lockfile --non-interactive
+
+WORKDIR /app/packages/content
+COPY packages/content .
+
+WORKDIR /app/ui/web
+COPY ui/web/package.json .
+COPY ui/web/tsconfig.json .
+COPY ui/web .
+
 CMD ["yarn", "dev"]

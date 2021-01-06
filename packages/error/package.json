@@ -1,7 +1,7 @@
 {
   "name": "@airbnb/error",
   "version": "1.0.0",
-  "main": "build/index.js",
+  "main": "build/index",
   "license": "MIT",
   "scripts": {
     "clean": "del ./build/*",

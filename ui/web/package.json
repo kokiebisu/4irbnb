@@ -13,6 +13,7 @@
     "chromatic": "npx chromatic --project-token e017nqnn22h --exit-zero-on-changes"
   },
   "dependencies": {
+    "@airbnb/content": "1.0.0",
     "axios": "^0.21.0",
     "formik": "^2.2.2",
     "framer-motion": "^3.1.1",

@@ -10,9 +10,9 @@ build:
     push: false
   artifacts:
     - image: kokiebisu/nextbnb-web-dev
-      context: ui/web
+      context: .
       docker:
-        dockerfile: dev.Dockerfile
+        dockerfile: ui/web/dev.Dockerfile
       sync:
         infer:
           - "**/*.ts"
