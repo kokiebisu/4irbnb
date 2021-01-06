@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Router from "next/router";
 
-/** components */
 import { Layout } from "@layout";
-import { Prototype as CreatePrototype } from "../../components/prototype/create";
+import { Prototype as CreatePrototype } from "@prototype/create";
 
-/** context */
-import { useStayDispatch, useStayState } from "../../context/stay";
+import { useStayDispatch, useStayState } from "@context/stay";
 
 const PeriodPage = () => {
   const stayDispatch = useStayDispatch();

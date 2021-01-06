@@ -1,16 +1,18 @@
 FROM node:alpine
 
 WORKDIR /app
-COPY packages/middleware packages/middleware
-COPY packages/error packages/error
-
-COPY services/stays/package.json services/stays/
-COPY services/stays/tsconfig.json services/stays/
-
 COPY package.json .
-
 RUN yarn --pure-lockfile --non-interactive
 
-COPY services/stays services/stays
+WORKDIR /app/packages/middleware
+COPY packages/middleware .
 
-CMD ["yarn", "dev:stays"]
+WORKDIR /app/packages/error
+COPY packages/error .
+
+WORKDIR /app/services/stays
+COPY services/stays/package.json .
+COPY services/stays/tsconfig.json .
+COPY services/stays .
+
+CMD ["yarn", "dev"]

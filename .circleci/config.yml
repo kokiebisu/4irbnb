@@ -121,14 +121,14 @@ jobs:
           command: npx chromatic --project-token=e017nqnn22h --exit-zero-on-changes
 
   push-prod-web:
-    working_directory: ~/airbnb/ui/web
+    working_directory: ~/airbnb
     machine: true
     steps:
       - checkout:
           path: ~/airbnb
       - run:
           name: Building web image
-          command: docker build -t kokiebisu/nextbnb-web .
+          command: docker build -t kokiebisu/nextbnb-web -f ./ui/web/Dockerfile .
       - run:
           name: Log in
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
@@ -137,14 +137,14 @@ jobs:
           command: docker push kokiebisu/nextbnb-web
 
   push-dev-web:
-    working_directory: ~/airbnb/ui/web
+    working_directory: ~/airbnb
     machine: true
     steps:
       - checkout:
           path: ~/airbnb
       - run:
           name: Building web image
-          command: docker build -t kokiebisu/nextbnb-web-dev -f ./dev.Dockerfile .
+          command: docker build -t kokiebisu/nextbnb-web-dev -f ./ui/web/dev.Dockerfile .
       - run:
           name: Log in
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
@@ -156,10 +156,18 @@ workflows:
   version: 2
   auth:
     jobs:
-      - test-auth
+      - test-auth:
+          filters:
+            branches:
+              ignore:
+                - develop
       - push-dev-auth:
           requires:
             - test-auth
+          filters:
+            branches:
+              ignore:
+                - develop
       - push-prod-auth:
           filters:
             branches:
@@ -167,10 +175,18 @@ workflows:
                 - develop
   stays:
     jobs:
-      - test-stays
+      - test-stays:
+          filters:
+            branches:
+              ignore:
+                - develop
       - push-dev-stays:
           requires:
             - test-stays
+          filters:
+            branches:
+              ignore:
+                - develop
       - push-prod-stays:
           filters:
             branches:
@@ -178,11 +194,25 @@ workflows:
                 - develop
   web:
     jobs:
-      - storybook
-      - test-web
+      - test-web:
+          filters:
+            branches:
+              ignore:
+                - develop
+      - storybook:
+          filters:
+            branches:
+              only:
+                - storybook
+              ignore:
+                - develop
       - push-dev-web:
           requires:
             - test-web
+          filters:
+            branches:
+              ignore:
+                - develop
       - push-prod-web:
           filters:
             branches:
