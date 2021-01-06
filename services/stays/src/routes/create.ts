@@ -1,5 +1,4 @@
 import express, { Request, Response } from "express";
-// import { requireAuth } from '@doitsimple/shared';
 import { requireAuth } from "@airbnb/middleware";
 import { Stay } from "../models/stay";
 
