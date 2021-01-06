@@ -64,6 +64,7 @@ const StaysPage: () => string | JSX.Element = () => {
                   media="(min-width: 1439.1px)"
                 ></source>
                 <img
+                  alt="banner img"
                   className={[layout["absolute"]].join(" ")}
                   style={{
                     height: "100%",
