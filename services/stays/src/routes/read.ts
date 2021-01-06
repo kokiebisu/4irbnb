@@ -7,7 +7,6 @@ const router = express.Router();
 
 router.get("/api/stays", async (req: Request, res: Response) => {
   const stays = await Stay.find({});
-
   res.status(200).send(stays);
 });
 
