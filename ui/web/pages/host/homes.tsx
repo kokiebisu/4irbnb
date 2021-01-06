@@ -1,12 +1,8 @@
-import React from "react";
-
 /** styles **/
 import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
-import responsive from "@styles/responsive.module.scss";
 
 /** components */
-import { Header } from "@header";
 import { Template } from "@template/host/homes";
 import { Footer } from "@footer";
 
