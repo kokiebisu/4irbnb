@@ -156,10 +156,16 @@ workflows:
   version: 2
   auth:
     jobs:
-      - test-auth
+      - test-auth:
+          filters:
+            ignore:
+              - master
       - push-dev-auth:
           requires:
             - test-auth
+          filters:
+            ignore:
+              - master
       - push-prod-auth:
           filters:
             branches:
@@ -167,10 +173,16 @@ workflows:
                 - develop
   stays:
     jobs:
-      - test-stays
+      - test-stays:
+          filters:
+            ignore:
+              - master
       - push-dev-stays:
           requires:
             - test-stays
+          filters:
+            ignore:
+              - master
       - push-prod-stays:
           filters:
             branches:
@@ -184,9 +196,14 @@ workflows:
             branches:
               only:
                 - storybook
+              ignore:
+                - master
       - push-dev-web:
           requires:
             - test-web
+          filters:
+            ignore:
+              - master
       - push-prod-web:
           filters:
             branches:
