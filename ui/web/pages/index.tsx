@@ -1,26 +1,18 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-/* contents */
-import { categories, anywhere } from "../content";
+import { useToggleState } from "@context/toggle";
 
-/** contexts */
-import { useToggleState } from "../context/toggle";
-
-/** styles */
 import index from "@styles/index.module.scss";
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 import shape from "@styles/shape.module.scss";
 
-/** data */
-import { nearbyItems } from "@content";
+import { nearbyItems, categories, anywhere } from "@airbnb/content";
 
-/** layout */
 import { Layout } from "@layout";
 
-/** components */
 import { Animation } from "@animation/animation.component";
 import { Modal } from "@modal";
 import { Template } from "@template/index";
@@ -28,13 +20,11 @@ import { Footer } from "@footer";
 
 import { Bar } from "@bar";
 
-/** hooks */
 import { useHandleScroll } from "@hooks/useHandleScroll";
 import { useHandleDocumentResize } from "@hooks/useHandleDocumentResize";
 import { useTimeout } from "@hooks/useTimeout";
 import { useTabTitle } from "@hooks/useTabTitle";
 
-/** helper */
 import { APIClient } from "../api/client";
 
 const LandingPage = ({ currentUser }) => {

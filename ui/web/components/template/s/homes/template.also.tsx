@@ -1,20 +1,15 @@
 import { useRef } from "react";
 
-/** components */
 import { Card } from "@card";
 import { Button } from "@button";
 
-/** styles **/
 import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";
 import space from "@styles/space.module.scss";
 import section from "@template/index.module.scss";
 
-/** Helpers */
 import * as Helpers from "@helper/array";
 
-/** Contents */
-// import { nearbyPic } from "@content";
 import { useSlider } from "@hooks/useSlider";
 import { useHandleContainerResize } from "@hooks/useHandleContainerResize";
 
