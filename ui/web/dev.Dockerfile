@@ -11,5 +11,6 @@ WORKDIR /app/ui/web
 COPY ui/web/package.json .
 COPY ui/web/tsconfig.json .
 COPY ui/web .
+RUN yarn
 
 CMD ["yarn", "dev"]
