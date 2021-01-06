@@ -50,7 +50,6 @@
       "@helper/*": ["helper/*"],
       "@hooks/*": ["hooks/*"],
       "@context/*": ["context/*"],
-      "@content": ["content/index.ts"],
       "@config": ["config/index.ts"]
     }
   },

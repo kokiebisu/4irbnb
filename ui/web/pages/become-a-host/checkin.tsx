@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Router from "next/router";
 
-/** components */
 import { Prototype as CreatePrototype } from "@prototype/create";
 import { Layout } from "@layout";
 
-/** contexts */
 import { useStayDispatch, useStayState } from "@context/stay";
 
 const CheckInPage = () => {

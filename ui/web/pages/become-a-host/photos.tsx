@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Router from "next/router";
 
-/** context */
 import { useStayDispatch, useStayState } from "@context/stay";
 
-/** components */
 import { Layout } from "@layout";
 import { Prototype as CreatePrototype } from "@prototype/create";
 
