@@ -160,14 +160,14 @@ workflows:
           filters:
             branches:
               ignore:
-                - master
+                - develop
       - push-dev-auth:
           requires:
             - test-auth
           filters:
             branches:
               ignore:
-                - master
+                - develop
       - push-prod-auth:
           filters:
             branches:
@@ -179,14 +179,14 @@ workflows:
           filters:
             branches:
               ignore:
-                - master
+                - develop
       - push-dev-stays:
           requires:
             - test-stays
           filters:
             branches:
               ignore:
-                - master
+                - develop
       - push-prod-stays:
           filters:
             branches:
@@ -198,21 +198,21 @@ workflows:
           filters:
             branches:
               ignore:
-                - master
+                - develop
       - storybook:
           filters:
             branches:
               only:
                 - storybook
               ignore:
-                - master
+                - develop
       - push-dev-web:
           requires:
             - test-web
           filters:
             branches:
               ignore:
-                - master
+                - develop
       - push-prod-web:
           filters:
             branches:
