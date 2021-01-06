@@ -6,7 +6,7 @@ RUN yarn --pure-lockfile --non-interactive
 
 WORKDIR /app/packages/middleware
 COPY packages/middleware/package.json .
-COPY packages.middleware ./
+COPY packages/middleware ./
 RUN yarn
 
 WORKDIR /app/packages/error
