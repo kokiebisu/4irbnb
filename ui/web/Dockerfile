@@ -5,8 +5,8 @@ COPY package.json .
 RUN yarn
 
 WORKDIR /app/packages/content
-COPY /app/packages/content/package.json .
-COPY /app/packages/content ./
+COPY packages/content/package.json .
+COPY packages/content ./
 RUN yarn
 RUN yarn build
 
