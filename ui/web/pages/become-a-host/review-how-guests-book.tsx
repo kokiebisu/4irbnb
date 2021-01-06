@@ -1,20 +1,16 @@
-import React from "react";
+import Router from "next/router";
 
-/** components */
 import { Bar } from "@bar";
 import { Header } from "@header";
 import { Card } from "@card";
 
-/** styles */
 import font from "@styles/font.module.scss";
 import responsive from "@styles/responsive.module.scss";
 import color from "@styles/color.module.scss";
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 
-/** vectors */
-import { Protected } from "public/svg/original";
-import Router from "next/router";
+import { Protected } from "@svg/original";
 
 const HowGuestsWillBookPage = () => {
   const proceed = () => {
