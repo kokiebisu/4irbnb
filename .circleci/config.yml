@@ -137,7 +137,7 @@ jobs:
           command: docker push kokiebisu/nextbnb-web
 
   push-dev-web:
-    working_directory: ~/airbnb¥
+    working_directory: ~/airbnb
     machine: true
     steps:
       - checkout:
