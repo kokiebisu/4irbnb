@@ -8,6 +8,7 @@ WORKDIR /app/ui/web
 COPY ui/web/package.json .
 COPY ui/web/tsconfig.json .
 COPY ui/web .
+RUN yarn
 RUN yarn build
 
 FROM node:alpine as production
