@@ -4,7 +4,7 @@
   "description": "",
   "main": "./build/index.js",
   "scripts": {
-    "clean": "del ./build/*",
+    "clean": "rm -rf ./build",
     "build": "yarn clean && tsc",
     "start": "node ./build/index.js",
     "dev": "ts-node-dev --poll src/index.ts",
