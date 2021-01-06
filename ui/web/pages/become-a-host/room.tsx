@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Router from "next/router";
 
-/** contexts */
-import { useStayDispatch, useStayState } from "../../context/stay";
+import { useStayDispatch, useStayState } from "@context/stay";
 
-/** components */
 import { Prototype as CreatePrototype } from "@prototype/create";
 import { inputTypes, properties } from "@input/logic/logic.types";
 import { Layout } from "@layout";

@@ -1,7 +1,5 @@
-import React from "react";
 import Router from "next/router";
 
-/** components */
 import { Layout } from "@layout";
 import { Prototype as CreatePrototype } from "@prototype/create";
 
