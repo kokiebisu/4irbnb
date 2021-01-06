@@ -1,16 +1,18 @@
 FROM node:alpine
 
 WORKDIR /app
-COPY packages/middleware packages/middleware
-COPY packages/error packages/error
-
-COPY services/auth/package.json services/auth/
-COPY services/auth/tsconfig.json services/auth
-
 COPY package.json .
-
 RUN yarn --pure-lockfile --non-interactive
 
-COPY services/auth services/auth
+WORKDIR /app/packages/middleware
+COPY packages/middleware .
 
-CMD ["yarn", "dev:auth"]
+WORKDIR /app/packages/error
+COPY packages/error .
+
+WORKDIR /app/services/auth
+COPY services/auth/package.json .
+COPY services/auth/tsconfig.json .
+COPY services/auth .
+
+CMD ["yarn", "dev"]

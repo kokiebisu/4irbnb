@@ -23,7 +23,6 @@ module.exports = {
     "@animation/(.*)": "<rootDir>/components/animation/$1",
     "@helper/(.*)": "<rootDir>/helper/$1",
     "@particle/(.*)": "<rootDir>/components/particles/$1",
-    "@content": "<rootDir>/content",
     "@template/(.*)": "<rootDir>/components/templates/$1",
     "@template": "<rootDir>/components/templates",
     "@prototype": "<rootDir>/components/prototype",

@@ -1,19 +1,15 @@
 import Router from "next/router";
 
-/** styles */
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
 import styles from "@styles/index.module.scss";
 import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 
-/** content */
-import { sections } from "@content";
+import { sections } from "@airbnb/content";
 
-/** vectors */
 import { Globe } from "@svg/original";
 
-/** components */
 import { Button } from "@button";
 
 export interface FooterProps {
