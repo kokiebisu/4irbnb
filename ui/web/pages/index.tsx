@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import { useToggleState } from "@context/toggle";
@@ -9,7 +8,9 @@ import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 import shape from "@styles/shape.module.scss";
 
-import { nearbyItems, categories, anywhere } from "@airbnb/content";
+import { categoryItems, anywhereItems } from "@airbnb/content";
+
+import { nearbyItems } from "../data/nearby";
 
 import { Layout } from "@layout";
 
@@ -50,7 +51,7 @@ const LandingPage = ({ currentUser }) => {
               <Template variant="nearby" items={nearbyItems} />
             </Layout>
             <Layout variant="landing" title="Live anywhere" spread>
-              <Template variant="anywhere" items={anywhere} />
+              <Template variant="anywhere" items={anywhereItems} />
             </Layout>
             <div className={space["m-v--32"]}></div>
             <Layout
@@ -67,7 +68,7 @@ const LandingPage = ({ currentUser }) => {
               spread
               title="Join millions of hosts on Airbnb"
             >
-              <Template variant="category" items={categories} />
+              <Template variant="category" items={categoryItems} />
             </Layout>
           </>
         ) : (

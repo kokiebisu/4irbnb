@@ -2,16 +2,13 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 
-/** components */
 import { Header } from "@header";
 import { Template } from "@template/experiences/id";
 import { Modal } from "@modal";
 import { Footer } from "@footer";
 
-/** contexts */
 import { useToggleState } from "@context/toggle";
 
-/** styles */
 import layout from "@styles/layout.module.scss";
 import details from "@styles/details.module.scss";
 import color from "@styles/color.module.scss";
