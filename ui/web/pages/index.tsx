@@ -88,7 +88,6 @@ const LandingPage = ({ currentUser }) => {
           style={{ position: "fixed", width: "100%", zIndex: 50 }}
           className={[
             layout["fb--0"],
-
             layout["flex"],
             layout["justify-center"],
           ].join(" ")}

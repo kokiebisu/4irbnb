@@ -141,10 +141,12 @@ export const TransparentHeader: React.FC<{
             layout["r--0"],
             layout["t--55"],
             color["bg--transparent"],
+            shape["w--230"],
           ].join(" ")}
         >
           <Modal
             variant="menu"
+            extendsTo={[shape["w--200"]].join(" '")}
             authenticated={data}
             criteria={toggleState.menu}
             dispatch="toggle_menu"
