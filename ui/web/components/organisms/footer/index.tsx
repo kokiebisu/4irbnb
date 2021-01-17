@@ -6,7 +6,7 @@ import styles from "@styles/index.module.scss";
 import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 
-import { sections } from "@airbnb/content";
+import { footerItems } from "@airbnb/content";
 
 import { Globe } from "@svg/original";
 
@@ -38,7 +38,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
             styles["flex__footer--section"],
           ].join(" ")}
         >
-          {sections.map((section, index) => {
+          {footerItems.map((section, index) => {
             return (
               <div
                 key={index}

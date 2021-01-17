@@ -111,3 +111,28 @@ export const Login = (props) => {
     </svg>
   );
 };
+
+export const Pause: React.FC<{ fill?: string; [property: string]: any }> = ({
+  fill = "white",
+  ...props
+}) => {
+  return (
+    <svg {...props} style={{ display: "block" }}>
+      <path fill={fill} d="M13 1v14H9V1zM7 1v14H3V1z" />
+    </svg>
+  );
+};
+
+export const Play: React.FC<{
+  fill?: string;
+  [property: string]: any;
+}> = ({ fill = "white", ...props }) => {
+  return (
+    <svg {...props} viewBox="0 0 32 32">
+      <path
+        fill={fill}
+        d="M27.024 14.273L6.008 2.013c-.461-.268-1-.342-1.517-.206A2 2 0 0 0 3 3.741V28.26a2.002 2.002 0 0 0 3.008 1.728l21.015-12.26a2.003 2.003 0 0 0 .001-3.454z"
+      ></path>
+    </svg>
+  );
+};

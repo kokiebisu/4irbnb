@@ -4,6 +4,13 @@
   }
 }
 
+.hover-blur {
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+  }
+}
+
 $pixels: (
   sm: 2,
   md: 3,
