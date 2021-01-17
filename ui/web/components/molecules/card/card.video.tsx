@@ -73,18 +73,16 @@ export const VideoCard: React.FC<{
             />
           </div>
           <div style={{ height: "100%", width: "100%" }}>
-            <AnimatePresence>
-              {isHovered && <Video />}
-              <motion.img
-                height="100%"
-                style={{
-                  borderRadius: 10,
-                  cursor: "pointer",
-                  objectFit: "cover",
-                }}
-                src="https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster"
-              />
-            </AnimatePresence>
+            {isHovered && <Video />}
+            <img
+              height="100%"
+              style={{
+                borderRadius: 10,
+                cursor: "pointer",
+                objectFit: "cover",
+              }}
+              src="https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster"
+            />
           </div>
         </div>
       </div>

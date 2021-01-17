@@ -6,7 +6,7 @@ import { useTimeout } from "@hooks/useTimeout";
 
 export const Video = () => {
   const videoRef = useRef<HTMLVideoElement>();
-  const isLoading = useTimeout(2000);
+  const isLoading = useTimeout(1000);
   const [play, setPlay] = useState(true);
 
   return (
@@ -78,29 +78,26 @@ export const Video = () => {
             zIndex: 40,
           }}
         >
-          <AnimatePresence>
-            <motion.div
-              key="play"
-              transition={{ duration: 0.3 }}
-              exit={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              initial={{ opacity: 0 }}
-            >
-              <Button
-                variant="video"
-                play={!play}
-                onClick={() => {
-                  console.log("entered");
-                  if (!play) {
-                    videoRef.current.play();
-                  } else {
-                    videoRef.current.pause();
-                  }
-                  setPlay(!play);
-                }}
-              />
-            </motion.div>
-          </AnimatePresence>
+          <motion.div
+            key="play"
+            transition={{ duration: 0.3 }}
+            exit={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+          >
+            <Button
+              variant="video"
+              play={!play}
+              onClick={() => {
+                if (!play) {
+                  videoRef.current.play();
+                } else {
+                  videoRef.current.pause();
+                }
+                setPlay(!play);
+              }}
+            />
+          </motion.div>
         </div>
       </motion.div>
     </motion.div>
