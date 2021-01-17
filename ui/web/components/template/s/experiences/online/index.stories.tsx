@@ -23,3 +23,8 @@ export const Cards = TemplateStory.bind({});
 Cards.args = {
   variant: "cards",
 };
+
+export const Starting = TemplateStory.bind({});
+Starting.args = {
+  variant: "starting",
+};
