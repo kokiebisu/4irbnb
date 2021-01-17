@@ -4,7 +4,7 @@ import { Animation } from "@animation";
 import { Button } from "@button";
 import { useTimeout } from "@hooks/useTimeout";
 
-export const Video = () => {
+export const Video: React.FC<{ videoUrl?: string }> = ({ videoUrl }) => {
   const videoRef = useRef<HTMLVideoElement>();
   const isLoading = useTimeout(1000);
   const [play, setPlay] = useState(true);
@@ -63,10 +63,7 @@ export const Video = () => {
               width="100%"
               loop
             >
-              <source
-                src="https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400"
-                type="video/mp4"
-              ></source>
+              <source src={videoUrl} type="video/mp4"></source>
             </motion.video>
           )}
         </AnimatePresence>

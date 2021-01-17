@@ -1,15 +1,10 @@
-/** styles **/
 import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
-import shape from "@styles/shape.module.scss";
 
-/** vectors */
 import { Heart, Star } from "@svg/original";
 import React, { useState } from "react";
-
-import { AnimatePresence, motion } from "framer-motion";
 
 import { Video } from "components/atoms/video";
 
@@ -20,6 +15,7 @@ import { Video } from "components/atoms/video";
  */
 export const VideoCard: React.FC<{
   imgUrl?: string;
+  videoUrl?: string;
   superhost?: boolean;
   ratings?: number;
   save?: boolean;
@@ -28,11 +24,10 @@ export const VideoCard: React.FC<{
   title?: string;
   cost?: number;
 }> = ({
-  imgUrl = "yes",
-  superhost = true,
+  imgUrl = "https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster",
+  videoUrl = "https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400",
   ratings = 5.0,
   number_of_reviews = 100,
-  save = true,
   country = "Country",
   title = "Title",
   cost = 10,
@@ -71,7 +66,7 @@ export const VideoCard: React.FC<{
             />
           </div>
           <div style={{ height: "100%", width: "100%" }}>
-            {isHovered && <Video />}
+            {isHovered && <Video videoUrl={videoUrl} />}
             <img
               height="100%"
               style={{
@@ -79,7 +74,7 @@ export const VideoCard: React.FC<{
                 cursor: "pointer",
                 objectFit: "cover",
               }}
-              src="https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster"
+              src={imgUrl}
             />
           </div>
         </div>
