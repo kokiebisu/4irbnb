@@ -43,11 +43,9 @@ export const VideoCard: React.FC<{
     <div>
       <div
         onMouseEnter={() => {
-          // videoRef.current.play();
           setIsHovered(true);
         }}
         onMouseLeave={() => {
-          // videoRef.current.pause();
           setIsHovered(false);
         }}
         style={{ paddingTop: "133%" }}
