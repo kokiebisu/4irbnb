@@ -15,7 +15,8 @@ import { ChevronLeft, ChevronRight } from "@svg/regular";
 export const PaginateButton: React.FC<{
   direction?: string;
   disable?: boolean;
-}> = ({ direction = "left", disable = false }) => {
+  size?: number;
+}> = ({ direction = "left", disable = false, size = 8 }) => {
   const icons = {
     left: (
       <ChevronLeft
@@ -37,7 +38,7 @@ export const PaginateButton: React.FC<{
       <div
         className={[
           button["bg__paginate"],
-          space["p--8"],
+          space[`p--${size}`],
           color["b--white__2"],
           shape["br--circle"],
         ].join(" ")}
