@@ -26,6 +26,7 @@ import { SharingCard } from "@card/card.sharing";
 import { HowCard } from "@card/card.how";
 import { AnywhereCard } from "./card.anywhere";
 import { HostingCard } from "./card.hosting";
+import { VideoCard } from "./card.video";
 
 export interface CardProps {
   extendsTo?: string;
@@ -69,6 +70,7 @@ export const Card: React.FC<CardProps> = ({
     how: <HowCard {...props} />,
     anywhere: <AnywhereCard {...props} />,
     hosting: <HostingCard {...props} />,
+    video: <VideoCard {...props} />,
   };
 
   if (to) {

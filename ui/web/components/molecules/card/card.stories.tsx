@@ -238,3 +238,15 @@ Hosting.argTypes = {
     },
   },
 };
+
+export const Video = TemplateStory.bind({});
+Video.args = {
+  variant: "video",
+};
+Video.decorators = [
+  (Story) => (
+    <div style={{ width: 300 }}>
+      <Story />
+    </div>
+  ),
+];

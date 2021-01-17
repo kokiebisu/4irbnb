@@ -21,6 +21,7 @@ module.exports = {
     "@styles/(.*)": "<rootDir>/styles/$1",
     "@svg/(.*)": "<rootDir>/public/svg/$1",
     "@animation/(.*)": "<rootDir>/components/animation/$1",
+    "@animation": "<rootDir>/components/animation",
     "@helper/(.*)": "<rootDir>/helper/$1",
     "@particle/(.*)": "<rootDir>/components/particles/$1",
     "@template/(.*)": "<rootDir>/components/templates/$1",

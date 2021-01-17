@@ -28,6 +28,7 @@
       "@particle/*": ["components/particles/*"],
       "@prototype": ["components/prototype"],
       "@prototype/*": ["components/prototype/*"],
+      "@animation": ["components/animation"],
       "@animation/*": ["components/animation/*"],
       "@banner/*": ["components/organisms/banner/*"],
       "@create": ["components/prototype/create"],

@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Animation, AnimationProps } from "@animation/animation.component";
+import { Animation, AnimationProps } from "@animation";
 
 export default {
   title: "Particles/Animation",
