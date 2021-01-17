@@ -6,7 +6,7 @@ import font from "@styles/font.module.scss";
 import space from "@styles/space.module.scss";
 
 /** components */
-import { Animation } from "@animation/animation.component";
+import { Animation } from "@animation";
 
 /**
  * Renders the primary button component

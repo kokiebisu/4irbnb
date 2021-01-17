@@ -14,7 +14,7 @@ import { nearbyItems } from "../data/nearby";
 
 import { Layout } from "@layout";
 
-import { Animation } from "@animation/animation.component";
+import { Animation } from "@animation";
 import { Modal } from "@modal";
 import { Template } from "@template/index";
 import { Footer } from "@footer";
