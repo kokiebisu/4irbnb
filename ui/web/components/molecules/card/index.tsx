@@ -1,11 +1,9 @@
 import Router from "next/router";
 
-/** styles */
 import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 
-/** components */
 import { CategoryCard } from "@card/card.category";
 import { HorizontalCard } from "@card/card.horizontal";
 import { VerticalCard } from "@card/card.vertical";
@@ -28,6 +26,7 @@ import { AnywhereCard } from "@card/card.anywhere";
 import { HostingCard } from "@card/card.hosting";
 import { VideoCard } from "@card/card.video";
 import { StartingCard } from "@card/card.starting";
+import { CollectionCard } from "@card/card.collection";
 
 export interface CardProps {
   extendsTo?: string;
@@ -73,6 +72,7 @@ export const Card: React.FC<CardProps> = ({
     hosting: <HostingCard {...props} />,
     video: <VideoCard {...props} />,
     starting: <StartingCard {...props} />,
+    collection: <CollectionCard {...props} />,
   };
 
   if (to) {

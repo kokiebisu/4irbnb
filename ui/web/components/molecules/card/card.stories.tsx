@@ -262,3 +262,15 @@ Starting.decorators = [
     </div>
   ),
 ];
+
+export const Collection = TemplateStory.bind({});
+Collection.args = {
+  variant: "collection",
+};
+Collection.decorators = [
+  (Story) => (
+    <div style={{ width: 500 }}>
+      <Story />
+    </div>
+  ),
+];
