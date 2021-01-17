@@ -4,7 +4,7 @@ import { Button } from "@button";
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
-import { useSlider } from "@hooks/useSlider";
+
 import { useLayoutEffect, useRef, useState } from "react";
 
 export const CardsTemplate: React.FC<{ title?: string }> = ({
