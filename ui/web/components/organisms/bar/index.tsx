@@ -6,6 +6,7 @@ import { CovidBar } from "@bar/bar.covid";
 import { CreateBar } from "@bar/bar.create";
 import { MenuBar } from "@bar/bar.menu";
 import { AvailabilityBar } from "@bar/bar.availability";
+import { FiltersBar } from "@bar/bar.filters";
 
 export interface BarProps {
   variant: string;
@@ -25,6 +26,7 @@ export const Bar: React.FC<BarProps> = ({ variant = "paginate", ...props }) => {
     search: <SearchBar {...props} />,
     create: <CreateBar {...props} />,
     menu: <MenuBar {...props} />,
+    filters: <FiltersBar {...props} />,
   };
   return <div data-testid={`${variant}-bar`}>{variants[variant]}</div>;
 };

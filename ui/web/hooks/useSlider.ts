@@ -11,6 +11,12 @@ export interface SliderProps {
 }
 
 export const useSlider = (items, width, type) => {
+  const [state, setState] = useState({
+    activeSlide: 0,
+    translate: 0,
+    transition: 0.45,
+  });
+
   const displayingLength = {
     banner: items.length,
     also: items.length / 2,
@@ -20,11 +26,6 @@ export const useSlider = (items, width, type) => {
     banner: width,
     also: width / (width > 728 ? 3 : 2),
   };
-  const [state, setState] = useState({
-    activeSlide: 0,
-    translate: 0,
-    transition: 0.45,
-  });
 
   const previous = () => {
     if (state.activeSlide === 0) {
