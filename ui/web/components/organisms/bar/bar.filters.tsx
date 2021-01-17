@@ -1,6 +1,7 @@
 import { Button } from "@button";
 import space from "@styles/space.module.scss";
 import { useLayoutEffect, useRef, useState } from "react";
+import color from "@styles/color.module.scss";
 
 export const FiltersBar: React.FC<{}> = () => {
   const [width, setWidth] = useState(500);
