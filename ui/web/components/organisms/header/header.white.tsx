@@ -1,5 +1,6 @@
 import Router from "next/router";
 
+import animation from "@styles/animation.module.scss";
 import shape from "@styles/shape.module.scss";
 import space from "@styles/space.module.scss";
 import styles from "@styles/index.module.scss";
@@ -12,8 +13,6 @@ import { Button } from "@button";
 import { useToggleDispatch, useToggleState } from "@context/toggle";
 
 import { ChevronLeft } from "@svg/regular";
-
-import { Menu as menuButton } from "@button/button.stories";
 
 import { Content } from "@button/content/content.transparent";
 
@@ -48,10 +47,6 @@ export const WhiteHeader: React.FC<{
         <div className={[styles["searchbar__logo--lg"]].join(" ")}>
           <Button block variant="logo" onClick={() => Router.push("/")} />
         </div>
-
-        {/* <div>
-            <Button type="searchbar" mini />
-          </div> */}
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div
             className={[styles["searchbar__host"], space["m-h--2"]].join(" ")}
@@ -72,9 +67,10 @@ export const WhiteHeader: React.FC<{
           </div>
           <div className={[space["m-l--4"]].join(" ")}>
             <Button
-              {...menuButton.args}
-              authenticated={data}
+              variant="menu"
+              extendsTo={[space["p-v--3"]].join(" ")}
               inverse
+              authenticated={data}
               onClick={() => toggleDispatch({ type: "toggle_menu" })}
             />
           </div>
@@ -82,6 +78,7 @@ export const WhiteHeader: React.FC<{
         <div
           style={{ zIndex: 70 }}
           className={[
+            shape["w--230"],
             layout["absolute"],
             layout["r--0"],
             layout["t--55"],
@@ -90,6 +87,7 @@ export const WhiteHeader: React.FC<{
         >
           <Modal
             variant="menu"
+            extendsTo={[shape["w--200"]].join(" ")}
             authenticated={data}
             criteria={toggleState.menu}
             dispatch="toggle_menu"

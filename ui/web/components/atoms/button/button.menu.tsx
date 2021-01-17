@@ -1,11 +1,9 @@
-/** styles */
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 import animation from "@styles/animation.module.scss";
 
-/** vectors */
 import { Avatar, Bars } from "@svg/original";
 
 /**
@@ -30,7 +28,7 @@ export const MenuButton: React.FC<{
     <div
       className={`${
         inverse
-          ? [color["b-2--transparent"]].join(" ")
+          ? [color["b-2--white__2"], animation["hover-shadow--sm"]].join(" ")
           : [color["b-2--white__2"]].join(" ")
       } ${[
         layout["flex"],
