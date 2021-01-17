@@ -24,9 +24,10 @@ import { AgainCard } from "@card/card.again";
 import { WorksCard } from "@card/card.works";
 import { SharingCard } from "@card/card.sharing";
 import { HowCard } from "@card/card.how";
-import { AnywhereCard } from "./card.anywhere";
-import { HostingCard } from "./card.hosting";
-import { VideoCard } from "./card.video";
+import { AnywhereCard } from "@card/card.anywhere";
+import { HostingCard } from "@card/card.hosting";
+import { VideoCard } from "@card/card.video";
+import { StartingCard } from "@card/card.starting";
 
 export interface CardProps {
   extendsTo?: string;
@@ -71,6 +72,7 @@ export const Card: React.FC<CardProps> = ({
     anywhere: <AnywhereCard {...props} />,
     hosting: <HostingCard {...props} />,
     video: <VideoCard {...props} />,
+    starting: <StartingCard {...props} />,
   };
 
   if (to) {
