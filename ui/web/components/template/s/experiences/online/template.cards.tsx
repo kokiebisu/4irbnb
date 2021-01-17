@@ -139,7 +139,7 @@ export const CardsTemplate: React.FC<{ title?: string }> = ({
   };
 
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} style={{ overflowX: "hidden" }}>
       <div
         className={[
           space["m-v--16"],
@@ -152,7 +152,7 @@ export const CardsTemplate: React.FC<{ title?: string }> = ({
           <h3 className={[font["size--20"]].join(" ")}>{title}</h3>
         </div>
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
-          <div className={[space["mr--8"]].join(" ")}>
+          <div className={[space["m-r--8"]].join(" ")}>
             <Button
               variant="underline"
               title={`Show (${temporaryCards.length})`}
