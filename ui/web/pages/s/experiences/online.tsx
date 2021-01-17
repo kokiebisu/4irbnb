@@ -1,6 +1,8 @@
 import { Header } from "@header";
 import { Bar } from "@bar";
+import { useToggleState } from "@context/toggle";
 import { Template } from "@template/s/experiences/online";
+import { Modal } from "@modal";
 
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
@@ -8,6 +10,7 @@ import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 
 const OnlinePage = () => {
+  const toggleState = useToggleState();
   return (
     <div>
       <div className={[shape["shadow--sm"]].join(" ")}>
@@ -52,6 +55,70 @@ const OnlinePage = () => {
       >
         <Template variant="cards" />
       </div>
+      {toggleState.auth && (
+        <div
+          style={{
+            position: "fixed",
+            zIndex: 60,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            top: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
+          }}
+        >
+          <div
+            className={[
+              layout["flex"],
+              layout["justify-center"],
+              layout["items-center"],
+              shape["h--100v"],
+            ].join(" ")}
+          >
+            <Modal
+              variant="auth"
+              animate="slideup"
+              criteria={toggleState.auth}
+              lock
+            />
+          </div>
+        </div>
+      )}
+      {toggleState.globe && (
+        <div
+          style={{
+            position: "fixed",
+            zIndex: 60,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            top: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
+          }}
+        >
+          <div
+            className={[
+              layout["flex"],
+              layout["justify-center"],
+              layout["items-center"],
+              shape["h--100v"],
+            ].join(" ")}
+          >
+            <Modal
+              variant="globe"
+              extendsTo={[
+                shape["w--full"],
+                shape["h--full"],
+                space["p--40"],
+                shape["max-w--1100"],
+              ].join(" ")}
+              animate="slideup"
+              criteria={toggleState.globe}
+              lock
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

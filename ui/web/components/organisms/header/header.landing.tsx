@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import Router from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 
-/** styles */
 import space from "@styles/space.module.scss";
 import styles from "@styles/index.module.scss";
 import layout from "@styles/layout.module.scss";
@@ -13,18 +12,14 @@ import header from "@header/header.module.scss";
 import animation from "@styles/animation.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
-/** components */
 import { Modal } from "@modal";
 import { Button } from "@button";
 import { Prototype as SearchbarPrototype } from "@prototype/searchbar";
 
-/** vectors */
 import { NameLogo, NoNameLogo } from "@svg/logo";
 
-/** contexts */
 import { useToggleDispatch, useToggleState } from "@context/toggle";
 
-/** contents */
 import { Content } from "@button/content/content.transparent";
 
 /** hooks */
@@ -54,12 +49,15 @@ export const TransparentHeader: React.FC<{
   const types = {
     stay: {
       title: "Places to stay",
+      onClick: () => setCategory("stay"),
     },
     experiences: {
       title: "Experiences",
+      onClick: () => alert("experiences"),
     },
     online: {
       title: "Online Experiences",
+      onClick: () => Router.push("/s/experiences/online"),
     },
   };
 
@@ -200,7 +198,7 @@ export const TransparentHeader: React.FC<{
                           key={index}
                           className={[space["m-h--16"]].join(" ")}
                         >
-                          <button onClick={() => setCategory("stay")}>
+                          <button onClick={types[type].onClick}>
                             <div className={[space["p-b--8"]].join(" ")}>
                               <p
                                 className={`${[color["c--white"]].join(" ")} ${[
