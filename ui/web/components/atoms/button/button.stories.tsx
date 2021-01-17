@@ -217,6 +217,11 @@ export const Filter = TemplateStory.bind({});
 Filter.args = {
   variant: "filter",
 };
+Filter.argTypes = {
+  inverse: {
+    control: "boolean",
+  },
+};
 
 export const Modal = TemplateStory.bind({});
 Modal.args = {
