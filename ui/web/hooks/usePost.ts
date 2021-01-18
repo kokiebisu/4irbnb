@@ -1,4 +1,4 @@
-import { APIClient } from "api/client";
+import { APIClient } from "@api/client";
 
 /**
  * Fetches based on the given request method and body (optional)

@@ -1,11 +1,9 @@
-/** styles **/
 import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
 import banner from "@banner/banner.module.scss";
 
-/** components */
 import { Button } from "@button";
 import { Bullet } from "@bullet";
 

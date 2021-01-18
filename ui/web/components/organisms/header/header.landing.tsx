@@ -2,42 +2,32 @@ import { useRef, useState } from "react";
 import Router from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 
-/** styles */
 import space from "@styles/space.module.scss";
 import styles from "@styles/index.module.scss";
 import layout from "@styles/layout.module.scss";
 import color from "@styles/color.module.scss";
 import shape from "@styles/shape.module.scss";
-import font from "@styles/font.module.scss";
 import header from "@header/header.module.scss";
 import animation from "@styles/animation.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
-/** components */
 import { Modal } from "@modal";
 import { Button } from "@button";
 import { Prototype as SearchbarPrototype } from "@prototype/searchbar";
 
-/** vectors */
 import { NameLogo, NoNameLogo } from "@svg/logo";
-
-/** contexts */
 import { useToggleDispatch, useToggleState } from "@context/toggle";
-
-/** contents */
 import { Content } from "@button/content/content.transparent";
-
-/** hooks */
 import { useOnClickOutside } from "@hooks/useOnClickOutside";
 
 /**
  * Renders the transparent header
  */
-export const TransparentHeader: React.FC<{
-  category?: string;
-  setCategory?: (param: string) => void;
+export const LandingHeader: React.FC<{
+  category?: any;
+  setCategory?: any;
   data?: any;
-  criteria?: boolean;
+  criteria?: any;
 }> = ({ data, category, setCategory, criteria }) => {
   const toggleState = useToggleState();
   const searchbarRef = useRef();
@@ -51,15 +41,18 @@ export const TransparentHeader: React.FC<{
     setExpanded(!expanded);
   });
 
-  const types = {
+  const types: { [type: string]: { title: string; onClick: any } } = {
     stay: {
       title: "Places to stay",
+      onClick: () => setCategory("stay"),
     },
     experiences: {
       title: "Experiences",
+      onClick: () => alert("experiences"),
     },
     online: {
       title: "Online Experiences",
+      onClick: () => Router.push("/s/experiences/online"),
     },
   };
 
@@ -141,10 +134,12 @@ export const TransparentHeader: React.FC<{
             layout["r--0"],
             layout["t--55"],
             color["bg--transparent"],
+            shape["w--230"],
           ].join(" ")}
         >
           <Modal
             variant="menu"
+            extendsTo={[shape["w--200"]].join(" '")}
             authenticated={data}
             criteria={toggleState.menu}
             dispatch="toggle_menu"
@@ -198,7 +193,7 @@ export const TransparentHeader: React.FC<{
                           key={index}
                           className={[space["m-h--16"]].join(" ")}
                         >
-                          <button onClick={() => setCategory("stay")}>
+                          <button onClick={types[type].onClick}>
                             <div className={[space["p-b--8"]].join(" ")}>
                               <p
                                 className={`${[color["c--white"]].join(" ")} ${[
@@ -218,8 +213,8 @@ export const TransparentHeader: React.FC<{
                               {category === type && (
                                 <motion.div
                                   initial={{ width: 3 }}
-                                  animate={{ width: 15 }}
                                   style={{
+                                    width: 15,
                                     height: 2,
                                     backgroundColor: "white",
                                   }}
@@ -333,6 +328,7 @@ export const TransparentHeader: React.FC<{
                     // transition={{ type: "spring", stiffness: 30, duration: 0.03 }}
                     initial={{ width: 0, y: 50, opacity: 0 }}
                     animate={{ width: 240, y: 0, opacity: 1 }}
+                    // animate={{ width: 240, y: 0, opacity: 1 }}
                   >
                     <Button
                       variant="searchbar"

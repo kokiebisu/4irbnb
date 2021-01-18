@@ -1,31 +1,32 @@
 import Router from "next/router";
 
-/** styles */
 import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 
-/** components */
-import { CategoryCard } from "@card/card.category";
-import { HorizontalCard } from "@card/card.horizontal";
-import { VerticalCard } from "@card/card.vertical";
-import { TypeStayCard } from "@card/card.typestay";
-import { ArrangementsCard } from "@card/card.arrangements";
-import { CheckInCard } from "@card/card.checkin";
-import { ReviewCard } from "@card/card.review";
-import { StayCard } from "@card/card.stay";
-import { NearbyCard } from "@card/card.nearby";
-import { OnlineCard } from "@card/card.online";
-import { ParticipateCard } from "@card/card.participate";
-import { AvailableCard } from "@card/card.available";
-import { HostCard } from "@card/card.host";
-import { SetCard } from "@card/card.set";
-import { AgainCard } from "@card/card.again";
-import { WorksCard } from "@card/card.works";
-import { SharingCard } from "@card/card.sharing";
-import { HowCard } from "@card/card.how";
+import { CategoryCard } from "./card.category";
+import { HorizontalCard } from "./card.horizontal";
+import { VerticalCard } from "./card.vertical";
+import { TypeStayCard } from "./card.typestay";
+import { ArrangementsCard } from "./card.arrangements";
+import { CheckInCard } from "./card.checkin";
+import { ReviewCard } from "./card.review";
+import { StayCard } from "./card.stay";
+import { NearbyCard } from "./card.nearby";
+import { OnlineCard } from "./card.online";
+import { ParticipateCard } from "./card.participate";
+import { AvailableCard } from "./card.available";
+import { HostCard } from "./card.host";
+import { SetCard } from "./card.set";
+import { AgainCard } from "./card.again";
+import { WorksCard } from "./card.works";
+import { SharingCard } from "./card.sharing";
+import { HowCard } from "./card.how";
 import { AnywhereCard } from "./card.anywhere";
 import { HostingCard } from "./card.hosting";
+import { VideoCard } from "./card.video";
+import { StartingCard } from "./card.starting";
+import { CollectionCard } from "./card.collection";
 
 export interface CardProps {
   extendsTo?: string;
@@ -69,6 +70,9 @@ export const Card: React.FC<CardProps> = ({
     how: <HowCard {...props} />,
     anywhere: <AnywhereCard {...props} />,
     hosting: <HostingCard {...props} />,
+    video: <VideoCard {...props} />,
+    starting: <StartingCard {...props} />,
+    collection: <CollectionCard {...props} />,
   };
 
   if (to) {

@@ -1,9 +1,7 @@
 import Router from "next/router";
 
-/** components */
 import { Button } from "@button";
 
-/** styles **/
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";

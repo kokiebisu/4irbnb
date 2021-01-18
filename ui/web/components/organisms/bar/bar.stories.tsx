@@ -64,3 +64,8 @@ export const Availability = TemplateStory.bind({});
 Availability.args = {
   variant: "availability",
 };
+
+export const Filters = TemplateStory.bind({});
+Filters.args = {
+  variant: "filters",
+};

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export interface SliderProps {
   state: {
@@ -6,11 +6,17 @@ export interface SliderProps {
     translate: number;
     transition: number;
   };
-  nextSlide: () => void;
-  previousSlide: () => void;
+  next: any;
+  previous: any;
 }
 
 export const useSlider = (items, width, type) => {
+  const [state, setState] = useState({
+    activeSlide: 0,
+    translate: 0,
+    transition: 0.45,
+  });
+
   const displayingLength = {
     banner: items.length,
     also: items.length / 2,
@@ -20,13 +26,8 @@ export const useSlider = (items, width, type) => {
     banner: width,
     also: width / (width > 728 ? 3 : 2),
   };
-  const [state, setState] = useState({
-    activeSlide: 0,
-    translate: 0,
-    transition: 0.45,
-  });
 
-  const previousSlide = () => {
+  const previous = () => {
     if (state.activeSlide === 0) {
       return setState({
         ...state,
@@ -42,7 +43,7 @@ export const useSlider = (items, width, type) => {
     });
   };
 
-  const nextSlide = () => {
+  const next = () => {
     if (state.activeSlide === displayingLength[type] - 1) {
       return setState({
         ...state,
@@ -57,5 +58,5 @@ export const useSlider = (items, width, type) => {
     });
   };
 
-  return { state, previousSlide, nextSlide };
+  return { state, previous, next };
 };
