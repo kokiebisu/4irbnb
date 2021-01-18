@@ -73,9 +73,9 @@ export const LocationModal: React.FC<{}> = () => {
                 layout["flex-wrap"],
               ].join(" ")}
             >
-              {nearbyLocations.map((nearbyLocation) => {
+              {nearbyLocations.map((nearbyLocation, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     <Button
                       variant="nearby"
                       label={nearbyLocation}

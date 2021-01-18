@@ -21,7 +21,7 @@ export interface TemplateProps {
  */
 export const Template: React.FC<TemplateProps> = ({
   extendsTo = "",
-  variant = "auth",
+  variant = "help",
   children,
   onClick,
   to,
