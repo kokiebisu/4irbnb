@@ -3,7 +3,7 @@ import shape from "@styles/shape.module.scss";
 import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 import React, { useState } from "react";
-import { Video } from "components/atoms/video";
+import { Video } from "@video";
 import { Heart, Star } from "@svg/original";
 import font from "@styles/font.module.scss";
 

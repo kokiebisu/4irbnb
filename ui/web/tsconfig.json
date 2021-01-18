@@ -23,6 +23,8 @@
       "@button/*": ["components/atoms/button/*"],
       "@input": ["components/atoms/input"],
       "@input/*": ["components/atoms/input/*"],
+      "@video": ["components/atoms/video"],
+      "@video/*": ["components/atoms/video/*"],
       "@card": ["components/molecules/card"],
       "@card/*": ["components/molecules/card/*"],
       "@particle/*": ["components/particles/*"],
