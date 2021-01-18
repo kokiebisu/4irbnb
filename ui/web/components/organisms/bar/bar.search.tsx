@@ -13,114 +13,205 @@ import { useToggleDispatch } from "@context/toggle";
  * Renders the Searchbar
  */
 export const SearchBar: React.FC<{
+  type?: string;
   selected?: string;
   setSelected?: (param: string) => void;
   transparent?: boolean;
 }> = ({
+  type = "stay",
   selected = null,
   setSelected = () => console.log("clicked"),
   transparent,
 }) => {
   const dispatchToggle = useToggleDispatch();
 
-  return (
-    <div
-      className={transparent ? [shape["shadow--sm"]].join(" ") : null}
-      style={{
-        border: "1px solid lightgray",
-        display: "grid",
-        gridTemplateColumns: `1.5fr 1px 1fr 1px  1fr 1px ${
-          !selected ? "1.5fr" : "2fr"
-        }`,
-        borderRadius: 50,
-        backgroundColor: "white",
-      }}
-    >
-      <Option
-        title="Where are you going?"
-        subtitle="Location"
-        selected={selected}
-        setSelected={setSelected}
-        name="location"
-      />
-      <Seperator />
-      <Option
-        title="Add dates"
-        subtitle="Check in"
-        selected={selected}
-        setSelected={setSelected}
-        name="checkin"
-      />
-      <Seperator />
-      <Option
-        title="Add dates"
-        subtitle="Check out"
-        selected={selected}
-        setSelected={setSelected}
-        name="checkout"
-      />
-      <Seperator />
-      <button
+  const types = {
+    stay: (
+      <div
+        className={transparent ? [shape["shadow--sm"]].join(" ") : null}
         style={{
-          display: "block",
-          padding: "5px 8px 5px 24px",
-          borderRadius: "50px",
-        }}
-        className={`${
-          selected === "guests" && [shape["shadow--lg"]].join(" ")
-        } ${[animation["hover-background--white__1"]].join(" ")}`}
-        onClick={() => {
-          setSelected("guests");
-          dispatchToggle({ type: "toggle_guests" });
+          border: "1px solid lightgray",
+          display: "grid",
+          gridTemplateColumns: `1.5fr 1px 1fr 1px  1fr 1px ${
+            !selected ? "1.5fr" : "2fr"
+          }`,
+          borderRadius: 50,
+          backgroundColor: "white",
         }}
       >
-        <div
+        <Option
+          title="Where are you going?"
+          subtitle="Location"
+          selected={selected}
+          setSelected={setSelected}
+          name="location"
+        />
+        <Seperator />
+        <Option
+          title="Add dates"
+          subtitle="Check in"
+          selected={selected}
+          setSelected={setSelected}
+          name="checkin"
+        />
+        <Seperator />
+        <Option
+          title="Add dates"
+          subtitle="Check out"
+          selected={selected}
+          setSelected={setSelected}
+          name="checkout"
+        />
+        <Seperator />
+        <button
           style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            borderRadius: selected === "guests" && 50,
+            display: "block",
+            padding: "5px 8px 5px 24px",
+            borderRadius: "50px",
+          }}
+          className={`${
+            selected === "guests" && [shape["shadow--lg"]].join(" ")
+          } ${[animation["hover-background--white__1"]].join(" ")}`}
+          onClick={() => {
+            setSelected("guests");
+            dispatchToggle({ type: "toggle_guests" });
           }}
         >
           <div
-            className={`${[layout["flex"], layout["items-center"]].join(" ")}`}
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              borderRadius: selected === "guests" && 50,
+            }}
           >
-            <div>
+            <div
+              className={`${[layout["flex"], layout["items-center"]].join(
+                " "
+              )}`}
+            >
               <div>
-                <h3
-                  className={[
-                    font["text--left"],
-                    font["no-wrap"],
-                    font["size--12"],
-                  ].join(" ")}
-                >
-                  Guests
-                </h3>
-              </div>
-              <div>
-                <p
-                  className={[
-                    font["text--left"],
-                    font["no-wrap"],
-                    font["size--12"],
-                  ].join(" ")}
-                >
-                  Add guests
-                </p>
+                <div>
+                  <h3
+                    className={[
+                      font["text--left"],
+                      font["no-wrap"],
+                      font["size--12"],
+                    ].join(" ")}
+                  >
+                    Guests
+                  </h3>
+                </div>
+                <div>
+                  <p
+                    className={[
+                      font["text--left"],
+                      font["no-wrap"],
+                      font["size--12"],
+                    ].join(" ")}
+                  >
+                    Add guests
+                  </p>
+                </div>
               </div>
             </div>
+            <div>
+              <Button
+                variant="search"
+                onClick={() => alert("hello")}
+                expand={selected}
+              />
+            </div>
           </div>
-          <div>
-            <Button
-              variant="search"
-              onClick={() => alert("hello")}
-              expand={selected}
-            />
+        </button>
+      </div>
+    ),
+    experiences: (
+      <div
+        className={transparent ? [shape["shadow--sm"]].join(" ") : null}
+        style={{
+          border: "1px solid lightgray",
+          display: "grid",
+          gridTemplateColumns: `1fr 1px ${selected ? "1.25fr" : "1fr"}`,
+          borderRadius: 50,
+          backgroundColor: "white",
+        }}
+      >
+        <Option
+          title="Where are you going?"
+          subtitle="Location"
+          selected={selected}
+          setSelected={setSelected}
+          name="location"
+        />
+        <Seperator />
+
+        <button
+          style={{
+            display: "block",
+            padding: "5px 8px 5px 24px",
+            borderRadius: "50px",
+          }}
+          className={`${
+            selected === "checkin" && [shape["shadow--lg"]].join(" ")
+          } ${[animation["hover-background--white__1"]].join(" ")}`}
+          onClick={() => {
+            setSelected("checkin");
+            dispatchToggle({ type: "toggle_checkin" });
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              borderRadius: selected === "checkin" && 50,
+            }}
+          >
+            <div
+              className={`${[layout["flex"], layout["items-center"]].join(
+                " "
+              )}`}
+            >
+              <div>
+                <div>
+                  <h3
+                    className={[
+                      font["text--left"],
+                      font["no-wrap"],
+                      font["size--12"],
+                    ].join(" ")}
+                  >
+                    Date
+                  </h3>
+                </div>
+                <div>
+                  <p
+                    className={[
+                      font["text--left"],
+                      font["no-wrap"],
+                      font["size--12"],
+                    ].join(" ")}
+                  >
+                    Add when you want to go
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <Button
+                variant="search"
+                onClick={() => alert("hello")}
+                expand={selected}
+              />
+            </div>
           </div>
-        </div>
-      </button>
-    </div>
-  );
+        </button>
+      </div>
+    ),
+  };
+
+  return types[type];
 };
 
 const Seperator: React.FC<{}> = () => {
