@@ -63,9 +63,9 @@ const Calendar: React.FC<{
       <div className={[shape["w--full"]].join(" ")}>
         <div style={{ display: "table", tableLayout: "fixed" }}>
           <div>
-            {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day) => {
+            {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day, index) => {
               return (
-                <div style={{ display: "table-cell", width: 42 }}>
+                <div key={index} style={{ display: "table-cell", width: 42 }}>
                   <div
                     className={[layout["flex"], layout["justify-center"]].join(
                       " "

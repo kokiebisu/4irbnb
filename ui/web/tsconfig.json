@@ -53,7 +53,9 @@
       "@helper/*": ["helper/*"],
       "@hooks/*": ["hooks/*"],
       "@context/*": ["context/*"],
-      "@config": ["config/index.ts"]
+      "@config": ["config/index.ts"],
+      "@api": ["api"],
+      "@api/*": ["api/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".storybook/**/*"],

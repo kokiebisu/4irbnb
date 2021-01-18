@@ -22,7 +22,7 @@ export interface TemplateProps {
  */
 export const Template: React.FC<TemplateProps> = ({
   extendsTo = "",
-  variant = "auth",
+  variant = "reviews",
   children,
   onClick,
   to,
