@@ -1,7 +1,7 @@
 /** landing */
-import { BannerTemplate } from "@template/s/experiences/online/template.banner";
-import { CardsTemplate } from "@template/s/experiences/online/template.cards";
-import { StartingTemplate } from "@template/s/experiences/online/template.starting";
+import { BannerTemplate } from "./template.banner";
+import { CardsTemplate } from "./template.cards";
+import { StartingTemplate } from "./template.starting";
 import { CollectionsTemplate } from "./template.collections";
 
 export interface TemplateProps {

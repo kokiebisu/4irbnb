@@ -1,4 +1,4 @@
-export const anywhereItems = [
+exports.anywhereItems = [
   {
     imgUrl:
       "https://a0.muscache.com/im/pictures/a0316ecb-e49b-4b3a-b6b6-c2876b820e8c.jpg?im_w=1200",

@@ -1,7 +1,7 @@
 /** landing */
-import { MultipleTemplate } from "@template/s/homes/template.multiple";
-import { HomesTemplate } from "@template/s/homes/template.homes";
-import { AlsoTemplate } from "@template/s/homes/template.also";
+import { MultipleTemplate } from "./template.multiple";
+import { HomesTemplate } from "./template.homes";
+import { AlsoTemplate } from "./template.also";
 
 export interface TemplateProps {
   extendsTo?: string;

@@ -6,7 +6,7 @@ import space from "@styles/space.module.scss";
 import { Heart, Star } from "@svg/original";
 import React, { useState } from "react";
 
-import { Video } from "components/atoms/video";
+import { Video } from "@video";
 
 /**
  * Renders the vertical card component
