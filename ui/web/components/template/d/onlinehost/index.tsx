@@ -28,7 +28,7 @@ export const Template: React.FC<TemplateProps> = ({
   animate,
   ...props
 }) => {
-  const variants: { [key: string]: JSX.Element } = {
+  const variants: { [variant: string]: any } = {
     more: <MoreTemplate {...props} />,
     faq: <FAQTemplate {...props} />,
     back: <BackTemplate {...props} />,

@@ -1,4 +1,4 @@
-exports.footerItems = [
+export const footerItems = [
   {
     name: "About",
     items: [

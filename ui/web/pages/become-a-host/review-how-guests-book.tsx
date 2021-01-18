@@ -48,7 +48,7 @@ const HowGuestsWillBookPage = () => {
             }}
           >
             {["qualified", "control", "notified"].map((how, index) => (
-              <div>
+              <div key={index}>
                 <Card variant="how" how={how} />
               </div>
             ))}

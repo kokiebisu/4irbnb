@@ -31,7 +31,7 @@ export const Template: React.FC<TemplateProps> = ({
   animate,
   ...props
 }) => {
-  const variants: { [key: string]: JSX.Element } = {
+  const variants: { [variant: string]: any } = {
     experiences: <ExperiencesTemplate {...props} />,
     participate: <ParticipateTemplate {...props} />,
     bring: <BringTemplate {...props} />,

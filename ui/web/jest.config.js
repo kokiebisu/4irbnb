@@ -1,9 +1,8 @@
 // jest.config.js
 module.exports = {
   collectCoverageFrom: ["**/*.{ts,tsx}", "!**/*.d.ts", "!**/node_modules/**"],
-  // we need to create this file
   setupFilesAfterEnv: ["<rootDir>/setupTests.js"],
-  testPathIgnorePatterns: ["/node_modules/", "/.next/"],
+  testPathIgnorePatterns: ["<rootDir>/node_modules/", "<rootDir>/.next/"],
   transform: {
     "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
   },
@@ -46,7 +45,7 @@ module.exports = {
     "@particle/(.*)": "<rootDir>/components/particles/$1",
     "@hooks/(.*)": "<rootDir>/hooks/$1",
     "@context/(.*)": "<rootDir>/context/$1",
-    "@config": ["<rootDir>/config/index.ts"],
+    "@config": "<rootDir>/config/index.ts",
   },
   moduleDirectories: ["node_modules", "components"],
 };

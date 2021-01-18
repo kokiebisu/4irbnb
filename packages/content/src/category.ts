@@ -1,4 +1,4 @@
-exports.categoryItems = [
+export const categoryItems = [
   {
     imgUrl:
       "https://a0.muscache.com/im/pictures/2a16f833-464c-446c-8d74-33eb8c643975.jpg?im_w=1200",

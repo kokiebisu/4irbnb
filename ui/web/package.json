@@ -14,9 +14,11 @@
   },
   "dependencies": {
     "@airbnb/content": "1.0.0",
+    "@storybook/addon-storyshots": "^6.1.14",
+    "@storybook/react": "^6.1.14",
     "axios": "^0.21.0",
     "formik": "^2.2.2",
-    "framer-motion": "^3.1.4",
+    "framer-motion": "^3.2.1",
     "next": "10.0.4",
     "react": "17.0.1",
     "react-dom": "17.0.1",
