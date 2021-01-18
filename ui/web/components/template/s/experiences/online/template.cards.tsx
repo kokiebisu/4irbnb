@@ -5,26 +5,12 @@ import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 
-import { useLayoutEffect, useRef, useState } from "react";
+import { useSlide } from "@hooks/useSlide";
 
 export const CardsTemplate: React.FC<{ title?: string }> = ({
   title = "Title here",
 }) => {
-  const [width, setWidth] = useState(500);
-  const containerRef = useRef<HTMLDivElement>();
-  const handleRef = () => {
-    if (containerRef.current && containerRef.current.getBoundingClientRect()) {
-      setWidth(containerRef.current.getBoundingClientRect().width);
-    }
-  };
-
-  useLayoutEffect(() => {
-    window.addEventListener("resize", handleRef);
-    handleRef();
-    return () => {
-      window.removeEventListener("resize", handleRef);
-    };
-  });
+  const { state, containerRef, width, previous, next } = useSlide("whole");
   const temporaryCards = [
     {
       imgUrl:
@@ -100,13 +86,7 @@ export const CardsTemplate: React.FC<{ title?: string }> = ({
     },
   ];
 
-  const [state, setState] = useState({
-    activeSlide: 0,
-    translate: 0,
-    transition: 0.7,
-  });
-
-  const evaluateColumns = () => {
+  const displayingColumns = () => {
     if (width > 1128) {
       return 6;
     } else if (width > 1028) {
@@ -118,24 +98,6 @@ export const CardsTemplate: React.FC<{ title?: string }> = ({
     } else {
       return 2;
     }
-  };
-
-  const displayingColumns = evaluateColumns();
-
-  const previous = () => {
-    setState({
-      ...state,
-      activeSlide: state.activeSlide - 1,
-      translate: (state.activeSlide - 1) * width,
-    });
-  };
-
-  const next = () => {
-    setState({
-      ...state,
-      activeSlide: state.activeSlide + 1,
-      translate: (state.activeSlide + 1) * width,
-    });
   };
 
   return (
@@ -193,7 +155,7 @@ export const CardsTemplate: React.FC<{ title?: string }> = ({
       >
         <div
           style={{
-            width: width * (temporaryCards.length / displayingColumns),
+            width: width * (temporaryCards.length / displayingColumns()),
             transform: `translateX(-${state.translate}px)`,
             transition: `transform ease-out ${state.transition}s`,
           }}
@@ -201,7 +163,7 @@ export const CardsTemplate: React.FC<{ title?: string }> = ({
           <div style={{ display: "flex" }}>
             {temporaryCards.map(({ imgUrl, videoUrl }, index) => {
               return (
-                <div key={index} style={{ width: width / displayingColumns }}>
+                <div key={index} style={{ width: width / displayingColumns() }}>
                   <div style={{ marginRight: 10 }}>
                     <Card variant="video" imgUrl={imgUrl} videoUrl={videoUrl} />
                   </div>
