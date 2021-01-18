@@ -29,26 +29,26 @@
 .landing__bb {
   &--selected {
     &:after {
-      content: ""; /* This is necessary for the pseudo element to work. */
-      display: block; /* This will put the pseudo element on its own line. */
-      width: 30%; /* Change this to whatever width you want to have before hover. */
-      padding-top: 10px; /* This creates some space between the element and the border. */
-      border-bottom: 2px solid white; /* This creates the border. Replace black with whatever color you want. */
-      transition: 0.5s; /* This establishes the amount of time in seconds the animation should take from start to finish */
+      content: "";
+      display: block;
+      width: 30%;
+      padding-top: 10px;
+      border-bottom: 2px solid white;
+      transition: 0.5s;
       margin: 0 auto;
     }
   }
   &:after {
-    content: ""; /* This is necessary for the pseudo element to work. */
-    display: block; /* This will put the pseudo element on its own line. */
-    width: 0%; /* Change this to whatever width you want to have before hover. */
-    padding-top: 10px; /* This creates some space between the element and the border. */
-    border-bottom: 2px solid white; /* This creates the border. Replace black with whatever color you want. */
-    transition: 0.5s; /* This establishes the amount of time in seconds the animation should take from start to finish */
+    content: "";
+    display: block;
+    width: 0%;
+    padding-top: 10px;
+    border-bottom: 2px solid white;
+    transition: 0.5s;
     margin: 0 auto;
   }
 
   &:hover:after {
-    width: 10px; /* This will be the new width of your border when on hover */
+    width: 10px;
   }
 }

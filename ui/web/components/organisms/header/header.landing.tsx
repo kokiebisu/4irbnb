@@ -13,7 +13,7 @@ import responsive from "@styles/responsive.module.scss";
 
 import { Modal } from "@modal";
 import { Button } from "@button";
-import { Prototype as SearchbarPrototype } from "@prototype/searchbar";
+import { Prototype } from "@prototype/searchbar";
 
 import { NameLogo, NoNameLogo } from "@svg/logo";
 import { useToggleDispatch, useToggleState } from "@context/toggle";
@@ -216,7 +216,7 @@ export const LandingHeader: React.FC<{
                     })}
                   </div>
                 </div>
-                <SearchbarPrototype variant="stay" transparent />
+                <Prototype type={category} transparent />
               </div>
             </motion.div>
           ) : (
@@ -287,7 +287,7 @@ export const LandingHeader: React.FC<{
                       </div>
                     </div>
                     <div ref={searchbarRef}>
-                      <SearchbarPrototype variant={category} />
+                      <Prototype type={category} />
                     </div>
                   </div>
                 </motion.div>
