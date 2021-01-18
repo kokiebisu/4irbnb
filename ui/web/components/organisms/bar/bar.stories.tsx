@@ -5,58 +5,64 @@ import { Bar, BarProps } from "@bar";
 export default {
   title: "Organisms/Bar",
   component: Bar,
-  argTypes: { type: { control: { disable: true } } },
+  argTypes: { variant: { control: { disable: true } } },
 } as Meta;
 
 const TemplateStory: Story<BarProps> = (args) => <Bar {...args} />;
 
-export const paginate = TemplateStory.bind({});
-paginate.args = {
+export const Paginate = TemplateStory.bind({});
+Paginate.args = {
   variant: "paginate",
 };
 
-export const covid = TemplateStory.bind({});
-covid.args = {
+export const Covid = TemplateStory.bind({});
+Covid.args = {
   variant: "covid",
 };
 
-export const progress = TemplateStory.bind({});
-progress.args = {
+export const Progress = TemplateStory.bind({});
+Progress.args = {
   variant: "progress",
 };
-progress.argTypes = {
+Progress.argTypes = {
   percentage: {
     control: "number",
   },
 };
 
-export const search = TemplateStory.bind({});
-search.args = {
+export const Search = TemplateStory.bind({});
+Search.args = {
   variant: "search",
 };
-search.decorators = [
+Search.decorators = [
   (Story) => (
     <div style={{ maxWidth: 720 }}>
       <Story />
     </div>
   ),
 ];
-search.argTypes = {
+Search.argTypes = {
   selected: {
     control: {
       type: "select",
       options: [null, "location", "checkin", "checkout", "guests"],
     },
   },
+  type: {
+    control: {
+      type: "select",
+      options: ["stay", "experiences"],
+    },
+  },
 };
 
-export const create = TemplateStory.bind({});
-create.args = {
+export const Create = TemplateStory.bind({});
+Create.args = {
   variant: "create",
 };
 
-export const menu = TemplateStory.bind({});
-menu.args = {
+export const Menu = TemplateStory.bind({});
+Menu.args = {
   variant: "menu",
 };
 
