@@ -13,7 +13,7 @@ import responsive from "@styles/responsive.module.scss";
 
 import { Modal } from "@modal";
 import { Button } from "@button";
-import { Prototype as SearchbarPrototype } from "@prototype/searchbar";
+import { Prototype } from "@prototype/searchbar";
 
 import { NameLogo, NoNameLogo } from "@svg/logo";
 import { useToggleDispatch, useToggleState } from "@context/toggle";
@@ -48,7 +48,7 @@ export const LandingHeader: React.FC<{
     },
     experiences: {
       title: "Experiences",
-      onClick: () => alert("experiences"),
+      onClick: () => setCategory("experiences"),
     },
     online: {
       title: "Online Experiences",
@@ -194,7 +194,13 @@ export const LandingHeader: React.FC<{
                           className={[space["m-h--16"]].join(" ")}
                         >
                           <button onClick={types[type].onClick}>
-                            <div className={[space["p-b--8"]].join(" ")}>
+                            <div
+                              className={`${
+                                category === type
+                                  ? header["landing__bb--selected"]
+                                  : header["landing__bb"]
+                              } ${[space["p-b--8"]].join(" ")}`}
+                            >
                               <p
                                 className={`${[color["c--white"]].join(" ")} ${[
                                   responsive["size__12_to_14--md"],
@@ -204,30 +210,13 @@ export const LandingHeader: React.FC<{
                                 {types[type].title}
                               </p>
                             </div>
-                            <div
-                              className={[
-                                layout["flex"],
-                                layout["justify-center"],
-                              ].join(" ")}
-                            >
-                              {category === type && (
-                                <motion.div
-                                  initial={{ width: 3 }}
-                                  style={{
-                                    width: 15,
-                                    height: 2,
-                                    backgroundColor: "white",
-                                  }}
-                                />
-                              )}
-                            </div>
                           </button>
                         </div>
                       );
                     })}
                   </div>
                 </div>
-                <SearchbarPrototype variant="stay" transparent />
+                <Prototype type={category} transparent />
               </div>
             </motion.div>
           ) : (
@@ -280,16 +269,16 @@ export const LandingHeader: React.FC<{
                                     layout["justify-center"],
                                   ].join(" ")}
                                 >
-                                  {category === type && (
+                                  {/* {category === type && (
                                     <motion.div
-                                      initial={{ width: 3 }}
-                                      animate={{ width: 15 }}
+                                      whileHover={{ width: 15 }}
                                       style={{
+                                        width: 3,
                                         height: 2,
                                         backgroundColor: "white",
                                       }}
                                     />
-                                  )}
+                                  )} */}
                                 </div>
                               </button>
                             </div>
@@ -298,7 +287,7 @@ export const LandingHeader: React.FC<{
                       </div>
                     </div>
                     <div ref={searchbarRef}>
-                      <SearchbarPrototype variant={category} />
+                      <Prototype type={category} />
                     </div>
                   </div>
                 </motion.div>

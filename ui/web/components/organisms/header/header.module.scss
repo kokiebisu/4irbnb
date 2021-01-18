@@ -25,3 +25,30 @@
     }
   }
 }
+
+.landing__bb {
+  &--selected {
+    &:after {
+      content: "";
+      display: block;
+      width: 30%;
+      padding-top: 10px;
+      border-bottom: 2px solid white;
+      transition: 0.5s;
+      margin: 0 auto;
+    }
+  }
+  &:after {
+    content: "";
+    display: block;
+    width: 0%;
+    padding-top: 10px;
+    border-bottom: 2px solid white;
+    transition: 0.5s;
+    margin: 0 auto;
+  }
+
+  &:hover:after {
+    width: 10px;
+  }
+}
