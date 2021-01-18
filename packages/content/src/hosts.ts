@@ -1,4 +1,4 @@
-exports.hosts = [
+export const hosts = [
   {
     name: "Darrel",
     stayType: "tiny house",

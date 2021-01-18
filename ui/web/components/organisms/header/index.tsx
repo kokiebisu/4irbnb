@@ -4,11 +4,11 @@ import { ExperiencesHeader } from "@header/header.experiences";
 import { HomesHeader } from "@header/header.homes";
 import { OnlineHostHeader } from "@header/header.onlinehost";
 import { StayHeader } from "@header/header.stay";
-import { TransparentHeader } from "@header/header.landing";
+import { LandingHeader } from "@header/header.landing";
 import { WhiteHeader } from "@header/header.white";
 
 export interface HeaderProps {
-  extendsTo?: string;
+  extendsTo?: any;
   variant: string;
   [property: string]: any;
 }
@@ -24,9 +24,9 @@ export const Header: React.FC<HeaderProps> = ({
   ...props
 }) => {
   const variants: {
-    [variant: string]: JSX.Element;
+    [variant: string]: any;
   } = {
-    landing: <TransparentHeader {...props} />,
+    landing: <LandingHeader {...props} />,
     white: <WhiteHeader {...props} />,
     details: <DetailsHeader {...props} />,
     homes: <HomesHeader {...props} />,

@@ -1,4 +1,4 @@
-exports.allItems = [
+export const allItems = [
   {
     name: "Houses",
     imgUrl:

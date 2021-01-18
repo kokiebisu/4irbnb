@@ -42,9 +42,9 @@ export const LocationModal: React.FC<{}> = () => {
         <Layout
           variant="location"
           title="Recent Searches"
-          content={recentLocations.map((recentLocations) => {
+          content={recentLocations.map((recentLocations, index) => {
             return (
-              <div>
+              <div key={index}>
                 <Button
                   variant="location"
                   type="recent"

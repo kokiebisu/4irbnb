@@ -1,7 +1,7 @@
 {
   "name": "@airbnb/content",
   "version": "1.0.0",
-  "main": "src/index",
+  "main": "build/index",
   "license": "MIT",
   "scripts": {
     "clean": "del ./build/*",

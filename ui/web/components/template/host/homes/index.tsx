@@ -29,7 +29,7 @@ export const Template: React.FC<TemplateProps> = ({
   animate,
   ...props
 }) => {
-  const variants: { [key: string]: JSX.Element } = {
+  const variants: { [variant: string]: any } = {
     help: <HelpTemplate {...props} />,
     priority: <PriorityTemplate {...props} />,
     community: <CommunityTemplate {...props} />,
