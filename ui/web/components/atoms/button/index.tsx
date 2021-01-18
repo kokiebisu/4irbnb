@@ -24,6 +24,7 @@ import { LocationButton } from "@button/button.location";
 import { LogoButton } from "@button/button.logo";
 import { NearbyButton } from "@button/button.nearby";
 import { CalendarButton } from "@button/button.calendar";
+import { VideoButton } from "@button/button.video";
 
 /** styles **/
 import layout from "@styles/layout.module.scss";
@@ -81,6 +82,7 @@ export const Button: React.FC<ButtonProps> = ({
     calendar: <CalendarButton {...props} />,
     searchbar: <SearchbarButton {...props} />,
     logo: <LogoButton {...props} />,
+    video: <VideoButton {...props} />,
   };
 
   return (

@@ -21,6 +21,9 @@ landing.argTypes = {
     control: "boolean",
   },
 };
+landing.parameters = {
+  storyshots: { disable: true },
+};
 
 export const white = TemplateStory.bind({});
 white.args = {

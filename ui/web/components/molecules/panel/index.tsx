@@ -1,5 +1,5 @@
-import { ExperiencePanel } from "@panel/panel.experience";
-import { RoomPanel } from "@panel/panel.room";
+import { ExperiencePanel } from "./panel.experience";
+import { RoomPanel } from "./panel.room";
 
 export interface PanelProps {
   variant: string;

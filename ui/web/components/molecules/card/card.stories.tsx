@@ -238,3 +238,39 @@ Hosting.argTypes = {
     },
   },
 };
+
+export const Video = TemplateStory.bind({});
+Video.args = {
+  variant: "video",
+};
+Video.decorators = [
+  (Story) => (
+    <div style={{ width: 300 }}>
+      <Story />
+    </div>
+  ),
+];
+
+export const Starting = TemplateStory.bind({});
+Starting.args = {
+  variant: "starting",
+};
+Starting.decorators = [
+  (Story) => (
+    <div style={{ width: 400 }}>
+      <Story />
+    </div>
+  ),
+];
+
+export const Collection = TemplateStory.bind({});
+Collection.args = {
+  variant: "collection",
+};
+Collection.decorators = [
+  (Story) => (
+    <div style={{ width: 500 }}>
+      <Story />
+    </div>
+  ),
+];

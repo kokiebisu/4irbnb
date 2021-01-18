@@ -63,9 +63,9 @@ const Calendar: React.FC<{
       <div className={[shape["w--full"]].join(" ")}>
         <div style={{ display: "table", tableLayout: "fixed" }}>
           <div>
-            {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day) => {
+            {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day, index) => {
               return (
-                <div style={{ display: "table-cell", width: 42 }}>
+                <div key={index} style={{ display: "table-cell", width: 42 }}>
                   <div
                     className={[layout["flex"], layout["justify-center"]].join(
                       " "
@@ -78,45 +78,45 @@ const Calendar: React.FC<{
             })}
           </div>
           <div className={[space["m-v--4"]].join(" ")}>
-            {[1, 2, 3, 4, 5, 6, 7].map((number) => {
+            {[1, 2, 3, 4, 5, 6, 7].map((number, index) => {
               return (
-                <div style={{ display: "table-cell" }}>
+                <div key={index} style={{ display: "table-cell" }}>
                   <Button variant="calendar" number={number} />
                 </div>
               );
             })}
           </div>
           <div className={[space["m-v--4"]].join(" ")}>
-            {[8, 9, 10, 11, 12, 13, 14].map((number) => {
+            {[8, 9, 10, 11, 12, 13, 14].map((number, index) => {
               return (
-                <div style={{ display: "table-cell" }}>
+                <div key={index} style={{ display: "table-cell" }}>
                   <Button variant="calendar" number={number} />
                 </div>
               );
             })}
           </div>
           <div className={[space["m-v--4"]].join(" ")}>
-            {[15, 16, 17, 18, 19, 20, 21].map((number) => {
+            {[15, 16, 17, 18, 19, 20, 21].map((number, index) => {
               return (
-                <div style={{ display: "table-cell" }}>
+                <div key={index} style={{ display: "table-cell" }}>
                   <Button variant="calendar" number={number} />
                 </div>
               );
             })}
           </div>
           <div className={[space["m-v--4"]].join(" ")}>
-            {[22, 23, 24, 25, 26, 27, 28].map((number) => {
+            {[22, 23, 24, 25, 26, 27, 28].map((number, index) => {
               return (
-                <div style={{ display: "table-cell" }}>
+                <div key={index} style={{ display: "table-cell" }}>
                   <Button variant="calendar" number={number} />
                 </div>
               );
             })}
           </div>
           <div className={[space["m-v--4"]].join(" ")}>
-            {[29, 30, 31, null, null, null, null].map((number) => {
+            {[29, 30, 31, null, null, null, null].map((number, index) => {
               return (
-                <div style={{ display: "table-cell" }}>
+                <div key={index} style={{ display: "table-cell" }}>
                   {number && <Button variant="calendar" number={number} />}
                 </div>
               );

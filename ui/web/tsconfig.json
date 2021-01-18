@@ -23,11 +23,14 @@
       "@button/*": ["components/atoms/button/*"],
       "@input": ["components/atoms/input"],
       "@input/*": ["components/atoms/input/*"],
+      "@video": ["components/atoms/video"],
+      "@video/*": ["components/atoms/video/*"],
       "@card": ["components/molecules/card"],
       "@card/*": ["components/molecules/card/*"],
       "@particle/*": ["components/particles/*"],
       "@prototype": ["components/prototype"],
       "@prototype/*": ["components/prototype/*"],
+      "@animation": ["components/animation"],
       "@animation/*": ["components/animation/*"],
       "@banner/*": ["components/organisms/banner/*"],
       "@create": ["components/prototype/create"],
@@ -50,7 +53,9 @@
       "@helper/*": ["helper/*"],
       "@hooks/*": ["hooks/*"],
       "@context/*": ["context/*"],
-      "@config": ["config/index.ts"]
+      "@config": ["config/index.ts"],
+      "@api": ["api"],
+      "@api/*": ["api/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".storybook/**/*"],

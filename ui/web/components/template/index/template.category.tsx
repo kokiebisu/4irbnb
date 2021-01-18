@@ -23,14 +23,15 @@ export const CategoryTemplate: React.FC<{
         >
           {items.map((item, index) => {
             return (
-              <Card
-                variant="category"
-                key={index}
-                imgUrl={item?.imgUrl}
-                title={item?.title}
-                to={item?.to}
-                extendsTo={[template["category__card"]].join(" ")}
-              />
+              <div key={index}>
+                <Card
+                  variant="category"
+                  imgUrl={item?.imgUrl}
+                  title={item?.title}
+                  to={item?.to}
+                  extendsTo={[template["category__card"]].join(" ")}
+                />
+              </div>
             );
           })}
           <div className={template["category__space"]}></div>

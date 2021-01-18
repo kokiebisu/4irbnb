@@ -1,15 +1,11 @@
-/** Layouts */
 import { Layout } from "@layout";
 
-/** styles **/
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 
-/** components */
 import { Card } from "@card";
 import { Button } from "@button";
 
-/** stories */
 import { Border } from "@button/button.stories";
 
 export const SharingTemplate: React.FC<{}> = () => {

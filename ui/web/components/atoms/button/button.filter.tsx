@@ -9,20 +9,24 @@ import button from "@button/button.module.scss";
  * Renders the filter button
  * @param {string} name - Name of the filter button
  */
-export const FilterButton: React.FC<{ name?: string }> = ({
-  name = "Cancellation flexibility",
+export const FilterButton: React.FC<{ label?: string; inverse?: boolean }> = ({
+  label = "Button",
+  inverse = false,
 }) => {
   return (
     <div
-      className={[
-        button["hover__filter"],
+      className={`${
+        inverse
+          ? [button["hover__filter"]].join(" ")
+          : [shape["b--transparent"], color["bg--white__1"]].join(" ")
+      } ${[
+        font["no-wrap"],
         space["p-v--8"],
         space["p-h--14"],
         shape["br--20"],
-        color["bg--transparent"],
-      ].join(" ")}
+      ].join(" ")}`}
     >
-      <p className={[font["size--15"]].join(" ")}>{name}</p>
+      <p className={[font["size--15"]].join(" ")}>{label}</p>
     </div>
   );
 };
