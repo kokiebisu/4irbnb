@@ -35,7 +35,7 @@ export const CommunityTemplate: React.FC<{
 }) => {
   const width = 366;
   const sliderRef = useRef(null);
-  const { state, previousSlide, nextSlide }: SliderProps = useSlider(
+  const { state, previous, next }: SliderProps = useSlider(
     hosts,
     width,
     "banner"
@@ -144,7 +144,7 @@ export const CommunityTemplate: React.FC<{
                 variant="paginate"
                 animate
                 direction="left"
-                onClick={previousSlide}
+                onClick={previous}
               />
             </div>
             <div>
@@ -152,7 +152,7 @@ export const CommunityTemplate: React.FC<{
                 variant="paginate"
                 animate
                 direction="right"
-                onClick={nextSlide}
+                onClick={next}
               />
             </div>
           </div>

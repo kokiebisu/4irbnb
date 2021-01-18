@@ -1,11 +1,9 @@
 import { useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-/** hooks */
 import useOnClickOutside from "@hooks/useOnClickOutside";
 import { useLockBodyScroll } from "@hooks/useLockBodyScroll";
 
-/** components */
 import { MenuModal } from "@modal/modal.menu";
 import { PrivacyModal } from "@modal/modal.privacy";
 import { AuthModal } from "@modal/modal.auth";
@@ -16,10 +14,8 @@ import { GuestsModal } from "@modal/modal.guests";
 import { CheckModal } from "@modal/modal.check";
 import { ListingModal } from "@modal/modal.listing";
 
-/** contexts */
 import { useToggleDispatch } from "@context/toggle";
 
-/** styles */
 import space from "@styles/space.module.scss";
 import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";

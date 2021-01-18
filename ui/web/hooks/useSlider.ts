@@ -6,8 +6,8 @@ export interface SliderProps {
     translate: number;
     transition: number;
   };
-  nextSlide: () => void;
-  previousSlide: () => void;
+  next: any;
+  previous: any;
 }
 
 export const useSlider = (items, width, type) => {

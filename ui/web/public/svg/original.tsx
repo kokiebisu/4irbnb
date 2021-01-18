@@ -99,7 +99,7 @@ export const Star = (props) => {
   return (
     <svg
       {...props}
-      style={{ fill: "#E61E4D", marginBottom: 1 }}
+      style={{ display: "block", fill: "#E61E4D" }}
       viewBox="0 0 37.286 37.287"
     >
       <g>

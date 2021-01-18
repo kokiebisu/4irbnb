@@ -23,14 +23,15 @@ export const AnywhereTemplate: React.FC<{
         >
           {items.map((item, index) => {
             return (
-              <Card
-                variant="anywhere"
-                key={index}
-                imgUrl={item?.imgUrl}
-                title={item?.title}
-                to={item?.to}
-                extendsTo={[template["category__card"]].join(" ")}
-              />
+              <div key={index}>
+                <Card
+                  variant="anywhere"
+                  imgUrl={item?.imgUrl}
+                  title={item?.title}
+                  to={item?.to}
+                  extendsTo={[template["category__card"]].join(" ")}
+                />
+              </div>
             );
           })}
           <div className={template["category__space"]}></div>

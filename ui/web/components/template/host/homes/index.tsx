@@ -1,11 +1,11 @@
 /** templates */
-import { PriorityTemplate } from "@template/host/homes/template.priority";
-import { HelpTemplate } from "@template/host/homes/template.help";
-import { ReadyTemplate } from "@template/host/homes/template.ready";
-import { CommunityTemplate } from "@template/host/homes/template.community";
-import { AllTemplate } from "@template/host/homes/template.all";
-import { BannerTemplate } from "@template/host/homes/template.banner";
-import { HostingTemplate } from "@template/host/homes/template.hosting";
+import { PriorityTemplate } from "./template.priority";
+import { HelpTemplate } from "./template.help";
+import { ReadyTemplate } from "./template.ready";
+import { CommunityTemplate } from "./template.community";
+import { AllTemplate } from "./template.all";
+import { BannerTemplate } from "./template.banner";
+import { HostingTemplate } from "./template.hosting";
 
 export interface TemplateProps {
   extendsTo?: string;
@@ -21,7 +21,7 @@ export interface TemplateProps {
  */
 export const Template: React.FC<TemplateProps> = ({
   extendsTo = "",
-  variant = "auth",
+  variant = "help",
   children,
   onClick,
   to,
@@ -29,7 +29,7 @@ export const Template: React.FC<TemplateProps> = ({
   animate,
   ...props
 }) => {
-  const variants: { [key: string]: JSX.Element } = {
+  const variants: { [variant: string]: any } = {
     help: <HelpTemplate {...props} />,
     priority: <PriorityTemplate {...props} />,
     community: <CommunityTemplate {...props} />,

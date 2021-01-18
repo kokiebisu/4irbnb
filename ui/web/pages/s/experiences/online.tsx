@@ -1,13 +1,17 @@
 import { Header } from "@header";
 import { Bar } from "@bar";
-import { useToggleState } from "@context/toggle";
 import { Template } from "@template/s/experiences/online";
 import { Modal } from "@modal";
+import { Footer } from "@footer";
 
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
+
+import { useToggleState } from "@context/toggle";
+import React from "react";
+import { Button } from "@button";
 
 const OnlinePage = () => {
   const toggleState = useToggleState();
@@ -54,6 +58,33 @@ const OnlinePage = () => {
         className={[layout["container--spread"], space["m-v--12"]].join(" ")}
       >
         <Template variant="cards" />
+      </div>
+      <div
+        className={[layout["container--spread"], space["m-v--12"]].join(" ")}
+      >
+        <Template variant="starting" />
+      </div>
+      <div
+        className={[layout["container--spread"], space["m-v--12"]].join(" ")}
+      >
+        <Template variant="collections" />
+      </div>
+      <div
+        className={[layout["container--spread"], space["m-v--12"]].join(" ")}
+      >
+        <Template variant="cards" />
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          padding: "40px 0 56px 0",
+        }}
+      >
+        <Button variant="primary" title="Load more" fill="black" />
+      </div>
+      <div>
+        <Footer />
       </div>
       {toggleState.auth && (
         <div

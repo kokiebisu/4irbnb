@@ -35,7 +35,7 @@ export const AlsoTemplate: React.FC<{
 }) => {
   const containerRef = useRef<HTMLDivElement>();
   const width: number = useHandleContainerResize(containerRef)[0];
-  const { state, previousSlide, nextSlide } = useSlider(items, width, "also");
+  const { state, previous, next } = useSlider(items, width, "also");
   const displayingItems = Helpers.groupByTwo(items);
 
   return (
@@ -57,7 +57,7 @@ export const AlsoTemplate: React.FC<{
               variant="paginate"
               animate
               direction="left"
-              onClick={previousSlide}
+              onClick={previous}
               disable={state.activeSlide === 0}
             />
           </div>
@@ -66,7 +66,7 @@ export const AlsoTemplate: React.FC<{
               variant="paginate"
               animate
               direction="right"
-              onClick={nextSlide}
+              onClick={next}
               disable={
                 state.activeSlide === items.length / 2 - (width > 728 ? 3 : 2)
               }

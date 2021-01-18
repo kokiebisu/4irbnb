@@ -11,7 +11,7 @@ export interface PrototypeProps {
 }
 
 export const Prototype: React.FC<PrototypeProps> = ({
-  variant = "nearby",
+  variant = "language",
   city = "Paris",
   stayType = "house",
   characteristics,

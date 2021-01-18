@@ -250,3 +250,27 @@ Video.decorators = [
     </div>
   ),
 ];
+
+export const Starting = TemplateStory.bind({});
+Starting.args = {
+  variant: "starting",
+};
+Starting.decorators = [
+  (Story) => (
+    <div style={{ width: 400 }}>
+      <Story />
+    </div>
+  ),
+];
+
+export const Collection = TemplateStory.bind({});
+Collection.args = {
+  variant: "collection",
+};
+Collection.decorators = [
+  (Story) => (
+    <div style={{ width: 500 }}>
+      <Story />
+    </div>
+  ),
+];

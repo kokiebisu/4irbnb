@@ -16,6 +16,7 @@ export const Video: React.FC<{ videoUrl?: string }> = ({ videoUrl }) => {
         height: "100%",
         width: "100%",
         cursor: "pointer",
+        borderRadius: 10,
       }}
     >
       <motion.div
@@ -46,11 +47,14 @@ export const Video: React.FC<{ videoUrl?: string }> = ({ videoUrl }) => {
             <motion.video
               key="loaded"
               style={{
-                height: "100%",
                 width: "100%",
+                height: "auto",
                 position: "absolute",
                 zIndex: 10,
                 borderRadius: 10,
+                transform: "translateX(-50%) translateY(-50%)",
+                top: "50%",
+                left: "50%",
               }}
               exit={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -59,8 +63,8 @@ export const Video: React.FC<{ videoUrl?: string }> = ({ videoUrl }) => {
               muted
               playsInline
               autoPlay
-              height="fit-content"
-              width="100%"
+              // height="fit-content"
+
               loop
             >
               <source src={videoUrl} type="video/mp4"></source>
@@ -70,8 +74,8 @@ export const Video: React.FC<{ videoUrl?: string }> = ({ videoUrl }) => {
         <div
           style={{
             position: "absolute",
-            bottom: 10,
-            left: 10,
+            bottom: "2%",
+            left: "2%",
             zIndex: 40,
           }}
         >

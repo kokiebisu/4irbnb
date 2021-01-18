@@ -19,6 +19,9 @@ export const Banner = TemplateStory.bind({});
 Banner.args = {
   variant: "banner",
 };
+Banner.parameters = {
+  storyshots: { disable: true },
+};
 
 export const Categories = TemplateStory.bind({});
 Categories.args = {
