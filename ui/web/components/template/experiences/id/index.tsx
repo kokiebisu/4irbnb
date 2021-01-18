@@ -1,13 +1,13 @@
-import { ExperiencesTemplate } from "@template/experiences/id/template.experiences";
-import { ParticipateTemplate } from "@template/experiences/id/template.participate";
-import { BringTemplate } from "@template/experiences/id/template.bring";
-import { CharacteristicsTemplate } from "@template/experiences/id/template.characteristics";
-import { AvailableTemplate } from "@template/experiences/id/template.available";
-import { PreviewTemplate } from "@template/experiences/id/template.preview";
-import { ReviewsTemplate } from "@template/experiences/id/template.reviews";
-import { HostTemplate } from "@template/experiences/id/template.host";
-import { DescriptionTemplate } from "@template/experiences/id/template.description";
-import { KnowTemplate } from "@template/experiences/id/template.know";
+import { ExperiencesTemplate } from "./template.experiences";
+import { ParticipateTemplate } from "./template.participate";
+import { BringTemplate } from "./template.bring";
+import { CharacteristicsTemplate } from "./template.characteristics";
+import { AvailableTemplate } from "./template.available";
+import { PreviewTemplate } from "./template.preview";
+import { ReviewsTemplate } from "./template.reviews";
+import { HostTemplate } from "./template.host";
+import { DescriptionTemplate } from "./template.description";
+import { KnowTemplate } from "./template.know";
 
 export interface TemplateProps {
   extendsTo?: string;
@@ -23,7 +23,7 @@ export interface TemplateProps {
  */
 export const Template: React.FC<TemplateProps> = ({
   extendsTo = "",
-  variant = "auth",
+  variant = "experiences",
   children,
   onClick,
   to,
@@ -31,7 +31,7 @@ export const Template: React.FC<TemplateProps> = ({
   animate,
   ...props
 }) => {
-  const variants: { [key: string]: JSX.Element } = {
+  const variants: { [variant: string]: any } = {
     experiences: <ExperiencesTemplate {...props} />,
     participate: <ParticipateTemplate {...props} />,
     bring: <BringTemplate {...props} />,

@@ -1,11 +1,11 @@
 /** landing */
-import { ReviewsTemplate } from "@template/rooms/id/template.reviews";
-import { ArrangementsTemplate } from "@template/rooms/id/template.arrangements";
-import { AmenitiesTemplate } from "@template/rooms/id/template.amenities";
-import { KnowTemplate } from "@template/rooms/id/template.know";
-import { HostTemplate } from "@template/rooms/id/template.host";
-import { PreviewTemplate } from "@template/rooms/id/template.preview";
-import { OtherTemplate } from "@template/rooms/id/template.other";
+import { ReviewsTemplate } from "./template.reviews";
+import { ArrangementsTemplate } from "./template.arrangements";
+import { AmenitiesTemplate } from "./template.amenities";
+import { KnowTemplate } from "./template.know";
+import { HostTemplate } from "./template.host";
+import { PreviewTemplate } from "./template.preview";
+import { OtherTemplate } from "./template.other";
 import { DescriptionTemplate } from "./template.description";
 
 export interface TemplateProps {
@@ -22,7 +22,7 @@ export interface TemplateProps {
  */
 export const Template: React.FC<TemplateProps> = ({
   extendsTo = "",
-  variant = "auth",
+  variant = "reviews",
   children,
   onClick,
   to,

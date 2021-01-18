@@ -1,11 +1,11 @@
 /** layouts */
-import { InputLayout } from "@layout/layout.input";
-import { CreateLayout } from "@layout/layout.create";
-import { HomesLayout } from "@layout/section/layout.homes";
-import { LandingLayout } from "@layout/section/layout.landing";
-import { OnlineHostLayout } from "@layout/section/layout.onlinehost";
-import { CurrencyLayout } from "@layout/layout.currency";
-import { LocationLayout } from "@layout/modal/layout.location";
+import { InputLayout } from "./layout.input";
+import { CreateLayout } from "./layout.create";
+import { HomesLayout } from "./section/layout.homes";
+import { LandingLayout } from "./section/layout.landing";
+import { OnlineHostLayout } from "./section/layout.onlinehost";
+import { CurrencyLayout } from "./layout.currency";
+import { LocationLayout } from "./modal/layout.location";
 
 export interface LayoutProps {
   extendsTo?: string;

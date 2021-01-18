@@ -7,7 +7,7 @@ import font from "@styles/font.module.scss";
 import { Modal } from "@modal";
 import { Header } from "@header";
 
-export const BannerTemplate = () => {
+export const BannerTemplate: React.FC<{}> = () => {
   return (
     <div
       className={[space["p-b--64"]].join(" ")}

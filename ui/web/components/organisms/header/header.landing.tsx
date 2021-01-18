@@ -7,7 +7,6 @@ import styles from "@styles/index.module.scss";
 import layout from "@styles/layout.module.scss";
 import color from "@styles/color.module.scss";
 import shape from "@styles/shape.module.scss";
-import font from "@styles/font.module.scss";
 import header from "@header/header.module.scss";
 import animation from "@styles/animation.module.scss";
 import responsive from "@styles/responsive.module.scss";
@@ -17,22 +16,18 @@ import { Button } from "@button";
 import { Prototype as SearchbarPrototype } from "@prototype/searchbar";
 
 import { NameLogo, NoNameLogo } from "@svg/logo";
-
 import { useToggleDispatch, useToggleState } from "@context/toggle";
-
 import { Content } from "@button/content/content.transparent";
-
-/** hooks */
 import { useOnClickOutside } from "@hooks/useOnClickOutside";
 
 /**
  * Renders the transparent header
  */
-export const TransparentHeader: React.FC<{
-  category?: string;
-  setCategory?: (param: string) => void;
+export const LandingHeader: React.FC<{
+  category?: any;
+  setCategory?: any;
   data?: any;
-  criteria?: boolean;
+  criteria?: any;
 }> = ({ data, category, setCategory, criteria }) => {
   const toggleState = useToggleState();
   const searchbarRef = useRef();
@@ -46,7 +41,7 @@ export const TransparentHeader: React.FC<{
     setExpanded(!expanded);
   });
 
-  const types = {
+  const types: { [type: string]: { title: string; onClick: any } } = {
     stay: {
       title: "Places to stay",
       onClick: () => setCategory("stay"),
@@ -218,8 +213,8 @@ export const TransparentHeader: React.FC<{
                               {category === type && (
                                 <motion.div
                                   initial={{ width: 3 }}
-                                  animate={{ width: 15 }}
                                   style={{
+                                    width: 15,
                                     height: 2,
                                     backgroundColor: "white",
                                   }}
@@ -333,6 +328,7 @@ export const TransparentHeader: React.FC<{
                     // transition={{ type: "spring", stiffness: 30, duration: 0.03 }}
                     initial={{ width: 0, y: 50, opacity: 0 }}
                     animate={{ width: 240, y: 0, opacity: 1 }}
+                    // animate={{ width: 240, y: 0, opacity: 1 }}
                   >
                     <Button
                       variant="searchbar"

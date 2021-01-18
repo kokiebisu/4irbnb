@@ -1,7 +1,6 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Router from "next/router";
 
-/** styles **/
 import layout from "@styles/layout.module.scss";
 import index from "@styles/index.module.scss";
 import space from "@styles/space.module.scss";
@@ -10,17 +9,13 @@ import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
-/** components */
 import { Header } from "@header";
 import { Button } from "@button";
 
-/** hooks */
 import { useHandleScroll } from "@hooks/useHandleScroll";
 
-/** stories */
 import { Banner } from "@button/button.stories";
 
-/** helper */
 import { ResponsiveImage } from "@helper/img";
 
 /**

@@ -1,7 +1,5 @@
 /** styles */
 import space from "@styles/space.module.scss";
-import layout from "@styles/layout.module.scss";
-import index from "@styles/index.module.scss";
 import font from "@styles/font.module.scss";
 
 export const HomesLayout: React.FC<{

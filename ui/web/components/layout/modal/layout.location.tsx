@@ -7,7 +7,7 @@ import space from "@styles/space.module.scss";
 
 export const LocationLayout: React.FC<{
   title?: string;
-  content?: JSX.Element;
+  content?: any;
 }> = ({ title = "Recent Searches", content = <div>Content here</div> }) => {
   return (
     <div>
