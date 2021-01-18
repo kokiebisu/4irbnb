@@ -2,6 +2,7 @@
 import { BannerTemplate } from "@template/s/experiences/online/template.banner";
 import { CardsTemplate } from "@template/s/experiences/online/template.cards";
 import { StartingTemplate } from "@template/s/experiences/online/template.starting";
+import { CollectionsTemplate } from "./template.collections";
 
 export interface TemplateProps {
   extendsTo?: string;
@@ -29,6 +30,7 @@ export const Template: React.FC<TemplateProps> = ({
     banner: <BannerTemplate {...props} />,
     cards: <CardsTemplate {...props} />,
     starting: <StartingTemplate {...props} />,
+    collections: <CollectionsTemplate {...props} />,
   };
 
   return <div data-testid={`${variant}--template`}>{variants[variant]}</div>;

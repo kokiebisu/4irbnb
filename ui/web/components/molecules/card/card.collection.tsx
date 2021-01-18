@@ -8,12 +8,14 @@ import space from "@styles/space.module.scss";
 export const CollectionCard: React.FC<{
   label?: string;
   imgUrl?: string;
+  paddingTop?: number;
 }> = ({
   label = "Wellness in the New Year",
   imgUrl = "https://a0.muscache.com/im/pictures/67494b8d-129d-493b-94e7-6141b2b454e3.jpg?im_w=720",
+  paddingTop,
 }) => {
   return (
-    <div style={{ paddingTop: "60%", position: "relative" }}>
+    <div style={{ paddingTop: `${paddingTop}%`, position: "relative" }}>
       <div
         style={{
           position: "absolute",
