@@ -54,3 +54,13 @@
     }
   }
 }
+
+.destination__w {
+  width: 50%;
+  @media screen and (min-width: 728px) {
+    width: 33.333333%;
+  }
+  @media screen and (min-width: 1128px) {
+    width: 25%;
+  }
+}
