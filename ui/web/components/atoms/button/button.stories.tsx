@@ -278,3 +278,8 @@ export const Nearby = TemplateStory.bind({});
 Nearby.args = {
   variant: "nearby",
 };
+
+export const Destination = TemplateStory.bind({});
+Destination.args = {
+  variant: "destination",
+};
