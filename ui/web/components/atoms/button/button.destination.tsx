@@ -14,7 +14,13 @@ export const DestinationButton: React.FC<{
         </h4>
       </div>
       <div>
-        <h4 className={[font["size--14"], color["c--gray__0"]].join(" ")}>
+        <h4
+          className={[
+            font["size--14"],
+            color["c--gray__0"],
+            font["text--left"],
+          ].join(" ")}
+        >
           {location}
         </h4>
       </div>
