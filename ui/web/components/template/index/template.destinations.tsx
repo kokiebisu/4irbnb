@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Router from "next/router";
 import { motion } from "framer-motion";
 import layout from "@styles/layout.module.scss";
 import animation from "@styles/animation.module.scss";
@@ -13,11 +14,156 @@ import { Button } from "@button";
 export const DestinationsTemplate: React.FC<{}> = () => {
   const [selected, setSelected] = useState("artsCulture");
   const cities = {
-    artsCulture: [{ city: "New York", location: "New York" }],
-    outdoor: [{ city: "Phoenix", location: "Arizone" }],
-    cabins: [{ city: "Atlanta", location: "Georgia" }],
-    beach: [{ city: "Chicago", location: "Illinois" }],
-    popular: [{ city: "Chicago", location: "Illinois" }],
+    artsCulture: [
+      { city: "New York", location: "New York" },
+      { city: "Phoenix", location: "Arizona" },
+      { city: "Atlanta", location: "Georgia" },
+      { city: "Chicago", location: "Illinois" },
+      { city: "Miami", location: "Florida" },
+      { city: "San Diego", location: "California" },
+      { city: "San Francisco", location: "California" },
+      { city: "Nashville", location: "Tennessee" },
+      { city: "Seattle", location: "Washington" },
+      { city: "Boston", location: "Masssachusetts" },
+      { city: "Philadelphia", location: "Pennsylvania" },
+      { city: "Dallas", location: "Texas" },
+      { city: "Austin", location: "Texas" },
+      { city: "Washington", location: "District of Columbia" },
+      { city: "New Orleans", location: "Lousiana" },
+      {
+        city: "San Antonio",
+        location: "Texas",
+      },
+      { city: "Houston", location: "Texas" },
+      { city: "Los Angeles", location: "california" },
+      { city: "London", location: "United Kingdom" },
+      { city: "Paris", location: "France" },
+      { city: "Memphis", location: "Tennessee" },
+      { city: "Rome", location: "Italy" },
+      { city: "Barcelona", location: "Spain" },
+      { city: "Amsterdam", location: "Netherlands" },
+      { city: "Lexington", location: "Kentucky" },
+    ],
+    outdoor: [
+      { city: "New York", location: "New York" },
+      { city: "Phoenix", location: "Arizona" },
+      { city: "Atlanta", location: "Georgia" },
+      { city: "chicago", location: "Illinois" },
+      { city: "Miami", location: "Florida" },
+      { city: "San Diego", location: "California" },
+      { city: "San Francisco", location: "California" },
+      { city: "Nashville", location: "Tennessee" },
+      { city: "Seattle", location: "Washington" },
+      { city: "Boston", location: "Masssachusetts" },
+      { city: "Philadelphia", location: "Pennsylvania" },
+      { city: "Dallas", location: "Texas" },
+      { city: "Austin", location: "Texas" },
+      { city: "Washington", location: "District of Columbia" },
+      { city: "New Orleans", location: "Lousiana" },
+      {
+        city: "San Antonio",
+        location: "Texas",
+      },
+      { city: "Houston", location: "Texas" },
+      { city: "Los Angeles", location: "california" },
+      { city: "London", location: "United Kingdom" },
+      { city: "Paris", location: "France" },
+      { city: "Memphis", location: "Tennessee" },
+      { city: "Rome", location: "Italy" },
+      { city: "Barcelona", location: "Spain" },
+      { city: "Amsterdam", location: "Netherlands" },
+      { city: "Lexington", location: "Kentucky" },
+    ],
+    cabins: [
+      { city: "New York", location: "New York" },
+      { city: "Phoenix", location: "Arizona" },
+      { city: "Atlanta", location: "Georgia" },
+      { city: "chicago", location: "Illinois" },
+      { city: "Miami", location: "Florida" },
+      { city: "San Diego", location: "California" },
+      { city: "San Francisco", location: "California" },
+      { city: "Nashville", location: "Tennessee" },
+      { city: "Seattle", location: "Washington" },
+      { city: "Boston", location: "Masssachusetts" },
+      { city: "Philadelphia", location: "Pennsylvania" },
+      { city: "Dallas", location: "Texas" },
+      { city: "Austin", location: "Texas" },
+      { city: "Washington", location: "District of Columbia" },
+      { city: "New Orleans", location: "Lousiana" },
+      {
+        city: "San Antonio",
+        location: "Texas",
+      },
+      { city: "Houston", location: "Texas" },
+      { city: "Los Angeles", location: "california" },
+      { city: "London", location: "United Kingdom" },
+      { city: "Paris", location: "France" },
+      { city: "Memphis", location: "Tennessee" },
+      { city: "Rome", location: "Italy" },
+      { city: "Barcelona", location: "Spain" },
+      { city: "Amsterdam", location: "Netherlands" },
+      { city: "Lexington", location: "Kentucky" },
+    ],
+    beach: [
+      { city: "New York", location: "New York" },
+      { city: "Phoenix", location: "Arizona" },
+      { city: "Atlanta", location: "Georgia" },
+      { city: "chicago", location: "Illinois" },
+      { city: "Miami", location: "Florida" },
+      { city: "San Diego", location: "California" },
+      { city: "San Francisco", location: "California" },
+      { city: "Nashville", location: "Tennessee" },
+      { city: "Seattle", location: "Washington" },
+      { city: "Boston", location: "Masssachusetts" },
+      { city: "Philadelphia", location: "Pennsylvania" },
+      { city: "Dallas", location: "Texas" },
+      { city: "Austin", location: "Texas" },
+      { city: "Washington", location: "District of Columbia" },
+      { city: "New Orleans", location: "Lousiana" },
+      {
+        city: "San Antonio",
+        location: "Texas",
+      },
+      { city: "Houston", location: "Texas" },
+      { city: "Los Angeles", location: "california" },
+      { city: "London", location: "United Kingdom" },
+      { city: "Paris", location: "France" },
+      { city: "Memphis", location: "Tennessee" },
+      { city: "Rome", location: "Italy" },
+      { city: "Barcelona", location: "Spain" },
+      { city: "Amsterdam", location: "Netherlands" },
+      { city: "Lexington", location: "Kentucky" },
+    ],
+    popular: [
+      { city: "New York", location: "New York" },
+      { city: "Phoenix", location: "Arizona" },
+      { city: "Atlanta", location: "Georgia" },
+      { city: "chicago", location: "Illinois" },
+      { city: "Miami", location: "Florida" },
+      { city: "San Diego", location: "California" },
+      { city: "San Francisco", location: "California" },
+      { city: "Nashville", location: "Tennessee" },
+      { city: "Seattle", location: "Washington" },
+      { city: "Boston", location: "Masssachusetts" },
+      { city: "Philadelphia", location: "Pennsylvania" },
+      { city: "Dallas", location: "Texas" },
+      { city: "Austin", location: "Texas" },
+      { city: "Washington", location: "District of Columbia" },
+      { city: "New Orleans", location: "Lousiana" },
+      {
+        city: "San Antonio",
+        location: "Texas",
+      },
+      { city: "Houston", location: "Texas" },
+      { city: "Los Angeles", location: "california" },
+      { city: "London", location: "United Kingdom" },
+      { city: "Paris", location: "France" },
+      { city: "Memphis", location: "Tennessee" },
+      { city: "Rome", location: "Italy" },
+      { city: "Barcelona", location: "Spain" },
+      { city: "Amsterdam", location: "Netherlands" },
+      { city: "Lexington", location: "Kentucky" },
+    ],
   };
   const categories = [
     { name: "Desinations for arts & culture", value: "artsCulture" },
@@ -49,7 +195,16 @@ export const DestinationsTemplate: React.FC<{}> = () => {
         {cities[selected].map(({ city, location }, index) => {
           return (
             <div key={index} className={[template["destination__w"]].join(" ")}>
-              <Button variant="destination" city={city} location={location} />
+              <Button
+                variant="destination"
+                city={city}
+                location={location}
+                onClick={() =>
+                  Router.push(
+                    `/${city.toLowercase().split(" ").join("-")}/stays`
+                  )
+                }
+              />
             </div>
           );
         })}
