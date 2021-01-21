@@ -43,3 +43,8 @@ Online.argTypes = {
     control: "boolean",
   },
 };
+
+export const Destinations = TemplateStory.bind({});
+Destinations.args = {
+  variant: "destinations",
+};

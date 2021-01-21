@@ -11,3 +11,4 @@ export * from "./anywhere";
 export * from "./category";
 export * from "./footer";
 export * from "./hosts";
+export * from "./destination";
