@@ -14,7 +14,9 @@ import { Button } from "@button";
 
 export const DestinationsTemplate: React.FC<{
   items: { [type: string]: { city: String; location: String } };
-}> = ({ items = [] }) => {
+}> = ({
+  items = { artsCulture: [{ city: "City", location: "Location" }] },
+}) => {
   const [selected, setSelected] = useState("artsCulture");
 
   const categories = [
