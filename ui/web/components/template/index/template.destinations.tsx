@@ -13,7 +13,7 @@ import template from "./index.module.scss";
 import { Button } from "@button";
 
 export const DestinationsTemplate: React.FC<{
-  items: { [type: string]: { city: String; location: String } };
+  items?: { [type: string]: { city: String; location: String } };
 }> = ({
   items = { artsCulture: [{ city: "City", location: "Location" }] },
 }) => {
