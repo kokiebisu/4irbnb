@@ -8,7 +8,11 @@ import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 import shape from "@styles/shape.module.scss";
 
-import { categoryItems, anywhereItems } from "@airbnb/content";
+import {
+  categoryItems,
+  anywhereItems,
+  destinationItems,
+} from "@airbnb/content";
 
 import { nearbyItems } from "../data/nearby";
 
@@ -69,6 +73,13 @@ const LandingPage = ({ currentUser }) => {
               title="Join millions of hosts on Airbnb"
             >
               <Template variant="category" items={categoryItems} />
+            </Layout>
+            <Layout
+              variant="landing"
+              spread
+              title="Inspiration for future getaways"
+            >
+              <Template variant="destinations" items={destinationItems} />
             </Layout>
           </>
         ) : (

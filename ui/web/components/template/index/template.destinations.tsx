@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Router from "next/router";
 import { motion } from "framer-motion";
+
 import layout from "@styles/layout.module.scss";
 import animation from "@styles/animation.module.scss";
 import color from "@styles/color.module.scss";
@@ -11,160 +12,11 @@ import template from "./index.module.scss";
 
 import { Button } from "@button";
 
-export const DestinationsTemplate: React.FC<{}> = () => {
+export const DestinationsTemplate: React.FC<{
+  items: { [type: string]: { city: String; location: String } };
+}> = ({ items = [] }) => {
   const [selected, setSelected] = useState("artsCulture");
-  const cities = {
-    artsCulture: [
-      { city: "New York", location: "New York" },
-      { city: "Phoenix", location: "Arizona" },
-      { city: "Atlanta", location: "Georgia" },
-      { city: "Chicago", location: "Illinois" },
-      { city: "Miami", location: "Florida" },
-      { city: "San Diego", location: "California" },
-      { city: "San Francisco", location: "California" },
-      { city: "Nashville", location: "Tennessee" },
-      { city: "Seattle", location: "Washington" },
-      { city: "Boston", location: "Masssachusetts" },
-      { city: "Philadelphia", location: "Pennsylvania" },
-      { city: "Dallas", location: "Texas" },
-      { city: "Austin", location: "Texas" },
-      { city: "Washington", location: "District of Columbia" },
-      { city: "New Orleans", location: "Lousiana" },
-      {
-        city: "San Antonio",
-        location: "Texas",
-      },
-      { city: "Houston", location: "Texas" },
-      { city: "Los Angeles", location: "california" },
-      { city: "London", location: "United Kingdom" },
-      { city: "Paris", location: "France" },
-      { city: "Memphis", location: "Tennessee" },
-      { city: "Rome", location: "Italy" },
-      { city: "Barcelona", location: "Spain" },
-      { city: "Amsterdam", location: "Netherlands" },
-      { city: "Lexington", location: "Kentucky" },
-    ],
-    outdoor: [
-      { city: "New York", location: "New York" },
-      { city: "Phoenix", location: "Arizona" },
-      { city: "Atlanta", location: "Georgia" },
-      { city: "chicago", location: "Illinois" },
-      { city: "Miami", location: "Florida" },
-      { city: "San Diego", location: "California" },
-      { city: "San Francisco", location: "California" },
-      { city: "Nashville", location: "Tennessee" },
-      { city: "Seattle", location: "Washington" },
-      { city: "Boston", location: "Masssachusetts" },
-      { city: "Philadelphia", location: "Pennsylvania" },
-      { city: "Dallas", location: "Texas" },
-      { city: "Austin", location: "Texas" },
-      { city: "Washington", location: "District of Columbia" },
-      { city: "New Orleans", location: "Lousiana" },
-      {
-        city: "San Antonio",
-        location: "Texas",
-      },
-      { city: "Houston", location: "Texas" },
-      { city: "Los Angeles", location: "california" },
-      { city: "London", location: "United Kingdom" },
-      { city: "Paris", location: "France" },
-      { city: "Memphis", location: "Tennessee" },
-      { city: "Rome", location: "Italy" },
-      { city: "Barcelona", location: "Spain" },
-      { city: "Amsterdam", location: "Netherlands" },
-      { city: "Lexington", location: "Kentucky" },
-    ],
-    cabins: [
-      { city: "New York", location: "New York" },
-      { city: "Phoenix", location: "Arizona" },
-      { city: "Atlanta", location: "Georgia" },
-      { city: "chicago", location: "Illinois" },
-      { city: "Miami", location: "Florida" },
-      { city: "San Diego", location: "California" },
-      { city: "San Francisco", location: "California" },
-      { city: "Nashville", location: "Tennessee" },
-      { city: "Seattle", location: "Washington" },
-      { city: "Boston", location: "Masssachusetts" },
-      { city: "Philadelphia", location: "Pennsylvania" },
-      { city: "Dallas", location: "Texas" },
-      { city: "Austin", location: "Texas" },
-      { city: "Washington", location: "District of Columbia" },
-      { city: "New Orleans", location: "Lousiana" },
-      {
-        city: "San Antonio",
-        location: "Texas",
-      },
-      { city: "Houston", location: "Texas" },
-      { city: "Los Angeles", location: "california" },
-      { city: "London", location: "United Kingdom" },
-      { city: "Paris", location: "France" },
-      { city: "Memphis", location: "Tennessee" },
-      { city: "Rome", location: "Italy" },
-      { city: "Barcelona", location: "Spain" },
-      { city: "Amsterdam", location: "Netherlands" },
-      { city: "Lexington", location: "Kentucky" },
-    ],
-    beach: [
-      { city: "New York", location: "New York" },
-      { city: "Phoenix", location: "Arizona" },
-      { city: "Atlanta", location: "Georgia" },
-      { city: "chicago", location: "Illinois" },
-      { city: "Miami", location: "Florida" },
-      { city: "San Diego", location: "California" },
-      { city: "San Francisco", location: "California" },
-      { city: "Nashville", location: "Tennessee" },
-      { city: "Seattle", location: "Washington" },
-      { city: "Boston", location: "Masssachusetts" },
-      { city: "Philadelphia", location: "Pennsylvania" },
-      { city: "Dallas", location: "Texas" },
-      { city: "Austin", location: "Texas" },
-      { city: "Washington", location: "District of Columbia" },
-      { city: "New Orleans", location: "Lousiana" },
-      {
-        city: "San Antonio",
-        location: "Texas",
-      },
-      { city: "Houston", location: "Texas" },
-      { city: "Los Angeles", location: "california" },
-      { city: "London", location: "United Kingdom" },
-      { city: "Paris", location: "France" },
-      { city: "Memphis", location: "Tennessee" },
-      { city: "Rome", location: "Italy" },
-      { city: "Barcelona", location: "Spain" },
-      { city: "Amsterdam", location: "Netherlands" },
-      { city: "Lexington", location: "Kentucky" },
-    ],
-    popular: [
-      { city: "New York", location: "New York" },
-      { city: "Phoenix", location: "Arizona" },
-      { city: "Atlanta", location: "Georgia" },
-      { city: "chicago", location: "Illinois" },
-      { city: "Miami", location: "Florida" },
-      { city: "San Diego", location: "California" },
-      { city: "San Francisco", location: "California" },
-      { city: "Nashville", location: "Tennessee" },
-      { city: "Seattle", location: "Washington" },
-      { city: "Boston", location: "Masssachusetts" },
-      { city: "Philadelphia", location: "Pennsylvania" },
-      { city: "Dallas", location: "Texas" },
-      { city: "Austin", location: "Texas" },
-      { city: "Washington", location: "District of Columbia" },
-      { city: "New Orleans", location: "Lousiana" },
-      {
-        city: "San Antonio",
-        location: "Texas",
-      },
-      { city: "Houston", location: "Texas" },
-      { city: "Los Angeles", location: "california" },
-      { city: "London", location: "United Kingdom" },
-      { city: "Paris", location: "France" },
-      { city: "Memphis", location: "Tennessee" },
-      { city: "Rome", location: "Italy" },
-      { city: "Barcelona", location: "Spain" },
-      { city: "Amsterdam", location: "Netherlands" },
-      { city: "Lexington", location: "Kentucky" },
-    ],
-  };
+
   const categories = [
     { name: "Desinations for arts & culture", value: "artsCulture" },
     { name: "Destinations for outdoor adventure", value: "outdoor" },
@@ -192,7 +44,7 @@ export const DestinationsTemplate: React.FC<{}> = () => {
         style={{ height: 1 }}
       />
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {cities[selected].map(({ city, location }, index) => {
+        {items[selected].map(({ city, location }, index) => {
           return (
             <div key={index} className={[template["destination__w"]].join(" ")}>
               <Button
@@ -201,7 +53,7 @@ export const DestinationsTemplate: React.FC<{}> = () => {
                 location={location}
                 onClick={() =>
                   Router.push(
-                    `/${city.toLowercase().split(" ").join("-")}/stays`
+                    `/${city.toLowerCase().split(" ").join("-")}/stays`
                   )
                 }
               />
