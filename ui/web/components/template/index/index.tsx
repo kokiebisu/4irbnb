@@ -1,9 +1,9 @@
-/** landing */
 import { CategoryTemplate } from "./template.category";
 import { NearbyTemplate } from "./template.nearby";
 import { BannerTemplate } from "./template.banner";
 import { OnlineTemplate } from "./template.online";
 import { AnywhereTemplate } from "./template.anywhere";
+import { DestinationsTemplate } from "./template.destinations";
 
 export interface TemplateProps {
   extendsTo?: string;
@@ -33,6 +33,7 @@ export const Template: React.FC<TemplateProps> = ({
     banner: <BannerTemplate {...props} />,
     online: <OnlineTemplate {...props} />,
     anywhere: <AnywhereTemplate {...props} />,
+    destinations: <DestinationsTemplate {...props} />,
   };
 
   return (
