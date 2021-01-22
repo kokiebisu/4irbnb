@@ -1,16 +1,15 @@
 import { useFormik } from "formik";
 
-/** styles **/
 import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 
-/** components */
 import { Input } from "@input";
 import { Button } from "@button";
 import { Bullet } from "@bullet";
 
-/** Helpers */
 import { validateForgotPassword as validate } from "@helper/auth";
+
+import * as bulletVariant from "@bullet/variants";
 
 /**
  * Renders the login template component
@@ -57,7 +56,10 @@ export const ForgotPasswordPrototype: React.FC<{}> = () => {
               <div>
                 {formik.errors.email !== undefined && (
                   <div className={[space["m-t--6"]].join(" ")}>
-                    <Bullet variant="required" message={formik.errors.email} />
+                    <Bullet
+                      variant={bulletVariant.REQUIRED}
+                      message={formik.errors.email}
+                    />
                   </div>
                 )}
               </div>

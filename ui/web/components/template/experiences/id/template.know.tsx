@@ -1,10 +1,6 @@
-/** styles */
 import font from "@styles/font.module.scss";
 import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
-
-/** components */
-import { Bullet } from "@bullet";
 
 /**
  * Renders the know section

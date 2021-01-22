@@ -1,4 +1,3 @@
-/** styles **/
 import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 import font from "@styles/font.module.scss";
@@ -6,13 +5,13 @@ import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
-/** vectors */
 import { Heart } from "@svg/original";
 
-/** components */
 import { Bullet } from "@bullet";
 import { ImageSlider } from "@particle/image.slider";
 import { Card } from "@card";
+
+import * as bulletVariant from "@bullet/variants";
 
 /**
  * Renders the stay card component
@@ -177,7 +176,7 @@ export const StayCard: React.FC<{
                   </div>
                 </div>
                 <div>
-                  <Bullet variant="rating" />
+                  <Bullet variant={bulletVariant.RATING} />
                 </div>
               </div>
             </div>

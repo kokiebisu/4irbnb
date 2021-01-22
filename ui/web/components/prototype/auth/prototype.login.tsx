@@ -2,28 +2,24 @@ import { useState } from "react";
 import { useFormik } from "formik";
 import Router from "next/router";
 
-/** contexts */
 import { useAuthDispatch, useAuthState } from "@context/auth";
 
-/** styles **/
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 
-/** components */
 import { Input } from "@input";
 import { Button } from "@button";
 import { Bullet } from "@bullet";
 import { Card } from "@card";
 
-/** Helper */
 import { validateLogin as validate } from "@helper/auth";
 
-/** hooks */
 import { usePost } from "@hooks/usePost";
 
-/** stories */
 import { Underline } from "@button/button.stories";
+
+import * as bulletVariant from "@bullet/variants";
 
 /**
  * Renders the login template component
@@ -101,14 +97,20 @@ export const LoginTemplate: React.FC<{}> = () => {
           <div>
             {formik.errors.email !== undefined && (
               <div className={[space["m-t--6"]].join(" ")}>
-                <Bullet variant="required" message={formik.errors.email} />
+                <Bullet
+                  variant={bulletVariant.REQUIRED}
+                  message={formik.errors.email}
+                />
               </div>
             )}
           </div>
           <div>
             {formik.errors.password !== undefined && (
               <div className={[space["m-t--6"]].join(" ")}>
-                <Bullet variant="required" message={formik.errors.password} />
+                <Bullet
+                  variant={bulletVariant.REQUIRED}
+                  message={formik.errors.password}
+                />
               </div>
             )}
           </div>

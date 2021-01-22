@@ -1,10 +1,10 @@
-/** components */
 import { Bullet } from "@bullet";
 
-/** styles **/
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
+
+import * as bulletVariant from "@bullet/variants";
 
 /**
  * Renders the /become-a-host/requirements page content
@@ -32,7 +32,7 @@ export const RequirementsCreate: React.FC<{}> = () => {
           (content, index) => {
             return (
               <div key={index} className={[space["m-b--8"]].join(" ")}>
-                <Bullet variant="check" title={content} />
+                <Bullet variant={bulletVariant.CHECK} title={content} />
               </div>
             );
           }
@@ -55,7 +55,7 @@ export const RequirementsCreate: React.FC<{}> = () => {
       ].map((content, index) => {
         return (
           <div key={index} className={[space["m-b--8"]].join(" ")}>
-            <Bullet variant="check" title={content} />
+            <Bullet variant={bulletVariant.CHECK} title={content} />
           </div>
         );
       })}
