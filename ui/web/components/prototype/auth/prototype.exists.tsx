@@ -2,25 +2,22 @@ import { useState } from "react";
 import Router from "next/router";
 import { useFormik } from "formik";
 
-/** components */
 import { Bullet } from "@bullet";
 import { Button } from "@button";
 import { Input } from "@input";
 
-/** Helpers */
 import { validateExists as validate } from "@helper/auth";
 
-/** hooks */
 import { usePost } from "@hooks/usePost";
 
-/** styles **/
 import space from "@styles/space.module.scss";
 import shape from "@styles/shape.module.scss";
 import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 
-/** stories */
 import { Underline } from "@button/button.stories";
+
+import * as bulletVariant from "@bullet/variants";
 
 export const ExistsPrototype: React.FC<{
   data?: {
@@ -106,7 +103,10 @@ export const ExistsPrototype: React.FC<{
         <div>
           {formik.errors.password !== undefined && (
             <div className={[space["m-t--6"]].join(" ")}>
-              <Bullet variant="required" message={formik.errors.password} />
+              <Bullet
+                variant={bulletVariant.REQUIRED}
+                message={formik.errors.password}
+              />
             </div>
           )}
         </div>

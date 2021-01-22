@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-/** styles **/
 import color from "@styles/color.module.scss";
 import font from "@styles/font.module.scss";
 import space from "@styles/space.module.scss";
@@ -8,15 +7,14 @@ import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 import section from "@template/index.module.scss";
 
-/** components */
 import { Button } from "@button";
 import { Bullet } from "@bullet";
 
-/** vectors */
 import { Shield } from "@svg/original";
 
-/** stories */
 import { Border } from "@button/button.stories";
+
+import * as bulletVariant from "@bullet/variants";
 
 /**
  * Modifies the content which should be displayed initially
@@ -154,7 +152,7 @@ export const HostTemplate: React.FC<{
                   ].join(" ")}
                 >
                   <Bullet
-                    variant="host"
+                    variant={bulletVariant.HOST}
                     categoryType="review"
                     total={numberOfReviews}
                   />
@@ -167,7 +165,10 @@ export const HostTemplate: React.FC<{
                       space["p-r--4"],
                     ].join(" ")}
                   >
-                    <Bullet variant="host" categoryType="verified" />
+                    <Bullet
+                      variant={bulletVariant.HOST}
+                      categoryType="verified"
+                    />
                   </div>
                 )}
                 {layoutType === "room" && isSuperhost && (
@@ -178,7 +179,10 @@ export const HostTemplate: React.FC<{
                       space["p-r--4"],
                     ].join(" ")}
                   >
-                    <Bullet variant="host" categoryType="superhost" />
+                    <Bullet
+                      variant={bulletVariant.HOST}
+                      categoryType="superhost"
+                    />
                   </div>
                 )}
               </div>

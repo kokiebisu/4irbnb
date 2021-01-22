@@ -1,18 +1,16 @@
-/** styles **/
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import shape from "@styles/shape.module.scss";
 
-/** components */
 import { Bullet } from "@bullet";
 
-/** vectors */
 import { DevicesInverse, Star } from "@svg/original";
 
-/** styles **/
 import section from "@template/index.module.scss";
+
+import * as bulletVariant from "@bullet/variants";
 
 /**
  * Renders the characteristics of the room/experience
@@ -197,26 +195,26 @@ export const CharacteristicsTemplate: React.FC<{
         >
           <Bullet
             extendsTo={[space["m-t--24"]].join(" ")}
-            variant="characteristic"
+            variant={bulletVariant.CHARACTERISTIC}
             characteristic="time"
             time={characteristics["time"]}
           />
           <Bullet
             extendsTo={[space["m-t--24"]].join(" ")}
-            variant="characteristic"
+            variant={bulletVariant.CHARACTERISTIC}
             characteristic="devices"
             devices={characteristics["devices"].join(", ")}
           />
           <Bullet
             extendsTo={[space["m-t--24"]].join(" ")}
-            variant="characteristic"
+            variant={bulletVariant.CHARACTERISTIC}
             characteristic="people"
             people={characteristics["people"]}
             private={characteristics["group"]}
           />
           <Bullet
             extendsTo={[space["m-t--24"]].join(" ")}
-            variant="characteristic"
+            variant={bulletVariant.CHARACTERISTIC}
             characteristic="language"
             languages={characteristics["languages"].join(", ")}
           />

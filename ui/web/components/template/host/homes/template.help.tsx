@@ -1,11 +1,10 @@
-/** components */
 import { Bullet } from "@bullet";
 
-/** styles */
-import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";
 import space from "@styles/space.module.scss";
 import responsive from "@styles/responsive.module.scss";
+
+import * as bulletVariant from "@bullet/variants";
 
 /**
  * Renders the help section
@@ -24,7 +23,7 @@ export const HelpTemplate: React.FC<{}> = () => {
           {helps.map((help, index) => {
             return (
               <div key={index} className={[space["m-b--24"]].join(" ")}>
-                <Bullet variant="help" help={help} />
+                <Bullet variant={bulletVariant.HELP} help={help} />
               </div>
             );
           })}
