@@ -6,10 +6,17 @@ jobs:
       - image: circleci/node:10
     steps:
       - checkout:
-          path: ~/airbnb
+          # path: ~/airbnb
+          - git fetch --all
+
+      - restore_cache:
+          keys:
+            - yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - yarn-packages-v1-{{ .Branch }}-
+            - yarn-packages-v1-
       - run:
           name: Install dependencies
-          command: yarn
+          command: yarn install --freeze-lockfile
       - run:
           name: Testing
           command: yarn test:ci
