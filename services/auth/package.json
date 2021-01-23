@@ -5,7 +5,7 @@
   "main": "build/index",
   "scripts": {
     "clean": "rm -rf ./build",
-    "build": "yarn clean && tsc",
+    "build": "yarn clean && tsc --build tsconfig.json",
     "start": "node ./build/index.js",
     "dev": "ts-node-dev --poll src/index.ts",
     "test": "jest --watchAll --no-cache",

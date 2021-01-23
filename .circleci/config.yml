@@ -51,10 +51,15 @@ aliases:
         - node_modules
       key: dependencies-cache-{{ checksum "yarn.lock" }}
 
+  - &install
+    run:
+      name: Install dependencies
+      command: yarn
+
   - &build
     run:
       name: Build package
-      command: yarn
+      command: yarn build
 
   - &test
     run:
@@ -62,15 +67,6 @@ aliases:
       command: yarn test:ci
 
 commands:
-  install:
-    steps:
-    
-  prepare:
-    steps:
-      - checkout:
-          path: ~/airbnb
-      - *install_typescript_globally
-
   build:
     steps:
       - checkout:
@@ -87,15 +83,6 @@ jobs:
   test-auth:
     docker:
       - image: circleci/node:10
-    
-    working_directory: ~/airbnb
-    steps:
-      - prepare
-
-    working_directory: ~/airbnb/services/error
-    steps:
-      - prepare
-      - build
 
     working_directory: ~/airbnb/services/auth
     steps:
