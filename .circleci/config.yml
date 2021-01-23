@@ -67,6 +67,12 @@ aliases:
       command: yarn test:ci
 
 commands:
+  install:
+    steps:
+      - checkout:
+          path: ~/airbnb
+      - *install
+
   build:
     steps:
       - checkout:
@@ -86,6 +92,7 @@ jobs:
 
     working_directory: ~/airbnb/services/auth
     steps:
+      - install
       - build
       - test
 
