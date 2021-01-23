@@ -86,7 +86,7 @@ jobs:
 
     working_directory: ~/airbnb/services/auth
     steps:
-      - prepare
+      - build
       - test
 
 workflows:
