@@ -1,3 +1,5 @@
+version: 2.1
+
 aliases:
   - &docker-image
     docker:
@@ -60,22 +62,16 @@ aliases:
       command: yarn test:ci
 
 commands:
-  save-build-flag:
-    steps:
-      - run:
-          name: Create build flag
-          command: touch build.flag
-      - save_cache:
-          paths:
-            - build.flag
-          key: build-flag-{{ checksum "package.json" }}
-
   prepare:
     steps:
+      - checkout:
+          path: ~/airbnb
       - *build
 
   test:
     steps:
+      - checkout:
+          path: ~/airbnb
       - *test
 
 jobs:
