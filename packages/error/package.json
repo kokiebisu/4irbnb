@@ -4,11 +4,16 @@
   "main": "build/index",
   "license": "MIT",
   "scripts": {
-    "clean": "del ./build/*",
+    "clean": "rm -rf build/",
     "build": "yarn clean && tsc"
   },
   "devDependencies": {
-    "del-cli": "^3.0.1",
     "typescript": "^4.1.3"
+  },
+  "private": true,
+  "workspaces": {
+    "nohoist": [
+      "**"
+    ]
   }
 }

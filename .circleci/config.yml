@@ -1,230 +1,87 @@
-version: 2
+aliases:
+  - &docker-image
+    docker:
+      - image: circleci/node:10
+
+  - &install_typescript_globally
+    run:
+      name: Install Typescript Globally
+      command: yarn global add typescript
+
+  - &deploy
+    run:
+      name: Deploy
+      command: yarn deploy
+
+  - &deploy_production_filters
+    filters:
+      branches:
+        only: master
+
+  - &restore-build-flag
+    restore_cache:
+      keys:
+        - build-flag-{{ checksum "package.json" }}
+
+  - &generate-lock-file
+    run:
+      name: Generate lock file
+      command: yarn generate-lock-entry >> yarn.lock
+
+  - &test-build-flag
+    run:
+      name: Exit if build flag exists
+      command: |
+        FILE=build.flag
+        if test -f "$FILE"; then
+            echo "$FILE exist"
+            circleci step halt
+        fi
+
+  - &restore-cache
+    restore_cache:
+      keys:
+        - dependencies-cache-{{ checksum "yarn.lock" }}
+
+  - &save-cache
+    save_cache:
+      paths:
+        - node_modules
+      key: dependencies-cache-{{ checksum "yarn.lock" }}
+
+  - &build
+    run: 
+      name: Build package
+      command: yarn
+
+  - &test
+    run:
+      name: Test
+      command: yarn test:ci
+
+
+commands:
+  save-build-flag:
+    steps:
+      - run:
+          name: Create build flag
+          command: touch build.flag
+      - save_cache:
+          paths:
+            - build.flag
+          key: build-flag-{{ checksum "package.json" }}
+
+  prepare:
+    steps:
+      - *build
+      
+
 jobs:
   test-auth:
-    working_directory: ~/airbnb/packages/middleware
-    docker:
-      - image: circleci/node:10
+    - *docker-image
+
+    working_directory: ~/airbnb/services/auth
+
     steps:
-      - checkout:
-          # path: ~/airbnb
-          - git fetch --all
-
-      - restore_cache:
-          keys:
-            - yarn-packages-v1-{{ .Branch }}-{{ checksum "yarn.lock" }}
-            - yarn-packages-v1-{{ .Branch }}-
-            - yarn-packages-v1-
-      - run:
-          name: Install dependencies
-          command: yarn install --freeze-lockfile
-      - run:
-          name: Testing
-          command: yarn test:ci
-
-  push-prod-auth:
-    working_directory: ~/airbnb
-    machine: true
-    steps:
-      - checkout:
-          path: ~/airbnb
-      - run:
-          name: building auth image
-          command: docker build -t kokiebisu/nextbnb-auth -f ./services/auth/Dockerfile .
-      - run:
-          name: Log in
-          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
-      - run:
-          name: Pushing to docker hub
-          command: docker push kokiebisu/nextbnb-auth
-
-  push-dev-auth:
-    working_directory: ~/airbnb
-    machine: true
-    steps:
-      - checkout:
-          path: ~/airbnb
-      - run:
-          name: building auth image
-          command: docker build -t kokiebisu/nextbnb-auth-dev -f ./services/auth/dev.Dockerfile .
-      - run:
-          name: Log in
-          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
-      - run:
-          name: Pushing to docker hub
-          command: docker push kokiebisu/nextbnb-auth-dev
-
-  test-stays:
-    working_directory: ~/airbnb/services/stays
-    docker:
-      - image: circleci/node:10
-    steps:
-      - checkout:
-          path: ~/airbnb
-      - run:
-          name: Install dependencies
-          command: yarn
-      - run:
-          name: List
-          command: ls -a
-      - run:
-          name: Testing
-          command: yarn test:stays
-
-  push-prod-stays:
-    working_directory: ~/airbnb
-    machine: true
-    steps:
-      - checkout:
-          path: ~/airbnb
-      - run:
-          name: building stays image
-          command: docker build -t kokiebisu/nextbnb-stays -f ./services/stays/Dockerfile .
-      - run:
-          name: Log in
-          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
-      - run:
-          name: Pushing to docker hub
-          command: docker push kokiebisu/nextbnb-stays
-
-  push-dev-stays:
-    working_directory: ~/airbnb
-    machine: true
-    steps:
-      - checkout:
-          path: ~/airbnb
-      - run:
-          name: building stays image
-          command: docker build -t kokiebisu/nextbnb-stays-dev -f ./services/stays/dev.Dockerfile .
-      - run:
-          name: Log in
-          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
-      - run:
-          name: Pushing to docker hub
-          command: docker push kokiebisu/nextbnb-stays-dev
-
-  test-web:
-    working_directory: ~/airbnb/ui/web
-    docker:
-      - image: circleci/node:10
-    steps:
-      - checkout:
-          path: ~/airbnb
-      - run:
-          name: Installing dependencies
-          command: yarn
-
-  storybook:
-    working_directory: ~/airbnb/ui/web
-    docker:
-      - image: circleci/node:10
-    steps:
-      - checkout:
-          path: ~/airbnb
-      - run:
-          name: Installing dependencies
-          command: yarn install
-      - run:
-          name: Testing snapshot
-          command: yarn snapshot
-      - run:
-          name: Comparing snapshots
-          command: npx chromatic --project-token=e017nqnn22h --exit-zero-on-changes
-
-  push-prod-web:
-    working_directory: ~/airbnb
-    machine: true
-    steps:
-      - checkout:
-          path: ~/airbnb
-      - run:
-          name: Building web image
-          command: docker build -t kokiebisu/nextbnb-web -f ./ui/web/Dockerfile .
-      - run:
-          name: Log in
-          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
-      - run:
-          name: Pushing to docker hub
-          command: docker push kokiebisu/nextbnb-web
-
-  push-dev-web:
-    working_directory: ~/airbnb
-    machine: true
-    steps:
-      - checkout:
-          path: ~/airbnb
-      - run:
-          name: Building web image
-          command: docker build -t kokiebisu/nextbnb-web-dev -f ./ui/web/dev.Dockerfile .
-      - run:
-          name: Log in
-          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
-      - run:
-          name: Pushing to docker hub
-          command: docker push kokiebisu/nextbnb-web-dev
-
-workflows:
-  version: 2
-  auth:
-    jobs:
-      - test-auth:
-          filters:
-            branches:
-              ignore:
-                - develop
-      - push-dev-auth:
-          requires:
-            - test-auth
-          filters:
-            branches:
-              ignore:
-                - develop
-      - push-prod-auth:
-          filters:
-            branches:
-              only:
-                - develop
-  stays:
-    jobs:
-      - test-stays:
-          filters:
-            branches:
-              ignore:
-                - develop
-      - push-dev-stays:
-          requires:
-            - test-stays
-          filters:
-            branches:
-              ignore:
-                - develop
-      - push-prod-stays:
-          filters:
-            branches:
-              only:
-                - develop
-  web:
-    jobs:
-      - test-web:
-          filters:
-            branches:
-              ignore:
-                - develop
-      - storybook:
-          filters:
-            branches:
-              only:
-                - storybook
-              ignore:
-                - develop
-      - push-dev-web:
-          requires:
-            - test-web
-          filters:
-            branches:
-              ignore:
-                - develop
-      - push-prod-web:
-          filters:
-            branches:
-              only:
-                - develop
+      - prepare
+      - *test
