@@ -50,7 +50,7 @@ aliases:
       key: dependencies-cache-{{ checksum "yarn.lock" }}
 
   - &build
-    run: 
+    run:
       name: Build package
       command: yarn
 
@@ -58,7 +58,6 @@ aliases:
     run:
       name: Test
       command: yarn test:ci
-
 
 commands:
   save-build-flag:
@@ -74,17 +73,21 @@ commands:
   prepare:
     steps:
       - *build
-      
+
+  test:
+    steps:
+      - *test
 
 jobs:
   test-auth:
-    - *docker-image
+    docker:
+      - image: circleci/node:10
 
     working_directory: ~/airbnb/services/auth
 
     steps:
       - prepare
-      - *test
+      - test
 
 workflows:
   version: 2
