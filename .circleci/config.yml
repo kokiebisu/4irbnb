@@ -85,3 +85,9 @@ jobs:
     steps:
       - prepare
       - *test
+
+workflows:
+  version: 2
+  auth-service:
+    jobs:
+      - test-auth
