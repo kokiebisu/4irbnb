@@ -62,7 +62,16 @@ aliases:
       command: yarn test:ci
 
 commands:
+  install:
+    steps:
+    
   prepare:
+    steps:
+      - checkout:
+          path: ~/airbnb
+      - *install_typescript_globally
+
+  build:
     steps:
       - checkout:
           path: ~/airbnb
@@ -78,9 +87,17 @@ jobs:
   test-auth:
     docker:
       - image: circleci/node:10
+    
+    working_directory: ~/airbnb
+    steps:
+      - prepare
+
+    working_directory: ~/airbnb/services/error
+    steps:
+      - prepare
+      - build
 
     working_directory: ~/airbnb/services/auth
-
     steps:
       - prepare
       - test
