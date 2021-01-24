@@ -1,13 +1,13 @@
-/** styles */
 import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 import font from "@styles/font.module.scss";
 import animation from "@styles/animation.module.scss";
 
-/** vectors */
 import { Button } from "@button";
 import { useToggleDispatch } from "@context/toggle";
+
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the Searchbar
@@ -117,7 +117,7 @@ export const SearchBar: React.FC<{
             </div>
             <div>
               <Button
-                variant="search"
+                variant={buttonVariant.SEARCH}
                 onClick={() => alert("hello")}
                 expand={selected}
               />
@@ -200,7 +200,7 @@ export const SearchBar: React.FC<{
             </div>
             <div>
               <Button
-                variant="search"
+                variant={buttonVariant.SEARCH}
                 onClick={() => alert("hello")}
                 expand={selected}
               />

@@ -1,14 +1,9 @@
-import React from "react";
-
-/** components */
 import { Button } from "@button";
 
-/** styles */
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
-import color from "@styles/color.module.scss";
-import animation from "@styles/animation.module.scss";
-import shape from "@styles/shape.module.scss";
+
+import * as buttonVariant from "@button/variants";
 
 /**
  * Layout for Currency modal
@@ -37,36 +32,14 @@ export const CurrencyLayout: React.FC<{
         {items?.map(({ name, abbreviation, symbol }, index) => {
           return (
             <div key={index}>
-              <Button extendsTo={[font["text--left"]].join(" ")} block>
-                <div
-                  className={[
-                    space["p--12"],
-                    shape["br--8"],
-                    animation["hover-background--white__1"],
-                  ].join(" ")}
-                >
-                  <div>
-                    <p
-                      className={[font["size--14"], color["c--black"]].join(
-                        " "
-                      )}
-                    >
-                      {name}
-                    </p>
-                  </div>
-                  <div>
-                    <p
-                      className={[font["size--14"], color["c--gray__1"]].join(
-                        " "
-                      )}
-                    >
-                      <span>{abbreviation}</span>
-                      <span> - </span>
-                      <span>{symbol}</span>
-                    </p>
-                  </div>
-                </div>
-              </Button>
+              <Button
+                extendsTo={[font["text--left"]].join(" ")}
+                variant={buttonVariant.CURRENCY}
+                name={name}
+                abbreviation={abbreviation}
+                symbol={symbol}
+                block
+              />
             </div>
           );
         })}

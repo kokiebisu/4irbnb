@@ -2,28 +2,25 @@ import { useState } from "react";
 import { useFormik } from "formik";
 import Router from "next/router";
 
-/** contexts */
 import { useAuthDispatch, useAuthState } from "@context/auth";
 
-/** styles **/
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 
-/** components */
 import { Input } from "@input";
 import { Button } from "@button";
 import { Bullet } from "@bullet";
 import { Card } from "@card";
 
-/** Helper */
 import { validateLogin as validate } from "@helper/auth";
 
-/** hooks */
 import { usePost } from "@hooks/usePost";
 
-/** stories */
 import { Underline } from "@button/button.stories";
+
+import * as bulletVariant from "@bullet/variants";
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the login template component
@@ -101,14 +98,20 @@ export const LoginTemplate: React.FC<{}> = () => {
           <div>
             {formik.errors.email !== undefined && (
               <div className={[space["m-t--6"]].join(" ")}>
-                <Bullet variant="required" message={formik.errors.email} />
+                <Bullet
+                  variant={bulletVariant.REQUIRED}
+                  message={formik.errors.email}
+                />
               </div>
             )}
           </div>
           <div>
             {formik.errors.password !== undefined && (
               <div className={[space["m-t--6"]].join(" ")}>
-                <Bullet variant="required" message={formik.errors.password} />
+                <Bullet
+                  variant={bulletVariant.REQUIRED}
+                  message={formik.errors.password}
+                />
               </div>
             )}
           </div>
@@ -119,18 +122,23 @@ export const LoginTemplate: React.FC<{}> = () => {
           )}
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
-          <Button variant="primary" title="Log in" loading={loading} block />
+          <Button
+            variant={buttonVariant.PRIMARY}
+            title="Log in"
+            loading={loading}
+            block
+          />
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
           <Button
-            {...Underline.args}
+            variant={buttonVariant.UNDERLINE}
             title="Forgot password?"
             onClick={redirectTo}
           />
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
           <Button
-            {...Underline.args}
+            variant={buttonVariant.UNDERLINE}
             title="More login options"
             onClick={switchBack}
           />
@@ -139,7 +147,11 @@ export const LoginTemplate: React.FC<{}> = () => {
           <p className={[font["size--14"], space["m-r--8"]].join(" ")}>
             Don't have an account?
           </p>
-          <Button {...Underline.args} title="Sign up" onClick={switchAuth} />
+          <Button
+            variant={buttonVariant.UNDERLINE}
+            title="Sign up"
+            onClick={switchAuth}
+          />
         </div>
       </form>
     </div>

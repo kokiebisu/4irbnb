@@ -1,9 +1,9 @@
-/** components */
 import { Bullet } from "@bullet";
 
-/** styles */
 import font from "@styles/font.module.scss";
 import space from "@styles/space.module.scss";
+
+import * as bulletVariant from "@bullet/variants";
 
 /**
  * Renders the experiences section
@@ -27,7 +27,10 @@ export const ExperiencesTemplate: React.FC<{}> = () => {
         {experiences.map((experience, index) => {
           return (
             <div key={index}>
-              <Bullet variant="experience" experience={experience} />
+              <Bullet
+                variant={bulletVariant.EXPERIENCE}
+                experience={experience}
+              />
             </div>
           );
         })}

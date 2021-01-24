@@ -1,17 +1,16 @@
-/** styles */
 import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 
-/** components */
 import { Button } from "@button";
 import { Prototype as AuthPrototype } from "@prototype/auth";
 
-/** contexts */
 import { useToggleDispatch } from "@context/toggle";
 import { useAuthDispatch, useAuthState } from "@context/auth";
+
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the auth modal
@@ -41,13 +40,13 @@ export const AuthModal: React.FC<{}> = () => {
           >
             {authState.title === "Forgot password" ? (
               <Button
-                variant="modal"
+                variant={buttonVariant.MODAL}
                 modal="back"
                 onClick={() => authDispatch({ type: "auth_login" })}
               />
             ) : (
               <Button
-                variant="modal"
+                variant={buttonVariant.MODAL}
                 modal="close"
                 onClick={() => toggleDispatch({ type: "close_register" })}
               />

@@ -1,26 +1,22 @@
 import { useFormik } from "formik";
 
-/** contexts */
 import { useAuthDispatch, useAuthState } from "@context/auth";
 
-/** styles **/
 import space from "@styles/space.module.scss";
 import shape from "@styles/shape.module.scss";
 import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 import color from "@styles/color.module.scss";
+import button from "@button/button.module.scss";
 import modalStyles from "@modal/modal.module.scss";
 
-/** components */
 import { Input } from "@input";
 import { Button } from "@button";
 import { getAuthContents } from "@button/content/content.auth";
 
-/** Helpers */
 import { validateAuth as validate } from "@helper/auth";
 
-/** stories */
-import { Auth, Underline } from "@button/button.stories";
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the auth template component
@@ -84,7 +80,7 @@ export const AuthPrototype: React.FC<{}> = () => {
             </p>
           </div>
           <div className={[space["m-t--18"], space["m-b--18"]].join(" ")}>
-            <Button variant="primary" title="Continue" block />
+            <Button variant={buttonVariant.PRIMARY} title="Continue" block />
           </div>
         </form>
         <div
@@ -114,7 +110,16 @@ export const AuthPrototype: React.FC<{}> = () => {
             return (
               <div key={index} className={[space["m-v--14"]].join(" ")}>
                 <Button
-                  {...Auth.args}
+                  variant={buttonVariant.AUTH}
+                  extendsTo={[
+                    button["hover__auth"],
+                    color["bg--transparent"],
+                    layout["block"],
+                    shape["w--full"],
+                    space["p-h--12"],
+                    space["p-v--12"],
+                    shape["br--8"],
+                  ].join(" ")}
                   auth={method}
                   onClick={auths[method].handleClick}
                   icon={auths[method].icon}
@@ -139,7 +144,7 @@ export const AuthPrototype: React.FC<{}> = () => {
             </p>
           </div>
           <Button
-            {...Underline.args}
+            variant={buttonVariant.UNDERLINE}
             onClick={switchAuth}
             title={authState.title === "Log in" ? "Sign up" : "Log in"}
           />

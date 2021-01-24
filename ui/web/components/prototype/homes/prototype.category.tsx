@@ -1,16 +1,15 @@
-/** styles **/
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 import shape from "@styles/shape.module.scss";
 
-/** components */
 import { Template } from "@template/s/homes";
 import { Bar } from "@bar";
 import { Button } from "@button";
 
-/** stories */
 import { Filter } from "@button/button.stories";
+
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the category template component
@@ -63,13 +62,16 @@ export const CategoryPrototype: React.FC<{
           {filters.map((filter, index) => {
             return (
               <div key={index} className={[space["m-r--8"]].join(" ")}>
-                <Button {...Filter.args} name={filter.name} />
+                <Button variant={buttonVariant.FILTER} name={filter.name} />
               </div>
             );
           })}
         </div>
         <div className={[shape["only__sm"]].join(" ")}>
-          <Button {...Filter.args} name={`filters ${filterCount}`} />
+          <Button
+            variant={buttonVariant.FILTER}
+            name={`filters ${filterCount}`}
+          />
         </div>
       </div>
       <div className={[space["m-b--32"]].join(" ")}>

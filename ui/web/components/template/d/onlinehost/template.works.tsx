@@ -1,16 +1,12 @@
-/** Layouts */
 import { Layout } from "@layout";
 
-/** styles **/
 import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 
-/** components */
 import { Button } from "@button";
 import { Card } from "@card";
 
-/** stories */
-import { Border } from "@button/button.stories";
+import * as buttonVariant from "@button/variants";
 
 export const WorksTemplate: React.FC<{}> = () => {
   const categories = ["design", "share", "submit", "setup"];
@@ -34,7 +30,7 @@ export const WorksTemplate: React.FC<{}> = () => {
           ].join(" ")}
         >
           <Button
-            {...Border.args}
+            variant={buttonVariant.BORDER}
             bold
             title="Start creating your experience"
           />

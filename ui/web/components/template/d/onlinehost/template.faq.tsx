@@ -1,9 +1,9 @@
-/** components */
 import { Layout } from "@layout";
 import { Bullet } from "@bullet";
 
-/** styles */
 import space from "@styles/space.module.scss";
+
+import * as bulletVariant from "@bullet/variants";
 
 export const FAQTemplate: React.FC<{
   questions?: { question: string; answer: string }[];
@@ -49,7 +49,11 @@ export const FAQTemplate: React.FC<{
               className={[space["m-v--22"]].join(" ")}
               key={index}
             >
-              <Bullet variant="question" title={question} answer={answer} />
+              <Bullet
+                variant={bulletVariant.QUESTION}
+                title={question}
+                answer={answer}
+              />
             </div>
           );
         })}
