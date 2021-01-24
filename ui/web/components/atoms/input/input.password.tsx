@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-/** styles **/
 import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
@@ -8,17 +7,13 @@ import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";
 import input from "@input/input.module.scss";
 
-/** Styling */
 import { styleInput, styleLabel, styleContainer } from "./styling.text";
 
-/** components */
 import { Button } from "@button";
 
-/** Helper */
 import { checkPassword } from "@helper/auth";
 
-/** stories */
-import { Underline } from "@button/button.stories";
+import * as variant from "@button/variants";
 
 /**
  * Renders the text input component
@@ -142,7 +137,7 @@ export const PasswordInput: React.FC<{
         ].join(" ")}
       >
         <Button
-          {...Underline.args}
+          variant={variant.UNDERLINE}
           onClick={() => setHide((prevHide) => !prevHide)}
           font={13}
           title={hide ? "Show" : "Hide"}

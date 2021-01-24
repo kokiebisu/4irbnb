@@ -9,6 +9,8 @@ import shape from "@styles/shape.module.scss";
 import bar from "@bar/bar.module.scss";
 import font from "@styles/font.module.scss";
 
+import * as buttonVariant from "@button/variants";
+
 /**
  * Renders paginate bar component
  * @param {number} page - Current page
@@ -435,7 +437,7 @@ export const PaginateBar: React.FC<{
       <div className={[layout["flex"], layout["items-center"]].join(" ")}>
         {page !== 1 && (
           <Button
-            variant="paginate"
+            variant={buttonVariant.PAGINATE}
             animate
             direction="left"
             onClick={() => Router.push(`/s/homes/page/${page - 1}`)}
@@ -444,7 +446,7 @@ export const PaginateBar: React.FC<{
         <div className={[space["m-h--8"]].join(" ")}>{displayContent()}</div>
         {page !== total && (
           <Button
-            variant="paginate"
+            variant={buttonVariant.PAGINATE}
             animate
             direction="right"
             onClick={() => Router.push(`/s/homes/page/${page + 1}`)}
