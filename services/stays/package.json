@@ -43,11 +43,5 @@
     "@types/mongoose": "^5.10.3",
     "@types/supertest": "^2.0.10",
     "del-cli": "^3.0.1"
-  },
-  "private": true,
-  "workspaces": {
-    "nohoist": [
-      "**"
-    ]
   }
 }
