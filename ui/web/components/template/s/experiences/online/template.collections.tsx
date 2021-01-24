@@ -6,7 +6,7 @@ import React, { useLayoutEffect, useRef, useState } from "react";
 import { Button } from "@button";
 import { Card } from "@card";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 export const CollectionsTemplate: React.FC<{ title?: String }> = ({
   title = "Title here",
@@ -139,7 +139,7 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
                 block
-                variant={buttonVariant.PAGINATE}
+                variant={$button.PAGINATE}
                 animate
                 direction="left"
                 onClick={previous}
@@ -149,7 +149,7 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
                 block
-                variant={buttonVariant.PAGINATE}
+                variant={$button.PAGINATE}
                 animate
                 direction="right"
                 onClick={next}

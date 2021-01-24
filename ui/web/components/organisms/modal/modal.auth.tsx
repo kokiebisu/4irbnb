@@ -10,7 +10,7 @@ import { Prototype as AuthPrototype } from "@prototype/auth";
 import { useToggleDispatch } from "@context/toggle";
 import { useAuthDispatch, useAuthState } from "@context/auth";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 /**
  * Renders the auth modal
@@ -40,13 +40,13 @@ export const AuthModal: React.FC<{}> = () => {
           >
             {authState.title === "Forgot password" ? (
               <Button
-                variant={buttonVariant.MODAL}
+                variant={$button.MODAL}
                 modal="back"
                 onClick={() => authDispatch({ type: "auth_login" })}
               />
             ) : (
               <Button
-                variant={buttonVariant.MODAL}
+                variant={$button.MODAL}
                 modal="close"
                 onClick={() => toggleDispatch({ type: "close_register" })}
               />

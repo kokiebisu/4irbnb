@@ -1,11 +1,10 @@
-/** components */
 import { Input } from "@input";
-import { Layout } from "@layout";
 
-/** styles **/
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
+
+import * as $input from "@input/variants";
 
 export const DescriptionCreate: React.FC<{ data?: any; setData?: any }> = ({
   data = { description: "Description here" },
@@ -27,7 +26,7 @@ export const DescriptionCreate: React.FC<{ data?: any; setData?: any }> = ({
       <div className={[space["m-b--30"]].join(" ")}>
         <div className={[space["m-b--8"]].join(" ")}>
           <Input
-            variant="textarea"
+            variant={$input.TEXTAREA}
             limit={500}
             value={data.description}
             handleChange={(e) =>

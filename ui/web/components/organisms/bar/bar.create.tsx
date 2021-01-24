@@ -5,7 +5,7 @@ import space from "@styles/space.module.scss";
 
 import { Button } from "@button";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 export const CreateBar: React.FC<{
   next?: () => void;
@@ -30,11 +30,11 @@ export const CreateBar: React.FC<{
         ].join(" ")}
       >
         <div>
-          <Button variant={buttonVariant.BACK} onClick={back} />
+          <Button variant={$button.BACK} onClick={back} />
         </div>
         <div>
           <Button
-            variant={buttonVariant.PRIMARY}
+            variant={$button.PRIMARY}
             title="Next"
             size="md"
             fill="#018489"

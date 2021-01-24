@@ -13,7 +13,7 @@ import { useToggleState } from "@context/toggle";
 import React from "react";
 import { Button } from "@button";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 const OnlinePage = () => {
   const toggleState = useToggleState();
@@ -83,11 +83,7 @@ const OnlinePage = () => {
           padding: "40px 0 56px 0",
         }}
       >
-        <Button
-          variant={buttonVariant.PRIMARY}
-          title="Load more"
-          fill="black"
-        />
+        <Button variant={$button.PRIMARY} title="Load more" fill="black" />
       </div>
       <div>
         <Footer />

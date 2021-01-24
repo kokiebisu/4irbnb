@@ -6,7 +6,7 @@ import layout from "@styles/layout.module.scss";
 import { Button } from "@button";
 import { Card } from "@card";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 export const WorksTemplate: React.FC<{}> = () => {
   const categories = ["design", "share", "submit", "setup"];
@@ -30,7 +30,7 @@ export const WorksTemplate: React.FC<{}> = () => {
           ].join(" ")}
         >
           <Button
-            variant={buttonVariant.BORDER}
+            variant={$button.BORDER}
             bold
             title="Start creating your experience"
           />

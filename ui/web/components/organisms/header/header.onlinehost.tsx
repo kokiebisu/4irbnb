@@ -7,7 +7,7 @@ import header from "@header/header.module.scss";
 
 import { Button } from "@button";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 export const OnlineHostHeader: React.FC<{}> = () => {
   return (
@@ -18,7 +18,7 @@ export const OnlineHostHeader: React.FC<{}> = () => {
       >
         <div>
           <Button
-            variant={buttonVariant.LOGO}
+            variant={$button.LOGO}
             noName
             fill="black"
             extendsTo={[

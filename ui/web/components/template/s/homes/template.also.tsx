@@ -13,7 +13,7 @@ import * as Helpers from "@helper/array";
 import { useSlider } from "@hooks/useSlider";
 import { useHandleContainerResize } from "@hooks/useHandleContainerResize";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 /**
  * Renders the also section
@@ -56,7 +56,7 @@ export const AlsoTemplate: React.FC<{
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div className={[space["m-h--2"]].join(" ")}>
             <Button
-              variant={buttonVariant.PAGINATE}
+              variant={$button.PAGINATE}
               animate
               direction="left"
               onClick={previous}
@@ -65,7 +65,7 @@ export const AlsoTemplate: React.FC<{
           </div>
           <div className={[space["m-h--2"]].join(" ")}>
             <Button
-              variant={buttonVariant.PAGINATE}
+              variant={$button.PAGINATE}
               animate
               direction="right"
               onClick={next}

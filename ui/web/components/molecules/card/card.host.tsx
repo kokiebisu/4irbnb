@@ -7,7 +7,7 @@ import shape from "@styles/shape.module.scss";
 
 import { Button } from "@button";
 
-import * as variant from "@button/variants";
+import * as $button from "@button/variants";
 
 /**
  * Renders the host card component
@@ -60,7 +60,7 @@ export const HostCard: React.FC<{
       <div>
         <Button
           onClick={() => Router.push("/")}
-          variant={variant.UNDERLINE}
+          variant={$button.UNDERLINE}
           title={`Check out some ${stayType}s`}
         />
       </div>

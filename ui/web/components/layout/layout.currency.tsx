@@ -3,7 +3,7 @@ import { Button } from "@button";
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 /**
  * Layout for Currency modal
@@ -34,7 +34,7 @@ export const CurrencyLayout: React.FC<{
             <div key={index}>
               <Button
                 extendsTo={[font["text--left"]].join(" ")}
-                variant={buttonVariant.CURRENCY}
+                variant={$button.CURRENCY}
                 name={name}
                 abbreviation={abbreviation}
                 symbol={symbol}

@@ -11,7 +11,7 @@ import { Prototype as GlobePrototype } from "@prototype/globe";
 
 import { useToggleDispatch } from "@context/toggle";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 export const GlobeModal: React.FC<{}> = () => {
   const toggleDispatch = useToggleDispatch();
@@ -21,7 +21,7 @@ export const GlobeModal: React.FC<{}> = () => {
       <div>
         <div>
           <Button
-            variant={buttonVariant.MODAL}
+            variant={$button.MODAL}
             modal="close"
             onClick={() => toggleDispatch({ type: "toggle_globe" })}
           />
@@ -38,7 +38,7 @@ export const GlobeModal: React.FC<{}> = () => {
         >
           <div className={[space["m-r--32"]].join(" ")}>
             <Button
-              variant={buttonVariant.UNDERLINE}
+              variant={$button.UNDERLINE}
               title="Language and region"
               font={16}
               bold
@@ -48,7 +48,7 @@ export const GlobeModal: React.FC<{}> = () => {
           </div>
           <div>
             <Button
-              variant={buttonVariant.UNDERLINE}
+              variant={$button.UNDERLINE}
               title="Currency"
               font={16}
               bold

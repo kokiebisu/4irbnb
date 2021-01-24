@@ -1,10 +1,10 @@
-/** components */
 import { Input } from "@input";
 
-/** styles **/
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
+
+import * as $input from "@input/variants";
 
 /**
  * Renders the /become-a-host/spaces page content
@@ -72,7 +72,7 @@ export const SpacesCreate: React.FC<{
               <Input
                 check={() => modify("spaces", item)}
                 checked={data.spaces.includes(item)}
-                variant="checkbox"
+                variant={$input.CHECKBOX}
                 title={title}
               />
             </div>

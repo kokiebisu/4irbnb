@@ -14,8 +14,8 @@ import { Shield } from "@svg/original";
 
 import { Border } from "@button/button.stories";
 
-import * as bulletVariant from "@bullet/variants";
-import * as buttonVariant from "@button/variants";
+import * as $bullet from "@bullet/variants";
+import * as $button from "@button/variants";
 
 /**
  * Modifies the content which should be displayed initially
@@ -153,7 +153,7 @@ export const HostTemplate: React.FC<{
                   ].join(" ")}
                 >
                   <Bullet
-                    variant={bulletVariant.HOST}
+                    variant={$bullet.HOST}
                     categoryType="review"
                     total={numberOfReviews}
                   />
@@ -166,10 +166,7 @@ export const HostTemplate: React.FC<{
                       space["p-r--4"],
                     ].join(" ")}
                   >
-                    <Bullet
-                      variant={bulletVariant.HOST}
-                      categoryType="verified"
-                    />
+                    <Bullet variant={$bullet.HOST} categoryType="verified" />
                   </div>
                 )}
                 {layoutType === "room" && isSuperhost && (
@@ -180,10 +177,7 @@ export const HostTemplate: React.FC<{
                       space["p-r--4"],
                     ].join(" ")}
                   >
-                    <Bullet
-                      variant={bulletVariant.HOST}
-                      categoryType="superhost"
-                    />
+                    <Bullet variant={$bullet.HOST} categoryType="superhost" />
                   </div>
                 )}
               </div>
@@ -319,7 +313,7 @@ export const HostTemplate: React.FC<{
                 }
               >
                 <Button
-                  variant={buttonVariant.BORDER}
+                  variant={$button.BORDER}
                   size="md"
                   title="Contact host"
                 />

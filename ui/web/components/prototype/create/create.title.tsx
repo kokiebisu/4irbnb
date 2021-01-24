@@ -1,10 +1,10 @@
-/** components */
 import { Input } from "@input";
 
-/** styles **/
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
+
+import * as $input from "@input/variants";
 
 /**
  * Renders the /become-a-host/title
@@ -31,7 +31,7 @@ export const TitleCreate: React.FC<{ data?: any; setData?: any }> = ({
       <div className={[space["m-b--30"]].join(" ")}>
         <div className={[space["m-b--8"]].join(" ")}>
           <Input
-            variant="limit"
+            variant={$input.LIMIT}
             limit={50}
             value={data.title}
             handleChange={(e) => setData({ ...data, title: e.target.value })}
