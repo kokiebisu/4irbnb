@@ -1,12 +1,9 @@
 import Router from "next/router";
 
-/** vectors */
 import { Guidance, Protection, Requirements } from "@svg/original";
 
-/** components */
 import { Button } from "@button";
 
-/** styles **/
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 

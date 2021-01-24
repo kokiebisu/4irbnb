@@ -1,11 +1,10 @@
-/** styles **/
 import space from "@styles/space.module.scss";
 
-/** layout */
 import { Layout } from "@layout";
 
-/** components */
 import { Bullet } from "@bullet";
+
+import * as bulletVariant from "@bullet/variants";
 
 export const BackTemplate: React.FC<{
   back?: string;
@@ -27,7 +26,7 @@ export const BackTemplate: React.FC<{
         {["resources", "events", "community"].map((type, index) => {
           return (
             <div key={index} className={[space["m-b--16"]].join(" ")}>
-              <Bullet variant="onlinehost" type={type} />
+              <Bullet variant={bulletVariant.ONLINEHOST} type={type} />
             </div>
           );
         })}

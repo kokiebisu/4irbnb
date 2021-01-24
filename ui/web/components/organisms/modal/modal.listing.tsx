@@ -1,14 +1,13 @@
-/** components */
 import { Button } from "@button";
 import { Input } from "@input";
 
-/** vectors */
 import { Plus } from "@svg/original";
 
-/** styles */
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
+
+import * as buttonVariant from "@button/variants";
 
 export const ListingModal: React.FC<{}> = () => {
   return (
@@ -42,7 +41,7 @@ export const ListingModal: React.FC<{}> = () => {
       </div>
       <div>
         <Button
-          variant="primary"
+          variant={buttonVariant.PRIMARY}
           fill="black"
           block
           title="Start your listing"

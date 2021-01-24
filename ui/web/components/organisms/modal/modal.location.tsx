@@ -1,13 +1,13 @@
-/** styles */
 import shape from "@styles/shape.module.scss";
 import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 import layout from "@styles/layout.module.scss";
 import animation from "@styles/animation.module.scss";
 
-/** components */
 import { Button } from "@button";
 import { Layout } from "@layout";
+
+import * as buttonVariant from "@button/variants";
 
 export const LocationModal: React.FC<{}> = () => {
   const recentLocations = [
@@ -29,7 +29,7 @@ export const LocationModal: React.FC<{}> = () => {
     <div>
       <div>
         <Button
-          variant="location"
+          variant={buttonVariant.LOCATION}
           type="explore"
           extendsTo={[
             space["p-h--25"],
@@ -40,24 +40,29 @@ export const LocationModal: React.FC<{}> = () => {
       </div>
       <div>
         <Layout
-          variant="location"
+          variant={buttonVariant.LOCATION}
           title="Recent Searches"
-          content={recentLocations.map((recentLocations, index) => {
-            return (
-              <div key={index}>
-                <Button
-                  variant="location"
-                  type="recent"
-                  {...recentLocations}
-                  extendsTo={[
-                    space["p-h--25"],
-                    animation["hover-background--white__1"],
-                  ].join(" ")}
-                  block
-                />
-              </div>
-            );
-          })}
+          content={recentLocations.map(
+            ({ location, from, to, guests }, index) => {
+              return (
+                <div key={index}>
+                  <Button
+                    variant={buttonVariant.LOCATION}
+                    type="recent"
+                    location={location}
+                    from={from}
+                    to={to}
+                    guests={guests}
+                    extendsTo={[
+                      space["p-h--25"],
+                      animation["hover-background--white__1"],
+                    ].join(" ")}
+                    block
+                  />
+                </div>
+              );
+            }
+          )}
         />
       </div>
       <div>
@@ -77,7 +82,7 @@ export const LocationModal: React.FC<{}> = () => {
                 return (
                   <div key={index}>
                     <Button
-                      variant="nearby"
+                      variant={buttonVariant.NEARBY}
                       label={nearbyLocation}
                       onClick={() => alert(`clicked ${nearbyLocation}`)}
                     />

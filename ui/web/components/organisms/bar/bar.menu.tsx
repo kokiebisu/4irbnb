@@ -1,8 +1,8 @@
-/** styles */
 import menubar from "@bar/bar.module.scss";
 
-/** components */
 import { Button } from "@button";
+
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the menubar component
@@ -14,7 +14,7 @@ export const MenuBar: React.FC<{}> = () => {
       {items.map((item, index) => {
         return (
           <div key={index}>
-            <Button variant="bar" type={item} />
+            <Button variant={buttonVariant.BAR} type={item} />
           </div>
         );
       })}

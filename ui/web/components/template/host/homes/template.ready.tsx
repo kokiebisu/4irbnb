@@ -1,12 +1,12 @@
 import Router from "next/router";
 
-/** components */
 import { Button } from "@button";
 
-/** styles **/
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
+
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the ready section
@@ -26,7 +26,7 @@ export const ReadyTemplate: React.FC<{}> = () => {
         </div>
         <div style={{ display: "inline-block" }}>
           <Button
-            variant="primary"
+            variant={buttonVariant.PRIMARY}
             size="md"
             title="Get started"
             onClick={() => Router.push("/become-a-host")}

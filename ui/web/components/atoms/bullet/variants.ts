@@ -1,0 +1,15 @@
+export const CHARACTERISTIC = "characteristic";
+export const AMENITY = "amenity";
+export const SCORE = "score";
+export const HOST = "host";
+export const KNOW = "know";
+export const RATING = "rating";
+export const BRING = "bring";
+export const EXPERIENCE = "experience";
+export const PRIORITY = "priority";
+export const HELP = "help";
+export const REQUIRED = "required";
+export const ONLINEHOST = "onlinehost";
+export const QUESTION = "question";
+export const CHECK = "check";
+export const SCENARIO = "scenario";
