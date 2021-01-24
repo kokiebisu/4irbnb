@@ -1,10 +1,9 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
     "outDir": "build",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "target": "es6",
+    "target": "es5",
     "lib": ["es2015"],
     "module": "commonjs",
     "moduleResolution": "node",
@@ -12,6 +11,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "skipLibCheck": true,
-    "composite": true
+    "composite": true,
+    "rootDir": "src"
   }
 }

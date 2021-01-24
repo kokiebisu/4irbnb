@@ -5,52 +5,6 @@ aliases:
     docker:
       - image: circleci/node:10
 
-  - &install_typescript_globally
-    run:
-      name: Install Typescript Globally
-      command: yarn global add typescript
-
-  - &deploy
-    run:
-      name: Deploy
-      command: yarn deploy
-
-  - &deploy_production_filters
-    filters:
-      branches:
-        only: master
-
-  - &restore-build-flag
-    restore_cache:
-      keys:
-        - build-flag-{{ checksum "package.json" }}
-
-  - &generate-lock-file
-    run:
-      name: Generate lock file
-      command: yarn generate-lock-entry >> yarn.lock
-
-  - &test-build-flag
-    run:
-      name: Exit if build flag exists
-      command: |
-        FILE=build.flag
-        if test -f "$FILE"; then
-            echo "$FILE exist"
-            circleci step halt
-        fi
-
-  - &restore-cache
-    restore_cache:
-      keys:
-        - dependencies-cache-{{ checksum "yarn.lock" }}
-
-  - &save-cache
-    save_cache:
-      paths:
-        - node_modules
-      key: dependencies-cache-{{ checksum "yarn.lock" }}
-
   - &install
     run:
       name: Install dependencies
@@ -65,6 +19,21 @@ aliases:
     run:
       name: Test
       command: yarn test:ci
+
+  - &docker-build-auth
+    run:
+      name: Building Docker Image
+      command: docker build
+
+  - &login
+    run:
+      name: Log in
+      command: docker login -u $DOCKER_USER -p $DOCKER_PASS
+
+  - &docker-push-auth
+    run:
+      name: Pushing to docker hub
+      command: docker push kokiebisu/nextbnb-auth
 
 commands:
   install:
@@ -83,6 +52,7 @@ commands:
     steps:
       - checkout:
           path: ~/airbnb
+      - *build
       - *test
 
 jobs:
@@ -92,8 +62,6 @@ jobs:
 
     working_directory: ~/airbnb/services/auth
     steps:
-      - install
-      - build
       - test
 
 workflows:
