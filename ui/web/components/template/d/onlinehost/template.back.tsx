@@ -4,7 +4,7 @@ import { Layout } from "@layout";
 
 import { Bullet } from "@bullet";
 
-import * as bulletVariant from "@bullet/variants";
+import * as $bullet from "@bullet/variants";
 
 export const BackTemplate: React.FC<{
   back?: string;
@@ -26,7 +26,7 @@ export const BackTemplate: React.FC<{
         {["resources", "events", "community"].map((type, index) => {
           return (
             <div key={index} className={[space["m-b--16"]].join(" ")}>
-              <Bullet variant={bulletVariant.ONLINEHOST} type={type} />
+              <Bullet variant={$bullet.ONLINEHOST} type={type} />
             </div>
           );
         })}

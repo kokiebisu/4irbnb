@@ -11,7 +11,7 @@ import { Bullet } from "@bullet";
 import { ImageSlider } from "@particle/image.slider";
 import { Card } from "@card";
 
-import * as bulletVariant from "@bullet/variants";
+import * as $bullet from "@bullet/variants";
 
 /**
  * Renders the stay card component
@@ -176,7 +176,7 @@ export const StayCard: React.FC<{
                   </div>
                 </div>
                 <div>
-                  <Bullet variant={bulletVariant.RATING} />
+                  <Bullet variant={$bullet.RATING} />
                 </div>
               </div>
             </div>

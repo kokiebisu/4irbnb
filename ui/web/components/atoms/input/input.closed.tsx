@@ -4,7 +4,7 @@ import font from "@styles/font.module.scss";
 
 import { Button } from "@button";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 export const ClosedInput: React.FC<{
   title?: string;
@@ -33,7 +33,7 @@ export const ClosedInput: React.FC<{
       <div className={[layout["flex"]].join(" ")}>
         <div className={[space["m-r--12"]].join(" ")}>
           <Button
-            variant={buttonVariant.CLOSED}
+            variant={$button.CLOSED}
             content="close"
             onClick={() => setData({ ...data, [value]: false })}
             selected={data[value] === false}
@@ -41,7 +41,7 @@ export const ClosedInput: React.FC<{
         </div>
         <div>
           <Button
-            variant={buttonVariant.CLOSED}
+            variant={$button.CLOSED}
             content="check"
             onClick={() => setData({ ...data, [value]: true })}
             selected={data[value] === true}

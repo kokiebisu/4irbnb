@@ -4,7 +4,7 @@ import space from "@styles/space.module.scss";
 import { Layout } from "@layout";
 import { Bullet } from "@bullet";
 
-import * as bulletVariant from "@bullet/variants";
+import * as $bullet from "@bullet/variants";
 
 /**
  * Renders the priority section
@@ -24,7 +24,7 @@ export const PriorityTemplate: React.FC<{}> = () => {
           {["protection", "guidance", "requirements"].map((priority, index) => {
             return (
               <div key={index} className={[space["m-b--64"]].join(" ")}>
-                <Bullet variant={bulletVariant.PRIORITY} priority={priority} />
+                <Bullet variant={$bullet.PRIORITY} priority={priority} />
               </div>
             );
           })}

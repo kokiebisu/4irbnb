@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-/** styles */
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 
-/** components */
 import { Input } from "@input";
+
+import * as $input from "@input/variants";
 
 export const PhotosCreate: React.FC<{
   data?: any;
@@ -44,7 +44,7 @@ export const PhotosCreate: React.FC<{
               >
                 <div>
                   <Input
-                    variant="another"
+                    variant={$input.ANOTHER}
                     handleChange={(e) => {
                       setData({
                         ...data,
@@ -61,7 +61,7 @@ export const PhotosCreate: React.FC<{
             </div>
           ) : (
             <Input
-              variant="photo"
+              variant={$input.PHOTO}
               handleChange={(e) => {
                 setData({
                   ...data,

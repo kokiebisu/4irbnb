@@ -7,8 +7,8 @@ import banner from "@banner/banner.module.scss";
 import { Button } from "@button";
 import { Bullet } from "@bullet";
 
-import * as bulletVariant from "@bullet/variants";
-import * as buttonVariant from "@button/variants";
+import * as $bullet from "@bullet/variants";
+import * as $button from "@button/variants";
 
 export const BannerTemplate: React.FC<{}> = () => {
   return (
@@ -42,7 +42,7 @@ export const BannerTemplate: React.FC<{}> = () => {
         </h4>
       </div>
       <div className={[space["m-v--40"]].join(" ")}>
-        <Button variant={buttonVariant.PRIMARY} title="Get started" />
+        <Button variant={$button.PRIMARY} title="Get started" />
       </div>
       <div className={[space["m-v--32"]].join(" ")}>
         <img
@@ -72,7 +72,7 @@ export const BannerTemplate: React.FC<{}> = () => {
         {["home", "global", "business"].map((type, index) => {
           return (
             <div key={index} className={[space["m-b--16"]].join(" ")}>
-              <Bullet variant={bulletVariant.ONLINEHOST} type={type} />
+              <Bullet variant={$bullet.ONLINEHOST} type={type} />
             </div>
           );
         })}

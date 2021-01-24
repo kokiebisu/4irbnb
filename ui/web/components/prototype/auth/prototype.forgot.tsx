@@ -9,8 +9,9 @@ import { Bullet } from "@bullet";
 
 import { validateForgotPassword as validate } from "@helper/auth";
 
-import * as bulletVariant from "@bullet/variants";
-import * as buttonVariant from "@button/variants";
+import * as $bullet from "@bullet/variants";
+import * as $button from "@button/variants";
+import * as $input from "@input/variants";
 
 /**
  * Renders the login template component
@@ -48,7 +49,7 @@ export const ForgotPasswordPrototype: React.FC<{}> = () => {
             <div>
               <div>
                 <Input
-                  variant="email"
+                  variant={$input.EMAIL}
                   handleChange={formik.handleChange}
                   value={formik.values.email}
                   errors={formik.errors.email !== undefined}
@@ -58,7 +59,7 @@ export const ForgotPasswordPrototype: React.FC<{}> = () => {
                 {formik.errors.email !== undefined && (
                   <div className={[space["m-t--6"]].join(" ")}>
                     <Bullet
-                      variant={bulletVariant.REQUIRED}
+                      variant={$bullet.REQUIRED}
                       message={formik.errors.email}
                     />
                   </div>
@@ -68,7 +69,7 @@ export const ForgotPasswordPrototype: React.FC<{}> = () => {
           </div>
           <div className={[].join(" ")}>
             <Button
-              variant={buttonVariant.PRIMARY}
+              variant={$button.PRIMARY}
               size="md"
               fill="black"
               title="Send reset link"

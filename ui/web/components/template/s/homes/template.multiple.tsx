@@ -11,7 +11,7 @@ import section from "@template/index.module.scss";
 import { Card } from "@card";
 import { Button } from "@button";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 /**
  * Renders the stay section
@@ -164,7 +164,7 @@ export const MultipleTemplate: React.FC<{
           <div className={[layout["flex"], layout["items-center"]].join(" ")}>
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
-                variant={buttonVariant.PAGINATE}
+                variant={$button.PAGINATE}
                 animate
                 direction="left"
                 onClick={previous}
@@ -173,7 +173,7 @@ export const MultipleTemplate: React.FC<{
             </div>
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
-                variant={buttonVariant.PAGINATE}
+                variant={$button.PAGINATE}
                 animate
                 direction="right"
                 onClick={next}
@@ -260,14 +260,14 @@ export const MultipleTemplate: React.FC<{
                   </div>
                   <div className={[space["m-r--6"]].join(" ")}>
                     <Button
-                      variant={buttonVariant.PAGINATE}
+                      variant={$button.PAGINATE}
                       animate
                       direction="left"
                     />
                   </div>
                   <div>
                     <Button
-                      variant={buttonVariant.PAGINATE}
+                      variant={$button.PAGINATE}
                       animate
                       direction="right"
                     />
@@ -282,7 +282,7 @@ export const MultipleTemplate: React.FC<{
           {showAll && (
             <div className={space["m-v--25"]}>
               <Button
-                variant={buttonVariant.EXPAND}
+                variant={$button.EXPAND}
                 to={showAll.to}
                 title={showAll.description}
               />

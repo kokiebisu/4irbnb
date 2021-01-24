@@ -6,7 +6,7 @@ import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 
-import * as variant from "@button/variants";
+import * as $button from "@button/variants";
 
 /**
  * Renders the available card component
@@ -53,7 +53,7 @@ export const AvailableCard: React.FC<{
         <span className={[font["size--15"]].join(" ")}> /person</span>
       </div>
       <div className={[layout["inline-block"]].join(" ")}>
-        <Button variant={variant.PRIMARY} size="sm" title="Choose" />
+        <Button variant={$button.PRIMARY} size="sm" title="Choose" />
       </div>
     </div>
   );
