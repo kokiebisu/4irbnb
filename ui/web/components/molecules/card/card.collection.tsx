@@ -1,5 +1,3 @@
-import { Button } from "@button";
-
 import color from "@styles/color.module.scss";
 import font from "@styles/font.module.scss";
 import shape from "@styles/shape.module.scss";

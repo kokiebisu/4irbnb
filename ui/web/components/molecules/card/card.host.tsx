@@ -1,13 +1,13 @@
 import Router from "next/router";
 
-/** styles **/
 import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 import font from "@styles/font.module.scss";
 import shape from "@styles/shape.module.scss";
 
-/** components */
 import { Button } from "@button";
+
+import * as variant from "@button/variants";
 
 /**
  * Renders the host card component
@@ -60,7 +60,7 @@ export const HostCard: React.FC<{
       <div>
         <Button
           onClick={() => Router.push("/")}
-          variant="underline"
+          variant={variant.UNDERLINE}
           title={`Check out some ${stayType}s`}
         />
       </div>

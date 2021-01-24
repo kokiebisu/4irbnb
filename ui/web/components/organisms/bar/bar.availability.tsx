@@ -1,14 +1,13 @@
-/** components */
 import { Button } from "@button";
 
-/** styles */
 import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
 
-/** vectors */
 import { Star } from "@svg/original";
+
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the modal which gives all the available options
@@ -58,7 +57,7 @@ export const AvailabilityBar: React.FC<{
         </div>
       </div>
       <div>
-        <Button variant="primary" title="Check availability" />
+        <Button variant={buttonVariant.PRIMARY} title="Check availability" />
       </div>
     </div>
   );

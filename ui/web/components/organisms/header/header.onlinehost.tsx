@@ -1,13 +1,13 @@
 import Router from "next/router";
 
-/** styles */
 import shape from "@styles/shape.module.scss";
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import header from "@header/header.module.scss";
 
-/** components */
 import { Button } from "@button";
+
+import * as buttonVariant from "@button/variants";
 
 export const OnlineHostHeader: React.FC<{}> = () => {
   return (
@@ -18,7 +18,7 @@ export const OnlineHostHeader: React.FC<{}> = () => {
       >
         <div>
           <Button
-            variant="logo"
+            variant={buttonVariant.LOGO}
             noName
             fill="black"
             extendsTo={[

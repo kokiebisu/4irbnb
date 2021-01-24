@@ -1,15 +1,13 @@
-/** components */
 import { Bullet } from "@bullet";
 import { Button } from "@button";
 
-/** styles **/
 import font from "@styles/font.module.scss";
 import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 import section from "@template/index.module.scss";
 
-/** stories */
-import { Border } from "@button/button.stories";
+import * as bulletVariant from "@bullet/variants";
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the amenity section
@@ -41,14 +39,24 @@ export const AmenitiesTemplate: React.FC<{
         ].join(" ")}
       >
         {amenities.map((amenity, index) => {
-          return <Bullet key={index} variant="amenity" amenityType={amenity} />;
+          return (
+            <Bullet
+              key={index}
+              variant={bulletVariant.AMENITY}
+              amenityType={amenity}
+            />
+          );
         })}
       </div>
       <div
         style={{ width: 300 }}
         className={[space["m-t--14"], space["m-b--14"]].join(" ")}
       >
-        <Button {...Border.args} size="md" title="Show all 40 amenities" />
+        <Button
+          variant={buttonVariant.BORDER}
+          size="md"
+          title="Show all 40 amenities"
+        />
       </div>
     </div>
   );

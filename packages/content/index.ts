@@ -6,9 +6,9 @@
 
 // module.exports = { allItems, anywhereItems, categoryItems, footerItems, hosts };
 
-export * from "./all";
-export * from "./anywhere";
-export * from "./category";
-export * from "./footer";
-export * from "./hosts";
-export * from "./destination";
+export * from "./src/all";
+export * from "./src/anywhere";
+export * from "./src/category";
+export * from "./src/footer";
+export * from "./src/hosts";
+export * from "./src/destination";

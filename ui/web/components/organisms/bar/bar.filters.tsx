@@ -1,7 +1,8 @@
 import { Button } from "@button";
 import space from "@styles/space.module.scss";
 import { useLayoutEffect, useRef, useState } from "react";
-import color from "@styles/color.module.scss";
+
+import * as buttonVariant from "@button/variants";
 
 export const FiltersBar: React.FC<{}> = () => {
   const [width, setWidth] = useState(500);
@@ -83,7 +84,7 @@ export const FiltersBar: React.FC<{}> = () => {
         {primaryFilters.map((filter, index) => {
           return (
             <div key={index} className={[space["m-r--8"]].join(" ")}>
-              <Button variant="filter" inverse label={filter} />
+              <Button variant={buttonVariant.FILTER} inverse label={filter} />
             </div>
           );
         })}
@@ -117,7 +118,7 @@ export const FiltersBar: React.FC<{}> = () => {
             }}
           >
             <Button
-              variant="paginate"
+              variant={buttonVariant.PAGINATE}
               direction="left"
               size={12}
               onClick={previous}
@@ -134,13 +135,17 @@ export const FiltersBar: React.FC<{}> = () => {
         >
           {state.activeSlide > 0 && (
             <div style={{ position: "absolute", left: 0, zIndex: 40 }}>
-              <Button variant="paginate" direction="left" />
+              <Button variant={buttonVariant.PAGINATE} direction="left" />
             </div>
           )}
           {secondaryFilters.map((filter, index) => {
             return (
               <div key={index} className={[space["m-r--8"]].join(" ")}>
-                <Button variant="filter" label={filter} onClick={previous} />
+                <Button
+                  variant={buttonVariant.FILTER}
+                  label={filter}
+                  onClick={previous}
+                />
               </div>
             );
           })}
@@ -162,7 +167,7 @@ export const FiltersBar: React.FC<{}> = () => {
             }}
           >
             <Button
-              variant="paginate"
+              variant={buttonVariant.PAGINATE}
               direction="right"
               size={12}
               onClick={next}

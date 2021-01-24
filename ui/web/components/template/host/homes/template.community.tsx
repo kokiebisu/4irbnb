@@ -1,19 +1,18 @@
 import { useRef } from "react";
 import Router from "next/router";
 
-/** styles **/
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 import banner from "@banner/banner.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
-/** components */
 import { Button } from "@button";
 import { Card } from "@card";
 
-/** hooks */
 import { useSlider, SliderProps } from "@hooks/useSlider";
+
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the homes banner
@@ -73,7 +72,7 @@ export const CommunityTemplate: React.FC<{
             </div>
             <div className={[layout["inline-block"]].join(" ")}>
               <Button
-                variant="primary"
+                variant={buttonVariant.PRIMARY}
                 size="md"
                 title="Get started"
                 onClick={() => Router.push("/become-a-host")}
@@ -141,7 +140,7 @@ export const CommunityTemplate: React.FC<{
           <div className={[layout["items-center"], layout["flex"]].join(" ")}>
             <div className={[space["m-r--8"]].join(" ")}>
               <Button
-                variant="paginate"
+                variant={buttonVariant.PAGINATE}
                 animate
                 direction="left"
                 onClick={previous}
@@ -149,7 +148,7 @@ export const CommunityTemplate: React.FC<{
             </div>
             <div>
               <Button
-                variant="paginate"
+                variant={buttonVariant.PAGINATE}
                 animate
                 direction="right"
                 onClick={next}

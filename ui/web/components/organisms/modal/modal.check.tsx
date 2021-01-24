@@ -1,15 +1,14 @@
-/** styles */
 import layout from "@styles/layout.module.scss";
 import color from "@styles/color.module.scss";
 import shape from "@styles/shape.module.scss";
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 
-/** vectors */
 import { ChevronLeft, ChevronRight } from "@svg/regular";
 
-/** components */
 import { Button } from "@button";
+
+import * as buttonVariant from "@button/variants";
 
 export const CheckModal: React.FC<{}> = () => {
   return (
@@ -81,7 +80,7 @@ const Calendar: React.FC<{
             {[1, 2, 3, 4, 5, 6, 7].map((number, index) => {
               return (
                 <div key={index} style={{ display: "table-cell" }}>
-                  <Button variant="calendar" number={number} />
+                  <Button variant={buttonVariant.CALENDAR} number={number} />
                 </div>
               );
             })}
@@ -90,7 +89,7 @@ const Calendar: React.FC<{
             {[8, 9, 10, 11, 12, 13, 14].map((number, index) => {
               return (
                 <div key={index} style={{ display: "table-cell" }}>
-                  <Button variant="calendar" number={number} />
+                  <Button variant={buttonVariant.CALENDAR} number={number} />
                 </div>
               );
             })}
@@ -99,7 +98,7 @@ const Calendar: React.FC<{
             {[15, 16, 17, 18, 19, 20, 21].map((number, index) => {
               return (
                 <div key={index} style={{ display: "table-cell" }}>
-                  <Button variant="calendar" number={number} />
+                  <Button variant={buttonVariant.CALENDAR} number={number} />
                 </div>
               );
             })}
@@ -108,7 +107,7 @@ const Calendar: React.FC<{
             {[22, 23, 24, 25, 26, 27, 28].map((number, index) => {
               return (
                 <div key={index} style={{ display: "table-cell" }}>
-                  <Button variant="calendar" number={number} />
+                  <Button variant={buttonVariant.CALENDAR} number={number} />
                 </div>
               );
             })}
@@ -117,7 +116,9 @@ const Calendar: React.FC<{
             {[29, 30, 31, null, null, null, null].map((number, index) => {
               return (
                 <div key={index} style={{ display: "table-cell" }}>
-                  {number && <Button variant="calendar" number={number} />}
+                  {number && (
+                    <Button variant={buttonVariant.CALENDAR} number={number} />
+                  )}
                 </div>
               );
             })}

@@ -1,11 +1,11 @@
-/** styles */
 import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 
-/** components */
 import { Button } from "@button";
+
+import * as buttonVariant from "@button/variants";
 
 export const CreateBar: React.FC<{
   next?: () => void;
@@ -30,11 +30,11 @@ export const CreateBar: React.FC<{
         ].join(" ")}
       >
         <div>
-          <Button variant="back" onClick={back} />
+          <Button variant={buttonVariant.BACK} onClick={back} />
         </div>
         <div>
           <Button
-            variant="primary"
+            variant={buttonVariant.PRIMARY}
             title="Next"
             size="md"
             fill="#018489"
