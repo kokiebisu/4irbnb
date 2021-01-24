@@ -7,7 +7,7 @@ import { Input } from "@input";
 import { Layout } from "@layout";
 import { Bullet } from "@bullet";
 
-import * as bulletVariant from "@bullet/variants";
+import * as $bullet from "@bullet/variants";
 
 export const ScenariosCreate: React.FC<{}> = () => {
   return (
@@ -21,7 +21,7 @@ export const ScenariosCreate: React.FC<{}> = () => {
             (type, index) => {
               return (
                 <div key={index} className={[space["m-b--32"]].join(" ")}>
-                  <Bullet variant={bulletVariant.SCENARIO} type={type} />
+                  <Bullet variant={$bullet.SCENARIO} type={type} />
                 </div>
               );
             }

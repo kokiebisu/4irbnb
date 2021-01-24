@@ -12,7 +12,7 @@ import { Card } from "@card";
 
 import { useSlider, SliderProps } from "@hooks/useSlider";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 /**
  * Renders the homes banner
@@ -72,7 +72,7 @@ export const CommunityTemplate: React.FC<{
             </div>
             <div className={[layout["inline-block"]].join(" ")}>
               <Button
-                variant={buttonVariant.PRIMARY}
+                variant={$button.PRIMARY}
                 size="md"
                 title="Get started"
                 onClick={() => Router.push("/become-a-host")}
@@ -140,7 +140,7 @@ export const CommunityTemplate: React.FC<{
           <div className={[layout["items-center"], layout["flex"]].join(" ")}>
             <div className={[space["m-r--8"]].join(" ")}>
               <Button
-                variant={buttonVariant.PAGINATE}
+                variant={$button.PAGINATE}
                 animate
                 direction="left"
                 onClick={previous}
@@ -148,7 +148,7 @@ export const CommunityTemplate: React.FC<{
             </div>
             <div>
               <Button
-                variant={buttonVariant.PAGINATE}
+                variant={$button.PAGINATE}
                 animate
                 direction="right"
                 onClick={next}

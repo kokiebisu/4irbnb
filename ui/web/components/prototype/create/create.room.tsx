@@ -1,11 +1,11 @@
-/** components */
 import { Input } from "@input";
 import { Layout } from "@layout";
 
-/** styles **/
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
+
+import * as $input from "@input/variants";
 
 /**
  * Renders the /become-a-host/room page content
@@ -27,7 +27,7 @@ export const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
         <Layout variant="input" title="First, let's narrow things down">
           <Input
             inputType="place"
-            variant="select"
+            variant={$input.SELECT}
             value={data?.place}
             handleChange={(e) => {
               setData({ ...data, place: e.target.value });
@@ -40,7 +40,7 @@ export const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
           <Input
             disabled={!data?.place}
             inputType={data?.place}
-            variant="select"
+            variant={$input.SELECT}
             value={data?.property}
             handleChange={(e) => {
               setData({ ...data, property: e.target.value });
@@ -60,7 +60,7 @@ export const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
               <div className={[space["m-t--22"]].join(" ")}>
                 <div className={[space["m-b--22"]].join(" ")}>
                   <Input
-                    variant="radio"
+                    variant={$input.RADIO}
                     title="Entire place"
                     subtitle="Guests have the whole place to themselves. This usually includes a bedroom, a bathroom, and a kitchen."
                     selected={data.stay === "Entire place"}
@@ -69,7 +69,7 @@ export const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
                 </div>
                 <div className={[space["m-b--22"]].join(" ")}>
                   <Input
-                    variant="radio"
+                    variant={$input.RADIO}
                     title="Private place"
                     subtitle="Guests have their own private room for sleeping. Other areas could be shared."
                     selected={data.stay === "Private place"}
@@ -78,7 +78,7 @@ export const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
                 </div>
                 <div className={[space["m-b--22"]].join(" ")}>
                   <Input
-                    variant="radio"
+                    variant={$input.RADIO}
                     title="Shared room"
                     subtitle="Guests sleep in a bedroom or a common area that could be shared with others."
                     selected={data.stay === "Shared room"}

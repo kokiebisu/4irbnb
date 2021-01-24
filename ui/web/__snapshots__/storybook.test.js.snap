@@ -527,7 +527,7 @@ exports[`Storyshots Atoms/Button Auth 1`] = `
   }
 >
   <button
-    className="hover__auth bg--transparent block w--full p-h--12 p-v--12 br--8 inline-block transition"
+    className=" inline-block transition"
     data-testid="auth-button--atom"
     style={
       Object {
@@ -624,7 +624,7 @@ exports[`Storyshots Atoms/Button Banner 1`] = `
 
 exports[`Storyshots Atoms/Button Border 1`] = `
 <button
-  className="bg--transparent inline-block transition"
+  className=" inline-block transition"
   data-testid="border-button--atom"
   style={
     Object {
@@ -638,6 +638,37 @@ exports[`Storyshots Atoms/Button Border 1`] = `
     <h4>
       Button
     </h4>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Destination 1`] = `
+<button
+  className=" inline-block transition"
+  data-testid="destination-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="p-v--16 p-r--16"
+  >
+    <div>
+      <h4
+        className="size--14 text--left"
+      >
+        City
+      </h4>
+    </div>
+    <div>
+      <h4
+        className="size--14 c--gray__0 text--left"
+      >
+        Location
+      </h4>
+    </div>
   </div>
 </button>
 `;
@@ -903,7 +934,7 @@ exports[`Storyshots Atoms/Button Nearby 1`] = `
 
 exports[`Storyshots Atoms/Button Option 1`] = `
 <button
-  className="w--full inline-block transition"
+  className=" inline-block transition"
   data-testid="option-button--atom"
   style={
     Object {
@@ -5736,802 +5767,6 @@ exports[`Storyshots Molecules/Panel Room 1`] = `
     </div>
   </div>
 </div>
-`;
-
-exports[`Storyshots Organisms Footer 1`] = `
-<footer
-  className="b-t--white__2 p-v--22 bg--white__1"
->
-  <div
-    className="container"
-  >
-    <div
-      className="b-b--white__1 flex__footer--section"
-    >
-      <div
-        className="bt--white__2 nf-m-t--20 p-b__footer--section w__footer--section"
-      >
-        <div>
-          <h3
-            className="size--12 uppercase"
-          >
-            About
-          </h3>
-        </div>
-        <div
-          className="m-v--15 grid__footer--items"
-        >
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  How Airbnb works
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Newsroom
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Airbnb Plus
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Airbnb Luxe
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Hotel Tonight
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Airbnb for Work
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Olympics
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Careers
-                </h4>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
-        className="bt--white__2 nf-m-t--20 p-b__footer--section w__footer--section"
-      >
-        <div>
-          <h3
-            className="size--12 uppercase"
-          >
-            Community
-          </h3>
-        </div>
-        <div
-          className="m-v--15 grid__footer--items"
-        >
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Diversity & Belonging
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Accessibility
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Airbnb Associates
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Frontline Stays
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Invite friends
-                </h4>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
-        className="bt--white__2 nf-m-t--20 p-b__footer--section w__footer--section"
-      >
-        <div>
-          <h3
-            className="size--12 uppercase"
-          >
-            Host
-          </h3>
-        </div>
-        <div
-          className="m-v--15 grid__footer--items"
-        >
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Host your home
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Host an Online Experience
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Host an Experience
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Message from CEO Brian Chesky
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Responsible hosting
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Open Homes
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Resource Centre
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Community Centre
-                </h4>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
-        className="bt--white__2 nf-m-t--20 p-b__footer--section w__footer--section"
-      >
-        <div>
-          <h3
-            className="size--12 uppercase"
-          >
-            Support
-          </h3>
-        </div>
-        <div
-          className="m-v--15 grid__footer--items"
-        >
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Updates for COVID-19
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Help Centre
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Cancellation options
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Neighbourhood Support
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div
-            className="m-v--15 m__footer--item"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Trust & Safety
-                </h4>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      className="flex__footer--others"
-    >
-      <div
-        className="flex items-center m-h--0 m-v--20"
-      >
-        <div>
-          <button
-            className="flex items-center m-r--10 bg--transparent b--0"
-          >
-            <svg
-              className="m-r--5"
-              viewBox="0 0 16 16"
-              width={16}
-            >
-              <path
-                d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
-              />
-            </svg>
-            <u
-              className="size--14 m-r--7"
-            >
-              English(CA)
-            </u>
-          </button>
-        </div>
-        <div>
-          <button
-            className=" inline-block transition"
-            data-testid="underline-button--atom"
-            style={
-              Object {
-                "cursor": "pointer",
-              }
-            }
-          >
-            <div
-              className="inline-block bg--transparent"
-            >
-              <h3
-                style={
-                  Object {
-                    "fontSize": 14,
-                  }
-                }
-              >
-                <u>
-                  $ CAD
-                </u>
-              </h3>
-            </div>
-          </button>
-        </div>
-      </div>
-      <div
-        className="flex items-center"
-      >
-        <div
-          className="footer__rights"
-        >
-          <h4
-            className="size--15"
-          >
-            © 2020 Airbnb, Inc. All rights reserved
-          </h4>
-        </div>
-        <div
-          className="flex items-center"
-        >
-          <div
-            className="block__footer--dot"
-          >
-              ·  
-          </div>
-          <div
-            className="m-r--10"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Privacy
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div>
-             ·  
-          </div>
-          <div
-            className="m-r--10"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Terms
-                </h4>
-              </div>
-            </button>
-          </div>
-          <div>
-             ·  
-          </div>
-          <div
-            className="m-r--10"
-          >
-            <button
-              className=" inline-block transition"
-              data-testid="link-button--atom"
-              onClick={[Function]}
-              style={
-                Object {
-                  "cursor": "pointer",
-                }
-              }
-            >
-              <div>
-                <h4
-                  className="size--14"
-                >
-                  Sitemap
-                </h4>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
 `;
 
 exports[`Storyshots Organisms/Bar Availability 1`] = `
@@ -24284,7 +23519,7 @@ exports[`Storyshots Prototypes/Globe Currency 1`] = `
             <div>
               <button
                 className="text--left block w--full transition"
-                data-testid="undefined-button--atom"
+                data-testid="currency-button--atom"
                 style={
                   Object {
                     "cursor": "pointer",
@@ -29342,34 +28577,194 @@ exports[`Storyshots Prototypes/Searchbar Stay 1`] = `
   }
 >
   <div
-    data-testid="stay-searchbar-prototype"
+    className="relative"
   >
     <div
-      className="relative"
+      data-testid="search-bar"
     >
       <div
-        data-testid="search-bar"
+        className={null}
+        style={
+          Object {
+            "backgroundColor": "white",
+            "border": "1px solid lightgray",
+            "borderRadius": 50,
+            "display": "grid",
+            "gridTemplateColumns": "1.5fr 1px 1fr 1px  1fr 1px 1.5fr",
+          }
+        }
       >
-        <div
-          className={null}
+        <button
+          className="false hover-background--white__1"
+          onClick={[Function]}
           style={
             Object {
-              "backgroundColor": "white",
-              "border": "1px solid lightgray",
-              "borderRadius": 50,
-              "display": "grid",
-              "gridTemplateColumns": "1.5fr 1px 1fr 1px  1fr 1px 1.5fr",
+              "borderRadius": "50px",
+              "display": "block",
+              "padding": "5px 24px",
             }
           }
         >
-          <button
-            className="false hover-background--white__1"
-            onClick={[Function]}
+          <div
+            className="flex items-center"
+          >
+            <div>
+              <div>
+                <h3
+                  className="text--left size--12"
+                >
+                  Where are you going?
+                </h3>
+              </div>
+              <div>
+                <p
+                  className="text--left size--12"
+                >
+                  Location
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "flex",
+              "height": "100%",
+            }
+          }
+        >
+          <div
+            className="bg--white__2"
             style={
               Object {
-                "borderRadius": "50px",
-                "display": "block",
-                "padding": "5px 24px",
+                "height": 25,
+                "width": "100%",
+              }
+            }
+          />
+        </div>
+        <button
+          className="false hover-background--white__1"
+          onClick={[Function]}
+          style={
+            Object {
+              "borderRadius": "50px",
+              "display": "block",
+              "padding": "5px 24px",
+            }
+          }
+        >
+          <div
+            className="flex items-center"
+          >
+            <div>
+              <div>
+                <h3
+                  className="text--left size--12"
+                >
+                  Add dates
+                </h3>
+              </div>
+              <div>
+                <p
+                  className="text--left size--12"
+                >
+                  Check in
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "flex",
+              "height": "100%",
+            }
+          }
+        >
+          <div
+            className="bg--white__2"
+            style={
+              Object {
+                "height": 25,
+                "width": "100%",
+              }
+            }
+          />
+        </div>
+        <button
+          className="false hover-background--white__1"
+          onClick={[Function]}
+          style={
+            Object {
+              "borderRadius": "50px",
+              "display": "block",
+              "padding": "5px 24px",
+            }
+          }
+        >
+          <div
+            className="flex items-center"
+          >
+            <div>
+              <div>
+                <h3
+                  className="text--left size--12"
+                >
+                  Add dates
+                </h3>
+              </div>
+              <div>
+                <p
+                  className="text--left size--12"
+                >
+                  Check out
+                </p>
+              </div>
+            </div>
+          </div>
+        </button>
+        <div
+          style={
+            Object {
+              "alignItems": "center",
+              "display": "flex",
+              "height": "100%",
+            }
+          }
+        >
+          <div
+            className="bg--white__2"
+            style={
+              Object {
+                "height": 25,
+                "width": "100%",
+              }
+            }
+          />
+        </div>
+        <button
+          className="false hover-background--white__1"
+          onClick={[Function]}
+          style={
+            Object {
+              "borderRadius": "50px",
+              "display": "block",
+              "padding": "5px 8px 5px 24px",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "alignItems": "center",
+                "borderRadius": false,
+                "display": "flex",
+                "justifyContent": "space-between",
               }
             }
           >
@@ -29379,314 +28774,150 @@ exports[`Storyshots Prototypes/Searchbar Stay 1`] = `
               <div>
                 <div>
                   <h3
-                    className="text--left size--12"
+                    className="text--left no-wrap size--12"
                   >
-                    Where are you going?
+                    Guests
                   </h3>
                 </div>
                 <div>
                   <p
-                    className="text--left size--12"
+                    className="text--left no-wrap size--12"
                   >
-                    Location
+                    Add guests
                   </p>
                 </div>
               </div>
             </div>
-          </button>
-          <div
-            style={
-              Object {
-                "alignItems": "center",
-                "display": "flex",
-                "height": "100%",
-              }
-            }
-          >
-            <div
-              className="bg--white__2"
-              style={
-                Object {
-                  "height": 25,
-                  "width": "100%",
+            <div>
+              <button
+                className=" inline-block transition"
+                data-testid="search-button--atom"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
                 }
-              }
-            />
-          </div>
-          <button
-            className="false hover-background--white__1"
-            onClick={[Function]}
-            style={
-              Object {
-                "borderRadius": "50px",
-                "display": "block",
-                "padding": "5px 24px",
-              }
-            }
-          >
-            <div
-              className="flex items-center"
-            >
-              <div>
-                <div>
-                  <h3
-                    className="text--left size--12"
-                  >
-                    Add dates
-                  </h3>
-                </div>
-                <div>
-                  <p
-                    className="text--left size--12"
-                  >
-                    Check in
-                  </p>
-                </div>
-              </div>
-            </div>
-          </button>
-          <div
-            style={
-              Object {
-                "alignItems": "center",
-                "display": "flex",
-                "height": "100%",
-              }
-            }
-          >
-            <div
-              className="bg--white__2"
-              style={
-                Object {
-                  "height": 25,
-                  "width": "100%",
-                }
-              }
-            />
-          </div>
-          <button
-            className="false hover-background--white__1"
-            onClick={[Function]}
-            style={
-              Object {
-                "borderRadius": "50px",
-                "display": "block",
-                "padding": "5px 24px",
-              }
-            }
-          >
-            <div
-              className="flex items-center"
-            >
-              <div>
-                <div>
-                  <h3
-                    className="text--left size--12"
-                  >
-                    Add dates
-                  </h3>
-                </div>
-                <div>
-                  <p
-                    className="text--left size--12"
-                  >
-                    Check out
-                  </p>
-                </div>
-              </div>
-            </div>
-          </button>
-          <div
-            style={
-              Object {
-                "alignItems": "center",
-                "display": "flex",
-                "height": "100%",
-              }
-            }
-          >
-            <div
-              className="bg--white__2"
-              style={
-                Object {
-                  "height": 25,
-                  "width": "100%",
-                }
-              }
-            />
-          </div>
-          <button
-            className="false hover-background--white__1"
-            onClick={[Function]}
-            style={
-              Object {
-                "borderRadius": "50px",
-                "display": "block",
-                "padding": "5px 8px 5px 24px",
-              }
-            }
-          >
-            <div
-              style={
-                Object {
-                  "alignItems": "center",
-                  "borderRadius": false,
-                  "display": "flex",
-                  "justifyContent": "space-between",
-                }
-              }
-            >
-              <div
-                className="flex items-center"
               >
-                <div>
-                  <div>
-                    <h3
-                      className="text--left no-wrap size--12"
-                    >
-                      Guests
-                    </h3>
-                  </div>
-                  <div>
-                    <p
-                      className="text--left no-wrap size--12"
-                    >
-                      Add guests
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <button
-                  className=" inline-block transition"
-                  data-testid="search-button--atom"
-                  onClick={[Function]}
+                <div
+                  className="flex items-center bg--primary"
                   style={
                     Object {
-                      "cursor": "pointer",
+                      "borderRadius": 50,
+                      "height": 40,
+                      "transition": "0.25s all ease",
+                      "transitionDelay": "0.25s",
+                      "width": 40,
                     }
                   }
                 >
                   <div
-                    className="flex items-center bg--primary"
+                    className="p-l--14 m-r--4"
+                  >
+                    <svg
+                      height={13}
+                      viewBox="0 0 32 32"
+                      width={13}
+                    >
+                      <g
+                        fill="none"
+                      >
+                        <path
+                          d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"
+                          stroke="white"
+                          strokeWidth={4}
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                  <div
                     style={
                       Object {
-                        "borderRadius": 50,
-                        "height": 40,
+                        "opacity": 0,
                         "transition": "0.25s all ease",
-                        "transitionDelay": "0.25s",
-                        "width": 40,
+                        "transitionDelay": "0s",
+                        "visibility": "hidden",
                       }
                     }
                   >
-                    <div
-                      className="p-l--14 m-r--4"
+                    <p
+                      className="size--15 c--white"
                     >
-                      <svg
-                        height={13}
-                        viewBox="0 0 32 32"
-                        width={13}
-                      >
-                        <g
-                          fill="none"
-                        >
-                          <path
-                            d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"
-                            stroke="white"
-                            strokeWidth={4}
-                          />
-                        </g>
-                      </svg>
-                    </div>
-                    <div
-                      style={
-                        Object {
-                          "opacity": 0,
-                          "transition": "0.25s all ease",
-                          "transitionDelay": "0s",
-                          "visibility": "hidden",
-                        }
-                      }
-                    >
-                      <p
-                        className="size--15 c--white"
-                      >
-                        Search
-                      </p>
-                    </div>
+                      Search
+                    </p>
                   </div>
-                </button>
-              </div>
+                </div>
+              </button>
             </div>
-          </button>
-        </div>
+          </div>
+        </button>
       </div>
-      <div
-        style={
-          Object {
-            "left": 0,
-            "maxWidth": 400,
-            "position": "absolute",
-            "top": 60,
-            "width": "100%",
-            "zIndex": 80,
-          }
+    </div>
+    <div
+      style={
+        Object {
+          "left": 0,
+          "maxWidth": 400,
+          "position": "absolute",
+          "top": 60,
+          "width": "100%",
+          "zIndex": 80,
         }
-      >
-        <div
-          className="w--full"
-        />
-      </div>
+      }
+    >
       <div
-        style={
-          Object {
-            "left": 0,
-            "maxWidth": 780,
-            "position": "absolute",
-            "top": 60,
-            "width": "100%",
-            "zIndex": 80,
-          }
+        className="w--full"
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "left": 0,
+          "maxWidth": 780,
+          "position": "absolute",
+          "top": 60,
+          "width": "100%",
+          "zIndex": 80,
         }
-      >
-        <div
-          className="w--full"
-        />
-      </div>
+      }
+    >
       <div
-        style={
-          Object {
-            "left": 0,
-            "maxWidth": 780,
-            "position": "absolute",
-            "top": 60,
-            "width": "100%",
-            "zIndex": 80,
-          }
+        className="w--full"
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "left": 0,
+          "maxWidth": 780,
+          "position": "absolute",
+          "top": 60,
+          "width": "100%",
+          "zIndex": 80,
         }
-      >
-        <div
-          className="w--full"
-        />
-      </div>
+      }
+    >
       <div
-        style={
-          Object {
-            "display": "flex",
-            "justifyContent": "flex-end",
-            "maxWidth": 325,
-            "position": "absolute",
-            "right": 0,
-            "top": 60,
-            "width": "100%",
-            "zIndex": 80,
-          }
+        className="w--full"
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "justifyContent": "flex-end",
+          "maxWidth": 325,
+          "position": "absolute",
+          "right": 0,
+          "top": 60,
+          "width": "100%",
+          "zIndex": 80,
         }
-      >
-        <div
-          className="w--full"
-        />
-      </div>
+      }
+    >
+      <div
+        className="w--full"
+      />
     </div>
   </div>
 </div>
@@ -30212,7 +29443,7 @@ exports[`Storyshots Templates/D/OnlineHosts More 1`] = `
               className="m-t--32 flex justify-center"
             >
               <button
-                className="bg--transparent inline-block transition"
+                className=" inline-block transition"
                 data-testid="border-button--atom"
                 style={
                   Object {
@@ -30392,7 +29623,7 @@ exports[`Storyshots Templates/D/OnlineHosts Sharing 1`] = `
         className="flex justify-center"
       >
         <button
-          className="bg--transparent inline-block transition"
+          className=" inline-block transition"
           data-testid="border-button--atom"
           style={
             Object {
@@ -30602,7 +29833,7 @@ exports[`Storyshots Templates/D/OnlineHosts Works 1`] = `
               className="m-t--32 flex justify-center"
             >
               <button
-                className="bg--transparent inline-block transition"
+                className=" inline-block transition"
                 data-testid="border-button--atom"
                 style={
                   Object {
@@ -31255,7 +30486,7 @@ exports[`Storyshots Templates/Experiences/ID Available 1`] = `
       className="m-t--32"
     >
       <button
-        className="bg--transparent inline-block transition"
+        className=" inline-block transition"
         data-testid="border-button--atom"
         style={
           Object {
@@ -32058,7 +31289,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
             className={false}
           >
             <button
-              className="bg--transparent inline-block transition"
+              className=" inline-block transition"
               data-testid="border-button--atom"
               style={
                 Object {
@@ -33069,7 +32300,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
       className="m-t--16"
     >
       <button
-        className="bg--transparent inline-block transition"
+        className=" inline-block transition"
         data-testid="border-button--atom"
         style={
           Object {
@@ -35317,6 +34548,254 @@ exports[`Storyshots Templates/Index Categories 1`] = `
 </div>
 `;
 
+exports[`Storyshots Templates/Index Destinations 1`] = `
+<div
+  data-testid="destinations-landing--template"
+>
+  <div>
+    <div
+      className="flex"
+      style={
+        Object {
+          "overflowX": "auto",
+        }
+      }
+    >
+      <div>
+        <div>
+          <button
+            className="p-v--14 p-h--12 br--8 hover-background--white__1"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <div>
+              <h3
+                className="no-wrap size--14"
+              >
+                Desinations for arts & culture
+              </h3>
+            </div>
+          </button>
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "backgroundColor": "black",
+                  "height": 2,
+                  "width": "80%",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <button
+            className="p-v--14 p-h--12 br--8 hover-background--white__1"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <div>
+              <h3
+                className="no-wrap size--14"
+              >
+                Destinations for outdoor adventure
+              </h3>
+            </div>
+          </button>
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "height": 2,
+                  "width": "80%",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <button
+            className="p-v--14 p-h--12 br--8 hover-background--white__1"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <div>
+              <h3
+                className="no-wrap size--14"
+              >
+                Mountain cabins
+              </h3>
+            </div>
+          </button>
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "height": 2,
+                  "width": "80%",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <button
+            className="p-v--14 p-h--12 br--8 hover-background--white__1"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <div>
+              <h3
+                className="no-wrap size--14"
+              >
+                Beach destinations
+              </h3>
+            </div>
+          </button>
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "height": 2,
+                  "width": "80%",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div>
+          <button
+            className="p-v--14 p-h--12 br--8 hover-background--white__1"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            <div>
+              <h3
+                className="no-wrap size--14"
+              >
+                Popular destinations
+              </h3>
+            </div>
+          </button>
+          <div
+            style={
+              Object {
+                "display": "flex",
+                "justifyContent": "center",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "backgroundColor": "transparent",
+                  "height": 2,
+                  "width": "80%",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="bg--white__2 w--full"
+      style={
+        Object {
+          "height": 1,
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flexWrap": "wrap",
+        }
+      }
+    >
+      <div
+        className="destination__w"
+      >
+        <button
+          className=" inline-block transition"
+          data-testid="destination-button--atom"
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          <div
+            className="p-v--16 p-r--16"
+          >
+            <div>
+              <h4
+                className="size--14 text--left"
+              >
+                City
+              </h4>
+            </div>
+            <div>
+              <h4
+                className="size--14 c--gray__0 text--left"
+              >
+                Location
+              </h4>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Templates/Index Nearby 1`] = `
 <div
   data-testid="nearby-landing--template"
@@ -36081,7 +35560,7 @@ exports[`Storyshots Templates/Index Online 1`] = `
       className="m-v--32"
     >
       <button
-        className="bg--transparent inline-block transition"
+        className=" inline-block transition"
         data-testid="border-button--atom"
         style={
           Object {
@@ -36176,7 +35655,7 @@ exports[`Storyshots Templates/Rooms/ID Amenities 1`] = `
         }
       >
         <button
-          className="bg--transparent inline-block transition"
+          className=" inline-block transition"
           data-testid="border-button--atom"
           style={
             Object {
@@ -36595,7 +36074,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
               className={false}
             >
               <button
-                className="bg--transparent inline-block transition"
+                className=" inline-block transition"
                 data-testid="border-button--atom"
                 style={
                   Object {
@@ -38089,7 +37568,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
       className="m-t--16"
     >
       <button
-        className="bg--transparent inline-block transition"
+        className=" inline-block transition"
         data-testid="border-button--atom"
         style={
           Object {

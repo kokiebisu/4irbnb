@@ -1,10 +1,10 @@
-/** components */
 import { Input } from "@input";
 
-/** styles **/
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
+
+import * as $input from "@input/variants";
 
 export const AmenitiesCreate: React.FC<{
   data?: any;
@@ -98,7 +98,7 @@ export const AmenitiesCreate: React.FC<{
               <Input
                 check={() => modify("amenities", item)}
                 checked={data.amenities.includes(item)}
-                variant="checkbox"
+                variant={$input.CHECKBOX}
                 title={title}
                 description={description}
               />
@@ -143,7 +143,7 @@ export const AmenitiesCreate: React.FC<{
               <Input
                 check={() => modify("safeties", item)}
                 checked={data.safeties.includes(item)}
-                variant="checkbox"
+                variant={$input.CHECKBOX}
                 title={title}
                 description={description}
               />

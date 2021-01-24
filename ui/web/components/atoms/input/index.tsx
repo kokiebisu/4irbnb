@@ -1,4 +1,3 @@
-/** components */
 import { EmailInput } from "@input/input.email";
 import { PasswordInput } from "@input/input.password";
 import { NameInput } from "@input/input.name";
@@ -20,7 +19,6 @@ import { ClosedInput } from "@input/input.closed";
 import { PriceInput } from "@input/input.price";
 import { PhotoInput } from "@input/input.photo";
 
-/** styles **/
 import shape from "@styles/shape.module.scss";
 import { AnotherInput } from "./input.another";
 

@@ -17,8 +17,9 @@ import layout from "@styles/layout.module.scss";
 
 import { Underline } from "@button/button.stories";
 
-import * as bulletVariant from "@bullet/variants";
-import * as buttonVariant from "@button/variants";
+import * as $bullet from "@bullet/variants";
+import * as $button from "@button/variants";
+import * as $input from "@input/variants";
 
 export const ExistsPrototype: React.FC<{
   data?: {
@@ -92,24 +93,20 @@ export const ExistsPrototype: React.FC<{
       <form onSubmit={formik.handleSubmit}>
         <div className={[space["m-v--16"]].join(" ")}>
           <Input
-            variant="password"
+            variant={$input.PASSWORD}
             handleChange={formik.handleChange}
             value={formik.values.password}
             errors={formik.errors.password !== undefined}
           />
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
-          <Button
-            variant={buttonVariant.PRIMARY}
-            loading={loading}
-            title="Log in"
-          />
+          <Button variant={$button.PRIMARY} loading={loading} title="Log in" />
         </div>
         <div>
           {formik.errors.password !== undefined && (
             <div className={[space["m-t--6"]].join(" ")}>
               <Bullet
-                variant={bulletVariant.REQUIRED}
+                variant={$bullet.REQUIRED}
                 message={formik.errors.password}
               />
             </div>
@@ -118,14 +115,14 @@ export const ExistsPrototype: React.FC<{
       </form>
       <div className={[space["m-v--16"]].join(" ")}>
         <Button
-          variant={buttonVariant.UNDERLINE}
+          variant={$button.UNDERLINE}
           title="Login with a different account"
           onClick={() => alert("button pressed")}
         />
       </div>
       <div className={[space["m-v--16"]].join(" ")}>
         <Button
-          variant={buttonVariant.UNDERLINE}
+          variant={$button.UNDERLINE}
           title="Forgot password?"
           onClick={() => alert("button pressed")}
         />

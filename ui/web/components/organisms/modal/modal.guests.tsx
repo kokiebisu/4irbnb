@@ -1,17 +1,13 @@
-/** components */
 import { Input } from "@input";
 
-/** styles */
-import shape from "@styles/shape.module.scss";
-import space from "@styles/space.module.scss";
-import color from "@styles/color.module.scss";
+import * as $input from "@input/variants";
 
 export const GuestsModal: React.FC<{}> = () => {
   return (
     <div>
       <div>
         <Input
-          variant="counter"
+          variant={$input.COUNTER}
           type="guests"
           title="Adults"
           subtitle="Ages 13 or above"
@@ -20,7 +16,7 @@ export const GuestsModal: React.FC<{}> = () => {
       <div style={{ height: 1, width: "100%", backgroundColor: "#EBEBEB" }} />
       <div>
         <Input
-          variant="counter"
+          variant={$input.COUNTER}
           type="guests"
           title="Children"
           subtitle="Ages 2 - 12"
@@ -29,7 +25,7 @@ export const GuestsModal: React.FC<{}> = () => {
       <div style={{ height: 1, width: "100%", backgroundColor: "#EBEBEB" }} />
       <div>
         <Input
-          variant="counter"
+          variant={$input.COUNTER}
           type="guests"
           title="Infants"
           subtitle="Under 2"

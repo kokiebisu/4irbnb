@@ -13,7 +13,7 @@ import { Button } from "@button";
 
 import { useHandleScroll } from "@hooks/useHandleScroll";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 /**
  * Renders the details header
@@ -138,7 +138,7 @@ export const DetailsHeader: React.FC<{
                   </div>
                   <div>
                     <Button
-                      variant={buttonVariant.PRIMARY}
+                      variant={$button.PRIMARY}
                       title="Check availability"
                     />
                   </div>
