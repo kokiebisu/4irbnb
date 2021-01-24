@@ -3,7 +3,6 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "target": "es6",
-    "lib": ["es2015"],
     "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitAny": false,
@@ -12,9 +11,9 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "declaration": true,
-    "rootDir": "src",
     "outDir": "build",
-    "composite": true
+    "composite": true,
+    "rootDir": "src"
   },
   "references": [{ "path": "../error" }]
 }

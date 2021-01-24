@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "build/index",
   "license": "MIT",
+  "types": "build/index",
   "scripts": {
     "clean": "rm -rf build/",
     "build": "yarn clean && tsc --build tsconfig.json"
@@ -15,5 +16,8 @@
     "nohoist": [
       "**"
     ]
-  }
+  },
+  "files": [
+    "build"
+  ]
 }

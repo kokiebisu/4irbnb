@@ -1,8 +1,9 @@
 {
+  "files": [],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "target": "es6",
+    "target": "esnext",
     "lib": ["es2015"],
     "module": "commonjs",
     "moduleResolution": "node",
@@ -12,16 +13,15 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "composite": true,
-    "declaration": true
+    "declaration": true,
+    "declarationMap": true
   },
   "references": [
-    { "path": "./services/auth" },
-    { "path": "./services/stays" },
-    { "path": "./packages/middleware" },
-    { "path": "./packages/error" },
-    { "path": "./packages/content" }
+    { "path": "services/auth" },
+    { "path": "services/stays" },
+    { "path": "packages/middleware" },
+    { "path": "packages/error" },
+    { "path": "packages/content" }
   ],
-  "files": [],
-  "include": [],
-  "exclude": ["**/node_modules"]
+  "exclude": ["node_modules", "dist"]
 }
