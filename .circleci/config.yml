@@ -59,6 +59,7 @@ commands:
           path: ~/airbnb
       - *typescript
       - *install
+      - *build
       - *test
 
 jobs:
