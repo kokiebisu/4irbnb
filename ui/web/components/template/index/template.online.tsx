@@ -1,16 +1,14 @@
-/** components */
 import { Card } from "@card";
 import { Button } from "@button";
 
-/** styles **/
 import section from "@template/index.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 
-/** components */
 import { Border } from "@button/button.stories";
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the online section
@@ -124,7 +122,12 @@ export const OnlineTemplate: React.FC<{
         </div>
       </div>
       <div className={[space["m-v--32"]].join(" ")}>
-        <Button {...Border.args} title="Explore all" size="sm" inverse={dark} />
+        <Button
+          variant={buttonVariant.BORDER}
+          title="Explore all"
+          size="sm"
+          inverse={dark}
+        />
       </div>
     </div>
   );

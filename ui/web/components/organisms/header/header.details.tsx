@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
 
-/** styles */
 import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 import color from "@styles/color.module.scss";
@@ -8,14 +7,13 @@ import font from "@styles/font.module.scss";
 import shape from "@styles/shape.module.scss";
 import header from "@header/header.module.scss";
 
-/** vectors */
 import { Star } from "@svg/original";
 
-/** components */
 import { Button } from "@button";
 
-/** hooks */
 import { useHandleScroll } from "@hooks/useHandleScroll";
+
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the details header
@@ -139,7 +137,10 @@ export const DetailsHeader: React.FC<{
                     </div>
                   </div>
                   <div>
-                    <Button variant="primary" title="Check availability" />
+                    <Button
+                      variant={buttonVariant.PRIMARY}
+                      title="Check availability"
+                    />
                   </div>
                 </div>
               </motion.div>

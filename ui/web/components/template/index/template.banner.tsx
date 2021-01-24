@@ -15,8 +15,8 @@ import { Button } from "@button";
 import { useHandleScroll } from "@hooks/useHandleScroll";
 
 import { Banner } from "@button/button.stories";
-
 import { ResponsiveImage } from "@helper/img";
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the banner section
@@ -108,7 +108,7 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
                 ].join(" ")}
               >
                 <Button
-                  {...Banner.args}
+                  variant={buttonVariant.BANNER}
                   title="Explore nearby"
                   onClick={() => Router.push("/")}
                 />

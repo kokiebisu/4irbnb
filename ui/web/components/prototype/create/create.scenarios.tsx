@@ -1,13 +1,13 @@
-/** styles */
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import layout from "@styles/layout.module.scss";
 
-/** components */
 import { Input } from "@input";
 import { Layout } from "@layout";
 import { Bullet } from "@bullet";
+
+import * as bulletVariant from "@bullet/variants";
 
 export const ScenariosCreate: React.FC<{}> = () => {
   return (
@@ -21,7 +21,7 @@ export const ScenariosCreate: React.FC<{}> = () => {
             (type, index) => {
               return (
                 <div key={index} className={[space["m-b--32"]].join(" ")}>
-                  <Bullet variant="scenario" type={type} />
+                  <Bullet variant={bulletVariant.SCENARIO} type={type} />
                 </div>
               );
             }

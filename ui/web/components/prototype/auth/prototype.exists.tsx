@@ -2,25 +2,23 @@ import { useState } from "react";
 import Router from "next/router";
 import { useFormik } from "formik";
 
-/** components */
 import { Bullet } from "@bullet";
 import { Button } from "@button";
 import { Input } from "@input";
 
-/** Helpers */
 import { validateExists as validate } from "@helper/auth";
 
-/** hooks */
 import { usePost } from "@hooks/usePost";
 
-/** styles **/
 import space from "@styles/space.module.scss";
 import shape from "@styles/shape.module.scss";
 import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 
-/** stories */
 import { Underline } from "@button/button.stories";
+
+import * as bulletVariant from "@bullet/variants";
+import * as buttonVariant from "@button/variants";
 
 export const ExistsPrototype: React.FC<{
   data?: {
@@ -101,26 +99,33 @@ export const ExistsPrototype: React.FC<{
           />
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
-          <Button variant="primary" loading={loading} title="Log in" />
+          <Button
+            variant={buttonVariant.PRIMARY}
+            loading={loading}
+            title="Log in"
+          />
         </div>
         <div>
           {formik.errors.password !== undefined && (
             <div className={[space["m-t--6"]].join(" ")}>
-              <Bullet variant="required" message={formik.errors.password} />
+              <Bullet
+                variant={bulletVariant.REQUIRED}
+                message={formik.errors.password}
+              />
             </div>
           )}
         </div>
       </form>
       <div className={[space["m-v--16"]].join(" ")}>
         <Button
-          {...Underline.args}
+          variant={buttonVariant.UNDERLINE}
           title="Login with a different account"
           onClick={() => alert("button pressed")}
         />
       </div>
       <div className={[space["m-v--16"]].join(" ")}>
         <Button
-          {...Underline.args}
+          variant={buttonVariant.UNDERLINE}
           title="Forgot password?"
           onClick={() => alert("button pressed")}
         />

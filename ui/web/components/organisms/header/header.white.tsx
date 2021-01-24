@@ -16,6 +16,8 @@ import { ChevronLeft } from "@svg/regular";
 
 import { Content } from "@button/content/content.transparent";
 
+import * as buttonVariant from "@button/variants";
+
 /**
  * Renders the white header
  * @param {boolean} spread - Whether if the layout should be spread out or not
@@ -39,7 +41,7 @@ export const WhiteHeader: React.FC<{
         <div className={[styles["searchbar__logo--md"]].join(" ")}>
           <Button
             block
-            variant="logo"
+            variant={buttonVariant.LOGO}
             noName
             onClick={() => Router.push("/")}
           />
@@ -52,7 +54,7 @@ export const WhiteHeader: React.FC<{
             className={[styles["searchbar__host"], space["m-h--2"]].join(" ")}
           >
             <Button
-              variant="transparent"
+              variant={buttonVariant.TRANSPARENT}
               animate
               content={<Content kind="host" />}
               onClick={() => Router.push("/host/homes")}
@@ -60,14 +62,14 @@ export const WhiteHeader: React.FC<{
           </div>
           <div className={[space["m-h--2"]].join(" ")}>
             <Button
-              variant="transparent"
+              variant={buttonVariant.TRANSPARENT}
               content={<Content kind="globe" />}
               onClick={() => toggleDispatch({ type: "toggle_globe" })}
             />
           </div>
           <div className={[space["m-l--4"]].join(" ")}>
             <Button
-              variant="menu"
+              variant={buttonVariant.MENU}
               extendsTo={[space["p-v--3"]].join(" ")}
               inverse
               authenticated={data}
@@ -86,7 +88,7 @@ export const WhiteHeader: React.FC<{
           ].join(" ")}
         >
           <Modal
-            variant="menu"
+            variant={buttonVariant.MENU}
             extendsTo={[shape["w--200"]].join(" ")}
             authenticated={data}
             criteria={toggleState.menu}
@@ -101,7 +103,7 @@ export const WhiteHeader: React.FC<{
           </div>
           <div style={{ width: "100%", flexGrow: 1 }}>
             <Button
-              variant="searchbar"
+              variant={buttonVariant.SEARCHBAR}
               onClick={() => console.log("pressed")}
             />
           </div>

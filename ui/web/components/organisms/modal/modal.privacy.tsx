@@ -1,4 +1,3 @@
-/** styles */
 import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 import font from "@styles/font.module.scss";
@@ -7,14 +6,13 @@ import space from "@styles/space.module.scss";
 import responsive from "@styles/responsive.module.scss";
 import modal from "@modal/modal.module.scss";
 
-/** components */
 import { Button } from "@button";
 
-/** vectors */
 import { Lock } from "@svg/original";
 
-/** contexts */
 import { useToggleDispatch } from "@context/toggle";
+
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the privacy modal
@@ -82,7 +80,7 @@ export const PrivacyModal: React.FC<{}> = () => {
             ].join(" ")}
           >
             <Button
-              variant="privacy"
+              variant={buttonVariant.PRIVACY}
               extendsTo={[
                 shape["w--full"],
                 responsive["b_to_f--sm"],
@@ -101,7 +99,7 @@ export const PrivacyModal: React.FC<{}> = () => {
             ].join(" ")}
           >
             <Button
-              variant="privacy"
+              variant={buttonVariant.PRIVACY}
               extendsTo={[
                 shape["w--full"],
                 responsive["b_to_f--sm"],

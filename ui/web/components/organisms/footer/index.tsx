@@ -12,6 +12,8 @@ import { Globe } from "@svg/original";
 
 import { Button } from "@button";
 
+import * as buttonVariant from "@button/variants";
+
 export interface FooterProps {
   spread?: boolean;
 }
@@ -72,7 +74,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
                         key={index}
                       >
                         <Button
-                          variant="link"
+                          variant={buttonVariant.LINK}
                           onClick={() => Router.push(url)}
                           title={name}
                         />
@@ -110,7 +112,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
               </button>
             </div>
             <div>
-              <Button variant="underline" title={`$ CAD`} bold />
+              <Button variant={buttonVariant.UNDERLINE} title={`$ CAD`} bold />
             </div>
           </div>
           <div className={[layout["flex"], layout["items-center"]].join(" ")}>
@@ -125,7 +127,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
               </div>
               <div className={space["m-r--10"]}>
                 <Button
-                  variant="link"
+                  variant={buttonVariant.LINK}
                   title="Privacy"
                   onClick={() => Router.push("/")}
                 />
@@ -133,7 +135,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
               <div>&nbsp;· &nbsp;</div>
               <div className={space["m-r--10"]}>
                 <Button
-                  variant="link"
+                  variant={buttonVariant.LINK}
                   title="Terms"
                   onClick={() => Router.push("/")}
                 />
@@ -141,7 +143,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
               <div>&nbsp;· &nbsp;</div>
               <div className={space["m-r--10"]}>
                 <Button
-                  variant="link"
+                  variant={buttonVariant.LINK}
                   title="Sitemap"
                   onClick={() => Router.push("/")}
                 />

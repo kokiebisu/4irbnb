@@ -26,6 +26,7 @@ import { NearbyButton } from "@button/button.nearby";
 import { CalendarButton } from "@button/button.calendar";
 import { VideoButton } from "@button/button.video";
 import { DestinationButton } from "@button/button.destination";
+import { CurrencyButton } from "@button/button.currency";
 
 /** styles **/
 import layout from "@styles/layout.module.scss";
@@ -85,6 +86,7 @@ export const Button: React.FC<ButtonProps> = ({
     logo: <LogoButton {...props} />,
     video: <VideoButton {...props} />,
     destination: <DestinationButton {...props} />,
+    currency: <CurrencyButton {...props} />,
   };
 
   return (

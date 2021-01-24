@@ -1,7 +1,5 @@
-/** vectors */
 import { Star } from "@svg/original";
 
-/** styles **/
 import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 import layout from "@styles/layout.module.scss";
@@ -9,13 +7,14 @@ import shape from "@styles/shape.module.scss";
 import font from "@styles/font.module.scss";
 import section from "@template/index.module.scss";
 
-/** components */
 import { Button } from "@button";
 import { Bullet } from "@bullet";
 import { Card } from "@card";
 
-/** stories */
 import { Border } from "@button/button.stories";
+
+import * as bulletVariant from "@bullet/variants";
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the reviews section
@@ -94,7 +93,7 @@ export const ReviewsTemplate: React.FC<{
                   ].join(" ")}
                 >
                   <Bullet
-                    variant="score"
+                    variant={bulletVariant.SCORE}
                     category={category?.type}
                     average={category?.average}
                   />
@@ -127,7 +126,7 @@ export const ReviewsTemplate: React.FC<{
         </div>
         <div className={[space["m-t--16"]].join(" ")}>
           <Button
-            {...Border.args}
+            variant={buttonVariant.BORDER}
             size="md"
             title={`Show all ${numberOfReviews} reviews`}
           />
