@@ -2,10 +2,10 @@
   "name": "@airbnb/auth",
   "version": "1.0.0",
   "description": "",
-  "main": "build/index",
+  "main": "./build/index.js",
   "scripts": {
     "clean": "rm -rf ./build",
-    "build": "yarn clean && tsc -b",
+    "build": "yarn clean && tsc",
     "start": "node ./build/index.js",
     "dev": "ts-node-dev --poll src/index.ts",
     "test": "jest --watchAll --no-cache",
@@ -43,11 +43,5 @@
     "@types/mongoose": "^5.10.3",
     "@types/supertest": "^2.0.10",
     "del-cli": "^3.0.1"
-  },
-  "private": true,
-  "workspaces": {
-    "nohoist": [
-      "**"
-    ]
   }
 }
