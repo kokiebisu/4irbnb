@@ -2,6 +2,7 @@ export const AUTH = "auth";
 export const MENU = "menu";
 export const PRIVACY = "privacy";
 export const BORDER = "border";
+export const BAR = "bar";
 export const BANNER = "banner";
 export const PRIMARY = "primary";
 export const PAGINATE = "paginate";
