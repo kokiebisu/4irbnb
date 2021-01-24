@@ -8,6 +8,7 @@ import { Button } from "@button";
 import { Bullet } from "@bullet";
 
 import * as bulletVariant from "@bullet/variants";
+import * as buttonVariant from "@button/variants";
 
 export const BannerTemplate: React.FC<{}> = () => {
   return (
@@ -41,7 +42,7 @@ export const BannerTemplate: React.FC<{}> = () => {
         </h4>
       </div>
       <div className={[space["m-v--40"]].join(" ")}>
-        <Button variant="primary" title="Get started" />
+        <Button variant={buttonVariant.PRIMARY} title="Get started" />
       </div>
       <div className={[space["m-v--32"]].join(" ")}>
         <img

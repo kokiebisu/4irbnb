@@ -1,16 +1,13 @@
 import Router from "next/router";
 
-/** styles */
 import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 import header from "@header/header.module.scss";
 
-/** vectors */
-import { NoNameLogo } from "@svg/logo";
-
-/** components */
 import { Button } from "@button";
+
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the header for the homes page
@@ -27,7 +24,7 @@ export const HomesHeader: React.FC<{
       >
         <div>
           <Button
-            variant="logo"
+            variant={buttonVariant.LOGO}
             extendsTo={[
               layout["inline-block"],
               header["hover__logo"],

@@ -1,17 +1,14 @@
 import Router from "next/router";
 
-/** styles */
 import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 import font from "@styles/font.module.scss";
 
-/** vectors */
-import { NoNameLogo } from "@svg/logo";
-
-/** components */
 import { Button } from "@button";
+
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the header for the homes page
@@ -32,7 +29,7 @@ export const StayHeader: React.FC<{
       <div className={[layout["flex"], layout["items-center"]].join(" ")}>
         <div>
           <Button
-            variant="logo"
+            variant={buttonVariant.LOGO}
             noName
             fill="##008489"
             onClick={() => Router.push("/")}

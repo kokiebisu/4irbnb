@@ -13,7 +13,7 @@ import { Button } from "@button";
 
 import { checkPassword } from "@helper/auth";
 
-import * as variant from "@button/variants";
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the text input component
@@ -137,7 +137,7 @@ export const PasswordInput: React.FC<{
         ].join(" ")}
       >
         <Button
-          variant={variant.UNDERLINE}
+          variant={buttonVariant.UNDERLINE}
           onClick={() => setHide((prevHide) => !prevHide)}
           font={13}
           title={hide ? "Show" : "Hide"}

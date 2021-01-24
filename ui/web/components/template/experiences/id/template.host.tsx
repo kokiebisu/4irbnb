@@ -15,6 +15,7 @@ import { Shield } from "@svg/original";
 import { Border } from "@button/button.stories";
 
 import * as bulletVariant from "@bullet/variants";
+import * as buttonVariant from "@button/variants";
 
 /**
  * Modifies the content which should be displayed initially
@@ -317,7 +318,11 @@ export const HostTemplate: React.FC<{
                   layoutType === "experience" && [space["m-r--16"]].join(" ")
                 }
               >
-                <Button {...Border.args} size="md" title="Contact host" />
+                <Button
+                  variant={buttonVariant.BORDER}
+                  size="md"
+                  title="Contact host"
+                />
               </div>
               <div
                 className={`${layoutType === "room" && space["m-t--32"]} ${[

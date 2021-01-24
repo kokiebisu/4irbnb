@@ -2,17 +2,16 @@ import { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import Router from "next/router";
 
-/** styles **/
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
 
-/** components */
 import { Button } from "@button";
 import { Input } from "@input";
 
-/** contexts */
 import { useStayDispatch } from "@context/stay";
+
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the /become-a-host/get-started page content
@@ -97,7 +96,7 @@ export const GetStartedCreate: React.FC<{}> = () => {
             >
               <div style={{ width: "100%" }}>
                 <Button
-                  variant="primary"
+                  variant={buttonVariant.PRIMARY}
                   title="Continue"
                   size="sm"
                   loading={loading}

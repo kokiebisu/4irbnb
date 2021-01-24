@@ -1,4 +1,3 @@
-/** styles */
 import modal from "@modal/modal.module.scss";
 import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
@@ -7,9 +6,9 @@ import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
-/** components */
 import { Button } from "@button";
-import { Primary, Border } from "@button/button.stories";
+
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the booking modal
@@ -119,7 +118,12 @@ export const BookingModal: React.FC<{
                     </span>
                   </div>
                   <div>
-                    <Button variant="primary" size="sm" title="Choose" spread />
+                    <Button
+                      variant={buttonVariant.PRIMARY}
+                      size="sm"
+                      title="Choose"
+                      spread
+                    />
                   </div>
                 </div>
               </div>
@@ -128,7 +132,13 @@ export const BookingModal: React.FC<{
         </div>
         <div className={[space["m-t--24"]].join(" ")}>
           <div>
-            <Button {...Border.args} size="md" title="See more dates" block />
+            <Button
+              variant={buttonVariant.BORDER}
+              extendsTo={[color["bg--transparent"]].join(" ")}
+              size="md"
+              title="See more dates"
+              block
+            />
           </div>
         </div>
       </div>

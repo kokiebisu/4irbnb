@@ -1,21 +1,16 @@
-/** styles **/
 import layout from "@styles/layout.module.scss";
-import homes from "@styles/homes.module.scss";
 import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
-import responsive from "@styles/responsive.module.scss";
+
 import font from "@styles/font.module.scss";
 import shape from "@styles/shape.module.scss";
 
-/** components */
-import { Header } from "@header";
 import { Template } from "@template/s/homes";
 import { Bar } from "@bar";
-import { Footer } from "@footer";
+
 import { Button } from "@button";
 
-/** stories */
-import { Filter } from "@button/button.stories";
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the nearby template component
@@ -64,13 +59,16 @@ export const NearbyPrototype: React.FC<{
             {filters.map((filter, index) => {
               return (
                 <div key={index} className={[space["m-r--8"]].join(" ")}>
-                  <Button {...Filter.args} name={filter.name} />
+                  <Button variant={buttonVariant.FILTER} name={filter.name} />
                 </div>
               );
             })}
           </div>
           <div className={[shape["only__sm"]].join(" ")}>
-            <Button {...Filter.args} name={`filters ${filterCount}`} />
+            <Button
+              variant={buttonVariant.FILTER}
+              name={`filters ${filterCount}`}
+            />
           </div>
         </div>
         {city && (

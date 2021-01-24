@@ -14,6 +14,7 @@ import { Card } from "@card";
 import { Border } from "@button/button.stories";
 
 import * as bulletVariant from "@bullet/variants";
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the reviews section
@@ -125,7 +126,7 @@ export const ReviewsTemplate: React.FC<{
         </div>
         <div className={[space["m-t--16"]].join(" ")}>
           <Button
-            {...Border.args}
+            variant={buttonVariant.BORDER}
             size="md"
             title={`Show all ${numberOfReviews} reviews`}
           />

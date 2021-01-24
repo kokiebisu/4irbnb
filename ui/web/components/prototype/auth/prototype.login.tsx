@@ -20,6 +20,7 @@ import { usePost } from "@hooks/usePost";
 import { Underline } from "@button/button.stories";
 
 import * as bulletVariant from "@bullet/variants";
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the login template component
@@ -121,18 +122,23 @@ export const LoginTemplate: React.FC<{}> = () => {
           )}
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
-          <Button variant="primary" title="Log in" loading={loading} block />
+          <Button
+            variant={buttonVariant.PRIMARY}
+            title="Log in"
+            loading={loading}
+            block
+          />
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
           <Button
-            {...Underline.args}
+            variant={buttonVariant.UNDERLINE}
             title="Forgot password?"
             onClick={redirectTo}
           />
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
           <Button
-            {...Underline.args}
+            variant={buttonVariant.UNDERLINE}
             title="More login options"
             onClick={switchBack}
           />
@@ -141,7 +147,11 @@ export const LoginTemplate: React.FC<{}> = () => {
           <p className={[font["size--14"], space["m-r--8"]].join(" ")}>
             Don't have an account?
           </p>
-          <Button {...Underline.args} title="Sign up" onClick={switchAuth} />
+          <Button
+            variant={buttonVariant.UNDERLINE}
+            title="Sign up"
+            onClick={switchAuth}
+          />
         </div>
       </form>
     </div>
