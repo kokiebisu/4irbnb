@@ -160,7 +160,6 @@ Searchbar.argTypes = {
 export const Auth = TemplateStory.bind({});
 Auth.args = {
   variant: "auth",
-  extendsTo: 
 };
 
 Auth.decorators = [
