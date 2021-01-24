@@ -5,6 +5,11 @@ aliases:
     docker:
       - image: circleci/node:10
 
+  - &typescript
+    run:
+      name: Install typescript global
+      command: yarn global add typescript
+
   - &install
     run:
       name: Install dependencies
