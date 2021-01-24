@@ -40,6 +40,16 @@ aliases:
       name: Pushing to docker hub
       command: docker push kokiebisu/nextbnb-auth
 
+  - &install:auth:
+    run:
+      name: Install 
+      command: cd services/auth && yarn
+
+  - &build:auth:
+    run:
+      name: Build Auth Service
+      command: cd services/auth && yarn build
+
 commands:
   install:
     steps:
@@ -59,7 +69,8 @@ commands:
           path: ~/airbnb
       - *typescript
       - *install
-      - *build
+      - *install:auth
+      - *build:auth
       - *test
 
 jobs:
@@ -67,7 +78,7 @@ jobs:
     docker:
       - image: circleci/node:10
 
-    working_directory: ~/airbnb/services/auth
+    working_directory: ~/airbnb
     steps:
       - test
 
