@@ -1,4 +1,3 @@
-/** styles **/
 import color from "@styles/color.module.scss";
 import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
@@ -6,10 +5,8 @@ import shape from "@styles/shape.module.scss";
 import space from "@styles/space.module.scss";
 import section from "@template/index.module.scss";
 
-/** stories */
-import { Border } from "@button/button.stories";
+import * as buttonVariant from "@button/variants";
 
-/** components */
 import { Button } from "@button";
 
 export const MoreTemplate: React.FC<{ imgUrl?: string }> = ({ imgUrl }) => {
@@ -57,7 +54,12 @@ export const MoreTemplate: React.FC<{ imgUrl?: string }> = ({ imgUrl }) => {
                   layout["justify-center"],
                 ].join(" ")}
               >
-                <Button {...Border.args} title="Let's go" inverse bold />
+                <Button
+                  variant={buttonVariant.BORDER}
+                  title="Let's go"
+                  inverse
+                  bold
+                />
               </div>
             </div>
           </div>

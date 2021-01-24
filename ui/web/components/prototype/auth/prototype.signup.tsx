@@ -12,12 +12,10 @@ import { Button } from "@button";
 import { Bullet } from "@bullet";
 
 import { validateSignup as validate } from "@helper/auth";
-
 import { usePost } from "@hooks/usePost";
-
 import { useAuthDispatch } from "@context/auth";
-
 import * as bulletVariant from "@bullet/variants";
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the signup template component
@@ -273,7 +271,7 @@ export const SignupTemplate: React.FC<{}> = () => {
         </div>
         <div className={[space["m-t--16"]].join(" ")}>
           <Button
-            variant="primary"
+            variant={buttonVariant.PRIMARY}
             title="Agree and continue"
             loading={loading}
             block

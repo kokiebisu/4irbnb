@@ -12,6 +12,8 @@ import template from "./index.module.scss";
 
 import { Button } from "@button";
 
+import * as buttonVariant from "@button/variants";
+
 export const DestinationsTemplate: React.FC<{
   items: { [type: string]: { city: String; location: String } };
 }> = ({
@@ -31,7 +33,7 @@ export const DestinationsTemplate: React.FC<{
       <div style={{ overflowX: "auto" }} className={[layout["flex"]].join(" ")}>
         {categories.map(({ name, value }, index) => {
           return (
-            <div>
+            <div key={index}>
               <CategoryButton
                 title={name}
                 selected={selected === value}
@@ -50,7 +52,7 @@ export const DestinationsTemplate: React.FC<{
           return (
             <div key={index} className={[template["destination__w"]].join(" ")}>
               <Button
-                variant="destination"
+                variant={buttonVariant.DESTINATION}
                 city={city}
                 location={location}
                 onClick={() =>

@@ -24,3 +24,4 @@ export const SEARCHBAR = "searchbar";
 export const LOGO = "logo";
 export const VIDEO = "video";
 export const DESTINATION = "destination";
+export const CURRENCY = "currency";

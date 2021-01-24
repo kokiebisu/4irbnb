@@ -98,7 +98,6 @@ Privacy.decorators = [
 export const Border = TemplateStory.bind({});
 Border.args = {
   variant: "border",
-  extendsTo: [color["bg--transparent"]].join(" "),
 };
 Border.argTypes = {
   size: {
@@ -161,15 +160,7 @@ Searchbar.argTypes = {
 export const Auth = TemplateStory.bind({});
 Auth.args = {
   variant: "auth",
-  extendsTo: [
-    button["hover__auth"],
-    color["bg--transparent"],
-    layout["block"],
-    shape["w--full"],
-    space["p-h--12"],
-    space["p-v--12"],
-    shape["br--8"],
-  ].join(" "),
+  extendsTo: 
 };
 
 Auth.decorators = [
@@ -205,7 +196,6 @@ Paginate.argTypes = {
 export const Option = TemplateStory.bind({});
 Option.args = {
   variant: "option",
-  extendsTo: [shape["w--full"]].join(" "),
 };
 
 export const Underline = TemplateStory.bind({});

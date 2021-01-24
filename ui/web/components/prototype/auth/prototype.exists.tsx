@@ -18,6 +18,7 @@ import layout from "@styles/layout.module.scss";
 import { Underline } from "@button/button.stories";
 
 import * as bulletVariant from "@bullet/variants";
+import * as buttonVariant from "@button/variants";
 
 export const ExistsPrototype: React.FC<{
   data?: {
@@ -98,7 +99,11 @@ export const ExistsPrototype: React.FC<{
           />
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
-          <Button variant="primary" loading={loading} title="Log in" />
+          <Button
+            variant={buttonVariant.PRIMARY}
+            loading={loading}
+            title="Log in"
+          />
         </div>
         <div>
           {formik.errors.password !== undefined && (
@@ -113,14 +118,14 @@ export const ExistsPrototype: React.FC<{
       </form>
       <div className={[space["m-v--16"]].join(" ")}>
         <Button
-          {...Underline.args}
+          variant={buttonVariant.UNDERLINE}
           title="Login with a different account"
           onClick={() => alert("button pressed")}
         />
       </div>
       <div className={[space["m-v--16"]].join(" ")}>
         <Button
-          {...Underline.args}
+          variant={buttonVariant.UNDERLINE}
           title="Forgot password?"
           onClick={() => alert("button pressed")}
         />

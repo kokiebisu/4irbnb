@@ -1,17 +1,15 @@
 import { useLayoutEffect, useRef, useState } from "react";
 
-/** styles **/
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 import section from "@template/index.module.scss";
 
-/** components */
 import { Card } from "@card";
 import { Button } from "@button";
 
-/** stories */
 import { Border } from "@button/button.stories";
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the available section
@@ -128,7 +126,7 @@ export const AvailableTemplate: React.FC<{
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div className={[space["m-h--4"]].join(" ")}>
             <Button
-              variant="paginate"
+              variant={buttonVariant.PAGINATE}
               animate
               direction="left"
               onClick={previous}
@@ -137,7 +135,7 @@ export const AvailableTemplate: React.FC<{
           </div>
           <div className={[space["m-h--4"]].join(" ")}>
             <Button
-              variant="paginate"
+              variant={buttonVariant.PAGINATE}
               animate
               direction="right"
               onClick={next}
@@ -181,7 +179,7 @@ export const AvailableTemplate: React.FC<{
         </div>
       </div>
       <div className={[space["m-t--32"]].join(" ")}>
-        <Button {...Border.args} title="See more dates" />
+        <Button variant={buttonVariant.BORDER} title="See more dates" />
       </div>
     </div>
   );

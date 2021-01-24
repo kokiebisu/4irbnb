@@ -7,6 +7,7 @@ import { Card } from "@card";
 import { Button } from "@button";
 
 import { Border } from "@button/button.stories";
+import * as buttonVariant from "@button/variants";
 
 export const SharingTemplate: React.FC<{}> = () => {
   const sharings = ["meditate", "baking", "magic"];
@@ -33,7 +34,11 @@ export const SharingTemplate: React.FC<{}> = () => {
         })}
       </div>
       <div className={[layout["flex"], layout["justify-center"]].join(" ")}>
-        <Button {...Border.args} bold title="Start creating your experience" />
+        <Button
+          variant={buttonVariant.BORDER}
+          bold
+          title="Start creating your experience"
+        />
       </div>
     </Layout>
   );

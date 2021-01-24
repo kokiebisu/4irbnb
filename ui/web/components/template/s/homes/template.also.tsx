@@ -13,6 +13,8 @@ import * as Helpers from "@helper/array";
 import { useSlider } from "@hooks/useSlider";
 import { useHandleContainerResize } from "@hooks/useHandleContainerResize";
 
+import * as buttonVariant from "@button/variants";
+
 /**
  * Renders the also section
  * @param {string[]} items - List of suggested cities
@@ -54,7 +56,7 @@ export const AlsoTemplate: React.FC<{
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div className={[space["m-h--2"]].join(" ")}>
             <Button
-              variant="paginate"
+              variant={buttonVariant.PAGINATE}
               animate
               direction="left"
               onClick={previous}
@@ -63,7 +65,7 @@ export const AlsoTemplate: React.FC<{
           </div>
           <div className={[space["m-h--2"]].join(" ")}>
             <Button
-              variant="paginate"
+              variant={buttonVariant.PAGINATE}
               animate
               direction="right"
               onClick={next}

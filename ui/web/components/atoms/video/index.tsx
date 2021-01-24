@@ -4,7 +4,7 @@ import { Animation } from "@animation";
 import { Button } from "@button";
 import { useTimeout } from "@hooks/useTimeout";
 
-import * as variant from "@button/variants";
+import * as buttonVariant from "@button/variants";
 
 export const Video: React.FC<{ videoUrl?: string }> = ({ videoUrl }) => {
   const videoRef = useRef<HTMLVideoElement>();
@@ -89,7 +89,7 @@ export const Video: React.FC<{ videoUrl?: string }> = ({ videoUrl }) => {
             initial={{ opacity: 0 }}
           >
             <Button
-              variant={variant.VIDEO}
+              variant={buttonVariant.VIDEO}
               play={!play}
               onClick={() => {
                 if (!play) {

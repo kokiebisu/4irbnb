@@ -10,6 +10,7 @@ import { Bullet } from "@bullet";
 import { validateForgotPassword as validate } from "@helper/auth";
 
 import * as bulletVariant from "@bullet/variants";
+import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the login template component
@@ -67,7 +68,7 @@ export const ForgotPasswordPrototype: React.FC<{}> = () => {
           </div>
           <div className={[].join(" ")}>
             <Button
-              variant="primary"
+              variant={buttonVariant.PRIMARY}
               size="md"
               fill="black"
               title="Send reset link"
