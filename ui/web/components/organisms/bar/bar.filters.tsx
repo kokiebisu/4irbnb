@@ -2,7 +2,7 @@ import { Button } from "@button";
 import space from "@styles/space.module.scss";
 import { useLayoutEffect, useRef, useState } from "react";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 export const FiltersBar: React.FC<{}> = () => {
   const [width, setWidth] = useState(500);
@@ -84,7 +84,7 @@ export const FiltersBar: React.FC<{}> = () => {
         {primaryFilters.map((filter, index) => {
           return (
             <div key={index} className={[space["m-r--8"]].join(" ")}>
-              <Button variant={buttonVariant.FILTER} inverse label={filter} />
+              <Button variant={$button.FILTER} inverse label={filter} />
             </div>
           );
         })}
@@ -118,7 +118,7 @@ export const FiltersBar: React.FC<{}> = () => {
             }}
           >
             <Button
-              variant={buttonVariant.PAGINATE}
+              variant={$button.PAGINATE}
               direction="left"
               size={12}
               onClick={previous}
@@ -135,14 +135,14 @@ export const FiltersBar: React.FC<{}> = () => {
         >
           {state.activeSlide > 0 && (
             <div style={{ position: "absolute", left: 0, zIndex: 40 }}>
-              <Button variant={buttonVariant.PAGINATE} direction="left" />
+              <Button variant={$button.PAGINATE} direction="left" />
             </div>
           )}
           {secondaryFilters.map((filter, index) => {
             return (
               <div key={index} className={[space["m-r--8"]].join(" ")}>
                 <Button
-                  variant={buttonVariant.FILTER}
+                  variant={$button.FILTER}
                   label={filter}
                   onClick={previous}
                 />
@@ -167,7 +167,7 @@ export const FiltersBar: React.FC<{}> = () => {
             }}
           >
             <Button
-              variant={buttonVariant.PAGINATE}
+              variant={$button.PAGINATE}
               direction="right"
               size={12}
               onClick={next}

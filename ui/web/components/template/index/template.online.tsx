@@ -8,7 +8,7 @@ import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 
 import { Border } from "@button/button.stories";
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 /**
  * Renders the online section
@@ -123,7 +123,7 @@ export const OnlineTemplate: React.FC<{
       </div>
       <div className={[space["m-v--32"]].join(" ")}>
         <Button
-          variant={buttonVariant.BORDER}
+          variant={$button.BORDER}
           title="Explore all"
           size="sm"
           inverse={dark}

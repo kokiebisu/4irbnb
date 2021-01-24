@@ -8,7 +8,7 @@ import responsive from "@styles/responsive.module.scss";
 
 import { Button } from "@button";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 /**
  * Renders the booking modal
@@ -119,7 +119,7 @@ export const BookingModal: React.FC<{
                   </div>
                   <div>
                     <Button
-                      variant={buttonVariant.PRIMARY}
+                      variant={$button.PRIMARY}
                       size="sm"
                       title="Choose"
                       spread
@@ -133,7 +133,7 @@ export const BookingModal: React.FC<{
         <div className={[space["m-t--24"]].join(" ")}>
           <div>
             <Button
-              variant={buttonVariant.BORDER}
+              variant={$button.BORDER}
               extendsTo={[color["bg--transparent"]].join(" ")}
               size="md"
               title="See more dates"

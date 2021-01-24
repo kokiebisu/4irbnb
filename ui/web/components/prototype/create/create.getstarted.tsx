@@ -11,7 +11,8 @@ import { Input } from "@input";
 
 import { useStayDispatch } from "@context/stay";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
+import * as $input from "@input/variants";
 
 /**
  * Renders the /become-a-host/get-started page content
@@ -73,11 +74,15 @@ export const GetStartedCreate: React.FC<{}> = () => {
               }}
             >
               <div>
-                <Input variant="place" value={stay} changePlace={setStay} />
+                <Input
+                  variant={$input.PLACE}
+                  value={stay}
+                  changePlace={setStay}
+                />
               </div>
               <div>
                 <Input
-                  variant="guests"
+                  variant={$input.GUESTS}
                   handleChange={formik.handleChange}
                   value={formik.values.guests}
                 />
@@ -85,7 +90,7 @@ export const GetStartedCreate: React.FC<{}> = () => {
             </div>
             <div>
               <Input
-                variant="address"
+                variant={$input.ADDRESS}
                 handleChange={formik.handleChange}
                 value={formik.values.address}
               />
@@ -96,7 +101,7 @@ export const GetStartedCreate: React.FC<{}> = () => {
             >
               <div style={{ width: "100%" }}>
                 <Button
-                  variant={buttonVariant.PRIMARY}
+                  variant={$button.PRIMARY}
                   title="Continue"
                   size="sm"
                   loading={loading}

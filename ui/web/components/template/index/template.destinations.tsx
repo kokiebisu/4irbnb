@@ -12,7 +12,7 @@ import template from "./index.module.scss";
 
 import { Button } from "@button";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 export const DestinationsTemplate: React.FC<{
   items?: { [type: string]: { city: String; location: String } };
@@ -52,7 +52,7 @@ export const DestinationsTemplate: React.FC<{
           return (
             <div key={index} className={[template["destination__w"]].join(" ")}>
               <Button
-                variant={buttonVariant.DESTINATION}
+                variant={$button.DESTINATION}
                 city={city}
                 location={location}
                 onClick={() =>

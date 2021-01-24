@@ -6,7 +6,7 @@ import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 
 import { useSlide } from "@hooks/useSlide";
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 export const CardsTemplate: React.FC<{ title?: string }> = ({
   title = "Title here",
@@ -117,7 +117,7 @@ export const CardsTemplate: React.FC<{ title?: string }> = ({
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div className={[space["m-r--8"]].join(" ")}>
             <Button
-              variant={buttonVariant.UNDERLINE}
+              variant={$button.UNDERLINE}
               title={`Show (${temporaryCards.length})`}
             />
           </div>
@@ -125,7 +125,7 @@ export const CardsTemplate: React.FC<{ title?: string }> = ({
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
                 block
-                variant={buttonVariant.PAGINATE}
+                variant={$button.PAGINATE}
                 animate
                 direction="left"
                 onClick={previous}
@@ -135,7 +135,7 @@ export const CardsTemplate: React.FC<{ title?: string }> = ({
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
                 block
-                variant={buttonVariant.PAGINATE}
+                variant={$button.PAGINATE}
                 animate
                 direction="right"
                 onClick={next}

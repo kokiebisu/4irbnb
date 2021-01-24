@@ -8,7 +8,7 @@ import { Button } from "@button";
 import React from "react";
 import { Card } from "@card";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 export const StartingTemplate = ({
   title = "Starting in the next 6 hours",
@@ -68,7 +68,7 @@ export const StartingTemplate = ({
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div className={[space["m-r--8"]].join(" ")}>
             <Button
-              variant={buttonVariant.UNDERLINE}
+              variant={$button.UNDERLINE}
               title={`Show (${temporaryCards.length})`}
             />
           </div>
@@ -76,7 +76,7 @@ export const StartingTemplate = ({
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
                 block
-                variant={buttonVariant.PAGINATE}
+                variant={$button.PAGINATE}
                 animate
                 direction="left"
                 onClick={previous}
@@ -86,7 +86,7 @@ export const StartingTemplate = ({
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
                 block
-                variant={buttonVariant.PAGINATE}
+                variant={$button.PAGINATE}
                 animate
                 direction="right"
                 onClick={next}

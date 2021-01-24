@@ -7,7 +7,7 @@ import space from "@styles/space.module.scss";
 
 import { Star } from "@svg/original";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 /**
  * Renders the modal which gives all the available options
@@ -57,7 +57,7 @@ export const AvailabilityBar: React.FC<{
         </div>
       </div>
       <div>
-        <Button variant={buttonVariant.PRIMARY} title="Check availability" />
+        <Button variant={$button.PRIMARY} title="Check availability" />
       </div>
     </div>
   );

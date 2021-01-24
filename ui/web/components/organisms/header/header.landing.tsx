@@ -20,7 +20,7 @@ import { useToggleDispatch, useToggleState } from "@context/toggle";
 import { Content } from "@button/content/content.transparent";
 import { useOnClickOutside } from "@hooks/useOnClickOutside";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 /**
  * Renders the transparent header
@@ -102,7 +102,7 @@ export const LandingHeader: React.FC<{
             className={[styles["searchbar__host"], space["m-h--2"]].join(" ")}
           >
             <Button
-              variant={buttonVariant.TRANSPARENT}
+              variant={$button.TRANSPARENT}
               content={<Content kind="host" inverse={criteria} />}
               inverse={criteria}
               animate
@@ -111,7 +111,7 @@ export const LandingHeader: React.FC<{
           </div>
           <div className={[space["m-h--2"]].join(" ")}>
             <Button
-              variant={buttonVariant.TRANSPARENT}
+              variant={$button.TRANSPARENT}
               content={<Content kind="globe" inverse={criteria} />}
               inverse={criteria}
               onClick={() => toggleDispatch({ type: "toggle_globe" })}
@@ -119,7 +119,7 @@ export const LandingHeader: React.FC<{
           </div>
           <div className={[space["m-l--4"]].join(" ")}>
             <Button
-              variant={buttonVariant.MENU}
+              variant={$button.MENU}
               extendsTo={[animation["hover-shadow--lg"], shape["br--30"]].join(
                 " "
               )}
@@ -322,7 +322,7 @@ export const LandingHeader: React.FC<{
                     // animate={{ width: 240, y: 0, opacity: 1 }}
                   >
                     <Button
-                      variant={buttonVariant.SEARCHBAR} 
+                      variant={$button.SEARCHBAR}
                       mini
                       onClick={() => setExpanded(!expanded)}
                       extendsTo={[shape["w--full"]].join(" ")}

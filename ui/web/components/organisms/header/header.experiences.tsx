@@ -6,7 +6,7 @@ import space from "@styles/space.module.scss";
 
 import { Button } from "@button";
 
-import * as buttonVariant from "@button/variants";
+import * as $button from "@button/variants";
 
 /**
  * Renders the experiences header
@@ -25,7 +25,7 @@ export const ExperiencesHeader: React.FC<{}> = () => {
       >
         <div>
           <Button
-            variant={buttonVariant.LOGO}
+            variant={$button.LOGO}
             fill="black"
             noName
             extendsTo={[layout["inline-block"]].join(" ")}

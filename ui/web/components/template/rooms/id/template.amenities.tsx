@@ -6,8 +6,8 @@ import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 import section from "@template/index.module.scss";
 
-import * as bulletVariant from "@bullet/variants";
-import * as buttonVariant from "@button/variants";
+import * as $bullet from "@bullet/variants";
+import * as $button from "@button/variants";
 
 /**
  * Renders the amenity section
@@ -42,7 +42,7 @@ export const AmenitiesTemplate: React.FC<{
           return (
             <Bullet
               key={index}
-              variant={bulletVariant.AMENITY}
+              variant={$bullet.AMENITY}
               amenityType={amenity}
             />
           );
@@ -53,7 +53,7 @@ export const AmenitiesTemplate: React.FC<{
         className={[space["m-t--14"], space["m-b--14"]].join(" ")}
       >
         <Button
-          variant={buttonVariant.BORDER}
+          variant={$button.BORDER}
           size="md"
           title="Show all 40 amenities"
         />

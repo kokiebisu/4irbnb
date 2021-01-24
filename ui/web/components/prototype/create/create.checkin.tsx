@@ -1,12 +1,12 @@
-/** styles */
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import layout from "@styles/layout.module.scss";
 
-/** components */
 import { Input } from "@input";
 import { Layout } from "@layout";
+
+import * as $input from "@input/variants";
 
 export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
   setData,
@@ -24,7 +24,7 @@ export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
           <div className={[space["m-t--22"]].join(" ")}>
             <div className={[space["m-b--10"]].join(" ")}>
               <Input
-                variant="radio"
+                variant={$input.RADIO}
                 title="Same day"
                 selected={data.notice === 0}
                 select={() => setData({ ...data, notice: 0 })}
@@ -34,7 +34,7 @@ export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
               ({ day }, index) => (
                 <div key={index} className={[space["m-b--10"]].join(" ")}>
                   <Input
-                    variant="radio"
+                    variant={$input.RADIO}
                     title={`${day} ${day > 1 ? "days" : "day"}`}
                     selected={data.notice === day}
                     select={() => setData({ ...data, notice: day })}
@@ -81,7 +81,7 @@ export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
             </div>
             <div>
               <Input
-                variant="select"
+                variant={$input.SELECT}
                 inputType="checkinFrom"
                 value={data.checkinFrom}
                 handleChange={(e) =>
@@ -98,7 +98,7 @@ export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
             </div>
             <div>
               <Input
-                variant="select"
+                variant={$input.SELECT}
                 inputType="checkinTo"
                 value={data.checkinTo}
                 handleChange={(e) =>

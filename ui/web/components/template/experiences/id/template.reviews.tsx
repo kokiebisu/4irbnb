@@ -13,8 +13,8 @@ import { Card } from "@card";
 
 import { Border } from "@button/button.stories";
 
-import * as bulletVariant from "@bullet/variants";
-import * as buttonVariant from "@button/variants";
+import * as $bullet from "@bullet/variants";
+import * as $button from "@button/variants";
 
 /**
  * Renders the reviews section
@@ -93,7 +93,7 @@ export const ReviewsTemplate: React.FC<{
                   ].join(" ")}
                 >
                   <Bullet
-                    variant={bulletVariant.SCORE}
+                    variant={$bullet.SCORE}
                     category={category?.type}
                     average={category?.average}
                   />
@@ -126,7 +126,7 @@ export const ReviewsTemplate: React.FC<{
         </div>
         <div className={[space["m-t--16"]].join(" ")}>
           <Button
-            variant={buttonVariant.BORDER}
+            variant={$button.BORDER}
             size="md"
             title={`Show all ${numberOfReviews} reviews`}
           />
