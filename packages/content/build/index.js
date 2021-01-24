@@ -21,3 +21,4 @@ __exportStar(require("./anywhere"), exports);
 __exportStar(require("./category"), exports);
 __exportStar(require("./footer"), exports);
 __exportStar(require("./hosts"), exports);
+__exportStar(require("./destination"), exports);
