@@ -1,4 +1,4 @@
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 
 import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";
@@ -6,8 +6,6 @@ import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
 
 import { Star } from "@svg/original";
-
-import * as $button from "@button/variants";
 
 /**
  * Renders the modal which gives all the available options
@@ -57,7 +55,7 @@ export const AvailabilityBar: React.FC<{
         </div>
       </div>
       <div>
-        <Button variant={$button.PRIMARY} title="Check availability" />
+        <Button variant={$Button.PRIMARY} title="Check availability" />
       </div>
     </div>
   );

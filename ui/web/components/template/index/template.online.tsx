@@ -1,5 +1,5 @@
 import { Card } from "@card";
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 
 import section from "@template/index.module.scss";
 import color from "@styles/color.module.scss";
@@ -7,7 +7,6 @@ import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 
-import * as $button from "@button/variants";
 import * as $card from "@card/variants";
 
 /**
@@ -123,7 +122,7 @@ export const OnlineTemplate: React.FC<{
       </div>
       <div className={[space["m-v--32"]].join(" ")}>
         <Button
-          variant={$button.BORDER}
+          variant={$Button.BORDER}
           title="Explore all"
           size="sm"
           inverse={dark}

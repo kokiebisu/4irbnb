@@ -2,10 +2,8 @@ import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 
-import { Input } from "@input";
+import { Input, $Input } from "@input";
 import { Layout } from "@layout";
-
-import * as $input from "@input/variants";
 
 export const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
   setData,
@@ -20,7 +18,7 @@ export const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
           <div className={[space["m-t--22"]].join(" ")}>
             <div className={[space["m-b--10"]].join(" ")}>
               <Input
-                variant={$input.RADIO}
+                variant={$Input.RADIO}
                 title="Any time"
                 selected={data.advance === 0}
                 select={() => setData({ ...data, advance: 0 })}
@@ -30,7 +28,7 @@ export const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
               ({ months }, index) => (
                 <div key={index} className={[space["m-b--10"]].join(" ")}>
                   <Input
-                    variant={$input.RADIO}
+                    variant={$Input.RADIO}
                     title={`${months === 12 ? 1 : months} ${
                       months === 12 ? "year" : "months in advance"
                     }`}
@@ -42,7 +40,7 @@ export const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
             )}
             <div className={[space["m-b--10"]].join(" ")}>
               <Input
-                variant={$input.RADIO}
+                variant={$Input.RADIO}
                 title="Dates unavailable by default"
                 subtitle="Your entire calendar will be blocked by default, which means you’ll have to manually unblock dates to get booked."
                 selected={data.advance === "unavailable"}

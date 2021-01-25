@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
 import { Card } from "@card";
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 
 import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";
@@ -13,7 +13,6 @@ import * as Helpers from "@helper/array";
 import { useSlider } from "@hooks/useSlider";
 import { useHandleContainerResize } from "@hooks/useHandleContainerResize";
 
-import * as $button from "@button/variants";
 import * as $card from "@card/variants";
 
 /**
@@ -57,7 +56,7 @@ export const AlsoTemplate: React.FC<{
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div className={[space["m-h--2"]].join(" ")}>
             <Button
-              variant={$button.PAGINATE}
+              variant={$Button.PAGINATE}
               animate
               direction="left"
               onClick={previous}
@@ -66,7 +65,7 @@ export const AlsoTemplate: React.FC<{
           </div>
           <div className={[space["m-h--2"]].join(" ")}>
             <Button
-              variant={$button.PAGINATE}
+              variant={$Button.PAGINATE}
               animate
               direction="right"
               onClick={next}

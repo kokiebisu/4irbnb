@@ -7,12 +7,11 @@ import font from "@styles/font.module.scss";
 import banner from "@banner/banner.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 import { Card } from "@card";
 
 import { useSlider, SliderProps } from "@hooks/useSlider";
 
-import * as $button from "@button/variants";
 import * as $card from "@card/variants";
 
 /**
@@ -73,7 +72,7 @@ export const CommunityTemplate: React.FC<{
             </div>
             <div className={[layout["inline-block"]].join(" ")}>
               <Button
-                variant={$button.PRIMARY}
+                variant={$Button.PRIMARY}
                 size="md"
                 title="Get started"
                 onClick={() => Router.push("/become-a-host")}
@@ -141,7 +140,7 @@ export const CommunityTemplate: React.FC<{
           <div className={[layout["items-center"], layout["flex"]].join(" ")}>
             <div className={[space["m-r--8"]].join(" ")}>
               <Button
-                variant={$button.PAGINATE}
+                variant={$Button.PAGINATE}
                 animate
                 direction="left"
                 onClick={previous}
@@ -149,7 +148,7 @@ export const CommunityTemplate: React.FC<{
             </div>
             <div>
               <Button
-                variant={$button.PAGINATE}
+                variant={$Button.PAGINATE}
                 animate
                 direction="right"
                 onClick={next}

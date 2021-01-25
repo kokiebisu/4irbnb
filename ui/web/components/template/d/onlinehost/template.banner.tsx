@@ -4,10 +4,8 @@ import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
 import banner from "@banner/banner.module.scss";
 
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 import { Bullet, $Bullet } from "@bullet";
-
-import * as $button from "@button/variants";
 
 export const BannerTemplate: React.FC<{}> = () => {
   return (
@@ -41,7 +39,7 @@ export const BannerTemplate: React.FC<{}> = () => {
         </h4>
       </div>
       <div className={[space["m-v--40"]].join(" ")}>
-        <Button variant={$button.PRIMARY} title="Get started" />
+        <Button variant={$Button.PRIMARY} title="Get started" />
       </div>
       <div className={[space["m-v--32"]].join(" ")}>
         <img

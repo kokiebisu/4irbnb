@@ -7,11 +7,10 @@ import shape from "@styles/shape.module.scss";
 import font from "@styles/font.module.scss";
 import section from "@template/index.module.scss";
 
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 import { Bullet, $Bullet } from "@bullet";
 import { Card } from "@card";
 
-import * as $button from "@button/variants";
 import * as $card from "@card/variants";
 
 /**
@@ -124,7 +123,7 @@ export const ReviewsTemplate: React.FC<{
         </div>
         <div className={[space["m-t--16"]].join(" ")}>
           <Button
-            variant={$button.BORDER}
+            variant={$Button.BORDER}
             size="md"
             title={`Show all ${numberOfReviews} reviews`}
           />

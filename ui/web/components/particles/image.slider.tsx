@@ -1,7 +1,6 @@
 import { useLayoutEffect, useState, useRef } from "react";
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 import particle from "@particle/particle.module.scss";
-import * as $button from "@button/variants";
 
 const Dots = ({ slides, activeSlide }) => {
   return (
@@ -154,7 +153,7 @@ export const ImageSlider = ({ slides = [undefined, undefined, undefined] }) => {
         }}
       >
         <Button
-          variant={$button.PAGINATE}
+          variant={$Button.PAGINATE}
           animate
           direction="left"
           onClick={previousSlide}
@@ -172,7 +171,7 @@ export const ImageSlider = ({ slides = [undefined, undefined, undefined] }) => {
         }}
       >
         <Button
-          variant={$button.PAGINATE}
+          variant={$Button.PAGINATE}
           animate
           direction="right"
           onClick={nextSlide}

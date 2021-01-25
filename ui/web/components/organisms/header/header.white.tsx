@@ -8,7 +8,7 @@ import layout from "@styles/layout.module.scss";
 import color from "@styles/color.module.scss";
 
 import { Modal } from "@modal";
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 
 import { useToggleDispatch, useToggleState } from "@context/toggle";
 
@@ -16,7 +16,6 @@ import { ChevronLeft } from "@svg/regular";
 
 import { Content } from "@button/content/content.transparent";
 
-import * as $button from "@button/variants";
 import * as $modal from "@modal/variants";
 
 /**
@@ -42,7 +41,7 @@ export const WhiteHeader: React.FC<{
         <div className={[styles["searchbar__logo--md"]].join(" ")}>
           <Button
             block
-            variant={$button.LOGO}
+            variant={$Button.LOGO}
             noName
             onClick={() => Router.push("/")}
           />
@@ -55,7 +54,7 @@ export const WhiteHeader: React.FC<{
             className={[styles["searchbar__host"], space["m-h--2"]].join(" ")}
           >
             <Button
-              variant={$button.TRANSPARENT}
+              variant={$Button.TRANSPARENT}
               animate
               content={<Content kind="host" />}
               onClick={() => Router.push("/host/homes")}
@@ -63,14 +62,14 @@ export const WhiteHeader: React.FC<{
           </div>
           <div className={[space["m-h--2"]].join(" ")}>
             <Button
-              variant={$button.TRANSPARENT}
+              variant={$Button.TRANSPARENT}
               content={<Content kind="globe" />}
               onClick={() => toggleDispatch({ type: "toggle_globe" })}
             />
           </div>
           <div className={[space["m-l--4"]].join(" ")}>
             <Button
-              variant={$button.MENU}
+              variant={$Button.MENU}
               extendsTo={[space["p-v--3"]].join(" ")}
               inverse
               authenticated={data}
@@ -104,7 +103,7 @@ export const WhiteHeader: React.FC<{
           </div>
           <div style={{ width: "100%", flexGrow: 1 }}>
             <Button
-              variant={$button.SEARCHBAR}
+              variant={$Button.SEARCHBAR}
               onClick={() => console.log("pressed")}
             />
           </div>

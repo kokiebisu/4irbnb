@@ -1,10 +1,8 @@
-import { Input } from "@input";
+import { Input, $Input } from "@input";
 
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
-
-import * as $input from "@input/variants";
 
 /**
  * Renders the /become-a-host/rules page content
@@ -44,7 +42,7 @@ export const RulesCreate: React.FC<{
       <div className={[space["m-b--22"]].join(" ")}>
         <div className={[space["m-v--12"]].join(" ")}>
           <Input
-            variant={$input.CLOSED}
+            variant={$Input.CLOSED}
             title="Smoking allowed"
             data={data}
             setData={setData}
@@ -53,7 +51,7 @@ export const RulesCreate: React.FC<{
         </div>
         <div className={[space["m-v--12"]].join(" ")}>
           <Input
-            variant={$input.CLOSED}
+            variant={$Input.CLOSED}
             title="Events allowed"
             data={data}
             setData={setData}
@@ -84,7 +82,7 @@ export const RulesCreate: React.FC<{
               <Input
                 check={() => modify("details", item)}
                 checked={data.details.includes(item)}
-                variant={$input.CHECKBOX}
+                variant={$Input.CHECKBOX}
                 title={title}
               />
             </div>

@@ -12,7 +12,7 @@ import animation from "@styles/animation.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
 import { Modal } from "@modal";
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 import { Prototype } from "@prototype/searchbar";
 
 import { NameLogo, NoNameLogo } from "@svg/logo";
@@ -20,7 +20,6 @@ import { useToggleDispatch, useToggleState } from "@context/toggle";
 import { Content } from "@button/content/content.transparent";
 import { useOnClickOutside } from "@hooks/useOnClickOutside";
 
-import * as $button from "@button/variants";
 import * as $modal from "@modal/variants";
 
 /**
@@ -103,7 +102,7 @@ export const LandingHeader: React.FC<{
             className={[styles["searchbar__host"], space["m-h--2"]].join(" ")}
           >
             <Button
-              variant={$button.TRANSPARENT}
+              variant={$Button.TRANSPARENT}
               content={<Content kind="host" inverse={criteria} />}
               inverse={criteria}
               animate
@@ -112,7 +111,7 @@ export const LandingHeader: React.FC<{
           </div>
           <div className={[space["m-h--2"]].join(" ")}>
             <Button
-              variant={$button.TRANSPARENT}
+              variant={$Button.TRANSPARENT}
               content={<Content kind="globe" inverse={criteria} />}
               inverse={criteria}
               onClick={() => toggleDispatch({ type: "toggle_globe" })}
@@ -120,7 +119,7 @@ export const LandingHeader: React.FC<{
           </div>
           <div className={[space["m-l--4"]].join(" ")}>
             <Button
-              variant={$button.MENU}
+              variant={$Button.MENU}
               extendsTo={[animation["hover-shadow--lg"], shape["br--30"]].join(
                 " "
               )}
@@ -323,7 +322,7 @@ export const LandingHeader: React.FC<{
                     // animate={{ width: 240, y: 0, opacity: 1 }}
                   >
                     <Button
-                      variant={$button.SEARCHBAR}
+                      variant={$Button.SEARCHBAR}
                       mini
                       onClick={() => setExpanded(!expanded)}
                       extendsTo={[shape["w--full"]].join(" ")}

@@ -4,9 +4,8 @@ import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 
 import { Card } from "@card";
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 
-import * as $button from "@button/variants";
 import * as $card from "@card/variants";
 
 export const SharingTemplate: React.FC<{}> = () => {
@@ -35,7 +34,7 @@ export const SharingTemplate: React.FC<{}> = () => {
       </div>
       <div className={[layout["flex"], layout["justify-center"]].join(" ")}>
         <Button
-          variant={$button.BORDER}
+          variant={$Button.BORDER}
           bold
           title="Start creating your experience"
         />

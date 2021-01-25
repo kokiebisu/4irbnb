@@ -8,9 +8,8 @@ import shape from "@styles/shape.module.scss";
 import { Template } from "@template/s/homes";
 import { Bar } from "@bar";
 
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 
-import * as $button from "@button/variants";
 import * as $bar from "@bar/variants";
 
 /**
@@ -60,13 +59,13 @@ export const NearbyPrototype: React.FC<{
             {filters.map((filter, index) => {
               return (
                 <div key={index} className={[space["m-r--8"]].join(" ")}>
-                  <Button variant={$button.FILTER} name={filter.name} />
+                  <Button variant={$Button.FILTER} name={filter.name} />
                 </div>
               );
             })}
           </div>
           <div className={[shape["only__sm"]].join(" ")}>
-            <Button variant={$button.FILTER} name={`filters ${filterCount}`} />
+            <Button variant={$Button.FILTER} name={`filters ${filterCount}`} />
           </div>
         </div>
         {city && (

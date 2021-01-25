@@ -1,12 +1,10 @@
 import { Bullet, $Bullet } from "@bullet";
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 
 import font from "@styles/font.module.scss";
 import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 import section from "@template/index.module.scss";
-
-import * as $button from "@button/variants";
 
 /**
  * Renders the amenity section
@@ -52,7 +50,7 @@ export const AmenitiesTemplate: React.FC<{
         className={[space["m-t--14"], space["m-b--14"]].join(" ")}
       >
         <Button
-          variant={$button.BORDER}
+          variant={$Button.BORDER}
           size="md"
           title="Show all 40 amenities"
         />
