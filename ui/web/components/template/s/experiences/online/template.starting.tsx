@@ -9,6 +9,7 @@ import React from "react";
 import { Card } from "@card";
 
 import * as $button from "@button/variants";
+import * as $card from "@card/variants";
 
 export const StartingTemplate = ({
   title = "Starting in the next 6 hours",
@@ -122,7 +123,7 @@ export const StartingTemplate = ({
                   >
                     <div style={{ marginRight: 10 }}>
                       <Card
-                        variant="starting"
+                        variant={$card.STARTING}
                         imgUrl={imgUrl}
                         videoUrl={videoUrl}
                       />

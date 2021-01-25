@@ -1,12 +1,10 @@
-/** styles */
 import space from "@styles/space.module.scss";
 import template from "@template/index/index.module.scss";
 
-/** components */
 import { Card } from "@card";
 
-/** helpers */
 import { groupByTwo } from "@helper/array";
+import * as $card from "@card/variants";
 
 /**
  * Renders the nearby section
@@ -39,7 +37,7 @@ export const NearbyTemplate: React.FC<{
               <div key={index} className={[template["w__nearby"]].join(" ")}>
                 <div className={[space["m-b--10"]].join(" ")}>
                   <Card
-                    variant="nearby"
+                    variant={$card.NEARBY}
                     to={item[0]?.to}
                     imgUrl={item[0]?.imgUrl}
                     city={item[0]?.city}
@@ -49,7 +47,7 @@ export const NearbyTemplate: React.FC<{
                 </div>
                 <div>
                   <Card
-                    variant="nearby"
+                    variant={$card.NEARBY}
                     to={item[1]?.to}
                     imgUrl={item[1]?.imgUrl}
                     city={item[1]?.city}

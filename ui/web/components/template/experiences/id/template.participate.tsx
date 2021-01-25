@@ -1,11 +1,11 @@
-/** styles */
 import font from "@styles/font.module.scss";
 import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 import layout from "@styles/layout.module.scss";
 
-/** components */
 import { Card } from "@card";
+
+import * as $card from "@card/variants";
 
 /**
  * Renders the participate section
@@ -32,7 +32,7 @@ export const ParticipateTemplate: React.FC<{
         {participates.map((participate, index) => {
           return (
             <div key={index} className={[space["m-r--16"]].join(" ")}>
-              <Card variant="participate" categoryType={participate} />
+              <Card variant={$card.PARTICIPATE} categoryType={participate} />
             </div>
           );
         })}

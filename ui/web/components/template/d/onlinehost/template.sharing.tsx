@@ -6,8 +6,8 @@ import space from "@styles/space.module.scss";
 import { Card } from "@card";
 import { Button } from "@button";
 
-import { Border } from "@button/button.stories";
 import * as $button from "@button/variants";
+import * as $card from "@card/variants";
 
 export const SharingTemplate: React.FC<{}> = () => {
   const sharings = ["meditate", "baking", "magic"];
@@ -28,7 +28,7 @@ export const SharingTemplate: React.FC<{}> = () => {
         {sharings.map((sharing, index) => {
           return (
             <div key={index}>
-              <Card variant="sharing" sharing={sharing} />
+              <Card variant={$card.SHARING} sharing={sharing} />
             </div>
           );
         })}

@@ -7,6 +7,7 @@ import { Button } from "@button";
 import { Card } from "@card";
 
 import * as $button from "@button/variants";
+import * as $card from "@card/variants";
 
 export const WorksTemplate: React.FC<{}> = () => {
   const categories = ["design", "share", "submit", "setup"];
@@ -17,7 +18,7 @@ export const WorksTemplate: React.FC<{}> = () => {
           {categories.map((category, index) => {
             return (
               <div className={[space["m-b--8"]].join(" ")} key={index}>
-                <Card variant="works" work={category} />
+                <Card variant={$card.WORKS} work={category} />
               </div>
             );
           })}

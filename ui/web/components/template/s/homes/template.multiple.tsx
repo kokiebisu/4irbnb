@@ -12,6 +12,7 @@ import { Card } from "@card";
 import { Button } from "@button";
 
 import * as $button from "@button/variants";
+import * as $card from "@card/variants";
 
 /**
  * Renders the stay section
@@ -94,7 +95,7 @@ export const MultipleTemplate: React.FC<{
                   }}
                 >
                   <Card
-                    variant="typestay"
+                    variant={$card.TYPESTAY}
                     card={item && item.card}
                     to={item && item.to}
                   />
@@ -202,7 +203,7 @@ export const MultipleTemplate: React.FC<{
                     className={[space["m-b--10"], space["m-r--16"]].join(" ")}
                   >
                     <Card
-                      variant="horizontal"
+                      variant={$card.HORIZONTAL}
                       card={item && item.card}
                       to={item && item.to}
                       save={save}
@@ -317,7 +318,7 @@ export const MultipleTemplate: React.FC<{
               return (
                 <div key={index} className={evaluateNumber(index)}>
                   <Card
-                    variant="horizontal"
+                    variant={$card.HORIZONTAL}
                     card={item && item.card}
                     to={item && item.to}
                     save={save}

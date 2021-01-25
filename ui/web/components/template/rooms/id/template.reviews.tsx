@@ -11,10 +11,9 @@ import { Button } from "@button";
 import { Bullet } from "@bullet";
 import { Card } from "@card";
 
-import { Border } from "@button/button.stories";
-
 import * as $bullet from "@bullet/variants";
 import * as $button from "@button/variants";
+import * as $card from "@card/variants";
 
 /**
  * Renders the reviews section
@@ -116,7 +115,7 @@ export const ReviewsTemplate: React.FC<{
                 key={index}
               >
                 <Card
-                  variant="review"
+                  variant={$card.REVIEW}
                   imgUrl={review?.imgUrl}
                   description={review?.description}
                 />
