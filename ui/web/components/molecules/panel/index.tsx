@@ -1,6 +1,11 @@
 import { ExperiencePanel } from "./panel.experience";
 import { RoomPanel } from "./panel.room";
 
+export const $Panel = {
+  EXPERIENCE: "experience",
+  ROOM: "room",
+};
+
 export interface PanelProps {
   variant: string;
   extendsTo?: string;
