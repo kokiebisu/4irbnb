@@ -75,7 +75,7 @@ const id: () => string | JSX.Element = () => {
         <div className={[].join(" ")}>
           {experiences[experienceID] && (
             <Template
-              layoutType={$Template.EXPERIENCE}
+              layoutType={$Template.EXPERIENCES}
               extendsTo={[staysDetail["flex__panel"]].join(" ")}
               variant="panel"
               {...experiences[experienceID]}
@@ -90,7 +90,7 @@ const id: () => string | JSX.Element = () => {
               <div className={[staysDetail["b__characteristics"]].join(" ")}>
                 {experiences[experienceID] && (
                   <Template
-                    layoutType={$Template.EXPERIENCE}
+                    layoutType={$Template.EXPERIENCES}
                     variant="characteristics"
                     {...experiences[experienceID]}
                   />
