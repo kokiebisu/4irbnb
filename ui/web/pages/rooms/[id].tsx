@@ -6,7 +6,7 @@ import { Header, $Header } from "@header";
 import { Footer } from "@footer";
 import { Template, $Template } from "@template/rooms/id";
 import { Card, $Card } from "@card";
-import { Modal } from "@modal";
+import { Modal, $Modal } from "@modal";
 
 import responsive from "@styles/responsive.module.scss";
 import layout from "@styles/layout.module.scss";
@@ -17,8 +17,6 @@ import shape from "@styles/shape.module.scss";
 import space from "@styles/space.module.scss";
 
 import { useHandleScroll } from "@hooks/useHandleScroll";
-
-import * as $modal from "@modal/variants";
 
 /**
  * Render the component for path /rooms/[id]
@@ -153,7 +151,7 @@ const id: () => string | JSX.Element = () => {
           }}
         >
           <Modal
-            variant={$modal.MENU}
+            variant={$Modal.MENU}
             extendsTo={[
               layout["flex"],
               layout["justify-center"],

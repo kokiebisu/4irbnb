@@ -6,15 +6,13 @@ import { useToggleState } from "@context/toggle";
 import layout from "@styles/layout.module.scss";
 
 import { Prototype } from "@prototype/homes";
-import { Modal } from "@modal";
+import { Modal, $Modal } from "@modal";
 
 import shape from "@styles/shape.module.scss";
 import responsive from "@styles/responsive.module.scss";
 import homes from "@styles/homes.module.scss";
 
 import { useTabTitle } from "@hooks/useTabTitle";
-
-import * as $modal from "@modal/variants";
 
 import "../../global/string";
 
@@ -81,7 +79,7 @@ const Homes = () => {
                 shape["h--100v"],
               ].join(" ")}
             >
-              <Modal variant={$modal.MENU} animate="slideup" />
+              <Modal variant={$Modal.MENU} animate="slideup" />
             </div>
           </div>
         )}

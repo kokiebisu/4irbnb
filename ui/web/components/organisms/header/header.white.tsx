@@ -1,13 +1,12 @@
 import Router from "next/router";
 
-import animation from "@styles/animation.module.scss";
 import shape from "@styles/shape.module.scss";
 import space from "@styles/space.module.scss";
 import styles from "@styles/index.module.scss";
 import layout from "@styles/layout.module.scss";
 import color from "@styles/color.module.scss";
 
-import { Modal } from "@modal";
+import { Modal, $Modal } from "@modal";
 import { Button, $Button } from "@button";
 
 import { useToggleDispatch, useToggleState } from "@context/toggle";
@@ -15,8 +14,6 @@ import { useToggleDispatch, useToggleState } from "@context/toggle";
 import { ChevronLeft } from "@svg/regular";
 
 import { Content } from "@button/content/content.transparent";
-
-import * as $modal from "@modal/variants";
 
 /**
  * Renders the white header
@@ -88,7 +85,7 @@ export const WhiteHeader: React.FC<{
           ].join(" ")}
         >
           <Modal
-            variant={$modal.MENU}
+            variant={$Modal.MENU}
             extendsTo={[shape["w--200"]].join(" ")}
             authenticated={data}
             criteria={toggleState.menu}

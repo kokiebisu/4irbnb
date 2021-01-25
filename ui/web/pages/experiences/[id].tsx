@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 
 import { Header, $Header } from "@header";
 import { Template, $Template } from "@template/experiences/id";
-import { Modal } from "@modal";
+import { Modal, $Modal } from "@modal";
 import { Footer } from "@footer";
 
 import { useToggleState } from "@context/toggle";
@@ -16,8 +16,6 @@ import space from "@styles/space.module.scss";
 import shape from "@styles/shape.module.scss";
 import staysDetail from "@styles/staysDetail.module.scss";
 import responsive from "@styles/responsive.module.scss";
-
-import * as $modal from "@modal/variants";
 
 /** sample data */
 import { experiences } from "../../data/experiences";
@@ -147,7 +145,7 @@ const id: () => string | JSX.Element = () => {
               >
                 {experiences[experienceID] && (
                   <Modal
-                    variant={$modal.BOOKING}
+                    variant={$Modal.BOOKING}
                     extendsTo={[shape["w--full"]].join(" ")}
                     {...experiences[experienceID]}
                   />
@@ -229,7 +227,7 @@ const id: () => string | JSX.Element = () => {
             backgroundColor: "rgba(0, 0, 0, 0.6)",
           }}
         >
-          <Modal variant={$modal.MENU} />
+          <Modal variant={$Modal.MENU} />
         </div>
       )}
     </>

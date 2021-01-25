@@ -11,7 +11,7 @@ import header from "@header/header.module.scss";
 import animation from "@styles/animation.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
-import { Modal } from "@modal";
+import { Modal, $Modal } from "@modal";
 import { Button, $Button } from "@button";
 import { Prototype } from "@prototype/searchbar";
 
@@ -19,8 +19,6 @@ import { NameLogo, NoNameLogo } from "@svg/logo";
 import { useToggleDispatch, useToggleState } from "@context/toggle";
 import { Content } from "@button/content/content.transparent";
 import { useOnClickOutside } from "@hooks/useOnClickOutside";
-
-import * as $modal from "@modal/variants";
 
 /**
  * Renders the transparent header
@@ -140,7 +138,7 @@ export const LandingHeader: React.FC<{
           ].join(" ")}
         >
           <Modal
-            variant={$modal.MENU}
+            variant={$Modal.MENU}
             extendsTo={[shape["w--200"]].join(" '")}
             authenticated={data}
             criteria={toggleState.menu}

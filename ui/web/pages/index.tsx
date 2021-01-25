@@ -19,7 +19,7 @@ import { nearbyItems } from "../data/nearby";
 import { Layout } from "@layout";
 
 import { Animation } from "@animation";
-import { Modal } from "@modal";
+import { Modal, $Modal } from "@modal";
 import { Template, $Template } from "@template/index";
 import { Footer } from "@footer";
 
@@ -31,8 +31,6 @@ import { useTimeout } from "@hooks/useTimeout";
 import { useTabTitle } from "@hooks/useTabTitle";
 
 import { APIClient } from "../api/client";
-
-import * as $modal from "@modal/variants";
 
 const LandingPage = ({ currentUser }) => {
   useTabTitle("Vacation Rentals, Homes, Experiences & Places - Airbnb");
@@ -110,7 +108,7 @@ const LandingPage = ({ currentUser }) => {
         >
           <div className={[index["m__privacy"]].join(" ")}>
             <Modal
-              variant={$modal.PRIVACY}
+              variant={$Modal.PRIVACY}
               criteria={toggleState.privacy}
               animate="slideup"
             />
@@ -159,7 +157,7 @@ const LandingPage = ({ currentUser }) => {
               ].join(" ")}
             >
               <Modal
-                variant={$modal.AUTH}
+                variant={$Modal.AUTH}
                 animate="slideup"
                 criteria={toggleState.auth}
                 lock
@@ -188,7 +186,7 @@ const LandingPage = ({ currentUser }) => {
               ].join(" ")}
             >
               <Modal
-                variant={$modal.GLOBE}
+                variant={$Modal.GLOBE}
                 extendsTo={[
                   shape["w--full"],
                   shape["h--full"],
