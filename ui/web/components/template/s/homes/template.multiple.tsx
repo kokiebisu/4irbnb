@@ -8,10 +8,8 @@ import styles from "@template/index.module.scss";
 import sectionStyles from "@template/index.module.scss";
 import section from "@template/index.module.scss";
 
-import { Card } from "@card";
+import { Card, $Card } from "@card";
 import { Button, $Button } from "@button";
-
-import * as $card from "@card/variants";
 
 /**
  * Renders the stay section
@@ -94,7 +92,7 @@ export const MultipleTemplate: React.FC<{
                   }}
                 >
                   <Card
-                    variant={$card.TYPESTAY}
+                    variant={$Card.TYPESTAY}
                     card={item && item.card}
                     to={item && item.to}
                   />
@@ -202,7 +200,7 @@ export const MultipleTemplate: React.FC<{
                     className={[space["m-b--10"], space["m-r--16"]].join(" ")}
                   >
                     <Card
-                      variant={$card.HORIZONTAL}
+                      variant={$Card.HORIZONTAL}
                       card={item && item.card}
                       to={item && item.to}
                       save={save}
@@ -317,7 +315,7 @@ export const MultipleTemplate: React.FC<{
               return (
                 <div key={index} className={evaluateNumber(index)}>
                   <Card
-                    variant={$card.HORIZONTAL}
+                    variant={$Card.HORIZONTAL}
                     card={item && item.card}
                     to={item && item.to}
                     save={save}

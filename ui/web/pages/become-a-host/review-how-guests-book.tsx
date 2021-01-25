@@ -2,7 +2,7 @@ import Router from "next/router";
 
 import { Bar } from "@bar";
 import { Header } from "@header";
-import { Card } from "@card";
+import { Card, $Card } from "@card";
 
 import font from "@styles/font.module.scss";
 import responsive from "@styles/responsive.module.scss";
@@ -12,7 +12,6 @@ import space from "@styles/space.module.scss";
 
 import { Protected } from "@svg/original";
 
-import * as $card from "@card/variants";
 import * as $bar from "@bar/variants";
 import * as $header from "@header/variants";
 
@@ -53,7 +52,7 @@ const HowGuestsWillBookPage = () => {
           >
             {["qualified", "control", "notified"].map((how, index) => (
               <div key={index}>
-                <Card variant={$card.HOW} how={how} />
+                <Card variant={$Card.HOW} how={how} />
               </div>
             ))}
           </div>

@@ -6,9 +6,7 @@ import font from "@styles/font.module.scss";
 
 import { Button, $Button } from "@button";
 
-import { Card } from "@card";
-
-import * as $card from "@card/variants";
+import { Card, $Card } from "@card";
 
 export const StartingTemplate = ({
   title = "Starting in the next 6 hours",
@@ -122,7 +120,7 @@ export const StartingTemplate = ({
                   >
                     <div style={{ marginRight: 10 }}>
                       <Card
-                        variant={$card.STARTING}
+                        variant={$Card.STARTING}
                         imgUrl={imgUrl}
                         videoUrl={videoUrl}
                       />

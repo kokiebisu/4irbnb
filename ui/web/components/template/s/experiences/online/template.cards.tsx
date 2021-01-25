@@ -1,4 +1,4 @@
-import { Card } from "@card";
+import { Card, $Card } from "@card";
 import { Button, $Button } from "@button";
 
 import space from "@styles/space.module.scss";
@@ -6,8 +6,6 @@ import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 
 import { useSlide } from "@hooks/useSlide";
-
-import * as $card from "@card/variants";
 
 export const CardsTemplate: React.FC<{ title?: string }> = ({
   title = "Title here",
@@ -168,7 +166,7 @@ export const CardsTemplate: React.FC<{ title?: string }> = ({
                 <div key={index} style={{ width: width / displayingColumns() }}>
                   <div style={{ marginRight: 10 }}>
                     <Card
-                      variant={$card.VIDEO}
+                      variant={$Card.VIDEO}
                       imgUrl={imgUrl}
                       videoUrl={videoUrl}
                     />

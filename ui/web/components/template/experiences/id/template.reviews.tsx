@@ -9,9 +9,7 @@ import section from "@template/index.module.scss";
 
 import { Button, $Button } from "@button";
 import { Bullet, $Bullet } from "@bullet";
-import { Card } from "@card";
-
-import * as $card from "@card/variants";
+import { Card, $Card } from "@card";
 
 /**
  * Renders the reviews section
@@ -113,7 +111,7 @@ export const ReviewsTemplate: React.FC<{
                 key={index}
               >
                 <Card
-                  variant={$card.REVIEW}
+                  variant={$Card.REVIEW}
                   imgUrl={review?.imgUrl}
                   description={review?.description}
                 />

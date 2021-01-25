@@ -11,13 +11,11 @@ import layout from "@styles/layout.module.scss";
 import { Input, $Input } from "@input";
 import { Button, $Button } from "@button";
 import { Bullet, $Bullet } from "@bullet";
-import { Card } from "@card";
+import { Card, $Card } from "@card";
 
 import { validateLogin as validate } from "@helper/auth";
 
 import { usePost } from "@hooks/usePost";
-
-import * as $card from "@card/variants";
 
 /**
  * Renders the login template component
@@ -71,7 +69,7 @@ export const LoginTemplate: React.FC<{}> = () => {
     <div className={[space["p--24"]].join(" ")}>
       {status === "fail" && (
         <div className={[space["m-b--16"]].join(" ")}>
-          <Card variant={$card.AGAIN} />
+          <Card variant={$Card.AGAIN} />
         </div>
       )}
       <form onSubmit={formik.handleSubmit}>
@@ -114,7 +112,7 @@ export const LoginTemplate: React.FC<{}> = () => {
           </div>
           {status === "success" && (
             <div className={[space["m-t--16"]].join(" ")}>
-              <Card variant={$card.SET} />
+              <Card variant={$Card.SET} />
             </div>
           )}
         </div>
