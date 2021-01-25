@@ -1,6 +1,6 @@
 import Router from "next/router";
 
-import { Bar } from "@bar";
+import { Bar, $Bar } from "@bar";
 import { Header } from "@header";
 import { Card, $Card } from "@card";
 
@@ -12,7 +12,6 @@ import space from "@styles/space.module.scss";
 
 import { Protected } from "@svg/original";
 
-import * as $bar from "@bar/variants";
 import * as $header from "@header/variants";
 
 const HowGuestsWillBookPage = () => {
@@ -34,7 +33,7 @@ const HowGuestsWillBookPage = () => {
           <Header variant={$header.STAY} title="Booking settings" />
         </div>
         <div>
-          <Bar variant={$bar.PROGRESS} percentage={80} />
+          <Bar variant={$Bar.PROGRESS} percentage={80} />
         </div>
       </div>
       <div style={{ padding: "50px 0" }}>
@@ -94,7 +93,7 @@ const HowGuestsWillBookPage = () => {
             }}
           >
             <div style={{ width: "100%", maxWidth: 700, margin: "0 auto" }}>
-              <Bar variant={$bar.CREATE} next={proceed} back={revert} />
+              <Bar variant={$Bar.CREATE} next={proceed} back={revert} />
             </div>
           </div>
         </div>

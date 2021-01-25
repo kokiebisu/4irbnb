@@ -1,5 +1,5 @@
 import { Header } from "@header";
-import { Bar } from "@bar";
+import { Bar, $Bar } from "@bar";
 import { Template, $Template } from "@template/s/experiences/online";
 import { Modal } from "@modal";
 import { Footer } from "@footer";
@@ -13,7 +13,6 @@ import { useToggleState } from "@context/toggle";
 
 import { Button, $Button } from "@button";
 
-import * as $bar from "@bar/variants";
 import * as $header from "@header/variants";
 import * as $modal from "@modal/variants";
 
@@ -38,7 +37,7 @@ const OnlinePage = () => {
               " "
             )}
           >
-            <Bar variant={$bar.FILTERS} />
+            <Bar variant={$Bar.FILTERS} />
           </div>
           <div
             className={[color["bg--white__2"]].join(" ")}
