@@ -1,7 +1,7 @@
 import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 
-import { Template } from "@template/host/homes";
+import { Template, $Template } from "@template/host/homes";
 import { Footer } from "@footer";
 
 import { useTabTitle } from "@hooks/useTabTitle";
@@ -17,38 +17,38 @@ const Homes: () => string | JSX.Element = () => {
   return (
     <div>
       <div>
-        <Template variant="banner" />
+        <Template variant={$Template.BANNER} />
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
         <div className={`${[space["p__homes"]].join(" ")}`}>
-          <Template variant="hosting" />
+          <Template variant={$Template.HOSTING} />
         </div>
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
         <Template
-          variant="community"
+          variant={$Template.COMMUNITY}
           hosts={hosts}
           title="Host your home on Airbnb"
         />
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
         <div className={`${[space["p__homes"]].join(" ")}`}>
-          <Template variant="all" items={allItems} />
+          <Template variant={$Template.ALL} items={allItems} />
         </div>
       </div>
       <div className={[space["p-v--64"]].join(" ")}>
         <div className={`${[space["p__homes"]].join(" ")}`}>
-          <Template variant="priority" />
+          <Template variant={$Template.PRIORITY} />
         </div>
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
         <div className={`${[space["p__homes"]].join(" ")}`}>
-          <Template variant="help" />
+          <Template variant={$Template.HELP} />
         </div>
       </div>
       <div className={[space["p-v--64"], color["b-b--white__2"]].join(" ")}>
         <div className={`${[space["p__homes"]].join(" ")}`}>
-          <Template variant="ready" />
+          <Template variant={$Template.READY} />
         </div>
       </div>
       <div>
