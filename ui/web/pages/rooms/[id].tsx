@@ -1,16 +1,13 @@
 import { AnimatePresence, motion } from "framer-motion";
 
-/** contexts */
 import { useToggleState } from "@context/toggle";
 
-/** components */
 import { Header } from "@header";
 import { Footer } from "@footer";
 import { Template } from "@template/rooms/id";
 import { Card } from "@card";
 import { Modal } from "@modal";
 
-/** styles */
 import responsive from "@styles/responsive.module.scss";
 import layout from "@styles/layout.module.scss";
 import details from "@styles/details.module.scss";
@@ -19,8 +16,9 @@ import color from "@styles/color.module.scss";
 import shape from "@styles/shape.module.scss";
 import space from "@styles/space.module.scss";
 
-/** hooks */
 import { useHandleScroll } from "@hooks/useHandleScroll";
+
+import * as $card from "@card/variants";
 
 /**
  * Render the component for path /rooms/[id]
@@ -98,7 +96,7 @@ const id: () => string | JSX.Element = () => {
               className={[details["w__details--right"]].join(" ")}
             >
               <Card
-                variant="checkin"
+                variant={$card.CHECKIN}
                 extendsTo={[
                   layout["flex"],
                   layout["justify-end"],

@@ -13,6 +13,7 @@ import { Card } from "@card";
 import { useSlider, SliderProps } from "@hooks/useSlider";
 
 import * as $button from "@button/variants";
+import * as $card from "@card/variants";
 
 /**
  * Renders the homes banner
@@ -118,7 +119,7 @@ export const CommunityTemplate: React.FC<{
                   className={[space["m-r--16"]].join(" ")}
                 >
                   <Card
-                    variant="host"
+                    variant={$card.HOST}
                     host={host?.name}
                     imgUrl={host?.imgUrl}
                     stayType={host?.stayType}

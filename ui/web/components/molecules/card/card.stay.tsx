@@ -12,6 +12,7 @@ import { ImageSlider } from "@particle/image.slider";
 import { Card } from "@card";
 
 import * as $bullet from "@bullet/variants";
+import * as $card from "@card/variants";
 
 /**
  * Renders the stay card component
@@ -54,7 +55,7 @@ export const StayCard: React.FC<{
       <div
         className={[responsive["b_to_n--sm"], space["m-b--32--sm"]].join(" ")}
       >
-        <Card variant="horizontal" />
+        <Card variant={$card.HORIZONTAL} />
       </div>
       <div className={[responsive["n_to_b--sm"]].join(" ")}>
         <div className={[space["p-v--22"]].join(" ")}>

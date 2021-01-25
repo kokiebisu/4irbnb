@@ -1,9 +1,9 @@
-/** styles **/
 import space from "@styles/space.module.scss";
 import template from "@template/index/index.module.scss";
 
-/** components */
 import { Card } from "@card";
+
+import * as $card from "@card/variants";
 
 /**
  *
@@ -25,7 +25,7 @@ export const CategoryTemplate: React.FC<{
             return (
               <div key={index}>
                 <Card
-                  variant="category"
+                  variant={$card.CATEGORY}
                   imgUrl={item?.imgUrl}
                   title={item?.title}
                   to={item?.to}

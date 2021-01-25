@@ -7,8 +7,8 @@ import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 
-import { Border } from "@button/button.stories";
 import * as $button from "@button/variants";
+import * as $card from "@card/variants";
 
 /**
  * Renders the online section
@@ -103,7 +103,7 @@ export const OnlineTemplate: React.FC<{
                   >
                     <Card
                       to={item.to}
-                      variant="online"
+                      variant={$card.ONLINE}
                       small={item.small}
                       large={item.large}
                       title={item.title}

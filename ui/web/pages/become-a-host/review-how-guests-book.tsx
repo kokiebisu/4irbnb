@@ -12,6 +12,8 @@ import space from "@styles/space.module.scss";
 
 import { Protected } from "@svg/original";
 
+import * as $card from "@card/variants";
+
 const HowGuestsWillBookPage = () => {
   const proceed = () => {
     setTimeout(() => {
@@ -49,7 +51,7 @@ const HowGuestsWillBookPage = () => {
           >
             {["qualified", "control", "notified"].map((how, index) => (
               <div key={index}>
-                <Card variant="how" how={how} />
+                <Card variant={$card.HOW} how={how} />
               </div>
             ))}
           </div>
