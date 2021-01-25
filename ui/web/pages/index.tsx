@@ -20,7 +20,7 @@ import { Layout } from "@layout";
 
 import { Animation } from "@animation";
 import { Modal } from "@modal";
-import { Template } from "@template/index";
+import { Template, $Template } from "@template/index";
 import { Footer } from "@footer";
 
 import { Bar } from "@bar";
@@ -55,10 +55,10 @@ const LandingPage = ({ currentUser }) => {
         {loading ? (
           <>
             <Layout variant="landing" spread>
-              <Template variant="nearby" items={nearbyItems} />
+              <Template variant={$Template.NEARBY} items={nearbyItems} />
             </Layout>
             <Layout variant="landing" title="Live anywhere" spread>
-              <Template variant="anywhere" items={anywhereItems} />
+              <Template variant={$Template.ANYWHERE} items={anywhereItems} />
             </Layout>
             <div className={space["m-v--32"]}></div>
             <Layout
@@ -68,21 +68,24 @@ const LandingPage = ({ currentUser }) => {
               title="Meet Online Experiences"
               subtitle="Interactive activities you can do together, led by expert hosts."
             >
-              <Template variant="online" sectionType="landing" dark />
+              <Template variant={$Template.ONLINE} sectionType="landing" dark />
             </Layout>
             <Layout
               variant="landing"
               spread
               title="Join millions of hosts on Airbnb"
             >
-              <Template variant="category" items={categoryItems} />
+              <Template variant={$Template.CATEGORY} items={categoryItems} />
             </Layout>
             <Layout
               variant="landing"
               spread
               title="Inspiration for future getaways"
             >
-              <Template variant="destinations" items={destinationItems} />
+              <Template
+                variant={$Template.DESTINATIONS}
+                items={destinationItems}
+              />
             </Layout>
           </>
         ) : (
