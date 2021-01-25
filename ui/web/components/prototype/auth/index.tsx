@@ -4,7 +4,13 @@ import { SignupTemplate } from "@prototype/auth/prototype.signup";
 import { ForgotPasswordPrototype } from "@prototype/auth/prototype.forgot";
 import { ExistsPrototype } from "@prototype/auth/prototype.exists";
 
-import * as $prototype from "@prototype/auth/variants";
+export const $Prototype = {
+  LOGIN: "login",
+  SIGNUP: "signup",
+  AUTH: "auth",
+  FORGOTPASSWORD: "forgotpassword",
+  EXISTS: "exists",
+};
 
 export interface PrototypeProps {
   variant?: string;
@@ -15,7 +21,7 @@ export interface PrototypeProps {
 }
 
 export const Prototype: React.FC<PrototypeProps> = ({
-  variant = $prototype.LOGIN,
+  variant = $Prototype.LOGIN,
   ...props
 }) => {
   const variants: { [variant: string]: JSX.Element } = {

@@ -1,8 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Prototype, PrototypeProps } from "@prototype/homes";
-
-import * as $prototype from "@prototype/homes/variants";
+import { Prototype, PrototypeProps, $Prototype } from "@prototype/homes";
 
 export default {
   title: "Prototypes/Homes",
@@ -14,10 +12,10 @@ const TemplateStory: Story<PrototypeProps> = (args) => <Prototype {...args} />;
 
 export const Nearby = TemplateStory.bind({});
 Nearby.args = {
-  variant: $prototype.NEARBY,
+  variant: $Prototype.NEARBY,
 };
 
 export const Category = TemplateStory.bind({});
 Category.args = {
-  variant: $prototype.CATEGORY,
+  variant: $Prototype.CATEGORY,
 };

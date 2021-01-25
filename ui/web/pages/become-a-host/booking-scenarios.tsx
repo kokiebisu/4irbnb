@@ -1,9 +1,7 @@
 import Router from "next/router";
 
 import { Layout } from "@layout";
-import { Prototype } from "@prototype/create";
-
-import * as $prototype from "@prototype/create/variants";
+import { Prototype, $Prototype } from "@prototype/create";
 
 const BookingScenariosPage = () => {
   const proceed = () => {
@@ -22,7 +20,7 @@ const BookingScenariosPage = () => {
     <Layout
       variant="create"
       title="Review"
-      left={<Prototype variant={$prototype.SCENARIOS} />}
+      left={<Prototype variant={$Prototype.SCENARIOS} />}
       percentage={95}
       next={proceed}
       back={revert}
