@@ -1,4 +1,4 @@
-import { Header } from "@header";
+import { Header, $Header } from "@header";
 import { Bar, $Bar } from "@bar";
 import { Template, $Template } from "@template/s/experiences/online";
 import { Modal } from "@modal";
@@ -13,7 +13,6 @@ import { useToggleState } from "@context/toggle";
 
 import { Button, $Button } from "@button";
 
-import * as $header from "@header/variants";
 import * as $modal from "@modal/variants";
 
 const OnlinePage = () => {
@@ -22,7 +21,7 @@ const OnlinePage = () => {
     <div>
       <div className={[shape["shadow--sm"]].join(" ")}>
         <div className={[layout["container--spread"]].join(" ")}>
-          <Header variant={$header.WHITE} />
+          <Header variant={$Header.WHITE} />
         </div>
       </div>
       <div className={[space["m-v--8"]].join(" ")}>

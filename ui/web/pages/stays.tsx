@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Header } from "@header";
+import { Header, $Header } from "@header";
 import { Footer } from "@footer";
 
 import space from "@styles/space.module.scss";
@@ -10,8 +10,6 @@ import styles from "@styles/index.module.scss";
 import shape from "@styles/shape.module.scss";
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
-
-import * as $header from "@header/variants";
 
 /**
  * Renders /stays
@@ -23,7 +21,7 @@ const StaysPage: () => string | JSX.Element = () => {
         style={{ top: 0, zIndex: 10 }}
         className={[layout["sticky"]].join(" ")}
       >
-        <Header variant={$header.WHITE} spread />
+        <Header variant={$Header.WHITE} spread />
       </div>
       <div
         style={{

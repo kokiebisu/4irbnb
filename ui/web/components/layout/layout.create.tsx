@@ -1,11 +1,9 @@
 import { Bar, $Bar } from "@bar";
-import { Header } from "@header";
+import { Header, $Header } from "@header";
 
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import responsive from "@styles/responsive.module.scss";
-
-import * as $header from "@header/variants";
 
 export const CreateLayout: React.FC<{
   title?: string;
@@ -28,7 +26,7 @@ export const CreateLayout: React.FC<{
     <div>
       <div style={{ position: "sticky", zIndex: 9999, top: 0 }}>
         <div>
-          <Header variant={$header.STAY} title={title} />
+          <Header variant={$Header.STAY} title={title} />
         </div>
         <div>
           <Bar variant={$Bar.PROGRESS} percentage={percentage} />

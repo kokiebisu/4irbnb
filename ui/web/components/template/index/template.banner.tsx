@@ -9,15 +9,13 @@ import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
-import { Header } from "@header";
+import { Header, $Header } from "@header";
 import { Button, $Button } from "@button";
 
 import { useHandleScroll } from "@hooks/useHandleScroll";
 
 import { Banner } from "@button/button.stories";
 import { ResponsiveImage } from "@helper/img";
-
-import * as $header from "@header/variants";
 
 /**
  * Renders the banner section
@@ -43,7 +41,7 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
           <div>
             <div>
               <Header
-                variant={$header.LANDING}
+                variant={$Header.LANDING}
                 category={category}
                 setCategory={setCategory}
                 data={data}
