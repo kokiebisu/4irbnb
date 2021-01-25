@@ -6,6 +6,7 @@ import space from "@styles/space.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
 import * as $bar from "@bar/variants";
+import * as $header from "@header/variants";
 
 export const CreateLayout: React.FC<{
   title?: string;
@@ -28,7 +29,7 @@ export const CreateLayout: React.FC<{
     <div>
       <div style={{ position: "sticky", zIndex: 9999, top: 0 }}>
         <div>
-          <Header variant="stay" title={title} />
+          <Header variant={$header.STAY} title={title} />
         </div>
         <div>
           <Bar variant={$bar.PROGRESS} percentage={percentage} />

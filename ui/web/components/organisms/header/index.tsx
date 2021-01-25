@@ -1,4 +1,3 @@
-/** components */
 import { DetailsHeader } from "@header/header.details";
 import { ExperiencesHeader } from "@header/header.experiences";
 import { HomesHeader } from "@header/header.homes";

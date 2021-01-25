@@ -17,6 +17,7 @@ import { useHandleScroll } from "@hooks/useHandleScroll";
 import { Banner } from "@button/button.stories";
 import { ResponsiveImage } from "@helper/img";
 import * as $button from "@button/variants";
+import * as $header from "@header/variants";
 
 /**
  * Renders the banner section
@@ -42,7 +43,7 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
           <div>
             <div>
               <Header
-                variant="landing"
+                variant={$header.LANDING}
                 category={category}
                 setCategory={setCategory}
                 data={data}

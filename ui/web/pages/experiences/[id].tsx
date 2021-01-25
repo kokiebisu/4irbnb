@@ -17,6 +17,8 @@ import shape from "@styles/shape.module.scss";
 import staysDetail from "@styles/staysDetail.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
+import * as $header from "@header/variants";
+
 /** sample data */
 import { experiences } from "../../data/experiences";
 import { useTabTitle } from "@hooks/useTabTitle";
@@ -50,7 +52,7 @@ const id: () => string | JSX.Element = () => {
     <>
       <div>
         <div style={{ position: "relative", zIndex: 9000 }}>
-          <Header variant="white" />
+          <Header variant={$header.WHITE} />
         </div>
         <AnimatePresence>
           {scrollPosition > 470 && (
@@ -65,7 +67,7 @@ const id: () => string | JSX.Element = () => {
                 width: "100%",
               }}
             >
-              <Header variant="details" />
+              <Header variant={$header.DETAILS} />
             </motion.div>
           )}
         </AnimatePresence>

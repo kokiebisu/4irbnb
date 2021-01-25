@@ -6,6 +6,7 @@ import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 
 import { useTabTitle } from "@hooks/useTabTitle";
+import * as $header from "@header/variants";
 
 const OnlineHost = () => {
   useTabTitle("Airbnb Experiences: Host an Online Experience");
@@ -13,7 +14,7 @@ const OnlineHost = () => {
   return (
     <div>
       <div>
-        <Header variant="onlinehost" />
+        <Header variant={$header.ONLINEHOST} />
       </div>
       <div>
         <div className={[layout["container"]].join(" ")}>

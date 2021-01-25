@@ -19,6 +19,7 @@ import space from "@styles/space.module.scss";
 import { useHandleScroll } from "@hooks/useHandleScroll";
 
 import * as $card from "@card/variants";
+import * as $header from "@header/variants";
 
 /**
  * Render the component for path /rooms/[id]
@@ -32,7 +33,7 @@ const id: () => string | JSX.Element = () => {
         <div style={{ position: "relative", zIndex: 9000 }}>
           <Header
             extendsTo={[details["w__wrapper"]].join(" ")}
-            variant="white"
+            variant={$header.WHITE}
           />
         </div>
         <AnimatePresence>
@@ -49,7 +50,7 @@ const id: () => string | JSX.Element = () => {
                 width: "100%",
               }}
             >
-              <Header variant="details" />
+              <Header variant={$header.DETAILS} />
             </motion.div>
           )}
         </AnimatePresence>

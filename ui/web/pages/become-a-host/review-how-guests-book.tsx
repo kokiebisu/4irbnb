@@ -14,6 +14,7 @@ import { Protected } from "@svg/original";
 
 import * as $card from "@card/variants";
 import * as $bar from "@bar/variants";
+import * as $header from "@header/variants";
 
 const HowGuestsWillBookPage = () => {
   const proceed = () => {
@@ -31,7 +32,7 @@ const HowGuestsWillBookPage = () => {
     <div>
       <div style={{ position: "sticky", zIndex: 9999, top: 0 }}>
         <div>
-          <Header variant="stay" title="Booking settings" />
+          <Header variant={$header.STAY} title="Booking settings" />
         </div>
         <div>
           <Bar variant={$bar.PROGRESS} percentage={80} />
