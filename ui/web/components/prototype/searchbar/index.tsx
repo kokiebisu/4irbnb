@@ -11,6 +11,8 @@ import { Modal } from "@modal";
 
 import { useOnClickOutside } from "@hooks/useOnClickOutside";
 
+import * as $bar from "@bar/variants";
+
 export interface PrototypeProps {
   expanded?: boolean;
   setExpanded?: any;
@@ -71,7 +73,7 @@ export const Prototype: React.FC<PrototypeProps> = ({
   return (
     <div className={layout["relative"]}>
       <Bar
-        variant="search"
+        variant={$bar.SEARCH}
         selected={selected}
         setSelected={setSelected}
         type={type}

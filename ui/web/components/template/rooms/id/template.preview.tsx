@@ -1,15 +1,13 @@
-/** styles */
 import layout from "@styles/layout.module.scss";
 import color from "@styles/color.module.scss";
 import font from "@styles/font.module.scss";
 import space from "@styles/space.module.scss";
 import section from "@template/index.module.scss";
 
-/** vectors */
 import { Heart, Star, Share, Superhost } from "@svg/original";
 
-/** components */
 import { Panel } from "@panel";
+import * as $panel from "@panel/variants";
 
 /**
  * Renders the panel section
@@ -185,7 +183,7 @@ export const PreviewTemplate: React.FC<{
         </div>
       </div>
       <div>
-        <Panel variant="room" />
+        <Panel variant={$panel.ROOM} />
       </div>
     </div>
   );

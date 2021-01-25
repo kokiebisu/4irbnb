@@ -32,6 +32,8 @@ import { useTabTitle } from "@hooks/useTabTitle";
 
 import { APIClient } from "../api/client";
 
+import * as $bar from "@bar/variants";
+
 const LandingPage = ({ currentUser }) => {
   useTabTitle("Vacation Rentals, Homes, Experiences & Places - Airbnb");
   const loading = useTimeout(3000);
@@ -46,7 +48,7 @@ const LandingPage = ({ currentUser }) => {
     >
       <div>
         <div>
-          <Bar variant="covid" />
+          <Bar variant={$bar.COVID} />
         </div>
         <Template variant="banner" data={currentUser || null} />
         {loading ? (
@@ -126,7 +128,7 @@ const LandingPage = ({ currentUser }) => {
                 style={{ zIndex: 30, bottom: 0 }}
               >
                 <Bar
-                  variant="menu"
+                  variant={$bar.MENU}
                   extendsTo={[color["b-t--white__2"]].join(" ")}
                 />
               </div>

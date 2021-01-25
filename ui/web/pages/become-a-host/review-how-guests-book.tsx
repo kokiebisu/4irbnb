@@ -13,6 +13,7 @@ import space from "@styles/space.module.scss";
 import { Protected } from "@svg/original";
 
 import * as $card from "@card/variants";
+import * as $bar from "@bar/variants";
 
 const HowGuestsWillBookPage = () => {
   const proceed = () => {
@@ -33,7 +34,7 @@ const HowGuestsWillBookPage = () => {
           <Header variant="stay" title="Booking settings" />
         </div>
         <div>
-          <Bar variant="progress" percentage={80} />
+          <Bar variant={$bar.PROGRESS} percentage={80} />
         </div>
       </div>
       <div style={{ padding: "50px 0" }}>
@@ -93,7 +94,7 @@ const HowGuestsWillBookPage = () => {
             }}
           >
             <div style={{ width: "100%", maxWidth: 700, margin: "0 auto" }}>
-              <Bar variant="create" next={proceed} back={revert} />
+              <Bar variant={$bar.CREATE} next={proceed} back={revert} />
             </div>
           </div>
         </div>
