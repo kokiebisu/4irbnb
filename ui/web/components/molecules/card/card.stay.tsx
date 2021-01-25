@@ -7,11 +7,10 @@ import responsive from "@styles/responsive.module.scss";
 
 import { Heart } from "@svg/original";
 
-import { Bullet } from "@bullet";
+import { Bullet, $Bullet } from "@bullet";
 import { ImageSlider } from "@particle/image.slider";
 import { Card } from "@card";
 
-import * as $bullet from "@bullet/variants";
 import * as $card from "@card/variants";
 
 /**
@@ -177,7 +176,7 @@ export const StayCard: React.FC<{
                   </div>
                 </div>
                 <div>
-                  <Bullet variant={$bullet.RATING} />
+                  <Bullet variant={$Bullet.RATING} />
                 </div>
               </div>
             </div>

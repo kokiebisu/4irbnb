@@ -8,13 +8,12 @@ import shape from "@styles/shape.module.scss";
 import section from "@template/index.module.scss";
 
 import { Button } from "@button";
-import { Bullet } from "@bullet";
+import { Bullet, $Bullet } from "@bullet";
 
 import { Shield } from "@svg/original";
 
 import { Border } from "@button/button.stories";
 
-import * as $bullet from "@bullet/variants";
 import * as $button from "@button/variants";
 
 /**
@@ -153,7 +152,7 @@ export const HostTemplate: React.FC<{
                   ].join(" ")}
                 >
                   <Bullet
-                    variant={$bullet.HOST}
+                    variant={$Bullet.HOST}
                     categoryType="review"
                     total={numberOfReviews}
                   />
@@ -166,7 +165,7 @@ export const HostTemplate: React.FC<{
                       space["p-r--4"],
                     ].join(" ")}
                   >
-                    <Bullet variant={$bullet.HOST} categoryType="verified" />
+                    <Bullet variant={$Bullet.HOST} categoryType="verified" />
                   </div>
                 )}
                 {layoutType === "room" && isSuperhost && (
@@ -177,7 +176,7 @@ export const HostTemplate: React.FC<{
                       space["p-r--4"],
                     ].join(" ")}
                   >
-                    <Bullet variant={$bullet.HOST} categoryType="superhost" />
+                    <Bullet variant={$Bullet.HOST} categoryType="superhost" />
                   </div>
                 )}
               </div>

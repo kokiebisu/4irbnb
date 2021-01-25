@@ -1,9 +1,7 @@
 import { Layout } from "@layout";
-import { Bullet } from "@bullet";
+import { Bullet, $Bullet } from "@bullet";
 
 import space from "@styles/space.module.scss";
-
-import * as $bullet from "@bullet/variants";
 
 export const FAQTemplate: React.FC<{
   questions?: { question: string; answer: string }[];
@@ -50,7 +48,7 @@ export const FAQTemplate: React.FC<{
               key={index}
             >
               <Bullet
-                variant={$bullet.QUESTION}
+                variant={$Bullet.QUESTION}
                 title={question}
                 answer={answer}
               />

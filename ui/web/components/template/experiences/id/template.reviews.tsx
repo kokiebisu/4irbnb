@@ -8,10 +8,9 @@ import font from "@styles/font.module.scss";
 import section from "@template/index.module.scss";
 
 import { Button } from "@button";
-import { Bullet } from "@bullet";
+import { Bullet, $Bullet } from "@bullet";
 import { Card } from "@card";
 
-import * as $bullet from "@bullet/variants";
 import * as $button from "@button/variants";
 import * as $card from "@card/variants";
 
@@ -92,7 +91,7 @@ export const ReviewsTemplate: React.FC<{
                   ].join(" ")}
                 >
                   <Bullet
-                    variant={$bullet.SCORE}
+                    variant={$Bullet.SCORE}
                     category={category?.type}
                     average={category?.average}
                   />

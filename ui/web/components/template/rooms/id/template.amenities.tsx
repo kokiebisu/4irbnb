@@ -1,4 +1,4 @@
-import { Bullet } from "@bullet";
+import { Bullet, $Bullet } from "@bullet";
 import { Button } from "@button";
 
 import font from "@styles/font.module.scss";
@@ -6,7 +6,6 @@ import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 import section from "@template/index.module.scss";
 
-import * as $bullet from "@bullet/variants";
 import * as $button from "@button/variants";
 
 /**
@@ -42,7 +41,7 @@ export const AmenitiesTemplate: React.FC<{
           return (
             <Bullet
               key={index}
-              variant={$bullet.AMENITY}
+              variant={$Bullet.AMENITY}
               amenityType={amenity}
             />
           );
