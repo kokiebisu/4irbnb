@@ -1,4 +1,4 @@
-import { Header } from "@header";
+import { Header, $Header } from "@header";
 import { Prototype } from "@prototype/create";
 
 import responsive from "@styles/responsive.module.scss";
@@ -6,7 +6,7 @@ import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 
 import { useTabTitle } from "@hooks/useTabTitle";
-import * as $header from "@header/variants";
+
 import * as $prototype from "@prototype/create/variants";
 
 const BecomeAHostPage = () => {
@@ -18,7 +18,7 @@ const BecomeAHostPage = () => {
     <div style={{ height: "100vh" }}>
       <div style={{ zIndex: 60, height: 65 }}>
         <div className={[responsive["b_to_n--sm"]].join(" ")}>
-          <Header variant={$header.STAY} />
+          <Header variant={$Header.STAY} />
         </div>
       </div>
       <div className={[space["m-t--6"], layout["container"]].join(" ")}>

@@ -6,6 +6,16 @@ import { StayHeader } from "@header/header.stay";
 import { LandingHeader } from "@header/header.landing";
 import { WhiteHeader } from "@header/header.white";
 
+export const $Header = {
+  LANDING: "landing",
+  WHITE: "white",
+  DETAILS: "details",
+  HOMES: "homes",
+  EXPERIENCES: "experiences",
+  ONLINEHOST: "onlinehost",
+  STAY: "stay",
+};
+
 export interface HeaderProps {
   extendsTo?: any;
   variant: string;

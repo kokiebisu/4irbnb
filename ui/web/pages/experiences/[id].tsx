@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 
-import { Header } from "@header";
+import { Header, $Header } from "@header";
 import { Template, $Template } from "@template/experiences/id";
 import { Modal } from "@modal";
 import { Footer } from "@footer";
@@ -17,7 +17,6 @@ import shape from "@styles/shape.module.scss";
 import staysDetail from "@styles/staysDetail.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
-import * as $header from "@header/variants";
 import * as $modal from "@modal/variants";
 
 /** sample data */
@@ -53,7 +52,7 @@ const id: () => string | JSX.Element = () => {
     <>
       <div>
         <div style={{ position: "relative", zIndex: 9000 }}>
-          <Header variant={$header.WHITE} />
+          <Header variant={$Header.WHITE} />
         </div>
         <AnimatePresence>
           {scrollPosition > 470 && (
@@ -68,7 +67,7 @@ const id: () => string | JSX.Element = () => {
                 width: "100%",
               }}
             >
-              <Header variant={$header.DETAILS} />
+              <Header variant={$Header.DETAILS} />
             </motion.div>
           )}
         </AnimatePresence>

@@ -1,4 +1,4 @@
-import { Header } from "@header";
+import { Header, $Header } from "@header";
 import { Template, $Template } from "@template/d/onlinehost";
 import { Footer } from "@footer";
 
@@ -6,7 +6,6 @@ import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 
 import { useTabTitle } from "@hooks/useTabTitle";
-import * as $header from "@header/variants";
 
 const OnlineHost = () => {
   useTabTitle("Airbnb Experiences: Host an Online Experience");
@@ -14,7 +13,7 @@ const OnlineHost = () => {
   return (
     <div>
       <div>
-        <Header variant={$header.ONLINEHOST} />
+        <Header variant={$Header.ONLINEHOST} />
       </div>
       <div>
         <div className={[layout["container"]].join(" ")}>

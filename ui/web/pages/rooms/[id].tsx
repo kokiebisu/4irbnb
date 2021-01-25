@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { useToggleState } from "@context/toggle";
 
-import { Header } from "@header";
+import { Header, $Header } from "@header";
 import { Footer } from "@footer";
 import { Template, $Template } from "@template/rooms/id";
 import { Card, $Card } from "@card";
@@ -18,7 +18,6 @@ import space from "@styles/space.module.scss";
 
 import { useHandleScroll } from "@hooks/useHandleScroll";
 
-import * as $header from "@header/variants";
 import * as $modal from "@modal/variants";
 
 /**
@@ -33,7 +32,7 @@ const id: () => string | JSX.Element = () => {
         <div style={{ position: "relative", zIndex: 9000 }}>
           <Header
             extendsTo={[details["w__wrapper"]].join(" ")}
-            variant={$header.WHITE}
+            variant={$Header.WHITE}
           />
         </div>
         <AnimatePresence>
@@ -50,7 +49,7 @@ const id: () => string | JSX.Element = () => {
                 width: "100%",
               }}
             >
-              <Header variant={$header.DETAILS} />
+              <Header variant={$Header.DETAILS} />
             </motion.div>
           )}
         </AnimatePresence>

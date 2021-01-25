@@ -3,9 +3,8 @@ import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 
 import { Modal } from "@modal";
-import { Header } from "@header";
+import { Header, $Header } from "@header";
 
-import * as $header from "@header/variants";
 import * as $modal from "@modal/variants";
 
 export const BannerTemplate: React.FC<{}> = () => {
@@ -15,7 +14,7 @@ export const BannerTemplate: React.FC<{}> = () => {
       style={{ backgroundColor: "#F2ECE2" }}
     >
       <div>
-        <Header variant={$header.HOMES} />
+        <Header variant={$Header.HOMES} />
       </div>
       <div className={[layout["container--spread"], layout["flex"]].join(" ")}>
         <div

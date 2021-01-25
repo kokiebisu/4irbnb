@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import { Header } from "@header";
+import { Header, $Header } from "@header";
 
 import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";
@@ -10,7 +10,6 @@ import space from "@styles/space.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
 import { useTabTitle } from "@hooks/useTabTitle";
-import * as $header from "@header/variants";
 
 // pages/404.js
 const ErrorPage = () => {
@@ -23,7 +22,7 @@ const ErrorPage = () => {
   return (
     <div>
       <div>
-        <Header variant={$header.HOMES} />
+        <Header variant={$Header.HOMES} />
       </div>
       <div
         style={{ height: "calc(100vh - 80px)" }}
