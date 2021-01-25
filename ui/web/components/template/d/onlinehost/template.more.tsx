@@ -5,9 +5,7 @@ import shape from "@styles/shape.module.scss";
 import space from "@styles/space.module.scss";
 import section from "@template/index.module.scss";
 
-import * as $button from "@button/variants";
-
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 
 export const MoreTemplate: React.FC<{ imgUrl?: string }> = ({ imgUrl }) => {
   return (
@@ -55,7 +53,7 @@ export const MoreTemplate: React.FC<{ imgUrl?: string }> = ({ imgUrl }) => {
                 ].join(" ")}
               >
                 <Button
-                  variant={$button.BORDER}
+                  variant={$Button.BORDER}
                   title="Let's go"
                   inverse
                   bold

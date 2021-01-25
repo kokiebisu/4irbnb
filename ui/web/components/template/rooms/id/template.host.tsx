@@ -7,14 +7,12 @@ import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 import section from "@template/index.module.scss";
 
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 import { Bullet, $Bullet } from "@bullet";
 
 import { Shield } from "@svg/original";
 
 import { Border } from "@button/button.stories";
-
-import * as $button from "@button/variants";
 
 /**
  * Modifies the content which should be displayed initially
@@ -312,7 +310,7 @@ export const HostTemplate: React.FC<{
                 }
               >
                 <Button
-                  variant={$button.BORDER}
+                  variant={$Button.BORDER}
                   size="md"
                   title="Contact host"
                 />

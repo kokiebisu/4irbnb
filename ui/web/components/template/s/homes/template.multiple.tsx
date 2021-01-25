@@ -9,9 +9,8 @@ import sectionStyles from "@template/index.module.scss";
 import section from "@template/index.module.scss";
 
 import { Card } from "@card";
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 
-import * as $button from "@button/variants";
 import * as $card from "@card/variants";
 
 /**
@@ -165,7 +164,7 @@ export const MultipleTemplate: React.FC<{
           <div className={[layout["flex"], layout["items-center"]].join(" ")}>
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
-                variant={$button.PAGINATE}
+                variant={$Button.PAGINATE}
                 animate
                 direction="left"
                 onClick={previous}
@@ -174,7 +173,7 @@ export const MultipleTemplate: React.FC<{
             </div>
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
-                variant={$button.PAGINATE}
+                variant={$Button.PAGINATE}
                 animate
                 direction="right"
                 onClick={next}
@@ -261,14 +260,14 @@ export const MultipleTemplate: React.FC<{
                   </div>
                   <div className={[space["m-r--6"]].join(" ")}>
                     <Button
-                      variant={$button.PAGINATE}
+                      variant={$Button.PAGINATE}
                       animate
                       direction="left"
                     />
                   </div>
                   <div>
                     <Button
-                      variant={$button.PAGINATE}
+                      variant={$Button.PAGINATE}
                       animate
                       direction="right"
                     />
@@ -283,7 +282,7 @@ export const MultipleTemplate: React.FC<{
           {showAll && (
             <div className={space["m-v--25"]}>
               <Button
-                variant={$button.EXPAND}
+                variant={$Button.EXPAND}
                 to={showAll.to}
                 title={showAll.description}
               />

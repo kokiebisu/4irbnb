@@ -22,6 +22,30 @@ import { PhotoInput } from "@input/input.photo";
 import shape from "@styles/shape.module.scss";
 import { AnotherInput } from "./input.another";
 
+export const $Input = {
+  EMAIL: "email",
+  PASSWORD: "password",
+  NAME: "name",
+  BIRTHDATE: "birthdate",
+  PHONE: "phone",
+  REGION: "region",
+  PLACE: "place",
+  GUESTS: "guests",
+  ADDRESS: "address",
+  SELECT: "select",
+  RADIO: "radio",
+  COUNTER: "counter",
+  TEXT: "text",
+  CHECKBOX: "checkbox",
+  TEXTAREA: "textarea",
+  LIMIT: "limit",
+  VERIFY: "verify",
+  CLOSED: "closed",
+  PRICE: "price",
+  PHOTO: "photo",
+  ANOTHER: "another",
+};
+
 export interface InputProps {
   extendsTo?: string;
   variant?: string;

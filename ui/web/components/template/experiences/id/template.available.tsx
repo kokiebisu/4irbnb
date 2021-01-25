@@ -6,9 +6,8 @@ import font from "@styles/font.module.scss";
 import section from "@template/index.module.scss";
 
 import { Card } from "@card";
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 
-import * as $button from "@button/variants";
 import * as $card from "@card/variants";
 
 /**
@@ -126,7 +125,7 @@ export const AvailableTemplate: React.FC<{
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div className={[space["m-h--4"]].join(" ")}>
             <Button
-              variant={$button.PAGINATE}
+              variant={$Button.PAGINATE}
               animate
               direction="left"
               onClick={previous}
@@ -135,7 +134,7 @@ export const AvailableTemplate: React.FC<{
           </div>
           <div className={[space["m-h--4"]].join(" ")}>
             <Button
-              variant={$button.PAGINATE}
+              variant={$Button.PAGINATE}
               animate
               direction="right"
               onClick={next}
@@ -179,7 +178,7 @@ export const AvailableTemplate: React.FC<{
         </div>
       </div>
       <div className={[space["m-t--32"]].join(" ")}>
-        <Button variant={$button.BORDER} title="See more dates" />
+        <Button variant={$Button.BORDER} title="See more dates" />
       </div>
     </div>
   );

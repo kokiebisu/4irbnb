@@ -11,9 +11,8 @@ import color from "@styles/color.module.scss";
 
 import { useToggleState } from "@context/toggle";
 
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 
-import * as $button from "@button/variants";
 import * as $bar from "@bar/variants";
 import * as $header from "@header/variants";
 import * as $modal from "@modal/variants";
@@ -86,7 +85,7 @@ const OnlinePage = () => {
           padding: "40px 0 56px 0",
         }}
       >
-        <Button variant={$button.PRIMARY} title="Load more" fill="black" />
+        <Button variant={$Button.PRIMARY} title="Load more" fill="black" />
       </div>
       <div>
         <Footer />

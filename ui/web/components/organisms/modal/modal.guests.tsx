@@ -1,13 +1,11 @@
-import { Input } from "@input";
-
-import * as $input from "@input/variants";
+import { Input, $Input } from "@input";
 
 export const GuestsModal: React.FC<{}> = () => {
   return (
     <div>
       <div>
         <Input
-          variant={$input.COUNTER}
+          variant={$Input.COUNTER}
           type="guests"
           title="Adults"
           subtitle="Ages 13 or above"
@@ -16,7 +14,7 @@ export const GuestsModal: React.FC<{}> = () => {
       <div style={{ height: 1, width: "100%", backgroundColor: "#EBEBEB" }} />
       <div>
         <Input
-          variant={$input.COUNTER}
+          variant={$Input.COUNTER}
           type="guests"
           title="Children"
           subtitle="Ages 2 - 12"
@@ -25,7 +23,7 @@ export const GuestsModal: React.FC<{}> = () => {
       <div style={{ height: 1, width: "100%", backgroundColor: "#EBEBEB" }} />
       <div>
         <Input
-          variant={$input.COUNTER}
+          variant={$Input.COUNTER}
           type="guests"
           title="Infants"
           subtitle="Under 2"

@@ -6,9 +6,7 @@ import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 import font from "@styles/font.module.scss";
 
-import { Button } from "@button";
-
-import * as $button from "@button/variants";
+import { Button, $Button } from "@button";
 
 /**
  * Renders the header for the homes page
@@ -29,7 +27,7 @@ export const StayHeader: React.FC<{
       <div className={[layout["flex"], layout["items-center"]].join(" ")}>
         <div>
           <Button
-            variant={$button.LOGO}
+            variant={$Button.LOGO}
             noName
             fill="##008489"
             onClick={() => Router.push("/")}

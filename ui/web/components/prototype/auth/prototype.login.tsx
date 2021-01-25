@@ -8,8 +8,8 @@ import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 
-import { Input } from "@input";
-import { Button } from "@button";
+import { Input, $Input } from "@input";
+import { Button, $Button } from "@button";
 import { Bullet, $Bullet } from "@bullet";
 import { Card } from "@card";
 
@@ -17,8 +17,6 @@ import { validateLogin as validate } from "@helper/auth";
 
 import { usePost } from "@hooks/usePost";
 
-import * as $button from "@button/variants";
-import * as $input from "@input/variants";
 import * as $card from "@card/variants";
 
 /**
@@ -80,14 +78,14 @@ export const LoginTemplate: React.FC<{}> = () => {
         <div>
           <div>
             <Input
-              variant={$input.EMAIL}
+              variant={$Input.EMAIL}
               direction="bottom"
               handleChange={formik.handleChange}
               value={formik.values.email}
               errors={formik.errors.email !== undefined}
             />
             <Input
-              variant={$input.PASSWORD}
+              variant={$Input.PASSWORD}
               direction="top"
               handleChange={formik.handleChange}
               value={formik.values.password}
@@ -122,7 +120,7 @@ export const LoginTemplate: React.FC<{}> = () => {
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
           <Button
-            variant={$button.PRIMARY}
+            variant={$Button.PRIMARY}
             title="Log in"
             loading={loading}
             block
@@ -130,14 +128,14 @@ export const LoginTemplate: React.FC<{}> = () => {
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
           <Button
-            variant={$button.UNDERLINE}
+            variant={$Button.UNDERLINE}
             title="Forgot password?"
             onClick={redirectTo}
           />
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
           <Button
-            variant={$button.UNDERLINE}
+            variant={$Button.UNDERLINE}
             title="More login options"
             onClick={switchBack}
           />
@@ -147,7 +145,7 @@ export const LoginTemplate: React.FC<{}> = () => {
             Don't have an account?
           </p>
           <Button
-            variant={$button.UNDERLINE}
+            variant={$Button.UNDERLINE}
             title="Sign up"
             onClick={switchAuth}
           />

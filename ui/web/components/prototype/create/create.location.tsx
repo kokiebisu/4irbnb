@@ -1,10 +1,8 @@
-import { Input } from "@input";
+import { Input, $Input } from "@input";
 
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
-
-import * as $input from "@input/variants";
 
 /**
  * Renders the /become-a-host/location page content
@@ -41,7 +39,7 @@ export const LocationCreate: React.FC<{
             <p className={[font["size--14"]].join(" ")}>Country</p>
           </div>
           <Input
-            variant={$input.SELECT}
+            variant={$Input.SELECT}
             handleChange={(e) => setData({ ...data, country: e.target.value })}
             value={data?.country}
             inputType="country"
@@ -53,7 +51,7 @@ export const LocationCreate: React.FC<{
           </div>
           <Input
             name="postal"
-            variant={$input.TEXT}
+            variant={$Input.TEXT}
             handleChange={(e) => setData({ ...data, postal: e.target.value })}
             value={data?.postal}
           />
@@ -66,7 +64,7 @@ export const LocationCreate: React.FC<{
         <div>
           <Input
             name="street"
-            variant={$input.TEXT}
+            variant={$Input.TEXT}
             handleChange={(e) => setData({ ...data, street: e.target.value })}
             value={data?.street}
           />
@@ -84,7 +82,7 @@ export const LocationCreate: React.FC<{
         <div>
           <Input
             name="apt"
-            variant={$input.TEXT}
+            variant={$Input.TEXT}
             handleChange={(e) => setData({ ...data, apt: e.target.value })}
             value={data?.apt}
           />
@@ -107,7 +105,7 @@ export const LocationCreate: React.FC<{
           </div>
           <div>
             <Input
-              variant={$input.TEXT}
+              variant={$Input.TEXT}
               handleChange={(e) => setData({ ...data, city: e.target.value })}
               value={data?.city}
               inputType="city"
@@ -124,7 +122,7 @@ export const LocationCreate: React.FC<{
           <div>
             <Input
               name="state"
-              variant={$input.TEXT}
+              variant={$Input.TEXT}
               handleChange={(e) => setData({ ...data, state: e.target.value })}
               value={data?.state}
             />

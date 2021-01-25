@@ -10,13 +10,13 @@ import color from "@styles/color.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
 import { Header } from "@header";
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 
 import { useHandleScroll } from "@hooks/useHandleScroll";
 
 import { Banner } from "@button/button.stories";
 import { ResponsiveImage } from "@helper/img";
-import * as $button from "@button/variants";
+
 import * as $header from "@header/variants";
 
 /**
@@ -109,7 +109,7 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
                 ].join(" ")}
               >
                 <Button
-                  variant={$button.BANNER}
+                  variant={$Button.BANNER}
                   title="Explore nearby"
                   onClick={() => Router.push("/")}
                 />

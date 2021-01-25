@@ -1,7 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
-import { Button, ButtonProps } from "@button";
+import { Button, ButtonProps, $Button } from "@button";
 
 import button from "@button/button.module.scss";
 import font from "@styles/font.module.scss";
@@ -10,8 +10,6 @@ import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 import space from "@styles/space.module.scss";
 import animation from "@styles/animation.module.scss";
-
-import * as $button from "@button/variants";
 
 export default {
   title: "Atoms/Button",
@@ -55,13 +53,13 @@ const TemplateStory: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Transparent = TemplateStory.bind({});
 Transparent.args = {
-  variant: $button.TRANSPARENT,
+  variant: $Button.TRANSPARENT,
   content: <h3 className={[font["size--15"]].join(" ")}>Button</h3>,
 };
 
 export const Globe = TemplateStory.bind({});
 Globe.args = {
-  variant: $button.GLOBE,
+  variant: $Button.GLOBE,
   extendsTo: [font["text--left"]].join(" "),
 };
 Globe.argTypes = {
@@ -72,7 +70,7 @@ Globe.argTypes = {
 
 export const Menu = TemplateStory.bind({});
 Menu.args = {
-  variant: $button.MENU,
+  variant: $Button.MENU,
   extendsTo: [animation["hover-shadow--lg"], shape["br--30"]].join(" "),
 };
 Menu.argTypes = {
@@ -84,7 +82,7 @@ Menu.argTypes = {
 
 export const Privacy = TemplateStory.bind({});
 Privacy.args = {
-  variant: $button.PRIVACY,
+  variant: $Button.PRIVACY,
 };
 
 Privacy.decorators = [
@@ -97,7 +95,7 @@ Privacy.decorators = [
 
 export const Border = TemplateStory.bind({});
 Border.args = {
-  variant: $button.BORDER,
+  variant: $Button.BORDER,
 };
 Border.argTypes = {
   size: {
@@ -113,7 +111,7 @@ Border.argTypes = {
 
 export const Banner = TemplateStory.bind({});
 Banner.args = {
-  variant: $button.BANNER,
+  variant: $Button.BANNER,
   extendsTo: [color["bg--white"], shape["br--6"]].join(" "),
 };
 Banner.argTypes = {
@@ -130,7 +128,7 @@ Banner.decorators = [
 
 export const Primary = TemplateStory.bind({});
 Primary.args = {
-  variant: $button.PRIMARY,
+  variant: $Button.PRIMARY,
 };
 Primary.decorators = [
   (Story) => (
@@ -148,7 +146,7 @@ Primary.argTypes = {
 
 export const Searchbar = TemplateStory.bind({});
 Searchbar.args = {
-  variant: $button.SEARCHBAR,
+  variant: $Button.SEARCHBAR,
 };
 Searchbar.argTypes = {
   ...disableInverse,
@@ -159,7 +157,7 @@ Searchbar.argTypes = {
 
 export const Auth = TemplateStory.bind({});
 Auth.args = {
-  variant: $button.AUTH,
+  variant: $Button.AUTH,
 };
 
 Auth.decorators = [
@@ -181,7 +179,7 @@ Auth.argTypes = {
 
 export const Paginate = TemplateStory.bind({});
 Paginate.args = {
-  variant: $button.PAGINATE,
+  variant: $Button.PAGINATE,
 };
 Paginate.argTypes = {
   direction: {
@@ -194,17 +192,17 @@ Paginate.argTypes = {
 
 export const Option = TemplateStory.bind({});
 Option.args = {
-  variant: $button.OPTION,
+  variant: $Button.OPTION,
 };
 
 export const Underline = TemplateStory.bind({});
 Underline.args = {
-  variant: $button.UNDERLINE,
+  variant: $Button.UNDERLINE,
 };
 
 export const Filter = TemplateStory.bind({});
 Filter.args = {
-  variant: $button.FILTER,
+  variant: $Button.FILTER,
 };
 Filter.argTypes = {
   inverse: {
@@ -214,7 +212,7 @@ Filter.argTypes = {
 
 export const Modal = TemplateStory.bind({});
 Modal.args = {
-  variant: $button.MODAL,
+  variant: $Button.MODAL,
 };
 Modal.argTypes = {
   modalType: {
@@ -227,17 +225,17 @@ Modal.argTypes = {
 
 export const Back = TemplateStory.bind({});
 Back.args = {
-  variant: $button.BACK,
+  variant: $Button.BACK,
 };
 
 export const Link = TemplateStory.bind({});
 Link.args = {
-  variant: $button.LINK,
+  variant: $Button.LINK,
 };
 
 export const Search = TemplateStory.bind({});
 Search.args = {
-  variant: $button.SEARCH,
+  variant: $Button.SEARCH,
 };
 Search.argTypes = {
   expand: {
@@ -247,12 +245,12 @@ Search.argTypes = {
 
 export const Expand = TemplateStory.bind({});
 Expand.args = {
-  variant: $button.EXPAND,
+  variant: $Button.EXPAND,
 };
 
 export const Location = TemplateStory.bind({});
 Location.args = {
-  variant: $button.LOCATION,
+  variant: $Button.LOCATION,
 };
 Location.argTypes = {
   type: {
@@ -265,10 +263,10 @@ Location.argTypes = {
 
 export const Nearby = TemplateStory.bind({});
 Nearby.args = {
-  variant: $button.NEARBY,
+  variant: $Button.NEARBY,
 };
 
 export const Destination = TemplateStory.bind({});
 Destination.args = {
-  variant: $button.DESTINATION,
+  variant: $Button.DESTINATION,
 };
