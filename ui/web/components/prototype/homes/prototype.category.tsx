@@ -7,9 +7,8 @@ import { Template } from "@template/s/homes";
 import { Bar } from "@bar";
 import { Button } from "@button";
 
-import { Filter } from "@button/button.stories";
-
 import * as $button from "@button/variants";
+import * as $bar from "@bar/variants";
 
 /**
  * Renders the category template component
@@ -87,7 +86,7 @@ export const CategoryPrototype: React.FC<{
           layout["justify-center"],
         ].join(" ")}
       >
-        <Bar variant="paginate" animate />
+        <Bar variant={$bar.PAGINATE} animate />
       </div>
     </div>
   );

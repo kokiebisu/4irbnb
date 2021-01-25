@@ -3,6 +3,8 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 
 import { Input, InputProps } from "@input";
 
+import * as $input from "@input/variants";
+
 export default {
   title: "Atoms/Input",
   component: Input,
@@ -19,17 +21,17 @@ const TemplateStory: Story<InputProps> = (args) => <Input {...args} />;
 
 export const email = TemplateStory.bind({});
 email.args = {
-  variant: "email",
+  variant: $input.EMAIL,
 };
 
 export const password = TemplateStory.bind({});
 password.args = {
-  variant: "password",
+  variant: $input.PASSWORD,
 };
 
 export const name = TemplateStory.bind({});
 name.args = {
-  variant: "name",
+  variant: $input.NAME,
 };
 name.argTypes = {
   name: {
@@ -42,57 +44,57 @@ name.argTypes = {
 
 export const birthdate = TemplateStory.bind({});
 birthdate.args = {
-  variant: "birthdate",
+  variant: $input.BIRTHDATE,
 };
 
 export const phone = TemplateStory.bind({});
 phone.args = {
-  variant: "phone",
+  variant: $input.PHONE,
 };
 
 export const region = TemplateStory.bind({});
 region.args = {
-  variant: "region",
+  variant: $input.REGION,
 };
 
 export const place = TemplateStory.bind({});
 place.args = {
-  variant: "place",
+  variant: $input.PLACE,
 };
 
 export const guests = TemplateStory.bind({});
 guests.args = {
-  variant: "guests",
+  variant: $input.GUESTS,
 };
 
 export const address = TemplateStory.bind({});
 address.args = {
-  variant: "address",
+  variant: $input.ADDRESS,
 };
 
 export const select = TemplateStory.bind({});
 select.args = {
-  variant: "select",
+  variant: $input.SELECT,
 };
 
 export const radio = TemplateStory.bind({});
 radio.args = {
-  variant: "radio",
+  variant: $input.RADIO,
 };
 
 export const counter = TemplateStory.bind({});
 counter.args = {
-  variant: "counter",
+  variant: $input.COUNTER,
 };
 
 export const text = TemplateStory.bind({});
 text.args = {
-  variant: "text",
+  variant: $input.TEXT,
 };
 
 export const checkbox = TemplateStory.bind({});
 checkbox.args = {
-  variant: "checkbox",
+  variant: $input.CHECKBOX,
 };
 checkbox.argTypes = {
   checked: {
@@ -102,27 +104,27 @@ checkbox.argTypes = {
 
 export const textarea = TemplateStory.bind({});
 textarea.args = {
-  variant: "textarea",
+  variant: $input.TEXTAREA,
 };
 
 export const verify = TemplateStory.bind({});
 verify.args = {
-  variant: "verify",
+  variant: $input.VERIFY,
 };
 
 export const closed = TemplateStory.bind({});
 closed.args = {
-  variant: "closed",
+  variant: $input.CLOSED,
 };
 
 export const price = TemplateStory.bind({});
 price.args = {
-  variant: "price",
+  variant: $input.PRICE,
 };
 
 export const photo = TemplateStory.bind({});
 photo.args = {
-  variant: "photo",
+  variant: $input.PHOTO,
 };
 photo.decorators = [
   (Story) => (
@@ -134,7 +136,7 @@ photo.decorators = [
 
 export const another = TemplateStory.bind({});
 another.args = {
-  variant: "another",
+  variant: $input.ANOTHER,
 };
 another.decorators = [
   (Story) => (

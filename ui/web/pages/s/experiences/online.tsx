@@ -14,6 +14,7 @@ import React from "react";
 import { Button } from "@button";
 
 import * as $button from "@button/variants";
+import * as $bar from "@bar/variants";
 
 const OnlinePage = () => {
   const toggleState = useToggleState();
@@ -36,7 +37,7 @@ const OnlinePage = () => {
               " "
             )}
           >
-            <Bar variant="filters" />
+            <Bar variant={$bar.FILTERS} />
           </div>
           <div
             className={[color["bg--white__2"]].join(" ")}

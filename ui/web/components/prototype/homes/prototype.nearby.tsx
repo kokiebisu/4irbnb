@@ -11,6 +11,7 @@ import { Bar } from "@bar";
 import { Button } from "@button";
 
 import * as $button from "@button/variants";
+import * as $bar from "@bar/variants";
 
 /**
  * Renders the nearby template component
@@ -121,7 +122,7 @@ export const NearbyPrototype: React.FC<{
             layout["justify-center"],
           ].join(" ")}
         >
-          <Bar variant="paginate" animate />
+          <Bar variant={$bar.PAGINATE} animate />
         </div>
       </div>
       <div className={[space["p--24"], color["bg--white__1"]].join(" ")}>
