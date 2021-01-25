@@ -1,5 +1,5 @@
 import { Header } from "@header";
-import { Prototype as CreatePrototype } from "@prototype/create";
+import { Prototype } from "@prototype/create";
 
 import responsive from "@styles/responsive.module.scss";
 import layout from "@styles/layout.module.scss";
@@ -7,6 +7,7 @@ import space from "@styles/space.module.scss";
 
 import { useTabTitle } from "@hooks/useTabTitle";
 import * as $header from "@header/variants";
+import * as $prototype from "@prototype/create/variants";
 
 const BecomeAHostPage = () => {
   useTabTitle(
@@ -33,7 +34,7 @@ const BecomeAHostPage = () => {
                 width: "100%",
               }}
             >
-              <CreatePrototype variant="getstarted" />
+              <Prototype variant={$prototype.GETSTARTED} />
             </div>
           </div>
           <div

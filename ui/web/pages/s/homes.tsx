@@ -5,7 +5,7 @@ import { useToggleState } from "@context/toggle";
 
 import layout from "@styles/layout.module.scss";
 
-import { Prototype as HomesPrototype } from "@prototype/homes";
+import { Prototype } from "@prototype/homes";
 import { Modal } from "@modal";
 
 import shape from "@styles/shape.module.scss";
@@ -39,7 +39,7 @@ const Homes = () => {
   return (
     <div className={[homes["display__content"]].join(" ")}>
       <div className={[homes["w__section"]].join(" ")}>
-        <HomesPrototype
+        <Prototype
           variant={type}
           city={city}
           stayType={stayType}
