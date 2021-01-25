@@ -1,6 +1,6 @@
 import { Header } from "@header";
 import { Bar } from "@bar";
-import { Template } from "@template/s/experiences/online";
+import { Template, $Template } from "@template/s/experiences/online";
 import { Modal } from "@modal";
 import { Footer } from "@footer";
 
@@ -10,7 +10,7 @@ import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 
 import { useToggleState } from "@context/toggle";
-import React from "react";
+
 import { Button } from "@button";
 
 import * as $button from "@button/variants";
@@ -29,7 +29,7 @@ const OnlinePage = () => {
       </div>
       <div className={[space["m-v--8"]].join(" ")}>
         <div className={[layout["container--spread"]].join(" ")}>
-          <Template variant="banner" />
+          <Template variant={$Template.BANNER} />
         </div>
       </div>
       <div style={{ position: "sticky", top: 0, zIndex: 50 }}>
@@ -57,27 +57,27 @@ const OnlinePage = () => {
           space["m-t--20"],
         ].join(" ")}
       >
-        <Template variant="cards" />
+        <Template variant={$Template.CARDS} />
       </div>
       <div
         className={[layout["container--spread"], space["m-v--12"]].join(" ")}
       >
-        <Template variant="cards" />
+        <Template variant={$Template.CARDS} />
       </div>
       <div
         className={[layout["container--spread"], space["m-v--12"]].join(" ")}
       >
-        <Template variant="starting" />
+        <Template variant={$Template.STARTING} />
       </div>
       <div
         className={[layout["container--spread"], space["m-v--12"]].join(" ")}
       >
-        <Template variant="collections" />
+        <Template variant={$Template.COLLECTIONS} />
       </div>
       <div
         className={[layout["container--spread"], space["m-v--12"]].join(" ")}
       >
-        <Template variant="cards" />
+        <Template variant={$Template.CARDS} />
       </div>
       <div
         style={{

@@ -4,7 +4,7 @@ import { useToggleState } from "@context/toggle";
 
 import { Header } from "@header";
 import { Footer } from "@footer";
-import { Template } from "@template/rooms/id";
+import { Template, $Template } from "@template/rooms/id";
 import { Card } from "@card";
 import { Modal } from "@modal";
 
@@ -55,12 +55,12 @@ const id: () => string | JSX.Element = () => {
             </motion.div>
           )}
         </AnimatePresence>
-        <div className={[].join(" ")}>
+        {/* <div className={[].join(" ")}>
           <Template
             extendsTo={[staysDetail["flex__panel"]].join(" ")}
             variant="panel"
           />
-        </div>
+        </div> */}
         <div
           className={[layout["container"], staysDetail["m__content"]].join(" ")}
         >
@@ -79,17 +79,17 @@ const id: () => string | JSX.Element = () => {
                 ]}
               /> */}
               <Template
-                variant="description"
+                variant={$Template.DESCRIPTION}
                 extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
               />
               <Template
                 extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-                variant="arrangements"
+                variant={$Template.ARRANGEMENTS}
                 title="Sleeping arrangements"
               />
               <Template
                 extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-                variant="amenities"
+                variant={$Template.AMENITIES}
                 title="Amenities"
               />
             </div>
@@ -110,15 +110,15 @@ const id: () => string | JSX.Element = () => {
           </div>
           <Template
             extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-            variant="reviews"
+            variant={$Template.REVIEWS}
           />
           <Template
             extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-            variant="host"
+            variant={$Template.HOST}
           />
           <Template
             extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-            variant="know"
+            variant={$Template.KNOW}
           />
         </div>
         <div className={[layout["container"]].join(" ")}>
@@ -128,7 +128,7 @@ const id: () => string | JSX.Element = () => {
               space["p-v--32"],
               color["bg--white__1"],
             ].join(" ")}
-            variant="other"
+            variant={$Template.OTHER}
           />
         </div>
         <Footer />

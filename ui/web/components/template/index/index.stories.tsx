@@ -1,7 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
-import { Template, TemplateProps } from "@template/index";
+import { Template, TemplateProps, $Template } from "@template/index";
 
 export default {
   title: "Templates/Index",
@@ -17,7 +17,7 @@ const TemplateStory: Story<TemplateProps> = (args) => <Template {...args} />;
 
 export const Banner = TemplateStory.bind({});
 Banner.args = {
-  variant: "banner",
+  variant: $Template.BANNER,
 };
 Banner.parameters = {
   storyshots: { disable: true },
@@ -25,17 +25,17 @@ Banner.parameters = {
 
 export const Categories = TemplateStory.bind({});
 Categories.args = {
-  variant: "category",
+  variant: $Template.CATEGORY,
 };
 
 export const Nearby = TemplateStory.bind({});
 Nearby.args = {
-  variant: "nearby",
+  variant: $Template.NEARBY,
 };
 
 export const Online = TemplateStory.bind({});
 Online.args = {
-  variant: "online",
+  variant: $Template.ONLINE,
 };
 
 Online.argTypes = {
@@ -46,5 +46,5 @@ Online.argTypes = {
 
 export const Destinations = TemplateStory.bind({});
 Destinations.args = {
-  variant: "destinations",
+  variant: $Template.DESTINATIONS,
 };
