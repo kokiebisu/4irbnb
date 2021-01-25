@@ -1,7 +1,10 @@
 import { CategoryPrototype } from "@prototype/homes/prototype.category";
 import { NearbyPrototype } from "@prototype/homes/prototype.nearby";
 
-import * as $prototype from "@prototype/homes/variants";
+export const $Prototype = {
+  CATEGORY: "category",
+  NEARBY: "nearby",
+};
 
 export interface PrototypeProps {
   variant?: string;
@@ -12,7 +15,7 @@ export interface PrototypeProps {
 }
 
 export const Prototype: React.FC<PrototypeProps> = ({
-  variant = $prototype.NEARBY,
+  variant = $Prototype.NEARBY,
   city = "City",
   stayType = "house",
   characteristics,

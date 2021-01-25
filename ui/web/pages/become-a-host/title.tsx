@@ -2,10 +2,9 @@ import { useState } from "react";
 import Router from "next/router";
 
 import { Layout } from "@layout";
-import { Prototype } from "@prototype/create";
+import { Prototype, $Prototype } from "@prototype/create";
 
 import { useStayDispatch, useStayState } from "@context/stay";
-import * as $prototype from "@prototype/create/variants";
 
 const TitlePage = () => {
   const stayDispatch = useStayDispatch();
@@ -36,7 +35,7 @@ const TitlePage = () => {
       left={
         <Prototype
           title="Description and title"
-          variant={$prototype.TITLE}
+          variant={$Prototype.TITLE}
           data={data}
           setData={setData}
         />

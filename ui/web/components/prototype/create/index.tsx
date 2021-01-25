@@ -17,7 +17,26 @@ import { PriceCreate } from "@prototype/create//create.price";
 import { ScenariosCreate } from "@prototype/create/create.scenarios";
 import { PhotosCreate } from "@prototype/create/create.photos";
 
-import * as $prototype from "@prototype/create/variants";
+export const $Prototype = {
+  GETSTARTED: "getstarted",
+  ROOM: "room",
+  BEDROOMS: "bedrooms",
+  BATHROOMS: "bathrooms",
+  LOCATION: "location",
+  AMENITIES: "amenities",
+  SPACES: "spaces",
+  DESCRIPTION: "description",
+  TITLE: "title",
+  PHONE: "phone",
+  REQUIREMENTS: "requirements",
+  RULES: "rules",
+  CHECKIN: "checkin",
+  ADVANCE: "advance",
+  PERIOD: "period",
+  PRICE: "price",
+  SCENARIOS: "scenarios",
+  PHOTOS: "photos",
+};
 
 export interface CreateProps {
   variant?: string;
@@ -25,7 +44,7 @@ export interface CreateProps {
 }
 
 export const Prototype: React.FC<CreateProps> = ({
-  variant = $prototype.GETSTARTED,
+  variant = $Prototype.GETSTARTED,
   ...props
 }) => {
   const variants = {

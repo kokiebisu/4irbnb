@@ -1,12 +1,10 @@
 import { useState } from "react";
 import Router from "next/router";
 
-import { Prototype } from "@prototype/create";
+import { Prototype, $Prototype } from "@prototype/create";
 import { Layout } from "@layout";
 
 import { useStayDispatch, useStayState } from "@context/stay";
-
-import * as $prototype from "@prototype/create/variants";
 
 const CheckInPage = () => {
   const stayDispatch = useStayDispatch();
@@ -37,7 +35,7 @@ const CheckInPage = () => {
       variant="create"
       title="Calendar and availability"
       left={
-        <Prototype variant={$prototype.CHECKIN} data={data} setData={setData} />
+        <Prototype variant={$Prototype.CHECKIN} data={data} setData={setData} />
       }
       percentage={80}
       next={proceed}
