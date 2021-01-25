@@ -4,9 +4,7 @@ import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 
 import { Button, $Button } from "@button";
-import { Card } from "@card";
-
-import * as $card from "@card/variants";
+import { Card, $Card } from "@card";
 
 export const WorksTemplate: React.FC<{}> = () => {
   const categories = ["design", "share", "submit", "setup"];
@@ -17,7 +15,7 @@ export const WorksTemplate: React.FC<{}> = () => {
           {categories.map((category, index) => {
             return (
               <div className={[space["m-b--8"]].join(" ")} key={index}>
-                <Card variant={$card.WORKS} work={category} />
+                <Card variant={$Card.WORKS} work={category} />
               </div>
             );
           })}

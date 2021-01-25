@@ -5,7 +5,7 @@ import { useToggleState } from "@context/toggle";
 import { Header } from "@header";
 import { Footer } from "@footer";
 import { Template, $Template } from "@template/rooms/id";
-import { Card } from "@card";
+import { Card, $Card } from "@card";
 import { Modal } from "@modal";
 
 import responsive from "@styles/responsive.module.scss";
@@ -18,7 +18,6 @@ import space from "@styles/space.module.scss";
 
 import { useHandleScroll } from "@hooks/useHandleScroll";
 
-import * as $card from "@card/variants";
 import * as $header from "@header/variants";
 import * as $modal from "@modal/variants";
 
@@ -98,7 +97,7 @@ const id: () => string | JSX.Element = () => {
               className={[details["w__details--right"]].join(" ")}
             >
               <Card
-                variant={$card.CHECKIN}
+                variant={$Card.CHECKIN}
                 extendsTo={[
                   layout["flex"],
                   layout["justify-end"],

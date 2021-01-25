@@ -9,9 +9,7 @@ import { Heart } from "@svg/original";
 
 import { Bullet, $Bullet } from "@bullet";
 import { ImageSlider } from "@particle/image.slider";
-import { Card } from "@card";
-
-import * as $card from "@card/variants";
+import { Card, $Card } from "@card";
 
 /**
  * Renders the stay card component
@@ -54,7 +52,7 @@ export const StayCard: React.FC<{
       <div
         className={[responsive["b_to_n--sm"], space["m-b--32--sm"]].join(" ")}
       >
-        <Card variant={$card.HORIZONTAL} />
+        <Card variant={$Card.HORIZONTAL} />
       </div>
       <div className={[responsive["n_to_b--sm"]].join(" ")}>
         <div className={[space["p-v--22"]].join(" ")}>

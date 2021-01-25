@@ -8,11 +8,9 @@ import banner from "@banner/banner.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
 import { Button, $Button } from "@button";
-import { Card } from "@card";
+import { Card, $Card } from "@card";
 
 import { useSlider, SliderProps } from "@hooks/useSlider";
-
-import * as $card from "@card/variants";
 
 /**
  * Renders the homes banner
@@ -118,7 +116,7 @@ export const CommunityTemplate: React.FC<{
                   className={[space["m-r--16"]].join(" ")}
                 >
                   <Card
-                    variant={$card.HOST}
+                    variant={$Card.HOST}
                     host={host?.name}
                     imgUrl={host?.imgUrl}
                     stayType={host?.stayType}

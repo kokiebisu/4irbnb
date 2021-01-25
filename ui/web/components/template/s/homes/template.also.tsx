@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-import { Card } from "@card";
+import { Card, $Card } from "@card";
 import { Button, $Button } from "@button";
 
 import layout from "@styles/layout.module.scss";
@@ -12,8 +12,6 @@ import * as Helpers from "@helper/array";
 
 import { useSlider } from "@hooks/useSlider";
 import { useHandleContainerResize } from "@hooks/useHandleContainerResize";
-
-import * as $card from "@card/variants";
 
 /**
  * Renders the also section
@@ -94,7 +92,7 @@ export const AlsoTemplate: React.FC<{
               >
                 <div className={[space["m-b--10"]].join(" ")}>
                   <Card
-                    variant={$card.NEARBY}
+                    variant={$Card.NEARBY}
                     to={item[0]?.to}
                     imgUrl={item?.pic}
                     title={item[0]?.city || "Item"}
@@ -104,7 +102,7 @@ export const AlsoTemplate: React.FC<{
                 </div>
                 <div>
                   <Card
-                    variant={$card.NEARBY}
+                    variant={$Card.NEARBY}
                     to={item[1]?.to}
                     imgUrl={item?.pic}
                     title={item[1]?.city || "Item"}

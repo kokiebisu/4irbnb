@@ -5,10 +5,8 @@ import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 import section from "@template/index.module.scss";
 
-import { Card } from "@card";
+import { Card, $Card } from "@card";
 import { Button, $Button } from "@button";
-
-import * as $card from "@card/variants";
 
 /**
  * Renders the available section
@@ -164,7 +162,7 @@ export const AvailableTemplate: React.FC<{
               >
                 <div className={[space["m-b--10"], space["m-r--16"]].join(" ")}>
                   <Card
-                    variant={$card.AVAILABLE}
+                    variant={$Card.AVAILABLE}
                     date={available.date}
                     from={available.from}
                     to={available.to}

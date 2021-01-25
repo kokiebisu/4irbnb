@@ -1,4 +1,4 @@
-import { Card } from "@card";
+import { Card, $Card } from "@card";
 import { Button, $Button } from "@button";
 
 import section from "@template/index.module.scss";
@@ -6,8 +6,6 @@ import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
-
-import * as $card from "@card/variants";
 
 /**
  * Renders the online section
@@ -102,7 +100,7 @@ export const OnlineTemplate: React.FC<{
                   >
                     <Card
                       to={item.to}
-                      variant={$card.ONLINE}
+                      variant={$Card.ONLINE}
                       small={item.small}
                       large={item.large}
                       title={item.title}
