@@ -2,7 +2,7 @@ import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 import { Header, HeaderProps } from "@header";
 
-import shape from "@styles/shape.module.scss";
+import * as $header from "@header/variants";
 
 export default {
   title: "Organisms/Header",
@@ -14,7 +14,7 @@ const TemplateStory: Story<HeaderProps> = (args) => <Header {...args} />;
 
 export const landing = TemplateStory.bind({});
 landing.args = {
-  variant: "landing",
+  variant: $header.LANDING,
 };
 landing.argTypes = {
   criteria: {
@@ -27,30 +27,30 @@ landing.parameters = {
 
 export const white = TemplateStory.bind({});
 white.args = {
-  variant: "white",
+  variant: $header.WHITE,
 };
 
 export const details = TemplateStory.bind({});
 details.args = {
-  variant: "details",
+  variant: $header.DETAILS,
 };
 
 export const homes = TemplateStory.bind({});
 homes.args = {
-  variant: "homes",
+  variant: $header.HOMES,
 };
 
 export const experiences = TemplateStory.bind({});
 experiences.args = {
-  variant: "experiences",
+  variant: $header.EXPERIENCES,
 };
 
 export const onlineHost = TemplateStory.bind({});
 onlineHost.args = {
-  variant: "onlinehost",
+  variant: $header.ONLINEHOST,
 };
 
 export const stay = TemplateStory.bind({});
 stay.args = {
-  variant: "stay",
+  variant: $header.STAY,
 };

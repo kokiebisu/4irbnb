@@ -15,6 +15,7 @@ import { Button } from "@button";
 
 import * as $button from "@button/variants";
 import * as $bar from "@bar/variants";
+import * as $header from "@header/variants";
 
 const OnlinePage = () => {
   const toggleState = useToggleState();
@@ -22,7 +23,7 @@ const OnlinePage = () => {
     <div>
       <div className={[shape["shadow--sm"]].join(" ")}>
         <div className={[layout["container--spread"]].join(" ")}>
-          <Header variant="white" />
+          <Header variant={$header.WHITE} />
         </div>
       </div>
       <div className={[space["m-v--8"]].join(" ")}>
