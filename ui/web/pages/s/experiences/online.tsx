@@ -16,6 +16,7 @@ import { Button } from "@button";
 import * as $button from "@button/variants";
 import * as $bar from "@bar/variants";
 import * as $header from "@header/variants";
+import * as $modal from "@modal/variants";
 
 const OnlinePage = () => {
   const toggleState = useToggleState();
@@ -111,7 +112,7 @@ const OnlinePage = () => {
             ].join(" ")}
           >
             <Modal
-              variant="auth"
+              variant={$modal.AUTH}
               animate="slideup"
               criteria={toggleState.auth}
               lock
@@ -140,7 +141,7 @@ const OnlinePage = () => {
             ].join(" ")}
           >
             <Modal
-              variant="globe"
+              variant={$modal.GLOBE}
               extendsTo={[
                 shape["w--full"],
                 shape["h--full"],

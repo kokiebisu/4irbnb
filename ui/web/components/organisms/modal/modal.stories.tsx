@@ -1,8 +1,9 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
-/** components */
 import { Modal, ModalProps } from "@modal";
+
+import * as $modal from "@modal/variants";
 
 export default {
   title: "Organisms/Modal",
@@ -13,12 +14,12 @@ const TemplateStory: Story<ModalProps> = (args) => <Modal {...args} />;
 
 export const Privacy = TemplateStory.bind({});
 Privacy.args = {
-  variant: "privacy",
+  variant: $modal.PRIVACY,
 };
 
 export const Menu = TemplateStory.bind({});
 Menu.args = {
-  variant: "menu",
+  variant: $modal.MENU,
 };
 Menu.argTypes = {
   authenticated: {
@@ -28,40 +29,40 @@ Menu.argTypes = {
 
 export const Auth = TemplateStory.bind({});
 Auth.args = {
-  variant: "auth",
+  variant: $modal.AUTH,
 };
 
 export const Booking = TemplateStory.bind({});
 Booking.args = {
-  variant: "booking",
+  variant: $modal.BOOKING,
 };
 
 export const Globe = TemplateStory.bind({});
 Globe.args = {
-  variant: "globe",
+  variant: $modal.GLOBE,
 };
 
 export const Location = TemplateStory.bind({});
 Location.args = {
-  variant: "location",
+  variant: $modal.LOCATION,
 };
 
 export const Guests = TemplateStory.bind({});
 Guests.args = {
-  variant: "guests",
+  variant: $modal.GUESTS,
 };
 
 export const Checkin = TemplateStory.bind({});
 Checkin.args = {
-  variant: "checkin",
+  variant: $modal.CHECKIN,
 };
 
 export const Checkout = TemplateStory.bind({});
 Checkout.args = {
-  variant: "checkout",
+  variant: $modal.CHECKOUT,
 };
 
 export const Listing = TemplateStory.bind({});
 Listing.args = {
-  variant: "listing",
+  variant: $modal.LISTING,
 };

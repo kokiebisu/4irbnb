@@ -21,6 +21,7 @@ import { Content } from "@button/content/content.transparent";
 import { useOnClickOutside } from "@hooks/useOnClickOutside";
 
 import * as $button from "@button/variants";
+import * as $modal from "@modal/variants";
 
 /**
  * Renders the transparent header
@@ -140,7 +141,7 @@ export const LandingHeader: React.FC<{
           ].join(" ")}
         >
           <Modal
-            variant="menu"
+            variant={$modal.MENU}
             extendsTo={[shape["w--200"]].join(" '")}
             authenticated={data}
             criteria={toggleState.menu}

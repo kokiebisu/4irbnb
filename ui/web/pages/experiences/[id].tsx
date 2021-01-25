@@ -18,6 +18,7 @@ import staysDetail from "@styles/staysDetail.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
 import * as $header from "@header/variants";
+import * as $modal from "@modal/variants";
 
 /** sample data */
 import { experiences } from "../../data/experiences";
@@ -144,7 +145,7 @@ const id: () => string | JSX.Element = () => {
               >
                 {experiences[experienceID] && (
                   <Modal
-                    variant="booking"
+                    variant={$modal.BOOKING}
                     extendsTo={[shape["w--full"]].join(" ")}
                     {...experiences[experienceID]}
                   />
@@ -208,7 +209,7 @@ const id: () => string | JSX.Element = () => {
           ].join(" ")}
           style={{ position: "fixed", bottom: 0, zIndex: 9999 }}
         >
-          <Modal variant="availability" />
+          {/* <Modal variant="availability" /> */}
         </div>
       </div>
       {toggleState.auth && (
@@ -223,7 +224,7 @@ const id: () => string | JSX.Element = () => {
             backgroundColor: "rgba(0, 0, 0, 0.6)",
           }}
         >
-          <Modal variant="menu" />
+          <Modal variant={$modal.MENU} />
         </div>
       )}
     </>
