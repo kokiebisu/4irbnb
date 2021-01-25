@@ -9,12 +9,12 @@ import color from "@styles/color.module.scss";
 
 import { Input } from "@input";
 import { Button } from "@button";
-import { Bullet } from "@bullet";
+import { Bullet, $Bullet } from "@bullet";
 
 import { validateSignup as validate } from "@helper/auth";
 import { usePost } from "@hooks/usePost";
 import { useAuthDispatch } from "@context/auth";
-import * as $bullet from "@bullet/variants";
+
 import * as $button from "@button/variants";
 import * as $input from "@input/variants";
 
@@ -78,7 +78,7 @@ export const SignupTemplate: React.FC<{}> = () => {
             {formik.errors.firstname !== undefined ? (
               <div className={[space["m-t--6"]].join(" ")}>
                 <Bullet
-                  variant={$bullet.REQUIRED}
+                  variant={$Bullet.REQUIRED}
                   message={formik.errors.firstname}
                 />
               </div>
@@ -88,7 +88,7 @@ export const SignupTemplate: React.FC<{}> = () => {
             {formik.errors.lastname !== undefined ? (
               <div className={[space["m-t--6"]].join(" ")}>
                 <Bullet
-                  variant={$bullet.REQUIRED}
+                  variant={$Bullet.REQUIRED}
                   message={formik.errors.lastname}
                 />
               </div>
@@ -144,20 +144,20 @@ export const SignupTemplate: React.FC<{}> = () => {
           </div>
           {formik.errors.day !== undefined && (
             <div className={[space["m-t--6"]].join(" ")}>
-              <Bullet variant={$bullet.REQUIRED} message={formik.errors.day} />
+              <Bullet variant={$Bullet.REQUIRED} message={formik.errors.day} />
             </div>
           )}
           {formik.errors.month !== undefined && (
             <div className={[space["m-t--6"]].join(" ")}>
               <Bullet
-                variant={$bullet.REQUIRED}
+                variant={$Bullet.REQUIRED}
                 message={formik.errors.month}
               />
             </div>
           )}
           {formik.errors.year !== undefined && (
             <div className={[space["m-t--6"]].join(" ")}>
-              <Bullet variant={$bullet.REQUIRED} message={formik.errors.year} />
+              <Bullet variant={$Bullet.REQUIRED} message={formik.errors.year} />
             </div>
           )}
         </div>
@@ -188,7 +188,7 @@ export const SignupTemplate: React.FC<{}> = () => {
             {formik.errors.email !== undefined ? (
               <div className={[space["m-t--6"]].join(" ")}>
                 <Bullet
-                  variant={$bullet.REQUIRED}
+                  variant={$Bullet.REQUIRED}
                   message={formik.errors.email}
                 />
               </div>
@@ -218,7 +218,7 @@ export const SignupTemplate: React.FC<{}> = () => {
             {formik.errors.password !== undefined && (
               <div className={[space["m-t--6"]].join(" ")}>
                 <Bullet
-                  variant={$bullet.REQUIRED}
+                  variant={$Bullet.REQUIRED}
                   message={formik.errors.password}
                 />
               </div>

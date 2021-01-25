@@ -5,9 +5,8 @@ import space from "@styles/space.module.scss";
 import banner from "@banner/banner.module.scss";
 
 import { Button } from "@button";
-import { Bullet } from "@bullet";
+import { Bullet, $Bullet } from "@bullet";
 
-import * as $bullet from "@bullet/variants";
 import * as $button from "@button/variants";
 
 export const BannerTemplate: React.FC<{}> = () => {
@@ -72,7 +71,7 @@ export const BannerTemplate: React.FC<{}> = () => {
         {["home", "global", "business"].map((type, index) => {
           return (
             <div key={index} className={[space["m-b--16"]].join(" ")}>
-              <Bullet variant={$bullet.ONLINEHOST} type={type} />
+              <Bullet variant={$Bullet.ONLINEHOST} type={type} />
             </div>
           );
         })}

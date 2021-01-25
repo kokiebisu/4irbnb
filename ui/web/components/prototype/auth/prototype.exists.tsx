@@ -2,7 +2,7 @@ import { useState } from "react";
 import Router from "next/router";
 import { useFormik } from "formik";
 
-import { Bullet } from "@bullet";
+import { Bullet, $Bullet } from "@bullet";
 import { Button } from "@button";
 import { Input } from "@input";
 
@@ -15,9 +15,6 @@ import shape from "@styles/shape.module.scss";
 import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 
-import { Underline } from "@button/button.stories";
-
-import * as $bullet from "@bullet/variants";
 import * as $button from "@button/variants";
 import * as $input from "@input/variants";
 
@@ -106,7 +103,7 @@ export const ExistsPrototype: React.FC<{
           {formik.errors.password !== undefined && (
             <div className={[space["m-t--6"]].join(" ")}>
               <Bullet
-                variant={$bullet.REQUIRED}
+                variant={$Bullet.REQUIRED}
                 message={formik.errors.password}
               />
             </div>

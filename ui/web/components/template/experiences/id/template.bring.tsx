@@ -2,9 +2,7 @@ import font from "@styles/font.module.scss";
 import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 
-import { Bullet } from "@bullet";
-
-import * as $bullet from "@bullet/variants";
+import { Bullet, $Bullet } from "@bullet";
 
 /**
  * Renders the 'What to bring' section
@@ -39,7 +37,7 @@ export const BringTemplate: React.FC<{
         {necessities.map((necessity, index) => {
           return (
             <div key={index} className={[space["m-b--16"]].join(" ")}>
-              <Bullet variant={$bullet.BRING} title={necessity} />
+              <Bullet variant={$Bullet.BRING} title={necessity} />
             </div>
           );
         })}
