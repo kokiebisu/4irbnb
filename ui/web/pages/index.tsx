@@ -23,7 +23,7 @@ import { Modal } from "@modal";
 import { Template, $Template } from "@template/index";
 import { Footer } from "@footer";
 
-import { Bar } from "@bar";
+import { Bar, $Bar } from "@bar";
 
 import { useHandleScroll } from "@hooks/useHandleScroll";
 import { useHandleDocumentResize } from "@hooks/useHandleDocumentResize";
@@ -32,7 +32,6 @@ import { useTabTitle } from "@hooks/useTabTitle";
 
 import { APIClient } from "../api/client";
 
-import * as $bar from "@bar/variants";
 import * as $modal from "@modal/variants";
 
 const LandingPage = ({ currentUser }) => {
@@ -49,7 +48,7 @@ const LandingPage = ({ currentUser }) => {
     >
       <div>
         <div>
-          <Bar variant={$bar.COVID} />
+          <Bar variant={$Bar.COVID} />
         </div>
         <Template variant="banner" data={currentUser || null} />
         {loading ? (
@@ -132,7 +131,7 @@ const LandingPage = ({ currentUser }) => {
                 style={{ zIndex: 30, bottom: 0 }}
               >
                 <Bar
-                  variant={$bar.MENU}
+                  variant={$Bar.MENU}
                   extendsTo={[color["b-t--white__2"]].join(" ")}
                 />
               </div>

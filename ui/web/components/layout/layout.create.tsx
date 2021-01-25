@@ -1,11 +1,10 @@
-import { Bar } from "@bar";
+import { Bar, $Bar } from "@bar";
 import { Header } from "@header";
 
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
-import * as $bar from "@bar/variants";
 import * as $header from "@header/variants";
 
 export const CreateLayout: React.FC<{
@@ -32,7 +31,7 @@ export const CreateLayout: React.FC<{
           <Header variant={$header.STAY} title={title} />
         </div>
         <div>
-          <Bar variant={$bar.PROGRESS} percentage={percentage} />
+          <Bar variant={$Bar.PROGRESS} percentage={percentage} />
         </div>
       </div>
       <div
@@ -75,7 +74,7 @@ export const CreateLayout: React.FC<{
               className={[space["p-h--32"]].join(" ")}
             >
               <Bar
-                variant={$bar.CREATE}
+                variant={$Bar.CREATE}
                 next={next}
                 back={back}
                 criteria={criteria}

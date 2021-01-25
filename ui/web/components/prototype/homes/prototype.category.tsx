@@ -4,10 +4,8 @@ import font from "@styles/font.module.scss";
 import shape from "@styles/shape.module.scss";
 
 import { Template } from "@template/s/homes";
-import { Bar } from "@bar";
+import { Bar, $Bar } from "@bar";
 import { Button, $Button } from "@button";
-
-import * as $bar from "@bar/variants";
 
 /**
  * Renders the category template component
@@ -85,7 +83,7 @@ export const CategoryPrototype: React.FC<{
           layout["justify-center"],
         ].join(" ")}
       >
-        <Bar variant={$bar.PAGINATE} animate />
+        <Bar variant={$Bar.PAGINATE} animate />
       </div>
     </div>
   );
