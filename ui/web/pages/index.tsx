@@ -33,6 +33,7 @@ import { useTabTitle } from "@hooks/useTabTitle";
 import { APIClient } from "../api/client";
 
 import * as $bar from "@bar/variants";
+import * as $modal from "@modal/variants";
 
 const LandingPage = ({ currentUser }) => {
   useTabTitle("Vacation Rentals, Homes, Experiences & Places - Airbnb");
@@ -107,7 +108,7 @@ const LandingPage = ({ currentUser }) => {
         >
           <div className={[index["m__privacy"]].join(" ")}>
             <Modal
-              variant="privacy"
+              variant={$modal.PRIVACY}
               criteria={toggleState.privacy}
               animate="slideup"
             />
@@ -156,7 +157,7 @@ const LandingPage = ({ currentUser }) => {
               ].join(" ")}
             >
               <Modal
-                variant="auth"
+                variant={$modal.AUTH}
                 animate="slideup"
                 criteria={toggleState.auth}
                 lock
@@ -185,7 +186,7 @@ const LandingPage = ({ currentUser }) => {
               ].join(" ")}
             >
               <Modal
-                variant="globe"
+                variant={$modal.GLOBE}
                 extendsTo={[
                   shape["w--full"],
                   shape["h--full"],

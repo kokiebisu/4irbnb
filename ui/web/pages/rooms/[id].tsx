@@ -20,6 +20,7 @@ import { useHandleScroll } from "@hooks/useHandleScroll";
 
 import * as $card from "@card/variants";
 import * as $header from "@header/variants";
+import * as $modal from "@modal/variants";
 
 /**
  * Render the component for path /rooms/[id]
@@ -154,7 +155,7 @@ const id: () => string | JSX.Element = () => {
           }}
         >
           <Modal
-            variant="menu"
+            variant={$modal.MENU}
             extendsTo={[
               layout["flex"],
               layout["justify-center"],

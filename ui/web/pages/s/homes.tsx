@@ -1,25 +1,21 @@
 import React from "react";
 import { useRouter } from "next/router";
 
-/** contexts */
 import { useToggleState } from "@context/toggle";
 
-/** Layouts */
 import layout from "@styles/layout.module.scss";
 
-/** components */
 import { Prototype as HomesPrototype } from "@prototype/homes";
 import { Modal } from "@modal";
 
-/** styles */
 import shape from "@styles/shape.module.scss";
 import responsive from "@styles/responsive.module.scss";
 import homes from "@styles/homes.module.scss";
 
-/** hooks */
 import { useTabTitle } from "@hooks/useTabTitle";
 
-/** prototypes */
+import * as $modal from "@modal/variants";
+
 import "../../global/string";
 
 /**
@@ -85,7 +81,7 @@ const Homes = () => {
                 shape["h--100v"],
               ].join(" ")}
             >
-              <Modal variant="menu" animate="slideup" />
+              <Modal variant={$modal.MENU} animate="slideup" />
             </div>
           </div>
         )}

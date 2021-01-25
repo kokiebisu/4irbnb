@@ -17,6 +17,7 @@ import { ChevronLeft } from "@svg/regular";
 import { Content } from "@button/content/content.transparent";
 
 import * as $button from "@button/variants";
+import * as $modal from "@modal/variants";
 
 /**
  * Renders the white header
@@ -88,7 +89,7 @@ export const WhiteHeader: React.FC<{
           ].join(" ")}
         >
           <Modal
-            variant={$button.MENU}
+            variant={$modal.MENU}
             extendsTo={[shape["w--200"]].join(" ")}
             authenticated={data}
             criteria={toggleState.menu}

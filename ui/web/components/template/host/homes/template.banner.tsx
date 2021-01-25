@@ -6,6 +6,7 @@ import { Modal } from "@modal";
 import { Header } from "@header";
 
 import * as $header from "@header/variants";
+import * as $modal from "@modal/variants";
 
 export const BannerTemplate: React.FC<{}> = () => {
   return (
@@ -47,7 +48,7 @@ export const BannerTemplate: React.FC<{}> = () => {
           ].join(" ")}
           style={{ width: "50%" }}
         >
-          <Modal variant="listing" />
+          <Modal variant={$modal.LISTING} />
         </div>
       </div>
     </div>
