@@ -7,6 +7,7 @@ import { Button } from "@button";
 import { Card } from "@card";
 
 import * as $button from "@button/variants";
+import * as $card from "@card/variants";
 
 export const CollectionsTemplate: React.FC<{ title?: String }> = ({
   title = "Title here",
@@ -179,7 +180,7 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
                 <div key={index}>
                   <div style={{ ...cardStyles(), paddingRight: 10 }}>
                     <Card
-                      variant="collection"
+                      variant={$card.COLLECTION}
                       paddingTop={paddingTopStyles()}
                     />
                   </div>

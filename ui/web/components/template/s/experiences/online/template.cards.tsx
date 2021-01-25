@@ -6,7 +6,9 @@ import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 
 import { useSlide } from "@hooks/useSlide";
+
 import * as $button from "@button/variants";
+import * as $card from "@card/variants";
 
 export const CardsTemplate: React.FC<{ title?: string }> = ({
   title = "Title here",
@@ -166,7 +168,11 @@ export const CardsTemplate: React.FC<{ title?: string }> = ({
               return (
                 <div key={index} style={{ width: width / displayingColumns() }}>
                   <div style={{ marginRight: 10 }}>
-                    <Card variant="video" imgUrl={imgUrl} videoUrl={videoUrl} />
+                    <Card
+                      variant={$card.VIDEO}
+                      imgUrl={imgUrl}
+                      videoUrl={videoUrl}
+                    />
                   </div>
                 </div>
               );
