@@ -5,9 +5,14 @@ import { SharingTemplate } from "@template/d/onlinehost/template.sharing";
 import { WorksTemplate } from "@template/d/onlinehost/template.works";
 import { BannerTemplate } from "@template/d/onlinehost/template.banner";
 
-import * as $Template from "@template/d/onlinehost/variants";
-
-export { $Template };
+export const $Template = {
+  BACK: "back",
+  BANNER: "banner",
+  FAQ: "faq",
+  MORE: "more",
+  SHARING: "sharing",
+  WORKS: "works",
+};
 
 export interface TemplateProps {
   extendsTo?: string;
