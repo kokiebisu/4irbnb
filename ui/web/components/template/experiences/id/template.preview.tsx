@@ -6,8 +6,7 @@ import section from "@template/index.module.scss";
 
 import { Heart, Share } from "@svg/original";
 
-import { Panel } from "@panel";
-import * as $panel from "@panel/variants";
+import { Panel, $Panel } from "@panel";
 
 /**
  * Renders the panel section
@@ -102,7 +101,7 @@ export const PreviewTemplate: React.FC<{
         </div>
       </div>
       <div>
-        <Panel images={images} variant={$panel.EXPERIENCE} />
+        <Panel images={images} variant={$Panel.EXPERIENCE} />
       </div>
     </div>
   );
