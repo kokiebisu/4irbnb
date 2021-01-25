@@ -9,9 +9,18 @@ import { HostTemplate } from "@template/experiences/id/template.host";
 import { DescriptionTemplate } from "@template/experiences/id/template.description";
 import { KnowTemplate } from "@template/experiences/id/template.know";
 
-import * as $Template from "@template/experiences/id/variants";
-
-export { $Template };
+export const $Template = {
+  AVAILABLE: "available",
+  BRING: "bring",
+  CHARACTERISTIC: "characteristic",
+  DESCRIPTION: "description",
+  EXPERIENCES: "experiences",
+  HOST: "host",
+  KNOW: "know",
+  PARTICIPATE: "participate",
+  PREVIEW: "preview",
+  REVIEWS: "reviews",
+};
 
 export interface TemplateProps {
   extendsTo?: string;
