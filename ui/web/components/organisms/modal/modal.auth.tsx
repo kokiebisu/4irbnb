@@ -5,7 +5,7 @@ import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 
 import { Button } from "@button";
-import { Prototype as AuthPrototype } from "@prototype/auth";
+import { Prototype } from "@prototype/auth";
 
 import { useToggleDispatch } from "@context/toggle";
 import { useAuthDispatch, useAuthState } from "@context/auth";
@@ -57,7 +57,7 @@ export const AuthModal: React.FC<{}> = () => {
           </div>
         </div>
       </div>
-      <AuthPrototype variant={authState.display} />
+      <Prototype variant={authState.display} />
     </div>
   );
 };

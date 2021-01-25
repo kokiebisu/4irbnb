@@ -2,9 +2,10 @@ import { useState } from "react";
 import Router from "next/router";
 
 import { Layout } from "@layout";
-import { Prototype as CreatePrototype } from "@prototype/create";
+import { Prototype } from "@prototype/create";
 
 import { useStayDispatch, useStayState } from "@context/stay";
+import * as $prototype from "@prototype/create/variants";
 
 const PricePage = () => {
   const stayDispatch = useStayDispatch();
@@ -34,7 +35,9 @@ const PricePage = () => {
     <Layout
       variant="create"
       title="Pricing"
-      left={<CreatePrototype variant="price" data={data} setData={setData} />}
+      left={
+        <Prototype variant={$prototype.PRICE} data={data} setData={setData} />
+      }
       percentage={90}
       next={proceed}
       back={revert}

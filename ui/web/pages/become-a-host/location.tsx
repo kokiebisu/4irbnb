@@ -2,9 +2,11 @@ import { useState } from "react";
 import Router from "next/router";
 
 import { Layout } from "@layout";
-import { Prototype as CreatePrototype } from "@prototype/create";
+import { Prototype } from "@prototype/create";
 
 import { useStayDispatch, useStayState } from "@context/stay";
+
+import * as $prototype from "@prototype/create/variants";
 
 const BedRoomsPage = () => {
   const stayDispatch = useStayDispatch();
@@ -38,9 +40,9 @@ const BedRoomsPage = () => {
     <Layout
       variant="create"
       left={
-        <CreatePrototype
+        <Prototype
           title="Location"
-          variant="location"
+          variant={$prototype.LOCATION}
           data={data}
           setData={setData}
         />

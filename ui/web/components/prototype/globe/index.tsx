@@ -1,6 +1,7 @@
-/** globe templates */
 import { LanguagePrototype } from "@prototype/globe/prototype.language";
 import { CurrencyPrototype } from "@prototype/globe/prototype.currency";
+
+import * as $prototype from "@prototype/globe/variants";
 
 export interface PrototypeProps {
   variant?: string;
@@ -11,7 +12,7 @@ export interface PrototypeProps {
 }
 
 export const Prototype: React.FC<PrototypeProps> = ({
-  variant = "language",
+  variant = $prototype.LANGUAGE,
   city = "Paris",
   stayType = "house",
   characteristics,

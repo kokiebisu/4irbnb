@@ -2,9 +2,11 @@ import { useState } from "react";
 import Router from "next/router";
 
 import { Layout } from "@layout";
-import { Prototype as CreatePrototype } from "@prototype/create";
+import { Prototype } from "@prototype/create";
 
 import { useStayDispatch, useStayState } from "@context/stay";
+
+import * as $prototype from "@prototype/create/variants";
 
 const PeriodPage = () => {
   const stayDispatch = useStayDispatch();
@@ -34,7 +36,9 @@ const PeriodPage = () => {
     <Layout
       variant="create"
       title="Calendar and availability"
-      left={<CreatePrototype variant="period" data={data} setData={setData} />}
+      left={
+        <Prototype variant={$prototype.PERIOD} data={data} setData={setData} />
+      }
       percentage={90}
       next={proceed}
       back={revert}

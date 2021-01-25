@@ -1,21 +1,20 @@
 import { useState } from "react";
 
-/** components */
 import { Button } from "@button";
 
-/** styles */
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 
-import { Prototype as GlobePrototype } from "@prototype/globe";
+import { Prototype } from "@prototype/globe";
 
 import { useToggleDispatch } from "@context/toggle";
 
 import * as $button from "@button/variants";
+import * as $prototype from "@prototype/globe/variants";
 
 export const GlobeModal: React.FC<{}> = () => {
   const toggleDispatch = useToggleDispatch();
-  const [Prototype, setPrototype] = useState("language");
+  const [prototype, setPrototype] = useState($prototype.LANGUAGE);
   return (
     <div>
       <div>
@@ -42,8 +41,8 @@ export const GlobeModal: React.FC<{}> = () => {
               title="Language and region"
               font={16}
               bold
-              unselected={Prototype !== "language"}
-              onClick={() => setPrototype("language")}
+              unselected={prototype !== $prototype.LANGUAGE}
+              onClick={() => setPrototype($prototype.LANGUAGE)}
             />
           </div>
           <div>
@@ -52,12 +51,12 @@ export const GlobeModal: React.FC<{}> = () => {
               title="Currency"
               font={16}
               bold
-              unselected={Prototype !== "currency"}
-              onClick={() => setPrototype("currency")}
+              unselected={prototype !== $prototype.CURRENCY}
+              onClick={() => setPrototype($prototype.CURRENCY)}
             />
           </div>
         </div>
-        <GlobePrototype variant={Prototype} />
+        <Prototype variant={prototype} />
       </div>
     </div>
   );

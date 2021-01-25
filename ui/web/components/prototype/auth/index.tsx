@@ -1,9 +1,10 @@
-/** auth templates */
 import { AuthPrototype } from "@prototype/auth/prototype.auth";
 import { LoginTemplate } from "@prototype/auth/prototype.login";
 import { SignupTemplate } from "@prototype/auth/prototype.signup";
 import { ForgotPasswordPrototype } from "@prototype/auth/prototype.forgot";
 import { ExistsPrototype } from "@prototype/auth/prototype.exists";
+
+import * as $prototype from "@prototype/auth/variants";
 
 export interface PrototypeProps {
   variant?: string;
@@ -14,7 +15,7 @@ export interface PrototypeProps {
 }
 
 export const Prototype: React.FC<PrototypeProps> = ({
-  variant = "login",
+  variant = $prototype.LOGIN,
   ...props
 }) => {
   const variants: { [variant: string]: JSX.Element } = {

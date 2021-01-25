@@ -1,10 +1,13 @@
-/** landing */
-import { MoreTemplate } from "./template.more";
-import { FAQTemplate } from "./template.faq";
-import { BackTemplate } from "./template.back";
-import { SharingTemplate } from "./template.sharing";
-import { WorksTemplate } from "./template.works";
-import { BannerTemplate } from "./template.banner";
+import { MoreTemplate } from "@template/d/onlinehost/template.more";
+import { FAQTemplate } from "@template/d/onlinehost/template.faq";
+import { BackTemplate } from "@template/d/onlinehost/template.back";
+import { SharingTemplate } from "@template/d/onlinehost/template.sharing";
+import { WorksTemplate } from "@template/d/onlinehost/template.works";
+import { BannerTemplate } from "@template/d/onlinehost/template.banner";
+
+import * as $Template from "@template/d/onlinehost/variants";
+
+export { $Template };
 
 export interface TemplateProps {
   extendsTo?: string;

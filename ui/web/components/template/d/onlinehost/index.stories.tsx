@@ -1,7 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
-import { Template, TemplateProps } from "@template/d/onlinehost";
+import { Template, $Template, TemplateProps } from "@template/d/onlinehost";
 
 export default {
   title: "Templates/D/OnlineHosts",
@@ -17,30 +17,30 @@ const TemplateStory: Story<TemplateProps> = (args) => <Template {...args} />;
 
 export const More = TemplateStory.bind({});
 More.args = {
-  variant: "more",
+  variant: $Template.MORE,
 };
 
 export const Back = TemplateStory.bind({});
 Back.args = {
-  variant: "back",
+  variant: $Template.BACK,
 };
 
 export const Sharing = TemplateStory.bind({});
 Sharing.args = {
-  variant: "sharing",
+  variant: $Template.SHARING,
 };
 
 export const Works = TemplateStory.bind({});
 Works.args = {
-  variant: "works",
+  variant: $Template.WORKS,
 };
 
 export const Faq = TemplateStory.bind({});
 Faq.args = {
-  variant: "faq",
+  variant: $Template.FAQ,
 };
 
 export const Banner = TemplateStory.bind({});
 Banner.args = {
-  variant: "banner",
+  variant: $Template.BANNER,
 };
