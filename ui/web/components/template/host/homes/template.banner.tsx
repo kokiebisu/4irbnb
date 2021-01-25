@@ -2,10 +2,8 @@ import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 
-import { Modal } from "@modal";
+import { Modal, $Modal } from "@modal";
 import { Header, $Header } from "@header";
-
-import * as $modal from "@modal/variants";
 
 export const BannerTemplate: React.FC<{}> = () => {
   return (
@@ -47,7 +45,7 @@ export const BannerTemplate: React.FC<{}> = () => {
           ].join(" ")}
           style={{ width: "50%" }}
         >
-          <Modal variant={$modal.LISTING} />
+          <Modal variant={$Modal.LISTING} />
         </div>
       </div>
     </div>

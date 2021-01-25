@@ -21,6 +21,19 @@ import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 import modal from "@modal/modal.module.scss";
 
+export const $Modal = {
+  PRIVACY: "privacy",
+  MENU: "menu",
+  AUTH: "auth",
+  BOOKING: "booking",
+  GLOBE: "globe",
+  LOCATION: "location",
+  GUESTS: "guests",
+  CHECKIN: "checkin",
+  CHECKOUT: "checkout",
+  LISTING: "listing",
+};
+
 export interface ModalProps {
   variant: string;
   extendsTo?: string;

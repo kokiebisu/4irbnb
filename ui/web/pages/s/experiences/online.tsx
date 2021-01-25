@@ -1,7 +1,7 @@
 import { Header, $Header } from "@header";
 import { Bar, $Bar } from "@bar";
 import { Template, $Template } from "@template/s/experiences/online";
-import { Modal } from "@modal";
+import { Modal, $Modal } from "@modal";
 import { Footer } from "@footer";
 
 import layout from "@styles/layout.module.scss";
@@ -12,8 +12,6 @@ import color from "@styles/color.module.scss";
 import { useToggleState } from "@context/toggle";
 
 import { Button, $Button } from "@button";
-
-import * as $modal from "@modal/variants";
 
 const OnlinePage = () => {
   const toggleState = useToggleState();
@@ -109,7 +107,7 @@ const OnlinePage = () => {
             ].join(" ")}
           >
             <Modal
-              variant={$modal.AUTH}
+              variant={$Modal.AUTH}
               animate="slideup"
               criteria={toggleState.auth}
               lock
@@ -138,7 +136,7 @@ const OnlinePage = () => {
             ].join(" ")}
           >
             <Modal
-              variant={$modal.GLOBE}
+              variant={$Modal.GLOBE}
               extendsTo={[
                 shape["w--full"],
                 shape["h--full"],
