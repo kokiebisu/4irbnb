@@ -1,8 +1,5 @@
-/** components */
-import { Input } from "@input";
-import { Layout } from "@layout";
+import { Input, $Input } from "@input";
 
-/** styles **/
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
@@ -32,7 +29,7 @@ export const PhoneCreate: React.FC<{ data?: any; setData?: any }> = ({
       <div className={[space["m-b--30"]].join(" ")}>
         <div className={[space["m-b--8"]].join(" ")}>
           <Input
-            variant="verify"
+            variant={$Input.VERIFY}
             value={data.phone}
             handleChange={(e) => setData({ ...data, phone: e.target.value })}
           />

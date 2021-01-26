@@ -7,15 +7,12 @@ import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 import section from "@template/index.module.scss";
 
-import { Button } from "@button";
-import { Bullet } from "@bullet";
+import { Button, $Button } from "@button";
+import { Bullet, $Bullet } from "@bullet";
 
 import { Shield } from "@svg/original";
 
 import { Border } from "@button/button.stories";
-
-import * as bulletVariant from "@bullet/variants";
-import * as buttonVariant from "@button/variants";
 
 /**
  * Modifies the content which should be displayed initially
@@ -153,7 +150,7 @@ export const HostTemplate: React.FC<{
                   ].join(" ")}
                 >
                   <Bullet
-                    variant={bulletVariant.HOST}
+                    variant={$Bullet.HOST}
                     categoryType="review"
                     total={numberOfReviews}
                   />
@@ -166,10 +163,7 @@ export const HostTemplate: React.FC<{
                       space["p-r--4"],
                     ].join(" ")}
                   >
-                    <Bullet
-                      variant={bulletVariant.HOST}
-                      categoryType="verified"
-                    />
+                    <Bullet variant={$Bullet.HOST} categoryType="verified" />
                   </div>
                 )}
                 {layoutType === "room" && isSuperhost && (
@@ -180,10 +174,7 @@ export const HostTemplate: React.FC<{
                       space["p-r--4"],
                     ].join(" ")}
                   >
-                    <Bullet
-                      variant={bulletVariant.HOST}
-                      categoryType="superhost"
-                    />
+                    <Bullet variant={$Bullet.HOST} categoryType="superhost" />
                   </div>
                 )}
               </div>
@@ -319,7 +310,7 @@ export const HostTemplate: React.FC<{
                 }
               >
                 <Button
-                  variant={buttonVariant.BORDER}
+                  variant={$Button.BORDER}
                   size="md"
                   title="Contact host"
                 />

@@ -7,6 +7,16 @@ import { OnlineHostLayout } from "./section/layout.onlinehost";
 import { CurrencyLayout } from "./layout.currency";
 import { LocationLayout } from "./modal/layout.location";
 
+export const $Layout = {
+  INPUT: "input",
+  CREATE: "create",
+  HOMES: "homes",
+  LANDING: "landing",
+  ONLINEHOST: "onlinehost",
+  CURRENCY: "currency",
+  LOCATION: "location",
+};
+
 export interface LayoutProps {
   extendsTo?: string;
   variant: string;

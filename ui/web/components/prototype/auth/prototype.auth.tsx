@@ -10,13 +10,11 @@ import color from "@styles/color.module.scss";
 import button from "@button/button.module.scss";
 import modalStyles from "@modal/modal.module.scss";
 
-import { Input } from "@input";
-import { Button } from "@button";
+import { Input, $Input } from "@input";
+import { Button, $Button } from "@button";
 import { getAuthContents } from "@button/content/content.auth";
 
 import { validateAuth as validate } from "@helper/auth";
-
-import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the auth template component
@@ -52,14 +50,14 @@ export const AuthPrototype: React.FC<{}> = () => {
           <div className={[space["m-b--8"]].join(" ")}>
             <div>
               <Input
-                variant="region"
+                variant={$Input.REGION}
                 direction="bottom"
                 handleChange={formik.handleChange}
                 value={formik.values.region}
                 errors={formik.errors.region}
               />
               <Input
-                variant="phone"
+                variant={$Input.PHONE}
                 direction="top"
                 handleChange={formik.handleChange}
                 value={formik.values.phone}
@@ -80,7 +78,7 @@ export const AuthPrototype: React.FC<{}> = () => {
             </p>
           </div>
           <div className={[space["m-t--18"], space["m-b--18"]].join(" ")}>
-            <Button variant={buttonVariant.PRIMARY} title="Continue" block />
+            <Button variant={$Button.PRIMARY} title="Continue" block />
           </div>
         </form>
         <div
@@ -110,7 +108,7 @@ export const AuthPrototype: React.FC<{}> = () => {
             return (
               <div key={index} className={[space["m-v--14"]].join(" ")}>
                 <Button
-                  variant={buttonVariant.AUTH}
+                  variant={$Button.AUTH}
                   extendsTo={[
                     button["hover__auth"],
                     color["bg--transparent"],
@@ -144,7 +142,7 @@ export const AuthPrototype: React.FC<{}> = () => {
             </p>
           </div>
           <Button
-            variant={buttonVariant.UNDERLINE}
+            variant={$Button.UNDERLINE}
             onClick={switchAuth}
             title={authState.title === "Log in" ? "Sign up" : "Log in"}
           />

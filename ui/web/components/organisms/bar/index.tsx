@@ -8,6 +8,17 @@ import { MenuBar } from "@bar/bar.menu";
 import { AvailabilityBar } from "@bar/bar.availability";
 import { FiltersBar } from "@bar/bar.filters";
 
+export const $Bar = {
+  AVAILABILITY: "availability",
+  PAGINATE: "paginate",
+  COVID: "covid",
+  PROGRESS: "progress",
+  SEARCH: "search",
+  CREATE: "create",
+  MENU: "menu",
+  FILTERS: "filters",
+};
+
 export interface BarProps {
   variant: string;
   [property: string]: any;

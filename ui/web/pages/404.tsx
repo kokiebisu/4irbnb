@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import { Header } from "@header";
+import { Header, $Header } from "@header";
 
 import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";
@@ -22,7 +22,7 @@ const ErrorPage = () => {
   return (
     <div>
       <div>
-        <Header variant="homes" />
+        <Header variant={$Header.HOMES} />
       </div>
       <div
         style={{ height: "calc(100vh - 80px)" }}

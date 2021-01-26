@@ -3,7 +3,7 @@ import Router from "next/router";
 
 import { useStayDispatch, useStayState } from "@context/stay";
 
-import { Prototype as CreatePrototype } from "@prototype/create";
+import { Prototype, $Prototype } from "@prototype/create";
 import { inputTypes, properties } from "@input/logic/logic.types";
 import { Layout } from "@layout";
 
@@ -64,9 +64,9 @@ const RoomPage = () => {
     <Layout
       variant="create"
       left={
-        <CreatePrototype
+        <Prototype
           title="Property and guests"
-          variant="room"
+          variant={$Prototype.ROOM}
           data={data}
           setData={setData}
         />

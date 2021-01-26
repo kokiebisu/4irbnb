@@ -1,11 +1,9 @@
 import shape from "@styles/shape.module.scss";
 import space from "@styles/space.module.scss";
 
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 
 import { getOptionContents } from "@button/content/content.option";
-
-import * as buttonVariant from "@button/variants";
 
 const Options: React.FC<{
   params?: {
@@ -19,7 +17,7 @@ const Options: React.FC<{
       {params.map(({ kind, bold }, index) => (
         <div key={index}>
           <Button
-            variant={buttonVariant.OPTION}
+            variant={$Button.OPTION}
             extendsTo={[shape["w--full"]].join(" ")}
             bold={bold}
             onClick={options[kind].handleClick}

@@ -1,8 +1,14 @@
-/** landing */
 import { BannerTemplate } from "./template.banner";
 import { CardsTemplate } from "./template.cards";
 import { StartingTemplate } from "./template.starting";
 import { CollectionsTemplate } from "./template.collections";
+
+export const $Template = {
+  BANNER: "banner",
+  CARDS: "cards",
+  STARTING: "starting",
+  COLLECTIONS: "collections",
+};
 
 export interface TemplateProps {
   extendsTo?: string;

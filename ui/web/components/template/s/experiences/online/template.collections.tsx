@@ -3,10 +3,8 @@ import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";
 
 import React, { useLayoutEffect, useRef, useState } from "react";
-import { Button } from "@button";
-import { Card } from "@card";
-
-import * as buttonVariant from "@button/variants";
+import { Button, $Button } from "@button";
+import { Card, $Card } from "@card";
 
 export const CollectionsTemplate: React.FC<{ title?: String }> = ({
   title = "Title here",
@@ -139,7 +137,7 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
                 block
-                variant={buttonVariant.PAGINATE}
+                variant={$Button.PAGINATE}
                 animate
                 direction="left"
                 onClick={previous}
@@ -149,7 +147,7 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
                 block
-                variant={buttonVariant.PAGINATE}
+                variant={$Button.PAGINATE}
                 animate
                 direction="right"
                 onClick={next}
@@ -179,7 +177,7 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
                 <div key={index}>
                   <div style={{ ...cardStyles(), paddingRight: 10 }}>
                     <Card
-                      variant="collection"
+                      variant={$Card.COLLECTION}
                       paddingTop={paddingTopStyles()}
                     />
                   </div>

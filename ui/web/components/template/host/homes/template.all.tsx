@@ -1,5 +1,4 @@
-/** components */
-import { Card } from "@card";
+import { Card, $Card } from "@card";
 import { Layout } from "@layout";
 
 /**
@@ -25,7 +24,7 @@ export const AllTemplate: React.FC<{
           return (
             <div key={index} style={{ scrollSnapAlign: "start" }}>
               <Card
-                variant="category"
+                variant={$Card.CATEGORY}
                 imgUrl={item?.imgUrl}
                 title={item?.name}
               />

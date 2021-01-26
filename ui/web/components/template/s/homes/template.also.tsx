@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
-import { Card } from "@card";
-import { Button } from "@button";
+import { Card, $Card } from "@card";
+import { Button, $Button } from "@button";
 
 import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";
@@ -12,8 +12,6 @@ import * as Helpers from "@helper/array";
 
 import { useSlider } from "@hooks/useSlider";
 import { useHandleContainerResize } from "@hooks/useHandleContainerResize";
-
-import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the also section
@@ -56,7 +54,7 @@ export const AlsoTemplate: React.FC<{
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div className={[space["m-h--2"]].join(" ")}>
             <Button
-              variant={buttonVariant.PAGINATE}
+              variant={$Button.PAGINATE}
               animate
               direction="left"
               onClick={previous}
@@ -65,7 +63,7 @@ export const AlsoTemplate: React.FC<{
           </div>
           <div className={[space["m-h--2"]].join(" ")}>
             <Button
-              variant={buttonVariant.PAGINATE}
+              variant={$Button.PAGINATE}
               animate
               direction="right"
               onClick={next}
@@ -94,7 +92,7 @@ export const AlsoTemplate: React.FC<{
               >
                 <div className={[space["m-b--10"]].join(" ")}>
                   <Card
-                    variant="nearby"
+                    variant={$Card.NEARBY}
                     to={item[0]?.to}
                     imgUrl={item?.pic}
                     title={item[0]?.city || "Item"}
@@ -104,7 +102,7 @@ export const AlsoTemplate: React.FC<{
                 </div>
                 <div>
                   <Card
-                    variant="nearby"
+                    variant={$Card.NEARBY}
                     to={item[1]?.to}
                     imgUrl={item?.pic}
                     title={item[1]?.city || "Item"}

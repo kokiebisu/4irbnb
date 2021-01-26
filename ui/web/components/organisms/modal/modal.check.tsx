@@ -6,9 +6,7 @@ import font from "@styles/font.module.scss";
 
 import { ChevronLeft, ChevronRight } from "@svg/regular";
 
-import { Button } from "@button";
-
-import * as buttonVariant from "@button/variants";
+import { Button, $Button } from "@button";
 
 export const CheckModal: React.FC<{}> = () => {
   return (
@@ -80,7 +78,7 @@ const Calendar: React.FC<{
             {[1, 2, 3, 4, 5, 6, 7].map((number, index) => {
               return (
                 <div key={index} style={{ display: "table-cell" }}>
-                  <Button variant={buttonVariant.CALENDAR} number={number} />
+                  <Button variant={$Button.CALENDAR} number={number} />
                 </div>
               );
             })}
@@ -89,7 +87,7 @@ const Calendar: React.FC<{
             {[8, 9, 10, 11, 12, 13, 14].map((number, index) => {
               return (
                 <div key={index} style={{ display: "table-cell" }}>
-                  <Button variant={buttonVariant.CALENDAR} number={number} />
+                  <Button variant={$Button.CALENDAR} number={number} />
                 </div>
               );
             })}
@@ -98,7 +96,7 @@ const Calendar: React.FC<{
             {[15, 16, 17, 18, 19, 20, 21].map((number, index) => {
               return (
                 <div key={index} style={{ display: "table-cell" }}>
-                  <Button variant={buttonVariant.CALENDAR} number={number} />
+                  <Button variant={$Button.CALENDAR} number={number} />
                 </div>
               );
             })}
@@ -107,7 +105,7 @@ const Calendar: React.FC<{
             {[22, 23, 24, 25, 26, 27, 28].map((number, index) => {
               return (
                 <div key={index} style={{ display: "table-cell" }}>
-                  <Button variant={buttonVariant.CALENDAR} number={number} />
+                  <Button variant={$Button.CALENDAR} number={number} />
                 </div>
               );
             })}
@@ -117,7 +115,7 @@ const Calendar: React.FC<{
               return (
                 <div key={index} style={{ display: "table-cell" }}>
                   {number && (
-                    <Button variant={buttonVariant.CALENDAR} number={number} />
+                    <Button variant={$Button.CALENDAR} number={number} />
                   )}
                 </div>
               );

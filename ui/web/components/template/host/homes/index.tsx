@@ -1,4 +1,3 @@
-/** templates */
 import { PriorityTemplate } from "./template.priority";
 import { HelpTemplate } from "./template.help";
 import { ReadyTemplate } from "./template.ready";
@@ -6,6 +5,16 @@ import { CommunityTemplate } from "./template.community";
 import { AllTemplate } from "./template.all";
 import { BannerTemplate } from "./template.banner";
 import { HostingTemplate } from "./template.hosting";
+
+export const $Template = {
+  ALL: "all",
+  HELP: "help",
+  BANNER: "banner",
+  COMMUNITY: "community",
+  HOSTING: "hosting",
+  PRIORITY: "priority",
+  READY: "ready",
+};
 
 export interface TemplateProps {
   extendsTo?: string;

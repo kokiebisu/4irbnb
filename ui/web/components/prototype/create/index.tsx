@@ -1,4 +1,3 @@
-/** components */
 import { AdvanceCreate } from "@prototype/create/create.advance";
 import { AmenitiesCreate } from "@prototype/create/create.amenities";
 import { BathroomsCreate } from "@prototype/create/create.bathrooms";
@@ -14,9 +13,30 @@ import { RulesCreate } from "@prototype/create/create.rules";
 import { SpacesCreate } from "@prototype/create/create.spaces";
 import { TitleCreate } from "@prototype/create/create.title";
 import { PeriodCreate } from "@prototype/create/create.period";
-import { PriceCreate } from "./create.price";
-import { ScenariosCreate } from "./create.scenarios";
-import { PhotosCreate } from "./create.photos";
+import { PriceCreate } from "@prototype/create//create.price";
+import { ScenariosCreate } from "@prototype/create/create.scenarios";
+import { PhotosCreate } from "@prototype/create/create.photos";
+
+export const $Prototype = {
+  GETSTARTED: "getstarted",
+  ROOM: "room",
+  BEDROOMS: "bedrooms",
+  BATHROOMS: "bathrooms",
+  LOCATION: "location",
+  AMENITIES: "amenities",
+  SPACES: "spaces",
+  DESCRIPTION: "description",
+  TITLE: "title",
+  PHONE: "phone",
+  REQUIREMENTS: "requirements",
+  RULES: "rules",
+  CHECKIN: "checkin",
+  ADVANCE: "advance",
+  PERIOD: "period",
+  PRICE: "price",
+  SCENARIOS: "scenarios",
+  PHOTOS: "photos",
+};
 
 export interface CreateProps {
   variant?: string;
@@ -24,7 +44,7 @@ export interface CreateProps {
 }
 
 export const Prototype: React.FC<CreateProps> = ({
-  variant = "getstarted",
+  variant = $Prototype.GETSTARTED,
   ...props
 }) => {
   const variants = {

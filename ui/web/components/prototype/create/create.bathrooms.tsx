@@ -1,7 +1,5 @@
-/** components */
-import { Input } from "@input";
+import { Input, $Input } from "@input";
 
-/** styles **/
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
@@ -27,7 +25,7 @@ export const BathroomsCreate: React.FC<{
         <div className={[space["m-b--8"]].join(" ")}>
           <Input
             title="Bathrooms"
-            variant="counter"
+            variant={$Input.COUNTER}
             value={data.bathrooms}
             add={() => setData({ ...data, bathrooms: data.bathrooms + 1 })}
             subtract={() => setData({ ...data, bathrooms: data.bathrooms - 1 })}

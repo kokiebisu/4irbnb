@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 
-/** components */
 import { AuthButton } from "@button/button.auth";
 import { MenuButton } from "@button/button.menu";
 import { PrivacyButton } from "@button/button.privacy";
@@ -28,10 +27,39 @@ import { VideoButton } from "@button/button.video";
 import { DestinationButton } from "@button/button.destination";
 import { CurrencyButton } from "@button/button.currency";
 
-/** styles **/
 import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 import animation from "@styles/animation.module.scss";
+
+export const $Button = {
+  AUTH: "auth",
+  MENU: "menu",
+  PRIVACY: "privacy",
+  BORDER: "border",
+  BAR: "bar",
+  BANNER: "banner",
+  PRIMARY: "primary",
+  PAGINATE: "paginate",
+  EXPAND: "expand",
+  OPTION: "option",
+  UNDERLINE: "underline",
+  FILTER: "filter",
+  MODAL: "modal",
+  BACK: "back",
+  TRANSPARENT: "transparent",
+  GLOBE: "globe",
+  LINK: "link",
+  CLOSED: "closed",
+  SEARCH: "search",
+  LOCATION: "location",
+  NEARBY: "nearby",
+  CALENDAR: "calendar",
+  SEARCHBAR: "searchbar",
+  LOGO: "logo",
+  VIDEO: "video",
+  DESTINATION: "destination",
+  CURRENCY: "currency",
+};
 
 export interface ButtonProps {
   extendsTo?: string;

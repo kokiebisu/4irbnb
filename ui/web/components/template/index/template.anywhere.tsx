@@ -1,9 +1,7 @@
-/** styles **/
 import space from "@styles/space.module.scss";
 import template from "@template/index/index.module.scss";
 
-/** components */
-import { Card } from "@card";
+import { Card, $Card } from "@card";
 
 /**
  *
@@ -25,7 +23,7 @@ export const AnywhereTemplate: React.FC<{
             return (
               <div key={index}>
                 <Card
-                  variant="anywhere"
+                  variant={$Card.ANYWHERE}
                   imgUrl={item?.imgUrl}
                   title={item?.title}
                   to={item?.to}

@@ -1,9 +1,7 @@
-import { Bullet } from "@bullet";
+import { Bullet, $Bullet } from "@bullet";
 
 import font from "@styles/font.module.scss";
 import space from "@styles/space.module.scss";
-
-import * as bulletVariant from "@bullet/variants";
 
 /**
  * Renders the experiences section
@@ -27,10 +25,7 @@ export const ExperiencesTemplate: React.FC<{}> = () => {
         {experiences.map((experience, index) => {
           return (
             <div key={index}>
-              <Bullet
-                variant={bulletVariant.EXPERIENCE}
-                experience={experience}
-              />
+              <Bullet variant={$Bullet.EXPERIENCE} experience={experience} />
             </div>
           );
         })}

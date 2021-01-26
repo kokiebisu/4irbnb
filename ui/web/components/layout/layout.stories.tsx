@@ -1,6 +1,6 @@
 import { Meta, Story } from "@storybook/react/types-6-0";
 import React from "react";
-import { Layout, LayoutProps } from ".";
+import { Layout, LayoutProps, $Layout } from ".";
 
 export default {
   title: "Layout",
@@ -11,30 +11,30 @@ const TemplateStory: Story<LayoutProps> = (args) => <Layout {...args} />;
 
 export const landing = TemplateStory.bind({});
 landing.args = {
-  variant: "landing",
+  variant: $Layout.LANDING,
 };
 
 export const homes = TemplateStory.bind({});
 homes.args = {
-  variant: "homes",
+  variant: $Layout.HOMES,
 };
 
 export const onlinehost = TemplateStory.bind({});
 onlinehost.args = {
-  variant: "onlinehost",
+  variant: $Layout.ONLINEHOST,
 };
 
 export const currency = TemplateStory.bind({});
 currency.args = {
-  variant: "currency",
+  variant: $Layout.CURRENCY,
 };
 
 export const input = TemplateStory.bind({});
 input.args = {
-  variant: "input",
+  variant: $Layout.INPUT,
 };
 
 export const location = TemplateStory.bind({});
 location.args = {
-  variant: "location",
+  variant: $Layout.LOCATION,
 };

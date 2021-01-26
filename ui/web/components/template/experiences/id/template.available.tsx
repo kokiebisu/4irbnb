@@ -5,11 +5,8 @@ import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 import section from "@template/index.module.scss";
 
-import { Card } from "@card";
-import { Button } from "@button";
-
-import { Border } from "@button/button.stories";
-import * as buttonVariant from "@button/variants";
+import { Card, $Card } from "@card";
+import { Button, $Button } from "@button";
 
 /**
  * Renders the available section
@@ -126,7 +123,7 @@ export const AvailableTemplate: React.FC<{
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div className={[space["m-h--4"]].join(" ")}>
             <Button
-              variant={buttonVariant.PAGINATE}
+              variant={$Button.PAGINATE}
               animate
               direction="left"
               onClick={previous}
@@ -135,7 +132,7 @@ export const AvailableTemplate: React.FC<{
           </div>
           <div className={[space["m-h--4"]].join(" ")}>
             <Button
-              variant={buttonVariant.PAGINATE}
+              variant={$Button.PAGINATE}
               animate
               direction="right"
               onClick={next}
@@ -165,7 +162,7 @@ export const AvailableTemplate: React.FC<{
               >
                 <div className={[space["m-b--10"], space["m-r--16"]].join(" ")}>
                   <Card
-                    variant="available"
+                    variant={$Card.AVAILABLE}
                     date={available.date}
                     from={available.from}
                     to={available.to}
@@ -179,7 +176,7 @@ export const AvailableTemplate: React.FC<{
         </div>
       </div>
       <div className={[space["m-t--32"]].join(" ")}>
-        <Button variant={buttonVariant.BORDER} title="See more dates" />
+        <Button variant={$Button.BORDER} title="See more dates" />
       </div>
     </div>
   );

@@ -6,11 +6,9 @@ import font from "@styles/font.module.scss";
 import shape from "@styles/shape.module.scss";
 
 import { Template } from "@template/s/homes";
-import { Bar } from "@bar";
+import { Bar, $Bar } from "@bar";
 
-import { Button } from "@button";
-
-import * as buttonVariant from "@button/variants";
+import { Button, $Button } from "@button";
 
 /**
  * Renders the nearby template component
@@ -59,16 +57,13 @@ export const NearbyPrototype: React.FC<{
             {filters.map((filter, index) => {
               return (
                 <div key={index} className={[space["m-r--8"]].join(" ")}>
-                  <Button variant={buttonVariant.FILTER} name={filter.name} />
+                  <Button variant={$Button.FILTER} name={filter.name} />
                 </div>
               );
             })}
           </div>
           <div className={[shape["only__sm"]].join(" ")}>
-            <Button
-              variant={buttonVariant.FILTER}
-              name={`filters ${filterCount}`}
-            />
+            <Button variant={$Button.FILTER} name={`filters ${filterCount}`} />
           </div>
         </div>
         {city && (
@@ -124,7 +119,7 @@ export const NearbyPrototype: React.FC<{
             layout["justify-center"],
           ].join(" ")}
         >
-          <Bar variant="paginate" animate />
+          <Bar variant={$Bar.PAGINATE} animate />
         </div>
       </div>
       <div className={[space["p--24"], color["bg--white__1"]].join(" ")}>

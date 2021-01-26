@@ -1,7 +1,5 @@
-/** components */
-import { Card } from "@card";
+import { Card, $Card } from "@card";
 
-/** styles */
 import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 import font from "@styles/font.module.scss";
@@ -53,7 +51,7 @@ export const ArrangementsTemplate: React.FC<{
           {arrangements.map((arrangement, index) => {
             return (
               <div key={index} style={{ marginRight: 12 }}>
-                <Card variant="arrangements" card={arrangement} />
+                <Card variant={$Card.ARRANGEMENTS} card={arrangement} />
               </div>
             );
           })}

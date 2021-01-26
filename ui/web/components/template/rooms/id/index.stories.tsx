@@ -1,7 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
 
-import { Template, TemplateProps } from "@template/rooms/id";
+import { Template, TemplateProps, $Template } from "@template/rooms/id";
 
 export default {
   title: "Templates/Rooms/ID",
@@ -17,17 +17,17 @@ const TemplateStory: Story<TemplateProps> = (args) => <Template {...args} />;
 
 export const Reviews = TemplateStory.bind({});
 Reviews.args = {
-  variant: "reviews",
+  variant: $Template.REVIEWS,
 };
 
 export const Arrangements = TemplateStory.bind({});
 Arrangements.args = {
-  variant: "arrangements",
+  variant: $Template.ARRANGEMENTS,
 };
 
 export const Amenities = TemplateStory.bind({});
 Amenities.args = {
-  variant: "amenities",
+  variant: $Template.AMENITIES,
 };
 Amenities.decorators = [
   (Story) => (
@@ -39,7 +39,7 @@ Amenities.decorators = [
 
 export const Host = TemplateStory.bind({});
 Host.args = {
-  variant: "host",
+  variant: $Template.HOST,
 };
 Host.decorators = [
   (Story) => (
@@ -51,35 +51,20 @@ Host.decorators = [
 
 export const Preview = TemplateStory.bind({});
 Preview.args = {
-  variant: "preview",
+  variant: $Template.PREVIEW,
 };
 
 export const Other = TemplateStory.bind({});
 Other.args = {
-  variant: "other",
+  variant: $Template.OTHER,
 };
 
 export const Description = TemplateStory.bind({});
 Description.args = {
-  variant: "description",
+  variant: $Template.DESCRIPTION,
 };
 
 export const Know = TemplateStory.bind({});
 Know.args = {
-  variant: "know",
+  variant: $Template.KNOW,
 };
-
-// export const StayWithPagination = TemplateStory.bind({});
-// StayWithPagination.args = {
-//   variant: "stay",
-//   pagination: true,
-//   save: true,
-//   isDescription: true,
-// };
-
-// export const TwoRows = TemplateStory.bind({});
-// TwoRows.args = {
-//   variant: "stay",
-//   save: true,
-//   isDescription: true,
-// };
