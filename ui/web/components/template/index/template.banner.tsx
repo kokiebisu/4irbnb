@@ -9,14 +9,13 @@ import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
-import { Header } from "@header";
-import { Button } from "@button";
+import { Header, $Header } from "@header";
+import { Button, $Button } from "@button";
 
 import { useHandleScroll } from "@hooks/useHandleScroll";
 
 import { Banner } from "@button/button.stories";
 import { ResponsiveImage } from "@helper/img";
-import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the banner section
@@ -42,7 +41,7 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
           <div>
             <div>
               <Header
-                variant="landing"
+                variant={$Header.LANDING}
                 category={category}
                 setCategory={setCategory}
                 data={data}
@@ -108,7 +107,7 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
                 ].join(" ")}
               >
                 <Button
-                  variant={buttonVariant.BANNER}
+                  variant={$Button.BANNER}
                   title="Explore nearby"
                   onClick={() => Router.push("/")}
                 />

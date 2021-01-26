@@ -5,9 +5,7 @@ import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 import header from "@header/header.module.scss";
 
-import { Button } from "@button";
-
-import * as buttonVariant from "@button/variants";
+import { Button, $Button } from "@button";
 
 /**
  * Renders the header for the homes page
@@ -24,7 +22,7 @@ export const HomesHeader: React.FC<{
       >
         <div>
           <Button
-            variant={buttonVariant.LOGO}
+            variant={$Button.LOGO}
             extendsTo={[
               layout["inline-block"],
               header["hover__logo"],

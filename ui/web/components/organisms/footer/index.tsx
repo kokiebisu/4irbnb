@@ -10,9 +10,7 @@ import { footerItems } from "@airbnb/content";
 
 import { Globe } from "@svg/original";
 
-import { Button } from "@button";
-
-import * as buttonVariant from "@button/variants";
+import { Button, $Button } from "@button";
 
 export interface FooterProps {
   spread?: boolean;
@@ -74,7 +72,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
                         key={index}
                       >
                         <Button
-                          variant={buttonVariant.LINK}
+                          variant={$Button.LINK}
                           onClick={() => Router.push(url)}
                           title={name}
                         />
@@ -112,7 +110,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
               </button>
             </div>
             <div>
-              <Button variant={buttonVariant.UNDERLINE} title={`$ CAD`} bold />
+              <Button variant={$Button.UNDERLINE} title={`$ CAD`} bold />
             </div>
           </div>
           <div className={[layout["flex"], layout["items-center"]].join(" ")}>
@@ -127,7 +125,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
               </div>
               <div className={space["m-r--10"]}>
                 <Button
-                  variant={buttonVariant.LINK}
+                  variant={$Button.LINK}
                   title="Privacy"
                   onClick={() => Router.push("/")}
                 />
@@ -135,7 +133,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
               <div>&nbsp;· &nbsp;</div>
               <div className={space["m-r--10"]}>
                 <Button
-                  variant={buttonVariant.LINK}
+                  variant={$Button.LINK}
                   title="Terms"
                   onClick={() => Router.push("/")}
                 />
@@ -143,7 +141,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
               <div>&nbsp;· &nbsp;</div>
               <div className={space["m-r--10"]}>
                 <Button
-                  variant={buttonVariant.LINK}
+                  variant={$Button.LINK}
                   title="Sitemap"
                   onClick={() => Router.push("/")}
                 />

@@ -2,9 +2,7 @@ import font from "@styles/font.module.scss";
 import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 
-import { Bullet } from "@bullet";
-
-import * as bulletVariant from "@bullet/variants";
+import { Bullet, $Bullet } from "@bullet";
 
 /**
  * Renders the know section
@@ -57,7 +55,7 @@ export const KnowTemplate: React.FC<{
             {houseRules.map((item, index) => {
               return (
                 <div key={index} className={[space["m-b--6"]].join(" ")}>
-                  <Bullet variant={bulletVariant.KNOW} categoryType={item} />
+                  <Bullet variant={$Bullet.KNOW} categoryType={item} />
                 </div>
               );
             })}
@@ -75,7 +73,7 @@ export const KnowTemplate: React.FC<{
             {healths.map((item, index) => {
               return (
                 <div key={index} className={[space["m-b--6"]].join(" ")}>
-                  <Bullet variant={bulletVariant.KNOW} categoryType={item} />
+                  <Bullet variant={$Bullet.KNOW} categoryType={item} />
                 </div>
               );
             })}

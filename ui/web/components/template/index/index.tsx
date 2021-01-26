@@ -5,6 +5,15 @@ import { OnlineTemplate } from "./template.online";
 import { AnywhereTemplate } from "./template.anywhere";
 import { DestinationsTemplate } from "./template.destinations";
 
+export const $Template = {
+  CATEGORY: "category",
+  NEARBY: "nearby",
+  BANNER: "banner",
+  ONLINE: "online",
+  ANYWHERE: "anywhere",
+  DESTINATIONS: "destinations",
+};
+
 export interface TemplateProps {
   extendsTo?: string;
   variant?: string;

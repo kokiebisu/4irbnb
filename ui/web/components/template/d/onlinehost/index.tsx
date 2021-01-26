@@ -1,10 +1,18 @@
-/** landing */
-import { MoreTemplate } from "./template.more";
-import { FAQTemplate } from "./template.faq";
-import { BackTemplate } from "./template.back";
-import { SharingTemplate } from "./template.sharing";
-import { WorksTemplate } from "./template.works";
-import { BannerTemplate } from "./template.banner";
+import { MoreTemplate } from "@template/d/onlinehost/template.more";
+import { FAQTemplate } from "@template/d/onlinehost/template.faq";
+import { BackTemplate } from "@template/d/onlinehost/template.back";
+import { SharingTemplate } from "@template/d/onlinehost/template.sharing";
+import { WorksTemplate } from "@template/d/onlinehost/template.works";
+import { BannerTemplate } from "@template/d/onlinehost/template.banner";
+
+export const $Template = {
+  BACK: "back",
+  BANNER: "banner",
+  FAQ: "faq",
+  MORE: "more",
+  SHARING: "sharing",
+  WORKS: "works",
+};
 
 export interface TemplateProps {
   extendsTo?: string;

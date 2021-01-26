@@ -1,6 +1,6 @@
 import Router from "next/router";
 
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
@@ -8,8 +8,6 @@ import color from "@styles/color.module.scss";
 import shape from "@styles/shape.module.scss";
 import bar from "@bar/bar.module.scss";
 import font from "@styles/font.module.scss";
-
-import * as buttonVariant from "@button/variants";
 
 /**
  * Renders paginate bar component
@@ -437,7 +435,7 @@ export const PaginateBar: React.FC<{
       <div className={[layout["flex"], layout["items-center"]].join(" ")}>
         {page !== 1 && (
           <Button
-            variant={buttonVariant.PAGINATE}
+            variant={$Button.PAGINATE}
             animate
             direction="left"
             onClick={() => Router.push(`/s/homes/page/${page - 1}`)}
@@ -446,7 +444,7 @@ export const PaginateBar: React.FC<{
         <div className={[space["m-h--8"]].join(" ")}>{displayContent()}</div>
         {page !== total && (
           <Button
-            variant={buttonVariant.PAGINATE}
+            variant={$Button.PAGINATE}
             animate
             direction="right"
             onClick={() => Router.push(`/s/homes/page/${page + 1}`)}

@@ -6,7 +6,7 @@ import layout from "@styles/layout.module.scss";
 
 import { useToggleState } from "@context/toggle";
 
-import { Bar } from "@bar";
+import { Bar, $Bar } from "@bar";
 import { Modal } from "@modal";
 
 import { useOnClickOutside } from "@hooks/useOnClickOutside";
@@ -71,7 +71,7 @@ export const Prototype: React.FC<PrototypeProps> = ({
   return (
     <div className={layout["relative"]}>
       <Bar
-        variant="search"
+        variant={$Bar.SEARCH}
         selected={selected}
         setSelected={setSelected}
         type={type}

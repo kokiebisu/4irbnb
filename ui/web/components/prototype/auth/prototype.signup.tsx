@@ -7,15 +7,13 @@ import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 import color from "@styles/color.module.scss";
 
-import { Input } from "@input";
-import { Button } from "@button";
-import { Bullet } from "@bullet";
+import { Input, $Input } from "@input";
+import { Button, $Button } from "@button";
+import { Bullet, $Bullet } from "@bullet";
 
 import { validateSignup as validate } from "@helper/auth";
 import { usePost } from "@hooks/usePost";
 import { useAuthDispatch } from "@context/auth";
-import * as bulletVariant from "@bullet/variants";
-import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the signup template component
@@ -58,7 +56,7 @@ export const SignupTemplate: React.FC<{}> = () => {
       <div className={[space["p--24"]].join(" ")}>
         <div>
           <Input
-            variant="name"
+            variant={$Input.NAME}
             direction="bottom"
             name="firstname"
             errors={formik.errors.firstname !== undefined}
@@ -66,7 +64,7 @@ export const SignupTemplate: React.FC<{}> = () => {
             value={formik.values.firstname}
           />
           <Input
-            variant="name"
+            variant={$Input.NAME}
             direction="top"
             name="lastname"
             errors={formik.errors.lastname !== undefined}
@@ -77,7 +75,7 @@ export const SignupTemplate: React.FC<{}> = () => {
             {formik.errors.firstname !== undefined ? (
               <div className={[space["m-t--6"]].join(" ")}>
                 <Bullet
-                  variant={bulletVariant.REQUIRED}
+                  variant={$Bullet.REQUIRED}
                   message={formik.errors.firstname}
                 />
               </div>
@@ -87,7 +85,7 @@ export const SignupTemplate: React.FC<{}> = () => {
             {formik.errors.lastname !== undefined ? (
               <div className={[space["m-t--6"]].join(" ")}>
                 <Bullet
-                  variant={bulletVariant.REQUIRED}
+                  variant={$Bullet.REQUIRED}
                   message={formik.errors.lastname}
                 />
               </div>
@@ -116,7 +114,7 @@ export const SignupTemplate: React.FC<{}> = () => {
             <Input
               spread
               dateType="day"
-              variant="birthdate"
+              variant={$Input.BIRTHDATE}
               direction="left"
               handleChange={formik.handleChange}
               value={formik.values.day}
@@ -125,7 +123,7 @@ export const SignupTemplate: React.FC<{}> = () => {
             <Input
               spread
               dateType="month"
-              variant="birthdate"
+              variant={$Input.BIRTHDATE}
               direction="center"
               handleChange={formik.handleChange}
               value={formik.values.month}
@@ -134,7 +132,7 @@ export const SignupTemplate: React.FC<{}> = () => {
             <Input
               spread
               dateType="year"
-              variant="birthdate"
+              variant={$Input.BIRTHDATE}
               direction="right"
               handleChange={formik.handleChange}
               value={formik.values.year}
@@ -143,26 +141,20 @@ export const SignupTemplate: React.FC<{}> = () => {
           </div>
           {formik.errors.day !== undefined && (
             <div className={[space["m-t--6"]].join(" ")}>
-              <Bullet
-                variant={bulletVariant.REQUIRED}
-                message={formik.errors.day}
-              />
+              <Bullet variant={$Bullet.REQUIRED} message={formik.errors.day} />
             </div>
           )}
           {formik.errors.month !== undefined && (
             <div className={[space["m-t--6"]].join(" ")}>
               <Bullet
-                variant={bulletVariant.REQUIRED}
+                variant={$Bullet.REQUIRED}
                 message={formik.errors.month}
               />
             </div>
           )}
           {formik.errors.year !== undefined && (
             <div className={[space["m-t--6"]].join(" ")}>
-              <Bullet
-                variant={bulletVariant.REQUIRED}
-                message={formik.errors.year}
-              />
+              <Bullet variant={$Bullet.REQUIRED} message={formik.errors.year} />
             </div>
           )}
         </div>
@@ -183,7 +175,7 @@ export const SignupTemplate: React.FC<{}> = () => {
         <div className={[space["m-t--22"]].join(" ")}>
           <div>
             <Input
-              variant="email"
+              variant={$Input.EMAIL}
               handleChange={formik.handleChange}
               value={formik.values.email}
               errors={formik.errors.email !== undefined}
@@ -193,7 +185,7 @@ export const SignupTemplate: React.FC<{}> = () => {
             {formik.errors.email !== undefined ? (
               <div className={[space["m-t--6"]].join(" ")}>
                 <Bullet
-                  variant={bulletVariant.REQUIRED}
+                  variant={$Bullet.REQUIRED}
                   message={formik.errors.email}
                 />
               </div>
@@ -213,7 +205,7 @@ export const SignupTemplate: React.FC<{}> = () => {
         <div className={[space["m-t--22"]].join(" ")}>
           <div>
             <Input
-              variant="password"
+              variant={$Input.PASSWORD}
               handleChange={formik.handleChange}
               value={formik.values.password}
               errors={formik.errors.password !== undefined}
@@ -223,7 +215,7 @@ export const SignupTemplate: React.FC<{}> = () => {
             {formik.errors.password !== undefined && (
               <div className={[space["m-t--6"]].join(" ")}>
                 <Bullet
-                  variant={bulletVariant.REQUIRED}
+                  variant={$Bullet.REQUIRED}
                   message={formik.errors.password}
                 />
               </div>
@@ -271,7 +263,7 @@ export const SignupTemplate: React.FC<{}> = () => {
         </div>
         <div className={[space["m-t--16"]].join(" ")}>
           <Button
-            variant={buttonVariant.PRIMARY}
+            variant={$Button.PRIMARY}
             title="Agree and continue"
             loading={loading}
             block

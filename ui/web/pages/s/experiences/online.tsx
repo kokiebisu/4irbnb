@@ -1,7 +1,7 @@
-import { Header } from "@header";
-import { Bar } from "@bar";
-import { Template } from "@template/s/experiences/online";
-import { Modal } from "@modal";
+import { Header, $Header } from "@header";
+import { Bar, $Bar } from "@bar";
+import { Template, $Template } from "@template/s/experiences/online";
+import { Modal, $Modal } from "@modal";
 import { Footer } from "@footer";
 
 import layout from "@styles/layout.module.scss";
@@ -10,10 +10,8 @@ import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 
 import { useToggleState } from "@context/toggle";
-import React from "react";
-import { Button } from "@button";
 
-import * as buttonVariant from "@button/variants";
+import { Button, $Button } from "@button";
 
 const OnlinePage = () => {
   const toggleState = useToggleState();
@@ -21,12 +19,12 @@ const OnlinePage = () => {
     <div>
       <div className={[shape["shadow--sm"]].join(" ")}>
         <div className={[layout["container--spread"]].join(" ")}>
-          <Header variant="white" />
+          <Header variant={$Header.WHITE} />
         </div>
       </div>
       <div className={[space["m-v--8"]].join(" ")}>
         <div className={[layout["container--spread"]].join(" ")}>
-          <Template variant="banner" />
+          <Template variant={$Template.BANNER} />
         </div>
       </div>
       <div style={{ position: "sticky", top: 0, zIndex: 50 }}>
@@ -36,7 +34,7 @@ const OnlinePage = () => {
               " "
             )}
           >
-            <Bar variant="filters" />
+            <Bar variant={$Bar.FILTERS} />
           </div>
           <div
             className={[color["bg--white__2"]].join(" ")}
@@ -54,27 +52,27 @@ const OnlinePage = () => {
           space["m-t--20"],
         ].join(" ")}
       >
-        <Template variant="cards" />
+        <Template variant={$Template.CARDS} />
       </div>
       <div
         className={[layout["container--spread"], space["m-v--12"]].join(" ")}
       >
-        <Template variant="cards" />
+        <Template variant={$Template.CARDS} />
       </div>
       <div
         className={[layout["container--spread"], space["m-v--12"]].join(" ")}
       >
-        <Template variant="starting" />
+        <Template variant={$Template.STARTING} />
       </div>
       <div
         className={[layout["container--spread"], space["m-v--12"]].join(" ")}
       >
-        <Template variant="collections" />
+        <Template variant={$Template.COLLECTIONS} />
       </div>
       <div
         className={[layout["container--spread"], space["m-v--12"]].join(" ")}
       >
-        <Template variant="cards" />
+        <Template variant={$Template.CARDS} />
       </div>
       <div
         style={{
@@ -83,11 +81,7 @@ const OnlinePage = () => {
           padding: "40px 0 56px 0",
         }}
       >
-        <Button
-          variant={buttonVariant.PRIMARY}
-          title="Load more"
-          fill="black"
-        />
+        <Button variant={$Button.PRIMARY} title="Load more" fill="black" />
       </div>
       <div>
         <Footer />
@@ -113,7 +107,7 @@ const OnlinePage = () => {
             ].join(" ")}
           >
             <Modal
-              variant="auth"
+              variant={$Modal.AUTH}
               animate="slideup"
               criteria={toggleState.auth}
               lock
@@ -142,7 +136,7 @@ const OnlinePage = () => {
             ].join(" ")}
           >
             <Modal
-              variant="globe"
+              variant={$Modal.GLOBE}
               extendsTo={[
                 shape["w--full"],
                 shape["h--full"],

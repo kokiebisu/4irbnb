@@ -7,12 +7,10 @@ import font from "@styles/font.module.scss";
 import banner from "@banner/banner.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
-import { Button } from "@button";
-import { Card } from "@card";
+import { Button, $Button } from "@button";
+import { Card, $Card } from "@card";
 
 import { useSlider, SliderProps } from "@hooks/useSlider";
-
-import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the homes banner
@@ -72,7 +70,7 @@ export const CommunityTemplate: React.FC<{
             </div>
             <div className={[layout["inline-block"]].join(" ")}>
               <Button
-                variant={buttonVariant.PRIMARY}
+                variant={$Button.PRIMARY}
                 size="md"
                 title="Get started"
                 onClick={() => Router.push("/become-a-host")}
@@ -118,7 +116,7 @@ export const CommunityTemplate: React.FC<{
                   className={[space["m-r--16"]].join(" ")}
                 >
                   <Card
-                    variant="host"
+                    variant={$Card.HOST}
                     host={host?.name}
                     imgUrl={host?.imgUrl}
                     stayType={host?.stayType}
@@ -140,7 +138,7 @@ export const CommunityTemplate: React.FC<{
           <div className={[layout["items-center"], layout["flex"]].join(" ")}>
             <div className={[space["m-r--8"]].join(" ")}>
               <Button
-                variant={buttonVariant.PAGINATE}
+                variant={$Button.PAGINATE}
                 animate
                 direction="left"
                 onClick={previous}
@@ -148,7 +146,7 @@ export const CommunityTemplate: React.FC<{
             </div>
             <div>
               <Button
-                variant={buttonVariant.PAGINATE}
+                variant={$Button.PAGINATE}
                 animate
                 direction="right"
                 onClick={next}

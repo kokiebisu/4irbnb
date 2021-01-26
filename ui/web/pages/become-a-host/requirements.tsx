@@ -1,7 +1,7 @@
 import Router from "next/router";
 
 import { Layout } from "@layout";
-import { Prototype as CreatePrototype } from "@prototype/create";
+import { Prototype, $Prototype } from "@prototype/create";
 
 const RequirementsPage = () => {
   const proceed = () => {
@@ -19,7 +19,9 @@ const RequirementsPage = () => {
   return (
     <Layout
       variant="create"
-      left={<CreatePrototype title="Booking settings" variant="requirements" />}
+      left={
+        <Prototype title="Booking settings" variant={$Prototype.REQUIREMENTS} />
+      }
       percentage={80}
       next={proceed}
       back={revert}

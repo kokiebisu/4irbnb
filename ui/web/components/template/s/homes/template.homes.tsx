@@ -1,10 +1,8 @@
-/** styles */
 import font from "@styles/font.module.scss";
 import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 
-/** components */
-import { Card } from "@card";
+import { Card, $Card } from "@card";
 
 /**
  * Renders the homes section
@@ -43,7 +41,7 @@ export const HomesTemplate: React.FC<{
               <div key={index}>
                 <Card
                   extendsTo={!title && [color["b-t--white__2"]].join(" ")}
-                  variant="stay"
+                  variant={$Card.STAY}
                   {...stay}
                 />
               </div>

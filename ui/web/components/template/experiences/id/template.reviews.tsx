@@ -7,14 +7,9 @@ import shape from "@styles/shape.module.scss";
 import font from "@styles/font.module.scss";
 import section from "@template/index.module.scss";
 
-import { Button } from "@button";
-import { Bullet } from "@bullet";
-import { Card } from "@card";
-
-import { Border } from "@button/button.stories";
-
-import * as bulletVariant from "@bullet/variants";
-import * as buttonVariant from "@button/variants";
+import { Button, $Button } from "@button";
+import { Bullet, $Bullet } from "@bullet";
+import { Card, $Card } from "@card";
 
 /**
  * Renders the reviews section
@@ -93,7 +88,7 @@ export const ReviewsTemplate: React.FC<{
                   ].join(" ")}
                 >
                   <Bullet
-                    variant={bulletVariant.SCORE}
+                    variant={$Bullet.SCORE}
                     category={category?.type}
                     average={category?.average}
                   />
@@ -116,7 +111,7 @@ export const ReviewsTemplate: React.FC<{
                 key={index}
               >
                 <Card
-                  variant="review"
+                  variant={$Card.REVIEW}
                   imgUrl={review?.imgUrl}
                   description={review?.description}
                 />
@@ -126,7 +121,7 @@ export const ReviewsTemplate: React.FC<{
         </div>
         <div className={[space["m-t--16"]].join(" ")}>
           <Button
-            variant={buttonVariant.BORDER}
+            variant={$Button.BORDER}
             size="md"
             title={`Show all ${numberOfReviews} reviews`}
           />

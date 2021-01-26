@@ -1,5 +1,5 @@
-import { Header } from "@header";
-import { Prototype as CreatePrototype } from "@prototype/create";
+import { Header, $Header } from "@header";
+import { Prototype, $Prototype } from "@prototype/create";
 
 import responsive from "@styles/responsive.module.scss";
 import layout from "@styles/layout.module.scss";
@@ -16,7 +16,7 @@ const BecomeAHostPage = () => {
     <div style={{ height: "100vh" }}>
       <div style={{ zIndex: 60, height: 65 }}>
         <div className={[responsive["b_to_n--sm"]].join(" ")}>
-          <Header variant="stay" />
+          <Header variant={$Header.STAY} />
         </div>
       </div>
       <div className={[space["m-t--6"], layout["container"]].join(" ")}>
@@ -32,7 +32,7 @@ const BecomeAHostPage = () => {
                 width: "100%",
               }}
             >
-              <CreatePrototype variant="getstarted" />
+              <Prototype variant={$Prototype.GETSTARTED} />
             </div>
           </div>
           <div

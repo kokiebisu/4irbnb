@@ -8,10 +8,8 @@ import styles from "@template/index.module.scss";
 import sectionStyles from "@template/index.module.scss";
 import section from "@template/index.module.scss";
 
-import { Card } from "@card";
-import { Button } from "@button";
-
-import * as buttonVariant from "@button/variants";
+import { Card, $Card } from "@card";
+import { Button, $Button } from "@button";
 
 /**
  * Renders the stay section
@@ -94,7 +92,7 @@ export const MultipleTemplate: React.FC<{
                   }}
                 >
                   <Card
-                    variant="typestay"
+                    variant={$Card.TYPESTAY}
                     card={item && item.card}
                     to={item && item.to}
                   />
@@ -164,7 +162,7 @@ export const MultipleTemplate: React.FC<{
           <div className={[layout["flex"], layout["items-center"]].join(" ")}>
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
-                variant={buttonVariant.PAGINATE}
+                variant={$Button.PAGINATE}
                 animate
                 direction="left"
                 onClick={previous}
@@ -173,7 +171,7 @@ export const MultipleTemplate: React.FC<{
             </div>
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
-                variant={buttonVariant.PAGINATE}
+                variant={$Button.PAGINATE}
                 animate
                 direction="right"
                 onClick={next}
@@ -202,7 +200,7 @@ export const MultipleTemplate: React.FC<{
                     className={[space["m-b--10"], space["m-r--16"]].join(" ")}
                   >
                     <Card
-                      variant="horizontal"
+                      variant={$Card.HORIZONTAL}
                       card={item && item.card}
                       to={item && item.to}
                       save={save}
@@ -260,14 +258,14 @@ export const MultipleTemplate: React.FC<{
                   </div>
                   <div className={[space["m-r--6"]].join(" ")}>
                     <Button
-                      variant={buttonVariant.PAGINATE}
+                      variant={$Button.PAGINATE}
                       animate
                       direction="left"
                     />
                   </div>
                   <div>
                     <Button
-                      variant={buttonVariant.PAGINATE}
+                      variant={$Button.PAGINATE}
                       animate
                       direction="right"
                     />
@@ -282,7 +280,7 @@ export const MultipleTemplate: React.FC<{
           {showAll && (
             <div className={space["m-v--25"]}>
               <Button
-                variant={buttonVariant.EXPAND}
+                variant={$Button.EXPAND}
                 to={showAll.to}
                 title={showAll.description}
               />
@@ -317,7 +315,7 @@ export const MultipleTemplate: React.FC<{
               return (
                 <div key={index} className={evaluateNumber(index)}>
                   <Card
-                    variant="horizontal"
+                    variant={$Card.HORIZONTAL}
                     card={item && item.card}
                     to={item && item.to}
                     save={save}

@@ -1,8 +1,6 @@
-/** components */
-import { Input } from "@input";
+import { Input, $Input } from "@input";
 import { Layout } from "@layout";
 
-/** styles **/
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
@@ -28,7 +26,7 @@ export const BedroomsCreate: React.FC<{
         <div className={[space["m-b--8"]].join(" ")}>
           <Input
             title="Guests"
-            variant="counter"
+            variant={$Input.COUNTER}
             value={data.guests}
             add={() => setData({ ...data, guests: data.guests + 1 })}
             subtract={() => setData({ ...data, guests: data.guests - 1 })}
@@ -41,7 +39,7 @@ export const BedroomsCreate: React.FC<{
         <Layout variant="input" title="How many bedrooms can guests use?">
           <div className={[space["m-t--16"]].join(" ")}>
             <Input
-              variant="select"
+              variant={$Input.SELECT}
               inputType="bedrooms"
               value={data.bedrooms}
               handleChange={(e) =>
@@ -56,7 +54,7 @@ export const BedroomsCreate: React.FC<{
           <div className={[space["m-t--16"]].join(" ")}>
             <Input
               title="Beds"
-              variant="counter"
+              variant={$Input.COUNTER}
               value={data.beds}
               add={() => setData({ ...data, beds: data.beds + 1 })}
               subtract={() => setData({ ...data, beds: data.beds - 1 })}

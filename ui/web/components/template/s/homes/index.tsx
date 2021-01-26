@@ -1,7 +1,12 @@
-/** landing */
 import { MultipleTemplate } from "./template.multiple";
 import { HomesTemplate } from "./template.homes";
 import { AlsoTemplate } from "./template.also";
+
+export const $Template = {
+  MULTIPLE: "multiple",
+  HOMES: "homes",
+  ALSO: "also",
+};
 
 export interface TemplateProps {
   extendsTo?: string;

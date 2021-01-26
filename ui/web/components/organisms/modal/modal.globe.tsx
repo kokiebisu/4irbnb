@@ -1,27 +1,23 @@
 import { useState } from "react";
 
-/** components */
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 
-/** styles */
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 
-import { Prototype as GlobePrototype } from "@prototype/globe";
+import { Prototype, $Prototype } from "@prototype/globe";
 
 import { useToggleDispatch } from "@context/toggle";
 
-import * as buttonVariant from "@button/variants";
-
 export const GlobeModal: React.FC<{}> = () => {
   const toggleDispatch = useToggleDispatch();
-  const [Prototype, setPrototype] = useState("language");
+  const [prototype, setPrototype] = useState($Prototype.LANGUAGE);
   return (
     <div>
       <div>
         <div>
           <Button
-            variant={buttonVariant.MODAL}
+            variant={$Button.MODAL}
             modal="close"
             onClick={() => toggleDispatch({ type: "toggle_globe" })}
           />
@@ -38,26 +34,26 @@ export const GlobeModal: React.FC<{}> = () => {
         >
           <div className={[space["m-r--32"]].join(" ")}>
             <Button
-              variant={buttonVariant.UNDERLINE}
+              variant={$Button.UNDERLINE}
               title="Language and region"
               font={16}
               bold
-              unselected={Prototype !== "language"}
-              onClick={() => setPrototype("language")}
+              unselected={prototype !== $Prototype.LANGUAGE}
+              onClick={() => setPrototype($Prototype.LANGUAGE)}
             />
           </div>
           <div>
             <Button
-              variant={buttonVariant.UNDERLINE}
+              variant={$Button.UNDERLINE}
               title="Currency"
               font={16}
               bold
-              unselected={Prototype !== "currency"}
-              onClick={() => setPrototype("currency")}
+              unselected={prototype !== $Prototype.CURRENCY}
+              onClick={() => setPrototype($Prototype.CURRENCY)}
             />
           </div>
         </div>
-        <GlobePrototype variant={Prototype} />
+        <Prototype variant={prototype} />
       </div>
     </div>
   );

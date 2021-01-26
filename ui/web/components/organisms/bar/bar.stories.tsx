@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Bar, BarProps } from "@bar";
+import { Bar, BarProps, $Bar } from "@bar";
 
 export default {
   title: "Organisms/Bar",
@@ -12,17 +12,17 @@ const TemplateStory: Story<BarProps> = (args) => <Bar {...args} />;
 
 export const Paginate = TemplateStory.bind({});
 Paginate.args = {
-  variant: "paginate",
+  variant: $Bar.PAGINATE,
 };
 
 export const Covid = TemplateStory.bind({});
 Covid.args = {
-  variant: "covid",
+  variant: $Bar.COVID,
 };
 
 export const Progress = TemplateStory.bind({});
 Progress.args = {
-  variant: "progress",
+  variant: $Bar.PROGRESS,
 };
 Progress.argTypes = {
   percentage: {
@@ -32,7 +32,7 @@ Progress.argTypes = {
 
 export const Search = TemplateStory.bind({});
 Search.args = {
-  variant: "search",
+  variant: $Bar.SEARCH,
 };
 Search.decorators = [
   (Story) => (
@@ -58,20 +58,20 @@ Search.argTypes = {
 
 export const Create = TemplateStory.bind({});
 Create.args = {
-  variant: "create",
+  variant: $Bar.CREATE,
 };
 
 export const Menu = TemplateStory.bind({});
 Menu.args = {
-  variant: "menu",
+  variant: $Bar.MENU,
 };
 
 export const Availability = TemplateStory.bind({});
 Availability.args = {
-  variant: "availability",
+  variant: $Bar.AVAILABILITY,
 };
 
 export const Filters = TemplateStory.bind({});
 Filters.args = {
-  variant: "filters",
+  variant: $Bar.FILTERS,
 };

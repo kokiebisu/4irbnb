@@ -1,22 +1,19 @@
 import Router from "next/router";
 
-import animation from "@styles/animation.module.scss";
 import shape from "@styles/shape.module.scss";
 import space from "@styles/space.module.scss";
 import styles from "@styles/index.module.scss";
 import layout from "@styles/layout.module.scss";
 import color from "@styles/color.module.scss";
 
-import { Modal } from "@modal";
-import { Button } from "@button";
+import { Modal, $Modal } from "@modal";
+import { Button, $Button } from "@button";
 
 import { useToggleDispatch, useToggleState } from "@context/toggle";
 
 import { ChevronLeft } from "@svg/regular";
 
 import { Content } from "@button/content/content.transparent";
-
-import * as buttonVariant from "@button/variants";
 
 /**
  * Renders the white header
@@ -41,7 +38,7 @@ export const WhiteHeader: React.FC<{
         <div className={[styles["searchbar__logo--md"]].join(" ")}>
           <Button
             block
-            variant={buttonVariant.LOGO}
+            variant={$Button.LOGO}
             noName
             onClick={() => Router.push("/")}
           />
@@ -54,7 +51,7 @@ export const WhiteHeader: React.FC<{
             className={[styles["searchbar__host"], space["m-h--2"]].join(" ")}
           >
             <Button
-              variant={buttonVariant.TRANSPARENT}
+              variant={$Button.TRANSPARENT}
               animate
               content={<Content kind="host" />}
               onClick={() => Router.push("/host/homes")}
@@ -62,14 +59,14 @@ export const WhiteHeader: React.FC<{
           </div>
           <div className={[space["m-h--2"]].join(" ")}>
             <Button
-              variant={buttonVariant.TRANSPARENT}
+              variant={$Button.TRANSPARENT}
               content={<Content kind="globe" />}
               onClick={() => toggleDispatch({ type: "toggle_globe" })}
             />
           </div>
           <div className={[space["m-l--4"]].join(" ")}>
             <Button
-              variant={buttonVariant.MENU}
+              variant={$Button.MENU}
               extendsTo={[space["p-v--3"]].join(" ")}
               inverse
               authenticated={data}
@@ -88,7 +85,7 @@ export const WhiteHeader: React.FC<{
           ].join(" ")}
         >
           <Modal
-            variant={buttonVariant.MENU}
+            variant={$Modal.MENU}
             extendsTo={[shape["w--200"]].join(" ")}
             authenticated={data}
             criteria={toggleState.menu}
@@ -103,7 +100,7 @@ export const WhiteHeader: React.FC<{
           </div>
           <div style={{ width: "100%", flexGrow: 1 }}>
             <Button
-              variant={buttonVariant.SEARCHBAR}
+              variant={$Button.SEARCHBAR}
               onClick={() => console.log("pressed")}
             />
           </div>

@@ -1,16 +1,13 @@
 import { AnimatePresence, motion } from "framer-motion";
 
-/** contexts */
 import { useToggleState } from "@context/toggle";
 
-/** components */
-import { Header } from "@header";
+import { Header, $Header } from "@header";
 import { Footer } from "@footer";
-import { Template } from "@template/rooms/id";
-import { Card } from "@card";
-import { Modal } from "@modal";
+import { Template, $Template } from "@template/rooms/id";
+import { Card, $Card } from "@card";
+import { Modal, $Modal } from "@modal";
 
-/** styles */
 import responsive from "@styles/responsive.module.scss";
 import layout from "@styles/layout.module.scss";
 import details from "@styles/details.module.scss";
@@ -19,7 +16,6 @@ import color from "@styles/color.module.scss";
 import shape from "@styles/shape.module.scss";
 import space from "@styles/space.module.scss";
 
-/** hooks */
 import { useHandleScroll } from "@hooks/useHandleScroll";
 
 /**
@@ -34,7 +30,7 @@ const id: () => string | JSX.Element = () => {
         <div style={{ position: "relative", zIndex: 9000 }}>
           <Header
             extendsTo={[details["w__wrapper"]].join(" ")}
-            variant="white"
+            variant={$Header.WHITE}
           />
         </div>
         <AnimatePresence>
@@ -51,16 +47,16 @@ const id: () => string | JSX.Element = () => {
                 width: "100%",
               }}
             >
-              <Header variant="details" />
+              <Header variant={$Header.DETAILS} />
             </motion.div>
           )}
         </AnimatePresence>
-        <div className={[].join(" ")}>
+        {/* <div className={[].join(" ")}>
           <Template
             extendsTo={[staysDetail["flex__panel"]].join(" ")}
             variant="panel"
           />
-        </div>
+        </div> */}
         <div
           className={[layout["container"], staysDetail["m__content"]].join(" ")}
         >
@@ -79,17 +75,17 @@ const id: () => string | JSX.Element = () => {
                 ]}
               /> */}
               <Template
-                variant="description"
+                variant={$Template.DESCRIPTION}
                 extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
               />
               <Template
                 extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-                variant="arrangements"
+                variant={$Template.ARRANGEMENTS}
                 title="Sleeping arrangements"
               />
               <Template
                 extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-                variant="amenities"
+                variant={$Template.AMENITIES}
                 title="Amenities"
               />
             </div>
@@ -98,7 +94,7 @@ const id: () => string | JSX.Element = () => {
               className={[details["w__details--right"]].join(" ")}
             >
               <Card
-                variant="checkin"
+                variant={$Card.CHECKIN}
                 extendsTo={[
                   layout["flex"],
                   layout["justify-end"],
@@ -110,15 +106,15 @@ const id: () => string | JSX.Element = () => {
           </div>
           <Template
             extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-            variant="reviews"
+            variant={$Template.REVIEWS}
           />
           <Template
             extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-            variant="host"
+            variant={$Template.HOST}
           />
           <Template
             extendsTo={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
-            variant="know"
+            variant={$Template.KNOW}
           />
         </div>
         <div className={[layout["container"]].join(" ")}>
@@ -128,7 +124,7 @@ const id: () => string | JSX.Element = () => {
               space["p-v--32"],
               color["bg--white__1"],
             ].join(" ")}
-            variant="other"
+            variant={$Template.OTHER}
           />
         </div>
         <Footer />
@@ -155,7 +151,7 @@ const id: () => string | JSX.Element = () => {
           }}
         >
           <Modal
-            variant="menu"
+            variant={$Modal.MENU}
             extendsTo={[
               layout["flex"],
               layout["justify-center"],

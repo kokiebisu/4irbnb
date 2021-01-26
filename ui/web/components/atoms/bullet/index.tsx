@@ -15,6 +15,24 @@ import { RequiredBullet } from "@bullet/bullet.required";
 import { ScoreBullet } from "@bullet/bullet.score";
 import { ScenarioBullet } from "@bullet/bullet.scenario";
 
+export const $Bullet = {
+  CHARACTERISTIC: "characteristic",
+  AMENITY: "amenity",
+  SCORE: "score",
+  HOST: "host",
+  KNOW: "know",
+  RATING: "rating",
+  BRING: "bring",
+  EXPERIENCE: "experience",
+  PRIORITY: "priority",
+  HELP: "help",
+  REQUIRED: "required",
+  ONLINEHOST: "onlinehost",
+  QUESTION: "question",
+  CHECK: "check",
+  SCENARIO: "scenario",
+};
+
 export interface BulletProps {
   extendsTo?: string;
   variant: string;
