@@ -4,10 +4,8 @@ import color from "@styles/color.module.scss";
 import layout from "@styles/layout.module.scss";
 import animation from "@styles/animation.module.scss";
 
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 import { Layout } from "@layout";
-
-import * as $button from "@button/variants";
 
 export const LocationModal: React.FC<{}> = () => {
   const recentLocations = [
@@ -29,7 +27,7 @@ export const LocationModal: React.FC<{}> = () => {
     <div>
       <div>
         <Button
-          variant={$button.LOCATION}
+          variant={$Button.LOCATION}
           type="explore"
           extendsTo={[
             space["p-h--25"],
@@ -40,14 +38,14 @@ export const LocationModal: React.FC<{}> = () => {
       </div>
       <div>
         <Layout
-          variant={$button.LOCATION}
+          variant={$Button.LOCATION}
           title="Recent Searches"
           content={recentLocations.map(
             ({ location, from, to, guests }, index) => {
               return (
                 <div key={index}>
                   <Button
-                    variant={$button.LOCATION}
+                    variant={$Button.LOCATION}
                     type="recent"
                     location={location}
                     from={from}
@@ -82,7 +80,7 @@ export const LocationModal: React.FC<{}> = () => {
                 return (
                   <div key={index}>
                     <Button
-                      variant={$button.NEARBY}
+                      variant={$Button.NEARBY}
                       label={nearbyLocation}
                       onClick={() => alert(`clicked ${nearbyLocation}`)}
                     />

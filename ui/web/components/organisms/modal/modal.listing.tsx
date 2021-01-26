@@ -1,14 +1,11 @@
-import { Button } from "@button";
-import { Input } from "@input";
+import { Button, $Button } from "@button";
+import { Input, $Input } from "@input";
 
 import { Plus } from "@svg/original";
 
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
-
-import * as $button from "@button/variants";
-import * as $input from "@input/variants";
 
 export const ListingModal: React.FC<{}> = () => {
   return (
@@ -19,9 +16,9 @@ export const ListingModal: React.FC<{}> = () => {
         </h4>
       </div>
       <div>
-        <Input variant={$input.ADDRESS} direction="bottom" />
-        <Input variant={$input.PLACE} direction="middle" />
-        <Input variant={$input.GUESTS} direction="top" />
+        <Input variant={$Input.ADDRESS} direction="bottom" />
+        <Input variant={$Input.PLACE} direction="middle" />
+        <Input variant={$Input.GUESTS} direction="top" />
       </div>
       <div
         className={[
@@ -42,7 +39,7 @@ export const ListingModal: React.FC<{}> = () => {
       </div>
       <div>
         <Button
-          variant={$button.PRIMARY}
+          variant={$Button.PRIMARY}
           fill="black"
           block
           title="Start your listing"

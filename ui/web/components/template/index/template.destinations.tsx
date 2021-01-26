@@ -10,9 +10,7 @@ import space from "@styles/space.module.scss";
 import shape from "@styles/shape.module.scss";
 import template from "./index.module.scss";
 
-import { Button } from "@button";
-
-import * as $button from "@button/variants";
+import { Button, $Button } from "@button";
 
 export const DestinationsTemplate: React.FC<{
   items?: { [type: string]: { city: String; location: String } };
@@ -52,7 +50,7 @@ export const DestinationsTemplate: React.FC<{
           return (
             <div key={index} className={[template["destination__w"]].join(" ")}>
               <Button
-                variant={$button.DESTINATION}
+                variant={$Button.DESTINATION}
                 city={city}
                 location={location}
                 onClick={() =>

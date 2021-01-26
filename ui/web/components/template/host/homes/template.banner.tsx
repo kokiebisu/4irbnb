@@ -1,11 +1,9 @@
-/** styles */
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 
-/** components */
-import { Modal } from "@modal";
-import { Header } from "@header";
+import { Modal, $Modal } from "@modal";
+import { Header, $Header } from "@header";
 
 export const BannerTemplate: React.FC<{}> = () => {
   return (
@@ -14,7 +12,7 @@ export const BannerTemplate: React.FC<{}> = () => {
       style={{ backgroundColor: "#F2ECE2" }}
     >
       <div>
-        <Header variant="homes" />
+        <Header variant={$Header.HOMES} />
       </div>
       <div className={[layout["container--spread"], layout["flex"]].join(" ")}>
         <div
@@ -47,7 +45,7 @@ export const BannerTemplate: React.FC<{}> = () => {
           ].join(" ")}
           style={{ width: "50%" }}
         >
-          <Modal variant="listing" />
+          <Modal variant={$Modal.LISTING} />
         </div>
       </div>
     </div>

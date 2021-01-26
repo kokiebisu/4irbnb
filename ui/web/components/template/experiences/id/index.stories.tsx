@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Template, TemplateProps } from "@template/experiences/id";
+import { Template, TemplateProps, $Template } from "@template/experiences/id";
 
 export default {
   title: "Templates/Experiences/ID",
@@ -16,50 +16,50 @@ const TemplateStory: Story<TemplateProps> = (args) => <Template {...args} />;
 
 export const Experiences = TemplateStory.bind({});
 Experiences.args = {
-  variant: "experiences",
+  variant: $Template.EXPERIENCES,
 };
 
 export const Participate = TemplateStory.bind({});
 Participate.args = {
-  variant: "participate",
+  variant: $Template.PARTICIPATE,
 };
 
 export const Bring = TemplateStory.bind({});
 Bring.args = {
-  variant: "bring",
+  variant: $Template.BRING,
 };
 
 export const Characteristics = TemplateStory.bind({});
 Characteristics.args = {
-  variant: "characteristics",
+  variant: $Template.CHARACTERISTIC,
 };
 
 export const Available = TemplateStory.bind({});
 Available.args = {
-  variant: "available",
+  variant: $Template.AVAILABLE,
 };
 
 export const Preview = TemplateStory.bind({});
 Preview.args = {
-  variant: "preview",
+  variant: $Template.PREVIEW,
 };
 
 export const Description = TemplateStory.bind({});
 Description.args = {
-  variant: "description",
+  variant: $Template.DESCRIPTION,
 };
 
 export const Host = TemplateStory.bind({});
 Host.args = {
-  variant: "host",
+  variant: $Template.HOST,
 };
 
 export const Know = TemplateStory.bind({});
 Know.args = {
-  variant: "know",
+  variant: $Template.KNOW,
 };
 
 export const Reviews = TemplateStory.bind({});
 Reviews.args = {
-  variant: "reviews",
+  variant: $Template.REVIEWS,
 };

@@ -19,11 +19,11 @@ import { nearbyItems } from "../data/nearby";
 import { Layout } from "@layout";
 
 import { Animation } from "@animation";
-import { Modal } from "@modal";
-import { Template } from "@template/index";
+import { Modal, $Modal } from "@modal";
+import { Template, $Template } from "@template/index";
 import { Footer } from "@footer";
 
-import { Bar } from "@bar";
+import { Bar, $Bar } from "@bar";
 
 import { useHandleScroll } from "@hooks/useHandleScroll";
 import { useHandleDocumentResize } from "@hooks/useHandleDocumentResize";
@@ -46,16 +46,16 @@ const LandingPage = ({ currentUser }) => {
     >
       <div>
         <div>
-          <Bar variant="covid" />
+          <Bar variant={$Bar.COVID} />
         </div>
         <Template variant="banner" data={currentUser || null} />
         {loading ? (
           <>
             <Layout variant="landing" spread>
-              <Template variant="nearby" items={nearbyItems} />
+              <Template variant={$Template.NEARBY} items={nearbyItems} />
             </Layout>
             <Layout variant="landing" title="Live anywhere" spread>
-              <Template variant="anywhere" items={anywhereItems} />
+              <Template variant={$Template.ANYWHERE} items={anywhereItems} />
             </Layout>
             <div className={space["m-v--32"]}></div>
             <Layout
@@ -65,21 +65,24 @@ const LandingPage = ({ currentUser }) => {
               title="Meet Online Experiences"
               subtitle="Interactive activities you can do together, led by expert hosts."
             >
-              <Template variant="online" sectionType="landing" dark />
+              <Template variant={$Template.ONLINE} sectionType="landing" dark />
             </Layout>
             <Layout
               variant="landing"
               spread
               title="Join millions of hosts on Airbnb"
             >
-              <Template variant="category" items={categoryItems} />
+              <Template variant={$Template.CATEGORY} items={categoryItems} />
             </Layout>
             <Layout
               variant="landing"
               spread
               title="Inspiration for future getaways"
             >
-              <Template variant="destinations" items={destinationItems} />
+              <Template
+                variant={$Template.DESTINATIONS}
+                items={destinationItems}
+              />
             </Layout>
           </>
         ) : (
@@ -105,7 +108,7 @@ const LandingPage = ({ currentUser }) => {
         >
           <div className={[index["m__privacy"]].join(" ")}>
             <Modal
-              variant="privacy"
+              variant={$Modal.PRIVACY}
               criteria={toggleState.privacy}
               animate="slideup"
             />
@@ -126,7 +129,7 @@ const LandingPage = ({ currentUser }) => {
                 style={{ zIndex: 30, bottom: 0 }}
               >
                 <Bar
-                  variant="menu"
+                  variant={$Bar.MENU}
                   extendsTo={[color["b-t--white__2"]].join(" ")}
                 />
               </div>
@@ -154,7 +157,7 @@ const LandingPage = ({ currentUser }) => {
               ].join(" ")}
             >
               <Modal
-                variant="auth"
+                variant={$Modal.AUTH}
                 animate="slideup"
                 criteria={toggleState.auth}
                 lock
@@ -183,7 +186,7 @@ const LandingPage = ({ currentUser }) => {
               ].join(" ")}
             >
               <Modal
-                variant="globe"
+                variant={$Modal.GLOBE}
                 extendsTo={[
                   shape["w--full"],
                   shape["h--full"],

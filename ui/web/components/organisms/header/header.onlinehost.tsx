@@ -5,9 +5,7 @@ import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import header from "@header/header.module.scss";
 
-import { Button } from "@button";
-
-import * as $button from "@button/variants";
+import { Button, $Button } from "@button";
 
 export const OnlineHostHeader: React.FC<{}> = () => {
   return (
@@ -18,7 +16,7 @@ export const OnlineHostHeader: React.FC<{}> = () => {
       >
         <div>
           <Button
-            variant={$button.LOGO}
+            variant={$Button.LOGO}
             noName
             fill="black"
             extendsTo={[

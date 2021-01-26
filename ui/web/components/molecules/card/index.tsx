@@ -28,6 +28,32 @@ import { VideoCard } from "./card.video";
 import { StartingCard } from "./card.starting";
 import { CollectionCard } from "./card.collection";
 
+export const $Card = {
+  CATEGORY: "category",
+  HORIZONTAL: "horizontal",
+  VERTICAL: "vertical",
+  TYPESTAY: "typestay",
+  ARRANGEMENTS: "arrangements",
+  CHECKIN: "checkin",
+  REVIEW: "review",
+  STAY: "stay",
+  NEARBY: "nearby",
+  ONLINE: "online",
+  PARTICIPATE: "participate",
+  AVAILABLE: "available",
+  HOST: "host",
+  SET: "set",
+  AGAIN: "again",
+  WORKS: "works",
+  SHARING: "sharing",
+  HOW: "how",
+  ANYWHERE: "anywhere",
+  HOSTING: "hosting",
+  VIDEO: "video",
+  STARTING: "starting",
+  COLLECTION: "collection",
+};
+
 export interface CardProps {
   extendsTo?: string;
   variant?: string;

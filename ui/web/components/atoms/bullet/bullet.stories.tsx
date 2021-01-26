@@ -1,8 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Bullet, BulletProps } from "@bullet";
+import { Bullet, BulletProps, $Bullet } from "@bullet";
 
-/** types */
 import { types as OnlineHostTypes } from "@bullet/bullet.onlinehost";
 
 export default {
@@ -22,7 +21,7 @@ const TemplateStory: Story<BulletProps> = (args) => <Bullet {...args} />;
 
 export const Characteristic = TemplateStory.bind({});
 Characteristic.args = {
-  variant: "characteristic",
+  variant: $Bullet.CHARACTERISTIC,
 };
 Characteristic.argTypes = {
   characteristicType: {
@@ -35,7 +34,7 @@ Characteristic.argTypes = {
 
 export const Amenity = TemplateStory.bind({});
 Amenity.args = {
-  variant: "amenity",
+  variant: $Bullet.AMENITY,
 };
 Amenity.argTypes = {
   removed: {
@@ -49,21 +48,9 @@ Amenity.argTypes = {
   },
 };
 
-export const Review = TemplateStory.bind({});
-Review.args = {
-  variant: "score",
-};
-Review.decorators = [
-  (Story) => (
-    <div style={{ width: 300 }}>
-      <Story />
-    </div>
-  ),
-];
-
 export const Know = TemplateStory.bind({});
 Know.args = {
-  variant: "know",
+  variant: $Bullet.KNOW,
 };
 Know.argTypes = {
   categoryType: {
@@ -88,17 +75,17 @@ Know.argTypes = {
 
 export const Rating = TemplateStory.bind({});
 Rating.args = {
-  variant: "rating",
+  variant: $Bullet.RATING,
 };
 
 export const Bring = TemplateStory.bind({});
 Bring.args = {
-  variant: "bring",
+  variant: $Bullet.BRING,
 };
 
 export const Experience = TemplateStory.bind({});
 Experience.args = {
-  variant: "experience",
+  variant: $Bullet.EXPERIENCE,
 };
 Experience.argTypes = {
   experience: {
@@ -111,7 +98,7 @@ Experience.argTypes = {
 
 export const Priority = TemplateStory.bind({});
 Priority.args = {
-  variant: "priority",
+  variant: $Bullet.PRIORITY,
 };
 Priority.argTypes = {
   priority: {
@@ -124,7 +111,7 @@ Priority.argTypes = {
 
 export const Help = TemplateStory.bind({});
 Help.args = {
-  variant: "help",
+  variant: $Bullet.HELP,
 };
 Help.argTypes = {
   help: {
@@ -137,12 +124,12 @@ Help.argTypes = {
 
 export const Required = TemplateStory.bind({});
 Required.args = {
-  variant: "required",
+  variant: $Bullet.REQUIRED,
 };
 
 export const OnlineHost = TemplateStory.bind({});
 OnlineHost.args = {
-  variant: "onlinehost",
+  variant: $Bullet.ONLINEHOST,
 };
 OnlineHost.argTypes = {
   type: {
@@ -155,15 +142,15 @@ OnlineHost.argTypes = {
 
 export const Score = TemplateStory.bind({});
 Score.args = {
-  variant: "score",
+  variant: $Bullet.SCORE,
 };
 
 export const Question = TemplateStory.bind({});
 Question.args = {
-  variant: "question",
+  variant: $Bullet.QUESTION,
 };
 
 export const Check = TemplateStory.bind({});
 Check.args = {
-  variant: "check",
+  variant: $Bullet.CHECK,
 };

@@ -4,12 +4,9 @@ import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";
 
-import { Button } from "@button";
-import React from "react";
-import { Card } from "@card";
+import { Button, $Button } from "@button";
 
-import * as $button from "@button/variants";
-import * as $card from "@card/variants";
+import { Card, $Card } from "@card";
 
 export const StartingTemplate = ({
   title = "Starting in the next 6 hours",
@@ -69,7 +66,7 @@ export const StartingTemplate = ({
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div className={[space["m-r--8"]].join(" ")}>
             <Button
-              variant={$button.UNDERLINE}
+              variant={$Button.UNDERLINE}
               title={`Show (${temporaryCards.length})`}
             />
           </div>
@@ -77,7 +74,7 @@ export const StartingTemplate = ({
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
                 block
-                variant={$button.PAGINATE}
+                variant={$Button.PAGINATE}
                 animate
                 direction="left"
                 onClick={previous}
@@ -87,7 +84,7 @@ export const StartingTemplate = ({
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
                 block
-                variant={$button.PAGINATE}
+                variant={$Button.PAGINATE}
                 animate
                 direction="right"
                 onClick={next}
@@ -123,7 +120,7 @@ export const StartingTemplate = ({
                   >
                     <div style={{ marginRight: 10 }}>
                       <Card
-                        variant={$card.STARTING}
+                        variant={$Card.STARTING}
                         imgUrl={imgUrl}
                         videoUrl={videoUrl}
                       />

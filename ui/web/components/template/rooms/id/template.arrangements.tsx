@@ -1,11 +1,9 @@
-import { Card } from "@card";
+import { Card, $Card } from "@card";
 
 import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
-
-import * as $card from "@card/variants";
 
 /**
  * Renders the arrangement section
@@ -53,7 +51,7 @@ export const ArrangementsTemplate: React.FC<{
           {arrangements.map((arrangement, index) => {
             return (
               <div key={index} style={{ marginRight: 12 }}>
-                <Card variant={$card.ARRANGEMENTS} card={arrangement} />
+                <Card variant={$Card.ARRANGEMENTS} card={arrangement} />
               </div>
             );
           })}

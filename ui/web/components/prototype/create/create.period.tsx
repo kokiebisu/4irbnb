@@ -1,9 +1,7 @@
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 
-import { Input } from "@input";
-
-import * as $input from "@input/variants";
+import { Input, $Input } from "@input";
 
 export const PeriodCreate: React.FC<{ setData?: any; data?: any }> = ({
   setData,
@@ -28,7 +26,7 @@ export const PeriodCreate: React.FC<{ setData?: any; data?: any }> = ({
         <div style={{ width: 300 }} className={[space["m-t--22"]].join(" ")}>
           <div className={[space["m-b--12"]].join(" ")}>
             <Input
-              variant={$input.COUNTER}
+              variant={$Input.COUNTER}
               title="nights min"
               min={1}
               max={100}
@@ -39,7 +37,7 @@ export const PeriodCreate: React.FC<{ setData?: any; data?: any }> = ({
           </div>
           <div className={[space["m-b--12"]].join(" ")}>
             <Input
-              variant={$input.COUNTER}
+              variant={$Input.COUNTER}
               title="nights max"
               min={1}
               max={100}

@@ -3,11 +3,9 @@ import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 
 import { Layout } from "@layout";
-import { Card } from "@card";
+import { Card, $Card } from "@card";
 
 import { types } from "@card/card.hosting";
-
-import * as $card from "@card/variants";
 
 /**
  * Renders the priority section
@@ -30,7 +28,7 @@ export const HostingTemplate: React.FC<{}> = () => {
                 style={{ width: "25%" }}
                 className={[space["m-b--64"]].join(" ")}
               >
-                <Card variant={$card.HOSTING} type={type} />
+                <Card variant={$Card.HOSTING} type={type} />
               </div>
             );
           })}

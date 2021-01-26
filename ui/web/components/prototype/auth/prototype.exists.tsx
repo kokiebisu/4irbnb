@@ -2,9 +2,9 @@ import { useState } from "react";
 import Router from "next/router";
 import { useFormik } from "formik";
 
-import { Bullet } from "@bullet";
-import { Button } from "@button";
-import { Input } from "@input";
+import { Bullet, $Bullet } from "@bullet";
+import { Button, $Button } from "@button";
+import { Input, $Input } from "@input";
 
 import { validateExists as validate } from "@helper/auth";
 
@@ -14,12 +14,6 @@ import space from "@styles/space.module.scss";
 import shape from "@styles/shape.module.scss";
 import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
-
-import { Underline } from "@button/button.stories";
-
-import * as $bullet from "@bullet/variants";
-import * as $button from "@button/variants";
-import * as $input from "@input/variants";
 
 export const ExistsPrototype: React.FC<{
   data?: {
@@ -93,20 +87,20 @@ export const ExistsPrototype: React.FC<{
       <form onSubmit={formik.handleSubmit}>
         <div className={[space["m-v--16"]].join(" ")}>
           <Input
-            variant={$input.PASSWORD}
+            variant={$Input.PASSWORD}
             handleChange={formik.handleChange}
             value={formik.values.password}
             errors={formik.errors.password !== undefined}
           />
         </div>
         <div className={[space["m-v--16"]].join(" ")}>
-          <Button variant={$button.PRIMARY} loading={loading} title="Log in" />
+          <Button variant={$Button.PRIMARY} loading={loading} title="Log in" />
         </div>
         <div>
           {formik.errors.password !== undefined && (
             <div className={[space["m-t--6"]].join(" ")}>
               <Bullet
-                variant={$bullet.REQUIRED}
+                variant={$Bullet.REQUIRED}
                 message={formik.errors.password}
               />
             </div>
@@ -115,14 +109,14 @@ export const ExistsPrototype: React.FC<{
       </form>
       <div className={[space["m-v--16"]].join(" ")}>
         <Button
-          variant={$button.UNDERLINE}
+          variant={$Button.UNDERLINE}
           title="Login with a different account"
           onClick={() => alert("button pressed")}
         />
       </div>
       <div className={[space["m-v--16"]].join(" ")}>
         <Button
-          variant={$button.UNDERLINE}
+          variant={$Button.UNDERLINE}
           title="Forgot password?"
           onClick={() => alert("button pressed")}
         />

@@ -1,4 +1,3 @@
-/** components */
 import { DetailsHeader } from "@header/header.details";
 import { ExperiencesHeader } from "@header/header.experiences";
 import { HomesHeader } from "@header/header.homes";
@@ -6,6 +5,16 @@ import { OnlineHostHeader } from "@header/header.onlinehost";
 import { StayHeader } from "@header/header.stay";
 import { LandingHeader } from "@header/header.landing";
 import { WhiteHeader } from "@header/header.white";
+
+export const $Header = {
+  LANDING: "landing",
+  WHITE: "white",
+  DETAILS: "details",
+  HOMES: "homes",
+  EXPERIENCES: "experiences",
+  ONLINEHOST: "onlinehost",
+  STAY: "stay",
+};
 
 export interface HeaderProps {
   extendsTo?: any;

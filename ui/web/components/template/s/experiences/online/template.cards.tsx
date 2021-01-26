@@ -1,14 +1,11 @@
-import { Card } from "@card";
-import { Button } from "@button";
+import { Card, $Card } from "@card";
+import { Button, $Button } from "@button";
 
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 
 import { useSlide } from "@hooks/useSlide";
-
-import * as $button from "@button/variants";
-import * as $card from "@card/variants";
 
 export const CardsTemplate: React.FC<{ title?: string }> = ({
   title = "Title here",
@@ -119,7 +116,7 @@ export const CardsTemplate: React.FC<{ title?: string }> = ({
         <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div className={[space["m-r--8"]].join(" ")}>
             <Button
-              variant={$button.UNDERLINE}
+              variant={$Button.UNDERLINE}
               title={`Show (${temporaryCards.length})`}
             />
           </div>
@@ -127,7 +124,7 @@ export const CardsTemplate: React.FC<{ title?: string }> = ({
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
                 block
-                variant={$button.PAGINATE}
+                variant={$Button.PAGINATE}
                 animate
                 direction="left"
                 onClick={previous}
@@ -137,7 +134,7 @@ export const CardsTemplate: React.FC<{ title?: string }> = ({
             <div className={[space["m-h--4"]].join(" ")}>
               <Button
                 block
-                variant={$button.PAGINATE}
+                variant={$Button.PAGINATE}
                 animate
                 direction="right"
                 onClick={next}
@@ -169,7 +166,7 @@ export const CardsTemplate: React.FC<{ title?: string }> = ({
                 <div key={index} style={{ width: width / displayingColumns() }}>
                   <div style={{ marginRight: 10 }}>
                     <Card
-                      variant={$card.VIDEO}
+                      variant={$Card.VIDEO}
                       imgUrl={imgUrl}
                       videoUrl={videoUrl}
                     />

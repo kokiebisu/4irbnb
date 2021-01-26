@@ -1,9 +1,7 @@
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
-
-import * as $button from "@button/variants";
 
 const Layout: React.FC<{
   items?: { language?: string; region?: string }[];
@@ -32,7 +30,7 @@ const Layout: React.FC<{
           return (
             <div key={index}>
               <Button
-                variant={$button.GLOBE}
+                variant={$Button.GLOBE}
                 language={language}
                 region={region}
                 extendsTo={[font["text--left"]].join(" ")}
