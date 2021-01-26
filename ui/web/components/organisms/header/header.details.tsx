@@ -9,11 +9,9 @@ import header from "@header/header.module.scss";
 
 import { Star } from "@svg/original";
 
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 
 import { useHandleScroll } from "@hooks/useHandleScroll";
-
-import * as $button from "@button/variants";
 
 /**
  * Renders the details header
@@ -138,7 +136,7 @@ export const DetailsHeader: React.FC<{
                   </div>
                   <div>
                     <Button
-                      variant={$button.PRIMARY}
+                      variant={$Button.PRIMARY}
                       title="Check availability"
                     />
                   </div>

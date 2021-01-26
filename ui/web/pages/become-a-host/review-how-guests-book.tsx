@@ -1,8 +1,8 @@
 import Router from "next/router";
 
-import { Bar } from "@bar";
-import { Header } from "@header";
-import { Card } from "@card";
+import { Bar, $Bar } from "@bar";
+import { Header, $Header } from "@header";
+import { Card, $Card } from "@card";
 
 import font from "@styles/font.module.scss";
 import responsive from "@styles/responsive.module.scss";
@@ -11,8 +11,6 @@ import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 
 import { Protected } from "@svg/original";
-
-import * as $card from "@card/variants";
 
 const HowGuestsWillBookPage = () => {
   const proceed = () => {
@@ -30,10 +28,10 @@ const HowGuestsWillBookPage = () => {
     <div>
       <div style={{ position: "sticky", zIndex: 9999, top: 0 }}>
         <div>
-          <Header variant="stay" title="Booking settings" />
+          <Header variant={$Header.STAY} title="Booking settings" />
         </div>
         <div>
-          <Bar variant="progress" percentage={80} />
+          <Bar variant={$Bar.PROGRESS} percentage={80} />
         </div>
       </div>
       <div style={{ padding: "50px 0" }}>
@@ -51,7 +49,7 @@ const HowGuestsWillBookPage = () => {
           >
             {["qualified", "control", "notified"].map((how, index) => (
               <div key={index}>
-                <Card variant={$card.HOW} how={how} />
+                <Card variant={$Card.HOW} how={how} />
               </div>
             ))}
           </div>
@@ -93,7 +91,7 @@ const HowGuestsWillBookPage = () => {
             }}
           >
             <div style={{ width: "100%", maxWidth: 700, margin: "0 auto" }}>
-              <Bar variant="create" next={proceed} back={revert} />
+              <Bar variant={$Bar.CREATE} next={proceed} back={revert} />
             </div>
           </div>
         </div>

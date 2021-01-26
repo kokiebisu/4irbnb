@@ -3,9 +3,7 @@ import color from "@styles/color.module.scss";
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 
-import { Button } from "@button";
-
-import * as $button from "@button/variants";
+import { Button, $Button } from "@button";
 
 export const CreateBar: React.FC<{
   next?: () => void;
@@ -30,11 +28,11 @@ export const CreateBar: React.FC<{
         ].join(" ")}
       >
         <div>
-          <Button variant={$button.BACK} onClick={back} />
+          <Button variant={$Button.BACK} onClick={back} />
         </div>
         <div>
           <Button
-            variant={$button.PRIMARY}
+            variant={$Button.PRIMARY}
             title="Next"
             size="md"
             fill="#018489"

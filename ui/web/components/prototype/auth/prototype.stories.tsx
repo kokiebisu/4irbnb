@@ -1,8 +1,7 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Prototype, PrototypeProps } from "@prototype/auth";
+import { Prototype, PrototypeProps, $Prototype } from "@prototype/auth";
 
-/** styles */
 import color from "@styles/color.module.scss";
 import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
@@ -33,20 +32,20 @@ auth.args = {
 
 export const Login = TemplateStory.bind({});
 Login.args = {
-  variant: "login",
+  variant: $Prototype.LOGIN,
 };
 
 export const Signup = TemplateStory.bind({});
 Signup.args = {
-  variant: "signup",
+  variant: $Prototype.SIGNUP,
 };
 
 export const ForgotPassword = TemplateStory.bind({});
 ForgotPassword.args = {
-  variant: "forgotpassword",
+  variant: $Prototype.FORGOTPASSWORD,
 };
 
 export const Exists = TemplateStory.bind({});
 Exists.args = {
-  variant: "exists",
+  variant: $Prototype.EXISTS,
 };

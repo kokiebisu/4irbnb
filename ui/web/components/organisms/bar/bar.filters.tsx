@@ -1,8 +1,6 @@
-import { Button } from "@button";
+import { Button, $Button } from "@button";
 import space from "@styles/space.module.scss";
 import { useLayoutEffect, useRef, useState } from "react";
-
-import * as $button from "@button/variants";
 
 export const FiltersBar: React.FC<{}> = () => {
   const [width, setWidth] = useState(500);
@@ -84,7 +82,7 @@ export const FiltersBar: React.FC<{}> = () => {
         {primaryFilters.map((filter, index) => {
           return (
             <div key={index} className={[space["m-r--8"]].join(" ")}>
-              <Button variant={$button.FILTER} inverse label={filter} />
+              <Button variant={$Button.FILTER} inverse label={filter} />
             </div>
           );
         })}
@@ -118,7 +116,7 @@ export const FiltersBar: React.FC<{}> = () => {
             }}
           >
             <Button
-              variant={$button.PAGINATE}
+              variant={$Button.PAGINATE}
               direction="left"
               size={12}
               onClick={previous}
@@ -135,14 +133,14 @@ export const FiltersBar: React.FC<{}> = () => {
         >
           {state.activeSlide > 0 && (
             <div style={{ position: "absolute", left: 0, zIndex: 40 }}>
-              <Button variant={$button.PAGINATE} direction="left" />
+              <Button variant={$Button.PAGINATE} direction="left" />
             </div>
           )}
           {secondaryFilters.map((filter, index) => {
             return (
               <div key={index} className={[space["m-r--8"]].join(" ")}>
                 <Button
-                  variant={$button.FILTER}
+                  variant={$Button.FILTER}
                   label={filter}
                   onClick={previous}
                 />
@@ -167,7 +165,7 @@ export const FiltersBar: React.FC<{}> = () => {
             }}
           >
             <Button
-              variant={$button.PAGINATE}
+              variant={$Button.PAGINATE}
               direction="right"
               size={12}
               onClick={next}

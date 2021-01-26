@@ -4,7 +4,7 @@ import Router from "next/router";
 import { useStayDispatch, useStayState } from "@context/stay";
 
 import { Layout } from "@layout";
-import { Prototype as CreatePrototype } from "@prototype/create";
+import { Prototype, $Prototype } from "@prototype/create";
 
 const PhotosPage = () => {
   const stayDispatch = useStayDispatch();
@@ -33,7 +33,9 @@ const PhotosPage = () => {
     <Layout
       variant="create"
       title="Photos"
-      left={<CreatePrototype variant="photos" data={data} setData={setData} />}
+      left={
+        <Prototype variant={$Prototype.PHOTOS} data={data} setData={setData} />
+      }
       percentage={35}
       next={proceed}
       back={revert}

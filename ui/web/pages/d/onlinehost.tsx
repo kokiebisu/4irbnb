@@ -1,5 +1,5 @@
-import { Header } from "@header";
-import { Template } from "@template/d/onlinehost";
+import { Header, $Header } from "@header";
+import { Template, $Template } from "@template/d/onlinehost";
 import { Footer } from "@footer";
 
 import layout from "@styles/layout.module.scss";
@@ -13,29 +13,29 @@ const OnlineHost = () => {
   return (
     <div>
       <div>
-        <Header variant="onlinehost" />
+        <Header variant={$Header.ONLINEHOST} />
       </div>
       <div>
         <div className={[layout["container"]].join(" ")}>
-          <Template variant="banner" />
+          <Template variant={$Template.BANNER} />
         </div>
       </div>
       <div className={[layout["container"]].join(" ")}>
-        <Template variant="works" />
+        <Template variant={$Template.WORKS} />
       </div>
       <div
         className={[layout["container--shrink"], space["p-v--64"]].join(" ")}
       >
-        <Template variant="sharing" />
+        <Template variant={$Template.SHARING} />
       </div>
       <div className={[layout["container"], space["p-v--64"]].join(" ")}>
-        <Template variant="back" />
+        <Template variant={$Template.BACK} />
       </div>
       <div className={[layout["container"], space["p-v--100"]].join(" ")}>
-        <Template variant="faq" />
+        <Template variant={$Template.FAQ} />
       </div>
       <div>
-        <Template variant="more" />
+        <Template variant={$Template.MORE} />
       </div>
       <div>
         <Footer />

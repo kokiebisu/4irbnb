@@ -1,25 +1,19 @@
 import React from "react";
 import { useRouter } from "next/router";
 
-/** contexts */
 import { useToggleState } from "@context/toggle";
 
-/** Layouts */
 import layout from "@styles/layout.module.scss";
 
-/** components */
-import { Prototype as HomesPrototype } from "@prototype/homes";
-import { Modal } from "@modal";
+import { Prototype } from "@prototype/homes";
+import { Modal, $Modal } from "@modal";
 
-/** styles */
 import shape from "@styles/shape.module.scss";
 import responsive from "@styles/responsive.module.scss";
 import homes from "@styles/homes.module.scss";
 
-/** hooks */
 import { useTabTitle } from "@hooks/useTabTitle";
 
-/** prototypes */
 import "../../global/string";
 
 /**
@@ -43,7 +37,7 @@ const Homes = () => {
   return (
     <div className={[homes["display__content"]].join(" ")}>
       <div className={[homes["w__section"]].join(" ")}>
-        <HomesPrototype
+        <Prototype
           variant={type}
           city={city}
           stayType={stayType}
@@ -85,7 +79,7 @@ const Homes = () => {
                 shape["h--100v"],
               ].join(" ")}
             >
-              <Modal variant="menu" animate="slideup" />
+              <Modal variant={$Modal.MENU} animate="slideup" />
             </div>
           </div>
         )}

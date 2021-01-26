@@ -6,13 +6,10 @@ import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
 
-import { Button } from "@button";
-import { Input } from "@input";
+import { Button, $Button } from "@button";
+import { Input, $Input } from "@input";
 
 import { useStayDispatch } from "@context/stay";
-
-import * as $button from "@button/variants";
-import * as $input from "@input/variants";
 
 /**
  * Renders the /become-a-host/get-started page content
@@ -75,14 +72,14 @@ export const GetStartedCreate: React.FC<{}> = () => {
             >
               <div>
                 <Input
-                  variant={$input.PLACE}
+                  variant={$Input.PLACE}
                   value={stay}
                   changePlace={setStay}
                 />
               </div>
               <div>
                 <Input
-                  variant={$input.GUESTS}
+                  variant={$Input.GUESTS}
                   handleChange={formik.handleChange}
                   value={formik.values.guests}
                 />
@@ -90,7 +87,7 @@ export const GetStartedCreate: React.FC<{}> = () => {
             </div>
             <div>
               <Input
-                variant={$input.ADDRESS}
+                variant={$Input.ADDRESS}
                 handleChange={formik.handleChange}
                 value={formik.values.address}
               />
@@ -101,7 +98,7 @@ export const GetStartedCreate: React.FC<{}> = () => {
             >
               <div style={{ width: "100%" }}>
                 <Button
-                  variant={$button.PRIMARY}
+                  variant={$Button.PRIMARY}
                   title="Continue"
                   size="sm"
                   loading={loading}

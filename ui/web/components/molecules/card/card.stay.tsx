@@ -7,12 +7,9 @@ import responsive from "@styles/responsive.module.scss";
 
 import { Heart } from "@svg/original";
 
-import { Bullet } from "@bullet";
+import { Bullet, $Bullet } from "@bullet";
 import { ImageSlider } from "@particle/image.slider";
-import { Card } from "@card";
-
-import * as $bullet from "@bullet/variants";
-import * as $card from "@card/variants";
+import { Card, $Card } from "@card";
 
 /**
  * Renders the stay card component
@@ -55,7 +52,7 @@ export const StayCard: React.FC<{
       <div
         className={[responsive["b_to_n--sm"], space["m-b--32--sm"]].join(" ")}
       >
-        <Card variant={$card.HORIZONTAL} />
+        <Card variant={$Card.HORIZONTAL} />
       </div>
       <div className={[responsive["n_to_b--sm"]].join(" ")}>
         <div className={[space["p-v--22"]].join(" ")}>
@@ -177,7 +174,7 @@ export const StayCard: React.FC<{
                   </div>
                 </div>
                 <div>
-                  <Bullet variant={$bullet.RATING} />
+                  <Bullet variant={$Bullet.RATING} />
                 </div>
               </div>
             </div>

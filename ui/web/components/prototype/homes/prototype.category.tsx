@@ -4,12 +4,8 @@ import font from "@styles/font.module.scss";
 import shape from "@styles/shape.module.scss";
 
 import { Template } from "@template/s/homes";
-import { Bar } from "@bar";
-import { Button } from "@button";
-
-import { Filter } from "@button/button.stories";
-
-import * as $button from "@button/variants";
+import { Bar, $Bar } from "@bar";
+import { Button, $Button } from "@button";
 
 /**
  * Renders the category template component
@@ -62,13 +58,13 @@ export const CategoryPrototype: React.FC<{
           {filters.map((filter, index) => {
             return (
               <div key={index} className={[space["m-r--8"]].join(" ")}>
-                <Button variant={$button.FILTER} name={filter.name} />
+                <Button variant={$Button.FILTER} name={filter.name} />
               </div>
             );
           })}
         </div>
         <div className={[shape["only__sm"]].join(" ")}>
-          <Button variant={$button.FILTER} name={`filters ${filterCount}`} />
+          <Button variant={$Button.FILTER} name={`filters ${filterCount}`} />
         </div>
       </div>
       <div className={[space["m-b--32"]].join(" ")}>
@@ -87,7 +83,7 @@ export const CategoryPrototype: React.FC<{
           layout["justify-center"],
         ].join(" ")}
       >
-        <Bar variant="paginate" animate />
+        <Bar variant={$Bar.PAGINATE} animate />
       </div>
     </div>
   );

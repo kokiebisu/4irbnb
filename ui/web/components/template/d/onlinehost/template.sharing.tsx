@@ -3,11 +3,8 @@ import { Layout } from "@layout";
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 
-import { Card } from "@card";
-import { Button } from "@button";
-
-import * as $button from "@button/variants";
-import * as $card from "@card/variants";
+import { Card, $Card } from "@card";
+import { Button, $Button } from "@button";
 
 export const SharingTemplate: React.FC<{}> = () => {
   const sharings = ["meditate", "baking", "magic"];
@@ -28,14 +25,14 @@ export const SharingTemplate: React.FC<{}> = () => {
         {sharings.map((sharing, index) => {
           return (
             <div key={index}>
-              <Card variant={$card.SHARING} sharing={sharing} />
+              <Card variant={$Card.SHARING} sharing={sharing} />
             </div>
           );
         })}
       </div>
       <div className={[layout["flex"], layout["justify-center"]].join(" ")}>
         <Button
-          variant={$button.BORDER}
+          variant={$Button.BORDER}
           bold
           title="Start creating your experience"
         />

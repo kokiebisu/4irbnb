@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Card, CardProps } from "@card";
+import { Card, CardProps, $Card } from "@card";
 
 import { types as HostingTypes } from "@card/card.hosting";
 
@@ -31,7 +31,7 @@ const TemplateStory: Story<CardProps> = (args) => <Card {...args} />;
 
 export const Category = TemplateStory.bind({});
 Category.args = {
-  variant: "category",
+  variant: $Card.CATEGORY,
 };
 
 Category.decorators = [
@@ -44,7 +44,7 @@ Category.decorators = [
 
 export const Horizontal = TemplateStory.bind({});
 Horizontal.args = {
-  variant: "horizontal",
+  variant: $Card.HORIZONTAL,
 };
 
 Horizontal.decorators = [
@@ -66,7 +66,7 @@ Horizontal.argTypes = {
 
 export const Vertical = TemplateStory.bind({});
 Vertical.args = {
-  variant: "vertical",
+  variant: $Card.VERTICAL,
 };
 Vertical.argTypes = {
   save: {
@@ -76,7 +76,7 @@ Vertical.argTypes = {
 
 export const TypeStay = TemplateStory.bind({});
 TypeStay.args = {
-  variant: "typestay",
+  variant: $Card.TYPESTAY,
 };
 
 TypeStay.decorators = [
@@ -89,12 +89,12 @@ TypeStay.decorators = [
 
 export const Arrangements = TemplateStory.bind({});
 Arrangements.args = {
-  variant: "arrangements",
+  variant: $Card.ARRANGEMENTS,
 };
 
 export const Checkin = TemplateStory.bind({});
 Checkin.args = {
-  variant: "checkin",
+  variant: $Card.CHECKIN,
 };
 
 Checkin.decorators = [
@@ -107,22 +107,22 @@ Checkin.decorators = [
 
 export const Review = TemplateStory.bind({});
 Review.args = {
-  variant: "review",
+  variant: $Card.REVIEW,
 };
 
 export const Stay = TemplateStory.bind({});
 Stay.args = {
-  variant: "stay",
+  variant: $Card.STAY,
 };
 
 export const Nearby = TemplateStory.bind({});
 Nearby.args = {
-  variant: "nearby",
+  variant: $Card.NEARBY,
 };
 
 export const Online = TemplateStory.bind({});
 Online.args = {
-  variant: "online",
+  variant: $Card.ONLINE,
 };
 
 Online.decorators = [
@@ -135,7 +135,7 @@ Online.decorators = [
 
 export const Participate = TemplateStory.bind({});
 Participate.args = {
-  variant: "participate",
+  variant: $Card.PARTICIPATE,
 };
 Participate.argTypes = {
   categoryType: {
@@ -148,7 +148,7 @@ Participate.argTypes = {
 
 export const Available = TemplateStory.bind({});
 Available.args = {
-  variant: "available",
+  variant: $Card.AVAILABLE,
 };
 Available.decorators = [
   (Story) => (
@@ -160,7 +160,7 @@ Available.decorators = [
 
 export const Host = TemplateStory.bind({});
 Host.args = {
-  variant: "host",
+  variant: $Card.HOST,
 };
 Host.decorators = [
   (Story) => (
@@ -172,17 +172,17 @@ Host.decorators = [
 
 export const Set = TemplateStory.bind({});
 Set.args = {
-  variant: "set",
+  variant: $Card.SET,
 };
 
 export const Again = TemplateStory.bind({});
 Again.args = {
-  variant: "again",
+  variant: $Card.AGAIN,
 };
 
 export const Works = TemplateStory.bind({});
 Works.args = {
-  variant: "works",
+  variant: $Card.WORKS,
 };
 Works.argTypes = {
   work: {
@@ -195,7 +195,7 @@ Works.argTypes = {
 
 export const Sharing = TemplateStory.bind({});
 Sharing.args = {
-  variant: "sharing",
+  variant: $Card.SHARING,
 };
 Sharing.argsTypes = {
   sharing: {
@@ -208,7 +208,7 @@ Sharing.argsTypes = {
 
 export const How = TemplateStory.bind({});
 How.args = {
-  variant: "how",
+  variant: $Card.HOW,
 };
 How.argTypes = {
   how: {
@@ -228,7 +228,7 @@ How.decorators = [
 
 export const Hosting = TemplateStory.bind({});
 Hosting.args = {
-  variant: "hosting",
+  variant: $Card.HOSTING,
 };
 Hosting.argTypes = {
   type: {
@@ -241,7 +241,7 @@ Hosting.argTypes = {
 
 export const Video = TemplateStory.bind({});
 Video.args = {
-  variant: "video",
+  variant: $Card.VIDEO,
 };
 Video.decorators = [
   (Story) => (
@@ -253,7 +253,7 @@ Video.decorators = [
 
 export const Starting = TemplateStory.bind({});
 Starting.args = {
-  variant: "starting",
+  variant: $Card.STARTING,
 };
 Starting.decorators = [
   (Story) => (
@@ -265,7 +265,7 @@ Starting.decorators = [
 
 export const Collection = TemplateStory.bind({});
 Collection.args = {
-  variant: "collection",
+  variant: $Card.COLLECTION,
 };
 Collection.decorators = [
   (Story) => (

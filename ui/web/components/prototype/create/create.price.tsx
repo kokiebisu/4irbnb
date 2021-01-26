@@ -3,9 +3,7 @@ import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import layout from "@styles/layout.module.scss";
 
-import { Input } from "@input";
-
-import * as $input from "@input/variants";
+import { Input, $Input } from "@input";
 
 export const PriceCreate: React.FC<{ setData?: any; data?: any }> = ({
   setData,
@@ -76,7 +74,7 @@ export const PriceCreate: React.FC<{ setData?: any; data?: any }> = ({
           </div>
           <div>
             <Input
-              variant={$input.PRICE}
+              variant={$Input.PRICE}
               title="Base price"
               subtitle="This will be your default price gor days when you decide to turn off Smart Pricing."
               tip={17}
@@ -103,7 +101,7 @@ export const PriceCreate: React.FC<{ setData?: any; data?: any }> = ({
             <h3 className={[font["size--14"]].join(" ")}>Currency</h3>
           </div>
           <div>
-            <Input variant={$input.SELECT} inputType="currency" />
+            <Input variant={$Input.SELECT} inputType="currency" />
           </div>
         </div>
       </div>

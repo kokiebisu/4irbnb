@@ -1,6 +1,10 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Template, TemplateProps } from "@template/s/experiences/online";
+import {
+  Template,
+  TemplateProps,
+  $Template,
+} from "@template/s/experiences/online";
 
 export default {
   title: "Templates/S/Experiences/Online",
@@ -16,20 +20,20 @@ const TemplateStory: Story<TemplateProps> = (args) => <Template {...args} />;
 
 export const Banner = TemplateStory.bind({});
 Banner.args = {
-  variant: "banner",
+  variant: $Template.BANNER,
 };
 
 export const Cards = TemplateStory.bind({});
 Cards.args = {
-  variant: "cards",
+  variant: $Template.CARDS,
 };
 
 export const Starting = TemplateStory.bind({});
 Starting.args = {
-  variant: "starting",
+  variant: $Template.STARTING,
 };
 
 export const Collections = TemplateStory.bind({});
 Collections.args = {
-  variant: "collections",
+  variant: $Template.COLLECTIONS,
 };

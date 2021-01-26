@@ -1,8 +1,6 @@
-/** components */
-import { Bar } from "@bar";
-import { Header } from "@header";
+import { Bar, $Bar } from "@bar";
+import { Header, $Header } from "@header";
 
-/** styles **/
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import responsive from "@styles/responsive.module.scss";
@@ -28,10 +26,10 @@ export const CreateLayout: React.FC<{
     <div>
       <div style={{ position: "sticky", zIndex: 9999, top: 0 }}>
         <div>
-          <Header variant="stay" title={title} />
+          <Header variant={$Header.STAY} title={title} />
         </div>
         <div>
-          <Bar variant="progress" percentage={percentage} />
+          <Bar variant={$Bar.PROGRESS} percentage={percentage} />
         </div>
       </div>
       <div
@@ -74,7 +72,7 @@ export const CreateLayout: React.FC<{
               className={[space["p-h--32"]].join(" ")}
             >
               <Bar
-                variant="create"
+                variant={$Bar.CREATE}
                 next={next}
                 back={back}
                 criteria={criteria}

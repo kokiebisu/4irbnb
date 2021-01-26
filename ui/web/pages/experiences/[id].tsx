@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 
-import { Header } from "@header";
-import { Template } from "@template/experiences/id";
-import { Modal } from "@modal";
+import { Header, $Header } from "@header";
+import { Template, $Template } from "@template/experiences/id";
+import { Modal, $Modal } from "@modal";
 import { Footer } from "@footer";
 
 import { useToggleState } from "@context/toggle";
@@ -50,7 +50,7 @@ const id: () => string | JSX.Element = () => {
     <>
       <div>
         <div style={{ position: "relative", zIndex: 9000 }}>
-          <Header variant="white" />
+          <Header variant={$Header.WHITE} />
         </div>
         <AnimatePresence>
           {scrollPosition > 470 && (
@@ -65,14 +65,14 @@ const id: () => string | JSX.Element = () => {
                 width: "100%",
               }}
             >
-              <Header variant="details" />
+              <Header variant={$Header.DETAILS} />
             </motion.div>
           )}
         </AnimatePresence>
         <div className={[].join(" ")}>
           {experiences[experienceID] && (
             <Template
-              layoutType="experience"
+              layoutType={$Template.EXPERIENCES}
               extendsTo={[staysDetail["flex__panel"]].join(" ")}
               variant="panel"
               {...experiences[experienceID]}
@@ -87,7 +87,7 @@ const id: () => string | JSX.Element = () => {
               <div className={[staysDetail["b__characteristics"]].join(" ")}>
                 {experiences[experienceID] && (
                   <Template
-                    layoutType="experience"
+                    layoutType={$Template.EXPERIENCES}
                     variant="characteristics"
                     {...experiences[experienceID]}
                   />
@@ -101,7 +101,7 @@ const id: () => string | JSX.Element = () => {
                 >
                   <Template
                     layoutType="experience"
-                    variant="description"
+                    variant={$Template.DESCRIPTION}
                     {...experiences[experienceID]}
                   />
                 </div>
@@ -113,7 +113,7 @@ const id: () => string | JSX.Element = () => {
                   )}
                 >
                   <Template
-                    variant="participate"
+                    variant={$Template.PARTICIPATE}
                     {...experiences[experienceID]}
                   />
                 </div>
@@ -124,7 +124,10 @@ const id: () => string | JSX.Element = () => {
                     " "
                   )}
                 >
-                  <Template variant="bring" {...experiences[experienceID]} />
+                  <Template
+                    variant={$Template.BRING}
+                    {...experiences[experienceID]}
+                  />
                 </div>
               )}
             </div>
@@ -142,7 +145,7 @@ const id: () => string | JSX.Element = () => {
               >
                 {experiences[experienceID] && (
                   <Modal
-                    variant="booking"
+                    variant={$Modal.BOOKING}
                     extendsTo={[shape["w--full"]].join(" ")}
                     {...experiences[experienceID]}
                   />
@@ -154,14 +157,17 @@ const id: () => string | JSX.Element = () => {
             <div
               className={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
             >
-              <Template variant="host" {...experiences[experienceID]} />
+              <Template
+                variant={$Template.HOST}
+                {...experiences[experienceID]}
+              />
             </div>
           )}
           {experiences[experienceID] ? (
             <div
               className={[color["b-t--white__2"], space["p-v--32"]].join(" ")}
             >
-              <Template variant="experiences" />
+              <Template variant={$Template.EXPERIENCES} />
             </div>
           ) : null}
           {experiences[experienceID] ? (
@@ -170,7 +176,7 @@ const id: () => string | JSX.Element = () => {
             >
               <Template
                 layoutType="experience"
-                variant="reviews"
+                variant={$Template.REVIEWS}
                 {...experiences[experienceID]}
               />
             </div>
@@ -181,7 +187,7 @@ const id: () => string | JSX.Element = () => {
             >
               <Template
                 layoutType="experience"
-                variant="available"
+                variant={$Template.AVAILABLE}
                 {...experiences[experienceID]}
               />
             </div>
@@ -194,7 +200,7 @@ const id: () => string | JSX.Element = () => {
                 space["p-b--64"],
               ].join(" ")}
             >
-              <Template layoutType="experience" variant="know" />
+              <Template layoutType="experience" variant={$Template.KNOW} />
             </div>
           ) : null}
         </div>
@@ -206,7 +212,7 @@ const id: () => string | JSX.Element = () => {
           ].join(" ")}
           style={{ position: "fixed", bottom: 0, zIndex: 9999 }}
         >
-          <Modal variant="availability" />
+          {/* <Modal variant="availability" /> */}
         </div>
       </div>
       {toggleState.auth && (
@@ -221,7 +227,7 @@ const id: () => string | JSX.Element = () => {
             backgroundColor: "rgba(0, 0, 0, 0.6)",
           }}
         >
-          <Modal variant="menu" />
+          <Modal variant={$Modal.MENU} />
         </div>
       )}
     </>

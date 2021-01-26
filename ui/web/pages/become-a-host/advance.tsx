@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Router from "next/router";
 
-import { Prototype as CreatePrototype } from "@prototype/create";
+import { Prototype, $Prototype } from "@prototype/create";
 import { Layout } from "@layout";
 
 import { useStayDispatch, useStayState } from "@context/stay";
@@ -32,7 +32,9 @@ const AdvancePage = () => {
     <Layout
       variant="create"
       title="Calendar and availability"
-      left={<CreatePrototype variant="advance" data={data} setData={setData} />}
+      left={
+        <Prototype variant={$Prototype.ADVANCE} data={data} setData={setData} />
+      }
       percentage={85}
       next={proceed}
       back={revert}
