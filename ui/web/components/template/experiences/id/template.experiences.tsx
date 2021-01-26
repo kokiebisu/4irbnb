@@ -1,9 +1,7 @@
-import { Bullet } from "@bullet";
+import { Bullet, $Bullet } from "@bullet";
 
 import font from "@styles/font.module.scss";
 import space from "@styles/space.module.scss";
-
-import * as $Bullet from "@bullet/variants";
 
 /**
  * Renders the experiences section

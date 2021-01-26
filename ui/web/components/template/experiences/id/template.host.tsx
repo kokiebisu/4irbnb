@@ -12,8 +12,6 @@ import { Bullet, $Bullet } from "@bullet";
 
 import { Shield } from "@svg/original";
 
-import { Border } from "@button/button.stories";
-
 /**
  * Modifies the content which should be displayed initially
  * @param {string} content - The content which must be hidden
