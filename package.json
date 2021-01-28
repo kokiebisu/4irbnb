@@ -13,12 +13,19 @@
     "url": "https://github.com/kokiebisu/airbnb/issues"
   },
   "homepage": "https://github.com/kokiebisu/airbnb#readme",
-  "workspaces": {
-    "packages": [
-      "packages/*",
-      "ui/*",
-      "services/*"
-    ]
+  "private": true,
+  "scripts": {
+    "test:services": "lerna run test:ci --scope={@airbnb/auth, @airbnb/stays}",
+    "build:packages": "lerna run build --scope={@airbnb/error, @airbnb/content, @airbnb/middleware}",
+    "build:services": "lerna run build --scope={@airbnb/auth, @airbnb/stays}",
+    "build:web": "lerna run build --scope=@airbnb/web"
   },
-  "private": true
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "workspaces": [
+    "packages/*",
+    "ui/*",
+    "services/*"
+  ]
 }
