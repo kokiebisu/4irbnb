@@ -1,7 +1,7 @@
 version: 2
 jobs:
-  test-auth:
-    working_directory: ~/airbnb/services/auth
+  test-services:
+    working_directory: ~/airbnb
     docker:
       - image: circleci/node:10
     steps:
@@ -12,7 +12,7 @@ jobs:
           command: yarn
       - run:
           name: Testing
-          command: yarn test:ci
+          command: yarn test:services
 
   push-prod-auth:
     working_directory: ~/airbnb
