@@ -15,10 +15,11 @@
   "homepage": "https://github.com/kokiebisu/airbnb#readme",
   "private": true,
   "scripts": {
-    "test:services": "lerna run test:ci --scope={@airbnb/auth, @airbnb/stays}",
-    "build:packages": "lerna run build --scope={@airbnb/error, @airbnb/content, @airbnb/middleware}",
-    "build:services": "lerna run build --scope={@airbnb/auth, @airbnb/stays}",
-    "build:web": "lerna run build --scope=@airbnb/web"
+    "test:services": "lerna run test:ci --scope=@airbnb/{auth,stay} --since",
+    "build:packages": "lerna run build --scope=@airbnb/{error,content,middleware}",
+    "build:services": "lerna run build --scope=@airbnb/{auth,stay}",
+    "build:web": "lerna run build --scope=@airbnb/web",
+    "version:upgrade": "lerna version --conventional-commits --yes"
   },
   "devDependencies": {
     "lerna": "^3.22.1"
