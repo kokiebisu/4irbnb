@@ -8,6 +8,9 @@ jobs:
       - checkout:
           path: ~/airbnb
       - run:
+          name: Install lerna
+          command: yarn global add lerna -D -W
+      - run:
           name: Install dependencies
           command: yarn bootstrap
       - run:
@@ -50,6 +53,9 @@ jobs:
     steps:
       - checkout:
           path: ~/airbnb
+      - run:
+          name: Install lerna
+          command: yarn global add lerna -D -W
       - run:
           name: Install dependencies
           command: yarn bootstrap
