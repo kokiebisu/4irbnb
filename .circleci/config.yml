@@ -205,10 +205,10 @@ workflows:
       #             ignore:
       #               - develop
       - push-prod-stays:
-          filters:
-            branches:
-              only:
-                - develop
+          # filters:
+          #   branches:
+          #     only:
+          #       - develop
   web:
     jobs:
       - test-web:
