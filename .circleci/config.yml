@@ -1,6 +1,6 @@
 version: 2
 executors:
-  default:
+  default-executor:
     working_directory: ~/airbnb
     docker:
       - image: circleci/node:10
@@ -22,7 +22,7 @@ commands:
 
 jobs:
   test-auth:
-    executor: default
+    executor: default-executor
     steps:
       - prepare
       - run:
@@ -59,7 +59,7 @@ jobs:
   #         name: Pushing to docker hub
   #         command: docker push kokiebisu/nextbnb-auth-dev
   test-stays:
-    executor: default
+    executor: default-executor
     steps:
       - prepare
       - run:
@@ -96,7 +96,7 @@ jobs:
   #         name: Pushing to docker hub
   #         command: docker push kokiebisu/nextbnb-stays-dev
   test-web:
-    executor: default
+    executor: default-executor
     steps:
       - prepare
       - run:
