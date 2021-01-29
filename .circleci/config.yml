@@ -1,9 +1,9 @@
-version: 2
+version: 2.1
 executors:
   default-executor:
-    working_directory: ~/airbnb
     docker:
       - image: circleci/node:10
+    working_directory: ~/airbnb
 commands:
   prepare:
     description: "Installs and builds the lerna environment"
