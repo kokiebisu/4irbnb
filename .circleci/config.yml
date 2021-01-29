@@ -166,11 +166,11 @@ workflows:
         #       branches:
         #         ignore:
         #           - develop
-        - push-prod-auth:
-          filters:
-            branches:
-              ignore:
-                - develop
+      - push-prod-auth:
+        filters:
+          branches:
+            ignore:
+              - develop
             # filters:
             #   branches:
             #     only:
