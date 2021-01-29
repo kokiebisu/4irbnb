@@ -3,6 +3,7 @@ executors:
   test-executor:
     docker:
       - image: circleci/node:10
+    working_directory: ~/airbnb
   docker-executor:
     machine:
       image: ubuntu-2004:202010-01
