@@ -100,7 +100,8 @@ jobs:
     steps:
       - prepare
       - run:
-          name: yarn test:web
+          name: Testing
+          command: yarn test:web
   # storybook:
   #   working_directory: ~/airbnb/ui/web
   #   docker:
