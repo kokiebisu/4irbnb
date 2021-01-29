@@ -146,8 +146,8 @@ jobs:
 workflows:
   version: 2
   services:
-    jobs:
-      - test-services:
+    auth:
+      - test-auth:
           filters:
             branches:
               ignore:
@@ -164,13 +164,13 @@ workflows:
       #       branches:
       #         only:
       #           - develop
-  # stays:
-  #   jobs:
-  #     - test-stays:
-  #         filters:
-  #           branches:
-  #             ignore:
-  #               - develop
+    stays:
+      jobs:
+        - test-stays:
+            filters:
+              branches:
+                ignore:
+                  - develop
   #     - push-dev-stays:
   #         requires:
   #           - test-stays
