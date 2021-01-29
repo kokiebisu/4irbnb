@@ -23,15 +23,15 @@ commands:
     parameters:
       image-name:
         type: string
-      directory-name:
+      directory-path:
         type: string
     description: "Builds the docker image and pushes up to Dockerhub"
     steps:
       - checkout:
           path: ~/airbnb
       - run:
-          name: Building <<parameters.directory-name>> image
-          command: docker build -t <<parameters.image-name>> -f ./services/<<parameters.directory-name>>/Dockerfile .
+          name: Building <<parameters.directory-path>> image
+          command: docker build -t <<parameters.image-name>> -f <<parameters.directory-path>> .
       - run:
           name: Log in
           command: docker login -u $DOCKER_USER -p $DOCKER_PASS
@@ -47,21 +47,12 @@ jobs:
       - run:
           name: Testing
           command: yarn test:auth
-  # push-prod-auth:
-  #   working_directory: ~/airbnb
-  #   machine: true
-  #   steps:
-  #     - checkout:
-  #         path: ~/airbnb
-  #     - run:
-  #         name: building auth image
-  #         command: docker build -t kokiebisu/nextbnb-auth -f ./services/auth/Dockerfile .
-  #     - run:
-  #         name: Log in
-  #         command: docker login -u $DOCKER_USER -p $DOCKER_PASS
-  #     - run:
-  #         name: Pushing to docker hub
-  #         command: docker push kokiebisu/nextbnb-auth
+  push-prod-auth:
+    executor: default-executor
+    steps:
+      - docker-setup:
+          image-name: "kokiebisu/nextbnb-auth"
+          docker-path: "./services/auth/Dockerfile"
   # push-dev-auth:
   #   working_directory: ~/airbnb
   #   machine: true
@@ -85,21 +76,11 @@ jobs:
           name: Testing
           command: yarn test:stays
   push-prod-stays:
-    working_directory: ~/airbnb
-    machine: true
+    executor: default-executor
     steps:
       - docker-setup:
           image-name: "kokiebisu/nextbnb-stays"
-          directory-name: "stays"
-      # - run:
-      #     name: building stays image
-      #     command: docker build -t kokiebisu/nextbnb-stays -f ./services/stays/Dockerfile .
-      # - run:
-      #     name: Log in
-      #     command: docker login -u $DOCKER_USER -p $DOCKER_PASS
-      # - run:
-      #     name: Pushing to docker hub
-      #     command: docker push kokiebisu/nextbnb-stays
+          docker-path: "./services/stays/Dockerfile"
   # push-dev-stays:
   #   working_directory: ~/airbnb
   #   machine: true
@@ -185,11 +166,15 @@ workflows:
         #       branches:
         #         ignore:
         #           - develop
-        # - push-prod-auth:
-        #     filters:
-        #       branches:
-        #         only:
-        #           - develop
+        - push-prod-auth:
+          filters:
+            branches:
+              ignore:
+                - develop
+            # filters:
+            #   branches:
+            #     only:
+            #       - develop
   stays:
     jobs:
       - test-stays:

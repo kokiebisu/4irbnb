@@ -23,11 +23,7 @@
     "compile:packages": "lerna run compile --scope=@airbnb/{error,content,middleware}",
     "compile:services": "lerna run compile --scope=@airbnb/{auth,stays}",
     "compile:web": "lerna run build --scope=@airbnb/web",
-    "version:upgrade": "lerna version --conventional-commits --yes",
-    "build:auth-prod": "docker build -t kokiebisu/nextbnb-auth -f ./services/auth/Dockerfile .",
-    "build:auth-dev": "docker build -t kokiebisu/nextbnb-auth-dev -f ./services/auth/dev.Dockerfile .",
-    "build:stays-prod": "docker build -t kokiebisu/nextbnb-stays -f ./services/stays/Dockerfile .",
-    "build:stays-dev": "docker build -t kokiebisu/nextbnb-stays-dev -f ./services/stays/dev.Dockerfile ."
+    "version:upgrade": "lerna version --conventional-commits --yes"
   },
   "devDependencies": {
     "lerna": "^3.22.1"
