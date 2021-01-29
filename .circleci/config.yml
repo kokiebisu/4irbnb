@@ -63,6 +63,9 @@ jobs:
           name: Install dependencies
           command: yarn bootstrap
       - run:
+          name: Build packages
+          command: yarn compile:packages
+      - run:
           name: Testing
           command: yarn test:stays
   # push-prod-stays:
