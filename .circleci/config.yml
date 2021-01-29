@@ -77,7 +77,7 @@ jobs:
           directory-path: "./services/stays/Dockerfile"
   push-dev-stays:
     executor: docker-executor
-     steps:
+    steps:
       - docker-setup:
           image-name: "kokiebisu/nextbnb-stays-dev"
           directory-path: "./services/stays/dev.Dockerfile"
