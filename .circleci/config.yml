@@ -99,21 +99,12 @@ jobs:
       - run:
           name: Comparing snapshots
           command: yarn deploy:storybook
-  # push-prod-web:
-  #   working_directory: ~/airbnb
-  #   machine: true
-  #   steps:
-  #     - checkout:
-  #         path: ~/airbnb
-  #     - run:
-  #         name: Building web image
-  #         command: docker build -t kokiebisu/nextbnb-web -f ./ui/web/Dockerfile .
-  #     - run:
-  #         name: Log in
-  #         command: docker login -u $DOCKER_USER -p $DOCKER_PASS
-  #     - run:
-  #         name: Pushing to docker hub
-  #         command: docker push kokiebisu/nextbnb-web
+  push-prod-web:
+    executor: image-executor
+    steps:
+      - docker-setup:
+          image-name: "kokiebisu/nextbnb-web"
+          directory-path: "./ui/web/Dockerfile"
   # push-dev-web:
   #   working_directory: ~/airbnb
   #   machine: true
@@ -182,15 +173,15 @@ workflows:
             branches:
               ignore:
                 - develop
-  #     - push-dev-web:
-  #         requires:
-  #           - test-web
-  #         filters:
-  #           branches:
-  #             ignore:
-  #               - develop
-  #     - push-prod-web:
-  #         filters:
-  #           branches:
-  #             only:
-  #               - develop
+      #     - push-dev-web:
+      #         requires:
+      #           - test-web
+      #         filters:
+      #           branches:
+      #             ignore:
+      #               - develop
+      - push-prod-web:
+          filters:
+            branches:
+              only:
+                - develop
