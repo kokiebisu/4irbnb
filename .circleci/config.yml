@@ -145,13 +145,13 @@ workflows:
             branches:
               ignore:
                 - develop
-        # - push-dev-auth:
-        #     requires:
-        #       - test-auth
-        #     filters:
-        #       branches:
-        #         ignore:
-        #           - develop
+      - push-dev-auth:
+          requires:
+            - test-auth
+          filters:
+            branches:
+              ignore:
+                - develop
       - push-prod-auth:
           filters:
             branches:
