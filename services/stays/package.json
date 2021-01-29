@@ -24,6 +24,7 @@
   "dependencies": {
     "@airbnb/error": "1.0.0",
     "@airbnb/middleware": "1.0.0",
+    "@airbnb/web": "^1.0.0",
     "cookie-session": "^1.4.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
