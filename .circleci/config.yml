@@ -145,32 +145,32 @@ jobs:
 
 workflows:
   version: 2
-  services:
-    auth:
+  auth:
+    jobs:
       - test-auth:
           filters:
             branches:
               ignore:
                 - develop
-      # - push-dev-auth:
-      #     requires:
-      #       - test-auth
-      #     filters:
-      #       branches:
-      #         ignore:
-      #           - develop
-      # - push-prod-auth:
-      #     filters:
-      #       branches:
-      #         only:
-      #           - develop
-    stays:
-      jobs:
-        - test-stays:
-            filters:
-              branches:
-                ignore:
-                  - develop
+        # - push-dev-auth:
+        #     requires:
+        #       - test-auth
+        #     filters:
+        #       branches:
+        #         ignore:
+        #           - develop
+        # - push-prod-auth:
+        #     filters:
+        #       branches:
+        #         only:
+        #           - develop
+  stays:
+    jobs:
+      - test-stays:
+          filters:
+            branches:
+              ignore:
+                - develop
   #     - push-dev-stays:
   #         requires:
   #           - test-stays
