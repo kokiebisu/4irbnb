@@ -9,7 +9,7 @@ executors:
       image: ubuntu-2004:202010-01
     working_directory: ~/airbnb
 commands:
-  prepare:
+  prepare-env:
     description: "Installs and builds the lerna environment"
     steps:
       - checkout:
@@ -47,7 +47,7 @@ jobs:
   test-auth:
     executor: test-executor
     steps:
-      - prepare
+      - prepare-env
       - run:
           name: Testing
           command: yarn test:auth
@@ -66,7 +66,7 @@ jobs:
   test-stays:
     executor: test-executor
     steps:
-      - prepare
+      - prepare-env
       - run:
           name: Testing
           command: yarn test:stays
@@ -85,20 +85,20 @@ jobs:
   test-web:
     executor: test-executor
     steps:
-      - prepare
+      - prepare-env
       - run:
           name: Testing
           command: yarn test:web
   storybook:
     executor: test-executor
     steps:
-      - prepare
+      - prepare-env
       - run:
           name: Testing snapshot
-          command: yarn snapshot
+          command: yarn test:web
       - run:
           name: Comparing snapshots
-          command: npx chromatic --project-token=e017nqnn22h --exit-zero-on-changes
+          command: yarn deploy:storybook
   # push-prod-web:
   #   working_directory: ~/airbnb
   #   machine: true
