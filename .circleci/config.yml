@@ -205,6 +205,10 @@ workflows:
       #             ignore:
       #               - develop
       - push-prod-stays:
+          filters:
+            branches:
+              ignore:
+                - develop
           # filters:
           #   branches:
           #     only:
