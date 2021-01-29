@@ -1,23 +1,26 @@
 FROM node:alpine
 
 WORKDIR /app
-COPY package.json .
-RUN yarn --pure-lockfile --non-interactive
+COPY lerna.json package.json yarn.lock ./
+
+RUN yarn global add lerna -D -W
 
 WORKDIR /app/packages/error
-COPY packages/error/package.json .
-COPY packages/error .
-RUN yarn
+COPY packages/error/package.json packages/error/tsconfig.json ./
+COPY packages/error/src ./src
 
 WORKDIR /app/packages/middleware
-COPY packages/middleware/package.json .
-COPY packages/middleware ./
-RUN yarn
+COPY packages/middleware/package.json packages/middleware/tsconfig.json ./
+COPY packages/middleware/src ./src
 
 WORKDIR /app/services/stays
-COPY services/stays/package.json .
-COPY services/stays/tsconfig.json .
-COPY services/stays .
-RUN yarn
+COPY services/stays/package.json services/stays/tsconfig.json ./
+COPY services/stays/src ./src
+
+WORKDIR /app
+RUN yarn bootstrap
+
+RUN yarn compile:packages
+WORKDIR /app/services/stays
 
 CMD ["yarn", "dev"]
