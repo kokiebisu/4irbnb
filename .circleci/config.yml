@@ -4,7 +4,7 @@ executors:
     docker:
       - image: circleci/node:10
     working_directory: ~/airbnb
-  docker-executor:
+  image-executor:
     machine:
       image: ubuntu-2004:202010-01
     working_directory: ~/airbnb
@@ -52,13 +52,13 @@ jobs:
           name: Testing
           command: yarn test:auth
   push-prod-auth:
-    executor: docker-executor
+    executor: image-executor
     steps:
       - docker-setup:
           image-name: "kokiebisu/nextbnb-auth"
           directory-path: "./services/auth/Dockerfile"
   push-dev-auth:
-    executor: docker-executor
+    executor: image-executor
     steps:
       - docker-setup:
           image-name: "kokiebisu/nextbnb-auth-dev"
@@ -71,13 +71,13 @@ jobs:
           name: Testing
           command: yarn test:stays
   push-prod-stays:
-    executor: docker-executor
+    executor: image-executor
     steps:
       - docker-setup:
           image-name: "kokiebisu/nextbnb-stays"
           directory-path: "./services/stays/Dockerfile"
   push-dev-stays:
-    executor: docker-executor
+    executor: image-executor
     steps:
       - docker-setup:
           image-name: "kokiebisu/nextbnb-stays-dev"
@@ -89,22 +89,16 @@ jobs:
       - run:
           name: Testing
           command: yarn test:web
-  # storybook:
-  #   working_directory: ~/airbnb/ui/web
-  #   docker:
-  #     - image: circleci/node:10
-  #   steps:
-  #     - checkout:
-  #         path: ~/airbnb
-  #     - run:
-  #         name: Installing dependencies
-  #         command: yarn install
-  #     - run:
-  #         name: Testing snapshot
-  #         command: yarn snapshot
-  #     - run:
-  #         name: Comparing snapshots
-  #         command: npx chromatic --project-token=e017nqnn22h --exit-zero-on-changes
+  storybook:
+    executor: test-executor
+    steps:
+      - prepare
+      - run:
+          name: Testing snapshot
+          command: yarn snapshot
+      - run:
+          name: Comparing snapshots
+          command: npx chromatic --project-token=e017nqnn22h --exit-zero-on-changes
   # push-prod-web:
   #   working_directory: ~/airbnb
   #   machine: true
@@ -183,13 +177,11 @@ workflows:
             branches:
               ignore:
                 - develop
-  #     - storybook:
-  #         filters:
-  #           branches:
-  #             only:
-  #               - storybook
-  #             ignore:
-  #               - develop
+      - storybook:
+          filters:
+            branches:
+              ignore:
+                - develop
   #     - push-dev-web:
   #         requires:
   #           - test-web
