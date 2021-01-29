@@ -19,6 +19,25 @@ commands:
       - run:
           name: Build packages
           command: yarn compile:packages
+  docker-setup:
+    parameters:
+      image-name:
+        type: string
+      directory-name:
+        type: string
+    description: "Builds the docker image and pushes up to Dockerhub"
+    steps:
+      - checkout:
+          path: ~/airbnb
+      - run:
+          name: Building <<parameters.directory-name>> image
+          command: docker build -t <<parameters.image-name>> -f ./services/<<parameters.directory-name>>/Dockerfile .
+      - run:
+          name: Log in
+          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run:
+          name: Pushing to docker hub
+          command: docker push <<parameters.image-name>>
 
 jobs:
   test-auth:
@@ -65,21 +84,22 @@ jobs:
       - run:
           name: Testing
           command: yarn test:stays
-  # push-prod-stays:
-  #   working_directory: ~/airbnb
-  #   machine: true
-  #   steps:
-  #     - checkout:
-  #         path: ~/airbnb
-  #     - run:
-  #         name: building stays image
-  #         command: docker build -t kokiebisu/nextbnb-stays -f ./services/stays/Dockerfile .
-  #     - run:
-  #         name: Log in
-  #         command: docker login -u $DOCKER_USER -p $DOCKER_PASS
-  #     - run:
-  #         name: Pushing to docker hub
-  #         command: docker push kokiebisu/nextbnb-stays
+  push-prod-stays:
+    working_directory: ~/airbnb
+    machine: true
+    steps:
+      - docker-setup:
+          image-name: "kokiebisu/nextbnb-stays"
+          directory-name: "stays"
+      # - run:
+      #     name: building stays image
+      #     command: docker build -t kokiebisu/nextbnb-stays -f ./services/stays/Dockerfile .
+      # - run:
+      #     name: Log in
+      #     command: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      # - run:
+      #     name: Pushing to docker hub
+      #     command: docker push kokiebisu/nextbnb-stays
   # push-dev-stays:
   #   working_directory: ~/airbnb
   #   machine: true
@@ -177,18 +197,18 @@ workflows:
             branches:
               ignore:
                 - develop
-  #     - push-dev-stays:
-  #         requires:
-  #           - test-stays
-  #         filters:
-  #           branches:
-  #             ignore:
-  #               - develop
-  #     - push-prod-stays:
-  #         filters:
-  #           branches:
-  #             only:
-  #               - develop
+      #     - push-dev-stays:
+      #         requires:
+      #           - test-stays
+      #         filters:
+      #           branches:
+      #             ignore:
+      #               - develop
+      - push-prod-stays:
+          filters:
+            branches:
+              only:
+                - develop
   web:
     jobs:
       - test-web:
