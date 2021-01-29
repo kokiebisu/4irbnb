@@ -4,8 +4,8 @@
   "main": "./build/index.js",
   "license": "MIT",
   "scripts": {
-    "clean": "del ./build/*",
-    "build": "yarn clean && tsc"
+    "clean": "rm -rf ./build/*",
+    "compile": "yarn clean && tsc"
   },
   "dependencies": {
     "@airbnb/error": "^1.0.0",

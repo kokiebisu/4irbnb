@@ -16,11 +16,17 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "test:services": "lerna run test:ci --scope=@airbnb/{auth,stay} --since",
-    "build:packages": "lerna run build --scope=@airbnb/{error,content,middleware}",
-    "build:services": "lerna run build --scope=@airbnb/{auth,stay}",
-    "build:web": "lerna run build --scope=@airbnb/web",
-    "version:upgrade": "lerna version --conventional-commits --yes"
+    "bootstrap:production": "lerna bootstrap -- --production --no-optional",
+    "test:stays": "lerna run test:ci --scope=@airbnb/stays --since",
+    "test:auth": "lerna run test:ci --scope=@airbnb/auth --since",
+    "compile:packages": "lerna run compile --scope=@airbnb/{error,content,middleware}",
+    "compile:services": "lerna run compile --scope=@airbnb/{auth,stay}",
+    "compile:web": "lerna run build --scope=@airbnb/web",
+    "version:upgrade": "lerna version --conventional-commits --yes",
+    "build:auth-prod": "docker build -t kokiebisu/nextbnb-auth -f ./services/auth/Dockerfile .",
+    "build:auth-dev": "docker build -t kokiebisu/nextbnb-auth-dev -f ./services/auth/dev.Dockerfile .",
+    "build:stays-prod": "docker build -t kokiebisu/nextbnb-stays -f ./services/stays/Dockerfile .",
+    "build:stays-dev": "docker build -t kokiebisu/nextbnb-stays-dev -f ./services/stays/dev.Dockerfile ."
   },
   "devDependencies": {
     "lerna": "^3.22.1"
