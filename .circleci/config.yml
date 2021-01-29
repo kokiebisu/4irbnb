@@ -1,9 +1,12 @@
 version: 2
-jobs:
-  test-auth:
+executors:
+  default:
     working_directory: ~/airbnb
     docker:
       - image: circleci/node:10
+commands:
+  prepare:
+    description: "Installs and builds the lerna environment"
     steps:
       - checkout:
           path: ~/airbnb
@@ -16,6 +19,12 @@ jobs:
       - run:
           name: Build packages
           command: yarn compile:packages
+
+jobs:
+  test-auth:
+    executor: default
+    steps:
+      - prepare
       - run:
           name: Testing
           command: yarn test:auth
@@ -50,21 +59,9 @@ jobs:
   #         name: Pushing to docker hub
   #         command: docker push kokiebisu/nextbnb-auth-dev
   test-stays:
-    working_directory: ~/airbnb
-    docker:
-      - image: circleci/node:10
+    executor: default
     steps:
-      - checkout:
-          path: ~/airbnb
-      - run:
-          name: Install lerna
-          command: yarn global add lerna -D -W
-      - run:
-          name: Install dependencies
-          command: yarn bootstrap
-      - run:
-          name: Build packages
-          command: yarn compile:packages
+      - prepare
       - run:
           name: Testing
           command: yarn test:stays
@@ -98,16 +95,12 @@ jobs:
   #     - run:
   #         name: Pushing to docker hub
   #         command: docker push kokiebisu/nextbnb-stays-dev
-  # test-web:
-  #   working_directory: ~/airbnb/ui/web
-  #   docker:
-  #     - image: circleci/node:10
-  #   steps:
-  #     - checkout:
-  #         path: ~/airbnb
-  #     - run:
-  #         name: Installing dependencies
-  #         command: yarn install
+  test-web:
+    executor: default
+    steps:
+      - prepare
+      - run:
+          name: yarn test:web
   # storybook:
   #   working_directory: ~/airbnb/ui/web
   #   docker:
@@ -195,13 +188,13 @@ workflows:
   #           branches:
   #             only:
   #               - develop
-  # web:
-  #   jobs:
-  #     - test-web:
-  #         filters:
-  #           branches:
-  #             ignore:
-  #               - develop
+  web:
+    jobs:
+      - test-web:
+          filters:
+            branches:
+              ignore:
+                - develop
   #     - storybook:
   #         filters:
   #           branches:
