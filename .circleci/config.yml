@@ -164,13 +164,13 @@ workflows:
             branches:
               ignore:
                 - develop
-      #     - push-dev-stays:
-      #         requires:
-      #           - test-stays
-      #         filters:
-      #           branches:
-      #             ignore:
-      #               - develop
+      - push-dev-stays:
+          requires:
+            - test-stays
+          filters:
+            branches:
+              ignore:
+                - develop
       - push-prod-stays:
           filters:
             branches:
