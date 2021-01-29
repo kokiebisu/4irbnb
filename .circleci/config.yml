@@ -3,6 +3,7 @@ executors:
   default-executor:
     docker:
       - image: circleci/node:10
+    machine: true
     working_directory: ~/airbnb
 commands:
   prepare:
