@@ -52,7 +52,7 @@ jobs:
     steps:
       - docker-setup:
           image-name: "kokiebisu/nextbnb-auth"
-          docker-path: "./services/auth/Dockerfile"
+          directory-path: "./services/auth/Dockerfile"
   # push-dev-auth:
   #   working_directory: ~/airbnb
   #   machine: true
@@ -80,7 +80,7 @@ jobs:
     steps:
       - docker-setup:
           image-name: "kokiebisu/nextbnb-stays"
-          docker-path: "./services/stays/Dockerfile"
+          directory-path: "./services/stays/Dockerfile"
   # push-dev-stays:
   #   working_directory: ~/airbnb
   #   machine: true
