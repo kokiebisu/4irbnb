@@ -1,0 +1,37 @@
+{
+  "name": "@airbnb/components",
+  "version": "1.0.0",
+  "description": "Maintains the building blocks to sustain the layout",
+  "author": "Kenichi Okiebisu <a01056715@gmail.com>",
+  "homepage": "https://github.com/kokiebisu/airbnb/tree/master/packages/components#readme",
+  "license": "ISC",
+  "main": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kokiebisu/airbnb.git"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006 -c .storybook watch-css -s ./public",
+    "build-storybook": "build-storybook"
+  },
+  "bugs": {
+    "url": "https://github.com/kokiebisu/airbnb/issues"
+  },
+  "dependencies": {
+    "@airbnb/theme": "^1.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "theme-ui": "^0.3.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-react-jsx": "^7.12.12",
+    "@storybook/addon-actions": "^6.1.15",
+    "@storybook/addon-essentials": "^6.1.15",
+    "@storybook/addon-links": "^6.1.15",
+    "@storybook/react": "^6.1.15",
+    "@types/react": "^17.0.0",
+    "babel-loader": "^8.2.2",
+    "tsconfig-paths-webpack-plugin": "^3.3.0"
+  }
+}
