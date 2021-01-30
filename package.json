@@ -15,6 +15,7 @@
   "homepage": "https://github.com/kokiebisu/airbnb#readme",
   "private": true,
   "scripts": {
+    "clean": "lerna clean --yes",
     "bootstrap": "lerna bootstrap",
     "bootstrap:production": "lerna bootstrap -- --production --no-optional",
     "test:stays": "lerna run test:ci --scope=@airbnb/stays --since",

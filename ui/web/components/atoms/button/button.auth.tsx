@@ -1,7 +1,5 @@
-/** styles */
-import layout from "@styles/layout.module.scss";
-import color from "@styles/color.module.scss";
-import font from "@styles/font.module.scss";
+import { web } from "@airbnb/design/src/primitives";
+import { web as webStyles } from "@airbnb/design/src/components/atoms/button/button.auth";
 
 /**
  * Renders the auth button component
