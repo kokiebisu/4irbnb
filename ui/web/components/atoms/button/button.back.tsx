@@ -1,27 +1,23 @@
-/** styles */
-import font from "@styles/font.module.scss";
-import layout from "@styles/layout.module.scss";
-import color from "@styles/color.module.scss";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
 
 /** vectors */
 import { ChevronLeft } from "@svg/regular";
 
+import {
+  web,
+  theme,
+} from "@airbnb/design/src/components/atoms/button/button.back";
+
 export const BackButton: React.FC<{}> = () => {
   return (
-    <div
-      className={[
-        layout["flex"],
-        layout["items-center"],
-        color["bg--transparent"],
-      ].join(" ")}
-    >
+    <div css={web.wrapper} sx={theme.wrapper}>
       <div>
         <ChevronLeft width={20} stroke="#61AFB2" strokeWidth={3} />
       </div>
       <div>
-        <h4 className={[font["size--15"], color["c--darkgreen__3"]].join(" ")}>
-          Back
-        </h4>
+        <h4 sx={theme.label.text}>Back</h4>
       </div>
     </div>
   );

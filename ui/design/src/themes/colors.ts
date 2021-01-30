@@ -1,4 +1,18 @@
+const cyan = {
+  "50": "#e0f7fa",
+  "100": "#b2ebf2",
+  "200": "#80deea",
+  "300": "#4dd0e1",
+  "400": "#26c6da",
+  "500": "#00bcd4",
+  "600": "#00acc1",
+  "700": "#0097a7",
+  "800": "#00838f",
+  "900": "#006064",
+};
+
 export const colors = {
+  primary: "#c54a32",
   white: "#ffffff",
   white__1: "#f7f7f7",
   white__2: "#dddddd",
@@ -13,6 +27,28 @@ export const colors = {
   red__2: "#c13514",
   black: "#000000",
   darkgreen__3: "#008489",
+  cyan,
   green__1: "#268a04",
   transparent: "transparent",
+  modes: {
+    dark: {
+      primary: "#c54a32",
+      // white: "#ffffff",
+      // white__1: "#f7f7f7",
+      // white__2: "#dddddd",
+      // white__3: "#b0b0b0",
+      // gray__0: "#868686",
+      // gray__1: "#717171",
+      // gray__2: "#484848",
+      // gray__3: "#363636",
+      // gray__4: "#222222",
+      // lightred__0: "#fef8f6",
+      // warning: "#c54a32",
+      // red__2: "#c13514",
+      // black: "#000000",
+      // darkgreen__3: "#008489",
+      // green__1: "#268a04",
+      // transparent: "transparent",
+    },
+  },
 };
