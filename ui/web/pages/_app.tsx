@@ -2,7 +2,8 @@ import React from "react";
 import Head from "next/head";
 import "@styles/global.scss";
 import { ContextProvider } from "@context/provider";
-import { useToggleState } from "@context/toggle";
+import { ThemeProvider } from "theme-ui";
+import { theme } from "@airbnb/design/src/themes";
 
 const MyApp = ({ Component, pageProps }) => {
   return (
@@ -15,7 +16,9 @@ const MyApp = ({ Component, pageProps }) => {
         />
       </Head>
       <ContextProvider>
-        <Component {...pageProps} />
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
       </ContextProvider>
     </>
   );

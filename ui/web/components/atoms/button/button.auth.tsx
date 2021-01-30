@@ -1,5 +1,11 @@
-import { web } from "@airbnb/design/src/primitives";
-import { web as webStyles } from "@airbnb/design/src/components/atoms/button/button.auth";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+
+import {
+  web,
+  theme,
+} from "@airbnb/design/src/components/atoms/button/button.auth";
 
 /**
  * Renders the auth button component
@@ -10,10 +16,12 @@ export const AuthButton: React.FC<{ icon?: any; name?: string }> = ({
   name = "Email",
 }) => {
   return (
-    <div className={[layout["relative"], layout["all-center"]].join(" ")}>
-      <div className={[layout["al--0"]].join(" ")}>{icon}</div>
-      <div>
-        <h3 className={[font["size--14"], color["c--gray__2"]].join(" ")}>
+    <div style={web.wrapper} sx={theme.wrapper}>
+      <div style={web.icon.wrapper} sx={theme.icon.wrapper}>
+        {icon}
+      </div>
+      <div style={web.label.wrapper} sx={theme.label.wrapper}>
+        <h3 style={web.label.text} sx={theme.label.text}>
           Continue with {name}
         </h3>
       </div>

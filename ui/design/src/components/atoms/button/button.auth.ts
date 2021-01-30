@@ -1,39 +1,50 @@
-const style = {
-  wrapper: `
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  `,
+const shared = {
+  wrapper: {
+    position: "relative",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
   icon: {
-    wrapper: `
-      position: absolute;
-      left: 0;
-    `,
+    wrapper: {
+      position: "absolute",
+      left: 0,
+    },
   },
   label: {
-    wrapper: ``,
-    text: `
-      font-size: 14px;
-      color: ${({ theme }) => theme.colors.gray__1};
-    `,
+    wrapper: {},
+    text: {
+      fontSize: 14,
+      color: "gray__1",
+    },
   },
-};
+} as const;
+
+export const theme = {
+  wrapper: {},
+  icon: {
+    wrapper: {},
+  },
+  label: {
+    wrapper: {},
+    text: {},
+  },
+} as const;
 
 export const web = {
-  wrapper: { ...style.wrapper },
-  icon: { wrapper: { ...style.icon.wrapper } },
+  wrapper: { ...shared.wrapper },
+  icon: { wrapper: { ...shared.icon.wrapper } },
   label: {
-    wrapper: { ...style.label.wrapper },
-    text: { ...style.label.text },
+    wrapper: { ...shared.label.wrapper },
+    text: { ...shared.label.text },
   },
 };
 
 export const mobile = {
-  wrapper: { ...style.wrapper },
-  icon: { wrapper: { ...style.icon.wrapper } },
+  wrapper: { ...shared.wrapper },
+  icon: { wrapper: { ...shared.icon.wrapper } },
   label: {
-    wrapper: { ...style.label.wrapper },
-    text: { ...style.label.text },
+    wrapper: { ...shared.label.wrapper },
+    text: { ...shared.label.text },
   },
 };
