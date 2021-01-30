@@ -1,7 +1,11 @@
 {
   "name": "@airbnb/web",
   "version": "1.0.0",
-  "private": true,
+  "description": "",
+  "main": "./.next/server/pages/index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

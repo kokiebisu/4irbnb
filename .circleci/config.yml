@@ -1,156 +1,116 @@
-version: 2
+version: 2.1
+executors:
+  test-executor:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/airbnb
+  image-executor:
+    machine:
+      image: ubuntu-2004:202010-01
+    working_directory: ~/airbnb
+commands:
+  prepare-env:
+    description: "Installs and builds the lerna environment"
+    steps:
+      - checkout:
+          path: ~/airbnb
+      - run:
+          name: Install lerna
+          command: yarn global add lerna -D -W
+      - run:
+          name: Install dependencies
+          command: yarn bootstrap
+      - run:
+          name: Build packages
+          command: yarn compile:packages
+  docker-setup:
+    parameters:
+      image-name:
+        type: string
+      directory-path:
+        type: string
+    description: "Builds the docker image and pushes up to Dockerhub"
+    steps:
+      - checkout:
+          path: ~/airbnb
+      - run:
+          name: Building <<parameters.directory-path>> image
+          command: docker build -t <<parameters.image-name>> -f <<parameters.directory-path>> .
+      - run:
+          name: Log in
+          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run:
+          name: Pushing to docker hub
+          command: docker push <<parameters.image-name>>
+
 jobs:
   test-auth:
-    working_directory: ~/airbnb/services/auth
-    docker:
-      - image: circleci/node:10
+    executor: test-executor
     steps:
-      - checkout:
-          path: ~/airbnb
-      - run:
-          name: Install dependencies
-          command: yarn
+      - prepare-env
       - run:
           name: Testing
-          command: yarn test:ci
-
+          command: yarn test:auth
   push-prod-auth:
-    working_directory: ~/airbnb
-    machine: true
+    executor: image-executor
     steps:
-      - checkout:
-          path: ~/airbnb
-      - run:
-          name: building auth image
-          command: docker build -t kokiebisu/nextbnb-auth -f ./services/auth/Dockerfile .
-      - run:
-          name: Log in
-          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
-      - run:
-          name: Pushing to docker hub
-          command: docker push kokiebisu/nextbnb-auth
-
+      - docker-setup:
+          image-name: "kokiebisu/nextbnb-auth"
+          directory-path: "./services/auth/Dockerfile"
   push-dev-auth:
-    working_directory: ~/airbnb
-    machine: true
+    executor: image-executor
     steps:
-      - checkout:
-          path: ~/airbnb
-      - run:
-          name: building auth image
-          command: docker build -t kokiebisu/nextbnb-auth-dev -f ./services/auth/dev.Dockerfile .
-      - run:
-          name: Log in
-          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
-      - run:
-          name: Pushing to docker hub
-          command: docker push kokiebisu/nextbnb-auth-dev
-
+      - docker-setup:
+          image-name: "kokiebisu/nextbnb-auth-dev"
+          directory-path: "./services/auth/dev.Dockerfile"
   test-stays:
-    working_directory: ~/airbnb/services/stays
-    docker:
-      - image: circleci/node:10
+    executor: test-executor
     steps:
-      - checkout:
-          path: ~/airbnb
-      - run:
-          name: Install dependencies
-          command: yarn install
+      - prepare-env
       - run:
           name: Testing
-          command: yarn test:ci
-
+          command: yarn test:stays
   push-prod-stays:
-    working_directory: ~/airbnb
-    machine: true
+    executor: image-executor
     steps:
-      - checkout:
-          path: ~/airbnb
-      - run:
-          name: building stays image
-          command: docker build -t kokiebisu/nextbnb-stays -f ./services/stays/Dockerfile .
-      - run:
-          name: Log in
-          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
-      - run:
-          name: Pushing to docker hub
-          command: docker push kokiebisu/nextbnb-stays
-
+      - docker-setup:
+          image-name: "kokiebisu/nextbnb-stays"
+          directory-path: "./services/stays/Dockerfile"
   push-dev-stays:
-    working_directory: ~/airbnb
-    machine: true
+    executor: image-executor
     steps:
-      - checkout:
-          path: ~/airbnb
-      - run:
-          name: building stays image
-          command: docker build -t kokiebisu/nextbnb-stays-dev -f ./services/stays/dev.Dockerfile .
-      - run:
-          name: Log in
-          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
-      - run:
-          name: Pushing to docker hub
-          command: docker push kokiebisu/nextbnb-stays-dev
-
+      - docker-setup:
+          image-name: "kokiebisu/nextbnb-stays-dev"
+          directory-path: "./services/stays/dev.Dockerfile"
   test-web:
-    working_directory: ~/airbnb/ui/web
-    docker:
-      - image: circleci/node:10
+    executor: test-executor
     steps:
-      - checkout:
-          path: ~/airbnb
+      - prepare-env
       - run:
-          name: Installing dependencies
-          command: yarn install
-
+          name: Testing
+          command: yarn test:web
   storybook:
-    working_directory: ~/airbnb/ui/web
-    docker:
-      - image: circleci/node:10
+    executor: test-executor
     steps:
-      - checkout:
-          path: ~/airbnb
-      - run:
-          name: Installing dependencies
-          command: yarn install
+      - prepare-env
       - run:
           name: Testing snapshot
-          command: yarn snapshot
+          command: yarn test:web
       - run:
           name: Comparing snapshots
-          command: npx chromatic --project-token=e017nqnn22h --exit-zero-on-changes
-
+          command: yarn deploy:storybook
   push-prod-web:
-    working_directory: ~/airbnb
-    machine: true
+    executor: image-executor
     steps:
-      - checkout:
-          path: ~/airbnb
-      - run:
-          name: Building web image
-          command: docker build -t kokiebisu/nextbnb-web -f ./ui/web/Dockerfile .
-      - run:
-          name: Log in
-          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
-      - run:
-          name: Pushing to docker hub
-          command: docker push kokiebisu/nextbnb-web
-
+      - docker-setup:
+          image-name: "kokiebisu/nextbnb-web"
+          directory-path: "./ui/web/Dockerfile"
   push-dev-web:
-    working_directory: ~/airbnb
-    machine: true
+    executor: image-executor
     steps:
-      - checkout:
-          path: ~/airbnb
-      - run:
-          name: Building web image
-          command: docker build -t kokiebisu/nextbnb-web-dev -f ./ui/web/dev.Dockerfile .
-      - run:
-          name: Log in
-          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
-      - run:
-          name: Pushing to docker hub
-          command: docker push kokiebisu/nextbnb-web-dev
+      - docker-setup:
+          image-name: "kokiebisu/nextbnb-web-dev"
+          directory-path: "./ui/web/dev.Dockerfile"
 
 workflows:
   version: 2
@@ -202,8 +162,6 @@ workflows:
       - storybook:
           filters:
             branches:
-              only:
-                - storybook
               ignore:
                 - develop
       - push-dev-web:
