@@ -143,3 +143,16 @@ export const Globe = TemplateStory.bind({});
 Globe.args = {
   variant: $Button.GLOBE,
 };
+
+export const Location = TemplateStory.bind({});
+Location.args = {
+  variant: $Button.LOCATION,
+};
+Location.argTypes = {
+  type: {
+    control: {
+      type: "select",
+      options: ["explore", "recent"],
+    },
+  },
+};

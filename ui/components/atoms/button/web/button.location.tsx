@@ -1,8 +1,9 @@
-/** styles */
-import layout from "@styles/layout.module.scss";
-import space from "@styles/space.module.scss";
-import font from "@styles/font.module.scss";
-import color from "@styles/color.module.scss";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import { location } from "../styles";
+
+const { web, theme } = location;
 
 export const LocationButton: React.FC<{
   type?: "explore" | "recent";
@@ -10,7 +11,13 @@ export const LocationButton: React.FC<{
   from?: string;
   to?: string;
   guests?: number | null;
-}> = ({ type = "explore", location, from, to, guests }) => {
+}> = ({
+  type = "explore",
+  location = "Location",
+  from = "from",
+  to = "to",
+  guests = "1",
+}) => {
   const types = {
     explore: {
       icon: (
@@ -37,29 +44,19 @@ export const LocationButton: React.FC<{
   };
 
   return (
-    <div
-      className={[layout["flex"], layout["items-center"], space["p-v--8"]].join(
-        " "
-      )}
-    >
-      <div className={[space["m-r--16"]].join(" ")}>
+    <div css={web.wrapper}>
+      <div css={web.icon.wrapper}>
         <div style={{ width: 40, height: 40 }}>{types[type].icon}</div>
       </div>
       <div>
-        <div>
-          <h4 className={[font["text--left"], font["size--15"]].join(" ")}>
+        <div css={web.title.wrapper}>
+          <h4 style={{ textAlign: "left" }} css={web.title.text}>
             {types[type].title}
           </h4>
         </div>
         {type === "recent" && (
           <div>
-            <h4
-              className={[
-                font["text--left"],
-                font["size--10"],
-                color["c--gray__0"],
-              ].join(" ")}
-            >
+            <h4 css={web.guests.text} style={{ textAlign: "left" }}>
               {from ? from : ""}
               {to ? ` - ${to}` : ""}
               {guests
