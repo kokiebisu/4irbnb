@@ -12,3 +12,4 @@ export * from "./expand.styles";
 export * from "./report.styles";
 export * from "./search.styles";
 export * from "./nearby.styles";
+export * from "./video.styles";

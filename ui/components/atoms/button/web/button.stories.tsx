@@ -118,3 +118,8 @@ export const Nearby = TemplateStory.bind({});
 Nearby.args = {
   variant: $Button.NEARBY,
 };
+
+export const Video = TemplateStory.bind({});
+Video.args = {
+  variant: $Button.VIDEO,
+};
