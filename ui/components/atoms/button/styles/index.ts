@@ -21,3 +21,4 @@ export * from "./location.styles";
 export * from "./filter.styles";
 export * from "./option.styles";
 export * from "./paginate.styles";
+export * from "./link.styles";

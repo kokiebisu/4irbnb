@@ -171,3 +171,8 @@ export const Paginate = TemplateStory.bind({});
 Paginate.args = {
   variant: $Button.PAGINATE,
 };
+
+export const Link = TemplateStory.bind({});
+Link.args = {
+  variant: $Button.LINK,
+};
