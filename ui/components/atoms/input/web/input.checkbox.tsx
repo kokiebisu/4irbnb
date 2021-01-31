@@ -1,0 +1,50 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { amenity } from "atoms/bullet/styles";
+import { jsx } from "theme-ui";
+import { CheckPlain } from "../../../public/svg/original";
+
+export const CheckboxInput: React.FC<{
+  check?: () => void;
+  checked?: boolean;
+  title?: string;
+  description?: string;
+}> = ({ check, checked = true, title = "Title here", description }) => {
+  return (
+    <div css={{ display: "flex" }}>
+      <div css={{ marginRight: 16 }}>
+        <div
+          onClick={check}
+          style={{ cursor: "pointer", height: 24, width: 24 }}
+          css={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            border: "1px solid",
+            borderColor: "white__3",
+            borderRadius: 4,
+          }}
+          sx={{ ...(checked ? { bg: "black" } : { bg: "white" }) }}
+        >
+          <div
+            css={{
+              position: "relative",
+              padding: 12,
+              bottom: 1,
+            }}
+          >
+            <CheckPlain width={15} stroke="white" strokeWidth={5} />
+          </div>
+        </div>
+      </div>
+      <div css={{ position: "relative", top: 2 }}>
+        <div>
+          <h4>{title}</h4>
+        </div>
+        <div>
+          <h4 css={{ fontSize: 14, color: "gray__0" }}>{description}</h4>
+        </div>
+      </div>
+    </div>
+  );
+};

@@ -25,7 +25,7 @@ export const PrimaryButton: React.FC<{
   title = "Button",
   size = "md",
   fill,
-  loading = true,
+  loading = false,
   disable = false,
 }) => {
   const renderBackgroundColor = () => {
