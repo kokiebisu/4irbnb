@@ -113,3 +113,8 @@ export const Search = TemplateStory.bind({});
 Search.args = {
   variant: $Button.SEARCH,
 };
+
+export const Nearby = TemplateStory.bind({});
+Nearby.args = {
+  variant: $Button.NEARBY,
+};

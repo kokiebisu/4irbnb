@@ -11,3 +11,4 @@ export * from "./menu.styles";
 export * from "./expand.styles";
 export * from "./report.styles";
 export * from "./search.styles";
+export * from "./nearby.styles";

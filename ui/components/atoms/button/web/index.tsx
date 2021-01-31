@@ -9,7 +9,7 @@ import { PrivacyButton } from "./button.privacy";
 // import { BorderButton } from "@button/button.border";
 import { BannerButton } from "./button.banner";
 // import { PrimaryButton } from "@button/button.primary";
-import { SearchbarButton } from "./button.searchbar";
+// import { SearchbarButton } from "./button.searchbar";
 // import { PaginateButton } from "@button/button.paginate";
 import { ExpandButton } from "./button.expand";
 // import { OptionButton } from "@button/button.option";
@@ -25,7 +25,7 @@ import { TransparentButton } from "./button.transparent";
 // import { SearchButton } from "@button/button.search";
 // import { LocationButton } from "@button/button.location";
 import { LogoButton } from "./button.logo";
-// import { NearbyButton } from "@button/button.nearby";
+import { NearbyButton } from "./button.nearby";
 // import { CalendarButton } from "@button/button.calendar";
 // import { VideoButton } from "@button/button.video";
 import { DestinationButton } from "./button.destination";
@@ -111,7 +111,7 @@ export const Button: React.FC<ButtonProps> = ({
     closed: <ClosedButton {...props} />,
     // search: <SearchButton {...props} />,
     // location: <LocationButton {...props} />,
-    // nearby: <NearbyButton {...props} />,
+    nearby: <NearbyButton {...props} />,
     // calendar: <CalendarButton {...props} />,
     // searchbar: <SearchbarButton {...props} />,
     search: <SearchButton {...props} />,
