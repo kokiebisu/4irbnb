@@ -24,7 +24,7 @@ import { TransparentButton } from "./button.transparent";
 // import { LinkButton } from "@button/button.link";
 // import { SearchButton } from "@button/button.search";
 // import { LocationButton } from "@button/button.location";
-// import { LogoButton } from "@button/button.logo";
+import { LogoButton } from "./button.logo";
 // import { NearbyButton } from "@button/button.nearby";
 // import { CalendarButton } from "@button/button.calendar";
 // import { VideoButton } from "@button/button.video";
@@ -111,7 +111,7 @@ export const Button: React.FC<ButtonProps> = ({
     // nearby: <NearbyButton {...props} />,
     // calendar: <CalendarButton {...props} />,
     // searchbar: <SearchbarButton {...props} />,
-    // logo: <LogoButton {...props} />,
+    logo: <LogoButton {...props} />,
     // video: <VideoButton {...props} />,
     destination: <DestinationButton {...props} />,
     // currency: <CurrencyButton {...props} />,

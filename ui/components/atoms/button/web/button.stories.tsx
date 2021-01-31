@@ -93,3 +93,8 @@ export const Menu = TemplateStory.bind({});
 Menu.args = {
   variant: $Button.MENU,
 };
+
+export const Logo = TemplateStory.bind({});
+Logo.args = {
+  variant: $Button.LOGO,
+};

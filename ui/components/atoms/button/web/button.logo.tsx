@@ -1,8 +1,7 @@
-/** styles */
-import styles from "@styles/index.module.scss";
-
-/** vectors */
-import { NameLogo, NoNameLogo } from "@svg/logo";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import { NameLogo, NoNameLogo } from "../../../public/svg/logo";
 
 export const LogoButton: React.FC<{ noName?: boolean; fill?: string }> = ({
   noName = false,
