@@ -181,3 +181,8 @@ export const Modal = TemplateStory.bind({});
 Modal.args = {
   variant: $Button.MODAL,
 };
+
+export const Primary = TemplateStory.bind({});
+Primary.args = {
+  variant: $Button.PRIMARY,
+};

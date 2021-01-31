@@ -8,8 +8,8 @@ import { AuthButton } from "./button.auth";
 import { PrivacyButton } from "./button.privacy";
 import { BorderButton } from "./button.border";
 import { BannerButton } from "./button.banner";
-// import { PrimaryButton } from "@button/button.primary";
-// import { SearchbarButton } from "./button.searchbar";
+import { PrimaryButton } from "./button.primary";
+import { SearchbarButton } from "./button.searchbar";
 import { PaginateButton } from "./button.paginate";
 import { ExpandButton } from "./button.expand";
 import { OptionButton } from "./button.option";
@@ -22,7 +22,6 @@ import { ClosedButton } from "./button.closed";
 import { TransparentButton } from "./button.transparent";
 import { GlobeButton } from "./button.globe";
 import { LinkButton } from "./button.link";
-// import { SearchButton } from "@button/button.search";
 import { LocationButton } from "./button.location";
 import { LogoButton } from "./button.logo";
 import { NearbyButton } from "./button.nearby";
@@ -96,8 +95,7 @@ export const Button: React.FC<ButtonProps> = ({
     privacy: <PrivacyButton {...props} />,
     border: <BorderButton {...props} />,
     banner: <BannerButton {...props} />,
-    // primary: <PrimaryButton {...props} />,
-    // searchbar: <SearchbarButton {...props} />,
+    primary: <PrimaryButton {...props} />,
     paginate: <PaginateButton {...props} />,
     expand: <ExpandButton {...props} />,
     option: <OptionButton {...props} />,
@@ -109,11 +107,10 @@ export const Button: React.FC<ButtonProps> = ({
     globe: <GlobeButton {...props} />,
     link: <LinkButton {...props} />,
     closed: <ClosedButton {...props} />,
-    // search: <SearchButton {...props} />,
     location: <LocationButton {...props} />,
     nearby: <NearbyButton {...props} />,
     calendar: <CalendarButton {...props} />,
-    // searchbar: <SearchbarButton {...props} />,
+    searchbar: <SearchbarButton {...props} />,
     search: <SearchButton {...props} />,
     logo: <LogoButton {...props} />,
     video: <VideoButton {...props} />,

@@ -1,6 +1,6 @@
-import React from "react";
-
-/** components */
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
 import { LoadingAnimation } from "./animation.loading";
 
 export interface AnimationProps {
@@ -18,7 +18,7 @@ export const Animation: React.FC<AnimationProps> = ({
   extendsTo,
   ...props
 }) => {
-  const types = {
+  const types: { [type: string]: JSX.Element } = {
     loading: <LoadingAnimation {...props} />,
   };
   return (

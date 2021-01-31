@@ -1,8 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
+
 import { jsx } from "theme-ui";
 import { primary } from "../styles";
-import { Animation } from "@animation";
+import { Animation } from "../../../animation/web";
 
 const { web, theme } = primary;
 
@@ -24,30 +25,34 @@ export const PrimaryButton: React.FC<{
   title = "Button",
   size = "md",
   fill,
-  loading = false,
+  loading = true,
   disable = false,
 }) => {
   const renderBackgroundColor = () => {
     if (disable) {
       return { bg: "white__3" };
     }
-    return !fill && !disable && { bg: "primary" };
+    if (fill) {
+      return { bg: fill };
+    }
+    return { bg: "primary" };
   };
 
   const styles: { [type: string]: any } = {
     common: { color: "white", width: "100%", borderRadius: "8px" },
     sm: { fontSize: "14px", padding: "8px 14px" },
-    md: { fontSize: "16px", padding: "14px 20ox" },
+    md: { fontSize: "16px", padding: "14px 20px" },
     lg: { fontSize: "16px", padding: "14px 20px" },
   };
 
   return (
     <div
+      sx={{
+        ...renderBackgroundColor(),
+      }}
       css={{
         ...styles.common,
         ...styles[size],
-        ...renderBackgroundColor(),
-        ...(!disable && { bg: fill }),
       }}
     >
       {loading ? (
