@@ -24,3 +24,4 @@ export * from "./paginate.styles";
 export * from "./link.styles";
 export * from "./searchbar.styles";
 export * from "./modal.styles";
+export * from "./primary.styles";
