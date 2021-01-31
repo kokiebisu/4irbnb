@@ -3,6 +3,7 @@
 import { jsx } from "theme-ui";
 import { motion } from "framer-motion";
 
+import { MenuButton } from "./button.menu";
 import { AuthButton } from "./button.auth";
 import { PrivacyButton } from "./button.privacy";
 // import { BorderButton } from "@button/button.border";
@@ -88,7 +89,7 @@ export const Button: React.FC<ButtonProps> = ({
   const { disable } = props;
   const variants: { [key: string]: JSX.Element } = {
     auth: <AuthButton {...props} />,
-    // menu: <MenuButton {...props} />,
+    menu: <MenuButton {...props} />,
     privacy: <PrivacyButton {...props} />,
     // border: <BorderButton {...props} />,
     banner: <BannerButton {...props} />,

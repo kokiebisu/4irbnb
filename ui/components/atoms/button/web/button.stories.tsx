@@ -88,3 +88,8 @@ export const Transparent = TemplateStory.bind({});
 Transparent.args = {
   variant: $Button.TRANSPARENT,
 };
+
+export const Menu = TemplateStory.bind({});
+Menu.args = {
+  variant: $Button.MENU,
+};
