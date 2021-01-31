@@ -138,3 +138,8 @@ export const Currency = TemplateStory.bind({});
 Currency.args = {
   variant: $Button.CURRENCY,
 };
+
+export const Globe = TemplateStory.bind({});
+Globe.args = {
+  variant: $Button.GLOBE,
+};

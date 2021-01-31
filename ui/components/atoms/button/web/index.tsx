@@ -20,7 +20,7 @@ import { BackButton } from "./button.back";
 import { BarButton } from "./button.bar";
 import { ClosedButton } from "./button.closed";
 import { TransparentButton } from "./button.transparent";
-// import { GlobeButton } from "@button/button.globe";
+import { GlobeButton } from "./button.globe";
 // import { LinkButton } from "@button/button.link";
 // import { SearchButton } from "@button/button.search";
 // import { LocationButton } from "@button/button.location";
@@ -106,7 +106,7 @@ export const Button: React.FC<ButtonProps> = ({
     // modal: <ModalButton {...props} />,
     back: <BackButton {...props} />,
     transparent: <TransparentButton {...props} />,
-    // globe: <GlobeButton {...props} />,
+    globe: <GlobeButton {...props} />,
     // link: <LinkButton {...props} />,
     closed: <ClosedButton {...props} />,
     // search: <SearchButton {...props} />,

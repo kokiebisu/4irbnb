@@ -16,3 +16,4 @@ export * from "./video.styles";
 export * from "./border.styles";
 export * from "./calendar.styles";
 export * from "./currency.styles";
+export * from "./globe.styles";
