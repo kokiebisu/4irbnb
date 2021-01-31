@@ -9,7 +9,7 @@ import { PrivacyButton } from "./button.privacy";
 // import { BorderButton } from "@button/button.border";
 import { BannerButton } from "./button.banner";
 // import { PrimaryButton } from "@button/button.primary";
-// import { SearchbarButton } from "@button/button.searchbar";
+import { SearchbarButton } from "./button.searchbar";
 // import { PaginateButton } from "@button/button.paginate";
 import { ExpandButton } from "./button.expand";
 // import { OptionButton } from "@button/button.option";
@@ -30,6 +30,7 @@ import { LogoButton } from "./button.logo";
 // import { VideoButton } from "@button/button.video";
 import { DestinationButton } from "./button.destination";
 import { ReportButton } from "./button.report";
+import { SearchButton } from "./button.search";
 // import { CurrencyButton } from "@button/button.currency";
 
 export const $Button = {
@@ -113,6 +114,7 @@ export const Button: React.FC<ButtonProps> = ({
     // nearby: <NearbyButton {...props} />,
     // calendar: <CalendarButton {...props} />,
     // searchbar: <SearchbarButton {...props} />,
+    search: <SearchButton {...props} />,
     logo: <LogoButton {...props} />,
     // video: <VideoButton {...props} />,
     destination: <DestinationButton {...props} />,

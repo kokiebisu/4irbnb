@@ -108,3 +108,8 @@ export const Report = TemplateStory.bind({});
 Report.args = {
   variant: $Button.REPORT,
 };
+
+export const Search = TemplateStory.bind({});
+Search.args = {
+  variant: $Button.SEARCH,
+};

@@ -1,22 +1,18 @@
-/** vectors */
-import { MagnifyGlass } from "@svg/original";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import { MagnifyGlass } from "../../../public/svg/original";
+import { search } from "../styles";
 
-/** styles */
-import color from "@styles/color.module.scss";
-import layout from "@styles/layout.module.scss";
-import font from "@styles/font.module.scss";
-import space from "@styles/space.module.scss";
+const { web, theme } = search;
 
 export const SearchButton: React.FC<{ expand?: boolean }> = ({
   expand = false,
 }) => {
   return (
     <div
-      className={[
-        layout["flex"],
-        layout["items-center"],
-        color["bg--primary"],
-      ].join(" ")}
+      css={web.wrapper}
+      sx={theme.wrapper}
       style={{
         transitionDelay: expand ? "0s" : "0.25s",
         transition: "0.25s all ease",
@@ -25,11 +21,7 @@ export const SearchButton: React.FC<{ expand?: boolean }> = ({
         borderRadius: 50,
       }}
     >
-      <div
-        className={`${[space["p-l--14"]].join(" ")} ${[space["m-r--4"]].join(
-          " "
-        )}`}
-      >
+      <div css={web.icon.wrapper}>
         <MagnifyGlass width={13} height={13} stroke="white" strokeWidth={4} />
       </div>
       <div
@@ -40,7 +32,7 @@ export const SearchButton: React.FC<{ expand?: boolean }> = ({
           visibility: expand ? "visible" : "hidden",
         }}
       >
-        <p className={[font["size--15"], color["c--white"]].join(" ")}>
+        <p css={web.label.text} sx={theme.label.text}>
           Search
         </p>
       </div>
