@@ -10,11 +10,11 @@ import { BorderButton } from "./button.border";
 import { BannerButton } from "./button.banner";
 // import { PrimaryButton } from "@button/button.primary";
 // import { SearchbarButton } from "./button.searchbar";
-// import { PaginateButton } from "@button/button.paginate";
+import { PaginateButton } from "./button.paginate";
 import { ExpandButton } from "./button.expand";
-// import { OptionButton } from "@button/button.option";
+import { OptionButton } from "./button.option";
 import { UnderlineButton } from "./button.underline";
-// import { FilterButton } from "@button/button.filter";
+import { FilterButton } from "./button.filter";
 // import { ModalButton } from "@button/button.modal";
 import { BackButton } from "./button.back";
 import { BarButton } from "./button.bar";
@@ -98,11 +98,11 @@ export const Button: React.FC<ButtonProps> = ({
     banner: <BannerButton {...props} />,
     // primary: <PrimaryButton {...props} />,
     // searchbar: <SearchbarButton {...props} />,
-    // paginate: <PaginateButton {...props} />,
+    paginate: <PaginateButton {...props} />,
     expand: <ExpandButton {...props} />,
-    // option: <OptionButton {...props} />,
+    option: <OptionButton {...props} />,
     underline: <UnderlineButton {...props} />,
-    // filter: <FilterButton {...props} />,
+    filter: <FilterButton {...props} />,
     // modal: <ModalButton {...props} />,
     back: <BackButton {...props} />,
     transparent: <TransparentButton {...props} />,

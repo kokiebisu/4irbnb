@@ -156,3 +156,18 @@ Location.argTypes = {
     },
   },
 };
+
+export const Filter = TemplateStory.bind({});
+Filter.args = {
+  variant: $Button.FILTER,
+};
+
+export const Option = TemplateStory.bind({});
+Option.args = {
+  variant: $Button.OPTION,
+};
+
+export const Paginate = TemplateStory.bind({});
+Paginate.args = {
+  variant: $Button.PAGINATE,
+};

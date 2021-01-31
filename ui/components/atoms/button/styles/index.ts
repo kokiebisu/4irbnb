@@ -18,3 +18,6 @@ export * from "./calendar.styles";
 export * from "./currency.styles";
 export * from "./globe.styles";
 export * from "./location.styles";
+export * from "./filter.styles";
+export * from "./option.styles";
+export * from "./paginate.styles";

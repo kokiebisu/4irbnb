@@ -1,11 +1,11 @@
-/** styles **/
-import color from "@styles/color.module.scss";
-import space from "@styles/space.module.scss";
-import shape from "@styles/shape.module.scss";
-import button from "@button/button.module.scss";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import React from "react";
+import { jsx } from "theme-ui";
+import { paginate } from "../styles";
+import { ChevronLeft, ChevronRight } from "../../../public/svg/regular";
 
-/** vectors */
-import { ChevronLeft, ChevronRight } from "@svg/regular";
+const { web, theme } = paginate;
 
 /**
  * Renders the paginate button component
@@ -17,7 +17,7 @@ export const PaginateButton: React.FC<{
   disable?: boolean;
   size?: number;
 }> = ({ direction = "left", disable = false, size = 8 }) => {
-  const icons = {
+  const icons: { [icon: string]: JSX.Element } = {
     left: (
       <ChevronLeft
         width={10}
@@ -35,16 +35,7 @@ export const PaginateButton: React.FC<{
   };
   return (
     <>
-      <div
-        className={[
-          button["bg__paginate"],
-          space[`p--${size}`],
-          color["b--white__2"],
-          shape["br--circle"],
-        ].join(" ")}
-      >
-        {icons[direction]}
-      </div>
+      <div css={web.wrapper}>{icons[direction]}</div>
     </>
   );
 };
