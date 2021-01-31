@@ -83,3 +83,8 @@ export const Destination = TemplateStory.bind({});
 Destination.args = {
   variant: $Button.DESTINATION,
 };
+
+export const Transparent = TemplateStory.bind({});
+Transparent.args = {
+  variant: $Button.TRANSPARENT,
+};

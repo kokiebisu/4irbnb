@@ -18,7 +18,7 @@ import { UnderlineButton } from "./button.underline";
 import { BackButton } from "./button.back";
 import { BarButton } from "./button.bar";
 import { ClosedButton } from "./button.closed";
-// import { TransparentButton } from "@button/button.transparent";
+import { TransparentButton } from "./button.transparent";
 // import { GlobeButton } from "@button/button.globe";
 // import { LinkButton } from "@button/button.link";
 // import { SearchButton } from "@button/button.search";
@@ -101,7 +101,7 @@ export const Button: React.FC<ButtonProps> = ({
     // filter: <FilterButton {...props} />,
     // modal: <ModalButton {...props} />,
     back: <BackButton {...props} />,
-    // transparent: <TransparentButton {...props} />,
+    transparent: <TransparentButton {...props} />,
     // globe: <GlobeButton {...props} />,
     // link: <LinkButton {...props} />,
     closed: <ClosedButton {...props} />,
