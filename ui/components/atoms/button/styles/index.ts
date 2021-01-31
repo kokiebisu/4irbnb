@@ -8,3 +8,4 @@ export * from "./privacy.styles";
 export * from "./destination.styles";
 export * from "./transparent.styles";
 export * from "./menu.styles";
+export * from "./expand.styles";

@@ -98,3 +98,8 @@ export const Logo = TemplateStory.bind({});
 Logo.args = {
   variant: $Button.LOGO,
 };
+
+export const Expand = TemplateStory.bind({});
+Expand.args = {
+  variant: $Button.EXPAND,
+};
