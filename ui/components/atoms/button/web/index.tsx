@@ -15,7 +15,7 @@ import { ExpandButton } from "./button.expand";
 import { OptionButton } from "./button.option";
 import { UnderlineButton } from "./button.underline";
 import { FilterButton } from "./button.filter";
-// import { ModalButton } from "@button/button.modal";
+import { ModalButton } from "./button.modal";
 import { BackButton } from "./button.back";
 import { BarButton } from "./button.bar";
 import { ClosedButton } from "./button.closed";
@@ -103,7 +103,7 @@ export const Button: React.FC<ButtonProps> = ({
     option: <OptionButton {...props} />,
     underline: <UnderlineButton {...props} />,
     filter: <FilterButton {...props} />,
-    // modal: <ModalButton {...props} />,
+    modal: <ModalButton {...props} />,
     back: <BackButton {...props} />,
     transparent: <TransparentButton {...props} />,
     globe: <GlobeButton {...props} />,

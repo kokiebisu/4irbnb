@@ -176,3 +176,8 @@ export const Link = TemplateStory.bind({});
 Link.args = {
   variant: $Button.LINK,
 };
+
+export const Modal = TemplateStory.bind({});
+Modal.args = {
+  variant: $Button.MODAL,
+};
