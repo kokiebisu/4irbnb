@@ -133,3 +133,8 @@ export const Calendar = TemplateStory.bind({});
 Calendar.args = {
   variant: $Button.CALENDAR,
 };
+
+export const Currency = TemplateStory.bind({});
+Currency.args = {
+  variant: $Button.CURRENCY,
+};

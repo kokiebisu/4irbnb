@@ -31,7 +31,7 @@ import { VideoButton } from "./button.video";
 import { DestinationButton } from "./button.destination";
 import { ReportButton } from "./button.report";
 import { SearchButton } from "./button.search";
-// import { CurrencyButton } from "@button/button.currency";
+import { CurrencyButton } from "./button.currency";
 
 export const $Button = {
   AUTH: "auth",
@@ -118,7 +118,7 @@ export const Button: React.FC<ButtonProps> = ({
     logo: <LogoButton {...props} />,
     video: <VideoButton {...props} />,
     destination: <DestinationButton {...props} />,
-    // currency: <CurrencyButton {...props} />,
+    currency: <CurrencyButton {...props} />,
     bar: <BarButton {...props} />,
     report: <ReportButton {...props} />,
   };
