@@ -29,6 +29,7 @@ import { LogoButton } from "./button.logo";
 // import { CalendarButton } from "@button/button.calendar";
 // import { VideoButton } from "@button/button.video";
 import { DestinationButton } from "./button.destination";
+import { ReportButton } from "./button.report";
 // import { CurrencyButton } from "@button/button.currency";
 
 export const $Button = {
@@ -59,6 +60,7 @@ export const $Button = {
   VIDEO: "video",
   DESTINATION: "destination",
   CURRENCY: "currency",
+  REPORT: "report",
 };
 
 export interface ButtonProps {
@@ -116,6 +118,7 @@ export const Button: React.FC<ButtonProps> = ({
     destination: <DestinationButton {...props} />,
     // currency: <CurrencyButton {...props} />,
     bar: <BarButton {...props} />,
+    report: <ReportButton {...props} />,
   };
 
   return (

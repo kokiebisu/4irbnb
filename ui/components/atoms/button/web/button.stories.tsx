@@ -103,3 +103,8 @@ export const Expand = TemplateStory.bind({});
 Expand.args = {
   variant: $Button.EXPAND,
 };
+
+export const Report = TemplateStory.bind({});
+Report.args = {
+  variant: $Button.REPORT,
+};
