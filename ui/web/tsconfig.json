@@ -58,6 +58,12 @@
       "@api/*": ["api/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".storybook/**/*"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".storybook/**/*",
+    "../components/atoms/button/web/button.border.tsx"
+  ],
   "exclude": ["node_modules"]
 }

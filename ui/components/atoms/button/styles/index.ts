@@ -13,3 +13,5 @@ export * from "./report.styles";
 export * from "./search.styles";
 export * from "./nearby.styles";
 export * from "./video.styles";
+export * from "./border.styles";
+export * from "./calendar.styles";

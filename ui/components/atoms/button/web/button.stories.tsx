@@ -123,3 +123,13 @@ export const Video = TemplateStory.bind({});
 Video.args = {
   variant: $Button.VIDEO,
 };
+
+export const Border = TemplateStory.bind({});
+Border.args = {
+  variant: $Button.BORDER,
+};
+
+export const Calendar = TemplateStory.bind({});
+Calendar.args = {
+  variant: $Button.CALENDAR,
+};

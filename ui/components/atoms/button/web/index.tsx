@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { MenuButton } from "./button.menu";
 import { AuthButton } from "./button.auth";
 import { PrivacyButton } from "./button.privacy";
-// import { BorderButton } from "@button/button.border";
+import { BorderButton } from "./button.border";
 import { BannerButton } from "./button.banner";
 // import { PrimaryButton } from "@button/button.primary";
 // import { SearchbarButton } from "./button.searchbar";
@@ -26,7 +26,7 @@ import { TransparentButton } from "./button.transparent";
 // import { LocationButton } from "@button/button.location";
 import { LogoButton } from "./button.logo";
 import { NearbyButton } from "./button.nearby";
-// import { CalendarButton } from "@button/button.calendar";
+import { CalendarButton } from "./button.calendar";
 import { VideoButton } from "./button.video";
 import { DestinationButton } from "./button.destination";
 import { ReportButton } from "./button.report";
@@ -94,7 +94,7 @@ export const Button: React.FC<ButtonProps> = ({
     auth: <AuthButton {...props} />,
     menu: <MenuButton {...props} />,
     privacy: <PrivacyButton {...props} />,
-    // border: <BorderButton {...props} />,
+    border: <BorderButton {...props} />,
     banner: <BannerButton {...props} />,
     // primary: <PrimaryButton {...props} />,
     // searchbar: <SearchbarButton {...props} />,
@@ -112,7 +112,7 @@ export const Button: React.FC<ButtonProps> = ({
     // search: <SearchButton {...props} />,
     // location: <LocationButton {...props} />,
     nearby: <NearbyButton {...props} />,
-    // calendar: <CalendarButton {...props} />,
+    calendar: <CalendarButton {...props} />,
     // searchbar: <SearchbarButton {...props} />,
     search: <SearchButton {...props} />,
     logo: <LogoButton {...props} />,

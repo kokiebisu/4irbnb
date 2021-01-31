@@ -1,30 +1,22 @@
 import { motion } from "framer-motion";
 
-import { AuthButton } from "@button/button.auth";
-import { MenuButton } from "@button/button.menu";
-import { PrivacyButton } from "@button/button.privacy";
-import { BorderButton } from "@button/button.border";
-import { BannerButton } from "@button/button.banner";
+import { BorderButton } from "@airbnb/components/atoms/button/web/button.border";
+
 import { PrimaryButton } from "@button/button.primary";
 import { SearchbarButton } from "@button/button.searchbar";
 import { PaginateButton } from "@button/button.paginate";
-import { ExpandButton } from "@button/button.expand";
+
 import { OptionButton } from "@button/button.option";
-import { UnderlineButton } from "@button/button.underline";
+
 import { FilterButton } from "@button/button.filter";
 import { ModalButton } from "@button/button.modal";
-import { BackButton } from "@button/button.back";
-import { ClosedButton } from "@button/button.closed";
-import { TransparentButton } from "@button/button.transparent";
 import { GlobeButton } from "@button/button.globe";
 import { LinkButton } from "@button/button.link";
-import { SearchButton } from "@button/button.search";
+
 import { LocationButton } from "@button/button.location";
-import { LogoButton } from "@button/button.logo";
-import { NearbyButton } from "@button/button.nearby";
+
 import { CalendarButton } from "@button/button.calendar";
-import { VideoButton } from "@button/button.video";
-import { DestinationButton } from "@button/button.destination";
+
 import { CurrencyButton } from "@button/button.currency";
 
 import layout from "@styles/layout.module.scss";
