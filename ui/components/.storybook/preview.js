@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../styles.css";
+import "../global.css";
 // import { ContextProvider } from "../context/provider";
 import { ThemeProvider } from "theme-ui";
 import { theme } from "@airbnb/theme";

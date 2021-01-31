@@ -11,7 +11,7 @@ import button from "@button/button.module.scss";
 import modalStyles from "@modal/modal.module.scss";
 
 import { Input, $Input } from "@input";
-import { Button, $Button } from "@button";
+import { Button, $Button } from "@airbnb/components/atoms/button/web";
 import { getAuthContents } from "@button/content/content.auth";
 
 import { validateAuth as validate } from "@helper/auth";
@@ -106,22 +106,19 @@ export const AuthPrototype: React.FC<{}> = () => {
         <div>
           {methods.map((method, index) => {
             return (
-              <div key={index} className={[space["m-v--14"]].join(" ")}>
+              <div key={index} style={{ margin: "14px 0" }}>
                 <Button
                   variant={$Button.AUTH}
-                  extendsTo={[
-                    button["hover__auth"],
-                    color["bg--transparent"],
-                    layout["block"],
-                    shape["w--full"],
-                    space["p-h--12"],
-                    space["p-v--12"],
-                    shape["br--8"],
-                  ].join(" ")}
+                  extendsTo={{
+                    border: "2px solid #b0b0b0",
+                    padding: 12,
+                    borderRadius: 8,
+                  }}
                   auth={method}
                   onClick={auths[method].handleClick}
                   icon={auths[method].icon}
                   name={auths[method].name}
+                  block
                 />
               </div>
             );

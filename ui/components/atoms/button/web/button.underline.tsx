@@ -1,6 +1,9 @@
-/** styles */
-import layout from "@styles/layout.module.scss";
-import color from "@styles/color.module.scss";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import { underline } from "../styles";
+
+const { web, theme } = underline;
 
 /**
  * Renders the underline button component
@@ -19,20 +22,18 @@ export const UnderlineButton: React.FC<{
   unselected = false,
 }) => {
   return (
-    <div
-      className={[layout["inline-block"], color["bg--transparent"]].join(" ")}
-    >
+    <div css={web.wrapper}>
       {bold ? (
         <h3
           style={{ fontSize: font }}
-          className={unselected ? [color["c--white__3"]].join(" ") : undefined}
+          sx={unselected ? theme.label.unselected : undefined}
         >
           {unselected ? title : <u>{title}</u>}
         </h3>
       ) : (
         <h4
           style={{ fontSize: font }}
-          className={unselected && [color["c--white__3"]].join(" ")}
+          sx={unselected ? theme.label.unselected : undefined}
         >
           {unselected ? title : <u>{title}</u>}
         </h4>

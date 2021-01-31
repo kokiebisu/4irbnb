@@ -4,6 +4,7 @@ const shared = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    bg: "transparent",
   },
   icon: {
     wrapper: {
@@ -47,4 +48,10 @@ export const mobile = {
     wrapper: { ...shared.label.wrapper },
     text: { ...shared.label.text },
   },
+};
+
+export const auth = {
+  theme,
+  web,
+  mobile,
 };

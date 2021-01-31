@@ -53,3 +53,33 @@ export const Back = TemplateStory.bind({});
 Back.args = {
   variant: $Button.BACK,
 };
+
+export const Underline = TemplateStory.bind({});
+Underline.args = {
+  variant: $Button.UNDERLINE,
+};
+
+export const Banner = TemplateStory.bind({});
+Banner.args = {
+  variant: $Button.BANNER,
+};
+
+export const Bar = TemplateStory.bind({});
+Bar.args = {
+  variant: $Button.BAR,
+};
+
+export const Closed = TemplateStory.bind({});
+Closed.args = {
+  variant: $Button.CLOSED,
+};
+
+export const Privacy = TemplateStory.bind({});
+Privacy.args = {
+  variant: $Button.PRIVACY,
+};
+
+export const Destination = TemplateStory.bind({});
+Destination.args = {
+  variant: $Button.DESTINATION,
+};

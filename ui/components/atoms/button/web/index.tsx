@@ -1,23 +1,23 @@
-import React from "react";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
 import { motion } from "framer-motion";
 
 import { AuthButton } from "./button.auth";
-
-// import { AuthButton } from "@button/button.auth";
-// import { MenuButton } from "@button/button.menu";
-// import { PrivacyButton } from "@button/button.privacy";
+import { PrivacyButton } from "./button.privacy";
 // import { BorderButton } from "@button/button.border";
-// import { BannerButton } from "@button/button.banner";
+import { BannerButton } from "./button.banner";
 // import { PrimaryButton } from "@button/button.primary";
 // import { SearchbarButton } from "@button/button.searchbar";
 // import { PaginateButton } from "@button/button.paginate";
 // import { ExpandButton } from "@button/button.expand";
 // import { OptionButton } from "@button/button.option";
-// import { UnderlineButton } from "@button/button.underline";
+import { UnderlineButton } from "./button.underline";
 // import { FilterButton } from "@button/button.filter";
 // import { ModalButton } from "@button/button.modal";
 import { BackButton } from "./button.back";
-// import { ClosedButton } from "@button/button.closed";
+import { BarButton } from "./button.bar";
+import { ClosedButton } from "./button.closed";
 // import { TransparentButton } from "@button/button.transparent";
 // import { GlobeButton } from "@button/button.globe";
 // import { LinkButton } from "@button/button.link";
@@ -27,12 +27,8 @@ import { BackButton } from "./button.back";
 // import { NearbyButton } from "@button/button.nearby";
 // import { CalendarButton } from "@button/button.calendar";
 // import { VideoButton } from "@button/button.video";
-// import { DestinationButton } from "@button/button.destination";
+import { DestinationButton } from "./button.destination";
 // import { CurrencyButton } from "@button/button.currency";
-
-// import layout from "@styles/layout.module.scss";
-// import shape from "@styles/shape.module.scss";
-// import animation from "@styles/animation.module.scss";
 
 export const $Button = {
   AUTH: "auth",
@@ -65,7 +61,7 @@ export const $Button = {
 };
 
 export interface ButtonProps {
-  extendsTo?: string;
+  extendsTo?: any;
   variant?: string;
   onClick?: () => void;
   block?: boolean;
@@ -80,7 +76,7 @@ export interface ButtonProps {
  * @param {Object} children - A JSX that will be part of the component
  */
 export const Button: React.FC<ButtonProps> = ({
-  extendsTo = "",
+  extendsTo = {},
   variant,
   children,
   onClick,
@@ -93,22 +89,22 @@ export const Button: React.FC<ButtonProps> = ({
   const variants: { [key: string]: JSX.Element } = {
     auth: <AuthButton {...props} />,
     // menu: <MenuButton {...props} />,
-    // privacy: <PrivacyButton {...props} />,
+    privacy: <PrivacyButton {...props} />,
     // border: <BorderButton {...props} />,
-    // banner: <BannerButton {...props} />,
+    banner: <BannerButton {...props} />,
     // primary: <PrimaryButton {...props} />,
     // searchbar: <SearchbarButton {...props} />,
     // paginate: <PaginateButton {...props} />,
     // expand: <ExpandButton {...props} />,
     // option: <OptionButton {...props} />,
-    // underline: <UnderlineButton {...props} />,
+    underline: <UnderlineButton {...props} />,
     // filter: <FilterButton {...props} />,
     // modal: <ModalButton {...props} />,
     back: <BackButton {...props} />,
     // transparent: <TransparentButton {...props} />,
     // globe: <GlobeButton {...props} />,
     // link: <LinkButton {...props} />,
-    // closed: <ClosedButton {...props} />,
+    closed: <ClosedButton {...props} />,
     // search: <SearchButton {...props} />,
     // location: <LocationButton {...props} />,
     // nearby: <NearbyButton {...props} />,
@@ -116,8 +112,9 @@ export const Button: React.FC<ButtonProps> = ({
     // searchbar: <SearchbarButton {...props} />,
     // logo: <LogoButton {...props} />,
     // video: <VideoButton {...props} />,
-    // destination: <DestinationButton {...props} />,
+    destination: <DestinationButton {...props} />,
     // currency: <CurrencyButton {...props} />,
+    bar: <BarButton {...props} />,
   };
 
   return (
@@ -126,14 +123,14 @@ export const Button: React.FC<ButtonProps> = ({
       whileTap={{ scale: disable || !animate ? 1 : 0.995 }}
       whileHover={{ scale: disable || !animate ? 1 : 1.005 }}
       data-testid={`${variant}-button--atom`}
-      // className={`${extendsTo} ${
-      //   block
-      //     ? [layout["block"], shape["w--full"]].join(" ")
-      //     : layout["inline-block"]
-      // } ${[animation["transition"]].join(" ")}`}
+      css={
+        block
+          ? { display: "block", width: "100%" }
+          : { display: "inline-block" }
+      }
       onClick={!disable ? onClick : undefined}
       disabled={disable}
-      style={{ cursor: disable ? "default" : "pointer" }}
+      style={{ cursor: disable ? "default" : "pointer", ...extendsTo }}
     >
       {variant ? variants[variant] : children}
     </motion.button>

@@ -2,7 +2,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { ChevronLeft } from "../../../public/svg/regular";
-import { web, theme } from "../styles/back.styles";
+import { back } from "../styles/back.styles";
+
+const { web, theme } = back;
 
 export const BackButton: React.FC<{}> = () => {
   return (

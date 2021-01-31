@@ -16,5 +16,6 @@ export const theme = {
   fontWeights,
   lineHeights,
   letterSpacings,
+  space: [0, 4, 8, 12, 16, 20, 24],
   useBodyStyles: false,
 };

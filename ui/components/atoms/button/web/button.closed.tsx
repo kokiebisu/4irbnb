@@ -1,11 +1,17 @@
-/** vectors */
-import { CheckPlain, Close } from "@svg/original";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+
+import { closed } from "../styles";
+import { CheckPlain, Close } from "../../../public/svg/original";
+
+const { web, theme } = closed;
 
 export const ClosedButton: React.FC<{
   selected?: boolean;
   content?: string;
 }> = ({ content = "close", selected = false }) => {
-  const contents = {
+  const contents: { [content: string]: JSX.Element } = {
     close: (
       <Close
         width={16}
@@ -24,17 +30,7 @@ export const ClosedButton: React.FC<{
     ),
   };
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: 5,
-        borderRadius: 9999,
-        backgroundColor: selected ? "black" : "white",
-        border: `1px solid ${selected ? "black" : "lightgray"}`,
-      }}
-    >
+    <div css={web.wrapper} sx={selected ? theme.selected : theme.unselected}>
       {contents[content]}
     </div>
   );

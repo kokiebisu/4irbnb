@@ -1,7 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { web, theme } from "../styles/auth.styles";
+import { auth } from "../styles";
+
+const { web, theme } = auth;
 
 /**
  * Renders the auth button component

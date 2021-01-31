@@ -12,7 +12,7 @@ const shared = {
   },
 };
 
-export const theme = {
+const theme = {
   wrapper: {
     bg: "transparent",
   },
@@ -24,7 +24,7 @@ export const theme = {
   },
 };
 
-export const web = {
+const web = {
   wrapper: { ...shared.wrapper },
   icon: {
     wrapper: { ...shared.icon.wrapper },
@@ -35,7 +35,7 @@ export const web = {
   },
 };
 
-export const mobile = {
+const mobile = {
   wrapper: { ...shared.wrapper },
   icon: {
     wrapper: { ...shared.icon.wrapper },
@@ -44,4 +44,10 @@ export const mobile = {
     wrapper: { ...shared.label.wrapper },
     text: { ...shared.label.text },
   },
+};
+
+export const back = {
+  theme,
+  web,
+  mobile,
 };
