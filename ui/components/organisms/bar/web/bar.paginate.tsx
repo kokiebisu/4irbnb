@@ -1,13 +1,11 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import React from "react";
+import { jsx } from "theme-ui";
+
 import Router from "next/router";
-
-import { Button, $Button } from "@button";
-
-import layout from "@styles/layout.module.scss";
-import space from "@styles/space.module.scss";
-import color from "@styles/color.module.scss";
-import shape from "@styles/shape.module.scss";
-import bar from "@bar/bar.module.scss";
-import font from "@styles/font.module.scss";
+import { $Bar } from ".";
+import { Button, $Button } from "../../../atoms/button/web";
 
 /**
  * Renders paginate bar component
@@ -23,22 +21,24 @@ export const PaginateBar: React.FC<{
       return (
         <>
           <button
-            style={{
+            css={{
               width: 36,
               height: 36,
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
+              margin: "0 6px",
+              ...(page === 1
+                ? { borderRadius: 9999 }
+                : {
+                    ":hover": {
+                      textDecoration: "underline",
+                    },
+                  }),
             }}
-            className={`${
-              page === 1
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
+            sx={{
+              ...(page === 1 && { bg: "black", color: "white" }),
+            }}
           >
             1
           </button>
@@ -50,28 +50,24 @@ export const PaginateBar: React.FC<{
               alignItems: "center",
               justifyContent: "center",
               bottom: 4,
+              position: "relative",
+              margin: "0 6px",
             }}
-            className={[
-              layout["relative"],
-              space["m-h--6"],
-              layout["inline-block"],
-            ].join(" ")}
           >
             ...
           </div>
           <button
-            style={{
+            css={{
               width: 36,
               height: 36,
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
+              margin: "0 6px",
+              ":hover": {
+                textDecoration: "underline",
+              },
             }}
-            className={`${[
-              bar["hover__paginate"],
-              space["m-h--6"],
-              layout["inline-block"],
-            ].join(" ")}`}
             onClick={() => Router.push(`/s/homes/${page - 1}`)}
           >
             {page - 1}
@@ -83,30 +79,28 @@ export const PaginateBar: React.FC<{
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
+              margin: "0 6px",
+              borderRadius: 9999,
             }}
-            className={`${[
-              color["bg--black"],
-              color["c--white"],
-              shape["br--circle"],
-            ].join(" ")} ${[space["m-h--6"], layout["inline-block"]].join(
-              " "
-            )}`}
+            sx={{
+              bg: "black",
+              color: "white",
+            }}
           >
             {page}
           </button>
           <button
-            style={{
+            css={{
               width: 36,
               height: 36,
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
+              margin: "0 6px",
+              ":hover": {
+                textDecoration: "underline",
+              },
             }}
-            className={`${[
-              bar["hover__paginate"],
-              space["m-h--6"],
-              layout["inline-block"],
-            ].join(" ")}`}
             onClick={() => Router.push(`/s/homes/${page + 1}`)}
           >
             {page + 1}
@@ -119,30 +113,26 @@ export const PaginateBar: React.FC<{
               alignItems: "center",
               justifyContent: "center",
               bottom: 4,
+              position: "relative",
+              margin: "0 6px",
             }}
-            className={[
-              layout["relative"],
-              space["m-h--6"],
-              layout["inline-block"],
-            ].join(" ")}
           >
             ...
           </button>
           <button
             onClick={() => Router.push(`/s/homes/${total}`)}
-            style={{
+            css={{
               width: 36,
               height: 36,
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
               bottom: 4,
+              margin: "0 12px",
+              ":hover": {
+                textDecoration: "underline",
+              },
             }}
-            className={[
-              bar["hover__paginate"],
-              space["m-h--12"],
-              layout["inline-block"],
-            ].join(" ")}
           >
             {total}
           </button>
@@ -153,23 +143,18 @@ export const PaginateBar: React.FC<{
         <>
           <button
             onClick={() => Router.push(`/s/homes/1`)}
-            style={{
+            css={{
               width: 36,
               height: 36,
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
               bottom: 4,
+              margin: "0 6px",
+              ...(page === 1
+                ? { bg: "black", color: "white", borderRadius: 9999 }
+                : { ":hover": { textDecoration: "underline" } }),
             }}
-            className={`${
-              page === 1
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
           >
             1
           </button>
@@ -182,16 +167,19 @@ export const PaginateBar: React.FC<{
               alignItems: "center",
               justifyContent: "center",
               bottom: 4,
+              margin: "0 6px",
+              ...(page === 2
+                ? {
+                    bg: "black",
+                    color: "white",
+                    borderRadius: 9999,
+                  }
+                : {
+                    ":hover": {
+                      textDecoration: "underline",
+                    },
+                  }),
             }}
-            className={`${
-              page === 2
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
           >
             2
           </button>
@@ -204,16 +192,19 @@ export const PaginateBar: React.FC<{
               alignItems: "center",
               justifyContent: "center",
               bottom: 4,
+              margin: "0 6px",
+              ...(page === 2
+                ? {
+                    bg: "black",
+                    color: "white",
+                    borderRadius: 9999,
+                  }
+                : {
+                    ":hover": {
+                      textDecoration: "underline",
+                    },
+                  }),
             }}
-            className={`${
-              page === 3
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
           >
             3
           </button>
@@ -226,16 +217,19 @@ export const PaginateBar: React.FC<{
               alignItems: "center",
               justifyContent: "center",
               bottom: 4,
+              margin: "0 6px",
+              ...(page === 2
+                ? {
+                    bg: "black",
+                    color: "white",
+                    borderRadius: 9999,
+                  }
+                : {
+                    ":hover": {
+                      textDecoration: "underline",
+                    },
+                  }),
             }}
-            className={`${
-              page === 4
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
           >
             4
           </button>
@@ -248,16 +242,19 @@ export const PaginateBar: React.FC<{
               alignItems: "center",
               justifyContent: "center",
               bottom: 4,
+              margin: "0 6px",
+              ...(page === 2
+                ? {
+                    bg: "black",
+                    color: "white",
+                    borderRadius: 9999,
+                  }
+                : {
+                    ":hover": {
+                      textDecoration: "underline",
+                    },
+                  }),
             }}
-            className={`${
-              page === 5
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
           >
             5
           </button>
@@ -269,30 +266,26 @@ export const PaginateBar: React.FC<{
               alignItems: "center",
               justifyContent: "center",
               bottom: 4,
+              position: "relative",
+              margin: "0 6px",
             }}
-            className={[
-              layout["relative"],
-              space["m-h--6"],
-              layout["inline-block"],
-            ].join(" ")}
           >
             ...
           </a>
           <a
             onClick={() => Router.push(`/s/homes/${total}`)}
-            style={{
+            css={{
               width: 36,
               height: 36,
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
               bottom: 4,
+              margin: "0 12px",
+              ":hover": {
+                textDecoration: "underline",
+              },
             }}
-            className={[
-              bar["hover__paginate"],
-              space["m-h--12"],
-              layout["inline-block"],
-            ].join(" ")}
           >
             {total}
           </a>
@@ -303,38 +296,36 @@ export const PaginateBar: React.FC<{
         <>
           <button
             onClick={() => Router.push(`/s/homes/1`)}
-            style={{
+            css={{
               width: 36,
               height: 36,
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
               bottom: 4,
+              margin: "0 12px",
+              ":hover": {
+                textDecoration: "underline",
+              },
             }}
-            className={[
-              bar["hover__paginate"],
-              space["m-h--12"],
-              layout["inline-block"],
-            ].join(" ")}
           >
             1
           </button>
           <button
             onClick={() => Router.push("/")}
-            style={{
+            css={{
               width: 36,
               height: 36,
               display: "inline-flex",
               alignItems: "center",
               justifyContent: "center",
               bottom: 4,
+              position: "relative",
+              margin: "0 6px",
+              ":hover": {
+                textDecoration: "underline",
+              },
             }}
-            className={[
-              bar["hover__paginate"],
-              layout["relative"],
-              space["m-h--6"],
-              layout["inline-block"],
-            ].join(" ")}
           >
             ...
           </button>
@@ -347,16 +338,11 @@ export const PaginateBar: React.FC<{
               alignItems: "center",
               justifyContent: "center",
               bottom: 4,
+              margin: "0 6px",
+              ...(page === total - 3
+                ? { bg: "black", color: "white", borderRadius: 9999 }
+                : { ":hover": { textDecoration: "underline" } }),
             }}
-            className={`${
-              page === total - 3
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
           >
             {total - 3}
           </button>
@@ -369,16 +355,11 @@ export const PaginateBar: React.FC<{
               alignItems: "center",
               justifyContent: "center",
               bottom: 4,
+              margin: "0 6px",
+              ...(page === total - 2
+                ? { bg: "black", color: "white", borderRadius: 9999 }
+                : { ":hover": { textDecoration: "underline" } }),
             }}
-            className={`${
-              page === total - 2
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
           >
             {total - 2}
           </button>
@@ -391,16 +372,11 @@ export const PaginateBar: React.FC<{
               alignItems: "center",
               justifyContent: "center",
               bottom: 4,
+              margin: "0 6px",
+              ...(page === total - 1
+                ? { bg: "black", color: "white", borderRadius: 9999 }
+                : { ":hover": { textDecoration: "underline" } }),
             }}
-            className={`${
-              page === total - 1
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
           >
             {total - 1}
           </button>
@@ -413,16 +389,19 @@ export const PaginateBar: React.FC<{
               alignItems: "center",
               justifyContent: "center",
               bottom: 4,
+              margin: "0 6px",
+              ...(page === total
+                ? {
+                    bg: "black",
+                    color: "white",
+                    borderRadius: 9999,
+                  }
+                : {
+                    ":hover": {
+                      textDecoration: "underline",
+                    },
+                  }),
             }}
-            className={`${
-              page === total
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
           >
             {total}
           </button>
@@ -431,8 +410,8 @@ export const PaginateBar: React.FC<{
     }
   };
   return (
-    <div className={[layout["inline-block"]].join(" ")}>
-      <div className={[layout["flex"], layout["items-center"]].join(" ")}>
+    <div css={{ display: "inline-block" }}>
+      <div css={{ display: "flex", alignItems: "center" }}>
         {page !== 1 && (
           <Button
             variant={$Button.PAGINATE}
@@ -441,7 +420,7 @@ export const PaginateBar: React.FC<{
             onClick={() => Router.push(`/s/homes/page/${page - 1}`)}
           />
         )}
-        <div className={[space["m-h--8"]].join(" ")}>{displayContent()}</div>
+        <div css={{ margin: "0 8px" }}>{displayContent()}</div>
         {page !== total && (
           <Button
             variant={$Button.PAGINATE}
@@ -451,18 +430,16 @@ export const PaginateBar: React.FC<{
           />
         )}
       </div>
-      <div className={[space["m-t--14"]].join(" ")}>
-        <p className={[layout["text-center"]].join(" ")}>
-          61 – 80 of 300+ places to stay
-        </p>
+      <div css={{ marginTop: 14 }}>
+        <p css={{ textAlign: "center" }}>61 – 80 of 300+ places to stay</p>
       </div>
-      <div className={[space["m-t--28"]].join(" ")}>
+      <div css={{ marginTop: 28 }}>
         <p
-          className={[
-            font["size--12"],
-            layout["text-center"],
-            color["c--gray__1"],
-          ].join(" ")}
+          css={{
+            fontSize: 12,
+            textAlign: "center",
+            color: "gray__1",
+          }}
         >
           Enter dates to see full pricing. Additional fees apply. Taxes may be
           added.

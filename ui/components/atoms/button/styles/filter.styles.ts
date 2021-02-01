@@ -20,16 +20,15 @@ const condition = {
 
 const shared = {
   wrapper: {
-    whitespace: "nowrap",
+    whiteSpace: "nowrap",
     padding: "8px 14px",
-    borderRadius: "20px",
+    borderRadius: 20,
   },
   label: {
     text: {
-      fontSize: "15px",
+      fontSize: 15,
     },
   },
-  ...condition,
 };
 
 const web = {
@@ -42,6 +41,8 @@ const web = {
   ...condition,
 };
 
-const theme = {};
+const theme = {
+  ...condition,
+};
 
 export const filter = { web, theme };

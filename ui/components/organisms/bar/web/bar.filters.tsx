@@ -1,5 +1,7 @@
-import { Button, $Button } from "@button";
-import space from "@styles/space.module.scss";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import { Button, $Button } from "../../../atoms/button/web";
 import { useLayoutEffect, useRef, useState } from "react";
 
 export const FiltersBar: React.FC<{}> = () => {
@@ -77,19 +79,19 @@ export const FiltersBar: React.FC<{}> = () => {
   };
 
   return (
-    <div style={{ display: "flex", alignItems: "center" }}>
-      <div style={{ display: "flex" }}>
+    <div css={{ display: "flex", alignItems: "center" }}>
+      <div css={{ display: "flex" }}>
         {primaryFilters.map((filter, index) => {
           return (
-            <div key={index} className={[space["m-r--8"]].join(" ")}>
+            <div key={index} css={{ marginRight: 8, whitespace: "nowrap" }}>
               <Button variant={$Button.FILTER} inverse label={filter} />
             </div>
           );
         })}
       </div>
       <div
-        className={[space["m-r--8"]].join(" ")}
-        style={{
+        css={{
+          marginRight: 8,
           height: 35,
           width: 2,
           backgroundColor: "lightgray",
@@ -98,11 +100,11 @@ export const FiltersBar: React.FC<{}> = () => {
       />
       <div
         ref={containerRef}
-        style={{ overflowX: "hidden", position: "relative", padding: "2px 0" }}
+        css={{ overflowX: "hidden", position: "relative", padding: "2px 0" }}
       >
         {state.activeSlide > 0 && (
           <div
-            style={{
+            css={{
               height: "100%",
               position: "absolute",
               left: 0,
@@ -124,7 +126,7 @@ export const FiltersBar: React.FC<{}> = () => {
           </div>
         )}
         <div
-          style={{
+          css={{
             display: "flex",
             position: "relative",
             transform: `translateX(-${state.translate}px)`,
@@ -132,13 +134,13 @@ export const FiltersBar: React.FC<{}> = () => {
           }}
         >
           {state.activeSlide > 0 && (
-            <div style={{ position: "absolute", left: 0, zIndex: 40 }}>
+            <div css={{ position: "absolute", left: 0, zIndex: 40 }}>
               <Button variant={$Button.PAGINATE} direction="left" />
             </div>
           )}
           {secondaryFilters.map((filter, index) => {
             return (
-              <div key={index} className={[space["m-r--8"]].join(" ")}>
+              <div key={index} css={{ marginRight: 8 }}>
                 <Button
                   variant={$Button.FILTER}
                   label={filter}
@@ -150,7 +152,7 @@ export const FiltersBar: React.FC<{}> = () => {
         </div>
         {state.activeSlide < 3 && (
           <div
-            style={{
+            css={{
               height: "100%",
               position: "absolute",
               right: 0,

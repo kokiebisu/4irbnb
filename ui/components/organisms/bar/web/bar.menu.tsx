@@ -1,6 +1,7 @@
-import menubar from "@bar/bar.module.scss";
-
-import { Button, $Button } from "@button";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import { Button, $Button } from "../../../atoms/button/web";
 
 /**
  * Renders the menubar component
@@ -8,7 +9,16 @@ import { Button, $Button } from "@button";
 export const MenuBar: React.FC<{}> = () => {
   const items = ["explore", "saved", "login"];
   return (
-    <div className={menubar["menubar"]}>
+    <div
+      css={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 11,
+        backgroundColor: "white",
+        width: "100%",
+      }}
+    >
       {items.map((item, index) => {
         return (
           <div key={index}>

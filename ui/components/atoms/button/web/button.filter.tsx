@@ -17,7 +17,9 @@ export const FilterButton: React.FC<{ label?: string; inverse?: boolean }> = ({
     <div
       css={{
         ...web.wrapper,
-        ...(inverse ? web.inverse.wrapper : web.plain.wrapper),
+      }}
+      sx={{
+        ...(inverse ? theme.inverse.wrapper : theme.plain.wrapper),
       }}
     >
       <p css={web.label.text}>{label}</p>

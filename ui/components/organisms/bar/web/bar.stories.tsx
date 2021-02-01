@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Bar, BarProps, $Bar } from "@bar";
+import { Bar, BarProps, $Bar } from ".";
 
 export default {
   title: "Organisms/Bar",
@@ -12,7 +12,7 @@ const TemplateStory: Story<BarProps> = (args) => <Bar {...args} />;
 
 export const Paginate = TemplateStory.bind({});
 Paginate.args = {
-  variant: $Bar.PAGINATE,
+  variant: "paginate",
 };
 
 export const Covid = TemplateStory.bind({});

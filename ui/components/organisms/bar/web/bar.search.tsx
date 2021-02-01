@@ -1,11 +1,7 @@
-import layout from "@styles/layout.module.scss";
-import shape from "@styles/shape.module.scss";
-import color from "@styles/color.module.scss";
-import font from "@styles/font.module.scss";
-import animation from "@styles/animation.module.scss";
-
-import { Button, $Button } from "@button";
-import { useToggleDispatch } from "@context/toggle";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import { Button, $Button } from "../../../atoms/button/web";
 
 /**
  * Renders the Searchbar
@@ -15,19 +11,18 @@ export const SearchBar: React.FC<{
   selected?: string;
   setSelected?: (param: string) => void;
   transparent?: boolean;
+  dispatch?: any;
 }> = ({
   type = "stay",
   selected = null,
   setSelected = () => console.log("clicked"),
   transparent,
+  dispatch,
 }) => {
-  const dispatchToggle = useToggleDispatch();
-
-  const types = {
+  const types: { [type: string]: JSX.Element } = {
     stay: (
       <div
-        className={transparent ? [shape["shadow--sm"]].join(" ") : null}
-        style={{
+        css={{
           border: "1px solid lightgray",
           display: "grid",
           gridTemplateColumns: `1.5fr 1px 1fr 1px  1fr 1px ${
@@ -35,6 +30,7 @@ export const SearchBar: React.FC<{
           }`,
           borderRadius: 50,
           backgroundColor: "white",
+          ...(transparent && { boxShadow: "rgba(0, 0, 0, 0.08) 0px 1px 12px" }),
         }}
       >
         <Option
@@ -62,51 +58,51 @@ export const SearchBar: React.FC<{
         />
         <Seperator />
         <button
-          style={{
+          css={{
             display: "block",
             padding: "5px 8px 5px 24px",
             borderRadius: "50px",
+            ":hover": {
+              bg: "white__1",
+              transition: "0.4s all",
+            },
+            ...(selected === "guests" && {
+              boxShadow: "rgba(0, 0, 0, 0.2) 0px 4px 8px",
+            }),
           }}
-          className={`${
-            selected === "guests" && [shape["shadow--lg"]].join(" ")
-          } ${[animation["hover-background--white__1"]].join(" ")}`}
           onClick={() => {
             setSelected("guests");
-            dispatchToggle({ type: "toggle_guests" });
+            dispatch({ type: "toggle_guests" });
           }}
         >
           <div
-            style={{
+            css={{
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              borderRadius: selected === "guests" && 50,
+              ...(selected === "guests" && { borderRadius: 50 }),
             }}
           >
-            <div
-              className={`${[layout["flex"], layout["items-center"]].join(
-                " "
-              )}`}
-            >
+            <div css={{ display: "flex", alignItems: "center" }}>
               <div>
                 <div>
                   <h3
-                    className={[
-                      font["text--left"],
-                      font["no-wrap"],
-                      font["size--12"],
-                    ].join(" ")}
+                    css={{
+                      textAlign: "left",
+                      whitespace: "nowrap",
+                      fontSize: 12,
+                    }}
                   >
                     Guests
                   </h3>
                 </div>
                 <div>
                   <p
-                    className={[
-                      font["text--left"],
-                      font["no-wrap"],
-                      font["size--12"],
-                    ].join(" ")}
+                    css={{
+                      textAlign: "left",
+                      whitespace: "nowrap",
+                      fontSize: 12,
+                    }}
                   >
                     Add guests
                   </p>
@@ -126,13 +122,13 @@ export const SearchBar: React.FC<{
     ),
     experiences: (
       <div
-        className={transparent ? [shape["shadow--sm"]].join(" ") : null}
-        style={{
+        css={{
           border: "1px solid lightgray",
           display: "grid",
           gridTemplateColumns: `1fr 1px ${selected ? "1.25fr" : "1fr"}`,
           borderRadius: 50,
           backgroundColor: "white",
+          ...(transparent && { boxShadow: "rgba(0, 0, 0, 0.08) 0px 1px 12px" }),
         }}
       >
         <Option
@@ -141,55 +137,56 @@ export const SearchBar: React.FC<{
           selected={selected}
           setSelected={setSelected}
           name="location"
+          dispatch={dispatch}
         />
         <Seperator />
 
         <button
-          style={{
+          css={{
             display: "block",
             padding: "5px 8px 5px 24px",
             borderRadius: "50px",
+            ":hover": {
+              backgroundColor: "white__1",
+              transition: "0.4s background-color",
+            },
+            ...(selected === "checkin" && {
+              boxShadow: "rgba(0, 0, 0, 0.2) 0px 4px 8px",
+            }),
           }}
-          className={`${
-            selected === "checkin" && [shape["shadow--lg"]].join(" ")
-          } ${[animation["hover-background--white__1"]].join(" ")}`}
           onClick={() => {
             setSelected("checkin");
-            dispatchToggle({ type: "toggle_checkin" });
+            dispatch({ type: "toggle_checkin" });
           }}
         >
           <div
-            style={{
+            css={{
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              borderRadius: selected === "checkin" && 50,
+              ...(selected === "checkin" && { borderRadius: 50 }),
             }}
           >
-            <div
-              className={`${[layout["flex"], layout["items-center"]].join(
-                " "
-              )}`}
-            >
+            <div css={{ display: "flex", alignItems: "center" }}>
               <div>
                 <div>
                   <h3
-                    className={[
-                      font["text--left"],
-                      font["no-wrap"],
-                      font["size--12"],
-                    ].join(" ")}
+                    css={{
+                      textAlign: "left",
+                      whitespace: "nowrap",
+                      fontSize: 12,
+                    }}
                   >
                     Date
                   </h3>
                 </div>
                 <div>
                   <p
-                    className={[
-                      font["text--left"],
-                      font["no-wrap"],
-                      font["size--12"],
-                    ].join(" ")}
+                    css={{
+                      textAlign: "left",
+                      whitespace: "nowrap",
+                      fontSize: 12,
+                    }}
                   >
                     Add when you want to go
                   </p>
@@ -214,11 +211,8 @@ export const SearchBar: React.FC<{
 
 const Seperator: React.FC<{}> = () => {
   return (
-    <div style={{ height: "100%", display: "flex", alignItems: "center" }}>
-      <div
-        className={[color["bg--white__2"]].join(" ")}
-        style={{ width: "100%", height: 25 }}
-      ></div>
+    <div css={{ height: "100%", display: "flex", alignItems: "center" }}>
+      <div css={{ width: "100%", height: 25 }} sx={{ bg: "white__2" }}></div>
     </div>
   );
 };
@@ -229,34 +223,34 @@ const Option: React.FC<{
   title: string;
   selected: string;
   setSelected: (param: string) => void;
-}> = ({ name, subtitle, title, selected, setSelected }) => {
-  const dispatchToggle = useToggleDispatch();
+  dispatch: any;
+}> = ({ name, subtitle, title, selected, setSelected, dispatch }) => {
   return (
     <button
-      className={`${selected === name && [shape["shadow--lg"]].join(" ")} ${[
-        animation["hover-background--white__1"],
-      ].join(" ")}`}
-      style={{
+      css={{
         display: "block",
         padding: "5px 24px",
         borderRadius: "50px",
+        ":hover": {
+          backgroundColor: "white__1",
+          transition: "0.4s background-color",
+        },
+        ...(selected === name && {
+          boxShadow: "rgba(0, 0, 0, 0.2) 0px 4px 8px",
+        }),
       }}
       onClick={() => {
         setSelected(name);
-        dispatchToggle({ type: `toggle_${name}` });
+        dispatch({ type: `toggle_${name}` });
       }}
     >
-      <div className={`${[layout["flex"], layout["items-center"]].join(" ")}`}>
+      <div css={{ display: "flex", alignItems: "center" }}>
         <div>
           <div>
-            <h3 className={[font["text--left"], font["size--12"]].join(" ")}>
-              {title}
-            </h3>
+            <h3 css={{ textAlign: "left", fontSize: 12 }}>{title}</h3>
           </div>
           <div>
-            <p className={[font["text--left"], font["size--12"]].join(" ")}>
-              {subtitle}
-            </p>
+            <p css={{ textAlign: "left", fontSize: 12 }}>{subtitle}</p>
           </div>
         </div>
       </div>

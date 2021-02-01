@@ -5,6 +5,7 @@ module.exports = {
   stories: [
     "../atoms/**/**/*.stories.@(js|jsx|ts|tsx)",
     "../molecules/**/**/*.stories.@(js|jsx|ts|tsx)",
+    "../organisms/**/**/*.stories.@(js|jsx|ts|tsx)",
   ],
   logLevel: "debug",
   addons: [

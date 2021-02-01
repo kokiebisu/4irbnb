@@ -1,9 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-
 import { bar } from "../styles";
-
 import { MenuBarLogo } from "../../../public/svg/logo";
 import { Login, Saved } from "../../../public/svg/regular";
 
@@ -17,7 +15,7 @@ export const BarButton: React.FC<{ type?: string }> = ({ type = "menu" }) => {
       selected: boolean;
     };
   } = {
-    menu: {
+    explore: {
       component: <MenuBarLogo width={25} />,
       name: "Explore",
       selected: true,
@@ -27,11 +25,11 @@ export const BarButton: React.FC<{ type?: string }> = ({ type = "menu" }) => {
   };
   return (
     <div
-      css={
-        types[type].selected
+      css={{
+        ...(types[type].selected
           ? { ...web.wrapper, ...web.selected }
-          : { ...web.wrapper }
-      }
+          : { ...web.wrapper }),
+      }}
       sx={theme.wrapper}
     >
       <div css={web.logo.wrapper}>{types[type].component}</div>

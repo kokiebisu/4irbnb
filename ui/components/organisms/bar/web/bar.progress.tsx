@@ -1,3 +1,7 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+
 /**
  * Renders the Progress Bar
  * @param {number} percentage - percentage of the progress bar
@@ -7,7 +11,7 @@ export const ProgressBar: React.FC<{
 }> = ({ percentage = 50 }) => {
   return (
     <div
-      style={{
+      css={{
         position: "relative",
         width: "100%",
         height: 10,
@@ -15,22 +19,24 @@ export const ProgressBar: React.FC<{
         zIndex: 1,
       }}
     >
-      <div style={{ width: "100%", height: 10, display: "flex", zIndex: 500 }}>
+      <div css={{ width: "100%", height: 10, display: "flex", zIndex: 500 }}>
         {Array.from(Array(24).keys()).map((_, index) => {
           return (
             <div
               key={index}
-              style={{
+              css={{
                 width: "10%",
                 height: 10,
                 backgroundColor: "transparent",
-                borderRight: index === 23 ? "none" : "1px solid #DCE0E0",
+                ...(index === 23
+                  ? { borderRight: "none" }
+                  : { borderRight: "1px solid #DCE0E0" }),
               }}
             />
           );
         })}
         <div
-          style={{
+          css={{
             position: "absolute",
             height: "100%",
             width: `${percentage}%`,

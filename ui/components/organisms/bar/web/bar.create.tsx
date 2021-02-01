@@ -1,9 +1,7 @@
-import shape from "@styles/shape.module.scss";
-import color from "@styles/color.module.scss";
-import layout from "@styles/layout.module.scss";
-import space from "@styles/space.module.scss";
-
-import { Button, $Button } from "@button";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import { Button, $Button } from "../../../atoms/button/web";
 
 export const CreateBar: React.FC<{
   next?: () => void;
@@ -16,16 +14,16 @@ export const CreateBar: React.FC<{
 }) => {
   return (
     <div
-      className={[color["b-t--white__1"], space["p-v--16"]].join(" ")}
-      style={{ width: "100%" }}
+      css={{ width: "100%", padding: "16px 0", borderTop: "1px solid" }}
+      sx={{ borderColor: "white__1" }}
     >
       <div
-        className={[
-          shape["w-full"],
-          layout["flex"],
-          layout["items-center"],
-          layout["justify-between"],
-        ].join(" ")}
+        css={{
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
       >
         <div>
           <Button variant={$Button.BACK} onClick={back} />
