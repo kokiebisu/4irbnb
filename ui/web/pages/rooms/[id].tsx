@@ -6,7 +6,7 @@ import { Header, $Header } from "@header";
 import { Footer } from "@footer";
 import { Template, $Template } from "@template/rooms/id";
 import { Card, $Card } from "@card";
-import { Modal, $Modal } from "@modal";
+import { Modal, $Modal } from "../components/organisms/modal";
 
 import responsive from "@styles/responsive.module.scss";
 import layout from "@styles/layout.module.scss";

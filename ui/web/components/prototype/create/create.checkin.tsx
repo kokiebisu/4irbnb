@@ -3,7 +3,10 @@ import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import layout from "@styles/layout.module.scss";
 
-import { Input, $Input } from "@input";
+import {
+  Input,
+  $Input,
+} from "../components/organisms/modal/node_modules/@input";
 import { Layout } from "@layout";
 
 export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({

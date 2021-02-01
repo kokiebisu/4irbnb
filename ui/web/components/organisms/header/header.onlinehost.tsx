@@ -5,7 +5,10 @@ import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import header from "@header/header.module.scss";
 
-import { Button, $Button } from "@button";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 
 export const OnlineHostHeader: React.FC<{}> = () => {
   return (

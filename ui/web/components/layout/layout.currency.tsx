@@ -1,4 +1,7 @@
-import { Button, $Button } from "@button";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";

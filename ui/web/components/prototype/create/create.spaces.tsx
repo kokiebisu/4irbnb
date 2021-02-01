@@ -1,4 +1,7 @@
-import { Input, $Input } from "@input";
+import {
+  Input,
+  $Input,
+} from "../components/organisms/modal/node_modules/@input";
 
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";

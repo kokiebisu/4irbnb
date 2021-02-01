@@ -10,7 +10,10 @@ import color from "@styles/color.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
 import { Header, $Header } from "@header";
-import { Button, $Button } from "@button";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 
 import { useHandleScroll } from "@hooks/useHandleScroll";
 

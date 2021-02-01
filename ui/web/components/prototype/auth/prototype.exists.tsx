@@ -3,8 +3,14 @@ import Router from "next/router";
 import { useFormik } from "formik";
 
 import { Bullet, $Bullet } from "@bullet";
-import { Button, $Button } from "@button";
-import { Input, $Input } from "@input";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
+import {
+  Input,
+  $Input,
+} from "../components/organisms/modal/node_modules/@input";
 
 import { validateExists as validate } from "@helper/auth";
 

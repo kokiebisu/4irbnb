@@ -4,7 +4,10 @@ import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
 import banner from "@banner/banner.module.scss";
 
-import { Button, $Button } from "@button";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 import { Bullet, $Bullet } from "@bullet";
 
 export const BannerTemplate: React.FC<{}> = () => {

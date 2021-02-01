@@ -1,4 +1,7 @@
-import { Input, $Input } from "@input";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import { Input, $Input } from "../../../atoms/input/web";
 
 export const GuestsModal: React.FC<{}> = () => {
   return (
@@ -11,7 +14,7 @@ export const GuestsModal: React.FC<{}> = () => {
           subtitle="Ages 13 or above"
         />
       </div>
-      <div style={{ height: 1, width: "100%", backgroundColor: "#EBEBEB" }} />
+      <div css={{ height: 1, width: "100%", backgroundColor: "#EBEBEB" }} />
       <div>
         <Input
           variant={$Input.COUNTER}
@@ -20,7 +23,7 @@ export const GuestsModal: React.FC<{}> = () => {
           subtitle="Ages 2 - 12"
         />
       </div>
-      <div style={{ height: 1, width: "100%", backgroundColor: "#EBEBEB" }} />
+      <div css={{ height: 1, width: "100%", backgroundColor: "#EBEBEB" }} />
       <div>
         <Input
           variant={$Input.COUNTER}

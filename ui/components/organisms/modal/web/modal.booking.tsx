@@ -1,12 +1,7 @@
-import modal from "@modal/modal.module.scss";
-import shape from "@styles/shape.module.scss";
-import color from "@styles/color.module.scss";
-import space from "@styles/space.module.scss";
-import layout from "@styles/layout.module.scss";
-import font from "@styles/font.module.scss";
-import responsive from "@styles/responsive.module.scss";
-
-import { Button, $Button } from "@button";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import { Button, $Button } from "../../../atoms/button/web";
 
 /**
  * Renders the booking modal
@@ -42,22 +37,21 @@ export const BookingModal: React.FC<{
   const displayingAvailables = [...availables].splice(0, 3);
   return (
     <div
-      className={[
-        shape["w--full"],
-        layout["inline-block"],
-        modal["position__checkin--wrapper"],
-      ].join(" ")}
+      css={{
+        width: "100%",
+        display: "inline-block",
+      }}
     >
       <div>
         <div>
           <div>
-            <span className={[space["p-v--10"], font["size--21"]].join(" ")}>
+            <span css={{ padding: "10px 0", fontSize: 21 }}>
               <b
-                className={[
-                  font["weight--500"],
-                  space["p-v--10"],
-                  font["size--21"],
-                ].join(" ")}
+                css={{
+                  fontWeight: 500,
+                  padding: "10px 0",
+                  fontSize: 21,
+                }}
               >
                 From $31
               </b>
@@ -66,54 +60,58 @@ export const BookingModal: React.FC<{
           </div>
           <div>
             <u
-              className={[
-                font["size--14"],
-                font["weight--100"],
-                color["c--gray__1"],
-              ].join(" ")}
+              css={{
+                fontSize: 14,
+                fontWeight: 100,
+              }}
+              sx={{
+                color: "gray__1",
+              }}
             >
               Show all prices
             </u>
           </div>
         </div>
         <div>input</div>
-        <div className={[].join(" ")}>
+        <div>
           {displayingAvailables.map((available, index) => {
             return (
               <div
                 key={index}
-                className={[
-                  responsive["b_to_f--lg"],
-                  layout["justify-between"],
-                  space["m-t--16"],
-                ].join(" ")}
+                css={{
+                  display: [
+                    "block",
+                    "block",
+                    "block",
+                    "block",
+                    "block",
+                    "block",
+                    "block",
+                    "flex",
+                  ],
+                  justifyContent: "space-between",
+                  marginTop: 16,
+                }}
               >
                 <div>
-                  <div className={[space["m-b--6"]].join(" ")}>
-                    <h3 className={[font["size--15"]].join(" ")}>
-                      {available.date}
-                    </h3>
+                  <div css={{ marginBottom: 6 }}>
+                    <h3 css={{ fontSize: 15 }}>{available.date}</h3>
                   </div>
                   <div>
-                    <p className={[font["size--12"]].join(" ")}>
+                    <p css={{ fontSize: 12 }}>
                       {available.from} - {available.to} {available.standard}
                     </p>
                   </div>
                   <div>
-                    <u className={[font["size--12"]].join(" ")}>
-                      Book for a private group
-                    </u>
+                    <u css={{ fontSize: 12 }}>Book for a private group</u>
                   </div>
                 </div>
                 <div>
-                  <div className={[space["m-v--4"]].join(" ")}>
-                    <span className={[font["size--13"]].join(" ")}>
+                  <div css={{ margin: "4px 0" }}>
+                    <span css={{ fontSize: 13 }}>
                       <b>${available.price}</b>
                     </span>
-                    <span className={[font["size--13"]].join(" ")}>
-                      {" "}
-                      /person
-                    </span>
+                    <span css={{ fontSize: 13 }}> /person</span>
                   </div>
                   <div>
                     <Button
@@ -128,11 +126,11 @@ export const BookingModal: React.FC<{
             );
           })}
         </div>
-        <div className={[space["m-t--24"]].join(" ")}>
+        <div css={{ marginTop: 24 }}>
           <div>
             <Button
               variant={$Button.BORDER}
-              extendsTo={[color["bg--transparent"]].join(" ")}
+              extendsTo={{ bg: "transparent" }}
               size="md"
               title="See more dates"
               block

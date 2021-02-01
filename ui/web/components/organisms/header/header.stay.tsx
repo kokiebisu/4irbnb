@@ -6,7 +6,10 @@ import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 import font from "@styles/font.module.scss";
 
-import { Button, $Button } from "@button";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 
 /**
  * Renders the header for the homes page

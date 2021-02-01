@@ -11,8 +11,11 @@ import header from "@header/header.module.scss";
 import animation from "@styles/animation.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
-import { Modal, $Modal } from "@modal";
-import { Button, $Button } from "@button";
+import { Modal, $Modal } from "../components/organisms/modal";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 import { Prototype } from "@prototype/searchbar";
 
 import { NameLogo, NoNameLogo } from "@svg/logo";

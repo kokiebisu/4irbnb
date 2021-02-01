@@ -1,9 +1,8 @@
-import shape from "@styles/shape.module.scss";
-import space from "@styles/space.module.scss";
-
-import { Button, $Button } from "@button";
-
-import { getOptionContents } from "@button/content/content.option";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import { Button, $Button } from "../../../atoms/button/web";
+import { getOptionContents } from "../../../atoms/button/content/content.option";
 
 const Options: React.FC<{
   params?: {
@@ -18,7 +17,9 @@ const Options: React.FC<{
         <div key={index}>
           <Button
             variant={$Button.OPTION}
-            extendsTo={[shape["w--full"]].join(" ")}
+            extendsTo={{
+              width: "100%",
+            }}
             bold={bold}
             onClick={options[kind].handleClick}
             name={options[kind].name}
@@ -36,8 +37,8 @@ export const MenuModal: React.FC<{ authenticated?: boolean }> = ({
   authenticated = false,
 }) => {
   return (
-    <div className={[shape["w--full"], space["p-v--15"]].join(" ")}>
-      <div className={[shape["w--inherit"]].join(" ")}>
+    <div css={{ width: "100%", padding: "15px 0" }}>
+      <div css={{ width: "inherit" }}>
         {authenticated ? (
           <Options
             params={[
@@ -56,7 +57,7 @@ export const MenuModal: React.FC<{ authenticated?: boolean }> = ({
           />
         )}
         <div
-          style={{
+          css={{
             width: "100%",
             height: 1,
             backgroundColor: "lightgray",
@@ -84,7 +85,7 @@ export const MenuModal: React.FC<{ authenticated?: boolean }> = ({
         {authenticated && (
           <>
             <div
-              style={{
+              css={{
                 width: "100%",
                 height: 1,
                 backgroundColor: "lightgray",

@@ -10,7 +10,10 @@ import { footerItems } from "@airbnb/content";
 
 import { Globe } from "@svg/original";
 
-import { Button, $Button } from "@button";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 
 export interface FooterProps {
   spread?: boolean;

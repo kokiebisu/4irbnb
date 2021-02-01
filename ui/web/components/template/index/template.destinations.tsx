@@ -10,7 +10,10 @@ import space from "@styles/space.module.scss";
 import shape from "@styles/shape.module.scss";
 import template from "./index.module.scss";
 
-import { Button, $Button } from "@button";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 
 export const DestinationsTemplate: React.FC<{
   items?: { [type: string]: { city: String; location: String } };

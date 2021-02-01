@@ -3,8 +3,14 @@ import { useFormik } from "formik";
 import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 
-import { Input, $Input } from "@input";
-import { Button, $Button } from "@button";
+import {
+  Input,
+  $Input,
+} from "../components/organisms/modal/node_modules/@input";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 import { Bullet, $Bullet } from "@bullet";
 
 import { validateForgotPassword as validate } from "@helper/auth";

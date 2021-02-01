@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 
 import { Header, $Header } from "@header";
 import { Template, $Template } from "@template/experiences/id";
-import { Modal, $Modal } from "@modal";
+import { Modal, $Modal } from "../components/organisms/modal";
 import { Footer } from "@footer";
 
 import { useToggleState } from "@context/toggle";

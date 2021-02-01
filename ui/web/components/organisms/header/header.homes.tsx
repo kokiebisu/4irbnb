@@ -5,7 +5,10 @@ import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 import header from "@header/header.module.scss";
 
-import { Button, $Button } from "@button";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 
 /**
  * Renders the header for the homes page

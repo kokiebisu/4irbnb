@@ -1,10 +1,7 @@
-import layout from "@styles/layout.module.scss";
-import shape from "@styles/shape.module.scss";
-import color from "@styles/color.module.scss";
-import space from "@styles/space.module.scss";
-import font from "@styles/font.module.scss";
-
-import { Button, $Button } from "@button";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import { Button, $Button } from "../../../atoms/button/web";
 import { Prototype } from "@prototype/auth";
 
 import { useToggleDispatch } from "@context/toggle";
@@ -20,21 +17,27 @@ export const AuthModal: React.FC<{}> = () => {
   return (
     <div>
       <div
-        style={{ height: 60 }}
-        className={[
-          layout["flex"],
-          layout["items-center"],
-          color["b-b--white__2"],
-          space["p-h--24"],
-        ].join(" ")}
+        css={{
+          height: 60,
+          display: "flex",
+          alignItems: "center",
+          borderBottom: "1px solid white__2",
+          padding: "0 24px",
+        }}
       >
-        <div className={[layout["relative"], shape["w--full"]].join(" ")}>
+        <div
+          css={{
+            position: "relative",
+            width: "100%",
+          }}
+        >
           <div
-            className={[
-              layout["al--0"],
-              layout["t---3"],
-              color["bg--transparent"],
-            ].join(" ")}
+            css={{
+              position: "absolute",
+              left: 0,
+              top: 3,
+            }}
+            sx={{ bg: "transparent" }}
           >
             {authState.title === "Forgot password" ? (
               <Button
@@ -50,8 +53,14 @@ export const AuthModal: React.FC<{}> = () => {
               />
             )}
           </div>
-          <div className={[layout["all-center"]].join(" ")}>
-            <h3 className={[font["size--16"]].join(" ")}>{authState.title}</h3>
+          <div
+            css={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <h3 css={{ fontSize: 16 }}>{authState.title}</h3>
           </div>
         </div>
       </div>

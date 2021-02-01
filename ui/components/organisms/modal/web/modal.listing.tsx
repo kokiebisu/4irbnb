@@ -1,17 +1,15 @@
-import { Button, $Button } from "@button";
-import { Input, $Input } from "@input";
-
-import { Plus } from "@svg/original";
-
-import layout from "@styles/layout.module.scss";
-import space from "@styles/space.module.scss";
-import font from "@styles/font.module.scss";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import { Button, $Button } from "../../../atoms/button/web";
+import { Input, $Input } from "../../../atoms/input/web";
+import { Plus } from "../../../public/svg/original";
 
 export const ListingModal: React.FC<{}> = () => {
   return (
     <div>
-      <div className={[space["m-b--24"]].join(" ")}>
-        <h4 className={[font["size--16"]].join(" ")}>
+      <div css={{ marginBottom: 24 }}>
+        <h4 css={{ fontSize: 16 }}>
           To get started, tell us more about your place
         </h4>
       </div>
@@ -21,18 +19,18 @@ export const ListingModal: React.FC<{}> = () => {
         <Input variant={$Input.GUESTS} direction="top" />
       </div>
       <div
-        className={[
-          space["m-t--20"],
-          space["m-b--45"],
-          layout["flex"],
-          layout["items-center"],
-        ].join(" ")}
+        css={{
+          marginTop: 20,
+          marginBottom: 45,
+          display: "flex",
+          alignItems: "center",
+        }}
       >
         <div>
           <Plus width={15} height={15} fill="black" />
         </div>
         <div>
-          <h3 className={[font["size--14"]].join(" ")}>
+          <h3 css={{ fontSize: 14 }}>
             Let us know any special spaces guests can access
           </h3>
         </div>

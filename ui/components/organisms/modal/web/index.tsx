@@ -1,25 +1,21 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
 import { useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-import useOnClickOutside from "@hooks/useOnClickOutside";
-import { useLockBodyScroll } from "@hooks/useLockBodyScroll";
+import useOnClickOutside from "../../../hooks/useOnClickOutside";
+import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
 
-import { MenuModal } from "@modal/modal.menu";
-import { PrivacyModal } from "@modal/modal.privacy";
-import { AuthModal } from "@modal/modal.auth";
-import { BookingModal } from "@modal/modal.booking";
-import { GlobeModal } from "@modal/modal.globe";
-import { LocationModal } from "@modal/modal.location";
-import { GuestsModal } from "@modal/modal.guests";
-import { CheckModal } from "@modal/modal.check";
-import { ListingModal } from "@modal/modal.listing";
-
-import { useToggleDispatch } from "@context/toggle";
-
-import space from "@styles/space.module.scss";
-import shape from "@styles/shape.module.scss";
-import color from "@styles/color.module.scss";
-import modal from "@modal/modal.module.scss";
+import { MenuModal } from "./modal.menu";
+import { PrivacyModal } from "./modal.privacy";
+import { AuthModal } from "./modal.auth";
+import { BookingModal } from "./modal.booking";
+import { GlobeModal } from "./modal.globe";
+import { LocationModal } from "./modal.location";
+import { GuestsModal } from "./modal.guests";
+import { CheckModal } from "./modal.check";
+import { ListingModal } from "./modal.listing";
 
 export const $Modal = {
   PRIVACY: "privacy",
@@ -36,12 +32,13 @@ export const $Modal = {
 
 export interface ModalProps {
   variant: string;
-  extendsTo?: string;
+  extendsTo?: any;
   dispatch?: any;
   animate?: string;
   lock?: boolean;
   criteria?: any;
   noPadding?: boolean;
+  handleDispatch?: any;
   [property: string]: any;
 }
 
@@ -58,16 +55,17 @@ export const Modal: React.FC<ModalProps> = ({
   animate = "default",
   lock = false,
   noPadding = false,
+  handleDispatch,
   ...props
 }) => {
   const { criteria } = props;
   const containerRef = useRef();
-  const toggleDispatch = useToggleDispatch();
+
   if (lock) {
     useLockBodyScroll();
   }
   useOnClickOutside(containerRef, () =>
-    toggleDispatch({ type: `${dispatch}` })
+    handleDispatch({ type: `${dispatch}` })
   );
 
   const animation = {
@@ -86,74 +84,106 @@ export const Modal: React.FC<ModalProps> = ({
   const variants: {
     [variant: string]: {
       component: JSX.Element;
-      extendsTo?: string;
+      extendsTo?: any;
       noPadding?: boolean;
     };
   } = {
     privacy: {
       component: <PrivacyModal {...props} />,
-      extendsTo: [modal["modal__privacy"], shape["br--8"], space["p--25"]].join(
-        " "
-      ),
+      extendsTo: {
+        width: [
+          "auto",
+          "auto",
+          "auto",
+          "auto",
+          "auto",
+          "auto",
+          "auto",
+          "auto",
+          "100%",
+        ],
+        maxWidth: [
+          "auto",
+          "auto",
+          "auto",
+          "auto",
+          "auto",
+          "auto",
+          "auto",
+          "auto",
+          "1600px",
+        ],
+        borderRadius: 8,
+        padding: 25,
+      },
     },
     menu: {
       component: <MenuModal {...props} />,
-      extendsTo: [shape["w--200"], shape["br--16"]].join(" "),
+      extendsTo: { width: 200, borderRadius: 16 },
     },
     auth: {
       component: <AuthModal {...props} />,
-      extendsTo: [modal["w__auth"], shape["br--16"]].join(" "),
+      extendsTo: {
+        width: ["100%", "100%", "550px"],
+        borderRadius: 16,
+      },
     },
     booking: {
       component: <BookingModal {...props} />,
-      extendsTo: [space["p--24"], color["b--white__2"], shape["br--10"]].join(
-        " "
-      ),
+      extendsTo: {
+        padding: 24,
+        border: "1px solid white__2",
+        borderRadius: 10,
+      },
     },
     globe: {
       component: <GlobeModal {...props} />,
-      extendsTo: [
-        shape["max-w--720"],
-        space["p--25"],
-        shape["h--fit"],
-        shape["br--16"],
-      ].join(" "),
+      extendsTo: {
+        maxWidth: 720,
+        padding: 25,
+        height: "fit-content",
+        borderRadius: 16,
+      },
     },
     location: {
       component: <LocationModal {...props} />,
-      extendsTo: [shape["max-w--400"], shape["br--16"], space["p-v--25"]].join(
-        " "
-      ),
+      extendsTo: {
+        maxWidth: 400,
+        borderRadius: 16,
+        padding: "25px 0",
+      },
     },
     guests: {
       component: <GuestsModal {...props} />,
-      extendsTo: [shape["max-w--325"], shape["br--32"], space["p--25"]].join(
-        " "
-      ),
+      extendsTo: {
+        maxWidth: 325,
+        borderRadius: 32,
+        padding: 25,
+      },
     },
     checkin: {
       component: <CheckModal {...props} />,
-      extendsTo: [
-        shape["max-w--720"],
-        shape["br--32"],
-        space["p-h--45"],
-        space["p-v--30"],
-      ].join(" "),
+      extendsTo: {
+        maxWidth: 720,
+        borderRadius: 32,
+        padding: "30px 45px",
+      },
     },
     checkout: {
       component: <CheckModal {...props} />,
-      extendsTo: [
-        shape["max-w--720"],
-        shape["br--32"],
-        space["p-h--45"],
-        space["p-v--30"],
-      ].join(" "),
+      extendsTo: {
+        maxWidth: 720,
+        borderRadius: 32,
+        padding: "30px 45px",
+      },
     },
     listing: {
       component: <ListingModal {...props} />,
-      extendsTo: [shape["max-w--500"], space["p--25"], shape["br--20"]].join(
-        " "
-      ),
+      extendsTo: {
+        maxWidth: 500,
+        padding: 25,
+        borderRadius: 20,
+      },
     },
   };
 
@@ -168,11 +198,14 @@ export const Modal: React.FC<ModalProps> = ({
             animate={animation[animate].animate}
             transition={animation[animate].transition}
             ref={containerRef}
-            className={`${[
-              shape["shadow--sm"],
-              color["bg--white"],
-              shape["w--full"],
-            ].join(" ")}  ${variants[variant].extendsTo} ${extendsTo}`}
+            css={{
+              boxShadow: "rgba(0, 0, 0, 0.08) 0px 1px 12px",
+              width: "100%",
+              ...extendsTo,
+            }}
+            sx={{
+              bg: "white",
+            }}
           >
             {variants[variant].component}
           </motion.div>
@@ -183,11 +216,12 @@ export const Modal: React.FC<ModalProps> = ({
   return (
     <div
       ref={containerRef}
-      className={`${[
-        shape["shadow--sm"],
-        color["bg--white"],
-        shape["w--full"],
-      ].join(" ")}  ${variants[variant].extendsTo} ${extendsTo}`}
+      css={{
+        ...extendsTo,
+        width: "100%",
+        boxShadow: "rgba(0, 0, 0, 0.08) 0px 1px 12px",
+      }}
+      sx={{ bg: "white" }}
       data-testid={`${variant}-modal`}
     >
       {variants[variant].component}

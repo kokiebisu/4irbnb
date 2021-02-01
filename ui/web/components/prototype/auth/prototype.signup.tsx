@@ -7,8 +7,14 @@ import font from "@styles/font.module.scss";
 import layout from "@styles/layout.module.scss";
 import color from "@styles/color.module.scss";
 
-import { Input, $Input } from "@input";
-import { Button, $Button } from "@button";
+import {
+  Input,
+  $Input,
+} from "../components/organisms/modal/node_modules/@input";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 import { Bullet, $Bullet } from "@bullet";
 
 import { validateSignup as validate } from "@helper/auth";

@@ -9,7 +9,10 @@ import header from "@header/header.module.scss";
 
 import { Star } from "@svg/original";
 
-import { Button, $Button } from "@button";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 
 import { useHandleScroll } from "@hooks/useHandleScroll";
 

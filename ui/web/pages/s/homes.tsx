@@ -6,7 +6,7 @@ import { useToggleState } from "@context/toggle";
 import layout from "@styles/layout.module.scss";
 
 import { Prototype } from "@prototype/homes";
-import { Modal, $Modal } from "@modal";
+import { Modal, $Modal } from "../components/organisms/modal";
 
 import shape from "@styles/shape.module.scss";
 import responsive from "@styles/responsive.module.scss";

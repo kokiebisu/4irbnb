@@ -9,7 +9,10 @@ import sectionStyles from "@template/index.module.scss";
 import section from "@template/index.module.scss";
 
 import { Card, $Card } from "@card";
-import { Button, $Button } from "@button";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 
 /**
  * Renders the stay section

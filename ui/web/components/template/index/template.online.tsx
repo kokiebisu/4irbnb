@@ -1,5 +1,8 @@
 import { Card, $Card } from "@card";
-import { Button, $Button } from "@button";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 
 import section from "@template/index.module.scss";
 import color from "@styles/color.module.scss";

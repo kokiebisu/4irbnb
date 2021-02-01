@@ -19,7 +19,7 @@ import { nearbyItems } from "../data/nearby";
 import { Layout } from "@layout";
 
 import { Animation } from "@animation";
-import { Modal, $Modal } from "@modal";
+import { Modal, $Modal } from "../components/organisms/modal";
 import { Template, $Template } from "@template/index";
 import { Footer } from "@footer";
 

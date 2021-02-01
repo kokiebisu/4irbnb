@@ -1,18 +1,14 @@
-import layout from "@styles/layout.module.scss";
-import color from "@styles/color.module.scss";
-import shape from "@styles/shape.module.scss";
-import space from "@styles/space.module.scss";
-import font from "@styles/font.module.scss";
-
-import { ChevronLeft, ChevronRight } from "@svg/regular";
-
-import { Button, $Button } from "@button";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import { ChevronLeft, ChevronRight } from "../../../public/svg/regular";
+import { Button, $Button } from "../../../atoms/button/web";
 
 export const CheckModal: React.FC<{}> = () => {
   return (
-    <div className={[layout["flex"], layout["justify-center"]].join(" ")}>
+    <div css={{ display: "flex", justifyContent: "center" }}>
       <div
-        style={{
+        css={{
           display: "grid",
           gridTemplateColumns: "repeat(2, 1fr)",
           columnGap: 50,
@@ -34,16 +30,16 @@ const Calendar: React.FC<{
   previous?: () => void;
 }> = ({ next, previous }) => {
   return (
-    <div style={{ width: 294 }}>
+    <div css={{ width: 294 }}>
       <div
-        className={[
-          layout["flex"],
-          layout["justify-center"],
-          layout["items-center"],
-          layout["relative"],
-          space["m-t--8"],
-          space["m-b--16"],
-        ].join(" ")}
+        css={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "relative",
+          marginTop: 8,
+          marginBottom: 16,
+        }}
       >
         <div style={{ position: "absolute", left: 0 }}>
           {previous && (
@@ -51,69 +47,65 @@ const Calendar: React.FC<{
           )}
         </div>
         <div>
-          <h3 className={[font["size--14"]].join(" ")}>December 2020</h3>
+          <h3 css={{ fontSize: 14 }}>December 2020</h3>
         </div>
-        <div style={{ position: "absolute", right: 0 }}>
+        <div css={{ position: "absolute", right: 0 }}>
           {next && <ChevronRight width={12} stroke="black" strokeWidth={3} />}
         </div>
       </div>
-      <div className={[shape["w--full"]].join(" ")}>
-        <div style={{ display: "table", tableLayout: "fixed" }}>
+      <div css={{ width: "100%" }}>
+        <div css={{ display: "table", tableLayout: "fixed" }}>
           <div>
             {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day, index) => {
               return (
-                <div key={index} style={{ display: "table-cell", width: 42 }}>
-                  <div
-                    className={[layout["flex"], layout["justify-center"]].join(
-                      " "
-                    )}
-                  >
-                    <h4 className={[font["size--10"]].join(" ")}>{day}</h4>
+                <div key={index} css={{ display: "table-cell", width: 42 }}>
+                  <div css={{ layout: "flex", justifyContent: "center" }}>
+                    <h4 css={{ fontSize: 10 }}>{day}</h4>
                   </div>
                 </div>
               );
             })}
           </div>
-          <div className={[space["m-v--4"]].join(" ")}>
+          <div css={{ margin: "4px 0" }}>
             {[1, 2, 3, 4, 5, 6, 7].map((number, index) => {
               return (
-                <div key={index} style={{ display: "table-cell" }}>
+                <div key={index} css={{ display: "table-cell" }}>
                   <Button variant={$Button.CALENDAR} number={number} />
                 </div>
               );
             })}
           </div>
-          <div className={[space["m-v--4"]].join(" ")}>
+          <div css={{ margin: "4px 0" }}>
             {[8, 9, 10, 11, 12, 13, 14].map((number, index) => {
               return (
-                <div key={index} style={{ display: "table-cell" }}>
+                <div key={index} css={{ display: "table-cell" }}>
                   <Button variant={$Button.CALENDAR} number={number} />
                 </div>
               );
             })}
           </div>
-          <div className={[space["m-v--4"]].join(" ")}>
+          <div css={{ margin: "4px 0" }}>
             {[15, 16, 17, 18, 19, 20, 21].map((number, index) => {
               return (
-                <div key={index} style={{ display: "table-cell" }}>
+                <div key={index} css={{ display: "table-cell" }}>
                   <Button variant={$Button.CALENDAR} number={number} />
                 </div>
               );
             })}
           </div>
-          <div className={[space["m-v--4"]].join(" ")}>
+          <div css={{ margin: "4px 0" }}>
             {[22, 23, 24, 25, 26, 27, 28].map((number, index) => {
               return (
-                <div key={index} style={{ display: "table-cell" }}>
+                <div key={index} css={{ display: "table-cell" }}>
                   <Button variant={$Button.CALENDAR} number={number} />
                 </div>
               );
             })}
           </div>
-          <div className={[space["m-v--4"]].join(" ")}>
+          <div css={{ margin: "4px 0" }}>
             {[29, 30, 31, null, null, null, null].map((number, index) => {
               return (
-                <div key={index} style={{ display: "table-cell" }}>
+                <div key={index} css={{ display: "table-cell" }}>
                   {number && (
                     <Button variant={$Button.CALENDAR} number={number} />
                   )}

@@ -5,7 +5,10 @@ import shape from "@styles/shape.module.scss";
 
 import { Template } from "@template/s/homes";
 import { Bar, $Bar } from "@bar";
-import { Button, $Button } from "@button";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 
 /**
  * Renders the category template component

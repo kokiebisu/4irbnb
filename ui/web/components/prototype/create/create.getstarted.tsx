@@ -6,8 +6,14 @@ import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import space from "@styles/space.module.scss";
 
-import { Button, $Button } from "@button";
-import { Input, $Input } from "@input";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
+import {
+  Input,
+  $Input,
+} from "../components/organisms/modal/node_modules/@input";
 
 import { useStayDispatch } from "@context/stay";
 

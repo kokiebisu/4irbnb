@@ -7,7 +7,10 @@ import font from "@styles/font.module.scss";
 import banner from "@banner/banner.module.scss";
 import responsive from "@styles/responsive.module.scss";
 
-import { Button, $Button } from "@button";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 import { Card, $Card } from "@card";
 
 import { useSlider, SliderProps } from "@hooks/useSlider";

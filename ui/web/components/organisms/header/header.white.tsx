@@ -6,8 +6,11 @@ import styles from "@styles/index.module.scss";
 import layout from "@styles/layout.module.scss";
 import color from "@styles/color.module.scss";
 
-import { Modal, $Modal } from "@modal";
-import { Button, $Button } from "@button";
+import { Modal, $Modal } from "../components/organisms/modal";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 
 import { useToggleDispatch, useToggleState } from "@context/toggle";
 

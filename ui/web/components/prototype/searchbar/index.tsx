@@ -7,7 +7,7 @@ import layout from "@styles/layout.module.scss";
 import { useToggleState } from "@context/toggle";
 
 import { Bar, $Bar } from "@bar";
-import { Modal } from "@modal";
+import { Modal } from "../components/organisms/modal";
 
 import { useOnClickOutside } from "@hooks/useOnClickOutside";
 

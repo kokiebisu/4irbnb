@@ -1,7 +1,10 @@
 import { useRef } from "react";
 
 import { Card, $Card } from "@card";
-import { Button, $Button } from "@button";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 
 import layout from "@styles/layout.module.scss";
 import font from "@styles/font.module.scss";

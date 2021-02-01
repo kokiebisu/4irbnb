@@ -4,7 +4,10 @@ import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 
-import { Input, $Input } from "@input";
+import {
+  Input,
+  $Input,
+} from "../components/organisms/modal/node_modules/@input";
 
 export const PhotosCreate: React.FC<{
   data?: any;

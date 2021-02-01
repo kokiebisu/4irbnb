@@ -3,7 +3,7 @@ import font from "@styles/font.module.scss";
 import color from "@styles/color.module.scss";
 import layout from "@styles/layout.module.scss";
 
-import { Input } from "@input";
+import { Input } from "../components/organisms/modal/node_modules/@input";
 import { Layout } from "@layout";
 import { Bullet, $Bullet } from "@bullet";
 

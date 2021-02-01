@@ -10,7 +10,10 @@ import color from "@styles/color.module.scss";
 import button from "@button/button.module.scss";
 import modalStyles from "@modal/modal.module.scss";
 
-import { Input, $Input } from "@input";
+import {
+  Input,
+  $Input,
+} from "../components/organisms/modal/node_modules/@input";
 import { Button, $Button } from "@airbnb/components/atoms/button/web";
 import { getAuthContents } from "@button/content/content.auth";
 

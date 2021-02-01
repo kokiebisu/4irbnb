@@ -1,11 +1,8 @@
-import shape from "@styles/shape.module.scss";
-import space from "@styles/space.module.scss";
-import color from "@styles/color.module.scss";
-import layout from "@styles/layout.module.scss";
-import animation from "@styles/animation.module.scss";
-
-import { Button, $Button } from "@button";
-import { Layout } from "@layout";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import { Button, $Button } from "../../../atoms/button/web";
+import { Layout } from "../../../layout/web";
 
 export const LocationModal: React.FC<{}> = () => {
   const recentLocations = [
@@ -29,10 +26,13 @@ export const LocationModal: React.FC<{}> = () => {
         <Button
           variant={$Button.LOCATION}
           type="explore"
-          extendsTo={[
-            space["p-h--25"],
-            animation["hover-background--white__1"],
-          ].join(" ")}
+          extendsTo={{
+            padding: "0 25px",
+            ":hover": {
+              bg: "white__1",
+              transition: "0.4s all",
+            },
+          }}
           block
         />
       </div>
@@ -51,10 +51,13 @@ export const LocationModal: React.FC<{}> = () => {
                     from={from}
                     to={to}
                     guests={guests}
-                    extendsTo={[
-                      space["p-h--25"],
-                      animation["hover-background--white__1"],
-                    ].join(" ")}
+                    extendsTo={{
+                      padding: "0 25px",
+                      ":hover": {
+                        bg: "white__1",
+                        transition: "0.4s all",
+                      },
+                    }}
                     block
                   />
                 </div>
@@ -69,12 +72,13 @@ export const LocationModal: React.FC<{}> = () => {
           title="Nearby Getaways"
           content={
             <div
-              style={{ position: "relative", right: 3 }}
-              className={[
-                space["m-h--25"],
-                layout["flex"],
-                layout["flex-wrap"],
-              ].join(" ")}
+              css={{
+                position: "relative",
+                right: 3,
+                margin: "0 25px",
+                display: "flex",
+                flexWrap: "wrap",
+              }}
             >
               {nearbyLocations.map((nearbyLocation, index) => {
                 return (

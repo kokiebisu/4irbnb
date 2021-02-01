@@ -5,7 +5,10 @@ import shape from "@styles/shape.module.scss";
 import space from "@styles/space.module.scss";
 import section from "@template/index.module.scss";
 
-import { Button, $Button } from "@button";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 
 export const MoreTemplate: React.FC<{ imgUrl?: string }> = ({ imgUrl }) => {
   return (

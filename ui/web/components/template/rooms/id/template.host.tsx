@@ -7,7 +7,10 @@ import layout from "@styles/layout.module.scss";
 import shape from "@styles/shape.module.scss";
 import section from "@template/index.module.scss";
 
-import { Button, $Button } from "@button";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 import { Bullet, $Bullet } from "@bullet";
 
 import { Shield } from "@svg/original";

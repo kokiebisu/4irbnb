@@ -3,7 +3,10 @@ import { Layout } from "@layout";
 import space from "@styles/space.module.scss";
 import layout from "@styles/layout.module.scss";
 
-import { Button, $Button } from "@button";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 import { Card, $Card } from "@card";
 
 export const WorksTemplate: React.FC<{}> = () => {

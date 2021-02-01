@@ -1,7 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-
-import { Modal, ModalProps, $Modal } from "@modal";
+import { Modal, ModalProps, $Modal } from ".";
 
 export default {
   title: "Organisms/Modal",

@@ -4,7 +4,10 @@ import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 
 import { Card, $Card } from "@card";
-import { Button, $Button } from "@button";
+import {
+  Button,
+  $Button,
+} from "../components/organisms/modal/node_modules/@button";
 
 export const SharingTemplate: React.FC<{}> = () => {
   const sharings = ["meditate", "baking", "magic"];

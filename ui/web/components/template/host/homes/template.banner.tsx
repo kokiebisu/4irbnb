@@ -2,7 +2,7 @@ import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 import font from "@styles/font.module.scss";
 
-import { Modal, $Modal } from "@modal";
+import { Modal, $Modal } from "../components/organisms/modal";
 import { Header, $Header } from "@header";
 
 export const BannerTemplate: React.FC<{}> = () => {

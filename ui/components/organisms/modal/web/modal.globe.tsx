@@ -1,12 +1,8 @@
 import { useState } from "react";
-
-import { Button, $Button } from "@button";
-
-import layout from "@styles/layout.module.scss";
-import space from "@styles/space.module.scss";
-
+import { Button, $Button } from "../../../atoms/button/web";
+// import layout from "@styles/layout.module.scss";
+// import space from "@styles/space.module.scss";
 import { Prototype, $Prototype } from "@prototype/globe";
-
 import { useToggleDispatch } from "@context/toggle";
 
 export const GlobeModal: React.FC<{}> = () => {
@@ -26,13 +22,13 @@ export const GlobeModal: React.FC<{}> = () => {
 
       <div>
         <div
-          className={[
-            layout["flex"],
-            layout["items-center"],
-            space["m-b--50"],
-          ].join(" ")}
+          css={{
+            display: "flex",
+            alignItems: "center",
+            marginBottom: 50,
+          }}
         >
-          <div className={[space["m-r--32"]].join(" ")}>
+          <div css={{ marginRight: 32 }}>
             <Button
               variant={$Button.UNDERLINE}
               title="Language and region"
