@@ -1,11 +1,15 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
 import { useLayoutEffect, useState, useRef } from "react";
-import { Button, $Button } from "@button";
-import particle from "@particle/particle.module.scss";
+import { Button, $Button } from "../../atoms/button/web";
+import { renderSize } from "molecules/card/logic/logic.nearby";
+// import particle from "@particle/particle.module.scss";
 
 const Dots = ({ slides, activeSlide }) => {
   return (
     <div
-      style={{
+      css={{
         position: "absolute",
         bottom: 25,
         width: "100%",
@@ -14,10 +18,10 @@ const Dots = ({ slides, activeSlide }) => {
         justifyContent: "center",
       }}
     >
-      {slides.map((_, index) => (
+      {slides.map((_, index: number) => (
         <span
           key={index}
-          style={{
+          css={{
             transition: "all 0.2s ease-in",
             padding: 3,
             marginRight: 5,
@@ -34,20 +38,22 @@ const Dots = ({ slides, activeSlide }) => {
 const Slide = ({ slide }) => {
   return (
     <div
-      style={{
+      css={{
         height: "100%",
         width: "100%",
         backgroundImage: slide && `url(${slide})`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        backgroundColor: !slide && "lightgray",
+        ...(!slide && { backgroundColor: "lightgray" }),
       }}
     />
   );
 };
 
-export const ImageSlider = ({ slides = [undefined, undefined, undefined] }) => {
+export const SliderParticle: React.FC<{ slides?: any }> = ({
+  slides = [undefined, undefined, undefined],
+}) => {
   const [style, setStyle] = useState({
     opacity: 0,
   });
@@ -58,7 +64,7 @@ export const ImageSlider = ({ slides = [undefined, undefined, undefined] }) => {
     transition: 0.45,
   });
 
-  const containerRef = useRef<HTMLDivElement>();
+  const containerRef = useRef<any>();
 
   const handleRef = () => {
     if (containerRef.current && containerRef.current.getBoundingClientRect()) {
@@ -118,7 +124,7 @@ export const ImageSlider = ({ slides = [undefined, undefined, undefined] }) => {
           opacity: 0,
         })
       }
-      style={{
+      css={{
         position: "relative",
         width: "100%",
         height: "100%",
@@ -128,7 +134,7 @@ export const ImageSlider = ({ slides = [undefined, undefined, undefined] }) => {
       }}
     >
       <div
-        style={{
+        css={{
           borderRadius: 12,
           transform: `translateX(-${state.translate}px)`,
           transition: `transform ease-out ${state.transition}s`,
@@ -142,7 +148,7 @@ export const ImageSlider = ({ slides = [undefined, undefined, undefined] }) => {
         })}
       </div>
       <div
-        style={{
+        css={{
           ...style,
           transition: "opacity 0.2s ease-out",
           position: "absolute",
@@ -160,7 +166,7 @@ export const ImageSlider = ({ slides = [undefined, undefined, undefined] }) => {
         />
       </div>
       <div
-        style={{
+        css={{
           ...style,
           transition: "opacity 0.2s ease-out",
           position: "absolute",
@@ -178,10 +184,7 @@ export const ImageSlider = ({ slides = [undefined, undefined, undefined] }) => {
         />
       </div>
 
-      <div
-        style={{ ...style, transition: "opacity 0.2s ease-out" }}
-        className={[particle["dots"]].join(" ")}
-      >
+      <div css={{ ...style, transition: "opacity 0.2s ease-out" }}>
         <Dots slides={slides} activeSlide={state.activeSlide} />
       </div>
     </div>

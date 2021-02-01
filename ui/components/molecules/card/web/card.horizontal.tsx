@@ -1,10 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
+import { Particle, $Particle } from "../../../particles/web";
 import { jsx } from "theme-ui";
 import { Heart } from "../../../public/svg/original";
 import { renderType } from "../logic/logic.horizontal";
-/** Particles */
-// import { ImageSlider } from "../../../web/components/particles/image.slider";
 
 /**
  * Renders the horizontal card component
@@ -44,7 +43,7 @@ export const HorizontalCard: React.FC<{
             <div css={{ position: "relative", height: "100%" }}>
               {card.images ? (
                 <div css={{ borderRadius: 12, height: "100%" }}>
-                  {/* <ImageSlider slides={card.images} /> */}
+                  <Particle variant={$Particle.SLIDER} slides={card.images} />
                 </div>
               ) : (
                 <div

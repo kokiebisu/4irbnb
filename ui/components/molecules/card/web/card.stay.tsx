@@ -3,8 +3,9 @@
 import { jsx } from "theme-ui";
 import { Heart } from "../../../public/svg/original";
 import { Bullet, $Bullet } from "../../../atoms/bullet/web";
-// import { ImageSlider } from "@particle/image.slider";
+
 import { Card, $Card } from ".";
+import { $Particle, Particle } from "../../../particles/web";
 
 /**
  * Renders the stay card component
@@ -62,7 +63,7 @@ export const StayCard: React.FC<{
             <div css={{ display: "flex" }}>
               <div css={{ width: 300, minHeight: 200, marginRight: 15 }}>
                 <div css={{ borderRadius: 12, height: "100%" }}>
-                  {/* <ImageSlider slides={images} /> */}
+                  <Particle variant={$Particle.SLIDER} slides={images} />
                 </div>
               </div>
               <div
