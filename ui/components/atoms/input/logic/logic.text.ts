@@ -1,4 +1,4 @@
-import color from "@styles/color.module.scss";
+import color from "layout/web/modal/node_modules/@styles/color.module.scss";
 import shape from "@styles/shape.module.scss";
 
 export const renderShape = (direction: string) => {

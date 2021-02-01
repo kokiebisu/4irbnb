@@ -34,10 +34,10 @@ Booking.args = {
   variant: $Modal.BOOKING,
 };
 
-export const Globe = TemplateStory.bind({});
-Globe.args = {
-  variant: $Modal.GLOBE,
-};
+// export const Globe = TemplateStory.bind({});
+// Globe.args = {
+//   variant: $Modal.GLOBE,
+// };
 
 export const Location = TemplateStory.bind({});
 Location.args = {

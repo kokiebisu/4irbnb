@@ -5,9 +5,9 @@ import { ChevronDown, Globe } from "@svg/regular";
 
 /** styles */
 import layout from "@styles/layout.module.scss";
-import space from "@styles/space.module.scss";
-import font from "@styles/font.module.scss";
-import color from "@styles/color.module.scss";
+import space from "layout/web/modal/node_modules/@styles/space.module.scss";
+import font from "layout/web/modal/node_modules/@styles/font.module.scss";
+import color from "layout/web/modal/node_modules/@styles/color.module.scss";
 
 export const Content: React.FC<{ kind?: string; inverse?: boolean }> = ({
   kind = "globe",

@@ -37,7 +37,7 @@ export const $Bullet = {
 };
 
 export interface BulletProps {
-  extendsTo?: string;
+  extendsTo?: any;
   variant: string;
   [property: string]: any;
 }
