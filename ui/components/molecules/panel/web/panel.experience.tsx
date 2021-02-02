@@ -1,7 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-// import section from "@template/index.module.scss";
 
 export const ExperiencePanel: React.FC<{ images?: string[] }> = ({
   images = [],
@@ -35,12 +34,14 @@ export const ExperiencePanel: React.FC<{ images?: string[] }> = ({
           <div
             css={{
               backgroundSize: "cover",
-              backgroundImage: images[0] && `url(${images[0]})`,
-              ...(!images[0] && { backgroundColor: "lightgray" }),
               borderTopLeftRadius: 8,
               borderBottomLeftRadius: 8,
+              ...(images[0] && { backgroundImage: `url(${images[0]})` }),
             }}
-          ></div>
+            sx={{
+              ...(!images[0] && { backgroundColor: "lightgray" }),
+            }}
+          />
           <div
             css={{
               display: "grid",
@@ -51,46 +52,57 @@ export const ExperiencePanel: React.FC<{ images?: string[] }> = ({
             }}
           >
             <div
-              style={{
+              css={{
                 backgroundSize: "cover",
-                backgroundImage: images[1] && `url(${images[1]})`,
                 gridColumnStart: 1,
                 gridColumnEnd: 2,
                 gridRowStart: 1,
                 gridRowEnd: 3,
+                ...(images[1] && { backgroundImage: `url(${images[1]})` }),
+              }}
+              sx={{
                 ...(!images[1] && { backgroundColor: "lightgray" }),
               }}
-            ></div>
+            />
             <div
-              style={{
+              css={{
                 backgroundSize: "cover",
                 backgroundImage: images[2] && `url(${images[2]})`,
                 gridColumnStart: 2,
                 gridColumnEnd: 3,
                 gridRowStart: 1,
                 gridRowEnd: 2,
+                ...(images[2] && { backgroundImage: `url(${images[2]})` }),
+              }}
+              sx={{
                 ...(!images[2] && { backgroundColor: "lightgray" }),
               }}
-            ></div>
+            />
             <div
-              style={{
+              css={{
                 backgroundSize: "cover",
                 backgroundImage: images[3] && `url(${images[3]})`,
                 gridColumnStart: 2,
                 gridColumnEnd: 3,
                 gridRowStart: 2,
                 gridRowEnd: 3,
-                ...(!images[3] && { backgroundColor: "lightgray" }),
+                ...(images[2] && { backgroundImage: `url(${images[2]})` }),
               }}
-            ></div>
+              sx={{
+                ...(!images[2] && { backgroundColor: "lightgray" }),
+              }}
+            />
           </div>
           <div
-            style={{
+            css={{
               backgroundSize: "cover",
               backgroundImage: images[3] && `url(${images[3]})`,
               borderTopRightRadius: 8,
               borderBottomRightRadius: 8,
-              ...(!images[3] && { backgroundColor: "lightgray" }),
+              ...(images[2] && { backgroundImage: `url(${images[2]})` }),
+            }}
+            sx={{
+              ...(!images[2] && { backgroundColor: "lightgray" }),
             }}
           ></div>
         </div>
