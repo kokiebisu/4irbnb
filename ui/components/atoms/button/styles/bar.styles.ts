@@ -4,26 +4,26 @@ const shared = {
     flexDirection: "column",
     alignItems: "center",
 
-    "&:hover": {
-      "& svg": {
+    ":hover": {
+      svg: {
         stroke: "#f64f6f",
       },
-      "& p": {
+      p: {
         color: "#f64f6f",
       },
     },
   },
   selected: {
-    "& svg": {
+    svg: {
       stroke: "#f64f6f",
     },
-    "& p": {
+    p: {
       color: "#f64f6f",
     },
   },
   logo: {
     wrapper: {
-      "& svg": {
+      svg: {
         stroke: "#717171",
         fillOpacity: 0,
         strokeWidth: "1.5px",

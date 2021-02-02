@@ -7,28 +7,27 @@ import { Login, Saved } from "@svg/regular";
 
 const { web, theme } = bar;
 
-export const BarButton: React.FC<{ type?: string }> = ({
+export const BarButton: React.FC<{ type?: string; selected?: boolean }> = ({
   type = "explore",
+  selected = false,
 }) => {
   const types: {
     [type: string]: {
       component: JSX.Element;
       name: string;
-      selected: boolean;
     };
   } = {
     explore: {
       component: <MenuBarLogo width={25} />,
       name: "Explore",
-      selected: true,
     },
-    saved: { component: <Saved width={25} />, name: "Saved", selected: false },
-    login: { component: <Login width={25} />, name: "Log in", selected: false },
+    saved: { component: <Saved width={25} />, name: "Saved" },
+    login: { component: <Login width={25} />, name: "Log in" },
   };
   return (
     <div
       css={{
-        ...(types[type].selected
+        ...(selected
           ? { ...web.wrapper, ...web.selected }
           : { ...web.wrapper }),
       }}

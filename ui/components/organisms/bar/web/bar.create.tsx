@@ -14,8 +14,8 @@ export const CreateBar: React.FC<{
 }) => {
   return (
     <div
-      css={{ width: "100%", padding: "16px 0", borderTop: "1px solid" }}
-      sx={{ borderColor: "white__1" }}
+      css={{ width: "100%", padding: "16px 0" }}
+      sx={{ borderTop: "1px solid", borderColor: "white__1" }}
     >
       <div
         css={{

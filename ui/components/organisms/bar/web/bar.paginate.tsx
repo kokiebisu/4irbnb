@@ -4,7 +4,6 @@ import React from "react";
 import { jsx } from "theme-ui";
 
 import Router from "next/router";
-import { $Bar } from ".";
 import { Button, $Button } from "../../../atoms/button/web";
 
 /**

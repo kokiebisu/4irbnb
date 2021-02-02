@@ -83,18 +83,18 @@ export const FiltersBar: React.FC<{}> = () => {
       <div css={{ display: "flex" }}>
         {primaryFilters.map((filter, index) => {
           return (
-            <div key={index} css={{ marginRight: 8, whitespace: "nowrap" }}>
+            <div key={index} css={{ marginRight: 8, whiteSpace: "nowrap" }}>
               <Button variant={$Button.FILTER} inverse label={filter} />
             </div>
           );
         })}
       </div>
       <div
+        sx={{ bg: "lightgray" }}
         css={{
           marginRight: 8,
           height: 35,
           width: 2,
-          backgroundColor: "lightgray",
           position: "relative",
         }}
       />

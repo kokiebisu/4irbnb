@@ -10,7 +10,6 @@ export const CovidBar: React.FC<{}> = () => {
         fontSize: 14,
         textAlign: "center",
         padding: "20px 24px",
-        zIndex: 9999,
       }}
     >
       <a href="">

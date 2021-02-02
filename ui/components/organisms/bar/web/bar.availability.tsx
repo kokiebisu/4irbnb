@@ -1,9 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-
-import { Button, $Button } from "../../../atoms/button/web";
-import { Star } from "../../../public/svg/original";
+import { Button, $Button } from "@button/web";
+import { Star } from "@svg/original";
 
 /**
  * Renders the modal which gives all the available options
@@ -20,9 +19,9 @@ export const AvailabilityBar: React.FC<{
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        borderTop: "1px solid",
       }}
       sx={{
+        borderTop: "1px solid",
         borderColor: "white__2",
       }}
     >
