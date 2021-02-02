@@ -23,6 +23,14 @@ auth.args = {
     borderRadius: 8,
   },
 };
+auth.argTypes = {
+  title: {
+    control: {
+      type: "select",
+      options: ["Log in", "Sign up"],
+    },
+  },
+};
 
 export const Login = TemplateStory.bind({});
 Login.args = {
