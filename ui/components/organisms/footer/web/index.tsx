@@ -17,59 +17,21 @@ export interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
   return (
     <footer
-      css={{
-        borderTop: "1px solid white__2",
-        padding: "22px 0",
-        bg: "white__1",
+      sx={{
+        bg: "transparent",
       }}
     >
-      <div
-        css={{
-          ...(spread
-            ? {
-                paddingLeft: [
-                  "19px",
-                  "19px",
-                  "40px",
-                  "40px",
-                  "40px",
-                  "70px",
-                  "70px",
-                ],
-                paddingRight: [
-                  "19px",
-                  "19px",
-                  "40px",
-                  "40px",
-                  "40px",
-                  "70px",
-                  "70px",
-                ],
-                width: [
-                  "auto",
-                  "auto",
-                  "auto",
-                  "auto",
-                  "auto",
-                  "auto",
-                  "auto",
-                  "auto",
-                  "100%",
-                ],
-                margin: ["0", "0", "0", "0", "0", "0", "0", "0", "0 auto"],
-              }
-            : {
-                paddingRight: ["20px", "20px", "40px", "80px"],
-                paddingLeft: ["20px", "20px", "40px", "80px"],
-                width: ["auto", "auto", "auto", "auto", "100%"],
-                maxWidth: [0, 0, 0, 0, "1280px"],
-                margin: ["0", "0", "0", "0 auto"],
-              }),
-        }}
-      >
+      <div>
         <div
-          css={{
-            borderBottom: "1px solid white__1",
+          sx={{
+            gridTemplateColumns: [
+              "auto",
+              "auto",
+              "auto",
+              "auto",
+              "repeat(4, 1fr)",
+            ],
+            display: ["block", "block", "block", "block", "grid"],
           }}
         >
           {footerItems.map((section, index) => {
@@ -77,10 +39,12 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
               <div
                 key={index}
                 css={{
-                  borderTop: "1px solid white__2",
-                  "&:not(first-child)": {
-                    margin: 20,
-                  },
+                  padding: "20px 0",
+                }}
+                sx={{
+                  borderBottom: "1px solid",
+                  borderColor: "white__2",
+                  ":not(first-child)": {},
                 }}
               >
                 <div>
@@ -92,10 +56,31 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
                   css={{
                     margin: "15px 0",
                   }}
+                  sx={{
+                    display: ["block", "block", "grid", "grid", "block"],
+                    gridTemplateColumns: [
+                      "auto",
+                      "auto",
+                      "repeat(3, 1fr)",
+                      "repeat(3, 1fr)",
+                      "auto",
+                    ],
+                  }}
                 >
                   {section.items.map(({ name, url }, index) => {
                     return (
-                      <div css={{ margin: "15px 0" }} key={index}>
+                      <div
+                        sx={{
+                          margin: [
+                            "10px 0",
+                            "10px 0",
+                            "10px 0",
+                            "10px 0",
+                            "15px 0",
+                          ],
+                        }}
+                        key={index}
+                      >
                         <Button
                           variant={$Button.LINK}
                           onClick={() => Router.push(url)}
@@ -123,8 +108,10 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
                   display: "flex",
                   alignItems: "center",
                   marginRight: 10,
-                  bg: "transparent",
                   border: "none",
+                }}
+                sx={{
+                  bg: "transparent",
                 }}
               >
                 <Globe

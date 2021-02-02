@@ -15,8 +15,10 @@ export const ProgressBar: React.FC<{
         position: "relative",
         width: "100%",
         height: 10,
-        backgroundColor: "#EDEFED",
         zIndex: 1,
+      }}
+      sx={{
+        bg: "#EDEFED",
       }}
     >
       <div css={{ width: "100%", height: 10, display: "flex", zIndex: 500 }}>
@@ -24,10 +26,12 @@ export const ProgressBar: React.FC<{
           return (
             <div
               key={index}
+              sx={{
+                bg: "transparent",
+              }}
               css={{
                 width: "10%",
                 height: 10,
-                backgroundColor: "transparent",
                 ...(index === 23
                   ? { borderRight: "none" }
                   : { borderRight: "1px solid #DCE0E0" }),
@@ -42,10 +46,12 @@ export const ProgressBar: React.FC<{
             width: `${percentage}%`,
             borderTopRightRadius: 9999,
             borderBottomRightRadius: 9999,
-            backgroundColor: "#278489",
             zIndex: 60,
           }}
-        ></div>
+          sx={{
+            bg: "#278489",
+          }}
+        />
       </div>
     </div>
   );
