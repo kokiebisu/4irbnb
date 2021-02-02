@@ -8,6 +8,11 @@ const shared = {
       marginRight: "8px",
     },
   },
+  label: {
+    text: {
+      fontSize: 14,
+    },
+  },
 };
 
 const web = {
@@ -15,6 +20,11 @@ const web = {
   icon: {
     wrapper: {
       ...shared.icon.wrapper,
+    },
+  },
+  label: {
+    text: {
+      ...shared.label.text,
     },
   },
 };

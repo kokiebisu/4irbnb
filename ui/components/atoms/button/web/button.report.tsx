@@ -12,7 +12,9 @@ export const ReportButton: React.FC<{}> = () => {
       <div css={web.icon.wrapper}>
         <Flag width={16} />
       </div>
-      <div>Report this listing</div>
+      <div>
+        <h3 css={web.label.text}>Report this listing</h3>
+      </div>
     </div>
   );
 };

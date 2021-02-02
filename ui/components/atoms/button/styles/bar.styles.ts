@@ -3,7 +3,6 @@ const shared = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    margin: "0 49px",
 
     "&:hover": {
       "& svg": {

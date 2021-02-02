@@ -1,11 +1,10 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Heart } from "../../../public/svg/original";
-import { Bullet, $Bullet } from "../../../atoms/bullet/web";
-
+import { Heart } from "@svg/original";
+import { Bullet, $Bullet } from "@bullet/web";
+import { $Particle, Particle } from "@particles/web";
 import { Card, $Card } from ".";
-import { $Particle, Particle } from "../../../particles/web";
 
 /**
  * Renders the stay card component

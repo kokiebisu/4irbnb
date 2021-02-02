@@ -4,7 +4,6 @@ import { jsx } from "theme-ui";
 import { useLayoutEffect, useState, useRef } from "react";
 import { Button, $Button } from "../../atoms/button/web";
 import { renderSize } from "molecules/card/logic/logic.nearby";
-// import particle from "@particle/particle.module.scss";
 
 const Dots = ({ slides, activeSlide }) => {
   return (
@@ -45,7 +44,9 @@ const Slide = ({ slide }) => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
-        ...(!slide && { backgroundColor: "lightgray" }),
+      }}
+      sx={{
+        ...(!slide && { bg: "gray__0" }),
       }}
     />
   );

@@ -1,15 +1,15 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Button, $Button } from "../../../atoms/button/web";
-import { Lock } from "../../../public/svg/original";
-import { useToggleDispatch } from "@context/toggle";
+import { Button, $Button } from "@button/web";
+import { Lock } from "@svg/original";
+// import { useToggleDispatch } from "@context/toggle";
 
 /**
  * Renders the privacy modal
  */
 export const PrivacyModal: React.FC<{}> = () => {
-  const toggleDispatch = useToggleDispatch();
+  // const toggleDispatch = useToggleDispatch();
 
   const handleSave = () => {
     // add cookie

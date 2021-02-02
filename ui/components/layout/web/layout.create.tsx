@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-
-import { Bar, $Bar } from "../organisms/bar/web";
-import { Header, $Header } from "@header";
+import { jsx } from "theme-ui";
+import { Bar, $Bar } from "@bar/web";
+import { Header, $Header } from "@header/web";
 
 export const CreateLayout: React.FC<{
   title?: string;

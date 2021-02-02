@@ -1,9 +1,5 @@
 import React from "react";
-
-/** contexts */
-import { useAuthDispatch, useAuthState } from "@context/auth";
-
-/** vectors */
+// import { useAuthDispatch, useAuthState } from "@context/auth";
 import { Email } from "@svg/original";
 import { Apple, Facebook, Google } from "@svg/logo";
 

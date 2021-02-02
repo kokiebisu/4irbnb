@@ -15,5 +15,5 @@ export const Particle: React.FC<{
     slider: <SliderParticle {...props} />,
   };
 
-  return <div>{variants && variants[variant]}</div>;
+  return variants && variants[variant];
 };

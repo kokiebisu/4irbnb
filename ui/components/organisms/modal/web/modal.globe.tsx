@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Button, $Button } from "../../../atoms/button/web";
 // import layout from "@styles/layout.module.scss";
 // import space from "@styles/space.module.scss";
-import { Prototype, $Prototype } from "@prototype/globe";
-import { useToggleDispatch } from "@context/toggle";
+import { Prototype, $Prototype } from "@prototype/web/globe";
+// import { useToggleDispatch } from "@context/toggle";
 
 export const GlobeModal: React.FC<{}> = () => {
-  const toggleDispatch = useToggleDispatch();
+  // const toggleDispatch = useToggleDispatch();
   const [prototype, setPrototype] = useState($Prototype.LANGUAGE);
   return (
     <div>

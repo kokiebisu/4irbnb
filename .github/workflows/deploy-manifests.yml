@@ -13,7 +13,7 @@ jobs:
       - uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-      - run: doctl kubernetes cluster kubeconfig save nextbnb
+      - run: doctl kubernetes cluster kubeconfig save nextbnb-cluster
       - run: kubectl apply -f infrastructure/kubernetes && kubectl apply -f infrastructure/prod
       - run: kubectl rollout restart deployment stays-deploy
       - run: kubectl rollout restart deployment auth-deploy

@@ -1,4 +1,4 @@
-import { APIClient } from "@api/client";
+// import { APIClient } from "@api/client";
 
 /**
  * Fetches based on the given request method and body (optional)
@@ -27,8 +27,8 @@ export const usePost = ({
       if (triggerLoading) {
         triggerLoading(true);
       }
-      const client = APIClient();
-      const { data } = await client.post(url, body);
+      // const client = APIClient();
+      // const { data } = await client.post(url, body);
       if (onSuccess) {
         onSuccess(data);
       }

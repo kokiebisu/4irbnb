@@ -6,6 +6,7 @@ const shared = {
     bg: "transparent",
     py: "10px",
     px: "12px",
+    fontSize: 16,
   },
 };
 

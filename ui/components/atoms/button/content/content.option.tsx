@@ -1,11 +1,11 @@
-import { useAuthDispatch } from "@context/auth";
-import { useToggleDispatch } from "@context/toggle";
+// import { useAuthDispatch } from "@context/auth";
+// import { useToggleDispatch } from "@context/toggle";
 import { usePost } from "@hooks/usePost";
 import Router from "next/router";
 
 export const getOptionContents = () => {
-  const authDispatch = useAuthDispatch();
-  const toggleDispatch = useToggleDispatch();
+  // const authDispatch = useAuthDispatch();
+  // const toggleDispatch = useToggleDispatch();
 
   const options = {
     messages: {

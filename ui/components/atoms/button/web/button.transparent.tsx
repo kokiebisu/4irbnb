@@ -1,7 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-
 import { transparent } from "../styles";
 
 const { web, theme } = transparent;

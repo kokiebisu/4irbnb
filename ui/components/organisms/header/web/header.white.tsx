@@ -2,11 +2,11 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import Router from "next/router";
-import { Modal, $Modal } from "../../modal/web";
-import { Button, $Button } from "../../../atoms/button/web";
-import { useToggleDispatch, useToggleState } from "@context/toggle";
-import { ChevronLeft } from "../../../public/svg/regular";
-import { Content } from "../../../atoms/button/content/content.transparent";
+import { Modal, $Modal } from "@modal/web";
+import { Button, $Button } from "@button/web";
+// import { useToggleDispatch, useToggleState } from "@context/toggle";
+import { ChevronLeft } from "@svg/regular";
+import { Content } from "@button/content/content.transparent";
 
 /**
  * Renders the white header
@@ -16,8 +16,8 @@ export const WhiteHeader: React.FC<{
   spread?: boolean;
   data?: any;
 }> = ({ data }) => {
-  const toggleState = useToggleState();
-  const toggleDispatch = useToggleDispatch();
+  // const toggleState = useToggleState();
+  // const toggleDispatch = useToggleDispatch();
   return (
     <header css={{ padding: "16px 0", bg: "white" }}>
       <div

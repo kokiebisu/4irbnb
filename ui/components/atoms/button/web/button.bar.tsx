@@ -2,12 +2,14 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { bar } from "../styles";
-import { MenuBarLogo } from "../../../public/svg/logo";
-import { Login, Saved } from "../../../public/svg/regular";
+import { MenuBarLogo } from "@svg/logo";
+import { Login, Saved } from "@svg/regular";
 
 const { web, theme } = bar;
 
-export const BarButton: React.FC<{ type?: string }> = ({ type = "menu" }) => {
+export const BarButton: React.FC<{ type?: string }> = ({
+  type = "explore",
+}) => {
   const types: {
     [type: string]: {
       component: JSX.Element;
