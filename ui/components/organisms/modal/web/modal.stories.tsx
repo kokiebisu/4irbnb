@@ -27,6 +27,21 @@ Menu.argTypes = {
 export const Auth = TemplateStory.bind({});
 Auth.args = {
   variant: $Modal.AUTH,
+  authState: { title: "Forgot password" },
+};
+Auth.argTypes = {
+  title: {
+    control: {
+      type: "select",
+      options: ["Forgot password", "Others"],
+    },
+  },
+  display: {
+    control: {
+      type: "select",
+      options: ["login", "signup", "auth", "forgotpassword", "exists"],
+    },
+  },
 };
 
 export const Booking = TemplateStory.bind({});

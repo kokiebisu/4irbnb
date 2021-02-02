@@ -2,20 +2,19 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { useFormik } from "formik";
-// import { useAuthDispatch, useAuthState } from "@context/auth";
 import { Input, $Input } from "@input/web";
 import { Button, $Button } from "@button/web";
 import { getAuthContents } from "@button/content/content.auth";
-
 import { validateAuth as validate } from "@helper/auth";
 
 /**
  * Renders the auth template component
  */
-export const AuthPrototype: React.FC<{}> = () => {
+export const AuthPrototype: React.FC<{
+  title?: string;
+  authDispatch: (param: any) => void;
+}> = ({ title = "Log in", authDispatch }) => {
   const auths = getAuthContents();
-  const authState = useAuthState();
-  const authDispatch = useAuthDispatch();
   const methods = ["email", "facebook", "google", "apple"];
 
   const formik = useFormik({
@@ -30,7 +29,7 @@ export const AuthPrototype: React.FC<{}> = () => {
   });
 
   const switchAuth = () => {
-    if (authState.title === "Log in") {
+    if (title === "Log in") {
       return authDispatch({ type: "auth_signup" });
     }
     return authDispatch({ type: "auth_login" });
@@ -59,7 +58,10 @@ export const AuthPrototype: React.FC<{}> = () => {
             </div>
           </div>
           <div>
-            <p css={{ fontWeight: 100, color: "gray__0", fontSize: 12 }}>
+            <p
+              css={{ fontWeight: 100, fontSize: 12 }}
+              sx={{ color: "gray__0" }}
+            >
               We’ll call or text you to confirm your number. Standard message
               and data rates apply.
             </p>
@@ -80,10 +82,12 @@ export const AuthPrototype: React.FC<{}> = () => {
               zIndex: 3,
               position: "relative",
               padding: "0 4px",
-              bg: "white",
               fontWeight: 100,
-              color: "gray__0",
               fontSize: 12,
+            }}
+            sx={{
+              bg: "white",
+              color: "gray__0",
             }}
           >
             or
@@ -96,7 +100,8 @@ export const AuthPrototype: React.FC<{}> = () => {
                 <Button
                   variant={$Button.AUTH}
                   extendsTo={{
-                    border: "2px solid #b0b0b0",
+                    border: "2px solid",
+                    borderColor: "#b0b0b0",
                     padding: 12,
                     borderRadius: 8,
                   }}
@@ -116,10 +121,12 @@ export const AuthPrototype: React.FC<{}> = () => {
               css={{
                 fontSize: 14,
                 fontWeight: 300,
+              }}
+              sx={{
                 color: "gray__1",
               }}
             >
-              {authState.title === "Log in"
+              {title === "Log in"
                 ? "Don't have an account?"
                 : "Already have an account?"}
             </p>
@@ -127,7 +134,7 @@ export const AuthPrototype: React.FC<{}> = () => {
           <Button
             variant={$Button.UNDERLINE}
             onClick={switchAuth}
-            title={authState.title === "Log in" ? "Sign up" : "Log in"}
+            title={title === "Log in" ? "Sign up" : "Log in"}
           />
         </div>
       </div>

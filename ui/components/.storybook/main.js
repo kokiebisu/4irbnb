@@ -9,7 +9,7 @@ module.exports = {
     "../prototype/**/**/*.stories.@(js|jsx|ts|tsx)",
     "../template/**/**/*.stories.@(js|jsx|ts|tsx)",
   ],
-  logLevel: "debug",
+  // logLevel: "debug",
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",

@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Input, $Input } from "../../../atoms/input/web";
+import { Input, $Input } from "@input/web";
 
 export const GuestsModal: React.FC<{}> = () => {
   return (

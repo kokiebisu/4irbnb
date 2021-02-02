@@ -3,28 +3,33 @@
 import { jsx } from "theme-ui";
 import { Button, $Button } from "@button/web";
 import { Lock } from "@svg/original";
-// import { useToggleDispatch } from "@context/toggle";
 
 /**
  * Renders the privacy modal
+ * @param {function} dispatchCallback - Dispatch which handles the toggle of the modal
  */
-export const PrivacyModal: React.FC<{}> = () => {
+export const PrivacyModal: React.FC<{ dispatchCallback?: (param) => void }> = ({
+  dispatchCallback,
+}) => {
   // const toggleDispatch = useToggleDispatch();
 
   const handleSave = () => {
     // add cookie
-    console.log("entered");
-    return toggleDispatch({ type: "toggle_privacy" });
+    return dispatchCallback({ type: "toggle_privacy" });
   };
 
   const handleSettings = () => {
     // open settings
-    return toggleDispatch({ type: "toggle_privacy" });
+    return dispatchCallback({ type: "toggle_privacy" });
   };
 
   return (
     <div>
       <div
+        css={{
+          padding: 18,
+          borderRadius: 8,
+        }}
         sx={{
           alignItems: "center",
           display: ["block", "block", "block", "block", "flex"],

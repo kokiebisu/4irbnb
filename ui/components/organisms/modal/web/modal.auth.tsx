@@ -1,18 +1,26 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Button, $Button } from "../../../atoms/button/web";
-import { Prototype } from "@prototype/web/auth";
-// import { useToggleDispatch } from "@context/toggle";
-// import { useAuthDispatch, useAuthState } from "@context/auth";
+import { Button, $Button } from "@button/web";
+import { $Prototype, Prototype } from "@prototype/web/auth";
 
 /**
  * Renders the auth modal
+ * @param {function} toggleDispatch - Dispatch which handles the toggling
+ * @param {function} authDispatch - Dispatch which handles the toggling
+ * @param {function} authState - Context state which handles authentication
  */
-export const AuthModal: React.FC<{}> = () => {
-  // const toggleDispatch = useToggleDispatch();
-  // const authDispatch = useAuthDispatch();
-  // const authState = useAuthState();
+export const AuthModal: React.FC<{
+  toggleDispatch?: (params: any) => void;
+  authDispatch?: (params: any) => void;
+  title?: string;
+  display?: string;
+}> = ({
+  toggleDispatch,
+  authDispatch,
+  title = "Forgot password",
+  display = "login",
+}) => {
   return (
     <div>
       <div
@@ -20,8 +28,11 @@ export const AuthModal: React.FC<{}> = () => {
           height: 60,
           display: "flex",
           alignItems: "center",
-          borderBottom: "1px solid white__2",
           padding: "0 24px",
+        }}
+        sx={{
+          borderBottom: "1px solid",
+          borderColor: "white__2",
         }}
       >
         <div
@@ -38,7 +49,7 @@ export const AuthModal: React.FC<{}> = () => {
             }}
             sx={{ bg: "transparent" }}
           >
-            {authState.title === "Forgot password" ? (
+            {title === "Forgot password" ? (
               <Button
                 variant={$Button.MODAL}
                 modal="back"
@@ -59,11 +70,11 @@ export const AuthModal: React.FC<{}> = () => {
               alignItems: "center",
             }}
           >
-            <h3 css={{ fontSize: 16 }}>{authState.title}</h3>
+            <h3 css={{ fontSize: 16 }}>{title}</h3>
           </div>
         </div>
       </div>
-      <Prototype variant={authState.display} />
+      <Prototype variant={$Prototype.LOGIN} />
     </div>
   );
 };

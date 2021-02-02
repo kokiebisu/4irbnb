@@ -41,7 +41,7 @@ const Calendar: React.FC<{
           marginBottom: 16,
         }}
       >
-        <div style={{ position: "absolute", left: 0 }}>
+        <div css={{ position: "absolute", left: 0 }}>
           {previous && (
             <ChevronLeft width={12} stroke="black" strokeWidth={3} />
           )}

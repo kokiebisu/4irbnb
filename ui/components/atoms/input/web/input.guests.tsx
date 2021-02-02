@@ -2,8 +2,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { useState } from "react";
-
-/** Styling */
 // import { styleInput, styleLabel, styleContainer } from "./styling.select";
 import { ChevronDown, ChevronTop } from "../../../public/svg/regular";
 
@@ -32,7 +30,8 @@ export const GuestsInput: React.FC<{
           borderLeft: "1px solid",
           borderRight: "1px solid",
           borderColor: "white__3",
-          borderBottomRadius: 10,
+          borderBottomLeftRadius: 10,
+          borderBottomRightRadius: 10,
         };
       case "bottom":
         return {
@@ -40,7 +39,8 @@ export const GuestsInput: React.FC<{
           borderLeft: "1px solid",
           borderRight: "1px solid",
           borderColor: "white__3",
-          borderTopRadius: 10,
+          borderTopLeftRadius: 10,
+          borderTopRightRadius: 10,
         };
       default:
         return {
@@ -59,7 +59,7 @@ export const GuestsInput: React.FC<{
         position: "relative",
         alignItems: "center",
       }}
-
+      sx={{ ...renderShape() }}
       // className={`${[input["outside"]].join(" ")} `}
     >
       <div
@@ -70,12 +70,10 @@ export const GuestsInput: React.FC<{
           width: "100%",
           display: "flex",
           justifyContent: "space-between",
-          ...renderShape(),
           // ...styleContainer(errors, fieldActive, value),
         }}
       >
         <select
-          style={{ height: "100%", outline: "none" }}
           id="guests"
           onChange={handleChange}
           value={value}

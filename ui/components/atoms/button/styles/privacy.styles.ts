@@ -2,7 +2,7 @@ export const shared = {};
 
 const web = {
   wrapper: {
-    whitespace: "nowrap",
+    whiteSpace: "nowrap",
     padding: "13px 18px",
     fontWeight: 500,
     borderRadius: "8px",
@@ -11,7 +11,6 @@ const web = {
     fontSize: "15px",
     display: "flex",
     justifyContent: "center",
-    // responsive["b_to_f--sm"]
   },
 };
 

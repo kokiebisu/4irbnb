@@ -25,6 +25,8 @@ export const AddressInput: React.FC<{
         position: "relative",
         padding: "6px 12px",
         alignItems: "center",
+      }}
+      sx={{
         ...renderShape(direction),
       }}
     >
@@ -49,6 +51,8 @@ export const AddressInput: React.FC<{
             border: "none",
             padding: 0,
             width: "100%",
+            fontSize: 14,
+            fontWeight: 300,
             display: "block",
             "::placeholder": {
               color: "black",

@@ -133,7 +133,7 @@ export const Modal: React.FC<ModalProps> = ({
       extendsTo: {
         padding: 24,
         border: "1px solid white__2",
-        borderRadius: 10,
+        borderRadius: 18,
       },
     },
     globe: {
@@ -202,6 +202,7 @@ export const Modal: React.FC<ModalProps> = ({
               boxShadow: "rgba(0, 0, 0, 0.08) 0px 1px 12px",
               width: "100%",
               ...extendsTo,
+              ...variants[variant].extendsTo,
             }}
             sx={{
               bg: "white",
@@ -218,6 +219,7 @@ export const Modal: React.FC<ModalProps> = ({
       ref={containerRef}
       css={{
         ...extendsTo,
+        ...variants[variant].extendsTo,
         width: "100%",
         boxShadow: "rgba(0, 0, 0, 0.08) 0px 1px 12px",
       }}

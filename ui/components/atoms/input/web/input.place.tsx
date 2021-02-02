@@ -2,11 +2,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { useRef, useState } from "react";
-
-import { Checked } from "../../../public/svg/original";
-import { ChevronDown, ChevronTop } from "../../../public/svg/regular";
-
-// import useOnClickOutside from "@hooks/useOnClickOutside";
+import { Checked } from "@svg/original";
+import { ChevronDown, ChevronTop } from "@svg/regular";
+import useOnClickOutside from "@hooks/useOnClickOutside";
 
 /**
  * Renders the text input component
@@ -25,11 +23,11 @@ export const PlaceInput: React.FC<{
 }> = ({ value = "Entire place", direction, errors = false, changePlace }) => {
   const containerRef = useRef<any>();
   const [expanded, setExpanded] = useState(false);
-  // useOnClickOutside(containerRef, () => {
-  //   if (expanded) {
-  //     setExpanded(!expanded);
-  //   }
-  // });
+  useOnClickOutside(containerRef, () => {
+    if (expanded) {
+      setExpanded(!expanded);
+    }
+  });
   const renderShape = () => {
     switch (direction) {
       case "top":
@@ -73,8 +71,10 @@ export const PlaceInput: React.FC<{
           position: "relative",
           height: "100%",
           width: "100%",
+        }}
+        sx={{
           ...renderShape(),
-          ...(expanded && { border: "2px solid black" }),
+          ...(expanded && { border: "2px solid", borderColor: "black" }),
         }}
       >
         <div
