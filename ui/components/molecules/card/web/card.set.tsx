@@ -1,11 +1,14 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Check } from "../../../public/svg/original";
+import { Check } from "@svg/original";
 
 export const SetCard: React.FC<{}> = () => {
   return (
-    <div css={{ borderRadius: 15 }} sx={{ border: "1px solid white__2" }}>
+    <div
+      css={{ borderRadius: 15 }}
+      sx={{ border: "1px solid", borderColor: "white__2" }}
+    >
       <div
         css={{
           width: "100%",

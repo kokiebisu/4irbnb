@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Button, $Button } from "../../../atoms/button/web";
+import { Button, $Button } from "@button/web";
 
 /**
  * Renders the available card component
@@ -26,8 +26,8 @@ export const AvailableCard: React.FC<{
 }) => {
   return (
     <div
-      css={{ padding: 24, border: "1px solid", borderRadius: 6 }}
-      sx={{ borderColor: "white__2" }}
+      sx={{ border: "1px solid", borderColor: "white__3" }}
+      css={{ padding: 24, borderRadius: 6 }}
     >
       <div css={{ marginBottom: 6 }}>
         <h3 css={{ fontSize: 15 }}>{date}</h3>

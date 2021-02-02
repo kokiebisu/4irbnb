@@ -1,4 +1,4 @@
-/** @jsxRuntime jsx */
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { Story, Meta } from "@storybook/react/types-6-0";

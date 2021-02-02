@@ -8,7 +8,7 @@ export const CollectionCard: React.FC<{
 }> = ({
   label = "Wellness in the New Year",
   imgUrl = "https://a0.muscache.com/im/pictures/67494b8d-129d-493b-94e7-6141b2b454e3.jpg?im_w=720",
-  paddingTop,
+  paddingTop = 60,
 }) => {
   return (
     <div css={{ paddingTop: `${paddingTop}%`, position: "relative" }}>

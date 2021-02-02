@@ -27,7 +27,6 @@ export const StartingCard: React.FC<{
   const [isHovered, setIsHovered] = useState(false);
   return (
     <div
-      style={{ cursor: "pointer" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       css={{
@@ -36,7 +35,8 @@ export const StartingCard: React.FC<{
         padding: 12,
       }}
       sx={{
-        border: "1px solid white__2",
+        border: "1px solid",
+        borderColor: "white__2",
       }}
     >
       <div

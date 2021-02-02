@@ -1,13 +1,13 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Warning } from "../../../public/svg/original";
+import { Warning } from "@svg/original";
 
 export const AgainCard: React.FC<{}> = () => {
   return (
     <div
-      css={{ borderRadius: 15, border: "1px solid" }}
-      sx={{ borderColor: "white__2" }}
+      css={{ borderRadius: 15 }}
+      sx={{ border: "1px solid", borderColor: "white__3" }}
     >
       <div css={{ padding: 18 }}>
         <div css={{ display: "flex" }}>

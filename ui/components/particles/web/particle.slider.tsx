@@ -46,7 +46,7 @@ const Slide = ({ slide }) => {
         backgroundPosition: "center",
       }}
       sx={{
-        ...(!slide && { bg: "gray__0" }),
+        ...(!slide && { bg: "white__2" }),
       }}
     />
   );
