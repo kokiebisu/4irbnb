@@ -2,9 +2,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { AnimatePresence, motion } from "framer-motion";
-import { Star } from "../../../public/svg/original";
-import { Button, $Button } from "../../../atoms/button/web";
-import { useHandleScroll } from "../../../hooks/useHandleScroll";
+import { Star } from "@svg/original";
+import { Button, $Button } from "@button/web";
+import { useHandleScroll } from "@hooks/useHandleScroll";
 
 /**
  * Renders the details header
@@ -42,7 +42,9 @@ export const DetailsHeader: React.FC<{
       <div
         css={{
           height: "100%",
-          ...(spread ? {} : {}), // container
+        }}
+        sx={{
+          padding: ["0 20px", "0 20px", "0 20px"],
         }}
       >
         <div
@@ -51,15 +53,20 @@ export const DetailsHeader: React.FC<{
             alignItems: "center",
             justifyContent: "space-between",
             position: "relative",
+          }}
+          sx={{
             display: ["none", "none", "flex"],
           }}
         >
           <div css={{ display: "flex", alignItems: "center" }}>
             {items.map((item, index) => {
               return (
-                <div key={index} css={{ marginRight: 16 }}>
+                <div key={index} css={{ marginRight: 20 }}>
                   <button
-                    css={{ display: "block", fontSize: 14, color: "gray__2" }}
+                    css={{ display: "block", fontSize: 14 }}
+                    sx={{
+                      color: "gray__2",
+                    }}
                     onClick={() => alert("hello")}
                   >
                     {item.name}
@@ -79,16 +86,21 @@ export const DetailsHeader: React.FC<{
                 <div css={{ display: "flex", alignItems: "center" }}>
                   <div css={{ marginRight: 16 }}>
                     <h3
-                      css={{ color: "gray__2", fontSize: 16, fontWeight: 500 }}
+                      sx={{
+                        color: "gray__2",
+                      }}
+                      css={{ fontSize: 16, fontWeight: 500 }}
                     >
                       Add dates for prices
                     </h3>
                     <div
                       css={{
                         width: 100,
-                        color: "gray__2",
                         fontSize: 21,
                         fontWeight: 500,
+                      }}
+                      sx={{
+                        color: "gray__2",
                       }}
                     >
                       <div
@@ -113,6 +125,8 @@ export const DetailsHeader: React.FC<{
                           display: "inline-block",
                           fontSize: 12,
                           fontWeight: 100,
+                        }}
+                        sx={{
                           color: "white__3",
                         }}
                       >

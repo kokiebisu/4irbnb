@@ -31,12 +31,24 @@ export const ExperiencesHeader: React.FC<{}> = () => {
           />
         </div>
         <div css={{ display: "flex" }}>
-          <div css={{ margin: "0 8px" }}>English (CA)</div>
-          <div css={{ margin: "0 8px" }}>$ CAD</div>
-          <div css={{ margin: "0 8px" }}>Become a host</div>
-          <div css={{ margin: "0 8px" }}>Help</div>
-          <div css={{ margin: "0 8px" }}>Sign up</div>
-          <div css={{ margin: "0 8px" }}>Log in</div>
+          <div css={{ margin: "0 8px" }}>
+            <h3 sx={{ color: "gray__2", fontSize: 15 }}>English (CA)</h3>
+          </div>
+          <div css={{ margin: "0 8px" }}>
+            <h3 sx={{ color: "gray__2", fontSize: 15 }}>$ CAD</h3>
+          </div>
+          <div css={{ margin: "0 8px" }}>
+            <h3 sx={{ color: "gray__2", fontSize: 15 }}>Become a host</h3>
+          </div>
+          <div css={{ margin: "0 8px" }}>
+            <h3 sx={{ color: "gray__2", fontSize: 15 }}>Help</h3>
+          </div>
+          <div css={{ margin: "0 8px" }}>
+            <h3 sx={{ color: "gray__2", fontSize: 15 }}>Sign up</h3>
+          </div>
+          <div css={{ margin: "0 8px" }}>
+            <h3 sx={{ color: "gray__2", fontSize: 15 }}>Log in</h3>
+          </div>
         </div>
       </div>
     </header>
