@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Button, $Button } from "@button/web";
-import { $Prototype, Prototype } from "@prototype/web/auth";
+import { Button, $Button } from "../../../atoms/button/web";
+import { $Prototype, Prototype } from "../../../prototype/web/auth";
 
 /**
  * Renders the auth modal

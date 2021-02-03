@@ -5,11 +5,11 @@ import { jsx } from "theme-ui";
 import { useState } from "react";
 import Router from "next/router";
 import { useFormik } from "formik";
-import { Bullet, $Bullet } from "@bullet/web";
-import { Button, $Button } from "@button/web";
-import { Input, $Input } from "@input/web";
-import { validateExists as validate } from "@helper/auth";
-import { usePost } from "@hooks/usePost";
+import { Bullet, $Bullet } from "../../../atoms/bullet/web";
+import { Button, $Button } from "../../../atoms/button/web";
+import { Input, $Input } from "../../../atoms/input/web";
+import { validateExists as validate } from "../../../helper/auth";
+import { usePost } from "../../../hooks/usePost";
 
 export const ExistsPrototype: React.FC<{
   data?: {

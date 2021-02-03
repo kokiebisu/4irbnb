@@ -1,8 +1,16 @@
-import { Header, $Header } from "@header";
-import { Bar, $Bar } from "@bar";
-import { Template, $Template } from "@template/s/experiences/online";
-import { Modal, $Modal } from "../components/organisms/modal";
-import { Footer } from "@footer";
+import {
+  Bar,
+  $Bar,
+  Header,
+  $Header,
+  Modal,
+  $Modal,
+  Footer,
+  Button,
+  $Button,
+} from "@airbnb/components/web";
+
+import { Template, $Template } from "../../../template/s/experiences/online";
 
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
@@ -10,11 +18,6 @@ import shape from "@styles/shape.module.scss";
 import color from "@styles/color.module.scss";
 
 import { useToggleState } from "@context/toggle";
-
-import {
-  Button,
-  $Button,
-} from "../components/organisms/modal/node_modules/@button";
 
 const OnlinePage = () => {
   const toggleState = useToggleState();

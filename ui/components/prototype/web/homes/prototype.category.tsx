@@ -2,9 +2,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
-import { Template } from "../web/template/web/s/homes";
-import { Bar, $Bar } from "../../../organisms/bar/web";
-import { Button, $Button } from "../../../atoms/button/web";
+// import { Template } from "../web/template/web/s/homes";
+import { Bar, $Bar } from "@bar/web";
+import { Button, $Button } from "@button/web";
 
 /**
  * Renders the category template component
@@ -74,7 +74,7 @@ export const CategoryPrototype: React.FC<{
           <Button variant={$Button.FILTER} name={`filters ${filterCount}`} />
         </div>
       </div>
-      <div
+      {/* <div
         css={{
           marginRight: 32,
         }}
@@ -94,7 +94,7 @@ export const CategoryPrototype: React.FC<{
         }}
       >
         <Template variant="homes" layout="vertical" location={location} />
-      </div>
+      </div> */}
       <div css={{ marginTop: 16, display: "flex", justifyContent: "center" }}>
         <Bar variant={$Bar.PAGINATE} animate />
       </div>

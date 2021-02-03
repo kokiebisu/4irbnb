@@ -5,13 +5,12 @@ import { useRef, useState } from "react";
 import Router from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { Modal, $Modal } from "@modal/web";
-import { Button, $Button } from "@button/web";
-import { Prototype } from "@prototype/web/searchbar";
-import { NameLogo, NoNameLogo } from "@svg/logo";
-// import { useToggleDispatch, useToggleState } from "@context/toggle";
-import { Content } from "@button/content/content.transparent";
-import { useOnClickOutside } from "@hooks/useOnClickOutside";
+import { Modal, $Modal } from "../../../organisms/modal/web";
+import { Button, $Button } from "../../../atoms/button/web";
+import { Prototype } from "../../../prototype/web/searchbar";
+import { NameLogo, NoNameLogo } from "../../../public/svg/logo";
+import { Content } from "../../../atoms/button/content/content.transparent";
+import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
 
 /**
  * Renders the transparent header

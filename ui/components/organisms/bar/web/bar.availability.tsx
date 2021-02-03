@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Button, $Button } from "@button/web";
-import { Star } from "@svg/original";
+import { Button, $Button } from "../../../atoms/button/web";
+import { Star } from "../../../public/svg/original";
 
 /**
  * Renders the modal which gives all the available options

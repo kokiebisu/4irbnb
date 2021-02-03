@@ -2,9 +2,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { useRef, useState } from "react";
-// import { useToggleState } from "@context/toggle";
-import { Bar, $Bar } from "@bar/web";
-import { Modal } from "@modal/web";
+import { Bar, $Bar } from "../../../organisms/bar/web";
+import { Modal } from "../../../organisms/modal/web";
 import { useOnClickOutside } from "@hooks/useOnClickOutside";
 
 export interface PrototypeProps {

@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Warning } from "@svg/original";
+import { Warning } from "../../../public/svg/original";
 
 export const AgainCard: React.FC<{}> = () => {
   return (

@@ -56,6 +56,7 @@
       "@panel/*": ["molecules/panel/*"],
       "@card/*": ["molecules/card/*"],
       "@header/*": ["organisms/header/*"],
+      "@footer/*": ["organisms/footer/*"],
       "@modal/*": ["organisms/modal/*"],
       "@bar/*": ["organisms/bar/*"],
       "@hooks/*": ["hooks/*"],

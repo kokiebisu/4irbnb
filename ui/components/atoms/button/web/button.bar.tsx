@@ -2,8 +2,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { bar } from "../styles";
-import { MenuBarLogo } from "@svg/logo";
-import { Login, Saved } from "@svg/regular";
+import { MenuBarLogo } from "../../../public/svg/logo";
+import { Login, Saved } from "../../../public/svg/regular";
 
 const { web, theme } = bar;
 

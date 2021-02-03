@@ -2,10 +2,10 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { useFormik } from "formik";
-import { Input, $Input } from "@input/web";
-import { Button, $Button } from "@button/web";
-import { Bullet, $Bullet } from "@bullet/web";
-import { validateForgotPassword as validate } from "@helper/auth";
+import { Input, $Input } from "../../../atoms/input/web";
+import { Button, $Button } from "../../../atoms/button/web";
+import { Bullet, $Bullet } from "../../../atoms/bullet/web";
+import { validateForgotPassword as validate } from "../../../helper/auth";
 
 /**
  * Renders the login template component

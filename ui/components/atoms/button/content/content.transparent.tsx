@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import React from "react";
-import { ChevronDown, Globe } from "@svg/regular";
+import { ChevronDown, Globe } from "../../../public/svg/regular";
 
 export const Content: React.FC<{ kind?: string; inverse?: boolean }> = ({
   kind = "globe",

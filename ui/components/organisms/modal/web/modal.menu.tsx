@@ -2,8 +2,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import React from "react";
-import { Button, $Button } from "@button/web";
-import { getOptionContents } from "@button/content/content.option";
+import { Button, $Button } from "../../../atoms/button/web";
+import { getOptionContents } from "../../../atoms/button/content/content.option";
 
 const Options: React.FC<{
   params?: {

@@ -5,7 +5,7 @@ import { useState } from "react";
 import { styleInput, styleLabel, styleContainer } from "./styling.text";
 
 /** helpers */
-// import { checkEmail } from "@helper/auth";
+// import { checkEmail } from "../../../auth";
 
 /**
  * Renders the text input component

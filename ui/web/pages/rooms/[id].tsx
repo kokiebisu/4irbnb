@@ -1,12 +1,15 @@
 import { AnimatePresence, motion } from "framer-motion";
-
 import { useToggleState } from "@context/toggle";
-
-import { Header, $Header } from "@header";
-import { Footer } from "@footer";
-import { Template, $Template } from "@template/rooms/id";
-import { Card, $Card } from "@card";
-import { Modal, $Modal } from "../components/organisms/modal";
+import {
+  Header,
+  $Header,
+  Footer,
+  Card,
+  $Card,
+  Modal,
+  $Modal,
+} from "@airbnb/components/web";
+import { Template, $Template } from "../../template/rooms/id";
 
 import responsive from "@styles/responsive.module.scss";
 import layout from "@styles/layout.module.scss";

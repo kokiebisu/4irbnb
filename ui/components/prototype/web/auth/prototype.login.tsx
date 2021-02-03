@@ -6,13 +6,13 @@ import { useFormik } from "formik";
 import Router from "next/router";
 
 // import { useAuthDispatch, useAuthState } from "@context/auth";
-import { Input, $Input } from "@input/web";
-import { Button, $Button } from "@button/web";
-import { Bullet, $Bullet } from "@bullet/web";
-import { Card, $Card } from "@card/web";
+import { Input, $Input } from "../../../atoms/input/web";
+import { Button, $Button } from "../../../atoms/button/web";
+import { Bullet, $Bullet } from "../../../atoms/bullet/web";
+import { Card, $Card } from "../../../molecules/card/web";
 
-import { validateLogin as validate } from "@helper/auth";
-import { usePost } from "@hooks/usePost";
+import { validateLogin as validate } from "../../../helper/auth";
+import { usePost } from "../../../hooks/usePost";
 
 /**
  * Renders the login template component

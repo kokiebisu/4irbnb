@@ -2,9 +2,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { AnimatePresence, motion } from "framer-motion";
-import { Star } from "@svg/original";
-import { Button, $Button } from "@button/web";
-import { useHandleScroll } from "@hooks/useHandleScroll";
+import { Star } from "../../../public/svg/original";
+import { Button, $Button } from "../../../atoms/button/web";
+import { useHandleScroll } from "../../../hooks/useHandleScroll";
 
 /**
  * Renders the details header

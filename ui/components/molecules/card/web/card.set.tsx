@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Check } from "@svg/original";
+import { Check } from "../../../public/svg/original";
 
 export const SetCard: React.FC<{}> = () => {
   return (

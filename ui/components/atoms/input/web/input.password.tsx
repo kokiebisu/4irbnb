@@ -7,7 +7,7 @@ import { styleInput, styleLabel, styleContainer } from "./styling.text";
 
 import { Button, $Button } from "../../button/web";
 
-// import { checkPassword } from "@helper/auth";
+// import { checkPassword } from "../../../auth";
 
 /**
  * Renders the text input component

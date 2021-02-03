@@ -1,9 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Template } from "../web/template/web/s/homes";
-import { Bar, $Bar } from "../../../organisms/bar/web";
-import { Button, $Button } from "../../../atoms/button/web";
+// import { Template } from "../web/template/web/s/homes";
+import { Bar, $Bar } from "@bar/web";
+import { Button, $Button } from "@button/web";
 
 /**
  * Renders the nearby template component
@@ -98,9 +98,7 @@ export const NearbyPrototype: React.FC<{
             </div>
           </div>
         )}
-        <div>
-          <Template variant="homes" />
-        </div>
+        <div>{/* <Template variant="homes" /> */}</div>
         <div
           css={{
             marginTop: 16,

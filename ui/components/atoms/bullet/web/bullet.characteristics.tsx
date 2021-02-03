@@ -14,7 +14,7 @@ import {
 } from "../../../public/svg/original";
 
 /** Helpers */
-// import * as Helper from "@helper/time";
+// import * as Helper from "../../../time";
 
 /**
  * Renders the characteristic bullet

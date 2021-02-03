@@ -2,10 +2,10 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { useFormik } from "formik";
-import { Input, $Input } from "@input/web";
-import { Button, $Button } from "@button/web";
-import { getAuthContents } from "@button/content/content.auth";
-import { validateAuth as validate } from "@helper/auth";
+import { Input, $Input } from "../../../atoms/input/web";
+import { Button, $Button } from "../../../atoms/button/web";
+import { getAuthContents } from "../../../atoms/button/content/content.auth";
+import { validateAuth as validate } from "../../../helper/auth";
 
 /**
  * Renders the auth template component

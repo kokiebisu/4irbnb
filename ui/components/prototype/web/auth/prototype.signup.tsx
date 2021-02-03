@@ -4,11 +4,11 @@ import { jsx } from "theme-ui";
 import { useState } from "react";
 import { useFormik } from "formik";
 import Router from "next/router";
-import { Input, $Input } from "@input/web";
-import { Button, $Button } from "@button/web";
-import { Bullet, $Bullet } from "@bullet/web";
+import { Input, $Input } from "../../../atoms/input/web";
+import { Button, $Button } from "../../../atoms/button/web";
+import { Bullet, $Bullet } from "../../../atoms/bullet/web";
 
-import { validateSignup as validate } from "@helper/auth";
+import { validateSignup as validate } from "../../../helper/auth";
 import { usePost } from "@hooks/usePost";
 // import { useAuthDispatch } from "@context/auth";
 

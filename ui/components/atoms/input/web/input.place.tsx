@@ -2,9 +2,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { useRef, useState } from "react";
-import { Checked } from "@svg/original";
-import { ChevronDown, ChevronTop } from "@svg/regular";
-import useOnClickOutside from "@hooks/useOnClickOutside";
+import { Checked } from "../../../public/svg/original";
+import { ChevronDown, ChevronTop } from "../../../public/svg/regular";
+import useOnClickOutside from "../../../hooks/useOnClickOutside";
 
 /**
  * Renders the text input component
