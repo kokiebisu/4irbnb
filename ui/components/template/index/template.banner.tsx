@@ -1,5 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
+import React from "react";
 import { jsx } from "theme-ui";
 import { useState } from "react";
 import Router from "next/router";
@@ -15,7 +16,12 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
   const [category, setCategory] = useState("stay");
   return (
     <div
-    // className={index["banner"]}
+      css={{
+        position: "relative",
+      }}
+      sx={{
+        paddingTop: ["133.3%", "133.3%", "100%", "100%", "48%"],
+      }}
     >
       <div
         css={{
@@ -27,7 +33,12 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
         }}
       >
         <div
-        // className={index["banner__background--picture"]}
+          css={{
+            height: "100%",
+            width: "100%",
+            backgroundSize: "cover",
+            display: "inline-block",
+          }}
         >
           <ResponsiveImage />
         </div>
@@ -95,10 +106,10 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
                 </h3>
               </div>
               <div
-              // className={[
-              //   index["w__explore--subtitle"],
-              //   index["text__explore--subtitle"],
-              // ].join(" ")}
+                sx={{
+                  width: ["100%", "100%", 300],
+                  textAlign: ["center", "center", "initial"],
+                }}
               >
                 <p
                   css={{
@@ -115,7 +126,10 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
                 css={{
                   margin: "15px 0px 0px 0px",
                 }}
-                // className={[index["justify__explore--button"]].join(" ")}
+                sx={{
+                  display: "flex",
+                  justifyContent: ["center", "center", "flex-start"],
+                }}
               >
                 <Button
                   variant={$Button.BANNER}

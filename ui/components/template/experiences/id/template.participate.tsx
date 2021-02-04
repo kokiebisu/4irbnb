@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Card, $Card } from "@airbnb/components/web";
+import { Card, $Card } from "../../../molecules/card/web";
 
 /**
  * Renders the participate section

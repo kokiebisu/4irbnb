@@ -20,11 +20,20 @@ export const LandingHeader: React.FC<{
   setCategory?: any;
   data?: any;
   criteria?: any;
-}> = ({ data, category, setCategory, criteria }) => {
-  // const toggleState = useToggleState();
+  toggleDispatch?: (params: any) => void;
+  toggleState?: any;
+}> = ({
+  data,
+  category,
+  setCategory,
+  criteria,
+  toggleDispatch,
+  toggleState = {
+    menu: false,
+  },
+}) => {
   const searchbarRef = useRef();
   const [expanded, setExpanded] = useState(false);
-  // const toggleDispatch = useToggleDispatch();
 
   useOnClickOutside(searchbarRef, () => {
     toggleDispatch({

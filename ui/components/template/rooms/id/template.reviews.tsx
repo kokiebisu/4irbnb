@@ -1,5 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
+import React from "react";
 import { jsx } from "theme-ui";
 import { Star } from "@airbnb/components/assets";
 import {
@@ -41,7 +42,11 @@ export const ReviewsTemplate: React.FC<{
 }) => {
   return (
     <>
-      <div css={{ margin: "8px 0" }}>
+      <div
+        css={{
+          margin: "8px 0",
+        }}
+      >
         <div
           css={{
             padding: "8px 0",
@@ -49,8 +54,17 @@ export const ReviewsTemplate: React.FC<{
             alignItems: "center",
           }}
         >
-          <div css={{ display: "flex", alignItems: "center" }}>
-            <div css={{ marginRight: 6 }}>
+          <div
+            css={{
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <div
+              css={{
+                marginRight: 6,
+              }}
+            >
               <Star width={20} />
             </div>
             <h3
@@ -87,9 +101,9 @@ export const ReviewsTemplate: React.FC<{
                 <div
                   key={index}
                   css={{
-                    marginRight: [0, 0, 48],
                     padding: "8px 0",
                   }}
+                  // className={[section["m__review--bullet"]].join(" ")}
                 >
                   <Bullet
                     variant={$Bullet.SCORE}
@@ -105,19 +119,12 @@ export const ReviewsTemplate: React.FC<{
           css={{
             width: "100%",
             marginTop: 16,
-            display: ["block", "block", "grid"],
-            gridTemplateColumns: "repeat(2, 1fr)",
           }}
+          // className={[section["display__reviews--wrapper"]].join(" ")}
         >
           {reviews.map((review, index) => {
             return (
-              <div
-                sx={{
-                  marginRight: [0, 0, 48],
-                  marginBottom: [0, 0, 24],
-                }}
-                key={index}
-              >
+              <div key={index}>
                 <Card
                   variant={$Card.REVIEW}
                   imgUrl={review?.imgUrl}
@@ -127,7 +134,11 @@ export const ReviewsTemplate: React.FC<{
             );
           })}
         </div>
-        <div css={{ marginTop: 16 }}>
+        <div
+          css={{
+            marginTop: 16,
+          }}
+        >
           <Button
             variant={$Button.BORDER}
             size="md"

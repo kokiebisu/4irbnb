@@ -14,9 +14,9 @@ import { Content } from "../../../atoms/button/content/content.transparent";
 export const WhiteHeader: React.FC<{
   spread?: boolean;
   data?: any;
-}> = ({ data }) => {
-  // const toggleState = useToggleState();
-  // const toggleDispatch = useToggleDispatch();
+  toggleState?: any;
+  toggleDispatch: (params: any) => void;
+}> = ({ data, toggleState, toggleDispatch }) => {
   return (
     <header css={{ padding: "16px 0", bg: "white" }}>
       <div

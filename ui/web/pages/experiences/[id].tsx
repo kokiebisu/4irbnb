@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 
-import { Header, $Header } from "@header";
-import { Template, $Template } from "@template/experiences/id";
-import { Modal, $Modal } from "../components/organisms/modal";
-import { Footer } from "@footer";
+import { Header, $Header } from "@airbnb/components/organisms/header/web";
+import {
+  Template,
+  $Template,
+} from "@airbnb/components/template/experiences/id";
+import { Modal, $Modal } from "@airbnb/components/organisms/modal/web";
+import { Footer } from "@airbnb/components/organisms/footer/web";
 
 import { useToggleState } from "@context/toggle";
 

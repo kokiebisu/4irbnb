@@ -16,14 +16,14 @@ import {
 
 import { nearbyItems } from "../data/nearby";
 
-import { Layout } from "@layout";
+import { Layout } from "@airbnb/components/layout/web";
 
-import { Animation } from "@animation";
-import { Modal, $Modal } from "../components/organisms/modal";
-import { Template, $Template } from "@template/index";
-import { Footer } from "@footer";
+import { Animation } from "@airbnb/components/animation/web";
+import { Modal, $Modal } from "@airbnb/components/organisms/modal/web";
+import { Template, $Template } from "@airbnb/components/template/index";
+import { Footer } from "@airbnb/components/organisms/footer/web";
 
-import { Bar, $Bar } from "@bar";
+import { Bar, $Bar } from "@airbnb/components/organisms/bar/web";
 
 import { useHandleScroll } from "@hooks/useHandleScroll";
 import { useHandleDocumentResize } from "@hooks/useHandleDocumentResize";

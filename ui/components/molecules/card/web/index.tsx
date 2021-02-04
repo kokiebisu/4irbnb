@@ -69,7 +69,7 @@ export interface CardProps {
  */
 export const Card: React.FC<CardProps> = ({
   extendsTo,
-  variant,
+  variant = $Card.CATEGORY,
   to,
   ...props
 }) => {
@@ -100,6 +100,8 @@ export const Card: React.FC<CardProps> = ({
     starting: <StartingCard {...props} />,
     collection: <CollectionCard {...props} />,
   } as const;
+
+  console.log("va", variant);
 
   if (to) {
     return (

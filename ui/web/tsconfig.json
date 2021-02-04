@@ -15,8 +15,8 @@
     "jsx": "preserve",
     "baseUrl": "./",
     "paths": {
-      "@template": ["template"],
-      "@template/*": ["template/*"],
+      "@template": ["../components/template"],
+      "@template/*": ["../components/template/*"],
       "@styles/*": ["styles/*"],
       "@helper/*": ["helper/*"],
       "@hooks/*": ["hooks/*"],

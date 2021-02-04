@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button, $Button, Bullet, $Bullet } from "@airbnb/components/web";
 import { Shield } from "@airbnb/components/assets";
 

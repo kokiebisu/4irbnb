@@ -9,7 +9,7 @@ import {
   Modal,
   $Modal,
 } from "@airbnb/components/web";
-import { Template, $Template } from "../../template/rooms/id";
+import { Template, $Template } from "../../../components/template/rooms/id";
 
 import responsive from "@styles/responsive.module.scss";
 import layout from "@styles/layout.module.scss";

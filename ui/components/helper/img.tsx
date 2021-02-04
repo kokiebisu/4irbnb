@@ -1,3 +1,7 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+
 export const ResponsiveImage: React.FC<{
   largeImg?: string;
   mediumImg?: string;

@@ -1,5 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
+
 import { jsx } from "theme-ui";
 import { useRef, useState } from "react";
 import { Bar, $Bar } from "../../../organisms/bar/web";
@@ -12,6 +13,7 @@ export interface PrototypeProps {
   type?: any;
   setCategory?: any;
   transparent?: boolean;
+  toggleState?: any;
 }
 
 export const Prototype: React.FC<PrototypeProps> = ({
@@ -20,8 +22,13 @@ export const Prototype: React.FC<PrototypeProps> = ({
   transparent = false,
   expanded,
   setExpanded,
+  toggleState = {
+    location: false,
+    checkin: false,
+    checkout: false,
+    guests: false,
+  },
 }) => {
-  const toggleState = useToggleState();
   const [selected, setSelected] = useState(null);
   const containerRef = useRef();
 

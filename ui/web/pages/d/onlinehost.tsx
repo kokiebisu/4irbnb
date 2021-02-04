@@ -1,6 +1,6 @@
-import { Header, $Header } from "@header";
-import { Template, $Template } from "@template/d/onlinehost";
-import { Footer } from "@footer";
+import { Header, $Header } from "@airbnb/components/organisms/header/web";
+import { Template, $Template } from "@airbnb/components/template/d/onlinehost";
+import { Footer } from "@airbnb/components/organisms/footer/web";
 
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";

@@ -1,8 +1,8 @@
 import space from "@styles/space.module.scss";
 import color from "@styles/color.module.scss";
 
-import { Template, $Template } from "@template/host/homes";
-import { Footer } from "@footer";
+import { Template, $Template } from "@airbnb/components/template/host/homes";
+import { Footer } from "@airbnb/components/organisms/footer/web";
 
 import { useTabTitle } from "@hooks/useTabTitle";
 

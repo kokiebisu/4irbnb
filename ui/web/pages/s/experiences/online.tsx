@@ -10,7 +10,10 @@ import {
   $Button,
 } from "@airbnb/components/web";
 
-import { Template, $Template } from "../../../template/s/experiences/online";
+import {
+  Template,
+  $Template,
+} from "@airbnb/components/template/s/experiences/online";
 
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";

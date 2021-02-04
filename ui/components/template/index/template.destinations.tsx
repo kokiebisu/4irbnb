@@ -4,12 +4,18 @@ import { jsx } from "theme-ui";
 import { useState } from "react";
 import Router from "next/router";
 import { motion } from "framer-motion";
-import { Button, $Button } from "@airbnb/components/web";
+import { Button, $Button } from "../../atoms/button/web";
 
 export const DestinationsTemplate: React.FC<{
   items?: { [type: string]: { city: String; location: String } };
 }> = ({
-  items = { artsCulture: [{ city: "City", location: "Location" }] },
+  items = {
+    artsCulture: [{ city: "City", location: "Location" }],
+    outdoor: [{ city: "City", location: "Location" }],
+    cabins: [{ city: "City", location: "Location" }],
+    beach: [{ city: "City", location: "Location" }],
+    popular: [{ city: "City", location: "Location" }],
+  },
 }) => {
   const [selected, setSelected] = useState("artsCulture");
 
@@ -45,7 +51,12 @@ export const DestinationsTemplate: React.FC<{
       <div css={{ display: "flex", flexWrap: "wrap" }}>
         {items[selected].map(({ city, location }, index) => {
           return (
-            <div key={index} className={[template["destination__w"]].join(" ")}>
+            <div
+              key={index}
+              sx={{
+                width: ["50%", "50%", "33.33%", "33.33%", "33.33%", "25%"],
+              }}
+            >
               <Button
                 variant={$Button.DESTINATION}
                 city={city}

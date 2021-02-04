@@ -1,10 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
+import React from "react";
 import { jsx } from "theme-ui";
 import { useState } from "react";
 import { Button, $Button, Bullet, $Bullet } from "@airbnb/components/web";
 import { Shield } from "@airbnb/components/assets";
-import { Border } from "@airbnb/components/web/button.stories";
+import { Border } from "@airbnb/components/atoms/button/web/button.stories";
 
 /**
  * Modifies the content which should be displayed initially
