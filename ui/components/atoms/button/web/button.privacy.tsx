@@ -17,6 +17,7 @@ export const PrivacyButton: React.FC<{ title?: string; inverse?: boolean }> = ({
 }) => {
   return (
     <div
+      style={{ whiteSpace: "nowrap" }}
       css={web.wrapper}
       sx={inverse ? theme.wrapper.inverse : theme.wrapper.plain}
     >

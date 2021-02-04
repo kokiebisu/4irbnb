@@ -2,7 +2,6 @@ export const shared = {};
 
 const web = {
   wrapper: {
-    whiteSpace: "nowrap",
     padding: "13px 18px",
     fontWeight: 500,
     borderRadius: "8px",

@@ -1,0 +1,2499 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Atoms/Bullet Amenity 1`] = `
+<div
+  data-testid="amenity-bullet--atom"
+>
+  <div
+    className="css-jji9lg-AmenityBullet"
+  >
+    <svg
+      viewBox="0 0 32 32"
+      width={24}
+    >
+      <path
+        d="M26 1a5 5 0 0 1 5 5c0 6.389-1.592 13.187-4 14.693V31h-2V20.694c-2.364-1.478-3.942-8.062-3.998-14.349L21 6l.005-.217A5 5 0 0 1 26 1zm-9 0v18.118c2.317.557 4 3.01 4 5.882 0 3.27-2.183 6-5 6s-5-2.73-5-6c0-2.872 1.683-5.326 4-5.882V1zM2 1h1c4.47 0 6.934 6.365 6.999 18.505L10 21H3.999L4 31H2zm14 20c-1.602 0-3 1.748-3 4s1.398 4 3 4 3-1.748 3-4-1.398-4-3-4zM4 3.239V19h3.995l-.017-.964-.027-.949C7.673 9.157 6.235 4.623 4.224 3.364l-.12-.07zm19.005 2.585L23 6l.002.31c.045 4.321 1.031 9.133 1.999 11.39V3.17a3.002 3.002 0 0 0-1.996 2.654zm3.996-2.653v14.526C27.99 15.387 29 10.4 29 6a3.001 3.001 0 0 0-2-2.829z"
+      />
+    </svg>
+    <p
+      className="css-jn66b1-AmenityBullet"
+    >
+      Kitchen
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Atoms/Bullet Bring 1`] = `
+<div
+  data-testid="bring-bullet--atom"
+>
+  <div
+    className="css-l0w2z5-BringBullet"
+  >
+    <div
+      className="css-211cfv-BringBullet"
+    >
+      <svg
+        viewBox="0 0 32 32"
+        width={24}
+      >
+        <path
+          d="m16 1c8.2842712 0 15 6.71572875 15 15 0 8.2842712-6.7157288 15-15 15-8.28427125 0-15-6.7157288-15-15 0-8.28427125 6.71572875-15 15-15zm0 2c-7.17970175 0-13 5.82029825-13 13 0 7.1797017 5.82029825 13 13 13 7.1797017 0 13-5.8202983 13-13 0-7.17970175-5.8202983-13-13-13zm7 7.5857864 1.4142136 1.4142136-10.9142136 10.9142136-5.91421356-5.9142136 1.41421356-1.4142136 4.5 4.4992136z"
+        />
+      </svg>
+    </div>
+    <div>
+      <p>
+        Description here
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Atoms/Bullet Characteristic 1`] = `
+<div
+  data-testid="characteristic-bullet--atom"
+>
+  <div
+    className="css-4yc0hk-CharacteristicBullet"
+  >
+    <div
+      className="css-1qcbj6e-CharacteristicBullet"
+    >
+      <svg
+        viewBox="0 0 32 32"
+        width={24}
+      >
+        <path
+          d="M17.954 2.781l.175.164 13.072 12.842-1.402 1.426-1.8-1.768L28 29a2 2 0 0 1-1.85 1.994L26 31H6a2 2 0 0 1-1.995-1.85L4 29V15.446l-1.8 1.767-1.4-1.426L13.856 2.958a3 3 0 0 1 4.097-.177zm-2.586 1.503l-.096.088L6 13.48 6 29l5-.001V19a2 2 0 0 1 1.85-1.995L13 17h6a2 2 0 0 1 1.995 1.85L21 19v9.999h5V13.48l-9.3-9.135a1.001 1.001 0 0 0-1.332-.06zM19 19h-6v9.999h6z"
+        />
+      </svg>
+    </div>
+    <div>
+      <h3
+        className="css-64sxki-CharacteristicBullet"
+      >
+        Entire home
+      </h3>
+      <p
+        className="css-1ruf5rb-CharacteristicBullet"
+      >
+        You’ll have the farm stay to yourself.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Atoms/Bullet Check 1`] = `
+<div
+  data-testid="check-bullet--atom"
+>
+  <div
+    className="css-a5dcw0-CheckBullet"
+  >
+    <div
+      className="css-1gc2cds-CheckBullet"
+    >
+      <svg
+        stroke="green"
+        strokeWidth={2}
+        viewBox="0 0 32 32"
+        width={24}
+      >
+        <path
+          d="m4 16.5 8 8 16-16"
+          fill="none"
+        />
+      </svg>
+    </div>
+    <div>
+      <h4
+        className="css-xjnga9-CheckBullet"
+      >
+        Title here
+      </h4>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Atoms/Bullet Experience 1`] = `
+<div
+  data-testid="experience-bullet--atom"
+>
+  <div
+    className="css-oiyzg1-ExperienceBullet"
+  >
+    <div
+      className="css-12kbxjs-ExperienceBullet"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        width={36}
+      >
+        <path
+          d="m16.7597838 18.236214c2.9023982.9912096 4.8547348 2.9095164 5.2334132 5.1815865.0453975.2723852-.1386123.5299989-.4109975.5753965-.2723852.0453975-.5299989-.1386123-.5753965-.4109975-.2434308-1.4605852-1.3196462-2.7852247-3.006803-3.7148829v3.6326834c0 .2761424-.2238576.500078-.5.500078s-.5-.2239356-.5-.500078v-4.1073852c-.3178327-.1291113-.6515089-.245905-1-.3491799v3.4565651c0 .2761424-.2238576.5-.5.5h-7c-.27614237 0-.5-.2238576-.5-.5v-3.4837989c-.34920291.0996989-.68279767.2128777-1 .3384673v4.1453316c0 .2761424-.22385763.500078-.5.500078s-.5-.2239356-.5-.500078v-3.6797858c-1.69506802.9212223-2.7555773 2.2546309-3.00680304 3.7619853-.04539752.2723852-.30301129.456395-.57539645.4109975-.27238516-.0453976-.456395-.3030113-.41099747-.5753965.38616693-2.3170016 2.2930421-4.2301789 5.20614625-5.2044819-.35823846-.3013528-.6950518-.6373923-1.00654353-1.0054553-.37573893.1651947-.78491908.2525379-1.20640576.2525379-1.65685425 0-3-1.3431458-3-3 0-.3027309.04502163-.5995648.1321259-.8828028-.71244196-.6542578-1.1321259-1.5812644-1.1321259-2.5775984 0-1.46793141.91006526-2.74734578 2.22575914-3.26095339-.14814337-.39130626-.22575914-.80974601-.22575914-1.23904661 0-1.93299662 1.56700338-3.5 3.5-3.5.29654618 0 .58825457.03700764.86986971.1090644.75569118-1.85180097 2.56963834-3.1090644 4.63013029-3.1090644 2.0604919 0 3.8744391 1.25726343 4.6301303 3.1090644.2816151-.07205676.5733235-.1090644.8698697-.1090644 1.9329966 0 3.5 1.56700338 3.5 3.5 0 .4293006-.0776158.84774035-.2257591 1.23904661 1.3156938.51360761 2.2257591 1.79302198 2.2257591 3.26095339 0 .996334-.4196839 1.9233406-1.1321259 2.5775984.0871043.283238.1321259.5800719.1321259.8828028 0 1.6568542-1.3431458 3-3 3-.4214675 0-.8306297-.0873353-1.2063546-.2525154-.3192893.3773198-.6653138.7210707-1.0338616 1.0283282zm-7.7597838 1.110018v2.653768h6v-2.6538008c-.9359992.425507-1.9509207.6538008-3 .6538008-1.0488055 0-2.0637377-.228128-3-.653768zm-2.16119825-2.9433234c1.31794986 1.6438816 3.17400865 2.5970914 5.16119825 2.5970914 1.9884133 0 3.8447911-.954764 5.1611622-2.5969798.0135699-.0419726.0329643-.0828358.0584159-.1214735.402034-.610322.7447971-1.2877825 1.0189462-2.0156674-1.3238875-.5107719-2.2385243-1.7945385-2.2385243-3.2658793 0-.4294038.0776531-.8479416.225866-1.23932884-.4488995-.1755314-.8563284-.44228731-1.1970469-.78204121-.8602044.65605286-1.9163511 1.02137005-3.0288191 1.02137005s-2.16861468-.36531719-3.02881906-1.02137005c-.3407185.3397539-.74814739.60650981-1.19704694.78204121.1482129.39138734.225866.80992504.225866 1.23932884 0 1.4713408-.91463679 2.7551074-2.2385243 3.2658793.27414913.7278849.61691218 1.4053454 1.01894615 2.0156674.02542905.0386034.04481169.0794284.0583799.1213619zm12.16119825.0574926c1.1045695 0 2-.8954305 2-2 0-.2917161-.0621791-.573685-.1807516-.8323254-.0988468-.215613-.0326037-.4710039.1585815-.6113886.6381817-.4686084 1.0221701-1.2101574 1.0221701-2.0166872 0-1.20457942-.8584553-2.23190311-2.0269705-2.45540423-.3423492-.0654809-.5143359-.45235494-.333586-.75038207.2347346-.38703911.3605565-.83077809.3605565-1.2942137 0-1.38071187-1.1192881-2.5-2.5-2.5-.3425741 0-.6746455.06865643-.9820556.20012585-.2758963.11799202-.5928572-.03190503-.6766961-.32002295-.4926984-1.69318965-2.0507952-2.8801029-3.8412483-2.8801029s-3.34854995 1.18691325-3.84124827 2.8801029c-.08383893.28811792-.40079982.43801497-.67669615.32002295-.30741003-.13146942-.63948151-.20012585-.98205558-.20012585-1.38071187 0-2.5 1.11928813-2.5 2.5 0 .46343561.12582189.90717459.36055652 1.2942137.18074993.29802713.0087632.68490117-.33358598.75038207-1.1685152.22350112-2.02697054 1.25082481-2.02697054 2.45540423 0 .8065298.38398841 1.5480788 1.02217013 2.0166872.19118513.1403847.25742822.3957756.15858148.6113886-.11857248.2586404-.18075161.5406093-.18075161.8323254 0 1.1045695.8954305 2 2 2 .22416468 0 .4424599-.0367809.64834795-.1072621-.40607285-.6949771-.74490529-1.454694-1.00750995-2.261808-.092082-.2830135.08193433-.583311.37326785-.644143 1.14894855-.2399065 1.98589415-1.2580044 1.98589415-2.4471881 0-.4634356-.12582189-.9071746-.36055652-1.2942137-.18074993-.29802713-.0087632-.68490117.33358598-.75038207.61922765-.11843925 1.16871021-.46870406 1.54120119-.97423467.17788399-.2414174.52679294-.27303797.74518013-.06753344.73723387.69374448 1.70747812 1.08636388 2.74058922 1.08636388s2.0033554-.3926194 2.7405892-1.08636388c.2183872-.20550453.5672962-.17388396.7451802.06753344.3724909.50553061.9219735.85579542 1.5412011.97423467.3423492.0654809.5143359.45235494.333586.75038207-.2347346.3870391-.3605565.8307781-.3605565 1.2942137 0 1.1891837.8369456 2.2072816 1.9858942 2.4471881.2913335.060832.4653498.3611295.3732678.644143-.2626047.807114-.6014371 1.5668309-1.00751 2.261808.2058881.0704812.4241833.1072621.648348.1072621zm-5.4994991-.9834994c.0072117-.1532986.0846601-.3012677.222149-.3929269.2297643-.1531763.540199-.0910893.6933752.138675l.5.75c.1531763.2297643.0910893.540199-.138675.6933752-.2297643.1531763-.540199.0910893-.6933752-.138675l-.084603-.1269044c-.471871.4035626-1.1480328.5995543-1.9993719.5995543s-1.5275009-.1959917-1.9993719-.5995543l-.08460295.1269044c-.15317623.2297643-.4636109.2918513-.69337525.138675-.22976434-.1531762-.29185128-.4636109-.13867505-.6933752l.5-.75c.15317623-.2297643.46361095-.2918513.69337525-.138675.1374889.0916592.2149373.2396283.222149.3929269.2539524.3412073.7351995.5230982 1.5005009.5230982s1.2465485-.1818909 1.5005009-.5230982zm-5.41652605-2.754305c.31798843-.4769827.80932294-.7226499 1.41602515-.7226499.6067022 0 1.0980367.2456672 1.4160251.7226499.1531763.2297643.0910893.540199-.138675.6933752s-.540199.0910893-.6933752-.138675c-.12645606-.1896841-.30178822-.2773501-.5839749-.2773501s-.45751884.087666-.58397485.2773501c-.15317623.2297643-.4636109.2918512-.69337525.138675-.22976434-.1531762-.29185128-.4636109-.13867505-.6933752zm5.00000005 0c.3179884-.4769827.8093229-.7226499 1.4160251-.7226499s1.0980367.2456672 1.4160251.7226499c.1531763.2297643.0910893.540199-.138675.6933752s-.540199.0910893-.6933752-.138675c-.1264561-.1896841-.3017882-.2773501-.5839749-.2773501s-.4575188.087666-.5839749.2773501c-.1531762.2297643-.4636109.2918512-.6933752.138675s-.2918513-.4636109-.138675-.6933752z"
+        />
+      </svg>
+    </div>
+    <div>
+      <div>
+        <h3
+          className="css-1nlpbwp-ExperienceBullet"
+        >
+          Thoughtful hosts
+        </h3>
+      </div>
+      <div>
+        <p
+          className="css-c5lskj-ExperienceBullet"
+        >
+          Get to know hosts who share their expertise and a window to their world.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Atoms/Bullet Help 1`] = `
+<div
+  data-testid="help-bullet--atom"
+>
+  <div
+    className="css-1xmqz1x-HelpBullet"
+  >
+    <div
+      className="css-1vhb6xi-HelpBullet"
+    >
+      <svg
+        viewBox="0 0 32 32"
+        width={28}
+      >
+        <path
+          d="M16 1c5.046 0 9.298 3.397 10.594 8.03a6 6 0 0 1-.33 11.964 11.01 11.01 0 0 1-7.531 6.695l.2-.053a3.001 3.001 0 1 1-.264-2.008A9.003 9.003 0 0 0 25 17.031V12a9 9 0 0 0-17.996-.265L7 12v9H6a6 6 0 0 1-.594-11.971C6.702 4.397 10.954 1 16 1zm0 25a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM5 11.126l-.155.043a4.002 4.002 0 0 0 0 7.662l.155.042v-7.747zm22 0v7.747l.155-.042a4.002 4.002 0 0 0 0-7.662L27 11.126z"
+        />
+      </svg>
+    </div>
+    <div>
+      <div
+        className="css-13vmk5g-HelpBullet"
+      >
+        <h3>
+          24/7 customer support
+        </h3>
+      </div>
+      <div>
+        <h4
+          className="css-q5ixen-HelpBullet"
+        >
+          From setting up your listing to concerns about guests, our global team is here to support you by phone, email, and chat, every step of the way.
+        </h4>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Atoms/Bullet Know 1`] = `
+<div
+  data-testid="know-bullet--atom"
+>
+  <div
+    className="css-91v5vd-KnowBullet"
+  >
+    <div
+      className="css-1be68yc-KnowBullet"
+    >
+      <span
+        width={14}
+      >
+        󰀥
+      </span>
+    </div>
+    <div>
+      <p
+        className="css-4s95pe-KnowBullet"
+      >
+        Check-in: 3:00 p.m.–12:00 a.m.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Atoms/Bullet Online Host 1`] = `
+<div
+  data-testid="onlinehost-bullet--atom"
+>
+  <div>
+    <div>
+      <img
+        alt="home"
+        src="https://a0.muscache.com/pictures/b0fe7d1b-2c8b-48ba-9310-5cbeb3f25a32.jpg"
+        style={
+          Object {
+            "width": 40,
+          }
+        }
+      />
+    </div>
+    <div
+      className="css-1xm30gi-OnlineHostBullet"
+    >
+      <h3>
+        Host from home
+      </h3>
+    </div>
+    <div
+      className="css-1f70hag-OnlineHostBullet"
+    >
+      <p>
+        Share your expertise and a window to your world
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Atoms/Bullet Priority 1`] = `
+<div
+  data-testid="priority-bullet--atom"
+>
+  <div>
+    <div>
+      <svg
+        fill="rgb(227, 28, 95)"
+        stroke="currentcolor"
+        viewBox="0 0 48 48"
+        width={40}
+      >
+        <g>
+          <g
+            stroke="none"
+          >
+            <path
+              d="M28 5l.585.005c4.29.076 8.837.984 13.645 2.737l.77.288V35.4l-.008.13a1 1 0 0 1-.47.724l-.116.06L28 42.716l-2-.216V31.414L14.707 19.707 13 19V8.029l.77-.286c4.797-1.75 9.336-2.658 13.62-2.737L28 5z"
+              fillOpacity={0.2}
+            />
+            <path
+              d="M28 1c5.599 0 11.518 1.275 17.755 3.816a2 2 0 0 1 1.239 1.691L47 6.67V35.4a5 5 0 0 1-2.764 4.472l-.205.097L28 47h-3l-1.853-1H25a1 1 0 0 0 1-1h2l15.218-6.858a3 3 0 0 0 1.757-2.351l.019-.194.006-.196V6.669l-.692-.278C38.557 4.128 33.121 3 28 3S17.443 4.128 11.692 6.391L11 6.67 10.999 22 9 23.999V6.669a2 2 0 0 1 1.098-1.786l.147-.067C16.483 2.275 22.401 1 28 1z"
+            />
+          </g>
+          <g
+            fill="none"
+            strokeWidth={2}
+          >
+            <path
+              d="M2 31.414V45a1 1 0 0 0 1 1h22a1 1 0 0 0 1-1V31.414a1 1 0 0 0-.293-.707l-11-11a1 1 0 0 0-1.414 0l-11 11a1 1 0 0 0-.293.707z"
+            />
+            <path
+              d="M10 46V35a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v11"
+            />
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div
+      className="css-1bzel6-PriorityBullet"
+    >
+      <h3
+        className="css-1oujg7c-PriorityBullet"
+      >
+        Host insurance and protection
+      </h3>
+    </div>
+    <div
+      className="css-1d4oo00-PriorityBullet"
+    >
+      <p>
+        To support you in the rare event of an incident, each booking on AIrbnb includes property damae protection of up to $1M USD and liability insurance of up to $1M USD.
+      </p>
+    </div>
+    <div>
+      <button
+        className="css-11g6cib-Button"
+        data-testid="undefined-button--atom"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+      >
+        <u
+          className="css-gway8b-PriorityBullet"
+        >
+          How you're protected while hosting
+        </u>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Atoms/Bullet Question 1`] = `
+<div
+  data-testid="question-bullet--atom"
+>
+  <div
+    className="css-1ndl4ti-QuestionBullet"
+  >
+    <div>
+      <h4
+        className="css-1x3o8nw-QuestionBullet"
+      >
+        Question here
+      </h4>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Atoms/Bullet Rating 1`] = `
+<div
+  data-testid="rating-bullet--atom"
+>
+  <div
+    className="css-1n2v8vp-RatingBullet"
+  >
+    <div>
+      <svg
+        height={14}
+        style={
+          Object {
+            "display": "block",
+            "fill": "#E61E4D",
+          }
+        }
+        viewBox="0 0 37.286 37.287"
+      >
+        <g>
+          <path
+            d="M36.683,16.339l-7.567,7.377l1.786,10.417c0.128,0.75-0.182,1.509-0.797,1.957c-0.348,0.253-0.762,0.382-1.176,0.382
+c-0.318,0-0.638-0.076-0.931-0.23l-9.355-4.918l-9.355,4.918c-0.674,0.355-1.49,0.295-2.107-0.15
+c-0.615-0.448-0.924-1.206-0.795-1.957l1.787-10.417L0.604,16.34c-0.547-0.531-0.741-1.326-0.508-2.05
+c0.236-0.724,0.861-1.251,1.615-1.361l10.459-1.521l4.68-9.478c0.335-0.684,1.031-1.116,1.792-1.116
+c0.763,0,1.456,0.432,1.793,1.115l4.68,9.478l10.461,1.521c0.752,0.109,1.379,0.637,1.611,1.361
+C37.425,15.013,37.226,15.808,36.683,16.339z"
+          />
+        </g>
+      </svg>
+    </div>
+    <h3
+      className="css-vatkwt-RatingBullet"
+    >
+      5
+    </h3>
+    <span
+      className="css-1p5jk6b-RatingBullet"
+    >
+      (
+      100
+      )
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Atoms/Bullet Required 1`] = `
+<div
+  data-testid="required-bullet--atom"
+>
+  <div
+    className="css-wavtjp-RequiredBullet"
+  >
+    <div
+      className="css-1yedk5n-RequiredBullet"
+    >
+      <svg
+        stroke="#C54A32"
+        strokeWidth={2}
+        viewBox="0 0 32 32"
+        width={16}
+      >
+        <circle
+          cx="16"
+          cy="16"
+          fill="none"
+          r="14"
+        />
+        <path
+          d="m16 8v10"
+          fill="none"
+        />
+        <circle
+          cx="16"
+          cy="22.5"
+          fill="#000"
+          r=".5"
+        />
+      </svg>
+    </div>
+    <div>
+      <p
+        className="css-1b4xmqf-RequiredBullet"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Atoms/Bullet Score 1`] = `
+<div
+  data-testid="score-bullet--atom"
+>
+  <div
+    className="css-t7ommy-ScoreBullet"
+  >
+    <p
+      className="css-mn90bm-ScoreBullet"
+    >
+      Aspect
+    </p>
+    <div
+      className="css-15bvs18-ScoreBullet"
+    >
+      <div>
+        <div
+          className="css-185bzy1-ScoreBullet"
+        >
+          <span
+            className="css-1p9xlss-ScoreBullet"
+          />
+        </div>
+      </div>
+      <p
+        className="css-1k2sz67-ScoreBullet"
+      >
+        5
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Atoms/Button Auth 1`] = `
+<div
+  style={
+    Object {
+      "width": 300,
+    }
+  }
+>
+  <button
+    className="css-11g6cib-Button"
+    data-testid="auth-button--atom"
+    style={
+      Object {
+        "cursor": "pointer",
+      }
+    }
+  >
+    <div
+      className="css-1dtzlz7-AuthButton"
+    >
+      <div
+        className="css-1l0z387-AuthButton"
+      />
+      <div
+        className="css-tclgja-AuthButton"
+      >
+        <h3
+          className="css-1nfbiqc-AuthButton"
+        >
+          Continue with 
+          Email
+        </h3>
+      </div>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Atoms/Button Back 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="back-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-dlowfn-BackButton"
+  >
+    <div>
+      <svg
+        viewBox="0 0 32 32"
+        width={20}
+      >
+        <g
+          fill="none"
+        >
+          <path
+            d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"
+            stroke="#61AFB2"
+            strokeWidth={3}
+          />
+        </g>
+      </svg>
+    </div>
+    <div>
+      <h4
+        className="css-uti1v5-BackButton"
+      >
+        Back
+      </h4>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Banner 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="banner-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-18cq0wx-BannerButton"
+  >
+    <h3
+      style={
+        Object {
+          "fontSize": 14,
+        }
+      }
+    >
+      Button
+    </h3>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Bar 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="bar-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-v9m3bd-BarButton"
+  >
+    <div
+      className="css-nufbz2-BarButton"
+    >
+      <svg
+        fillOpacity={0}
+        stroke="#737373"
+        strokeLinecap="round"
+        strokeWidth="1.5"
+        viewBox="0 0 24 24"
+        width={25}
+      >
+        <path
+          d="M12 18.7l-.4-.5a12.3 12.3 0 0 1-2.5-4.6c0-.6-.1-1.2 0-1.6 0-.4.2-.9.4-1.2A3 3 0 0 1 12 9.5c1 0 2 .5 2.5 1.3.2.3.4.8.4 1.2.1.4 0 1 0 1.6-.3 1.3-1.2 3-2.5 4.6l-.4.5z"
+        />
+        <path
+          d="M12 18.8c1 1.6 2.5 2.9 4.2 3.2h.7a4.3 4.3 0 0 0 4.2-5v-.2a74.7 74.7 0 0 0-6.4-13.2c-.6-1-1.5-1.7-2.7-1.7s-2.1.8-2.7 1.7A74.7 74.7 0 0 0 3 16.8v.2l-.2.8a4.3 4.3 0 0 0 4.8 4.3h.2c1.7-.4 3.1-1.7 4.2-3.3"
+        />
+      </svg>
+    </div>
+    <div
+      className="css-j3gq4q-BarButton"
+    >
+      <p
+        className="css-1g0kik-BarButton"
+      >
+        Explore
+      </p>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Border 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="border-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-1kkpsf6-BorderButton"
+    style={
+      Object {
+        "textAlign": "center",
+      }
+    }
+  >
+    <h4
+      className="css-1hpk497-BorderButton"
+    >
+      Button
+    </h4>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Calendar 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="calendar-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-18ts47i-CalendarButton"
+  >
+    <div
+      className="css-1ngxogr-CalendarButton"
+    >
+      <h3
+        className="css-1pf70aj-CalendarButton"
+      >
+        0
+      </h3>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Closed 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="closed-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-ec27tp-ClosedButton"
+  >
+    <svg
+      fill={false}
+      stroke="black"
+      strokeWidth={2}
+      viewBox="0 0 32 32"
+      width={16}
+    >
+      <path
+        d="m6 6 20 20"
+      />
+      <path
+        d="m26 6-20 20"
+      />
+    </svg>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Currency 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="currency-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-1ahvdlk-CurrencyButton"
+  >
+    <div>
+      <p
+        className="css-1t33akx-CurrencyButton"
+      >
+        Canadian Dollar
+      </p>
+    </div>
+    <div>
+      <p
+        className="css-1v2569f-CurrencyButton"
+        style={
+          Object {
+            "textAlign": "left",
+          }
+        }
+      >
+        <span>
+          CAD
+        </span>
+        <span>
+           - 
+        </span>
+        <span>
+          $
+        </span>
+      </p>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Destination 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="destination-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-1d35igq-DestinationButton"
+  >
+    <div>
+      <h4
+        className="css-pz3549-DestinationButton"
+        style={
+          Object {
+            "textAlign": "left",
+          }
+        }
+      >
+        City
+      </h4>
+    </div>
+    <div>
+      <h4
+        className="css-1qhcnlu-DestinationButton"
+        style={
+          Object {
+            "textAlign": "left",
+          }
+        }
+      >
+        Location
+      </h4>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Expand 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="expand-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-gk5t8w-ExpandButton"
+  >
+    <div>
+      <u
+        className="css-1l5giq-ExpandButton"
+      >
+        Button
+      </u>
+    </div>
+    <div>
+      <svg
+        stroke="black"
+        strokeWidth={5}
+        viewBox="0 0 32 32"
+        width={14}
+      >
+        <g
+          fill="none"
+        >
+          <path
+            d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"
+          />
+        </g>
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Filter 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="filter-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-54vt2c-FilterButton"
+  >
+    <p
+      className="css-18mpjug-FilterButton"
+    >
+      Button
+    </p>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Globe 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="globe-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-pg527m-GlobeButton"
+  >
+    <div>
+      <p
+        className="css-an02fb-GlobeButton"
+      >
+        Language
+      </p>
+    </div>
+    <div>
+      <p
+        className="css-1woutag-GlobeButton"
+        style={
+          Object {
+            "textAlign": "left",
+          }
+        }
+      >
+        Region
+      </p>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Link 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="link-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div>
+    <h4
+      className="css-6mw1wb-LinkButton"
+    >
+      Button
+    </h4>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Location 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="location-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-wqnuy2-LocationButton"
+  >
+    <div
+      className="css-d3ejqm-LocationButton"
+    >
+      <div
+        style={
+          Object {
+            "height": 40,
+            "width": 40,
+          }
+        }
+      >
+        <img
+          src="https://a0.muscache.com/im/pictures/fc42dde0-36a7-460e-af89-10b5e44e48d8.jpg?im_w=240&im_q=lowq"
+          style={
+            Object {
+              "borderRadius": 5,
+              "verticalAlign": "bottom",
+            }
+          }
+        />
+      </div>
+    </div>
+    <div>
+      <div
+        className="css-ccgj4h-LocationButton"
+      >
+        <h4
+          className="css-14ey5kl-LocationButton"
+          style={
+            Object {
+              "textAlign": "left",
+            }
+          }
+        >
+          Explore nearby destinations
+        </h4>
+      </div>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Logo 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="logo-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <svg
+    fill="#F5385D"
+    height={32}
+    viewBox="30 0 36 36"
+    width={102}
+  >
+    <path
+      d="M29.24 22.68c-.16-.39-.31-.8-.47-1.15l-.74-1.67-.03-.03c-2.2-4.8-4.55-9.68-7.04-14.48l-.1-.2c-.25-.47-.5-.99-.76-1.47-.32-.57-.63-1.18-1.14-1.76a5.3 5.3 0 00-8.2 0c-.47.58-.82 1.19-1.14 1.76-.25.52-.5 1.03-.76 1.5l-.1.2c-2.45 4.8-4.84 9.68-7.04 14.48l-.06.06c-.22.52-.48 1.06-.73 1.64-.16.35-.32.73-.48 1.15a6.8 6.8 0 007.2 9.23 8.38 8.38 0 003.18-1.1c1.3-.73 2.55-1.79 3.95-3.32 1.4 1.53 2.68 2.59 3.95 3.33A8.38 8.38 0 0022.75 32a6.79 6.79 0 006.75-5.83 5.94 5.94 0 00-.26-3.5zm-14.36 1.66c-1.72-2.2-2.84-4.22-3.22-5.95a5.2 5.2 0 01-.1-1.96c.07-.51.26-.96.52-1.34.6-.87 1.65-1.41 2.8-1.41a3.3 3.3 0 012.8 1.4c.26.4.45.84.51 1.35.1.58.06 1.25-.1 1.96-.38 1.7-1.5 3.74-3.21 5.95zm12.74 1.48a4.76 4.76 0 01-2.9 3.75c-.76.32-1.6.41-2.42.32-.8-.1-1.6-.36-2.42-.84a15.64 15.64 0 01-3.63-3.1c2.1-2.6 3.37-4.97 3.85-7.08.23-1 .26-1.9.16-2.73a5.53 5.53 0 00-.86-2.2 5.36 5.36 0 00-4.49-2.28c-1.85 0-3.5.86-4.5 2.27a5.18 5.18 0 00-.85 2.21c-.13.84-.1 1.77.16 2.73.48 2.11 1.78 4.51 3.85 7.1a14.33 14.33 0 01-3.63 3.12c-.83.48-1.62.73-2.42.83a4.76 4.76 0 01-5.32-4.07c-.1-.8-.03-1.6.29-2.5.1-.32.25-.64.41-1.02.22-.52.48-1.06.73-1.6l.04-.07c2.16-4.77 4.52-9.64 6.97-14.41l.1-.2c.25-.48.5-.99.76-1.47.26-.51.54-1 .9-1.4a3.32 3.32 0 015.09 0c.35.4.64.89.9 1.4.25.48.5 1 .76 1.47l.1.2c2.44 4.77 4.8 9.64 7 14.41l.03.03c.26.52.48 1.1.73 1.6.16.39.32.7.42 1.03.19.9.29 1.7.19 2.5zM41.54 24.12a5.02 5.02 0 01-3.95-1.83 6.55 6.55 0 01-1.6-4.48 6.96 6.96 0 011.66-4.58 5.3 5.3 0 014.08-1.86 4.3 4.3 0 013.7 1.92l.1-1.57h2.92V23.8h-2.93l-.1-1.76a4.52 4.52 0 01-3.88 2.08zm.76-2.88c.58 0 1.09-.16 1.57-.45.44-.32.8-.74 1.08-1.25.25-.51.38-1.12.38-1.8a3.42 3.42 0 00-1.47-3.04 2.95 2.95 0 00-3.12 0c-.44.32-.8.74-1.08 1.25a4.01 4.01 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.98.45 1.55.45zM53.45 8.46c0 .35-.06.67-.22.93-.16.25-.38.48-.67.64-.29.16-.6.22-.92.22-.32 0-.64-.06-.93-.22a1.84 1.84 0 01-.67-.64 1.82 1.82 0 01-.22-.93c0-.36.07-.68.22-.93.16-.3.39-.48.67-.64.29-.16.6-.23.93-.23a1.84 1.84 0 011.6.86 2 2 0 01.21.94zm-3.4 15.3V11.7h3.18v12.08h-3.19zm11.68-8.9v.04c-.15-.07-.35-.1-.5-.13-.2-.04-.36-.04-.55-.04-.89 0-1.56.26-2 .8-.48.55-.7 1.32-.7 2.31v5.93h-3.19V11.69h2.93l.1 1.83c.32-.64.7-1.12 1.24-1.48a3.1 3.1 0 011.81-.5c.23 0 .45.02.64.06.1.03.16.03.22.06v3.2zm1.28 8.9V6.74h3.18v6.5c.45-.58.96-1.03 1.6-1.38a5.02 5.02 0 016.08 1.31 6.55 6.55 0 011.6 4.49 6.96 6.96 0 01-1.66 4.58 5.3 5.3 0 01-4.08 1.86 4.3 4.3 0 01-3.7-1.92l-.1 1.57-2.92.03zm6.15-2.52c.57 0 1.08-.16 1.56-.45.44-.32.8-.74 1.08-1.25.26-.51.38-1.12.38-1.8 0-.67-.12-1.28-.38-1.79a3.75 3.75 0 00-1.08-1.25 2.95 2.95 0 00-3.12 0c-.45.32-.8.74-1.09 1.25a4.01 4.01 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.98.45 1.56.45zm7.51 2.53V11.69h2.93l.1 1.57a3.96 3.96 0 013.54-1.89 4.1 4.1 0 013.82 2.44c.35.76.54 1.7.54 2.75v7.24h-3.19v-6.82c0-.84-.19-1.5-.57-1.99-.38-.48-.9-.74-1.56-.74-.48 0-.9.1-1.27.32-.35.23-.64.52-.86.93a2.7 2.7 0 00-.32 1.35v6.92h-3.16zm12.52 0V6.73h3.19v6.5a4.67 4.67 0 013.73-1.89 5.02 5.02 0 013.95 1.83 6.57 6.57 0 011.59 4.48 6.95 6.95 0 01-1.66 4.58 5.3 5.3 0 01-4.08 1.86 4.3 4.3 0 01-3.7-1.92l-.09 1.57-2.93.03zm6.18-2.53c.58 0 1.09-.16 1.56-.45.45-.32.8-.74 1.09-1.25.25-.51.38-1.12.38-1.8a3.42 3.42 0 00-1.47-3.04 2.95 2.95 0 00-3.12 0c-.44.32-.8.74-1.08 1.25a3.63 3.63 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.95.45 1.55.45z"
+    />
+  </svg>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Menu 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="menu-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-19olnx7-MenuButton"
+  >
+    <div
+      className="css-12fk9yt-MenuButton"
+    >
+      <svg
+        fill="black"
+        viewBox="0 0 448 512"
+        width={12}
+      >
+        <path
+          d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+        />
+      </svg>
+    </div>
+    <div>
+      <svg
+        fill="gray"
+        viewBox="0 0 32 32"
+        width={30}
+      >
+        <path
+          d="m16 .7c-8.437 0-15.3 6.863-15.3 15.3s6.863 15.3 15.3 15.3 15.3-6.863 15.3-15.3-6.863-15.3-15.3-15.3zm0 28c-4.021 0-7.605-1.884-9.933-4.81a12.425 12.425 0 0 1 6.451-4.4 6.507 6.507 0 0 1 -3.018-5.49c0-3.584 2.916-6.5 6.5-6.5s6.5 2.916 6.5 6.5a6.513 6.513 0 0 1 -3.019 5.491 12.42 12.42 0 0 1 6.452 4.4c-2.328 2.925-5.912 4.809-9.933 4.809z"
+        />
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Modal 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="modal-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-1d9plul-ModalButton"
+  >
+    <svg
+      height={16}
+      stroke="black"
+      strokeWidth={2}
+      viewBox="0 0 32 32"
+      width={16}
+    >
+      <path
+        d="m6 6 20 20"
+      />
+      <path
+        d="m26 6-20 20"
+      />
+    </svg>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Nearby 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="nearby-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-1l7rizr-NearbyButton"
+  >
+    <div
+      className="css-1wcqa57-NearbyButton"
+    >
+      <h4
+        className="css-1fhijlv-NearbyButton"
+      >
+        Nearby
+      </h4>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Option 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="option-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-1sawvx6-OptionButton"
+    style={
+      Object {
+        "textAlign": "left",
+      }
+    }
+  >
+    <h4
+      className="css-1v9bxuc-OptionButton"
+    >
+      Option
+    </h4>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Paginate 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="paginate-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div>
+    <div
+      className="css-d07qb8-PaginateButton"
+    >
+      <svg
+        viewBox="0 0 32 32"
+        width={10}
+      >
+        <g
+          fill="none"
+        >
+          <path
+            d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"
+            stroke="black"
+            strokeWidth={5}
+          />
+        </g>
+      </svg>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Primary 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="primary-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-beu952-PrimaryButton"
+  >
+    <h4
+      className="css-ag8okt-PrimaryButton"
+    >
+      Button
+    </h4>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Privacy 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="privacy-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-1ngleru-PrivacyButton"
+    style={
+      Object {
+        "whiteSpace": "nowrap",
+      }
+    }
+  >
+    <h4
+      className="css-xxmos4-PrivacyButton"
+    >
+      Button
+    </h4>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Report 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="report-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-pxlnwm-ReportButton"
+  >
+    <div
+      className="css-oum82e-ReportButton"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        width={16}
+      >
+        <path
+          d="M22.39 5.798c-.088-.208-1.252-2.89-1.759-4.018a228.077 228.077 0 0 0-.677-1.49.5.5 0 0 0-.838-.11 7.236 7.236 0 0 1-.407.435 10.66 10.66 0 0 1-1.134.985C16.404 2.479 15.187 3 14 3c-1.21 0-1.995-.133-3.309-.483l-.4-.107C9.194 2.121 8.47 2 7.5 2a6.35 6.35 0 0 0-1.186.12c-.87.165-1.786.49-2.715.928-.48.225-.932.467-1.345.708l-.112.068-.171-.49a.5.5 0 1 0-.944.331l7 20a.5.5 0 0 0 .944-.33l-2.986-8.531a21.773 21.773 0 0 1 1.77-.843c.73-.307 1.44-.556 2.102-.724.61-.155 1.163-.237 1.642-.237.869 0 1.515.108 2.536.377l.398.106c1.39.371 2.255.517 3.566.517 2.853 0 5.29-1.786 5.974-3.842a.5.5 0 0 0 0-.316c-.324-.974-.87-2.355-1.584-4.044z"
+        />
+      </svg>
+    </div>
+    <div>
+      <h3
+        className="css-1m4y3ak-ReportButton"
+      >
+        Report this listing
+      </h3>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Search 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="search-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-19dzjro-SearchButton"
+    style={
+      Object {
+        "borderRadius": 50,
+        "height": 40,
+        "transition": "0.25s all ease",
+        "transitionDelay": "0.25s",
+        "width": 40,
+      }
+    }
+  >
+    <div
+      className="css-1y9ov3o-SearchButton"
+    >
+      <svg
+        height={13}
+        viewBox="0 0 32 32"
+        width={13}
+      >
+        <g
+          fill="none"
+        >
+          <path
+            d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"
+            stroke="white"
+            strokeWidth={4}
+          />
+        </g>
+      </svg>
+    </div>
+    <div
+      style={
+        Object {
+          "opacity": 0,
+          "transition": "0.25s all ease",
+          "transitionDelay": "0s",
+          "visibility": "hidden",
+        }
+      }
+    >
+      <p
+        className="css-ceduqv-SearchButton"
+      >
+        Search
+      </p>
+    </div>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Transparent 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="transparent-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-4yk7te-TransparentButton"
+  >
+    Button
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Underline 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="underline-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-y5xyhu-UnderlineButton"
+  >
+    <h4
+      style={
+        Object {
+          "fontSize": 14,
+        }
+      }
+    >
+      <u>
+        Title here
+      </u>
+    </h4>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Atoms/Button Video 1`] = `
+<button
+  className="css-11g6cib-Button"
+  data-testid="video-button--atom"
+  style={
+    Object {
+      "cursor": "pointer",
+    }
+  }
+>
+  <div
+    className="css-iexv3q-VideoButton"
+  >
+    <svg
+      height={15}
+      style={
+        Object {
+          "display": "block",
+        }
+      }
+      width={15}
+    >
+      <path
+        d="M13 1v14H9V1zM7 1v14H3V1z"
+        fill="white"
+      />
+    </svg>
+  </div>
+</button>
+`;
+
+exports[`Storyshots Molecules/Panel Experience 1`] = `
+<div
+  data-testid="experience-panel--molecule"
+>
+  <div
+    className="css-j71c04-ExperiencePanel"
+  >
+    <div
+      className="css-1m7e92e-ExperiencePanel"
+    >
+      <div
+        className="css-rvcezx-ExperiencePanel"
+      >
+        <div
+          className="css-1kb577v-ExperiencePanel"
+        />
+        <div
+          className="css-hvszpn-ExperiencePanel"
+        >
+          <div
+            className="css-5kf14w-ExperiencePanel"
+          />
+          <div
+            className="css-1b09usb-ExperiencePanel"
+          />
+          <div
+            className="css-1eae1mn-ExperiencePanel"
+          />
+        </div>
+        <div
+          className="css-npve1e-ExperiencePanel"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Panel Room 1`] = `
+<div
+  data-testid="room-panel--molecule"
+>
+  <div
+    className="css-1ypvtp1-RoomPanel"
+  >
+    <div
+      className="css-frvn08-RoomPanel"
+    >
+      <div
+        className="css-dvqlwo-RoomPanel"
+      >
+        <div>
+          <div
+            style={
+              Object {
+                "backgroundColor": "lightgray",
+                "borderBottomLeftRadius": 16,
+                "borderTopLeftRadius": 16,
+                "height": "100%",
+                "width": "100%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="css-mgn1xc-RoomPanel"
+        >
+          <div>
+            <div
+              className="css-ic7yu2-RoomPanel"
+            />
+          </div>
+          <div>
+            <div
+              className="css-7b540c-RoomPanel"
+            />
+          </div>
+          <div>
+            <div
+              className="css-ic7yu2-RoomPanel"
+            />
+          </div>
+          <div>
+            <div
+              className="css-womu6d-RoomPanel"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Organisms Footer 1`] = `
+<footer
+  className="css-1eh9r7n-Footer"
+>
+  <div>
+    <div
+      className="css-18qwizy-Footer"
+    >
+      <div
+        className="css-40odwk"
+      >
+        <div>
+          <h3
+            className="css-9flgt5"
+          >
+            About
+          </h3>
+        </div>
+        <div
+          className="css-1gxq5jc"
+        >
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  How Airbnb works
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Newsroom
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Airbnb Plus
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Airbnb Luxe
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Hotel Tonight
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Airbnb for Work
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Olympics
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Careers
+                </h4>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-40odwk"
+      >
+        <div>
+          <h3
+            className="css-9flgt5"
+          >
+            Community
+          </h3>
+        </div>
+        <div
+          className="css-1gxq5jc"
+        >
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Diversity & Belonging
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Accessibility
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Airbnb Associates
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Frontline Stays
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Invite friends
+                </h4>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-40odwk"
+      >
+        <div>
+          <h3
+            className="css-9flgt5"
+          >
+            Host
+          </h3>
+        </div>
+        <div
+          className="css-1gxq5jc"
+        >
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Host your home
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Host an Online Experience
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Host an Experience
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Message from CEO Brian Chesky
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Responsible hosting
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Open Homes
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Resource Centre
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Community Centre
+                </h4>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-40odwk"
+      >
+        <div>
+          <h3
+            className="css-9flgt5"
+          >
+            Support
+          </h3>
+        </div>
+        <div
+          className="css-1gxq5jc"
+        >
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Updates for COVID-19
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Help Centre
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Cancellation options
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Neighbourhood Support
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Trust & Safety
+                </h4>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        className="css-1jqgspl-Footer"
+      >
+        <div>
+          <button
+            className="css-1whvtwu-Footer"
+          >
+            <svg
+              className="css-hjdy97-Footer"
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
+              />
+            </svg>
+            <u
+              className="css-1j5e379-Footer"
+            >
+              English(CA)
+            </u>
+          </button>
+        </div>
+        <div>
+          <button
+            className="css-11g6cib-Button"
+            data-testid="underline-button--atom"
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="css-y5xyhu-UnderlineButton"
+            >
+              <h3
+                style={
+                  Object {
+                    "fontSize": 14,
+                  }
+                }
+              >
+                <u>
+                  $ CAD
+                </u>
+              </h3>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div
+        className="css-e1pmnw-Footer"
+      >
+        <div>
+          <h4
+            className="css-prpzo4-Footer"
+          >
+            © 2020 Airbnb, Inc. All rights reserved
+          </h4>
+        </div>
+        <div
+          className="css-e1pmnw-Footer"
+        >
+          <div>
+              ·  
+          </div>
+          <div
+            className="css-1htskhu-Footer"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Privacy
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div>
+             ·  
+          </div>
+          <div
+            className="css-1htskhu-Footer"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Terms
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div>
+             ·  
+          </div>
+          <div
+            className="css-1htskhu-Footer"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Sitemap
+                </h4>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+`;
+
+exports[`Storyshots Templates/D/OnlineHosts Banner 1`] = `
+<div
+  data-testid="banner-onlinehost--template"
+>
+  <div
+    className="css-la6hof-BannerTemplate"
+  >
+    <div
+      className="css-1i6xqs2-BannerTemplate"
+    >
+      <h3
+        className="css-6c2o89-BannerTemplate"
+      >
+        AIRBNB EXPERIENCES
+      </h3>
+    </div>
+    <div
+      className="css-1km6o2m-BannerTemplate"
+    >
+      <h2
+        className="css-11gzsmk-BannerTemplate"
+      >
+        Host an online experience
+      </h2>
+    </div>
+    <div
+      className="css-1282uqu-BannerTemplate"
+    >
+      <h4
+        className="css-1b78r7z-BannerTemplate"
+      >
+        Join a commmunity of hosts bringing the world together in a whole new way.
+      </h4>
+    </div>
+    <div
+      className="css-1wbqrpd-BannerTemplate"
+    >
+      <button
+        className="css-11g6cib-Button"
+        data-testid="primary-button--atom"
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+      >
+        <div
+          className="css-beu952-PrimaryButton"
+        >
+          <h4
+            className="css-ag8okt-PrimaryButton"
+          >
+            Get started
+          </h4>
+        </div>
+      </button>
+    </div>
+    <div
+      className="css-14zc7u2-BannerTemplate"
+    >
+      <img
+        alt="banner image"
+        src="https://a0.muscache.com/pictures/4bab4990-eda1-4b94-996e-0940464575b7.jpg"
+      />
+    </div>
+    <div
+      className="css-hxl5ar-BannerTemplate"
+    >
+      <h4
+        className="css-1b78r7z-BannerTemplate"
+      >
+        Airbnb Experiences are engaging activities designed by locals that go beyond the typical tour or class. And now you can host them for anyone, from anywhere.
+      </h4>
+    </div>
+    <div
+      className="css-zky4yv-BannerTemplate"
+    >
+      <div
+        className="css-1qm1lh"
+      >
+        <div
+          data-testid="onlinehost-bullet--atom"
+        >
+          <div>
+            <div>
+              <img
+                alt="home"
+                src="https://a0.muscache.com/pictures/b0fe7d1b-2c8b-48ba-9310-5cbeb3f25a32.jpg"
+                style={
+                  Object {
+                    "width": 40,
+                  }
+                }
+              />
+            </div>
+            <div
+              className="css-1xm30gi-OnlineHostBullet"
+            >
+              <h3>
+                Host from home
+              </h3>
+            </div>
+            <div
+              className="css-1f70hag-OnlineHostBullet"
+            >
+              <p>
+                Share your expertise and a window to your world
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-1qm1lh"
+      >
+        <div
+          data-testid="onlinehost-bullet--atom"
+        >
+          <div>
+            <div>
+              <img
+                alt="global"
+                src="https://a0.muscache.com/pictures/eba31c9e-9c99-4a7e-bb58-bc1dd3c58dd5.jpg"
+                style={
+                  Object {
+                    "width": 40,
+                  }
+                }
+              />
+            </div>
+            <div
+              className="css-1xm30gi-OnlineHostBullet"
+            >
+              <h3>
+                Meet global guests
+              </h3>
+            </div>
+            <div
+              className="css-1f70hag-OnlineHostBullet"
+            >
+              <p>
+                Make the world feel a little smaller and a lot friendlier.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-1qm1lh"
+      >
+        <div
+          data-testid="onlinehost-bullet--atom"
+        >
+          <div>
+            <div>
+              <img
+                alt="lightening"
+                src="https://a0.muscache.com/pictures/70888c58-8a67-4b03-9b07-3beed0f97275.jpg"
+                style={
+                  Object {
+                    "width": 40,
+                  }
+                }
+              />
+            </div>
+            <div
+              className="css-1xm30gi-OnlineHostBullet"
+            >
+              <h3>
+                Build a business
+              </h3>
+            </div>
+            <div
+              className="css-1f70hag-OnlineHostBullet"
+            >
+              <p>
+                Earn money doing something you love with support from Airbnb.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Templates/D/OnlineHosts More 1`] = `
+<div
+  data-testid="more-onlinehost--template"
+>
+  <div>
+    <div
+      className="css-1b2qj0-MoreTemplate"
+    >
+      <div
+        className="css-hzf08f-MoreTemplate"
+      >
+        <div
+          className="css-11krw9n-MoreTemplate"
+        >
+          <div>
+            <div>
+              <h2
+                className="css-2dy5go-MoreTemplate"
+              >
+                Learn more about hosting with Airbnb Experiences
+              </h2>
+            </div>
+            <div
+              className="css-10mf50j-MoreTemplate"
+            >
+              <button
+                className="css-11g6cib-Button"
+                data-testid="border-button--atom"
+                style={
+                  Object {
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                <div
+                  className="css-wjo5ct-BorderButton"
+                  style={
+                    Object {
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  <h4
+                    className="css-1u7bcib-BorderButton"
+                  >
+                    Let's go
+                  </h4>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,7 +1,7 @@
 import React from "react";
 import { render, within } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import { Card, $Card } from "@card";
+import { Card, $Card } from "../";
 
 describe("Base Button", () => {
   it("renders title correctly for host button", () => {

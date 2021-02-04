@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
-import { Bullet } from "@bullet/web";
+import { Bullet } from "../web";
 import { Characteristic } from "@bullet/web/bullet.stories";
 
 describe("Characteristic Button", () => {

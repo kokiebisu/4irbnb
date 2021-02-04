@@ -34,10 +34,10 @@ export const PaginateButton: React.FC<{
     ),
   };
   return (
-    <>
+    <div>
       <div css={web.wrapper} sx={theme.wrapper}>
         {icons[direction]}
       </div>
-    </>
+    </div>
   );
 };
