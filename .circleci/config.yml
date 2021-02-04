@@ -95,7 +95,7 @@ jobs:
       - prepare-env
       - run:
           name: Testing snapshot
-          command: yarn test:web
+          command: yarn test:components
       - run:
           name: Comparing snapshots
           command: yarn deploy:storybook
