@@ -10,7 +10,6 @@ export const PeriodCreate: React.FC<{ setData?: any; data?: any }> = ({
     max: 0,
   },
 }) => {
-  console.log("data max", data.max);
   return (
     <div>
       <div css={{ marginBottom: 30 }}>

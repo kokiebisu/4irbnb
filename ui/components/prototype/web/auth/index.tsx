@@ -28,7 +28,6 @@ export const Prototype: React.FC<PrototypeProps> = ({
   variant = $Prototype.LOGIN,
   ...props
 }) => {
-  console.log("varian", variant);
   const variants: { [variant: string]: JSX.Element } = {
     login: <LoginTemplate {...props} />,
     signup: <SignupTemplate {...props} />,

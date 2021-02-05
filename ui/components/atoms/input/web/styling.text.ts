@@ -84,19 +84,24 @@ export const styleLabel = (errors, fieldActive, evaluate, value) => {
  */
 export const styleContainer = (errors, fieldActive, value) => {
   if (errors && fieldActive && value) {
-    return [input["container__active"]].join(" ");
+    return {};
+    // return [input["container__active"]].join(" ");
   }
   if (errors && fieldActive) {
-    return [input["container__error--active"]].join(" ");
+    return {};
+    // return [input["container__error--active"]].join(" ");
   }
   if (errors && value) {
-    return [input["container__inactive"]].join(" ");
+    return {};
+    // return [input["container__inactive"]].join(" ");
   }
   if (errors) {
-    return [input["container__error--inactive"]].join(" ");
+    return {};
+    // return [input["container__error--inactive"]].join(" ");
   }
   if (fieldActive) {
-    return [input["container__active"]].join(" ");
+    return {};
+    // return [input["container__active"]].join(" ");
   }
-  return "";
+  return {};
 };

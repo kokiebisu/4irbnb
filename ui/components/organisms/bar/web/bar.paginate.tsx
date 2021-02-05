@@ -18,7 +18,7 @@ export const PaginateBar: React.FC<{
   const displayContent = () => {
     if (page > 4 && page + 3 < total) {
       return (
-        <>
+        <div>
           <button
             css={{
               width: 36,
@@ -135,11 +135,11 @@ export const PaginateBar: React.FC<{
           >
             {total}
           </button>
-        </>
+        </div>
       );
     } else if (page < 5 && total > 7) {
       return (
-        <>
+        <div>
           <button
             onClick={() => Router.push(`/s/homes/1`)}
             css={{
@@ -288,11 +288,11 @@ export const PaginateBar: React.FC<{
           >
             {total}
           </a>
-        </>
+        </div>
       );
     } else if (page + 3 >= total) {
       return (
-        <>
+        <div>
           <button
             onClick={() => Router.push(`/s/homes/1`)}
             css={{
@@ -404,7 +404,7 @@ export const PaginateBar: React.FC<{
           >
             {total}
           </button>
-        </>
+        </div>
       );
     }
   };

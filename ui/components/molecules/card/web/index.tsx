@@ -101,8 +101,6 @@ export const Card: React.FC<CardProps> = ({
     collection: <CollectionCard {...props} />,
   } as const;
 
-  console.log("va", variant);
-
   if (to) {
     return (
       <div

@@ -1,8 +1,12 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+
 import { useState } from "react";
 import { Button, $Button } from "../../../atoms/button/web";
 import { Prototype, $Prototype } from "../../../prototype/web/globe";
 
-export const GlobeModal: React.FC<{ toggleDispatch: (params) => void }> = ({
+export const GlobeModal: React.FC<{ toggleDispatch?: (params) => void }> = ({
   toggleDispatch,
 }) => {
   const [prototype, setPrototype] = useState($Prototype.LANGUAGE);
@@ -17,7 +21,6 @@ export const GlobeModal: React.FC<{ toggleDispatch: (params) => void }> = ({
           />
         </div>
       </div>
-
       <div>
         <div
           css={{

@@ -3,8 +3,8 @@
 import { jsx } from "theme-ui";
 
 // import { Template } from "../web/template/web/s/homes";
-import { Bar, $Bar } from "@bar/web";
-import { Button, $Button } from "@button/web";
+import { Bar, $Bar } from "../../../organisms/bar/web";
+import { Button, $Button } from "../../../atoms/button/web";
 
 /**
  * Renders the category template component

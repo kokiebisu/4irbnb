@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Input, $Input } from "@input/web";
-import { Layout } from "@layout/web";
+import { Input, $Input } from "../../../atoms/input/web";
+import { Layout } from "../../../layout/web";
 
 export const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
   setData,

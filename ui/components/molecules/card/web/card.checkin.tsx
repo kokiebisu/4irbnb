@@ -20,7 +20,7 @@ export const CheckInCard: React.FC<{
   const [selected, dispatchSelected] = useCheckin();
 
   return (
-    <>
+    <div>
       <div
         css={{
           backgroundColor: "white",
@@ -119,7 +119,7 @@ export const CheckInCard: React.FC<{
                 onClick={() => {
                   dispatchSelected({ type: "checkin" });
                 }}
-                className={checkInBorder(selected)}
+                // className={checkInBorder(selected)}
               >
                 <div css={{ padding: "0 12px" }}>
                   <label
@@ -151,7 +151,7 @@ export const CheckInCard: React.FC<{
                 onClick={() => {
                   dispatchSelected({ type: "checkout" });
                 }}
-                className={checkOutBorder(selected)}
+                // className={checkOutBorder(selected)}
               >
                 <div css={{ padding: "0 12px" }}>
                   <label
@@ -205,7 +205,9 @@ export const CheckInCard: React.FC<{
                     }),
               }}
             >
-              <div className={guestBorder(selected)}>
+              <div
+              // className={guestBorder(selected)}
+              >
                 <div
                   css={{
                     padding: "0 12px",
@@ -251,6 +253,6 @@ export const CheckInCard: React.FC<{
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

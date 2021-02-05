@@ -14,11 +14,11 @@ export const LandingLayout: React.FC<{
       <div
         css={{ ...(spread ? {} : {}) }}
         sx={{ ...(dark && { bg: "black" }) }}
-        className={`${
-          spread
-            ? [layout["container--spread"]].join(" ")
-            : [layout["container"]].join(" ")
-        }  ${dark ? [color["bg--black"]].join(" ") : [].join(" ")}`}
+        // className={`${
+        //   spread
+        //     ? [layout["container--spread"]].join(" ")
+        //     : [layout["container"]].join(" ")
+        // }  ${dark ? [color["bg--black"]].join(" ") : [].join(" ")}`}
       >
         <div css={{ padding: "16px 0" }}>
           {title && <h3 sx={{ ...(dark && { color: "white" }) }}>{title}</h3>}

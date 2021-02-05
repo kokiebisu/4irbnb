@@ -13,7 +13,7 @@ const Options: React.FC<{
 }> = ({ params }) => {
   const options = getOptionContents();
   return (
-    <>
+    <div>
       {params.map(({ kind, bold }, index) => (
         <div key={index}>
           <Button
@@ -27,7 +27,7 @@ const Options: React.FC<{
           />
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
@@ -84,7 +84,7 @@ export const MenuModal: React.FC<{ authenticated?: boolean }> = ({
           />
         )}
         {authenticated && (
-          <>
+          <div>
             <div
               css={{
                 width: "100%",
@@ -99,7 +99,7 @@ export const MenuModal: React.FC<{ authenticated?: boolean }> = ({
                 { kind: "logout", bold: false },
               ]}
             />
-          </>
+          </div>
         )}
       </div>
     </div>

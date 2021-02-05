@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-// import { Template } from "../web/template/web/s/homes";
+import { Template } from "../../../template/web/s/homes";
 import { Bar, $Bar } from "@bar/web";
 import { Button, $Button } from "@button/web";
 

@@ -39,6 +39,7 @@ export const SearchBar: React.FC<{
           selected={selected}
           setSelected={setSelected}
           name="location"
+          dispatch={dispatch}
         />
         <Seperator />
         <Option
@@ -47,6 +48,7 @@ export const SearchBar: React.FC<{
           selected={selected}
           setSelected={setSelected}
           name="checkin"
+          dispatch={dispatch}
         />
         <Seperator />
         <Option
@@ -55,6 +57,7 @@ export const SearchBar: React.FC<{
           selected={selected}
           setSelected={setSelected}
           name="checkout"
+          dispatch={dispatch}
         />
         <Seperator />
         <button

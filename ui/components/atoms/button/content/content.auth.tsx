@@ -1,11 +1,13 @@
-import React from "react";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
 // import { useAuthDispatch, useAuthState } from "@context/auth";
 import { Email } from "../../../public/svg/original";
 import { Apple, Facebook, Google } from "../../../public/svg/logo";
 
 export const getAuthContents: React.FC<{
   title?: String;
-  authDispatch: (params: any) => void;
+  authDispatch?: any;
 }> = ({ title = "Log in", authDispatch }) => {
   const auths = {
     email: {

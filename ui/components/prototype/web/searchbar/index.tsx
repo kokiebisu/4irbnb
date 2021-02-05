@@ -1,11 +1,10 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-
 import { jsx } from "theme-ui";
 import { useRef, useState } from "react";
 import { Bar, $Bar } from "../../../organisms/bar/web";
 import { Modal } from "../../../organisms/modal/web";
-import { useOnClickOutside } from "@hooks/useOnClickOutside";
+import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
 
 export interface PrototypeProps {
   expanded?: boolean;

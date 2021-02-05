@@ -12,9 +12,9 @@ import { validateAuth as validate } from "../../../helper/auth";
  */
 export const AuthPrototype: React.FC<{
   title?: string;
-  authDispatch: (param: any) => void;
+  authDispatch?: (param: any) => void;
 }> = ({ title = "Log in", authDispatch }) => {
-  const auths = getAuthContents();
+  const auths = getAuthContents(title, authDispatch);
   const methods = ["email", "facebook", "google", "apple"];
 
   const formik = useFormik({
