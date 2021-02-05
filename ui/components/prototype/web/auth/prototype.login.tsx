@@ -17,11 +17,12 @@ import { usePost } from "../../../hooks/usePost";
 /**
  * Renders the login template component
  */
-export const LoginTemplate: React.FC<{}> = () => {
-  // const authState = useAuthState();
+export const LoginTemplate: React.FC<{ authState: any; authDispatch: any }> = ({
+  authState,
+  authDispatch,
+}) => {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("pending");
-  // const authDispatch = useAuthDispatch();
 
   const formik = useFormik({
     initialValues: {

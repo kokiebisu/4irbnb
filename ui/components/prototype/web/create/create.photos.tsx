@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { useState } from "react";
-import { Input, $Input } from "@input/web";
+import { Input, $Input } from "../../../atoms/input/web";
 
 export const PhotosCreate: React.FC<{
   data?: any;

@@ -1,16 +1,26 @@
-import { Header, $Header } from "@header";
-import { Prototype, $Prototype } from "@prototype/create";
+import { Header, $Header } from "@airbnb/components/organisms/header/web";
+import { Prototype, $Prototype } from "@airbnb/components/prototype/web/create";
 
 import responsive from "@styles/responsive.module.scss";
 import layout from "@styles/layout.module.scss";
 import space from "@styles/space.module.scss";
 
 import { useTabTitle } from "@hooks/useTabTitle";
+import { useEffect } from "react";
+import { useStayDispatch } from "@context/stay";
 
 const BecomeAHostPage = () => {
+  const dispatchStay = useStayDispatch();
   useTabTitle(
     "Become a Host and Rent Out Your Room, House or Apartment on Airbnb"
   );
+
+  useEffect(() => {
+    dispatchStay({
+      type: "reset",
+      payload: { place: "Entire place", guests: 0, address: "" },
+    });
+  }, []);
 
   return (
     <div style={{ height: "100vh" }}>

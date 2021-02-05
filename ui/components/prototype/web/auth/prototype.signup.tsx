@@ -9,14 +9,14 @@ import { Button, $Button } from "../../../atoms/button/web";
 import { Bullet, $Bullet } from "../../../atoms/bullet/web";
 
 import { validateSignup as validate } from "../../../helper/auth";
-import { usePost } from "@hooks/usePost";
-// import { useAuthDispatch } from "@context/auth";
+import { usePost } from "../../../hooks/usePost";
 
 /**
  * Renders the signup template component
  */
-export const SignupTemplate: React.FC<{}> = () => {
-  // const authDispatch = useAuthDispatch();
+export const SignupTemplate: React.FC<{ authDispatch: any }> = ({
+  authDispatch,
+}) => {
   const [loading, setLoading] = useState(false);
   const formik = useFormik({
     initialValues: {

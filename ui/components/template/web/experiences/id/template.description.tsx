@@ -95,7 +95,7 @@ export const DescriptionTemplate: React.FC<{
           )}
         </div>
       ) : (
-        <>
+        <div>
           <p
             css={{
               fontWeight: 300,
@@ -123,7 +123,7 @@ export const DescriptionTemplate: React.FC<{
               </button>
             </span>
           </p>
-        </>
+        </div>
       )}
       {layoutType === "room" && (
         <div css={{ marginTop: 20 }}>

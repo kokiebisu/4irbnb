@@ -1,3 +1,7 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+
 export const Properties = [
   { value: "USD", display: "USD United States dollar" },
 ];

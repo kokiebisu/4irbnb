@@ -16,7 +16,7 @@ export const WhiteHeader: React.FC<{
   data?: any;
   toggleState?: any;
   toggleDispatch?: (params: any) => void;
-}> = ({ data, toggleState, toggleDispatch }) => {
+}> = ({ data, toggleState = { menu: false }, toggleDispatch }) => {
   return (
     <header css={{ padding: "16px 0", bg: "white" }}>
       <div

@@ -1,5 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
+import { jsx } from "theme-ui";
 import { Input, $Input } from "../../../atoms/input/web";
 import { Layout } from "../../../layout/web";
 

@@ -49,7 +49,7 @@ export interface ModalProps {
  * @param {string} dispatchType - The type of dispatch
  */
 export const Modal: React.FC<ModalProps> = ({
-  variant,
+  variant = $Modal.AUTH,
   extendsTo,
   dispatch,
   animate = "default",

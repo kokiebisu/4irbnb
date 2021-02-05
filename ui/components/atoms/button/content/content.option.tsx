@@ -1,12 +1,10 @@
-// import { useAuthDispatch } from "@context/auth";
-// import { useToggleDispatch } from "@context/toggle";
-import { usePost } from "@hooks/usePost";
+/** @jsxRutime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import { usePost } from "../../../hooks/usePost";
 import Router from "next/router";
 
-export const getOptionContents = () => {
-  // const authDispatch = useAuthDispatch();
-  // const toggleDispatch = useToggleDispatch();
-
+export const getOptionContents = (toggleDispatch: any, authDispatch: any) => {
   const options = {
     messages: {
       name: "Messages",

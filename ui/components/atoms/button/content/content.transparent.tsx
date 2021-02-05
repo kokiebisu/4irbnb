@@ -10,7 +10,7 @@ export const Content: React.FC<{ kind?: string; inverse?: boolean }> = ({
 }) => {
   const kinds = {
     globe: (
-      <>
+      <div>
         <div
           css={{
             alignItems: "center",
@@ -19,7 +19,7 @@ export const Content: React.FC<{ kind?: string; inverse?: boolean }> = ({
         >
           <Globe width={16} fill={inverse ? "white" : "#363636"} />
         </div>
-      </>
+      </div>
     ),
     host: (
       <h3

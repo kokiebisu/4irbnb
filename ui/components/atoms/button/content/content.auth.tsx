@@ -5,10 +5,10 @@ import { jsx } from "theme-ui";
 import { Email } from "../../../public/svg/original";
 import { Apple, Facebook, Google } from "../../../public/svg/logo";
 
-export const getAuthContents: React.FC<{
-  title?: String;
-  authDispatch?: any;
-}> = ({ title = "Log in", authDispatch }) => {
+export const getAuthContents = (
+  title: String = "Log in",
+  authDispatch: any
+) => {
   const auths = {
     email: {
       name: "Email",

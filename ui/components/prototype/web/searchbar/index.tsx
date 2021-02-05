@@ -94,7 +94,7 @@ export const Prototype: React.FC<PrototypeProps> = ({
           >
             <div css={{ width: "100%" }} ref={containerRef}>
               <Modal
-                variant={content}
+                variant="guests"
                 dispatch={`toggle_${content}`}
                 extendsTo={{ width: "100%" }}
                 criteria={toggleState[content]}

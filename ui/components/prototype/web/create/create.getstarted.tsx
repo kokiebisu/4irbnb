@@ -4,17 +4,18 @@ import { jsx } from "theme-ui";
 import { useEffect, useState } from "react";
 import { useFormik } from "formik";
 import Router from "next/router";
-import { Button, $Button } from "@button/web";
-import { Input, $Input } from "@input/web";
-// import { useStayDispatch } from "@context/stay";
+import { Button, $Button } from "../../../atoms/button/web";
+import { Input, $Input } from "../../../atoms/input/web";
 
 /**
  * Renders the /become-a-host/get-started page content
  */
-export const GetStartedCreate: React.FC<{}> = () => {
+export const GetStartedCreate: React.FC<{
+  dispatchStay?: ({ type: string, payload: any }) => void;
+}> = ({ dispatchStay }) => {
   const [loading, setLoading] = useState(false);
   const [stay, setStay] = useState("Entire place");
-  // const dispatchStay = useStayDispatch();
+
   const formik = useFormik({
     initialValues: {
       guests: 1,
@@ -31,13 +32,6 @@ export const GetStartedCreate: React.FC<{}> = () => {
       }, 2000);
     },
   });
-
-  useEffect(() => {
-    dispatchStay({
-      type: "reset",
-      payload: { place: "Entire place", guests: 0, address: "" },
-    });
-  }, []);
 
   return (
     <div>

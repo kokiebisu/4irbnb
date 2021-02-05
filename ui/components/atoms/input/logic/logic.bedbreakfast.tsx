@@ -1,3 +1,7 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+
 const Properties: { name: string; description: string }[] = [
   {
     name: "Bed and breakfast",

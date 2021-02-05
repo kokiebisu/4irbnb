@@ -29,10 +29,10 @@ export const usePost = ({
       }
       // const client = APIClient();
       // const { data } = await client.post(url, body);
-      if (onSuccess) {
-        onSuccess(data);
-      }
-      return { data };
+      // if (onSuccess) {
+      //   onSuccess(data);
+      // }
+      // return { data };
     } catch (err) {
       setTimeout(() => {
         if (triggerLoading) {
