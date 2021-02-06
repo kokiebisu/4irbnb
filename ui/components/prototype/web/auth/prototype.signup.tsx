@@ -14,7 +14,7 @@ import { usePost } from "../../../hooks/usePost";
 /**
  * Renders the signup template component
  */
-export const SignupTemplate: React.FC<{ authDispatch: any }> = ({
+export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
   authDispatch,
 }) => {
   const [loading, setLoading] = useState(false);
