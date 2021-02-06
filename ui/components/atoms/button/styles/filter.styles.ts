@@ -20,8 +20,8 @@ const condition = {
 
 const shared = {
   wrapper: {
-    whiteSpace: "no-wrap",
-    padding: "8px 14px",
+    // whiteSpace: "no-wrap",
+    // padding: "8px 14px",
     borderRadius: 20,
   },
   label: {

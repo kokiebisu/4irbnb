@@ -4,10 +4,10 @@ const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 module.exports = {
   stories: [
     "../atoms/**/**/*.stories.@(js|jsx|ts|tsx)",
-    "../molecules/**/**/*.stories.@(js|jsx|ts|tsx)",
-    "../organisms/**/**/*.stories.@(js|jsx|ts|tsx)",
-    "../prototype/**/**/*.stories.@(js|jsx|ts|tsx)",
-    "../template/**/**/*.stories.@(js|jsx|ts|tsx)",
+    // "../molecules/**/**/*.stories.@(js|jsx|ts|tsx)",
+    // "../organisms/**/**/*.stories.@(js|jsx|ts|tsx)",
+    // "../prototype/**/**/*.stories.@(js|jsx|ts|tsx)",
+    // "../template/**/**/*.stories.@(js|jsx|ts|tsx)",
   ],
   // logLevel: "debug",
   addons: [
