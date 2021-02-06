@@ -5,7 +5,7 @@ import { useState } from "react";
 
 // import { styleInput, styleLabel, styleContainer } from "./styling.text";
 
-import { Button, $Button } from "atoms/button/web";
+import { Button, $Button } from "../../../atoms/button/web";
 
 // import { checkPassword } from "../../../auth";
 

@@ -28,7 +28,7 @@
     "compile:ui": "lerna run compile --scope=@airbnb/{theme,components}",
     "compile:web": "lerna run build --scope=@airbnb/web",
     "version:upgrade": "lerna version --conventional-commits --yes",
-    "build:storybook": "lerna run compile --scope=@airbnb/content && lerna run build-storybook --scope=@airbnb/web"
+    "build:storybook": "lerna run compile --scope=@airbnb/content && lerna run build-storybook --scope=@airbnb/components"
   },
   "devDependencies": {
     "lerna": "^3.22.1"

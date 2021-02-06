@@ -1,18 +1,15 @@
 import React from "react";
-// import { ContextProvider } from "../context/provider";
-import { ThemeProvider } from "theme-ui";
+import "../global.css";
 import { theme } from "@airbnb/theme";
-
+import { ThemeProvider } from "theme-ui";
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
 };
 
 export const decorators = [
   (Story) => (
-    // <ContextProvider>
     <ThemeProvider theme={theme}>
       <Story />
     </ThemeProvider>
-    // </ContextProvider>
   ),
 ];
