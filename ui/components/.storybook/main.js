@@ -1,5 +1,8 @@
 module.exports = {
-  stories: ["../atoms/**/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: [
+    "../atoms/**/**/*.stories.@(js|jsx|ts|tsx)",
+    "../molecules/**/**/*.stories.@(js|jsx|ts|tsx)",
+  ],
   addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
   transform: {
     "^.+\\.[tj]sx?$": "babel-jest",

@@ -2906,3 +2906,2040 @@ exports[`Storyshots Atoms/Input Verify 1`] = `
   </div>
 </div>
 `;
+
+exports[`Storyshots Molecules/Card Again 1`] = `
+<div
+  data-testid="again-card"
+>
+  <div
+    className="css-szsxih-AgainCard"
+  >
+    <div
+      className="css-1bhpcz6-AgainCard"
+    >
+      <div
+        className="css-1ttt5nj-AgainCard"
+      >
+        <div
+          className="css-1g2oxf5-AgainCard"
+        >
+          <div
+            className="css-1tulgs7-AgainCard"
+          >
+            <svg
+              fill="white"
+              viewBox="0 0 16 16"
+              width={18}
+            >
+              <path
+                d="m8 12c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2zm1.6-12v9.6h-3.2v-9.6z"
+              />
+            </svg>
+          </div>
+        </div>
+        <div>
+          <div
+            className="css-g3o3sg-AgainCard"
+          >
+            <h3
+              className="css-64at2c-AgainCard"
+            >
+              Let's try that again
+            </h3>
+          </div>
+          <div>
+            <p
+              className="css-6owp5-AgainCard"
+            >
+              There isn’t an account associated with this email address. Please try another email.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Arrangements 1`] = `
+<div
+  data-testid="arrangements-card"
+>
+  <div
+    className="css-1cswzr2-ArrangementsCard"
+  >
+    <div
+      className="css-1c1vp7y-ArrangementsCard"
+    >
+      <div
+        className="css-1e1kbwf-ArrangementsCard"
+      >
+        <svg
+          viewBox="0 0 480 480"
+          width={24}
+        >
+          <g>
+            <g>
+              <path
+                d="M472,272h-8v-24c-0.021-15.886-9.44-30.254-24-36.608V88c-0.002-3.18-1.886-6.056-4.8-7.328
+c3.121-5.002,4.783-10.776,4.8-16.672c0-17.673-14.327-32-32-32c-17.673,0-32,14.327-32,32c0.033,5.634,1.569,11.157,4.448,16
+H99.552c2.879-4.843,4.415-10.366,4.448-16c0-17.673-14.327-32-32-32S40,46.327,40,64c0.017,5.896,1.679,11.67,4.8,16.672
+C41.886,81.944,40.002,84.82,40,88v123.392C25.44,217.746,16.021,232.114,16,248v24H8c-4.418,0-8,3.582-8,8v112
+c0,4.418,3.582,8,8,8h8v40c0,4.418,3.582,8,8,8h32c4.418,0,8-3.582,8-8v-40h352v40c0,4.418,3.582,8,8,8h32c4.418,0,8-3.582,8-8
+v-40h8c4.418,0,8-3.582,8-8V280C480,275.582,476.418,272,472,272z M408,48c8.837,0,16,7.163,16,16s-7.163,16-16,16
+s-16-7.163-16-16S399.163,48,408,48z M72,48c8.837,0,16,7.163,16,16s-7.163,16-16,16s-16-7.163-16-16S63.163,48,72,48z M56,96h368
+v112h-32.208c5.294-6.883,8.179-15.316,8.208-24v-16c-0.026-22.08-17.92-39.974-40-40h-64c-22.08,0.026-39.974,17.92-40,40v16
+c0.029,8.684,2.914,17.117,8.208,24h-48.416c5.294-6.883,8.179-15.316,8.208-24v-16c-0.026-22.08-17.92-39.974-40-40h-64
+c-22.08,0.026-39.974,17.92-40,40v16c0.029,8.684,2.914,17.117,8.208,24H56V96z M384,168v16c0,13.255-10.745,24-24,24h-64
+c-13.255,0-24-10.745-24-24v-16c0-13.255,10.745-24,24-24h64C373.255,144,384,154.745,384,168z M208,168v16
+c0,13.255-10.745,24-24,24h-64c-13.255,0-24-10.745-24-24v-16c0-13.255,10.745-24,24-24h64C197.255,144,208,154.745,208,168z
+ M32,248c0-13.255,10.745-24,24-24h368c13.255,0,24,10.745,24,24v24H32V248z M48,432H32v-32h16V432z M448,432h-16v-32h16V432z
+ M464,384H16v-96h448V384z"
+              />
+            </g>
+          </g>
+          <g>
+            <g>
+              <path
+                d="M72,352H40c-4.418,0-8,3.582-8,8s3.582,8,8,8h32c4.418,0,8-3.582,8-8S76.418,352,72,352z"
+              />
+            </g>
+          </g>
+          <g>
+            <g>
+              <path
+                d="M440,352H104c-4.418,0-8,3.582-8,8s3.582,8,8,8h336c4.418,0,8-3.582,8-8S444.418,352,440,352z"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+      <p
+        className="css-1tfrcm2-ArrangementsCard"
+      >
+        Bedroom
+      </p>
+      <div>
+        <p
+          className="css-18agvi6"
+        >
+          1
+           
+          double bed
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Available 1`] = `
+<div
+  style={
+    Object {
+      "maxWidth": "25%",
+    }
+  }
+>
+  <div
+    data-testid="available-card"
+  >
+    <div
+      className="css-8f7q5-AvailableCard"
+    >
+      <div
+        className="css-1ozm2zo-AvailableCard"
+      >
+        <h3
+          className="css-1ezrp0w-AvailableCard"
+        >
+          Tue., Nov. 10
+        </h3>
+      </div>
+      <div>
+        <p
+          className="css-14o8dzf-AvailableCard"
+        >
+          1:00 a.m. 
+           - 
+          3:00 a.m. 
+           
+          PST
+        </p>
+      </div>
+      <div
+        className="css-1bgjlrv-AvailableCard"
+      >
+        <u
+          className="css-14o8dzf-AvailableCard"
+        >
+          Book for a private group
+        </u>
+      </div>
+      <div
+        className="css-1cwzlbe-AvailableCard"
+      >
+        <span
+          className="css-1ezrp0w-AvailableCard"
+        >
+          <b>
+            $
+            31
+          </b>
+        </span>
+        <span
+          className="css-1ezrp0w-AvailableCard"
+        >
+           /person
+        </span>
+      </div>
+      <div
+        className="css-1dlad1-AvailableCard"
+      >
+        <button
+          className="css-11g6cib-Button"
+          data-testid="primary-button--atom"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          <div
+            className="css-trh01j-PrimaryButton"
+          >
+            <h4
+              className="css-ag8okt-PrimaryButton"
+            >
+              Choose
+            </h4>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Category 1`] = `
+<div
+  style={
+    Object {
+      "width": "33.3%",
+    }
+  }
+>
+  <div
+    data-testid="category-card"
+  >
+    <div>
+      <div
+        className="css-16d8x9e-CategoryCard"
+      >
+        <div
+          className="css-dguum6-CategoryCard"
+        >
+          <div
+            className="css-16n7g1h-CategoryCard"
+          >
+            <div
+              className="css-124c4tk-CategoryCard"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-uu7bmn-CategoryCard"
+      >
+        <h3
+          className="css-1e10i0p-CategoryCard"
+        >
+          Title
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Checkin 1`] = `
+<div
+  style={
+    Object {
+      "width": 500,
+    }
+  }
+>
+  <div
+    data-testid="checkin-card"
+  >
+    <div>
+      <div
+        className="css-1xfw0o-CheckInCard"
+      >
+        <div
+          className="css-j25lmz-CheckInCard"
+        >
+          <div
+            className="css-uch16c-CheckInCard"
+          >
+            <h3
+              className="css-eppxr7-CheckInCard"
+            >
+              Add dates for prices
+            </h3>
+            <div
+              className="css-10s5kny-CheckInCard"
+            >
+              <div
+                className="css-afdd7q-CheckInCard"
+              >
+                <svg
+                  style={
+                    Object {
+                      "display": "block",
+                      "fill": "#E61E4D",
+                    }
+                  }
+                  viewBox="0 0 37.286 37.287"
+                  width={10}
+                >
+                  <g>
+                    <path
+                      d="M36.683,16.339l-7.567,7.377l1.786,10.417c0.128,0.75-0.182,1.509-0.797,1.957c-0.348,0.253-0.762,0.382-1.176,0.382
+c-0.318,0-0.638-0.076-0.931-0.23l-9.355-4.918l-9.355,4.918c-0.674,0.355-1.49,0.295-2.107-0.15
+c-0.615-0.448-0.924-1.206-0.795-1.957l1.787-10.417L0.604,16.34c-0.547-0.531-0.741-1.326-0.508-2.05
+c0.236-0.724,0.861-1.251,1.615-1.361l10.459-1.521l4.68-9.478c0.335-0.684,1.031-1.116,1.792-1.116
+c0.763,0,1.456,0.432,1.793,1.115l4.68,9.478l10.461,1.521c0.752,0.109,1.379,0.637,1.611,1.361
+C37.425,15.013,37.226,15.808,36.683,16.339z"
+                    />
+                  </g>
+                </svg>
+              </div>
+              <span
+                className="css-17dejot-CheckInCard"
+              >
+                4.93
+              </span>
+              <span
+                className="css-qgpbjx-CheckInCard"
+              >
+                (248)
+              </span>
+            </div>
+          </div>
+          <div
+            className="css-a7fp7t-CheckInCard"
+          >
+            <div
+              className="css-21yogo-CheckInCard"
+            >
+              <div
+                onClick={[Function]}
+              >
+                <div
+                  className="css-1w4c5ps-CheckInCard"
+                >
+                  <label
+                    className="css-zcihgx-CheckInCard"
+                  >
+                    CHECK-IN
+                  </label>
+                  <input
+                    className="css-1yutiee-CheckInCard"
+                    placeholder="Add date"
+                  />
+                </div>
+              </div>
+              <div
+                onClick={[Function]}
+              >
+                <div
+                  className="css-1w4c5ps-CheckInCard"
+                >
+                  <label
+                    className="css-zcihgx-CheckInCard"
+                  >
+                    CHECK-OUT
+                  </label>
+                  <input
+                    className="css-1yutiee-CheckInCard"
+                    placeholder="Add date"
+                  />
+                </div>
+              </div>
+            </div>
+            <button
+              className="css-1c4wczt-CheckInCard"
+              onClick={[Function]}
+            >
+              <div>
+                <div
+                  className="css-1dfll2g-CheckInCard"
+                >
+                  <div>
+                    <label
+                      className="css-zcihgx-CheckInCard"
+                    >
+                      GUESTS
+                    </label>
+                    <p
+                      className="css-v92ax0-CheckInCard"
+                    >
+                      1 guest
+                    </p>
+                  </div>
+                  <div>
+                    <svg
+                      viewBox="0 0 256 256"
+                      width={14}
+                    >
+                      <g>
+                        <g>
+                          <polygon
+                            points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		"
+                          />
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-xi9rgs-CheckInCard"
+          >
+            <button
+              className="css-1nmzeqo-CheckInCard"
+            >
+              Check availability
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Collection 1`] = `
+<div
+  style={
+    Object {
+      "width": 500,
+    }
+  }
+>
+  <div
+    data-testid="collection-card"
+  >
+    <div
+      className="css-kwqlpo-CollectionCard"
+    >
+      <div
+        className="css-g3kk51-CollectionCard"
+      >
+        <div
+          className="css-h73j99-CollectionCard"
+        >
+          <div
+            className="css-1aazur5-CollectionCard"
+          />
+          <div
+            className="css-1lbh5jl-CollectionCard"
+          >
+            <div
+              className="css-pjo5zv-CollectionCard"
+            >
+              <div>
+                <div
+                  className="css-1yq7it8-CollectionCard"
+                >
+                  <p
+                    className="css-w3z44o-CollectionCard"
+                  >
+                    Collection
+                  </p>
+                </div>
+                <div
+                  className="css-1m2euby-CollectionCard"
+                >
+                  <h3
+                    className="css-xkhmwn-CollectionCard"
+                  >
+                    Wellness in the New Year
+                  </h3>
+                </div>
+              </div>
+              <div>
+                <button>
+                  <div
+                    className="css-j9wqgz-CollectionCard"
+                  >
+                    <h3
+                      className="css-16a7a90-CollectionCard"
+                    >
+                      Show all
+                    </h3>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Horizontal 1`] = `
+<div
+  style={
+    Object {
+      "maxWidth": 600,
+    }
+  }
+>
+  <div
+    data-testid="horizontal-card"
+  >
+    <div>
+      <div
+        className="css-pj49is-HorizontalCard"
+      >
+        <div
+          className="css-pgus6p-HorizontalCard"
+        >
+          <div
+            className="css-1uxildy-HorizontalCard"
+          >
+            <div
+              className="css-1479srm-HorizontalCard"
+            >
+              <div
+                className="css-1yp97ex-HorizontalCard"
+              />
+              <div
+                className="css-1hur5ut-HorizontalCard"
+              >
+                <div
+                  className="css-10utmdf-HorizontalCard"
+                >
+                  <div
+                    className="css-f2tos6-HorizontalCard"
+                  >
+                    <h3
+                      className="css-17dx12g-HorizontalCard"
+                    >
+                      Superhost
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-ho4eaw-HorizontalCard"
+      >
+        <div
+          className="css-lp6rw3-HorizontalCard"
+        >
+          <svg
+            fill="#F5385D"
+            viewBox="0 0 1000 1000"
+            width={14}
+          >
+            <path
+              d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"
+            />
+          </svg>
+        </div>
+        <div
+          className="css-lp6rw3-HorizontalCard"
+        >
+          <p
+            className="css-81ijlo-HorizontalCard"
+          >
+            5.00
+          </p>
+        </div>
+        <div>
+          <p
+            className="css-13y1y3x-HorizontalCard"
+          >
+            (100)
+          </p>
+        </div>
+      </div>
+      <div
+        className="css-tl5xty-HorizontalCard"
+      >
+        <div>
+          <p
+            className="css-sj2tv8-HorizontalCard"
+          >
+            Type of Stay
+          </p>
+        </div>
+        <div>
+          <p>
+              ·   
+          </p>
+        </div>
+        <div>
+          <p
+            className="css-1rodnx9-HorizontalCard"
+          >
+            Location
+          </p>
+        </div>
+      </div>
+      <div>
+        <p
+          className="css-qe0us-HorizontalCard"
+        >
+          Title should be here
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Host 1`] = `
+<div
+  style={
+    Object {
+      "width": 400,
+    }
+  }
+>
+  <div
+    data-testid="host-card"
+  >
+    <div>
+      <div>
+        <div
+          className="css-dar3iw-HostCard"
+        />
+      </div>
+      <div
+        className="css-1u3t4fn-HostCard"
+      >
+        <h3>
+          Host
+        </h3>
+      </div>
+      <div
+        className="css-1lwzivl-HostCard"
+      >
+        <h4
+          className="css-lzjofl-HostCard"
+        >
+          Hosts a 
+          Type
+           in 
+          Location
+        </h4>
+      </div>
+      <div>
+        <button
+          className="css-11g6cib-Button"
+          data-testid="underline-button--atom"
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          <div
+            className="css-y5xyhu-UnderlineButton"
+          >
+            <h4
+              style={
+                Object {
+                  "fontSize": 14,
+                }
+              }
+            >
+              <u>
+                Check out some Types
+              </u>
+            </h4>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Hosting 1`] = `
+<div
+  data-testid="hosting-card"
+>
+  <div
+    className="css-3tkruk-HostingCard"
+  >
+    <div>
+      <div
+        className="css-1so6w6r-HostingCard"
+      />
+    </div>
+    <div
+      className="css-1nk6b56-HostingCard"
+    >
+      <h2
+        className="css-12e3xpn-HostingCard"
+      >
+        Title here
+      </h2>
+    </div>
+    <div>
+      <h4
+        style={
+          Object {
+            "fontSize": 16,
+            "lineHeight": 1.6,
+          }
+        }
+      >
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+      </h4>
+    </div>
+    <div
+      className="css-nt7oyw-HostingCard"
+    >
+      <u
+        className="css-1nd5iw0-HostingCard"
+      >
+        Learn more
+      </u>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card How 1`] = `
+<div
+  style={
+    Object {
+      "width": 225,
+    }
+  }
+>
+  <div
+    data-testid="how-card"
+  >
+    <div
+      className="css-z2zrzb-HowCard"
+      style={
+        Object {
+          "borderRadius": 6,
+          "height": "100%",
+          "minHeight": 300,
+          "padding": 22,
+        }
+      }
+    >
+      <div
+        className="css-3o3y0p-HowCard"
+      >
+        <div
+          className="css-5ipq40-HowCard"
+        />
+      </div>
+      <div
+        className="css-1vxal2o-HowCard"
+      >
+        <h3
+          className="css-5z57hi-HowCard"
+        >
+          Qualified guests find your listing
+        </h3>
+      </div>
+      <div
+        className="css-16jqbdm-HowCard"
+      >
+        <p
+          className="css-1ocwc8p-HowCard"
+        >
+          Anyone who wants to book with you needs to confirm their contact information, provide payment details, and tell you about their trip.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Nearby 1`] = `
+<div
+  data-testid="nearby-card"
+>
+  <div
+    className="css-11p3jvu-NearbyCard"
+  >
+    <div
+      className="css-1brf9if-NearbyCard"
+    >
+      <div
+        className="css-1qdaa5o-NearbyCard"
+      />
+    </div>
+    <div>
+      <h3
+        className="css-1x9qyls-NearbyCard"
+      >
+        City
+      </h3>
+      <p
+        className="css-tp6muv-NearbyCard"
+      >
+        1
+         hour drive
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Online 1`] = `
+<div
+  style={
+    Object {
+      "maxWidth": 600,
+    }
+  }
+>
+  <div
+    data-testid="online-card"
+  >
+    <div
+      className="css-e4h49k-OnlineCard"
+    >
+      <div
+        className="css-13dkiub-OnlineCard"
+      >
+        <div
+          className="css-1hsw20w-OnlineCard"
+        />
+      </div>
+      <div
+        className="css-h4kjyo-OnlineCard"
+      >
+        <div
+          className="css-mn36k1-OnlineCard"
+        >
+          <h4
+            className="css-1jt834h-OnlineCard"
+          >
+            Learn to make soup dumplings in Shanghai
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Participate 1`] = `
+<div
+  data-testid="participate-card"
+>
+  <div
+    className="css-137bl9u-ParticipateCard"
+  >
+    <div
+      className="css-1v1eywu-ParticipateCard"
+    >
+      <svg
+        viewBox="0 0 32 32"
+        width={32}
+      >
+        <path
+          d="M27 3a2 2 0 0 1 1.995 1.85L29 5l-.001 14.816 2.43 6.482a2 2 0 0 1-.881 2.44l-.145.074-.144.06a2 2 0 0 1-.523.12l-.179.008H2.443a2 2 0 0 1-1.928-2.532l.055-.17L3 19.819 3 5a2 2 0 0 1 1.697-1.977l.154-.018L5 3zm.306 18H4.692l-2.249 6h27.114zM19 23v2h-6v-2zm8-18H5l-.001 14h22zM16 7a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+        />
+      </svg>
+    </div>
+    <div
+      className="css-6tdgjf-ParticipateCard"
+    >
+      <h3
+        className="css-1dz77qe-ParticipateCard"
+      >
+        Join a video call
+      </h3>
+    </div>
+    <div
+      className="css-6tdgjf-ParticipateCard"
+    >
+      <p
+        className="css-1xxo7t7-ParticipateCard"
+      >
+        Download Zoom for free on a desktop or mobile device. After you book, you’ll receive an email with a link and details on how to join.
+      </p>
+    </div>
+    <div>
+      <h3
+        className="css-1dz77qe-ParticipateCard"
+      >
+        <u>
+          Show more
+        </u>
+      </h3>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Review 1`] = `
+<div
+  data-testid="review-card"
+>
+  <div
+    className="css-10m7k96-ReviewCard"
+  >
+    <div
+      className="css-1alv9w1-ReviewCard"
+    >
+      <div
+        className="css-ghgoy8-ReviewCard"
+      >
+        <div
+          className="css-1mb2hg4-ReviewCard"
+        />
+      </div>
+      <div
+        className="css-hxhqcy-ReviewCard"
+      >
+        <div
+          className="css-1uktecc-ReviewCard"
+        >
+          <p
+            className="css-82oli5-ReviewCard"
+          >
+            User
+          </p>
+          <p
+            className="css-jsouxv-ReviewCard"
+          >
+            Month, Year
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-lwgehh-ReviewCard"
+    >
+      <p
+        className="css-1tz96xk-ReviewCard"
+      >
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy...
+        <span
+          className="css-1iwe3gj-ReviewCard"
+        >
+          <div
+            className="css-bz9wb6-ReviewCard"
+            onClick={[Function]}
+          >
+            <u>
+              read more
+            </u>
+          </div>
+        </span>
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Set 1`] = `
+<div
+  data-testid="set-card"
+>
+  <div
+    className="css-kny4a2-SetCard"
+  >
+    <div
+      className="css-cxiv6x-SetCard"
+    />
+    <div
+      className="css-h737rq-SetCard"
+    >
+      <div
+        className="css-1lr66vh-SetCard"
+      >
+        <div
+          className="css-1q9iva-SetCard"
+        >
+          <svg
+            fill="#268A04"
+            viewBox="0 0 32 32"
+            width={18}
+          >
+            <path
+              d="M16 1C7.729 1 1 7.729 1 16s6.729 15 15 15 15-6.729 15-15S24.271 1 16 1zm-2.5 22.621L6.879 17 9 14.879l4.5 4.5 9.5-9.5L25.121 12 13.5 23.621z"
+            />
+          </svg>
+        </div>
+        <div>
+          <div
+            className="css-qkgh44-SetCard"
+          >
+            <h3
+              className="css-10ovxxm-SetCard"
+            >
+              You're all set!
+            </h3>
+          </div>
+          <div>
+            <p
+              className="css-9utmpd-SetCard"
+            >
+              This helps us keep your account secure
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Sharing 1`] = `
+<div
+  data-testid="sharing-card"
+>
+  <div>
+    <div>
+      <img
+        src="https://a0.muscache.com/pictures/1f129c2b-4da0-463e-a918-ff3f9f8fa325.jpg"
+      />
+    </div>
+    <div
+      className="css-3jn7pg-SharingCard"
+    >
+      <h3>
+        Meditate with Sheep
+      </h3>
+    </div>
+    <div
+      className="css-1erkizu-SharingCard"
+    >
+      <p
+        className="css-v4rlbt-SharingCard"
+      >
+        Mindfulness straight from a Scottish farm, accompanied by encounters with some fuzzy friends.
+      </p>
+    </div>
+    <div>
+      <p
+        className="css-1fy535d-SharingCard"
+      >
+        Go to experience
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Starting 1`] = `
+<div
+  style={
+    Object {
+      "width": 400,
+    }
+  }
+>
+  <div
+    data-testid="starting-card"
+  >
+    <div
+      className="css-p4n7la-StartingCard"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+    >
+      <div
+        className="css-3cwlf-StartingCard"
+      >
+        <div
+          className="css-17xni0y-StartingCard"
+        >
+          <div
+            className="css-a7o02u-StartingCard"
+          >
+            <div
+              className="css-162xc3p-StartingCard"
+            >
+              <div
+                className="css-nmh5vh-StartingCard"
+              >
+                <img
+                  className="css-dm9xga-StartingCard"
+                  src="https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="css-vglgwc-StartingCard"
+        >
+          <div
+            className="css-17wv0oa-StartingCard"
+          >
+            <div
+              className="css-om9afe-StartingCard"
+            >
+              <svg
+                height={10}
+                style={
+                  Object {
+                    "display": "block",
+                    "fill": "#E61E4D",
+                  }
+                }
+                viewBox="0 0 37.286 37.287"
+                width={10}
+              >
+                <g>
+                  <path
+                    d="M36.683,16.339l-7.567,7.377l1.786,10.417c0.128,0.75-0.182,1.509-0.797,1.957c-0.348,0.253-0.762,0.382-1.176,0.382
+c-0.318,0-0.638-0.076-0.931-0.23l-9.355-4.918l-9.355,4.918c-0.674,0.355-1.49,0.295-2.107-0.15
+c-0.615-0.448-0.924-1.206-0.795-1.957l1.787-10.417L0.604,16.34c-0.547-0.531-0.741-1.326-0.508-2.05
+c0.236-0.724,0.861-1.251,1.615-1.361l10.459-1.521l4.68-9.478c0.335-0.684,1.031-1.116,1.792-1.116
+c0.763,0,1.456,0.432,1.793,1.115l4.68,9.478l10.461,1.521c0.752,0.109,1.379,0.637,1.611,1.361
+C37.425,15.013,37.226,15.808,36.683,16.339z"
+                  />
+                </g>
+              </svg>
+            </div>
+            <div
+              className="css-om9afe-StartingCard"
+            >
+              <p
+                className="css-l67ek8-StartingCard"
+              >
+                5
+              </p>
+            </div>
+            <div>
+              <p
+                className="css-1lsdjpk-StartingCard"
+              >
+                (
+                100
+                )
+              </p>
+            </div>
+            <div
+              className="css-om9afe-StartingCard"
+            >
+              <p
+                className="css-1lsdjpk-StartingCard"
+              >
+                 · 
+                Italy
+              </p>
+            </div>
+          </div>
+          <div
+            className="css-fldcxh-StartingCard"
+          >
+            <h4
+              className="css-1caqlnl-StartingCard"
+            >
+              Title
+            </h4>
+          </div>
+          <div
+            className="css-1wcgqbs-StartingCard"
+          >
+            <h3
+              className="css-1caqlnl-StartingCard"
+            >
+              $
+              56
+              <span>
+                /person
+              </span>
+            </h3>
+          </div>
+          <div
+            className="css-av4pal-StartingCard"
+          >
+            <div
+              className="css-1v994a0"
+            >
+              <div
+                className="css-1hd3rvn"
+              >
+                <h3
+                  className="css-1qxtz39"
+                >
+                  11:30
+                  p.m.
+                </h3>
+              </div>
+            </div>
+            <div
+              className="css-1v994a0"
+            >
+              <div
+                className="css-1hd3rvn"
+              >
+                <h3
+                  className="css-1qxtz39"
+                >
+                  3:30
+                  p.m.
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <svg
+            height={20}
+            viewBox="0 0 32 32"
+            width={20}
+          >
+            <path
+              d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Stay 1`] = `
+<div
+  data-testid="stay-card"
+>
+  <div>
+    <div
+      className="css-1wf1jbw-StayCard"
+    >
+      <div
+        data-testid="horizontal-card"
+      >
+        <div>
+          <div
+            className="css-pj49is-HorizontalCard"
+          >
+            <div
+              className="css-pgus6p-HorizontalCard"
+            >
+              <div
+                className="css-1uxildy-HorizontalCard"
+              >
+                <div
+                  className="css-1479srm-HorizontalCard"
+                >
+                  <div
+                    className="css-1yp97ex-HorizontalCard"
+                  />
+                  <div
+                    className="css-1hur5ut-HorizontalCard"
+                  >
+                    <div
+                      className="css-10utmdf-HorizontalCard"
+                    >
+                      <div
+                        className="css-f2tos6-HorizontalCard"
+                      >
+                        <h3
+                          className="css-17dx12g-HorizontalCard"
+                        >
+                          Superhost
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="css-ho4eaw-HorizontalCard"
+          >
+            <div
+              className="css-lp6rw3-HorizontalCard"
+            >
+              <svg
+                fill="#F5385D"
+                viewBox="0 0 1000 1000"
+                width={14}
+              >
+                <path
+                  d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z"
+                />
+              </svg>
+            </div>
+            <div
+              className="css-lp6rw3-HorizontalCard"
+            >
+              <p
+                className="css-81ijlo-HorizontalCard"
+              >
+                5.00
+              </p>
+            </div>
+            <div>
+              <p
+                className="css-13y1y3x-HorizontalCard"
+              >
+                (100)
+              </p>
+            </div>
+          </div>
+          <div
+            className="css-tl5xty-HorizontalCard"
+          >
+            <div>
+              <p
+                className="css-sj2tv8-HorizontalCard"
+              >
+                Type of Stay
+              </p>
+            </div>
+            <div>
+              <p>
+                  ·   
+              </p>
+            </div>
+            <div>
+              <p
+                className="css-1rodnx9-HorizontalCard"
+              >
+                Location
+              </p>
+            </div>
+          </div>
+          <div>
+            <p
+              className="css-qe0us-HorizontalCard"
+            >
+              Title should be here
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-o4hgb7-StayCard"
+    >
+      <div
+        className="css-oauce8-StayCard"
+      >
+        <div
+          className="css-7qh415-StayCard"
+        >
+          <div
+            className="css-uitva2-StayCard"
+          >
+            <div
+              className="css-78n07b-StayCard"
+            >
+              <div
+                className="css-18uf7re-StayCard"
+              >
+                <div
+                  className="css-1fwe6e3-SliderParticle"
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <div
+                    className="css-1k334mw-SliderParticle"
+                  >
+                    <div
+                      className="css-ckh30y-Slide"
+                    />
+                    <div
+                      className="css-ckh30y-Slide"
+                    />
+                    <div
+                      className="css-ckh30y-Slide"
+                    />
+                  </div>
+                  <div
+                    className="css-1vxwecs-SliderParticle"
+                  >
+                    <button
+                      className="css-11g6cib-Button"
+                      data-testid="paginate-button--atom"
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "cursor": "pointer",
+                        }
+                      }
+                    >
+                      <div>
+                        <div
+                          className="css-d07qb8-PaginateButton"
+                        >
+                          <svg
+                            viewBox="0 0 32 32"
+                            width={10}
+                          >
+                            <g
+                              fill="none"
+                            >
+                              <path
+                                d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"
+                                stroke="black"
+                                strokeWidth={5}
+                              />
+                            </g>
+                          </svg>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    className="css-13sk8ud-SliderParticle"
+                  >
+                    <button
+                      className="css-11g6cib-Button"
+                      data-testid="paginate-button--atom"
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "cursor": "pointer",
+                        }
+                      }
+                    >
+                      <div>
+                        <div
+                          className="css-d07qb8-PaginateButton"
+                        >
+                          <svg
+                            stroke="black"
+                            strokeWidth={5}
+                            viewBox="0 0 32 32"
+                            width={10}
+                          >
+                            <g
+                              fill="none"
+                            >
+                              <path
+                                d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"
+                              />
+                            </g>
+                          </svg>
+                        </div>
+                      </div>
+                    </button>
+                  </div>
+                  <div
+                    className="css-6mr479-SliderParticle"
+                  >
+                    <div
+                      className="css-1lmyxi-Dots"
+                    >
+                      <span
+                        className="css-1eyj0ys"
+                      />
+                      <span
+                        className="css-km0zgs"
+                      />
+                      <span
+                        className="css-km0zgs"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="css-kqbnix-StayCard"
+            >
+              <div>
+                <p
+                  className="css-vcwx8j-StayCard"
+                >
+                  Type of stay
+                   in 
+                  Location
+                </p>
+                <h4
+                  className="css-1vj5z3-StayCard"
+                >
+                  Title of stay
+                </h4>
+                <div
+                  className="css-u35dwg-StayCard"
+                />
+                <div>
+                  <span
+                    className="css-vcwx8j-StayCard"
+                  >
+                    1
+                     guests
+                  </span>
+                  <span
+                    className="css-vcwx8j-StayCard"
+                  >
+                     
+                    ·
+                     
+                  </span>
+                  <span
+                    className="css-vcwx8j-StayCard"
+                  >
+                    1
+                     bedroom
+                  </span>
+                  <span
+                    className="css-vcwx8j-StayCard"
+                  >
+                     
+                    ·
+                     
+                  </span>
+                  <span
+                    className="css-vcwx8j-StayCard"
+                  >
+                    1
+                     beds
+                  </span>
+                  <span
+                    className="css-vcwx8j-StayCard"
+                  >
+                     
+                    ·
+                     
+                  </span>
+                  <span
+                    className="css-vcwx8j-StayCard"
+                  >
+                    1
+                     bath
+                  </span>
+                </div>
+                <div>
+                  <span
+                    className="css-1ipweer"
+                  >
+                    characteristic
+                  </span>
+                </div>
+              </div>
+              <div>
+                <div
+                  data-testid="rating-bullet--atom"
+                >
+                  <div
+                    className="css-1n2v8vp-RatingBullet"
+                  >
+                    <div>
+                      <svg
+                        height={14}
+                        style={
+                          Object {
+                            "display": "block",
+                            "fill": "#E61E4D",
+                          }
+                        }
+                        viewBox="0 0 37.286 37.287"
+                      >
+                        <g>
+                          <path
+                            d="M36.683,16.339l-7.567,7.377l1.786,10.417c0.128,0.75-0.182,1.509-0.797,1.957c-0.348,0.253-0.762,0.382-1.176,0.382
+c-0.318,0-0.638-0.076-0.931-0.23l-9.355-4.918l-9.355,4.918c-0.674,0.355-1.49,0.295-2.107-0.15
+c-0.615-0.448-0.924-1.206-0.795-1.957l1.787-10.417L0.604,16.34c-0.547-0.531-0.741-1.326-0.508-2.05
+c0.236-0.724,0.861-1.251,1.615-1.361l10.459-1.521l4.68-9.478c0.335-0.684,1.031-1.116,1.792-1.116
+c0.763,0,1.456,0.432,1.793,1.115l4.68,9.478l10.461,1.521c0.752,0.109,1.379,0.637,1.611,1.361
+C37.425,15.013,37.226,15.808,36.683,16.339z"
+                          />
+                        </g>
+                      </svg>
+                    </div>
+                    <h3
+                      className="css-vatkwt-RatingBullet"
+                    >
+                      5
+                    </h3>
+                    <span
+                      className="css-1p5jk6b-RatingBullet"
+                    >
+                      (
+                      100
+                      )
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <svg
+              fill="white"
+              stroke="black"
+              strokeWidth={2}
+              viewBox="0 0 32 32"
+              width={24}
+            >
+              <path
+                d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Type Stay 1`] = `
+<div
+  style={
+    Object {
+      "width": 200,
+    }
+  }
+>
+  <div
+    data-testid="typestay-card"
+  >
+    <div
+      className="css-13tlofg-TypeStayCard"
+    >
+      <div
+        className="css-1phvhpj-TypeStayCard"
+      >
+        <div
+          className="css-fv2pnx-TypeStayCard"
+        >
+          <div
+            className="css-cgxxnr-TypeStayCard"
+          >
+            <picture>
+              <source
+                srcSet="https://a0.muscache.com/im/pictures/175f945a-a4ac-416c-bb10-7e49a927c42f.jpg?im_w=720"
+              />
+              <img
+                className="css-iprjpr-TypeStayCard"
+                decoding="async"
+                src="https://a0.muscache.com/im/pictures/175f945a-a4ac-416c-bb10-7e49a927c42f.jpg?im_w=720"
+              />
+            </picture>
+          </div>
+        </div>
+        <div
+          className="css-1cvuvas-TypeStayCard"
+        >
+          <p
+            className="css-1excasn-TypeStayCard"
+          >
+            Type
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Vertical 1`] = `
+<div
+  data-testid="vertical-card"
+>
+  <div>
+    <div
+      className="css-1doqxax-VerticalCard"
+    >
+      <div
+        className="css-1ipd99p-VerticalCard"
+      >
+        <div
+          className="css-yf6gfj-VerticalCard"
+        />
+        <div
+          className="css-w1phav-VerticalCard"
+        >
+          <div
+            className="css-1vrrfpx-VerticalCard"
+          >
+            <div
+              className="css-18wbouo-VerticalCard"
+            >
+              <p
+                className="css-1bsq1i2-VerticalCard"
+              >
+                Superhost
+              </p>
+            </div>
+          </div>
+          <div
+            className="css-1vrrfpx-VerticalCard"
+          >
+            <svg
+              fill="rgba(0, 0, 0, 0.5)"
+              stroke="rgb(255, 255, 255)"
+              strokeWidth={2}
+              viewBox="0 0 32 32"
+              width={24}
+            >
+              <path
+                d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="css-kblvrl-VerticalCard"
+    >
+      <div
+        className="css-1p3r2w-VerticalCard"
+      >
+        <svg
+          style={
+            Object {
+              "display": "block",
+              "fill": "#E61E4D",
+            }
+          }
+          viewBox="0 0 37.286 37.287"
+          width={15}
+        >
+          <g>
+            <path
+              d="M36.683,16.339l-7.567,7.377l1.786,10.417c0.128,0.75-0.182,1.509-0.797,1.957c-0.348,0.253-0.762,0.382-1.176,0.382
+c-0.318,0-0.638-0.076-0.931-0.23l-9.355-4.918l-9.355,4.918c-0.674,0.355-1.49,0.295-2.107-0.15
+c-0.615-0.448-0.924-1.206-0.795-1.957l1.787-10.417L0.604,16.34c-0.547-0.531-0.741-1.326-0.508-2.05
+c0.236-0.724,0.861-1.251,1.615-1.361l10.459-1.521l4.68-9.478c0.335-0.684,1.031-1.116,1.792-1.116
+c0.763,0,1.456,0.432,1.793,1.115l4.68,9.478l10.461,1.521c0.752,0.109,1.379,0.637,1.611,1.361
+C37.425,15.013,37.226,15.808,36.683,16.339z"
+            />
+          </g>
+        </svg>
+      </div>
+      <div
+        className="css-1p3r2w-VerticalCard"
+      >
+        <p
+          className="css-1y2jy74-VerticalCard"
+        >
+          5
+        </p>
+      </div>
+      <div>
+        <p
+          className="css-1fs1er1-VerticalCard"
+        >
+          (100)
+        </p>
+      </div>
+      <div>
+        <p
+          className="css-g151ei-VerticalCard"
+        >
+            ·   
+        </p>
+      </div>
+      <div>
+        <p
+          className="css-1tldqtv-VerticalCard"
+        >
+          Country
+        </p>
+      </div>
+    </div>
+    <div>
+      <p
+        className="css-flc0si-VerticalCard"
+      >
+        Title
+      </p>
+    </div>
+    <div>
+      <p
+        className="css-1s3tc50-VerticalCard"
+      >
+        <span
+          className="css-5unrg-VerticalCard"
+        >
+          From $
+          10
+        </span>
+        /person
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Video 1`] = `
+<div
+  style={
+    Object {
+      "width": 300,
+    }
+  }
+>
+  <div
+    data-testid="video-card"
+  >
+    <div>
+      <div
+        className="css-1p2d552-VideoCard"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <div
+          className="css-wyn6hl-VideoCard"
+        >
+          <div
+            className="css-rlp6l0-VideoCard"
+          >
+            <svg
+              fill="rgba(0, 0, 0, 0.5)"
+              stroke="rgb(255, 255, 255)"
+              strokeWidth={2}
+              viewBox="0 0 32 32"
+              width={24}
+            >
+              <path
+                d="m16 28c7-4.733 14-10 14-17 0-1.792-.683-3.583-2.05-4.95-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05l-2.051 2.051-2.05-2.051c-1.367-1.366-3.158-2.05-4.95-2.05-1.791 0-3.583.684-4.949 2.05-1.367 1.367-2.051 3.158-2.051 4.95 0 7 7 12.267 14 17z"
+              />
+            </svg>
+          </div>
+          <div
+            className="css-iqzqed-VideoCard"
+          >
+            <img
+              className="css-1txjqhz-VideoCard"
+              src="https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-wfja1l-VideoCard"
+      >
+        <div
+          className="css-jqqfhz-VideoCard"
+        >
+          <svg
+            style={
+              Object {
+                "display": "block",
+                "fill": "#E61E4D",
+              }
+            }
+            viewBox="0 0 37.286 37.287"
+            width={15}
+          >
+            <g>
+              <path
+                d="M36.683,16.339l-7.567,7.377l1.786,10.417c0.128,0.75-0.182,1.509-0.797,1.957c-0.348,0.253-0.762,0.382-1.176,0.382
+c-0.318,0-0.638-0.076-0.931-0.23l-9.355-4.918l-9.355,4.918c-0.674,0.355-1.49,0.295-2.107-0.15
+c-0.615-0.448-0.924-1.206-0.795-1.957l1.787-10.417L0.604,16.34c-0.547-0.531-0.741-1.326-0.508-2.05
+c0.236-0.724,0.861-1.251,1.615-1.361l10.459-1.521l4.68-9.478c0.335-0.684,1.031-1.116,1.792-1.116
+c0.763,0,1.456,0.432,1.793,1.115l4.68,9.478l10.461,1.521c0.752,0.109,1.379,0.637,1.611,1.361
+C37.425,15.013,37.226,15.808,36.683,16.339z"
+              />
+            </g>
+          </svg>
+        </div>
+        <div
+          className="css-jqqfhz-VideoCard"
+        >
+          <p
+            className="css-9lezw2-VideoCard"
+          >
+            5
+          </p>
+        </div>
+        <div>
+          <p
+            className="css-12jzfxr-VideoCard"
+          >
+            (100)
+          </p>
+        </div>
+        <div>
+          <p
+            className="css-1vftvtt-VideoCard"
+          >
+              ·   
+          </p>
+        </div>
+        <div>
+          <p
+            className="css-ra5sgl-VideoCard"
+          >
+            Country
+          </p>
+        </div>
+      </div>
+      <div>
+        <p
+          className="css-x7dj9t-VideoCard"
+        >
+          Title
+        </p>
+      </div>
+      <div>
+        <p
+          className="css-nbr9p-VideoCard"
+        >
+          <span
+            className="css-1ax74xs-VideoCard"
+          >
+            From $
+            10
+          </span>
+          /person
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Card Works 1`] = `
+<div
+  data-testid="works-card"
+>
+  <div>
+    <div
+      className="css-1d2oy6c-WorksCard"
+    >
+      <div
+        className="css-qufzoo-WorksCard"
+      >
+        <img
+          alt="works image"
+          src="https://a0.muscache.com/pictures/54019d2c-f00e-4d2b-9eb2-7b738e6b9eb8.jpg"
+        />
+      </div>
+      <div
+        className="css-qufzoo-WorksCard"
+      >
+        <div
+          className="css-1pude44-WorksCard"
+        >
+          <h3>
+            Design your experience
+          </h3>
+        </div>
+        <div>
+          <p
+            className="css-eo7dvz-WorksCard"
+          >
+            All experiences start with our quality standards—expertise, access, and connection. But also think about how to engage with guests online, and minimize the supplies they might need to participate. When you have an idea, start the submission process.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Panel Experience 1`] = `
+<div
+  data-testid="experience-panel--molecule"
+>
+  <div
+    className="css-j71c04-ExperiencePanel"
+  >
+    <div
+      className="css-1m7e92e-ExperiencePanel"
+    >
+      <div
+        className="css-rvcezx-ExperiencePanel"
+      >
+        <div
+          className="css-1kb577v-ExperiencePanel"
+        />
+        <div
+          className="css-hvszpn-ExperiencePanel"
+        >
+          <div
+            className="css-5kf14w-ExperiencePanel"
+          />
+          <div
+            className="css-1b09usb-ExperiencePanel"
+          />
+          <div
+            className="css-1eae1mn-ExperiencePanel"
+          />
+        </div>
+        <div
+          className="css-npve1e-ExperiencePanel"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Molecules/Panel Room 1`] = `
+<div
+  data-testid="room-panel--molecule"
+>
+  <div
+    className="css-1ypvtp1-RoomPanel"
+  >
+    <div
+      className="css-frvn08-RoomPanel"
+    >
+      <div
+        className="css-dvqlwo-RoomPanel"
+      >
+        <div>
+          <div
+            style={
+              Object {
+                "backgroundColor": "lightgray",
+                "borderBottomLeftRadius": 16,
+                "borderTopLeftRadius": 16,
+                "height": "100%",
+                "width": "100%",
+              }
+            }
+          />
+        </div>
+        <div
+          className="css-mgn1xc-RoomPanel"
+        >
+          <div>
+            <div
+              className="css-ic7yu2-RoomPanel"
+            />
+          </div>
+          <div>
+            <div
+              className="css-7b540c-RoomPanel"
+            />
+          </div>
+          <div>
+            <div
+              className="css-ic7yu2-RoomPanel"
+            />
+          </div>
+          <div>
+            <div
+              className="css-womu6d-RoomPanel"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

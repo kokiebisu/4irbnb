@@ -1,0 +1,180 @@
+.w {
+  &__horizontal {
+    width: 380px;
+  }
+
+  &__checkin {
+    &--wrapper {
+      width: 75%;
+    }
+  }
+
+  &__nearby {
+    &--sm {
+      scroll-snap-align: start;
+      width: 75px;
+
+      @media screen and (min-width: 728px) {
+        width: 55px;
+      }
+    }
+
+    &--lg {
+      scroll-snap-align: start;
+      width: 85px;
+
+      @media screen and (min-width: 728px) {
+        width: 50px;
+      }
+    }
+  }
+
+  &__works {
+    width: 100%;
+
+    @media screen and (min-width: 728px) {
+      width: 50%;
+    }
+  }
+}
+
+.h {
+  &__card {
+    height: 70px;
+
+    @media screen and (min-width: 720px) {
+      height: auto;
+    }
+  }
+}
+
+.m {
+  &__checkin--wrapper {
+    @media screen and (min-width: 1028px) {
+      margin-top: 10px;
+      margin-left: 20px;
+    }
+  }
+}
+
+.display {
+  &__checkin--wrapper {
+    display: fixed;
+
+    @media screen and (min-width: 1028px) {
+      display: sticky;
+    }
+  }
+
+  &__online {
+  }
+
+  &__works {
+    display: block;
+    @media screen and (min-width: 728px) {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.position {
+  &__checkin--wrapper {
+    right: 0;
+    bottom: 0;
+    @media screen and (min-width: 1028px) {
+      top: 0;
+    }
+  }
+}
+
+.p {
+  &__checkin {
+    &--wrapper {
+      padding: 4px 0;
+
+      @media screen and (min-width: 1028px) {
+        padding: 0;
+      }
+    }
+
+    &--button {
+      padding: 6px 8px;
+
+      @media screen and (min-width: 1028px) {
+        padding: 6px 0;
+      }
+    }
+  }
+}
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
+
+  @media screen and (min-width: 1028px) {
+    box-shadow: none;
+  }
+}
+
+.category-section {
+  &__carousel {
+    display: grid;
+    grid-auto-flow: column;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    column-gap: 12px;
+    row-gap: 12px;
+    margin: 0 -24px;
+    scroll-padding: 0 24px;
+    padding: 4px 28px 8px;
+
+    @media screen and (min-width: 728px) {
+      width: 100%;
+      margin: 0;
+      padding: 4px 0;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0px;
+      background: transparent; /* make scrollbar transparent */
+    }
+  }
+
+  &__card {
+    scroll-snap-align: start;
+    height: 100%;
+    width: 250px;
+
+    @media screen and (min-width: 745px) {
+      width: auto;
+      max-width: 550px;
+    }
+
+    &--img {
+      width: 100%;
+
+      & img {
+        border-radius: 7px;
+      }
+    }
+
+    &--space {
+      // scroll-snap-align: start;
+      width: 12px;
+      background-color: transparent;
+      height: 100%;
+
+      @media screen and (min-width: 745px) {
+        display: none;
+      }
+    }
+  }
+}
+
+.hosting {
+  width: 100%;
+  @media screen and (min-width: 728px) {
+    width: 260px;
+  }
+}
