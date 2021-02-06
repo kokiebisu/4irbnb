@@ -10,8 +10,10 @@ const Options: React.FC<{
     kind: string;
     bold: boolean;
   }[];
-}> = ({ params }) => {
-  const options = getOptionContents();
+  toggleDispatch?: any;
+  authDispatch?: any;
+}> = ({ params, toggleDispatch, authDispatch }) => {
+  const options = getOptionContents(toggleDispatch, authDispatch);
   return (
     <div>
       {params.map(({ kind, bold }, index) => (

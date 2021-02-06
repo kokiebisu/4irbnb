@@ -3,9 +3,9 @@
 import { jsx } from "theme-ui";
 import { useState } from "react";
 
-import { styleInput, styleLabel, styleContainer } from "./styling.text";
+// import { styleInput, styleLabel, styleContainer } from "./styling.text";
 
-import { Button, $Button } from "../../button/web";
+import { Button, $Button } from "atoms/button/web";
 
 // import { checkPassword } from "../../../auth";
 

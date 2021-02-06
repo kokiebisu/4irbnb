@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Bullet, $Bullet } from "../../../../atoms/bullet/web";
-import { Layout, $Layout } from "../../../../layout/web";
+import { Bullet, $Bullet } from "atoms/bullet/web";
+import { Layout, $Layout } from "layout/web";
 
 export const BackTemplate: React.FC<{
   back?: string;

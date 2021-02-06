@@ -1,9 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Card, $Card } from "../../../../molecules/card/web";
-import { Layout, $Layout } from "../../../../layout/web";
-import { Button, $Button } from "../../../../atoms/button/web";
+import { Card, $Card } from "molecules/card/web";
+import { Layout, $Layout } from "layout/web";
+import { Button, $Button } from "atoms/button/web";
 
 export const SharingTemplate: React.FC<{}> = () => {
   const sharings = ["meditate", "baking", "magic"];
