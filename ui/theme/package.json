@@ -11,7 +11,8 @@
     "url": "git+https://github.com/kokiebisu/airbnb.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "clean": "rm -rf ./build/*",
+    "compile": "yarn clean && tsc"
   },
   "devDependencies": {
     "typescript": "^4.1.3"

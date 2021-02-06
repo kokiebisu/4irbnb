@@ -97,8 +97,8 @@ jobs:
     steps:
       - prepare-env
       - run:
-          name: Testing snapshot
-          command: yarn test:components
+          name: List
+          command: ls -a
       - run:
           name: Comparing snapshots
           command: yarn deploy:storybook

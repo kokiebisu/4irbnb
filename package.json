@@ -20,7 +20,7 @@
     "bootstrap:production": "lerna bootstrap -- --production --no-optional",
     "test:stays": "lerna run test:ci --scope=@airbnb/stays --since",
     "test:auth": "lerna run test:ci --scope=@airbnb/auth --since",
-    "test:web": "lerna run test:ci --scope=@airbnb/{web} --since",
+    "test:web": "lerna run test:ci --scope=@airbnb/web --since",
     "test:components": "lerna run snapshot --scope=@airbnb/components",
     "deploy:storybook": "lerna run chromatic --scope=@airbnb/components",
     "compile:packages": "lerna run compile --scope=@airbnb/{error,content,middleware}",
