@@ -4,7 +4,7 @@ import React from "react";
 import { jsx } from "theme-ui";
 
 import Router from "next/router";
-import { Button, $Button } from "../../../atoms/button/web";
+import { Button, $Button } from "atoms/button/web";
 
 /**
  * Renders paginate bar component

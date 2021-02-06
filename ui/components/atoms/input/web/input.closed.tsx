@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Button, $Button } from "../../button/web";
+import { Button, $Button } from "atoms/button/web";
 
 export const ClosedInput: React.FC<{
   title?: string;

@@ -3,8 +3,8 @@
 import { jsx } from "theme-ui";
 import Router from "next/router";
 import { footerItems } from "@airbnb/content";
-import { Globe } from "../../../public/svg/original";
-import { Button, $Button } from "../../../atoms/button/web";
+import { Globe } from "public/svg/original";
+import { Button, $Button } from "atoms/button/web";
 
 export interface FooterProps {
   spread?: boolean;

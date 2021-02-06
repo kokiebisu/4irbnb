@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Button, $Button } from "../../../atoms/button/web";
+import { Button, $Button } from "atoms/button/web";
 import { useLayoutEffect, useRef, useState } from "react";
 
 export const FiltersBar: React.FC<{}> = () => {

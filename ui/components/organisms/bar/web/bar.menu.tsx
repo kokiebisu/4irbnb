@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { useState } from "react";
 import { jsx } from "theme-ui";
-import { Button, $Button } from "../../../atoms/button/web";
+import { Button, $Button } from "atoms/button/web";
 
 /**
  * Renders the menubar component

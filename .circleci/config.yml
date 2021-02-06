@@ -87,6 +87,9 @@ jobs:
     steps:
       - prepare-env
       - run:
+          name: Prepare testing
+          command: yarn compile:ui
+      - run:
           name: Testing
           command: yarn test:web
   storybook:
