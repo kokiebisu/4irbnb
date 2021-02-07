@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { Modal, $Modal } from "../../modal/web";
 import { Button, $Button } from "../../../atoms/button/web";
-// import { Prototype } from "../../../../prototype/web/searchbar";
+import { Prototype } from "../../../prototype/web/searchbar";
 import { NameLogo, NoNameLogo } from "../../../public/svg/logo";
 import { Content } from "../../../atoms/button/content/content.transparent";
 import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
