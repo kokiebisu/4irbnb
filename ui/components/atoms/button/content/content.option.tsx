@@ -1,6 +1,4 @@
-/** @jsxRutime classic */
-/** @jsx jsx */
-import { jsx } from "theme-ui";
+import React from "react";
 import { usePost } from "../../../hooks/usePost";
 import Router from "next/router";
 

@@ -1,6 +1,4 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from "theme-ui";
+import React from "react";
 // import { useAuthDispatch, useAuthState } from "@context/auth";
 import { Email } from "../../../public/svg/original";
 import { Apple, Facebook, Google } from "../../../public/svg/logo";

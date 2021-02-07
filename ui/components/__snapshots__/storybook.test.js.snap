@@ -4943,3 +4943,2120 @@ exports[`Storyshots Molecules/Panel Room 1`] = `
   </div>
 </div>
 `;
+
+exports[`Storyshots Organisms Footer 1`] = `
+<footer
+  className="css-1eh9r7n-Footer"
+>
+  <div>
+    <div
+      className="css-18qwizy-Footer"
+    >
+      <div
+        className="css-40odwk"
+      >
+        <div>
+          <h3
+            className="css-9flgt5"
+          >
+            About
+          </h3>
+        </div>
+        <div
+          className="css-1gxq5jc"
+        >
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  How Airbnb works
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Newsroom
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Airbnb Plus
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Airbnb Luxe
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Hotel Tonight
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Airbnb for Work
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Olympics
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Careers
+                </h4>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-40odwk"
+      >
+        <div>
+          <h3
+            className="css-9flgt5"
+          >
+            Community
+          </h3>
+        </div>
+        <div
+          className="css-1gxq5jc"
+        >
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Diversity & Belonging
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Accessibility
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Airbnb Associates
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Frontline Stays
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Invite friends
+                </h4>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-40odwk"
+      >
+        <div>
+          <h3
+            className="css-9flgt5"
+          >
+            Host
+          </h3>
+        </div>
+        <div
+          className="css-1gxq5jc"
+        >
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Host your home
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Host an Online Experience
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Host an Experience
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Message from CEO Brian Chesky
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Responsible hosting
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Open Homes
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Resource Centre
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Community Centre
+                </h4>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className="css-40odwk"
+      >
+        <div>
+          <h3
+            className="css-9flgt5"
+          >
+            Support
+          </h3>
+        </div>
+        <div
+          className="css-1gxq5jc"
+        >
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Updates for COVID-19
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Help Centre
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Cancellation options
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Neighbourhood Support
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div
+            className="css-a6oge0"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Trust & Safety
+                </h4>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        className="css-1jqgspl-Footer"
+      >
+        <div>
+          <button
+            className="css-1whvtwu-Footer"
+          >
+            <svg
+              className="css-hjdy97-Footer"
+              viewBox="0 0 16 16"
+              width={16}
+            >
+              <path
+                d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
+              />
+            </svg>
+            <u
+              className="css-1j5e379-Footer"
+            >
+              English(CA)
+            </u>
+          </button>
+        </div>
+        <div>
+          <button
+            className="css-11g6cib-Button"
+            data-testid="underline-button--atom"
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="css-y5xyhu-UnderlineButton"
+            >
+              <h3
+                style={
+                  Object {
+                    "fontSize": 14,
+                  }
+                }
+              >
+                <u>
+                  $ CAD
+                </u>
+              </h3>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div
+        className="css-e1pmnw-Footer"
+      >
+        <div>
+          <h4
+            className="css-prpzo4-Footer"
+          >
+            © 2020 Airbnb, Inc. All rights reserved
+          </h4>
+        </div>
+        <div
+          className="css-e1pmnw-Footer"
+        >
+          <div>
+              ·  
+          </div>
+          <div
+            className="css-1htskhu-Footer"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Privacy
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div>
+             ·  
+          </div>
+          <div
+            className="css-1htskhu-Footer"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Terms
+                </h4>
+              </div>
+            </button>
+          </div>
+          <div>
+             ·  
+          </div>
+          <div
+            className="css-1htskhu-Footer"
+          >
+            <button
+              className="css-11g6cib-Button"
+              data-testid="link-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div>
+                <h4
+                  className="css-6mw1wb-LinkButton"
+                >
+                  Sitemap
+                </h4>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+`;
+
+exports[`Storyshots Organisms/Bar Availability 1`] = `
+<div
+  data-testid="availability-bar"
+>
+  <div
+    className="css-19x5ys5-AvailabilityBar"
+  >
+    <div
+      className="css-1wc52as-AvailabilityBar"
+    >
+      <p>
+        Add dates for prices
+      </p>
+      <div
+        className="css-1i1r8mq-AvailabilityBar"
+      >
+        <div>
+          <svg
+            style={
+              Object {
+                "display": "block",
+                "fill": "#E61E4D",
+              }
+            }
+            viewBox="0 0 37.286 37.287"
+            width={12}
+          >
+            <g>
+              <path
+                d="M36.683,16.339l-7.567,7.377l1.786,10.417c0.128,0.75-0.182,1.509-0.797,1.957c-0.348,0.253-0.762,0.382-1.176,0.382
+c-0.318,0-0.638-0.076-0.931-0.23l-9.355-4.918l-9.355,4.918c-0.674,0.355-1.49,0.295-2.107-0.15
+c-0.615-0.448-0.924-1.206-0.795-1.957l1.787-10.417L0.604,16.34c-0.547-0.531-0.741-1.326-0.508-2.05
+c0.236-0.724,0.861-1.251,1.615-1.361l10.459-1.521l4.68-9.478c0.335-0.684,1.031-1.116,1.792-1.116
+c0.763,0,1.456,0.432,1.793,1.115l4.68,9.478l10.461,1.521c0.752,0.109,1.379,0.637,1.611,1.361
+C37.425,15.013,37.226,15.808,36.683,16.339z"
+              />
+            </g>
+          </svg>
+        </div>
+        <div>
+          <span
+            className="css-v9uhig-AvailabilityBar"
+          >
+            4.99
+          </span>
+          <span
+            className="css-r2zfp9-AvailabilityBar"
+          >
+            (
+            271
+            )
+          </span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button
+        className="css-11g6cib-Button"
+        data-testid="primary-button--atom"
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+      >
+        <div
+          className="css-beu952-PrimaryButton"
+        >
+          <h4
+            className="css-ag8okt-PrimaryButton"
+          >
+            Check availability
+          </h4>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Organisms/Bar Covid 1`] = `
+<div
+  data-testid="covid-bar"
+>
+  <aside
+    className="css-17qopy2-CovidBar"
+  >
+    <a
+      href=""
+    >
+      <p
+        className="css-17iz0lt-CovidBar"
+      >
+        <u>
+          Get the latest on our COVID-19 response
+        </u>
+      </p>
+    </a>
+  </aside>
+</div>
+`;
+
+exports[`Storyshots Organisms/Bar Create 1`] = `
+<div
+  data-testid="create-bar"
+>
+  <div
+    className="css-mx3d07-CreateBar"
+  >
+    <div
+      className="css-11s0hl-CreateBar"
+    >
+      <div>
+        <button
+          className="css-11g6cib-Button"
+          data-testid="back-button--atom"
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          <div
+            className="css-dlowfn-BackButton"
+          >
+            <div>
+              <svg
+                viewBox="0 0 32 32"
+                width={20}
+              >
+                <g
+                  fill="none"
+                >
+                  <path
+                    d="m20 28-11.29289322-11.2928932c-.39052429-.3905243-.39052429-1.0236893 0-1.4142136l11.29289322-11.2928932"
+                    stroke="#61AFB2"
+                    strokeWidth={3}
+                  />
+                </g>
+              </svg>
+            </div>
+            <div>
+              <h4
+                className="css-uti1v5-BackButton"
+              >
+                Back
+              </h4>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div>
+        <button
+          className="css-11g6cib-Button"
+          data-testid="primary-button--atom"
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          <div
+            className="css-3gc0vu-PrimaryButton"
+          >
+            <h4
+              className="css-ag8okt-PrimaryButton"
+            >
+              Next
+            </h4>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Organisms/Bar Filters 1`] = `
+<div
+  data-testid="filters-bar"
+>
+  <div
+    className="css-1qytvt2-FiltersBar"
+  >
+    <div
+      className="css-1k4hsnq-FiltersBar"
+    >
+      <div
+        className="css-ac9ze0"
+      >
+        <button
+          className="css-11g6cib-Button"
+          data-testid="filter-button--atom"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          <div
+            className="css-n2kcqm-FilterButton"
+          >
+            <p
+              className="css-18mpjug-FilterButton"
+            >
+              Filters
+            </p>
+          </div>
+        </button>
+      </div>
+      <div
+        className="css-ac9ze0"
+      >
+        <button
+          className="css-11g6cib-Button"
+          data-testid="filter-button--atom"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          <div
+            className="css-n2kcqm-FilterButton"
+          >
+            <p
+              className="css-18mpjug-FilterButton"
+            >
+              Dates
+            </p>
+          </div>
+        </button>
+      </div>
+      <div
+        className="css-ac9ze0"
+      >
+        <button
+          className="css-11g6cib-Button"
+          data-testid="filter-button--atom"
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          <div
+            className="css-n2kcqm-FilterButton"
+          >
+            <p
+              className="css-18mpjug-FilterButton"
+            >
+              Group size
+            </p>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      className="css-1pytxqo-FiltersBar"
+    />
+    <div
+      className="css-1q0hi4s-FiltersBar"
+    >
+      <div
+        className="css-b4gg75-FiltersBar"
+      >
+        <div
+          className="css-12z0wuy"
+        >
+          <button
+            className="css-11g6cib-Button"
+            data-testid="filter-button--atom"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="css-nohdln-FilterButton"
+            >
+              <p
+                className="css-18mpjug-FilterButton"
+              >
+                Great for groups
+              </p>
+            </div>
+          </button>
+        </div>
+        <div
+          className="css-12z0wuy"
+        >
+          <button
+            className="css-11g6cib-Button"
+            data-testid="filter-button--atom"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="css-nohdln-FilterButton"
+            >
+              <p
+                className="css-18mpjug-FilterButton"
+              >
+                Family friendly
+              </p>
+            </div>
+          </button>
+        </div>
+        <div
+          className="css-12z0wuy"
+        >
+          <button
+            className="css-11g6cib-Button"
+            data-testid="filter-button--atom"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="css-nohdln-FilterButton"
+            >
+              <p
+                className="css-18mpjug-FilterButton"
+              >
+                Animals
+              </p>
+            </div>
+          </button>
+        </div>
+        <div
+          className="css-12z0wuy"
+        >
+          <button
+            className="css-11g6cib-Button"
+            data-testid="filter-button--atom"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="css-nohdln-FilterButton"
+            >
+              <p
+                className="css-18mpjug-FilterButton"
+              >
+                Arts & writing
+              </p>
+            </div>
+          </button>
+        </div>
+        <div
+          className="css-12z0wuy"
+        >
+          <button
+            className="css-11g6cib-Button"
+            data-testid="filter-button--atom"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="css-nohdln-FilterButton"
+            >
+              <p
+                className="css-18mpjug-FilterButton"
+              >
+                Baking
+              </p>
+            </div>
+          </button>
+        </div>
+        <div
+          className="css-12z0wuy"
+        >
+          <button
+            className="css-11g6cib-Button"
+            data-testid="filter-button--atom"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="css-nohdln-FilterButton"
+            >
+              <p
+                className="css-18mpjug-FilterButton"
+              >
+                Cooking
+              </p>
+            </div>
+          </button>
+        </div>
+        <div
+          className="css-12z0wuy"
+        >
+          <button
+            className="css-11g6cib-Button"
+            data-testid="filter-button--atom"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="css-nohdln-FilterButton"
+            >
+              <p
+                className="css-18mpjug-FilterButton"
+              >
+                Dance
+              </p>
+            </div>
+          </button>
+        </div>
+        <div
+          className="css-12z0wuy"
+        >
+          <button
+            className="css-11g6cib-Button"
+            data-testid="filter-button--atom"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="css-nohdln-FilterButton"
+            >
+              <p
+                className="css-18mpjug-FilterButton"
+              >
+                Drinks
+              </p>
+            </div>
+          </button>
+        </div>
+        <div
+          className="css-12z0wuy"
+        >
+          <button
+            className="css-11g6cib-Button"
+            data-testid="filter-button--atom"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="css-nohdln-FilterButton"
+            >
+              <p
+                className="css-18mpjug-FilterButton"
+              >
+                Entertainment
+              </p>
+            </div>
+          </button>
+        </div>
+        <div
+          className="css-12z0wuy"
+        >
+          <button
+            className="css-11g6cib-Button"
+            data-testid="filter-button--atom"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="css-nohdln-FilterButton"
+            >
+              <p
+                className="css-18mpjug-FilterButton"
+              >
+                Fitness
+              </p>
+            </div>
+          </button>
+        </div>
+        <div
+          className="css-12z0wuy"
+        >
+          <button
+            className="css-11g6cib-Button"
+            data-testid="filter-button--atom"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="css-nohdln-FilterButton"
+            >
+              <p
+                className="css-18mpjug-FilterButton"
+              >
+                History & culture
+              </p>
+            </div>
+          </button>
+        </div>
+        <div
+          className="css-12z0wuy"
+        >
+          <button
+            className="css-11g6cib-Button"
+            data-testid="filter-button--atom"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="css-nohdln-FilterButton"
+            >
+              <p
+                className="css-18mpjug-FilterButton"
+              >
+                Magic
+              </p>
+            </div>
+          </button>
+        </div>
+        <div
+          className="css-12z0wuy"
+        >
+          <button
+            className="css-11g6cib-Button"
+            data-testid="filter-button--atom"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="css-nohdln-FilterButton"
+            >
+              <p
+                className="css-18mpjug-FilterButton"
+              >
+                Music
+              </p>
+            </div>
+          </button>
+        </div>
+        <div
+          className="css-12z0wuy"
+        >
+          <button
+            className="css-11g6cib-Button"
+            data-testid="filter-button--atom"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="css-nohdln-FilterButton"
+            >
+              <p
+                className="css-18mpjug-FilterButton"
+              >
+                Social impact
+              </p>
+            </div>
+          </button>
+        </div>
+        <div
+          className="css-12z0wuy"
+        >
+          <button
+            className="css-11g6cib-Button"
+            data-testid="filter-button--atom"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="css-nohdln-FilterButton"
+            >
+              <p
+                className="css-18mpjug-FilterButton"
+              >
+                Wellness
+              </p>
+            </div>
+          </button>
+        </div>
+        <div
+          className="css-12z0wuy"
+        >
+          <button
+            className="css-11g6cib-Button"
+            data-testid="filter-button--atom"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="css-nohdln-FilterButton"
+            >
+              <p
+                className="css-18mpjug-FilterButton"
+              >
+                Olympians & Paralympians
+              </p>
+            </div>
+          </button>
+        </div>
+        <div
+          className="css-12z0wuy"
+        >
+          <button
+            className="css-11g6cib-Button"
+            data-testid="filter-button--atom"
+            onClick={[Function]}
+            style={
+              Object {
+                "cursor": "pointer",
+              }
+            }
+          >
+            <div
+              className="css-nohdln-FilterButton"
+            >
+              <p
+                className="css-18mpjug-FilterButton"
+              >
+                Designed for accessibility
+              </p>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div
+        className="css-8fgd4c-FiltersBar"
+      >
+        <button
+          className="css-11g6cib-Button"
+          data-testid="paginate-button--atom"
+          onClick={[Function]}
+          style={
+            Object {
+              "cursor": "pointer",
+            }
+          }
+        >
+          <div>
+            <div
+              className="css-d07qb8-PaginateButton"
+            >
+              <svg
+                stroke="black"
+                strokeWidth={5}
+                viewBox="0 0 32 32"
+                width={10}
+              >
+                <g
+                  fill="none"
+                >
+                  <path
+                    d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"
+                  />
+                </g>
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Organisms/Bar Menu 1`] = `
+<div
+  data-testid="menu-bar"
+>
+  <div
+    className="css-m6key2-MenuBar"
+  >
+    <div
+      className="css-nk3dx"
+    >
+      <button
+        className="css-11g6cib-Button"
+        data-testid="bar-button--atom"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+      >
+        <div
+          className="css-tfbbhw-BarButton"
+        >
+          <div
+            className="css-nufbz2-BarButton"
+          >
+            <svg
+              fillOpacity={0}
+              stroke="#737373"
+              strokeLinecap="round"
+              strokeWidth="1.5"
+              viewBox="0 0 24 24"
+              width={25}
+            >
+              <path
+                d="M12 18.7l-.4-.5a12.3 12.3 0 0 1-2.5-4.6c0-.6-.1-1.2 0-1.6 0-.4.2-.9.4-1.2A3 3 0 0 1 12 9.5c1 0 2 .5 2.5 1.3.2.3.4.8.4 1.2.1.4 0 1 0 1.6-.3 1.3-1.2 3-2.5 4.6l-.4.5z"
+              />
+              <path
+                d="M12 18.8c1 1.6 2.5 2.9 4.2 3.2h.7a4.3 4.3 0 0 0 4.2-5v-.2a74.7 74.7 0 0 0-6.4-13.2c-.6-1-1.5-1.7-2.7-1.7s-2.1.8-2.7 1.7A74.7 74.7 0 0 0 3 16.8v.2l-.2.8a4.3 4.3 0 0 0 4.8 4.3h.2c1.7-.4 3.1-1.7 4.2-3.3"
+              />
+            </svg>
+          </div>
+          <div
+            className="css-j3gq4q-BarButton"
+          >
+            <p
+              className="css-1g0kik-BarButton"
+            >
+              Explore
+            </p>
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      className="css-nk3dx"
+    >
+      <button
+        className="css-11g6cib-Button"
+        data-testid="bar-button--atom"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+      >
+        <div
+          className="css-v9m3bd-BarButton"
+        >
+          <div
+            className="css-nufbz2-BarButton"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width={25}
+            >
+              <path
+                d="m17.5 2.9c-2.1 0-4.1 1.3-5.4 2.8-1.6-1.6-3.8-3.2-6.2-2.7-1.5.2-2.9 1.2-3.6 2.6-2.3 4.1 1 8.3 3.9 11.1 1.4 1.3 2.8 2.5 4.3 3.6.4.3 1.1.9 1.6.9s1.2-.6 1.6-.9c3.2-2.3 6.6-5.1 8.2-8.8 1.5-3.4 0-8.6-4.4-8.6"
+              />
+            </svg>
+          </div>
+          <div
+            className="css-j3gq4q-BarButton"
+          >
+            <p
+              className="css-1g0kik-BarButton"
+            >
+              Saved
+            </p>
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      className="css-nk3dx"
+    >
+      <button
+        className="css-11g6cib-Button"
+        data-testid="bar-button--atom"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+      >
+        <div
+          className="css-v9m3bd-BarButton"
+        >
+          <div
+            className="css-nufbz2-BarButton"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width={25}
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="10.5"
+              />
+              <path
+                d="M4.6 19.2c-.1-1.4 1.7-2.9 5.4-4.5-1-1-1.4-1.7-1.4-3.7S9 6.5 12 6.5s3.5 2.4 3.4 4.5c0 2.1-.4 2.7-1.4 3.8 5.1 2.1 5.4 3.4 5.4 4.4"
+              />
+            </svg>
+          </div>
+          <div
+            className="css-j3gq4q-BarButton"
+          >
+            <p
+              className="css-1g0kik-BarButton"
+            >
+              Log in
+            </p>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Organisms/Bar Paginate 1`] = `
+<div
+  data-testid="paginate-bar"
+>
+  <div
+    className="css-mpn5yc-PaginateBar"
+  >
+    <div
+      className="css-1jc4km3-PaginateBar"
+    >
+      <div
+        className="css-15q14e2-PaginateBar"
+      >
+        <div>
+          <button
+            className="css-u9by5v"
+            onClick={[Function]}
+          >
+            1
+          </button>
+          <button
+            onClick={[Function]}
+            style={
+              Object {
+                ":hover": Object {
+                  "textDecoration": "underline",
+                },
+                "alignItems": "center",
+                "bottom": 4,
+                "display": "inline-flex",
+                "height": 36,
+                "justifyContent": "center",
+                "margin": "0 6px",
+                "width": 36,
+              }
+            }
+          >
+            2
+          </button>
+          <button
+            onClick={[Function]}
+            style={
+              Object {
+                ":hover": Object {
+                  "textDecoration": "underline",
+                },
+                "alignItems": "center",
+                "bottom": 4,
+                "display": "inline-flex",
+                "height": 36,
+                "justifyContent": "center",
+                "margin": "0 6px",
+                "width": 36,
+              }
+            }
+          >
+            3
+          </button>
+          <button
+            onClick={[Function]}
+            style={
+              Object {
+                ":hover": Object {
+                  "textDecoration": "underline",
+                },
+                "alignItems": "center",
+                "bottom": 4,
+                "display": "inline-flex",
+                "height": 36,
+                "justifyContent": "center",
+                "margin": "0 6px",
+                "width": 36,
+              }
+            }
+          >
+            4
+          </button>
+          <button
+            onClick={[Function]}
+            style={
+              Object {
+                ":hover": Object {
+                  "textDecoration": "underline",
+                },
+                "alignItems": "center",
+                "bottom": 4,
+                "display": "inline-flex",
+                "height": 36,
+                "justifyContent": "center",
+                "margin": "0 6px",
+                "width": 36,
+              }
+            }
+          >
+            5
+          </button>
+          <a
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 4,
+                "display": "inline-flex",
+                "height": 36,
+                "justifyContent": "center",
+                "margin": "0 6px",
+                "position": "relative",
+                "width": 36,
+              }
+            }
+          >
+            ...
+          </a>
+          <a
+            className="css-vpcnwd"
+            onClick={[Function]}
+          >
+            15
+          </a>
+        </div>
+      </div>
+      <button
+        className="css-11g6cib-Button"
+        data-testid="paginate-button--atom"
+        onClick={[Function]}
+        style={
+          Object {
+            "cursor": "pointer",
+          }
+        }
+      >
+        <div>
+          <div
+            className="css-d07qb8-PaginateButton"
+          >
+            <svg
+              stroke="black"
+              strokeWidth={5}
+              viewBox="0 0 32 32"
+              width={10}
+            >
+              <g
+                fill="none"
+              >
+                <path
+                  d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"
+                />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </button>
+    </div>
+    <div
+      className="css-1e55vm0-PaginateBar"
+    >
+      <p
+        className="css-1oucw7x-PaginateBar"
+      >
+        61 – 80 of 300+ places to stay
+      </p>
+    </div>
+    <div
+      className="css-v3fi1z-PaginateBar"
+    >
+      <p
+        className="css-nkq7bm-PaginateBar"
+      >
+        Enter dates to see full pricing. Additional fees apply. Taxes may be added.
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Organisms/Bar Progress 1`] = `
+<div
+  data-testid="progress-bar"
+>
+  <div
+    className="css-cabqq7-ProgressBar"
+  >
+    <div
+      className="css-1h8jsa9-ProgressBar"
+    >
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-1bes50"
+      />
+      <div
+        className="css-mk5gqx"
+      />
+      <div
+        className="css-d7c5l7-ProgressBar"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Organisms/Bar Search 1`] = `
+<div
+  style={
+    Object {
+      "maxWidth": 720,
+    }
+  }
+>
+  <div
+    data-testid="search-bar"
+  >
+    <div
+      className="css-1l277l5-SearchBar"
+    >
+      <button
+        className="css-1oo43ft-Option"
+        onClick={[Function]}
+      >
+        <div
+          className="css-1gz3hx7-Option"
+        >
+          <div>
+            <div>
+              <h3
+                className="css-9r0ucy-Option"
+              >
+                Where are you going?
+              </h3>
+            </div>
+            <div>
+              <p
+                className="css-9r0ucy-Option"
+              >
+                Location
+              </p>
+            </div>
+          </div>
+        </div>
+      </button>
+      <div
+        className="css-1nswe61-Seperator"
+      >
+        <div
+          className="css-158h7nz-Seperator"
+        />
+      </div>
+      <button
+        className="css-1oo43ft-Option"
+        onClick={[Function]}
+      >
+        <div
+          className="css-1gz3hx7-Option"
+        >
+          <div>
+            <div>
+              <h3
+                className="css-9r0ucy-Option"
+              >
+                Add dates
+              </h3>
+            </div>
+            <div>
+              <p
+                className="css-9r0ucy-Option"
+              >
+                Check in
+              </p>
+            </div>
+          </div>
+        </div>
+      </button>
+      <div
+        className="css-1nswe61-Seperator"
+      >
+        <div
+          className="css-158h7nz-Seperator"
+        />
+      </div>
+      <button
+        className="css-1oo43ft-Option"
+        onClick={[Function]}
+      >
+        <div
+          className="css-1gz3hx7-Option"
+        >
+          <div>
+            <div>
+              <h3
+                className="css-9r0ucy-Option"
+              >
+                Add dates
+              </h3>
+            </div>
+            <div>
+              <p
+                className="css-9r0ucy-Option"
+              >
+                Check out
+              </p>
+            </div>
+          </div>
+        </div>
+      </button>
+      <div
+        className="css-1nswe61-Seperator"
+      >
+        <div
+          className="css-158h7nz-Seperator"
+        />
+      </div>
+      <button
+        className="css-1itbdu8-SearchBar"
+        onClick={[Function]}
+      >
+        <div
+          className="css-1mx2nhz-SearchBar"
+        >
+          <div
+            className="css-1inzmgo-SearchBar"
+          >
+            <div>
+              <div>
+                <h3
+                  className="css-ioiuay-SearchBar"
+                >
+                  Guests
+                </h3>
+              </div>
+              <div>
+                <p
+                  className="css-ioiuay-SearchBar"
+                >
+                  Add guests
+                </p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <button
+              className="css-11g6cib-Button"
+              data-testid="search-button--atom"
+              onClick={[Function]}
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <div
+                className="css-19dzjro-SearchButton"
+                style={
+                  Object {
+                    "borderRadius": 50,
+                    "height": 40,
+                    "transition": "0.25s all ease",
+                    "transitionDelay": "0.25s",
+                    "width": 40,
+                  }
+                }
+              >
+                <div
+                  className="css-1y9ov3o-SearchButton"
+                >
+                  <svg
+                    height={13}
+                    viewBox="0 0 32 32"
+                    width={13}
+                  >
+                    <g
+                      fill="none"
+                    >
+                      <path
+                        d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"
+                        stroke="white"
+                        strokeWidth={4}
+                      />
+                    </g>
+                  </svg>
+                </div>
+                <div
+                  style={
+                    Object {
+                      "opacity": 0,
+                      "transition": "0.25s all ease",
+                      "transitionDelay": "0s",
+                      "visibility": "hidden",
+                    }
+                  }
+                >
+                  <p
+                    className="css-ceduqv-SearchButton"
+                  >
+                    Search
+                  </p>
+                </div>
+              </div>
+            </button>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+`;
