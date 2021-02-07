@@ -3,6 +3,7 @@ module.exports = {
     "../atoms/**/**/*.stories.@(js|jsx|ts|tsx)",
     "../molecules/**/**/*.stories.@(js|jsx|ts|tsx)",
     "../organisms/**/**/*.stories.@(js|jsx|ts|tsx)",
+    "../layout/**/**/*.stories.@(js|jsx|ts|tsx)",
   ],
   addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
   transform: {

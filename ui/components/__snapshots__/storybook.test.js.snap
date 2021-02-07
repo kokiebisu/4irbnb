@@ -2907,6 +2907,125 @@ exports[`Storyshots Atoms/Input Verify 1`] = `
 </div>
 `;
 
+exports[`Storyshots Layout Currency 1`] = `
+<div
+  data-testid="currency-layout"
+>
+  <div>
+    <div
+      className="css-f3s34w-CurrencyLayout"
+    >
+      <h3
+        className="css-15qqra4-CurrencyLayout"
+      >
+        Title here
+      </h3>
+    </div>
+    <div
+      className="css-am0azp-CurrencyLayout"
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Layout Homes 1`] = `
+<div
+  data-testid="homes-layout"
+>
+  <div
+    className="css-16babkm-HomesLayout"
+  >
+    <div>
+      <div>
+        <div
+          className="css-m1giw4-HomesLayout"
+        >
+          <h1
+            className="css-14ad9qa-HomesLayout"
+          >
+            Title here
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Layout Input 1`] = `
+<div
+  data-testid="input-layout"
+>
+  <div>
+    <div
+      className="css-1nesyc4-InputLayout"
+    >
+      <h3
+        className="css-1hhp67h-InputLayout"
+      >
+        Title here
+      </h3>
+    </div>
+    <div />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Layout Landing 1`] = `
+<div
+  data-testid="landing-layout"
+>
+  <div
+    className="css-1j4x6yk-LandingLayout"
+  >
+    <div
+      className="css-12zcsaw-LandingLayout"
+    >
+      <div
+        className="css-1iw0xig-LandingLayout"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Layout Location 1`] = `
+<div
+  data-testid="location-layout"
+>
+  <div>
+    <div
+      className="css-1qqytyo-LocationLayout"
+    >
+      <h2
+        className="css-1h19que-LocationLayout"
+      >
+        Recent Searches
+      </h2>
+    </div>
+    <div>
+      <div>
+        Content here
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Layout Onlinehost 1`] = `
+<div
+  data-testid="onlinehost-layout"
+>
+  <div
+    className="css-1u2w3im-OnlineHostLayout"
+  >
+    <div
+      className="css-mt3eit-OnlineHostLayout"
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots Molecules/Card Again 1`] = `
 <div
   data-testid="again-card"

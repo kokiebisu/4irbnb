@@ -14,7 +14,8 @@
     "storybook": "start-storybook -p 6006 -c .storybook watch-css -s ./public",
     "build-storybook": "build-storybook -c .storybook watch-css -s ./public",
     "snapshot": "jest --updateSnapshot",
-    "chromatic": "npx chromatic --project-token e017nqnn22h --exit-zero-on-changes"
+    "chromatic": "npx chromatic --project-token e017nqnn22h --exit-zero-on-changes",
+    "refresh": "rm -rf node_modules && yarn"
   },
   "bugs": {
     "url": "https://github.com/kokiebisu/airbnb/issues"
