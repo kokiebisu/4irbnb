@@ -5,6 +5,7 @@ module.exports = {
     "../organisms/**/**/*.stories.@(js|jsx|ts|tsx)",
     "../layout/**/**/*.stories.@(js|jsx|ts|tsx)",
     "../prototype/**/**/*.stories.@(js|jsx|ts|tsx)",
+    "../template/**/**/*.stories.@(js|jsx|ts|tsx)",
   ],
   addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
   transform: {
