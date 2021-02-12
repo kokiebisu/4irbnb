@@ -3,7 +3,7 @@ const shared = {
     padding: "12px",
     borderRadius: "8px",
     "&:hover": {
-      backgroundColor: "white__1",
+      backgroundColor: "grey.100",
     },
   },
   title: {
@@ -15,7 +15,7 @@ const shared = {
   subtitle: {
     text: {
       fontSize: "14px",
-      color: "gray__1",
+      color: "grey.600",
     },
   },
 };

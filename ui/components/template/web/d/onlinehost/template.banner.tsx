@@ -14,13 +14,13 @@ export const BannerTemplate: React.FC<{}> = () => {
       }}
     >
       <div css={{ margin: "16px 0" }}>
-        <h3 css={{ fontSize: 11, color: "gray__2" }}>AIRBNB EXPERIENCES</h3>
+        <h3 css={{ fontSize: 11, color: "grey.700" }}>AIRBNB EXPERIENCES</h3>
       </div>
       <div css={{ marginBottom: 16 }}>
         <h2 css={{ fontSize: 47 }}>Host an online experience</h2>
       </div>
       <div css={{ margin: "16px 0", width: 600, textAlign: "center" }}>
-        <h4 css={{ fontSize: 20, color: "gray__1" }}>
+        <h4 css={{ fontSize: 20, color: "grey.600" }}>
           Join a commmunity of hosts bringing the world together in a whole new
           way.
         </h4>
@@ -41,7 +41,7 @@ export const BannerTemplate: React.FC<{}> = () => {
           textAlign: "center",
         }}
       >
-        <h4 css={{ fontSize: 20, color: "gray__1" }}>
+        <h4 css={{ fontSize: 20, color: "grey.600" }}>
           Airbnb Experiences are engaging activities designed by locals that go
           beyond the typical tour or class. And now you can host them for
           anyone, from anywhere.

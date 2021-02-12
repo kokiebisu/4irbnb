@@ -5,13 +5,13 @@ const shared = {
     borderColor: "transparent",
     borderRadius: 10,
     "&:hover": {
-      borderColor: "gray__4",
+      borderColor: "grey.900",
     },
   },
   label: {
     wrapper: {
       border: "1px solid",
-      borderColor: "white__3",
+      borderColor: "grey.400",
       padding: "10px 15px",
       borderRadius: "10px",
     },

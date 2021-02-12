@@ -29,7 +29,7 @@ export const RulesCreate: React.FC<{
   return (
     <div>
       <div>
-        <h3 css={{ fontSize: 28, color: "gray__2" }}>
+        <h3 css={{ fontSize: 28, color: "grey.700" }}>
           Set house rules for your guests
         </h3>
       </div>

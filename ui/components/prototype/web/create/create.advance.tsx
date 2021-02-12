@@ -50,8 +50,8 @@ export const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
         </Layout>
       </div>
       <div css={{ maxWidth: 300 }}>
-        <h4 css={{ fontSize: 13, color: "gray__1" }}>
-          <span css={{ color: "darkgreen__3", fontWeight: 300 }}>Tip: </span>
+        <h4 css={{ fontSize: 13, color: "grey.600" }}>
+          <span css={{ color: "cyan.800", fontWeight: 300 }}>Tip: </span>
           Most hosts can keep their calendars updated up to 6 months out.
         </h4>
       </div>

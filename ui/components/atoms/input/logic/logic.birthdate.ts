@@ -7,12 +7,12 @@ export const birthdate = {
 export const renderShape = (direction: string) => {
   switch (direction) {
     case "left":
-      return { borderRight: "1px solid", borderColor: "white__3" };
+      return { borderRight: "1px solid", borderColor: "grey.400" };
     case "center":
       return {};
     case "right":
-      return { borderLeft: "1px solid", borderColor: "white__3" };
+      return { borderLeft: "1px solid", borderColor: "grey.400" };
     default:
-      return { border: "1px solid", borderColor: "white__3", borderRadius: 10 };
+      return { border: "1px solid", borderColor: "grey.400", borderRadius: 10 };
   }
 };

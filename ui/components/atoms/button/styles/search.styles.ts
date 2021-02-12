@@ -28,7 +28,7 @@ const web = {
 
 const theme = {
   wrapper: {
-    bg: "primary",
+    bg: "red.500",
   },
   label: {
     text: {

@@ -34,7 +34,7 @@ export const OtherTemplate: React.FC<{
           css={{
             fontWeight: 500,
             marginBottom: 20,
-            color: "gray__3",
+            color: "grey.800",
             fontSize: 22,
           }}
         >
@@ -59,7 +59,7 @@ export const OtherTemplate: React.FC<{
           <span
             css={{
               fontWeight: 100,
-              color: "gray__1",
+              color: "grey.600",
             }}
           >
             Apartments
@@ -67,7 +67,7 @@ export const OtherTemplate: React.FC<{
           <span
             css={{
               fontWeight: 100,
-              color: "gray__1",
+              color: "grey.600",
             }}
           >
             {" "}
@@ -76,7 +76,7 @@ export const OtherTemplate: React.FC<{
           <span
             css={{
               fontWeight: 100,
-              color: "gray__1",
+              color: "grey.600",
             }}
           >
             Houses
@@ -84,7 +84,7 @@ export const OtherTemplate: React.FC<{
           <span
             css={{
               fontWeight: 100,
-              color: "gray__1",
+              color: "grey.600",
             }}
           >
             {" "}
@@ -93,7 +93,7 @@ export const OtherTemplate: React.FC<{
           <span
             css={{
               fontWeight: 100,
-              color: "gray__1",
+              color: "grey.600",
             }}
           >
             Bed and breakfasts
@@ -101,7 +101,7 @@ export const OtherTemplate: React.FC<{
           <span
             css={{
               fontWeight: 100,
-              color: "gray__1",
+              color: "grey.600",
             }}
           >
             {" "}
@@ -110,7 +110,7 @@ export const OtherTemplate: React.FC<{
           <span
             css={{
               fontWeight: 100,
-              color: "gray__1",
+              color: "grey.600",
             }}
           >
             Lofts
@@ -118,7 +118,7 @@ export const OtherTemplate: React.FC<{
           <span
             css={{
               fontWeight: 100,
-              color: "gray__1",
+              color: "grey.600",
             }}
           >
             {" "}
@@ -127,7 +127,7 @@ export const OtherTemplate: React.FC<{
           <span
             css={{
               fontWeight: 100,
-              color: "gray__1",
+              color: "grey.600",
             }}
           >
             Villas
@@ -156,7 +156,7 @@ export const OtherTemplate: React.FC<{
                 key={index}
                 css={{
                   fontWeight: 100,
-                  color: "gray__1",
+                  color: "grey.600",
                 }}
               >
                 <div

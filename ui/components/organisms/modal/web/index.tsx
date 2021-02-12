@@ -132,7 +132,7 @@ export const Modal: React.FC<ModalProps> = ({
       component: <BookingModal {...props} />,
       extendsTo: {
         padding: 24,
-        border: "1px solid white__2",
+        border: "1px solid grey.300",
         borderRadius: 18,
       },
     },

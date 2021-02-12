@@ -15,7 +15,7 @@ const web = {
 const theme = {
   wrapper: {
     bg: "rgba(255, 255, 255, 0.8)",
-    color: "white__2",
+    color: "grey.300",
     ":hover": {
       bg: "white",
     },

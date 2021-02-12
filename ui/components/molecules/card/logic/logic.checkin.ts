@@ -7,16 +7,16 @@ export const checkInBorder = (selected) => {
     return {
       width: "50%",
       borderTopLeftRadius: 6,
-      borderLeft: "1px solid white__3",
-      borderRight: "1px solid white__3",
-      borderTop: "1px solid white__3",
+      borderLeft: "1px solid grey.400",
+      borderRight: "1px solid grey.400",
+      borderTop: "1px solid grey.400",
       padding: "10px 0",
     };
   }
   return {
     width: "50%",
     borderTopLeftRadius: 6,
-    border: "1px solid white__3",
+    border: "1px solid grey.400",
     padding: "10px 0",
   };
 };
@@ -28,17 +28,17 @@ export const checkOutBorder = (selected) => {
     return {
       width: "50%",
       borderTopRightRadius: 6,
-      borderRight: "1px solid white__3",
-      borderTop: "1px solid white__3",
+      borderRight: "1px solid grey.400",
+      borderTop: "1px solid grey.400",
       padding: "10px 0",
     };
   }
   return {
     width: "50%",
     borderTopRightRadius: 6,
-    borderRight: "1px solid white__3",
-    borderBottom: "1px solid white__3",
-    borderTop: "1px solid white__3",
+    borderRight: "1px solid grey.400",
+    borderBottom: "1px solid grey.400",
+    borderTop: "1px solid grey.400",
     padding: "10px 0",
   };
 };
@@ -58,7 +58,7 @@ export const guestBorder = (selected) => {
   } else if (selected.guests) {
     return {
       height: "100%",
-      border: "1px solid gray__3",
+      border: "1px solid grey.800",
       padding: "12px 0",
       borderRadius: 6,
     };

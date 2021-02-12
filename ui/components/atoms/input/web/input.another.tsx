@@ -74,7 +74,7 @@ export const AnotherInput: React.FC<{
                       css={{
                         whitespace: "nowrap",
                         fontSize: 14,
-                        color: "white__3",
+                        color: "grey.400",
                       }}
                     >
                       Add another

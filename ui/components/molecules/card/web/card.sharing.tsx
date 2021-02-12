@@ -42,7 +42,7 @@ export const SharingCard: React.FC<{
         </p>
       </div>
       <div>
-        <p css={{ fontSize: 14 }} sx={{ color: "darkgreen__3" }}>
+        <p css={{ fontSize: 14 }} sx={{ color: "cyan.800" }}>
           Go to experience
         </p>
       </div>

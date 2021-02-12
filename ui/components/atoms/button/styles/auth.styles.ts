@@ -16,7 +16,7 @@ const shared = {
     wrapper: {},
     text: {
       fontSize: 14,
-      color: "gray__1",
+      color: "grey.600",
     },
   },
 } as const;

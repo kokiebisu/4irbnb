@@ -256,7 +256,7 @@ export const MultipleTemplate: React.FC<{
                 <h2
                   css={{
                     fontWeight: 500,
-                    color: "gray__4",
+                    color: "grey.900",
                     fontSize: 22,
                   }}
                 >

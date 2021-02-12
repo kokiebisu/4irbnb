@@ -15,12 +15,12 @@ export const LocationCreate: React.FC<{
   return (
     <div>
       <div css={{ marginBottom: 8 }}>
-        <h3 css={{ fontSize: 28, color: "gray__2" }}>
+        <h3 css={{ fontSize: 28, color: "grey.700" }}>
           Where's your place located?
         </h3>
       </div>
       <div css={{ marginBottom: 16 }}>
-        <p css={{ fontSize: 14, color: "gray__2" }}>
+        <p css={{ fontSize: 14, color: "grey.700" }}>
           Guests will only get your exact address once they've booked a
           reservation.
         </p>

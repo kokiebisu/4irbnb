@@ -52,7 +52,7 @@ export const ReviewsTemplate: React.FC<{
               css={{
                 marginRight: 6,
                 fontSize: 22,
-                color: "gray__3",
+                color: "grey.800",
               }}
             >
               {ratings.toFixed(1)}
@@ -61,7 +61,7 @@ export const ReviewsTemplate: React.FC<{
               css={{
                 marginLeft: 2,
                 fontSize: 22,
-                color: "gray__3",
+                color: "grey.800",
               }}
             >
               ({numberOfReviews} reviews)

@@ -73,7 +73,7 @@ export const StayCard: React.FC<{
                 }}
               >
                 <div>
-                  <p css={{ fontSize: 14 }} sx={{ color: "gray__1" }}>
+                  <p css={{ fontSize: 14 }} sx={{ color: "grey.600" }}>
                     {typeStay} in {location}
                   </p>
                   <h4 css={{ fontWeight: 300, margin: "4px 0", fontSize: 17 }}>
@@ -86,7 +86,7 @@ export const StayCard: React.FC<{
                       width: 45,
                     }}
                     sx={{
-                      bg: "white__2",
+                      bg: "grey.300",
                     }}
                   ></div>
                   <div>
@@ -95,7 +95,7 @@ export const StayCard: React.FC<{
                         fontSize: 14,
                       }}
                       sx={{
-                        color: "gray__1",
+                        color: "grey.600",
                       }}
                     >
                       {accomodations.guests} guests
@@ -104,7 +104,7 @@ export const StayCard: React.FC<{
                       css={{
                         fontSize: 14,
                       }}
-                      sx={{ color: "gray__1" }}
+                      sx={{ color: "grey.600" }}
                     >
                       {" "}
                       ·{" "}
@@ -113,22 +113,22 @@ export const StayCard: React.FC<{
                       css={{
                         fontSize: 14,
                       }}
-                      sx={{ color: "gray__1" }}
+                      sx={{ color: "grey.600" }}
                     >
                       {accomodations.bedroom} bedroom
                     </span>
-                    <span css={{ fontSize: 14 }} sx={{ color: "gray__1" }}>
+                    <span css={{ fontSize: 14 }} sx={{ color: "grey.600" }}>
                       {" "}
                       ·{" "}
                     </span>
-                    <span css={{ fontSize: 14 }} sx={{ color: "gray__1" }}>
+                    <span css={{ fontSize: 14 }} sx={{ color: "grey.600" }}>
                       {accomodations.beds} beds
                     </span>
-                    <span css={{ fontSize: 14 }} sx={{ color: "gray__1" }}>
+                    <span css={{ fontSize: 14 }} sx={{ color: "grey.600" }}>
                       {" "}
                       ·{" "}
                     </span>
-                    <span css={{ fontSize: 14 }} sx={{ color: "gray__1" }}>
+                    <span css={{ fontSize: 14 }} sx={{ color: "grey.600" }}>
                       {accomodations.bath} bath
                     </span>
                   </div>
@@ -138,7 +138,7 @@ export const StayCard: React.FC<{
                         <span
                           key={index}
                           css={{ fontSize: 14 }}
-                          sx={{ color: "gray__1" }}
+                          sx={{ color: "grey.600" }}
                         >
                           {characteristic}
                         </span>

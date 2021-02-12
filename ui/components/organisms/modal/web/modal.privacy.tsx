@@ -52,7 +52,7 @@ export const PrivacyModal: React.FC<{ dispatchCallback?: (param) => void }> = ({
             <p
               css={{ fontSize: 14, fontWeight: 300, lineHeight: 1.5 }}
               sx={{
-                color: "gray__0",
+                color: "grey.500",
               }}
             >
               We use cookies to help personalize content, tailor and measure

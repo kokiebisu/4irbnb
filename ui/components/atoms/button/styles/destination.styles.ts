@@ -10,7 +10,7 @@ const shared = {
   location: {
     text: {
       fontSize: 14,
-      color: "gray__0",
+      color: "grey.500",
     },
   },
 };

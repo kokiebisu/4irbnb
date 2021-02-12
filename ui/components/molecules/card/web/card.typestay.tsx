@@ -68,7 +68,7 @@ export const TypeStayCard: React.FC<{
               fontSize: 14,
             }}
             sx={{
-              color: "gray__3",
+              color: "grey.800",
             }}
           >
             {card.title}

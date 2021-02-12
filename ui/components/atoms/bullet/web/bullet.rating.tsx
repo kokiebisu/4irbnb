@@ -17,13 +17,13 @@ export const RatingBullet: React.FC<{
       <div>
         <Star height={14} />
       </div>
-      <h3 css={{ paddingLeft: 4, color: "gray__2", fontSize: 14 }}>
+      <h3 css={{ paddingLeft: 4, color: "grey.700", fontSize: 14 }}>
         {ratings}
       </h3>
       <span
         css={{
           paddingLeft: 4,
-          color: "gray__1",
+          color: "grey.600",
           fontSize: 14,
           fontWeight: 100,
         }}

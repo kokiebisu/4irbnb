@@ -12,7 +12,7 @@ export const RequiredBullet: React.FC<{
         <Exclamation width={16} stroke="#C54A32" strokeWidth={2} />
       </div>
       <div>
-        <p css={{ fontSize: 12, color: "warning" }}>{message}</p>
+        <p css={{ fontSize: 12, color: "red.400" }}>{message}</p>
       </div>
     </div>
   );

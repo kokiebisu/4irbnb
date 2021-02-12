@@ -437,7 +437,7 @@ export const PaginateBar: React.FC<{
           css={{
             fontSize: 12,
             textAlign: "center",
-            color: "gray__1",
+            color: "grey.600",
           }}
         >
           Enter dates to see full pricing. Additional fees apply. Taxes may be

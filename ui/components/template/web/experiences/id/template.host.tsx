@@ -95,7 +95,7 @@ export const HostTemplate: React.FC<{
                 css={{
                   width: 64,
                   height: 64,
-                  bg: "white__2",
+                  bg: "grey.300",
                   borderRadius: 9999,
                   marginRight: 14,
                 }}
@@ -112,7 +112,7 @@ export const HostTemplate: React.FC<{
               <p
                 css={{
                   fontWeight: 100,
-                  color: "gray__1",
+                  color: "grey.600",
                   fontSize: 13,
                 }}
               >

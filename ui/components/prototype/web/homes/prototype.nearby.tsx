@@ -61,7 +61,7 @@ export const NearbyPrototype: React.FC<{
         {city && (
           <div>
             <div css={{ marginBottom: 16 }}>
-              <p css={{ color: "gray__1", fontSize: 14 }}>
+              <p css={{ color: "grey.600", fontSize: 14 }}>
                 Enter dates and number of guests to see the total price per
                 night.
               </p>
@@ -109,7 +109,7 @@ export const NearbyPrototype: React.FC<{
           <Bar variant={$Bar.PAGINATE} animate />
         </div>
       </div>
-      <div css={{ padding: 24, bg: "white__1" }}>
+      <div sx={{ bg: "grey.100" }} css={{ padding: 24 }}>
         {/* <Template variant="also" /> */}
       </div>
     </div>

@@ -45,7 +45,7 @@ export const RadioInput: React.FC<{
           <p css={{ fontSize: 14, color: "black" }}>{title}</p>
         </div>
         <div>
-          <p css={{ fontSize: 13, color: "gray__0" }}>{subtitle}</p>
+          <p css={{ fontSize: 13, color: "grey.500" }}>{subtitle}</p>
         </div>
       </div>
     </div>

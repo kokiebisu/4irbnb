@@ -27,12 +27,12 @@ export const SpacesCreate: React.FC<{
   return (
     <div>
       <div css={{ marginBottom: 12 }}>
-        <h3 css={{ fontSize: 28, color: "gray__2" }}>
+        <h3 css={{ fontSize: 28, color: "grey.700" }}>
           What spaces can guests use?
         </h3>
       </div>
       <div css={{ marginBottom: 45 }}>
-        <p css={{ fontSize: 16, color: "gray__2" }}>
+        <p css={{ fontSize: 16, color: "grey.700" }}>
           Include common areas, but don’t add spaces that aren’t on your
           property.
         </p>

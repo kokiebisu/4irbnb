@@ -13,14 +13,14 @@ export const TextAreaInput: React.FC<{
   const renderBorder = () => {
     if (value.length >= limit) {
       return {
-        border: "1px solid warning !important",
+        border: "1px solid red.400 !important",
         transition: "0.4s border-color",
       };
     }
     if (active) {
       return {
         "&:focus": {
-          border: "1px solid darkgreen__3 !important",
+          border: "1px solid cyan.800 !important",
           transition: "0.4s border-color",
         },
       };
@@ -31,7 +31,7 @@ export const TextAreaInput: React.FC<{
   const renderBackground = () => {
     if (value.length >= limit) {
       return {
-        backgroundColor: "lightred__0 !important",
+        backgroundColor: "red.50 !important",
         transition: "0.4s all",
       };
     }
@@ -46,9 +46,9 @@ export const TextAreaInput: React.FC<{
 
   const renderColor = () => {
     if (value.length >= limit) {
-      return { color: "warning !important", transition: "0.4s all" };
+      return { color: "red.400 !important", transition: "0.4s all" };
     }
-    return { color: "darkgreen__3 !important", transition: "0.4s all" };
+    return { color: "cyan.800 !important", transition: "0.4s all" };
   };
 
   return (
@@ -63,10 +63,10 @@ export const TextAreaInput: React.FC<{
             position: "relative",
             fontWeight: 300,
             border: "1px solid",
-            borderColor: "white__2",
+            borderColor: "grey.300",
             borderRadius: 6,
             fontSize: 15,
-            color: "gray__2",
+            color: "grey.700",
             height: "100%",
             width: "100%",
             padding: 12,
@@ -87,7 +87,7 @@ export const TextAreaInput: React.FC<{
       </div>
       {value.length >= limit && (
         <div>
-          <h3 css={{ fontSize: 14, color: "warning" }}>
+          <h3 css={{ fontSize: 14, color: "red.400" }}>
             Please shorten your description to {limit} characters or less.
           </h3>
         </div>

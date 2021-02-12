@@ -53,7 +53,7 @@ export const DescriptionTemplate: React.FC<{
             css={{
               lineHeight: 1.5,
               fontWeight: 300,
-              color: "gray__2",
+              color: "grey.700",
             }}
           >
             {mainDescription}
@@ -68,7 +68,7 @@ export const DescriptionTemplate: React.FC<{
                 css={{
                   fontSize: 16,
                   marginBottom: 6,
-                  color: "gray__3",
+                  color: "grey.800",
                   fontWeight: 300,
                 }}
               >
@@ -77,7 +77,7 @@ export const DescriptionTemplate: React.FC<{
               <p
                 css={{
                   fontWeight: 100,
-                  color: "gray__2",
+                  color: "grey.700",
                 }}
               >
                 {spaceDescription}
@@ -94,7 +94,7 @@ export const DescriptionTemplate: React.FC<{
                 css={{
                   fontSize: 16,
                   marginBottom: 6,
-                  color: "gray__3",
+                  color: "grey.800",
                   fontWeight: 300,
                 }}
               >
@@ -103,7 +103,7 @@ export const DescriptionTemplate: React.FC<{
               <p
                 css={{
                   fontWeight: 100,
-                  color: "gray__2",
+                  color: "grey.700",
                 }}
               >
                 {accessDescription}
@@ -118,7 +118,7 @@ export const DescriptionTemplate: React.FC<{
               fontWeight: 300,
               marginLeft: 4,
               lineHeight: 1.5,
-              color: "gray__2",
+              color: "grey.700",
             }}
           >
             {`${newArray.join(" ")}...`}
@@ -131,7 +131,7 @@ export const DescriptionTemplate: React.FC<{
                 css={{
                   marginLeft: 4,
                   fontSize: 16,
-                  borderBottom: "1px solid gray__2",
+                  borderBottom: "1px solid grey.700",
                   bg: "transparent",
                 }}
               >
@@ -154,8 +154,8 @@ export const DescriptionTemplate: React.FC<{
             }}
             css={{
               marginLeft: 4,
-              borderBottom: "1px solid gray__2",
-              color: "gray__2",
+              borderBottom: "1px solid grey.700",
+              color: "grey.700",
               bg: "transparent",
             }}
           >

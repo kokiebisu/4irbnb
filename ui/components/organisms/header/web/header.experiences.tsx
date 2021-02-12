@@ -32,22 +32,22 @@ export const ExperiencesHeader: React.FC<{}> = () => {
         </div>
         <div css={{ display: "flex" }}>
           <div css={{ margin: "0 8px" }}>
-            <h3 sx={{ color: "gray__2", fontSize: 15 }}>English (CA)</h3>
+            <h3 sx={{ color: "grey.700", fontSize: 15 }}>English (CA)</h3>
           </div>
           <div css={{ margin: "0 8px" }}>
-            <h3 sx={{ color: "gray__2", fontSize: 15 }}>$ CAD</h3>
+            <h3 sx={{ color: "grey.700", fontSize: 15 }}>$ CAD</h3>
           </div>
           <div css={{ margin: "0 8px" }}>
-            <h3 sx={{ color: "gray__2", fontSize: 15 }}>Become a host</h3>
+            <h3 sx={{ color: "grey.700", fontSize: 15 }}>Become a host</h3>
           </div>
           <div css={{ margin: "0 8px" }}>
-            <h3 sx={{ color: "gray__2", fontSize: 15 }}>Help</h3>
+            <h3 sx={{ color: "grey.700", fontSize: 15 }}>Help</h3>
           </div>
           <div css={{ margin: "0 8px" }}>
-            <h3 sx={{ color: "gray__2", fontSize: 15 }}>Sign up</h3>
+            <h3 sx={{ color: "grey.700", fontSize: 15 }}>Sign up</h3>
           </div>
           <div css={{ margin: "0 8px" }}>
-            <h3 sx={{ color: "gray__2", fontSize: 15 }}>Log in</h3>
+            <h3 sx={{ color: "grey.700", fontSize: 15 }}>Log in</h3>
           </div>
         </div>
       </div>

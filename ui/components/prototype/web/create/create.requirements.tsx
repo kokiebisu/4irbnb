@@ -10,12 +10,12 @@ export const RequirementsCreate: React.FC<{}> = () => {
   return (
     <div>
       <div css={{ marginBottom: 12 }}>
-        <h3 css={{ fontSize: 28, color: "gray__2" }}>
+        <h3 css={{ fontSize: 28, color: "grey.700" }}>
           Review Airbnb's guest requirements
         </h3>
       </div>
       <div css={{ marginBottom: 45 }}>
-        <p css={{ fontSize: 14, color: "gray__2" }}>
+        <p css={{ fontSize: 14, color: "grey.700" }}>
           Airbnb has requirements that all guests must meet before they book.
         </p>
       </div>
@@ -34,7 +34,7 @@ export const RequirementsCreate: React.FC<{}> = () => {
         )}
       </div>
       <div
-        css={{ width: "100%", height: 1, bg: "white__2", marginBottom: 30 }}
+        css={{ width: "100%", height: 1, bg: "grey.300", marginBottom: 30 }}
       ></div>
       <div css={{ marginBottom: 16 }}>
         <h4 css={{ fontSize: 18 }}>

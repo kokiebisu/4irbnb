@@ -79,7 +79,7 @@ export const HorizontalCard: React.FC<{
                       borderRadius: 3,
                     }}
                     sx={{
-                      bg: "white__1",
+                      bg: "grey.100",
                     }}
                   >
                     <h3
@@ -124,7 +124,7 @@ export const HorizontalCard: React.FC<{
         </div>
         <div>
           <p
-            css={{ fontWeight: 100, fontSize: 13, color: "gray__0" }}
+            css={{ fontWeight: 100, fontSize: 13, color: "grey.500" }}
           >{`(${card.number_of_reviews})`}</p>
         </div>
       </div>
@@ -135,7 +135,7 @@ export const HorizontalCard: React.FC<{
               letterSpacing: 0.4,
               fontWeight: 100,
               fontSize: 15,
-              color: "gray__4",
+              color: "grey.900",
               textTransform: "capitalize",
             }}
           >
@@ -151,7 +151,7 @@ export const HorizontalCard: React.FC<{
               letterSpacing: 0.4,
               fontWeight: 100,
               fontSize: 15,
-              color: "gray__4",
+              color: "grey.900",
             }}
           >
             {card.location}
@@ -168,7 +168,7 @@ export const HorizontalCard: React.FC<{
             letterSpacing: 0.4,
             fontWeight: 100,
             fontSize: 15,
-            color: "gray__4",
+            color: "grey.900",
           }}
         >
           {card.title}

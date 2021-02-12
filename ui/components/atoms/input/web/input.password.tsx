@@ -42,7 +42,7 @@ export const PasswordInput: React.FC<{
           borderBottom: "1px solid",
           borderLeft: "1px solid",
           borderRight: "1px solid",
-          borderColor: "white__3",
+          borderColor: "grey.400",
           borderBottomRadius: 10,
         };
       case "bottom":
@@ -50,13 +50,13 @@ export const PasswordInput: React.FC<{
           borderTop: "1px solid",
           borderLeft: "1px solid",
           borderRight: "1px solid",
-          borderColor: "white__3",
+          borderColor: "grey.400",
           borderTopRadius: 10,
         };
       default:
         return {
           border: "1px solid",
-          borderColor: "white__3",
+          borderColor: "grey.400",
           borderRadius: 10,
         };
     }
@@ -113,7 +113,7 @@ export const PasswordInput: React.FC<{
           htmlFor="password"
           css={{
             fontSize: 12,
-            color: "gray__1",
+            color: "grey.600",
             fontWeight: 100,
             transition: "all 150ms ease-in",
             top: 12,

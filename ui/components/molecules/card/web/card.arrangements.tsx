@@ -21,20 +21,20 @@ export const ArrangementsCard: React.FC<{ card?: any }> = ({
         borderRadius: 15,
         width: 200,
       }}
-      sx={{ borderColor: "white__2" }}
+      sx={{ borderColor: "grey.300" }}
     >
       <div css={{ paddingLeft: 14 }}>
         <div css={{ paddingTop: 4, paddingBottom: 8 }}>
           <DoubleBed width={24} />
         </div>
-        <p css={{ paddingTop: 4 }} sx={{ color: "gray__2" }}>
+        <p css={{ paddingTop: 4 }} sx={{ color: "grey.700" }}>
           Bedroom
         </p>
         <div>
           {card.beds.map(
             (bed: { count: number; type: string }, index: number) => {
               return (
-                <p key={index} sx={{ color: "gray__2" }}>
+                <p key={index} sx={{ color: "grey.700" }}>
                   {bed.count} {bed.type}
                 </p>
               );

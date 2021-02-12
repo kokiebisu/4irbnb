@@ -45,7 +45,7 @@ export const HomesTemplate: React.FC<{
             return (
               <div key={index}>
                 <Card
-                  extendsTo={!title && { borderTop: "1px solid white__2" }}
+                  extendsTo={!title && { borderTop: "1px solid grey.300" }}
                   variant={$Card.STAY}
                   {...stay}
                 />

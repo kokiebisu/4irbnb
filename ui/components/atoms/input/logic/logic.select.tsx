@@ -2,7 +2,7 @@ export const renderShape = (direction: string) => {
   switch (direction) {
     case "top":
       return {
-        borderColor: "white__3",
+        borderColor: "grey.400",
         borderBottom: "1px solid",
         borderLeft: "1px solid",
         borderRight: "1px solid",
@@ -13,10 +13,10 @@ export const renderShape = (direction: string) => {
         borderTop: "1px solid",
         borderLeft: "1px solid",
         borderRight: "1px solid",
-        borderColor: "white__3",
+        borderColor: "grey.400",
         borderTopRadius: 6,
       };
     default:
-      return { border: "1px solid", borderColor: "white__3", borderRadius: 8 };
+      return { border: "1px solid", borderColor: "grey.400", borderRadius: 8 };
   }
 };

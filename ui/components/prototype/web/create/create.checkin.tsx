@@ -42,14 +42,14 @@ export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
         </Layout>
       </div>
       <div css={{ maxWidth: 300 }}>
-        <h4 css={{ fontSize: 13, color: "gray__1" }}>
-          <span css={{ color: "darkgreen__3", fontWeight: 300 }}>Tip: </span>
+        <h4 css={{ fontSize: 13, color: "grey.600" }}>
+          <span css={{ color: "cyan.800", fontWeight: 300 }}>Tip: </span>
           Letting guests book same-day reservations can help you get guests who
           book last-minute trips.
         </h4>
       </div>
       <div
-        css={{ bg: "white__2", margin: "32px 0", width: "100%", height: 1 }}
+        css={{ bg: "grey.300", margin: "32px 0", width: "100%", height: 1 }}
       />
       <div>
         <div css={{ marginBottom: 12 }}>
@@ -64,7 +64,7 @@ export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
         >
           <div>
             <div css={{ marginBottom: 8 }}>
-              <h4 css={{ color: "gray__0", fontSize: 13 }}>From: </h4>
+              <h4 css={{ color: "grey.500", fontSize: 13 }}>From: </h4>
             </div>
             <div>
               <Input
@@ -79,7 +79,7 @@ export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
           </div>
           <div>
             <div css={{ marginBottom: 8 }}>
-              <h4 css={{ color: "gray__0", fontSize: 13 }}>To: </h4>
+              <h4 css={{ color: "grey.500", fontSize: 13 }}>To: </h4>
             </div>
             <div>
               <Input

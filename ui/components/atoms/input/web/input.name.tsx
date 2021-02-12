@@ -47,7 +47,7 @@ export const NameInput: React.FC<{
           borderBottom: "1px solid",
           borderLeft: "1px solid",
           borderRight: "1px solid",
-          borderColor: "white__3",
+          borderColor: "grey.400",
           borderBottomRadius: 10,
         };
       case "bottom":
@@ -55,13 +55,13 @@ export const NameInput: React.FC<{
           borderTop: "1px solid",
           borderLeft: "1px solid",
           borderRight: "1px solid",
-          borderColor: "white__3",
+          borderColor: "grey.400",
           borderTopRadius: 10,
         };
       default:
         return {
           border: "1px solid",
-          borderColor: "white__3",
+          borderColor: "grey.400",
           borderRadius: 10,
         };
     }
@@ -117,7 +117,7 @@ export const NameInput: React.FC<{
           htmlFor={name}
           style={{ position: "absolute" }}
           css={{
-            color: "gray__1",
+            color: "grey.600",
             fontWeight: 100,
             transition: "all 150ms ease-in",
             fontSize: 16,

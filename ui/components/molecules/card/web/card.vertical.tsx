@@ -63,7 +63,7 @@ export const VerticalCard: React.FC<{
                   boxShadow: "rgba(0, 0, 0, 0.2) 0px 4px 8px",
                 }}
                 sx={{
-                  bg: "white__1",
+                  bg: "grey.100",
                 }}
               >
                 <p
@@ -113,15 +113,15 @@ export const VerticalCard: React.FC<{
               fontSize: 13,
             }}
             sx={{
-              color: "gray__0",
+              color: "grey.500",
             }}
           >{`(${number_of_reviews})`}</p>
         </div>
         <div>
-          <p sx={{ color: "gray__0" }}>&nbsp; · &nbsp; </p>
+          <p sx={{ color: "grey.500" }}>&nbsp; · &nbsp; </p>
         </div>
         <div>
-          <p css={{ fontSize: 13, fontWeight: 100 }} sx={{ color: "gray__0" }}>
+          <p css={{ fontSize: 13, fontWeight: 100 }} sx={{ color: "grey.500" }}>
             {country}
           </p>
         </div>
@@ -134,7 +134,7 @@ export const VerticalCard: React.FC<{
             fontSize: 15,
           }}
           sx={{
-            color: "gray__4",
+            color: "grey.900",
           }}
         >
           {title}

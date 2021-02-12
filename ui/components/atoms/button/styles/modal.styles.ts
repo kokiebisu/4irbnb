@@ -13,7 +13,7 @@ const web = {
 const theme = {
   wrapper: {
     ":hover": {
-      bg: "white__1",
+      bg: "grey.100",
     },
   },
 };

@@ -65,7 +65,7 @@ export const DetailsHeader: React.FC<{
                   <button
                     css={{ display: "block", fontSize: 14 }}
                     sx={{
-                      color: "gray__2",
+                      color: "grey.700",
                     }}
                     onClick={() => alert("hello")}
                   >
@@ -87,7 +87,7 @@ export const DetailsHeader: React.FC<{
                   <div css={{ marginRight: 16 }}>
                     <h3
                       sx={{
-                        color: "gray__2",
+                        color: "grey.700",
                       }}
                       css={{ fontSize: 16, fontWeight: 500 }}
                     >
@@ -100,7 +100,7 @@ export const DetailsHeader: React.FC<{
                         fontWeight: 500,
                       }}
                       sx={{
-                        color: "gray__2",
+                        color: "grey.700",
                       }}
                     >
                       <div
@@ -127,7 +127,7 @@ export const DetailsHeader: React.FC<{
                           fontWeight: 100,
                         }}
                         sx={{
-                          color: "white__3",
+                          color: "grey.400",
                         }}
                       >
                         (248)

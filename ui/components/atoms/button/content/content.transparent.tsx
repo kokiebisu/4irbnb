@@ -24,7 +24,7 @@ export const Content: React.FC<{ kind?: string; inverse?: boolean }> = ({
           fontSize: 14,
         }}
         sx={{
-          ...(inverse ? { color: "c--white" } : { color: "gray__4" }),
+          ...(inverse ? { color: "c--white" } : { color: "grey.900" }),
         }}
       >
         Become a host

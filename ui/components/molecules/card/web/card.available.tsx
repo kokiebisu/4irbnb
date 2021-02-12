@@ -26,7 +26,7 @@ export const AvailableCard: React.FC<{
 }) => {
   return (
     <div
-      sx={{ border: "1px solid", borderColor: "white__3" }}
+      sx={{ border: "1px solid", borderColor: "grey.400" }}
       css={{ padding: 24, borderRadius: 6 }}
     >
       <div css={{ marginBottom: 6 }}>

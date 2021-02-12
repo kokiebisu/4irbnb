@@ -15,12 +15,12 @@ export const TitleCreate: React.FC<{ data?: any; setData?: any }> = ({
   return (
     <div>
       <div css={{ marginBottom: 12 }}>
-        <h3 css={{ fontSize: 28, color: "gray__2" }}>
+        <h3 css={{ fontSize: 28, color: "grey.700" }}>
           Create a title for your listing
         </h3>
       </div>
       <div css={{ marginBottom: 45 }}>
-        <p css={{ fontSize: 14, color: "gray__2" }}>
+        <p css={{ fontSize: 14, color: "grey.700" }}>
           Catch guests' attention with a listing title that highlights what
           makes your place special.
         </p>

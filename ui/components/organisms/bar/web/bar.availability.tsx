@@ -22,7 +22,7 @@ export const AvailabilityBar: React.FC<{
       }}
       sx={{
         borderTop: "1px solid",
-        borderColor: "white__2",
+        borderColor: "grey.300",
       }}
     >
       <div css={{ padding: "16px 0" }}>
@@ -39,7 +39,7 @@ export const AvailabilityBar: React.FC<{
             </span>
             <span
               css={{ display: "inline-block", fontSize: 12, marginLeft: 4 }}
-              sx={{ color: "white__3" }}
+              sx={{ color: "grey.400" }}
             >
               ({reviews})
             </span>

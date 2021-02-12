@@ -11,7 +11,7 @@ export const LocationLayout: React.FC<{
       <div css={{ margin: "8px 25px" }}>
         <h2
           css={{ fontSize: 10, textTransform: "uppercase" }}
-          sx={{ color: "gray__3" }}
+          sx={{ color: "grey.800" }}
         >
           {title}
         </h2>

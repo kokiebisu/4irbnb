@@ -12,7 +12,7 @@ export const InputLayout: React.FC<{
   return (
     <div>
       <div css={{ marginBottom: 8 }}>
-        <h3 css={{ fontSize: 16 }} sx={{ color: "gray__0" }}>
+        <h3 css={{ fontSize: 16 }} sx={{ color: "grey.500" }}>
           {title}
         </h3>
       </div>

@@ -16,7 +16,7 @@ const web = {
 const theme = {
   wrapper: {
     inverse: {
-      bg: "gray__4",
+      bg: "grey.900",
       border: "1px solid transparent",
     },
     plain: {

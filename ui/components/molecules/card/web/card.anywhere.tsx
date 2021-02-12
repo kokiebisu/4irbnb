@@ -21,7 +21,7 @@ export const AnywhereCard: React.FC<{
               <img src={imgUrl} alt="unique stays" css={{ borderRadius: 8 }} />
             ) : (
               <div
-                sx={{ bg: "white__2" }}
+                sx={{ bg: "grey.300" }}
                 css={{
                   width: "100%",
                   height: "100%",
@@ -33,7 +33,7 @@ export const AnywhereCard: React.FC<{
         </div>
       </div>
       <div css={{ marginTop: 6 }}>
-        <h3 css={{ fontSize: 16 }} sx={{ color: "gray__4" }}>
+        <h3 css={{ fontSize: 16 }} sx={{ color: "grey.900" }}>
           {title}
         </h3>
       </div>

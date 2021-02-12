@@ -32,7 +32,7 @@ export const PriceInput: React.FC<{
         borderRadius: 8,
         ...(active
           ? { border: "2px solid", borderColor: "black" }
-          : { border: "1px solid", borderColor: "white__3" }),
+          : { border: "1px solid", borderColor: "grey.400" }),
       }}
     >
       <div

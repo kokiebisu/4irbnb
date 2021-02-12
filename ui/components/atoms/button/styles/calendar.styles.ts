@@ -14,7 +14,7 @@ const shared = {
     },
     text: {
       fontSize: "12px",
-      color: "white__2",
+      color: "grey.300",
     },
   },
   disabled: {

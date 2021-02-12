@@ -35,7 +35,7 @@ export const PlaceInput: React.FC<{
           borderBottom: "1px solid",
           borderLeft: "1px solid",
           borderRight: "1px solid",
-          borderColor: "white__3",
+          borderColor: "grey.400",
           borderBottomRadius: 10,
         };
 
@@ -44,13 +44,13 @@ export const PlaceInput: React.FC<{
           borderTop: "1px solid",
           borderLeft: "1px solid",
           borderRight: "1px solid",
-          borderColor: "white__3",
+          borderColor: "grey.400",
           borderTopRadius: 10,
         };
       default:
         return {
           border: "1px solid",
-          borderColor: "white__3",
+          borderColor: "grey.400",
           borderRadius: 10,
         };
     }
@@ -101,7 +101,7 @@ export const PlaceInput: React.FC<{
                 cursor: "pointer",
                 padding: "0 12px",
                 fontSize: 14,
-                color: "gray__3",
+                color: "grey.800",
                 fontWeight: 100,
               }}
               htmlFor="place"

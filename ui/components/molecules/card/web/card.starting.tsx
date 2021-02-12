@@ -36,7 +36,7 @@ export const StartingCard: React.FC<{
       }}
       sx={{
         border: "1px solid",
-        borderColor: "white__2",
+        borderColor: "grey.300",
       }}
     >
       <div
@@ -94,12 +94,12 @@ export const StartingCard: React.FC<{
               <p css={{ fontSize: 12 }}>{ratings}</p>
             </div>
             <div>
-              <p sx={{ color: "gray__0" }} css={{ fontSize: 12 }}>
+              <p sx={{ color: "grey.500" }} css={{ fontSize: 12 }}>
                 ({reviews})
               </p>
             </div>
             <div css={{ marginRight: 3 }}>
-              <p css={{ fontSize: 12 }} sx={{ color: "gray__0" }}>
+              <p css={{ fontSize: 12 }} sx={{ color: "grey.500" }}>
                 &nbsp;·&nbsp;{country}
               </p>
             </div>
@@ -122,7 +122,7 @@ export const StartingCard: React.FC<{
                       borderRadius: 6,
                       padding: "6px 10px",
                     }}
-                    sx={{ border: "1px solid gray__3" }}
+                    sx={{ border: "1px solid grey.800" }}
                   >
                     <h3 css={{ fontSize: 12 }}>{slot}p.m.</h3>
                   </div>

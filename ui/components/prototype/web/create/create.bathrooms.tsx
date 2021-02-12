@@ -10,10 +10,10 @@ export const BathroomsCreate: React.FC<{
   return (
     <div>
       <div css={{ marginBottom: 45 }}>
-        <h3 css={{ fontSize: 28, color: "gray__2" }}>How many bathrooms?</h3>
+        <h3 css={{ fontSize: 28, color: "grey.700" }}>How many bathrooms?</h3>
       </div>
       <div css={{ marginBottom: 45 }}>
-        <p css={{ fontSize: 14, color: "gray__2" }}>
+        <p css={{ fontSize: 14, color: "grey.700" }}>
           Count bathrooms that don't have a shower or bathtub as a half
           bathroom.
         </p>

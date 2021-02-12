@@ -36,7 +36,7 @@ export const StayHeader: React.FC<{
         </div>
         {title && (
           <div css={{ position: "relative", bottom: 2 }}>
-            <h4 css={{ fontSize: 16, color: "gray__1" }}>{title}</h4>
+            <h4 css={{ fontSize: 16, color: "grey.600" }}>{title}</h4>
           </div>
         )}
       </div>

@@ -46,7 +46,7 @@ export const CounterInput: React.FC<{
           <h3 css={{ fontSize: 14 }}>{title}</h3>
         </div>
         <div>
-          <p css={{ fontSize: 12, color: "gray__0" }}>{subtitle}</p>
+          <p css={{ fontSize: 12, color: "grey.500" }}>{subtitle}</p>
         </div>
       </div>
       <div css={{ display: "flex", alignItems: "center" }}>

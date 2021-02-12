@@ -22,14 +22,14 @@ export const CategoryCard: React.FC<{
             ) : (
               <div
                 css={{ width: "100%", height: "100%", borderRadius: 8 }}
-                sx={{ bg: "white__2" }}
+                sx={{ bg: "grey.300" }}
               />
             )}
           </div>
         </div>
       </div>
       <div css={{ marginTop: 6 }}>
-        <h3 css={{ fontSize: 16 }} sx={{ color: "gray__4" }}>
+        <h3 css={{ fontSize: 16 }} sx={{ color: "grey.900" }}>
           {title}
         </h3>
       </div>

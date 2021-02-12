@@ -18,7 +18,7 @@ const shared = {
     padding: "10px 14px",
     display: "block",
     "&:hover": {
-      bg: "white__1",
+      bg: "grey.100",
     },
   },
   ...condition,

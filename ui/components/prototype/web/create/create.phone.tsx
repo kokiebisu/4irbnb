@@ -15,10 +15,12 @@ export const PhoneCreate: React.FC<{ data?: any; setData?: any }> = ({
   return (
     <div>
       <div css={{ marginBottom: 12 }}>
-        <h3 css={{ fontSize: 28, color: "gray__2" }}>Add your mobile number</h3>
+        <h3 css={{ fontSize: 28, color: "grey.700" }}>
+          Add your mobile number
+        </h3>
       </div>
       <div css={{ marginBottom: 45 }}>
-        <p css={{ fontSize: 14, color: "gray__2" }}>
+        <p css={{ fontSize: 14, color: "grey.700" }}>
           We'll send you booking requests, reminders, and other notifications.
           This number should be able to receive texts or calls.
         </p>

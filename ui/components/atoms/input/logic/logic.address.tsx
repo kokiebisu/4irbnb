@@ -7,7 +7,7 @@ export const renderShape = (direction: string) => {
         borderBottom: "1px solid",
         borderLeft: "1px solid",
         borderRight: "1px solid",
-        borderColor: "white__3",
+        borderColor: "grey.400",
       };
     case "bottom":
       return {
@@ -16,12 +16,12 @@ export const renderShape = (direction: string) => {
         borderRight: "1px solid",
         borderTopLeftRadius: 8,
         borderTopRightRadius: 8,
-        borderColor: "white__3",
+        borderColor: "grey.400",
       };
     default:
       return {
         border: "1px solid",
-        borderColor: "white__3",
+        borderColor: "grey.400",
         borderRadius: 8,
       };
   }

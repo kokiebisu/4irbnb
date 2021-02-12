@@ -103,7 +103,7 @@ export const CharacteristicBullet: React.FC<{
       <div>
         {characteristics[characteristic].description ? (
           <h3
-            sx={{ color: "gray__3" }}
+            sx={{ color: "grey.800" }}
             css={{ marginBottom: "4px", fontSize: "16", fontWeight: 500 }}
           >
             {characteristics[characteristic].title}
@@ -112,7 +112,7 @@ export const CharacteristicBullet: React.FC<{
           <p>{characteristics[characteristic].title}</p>
         )}
         {characteristics[characteristic].description && (
-          <p sx={{ color: "gray__1" }} css={{ fontWeight: 100, fontSize: 14 }}>
+          <p sx={{ color: "grey.600" }} css={{ fontWeight: 100, fontSize: 14 }}>
             {characteristics[characteristic].description}
           </p>
         )}

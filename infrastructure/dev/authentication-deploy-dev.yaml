@@ -1,23 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: auth-deploy-dev
+  name: authentication-deploy-dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: auth
+      app: authentication
   template:
     metadata:
       labels:
-        app: auth
+        app: authentication
     spec:
       containers:
-        - name: auth
-          image: kokiebisu/nextbnb-auth-dev
+        - name: authentication
+          image: kokiebisu/nextbnb-authentication-dev
           env:
-            - name: MONGO_URI
-              value: "mongodb://auth-mongo-service:27017/auth"
             - name: JWT_KEY
               valueFrom:
                 secretKeyRef:
@@ -27,12 +25,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: auth-service-dev
+  name: authentication-service-dev
 spec:
   selector:
-    app: auth
+    app: authentication
   ports:
-    - name: auth
+    - name: authentication
       protocol: TCP
       port: 3000
       targetPort: 3000

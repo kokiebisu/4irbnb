@@ -18,7 +18,7 @@ const shared = {
   guests: {
     text: {
       fontSize: "10px",
-      color: "gray__0",
+      color: "grey.500",
     },
   },
 };

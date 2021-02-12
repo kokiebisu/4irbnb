@@ -33,7 +33,7 @@ export const KnowTemplate: React.FC<{
           css={{
             fontWeight: 500,
             marginBottom: 20,
-            color: "gray__3",
+            color: "grey.800",
             fontSize: 24,
           }}
         >

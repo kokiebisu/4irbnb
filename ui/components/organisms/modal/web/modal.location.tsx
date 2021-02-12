@@ -29,7 +29,7 @@ export const LocationModal: React.FC<{}> = () => {
           extendsTo={{
             padding: "0 25px",
             ":hover": {
-              bg: "white__1",
+              bg: "grey.100",
               transition: "0.4s all",
             },
           }}
@@ -54,7 +54,7 @@ export const LocationModal: React.FC<{}> = () => {
                     extendsTo={{
                       padding: "0 25px",
                       ":hover": {
-                        bg: "white__1",
+                        bg: "grey.100",
                         transition: "0.4s all",
                       },
                     }}

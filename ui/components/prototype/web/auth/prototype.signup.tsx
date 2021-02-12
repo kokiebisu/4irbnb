@@ -91,7 +91,7 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
           <div>
             {formik.errors.firstname === undefined &&
               formik.errors.lastname === undefined && (
-                <p css={{ marginTop: 8, fontSize: 11, color: "gray__1" }}>
+                <p css={{ marginTop: 8, fontSize: 11, color: "grey.600" }}>
                   Make sure it matches the name on your government ID.
                 </p>
               )}
@@ -155,7 +155,7 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
         {formik.errors.day !== undefined &&
           formik.errors.month !== undefined &&
           formik.errors.year !== undefined && (
-            <p css={{ marginTop: 6, fontSize: 11, color: "gray__1" }}>
+            <p css={{ marginTop: 6, fontSize: 11, color: "grey.600" }}>
               To sign up, you need to be at least 18. Your birthday won't be
               shared with other people who use Airbnb.
             </p>
@@ -182,7 +182,7 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
                 css={{
                   marginTop: 8,
                   fontSize: 11,
-                  color: "gray__1",
+                  color: "grey.600",
                 }}
               >
                 We'll email you trip confirmations and receipts
@@ -211,7 +211,7 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
           </div>
         </div>
         <div>
-          <p css={{ marginTop: 22, fontSize: 11, color: "gray__1" }}>
+          <p css={{ marginTop: 22, fontSize: 11, color: "grey.600" }}>
             By selecting <b>Agree and continue</b> below, I agree to Airbnb's{" "}
             <u css={{ fontWeight: 500, color: "#1B4CC4" }}>Terms of Service</u>,{" "}
             <u css={{ fontWeight: 500, color: "#1B4CC4" }}>

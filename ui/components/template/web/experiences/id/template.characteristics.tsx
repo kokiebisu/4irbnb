@@ -100,7 +100,7 @@ export const CharacteristicsTemplate: React.FC<{
                 <h3
                   css={{
                     paddingLeft: 4,
-                    color: "gray__2",
+                    color: "grey.700",
                     fontSize: 14,
                   }}
                 >
@@ -109,7 +109,7 @@ export const CharacteristicsTemplate: React.FC<{
                 <p
                   css={{
                     paddingLeft: 4,
-                    color: "gray__3",
+                    color: "grey.800",
                     fontSize: 14,
                   }}
                 >
@@ -118,7 +118,7 @@ export const CharacteristicsTemplate: React.FC<{
                 <span
                   css={{
                     fontWeight: 300,
-                    color: "gray__1",
+                    color: "grey.600",
                   }}
                 >
                   &nbsp;·&nbsp;
@@ -126,7 +126,7 @@ export const CharacteristicsTemplate: React.FC<{
                 <a
                   css={{
                     fontSize: 14,
-                    color: "gray__3",
+                    color: "grey.800",
                   }}
                   href=""
                 >
@@ -137,7 +137,7 @@ export const CharacteristicsTemplate: React.FC<{
                 <span
                   css={{
                     fontWeight: 300,
-                    color: "gray__1",
+                    color: "grey.600",
                   }}
                 >
                   &nbsp;·&nbsp;
@@ -146,7 +146,7 @@ export const CharacteristicsTemplate: React.FC<{
                   css={{
                     fontWeight: 300,
                     fontSize: 14,
-                    color: "gray__3",
+                    color: "grey.800",
                   }}
                   href=""
                 >
@@ -169,7 +169,7 @@ export const CharacteristicsTemplate: React.FC<{
           />
         </div>
       </div>
-      <div css={{ margin: "12px 0", borderTop: "1px solid white__2" }}>
+      <div css={{ margin: "12px 0", borderTop: "1px solid grey.300" }}>
         <div css={{ marginTop: 45 }}>
           <h3 css={{ fontSize: 22 }}>Online experience hosted by {host}</h3>
         </div>

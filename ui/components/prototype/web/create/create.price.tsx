@@ -36,7 +36,7 @@ export const PriceCreate: React.FC<{ setData?: any; data?: any }> = ({
                 Set up the same base price for each night
               </h2>
             </div>
-            <div css={{ padding: 3, fontSize: 9, bg: "white__2" }}>
+            <div css={{ padding: 3, fontSize: 9, bg: "grey.300" }}>
               <h3>RECOMMENDED</h3>
             </div>
           </div>
@@ -48,7 +48,7 @@ export const PriceCreate: React.FC<{ setData?: any; data?: any }> = ({
             </p>
           </div>
           <div>
-            <p css={{ fontSize: 12, color: "darkgreen__3" }}>
+            <p css={{ fontSize: 12, color: "cyan.800" }}>
               Learn what fees pay for
             </p>
           </div>
@@ -77,7 +77,7 @@ export const PriceCreate: React.FC<{ setData?: any; data?: any }> = ({
             />
           </div>
           <div css={{ margin: "8px 0" }}>
-            <h4 css={{ color: "darkgreen__3", fontSize: 16 }}>Tip: $21</h4>
+            <h4 css={{ color: "cyan.800", fontSize: 16 }}>Tip: $21</h4>
           </div>
         </div>
         <div>

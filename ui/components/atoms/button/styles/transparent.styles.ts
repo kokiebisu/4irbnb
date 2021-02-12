@@ -23,7 +23,7 @@ const theme = {
     },
     plain: {
       "&:hover": {
-        bg: "white__1",
+        bg: "grey.100",
       },
     },
   },

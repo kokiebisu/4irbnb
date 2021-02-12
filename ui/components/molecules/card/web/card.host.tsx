@@ -33,7 +33,7 @@ export const HostCard: React.FC<{
         ) : (
           <div
             css={{ borderRadius: 20, height: 434, width: 350 }}
-            sx={{ bg: "white__2" }}
+            sx={{ bg: "grey.300" }}
           />
         )}
       </div>
@@ -47,7 +47,7 @@ export const HostCard: React.FC<{
             letterSpacing: 0.4,
             fontSize: 15,
           }}
-          sx={{ color: "gray__4" }}
+          sx={{ color: "grey.900" }}
         >
           Hosts a {stayType} in {location}
         </h4>

@@ -32,7 +32,7 @@ const web = {
 const theme = {
   wrapper: {
     inverse: {
-      border: "2px solid white__2",
+      border: "2px solid grey.300",
       "&:hover": {
         boxShadow: "rgba(0, 0, 0, 0.18) 0px 2px 4px",
         transition: "0.3s all",
@@ -40,7 +40,7 @@ const theme = {
     },
     plain: {
       border: "2px solid",
-      borderColor: "white__2",
+      borderColor: "grey.300",
     },
   },
 };

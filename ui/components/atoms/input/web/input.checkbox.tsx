@@ -21,7 +21,7 @@ export const CheckboxInput: React.FC<{
             alignItems: "center",
             justifyContent: "center",
             border: "1px solid",
-            borderColor: "white__3",
+            borderColor: "grey.400",
             borderRadius: 4,
           }}
           sx={{ ...(checked ? { bg: "black" } : { bg: "white" }) }}
@@ -42,7 +42,7 @@ export const CheckboxInput: React.FC<{
           <h4>{title}</h4>
         </div>
         <div>
-          <h4 css={{ fontSize: 14, color: "gray__0" }}>{description}</h4>
+          <h4 css={{ fontSize: 14, color: "grey.500" }}>{description}</h4>
         </div>
       </div>
     </div>

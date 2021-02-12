@@ -66,7 +66,7 @@ export const SearchBar: React.FC<{
             padding: "5px 8px 5px 24px",
             borderRadius: "50px",
             ":hover": {
-              bg: "white__1",
+              bg: "grey.100",
               transition: "0.4s all",
             },
             ...(selected === "guests" && {
@@ -150,7 +150,7 @@ export const SearchBar: React.FC<{
             padding: "5px 8px 5px 24px",
             borderRadius: "50px",
             ":hover": {
-              backgroundColor: "white__1",
+              backgroundColor: "grey.100",
               transition: "0.4s background-color",
             },
             ...(selected === "checkin" && {
@@ -215,7 +215,7 @@ export const SearchBar: React.FC<{
 const Seperator: React.FC<{}> = () => {
   return (
     <div css={{ height: "100%", display: "flex", alignItems: "center" }}>
-      <div css={{ width: "100%", height: 25 }} sx={{ bg: "white__2" }}></div>
+      <div css={{ width: "100%", height: 25 }} sx={{ bg: "grey.300" }}></div>
     </div>
   );
 };
@@ -235,7 +235,7 @@ const Option: React.FC<{
         padding: "5px 24px",
         borderRadius: "50px",
         ":hover": {
-          backgroundColor: "white__1",
+          backgroundColor: "grey.100",
           transition: "0.4s background-color",
         },
         ...(selected === name && {

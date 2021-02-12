@@ -30,12 +30,12 @@ export const PrimaryButton: React.FC<{
 }) => {
   const renderBackgroundColor = () => {
     if (disable) {
-      return { bg: "white__3" };
+      return { bg: "grey.400" };
     }
     if (fill) {
       return { bg: fill };
     }
-    return { bg: "primary" };
+    return { bg: "red.500" };
   };
 
   const styles: { [type: string]: any } = {

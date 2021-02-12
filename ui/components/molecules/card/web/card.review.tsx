@@ -41,7 +41,7 @@ export const ReviewCard: React.FC<{
                 height: "100%",
                 borderRadius: 9999,
               }}
-              sx={{ bg: "white__2" }}
+              sx={{ bg: "grey.300" }}
             />
           )}
         </div>
@@ -54,10 +54,10 @@ export const ReviewCard: React.FC<{
           }}
         >
           <div css={{ display: "flex", flexDirection: "column" }}>
-            <p sx={{ color: "gray__3" }}>{user}</p>
+            <p sx={{ color: "grey.800" }}>{user}</p>
             <p
               css={{ fontSize: 14, fontWeight: 300 }}
-              sx={{ color: "gray__1" }}
+              sx={{ color: "grey.600" }}
             >
               {commentedDate}
             </p>

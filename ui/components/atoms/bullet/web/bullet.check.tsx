@@ -12,7 +12,7 @@ export const CheckBullet: React.FC<{ title?: string }> = ({
         <CheckPlain width={24} strokeWidth={2} stroke="green" />
       </div>
       <div>
-        <h4 sx={{ color: "gray__1" }} css={{ fontSize: 18 }}>
+        <h4 sx={{ color: "grey.600" }} css={{ fontSize: 18 }}>
           {title}
         </h4>
       </div>

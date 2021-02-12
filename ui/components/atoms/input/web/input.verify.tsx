@@ -19,7 +19,7 @@ export const VerifyInput: React.FC<{
       return {
         ":focus": {
           border: "1px solid",
-          borderColor: "darkgreen__3",
+          borderColor: "cyan.800",
           transition: "0.4s border-color",
         },
       };
@@ -44,7 +44,7 @@ export const VerifyInput: React.FC<{
     // if (value.length > 0 && !valid) {
     //   return animation["c--warning"];
     // }
-    return { color: "darkgreen__3 !important", transition: "0.4s all" };
+    return { color: "cyan.800 !important", transition: "0.4s all" };
   };
 
   return (
@@ -68,10 +68,10 @@ export const VerifyInput: React.FC<{
             position: "relative",
             fontWeight: 300,
             border: "1px solid",
-            borderColor: "white__2",
+            borderColor: "grey.300",
             borderRadius: 6,
             fontSize: 15,
-            color: "gray__2",
+            color: "grey.700",
             height: "100%",
             width: "100%",
             padding: 12,

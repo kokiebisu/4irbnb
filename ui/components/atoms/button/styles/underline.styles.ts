@@ -10,7 +10,7 @@ const theme = {
   },
   label: {
     unselected: {
-      color: "white__3",
+      color: "grey.400",
     },
   },
 };

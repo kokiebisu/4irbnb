@@ -11,7 +11,7 @@ const shared = {
     padding: "12px",
     borderRadius: "8px",
     "&:hover": {
-      backgroundColor: "white__1",
+      backgroundColor: "grey.100",
     },
   },
   language: {
@@ -23,7 +23,7 @@ const shared = {
   region: {
     text: {
       fontSize: "14px",
-      color: "gray__1",
+      color: "grey.600",
     },
   },
   ...condition,

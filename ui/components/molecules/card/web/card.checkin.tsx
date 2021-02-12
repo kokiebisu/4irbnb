@@ -30,7 +30,7 @@ export const CheckInCard: React.FC<{
           boxShadow: "rgba(0, 0, 0, 0.2) 0px 4px 8px",
         }}
         sx={{
-          border: "1px solid white__2",
+          border: "1px solid grey.300",
         }}
         // className={[
         //   card["display__checkin--wrapper"],
@@ -58,7 +58,7 @@ export const CheckInCard: React.FC<{
                 fontWeight: 500,
               }}
               sx={{
-                color: "gray__2",
+                color: "grey.700",
               }}
             >
               Add dates for prices
@@ -71,7 +71,7 @@ export const CheckInCard: React.FC<{
                 fontWeight: 500,
               }}
               sx={{
-                color: "gray__2",
+                color: "grey.700",
               }}
             >
               <div
@@ -98,7 +98,7 @@ export const CheckInCard: React.FC<{
                   fontWeight: 100,
                 }}
                 sx={{
-                  color: "white__3",
+                  color: "grey.400",
                 }}
               >
                 (248)
@@ -111,7 +111,7 @@ export const CheckInCard: React.FC<{
               marginTop: 12,
             }}
             sx={{
-              border: "1px solid white__2",
+              border: "1px solid grey.300",
             }}
           >
             <div css={{ height: 60, display: "flex", width: "100%" }}>
@@ -130,7 +130,7 @@ export const CheckInCard: React.FC<{
                       fontWeight: 700,
                     }}
                     sx={{
-                      color: "gray__3",
+                      color: "grey.800",
                     }}
                   >
                     CHECK-IN
@@ -161,7 +161,7 @@ export const CheckInCard: React.FC<{
                       fontSize: 10,
                       fontWeight: 700,
                     }}
-                    sx={{ color: "gray__3" }}
+                    sx={{ color: "grey.800" }}
                   >
                     CHECK-OUT
                   </label>
@@ -188,9 +188,9 @@ export const CheckInCard: React.FC<{
                   ? { borderRadius: 6 }
                   : {
                       borderTop: "1px solid transparent",
-                      borderBottom: "1px solid white__3",
-                      borderLeft: "1px solid white__3",
-                      borderRight: "1px solid white__3",
+                      borderBottom: "1px solid grey.400",
+                      borderLeft: "1px solid grey.400",
+                      borderRight: "1px solid grey.400",
                       borderBottomLeftRadius: 6,
                       borderBottomRightRadius: 6,
                       width: "100%",
@@ -199,7 +199,7 @@ export const CheckInCard: React.FC<{
               sx={{
                 bg: "transparent",
                 ...(selected.guests
-                  ? { border: "1px solid gray__3" }
+                  ? { border: "1px solid grey.800" }
                   : {
                       bg: "transparent",
                     }),
@@ -224,7 +224,7 @@ export const CheckInCard: React.FC<{
                         fontSize: 10,
                         fontWeight: 700,
                       }}
-                      sx={{ color: "gray__3" }}
+                      sx={{ color: "grey.800" }}
                     >
                       GUESTS
                     </label>
@@ -246,7 +246,7 @@ export const CheckInCard: React.FC<{
                 borderRadius: 5,
                 fontWeight: 300,
               }}
-              sx={{ bg: "primary", color: "white" }}
+              sx={{ bg: "red.500", color: "white" }}
             >
               Check availability
             </button>

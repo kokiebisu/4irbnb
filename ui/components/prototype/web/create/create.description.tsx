@@ -10,12 +10,12 @@ export const DescriptionCreate: React.FC<{ data?: any; setData?: any }> = ({
   return (
     <div>
       <div css={{ marginBottom: 12 }}>
-        <h3 css={{ fontSize: 28, color: "gray__2" }}>
+        <h3 css={{ fontSize: 28, color: "grey.700" }}>
           Describe your place to guests
         </h3>
       </div>
       <div css={{ marginBottom: 45 }}>
-        <p css={{ fontSize: 14, color: "gray__2" }}>
+        <p css={{ fontSize: 14, color: "grey.700" }}>
           Mention the best features of your space, any special amenities like
           fast wifi or parking, and what you love about the neighbourhood.
         </p>

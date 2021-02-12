@@ -95,7 +95,7 @@ export const PhotoInput: React.FC<{
                     </div>
                   </div>
                   <div css={{ marginTop: 8 }}>
-                    <h4 css={{ fontSize: 15, color: "gray__0" }}>
+                    <h4 css={{ fontSize: 15, color: "grey.500" }}>
                       or drag them in
                     </h4>
                   </div>

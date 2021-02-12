@@ -35,7 +35,7 @@ export const HowCard: React.FC<{ how?: string }> = ({ how = "qualified" }) => {
   return (
     <div
       style={{ minHeight: 300, height: "100%", padding: 22, borderRadius: 6 }}
-      sx={{ border: "1px solid white__2" }}
+      sx={{ border: "1px solid grey.300" }}
     >
       <div
         css={{
@@ -63,7 +63,7 @@ export const HowCard: React.FC<{ how?: string }> = ({ how = "qualified" }) => {
       </div>
       {types[how].more && (
         <div>
-          <h3 css={{ fontSize: 12 }} sx={{ color: "darkgreen__3" }}>
+          <h3 css={{ fontSize: 12 }} sx={{ color: "cyan.800" }}>
             <u>{types[how].more}</u>
           </h3>
         </div>

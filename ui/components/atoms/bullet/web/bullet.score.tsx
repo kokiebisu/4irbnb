@@ -27,10 +27,10 @@ export const ScoreBullet: React.FC<{
         width: "50%",
       }}
     >
-      <p css={{ fontWeight: 300 }}>{category}</p>
-      <div css={{ display: "flex", alignItems: "center", width: "100%" }}>
+      <p css={{ fontWeight: 300, marginRight: 12 }}>{category}</p>
+      <div css={{ display: "flex", alignItems: "flex-end", width: "100%" }}>
         <div>
-          <div css={{ bg: "white__3", position: "relative", height: 4 }}>
+          <div css={{ bg: "grey.400", position: "relative", height: 4 }}>
             <span
               css={{
                 display: "absolute",

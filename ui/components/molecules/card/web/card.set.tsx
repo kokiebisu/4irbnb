@@ -7,7 +7,7 @@ export const SetCard: React.FC<{}> = () => {
   return (
     <div
       css={{ borderRadius: 15 }}
-      sx={{ border: "1px solid", borderColor: "white__2" }}
+      sx={{ border: "1px solid", borderColor: "grey.300" }}
     >
       <div
         css={{
@@ -30,7 +30,7 @@ export const SetCard: React.FC<{}> = () => {
               <h3 css={{ fontSize: 16 }}>You're all set!</h3>
             </div>
             <div>
-              <p css={{ fontSize: 14 }} sx={{ color: "gray__1" }}>
+              <p css={{ fontSize: 14 }} sx={{ color: "grey.600" }}>
                 This helps us keep your account secure
               </p>
             </div>

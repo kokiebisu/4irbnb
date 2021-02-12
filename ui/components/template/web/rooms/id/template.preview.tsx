@@ -41,7 +41,7 @@ export const PreviewTemplate: React.FC<{
         <div>
           <h3
             css={{
-              color: "gray__4",
+              color: "grey.900",
               fontSize: 28,
               fontWeight: 500,
             }}
@@ -71,7 +71,7 @@ export const PreviewTemplate: React.FC<{
             <span
               css={{
                 paddingLeft: 4,
-                color: "gray__2",
+                color: "grey.700",
                 fontSize: 14,
                 fontWeight: 700,
               }}
@@ -81,7 +81,7 @@ export const PreviewTemplate: React.FC<{
             <span
               css={{
                 paddingLeft: 4,
-                color: "gray__1",
+                color: "grey.600",
                 fontSize: 14,
                 fontWeight: 300,
               }}
@@ -92,7 +92,7 @@ export const PreviewTemplate: React.FC<{
               <div>
                 <span
                   css={{
-                    color: "gray__1",
+                    color: "grey.600",
                   }}
                 >
                   &nbsp;·&nbsp;
@@ -103,7 +103,7 @@ export const PreviewTemplate: React.FC<{
                 <p
                   css={{
                     paddingLeft: 3,
-                    color: "gray__1",
+                    color: "grey.600",
                     fontSize: 14,
                     fontWeight: 300,
                   }}
@@ -115,7 +115,7 @@ export const PreviewTemplate: React.FC<{
             <span
               css={{
                 fontWeight: 300,
-                color: "gray__1",
+                color: "grey.600",
               }}
             >
               &nbsp;·&nbsp;
@@ -123,7 +123,7 @@ export const PreviewTemplate: React.FC<{
             <a
               css={{
                 fontSize: 14,
-                color: "gray__1",
+                color: "grey.600",
               }}
               href=""
             >
@@ -160,7 +160,7 @@ export const PreviewTemplate: React.FC<{
                   css={{
                     paddingLeft: 10,
                     fontSize: 14,
-                    color: "gray__2",
+                    color: "grey.700",
                   }}
                 >
                   <u>Share</u>
@@ -180,7 +180,7 @@ export const PreviewTemplate: React.FC<{
                   css={{
                     paddingLeft: 10,
                     fontSize: 14,
-                    color: "gray__2",
+                    color: "grey.700",
                   }}
                 >
                   Save

@@ -32,7 +32,7 @@ export const AuthModal: React.FC<{
         }}
         sx={{
           borderBottom: "1px solid",
-          borderColor: "white__2",
+          borderColor: "grey.300",
         }}
       >
         <div

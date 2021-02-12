@@ -2,7 +2,7 @@ const condition = {
   inverse: {
     wrapper: {
       border: "1px solid",
-      borderColor: "gray__1",
+      borderColor: "grey.600",
       "&:hover": {
         border: "1px solid",
         borderColor: "black",
@@ -13,7 +13,7 @@ const condition = {
     wrapper: {
       border: "1px solid",
       borderColor: "transparent",
-      bg: "white__1",
+      bg: "grey.100",
     },
   },
 };

@@ -60,7 +60,7 @@ export const AuthPrototype: React.FC<{
           <div>
             <p
               css={{ fontWeight: 100, fontSize: 12 }}
-              sx={{ color: "gray__0" }}
+              sx={{ color: "grey.500" }}
             >
               We’ll call or text you to confirm your number. Standard message
               and data rates apply.
@@ -87,7 +87,7 @@ export const AuthPrototype: React.FC<{
             }}
             sx={{
               bg: "white",
-              color: "gray__0",
+              color: "grey.500",
             }}
           >
             or
@@ -123,7 +123,7 @@ export const AuthPrototype: React.FC<{
                 fontWeight: 300,
               }}
               sx={{
-                color: "gray__1",
+                color: "grey.600",
               }}
             >
               {title === "Log in"

@@ -11,11 +11,11 @@ export const QuestionBullet: React.FC<{
       css={{
         padding: "16px 0",
         borderBottom: "1px solid",
-        borderColor: "white__1",
+        borderColor: "grey.100",
       }}
     >
       <div>
-        <h4 css={{ fontSize: 17, color: "darkgreen__3" }}>{title}</h4>
+        <h4 css={{ fontSize: 17, color: "cyan.800" }}>{title}</h4>
       </div>
       {/* <div>{answer}</div> */}
     </div>

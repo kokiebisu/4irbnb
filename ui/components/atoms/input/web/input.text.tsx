@@ -32,7 +32,7 @@ export const TextInput: React.FC<{
         ...renderShape(direction),
         ...(active
           ? { border: "2px solid", borderColor: "black" }
-          : { border: "1px solid", borderColor: "white__3" }),
+          : { border: "1px solid", borderColor: "grey.400" }),
       }}
     >
       <div

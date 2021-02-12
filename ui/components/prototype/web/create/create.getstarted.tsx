@@ -37,15 +37,15 @@ export const GetStartedCreate: React.FC<{
     <div>
       <div>
         <div css={{ margin: "24px 0" }}>
-          <h4 css={{ fontSize: 28, color: "gray__2" }}>
+          <h4 css={{ fontSize: 28, color: "grey.700" }}>
             Hi, Kenichi! Let's get started listing your space.
           </h4>
         </div>
         <div css={{ margin: "8px 0" }}>
-          <h3 css={{ fontSize: 12, color: "gray__1" }}>STEP 1</h3>
+          <h3 css={{ fontSize: 12, color: "grey.600" }}>STEP 1</h3>
         </div>
         <div css={{ marginBottom: 16 }}>
-          <h4 css={{ fontSize: 22, color: "gray__2" }}>
+          <h4 css={{ fontSize: 22, color: "grey.700" }}>
             What kind of place do you have?
           </h4>
         </div>

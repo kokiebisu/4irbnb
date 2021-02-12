@@ -57,7 +57,7 @@ export const OnlineCard: React.FC<{
         ) : (
           <div
             css={{ width: "100%", borderRadius: 20, paddingTop: "100%" }}
-            sx={{ bg: "white__2" }}
+            sx={{ bg: "grey.300" }}
           />
         )}
       </div>
@@ -71,7 +71,7 @@ export const OnlineCard: React.FC<{
           borderBottomRightRadius: 15,
           boxShadow: "rgba(0, 0, 0, 0.2) 0px 4px 8px",
         }}
-        sx={{ ...(inverse ? { bg: "gray__4" } : { bg: "white" }) }}
+        sx={{ ...(inverse ? { bg: "grey.900" } : { bg: "white" }) }}
       >
         <div
           css={{

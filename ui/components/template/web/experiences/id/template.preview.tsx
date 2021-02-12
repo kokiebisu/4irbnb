@@ -66,7 +66,7 @@ export const PreviewTemplate: React.FC<{
                 css={{
                   paddingLeft: 10,
                   fontSize: 14,
-                  color: "gray__2",
+                  color: "grey.700",
                 }}
               >
                 <u>Share</u>
@@ -86,7 +86,7 @@ export const PreviewTemplate: React.FC<{
                 css={{
                   paddingLeft: 10,
                   fontSize: 14,
-                  color: "gray__2",
+                  color: "grey.700",
                 }}
               >
                 Save

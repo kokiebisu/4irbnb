@@ -24,12 +24,12 @@ export const AmenitiesCreate: React.FC<{
   return (
     <div>
       <div css={{ marginBottom: 12 }}>
-        <h3 css={{ fontSize: 28, color: "gray__2" }}>
+        <h3 css={{ fontSize: 28, color: "grey.700" }}>
           What amenities do you offer?
         </h3>
       </div>
       <div css={{ marginBottom: 45 }}>
-        <p css={{ fontSize: 16, color: "gray__2" }}>
+        <p css={{ fontSize: 16, color: "grey.700" }}>
           These are just the amenities guests usually expect, but you can add
           even more after publishing.
         </p>
@@ -105,7 +105,7 @@ export const AmenitiesCreate: React.FC<{
       </div>
       <div css={{ marginBottom: 32 }}>
         <div css={{ marginBottom: 45 }}>
-          <h3 css={{ fontSize: 28, color: "gray__1" }}>Safety amenities</h3>
+          <h3 css={{ fontSize: 28, color: "grey.600" }}>Safety amenities</h3>
         </div>
         {[
           {

@@ -29,7 +29,7 @@ export const GuestsInput: React.FC<{
           borderBottom: "1px solid",
           borderLeft: "1px solid",
           borderRight: "1px solid",
-          borderColor: "white__3",
+          borderColor: "grey.400",
           borderBottomLeftRadius: 10,
           borderBottomRightRadius: 10,
         };
@@ -38,14 +38,14 @@ export const GuestsInput: React.FC<{
           borderTop: "1px solid",
           borderLeft: "1px solid",
           borderRight: "1px solid",
-          borderColor: "white__3",
+          borderColor: "grey.400",
           borderTopLeftRadius: 10,
           borderTopRightRadius: 10,
         };
       default:
         return {
           border: "1px solid",
-          borderColor: "white__3",
+          borderColor: "grey.400",
           borderRadius: 10,
         };
     }

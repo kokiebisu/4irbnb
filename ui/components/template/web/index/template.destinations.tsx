@@ -43,7 +43,7 @@ export const DestinationsTemplate: React.FC<{
       </div>
       <div
         css={{
-          bg: "white__2",
+          bg: "grey.300",
           width: "100%",
           height: 1,
         }}

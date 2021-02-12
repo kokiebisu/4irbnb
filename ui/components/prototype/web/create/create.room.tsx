@@ -16,7 +16,7 @@ export const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
   return (
     <div>
       <div css={{ marginBottom: 45 }}>
-        <h3 css={{ fontSize: 28, color: "gray__2" }}>
+        <h3 css={{ fontSize: 28, color: "grey.700" }}>
           What kind of place are you listing?
         </h3>
       </div>
@@ -48,7 +48,9 @@ export const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
       {data?.property && data?.description && (
         <div>
           <div css={{ marginTop: 16 }}>
-            <h4 css={{ fontSize: 14, color: "gray__0" }}>{data.description}</h4>
+            <h4 css={{ fontSize: 14, color: "grey.500" }}>
+              {data.description}
+            </h4>
           </div>
           <div css={{ margin: "32px 0" }}>
             <Layout variant="input" title="What will guests have?">

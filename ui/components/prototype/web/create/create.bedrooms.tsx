@@ -11,12 +11,12 @@ export const BedroomsCreate: React.FC<{
   return (
     <div>
       <div css={{ marginBottom: 45 }}>
-        <h3 css={{ fontSize: 28, color: "gray__2" }}>
+        <h3 css={{ fontSize: 28, color: "grey.700" }}>
           How many guests can your place accommodate?
         </h3>
       </div>
       <div css={{ marginBottom: 45 }}>
-        <p css={{ fontSize: 14, color: "gray__2" }}>
+        <p css={{ fontSize: 14, color: "grey.700" }}>
           Check that you have enough beds to accomodate all your guests
           comfortably.
         </p>

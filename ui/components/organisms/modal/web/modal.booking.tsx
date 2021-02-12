@@ -65,7 +65,7 @@ export const BookingModal: React.FC<{
                 fontWeight: 100,
               }}
               sx={{
-                color: "gray__1",
+                color: "grey.600",
               }}
             >
               Show all prices

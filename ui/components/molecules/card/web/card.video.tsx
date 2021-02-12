@@ -93,15 +93,15 @@ export const VideoCard: React.FC<{
           <p
             css={{ fontWeight: 100, fontSize: 13 }}
             sx={{
-              color: "gray__0",
+              color: "grey.500",
             }}
           >{`(${number_of_reviews})`}</p>
         </div>
         <div>
-          <p sx={{ color: "gray__0" }}>&nbsp; · &nbsp; </p>
+          <p sx={{ color: "grey.500" }}>&nbsp; · &nbsp; </p>
         </div>
         <div>
-          <p css={{ fontSize: 13, fontWeight: 100 }} sx={{ color: "gray__0" }}>
+          <p css={{ fontSize: 13, fontWeight: 100 }} sx={{ color: "grey.500" }}>
             {country}
           </p>
         </div>
@@ -114,7 +114,7 @@ export const VideoCard: React.FC<{
             fontSize: 15,
           }}
           sx={{
-            color: "gray__4",
+            color: "grey.900",
           }}
         >
           {title}
