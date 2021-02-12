@@ -17,7 +17,7 @@ export const SetCard: React.FC<{}> = () => {
           height: 8,
         }}
         sx={{
-          bg: "green__1",
+          bg: "green.800",
         }}
       />
       <div css={{ padding: 15 }}>
