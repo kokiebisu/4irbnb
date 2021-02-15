@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -13,25 +17,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": "./",
-    "paths": {
-      "@template": ["../components/template"],
-      "@template/*": ["../components/template/*"],
-      "@styles/*": ["styles/*"],
-      "@helper/*": ["helper/*"],
-      "@hooks/*": ["hooks/*"],
-      "@context/*": ["context/*"],
-      "@config": ["config/index.ts"],
-      "@api": ["api"],
-      "@api/*": ["api/*"]
-    }
+    "baseUrl": "./"
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".storybook/**/*",
-    "../components/atoms/button/web/button.border.tsx"
+    ".storybook/**/*"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -27,6 +27,7 @@
     "compile:services": "lerna run compile --scope=@airbnb/{auth,stays}",
     "compile:ui": "lerna run compile --scope=@airbnb/{theme,components}",
     "compile:web": "lerna run build --scope=@airbnb/web",
+    "compile:components": "lerna run build --scope=@airbnb/{atoms,atoms-button}",
     "version:upgrade": "lerna version --conventional-commits --yes",
     "build:storybook": "lerna run compile --scope=@airbnb/content && lerna run build-storybook --scope=@airbnb/components"
   },
@@ -35,7 +36,16 @@
   },
   "workspaces": [
     "packages/*",
-    "ui/*",
-    "services/*"
-  ]
+    "ui/mobile",
+    "ui/theme",
+    "ui/web",
+    "ui/design",
+    "ui/design/components/*",
+    "services/*",
+    "components/*"
+  ],
+  "dependencies": {
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
+  }
 }

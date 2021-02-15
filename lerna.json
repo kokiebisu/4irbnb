@@ -1,10 +1,15 @@
 {
   "packages": [
     "packages/*",
-    "ui/*",
+    "ui/mobile",
+    "ui/theme",
+    "ui/web",
+    "ui/design",
+    "ui/design/components/*",
     "services/*"
   ],
-  "version": "1.0.0",
+  "version": "independent",
   "npmClient": "yarn",
-  "useWorkspaces": true
+  "useWorkspaces": true,
+  "stream": true
 }
