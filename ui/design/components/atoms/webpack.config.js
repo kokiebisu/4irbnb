@@ -9,6 +9,7 @@ module.exports = {
     library: "@nextbnb/atoms",
     libraryTarget: "umd",
     globalObject: "this",
+    publicPath: "",
   },
   module: {
     rules: [
