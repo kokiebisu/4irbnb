@@ -4,7 +4,7 @@ module.exports = {
   mode: "production",
   entry: "./lib/index.tsx",
   output: {
-    filename: "index.js",
+    filename: "bundle.js",
     path: path.join(__dirname, "dist"),
     library: "@nextbnb/atoms",
     libraryTarget: "umd",

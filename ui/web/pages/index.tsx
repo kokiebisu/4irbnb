@@ -1,4 +1,4 @@
-import { Button } from "@nextbnb/atoms";
+import { Button, $Button } from "@nextbnb/atoms";
 
 const Index = () => {
   return (
