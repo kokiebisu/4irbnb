@@ -3,6 +3,7 @@ const path = require("path");
 module.exports = {
   mode: "production",
   entry: "./lib/index.tsx",
+  target: "node",
   output: {
     filename: "index.js",
     path: path.join(__dirname, "dist"),
@@ -40,7 +41,7 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"],
+    extensions: [".tsx", ".ts", ".js", ".jsx"],
     aliasFields: ["module"],
   },
   externals: {

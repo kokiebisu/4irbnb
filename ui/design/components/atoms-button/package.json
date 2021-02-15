@@ -5,8 +5,8 @@
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
   "homepage": "https://github.com/kokiebisu/airbnb/tree/master/packages/atoms-button#readme",
   "license": "ISC",
-  "module": "dist/index.js",
-  "main": "lib/index.tsx",
+  "module": "dist/bundle.js",
+  "main": "dist/bundle.js",
   "src": "lib/index.tsx",
   "directories": {
     "lib": "lib",

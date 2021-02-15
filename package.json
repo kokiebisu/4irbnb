@@ -27,7 +27,7 @@
     "compile:services": "lerna run compile --scope=@nextbnb/{auth,stays}",
     "compile:ui": "lerna run compile --scope=@nextbnb/{theme,components}",
     "compile:web": "lerna run build --scope=@nextbnb/web",
-    "compile:components": "lerna run build --scope=@nextbnb/{atoms,atoms-button}",
+    "compile:components": "lerna run build --scope=@nextbnb/atoms-button",
     "version:upgrade": "lerna version --conventional-commits --yes",
     "build:storybook": "lerna run compile --scope=@nextbnb/content && lerna run build-storybook --scope=@nextbnb/components"
   },
