@@ -2,8 +2,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { bar } from "../styles/button.bar";
-import { MenuBarLogo } from "@nextbnb/design/public/svg/logo";
-import { Login, Saved } from "@nextbnb/design/public/svg/regular";
+import { MenuBarLogo } from "@nextbnb/design/assets/svg/logo";
+import { Login, Saved } from "@nextbnb/design/assets/svg/regular";
 
 const { web, theme } = bar;
 

@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { ChevronLeft } from "@nextbnb/design/public/svg/regular";
+import { ChevronLeft } from "@nextbnb/design/assets/svg/regular";
 import { back } from "../styles/button.back";
 
 const { web, theme } = back;

@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Flag } from "@nextbnb/design/public/svg/original";
+import { Flag } from "@nextbnb/design/assets/svg/original";
 import { report } from "../styles/button.report";
 
 const { web } = report;

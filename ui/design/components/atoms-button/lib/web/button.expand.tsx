@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { ChevronRight } from "@nextbnb/design/public/svg/regular";
+import { ChevronRight } from "@nextbnb/design/assets/svg/regular";
 import { expand } from "../styles/button.expand";
 
 const { web } = expand;
