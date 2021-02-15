@@ -9,6 +9,7 @@ module.exports = {
     library: "@nextbnb/atoms-button",
     libraryTarget: "umd",
     globalObject: "this",
+    publicPath: "",
   },
   module: {
     rules: [
@@ -19,8 +20,8 @@ module.exports = {
             loader: "file-loader",
             options: {
               name: "[name].[ext]",
-              publicPath: "",
-              outputPath: "/public/fonts/",
+              publicPath: "/public/fonts",
+              outputPath: "/public/fonts",
             },
           },
         ],
