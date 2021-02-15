@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/theme",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Maintains the themes used across mobile and web",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
   "homepage": "https://github.com/kokiebisu/airbnb/tree/master/packages/design#readme",
