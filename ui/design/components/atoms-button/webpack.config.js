@@ -15,20 +15,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              publicPath: "/public/fonts",
-              outputPath: "/public/fonts",
-              esModule: false,
-            },
-          },
-        ],
-      },
-      {
         test: /\.(ts|tsx)$/i,
         exclude: /node_modules/,
         use: [
@@ -47,7 +33,22 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ["style-loader", "css-loader", "resolve-url-loader"],
+        use: [
+          "style-loader",
+          { loader: "css-loader", options: { importLoaders: 1 } },
+        ],
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "static/media/[name].[hash:8].[ext]",
+              esModule: false,
+            },
+          },
+        ],
       },
     ],
   },
