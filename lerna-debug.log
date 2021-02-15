@@ -1,13 +1,129 @@
 0 silly argv {
-0 silly argv   _: [ 'add' ],
-0 silly argv   scope: '@airbnb/stays',
-0 silly argv   globs: [],
+0 silly argv   _: [ 'publish' ],
+0 silly argv   composed: 'publish',
 0 silly argv   lernaVersion: '3.22.1',
-0 silly argv   '$0': '/usr/local/bin/lerna',
-0 silly argv   pkg: '@airbnb/middleware'
+0 silly argv   '$0': '/usr/local/bin/lerna'
 0 silly argv }
 1 notice cli v3.22.1
 2 verbose rootPath /Users/ken/Desktop/airbnb
 3 info versioning independent
-4 error Error: 404 Not Found - GET https://registry.npmjs.org/@airbnb%2fmiddleware - Not found
-4 error     at /Users/ken/Desktop/airbnb/node_modules/@evocateur/npm-registry-fetch/check-response.js:104:15
+4 verbose session e5b363e80594effe
+5 verbose user-agent lerna/3.22.1/node@v15.4.0+x64 (darwin)
+6 silly argv { _: [ 'publish' ], composed: 'publish', lernaVersion: '3.22.1' }
+7 verbose rootPath /Users/ken/Desktop/airbnb
+8 silly isAnythingCommitted
+9 verbose isAnythingCommitted 1
+10 silly currentBranch
+11 verbose currentBranch fix
+12 silly remoteBranchExists
+13 silly isBehindUpstream
+14 silly isBehindUpstream fix is behind origin/fix by 0 commit(s) and ahead by 1
+15 silly hasTags
+16 verbose hasTags true
+17 silly git-describe.sync "@nextbnb/atoms-button@2.0.4-1-ged96e88b" => {"lastTagName":"@nextbnb/atoms-button@2.0.4","lastVersion":"2.0.4","refCount":"1","sha":"ed96e88b","isDirty":false}
+18 info Looking for changed packages since @nextbnb/atoms-button@2.0.4
+19 silly checking diff packages/content
+20 silly no diff found in @nextbnb/content
+21 silly checking diff packages/error
+22 silly no diff found in @nextbnb/error
+23 silly checking diff packages/middleware
+24 silly no diff found in @nextbnb/middleware
+25 silly checking diff services/auth
+26 silly no diff found in @nextbnb/auth
+27 silly checking diff services/stays
+28 silly no diff found in @nextbnb/stays
+29 silly checking diff ui/design
+30 silly found diff in ui/design/components/atoms-button/webpack.config.js
+31 verbose filtered diff [ 'ui/design/components/atoms-button/webpack.config.js' ]
+32 silly checking diff ui/design/components/atoms-button
+33 silly found diff in ui/design/components/atoms-button/webpack.config.js
+34 verbose filtered diff [ 'ui/design/components/atoms-button/webpack.config.js' ]
+35 silly checking diff ui/design/components/atoms
+36 silly no diff found in @nextbnb/atoms
+37 silly checking diff ui/mobile
+38 silly no diff found in @nextbnb/mobile
+39 silly checking diff ui/theme
+40 silly no diff found in @nextbnb/theme
+41 silly checking diff ui/web
+42 silly no diff found in @nextbnb/web
+43 verbose updated @nextbnb/design
+44 verbose updated @nextbnb/atoms-button
+45 verbose git-describe undefined => "@nextbnb/atoms-button@2.0.4-1-ged96e88b"
+46 silly git-describe parsed => {"lastTagName":"@nextbnb/atoms-button@2.0.4","lastVersion":"2.0.4","refCount":"1","sha":"ed96e88b","isDirty":false}
+47 info execute Skipping releases
+48 silly lifecycle No script for "preversion" in "nextbnb", continuing
+49 silly lifecycle No script for "preversion" in "@nextbnb/design", continuing
+50 silly lifecycle No script for "preversion" in "@nextbnb/atoms-button", continuing
+51 silly lifecycle No script for "version" in "@nextbnb/atoms-button", continuing
+52 silly lifecycle No script for "version" in "@nextbnb/design", continuing
+53 silly lifecycle No script for "version" in "nextbnb", continuing
+54 silly gitAdd [
+54 silly gitAdd   'ui/design/components/atoms-button/package.json',
+54 silly gitAdd   'ui/design/package.json'
+54 silly gitAdd ]
+55 silly gitCommit Publish
+55 silly gitCommit
+55 silly gitCommit  - @nextbnb/design@1.0.12
+55 silly gitCommit  - @nextbnb/atoms-button@2.0.5
+56 verbose git [
+56 verbose git   'commit',
+56 verbose git   '-F',
+56 verbose git   '/private/var/folders/b6/g83mw8h9531btnbcmd3s7dh80000gn/T/5df28733-1826-4fa5-ae68-cb91639bd0fc/lerna-commit.txt'
+56 verbose git ]
+57 silly gitTag @nextbnb/design@1.0.12
+58 verbose git [ 'tag', '@nextbnb/design@1.0.12', '-m', '@nextbnb/design@1.0.12' ]
+59 silly gitTag @nextbnb/atoms-button@2.0.5
+60 verbose git [
+60 verbose git   'tag',
+60 verbose git   '@nextbnb/atoms-button@2.0.5',
+60 verbose git   '-m',
+60 verbose git   '@nextbnb/atoms-button@2.0.5'
+60 verbose git ]
+61 silly lifecycle No script for "postversion" in "@nextbnb/design", continuing
+62 silly lifecycle No script for "postversion" in "@nextbnb/atoms-button", continuing
+63 silly lifecycle No script for "postversion" in "nextbnb", continuing
+64 info git Pushing tags...
+65 silly gitPush origin fix
+66 info publish Publishing packages to npm...
+67 info Verifying npm credentials
+68 verbose Retrieving npm user profile
+69 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 401ms
+70 silly npm profile get received {"tfa":false,"name":"kokoaj","email":"a01056715@gmail.com","email_verified":true,"created":"2020-11-26T00:02:39.462Z","updated":"2021-02-13T23:57:56.573Z","cidr_whitelist":null}
+71 silly get npm username received {"username":"kokoaj","tfa":false,"name":"kokoaj","email":"a01056715@gmail.com","email_verified":true,"created":"2020-11-26T00:02:39.462Z","updated":"2021-02-13T23:57:56.573Z","cidr_whitelist":null}
+72 silly verifyNpmPackageAccess
+73 http fetch GET 200 https://registry.npmjs.org/-/org/kokoaj/package?format=cli 119ms
+74 info Checking two-factor auth mode
+75 verbose Retrieving npm user profile
+76 http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 131ms
+77 silly npm profile get received {"tfa":false,"name":"kokoaj","email":"a01056715@gmail.com","email_verified":true,"created":"2020-11-26T00:02:39.462Z","updated":"2021-02-13T23:57:56.573Z","cidr_whitelist":null}
+78 silly 2FA false
+79 warn ENOLICENSE Packages @nextbnb/design and @nextbnb/atoms-button are missing a license.
+79 warn ENOLICENSE One way to fix this is to add a LICENSE.md file to the root of this repository.
+79 warn ENOLICENSE See https://choosealicense.com for additional guidance.
+80 silly getCurrentSHA
+81 verbose getCurrentSHA e5d56efe3cac56ed1c41ebe65e53542f6a8fb402
+82 silly lifecycle No script for "prepublish" in "nextbnb", continuing
+83 silly lifecycle No script for "prepare" in "nextbnb", continuing
+84 silly lifecycle No script for "prepublishOnly" in "nextbnb", continuing
+85 silly lifecycle No script for "prepack" in "nextbnb", continuing
+86 verbose pack-directory ../..
+87 verbose pack-directory
+88 silly lifecycle No script for "prepublish" in "@nextbnb/design", continuing
+89 silly lifecycle No script for "prepublish" in "@nextbnb/atoms-button", continuing
+90 silly lifecycle No script for "prepare" in "@nextbnb/design", continuing
+91 silly lifecycle No script for "prepare" in "@nextbnb/atoms-button", continuing
+92 silly lifecycle No script for "prepublishOnly" in "@nextbnb/design", continuing
+93 silly lifecycle No script for "prepublishOnly" in "@nextbnb/atoms-button", continuing
+94 silly lifecycle No script for "prepack" in "@nextbnb/design", continuing
+95 silly lifecycle No script for "prepack" in "@nextbnb/atoms-button", continuing
+96 error ZlibError: zlib: invalid stored block lengths
+96 error     at Unzip.write (/Users/ken/Desktop/airbnb/node_modules/lerna/node_modules/minizlib/index.js:147:22)
+96 error     at Object.write (/Users/ken/Desktop/airbnb/node_modules/lerna/node_modules/tar/lib/parse.js:305:58)
+96 error     at Yallist.<anonymous> (/Users/ken/Desktop/airbnb/node_modules/lerna/node_modules/minipass/index.js:374:18)
+96 error     at Yallist.forEach (/Users/ken/Desktop/airbnb/node_modules/lerna/node_modules/yallist/yallist.js:156:8)
+96 error     at ReadStream.emit (/Users/ken/Desktop/airbnb/node_modules/lerna/node_modules/minipass/index.js:373:20)
+96 error     at ReadStream.emit (/Users/ken/Desktop/airbnb/node_modules/lerna/node_modules/fs-minipass/index.js:154:22)
+96 error     at ReadStream.write (/Users/ken/Desktop/airbnb/node_modules/lerna/node_modules/minipass/index.js:163:17)
+96 error     at ReadStream.[_handleChunk] (/Users/ken/Desktop/airbnb/node_modules/lerna/node_modules/fs-minipass/index.js:131:19)
+96 error     at ReadStream.[_onread] (/Users/ken/Desktop/airbnb/node_modules/lerna/node_modules/fs-minipass/index.js:109:32)
+96 error     at /Users/ken/Desktop/airbnb/node_modules/lerna/node_modules/fs-minipass/index.js:101:22
