@@ -1,3 +1,1 @@
-import { Button, ButtonProps, $Button } from "@nextbnb/atoms-button";
-
-export { Button, ButtonProps, $Button };
+export { Button, ButtonProps, $Button } from "@nextbnb/atoms-button";
