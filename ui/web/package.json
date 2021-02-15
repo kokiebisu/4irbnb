@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/web",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "./.next/server/pages/index.js",
   "keywords": [],
