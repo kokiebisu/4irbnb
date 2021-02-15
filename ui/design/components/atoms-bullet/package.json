@@ -5,20 +5,24 @@
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
   "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/atoms-bullet#readme",
   "license": "ISC",
-  "main": "lib/index.tsx",
+  "module": "./dist/bundle.js",
+  "main": "./dist/bundle.js",
+  "src": "./lib/index.tsx",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "lib",
+    "dist"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kokiebisu/airbnb.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "clean": "rm -rf dist",
+    "build": "yarn clean && NODE_ENV=production webpack --config ./webpack.config.js"
   },
   "bugs": {
     "url": "https://github.com/kokiebisu/airbnb/issues"

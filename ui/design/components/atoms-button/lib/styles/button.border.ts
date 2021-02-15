@@ -9,6 +9,9 @@ const shared = {
 
 const web = {
   wrapper: { ...shared.wrapper },
+  label: {
+    text: { ...shared.label.text },
+  },
 };
 
 const theme = {};
