@@ -1,6 +1,8 @@
 import "@nextbnb/design/assets/styles/global.css";
 import React from "react";
 import { motion } from "framer-motion";
+import { ThemeProvider } from "theme-ui";
+import { theme } from "@nextbnb/theme";
 
 import { AuthButton } from "./web/button.auth";
 import { BackButton } from "./web/button.back";
@@ -111,21 +113,23 @@ export const Button: React.FC<ButtonProps> = ({
     [$Button.VIDEO]: <VideoButton />,
   };
   return (
-    <motion.button
-      transition={{ duration: 0.1, ease: "easeInOut" }}
-      whileTap={{ scale: disable || !animate ? 1 : 0.995 }}
-      whileHover={{ scale: disable || !animate ? 1 : 1.005 }}
-      data-testid={`${variant}-button`}
-      css={
-        block
-          ? { display: "block", width: "100%" }
-          : { display: "inline-block" }
-      }
-      onClick={!disable ? onClick : undefined}
-      disabled={disable}
-      style={{ cursor: disable ? "default" : "pointer", ...extendsTo }}
-    >
-      {variant ? variants[variant] : children}
-    </motion.button>
+    <ThemeProvider theme={theme}>
+      <motion.button
+        transition={{ duration: 0.1, ease: "easeInOut" }}
+        whileTap={{ scale: disable || !animate ? 1 : 0.995 }}
+        whileHover={{ scale: disable || !animate ? 1 : 1.005 }}
+        data-testid={`${variant}-button`}
+        css={
+          block
+            ? { display: "block", width: "100%" }
+            : { display: "inline-block" }
+        }
+        onClick={!disable ? onClick : undefined}
+        disabled={disable}
+        style={{ cursor: disable ? "default" : "pointer", ...extendsTo }}
+      >
+        {variant ? variants[variant] : children}
+      </motion.button>
+    </ThemeProvider>
   );
 };
