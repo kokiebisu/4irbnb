@@ -4,7 +4,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   mode: "production",
   entry: "./lib/index.tsx",
-  target: "node",
   output: {
     filename: "bundle.js",
     path: path.join(__dirname, "dist"),
@@ -33,12 +32,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.css$/i,
-        use: [
-          // "style-loader",
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-        ],
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
@@ -47,7 +42,6 @@ module.exports = {
             loader: "file-loader",
             options: {
               name: "static/media/[name].[ext]",
-              esModule: false,
             },
           },
         ],
@@ -56,7 +50,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "global.css",
+      filename: "[name].css",
     }),
   ],
   resolve: {

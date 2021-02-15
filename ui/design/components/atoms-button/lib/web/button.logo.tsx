@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { NameLogo, NoNameLogo } from "../public/svg/logo";
+import { NameLogo, NoNameLogo } from "@nextbnb/design/public/svg/logo";
 
 export const LogoButton: React.FC<{ noName?: boolean; fill?: string }> = ({
   noName = false,

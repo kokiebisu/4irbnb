@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { motion } from "framer-motion";
-import { MagnifyGlass } from "../public/svg/original";
+import { MagnifyGlass } from "@nextbnb/design/public/svg/original";
 
 import { searchbar } from "../styles/button.searchbar";
 

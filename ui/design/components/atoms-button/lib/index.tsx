@@ -1,7 +1,6 @@
-require("./global.css");
 import React from "react";
 import { motion } from "framer-motion";
-
+import "@nextbnb/design/global.css";
 import { AuthButton } from "./web/button.auth";
 import { BackButton } from "./web/button.back";
 import { BannerButton } from "./web/button.banner";

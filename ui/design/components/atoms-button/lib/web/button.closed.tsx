@@ -3,7 +3,7 @@
 import { jsx } from "theme-ui";
 
 import { web, theme } from "../styles/button.closed";
-import { CheckPlain, Close } from "../public/svg/original";
+import { CheckPlain, Close } from "@nextbnb/design/public/svg/original";
 
 export const ClosedButton: React.FC<{
   selected?: boolean;

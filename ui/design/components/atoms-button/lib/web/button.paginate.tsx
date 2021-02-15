@@ -3,7 +3,7 @@
 import React from "react";
 import { jsx } from "theme-ui";
 import { paginate } from "../styles/button.paginate";
-import { ChevronLeft, ChevronRight } from "../public/svg/regular";
+import { ChevronLeft, ChevronRight } from "@nextbnb/design/public/svg/regular";
 
 const { web, theme } = paginate;
 

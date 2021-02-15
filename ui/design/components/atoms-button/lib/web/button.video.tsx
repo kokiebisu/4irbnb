@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { video } from "../styles/button.video";
-import { Pause, Play } from "../public/svg/regular";
+import { Pause, Play } from "@nextbnb/design/public/svg/regular";
 
 const { web } = video;
 

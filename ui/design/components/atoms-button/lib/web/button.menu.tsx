@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { menu } from "../styles/button.menu";
-import { Avatar, Bars } from "../public/svg/original";
+import { Avatar, Bars } from "@nextbnb/design/public/svg/original";
 
 const { web, theme } = menu;
 

@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { MagnifyGlass } from "../public/svg/original";
+import { MagnifyGlass } from "@nextbnb/design/public/svg/original";
 import { search } from "../styles/button.search";
 
 const { web, theme } = search;

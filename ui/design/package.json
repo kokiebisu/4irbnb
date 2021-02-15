@@ -1,7 +1,6 @@
 {
   "name": "@nextbnb/design",
   "version": "1.0.19",
-  "main": "index.js",
   "license": "MIT",
   "devDependencies": {
     "@storybook/addon-actions": "^6.1.18",
@@ -19,5 +18,8 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook watch-css -s ./public"
   },
-  "gitHead": "e5d56efe3cac56ed1c41ebe65e53542f6a8fb402"
+  "gitHead": "e5d56efe3cac56ed1c41ebe65e53542f6a8fb402",
+  "files": [
+    "lib"
+  ]
 }

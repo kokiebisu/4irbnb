@@ -2,8 +2,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { modal } from "../styles/button.modal";
-import { Close } from "../public/svg/original";
-import { ChevronLeft } from "../public/svg/regular";
+import { Close } from "@nextbnb/design/public/svg/original";
+import { ChevronLeft } from "@nextbnb/design/public/svg/regular";
 
 const { web, theme } = modal;
 
