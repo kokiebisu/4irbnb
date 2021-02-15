@@ -37,7 +37,7 @@ module.exports = {
         use: [
           // "style-loader",
           MiniCssExtractPlugin.loader,
-          { loader: "css-loader" },
+          "css-loader",
         ],
       },
       {
@@ -56,8 +56,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css",
+      filename: "global.css",
     }),
   ],
   resolve: {
