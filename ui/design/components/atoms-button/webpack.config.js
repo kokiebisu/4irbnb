@@ -14,7 +14,16 @@ module.exports = {
     rules: [
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: "asset/resource",
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              publicPath: "",
+              outputPath: "/public/fonts/",
+            },
+          },
+        ],
       },
       {
         test: /\.(ts|tsx)$/i,
