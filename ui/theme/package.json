@@ -1,6 +1,6 @@
 {
   "name": "@airbnb/theme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Maintains the themes used across mobile and web",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
   "homepage": "https://github.com/kokiebisu/airbnb/tree/master/packages/design#readme",
@@ -16,6 +16,5 @@
   },
   "devDependencies": {
     "typescript": "^4.1.3"
-  },
-  "dependencies": {}
+  }
 }

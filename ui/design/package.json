@@ -1,6 +1,6 @@
 {
   "name": "@airbnb/design",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
@@ -11,7 +11,7 @@
     "react": "^17.0.1"
   },
   "dependencies": {
-    "@airbnb/theme": "^1.0.0"
+    "@airbnb/theme": "^1.0.1"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",

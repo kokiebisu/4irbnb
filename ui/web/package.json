@@ -1,6 +1,6 @@
 {
   "name": "@airbnb/web",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "./.next/server/pages/index.js",
   "keywords": [],
@@ -13,8 +13,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "@airbnb/content": "1.0.0",
-    "@airbnb/theme": "^1.0.0",
+    "@airbnb/content": "^1.0.1",
+    "@airbnb/theme": "^1.0.1",
     "@types/theme-ui": "^0.3.7",
     "axios": "^0.21.0",
     "formik": "^2.2.2",
