@@ -13,5 +13,8 @@
   "keywords": [],
   "author": "",
   "description": "",
-  "gitHead": "d97a23cb615b84c02eee85d1688d740b1eaed670"
+  "gitHead": "d97a23cb615b84c02eee85d1688d740b1eaed670",
+  "dependencies": {
+    "mini-css-extract-plugin": "^1.3.6"
+  }
 }

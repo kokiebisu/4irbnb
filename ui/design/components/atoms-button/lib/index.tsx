@@ -1,4 +1,5 @@
 import "./global.css";
+console.log("hello webpack");
 import React from "react";
 import { motion } from "framer-motion";
 
