@@ -34,16 +34,21 @@
   "devDependencies": {
     "lerna": "^3.22.1"
   },
-  "workspaces": [
-    "packages/*",
-    "ui/mobile",
-    "ui/theme",
-    "ui/web",
-    "ui/design",
-    "ui/design/components/*",
-    "services/*",
-    "components/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "ui/mobile",
+      "ui/theme",
+      "ui/web",
+      "ui/design",
+      "ui/design/components/*",
+      "services/*",
+      "components/*"
+    ],
+    "nohoist": [
+      "**"
+    ]
+  },
   "dependencies": {
     "webpack": "^5.21.2",
     "webpack-cli": "^4.5.0"

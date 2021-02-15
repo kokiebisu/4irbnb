@@ -3,9 +3,8 @@ const path = require("path");
 module.exports = {
   mode: "production",
   entry: "./lib/index.tsx",
-  target: "node",
   output: {
-    filename: "index.js",
+    filename: "bundle.js",
     path: path.join(__dirname, "dist"),
     library: "@nextbnb/atoms-button",
     libraryTarget: "umd",
