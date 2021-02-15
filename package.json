@@ -44,9 +44,6 @@
       "ui/design/components/*",
       "services/*",
       "components/*"
-    ],
-    "nohoist": [
-      "**"
     ]
   },
   "dependencies": {

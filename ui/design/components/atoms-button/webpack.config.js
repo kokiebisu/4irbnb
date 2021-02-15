@@ -3,7 +3,7 @@ const path = require("path");
 module.exports = {
   mode: "production",
   entry: "./lib/index.tsx",
-  target: "node",
+  target: "web",
   output: {
     filename: "bundle.js",
     path: path.join(__dirname, "dist"),
@@ -23,6 +23,7 @@ module.exports = {
               name: "[name].[ext]",
               publicPath: "/public/fonts",
               outputPath: "/public/fonts",
+              esModule: false,
             },
           },
         ],
@@ -46,12 +47,7 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        loader: "css-loader",
-        options: {
-          modules: {
-            exportOnlyLocals: true,
-          },
-        },
+        use: ["style-loader", "css-loader", "resolve-url-loader"],
       },
     ],
   },
