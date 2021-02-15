@@ -1,1 +1,1 @@
-export * from "@airbnb/atoms-button";
+export * from "@nextbnb/atoms-button";

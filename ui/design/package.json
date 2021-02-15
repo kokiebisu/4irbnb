@@ -1,5 +1,5 @@
 {
-  "name": "@airbnb/design",
+  "name": "@nextbnb/design",
   "version": "1.0.1",
   "main": "index.js",
   "license": "MIT",
@@ -11,10 +11,11 @@
     "react": "^17.0.1"
   },
   "dependencies": {
-    "@airbnb/theme": "^1.0.1"
+    "@nextbnb/theme": "^1.0.1"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook watch-css -s ./public"
-  }
+  },
+  "gitHead": "7f70ad552f9e77d01dd10cf70a06b1c86b80f3f2"
 }

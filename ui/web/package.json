@@ -1,5 +1,5 @@
 {
-  "name": "@airbnb/web",
+  "name": "@nextbnb/web",
   "version": "1.0.1",
   "description": "",
   "main": "./.next/server/pages/index.js",
@@ -13,8 +13,6 @@
     "test": "jest"
   },
   "dependencies": {
-    "@airbnb/content": "^1.0.1",
-    "@airbnb/theme": "^1.0.1",
     "@types/theme-ui": "^0.3.7",
     "axios": "^0.21.0",
     "formik": "^2.2.2",
@@ -54,5 +52,6 @@
     "style-loader": "^2.0.0",
     "ts-loader": "^8.0.14",
     "typescript": "^4.0.3"
-  }
+  },
+  "gitHead": "7f70ad552f9e77d01dd10cf70a06b1c86b80f3f2"
 }

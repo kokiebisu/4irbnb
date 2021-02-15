@@ -6,7 +6,7 @@ module.exports = {
   output: {
     filename: "index.js",
     path: path.join(__dirname, "dist"),
-    library: "@airbnb/atoms",
+    library: "@nextbnb/atoms",
     libraryTarget: "umd",
     globalObject: "this",
   },

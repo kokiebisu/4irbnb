@@ -1,5 +1,5 @@
 {
-  "name": "@airbnb/atoms-button",
+  "name": "@nextbnb/atoms-button",
   "version": "1.0.1",
   "description": "> TODO: description",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
@@ -46,5 +46,6 @@
   "dependencies": {
     "framer-motion": "^3.3.0",
     "theme-ui": "^0.3.5"
-  }
+  },
+  "gitHead": "7f70ad552f9e77d01dd10cf70a06b1c86b80f3f2"
 }

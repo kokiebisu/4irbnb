@@ -2,8 +2,8 @@ import express, { json } from "express";
 require("express-async-errors");
 
 // import { errorHandler, NotFoundError, currentUser } from '@doitsimple/shared';
-import { NotFoundError } from "@airbnb/error";
-import { errorHandler, currentUser } from "@airbnb/middleware";
+import { NotFoundError } from "@nextbnb/error";
+import { errorHandler, currentUser } from "@nextbnb/middleware";
 import cookieSession from "cookie-session";
 
 /** Routes */

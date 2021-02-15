@@ -4,8 +4,8 @@ import { currentUserRouter } from "./routes/current_user";
 import { signinRouter } from "./routes/signin";
 import { signoutRouter } from "./routes/signout";
 import { signupRouter } from "./routes/signup";
-import { errorHandler } from "@airbnb/middleware";
-import { NotFoundError } from "@airbnb/error";
+import { errorHandler } from "@nextbnb/middleware";
+import { NotFoundError } from "@nextbnb/error";
 import cookieSession from "cookie-session";
 
 const app = express();

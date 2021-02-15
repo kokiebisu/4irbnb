@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { requireAuth } from "@airbnb/middleware";
+import { requireAuth } from "@nextbnb/middleware";
 import { Stay } from "../models/stay";
 
 const router = express.Router();
