@@ -95,3 +95,147 @@ Expand.args = {
     alert("Closed Button Pressed");
   },
 };
+
+export const Filter = TemplateStory.bind({});
+Filter.args = {
+  variant: $Button.FILTER,
+  onClick() {
+    alert("Closed Button Pressed");
+  },
+};
+
+export const Globe = TemplateStory.bind({});
+Globe.args = {
+  variant: $Button.GLOBE,
+  onClick() {
+    alert("Closed Button Pressed");
+  },
+};
+
+export const Link = TemplateStory.bind({});
+Link.args = {
+  variant: $Button.LINK,
+  onClick() {
+    alert("Link Button Pressed");
+  },
+};
+
+export const Location = TemplateStory.bind({});
+Location.args = {
+  variant: $Button.LOCATION,
+  onClick() {
+    alert("Location Button Pressed");
+  },
+};
+
+export const Logo = TemplateStory.bind({});
+Logo.args = {
+  variant: $Button.LOGO,
+  onClick() {
+    alert("Logo Button Pressed");
+  },
+};
+
+export const Menu = TemplateStory.bind({});
+Menu.args = {
+  variant: $Button.MENU,
+  onClick() {
+    alert("Menu Button Pressed");
+  },
+};
+
+export const Modal = TemplateStory.bind({});
+Modal.args = {
+  variant: $Button.MODAL,
+  onClick() {
+    alert("Modal Button Pressed");
+  },
+};
+
+export const Nearby = TemplateStory.bind({});
+Nearby.args = {
+  variant: $Button.NEARBY,
+  onClick() {
+    alert("Nearby Button Pressed");
+  },
+};
+
+export const Option = TemplateStory.bind({});
+Option.args = {
+  variant: $Button.OPTION,
+  onClick() {
+    alert("Option Button Pressed");
+  },
+};
+
+export const Paginate = TemplateStory.bind({});
+Paginate.args = {
+  variant: $Button.PAGINATE,
+  onClick() {
+    alert("Paginate Button Pressed");
+  },
+};
+
+export const Primary = TemplateStory.bind({});
+Primary.args = {
+  variant: $Button.PRIMARY,
+  onClick() {
+    alert("Primary Button Pressed");
+  },
+};
+
+export const Privacy = TemplateStory.bind({});
+Privacy.args = {
+  variant: $Button.PRIVACY,
+  onClick() {
+    alert("Privacy Button Pressed");
+  },
+};
+
+export const Report = TemplateStory.bind({});
+Report.args = {
+  variant: $Button.REPORT,
+  onClick() {
+    alert("Report Button Pressed");
+  },
+};
+
+export const Search = TemplateStory.bind({});
+Search.args = {
+  variant: $Button.SEARCH,
+  onClick() {
+    alert("Search Button Pressed");
+  },
+};
+
+export const Searchbar = TemplateStory.bind({});
+Searchbar.args = {
+  variant: $Button.SEARCHBAR,
+  onClick() {
+    alert("Searchbar Button Pressed");
+  },
+};
+
+export const Transparent = TemplateStory.bind({});
+Transparent.args = {
+  variant: $Button.TRANSPARENT,
+  onClick() {
+    alert("Transparent Button Pressed");
+  },
+};
+
+export const Underline = TemplateStory.bind({});
+Underline.args = {
+  variant: $Button.UNDERLINE,
+  onClick() {
+    alert("Underline Button Pressed");
+  },
+};
+
+export const Video = TemplateStory.bind({});
+Video.args = {
+  variant: $Button.VIDEO,
+  onClick() {
+    alert("Video Button Pressed");
+  },
+};
