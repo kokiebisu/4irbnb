@@ -3,7 +3,7 @@ const path = require("path");
 module.exports = {
   mode: "production",
   entry: "./lib/index.tsx",
-  target: "web",
+  target: "node",
   output: {
     filename: "bundle.js",
     path: path.join(__dirname, "dist"),
@@ -34,7 +34,8 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [
-          "style-loader",
+          // "style-loader",
+          "isomorphic-style-loader",
           { loader: "css-loader", options: { importLoaders: 1 } },
         ],
       },
@@ -44,7 +45,7 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "static/media/[name].[hash:8].[ext]",
+              name: "static/media/[name].[ext]",
               esModule: false,
             },
           },
