@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/content",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "main": "build/index",
   "license": "MIT",
   "scripts": {

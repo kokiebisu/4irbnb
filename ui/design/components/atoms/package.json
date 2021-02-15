@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/atoms",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "> TODO: description",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
   "homepage": "https://github.com/kokiebisu/airbnb/tree/master/packages/atoms#readme",
@@ -25,7 +25,7 @@
     "url": "https://github.com/kokiebisu/airbnb/issues"
   },
   "dependencies": {
-    "@nextbnb/atoms-button": "^1.0.2"
+    "@nextbnb/atoms-button": "^2.0.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.12.16",

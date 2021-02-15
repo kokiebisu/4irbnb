@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/design",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
@@ -11,7 +11,7 @@
     "react": "^17.0.1"
   },
   "dependencies": {
-    "@nextbnb/theme": "^1.0.2"
+    "@nextbnb/theme": "^1.0.3"
   },
   "scripts": {
     "storybook": "start-storybook -p 6006",
