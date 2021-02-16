@@ -7,15 +7,11 @@ module.exports = {
   output: {
     filename: "bundle.js",
     path: path.join(__dirname, "dist"),
-    library: "@nextbnb/atoms-bullet",
+    library: "@nextbnb/atoms-input",
     libraryTarget: "umd",
     globalObject: "this",
     publicPath: "",
   },
-  performance: {
-    hints: false,
-  },
-  devtool: false,
   module: {
     rules: [
       {
@@ -26,9 +22,9 @@ module.exports = {
             loader: "babel-loader",
             options: {
               presets: [
-                ["@babel/preset-env", { modules: false }],
+                "@babel/preset-env",
                 "@babel/preset-react",
-                ["@babel/preset-typescript"],
+                "@babel/preset-typescript",
               ],
               plugins: ["@babel/plugin-transform-runtime"],
             },
@@ -37,12 +33,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        exclude: /node_modules/,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        exclude: /node_modules/,
         use: [
           {
             loader: "file-loader",
