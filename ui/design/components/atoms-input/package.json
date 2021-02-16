@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/atoms-input",
-  "version": "2.0.20",
+  "version": "2.0.21",
   "description": "> TODO: description",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
   "homepage": "https://github.com/kokiebisu/airbnb/tree/master/packages/atoms-button#readme",
@@ -45,8 +45,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@nextbnb/atoms-button": "^2.0.20",
-    "@nextbnb/design": "^1.0.28",
+    "@nextbnb/atoms-button": "^2.0.21",
+    "@nextbnb/design": "^1.0.29",
     "@nextbnb/theme": "^1.0.4",
     "framer-motion": "^3.3.0",
     "theme-ui": "^0.3.5"
