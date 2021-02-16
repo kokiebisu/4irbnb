@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/molecules-card",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "> TODO: description",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
   "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/atoms-bullet#readme",
@@ -47,11 +47,11 @@
     "access": "public"
   },
   "dependencies": {
-    "@nextbnb/atoms-bullet": "^1.0.10",
-    "@nextbnb/atoms-button": "^2.0.25",
-    "@nextbnb/atoms-video": "^2.0.25",
-    "@nextbnb/design": "^1.0.33",
-    "@nextbnb/particles": "^2.0.25",
+    "@nextbnb/atoms-bullet": "^1.0.11",
+    "@nextbnb/atoms-button": "^2.0.26",
+    "@nextbnb/atoms-video": "^2.0.26",
+    "@nextbnb/design": "^1.0.34",
+    "@nextbnb/particles": "^2.0.26",
     "@nextbnb/theme": "^1.0.4",
     "framer-motion": "^3.3.0",
     "theme-ui": "^0.3.5"

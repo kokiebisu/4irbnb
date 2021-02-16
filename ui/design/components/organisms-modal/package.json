@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/organisms-modal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "> TODO: description",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
   "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/organisms-modal#readme",
@@ -41,9 +41,9 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
-    "@nextbnb/atoms-button": "^2.0.25",
-    "@nextbnb/atoms-input": "^2.0.25",
-    "@nextbnb/design": "^1.0.33",
+    "@nextbnb/atoms-button": "^2.0.26",
+    "@nextbnb/atoms-input": "^2.0.26",
+    "@nextbnb/design": "^1.0.34",
     "@nextbnb/theme": "^1.0.4",
     "framer-motion": "^3.3.0",
     "theme-ui": "^0.3.5"
