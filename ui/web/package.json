@@ -55,7 +55,7 @@
     "ts-loader": "^8.0.14",
     "typescript": "^4.0.3"
   },
-  "gitHead": "b3fb9dd818bfe2f86aa8355a8119752f92fe7256",
+  "gitHead": "6c9948d503e3d5f4bab864961aa28982d900b0a7",
   "workspaces": {
     "nohoist": [
       "**"

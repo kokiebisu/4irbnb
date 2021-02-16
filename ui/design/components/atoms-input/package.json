@@ -50,5 +50,6 @@
     "@nextbnb/theme": "^1.0.4",
     "framer-motion": "^3.3.0",
     "theme-ui": "^0.3.5"
-  }
+  },
+  "gitHead": "6c9948d503e3d5f4bab864961aa28982d900b0a7"
 }
