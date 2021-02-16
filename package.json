@@ -45,6 +45,7 @@
       "ui/design",
       "ui/design/animation",
       "ui/design/particles",
+      "ui/design/layout",
       "ui/design/components/*",
       "services/*",
       "components/*"

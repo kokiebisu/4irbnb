@@ -1,9 +1,9 @@
 {
-  "name": "@nextbnb/organisms-footer",
+  "name": "@nextbnb/organisms-header",
   "version": "1.0.2",
   "description": "> TODO: description",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
-  "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/organisms-footer#readme",
+  "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/organisms-header#readme",
   "license": "ISC",
   "main": "lib/index.tsx",
   "directories": {
