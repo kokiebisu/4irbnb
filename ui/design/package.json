@@ -18,7 +18,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -c .storybook watch-css -s ./public"
   },
-  "gitHead": "6c9948d503e3d5f4bab864961aa28982d900b0a7",
+  "gitHead": "bde6b7e370cd18062e283457f32a17675bd7352e",
   "files": [
     "assets"
   ]
