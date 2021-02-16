@@ -6,6 +6,7 @@
     "ui/web",
     "ui/design",
     "ui/design/animation",
+    "ui/design/particles",
     "ui/design/components/*",
     "services/*"
   ],
