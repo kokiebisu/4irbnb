@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { Input, $Input } from "@nextbnb/atoms-input";
-import { Layout } from "@nexbnb/design/layout";
+import { Layout } from "@nextbnb/design/layout";
 
 /**
  * Renders the /become-a-host/room page content

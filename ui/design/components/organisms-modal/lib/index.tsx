@@ -4,8 +4,8 @@ import { jsx } from "theme-ui";
 import { useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-import useOnClickOutside from "../../../hooks/useOnClickOutside";
-import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
+import useOnClickOutside from "@nextbnb/design/hooks/useOnClickOutside";
+import { useLockBodyScroll } from "@nextbnb/design/hooks/useLockBodyScroll";
 
 import { MenuModal } from "./web/modal.menu";
 import { PrivacyModal } from "./web/modal.privacy";

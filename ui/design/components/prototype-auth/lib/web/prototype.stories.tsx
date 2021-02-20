@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { Story, Meta } from "@storybook/react";
-import { Prototype, PrototypeProps, $Prototype } from ".";
+import { Prototype, PrototypeProps, $Prototype } from "..";
 
 export default {
   title: "Prototypes/Auth",

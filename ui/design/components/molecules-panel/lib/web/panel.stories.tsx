@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Panel, PanelProps, $Panel } from ".";
+import { Panel, PanelProps, $Panel } from "..";
 
 export default {
   title: "Molecules/Panel",

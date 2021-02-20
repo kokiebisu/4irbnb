@@ -20,6 +20,11 @@
   },
   "gitHead": "bde6b7e370cd18062e283457f32a17675bd7352e",
   "files": [
-    "assets"
+    "layout",
+    "assets",
+    "hooks",
+    "animation",
+    "helper",
+    "particles"
   ]
 }

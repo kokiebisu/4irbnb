@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Card, CardProps, $Card } from ".";
+import { Card, CardProps, $Card } from "..";
 
 // import { types as HostingTypes } from "@card/card.hosting";
 

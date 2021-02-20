@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import { Modal, $Modal } from "@nextbnb/organisms-modal";
 import { Button, $Button } from "@nextbnb/atoms-button";
-import { Prototype } from "../../../prototype/web/searchbar";
+import { Prototype } from "@nextbnb/prototype-searchbar";
 import { NameLogo, NoNameLogo } from "@nextbnb/design/assets/svg/logo";
 import { Content } from "../content/transparent";
 import { useOnClickOutside } from "@nextbnb/design/hooks/useOnClickOutside";

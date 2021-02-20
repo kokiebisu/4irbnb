@@ -1,9 +1,9 @@
 {
-  "name": "@nextbnb/organisms-header",
-  "version": "1.0.3",
+  "name": "@nextbnb/prototype-searchbar",
+  "version": "1.0.0",
   "description": "> TODO: description",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
-  "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/organisms-header#readme",
+  "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/prototype-searchbar#readme",
   "license": "ISC",
   "main": "lib/index.tsx",
   "directories": {
@@ -19,7 +19,7 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "yarn clean && NODE_ENV=production webpack --config ./webpack.config.js"
+    "build": "yarn clean && webpack"
   },
   "bugs": {
     "url": "https://github.com/kokiebisu/airbnb/issues"
@@ -41,17 +41,11 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
-    "@nextbnb/atoms-button": "^2.0.26",
-    "@nextbnb/content": "^2.0.1",
     "@nextbnb/design": "^1.0.34",
+    "@nextbnb/organisms-bar": "^1.0.11",
     "@nextbnb/organisms-modal": "^1.0.1",
-    "@nextbnb/prototype-searchbar": "^1.0.0",
     "@nextbnb/theme": "^1.0.4",
     "framer-motion": "^3.3.0",
     "theme-ui": "^0.3.5"
-  },
-  "gitHead": "bde6b7e370cd18062e283457f32a17675bd7352e",
-  "publishConfig": {
-    "access": "public"
   }
 }
