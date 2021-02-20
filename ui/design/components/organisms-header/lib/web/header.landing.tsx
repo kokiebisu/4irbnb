@@ -5,12 +5,12 @@ import { useRef, useState } from "react";
 import Router from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 
-import { Modal, $Modal } from "../../modal/web";
+import { Modal, $Modal } from "@nextbnb/organisms-modal";
 import { Button, $Button } from "@nextbnb/atoms-button";
 import { Prototype } from "../../../prototype/web/searchbar";
-import { NameLogo, NoNameLogo } from "../../../public/svg/logo";
-import { Content } from "../../../atoms/button/content/content.transparent";
-import { useOnClickOutside } from "../../../hooks/useOnClickOutside";
+import { NameLogo, NoNameLogo } from "@nextbnb/design/assets/svg/logo";
+import { Content } from "../content/transparent";
+import { useOnClickOutside } from "@nextbnb/design/hooks/useOnClickOutside";
 
 /**
  * Renders the transparent header

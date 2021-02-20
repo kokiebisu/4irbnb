@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import Router from "next/router";
-import { Modal, $Modal } from "../../modal/web";
+import { Modal, $Modal } from "@nextbnb/organisms-modal";
 import { Button, $Button } from "@nextbnb/atoms-button";
 import { ChevronLeft } from "@nextbnb/design/assets/svg/regular";
 

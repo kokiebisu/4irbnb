@@ -3,7 +3,7 @@
 import { jsx } from "theme-ui";
 import React from "react";
 import { Button, $Button } from "@nextbnb/atoms-button";
-import { getOptionContents } from "../../../atoms/button/content/content.option";
+import { getOptionContents } from "../content/option";
 
 const Options: React.FC<{
   params?: {

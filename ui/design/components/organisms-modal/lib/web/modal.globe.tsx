@@ -4,7 +4,7 @@ import { jsx } from "theme-ui";
 
 import { useState } from "react";
 import { Button, $Button } from "@nextbnb/atoms-button";
-import { Prototype, $Prototype } from "../../../prototype/web/globe";
+import { Prototype, $Prototype } from "@nextbnb/prototype-globe";
 
 export const GlobeModal: React.FC<{ toggleDispatch?: (params) => void }> = ({
   toggleDispatch,

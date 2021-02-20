@@ -7,15 +7,15 @@ import { AnimatePresence, motion } from "framer-motion";
 import useOnClickOutside from "../../../hooks/useOnClickOutside";
 import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
 
-import { MenuModal } from "./modal.menu";
-import { PrivacyModal } from "./modal.privacy";
-import { AuthModal } from "./modal.auth";
-import { BookingModal } from "./modal.booking";
-import { GlobeModal } from "./modal.globe";
-import { LocationModal } from "./modal.location";
-import { GuestsModal } from "./modal.guests";
-import { CheckModal } from "./modal.check";
-import { ListingModal } from "./modal.listing";
+import { MenuModal } from "./web/modal.menu";
+import { PrivacyModal } from "./web/modal.privacy";
+import { AuthModal } from "./web/modal.auth";
+import { BookingModal } from "./web/modal.booking";
+import { GlobeModal } from "./web/modal.globe";
+import { LocationModal } from "./web/modal.location";
+import { GuestsModal } from "./web/modal.guests";
+import { CheckModal } from "./web/modal.check";
+import { ListingModal } from "./web/modal.listing";
 
 export const $Modal = {
   PRIVACY: "privacy",

@@ -1,9 +1,9 @@
 {
-  "name": "@nextbnb/organisms-modal",
-  "version": "1.0.1",
+  "name": "@nextbnb/prototype-globe",
+  "version": "1.0.0",
   "description": "> TODO: description",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
-  "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/organisms-modal#readme",
+  "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/prototype-globe#readme",
   "license": "ISC",
   "main": "lib/index.tsx",
   "directories": {
@@ -11,18 +11,18 @@
     "test": "__tests__"
   },
   "files": [
-    "dist"
+    "lib"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kokiebisu/airbnb.git"
   },
-  "scripts": {
-    "clean": "rm -rf dist",
-    "build": "yarn clean && NODE_ENV=production webpack --config ./webpack.config.js"
-  },
   "bugs": {
     "url": "https://github.com/kokiebisu/airbnb/issues"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "yarn clean && webpack"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -41,15 +41,12 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
+    "@nextbnb/atoms-bullet": "^1.0.11",
     "@nextbnb/atoms-button": "^2.0.26",
     "@nextbnb/atoms-input": "^2.0.26",
     "@nextbnb/design": "^1.0.34",
-    "@nextbnb/prototype-globe": "^1.0.0",
     "@nextbnb/theme": "^1.0.4",
     "framer-motion": "^3.3.0",
     "theme-ui": "^0.3.5"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }

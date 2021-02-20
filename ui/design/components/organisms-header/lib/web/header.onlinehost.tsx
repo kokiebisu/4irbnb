@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import Router from "next/router";
-import { Button, $Button } from "../../../atoms/button/web";
+import { Button, $Button } from "@nextbnb/atoms-button";
 
 export const OnlineHostHeader: React.FC<{}> = () => {
   return (
