@@ -3,39 +3,11 @@
 import { jsx } from 'theme-ui';
 import '@nextbnb/design/assets/styles/global.css';
 import React from 'react';
-
 import { motion } from 'framer-motion';
 import { ThemeProvider } from 'theme-ui';
 import { theme } from '@nextbnb/theme';
 
-import { auth } from './web/button.auth';
-import { back } from './web/button.back';
-import { banner } from './web/button.banner';
-import { bar } from './web/button.bar';
-import { border } from './web/button.border';
-import { calendar } from './web/button.calendar';
-import { closed } from './web/button.closed';
-import { destination } from './web/button.destination';
-import { expand } from './web/button.expand';
-import { currency } from './web/button.currency';
-import { video } from './web/button.video';
-import { underline } from './web/button.underline';
-import { transparent } from './web/button.transparent';
-import { searchbar } from './web/button.searchbar';
-import { search } from './web/button.search';
-import { report } from './web/button.report';
-import { privacy } from './web/button.privacy';
-import { primary } from './web/button.primary';
-import { paginate } from './web/button.paginate';
-import { option } from './web/button.option';
-import { nearby } from './web/button.nearby';
-import { modal } from './web/button.modal';
-import { menu } from './web/button.menu';
-import { logo } from './web/button.logo';
-import { location } from './web/button.location';
-import { link } from './web/button.link';
-import { globe } from './web/button.globe';
-import { filter } from './web/button.filter';
+import { webVariants } from './web/variants';
 
 export interface ButtonProps {
   extendsTo?: any;
@@ -77,7 +49,15 @@ export const $Button = {
   VIDEO: 'video',
 };
 
+const generateVariants = (platform, props) => {
+  if (platform === 'ios') {
+    return null;
+  }
+  return webVariants(props);
+};
+
 export const Button: React.FC<ButtonProps> = ({
+  platform = 'web',
   extendsTo = {},
   variant = $Button.AUTH,
   onClick,
@@ -89,38 +69,7 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   const { disable } = props;
 
-  const variants: {
-    [variant: string]: { component: JSX.Element; css: any };
-  } = {
-    ...auth(props),
-    ...back(props),
-    ...banner(props),
-    ...bar(props),
-    ...border(props),
-    ...calendar(props),
-    ...closed(props),
-    ...currency(props),
-    ...destination(props),
-    ...expand(props),
-    ...filter(props),
-    ...globe(props),
-    ...link(props),
-    ...location(props),
-    ...logo(props),
-    ...menu(props),
-    ...modal(props),
-    ...nearby(props),
-    ...option(props),
-    ...paginate(props),
-    ...primary(props),
-    ...privacy(props),
-    ...report(props),
-    ...search(props),
-    ...searchbar(props),
-    ...transparent(props),
-    ...underline(props),
-    ...video(props),
-  };
+  const variants = generateVariants(platform, props);
 
   return (
     <ThemeProvider theme={theme}>
