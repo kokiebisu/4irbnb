@@ -1,44 +1,45 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx } from 'theme-ui';
 import {
   Activities,
   Computer,
   Host,
-} from "@nextbnb/design/assets/svg/original";
+} from '@nextbnb/design/assets/svg/original';
+import { $Bullet } from '..';
 
 /**
  * Renders the experience bullet
  * @param {string} experience - Type of experience bullet
  */
-export const ExperienceBullet: React.FC<{
-  experience?: "hosts" | "activities" | "global";
-}> = ({ experience = "hosts" }) => {
+const ExperienceBullet: React.FC<{
+  experience?: 'hosts' | 'activities' | 'global';
+}> = ({ experience = 'hosts' }) => {
   const experiences: {
     [type: string]: { icon: JSX.Element; title: string; description: string };
   } = {
     hosts: {
       icon: <Host width={36} />,
-      title: "Thoughtful hosts",
+      title: 'Thoughtful hosts',
       description:
-        "Get to know hosts who share their expertise and a window to their world.",
+        'Get to know hosts who share their expertise and a window to their world.',
     },
     activities: {
       icon: <Activities width={36} />,
-      title: "Small group activities",
+      title: 'Small group activities',
       description:
-        "Meet people from all over the world while learning something new together.",
+        'Meet people from all over the world while learning something new together.',
     },
     global: {
       icon: <Computer width={36} />,
-      title: "Simple and global",
+      title: 'Simple and global',
       description:
-        "Join easily and participate from home without a lot of prep.",
+        'Join easily and participate from home without a lot of prep.',
     },
   };
 
   return (
-    <div css={{ display: "flex", alignItems: "center" }}>
+    <div css={{ display: 'flex', alignItems: 'center' }}>
       <div css={{ marginRight: 16 }}>{experiences[experience].icon}</div>
       <div>
         <div>
@@ -50,4 +51,13 @@ export const ExperienceBullet: React.FC<{
       </div>
     </div>
   );
+};
+
+export const experience = (props) => {
+  return {
+    [$Bullet.EXPERIENCE]: {
+      component: <ExperienceBullet {...props} />,
+      css: {},
+    },
+  };
 };

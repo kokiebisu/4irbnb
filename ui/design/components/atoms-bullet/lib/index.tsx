@@ -1,39 +1,39 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx } from 'theme-ui';
 
-import { AmenityBullet } from "./web/bullet.amenity";
-import { BringBullet } from "./web/bullet.bring";
-import { CharacteristicBullet } from "./web/bullet.characteristics";
-import { CheckBullet } from "./web/bullet.check";
-import { ExperienceBullet } from "./web/bullet.experience";
-import { HelpBullet } from "./web/bullet.help";
-import { HostBullet } from "./web/bullet.host";
-import { KnowBullet } from "./web/bullet.know";
-import { OnlineHostBullet } from "./web/bullet.onlinehost";
-import { PriorityBullet } from "./web/bullet.priority";
-import { QuestionBullet } from "./web/bullet.question";
-import { RatingBullet } from "./web/bullet.rating";
-import { RequiredBullet } from "./web/bullet.required";
-import { ScoreBullet } from "./web/bullet.score";
-import { ScenarioBullet } from "./web/bullet.scenario";
+import { amenity } from './web/bullet.amenity';
+import { bring } from './web/bullet.bring';
+import { characteristic } from './web/bullet.characteristics';
+import { CheckBullet } from './web/bullet.check';
+import { experience } from './web/bullet.experience';
+import { HelpBullet } from './web/bullet.help';
+import { host } from './web/bullet.host';
+import { know } from './web/bullet.know';
+import { OnlineHostBullet } from './web/bullet.onlinehost';
+import { priority } from './web/bullet.priority';
+import { QuestionBullet } from './web/bullet.question';
+import { rating } from './web/bullet.rating';
+import { RequiredBullet } from './web/bullet.required';
+import { score } from './web/bullet.score';
+import { ScenarioBullet } from './web/bullet.scenario';
 
 export const $Bullet = {
-  CHARACTERISTIC: "characteristic",
-  AMENITY: "amenity",
-  SCORE: "score",
-  HOST: "host",
-  KNOW: "know",
-  RATING: "rating",
-  BRING: "bring",
-  EXPERIENCE: "experience",
-  PRIORITY: "priority",
-  HELP: "help",
-  REQUIRED: "required",
-  ONLINEHOST: "onlinehost",
-  QUESTION: "question",
-  CHECK: "check",
-  SCENARIO: "scenario",
+  CHARACTERISTIC: 'characteristic',
+  AMENITY: 'amenity',
+  SCORE: 'score',
+  HOST: 'host',
+  KNOW: 'know',
+  RATING: 'rating',
+  BRING: 'bring',
+  EXPERIENCE: 'experience',
+  PRIORITY: 'priority',
+  HELP: 'help',
+  REQUIRED: 'required',
+  ONLINEHOST: 'onlinehost',
+  QUESTION: 'question',
+  CHECK: 'check',
+  SCENARIO: 'scenario',
 };
 
 export interface BulletProps {
@@ -53,27 +53,48 @@ export const Bullet: React.FC<BulletProps> = ({
   ...props
 }) => {
   const variants: {
-    [property: string]: JSX.Element;
+    [property: string]: {
+      component: JSX.Element;
+      css: any;
+    };
   } = {
-    [$Bullet.CHARACTERISTIC]: <CharacteristicBullet {...props} />,
-    [$Bullet.AMENITY]: <AmenityBullet {...props} />,
-    [$Bullet.SCORE]: <ScoreBullet {...props} />,
-    [$Bullet.HOST]: <HostBullet {...props} />,
-    [$Bullet.KNOW]: <KnowBullet {...props} />,
-    [$Bullet.RATING]: <RatingBullet {...props} />,
-    [$Bullet.BRING]: <BringBullet {...props} />,
-    [$Bullet.EXPERIENCE]: <ExperienceBullet {...props} />,
-    [$Bullet.PRIORITY]: <PriorityBullet {...props} />,
-    [$Bullet.HELP]: <HelpBullet {...props} />,
-    [$Bullet.REQUIRED]: <RequiredBullet {...props} />,
-    [$Bullet.ONLINEHOST]: <OnlineHostBullet {...props} />,
-    [$Bullet.QUESTION]: <QuestionBullet {...props} />,
-    [$Bullet.CHECK]: <CheckBullet {...props} />,
-    [$Bullet.SCENARIO]: <ScenarioBullet {...props} />,
+    ...characteristic(props),
+    ...amenity(props),
+    ...score(props),
+    ...host(props),
+    ...know(props),
+    ...rating(props),
+    ...bring(props),
+    ...experience(props),
+    ...priority(props),
+    [$Bullet.HELP]: {
+      component: <HelpBullet {...props} />,
+      css: {},
+    },
+    [$Bullet.REQUIRED]: {
+      component: <RequiredBullet {...props} />,
+      css: {},
+    },
+    [$Bullet.ONLINEHOST]: {
+      component: <OnlineHostBullet {...props} />,
+      css: {},
+    },
+    [$Bullet.QUESTION]: {
+      component: <QuestionBullet {...props} />,
+      css: {},
+    },
+    [$Bullet.CHECK]: {
+      component: <CheckBullet {...props} />,
+      css: {},
+    },
+    [$Bullet.SCENARIO]: {
+      component: <ScenarioBullet {...props} />,
+      css: {},
+    },
   };
 
   return (
-    <div data-testid={`${variant}-bullet--atom`} className={extendsTo}>
+    <div data-testid={`${variant}-bullet`} className={extendsTo}>
       {variants[variant]}
     </div>
   );

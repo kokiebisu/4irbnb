@@ -1,29 +1,30 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Star } from "@nextbnb/design/assets/svg/original";
+import { jsx } from 'theme-ui';
+import { Star } from '@nextbnb/design/assets/svg/original';
+import { $Bullet } from '..';
 
 /**
  * Renders the rating bullet
  * @param {number} ratings - Average ratings from users
  * @param {number} reviews - Total number of reviews
  */
-export const RatingBullet: React.FC<{
+const RatingBullet: React.FC<{
   ratings?: number;
   reviews?: number;
 }> = ({ ratings = 5, reviews = 100 }) => {
   return (
-    <div css={{ display: "flex" }}>
+    <div css={{ display: 'flex' }}>
       <div>
         <Star height={14} />
       </div>
-      <h3 css={{ paddingLeft: 4, color: "grey.700", fontSize: 14 }}>
+      <h3 css={{ paddingLeft: 4, color: 'grey.700', fontSize: 14 }}>
         {ratings}
       </h3>
       <span
         css={{
           paddingLeft: 4,
-          color: "grey.600",
+          color: 'grey.600',
           fontSize: 14,
           fontWeight: 100,
         }}
@@ -32,4 +33,13 @@ export const RatingBullet: React.FC<{
       </span>
     </div>
   );
+};
+
+export const rating = (props) => {
+  return {
+    [$Bullet.RATING]: {
+      component: <RatingBullet {...props} />,
+      css: {},
+    },
+  };
 };

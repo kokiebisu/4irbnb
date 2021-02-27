@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx } from 'theme-ui';
 import {
   CarbonMonoxideAlarm,
   Kitchen,
@@ -8,33 +8,34 @@ import {
   SmokeAlarm,
   Heating,
   TV,
-} from "@nextbnb/design/assets/svg/original";
-import { web } from "../styles/bullet.amenity";
+} from '@nextbnb/design/assets/svg/original';
+import { web } from '../styles/bullet.amenity';
+import { $Bullet } from '..';
 
 /**
  * Renders the amenity bullet
  * @param {string} amenityType - Type of amenity
  * @param {boolean} removed - Strikes through if removed
  */
-export const AmenityBullet: React.FC<{
+const AmenityBullet: React.FC<{
   amenityType?: string;
   title?: string;
   removed?: boolean;
-}> = ({ amenityType = "kitchen", removed = false }) => {
+}> = ({ amenityType = 'kitchen', removed = false }) => {
   const amenityTypes: {
     [type: string]: { icon: JSX.Element; description: string };
   } = {
-    smoke: { icon: <SmokeAlarm width={24} />, description: "Smoke alarm" },
-    tv: { icon: <TV width={24} />, description: "TV" },
-    kitchen: { icon: <Kitchen width={24} />, description: "Kitchen" },
-    heating: { icon: <Heating width={24} />, description: "Heating" },
+    smoke: { icon: <SmokeAlarm width={24} />, description: 'Smoke alarm' },
+    tv: { icon: <TV width={24} />, description: 'TV' },
+    kitchen: { icon: <Kitchen width={24} />, description: 'Kitchen' },
+    heating: { icon: <Heating width={24} />, description: 'Heating' },
     entrance: {
       icon: <PrivateEntrance width={24} />,
-      description: "Private entrance",
+      description: 'Private entrance',
     },
     carbon: {
       icon: <CarbonMonoxideAlarm width={24} />,
-      description: "Carbon monoxide alarm",
+      description: 'Carbon monoxide alarm',
     },
   };
   return (
@@ -47,4 +48,13 @@ export const AmenityBullet: React.FC<{
       )}
     </div>
   );
+};
+
+export const amenity = (props) => {
+  return {
+    [$Bullet.AMENITY]: {
+      component: <AmenityBullet {...props} />,
+      css: {},
+    },
+  };
 };
