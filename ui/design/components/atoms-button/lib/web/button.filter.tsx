@@ -1,16 +1,15 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { filter } from "../styles/button.filter";
-
-const { web, theme } = filter;
+import { jsx } from 'theme-ui';
+import { web, theme } from '../styles/button.filter';
+import { $Button } from '..';
 
 /**
  * Renders the filter button
  * @param {string} name - Name of the filter button
  */
 export const FilterButton: React.FC<{ label?: string; inverse?: boolean }> = ({
-  label = "Button",
+  label = 'Button',
   inverse = false,
 }) => {
   return (
@@ -25,4 +24,13 @@ export const FilterButton: React.FC<{ label?: string; inverse?: boolean }> = ({
       <p css={web.label.text}>{label}</p>
     </div>
   );
+};
+
+export const filter = (props) => {
+  return {
+    [$Button.FILTER]: {
+      component: <FilterButton {...props} />,
+      css: {},
+    },
+  };
 };

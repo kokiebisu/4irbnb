@@ -1,15 +1,25 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { NameLogo, NoNameLogo } from "@nextbnb/design/assets/svg/logo";
+import { jsx } from 'theme-ui';
+import { NameLogo, NoNameLogo } from '@nextbnb/design/assets/svg/logo';
+import { $Button } from '..';
 
-export const LogoButton: React.FC<{ noName?: boolean; fill?: string }> = ({
+const LogoButton: React.FC<{ noName?: boolean; fill?: string }> = ({
   noName = false,
-  fill = "#F5385D",
+  fill = '#F5385D',
 }) => {
   return noName ? (
     <NoNameLogo fill={fill} width={30} height={32} />
   ) : (
     <NameLogo fill={fill} width={102} height={32} />
   );
+};
+
+export const logo = (props) => {
+  return {
+    [$Button.LOGO]: {
+      component: <LogoButton />,
+      css: {},
+    },
+  };
 };

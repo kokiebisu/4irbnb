@@ -1,9 +1,10 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { web } from "../styles/button.calendar";
+import { $Button } from '..';
+import { jsx } from 'theme-ui';
+import { web } from '../styles/button.calendar';
 
-export const CalendarButton: React.FC<{
+const CalendarButton: React.FC<{
   disabled?: boolean;
   number?: number;
 }> = ({ disabled = false, number = 0 }) => {
@@ -21,4 +22,13 @@ export const CalendarButton: React.FC<{
       </div>
     </div>
   );
+};
+
+export const calendar = (props) => {
+  return {
+    [$Button.CALENDAR]: {
+      component: <CalendarButton {...props} />,
+      css: {},
+    },
+  };
 };

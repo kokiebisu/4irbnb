@@ -1,12 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { motion } from "framer-motion";
-import { MagnifyGlass } from "@nextbnb/design/assets/svg/original";
-
-import { searchbar } from "../styles/button.searchbar";
-
-const { web, theme } = searchbar;
+import { jsx } from 'theme-ui';
+import { MagnifyGlass } from '@nextbnb/design/assets/svg/original';
+import { web, theme } from '../styles/button.searchbar';
+import { $Button } from '..';
 
 /**
  * Renders the searchbar button component
@@ -16,12 +13,12 @@ export const SearchbarButton: React.FC<{ mini?: boolean }> = ({
   mini = false,
 }) => {
   const handlePress = () => {
-    alert("searchbar button clicked");
+    alert('searchbar button clicked');
   };
   return mini ? (
-    <div css={web.mini.wrapper}>
+    <div css={web.mini.wrapper} sx={theme.wrapper}>
       <div>
-        <p style={{ whiteSpace: "nowrap" }} css={web.start.text}>
+        <p style={{ whiteSpace: 'nowrap' }} css={web.start.text}>
           Start your search
         </p>
       </div>
@@ -32,18 +29,30 @@ export const SearchbarButton: React.FC<{ mini?: boolean }> = ({
       </div>
     </div>
   ) : (
-    <motion.button
-      whileTap={{ scale: 0.98 }}
-      data-testid="button"
-      css={web.wrapper}
-      onClick={handlePress}
-    >
+    <div css={web.wrapper} sx={theme.wrapper}>
       <div css={web.search.icon.wrapper}>
         <MagnifyGlass width={15} stroke="black" strokeWidth={4} />
       </div>
       <div>
         <p css={web.search.label.text}>Search stays</p>
       </div>
-    </motion.button>
+    </div>
   );
+};
+
+export const searchbar = (props) => {
+  return {
+    [$Button.SEARCHBAR]: {
+      component: <SearchbarButton {...props} />,
+      css: {
+        border: '1px solid',
+        borderColor: 'grey.300',
+        borderRadius: 30,
+        '&:hover': {
+          boxShadow: 'rgba(0, 0, 0, 0.18) 0px 2px 4px',
+          transition: '0.3s all',
+        },
+      },
+    },
+  };
 };

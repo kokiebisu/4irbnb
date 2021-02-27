@@ -1,11 +1,11 @@
 const shared = {
   wrapper: {
-    display: "flex",
-    alignItems: "center",
+    display: 'flex',
+    alignItems: 'center',
   },
   icon: {
     wrapper: {
-      marginRight: "8px",
+      marginRight: '8px',
     },
   },
   label: {
@@ -31,7 +31,4 @@ const web = {
 
 const theme = {};
 
-export const report = {
-  web,
-  theme,
-};
+export { web, theme };

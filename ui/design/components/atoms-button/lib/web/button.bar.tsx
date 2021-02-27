@@ -1,14 +1,13 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { bar } from "../styles/button.bar";
-import { MenuBarLogo } from "@nextbnb/design/assets/svg/logo";
-import { Login, Saved } from "@nextbnb/design/assets/svg/regular";
+import { jsx } from 'theme-ui';
+import { web, theme } from '../styles/button.bar';
+import { MenuBarLogo } from '@nextbnb/design/assets/svg/logo';
+import { Login, Saved } from '@nextbnb/design/assets/svg/regular';
+import { $Button } from '..';
 
-const { web, theme } = bar;
-
-export const BarButton: React.FC<{ type?: string; selected?: boolean }> = ({
-  type = "explore",
+const BarButton: React.FC<{ type?: string; selected?: boolean }> = ({
+  type = 'explore',
   selected = false,
 }) => {
   const types: {
@@ -19,10 +18,10 @@ export const BarButton: React.FC<{ type?: string; selected?: boolean }> = ({
   } = {
     explore: {
       component: <MenuBarLogo width={25} />,
-      name: "Explore",
+      name: 'Explore',
     },
-    saved: { component: <Saved width={25} />, name: "Saved" },
-    login: { component: <Login width={25} />, name: "Log in" },
+    saved: { component: <Saved width={25} />, name: 'Saved' },
+    login: { component: <Login width={25} />, name: 'Log in' },
   };
   return (
     <div
@@ -39,4 +38,13 @@ export const BarButton: React.FC<{ type?: string; selected?: boolean }> = ({
       </div>
     </div>
   );
+};
+
+export const bar = (props) => {
+  return {
+    [$Button.BAR]: {
+      component: <BarButton {...props} />,
+      css: {},
+    },
+  };
 };

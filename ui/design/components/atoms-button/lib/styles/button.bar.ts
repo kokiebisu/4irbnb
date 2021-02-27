@@ -1,41 +1,41 @@
 const shared = {
   wrapper: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
 
-    ":hover": {
+    ':hover': {
       svg: {
-        stroke: "#f64f6f",
+        stroke: '#f64f6f',
       },
       p: {
-        color: "#f64f6f",
+        color: '#f64f6f',
       },
     },
   },
   selected: {
     svg: {
-      stroke: "#f64f6f",
+      stroke: '#f64f6f',
     },
     p: {
-      color: "#f64f6f",
+      color: '#f64f6f',
     },
   },
   logo: {
     wrapper: {
       svg: {
-        stroke: "#717171",
+        stroke: '#717171',
         fillOpacity: 0,
-        strokeWidth: "1.5px",
-        strokeLinecap: "round",
-        strokeLinejoin: "round",
+        strokeWidth: '1.5px',
+        strokeLinecap: 'round',
+        strokeLinejoin: 'round',
       },
     },
   },
   label: {
     wrapper: {},
     text: {
-      fontSize: "10px",
+      fontSize: '10px',
     },
   },
 } as const;
@@ -54,7 +54,4 @@ const theme = {
   label: {},
 };
 
-export const bar = {
-  web,
-  theme,
-};
+export { web, theme };

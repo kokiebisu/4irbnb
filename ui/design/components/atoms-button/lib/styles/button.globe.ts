@@ -1,29 +1,29 @@
 const condition = {
   selected: {
     wrapper: {
-      color: "black",
+      color: 'black',
     },
   },
 };
 
 const shared = {
   wrapper: {
-    padding: "12px",
-    borderRadius: "8px",
-    "&:hover": {
-      backgroundColor: "grey.100",
+    padding: 12,
+    borderRadius: 8,
+    '&:hover': {
+      bg: 'grey.100',
     },
   },
   language: {
     text: {
-      fontSize: "14px",
-      color: "black",
+      fontSize: '14px',
+      color: 'black',
     },
   },
   region: {
     text: {
-      fontSize: "14px",
-      color: "grey.600",
+      fontSize: '14px',
+      color: 'grey.600',
     },
   },
   ...condition,
@@ -38,7 +38,4 @@ const web = {
 
 const theme = {};
 
-export const globe = {
-  web,
-  theme,
-};
+export { web, theme };

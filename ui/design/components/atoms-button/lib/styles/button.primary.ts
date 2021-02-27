@@ -2,12 +2,12 @@ const shared = {
   wrapper: {},
   label: {
     text: {
-      color: "white",
+      color: 'white',
     },
     loading: {
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
   },
 };
@@ -26,7 +26,4 @@ const web = {
 
 const theme = {};
 
-export const primary = {
-  web,
-  theme,
-};
+export { web, theme };

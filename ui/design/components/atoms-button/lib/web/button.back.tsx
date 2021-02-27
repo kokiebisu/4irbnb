@@ -1,10 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { ChevronLeft } from "@nextbnb/design/assets/svg/regular";
-import { back } from "../styles/button.back";
-
-const { web, theme } = back;
+import { jsx } from 'theme-ui';
+import { ChevronLeft } from '@nextbnb/design/assets/svg/regular';
+import { web, theme } from '../styles/button.back';
+import { $Button } from '..';
 
 export const BackButton: React.FC<{}> = () => {
   return (
@@ -17,4 +16,13 @@ export const BackButton: React.FC<{}> = () => {
       </div>
     </div>
   );
+};
+
+export const back = (props) => {
+  return {
+    [$Button.BACK]: {
+      component: <BackButton {...props} />,
+      css: {},
+    },
+  };
 };

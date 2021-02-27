@@ -1,19 +1,19 @@
 const shared = {
   wrapper: {
-    display: "flex",
-    alignItems: "center",
-    padding: "4px 6px 4px 10px",
-    borderRadius: "30px",
+    display: 'flex',
+    alignItems: 'center',
+    padding: '4px 6px 4px 10px',
+    borderRadius: 30,
   },
   icon: {
     wrapper: {
-      marginRight: "10px",
+      marginRight: '10px',
     },
   },
   avatar: {
-    borderRadius: "9999px",
-    width: "30px",
-    verticalAlign: "bottom",
+    borderRadius: '9999px',
+    width: '30px',
+    verticalAlign: 'bottom',
   },
 };
 
@@ -32,20 +32,17 @@ const web = {
 const theme = {
   wrapper: {
     inverse: {
-      border: "2px solid grey.300",
-      "&:hover": {
-        boxShadow: "rgba(0, 0, 0, 0.18) 0px 2px 4px",
-        transition: "0.3s all",
+      border: '2px solid grey.300',
+      '&:hover': {
+        boxShadow: 'rgba(0, 0, 0, 0.18) 0px 2px 4px',
+        transition: '0.3s all',
       },
     },
     plain: {
-      border: "2px solid",
-      borderColor: "grey.300",
+      border: '2px solid',
+      borderColor: 'grey.300',
     },
   },
 };
 
-export const menu = {
-  web,
-  theme,
-};
+export { web, theme };

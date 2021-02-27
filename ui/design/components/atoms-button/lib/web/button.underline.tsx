@@ -1,22 +1,21 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { underline } from "../styles/button.underline";
-
-const { web, theme } = underline;
+import { $Button } from '..';
+import { jsx } from 'theme-ui';
+import { web, theme } from '../styles/button.underline';
 
 /**
  * Renders the underline button component
  * @param {function} onClick - Action taken when the button is pressed
  * @param {string} title - Title of the button
  */
-export const UnderlineButton: React.FC<{
+const UnderlineButton: React.FC<{
   title?: string;
   font?: number;
   bold?: boolean;
   unselected?: boolean;
 }> = ({
-  title = "Title here",
+  title = 'Title here',
   font = 14,
   bold = false,
   unselected = false,
@@ -40,4 +39,13 @@ export const UnderlineButton: React.FC<{
       )}
     </div>
   );
+};
+
+export const underline = (props) => {
+  return {
+    [$Button.UNDERLINE]: {
+      component: <UnderlineButton {...props} />,
+      css: {},
+    },
+  };
 };

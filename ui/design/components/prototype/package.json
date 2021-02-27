@@ -1,0 +1,29 @@
+{
+  "name": "@nextbnb/prototype",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Kenichi Okiebisu <a01056715@gmail.com>",
+  "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/prototype#readme",
+  "license": "ISC",
+  "main": "lib/index.tsx",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kokiebisu/airbnb.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/kokiebisu/airbnb/issues"
+  },
+  "dependencies": {
+    "@nextbnb/prototype-auth": "^1.0.0"
+  }
+}

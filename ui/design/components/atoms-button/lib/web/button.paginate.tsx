@@ -1,34 +1,33 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import React from "react";
-import { jsx } from "theme-ui";
-import { paginate } from "../styles/button.paginate";
-import { ChevronLeft, ChevronRight } from "@nextbnb/design/assets/svg/regular";
-
-const { web, theme } = paginate;
+import React from 'react';
+import { jsx } from 'theme-ui';
+import { web, theme } from '../styles/button.paginate';
+import { ChevronLeft, ChevronRight } from '@nextbnb/design/assets/svg/regular';
+import { $Button } from '..';
 
 /**
  * Renders the paginate button component
  * @param {string} direction - The direction in which the arrow points
  * @param {boolean} disable - Whether if the button is disabled or not
  */
-export const PaginateButton: React.FC<{
+const PaginateButton: React.FC<{
   direction?: string;
   disable?: boolean;
   size?: number;
-}> = ({ direction = "left", disable = false, size = 8 }) => {
+}> = ({ direction = 'left', disable = false, size = 8 }) => {
   const icons: { [icon: string]: JSX.Element } = {
     left: (
       <ChevronLeft
         width={10}
-        stroke={`${disable ? "lightgray" : "black"}`}
+        stroke={`${disable ? 'lightgray' : 'black'}`}
         strokeWidth={5}
       />
     ),
     right: (
       <ChevronRight
         width={10}
-        stroke={`${disable ? "lightgray" : "black"}`}
+        stroke={`${disable ? 'lightgray' : 'black'}`}
         strokeWidth={5}
       />
     ),
@@ -40,4 +39,13 @@ export const PaginateButton: React.FC<{
       </div>
     </div>
   );
+};
+
+export const paginate = (props) => {
+  return {
+    [$Button.PAGINATE]: {
+      component: <PaginateButton {...props} />,
+      css: {},
+    },
+  };
 };

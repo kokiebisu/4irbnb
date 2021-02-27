@@ -1,13 +1,10 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { nearby } from "../styles/button.nearby";
+import { $Button } from '..';
+import { jsx } from 'theme-ui';
+import { web, theme } from '../styles/button.nearby';
 
-const { web, theme } = nearby;
-
-export const NearbyButton: React.FC<{ label?: string }> = ({
-  label = "Nearby",
-}) => {
+const NearbyButton: React.FC<{ label?: string }> = ({ label = 'Nearby' }) => {
   return (
     <div css={web.wrapper}>
       <div css={web.label.wrapper}>
@@ -15,4 +12,13 @@ export const NearbyButton: React.FC<{ label?: string }> = ({
       </div>
     </div>
   );
+};
+
+export const nearby = (props) => {
+  return {
+    [$Button.NEARBY]: {
+      component: <NearbyButton />,
+      css: {},
+    },
+  };
 };

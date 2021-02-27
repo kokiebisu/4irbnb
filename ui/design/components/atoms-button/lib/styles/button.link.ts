@@ -16,4 +16,4 @@ const web = {
 
 const theme = {};
 
-export const link = { web, theme };
+export { web, theme };

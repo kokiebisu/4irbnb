@@ -1,8 +1,8 @@
 const shared = {
   wrapper: {
-    bg: "transparent",
-    padding: "8px",
-    borderRadius: "9999px",
+    bg: 'transparent',
+    padding: '8px',
+    borderRadius: '9999px',
   },
 };
 
@@ -12,13 +12,10 @@ const web = {
 
 const theme = {
   wrapper: {
-    ":hover": {
-      bg: "grey.100",
+    ':hover': {
+      bg: 'grey.100',
     },
   },
 };
 
-export const modal = {
-  web,
-  theme,
-};
+export { web, theme };

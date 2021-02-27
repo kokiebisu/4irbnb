@@ -1,6 +1,6 @@
 const shared = {
   wrapper: {
-    padding: "16px",
+    padding: '16px',
   },
   city: {
     text: {
@@ -10,7 +10,7 @@ const shared = {
   location: {
     text: {
       fontSize: 14,
-      color: "grey.500",
+      color: 'grey.500',
     },
   },
 };
@@ -31,7 +31,4 @@ const web = {
 
 const theme = {};
 
-export const destination = {
-  web,
-  theme,
-};
+export { web, theme };

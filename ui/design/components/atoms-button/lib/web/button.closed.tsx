@@ -1,20 +1,20 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx } from 'theme-ui';
+import { web, theme } from '../styles/button.closed';
+import { CheckPlain, Close } from '@nextbnb/design/assets/svg/original';
+import { $Button } from '..';
 
-import { web, theme } from "../styles/button.closed";
-import { CheckPlain, Close } from "@nextbnb/design/assets/svg/original";
-
-export const ClosedButton: React.FC<{
+const ClosedButton: React.FC<{
   selected?: boolean;
   content?: string;
-}> = ({ content = "close", selected = false }) => {
+}> = ({ content = 'close', selected = false }) => {
   const contents: { [content: string]: JSX.Element } = {
     close: (
       <Close
         width={16}
         fill={selected}
-        stroke={selected ? "white" : "black"}
+        stroke={selected ? 'white' : 'black'}
         strokeWidth={2}
       />
     ),
@@ -22,7 +22,7 @@ export const ClosedButton: React.FC<{
       <CheckPlain
         width={16}
         fill={selected}
-        stroke={selected ? "white" : "black"}
+        stroke={selected ? 'white' : 'black'}
         strokeWidth={2}
       />
     ),
@@ -32,4 +32,13 @@ export const ClosedButton: React.FC<{
       {contents[content]}
     </div>
   );
+};
+
+export const closed = (props) => {
+  return {
+    [$Button.CLOSED]: {
+      component: <ClosedButton {...props} />,
+      css: {},
+    },
+  };
 };

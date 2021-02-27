@@ -1,17 +1,17 @@
 const shared = {
   wrapper: {
-    display: "flex",
-    alignItems: "center",
+    display: 'flex',
+    alignItems: 'center',
   },
   icon: {
     wrapper: {
-      paddingLeft: "14px",
-      marginRight: "4px",
+      paddingLeft: '14px',
+      marginRight: '4px',
     },
   },
   label: {
     text: {
-      fontSize: "15px",
+      fontSize: '15px',
     },
   },
 };
@@ -28,16 +28,13 @@ const web = {
 
 const theme = {
   wrapper: {
-    bg: "red.500",
+    bg: 'red.500',
   },
   label: {
     text: {
-      color: "white",
+      color: 'white',
     },
   },
 };
 
-export const search = {
-  web,
-  theme,
-};
+export { web, theme };

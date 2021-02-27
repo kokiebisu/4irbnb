@@ -1,12 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { video } from "../styles/button.video";
-import { Pause, Play } from "@nextbnb/design/assets/svg/regular";
+import { jsx } from 'theme-ui';
+import { web } from '../styles/button.video';
+import { Pause, Play } from '@nextbnb/design/assets/svg/regular';
+import { $Button } from '..';
 
-const { web } = video;
-
-export const VideoButton: React.FC<{ play?: boolean }> = ({ play = false }) => {
+const VideoButton: React.FC<{ play?: boolean }> = ({ play = false }) => {
   return (
     <div css={web.wrapper}>
       {play ? (
@@ -16,4 +15,13 @@ export const VideoButton: React.FC<{ play?: boolean }> = ({ play = false }) => {
       )}
     </div>
   );
+};
+
+export const video = (props) => {
+  return {
+    [$Button.VIDEO]: {
+      component: <VideoButton {...props} />,
+      css: {},
+    },
+  };
 };

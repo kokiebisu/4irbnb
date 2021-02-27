@@ -1,14 +1,14 @@
 const shared = {
   wrapper: {
-    position: "relative",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    bg: "transparent",
+    position: 'relative',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    bg: 'transparent',
   },
   icon: {
     wrapper: {
-      position: "absolute",
+      position: 'absolute',
       left: 0,
     },
   },
@@ -16,12 +16,12 @@ const shared = {
     wrapper: {},
     text: {
       fontSize: 14,
-      color: "grey.600",
+      color: 'grey.600',
     },
   },
 } as const;
 
-export const theme = {
+const theme = {
   wrapper: {},
   icon: {
     wrapper: {},
@@ -32,7 +32,7 @@ export const theme = {
   },
 } as const;
 
-export const web = {
+const web = {
   wrapper: { ...shared.wrapper },
   icon: { wrapper: { ...shared.icon.wrapper } },
   label: {
@@ -50,8 +50,4 @@ export const mobile = {
   },
 };
 
-export const auth = {
-  theme,
-  web,
-  mobile,
-};
+export { theme, web };

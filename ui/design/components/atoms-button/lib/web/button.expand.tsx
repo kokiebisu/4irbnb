@@ -1,18 +1,17 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { ChevronRight } from "@nextbnb/design/assets/svg/regular";
-import { expand } from "../styles/button.expand";
-
-const { web } = expand;
+import { jsx } from 'theme-ui';
+import { ChevronRight } from '@nextbnb/design/assets/svg/regular';
+import { web, theme } from '../styles/button.expand';
+import { $Button } from '..';
 
 /**
  * Renders the expand button
  * @param {string} to - Redirects to the path being specified
  * @param {string} title - Title of the button
  */
-export const ExpandButton: React.FC<{ to?: string; title?: string }> = ({
-  title = "Button",
+const ExpandButton: React.FC<{ to?: string; title?: string }> = ({
+  title = 'Button',
 }) => {
   return (
     <div css={web.wrapper}>
@@ -24,4 +23,13 @@ export const ExpandButton: React.FC<{ to?: string; title?: string }> = ({
       </div>
     </div>
   );
+};
+
+export const expand = (props) => {
+  return {
+    [$Button.EXPAND]: {
+      component: <ExpandButton {...props} />,
+      css: {},
+    },
+  };
 };

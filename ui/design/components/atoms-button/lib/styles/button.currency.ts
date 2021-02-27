@@ -1,21 +1,21 @@
 const shared = {
   wrapper: {
-    padding: "12px",
-    borderRadius: "8px",
-    "&:hover": {
-      backgroundColor: "grey.100",
+    padding: '12px',
+    borderRadius: '8px',
+    '&:hover': {
+      backgroundColor: 'grey.100',
     },
   },
   title: {
     text: {
-      fontSize: "14px",
-      color: "black",
+      fontSize: '14px',
+      color: 'black',
     },
   },
   subtitle: {
     text: {
-      fontSize: "14px",
-      color: "grey.600",
+      fontSize: '14px',
+      color: 'grey.600',
     },
   },
 };
@@ -32,4 +32,4 @@ const web = {
 
 const theme = {};
 
-export const currency = { web, theme };
+export { web, theme };

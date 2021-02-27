@@ -1,10 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-
-import { privacy } from "../styles/button.privacy";
-
-const { web, theme } = privacy;
+import { $Button } from '..';
+import { jsx } from 'theme-ui';
+import { web, theme } from '../styles/button.privacy';
 
 /**
  * Renders the privacy button component
@@ -12,16 +10,25 @@ const { web, theme } = privacy;
  * @param {boolean} inverse - Whether if the button takes the inverse style or not
  */
 export const PrivacyButton: React.FC<{ title?: string; inverse?: boolean }> = ({
-  title = "Button",
+  title = 'Button',
   inverse = false,
 }) => {
   return (
     <div
-      style={{ whiteSpace: "nowrap" }}
+      style={{ whiteSpace: 'nowrap' }}
       css={web.wrapper}
       sx={inverse ? theme.wrapper.inverse : theme.wrapper.plain}
     >
       <h4 sx={inverse ? theme.label.inverse : theme.label.plain}>{title}</h4>
     </div>
   );
+};
+
+export const privacy = (props) => {
+  return {
+    [$Button.PRIVACY]: {
+      component: <PrivacyButton {...props} />,
+      css: {},
+    },
+  };
 };

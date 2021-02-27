@@ -1,25 +1,36 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { globe } from "../styles/button.globe";
+import { $Button } from '..';
+import { jsx } from 'theme-ui';
+import { web, theme } from '../styles/button.globe';
 
-const { web, theme } = globe;
-
-export const GlobeButton: React.FC<{
+const GlobeButton: React.FC<{
   language?: string;
   region?: string;
   selected?: boolean;
-}> = ({ language = "Language", region = "Region", selected = false }) => {
+}> = ({ language = 'Language', region = 'Region', selected = false }) => {
   return (
-    <div css={{ ...web.wrapper, ...(selected && web.selected.wrapper) }}>
+    <div
+      sx={{ ...web.wrapper }}
+      css={{ ...(selected && web.selected.wrapper) }}
+    >
       <div>
         <p css={web.language.text}>{language}</p>
       </div>
       <div>
-        <p style={{ textAlign: "left" }} css={web.region.text}>
+        <p style={{ textAlign: 'left' }} css={web.region.text}>
           {region}
         </p>
       </div>
     </div>
   );
+};
+
+export const globe = (props) => {
+  return {
+    [$Button.GLOBE]: {
+      component: <GlobeButton {...props} />,
+      css: {},
+    },
+  };
 };

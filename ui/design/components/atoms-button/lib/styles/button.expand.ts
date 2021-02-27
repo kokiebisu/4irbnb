@@ -1,11 +1,11 @@
 const shared = {
   wrapper: {
-    display: "flex",
-    alignItems: "center",
+    display: 'flex',
+    alignItems: 'center',
   },
   label: {
     text: {
-      fontSize: "15px",
+      fontSize: '15px',
       fontWeight: 500,
     },
   },
@@ -20,7 +20,4 @@ const web = {
 
 const theme = {};
 
-export const expand = {
-  web,
-  theme,
-};
+export { web, theme };

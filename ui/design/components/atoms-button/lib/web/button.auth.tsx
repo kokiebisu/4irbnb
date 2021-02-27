@@ -1,17 +1,16 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { auth } from "../styles/button.auth";
-
-const { web, theme } = auth;
+import { $Button } from '..';
+import { jsx } from 'theme-ui';
+import { web, theme } from '../styles/button.auth';
 
 /**
  * Renders the auth button component
  * @param {string} auth - Platform for the authentication
  */
-export const AuthButton: React.FC<{ icon?: any; name?: string }> = ({
+const AuthButton: React.FC<{ icon?: any; name?: string }> = ({
   icon,
-  name = "Email",
+  name = 'Email',
 }) => {
   return (
     <div css={web.wrapper} sx={theme.wrapper}>
@@ -23,4 +22,13 @@ export const AuthButton: React.FC<{ icon?: any; name?: string }> = ({
       </div>
     </div>
   );
+};
+
+export const auth = (props) => {
+  return {
+    [$Button.AUTH]: {
+      component: <AuthButton {...props} />,
+      css: {},
+    },
+  };
 };

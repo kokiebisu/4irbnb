@@ -1,11 +1,10 @@
 const shared = {
   wrapper: {
-    borderRadius: "30px",
-    display: "flex",
-    alignItems: "center",
-    bg: "transparent",
-    py: "10px",
-    px: "12px",
+    borderRadius: '30px',
+    display: 'flex',
+    alignItems: 'center',
+    py: '10px',
+    px: '12px',
     fontSize: 16,
   },
 };
@@ -17,19 +16,16 @@ const web = {
 const theme = {
   wrapper: {
     inverse: {
-      "&:hover": {
-        bg: "white__transparent",
+      '&:hover': {
+        bg: 'white__transparent',
       },
     },
     plain: {
-      "&:hover": {
-        bg: "grey.100",
+      '&:hover': {
+        bg: 'grey.100',
       },
     },
   },
 };
 
-export const transparent = {
-  web,
-  theme,
-};
+export { web, theme };

@@ -1,18 +1,17 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { transparent } from "../styles/button.transparent";
-
-const { web, theme } = transparent;
+import { $Button } from '..';
+import { jsx } from 'theme-ui';
+import { web, theme } from '../styles/button.transparent';
 
 /**
  * Renders the globe button component
  * @param {boolean} inverse - Whether if the globe button is styled in inverse
  */
-export const TransparentButton: React.FC<{
+const TransparentButton: React.FC<{
   inverse?: boolean;
   content?: any;
-}> = ({ inverse = false, content = "Button" }) => {
+}> = ({ inverse = false, content = 'Button' }) => {
   return (
     <div
       css={web.wrapper}
@@ -21,4 +20,15 @@ export const TransparentButton: React.FC<{
       {content}
     </div>
   );
+};
+
+export const transparent = (props) => {
+  return {
+    [$Button.TRANSPARENT]: {
+      component: <TransparentButton {...props} />,
+      css: {
+        bg: 'transparent',
+      },
+    },
+  };
 };

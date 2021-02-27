@@ -1,19 +1,19 @@
 const condition = {
   inverse: {
     wrapper: {
-      border: "1px solid",
-      borderColor: "grey.600",
-      "&:hover": {
-        border: "1px solid",
-        borderColor: "black",
+      border: '1px solid',
+      borderColor: 'grey.600',
+      '&:hover': {
+        border: '1px solid',
+        borderColor: 'black',
       },
     },
   },
   plain: {
     wrapper: {
-      border: "1px solid",
-      borderColor: "transparent",
-      bg: "grey.100",
+      border: '1px solid',
+      borderColor: 'transparent',
+      bg: 'grey.100',
     },
   },
 };
@@ -21,7 +21,7 @@ const condition = {
 const shared = {
   wrapper: {
     // whiteSpace: "no-wrap",
-    // padding: "8px 14px",
+    padding: '8px 14px',
     borderRadius: 20,
   },
   label: {
@@ -45,4 +45,4 @@ const theme = {
   ...condition,
 };
 
-export const filter = { web, theme };
+export { web, theme };

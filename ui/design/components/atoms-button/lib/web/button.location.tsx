@@ -1,41 +1,40 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { location } from "../styles/button.location";
+import { $Button } from '..';
+import { jsx } from 'theme-ui';
+import { web, theme } from '../styles/button.location';
 
-const { web, theme } = location;
-
-export const LocationButton: React.FC<{
-  type?: "explore" | "recent";
+const LocationButton: React.FC<{
+  type?: 'explore' | 'recent';
   location?: string;
   from?: string;
   to?: string;
   guests?: number | null;
 }> = ({
-  type = "explore",
-  location = "Location",
-  from = "from",
-  to = "to",
-  guests = "1",
+  type = 'explore',
+  location = 'Location',
+  from = 'from',
+  to = 'to',
+  guests = '1',
 }) => {
   const types = {
     explore: {
       icon: (
         <img
-          style={{ borderRadius: 5, verticalAlign: "bottom" }}
+          style={{ borderRadius: 5, verticalAlign: 'bottom' }}
           src="https://a0.muscache.com/im/pictures/fc42dde0-36a7-460e-af89-10b5e44e48d8.jpg?im_w=240&im_q=lowq"
         />
       ),
-      title: "Explore nearby destinations",
+      title: 'Explore nearby destinations',
     },
     recent: {
       icon: (
         <div
           style={{
             borderRadius: 5,
-            backgroundColor: "lightgray",
-            width: "100%",
-            height: "100%",
+            backgroundColor: 'lightgray',
+            width: '100%',
+            height: '100%',
           }}
         ></div>
       ),
@@ -50,24 +49,33 @@ export const LocationButton: React.FC<{
       </div>
       <div>
         <div css={web.title.wrapper}>
-          <h4 style={{ textAlign: "left" }} css={web.title.text}>
+          <h4 style={{ textAlign: 'left' }} css={web.title.text}>
             {types[type].title}
           </h4>
         </div>
-        {type === "recent" && (
+        {type === 'recent' && (
           <div>
-            <h4 css={web.guests.text} style={{ textAlign: "left" }}>
-              {from ? from : ""}
-              {to ? ` - ${to}` : ""}
+            <h4 css={web.guests.text} style={{ textAlign: 'left' }}>
+              {from ? from : ''}
+              {to ? ` - ${to}` : ''}
               {guests
                 ? guests > 0
                   ? ` · ${guests} guests`
                   : ` · ${guests} guest`
-                : ""}
+                : ''}
             </h4>
           </div>
         )}
       </div>
     </div>
   );
+};
+
+export const location = (props) => {
+  return {
+    [$Button.LOCATION]: {
+      component: <LocationButton {...props} />,
+      css: {},
+    },
+  };
 };

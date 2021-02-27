@@ -2,39 +2,36 @@ export const shared = {};
 
 const web = {
   wrapper: {
-    padding: "13px 18px",
+    padding: '13px 18px',
     fontWeight: 500,
-    borderRadius: "8px",
-    width: "100%",
-    minWidth: "150px",
-    fontSize: "15px",
-    display: "flex",
-    justifyContent: "center",
+    borderRadius: '8px',
+    width: '100%',
+    minWidth: '150px',
+    fontSize: '15px',
+    display: 'flex',
+    justifyContent: 'center',
   },
 };
 
 const theme = {
   wrapper: {
     inverse: {
-      bg: "grey.900",
-      border: "1px solid transparent",
+      bg: 'grey.900',
+      border: '1px solid transparent',
     },
     plain: {
-      bg: "transparent",
-      border: "1px solid black",
+      bg: 'transparent',
+      border: '1px solid black',
     },
   },
   label: {
     inverse: {
-      color: "white",
+      color: 'white',
     },
     plain: {
-      color: "black",
+      color: 'black',
     },
   },
 };
 
-export const privacy = {
-  web,
-  theme,
-};
+export { web, theme };

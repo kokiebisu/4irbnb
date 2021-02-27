@@ -13,12 +13,12 @@ const condition = {
 
 const shared = {
   wrapper: {
-    fontSize: "13px",
-    bg: "white",
-    padding: "10px 14px",
-    display: "block",
-    "&:hover": {
-      bg: "grey.100",
+    fontSize: '13px',
+    bg: 'white',
+    padding: '10px 14px',
+    display: 'block',
+    '&:hover': {
+      bg: 'grey.100',
     },
   },
   ...condition,
@@ -31,4 +31,4 @@ const web = {
 
 const theme = {};
 
-export const option = { web, theme };
+export { web, theme };

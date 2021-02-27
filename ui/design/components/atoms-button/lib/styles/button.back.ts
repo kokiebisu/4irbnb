@@ -1,7 +1,7 @@
 const shared = {
   wrapper: {
-    display: "flex",
-    alignItems: "center",
+    display: 'flex',
+    alignItems: 'center',
   },
   icon: {
     wrapper: {},
@@ -14,12 +14,12 @@ const shared = {
 
 const theme = {
   wrapper: {
-    bg: "transparent",
+    bg: 'transparent',
   },
   label: {
     text: {
       fontSize: 15,
-      color: "cyan.800",
+      color: 'cyan.800',
     },
   },
 };
@@ -46,8 +46,4 @@ const mobile = {
   },
 };
 
-export const back = {
-  theme,
-  web,
-  mobile,
-};
+export { theme, web };
