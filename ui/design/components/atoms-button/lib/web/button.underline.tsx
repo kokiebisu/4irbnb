@@ -21,7 +21,7 @@ const UnderlineButton: React.FC<{
   unselected = false,
 }) => {
   return (
-    <div css={web.wrapper}>
+    <div style={{ whiteSpace: 'nowrap' }} css={web.wrapper}>
       {bold ? (
         <h3
           style={{ fontSize: font }}

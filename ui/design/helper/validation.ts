@@ -5,7 +5,7 @@ export const validateEmail = (value) => {
   return re.test(String(value).toLowerCase());
 };
 
-export const checkPassword = (value) => {
+export const validatePassword = (value) => {
   if (value && value.length && value.length > 8) {
     return true;
   }

@@ -32,33 +32,33 @@ const EmailInput: React.FC<{
     setFieldActive(false);
   };
 
-  const renderShape = () => {
-    switch (direction) {
-      case 'top':
-        return {
-          borderBottom: '1px solid',
-          borderLeft: '1px solid',
-          borderRight: '1px solid',
-          borderColor: 'grey.400',
-          borderBottomRadius: 10,
-        };
+  // const renderShape = () => {
+  //   switch (direction) {
+  //     case 'top':
+  //       return {
+  //         borderBottom: '1px solid',
+  //         borderLeft: '1px solid',
+  //         borderRight: '1px solid',
+  //         borderColor: 'grey.400',
+  //         borderBottomRadius: 10,
+  //       };
 
-      case 'bottom':
-        return {
-          borderTop: '1px solid',
-          borderLeft: '1px solid',
-          borderRight: '1px solid',
-          borderColor: 'grey.400',
-          borderTopRadius: 10,
-        };
-      default:
-        return {
-          border: '1px solid',
-          borderColor: 'grey.300',
-          borderRadius: 10,
-        };
-    }
-  };
+  //     case 'bottom':
+  //       return {
+  //         borderTop: '1px solid',
+  //         borderLeft: '1px solid',
+  //         borderRight: '1px solid',
+  //         borderColor: 'grey.400',
+  //         borderTopRadius: 10,
+  //       };
+  //     default:
+  //       return {
+  //         border: '1px solid',
+  //         borderColor: 'grey.300',
+  //         borderRadius: 10,
+  //       };
+  //   }
+  // };
 
   const handleinputValue = (e) => {
     setInputValue(e.target.value);

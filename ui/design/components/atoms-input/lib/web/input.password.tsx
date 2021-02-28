@@ -2,13 +2,10 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useState } from 'react';
-
-// import { styleInput, styleLabel, styleContainer } from "./styling.text";
-
-import { Button, $Button } from '@nextbnb/atoms-button';
+import { styleInput, styleLabel, styleContainer } from './styling.text';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { $INPUT } from '../constant/appearance';
-
-// import { checkPassword } from "../../../auth";
+import { validatePassword } from '@nextbnb/design/helper/validation';
 
 /**
  * Renders the text input component
@@ -25,6 +22,7 @@ const PasswordInput: React.FC<{
   direction?: string;
   errors?: boolean;
 }> = ({ handleChange, value, direction, errors = false }) => {
+  const [inputValue, setInputValue] = useState('');
   const [fieldActive, setFieldActive] = useState(false);
   const [hide, setHide] = useState(true);
 
@@ -36,32 +34,38 @@ const PasswordInput: React.FC<{
     setFieldActive(false);
   };
 
-  const renderShape = () => {
-    switch (direction) {
-      case 'top':
-        return {
-          borderBottom: '1px solid',
-          borderLeft: '1px solid',
-          borderRight: '1px solid',
-          borderColor: 'grey.400',
-          borderBottomRadius: 10,
-        };
-      case 'bottom':
-        return {
-          borderTop: '1px solid',
-          borderLeft: '1px solid',
-          borderRight: '1px solid',
-          borderColor: 'grey.400',
-          borderTopRadius: 10,
-        };
-      default:
-        return {
-          border: '1px solid',
-          borderColor: 'grey.400',
-          borderRadius: 10,
-        };
-    }
+  // const renderShape = () => {
+  //   switch (direction) {
+  //     case 'top':
+  //       return {
+  //         borderBottom: '1px solid',
+  //         borderLeft: '1px solid',
+  //         borderRight: '1px solid',
+  //         borderColor: 'grey.400',
+  //         borderBottomRadius: 10,
+  //       };
+  //     case 'bottom':
+  //       return {
+  //         borderTop: '1px solid',
+  //         borderLeft: '1px solid',
+  //         borderRight: '1px solid',
+  //         borderColor: 'grey.400',
+  //         borderTopRadius: 10,
+  //       };
+  //     default:
+  //       return {
+  //         border: '1px solid',
+  //         borderColor: 'grey.400',
+  //         borderRadius: 10,
+  //       };
+  //   }
+  // };
+
+  const handleinputValue = (e) => {
+    setInputValue(e.target.value);
   };
+
+  const displayingValue = value ? value : inputValue;
 
   return (
     <div
@@ -71,8 +75,13 @@ const PasswordInput: React.FC<{
         padding: '6px 12px',
         display: 'flex',
         alignItems: 'center',
-        ...renderShape(),
-        // ...styleContainer(errors, fieldActive, checkPassword(value)),
+      }}
+      sx={{
+        ...styleContainer(
+          errors,
+          fieldActive,
+          validatePassword(displayingValue)
+        ),
       }}
     >
       <div
@@ -87,8 +96,8 @@ const PasswordInput: React.FC<{
           id="password"
           name="password"
           type={hide ? 'password' : 'text'}
-          onChange={handleChange}
-          value={value}
+          onChange={value ? handleChange : handleinputValue}
+          value={displayingValue}
           onFocus={activateField}
           onBlur={deactivateField}
           css={{
@@ -98,27 +107,33 @@ const PasswordInput: React.FC<{
             border: 'none',
             fontSize: 16,
             fontWeight: 300,
-            '::placeholder': {
-              color: 'black',
-            },
             position: 'relative',
             top: 0,
             outline: 'none',
             paddingTop: 20,
             color: 'rgb(104, 104, 104)',
-            // ...styleInput(errors, fieldActive, checkPassword(value)),
+          }}
+          sx={{
+            '::placeholder': {
+              color: 'black',
+            },
+            ...styleInput(
+              errors,
+              fieldActive,
+              validatePassword(displayingValue)
+            ),
           }}
           placeholder={fieldActive ? 'Password' : undefined}
         />
         <label
           htmlFor="password"
-          css={{
-            fontSize: 12,
-            color: 'grey.600',
-            fontWeight: 100,
-            transition: 'all 150ms ease-in',
-            top: 12,
-            // ...styleLabel(errors, fieldActive, checkPassword(value), value),
+          sx={{
+            ...styleLabel(
+              errors,
+              fieldActive,
+              validatePassword(displayingValue),
+              displayingValue
+            ),
           }}
         >
           Password
@@ -133,7 +148,7 @@ const PasswordInput: React.FC<{
         }}
       >
         <Button
-          variant={$Button.UNDERLINE}
+          variant={$BUTTON.underline}
           onClick={() => setHide((prevHide) => !prevHide)}
           font={13}
           title={hide ? 'Show' : 'Hide'}
