@@ -3,67 +3,86 @@
  */
 export const styleInput = (errors, fieldActive) => {
   if (errors && fieldActive) {
-    return { bg: "white" };
+    return { bg: 'white' };
   }
   if (errors) {
-    return { bg: "#fef8f6" };
+    return { bg: '#fef8f6' };
   }
   return {
-    backgroundColor: "white",
-    "::placeholder": {
-      color: "rgb(104, 104, 104)",
+    backgroundColor: 'white',
+    '::placeholder': {
+      color: 'rgb(104, 104, 104)',
     },
   };
 };
 
 export const styleLabel = (errors, fieldActive) => {
+  const mixin = (top, color, fontWeight) => {
+    return {
+      position: 'absolute',
+      transition: 'all 150ms ease-in',
+      fontSize: 13,
+      top,
+      color,
+      fontWeight,
+    };
+  };
   if (errors && fieldActive) {
     return {
-      position: "absolute",
-      transition: "all 150ms ease-in",
-      fontSize: 13,
-      top: 9,
-      color: "#c13514 !important",
-      fontWeight: 500,
+      ...mixin(9, 'red.500', 500),
     };
   }
   if (errors) {
     return {
-      position: "absolute",
-      transition: "all 150ms ease-in",
-      fontSize: 13,
-      top: 9,
-      color: "#c13514 !important",
-      fontWeight: 500,
+      ...mixin(9, 'red.500', 500),
     };
   }
   return {
-    position: "absolute",
-    transition: "all 150ms ease-in",
-    fontSize: 13,
-    top: 7,
-    color: "gray !important",
+    ...mixin(7, 'grey.500', 300),
   };
 };
 
-// export const styleContainer = (errors, fieldActive, direction) => {
-//   if (errors && fieldActive) {
-//     return [input["select-container__error--active"]].join(" ");
-//   }
-//   if (errors) {
-//     if (direction === "left") {
-//       return [input["select-container__error--inactive"], shape["blr--8"]].join(
-//         " "
-//       );
-//     }
-//     if (direction === "right") {
-//       return [input["select-container__error--inactive"], shape["brr--8"]].join(
-//         " "
-//       );
-//     }
-//     return [input["select-container__error--inactive"]].join(" ");
-//   }
-//   if (fieldActive) {
-//     return [input["select-container__active"]].join(" ");
-//   }
-// };
+export const styleContainer = (errors, fieldActive, direction) => {
+  const mixin = (borderWidth, borderColor) => {
+    return {
+      borderRadius: 8,
+      border: `${borderWidth}px solid`,
+      borderColor,
+    };
+  };
+  if (errors && fieldActive) {
+    return {
+      ...mixin(1, 'red.500'),
+    };
+  }
+  if (errors) {
+    if (direction === 'left') {
+      return {
+        borderLeftTopRadius: 8,
+        borderLeftBottomRadius: 8,
+        border: '1px solid',
+        borderColor: 'black',
+      };
+    }
+    if (direction === 'right') {
+      return {
+        borderRightTopRadius: 8,
+        borderRightBottomRadius: 8,
+        border: '1px solid',
+        borderColor: 'black',
+      };
+    }
+    return {
+      border: '1px solid',
+      borderColor: 'black',
+    };
+  }
+  if (fieldActive) {
+    return {
+      ...mixin(2, 'black'),
+    };
+  }
+  return {
+    ...mixin(1, 'black'),
+  };
+};

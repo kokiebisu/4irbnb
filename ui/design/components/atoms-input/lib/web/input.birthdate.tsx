@@ -2,8 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useState } from 'react';
-
-import { styleInput, styleLabel } from './styling.select';
+import { styleInput, styleLabel, styleContainer } from './styling.select';
 import { birthdateOptions, renderShape } from '../logic/logic.birthdate';
 import { $INPUT } from '../constant/appearance';
 
@@ -24,18 +23,24 @@ const BirthdateInput: React.FC<{
   dateType?: 'year' | 'month' | 'day';
 }> = ({
   handleChange,
-  value,
+  value = null,
   direction = 'center',
   errors = false,
   dateType = 'year',
 }) => {
+  const [inputValue, setInputValue] = useState('');
   const [fieldActive, setFieldActive] = useState(false);
+
+  const handleinputValue = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const displayingValue = typeof value === 'string' ? value : inputValue;
 
   return (
     <div
       css={{
         height: 60,
-        // input[outside]
         display: 'flex',
         position: 'relative',
         alignItems: 'center',
@@ -47,8 +52,10 @@ const BirthdateInput: React.FC<{
           width: '100%',
           position: 'relative',
           padding: '0 15px',
-          ...renderShape(direction),
-          // ...styleContainer(errors, fieldActive, direction),
+          // ...renderShape(direction),
+        }}
+        sx={{
+          ...styleContainer(errors, fieldActive, direction),
         }}
       >
         <select
@@ -73,6 +80,8 @@ const BirthdateInput: React.FC<{
             outline: 'none',
             paddingTop: '20px',
             color: 'rgb(104, 104, 104)',
+          }}
+          sx={{
             ...styleInput(errors, fieldActive),
           }}
         >
@@ -105,7 +114,9 @@ const BirthdateInput: React.FC<{
           htmlFor={dateType}
           css={{
             fontWeight: 100,
-            // ...styleLabel(errors, fieldActive),
+          }}
+          sx={{
+            ...styleLabel(errors, fieldActive),
           }}
         >
           {birthdateOptions[dateType]}
