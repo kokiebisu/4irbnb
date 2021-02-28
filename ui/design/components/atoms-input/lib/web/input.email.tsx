@@ -64,7 +64,7 @@ const EmailInput: React.FC<{
     setInputValue(e.target.value);
   };
 
-  const displayingValue = value ? value : inputValue;
+  const displayingValue = typeof value === 'string' ? value : inputValue;
 
   return (
     <div

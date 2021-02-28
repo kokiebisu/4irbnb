@@ -22,11 +22,12 @@ const NameInput: React.FC<{
   errors?: boolean;
 }> = ({
   handleChange,
-  value,
+  value = null,
   direction,
   name = 'firstname',
   errors = false,
 }) => {
+  const [inputValue, setInputValue] = useState('');
   const names: { [name: string]: string } = {
     firstname: 'First name',
     lastname: 'Last name',
@@ -41,32 +42,38 @@ const NameInput: React.FC<{
     setFieldActive(false);
   };
 
-  const renderShape = () => {
-    switch (direction) {
-      case 'top':
-        return {
-          borderBottom: '1px solid',
-          borderLeft: '1px solid',
-          borderRight: '1px solid',
-          borderColor: 'grey.400',
-          borderBottomRadius: 10,
-        };
-      case 'bottom':
-        return {
-          borderTop: '1px solid',
-          borderLeft: '1px solid',
-          borderRight: '1px solid',
-          borderColor: 'grey.400',
-          borderTopRadius: 10,
-        };
-      default:
-        return {
-          border: '1px solid',
-          borderColor: 'grey.400',
-          borderRadius: 10,
-        };
-    }
+  // const renderShape = () => {
+  //   switch (direction) {
+  //     case 'top':
+  //       return {
+  //         borderBottom: '1px solid',
+  //         borderLeft: '1px solid',
+  //         borderRight: '1px solid',
+  //         borderColor: 'grey.400',
+  //         borderBottomRadius: 10,
+  //       };
+  //     case 'bottom':
+  //       return {
+  //         borderTop: '1px solid',
+  //         borderLeft: '1px solid',
+  //         borderRight: '1px solid',
+  //         borderColor: 'grey.400',
+  //         borderTopRadius: 10,
+  //       };
+  //     default:
+  //       return {
+  //         border: '1px solid',
+  //         borderColor: 'grey.400',
+  //         borderRadius: 10,
+  //       };
+  //   }
+  // };
+
+  const handleinputValue = (e) => {
+    setInputValue(e.target.value);
   };
+
+  const displayingValue = typeof value === 'string' ? value : inputValue;
 
   return (
     <div
@@ -75,8 +82,9 @@ const NameInput: React.FC<{
         position: 'relative',
         padding: '6px 12px',
         alignItems: 'center',
-        ...renderShape(),
-        // ...styleContainer(errors, fieldActive, value),
+      }}
+      sx={{
+        ...styleContainer(errors, fieldActive, displayingValue),
       }}
     >
       <div
@@ -91,7 +99,7 @@ const NameInput: React.FC<{
           id={name}
           name={name}
           type="text"
-          onChange={handleChange}
+          onChange={handleinputValue}
           value={value}
           onFocus={activateField}
           onBlur={deactivateField}
@@ -102,28 +110,30 @@ const NameInput: React.FC<{
             border: 'none',
             fontSize: 16,
             fontWeight: 300,
-            '::placeholder': {
-              color: 'black',
-            },
             position: 'relative',
             top: 0,
             outline: 'none',
             paddingTop: 20,
             color: 'rgb(104, 104, 104)',
-            ...styleInput(errors, fieldActive, value),
+          }}
+          sx={{
+            '::placeholder': {
+              color: 'black',
+            },
+            ...styleInput(errors, fieldActive, displayingValue),
           }}
           placeholder={fieldActive ? names[name] : undefined}
         />
         <label
           htmlFor={name}
           style={{ position: 'absolute' }}
-          css={{
-            color: 'grey.600',
-            fontWeight: 100,
-            transition: 'all 150ms ease-in',
-            fontSize: 16,
-            top: 12,
-            // ...styleLabel(errors, fieldActive, value, value),
+          sx={{
+            ...styleLabel(
+              errors,
+              fieldActive,
+              displayingValue,
+              displayingValue
+            ),
           }}
         >
           {names[name]}

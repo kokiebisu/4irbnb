@@ -21,7 +21,7 @@ const PasswordInput: React.FC<{
   value?: string;
   direction?: string;
   errors?: boolean;
-}> = ({ handleChange, value, direction, errors = false }) => {
+}> = ({ handleChange, value = null, direction, errors = false }) => {
   const [inputValue, setInputValue] = useState('');
   const [fieldActive, setFieldActive] = useState(false);
   const [hide, setHide] = useState(true);
@@ -65,7 +65,7 @@ const PasswordInput: React.FC<{
     setInputValue(e.target.value);
   };
 
-  const displayingValue = value ? value : inputValue;
+  const displayingValue = typeof value === 'string' ? value : inputValue;
 
   return (
     <div
