@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useState } from 'react';
-import { styleInput, styleLabel } from './styling.select';
+import { styleContainer, styleInput, styleLabel } from './styling.select';
 import { renderShape } from '../logic/logic.region';
 import { $INPUT } from '../constant/appearance';
 
@@ -20,8 +20,15 @@ const RegionInput: React.FC<{
   value?: string;
   direction?: string;
   errors?: boolean;
-}> = ({ handleChange, value, direction = '', errors = false }) => {
+}> = ({ handleChange, value = null, direction = '', errors = false }) => {
+  const [inputValue, setInputValue] = useState('');
   const [fieldActive, setFieldActive] = useState(false);
+
+  const handleDisplayingValue = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const displayingValue = typeof value === 'string' ? value : inputValue;
 
   return (
     <div
@@ -31,7 +38,6 @@ const RegionInput: React.FC<{
         position: 'relative',
         alignItems: 'center',
       }}
-      style={{ height: 60 }}
     >
       <div
         style={{
@@ -39,18 +45,21 @@ const RegionInput: React.FC<{
           position: 'relative',
           height: '100%',
           width: '100%',
-          // ...renderShape(direction),
-          // ...styleContainer(errors, fieldActive, value),
+        }}
+        sx={{
+          ...styleContainer(errors, fieldActive, displayingValue),
         }}
       >
         <select
-          style={{ height: '100%' }}
           id="region"
-          onChange={handleChange}
+          onChange={
+            typeof value === 'string' ? handleChange : handleDisplayingValue
+          }
           value={value}
           onFocus={() => setFieldActive(true)}
           onBlur={() => setFieldActive(false)}
           css={{
+            height: '100%',
             borderRadius: 10,
             padding: 0,
             width: '100%',
@@ -58,9 +67,15 @@ const RegionInput: React.FC<{
             border: 'none',
             fontSize: 16,
             fontWeight: 300,
-            bg: 'white',
+            position: 'relative',
+            top: '0px',
+            outline: 'none',
+            paddingTop: '20px',
+            color: 'rgb(104, 104, 104)',
+          }}
+          sx={{
             '::placeholder': {
-              color: 'rgb(104, 104, 104)',
+              color: 'grey.500',
             },
             ...styleInput(errors, fieldActive),
           }}
@@ -73,9 +88,9 @@ const RegionInput: React.FC<{
         </select>
         <label
           htmlFor="region"
-          css={{
-            fontWeight: 100,
-            // ...styleLabel(errors, fieldActive),
+          style={{ position: 'absolute' }}
+          sx={{
+            ...styleLabel(errors, fieldActive),
           }}
         >
           Country/Region

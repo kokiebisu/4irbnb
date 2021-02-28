@@ -5,7 +5,7 @@ import { useRef, useState } from 'react';
 import { Checked } from '@nextbnb/design/assets/svg/original';
 import { ChevronDown, ChevronTop } from '@nextbnb/design/assets/svg/regular';
 import { $INPUT } from '../constant/appearance';
-// import useOnClickOutside from "../../../hooks/useOnClickOutside";
+import useOnClickOutside from '@nextbnb/design/hooks/useOnClickOutside';
 
 /**
  * Renders the text input component
@@ -21,14 +21,28 @@ const PlaceInput: React.FC<{
   direction?: string;
   errors?: boolean;
   changePlace?: (type: string) => void;
-}> = ({ value = 'Entire place', direction, errors = false, changePlace }) => {
+}> = ({ value = null, direction, errors = false, changePlace }) => {
+  const [inputValue, setInputValue] = useState('Entire place');
   const containerRef = useRef<any>();
   const [expanded, setExpanded] = useState(false);
-  // useOnClickOutside(containerRef, () => {
-  //   if (expanded) {
-  //     setExpanded(!expanded);
-  //   }
-  // });
+
+  console.log('inpu', inputValue);
+
+  const handleDisplayingValue = (value) => {
+    if (typeof value === 'string' && changePlace) {
+      return changePlace(value);
+    }
+    setInputValue(value);
+  };
+
+  const displayingValue = typeof value === 'string' ? value : inputValue;
+
+  useOnClickOutside(containerRef, () => {
+    if (expanded) {
+      setExpanded(!expanded);
+    }
+  });
+
   const renderShape = () => {
     switch (direction) {
       case 'top':
@@ -107,10 +121,14 @@ const PlaceInput: React.FC<{
               }}
               htmlFor="place"
             >
-              {value}
+              {displayingValue}
             </label>
           </div>
-          <div>
+          <div
+            sx={{
+              paddingRight: '15px',
+            }}
+          >
             {expanded ? <ChevronTop width={13} /> : <ChevronDown width={13} />}
           </div>
         </div>
@@ -143,7 +161,8 @@ const PlaceInput: React.FC<{
                     bg: 'transparent',
                   }}
                   onClick={() => {
-                    // changePlace("Entire place");
+                    console.log('clicked');
+                    handleDisplayingValue('Entire place');
                     setExpanded(!expanded);
                   }}
                 >
@@ -166,7 +185,7 @@ const PlaceInput: React.FC<{
                       </p>
                     </div>
                   </div>
-                  {value === 'Entire place' && (
+                  {displayingValue === 'Entire place' && (
                     <div css={{ display: 'flex', alignItems: 'center' }}>
                       <Checked width={32} />
                     </div>
@@ -184,7 +203,8 @@ const PlaceInput: React.FC<{
                     bg: 'transparent',
                   }}
                   onClick={() => {
-                    // changePlace("Private room");
+                    console.log('clicked');
+                    handleDisplayingValue('Private room');
                     setExpanded(!expanded);
                   }}
                 >
@@ -201,7 +221,7 @@ const PlaceInput: React.FC<{
                       </p>
                     </div>
                   </div>
-                  {value === 'Private room' && (
+                  {displayingValue === 'Private room' && (
                     <div css={{ display: 'flex', alignItems: 'center' }}>
                       <Checked width={32} />
                     </div>
@@ -219,7 +239,7 @@ const PlaceInput: React.FC<{
                     bg: 'transparent',
                   }}
                   onClick={() => {
-                    // changePlace("Shared room");
+                    handleDisplayingValue('Shared room');
                     setExpanded(!expanded);
                   }}
                 >
@@ -236,7 +256,7 @@ const PlaceInput: React.FC<{
                       </p>
                     </div>
                   </div>
-                  {value === 'Shared room' && (
+                  {displayingValue === 'Shared room' && (
                     <div css={{ display: 'flex', alignItems: 'center' }}>
                       <Checked width={32} />
                     </div>
