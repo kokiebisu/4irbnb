@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.banner';
-import { $Button } from '..';
+import { $BUTTON } from '..';
 
 /**
  * Renders the banner button component
@@ -18,7 +18,7 @@ const BannerButton: React.FC<{ title?: string }> = ({ title = 'Button' }) => {
 
 export const banner = (props) => {
   return {
-    [$Button.BANNER]: {
+    [$BUTTON.banner]: {
       component: <BannerButton {...props} />,
       css: {},
     },

@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { $Button } from '..';
+import { $BUTTON } from '..';
 import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.globe';
 
@@ -28,7 +28,7 @@ const GlobeButton: React.FC<{
 
 export const globe = (props) => {
   return {
-    [$Button.GLOBE]: {
+    [$BUTTON.globe]: {
       component: <GlobeButton {...props} />,
       css: {},
     },

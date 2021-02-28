@@ -1,9 +1,9 @@
-import React from "react";
-import { Button, $Button, ButtonProps } from "..";
-import { Story, Meta } from "@storybook/react";
+import React from 'react';
+import { Button, $BUTTON, ButtonProps } from '..';
+import { Story, Meta } from '@storybook/react';
 
 export default {
-  title: "Atoms/Button",
+  title: 'Atoms/Button',
   component: Button,
   argTypes: {
     variant: {
@@ -18,224 +18,224 @@ const TemplateStory: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Auth = TemplateStory.bind({});
 Auth.args = {
-  variant: $Button.AUTH,
+  variant: $BUTTON.auth,
   onClick() {
-    alert("Auth Button Pressed");
+    alert('Auth Button Pressed');
   },
 };
 
 export const Back = TemplateStory.bind({});
 Back.args = {
-  variant: $Button.BACK,
+  variant: $BUTTON.back,
   onClick() {
-    alert("Back Button Pressed");
+    alert('Back Button Pressed');
   },
 };
 
 export const Banner = TemplateStory.bind({});
 Banner.args = {
-  variant: $Button.BANNER,
+  variant: $BUTTON.banner,
   onClick() {
-    alert("Banner Button Pressed");
+    alert('Banner Button Pressed');
   },
 };
 
 export const Bar = TemplateStory.bind({});
 Bar.args = {
-  variant: $Button.BAR,
+  variant: $BUTTON.bar,
   onClick() {
-    alert("Bar Button Pressed");
+    alert('Bar Button Pressed');
   },
 };
 
 export const Border = TemplateStory.bind({});
 Border.args = {
-  variant: $Button.BORDER,
+  variant: $BUTTON.border,
   onClick() {
-    alert("Border Button Pressed");
+    alert('Border Button Pressed');
   },
 };
 
 export const Calendar = TemplateStory.bind({});
 Calendar.args = {
-  variant: $Button.CALENDAR,
+  variant: $BUTTON.calendar,
   onClick() {
-    alert("Calendar Button Pressed");
+    alert('Calendar Button Pressed');
   },
 };
 
 export const Closed = TemplateStory.bind({});
 Closed.args = {
-  variant: $Button.CLOSED,
+  variant: $BUTTON.closed,
   onClick() {
-    alert("Closed Button Pressed");
+    alert('Closed Button Pressed');
   },
 };
 
 export const Currency = TemplateStory.bind({});
 Currency.args = {
-  variant: $Button.CURRENCY,
+  variant: $BUTTON.currency,
   onClick() {
-    alert("Closed Button Pressed");
+    alert('Closed Button Pressed');
   },
 };
 
 export const Destination = TemplateStory.bind({});
 Destination.args = {
-  variant: $Button.DESTINATION,
+  variant: $BUTTON.destination,
   onClick() {
-    alert("Closed Button Pressed");
+    alert('Closed Button Pressed');
   },
 };
 
 export const Expand = TemplateStory.bind({});
 Expand.args = {
-  variant: $Button.EXPAND,
+  variant: $BUTTON.expand,
   onClick() {
-    alert("Closed Button Pressed");
+    alert('Closed Button Pressed');
   },
 };
 
 export const Filter = TemplateStory.bind({});
 Filter.args = {
-  variant: $Button.FILTER,
+  variant: $BUTTON.filter,
   onClick() {
-    alert("Closed Button Pressed");
+    alert('Closed Button Pressed');
   },
 };
 
 export const Globe = TemplateStory.bind({});
 Globe.args = {
-  variant: $Button.GLOBE,
+  variant: $BUTTON.globe,
   onClick() {
-    alert("Closed Button Pressed");
+    alert('Closed Button Pressed');
   },
 };
 
 export const Link = TemplateStory.bind({});
 Link.args = {
-  variant: $Button.LINK,
+  variant: $BUTTON.link,
   onClick() {
-    alert("Link Button Pressed");
+    alert('Link Button Pressed');
   },
 };
 
 export const Location = TemplateStory.bind({});
 Location.args = {
-  variant: $Button.LOCATION,
+  variant: $BUTTON.location,
   onClick() {
-    alert("Location Button Pressed");
+    alert('Location Button Pressed');
   },
 };
 
 export const Logo = TemplateStory.bind({});
 Logo.args = {
-  variant: $Button.LOGO,
+  variant: $BUTTON.logo,
   onClick() {
-    alert("Logo Button Pressed");
+    alert('Logo Button Pressed');
   },
 };
 
 export const Menu = TemplateStory.bind({});
 Menu.args = {
-  variant: $Button.MENU,
+  variant: $BUTTON.menu,
   onClick() {
-    alert("Menu Button Pressed");
+    alert('Menu Button Pressed');
   },
 };
 
 export const Modal = TemplateStory.bind({});
 Modal.args = {
-  variant: $Button.MODAL,
+  variant: $BUTTON.modal,
   onClick() {
-    alert("Modal Button Pressed");
+    alert('Modal Button Pressed');
   },
 };
 
 export const Nearby = TemplateStory.bind({});
 Nearby.args = {
-  variant: $Button.NEARBY,
+  variant: $BUTTON.nearby,
   onClick() {
-    alert("Nearby Button Pressed");
+    alert('Nearby Button Pressed');
   },
 };
 
 export const Option = TemplateStory.bind({});
 Option.args = {
-  variant: $Button.OPTION,
+  variant: $BUTTON.option,
   onClick() {
-    alert("Option Button Pressed");
+    alert('Option Button Pressed');
   },
 };
 
 export const Paginate = TemplateStory.bind({});
 Paginate.args = {
-  variant: $Button.PAGINATE,
+  variant: $BUTTON.paginate,
   onClick() {
-    alert("Paginate Button Pressed");
+    alert('Paginate Button Pressed');
   },
 };
 
 export const Primary = TemplateStory.bind({});
 Primary.args = {
-  variant: $Button.PRIMARY,
+  variant: $BUTTON.primary,
   onClick() {
-    alert("Primary Button Pressed");
+    alert('Primary Button Pressed');
   },
 };
 
 export const Privacy = TemplateStory.bind({});
 Privacy.args = {
-  variant: $Button.PRIVACY,
+  variant: $BUTTON.privacy,
   onClick() {
-    alert("Privacy Button Pressed");
+    alert('Privacy Button Pressed');
   },
 };
 
 export const Report = TemplateStory.bind({});
 Report.args = {
-  variant: $Button.REPORT,
+  variant: $BUTTON.report,
   onClick() {
-    alert("Report Button Pressed");
+    alert('Report Button Pressed');
   },
 };
 
 export const Search = TemplateStory.bind({});
 Search.args = {
-  variant: $Button.SEARCH,
+  variant: $BUTTON.search,
   onClick() {
-    alert("Search Button Pressed");
+    alert('Search Button Pressed');
   },
 };
 
 export const Searchbar = TemplateStory.bind({});
 Searchbar.args = {
-  variant: $Button.SEARCHBAR,
+  variant: $BUTTON.searchbar,
   onClick() {
-    alert("Searchbar Button Pressed");
+    alert('Searchbar Button Pressed');
   },
 };
 
 export const Transparent = TemplateStory.bind({});
 Transparent.args = {
-  variant: $Button.TRANSPARENT,
+  variant: $BUTTON.transparent,
   onClick() {
-    alert("Transparent Button Pressed");
+    alert('Transparent Button Pressed');
   },
 };
 
 export const Underline = TemplateStory.bind({});
 Underline.args = {
-  variant: $Button.UNDERLINE,
+  variant: $BUTTON.underline,
   onClick() {
-    alert("Underline Button Pressed");
+    alert('Underline Button Pressed');
   },
 };
 
 export const Video = TemplateStory.bind({});
 Video.args = {
-  variant: $Button.VIDEO,
+  variant: $BUTTON.video,
   onClick() {
-    alert("Video Button Pressed");
+    alert('Video Button Pressed');
   },
 };

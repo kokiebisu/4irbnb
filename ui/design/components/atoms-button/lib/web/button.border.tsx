@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { $Button } from '..';
+import { $BUTTON } from '..';
 import { jsx } from 'theme-ui';
 import { web } from '../styles/button.border';
 
@@ -51,7 +51,7 @@ const BorderButton: React.FC<{
 
 export const border = (props) => {
   return {
-    [$Button.BORDER]: {
+    [$BUTTON.border]: {
       component: <BorderButton {...props} />,
       css: {},
     },

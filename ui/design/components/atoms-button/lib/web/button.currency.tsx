@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { $Button } from '..';
+import { $BUTTON } from '..';
 import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.currency';
 
@@ -27,7 +27,7 @@ const CurrencyButton: React.FC<{
 
 export const currency = (props) => {
   return {
-    [$Button.CURRENCY]: {
+    [$BUTTON.currency]: {
       component: <CurrencyButton {...props} />,
       css: {},
     },

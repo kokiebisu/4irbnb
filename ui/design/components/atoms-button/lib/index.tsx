@@ -10,6 +10,10 @@ import { variants as webVariants } from './web/variants';
 import { generateVariants } from './utils/variants';
 import { PLATFORM } from './constants/platform';
 
+import { $BUTTON } from './constants/appearance';
+
+export { $BUTTON };
+
 export interface ButtonProps {
   extendsTo?: any;
   onClick: () => void;
@@ -19,41 +23,10 @@ export interface ButtonProps {
   [property: string]: any;
 }
 
-export const $Button = {
-  AUTH: 'auth',
-  BACK: 'back',
-  BANNER: 'banner',
-  BAR: 'bar',
-  BORDER: 'border',
-  CALENDAR: 'calendar',
-  CLOSED: 'closed',
-  CURRENCY: 'currency',
-  DESTINATION: 'destination',
-  EXPAND: 'expand',
-  FILTER: 'filter',
-  GLOBE: 'globe',
-  LINK: 'link',
-  LOCATION: 'location',
-  LOGO: 'logo',
-  MENU: 'menu',
-  MODAL: 'modal',
-  NEARBY: 'nearby',
-  OPTION: 'option',
-  PAGINATE: 'paginate',
-  PRIMARY: 'primary',
-  PRIVACY: 'privacy',
-  REPORT: 'report',
-  SEARCH: 'search',
-  SEARCHBAR: 'searchbar',
-  TRANSPARENT: 'transparent',
-  UNDERLINE: 'underline',
-  VIDEO: 'video',
-};
-
 export const Button: React.FC<ButtonProps> = ({
   platform = 'web',
   extendsTo = {},
-  variant = $Button.AUTH,
+  variant = $BUTTON.auth,
   onClick,
   block,
   animate,
@@ -63,13 +36,8 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   const { disable } = props;
 
-  const variants = generateVariants(
-    PLATFORM[platform],
-    webVariants,
-    null,
-    null,
-    props
-  );
+  const variants = generateVariants(PLATFORM[platform], webVariants, props);
+  console.log('variants', variants);
 
   return (
     <ThemeProvider theme={theme}>

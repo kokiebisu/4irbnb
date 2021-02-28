@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.filter';
-import { $Button } from '..';
+import { $BUTTON } from '..';
 
 /**
  * Renders the filter button
@@ -28,7 +28,7 @@ export const FilterButton: React.FC<{ label?: string; inverse?: boolean }> = ({
 
 export const filter = (props) => {
   return {
-    [$Button.FILTER]: {
+    [$BUTTON.filter]: {
       component: <FilterButton {...props} />,
       css: {},
     },

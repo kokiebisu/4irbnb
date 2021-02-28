@@ -7,6 +7,7 @@ import {
   Education,
   ToolBox,
 } from '@nextbnb/design/assets/svg/original';
+import { $BULLET } from '..';
 
 /**
  * Renders the help bullet
@@ -62,7 +63,7 @@ const HelpBullet: React.FC<{
 
 export const help = (props) => {
   return {
-    [$Bullet.HELP]: {
+    [$BULLET.help]: {
       component: <HelpBullet {...props} />,
       css: {},
     },

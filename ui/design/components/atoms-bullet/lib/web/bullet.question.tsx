@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { $Bullet } from '..';
+import { $BULLET } from '..';
 
 const QuestionBullet: React.FC<{
   title?: string;
@@ -25,7 +25,7 @@ const QuestionBullet: React.FC<{
 
 export const question = (props) => {
   return {
-    [$Bullet.QUESTION]: {
+    [$BULLET.question]: {
       component: <QuestionBullet {...props} />,
       css: {},
     },

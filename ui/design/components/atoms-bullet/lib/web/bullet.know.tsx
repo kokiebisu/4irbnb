@@ -13,7 +13,7 @@ import {
   Check,
   Cleaning,
 } from '@nextbnb/design/assets/svg/original';
-import { $Bullet } from '..';
+import { $BULLET } from '..';
 
 /**
  * Renders the know bullet
@@ -93,7 +93,7 @@ const KnowBullet: React.FC<{
 
 export const know = (props) => {
   return {
-    [$Bullet.KNOW]: {
+    [$BULLET.know]: {
       component: <KnowBullet {...props} />,
       css: {},
     },

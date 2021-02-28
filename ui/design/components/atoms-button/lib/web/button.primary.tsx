@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { $Button } from '..';
+import { $BUTTON } from '..';
 import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.primary';
 // import { Animation } from "../animation/web";
@@ -64,7 +64,7 @@ const PrimaryButton: React.FC<{
 
 export const primary = (props) => {
   return {
-    [$Button.PRIMARY]: {
+    [$BUTTON.primary]: {
       component: <PrimaryButton {...props} />,
       css: {},
     },

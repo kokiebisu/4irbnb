@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { CheckPlain } from '@nextbnb/design/assets/svg/original';
-import { $Bullet } from '..';
+import { $BULLET } from '..';
 
 const CheckBullet: React.FC<{ title?: string }> = ({
   title = 'Title here',
@@ -23,7 +23,7 @@ const CheckBullet: React.FC<{ title?: string }> = ({
 
 export const check = (props) => {
   return {
-    [$Bullet.CHECK]: {
+    [$BULLET.check]: {
       component: <CheckBullet {...props} />,
       css: {},
     },

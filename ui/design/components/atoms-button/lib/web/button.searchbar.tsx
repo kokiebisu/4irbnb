@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui';
 import { MagnifyGlass } from '@nextbnb/design/assets/svg/original';
 import { web, theme } from '../styles/button.searchbar';
-import { $Button } from '..';
+import { $BUTTON } from '..';
 
 /**
  * Renders the searchbar button component
@@ -42,7 +42,7 @@ export const SearchbarButton: React.FC<{ mini?: boolean }> = ({
 
 export const searchbar = (props) => {
   return {
-    [$Button.SEARCHBAR]: {
+    [$BUTTON.searchbar]: {
       component: <SearchbarButton {...props} />,
       css: {
         border: '1px solid',

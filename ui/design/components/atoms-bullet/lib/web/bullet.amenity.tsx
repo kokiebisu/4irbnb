@@ -10,7 +10,7 @@ import {
   TV,
 } from '@nextbnb/design/assets/svg/original';
 import { web } from '../styles/bullet.amenity';
-import { $Bullet } from '..';
+import { $BULLET } from '..';
 
 /**
  * Renders the amenity bullet
@@ -52,7 +52,7 @@ const AmenityBullet: React.FC<{
 
 export const amenity = (props) => {
   return {
-    [$Bullet.AMENITY]: {
+    [$BULLET.amenity]: {
       component: <AmenityBullet {...props} />,
       css: {},
     },

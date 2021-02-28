@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui';
 import { ChevronLeft } from '@nextbnb/design/assets/svg/regular';
 import { web, theme } from '../styles/button.back';
-import { $Button } from '..';
+import { $BUTTON } from '..';
 
 export const BackButton: React.FC<{}> = () => {
   return (
@@ -20,7 +20,7 @@ export const BackButton: React.FC<{}> = () => {
 
 export const back = (props) => {
   return {
-    [$Button.BACK]: {
+    [$BUTTON.back]: {
       component: <BackButton {...props} />,
       css: {},
     },

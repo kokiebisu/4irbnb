@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { $Button } from '..';
+import { $BUTTON } from '..';
 import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.transparent';
 
@@ -24,7 +24,7 @@ const TransparentButton: React.FC<{
 
 export const transparent = (props) => {
   return {
-    [$Button.TRANSPARENT]: {
+    [$BUTTON.transparent]: {
       component: <TransparentButton {...props} />,
       css: {
         bg: 'transparent',

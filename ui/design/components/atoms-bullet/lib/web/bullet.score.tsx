@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { $Bullet } from '..';
+import { $BULLET } from '..';
 
 /**
  * Renders the score bullet
@@ -52,7 +52,7 @@ const ScoreBullet: React.FC<{
 
 export const score = (props) => {
   return {
-    [$Bullet.SCORE]: {
+    [$BULLET.score]: {
       component: <ScoreBullet {...props} />,
       css: {},
     },

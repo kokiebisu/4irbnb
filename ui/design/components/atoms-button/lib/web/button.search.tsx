@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui';
 import { MagnifyGlass } from '@nextbnb/design/assets/svg/original';
 import { web, theme } from '../styles/button.search';
-import { $Button } from '..';
+import { $BUTTON } from '..';
 
 const SearchButton: React.FC<{ expand?: boolean }> = ({ expand = false }) => {
   return (
@@ -39,7 +39,7 @@ const SearchButton: React.FC<{ expand?: boolean }> = ({ expand = false }) => {
 
 export const search = (props) => {
   return {
-    [$Button.SEARCH]: {
+    [$BUTTON.search]: {
       component: <SearchButton {...props} />,
       css: {},
     },

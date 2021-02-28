@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Exclamation } from '@nextbnb/design/assets/svg/original';
-import { $Bullet } from '..';
+import { $BULLET } from '..';
 
 const RequiredBullet: React.FC<{
   message?: string;
@@ -21,7 +21,7 @@ const RequiredBullet: React.FC<{
 
 export const required = (props) => {
   return {
-    [$Bullet.REQUIRED]: {
+    [$BULLET.required]: {
       component: <RequiredBullet {...props} />,
       css: {},
     },

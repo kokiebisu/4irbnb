@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { $Button } from '..';
+import { $BUTTON } from '..';
 import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.privacy';
 
@@ -26,7 +26,7 @@ export const PrivacyButton: React.FC<{ title?: string; inverse?: boolean }> = ({
 
 export const privacy = (props) => {
   return {
-    [$Button.PRIVACY]: {
+    [$BUTTON.privacy]: {
       component: <PrivacyButton {...props} />,
       css: {},
     },

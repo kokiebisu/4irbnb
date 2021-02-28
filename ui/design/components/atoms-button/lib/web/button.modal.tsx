@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.modal';
 import { Close } from '@nextbnb/design/assets/svg/original';
 import { ChevronLeft } from '@nextbnb/design/assets/svg/regular';
-import { $Button } from '..';
+import { $BUTTON } from '..';
 
 /**
  * Renders the close button component
@@ -24,7 +24,7 @@ const ModalButton: React.FC<{ modal?: string }> = ({ modal = 'close' }) => {
 
 export const modal = (props) => {
   return {
-    [$Button.MODAL]: {
+    [$BUTTON.modal]: {
       component: <ModalButton {...props} />,
       css: {},
     },

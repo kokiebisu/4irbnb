@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { CheckInverse } from '@nextbnb/design/assets/svg/original';
-import { $Bullet } from '..';
+import { $BULLET } from '..';
 
 /**
  * Renders the bring bullet
@@ -25,7 +25,7 @@ const BringBullet: React.FC<{
 
 export const bring = (props) => {
   return {
-    [$Bullet.BRING]: {
+    [$BULLET.bring]: {
       component: <BringBullet {...props} />,
       css: {},
     },

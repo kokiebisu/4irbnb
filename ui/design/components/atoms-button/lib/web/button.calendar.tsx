@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { $Button } from '..';
+import { $BUTTON } from '..';
 import { jsx } from 'theme-ui';
 import { web } from '../styles/button.calendar';
 
@@ -26,7 +26,7 @@ const CalendarButton: React.FC<{
 
 export const calendar = (props) => {
   return {
-    [$Button.CALENDAR]: {
+    [$BUTTON.calendar]: {
       component: <CalendarButton {...props} />,
       css: {},
     },

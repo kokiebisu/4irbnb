@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Star, Superhost, Verified } from '@nextbnb/design/assets/svg/original';
-import { $Bullet } from '..';
+import { $BULLET } from '..';
 
 /**
  * Renders the host bullet
@@ -33,7 +33,7 @@ const HostBullet: React.FC<{
 
 export const host = (props) => {
   return {
-    [$Bullet.HOST]: {
+    [$BULLET.host]: {
       component: <HostBullet {...props} />,
       css: {},
     },

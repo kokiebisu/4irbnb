@@ -8,7 +8,7 @@ import {
   Requirements,
 } from '@nextbnb/design/assets/svg/original';
 import { Button } from '@nextbnb/atoms-button';
-import { $Bullet } from '..';
+import { $BULLET } from '..';
 
 /**
  * Renders the priority bullet
@@ -67,7 +67,7 @@ const PriorityBullet: React.FC<{
 
 export const priority = (props) => {
   return {
-    [$Bullet.PRIORITY]: {
+    [$BULLET.priority]: {
       component: <PriorityBullet {...props} />,
       css: {},
     },

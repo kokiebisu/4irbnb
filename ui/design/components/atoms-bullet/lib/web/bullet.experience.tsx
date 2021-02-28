@@ -6,7 +6,7 @@ import {
   Computer,
   Host,
 } from '@nextbnb/design/assets/svg/original';
-import { $Bullet } from '..';
+import { $BULLET } from '..';
 
 /**
  * Renders the experience bullet
@@ -55,7 +55,7 @@ const ExperienceBullet: React.FC<{
 
 export const experience = (props) => {
   return {
-    [$Bullet.EXPERIENCE]: {
+    [$BULLET.experience]: {
       component: <ExperienceBullet {...props} />,
       css: {},
     },

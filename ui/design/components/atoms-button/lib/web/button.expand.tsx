@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui';
 import { ChevronRight } from '@nextbnb/design/assets/svg/regular';
 import { web, theme } from '../styles/button.expand';
-import { $Button } from '..';
+import { $BUTTON } from '..';
 
 /**
  * Renders the expand button
@@ -27,7 +27,7 @@ const ExpandButton: React.FC<{ to?: string; title?: string }> = ({
 
 export const expand = (props) => {
   return {
-    [$Button.EXPAND]: {
+    [$BUTTON.expand]: {
       component: <ExpandButton {...props} />,
       css: {},
     },

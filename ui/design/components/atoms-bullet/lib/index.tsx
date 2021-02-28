@@ -4,8 +4,9 @@ import { jsx } from 'theme-ui';
 import { PLATFORM } from './constants/platform';
 import { generateVariants } from './utils/variants';
 import { variants as webVariants } from './web/variants';
+import { $BULLET } from './constants/appearance';
 
-export * from './constants/appearance';
+export { $BULLET };
 
 export interface BulletProps {
   extendsTo?: any;
@@ -21,20 +22,18 @@ export interface BulletProps {
 export const Bullet: React.FC<BulletProps> = ({
   platform = PLATFORM.web,
   extendsTo,
-  variant,
+  variant = $BULLET.amenity,
   ...props
 }) => {
-  const variants = generateVariants(
-    PLATFORM[platform],
-    webVariants,
-    null,
-    null,
-    props
-  );
+  const variants = generateVariants(PLATFORM[platform], webVariants, props);
 
   return (
-    <div data-testid={`${variant}-bullet`} className={extendsTo}>
-      {variants[variant]}
+    <div
+      data-testid={`${variant}-bullet`}
+      className={extendsTo}
+      sx={{ ...variants[variant].css }}
+    >
+      {variants[variant].component}
     </div>
   );
 };

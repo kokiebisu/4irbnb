@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.destination';
-import { $Button } from '..';
+import { $BUTTON } from '..';
 
 export const DestinationButton: React.FC<{
   city?: String;
@@ -26,7 +26,7 @@ export const DestinationButton: React.FC<{
 
 export const destination = (props) => {
   return {
-    [$Button.DESTINATION]: {
+    [$BUTTON.destination]: {
       component: <DestinationButton {...props} />,
       css: {},
     },

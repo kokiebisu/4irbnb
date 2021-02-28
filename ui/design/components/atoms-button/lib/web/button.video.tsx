@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui';
 import { web } from '../styles/button.video';
 import { Pause, Play } from '@nextbnb/design/assets/svg/regular';
-import { $Button } from '..';
+import { $BUTTON } from '..';
 
 const VideoButton: React.FC<{ play?: boolean }> = ({ play = false }) => {
   return (
@@ -19,7 +19,7 @@ const VideoButton: React.FC<{ play?: boolean }> = ({ play = false }) => {
 
 export const video = (props) => {
   return {
-    [$Button.VIDEO]: {
+    [$BUTTON.video]: {
       component: <VideoButton {...props} />,
       css: {},
     },

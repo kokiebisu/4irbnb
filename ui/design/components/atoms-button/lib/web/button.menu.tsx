@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.menu';
 import { Avatar, Bars } from '@nextbnb/design/assets/svg/original';
-import { $Button } from '..';
+import { $BUTTON } from '..';
 
 /**
  * Renders the menu button components
@@ -46,7 +46,7 @@ const MenuButton: React.FC<{
 
 export const menu = (props) => {
   return {
-    [$Button.MENU]: {
+    [$BUTTON.menu]: {
       component: <MenuButton {...props} />,
       css: {
         borderRadius: 30,

@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { NameLogo, NoNameLogo } from '@nextbnb/design/assets/svg/logo';
-import { $Button } from '..';
+import { $BUTTON } from '..';
 
 const LogoButton: React.FC<{ noName?: boolean; fill?: string }> = ({
   noName = false,
@@ -17,7 +17,7 @@ const LogoButton: React.FC<{ noName?: boolean; fill?: string }> = ({
 
 export const logo = (props) => {
   return {
-    [$Button.LOGO]: {
+    [$BUTTON.logo]: {
       component: <LogoButton />,
       css: {},
     },

@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { $Button } from '..';
+import { $BUTTON } from '..';
 import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.link';
 
@@ -14,7 +14,7 @@ const LinkButton: React.FC<{ title?: string }> = ({ title = 'Button' }) => {
 
 export const link = (props) => {
   return {
-    [$Button.LINK]: {
+    [$BUTTON.link]: {
       component: <LinkButton {...props} />,
       css: {},
     },

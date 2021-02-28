@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Star } from '@nextbnb/design/assets/svg/original';
-import { $Bullet } from '..';
+import { $BULLET } from '..';
 
 /**
  * Renders the rating bullet
@@ -37,7 +37,7 @@ const RatingBullet: React.FC<{
 
 export const rating = (props) => {
   return {
-    [$Bullet.RATING]: {
+    [$BULLET.rating]: {
       component: <RatingBullet {...props} />,
       css: {},
     },

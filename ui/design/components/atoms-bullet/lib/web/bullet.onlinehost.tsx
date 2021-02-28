@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Global, Home, Lightening } from '@nextbnb/design/assets/svg/original';
-import { $Bullet } from '..';
+import { $BULLET } from '..';
 
 const types: {
   [type: string]: { icon: JSX.Element; title: string; description: string };
@@ -75,7 +75,7 @@ export const OnlineHostBullet: React.FC<{
 
 export const onlinehost = (props) => {
   return {
-    [$Bullet.ONLINEHOST]: {
+    [$BULLET.onlinehost]: {
       component: <OnlineHostBullet {...props} />,
       css: {},
     },

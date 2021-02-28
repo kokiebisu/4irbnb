@@ -12,7 +12,7 @@ import {
   Sparkle,
   Time,
 } from '@nextbnb/design/assets/svg/original';
-import { $Bullet } from '..';
+import { $BULLET } from '..';
 
 /** Helpers */
 // import * as Helper from "../../../time";
@@ -124,7 +124,7 @@ const CharacteristicBullet: React.FC<{
 
 export const characteristic = (props) => {
   return {
-    [$Bullet.CHARACTERISTIC]: {
+    [$BULLET.characteristic]: {
       component: <CharacteristicBullet {...props} />,
       css: {},
     },

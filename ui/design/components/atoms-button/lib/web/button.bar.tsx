@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.bar';
 import { MenuBarLogo } from '@nextbnb/design/assets/svg/logo';
 import { Login, Saved } from '@nextbnb/design/assets/svg/regular';
-import { $Button } from '..';
+import { $BUTTON } from '..';
 
 const BarButton: React.FC<{ type?: string; selected?: boolean }> = ({
   type = 'explore',
@@ -42,7 +42,7 @@ const BarButton: React.FC<{ type?: string; selected?: boolean }> = ({
 
 export const bar = (props) => {
   return {
-    [$Button.BAR]: {
+    [$BUTTON.bar]: {
       component: <BarButton {...props} />,
       css: {},
     },

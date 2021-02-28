@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { $Button } from '..';
+import { $BUTTON } from '..';
 import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.location';
 
@@ -73,7 +73,7 @@ const LocationButton: React.FC<{
 
 export const location = (props) => {
   return {
-    [$Button.LOCATION]: {
+    [$BUTTON.location]: {
       component: <LocationButton {...props} />,
       css: {},
     },

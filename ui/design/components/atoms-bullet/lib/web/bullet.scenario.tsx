@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { $Bullet } from '..';
+import { $BULLET } from '..';
 
 const ScenarioBullet: React.FC<{ type?: string }> = ({
   type = 'available',
@@ -62,7 +62,7 @@ const ScenarioBullet: React.FC<{ type?: string }> = ({
 
 export const scenario = (props) => {
   return {
-    [$Bullet.SCENARIO]: {
+    [$BULLET.scenario]: {
       component: <ScenarioBullet {...props} />,
       css: {},
     },

@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { $Button } from '..';
+import { $BUTTON } from '..';
 import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.option';
 
@@ -22,7 +22,7 @@ const OptionButton: React.FC<{ name?: string; bold?: boolean }> = ({
 
 export const option = (props) => {
   return {
-    [$Button.OPTION]: {
+    [$BUTTON.option]: {
       component: <OptionButton {...props} />,
       css: {},
     },

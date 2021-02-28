@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { $Button } from '..';
+import { $BUTTON } from '..';
 import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.underline';
 
@@ -43,7 +43,7 @@ const UnderlineButton: React.FC<{
 
 export const underline = (props) => {
   return {
-    [$Button.UNDERLINE]: {
+    [$BUTTON.underline]: {
       component: <UnderlineButton {...props} />,
       css: {},
     },

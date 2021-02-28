@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { $Button } from '..';
+import { $BUTTON } from '..';
 import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.auth';
 
@@ -26,7 +26,7 @@ const AuthButton: React.FC<{ icon?: any; name?: string }> = ({
 
 export const auth = (props) => {
   return {
-    [$Button.AUTH]: {
+    [$BUTTON.auth]: {
       component: <AuthButton {...props} />,
       css: {},
     },
