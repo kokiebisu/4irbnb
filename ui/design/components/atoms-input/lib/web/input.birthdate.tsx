@@ -1,10 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useState } from "react";
+import { jsx } from 'theme-ui';
+import { useState } from 'react';
 
-import { styleInput, styleLabel } from "./styling.select";
-import { birthdate, renderShape } from "../logic/logic.birthdate";
+import { styleInput, styleLabel } from './styling.select';
+import { birthdateOptions, renderShape } from '../logic/logic.birthdate';
+import { $INPUT } from '../constant/appearance';
 
 /**
  * Renders the text input component
@@ -15,18 +16,18 @@ import { birthdate, renderShape } from "../logic/logic.birthdate";
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const BirthdateInput: React.FC<{
+const BirthdateInput: React.FC<{
   handleChange?: any;
   value?: string;
   direction?: string;
   errors?: boolean;
-  dateType?: "year" | "month" | "day";
+  dateType?: 'year' | 'month' | 'day';
 }> = ({
   handleChange,
   value,
-  direction = "center",
+  direction = 'center',
   errors = false,
-  dateType = "year",
+  dateType = 'year',
 }) => {
   const [fieldActive, setFieldActive] = useState(false);
 
@@ -35,17 +36,17 @@ export const BirthdateInput: React.FC<{
       css={{
         height: 60,
         // input[outside]
-        display: "flex",
-        position: "relative",
-        alignItems: "center",
+        display: 'flex',
+        position: 'relative',
+        alignItems: 'center',
       }}
     >
       <div
         css={{
-          height: "100%",
-          width: "100%",
-          position: "relative",
-          padding: "0 15px",
+          height: '100%',
+          width: '100%',
+          position: 'relative',
+          padding: '0 15px',
           ...renderShape(direction),
           // ...styleContainer(errors, fieldActive, direction),
         }}
@@ -59,23 +60,23 @@ export const BirthdateInput: React.FC<{
           onFocus={() => setFieldActive(true)}
           onBlur={() => setFieldActive(false)}
           css={{
-            height: "100%",
+            height: '100%',
             borderRadius: 10,
             padding: 0,
-            width: "100%",
-            display: "block",
-            border: "none",
+            width: '100%',
+            display: 'block',
+            border: 'none',
             fontSize: 16,
             fontWeight: 300,
-            position: "relative",
-            top: "0px",
-            outline: "none",
-            paddingTop: "20px",
-            color: "rgb(104, 104, 104)",
+            position: 'relative',
+            top: '0px',
+            outline: 'none',
+            paddingTop: '20px',
+            color: 'rgb(104, 104, 104)',
             ...styleInput(errors, fieldActive),
           }}
         >
-          {dateType === "year" &&
+          {dateType === 'year' &&
             new Array(99).fill(null).map((_, index) => {
               return (
                 <option key={index} value={index + 1920}>
@@ -83,7 +84,7 @@ export const BirthdateInput: React.FC<{
                 </option>
               );
             })}
-          {dateType === "month" &&
+          {dateType === 'month' &&
             new Array(12).fill(null).map((_, index) => {
               return (
                 <option key={index} value={index + 1}>
@@ -91,7 +92,7 @@ export const BirthdateInput: React.FC<{
                 </option>
               );
             })}
-          {dateType === "day" &&
+          {dateType === 'day' &&
             new Array(31).fill(null).map((_, index) => {
               return (
                 <option key={index} value={index + 1}>
@@ -107,9 +108,18 @@ export const BirthdateInput: React.FC<{
             // ...styleLabel(errors, fieldActive),
           }}
         >
-          {birthdate[dateType]}
+          {birthdateOptions[dateType]}
         </label>
       </div>
     </div>
   );
+};
+
+export const birthdate = (props) => {
+  return {
+    [$INPUT.birthdate]: {
+      component: <BirthdateInput {...props} />,
+      css: {},
+    },
+  };
 };

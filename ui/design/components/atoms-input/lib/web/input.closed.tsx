@@ -1,33 +1,34 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Button, $Button } from "@nextbnb/atoms-button";
+import { jsx } from 'theme-ui';
+import { Button, $Button } from '@nextbnb/atoms-button';
+import { $INPUT } from '../constant/appearance';
 
-export const ClosedInput: React.FC<{
+const ClosedInput: React.FC<{
   title?: string;
   data?: { value: boolean };
   selected?: true;
   value?: string;
   setData?: any;
 }> = ({
-  title = "Title here",
+  title = 'Title here',
   data = { value: false },
   selected = false,
   setData,
-  value = "",
+  value = '',
 }) => {
   return (
     <div
       css={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
       }}
     >
       <div>
         <h4 css={{ fontSize: 15 }}>{title}</h4>
       </div>
-      <div css={{ display: "flex" }}>
+      <div css={{ display: 'flex' }}>
         <div css={{ marginRight: 12 }}>
           <Button
             variant={$Button.CLOSED}
@@ -47,4 +48,13 @@ export const ClosedInput: React.FC<{
       </div>
     </div>
   );
+};
+
+export const closed = (props) => {
+  return {
+    [$INPUT.closed]: {
+      component: <ClosedInput {...props} />,
+      css: {},
+    },
+  };
 };

@@ -1,11 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useFormik } from "formik";
-import { Input, $Input } from "@nextbnb/atoms-input";
-import { Button, $Button } from "@nextbnb/atoms-button";
-import { Bullet, $Bullet } from "@nextbnb/atoms-bullet";
-import { validateForgotPassword as validate } from "@nextbnb/design/helper/auth";
+import { jsx } from 'theme-ui';
+import { useFormik } from 'formik';
+import { Input, $Input } from '@nextbnb/atoms-input';
+import { Button, $Button } from '@nextbnb/atoms-button';
+import { Bullet, $Bullet } from '@nextbnb/atoms-bullet';
+import { validateForgotPassword as validate } from '@nextbnb/design/helper/validation';
 
 /**
  * Renders the login template component
@@ -13,7 +13,7 @@ import { validateForgotPassword as validate } from "@nextbnb/design/helper/auth"
 export const ForgotPasswordPrototype: React.FC<{}> = () => {
   const formik = useFormik({
     initialValues: {
-      email: "",
+      email: '',
     },
     validate,
     onSubmit: (values) => {
@@ -28,9 +28,9 @@ export const ForgotPasswordPrototype: React.FC<{}> = () => {
         <div
           css={{
             height: 300,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
           }}
         >
           <div>

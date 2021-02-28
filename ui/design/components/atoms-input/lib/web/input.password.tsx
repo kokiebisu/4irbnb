@@ -1,11 +1,12 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useState } from "react";
+import { jsx } from 'theme-ui';
+import { useState } from 'react';
 
 // import { styleInput, styleLabel, styleContainer } from "./styling.text";
 
-import { Button, $Button } from "@nextbnb/atoms-button";
+import { Button, $Button } from '@nextbnb/atoms-button';
+import { $INPUT } from '../constant/appearance';
 
 // import { checkPassword } from "../../../auth";
 
@@ -18,7 +19,7 @@ import { Button, $Button } from "@nextbnb/atoms-button";
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const PasswordInput: React.FC<{
+const PasswordInput: React.FC<{
   handleChange?: any;
   value?: string;
   direction?: string;
@@ -37,26 +38,26 @@ export const PasswordInput: React.FC<{
 
   const renderShape = () => {
     switch (direction) {
-      case "top":
+      case 'top':
         return {
-          borderBottom: "1px solid",
-          borderLeft: "1px solid",
-          borderRight: "1px solid",
-          borderColor: "grey.400",
+          borderBottom: '1px solid',
+          borderLeft: '1px solid',
+          borderRight: '1px solid',
+          borderColor: 'grey.400',
           borderBottomRadius: 10,
         };
-      case "bottom":
+      case 'bottom':
         return {
-          borderTop: "1px solid",
-          borderLeft: "1px solid",
-          borderRight: "1px solid",
-          borderColor: "grey.400",
+          borderTop: '1px solid',
+          borderLeft: '1px solid',
+          borderRight: '1px solid',
+          borderColor: 'grey.400',
           borderTopRadius: 10,
         };
       default:
         return {
-          border: "1px solid",
-          borderColor: "grey.400",
+          border: '1px solid',
+          borderColor: 'grey.400',
           borderRadius: 10,
         };
     }
@@ -66,56 +67,56 @@ export const PasswordInput: React.FC<{
     <div
       css={{
         height: 60,
-        position: "relative",
-        padding: "6px 12px",
-        display: "flex",
-        alignItems: "center",
+        position: 'relative',
+        padding: '6px 12px',
+        display: 'flex',
+        alignItems: 'center',
         ...renderShape(),
         // ...styleContainer(errors, fieldActive, checkPassword(value)),
       }}
     >
       <div
         css={{
-          position: "relative",
-          height: "100%",
-          width: "100%",
+          position: 'relative',
+          height: '100%',
+          width: '100%',
         }}
       >
         <input
           autoFocus={true}
           id="password"
           name="password"
-          type={hide ? "password" : "text"}
+          type={hide ? 'password' : 'text'}
           onChange={handleChange}
           value={value}
           onFocus={activateField}
           onBlur={deactivateField}
           css={{
             padding: 0,
-            width: "100%",
-            display: "block",
-            border: "none",
+            width: '100%',
+            display: 'block',
+            border: 'none',
             fontSize: 16,
             fontWeight: 300,
-            "::placeholder": {
-              color: "black",
+            '::placeholder': {
+              color: 'black',
             },
-            position: "relative",
+            position: 'relative',
             top: 0,
-            outline: "none",
+            outline: 'none',
             paddingTop: 20,
-            color: "rgb(104, 104, 104)",
+            color: 'rgb(104, 104, 104)',
             // ...styleInput(errors, fieldActive, checkPassword(value)),
           }}
-          placeholder={fieldActive ? "Password" : undefined}
+          placeholder={fieldActive ? 'Password' : undefined}
         />
         <label
           htmlFor="password"
           css={{
             fontSize: 12,
-            color: "grey.600",
+            color: 'grey.600',
             fontWeight: 100,
-            transition: "all 150ms ease-in",
+            transition: 'all 150ms ease-in',
             top: 12,
             // ...styleLabel(errors, fieldActive, checkPassword(value), value),
           }}
@@ -125,9 +126,9 @@ export const PasswordInput: React.FC<{
       </div>
       <div
         css={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
           marginLeft: 18,
         }}
       >
@@ -135,9 +136,18 @@ export const PasswordInput: React.FC<{
           variant={$Button.UNDERLINE}
           onClick={() => setHide((prevHide) => !prevHide)}
           font={13}
-          title={hide ? "Show" : "Hide"}
+          title={hide ? 'Show' : 'Hide'}
         />
       </div>
     </div>
   );
+};
+
+export const password = (props) => {
+  return {
+    [$INPUT.password]: {
+      component: <PasswordInput {...props} />,
+      css: {},
+    },
+  };
 };

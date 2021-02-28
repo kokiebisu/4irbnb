@@ -1,9 +1,10 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useRef, useState } from "react";
-import { Checked } from "@nextbnb/design/assets/svg/original";
-import { ChevronDown, ChevronTop } from "@nextbnb/design/assets/svg/regular";
+import { jsx } from 'theme-ui';
+import { useRef, useState } from 'react';
+import { Checked } from '@nextbnb/design/assets/svg/original';
+import { ChevronDown, ChevronTop } from '@nextbnb/design/assets/svg/regular';
+import { $INPUT } from '../constant/appearance';
 // import useOnClickOutside from "../../../hooks/useOnClickOutside";
 
 /**
@@ -15,12 +16,12 @@ import { ChevronDown, ChevronTop } from "@nextbnb/design/assets/svg/regular";
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const PlaceInput: React.FC<{
+const PlaceInput: React.FC<{
   value?: string;
   direction?: string;
   errors?: boolean;
   changePlace?: (type: string) => void;
-}> = ({ value = "Entire place", direction, errors = false, changePlace }) => {
+}> = ({ value = 'Entire place', direction, errors = false, changePlace }) => {
   const containerRef = useRef<any>();
   const [expanded, setExpanded] = useState(false);
   // useOnClickOutside(containerRef, () => {
@@ -30,27 +31,27 @@ export const PlaceInput: React.FC<{
   // });
   const renderShape = () => {
     switch (direction) {
-      case "top":
+      case 'top':
         return {
-          borderBottom: "1px solid",
-          borderLeft: "1px solid",
-          borderRight: "1px solid",
-          borderColor: "grey.400",
+          borderBottom: '1px solid',
+          borderLeft: '1px solid',
+          borderRight: '1px solid',
+          borderColor: 'grey.400',
           borderBottomRadius: 10,
         };
 
-      case "bottom":
+      case 'bottom':
         return {
-          borderTop: "1px solid",
-          borderLeft: "1px solid",
-          borderRight: "1px solid",
-          borderColor: "grey.400",
+          borderTop: '1px solid',
+          borderLeft: '1px solid',
+          borderRight: '1px solid',
+          borderColor: 'grey.400',
           borderTopRadius: 10,
         };
       default:
         return {
-          border: "1px solid",
-          borderColor: "grey.400",
+          border: '1px solid',
+          borderColor: 'grey.400',
           borderRadius: 10,
         };
     }
@@ -61,32 +62,32 @@ export const PlaceInput: React.FC<{
       ref={containerRef}
       css={{
         height: 50,
-        display: "flex",
-        position: "relative",
-        alignItems: "center",
+        display: 'flex',
+        position: 'relative',
+        alignItems: 'center',
       }}
     >
       <div
         css={{
-          position: "relative",
-          height: "100%",
-          width: "100%",
+          position: 'relative',
+          height: '100%',
+          width: '100%',
         }}
         sx={{
           ...renderShape(),
-          ...(expanded && { border: "2px solid", borderColor: "black" }),
+          ...(expanded && { border: '2px solid', borderColor: 'black' }),
         }}
       >
         <div
           css={{
-            height: "100%",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            bg: "transparent",
+            height: '100%',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            bg: 'transparent',
             padding: 0,
-            width: "100%",
-            border: "none",
+            width: '100%',
+            border: 'none',
             fontSize: 16,
             fontWeight: 300,
           }}
@@ -95,13 +96,13 @@ export const PlaceInput: React.FC<{
           <div>
             <label
               css={{
-                position: "absolute",
+                position: 'absolute',
                 left: 0,
                 top: 15,
-                cursor: "pointer",
-                padding: "0 12px",
+                cursor: 'pointer',
+                padding: '0 12px',
                 fontSize: 14,
-                color: "grey.800",
+                color: 'grey.800',
                 fontWeight: 100,
               }}
               htmlFor="place"
@@ -116,7 +117,7 @@ export const PlaceInput: React.FC<{
         {expanded && (
           <div
             css={{
-              position: "absolute",
+              position: 'absolute',
               top: 48,
               zIndex: 60,
             }}
@@ -124,22 +125,22 @@ export const PlaceInput: React.FC<{
             <div
               css={{
                 borderRadius: 6,
-                backgroundColor: "white",
-                border: "1px solid lightgray",
+                backgroundColor: 'white',
+                border: '1px solid lightgray',
                 padding: 16,
                 boxShadow:
-                  "rgba(0, 0, 0, 0.15) 0px 2px 6px, rgba(0, 0, 0, 0.07) 0px 0px 0px 1px !important",
+                  'rgba(0, 0, 0, 0.15) 0px 2px 6px, rgba(0, 0, 0, 0.07) 0px 0px 0px 1px !important',
               }}
             >
               <div>
                 <div
                   css={{
                     padding: 12,
-                    display: "flex",
-                    alignItems: "center",
-                    cursor: "pointer",
-                    height: "100%",
-                    bg: "transparent",
+                    display: 'flex',
+                    alignItems: 'center',
+                    cursor: 'pointer',
+                    height: '100%',
+                    bg: 'transparent',
                   }}
                   onClick={() => {
                     // changePlace("Entire place");
@@ -149,7 +150,7 @@ export const PlaceInput: React.FC<{
                   <div>
                     <div>
                       <h3
-                        style={{ textAlign: "left" }}
+                        style={{ textAlign: 'left' }}
                         css={{
                           fontSize: 14,
                         }}
@@ -158,15 +159,15 @@ export const PlaceInput: React.FC<{
                       </h3>
                     </div>
                     <div>
-                      <p css={{ fontSize: 13, textAlign: "left" }}>
+                      <p css={{ fontSize: 13, textAlign: 'left' }}>
                         Guests have the whole place to themselves--there's a
                         private entrance and no shared spaces. A bedroom,
                         bathroom, and kitchen and usually included.
                       </p>
                     </div>
                   </div>
-                  {value === "Entire place" && (
-                    <div css={{ display: "flex", alignItems: "center" }}>
+                  {value === 'Entire place' && (
+                    <div css={{ display: 'flex', alignItems: 'center' }}>
                       <Checked width={32} />
                     </div>
                   )}
@@ -176,11 +177,11 @@ export const PlaceInput: React.FC<{
                 <div
                   css={{
                     padding: 12,
-                    display: "flex",
-                    alignItems: "center",
-                    cursor: "pointer",
-                    height: "100%",
-                    bg: "transparent",
+                    display: 'flex',
+                    alignItems: 'center',
+                    cursor: 'pointer',
+                    height: '100%',
+                    bg: 'transparent',
                   }}
                   onClick={() => {
                     // changePlace("Private room");
@@ -189,19 +190,19 @@ export const PlaceInput: React.FC<{
                 >
                   <div>
                     <div>
-                      <h3 css={{ textAlign: "left", fontSize: 14 }}>
+                      <h3 css={{ textAlign: 'left', fontSize: 14 }}>
                         Private room
                       </h3>
                     </div>
                     <div>
-                      <p css={{ fontSize: 13, textAlign: "left" }}>
+                      <p css={{ fontSize: 13, textAlign: 'left' }}>
                         Guests have their own private room for sleeping. Other
                         areas could be shared.
                       </p>
                     </div>
                   </div>
-                  {value === "Private room" && (
-                    <div css={{ display: "flex", alignItems: "center" }}>
+                  {value === 'Private room' && (
+                    <div css={{ display: 'flex', alignItems: 'center' }}>
                       <Checked width={32} />
                     </div>
                   )}
@@ -211,11 +212,11 @@ export const PlaceInput: React.FC<{
                 <div
                   css={{
                     padding: 12,
-                    display: "flex",
-                    alignItems: "center",
-                    cursor: "pointer",
-                    height: "100%",
-                    bg: "transparent",
+                    display: 'flex',
+                    alignItems: 'center',
+                    cursor: 'pointer',
+                    height: '100%',
+                    bg: 'transparent',
                   }}
                   onClick={() => {
                     // changePlace("Shared room");
@@ -224,19 +225,19 @@ export const PlaceInput: React.FC<{
                 >
                   <div>
                     <div>
-                      <h3 css={{ textAlign: "left", fontSize: 14 }}>
+                      <h3 css={{ textAlign: 'left', fontSize: 14 }}>
                         Shared room
                       </h3>
                     </div>
                     <div>
-                      <p css={{ fontSize: 13, textAlign: "left" }}>
+                      <p css={{ fontSize: 13, textAlign: 'left' }}>
                         Guests sleep in a bedroom or a common area that could be
                         shared with others.
                       </p>
                     </div>
                   </div>
-                  {value === "Shared room" && (
-                    <div css={{ display: "flex", alignItems: "center" }}>
+                  {value === 'Shared room' && (
+                    <div css={{ display: 'flex', alignItems: 'center' }}>
                       <Checked width={32} />
                     </div>
                   )}
@@ -248,4 +249,13 @@ export const PlaceInput: React.FC<{
       </div>
     </div>
   );
+};
+
+export const place = (props) => {
+  return {
+    [$INPUT.place]: {
+      component: <PlaceInput {...props} />,
+      css: {},
+    },
+  };
 };

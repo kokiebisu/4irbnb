@@ -1,9 +1,10 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Minus, Plus } from "@nextbnb/design/assets/svg/original";
+import { jsx } from 'theme-ui';
+import { Minus, Plus } from '@nextbnb/design/assets/svg/original';
+import { $INPUT } from '../constant/appearance';
 
-export const CounterInput: React.FC<{
+const CounterInput: React.FC<{
   title?: string;
   subtitle?: string;
   value?: number;
@@ -13,32 +14,32 @@ export const CounterInput: React.FC<{
   max?: number;
   type?: string;
 }> = ({
-  title = "Counter",
+  title = 'Counter',
   subtitle,
   value = 0,
-  add = () => alert("add"),
-  subtract = () => alert("subtract"),
+  add = () => alert('add'),
+  subtract = () => alert('subtract'),
   min = 1,
   max = 4,
-  type = "create",
+  type = 'create',
 }) => {
   const types: { [type: string]: any } = {
     create: {
       borderWidth: 2,
-      color: "#0B8A8F",
+      color: '#0B8A8F',
     },
     guests: {
       borderWidth: 1,
-      color: "gray",
+      color: 'gray',
     },
   };
   return (
     <div
       css={{
-        padding: "10px 0",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
+        padding: '10px 0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
       }}
     >
       <div>
@@ -46,17 +47,17 @@ export const CounterInput: React.FC<{
           <h3 css={{ fontSize: 14 }}>{title}</h3>
         </div>
         <div>
-          <p css={{ fontSize: 12, color: "grey.500" }}>{subtitle}</p>
+          <p css={{ fontSize: 12, color: 'grey.500' }}>{subtitle}</p>
         </div>
       </div>
-      <div css={{ display: "flex", alignItems: "center" }}>
+      <div css={{ display: 'flex', alignItems: 'center' }}>
         <div>
           <button
             disabled={value === min}
             style={{
-              backgroundColor: "white",
+              backgroundColor: 'white',
               border: `${types[type].borderWidth}px solid ${
-                value === min ? "lightgray" : types[type].color
+                value === min ? 'lightgray' : types[type].color
               }`,
               borderRadius: 9999,
               padding: 5,
@@ -65,20 +66,20 @@ export const CounterInput: React.FC<{
           >
             <Minus
               width={15}
-              stroke={value === min ? "lightgray" : types[type].color}
+              stroke={value === min ? 'lightgray' : types[type].color}
             />
           </button>
         </div>
-        <div css={{ width: 50, display: "flex", justifyContent: "center" }}>
+        <div css={{ width: 50, display: 'flex', justifyContent: 'center' }}>
           <h3 css={{ fontSize: 14 }}>{value < max ? value : `${value}+`}</h3>
         </div>
         <div>
           <button
             disabled={value === max}
             css={{
-              backgroundColor: "white",
+              backgroundColor: 'white',
               border: `${types[type].borderWidth}px solid ${
-                value === max ? "lightgray" : types[type].color
+                value === max ? 'lightgray' : types[type].color
               }`,
               borderRadius: 9999,
               padding: 5,
@@ -87,11 +88,20 @@ export const CounterInput: React.FC<{
           >
             <Plus
               width={15}
-              stroke={value === max ? "lightgray" : types[type].color}
+              stroke={value === max ? 'lightgray' : types[type].color}
             />
           </button>
         </div>
       </div>
     </div>
   );
+};
+
+export const counter = (props) => {
+  return {
+    [$INPUT.counter]: {
+      component: <CounterInput {...props} />,
+      css: {},
+    },
+  };
 };

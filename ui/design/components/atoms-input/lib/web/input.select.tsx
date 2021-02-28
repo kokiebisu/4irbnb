@@ -1,10 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useState } from "react";
-import { ChevronDown, ChevronTop } from "@nextbnb/design/assets/svg/regular";
-import { inputTypes } from "../logic/logic.types";
-import { renderShape } from "../logic/logic.select";
+import { jsx } from 'theme-ui';
+import { useState } from 'react';
+import { ChevronDown, ChevronTop } from '@nextbnb/design/assets/svg/regular';
+import { inputTypes } from '../logic/logic.types';
+import { renderShape } from '../logic/logic.select';
+import { $INPUT } from '../constant/appearance';
 
 /**
  * Renders the text input component
@@ -15,7 +16,7 @@ import { renderShape } from "../logic/logic.select";
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const SelectInput: React.FC<{
+const SelectInput: React.FC<{
   handleChange?: () => void;
   value?: string;
   direction?: string;
@@ -25,30 +26,30 @@ export const SelectInput: React.FC<{
 }> = ({
   handleChange,
   value,
-  direction = "",
+  direction = '',
   errors = false,
   disabled = false,
-  inputType = "Bed and breakfast",
+  inputType = 'Bed and breakfast',
 }): JSX.Element => {
   const [fieldActive, setFieldActive] = useState(false);
   return (
     <div
       css={{
         height: 50,
-        display: "flex",
-        position: "relative",
-        alignItems: "center",
+        display: 'flex',
+        position: 'relative',
+        alignItems: 'center',
       }}
     >
       <div
         css={{
-          padding: "0 12px",
-          position: "relative",
-          height: "100%",
-          width: "100%",
-          display: "flex",
-          justifyContent: "space-between",
-          backgroundColor: disabled ? "#F7F7F7" : "white",
+          padding: '0 12px',
+          position: 'relative',
+          height: '100%',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'space-between',
+          backgroundColor: disabled ? '#F7F7F7' : 'white',
           // ...( disabled ? { borderColor: "#EBEBEB" : "#B0B0B0" }),
           ...renderShape(direction),
           // ...styleContainer(errors, fieldActive, value),
@@ -56,15 +57,15 @@ export const SelectInput: React.FC<{
       >
         <select
           css={{
-            height: "100%",
-            outline: "none",
-            bg: "transparent",
-            justifyContent: "space-between",
+            height: '100%',
+            outline: 'none',
+            bg: 'transparent',
+            justifyContent: 'space-between',
             borderRadius: 4,
             padding: 0,
-            width: "100%",
-            display: "block",
-            border: "none",
+            width: '100%',
+            display: 'block',
+            border: 'none',
             fontSize: 14,
             fontWeight: 300,
           }}
@@ -82,14 +83,23 @@ export const SelectInput: React.FC<{
           )}
           {inputTypes[inputType].options}
         </select>
-        <div css={{ display: "flex", alignItems: "center" }}>
+        <div css={{ display: 'flex', alignItems: 'center' }}>
           {fieldActive ? (
             <ChevronTop width={13} />
           ) : (
-            <ChevronDown width={13} fill={disabled ? "#DDDDDD" : "black"} />
+            <ChevronDown width={13} fill={disabled ? '#DDDDDD' : 'black'} />
           )}
         </div>
       </div>
     </div>
   );
+};
+
+export const select = (props) => {
+  return {
+    [$INPUT.select]: {
+      component: <SelectInput {...props} />,
+      css: {},
+    },
+  };
 };

@@ -1,8 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useState } from "react";
-import { styleLabel, styleContainer, styleInput } from "./styling.text";
+import { jsx } from 'theme-ui';
+import { useState } from 'react';
+import { styleLabel, styleContainer, styleInput } from './styling.text';
+import { $INPUT } from '../constant/appearance';
 
 /**
  * Renders the text input component
@@ -13,7 +14,7 @@ import { styleLabel, styleContainer, styleInput } from "./styling.text";
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const PhoneNumberInput: React.FC<{
+const PhoneNumberInput: React.FC<{
   handleChange?: any;
   value?: string;
   direction?: string;
@@ -31,26 +32,26 @@ export const PhoneNumberInput: React.FC<{
 
   const renderShape = () => {
     switch (direction) {
-      case "top":
+      case 'top':
         return {
-          borderBottom: "1px solid",
-          borderLeft: "1px solid",
-          borderRight: "1px solid",
-          borderColor: "grey.400",
+          borderBottom: '1px solid',
+          borderLeft: '1px solid',
+          borderRight: '1px solid',
+          borderColor: 'grey.400',
           borderBottomRadius: 10,
         };
-      case "bottom":
+      case 'bottom':
         return {
-          borderTop: "1px solid",
-          borderLeft: "1px solid",
-          borderRight: "1px solid",
-          borderColor: "grey.400",
+          borderTop: '1px solid',
+          borderLeft: '1px solid',
+          borderRight: '1px solid',
+          borderColor: 'grey.400',
           borderTopRadius: 10,
         };
       default:
         return {
-          border: "1px solid",
-          borderColor: "grey.400",
+          border: '1px solid',
+          borderColor: 'grey.400',
           borderRadius: 10,
         };
     }
@@ -60,18 +61,18 @@ export const PhoneNumberInput: React.FC<{
     <div
       css={{
         height: 60,
-        position: "relative",
-        padding: "6px 12px",
-        alignItems: "center",
+        position: 'relative',
+        padding: '6px 12px',
+        alignItems: 'center',
         ...renderShape(),
         // ...styleContainer(errors, fieldActive, value),
       }}
     >
       <div
         css={{
-          position: "relative",
-          height: "100%",
-          width: "100%",
+          position: 'relative',
+          height: '100%',
+          width: '100%',
         }}
       >
         <input
@@ -85,30 +86,30 @@ export const PhoneNumberInput: React.FC<{
           onBlur={deactivateField}
           css={{
             padding: 0,
-            width: "100%",
-            display: "block",
-            border: "none",
+            width: '100%',
+            display: 'block',
+            border: 'none',
             fontWeight: 300,
-            "::placeholder": {
-              color: "black",
+            '::placeholder': {
+              color: 'black',
             },
-            position: "relative",
+            position: 'relative',
             top: 0,
-            outline: "none",
+            outline: 'none',
             paddingTop: 20,
             fontSize: 16,
-            color: "rgb(104, 104, 104)",
+            color: 'rgb(104, 104, 104)',
             ...styleInput(errors, fieldActive, value),
           }}
-          placeholder={fieldActive ? "090-999-9999" : undefined}
+          placeholder={fieldActive ? '090-999-9999' : undefined}
         />
         <label
           htmlFor="tel"
           css={{
             fontSize: 12,
-            color: "grey.600",
+            color: 'grey.600',
             fontWeight: 100,
-            transition: "all 150ms ease-in",
+            transition: 'all 150ms ease-in',
             top: 12,
             // ...styleLabel(errors, fieldActive, value, value),
           }}
@@ -118,4 +119,13 @@ export const PhoneNumberInput: React.FC<{
       </div>
     </div>
   );
+};
+
+export const phone = (props) => {
+  return {
+    [$INPUT.phone]: {
+      component: <PhoneNumberInput {...props} />,
+      css: {},
+    },
+  };
 };

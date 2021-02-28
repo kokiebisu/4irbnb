@@ -1,6 +1,6 @@
 import { emailRegex } from './regex';
 
-export const checkEmail = (value) => {
+export const validateEmail = (value) => {
   const re = emailRegex;
   return re.test(String(value).toLowerCase());
 };

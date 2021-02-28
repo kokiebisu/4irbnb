@@ -1,33 +1,34 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { CheckPlain } from "@nextbnb/design/assets/svg/original";
+import { jsx } from 'theme-ui';
+import { CheckPlain } from '@nextbnb/design/assets/svg/original';
+import { $INPUT } from '../constant/appearance';
 
-export const CheckboxInput: React.FC<{
+const CheckboxInput: React.FC<{
   check?: () => void;
   checked?: boolean;
   title?: string;
   description?: string;
-}> = ({ check, checked = true, title = "Title here", description }) => {
+}> = ({ check, checked = true, title = 'Title here', description }) => {
   return (
-    <div css={{ display: "flex" }}>
+    <div css={{ display: 'flex' }}>
       <div css={{ marginRight: 16 }}>
         <div
           onClick={check}
-          style={{ cursor: "pointer", height: 24, width: 24 }}
+          style={{ cursor: 'pointer', height: 24, width: 24 }}
           css={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            border: "1px solid",
-            borderColor: "grey.400",
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            border: '1px solid',
+            borderColor: 'grey.400',
             borderRadius: 4,
           }}
-          sx={{ ...(checked ? { bg: "black" } : { bg: "white" }) }}
+          sx={{ ...(checked ? { bg: 'black' } : { bg: 'white' }) }}
         >
           <div
             css={{
-              position: "relative",
+              position: 'relative',
               padding: 12,
               bottom: 1,
             }}
@@ -36,14 +37,23 @@ export const CheckboxInput: React.FC<{
           </div>
         </div>
       </div>
-      <div css={{ position: "relative", top: 2 }}>
+      <div css={{ position: 'relative', top: 2 }}>
         <div>
           <h4>{title}</h4>
         </div>
         <div>
-          <h4 css={{ fontSize: 14, color: "grey.500" }}>{description}</h4>
+          <h4 css={{ fontSize: 14, color: 'grey.500' }}>{description}</h4>
         </div>
       </div>
     </div>
   );
+};
+
+export const checkbox = (props) => {
+  return {
+    [$INPUT.checkbox]: {
+      component: <CheckboxInput {...props} />,
+      css: {},
+    },
+  };
 };

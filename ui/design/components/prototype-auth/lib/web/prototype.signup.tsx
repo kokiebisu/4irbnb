@@ -1,15 +1,15 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useState } from "react";
-import { useFormik } from "formik";
-import Router from "next/router";
-import { Input, $Input } from "@nextbnb/atoms-input";
-import { Button, $Button } from "@nextbnb/atoms-button";
-import { Bullet, $Bullet } from "@nextbnb/atoms-bullet";
+import { jsx } from 'theme-ui';
+import { useState } from 'react';
+import { useFormik } from 'formik';
+import Router from 'next/router';
+import { Input, $Input } from '@nextbnb/atoms-input';
+import { Button, $Button } from '@nextbnb/atoms-button';
+import { Bullet, $Bullet } from '@nextbnb/atoms-bullet';
 
-import { validateSignup as validate } from "@nextbnb/design/helper/auth";
-import { usePost } from "@nextbnb/design/hooks/usePost";
+import { validateSignup as validate } from '@nextbnb/design/helper/validation';
+import { usePost } from '@nextbnb/design/hooks/usePost';
 
 /**
  * Renders the signup template component
@@ -20,18 +20,18 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
   const [loading, setLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
-      firstname: "",
-      lastname: "",
-      day: "",
-      month: "",
-      year: "",
-      email: "",
-      password: "",
+      firstname: '',
+      lastname: '',
+      day: '',
+      month: '',
+      year: '',
+      email: '',
+      password: '',
     },
     validate,
     onSubmit: async (values) => {
       const submit = await usePost({
-        url: "/api/users/signup",
+        url: '/api/users/signup',
         body: values,
         triggerLoading: (state) => {
           setLoading(state);
@@ -40,7 +40,7 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
           Router.reload();
         },
         onFail: () => {
-          authDispatch({ type: "exists" });
+          authDispatch({ type: 'exists' });
         },
       });
 
@@ -91,7 +91,7 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
           <div>
             {formik.errors.firstname === undefined &&
               formik.errors.lastname === undefined && (
-                <p css={{ marginTop: 8, fontSize: 11, color: "grey.600" }}>
+                <p css={{ marginTop: 8, fontSize: 11, color: 'grey.600' }}>
                   Make sure it matches the name on your government ID.
                 </p>
               )}
@@ -100,9 +100,9 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
         <div css={{ marginTop: 22 }}>
           <div
             css={{
-              border: "1px solid gray",
+              border: '1px solid gray',
               borderRadius: 14,
-              display: "flex",
+              display: 'flex',
             }}
           >
             <Input
@@ -155,7 +155,7 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
         {formik.errors.day !== undefined &&
           formik.errors.month !== undefined &&
           formik.errors.year !== undefined && (
-            <p css={{ marginTop: 6, fontSize: 11, color: "grey.600" }}>
+            <p css={{ marginTop: 6, fontSize: 11, color: 'grey.600' }}>
               To sign up, you need to be at least 18. Your birthday won't be
               shared with other people who use Airbnb.
             </p>
@@ -182,7 +182,7 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
                 css={{
                   marginTop: 8,
                   fontSize: 11,
-                  color: "grey.600",
+                  color: 'grey.600',
                 }}
               >
                 We'll email you trip confirmations and receipts
@@ -211,15 +211,15 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
           </div>
         </div>
         <div>
-          <p css={{ marginTop: 22, fontSize: 11, color: "grey.600" }}>
-            By selecting <b>Agree and continue</b> below, I agree to Airbnb's{" "}
-            <u css={{ fontWeight: 500, color: "#1B4CC4" }}>Terms of Service</u>,{" "}
-            <u css={{ fontWeight: 500, color: "#1B4CC4" }}>
+          <p css={{ marginTop: 22, fontSize: 11, color: 'grey.600' }}>
+            By selecting <b>Agree and continue</b> below, I agree to Airbnb's{' '}
+            <u css={{ fontWeight: 500, color: '#1B4CC4' }}>Terms of Service</u>,{' '}
+            <u css={{ fontWeight: 500, color: '#1B4CC4' }}>
               Payments Terms of Service
             </u>
-            , <u css={{ fontWeight: 500, color: "#1B4CC4" }}>Privacy Policy</u>,
-            and{" "}
-            <u css={{ fontWeight: 500, color: "#1B4CC4" }}>
+            , <u css={{ fontWeight: 500, color: '#1B4CC4' }}>Privacy Policy</u>,
+            and{' '}
+            <u css={{ fontWeight: 500, color: '#1B4CC4' }}>
               Nondiscrimination Policy
             </u>
             .

@@ -1,8 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useState } from "react";
-import { renderShape } from "../logic/logic.address";
+import { jsx } from 'theme-ui';
+import { useState } from 'react';
+import { renderShape } from '../logic/logic.address';
+import { $INPUT } from '../constant/appearance';
 
 /**
  * Renders the text input component
@@ -13,35 +14,35 @@ import { renderShape } from "../logic/logic.address";
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const TextInput: React.FC<{
+const TextInput: React.FC<{
   name?: string;
   inputType?: string;
   placeholder?: string;
   handleChange?: any;
   value?: string;
   direction?: string;
-}> = ({ name = "text", handleChange, value, direction = "", placeholder }) => {
+}> = ({ name = 'text', handleChange, value, direction = '', placeholder }) => {
   const [active, setActive] = useState(false);
   return (
     <div
       css={{
         height: 50,
-        position: "relative",
-        padding: "6px 12px",
-        alignItems: "center",
+        position: 'relative',
+        padding: '6px 12px',
+        alignItems: 'center',
         ...renderShape(direction),
         ...(active
-          ? { border: "2px solid", borderColor: "black" }
-          : { border: "1px solid", borderColor: "grey.400" }),
+          ? { border: '2px solid', borderColor: 'black' }
+          : { border: '1px solid', borderColor: 'grey.400' }),
       }}
     >
       <div
         css={{
-          position: "relative",
-          height: "100%",
-          width: "100%",
-          display: "flex",
-          alignItems: "center",
+          position: 'relative',
+          height: '100%',
+          width: '100%',
+          display: 'flex',
+          alignItems: 'center',
         }}
       >
         <input
@@ -54,15 +55,15 @@ export const TextInput: React.FC<{
           onBlur={() => setActive(false)}
           value={value}
           css={{
-            outline: "none",
+            outline: 'none',
             padding: 0,
-            width: "100%",
-            display: "block",
-            border: "none",
+            width: '100%',
+            display: 'block',
+            border: 'none',
             fontSize: 14,
             fontWeight: 100,
-            "::placeholder": {
-              color: "black",
+            '::placeholder': {
+              color: 'black',
             },
           }}
           placeholder={placeholder}
@@ -70,4 +71,13 @@ export const TextInput: React.FC<{
       </div>
     </div>
   );
+};
+
+export const text = (props) => {
+  return {
+    [$INPUT.text]: {
+      component: <TextInput {...props} />,
+      css: {},
+    },
+  };
 };

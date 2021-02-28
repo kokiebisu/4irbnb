@@ -1,7 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Plus } from "@nextbnb/design/assets/svg/original";
+import { jsx } from 'theme-ui';
+import { Plus } from '@nextbnb/design/assets/svg/original';
+import { $INPUT } from '../constant/appearance';
 
 /**
  * Renders the text input component
@@ -12,7 +13,7 @@ import { Plus } from "@nextbnb/design/assets/svg/original";
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const AnotherInput: React.FC<{
+const AnotherInput: React.FC<{
   handleChange?: any;
   handleKeyPress?: any;
   value?: string;
@@ -22,49 +23,49 @@ export const AnotherInput: React.FC<{
       css={{
         height: 130,
         padding: 15,
-        border: "1px dashed",
-        borderColor: "lightgray",
+        border: '1px dashed',
+        borderColor: 'lightgray',
       }}
     >
-      <form css={{ height: "100%" }}>
+      <form css={{ height: '100%' }}>
         <input
           type="file"
           id="upload"
-          css={{ display: "none" }}
+          css={{ display: 'none' }}
           onChange={handleChange}
         />
-        <label htmlFor="upload" css={{ height: "100%" }}>
+        <label htmlFor="upload" css={{ height: '100%' }}>
           <div
             css={{
-              cursor: "pointer",
-              height: "100%",
+              cursor: 'pointer',
+              height: '100%',
             }}
           >
             <div
               css={{
-                position: "relative",
-                width: "100%",
-                height: "100%",
+                position: 'relative',
+                width: '100%',
+                height: '100%',
               }}
             >
               <div
                 css={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
                 }}
               >
                 <div
                   css={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
                   }}
                 >
                   <div>
                     <div>
-                      <div css={{ display: "flex", alignItems: "center" }}>
+                      <div css={{ display: 'flex', alignItems: 'center' }}>
                         <Plus width={45} fill="#D8D8D8" />
                       </div>
                     </div>
@@ -72,9 +73,9 @@ export const AnotherInput: React.FC<{
                   <div>
                     <h4
                       css={{
-                        whitespace: "nowrap",
+                        whitespace: 'nowrap',
                         fontSize: 14,
-                        color: "grey.400",
+                        color: 'grey.400',
                       }}
                     >
                       Add another
@@ -88,4 +89,13 @@ export const AnotherInput: React.FC<{
       </form>
     </div>
   );
+};
+
+export const another = (props) => {
+  return {
+    [$INPUT.another]: {
+      component: <AnotherInput {...props} />,
+      css: {},
+    },
+  };
 };

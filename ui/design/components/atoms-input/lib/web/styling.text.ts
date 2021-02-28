@@ -6,18 +6,24 @@
  */
 export const styleInput = (errors, fieldActive, value) => {
   if (errors && fieldActive && value) {
-    return { bg: "white", "::placeholder": { color: "rgb(104, 104, 104)" } };
+    return {
+      bg: 'white',
+      '::placeholder': { color: 'grey.700' },
+    };
   }
   if (errors && value) {
-    return { bg: "white", "::placeholder": { color: "rgb(104, 104, 104)" } };
+    return {
+      bg: 'white',
+      '::placeholder': { color: 'grey.700' },
+    };
   }
   if (errors && fieldActive) {
-    return { bg: "white" };
+    return { bg: 'white' };
   }
   if (errors) {
-    return { bg: "#fef8f6" };
+    return { bg: '#fef8f6' };
   }
-  return "";
+  return { fontWeight: 300, color: 'grey.900' };
 };
 
 /**
@@ -27,53 +33,32 @@ export const styleInput = (errors, fieldActive, value) => {
  * @param value
  */
 export const styleLabel = (errors, fieldActive, evaluate, value) => {
-  if (errors && fieldActive && evaluate) {
+  const mixin = (fontSize, top, color, fontWeight) => {
     return {
-      position: "absolute",
-      transition: "all 150ms ease-in",
-      fontSize: 16,
-      top: 12,
-    };
+      transition: 'all 150ms ease-in',
+      fontSize,
+      top,
+      color,
+      fontWeight,
+      position: 'absolute',
+    } as const;
+  };
+  if (errors && fieldActive && evaluate) {
+    return mixin(16, 12, 'grey.600', 300);
   }
   if (errors && fieldActive) {
-    return {
-      position: "absolute",
-      transition: "all 150ms ease-in",
-      fontSize: 13,
-      top: 2,
-      color: "#c13514 !important",
-      fontWeight: 500,
-    };
+    return mixin(13, 2, 'red.500', 500);
   }
   if (errors && evaluate) {
-    return {
-      position: "absolute",
-      transition: "all 150ms ease-in",
-      fontSize: 13,
-      top: 2,
-      color: " gray !important",
-    };
+    return mixin(13, 2, 'grey.500', 500);
   }
   if (errors) {
-    return {
-      position: "absolute",
-      transition: "all 150ms ease-in",
-      fontSize: 13,
-      top: 2,
-      color: "#c13514 !important",
-      fontWeight: 500,
-    };
+    return mixin(13, 2, 'red.500', 500);
   }
   if (fieldActive || value) {
-    return {
-      position: "absolute",
-      transition: "all 150ms ease-in",
-      fontSize: 13,
-      top: 2,
-      color: "gray !important",
-    };
+    return mixin(13, 1, 'grey.600', 300);
   }
-  return "";
+  return mixin(16, 15, 'grey.600', 300);
 };
 
 /**
@@ -83,25 +68,28 @@ export const styleLabel = (errors, fieldActive, evaluate, value) => {
  * @param value
  */
 export const styleContainer = (errors, fieldActive, value) => {
+  const mixin = (borderWidth, borderColor, bg = 'white') => {
+    return {
+      border: `${borderWidth}px solid`,
+      borderColor,
+      bg,
+      borderRadius: 10,
+    };
+  };
   if (errors && fieldActive && value) {
-    return {};
-    // return [input["container__active"]].join(" ");
+    return mixin(2, 'black');
   }
   if (errors && fieldActive) {
-    return {};
-    // return [input["container__error--active"]].join(" ");
+    return mixin(2, 'red.500');
   }
   if (errors && value) {
-    return {};
-    // return [input["container__inactive"]].join(" ");
+    return mixin(2, 'red.500');
   }
   if (errors) {
-    return {};
-    // return [input["container__error--inactive"]].join(" ");
+    return mixin(1, 'red.500', 'red.50');
   }
   if (fieldActive) {
-    return {};
-    // return [input["container__active"]].join(" ");
+    return mixin(2, 'black');
   }
-  return {};
+  return mixin(1, 'grey.500');
 };

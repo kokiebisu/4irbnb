@@ -1,27 +1,27 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useState } from "react";
-import { styleInput, styleLabel, styleContainer } from "./styling.text";
-
-/** helpers */
-// import { checkEmail } from "../../../auth";
+import { jsx } from 'theme-ui';
+import { useState } from 'react';
+import { styleInput, styleLabel, styleContainer } from './styling.text';
+import { $INPUT } from '../constant/appearance';
+import { validateEmail } from '@nextbnb/design/helper/validation';
 
 /**
  * Renders the text input component
  * @param {string} name - Type of input
  * @param {string} placeholder - Placeholder
- * @param handleChange
+ * @param {function} handleChange - Changes the input
  * @param {string} value - Current value of the input
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const EmailInput: React.FC<{
+const EmailInput: React.FC<{
   handleChange?: any;
   value?: string;
   direction?: string;
   errors?: boolean;
-}> = ({ handleChange, value, direction, errors = false }) => {
+}> = ({ handleChange, value = null, direction, errors = false }) => {
+  const [inputValue, setInputValue] = useState('');
   const [fieldActive, setFieldActive] = useState(false);
 
   const activateField = () => {
@@ -34,49 +34,56 @@ export const EmailInput: React.FC<{
 
   const renderShape = () => {
     switch (direction) {
-      case "top":
+      case 'top':
         return {
-          borderBottom: "1px solid",
-          borderLeft: "1px solid",
-          borderRight: "1px solid",
-          borderColor: "grey.400",
+          borderBottom: '1px solid',
+          borderLeft: '1px solid',
+          borderRight: '1px solid',
+          borderColor: 'grey.400',
           borderBottomRadius: 10,
         };
 
-      case "bottom":
+      case 'bottom':
         return {
-          borderTop: "1px solid",
-          borderLeft: "1px solid",
-          borderRight: "1px solid",
-          borderColor: "grey.400",
+          borderTop: '1px solid',
+          borderLeft: '1px solid',
+          borderRight: '1px solid',
+          borderColor: 'grey.400',
           borderTopRadius: 10,
         };
       default:
         return {
-          border: "1px solid",
-          borderColor: "grey.400",
+          border: '1px solid',
+          borderColor: 'grey.300',
           borderRadius: 10,
         };
     }
   };
 
+  const handleinputValue = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const displayingValue = value ? value : inputValue;
+
   return (
     <div
       css={{
         height: 60,
-        position: "relative",
-        padding: "6px 12px",
-        display: "flex",
-        alignItems: "center",
-        ...renderShape(),
-        // ...styleContainer(errors, fieldActive, checkEmail(value)),
+        position: 'relative',
+        padding: '6px 12px',
+        display: 'flex',
+        alignItems: 'center',
+      }}
+      sx={{
+        ...styleContainer(errors, fieldActive, validateEmail(displayingValue)),
       }}
     >
       <div
         css={{
-          position: "relative",
-          height: "100%",
-          width: "100%",
+          position: 'relative',
+          height: '100%',
+          width: '100%',
         }}
       >
         <input
@@ -84,38 +91,40 @@ export const EmailInput: React.FC<{
           id="email"
           name="email"
           type="text"
-          onChange={handleChange}
-          value={value}
+          onChange={value ? handleChange : handleinputValue}
+          value={displayingValue}
           onFocus={activateField}
           onBlur={deactivateField}
           css={{
             padding: 0,
-            width: "100%",
-            display: "block",
-            border: "none",
+            width: '100%',
+            display: 'block',
+            border: 'none',
             fontSize: 16,
             fontWeight: 300,
-            "::placeholder": {
-              color: "black",
-            },
-            position: "relative",
-            top: "0",
-            outline: "none",
+            position: 'relative',
+            top: '0',
+            outline: 'none',
             paddingTop: 20,
-            color: "rgb(104, 104, 104)",
-            // ...styleInput(errors, fieldActive, checkEmail(value)),
+            color: 'rgb(104, 104, 104)',
           }}
-          placeholder={fieldActive ? "Email" : undefined}
+          sx={{
+            '::placeholder': {
+              color: 'black',
+            },
+            ...styleInput(errors, fieldActive, validateEmail(displayingValue)),
+          }}
+          placeholder={fieldActive ? 'Email' : undefined}
         />
         <label
           htmlFor="email"
-          css={{
-            fontSize: 12,
-            color: "grey.600",
-            fontWeight: 100,
-            transition: "all 150ms ease-in",
-            top: 12,
-            // ...styleLabel(errors, fieldActive, checkEmail(value), value),
+          sx={{
+            ...styleLabel(
+              errors,
+              fieldActive,
+              validateEmail(displayingValue),
+              displayingValue
+            ),
           }}
         >
           Email
@@ -123,4 +132,13 @@ export const EmailInput: React.FC<{
       </div>
     </div>
   );
+};
+
+export const email = (props) => {
+  return {
+    [$INPUT.email]: {
+      component: <EmailInput {...props} />,
+      css: {},
+    },
+  };
 };

@@ -1,54 +1,55 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useState } from "react";
+import { jsx } from 'theme-ui';
+import { useState } from 'react';
+import { $INPUT } from '../constant/appearance';
 
-export const LimitInput: React.FC<{
+const LimitInput: React.FC<{
   value?: string;
   handleChange?: () => void;
   limit?: number;
-}> = ({ value = "", handleChange, limit = 50 }) => {
+}> = ({ value = '', handleChange, limit = 50 }) => {
   const [active, setActive] = useState(false);
 
   const renderBorder = () => {
     if (value.length >= limit) {
       return {
-        border: "1px solid red.400 !important",
-        transition: "0.4s border-color",
+        border: '1px solid red.400 !important',
+        transition: '0.4s border-color',
       };
     }
     if (active) {
       return {
-        "&:focus": {
-          border: "1px solid cyan.800 !important",
-          transition: "0.4s border-color",
+        '&:focus': {
+          border: '1px solid cyan.800 !important',
+          transition: '0.4s border-color',
         },
       };
     }
-    return "";
+    return '';
   };
 
   const renderBackground = () => {
     if (value.length >= limit) {
       return {
-        backgroundColor: "red.50 !important",
-        transition: "0.4s all",
+        backgroundColor: 'red.50 !important',
+        transition: '0.4s all',
       };
     }
     if (active) {
       return {
-        backgroundColor: "white !important",
-        transition: "0.4s all",
+        backgroundColor: 'white !important',
+        transition: '0.4s all',
       };
     }
-    return "";
+    return '';
   };
 
   const renderColor = () => {
     if (value.length >= limit) {
-      return { color: "red.400 !important", transition: "0.4s all" };
+      return { color: 'red.400 !important', transition: '0.4s all' };
     }
-    return { color: "cyan.800 !important", transition: "0.4s all" };
+    return { color: 'cyan.800 !important', transition: '0.4s all' };
   };
 
   return (
@@ -56,8 +57,8 @@ export const LimitInput: React.FC<{
       <div
         css={{
           minHeight: 50,
-          position: "relative",
-          width: "100%",
+          position: 'relative',
+          width: '100%',
           marginBottom: 4,
         }}
       >
@@ -67,17 +68,17 @@ export const LimitInput: React.FC<{
           onBlur={() => setActive(false)}
           onChange={handleChange}
           css={{
-            position: "relative",
+            position: 'relative',
             fontWeight: 300,
-            border: "1px solid",
-            borderColor: "grey.400",
+            border: '1px solid',
+            borderColor: 'grey.400',
             borderRadius: 6,
             fontSize: 15,
-            color: "grey.700",
-            height: "100%",
-            weight: "100%",
+            color: 'grey.700',
+            height: '100%',
+            weight: '100%',
             padding: 12,
-            outline: "none",
+            outline: 'none',
             minHeight: 50,
             ...renderBorder(),
             ...renderBackground(),
@@ -86,7 +87,7 @@ export const LimitInput: React.FC<{
 
         <div
           css={{
-            position: "absolute",
+            position: 'absolute',
             bottom: 15,
             right: 15,
           }}
@@ -103,11 +104,20 @@ export const LimitInput: React.FC<{
       </div>
       {value.length >= limit && (
         <div>
-          <h3 css={{ fontSize: 14, color: "red.400" }}>
+          <h3 css={{ fontSize: 14, color: 'red.400' }}>
             Please shorten your title to {limit} characters or less.
           </h3>
         </div>
       )}
     </div>
   );
+};
+
+export const limit = (props) => {
+  return {
+    [$INPUT.limit]: {
+      component: <LimitInput {...props} />,
+      css: {},
+    },
+  };
 };

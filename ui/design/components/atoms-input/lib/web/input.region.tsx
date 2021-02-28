@@ -1,9 +1,10 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useState } from "react";
-import { styleInput, styleLabel } from "./styling.select";
-import { renderShape } from "../logic/logic.region";
+import { jsx } from 'theme-ui';
+import { useState } from 'react';
+import { styleInput, styleLabel } from './styling.select';
+import { renderShape } from '../logic/logic.region';
+import { $INPUT } from '../constant/appearance';
 
 /**
  * Renders the text input component
@@ -14,36 +15,36 @@ import { renderShape } from "../logic/logic.region";
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const RegionInput: React.FC<{
+const RegionInput: React.FC<{
   handleChange?: any;
   value?: string;
   direction?: string;
   errors?: boolean;
-}> = ({ handleChange, value, direction = "", errors = false }) => {
+}> = ({ handleChange, value, direction = '', errors = false }) => {
   const [fieldActive, setFieldActive] = useState(false);
 
   return (
     <div
       css={{
         height: 60,
-        display: "flex",
-        position: "relative",
-        alignItems: "center",
+        display: 'flex',
+        position: 'relative',
+        alignItems: 'center',
       }}
       style={{ height: 60 }}
     >
       <div
         style={{
-          padding: "0 12px",
-          position: "relative",
-          height: "100%",
-          width: "100%",
+          padding: '0 12px',
+          position: 'relative',
+          height: '100%',
+          width: '100%',
           // ...renderShape(direction),
           // ...styleContainer(errors, fieldActive, value),
         }}
       >
         <select
-          style={{ height: "100%" }}
+          style={{ height: '100%' }}
           id="region"
           onChange={handleChange}
           value={value}
@@ -52,14 +53,14 @@ export const RegionInput: React.FC<{
           css={{
             borderRadius: 10,
             padding: 0,
-            width: "100%",
-            display: "block",
-            border: "none",
+            width: '100%',
+            display: 'block',
+            border: 'none',
             fontSize: 16,
             fontWeight: 300,
-            bg: "white",
-            "::placeholder": {
-              color: "rgb(104, 104, 104)",
+            bg: 'white',
+            '::placeholder': {
+              color: 'rgb(104, 104, 104)',
             },
             ...styleInput(errors, fieldActive),
           }}
@@ -82,4 +83,13 @@ export const RegionInput: React.FC<{
       </div>
     </div>
   );
+};
+
+export const region = (props) => {
+  return {
+    [$INPUT.region]: {
+      component: <RegionInput {...props} />,
+      css: {},
+    },
+  };
 };

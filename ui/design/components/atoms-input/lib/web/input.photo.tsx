@@ -1,7 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Upload } from "@nextbnb/design/assets/svg/original";
+import { jsx } from 'theme-ui';
+import { Upload } from '@nextbnb/design/assets/svg/original';
+import { $INPUT } from '../constant/appearance';
 
 /**
  * Renders the text input component
@@ -12,68 +13,68 @@ import { Upload } from "@nextbnb/design/assets/svg/original";
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const PhotoInput: React.FC<{
+const PhotoInput: React.FC<{
   handleChange?: any;
   handleKeyPress?: any;
   value?: string;
 }> = ({ handleChange, value }) => {
   return (
     <div style={{ height: 350 }}>
-      <form css={{ height: "100%" }}>
+      <form css={{ height: '100%' }}>
         <input
           type="file"
           id="upload"
           css={{
-            display: "none",
-            height: "100%",
+            display: 'none',
+            height: '100%',
           }}
           onChange={handleChange}
         />
-        <label htmlFor="upload" css={{ height: "100%" }}>
+        <label htmlFor="upload" css={{ height: '100%' }}>
           <div
             css={{
-              height: "100%",
-              cursor: "pointer",
+              height: '100%',
+              cursor: 'pointer',
               padding: 15,
-              border: "1px dashed lightgray",
+              border: '1px dashed lightgray',
             }}
           >
             <div
               css={{
-                position: "relative",
-                width: "100%",
-                height: "100%",
+                position: 'relative',
+                width: '100%',
+                height: '100%',
                 backgroundImage:
-                  "url(https://a0.muscache.com/airbnb/static/packages/upload-photos-ghosts.56fe723d.png)",
+                  'url(https://a0.muscache.com/airbnb/static/packages/upload-photos-ghosts.56fe723d.png)',
               }}
             >
               <div
                 css={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
                 }}
               >
                 <div
                   css={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
                   }}
                 >
                   <div>
                     <div
                       css={{
-                        padding: "14px 22px",
-                        backgroundColor: "#FF5A5F",
+                        padding: '14px 22px',
+                        backgroundColor: '#FF5A5F',
                         borderRadius: 4,
                       }}
                     >
                       <div
                         css={{
-                          display: "flex",
-                          alignItems: "center",
+                          display: 'flex',
+                          alignItems: 'center',
                         }}
                       >
                         <div css={{ marginRight: 8 }}>
@@ -83,8 +84,8 @@ export const PhotoInput: React.FC<{
                           <h3
                             css={{
                               fontSize: 14,
-                              whiteSpace: "nowrap",
-                              color: "white",
+                              whiteSpace: 'nowrap',
+                              color: 'white',
                             }}
                           >
                             Upload Photos
@@ -94,7 +95,7 @@ export const PhotoInput: React.FC<{
                     </div>
                   </div>
                   <div css={{ marginTop: 8 }}>
-                    <h4 css={{ fontSize: 15, color: "grey.500" }}>
+                    <h4 css={{ fontSize: 15, color: 'grey.500' }}>
                       or drag them in
                     </h4>
                   </div>
@@ -106,4 +107,13 @@ export const PhotoInput: React.FC<{
       </form>
     </div>
   );
+};
+
+export const photo = (props) => {
+  return {
+    [$INPUT.photo]: {
+      component: <PhotoInput {...props} />,
+      css: {},
+    },
+  };
 };

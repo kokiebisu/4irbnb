@@ -1,11 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useFormik } from "formik";
-import { Input, $Input } from "@nextbnb/atoms-input";
-import { Button, $Button } from "@nextbnb/atoms-button";
-import { getAuthContents } from "../content/auth";
-import { validateAuth as validate } from "@nextbnb/design/helper/auth";
+import { jsx } from 'theme-ui';
+import { useFormik } from 'formik';
+import { Input, $Input } from '@nextbnb/atoms-input';
+import { Button, $Button } from '@nextbnb/atoms-button';
+import { getAuthContents } from '../content/auth';
+import { validateAuth as validate } from '@nextbnb/design/helper/validation';
 
 /**
  * Renders the auth template component
@@ -13,14 +13,14 @@ import { validateAuth as validate } from "@nextbnb/design/helper/auth";
 export const AuthPrototype: React.FC<{
   title?: string;
   authDispatch?: (param: any) => void;
-}> = ({ title = "Log in", authDispatch }) => {
+}> = ({ title = 'Log in', authDispatch }) => {
   const auths = getAuthContents(title, authDispatch);
-  const methods = ["email", "facebook", "google", "apple"];
+  const methods = ['email', 'facebook', 'google', 'apple'];
 
   const formik = useFormik({
     initialValues: {
-      region: "",
-      phone: "",
+      region: '',
+      phone: '',
     },
     validate,
     onSubmit(values) {
@@ -29,15 +29,15 @@ export const AuthPrototype: React.FC<{
   });
 
   const switchAuth = () => {
-    if (title === "Log in") {
-      return authDispatch({ type: "auth_signup" });
+    if (title === 'Log in') {
+      return authDispatch({ type: 'auth_signup' });
     }
-    return authDispatch({ type: "auth_login" });
+    return authDispatch({ type: 'auth_login' });
   };
 
   return (
     <div css={{ padding: 24 }}>
-      <div css={{ width: "100%" }}>
+      <div css={{ width: '100%' }}>
         <form onSubmit={formik.handleSubmit}>
           <div css={{ marginBottom: 8 }}>
             <div>
@@ -60,7 +60,7 @@ export const AuthPrototype: React.FC<{
           <div>
             <p
               css={{ fontWeight: 100, fontSize: 12 }}
-              sx={{ color: "grey.500" }}
+              sx={{ color: 'grey.500' }}
             >
               We’ll call or text you to confirm your number. Standard message
               and data rates apply.
@@ -72,22 +72,22 @@ export const AuthPrototype: React.FC<{
         </form>
         <div
           css={{
-            textAlign: "center",
-            position: "relative",
+            textAlign: 'center',
+            position: 'relative',
             zIndex: 1,
           }}
         >
           <span
             css={{
               zIndex: 3,
-              position: "relative",
-              padding: "0 4px",
+              position: 'relative',
+              padding: '0 4px',
               fontWeight: 100,
               fontSize: 12,
             }}
             sx={{
-              bg: "white",
-              color: "grey.500",
+              bg: 'white',
+              color: 'grey.500',
             }}
           >
             or
@@ -96,12 +96,12 @@ export const AuthPrototype: React.FC<{
         <div>
           {methods.map((method, index) => {
             return (
-              <div key={index} css={{ margin: "14px 0" }}>
+              <div key={index} css={{ margin: '14px 0' }}>
                 <Button
                   variant={$Button.AUTH}
                   extendsTo={{
-                    border: "2px solid",
-                    borderColor: "#b0b0b0",
+                    border: '2px solid',
+                    borderColor: '#b0b0b0',
                     padding: 12,
                     borderRadius: 8,
                   }}
@@ -116,25 +116,25 @@ export const AuthPrototype: React.FC<{
           })}
         </div>
         <div css={{ marginTop: 4 }}>
-          <div css={{ display: "inline-block", marginRight: 6 }}>
+          <div css={{ display: 'inline-block', marginRight: 6 }}>
             <p
               css={{
                 fontSize: 14,
                 fontWeight: 300,
               }}
               sx={{
-                color: "grey.600",
+                color: 'grey.600',
               }}
             >
-              {title === "Log in"
+              {title === 'Log in'
                 ? "Don't have an account?"
-                : "Already have an account?"}
+                : 'Already have an account?'}
             </p>
           </div>
           <Button
             variant={$Button.UNDERLINE}
             onClick={switchAuth}
-            title={title === "Log in" ? "Sign up" : "Log in"}
+            title={title === 'Log in' ? 'Sign up' : 'Log in'}
           />
         </div>
       </div>
