@@ -44,21 +44,33 @@ export const styleLabel = (errors, fieldActive, evaluate, value) => {
     } as const;
   };
   if (errors && fieldActive && evaluate) {
-    return mixin(16, 12, 'grey.600', 300);
+    return {
+      ...mixin(16, 12, 'grey.600', 300),
+    };
   }
   if (errors && fieldActive) {
-    return mixin(13, 2, 'red.500', 500);
+    return {
+      ...mixin(13, 2, 'red.500', 500),
+    };
   }
   if (errors && evaluate) {
-    return mixin(13, 2, 'grey.500', 500);
+    return {
+      ...mixin(13, 2, 'grey.500', 500),
+    };
   }
   if (errors) {
-    return mixin(13, 2, 'red.500', 500);
+    return {
+      ...mixin(13, 2, 'red.500', 500),
+    };
   }
   if (fieldActive || value) {
-    return mixin(13, 1, 'grey.600', 300);
+    return {
+      ...mixin(13, 1, 'grey.600', 300),
+    };
   }
-  return mixin(16, 15, 'grey.600', 300);
+  return {
+    ...mixin(16, 15, 'grey.600', 300),
+  };
 };
 
 /**

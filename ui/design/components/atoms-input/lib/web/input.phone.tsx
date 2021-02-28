@@ -19,7 +19,8 @@ const PhoneNumberInput: React.FC<{
   value?: string;
   direction?: string;
   errors?: boolean;
-}> = ({ handleChange, value, direction, errors = false }) => {
+}> = ({ handleChange, value = null, direction, errors = false }) => {
+  const [inputValue, setInputValue] = useState('');
   const [fieldActive, setFieldActive] = useState(false);
 
   const activateField = () => {
@@ -30,32 +31,38 @@ const PhoneNumberInput: React.FC<{
     setFieldActive(false);
   };
 
-  const renderShape = () => {
-    switch (direction) {
-      case 'top':
-        return {
-          borderBottom: '1px solid',
-          borderLeft: '1px solid',
-          borderRight: '1px solid',
-          borderColor: 'grey.400',
-          borderBottomRadius: 10,
-        };
-      case 'bottom':
-        return {
-          borderTop: '1px solid',
-          borderLeft: '1px solid',
-          borderRight: '1px solid',
-          borderColor: 'grey.400',
-          borderTopRadius: 10,
-        };
-      default:
-        return {
-          border: '1px solid',
-          borderColor: 'grey.400',
-          borderRadius: 10,
-        };
-    }
+  // const renderShape = () => {
+  //   switch (direction) {
+  //     case 'top':
+  //       return {
+  //         borderBottom: '1px solid',
+  //         borderLeft: '1px solid',
+  //         borderRight: '1px solid',
+  //         borderColor: 'grey.400',
+  //         borderBottomRadius: 10,
+  //       };
+  //     case 'bottom':
+  //       return {
+  //         borderTop: '1px solid',
+  //         borderLeft: '1px solid',
+  //         borderRight: '1px solid',
+  //         borderColor: 'grey.400',
+  //         borderTopRadius: 10,
+  //       };
+  //     default:
+  //       return {
+  //         border: '1px solid',
+  //         borderColor: 'grey.400',
+  //         borderRadius: 10,
+  //       };
+  //   }
+  // };
+
+  const handleDisplayingValue = (e) => {
+    setInputValue(e.target.value);
   };
+
+  const displayingValue = typeof value === 'string' ? value : inputValue;
 
   return (
     <div
@@ -64,8 +71,9 @@ const PhoneNumberInput: React.FC<{
         position: 'relative',
         padding: '6px 12px',
         alignItems: 'center',
-        ...renderShape(),
-        // ...styleContainer(errors, fieldActive, value),
+      }}
+      sx={{
+        ...styleContainer(errors, fieldActive, displayingValue),
       }}
     >
       <div
@@ -80,8 +88,10 @@ const PhoneNumberInput: React.FC<{
           id="tel"
           name="tel"
           type="text"
-          onChange={handleChange}
-          value={value}
+          onChange={
+            typeof value === 'string' ? handleChange : handleDisplayingValue
+          }
+          value={displayingValue}
           onFocus={activateField}
           onBlur={deactivateField}
           css={{
@@ -90,28 +100,30 @@ const PhoneNumberInput: React.FC<{
             display: 'block',
             border: 'none',
             fontWeight: 300,
-            '::placeholder': {
-              color: 'black',
-            },
             position: 'relative',
             top: 0,
             outline: 'none',
             paddingTop: 20,
             fontSize: 16,
             color: 'rgb(104, 104, 104)',
-            ...styleInput(errors, fieldActive, value),
+          }}
+          sx={{
+            '::placeholder': {
+              color: 'black',
+            },
+            ...styleInput(errors, fieldActive, displayingValue),
           }}
           placeholder={fieldActive ? '090-999-9999' : undefined}
         />
         <label
           htmlFor="tel"
-          css={{
-            fontSize: 12,
-            color: 'grey.600',
-            fontWeight: 100,
-            transition: 'all 150ms ease-in',
-            top: 12,
-            // ...styleLabel(errors, fieldActive, value, value),
+          sx={{
+            ...styleLabel(
+              errors,
+              fieldActive,
+              displayingValue,
+              displayingValue
+            ),
           }}
         >
           Phone number
