@@ -1,0 +1,17 @@
+export const $BULLET = {
+  characteristic: 'characteristic',
+  amenity: 'amenity',
+  score: 'score',
+  host: 'host',
+  know: 'know',
+  rating: 'rating',
+  bring: 'bring',
+  experience: 'experience',
+  priority: 'priority',
+  help: 'help',
+  required: 'required',
+  onlinehost: 'onlinehost',
+  question: 'question',
+  check: 'check',
+  scenario: 'scenario',
+};

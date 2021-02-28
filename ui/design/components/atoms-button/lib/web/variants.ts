@@ -27,10 +27,12 @@ import { underline } from './button.underline';
 import { video } from './button.video';
 import { location } from './button.location';
 
-export const webVariants = (props) => {
-  const variants: {
-    [variant: string]: { component: JSX.Element; css: any };
-  } = {
+export const variants: (
+  props
+) => {
+  [variant: string]: { component: JSX.Element; css: any };
+} = (props) => {
+  return {
     ...auth(props),
     ...back(props),
     ...banner(props),
@@ -60,6 +62,4 @@ export const webVariants = (props) => {
     ...underline(props),
     ...video(props),
   };
-
-  return variants;
 };

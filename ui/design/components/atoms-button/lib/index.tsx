@@ -6,8 +6,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ThemeProvider } from 'theme-ui';
 import { theme } from '@nextbnb/theme';
-
-import { webVariants } from './web/variants';
+import { variants as webVariants } from './web/variants';
+import { generateVariants } from './utils/variants';
+import { PLATFORM } from './constants/platform';
 
 export interface ButtonProps {
   extendsTo?: any;
@@ -49,13 +50,6 @@ export const $Button = {
   VIDEO: 'video',
 };
 
-const generateVariants = (platform, props) => {
-  if (platform === 'ios') {
-    return null;
-  }
-  return webVariants(props);
-};
-
 export const Button: React.FC<ButtonProps> = ({
   platform = 'web',
   extendsTo = {},
@@ -69,7 +63,13 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   const { disable } = props;
 
-  const variants = generateVariants(platform, props);
+  const variants = generateVariants(
+    PLATFORM[platform],
+    webVariants,
+    null,
+    null,
+    props
+  );
 
   return (
     <ThemeProvider theme={theme}>
