@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Button, $Button } from "@nextbnb/atoms-button";
+import { jsx } from 'theme-ui';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 
 /**
  * Layout for Currency modal
@@ -11,7 +11,7 @@ import { Button, $Button } from "@nextbnb/atoms-button";
 export const CurrencyLayout: React.FC<{
   items?: { name?: string; abbreviation?: string; symbol?: string }[];
   title?: string;
-}> = ({ items = [], title = "Title here" }) => {
+}> = ({ items = [], title = 'Title here' }) => {
   return (
     <div>
       <div css={{ marginBottom: 18 }}>
@@ -19,9 +19,9 @@ export const CurrencyLayout: React.FC<{
       </div>
       <div
         css={{
-          width: "100%",
-          display: "grid",
-          gridTemplateColumns: "repeat(5, 1fr)",
+          width: '100%',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(5, 1fr)',
           columnGap: 15,
           rowGap: 15,
           padding: 10,
@@ -32,9 +32,9 @@ export const CurrencyLayout: React.FC<{
             <div key={index}>
               <Button
                 extendsTo={{
-                  textAlign: "left",
+                  textAlign: 'left',
                 }}
-                variant={$Button.CURRENCY}
+                variant={$BUTTON.currency}
                 name={name}
                 abbreviation={abbreviation}
                 symbol={symbol}

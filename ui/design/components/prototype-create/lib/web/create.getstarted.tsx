@@ -1,11 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useEffect, useState } from "react";
-import { useFormik } from "formik";
-import Router from "next/router";
-import { Button, $Button } from "@nextbnb/atoms-button";
-import { Input, $Input } from "@nextbnb/atoms-input";
+import { jsx } from 'theme-ui';
+import { useEffect, useState } from 'react';
+import { useFormik } from 'formik';
+import Router from 'next/router';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Input, $Input } from '@nextbnb/atoms-input';
 
 /**
  * Renders the /become-a-host/get-started page content
@@ -14,21 +14,21 @@ export const GetStartedCreate: React.FC<{
   dispatchStay?: ({ type: string, payload: any }) => void;
 }> = ({ dispatchStay }) => {
   const [loading, setLoading] = useState(false);
-  const [stay, setStay] = useState("Entire place");
+  const [stay, setStay] = useState('Entire place');
 
   const formik = useFormik({
     initialValues: {
       guests: 1,
-      address: "",
+      address: '',
     },
     onSubmit: async ({ guests, address }) => {
       setLoading(true);
       dispatchStay({
-        type: "add",
+        type: 'add',
         payload: { stay, guests, address },
       });
       setTimeout(() => {
-        Router.push("/become-a-host/room");
+        Router.push('/become-a-host/room');
       }, 2000);
     },
   });
@@ -36,16 +36,16 @@ export const GetStartedCreate: React.FC<{
   return (
     <div>
       <div>
-        <div css={{ margin: "24px 0" }}>
-          <h4 css={{ fontSize: 28, color: "grey.700" }}>
+        <div css={{ margin: '24px 0' }}>
+          <h4 css={{ fontSize: 28, color: 'grey.700' }}>
             Hi, Kenichi! Let's get started listing your space.
           </h4>
         </div>
-        <div css={{ margin: "8px 0" }}>
-          <h3 css={{ fontSize: 12, color: "grey.600" }}>STEP 1</h3>
+        <div css={{ margin: '8px 0' }}>
+          <h3 css={{ fontSize: 12, color: 'grey.600' }}>STEP 1</h3>
         </div>
         <div css={{ marginBottom: 16 }}>
-          <h4 css={{ fontSize: 22, color: "grey.700" }}>
+          <h4 css={{ fontSize: 22, color: 'grey.700' }}>
             What kind of place do you have?
           </h4>
         </div>
@@ -54,8 +54,8 @@ export const GetStartedCreate: React.FC<{
             <div
               css={{
                 marginBottom: 10,
-                display: "grid",
-                gridTemplateColumns: "1fr 130px",
+                display: 'grid',
+                gridTemplateColumns: '1fr 130px',
                 columnGap: 10,
               }}
             >
@@ -82,9 +82,9 @@ export const GetStartedCreate: React.FC<{
               />
             </div>
             <div css={{ marginTop: 16, width: 150 }}>
-              <div css={{ width: "100%" }}>
+              <div css={{ width: '100%' }}>
                 <Button
-                  variant={$Button.PRIMARY}
+                  variant={$BUTTON.primary}
                   title="Continue"
                   size="sm"
                   loading={loading}

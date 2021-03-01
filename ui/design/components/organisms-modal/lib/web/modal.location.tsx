@@ -1,36 +1,36 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Button, $Button } from "@nextbnb/atoms-button";
+import { jsx } from 'theme-ui';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 // import { Layout } from "../../../layout/web";
 
 export const LocationModal: React.FC<{}> = () => {
   const recentLocations = [
-    { location: "Chilliwack", from: "Jan. 7", to: "Jan. 21", guests: 4 },
-    { location: "Tofino" },
-    { location: "Nanaimo" },
+    { location: 'Chilliwack', from: 'Jan. 7', to: 'Jan. 21', guests: 4 },
+    { location: 'Tofino' },
+    { location: 'Nanaimo' },
   ];
   const nearbyLocations = [
-    "Whistler",
-    "Victora",
-    "Tofino",
-    "Kelowna",
-    "Uclulet",
-    "Chilliwack",
-    "Sooke",
-    "Pemberton",
+    'Whistler',
+    'Victora',
+    'Tofino',
+    'Kelowna',
+    'Uclulet',
+    'Chilliwack',
+    'Sooke',
+    'Pemberton',
   ];
   return (
     <div>
       <div>
         <Button
-          variant={$Button.LOCATION}
+          variant={$BUTTON.location}
           type="explore"
           extendsTo={{
-            padding: "0 25px",
-            ":hover": {
-              bg: "grey.100",
-              transition: "0.4s all",
+            padding: '0 25px',
+            ':hover': {
+              bg: 'grey.100',
+              transition: '0.4s all',
             },
           }}
           block

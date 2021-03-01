@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Button, $Button } from "@nextbnb/atoms-button";
-import { Lock } from "@nextbnb/design/assets/svg/original";
+import { jsx } from 'theme-ui';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Lock } from '@nextbnb/design/assets/svg/original';
 
 /**
  * Renders the privacy modal
@@ -15,12 +15,12 @@ export const PrivacyModal: React.FC<{ dispatchCallback?: (param) => void }> = ({
 
   const handleSave = () => {
     // add cookie
-    return dispatchCallback({ type: "toggle_privacy" });
+    return dispatchCallback({ type: 'toggle_privacy' });
   };
 
   const handleSettings = () => {
     // open settings
-    return dispatchCallback({ type: "toggle_privacy" });
+    return dispatchCallback({ type: 'toggle_privacy' });
   };
 
   return (
@@ -31,16 +31,16 @@ export const PrivacyModal: React.FC<{ dispatchCallback?: (param) => void }> = ({
           borderRadius: 8,
         }}
         sx={{
-          alignItems: "center",
-          display: ["block", "block", "block", "block", "flex"],
+          alignItems: 'center',
+          display: ['block', 'block', 'block', 'block', 'flex'],
         }}
       >
         <div>
           <div
             css={{
-              display: "flex",
-              alignItems: "center",
-              margin: "6px 0",
+              display: 'flex',
+              alignItems: 'center',
+              margin: '6px 0',
             }}
           >
             <div css={{ marginRight: 10 }}>Your Privacy</div>
@@ -52,23 +52,23 @@ export const PrivacyModal: React.FC<{ dispatchCallback?: (param) => void }> = ({
             <p
               css={{ fontSize: 14, fontWeight: 300, lineHeight: 1.5 }}
               sx={{
-                color: "grey.500",
+                color: 'grey.500',
               }}
             >
               We use cookies to help personalize content, tailor and measure
               ads, and provide a safer experience. By navigating the site, you
               agree to the use of cookies to collect information on and off
-              Airbnb. Read our{" "}
+              Airbnb. Read our{' '}
               <u>
                 <b>Cookie Policy</b>
-              </u>{" "}
+              </u>{' '}
               to learn more or go to Cookie Preferences to manage your settings.
             </p>
           </div>
         </div>
         <div
           css={{
-            display: ["block", "flex"],
+            display: ['block', 'flex'],
           }}
         >
           <div
@@ -76,15 +76,15 @@ export const PrivacyModal: React.FC<{ dispatchCallback?: (param) => void }> = ({
               marginTop: 6,
               marginBottom: 6,
               marginLeft: 0,
-              marginRight: ["0", "8px"],
+              marginRight: ['0', '8px'],
             }}
           >
             <Button
-              variant={$Button.PRIVACY}
+              variant={$BUTTON.privacy}
               extendsTo={{
-                width: "100%",
-                display: ["block", "flex"],
-                textAlign: "center",
+                width: '100%',
+                display: ['block', 'flex'],
+                textAlign: 'center',
               }}
               title="Save"
               onClick={handleSave}
@@ -92,15 +92,15 @@ export const PrivacyModal: React.FC<{ dispatchCallback?: (param) => void }> = ({
           </div>
           <div
             css={{
-              margin: "6px 0",
+              margin: '6px 0',
             }}
           >
             <Button
-              variant={$Button.PRIVACY}
+              variant={$BUTTON.privacy}
               css={{
-                width: "100%",
-                display: ["block", "flex"],
-                textAlign: "center",
+                width: '100%',
+                display: ['block', 'flex'],
+                textAlign: 'center',
               }}
               title="Cookie Preferences"
               inverse

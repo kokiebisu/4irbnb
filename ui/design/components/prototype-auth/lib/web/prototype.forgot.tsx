@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui';
 import { useFormik } from 'formik';
 import { Input, $Input } from '@nextbnb/atoms-input';
-import { Button, $Button } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { Bullet, $Bullet } from '@nextbnb/atoms-bullet';
 import { validateForgotPassword as validate } from '@nextbnb/design/helper/validation';
 
@@ -63,7 +63,7 @@ export const ForgotPasswordPrototype: React.FC<{}> = () => {
           </div>
           <div>
             <Button
-              variant={$Button.PRIMARY}
+              variant={$BUTTON.primary}
               size="md"
               fill="black"
               title="Send reset link"

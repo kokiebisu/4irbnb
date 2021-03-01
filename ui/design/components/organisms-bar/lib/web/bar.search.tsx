@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Button, $Button } from "@nextbnb/atoms-button";
+import { jsx } from 'theme-ui';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 
 /**
  * Renders the Searchbar
@@ -13,9 +13,9 @@ export const SearchBar: React.FC<{
   transparent?: boolean;
   dispatch?: any;
 }> = ({
-  type = "stay",
+  type = 'stay',
   selected = null,
-  setSelected = () => console.log("clicked"),
+  setSelected = () => console.log('clicked'),
   transparent,
   dispatch,
 }) => {
@@ -23,14 +23,14 @@ export const SearchBar: React.FC<{
     stay: (
       <div
         css={{
-          border: "1px solid lightgray",
-          display: "grid",
+          border: '1px solid lightgray',
+          display: 'grid',
           gridTemplateColumns: `1.5fr 1px 1fr 1px  1fr 1px ${
-            !selected ? "1.5fr" : "2fr"
+            !selected ? '1.5fr' : '2fr'
           }`,
           borderRadius: 50,
-          backgroundColor: "white",
-          ...(transparent && { boxShadow: "rgba(0, 0, 0, 0.08) 0px 1px 12px" }),
+          backgroundColor: 'white',
+          ...(transparent && { boxShadow: 'rgba(0, 0, 0, 0.08) 0px 1px 12px' }),
         }}
       >
         <Option
@@ -62,37 +62,37 @@ export const SearchBar: React.FC<{
         <Seperator />
         <button
           css={{
-            display: "block",
-            padding: "5px 8px 5px 24px",
-            borderRadius: "50px",
-            ":hover": {
-              bg: "grey.100",
-              transition: "0.4s all",
+            display: 'block',
+            padding: '5px 8px 5px 24px',
+            borderRadius: '50px',
+            ':hover': {
+              bg: 'grey.100',
+              transition: '0.4s all',
             },
-            ...(selected === "guests" && {
-              boxShadow: "rgba(0, 0, 0, 0.2) 0px 4px 8px",
+            ...(selected === 'guests' && {
+              boxShadow: 'rgba(0, 0, 0, 0.2) 0px 4px 8px',
             }),
           }}
           onClick={() => {
-            setSelected("guests");
-            dispatch({ type: "toggle_guests" });
+            setSelected('guests');
+            dispatch({ type: 'toggle_guests' });
           }}
         >
           <div
             css={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              ...(selected === "guests" && { borderRadius: 50 }),
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              ...(selected === 'guests' && { borderRadius: 50 }),
             }}
           >
-            <div css={{ display: "flex", alignItems: "center" }}>
+            <div css={{ display: 'flex', alignItems: 'center' }}>
               <div>
                 <div>
                   <h3
                     css={{
-                      textAlign: "left",
-                      whitespace: "nowrap",
+                      textAlign: 'left',
+                      whitespace: 'nowrap',
                       fontSize: 12,
                     }}
                   >
@@ -102,8 +102,8 @@ export const SearchBar: React.FC<{
                 <div>
                   <p
                     css={{
-                      textAlign: "left",
-                      whitespace: "nowrap",
+                      textAlign: 'left',
+                      whitespace: 'nowrap',
                       fontSize: 12,
                     }}
                   >
@@ -114,8 +114,8 @@ export const SearchBar: React.FC<{
             </div>
             <div>
               <Button
-                variant={$Button.SEARCH}
-                onClick={() => alert("hello")}
+                variant={$BUTTON.search}
+                onClick={() => alert('hello')}
                 expand={selected}
               />
             </div>
@@ -126,12 +126,12 @@ export const SearchBar: React.FC<{
     experiences: (
       <div
         css={{
-          border: "1px solid lightgray",
-          display: "grid",
-          gridTemplateColumns: `1fr 1px ${selected ? "1.25fr" : "1fr"}`,
+          border: '1px solid lightgray',
+          display: 'grid',
+          gridTemplateColumns: `1fr 1px ${selected ? '1.25fr' : '1fr'}`,
           borderRadius: 50,
-          backgroundColor: "white",
-          ...(transparent && { boxShadow: "rgba(0, 0, 0, 0.08) 0px 1px 12px" }),
+          backgroundColor: 'white',
+          ...(transparent && { boxShadow: 'rgba(0, 0, 0, 0.08) 0px 1px 12px' }),
         }}
       >
         <Option
@@ -146,37 +146,37 @@ export const SearchBar: React.FC<{
 
         <button
           css={{
-            display: "block",
-            padding: "5px 8px 5px 24px",
-            borderRadius: "50px",
-            ":hover": {
-              backgroundColor: "grey.100",
-              transition: "0.4s background-color",
+            display: 'block',
+            padding: '5px 8px 5px 24px',
+            borderRadius: '50px',
+            ':hover': {
+              backgroundColor: 'grey.100',
+              transition: '0.4s background-color',
             },
-            ...(selected === "checkin" && {
-              boxShadow: "rgba(0, 0, 0, 0.2) 0px 4px 8px",
+            ...(selected === 'checkin' && {
+              boxShadow: 'rgba(0, 0, 0, 0.2) 0px 4px 8px',
             }),
           }}
           onClick={() => {
-            setSelected("checkin");
-            dispatch({ type: "toggle_checkin" });
+            setSelected('checkin');
+            dispatch({ type: 'toggle_checkin' });
           }}
         >
           <div
             css={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              ...(selected === "checkin" && { borderRadius: 50 }),
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              ...(selected === 'checkin' && { borderRadius: 50 }),
             }}
           >
-            <div css={{ display: "flex", alignItems: "center" }}>
+            <div css={{ display: 'flex', alignItems: 'center' }}>
               <div>
                 <div>
                   <h3
                     css={{
-                      textAlign: "left",
-                      whitespace: "nowrap",
+                      textAlign: 'left',
+                      whitespace: 'nowrap',
                       fontSize: 12,
                     }}
                   >
@@ -186,8 +186,8 @@ export const SearchBar: React.FC<{
                 <div>
                   <p
                     css={{
-                      textAlign: "left",
-                      whitespace: "nowrap",
+                      textAlign: 'left',
+                      whitespace: 'nowrap',
                       fontSize: 12,
                     }}
                   >
@@ -198,8 +198,8 @@ export const SearchBar: React.FC<{
             </div>
             <div>
               <Button
-                variant={$Button.SEARCH}
-                onClick={() => alert("hello")}
+                variant={$BUTTON.search}
+                onClick={() => alert('hello')}
                 expand={selected}
               />
             </div>
@@ -214,8 +214,8 @@ export const SearchBar: React.FC<{
 
 const Seperator: React.FC<{}> = () => {
   return (
-    <div css={{ height: "100%", display: "flex", alignItems: "center" }}>
-      <div css={{ width: "100%", height: 25 }} sx={{ bg: "grey.300" }}></div>
+    <div css={{ height: '100%', display: 'flex', alignItems: 'center' }}>
+      <div css={{ width: '100%', height: 25 }} sx={{ bg: 'grey.300' }}></div>
     </div>
   );
 };
@@ -231,15 +231,15 @@ const Option: React.FC<{
   return (
     <button
       css={{
-        display: "block",
-        padding: "5px 24px",
-        borderRadius: "50px",
-        ":hover": {
-          backgroundColor: "grey.100",
-          transition: "0.4s background-color",
+        display: 'block',
+        padding: '5px 24px',
+        borderRadius: '50px',
+        ':hover': {
+          backgroundColor: 'grey.100',
+          transition: '0.4s background-color',
         },
         ...(selected === name && {
-          boxShadow: "rgba(0, 0, 0, 0.2) 0px 4px 8px",
+          boxShadow: 'rgba(0, 0, 0, 0.2) 0px 4px 8px',
         }),
       }}
       onClick={() => {
@@ -247,13 +247,13 @@ const Option: React.FC<{
         dispatch({ type: `toggle_${name}` });
       }}
     >
-      <div css={{ display: "flex", alignItems: "center" }}>
+      <div css={{ display: 'flex', alignItems: 'center' }}>
         <div>
           <div>
-            <h3 css={{ textAlign: "left", fontSize: 12 }}>{title}</h3>
+            <h3 css={{ textAlign: 'left', fontSize: 12 }}>{title}</h3>
           </div>
           <div>
-            <p css={{ textAlign: "left", fontSize: 12 }}>{subtitle}</p>
+            <p css={{ textAlign: 'left', fontSize: 12 }}>{subtitle}</p>
           </div>
         </div>
       </div>

@@ -1,31 +1,32 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { getWorkContent } from "../logic/logic.work";
+import { jsx } from 'theme-ui';
+import { $CARD } from '../constant/appearance';
+import { getWorkContent } from '../logic/logic.work';
 
-export const WorksCard: React.FC<{
+const WorksCard: React.FC<{
   work?: string;
-}> = ({ work = "design" }) => {
+}> = ({ work = 'design' }) => {
   const works = getWorkContent();
   return (
     <div>
       <div
         sx={{
-          display: ["block", "block", "flex"],
+          display: ['block', 'block', 'flex'],
         }}
       >
         <div
           sx={{
             width: [
-              "100%",
-              "100%",
-              "50%",
-              "50%",
-              "50%",
-              "50%",
-              "50%",
-              "50%",
-              "50%",
+              '100%',
+              '100%',
+              '50%',
+              '50%',
+              '50%',
+              '50%',
+              '50%',
+              '50%',
+              '50%',
             ],
           }}
         >
@@ -34,15 +35,15 @@ export const WorksCard: React.FC<{
         <div
           sx={{
             width: [
-              "100%",
-              "100%",
-              "50%",
-              "50%",
-              "50%",
-              "50%",
-              "50%",
-              "50%",
-              "50%",
+              '100%',
+              '100%',
+              '50%',
+              '50%',
+              '50%',
+              '50%',
+              '50%',
+              '50%',
+              '50%',
             ],
           }}
         >
@@ -56,4 +57,13 @@ export const WorksCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const works = (props) => {
+  return {
+    [$CARD.works]: {
+      component: <WorksCard {...props} />,
+      css: {},
+    },
+  };
 };

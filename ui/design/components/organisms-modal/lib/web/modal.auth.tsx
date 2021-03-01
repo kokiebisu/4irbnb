@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Button, $Button } from "@nextbnb/atoms-button";
+import { jsx } from 'theme-ui';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 // import { $Prototype, Prototype } from "../../../../prototype/web/auth";
 
 /**
@@ -18,56 +18,56 @@ export const AuthModal: React.FC<{
 }> = ({
   toggleDispatch,
   authDispatch,
-  title = "Forgot password",
-  display = "login",
+  title = 'Forgot password',
+  display = 'login',
 }) => {
   return (
     <div>
       <div
         css={{
           height: 60,
-          display: "flex",
-          alignItems: "center",
-          padding: "0 24px",
+          display: 'flex',
+          alignItems: 'center',
+          padding: '0 24px',
         }}
         sx={{
-          borderBottom: "1px solid",
-          borderColor: "grey.300",
+          borderBottom: '1px solid',
+          borderColor: 'grey.300',
         }}
       >
         <div
           css={{
-            position: "relative",
-            width: "100%",
+            position: 'relative',
+            width: '100%',
           }}
         >
           <div
             css={{
-              position: "absolute",
+              position: 'absolute',
               left: 0,
               top: 3,
             }}
-            sx={{ bg: "transparent" }}
+            sx={{ bg: 'transparent' }}
           >
-            {title === "Forgot password" ? (
+            {title === 'Forgot password' ? (
               <Button
-                variant={$Button.MODAL}
+                variant={$BUTTON.modal}
                 modal="back"
-                onClick={() => authDispatch({ type: "auth_login" })}
+                onClick={() => authDispatch({ type: 'auth_login' })}
               />
             ) : (
               <Button
-                variant={$Button.MODAL}
+                variant={$BUTTON.modal}
                 modal="close"
-                onClick={() => toggleDispatch({ type: "close_register" })}
+                onClick={() => toggleDispatch({ type: 'close_register' })}
               />
             )}
           </div>
           <div
             css={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
             }}
           >
             <h3 css={{ fontSize: 16 }}>{title}</h3>

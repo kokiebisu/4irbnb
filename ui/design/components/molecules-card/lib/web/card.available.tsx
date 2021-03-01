@@ -1,7 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Button, $Button } from "@nextbnb/atoms-button";
+import { jsx } from 'theme-ui';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { $CARD } from '../constant/appearance';
 
 /**
  * Renders the available card component
@@ -11,22 +12,22 @@ import { Button, $Button } from "@nextbnb/atoms-button";
  * @param {string} standard - The time standard
  * @param {number} price - The price of the experience
  */
-export const AvailableCard: React.FC<{
+const AvailableCard: React.FC<{
   date?: string;
   from?: string;
   to?: string;
   standard?: string;
   price?: number;
 }> = ({
-  date = "Tue., Nov. 10",
-  from = "1:00 a.m. ",
-  to = "3:00 a.m. ",
-  standard = "PST",
+  date = 'Tue., Nov. 10',
+  from = '1:00 a.m. ',
+  to = '3:00 a.m. ',
+  standard = 'PST',
   price = 31,
 }) => {
   return (
     <div
-      sx={{ border: "1px solid", borderColor: "grey.400" }}
+      sx={{ border: '1px solid', borderColor: 'grey.400' }}
       css={{ padding: 24, borderRadius: 6 }}
     >
       <div css={{ marginBottom: 6 }}>
@@ -37,18 +38,27 @@ export const AvailableCard: React.FC<{
           {from} - {to} {standard}
         </p>
       </div>
-      <div css={{ margin: "8px 0" }}>
+      <div css={{ margin: '8px 0' }}>
         <u css={{ fontSize: 14 }}>Book for a private group</u>
       </div>
-      <div css={{ margin: "16px 0" }}>
+      <div css={{ margin: '16px 0' }}>
         <span css={{ fontSize: 15 }}>
           <b>${price}</b>
         </span>
         <span css={{ fontSize: 15 }}> /person</span>
       </div>
-      <div css={{ display: "inline-block" }}>
-        <Button variant={$Button.PRIMARY} size="sm" title="Choose" />
+      <div css={{ display: 'inline-block' }}>
+        <Button variant={$BUTTON.primary} size="sm" title="Choose" />
       </div>
     </div>
   );
+};
+
+export const available = (props) => {
+  return {
+    [$CARD.available]: {
+      component: <AvailableCard {...props} />,
+      css: {},
+    },
+  };
 };

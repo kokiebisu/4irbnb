@@ -1,15 +1,15 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Button, $Button } from "@nextbnb/atoms-button";
+import { jsx } from 'theme-ui';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 
 const Layout: React.FC<{
   items?: { language?: string; region?: string }[];
   type?: string;
-}> = ({ items, type = "suggested" }) => {
+}> = ({ items, type = 'suggested' }) => {
   const titles = {
-    suggested: "Suggested languages and regions",
-    choose: "Choose a language and region",
+    suggested: 'Suggested languages and regions',
+    choose: 'Choose a language and region',
   };
   return (
     <div>
@@ -18,9 +18,9 @@ const Layout: React.FC<{
       </div>
       <div
         css={{
-          width: "100%",
-          display: "grid",
-          gridTemplateColumns: "repeat(5, 1fr)",
+          width: '100%',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(5, 1fr)',
           columnGap: 15,
           rowGap: 15,
           padding: 10,
@@ -30,12 +30,12 @@ const Layout: React.FC<{
           return (
             <div key={index}>
               <Button
-                variant={$Button.GLOBE}
+                variant={$BUTTON.globe}
                 language={language}
                 region={region}
-                extendsTo={{ textAlign: "left" }}
+                extendsTo={{ textAlign: 'left' }}
                 block
-                selected={index === 0 && type === "choose"}
+                selected={index === 0 && type === 'choose'}
               />
             </div>
           );
@@ -57,7 +57,7 @@ export const LanguagePrototype: React.FC<{}> = () => {
       <div>
         <Layout
           type="choose"
-          items={[{ language: "English", region: "Canada" }]}
+          items={[{ language: 'English', region: 'Canada' }]}
         />
       </div>
     </div>

@@ -1,10 +1,10 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx } from 'theme-ui';
 
-import { useState } from "react";
-import { Button, $Button } from "@nextbnb/atoms-button";
-import { Prototype, $Prototype } from "@nextbnb/prototype-globe";
+import { useState } from 'react';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Prototype, $Prototype } from '@nextbnb/prototype-globe';
 
 export const GlobeModal: React.FC<{ toggleDispatch?: (params) => void }> = ({
   toggleDispatch,
@@ -15,23 +15,23 @@ export const GlobeModal: React.FC<{ toggleDispatch?: (params) => void }> = ({
       <div>
         <div>
           <Button
-            variant={$Button.MODAL}
+            variant={$BUTTON.modal}
             modal="close"
-            onClick={() => toggleDispatch({ type: "toggle_globe" })}
+            onClick={() => toggleDispatch({ type: 'toggle_globe' })}
           />
         </div>
       </div>
       <div>
         <div
           css={{
-            display: "flex",
-            alignItems: "center",
+            display: 'flex',
+            alignItems: 'center',
             marginBottom: 50,
           }}
         >
           <div css={{ marginRight: 32 }}>
             <Button
-              variant={$Button.UNDERLINE}
+              variant={$BUTTON.underline}
               title="Language and region"
               font={16}
               bold
@@ -41,7 +41,7 @@ export const GlobeModal: React.FC<{ toggleDispatch?: (params) => void }> = ({
           </div>
           <div>
             <Button
-              variant={$Button.UNDERLINE}
+              variant={$BUTTON.underline}
               title="Currency"
               font={16}
               bold

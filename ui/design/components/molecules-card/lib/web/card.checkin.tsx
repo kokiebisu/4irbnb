@@ -1,15 +1,16 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import React from "react";
-import { jsx } from "theme-ui";
-import { Star } from "@nextbnb/design/assets/svg/original";
-import { ChevronDown } from "@nextbnb/design/assets/svg/regular";
-import { useCheckin } from "../logic/logic.checkin";
+import React from 'react';
+import { jsx } from 'theme-ui';
+import { Star } from '@nextbnb/design/assets/svg/original';
+import { ChevronDown } from '@nextbnb/design/assets/svg/regular';
+import { useCheckin } from '../logic/logic.checkin';
 import {
   checkInBorder,
   checkOutBorder,
   guestBorder,
-} from "../logic/logic.checkin";
+} from '../logic/logic.checkin';
+import { $CARD } from '../constant/appearance';
 
 /**
  * Renders the checkin card
@@ -23,14 +24,14 @@ export const CheckInCard: React.FC<{
     <div>
       <div
         css={{
-          backgroundColor: "white",
+          backgroundColor: 'white',
           zIndex: 50,
           borderRadius: 10,
-          padding: "22px 0",
-          boxShadow: "rgba(0, 0, 0, 0.2) 0px 4px 8px",
+          padding: '22px 0',
+          boxShadow: 'rgba(0, 0, 0, 0.2) 0px 4px 8px',
         }}
         sx={{
-          border: "1px solid grey.300",
+          border: '1px solid grey.300',
         }}
         // className={[
         //   card["display__checkin--wrapper"],
@@ -42,23 +43,23 @@ export const CheckInCard: React.FC<{
       >
         <div
           css={{
-            padding: "0 24px",
+            padding: '0 24px',
           }}
         >
           <div
             css={{
-              display: "flex",
-              justifyContent: "space-between",
+              display: 'flex',
+              justifyContent: 'space-between',
             }}
           >
             <h3
               css={{
-                padding: "10px 0",
+                padding: '10px 0',
                 fontSize: 21,
                 fontWeight: 500,
               }}
               sx={{
-                color: "grey.700",
+                color: 'grey.700',
               }}
             >
               Add dates for prices
@@ -66,17 +67,17 @@ export const CheckInCard: React.FC<{
             <div
               css={{
                 width: 100,
-                padding: "10px 0",
+                padding: '10px 0',
                 fontSize: 21,
                 fontWeight: 500,
               }}
               sx={{
-                color: "grey.700",
+                color: 'grey.700',
               }}
             >
               <div
                 css={{
-                  display: "inline-block",
+                  display: 'inline-block',
                   marginRight: 4,
                 }}
               >
@@ -84,7 +85,7 @@ export const CheckInCard: React.FC<{
               </div>
               <span
                 css={{
-                  display: "inline-block",
+                  display: 'inline-block',
                   fontSize: 14,
                   marginRight: 4,
                 }}
@@ -93,12 +94,12 @@ export const CheckInCard: React.FC<{
               </span>
               <span
                 css={{
-                  display: "inline-block",
+                  display: 'inline-block',
                   fontSize: 14,
                   fontWeight: 100,
                 }}
                 sx={{
-                  color: "grey.400",
+                  color: 'grey.400',
                 }}
               >
                 (248)
@@ -111,37 +112,37 @@ export const CheckInCard: React.FC<{
               marginTop: 12,
             }}
             sx={{
-              border: "1px solid grey.300",
+              border: '1px solid grey.300',
             }}
           >
-            <div css={{ height: 60, display: "flex", width: "100%" }}>
+            <div css={{ height: 60, display: 'flex', width: '100%' }}>
               <div
                 onClick={() => {
-                  dispatchSelected({ type: "checkin" });
+                  dispatchSelected({ type: 'checkin' });
                 }}
                 // className={checkInBorder(selected)}
               >
-                <div css={{ padding: "0 12px" }}>
+                <div css={{ padding: '0 12px' }}>
                   <label
                     css={{
-                      display: "block",
-                      textAlign: "left",
+                      display: 'block',
+                      textAlign: 'left',
                       fontSize: 10,
                       fontWeight: 700,
                     }}
                     sx={{
-                      color: "grey.800",
+                      color: 'grey.800',
                     }}
                   >
                     CHECK-IN
                   </label>
                   <input
                     css={{
-                      width: "100%",
+                      width: '100%',
                       fontWeight: 300,
                       fontSize: 14,
-                      border: "none",
-                      outline: "none",
+                      border: 'none',
+                      outline: 'none',
                     }}
                     placeholder="Add date"
                   />
@@ -149,30 +150,30 @@ export const CheckInCard: React.FC<{
               </div>
               <div
                 onClick={() => {
-                  dispatchSelected({ type: "checkout" });
+                  dispatchSelected({ type: 'checkout' });
                 }}
                 // className={checkOutBorder(selected)}
               >
-                <div css={{ padding: "0 12px" }}>
+                <div css={{ padding: '0 12px' }}>
                   <label
                     css={{
-                      display: "block",
-                      textAlign: "left",
+                      display: 'block',
+                      textAlign: 'left',
                       fontSize: 10,
                       fontWeight: 700,
                     }}
-                    sx={{ color: "grey.800" }}
+                    sx={{ color: 'grey.800' }}
                   >
                     CHECK-OUT
                   </label>
                   <input
                     placeholder="Add date"
                     css={{
-                      width: "100%",
+                      width: '100%',
                       fontWeight: 300,
                       fontSize: 14,
-                      border: "none",
-                      outline: "none",
+                      border: 'none',
+                      outline: 'none',
                     }}
                   />
                 </div>
@@ -180,28 +181,28 @@ export const CheckInCard: React.FC<{
             </div>
             <button
               onClick={() => {
-                dispatchSelected({ type: "guests" });
+                dispatchSelected({ type: 'guests' });
               }}
               css={{
                 height: 60,
                 ...(selected.guests
                   ? { borderRadius: 6 }
                   : {
-                      borderTop: "1px solid transparent",
-                      borderBottom: "1px solid grey.400",
-                      borderLeft: "1px solid grey.400",
-                      borderRight: "1px solid grey.400",
+                      borderTop: '1px solid transparent',
+                      borderBottom: '1px solid grey.400',
+                      borderLeft: '1px solid grey.400',
+                      borderRight: '1px solid grey.400',
                       borderBottomLeftRadius: 6,
                       borderBottomRightRadius: 6,
-                      width: "100%",
+                      width: '100%',
                     }),
               }}
               sx={{
-                bg: "transparent",
+                bg: 'transparent',
                 ...(selected.guests
-                  ? { border: "1px solid grey.800" }
+                  ? { border: '1px solid grey.800' }
                   : {
-                      bg: "transparent",
+                      bg: 'transparent',
                     }),
               }}
             >
@@ -210,21 +211,21 @@ export const CheckInCard: React.FC<{
               >
                 <div
                   css={{
-                    padding: "0 12px",
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
+                    padding: '0 12px',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
                   }}
                 >
                   <div>
                     <label
                       css={{
-                        display: "block",
-                        textAlign: "left",
+                        display: 'block',
+                        textAlign: 'left',
                         fontSize: 10,
                         fontWeight: 700,
                       }}
-                      sx={{ color: "grey.800" }}
+                      sx={{ color: 'grey.800' }}
                     >
                       GUESTS
                     </label>
@@ -240,13 +241,13 @@ export const CheckInCard: React.FC<{
           <div css={{ marginTop: 24 }}>
             <button
               css={{
-                width: "100%",
-                padding: "14px 0",
+                width: '100%',
+                padding: '14px 0',
                 fontSize: 15,
                 borderRadius: 5,
                 fontWeight: 300,
               }}
-              sx={{ bg: "red.500", color: "white" }}
+              sx={{ bg: 'red.500', color: 'white' }}
             >
               Check availability
             </button>
@@ -255,4 +256,13 @@ export const CheckInCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const checkin = (props) => {
+  return {
+    [$CARD.checkin]: {
+      component: <CheckInCard {...props} />,
+      css: {},
+    },
+  };
 };

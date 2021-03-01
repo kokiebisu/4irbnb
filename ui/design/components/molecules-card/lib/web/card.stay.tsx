@@ -1,11 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Heart } from "@nextbnb/design/assets/svg/original";
-import { Bullet, $Bullet } from "@nextbnb/atoms-bullet";
-import { $Particle, Particle } from "@nextbnb/particles";
-import { Card, $Card } from "..";
-
+import { jsx } from 'theme-ui';
+import { Heart } from '@nextbnb/design/assets/svg/original';
+import { Bullet, $Bullet } from '@nextbnb/atoms-bullet';
+import { $Particle, Particle } from '@nextbnb/particles';
+import { Card } from '..';
+import { $CARD } from '../constant/appearance';
 /**
  * Renders the stay card component
  * @param {string[]} images - List of images to be displayed
@@ -15,7 +15,7 @@ import { Card, $Card } from "..";
  * @param {Object} accomodations - Information about the accomodations of the stay
  * @param {string[]} characteristics - List of characteristics
  */
-export const StayCard: React.FC<{
+const StayCard: React.FC<{
   images?: string[];
   typeStay?: string;
   location?: string;
@@ -31,62 +31,62 @@ export const StayCard: React.FC<{
   reviews?: number;
 }> = ({
   images,
-  typeStay = "Type of stay",
-  location = "Location",
-  title = "Title of stay",
+  typeStay = 'Type of stay',
+  location = 'Location',
+  title = 'Title of stay',
   accomodations = {
     guests: 1,
     bedroom: 1,
     beds: 1,
     bath: 1,
   },
-  characteristics = ["characteristic"],
+  characteristics = ['characteristic'],
 }) => {
   return (
     <div>
       <div
         sx={{
-          display: ["block", "none"],
-          marginBottom: ["32px", "0"],
+          display: ['block', 'none'],
+          marginBottom: ['32px', '0'],
         }}
       >
-        <Card variant={$Card.HORIZONTAL} />
+        <Card variant={$CARD.horizontal} />
       </div>
       <div
         sx={{
-          display: ["none", "block"],
+          display: ['none', 'block'],
         }}
       >
-        <div css={{ padding: "22px 0" }}>
-          <div css={{ display: "flex", justifyContent: "space-between" }}>
-            <div css={{ display: "flex" }}>
+        <div css={{ padding: '22px 0' }}>
+          <div css={{ display: 'flex', justifyContent: 'space-between' }}>
+            <div css={{ display: 'flex' }}>
               <div css={{ width: 300, minHeight: 200, marginRight: 15 }}>
-                <div css={{ borderRadius: 12, height: "100%" }}>
+                <div css={{ borderRadius: 12, height: '100%' }}>
                   <Particle variant={$Particle.SLIDER} slides={images} />
                 </div>
               </div>
               <div
                 css={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
                 }}
               >
                 <div>
-                  <p css={{ fontSize: 14 }} sx={{ color: "grey.600" }}>
+                  <p css={{ fontSize: 14 }} sx={{ color: 'grey.600' }}>
                     {typeStay} in {location}
                   </p>
-                  <h4 css={{ fontWeight: 300, margin: "4px 0", fontSize: 17 }}>
+                  <h4 css={{ fontWeight: 300, margin: '4px 0', fontSize: 17 }}>
                     {title}
                   </h4>
                   <div
                     css={{
-                      margin: "8px 0",
+                      margin: '8px 0',
                       height: 1,
                       width: 45,
                     }}
                     sx={{
-                      bg: "grey.300",
+                      bg: 'grey.300',
                     }}
                   ></div>
                   <div>
@@ -95,7 +95,7 @@ export const StayCard: React.FC<{
                         fontSize: 14,
                       }}
                       sx={{
-                        color: "grey.600",
+                        color: 'grey.600',
                       }}
                     >
                       {accomodations.guests} guests
@@ -104,31 +104,31 @@ export const StayCard: React.FC<{
                       css={{
                         fontSize: 14,
                       }}
-                      sx={{ color: "grey.600" }}
+                      sx={{ color: 'grey.600' }}
                     >
-                      {" "}
-                      ·{" "}
+                      {' '}
+                      ·{' '}
                     </span>
                     <span
                       css={{
                         fontSize: 14,
                       }}
-                      sx={{ color: "grey.600" }}
+                      sx={{ color: 'grey.600' }}
                     >
                       {accomodations.bedroom} bedroom
                     </span>
-                    <span css={{ fontSize: 14 }} sx={{ color: "grey.600" }}>
-                      {" "}
-                      ·{" "}
+                    <span css={{ fontSize: 14 }} sx={{ color: 'grey.600' }}>
+                      {' '}
+                      ·{' '}
                     </span>
-                    <span css={{ fontSize: 14 }} sx={{ color: "grey.600" }}>
+                    <span css={{ fontSize: 14 }} sx={{ color: 'grey.600' }}>
                       {accomodations.beds} beds
                     </span>
-                    <span css={{ fontSize: 14 }} sx={{ color: "grey.600" }}>
-                      {" "}
-                      ·{" "}
+                    <span css={{ fontSize: 14 }} sx={{ color: 'grey.600' }}>
+                      {' '}
+                      ·{' '}
                     </span>
-                    <span css={{ fontSize: 14 }} sx={{ color: "grey.600" }}>
+                    <span css={{ fontSize: 14 }} sx={{ color: 'grey.600' }}>
                       {accomodations.bath} bath
                     </span>
                   </div>
@@ -138,7 +138,7 @@ export const StayCard: React.FC<{
                         <span
                           key={index}
                           css={{ fontSize: 14 }}
-                          sx={{ color: "grey.600" }}
+                          sx={{ color: 'grey.600' }}
                         >
                           {characteristic}
                         </span>
@@ -159,4 +159,13 @@ export const StayCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const stay = (props) => {
+  return {
+    [$CARD.stay]: {
+      component: <StayCard {...props} />,
+      css: {},
+    },
+  };
 };

@@ -1,30 +1,31 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { getParticipateContent } from "../logic/logic.participate";
+import { jsx } from 'theme-ui';
+import { $CARD } from '../constant/appearance';
+import { getParticipateContent } from '../logic/logic.participate';
 
 /**
  * Renders the participate card component
  * @param {string} categoryType - Type of participate card
  */
-export const ParticipateCard: React.FC<{
+const ParticipateCard: React.FC<{
   categoryType?: string;
-}> = ({ categoryType = "call" }) => {
+}> = ({ categoryType = 'call' }) => {
   const participates = getParticipateContent();
   return (
     <div
       css={{
         minHeight: 300,
         width: 210,
-        height: "100%",
+        height: '100%',
         padding: 16,
         borderRadius: 6,
       }}
       sx={{
-        border: "1px solid grey.300",
+        border: '1px solid grey.300',
       }}
     >
-      <div css={{ margin: "12px 0" }}>{participates[categoryType].icon}</div>
+      <div css={{ margin: '12px 0' }}>{participates[categoryType].icon}</div>
       <div css={{ marginBottom: 12 }}>
         <h3 css={{ fontSize: 16 }}>{participates[categoryType].title}</h3>
       </div>
@@ -40,4 +41,13 @@ export const ParticipateCard: React.FC<{
       )}
     </div>
   );
+};
+
+export const participate = (props) => {
+  return {
+    [$CARD.participate]: {
+      component: <ParticipateCard {...props} />,
+      css: {},
+    },
+  };
 };

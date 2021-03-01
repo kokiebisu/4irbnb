@@ -1,9 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Button, $Button } from "@nextbnb/atoms-button";
-import { Input, $Input } from "@nextbnb/atoms-input";
-import { Plus } from "@nextbnb/design/assets/svg/original";
+import { jsx } from 'theme-ui';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Input, $Input } from '@nextbnb/atoms-input';
+import { Plus } from '@nextbnb/design/assets/svg/original';
 
 export const ListingModal: React.FC<{}> = () => {
   return (
@@ -22,8 +22,8 @@ export const ListingModal: React.FC<{}> = () => {
         css={{
           marginTop: 20,
           marginBottom: 45,
-          display: "flex",
-          alignItems: "center",
+          display: 'flex',
+          alignItems: 'center',
         }}
       >
         <div>
@@ -37,7 +37,7 @@ export const ListingModal: React.FC<{}> = () => {
       </div>
       <div>
         <Button
-          variant={$Button.PRIMARY}
+          variant={$BUTTON.primary}
           fill="black"
           block
           title="Start your listing"

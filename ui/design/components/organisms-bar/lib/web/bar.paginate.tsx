@@ -1,10 +1,10 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import React from "react";
-import { jsx } from "theme-ui";
+import React from 'react';
+import { jsx } from 'theme-ui';
 
-import Router from "next/router";
-import { Button, $Button } from "@nextbnb/atoms-button";
+import Router from 'next/router';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 
 /**
  * Renders paginate bar component
@@ -23,20 +23,20 @@ export const PaginateBar: React.FC<{
             css={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              margin: "0 6px",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 6px',
               ...(page === 1
                 ? { borderRadius: 9999 }
                 : {
-                    ":hover": {
-                      textDecoration: "underline",
+                    ':hover': {
+                      textDecoration: 'underline',
                     },
                   }),
             }}
             sx={{
-              ...(page === 1 && { bg: "black", color: "white" }),
+              ...(page === 1 && { bg: 'black', color: 'white' }),
             }}
           >
             1
@@ -45,12 +45,12 @@ export const PaginateBar: React.FC<{
             style={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               bottom: 4,
-              position: "relative",
-              margin: "0 6px",
+              position: 'relative',
+              margin: '0 6px',
             }}
           >
             ...
@@ -59,12 +59,12 @@ export const PaginateBar: React.FC<{
             css={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              margin: "0 6px",
-              ":hover": {
-                textDecoration: "underline",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 6px',
+              ':hover': {
+                textDecoration: 'underline',
               },
             }}
             onClick={() => Router.push(`/s/homes/${page - 1}`)}
@@ -75,15 +75,15 @@ export const PaginateBar: React.FC<{
             style={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              margin: "0 6px",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 6px',
               borderRadius: 9999,
             }}
             sx={{
-              bg: "black",
-              color: "white",
+              bg: 'black',
+              color: 'white',
             }}
           >
             {page}
@@ -92,12 +92,12 @@ export const PaginateBar: React.FC<{
             css={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              margin: "0 6px",
-              ":hover": {
-                textDecoration: "underline",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              margin: '0 6px',
+              ':hover': {
+                textDecoration: 'underline',
               },
             }}
             onClick={() => Router.push(`/s/homes/${page + 1}`)}
@@ -108,12 +108,12 @@ export const PaginateBar: React.FC<{
             style={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               bottom: 4,
-              position: "relative",
-              margin: "0 6px",
+              position: 'relative',
+              margin: '0 6px',
             }}
           >
             ...
@@ -123,13 +123,13 @@ export const PaginateBar: React.FC<{
             css={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               bottom: 4,
-              margin: "0 12px",
-              ":hover": {
-                textDecoration: "underline",
+              margin: '0 12px',
+              ':hover': {
+                textDecoration: 'underline',
               },
             }}
           >
@@ -145,14 +145,14 @@ export const PaginateBar: React.FC<{
             css={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               bottom: 4,
-              margin: "0 6px",
+              margin: '0 6px',
               ...(page === 1
-                ? { bg: "black", color: "white", borderRadius: 9999 }
-                : { ":hover": { textDecoration: "underline" } }),
+                ? { bg: 'black', color: 'white', borderRadius: 9999 }
+                : { ':hover': { textDecoration: 'underline' } }),
             }}
           >
             1
@@ -162,20 +162,20 @@ export const PaginateBar: React.FC<{
             style={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               bottom: 4,
-              margin: "0 6px",
+              margin: '0 6px',
               ...(page === 2
                 ? {
-                    bg: "black",
-                    color: "white",
+                    bg: 'black',
+                    color: 'white',
                     borderRadius: 9999,
                   }
                 : {
-                    ":hover": {
-                      textDecoration: "underline",
+                    ':hover': {
+                      textDecoration: 'underline',
                     },
                   }),
             }}
@@ -187,20 +187,20 @@ export const PaginateBar: React.FC<{
             style={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               bottom: 4,
-              margin: "0 6px",
+              margin: '0 6px',
               ...(page === 2
                 ? {
-                    bg: "black",
-                    color: "white",
+                    bg: 'black',
+                    color: 'white',
                     borderRadius: 9999,
                   }
                 : {
-                    ":hover": {
-                      textDecoration: "underline",
+                    ':hover': {
+                      textDecoration: 'underline',
                     },
                   }),
             }}
@@ -212,20 +212,20 @@ export const PaginateBar: React.FC<{
             style={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               bottom: 4,
-              margin: "0 6px",
+              margin: '0 6px',
               ...(page === 2
                 ? {
-                    bg: "black",
-                    color: "white",
+                    bg: 'black',
+                    color: 'white',
                     borderRadius: 9999,
                   }
                 : {
-                    ":hover": {
-                      textDecoration: "underline",
+                    ':hover': {
+                      textDecoration: 'underline',
                     },
                   }),
             }}
@@ -237,20 +237,20 @@ export const PaginateBar: React.FC<{
             style={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               bottom: 4,
-              margin: "0 6px",
+              margin: '0 6px',
               ...(page === 2
                 ? {
-                    bg: "black",
-                    color: "white",
+                    bg: 'black',
+                    color: 'white',
                     borderRadius: 9999,
                   }
                 : {
-                    ":hover": {
-                      textDecoration: "underline",
+                    ':hover': {
+                      textDecoration: 'underline',
                     },
                   }),
             }}
@@ -261,12 +261,12 @@ export const PaginateBar: React.FC<{
             style={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               bottom: 4,
-              position: "relative",
-              margin: "0 6px",
+              position: 'relative',
+              margin: '0 6px',
             }}
           >
             ...
@@ -276,13 +276,13 @@ export const PaginateBar: React.FC<{
             css={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               bottom: 4,
-              margin: "0 12px",
-              ":hover": {
-                textDecoration: "underline",
+              margin: '0 12px',
+              ':hover': {
+                textDecoration: 'underline',
               },
             }}
           >
@@ -298,31 +298,31 @@ export const PaginateBar: React.FC<{
             css={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               bottom: 4,
-              margin: "0 12px",
-              ":hover": {
-                textDecoration: "underline",
+              margin: '0 12px',
+              ':hover': {
+                textDecoration: 'underline',
               },
             }}
           >
             1
           </button>
           <button
-            onClick={() => Router.push("/")}
+            onClick={() => Router.push('/')}
             css={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               bottom: 4,
-              position: "relative",
-              margin: "0 6px",
-              ":hover": {
-                textDecoration: "underline",
+              position: 'relative',
+              margin: '0 6px',
+              ':hover': {
+                textDecoration: 'underline',
               },
             }}
           >
@@ -333,14 +333,14 @@ export const PaginateBar: React.FC<{
             style={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               bottom: 4,
-              margin: "0 6px",
+              margin: '0 6px',
               ...(page === total - 3
-                ? { bg: "black", color: "white", borderRadius: 9999 }
-                : { ":hover": { textDecoration: "underline" } }),
+                ? { bg: 'black', color: 'white', borderRadius: 9999 }
+                : { ':hover': { textDecoration: 'underline' } }),
             }}
           >
             {total - 3}
@@ -350,14 +350,14 @@ export const PaginateBar: React.FC<{
             style={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               bottom: 4,
-              margin: "0 6px",
+              margin: '0 6px',
               ...(page === total - 2
-                ? { bg: "black", color: "white", borderRadius: 9999 }
-                : { ":hover": { textDecoration: "underline" } }),
+                ? { bg: 'black', color: 'white', borderRadius: 9999 }
+                : { ':hover': { textDecoration: 'underline' } }),
             }}
           >
             {total - 2}
@@ -367,14 +367,14 @@ export const PaginateBar: React.FC<{
             style={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               bottom: 4,
-              margin: "0 6px",
+              margin: '0 6px',
               ...(page === total - 1
-                ? { bg: "black", color: "white", borderRadius: 9999 }
-                : { ":hover": { textDecoration: "underline" } }),
+                ? { bg: 'black', color: 'white', borderRadius: 9999 }
+                : { ':hover': { textDecoration: 'underline' } }),
             }}
           >
             {total - 1}
@@ -384,20 +384,20 @@ export const PaginateBar: React.FC<{
             style={{
               width: 36,
               height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               bottom: 4,
-              margin: "0 6px",
+              margin: '0 6px',
               ...(page === total
                 ? {
-                    bg: "black",
-                    color: "white",
+                    bg: 'black',
+                    color: 'white',
                     borderRadius: 9999,
                   }
                 : {
-                    ":hover": {
-                      textDecoration: "underline",
+                    ':hover': {
+                      textDecoration: 'underline',
                     },
                   }),
             }}
@@ -409,20 +409,20 @@ export const PaginateBar: React.FC<{
     }
   };
   return (
-    <div css={{ display: "inline-block" }}>
-      <div css={{ display: "flex", alignItems: "center" }}>
+    <div css={{ display: 'inline-block' }}>
+      <div css={{ display: 'flex', alignItems: 'center' }}>
         {page !== 1 && (
           <Button
-            variant={$Button.PAGINATE}
+            variant={$BUTTON.paginate}
             animate
             direction="left"
             onClick={() => Router.push(`/s/homes/page/${page - 1}`)}
           />
         )}
-        <div css={{ margin: "0 8px" }}>{displayContent()}</div>
+        <div css={{ margin: '0 8px' }}>{displayContent()}</div>
         {page !== total && (
           <Button
-            variant={$Button.PAGINATE}
+            variant={$BUTTON.paginate}
             animate
             direction="right"
             onClick={() => Router.push(`/s/homes/page/${page + 1}`)}
@@ -430,14 +430,14 @@ export const PaginateBar: React.FC<{
         )}
       </div>
       <div css={{ marginTop: 14 }}>
-        <p css={{ textAlign: "center" }}>61 – 80 of 300+ places to stay</p>
+        <p css={{ textAlign: 'center' }}>61 – 80 of 300+ places to stay</p>
       </div>
       <div css={{ marginTop: 28 }}>
         <p
           css={{
             fontSize: 12,
-            textAlign: "center",
-            color: "grey.600",
+            textAlign: 'center',
+            color: 'grey.600',
           }}
         >
           Enter dates to see full pricing. Additional fees apply. Taxes may be

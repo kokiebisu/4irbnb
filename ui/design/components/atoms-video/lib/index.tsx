@@ -1,11 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx } from 'theme-ui';
 
-import { AnimatePresence, motion } from "framer-motion";
-import React, { useRef, useState } from "react";
-import { Animation } from "@nextbnb/animation";
-import { Button, $Button } from "@nextbnb/atoms-button";
+import { AnimatePresence, motion } from 'framer-motion';
+import React, { useRef, useState } from 'react';
+import { Animation } from '@nextbnb/animation';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 
 export const Video: React.FC<{ videoUrl?: string; isLoading?: boolean }> = ({
   videoUrl,
@@ -17,18 +17,18 @@ export const Video: React.FC<{ videoUrl?: string; isLoading?: boolean }> = ({
   return (
     <motion.div
       style={{
-        position: "absolute",
-        height: "100%",
-        width: "100%",
-        cursor: "pointer",
+        position: 'absolute',
+        height: '100%',
+        width: '100%',
+        cursor: 'pointer',
         borderRadius: 10,
       }}
     >
       <motion.div
         css={{
-          position: "relative",
-          height: "100%",
-          width: "100%",
+          position: 'relative',
+          height: '100%',
+          width: '100%',
         }}
       >
         <AnimatePresence>
@@ -39,11 +39,11 @@ export const Video: React.FC<{ videoUrl?: string; isLoading?: boolean }> = ({
               animate={{ opacity: 1 }}
               initial={{ opacity: 0 }}
               css={{
-                position: "absolute",
+                position: 'absolute',
                 zIndex: 20,
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
               }}
             >
               <Animation variant="loading" />
@@ -52,14 +52,14 @@ export const Video: React.FC<{ videoUrl?: string; isLoading?: boolean }> = ({
             <motion.video
               key="loaded"
               css={{
-                width: "100%",
-                height: "auto",
-                position: "absolute",
+                width: '100%',
+                height: 'auto',
+                position: 'absolute',
                 zIndex: 10,
                 borderRadius: 10,
-                transform: "translateX(-50%) translateY(-50%)",
-                top: "50%",
-                left: "50%",
+                transform: 'translateX(-50%) translateY(-50%)',
+                top: '50%',
+                left: '50%',
               }}
               exit={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -76,9 +76,9 @@ export const Video: React.FC<{ videoUrl?: string; isLoading?: boolean }> = ({
         </AnimatePresence>
         <div
           css={{
-            position: "absolute",
-            bottom: "2%",
-            left: "2%",
+            position: 'absolute',
+            bottom: '2%',
+            left: '2%',
             zIndex: 40,
           }}
         >
@@ -90,7 +90,7 @@ export const Video: React.FC<{ videoUrl?: string; isLoading?: boolean }> = ({
             initial={{ opacity: 0 }}
           >
             <Button
-              variant={$Button.VIDEO}
+              variant={$BUTTON.VIDEO}
               play={!play}
               onClick={() => {
                 if (!play) {

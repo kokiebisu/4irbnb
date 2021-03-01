@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui';
 import { useFormik } from 'formik';
 import { Input, $Input } from '@nextbnb/atoms-input';
-import { Button, $Button } from '@nextbnb/atoms-button';
+import { Button, $BuBUTTONtton } from '@nextbnb/atoms-button';
 import { getAuthContents } from '../content/auth';
 import { validateAuth as validate } from '@nextbnb/design/helper/validation';
 
@@ -67,7 +67,7 @@ export const AuthPrototype: React.FC<{
             </p>
           </div>
           <div css={{ marginTop: 18, marginBottom: 18 }}>
-            <Button variant={$Button.PRIMARY} title="Continue" block />
+            <Button variant={$BUTTON.primary} title="Continue" block />
           </div>
         </form>
         <div
@@ -98,7 +98,7 @@ export const AuthPrototype: React.FC<{
             return (
               <div key={index} css={{ margin: '14px 0' }}>
                 <Button
-                  variant={$Button.AUTH}
+                  variant={$BUTTON.auth}
                   extendsTo={{
                     border: '2px solid',
                     borderColor: '#b0b0b0',
@@ -132,7 +132,7 @@ export const AuthPrototype: React.FC<{
             </p>
           </div>
           <Button
-            variant={$Button.UNDERLINE}
+            variant={$BUTTON.underline}
             onClick={switchAuth}
             title={title === 'Log in' ? 'Sign up' : 'Log in'}
           />

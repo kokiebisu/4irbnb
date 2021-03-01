@@ -7,7 +7,7 @@ import Router from 'next/router';
 
 // import { useAuthDispatch, useAuthState } from "@context/auth";
 import { Input, $Input } from '@nextbnb/atoms-input';
-import { Button, $Button } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { Bullet, $Bullet } from '@nextbnb/atoms-bullet';
 import { Card, $Card } from '@nextbnb/molecules-card';
 
@@ -116,7 +116,7 @@ export const LoginTemplate: React.FC<{
         </div>
         <div css={{ margin: '16px 0' }}>
           <Button
-            variant={$Button.PRIMARY}
+            variant={$BUTTON.primary}
             title="Log in"
             loading={loading}
             block
@@ -124,14 +124,14 @@ export const LoginTemplate: React.FC<{
         </div>
         <div css={{ margin: '16px 0' }}>
           <Button
-            variant={$Button.UNDERLINE}
+            variant={$BUTTON.underline}
             title="Forgot password?"
             onClick={redirectTo}
           />
         </div>
         <div css={{ margin: '16px 0' }}>
           <Button
-            variant={$Button.UNDERLINE}
+            variant={$BUTTON.underline}
             title="More login options"
             onClick={switchBack}
           />
@@ -139,7 +139,7 @@ export const LoginTemplate: React.FC<{
         <div css={{ display: 'flex' }}>
           <p css={{ fontSize: 14, marginRight: 8 }}>Don't have an account?</p>
           <Button
-            variant={$Button.UNDERLINE}
+            variant={$BUTTON.underline}
             title="Sign up"
             onClick={switchAuth}
           />

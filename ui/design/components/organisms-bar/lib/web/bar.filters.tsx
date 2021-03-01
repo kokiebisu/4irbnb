@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Button, $Button } from "@nextbnb/atoms-button";
-import { useLayoutEffect, useRef, useState } from "react";
+import { jsx } from 'theme-ui';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { useLayoutEffect, useRef, useState } from 'react';
 
 export const FiltersBar: React.FC<{}> = () => {
   const [width, setWidth] = useState(500);
@@ -14,31 +14,31 @@ export const FiltersBar: React.FC<{}> = () => {
   };
 
   useLayoutEffect(() => {
-    window.addEventListener("resize", handleRef);
+    window.addEventListener('resize', handleRef);
     handleRef();
     return () => {
-      window.removeEventListener("resize", handleRef);
+      window.removeEventListener('resize', handleRef);
     };
   });
-  const primaryFilters = ["Filters", "Dates", "Group size"];
+  const primaryFilters = ['Filters', 'Dates', 'Group size'];
   const secondaryFilters = [
-    "Great for groups",
-    "Family friendly",
-    "Animals",
-    "Arts & writing",
-    "Baking",
-    "Cooking",
-    "Dance",
-    "Drinks",
-    "Entertainment",
-    "Fitness",
-    "History & culture",
-    "Magic",
-    "Music",
-    "Social impact",
-    "Wellness",
-    "Olympians & Paralympians",
-    "Designed for accessibility",
+    'Great for groups',
+    'Family friendly',
+    'Animals',
+    'Arts & writing',
+    'Baking',
+    'Cooking',
+    'Dance',
+    'Drinks',
+    'Entertainment',
+    'Fitness',
+    'History & culture',
+    'Magic',
+    'Music',
+    'Social impact',
+    'Wellness',
+    'Olympians & Paralympians',
+    'Designed for accessibility',
   ];
 
   const [state, setState] = useState({
@@ -79,46 +79,46 @@ export const FiltersBar: React.FC<{}> = () => {
   };
 
   return (
-    <div css={{ display: "flex", alignItems: "center" }}>
-      <div css={{ display: "flex" }}>
+    <div css={{ display: 'flex', alignItems: 'center' }}>
+      <div css={{ display: 'flex' }}>
         {primaryFilters.map((filter, index) => {
           return (
-            <div key={index} css={{ marginRight: 8, whiteSpace: "nowrap" }}>
-              <Button variant={$Button.FILTER} inverse label={filter} />
+            <div key={index} css={{ marginRight: 8, whiteSpace: 'nowrap' }}>
+              <Button variant={$BUTTON.filter} inverse label={filter} />
             </div>
           );
         })}
       </div>
       <div
-        sx={{ bg: "lightgray" }}
+        sx={{ bg: 'lightgray' }}
         css={{
           marginRight: 8,
           height: 35,
           width: 2,
-          position: "relative",
+          position: 'relative',
         }}
       />
       <div
         ref={containerRef}
-        css={{ overflowX: "hidden", position: "relative", padding: "2px 0" }}
+        css={{ overflowX: 'hidden', position: 'relative', padding: '2px 0' }}
       >
         {state.activeSlide > 0 && (
           <div
             css={{
-              height: "100%",
-              position: "absolute",
+              height: '100%',
+              position: 'absolute',
               left: 0,
               top: 0,
               zIndex: 40,
               width: 65,
-              display: "flex",
-              alignItems: "center",
+              display: 'flex',
+              alignItems: 'center',
               backgroundImage:
-                "linear-gradient(to right, rgb(255, 255, 255) 56.77%, rgba(255, 255, 255, 0) 94.47%)",
+                'linear-gradient(to right, rgb(255, 255, 255) 56.77%, rgba(255, 255, 255, 0) 94.47%)',
             }}
           >
             <Button
-              variant={$Button.PAGINATE}
+              variant={$BUTTON.paginate}
               direction="left"
               size={12}
               onClick={previous}
@@ -127,22 +127,22 @@ export const FiltersBar: React.FC<{}> = () => {
         )}
         <div
           css={{
-            display: "flex",
-            position: "relative",
+            display: 'flex',
+            position: 'relative',
             transform: `translateX(-${state.translate}px)`,
             transition: `transform ease-out ${state.transition}s`,
           }}
         >
           {state.activeSlide > 0 && (
-            <div css={{ position: "absolute", left: 0, zIndex: 40 }}>
-              <Button variant={$Button.PAGINATE} direction="left" />
+            <div css={{ position: 'absolute', left: 0, zIndex: 40 }}>
+              <Button variant={$BUTTON.paginate} direction="left" />
             </div>
           )}
           {secondaryFilters.map((filter, index) => {
             return (
               <div key={index} css={{ marginRight: 8 }}>
                 <Button
-                  variant={$Button.FILTER}
+                  variant={$BUTTON.filter}
                   label={filter}
                   onClick={previous}
                 />
@@ -153,21 +153,21 @@ export const FiltersBar: React.FC<{}> = () => {
         {state.activeSlide < 3 && (
           <div
             css={{
-              height: "100%",
-              position: "absolute",
+              height: '100%',
+              position: 'absolute',
               right: 0,
               top: 0,
               zIndex: 40,
               width: 65,
-              display: "flex",
-              justifyContent: "flex-end",
-              alignItems: "center",
+              display: 'flex',
+              justifyContent: 'flex-end',
+              alignItems: 'center',
               backgroundImage:
-                "linear-gradient(to left, rgb(255, 255, 255) 56.77%, rgba(255, 255, 255, 0) 94.47%)",
+                'linear-gradient(to left, rgb(255, 255, 255) 56.77%, rgba(255, 255, 255, 0) 94.47%)',
             }}
           >
             <Button
-              variant={$Button.PAGINATE}
+              variant={$BUTTON.paginate}
               direction="right"
               size={12}
               onClick={next}

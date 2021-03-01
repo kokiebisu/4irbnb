@@ -1,10 +1,10 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import Router from "next/router";
-import { footerItems } from "@nextbnb/content";
-import { Globe } from "@nextbnb/design/assets/svg/original";
-import { Button, $Button } from "@nextbnb/atoms-button";
+import { jsx } from 'theme-ui';
+import Router from 'next/router';
+import { footerItems } from '@nextbnb/content';
+import { Globe } from '@nextbnb/design/assets/svg/original';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 
 export interface FooterProps {
   spread?: boolean;
@@ -18,20 +18,20 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
   return (
     <footer
       sx={{
-        bg: "transparent",
+        bg: 'transparent',
       }}
     >
       <div>
         <div
           sx={{
             gridTemplateColumns: [
-              "auto",
-              "auto",
-              "auto",
-              "auto",
-              "repeat(4, 1fr)",
+              'auto',
+              'auto',
+              'auto',
+              'auto',
+              'repeat(4, 1fr)',
             ],
-            display: ["block", "block", "block", "block", "grid"],
+            display: ['block', 'block', 'block', 'block', 'grid'],
           }}
         >
           {footerItems.map((section, index) => {
@@ -39,31 +39,31 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
               <div
                 key={index}
                 css={{
-                  padding: "20px 0",
+                  padding: '20px 0',
                 }}
                 sx={{
-                  borderBottom: "1px solid",
-                  borderColor: "grey.300",
-                  ":not(first-child)": {},
+                  borderBottom: '1px solid',
+                  borderColor: 'grey.300',
+                  ':not(first-child)': {},
                 }}
               >
                 <div>
-                  <h3 css={{ fontSize: 12, textTransform: "uppercase" }}>
+                  <h3 css={{ fontSize: 12, textTransform: 'uppercase' }}>
                     {section.name}
                   </h3>
                 </div>
                 <div
                   css={{
-                    margin: "15px 0",
+                    margin: '15px 0',
                   }}
                   sx={{
-                    display: ["block", "block", "grid", "grid", "block"],
+                    display: ['block', 'block', 'grid', 'grid', 'block'],
                     gridTemplateColumns: [
-                      "auto",
-                      "auto",
-                      "repeat(3, 1fr)",
-                      "repeat(3, 1fr)",
-                      "auto",
+                      'auto',
+                      'auto',
+                      'repeat(3, 1fr)',
+                      'repeat(3, 1fr)',
+                      'auto',
                     ],
                   }}
                 >
@@ -72,17 +72,17 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
                       <div
                         sx={{
                           margin: [
-                            "10px 0",
-                            "10px 0",
-                            "10px 0",
-                            "10px 0",
-                            "15px 0",
+                            '10px 0',
+                            '10px 0',
+                            '10px 0',
+                            '10px 0',
+                            '15px 0',
                           ],
                         }}
                         key={index}
                       >
                         <Button
-                          variant={$Button.LINK}
+                          variant={$BUTTON.LINK}
                           onClick={() => Router.push(url)}
                           title={name}
                         />
@@ -97,21 +97,21 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
         <div>
           <div
             css={{
-              display: "flex",
-              alignItems: "center",
-              margin: "20px 0",
+              display: 'flex',
+              alignItems: 'center',
+              margin: '20px 0',
             }}
           >
             <div>
               <button
                 css={{
-                  display: "flex",
-                  alignItems: "center",
+                  display: 'flex',
+                  alignItems: 'center',
                   marginRight: 10,
-                  border: "none",
+                  border: 'none',
                 }}
                 sx={{
-                  bg: "transparent",
+                  bg: 'transparent',
                 }}
               >
                 <Globe
@@ -124,13 +124,13 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
               </button>
             </div>
             <div>
-              <Button variant={$Button.UNDERLINE} title={`$ CAD`} bold />
+              <Button variant={$BUTTON.underline} title={`$ CAD`} bold />
             </div>
           </div>
           <div
             css={{
-              display: "flex",
-              alignItems: "center",
+              display: 'flex',
+              alignItems: 'center',
             }}
           >
             <div>
@@ -138,29 +138,29 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
                 &copy; 2020 Airbnb, Inc. All rights reserved
               </h4>
             </div>
-            <div css={{ display: "flex", alignItems: "center" }}>
+            <div css={{ display: 'flex', alignItems: 'center' }}>
               <div>&nbsp;&nbsp;· &nbsp;</div>
               <div css={{ marginRight: 10 }}>
                 <Button
-                  variant={$Button.LINK}
+                  variant={$BUTTON.link}
                   title="Privacy"
-                  onClick={() => Router.push("/")}
+                  onClick={() => Router.push('/')}
                 />
               </div>
               <div>&nbsp;· &nbsp;</div>
               <div css={{ marginRight: 10 }}>
                 <Button
-                  variant={$Button.LINK}
+                  variant={$BUTTON.link}
                   title="Terms"
-                  onClick={() => Router.push("/")}
+                  onClick={() => Router.push('/')}
                 />
               </div>
               <div>&nbsp;· &nbsp;</div>
               <div css={{ marginRight: 10 }}>
                 <Button
-                  variant={$Button.LINK}
+                  variant={$BUTTON.link}
                   title="Sitemap"
-                  onClick={() => Router.push("/")}
+                  onClick={() => Router.push('/')}
                 />
               </div>
             </div>

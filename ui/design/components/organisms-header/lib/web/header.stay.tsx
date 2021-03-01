@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import Router from "next/router";
-import { Button, $Button } from "@nextbnb/atoms-button";
+import { jsx } from 'theme-ui';
+import Router from 'next/router';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 
 /**
  * Renders the header for the homes page
@@ -15,28 +15,28 @@ export const StayHeader: React.FC<{
     <header
       css={{
         height: 65,
-        padding: "0px 0px",
-        bg: "white",
-        boxShadow: "rgba(0, 0, 0, 0.08) 0px 1px 12px",
+        padding: '0px 0px',
+        bg: 'white',
+        boxShadow: 'rgba(0, 0, 0, 0.08) 0px 1px 12px',
       }}
     >
-      <div css={{ display: "flex", alignItems: "center" }}>
+      <div css={{ display: 'flex', alignItems: 'center' }}>
         <div>
           <Button
-            variant={$Button.LOGO}
+            variant={$BUTTON.logo}
             noName
             fill="##008489"
-            onClick={() => Router.push("/")}
+            onClick={() => Router.push('/')}
             extendsTo={{
-              display: "inline-block",
+              display: 'inline-block',
               padding: 14,
               borderRadius: 9999,
             }}
           />
         </div>
         {title && (
-          <div css={{ position: "relative", bottom: 2 }}>
-            <h4 css={{ fontSize: 16, color: "grey.600" }}>{title}</h4>
+          <div css={{ position: 'relative', bottom: 2 }}>
+            <h4 css={{ fontSize: 16, color: 'grey.600' }}>{title}</h4>
           </div>
         )}
       </div>

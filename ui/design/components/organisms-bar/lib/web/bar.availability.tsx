@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Button, $Button } from "@nextbnb/atoms-button";
-import { Star } from "@nextbnb/design/assets/svg/original";
+import { jsx } from 'theme-ui';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Star } from '@nextbnb/design/assets/svg/original';
 
 /**
  * Renders the modal which gives all the available options
@@ -16,30 +16,30 @@ export const AvailabilityBar: React.FC<{
   return (
     <div
       css={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
       }}
       sx={{
-        borderTop: "1px solid",
-        borderColor: "grey.300",
+        borderTop: '1px solid',
+        borderColor: 'grey.300',
       }}
     >
-      <div css={{ padding: "16px 0" }}>
+      <div css={{ padding: '16px 0' }}>
         <p>Add dates for prices</p>
-        <div css={{ display: "flex", alignItems: "center" }}>
+        <div css={{ display: 'flex', alignItems: 'center' }}>
           <div>
             <Star width={12} />
           </div>
           <div>
             <span
-              css={{ display: "inline-block", fontSize: 12, marginLeft: 4 }}
+              css={{ display: 'inline-block', fontSize: 12, marginLeft: 4 }}
             >
               {ratings}
             </span>
             <span
-              css={{ display: "inline-block", fontSize: 12, marginLeft: 4 }}
-              sx={{ color: "grey.400" }}
+              css={{ display: 'inline-block', fontSize: 12, marginLeft: 4 }}
+              sx={{ color: 'grey.400' }}
             >
               ({reviews})
             </span>
@@ -47,7 +47,7 @@ export const AvailabilityBar: React.FC<{
         </div>
       </div>
       <div>
-        <Button variant={$Button.PRIMARY} title="Check availability" />
+        <Button variant={$BUTTON.primary} title="Check availability" />
       </div>
     </div>
   );

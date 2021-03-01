@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import Router from "next/router";
-import { Button, $Button } from "@nextbnb/atoms-button";
+import { jsx } from 'theme-ui';
+import Router from 'next/router';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 
 /**
  * Renders the header for the homes page
@@ -13,19 +13,19 @@ export const HomesHeader: React.FC<{
 }> = ({ spread = false }) => {
   return (
     <header css={{ height: 80, padding: 0 }}>
-      <div css={{ padding: 20, height: "100%" }}>
+      <div css={{ padding: 20, height: '100%' }}>
         <div>
           <Button
-            variant={$Button.LOGO}
+            variant={$BUTTON.logo}
             extendsTo={{
-              display: "inline-block",
+              display: 'inline-block',
               padding: 14,
               borderRadius: 9999,
-              ":hover": {
-                backgroundColor: "rgba(0, 0, 0, 0.03)",
+              ':hover': {
+                backgroundColor: 'rgba(0, 0, 0, 0.03)',
               },
             }}
-            onClick={() => Router.push("/")}
+            onClick={() => Router.push('/')}
             noName
             fill="black"
           />

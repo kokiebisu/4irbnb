@@ -1,7 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { renderSize } from "../logic/logic.nearby";
+import { jsx } from 'theme-ui';
+import { $CARD } from '../constant/appearance';
+import { renderSize } from '../logic/logic.nearby';
 
 /**
  * Renders the nearby card component
@@ -10,14 +11,14 @@ import { renderSize } from "../logic/logic.nearby";
  * @param {number} hours - Time it takes to reach the destination
  * @param {string} size - Size of the component
  */
-export const NearbyCard: React.FC<{
+const NearbyCard: React.FC<{
   imgUrl?: string;
   city?: string;
   hours?: number;
-  size?: "sm" | "lg";
-}> = ({ imgUrl, city = "City", hours = 1, size = "sm" }) => {
+  size?: 'sm' | 'lg';
+}> = ({ imgUrl, city = 'City', hours = 1, size = 'sm' }) => {
   return (
-    <div css={{ display: "flex", alignItems: "center" }}>
+    <div css={{ display: 'flex', alignItems: 'center' }}>
       <div css={{ ...renderSize(size), marginRight: 12 }}>
         {imgUrl ? (
           <img src={imgUrl} css={{ borderRadius: 10 }} />
@@ -29,7 +30,7 @@ export const NearbyCard: React.FC<{
               borderRadius: 10,
             }}
             sx={{
-              bg: "lightgray",
+              bg: 'lightgray',
             }}
           />
         )}
@@ -40,4 +41,13 @@ export const NearbyCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const nearby = (props) => {
+  return {
+    [$CARD.nearby]: {
+      component: <NearbyCard {...props} />,
+      css: {},
+    },
+  };
 };

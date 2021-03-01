@@ -1,8 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import Router from "next/router";
-import { Button, $Button } from "@nextbnb/atoms-button";
+import { jsx } from 'theme-ui';
+import Router from 'next/router';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { $CARD } from '../constant/appearance';
 
 /**
  * Renders the host card component
@@ -11,12 +12,12 @@ import { Button, $Button } from "@nextbnb/atoms-button";
  * @param {string} stayType - Type of stay
  * @param {string} location - Location of the stay
  */
-export const HostCard: React.FC<{
+const HostCard: React.FC<{
   imgUrl?: string;
   host?: string;
   stayType?: string;
   location?: string;
-}> = ({ imgUrl, host = "Host", stayType = "Type", location = "Location" }) => {
+}> = ({ imgUrl, host = 'Host', stayType = 'Type', location = 'Location' }) => {
   return (
     <div>
       <div>
@@ -24,7 +25,7 @@ export const HostCard: React.FC<{
           <img
             css={{
               borderRadius: 20,
-              objectFit: "cover",
+              objectFit: 'cover',
               height: 434,
               width: 350,
             }}
@@ -33,32 +34,41 @@ export const HostCard: React.FC<{
         ) : (
           <div
             css={{ borderRadius: 20, height: 434, width: 350 }}
-            sx={{ bg: "grey.300" }}
+            sx={{ bg: 'grey.300' }}
           />
         )}
       </div>
       <div css={{ marginTop: 6 }}>
         <h3>{host}</h3>
       </div>
-      <div css={{ margin: "8px 0" }}>
+      <div css={{ margin: '8px 0' }}>
         <h4
           css={{
-            textTransform: "capitalize",
+            textTransform: 'capitalize',
             letterSpacing: 0.4,
             fontSize: 15,
           }}
-          sx={{ color: "grey.900" }}
+          sx={{ color: 'grey.900' }}
         >
           Hosts a {stayType} in {location}
         </h4>
       </div>
       <div>
         <Button
-          onClick={() => Router.push("/")}
-          variant={$Button.UNDERLINE}
+          onClick={() => Router.push('/')}
+          variant={$BUTTON.underline}
           title={`Check out some ${stayType}s`}
         />
       </div>
     </div>
   );
+};
+
+export const host = (props) => {
+  return {
+    [$CARD.host]: {
+      component: <HostCard {...props} />,
+      css: {},
+    },
+  };
 };

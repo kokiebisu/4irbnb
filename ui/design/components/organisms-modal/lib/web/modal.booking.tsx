@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Button, $Button } from "@nextbnb/atoms-button";
+import { jsx } from 'theme-ui';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 
 /**
  * Renders the booking modal
@@ -12,24 +12,24 @@ export const BookingModal: React.FC<{
 }> = ({
   availables = [
     {
-      date: "Tue., Nov. 10",
-      from: "1:00 a.m. ",
-      to: "3:00 a.m. ",
-      standard: "PST",
+      date: 'Tue., Nov. 10',
+      from: '1:00 a.m. ',
+      to: '3:00 a.m. ',
+      standard: 'PST',
       price: 31,
     },
     {
-      date: "Tue., Nov. 10",
-      from: "1:00 a.m. ",
-      to: "3:00 a.m. ",
-      standard: "PST",
+      date: 'Tue., Nov. 10',
+      from: '1:00 a.m. ',
+      to: '3:00 a.m. ',
+      standard: 'PST',
       price: 31,
     },
     {
-      date: "Tue., Nov. 10",
-      from: "1:00 a.m. ",
-      to: "3:00 a.m. ",
-      standard: "PST",
+      date: 'Tue., Nov. 10',
+      from: '1:00 a.m. ',
+      to: '3:00 a.m. ',
+      standard: 'PST',
       price: 31,
     },
   ],
@@ -38,18 +38,18 @@ export const BookingModal: React.FC<{
   return (
     <div
       css={{
-        width: "100%",
-        display: "inline-block",
+        width: '100%',
+        display: 'inline-block',
       }}
     >
       <div>
         <div>
           <div>
-            <span css={{ padding: "10px 0", fontSize: 21 }}>
+            <span css={{ padding: '10px 0', fontSize: 21 }}>
               <b
                 css={{
                   fontWeight: 500,
-                  padding: "10px 0",
+                  padding: '10px 0',
                   fontSize: 21,
                 }}
               >
@@ -65,7 +65,7 @@ export const BookingModal: React.FC<{
                 fontWeight: 100,
               }}
               sx={{
-                color: "grey.600",
+                color: 'grey.600',
               }}
             >
               Show all prices
@@ -80,16 +80,16 @@ export const BookingModal: React.FC<{
                 key={index}
                 css={{
                   display: [
-                    "block",
-                    "block",
-                    "block",
-                    "block",
-                    "block",
-                    "block",
-                    "block",
-                    "flex",
+                    'block',
+                    'block',
+                    'block',
+                    'block',
+                    'block',
+                    'block',
+                    'block',
+                    'flex',
                   ],
-                  justifyContent: "space-between",
+                  justifyContent: 'space-between',
                   marginTop: 16,
                 }}
               >
@@ -107,7 +107,7 @@ export const BookingModal: React.FC<{
                   </div>
                 </div>
                 <div>
-                  <div css={{ margin: "4px 0" }}>
+                  <div css={{ margin: '4px 0' }}>
                     <span css={{ fontSize: 13 }}>
                       <b>${available.price}</b>
                     </span>
@@ -115,7 +115,7 @@ export const BookingModal: React.FC<{
                   </div>
                   <div>
                     <Button
-                      variant={$Button.PRIMARY}
+                      variant={$BUTTON.primary}
                       size="sm"
                       title="Choose"
                       spread
@@ -129,8 +129,8 @@ export const BookingModal: React.FC<{
         <div css={{ marginTop: 24 }}>
           <div>
             <Button
-              variant={$Button.BORDER}
-              extendsTo={{ bg: "transparent" }}
+              variant={$BUTTON.border}
+              extendsTo={{ bg: 'transparent' }}
               size="md"
               title="See more dates"
               block

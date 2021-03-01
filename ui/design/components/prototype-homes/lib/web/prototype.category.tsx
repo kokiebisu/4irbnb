@@ -1,10 +1,10 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx } from 'theme-ui';
 
 // import { Template } from "../web/template/web/s/homes";
-import { Bar, $Bar } from "@nextbnb/organisms-bar";
-import { Button, $Button } from "@nextbnb/atoms-button";
+import { Bar, $Bar } from '@nextbnb/organisms-bar';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 
 /**
  * Renders the category template component
@@ -18,30 +18,30 @@ export const CategoryPrototype: React.FC<{
   filterCount?: number;
   filters?: any;
 }> = ({
-  subtitle = "Subtitle",
+  subtitle = 'Subtitle',
   stayType,
   filterCount = 1,
   filters = [
-    { name: "Filter" },
-    { name: "Filter" },
-    { name: "Filter" },
-    { name: "Filter" },
-    { name: "Filter" },
+    { name: 'Filter' },
+    { name: 'Filter' },
+    { name: 'Filter' },
+    { name: 'Filter' },
+    { name: 'Filter' },
   ],
 }) => {
   const displayTitle = () => {
     if (
-      stayType?.includes("tent") ||
-      stayType?.includes("barn") ||
-      stayType?.includes("tiny_house")
+      stayType?.includes('tent') ||
+      stayType?.includes('barn') ||
+      stayType?.includes('tiny_house')
     ) {
-      return "Unique stays";
+      return 'Unique stays';
     }
     switch (stayType) {
-      case "house":
-        return "Entire homes";
+      case 'house':
+        return 'Entire homes';
       default:
-        return "Section title";
+        return 'Section title';
     }
   };
   return (
@@ -52,26 +52,26 @@ export const CategoryPrototype: React.FC<{
       <div>
         <h3 css={{ fontSize: 32 }}>{displayTitle()}</h3>
       </div>
-      <div css={{ margin: "22px 0" }}>
+      <div css={{ margin: '22px 0' }}>
         <div
           sx={{
-            display: ["block", "block", "block", "flex"],
+            display: ['block', 'block', 'block', 'flex'],
           }}
         >
           {filters.map((filter, index) => {
             return (
               <div key={index} css={{ marginRight: 8 }}>
-                <Button variant={$Button.FILTER} name={filter.name} />
+                <Button variant={$BUTTON.filter} name={filter.name} />
               </div>
             );
           })}
         </div>
         <div
           sx={{
-            display: ["block", "block", "none"],
+            display: ['block', 'block', 'none'],
           }}
         >
-          <Button variant={$Button.FILTER} name={`filters ${filterCount}`} />
+          <Button variant={$BUTTON.filter} name={`filters ${filterCount}`} />
         </div>
       </div>
       {/* <div
@@ -95,7 +95,7 @@ export const CategoryPrototype: React.FC<{
       >
         <Template variant="homes" layout="vertical" location={location} />
       </div> */}
-      <div css={{ marginTop: 16, display: "flex", justifyContent: "center" }}>
+      <div css={{ marginTop: 16, display: 'flex', justifyContent: 'center' }}>
         <Bar variant={$Bar.PAGINATE} animate />
       </div>
     </div>

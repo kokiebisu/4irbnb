@@ -1,10 +1,10 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import Router from "next/router";
-import { Modal, $Modal } from "@nextbnb/organisms-modal";
-import { Button, $Button } from "@nextbnb/atoms-button";
-import { ChevronLeft } from "@nextbnb/design/assets/svg/regular";
+import { jsx } from 'theme-ui';
+import Router from 'next/router';
+import { Modal, $Modal } from '@nextbnb/organisms-modal';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { ChevronLeft } from '@nextbnb/design/assets/svg/regular';
 
 /**
  * Renders the white header
@@ -17,47 +17,47 @@ export const WhiteHeader: React.FC<{
   toggleDispatch?: (params: any) => void;
 }> = ({ data, toggleState = { menu: false }, toggleDispatch }) => {
   return (
-    <header css={{ padding: "16px 0", bg: "white" }}>
+    <header css={{ padding: '16px 0', bg: 'white' }}>
       <div
         css={{
-          position: "relative",
-          justifyContent: "space-between",
-          alignItems: "center",
-          display: ["block", "block", "flex"],
+          position: 'relative',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          display: ['block', 'block', 'flex'],
         }}
       >
         <div>
           <Button
             block
-            variant={$Button.LOGO}
+            variant={$BUTTON.logo}
             noName
-            onClick={() => Router.push("/")}
+            onClick={() => Router.push('/')}
           />
         </div>
         <div>
-          <Button block variant="logo" onClick={() => Router.push("/")} />
+          <Button block variant="logo" onClick={() => Router.push('/')} />
         </div>
-        <div css={{ display: "flex", alignItems: "center" }}>
-          <div css={{ margin: "0 2px" }}>
+        <div css={{ display: 'flex', alignItems: 'center' }}>
+          <div css={{ margin: '0 2px' }}>
             <Button
-              variant={$Button.TRANSPARENT}
+              variant={$BUTTON.transparent}
               animate
-              onClick={() => Router.push("/host/homes")}
+              onClick={() => Router.push('/host/homes')}
             />
           </div>
-          <div css={{ margin: "0 2px" }}>
+          <div css={{ margin: '0 2px' }}>
             <Button
-              variant={$Button.TRANSPARENT}
-              onClick={() => toggleDispatch({ type: "toggle_globe" })}
+              variant={$BUTTON.transparent}
+              onClick={() => toggleDispatch({ type: 'toggle_globe' })}
             />
           </div>
           <div css={{ marginLeft: 4 }}>
             <Button
-              variant={$Button.MENU}
-              extendsTo={{ padding: "3px 0" }}
+              variant={$BUTTON.menu}
+              extendsTo={{ padding: '3px 0' }}
               inverse
               authenticated={data}
-              onClick={() => toggleDispatch({ type: "toggle_menu" })}
+              onClick={() => toggleDispatch({ type: 'toggle_menu' })}
             />
           </div>
         </div>
@@ -65,10 +65,10 @@ export const WhiteHeader: React.FC<{
           css={{
             zIndex: 70,
             width: 230,
-            position: "absolute",
+            position: 'absolute',
             right: 0,
             top: 55,
-            bg: "transparent",
+            bg: 'transparent',
           }}
         >
           <Modal
@@ -84,26 +84,26 @@ export const WhiteHeader: React.FC<{
       </div>
       <div
         css={{
-          display: ["block", "none"],
+          display: ['block', 'none'],
         }}
       >
         <div
           css={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
           }}
         >
           <div css={{ width: 30 }}>
             <ChevronLeft width={12} />
           </div>
-          <div css={{ width: "100%", flexGrow: 1 }}>
+          <div css={{ width: '100%', flexGrow: 1 }}>
             <Button
-              variant={$Button.SEARCHBAR}
-              onClick={() => console.log("pressed")}
+              variant={$BUTTON.searchbar}
+              onClick={() => console.log('pressed')}
             />
           </div>
-          <div css={{ width: 30, visibility: "hidden" }}></div>
+          <div css={{ width: 30, visibility: 'hidden' }}></div>
         </div>
       </div>
     </header>

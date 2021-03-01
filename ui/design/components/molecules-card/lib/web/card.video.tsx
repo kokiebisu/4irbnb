@@ -1,16 +1,17 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Heart, Star } from "@nextbnb/design/assets/svg/original";
-import React, { useState } from "react";
-import { Video } from "@nextbnb/atoms-video";
+import { jsx } from 'theme-ui';
+import { Heart, Star } from '@nextbnb/design/assets/svg/original';
+import React, { useState } from 'react';
+import { Video } from '@nextbnb/atoms-video';
+import { $CARD } from '../constant/appearance';
 
 /**
  * Renders the vertical card component
  * @param {Object} card - Information about the card
  * @param {boolean} save - Whether if the card can be saved
  */
-export const VideoCard: React.FC<{
+const VideoCard: React.FC<{
   imgUrl?: string;
   videoUrl?: string;
   superhost?: boolean;
@@ -21,12 +22,12 @@ export const VideoCard: React.FC<{
   title?: string;
   cost?: number;
 }> = ({
-  imgUrl = "https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster",
-  videoUrl = "https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400",
+  imgUrl = 'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster',
+  videoUrl = 'https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400',
   ratings = 5.0,
   number_of_reviews = 100,
-  country = "Country",
-  title = "Title",
+  country = 'Country',
+  title = 'Title',
   cost = 10,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -40,18 +41,18 @@ export const VideoCard: React.FC<{
         onMouseLeave={() => {
           setIsHovered(false);
         }}
-        css={{ position: "relative", paddingTop: "133%" }}
+        css={{ position: 'relative', paddingTop: '133%' }}
       >
         <div
-          css={{ position: "absolute", top: 0, bottom: 0, right: 0, left: 0 }}
+          css={{ position: 'absolute', top: 0, bottom: 0, right: 0, left: 0 }}
         >
           <div
             css={{
-              position: "absolute",
+              position: 'absolute',
               top: 10,
               right: 10,
               zIndex: 40,
-              pointerEvents: "none",
+              pointerEvents: 'none',
             }}
           >
             <Heart
@@ -61,14 +62,14 @@ export const VideoCard: React.FC<{
               strokeWidth={2}
             />
           </div>
-          <div css={{ height: "100%", width: "100%" }}>
+          <div css={{ height: '100%', width: '100%' }}>
             {isHovered && <Video videoUrl={videoUrl} />}
             <img
               css={{
-                height: "100%",
+                height: '100%',
                 borderRadius: 10,
-                cursor: "pointer",
-                objectFit: "cover",
+                cursor: 'pointer',
+                objectFit: 'cover',
               }}
               src={imgUrl}
             />
@@ -79,8 +80,8 @@ export const VideoCard: React.FC<{
       <div
         css={{
           marginTop: 4,
-          display: "flex",
-          alignItems: "center",
+          display: 'flex',
+          alignItems: 'center',
         }}
       >
         <div css={{ marginRight: 3 }}>
@@ -93,15 +94,15 @@ export const VideoCard: React.FC<{
           <p
             css={{ fontWeight: 100, fontSize: 13 }}
             sx={{
-              color: "grey.500",
+              color: 'grey.500',
             }}
           >{`(${number_of_reviews})`}</p>
         </div>
         <div>
-          <p sx={{ color: "grey.500" }}>&nbsp; · &nbsp; </p>
+          <p sx={{ color: 'grey.500' }}>&nbsp; · &nbsp; </p>
         </div>
         <div>
-          <p css={{ fontSize: 13, fontWeight: 100 }} sx={{ color: "grey.500" }}>
+          <p css={{ fontSize: 13, fontWeight: 100 }} sx={{ color: 'grey.500' }}>
             {country}
           </p>
         </div>
@@ -114,7 +115,7 @@ export const VideoCard: React.FC<{
             fontSize: 15,
           }}
           sx={{
-            color: "grey.900",
+            color: 'grey.900',
           }}
         >
           {title}
@@ -128,4 +129,13 @@ export const VideoCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const video = (props) => {
+  return {
+    [$CARD.video]: {
+      component: <VideoCard {...props} />,
+      css: {},
+    },
+  };
 };

@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useFormik } from 'formik';
 import Router from 'next/router';
 import { Input, $Input } from '@nextbnb/atoms-input';
-import { Button, $Button } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { Bullet, $Bullet } from '@nextbnb/atoms-bullet';
 
 import { validateSignup as validate } from '@nextbnb/design/helper/validation';
@@ -227,7 +227,7 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
         </div>
         <div css={{ marginTop: 16 }}>
           <Button
-            variant={$Button.PRIMARY}
+            variant={$BUTTON.primary}
             title="Agree and continue"
             loading={loading}
             block

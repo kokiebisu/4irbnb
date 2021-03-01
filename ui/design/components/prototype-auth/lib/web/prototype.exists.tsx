@@ -6,7 +6,7 @@ import { useState } from 'react';
 import Router from 'next/router';
 import { useFormik } from 'formik';
 import { Bullet, $Bullet } from '@nextbnb/atoms-bullet';
-import { Button, $Button } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { Input, $Input } from '@nextbnb/atoms-input';
 import { validateExists as validate } from '@nextbnb/design/helper/validation';
 import { usePost } from '@nextbnb/design/hooks/usePost';
@@ -78,7 +78,7 @@ export const ExistsPrototype: React.FC<{
           />
         </div>
         <div css={{ margin: '16px 0' }}>
-          <Button variant={$Button.PRIMARY} loading={loading} title="Log in" />
+          <Button variant={$BUTTON.primary} loading={loading} title="Log in" />
         </div>
         <div>
           {formik.errors.password !== undefined && (
@@ -93,14 +93,14 @@ export const ExistsPrototype: React.FC<{
       </form>
       <div css={{ margin: '16px 0' }}>
         <Button
-          variant={$Button.UNDERLINE}
+          variant={$BUTTON.underline}
           title="Login with a different account"
           onClick={() => alert('button pressed')}
         />
       </div>
       <div css={{ margin: '16px 0' }}>
         <Button
-          variant={$Button.UNDERLINE}
+          variant={$BUTTON.underline}
           title="Forgot password?"
           onClick={() => alert('button pressed')}
         />

@@ -1,9 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx } from 'theme-ui';
 // import { Template } from "../../../template/web/s/homes";
-import { Bar, $Bar } from "@nextbnb/organisms-bar";
-import { Button, $Button } from "@nextbnb/atoms-button";
+import { Bar, $Bar } from '@nextbnb/organisms-bar';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 
 /**
  * Renders the nearby template component
@@ -16,69 +16,69 @@ export const NearbyPrototype: React.FC<{
   average?: number;
   filters?: any;
 }> = ({
-  city = "location",
+  city = 'location',
   filterCount = 1,
   guests = 1000,
   average = 5.0,
   filters = [
-    { name: "Filter" },
-    { name: "Filter" },
-    { name: "Filter" },
-    { name: "Filter" },
-    { name: "Filter" },
+    { name: 'Filter' },
+    { name: 'Filter' },
+    { name: 'Filter' },
+    { name: 'Filter' },
+    { name: 'Filter' },
   ],
 }) => {
-  const displayPlace = city.match(/_/g) ? city.split("_").join(" ") : city;
+  const displayPlace = city.match(/_/g) ? city.split('_').join(' ') : city;
 
   return (
-    <div css={{ position: "relative" }}>
+    <div css={{ position: 'relative' }}>
       <div css={{ padding: 24 }}>
         <div>
           <p css={{ fontSize: 14 }}>300+ stays</p>
         </div>
         <div>
           <h3 css={{ fontSize: 32 }}>
-            Stays in{" "}
-            <span css={{ fontWeight: 500, textTransform: "capitalize" }}>
+            Stays in{' '}
+            <span css={{ fontWeight: 500, textTransform: 'capitalize' }}>
               {displayPlace}
             </span>
           </h3>
         </div>
-        <div css={{ margin: "22px 0" }}>
-          <div css={{ display: ["block", "block", "block", "flex"] }}>
+        <div css={{ margin: '22px 0' }}>
+          <div css={{ display: ['block', 'block', 'block', 'flex'] }}>
             {filters.map((filter, index) => {
               return (
                 <div key={index} css={{ marginRight: 8 }}>
-                  <Button variant={$Button.FILTER} name={filter.name} />
+                  <Button variant={$BUTTON.filter} name={filter.name} />
                 </div>
               );
             })}
           </div>
-          <div css={{ display: ["block", "block", "none"] }}>
-            <Button variant={$Button.FILTER} name={`filters ${filterCount}`} />
+          <div css={{ display: ['block', 'block', 'none'] }}>
+            <Button variant={$BUTTON.filter} name={`filters ${filterCount}`} />
           </div>
         </div>
         {city && (
           <div>
             <div css={{ marginBottom: 16 }}>
-              <p css={{ color: "grey.600", fontSize: 14 }}>
+              <p css={{ color: 'grey.600', fontSize: 14 }}>
                 Enter dates and number of guests to see the total price per
                 night.
               </p>
             </div>
             <div
               css={{
-                backgroundColor: "lightgray",
+                backgroundColor: 'lightgray',
                 height: 1,
-                width: "100%",
+                width: '100%',
               }}
             />
-            <div css={{ display: "flex", alignItems: "center" }}>
+            <div css={{ display: 'flex', alignItems: 'center' }}>
               <div
                 css={{
                   marginRight: 12,
-                  padding: "8px 0",
-                  margin: "8px 0",
+                  padding: '8px 0',
+                  margin: '8px 0',
                 }}
               >
                 <img
@@ -88,8 +88,8 @@ export const NearbyPrototype: React.FC<{
               </div>
               <div>
                 <h3 css={{ fontSize: 14 }}>
-                  More than {guests} guests have stayed in{" "}
-                  <span css={{ fontWeight: 500, textTransform: "capitalize" }}>
+                  More than {guests} guests have stayed in{' '}
+                  <span css={{ fontWeight: 500, textTransform: 'capitalize' }}>
                     {displayPlace}
                   </span>
                   . On average they rated their stays {average} out of 5 stars.
@@ -102,14 +102,14 @@ export const NearbyPrototype: React.FC<{
         <div
           css={{
             marginTop: 16,
-            display: "flex",
-            justifyContent: "center",
+            display: 'flex',
+            justifyContent: 'center',
           }}
         >
           <Bar variant={$Bar.PAGINATE} animate />
         </div>
       </div>
-      <div sx={{ bg: "grey.100" }} css={{ padding: 24 }}>
+      <div sx={{ bg: 'grey.100' }} css={{ padding: 24 }}>
         {/* <Template variant="also" /> */}
       </div>
     </div>

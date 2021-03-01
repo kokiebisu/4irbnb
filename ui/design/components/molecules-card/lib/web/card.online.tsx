@@ -1,7 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { renderSize } from "../logic/logic.nearby";
+import { jsx } from 'theme-ui';
+import { $CARD } from '../constant/appearance';
+import { renderSize } from '../logic/logic.nearby';
 
 /**
  * Renders the online card component
@@ -10,7 +11,7 @@ import { renderSize } from "../logic/logic.nearby";
  * @param {string} title - Title of the card
  * @param {boolean} inverse - Whether if the component takes the inverse styling or not
  */
-export const OnlineCard: React.FC<{
+const OnlineCard: React.FC<{
   small?: string;
   large?: string;
   title?: string;
@@ -18,18 +19,18 @@ export const OnlineCard: React.FC<{
 }> = ({
   small,
   large,
-  title = "Learn to make soup dumplings in Shanghai",
+  title = 'Learn to make soup dumplings in Shanghai',
   inverse = false,
 }) => {
   return (
-    <div css={{ height: "100%", width: "100%", position: "relative" }}>
+    <div css={{ height: '100%', width: '100%', position: 'relative' }}>
       <div
         css={{
-          display: "inline-block",
-          verticalAlign: "bottom",
+          display: 'inline-block',
+          verticalAlign: 'bottom',
           minHeight: 1,
-          height: "100%",
-          width: "100%",
+          height: '100%',
+          width: '100%',
         }}
       >
         {small && large ? (
@@ -47,7 +48,7 @@ export const OnlineCard: React.FC<{
               media="(min-width: 1439.1px)"
             ></source>
             <img
-              style={{ objectFit: "cover", verticalAlign: "bottom" }}
+              style={{ objectFit: 'cover', verticalAlign: 'bottom' }}
               css={{ borderRadius: 20 }}
               aria-hidden="true"
               decoding="async"
@@ -56,27 +57,27 @@ export const OnlineCard: React.FC<{
           </picture>
         ) : (
           <div
-            css={{ width: "100%", borderRadius: 20, paddingTop: "100%" }}
-            sx={{ bg: "grey.300" }}
+            css={{ width: '100%', borderRadius: 20, paddingTop: '100%' }}
+            sx={{ bg: 'grey.300' }}
           />
         )}
       </div>
       <div
         css={{
-          position: "absolute",
+          position: 'absolute',
           bottom: 0,
           left: 0,
           right: 0,
           borderBottomLeftRadius: 15,
           borderBottomRightRadius: 15,
-          boxShadow: "rgba(0, 0, 0, 0.2) 0px 4px 8px",
+          boxShadow: 'rgba(0, 0, 0, 0.2) 0px 4px 8px',
         }}
-        sx={{ ...(inverse ? { bg: "grey.900" } : { bg: "white" }) }}
+        sx={{ ...(inverse ? { bg: 'grey.900' } : { bg: 'white' }) }}
       >
         <div
           css={{
-            padding: "15px 15px 0 15px",
-            width: "100%",
+            padding: '15px 15px 0 15px',
+            width: '100%',
             minHeight: 75,
             borderBottomRightRadius: 15,
             borderBottomLeftRadius: 15,
@@ -85,7 +86,7 @@ export const OnlineCard: React.FC<{
           <h4
             css={{
               fontSize: 15,
-              ...(inverse ? { color: "white" } : { fontWeight: 500 }),
+              ...(inverse ? { color: 'white' } : { fontWeight: 500 }),
             }}
           >
             {title}
@@ -94,4 +95,13 @@ export const OnlineCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const online = (props) => {
+  return {
+    [$CARD.online]: {
+      component: <OnlineCard {...props} />,
+      css: {},
+    },
+  };
 };

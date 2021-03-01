@@ -1,20 +1,21 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Warning } from "@nextbnb/design/assets/svg/original";
+import { jsx } from 'theme-ui';
+import { Warning } from '@nextbnb/design/assets/svg/original';
+import { $CARD } from '../constant/appearance';
 
-export const AgainCard: React.FC<{}> = () => {
+const AgainCard: React.FC<{}> = () => {
   return (
     <div
       css={{ borderRadius: 15 }}
-      sx={{ border: "1px solid", borderColor: "grey.400" }}
+      sx={{ border: '1px solid', borderColor: 'grey.400' }}
     >
       <div css={{ padding: 18 }}>
-        <div css={{ display: "flex" }}>
+        <div css={{ display: 'flex' }}>
           <div css={{ marginRight: 12 }}>
             <div
-              css={{ padding: 12, borderRadius: "9999px" }}
-              sx={{ bg: "red.800" }}
+              css={{ padding: 12, borderRadius: '9999px' }}
+              sx={{ bg: 'red.800' }}
             >
               <Warning width={18} fill="white" />
             </div>
@@ -24,7 +25,7 @@ export const AgainCard: React.FC<{}> = () => {
               <h3 css={{ fontSize: 16 }}>Let's try that again</h3>
             </div>
             <div>
-              <p css={{ fontSize: 14 }} sx={{ color: "grey.600" }}>
+              <p css={{ fontSize: 14 }} sx={{ color: 'grey.600' }}>
                 There isn’t an account associated with this email address.
                 Please try another email.
               </p>
@@ -34,4 +35,13 @@ export const AgainCard: React.FC<{}> = () => {
       </div>
     </div>
   );
+};
+
+export const again = (props) => {
+  return {
+    [$CARD.again]: {
+      component: <AgainCard {...props} />,
+      css: {},
+    },
+  };
 };
