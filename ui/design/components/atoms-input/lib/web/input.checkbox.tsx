@@ -3,18 +3,29 @@
 import { jsx } from 'theme-ui';
 import { CheckPlain } from '@nextbnb/design/assets/svg/original';
 import { $INPUT } from '../constant/appearance';
+import { useState } from 'react';
 
 const CheckboxInput: React.FC<{
   check?: () => void;
   checked?: boolean;
   title?: string;
   description?: string;
-}> = ({ check, checked = true, title = 'Title here', description }) => {
+}> = ({ check, checked = null, title = 'Title here', description }) => {
+  const [inputValue, setInputValue] = useState(false);
+
+  const handleDisplayingValue = () => {
+    if (typeof checked === 'boolean' && check) {
+      check();
+    }
+    setInputValue(!inputValue);
+  };
+  const displayingValue = checked ? checked : inputValue;
+
   return (
     <div css={{ display: 'flex' }}>
       <div css={{ marginRight: 16 }}>
         <div
-          onClick={check}
+          onClick={handleDisplayingValue}
           style={{ cursor: 'pointer', height: 24, width: 24 }}
           css={{
             display: 'flex',
@@ -24,7 +35,7 @@ const CheckboxInput: React.FC<{
             borderColor: 'grey.400',
             borderRadius: 4,
           }}
-          sx={{ ...(checked ? { bg: 'black' } : { bg: 'white' }) }}
+          sx={{ ...(displayingValue ? { bg: 'black' } : { bg: 'white' }) }}
         >
           <div
             css={{

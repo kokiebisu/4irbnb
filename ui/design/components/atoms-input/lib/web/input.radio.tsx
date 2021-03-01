@@ -1,5 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
+import { useState } from 'react';
 import { jsx } from 'theme-ui';
 import { $INPUT } from '../constant/appearance';
 
@@ -9,25 +10,42 @@ const RadioInput: React.FC<{
   selected?: boolean;
   select?: (params?: string) => void;
   value?: string;
-}> = ({ title = 'title here', subtitle, selected = false, select }) => {
+}> = ({ title = 'title here', subtitle, selected = null, select }) => {
+  const [inputSelected, setInputSelected] = useState(false);
+  console.log('i', inputSelected);
+
+  const displayingValue =
+    typeof selected === 'boolean' ? selected : inputSelected;
+
+  const handleDisplayingValue = (value) => {
+    console.log('valu', value);
+    if (typeof selected === 'boolean' && select) {
+      console.log('en');
+      return select(value);
+    }
+    setInputSelected(!inputSelected);
+  };
+
   return (
-    <div css={{ display: 'flex' }}>
-      <div css={{ position: 'relative', marginRight: 12 }}>
+    <div css={{ display: 'flex', cursor: 'pointer' }}>
+      <div css={{ position: 'relative', marginRight: 12, cursor: 'pointer' }}>
         <button
           css={{
             width: 20,
             height: 20,
             border: '1px solid lightgray',
-            backgroundColor: selected ? 'black' : 'white',
+            backgroundColor: displayingValue ? 'black' : 'white',
             borderRadius: '50%',
             ':hover': {
               border: '1px solid black !important',
               transition: '0.4s border-color',
             },
           }}
-          // onClick={() => select(title)}
-        ></button>
-        {selected && (
+          onClick={() => {
+            handleDisplayingValue(title);
+          }}
+        />
+        {displayingValue && (
           <div
             style={{
               position: 'absolute',
@@ -37,6 +55,7 @@ const RadioInput: React.FC<{
               width: 6,
               height: 6,
               borderRadius: 9999,
+              cursor: 'pointer',
             }}
           ></div>
         )}

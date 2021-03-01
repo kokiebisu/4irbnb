@@ -8,21 +8,36 @@ const TextAreaInput: React.FC<{
   value?: string;
   handleChange?: () => void;
   limit?: number;
-}> = ({ value = '', handleChange, limit = 500 }) => {
+}> = ({ value = null, handleChange, limit = 500 }) => {
+  const [inputValue, setInputValue] = useState('');
   const [active, setActive] = useState(false);
 
+  const handleDisplayingValue = (e) => {
+    if (typeof value === 'string' && handleChange) {
+      return handleChange();
+    }
+    setInputValue(e.target.value);
+  };
+
+  const displayingValue = typeof value === 'string' ? value : inputValue;
+
   const renderBorder = () => {
-    if (value.length >= limit) {
+    const mixin = (borderColor) => {
       return {
-        border: '1px solid red.400 !important',
+        border: '1px solid',
+        borderColor,
         transition: '0.4s border-color',
+      };
+    };
+    if (displayingValue.length >= limit) {
+      return {
+        ...mixin('red.400'),
       };
     }
     if (active) {
       return {
         '&:focus': {
-          border: '1px solid cyan.800 !important',
-          transition: '0.4s border-color',
+          ...mixin('cyan.800'),
         },
       };
     }
@@ -30,26 +45,40 @@ const TextAreaInput: React.FC<{
   };
 
   const renderBackground = () => {
-    if (value.length >= limit) {
+    const mixin = (bg) => {
       return {
-        backgroundColor: 'red.50 !important',
         transition: '0.4s all',
+        bg,
+      };
+    };
+    if (displayingValue.length >= limit) {
+      return {
+        ...mixin('red.50'),
       };
     }
     if (active) {
       return {
-        backgroundColor: 'white !important',
-        transition: '0.4s all',
+        ...mixin('white'),
       };
     }
     return '';
   };
 
   const renderColor = () => {
-    if (value.length >= limit) {
-      return { color: 'red.400 !important', transition: '0.4s all' };
+    const mixin = (color) => {
+      return {
+        color,
+        transition: '0.4s all',
+      };
+    };
+    if (displayingValue.length >= limit) {
+      return {
+        ...mixin('red.400'),
+      };
     }
-    return { color: 'cyan.800 !important', transition: '0.4s all' };
+    return {
+      ...mixin('cyan.800'),
+    };
   };
 
   return (
@@ -59,7 +88,7 @@ const TextAreaInput: React.FC<{
           spellCheck
           onFocus={() => setActive(true)}
           onBlur={() => setActive(false)}
-          onChange={handleChange}
+          onChange={handleDisplayingValue}
           css={{
             position: 'relative',
             fontWeight: 300,
@@ -72,23 +101,25 @@ const TextAreaInput: React.FC<{
             width: '100%',
             padding: 12,
             transition: 'all 0.4s ease-out',
-            ...renderBorder(),
-            ...renderBackground(),
             outline: 'none',
             resize: 'vertical',
             minHeight: 300,
           }}
+          sx={{
+            ...renderBorder(),
+            ...renderBackground(),
+          }}
         ></textarea>
 
         <div css={{ position: 'absolute', bottom: 15, right: 15 }}>
-          <h3 css={{ fontSize: 12, ...renderColor() }}>
-            {limit - value.length}
+          <h3 css={{ fontSize: 12 }} sx={{ ...renderColor() }}>
+            {limit - displayingValue.length}
           </h3>
         </div>
       </div>
-      {value.length >= limit && (
+      {displayingValue.length >= limit && (
         <div>
-          <h3 css={{ fontSize: 14, color: 'red.400' }}>
+          <h3 css={{ fontSize: 14 }} sx={{ color: 'red.400' }}>
             Please shorten your description to {limit} characters or less.
           </h3>
         </div>

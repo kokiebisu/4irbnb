@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useState } from 'react';
-import { Button } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { $INPUT } from '../constant/appearance';
 
 const VerifyInput: React.FC<{
@@ -77,16 +77,19 @@ const VerifyInput: React.FC<{
             padding: 12,
             transition: 'all 0.4s ease-out',
             outline: 'none',
-
+          }}
+          sx={{
             ...renderBorder(),
             ...renderBackground(),
           }}
         ></input>
 
-        <div css={{ position: 'absolute', bottom: 15, right: 15 }}>
-          <Button onClick={() => alert('verify')}>
-            <h4 css={{ fontSize: 16, ...renderColor() }}>Verify</h4>
-          </Button>
+        <div css={{ position: 'absolute', bottom: 18, right: 15 }}>
+          <Button
+            title="Verify"
+            variant={$BUTTON.link}
+            onClick={() => alert('verify')}
+          />
         </div>
       </div>
     </div>

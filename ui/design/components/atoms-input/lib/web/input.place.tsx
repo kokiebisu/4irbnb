@@ -135,6 +135,7 @@ const PlaceInput: React.FC<{
         {expanded && (
           <div
             css={{
+              width: '100%',
               position: 'absolute',
               top: 48,
               zIndex: 60,

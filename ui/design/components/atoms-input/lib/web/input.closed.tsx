@@ -1,8 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Button, $Button } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { $INPUT } from '../constant/appearance';
+import { useState } from 'react';
 
 const ClosedInput: React.FC<{
   title?: string;
@@ -12,11 +13,22 @@ const ClosedInput: React.FC<{
   setData?: any;
 }> = ({
   title = 'Title here',
-  data = { value: false },
+  data = { value: null },
   selected = false,
   setData,
   value = '',
 }) => {
+  const [inputValue, setInputValue] = useState(false);
+
+  const handleDisplayingValue = (newValue) => {
+    if (typeof data.value === 'boolean' && setData) {
+      return setData({ ...data, [value]: newValue });
+    }
+    setInputValue(newValue);
+  };
+
+  const displayingValue =
+    typeof data.value === 'boolean' ? data.value : inputValue;
   return (
     <div
       css={{
@@ -31,18 +43,18 @@ const ClosedInput: React.FC<{
       <div css={{ display: 'flex' }}>
         <div css={{ marginRight: 12 }}>
           <Button
-            variant={$Button.CLOSED}
+            variant={$BUTTON.closed}
             content="close"
-            onClick={() => setData({ ...data, [value]: false })}
-            selected={data.value === false}
+            onClick={() => handleDisplayingValue(false)}
+            selected={!displayingValue}
           />
         </div>
         <div>
           <Button
-            variant={$Button.CLOSED}
+            variant={$BUTTON.closed}
             content="check"
-            onClick={() => setData({ ...data, [value]: true })}
-            selected={data.value === true}
+            onClick={() => handleDisplayingValue(true)}
+            selected={displayingValue}
           />
         </div>
       </div>

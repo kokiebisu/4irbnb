@@ -28,7 +28,10 @@ const ClosedButton: React.FC<{
     ),
   };
   return (
-    <div css={web.wrapper} sx={selected ? theme.selected : theme.unselected}>
+    <div
+      css={web.wrapper}
+      sx={{ ...(selected ? theme.selected : theme.unselected) }}
+    >
       {contents[content]}
     </div>
   );
