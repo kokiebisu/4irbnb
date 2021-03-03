@@ -1,27 +1,28 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx } from 'theme-ui';
+import { $PANEL } from '..';
 
-export const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
+const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
   return (
-    <div css={{ paddingTop: "42%", position: "relative" }}>
-      <div css={{ position: "absolute", top: 0, bottom: 0, left: 0, right: 0 }}>
+    <div css={{ paddingTop: '38%', position: 'relative' }}>
+      <div css={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 }}>
         <div
           css={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
             columnGap: 10,
             rowGap: 10,
-            width: "100%",
-            height: "100%",
+            width: '100%',
+            height: '100%',
           }}
         >
           <div>
             {images[0] ? (
               <img
                 css={{
-                  backgroundSize: "cover",
-                  backgroundRepeat: "no-repeat",
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat',
                   borderBottomLeftRadius: 8,
                   borderTopLeftRadius: 8,
                 }}
@@ -30,9 +31,9 @@ export const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
             ) : (
               <div
                 style={{
-                  width: "100%",
-                  height: "100%",
-                  backgroundColor: "lightgray",
+                  width: '100%',
+                  height: '100%',
+                  backgroundColor: 'lightgray',
                   borderBottomLeftRadius: 16,
                   borderTopLeftRadius: 16,
                 }}
@@ -41,28 +42,28 @@ export const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
           </div>
           <div
             css={{
-              display: "grid",
+              display: 'grid',
               columnGap: 10,
               rowGap: 10,
-              gridTemplateColumns: "repeat(2, 1fr)",
-              gridTemplateRows: "repeat(2, 1fr)",
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gridTemplateRows: 'repeat(2, 1fr)',
             }}
           >
             <div>
               {images[1] ? (
                 <img
                   css={{
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
                   }}
                   src={images[1]}
                 />
               ) : (
                 <div
                   css={{
-                    width: "100%",
-                    height: "100%",
-                    backgroundColor: "lightgray",
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'lightgray',
                   }}
                 />
               )}
@@ -72,17 +73,17 @@ export const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
                 <img
                   css={{
                     bottomTopRightRadius: 16,
-                    backgroundSize: "cover",
-                    backgroundRepeat: "repeat",
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'repeat',
                   }}
                   src={images[2]}
                 />
               ) : (
                 <div
                   css={{
-                    width: "100%",
-                    height: "100%",
-                    backgroundColor: "lightgray",
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'lightgray',
                     borderTopRightRadius: 16,
                   }}
                 />
@@ -93,17 +94,17 @@ export const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
                 <img
                   css={{
                     borderBottomRightRadius: 16,
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
                   }}
                   src={images[3]}
                 />
               ) : (
                 <div
                   css={{
-                    width: "100%",
-                    height: "100%",
-                    backgroundColor: "lightgray",
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'lightgray',
                   }}
                 />
               )}
@@ -113,17 +114,17 @@ export const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
                 <img
                   css={{
                     borderBottomRightRadius: 16,
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat',
                   }}
                   src={images[3]}
                 />
               ) : (
                 <div
                   css={{
-                    width: "100%",
-                    height: "100%",
-                    backgroundColor: "lightgray",
+                    width: '100%',
+                    height: '100%',
+                    backgroundColor: 'lightgray',
                     borderBottomRightRadius: 16,
                   }}
                 />
@@ -134,4 +135,13 @@ export const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
       </div>
     </div>
   );
+};
+
+export const room = (props) => {
+  return {
+    [$PANEL.room]: {
+      component: <RoomPanel {...props} />,
+      css: {},
+    },
+  };
 };

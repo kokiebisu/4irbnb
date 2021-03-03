@@ -1,13 +1,12 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { ExperiencePanel } from "./web/panel.experience";
-import { RoomPanel } from "./web/panel.room";
+import { jsx } from 'theme-ui';
+import { PLATFORM } from './constant/platform';
+import { generateVariants } from './utils/variants';
+import { webVariants } from './web/variants';
+import { $PANEL } from './constant/appearance';
 
-export const $Panel = {
-  EXPERIENCE: "experience",
-  ROOM: "room",
-};
+export { $PANEL };
 
 export interface PanelProps {
   variant: string;
@@ -16,13 +15,15 @@ export interface PanelProps {
 }
 
 export const Panel: React.FC<PanelProps> = ({
+  platform = PLATFORM.web,
   variant,
   extendsTo,
   ...props
 }) => {
-  const variants: { [variant: string]: JSX.Element } = {
-    [$Panel.EXPERIENCE]: <ExperiencePanel {...props} />,
-    [$Panel.ROOM]: <RoomPanel {...props} />,
-  };
-  return <div data-testid={`${variant}-panel`}>{variants[variant]}</div>;
+  const variants = generateVariants(PLATFORM[platform], webVariants, props);
+  return (
+    <div sx={{ ...variants[variant].css }} data-testid={`${variant}-panel`}>
+      {variants[variant].component}
+    </div>
+  );
 };

@@ -1,22 +1,21 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx } from 'theme-ui';
+import { $PANEL } from '..';
 
-export const ExperiencePanel: React.FC<{ images?: string[] }> = ({
-  images = [],
-}) => {
+const ExperiencePanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
   return (
     <div
       css={{
-        paddingTop: "38%",
+        paddingTop: '38%',
         height: 0,
-        overflow: "hidden",
-        position: "relative",
+        overflow: 'hidden',
+        position: 'relative',
       }}
     >
       <div
         css={{
-          position: "absolute",
+          position: 'absolute',
           top: 0,
           bottom: 0,
           right: 0,
@@ -25,35 +24,35 @@ export const ExperiencePanel: React.FC<{ images?: string[] }> = ({
       >
         <div
           css={{
-            height: "100%",
-            display: "grid",
+            height: '100%',
+            display: 'grid',
             gridGap: 10,
-            gridTemplateColumns: "1fr 1.5fr 1fr",
+            gridTemplateColumns: '1fr 1.5fr 1fr',
           }}
         >
           <div
             css={{
-              backgroundSize: "cover",
+              backgroundSize: 'cover',
               borderTopLeftRadius: 8,
               borderBottomLeftRadius: 8,
               ...(images[0] && { backgroundImage: `url(${images[0]})` }),
             }}
             sx={{
-              ...(!images[0] && { backgroundColor: "lightgray" }),
+              ...(!images[0] && { backgroundColor: 'lightgray' }),
             }}
           />
           <div
             css={{
-              display: "grid",
-              height: "100%",
+              display: 'grid',
+              height: '100%',
               gridGap: 10,
-              gridTemplateColumns: "2fr 1fr",
-              gridTemplateRows: "auto auto",
+              gridTemplateColumns: '2fr 1fr',
+              gridTemplateRows: 'auto auto',
             }}
           >
             <div
               css={{
-                backgroundSize: "cover",
+                backgroundSize: 'cover',
                 gridColumnStart: 1,
                 gridColumnEnd: 2,
                 gridRowStart: 1,
@@ -61,12 +60,12 @@ export const ExperiencePanel: React.FC<{ images?: string[] }> = ({
                 ...(images[1] && { backgroundImage: `url(${images[1]})` }),
               }}
               sx={{
-                ...(!images[1] && { backgroundColor: "lightgray" }),
+                ...(!images[1] && { backgroundColor: 'lightgray' }),
               }}
             />
             <div
               css={{
-                backgroundSize: "cover",
+                backgroundSize: 'cover',
                 backgroundImage: images[2] && `url(${images[2]})`,
                 gridColumnStart: 2,
                 gridColumnEnd: 3,
@@ -75,12 +74,12 @@ export const ExperiencePanel: React.FC<{ images?: string[] }> = ({
                 ...(images[2] && { backgroundImage: `url(${images[2]})` }),
               }}
               sx={{
-                ...(!images[2] && { backgroundColor: "lightgray" }),
+                ...(!images[2] && { backgroundColor: 'lightgray' }),
               }}
             />
             <div
               css={{
-                backgroundSize: "cover",
+                backgroundSize: 'cover',
                 backgroundImage: images[3] && `url(${images[3]})`,
                 gridColumnStart: 2,
                 gridColumnEnd: 3,
@@ -89,24 +88,33 @@ export const ExperiencePanel: React.FC<{ images?: string[] }> = ({
                 ...(images[2] && { backgroundImage: `url(${images[2]})` }),
               }}
               sx={{
-                ...(!images[2] && { backgroundColor: "lightgray" }),
+                ...(!images[2] && { backgroundColor: 'lightgray' }),
               }}
             />
           </div>
           <div
             css={{
-              backgroundSize: "cover",
+              backgroundSize: 'cover',
               backgroundImage: images[3] && `url(${images[3]})`,
               borderTopRightRadius: 8,
               borderBottomRightRadius: 8,
               ...(images[2] && { backgroundImage: `url(${images[2]})` }),
             }}
             sx={{
-              ...(!images[2] && { backgroundColor: "lightgray" }),
+              ...(!images[2] && { backgroundColor: 'lightgray' }),
             }}
           ></div>
         </div>
       </div>
     </div>
   );
+};
+
+export const experience = (props) => {
+  return {
+    [$PANEL.experience]: {
+      component: <ExperiencePanel {...props} />,
+      css: {},
+    },
+  };
 };
