@@ -4,13 +4,14 @@ import { jsx } from 'theme-ui';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Star } from '@nextbnb/design/assets/svg/original';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { $HEADER } from '../constant/appearance';
 
 /**
  * Renders the details header
  * @param {stirng} layoutType - Type of layout
  * @param {boolean} spread - Whether if the layout should be spread out or not
  */
-export const DetailsHeader: React.FC<{
+const DetailsHeader: React.FC<{
   layoutType?: string;
   spread?: boolean;
   scrollPosition?: number;
@@ -147,4 +148,13 @@ export const DetailsHeader: React.FC<{
       </div>
     </header>
   );
+};
+
+export const details = (props) => {
+  return {
+    [$HEADER.details]: {
+      component: <DetailsHeader {...props} />,
+      css: {},
+    },
+  };
 };

@@ -11,11 +11,12 @@ import { Prototype } from '@nextbnb/prototype-searchbar';
 import { NameLogo, NoNameLogo } from '@nextbnb/design/assets/svg/logo';
 import { Content } from '../content/transparent';
 import { useOnClickOutside } from '@nextbnb/design/hooks/useOnClickOutside';
+import { $HEADER } from '../constant/appearance';
 
 /**
  * Renders the transparent header
  */
-export const LandingHeader: React.FC<{
+const LandingHeader: React.FC<{
   category?: any;
   setCategory?: any;
   data?: any;
@@ -232,7 +233,7 @@ export const LandingHeader: React.FC<{
                                   color: 'white',
                                 }}
                                 sx={{
-                                  fontSize: [12, 12, 12, 14],
+                                  fontSize: ['14px', '14px', '14px', '16px'],
                                   fontWeight: [500, 500, 500, 300],
                                 }}
                               >
@@ -275,9 +276,16 @@ export const LandingHeader: React.FC<{
                               <button onClick={() => setCategory('stay')}>
                                 <div css={{ paddingBottom: 8 }}>
                                   <p
+                                    sx={{
+                                      fontSize: [
+                                        '14px',
+                                        '14px',
+                                        '14px',
+                                        '16px',
+                                      ],
+                                      fontWeight: [300, 300, 300, 300],
+                                    }}
                                     css={{
-                                      fontSize: [12, 12, 12, 14],
-                                      fontWeight: [500, 500, 500, 300],
                                       ...(expanded
                                         ? { color: 'black' }
                                         : { color: 'white' }),
@@ -357,4 +365,13 @@ export const LandingHeader: React.FC<{
       </div>
     </header>
   );
+};
+
+export const landing = (props) => {
+  return {
+    [$HEADER.landing]: {
+      component: <LandingHeader {...props} />,
+      css: {},
+    },
+  };
 };

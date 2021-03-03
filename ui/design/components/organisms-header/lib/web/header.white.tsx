@@ -5,12 +5,13 @@ import Router from 'next/router';
 import { Modal, $Modal } from '@nextbnb/organisms-modal';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { ChevronLeft } from '@nextbnb/design/assets/svg/regular';
+import { $HEADER } from '../constant/appearance';
 
 /**
  * Renders the white header
  * @param {boolean} spread - Whether if the layout should be spread out or not
  */
-export const WhiteHeader: React.FC<{
+const WhiteHeader: React.FC<{
   spread?: boolean;
   data?: any;
   toggleState?: any;
@@ -108,4 +109,13 @@ export const WhiteHeader: React.FC<{
       </div>
     </header>
   );
+};
+
+export const white = (props) => {
+  return {
+    [$HEADER.white]: {
+      component: <WhiteHeader {...props} />,
+      css: {},
+    },
+  };
 };

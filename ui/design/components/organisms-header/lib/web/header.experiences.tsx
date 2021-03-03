@@ -3,11 +3,12 @@
 import { jsx } from 'theme-ui';
 import Router from 'next/router';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { $HEADER } from '../constant/appearance';
 
 /**
  * Renders the experiences header
  */
-export const ExperiencesHeader: React.FC<{}> = () => {
+const ExperiencesHeader: React.FC<{}> = () => {
   return (
     <header css={{ height: 80, padding: '0 0' }}>
       <div
@@ -53,4 +54,13 @@ export const ExperiencesHeader: React.FC<{}> = () => {
       </div>
     </header>
   );
+};
+
+export const experiences = (props) => {
+  return {
+    [$HEADER.experiences]: {
+      component: <ExperiencesHeader {...props} />,
+      css: {},
+    },
+  };
 };

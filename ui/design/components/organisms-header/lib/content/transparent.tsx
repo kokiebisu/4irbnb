@@ -1,8 +1,11 @@
-import React from "react";
-import { ChevronDown, Globe } from "@nextbnb/design/assets/svg/regular";
+/** @jsxRuntime classic */
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
+import React from 'react';
+import { ChevronDown, Globe } from '@nextbnb/design/assets/svg/regular';
 
 export const Content: React.FC<{ kind?: string; inverse?: boolean }> = ({
-  kind = "globe",
+  kind = 'globe',
   inverse = false,
 }) => {
   const kinds = {
@@ -10,21 +13,19 @@ export const Content: React.FC<{ kind?: string; inverse?: boolean }> = ({
       <div>
         <div
           css={{
-            alignItems: "center",
+            alignItems: 'center',
             marginRight: 8,
           }}
         >
-          <Globe width={16} fill={inverse ? "white" : "#363636"} />
+          <Globe width={16} fill={inverse ? 'white' : '#363636'} />
         </div>
       </div>
     ),
     host: (
       <h3
-        css={{
-          fontSize: 14,
-        }}
         sx={{
-          ...(inverse ? { color: "c--white" } : { color: "grey.900" }),
+          fontSize: '14px',
+          ...(inverse ? { color: 'white' } : { color: 'grey.900' }),
         }}
       >
         Become a host

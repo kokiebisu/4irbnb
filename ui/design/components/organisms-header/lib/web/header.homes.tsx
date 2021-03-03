@@ -3,12 +3,13 @@
 import { jsx } from 'theme-ui';
 import Router from 'next/router';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { $HEADER } from '../constant/appearance';
 
 /**
  * Renders the header for the homes page
  * @param {boolean} spread - Whether if the layout should be spread out or not
  */
-export const HomesHeader: React.FC<{
+const HomesHeader: React.FC<{
   spread?: boolean;
 }> = ({ spread = false }) => {
   return (
@@ -33,4 +34,13 @@ export const HomesHeader: React.FC<{
       </div>
     </header>
   );
+};
+
+export const homes = (props) => {
+  return {
+    [$HEADER.homes]: {
+      component: <HomesHeader {...props} />,
+      css: {},
+    },
+  };
 };

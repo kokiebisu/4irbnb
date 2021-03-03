@@ -3,8 +3,9 @@
 import { jsx } from 'theme-ui';
 import Router from 'next/router';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { $HEADER } from '../constant/appearance';
 
-export const OnlineHostHeader: React.FC<{}> = () => {
+const OnlineHostHeader: React.FC<{}> = () => {
   return (
     <header css={{ height: 80, padding: '0px 0px' }}>
       <div css={{ padding: 20, height: '100%' }}>
@@ -27,4 +28,13 @@ export const OnlineHostHeader: React.FC<{}> = () => {
       </div>
     </header>
   );
+};
+
+export const onlinehost = (props) => {
+  return {
+    [$HEADER.onlinehost]: {
+      component: <OnlineHostHeader {...props} />,
+      css: {},
+    },
+  };
 };
