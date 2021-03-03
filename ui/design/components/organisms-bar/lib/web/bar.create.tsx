@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
 
-export const CreateBar: React.FC<{
+const CreateBar: React.FC<{
   next?: () => void;
   back?: () => void;
   criteria?: boolean;
@@ -40,4 +40,13 @@ export const CreateBar: React.FC<{
       </div>
     </div>
   );
+};
+
+export const create = (props) => {
+  return {
+    create: {
+      component: <CreateBar {...props} />,
+      css: {},
+    },
+  };
 };

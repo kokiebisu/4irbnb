@@ -2,7 +2,6 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx } from 'theme-ui';
-
 import Router from 'next/router';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
 
@@ -11,7 +10,7 @@ import { Button, $BUTTON } from '@nextbnb/atoms-button';
  * @param {number} page - Current page
  * @param {number} total - Total number of pages
  */
-export const PaginateBar: React.FC<{
+const PaginateBar: React.FC<{
   page?: number;
   total?: number;
 }> = ({ page = 1, total = 15 }) => {
@@ -446,4 +445,13 @@ export const PaginateBar: React.FC<{
       </div>
     </div>
   );
+};
+
+export const paginate = (props) => {
+  return {
+    paginate: {
+      component: <PaginateBar {...props} />,
+      css: {},
+    },
+  };
 };

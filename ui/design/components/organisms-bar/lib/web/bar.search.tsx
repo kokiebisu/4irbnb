@@ -6,7 +6,7 @@ import { Button, $BUTTON } from '@nextbnb/atoms-button';
 /**
  * Renders the Searchbar
  */
-export const SearchBar: React.FC<{
+const SearchBar: React.FC<{
   type?: string;
   selected?: string;
   setSelected?: (param: string) => void;
@@ -259,4 +259,13 @@ const Option: React.FC<{
       </div>
     </button>
   );
+};
+
+export const search = (props) => {
+  return {
+    search: {
+      component: <SearchBar {...props} />,
+      css: {},
+    },
+  };
 };

@@ -14,6 +14,7 @@ export const FilterButton: React.FC<{ label?: string; inverse?: boolean }> = ({
 }) => {
   return (
     <div
+      style={{ whiteSpace: 'nowrap' }}
       css={{
         ...web.wrapper,
       }}

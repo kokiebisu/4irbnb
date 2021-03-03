@@ -1,9 +1,9 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react/types-6-0";
-import { Bar, BarProps, $Bar } from "..";
+import React from 'react';
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { Bar, BarProps, $BAR } from '..';
 
 export default {
-  title: "Organisms/Bar",
+  title: 'Organisms/Bar',
   component: Bar,
   argTypes: { variant: { control: { disable: true } } },
 } as Meta;
@@ -12,27 +12,27 @@ const TemplateStory: Story<BarProps> = (args) => <Bar {...args} />;
 
 export const Paginate = TemplateStory.bind({});
 Paginate.args = {
-  variant: "paginate",
+  variant: $BAR.paginate,
 };
 
 export const Covid = TemplateStory.bind({});
 Covid.args = {
-  variant: $Bar.COVID,
+  variant: $BAR.covid,
 };
 
 export const Progress = TemplateStory.bind({});
 Progress.args = {
-  variant: $Bar.PROGRESS,
+  variant: $BAR.progress,
 };
 Progress.argTypes = {
   percentage: {
-    control: "number",
+    control: 'number',
   },
 };
 
 export const Search = TemplateStory.bind({});
 Search.args = {
-  variant: $Bar.SEARCH,
+  variant: $BAR.search,
 };
 Search.decorators = [
   (Story) => (
@@ -44,34 +44,34 @@ Search.decorators = [
 Search.argTypes = {
   selected: {
     control: {
-      type: "select",
-      options: [null, "location", "checkin", "checkout", "guests"],
+      type: 'select',
+      options: [null, 'location', 'checkin', 'checkout', 'guests'],
     },
   },
   type: {
     control: {
-      type: "select",
-      options: ["stay", "experiences"],
+      type: 'select',
+      options: ['stay', 'experiences'],
     },
   },
 };
 
 export const Create = TemplateStory.bind({});
 Create.args = {
-  variant: $Bar.CREATE,
+  variant: $BAR.create,
 };
 
 export const Menu = TemplateStory.bind({});
 Menu.args = {
-  variant: $Bar.MENU,
+  variant: $BAR.menu,
 };
 
 export const Availability = TemplateStory.bind({});
 Availability.args = {
-  variant: $Bar.AVAILABILITY,
+  variant: $BAR.availability,
 };
 
 export const Filters = TemplateStory.bind({});
 Filters.args = {
-  variant: $Bar.FILTERS,
+  variant: $BAR.filters,
 };

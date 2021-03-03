@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { useLayoutEffect, useRef, useState } from 'react';
 
-export const FiltersBar: React.FC<{}> = () => {
+const FiltersBar: React.FC<{}> = () => {
   const [width, setWidth] = useState(500);
   const containerRef = useRef<HTMLDivElement>();
   const handleRef = () => {
@@ -177,4 +177,13 @@ export const FiltersBar: React.FC<{}> = () => {
       </div>
     </div>
   );
+};
+
+export const filters = (props) => {
+  return {
+    filters: {
+      component: <FiltersBar {...props} />,
+      css: {},
+    },
+  };
 };

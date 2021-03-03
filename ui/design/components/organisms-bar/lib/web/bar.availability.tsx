@@ -9,7 +9,7 @@ import { Star } from '@nextbnb/design/assets/svg/original';
  * @param {number} ratings - Average ratings from the users
  * @param {number} reviews - Total number of reviews from the users
  */
-export const AvailabilityBar: React.FC<{
+const AvailabilityBar: React.FC<{
   ratings?: number;
   reviews?: number;
 }> = ({ ratings = 4.99, reviews = 271 }) => {
@@ -51,4 +51,13 @@ export const AvailabilityBar: React.FC<{
       </div>
     </div>
   );
+};
+
+export const availability = (props) => {
+  return {
+    availability: {
+      component: <AvailabilityBar {...props} />,
+      css: {},
+    },
+  };
 };
