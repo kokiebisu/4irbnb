@@ -4,6 +4,7 @@ import { jsx } from 'theme-ui';
 import React from 'react';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { getOptionContents } from '../content/option';
+import { $MODAL } from '../constant/appearance';
 
 const Options: React.FC<{
   params?: {
@@ -36,7 +37,7 @@ const Options: React.FC<{
 /**
  * Renders the menu modal
  */
-export const MenuModal: React.FC<{ authenticated?: boolean }> = ({
+const MenuModal: React.FC<{ authenticated?: boolean }> = ({
   authenticated = false,
 }) => {
   return (
@@ -106,4 +107,13 @@ export const MenuModal: React.FC<{ authenticated?: boolean }> = ({
       </div>
     </div>
   );
+};
+
+export const menu = (props) => {
+  return {
+    [$MODAL.menu]: {
+      component: <MenuModal {...props} />,
+      extendsTo: { width: 200, borderRadius: 16 },
+    },
+  };
 };

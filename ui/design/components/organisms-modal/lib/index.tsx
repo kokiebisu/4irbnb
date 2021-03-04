@@ -1,34 +1,22 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useRef } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { jsx } from 'theme-ui';
+import { useRef } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
-import useOnClickOutside from "@nextbnb/design/hooks/useOnClickOutside";
-import { useLockBodyScroll } from "@nextbnb/design/hooks/useLockBodyScroll";
+import useOnClickOutside from '@nextbnb/design/hooks/useOnClickOutside';
+import { useLockBodyScroll } from '@nextbnb/design/hooks/useLockBodyScroll';
 
-import { MenuModal } from "./web/modal.menu";
-import { PrivacyModal } from "./web/modal.privacy";
-import { AuthModal } from "./web/modal.auth";
-import { BookingModal } from "./web/modal.booking";
-import { GlobeModal } from "./web/modal.globe";
-import { LocationModal } from "./web/modal.location";
-import { GuestsModal } from "./web/modal.guests";
-import { CheckModal } from "./web/modal.check";
-import { ListingModal } from "./web/modal.listing";
-
-export const $Modal = {
-  PRIVACY: "privacy",
-  MENU: "menu",
-  AUTH: "auth",
-  BOOKING: "booking",
-  GLOBE: "globe",
-  LOCATION: "location",
-  GUESTS: "guests",
-  CHECKIN: "checkin",
-  CHECKOUT: "checkout",
-  LISTING: "listing",
-};
+import { MenuModal } from './web/modal.menu';
+import { PrivacyModal } from './web/modal.privacy';
+import { AuthModal } from './web/modal.auth';
+import { BookingModal } from './web/modal.booking';
+import { GlobeModal } from './web/modal.globe';
+import { LocationModal } from './web/modal.location';
+import { GuestsModal } from './web/modal.guests';
+import { CheckModal } from './web/modal.check';
+import { ListingModal } from './web/modal.listing';
+import { $MODAL } from './constant/appearance';
 
 export interface ModalProps {
   variant: string;
@@ -49,10 +37,10 @@ export interface ModalProps {
  * @param {string} dispatchType - The type of dispatch
  */
 export const Modal: React.FC<ModalProps> = ({
-  variant = $Modal.AUTH,
+  variant = $MODAL.auth,
   extendsTo,
   dispatch,
-  animate = "default",
+  animate = 'default',
   lock = false,
   noPadding = false,
   handleDispatch,
@@ -72,12 +60,12 @@ export const Modal: React.FC<ModalProps> = ({
     slideup: {
       initial: { y: 400, opacity: 0 },
       animate: { y: 0, opacity: 1 },
-      transition: { duration: 0.4, ease: "easeOut" },
+      transition: { duration: 0.4, ease: 'easeOut' },
     },
     default: {
       initial: { opacity: 0 },
       animate: { opacity: 1 },
-      transition: { duration: 0.1, ease: "easeInOut" },
+      transition: { duration: 0.1, ease: 'easeInOut' },
     },
   };
 
@@ -88,35 +76,7 @@ export const Modal: React.FC<ModalProps> = ({
       noPadding?: boolean;
     };
   } = {
-    privacy: {
-      component: <PrivacyModal {...props} />,
-      extendsTo: {
-        width: [
-          "auto",
-          "auto",
-          "auto",
-          "auto",
-          "auto",
-          "auto",
-          "auto",
-          "auto",
-          "100%",
-        ],
-        maxWidth: [
-          "auto",
-          "auto",
-          "auto",
-          "auto",
-          "auto",
-          "auto",
-          "auto",
-          "auto",
-          "1600px",
-        ],
-        borderRadius: 8,
-        padding: 25,
-      },
-    },
+    ...privacy(props),
     menu: {
       component: <MenuModal {...props} />,
       extendsTo: { width: 200, borderRadius: 16 },
@@ -124,7 +84,7 @@ export const Modal: React.FC<ModalProps> = ({
     auth: {
       component: <AuthModal {...props} />,
       extendsTo: {
-        width: ["100%", "100%", "550px"],
+        width: ['100%', '100%', '550px'],
         borderRadius: 16,
       },
     },
@@ -132,7 +92,7 @@ export const Modal: React.FC<ModalProps> = ({
       component: <BookingModal {...props} />,
       extendsTo: {
         padding: 24,
-        border: "1px solid grey.300",
+        border: '1px solid grey.300',
         borderRadius: 18,
       },
     },
@@ -141,7 +101,7 @@ export const Modal: React.FC<ModalProps> = ({
       extendsTo: {
         maxWidth: 720,
         padding: 25,
-        height: "fit-content",
+        height: 'fit-content',
         borderRadius: 16,
       },
     },
@@ -150,7 +110,7 @@ export const Modal: React.FC<ModalProps> = ({
       extendsTo: {
         maxWidth: 400,
         borderRadius: 16,
-        padding: "25px 0",
+        padding: '25px 0',
       },
     },
     guests: {
@@ -166,7 +126,7 @@ export const Modal: React.FC<ModalProps> = ({
       extendsTo: {
         maxWidth: 720,
         borderRadius: 32,
-        padding: "30px 45px",
+        padding: '30px 45px',
       },
     },
     checkout: {
@@ -174,7 +134,7 @@ export const Modal: React.FC<ModalProps> = ({
       extendsTo: {
         maxWidth: 720,
         borderRadius: 32,
-        padding: "30px 45px",
+        padding: '30px 45px',
       },
     },
     listing: {
@@ -199,13 +159,13 @@ export const Modal: React.FC<ModalProps> = ({
             transition={animation[animate].transition}
             ref={containerRef}
             css={{
-              boxShadow: "rgba(0, 0, 0, 0.08) 0px 1px 12px",
-              width: "100%",
+              boxShadow: 'rgba(0, 0, 0, 0.08) 0px 1px 12px',
+              width: '100%',
               ...extendsTo,
               ...variants[variant].extendsTo,
             }}
             sx={{
-              bg: "white",
+              bg: 'white',
             }}
           >
             {variants[variant].component}
@@ -220,10 +180,10 @@ export const Modal: React.FC<ModalProps> = ({
       css={{
         ...extendsTo,
         ...variants[variant].extendsTo,
-        width: "100%",
-        boxShadow: "rgba(0, 0, 0, 0.08) 0px 1px 12px",
+        width: '100%',
+        boxShadow: 'rgba(0, 0, 0, 0.08) 0px 1px 12px',
       }}
-      sx={{ bg: "white" }}
+      sx={{ bg: 'white' }}
       data-testid={`${variant}-modal`}
     >
       {variants[variant].component}

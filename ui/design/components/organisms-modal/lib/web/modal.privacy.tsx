@@ -3,12 +3,13 @@
 import { jsx } from 'theme-ui';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { Lock } from '@nextbnb/design/assets/svg/original';
+import { $MODAL } from '../constant/appearance';
 
 /**
  * Renders the privacy modal
  * @param {function} dispatchCallback - Dispatch which handles the toggle of the modal
  */
-export const PrivacyModal: React.FC<{ dispatchCallback?: (param) => void }> = ({
+const PrivacyModal: React.FC<{ dispatchCallback?: (param) => void }> = ({
   dispatchCallback,
 }) => {
   // const toggleDispatch = useToggleDispatch();
@@ -111,4 +112,38 @@ export const PrivacyModal: React.FC<{ dispatchCallback?: (param) => void }> = ({
       </div>
     </div>
   );
+};
+
+export const privacy = (props) => {
+  return {
+    [$MODAL.privacy]: {
+      component: <PrivacyModal {...props} />,
+      css: {
+        width: [
+          'auto',
+          'auto',
+          'auto',
+          'auto',
+          'auto',
+          'auto',
+          'auto',
+          'auto',
+          '100%',
+        ],
+        maxWidth: [
+          'auto',
+          'auto',
+          'auto',
+          'auto',
+          'auto',
+          'auto',
+          'auto',
+          'auto',
+          '1600px',
+        ],
+        borderRadius: 8,
+        padding: 25,
+      },
+    },
+  };
 };
