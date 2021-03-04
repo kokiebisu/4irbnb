@@ -77,25 +77,9 @@ export const Modal: React.FC<ModalProps> = ({
     };
   } = {
     ...privacy(props),
-    menu: {
-      component: <MenuModal {...props} />,
-      extendsTo: { width: 200, borderRadius: 16 },
-    },
-    auth: {
-      component: <AuthModal {...props} />,
-      extendsTo: {
-        width: ['100%', '100%', '550px'],
-        borderRadius: 16,
-      },
-    },
-    booking: {
-      component: <BookingModal {...props} />,
-      extendsTo: {
-        padding: 24,
-        border: '1px solid grey.300',
-        borderRadius: 18,
-      },
-    },
+    ...menu(props),
+    ...auth(props),
+    ...booking(props),
     globe: {
       component: <GlobeModal {...props} />,
       extendsTo: {

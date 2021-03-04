@@ -2,12 +2,13 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { $MODAL } from '../constant/appearance';
 
 /**
  * Renders the booking modal
  * @param {Object[]} availables - Lists all the available dates
  */
-export const BookingModal: React.FC<{
+const BookingModal: React.FC<{
   availables?: any;
 }> = ({
   availables = [
@@ -140,4 +141,17 @@ export const BookingModal: React.FC<{
       </div>
     </div>
   );
+};
+
+export const booking = (props) => {
+  return {
+    [$MODAL.booking]: {
+      component: <BookingModal {...props} />,
+      extendsTo: {
+        padding: 24,
+        border: '1px solid grey.300',
+        borderRadius: 18,
+      },
+    },
+  };
 };
