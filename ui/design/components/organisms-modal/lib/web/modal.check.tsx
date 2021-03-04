@@ -124,7 +124,7 @@ export const checkin = (props) => {
   return {
     [$MODAL.checkin]: {
       component: <CheckModal {...props} />,
-      extendsTo: {
+      css: {
         maxWidth: 720,
         borderRadius: 32,
         padding: '30px 45px',
@@ -137,7 +137,7 @@ export const checkout = (props) => {
   return {
     [$MODAL.checkout]: {
       component: <CheckModal {...props} />,
-      extendsTo: {
+      css: {
         maxWidth: 720,
         borderRadius: 32,
         padding: '30px 45px',

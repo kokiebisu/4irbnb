@@ -113,7 +113,7 @@ export const menu = (props) => {
   return {
     [$MODAL.menu]: {
       component: <MenuModal {...props} />,
-      extendsTo: { width: 200, borderRadius: 16 },
+      css: { width: '200px', borderRadius: 16 },
     },
   };
 };

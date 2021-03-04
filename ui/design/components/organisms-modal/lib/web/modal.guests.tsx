@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Input, $Input } from '@nextbnb/atoms-input';
+import { Input, $INPUT } from '@nextbnb/atoms-input';
 import { $MODAL } from '../constant/appearance';
 
 const GuestsModal: React.FC<{}> = () => {
@@ -9,7 +9,7 @@ const GuestsModal: React.FC<{}> = () => {
     <div>
       <div>
         <Input
-          variant={$Input.COUNTER}
+          variant={$INPUT.counter}
           type="guests"
           title="Adults"
           subtitle="Ages 13 or above"
@@ -18,7 +18,7 @@ const GuestsModal: React.FC<{}> = () => {
       <div css={{ height: 1, width: '100%', backgroundColor: '#EBEBEB' }} />
       <div>
         <Input
-          variant={$Input.COUNTER}
+          variant={$INPUT.counter}
           type="guests"
           title="Children"
           subtitle="Ages 2 - 12"
@@ -27,7 +27,7 @@ const GuestsModal: React.FC<{}> = () => {
       <div css={{ height: 1, width: '100%', backgroundColor: '#EBEBEB' }} />
       <div>
         <Input
-          variant={$Input.COUNTER}
+          variant={$INPUT.counter}
           type="guests"
           title="Infants"
           subtitle="Under 2"
@@ -41,7 +41,7 @@ export const guests = (props) => {
   return {
     [$MODAL.guests]: {
       component: <GuestsModal {...props} />,
-      extendsTo: {
+      css: {
         maxWidth: 325,
         borderRadius: 32,
         padding: 25,

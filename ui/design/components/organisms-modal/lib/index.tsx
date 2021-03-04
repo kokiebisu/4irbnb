@@ -7,16 +7,10 @@ import { AnimatePresence, motion } from 'framer-motion';
 import useOnClickOutside from '@nextbnb/design/hooks/useOnClickOutside';
 import { useLockBodyScroll } from '@nextbnb/design/hooks/useLockBodyScroll';
 
-import { menu } from './web/modal.menu';
-import { privacy } from './web/modal.privacy';
-import { auth } from './web/modal.auth';
-import { booking } from './web/modal.booking';
-import { globe } from './web/modal.globe';
-import { location } from './web/modal.location';
-import { guests } from './web/modal.guests';
-import { checkin, checkout } from './web/modal.check';
-import { listing } from './web/modal.listing';
 import { $MODAL } from './constant/appearance';
+import { generateVariants } from './utils/variants';
+import { webVariants } from './web/variants';
+import { PLATFORM } from './constant/platform';
 
 export { $MODAL };
 
@@ -39,6 +33,7 @@ export interface ModalProps {
  * @param {string} dispatchType - The type of dispatch
  */
 export const Modal: React.FC<ModalProps> = ({
+  platform = PLATFORM.web,
   variant = $MODAL.auth,
   extendsTo,
   dispatch,
@@ -50,6 +45,8 @@ export const Modal: React.FC<ModalProps> = ({
 }) => {
   const { criteria } = props;
   const containerRef = useRef();
+
+  const variants = generateVariants(PLATFORM.web, webVariants, props);
 
   if (lock) {
     useLockBodyScroll();
@@ -71,25 +68,6 @@ export const Modal: React.FC<ModalProps> = ({
     },
   };
 
-  const variants: {
-    [variant: string]: {
-      component: JSX.Element;
-      extendsTo?: any;
-      noPadding?: boolean;
-    };
-  } = {
-    ...privacy(props),
-    ...menu(props),
-    ...auth(props),
-    ...booking(props),
-    ...globe(props),
-    ...location(props),
-    ...guests(props),
-    ...checkin(props),
-    ...checkout(props),
-    ...listing(props),
-  };
-
   if (criteria !== undefined) {
     return (
       <AnimatePresence>
@@ -105,9 +83,9 @@ export const Modal: React.FC<ModalProps> = ({
               boxShadow: 'rgba(0, 0, 0, 0.08) 0px 1px 12px',
               width: '100%',
               ...extendsTo,
-              ...variants[variant].extendsTo,
             }}
             sx={{
+              ...variants[variant].css,
               bg: 'white',
             }}
           >
@@ -122,11 +100,9 @@ export const Modal: React.FC<ModalProps> = ({
       ref={containerRef}
       css={{
         ...extendsTo,
-        ...variants[variant].extendsTo,
-        width: '100%',
-        boxShadow: 'rgba(0, 0, 0, 0.08) 0px 1px 12px',
+        boxShadow: 'rgba(8, 5, 5, 0.08) 0px 1px 12px',
       }}
-      sx={{ bg: 'white' }}
+      sx={{ ...variants[variant].css, bg: 'white' }}
       data-testid={`${variant}-modal`}
     >
       {variants[variant].component}

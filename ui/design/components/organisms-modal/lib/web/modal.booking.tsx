@@ -147,7 +147,7 @@ export const booking = (props) => {
   return {
     [$MODAL.booking]: {
       component: <BookingModal {...props} />,
-      extendsTo: {
+      css: {
         padding: 24,
         border: '1px solid grey.300',
         borderRadius: 18,

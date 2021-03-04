@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
-import { Input, $Input } from '@nextbnb/atoms-input';
+import { Input, $INPUT } from '@nextbnb/atoms-input';
 import { Plus } from '@nextbnb/design/assets/svg/original';
 import { $MODAL } from '../constant/appearance';
 
@@ -15,9 +15,9 @@ const ListingModal: React.FC<{}> = () => {
         </h4>
       </div>
       <div>
-        <Input variant={$Input.ADDRESS} direction="bottom" />
-        <Input variant={$Input.PLACE} direction="middle" />
-        <Input variant={$Input.GUESTS} direction="top" />
+        <Input variant={$INPUT.address} direction="bottom" />
+        <Input variant={$INPUT.place} direction="middle" />
+        <Input variant={$INPUT.guests} direction="top" />
       </div>
       <div
         css={{
@@ -52,7 +52,7 @@ export const listing = (props) => {
   return {
     [$MODAL.listing]: {
       component: <ListingModal {...props} />,
-      extendsTo: {
+      css: {
         maxWidth: 500,
         padding: 25,
         borderRadius: 20,

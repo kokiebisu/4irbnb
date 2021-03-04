@@ -104,7 +104,7 @@ export const location = (props) => {
   return {
     [$MODAL.location]: {
       component: <LocationModal {...props} />,
-      extendsTo: {
+      css: {
         maxWidth: 400,
         borderRadius: 16,
         padding: '25px 0',

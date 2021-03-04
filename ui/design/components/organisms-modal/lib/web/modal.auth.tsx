@@ -84,7 +84,7 @@ export const auth = (props) => {
   return {
     [$MODAL.auth]: {
       component: <AuthModal {...props} />,
-      extendsTo: {
+      css: {
         width: ['100%', '100%', '550px'],
         borderRadius: 16,
       },

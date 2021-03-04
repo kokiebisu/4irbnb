@@ -60,7 +60,7 @@ export const globe = (props) => {
   return {
     [$MODAL.globe]: {
       component: <GlobeModal {...props} />,
-      extendsTo: {
+      css: {
         maxWidth: 720,
         padding: 25,
         height: 'fit-content',
