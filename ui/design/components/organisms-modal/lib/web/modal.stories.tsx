@@ -1,80 +1,80 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react/types-6-0";
-import { Modal, ModalProps, $Modal } from "..";
+import React from 'react';
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { Modal, ModalProps, $MODAL } from '..';
 
 export default {
-  title: "Organisms/Modal",
-  argTypes: { onClick: { action: "clicked" } },
+  title: 'Organisms/Modal',
+  argTypes: { onClick: { action: 'clicked' } },
 } as Meta;
 
 const TemplateStory: Story<ModalProps> = (args) => <Modal {...args} />;
 
 export const Privacy = TemplateStory.bind({});
 Privacy.args = {
-  variant: $Modal.PRIVACY,
+  variant: $MODAL.privacy,
 };
 
 export const Menu = TemplateStory.bind({});
 Menu.args = {
-  variant: $Modal.MENU,
+  variant: $MODAL.menu,
 };
 Menu.argTypes = {
   authenticated: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
 export const Auth = TemplateStory.bind({});
 Auth.args = {
-  variant: $Modal.AUTH,
-  authState: { title: "Forgot password" },
+  variant: $MODAL.auth,
+  authState: { title: 'Forgot password' },
 };
 Auth.argTypes = {
   title: {
     control: {
-      type: "select",
-      options: ["Forgot password", "Others"],
+      type: 'select',
+      options: ['Forgot password', 'Others'],
     },
   },
   display: {
     control: {
-      type: "select",
-      options: ["login", "signup", "auth", "forgotpassword", "exists"],
+      type: 'select',
+      options: ['login', 'signup', 'auth', 'forgotpassword', 'exists'],
     },
   },
 };
 
 export const Booking = TemplateStory.bind({});
 Booking.args = {
-  variant: $Modal.BOOKING,
+  variant: $MODAL.booking,
 };
 
 export const Globe = TemplateStory.bind({});
 Globe.args = {
-  variant: $Modal.GLOBE,
+  variant: $MODAL.globe,
 };
 
 export const Location = TemplateStory.bind({});
 Location.args = {
-  variant: $Modal.LOCATION,
+  variant: $MODAL.location,
 };
 
 export const Guests = TemplateStory.bind({});
 Guests.args = {
-  variant: $Modal.GUESTS,
+  variant: $MODAL.guests,
 };
 
 export const Checkin = TemplateStory.bind({});
 Checkin.args = {
-  variant: $Modal.CHECKIN,
+  variant: $MODAL.checkin,
 };
 
 export const Checkout = TemplateStory.bind({});
 Checkout.args = {
-  variant: $Modal.CHECKOUT,
+  variant: $MODAL.checkout,
 };
 
 export const Listing = TemplateStory.bind({});
 Listing.args = {
-  variant: $Modal.LISTING,
+  variant: $MODAL.listing,
 };

@@ -7,16 +7,18 @@ import { AnimatePresence, motion } from 'framer-motion';
 import useOnClickOutside from '@nextbnb/design/hooks/useOnClickOutside';
 import { useLockBodyScroll } from '@nextbnb/design/hooks/useLockBodyScroll';
 
-import { MenuModal } from './web/modal.menu';
-import { PrivacyModal } from './web/modal.privacy';
-import { AuthModal } from './web/modal.auth';
-import { BookingModal } from './web/modal.booking';
-import { GlobeModal } from './web/modal.globe';
-import { LocationModal } from './web/modal.location';
-import { GuestsModal } from './web/modal.guests';
-import { CheckModal } from './web/modal.check';
-import { ListingModal } from './web/modal.listing';
+import { menu } from './web/modal.menu';
+import { privacy } from './web/modal.privacy';
+import { auth } from './web/modal.auth';
+import { booking } from './web/modal.booking';
+import { globe } from './web/modal.globe';
+import { location } from './web/modal.location';
+import { guests } from './web/modal.guests';
+import { checkin, checkout } from './web/modal.check';
+import { listing } from './web/modal.listing';
 import { $MODAL } from './constant/appearance';
+
+export { $MODAL };
 
 export interface ModalProps {
   variant: string;
@@ -80,55 +82,12 @@ export const Modal: React.FC<ModalProps> = ({
     ...menu(props),
     ...auth(props),
     ...booking(props),
-    globe: {
-      component: <GlobeModal {...props} />,
-      extendsTo: {
-        maxWidth: 720,
-        padding: 25,
-        height: 'fit-content',
-        borderRadius: 16,
-      },
-    },
-    location: {
-      component: <LocationModal {...props} />,
-      extendsTo: {
-        maxWidth: 400,
-        borderRadius: 16,
-        padding: '25px 0',
-      },
-    },
-    guests: {
-      component: <GuestsModal {...props} />,
-      extendsTo: {
-        maxWidth: 325,
-        borderRadius: 32,
-        padding: 25,
-      },
-    },
-    checkin: {
-      component: <CheckModal {...props} />,
-      extendsTo: {
-        maxWidth: 720,
-        borderRadius: 32,
-        padding: '30px 45px',
-      },
-    },
-    checkout: {
-      component: <CheckModal {...props} />,
-      extendsTo: {
-        maxWidth: 720,
-        borderRadius: 32,
-        padding: '30px 45px',
-      },
-    },
-    listing: {
-      component: <ListingModal {...props} />,
-      extendsTo: {
-        maxWidth: 500,
-        padding: 25,
-        borderRadius: 20,
-      },
-    },
+    ...globe(props),
+    ...location(props),
+    ...guests(props),
+    ...checkin(props),
+    ...checkout(props),
+    ...listing(props),
   };
 
   if (criteria !== undefined) {

@@ -4,8 +4,9 @@ import { jsx } from 'theme-ui';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { Input, $Input } from '@nextbnb/atoms-input';
 import { Plus } from '@nextbnb/design/assets/svg/original';
+import { $MODAL } from '../constant/appearance';
 
-export const ListingModal: React.FC<{}> = () => {
+const ListingModal: React.FC<{}> = () => {
   return (
     <div>
       <div css={{ marginBottom: 24 }}>
@@ -45,4 +46,17 @@ export const ListingModal: React.FC<{}> = () => {
       </div>
     </div>
   );
+};
+
+export const listing = (props) => {
+  return {
+    [$MODAL.listing]: {
+      component: <ListingModal {...props} />,
+      extendsTo: {
+        maxWidth: 500,
+        padding: 25,
+        borderRadius: 20,
+      },
+    },
+  };
 };
