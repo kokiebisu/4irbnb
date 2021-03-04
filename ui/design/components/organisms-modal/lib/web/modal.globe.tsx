@@ -1,12 +1,12 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-
 import { useState } from 'react';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { Prototype, $Prototype } from '@nextbnb/prototype-globe';
+import { $MODAL } from '../constant/appearance';
 
-export const GlobeModal: React.FC<{ toggleDispatch?: (params) => void }> = ({
+const GlobeModal: React.FC<{ toggleDispatch?: (params) => void }> = ({
   toggleDispatch,
 }) => {
   const [prototype, setPrototype] = useState($Prototype.LANGUAGE);
@@ -54,4 +54,18 @@ export const GlobeModal: React.FC<{ toggleDispatch?: (params) => void }> = ({
       </div>
     </div>
   );
+};
+
+export const globe = (props) => {
+  return {
+    [$MODAL.globe]: {
+      component: <GlobeModal {...props} />,
+      extendsTo: {
+        maxWidth: 720,
+        padding: 25,
+        height: 'fit-content',
+        borderRadius: 16,
+      },
+    },
+  };
 };
