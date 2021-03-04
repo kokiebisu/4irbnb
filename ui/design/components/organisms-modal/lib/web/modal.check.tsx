@@ -3,8 +3,9 @@
 import { jsx } from 'theme-ui';
 import { ChevronLeft, ChevronRight } from '@nextbnb/design/assets/svg/regular';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { $MODAL } from '../constant/appearance';
 
-export const CheckModal: React.FC<{}> = () => {
+const CheckModal: React.FC<{}> = () => {
   return (
     <div css={{ display: 'flex', justifyContent: 'center' }}>
       <div
@@ -117,4 +118,30 @@ const Calendar: React.FC<{
       </div>
     </div>
   );
+};
+
+export const checkin = (props) => {
+  return {
+    [$MODAL.checkin]: {
+      component: <CheckModal {...props} />,
+      extendsTo: {
+        maxWidth: 720,
+        borderRadius: 32,
+        padding: '30px 45px',
+      },
+    },
+  };
+};
+
+export const checkout = (props) => {
+  return {
+    [$MODAL.checkout]: {
+      component: <CheckModal {...props} />,
+      extendsTo: {
+        maxWidth: 720,
+        borderRadius: 32,
+        padding: '30px 45px',
+      },
+    },
+  };
 };
