@@ -9,7 +9,7 @@ import { Modal, $Modal } from '@nextbnb/organisms-modal';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { Prototype } from '@nextbnb/prototype-searchbar';
 import { NameLogo, NoNameLogo } from '@nextbnb/design/assets/svg/logo';
-import { Content } from '../content/transparent';
+import { Globe } from '@nextbnb/design/assets/svg/original';
 import { useOnClickOutside } from '@nextbnb/design/hooks/useOnClickOutside';
 import { $HEADER } from '../constant/appearance';
 
@@ -37,9 +37,11 @@ const LandingHeader: React.FC<{
   const [expanded, setExpanded] = useState(false);
 
   useOnClickOutside(searchbarRef, () => {
-    toggleDispatch({
-      type: 'toggle_reset',
-    });
+    if (toggleDispatch) {
+      toggleDispatch({
+        type: 'toggle_reset',
+      });
+    }
     setExpanded(!expanded);
   });
 
@@ -73,7 +75,7 @@ const LandingHeader: React.FC<{
           <div
             css={{ marginTop: 4 }}
             sx={{
-              display: ['block', 'block', 'block', 'block', 'block', 'none'],
+              display: ['block', 'block', 'block', 'none'],
             }}
           >
             <NoNameLogo
@@ -87,7 +89,7 @@ const LandingHeader: React.FC<{
               marginTop: 4,
             }}
             sx={{
-              display: ['block', 'block', 'block', 'block', 'block', 'none'],
+              display: ['none', 'none', 'none', 'block'],
             }}
           >
             <NameLogo
@@ -105,7 +107,16 @@ const LandingHeader: React.FC<{
           >
             <Button
               variant={$BUTTON.transparent}
-              content={<Content kind="host" inverse={criteria} />}
+              content={
+                <h3
+                  sx={{
+                    fontSize: '14px',
+                    ...(criteria ? { color: 'white' } : { color: 'grey.900' }),
+                  }}
+                >
+                  Become a host
+                </h3>
+              }
               inverse={criteria}
               animate
               onClick={() => Router.push('/host/homes')}
@@ -114,7 +125,17 @@ const LandingHeader: React.FC<{
           <div css={{ margin: '0 2px' }}>
             <Button
               variant={$BUTTON.transparent}
-              content={<Content kind="globe" inverse={criteria} />}
+              content={
+                <div>
+                  <div
+                    css={{
+                      alignItems: 'center',
+                    }}
+                  >
+                    <Globe width={16} fill={criteria ? 'white' : '#363636'} />
+                  </div>
+                </div>
+              }
               inverse={criteria}
               onClick={() => toggleDispatch({ type: 'toggle_globe' })}
             />

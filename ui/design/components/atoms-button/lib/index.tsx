@@ -37,7 +37,6 @@ export const Button: React.FC<ButtonProps> = ({
   const { disable } = props;
 
   const variants = generateVariants(PLATFORM[platform], webVariants, props);
-  console.log('variants', variants);
 
   return (
     <ThemeProvider theme={theme}>

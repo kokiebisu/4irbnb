@@ -1,14 +1,14 @@
-import { useEffect, useState } from "react";
-import Router from "next/router";
+import { useEffect, useState } from 'react';
+import Router from 'next/router';
 
-import { useStayDispatch, useStayState } from "@context/stay";
+import { useStayDispatch, useStayState } from '@context/stay';
 
-import { Prototype, $Prototype } from "@airbnb/components/prototype/web/create";
+import { Prototype, $Prototype } from '@airbnb/components/prototype/web/create';
 import {
   inputTypes,
   properties,
-} from "@airbnb/components/atoms/input/logic/logic.types";
-import { Layout } from "@airbnb/components/layout/web";
+} from '@airbnb/components/atoms/input/logic/logic.types';
+import { Layout } from '@airbnb/components/layout/web';
 
 const RoomPage = () => {
   const stayDispatch = useStayDispatch();
@@ -24,7 +24,7 @@ const RoomPage = () => {
   const proceed = () => {
     if (data.stay && data.property) {
       stayDispatch({
-        type: "add",
+        type: 'add',
         payload: {
           place: data.place,
           property: data.property,
@@ -32,15 +32,14 @@ const RoomPage = () => {
         },
       });
       setTimeout(() => {
-        Router.push("/become-a-host/bedrooms");
+        Router.push('/become-a-host/bedrooms');
       }, 500);
     }
   };
 
   const revert = () => {
-    console.log("revert called");
     setTimeout(() => {
-      Router.push("/become-a-host");
+      Router.push('/become-a-host');
     }, 500);
   };
 

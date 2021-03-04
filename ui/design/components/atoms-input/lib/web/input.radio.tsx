@@ -12,15 +12,12 @@ const RadioInput: React.FC<{
   value?: string;
 }> = ({ title = 'title here', subtitle, selected = null, select }) => {
   const [inputSelected, setInputSelected] = useState(false);
-  console.log('i', inputSelected);
 
   const displayingValue =
     typeof selected === 'boolean' ? selected : inputSelected;
 
   const handleDisplayingValue = (value) => {
-    console.log('valu', value);
     if (typeof selected === 'boolean' && select) {
-      console.log('en');
       return select(value);
     }
     setInputSelected(!inputSelected);

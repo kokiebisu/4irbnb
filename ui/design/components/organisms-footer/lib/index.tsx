@@ -82,7 +82,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
                         key={index}
                       >
                         <Button
-                          variant={$BUTTON.LINK}
+                          variant={$BUTTON.link}
                           onClick={() => Router.push(url)}
                           title={name}
                         />

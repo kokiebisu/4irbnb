@@ -26,8 +26,6 @@ const PlaceInput: React.FC<{
   const containerRef = useRef<any>();
   const [expanded, setExpanded] = useState(false);
 
-  console.log('inpu', inputValue);
-
   const handleDisplayingValue = (value) => {
     if (typeof value === 'string' && changePlace) {
       return changePlace(value);
@@ -162,7 +160,6 @@ const PlaceInput: React.FC<{
                     bg: 'transparent',
                   }}
                   onClick={() => {
-                    console.log('clicked');
                     handleDisplayingValue('Entire place');
                     setExpanded(!expanded);
                   }}
@@ -204,7 +201,6 @@ const PlaceInput: React.FC<{
                     bg: 'transparent',
                   }}
                   onClick={() => {
-                    console.log('clicked');
                     handleDisplayingValue('Private room');
                     setExpanded(!expanded);
                   }}

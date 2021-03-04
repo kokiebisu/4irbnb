@@ -1,11 +1,16 @@
 {
   "name": "@nextbnb/content",
   "version": "2.0.1",
-  "main": "build/index",
+  "main": "dist/bundle.js",
+  "module": "dist/bundle.js",
+  "src": "lib/index.ts",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "clean": "rm -rf build/",
-    "compile": "yarn clean && tsc"
+    "clean": "rm -rf dist/",
+    "compile": "yarn clean && webpack --config webpack.config.js"
   },
   "devDependencies": {
     "typescript": "^4.1.3"

@@ -15,7 +15,10 @@ const TransparentButton: React.FC<{
   return (
     <div
       css={web.wrapper}
-      sx={inverse ? theme.wrapper.inverse : theme.wrapper.plain}
+      sx={{
+        ...(inverse ? theme.wrapper.inverse : theme.wrapper.plain),
+        padding: '12px 15px',
+      }}
     >
       {content}
     </div>
