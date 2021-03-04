@@ -2,9 +2,10 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { $MODAL } from '../constant/appearance';
 // import { Layout } from "../../../layout/web";
 
-export const LocationModal: React.FC<{}> = () => {
+const LocationModal: React.FC<{}> = () => {
   const recentLocations = [
     { location: 'Chilliwack', from: 'Jan. 7', to: 'Jan. 21', guests: 4 },
     { location: 'Tofino' },
@@ -97,4 +98,17 @@ export const LocationModal: React.FC<{}> = () => {
       </div>
     </div>
   );
+};
+
+export const location = (props) => {
+  return {
+    [$MODAL.location]: {
+      component: <LocationModal {...props} />,
+      extendsTo: {
+        maxWidth: 400,
+        borderRadius: 16,
+        padding: '25px 0',
+      },
+    },
+  };
 };
