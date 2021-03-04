@@ -2,6 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { $MODAL } from '../constant/appearance';
 // import { $Prototype, Prototype } from "../../../../prototype/web/auth";
 
 /**
@@ -10,7 +11,7 @@ import { Button, $BUTTON } from '@nextbnb/atoms-button';
  * @param {function} authDispatch - Dispatch which handles the toggling
  * @param {function} authState - Context state which handles authentication
  */
-export const AuthModal: React.FC<{
+const AuthModal: React.FC<{
   toggleDispatch?: (params: any) => void;
   authDispatch?: (params: any) => void;
   title?: string;
@@ -77,4 +78,16 @@ export const AuthModal: React.FC<{
       {/* <Prototype variant={$Prototype.LOGIN} /> */}
     </div>
   );
+};
+
+export const auth = (props) => {
+  return {
+    [$MODAL.auth]: {
+      component: <AuthModal {...props} />,
+      extendsTo: {
+        width: ['100%', '100%', '550px'],
+        borderRadius: 16,
+      },
+    },
+  };
 };
