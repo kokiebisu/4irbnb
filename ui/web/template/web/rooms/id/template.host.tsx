@@ -160,7 +160,7 @@ export const HostTemplate: React.FC<{
                   }}
                 >
                   <Bullet
-                    variant={$Bullet.HOST}
+                    variant={$BULLET.host}
                     categoryType="review"
                     total={numberOfReviews}
                   />
@@ -173,7 +173,7 @@ export const HostTemplate: React.FC<{
                       paddingRight: 4,
                     }}
                   >
-                    <Bullet variant={$Bullet.HOST} categoryType="verified" />
+                    <Bullet variant={$BULLET.host} categoryType="verified" />
                   </div>
                 )}
                 {layoutType === 'room' && isSuperhost && (
@@ -184,7 +184,7 @@ export const HostTemplate: React.FC<{
                       paddingRight: 4,
                     }}
                   >
-                    <Bullet variant={$Bullet.HOST} categoryType="superhost" />
+                    <Bullet variant={$BULLET.host} categoryType="superhost" />
                   </div>
                 )}
               </div>
@@ -365,7 +365,7 @@ export const HostTemplate: React.FC<{
                 }}
               >
                 <Button
-                  variant={$Button.BORDER}
+                  variant={$BUTTON.border}
                   size="md"
                   title="Contact host"
                 />

@@ -1,12 +1,12 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react/types-6-0";
-import { Template, $Template, TemplateProps } from ".";
+import React from 'react';
+import { Story, Meta } from '@storybook/react';
+import { Template, $Template, TemplateProps } from '.';
 
 export default {
-  title: "Templates/D/OnlineHosts",
+  title: 'Templates/D/OnlineHosts',
   component: Template,
   argTypes: {
-    onClick: { action: "clicked" },
+    onClick: { action: 'clicked' },
     type: { control: { disable: true } },
     extendsTo: { control: { disable: true } },
   },

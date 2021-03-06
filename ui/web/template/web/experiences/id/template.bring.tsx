@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Bullet, $Bullet } from '@nextbnb/atoms';
+import { Bullet, $BULLET } from '@nextbnb/atoms';
 
 /**
  * Renders the 'What to bring' section
@@ -36,7 +36,7 @@ export const BringTemplate: React.FC<{
         {necessities.map((necessity, index) => {
           return (
             <div key={index} css={{ marginBottom: 16 }}>
-              <Bullet variant={$Bullet.BRING} title={necessity} />
+              <Bullet variant={$BULLET.bring} title={necessity} />
             </div>
           );
         })}

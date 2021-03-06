@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Bullet, $Bullet } from '@nextbnb/atoms';
+import { Bullet, $BULLET } from '@nextbnb/atoms';
 import { Layout } from '@nextbnb/layout';
 /**
  * Renders the priority section
@@ -30,7 +30,7 @@ export const PriorityTemplate: React.FC<{}> = () => {
                   marginBottom: 64,
                 }}
               >
-                <Bullet variant={$Bullet.PRIORITY} priority={priority} />
+                <Bullet variant={$BULLET.priority} priority={priority} />
               </div>
             );
           })}

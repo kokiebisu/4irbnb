@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Card, $Card } from '@nextbnb/molecules';
+import { Card, $CARD } from '@nextbnb/molecules';
 import { groupByTwo } from '@nextbnb/design/helper/array';
 
 /**
@@ -61,7 +61,7 @@ export const NearbyTemplate: React.FC<{
                 }}
               >
                 <Card
-                  variant={$Card.NEARBY}
+                  variant={$CARD.nearby}
                   to={item[0]?.to}
                   imgUrl={item[0]?.imgUrl}
                   city={item[0]?.city}
@@ -71,7 +71,7 @@ export const NearbyTemplate: React.FC<{
               </div>
               <div>
                 <Card
-                  variant={$Card.NEARBY}
+                  variant={$CARD.nearby}
                   to={item[1]?.to}
                   imgUrl={item[1]?.imgUrl}
                   city={item[1]?.city}

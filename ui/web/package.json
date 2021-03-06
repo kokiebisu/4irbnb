@@ -16,6 +16,9 @@
   },
   "dependencies": {
     "@nextbnb/atoms": "^1.0.24",
+    "@nextbnb/molecules": "^1.0.24",
+    "@nextbnb/organisms": "^1.0.3",
+    "@nextbnb/prototype": "^1.0.0",
     "@types/theme-ui": "^0.3.7",
     "axios": "^0.21.0",
     "formik": "^2.2.2",

@@ -5,7 +5,7 @@ import { jsx } from 'theme-ui';
 import { useState } from 'react';
 import Router from 'next/router';
 import { Header, $HEADER } from '@nextbnb/organisms';
-import { Button, $Button } from '@nextbnb/atoms';
+import { Button, $BUTTON } from '@nextbnb/atoms';
 import { useHandleScroll } from '@nextbnb/design/hooks/useHandleScroll';
 import { ResponsiveImage } from '@nextbnb/design/helper/img';
 
@@ -63,7 +63,7 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
           <div>
             <div>
               <Header
-                variant={$Header.LANDING}
+                variant={$HEADER.landing}
                 category={category}
                 setCategory={setCategory}
                 data={data}
@@ -133,7 +133,7 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
                 }}
               >
                 <Button
-                  variant={$Button.BANNER}
+                  variant={$BUTTON.banner}
                   title="Explore nearby"
                   onClick={() => Router.push('/')}
                 />

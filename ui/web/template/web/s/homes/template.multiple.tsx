@@ -2,8 +2,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Card, $Card } from '@nextbnb/molecules';
-import { Button, $Button } from '@nextbnb/atoms';
+import { Card, $CARD } from '@nextbnb/molecules';
+import { Button, $BUTTON } from '@nextbnb/atoms';
 
 /**
  * Renders the stay section
@@ -91,7 +91,7 @@ export const MultipleTemplate: React.FC<{
                   }}
                 >
                   <Card
-                    variant={$Card.TYPESTAY}
+                    variant={$CARD.typestay}
                     card={item && item.card}
                     to={item && item.to}
                   />
@@ -180,7 +180,7 @@ export const MultipleTemplate: React.FC<{
               }}
             >
               <Button
-                variant={$Button.PAGINATE}
+                variant={$BUTTON.paginate}
                 animate
                 direction="left"
                 onClick={previous}
@@ -193,7 +193,7 @@ export const MultipleTemplate: React.FC<{
               }}
             >
               <Button
-                variant={$Button.PAGINATE}
+                variant={$BUTTON.paginate}
                 animate
                 direction="right"
                 onClick={next}
@@ -225,7 +225,7 @@ export const MultipleTemplate: React.FC<{
                     }}
                   >
                     <Card
-                      variant={$Card.HORIZONTAL}
+                      variant={$CARD.horizontal}
                       card={item && item.card}
                       to={item && item.to}
                       save={save}
@@ -303,14 +303,14 @@ export const MultipleTemplate: React.FC<{
                     }}
                   >
                     <Button
-                      variant={$Button.PAGINATE}
+                      variant={$BUTTON.paginate}
                       animate
                       direction="left"
                     />
                   </div>
                   <div>
                     <Button
-                      variant={$Button.PAGINATE}
+                      variant={$BUTTON.paginate}
                       animate
                       direction="right"
                     />
@@ -333,7 +333,7 @@ export const MultipleTemplate: React.FC<{
               }}
             >
               <Button
-                variant={$Button.EXPAND}
+                variant={$BUTTON.expand}
                 to={showAll.to}
                 title={showAll.description}
               />
@@ -368,7 +368,7 @@ export const MultipleTemplate: React.FC<{
               return (
                 <div key={index} className={evaluateNumber(index)}>
                   <Card
-                    variant={$Card.HORIZONTAL}
+                    variant={$CARD.horizontal}
                     card={item && item.card}
                     to={item && item.to}
                     save={save}

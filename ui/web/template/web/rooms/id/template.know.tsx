@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Bullet, $Bullet } from '@nextbnb/atoms';
+import { Bullet, $BULLET } from '@nextbnb/atoms';
 
 /**
  * Renders the know section
@@ -66,7 +66,7 @@ export const KnowTemplate: React.FC<{
                     marginBottom: 6,
                   }}
                 >
-                  <Bullet variant={$Bullet.KNOW} categoryType={item} />
+                  <Bullet variant={$BULLET.know} categoryType={item} />
                 </div>
               );
             })}
@@ -97,7 +97,7 @@ export const KnowTemplate: React.FC<{
                     marginBottom: 6,
                   }}
                 >
-                  <Bullet variant={$Bullet.KNOW} categoryType={item} />
+                  <Bullet variant={$BULLET.know} categoryType={item} />
                 </div>
               );
             })}

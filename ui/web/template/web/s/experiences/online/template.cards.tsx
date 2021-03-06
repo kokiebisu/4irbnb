@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Card, $Card } from '@nextbnb/molecules';
-import { Button, $Button } from '@nextbnb/atoms';
+import { Card, $CARD } from '@nextbnb/molecules';
+import { Button, $BUTTON } from '@nextbnb/atoms';
 import { useSlide } from '@nextbnb/design/hooks/useSlide';
 
 export const CardsTemplate: React.FC<{ title?: string }> = ({
@@ -129,7 +129,7 @@ export const CardsTemplate: React.FC<{ title?: string }> = ({
             }}
           >
             <Button
-              variant={$Button.UNDERLINE}
+              variant={$BUTTON.underline}
               title={`Show (${temporaryCards.length})`}
             />
           </div>
@@ -146,7 +146,7 @@ export const CardsTemplate: React.FC<{ title?: string }> = ({
             >
               <Button
                 block
-                variant={$Button.PAGINATE}
+                variant={$BUTTON.paginate}
                 animate
                 direction="left"
                 onClick={previous}
@@ -160,7 +160,7 @@ export const CardsTemplate: React.FC<{ title?: string }> = ({
             >
               <Button
                 block
-                variant={$Button.PAGINATE}
+                variant={$BUTTON.paginate}
                 animate
                 direction="right"
                 onClick={next}
@@ -192,7 +192,7 @@ export const CardsTemplate: React.FC<{ title?: string }> = ({
                 <div key={index} css={{ width: width / displayingColumns() }}>
                   <div css={{ marginRight: 10 }}>
                     <Card
-                      variant={$Card.VIDEO}
+                      variant={$CARD.video}
                       imgUrl={imgUrl}
                       videoUrl={videoUrl}
                     />

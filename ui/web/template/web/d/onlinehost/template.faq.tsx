@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Bullet, $Bullet } from '@nextbnb/atoms';
-import { Layout, $Layout } from '@nextbnb/layout';
+import { Bullet, $BULLET } from '@nextbnb/atoms';
+import { Layout, $LAYOUT } from '@nextbnb/layout';
 
 export const FAQTemplate: React.FC<{
   questions?: { question: string; answer: string }[];
@@ -31,7 +31,7 @@ export const FAQTemplate: React.FC<{
   ],
 }) => {
   return (
-    <Layout variant={$Layout.ONLINEHOST} title="Frequently asked questions">
+    <Layout variant={$LAYOUT.onlinehost} title="Frequently asked questions">
       <div
         css={{
           maxWidth: 900,
@@ -45,7 +45,7 @@ export const FAQTemplate: React.FC<{
           return (
             <div css={{ width: '100%', margin: '22px 0' }} key={index}>
               <Bullet
-                variant={$Bullet.QUESTION}
+                variant={$BULLET.QUESTION}
                 title={question}
                 answer={answer}
               />

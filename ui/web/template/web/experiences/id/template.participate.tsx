@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Card, $Card } from '@nextbnb/molecules';
+import { Card, $CARD } from '@nextbnb/molecules';
 
 /**
  * Renders the participate section
@@ -33,7 +33,7 @@ export const ParticipateTemplate: React.FC<{
         {participates.map((participate, index) => {
           return (
             <div key={index} css={{ marginRight: 16 }}>
-              <Card variant={$Card.PARTICIPATE} categoryType={participate} />
+              <Card variant={$CARD.participate} categoryType={participate} />
             </div>
           );
         })}

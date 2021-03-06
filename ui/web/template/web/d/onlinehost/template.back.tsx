@@ -1,15 +1,15 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Bullet, $Bullet } from '@nextbnb/atoms';
-import { Layout, $Layout } from '@nextbnb/layout';
+import { Bullet, $BULLET } from '@nextbnb/atoms';
+import { Layout, $LAYOUT } from '@nextbnb/layout';
 
 export const BackTemplate: React.FC<{
   back?: string;
 }> = () => {
   return (
     <Layout
-      variant={$Layout.ONLINEHOST}
+      variant={$LAYOUT.onlinehost}
       title="We've got your back"
       subtitle="You’re not alone—you'll have access to educational tools and opportunities to help you grow as a host and entrepreneur."
     >
@@ -24,7 +24,7 @@ export const BackTemplate: React.FC<{
         {['resources', 'events', 'community'].map((type, index) => {
           return (
             <div key={index} css={{ marginBottom: 16 }}>
-              <Bullet variant={$Bullet.ONLINEHOST} type={type} />
+              <Bullet variant={$BULLET.onlinehost} type={type} />
             </div>
           );
         })}

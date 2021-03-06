@@ -2,8 +2,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Card, $Card } from '@nextbnb/molecules';
-import { Layout, $Layout } from '@nextbnb/layout';
-import { Button, $Button } from '@nextbnb/atoms';
+import { Layout, $LAYOUT } from '@nextbnb/layout';
+import { Button, $BUTTON } from '@nextbnb/atoms';
 
 export const SharingTemplate: React.FC<{}> = () => {
   const sharings = ['meditate', 'baking', 'magic'];
@@ -24,7 +24,7 @@ export const SharingTemplate: React.FC<{}> = () => {
         {sharings.map((sharing, index) => {
           return (
             <div key={index}>
-              <Card variant={$Card.SHARING} sharing={sharing} />
+              <Card variant={$CARD.sharing} sharing={sharing} />
             </div>
           );
         })}
@@ -36,7 +36,7 @@ export const SharingTemplate: React.FC<{}> = () => {
         }}
       >
         <Button
-          variant={$Button.BORDER}
+          variant={$BUTTON.border}
           bold
           title="Start creating your experience"
         />

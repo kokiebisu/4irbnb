@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Bullet, $Bullet } from '@nextbnb/atoms';
+import { Bullet, $BULLET } from '@nextbnb/atoms';
 
 /**
  * Renders the help section
@@ -42,7 +42,7 @@ export const HelpTemplate: React.FC<{}> = () => {
                   marginBottom: 24,
                 }}
               >
-                <Bullet variant={$Bullet.HELP} help={help} />
+                <Bullet variant={$BULLET.help} help={help} />
               </div>
             );
           })}

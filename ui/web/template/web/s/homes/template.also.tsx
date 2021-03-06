@@ -2,8 +2,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useRef } from 'react';
-import { Button, $Button } from '@nextbnb/atoms';
-import { Card, $Card } from '@nextbnb/molecules';
+import { Button, $BUTTON } from '@nextbnb/atoms';
+import { Card, $CARD } from '@nextbnb/molecules';
 import * as Helpers from '@nextbnb/design/helper/array';
 import { useSlider } from '@nextbnb/design/hooks/useSlider';
 import { useHandleContainerResize } from '@nextbnb/design/hooks/useHandleContainerResize';
@@ -68,7 +68,7 @@ export const AlsoTemplate: React.FC<{
             }}
           >
             <Button
-              variant={$Button.PAGINATE}
+              variant={$BUTTON.paginate}
               animate
               direction="left"
               onClick={previous}
@@ -81,7 +81,7 @@ export const AlsoTemplate: React.FC<{
             }}
           >
             <Button
-              variant={$Button.PAGINATE}
+              variant={$BUTTON.paginate}
               animate
               direction="right"
               onClick={next}
@@ -114,7 +114,7 @@ export const AlsoTemplate: React.FC<{
                   }}
                 >
                   <Card
-                    variant={$Card.NEARBY}
+                    variant={$CARD.nearby}
                     to={item[0]?.to}
                     imgUrl={item?.pic}
                     title={item[0]?.city || 'Item'}
@@ -124,7 +124,7 @@ export const AlsoTemplate: React.FC<{
                 </div>
                 <div>
                   <Card
-                    variant={$Card.NEARBY}
+                    variant={$CARD.nearby}
                     to={item[1]?.to}
                     imgUrl={item?.pic}
                     title={item[1]?.city || 'Item'}

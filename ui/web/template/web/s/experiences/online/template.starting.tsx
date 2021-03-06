@@ -2,8 +2,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useSlide } from '@nextbnb/design/hooks/useSlide';
-import { Button, $Button } from '@nextbnb/atoms';
-import { Card, $Card } from '@nextbnb/molecules';
+import { Button, $BUTTON } from '@nextbnb/atoms';
+import { Card, $CARD } from '@nextbnb/molecules';
 
 export const StartingTemplate = ({
   title = 'Starting in the next 6 hours',
@@ -78,7 +78,7 @@ export const StartingTemplate = ({
             }}
           >
             <Button
-              variant={$Button.UNDERLINE}
+              variant={$BUTTON.unerline}
               title={`Show (${temporaryCards.length})`}
             />
           </div>
@@ -95,7 +95,7 @@ export const StartingTemplate = ({
             >
               <Button
                 block
-                variant={$Button.PAGINATE}
+                variant={$BUTTON.paginate}
                 animate
                 direction="left"
                 onClick={previous}
@@ -109,7 +109,7 @@ export const StartingTemplate = ({
             >
               <Button
                 block
-                variant={$Button.PAGINATE}
+                variant={$BUTTON.paginate}
                 animate
                 direction="right"
                 onClick={next}
@@ -142,7 +142,7 @@ export const StartingTemplate = ({
                   <div key={index} css={{ width: width / displayingColumns() }}>
                     <div css={{ marginRight: 10 }}>
                       <Card
-                        variant={$Card.STARTING}
+                        variant={$CARD.starting}
                         imgUrl={imgUrl}
                         videoUrl={videoUrl}
                       />

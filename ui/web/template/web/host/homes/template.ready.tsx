@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import Router from 'next/router';
-import { Button, $Button } from '@nextbnb/atoms';
+import { Button, $BUTTON } from '@nextbnb/atoms';
 
 /**
  * Renders the ready section
@@ -52,7 +52,7 @@ export const ReadyTemplate: React.FC<{}> = () => {
           }}
         >
           <Button
-            variant={$Button.PRIMARY}
+            variant={$BUTTON.primary}
             size="md"
             title="Get started"
             onClick={() => Router.push('/become-a-host')}

@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Bullet, $Bullet } from '@nextbnb/atoms';
+import { Bullet, $BULLET } from '@nextbnb/atoms';
 
 /**
  * Renders the experiences section
@@ -23,7 +23,7 @@ export const ExperiencesTemplate: React.FC<{}> = () => {
         {experiences.map((experience, index) => {
           return (
             <div key={index}>
-              <Bullet variant={$Bullet.EXPERIENCE} experience={experience} />
+              <Bullet variant={$BULLET.experience} experience={experience} />
             </div>
           );
         })}

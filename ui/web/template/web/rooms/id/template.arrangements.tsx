@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Card, $Card } from '@nextbnb/molecules';
+import { Card, $CARD } from '@nextbnb/molecules';
 
 /**
  * Renders the arrangement section
@@ -48,7 +48,7 @@ export const ArrangementsTemplate: React.FC<{
           {arrangements.map((arrangement, index) => {
             return (
               <div key={index} style={{ marginRight: 12 }}>
-                <Card variant={$Card.ARRANGEMENTS} card={arrangement} />
+                <Card variant={$CARD.arrangements} card={arrangement} />
               </div>
             );
           })}

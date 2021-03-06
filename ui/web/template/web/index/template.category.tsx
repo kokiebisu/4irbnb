@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Card, $Card } from '@nextbnb/molecules';
+import { Card, $CARD } from '@nextbnb/molecules';
 
 /**
  *
@@ -51,7 +51,7 @@ export const CategoryTemplate: React.FC<{
                 }}
               >
                 <Card
-                  variant={$Card.CATEGORY}
+                  variant={$CARD.category}
                   imgUrl={item?.imgUrl}
                   title={item?.title}
                   to={item?.to}

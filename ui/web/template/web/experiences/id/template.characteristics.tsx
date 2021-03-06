@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Bullet, $Bullet } from '@nextbnb/atoms';
+import { Bullet, $BULLET } from '@nextbnb/atoms';
 import { DevicesInverse, Star } from '@nextbnb/design/assets/svg/original';
 
 /**
@@ -181,26 +181,26 @@ export const CharacteristicsTemplate: React.FC<{
         >
           <Bullet
             extendsTo={{ marginTop: 24 }}
-            variant={$Bullet.CHARACTERISTIC}
+            variant={$BULLET.characteristic}
             characteristic="time"
             time={characteristics['time']}
           />
           <Bullet
             extendsTo={{ marginTop: 24 }}
-            variant={$Bullet.CHARACTERISTIC}
+            variant={$BULLET.characteristic}
             characteristic="devices"
             devices={characteristics['devices'].join(', ')}
           />
           <Bullet
             extendsTo={{ marginTop: 24 }}
-            variant={$Bullet.CHARACTERISTIC}
+            variant={$BULLET.characteristic}
             characteristic="people"
             people={characteristics['people']}
             private={characteristics['group']}
           />
           <Bullet
             extendsTo={{ marginTop: 24 }}
-            variant={$Bullet.CHARACTERISTIC}
+            variant={$BULLET.characteristic}
             characteristic="language"
             languages={characteristics['languages'].join(', ')}
           />

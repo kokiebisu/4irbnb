@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Heart, Share } from '@nextbnb/design/assets/svg/original';
-import { Panel, $Panel } from '@nextbnb/molecules';
+import { Panel, $PANEL } from '@nextbnb/molecules';
 
 /**
  * Renders the panel section
@@ -96,7 +96,7 @@ export const PreviewTemplate: React.FC<{
         </div>
       </div>
       <div>
-        <Panel images={images} variant={$Panel.EXPERIENCE} />
+        <Panel images={images} variant={$PANEL.experience} />
       </div>
     </div>
   );

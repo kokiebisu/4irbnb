@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Card, $Card } from '@nextbnb/molecules';
+import { Card, $CARD } from '@nextbnb/molecules';
 
 /**
  * Renders the homes section
@@ -46,7 +46,7 @@ export const HomesTemplate: React.FC<{
               <div key={index}>
                 <Card
                   extendsTo={!title && { borderTop: '1px solid grey.300' }}
-                  variant={$Card.STAY}
+                  variant={$CARD.STAY}
                   {...stay}
                 />
               </div>

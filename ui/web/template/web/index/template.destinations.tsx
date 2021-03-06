@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui';
 import { useState } from 'react';
 import Router from 'next/router';
 import { motion } from 'framer-motion';
-import { Button, $Button } from '@nextbnb/atoms';
+import { Button, $BUTTON } from '@nextbnb/atoms';
 
 export const DestinationsTemplate: React.FC<{
   items?: { [type: string]: { city: String; location: String } };
@@ -58,7 +58,7 @@ export const DestinationsTemplate: React.FC<{
               }}
             >
               <Button
-                variant={$Button.DESTINATION}
+                variant={$BUTTON.destination}
                 city={city}
                 location={location}
                 onClick={() =>

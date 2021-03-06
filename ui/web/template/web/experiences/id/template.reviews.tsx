@@ -2,8 +2,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Star } from '@nextbnb/design/assets/svg/original';
-import { Bullet, $Bullet, Button, $Button } from '@nextbnb/atoms';
-import { Card, $Card } from '@nextbnb/molecules';
+import { Bullet, $BULLET, Button, $BUTTON } from '@nextbnb/atoms';
+import { Card, $CARD } from '@nextbnb/molecules';
 
 /**
  * Renders the reviews section
@@ -86,7 +86,7 @@ export const ReviewsTemplate: React.FC<{
                   }}
                 >
                   <Bullet
-                    variant={$Bullet.SCORE}
+                    variant={$BULLET.score}
                     category={category?.type}
                     average={category?.average}
                   />
@@ -113,7 +113,7 @@ export const ReviewsTemplate: React.FC<{
                 key={index}
               >
                 <Card
-                  variant={$Card.REVIEW}
+                  variant={$CARD.review}
                   imgUrl={review?.imgUrl}
                   description={review?.description}
                 />
@@ -123,7 +123,7 @@ export const ReviewsTemplate: React.FC<{
         </div>
         <div css={{ marginTop: 16 }}>
           <Button
-            variant={$Button.BORDER}
+            variant={$BUTTON.border}
             size="md"
             title={`Show all ${numberOfReviews} reviews`}
           />

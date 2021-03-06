@@ -2,8 +2,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useLayoutEffect, useRef, useState } from 'react';
-import { Button, $Button } from '@nextbnb/atoms';
-import { Card, $Card } from '@nextbnb/molecules';
+import { Button, $BUTTON } from '@nextbnb/atoms';
+import { Card, $CARD } from '@nextbnb/molecules';
 
 /**
  * Renders the available section
@@ -118,7 +118,7 @@ export const AvailableTemplate: React.FC<{
         <div css={{ display: 'flex', alignItems: 'center' }}>
           <div css={{ margin: '0 4px ' }}>
             <Button
-              variant={$Button.PAGINATE}
+              variant={$BUTTON.paginate}
               animate
               direction="left"
               onClick={previous}
@@ -127,7 +127,7 @@ export const AvailableTemplate: React.FC<{
           </div>
           <div css={{ margin: '0 4px' }}>
             <Button
-              variant={$Button.PAGINATE}
+              variant={$BUTTON.paginate}
               animate
               direction="right"
               onClick={next}
@@ -159,7 +159,7 @@ export const AvailableTemplate: React.FC<{
               >
                 <div css={{ marginBottom: 10, marginRight: 16 }}>
                   <Card
-                    variant={$Card.AVAILABLE}
+                    variant={$CARD.available}
                     date={available.date}
                     from={available.from}
                     to={available.to}
@@ -173,7 +173,7 @@ export const AvailableTemplate: React.FC<{
         </div>
       </div>
       <div css={{ marginTop: 32 }}>
-        <Button variant={$Button.BORDER} title="See more dates" />
+        <Button variant={$BUTTON.border} title="See more dates" />
       </div>
     </div>
   );

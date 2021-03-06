@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Button, $Button, Bullet, $Bullet } from '@nextbnb/atoms';
+import { Button, $BUTTON, Bullet, $BULLET } from '@nextbnb/atoms';
 
 export const BannerTemplate: React.FC<{}> = () => {
   return (
@@ -25,7 +25,7 @@ export const BannerTemplate: React.FC<{}> = () => {
         </h4>
       </div>
       <div css={{ margin: '40px 0' }}>
-        <Button variant={$Button.PRIMARY} title="Get started" />
+        <Button variant={$BUTTON.primary} title="Get started" />
       </div>
       <div css={{ margin: '32px 0' }}>
         <img
@@ -57,7 +57,7 @@ export const BannerTemplate: React.FC<{}> = () => {
         {['home', 'global', 'business'].map((type, index) => {
           return (
             <div key={index} css={{ marginBottom: 16 }}>
-              <Bullet variant={$Bullet.ONLINEHOST} type={type} />
+              <Bullet variant={$BULLET.onlinehost} type={type} />
             </div>
           );
         })}

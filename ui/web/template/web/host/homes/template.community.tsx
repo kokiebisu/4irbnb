@@ -3,8 +3,8 @@
 import { jsx } from 'theme-ui';
 import { useRef } from 'react';
 import Router from 'next/router';
-import { Button, $Button } from '@nextbnb/atoms';
-import { Card, $Card } from '@nextbnb/molecules';
+import { Button, $BUTTON } from '@nextbnb/atoms';
+import { Card, $CARD } from '@nextbnb/molecules';
 import { useSlider, SliderProps } from '@nextbnb/design/hooks/useSlider';
 
 /**
@@ -71,7 +71,7 @@ export const CommunityTemplate: React.FC<{
               }}
             >
               <Button
-                variant={$Button.PRIMARY}
+                variant={$BUTTON.primary}
                 size="md"
                 title="Get started"
                 onClick={() => Router.push('/become-a-host')}
@@ -119,7 +119,7 @@ export const CommunityTemplate: React.FC<{
                   }}
                 >
                   <Card
-                    variant={$Card.HOST}
+                    variant={$CARD.host}
                     host={host?.name}
                     imgUrl={host?.imgUrl}
                     stayType={host?.stayType}
@@ -150,7 +150,7 @@ export const CommunityTemplate: React.FC<{
               }}
             >
               <Button
-                variant={$Button.PAGINATE}
+                variant={$BUTTON.paginate}
                 animate
                 direction="left"
                 onClick={previous}
@@ -158,7 +158,7 @@ export const CommunityTemplate: React.FC<{
             </div>
             <div>
               <Button
-                variant={$Button.PAGINATE}
+                variant={$BUTTON.paginate}
                 animate
                 direction="right"
                 onClick={next}

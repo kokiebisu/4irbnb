@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Card, $Card, types } from '@nextbnb/molecules';
+import { Card, $CARD, types } from '@nextbnb/molecules';
 import { Layout } from '@nextbnb/layout';
 
 /**
@@ -25,7 +25,7 @@ export const HostingTemplate: React.FC<{}> = () => {
           {Object.keys(types).map((type, index) => {
             return (
               <div key={index} css={{ width: '25%', marginBottom: 64 }}>
-                <Card variant={$Card.HOSTING} type={type} />
+                <Card variant={$CARD.hosting} type={type} />
               </div>
             );
           })}

@@ -1,20 +1,20 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Button, $Button } from '@nextbnb/atoms';
-import { Layout, $Layout } from '@nextbnb/layout';
-import { Card, $Card } from '@nextbnb/molecules';
+import { Button, $BUTTON } from '@nextbnb/atoms';
+import { Layout, $LAYOUT } from '@nextbnb/layout';
+import { Card, $CARD } from '@nextbnb/molecules';
 
 export const WorksTemplate: React.FC<{}> = () => {
   const categories = ['design', 'share', 'submit', 'setup'];
   return (
     <div>
-      <Layout variant={$Layout.HOMES} title="How hosting works">
+      <Layout variant={$LAYOUT.homes} title="How hosting works">
         <div>
           {categories.map((category, index) => {
             return (
               <div css={{ marginBottom: 8 }} key={index}>
-                <Card variant={$Card.WORKS} work={category} />
+                <Card variant={$CARD.works} work={category} />
               </div>
             );
           })}
@@ -27,7 +27,7 @@ export const WorksTemplate: React.FC<{}> = () => {
           }}
         >
           <Button
-            variant={$Button.BORDER}
+            variant={$BUTTON.border}
             bold
             title="Start creating your experience"
           />

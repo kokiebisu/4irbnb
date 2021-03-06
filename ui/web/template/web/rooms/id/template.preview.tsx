@@ -7,7 +7,7 @@ import {
   Share,
   Superhost,
 } from '@nextbnb/design/assets/svg/original';
-import { Panel, $Panel } from '@nextbnb/molecules';
+import { Panel, $PANEL } from '@nextbnb/molecules';
 
 /**
  * Renders the panel section
@@ -196,7 +196,7 @@ export const PreviewTemplate: React.FC<{
         </div>
       </div>
       <div>
-        <Panel variant={$Panel.ROOM} />
+        <Panel variant={$PANEL.room} />
       </div>
     </div>
   );

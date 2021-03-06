@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Card, $Card } from '@nextbnb/molecules';
-import { Button, $Button } from '@nextbnb/atoms';
+import { Card, $CARD } from '@nextbnb/molecules';
+import { Button, $BUTTON } from '@nextbnb/atoms';
 
 /**
  * Renders the online section
@@ -102,7 +102,7 @@ export const OnlineTemplate: React.FC<{
                   >
                     <Card
                       to={item.to}
-                      variant={$Card.ONLINE}
+                      variant={$CARD.online}
                       small={item.small}
                       large={item.large}
                       title={item.title}
@@ -126,7 +126,7 @@ export const OnlineTemplate: React.FC<{
         }}
       >
         <Button
-          variant={$Button.BORDER}
+          variant={$BUTTON.border}
           title="Explore all"
           size="sm"
           inverse={dark}

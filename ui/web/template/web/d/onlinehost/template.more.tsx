@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Button, $Button } from '@nextbnb/atoms';
+import { Button, $BUTTON } from '@nextbnb/atoms';
 
 export const MoreTemplate: React.FC<{ imgUrl?: string }> = ({ imgUrl }) => {
   return (
@@ -48,7 +48,7 @@ export const MoreTemplate: React.FC<{ imgUrl?: string }> = ({ imgUrl }) => {
                 }}
               >
                 <Button
-                  variant={$Button.BORDER}
+                  variant={$BUTTON.border}
                   title="Let's go"
                   inverse
                   bold

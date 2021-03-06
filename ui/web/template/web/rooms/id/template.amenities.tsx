@@ -39,7 +39,7 @@ export const AmenitiesTemplate: React.FC<{
           return (
             <Bullet
               key={index}
-              variant={$Bullet.AMENITY}
+              variant={$BULLET.amenity}
               amenityType={amenity}
             />
           );
@@ -47,7 +47,7 @@ export const AmenitiesTemplate: React.FC<{
       </div>
       <div css={{ width: 300, margin: '14px 0' }}>
         <Button
-          variant={$Button.BORDER}
+          variant={$BUTTON.border}
           size="md"
           title="Show all 40 amenities"
         />
