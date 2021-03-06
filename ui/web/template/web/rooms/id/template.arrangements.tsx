@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Card, $Card } from "../../../../molecules/card/web";
+import { jsx } from 'theme-ui';
+import { Card, $Card } from '@nextbnb/molecules';
 
 /**
  * Renders the arrangement section
@@ -12,15 +12,15 @@ export const ArrangementsTemplate: React.FC<{
   title?: string;
   arrangements?: { type: string; beds: { type: string; count: number }[] }[];
 }> = ({
-  title = "Title here",
+  title = 'Title here',
   arrangements = [
     {
-      type: "Bedroom",
-      beds: [{ type: "double bed", count: 1 }],
+      type: 'Bedroom',
+      beds: [{ type: 'double bed', count: 1 }],
     },
     {
-      type: "Bedroom",
-      beds: [{ type: "double bed", count: 1 }],
+      type: 'Bedroom',
+      beds: [{ type: 'double bed', count: 1 }],
     },
   ],
 }) => {
@@ -31,7 +31,7 @@ export const ArrangementsTemplate: React.FC<{
           css={{
             fontWeight: 500,
             marginBottom: 20,
-            color: "grey.800",
+            color: 'grey.800',
             fontSize: 24,
           }}
         >
@@ -41,8 +41,8 @@ export const ArrangementsTemplate: React.FC<{
       <div css={{ marginLeft: -8, marginRight: -8 }}>
         <div
           css={{
-            display: "flex",
-            margin: "0 8px",
+            display: 'flex',
+            margin: '0 8px',
           }}
         >
           {arrangements.map((arrangement, index) => {

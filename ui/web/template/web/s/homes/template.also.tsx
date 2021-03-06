@@ -1,12 +1,12 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useRef } from "react";
-import { Button, $Button } from "../../../../atoms/button/web";
-import { Card, $Card } from "../../../../molecules/card/web";
-import * as Helpers from "../../../../helper/array";
-import { useSlider } from "../../../../hooks/useSlider";
-import { useHandleContainerResize } from "../../../../hooks/useHandleContainerResize";
+import { jsx } from 'theme-ui';
+import { useRef } from 'react';
+import { Button, $Button } from '@nextbnb/atoms';
+import { Card, $Card } from '@nextbnb/molecules';
+import * as Helpers from '@nextbnb/design/helper/array';
+import { useSlider } from '@nextbnb/design/hooks/useSlider';
+import { useHandleContainerResize } from '@nextbnb/design/hooks/useHandleContainerResize';
 
 /**
  * Renders the also section
@@ -26,26 +26,26 @@ export const AlsoTemplate: React.FC<{
     undefined,
     undefined,
   ],
-  title = "Section title",
+  title = 'Section title',
 }) => {
   const containerRef = useRef<HTMLDivElement>();
   const width: number = useHandleContainerResize(containerRef)[0];
-  const { state, previous, next } = useSlider(items, width, "also");
+  const { state, previous, next } = useSlider(items, width, 'also');
   const displayingItems = Helpers.groupByTwo(items);
 
   return (
-    <div css={{ overflowX: "hidden" }}>
+    <div css={{ overflowX: 'hidden' }}>
       <div
         css={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
         }}
         ref={containerRef}
       >
         <div
           css={{
-            margin: "16px 0",
+            margin: '16px 0',
           }}
         >
           <h3
@@ -58,13 +58,13 @@ export const AlsoTemplate: React.FC<{
         </div>
         <div
           css={{
-            display: "flex",
-            alignItems: "center",
+            display: 'flex',
+            alignItems: 'center',
           }}
         >
           <div
             css={{
-              margin: "0 2px",
+              margin: '0 2px',
             }}
           >
             <Button
@@ -77,7 +77,7 @@ export const AlsoTemplate: React.FC<{
           </div>
           <div
             css={{
-              margin: "0 2px",
+              margin: '0 2px',
             }}
           >
             <Button
@@ -94,13 +94,13 @@ export const AlsoTemplate: React.FC<{
       </div>
       <div
         css={{
-          height: "100%",
+          height: '100%',
           width: width * (items.length / 2),
           transform: `translateX(-${state.translate}px)`,
           transition: `transform ease-out ${state.transition}s`,
         }}
       >
-        <div css={{ display: "flex" }}>
+        <div css={{ display: 'flex' }}>
           {displayingItems.map((item, index) => {
             return (
               <div
@@ -117,7 +117,7 @@ export const AlsoTemplate: React.FC<{
                     variant={$Card.NEARBY}
                     to={item[0]?.to}
                     imgUrl={item?.pic}
-                    title={item[0]?.city || "Item"}
+                    title={item[0]?.city || 'Item'}
                     subtitle={`${item[0]?.hours || 1} hour drive`}
                     size="lg"
                   />
@@ -127,7 +127,7 @@ export const AlsoTemplate: React.FC<{
                     variant={$Card.NEARBY}
                     to={item[1]?.to}
                     imgUrl={item?.pic}
-                    title={item[1]?.city || "Item"}
+                    title={item[1]?.city || 'Item'}
                     subtitle={`${item[0]?.hours || 1} hour drive`}
                     size="lg"
                   />

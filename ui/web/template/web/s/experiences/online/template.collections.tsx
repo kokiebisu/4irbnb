@@ -1,12 +1,12 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import React, { useLayoutEffect, useRef, useState } from "react";
-import { Button, $Button } from "../../../../../atoms/button/web";
-import { Card, $Card } from "../../../../../molecules/card/web";
+import { jsx } from 'theme-ui';
+import React, { useLayoutEffect, useRef, useState } from 'react';
+import { Button, $Button } from '@nextbnb/atoms';
+import { Card, $Card } from '@nextbnb/molecules';
 
 export const CollectionsTemplate: React.FC<{ title?: String }> = ({
-  title = "Title here",
+  title = 'Title here',
 }) => {
   const [state, setState] = useState({
     activeSlide: 0,
@@ -23,10 +23,10 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
   };
 
   useLayoutEffect(() => {
-    window.addEventListener("resize", handleRef);
+    window.addEventListener('resize', handleRef);
     handleRef();
     return () => {
-      window.removeEventListener("resize", handleRef);
+      window.removeEventListener('resize', handleRef);
     };
   });
 
@@ -122,10 +122,10 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
     <div ref={containerRef}>
       <div
         css={{
-          margin: "16px 0",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
+          margin: '16px 0',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
         }}
       >
         <div>
@@ -133,19 +133,19 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
         </div>
         <div
           css={{
-            display: "flex",
-            alignIetms: "center",
+            display: 'flex',
+            alignIetms: 'center',
           }}
         >
           <div
             css={{
-              display: "flex",
-              alignItems: "center",
+              display: 'flex',
+              alignItems: 'center',
             }}
           >
             <div
               css={{
-                margin: "0 4px",
+                margin: '0 4px',
               }}
             >
               <Button
@@ -159,7 +159,7 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
             </div>
             <div
               css={{
-                margin: "0 4px",
+                margin: '0 4px',
               }}
             >
               <Button
@@ -178,8 +178,8 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
       </div>
       <div
         css={{
-          height: "100%",
-          width: "100%",
+          height: '100%',
+          width: '100%',
         }}
       >
         <div
@@ -188,7 +188,7 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
             transition: `transform ease-out ${state.transition}s`,
           }}
         >
-          <div css={{ display: "flex" }}>
+          <div css={{ display: 'flex' }}>
             {temporaryCards.map((card, index) => {
               return (
                 <div key={index}>

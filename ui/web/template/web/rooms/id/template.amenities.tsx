@@ -1,8 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Bullet, $Bullet } from "../../../../atoms/bullet/web";
-import { Button, $Button } from "../../../../atoms/button/web";
+import { jsx } from 'theme-ui';
+import { Bullet, $BULLET, Button, $BUTTON } from '@nextbnb/atoms';
 
 /**
  * Renders the amenity section
@@ -12,7 +11,7 @@ import { Button, $Button } from "../../../../atoms/button/web";
 export const AmenitiesTemplate: React.FC<{
   title?: string;
   amenities?: string[];
-}> = ({ title = "Title here", amenities = ["kitchen", "smoke"] }) => {
+}> = ({ title = 'Title here', amenities = ['kitchen', 'smoke'] }) => {
   return (
     <div>
       <div>
@@ -20,7 +19,7 @@ export const AmenitiesTemplate: React.FC<{
           css={{
             fontWeight: 500,
             marginBottom: 20,
-            color: "grey.800",
+            color: 'grey.800',
             size: 24,
           }}
         >
@@ -46,7 +45,7 @@ export const AmenitiesTemplate: React.FC<{
           );
         })}
       </div>
-      <div css={{ width: 300, margin: "14px 0" }}>
+      <div css={{ width: 300, margin: '14px 0' }}>
         <Button
           variant={$Button.BORDER}
           size="md"

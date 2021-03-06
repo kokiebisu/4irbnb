@@ -1,11 +1,10 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import React from "react";
-import { jsx } from "theme-ui";
-import { Star } from "../../../../public/svg/original";
-import { Button, $Button } from "../../../../atoms/button/web";
-import { Bullet, $Bullet } from "../../../../atoms/bullet/web";
-import { Card, $Card } from "../../../../molecules/card/web";
+import React from 'react';
+import { jsx } from 'theme-ui';
+import { Star } from '@nextbnb/design/assets/svg/original';
+import { Bullet, $BULLET, Button, $BUTTON } from '@nextbnb/atoms';
+import { Card, $Card } from '@nextbnb/molecules';
 
 /**
  * Renders the reviews section
@@ -33,26 +32,26 @@ export const ReviewsTemplate: React.FC<{
   reviews = [undefined, undefined, undefined, undefined],
   ratings = 5.0,
   numberOfReviews = 100,
-  layoutType = "room",
+  layoutType = 'room',
 }) => {
   return (
     <div>
       <div
         css={{
-          margin: "8px 0",
+          margin: '8px 0',
         }}
       >
         <div
           css={{
-            padding: "8px 0",
-            display: "flex",
-            alignItems: "center",
+            padding: '8px 0',
+            display: 'flex',
+            alignItems: 'center',
           }}
         >
           <div
             css={{
-              display: "flex",
-              alignItems: "center",
+              display: 'flex',
+              alignItems: 'center',
             }}
           >
             <div
@@ -66,7 +65,7 @@ export const ReviewsTemplate: React.FC<{
               css={{
                 marginRight: 6,
                 fontSize: 22,
-                color: "grey.800",
+                color: 'grey.800',
               }}
             >
               {ratings.toFixed(1)}
@@ -75,18 +74,18 @@ export const ReviewsTemplate: React.FC<{
               css={{
                 marginLeft: 2,
                 fontSize: 22,
-                color: "grey.800",
+                color: 'grey.800',
               }}
             >
               ({numberOfReviews} reviews)
             </h3>
           </div>
         </div>
-        {layoutType === "room" && (
+        {layoutType === 'room' && (
           <div
             css={{
-              display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
               marginTop: 12,
               marginRight: 24,
             }}
@@ -96,7 +95,7 @@ export const ReviewsTemplate: React.FC<{
                 <div
                   key={index}
                   css={{
-                    padding: "8px 0",
+                    padding: '8px 0',
                   }}
                   // className={[section["m__review--bullet"]].join(" ")}
                 >
@@ -112,7 +111,7 @@ export const ReviewsTemplate: React.FC<{
         )}
         <div
           css={{
-            width: "100%",
+            width: '100%',
             marginTop: 16,
           }}
           // className={[section["display__reviews--wrapper"]].join(" ")}

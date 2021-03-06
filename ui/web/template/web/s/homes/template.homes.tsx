@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Card, $Card } from "../../../../molecules/card/web";
+import { jsx } from 'theme-ui';
+import { Card, $Card } from '@nextbnb/molecules';
 
 /**
  * Renders the homes section
@@ -16,10 +16,10 @@ export const HomesTemplate: React.FC<{
   average?: number;
   stays?: any;
   title?: string;
-  layout?: "vertical" | "horizontal";
+  layout?: 'vertical' | 'horizontal';
 }> = ({
-  layout = "vertical",
-  title = "Section Title",
+  layout = 'vertical',
+  title = 'Section Title',
   stays = [undefined, undefined, undefined],
 }) => {
   const layouts = {
@@ -45,7 +45,7 @@ export const HomesTemplate: React.FC<{
             return (
               <div key={index}>
                 <Card
-                  extendsTo={!title && { borderTop: "1px solid grey.300" }}
+                  extendsTo={!title && { borderTop: '1px solid grey.300' }}
                   variant={$Card.STAY}
                   {...stay}
                 />

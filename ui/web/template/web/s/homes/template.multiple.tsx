@@ -1,9 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { Card, $Card } from "../../../../molecules/card/web";
-import { Button, $Button } from "../../../../atoms/button/web";
+import { jsx } from 'theme-ui';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { Card, $Card } from '@nextbnb/molecules';
+import { Button, $Button } from '@nextbnb/atoms';
 
 /**
  * Renders the stay section
@@ -28,14 +28,14 @@ export const MultipleTemplate: React.FC<{
   isDescription?: boolean;
   fetchUrl?: string;
 }> = ({
-  title = "Section Title",
-  description = "Section Description",
+  title = 'Section Title',
+  description = 'Section Description',
   pagination = false,
-  showAll = { description: "Show all cards", to: "/" },
-  carouselType = "",
+  showAll = { description: 'Show all cards', to: '/' },
+  carouselType = '',
   save = false,
   isDescription = false,
-  fetchUrl = "",
+  fetchUrl = '',
   items = [
     undefined,
     undefined,
@@ -56,8 +56,8 @@ export const MultipleTemplate: React.FC<{
     return (
       <div
         css={{
-          position: "relative",
-          padding: "10px 0",
+          position: 'relative',
+          padding: '10px 0',
         }}
       >
         <ul
@@ -65,14 +65,14 @@ export const MultipleTemplate: React.FC<{
           css={{
             marginLeft: -5,
             marginRight: -5,
-            display: "flex",
-            listStyle: "none",
+            display: 'flex',
+            listStyle: 'none',
             padding: 0,
-            overflowX: "auto",
-            overflowY: "hidden",
-            minWidth: "100%",
-            scrollSnapType: "x mandatory",
-            height: "100%",
+            overflowX: 'auto',
+            overflowY: 'hidden',
+            minWidth: '100%',
+            scrollSnapType: 'x mandatory',
+            height: '100%',
           }}
         >
           {data.length &&
@@ -85,9 +85,9 @@ export const MultipleTemplate: React.FC<{
                   //   sectionStyles["flex__card"],
                   // ].join(" ")}
                   css={{
-                    scrollSnapAlign: "start",
-                    borderLeftStyle: "solid",
-                    borderLeftColor: "transparent",
+                    scrollSnapAlign: 'start',
+                    borderLeftStyle: 'solid',
+                    borderLeftColor: 'transparent',
                   }}
                 >
                   <Card
@@ -122,10 +122,10 @@ export const MultipleTemplate: React.FC<{
     };
 
     useLayoutEffect(() => {
-      window.addEventListener("resize", handleRef);
+      window.addEventListener('resize', handleRef);
       handleRef();
       return () => {
-        window.removeEventListener("resize", handleRef);
+        window.removeEventListener('resize', handleRef);
       };
     });
 
@@ -146,18 +146,18 @@ export const MultipleTemplate: React.FC<{
     };
 
     return (
-      <div style={{ overflowX: "hidden" }}>
+      <div style={{ overflowX: 'hidden' }}>
         <div
           ref={containerRef}
           css={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
           }}
         >
           <div
             css={{
-              margin: "16px 0",
+              margin: '16px 0',
             }}
           >
             <h3
@@ -170,13 +170,13 @@ export const MultipleTemplate: React.FC<{
           </div>
           <div
             css={{
-              display: "flex",
-              alignItems: "center",
+              display: 'flex',
+              alignItems: 'center',
             }}
           >
             <div
               css={{
-                margin: "0 4px",
+                margin: '0 4px',
               }}
             >
               <Button
@@ -189,7 +189,7 @@ export const MultipleTemplate: React.FC<{
             </div>
             <div
               css={{
-                margin: "0 4px",
+                margin: '0 4px',
               }}
             >
               <Button
@@ -204,13 +204,13 @@ export const MultipleTemplate: React.FC<{
         </div>
         <div
           css={{
-            height: "100%",
+            height: '100%',
             width: width * (items.length / 2),
             transform: `translateX(-${state.translate}px)`,
             transition: `transform ease-out ${state.transition}s`,
           }}
         >
-          <div css={{ display: "flex" }}>
+          <div css={{ display: 'flex' }}>
             {items.map((item, index) => {
               return (
                 <div
@@ -246,9 +246,9 @@ export const MultipleTemplate: React.FC<{
         <div>
           <div
             css={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
             }}
           >
             <div>
@@ -256,7 +256,7 @@ export const MultipleTemplate: React.FC<{
                 <h2
                   css={{
                     fontWeight: 500,
-                    color: "grey.900",
+                    color: 'grey.900',
                     fontSize: 22,
                   }}
                 >
@@ -279,8 +279,8 @@ export const MultipleTemplate: React.FC<{
               {pagination && (
                 <div
                   css={{
-                    display: "flex",
-                    alignItems: "center",
+                    display: 'flex',
+                    alignItems: 'center',
                   }}
                 >
                   <div
@@ -323,13 +323,13 @@ export const MultipleTemplate: React.FC<{
         </div>
         <div
           css={{
-            position: "relative",
+            position: 'relative',
           }}
         >
           {showAll && (
             <div
               css={{
-                margin: "25px 0",
+                margin: '25px 0',
               }}
             >
               <Button
@@ -355,12 +355,12 @@ export const MultipleTemplate: React.FC<{
         // return [sectionStyles["none__cards--sm"]].join(" ");
       }
       // doesn't disappear
-      return [].join(" ");
+      return [].join(' ');
     };
     return (
       <div style={{ paddingTop: 15, paddingBottom: 15 }}>
         <div
-          style={{ display: "grid" }}
+          style={{ display: 'grid' }}
           // className={[styles["multiplerows"]].join(" ")}
         >
           {displayingData.length &&
@@ -383,7 +383,7 @@ export const MultipleTemplate: React.FC<{
 
   const displayItems = (carouselType, save) => {
     switch (carouselType) {
-      case "stayTypes":
+      case 'stayTypes':
         return <TypeStayCarousel data={data} />;
       default:
         return <MultipleRows data={data} save={save} />;

@@ -1,8 +1,13 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Heart, Star, Share, Superhost } from "../../../../public/svg/original";
-import { Panel, $Panel } from "../../../../molecules/panel/web";
+import { jsx } from 'theme-ui';
+import {
+  Heart,
+  Star,
+  Share,
+  Superhost,
+} from '@nextbnb/design/assets/svg/original';
+import { Panel, $Panel } from '@nextbnb/molecules';
 
 /**
  * Renders the panel section
@@ -27,13 +32,13 @@ export const PreviewTemplate: React.FC<{
   layoutType?: string;
   images?: string[];
 }> = ({
-  title = "Title here",
+  title = 'Title here',
   ratings = 5.0,
   numberOfReviews = 100,
   superhost = false,
-  location = "City",
-  province = "Province",
-  country = "Country",
+  location = 'City',
+  province = 'Province',
+  country = 'Country',
 }) => {
   return (
     <div>
@@ -41,7 +46,7 @@ export const PreviewTemplate: React.FC<{
         <div>
           <h3
             css={{
-              color: "grey.900",
+              color: 'grey.900',
               fontSize: 28,
               fontWeight: 500,
             }}
@@ -53,16 +58,16 @@ export const PreviewTemplate: React.FC<{
           css={{
             marginTop: 16,
             marginBottom: 28,
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
           }}
         >
           <div
             css={{
-              display: "flex",
-              alignItems: "center",
-              flexWrap: "wrap",
+              display: 'flex',
+              alignItems: 'center',
+              flexWrap: 'wrap',
             }}
           >
             <div>
@@ -71,7 +76,7 @@ export const PreviewTemplate: React.FC<{
             <span
               css={{
                 paddingLeft: 4,
-                color: "grey.700",
+                color: 'grey.700',
                 fontSize: 14,
                 fontWeight: 700,
               }}
@@ -81,7 +86,7 @@ export const PreviewTemplate: React.FC<{
             <span
               css={{
                 paddingLeft: 4,
-                color: "grey.600",
+                color: 'grey.600',
                 fontSize: 14,
                 fontWeight: 300,
               }}
@@ -92,7 +97,7 @@ export const PreviewTemplate: React.FC<{
               <div>
                 <span
                   css={{
-                    color: "grey.600",
+                    color: 'grey.600',
                   }}
                 >
                   &nbsp;·&nbsp;
@@ -103,7 +108,7 @@ export const PreviewTemplate: React.FC<{
                 <p
                   css={{
                     paddingLeft: 3,
-                    color: "grey.600",
+                    color: 'grey.600',
                     fontSize: 14,
                     fontWeight: 300,
                   }}
@@ -115,7 +120,7 @@ export const PreviewTemplate: React.FC<{
             <span
               css={{
                 fontWeight: 300,
-                color: "grey.600",
+                color: 'grey.600',
               }}
             >
               &nbsp;·&nbsp;
@@ -123,7 +128,7 @@ export const PreviewTemplate: React.FC<{
             <a
               css={{
                 fontSize: 14,
-                color: "grey.600",
+                color: 'grey.600',
               }}
               href=""
             >
@@ -134,23 +139,23 @@ export const PreviewTemplate: React.FC<{
           </div>
           <div
             css={{
-              display: "flex",
+              display: 'flex',
             }}
             // className={[section["hidden__options"]].join(" ")}
           >
             <div
               css={{
                 paddingRight: 6,
-                display: "flex",
-                alignItems: "center",
+                display: 'flex',
+                alignItems: 'center',
               }}
             >
               <a
                 href="#"
                 css={{
-                  display: "flex",
+                  display: 'flex',
                   paddingLeft: 6,
-                  alignItems: "center",
+                  alignItems: 'center',
                 }}
               >
                 <div>
@@ -160,7 +165,7 @@ export const PreviewTemplate: React.FC<{
                   css={{
                     paddingLeft: 10,
                     fontSize: 14,
-                    color: "grey.700",
+                    color: 'grey.700',
                   }}
                 >
                   <u>Share</u>
@@ -168,9 +173,9 @@ export const PreviewTemplate: React.FC<{
               </a>
               <a
                 css={{
-                  display: "flex",
+                  display: 'flex',
                   marginLeft: 12,
-                  alignItems: "center",
+                  alignItems: 'center',
                 }}
               >
                 <div>
@@ -180,7 +185,7 @@ export const PreviewTemplate: React.FC<{
                   css={{
                     paddingLeft: 10,
                     fontSize: 14,
-                    color: "grey.700",
+                    color: 'grey.700',
                   }}
                 >
                   Save

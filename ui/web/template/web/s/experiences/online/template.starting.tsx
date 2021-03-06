@@ -1,37 +1,37 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { useSlide } from "../../../../../hooks/useSlide";
-import { Button, $Button } from "../../../../../atoms/button/web";
-import { Card, $Card } from "../../../../../molecules/card/web";
+import { jsx } from 'theme-ui';
+import { useSlide } from '@nextbnb/design/hooks/useSlide';
+import { Button, $Button } from '@nextbnb/atoms';
+import { Card, $Card } from '@nextbnb/molecules';
 
 export const StartingTemplate = ({
-  title = "Starting in the next 6 hours",
+  title = 'Starting in the next 6 hours',
 }) => {
   const temporaryCards = [
     {
       imgUrl:
-        "https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster",
+        'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster',
       videoUrl:
-        "https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400",
+        'https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400',
     },
     {
       imgUrl:
-        "https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster",
+        'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster',
       videoUrl:
-        "https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400",
+        'https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400',
     },
     {
       imgUrl:
-        "https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster",
+        'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster',
       videoUrl:
-        "https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400",
+        'https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400',
     },
     {
       imgUrl:
-        "https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster",
+        'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster',
       videoUrl:
-        "https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400",
+        'https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400',
     },
   ];
 
@@ -45,16 +45,16 @@ export const StartingTemplate = ({
     return 1;
   };
 
-  const { state, containerRef, width, previous, next } = useSlide("whole");
+  const { state, containerRef, width, previous, next } = useSlide('whole');
 
   return (
-    <div ref={containerRef} style={{ overflowX: "hidden" }}>
+    <div ref={containerRef} style={{ overflowX: 'hidden' }}>
       <div
         css={{
-          margin: "16px 0",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
+          margin: '16px 0',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
         }}
       >
         <div>
@@ -68,8 +68,8 @@ export const StartingTemplate = ({
         </div>
         <div
           css={{
-            display: "flex",
-            alignItems: "center",
+            display: 'flex',
+            alignItems: 'center',
           }}
         >
           <div
@@ -84,13 +84,13 @@ export const StartingTemplate = ({
           </div>
           <div
             css={{
-              display: "flex",
-              alignItems: "center",
+              display: 'flex',
+              alignItems: 'center',
             }}
           >
             <div
               css={{
-                margin: "0 4px",
+                margin: '0 4px',
               }}
             >
               <Button
@@ -104,7 +104,7 @@ export const StartingTemplate = ({
             </div>
             <div
               css={{
-                margin: "0 4px",
+                margin: '0 4px',
               }}
             >
               <Button
@@ -124,8 +124,8 @@ export const StartingTemplate = ({
       </div>
       <div
         css={{
-          height: "100%",
-          width: "100%",
+          height: '100%',
+          width: '100%',
         }}
       >
         <div
@@ -135,7 +135,7 @@ export const StartingTemplate = ({
             transition: `transform ease-out ${state.transition}s`,
           }}
         >
-          <div css={{ display: "flex" }}>
+          <div css={{ display: 'flex' }}>
             {temporaryCards.map(
               ({ imgUrl = undefined, videoUrl = undefined }, index) => {
                 return (

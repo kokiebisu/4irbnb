@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Bullet, $Bullet } from "../../../../atoms/bullet/web";
+import { jsx } from 'theme-ui';
+import { Bullet, $Bullet } from '@nextbnb/atoms';
 
 /**
  * Renders the know section
@@ -15,16 +15,16 @@ export const KnowTemplate: React.FC<{
   layoutType?: string;
 }> = ({
   houseRules = [
-    "checkin",
-    "checkout",
-    "self",
-    "children",
-    "smoking",
-    "pets",
-    "parties",
+    'checkin',
+    'checkout',
+    'self',
+    'children',
+    'smoking',
+    'pets',
+    'parties',
   ],
-  healths = ["cleaning", "distancing", "caution", "check"],
-  layoutType = "room",
+  healths = ['cleaning', 'distancing', 'caution', 'check'],
+  layoutType = 'room',
 }) => {
   return (
     <div>
@@ -33,7 +33,7 @@ export const KnowTemplate: React.FC<{
           css={{
             fontWeight: 500,
             marginBottom: 20,
-            color: "grey.800",
+            color: 'grey.800',
             fontSize: 24,
           }}
         >
@@ -42,7 +42,7 @@ export const KnowTemplate: React.FC<{
       </div>
       <div
         css={{
-          display: "flex",
+          display: 'flex',
         }}
       >
         <div>
