@@ -10,7 +10,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@nextbnb/atoms": "^1.0.24",
@@ -28,6 +30,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
+    "@storybook/react": "^6.1.21",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.4",
     "@types/node": "^14.11.2",
@@ -55,10 +61,5 @@
     "ts-loader": "^8.0.14",
     "typescript": "^4.0.3"
   },
-  "gitHead": "bde6b7e370cd18062e283457f32a17675bd7352e",
-  "workspaces": {
-    "nohoist": [
-      "**"
-    ]
-  }
+  "gitHead": "bde6b7e370cd18062e283457f32a17675bd7352e"
 }

@@ -1,0 +1,17 @@
+.collections {
+  &__w {
+    @media screen and (min-width: 1128px) {
+    }
+    @media screen and (min-width: 728px) {
+      width: calc(600px * 6);
+    }
+    @media screen and (min-width: 500px) {
+    }
+  }
+
+  &-card__w {
+    @media screen and (min-width: 728px) {
+      max-width: 600px;
+    }
+  }
+}
