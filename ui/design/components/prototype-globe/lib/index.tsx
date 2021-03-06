@@ -1,13 +1,12 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { LanguagePrototype } from "./web/prototype.language";
-import { CurrencyPrototype } from "./web/prototype.currency";
+import { jsx } from 'theme-ui';
+import { PLATFORM } from './constant/platform';
+import { $PROTOTYPE } from './constant/appearance';
+import { generateVariants } from './utils/variants';
+import { webVariants } from './web/variants';
 
-export const $Prototype = {
-  LANGUAGE: "language",
-  CURRENCY: "currency",
-};
+export { $PROTOTYPE };
 
 export interface PrototypeProps {
   variant?: string;
@@ -18,17 +17,20 @@ export interface PrototypeProps {
 }
 
 export const Prototype: React.FC<PrototypeProps> = ({
-  variant = $Prototype.LANGUAGE,
-  city = "Paris",
-  stayType = "house",
+  platform = PLATFORM.web,
+  variant = $PROTOTYPE.language,
+  city = 'Paris',
+  stayType = 'house',
   characteristics,
   ...props
 }) => {
-  const variants: { [variant: string]: JSX.Element } = {
-    language: <LanguagePrototype {...props} />,
-    currency: <CurrencyPrototype {...props} />,
-  };
+  const variants = generateVariants(platform, webVariants, props);
   return (
-    <div data-testid={`${variant}-globe-template`}>{variants[variant]}</div>
+    <div
+      sx={{ ...variants[variant].css }}
+      data-testid={`${variant}-globe-template`}
+    >
+      {variants[variant].component}
+    </div>
   );
 };
