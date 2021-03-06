@@ -1,17 +1,16 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-
 import { useState } from 'react';
 import Router from 'next/router';
 import { useFormik } from 'formik';
 import { Bullet, $Bullet } from '@nextbnb/atoms-bullet';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
-import { Input, $Input } from '@nextbnb/atoms-input';
+import { Input, $INPUT } from '@nextbnb/atoms-input';
 import { validateExists as validate } from '@nextbnb/design/helper/validation';
 import { usePost } from '@nextbnb/design/hooks/usePost';
 
-export const ExistsPrototype: React.FC<{
+const ExistsPrototype: React.FC<{
   data?: {
     imgUrl: string;
     firstname: string;
@@ -71,7 +70,7 @@ export const ExistsPrototype: React.FC<{
       <form onSubmit={formik.handleSubmit}>
         <div css={{ margin: '16px 0' }}>
           <Input
-            variant={$Input.PASSWORD}
+            variant={$INPUT.password}
             handleChange={formik.handleChange}
             value={formik.values.password}
             errors={formik.errors.password !== undefined}
@@ -107,4 +106,13 @@ export const ExistsPrototype: React.FC<{
       </div>
     </div>
   );
+};
+
+export const exists = (props) => {
+  return {
+    exists: {
+      component: <ExistsPrototype {...props} />,
+      css: {},
+    },
+  };
 };

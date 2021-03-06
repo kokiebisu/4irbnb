@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui';
 import { useState } from 'react';
 import { useFormik } from 'formik';
 import Router from 'next/router';
-import { Input, $Input } from '@nextbnb/atoms-input';
+import { Input, $INPUT } from '@nextbnb/atoms-input';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { Bullet, $Bullet } from '@nextbnb/atoms-bullet';
 
@@ -14,9 +14,7 @@ import { usePost } from '@nextbnb/design/hooks/usePost';
 /**
  * Renders the signup template component
  */
-export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
-  authDispatch,
-}) => {
+const SignupTemplate: React.FC<{ authDispatch?: any }> = ({ authDispatch }) => {
   const [loading, setLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
@@ -53,7 +51,7 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
       <div css={{ padding: 24 }}>
         <div>
           <Input
-            variant={$Input.NAME}
+            variant={$INPUT.name}
             direction="bottom"
             name="firstname"
             errors={formik.errors.firstname !== undefined}
@@ -61,7 +59,7 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
             value={formik.values.firstname}
           />
           <Input
-            variant={$Input.NAME}
+            variant={$INPUT.name}
             direction="top"
             name="lastname"
             errors={formik.errors.lastname !== undefined}
@@ -108,7 +106,7 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
             <Input
               spread
               dateType="day"
-              variant={$Input.BIRTHDATE}
+              variant={$INPUT.birthdate}
               direction="left"
               handleChange={formik.handleChange}
               value={formik.values.day}
@@ -117,7 +115,7 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
             <Input
               spread
               dateType="month"
-              variant={$Input.BIRTHDATE}
+              variant={$INPUT.birthdate}
               direction="center"
               handleChange={formik.handleChange}
               value={formik.values.month}
@@ -126,7 +124,7 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
             <Input
               spread
               dateType="year"
-              variant={$Input.BIRTHDATE}
+              variant={$INPUT.birthdate}
               direction="right"
               handleChange={formik.handleChange}
               value={formik.values.year}
@@ -163,7 +161,7 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
         <div css={{ marginTop: 22 }}>
           <div>
             <Input
-              variant={$Input.EMAIL}
+              variant={$INPUT.email}
               handleChange={formik.handleChange}
               value={formik.values.email}
               errors={formik.errors.email !== undefined}
@@ -193,7 +191,7 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
         <div css={{ marginTop: 22 }}>
           <div>
             <Input
-              variant={$Input.PASSWORD}
+              variant={$INPUT.password}
               handleChange={formik.handleChange}
               value={formik.values.password}
               errors={formik.errors.password !== undefined}
@@ -236,4 +234,13 @@ export const SignupTemplate: React.FC<{ authDispatch?: any }> = ({
       </div>
     </form>
   );
+};
+
+export const signup = (props) => {
+  return {
+    signup: {
+      component: <SignupTemplate {...props} />,
+      css: {},
+    },
+  };
 };

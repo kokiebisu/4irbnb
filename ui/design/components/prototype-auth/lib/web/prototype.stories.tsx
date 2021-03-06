@@ -1,24 +1,24 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Story, Meta } from "@storybook/react";
-import { Prototype, PrototypeProps, $Prototype } from "..";
+import { jsx } from 'theme-ui';
+import { Story, Meta } from '@storybook/react';
+import { Prototype, PrototypeProps, $PROTOTYPE } from '..';
 
 export default {
-  title: "Prototypes/Auth",
+  title: 'Prototypes/Auth',
   component: Prototype,
-  argTypes: { onClick: { action: "clicked" } },
+  argTypes: { onClick: { action: 'clicked' } },
 } as Meta;
 
 const TemplateStory: Story<PrototypeProps> = (args) => <Prototype {...args} />;
 
 export const auth = TemplateStory.bind({});
 auth.args = {
-  variant: "auth",
+  variant: 'auth',
   extendsTo: {
-    bg: "transparent",
-    display: "block",
-    width: "100%",
+    bg: 'transparent',
+    display: 'block',
+    width: '100%',
     padding: 12,
     borderRadius: 8,
   },
@@ -26,28 +26,28 @@ auth.args = {
 auth.argTypes = {
   title: {
     control: {
-      type: "select",
-      options: ["Log in", "Sign up"],
+      type: 'select',
+      options: ['Log in', 'Sign up'],
     },
   },
 };
 
 export const Login = TemplateStory.bind({});
 Login.args = {
-  variant: $Prototype.LOGIN,
+  variant: $PROTOTYPE.login,
 };
 
 export const Signup = TemplateStory.bind({});
 Signup.args = {
-  variant: $Prototype.SIGNUP,
+  variant: $PROTOTYPE.signup,
 };
 
 export const ForgotPassword = TemplateStory.bind({});
 ForgotPassword.args = {
-  variant: $Prototype.FORGOTPASSWORD,
+  variant: $PROTOTYPE.forgotpassword,
 };
 
 export const Exists = TemplateStory.bind({});
 Exists.args = {
-  variant: $Prototype.EXISTS,
+  variant: $PROTOTYPE.exists,
 };

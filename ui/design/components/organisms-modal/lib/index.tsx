@@ -46,7 +46,7 @@ export const Modal: React.FC<ModalProps> = ({
   const { criteria } = props;
   const containerRef = useRef();
 
-  const variants = generateVariants(PLATFORM.web, webVariants, props);
+  const variants = generateVariants(platform, webVariants, props);
 
   if (lock) {
     useLockBodyScroll();

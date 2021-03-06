@@ -3,14 +3,14 @@
 import { jsx } from 'theme-ui';
 import { useFormik } from 'formik';
 import { Input, $Input } from '@nextbnb/atoms-input';
-import { Button, $BuBUTTONtton } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { getAuthContents } from '../content/auth';
 import { validateAuth as validate } from '@nextbnb/design/helper/validation';
 
 /**
  * Renders the auth template component
  */
-export const AuthPrototype: React.FC<{
+const AuthPrototype: React.FC<{
   title?: string;
   authDispatch?: (param: any) => void;
 }> = ({ title = 'Log in', authDispatch }) => {
@@ -140,4 +140,13 @@ export const AuthPrototype: React.FC<{
       </div>
     </div>
   );
+};
+
+export const auth = (props) => {
+  return {
+    auth: {
+      component: <AuthPrototype {...props} />,
+      css: {},
+    },
+  };
 };

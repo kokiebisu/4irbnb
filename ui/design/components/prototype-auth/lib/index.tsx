@@ -1,20 +1,12 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { generateVariants } from './utils/variants';
+import { jsx } from 'theme-ui';
+import { PLATFORM } from './constant/platform';
+import { webVariants } from './web/variants';
+import { $PROTOTYPE } from './constant/appearance';
 
-import { AuthPrototype } from "./web/prototype.auth";
-import { LoginTemplate } from "./web/prototype.login";
-import { SignupTemplate } from "./web/prototype.signup";
-import { ForgotPasswordPrototype } from "./web/prototype.forgot";
-import { ExistsPrototype } from "./web/prototype.exists";
-
-export const $Prototype = {
-  LOGIN: "login",
-  SIGNUP: "signup",
-  AUTH: "auth",
-  FORGOTPASSWORD: "forgotpassword",
-  EXISTS: "exists",
-};
+export { $PROTOTYPE };
 
 export interface PrototypeProps {
   variant?: string;
@@ -25,17 +17,17 @@ export interface PrototypeProps {
 }
 
 export const Prototype: React.FC<PrototypeProps> = ({
-  variant = $Prototype.LOGIN,
+  platform = PLATFORM.web,
+  variant = $PROTOTYPE.login,
   ...props
 }) => {
-  const variants: { [variant: string]: JSX.Element } = {
-    login: <LoginTemplate {...props} />,
-    signup: <SignupTemplate {...props} />,
-    auth: <AuthPrototype {...props} />,
-    forgotpassword: <ForgotPasswordPrototype {...props} />,
-    exists: <ExistsPrototype {...props} />,
-  };
+  const variants = generateVariants(platform, webVariants, props);
   return (
-    <div data-testid={`${variant}-auth-prototype`}>{variants[variant]}</div>
+    <div
+      sx={{ ...variants[variant].css }}
+      data-testid={`${variant}-auth-prototype`}
+    >
+      {variants[variant].component}
+    </div>
   );
 };

@@ -6,7 +6,7 @@ import { useFormik } from 'formik';
 import Router from 'next/router';
 
 // import { useAuthDispatch, useAuthState } from "@context/auth";
-import { Input, $Input } from '@nextbnb/atoms-input';
+import { Input, $INPUT } from '@nextbnb/atoms-input';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { Bullet, $Bullet } from '@nextbnb/atoms-bullet';
 import { Card, $Card } from '@nextbnb/molecules-card';
@@ -17,7 +17,7 @@ import { usePost } from '@nextbnb/design/hooks/usePost';
 /**
  * Renders the login template component
  */
-export const LoginTemplate: React.FC<{
+const LoginTemplate: React.FC<{
   authState?: any;
   authDispatch?: any;
 }> = ({ authState, authDispatch }) => {
@@ -74,14 +74,14 @@ export const LoginTemplate: React.FC<{
         <div>
           <div>
             <Input
-              variant={$Input.EMAIL}
+              variant={$INPUT.email}
               direction="bottom"
               handleChange={formik.handleChange}
               value={formik.values.email}
               errors={formik.errors.email !== undefined}
             />
             <Input
-              variant={$Input.PASSWORD}
+              variant={$INPUT.password}
               direction="top"
               handleChange={formik.handleChange}
               value={formik.values.password}
@@ -147,4 +147,13 @@ export const LoginTemplate: React.FC<{
       </form>
     </div>
   );
+};
+
+export const login = (props) => {
+  return {
+    login: {
+      component: <LoginTemplate {...props} />,
+      css: {},
+    },
+  };
 };
