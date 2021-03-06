@@ -12,7 +12,7 @@ import { Button, $BUTTON } from '@nextbnb/atoms-button';
  * @param {number} filterCount - Number of filters
  * @param {Object[]} filters - List of filters
  */
-export const CategoryPrototype: React.FC<{
+const CategoryPrototype: React.FC<{
   subtitle?: string;
   stayType?: string | string[];
   filterCount?: number;
@@ -100,4 +100,13 @@ export const CategoryPrototype: React.FC<{
       </div>
     </div>
   );
+};
+
+export const category = (props) => {
+  return {
+    category: {
+      component: <CategoryPrototype {...props} />,
+      css: {},
+    },
+  };
 };

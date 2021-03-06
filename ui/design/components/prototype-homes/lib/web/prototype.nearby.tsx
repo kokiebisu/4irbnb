@@ -9,7 +9,7 @@ import { Button, $BUTTON } from '@nextbnb/atoms-button';
  * Renders the nearby template component
  * @param param0 Prop
  */
-export const NearbyPrototype: React.FC<{
+const NearbyPrototype: React.FC<{
   city?: string;
   filterCount?: number;
   guests?: number;
@@ -114,4 +114,13 @@ export const NearbyPrototype: React.FC<{
       </div>
     </div>
   );
+};
+
+export const nearby = (props) => {
+  return {
+    nearby: {
+      component: <NearbyPrototype {...props} />,
+      css: {},
+    },
+  };
 };

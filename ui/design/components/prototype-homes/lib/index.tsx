@@ -1,13 +1,12 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { CategoryPrototype } from "./web/prototype.category";
-import { NearbyPrototype } from "./web/prototype.nearby";
+import { jsx } from 'theme-ui';
+import { $PROTOTYPE } from './constant/appearance';
+import { PLATFORM } from '@nextbnb/organisms-modal/lib/constant/platform';
+import { generateVariants } from './utils/variants';
+import { webVariants } from './web/variants';
 
-export const $Prototype = {
-  CATEGORY: "category",
-  NEARBY: "nearby",
-};
+export { $PROTOTYPE };
 
 export interface PrototypeProps {
   variant?: string;
@@ -18,15 +17,17 @@ export interface PrototypeProps {
 }
 
 export const Prototype: React.FC<PrototypeProps> = ({
-  variant = $Prototype.NEARBY,
-  city = "City",
-  stayType = "house",
+  platform = PLATFORM.web,
+  variant = $PROTOTYPE.nearby,
+  city = 'City',
+  stayType = 'house',
   characteristics,
   ...props
 }) => {
-  const variants: { [variant: string]: JSX.Element } = {
-    nearby: <NearbyPrototype {...props} />,
-    category: <CategoryPrototype {...props} />,
-  };
-  return <div data-testid={`${variant}-template`}>{variants[variant]}</div>;
+  const variants = generateVariants(platform, webVariants, props);
+  return (
+    <div sx={{ ...variants[variant].css }} data-testid={`${variant}-template`}>
+      {variants[variant].component}
+    </div>
+  );
 };
