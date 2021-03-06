@@ -1,22 +1,22 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Input, $Input } from "@nextbnb/atoms-input";
-import { Layout } from "@nextbnb/design/layout";
+import { jsx } from 'theme-ui';
+import { Input, $INPUT } from '@nextbnb/atoms-input';
+import { Layout } from '@nextbnb/design/layout';
 
 /**
  * Renders the /become-a-host/room page content
  * @param {object} data - Input data
  * @param {function} setData - Changes the input data
  */
-export const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
+const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
   data,
   setData,
 }) => {
   return (
     <div>
       <div css={{ marginBottom: 45 }}>
-        <h3 css={{ fontSize: 28, color: "grey.700" }}>
+        <h3 css={{ fontSize: 28, color: 'grey.700' }}>
           What kind of place are you listing?
         </h3>
       </div>
@@ -24,7 +24,7 @@ export const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
         <Layout variant="input" title="First, let's narrow things down">
           <Input
             inputType="place"
-            variant={$Input.SELECT}
+            variant={$INPUT.select}
             value={data?.place}
             handleChange={(e) => {
               setData({ ...data, place: e.target.value });
@@ -37,7 +37,7 @@ export const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
           <Input
             disabled={!data?.place}
             inputType={data?.place}
-            variant={$Input.SELECT}
+            variant={$INPUT.select}
             value={data?.property}
             handleChange={(e) => {
               setData({ ...data, property: e.target.value });
@@ -48,38 +48,38 @@ export const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
       {data?.property && data?.description && (
         <div>
           <div css={{ marginTop: 16 }}>
-            <h4 css={{ fontSize: 14, color: "grey.500" }}>
+            <h4 css={{ fontSize: 14, color: 'grey.500' }}>
               {data.description}
             </h4>
           </div>
-          <div css={{ margin: "32px 0" }}>
+          <div css={{ margin: '32px 0' }}>
             <Layout variant="input" title="What will guests have?">
               <div css={{ marginTop: 22 }}>
                 <div css={{ marginBottom: 22 }}>
                   <Input
-                    variant={$Input.RADIO}
+                    variant={$INPUT.radio}
                     title="Entire place"
                     subtitle="Guests have the whole place to themselves. This usually includes a bedroom, a bathroom, and a kitchen."
-                    selected={data.stay === "Entire place"}
-                    select={() => setData({ ...data, stay: "Entire place" })}
+                    selected={data.stay === 'Entire place'}
+                    select={() => setData({ ...data, stay: 'Entire place' })}
                   />
                 </div>
                 <div css={{ marginBottom: 22 }}>
                   <Input
-                    variant={$Input.RADIO}
+                    variant={$INPUT.radio}
                     title="Private place"
                     subtitle="Guests have their own private room for sleeping. Other areas could be shared."
-                    selected={data.stay === "Private place"}
-                    select={() => setData({ ...data, stay: "Private place" })}
+                    selected={data.stay === 'Private place'}
+                    select={() => setData({ ...data, stay: 'Private place' })}
                   />
                 </div>
                 <div css={{ marginBottom: 22 }}>
                   <Input
-                    variant={$Input.RADIO}
+                    variant={$INPUT.radio}
                     title="Shared room"
                     subtitle="Guests sleep in a bedroom or a common area that could be shared with others."
-                    selected={data.stay === "Shared room"}
-                    select={() => setData({ ...data, stay: "Shared room" })}
+                    selected={data.stay === 'Shared room'}
+                    select={() => setData({ ...data, stay: 'Shared room' })}
                   />
                 </div>
               </div>
@@ -89,4 +89,13 @@ export const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
       )}
     </div>
   );
+};
+
+export const room = (props) => {
+  return {
+    room: {
+      component: <RoomCreate {...props} />,
+      css: {},
+    },
+  };
 };

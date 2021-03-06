@@ -1,19 +1,19 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Input, $Input } from "@nextbnb/atoms-input";
+import { jsx } from 'theme-ui';
+import { Input, $INPUT } from '@nextbnb/atoms-input';
 
-export const BathroomsCreate: React.FC<{
+const BathroomsCreate: React.FC<{
   data?: any;
   setData?: (params: any) => void;
 }> = ({ data = { bathrooms: 0 }, setData }) => {
   return (
     <div>
       <div css={{ marginBottom: 45 }}>
-        <h3 css={{ fontSize: 28, color: "grey.700" }}>How many bathrooms?</h3>
+        <h3 css={{ fontSize: 28, color: 'grey.700' }}>How many bathrooms?</h3>
       </div>
       <div css={{ marginBottom: 45 }}>
-        <p css={{ fontSize: 14, color: "grey.700" }}>
+        <p css={{ fontSize: 14, color: 'grey.700' }}>
           Count bathrooms that don't have a shower or bathtub as a half
           bathroom.
         </p>
@@ -22,7 +22,7 @@ export const BathroomsCreate: React.FC<{
         <div css={{ marginBottom: 8 }}>
           <Input
             title="Bathrooms"
-            variant={$Input.COUNTER}
+            variant={$INPUT.counter}
             value={data.bathrooms}
             add={() => setData({ ...data, bathrooms: data.bathrooms + 1 })}
             subtract={() => setData({ ...data, bathrooms: data.bathrooms - 1 })}
@@ -33,4 +33,13 @@ export const BathroomsCreate: React.FC<{
       </div>
     </div>
   );
+};
+
+export const bathrooms = (props) => {
+  return {
+    bathrooms: {
+      component: <BathroomsCreate {...props} />,
+      css: {},
+    },
+  };
 };

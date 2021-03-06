@@ -1,12 +1,12 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Input, $Input } from "@nextbnb/atoms-input";
+import { jsx } from 'theme-ui';
+import { Input, $INPUT } from '@nextbnb/atoms-input';
 
 /**
  * Renders the /become-a-host/spaces page content
  */
-export const SpacesCreate: React.FC<{
+const SpacesCreate: React.FC<{
   data?: any;
   setData?: any;
 }> = ({ data = { spaces: [] }, setData }) => {
@@ -27,12 +27,12 @@ export const SpacesCreate: React.FC<{
   return (
     <div>
       <div css={{ marginBottom: 12 }}>
-        <h3 css={{ fontSize: 28, color: "grey.700" }}>
+        <h3 css={{ fontSize: 28, color: 'grey.700' }}>
           What spaces can guests use?
         </h3>
       </div>
       <div css={{ marginBottom: 45 }}>
-        <p css={{ fontSize: 16, color: "grey.700" }}>
+        <p css={{ fontSize: 16, color: 'grey.700' }}>
           Include common areas, but don’t add spaces that aren’t on your
           property.
         </p>
@@ -40,36 +40,36 @@ export const SpacesCreate: React.FC<{
       <div css={{ marginBottom: 50 }}>
         {[
           {
-            title: "Kitchen",
-            item: "kitchen",
+            title: 'Kitchen',
+            item: 'kitchen',
           },
           {
-            title: "Laundry - washer",
-            item: "washer",
+            title: 'Laundry - washer',
+            item: 'washer',
           },
           {
-            title: "Laundry - dryer",
-            item: "dryer",
+            title: 'Laundry - dryer',
+            item: 'dryer',
           },
           {
-            title: "Parking",
-            item: "parking",
+            title: 'Parking',
+            item: 'parking',
           },
           {
-            title: "Gym",
-            item: "gym",
+            title: 'Gym',
+            item: 'gym',
           },
           {
-            title: "Pool",
-            item: "Hot tub",
+            title: 'Pool',
+            item: 'Hot tub',
           },
         ].map(({ title, item }, index) => {
           return (
             <div key={index} css={{ marginBottom: 16 }}>
               <Input
-                check={() => modify("spaces", item)}
+                check={() => modify('spaces', item)}
                 checked={data.spaces.includes(item)}
-                variant={$Input.CHECKBOX}
+                variant={$INPUT.checkbox}
                 title={title}
               />
             </div>
@@ -78,4 +78,13 @@ export const SpacesCreate: React.FC<{
       </div>
     </div>
   );
+};
+
+export const spaces = (props) => {
+  return {
+    spaces: {
+      component: <SpacesCreate {...props} />,
+      css: {},
+    },
+  };
 };

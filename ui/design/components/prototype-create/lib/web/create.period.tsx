@@ -1,9 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Input, $Input } from "@nextbnb/atoms-input";
+import { jsx } from 'theme-ui';
+import { Input, $Input } from '@nextbnb/atoms-input';
 
-export const PeriodCreate: React.FC<{ setData?: any; data?: any }> = ({
+const PeriodCreate: React.FC<{ setData?: any; data?: any }> = ({
   setData,
   data = {
     min: 0,
@@ -49,4 +49,13 @@ export const PeriodCreate: React.FC<{ setData?: any; data?: any }> = ({
       </div>
     </div>
   );
+};
+
+export const period = (props) => {
+  return {
+    period: {
+      component: <PeriodCreate {...props} />,
+      css: {},
+    },
+  };
 };

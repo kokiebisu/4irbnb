@@ -1,81 +1,81 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react";
-import { Prototype, CreateProps, $Prototype } from "..";
+import React from 'react';
+import { Story, Meta } from '@storybook/react';
+import { Prototype, CreateProps, $PROTOTYPE } from '..';
 
 export default {
-  title: "Prototypes/Create",
+  title: 'Prototypes/Create',
   component: Prototype,
-  argTypes: { onClick: { action: "clicked" } },
+  argTypes: { onClick: { action: 'clicked' } },
 } as Meta;
 
 const TemplateStory: Story<CreateProps> = (args) => <Prototype {...args} />;
 
 export const GetStarted = TemplateStory.bind({});
 GetStarted.args = {
-  variant: $Prototype.GETSTARTED,
+  variant: $PROTOTYPE.getstarted,
 };
 
 export const Room = TemplateStory.bind({});
 Room.args = {
-  variant: $Prototype.ROOM,
+  variant: $PROTOTYPE.room,
 };
 
 export const Bedrooms = TemplateStory.bind({});
 Bedrooms.args = {
-  variant: $Prototype.BEDROOMS,
+  variant: $PROTOTYPE.bedrooms,
 };
 
 export const Bathrooms = TemplateStory.bind({});
 Bathrooms.args = {
-  variant: $Prototype.BATHROOMS,
+  variant: $PROTOTYPE.bathrooms,
 };
 
 export const Location = TemplateStory.bind({});
 Location.args = {
-  variant: $Prototype.LOCATION,
+  variant: $PROTOTYPE.location,
 };
 
 export const Amenities = TemplateStory.bind({});
 Amenities.args = {
-  variant: $Prototype.AMENITIES,
+  variant: $PROTOTYPE.amenities,
 };
 
 export const Spaces = TemplateStory.bind({});
 Spaces.args = {
-  variant: $Prototype.SPACES,
+  variant: $PROTOTYPE.spaces,
 };
 
 export const Description = TemplateStory.bind({});
 Description.args = {
-  variant: $Prototype.DESCRIPTION,
+  variant: $PROTOTYPE.description,
 };
 
 export const Title = TemplateStory.bind({});
 Title.args = {
-  variant: $Prototype.TITLE,
+  variant: $PROTOTYPE.title,
 };
 
 export const Phone = TemplateStory.bind({});
 Phone.args = {
-  variant: $Prototype.PHONE,
+  variant: $PROTOTYPE.phone,
 };
 
 export const Requirements = TemplateStory.bind({});
 Requirements.args = {
-  variant: $Prototype.REQUIREMENTS,
+  variant: $PROTOTYPE.requirements,
 };
 
 export const Rules = TemplateStory.bind({});
 Rules.args = {
-  variant: $Prototype.RULES,
+  variant: $PROTOTYPE.rules,
 };
 
 export const Checkin = TemplateStory.bind({});
 Checkin.args = {
-  variant: $Prototype.CHECKIN,
+  variant: $PROTOTYPE.checkin,
 };
 
 export const Advance = TemplateStory.bind({});
 Advance.args = {
-  variant: $Prototype.ADVANCE,
+  variant: $PROTOTYPE.advance,
 };

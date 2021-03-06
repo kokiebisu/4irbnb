@@ -1,34 +1,34 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Input, $Input } from "@nextbnb/atoms-input";
+import { jsx } from 'theme-ui';
+import { Input, $INPUT } from '@nextbnb/atoms-input';
 
 /**
  * Renders the /become-a-host/location page content
  * @param {object} data - Input data
  * @param {function} setData - Changes the input data
  */
-export const LocationCreate: React.FC<{
+const LocationCreate: React.FC<{
   data?: any;
   setData?: (params: any) => void;
 }> = ({ data, setData }) => {
   return (
     <div>
       <div css={{ marginBottom: 8 }}>
-        <h3 css={{ fontSize: 28, color: "grey.700" }}>
+        <h3 css={{ fontSize: 28, color: 'grey.700' }}>
           Where's your place located?
         </h3>
       </div>
       <div css={{ marginBottom: 16 }}>
-        <p css={{ fontSize: 14, color: "grey.700" }}>
+        <p css={{ fontSize: 14, color: 'grey.700' }}>
           Guests will only get your exact address once they've booked a
           reservation.
         </p>
       </div>
       <div
         css={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
           columnGap: 15,
           marginTop: 32,
           marginBottom: 18,
@@ -39,7 +39,7 @@ export const LocationCreate: React.FC<{
             <p css={{ fontSize: 14 }}>Country</p>
           </div>
           <Input
-            variant={$Input.SELECT}
+            variant={$INPUT.select}
             handleChange={(e) => setData({ ...data, country: e.target.value })}
             value={data?.country}
             inputType="country"
@@ -51,7 +51,7 @@ export const LocationCreate: React.FC<{
           </div>
           <Input
             name="postal"
-            variant={$Input.TEXT}
+            variant={$INPUT.text}
             handleChange={(e) => setData({ ...data, postal: e.target.value })}
             value={data?.postal}
           />
@@ -64,7 +64,7 @@ export const LocationCreate: React.FC<{
         <div>
           <Input
             name="street"
-            variant={$Input.TEXT}
+            variant={$INPUT.text}
             handleChange={(e) => setData({ ...data, street: e.target.value })}
             value={data?.street}
           />
@@ -80,7 +80,7 @@ export const LocationCreate: React.FC<{
         <div>
           <Input
             name="apt"
-            variant={$Input.TEXT}
+            variant={$INPUT.text}
             handleChange={(e) => setData({ ...data, apt: e.target.value })}
             value={data?.apt}
           />
@@ -91,8 +91,8 @@ export const LocationCreate: React.FC<{
       </div>
       <div
         css={{
-          display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
           columnGap: 15,
           marginTop: 32,
           marginBottom: 18,
@@ -104,7 +104,7 @@ export const LocationCreate: React.FC<{
           </div>
           <div>
             <Input
-              variant={$Input.TEXT}
+              variant={$INPUT.text}
               handleChange={(e) => setData({ ...data, city: e.target.value })}
               value={data?.city}
               inputType="city"
@@ -121,7 +121,7 @@ export const LocationCreate: React.FC<{
           <div>
             <Input
               name="state"
-              variant={$Input.TEXT}
+              variant={$INPUT.text}
               handleChange={(e) => setData({ ...data, state: e.target.value })}
               value={data?.state}
             />
@@ -133,4 +133,13 @@ export const LocationCreate: React.FC<{
       </div>
     </div>
   );
+};
+
+export const location = (props) => {
+  return {
+    location: {
+      component: <LocationCreate {...props} />,
+      css: {},
+    },
+  };
 };

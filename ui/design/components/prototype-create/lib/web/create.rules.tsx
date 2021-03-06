@@ -1,14 +1,14 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Input, $Input } from "@nextbnb/atoms-input";
+import { jsx } from 'theme-ui';
+import { Input, $INPUT } from '@nextbnb/atoms-input';
 
 /**
  * Renders the /become-a-host/rules page content
  * @param {object} data - Input data
  * @param {function} setData - Changes the input data
  */
-export const RulesCreate: React.FC<{
+const RulesCreate: React.FC<{
   data?: any;
   setData?: (params: any) => void;
 }> = ({ data = { details: [] }, setData }) => {
@@ -29,7 +29,7 @@ export const RulesCreate: React.FC<{
   return (
     <div>
       <div>
-        <h3 css={{ fontSize: 28, color: "grey.700" }}>
+        <h3 css={{ fontSize: 28, color: 'grey.700' }}>
           Set house rules for your guests
         </h3>
       </div>
@@ -39,18 +39,18 @@ export const RulesCreate: React.FC<{
         </p>
       </div>
       <div css={{ marginBottom: 22 }}>
-        <div css={{ margin: "12px 0" }}>
+        <div css={{ margin: '12px 0' }}>
           <Input
-            variant={$Input.CLOSED}
+            variant={$INPUT.closed}
             title="Smoking allowed"
             data={data}
             setData={setData}
             value="smoking"
           />
         </div>
-        <div css={{ margin: "12px 0" }}>
+        <div css={{ margin: '12px 0' }}>
           <Input
-            variant={$Input.CLOSED}
+            variant={$INPUT.closed}
             title="Events allowed"
             data={data}
             setData={setData}
@@ -59,29 +59,29 @@ export const RulesCreate: React.FC<{
         </div>
       </div>
       <div css={{ marginBottom: 50 }}>
-        <div css={{ margin: "16px 0" }}>
+        <div css={{ margin: '16px 0' }}>
           <h3>Details guests must know about your home</h3>
         </div>
         {[
           {
-            title: "Must climb stairs",
-            item: "stairs",
+            title: 'Must climb stairs',
+            item: 'stairs',
           },
           {
-            title: "Potential for noise",
-            item: "noise",
+            title: 'Potential for noise',
+            item: 'noise',
           },
           {
-            title: "Pet(s) live on property",
-            item: "pets",
+            title: 'Pet(s) live on property',
+            item: 'pets',
           },
         ].map(({ title, item }, index) => {
           return (
             <div key={index} css={{ marginBottom: 16 }}>
               <Input
-                check={() => modify("details", item)}
+                check={() => modify('details', item)}
                 checked={data.details.includes(item)}
-                variant={$Input.CHECKBOX}
+                variant={$INPUT.checkbox}
                 title={title}
               />
             </div>
@@ -90,4 +90,13 @@ export const RulesCreate: React.FC<{
       </div>
     </div>
   );
+};
+
+export const rules = (props) => {
+  return {
+    rules: {
+      component: <RulesCreate {...props} />,
+      css: {},
+    },
+  };
 };

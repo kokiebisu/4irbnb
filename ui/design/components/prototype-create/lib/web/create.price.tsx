@@ -1,13 +1,13 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Input, $Input } from "@nextbnb/atoms-input";
+import { jsx } from 'theme-ui';
+import { Input, $Input } from '@nextbnb/atoms-input';
 
-export const PriceCreate: React.FC<{ setData?: any; data?: any }> = ({
+const PriceCreate: React.FC<{ setData?: any; data?: any }> = ({
   setData,
   data = {
     basePrice: undefined,
-    currency: "USD",
+    currency: 'USD',
   },
 }) => {
   return (
@@ -30,13 +30,13 @@ export const PriceCreate: React.FC<{ setData?: any; data?: any }> = ({
           </div>
         </div>
         <div css={{ marginBottom: 24 }}>
-          <div css={{ display: "flex", alignItems: "center" }}>
+          <div css={{ display: 'flex', alignItems: 'center' }}>
             <div css={{ marginRight: 4 }}>
               <h2 css={{ fontSize: 16 }}>
                 Set up the same base price for each night
               </h2>
             </div>
-            <div css={{ padding: 3, fontSize: 9, bg: "grey.300" }}>
+            <div css={{ padding: 3, fontSize: 9, bg: 'grey.300' }}>
               <h3>RECOMMENDED</h3>
             </div>
           </div>
@@ -48,7 +48,7 @@ export const PriceCreate: React.FC<{ setData?: any; data?: any }> = ({
             </p>
           </div>
           <div>
-            <p css={{ fontSize: 12, color: "cyan.800" }}>
+            <p css={{ fontSize: 12, color: 'cyan.800' }}>
               Learn what fees pay for
             </p>
           </div>
@@ -70,14 +70,14 @@ export const PriceCreate: React.FC<{ setData?: any; data?: any }> = ({
               value={data.basePrice}
               handleChange={(e) => {
                 const onlyNumbers = /^[0-9\b]+$/;
-                if (e.target.value == "" || onlyNumbers.test(e.target.value)) {
+                if (e.target.value == '' || onlyNumbers.test(e.target.value)) {
                   setData({ ...data, basePrice: e.target.value });
                 }
               }}
             />
           </div>
-          <div css={{ margin: "8px 0" }}>
-            <h4 css={{ color: "cyan.800", fontSize: 16 }}>Tip: $21</h4>
+          <div css={{ margin: '8px 0' }}>
+            <h4 css={{ color: 'cyan.800', fontSize: 16 }}>Tip: $21</h4>
           </div>
         </div>
         <div>
@@ -91,4 +91,13 @@ export const PriceCreate: React.FC<{ setData?: any; data?: any }> = ({
       </div>
     </div>
   );
+};
+
+export const price = (props) => {
+  return {
+    price: {
+      component: <PriceCreate {...props} />,
+      css: {},
+    },
+  };
 };

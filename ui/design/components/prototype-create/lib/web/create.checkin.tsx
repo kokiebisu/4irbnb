@@ -1,10 +1,10 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Input, $Input } from "@nextbnb/atoms-input";
-import { Layout } from "@nextbnb/design/layout";
+import { jsx } from 'theme-ui';
+import { Input, $INPUT } from '@nextbnb/atoms-input';
+import { Layout } from '@nextbnb/design/layout';
 
-export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
+const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
   setData,
   data = {
     notice: 0,
@@ -20,7 +20,7 @@ export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
           <div css={{ marginTop: 22 }}>
             <div css={{ marginBottom: 10 }}>
               <Input
-                variant={$Input.RADIO}
+                variant={$INPUT.radio}
                 title="Same day"
                 selected={data.notice === 0}
                 select={() => setData({ ...data, notice: 0 })}
@@ -30,8 +30,8 @@ export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
               ({ day }, index) => (
                 <div key={index} css={{ marginBottom: 10 }}>
                   <Input
-                    variant={$Input.RADIO}
-                    title={`${day} ${day > 1 ? "days" : "day"}`}
+                    variant={$INPUT.radio}
+                    title={`${day} ${day > 1 ? 'days' : 'day'}`}
                     selected={data.notice === day}
                     select={() => setData({ ...data, notice: day })}
                   />
@@ -42,14 +42,14 @@ export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
         </Layout>
       </div>
       <div css={{ maxWidth: 300 }}>
-        <h4 css={{ fontSize: 13, color: "grey.600" }}>
-          <span css={{ color: "cyan.800", fontWeight: 300 }}>Tip: </span>
+        <h4 css={{ fontSize: 13, color: 'grey.600' }}>
+          <span css={{ color: 'cyan.800', fontWeight: 300 }}>Tip: </span>
           Letting guests book same-day reservations can help you get guests who
           book last-minute trips.
         </h4>
       </div>
       <div
-        css={{ bg: "grey.300", margin: "32px 0", width: "100%", height: 1 }}
+        css={{ bg: 'grey.300', margin: '32px 0', width: '100%', height: 1 }}
       />
       <div>
         <div css={{ marginBottom: 12 }}>
@@ -57,18 +57,18 @@ export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
         </div>
         <div
           css={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
             columnGap: 10,
           }}
         >
           <div>
             <div css={{ marginBottom: 8 }}>
-              <h4 css={{ color: "grey.500", fontSize: 13 }}>From: </h4>
+              <h4 css={{ color: 'grey.500', fontSize: 13 }}>From: </h4>
             </div>
             <div>
               <Input
-                variant={$Input.SELECT}
+                variant={$INPUT.select}
                 inputType="checkinFrom"
                 value={data.checkinFrom}
                 handleChange={(e) =>
@@ -79,11 +79,11 @@ export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
           </div>
           <div>
             <div css={{ marginBottom: 8 }}>
-              <h4 css={{ color: "grey.500", fontSize: 13 }}>To: </h4>
+              <h4 css={{ color: 'grey.500', fontSize: 13 }}>To: </h4>
             </div>
             <div>
               <Input
-                variant={$Input.SELECT}
+                variant={$INPUT.select}
                 inputType="checkinTo"
                 value={data.checkinTo}
                 handleChange={(e) =>
@@ -96,4 +96,13 @@ export const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
       </div>
     </div>
   );
+};
+
+export const checkin = (props) => {
+  return {
+    checkin: {
+      component: <CheckInCreate {...props} />,
+      css: {},
+    },
+  };
 };

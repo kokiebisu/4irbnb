@@ -5,12 +5,12 @@ import { useEffect, useState } from 'react';
 import { useFormik } from 'formik';
 import Router from 'next/router';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
-import { Input, $Input } from '@nextbnb/atoms-input';
+import { Input, $INPUT } from '@nextbnb/atoms-input';
 
 /**
  * Renders the /become-a-host/get-started page content
  */
-export const GetStartedCreate: React.FC<{
+const GetStartedCreate: React.FC<{
   dispatchStay?: ({ type: string, payload: any }) => void;
 }> = ({ dispatchStay }) => {
   const [loading, setLoading] = useState(false);
@@ -61,14 +61,14 @@ export const GetStartedCreate: React.FC<{
             >
               <div>
                 <Input
-                  variant={$Input.PLACE}
+                  variant={$INPUT.place}
                   value={stay}
                   changePlace={setStay}
                 />
               </div>
               <div>
                 <Input
-                  variant={$Input.GUESTS}
+                  variant={$INPUT.guests}
                   handleChange={formik.handleChange}
                   value={formik.values.guests}
                 />
@@ -76,7 +76,7 @@ export const GetStartedCreate: React.FC<{
             </div>
             <div>
               <Input
-                variant={$Input.ADDRESS}
+                variant={$INPUT.address}
                 handleChange={formik.handleChange}
                 value={formik.values.address}
               />
@@ -96,4 +96,13 @@ export const GetStartedCreate: React.FC<{
       </div>
     </div>
   );
+};
+
+export const getstarted = (props) => {
+  return {
+    getstarted: {
+      component: <GetStartedCreate {...props} />,
+      css: {},
+    },
+  };
 };
