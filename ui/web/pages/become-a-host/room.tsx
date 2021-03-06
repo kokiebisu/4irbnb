@@ -3,12 +3,12 @@ import Router from 'next/router';
 
 import { useStayDispatch, useStayState } from '@context/stay';
 
-import { Prototype, $Prototype } from '@airbnb/components/prototype/web/create';
+import { Prototype, $PROTOTYPE } from '@nextbnb/prototype';
 import {
   inputTypes,
   properties,
 } from '@airbnb/components/atoms/input/logic/logic.types';
-import { Layout } from '@airbnb/components/layout/web';
+import { Layout } from '@nextbnb/layout';
 
 const RoomPage = () => {
   const stayDispatch = useStayDispatch();
@@ -68,7 +68,7 @@ const RoomPage = () => {
       left={
         <Prototype
           title="Property and guests"
-          variant={$Prototype.ROOM}
+          variant={$PROTOTYPE.room}
           data={data}
           setData={setData}
         />

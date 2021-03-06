@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { Bar, $Bar } from "@nextbnb/organisms-bar";
-import { Header, $Header } from "@nextbnb/organisms-header";
+import { jsx } from 'theme-ui';
+import { Bar, $Bar } from '@nextbnb/organisms-bar';
+import { Header, $HEADER } from '@nextbnb/organisms-header';
 
 export const CreateLayout: React.FC<{
   title?: string;
@@ -13,7 +13,7 @@ export const CreateLayout: React.FC<{
   percentage?: number;
   criteria?: boolean;
 }> = ({
-  title = "Property and guests",
+  title = 'Property and guests',
   left,
   right,
   next,
@@ -23,9 +23,9 @@ export const CreateLayout: React.FC<{
 }) => {
   return (
     <div>
-      <div css={{ position: "sticky", zIndex: 9999, top: 0 }}>
+      <div css={{ position: 'sticky', zIndex: 9999, top: 0 }}>
         <div>
-          <Header variant={$Header.STAY} title={title} />
+          <Header variant={$HEADER.STAY} title={title} />
         </div>
         <div>
           <Bar variant={$Bar.PROGRESS} percentage={percentage} />
@@ -33,21 +33,21 @@ export const CreateLayout: React.FC<{
       </div>
       <div
         css={{
-          display: "flex",
-          overflowY: "auto",
-          minHeight: "calc(100vh - 75px)",
+          display: 'flex',
+          overflowY: 'auto',
+          minHeight: 'calc(100vh - 75px)',
         }}
       >
         <div
           css={{
-            width: ["100%", "55%"],
-            display: "flex",
-            justifyContent: "flex-end",
+            width: ['100%', '55%'],
+            display: 'flex',
+            justifyContent: 'flex-end',
           }}
         >
           <div
             css={{
-              maxWidth: ["100%", "550px"],
+              maxWidth: ['100%', '550px'],
               paddingBottom: 100,
             }}
           >
@@ -57,19 +57,19 @@ export const CreateLayout: React.FC<{
           </div>
           <div
             css={{
-              display: "flex",
-              backgroundColor: "white",
-              width: "100%",
-              position: "fixed",
+              display: 'flex',
+              backgroundColor: 'white',
+              width: '100%',
+              position: 'fixed',
               bottom: 0,
               zIndex: 60,
             }}
             sx={{
-              maxWidth: ["100%", "55%"],
-              justifyContent: ["center", "flex-end"],
+              maxWidth: ['100%', '55%'],
+              justifyContent: ['center', 'flex-end'],
             }}
           >
-            <div css={{ width: "100%", maxWidth: 550, padding: "0 32px" }}>
+            <div css={{ width: '100%', maxWidth: 550, padding: '0 32px' }}>
               <Bar
                 variant={$Bar.CREATE}
                 next={next}
@@ -80,8 +80,8 @@ export const CreateLayout: React.FC<{
           </div>
         </div>
         <div
-          css={{ width: "45%", backgroundColor: "#FAFAFA" }}
-          sx={{ display: ["none", "block"] }}
+          css={{ width: '45%', backgroundColor: '#FAFAFA' }}
+          sx={{ display: ['none', 'block'] }}
         >
           {right}
         </div>

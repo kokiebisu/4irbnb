@@ -1,10 +1,8 @@
-import { useState } from "react";
-import Router from "next/router";
-
-import { Layout } from "@airbnb/components/layout/web";
-import { Prototype, $Prototype } from "@airbnb/components/prototype/web/create";
-
-import { useStayDispatch, useStayState } from "@context/stay";
+import { useState } from 'react';
+import Router from 'next/router';
+import { Layout } from '@nextbnb/layout';
+import { Prototype, $PROTOTYPE } from '@nextbnb/prototype';
+import { useStayDispatch, useStayState } from '@context/stay';
 
 const PeriodPage = () => {
   const stayDispatch = useStayDispatch();
@@ -16,17 +14,17 @@ const PeriodPage = () => {
 
   const proceed = () => {
     stayDispatch({
-      type: "add",
+      type: 'add',
       payload: data,
     });
     setTimeout(() => {
-      Router.push("/become-a-host/price");
+      Router.push('/become-a-host/price');
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push("/advance");
+      Router.push('/advance');
     }, 500);
   };
 
@@ -35,7 +33,7 @@ const PeriodPage = () => {
       variant="create"
       title="Calendar and availability"
       left={
-        <Prototype variant={$Prototype.PERIOD} data={data} setData={setData} />
+        <Prototype variant={$PROTOTYPE.period} data={data} setData={setData} />
       }
       percentage={90}
       next={proceed}

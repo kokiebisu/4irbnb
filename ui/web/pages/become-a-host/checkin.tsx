@@ -1,10 +1,10 @@
-import { useState } from "react";
-import Router from "next/router";
+import { useState } from 'react';
+import Router from 'next/router';
 
-import { Prototype, $Prototype } from "@airbnb/components/prototype/web/create";
-import { Layout } from "@airbnb/components/layout/web";
+import { Prototype, $PROTOTYPE } from '@nextbnb/prototype';
+import { Layout } from '@nextbnb/layout';
 
-import { useStayDispatch, useStayState } from "@context/stay";
+import { useStayDispatch, useStayState } from '@context/stay';
 
 const CheckInPage = () => {
   const stayDispatch = useStayDispatch();
@@ -17,17 +17,17 @@ const CheckInPage = () => {
 
   const proceed = () => {
     stayDispatch({
-      type: "add",
+      type: 'add',
       payload: data,
     });
     setTimeout(() => {
-      Router.push("/become-a-host/advance");
+      Router.push('/become-a-host/advance');
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push("/become-a-host/review-how-guests-book");
+      Router.push('/become-a-host/review-how-guests-book');
     }, 500);
   };
   return (
@@ -35,7 +35,7 @@ const CheckInPage = () => {
       variant="create"
       title="Calendar and availability"
       left={
-        <Prototype variant={$Prototype.CHECKIN} data={data} setData={setData} />
+        <Prototype variant={$PROTOTYPE.checkin} data={data} setData={setData} />
       }
       percentage={80}
       next={proceed}

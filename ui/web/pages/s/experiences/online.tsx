@@ -1,6 +1,6 @@
 import { Modal, $Modal } from '@airbnb/components/organisms/modal/web';
 import { Bar, $Bar } from '@airbnb/components/organisms/bar/web';
-import { Header, $Header } from '@airbnb/components/organisms/header/web';
+import { Header, $HEADER } from '@nextbnb/organisms';
 import { Button, $BUTTON } from '@airbnb/components/atoms/button/web';
 import { Footer } from '@airbnb/components/organisms/footer/web';
 import {
@@ -21,7 +21,7 @@ const OnlinePage = () => {
     <div>
       <div className={[shape['shadow--sm']].join(' ')}>
         <div className={[layout['container--spread']].join(' ')}>
-          <Header variant={$Header.WHITE} />
+          <Header variant={$HEADER.white} />
         </div>
       </div>
       <div className={[space['m-v--8']].join(' ')}>

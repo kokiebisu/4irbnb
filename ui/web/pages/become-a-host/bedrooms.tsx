@@ -1,10 +1,10 @@
-import { useState } from "react";
-import Router from "next/router";
+import { useState } from 'react';
+import Router from 'next/router';
 
-import { Layout } from "@airbnb/components/layout/web";
-import { Prototype, $Prototype } from "@airbnb/components/prototype/web/create";
+import { Layout } from '@nextbnb/layout';
+import { Prototype, $PROTOTYPE } from '@nextbnb/prototype';
 
-import { useStayDispatch, useStayState } from "@context/stay";
+import { useStayDispatch, useStayState } from '@context/stay';
 
 const BedRoomsPage = () => {
   const stayDispatch = useStayDispatch();
@@ -17,7 +17,7 @@ const BedRoomsPage = () => {
 
   const proceed = () => {
     stayDispatch({
-      type: "add",
+      type: 'add',
       payload: {
         guests: data.guests,
         bedrooms: data.bedrooms,
@@ -25,13 +25,13 @@ const BedRoomsPage = () => {
       },
     });
     setTimeout(() => {
-      Router.push("/become-a-host/bathrooms");
+      Router.push('/become-a-host/bathrooms');
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push("/become-a-host/room");
+      Router.push('/become-a-host/room');
     }, 500);
   };
 
@@ -41,7 +41,7 @@ const BedRoomsPage = () => {
       left={
         <Prototype
           title="Property and guests"
-          variant={$Prototype.BEDROOMS}
+          variant={$PROTOTYPE.bedrooms}
           data={data}
           setData={setData}
         />

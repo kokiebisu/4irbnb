@@ -1,10 +1,8 @@
-import { useState } from "react";
-import Router from "next/router";
-
-import { useStayDispatch, useStayState } from "@context/stay";
-
-import { Layout } from "@airbnb/components/layout/web";
-import { Prototype, $Prototype } from "@airbnb/components/prototype/web/create";
+import { useState } from 'react';
+import Router from 'next/router';
+import { useStayDispatch, useStayState } from '@context/stay';
+import { Layout } from '@nextbnb/layout';
+import { Prototype, $PROTOTYPE } from '@nextbnb/prototype';
 
 const PhotosPage = () => {
   const stayDispatch = useStayDispatch();
@@ -15,17 +13,17 @@ const PhotosPage = () => {
 
   const proceed = () => {
     stayDispatch({
-      type: "add",
+      type: 'add',
       payload: data,
     });
     setTimeout(() => {
-      Router.push("/become-a-host/description");
+      Router.push('/become-a-host/description');
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push("/become-a-host/spaces");
+      Router.push('/become-a-host/spaces');
     }, 500);
   };
 
@@ -34,7 +32,7 @@ const PhotosPage = () => {
       variant="create"
       title="Photos"
       left={
-        <Prototype variant={$Prototype.PHOTOS} data={data} setData={setData} />
+        <Prototype variant={$PROTOTYPE.photos} data={data} setData={setData} />
       }
       percentage={35}
       next={proceed}

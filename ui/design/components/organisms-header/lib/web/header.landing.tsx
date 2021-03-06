@@ -5,7 +5,7 @@ import { useRef, useState } from 'react';
 import Router from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import { Modal, $Modal } from '@nextbnb/organisms-modal';
+import { Modal, $MODAL } from '@nextbnb/organisms-modal';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { Prototype } from '@nextbnb/prototype-searchbar';
 import { NameLogo, NoNameLogo } from '@nextbnb/design/assets/svg/logo';
@@ -167,7 +167,7 @@ const LandingHeader: React.FC<{
           }}
         >
           <Modal
-            variant={$Modal.MENU}
+            variant={$MODAL.menu}
             extendsTo={{
               width: 200,
             }}

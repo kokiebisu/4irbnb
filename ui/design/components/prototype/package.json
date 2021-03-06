@@ -11,19 +11,24 @@
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "dist"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kokiebisu/airbnb.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "clean": "rm -rf dist",
+    "build": "yarn clean && webpack --config ./webpack.config.js"
   },
   "bugs": {
     "url": "https://github.com/kokiebisu/airbnb/issues"
   },
   "dependencies": {
-    "@nextbnb/prototype-auth": "^1.0.0"
+    "@nextbnb/prototype-auth": "^1.0.0",
+    "@nextbnb/prototype-create": "^1.0.0",
+    "@nextbnb/prototype-globe": "^1.0.0",
+    "@nextbnb/prototype-homes": "^1.0.0",
+    "@nextbnb/prototype-searchbar": "^1.0.0"
   }
 }

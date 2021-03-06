@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import Router from 'next/router';
-import { Modal, $Modal } from '@nextbnb/organisms-modal';
+import { Modal, $MODAL } from '@nextbnb/organisms-modal';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { ChevronLeft } from '@nextbnb/design/assets/svg/regular';
 import { $HEADER } from '../constant/appearance';
@@ -73,7 +73,7 @@ const WhiteHeader: React.FC<{
           }}
         >
           <Modal
-            variant={$Modal.MENU}
+            variant={$MODAL.menu}
             extendsTo={{
               width: 200,
             }}

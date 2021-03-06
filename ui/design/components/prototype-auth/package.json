@@ -19,7 +19,7 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "yarn clean && webpack"
+    "build": "yarn clean && webpack --config ./webpack.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

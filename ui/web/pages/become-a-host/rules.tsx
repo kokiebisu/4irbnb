@@ -1,8 +1,8 @@
-import { useState } from "react";
-import Router from "next/router";
-import { Layout } from "@airbnb/components/layout/web";
-import { Prototype, $Prototype } from "@airbnb/components/prototype/web/create";
-import { useStayDispatch, useStayState } from "@context/stay";
+import { useState } from 'react';
+import Router from 'next/router';
+import { Layout } from '@nextbnb/layout';
+import { Prototype, $PROTOTYPE } from '@nextbnb/prototype';
+import { useStayDispatch, useStayState } from '@context/stay';
 
 const DescriptionPage = () => {
   const stayDispatch = useStayDispatch();
@@ -15,17 +15,17 @@ const DescriptionPage = () => {
 
   const proceed = () => {
     stayDispatch({
-      type: "add",
+      type: 'add',
       payload: data,
     });
     setTimeout(() => {
-      Router.push("/become-a-host/review-how-guests-book");
+      Router.push('/become-a-host/review-how-guests-book');
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push("/become-a-host/spaces");
+      Router.push('/become-a-host/spaces');
     }, 500);
   };
 
@@ -35,7 +35,7 @@ const DescriptionPage = () => {
       left={
         <Prototype
           title="Booking settings"
-          variant={$Prototype.RULES}
+          variant={$PROTOTYPE.rules}
           data={data}
           setData={setData}
         />
@@ -44,8 +44,8 @@ const DescriptionPage = () => {
       next={proceed}
       back={revert}
       criteria={
-        typeof data.events === "undefined" &&
-        typeof data.smoking === "undefined"
+        typeof data.events === 'undefined' &&
+        typeof data.smoking === 'undefined'
       }
     />
   );

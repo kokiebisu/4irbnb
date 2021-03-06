@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import Router from "next/router";
+import React, { useState } from 'react';
+import Router from 'next/router';
 
-import { Prototype, $Prototype } from "@airbnb/components/prototype/web/create";
-import { Layout } from "@airbnb/components/layout/web";
+import { Prototype, $PROTOTYPE } from '@nextbnb/prototype';
+import { Layout } from '@nextbnb/layout';
 
-import { useStayDispatch, useStayState } from "@context/stay";
+import { useStayDispatch, useStayState } from '@context/stay';
 
 const AdvancePage = () => {
   const stayDispatch = useStayDispatch();
@@ -15,17 +15,17 @@ const AdvancePage = () => {
 
   const proceed = () => {
     stayDispatch({
-      type: "add",
+      type: 'add',
       payload: data,
     });
     setTimeout(() => {
-      Router.push("/become-a-host/period");
+      Router.push('/become-a-host/period');
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push("/become-a-host/checkin");
+      Router.push('/become-a-host/checkin');
     }, 500);
   };
   return (
@@ -33,7 +33,7 @@ const AdvancePage = () => {
       variant="create"
       title="Calendar and availability"
       left={
-        <Prototype variant={$Prototype.ADVANCE} data={data} setData={setData} />
+        <Prototype variant={$PROTOTYPE.advance} data={data} setData={setData} />
       }
       percentage={85}
       next={proceed}

@@ -1,10 +1,9 @@
-import { useState } from "react";
-import Router from "next/router";
+import { useState } from 'react';
+import Router from 'next/router';
 
-import { Layout } from "@airbnb/components/layout/web";
-import { Prototype, $Prototype } from "@airbnb/components/prototype/web/create";
-
-import { useStayDispatch, useStayState } from "@context/stay";
+import { Layout } from '@nextbnb/layout';
+import { Prototype, $PROTOTYPE } from '@nextbnb/prototype';
+import { useStayDispatch, useStayState } from '@context/stay';
 
 const AmenitiesPage = () => {
   const stayDispatch = useStayDispatch();
@@ -15,17 +14,17 @@ const AmenitiesPage = () => {
 
   const proceed = () => {
     stayDispatch({
-      type: "add",
+      type: 'add',
       payload: data,
     });
     setTimeout(() => {
-      Router.push("/become-a-host/photos");
+      Router.push('/become-a-host/photos');
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push("/become-a-host/amenities");
+      Router.push('/become-a-host/amenities');
     }, 500);
   };
 
@@ -35,7 +34,7 @@ const AmenitiesPage = () => {
       left={
         <Prototype
           title="Amenities"
-          variant={$Prototype.SPACES}
+          variant={$PROTOTYPE.spaces}
           data={data}
           setData={setData}
         />

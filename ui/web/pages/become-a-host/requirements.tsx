@@ -1,18 +1,18 @@
-import Router from "next/router";
+import Router from 'next/router';
 
-import { Layout } from "@airbnb/components/layout/web";
-import { Prototype, $Prototype } from "@airbnb/components/prototype/web/create";
+import { Layout } from '@nextbnb/layout';
+import { Prototype, $PROTOTYPE } from '@nextbnb/prototype';
 
 const RequirementsPage = () => {
   const proceed = () => {
     setTimeout(() => {
-      Router.push("/become-a-host/rules");
+      Router.push('/become-a-host/rules');
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push("/become-a-host/phone");
+      Router.push('/become-a-host/phone');
     }, 500);
   };
 
@@ -20,7 +20,7 @@ const RequirementsPage = () => {
     <Layout
       variant="create"
       left={
-        <Prototype title="Booking settings" variant={$Prototype.REQUIREMENTS} />
+        <Prototype title="Booking settings" variant={$PROTOTYPE.requirements} />
       }
       percentage={80}
       next={proceed}

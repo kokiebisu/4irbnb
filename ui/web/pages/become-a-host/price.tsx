@@ -1,10 +1,8 @@
-import { useState } from "react";
-import Router from "next/router";
-
-import { Layout } from "@airbnb/components/layout/web";
-import { Prototype, $Prototype } from "@airbnb/components/prototype/web/create";
-
-import { useStayDispatch, useStayState } from "@context/stay";
+import { useState } from 'react';
+import Router from 'next/router';
+import { Layout } from '@nextbnb/layout';
+import { Prototype, $PROTOTYPE } from '@nextbnb/prototype';
+import { useStayDispatch, useStayState } from '@context/stay';
 
 const PricePage = () => {
   const stayDispatch = useStayDispatch();
@@ -16,17 +14,17 @@ const PricePage = () => {
 
   const proceed = () => {
     stayDispatch({
-      type: "add",
+      type: 'add',
       payload: data,
     });
     setTimeout(() => {
-      Router.push("/become-a-host/booking-scenarios");
+      Router.push('/become-a-host/booking-scenarios');
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push("/period");
+      Router.push('/period');
     }, 500);
   };
 
@@ -35,7 +33,7 @@ const PricePage = () => {
       variant="create"
       title="Pricing"
       left={
-        <Prototype variant={$Prototype.PRICE} data={data} setData={setData} />
+        <Prototype variant={$PROTOTYPE.price} data={data} setData={setData} />
       }
       percentage={90}
       next={proceed}

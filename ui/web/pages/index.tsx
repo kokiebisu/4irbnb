@@ -1,33 +1,22 @@
-import { AnimatePresence, motion } from "framer-motion";
-
-import { useToggleState } from "../context/toggle";
-
+import { AnimatePresence, motion } from 'framer-motion';
+import { useToggleState } from '../context/toggle';
 import {
   categoryItems,
   anywhereItems,
   destinationItems,
-} from "@airbnb/content";
-
-import { nearbyItems } from "../data/nearby";
-
-import { Layout } from "@airbnb/components/layout/web";
-
-import { Animation } from "@airbnb/components/animation/web";
-import { Modal, $Modal } from "@airbnb/components/organisms/modal/web";
-import { Template, $Template } from "@airbnb/components/template/web/index";
-import { Footer } from "@airbnb/components/organisms/footer/web";
-
-import { Bar, $Bar } from "@airbnb/components/organisms/bar/web";
-
-import { useHandleScroll } from "@airbnb/components/hooks/useHandleScroll";
-import { useHandleDocumentResize } from "@airbnb/components/hooks/useHandleDocumentResize";
-import { useTimeout } from "@airbnb/components/hooks/useTimeout";
-import { useTabTitle } from "@airbnb/components/hooks/useTabTitle";
-
-import { APIClient } from "../api/client";
+} from '@nextbnb/content';
+import { nearbyItems } from '../data/nearby';
+import { Layout } from '@nextbnb/layout';
+import { Animation } from '@nextbnb/animation';
+import { Modal, $MODAL, Bar, $BAR, Footer } from '@nextbnb/organisms';
+import { useHandleScroll } from '@nextbnb/design/hooks/useHandleScroll';
+import { useHandleDocumentResize } from '@nextbnb/design/hooks/useHandleDocumentResize';
+import { useTimeout } from '@nextbnb/design/hooks/useTimeout';
+import { useTabTitle } from '@nextbnb/design/hooks/useTabTitle';
+import { APIClient } from '../api/client';
 
 const LandingPage = ({ currentUser }) => {
-  useTabTitle("Vacation Rentals, Homes, Experiences & Places - Airbnb");
+  useTabTitle('Vacation Rentals, Homes, Experiences & Places - Airbnb');
   const loading = useTimeout(3000);
   const toggleState = useToggleState();
   const scrollPosition = useHandleScroll();
@@ -35,7 +24,7 @@ const LandingPage = ({ currentUser }) => {
 
   return (
     <div
-      style={{ overflowX: "hidden" }}
+      style={{ overflowX: 'hidden' }}
       // className={[layout["relative"], shape["min-h--fullv"]].join(" ")}
     >
       <div>
@@ -95,7 +84,7 @@ const LandingPage = ({ currentUser }) => {
         )}
         <Footer spread />
         <div
-          style={{ position: "fixed", width: "100%", zIndex: 50 }}
+          style={{ position: 'fixed', width: '100%', zIndex: 50 }}
           // className={[
           //   layout["fb--0"],
           //   layout["flex"],
@@ -106,7 +95,7 @@ const LandingPage = ({ currentUser }) => {
           // className={[index["m__privacy"]].join(" ")}
           >
             <Modal
-              variant={$Modal.PRIVACY}
+              variant={$MODAL.privacy}
               criteria={toggleState.privacy}
               animate="slideup"
             />
@@ -137,13 +126,13 @@ const LandingPage = ({ currentUser }) => {
         {toggleState.auth && (
           <div
             style={{
-              position: "fixed",
+              position: 'fixed',
               zIndex: 60,
               bottom: 0,
               left: 0,
               right: 0,
               top: 0,
-              backgroundColor: "rgba(0, 0, 0, 0.6)",
+              backgroundColor: 'rgba(0, 0, 0, 0.6)',
             }}
           >
             <div
@@ -155,7 +144,7 @@ const LandingPage = ({ currentUser }) => {
             // ].join(" ")}
             >
               <Modal
-                variant={$Modal.AUTH}
+                variant={$MODAL.auth}
                 animate="slideup"
                 criteria={toggleState.auth}
                 lock
@@ -166,13 +155,13 @@ const LandingPage = ({ currentUser }) => {
         {toggleState.globe && (
           <div
             style={{
-              position: "fixed",
+              position: 'fixed',
               zIndex: 60,
               bottom: 0,
               left: 0,
               right: 0,
               top: 0,
-              backgroundColor: "rgba(0, 0, 0, 0.6)",
+              backgroundColor: 'rgba(0, 0, 0, 0.6)',
             }}
           >
             <div
@@ -184,7 +173,7 @@ const LandingPage = ({ currentUser }) => {
             // ].join(" ")}
             >
               <Modal
-                variant={$Modal.GLOBE}
+                variant={$MODAL.globe}
                 // extendsTo={[
                 //   shape["w--full"],
                 //   shape["h--full"],
@@ -206,7 +195,7 @@ const LandingPage = ({ currentUser }) => {
 LandingPage.getInitialProps = async (context) => {
   const client = APIClient(context);
   try {
-    const response = await client.get("/api/users/currentuser");
+    const response = await client.get('/api/users/currentuser');
     return response.data;
   } catch (err) {
     return {};

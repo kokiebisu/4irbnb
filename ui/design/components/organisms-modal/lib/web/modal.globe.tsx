@@ -3,13 +3,13 @@
 import { jsx } from 'theme-ui';
 import { useState } from 'react';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
-import { Prototype, $Prototype } from '@nextbnb/prototype-globe';
+import { Prototype, $PROTOTYPE } from '@nextbnb/prototype-globe';
 import { $MODAL } from '../constant/appearance';
 
 const GlobeModal: React.FC<{ toggleDispatch?: (params) => void }> = ({
   toggleDispatch,
 }) => {
-  const [prototype, setPrototype] = useState($Prototype.LANGUAGE);
+  const [prototype, setPrototype] = useState($PROTOTYPE.language);
   return (
     <div>
       <div>
@@ -35,8 +35,8 @@ const GlobeModal: React.FC<{ toggleDispatch?: (params) => void }> = ({
               title="Language and region"
               font={16}
               bold
-              unselected={prototype !== $Prototype.LANGUAGE}
-              onClick={() => setPrototype($Prototype.LANGUAGE)}
+              unselected={prototype !== $PROTOTYPE.language}
+              onClick={() => setPrototype($PROTOTYPE.language)}
             />
           </div>
           <div>
@@ -45,8 +45,8 @@ const GlobeModal: React.FC<{ toggleDispatch?: (params) => void }> = ({
               title="Currency"
               font={16}
               bold
-              unselected={prototype !== $Prototype.CURRENCY}
-              onClick={() => setPrototype($Prototype.CURRENCY)}
+              unselected={prototype !== $PROTOTYPE.currency}
+              onClick={() => setPrototype($PROTOTYPE.currency)}
             />
           </div>
         </div>
