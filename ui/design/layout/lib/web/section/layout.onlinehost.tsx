@@ -1,8 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx } from 'theme-ui';
+import { $LAYOUT } from '../..';
 
-export const OnlineHostLayout: React.FC<{
+const OnlineHostLayout: React.FC<{
   title?: string;
   subtitle?: string;
   children?: React.ReactNode;
@@ -12,33 +13,42 @@ export const OnlineHostLayout: React.FC<{
   return (
     <div
       css={{
-        alignItems: "center",
-        flexDirection: "column",
+        alignItems: 'center',
+        flexDirection: 'column',
       }}
       sx={{
-        display: ["block", "block", "flex"],
+        display: ['block', 'block', 'flex'],
       }}
     >
       <div
         css={{
-          display: ["block", "block", "flex"],
-          flexDirection: "column",
-          alignItems: "center",
-          padding: "16px 0",
+          display: ['block', 'block', 'flex'],
+          flexDirection: 'column',
+          alignItems: 'center',
+          padding: '16px 0',
         }}
       >
         {title && (
           <div>
-            <h3 sx={{ ...(dark && { color: "white" }) }}>{title}</h3>
+            <h3 sx={{ ...(dark && { color: 'white' }) }}>{title}</h3>
           </div>
         )}
         {subtitle && (
           <div css={{ marginTop: 16 }}>
-            <p sx={{ ...(dark && { color: "white" }) }}>{subtitle}</p>
+            <p sx={{ ...(dark && { color: 'white' }) }}>{subtitle}</p>
           </div>
         )}
       </div>
       {children}
     </div>
   );
+};
+
+export const onlinehost = (props) => {
+  return {
+    [$LAYOUT.onlinehost]: {
+      component: <OnlineHostLayout {...props} />,
+      css: {},
+    },
+  };
 };

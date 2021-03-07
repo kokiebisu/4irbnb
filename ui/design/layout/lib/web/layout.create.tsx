@@ -1,10 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Bar, $Bar } from '@nextbnb/organisms-bar';
+import { Bar, $BAR } from '@nextbnb/organisms-bar';
 import { Header, $HEADER } from '@nextbnb/organisms-header';
+import { $LAYOUT } from '..';
 
-export const CreateLayout: React.FC<{
+const CreateLayout: React.FC<{
   title?: string;
   left?: React.ReactNode;
   right?: React.ReactNode;
@@ -25,10 +26,10 @@ export const CreateLayout: React.FC<{
     <div>
       <div css={{ position: 'sticky', zIndex: 9999, top: 0 }}>
         <div>
-          <Header variant={$HEADER.STAY} title={title} />
+          <Header variant={$HEADER.stay} title={title} />
         </div>
         <div>
-          <Bar variant={$Bar.PROGRESS} percentage={percentage} />
+          <Bar variant={$BAR.progress} percentage={percentage} />
         </div>
       </div>
       <div
@@ -71,7 +72,7 @@ export const CreateLayout: React.FC<{
           >
             <div css={{ width: '100%', maxWidth: 550, padding: '0 32px' }}>
               <Bar
-                variant={$Bar.CREATE}
+                variant={$BAR.create}
                 next={next}
                 back={back}
                 criteria={criteria}
@@ -88,4 +89,13 @@ export const CreateLayout: React.FC<{
       </div>
     </div>
   );
+};
+
+export const create = (props) => {
+  return {
+    [$LAYOUT.create]: {
+      component: <CreateLayout {...props} />,
+      css: {},
+    },
+  };
 };

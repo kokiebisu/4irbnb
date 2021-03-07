@@ -2,13 +2,14 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { $LAYOUT } from '..';
 
 /**
  * Layout for Currency modal
  * @param {Object[]} items - Currency type
  * @param {string} title - Title of the Template
  */
-export const CurrencyLayout: React.FC<{
+const CurrencyLayout: React.FC<{
   items?: { name?: string; abbreviation?: string; symbol?: string }[];
   title?: string;
 }> = ({ items = [], title = 'Title here' }) => {
@@ -46,4 +47,13 @@ export const CurrencyLayout: React.FC<{
       </div>
     </div>
   );
+};
+
+export const currency = (props) => {
+  return {
+    [$LAYOUT.currency]: {
+      component: <CurrencyLayout {...props} />,
+      css: {},
+    },
+  };
 };
