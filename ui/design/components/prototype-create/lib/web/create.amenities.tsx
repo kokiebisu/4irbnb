@@ -1,23 +1,22 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Input, $INPUT } from '@nextbnb/atoms-input';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
 
 const AmenitiesCreate: React.FC<{
+  include?: any;
+  exclude?: any;
   data?: any;
-  setData?: any;
-}> = ({ data = { amenities: ['essentials'], safeties: ['kit'] }, setData }) => {
+}> = ({
+  data = { amenities: ['essentials'], safeties: ['kit'] },
+  include = (type, params) => alert(`Included ${params} from ${type}`),
+  exclude = (type, params) => alert(`Excluded ${params} from ${type}`),
+}) => {
   const modify = (type: string, params: string) => {
     if (data[type].includes(params)) {
-      setData({
-        ...data,
-        [type]: [...data[type]].filter((element) => element !== params),
-      });
+      exclude(type, params);
     } else {
-      setData({
-        ...data,
-        [type]: [...data[type], params],
-      });
+      include(type, params);
     }
   };
 

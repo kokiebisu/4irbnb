@@ -1,17 +1,24 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Input, $INPUT } from '@nextbnb/atoms-input';
-import { Layout } from '@nextbnb/design/layout';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
+import { Layout } from '@nextbnb/design/layout/dist/bundle.esm';
 
 /**
  * Renders the /become-a-host/room page content
  * @param {object} data - Input data
  * @param {function} setData - Changes the input data
  */
-const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
+const RoomCreate: React.FC<{
+  data?: any;
+  handlePlaceChange?: (e) => void;
+  handlePropertyChange?: (e) => void;
+  handlePlaceTypeChange?: (placeType: string) => void;
+}> = ({
   data,
-  setData,
+  handlePlaceChange = () => alert('Changed place'),
+  handlePropertyChange = () => alert('Changed property type'),
+  handlePlaceTypeChange = () => alert('Change place type'),
 }) => {
   return (
     <div>
@@ -26,9 +33,10 @@ const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
             inputType="place"
             variant={$INPUT.select}
             value={data?.place}
-            handleChange={(e) => {
-              setData({ ...data, place: e.target.value });
-            }}
+            // handleChange={(e) => {
+            //   setData({ ...data, place: e.target.value });
+            // }}
+            handleChange={handlePlaceChange}
           />
         </Layout>
       </div>
@@ -39,9 +47,10 @@ const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
             inputType={data?.place}
             variant={$INPUT.select}
             value={data?.property}
-            handleChange={(e) => {
-              setData({ ...data, property: e.target.value });
-            }}
+            handleChange={handlePropertyChange}
+            // handleChange={(e) => {
+            //   setData({ ...data, property: e.target.value });
+            // }}
           />
         </Layout>
       </div>
@@ -61,7 +70,8 @@ const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
                     title="Entire place"
                     subtitle="Guests have the whole place to themselves. This usually includes a bedroom, a bathroom, and a kitchen."
                     selected={data.stay === 'Entire place'}
-                    select={() => setData({ ...data, stay: 'Entire place' })}
+                    // select={() => setData({ ...data, stay: 'Entire place' })}
+                    select={() => handlePlaceTypeChange('Entire place')}
                   />
                 </div>
                 <div css={{ marginBottom: 22 }}>
@@ -70,7 +80,8 @@ const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
                     title="Private place"
                     subtitle="Guests have their own private room for sleeping. Other areas could be shared."
                     selected={data.stay === 'Private place'}
-                    select={() => setData({ ...data, stay: 'Private place' })}
+                    // select={() => setData({ ...data, stay: 'Private place' })}
+                    select={() => handlePlaceTypeChange('Private place')}
                   />
                 </div>
                 <div css={{ marginBottom: 22 }}>
@@ -79,7 +90,8 @@ const RoomCreate: React.FC<{ data?: any; setData?: any }> = ({
                     title="Shared room"
                     subtitle="Guests sleep in a bedroom or a common area that could be shared with others."
                     selected={data.stay === 'Shared room'}
-                    select={() => setData({ ...data, stay: 'Shared room' })}
+                    // select={() => setData({ ...data, stay: 'Shared room' })}
+                    select={() => handlePlaceTypeChange('Shared room')}
                   />
                 </div>
               </div>

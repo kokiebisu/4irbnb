@@ -1,13 +1,25 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Input, $INPUT } from '@nextbnb/atoms-input';
-import { Layout } from '@nextbnb/design/layout';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
+import { Layout } from '@nextbnb/design/layout/dist/bundle.esm';
 
 const BedroomsCreate: React.FC<{
   data?: any;
-  setData?: (params: any) => void;
-}> = ({ data = { guests: 0 }, setData }) => {
+  addGuest?: () => void;
+  subtractGuest?: () => void;
+  selectBedroomNumber?: (e) => void;
+  addBed?: () => void;
+  subtractBed?: () => void;
+}> = ({
+  data = { guests: 0 },
+  addGuest = () => alert('Added guest'),
+  subtractGuest = () => alert('Subtract guest'),
+  selectBedroomNumber = (e) =>
+    alert(`Switched number of bedrooms to ${e.target.value}`),
+  addBed = () => alert('Added bed'),
+  subtractBed = () => alert('Subtracted bed'),
+}) => {
   return (
     <div>
       <div css={{ marginBottom: 45 }}>
@@ -27,8 +39,10 @@ const BedroomsCreate: React.FC<{
             title="Guests"
             variant={$INPUT.counter}
             value={data.guests}
-            add={() => setData({ ...data, guests: data.guests + 1 })}
-            subtract={() => setData({ ...data, guests: data.guests - 1 })}
+            // add={() => setData({ ...data, guests: data.guests + 1 })}
+            // subtract={() => setData({ ...data, guests: data.guests - 1 })}
+            add={addGuest}
+            subtract={subtractGuest}
             min={1}
             max={16}
           />
@@ -41,9 +55,10 @@ const BedroomsCreate: React.FC<{
               variant={$INPUT.select}
               inputType="bedrooms"
               value={data.bedrooms}
-              handleChange={(e) =>
-                setData({ ...data, bedrooms: e.target.value })
-              }
+              // handleChange={(e) =>
+              //   setData({ ...data, bedrooms: e.target.value })
+              // }
+              handleChange={selectBedroomNumber}
             />
           </div>
         </Layout>
@@ -55,8 +70,10 @@ const BedroomsCreate: React.FC<{
               title="Beds"
               variant={$INPUT.counter}
               value={data.beds}
-              add={() => setData({ ...data, beds: data.beds + 1 })}
-              subtract={() => setData({ ...data, beds: data.beds - 1 })}
+              // add={() => setData({ ...data, beds: data.beds + 1 })}
+              // subtract={() => setData({ ...data, beds: data.beds - 1 })}
+              add={addBed}
+              subtract={subtractBed}
               min={1}
               max={50}
             />

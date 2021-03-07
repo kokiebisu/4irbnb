@@ -1,11 +1,18 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Input, $INPUT } from '@nextbnb/atoms-input';
-import { Layout } from '@nextbnb/design/layout';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
+import { Layout } from '@nextbnb/design/layout/dist/bundle.esm';
 
-const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
-  setData,
+const AdvanceCreate: React.FC<{
+  selectAnytime?: any;
+  selectMonth?: any;
+  selectUnavailable?: any;
+  data?: any;
+}> = ({
+  selectAnytime = () => alert('Select anytime'),
+  selectMonth = () => alert('Select month'),
+  selectUnavailable = () => alert('Select unavailable'),
   data = {
     advance: 0,
   },
@@ -20,7 +27,8 @@ const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
                 variant={$INPUT.radio}
                 title="Any time"
                 selected={data.advance === 0}
-                select={() => setData({ ...data, advance: 0 })}
+                // select={() => setData({ ...data, advance: 0 })}
+                select={selectAnytime}
               />
             </div>
             {[{ months: 3 }, { months: 6 }, { months: 9 }, { months: 12 }].map(
@@ -32,7 +40,8 @@ const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
                       months === 12 ? 'year' : 'months in advance'
                     }`}
                     selected={data.advance === months}
-                    select={() => setData({ ...data, advance: months })}
+                    // select={() => setData({ ...data, advance: months })}
+                    select={selectMonth}
                   />
                 </div>
               )
@@ -43,7 +52,8 @@ const AdvanceCreate: React.FC<{ setData?: any; data?: any }> = ({
                 title="Dates unavailable by default"
                 subtitle="Your entire calendar will be blocked by default, which means you’ll have to manually unblock dates to get booked."
                 selected={data.advance === 'unavailable'}
-                select={() => setData({ ...data, advance: 'unavailable' })}
+                // select={() => setData({ ...data, advance: 'unavailable' })}
+                select={selectUnavailable}
               />
             </div>
           </div>

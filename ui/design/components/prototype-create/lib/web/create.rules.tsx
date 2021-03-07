@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Input, $INPUT } from '@nextbnb/atoms-input';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
 
 /**
  * Renders the /become-a-host/rules page content
@@ -10,19 +10,28 @@ import { Input, $INPUT } from '@nextbnb/atoms-input';
  */
 const RulesCreate: React.FC<{
   data?: any;
-  setData?: (params: any) => void;
-}> = ({ data = { details: [] }, setData }) => {
+  excludeRule?: (type: string, params: any) => void;
+  includeRule?: (type: string, params: any) => void;
+}> = ({
+  data = { details: [] },
+  excludeRule = (type: string, params: any) =>
+    alert(`Excluded ${params} from ${type}`),
+  includeRule = (type: string, params: any) =>
+    alert(`Included ${params} from ${type}`),
+}) => {
   const modify = (type: string, params: string) => {
     if (data[type].includes(params)) {
-      setData({
-        ...data,
-        [type]: [...data[type]].filter((element) => element !== params),
-      });
+      // setData({
+      //   ...data,
+      //   [type]: [...data[type]].filter((element) => element !== params),
+      // });
+      excludeRule(type, params);
     } else {
-      setData({
-        ...data,
-        [type]: [...data[type], params],
-      });
+      // setData({
+      //   ...data,
+      //   [type]: [...data[type], params],
+      // });
+      includeRule(type, params);
     }
   };
 
@@ -44,7 +53,7 @@ const RulesCreate: React.FC<{
             variant={$INPUT.closed}
             title="Smoking allowed"
             data={data}
-            setData={setData}
+            // setData={setData}
             value="smoking"
           />
         </div>
@@ -53,7 +62,7 @@ const RulesCreate: React.FC<{
             variant={$INPUT.closed}
             title="Events allowed"
             data={data}
-            setData={setData}
+            // setData={setData}
             value="event"
           />
         </div>

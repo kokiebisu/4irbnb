@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Input, $INPUT } from '@nextbnb/atoms-input';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
 
 /**
  * Renders the /become-a-host/location page content
@@ -10,8 +10,23 @@ import { Input, $INPUT } from '@nextbnb/atoms-input';
  */
 const LocationCreate: React.FC<{
   data?: any;
-  setData?: (params: any) => void;
-}> = ({ data, setData }) => {
+  handleCountryChange?: (e) => void;
+  handlePostalCodeChange?: (e) => void;
+  handleStreetAddressChange?: (e) => void;
+  handleAptChange?: (e) => void;
+  handleCityChange?: (e) => void;
+  handleStateChange?: (e) => void;
+}> = ({
+  data,
+  handleCountryChange = (e) => alert(`Changed country to ${e.target.value}`),
+  handlePostalCodeChange = (e) =>
+    alert(`Changed postal code to ${e.target.value}`),
+  handleStreetAddressChange = (e) =>
+    alert(`Changed street address to ${e.target.value}`),
+  handleAptChange = (e) => alert(`Changed apt to ${e.target.value}`),
+  handleCityChange = (e) => alert(`Changed city to ${e.target.value}`),
+  handleStateChange = (e) => alert(`Changed state to ${e.target.value}`),
+}) => {
   return (
     <div>
       <div css={{ marginBottom: 8 }}>
@@ -40,7 +55,8 @@ const LocationCreate: React.FC<{
           </div>
           <Input
             variant={$INPUT.select}
-            handleChange={(e) => setData({ ...data, country: e.target.value })}
+            // handleChange={(e) => setData({ ...data, country: e.target.value })}
+            handleChange={handleCountryChange}
             value={data?.country}
             inputType="country"
           />
@@ -52,7 +68,8 @@ const LocationCreate: React.FC<{
           <Input
             name="postal"
             variant={$INPUT.text}
-            handleChange={(e) => setData({ ...data, postal: e.target.value })}
+            // handleChange={(e) => setData({ ...data, postal: e.target.value })}
+            handleChange={handlePostalCodeChange}
             value={data?.postal}
           />
         </div>
@@ -65,7 +82,8 @@ const LocationCreate: React.FC<{
           <Input
             name="street"
             variant={$INPUT.text}
-            handleChange={(e) => setData({ ...data, street: e.target.value })}
+            // handleChange={(e) => setData({ ...data, street: e.target.value })}
+            handleChange={handleStreetAddressChange}
             value={data?.street}
           />
         </div>
@@ -81,7 +99,8 @@ const LocationCreate: React.FC<{
           <Input
             name="apt"
             variant={$INPUT.text}
-            handleChange={(e) => setData({ ...data, apt: e.target.value })}
+            handleChange={handleAptChange}
+            // handleChange={(e) => setData({ ...data, apt: e.target.value })}
             value={data?.apt}
           />
         </div>
@@ -105,7 +124,8 @@ const LocationCreate: React.FC<{
           <div>
             <Input
               variant={$INPUT.text}
-              handleChange={(e) => setData({ ...data, city: e.target.value })}
+              handleChange={handleCityChange}
+              // handleChange={(e) => setData({ ...data, city: e.target.value })}
               value={data?.city}
               inputType="city"
             />
@@ -122,7 +142,8 @@ const LocationCreate: React.FC<{
             <Input
               name="state"
               variant={$INPUT.text}
-              handleChange={(e) => setData({ ...data, state: e.target.value })}
+              handleChange={handleStateChange}
+              // handleChange={(e) => setData({ ...data, state: e.target.value })}
               value={data?.state}
             />
           </div>

@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Bullet, $Bullet } from '@nextbnb/atoms-bullet';
+import { Bullet, $BULLET } from '@nextbnb/atoms-bullet/dist/bundle.esm';
 
 /**
  * Renders the /become-a-host/requirements page content
@@ -27,7 +27,7 @@ const RequirementsCreate: React.FC<{}> = () => {
           (content, index) => {
             return (
               <div key={index} css={{ marginBottom: 8 }}>
-                <Bullet variant={$Bullet.CHECK} title={content} />
+                <Bullet variant={$BULLET.CHECK} title={content} />
               </div>
             );
           }
@@ -49,7 +49,7 @@ const RequirementsCreate: React.FC<{}> = () => {
       ].map((content, index) => {
         return (
           <div key={index} css={{ marginBottom: 8 }}>
-            <Bullet variant={$Bullet.CHECK} title={content} />
+            <Bullet variant={$BULLET.CHECK} title={content} />
           </div>
         );
       })}

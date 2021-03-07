@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Bullet, $Bullet } from '@nextbnb/atoms-bullet';
+import { Bullet, $BULLET } from '@nextbnb/atoms-bullet/dist/bundle.esm';
 
 const ScenariosCreate: React.FC<{}> = () => {
   return (
@@ -15,7 +15,7 @@ const ScenariosCreate: React.FC<{}> = () => {
             (type, index) => {
               return (
                 <div key={index} css={{ marginBottom: 32 }}>
-                  <Bullet variant={$Bullet.SCENARIO} type={type} />
+                  <Bullet variant={$BULLET.SCENARIO} type={type} />
                 </div>
               );
             }

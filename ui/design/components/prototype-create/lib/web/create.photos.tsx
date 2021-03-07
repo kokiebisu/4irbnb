@@ -2,13 +2,12 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useState } from 'react';
-import { Input, $Input } from '@nextbnb/atoms-input';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
 
 const PhotosCreate: React.FC<{
   data?: any;
-  setData?: any;
-  setPreview?: any;
-}> = ({ data, setData }) => {
+  handleFileChange?: (e) => void;
+}> = ({ data, handleFileChange = () => alert('File selected') }) => {
   const [preview, setPreview] = useState([]);
   return (
     <div>
@@ -40,34 +39,36 @@ const PhotosCreate: React.FC<{
               >
                 <div>
                   <Input
-                    variant={$Input.ANOTHER}
-                    handleChange={(e) => {
-                      setData({
-                        ...data,
-                        photo: [...data.photos, e.target.files[0]],
-                      });
-                      setPreview([
-                        ...preview,
-                        URL.createObjectURL(e.target.files[0]),
-                      ]);
-                    }}
+                    variant={$INPUT.ANOTHER}
+                    // handleChange={(e) => {
+                    //   setData({
+                    //     ...data,
+                    //     photo: [...data.photos, e.target.files[0]],
+                    //   });
+                    //   setPreview([
+                    //     ...preview,
+                    //     URL.createObjectURL(e.target.files[0]),
+                    //   ]);
+                    // }}
+                    handleChange={handleFileChange}
                   />
                 </div>
               </div>
             </div>
           ) : (
             <Input
-              variant={$Input.PHOTO}
-              handleChange={(e) => {
-                setData({
-                  ...data,
-                  photos: [...data.photos, e.target.files[0]],
-                });
-                setPreview([
-                  ...preview,
-                  URL.createObjectURL(e.target.files[0]),
-                ]);
-              }}
+              variant={$INPUT.PHOTO}
+              // handleChange={(e) => {
+              //   setData({
+              //     ...data,
+              //     photos: [...data.photos, e.target.files[0]],
+              //   });
+              //   setPreview([
+              //     ...preview,
+              //     URL.createObjectURL(e.target.files[0]),
+              //   ]);
+              // }}
+              handleChange={handleFileChange}
             />
           )}
         </div>

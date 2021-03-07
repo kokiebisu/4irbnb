@@ -1,10 +1,13 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Input, $Input } from '@nextbnb/atoms-input';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
 
-const PriceCreate: React.FC<{ setData?: any; data?: any }> = ({
-  setData,
+const PriceCreate: React.FC<{
+  handleBasePriceChange?: (e) => void;
+  data?: any;
+}> = ({
+  handleBasePriceChange = () => alert('Base price changed'),
   data = {
     basePrice: undefined,
     currency: 'USD',
@@ -62,18 +65,19 @@ const PriceCreate: React.FC<{ setData?: any; data?: any }> = ({
           </div>
           <div>
             <Input
-              variant={$Input.PRICE}
+              variant={$INPUT.PRICE}
               title="Base price"
               subtitle="This will be your default price gor days when you decide to turn off Smart Pricing."
               tip={17}
               name="basePrice"
               value={data.basePrice}
-              handleChange={(e) => {
-                const onlyNumbers = /^[0-9\b]+$/;
-                if (e.target.value == '' || onlyNumbers.test(e.target.value)) {
-                  setData({ ...data, basePrice: e.target.value });
-                }
-              }}
+              // handleChange={(e) => {
+              //   const onlyNumbers = /^[0-9\b]+$/;
+              //   if (e.target.value == '' || onlyNumbers.test(e.target.value)) {
+              //     setData({ ...data, basePrice: e.target.value });
+              //   }
+              // }}
+              handleChange={handleBasePriceChange}
             />
           </div>
           <div css={{ margin: '8px 0' }}>
@@ -85,7 +89,7 @@ const PriceCreate: React.FC<{ setData?: any; data?: any }> = ({
             <h3 css={{ fontSize: 14 }}>Currency</h3>
           </div>
           <div>
-            <Input variant={$Input.SELECT} inputType="currency" />
+            <Input variant={$INPUT.SELECT} inputType="currency" />
           </div>
         </div>
       </div>

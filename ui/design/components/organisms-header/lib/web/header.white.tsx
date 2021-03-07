@@ -2,8 +2,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 
-import { Modal, $MODAL } from '@nextbnb/organisms-modal';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Modal, $MODAL } from '@nextbnb/organisms-modal/dist/bundle.esm';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 import { ChevronLeft } from '@nextbnb/design/assets/svg/regular';
 import { $HEADER } from '../constant/appearance';
 

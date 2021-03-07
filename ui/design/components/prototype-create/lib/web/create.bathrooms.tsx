@@ -1,12 +1,17 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Input, $INPUT } from '@nextbnb/atoms-input';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
 
 const BathroomsCreate: React.FC<{
-  data?: any;
-  setData?: (params: any) => void;
-}> = ({ data = { bathrooms: 0 }, setData }) => {
+  data?: { bathrooms: number };
+  add?: () => void;
+  subtract?: () => void;
+}> = ({
+  data = { bathrooms: 1 },
+  add = () => alert('Added number of bathroom'),
+  subtract = () => alert('Subtracted number of bathroom'),
+}) => {
   return (
     <div>
       <div css={{ marginBottom: 45 }}>
@@ -24,8 +29,10 @@ const BathroomsCreate: React.FC<{
             title="Bathrooms"
             variant={$INPUT.counter}
             value={data.bathrooms}
-            add={() => setData({ ...data, bathrooms: data.bathrooms + 1 })}
-            subtract={() => setData({ ...data, bathrooms: data.bathrooms - 1 })}
+            // add={() => setData({ ...data, bathrooms: data.bathrooms + 1 })}
+            // subtract={() => setData({ ...data, bathrooms: data.bathrooms - 1 })}
+            add={add}
+            subtract={subtract}
             min={1}
             max={15}
           />

@@ -3,16 +3,16 @@
 import { jsx } from 'theme-ui';
 import { useState } from 'react';
 import { useFormik } from 'formik';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
-import { Input, $INPUT } from '@nextbnb/atoms-input';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
 
 /**
  * Renders the /become-a-host/get-started page content
  */
 const GetStartedCreate: React.FC<{
-  dispatchStay?: ({ type: string, payload: any }) => void;
-  navigate?: any;
-}> = ({ dispatchStay, navigate }) => {
+  addStay?: (stay, guests, address) => void;
+  handleNavigate?: any;
+}> = ({ addStay = () => alert('add stay'), handleNavigate }) => {
   const [loading, setLoading] = useState(false);
   const [stay, setStay] = useState('Entire place');
 
@@ -23,12 +23,9 @@ const GetStartedCreate: React.FC<{
     },
     onSubmit: async ({ guests, address }) => {
       setLoading(true);
-      dispatchStay({
-        type: 'add',
-        payload: { stay, guests, address },
-      });
+      addStay(stay, guests, address);
       setTimeout(() => {
-        navigate('/become-a-host/room');
+        handleNavigate('/become-a-host/room');
       }, 2000);
     },
   });

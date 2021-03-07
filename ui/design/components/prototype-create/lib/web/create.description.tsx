@@ -1,11 +1,15 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Input, $INPUT } from '@nextbnb/atoms-input';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
 
-const DescriptionCreate: React.FC<{ data?: any; setData?: any }> = ({
+const DescriptionCreate: React.FC<{
+  data?: any;
+  handleDescriptionChange?: (e) => void;
+}> = ({
   data = { description: 'Description here' },
-  setData,
+  handleDescriptionChange = (e) =>
+    alert(`Changed description to ${e.target.value}`),
 }) => {
   return (
     <div>
@@ -26,9 +30,10 @@ const DescriptionCreate: React.FC<{ data?: any; setData?: any }> = ({
             variant={$INPUT.textarea}
             limit={500}
             value={data.description}
-            handleChange={(e) =>
-              setData({ ...data, description: e.target.value })
-            }
+            handleChange={handleDescriptionChange}
+            // handleChange={(e) =>
+            //   setData({ ...data, description: e.target.value })
+            // }
           />
         </div>
       </div>

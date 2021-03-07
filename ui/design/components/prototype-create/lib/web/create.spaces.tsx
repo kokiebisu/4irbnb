@@ -1,26 +1,33 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Input, $INPUT } from '@nextbnb/atoms-input';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
 
 /**
  * Renders the /become-a-host/spaces page content
  */
 const SpacesCreate: React.FC<{
   data?: any;
-  setData?: any;
-}> = ({ data = { spaces: [] }, setData }) => {
+  excludeSpace?: (type: string, params: any) => void;
+  includeSpace?: (type: string, params: any) => void;
+}> = ({
+  data = { spaces: [] },
+  excludeSpace = (type, params) => alert(`Excluded ${params} from ${type}`),
+  includeSpace = (type, params) => alert(`Included ${params} from ${type}`),
+}) => {
   const modify = (type: string, params: string) => {
     if (data[type].includes(params)) {
-      setData({
-        ...data,
-        [type]: [...data[type]].filter((element) => element !== params),
-      });
+      // setData({
+      //   ...data,
+      //   [type]: [...data[type]].filter((element) => element !== params),
+      // });
+      excludeSpace(type, params);
     } else {
-      setData({
-        ...data,
-        [type]: [...data[type], params],
-      });
+      includeSpace(type, params);
+      // setData({
+      //   ...data,
+      //   [type]: [...data[type], params],
+      // });
     }
   };
 

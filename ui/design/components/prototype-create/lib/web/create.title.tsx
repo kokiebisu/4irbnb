@@ -1,16 +1,19 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Input, $INPUT } from '@nextbnb/atoms-input';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
 
 /**
  * Renders the /become-a-host/title
  * @param {object} data - Input data
  * @param {function} setData - Changes the input data
  */
-const TitleCreate: React.FC<{ data?: any; setData?: any }> = ({
+const TitleCreate: React.FC<{
+  data?: any;
+  handleTitleChange?: (e) => void;
+}> = ({
   data = { title: 'Title here' },
-  setData,
+  handleTitleChange = () => alert('Changed title'),
 }) => {
   return (
     <div>
@@ -31,7 +34,8 @@ const TitleCreate: React.FC<{ data?: any; setData?: any }> = ({
             variant={$INPUT.limit}
             limit={50}
             value={data.title}
-            handleChange={(e) => setData({ ...data, title: e.target.value })}
+            // handleChange={(e) => setData({ ...data, title: e.target.value })}
+            handleChange={handleTitleChange}
           />
         </div>
       </div>

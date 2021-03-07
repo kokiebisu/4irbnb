@@ -1,16 +1,19 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Input, $INPUT } from '@nextbnb/atoms-input';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
 
 /**
  * Renders the /become-a-host/phone page content
  * @param {object} data - Input data
  * @param {function} setData - Changes the input data
  */
-const PhoneCreate: React.FC<{ data?: any; setData?: any }> = ({
+const PhoneCreate: React.FC<{
+  data?: any;
+  handlePhoneNumberChange?: (e) => void;
+}> = ({
   data = { phone: '000-000-0000' },
-  setData,
+  handlePhoneNumberChange = () => alert(`Changed phone number`),
 }) => {
   return (
     <div>
@@ -30,7 +33,8 @@ const PhoneCreate: React.FC<{ data?: any; setData?: any }> = ({
           <Input
             variant={$INPUT.verify}
             value={data.phone}
-            handleChange={(e) => setData({ ...data, phone: e.target.value })}
+            // handleChange={(e) => setData({ ...data, phone: e.target.value })}
+            handleChange={handlePhoneNumberChange}
           />
         </div>
       </div>

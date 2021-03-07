@@ -1,11 +1,22 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Input, $INPUT } from '@nextbnb/atoms-input';
-import { Layout } from '@nextbnb/design/layout';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
+import { Layout } from '@nextbnb/design/layout/dist/bundle.esm';
 
-const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
-  setData,
+const CheckInCreate: React.FC<{
+  selectSameDayNotice: () => void;
+  selectDayNotice: (day: number) => void;
+  selectCheckinFrom: (e) => void;
+  selectCheckinTo: (e) => void;
+  data?: any;
+}> = ({
+  selectSameDayNotice = () => alert('Select notice to same day'),
+  selectDayNotice = (day: number) => alert(`Select notice to ${day} days.`),
+  selectCheckinFrom = (e) =>
+    alert(`Changed checkin start date from ${e.target.value}`),
+  selectCheckinTo = (e) =>
+    alert(`Changed checkin end date from ${e.target.value}`),
   data = {
     notice: 0,
   },
@@ -23,7 +34,8 @@ const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
                 variant={$INPUT.radio}
                 title="Same day"
                 selected={data.notice === 0}
-                select={() => setData({ ...data, notice: 0 })}
+                select={selectSameDayNotice}
+                // select={() => setData({ ...data, notice: 0 })}
               />
             </div>
             {[{ day: 1 }, { day: 2 }, { day: 3 }, { day: 7 }].map(
@@ -33,7 +45,8 @@ const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
                     variant={$INPUT.radio}
                     title={`${day} ${day > 1 ? 'days' : 'day'}`}
                     selected={data.notice === day}
-                    select={() => setData({ ...data, notice: day })}
+                    // select={() => setData({ ...data, notice: day })}
+                    select={() => selectDayNotice(day)}
                   />
                 </div>
               )
@@ -71,9 +84,10 @@ const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
                 variant={$INPUT.select}
                 inputType="checkinFrom"
                 value={data.checkinFrom}
-                handleChange={(e) =>
-                  setData({ ...data, checkinFrom: e.target.value })
-                }
+                // handleChange={(e) =>
+                //   setData({ ...data, checkinFrom: e.target.value })
+                // }
+                handleChange={selectCheckinFrom}
               />
             </div>
           </div>
@@ -86,9 +100,10 @@ const CheckInCreate: React.FC<{ setData?: any; data?: any }> = ({
                 variant={$INPUT.select}
                 inputType="checkinTo"
                 value={data.checkinTo}
-                handleChange={(e) =>
-                  setData({ ...data, checkinTo: e.target.value })
-                }
+                // handleChange={(e) =>
+                //   setData({ ...data, checkinTo: e.target.value })
+                // }
+                handleChange={selectCheckinTo}
               />
             </div>
           </div>
