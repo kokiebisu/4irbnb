@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/content",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "main": "dist/bundle.js",
   "module": "dist/bundle.js",
   "src": "lib/index.ts",

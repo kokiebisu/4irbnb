@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/organisms-footer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "> TODO: description",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
   "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/organisms-footer#readme",
@@ -41,10 +41,10 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
-    "@nextbnb/atoms-button": "^2.0.26",
-    "@nextbnb/content": "^2.0.1",
-    "@nextbnb/design": "^1.0.34",
-    "@nextbnb/theme": "^1.0.4",
+    "@nextbnb/atoms-button": "^2.0.27",
+    "@nextbnb/content": "^2.0.2",
+    "@nextbnb/design": "^1.0.35",
+    "@nextbnb/theme": "^1.0.5",
     "@rollup/plugin-typescript": "^8.2.0",
     "framer-motion": "^3.3.0",
     "theme-ui": "^0.3.5"
