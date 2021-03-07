@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui';
 import { MagnifyGlass } from '@nextbnb/design/assets/svg/original';
 import { web, theme } from '../styles/button.searchbar';
-import { $BUTTON } from '..';
+import { $BUTTON } from '../constants/appearance';
 
 /**
  * Renders the searchbar button component

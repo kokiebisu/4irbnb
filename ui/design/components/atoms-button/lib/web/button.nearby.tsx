@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { $BUTTON } from '..';
+import { $BUTTON } from '../constants/appearance';
 import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.nearby';
 

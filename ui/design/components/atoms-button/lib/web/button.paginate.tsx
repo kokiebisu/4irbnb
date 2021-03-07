@@ -4,7 +4,7 @@ import React from 'react';
 import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.paginate';
 import { ChevronLeft, ChevronRight } from '@nextbnb/design/assets/svg/regular';
-import { $BUTTON } from '..';
+import { $BUTTON } from '../constants/appearance';
 
 /**
  * Renders the paginate button component

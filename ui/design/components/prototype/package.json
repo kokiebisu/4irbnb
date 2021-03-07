@@ -29,6 +29,7 @@
     "@nextbnb/prototype-create": "^1.0.0",
     "@nextbnb/prototype-globe": "^1.0.0",
     "@nextbnb/prototype-homes": "^1.0.0",
-    "@nextbnb/prototype-searchbar": "^1.0.0"
+    "@nextbnb/prototype-searchbar": "^1.0.0",
+    "@rollup/plugin-typescript": "^8.2.0"
   }
 }

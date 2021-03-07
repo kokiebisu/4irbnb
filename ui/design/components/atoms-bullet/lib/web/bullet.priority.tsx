@@ -1,7 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import Router from 'next/router';
 import {
   Guidance,
   Protection,
@@ -16,7 +15,8 @@ import { $BULLET } from '..';
  */
 const PriorityBullet: React.FC<{
   priority?: 'protection' | 'guidance' | 'requirements';
-}> = ({ priority = 'protection' }) => {
+  onClick?: any;
+}> = ({ priority = 'protection', onClick }) => {
   const categories: {
     [type: string]: {
       icon: JSX.Element;
@@ -57,7 +57,7 @@ const PriorityBullet: React.FC<{
         <p>{categories[priority].description}</p>
       </div>
       <div>
-        <Button onClick={() => Router.push('/')}>
+        <Button onClick={onClick}>
           <u css={{ fontSize: 14 }}>{categories[priority].link}</u>
         </Button>
       </div>

@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.modal';
 import { Close } from '@nextbnb/design/assets/svg/original';
 import { ChevronLeft } from '@nextbnb/design/assets/svg/regular';
-import { $BUTTON } from '..';
+import { $BUTTON } from '../constants/appearance';
 
 /**
  * Renders the close button component

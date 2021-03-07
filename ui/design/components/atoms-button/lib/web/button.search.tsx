@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui';
 import { MagnifyGlass } from '@nextbnb/design/assets/svg/original';
 import { web, theme } from '../styles/button.search';
-import { $BUTTON } from '..';
+import { $BUTTON } from '../constants/appearance';
 
 const SearchButton: React.FC<{ expand?: boolean }> = ({ expand = false }) => {
   return (

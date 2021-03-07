@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { NameLogo, NoNameLogo } from '@nextbnb/design/assets/svg/logo';
-import { $BUTTON } from '..';
+import { $BUTTON } from '../constants/appearance';
 
 const LogoButton: React.FC<{ noName?: boolean; fill?: string }> = ({
   noName = false,

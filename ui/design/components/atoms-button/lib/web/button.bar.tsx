@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.bar';
 import { MenuBarLogo } from '@nextbnb/design/assets/svg/logo';
 import { Login, Saved } from '@nextbnb/design/assets/svg/regular';
-import { $BUTTON } from '..';
+import { $BUTTON } from '../constants/appearance';
 
 const BarButton: React.FC<{ type?: string; selected?: boolean }> = ({
   type = 'explore',

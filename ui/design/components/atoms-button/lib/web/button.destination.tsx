@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.destination';
-import { $BUTTON } from '..';
+import { $BUTTON } from '../constants/appearance';
 
 export const DestinationButton: React.FC<{
   city?: String;

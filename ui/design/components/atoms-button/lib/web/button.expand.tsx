@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui';
 import { ChevronRight } from '@nextbnb/design/assets/svg/regular';
 import { web, theme } from '../styles/button.expand';
-import { $BUTTON } from '..';
+import { $BUTTON } from '../constants/appearance';
 
 /**
  * Renders the expand button

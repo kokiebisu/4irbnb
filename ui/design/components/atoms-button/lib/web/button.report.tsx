@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui';
 import { Flag } from '@nextbnb/design/assets/svg/original';
 import { web, theme } from '../styles/button.report';
-import { $BUTTON } from '..';
+import { $BUTTON } from '../constants/appearance';
 
 const ReportButton: React.FC<{}> = () => {
   return (

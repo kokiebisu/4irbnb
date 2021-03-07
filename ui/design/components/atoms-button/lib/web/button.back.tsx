@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui';
 import { ChevronLeft } from '@nextbnb/design/assets/svg/regular';
 import { web, theme } from '../styles/button.back';
-import { $BUTTON } from '..';
+import { $BUTTON } from '../constants/appearance';
 
 export const BackButton: React.FC<{}> = () => {
   return (

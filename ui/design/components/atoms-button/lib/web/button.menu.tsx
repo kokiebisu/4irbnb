@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.menu';
 import { Avatar, Bars } from '@nextbnb/design/assets/svg/original';
-import { $BUTTON } from '..';
+import { $BUTTON } from '../constants/appearance';
 
 /**
  * Renders the menu button components

@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { web, theme } from '../styles/button.filter';
-import { $BUTTON } from '..';
+import { $BUTTON } from '../constants/appearance';
 
 /**
  * Renders the filter button
