@@ -4,8 +4,8 @@ import { jsx } from 'theme-ui';
 
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useRef, useState } from 'react';
-import { Animation } from '@nextbnb/animation';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Animation } from '@nextbnb/animation/dist/bundle.esm';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 
 export const Video: React.FC<{ videoUrl?: string; isLoading?: boolean }> = ({
   videoUrl,

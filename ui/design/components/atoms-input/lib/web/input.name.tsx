@@ -100,7 +100,7 @@ const NameInput: React.FC<{
           name={name}
           type="text"
           onChange={handleinputValue}
-          value={value}
+          value={value || ''}
           onFocus={activateField}
           onBlur={deactivateField}
           css={{

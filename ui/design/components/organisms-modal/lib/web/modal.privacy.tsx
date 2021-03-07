@@ -1,27 +1,27 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 import { Lock } from '@nextbnb/design/assets/svg/original';
 import { $MODAL } from '../constant/appearance';
 
 /**
  * Renders the privacy modal
- * @param {function} dispatchCallback - Dispatch which handles the toggle of the modal
+ * @param {function} togglePrivacy - Dispatch which handles the toggle of the modal
  */
-const PrivacyModal: React.FC<{ dispatchCallback?: (param) => void }> = ({
-  dispatchCallback,
+const PrivacyModal: React.FC<{ togglePrivacy: () => void }> = ({
+  togglePrivacy,
 }) => {
   // const toggleDispatch = useToggleDispatch();
 
   const handleSave = () => {
     // add cookie
-    return dispatchCallback({ type: 'toggle_privacy' });
+    return togglePrivacy();
   };
 
   const handleSettings = () => {
     // open settings
-    return dispatchCallback({ type: 'toggle_privacy' });
+    return togglePrivacy();
   };
 
   return (

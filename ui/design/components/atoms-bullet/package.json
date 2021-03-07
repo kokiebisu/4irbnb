@@ -6,7 +6,7 @@
   "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/atoms-bullet#readme",
   "license": "ISC",
   "module": "dist/bundle.esm.js",
-  "main": "dist/bundle.esm.js",
+  "main": "dist/bundle.cjs.js",
   "src": "./lib/index.tsx",
   "directories": {
     "lib": "lib",
@@ -51,5 +51,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "type": "module"
+  "type": "module",
+  "gitHead": "aeebb8bf2a5831a19bf9ad55ae5b05ef49f57f99"
 }

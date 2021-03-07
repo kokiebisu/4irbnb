@@ -31,5 +31,6 @@
     "@nextbnb/prototype-homes": "^1.0.1",
     "@nextbnb/prototype-searchbar": "^1.0.1",
     "@rollup/plugin-typescript": "^8.2.0"
-  }
+  },
+  "gitHead": "aeebb8bf2a5831a19bf9ad55ae5b05ef49f57f99"
 }

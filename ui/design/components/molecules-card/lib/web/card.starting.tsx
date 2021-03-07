@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import React, { useState } from 'react';
-import { Video } from '@nextbnb/atoms-video';
+import { Video } from '@nextbnb/atoms-video/dist/bundle.esm';
 import { Heart, Star } from '@nextbnb/design/assets/svg/original';
 import { $CARD } from '../constant/appearance';
 

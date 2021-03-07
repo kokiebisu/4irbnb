@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
-import { Input, $INPUT } from '@nextbnb/atoms-input';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
 import { Plus } from '@nextbnb/design/assets/svg/original';
 import { $MODAL } from '../constant/appearance';
 

@@ -5,7 +5,9 @@
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
   "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/organisms-modal#readme",
   "license": "ISC",
-  "main": "lib/index.tsx",
+  "module": "dist/bundle.esm.js",
+  "main": "dist/bundle.cjs.js",
+  "src": "lib/index.tsx",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -19,10 +21,19 @@
   },
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "yarn clean && NODE_ENV=production webpack --config ./webpack.config.js"
+    "build": "yarn clean && rollup --config rollup.config.js --environment NODE_ENV:production"
   },
   "bugs": {
     "url": "https://github.com/kokiebisu/airbnb/issues"
+  },
+  "dependencies": {
+    "@nextbnb/atoms-button": "^2.0.27",
+    "@nextbnb/atoms-input": "^2.0.27",
+    "@nextbnb/design": "^1.0.35",
+    "@nextbnb/prototype-globe": "^1.0.1",
+    "@nextbnb/theme": "^1.0.5",
+    "framer-motion": "^3.3.0",
+    "theme-ui": "^0.3.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -38,19 +49,16 @@
     "react": "^17.0.1",
     "typescript": "^4.1.5",
     "webpack": "^5.22.0",
-    "webpack-cli": "^4.5.0"
-  },
-  "dependencies": {
-    "@nextbnb/atoms-button": "^2.0.27",
-    "@nextbnb/atoms-input": "^2.0.27",
-    "@nextbnb/design": "^1.0.35",
-    "@nextbnb/prototype-globe": "^1.0.1",
-    "@nextbnb/theme": "^1.0.5",
-    "@rollup/plugin-typescript": "^8.2.0",
-    "framer-motion": "^3.3.0",
-    "theme-ui": "^0.3.5"
+    "webpack-cli": "^4.5.0",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
+    "rollup": "^2.40.0",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0"
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "aeebb8bf2a5831a19bf9ad55ae5b05ef49f57f99"
 }

@@ -1,7 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import Router from 'next/router';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { $HEADER } from '../constant/appearance';
 
@@ -11,7 +10,8 @@ import { $HEADER } from '../constant/appearance';
  */
 const StayHeader: React.FC<{
   title?: string;
-}> = ({ title }) => {
+  navigate?: any;
+}> = ({ title, navigate }) => {
   return (
     <header
       css={{
@@ -27,7 +27,7 @@ const StayHeader: React.FC<{
             variant={$BUTTON.logo}
             noName
             fill="##008489"
-            onClick={() => Router.push('/')}
+            onClick={() => navigate('/')}
             extendsTo={{
               display: 'inline-block',
               padding: 14,

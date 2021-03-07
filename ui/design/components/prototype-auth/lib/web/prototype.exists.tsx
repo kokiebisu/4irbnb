@@ -2,10 +2,9 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useState } from 'react';
-import Router from 'next/router';
 import { useFormik } from 'formik';
-import { Bullet, $Bullet } from '@nextbnb/atoms-bullet';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Bullet, $BULLET } from '@nextbnb/atoms-bullet/dist/bundle.esm';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 import { Input, $INPUT } from '@nextbnb/atoms-input';
 import { validateExists as validate } from '@nextbnb/design/helper/validation';
 import { usePost } from '@nextbnb/design/hooks/usePost';
@@ -16,12 +15,14 @@ const ExistsPrototype: React.FC<{
     firstname: string;
     email: string;
   };
+  reload?: any;
 }> = ({
   data = {
     imgUrl: 'https://a0.muscache.com/defaults/user_pic-225x225.png?v=3',
     firstname: 'Kenichi',
     email: 'a01056715@gmail.com',
   },
+  reload,
 }) => {
   const [loading, setLoading] = useState(false);
 
@@ -38,7 +39,7 @@ const ExistsPrototype: React.FC<{
           setLoading(state);
         },
         onSuccess() {
-          Router.reload();
+          reload();
         },
       });
       submit();

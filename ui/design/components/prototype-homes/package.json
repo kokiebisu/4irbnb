@@ -48,5 +48,6 @@
     "@rollup/plugin-typescript": "^8.2.0",
     "framer-motion": "^3.3.0",
     "theme-ui": "^0.3.5"
-  }
+  },
+  "gitHead": "aeebb8bf2a5831a19bf9ad55ae5b05ef49f57f99"
 }

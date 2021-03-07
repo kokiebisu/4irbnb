@@ -55,7 +55,7 @@ const RegionInput: React.FC<{
           onChange={
             typeof value === 'string' ? handleChange : handleDisplayingValue
           }
-          value={value}
+          value={value || ''}
           onFocus={() => setFieldActive(true)}
           onBlur={() => setFieldActive(false)}
           css={{

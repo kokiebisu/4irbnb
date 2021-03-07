@@ -7,7 +7,9 @@ import { paginate } from './bar.paginate';
 import { progress } from './bar.progress';
 import { search } from './bar.search';
 
-export const webVariants = (props) => {
+export const webVariants: (
+  props
+) => { [variant: string]: { component: JSX.Element; css: any } } = (props) => {
   return {
     ...availability(props),
     ...covid(props),

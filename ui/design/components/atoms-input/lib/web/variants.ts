@@ -20,9 +20,14 @@ import { price } from './input.price';
 import { photo } from './input.photo';
 import { another } from './input.another';
 
-export const variants: (props) => { [variant: string]: JSX.Element } = (
+export const variants: (
   props
 ) => {
+  [variant: string]: {
+    component: JSX.Element;
+    css: any;
+  };
+} = (props) => {
   return {
     ...email(props),
     ...password(props),

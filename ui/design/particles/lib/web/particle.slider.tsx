@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useLayoutEffect, useState, useRef } from 'react';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 
 const Dots = ({ slides, activeSlide }) => {
   return (

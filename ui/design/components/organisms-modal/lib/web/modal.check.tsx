@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { ChevronLeft, ChevronRight } from '@nextbnb/design/assets/svg/regular';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 import { $MODAL } from '../constant/appearance';
 
 const CheckModal: React.FC<{}> = () => {

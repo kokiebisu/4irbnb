@@ -1,11 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Bar, $BAR } from '@nextbnb/organisms-bar';
-import { Header, $HEADER } from '@nextbnb/organisms-header';
+import { Bar, $BAR } from '@nextbnb/organisms-bar/dist/bundle.esm';
 import { $LAYOUT } from '..';
 
 const CreateLayout: React.FC<{
+  header?: any;
   title?: string;
   left?: React.ReactNode;
   right?: React.ReactNode;
@@ -14,6 +14,7 @@ const CreateLayout: React.FC<{
   percentage?: number;
   criteria?: boolean;
 }> = ({
+  header,
   title = 'Property and guests',
   left,
   right,
@@ -25,9 +26,7 @@ const CreateLayout: React.FC<{
   return (
     <div>
       <div css={{ position: 'sticky', zIndex: 9999, top: 0 }}>
-        <div>
-          <Header variant={$HEADER.stay} title={title} />
-        </div>
+        {header}
         <div>
           <Bar variant={$BAR.progress} percentage={percentage} />
         </div>

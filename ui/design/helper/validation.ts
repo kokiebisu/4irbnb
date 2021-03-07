@@ -27,7 +27,7 @@ export const validateSignup = (values) => {
   const errors: any = {};
   if (!values.email) {
     errors.email = 'Email is required';
-  } else if (!checkEmail(values.email)) {
+  } else if (!validateEmail(values.email)) {
     errors.email = 'Enter a valid email.';
   }
   if (!values.firstname) {
@@ -50,7 +50,7 @@ export const validateLogin = (values) => {
   const errors: any = {};
   if (!values.email) {
     errors.email = 'Email is required';
-  } else if (!checkEmail(values.email)) {
+  } else if (!validateEmail(values.email)) {
     errors.email = 'Enter a valid email.';
   }
   if (!values.password) {
@@ -74,7 +74,7 @@ export const validateForgotPassword = (values) => {
   const errors: any = {};
   if (!values.email) {
     errors.email = 'Email is required';
-  } else if (!checkEmail(values.email)) {
+  } else if (!validateEmail(values.email)) {
     errors.email = 'Enter a valid email.';
   }
 

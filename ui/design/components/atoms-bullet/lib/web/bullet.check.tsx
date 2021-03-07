@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { CheckPlain } from '@nextbnb/design/assets/svg/original';
-import { $BULLET } from '..';
+import { $BULLET } from '../constants/appearance';
 
 const CheckBullet: React.FC<{ title?: string }> = ({
   title = 'Title here',

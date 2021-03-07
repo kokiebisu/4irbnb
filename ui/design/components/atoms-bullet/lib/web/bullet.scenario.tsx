@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { $BULLET } from '..';
+import { $BULLET } from '../constants/appearance';
 
 const ScenarioBullet: React.FC<{ type?: string }> = ({
   type = 'available',

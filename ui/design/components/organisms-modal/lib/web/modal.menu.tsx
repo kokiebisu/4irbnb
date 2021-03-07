@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import React from 'react';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 import { getOptionContents } from '../content/option';
 import { $MODAL } from '../constant/appearance';
 
@@ -11,25 +11,27 @@ const Options: React.FC<{
     kind: string;
     bold: boolean;
   }[];
-  toggleDispatch?: any;
-  authDispatch?: any;
+  toggleDispatch: any;
+  authDispatch: any;
 }> = ({ params, toggleDispatch, authDispatch }) => {
   const options = getOptionContents(toggleDispatch, authDispatch);
   return (
     <div>
-      {params.map(({ kind, bold }, index) => (
-        <div key={index}>
-          <Button
-            variant={$BUTTON.option}
-            extendsTo={{
-              width: '100%',
-            }}
-            bold={bold}
-            onClick={options[kind].handleClick}
-            name={options[kind].name}
-          />
-        </div>
-      ))}
+      {params
+        ? params.map(({ kind, bold }, index) => (
+            <div key={index}>
+              <Button
+                variant={$BUTTON.option}
+                extendsTo={{
+                  width: '100%',
+                }}
+                bold={bold}
+                onClick={options[kind].handleClick}
+                name={options[kind].name}
+              />
+            </div>
+          ))
+        : null}
     </div>
   );
 };
@@ -37,9 +39,11 @@ const Options: React.FC<{
 /**
  * Renders the menu modal
  */
-const MenuModal: React.FC<{ authenticated?: boolean }> = ({
-  authenticated = false,
-}) => {
+const MenuModal: React.FC<{
+  authenticated?: boolean;
+  toggleDispatch: () => void;
+  authDispatch: () => void;
+}> = ({ authenticated = false, toggleDispatch, authDispatch }) => {
   return (
     <div css={{ width: '100%', padding: '15px 0' }}>
       <div css={{ width: 'inherit' }}>
@@ -51,6 +55,8 @@ const MenuModal: React.FC<{ authenticated?: boolean }> = ({
               { kind: 'trips', bold: false },
               { kind: 'saved', bold: false },
             ]}
+            toggleDispatch={toggleDispatch}
+            authDispatch={authDispatch}
           />
         ) : (
           <Options
@@ -58,6 +64,8 @@ const MenuModal: React.FC<{ authenticated?: boolean }> = ({
               { kind: 'signup', bold: true },
               { kind: 'login', bold: false },
             ]}
+            toggleDispatch={toggleDispatch}
+            authDispatch={authDispatch}
           />
         )}
         <div
@@ -76,6 +84,8 @@ const MenuModal: React.FC<{ authenticated?: boolean }> = ({
               // { kind: "refer", bold: false },
               // { kind: "account", bold: false },
             ]}
+            toggleDispatch={toggleDispatch}
+            authDispatch={authDispatch}
           />
         ) : (
           <Options
@@ -84,6 +94,8 @@ const MenuModal: React.FC<{ authenticated?: boolean }> = ({
               // { kind: "experience", bold: false },
               // { kind: "help", bold: false },
             ]}
+            toggleDispatch={toggleDispatch}
+            authDispatch={authDispatch}
           />
         )}
         {authenticated && (
@@ -101,6 +113,8 @@ const MenuModal: React.FC<{ authenticated?: boolean }> = ({
                 // { kind: "help", bold: false },
                 { kind: 'logout', bold: false },
               ]}
+              toggleDispatch={toggleDispatch}
+              authDispatch={authDispatch}
             />
           </div>
         )}

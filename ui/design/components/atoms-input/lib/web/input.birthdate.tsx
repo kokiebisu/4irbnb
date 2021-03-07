@@ -62,7 +62,7 @@ const BirthdateInput: React.FC<{
           id={dateType}
           name={dateType}
           onChange={handleChange}
-          value={value}
+          value={value || ''}
           defaultValue=""
           onFocus={() => setFieldActive(true)}
           onBlur={() => setFieldActive(false)}
@@ -114,6 +114,7 @@ const BirthdateInput: React.FC<{
           htmlFor={dateType}
           css={{
             fontWeight: 100,
+            position: 'absolute',
           }}
           sx={{
             ...styleLabel(errors, fieldActive),

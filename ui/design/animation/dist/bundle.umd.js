@@ -1,0 +1,15 @@
+!function(e,n){"object"==typeof exports&&"undefined"!=typeof module?n(exports,require("theme-ui"),require("@emotion/core")):"function"==typeof define&&define.amd?define(["exports","theme-ui","@emotion/core"],n):n((e="undefined"!=typeof globalThis?globalThis:e||self).RandomComponent={},e.themeUi,e.core)}(this,(function(e,n,t){"use strict";
+/*! *****************************************************************************
+    Copyright (c) Microsoft Corporation.
+
+    Permission to use, copy, modify, and/or distribute this software for any
+    purpose with or without fee is hereby granted.
+
+    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+    REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+    AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+    INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+    LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+    OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+    PERFORMANCE OF THIS SOFTWARE.
+    ***************************************************************************** */var i=function(){return(i=Object.assign||function(e){for(var n,t=1,i=arguments.length;t<i;t++)for(var o in n=arguments[t])Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o]);return e}).apply(this,arguments)};var o,r,a,s=t.keyframes(a||(o=["\n  0% {\n    opacity: 0.9;\n  }\n  50% {\n    opacity: 0.6;\n  }\n  100% {\n    opacity: 0.3;\n  }\n"],r=["\n  0% {\n    opacity: 0.9;\n  }\n  50% {\n    opacity: 0.6;\n  }\n  100% {\n    opacity: 0.3;\n  }\n"],Object.defineProperty?Object.defineProperty(o,"raw",{value:r}):o.raw=r,a=o)),c={wrapper:{width:"36px",height:"20px",display:"flex",justifyContent:"space-around",alignItems:"center"},content:{display:"block",width:"8px",height:"8px",borderRadius:"4px"},first:{animation:s+" 1s infinite"},second:{animation:s+" 1s infinite",animationDelay:"0.3s"},third:{animation:s+" 1s infinite",animationDelay:"0.6s"}},p={web:{wrapper:i({},c.wrapper),content:i({},c.content),first:i({},c.first),second:i({},c.second),third:i({},c.third)},theme:{}}.web,d=function(e){var t=e.dark;return n.jsx("div",{css:p.wrapper},n.jsx("span",{sx:i({},t?{bg:"black"}:{bg:"white"}),css:i(i({},p.content),p.first)}),n.jsx("span",{sx:i({},t?{bg:"black"}:{bg:"white"}),css:i(i({},p.content),p.second)}),n.jsx("span",{sx:i({},t?{bg:"black"}:{bg:"white"}),css:i(i({},p.content),p.third)}))},f={LOADING:"loading"};e.$Animation=f,e.Animation=function(e){var t,o=e.variant,r=void 0===o?f.LOADING:o,a=e.extendsTo,s=function(e,n){var t={};for(var i in e)Object.prototype.hasOwnProperty.call(e,i)&&n.indexOf(i)<0&&(t[i]=e[i]);if(null!=e&&"function"==typeof Object.getOwnPropertySymbols){var o=0;for(i=Object.getOwnPropertySymbols(e);o<i.length;o++)n.indexOf(i[o])<0&&Object.prototype.propertyIsEnumerable.call(e,i[o])&&(t[i[o]]=e[i[o]])}return t}(e,["variant","extendsTo"]),c=((t={})[f.LOADING]=n.jsx(d,i({},s)),t);return n.jsx("div",{"data-testid":r+"-animation",className:a},c[r])},Object.defineProperty(e,"__esModule",{value:!0})}));

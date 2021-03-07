@@ -2,11 +2,14 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useState } from 'react';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
-import { Prototype, $PROTOTYPE } from '@nextbnb/prototype-globe';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
+import {
+  Prototype,
+  $PROTOTYPE,
+} from '@nextbnb/prototype-globe/dist/bundle.esm';
 import { $MODAL } from '../constant/appearance';
 
-const GlobeModal: React.FC<{ toggleDispatch?: (params) => void }> = ({
+const GlobeModal: React.FC<{ toggleDispatch: (params) => void }> = ({
   toggleDispatch,
 }) => {
   const [prototype, setPrototype] = useState($PROTOTYPE.language);

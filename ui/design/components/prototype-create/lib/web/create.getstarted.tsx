@@ -1,9 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useFormik } from 'formik';
-import Router from 'next/router';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { Input, $INPUT } from '@nextbnb/atoms-input';
 
@@ -12,7 +11,8 @@ import { Input, $INPUT } from '@nextbnb/atoms-input';
  */
 const GetStartedCreate: React.FC<{
   dispatchStay?: ({ type: string, payload: any }) => void;
-}> = ({ dispatchStay }) => {
+  navigate?: any;
+}> = ({ dispatchStay, navigate }) => {
   const [loading, setLoading] = useState(false);
   const [stay, setStay] = useState('Entire place');
 
@@ -28,7 +28,7 @@ const GetStartedCreate: React.FC<{
         payload: { stay, guests, address },
       });
       setTimeout(() => {
-        Router.push('/become-a-host/room');
+        navigate('/become-a-host/room');
       }, 2000);
     },
   });

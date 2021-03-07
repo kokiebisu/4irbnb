@@ -38,7 +38,7 @@ const HostingCard: React.FC<{ type?: string }> = ({ type }) => {
   return (
     <div sx={{ width: ['100%', '100%', '260px'] }}>
       <div>
-        {types[type]?.imgUrl ? (
+        {type && types[type].imgUrl ? (
           <div
             style={{
               height: 160,
@@ -61,11 +61,13 @@ const HostingCard: React.FC<{ type?: string }> = ({ type }) => {
         )}
       </div>
       <div css={{ margin: '16px 0' }}>
-        <h2 css={{ fontSize: 22 }}>{types[type]?.title || 'Title here'}</h2>
+        <h2 css={{ fontSize: 22 }}>
+          {(type && types[type].title) || 'Title here'}
+        </h2>
       </div>
       <div>
         <h4 style={{ lineHeight: 1.6, fontSize: 16 }}>
-          {types[type]?.description ||
+          {(type && types[type].description) ||
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}
         </h4>
       </div>

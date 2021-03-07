@@ -13,7 +13,7 @@ import {
   Check,
   Cleaning,
 } from '@nextbnb/design/assets/svg/original';
-import { $BULLET } from '..';
+import { $BULLET } from '../constants/appearance';
 
 /**
  * Renders the know bullet

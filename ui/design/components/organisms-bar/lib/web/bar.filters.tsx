@@ -1,12 +1,12 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 import { useLayoutEffect, useRef, useState } from 'react';
 
 const FiltersBar: React.FC<{}> = () => {
   const [width, setWidth] = useState(500);
-  const containerRef = useRef<HTMLDivElement>();
+  const containerRef = useRef<HTMLDivElement>(null);
   const handleRef = () => {
     if (containerRef.current && containerRef.current.getBoundingClientRect()) {
       setWidth(containerRef.current.getBoundingClientRect().width);

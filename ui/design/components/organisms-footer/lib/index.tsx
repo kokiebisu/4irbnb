@@ -1,20 +1,21 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import Router from 'next/router';
-import { footerItems } from '@nextbnb/content';
+
+import { footerItems } from '@nextbnb/content/dist/bundle.esm';
 import { Globe } from '@nextbnb/design/assets/svg/original';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 
 export interface FooterProps {
   spread?: boolean;
+  navigate: (url: string) => void;
 }
 
 /**
  * Renders the footer
  * @param {boolean} spread - Whether if the layout should be spread out or not
  */
-export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
+export const Footer: React.FC<FooterProps> = ({ spread = false, navigate }) => {
   return (
     <footer
       sx={{
@@ -83,7 +84,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
                       >
                         <Button
                           variant={$BUTTON.link}
-                          onClick={() => Router.push(url)}
+                          onClick={() => navigate(url)}
                           title={name}
                         />
                       </div>
@@ -144,7 +145,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
                 <Button
                   variant={$BUTTON.link}
                   title="Privacy"
-                  onClick={() => Router.push('/')}
+                  onClick={() => navigate('/')}
                 />
               </div>
               <div>&nbsp;· &nbsp;</div>
@@ -152,7 +153,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
                 <Button
                   variant={$BUTTON.link}
                   title="Terms"
-                  onClick={() => Router.push('/')}
+                  onClick={() => navigate('/')}
                 />
               </div>
               <div>&nbsp;· &nbsp;</div>
@@ -160,7 +161,7 @@ export const Footer: React.FC<FooterProps> = ({ spread = false }) => {
                 <Button
                   variant={$BUTTON.link}
                   title="Sitemap"
-                  onClick={() => Router.push('/')}
+                  onClick={() => navigate('/')}
                 />
               </div>
             </div>

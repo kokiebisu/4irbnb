@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Star } from '@nextbnb/design/assets/svg/original';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 import { $HEADER } from '../constant/appearance';
 
 /**
@@ -15,7 +15,7 @@ const DetailsHeader: React.FC<{
   layoutType?: string;
   spread?: boolean;
   scrollPosition?: number;
-}> = ({ layoutType = 'room', spread = false, scrollPosition }) => {
+}> = ({ layoutType = 'room', spread = false, scrollPosition = 0 }) => {
   const items =
     layoutType === 'experience'
       ? [

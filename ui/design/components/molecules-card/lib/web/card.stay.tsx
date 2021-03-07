@@ -2,8 +2,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Heart } from '@nextbnb/design/assets/svg/original';
-import { Bullet, $Bullet } from '@nextbnb/atoms-bullet';
-import { $Particle, Particle } from '@nextbnb/particles';
+import { Bullet, $BULLET } from '@nextbnb/atoms-bullet/dist/bundle.esm';
+import { $Particle, Particle } from '@nextbnb/particles/dist/bundle.esm';
 import { Card } from '..';
 import { $CARD } from '../constant/appearance';
 /**
@@ -147,7 +147,7 @@ const StayCard: React.FC<{
                   </div>
                 </div>
                 <div>
-                  <Bullet variant={$Bullet.RATING} />
+                  <Bullet variant={$BULLET.rating} />
                 </div>
               </div>
             </div>

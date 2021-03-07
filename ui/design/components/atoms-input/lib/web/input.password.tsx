@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui';
 import { useState } from 'react';
 import { styleInput, styleLabel, styleContainer } from './styling.text';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm.js';
 import { $INPUT } from '../constant/appearance';
 import { validatePassword } from '@nextbnb/design/helper/validation';
 

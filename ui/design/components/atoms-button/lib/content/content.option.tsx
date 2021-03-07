@@ -1,84 +1,88 @@
-import React from "react";
-import { usePost } from "../../../hooks/usePost";
-import Router from "next/router";
+import React from 'react';
+import { usePost } from '../../../hooks/usePost';
 
-export const getOptionContents = (toggleDispatch: any, authDispatch: any) => {
+export const getOptionContents = (
+  toggleDispatch: any,
+  authDispatch: any,
+  navigate: any,
+  reload
+) => {
   const options = {
     messages: {
-      name: "Messages",
+      name: 'Messages',
       handleClick: () => {
-        alert("messages button clicked");
+        alert('messages button clicked');
       },
     },
     notifications: {
-      name: "Notifications",
+      name: 'Notifications',
       handleClick: () => {
-        alert("notifications button clicked");
+        alert('notifications button clicked');
       },
     },
     trips: {
-      name: "Trips",
+      name: 'Trips',
       handleClick: () => {
-        alert("trips button clicked");
+        alert('trips button clicked');
       },
     },
     saved: {
-      name: "Saved",
+      name: 'Saved',
       handleClick: () => {
-        alert("saved button clicked");
+        alert('saved button clicked');
       },
     },
     refer: {
-      name: "Refer a host",
+      name: 'Refer a host',
       handleClick: () => {
-        alert("refer button clicked");
+        alert('refer button clicked');
       },
     },
     account: {
-      name: "Account",
+      name: 'Account',
       handleClick: () => {
-        alert("account button clicked");
+        alert('account button clicked');
       },
     },
     signup: {
-      name: "Sign up",
+      name: 'Sign up',
       handleClick: () => {
-        toggleDispatch({ type: "toggle_auth" });
-        authDispatch({ type: "auth_signup" });
+        toggleDispatch({ type: 'toggle_auth' });
+        authDispatch({ type: 'auth_signup' });
       },
     },
     login: {
-      name: "Log in",
+      name: 'Log in',
       handleClick: () => {
-        authDispatch({ type: "auth_login" });
-        toggleDispatch({ type: "toggle_auth" });
+        authDispatch({ type: 'auth_login' });
+        toggleDispatch({ type: 'toggle_auth' });
       },
     },
     home: {
-      name: "Host your home",
+      name: 'Host your home',
       handleClick: () => {
-        Router.push("/host/homes");
+        navigate('/host/homes');
       },
     },
     experience: {
-      name: "Host an experience",
+      name: 'Host an experience',
       handleClick: () => {
-        Router.push("/host/experiences");
+        navigate('/host/experiences');
       },
     },
     help: {
-      name: "Help",
+      name: 'Help',
       handleClick: () => {
-        alert("help button clicked");
+        alert('help button clicked');
       },
     },
     logout: {
-      name: "Logout",
+      name: 'Logout',
       handleClick: async () => {
         const submit = usePost({
-          url: "/api/users/signout",
+          url: '/api/users/signout',
           body: {},
-          onSuccess: () => Router.reload(),
+          onSuccess: () => reload(),
         });
         await submit();
       },

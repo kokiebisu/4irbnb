@@ -25,7 +25,7 @@ export const Bar: React.FC<BarProps> = ({
   const variants = generateVariants(PLATFORM[platform], webVariants, props);
 
   return (
-    <div sx={{ ...variants[variant.css] }} data-testid={`${variant}-bar`}>
+    <div sx={{ ...variants[variant].css }} data-testid={`${variant}-bar`}>
       {variants[variant].component}
     </div>
   );

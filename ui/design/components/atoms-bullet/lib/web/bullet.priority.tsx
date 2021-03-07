@@ -6,8 +6,8 @@ import {
   Protection,
   Requirements,
 } from '@nextbnb/design/assets/svg/original';
-import { Button } from '@nextbnb/atoms-button';
-import { $BULLET } from '..';
+import { Button } from '@nextbnb/atoms-button/dist/bundle.esm.js';
+import { $BULLET } from '../constants/appearance';
 
 /**
  * Renders the priority bullet

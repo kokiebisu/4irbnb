@@ -2,12 +2,12 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useState } from 'react';
-import Router from 'next/router';
 import { motion } from 'framer-motion';
-import { Button, $BUTTON } from '@nextbnb/atoms';
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
 
 export const DestinationsTemplate: React.FC<{
   items?: { [type: string]: { city: String; location: String } };
+  navigate?: any;
 }> = ({
   items = {
     artsCulture: [{ city: 'City', location: 'Location' }],
@@ -16,6 +16,7 @@ export const DestinationsTemplate: React.FC<{
     beach: [{ city: 'City', location: 'Location' }],
     popular: [{ city: 'City', location: 'Location' }],
   },
+  navigate,
 }) => {
   const [selected, setSelected] = useState('artsCulture');
 
@@ -62,9 +63,7 @@ export const DestinationsTemplate: React.FC<{
                 city={city}
                 location={location}
                 onClick={() =>
-                  Router.push(
-                    `/${city.toLowerCase().split(' ').join('-')}/stays`
-                  )
+                  navigate(`/${city.toLowerCase().split(' ').join('-')}/stays`)
                 }
               />
             </div>

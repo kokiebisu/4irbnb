@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { CheckInverse } from '@nextbnb/design/assets/svg/original';
-import { $BULLET } from '..';
+import { $BULLET } from '../constants/appearance';
 
 /**
  * Renders the bring bullet

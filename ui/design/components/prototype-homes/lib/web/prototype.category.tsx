@@ -3,8 +3,8 @@
 import { jsx } from 'theme-ui';
 
 // import { Template } from "../web/template/web/s/homes";
-import { Bar, $Bar } from '@nextbnb/organisms-bar';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Bar, $BAR } from '@nextbnb/organisms-bar/dist/bundle.esm';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 
 /**
  * Renders the category template component
@@ -96,7 +96,7 @@ const CategoryPrototype: React.FC<{
         <Template variant="homes" layout="vertical" location={location} />
       </div> */}
       <div css={{ marginTop: 16, display: 'flex', justifyContent: 'center' }}>
-        <Bar variant={$Bar.PAGINATE} animate />
+        <Bar variant={$BAR.paginate} animate />
       </div>
     </div>
   );

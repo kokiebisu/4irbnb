@@ -1,8 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import Router from 'next/router';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 import { $HEADER } from '../constant/appearance';
 
 /**
@@ -11,7 +10,8 @@ import { $HEADER } from '../constant/appearance';
  */
 const HomesHeader: React.FC<{
   spread?: boolean;
-}> = ({ spread = false }) => {
+  navigate?: any;
+}> = ({ spread = false, navigate }) => {
   return (
     <header css={{ height: 80, padding: 0 }}>
       <div css={{ padding: 20, height: '100%' }}>
@@ -26,7 +26,7 @@ const HomesHeader: React.FC<{
                 backgroundColor: 'rgba(0, 0, 0, 0.03)',
               },
             }}
-            onClick={() => Router.push('/')}
+            onClick={() => navigate('/')}
             noName
             fill="black"
           />

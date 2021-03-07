@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { useState } from 'react';
 import { jsx } from 'theme-ui';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 
 /**
  * Renders the menubar component

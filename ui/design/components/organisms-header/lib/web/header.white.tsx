@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import Router from 'next/router';
+
 import { Modal, $MODAL } from '@nextbnb/organisms-modal';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { ChevronLeft } from '@nextbnb/design/assets/svg/regular';
@@ -15,8 +15,16 @@ const WhiteHeader: React.FC<{
   spread?: boolean;
   data?: any;
   toggleState?: any;
-  toggleDispatch?: (params: any) => void;
-}> = ({ data, toggleState = { menu: false }, toggleDispatch }) => {
+  toggleGlobe?: () => void;
+  toggleMenu?: () => void;
+  navigate: (url: string) => void;
+}> = ({
+  data,
+  toggleState = { menu: false },
+  toggleGlobe,
+  toggleMenu,
+  navigate,
+}) => {
   return (
     <header css={{ padding: '16px 0', bg: 'white' }}>
       <div
@@ -32,25 +40,22 @@ const WhiteHeader: React.FC<{
             block
             variant={$BUTTON.logo}
             noName
-            onClick={() => Router.push('/')}
+            onClick={() => navigate('/')}
           />
         </div>
         <div>
-          <Button block variant="logo" onClick={() => Router.push('/')} />
+          <Button block variant="logo" onClick={() => navigate('/')} />
         </div>
         <div css={{ display: 'flex', alignItems: 'center' }}>
           <div css={{ margin: '0 2px' }}>
             <Button
               variant={$BUTTON.transparent}
               animate
-              onClick={() => Router.push('/host/homes')}
+              onClick={() => navigate('/host/homes')}
             />
           </div>
           <div css={{ margin: '0 2px' }}>
-            <Button
-              variant={$BUTTON.transparent}
-              onClick={() => toggleDispatch({ type: 'toggle_globe' })}
-            />
+            <Button variant={$BUTTON.transparent} onClick={toggleGlobe} />
           </div>
           <div css={{ marginLeft: 4 }}>
             <Button
@@ -58,7 +63,7 @@ const WhiteHeader: React.FC<{
               extendsTo={{ padding: '3px 0' }}
               inverse
               authenticated={data}
-              onClick={() => toggleDispatch({ type: 'toggle_menu' })}
+              onClick={toggleMenu}
             />
           </div>
         </div>

@@ -3,7 +3,6 @@
 import { jsx } from 'theme-ui';
 import { useState } from 'react';
 import { useFormik } from 'formik';
-import Router from 'next/router';
 
 // import { useAuthDispatch, useAuthState } from "@context/auth";
 import { Input, $INPUT } from '@nextbnb/atoms-input';
@@ -38,7 +37,7 @@ const LoginTemplate: React.FC<{
           setLoading(state);
         },
         onSuccess() {
-          Router.reload();
+          reload();
         },
         onFail() {
           setStatus('fail');

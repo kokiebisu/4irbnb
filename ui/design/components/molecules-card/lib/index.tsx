@@ -2,7 +2,6 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { variants as webVariants } from './web/variants';
-import Router from 'next/router';
 import { $CARD } from './constant/appearance';
 import { generateVariants } from './utils/variants';
 import { Platform } from './constant/platform';
@@ -11,6 +10,7 @@ export interface CardProps {
   extendsTo?: any;
   variant?: string;
   to?: string;
+  navigate?: any;
   [property: string]: any;
 }
 
@@ -25,6 +25,7 @@ export const Card: React.FC<CardProps> = ({
   extendsTo,
   variant = $CARD.category,
   to,
+  navigate,
   ...props
 }) => {
   const variants = generateVariants(Platform[platform], webVariants, props);
@@ -41,7 +42,7 @@ export const Card: React.FC<CardProps> = ({
           ...extendsTo,
         }}
         data-testid={`${variant}-card--molecule`}
-        onClick={() => Router.push(to)}
+        onClick={() => navigate(to)}
       >
         {variant && variants[variant].component}
       </div>

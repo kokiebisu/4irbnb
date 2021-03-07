@@ -12,7 +12,7 @@ import {
   Sparkle,
   Time,
 } from '@nextbnb/design/assets/svg/original';
-import { $BULLET } from '..';
+import { $BULLET } from '../constants/appearance';
 
 /** Helpers */
 // import * as Helper from "../../../time";

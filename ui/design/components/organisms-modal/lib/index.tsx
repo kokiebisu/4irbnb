@@ -44,7 +44,7 @@ export const Modal: React.FC<ModalProps> = ({
   ...props
 }) => {
   const { criteria } = props;
-  const containerRef = useRef();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const variants = generateVariants(platform, webVariants, props);
 

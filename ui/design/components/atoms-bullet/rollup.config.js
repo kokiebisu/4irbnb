@@ -22,6 +22,8 @@ const output = [
     globals: {
       react: 'React',
       'react-dom': 'ReactDOM',
+      'framer-motion': 'framerMotion',
+      'theme-ui': 'themeUi',
     },
   },
 ];
@@ -36,5 +38,5 @@ export default async () => ({
     }),
     production && (await import('rollup-plugin-terser')).terser(),
   ],
-  external: ['react', 'react-dom'],
+  external: ['react', 'react-dom', 'theme-ui', 'framer-motion'],
 });

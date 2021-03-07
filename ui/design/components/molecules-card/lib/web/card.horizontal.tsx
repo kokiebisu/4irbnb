@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { Particle, $Particle } from '@nextbnb/particles';
+import { Particle, $Particle } from '@nextbnb/particles/dist/bundle.esm';
 import { jsx } from 'theme-ui';
 import { Heart } from '@nextbnb/design/assets/svg/original';
 import { renderType } from '../logic/logic.horizontal';

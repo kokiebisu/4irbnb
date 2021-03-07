@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 import { $MODAL } from '../constant/appearance';
 // import { $Prototype, Prototype } from "../../../../prototype/web/auth";
 
@@ -12,8 +12,8 @@ import { $MODAL } from '../constant/appearance';
  * @param {function} authState - Context state which handles authentication
  */
 const AuthModal: React.FC<{
-  toggleDispatch?: (params: any) => void;
-  authDispatch?: (params: any) => void;
+  toggleDispatch: (params: any) => void;
+  authDispatch: (params: any) => void;
   title?: string;
   display?: string;
 }> = ({

@@ -1,10 +1,10 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 
 const Layout: React.FC<{
-  items?: { language?: string; region?: string }[];
+  items: { language: string; region: string }[];
   type?: string;
 }> = ({ items, type = 'suggested' }) => {
   const titles = {
@@ -26,20 +26,22 @@ const Layout: React.FC<{
           padding: 10,
         }}
       >
-        {items.map(({ language, region }, index) => {
-          return (
-            <div key={index}>
-              <Button
-                variant={$BUTTON.globe}
-                language={language}
-                region={region}
-                extendsTo={{ textAlign: 'left' }}
-                block
-                selected={index === 0 && type === 'choose'}
-              />
-            </div>
-          );
-        })}
+        {items
+          ? items.map(({ language, region }, index) => {
+              return (
+                <div key={index}>
+                  <Button
+                    variant={$BUTTON.globe}
+                    language={language}
+                    region={region}
+                    extendsTo={{ textAlign: 'left' }}
+                    block
+                    selected={index === 0 && type === 'choose'}
+                  />
+                </div>
+              );
+            })
+          : null}
       </div>
     </div>
   );

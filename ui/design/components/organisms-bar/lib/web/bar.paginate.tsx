@@ -2,8 +2,8 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx } from 'theme-ui';
-import Router from 'next/router';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 
 /**
  * Renders paginate bar component
@@ -13,7 +13,8 @@ import { Button, $BUTTON } from '@nextbnb/atoms-button';
 const PaginateBar: React.FC<{
   page?: number;
   total?: number;
-}> = ({ page = 1, total = 15 }) => {
+  navigate?: any;
+}> = ({ page = 1, total = 15, navigate }) => {
   const displayContent = () => {
     if (page > 4 && page + 3 < total) {
       return (
@@ -66,7 +67,7 @@ const PaginateBar: React.FC<{
                 textDecoration: 'underline',
               },
             }}
-            onClick={() => Router.push(`/s/homes/${page - 1}`)}
+            onClick={() => navigate(page - 1)}
           >
             {page - 1}
           </button>
@@ -99,7 +100,7 @@ const PaginateBar: React.FC<{
                 textDecoration: 'underline',
               },
             }}
-            onClick={() => Router.push(`/s/homes/${page + 1}`)}
+            onClick={() => navigate(page + 1)}
           >
             {page + 1}
           </button>
@@ -118,7 +119,7 @@ const PaginateBar: React.FC<{
             ...
           </button>
           <button
-            onClick={() => Router.push(`/s/homes/${total}`)}
+            onClick={() => navigate(total)}
             css={{
               width: 36,
               height: 36,
@@ -140,7 +141,7 @@ const PaginateBar: React.FC<{
       return (
         <div>
           <button
-            onClick={() => Router.push(`/s/homes/1`)}
+            onClick={() => navigate(1)}
             css={{
               width: 36,
               height: 36,
@@ -157,7 +158,7 @@ const PaginateBar: React.FC<{
             1
           </button>
           <button
-            onClick={() => Router.push(`/s/homes/2`)}
+            onClick={() => navigate(2)}
             style={{
               width: 36,
               height: 36,
@@ -182,7 +183,7 @@ const PaginateBar: React.FC<{
             2
           </button>
           <button
-            onClick={() => Router.push(`/s/homes/3`)}
+            onClick={() => navigate(3)}
             style={{
               width: 36,
               height: 36,
@@ -207,7 +208,7 @@ const PaginateBar: React.FC<{
             3
           </button>
           <button
-            onClick={() => Router.push(`/s/homes/4`)}
+            onClick={() => navigate(4)}
             style={{
               width: 36,
               height: 36,
@@ -232,7 +233,7 @@ const PaginateBar: React.FC<{
             4
           </button>
           <button
-            onClick={() => Router.push(`/s/homes/5`)}
+            onClick={() => navigate(5)}
             style={{
               width: 36,
               height: 36,
@@ -271,7 +272,7 @@ const PaginateBar: React.FC<{
             ...
           </a>
           <a
-            onClick={() => Router.push(`/s/homes/${total}`)}
+            onClick={() => navigate(total)}
             css={{
               width: 36,
               height: 36,
@@ -293,7 +294,7 @@ const PaginateBar: React.FC<{
       return (
         <div>
           <button
-            onClick={() => Router.push(`/s/homes/1`)}
+            onClick={() => navigate(1)}
             css={{
               width: 36,
               height: 36,
@@ -310,7 +311,7 @@ const PaginateBar: React.FC<{
             1
           </button>
           <button
-            onClick={() => Router.push('/')}
+            onClick={() => navigate('')}
             css={{
               width: 36,
               height: 36,
@@ -328,7 +329,7 @@ const PaginateBar: React.FC<{
             ...
           </button>
           <button
-            onClick={() => Router.push(`/s/homes/${total - 3}`)}
+            onClick={() => navigate(total - 3)}
             style={{
               width: 36,
               height: 36,
@@ -345,7 +346,7 @@ const PaginateBar: React.FC<{
             {total - 3}
           </button>
           <button
-            onClick={() => Router.push(`/s/homes/${total - 2}`)}
+            onClick={() => navigate(total - 2)}
             style={{
               width: 36,
               height: 36,
@@ -362,7 +363,7 @@ const PaginateBar: React.FC<{
             {total - 2}
           </button>
           <button
-            onClick={() => Router.push(`/s/homes/${total - 1}`)}
+            onClick={() => navigate(total - 1)}
             style={{
               width: 36,
               height: 36,
@@ -379,7 +380,7 @@ const PaginateBar: React.FC<{
             {total - 1}
           </button>
           <button
-            onClick={() => Router.push(`/s/homes/${total}`)}
+            onClick={() => navigate(total)}
             style={{
               width: 36,
               height: 36,
@@ -415,7 +416,7 @@ const PaginateBar: React.FC<{
             variant={$BUTTON.paginate}
             animate
             direction="left"
-            onClick={() => Router.push(`/s/homes/page/${page - 1}`)}
+            onClick={() => navigate(page - 1)}
           />
         )}
         <div css={{ margin: '0 8px' }}>{displayContent()}</div>
@@ -424,7 +425,7 @@ const PaginateBar: React.FC<{
             variant={$BUTTON.paginate}
             animate
             direction="right"
-            onClick={() => Router.push(`/s/homes/page/${page + 1}`)}
+            onClick={() => navigate(page + 1)}
           />
         )}
       </div>

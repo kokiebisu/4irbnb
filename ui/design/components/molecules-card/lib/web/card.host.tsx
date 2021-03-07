@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import Router from 'next/router';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 import { $CARD } from '../constant/appearance';
 
 /**
@@ -17,7 +17,14 @@ const HostCard: React.FC<{
   host?: string;
   stayType?: string;
   location?: string;
-}> = ({ imgUrl, host = 'Host', stayType = 'Type', location = 'Location' }) => {
+  navigate?: any;
+}> = ({
+  imgUrl,
+  host = 'Host',
+  stayType = 'Type',
+  location = 'Location',
+  navigate,
+}) => {
   return (
     <div>
       <div>
@@ -55,7 +62,7 @@ const HostCard: React.FC<{
       </div>
       <div>
         <Button
-          onClick={() => Router.push('/')}
+          onClick={() => navigate('/')}
           variant={$BUTTON.underline}
           title={`Check out some ${stayType}s`}
         />

@@ -2,12 +2,10 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useRef, useState } from 'react';
-import Router from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
-
-import { Modal, $MODAL } from '@nextbnb/organisms-modal';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
-import { Prototype } from '@nextbnb/prototype-searchbar';
+import { Modal, $MODAL } from '@nextbnb/organisms-modal/dist/bundle.esm';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
+import { Prototype } from '@nextbnb/prototype-searchbar/dist/bundle.esm';
 import { NameLogo, NoNameLogo } from '@nextbnb/design/assets/svg/logo';
 import { Globe } from '@nextbnb/design/assets/svg/original';
 import { useOnClickOutside } from '@nextbnb/design/hooks/useOnClickOutside';
@@ -23,6 +21,9 @@ const LandingHeader: React.FC<{
   criteria?: any;
   toggleDispatch?: (params: any) => void;
   toggleState?: any;
+  toggleGlobe?: () => void;
+  toggleMenu?: () => void;
+  navigate?: any;
 }> = ({
   data,
   category,
@@ -32,8 +33,11 @@ const LandingHeader: React.FC<{
   toggleState = {
     menu: false,
   },
+  toggleGlobe,
+  toggleMenu,
+  navigate,
 }) => {
-  const searchbarRef = useRef();
+  const searchbarRef = useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = useState(false);
 
   useOnClickOutside(searchbarRef, () => {
@@ -56,7 +60,7 @@ const LandingHeader: React.FC<{
     },
     online: {
       title: 'Online Experiences',
-      onClick: () => Router.push('/s/experiences/online'),
+      onClick: () => navigate('/s/experiences/online'),
     },
   };
 
@@ -119,7 +123,7 @@ const LandingHeader: React.FC<{
               }
               inverse={criteria}
               animate
-              onClick={() => Router.push('/host/homes')}
+              onClick={() => navigate('/host/homes')}
             />
           </div>
           <div css={{ margin: '0 2px' }}>
@@ -137,7 +141,7 @@ const LandingHeader: React.FC<{
                 </div>
               }
               inverse={criteria}
-              onClick={() => toggleDispatch({ type: 'toggle_globe' })}
+              onClick={toggleGlobe}
             />
           </div>
           <div css={{ marginLeft: 4 }}>
@@ -152,7 +156,7 @@ const LandingHeader: React.FC<{
               variant={$BUTTON.menu}
               inverse={criteria}
               authenticated={data}
-              onClick={() => toggleDispatch({ type: 'toggle_menu' })}
+              onClick={toggleMenu}
             />
           </div>
         </div>

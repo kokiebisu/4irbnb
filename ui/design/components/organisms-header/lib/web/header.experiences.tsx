@@ -1,14 +1,14 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import Router from 'next/router';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 import { $HEADER } from '../constant/appearance';
 
 /**
  * Renders the experiences header
  */
-const ExperiencesHeader: React.FC<{}> = () => {
+const ExperiencesHeader: React.FC<{ navigate?: any }> = ({ navigate }) => {
   return (
     <header css={{ height: 80, padding: '0 0' }}>
       <div
@@ -26,9 +26,7 @@ const ExperiencesHeader: React.FC<{}> = () => {
             fill="black"
             noName
             extendsTo={{ display: 'inline-block' }}
-            onClick={() => {
-              Router.push('/');
-            }}
+            onClick={() => navigate('/')}
           />
         </div>
         <div css={{ display: 'flex' }}>

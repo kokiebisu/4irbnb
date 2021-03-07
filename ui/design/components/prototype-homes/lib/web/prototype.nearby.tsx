@@ -2,8 +2,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 // import { Template } from "../../../template/web/s/homes";
-import { Bar, $Bar } from '@nextbnb/organisms-bar';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Bar, $BAR } from '@nextbnb/organisms-bar/dist/bundle.esm';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 
 /**
  * Renders the nearby template component
@@ -106,7 +106,7 @@ const NearbyPrototype: React.FC<{
             justifyContent: 'center',
           }}
         >
-          <Bar variant={$Bar.PAGINATE} animate />
+          <Bar variant={$BAR.paginate} animate />
         </div>
       </div>
       <div sx={{ bg: 'grey.100' }} css={{ padding: 24 }}>

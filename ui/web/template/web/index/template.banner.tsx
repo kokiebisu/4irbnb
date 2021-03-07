@@ -4,8 +4,8 @@ import React from 'react';
 import { jsx } from 'theme-ui';
 import { useState } from 'react';
 import Router from 'next/router';
-import { Header, $HEADER } from '@nextbnb/organisms';
-import { Button, $BUTTON } from '@nextbnb/atoms';
+import { Header, $HEADER } from '@nextbnb/organisms/dist/bundle.esm';
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
 import { useHandleScroll } from '@nextbnb/design/hooks/useHandleScroll';
 import { ResponsiveImage } from '@nextbnb/design/helper/img';
 

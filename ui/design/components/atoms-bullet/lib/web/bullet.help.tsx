@@ -7,7 +7,7 @@ import {
   Education,
   ToolBox,
 } from '@nextbnb/design/assets/svg/original';
-import { $BULLET } from '..';
+import { $BULLET } from '../constants/appearance';
 
 /**
  * Renders the help bullet

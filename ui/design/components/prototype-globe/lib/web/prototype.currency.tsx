@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Layout } from '@nextbnb/design/layout';
+import { Layout } from '@nextbnb/layout/dist/bundle.esm';
 
 const CurrencyPrototype: React.FC<{}> = () => {
   return (

@@ -3,7 +3,6 @@
 import { jsx } from 'theme-ui';
 import { useState } from 'react';
 import { useFormik } from 'formik';
-import Router from 'next/router';
 import { Input, $INPUT } from '@nextbnb/atoms-input';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { Bullet, $Bullet } from '@nextbnb/atoms-bullet';
@@ -35,7 +34,7 @@ const SignupTemplate: React.FC<{ authDispatch?: any }> = ({ authDispatch }) => {
           setLoading(state);
         },
         onSuccess: () => {
-          Router.reload();
+          reload();
         },
         onFail: () => {
           authDispatch({ type: 'exists' });

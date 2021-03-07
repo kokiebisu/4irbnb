@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
 
 /**
  * Renders the Searchbar
@@ -36,7 +36,7 @@ const SearchBar: React.FC<{
         <Option
           title="Where are you going?"
           subtitle="Location"
-          selected={selected}
+          selected={selected || ''}
           setSelected={setSelected}
           name="location"
           dispatch={dispatch}
@@ -45,7 +45,7 @@ const SearchBar: React.FC<{
         <Option
           title="Add dates"
           subtitle="Check in"
-          selected={selected}
+          selected={selected || ''}
           setSelected={setSelected}
           name="checkin"
           dispatch={dispatch}
@@ -54,7 +54,7 @@ const SearchBar: React.FC<{
         <Option
           title="Add dates"
           subtitle="Check out"
-          selected={selected}
+          selected={selected || ''}
           setSelected={setSelected}
           name="checkout"
           dispatch={dispatch}
@@ -137,7 +137,7 @@ const SearchBar: React.FC<{
         <Option
           title="Where are you going?"
           subtitle="Location"
-          selected={selected}
+          selected={selected || ''}
           setSelected={setSelected}
           name="location"
           dispatch={dispatch}

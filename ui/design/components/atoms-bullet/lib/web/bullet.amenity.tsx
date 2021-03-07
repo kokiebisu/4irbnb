@@ -10,7 +10,7 @@ import {
   TV,
 } from '@nextbnb/design/assets/svg/original';
 import { web } from '../styles/bullet.amenity';
-import { $BULLET } from '..';
+import { $BULLET } from '../constants/appearance';
 
 /**
  * Renders the amenity bullet

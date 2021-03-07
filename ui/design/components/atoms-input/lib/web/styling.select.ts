@@ -19,7 +19,6 @@ export const styleInput = (errors, fieldActive) => {
 export const styleLabel = (errors, fieldActive) => {
   const mixin = (top, color, fontWeight) => {
     return {
-      position: 'absolute',
       transition: 'all 150ms ease-in',
       fontSize: 13,
       top,
