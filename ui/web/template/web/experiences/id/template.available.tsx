@@ -2,8 +2,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useLayoutEffect, useRef, useState } from 'react';
-import { Button, $BUTTON } from '@nextbnb/atoms';
-import { Card, $CARD } from '@nextbnb/molecules';
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
 
 /**
  * Renders the available section

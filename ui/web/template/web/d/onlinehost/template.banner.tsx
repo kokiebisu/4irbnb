@@ -1,7 +1,12 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Button, $BUTTON, Bullet, $BULLET } from '@nextbnb/atoms';
+import {
+  Button,
+  $BUTTON,
+  Bullet,
+  $BULLET,
+} from '@nextbnb/atoms/dist/bundle.esm';
 
 export const BannerTemplate: React.FC<{}> = () => {
   return (

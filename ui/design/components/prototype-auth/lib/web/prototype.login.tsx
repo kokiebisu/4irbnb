@@ -5,10 +5,10 @@ import { useState } from 'react';
 import { useFormik } from 'formik';
 
 // import { useAuthDispatch, useAuthState } from "@context/auth";
-import { Input, $INPUT } from '@nextbnb/atoms-input';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
-import { Bullet, $Bullet } from '@nextbnb/atoms-bullet';
-import { Card, $Card } from '@nextbnb/molecules-card';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
+import { Bullet, $BULLET } from '@nextbnb/atoms-bullet/dist/bundle.esm';
+import { Card, $CARD } from '@nextbnb/molecules-card/dist/bundle.esm';
 
 import { validateLogin as validate } from '@nextbnb/design/helper/validation';
 import { usePost } from '@nextbnb/design/hooks/usePost';
@@ -18,8 +18,17 @@ import { usePost } from '@nextbnb/design/hooks/usePost';
  */
 const LoginTemplate: React.FC<{
   authState?: any;
-  authDispatch?: any;
-}> = ({ authState, authDispatch }) => {
+  reload?: () => void;
+  signup?: () => void;
+  login?: () => void;
+  forgotPassword?: () => void;
+}> = ({
+  authState,
+  reload = () => alert('Page reloaded'),
+  signup = () => alert('Signup triggered'),
+  login = () => alert('Login triggered'),
+  forgotPassword = () => alert('Forgot password triggered'),
+}) => {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState('pending');
 
@@ -49,24 +58,28 @@ const LoginTemplate: React.FC<{
 
   const switchAuth = () => {
     if (authState.title === 'Log in') {
-      return authDispatch({ type: 'auth_signup' });
+      return signup();
+      // return authDispatch({ type: 'auth_signup' });
     }
-    return authDispatch({ type: 'auth_login' });
+    return login();
+    // return authDispatch({ type: 'auth_login' });
   };
 
   const switchBack = () => {
-    return authDispatch({ type: 'auth_login' });
+    return login();
+    // return authDispatch({ type: 'auth_login' });
   };
 
   const redirectTo = () => {
-    return authDispatch({ type: 'forgot_password' });
+    return forgotPassword();
+    // return authDispatch({ type: 'forgot_password' });
   };
 
   return (
     <div css={{ padding: 24 }}>
       {status === 'fail' && (
         <div css={{ marginBottom: 16 }}>
-          <Card variant={$Card.AGAIN} />
+          <Card variant={$CARD.again} />
         </div>
       )}
       <form onSubmit={formik.handleSubmit}>
@@ -91,7 +104,7 @@ const LoginTemplate: React.FC<{
             {formik.errors.email !== undefined && (
               <div css={{ marginTop: 6 }}>
                 <Bullet
-                  variant={$Bullet.REQUIRED}
+                  variant={$BULLET.required}
                   message={formik.errors.email}
                 />
               </div>
@@ -101,7 +114,7 @@ const LoginTemplate: React.FC<{
             {formik.errors.password !== undefined && (
               <div css={{ marginTop: 6 }}>
                 <Bullet
-                  variant={$Bullet.REQUIRED}
+                  variant={$BULLET.required}
                   message={formik.errors.password}
                 />
               </div>
@@ -109,7 +122,7 @@ const LoginTemplate: React.FC<{
           </div>
           {status === 'success' && (
             <div css={{ marginTop: 16 }}>
-              <Card variant={$Card.SET} />
+              <Card variant={$CARD.set} />
             </div>
           )}
         </div>

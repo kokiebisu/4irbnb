@@ -26,7 +26,6 @@ const output = [
       'theme-ui': 'themeUi',
       'framer-motion': 'framerMotion',
       '@emotion/core': 'core',
-      formik: 'formik',
     },
   },
 ];
@@ -48,6 +47,5 @@ export default async () => ({
     'theme-ui',
     'framer-motion',
     '@emotion/core',
-    'formik',
   ],
 });

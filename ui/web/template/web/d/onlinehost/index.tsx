@@ -1,21 +1,21 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx } from 'theme-ui';
 
-import { MoreTemplate } from "./template.more";
-import { FAQTemplate } from "./template.faq";
-import { BackTemplate } from "./template.back";
-import { SharingTemplate } from "./template.sharing";
-import { WorksTemplate } from "./template.works";
-import { BannerTemplate } from "./template.banner";
+import { MoreTemplate } from './template.more';
+import { FAQTemplate } from './template.faq';
+import { BackTemplate } from './template.back';
+import { SharingTemplate } from './template.sharing';
+import { WorksTemplate } from './template.works';
+import { BannerTemplate } from './template.banner';
 
 export const $Template = {
-  BACK: "back",
-  BANNER: "banner",
-  FAQ: "faq",
-  MORE: "more",
-  SHARING: "sharing",
-  WORKS: "works",
+  BACK: 'back',
+  BANNER: 'banner',
+  FAQ: 'faq',
+  MORE: 'more',
+  SHARING: 'sharing',
+  WORKS: 'works',
 };
 
 export interface TemplateProps {
@@ -31,8 +31,8 @@ export interface TemplateProps {
  * @param {Object} children - A JSX that will be part of the component
  */
 export const Template: React.FC<TemplateProps> = ({
-  extendsTo = "",
-  variant = "more",
+  extendsTo = '',
+  variant = 'more',
   children,
   onClick,
   to,
@@ -49,9 +49,5 @@ export const Template: React.FC<TemplateProps> = ({
     banner: <BannerTemplate {...props} />,
   };
 
-  return (
-    <div data-testid={`${variant}-onlinehost--template`}>
-      {variants[variant]}
-    </div>
-  );
+  return <div data-testid={`${variant}-onlinehost`}>{variants[variant]}</div>;
 };

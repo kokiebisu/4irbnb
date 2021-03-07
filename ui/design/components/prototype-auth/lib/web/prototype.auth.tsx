@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useFormik } from 'formik';
-import { Input, $Input } from '@nextbnb/atoms-input';
+import { Input, $INPUT } from '@nextbnb/atoms-input';
 import { Button, $BUTTON } from '@nextbnb/atoms-button';
 import { getAuthContents } from '../content/auth';
 import { validateAuth as validate } from '@nextbnb/design/helper/validation';
@@ -12,9 +12,14 @@ import { validateAuth as validate } from '@nextbnb/design/helper/validation';
  */
 const AuthPrototype: React.FC<{
   title?: string;
-  authDispatch?: (param: any) => void;
-}> = ({ title = 'Log in', authDispatch }) => {
-  const auths = getAuthContents(title, authDispatch);
+  signup?: () => void;
+  login?: () => void;
+}> = ({
+  title = 'Log in',
+  signup = () => alert('Signed up'),
+  login = () => alert('Logged in'),
+}) => {
+  const auths = getAuthContents(title, login, signup);
   const methods = ['email', 'facebook', 'google', 'apple'];
 
   const formik = useFormik({
@@ -30,9 +35,11 @@ const AuthPrototype: React.FC<{
 
   const switchAuth = () => {
     if (title === 'Log in') {
-      return authDispatch({ type: 'auth_signup' });
+      return signup();
+      // authDispatch({ type: 'auth_signup' });
     }
-    return authDispatch({ type: 'auth_login' });
+    return login();
+    // return authDispatch({ type: 'auth_login' });
   };
 
   return (
@@ -42,14 +49,14 @@ const AuthPrototype: React.FC<{
           <div css={{ marginBottom: 8 }}>
             <div>
               <Input
-                variant={$Input.REGION}
+                variant={$INPUT.region}
                 direction="bottom"
                 handleChange={formik.handleChange}
                 value={formik.values.region}
                 errors={formik.errors.region}
               />
               <Input
-                variant={$Input.PHONE}
+                variant={$INPUT.phone}
                 direction="top"
                 handleChange={formik.handleChange}
                 value={formik.values.phone}

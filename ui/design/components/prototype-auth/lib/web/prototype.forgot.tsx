@@ -2,9 +2,9 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useFormik } from 'formik';
-import { Input, $INPUT } from '@nextbnb/atoms-input';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
-import { Bullet, $Bullet } from '@nextbnb/atoms-bullet';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
+import { Bullet, $BULLET } from '@nextbnb/atoms-bullet/dist/bundle.esm';
 import { validateForgotPassword as validate } from '@nextbnb/design/helper/validation';
 
 /**
@@ -53,7 +53,7 @@ const ForgotPasswordPrototype: React.FC<{}> = () => {
                 {formik.errors.email !== undefined && (
                   <div css={{ marginTop: 6 }}>
                     <Bullet
-                      variant={$Bullet.REQUIRED}
+                      variant={$BULLET.required}
                       message={formik.errors.email}
                     />
                   </div>

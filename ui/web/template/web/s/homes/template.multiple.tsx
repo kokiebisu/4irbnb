@@ -2,8 +2,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { Card, $CARD } from '@nextbnb/molecules';
-import { Button, $BUTTON } from '@nextbnb/atoms';
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
 
 /**
  * Renders the stay section

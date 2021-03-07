@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Button, $BUTTON } from '@nextbnb/atoms';
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
 
 export const MoreTemplate: React.FC<{ imgUrl?: string }> = ({ imgUrl }) => {
   return (

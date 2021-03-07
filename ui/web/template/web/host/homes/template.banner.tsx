@@ -1,8 +1,12 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Modal, $MODAL } from '@nextbnb/organisms';
-import { Header, $HEADER } from '@nextbnb/organisms';
+import {
+  Modal,
+  $MODAL,
+  Header,
+  $HEADER,
+} from '@nextbnb/organisms/dist/bundle.esm';
 
 export const BannerTemplate: React.FC<{}> = () => {
   return (

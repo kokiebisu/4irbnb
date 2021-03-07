@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { Heart, Share } from '@nextbnb/design/assets/svg/original';
-import { Panel, $PANEL } from '@nextbnb/molecules';
+import { Panel, $PANEL } from '@nextbnb/molecules/dist/bundle.esm';
 
 /**
  * Renders the panel section

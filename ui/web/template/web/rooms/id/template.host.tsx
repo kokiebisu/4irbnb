@@ -3,9 +3,14 @@
 import React from 'react';
 import { jsx } from 'theme-ui';
 import { useState } from 'react';
-import { Button, $BUTTON, Bullet, $BULLET } from '@nextbnb/atoms';
+import {
+  Button,
+  $BUTTON,
+  Bullet,
+  $BULLET,
+} from '@nextbnb/atoms/dist/bundle.esm';
 import { Shield } from '@nextbnb/design/assets/svg/original';
-import { $Layout } from '@nextbnb/layout';
+import { $Layout } from '@nextbnb/layout/dist/bundle.esm';
 
 /**
  * Modifies the content which should be displayed initially

@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Bullet, $BULLET } from '@nextbnb/atoms';
-import { Layout, $LAYOUT } from '@nextbnb/layout';
+import { Bullet, $BULLET } from '@nextbnb/atoms/dist/bundle.esm';
+import { Layout, $LAYOUT } from '@nextbnb/layout/dist/bundle.esm';
 
 export const FAQTemplate: React.FC<{
   questions?: { question: string; answer: string }[];

@@ -3,9 +3,9 @@
 import { jsx } from 'theme-ui';
 import { useState } from 'react';
 import { useFormik } from 'formik';
-import { Input, $INPUT } from '@nextbnb/atoms-input';
-import { Button, $BUTTON } from '@nextbnb/atoms-button';
-import { Bullet, $Bullet } from '@nextbnb/atoms-bullet';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
+import { Bullet, $BULLET } from '@nextbnb/atoms-bullet/dist/bundle.esm';
 
 import { validateSignup as validate } from '@nextbnb/design/helper/validation';
 import { usePost } from '@nextbnb/design/hooks/usePost';
@@ -13,7 +13,13 @@ import { usePost } from '@nextbnb/design/hooks/usePost';
 /**
  * Renders the signup template component
  */
-const SignupTemplate: React.FC<{ authDispatch?: any }> = ({ authDispatch }) => {
+const SignupTemplate: React.FC<{
+  handleUserExists?: () => void;
+  reload?: () => void;
+}> = ({
+  handleUserExists = () => alert('Handle user exists'),
+  reload = () => alert('Page reloaded'),
+}) => {
   const [loading, setLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
@@ -37,7 +43,8 @@ const SignupTemplate: React.FC<{ authDispatch?: any }> = ({ authDispatch }) => {
           reload();
         },
         onFail: () => {
-          authDispatch({ type: 'exists' });
+          handleUserExists();
+          // authDispatch({ type: 'exists' });
         },
       });
 
@@ -69,7 +76,7 @@ const SignupTemplate: React.FC<{ authDispatch?: any }> = ({ authDispatch }) => {
             {formik.errors.firstname !== undefined ? (
               <div css={{ marginTop: 6 }}>
                 <Bullet
-                  variant={$Bullet.REQUIRED}
+                  variant={$BULLET.required}
                   message={formik.errors.firstname}
                 />
               </div>
@@ -79,7 +86,7 @@ const SignupTemplate: React.FC<{ authDispatch?: any }> = ({ authDispatch }) => {
             {formik.errors.lastname !== undefined ? (
               <div css={{ marginTop: 6 }}>
                 <Bullet
-                  variant={$Bullet.REQUIRED}
+                  variant={$BULLET.required}
                   message={formik.errors.lastname}
                 />
               </div>
@@ -132,20 +139,20 @@ const SignupTemplate: React.FC<{ authDispatch?: any }> = ({ authDispatch }) => {
           </div>
           {formik.errors.day !== undefined && (
             <div css={{ marginTop: 6 }}>
-              <Bullet variant={$Bullet.REQUIRED} message={formik.errors.day} />
+              <Bullet variant={$BULLET.required} message={formik.errors.day} />
             </div>
           )}
           {formik.errors.month !== undefined && (
             <div css={{ marginTop: 6 }}>
               <Bullet
-                variant={$Bullet.REQUIRED}
+                variant={$BULLET.required}
                 message={formik.errors.month}
               />
             </div>
           )}
           {formik.errors.year !== undefined && (
             <div css={{ marginTop: 6 }}>
-              <Bullet variant={$Bullet.REQUIRED} message={formik.errors.year} />
+              <Bullet variant={$BULLET.required} message={formik.errors.year} />
             </div>
           )}
         </div>
@@ -170,7 +177,7 @@ const SignupTemplate: React.FC<{ authDispatch?: any }> = ({ authDispatch }) => {
             {formik.errors.email !== undefined ? (
               <div css={{ marginTop: 6 }}>
                 <Bullet
-                  variant={$Bullet.REQUIRED}
+                  variant={$BULLET.required}
                   message={formik.errors.email}
                 />
               </div>
@@ -200,7 +207,7 @@ const SignupTemplate: React.FC<{ authDispatch?: any }> = ({ authDispatch }) => {
             {formik.errors.password !== undefined && (
               <div css={{ marginTop: 6 }}>
                 <Bullet
-                  variant={$Bullet.REQUIRED}
+                  variant={$BULLET.required}
                   message={formik.errors.password}
                 />
               </div>

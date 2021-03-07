@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Card, $CARD } from '@nextbnb/molecules';
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
 
 /**
  * Renders the participate section

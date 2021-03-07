@@ -3,8 +3,8 @@
 import { jsx } from 'theme-ui';
 import { useRef } from 'react';
 import Router from 'next/router';
-import { Button, $BUTTON } from '@nextbnb/atoms';
-import { Card, $CARD } from '@nextbnb/molecules';
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
 import { useSlider, SliderProps } from '@nextbnb/design/hooks/useSlider';
 
 /**

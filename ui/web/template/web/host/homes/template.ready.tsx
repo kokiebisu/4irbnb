@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import Router from 'next/router';
-import { Button, $BUTTON } from '@nextbnb/atoms';
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
 
 /**
  * Renders the ready section

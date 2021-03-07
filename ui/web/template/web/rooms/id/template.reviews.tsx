@@ -3,8 +3,13 @@
 import React from 'react';
 import { jsx } from 'theme-ui';
 import { Star } from '@nextbnb/design/assets/svg/original';
-import { Bullet, $BULLET, Button, $BUTTON } from '@nextbnb/atoms';
-import { Card, $CARD } from '@nextbnb/molecules';
+import {
+  Bullet,
+  $BULLET,
+  Button,
+  $BUTTON,
+} from '@nextbnb/atoms/dist/bundle.esm';
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
 
 /**
  * Renders the reviews section

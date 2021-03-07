@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Card, $Card } from '@nextbnb/molecules';
-import { Layout } from '@nextbnb/layout';
+import { Card, $Card } from '@nextbnb/molecules/dist/bundle.esm';
+import { Layout } from '@nextbnb/layout/dist/bundle.esm';
 
 /**
  * Renders the All section

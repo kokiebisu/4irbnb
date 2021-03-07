@@ -1,9 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Button, $BUTTON } from '@nextbnb/atoms';
-import { Layout, $LAYOUT } from '@nextbnb/layout';
-import { Card, $CARD } from '@nextbnb/molecules';
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
+import { Layout, $LAYOUT } from '@nextbnb/layout/dist/bundle.esm';
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
 
 export const WorksTemplate: React.FC<{}> = () => {
   const categories = ['design', 'share', 'submit', 'setup'];

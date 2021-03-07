@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Bullet, $BULLET } from '@nextbnb/atoms';
-import { Layout } from '@nextbnb/layout';
+import { Bullet, $BULLET } from '@nextbnb/atoms/dist/bundle.esm';
+import { Layout } from '@nextbnb/layout/dist/bundle.esm';
 /**
  * Renders the priority section
  * @param {string[]} priorities - The priorities

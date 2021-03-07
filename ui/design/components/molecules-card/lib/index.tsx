@@ -6,6 +6,8 @@ import { $CARD } from './constant/appearance';
 import { generateVariants } from './utils/variants';
 import { Platform } from './constant/platform';
 
+export { $CARD };
+
 export interface CardProps {
   extendsTo?: any;
   variant?: string;
@@ -50,7 +52,11 @@ export const Card: React.FC<CardProps> = ({
   }
 
   return (
-    <div data-testid={`${variant}-card`} className={extendsTo}>
+    <div
+      sx={{ ...variants[variant].css }}
+      data-testid={`${variant}-card`}
+      className={extendsTo}
+    >
       {variant && variants[variant].component}
     </div>
   );

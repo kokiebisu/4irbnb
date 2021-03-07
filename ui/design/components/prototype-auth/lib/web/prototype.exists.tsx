@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useFormik } from 'formik';
 import { Bullet, $BULLET } from '@nextbnb/atoms-bullet/dist/bundle.esm';
 import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
-import { Input, $INPUT } from '@nextbnb/atoms-input';
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm';
 import { validateExists as validate } from '@nextbnb/design/helper/validation';
 import { usePost } from '@nextbnb/design/hooks/usePost';
 
@@ -84,7 +84,7 @@ const ExistsPrototype: React.FC<{
           {formik.errors.password !== undefined && (
             <div css={{ marginTop: 6 }}>
               <Bullet
-                variant={$Bullet.REQUIRED}
+                variant={$BULLET.required}
                 message={formik.errors.password}
               />
             </div>

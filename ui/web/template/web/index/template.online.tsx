@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Card, $CARD } from '@nextbnb/molecules';
-import { Button, $BUTTON } from '@nextbnb/atoms';
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
 
 /**
  * Renders the online section

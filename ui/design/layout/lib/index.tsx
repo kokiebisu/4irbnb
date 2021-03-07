@@ -30,8 +30,12 @@ export const Layout: React.FC<LayoutProps> = ({
   const variants = generateVariants(platform, webVariants, props);
 
   return (
-    <div className={extendsTo} data-testid={`${variant}-layout`}>
-      {variants[variant]}
+    <div
+      sx={{ ...variants[variant].css }}
+      className={extendsTo}
+      data-testid={`${variant}-layout`}
+    >
+      {variants[variant].component}
     </div>
   );
 };

@@ -1,42 +1,39 @@
-import React from "react";
+import React from 'react';
 // import { useAuthDispatch, useAuthState } from "@context/auth";
-import { Email } from "@nextbnb/design/assets/svg/original";
-import { Apple, Facebook, Google } from "@nextbnb/design/assets/svg/logo";
+import { Email } from '@nextbnb/design/assets/svg/original';
+import { Apple, Facebook, Google } from '@nextbnb/design/assets/svg/logo';
 
-export const getAuthContents = (
-  title: String = "Log in",
-  authDispatch: any
-) => {
+export const getAuthContents = (title: String = 'Log in', login, signup) => {
   const auths = {
     email: {
-      name: "Email",
+      name: 'Email',
       icon: <Email width={17} />,
       handleClick() {
-        if (title === "Log in") {
-          return authDispatch({ type: "login" });
+        if (title === 'Log in') {
+          login();
         }
-        return authDispatch({ type: "signup" });
+        signup();
       },
     },
     facebook: {
-      name: "Facebook",
+      name: 'Facebook',
       icon: <Facebook width={19} />,
       handleClick() {
-        alert("clicked facebook");
+        alert('clicked facebook');
       },
     },
     google: {
-      name: "Google",
+      name: 'Google',
       icon: <Google width={17} />,
       handleClick() {
-        alert("clicked google");
+        alert('clicked google');
       },
     },
     apple: {
-      name: "Apple",
+      name: 'Apple',
       icon: <Apple width={17} />,
       handleClick() {
-        alert("clicked apple");
+        alert('clicked apple');
       },
     },
   };

@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Bullet, $BULLET } from '@nextbnb/atoms';
+import { Bullet, $BULLET } from '@nextbnb/atoms/dist/bundle.esm';
 
 /**
  * Renders the experiences section

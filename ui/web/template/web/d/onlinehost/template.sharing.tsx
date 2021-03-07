@@ -1,15 +1,15 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
-import { Card, $Card } from '@nextbnb/molecules';
-import { Layout, $LAYOUT } from '@nextbnb/layout';
-import { Button, $BUTTON } from '@nextbnb/atoms';
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
+import { Layout, $LAYOUT } from '@nextbnb/layout/dist/bundle.esm';
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
 
 export const SharingTemplate: React.FC<{}> = () => {
   const sharings = ['meditate', 'baking', 'magic'];
   return (
     <Layout
-      variant="onlinehost"
+      variant={$LAYOUT.onlinehost}
       title="How hosts are sharing their world"
       subtitle="These hosts bring the spirit of experiences to the screen with unique small group activities to do together while we're apart."
     >

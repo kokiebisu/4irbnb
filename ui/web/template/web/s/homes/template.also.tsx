@@ -2,8 +2,8 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import { useRef } from 'react';
-import { Button, $BUTTON } from '@nextbnb/atoms';
-import { Card, $CARD } from '@nextbnb/molecules';
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
 import * as Helpers from '@nextbnb/design/helper/array';
 import { useSlider } from '@nextbnb/design/hooks/useSlider';
 import { useHandleContainerResize } from '@nextbnb/design/hooks/useHandleContainerResize';

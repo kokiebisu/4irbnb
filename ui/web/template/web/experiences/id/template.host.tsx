@@ -2,7 +2,12 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import React, { useState } from 'react';
-import { Bullet, $BULLET, Button, $BUTTON } from '@nextbnb/atoms';
+import {
+  Bullet,
+  $BULLET,
+  Button,
+  $BUTTON,
+} from '@nextbnb/atoms/dist/bundle.esm';
 import { Shield } from '@nextbnb/design/assets/svg/original';
 
 /**
