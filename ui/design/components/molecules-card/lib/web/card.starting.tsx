@@ -123,7 +123,7 @@ const StartingCard: React.FC<{
                       borderRadius: 6,
                       padding: '6px 10px',
                     }}
-                    sx={{ border: '1px solid grey.800' }}
+                    sx={{ border: '1px solid', borderColor: 'grey.800' }}
                   >
                     <h3 css={{ fontSize: 12 }}>{slot}p.m.</h3>
                   </div>
