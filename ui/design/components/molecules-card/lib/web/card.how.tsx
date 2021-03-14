@@ -36,7 +36,7 @@ const HowCard: React.FC<{ how?: string }> = ({ how = 'qualified' }) => {
   return (
     <div
       style={{ minHeight: 300, height: '100%', padding: 22, borderRadius: 6 }}
-      sx={{ border: '1px solid grey.300' }}
+      sx={{ border: '1px solid', borderColor: 'grey.300' }}
     >
       <div
         css={{

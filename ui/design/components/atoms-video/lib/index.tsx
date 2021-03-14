@@ -6,12 +6,15 @@ import { AnimatePresence, motion } from 'framer-motion';
 import React, { useRef, useState } from 'react';
 import { Animation } from '@nextbnb/animation/dist/bundle.esm';
 import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
+import {useTimeout} from '@nextbnb/design/hooks/useTimeout'
 
-export const Video: React.FC<{ videoUrl?: string; isLoading?: boolean }> = ({
+export interface VideoProps { videoUrl?: string; isLoading?: boolean }
+
+export const Video: React.FC<VideoProps> = ({
   videoUrl,
-  isLoading,
 }) => {
   const videoRef = useRef<any>();
+  const isLoading = useTimeout(1000)
   const [play, setPlay] = useState(true);
 
   return (
@@ -90,7 +93,7 @@ export const Video: React.FC<{ videoUrl?: string; isLoading?: boolean }> = ({
             initial={{ opacity: 0 }}
           >
             <Button
-              variant={$BUTTON.VIDEO}
+              variant={$BUTTON.video}
               play={!play}
               onClick={() => {
                 if (!play) {

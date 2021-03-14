@@ -24,9 +24,9 @@ export interface ButtonProps {
 }
 
 export const Button: React.FC<ButtonProps> = ({
-  platform = 'web',
+  platform = PLATFORM.web,
   extendsTo = {},
-  variant = $BUTTON.auth,
+  variant,
   onClick,
   block,
   animate,

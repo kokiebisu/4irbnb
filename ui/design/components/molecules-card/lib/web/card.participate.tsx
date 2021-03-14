@@ -22,7 +22,8 @@ const ParticipateCard: React.FC<{
         borderRadius: 6,
       }}
       sx={{
-        border: '1px solid grey.300',
+        border: '1px solid',
+        borderColor: 'grey.300'
       }}
     >
       <div css={{ margin: '12px 0' }}>{participates[categoryType].icon}</div>

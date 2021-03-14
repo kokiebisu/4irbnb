@@ -1,10 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
+import { jsx, ThemeProvider } from 'theme-ui';
 import { variants as webVariants } from './web/variants';
 import { $CARD } from './constant/appearance';
 import { generateVariants } from './utils/variants';
 import { Platform } from './constant/platform';
+import {theme} from '@nextbnb/theme'
 
 export { $CARD };
 
@@ -52,12 +53,14 @@ export const Card: React.FC<CardProps> = ({
   }
 
   return (
-    <div
+    <ThemeProvider theme={theme}>
+      <div
       sx={{ ...variants[variant].css }}
       data-testid={`${variant}-card`}
       className={extendsTo}
     >
       {variant && variants[variant].component}
     </div>
+    </ThemeProvider>
   );
 };

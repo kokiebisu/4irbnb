@@ -35,12 +35,13 @@ export const CommunityTemplate: React.FC<{
 
   return (
     <div
-      css={{
-        display: ['block', 'block', 'flex'],
+      sx={{
+        display: ['block', 'block', 'block', 'grid'],
         alignItems: 'center',
+        gridTemplateColumns: '500px 1fr'
       }}
     >
-      <div css={{ position: 'relative', zIndex: 500 }}>
+      <div css={{ position: 'relative', zIndex: 500, width: 500 }}>
         <div css={{ paddingLeft: ['24px', '24px', '64px'] }}>
           <div
             css={{
@@ -82,8 +83,10 @@ export const CommunityTemplate: React.FC<{
         </div>
       </div>
       <div
-        css={{
+
+        sx={{
           position: 'relative',
+          overflowX: 'hidden',
           zIndex: 500,
           paddingLeft: ['24px', '24px', '64px'],
           paddingTop: 50,
