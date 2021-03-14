@@ -45,7 +45,13 @@ export const paginate = (props) => {
   return {
     [$BUTTON.paginate]: {
       component: <PaginateButton {...props} />,
-      css: {},
+      css: {
+        borderRadius: 9999,
+        transition: '0.15s all cubic-bezier(.17,.67,.83,.67)',
+        ':hover': {
+          boxShadow: 'rgba(0, 0, 0, 0.18) 0px 2px 4px',
+        }
+      },
     },
   };
 };

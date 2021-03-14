@@ -16,6 +16,8 @@ const theme = {
   wrapper: {
     bg: 'rgba(255, 255, 255, 0.8)',
     color: 'grey.300',
+    border: '1px solid',
+    borderColor: 'grey.300',
     ':hover': {
       bg: 'white',
     },
