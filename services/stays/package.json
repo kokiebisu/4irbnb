@@ -46,5 +46,5 @@
     "@types/supertest": "^2.0.10",
     "del-cli": "^3.0.1"
   },
-  "gitHead": "aeebb8bf2a5831a19bf9ad55ae5b05ef49f57f99"
+  "gitHead": "aea8625838b781eee9402ada4ecc979e746e7e6a"
 }

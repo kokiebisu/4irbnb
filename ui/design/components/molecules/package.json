@@ -43,7 +43,7 @@
     "rollup-plugin-typescript2": "^0.30.0",
     "typescript": "^4.1.5"
   },
-  "gitHead": "aeebb8bf2a5831a19bf9ad55ae5b05ef49f57f99",
+  "gitHead": "aea8625838b781eee9402ada4ecc979e746e7e6a",
   "publishConfig": {
     "access": "public"
   }

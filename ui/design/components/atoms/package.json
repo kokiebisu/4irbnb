@@ -26,7 +26,7 @@
   "bugs": {
     "url": "https://github.com/kokiebisu/airbnb/issues"
   },
-  "gitHead": "aeebb8bf2a5831a19bf9ad55ae5b05ef49f57f99",
+  "gitHead": "aea8625838b781eee9402ada4ecc979e746e7e6a",
   "dependencies": {
     "@nextbnb/atoms-bullet": "^1.0.13",
     "@nextbnb/atoms-button": "^2.0.28",
