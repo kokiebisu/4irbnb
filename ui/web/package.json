@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/web",
-  "version": "1.0.28",
+  "version": "1.0.29",
   "description": "",
   "main": "./.next/server/pages/index.js",
   "keywords": [],
@@ -15,10 +15,10 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "@nextbnb/atoms": "^1.0.27",
-    "@nextbnb/molecules": "^1.0.27",
-    "@nextbnb/organisms": "^1.0.6",
-    "@nextbnb/prototype": "^1.0.3",
+    "@nextbnb/atoms": "^1.0.28",
+    "@nextbnb/molecules": "^1.0.28",
+    "@nextbnb/organisms": "^1.0.7",
+    "@nextbnb/prototype": "^1.0.4",
     "@rollup/plugin-typescript": "^8.2.0",
     "@types/theme-ui": "^0.3.7",
     "axios": "^0.21.0",

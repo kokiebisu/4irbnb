@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/organisms",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "> TODO: description",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
   "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/organisms#readme",
@@ -27,13 +27,13 @@
     "url": "https://github.com/kokiebisu/airbnb/issues"
   },
   "dependencies": {
-    "@nextbnb/design": "^1.0.37",
-    "@nextbnb/molecules-card": "^1.0.14",
-    "@nextbnb/molecules-panel": "^1.0.14",
-    "@nextbnb/organisms-bar": "^1.0.14",
-    "@nextbnb/organisms-footer": "^1.0.6",
-    "@nextbnb/organisms-header": "^1.0.6",
-    "@nextbnb/organisms-modal": "^1.0.4"
+    "@nextbnb/design": "^1.0.38",
+    "@nextbnb/molecules-card": "^1.0.15",
+    "@nextbnb/molecules-panel": "^1.0.15",
+    "@nextbnb/organisms-bar": "^1.0.15",
+    "@nextbnb/organisms-footer": "^1.0.7",
+    "@nextbnb/organisms-header": "^1.0.7",
+    "@nextbnb/organisms-modal": "^1.0.5"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.12.16",

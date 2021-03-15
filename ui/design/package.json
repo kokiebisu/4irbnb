@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/design",
-  "version": "1.0.37",
+  "version": "1.0.38",
   "license": "MIT",
   "dependencies": {
     "@emotion/react": "^11.1.5",
