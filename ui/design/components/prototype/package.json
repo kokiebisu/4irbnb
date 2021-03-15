@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/prototype",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "> TODO: description",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
   "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/prototype#readme",
@@ -27,24 +27,24 @@
     "url": "https://github.com/kokiebisu/airbnb/issues"
   },
   "dependencies": {
-    "@nextbnb/prototype-auth": "^1.0.1",
-    "@nextbnb/prototype-create": "^1.0.1",
-    "@nextbnb/prototype-globe": "^1.0.1",
-    "@nextbnb/prototype-homes": "^1.0.1",
-    "@nextbnb/prototype-searchbar": "^1.0.1"
+    "@nextbnb/prototype-auth": "^1.0.2",
+    "@nextbnb/prototype-create": "^1.0.2",
+    "@nextbnb/prototype-globe": "^1.0.2",
+    "@nextbnb/prototype-homes": "^1.0.2",
+    "@nextbnb/prototype-searchbar": "^1.0.2"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.12.16",
     "@babel/preset-react": "^7.12.13",
-    "babel-loader": "^8.2.2",
-    "react": "^17.0.1",
-    "typescript": "^4.1.5",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-node-resolve": "^11.2.0",
+    "babel-loader": "^8.2.2",
+    "react": "^17.0.1",
     "rollup": "^2.40.0",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.30.0"
+    "rollup-plugin-typescript2": "^0.30.0",
+    "typescript": "^4.1.5"
   },
   "gitHead": "aeebb8bf2a5831a19bf9ad55ae5b05ef49f57f99"
 }

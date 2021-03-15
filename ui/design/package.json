@@ -1,9 +1,9 @@
 {
   "name": "@nextbnb/design",
-  "version": "1.0.35",
+  "version": "1.0.36",
   "license": "MIT",
   "dependencies": {
-    "@nextbnb/theme": "^1.0.5",
+    "@nextbnb/theme": "^1.0.6",
     "react-dom": "^17.0.1"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/content",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "module": "dist/bundle.esm.js",
   "main": "dist/bundle.cjs.js",
   "src": "lib/index.ts",
@@ -12,7 +12,6 @@
     "clean": "rm -rf dist",
     "build": "yarn clean && rollup --config rollup.config.js --environment NODE_ENV:production"
   },
-  "dependencies": {},
   "devDependencies": {
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-node-resolve": "^11.2.0",

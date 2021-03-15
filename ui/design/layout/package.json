@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/layout",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "> TODO: description",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
   "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/layout#readme",
@@ -23,11 +23,11 @@
     "build": "yarn clean && rollup --config rollup.config.js --environment NODE_ENV:production"
   },
   "dependencies": {
-    "@nextbnb/atoms-button": "^2.0.27",
-    "@nextbnb/design": "^1.0.35",
-    "@nextbnb/organisms-bar": "^1.0.12",
-    "@nextbnb/organisms-header": "^1.0.4",
-    "@nextbnb/theme": "^1.0.5",
+    "@nextbnb/atoms-button": "^2.0.28",
+    "@nextbnb/design": "^1.0.36",
+    "@nextbnb/organisms-bar": "^1.0.13",
+    "@nextbnb/organisms-header": "^1.0.5",
+    "@nextbnb/theme": "^1.0.6",
     "framer-motion": "^3.3.0",
     "theme-ui": "^0.3.5"
   },
@@ -37,16 +37,16 @@
     "@babel/preset-env": "^7.12.16",
     "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.12.16",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-node-resolve": "^11.2.0",
     "@types/theme-ui": "^0.3.7",
     "babel-loader": "^8.2.2",
     "react": "^17.0.1",
-    "typescript": "^4.1.5",
-    "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-node-resolve": "^11.2.0",
     "rollup": "^2.40.0",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.30.0"
+    "rollup-plugin-typescript2": "^0.30.0",
+    "typescript": "^4.1.5"
   },
   "bugs": {
     "url": "https://github.com/kokiebisu/airbnb/issues"

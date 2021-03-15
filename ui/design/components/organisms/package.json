@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/organisms",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "> TODO: description",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
   "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/organisms#readme",
@@ -27,26 +27,26 @@
     "url": "https://github.com/kokiebisu/airbnb/issues"
   },
   "dependencies": {
-    "@nextbnb/design": "^1.0.35",
-    "@nextbnb/molecules-card": "^1.0.12",
-    "@nextbnb/molecules-panel": "^1.0.12",
-    "@nextbnb/organisms-bar": "^1.0.12",
-    "@nextbnb/organisms-footer": "^1.0.4",
-    "@nextbnb/organisms-header": "^1.0.4",
-    "@nextbnb/organisms-modal": "^1.0.2"
+    "@nextbnb/design": "^1.0.36",
+    "@nextbnb/molecules-card": "^1.0.13",
+    "@nextbnb/molecules-panel": "^1.0.13",
+    "@nextbnb/organisms-bar": "^1.0.13",
+    "@nextbnb/organisms-footer": "^1.0.5",
+    "@nextbnb/organisms-header": "^1.0.5",
+    "@nextbnb/organisms-modal": "^1.0.3"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.12.16",
     "@babel/preset-react": "^7.12.13",
-    "babel-loader": "^8.2.2",
-    "react": "^17.0.1",
-    "typescript": "^4.1.5",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-node-resolve": "^11.2.0",
+    "babel-loader": "^8.2.2",
+    "react": "^17.0.1",
     "rollup": "^2.40.0",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.30.0"
+    "rollup-plugin-typescript2": "^0.30.0",
+    "typescript": "^4.1.5"
   },
   "gitHead": "aeebb8bf2a5831a19bf9ad55ae5b05ef49f57f99",
   "publishConfig": {

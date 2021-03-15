@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/atoms-bullet",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "> TODO: description",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
   "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/atoms-bullet#readme",
@@ -27,9 +27,9 @@
     "url": "https://github.com/kokiebisu/airbnb/issues"
   },
   "dependencies": {
-    "@nextbnb/atoms-button": "^2.0.27",
-    "@nextbnb/design": "^1.0.35",
-    "@nextbnb/theme": "^1.0.5",
+    "@nextbnb/atoms-button": "^2.0.28",
+    "@nextbnb/design": "^1.0.36",
+    "@nextbnb/theme": "^1.0.6",
     "framer-motion": "^3.3.0",
     "theme-ui": "^0.3.5"
   },
