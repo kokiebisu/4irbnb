@@ -1,28 +1,29 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { $PANEL } from '..';
+import { jsx } from "theme-ui";
+import { $PANEL } from "..";
+import * as KEYFRAME from "@nextbnb/design/keyframe";
 
 const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
   return (
-    <div css={{ paddingTop: '38%', position: 'relative' }}>
-      <div css={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 }}>
+    <div css={{ paddingTop: "38%", position: "relative" }}>
+      <div css={{ position: "absolute", top: 0, bottom: 0, left: 0, right: 0 }}>
         <div
           css={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
             columnGap: 10,
             rowGap: 10,
-            width: '100%',
-            height: '100%',
+            width: "100%",
+            height: "100%",
           }}
         >
           <div>
             {images[0] ? (
               <img
                 css={{
-                  backgroundSize: 'cover',
-                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
                   borderBottomLeftRadius: 8,
                   borderTopLeftRadius: 8,
                 }}
@@ -30,40 +31,46 @@ const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
               />
             ) : (
               <div
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  backgroundColor: 'lightgray',
+                css={{
+                  width: "100%",
+                  height: "100%",
                   borderBottomLeftRadius: 16,
                   borderTopLeftRadius: 16,
+                }}
+                sx={{
+                  bg: "gray",
+                  animation: `${KEYFRAME.pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`,
                 }}
               />
             )}
           </div>
           <div
             css={{
-              display: 'grid',
+              display: "grid",
               columnGap: 10,
               rowGap: 10,
-              gridTemplateColumns: 'repeat(2, 1fr)',
-              gridTemplateRows: 'repeat(2, 1fr)',
+              gridTemplateColumns: "repeat(2, 1fr)",
+              gridTemplateRows: "repeat(2, 1fr)",
             }}
           >
             <div>
               {images[1] ? (
                 <img
                   css={{
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
                   }}
                   src={images[1]}
                 />
               ) : (
                 <div
                   css={{
-                    width: '100%',
-                    height: '100%',
-                    backgroundColor: 'lightgray',
+                    width: "100%",
+                    height: "100%",
+                  }}
+                  sx={{
+                    backgroundColor: "gray",
+                    animation: `${KEYFRAME.pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`,
                   }}
                 />
               )}
@@ -73,38 +80,22 @@ const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
                 <img
                   css={{
                     bottomTopRightRadius: 16,
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'repeat',
+                    backgroundSize: "cover",
+                    backgroundRepeat: "repeat",
                   }}
                   src={images[2]}
                 />
               ) : (
                 <div
                   css={{
-                    width: '100%',
-                    height: '100%',
-                    backgroundColor: 'lightgray',
+                    width: "100%",
+                    height: "100%",
+
                     borderTopRightRadius: 16,
                   }}
-                />
-              )}
-            </div>
-            <div>
-              {images[3] ? (
-                <img
-                  css={{
-                    borderBottomRightRadius: 16,
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
-                  }}
-                  src={images[3]}
-                />
-              ) : (
-                <div
-                  css={{
-                    width: '100%',
-                    height: '100%',
-                    backgroundColor: 'lightgray',
+                  sx={{
+                    bg: "gray",
+                    animation: `${KEYFRAME.pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`,
                   }}
                 />
               )}
@@ -114,18 +105,44 @@ const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
                 <img
                   css={{
                     borderBottomRightRadius: 16,
-                    backgroundSize: 'cover',
-                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
                   }}
                   src={images[3]}
                 />
               ) : (
                 <div
                   css={{
-                    width: '100%',
-                    height: '100%',
-                    backgroundColor: 'lightgray',
+                    width: "100%",
+                    height: "100%",
+                  }}
+                  sx={{
+                    bg: "gray",
+                    animation: `${KEYFRAME.pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`,
+                  }}
+                />
+              )}
+            </div>
+            <div>
+              {images[3] ? (
+                <img
+                  css={{
                     borderBottomRightRadius: 16,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                  src={images[3]}
+                />
+              ) : (
+                <div
+                  css={{
+                    width: "100%",
+                    height: "100%",
+                    borderBottomRightRadius: 16,
+                  }}
+                  sx={{
+                    backgroundColor: "gray",
+                    animation: `${KEYFRAME.pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`,
                   }}
                 />
               )}

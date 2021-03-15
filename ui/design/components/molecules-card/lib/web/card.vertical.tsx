@@ -1,8 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Heart, Star } from '@nextbnb/design/assets/svg/original';
-import { $CARD } from '../constant/appearance';
+import { jsx } from "theme-ui";
+import { Heart, Star } from "@nextbnb/design/assets/svg/original";
+import { $CARD } from "../constant/appearance";
+import * as KEYFRAME from "@nextbnb/design/keyframe";
 
 /**
  * Renders the vertical card component
@@ -24,52 +25,55 @@ const VerticalCard: React.FC<{
   ratings = 5.0,
   number_of_reviews = 100,
   save,
-  country = 'Country',
-  title = 'Title',
+  country = "Country",
+  title = "Title",
   cost = 10,
 }) => {
   return (
     <div>
-      <div css={{ position: 'relative', paddingTop: '135%' }}>
+      <div css={{ position: "relative", paddingTop: "135%" }}>
         <div
-          css={{ position: 'absolute', top: 0, bottom: 0, right: 0, left: 0 }}
+          css={{ position: "absolute", top: 0, bottom: 0, right: 0, left: 0 }}
         >
           {imgUrl ? (
             <img css={{ borderRadius: 12 }} src={imgUrl} />
           ) : (
             <div
-              css={{ borderRadius: 12, width: '100%', height: '100%' }}
-              sx={{ bg: 'lightgray' }}
+              css={{ borderRadius: 12, width: "100%", height: "100%" }}
+              sx={{
+                bg: "gray",
+                animation: `${KEYFRAME.pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`,
+              }}
             />
           )}
           <div
             css={{
-              display: 'flex',
-              padding: '8px 10px',
-              position: 'absolute',
+              display: "flex",
+              padding: "8px 10px",
+              position: "absolute",
               top: 0,
-              justifyContent: 'space-between',
-              width: '100%',
+              justifyContent: "space-between",
+              width: "100%",
             }}
           >
             <div
-              css={{ ...(!superhost && { visibility: 'hidden' }) }}
-              sx={{ ...(!superhost && { color: 'white' }) }}
+              css={{ ...(!superhost && { visibility: "hidden" }) }}
+              sx={{ ...(!superhost && { color: "white" }) }}
             >
               <div
                 css={{
-                  padding: '4px 8px',
+                  padding: "4px 8px",
                   borderRadius: 3,
-                  boxShadow: 'rgba(0, 0, 0, 0.2) 0px 4px 8px',
+                  boxShadow: "rgba(0, 0, 0, 0.2) 0px 4px 8px",
                 }}
                 sx={{
-                  bg: 'grey.100',
+                  bg: "grey.100",
                 }}
               >
                 <p
                   css={{
                     fontSize: 12,
-                    textTransform: 'uppercase',
+                    textTransform: "uppercase",
                     letterSpacing: 0.3,
                   }}
                 >
@@ -79,9 +83,9 @@ const VerticalCard: React.FC<{
             </div>
             <div
               css={{
-                ...(!save && { visibility: 'hidden' }),
+                ...(!save && { visibility: "hidden" }),
               }}
-              sx={{ color: 'white' }}
+              sx={{ color: "white" }}
             >
               <Heart
                 fill="rgba(0, 0, 0, 0.5)"
@@ -96,8 +100,8 @@ const VerticalCard: React.FC<{
       <div
         css={{
           marginTop: 4,
-          display: 'flex',
-          alignItems: 'center',
+          display: "flex",
+          alignItems: "center",
         }}
       >
         <div css={{ marginRight: 3 }}>
@@ -113,15 +117,15 @@ const VerticalCard: React.FC<{
               fontSize: 13,
             }}
             sx={{
-              color: 'grey.500',
+              color: "grey.500",
             }}
           >{`(${number_of_reviews})`}</p>
         </div>
         <div>
-          <p sx={{ color: 'grey.500' }}>&nbsp; · &nbsp; </p>
+          <p sx={{ color: "grey.500" }}>&nbsp; · &nbsp; </p>
         </div>
         <div>
-          <p css={{ fontSize: 13, fontWeight: 100 }} sx={{ color: 'grey.500' }}>
+          <p css={{ fontSize: 13, fontWeight: 100 }} sx={{ color: "grey.500" }}>
             {country}
           </p>
         </div>
@@ -134,7 +138,7 @@ const VerticalCard: React.FC<{
             fontSize: 15,
           }}
           sx={{
-            color: 'grey.900',
+            color: "grey.900",
           }}
         >
           {title}

@@ -78,11 +78,33 @@ export const useCheckin = () => {
   const reducer = (state, action) => {
     switch (action.type) {
       case "guests":
-        return { ...state, guests: !state.guests };
+        return {
+          ...state,
+          guests: !state.guests,
+          checkin: false,
+          checkout: false,
+        };
       case "checkout":
-        return { ...state, checkout: !state.checkout };
+        return {
+          ...state,
+          checkout: !state.checkout,
+          checkin: false,
+          guests: false,
+        };
       case "checkin":
-        return { ...state, checkin: !state.checkin };
+        return {
+          ...state,
+          checkin: !state.checkin,
+          checkout: false,
+          guests: false,
+        };
+      case "reset":
+        return {
+          ...state,
+          checkin: false,
+          checkout: false,
+          guests: false,
+        };
       default:
         return state;
     }
