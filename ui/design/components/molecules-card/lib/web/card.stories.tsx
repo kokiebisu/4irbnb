@@ -1,13 +1,13 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { Card, CardProps } from '..';
-import { $CARD } from '../constant/appearance';
+import React from "react";
+import { Story, Meta } from "@storybook/react/types-6-0";
+import { Card, CardProps } from "..";
+import { $CARD } from "../constant/appearance";
 
 export default {
-  title: 'Molecules/Card',
+  title: "Molecules/Card",
   component: Card,
   argTypes: {
-    onClick: { action: 'clicked' },
+    onClick: { action: "clicked" },
     variant: {
       control: {
         disable: true,
@@ -35,7 +35,7 @@ Category.args = {
 
 Category.decorators = [
   (Story) => (
-    <div style={{ width: '33.3%' }}>
+    <div style={{ width: "33.3%" }}>
       <Story />
     </div>
   ),
@@ -56,10 +56,10 @@ Horizontal.decorators = [
 
 Horizontal.argTypes = {
   superhost: {
-    control: 'boolean',
+    control: "boolean",
   },
   save: {
-    control: 'boolean',
+    control: "boolean",
   },
 };
 
@@ -69,7 +69,7 @@ Vertical.args = {
 };
 Vertical.argTypes = {
   save: {
-    control: 'boolean',
+    control: "boolean",
   },
 };
 
@@ -95,14 +95,6 @@ export const Checkin = TemplateStory.bind({});
 Checkin.args = {
   variant: $CARD.checkin,
 };
-
-Checkin.decorators = [
-  (Story) => (
-    <div style={{ width: 500 }}>
-      <Story />
-    </div>
-  ),
-];
 
 export const Review = TemplateStory.bind({});
 Review.args = {
@@ -139,8 +131,8 @@ Participate.args = {
 Participate.argTypes = {
   categoryType: {
     control: {
-      type: 'select',
-      options: ['call', 'private'],
+      type: "select",
+      options: ["call", "private"],
     },
   },
 };
@@ -151,7 +143,7 @@ Available.args = {
 };
 Available.decorators = [
   (Story) => (
-    <div style={{ maxWidth: '25%' }}>
+    <div style={{ maxWidth: "25%" }}>
       <Story />
     </div>
   ),
@@ -186,8 +178,8 @@ Works.args = {
 Works.argTypes = {
   work: {
     control: {
-      type: 'select',
-      options: ['design', 'share', 'submit', 'setup'],
+      type: "select",
+      options: ["design", "share", "submit", "setup"],
     },
   },
 };
@@ -199,8 +191,8 @@ Sharing.args = {
 Sharing.argTypes = {
   sharing: {
     control: {
-      type: 'select',
-      options: ['meditate', 'baking', 'magic'],
+      type: "select",
+      options: ["meditate", "baking", "magic"],
     },
   },
 };
@@ -212,8 +204,8 @@ How.args = {
 How.argTypes = {
   how: {
     control: {
-      type: 'select',
-      options: ['qualified', 'control', 'notified'],
+      type: "select",
+      options: ["qualified", "control", "notified"],
     },
   },
 };

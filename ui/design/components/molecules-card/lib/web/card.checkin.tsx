@@ -33,13 +33,6 @@ export const CheckInCard: React.FC<{
         sx={{
           border: '1px solid grey.300',
         }}
-        // className={[
-        //   card["display__checkin--wrapper"],
-        //   card["position__checkin--wrapper"],
-
-        //   card["w__checkin--wrapper"],
-
-        // ].join(" ")}
       >
         <div
           css={{
@@ -117,10 +110,10 @@ export const CheckInCard: React.FC<{
           >
             <div css={{ height: 60, display: 'flex', width: '100%' }}>
               <div
+              css={{width: '50%'}}
                 onClick={() => {
                   dispatchSelected({ type: 'checkin' });
                 }}
-                // className={checkInBorder(selected)}
               >
                 <div css={{ padding: '0 12px' }}>
                   <label
@@ -131,7 +124,8 @@ export const CheckInCard: React.FC<{
                       fontWeight: 700,
                     }}
                     sx={{
-                      color: 'grey.800',
+                      color: 'grey.80`0',
+                      ...(selected ? {border: '2px solid', borderColor: 'grey.800'}: {border: '1px solid', borderColor: 'grey.300'})
                     }}
                   >
                     CHECK-IN
@@ -149,10 +143,10 @@ export const CheckInCard: React.FC<{
                 </div>
               </div>
               <div
+                css={{width: '50%'}}
                 onClick={() => {
                   dispatchSelected({ type: 'checkout' });
                 }}
-                // className={checkOutBorder(selected)}
               >
                 <div css={{ padding: '0 12px' }}>
                   <label
