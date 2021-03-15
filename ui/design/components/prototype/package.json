@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/prototype",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "> TODO: description",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
   "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/prototype#readme",
@@ -27,11 +27,11 @@
     "url": "https://github.com/kokiebisu/airbnb/issues"
   },
   "dependencies": {
-    "@nextbnb/prototype-auth": "^1.0.2",
-    "@nextbnb/prototype-create": "^1.0.2",
-    "@nextbnb/prototype-globe": "^1.0.2",
-    "@nextbnb/prototype-homes": "^1.0.2",
-    "@nextbnb/prototype-searchbar": "^1.0.2"
+    "@nextbnb/prototype-auth": "^1.0.3",
+    "@nextbnb/prototype-create": "^1.0.3",
+    "@nextbnb/prototype-globe": "^1.0.3",
+    "@nextbnb/prototype-homes": "^1.0.3",
+    "@nextbnb/prototype-searchbar": "^1.0.3"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.12.16",

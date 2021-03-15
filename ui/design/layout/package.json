@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/layout",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "> TODO: description",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
   "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/layout#readme",
@@ -23,11 +23,11 @@
     "build": "yarn clean && rollup --config rollup.config.js --environment NODE_ENV:production"
   },
   "dependencies": {
-    "@nextbnb/atoms-button": "^2.0.28",
-    "@nextbnb/design": "^1.0.36",
-    "@nextbnb/organisms-bar": "^1.0.13",
-    "@nextbnb/organisms-header": "^1.0.5",
-    "@nextbnb/theme": "^1.0.6",
+    "@nextbnb/atoms-button": "^2.0.29",
+    "@nextbnb/design": "^1.0.37",
+    "@nextbnb/organisms-bar": "^1.0.14",
+    "@nextbnb/organisms-header": "^1.0.6",
+    "@nextbnb/theme": "^1.0.7",
     "framer-motion": "^3.3.0",
     "theme-ui": "^0.3.5"
   },

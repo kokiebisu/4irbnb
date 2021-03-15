@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/content",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "module": "dist/bundle.esm.js",
   "main": "dist/bundle.cjs.js",
   "src": "lib/index.ts",

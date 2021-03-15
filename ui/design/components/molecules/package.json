@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/molecules",
-  "version": "1.0.26",
+  "version": "1.0.27",
   "description": "> TODO: description",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
   "homepage": "https://github.com/kokiebisu/airbnb/tree/master/packages/molecules#readme",
@@ -27,9 +27,9 @@
     "url": "https://github.com/kokiebisu/airbnb/issues"
   },
   "dependencies": {
-    "@nextbnb/design": "^1.0.36",
-    "@nextbnb/molecules-card": "^1.0.13",
-    "@nextbnb/molecules-panel": "^1.0.13"
+    "@nextbnb/design": "^1.0.37",
+    "@nextbnb/molecules-card": "^1.0.14",
+    "@nextbnb/molecules-panel": "^1.0.14"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.12.16",
