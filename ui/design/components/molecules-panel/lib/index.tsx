@@ -1,10 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { PLATFORM } from './constant/platform';
-import { generateVariants } from './utils/variants';
-import { webVariants } from './web/variants';
-import { $PANEL } from './constant/appearance';
+import { jsx, ThemeProvider } from "theme-ui";
+import { PLATFORM } from "./constant/platform";
+import { generateVariants } from "./utils/variants";
+import { variants as webVariants } from "./web/variants";
+import { $PANEL } from "./constant/appearance";
+import { theme } from "@nextbnb/theme";
 
 export { $PANEL };
 
@@ -16,14 +17,16 @@ export interface PanelProps {
 
 export const Panel: React.FC<PanelProps> = ({
   platform = PLATFORM.web,
-  variant,
+  variant = $PANEL.experience,
   extendsTo,
   ...props
 }) => {
   const variants = generateVariants(PLATFORM[platform], webVariants, props);
   return (
-    <div sx={{ ...variants[variant].css }} data-testid={`${variant}-panel`}>
-      {variants[variant].component}
-    </div>
+    <ThemeProvider theme={theme}>
+      <div sx={{ ...variants[variant].css }} data-testid={`${variant}-panel`}>
+        {variants[variant].component}
+      </div>
+    </ThemeProvider>
   );
 };

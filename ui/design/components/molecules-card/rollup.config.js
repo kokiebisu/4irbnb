@@ -1,37 +1,38 @@
-import { babel } from '@rollup/plugin-babel';
-import typescript from 'rollup-plugin-typescript2';
-import css from 'rollup-plugin-css-only';
+import { babel } from "@rollup/plugin-babel";
+import typescript from "rollup-plugin-typescript2";
+import css from "rollup-plugin-css-only";
 
 // Rollup accepts ESModule syntax
 // Rollup recognizes relative path
-const pathName = 'dist/bundle';
-const production = process.env.NODE_ENV === 'production'; // Returns true if development
+const pathName = "dist/bundle";
+const production = process.env.NODE_ENV === "production"; // Returns true if development
 
 const output = [
   {
     file: `${pathName}.cjs.js`,
-    format: 'cjs',
+    format: "cjs",
   },
   {
     file: `${pathName}.esm.js`,
-    format: 'esm',
+    format: "esm",
   },
   {
-    name: 'RandomComponent',
+    name: "RandomComponent",
     file: `${pathName}.umd.js`,
-    format: 'umd',
+    format: "umd",
     globals: {
-      react: 'React',
-      'react-dom': 'ReactDOM',
-      'theme-ui': 'themeUi',
-      'framer-motion': 'framerMotion',
-      '@emotion/core': 'core',
+      react: "React",
+      "react-dom": "ReactDOM",
+      "theme-ui": "themeUi",
+      "framer-motion": "framerMotion",
+      "@emotion/core": "core",
+      "@emotion/react": "emotionReact",
     },
   },
 ];
 
 export default async () => ({
-  input: 'lib/index.tsx',
+  input: "lib/index.tsx",
   output,
   plugins: [
     typescript(),
@@ -39,13 +40,13 @@ export default async () => ({
     babel({
       exclude: /node_modules/,
     }),
-    production && (await import('rollup-plugin-terser')).terser(),
+    production && (await import("rollup-plugin-terser")).terser(),
   ],
   external: [
-    'react',
-    'react-dom',
-    'theme-ui',
-    'framer-motion',
-    '@emotion/core',
+    "react",
+    "react-dom",
+    "theme-ui",
+    "framer-motion",
+    "@emotion/core",
   ],
 });

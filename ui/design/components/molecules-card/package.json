@@ -27,6 +27,7 @@
     "url": "https://github.com/kokiebisu/airbnb/issues"
   },
   "dependencies": {
+    "@emotion/react": "^11.1.5",
     "@nextbnb/atoms-bullet": "^1.0.14",
     "@nextbnb/atoms-button": "^2.0.29",
     "@nextbnb/atoms-video": "^2.0.29",

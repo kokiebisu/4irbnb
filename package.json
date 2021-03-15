@@ -27,9 +27,10 @@
     "compile:services": "lerna run compile --scope=@nextbnb/{auth,stays}",
     "compile:ui": "lerna run compile --scope=@nextbnb/{theme,components}",
     "compile:web": "lerna run build --scope=@nextbnb/web",
-    "compile:atoms": "lerna run build --scope=@nextbnb/{animation,atoms-video,atoms-button,atoms-bullet,atoms-input,atoms}",
-    "compile:molecules": "lerna run build --scope=@nextbnb/{particles,molecules-card,molecules-panel,molecules}",
-    "compile:organisms": "lerna run build --scope=@nextbnb/{organisms-bar,organisms-footer,organisms-header,organisms-modal,organisms}",
+    "compile:components": "yarn run compile:atoms && yarn run compile:molecules && yarn run compile:organisms",
+    "compile:atoms": "lerna run build --scope=@nextbnb/{atoms-button,atoms-bullet} --sort && lerna run build --scope=@nextbnb/{atoms-video,atoms-input,atoms}",
+    "compile:molecules": "lerna run build --scope=@nextbnb/particles && lerna run build --scope=@nextbnb/molecules-* && lerna run build --scope=@nextbnb/molecules",
+    "compile:organisms": "lerna run build --scope=@nextbnb/organisms-* && lerna run build --scope=@nextbnb/organisms",
     "version:upgrade": "lerna version --conventional-commits --yes",
     "build:storybook": "lerna run compile --scope=@nextbnb/content && lerna run build-storybook --scope=@nextbnb/components",
     "run:storybook": "lerna run storybook --scope=@nextbnb/design"

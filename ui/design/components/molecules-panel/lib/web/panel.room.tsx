@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { $PANEL } from "..";
+import { $PANEL } from "../constant/appearance";
 import * as KEYFRAME from "@nextbnb/design/keyframe";
 
 const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {

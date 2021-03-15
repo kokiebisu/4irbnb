@@ -1,11 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, ThemeProvider } from 'theme-ui';
-import { variants as webVariants } from './web/variants';
-import { $CARD } from './constant/appearance';
-import { generateVariants } from './utils/variants';
-import { Platform } from './constant/platform';
-import {theme} from '@nextbnb/theme'
+import { jsx, ThemeProvider } from "theme-ui";
+import { variants as webVariants } from "./web/variants";
+import { $CARD } from "./constant/appearance";
+import { generateVariants } from "./utils/variants";
+import { Platform } from "./constant/platform";
+import { theme } from "@nextbnb/theme";
 
 export { $CARD };
 
@@ -37,14 +37,14 @@ export const Card: React.FC<CardProps> = ({
     return (
       <div
         css={{
-          cursor: 'pointer',
-          textAlign: 'left',
-          display: 'block',
-          heigth: '100%',
-          width: '100%',
+          cursor: "pointer",
+          textAlign: "left",
+          display: "block",
+          heigth: "100%",
+          width: "100%",
           ...extendsTo,
         }}
-        data-testid={`${variant}-card--molecule`}
+        data-testid={`${variant}-card`}
         onClick={() => navigate(to)}
       >
         {variant && variants[variant].component}
@@ -55,12 +55,12 @@ export const Card: React.FC<CardProps> = ({
   return (
     <ThemeProvider theme={theme}>
       <div
-      sx={{ ...variants[variant].css }}
-      data-testid={`${variant}-card`}
-      className={extendsTo}
-    >
-      {variant && variants[variant].component}
-    </div>
+        sx={{ ...variants[variant].css }}
+        data-testid={`${variant}-card`}
+        className={extendsTo}
+      >
+        {variant && variants[variant].component}
+      </div>
     </ThemeProvider>
   );
 };
