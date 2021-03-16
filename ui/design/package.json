@@ -25,6 +25,7 @@
     "hooks",
     "animation",
     "helper",
-    "particles"
+    "particles",
+    "keyframes"
   ]
 }
