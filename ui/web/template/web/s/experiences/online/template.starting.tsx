@@ -1,51 +1,51 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { useSlide } from '@nextbnb/design/hooks/useSlide';
-import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
-import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
+import { jsx } from 'theme-ui'
+import { useSlide } from '@nextbnb/design/hooks/useSlide'
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm'
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
 
 export const StartingTemplate = ({
-  title = 'Starting in the next 6 hours',
+  title = 'Starting in the next 6 hours'
 }) => {
   const temporaryCards = [
     {
       imgUrl:
         'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster',
       videoUrl:
-        'https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400',
+        'https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400'
     },
     {
       imgUrl:
         'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster',
       videoUrl:
-        'https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400',
+        'https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400'
     },
     {
       imgUrl:
         'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster',
       videoUrl:
-        'https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400',
+        'https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400'
     },
     {
       imgUrl:
         'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster',
       videoUrl:
-        'https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400',
-    },
-  ];
+        'https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400'
+    }
+  ]
 
   const displayingColumns = () => {
     if (width > 1128) {
-      return 3;
+      return 3
     }
     if (width > 700) {
-      return 2;
+      return 2
     }
-    return 1;
-  };
+    return 1
+  }
 
-  const { state, containerRef, width, previous, next } = useSlide('whole');
+  const { state, containerRef, width, previous, next } = useSlide('whole')
 
   return (
     <div ref={containerRef} style={{ overflowX: 'hidden' }}>
@@ -54,13 +54,13 @@ export const StartingTemplate = ({
           margin: '16px 0',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between',
+          justifyContent: 'space-between'
         }}
       >
         <div>
           <h3
             css={{
-              fontSize: 20,
+              fontSize: 20
             }}
           >
             {title}
@@ -69,28 +69,28 @@ export const StartingTemplate = ({
         <div
           css={{
             display: 'flex',
-            alignItems: 'center',
+            alignItems: 'center'
           }}
         >
           <div
             css={{
-              marginRight: 8,
+              marginRight: 8
             }}
           >
             <Button
-              variant={$BUTTON.unerline}
+              variant={$BUTTON.underline}
               title={`Show (${temporaryCards.length})`}
             />
           </div>
           <div
             css={{
               display: 'flex',
-              alignItems: 'center',
+              alignItems: 'center'
             }}
           >
             <div
               css={{
-                margin: '0 4px',
+                margin: '0 4px'
               }}
             >
               <Button
@@ -104,7 +104,7 @@ export const StartingTemplate = ({
             </div>
             <div
               css={{
-                margin: '0 4px',
+                margin: '0 4px'
               }}
             >
               <Button
@@ -125,14 +125,14 @@ export const StartingTemplate = ({
       <div
         css={{
           height: '100%',
-          width: '100%',
+          width: '100%'
         }}
       >
         <div
           css={{
             width: width * (temporaryCards.length / displayingColumns()),
             transform: `translateX(-${state.translate}px)`,
-            transition: `transform ease-out ${state.transition}s`,
+            transition: `transform ease-out ${state.transition}s`
           }}
         >
           <div css={{ display: 'flex' }}>
@@ -148,12 +148,12 @@ export const StartingTemplate = ({
                       />
                     </div>
                   </div>
-                );
+                )
               }
             )}
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
