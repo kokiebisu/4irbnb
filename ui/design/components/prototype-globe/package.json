@@ -1,6 +1,6 @@
 {
   "name": "@nextbnb/prototype-globe",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "> TODO: description",
   "author": "Kenichi Okiebisu <a01056715@gmail.com>",
   "homepage": "https://github.com/kokiebisu/nextbnb/tree/master/packages/prototype-globe#readme",
@@ -26,11 +26,11 @@
     "build": "yarn clean && rollup --config rollup.config.js --environment NODE_ENV:production"
   },
   "dependencies": {
-    "@nextbnb/atoms-bullet": "^1.0.15",
-    "@nextbnb/atoms-button": "^2.0.30",
-    "@nextbnb/atoms-input": "^2.0.30",
-    "@nextbnb/design": "^1.0.38",
-    "@nextbnb/layout": "^1.0.5",
+    "@nextbnb/atoms-bullet": "^1.0.16",
+    "@nextbnb/atoms-button": "^2.0.31",
+    "@nextbnb/atoms-input": "^2.0.31",
+    "@nextbnb/design": "^1.0.39",
+    "@nextbnb/layout": "^1.0.6",
     "@nextbnb/theme": "^1.0.7",
     "@rollup/plugin-typescript": "^8.2.0",
     "framer-motion": "^3.3.0",
