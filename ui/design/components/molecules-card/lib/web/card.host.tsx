@@ -1,9 +1,9 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-
-import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
-import { $CARD } from '../constant/appearance';
+import { jsx } from 'theme-ui'
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm'
+import { $CARD } from '../constant/appearance'
+import { pulse } from '@nextbnb/design/keyframes/pulse'
 
 /**
  * Renders the host card component
@@ -13,17 +13,17 @@ import { $CARD } from '../constant/appearance';
  * @param {string} location - Location of the stay
  */
 const HostCard: React.FC<{
-  imgUrl?: string;
-  host?: string;
-  stayType?: string;
-  location?: string;
-  navigate?: any;
+  imgUrl?: string
+  host?: string
+  stayType?: string
+  location?: string
+  navigate?: any
 }> = ({
   imgUrl,
   host = 'Host',
   stayType = 'Type',
   location = 'Location',
-  navigate,
+  navigate
 }) => {
   return (
     <div>
@@ -34,14 +34,17 @@ const HostCard: React.FC<{
               borderRadius: 20,
               objectFit: 'cover',
               height: 434,
-              width: 350,
+              width: 350
             }}
             src={imgUrl}
           />
         ) : (
           <div
             css={{ borderRadius: 20, height: 434, width: 350 }}
-            sx={{ bg: 'grey.300' }}
+            sx={{
+              bg: 'grey.700',
+              animation: `${pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`
+            }}
           />
         )}
       </div>
@@ -53,7 +56,7 @@ const HostCard: React.FC<{
           css={{
             textTransform: 'capitalize',
             letterSpacing: 0.4,
-            fontSize: 15,
+            fontSize: 15
           }}
           sx={{ color: 'grey.900' }}
         >
@@ -68,14 +71,14 @@ const HostCard: React.FC<{
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const host = (props) => {
   return {
     [$CARD.host]: {
       component: <HostCard {...props} />,
-      css: {},
-    },
-  };
-};
+      css: {}
+    }
+  }
+}

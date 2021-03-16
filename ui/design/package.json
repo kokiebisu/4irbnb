@@ -3,7 +3,6 @@
   "version": "1.0.39",
   "license": "MIT",
   "dependencies": {
-    "@emotion/react": "^11.1.5",
     "@nextbnb/theme": "^1.0.7",
     "react-dom": "^17.0.1"
   },

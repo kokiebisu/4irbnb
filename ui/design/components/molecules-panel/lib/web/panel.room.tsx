@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { $PANEL } from '../constant/appearance'
-import * as KEYFRAME from '@nextbnb/design/keyframes'
+import { pulse } from '@nextbnb/design/keyframes/pulse'
 
 const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
   return (
@@ -38,8 +38,8 @@ const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
                   borderTopLeftRadius: 16
                 }}
                 sx={{
-                  bg: 'grey.300',
-                  animation: `${KEYFRAME.pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`
+                  bg: 'grey.700',
+                  animation: `${pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`
                 }}
               />
             )}
@@ -69,8 +69,8 @@ const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
                     height: '100%'
                   }}
                   sx={{
-                    backgroundColor: 'gray',
-                    animation: `${KEYFRAME.pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`
+                    backgroundColor: 'grey.700',
+                    animation: `${pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`
                   }}
                 />
               )}
@@ -94,8 +94,8 @@ const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
                     borderTopRightRadius: 16
                   }}
                   sx={{
-                    bg: 'gray',
-                    animation: `${KEYFRAME.pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`
+                    bg: 'grey.700',
+                    animation: `${pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`
                   }}
                 />
               )}
@@ -117,8 +117,8 @@ const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
                     height: '100%'
                   }}
                   sx={{
-                    bg: 'gray',
-                    animation: `${KEYFRAME.pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`
+                    bg: 'grey.700',
+                    animation: `${pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`
                   }}
                 />
               )}
@@ -141,8 +141,8 @@ const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
                     borderBottomRightRadius: 16
                   }}
                   sx={{
-                    backgroundColor: 'gray',
-                    animation: `${KEYFRAME.pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`
+                    backgroundColor: 'grey.700',
+                    animation: `${pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`
                   }}
                 />
               )}
