@@ -1,7 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
+import { jsx } from 'theme-ui'
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm'
+import { pulse } from '@nextbnb/design/keyframes/pulse'
 
 export const MoreTemplate: React.FC<{ imgUrl?: string }> = ({ imgUrl }) => {
   return (
@@ -16,8 +17,11 @@ export const MoreTemplate: React.FC<{ imgUrl?: string }> = ({ imgUrl }) => {
             right: 0,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundImage: imgUrl && `url(${imgUrl})`,
-            backgroundColor: !imgUrl && 'lightgray',
+            backgroundImage: imgUrl && `url(${imgUrl})`
+          }}
+          sx={{
+            bg: !imgUrl && 'grey.700',
+            animation: `${pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`
           }}
         >
           <div
@@ -25,7 +29,7 @@ export const MoreTemplate: React.FC<{ imgUrl?: string }> = ({ imgUrl }) => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              height: '100%',
+              height: '100%'
             }}
           >
             <div>
@@ -34,8 +38,9 @@ export const MoreTemplate: React.FC<{ imgUrl?: string }> = ({ imgUrl }) => {
                   css={{
                     lineHeight: 1,
                     textAlign: 'center',
-                    color: 'white',
+                    color: 'white'
                   }}
+                  sx={{ fontSize: ['23px', '23px', '47px', '47px'] }}
                 >
                   Learn more about hosting with Airbnb Experiences
                 </h2>
@@ -44,7 +49,7 @@ export const MoreTemplate: React.FC<{ imgUrl?: string }> = ({ imgUrl }) => {
                 css={{
                   marginTop: 32,
                   display: 'flex',
-                  justifyContent: 'center',
+                  justifyContent: 'center'
                 }}
               >
                 <Button
@@ -59,5 +64,5 @@ export const MoreTemplate: React.FC<{ imgUrl?: string }> = ({ imgUrl }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

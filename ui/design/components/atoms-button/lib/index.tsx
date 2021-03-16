@@ -1,26 +1,25 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import '@nextbnb/design/assets/styles/global.css';
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ThemeProvider } from 'theme-ui';
-import { theme } from '@nextbnb/theme';
-import { variants as webVariants } from './web/variants';
-import { generateVariants } from './utils/variants';
-import { PLATFORM } from './constants/platform';
+import { jsx } from 'theme-ui'
+import '@nextbnb/design/assets/styles/global.css'
+import React from 'react'
+import { motion } from 'framer-motion'
+import { ThemeProvider } from 'theme-ui'
+import { theme } from '@nextbnb/theme'
+import { variants as webVariants } from './web/variants'
+import { generateVariants } from './utils/variants'
+import { PLATFORM } from './constants/platform'
 
-import { $BUTTON } from './constants/appearance';
+import { $BUTTON } from './constants/appearance'
 
-export { $BUTTON };
+export { $BUTTON }
 
 export interface ButtonProps {
-  extendsTo?: any;
-  onClick: () => void;
-  variant?: string;
-  children?: any;
-  shadow?: boolean;
-  [property: string]: any;
+  extendsTo?: any
+  onClick: () => void
+  variant?: string
+  shadow?: boolean
+  [property: string]: any
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -34,9 +33,9 @@ export const Button: React.FC<ButtonProps> = ({
   shadow,
   ...props
 }) => {
-  const { disable } = props;
+  const { disable } = props
 
-  const variants = generateVariants(PLATFORM[platform], webVariants, props);
+  const variants = generateVariants(PLATFORM[platform], webVariants, props)
 
   return (
     <ThemeProvider theme={theme}>
@@ -49,7 +48,7 @@ export const Button: React.FC<ButtonProps> = ({
           ...(block
             ? { display: 'block', width: '100%' }
             : { display: 'inline-block' }),
-          ...variants[variant].css,
+          ...variants[variant].css
         }}
         onClick={disable ? undefined : onClick}
         disabled={disable}
@@ -58,5 +57,5 @@ export const Button: React.FC<ButtonProps> = ({
         {variant ? variants[variant].component : children}
       </motion.button>
     </ThemeProvider>
-  );
-};
+  )
+}

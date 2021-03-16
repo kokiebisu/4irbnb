@@ -26,7 +26,7 @@ export const CategoryCard: React.FC<{
                 css={{ width: '100%', height: '100%', borderRadius: 8 }}
                 sx={{
                   bg: 'grey.700',
-                  animation: `pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`
+                  animation: `${pulse} 2s cubic-bezier(0.4, 0, 0.6, 1) infinite`
                 }}
               />
             )}

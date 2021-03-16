@@ -1,9 +1,10 @@
-import React from "react";
-import Head from "next/head";
-import "../styles/global.css";
-import { ContextProvider } from "../context/provider";
-import { ThemeProvider } from "theme-ui";
-import { theme } from "@airbnb/theme";
+import React from 'react'
+import Head from 'next/head'
+// import '../styles/global.css'
+import { ContextProvider } from '../context/provider'
+import { ThemeProvider } from 'theme-ui'
+import { Global } from '@emotion/core'
+import { theme } from '@nextbnb/theme'
 
 const MyApp = ({ Component, pageProps }) => {
   return (
@@ -17,27 +18,32 @@ const MyApp = ({ Component, pageProps }) => {
       </Head>
       <ContextProvider>
         <ThemeProvider theme={theme}>
+          <GlobalStyle />
           <Component {...pageProps} />
         </ThemeProvider>
       </ContextProvider>
     </>
-  );
-};
+  )
+}
+
+const GlobalStyle = () => {
+  return <Global styles={(theme) => ({})} />
+}
 
 MyApp.getInitialProps = async ({ Component, ctx }) => {
-  const data = {};
+  const data = {}
   // Can send requests for app
   // const client = APIClient(ctx);
   // const { data } = await client.get('...');
-  let pageProps = {};
+  let pageProps = {}
   if (Component.getInitialProps) {
-    pageProps = await Component.getInitialProps(ctx);
+    pageProps = await Component.getInitialProps(ctx)
   }
 
   return {
     pageProps,
-    ...data,
-  };
-};
+    ...data
+  }
+}
 
-export default MyApp;
+export default MyApp

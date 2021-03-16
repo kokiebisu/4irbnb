@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Bullet, $BULLET } from '@nextbnb/atoms/dist/bundle.esm';
-import { DevicesInverse, Star } from '@nextbnb/design/assets/svg/original';
+import { jsx } from 'theme-ui'
+import { Bullet, $BULLET } from '@nextbnb/atoms/dist/bundle.esm'
+import { DevicesInverse, Star } from '@nextbnb/design/assets/svg/original'
 
 /**
  * Renders the characteristics of the room/experience
@@ -21,20 +21,20 @@ import { DevicesInverse, Star } from '@nextbnb/design/assets/svg/original';
  * @param {Object} characteristics - The characteristics of the room/experience
  */
 export const CharacteristicsTemplate: React.FC<{
-  title?: string;
-  stayType?: string;
-  host?: string;
-  guests?: number;
-  bedrooms?: number;
-  beds?: number;
-  bathrooms?: number;
-  hostImgUrl?: string;
-  layoutType?: string;
-  ratings?: number;
-  numberOfReviews?: number;
-  location?: string;
-  country?: string;
-  characteristics?: string[];
+  title?: string
+  stayType?: string
+  host?: string
+  guests?: number
+  bedrooms?: number
+  beds?: number
+  bathrooms?: number
+  hostImgUrl?: string
+  layoutType?: string
+  ratings?: number
+  numberOfReviews?: number
+  location?: string
+  country?: string
+  characteristics?: string[]
 }> = ({
   title = 'Making & Eating Soup Dumplings vegan Ok',
   stayType = 'Tiny house',
@@ -54,8 +54,8 @@ export const CharacteristicsTemplate: React.FC<{
     devices: ['computer', 'phone', 'tablet'],
     people: 10,
     private: 100,
-    languages: ['English'],
-  },
+    languages: ['English']
+  }
 }) => {
   return (
     <div>
@@ -64,7 +64,7 @@ export const CharacteristicsTemplate: React.FC<{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          marginTop: 4,
+          marginTop: 4
         }}
       >
         <div css={{ width: '75%', display: 'flex', padding: '8px 0' }}>
@@ -72,7 +72,7 @@ export const CharacteristicsTemplate: React.FC<{
             css={{
               display: 'flex',
               marginTop: 8,
-              justifyContent: 'center',
+              justifyContent: 'center'
             }}
           >
             <div css={{ display: 'flex', flexDirection: 'column' }}>
@@ -91,7 +91,7 @@ export const CharacteristicsTemplate: React.FC<{
                 css={{
                   display: 'flex',
                   alignItems: 'center',
-                  flexWrap: 'wrap',
+                  flexWrap: 'wrap'
                 }}
               >
                 <div>
@@ -101,7 +101,7 @@ export const CharacteristicsTemplate: React.FC<{
                   css={{
                     paddingLeft: 4,
                     color: 'grey.700',
-                    fontSize: 14,
+                    fontSize: 14
                   }}
                 >
                   {ratings.toFixed(1)}
@@ -110,7 +110,7 @@ export const CharacteristicsTemplate: React.FC<{
                   css={{
                     paddingLeft: 4,
                     color: 'grey.800',
-                    fontSize: 14,
+                    fontSize: 14
                   }}
                 >
                   ({numberOfReviews})
@@ -118,7 +118,7 @@ export const CharacteristicsTemplate: React.FC<{
                 <span
                   css={{
                     fontWeight: 300,
-                    color: 'grey.600',
+                    color: 'grey.600'
                   }}
                 >
                   &nbsp;·&nbsp;
@@ -126,7 +126,7 @@ export const CharacteristicsTemplate: React.FC<{
                 <a
                   css={{
                     fontSize: 14,
-                    color: 'grey.800',
+                    color: 'grey.800'
                   }}
                   href=""
                 >
@@ -137,7 +137,7 @@ export const CharacteristicsTemplate: React.FC<{
                 <span
                   css={{
                     fontWeight: 300,
-                    color: 'grey.600',
+                    color: 'grey.600'
                   }}
                 >
                   &nbsp;·&nbsp;
@@ -146,7 +146,7 @@ export const CharacteristicsTemplate: React.FC<{
                   css={{
                     fontWeight: 300,
                     fontSize: 14,
-                    color: 'grey.800',
+                    color: 'grey.800'
                   }}
                   href=""
                 >
@@ -163,7 +163,7 @@ export const CharacteristicsTemplate: React.FC<{
               objectFit: 'cover',
               borderRadius: 9999,
               height: 60,
-              width: 60,
+              width: 60
             }}
             src={hostImgUrl}
           />
@@ -176,7 +176,7 @@ export const CharacteristicsTemplate: React.FC<{
         <div
           css={{
             display: ['flex', 'grid'],
-            padding: '4px 0',
+            padding: '4px 0'
           }}
         >
           <Bullet
@@ -207,5 +207,5 @@ export const CharacteristicsTemplate: React.FC<{
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

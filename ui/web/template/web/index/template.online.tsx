@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
-import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
+import { jsx } from 'theme-ui'
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm'
 
 /**
  * Renders the online section
@@ -10,8 +10,8 @@ import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
  * @param {boolean} dark - Whether if the section is dark mode or not
  */
 export const OnlineTemplate: React.FC<{
-  items?: any;
-  dark?: boolean;
+  items?: any
+  dark?: boolean
 }> = ({
   items = [
     {
@@ -20,7 +20,7 @@ export const OnlineTemplate: React.FC<{
       large:
         'https://a0.muscache.com/im/pictures/78010337-07f0-4154-9528-363b97b54699.jpg',
       title: 'Learn to make soup dumplings in Shanghai',
-      to: '/experiences/1715106',
+      to: '/experiences/1715106'
     },
     {
       small:
@@ -28,7 +28,7 @@ export const OnlineTemplate: React.FC<{
       large:
         'https://a0.muscache.com/im/pictures/0735e435-3d1d-4aec-b536-9ee54f299ce6.jpg',
       title: 'Explore feminism with street art and graffiti',
-      to: '/experiences/1755988',
+      to: '/experiences/1755988'
     },
     {
       small:
@@ -36,7 +36,7 @@ export const OnlineTemplate: React.FC<{
       large:
         'https://a0.muscache.com/im/pictures/1793b6aa-4c3c-4193-a65a-09b440b2ca2c.jpg',
       title: 'Go backstage with a New York magician',
-      to: '/experiences/1661222',
+      to: '/experiences/1661222'
     },
     {
       small:
@@ -44,22 +44,22 @@ export const OnlineTemplate: React.FC<{
       large:
         'https://a0.muscache.com/im/pictures/925f99bb-c5bc-4d82-9803-518abeef7e2e.jpg',
       title: 'Craft cocktails and talk gender with a bartender',
-      to: '/experiences/1785860',
-    },
+      to: '/experiences/1785860'
+    }
   ],
-  dark = false,
+  dark = false
 }) => {
   return (
     <div
       css={{
         ...(dark && { bg: 'black' }),
-        marginTop: 16,
+        marginTop: 16
       }}
     >
       <div
         // className={[section["p__online"]].join(" ")}
         css={{
-          position: 'relative',
+          position: 'relative'
         }}
       >
         <div
@@ -68,7 +68,7 @@ export const OnlineTemplate: React.FC<{
             top: 0,
             bottom: 0,
             left: 0,
-            right: 0,
+            right: 0
           }}
         >
           <div
@@ -80,18 +80,28 @@ export const OnlineTemplate: React.FC<{
               paddingTop: 0,
               scrollPaddingTop: 0,
               scrollPaddingRight: 24,
-              scrollSnapType: 'x mandatory',
+              scrollSnapType: 'x mandatory'
             }}
           >
-            <div
-            //  className={[section["grid__online"]].join(" ")}
-            >
+            <div sx={{ ...gridOnline }}>
               {items.map((item, index) => {
                 return (
                   <div
                     key={index}
                     css={{
-                      width: '100%',
+                      width: '100%'
+                    }}
+                    sx={{
+                      flexBasis: 'auto',
+                      flexGrow: 0,
+                      flexShrink: 0,
+                      scrollSnapAlign: 'center',
+                      ...(index === 0 && {
+                        gridColumnStart: 1,
+                        gridColumnEnd: 'auto',
+                        gridRowStart: 1,
+                        gridRowEnd: ['auto', 'auto', 'span 2']
+                      })
                     }}
                     // className={`${[
                     //   section[`grid__online--${index}`],
@@ -110,11 +120,11 @@ export const OnlineTemplate: React.FC<{
                       extendsTo={{
                         display: 'block',
                         height: '100%',
-                        width: '100%',
+                        width: '100%'
                       }}
                     />
                   </div>
-                );
+                )
               })}
             </div>
           </div>
@@ -122,7 +132,7 @@ export const OnlineTemplate: React.FC<{
       </div>
       <div
         css={{
-          margin: '32px 0',
+          margin: '32px 0'
         }}
       >
         <Button
@@ -133,5 +143,85 @@ export const OnlineTemplate: React.FC<{
         />
       </div>
     </div>
-  );
-};
+  )
+}
+
+const gridOnline = {
+  display: 'grid',
+  gridTemplateColumns: [
+    'calc(100% - 84px) calc(100% - 84px) calc(100% - 84px) calc(100% - 84px)',
+    'calc(100% - 84px) calc(100% - 84px) calc(100% - 84px) calc(100% - 84px)',
+    '2fr 1fr',
+    '2fr 1fr',
+    '2fr 1fr 1fr'
+  ],
+  gridTemplateRows: ['1fr', '1fr', '1fr 1fr'],
+  columnGap: ['12px', '12px', '16px'],
+  rowGap: ['12px', '12px', '16px'],
+  height: '100%'
+
+  // &--0 {
+  //   grid-column-start: 1;
+  //   grid-column-end: auto;
+  //   grid-row-start: 1;
+  //   grid-row-end: auto;
+
+  //   @media screen and (min-width: 728px) {
+  //     grid-column-start: 1;
+  //     grid-column-end: auto;
+  //     grid-row-start: 1;
+  //     grid-row-end: span 2;
+  //   }
+  // }
+  // &--1 {
+  //   grid-column-start: 2;
+  //   grid-column-end: auto;
+  //   grid-row-start: 1;
+  //   grid-row-end: auto;
+
+  //   @media screen and (min-width: 728px) {
+  //     grid-column-start: 2;
+  //     grid-column-end: auto;
+  //     grid-row-start: 1;
+  //     grid-row-end: auto;
+  //   }
+  // }
+  // &--2 {
+  //   grid-column-start: 3;
+  //   grid-column-end: auto;
+  //   grid-row-start: 1;
+  //   grid-row-end: auto;
+
+  //   @media screen and (min-width: 728px) {
+  //     grid-column-start: 2;
+  //     grid-column-end: auto;
+  //     grid-row-start: 2;
+  //     grid-row-end: auto;
+  //   }
+
+  //   @media screen and (min-width: 1128px) {
+  //     grid-column-start: 3;
+  //     grid-column-end: auto;
+  //     grid-row-start: 1;
+  //     grid-row-end: auto;
+  //   }
+  // }
+  // &--3 {
+  //   grid-column-start: 4;
+  //   grid-column-end: auto;
+  //   grid-row-start: 1;
+  //   grid-row-end: auto;
+
+  //   @media screen and (min-width: 728px) {
+  //     display: none;
+  //   }
+
+  //   @media screen and (min-width: 1128px) {
+  //     display: block;
+  //     grid-column-start: 2;
+  //     grid-column-end: span 2;
+  //     grid-row-start: 2;
+  //     grid-row-end: auto;
+  //   }
+  // }
+}

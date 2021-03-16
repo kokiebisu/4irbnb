@@ -1,27 +1,27 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import React from 'react';
-import { jsx } from 'theme-ui';
-import { useState } from 'react';
-import Router from 'next/router';
-import { Header, $HEADER } from '@nextbnb/organisms/dist/bundle.esm';
-import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
-import { useHandleScroll } from '@nextbnb/design/hooks/useHandleScroll';
-import { ResponsiveImage } from '@nextbnb/design/helper/img';
+import { jsx } from 'theme-ui'
+import React from 'react'
+import { useState } from 'react'
+import Router from 'next/router'
+import { Header, $HEADER } from '@nextbnb/organisms/dist/bundle.esm'
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm'
+import { useHandleScroll } from '@nextbnb/design/hooks/useHandleScroll'
+import { ResponsiveImage } from '@nextbnb/design/helper/img'
 
 /**
  * Renders the banner section
  */
 export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
-  const scrollPosition = useHandleScroll();
-  const [category, setCategory] = useState('stay');
+  const scrollPosition = useHandleScroll()
+  const [category, setCategory] = useState('stay')
   return (
     <div
       css={{
-        position: 'relative',
+        position: 'relative'
       }}
       sx={{
-        paddingTop: ['133.3%', '133.3%', '100%', '100%', '48%'],
+        paddingTop: ['133.3%', '133.3%', '100%', '100%', '48%']
       }}
     >
       <div
@@ -30,7 +30,7 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
           top: 0,
           bottom: 0,
           right: 0,
-          left: 0,
+          left: 0
         }}
       >
         <div
@@ -38,7 +38,7 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
             height: '100%',
             width: '100%',
             backgroundSize: 'cover',
-            display: 'inline-block',
+            display: 'inline-block'
           }}
         >
           <ResponsiveImage />
@@ -50,14 +50,14 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
           top: 0,
           bottom: 0,
           right: 0,
-          left: 0,
+          left: 0
         }}
       >
         <div
           css={{
             display: 'grid',
             gridTemplateRows: 'auto 1fr',
-            height: '100%',
+            height: '100%'
           }}
         >
           <div>
@@ -76,8 +76,8 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
                         display: 'fixed',
                         top: 0,
                         left: 0,
-                        right: 0,
-                      }),
+                        right: 0
+                      })
                 }}
                 criteria={scrollPosition < 56}
               />
@@ -87,20 +87,20 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
             css={{
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
+              justifyContent: 'center'
             }}
           >
             <div>
               <div
                 css={{
                   display: ['flex', 'flex', 'block'],
-                  justifyContent: 'center',
+                  justifyContent: 'center'
                 }}
               >
                 <h3
                   css={{
                     color: 'white',
-                    fontSize: 28,
+                    fontSize: 28
                   }}
                 >
                   Go Near
@@ -109,14 +109,14 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
               <div
                 sx={{
                   width: ['100%', '100%', 300],
-                  textAlign: ['center', 'center', 'initial'],
+                  textAlign: ['center', 'center', 'initial']
                 }}
               >
                 <p
                   css={{
                     color: 'white',
                     fontWeight: 300,
-                    letterSpacing: 0.3,
+                    letterSpacing: 0.3
                   }}
                 >
                   Settle in somewhere new. Discover nearby stays to live, work,
@@ -125,11 +125,11 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
               </div>
               <div
                 css={{
-                  margin: '15px 0px 0px 0px',
+                  margin: '15px 0px 0px 0px'
                 }}
                 sx={{
                   display: 'flex',
-                  justifyContent: ['center', 'center', 'flex-start'],
+                  justifyContent: ['center', 'center', 'flex-start']
                 }}
               >
                 <Button
@@ -143,5 +143,5 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

@@ -1,17 +1,17 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { PLATFORM } from './constants/platform';
-import { generateVariants } from './utils/variants';
-import { variants as webVariants } from './web/variants';
-import { $BULLET } from './constants/appearance';
-
-export { $BULLET };
+import { jsx, ThemeProvider } from 'theme-ui'
+import { PLATFORM } from './constants/platform'
+import { generateVariants } from './utils/variants'
+import { variants as webVariants } from './web/variants'
+import { $BULLET } from './constants/appearance'
+import { theme } from '@nextbnb/theme'
+export { $BULLET }
 
 export interface BulletProps {
-  extendsTo?: any;
-  variant: string;
-  [property: string]: any;
+  extendsTo?: any
+  variant: string
+  [property: string]: any
 }
 
 /**
@@ -25,15 +25,17 @@ export const Bullet: React.FC<BulletProps> = ({
   variant = $BULLET.amenity,
   ...props
 }) => {
-  const variants = generateVariants(PLATFORM[platform], webVariants, props);
+  const variants = generateVariants(PLATFORM[platform], webVariants, props)
 
   return (
-    <div
-      data-testid={`${variant}-bullet`}
-      className={extendsTo}
-      sx={{ ...variants[variant].css }}
-    >
-      {variants[variant].component}
-    </div>
-  );
-};
+    <ThemeProvider theme={theme}>
+      <div
+        data-testid={`${variant}-bullet`}
+        className={extendsTo}
+        sx={{ ...variants[variant].css }}
+      >
+        {variants[variant].component}
+      </div>
+    </ThemeProvider>
+  )
+}

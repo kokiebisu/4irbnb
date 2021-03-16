@@ -19,6 +19,7 @@
     "@nextbnb/molecules": "^1.0.29",
     "@nextbnb/organisms": "^1.0.8",
     "@nextbnb/prototype": "^1.0.5",
+    "@nextbnb/theme": "^1.0.7",
     "@rollup/plugin-typescript": "^8.2.0",
     "@types/theme-ui": "^0.3.7",
     "axios": "^0.21.0",
