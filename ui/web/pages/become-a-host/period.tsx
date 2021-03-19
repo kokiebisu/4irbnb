@@ -1,32 +1,32 @@
-import { useState } from 'react';
-import Router from 'next/router';
-import { Layout } from '@nextbnb/layout';
-import { Prototype, $PROTOTYPE } from '@nextbnb/prototype';
-import { useStayDispatch, useStayState } from '@context/stay';
+import { useState } from 'react'
+import Router from 'next/router'
+import { Layout } from '@nextbnb/layout'
+import { Prototype, $PROTOTYPE } from '@nextbnb/prototype/dist/bundle.esm'
+import { useStayDispatch, useStayState } from '@context/stay'
 
 const PeriodPage = () => {
-  const stayDispatch = useStayDispatch();
-  const { min, max } = useStayState();
+  const stayDispatch = useStayDispatch()
+  const { min, max } = useStayState()
   const [data, setData] = useState({
     min,
-    max,
-  });
+    max
+  })
 
   const proceed = () => {
     stayDispatch({
       type: 'add',
-      payload: data,
-    });
+      payload: data
+    })
     setTimeout(() => {
-      Router.push('/become-a-host/price');
-    }, 500);
-  };
+      Router.push('/become-a-host/price')
+    }, 500)
+  }
 
   const revert = () => {
     setTimeout(() => {
-      Router.push('/advance');
-    }, 500);
-  };
+      Router.push('/advance')
+    }, 500)
+  }
 
   return (
     <Layout
@@ -40,7 +40,7 @@ const PeriodPage = () => {
       back={revert}
       criteria={data.min === 0 || data.max === 0}
     />
-  );
-};
+  )
+}
 
-export default PeriodPage;
+export default PeriodPage

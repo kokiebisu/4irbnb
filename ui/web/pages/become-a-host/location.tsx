@@ -1,38 +1,37 @@
-import { useState } from 'react';
-import Router from 'next/router';
+import { useState } from 'react'
+import Router from 'next/router'
 
-import { Layout } from '@nextbnb/layout';
-import { Prototype, $PROTOTYPE } from '@nextbnb/prototype';
-
-import { useStayDispatch, useStayState } from '@context/stay';
+import { Layout } from '@nextbnb/layout'
+import { Prototype, $PROTOTYPE } from '@nextbnb/prototype/dist/bundle.esm'
+import { useStayDispatch, useStayState } from '@context/stay'
 
 const BedRoomsPage = () => {
-  const stayDispatch = useStayDispatch();
-  const { country, street, apt, city, state, postal } = useStayState();
+  const stayDispatch = useStayDispatch()
+  const { country, street, apt, city, state, postal } = useStayState()
   const [data, setData] = useState({
     country,
     street,
     apt,
     city,
     state,
-    postal,
-  });
+    postal
+  })
 
   const proceed = () => {
     stayDispatch({
       type: 'add',
-      payload: data,
-    });
+      payload: data
+    })
     setTimeout(() => {
-      Router.push('/become-a-host/amenities');
-    }, 500);
-  };
+      Router.push('/become-a-host/amenities')
+    }, 500)
+  }
 
   const revert = () => {
     setTimeout(() => {
-      Router.push('/become-a-host/bathrooms');
-    }, 500);
-  };
+      Router.push('/become-a-host/bathrooms')
+    }, 500)
+  }
 
   return (
     <Layout
@@ -55,7 +54,7 @@ const BedRoomsPage = () => {
         data.postal === ''
       }
     />
-  );
-};
+  )
+}
 
-export default BedRoomsPage;
+export default BedRoomsPage

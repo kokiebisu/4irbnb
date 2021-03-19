@@ -1,0 +1,23 @@
+{
+  "name": "@nextbnb/components",
+  "version": "1.0.39",
+  "license": "MIT",
+  "dependencies": {
+    "@nextbnb/theme": "^1.0.7",
+    "react-dom": "^17.0.1",
+    "ts-loader": "^8.0.18"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.1.20",
+    "@storybook/addon-essentials": "^6.1.20",
+    "@storybook/addon-links": "^6.1.20",
+    "@storybook/react": "^6.1.20",
+    "react": "^17.0.1"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook -c .storybook watch-css -s ./public"
+  },
+  "gitHead": "aea8625838b781eee9402ada4ecc979e746e7e6a",
+  "files": []
+}

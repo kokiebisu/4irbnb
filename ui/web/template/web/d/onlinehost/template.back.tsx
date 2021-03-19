@@ -1,11 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Bullet, $BULLET } from '@nextbnb/atoms/dist/bundle.esm';
-import { Layout, $LAYOUT } from '@nextbnb/layout/dist/bundle.esm';
+import { jsx } from 'theme-ui'
+import { Bullet, $BULLET } from '@nextbnb/atoms/dist/bundle.esm'
+import { Layout, $LAYOUT } from '@nextbnb/layout/dist/bundle.esm'
 
 export const BackTemplate: React.FC<{
-  back?: string;
+  back?: string
 }> = () => {
   return (
     <Layout
@@ -18,7 +18,7 @@ export const BackTemplate: React.FC<{
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
           columnGap: 20,
-          margin: '32px 0',
+          margin: '32px 0'
         }}
       >
         {['resources', 'events', 'community'].map((type, index) => {
@@ -26,9 +26,9 @@ export const BackTemplate: React.FC<{
             <div key={index} css={{ marginBottom: 16 }}>
               <Bullet variant={$BULLET.onlinehost} type={type} />
             </div>
-          );
+          )
         })}
       </div>
     </Layout>
-  );
-};
+  )
+}

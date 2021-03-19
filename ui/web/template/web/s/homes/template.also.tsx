@@ -1,20 +1,20 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { useRef } from 'react';
-import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
-import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
-import * as Helpers from '@nextbnb/design/helper/array';
-import { useSlider } from '@nextbnb/design/hooks/useSlider';
-import { useHandleContainerResize } from '@nextbnb/design/hooks/useHandleContainerResize';
+import { jsx } from 'theme-ui'
+import { useRef } from 'react'
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm'
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
+import * as Helpers from '@nextbnb/helper/array'
+import { useSlider } from '@nextbnb/hooks/useSlider'
+import { useHandleContainerResize } from '@nextbnb/hooks/useHandleContainerResize'
 
 /**
  * Renders the also section
  * @param {string[]} items - List of suggested cities
  */
 export const AlsoTemplate: React.FC<{
-  items?: any;
-  title?: string;
+  items?: any
+  title?: string
 }> = ({
   items = [
     undefined,
@@ -24,14 +24,14 @@ export const AlsoTemplate: React.FC<{
     undefined,
     undefined,
     undefined,
-    undefined,
+    undefined
   ],
-  title = 'Section title',
+  title = 'Section title'
 }) => {
-  const containerRef = useRef<HTMLDivElement>();
-  const width: number = useHandleContainerResize(containerRef)[0];
-  const { state, previous, next } = useSlider(items, width, 'also');
-  const displayingItems = Helpers.groupByTwo(items);
+  const containerRef = useRef<HTMLDivElement>()
+  const width: number = useHandleContainerResize(containerRef)[0]
+  const { state, previous, next } = useSlider(items, width, 'also')
+  const displayingItems = Helpers.groupByTwo(items)
 
   return (
     <div css={{ overflowX: 'hidden' }}>
@@ -39,18 +39,18 @@ export const AlsoTemplate: React.FC<{
         css={{
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between',
+          justifyContent: 'space-between'
         }}
         ref={containerRef}
       >
         <div
           css={{
-            margin: '16px 0',
+            margin: '16px 0'
           }}
         >
           <h3
             css={{
-              fontSize: 20,
+              fontSize: 20
             }}
           >
             {title}
@@ -59,12 +59,12 @@ export const AlsoTemplate: React.FC<{
         <div
           css={{
             display: 'flex',
-            alignItems: 'center',
+            alignItems: 'center'
           }}
         >
           <div
             css={{
-              margin: '0 2px',
+              margin: '0 2px'
             }}
           >
             <Button
@@ -77,7 +77,7 @@ export const AlsoTemplate: React.FC<{
           </div>
           <div
             css={{
-              margin: '0 2px',
+              margin: '0 2px'
             }}
           >
             <Button
@@ -97,7 +97,7 @@ export const AlsoTemplate: React.FC<{
           height: '100%',
           width: width * (items.length / 2),
           transform: `translateX(-${state.translate}px)`,
-          transition: `transform ease-out ${state.transition}s`,
+          transition: `transform ease-out ${state.transition}s`
         }}
       >
         <div css={{ display: 'flex' }}>
@@ -110,7 +110,7 @@ export const AlsoTemplate: React.FC<{
               >
                 <div
                   css={{
-                    marginBottom: 10,
+                    marginBottom: 10
                   }}
                 >
                   <Card
@@ -133,10 +133,10 @@ export const AlsoTemplate: React.FC<{
                   />
                 </div>
               </div>
-            );
+            )
           })}
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

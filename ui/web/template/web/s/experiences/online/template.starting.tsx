@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { useSlide } from '@nextbnb/design/hooks/useSlide'
+import { useSlide } from '@nextbnb/hooks/useSlide'
 import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm'
 import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
 

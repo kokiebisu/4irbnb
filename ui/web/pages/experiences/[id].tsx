@@ -1,53 +1,50 @@
-import React, { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useRouter } from 'next/router'
 
-import { Header, $HEADER } from '@nextbnb/organisms';
-import {
-  Template,
-  $Template,
-} from '@airbnb/components/template/web/experiences/id';
-import { Modal, $Modal } from '@airbnb/components/organisms/modal/web';
-import { Footer } from '@airbnb/components/organisms/footer/web';
+import { Header, $HEADER } from '@nextbnb/organisms/dist/bundle.esm'
+import { Template, $Template } from '@nextbnb/template/web/experiences/id'
+import { Modal, $Modal } from '@nextbnb/organisms/modal/web'
+import { Footer } from '@nextbnb/organisms/footer/web'
 
-import { useToggleState } from '@context/toggle';
+import { useToggleState } from '@context/toggle'
 
-import layout from '@styles/layout.module.scss';
-import details from '@styles/details.module.scss';
-import color from '@styles/color.module.scss';
-import space from '@styles/space.module.scss';
-import shape from '@styles/shape.module.scss';
-import staysDetail from '@styles/staysDetail.module.scss';
-import responsive from '@styles/responsive.module.scss';
+import layout from '@styles/layout.module.scss'
+import details from '@styles/details.module.scss'
+import color from '@styles/color.module.scss'
+import space from '@styles/space.module.scss'
+import shape from '@styles/shape.module.scss'
+import staysDetail from '@styles/staysDetail.module.scss'
+import responsive from '@styles/responsive.module.scss'
 
 /** sample data */
-import { experiences } from '../../data/experiences';
-import { useTabTitle } from '@hooks/useTabTitle';
+import { experiences } from '../../data/experiences'
+import { useTabTitle } from '@hooks/useTabTitle'
 
 /**
  * Renders the component for path /experiences/[id]
  */
 const id: () => string | JSX.Element = () => {
-  const router = useRouter();
-  const { id: experienceID }: { id?: string } = router.query;
-  useTabTitle(experiences[experienceID].title);
+  const router = useRouter()
+  const { id: experienceID }: { id?: string } = router.query
+  useTabTitle(experiences[experienceID].title)
 
-  const toggleState = useToggleState();
+  const toggleState = useToggleState()
 
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState(0)
 
   const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  };
+    const position = window.pageYOffset
+    setScrollPosition(position)
+  }
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true })
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
     <>
@@ -65,7 +62,7 @@ const id: () => string | JSX.Element = () => {
                 position: 'fixed',
                 top: 0,
                 zIndex: 60,
-                width: '100%',
+                width: '100%'
               }}
             >
               <Header variant={$HEADER.details} />
@@ -143,7 +140,7 @@ const id: () => string | JSX.Element = () => {
                 className={[
                   layout['flex'],
                   layout['justify-end'],
-                  layout['sticky'],
+                  layout['sticky']
                 ].join(' ')}
               >
                 {experiences[experienceID] && (
@@ -200,7 +197,7 @@ const id: () => string | JSX.Element = () => {
               className={[
                 color['b-t--white__2'],
                 space['p-t--32'],
-                space['p-b--64'],
+                space['p-b--64']
               ].join(' ')}
             >
               <Template layoutType="experience" variant={$Template.KNOW} />
@@ -211,7 +208,7 @@ const id: () => string | JSX.Element = () => {
         <div
           className={[
             staysDetail['display__availability'],
-            shape['w--full'],
+            shape['w--full']
           ].join(' ')}
           style={{ position: 'fixed', bottom: 0, zIndex: 9999 }}
         >
@@ -227,14 +224,14 @@ const id: () => string | JSX.Element = () => {
             bottom: 0,
             left: 0,
             right: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.6)',
+            backgroundColor: 'rgba(0, 0, 0, 0.6)'
           }}
         >
           <Modal variant={$Modal.MENU} />
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default id;
+export default id

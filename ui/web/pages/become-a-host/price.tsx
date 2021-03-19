@@ -1,32 +1,32 @@
-import { useState } from 'react';
-import Router from 'next/router';
-import { Layout } from '@nextbnb/layout';
-import { Prototype, $PROTOTYPE } from '@nextbnb/prototype';
-import { useStayDispatch, useStayState } from '@context/stay';
+import { useState } from 'react'
+import Router from 'next/router'
+import { Layout } from '@nextbnb/layout'
+import { Prototype, $PROTOTYPE } from '@nextbnb/prototype/dist/bundle.esm'
+import { useStayDispatch, useStayState } from '@context/stay'
 
 const PricePage = () => {
-  const stayDispatch = useStayDispatch();
-  const { basePrice, currency } = useStayState();
+  const stayDispatch = useStayDispatch()
+  const { basePrice, currency } = useStayState()
   const [data, setData] = useState({
     basePrice,
-    currency,
-  });
+    currency
+  })
 
   const proceed = () => {
     stayDispatch({
       type: 'add',
-      payload: data,
-    });
+      payload: data
+    })
     setTimeout(() => {
-      Router.push('/become-a-host/booking-scenarios');
-    }, 500);
-  };
+      Router.push('/become-a-host/booking-scenarios')
+    }, 500)
+  }
 
   const revert = () => {
     setTimeout(() => {
-      Router.push('/period');
-    }, 500);
-  };
+      Router.push('/period')
+    }, 500)
+  }
 
   return (
     <Layout
@@ -39,7 +39,7 @@ const PricePage = () => {
       next={proceed}
       back={revert}
     />
-  );
-};
+  )
+}
 
-export default PricePage;
+export default PricePage

@@ -1,12 +1,12 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
-import { Layout, $LAYOUT } from '@nextbnb/layout/dist/bundle.esm';
-import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
+import { jsx } from 'theme-ui'
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
+import { Layout, $LAYOUT } from '@nextbnb/layout/dist/bundle.esm'
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm'
 
 export const SharingTemplate: React.FC<{}> = () => {
-  const sharings = ['meditate', 'baking', 'magic'];
+  const sharings = ['meditate', 'baking', 'magic']
   return (
     <Layout
       variant={$LAYOUT.onlinehost}
@@ -18,7 +18,7 @@ export const SharingTemplate: React.FC<{}> = () => {
           margin: '100px 0',
           display: 'grid',
           gridTemplateColumns: 'repeat(3, 1fr)',
-          columnGap: 25,
+          columnGap: 25
         }}
       >
         {sharings.map((sharing, index) => {
@@ -26,13 +26,13 @@ export const SharingTemplate: React.FC<{}> = () => {
             <div key={index}>
               <Card variant={$CARD.sharing} sharing={sharing} />
             </div>
-          );
+          )
         })}
       </div>
       <div
         css={{
           display: 'flex',
-          justifyContent: 'center',
+          justifyContent: 'center'
         }}
       >
         <Button
@@ -42,5 +42,5 @@ export const SharingTemplate: React.FC<{}> = () => {
         />
       </div>
     </Layout>
-  );
-};
+  )
+}

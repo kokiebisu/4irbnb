@@ -1,16 +1,16 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { useLayoutEffect, useRef, useState } from 'react';
-import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
-import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
+import { jsx } from 'theme-ui'
+import { useLayoutEffect, useRef, useState } from 'react'
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm'
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
 
 /**
  * Renders the available section
  * @param {Object[]} availables - List of available dates for the experience
  */
 export const AvailableTemplate: React.FC<{
-  availables?: any;
+  availables?: any
 }> = ({
   availables = [
     {
@@ -18,89 +18,89 @@ export const AvailableTemplate: React.FC<{
       from: '1:00 a.m. ',
       to: '3:00 a.m. ',
       standard: 'PST',
-      price: 31,
+      price: 31
     },
     {
       date: 'Tue., Nov. 10',
       from: '1:00 a.m. ',
       to: '3:00 a.m. ',
       standard: 'PST',
-      price: 31,
+      price: 31
     },
     {
       date: 'Tue., Nov. 11',
       from: '1:00 a.m. ',
       to: '3:00 a.m. ',
       standard: 'PST',
-      price: 31,
+      price: 31
     },
     {
       date: 'Tue., Nov. 12',
       from: '1:00 a.m. ',
       to: '3:00 a.m. ',
       standard: 'PST',
-      price: 31,
+      price: 31
     },
     {
       date: 'Tue., Nov. 13',
       from: '1:00 a.m. ',
       to: '3:00 a.m. ',
       standard: 'PST',
-      price: 31,
-    },
-  ],
+      price: 31
+    }
+  ]
 }) => {
-  const [width, setWidth] = useState(500);
-  const containerRef = useRef<HTMLDivElement>();
+  const [width, setWidth] = useState(500)
+  const containerRef = useRef<HTMLDivElement>()
   const [state, setState] = useState({
     activeSlide: 0,
     translate: 0,
-    transition: 0.45,
-  });
+    transition: 0.45
+  })
 
   const evaluateColumns = () => {
     if (width > 1128) {
-      return 5;
+      return 5
     } else if (width > 1028) {
-      return 4;
+      return 4
     } else if (width > 728) {
-      return 3;
+      return 3
     } else {
-      return 2;
+      return 2
     }
-  };
+  }
 
-  const displayingColumns = evaluateColumns();
+  const displayingColumns = evaluateColumns()
 
   const handleRef = () => {
     if (containerRef.current && containerRef.current.getBoundingClientRect()) {
-      setWidth(containerRef.current.getBoundingClientRect().width);
+      setWidth(containerRef.current.getBoundingClientRect().width)
     }
-  };
+  }
 
   useLayoutEffect(() => {
-    window.addEventListener('resize', handleRef);
-    handleRef();
+    window.addEventListener('resize', handleRef)
+    handleRef()
     return () => {
-      window.removeEventListener('resize', handleRef);
-    };
-  });
+      window.removeEventListener('resize', handleRef)
+    }
+  })
 
   const previous = () => {
     setState({
       ...state,
       activeSlide: state.activeSlide - 1,
-      translate: (state.activeSlide - 1) * width,
-    });
-  };
+      translate: (state.activeSlide - 1) * width
+    })
+  }
 
   const next = () => {
     setState({
       ...state,
       activeSlide: state.activeSlide + 1,
-      translate: (state.activeSlide + 1) * width,
-    });
-  };
+      translate: (state.activeSlide + 1) * width
+    })
+  }
 
   return (
     <div style={{ overflowX: 'hidden' }}>
@@ -108,7 +108,7 @@ export const AvailableTemplate: React.FC<{
         css={{
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between',
+          justifyContent: 'space-between'
         }}
         ref={containerRef}
       >
@@ -144,7 +144,7 @@ export const AvailableTemplate: React.FC<{
           height: '100%',
           width: width * (availables.length / displayingColumns),
           transform: `translateX(-${state.translate}px)`,
-          transition: `transform ease-out ${state.transition}s`,
+          transition: `transform ease-out ${state.transition}s`
         }}
       >
         <div style={{ display: 'flex' }}>
@@ -154,7 +154,7 @@ export const AvailableTemplate: React.FC<{
                 style={{ width: width / displayingColumns }}
                 key={index}
                 css={{
-                  width: ['400px', '400px', 'auto'],
+                  width: ['400px', '400px', 'auto']
                 }}
               >
                 <div css={{ marginBottom: 10, marginRight: 16 }}>
@@ -168,7 +168,7 @@ export const AvailableTemplate: React.FC<{
                   />
                 </div>
               </div>
-            );
+            )
           })}
         </div>
       </div>
@@ -176,5 +176,5 @@ export const AvailableTemplate: React.FC<{
         <Button variant={$BUTTON.border} title="See more dates" />
       </div>
     </div>
-  );
-};
+  )
+}

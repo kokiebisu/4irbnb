@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import Router from 'next/router';
-import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
+import { jsx } from 'theme-ui'
+import Router from 'next/router'
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm'
 
 /**
  * Renders the ready section
@@ -11,17 +11,17 @@ export const ReadyTemplate: React.FC<{}> = () => {
   return (
     <div
       css={{
-        display: 'flex',
+        display: 'flex'
       }}
     >
       <div
         css={{
-          width: '50%',
+          width: '50%'
         }}
       >
         <h1
           css={{
-            fontSize: 40,
+            fontSize: 40
           }}
         >
           Ready to host?
@@ -29,17 +29,17 @@ export const ReadyTemplate: React.FC<{}> = () => {
       </div>
       <div
         css={{
-          width: '50%',
+          width: '50%'
         }}
       >
         <div
           css={{
-            marginBottom: 32,
+            marginBottom: 32
           }}
         >
           <h4
             css={{
-              fontSize: 20,
+              fontSize: 20
             }}
           >
             Create a listing that fits your hosting style—we'll give you tips to
@@ -48,7 +48,7 @@ export const ReadyTemplate: React.FC<{}> = () => {
         </div>
         <div
           css={{
-            display: 'inline-block',
+            display: 'inline-block'
           }}
         >
           <Button
@@ -60,5 +60,5 @@ export const ReadyTemplate: React.FC<{}> = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

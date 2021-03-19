@@ -1,37 +1,37 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { useRef } from 'react';
-import Router from 'next/router';
-import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
-import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
-import { useSlider, SliderProps } from '@nextbnb/design/hooks/useSlider';
+import { jsx } from 'theme-ui'
+import { useRef } from 'react'
+import Router from 'next/router'
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm'
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
+import { useSlider, SliderProps } from '@nextbnb/hooks/useSlider'
 
 /**
  * Renders the homes banner
  * @param {Object[]} hosts - List of hosts
  */
 export const CommunityTemplate: React.FC<{
-  title?: string;
-  description?: string;
+  title?: string
+  description?: string
   hosts?: {
-    name: string;
-    stayType: string;
-    location: string;
-    imgUrl: string;
-  }[];
+    name: string
+    stayType: string
+    location: string
+    imgUrl: string
+  }[]
 }> = ({
   title = 'Title',
   description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-  hosts = [undefined, undefined, undefined, undefined, undefined],
+  hosts = [undefined, undefined, undefined, undefined, undefined]
 }) => {
-  const width = 366;
-  const sliderRef = useRef(null);
+  const width = 366
+  const sliderRef = useRef(null)
   const { state, previous, next }: SliderProps = useSlider(
     hosts,
     width,
     'banner'
-  );
+  )
 
   return (
     <div
@@ -49,26 +49,26 @@ export const CommunityTemplate: React.FC<{
               width: '100%',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
+              justifyContent: 'center'
             }}
           >
             <div
               css={{
-                marginBottom: 32,
+                marginBottom: 32
               }}
             >
               <h1 css={{ lineHeight: 1, fontSize: 45 }}>{title}</h1>
             </div>
             <div
               css={{
-                marginBottom: 32,
+                marginBottom: 32
               }}
             >
               <h4 css={{ fontSize: 18, lineHeight: 1.5 }}>{description}</h4>
             </div>
             <div
               css={{
-                display: 'inline-block',
+                display: 'inline-block'
               }}
             >
               <Button
@@ -83,13 +83,12 @@ export const CommunityTemplate: React.FC<{
         </div>
       </div>
       <div
-
         sx={{
           position: 'relative',
           overflowX: 'hidden',
           zIndex: 500,
           paddingLeft: ['24px', '24px', '64px'],
-          paddingTop: 50,
+          paddingTop: 50
         }}
       >
         <div
@@ -99,7 +98,7 @@ export const CommunityTemplate: React.FC<{
             height: '100%',
             overflow: 'hidden',
             borderRadius: 12,
-            zIndex: 50,
+            zIndex: 50
           }}
         >
           <div
@@ -109,7 +108,7 @@ export const CommunityTemplate: React.FC<{
               transition: `transform ease-out ${state.transition}s`,
               height: '100%',
               width: width * hosts.length,
-              display: 'flex',
+              display: 'flex'
             }}
           >
             {hosts.map((host, index) => {
@@ -118,7 +117,7 @@ export const CommunityTemplate: React.FC<{
                   key={index}
                   ref={sliderRef}
                   css={{
-                    marginRight: 16,
+                    marginRight: 16
                   }}
                 >
                   <Card
@@ -129,7 +128,7 @@ export const CommunityTemplate: React.FC<{
                     location={host?.location}
                   />
                 </div>
-              );
+              )
             })}
           </div>
         </div>
@@ -138,18 +137,18 @@ export const CommunityTemplate: React.FC<{
             marginTop: 32,
             marginRight: 32,
             display: 'flex',
-            justifyContent: ['flex-start', 'flex-start', 'flex-end'],
+            justifyContent: ['flex-start', 'flex-start', 'flex-end']
           }}
         >
           <div
             css={{
               alignItems: 'center',
-              display: 'flex',
+              display: 'flex'
             }}
           >
             <div
               css={{
-                marginRight: 8,
+                marginRight: 8
               }}
             >
               <Button
@@ -171,5 +170,5 @@ export const CommunityTemplate: React.FC<{
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

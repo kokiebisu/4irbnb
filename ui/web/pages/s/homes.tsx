@@ -1,39 +1,39 @@
-import React from 'react';
-import { useRouter } from 'next/router';
+import React from 'react'
+import { useRouter } from 'next/router'
 
-import { useToggleState } from '../../context/toggle';
+import { useToggleState } from '../../context/toggle'
 
-import layout from '@styles/layout.module.scss';
+import layout from '@styles/layout.module.scss'
 
-import { Prototype } from '@nextbnb/prototype';
-import { Modal, $Modal } from '@airbnb/components/organisms/modal/web';
+import { Prototype } from '@nextbnb/prototype/dist/bundle.esm'
+import { Modal, $Modal } from '@nextbnb/organisms/modal/web'
 
-import shape from '@styles/shape.module.scss';
-import responsive from '@styles/responsive.module.scss';
-import homes from '@styles/homes.module.scss';
+import shape from '@styles/shape.module.scss'
+import responsive from '@styles/responsive.module.scss'
+import homes from '@styles/homes.module.scss'
 
-import { useTabTitle } from '@airbnb/components/hooks/useTabTitle';
+import { useTabTitle } from '@nextbnb/hooks/useTabTitle'
 
-import '../../global/string';
+import '../../global/string'
 
 /**
  * Renders the component for path /s/homes
  */
 const Homes = () => {
-  const router = useRouter();
+  const router = useRouter()
   const {
     type,
     city = 'location',
     stayType,
-    characteristics,
+    characteristics
   }: {
-    type?: string;
-    city?: string;
-    stayType?: string[] | string;
-    characteristics?: string;
-  } = router.query;
-  const toggleState = useToggleState();
-  useTabTitle(`${city.capitalize()} · Stays · Airbnb`);
+    type?: string
+    city?: string
+    stayType?: string[] | string
+    characteristics?: string
+  } = router.query
+  const toggleState = useToggleState()
+  useTabTitle(`${city.capitalize()} · Stays · Airbnb`)
   return (
     <div className={[homes['display__content']].join(' ')}>
       <div className={[homes['w__section']].join(' ')}>
@@ -54,7 +54,7 @@ const Homes = () => {
             top: 0,
             bottom: 0,
             right: 0,
-            left: 'auto',
+            left: 'auto'
           }}
         >
           map
@@ -68,7 +68,7 @@ const Homes = () => {
               bottom: 0,
               left: 0,
               right: 0,
-              backgroundColor: 'rgba(0, 0, 0, 0.6)',
+              backgroundColor: 'rgba(0, 0, 0, 0.6)'
             }}
           >
             <div
@@ -76,7 +76,7 @@ const Homes = () => {
                 layout['flex'],
                 layout['justify-center'],
                 layout['items-center'],
-                shape['h--100v'],
+                shape['h--100v']
               ].join(' ')}
             >
               <Modal variant={$Modal.MENU} animate="slideup" />
@@ -85,7 +85,7 @@ const Homes = () => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Homes;
+export default Homes

@@ -1,28 +1,28 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Bullet, $BULLET } from '@nextbnb/atoms/dist/bundle.esm';
+import { jsx } from 'theme-ui'
+import { Bullet, $BULLET } from '@nextbnb/atoms/dist/bundle.esm'
 
 /**
  * Renders the help section
  */
 export const HelpTemplate: React.FC<{}> = () => {
-  const helps = ['support', 'tools', 'insights', 'education'];
+  const helps = ['support', 'tools', 'insights', 'education']
   return (
     <div
       css={{
-        display: ['block', 'block', 'flex'],
+        display: ['block', 'block', 'flex']
       }}
     >
       <div
         css={{
           marginBottom: 64,
-          width: ['100%', '100%', '50%'],
+          width: ['100%', '100%', '50%']
         }}
       >
         <h1
           css={{
-            fontSize: 40,
+            fontSize: 40
           }}
         >
           We're here to help
@@ -30,7 +30,7 @@ export const HelpTemplate: React.FC<{}> = () => {
       </div>
       <div
         css={{
-          width: ['100%', '100%', '50%'],
+          width: ['100%', '100%', '50%']
         }}
       >
         <div>
@@ -39,15 +39,15 @@ export const HelpTemplate: React.FC<{}> = () => {
               <div
                 key={index}
                 css={{
-                  marginBottom: 24,
+                  marginBottom: 24
                 }}
               >
                 <Bullet variant={$BULLET.help} help={help} />
               </div>
-            );
+            )
           })}
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

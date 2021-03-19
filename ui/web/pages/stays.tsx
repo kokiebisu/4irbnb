@@ -1,15 +1,15 @@
-import React from 'react';
+import React from 'react'
 
-import { Header, $HEADER } from '@nextbnb/organisms';
-import { Footer } from '@airbnb/components/organisms/footer/web';
+import { Header, $HEADER } from '@nextbnb/organisms/dist/bundle.cjs'
+import { Footer } from '@nextbnb/organisms/footer/web'
 
-import space from '@styles/space.module.scss';
-import layout from '@styles/layout.module.scss';
-import stays from '@styles/stays.module.scss';
-import styles from '@styles/index.module.scss';
-import shape from '@styles/shape.module.scss';
-import font from '@styles/font.module.scss';
-import color from '@styles/color.module.scss';
+import space from '@styles/space.module.scss'
+import layout from '@styles/layout.module.scss'
+import stays from '@styles/stays.module.scss'
+import styles from '@styles/index.module.scss'
+import shape from '@styles/shape.module.scss'
+import font from '@styles/font.module.scss'
+import color from '@styles/color.module.scss'
 
 /**
  * Renders /stays
@@ -27,7 +27,7 @@ const StaysPage: () => string | JSX.Element = () => {
         style={{
           zIndex: 1,
           position: 'relative',
-          width: '100vw',
+          width: '100vw'
         }}
       >
         <div className={[layout['relative'], stays['p__background']].join(' ')}>
@@ -38,7 +38,7 @@ const StaysPage: () => string | JSX.Element = () => {
                 verticalAlign: 'bottom',
                 height: '100%',
                 width: '100%',
-                minHeight: 1,
+                minHeight: 1
               }}
             >
               <picture>
@@ -65,7 +65,7 @@ const StaysPage: () => string | JSX.Element = () => {
                     height: '100%',
                     width: '100%',
                     objectFit: 'cover',
-                    verticalAlign: 'bottom',
+                    verticalAlign: 'bottom'
                   }}
                   loading="lazy"
                   decoding="async"
@@ -83,7 +83,7 @@ const StaysPage: () => string | JSX.Element = () => {
                   verticalAlign: 'bottom',
                   backgroundPositionX: '50%',
                   backgroundPositionY: '50%',
-                  backgroundOrigin: 'border-box',
+                  backgroundOrigin: 'border-box'
                 }}
               />
             </div>
@@ -94,7 +94,7 @@ const StaysPage: () => string | JSX.Element = () => {
                 styles['container'],
                 layout['z--20'],
                 shape['h--full'],
-                styles['flex__explore'],
+                styles['flex__explore']
               ].join(' ')}
             >
               <div
@@ -112,7 +112,7 @@ const StaysPage: () => string | JSX.Element = () => {
                 className={[
                   font['c--white'],
                   stays['w__banner'],
-                  stays['m__banner'],
+                  stays['m__banner']
                 ].join(' ')}
               >
                 <p
@@ -120,7 +120,7 @@ const StaysPage: () => string | JSX.Element = () => {
                     font['size--18'],
                     font['weight--100'],
                     font['ls--3'],
-                    color['c--white'],
+                    color['c--white']
                   ].join(' ')}
                 >
                   Tents, tree houses, and more—these spaces are more than just a
@@ -208,7 +208,7 @@ const StaysPage: () => string | JSX.Element = () => {
       </div>
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default StaysPage;
+export default StaysPage

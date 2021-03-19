@@ -1,25 +1,21 @@
-import { useEffect, useState } from 'react';
-import Router from 'next/router';
+import { useEffect, useState } from 'react'
+import Router from 'next/router'
 
-import { useStayDispatch, useStayState } from '@context/stay';
-
-import { Prototype, $PROTOTYPE } from '@nextbnb/prototype';
-import {
-  inputTypes,
-  properties,
-} from '@airbnb/components/atoms/input/logic/logic.types';
-import { Layout } from '@nextbnb/layout';
+import { useStayDispatch, useStayState } from '@context/stay'
+import { Prototype, $PROTOTYPE } from 'nextbnb/prototype/dist/bundle.esm'
+import { inputTypes, properties } from '@nextbnb/atoms/input/logic/logic.types'
+import { Layout } from '@nextbnb/layout'
 
 const RoomPage = () => {
-  const stayDispatch = useStayDispatch();
-  const { place, property, stay } = useStayState();
+  const stayDispatch = useStayDispatch()
+  const { place, property, stay } = useStayState()
 
   const [data, setData] = useState({
     place,
     property,
     description: undefined,
-    stay,
-  });
+    stay
+  })
 
   const proceed = () => {
     if (data.stay && data.property) {
@@ -28,39 +24,39 @@ const RoomPage = () => {
         payload: {
           place: data.place,
           property: data.property,
-          stay: data.stay,
-        },
-      });
+          stay: data.stay
+        }
+      })
       setTimeout(() => {
-        Router.push('/become-a-host/bedrooms');
-      }, 500);
+        Router.push('/become-a-host/bedrooms')
+      }, 500)
     }
-  };
+  }
 
   const revert = () => {
     setTimeout(() => {
-      Router.push('/become-a-host');
-    }, 500);
-  };
+      Router.push('/become-a-host')
+    }, 500)
+  }
 
   useEffect(() => {
     if (data.property) {
       setData({
         ...data,
-        property: inputTypes[data.place].options[0].props.children,
-      });
+        property: inputTypes[data.place].options[0].props.children
+      })
     }
-  }, [data.place]);
+  }, [data.place])
 
   useEffect(() => {
     const displayDescription = () => {
       return properties[data.place].find((type) => type.name === data.property)
-        .description;
-    };
-    if (data.property) {
-      setData({ ...data, description: displayDescription() });
+        .description
     }
-  }, [data.property]);
+    if (data.property) {
+      setData({ ...data, description: displayDescription() })
+    }
+  }, [data.property])
 
   return (
     <Layout
@@ -78,7 +74,7 @@ const RoomPage = () => {
       back={revert}
       criteria={!data.place || !data.property}
     />
-  );
-};
+  )
+}
 
-export default RoomPage;
+export default RoomPage

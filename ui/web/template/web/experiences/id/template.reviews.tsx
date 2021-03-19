@@ -1,14 +1,14 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Star } from '@nextbnb/design/assets/svg/original';
+import { jsx } from 'theme-ui'
+import { Star } from '@nextbnb/assets/svg/original'
 import {
   Bullet,
   $BULLET,
   Button,
-  $BUTTON,
-} from '@nextbnb/atoms/dist/bundle.esm';
-import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
+  $BUTTON
+} from '@nextbnb/atoms/dist/bundle.esm'
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
 
 /**
  * Renders the reviews section
@@ -19,11 +19,11 @@ import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
  * @param {string} layoutType - The type of layout
  */
 export const ReviewsTemplate: React.FC<{
-  ratings?: number;
-  categories?: any;
-  numberOfReviews?: number;
-  reviews?: any;
-  layoutType?: string;
+  ratings?: number
+  categories?: any
+  numberOfReviews?: number
+  reviews?: any
+  layoutType?: string
 }> = ({
   categories = [
     undefined,
@@ -31,12 +31,12 @@ export const ReviewsTemplate: React.FC<{
     undefined,
     undefined,
     undefined,
-    undefined,
+    undefined
   ],
   reviews = [undefined, undefined, undefined, undefined],
   ratings = 5.0,
   numberOfReviews = 100,
-  layoutType = 'room',
+  layoutType = 'room'
 }) => {
   return (
     <div>
@@ -45,7 +45,7 @@ export const ReviewsTemplate: React.FC<{
           css={{
             padding: '8px 0',
             display: 'flex',
-            alignItems: 'center',
+            alignItems: 'center'
           }}
         >
           <div css={{ display: 'flex', alignItems: 'center' }}>
@@ -56,7 +56,7 @@ export const ReviewsTemplate: React.FC<{
               css={{
                 marginRight: 6,
                 fontSize: 22,
-                color: 'grey.800',
+                color: 'grey.800'
               }}
             >
               {ratings.toFixed(1)}
@@ -65,7 +65,7 @@ export const ReviewsTemplate: React.FC<{
               css={{
                 marginLeft: 2,
                 fontSize: 22,
-                color: 'grey.800',
+                color: 'grey.800'
               }}
             >
               ({numberOfReviews} reviews)
@@ -78,7 +78,7 @@ export const ReviewsTemplate: React.FC<{
               display: 'grid',
               gridTemplateColumns: 'repeat(2, 1fr)',
               marginTop: 12,
-              marginRight: 24,
+              marginRight: 24
             }}
           >
             {categories.map((category, index) => {
@@ -87,7 +87,7 @@ export const ReviewsTemplate: React.FC<{
                   key={index}
                   css={{
                     marginRight: [0, 0, 48],
-                    padding: '8px 0',
+                    padding: '8px 0'
                   }}
                 >
                   <Bullet
@@ -96,7 +96,7 @@ export const ReviewsTemplate: React.FC<{
                     average={category?.average}
                   />
                 </div>
-              );
+              )
             })}
           </div>
         )}
@@ -105,7 +105,7 @@ export const ReviewsTemplate: React.FC<{
             width: '100%',
             marginTop: 16,
             display: ['block', 'block', 'grid'],
-            gridTemplateColumns: 'repeat(2, 1fr)',
+            gridTemplateColumns: 'repeat(2, 1fr)'
           }}
         >
           {reviews.map((review, index) => {
@@ -113,7 +113,7 @@ export const ReviewsTemplate: React.FC<{
               <div
                 sx={{
                   marginRight: [0, 0, 48],
-                  marginBottom: [0, 0, 24],
+                  marginBottom: [0, 0, 24]
                 }}
                 key={index}
               >
@@ -123,7 +123,7 @@ export const ReviewsTemplate: React.FC<{
                   description={review?.description}
                 />
               </div>
-            );
+            )
           })}
         </div>
         <div css={{ marginTop: 16 }}>
@@ -135,5 +135,5 @@ export const ReviewsTemplate: React.FC<{
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

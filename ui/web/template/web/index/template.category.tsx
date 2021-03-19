@@ -1,16 +1,16 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
+import { jsx } from 'theme-ui'
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
 
 /**
  *
  * @param {Object[]} items - List of categories to be displayed
  */
 export const CategoryTemplate: React.FC<{
-  items?: any;
+  items?: any
 }> = ({ items = [undefined, undefined, undefined] }) => {
-  const totalCards = items.length;
+  const totalCards = items.length
 
   return (
     <div>
@@ -28,13 +28,13 @@ export const CategoryTemplate: React.FC<{
             scrollPadding: '0 24px',
             '::-webkit-scrollbar': {
               width: 0,
-              background: 'transparent',
-            },
+              background: 'transparent'
+            }
           }}
           sx={{
             margin: ['0 -24px', '0 -24px', '0'],
             padding: ['4px 28px 4px', '4px 28px 4px', '4px 0'],
-            width: ['auto', 'auto', '100%'],
+            width: ['auto', 'auto', '100%']
           }}
         >
           {items.map((item, index) => {
@@ -43,11 +43,11 @@ export const CategoryTemplate: React.FC<{
                 key={index}
                 css={{
                   scrollSnapAlign: 'start',
-                  height: '100%',
+                  height: '100%'
                 }}
                 sx={{
                   width: [250, 250, 'auto'],
-                  maxWidth: ['auto', 'auto', 550],
+                  maxWidth: ['auto', 'auto', 550]
                 }}
               >
                 <Card
@@ -57,20 +57,20 @@ export const CategoryTemplate: React.FC<{
                   to={item?.to}
                 />
               </div>
-            );
+            )
           })}
           <div
             css={{
               width: 12,
               bg: 'transparent',
-              height: '100%',
+              height: '100%'
             }}
             sx={{
-              display: ['block', 'block', 'none'],
+              display: ['block', 'block', 'none']
             }}
           />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

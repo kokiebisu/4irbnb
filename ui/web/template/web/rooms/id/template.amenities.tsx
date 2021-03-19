@@ -1,12 +1,12 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
+import { jsx } from 'theme-ui'
 import {
   Bullet,
   $BULLET,
   Button,
-  $BUTTON,
-} from '@nextbnb/atoms/dist/bundle.esm';
+  $BUTTON
+} from '@nextbnb/atoms/dist/bundle.esm'
 
 /**
  * Renders the amenity section
@@ -14,8 +14,8 @@ import {
  * @param {Object[]} amenities - List of amenities
  */
 export const AmenitiesTemplate: React.FC<{
-  title?: string;
-  amenities?: string[];
+  title?: string
+  amenities?: string[]
 }> = ({ title = 'Title here', amenities = ['kitchen', 'smoke'] }) => {
   return (
     <div>
@@ -25,7 +25,7 @@ export const AmenitiesTemplate: React.FC<{
             fontWeight: 500,
             marginBottom: 20,
             color: 'grey.800',
-            size: 24,
+            size: 24
           }}
         >
           {title}
@@ -33,7 +33,7 @@ export const AmenitiesTemplate: React.FC<{
       </div>
       <div
         css={{
-          marginBottom: 32,
+          marginBottom: 32
         }}
         // className={[
         //   // section["display__amenities--wrapper"],
@@ -47,7 +47,7 @@ export const AmenitiesTemplate: React.FC<{
               variant={$BULLET.amenity}
               amenityType={amenity}
             />
-          );
+          )
         })}
       </div>
       <div css={{ width: 300, margin: '14px 0' }}>
@@ -58,5 +58,5 @@ export const AmenitiesTemplate: React.FC<{
         />
       </div>
     </div>
-  );
-};
+  )
+}

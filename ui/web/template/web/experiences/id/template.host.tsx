@@ -1,27 +1,27 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import React, { useState } from 'react';
+import { jsx } from 'theme-ui'
+import React, { useState } from 'react'
 import {
   Bullet,
   $BULLET,
   Button,
-  $BUTTON,
-} from '@nextbnb/atoms/dist/bundle.esm';
-import { Shield } from '@nextbnb/design/assets/svg/original';
+  $BUTTON
+} from '@nextbnb/atoms/dist/bundle.esm'
+import { Shield } from '@nextbnb/assets/svg/original'
 
 /**
  * Modifies the content which should be displayed initially
  * @param {string} content - The content which must be hidden
  */
 const renderContent = (content: string) => {
-  const wordArray = content.split(' ');
-  const newArray = [];
+  const wordArray = content.split(' ')
+  const newArray = []
   for (let i = 0; i < 20; i++) {
-    newArray.push(wordArray[i]);
+    newArray.push(wordArray[i])
   }
-  return newArray;
-};
+  return newArray
+}
 
 /**
  * Renders the host section
@@ -38,17 +38,17 @@ const renderContent = (content: string) => {
  * @param {boolean} verified - Whether is the user if verified or not
  */
 export const HostTemplate: React.FC<{
-  host?: string;
-  isSuperhost?: boolean;
-  description?: string;
-  joined?: string;
-  duringStay?: string;
-  numberOfReviews?: number;
-  hostImgUrl?: string;
-  responseTime?: number;
-  responseRate?: number;
-  layoutType?: string;
-  verified?: boolean;
+  host?: string
+  isSuperhost?: boolean
+  description?: string
+  joined?: string
+  duringStay?: string
+  numberOfReviews?: number
+  hostImgUrl?: string
+  responseTime?: number
+  responseRate?: number
+  layoutType?: string
+  verified?: boolean
 }> = ({
   host = 'Host Name',
   isSuperhost = false,
@@ -60,12 +60,12 @@ export const HostTemplate: React.FC<{
   responseTime = 'within an hour',
   responseRate = 54,
   layoutType = 'room',
-  verified = false,
+  verified = false
 }) => {
-  const [descriptionDisplay, setDescriptionDisplay] = useState<boolean>(false);
-  const [stayDisplay, setStayDisplay] = useState<boolean>(false);
-  const defaultDescription = renderContent(description);
-  const defaultDuringStay = renderContent(duringStay);
+  const [descriptionDisplay, setDescriptionDisplay] = useState<boolean>(false)
+  const [stayDisplay, setStayDisplay] = useState<boolean>(false)
+  const defaultDescription = renderContent(description)
+  const defaultDuringStay = renderContent(duringStay)
   return (
     <div>
       <div css={{ padding: '20px 0' }}>
@@ -74,13 +74,13 @@ export const HostTemplate: React.FC<{
             display: 'flex',
             alignItems: 'center',
             marginBottom: 18,
-            flexWrap: 'wrap',
+            flexWrap: 'wrap'
           }}
         >
           <div
             css={{
               display: 'flex',
-              justifyContent: 'center',
+              justifyContent: 'center'
             }}
           >
             {hostImgUrl ? (
@@ -90,7 +90,7 @@ export const HostTemplate: React.FC<{
                   width: 64,
                   height: 64,
                   borderRadius: 9999,
-                  marginRight: 14,
+                  marginRight: 14
                 }}
                 src={hostImgUrl}
               />
@@ -101,7 +101,7 @@ export const HostTemplate: React.FC<{
                   height: 64,
                   bg: 'grey.300',
                   borderRadius: 9999,
-                  marginRight: 14,
+                  marginRight: 14
                 }}
               />
             )}
@@ -117,7 +117,7 @@ export const HostTemplate: React.FC<{
                 css={{
                   fontWeight: 100,
                   color: 'grey.600',
-                  fontSize: 13,
+                  fontSize: 13
                 }}
               >
                 {layoutType === 'room'
@@ -131,7 +131,7 @@ export const HostTemplate: React.FC<{
           <div
             css={{
               paddingRight: 50,
-              ...(layoutType === 'room' && { width: ['auto', 'auto', '50%'] }),
+              ...(layoutType === 'room' && { width: ['auto', 'auto', '50%'] })
             }}
           >
             <div>
@@ -139,14 +139,14 @@ export const HostTemplate: React.FC<{
                 css={{
                   display: 'flex',
                   alignItems: 'center',
-                  flexWrap: 'wrap',
+                  flexWrap: 'wrap'
                 }}
               >
                 <div
                   css={{
                     marginRight: 8,
                     marginBottom: 12,
-                    paddingRight: 4,
+                    paddingRight: 4
                   }}
                 >
                   <Bullet
@@ -160,7 +160,7 @@ export const HostTemplate: React.FC<{
                     css={{
                       marginRight: 8,
                       marginBottom: 12,
-                      paddingRight: 4,
+                      paddingRight: 4
                     }}
                   >
                     <Bullet variant={$BULLET.host} categoryType="verified" />
@@ -171,7 +171,7 @@ export const HostTemplate: React.FC<{
                     css={{
                       marginRight: 8,
                       marginBottom: 12,
-                      paddingRight: 4,
+                      paddingRight: 4
                     }}
                   >
                     <Bullet variant={$BULLET.host} categoryType="superhost" />
@@ -190,7 +190,7 @@ export const HostTemplate: React.FC<{
                       css={{
                         marginLeft: 4,
                         bg: 'transparent',
-                        fontSize: 16,
+                        fontSize: 16
                       }}
                       onClick={() => setDescriptionDisplay(true)}
                     >
@@ -202,14 +202,14 @@ export const HostTemplate: React.FC<{
               {layoutType === 'room' && duringStay && (
                 <div
                   css={{
-                    margin: '16px 0',
+                    margin: '16px 0'
                   }}
                 >
                   <h3
                     css={{
                       fontSize: 16,
                       fontWeight: 500,
-                      marginBottom: 6,
+                      marginBottom: 6
                     }}
                   >
                     During your stay
@@ -217,13 +217,13 @@ export const HostTemplate: React.FC<{
                   {stayDisplay ? (
                     <div
                       css={{
-                        padding: '8px 0',
+                        padding: '8px 0'
                       }}
                     >
                       <p
                         css={{
                           lineHeight: 1.5,
-                          fontWeight: 100,
+                          fontWeight: 100
                         }}
                       >
                         {duringStay}
@@ -233,7 +233,7 @@ export const HostTemplate: React.FC<{
                     <p
                       css={{
                         fontWeight: 100,
-                        lineHeight: 1.5,
+                        lineHeight: 1.5
                       }}
                     >
                       {`${defaultDuringStay.join(' ')}...`}
@@ -241,7 +241,7 @@ export const HostTemplate: React.FC<{
                         css={{
                           marginLeft: 4,
                           bg: 'transparent',
-                          fontSize: 16,
+                          fontSize: 16
                         }}
                         onClick={() => setStayDisplay(true)}
                       >
@@ -255,13 +255,13 @@ export const HostTemplate: React.FC<{
               {layoutType === 'room' && isSuperhost && (
                 <div
                   css={{
-                    padding: '6px 0',
+                    padding: '6px 0'
                   }}
                 >
                   <p
                     css={{
                       padding: '6px 0',
-                      fontWeight: 500,
+                      fontWeight: 500
                     }}
                   >
                     {host} is a Superhost
@@ -269,7 +269,7 @@ export const HostTemplate: React.FC<{
                   <p
                     css={{
                       fontWeight: 100,
-                      lineHeight: 1.5,
+                      lineHeight: 1.5
                     }}
                   >
                     Superhosts are experienced, highly rated hosts who are
@@ -282,7 +282,7 @@ export const HostTemplate: React.FC<{
           <div
             css={{
               width: ['auto', 'auto', '50%'],
-              paddingRight: 50,
+              paddingRight: 50
             }}
           >
             {layoutType === 'room' && (
@@ -295,7 +295,7 @@ export const HostTemplate: React.FC<{
                   <p
                     css={{
                       fontWeight: 100,
-                      paddingBottom: 12,
+                      paddingBottom: 12
                     }}
                   >
                     Response rate:&nbsp;
@@ -304,7 +304,7 @@ export const HostTemplate: React.FC<{
                   <p
                     css={{
                       fontWeight: 100,
-                      paddingBottom: 12,
+                      paddingBottom: 12
                     }}
                   >
                     Response time:&nbsp;
@@ -318,13 +318,13 @@ export const HostTemplate: React.FC<{
                 ...(layoutType === 'experience' && {
                   marginTop: 32,
                   display: 'flex',
-                  alignItems: 'center',
-                }),
+                  alignItems: 'center'
+                })
               }}
             >
               <div
                 css={{
-                  ...(layoutType === 'experience' && { marginRight: 16 }),
+                  ...(layoutType === 'experience' && { marginRight: 16 })
                 }}
               >
                 <Button
@@ -338,8 +338,8 @@ export const HostTemplate: React.FC<{
                   ...(layoutType === 'room' && {
                     marginTop: 32,
                     display: 'flex',
-                    alignItems: 'center',
-                  }),
+                    alignItems: 'center'
+                  })
                 }}
               >
                 <div>
@@ -349,7 +349,7 @@ export const HostTemplate: React.FC<{
                   css={{
                     fontSize: 12,
                     fontWeight: 100,
-                    marginLeft: 12,
+                    marginLeft: 12
                   }}
                 >
                   To protect your payment, never transfer money or communicate
@@ -361,5 +361,5 @@ export const HostTemplate: React.FC<{
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

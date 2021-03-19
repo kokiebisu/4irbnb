@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
+import { jsx } from 'theme-ui'
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
 
 /**
  * Renders the homes section
@@ -10,30 +10,30 @@ import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
  * @param {Object[]} stays - List of objects containing the stays
  */
 export const HomesTemplate: React.FC<{
-  filterCount?: number;
-  place?: string;
-  guests?: number;
-  average?: number;
-  stays?: any;
-  title?: string;
-  layout?: 'vertical' | 'horizontal';
+  filterCount?: number
+  place?: string
+  guests?: number
+  average?: number
+  stays?: any
+  title?: string
+  layout?: 'vertical' | 'horizontal'
 }> = ({
   layout = 'vertical',
   title = 'Section Title',
-  stays = [undefined, undefined, undefined],
+  stays = [undefined, undefined, undefined]
 }) => {
   const layouts = {
     vertical: (
       <div
         css={{
-          ...(title ? { marginTop: 45 } : { marginTop: 24 }),
+          ...(title ? { marginTop: 45 } : { marginTop: 24 })
         }}
       >
         {title && (
           <div>
             <h3
               css={{
-                fontSize: 22,
+                fontSize: 22
               }}
             >
               {title}
@@ -50,12 +50,12 @@ export const HomesTemplate: React.FC<{
                   {...stay}
                 />
               </div>
-            );
+            )
           })}
         </div>
       </div>
-    ),
-  };
+    )
+  }
 
-  return layouts[layout];
-};
+  return layouts[layout]
+}

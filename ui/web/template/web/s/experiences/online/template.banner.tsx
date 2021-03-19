@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { ResponsiveImage } from '@nextbnb/design/helper/img';
+import { jsx } from 'theme-ui'
+import { ResponsiveImage } from '@nextbnb/packages/helper/img'
 
 export const BannerTemplate = () => {
   return (
@@ -13,12 +13,12 @@ export const BannerTemplate = () => {
               flex: 2,
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
+              justifyContent: 'center'
             }}
           >
             <div
               css={{
-                marginBottom: 16,
+                marginBottom: 16
               }}
             >
               <h2 css={{ fontSize: 50 }}>Online Experiences</h2>
@@ -32,7 +32,7 @@ export const BannerTemplate = () => {
           </div>
           <div
             css={{
-              flex: 8,
+              flex: 8
             }}
           >
             <ResponsiveImage
@@ -45,5 +45,5 @@ export const BannerTemplate = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

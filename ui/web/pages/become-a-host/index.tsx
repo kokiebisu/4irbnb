@@ -1,26 +1,26 @@
-import { Header, $HEADER } from '@nextbnb/organisms';
-import { Prototype, $PROTOTYPE } from '@nextbnb/prototype';
+import { Header, $HEADER } from '@nextbnb/organisms/dist/bundle.esm'
+import { Prototype, $PROTOTYPE } from '@nextbnb/prototype/dist/bundle.esm'
 
-import responsive from '@styles/responsive.module.scss';
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
+import responsive from '@styles/responsive.module.scss'
+import layout from '@styles/layout.module.scss'
+import space from '@styles/space.module.scss'
 
-import { useTabTitle } from '@nextbnb/design/hooks/useTabTitle';
-import { useEffect } from 'react';
-import { useStayDispatch } from '@context/stay';
+import { useTabTitle } from '@nextbnb/design/hooks/useTabTitle'
+import { useEffect } from 'react'
+import { useStayDispatch } from '@context/stay'
 
 const BecomeAHostPage = () => {
-  const dispatchStay = useStayDispatch();
+  const dispatchStay = useStayDispatch()
   useTabTitle(
     'Become a Host and Rent Out Your Room, House or Apartment on Airbnb'
-  );
+  )
 
   useEffect(() => {
     dispatchStay({
       type: 'reset',
-      payload: { place: 'Entire place', guests: 0, address: '' },
-    });
-  }, []);
+      payload: { place: 'Entire place', guests: 0, address: '' }
+    })
+  }, [])
 
   return (
     <div style={{ height: '100vh' }}>
@@ -39,7 +39,7 @@ const BecomeAHostPage = () => {
               style={{
                 margin: '50px auto 0',
                 maxWidth: 400,
-                width: '100%',
+                width: '100%'
               }}
             >
               <Prototype variant={$PROTOTYPE.getstarted} />
@@ -59,7 +59,7 @@ const BecomeAHostPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BecomeAHostPage;
+export default BecomeAHostPage

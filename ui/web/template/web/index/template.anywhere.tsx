@@ -1,22 +1,22 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
+import { jsx } from 'theme-ui'
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
 
 /**
  *
  * @param {Object[]} items - List of categories to be displayed
  */
 export const AnywhereTemplate: React.FC<{
-  items?: any;
+  items?: any
 }> = ({ items = [undefined, undefined, undefined] }) => {
-  const totalCards = items.length;
+  const totalCards = items.length
 
   return (
     <div>
       <div
         css={{
-          padding: '0 70px',
+          padding: '0 70px'
         }}
       >
         <div
@@ -34,7 +34,7 @@ export const AnywhereTemplate: React.FC<{
                   // extendsTo={[template["category__card"]].join(" ")}
                 />
               </div>
-            );
+            )
           })}
           <div
           // className={template["category__space"]}
@@ -42,5 +42,5 @@ export const AnywhereTemplate: React.FC<{
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Bullet, $BULLET } from '@nextbnb/atoms/dist/bundle.esm';
+import { jsx } from 'theme-ui'
+import { Bullet, $BULLET } from '@nextbnb/atoms/dist/bundle.esm'
 
 /**
  * Renders the know section
@@ -10,9 +10,9 @@ import { Bullet, $BULLET } from '@nextbnb/atoms/dist/bundle.esm';
  * @param {string} layoutType - The type of layout
  */
 export const KnowTemplate: React.FC<{
-  houseRules?: string[];
-  healths?: string[];
-  layoutType?: string;
+  houseRules?: string[]
+  healths?: string[]
+  layoutType?: string
 }> = ({
   houseRules = [
     'checkin',
@@ -21,10 +21,10 @@ export const KnowTemplate: React.FC<{
     'children',
     'smoking',
     'pets',
-    'parties',
+    'parties'
   ],
   healths = ['cleaning', 'distancing', 'caution', 'check'],
-  layoutType = 'room',
+  layoutType = 'room'
 }) => {
   return (
     <div>
@@ -34,7 +34,7 @@ export const KnowTemplate: React.FC<{
             fontWeight: 500,
             marginBottom: 20,
             color: 'grey.800',
-            fontSize: 24,
+            fontSize: 24
           }}
         >
           Things to know
@@ -42,20 +42,20 @@ export const KnowTemplate: React.FC<{
       </div>
       <div
         css={{
-          display: 'flex',
+          display: 'flex'
         }}
       >
         <div>
           <div
             css={{
-              marginBottom: 16,
+              marginBottom: 16
             }}
           >
             <h3>House rules</h3>
           </div>
           <div
             css={{
-              marginBottom: 32,
+              marginBottom: 32
             }}
           >
             {houseRules.map((item, index) => {
@@ -63,12 +63,12 @@ export const KnowTemplate: React.FC<{
                 <div
                   key={index}
                   css={{
-                    marginBottom: 6,
+                    marginBottom: 6
                   }}
                 >
                   <Bullet variant={$BULLET.know} categoryType={item} />
                 </div>
-              );
+              )
             })}
           </div>
           <div>
@@ -79,14 +79,14 @@ export const KnowTemplate: React.FC<{
         <div>
           <div
             css={{
-              marginBottom: 16,
+              marginBottom: 16
             }}
           >
             <h3>Health & safety</h3>
           </div>
           <div
             css={{
-              marginBottom: 32,
+              marginBottom: 32
             }}
           >
             {healths.map((item, index) => {
@@ -94,12 +94,12 @@ export const KnowTemplate: React.FC<{
                 <div
                   key={index}
                   css={{
-                    marginBottom: 6,
+                    marginBottom: 6
                   }}
                 >
                   <Bullet variant={$BULLET.know} categoryType={item} />
                 </div>
-              );
+              )
             })}
           </div>
           <div>
@@ -109,19 +109,19 @@ export const KnowTemplate: React.FC<{
         <div>
           <div
             css={{
-              marginBottom: 16,
+              marginBottom: 16
             }}
           >
             <h3>Cancellation policy</h3>
           </div>
           <div
             css={{
-              marginBottom: 32,
+              marginBottom: 32
             }}
           >
             <p
               css={{
-                fontWeight: 100,
+                fontWeight: 100
               }}
             >
               Add your trip to get the cancellation details for this stay.
@@ -133,5 +133,5 @@ export const KnowTemplate: React.FC<{
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Heart, Share } from '@nextbnb/design/assets/svg/original';
-import { Panel, $PANEL } from '@nextbnb/molecules/dist/bundle.esm';
+import { jsx } from 'theme-ui'
+import { Heart, Share } from '@nextbnb/assets/svg/original'
+import { Panel, $PANEL } from '@nextbnb/molecules/dist/bundle.esm'
 
 /**
  * Renders the panel section
@@ -17,15 +17,15 @@ import { Panel, $PANEL } from '@nextbnb/molecules/dist/bundle.esm';
  * @param {string[]} images - Images for the panel
  */
 export const PreviewTemplate: React.FC<{
-  title?: string;
-  ratings?: number;
-  numberOfReviews?: number;
-  superhost?: boolean;
-  location?: string;
-  province?: string;
-  country?: string;
-  layoutType?: string;
-  images?: string[];
+  title?: string
+  ratings?: number
+  numberOfReviews?: number
+  superhost?: boolean
+  location?: string
+  province?: string
+  country?: string
+  layoutType?: string
+  images?: string[]
 }> = ({ images = [] }) => {
   return (
     <div>
@@ -36,7 +36,7 @@ export const PreviewTemplate: React.FC<{
           margin: '32px 0',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between',
+          justifyContent: 'space-between'
         }}
       >
         <div>
@@ -48,7 +48,7 @@ export const PreviewTemplate: React.FC<{
             css={{
               paddingRight: 6,
               display: 'flex',
-              alignItems: 'center',
+              alignItems: 'center'
             }}
           >
             <a
@@ -56,7 +56,7 @@ export const PreviewTemplate: React.FC<{
               css={{
                 display: 'flex',
                 paddingLeft: 6,
-                alignItems: 'center',
+                alignItems: 'center'
               }}
             >
               <div>
@@ -66,7 +66,7 @@ export const PreviewTemplate: React.FC<{
                 css={{
                   paddingLeft: 10,
                   fontSize: 14,
-                  color: 'grey.700',
+                  color: 'grey.700'
                 }}
               >
                 <u>Share</u>
@@ -76,7 +76,7 @@ export const PreviewTemplate: React.FC<{
               css={{
                 display: 'flex',
                 marginLeft: 12,
-                alignItems: 'center',
+                alignItems: 'center'
               }}
             >
               <div>
@@ -86,7 +86,7 @@ export const PreviewTemplate: React.FC<{
                 css={{
                   paddingLeft: 10,
                   fontSize: 14,
-                  color: 'grey.700',
+                  color: 'grey.700'
                 }}
               >
                 Save
@@ -99,5 +99,5 @@ export const PreviewTemplate: React.FC<{
         <Panel images={images} variant={$PANEL.experience} />
       </div>
     </div>
-  );
-};
+  )
+}

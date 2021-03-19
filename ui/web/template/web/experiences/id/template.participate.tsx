@@ -1,14 +1,14 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
+import { jsx } from 'theme-ui'
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
 
 /**
  * Renders the participate section
  * @param {string[]} participates - Ways to participate
  */
 export const ParticipateTemplate: React.FC<{
-  participates?: string[];
+  participates?: string[]
 }> = ({ participates = ['call', 'private', 'request'] }) => {
   return (
     <div>
@@ -18,7 +18,7 @@ export const ParticipateTemplate: React.FC<{
             fontWeight: 500,
             marginBottom: 20,
             color: 'grey.800',
-            fontSize: 24,
+            fontSize: 24
           }}
         >
           How to participate
@@ -27,7 +27,7 @@ export const ParticipateTemplate: React.FC<{
       <div
         css={{
           display: 'flex',
-          marginBottom: 32,
+          marginBottom: 32
         }}
       >
         {participates.map((participate, index) => {
@@ -35,9 +35,9 @@ export const ParticipateTemplate: React.FC<{
             <div key={index} css={{ marginRight: 16 }}>
               <Card variant={$CARD.participate} categoryType={participate} />
             </div>
-          );
+          )
         })}
       </div>
     </div>
-  );
-};
+  )
+}

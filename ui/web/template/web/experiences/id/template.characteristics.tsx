@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Bullet, $BULLET } from '@nextbnb/atoms/dist/bundle.esm'
-import { DevicesInverse, Star } from '@nextbnb/design/assets/svg/original'
+import { DevicesInverse, Star } from '@nextbnb/assets/svg/original'
 
 /**
  * Renders the characteristics of the room/experience

@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
+import { jsx } from 'theme-ui'
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
 
 /**
  * Renders the arrangement section
@@ -9,20 +9,20 @@ import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
  * @param {Object[]} arrangements - List of amenities
  */
 export const ArrangementsTemplate: React.FC<{
-  title?: string;
-  arrangements?: { type: string; beds: { type: string; count: number }[] }[];
+  title?: string
+  arrangements?: { type: string; beds: { type: string; count: number }[] }[]
 }> = ({
   title = 'Title here',
   arrangements = [
     {
       type: 'Bedroom',
-      beds: [{ type: 'double bed', count: 1 }],
+      beds: [{ type: 'double bed', count: 1 }]
     },
     {
       type: 'Bedroom',
-      beds: [{ type: 'double bed', count: 1 }],
-    },
-  ],
+      beds: [{ type: 'double bed', count: 1 }]
+    }
+  ]
 }) => {
   return (
     <div>
@@ -32,7 +32,7 @@ export const ArrangementsTemplate: React.FC<{
             fontWeight: 500,
             marginBottom: 20,
             color: 'grey.800',
-            fontSize: 24,
+            fontSize: 24
           }}
         >
           {title}
@@ -42,7 +42,7 @@ export const ArrangementsTemplate: React.FC<{
         <div
           css={{
             display: 'flex',
-            margin: '0 8px',
+            margin: '0 8px'
           }}
         >
           {arrangements.map((arrangement, index) => {
@@ -50,10 +50,10 @@ export const ArrangementsTemplate: React.FC<{
               <div key={index} style={{ marginRight: 12 }}>
                 <Card variant={$CARD.arrangements} card={arrangement} />
               </div>
-            );
+            )
           })}
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

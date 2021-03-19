@@ -1,32 +1,32 @@
-import { useState } from 'react';
-import Router from 'next/router';
+import { useState } from 'react'
+import Router from 'next/router'
 
-import { Layout } from '@nextbnb/layout';
-import { Prototype, $PROTOTYPE } from '@nextbnb/prototype';
-import { useStayDispatch, useStayState } from '@context/stay';
+import { Layout } from '@nextbnb/layout'
+import { Prototype, $PROTOTYPE } from '@nextbnb/prototype/dist/bundle.esm'
+import { useStayDispatch, useStayState } from '@context/stay'
 
 const AmenitiesPage = () => {
-  const stayDispatch = useStayDispatch();
-  const { spaces } = useStayState();
+  const stayDispatch = useStayDispatch()
+  const { spaces } = useStayState()
   const [data, setData] = useState({
-    spaces,
-  });
+    spaces
+  })
 
   const proceed = () => {
     stayDispatch({
       type: 'add',
-      payload: data,
-    });
+      payload: data
+    })
     setTimeout(() => {
-      Router.push('/become-a-host/photos');
-    }, 500);
-  };
+      Router.push('/become-a-host/photos')
+    }, 500)
+  }
 
   const revert = () => {
     setTimeout(() => {
-      Router.push('/become-a-host/amenities');
-    }, 500);
-  };
+      Router.push('/become-a-host/amenities')
+    }, 500)
+  }
 
   return (
     <Layout
@@ -43,7 +43,7 @@ const AmenitiesPage = () => {
       next={proceed}
       back={revert}
     />
-  );
-};
+  )
+}
 
-export default AmenitiesPage;
+export default AmenitiesPage

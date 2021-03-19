@@ -1,122 +1,122 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import React, { useLayoutEffect, useRef, useState } from 'react';
-import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
-import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
+import { jsx } from 'theme-ui'
+import React, { useLayoutEffect, useRef, useState } from 'react'
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm'
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
 
 export const CollectionsTemplate: React.FC<{ title?: String }> = ({
-  title = 'Title here',
+  title = 'Title here'
 }) => {
   const [state, setState] = useState({
     activeSlide: 0,
     translate: 0,
-    transition: 0.7,
-  });
+    transition: 0.7
+  })
 
-  const [width, setWidth] = useState(500);
-  const containerRef = useRef<HTMLDivElement>();
+  const [width, setWidth] = useState(500)
+  const containerRef = useRef<HTMLDivElement>()
   const handleRef = () => {
     if (containerRef.current && containerRef.current.getBoundingClientRect()) {
-      setWidth(containerRef.current.getBoundingClientRect().width);
+      setWidth(containerRef.current.getBoundingClientRect().width)
     }
-  };
+  }
 
   useLayoutEffect(() => {
-    window.addEventListener('resize', handleRef);
-    handleRef();
+    window.addEventListener('resize', handleRef)
+    handleRef()
     return () => {
-      window.removeEventListener('resize', handleRef);
-    };
-  });
+      window.removeEventListener('resize', handleRef)
+    }
+  })
 
   const collectionStyles = () => {
     if (width > 1128) {
       return {
         width: width * (temporaryCards.length / 2),
-        transform: `translateX(-${state.translate}px)`,
-      };
+        transform: `translateX(-${state.translate}px)`
+      }
     }
     if (width > 728) {
       return {
         width: width * (temporaryCards.length / 2),
-        transform: `translateX(-${state.translate}px)`,
-      };
+        transform: `translateX(-${state.translate}px)`
+      }
     }
     return {
       width: width * (temporaryCards.length / 2),
-      transform: `translateX(-${state.translate}px)`,
-    };
-  };
+      transform: `translateX(-${state.translate}px)`
+    }
+  }
 
   const cardStyles = () => {
     if (width > 1128) {
       return {
-        width: width / 2,
-      };
+        width: width / 2
+      }
     }
     if (width > 728) {
       return {
-        width: 550,
-      };
+        width: 550
+      }
     }
     return {
-      width: width,
-    };
-  };
+      width: width
+    }
+  }
 
   const paddingTopStyles = () => {
     if (width > 728) {
-      return 60;
+      return 60
     }
-    return 120;
-  };
+    return 120
+  }
 
-  const temporaryCards = [undefined, undefined, undefined];
+  const temporaryCards = [undefined, undefined, undefined]
 
   const previous = () => {
     if (width > 1128) {
       return setState({
         ...state,
         activeSlide: state.activeSlide - 1,
-        translate: (state.activeSlide - 1) * (width / 2),
-      });
+        translate: (state.activeSlide - 1) * (width / 2)
+      })
     }
     if (width > 728) {
       return setState({
         ...state,
         activeSlide: state.activeSlide - 1,
-        translate: (state.activeSlide - 1) * 550,
-      });
+        translate: (state.activeSlide - 1) * 550
+      })
     }
     setState({
       ...state,
       activeSlide: state.activeSlide - 1,
-      translate: (state.activeSlide - 1) * width,
-    });
-  };
+      translate: (state.activeSlide - 1) * width
+    })
+  }
 
   const next = () => {
     if (width > 1128) {
       return setState({
         ...state,
         activeSlide: state.activeSlide + 1,
-        translate: (state.activeSlide + 1) * (width / 2),
-      });
+        translate: (state.activeSlide + 1) * (width / 2)
+      })
     }
     if (width > 728) {
       return setState({
         ...state,
         activeSlide: state.activeSlide + 1,
-        translate: (state.activeSlide + 1) * 550,
-      });
+        translate: (state.activeSlide + 1) * 550
+      })
     }
     setState({
       ...state,
       activeSlide: state.activeSlide + 1,
-      translate: (state.activeSlide + 1) * width,
-    });
-  };
+      translate: (state.activeSlide + 1) * width
+    })
+  }
 
   return (
     <div ref={containerRef}>
@@ -125,7 +125,7 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
           margin: '16px 0',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between',
+          justifyContent: 'space-between'
         }}
       >
         <div>
@@ -134,18 +134,18 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
         <div
           css={{
             display: 'flex',
-            alignIetms: 'center',
+            alignIetms: 'center'
           }}
         >
           <div
             css={{
               display: 'flex',
-              alignItems: 'center',
+              alignItems: 'center'
             }}
           >
             <div
               css={{
-                margin: '0 4px',
+                margin: '0 4px'
               }}
             >
               <Button
@@ -159,7 +159,7 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
             </div>
             <div
               css={{
-                margin: '0 4px',
+                margin: '0 4px'
               }}
             >
               <Button
@@ -179,13 +179,13 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
       <div
         css={{
           height: '100%',
-          width: '100%',
+          width: '100%'
         }}
       >
         <div
           css={{
             ...collectionStyles(),
-            transition: `transform ease-out ${state.transition}s`,
+            transition: `transform ease-out ${state.transition}s`
           }}
         >
           <div css={{ display: 'flex' }}>
@@ -199,11 +199,11 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
                     />
                   </div>
                 </div>
-              );
+              )
             })}
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

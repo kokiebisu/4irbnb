@@ -1,0 +1,17 @@
+{
+  "name": "@nextbnb/hooks",
+  "version": "1.0.39",
+  "license": "MIT",
+  "dependencies": {
+    "@nextbnb/theme": "^1.0.7",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "react": "^17.0.1"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "gitHead": "aea8625838b781eee9402ada4ecc979e746e7e6a",
+  "files": []
+}

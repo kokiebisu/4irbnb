@@ -1,22 +1,19 @@
-import { Modal, $Modal } from '@airbnb/components/organisms/modal/web';
-import { Bar, $Bar } from '@airbnb/components/organisms/bar/web';
-import { Header, $HEADER } from '@nextbnb/organisms';
-import { Button, $BUTTON } from '@airbnb/components/atoms/button/web';
-import { Footer } from '@airbnb/components/organisms/footer/web';
-import {
-  Template,
-  $Template,
-} from '@airbnb/components/template/web/s/experiences/online';
+import { Modal, $Modal } from '@nextbnb/organisms/modal/web'
+import { Bar, $Bar } from '@nextbnb/organisms/bar/web'
+import { Header, $HEADER } from '@nextbnb/organisms/dist/bundle.esm'
+import { Button, $BUTTON } from '@nextbnb/atoms/button/web'
+import { Footer } from '@nextbnb/organisms/footer/web'
+import { Template, $Template } from '@nextbnb/template/web/s/experiences/online'
 
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
-import shape from '@styles/shape.module.scss';
-import color from '@styles/color.module.scss';
+import layout from '@styles/layout.module.scss'
+import space from '@styles/space.module.scss'
+import shape from '@styles/shape.module.scss'
+import color from '@styles/color.module.scss'
 
-import { useToggleState } from '../../../context/toggle';
+import { useToggleState } from '../../../context/toggle'
 
 const OnlinePage = () => {
-  const toggleState = useToggleState();
+  const toggleState = useToggleState()
   return (
     <div>
       <div className={[shape['shadow--sm']].join(' ')}>
@@ -42,7 +39,7 @@ const OnlinePage = () => {
             className={[color['bg--white__2']].join(' ')}
             style={{
               width: '100%',
-              height: 1,
+              height: 1
             }}
           />
         </div>
@@ -51,7 +48,7 @@ const OnlinePage = () => {
         className={[
           layout['container--spread'],
           space['m-b--12'],
-          space['m-t--20'],
+          space['m-t--20']
         ].join(' ')}
       >
         <Template variant={$Template.CARDS} />
@@ -80,7 +77,7 @@ const OnlinePage = () => {
         style={{
           display: 'flex',
           justifyContent: 'center',
-          padding: '40px 0 56px 0',
+          padding: '40px 0 56px 0'
         }}
       >
         <Button variant={$BUTTON.primary} title="Load more" fill="black" />
@@ -97,7 +94,7 @@ const OnlinePage = () => {
             left: 0,
             right: 0,
             top: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.6)',
+            backgroundColor: 'rgba(0, 0, 0, 0.6)'
           }}
         >
           <div
@@ -105,7 +102,7 @@ const OnlinePage = () => {
               layout['flex'],
               layout['justify-center'],
               layout['items-center'],
-              shape['h--100v'],
+              shape['h--100v']
             ].join(' ')}
           >
             <Modal
@@ -126,7 +123,7 @@ const OnlinePage = () => {
             left: 0,
             right: 0,
             top: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.6)',
+            backgroundColor: 'rgba(0, 0, 0, 0.6)'
           }}
         >
           <div
@@ -134,7 +131,7 @@ const OnlinePage = () => {
               layout['flex'],
               layout['justify-center'],
               layout['items-center'],
-              shape['h--100v'],
+              shape['h--100v']
             ].join(' ')}
           >
             <Modal
@@ -143,7 +140,7 @@ const OnlinePage = () => {
                 shape['w--full'],
                 shape['h--full'],
                 space['p--40'],
-                shape['max-w--1100'],
+                shape['max-w--1100']
               ].join(' ')}
               animate="slideup"
               criteria={toggleState.globe}
@@ -153,7 +150,7 @@ const OnlinePage = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default OnlinePage;
+export default OnlinePage

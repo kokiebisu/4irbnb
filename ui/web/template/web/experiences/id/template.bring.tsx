@@ -1,22 +1,22 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Bullet, $BULLET } from '@nextbnb/atoms/dist/bundle.esm';
+import { jsx } from 'theme-ui'
+import { Bullet, $BULLET } from '@nextbnb/atoms/dist/bundle.esm'
 
 /**
  * Renders the 'What to bring' section
  * @param {Object[]} necessities - List of things the users have to bring
  */
 export const BringTemplate: React.FC<{
-  necessities?: string[];
+  necessities?: string[]
 }> = ({
   necessities = [
     'All purpose flour 100g',
     'water 50g',
     '160g minced pork(40%fat),can be subbed with chicken, shrimp.If your meat is too much lean, keep the fat cut off from skin(the skin for making pork jelly)',
     '80g pork skin jelly, can be sunned with chicken feet, gelatin with stock. (Will give you instructions and video how to make it',
-    'Chopped very fine ginger and spring onions 3g each.',
-  ],
+    'Chopped very fine ginger and spring onions 3g each.'
+  ]
 }) => {
   return (
     <div>
@@ -26,7 +26,7 @@ export const BringTemplate: React.FC<{
             fontWeight: 500,
             marginBottom: 20,
             color: 'grey.800',
-            fontSize: 24,
+            fontSize: 24
           }}
         >
           What to bring
@@ -38,9 +38,9 @@ export const BringTemplate: React.FC<{
             <div key={index} css={{ marginBottom: 16 }}>
               <Bullet variant={$BULLET.bring} title={necessity} />
             </div>
-          );
+          )
         })}
       </div>
     </div>
-  );
-};
+  )
+}

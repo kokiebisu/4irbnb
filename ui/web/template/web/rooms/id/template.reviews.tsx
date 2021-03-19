@@ -1,15 +1,15 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import React from 'react';
-import { jsx } from 'theme-ui';
-import { Star } from '@nextbnb/design/assets/svg/original';
+import React from 'react'
+import { jsx } from 'theme-ui'
+import { Star } from '@nextbnb/assets/svg/original'
 import {
   Bullet,
   $BULLET,
   Button,
-  $BUTTON,
-} from '@nextbnb/atoms/dist/bundle.esm';
-import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
+  $BUTTON
+} from '@nextbnb/atoms/dist/bundle.esm'
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
 
 /**
  * Renders the reviews section
@@ -20,11 +20,11 @@ import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
  * @param {string} layoutType - The type of layout
  */
 export const ReviewsTemplate: React.FC<{
-  ratings?: number;
-  categories?: any;
-  numberOfReviews?: number;
-  reviews?: any;
-  layoutType?: string;
+  ratings?: number
+  categories?: any
+  numberOfReviews?: number
+  reviews?: any
+  layoutType?: string
 }> = ({
   categories = [
     undefined,
@@ -32,36 +32,36 @@ export const ReviewsTemplate: React.FC<{
     undefined,
     undefined,
     undefined,
-    undefined,
+    undefined
   ],
   reviews = [undefined, undefined, undefined, undefined],
   ratings = 5.0,
   numberOfReviews = 100,
-  layoutType = 'room',
+  layoutType = 'room'
 }) => {
   return (
     <div>
       <div
         css={{
-          margin: '8px 0',
+          margin: '8px 0'
         }}
       >
         <div
           css={{
             padding: '8px 0',
             display: 'flex',
-            alignItems: 'center',
+            alignItems: 'center'
           }}
         >
           <div
             css={{
               display: 'flex',
-              alignItems: 'center',
+              alignItems: 'center'
             }}
           >
             <div
               css={{
-                marginRight: 6,
+                marginRight: 6
               }}
             >
               <Star width={20} />
@@ -70,7 +70,7 @@ export const ReviewsTemplate: React.FC<{
               css={{
                 marginRight: 6,
                 fontSize: 22,
-                color: 'grey.800',
+                color: 'grey.800'
               }}
             >
               {ratings.toFixed(1)}
@@ -79,7 +79,7 @@ export const ReviewsTemplate: React.FC<{
               css={{
                 marginLeft: 2,
                 fontSize: 22,
-                color: 'grey.800',
+                color: 'grey.800'
               }}
             >
               ({numberOfReviews} reviews)
@@ -92,7 +92,7 @@ export const ReviewsTemplate: React.FC<{
               display: 'grid',
               gridTemplateColumns: 'repeat(2, 1fr)',
               marginTop: 12,
-              marginRight: 24,
+              marginRight: 24
             }}
           >
             {categories.map((category, index) => {
@@ -100,7 +100,7 @@ export const ReviewsTemplate: React.FC<{
                 <div
                   key={index}
                   css={{
-                    padding: '8px 0',
+                    padding: '8px 0'
                   }}
                   // className={[section["m__review--bullet"]].join(" ")}
                 >
@@ -110,14 +110,14 @@ export const ReviewsTemplate: React.FC<{
                     average={category?.average}
                   />
                 </div>
-              );
+              )
             })}
           </div>
         )}
         <div
           css={{
             width: '100%',
-            marginTop: 16,
+            marginTop: 16
           }}
           // className={[section["display__reviews--wrapper"]].join(" ")}
         >
@@ -130,12 +130,12 @@ export const ReviewsTemplate: React.FC<{
                   description={review?.description}
                 />
               </div>
-            );
+            )
           })}
         </div>
         <div
           css={{
-            marginTop: 16,
+            marginTop: 16
           }}
         >
           <Button
@@ -146,5 +146,5 @@ export const ReviewsTemplate: React.FC<{
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

@@ -3273,6 +3273,243 @@
   resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-10.0.4.tgz#5ad753572891aa7cb1010b358cc4241d7be20d20"
   integrity sha512-kZ/37aSQaR0GCZVqh7WDLkeEZqzjPQoZUDdo6TOWiIEb+089AmfYp8A4/1ra9Fu8T4b4wnB76TRl6tp6DeJLXg==
 
+"@nextbnb/atoms-bullet@^1.0.16":
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/@nextbnb/atoms-bullet/-/atoms-bullet-1.0.16.tgz#a65287ce8e172acb34c05bdb411816bdacb6d455"
+  integrity sha512-scBE9kQmf6lHKxw0OjnqS+whjMu2mRk9WJl/7qPpvtTpT0Z/skP1YOszgu32u6yh9NO6Dz/fexB5tCEsy5RDyQ==
+  dependencies:
+    "@nextbnb/atoms-button" "^2.0.31"
+    "@nextbnb/design" "^1.0.39"
+    "@nextbnb/theme" "^1.0.7"
+    framer-motion "^3.3.0"
+    theme-ui "^0.3.5"
+
+"@nextbnb/atoms-button@^2.0.31":
+  version "2.0.31"
+  resolved "https://registry.yarnpkg.com/@nextbnb/atoms-button/-/atoms-button-2.0.31.tgz#1922179464a01becd396c216e7ebb02e2b8c4832"
+  integrity sha512-JiT4Jozs7rAlX3iMPt7MTdQJ4LiKxHuHxE/rjAMLIE2DL7bFE+F2/0OEOSZJ//4pyjADIjwwgppnUxq8DCx3TQ==
+  dependencies:
+    "@nextbnb/design" "^1.0.39"
+    "@nextbnb/theme" "^1.0.7"
+    framer-motion "^3.3.0"
+    theme-ui "^0.3.5"
+
+"@nextbnb/atoms-input@^2.0.31":
+  version "2.0.31"
+  resolved "https://registry.yarnpkg.com/@nextbnb/atoms-input/-/atoms-input-2.0.31.tgz#2f2606a5b69382bdd1d05b00f88f54fafe2b0d54"
+  integrity sha512-LpJkbzncmLtsmTYflF5A94ZhYBTaRGFRIGBbc+bbnBFUTidI715YQIYd/gXmYY4sDUJjAz6lkgaKujhz6WeXUg==
+  dependencies:
+    "@nextbnb/atoms-button" "^2.0.31"
+    "@nextbnb/design" "^1.0.39"
+    "@nextbnb/theme" "^1.0.7"
+    framer-motion "^3.3.0"
+    theme-ui "^0.3.5"
+
+"@nextbnb/atoms-video@^2.0.31":
+  version "2.0.31"
+  resolved "https://registry.yarnpkg.com/@nextbnb/atoms-video/-/atoms-video-2.0.31.tgz#696a0963f7c291ca3739acdd9d56ca94964653e7"
+  integrity sha512-v6JQa2H6lSDCrhfhiWy/yEicQbBAxRyAQRkDOhljmbu7nk2/hyziJdYUc7tC2ZzBGkIEwXM2V80sk8WtyIPkqw==
+  dependencies:
+    "@nextbnb/animation" "^2.0.31"
+    "@nextbnb/design" "^1.0.39"
+    "@nextbnb/theme" "^1.0.7"
+    framer-motion "^3.3.0"
+    theme-ui "^0.3.5"
+
+"@nextbnb/atoms@^1.0.29":
+  version "1.0.29"
+  resolved "https://registry.yarnpkg.com/@nextbnb/atoms/-/atoms-1.0.29.tgz#54c30be1315230abd64b1b67058c16a5760ee0e2"
+  integrity sha512-FklgEQOBaNtfNGYgTxv095ZiDqCT6Adiuk3W6VQGMGoe4BxxQxNLr3fF8kizrJj8yopb5zCVhdRJHc7MD1z/pw==
+  dependencies:
+    "@nextbnb/atoms-bullet" "^1.0.16"
+    "@nextbnb/atoms-button" "^2.0.31"
+    "@nextbnb/atoms-input" "^2.0.31"
+    "@nextbnb/atoms-video" "^2.0.31"
+    "@nextbnb/design" "^1.0.39"
+
+"@nextbnb/design@^1.0.39":
+  version "1.0.39"
+  resolved "https://registry.yarnpkg.com/@nextbnb/design/-/design-1.0.39.tgz#cb5f2cd6cdc0592b3a50080d8de69e146e485a00"
+  integrity sha512-rAsGlmlWI8nT43J4YlGefXHF0GlUSw+O8qOVpas2XnAqQdbgzsYSQbcNpJQibHufyyCf5U5UlEWOTGJQvpDbAg==
+  dependencies:
+    "@emotion/react" "^11.1.5"
+    "@nextbnb/theme" "^1.0.7"
+    react-dom "^17.0.1"
+
+"@nextbnb/molecules-card@^1.0.16":
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/@nextbnb/molecules-card/-/molecules-card-1.0.16.tgz#53d85733fb7946d222664c71d2ac152b160c9e0c"
+  integrity sha512-AxsvfdzGRjynBOTzwFFc5+Gs1d2y+Ynn+X2gTfRa7KfreDqCmSQjRwX2tf6CiQAhVgXikGJn6CnuAc7Ms8pC4w==
+  dependencies:
+    "@emotion/react" "^11.1.5"
+    "@nextbnb/atoms-bullet" "^1.0.16"
+    "@nextbnb/atoms-button" "^2.0.31"
+    "@nextbnb/atoms-video" "^2.0.31"
+    "@nextbnb/design" "^1.0.39"
+    "@nextbnb/particles" "^2.0.31"
+    "@nextbnb/theme" "^1.0.7"
+    framer-motion "^3.3.0"
+    theme-ui "^0.3.5"
+
+"@nextbnb/molecules-panel@^1.0.16":
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/@nextbnb/molecules-panel/-/molecules-panel-1.0.16.tgz#b961da3cfcbbf4e5c58eb021b9defd3d0176ac36"
+  integrity sha512-JB/2Uozx2Zgi01EPScqYZkfSxRnImBoAgDCexwI2OS5/2QzysfwUiB1PTS85X+LeaTNbW9G9vbuvSqrakO5CUQ==
+  dependencies:
+    "@emotion/react" "^11.1.5"
+    "@nextbnb/design" "^1.0.39"
+    "@nextbnb/theme" "^1.0.7"
+    framer-motion "^3.3.0"
+
+"@nextbnb/molecules@^1.0.29":
+  version "1.0.29"
+  resolved "https://registry.yarnpkg.com/@nextbnb/molecules/-/molecules-1.0.29.tgz#162a564a4ca3af0fa3fbea66e63466c7b117338e"
+  integrity sha512-QI8LFrRtOhfc8U+cVJUMrzI3ejP0a2ExirDC9auAepw3ABkIPgL8LwE6uLSNkYrB17J1FevWKr/sPtGMKIPlpQ==
+  dependencies:
+    "@nextbnb/design" "^1.0.39"
+    "@nextbnb/molecules-card" "^1.0.16"
+    "@nextbnb/molecules-panel" "^1.0.16"
+
+"@nextbnb/organisms-bar@^1.0.16":
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/@nextbnb/organisms-bar/-/organisms-bar-1.0.16.tgz#d8e5baccf7ca609ef57b9740393da25f4e2dcfba"
+  integrity sha512-mOyfWzfnTmmLOmsJDgYPaleXzEDpLlORb2c1XNvNWyLux0pL7HtVCDJnoY9Lq4QlgM+Q04YTzpJLB9vfqQCPkA==
+  dependencies:
+    "@nextbnb/atoms-button" "^2.0.31"
+    "@nextbnb/design" "^1.0.39"
+    "@nextbnb/theme" "^1.0.7"
+    framer-motion "^3.3.0"
+    theme-ui "^0.3.5"
+
+"@nextbnb/organisms-footer@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@nextbnb/organisms-footer/-/organisms-footer-1.0.8.tgz#22874528e67c80c8203513f358774f003b97a4d3"
+  integrity sha512-aQaHI4dKWfdV08AxjKXan/7B0FTcRsfjjn5UShBb5WJfA2F2IXDotPh96F4ULC6PMBaQhxMuqi7p0YEHPXqDdg==
+  dependencies:
+    "@nextbnb/atoms-button" "^2.0.31"
+    "@nextbnb/content" "^2.0.4"
+    "@nextbnb/design" "^1.0.39"
+    "@nextbnb/theme" "^1.0.7"
+    "@rollup/plugin-typescript" "^8.2.0"
+    framer-motion "^3.3.0"
+    theme-ui "^0.3.5"
+
+"@nextbnb/organisms-header@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@nextbnb/organisms-header/-/organisms-header-1.0.8.tgz#72f1099a090270f338f5442429f79c5d7a057234"
+  integrity sha512-xp9dNf1dkLmTi4IV+L2BFlO7nLsNbLu3gxCWu1f4OwrEweGyaUCOHAQ9U3VERcLeCSz1gOMNI+UlCrGPT8b/Vg==
+  dependencies:
+    "@nextbnb/atoms-button" "^2.0.31"
+    "@nextbnb/content" "^2.0.4"
+    "@nextbnb/design" "^1.0.39"
+    "@nextbnb/organisms-modal" "^1.0.6"
+    "@nextbnb/prototype-searchbar" "^1.0.5"
+    "@nextbnb/theme" "^1.0.7"
+    framer-motion "^3.3.0"
+    theme-ui "^0.3.5"
+
+"@nextbnb/organisms-modal@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@nextbnb/organisms-modal/-/organisms-modal-1.0.6.tgz#cfdf7579963fb0e891084291ad9e2353b75058ed"
+  integrity sha512-y4MAR4zYW63WSR/f9Y8qWPMcCI/9CYBHjiCpMnesNBbBJH/XJvKaODtHO7DrexUvAP9qAYnqc8TuXJs2a7pDbw==
+  dependencies:
+    "@nextbnb/atoms-button" "^2.0.31"
+    "@nextbnb/atoms-input" "^2.0.31"
+    "@nextbnb/design" "^1.0.39"
+    "@nextbnb/prototype-globe" "^1.0.5"
+    "@nextbnb/theme" "^1.0.7"
+    framer-motion "^3.3.0"
+    theme-ui "^0.3.5"
+
+"@nextbnb/organisms@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@nextbnb/organisms/-/organisms-1.0.8.tgz#6393c1b1b716ce9ec9d7c467ac5d2ed6d9e7d4a6"
+  integrity sha512-vFaexXzLTTTJjmIJSg9HeZ0ogzbEeo0BQaZSIeiWzCaBw9lrVbUZKlEWgJLYGDfZ5fmtahzyfL6MZ4yNXrRnyQ==
+  dependencies:
+    "@nextbnb/design" "^1.0.39"
+    "@nextbnb/molecules-card" "^1.0.16"
+    "@nextbnb/molecules-panel" "^1.0.16"
+    "@nextbnb/organisms-bar" "^1.0.16"
+    "@nextbnb/organisms-footer" "^1.0.8"
+    "@nextbnb/organisms-header" "^1.0.8"
+    "@nextbnb/organisms-modal" "^1.0.6"
+
+"@nextbnb/prototype-auth@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@nextbnb/prototype-auth/-/prototype-auth-1.0.5.tgz#f37d1e62f41c05797cd6a8fc8fcf889110356795"
+  integrity sha512-fx7hKroyrqsu4f5VT+l11mowdJcV3WOCh+Thf4DqHkJuuvaZ0gHz8cba1qiCpvCDpd2Zqlv0KehLvO6HGXpqlg==
+  dependencies:
+    "@nextbnb/atoms-bullet" "^1.0.16"
+    "@nextbnb/atoms-button" "^2.0.31"
+    "@nextbnb/atoms-input" "^2.0.31"
+    "@nextbnb/design" "^1.0.39"
+    "@nextbnb/theme" "^1.0.7"
+    framer-motion "^3.3.0"
+    theme-ui "^0.3.5"
+
+"@nextbnb/prototype-create@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@nextbnb/prototype-create/-/prototype-create-1.0.5.tgz#77beac82f83bca68bd6731ad10d24f0bd4674b8f"
+  integrity sha512-OZLfku2mdy2shjPjCLn4Jx3LAfgmqaOjuzgboceukHxYoApMBYR0R4h4Ig2KAok5gWnxMA31ziRy77wED948sw==
+  dependencies:
+    "@nextbnb/atoms-bullet" "^1.0.16"
+    "@nextbnb/atoms-button" "^2.0.31"
+    "@nextbnb/atoms-input" "^2.0.31"
+    "@nextbnb/design" "^1.0.39"
+    "@nextbnb/theme" "^1.0.7"
+    framer-motion "^3.3.0"
+    theme-ui "^0.3.5"
+
+"@nextbnb/prototype-globe@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@nextbnb/prototype-globe/-/prototype-globe-1.0.5.tgz#92ebab726fac1f46c684a2ef356389ba0d36f25e"
+  integrity sha512-kh7AqIarC0D+3bAA4Lxi0gsY32Dlj10X+Kiq/sasxyKPLfE26EbsBwL7mNU2W1Xc48XdLAd1P3E/cGatcLJOKA==
+  dependencies:
+    "@nextbnb/atoms-bullet" "^1.0.16"
+    "@nextbnb/atoms-button" "^2.0.31"
+    "@nextbnb/atoms-input" "^2.0.31"
+    "@nextbnb/design" "^1.0.39"
+    "@nextbnb/layout" "^1.0.6"
+    "@nextbnb/theme" "^1.0.7"
+    "@rollup/plugin-typescript" "^8.2.0"
+    framer-motion "^3.3.0"
+    theme-ui "^0.3.5"
+
+"@nextbnb/prototype-homes@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@nextbnb/prototype-homes/-/prototype-homes-1.0.5.tgz#f75b0cdedd11278084bce6c8f1229affe75956fe"
+  integrity sha512-8ISgFuYEbHlgd18UFDa/sEhwFbSmANauQ77Hj+fFQ9awUGdLE7Ilrh9BRqSC7doJU5XUH7+1G97f7XKxLOWJYg==
+  dependencies:
+    "@nextbnb/atoms-button" "^2.0.31"
+    "@nextbnb/design" "^1.0.39"
+    "@nextbnb/organisms-bar" "^1.0.16"
+    "@nextbnb/theme" "^1.0.7"
+    framer-motion "^3.3.0"
+    theme-ui "^0.3.5"
+
+"@nextbnb/prototype-searchbar@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@nextbnb/prototype-searchbar/-/prototype-searchbar-1.0.5.tgz#8e564e9a6b96912c503d57fe1bf7a24ead553e25"
+  integrity sha512-hUzyFMrPLxlGoiYRUtyF33TPTgJN3zGDtmDHZ9dqxscm/60VuYtz26v2cjmiAYMYGjwuR2ZalD0ielbwReFM3w==
+  dependencies:
+    "@nextbnb/design" "^1.0.39"
+    "@nextbnb/organisms-bar" "^1.0.16"
+    "@nextbnb/organisms-modal" "^1.0.6"
+    "@nextbnb/theme" "^1.0.7"
+    framer-motion "^3.3.0"
+    theme-ui "^0.3.5"
+
+"@nextbnb/prototype@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@nextbnb/prototype/-/prototype-1.0.5.tgz#258f0c44eb058c24a75596da3624bb20354cd0c4"
+  integrity sha512-TM7Y6Z3GNPOlSt4kQ4cKZ/kZntDbMR0BL0Yxa+/x58frbL486YWHc1D1VqbEQA/3Y9exHF/UKDMymWhiaBQJ6Q==
+  dependencies:
+    "@nextbnb/prototype-auth" "^1.0.5"
+    "@nextbnb/prototype-create" "^1.0.5"
+    "@nextbnb/prototype-globe" "^1.0.5"
+    "@nextbnb/prototype-homes" "^1.0.5"
+    "@nextbnb/prototype-searchbar" "^1.0.5"
+
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.4.tgz#d4b3549a5db5de2683e0c1071ab4f140904bbf69"
@@ -7878,7 +8115,7 @@ css-loader@^3.5.3:
     schema-utils "^2.7.0"
     semver "^6.3.0"
 
-css-loader@^5.0.1, css-loader@^5.0.2:
+css-loader@^5.0.1:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-5.1.2.tgz#b93dba498ec948b543b49d4fab5017205d4f5c3e"
   integrity sha512-T7vTXHSx0KrVEg/xjcl7G01RcVXpcw4OELwDPvkr7izQNny85A84dK3dqrczuEfBcu7Yg7mdTjJLSTibRUoRZg==
@@ -9600,7 +9837,7 @@ file-entry-cache@^6.0.1:
   dependencies:
     flat-cache "^3.0.4"
 
-file-loader@^6.0.0, file-loader@^6.1.0, file-loader@^6.2.0:
+file-loader@^6.0.0, file-loader@^6.1.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/file-loader/-/file-loader-6.2.0.tgz#baef7cf8e1840df325e4390b4484879480eebe4d"
   integrity sha512-qo3glqyTa61Ytg4u73GultjHGjdRyig3tG6lPtyX/jOEJvHif9uB0/OCI2Kif6ctF3caQTW2G5gym21oAsI4pw==
@@ -13148,7 +13385,7 @@ min-indent@^1.0.0:
   resolved "https://registry.yarnpkg.com/min-indent/-/min-indent-1.0.1.tgz#a63f681673b30571fbe8bc25686ae746eefa9869"
   integrity sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==
 
-mini-css-extract-plugin@^1.3.6, mini-css-extract-plugin@^1.3.7:
+mini-css-extract-plugin@^1.3.6:
   version "1.3.9"
   resolved "https://registry.yarnpkg.com/mini-css-extract-plugin/-/mini-css-extract-plugin-1.3.9.tgz#47a32132b0fd97a119acd530e8421e8f6ab16d5e"
   integrity sha512-Ac4s+xhVbqlyhXS5J/Vh/QXUz3ycXlCqoCPpg0vdfhsIBH9eg/It/9L1r1XhSCH737M1lqcWnMuWL13zcygn5A==
@@ -17918,7 +18155,7 @@ ts-jest@^26.4.4:
     semver "7.x"
     yargs-parser "20.x"
 
-ts-loader@^8.0.14:
+ts-loader@^8.0.14, ts-loader@^8.0.18:
   version "8.0.18"
   resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-8.0.18.tgz#b2385cbe81c34ad9f997915129cdde3ad92a61ea"
   integrity sha512-hRZzkydPX30XkLaQwJTDcWDoxZHK6IrEMDQpNd7tgcakFruFkeUp/aY+9hBb7BUGb+ZWKI0jiOGMo0MckwzdDQ==
@@ -18782,7 +19019,7 @@ webpack@^4.44.2:
     watchpack "^1.7.4"
     webpack-sources "^1.4.1"
 
-webpack@^5.21.2, webpack@^5.22.0, webpack@^5.25.1:
+webpack@^5.21.2, webpack@^5.25.1:
   version "5.25.1"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.25.1.tgz#d3564440ed2569253fa45864405a313916bef6f6"
   integrity sha512-dzFTJwehoLZkeHUkvMSwAgVdGL+PerfX0mke9tOWjJs4OzFctkxCqD8Zj5J387jLkC4gNqSin0/EurhH28boCg==

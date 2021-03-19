@@ -1,17 +1,17 @@
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
 
-import { Header, $HEADER } from '@nextbnb/organisms';
+import { Header, $HEADER } from '@nextbnb/organisms/dist/bundle.cjs'
 
-import { useTabTitle } from '@airbnb/components/hooks/useTabTitle';
+import { useTabTitle } from '@nextbnb/hooks/useTabTitle'
 
 // pages/404.js
 const ErrorPage = () => {
-  useTabTitle('Page not found - Airbnb');
+  useTabTitle('Page not found - Airbnb')
   const links = [
     { name: 'Home', url: '/' },
-    { name: 'Hosting on Airbnb', url: '/d/onlinehost' },
-  ];
+    { name: 'Hosting on Airbnb', url: '/d/onlinehost' }
+  ]
 
   return (
     <div>
@@ -58,14 +58,14 @@ const ErrorPage = () => {
                               className={[
                                 font['size--14'],
                                 font['weight--100'],
-                                color['c--darkgreen__3'],
+                                color['c--darkgreen__3']
                               ].join(' ')}
                             >
                               {name}
                             </a>
                           </Link>
                         </div>
-                      );
+                      )
                     })}
                   </div>
                 </div>
@@ -82,7 +82,7 @@ const ErrorPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ErrorPage;
+export default ErrorPage

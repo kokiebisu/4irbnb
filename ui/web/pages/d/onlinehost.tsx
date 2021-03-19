@@ -1,17 +1,12 @@
-import { Header, $HEADER } from '@nextbnb/organisms';
-import {
-  Template,
-  $Template,
-} from '@airbnb/components/template/web/d/onlinehost';
-import { Footer } from '@airbnb/components/organisms/footer/web';
-
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
-
-import { useTabTitle } from '@hooks/useTabTitle';
+import { Header, $HEADER } from '@nextbnb/organisms/dist/bundle.esm'
+import { Template, $Template } from '@nextbnb/template/web/d/onlinehost'
+import { Footer } from '@nextbnb/organisms/footer/web'
+import layout from '@styles/layout.module.scss'
+import space from '@styles/space.module.scss'
+import { useTabTitle } from '@hooks/useTabTitle'
 
 const OnlineHost = () => {
-  useTabTitle('Airbnb Experiences: Host an Online Experience');
+  useTabTitle('Airbnb Experiences: Host an Online Experience')
 
   return (
     <div>
@@ -44,7 +39,7 @@ const OnlineHost = () => {
         <Footer />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default OnlineHost;
+export default OnlineHost

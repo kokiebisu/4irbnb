@@ -1,28 +1,28 @@
-import Router from 'next/router';
+import Router from 'next/router'
 
-import { Header, $HEADER, Bar, $BAR } from '@nextbnb/organisms';
-import { Card, $CARD } from '@nextbnb/molecules';
+import { Header, $HEADER, Bar, $BAR } from '@nextbnb/organisms/dist/bundle.esm'
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
 
-import font from '@styles/font.module.scss';
-import responsive from '@styles/responsive.module.scss';
-import color from '@styles/color.module.scss';
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
+import font from '@styles/font.module.scss'
+import responsive from '@styles/responsive.module.scss'
+import color from '@styles/color.module.scss'
+import layout from '@styles/layout.module.scss'
+import space from '@styles/space.module.scss'
 
-import { Protected } from '@svg/original';
+import { Protected } from '@svg/original'
 
 const HowGuestsWillBookPage = () => {
   const proceed = () => {
     setTimeout(() => {
-      Router.push('/become-a-host/checkin');
-    }, 500);
-  };
+      Router.push('/become-a-host/checkin')
+    }, 500)
+  }
 
   const revert = () => {
     setTimeout(() => {
-      Router.push('/become-a-host/house-rules');
-    }, 500);
-  };
+      Router.push('/become-a-host/house-rules')
+    }, 500)
+  }
   return (
     <div>
       <div style={{ position: 'sticky', zIndex: 9999, top: 0 }}>
@@ -43,7 +43,7 @@ const HowGuestsWillBookPage = () => {
               width: '100%',
               display: 'grid',
               gridTemplateColumns: 'repeat(3, 1fr)',
-              columnGap: 15,
+              columnGap: 15
             }}
           >
             {['qualified', 'control', 'notified'].map((how, index) => (
@@ -86,7 +86,7 @@ const HowGuestsWillBookPage = () => {
               position: 'fixed',
               bottom: 0,
               zIndex: 60,
-              display: 'flex',
+              display: 'flex'
             }}
           >
             <div style={{ width: '100%', maxWidth: 700, margin: '0 auto' }}>
@@ -96,7 +96,7 @@ const HowGuestsWillBookPage = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HowGuestsWillBookPage;
+export default HowGuestsWillBookPage

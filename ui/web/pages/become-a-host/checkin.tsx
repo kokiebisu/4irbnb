@@ -1,35 +1,34 @@
-import { useState } from 'react';
-import Router from 'next/router';
+import { useState } from 'react'
+import Router from 'next/router'
 
-import { Prototype, $PROTOTYPE } from '@nextbnb/prototype';
-import { Layout } from '@nextbnb/layout';
-
-import { useStayDispatch, useStayState } from '@context/stay';
+import { Prototype, $PROTOTYPE } from '@nextbnb/prototype/dist/bundle.esm'
+import { Layout } from '@nextbnb/layout'
+import { useStayDispatch, useStayState } from '@context/stay'
 
 const CheckInPage = () => {
-  const stayDispatch = useStayDispatch();
-  const { notice, checkinFrom, checkinTo } = useStayState();
+  const stayDispatch = useStayDispatch()
+  const { notice, checkinFrom, checkinTo } = useStayState()
   const [data, setData] = useState({
     notice,
     checkinFrom,
-    checkinTo,
-  });
+    checkinTo
+  })
 
   const proceed = () => {
     stayDispatch({
       type: 'add',
-      payload: data,
-    });
+      payload: data
+    })
     setTimeout(() => {
-      Router.push('/become-a-host/advance');
-    }, 500);
-  };
+      Router.push('/become-a-host/advance')
+    }, 500)
+  }
 
   const revert = () => {
     setTimeout(() => {
-      Router.push('/become-a-host/review-how-guests-book');
-    }, 500);
-  };
+      Router.push('/become-a-host/review-how-guests-book')
+    }, 500)
+  }
   return (
     <Layout
       variant="create"
@@ -41,7 +40,7 @@ const CheckInPage = () => {
       next={proceed}
       back={revert}
     />
-  );
-};
+  )
+}
 
-export default CheckInPage;
+export default CheckInPage

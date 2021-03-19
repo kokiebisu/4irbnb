@@ -1,27 +1,27 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { useToggleState } from '@context/toggle';
-import { Footer } from '@airbnb/components/organisms/footer/web';
-import { Modal, $Modal } from '@airbnb/components/organisms/modal/web';
-import { Card, $Card } from '@airbnb/components/molecules/card/web';
-import { Header, $HEADER } from '@nextbnb/organisms';
-import { Template, $Template } from '@airbnb/components/template/web/rooms/id';
+import { AnimatePresence, motion } from 'framer-motion'
+import { useToggleState } from '@context/toggle'
+import { Footer } from '@nextbnb/organisms/footer/web'
+import { Modal, $Modal } from '@nextbnb/organisms/modal/web'
+import { Card, $Card } from '@nextbnb/molecules/card/web'
+import { Header, $HEADER } from '@nextbnb/organisms/dist/bundle.cjs'
+import { Template, $Template } from '@nextbnb/template/web/rooms/id'
 
-import responsive from '@styles/responsive.module.scss';
-import layout from '@styles/layout.module.scss';
-import details from '@styles/details.module.scss';
-import staysDetail from '@styles/staysDetail.module.scss';
-import color from '@styles/color.module.scss';
-import shape from '@styles/shape.module.scss';
-import space from '@styles/space.module.scss';
+import responsive from '@styles/responsive.module.scss'
+import layout from '@styles/layout.module.scss'
+import details from '@styles/details.module.scss'
+import staysDetail from '@styles/staysDetail.module.scss'
+import color from '@styles/color.module.scss'
+import shape from '@styles/shape.module.scss'
+import space from '@styles/space.module.scss'
 
-import { useHandleScroll } from '@hooks/useHandleScroll';
+import { useHandleScroll } from '@hooks/useHandleScroll'
 
 /**
  * Render the component for path /rooms/[id]
  */
 const id: () => string | JSX.Element = () => {
-  const toggleState = useToggleState();
-  const scrollPosition = useHandleScroll();
+  const toggleState = useToggleState()
+  const scrollPosition = useHandleScroll()
   return (
     <>
       <div>
@@ -42,7 +42,7 @@ const id: () => string | JSX.Element = () => {
                 position: 'fixed',
                 top: 0,
                 zIndex: 50,
-                width: '100%',
+                width: '100%'
               }}
             >
               <Header variant={$HEADER.details} />
@@ -97,7 +97,7 @@ const id: () => string | JSX.Element = () => {
                   layout['flex'],
                   layout['justify-end'],
                   layout['sticky'],
-                  layout['t--80'],
+                  layout['t--80']
                 ].join(' ')}
               />
             </div>
@@ -120,7 +120,7 @@ const id: () => string | JSX.Element = () => {
             extendsTo={[
               color['b-t--white__2'],
               space['p-v--32'],
-              color['bg--white__1'],
+              color['bg--white__1']
             ].join(' ')}
             variant={$Template.OTHER}
           />
@@ -129,7 +129,7 @@ const id: () => string | JSX.Element = () => {
         <div
           className={[
             staysDetail['display__availability'],
-            shape['w--full'],
+            shape['w--full']
           ].join(' ')}
           style={{ position: 'fixed', bottom: 0, zIndex: 9999 }}
         >
@@ -145,7 +145,7 @@ const id: () => string | JSX.Element = () => {
             bottom: 0,
             left: 0,
             right: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.6)',
+            backgroundColor: 'rgba(0, 0, 0, 0.6)'
           }}
         >
           <Modal
@@ -154,13 +154,13 @@ const id: () => string | JSX.Element = () => {
               layout['flex'],
               layout['justify-center'],
               layout['items-center'],
-              shape['h--100v'],
+              shape['h--100v']
             ].join(' ')}
           />
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default id;
+export default id

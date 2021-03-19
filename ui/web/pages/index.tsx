@@ -1,26 +1,32 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { useToggleState } from '../context/toggle';
+import { AnimatePresence, motion } from 'framer-motion'
+import { useToggleState } from '../context/toggle'
 import {
   categoryItems,
   anywhereItems,
-  destinationItems,
-} from '@nextbnb/content';
-import { nearbyItems } from '../data/nearby';
-import { Layout } from '@nextbnb/layout';
-import { Animation } from '@nextbnb/animation';
-import { Modal, $MODAL, Bar, $BAR, Footer } from '@nextbnb/organisms';
-import { useHandleScroll } from '@nextbnb/design/hooks/useHandleScroll';
-import { useHandleDocumentResize } from '@nextbnb/design/hooks/useHandleDocumentResize';
-import { useTimeout } from '@nextbnb/design/hooks/useTimeout';
-import { useTabTitle } from '@nextbnb/design/hooks/useTabTitle';
-import { APIClient } from '../api/client';
+  destinationItems
+} from '@nextbnb/content'
+import { nearbyItems } from '../data/nearby'
+import { Layout } from '@nextbnb/layout'
+import { Animation } from '@nextbnb/animation'
+import {
+  Modal,
+  $MODAL,
+  Bar,
+  $BAR,
+  Footer
+} from '@nextbnb/organisms/dist/bundle.cjs'
+import { useHandleScroll } from '@nextbnb/hooks/useHandleScroll'
+import { useHandleDocumentResize } from '@nextbnb/hooks/useHandleDocumentResize'
+import { useTimeout } from '@nextbnb/hooks/useTimeout'
+import { useTabTitle } from '@nextbnb/hooks/useTabTitle'
+import { APIClient } from '../api/client'
 
 const LandingPage = ({ currentUser }) => {
-  useTabTitle('Vacation Rentals, Homes, Experiences & Places - Airbnb');
-  const loading = useTimeout(3000);
-  const toggleState = useToggleState();
-  const scrollPosition = useHandleScroll();
-  const pageHeight = useHandleDocumentResize();
+  useTabTitle('Vacation Rentals, Homes, Experiences & Places - Airbnb')
+  const loading = useTimeout(3000)
+  const toggleState = useToggleState()
+  const scrollPosition = useHandleScroll()
+  const pageHeight = useHandleDocumentResize()
 
   return (
     <div
@@ -132,7 +138,7 @@ const LandingPage = ({ currentUser }) => {
               left: 0,
               right: 0,
               top: 0,
-              backgroundColor: 'rgba(0, 0, 0, 0.6)',
+              backgroundColor: 'rgba(0, 0, 0, 0.6)'
             }}
           >
             <div
@@ -161,7 +167,7 @@ const LandingPage = ({ currentUser }) => {
               left: 0,
               right: 0,
               top: 0,
-              backgroundColor: 'rgba(0, 0, 0, 0.6)',
+              backgroundColor: 'rgba(0, 0, 0, 0.6)'
             }}
           >
             <div
@@ -189,17 +195,17 @@ const LandingPage = ({ currentUser }) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
 LandingPage.getInitialProps = async (context) => {
-  const client = APIClient(context);
+  const client = APIClient(context)
   try {
-    const response = await client.get('/api/users/currentuser');
-    return response.data;
+    const response = await client.get('/api/users/currentuser')
+    return response.data
   } catch (err) {
-    return {};
+    return {}
   }
-};
+}
 
-export default LandingPage;
+export default LandingPage

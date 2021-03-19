@@ -1,15 +1,15 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
-import { groupByTwo } from '@nextbnb/design/helper/array';
+import { jsx } from 'theme-ui'
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
+import { groupByTwo } from '@nextbnb/helper/array'
 
 /**
  * Renders the nearby section
  * @param {string[]} items - List of cities which are nearby
  */
 export const NearbyTemplate: React.FC<{
-  items?: string[];
+  items?: string[]
 }> = ({
   items = [
     undefined,
@@ -19,10 +19,10 @@ export const NearbyTemplate: React.FC<{
     undefined,
     undefined,
     undefined,
-    undefined,
-  ],
+    undefined
+  ]
 }) => {
-  const displayingItems = groupByTwo(items);
+  const displayingItems = groupByTwo(items)
   return (
     <div>
       <div
@@ -38,13 +38,13 @@ export const NearbyTemplate: React.FC<{
           scrollPadding: '0 24px',
           '::-webkit-scrollbar': {
             width: 0,
-            background: 'transparent',
-          },
+            background: 'transparent'
+          }
         }}
         sx={{
           margin: ['0 -24px', '0 -24px', '0'],
           padding: ['4px 28px 4px', '4px 28px 4px', '4px 0'],
-          width: ['auto', 'auto', '100%'],
+          width: ['auto', 'auto', '100%']
         }}
       >
         {displayingItems.map((item, index) => {
@@ -52,12 +52,12 @@ export const NearbyTemplate: React.FC<{
             <div
               key={index}
               sx={{
-                width: ['100vw', 'auto', 'auto'],
+                width: ['100vw', 'auto', 'auto']
               }}
             >
               <div
                 css={{
-                  marginBottom: 10,
+                  marginBottom: 10
                 }}
               >
                 <Card
@@ -80,15 +80,15 @@ export const NearbyTemplate: React.FC<{
                 />
               </div>
             </div>
-          );
+          )
         })}
         <div
           css={{
             height: '100%',
-            width: [250, 0, 0],
+            width: [250, 0, 0]
           }}
         ></div>
       </div>
     </div>
-  );
-};
+  )
+}

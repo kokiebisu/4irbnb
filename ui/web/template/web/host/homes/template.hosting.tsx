@@ -1,8 +1,8 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
-import { Layout } from '@nextbnb/layout/dist/bundle.esm';
+import { jsx } from 'theme-ui'
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
+import { Layout } from '@nextbnb/layout/dist/bundle.esm'
 
 /**
  * Renders the priority section
@@ -13,13 +13,13 @@ export const HostingTemplate: React.FC<{}> = () => {
     <Layout variant="homes" title="How hosting works">
       <div
         css={{
-          marginTop: 16,
+          marginTop: 16
         }}
       >
         <div
           css={{
             width: '100%',
-            display: ['block', 'block', 'flex'],
+            display: ['block', 'block', 'flex']
           }}
         >
           {/* {Object.keys(types).map((type, index) => {
@@ -32,5 +32,5 @@ export const HostingTemplate: React.FC<{}> = () => {
         </div>
       </div>
     </Layout>
-  );
-};
+  )
+}

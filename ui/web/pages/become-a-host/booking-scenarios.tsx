@@ -1,20 +1,20 @@
-import Router from 'next/router';
+import Router from 'next/router'
 
-import { Layout } from '@nextbnb/layout';
-import { Prototype, $PROTOTYPE } from '@nextbnb/prototype';
+import { Layout } from '@nextbnb/layout'
+import { Prototype, $PROTOTYPE } from '@nextbnb/prototype/dist/bundle.esm'
 
 const BookingScenariosPage = () => {
   const proceed = () => {
     setTimeout(() => {
-      Router.push('/become-a-host/price');
-    }, 500);
-  };
+      Router.push('/become-a-host/price')
+    }, 500)
+  }
 
   const revert = () => {
     setTimeout(() => {
-      Router.push('/price');
-    }, 500);
-  };
+      Router.push('/price')
+    }, 500)
+  }
 
   return (
     <Layout
@@ -25,7 +25,7 @@ const BookingScenariosPage = () => {
       next={proceed}
       back={revert}
     />
-  );
-};
+  )
+}
 
-export default BookingScenariosPage;
+export default BookingScenariosPage

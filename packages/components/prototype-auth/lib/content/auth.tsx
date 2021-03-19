@@ -1,0 +1,42 @@
+import React from 'react'
+// import { useAuthDispatch, useAuthState } from "@context/auth";
+import { Email } from '@nextbnb/assets/svg/original'
+import { Apple, Facebook, Google } from '@nextbnb/assets/svg/logo'
+
+export const getAuthContents = (title: String = 'Log in', login, signup) => {
+  const auths = {
+    email: {
+      name: 'Email',
+      icon: <Email width={17} />,
+      handleClick() {
+        if (title === 'Log in') {
+          login()
+        }
+        signup()
+      }
+    },
+    facebook: {
+      name: 'Facebook',
+      icon: <Facebook width={19} />,
+      handleClick() {
+        alert('clicked facebook')
+      }
+    },
+    google: {
+      name: 'Google',
+      icon: <Google width={17} />,
+      handleClick() {
+        alert('clicked google')
+      }
+    },
+    apple: {
+      name: 'Apple',
+      icon: <Apple width={17} />,
+      handleClick() {
+        alert('clicked apple')
+      }
+    }
+  }
+
+  return auths
+}

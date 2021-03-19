@@ -1,12 +1,12 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm';
-import { Layout, $LAYOUT } from '@nextbnb/layout/dist/bundle.esm';
-import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm';
+import { jsx } from 'theme-ui'
+import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm'
+import { Layout, $LAYOUT } from '@nextbnb/layout/dist/bundle.esm'
+import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
 
 export const WorksTemplate: React.FC<{}> = () => {
-  const categories = ['design', 'share', 'submit', 'setup'];
+  const categories = ['design', 'share', 'submit', 'setup']
   return (
     <div>
       <Layout variant={$LAYOUT.homes} title="How hosting works">
@@ -16,14 +16,14 @@ export const WorksTemplate: React.FC<{}> = () => {
               <div css={{ marginBottom: 8 }} key={index}>
                 <Card variant={$CARD.works} work={category} />
               </div>
-            );
+            )
           })}
         </div>
         <div
           css={{
             marginTop: 32,
             display: 'flex',
-            justifyContent: 'center',
+            justifyContent: 'center'
           }}
         >
           <Button
@@ -34,5 +34,5 @@ export const WorksTemplate: React.FC<{}> = () => {
         </div>
       </Layout>
     </div>
-  );
-};
+  )
+}

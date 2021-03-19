@@ -1,12 +1,12 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
+import { jsx } from 'theme-ui'
 import {
   Button,
   $BUTTON,
   Bullet,
-  $BULLET,
-} from '@nextbnb/atoms/dist/bundle.esm';
+  $BULLET
+} from '@nextbnb/atoms/dist/bundle.esm'
 
 export const BannerTemplate: React.FC<{}> = () => {
   return (
@@ -14,7 +14,7 @@ export const BannerTemplate: React.FC<{}> = () => {
       css={{
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
+        alignItems: 'center'
       }}
     >
       <div css={{ margin: '16px 0' }}>
@@ -42,7 +42,7 @@ export const BannerTemplate: React.FC<{}> = () => {
         css={{
           margin: '45px 0',
           width: 550,
-          textAlign: 'center',
+          textAlign: 'center'
         }}
       >
         <h4 css={{ fontSize: 20, color: 'grey.600' }}>
@@ -56,7 +56,7 @@ export const BannerTemplate: React.FC<{}> = () => {
           margin: '16px 0',
           display: ['block', 'block', 'block', 'grid'],
           gridTemplateColumns: 'repeat(3, 1fr)',
-          columnGap: 20,
+          columnGap: 20
         }}
       >
         {['home', 'global', 'business'].map((type, index) => {
@@ -64,9 +64,9 @@ export const BannerTemplate: React.FC<{}> = () => {
             <div key={index} css={{ marginBottom: 16 }}>
               <Bullet variant={$BULLET.onlinehost} type={type} />
             </div>
-          );
+          )
         })}
       </div>
     </div>
-  );
-};
+  )
+}
