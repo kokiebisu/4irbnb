@@ -1,18 +1,18 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { useRef, useState } from 'react';
-import { Bar, $BAR } from '@nextbnb/organisms-bar/dist/bundle.esm';
-import { Modal } from '@nextbnb/organisms-modal/dist/bundle.esm';
-import { useOnClickOutside } from '@nextbnb/design/hooks/useOnClickOutside';
+import { jsx } from 'theme-ui'
+import { useRef, useState } from 'react'
+import { Bar, $BAR } from '@nextbnb/organisms-bar/dist/bundle.esm'
+import { Modal } from '@nextbnb/organisms-modal/dist/bundle.esm'
+import { useOnClickOutside } from '@nextbnb/design/hooks/useOnClickOutside'
 
 export interface PrototypeProps {
-  expanded?: boolean;
-  setExpanded?: any;
-  type?: any;
-  setCategory?: any;
-  transparent?: boolean;
-  toggleState?: any;
+  expanded?: boolean
+  setExpanded?: any
+  type?: any
+  setCategory?: any
+  transparent?: boolean
+  toggleState?: any
 }
 
 export const Prototype: React.FC<PrototypeProps> = ({
@@ -25,54 +25,54 @@ export const Prototype: React.FC<PrototypeProps> = ({
     location: false,
     checkin: false,
     checkout: false,
-    guests: false,
-  },
+    guests: false
+  }
 }) => {
-  const [selected, setSelected] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [selected, setSelected] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   useOnClickOutside(containerRef, () => {
     if (selected) {
-      setSelected(!selected);
+      setSelected(!selected)
     }
     if (expanded) {
-      setExpanded(!expanded);
+      setExpanded(!expanded)
     }
-  });
+  })
 
   const contents = {
     location: {
       styles: {
         left: 0,
-        maxWidth: 400,
-      },
+        maxWidth: 400
+      }
     },
     checkin: {
       styles: {
         left: 0,
-        maxWidth: 780,
-      },
+        maxWidth: 780
+      }
     },
     checkout: {
       styles: {
         left: 0,
-        maxWidth: 780,
-      },
+        maxWidth: 780
+      }
     },
     guests: {
       styles: {
         right: 0,
         maxWidth: 325,
         display: 'flex',
-        justifyContent: 'flex-end',
-      },
-    },
-  };
+        justifyContent: 'flex-end'
+      }
+    }
+  }
 
   return (
     <div css={{ position: 'relative' }}>
       <Bar
-        variant={$BAR.SEARCH}
+        variant={$BAR.search}
         selected={selected}
         setSelected={setSelected}
         type={type}
@@ -89,7 +89,7 @@ export const Prototype: React.FC<PrototypeProps> = ({
               top: 60,
               zIndex: 80,
               width: '100%',
-              ...contents[content].styles,
+              ...contents[content].styles
             }}
           >
             <div css={{ width: '100%' }} ref={containerRef}>
@@ -101,8 +101,8 @@ export const Prototype: React.FC<PrototypeProps> = ({
               />
             </div>
           </div>
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}
