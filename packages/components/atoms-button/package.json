@@ -51,7 +51,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "aea8625838b781eee9402ada4ecc979e746e7e6a",
   "type": "module",
   "exports": {
     "require": "./dist/bundle.cjs.js",

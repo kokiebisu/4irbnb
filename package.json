@@ -33,7 +33,7 @@
     "compile:organisms": "lerna run build --scope=@nextbnb/organisms-* && lerna run build --scope=@nextbnb/organisms",
     "version:upgrade": "lerna version --conventional-commits --yes",
     "build:storybook": "lerna run compile --scope=@nextbnb/content && lerna run build-storybook --scope=@nextbnb/components",
-    "run:storybook": "lerna run storybook --scope=@nextbnb/design"
+    "run:storybook": "lerna run storybook --scope=@nextbnb/components"
   },
   "devDependencies": {
     "lerna": "^3.22.1",
@@ -44,16 +44,10 @@
   "workspaces": {
     "packages": [
       "packages/*",
-      "ui/mobile",
-      "ui/theme",
-      "ui/web",
-      "ui/design",
-      "ui/design/animation",
-      "ui/design/particles",
-      "ui/design/layout",
-      "ui/design/components/*",
-      "services/*",
-      "components/*"
+      "packages/components/*",
+      "ui/*",
+      "ui/design/*",
+      "services/*"
     ]
   },
   "dependencies": {

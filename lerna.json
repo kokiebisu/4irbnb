@@ -1,14 +1,9 @@
 {
   "packages": [
     "packages/*",
-    "ui/mobile",
-    "ui/theme",
-    "ui/web",
-    "ui/design",
-    "ui/design/animation",
-    "ui/design/particles",
-    "ui/design/layout",
-    "ui/design/components/*",
+    "packages/components/*",
+    "ui/*",
+    "ui/design/*",
     "services/*"
   ],
   "version": "independent",
