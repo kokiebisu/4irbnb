@@ -16,7 +16,7 @@ export const LocationButton: React.FC<{
     explore: {
       icon: (
         <img
-          className="block rounded"
+          className="block rounded w-10 h-10"
           src="https://a0.muscache.com/im/pictures/fc42dde0-36a7-460e-af89-10b5e44e48d8.jpg?im_w=240&im_q=lowq"
         />
       ),

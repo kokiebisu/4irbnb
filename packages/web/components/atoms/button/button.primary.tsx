@@ -37,10 +37,10 @@ export const PrimaryButton: React.FC<{
   };
 
   const styles = {
-    common: 'text-white w-full rounded-sm',
+    common: 'text-white w-full rounded-lg',
     sm: 'text-sm py-2 px-4',
-    md: 'text-base py-5 px-8',
-    lg: 'text-base py-6 px-8',
+    md: 'text-base py-4 px-8',
+    lg: 'text-base py-5 px-8',
   };
 
   return (

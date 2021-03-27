@@ -69,7 +69,7 @@ export const Bullet: React.FC<BulletProps> = ({
   };
 
   return (
-    <div data-testid={`${variant}-bullet--atom`} className={extendsTo}>
+    <div data-testid={`${variant}-bullet`} className={extendsTo}>
       {variants[variant]}
     </div>
   );

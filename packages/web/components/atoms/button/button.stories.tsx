@@ -1,22 +1,21 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react/types-6-0";
+import React from 'react';
+import { Story, Meta } from '@storybook/react/types-6-0';
 
-import { Button, ButtonProps, $Button } from "@button";
+import { Button, ButtonProps, $Button } from '@button';
 
-import button from "@button/button.module.scss";
-import font from "@styles/font.module.scss";
-import color from "@styles/color.module.scss";
-import layout from "@styles/layout.module.scss";
-import shape from "@styles/shape.module.scss";
-import space from "@styles/space.module.scss";
-import animation from "@styles/animation.module.scss";
+import font from '@styles/font.module.scss';
+import color from '@styles/color.module.scss';
+import layout from '@styles/layout.module.scss';
+import shape from '@styles/shape.module.scss';
+import space from '@styles/space.module.scss';
+import animation from '@styles/animation.module.scss';
 
 export default {
-  title: "Atoms/Button",
+  title: 'Atoms/Button',
   component: Button,
   argTypes: {
     inverse: {
-      control: "boolean",
+      control: 'boolean',
     },
     variant: {
       control: { disable: true },
@@ -54,29 +53,29 @@ const TemplateStory: Story<ButtonProps> = (args) => <Button {...args} />;
 export const Transparent = TemplateStory.bind({});
 Transparent.args = {
   variant: $Button.TRANSPARENT,
-  content: <h3 className={[font["size--15"]].join(" ")}>Button</h3>,
+  content: <h3 className={[font['size--15']].join(' ')}>Button</h3>,
 };
 
 export const Globe = TemplateStory.bind({});
 Globe.args = {
   variant: $Button.GLOBE,
-  extendsTo: [font["text--left"]].join(" "),
+  extendsTo: [font['text--left']].join(' '),
 };
 Globe.argTypes = {
   selected: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
 export const Menu = TemplateStory.bind({});
 Menu.args = {
   variant: $Button.MENU,
-  extendsTo: [animation["hover-shadow--lg"], shape["br--30"]].join(" "),
+  extendsTo: [animation['hover-shadow--lg'], shape['br--30']].join(' '),
 };
 Menu.argTypes = {
   ...disableTitle,
   user: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
@@ -100,19 +99,19 @@ Border.args = {
 Border.argTypes = {
   size: {
     control: {
-      type: "select",
-      options: ["sm", "md", "lg"],
+      type: 'select',
+      options: ['sm', 'md', 'lg'],
     },
   },
   bold: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
 export const Banner = TemplateStory.bind({});
 Banner.args = {
   variant: $Button.BANNER,
-  extendsTo: [color["bg--white"], shape["br--6"]].join(" "),
+  extendsTo: [color['bg--white'], shape['br--6']].join(' '),
 };
 Banner.argTypes = {
   ...disableInverse,
@@ -140,7 +139,7 @@ Primary.decorators = [
 Primary.argTypes = {
   ...disableInverse,
   loading: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
@@ -151,7 +150,7 @@ Searchbar.args = {
 Searchbar.argTypes = {
   ...disableInverse,
   mini: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
@@ -171,8 +170,8 @@ Auth.decorators = [
 Auth.argTypes = {
   auth: {
     control: {
-      type: "select",
-      options: ["email", "facebook", "google", "apple"],
+      type: 'select',
+      options: ['email', 'facebook', 'google', 'apple'],
     },
   },
 };
@@ -184,8 +183,8 @@ Paginate.args = {
 Paginate.argTypes = {
   direction: {
     control: {
-      type: "select",
-      options: ["left", "right"],
+      type: 'select',
+      options: ['left', 'right'],
     },
   },
 };
@@ -206,7 +205,7 @@ Filter.args = {
 };
 Filter.argTypes = {
   inverse: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
@@ -217,8 +216,8 @@ Modal.args = {
 Modal.argTypes = {
   modalType: {
     control: {
-      type: "select",
-      options: ["close", "back"],
+      type: 'select',
+      options: ['close', 'back'],
     },
   },
 };
@@ -239,7 +238,7 @@ Search.args = {
 };
 Search.argTypes = {
   expand: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
@@ -255,8 +254,8 @@ Location.args = {
 Location.argTypes = {
   type: {
     control: {
-      type: "select",
-      options: ["explore", "recent"],
+      type: 'select',
+      options: ['explore', 'recent'],
     },
   },
 };

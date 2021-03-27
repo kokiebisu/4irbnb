@@ -1,8 +1,8 @@
-import { AnimatePresence, motion } from "framer-motion";
-import React, { useRef, useState } from "react";
-import { Animation } from "@animation";
-import { Button, $Button } from "@button";
-import { useTimeout } from "@hooks/useTimeout";
+import { AnimatePresence, motion } from 'framer-motion';
+import React, { useRef, useState } from 'react';
+import { Animation } from '@animation';
+import { Button, $Button } from '@button';
+import { useTimeout } from '@hooks/useTimeout';
 
 export const Video: React.FC<{ videoUrl?: string }> = ({ videoUrl }) => {
   const videoRef = useRef<HTMLVideoElement>();
@@ -10,22 +10,8 @@ export const Video: React.FC<{ videoUrl?: string }> = ({ videoUrl }) => {
   const [play, setPlay] = useState(true);
 
   return (
-    <motion.div
-      style={{
-        position: "absolute",
-        height: "100%",
-        width: "100%",
-        cursor: "pointer",
-        borderRadius: 10,
-      }}
-    >
-      <motion.div
-        style={{
-          position: "relative",
-          height: "100%",
-          width: "100%",
-        }}
-      >
+    <motion.div className="absolute h-full w-full cursor-pointer rounded-md">
+      <motion.div className="relative h-full w-full">
         <AnimatePresence>
           {!isLoading ? (
             <motion.div
@@ -33,29 +19,14 @@ export const Video: React.FC<{ videoUrl?: string }> = ({ videoUrl }) => {
               exit={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               initial={{ opacity: 0 }}
-              style={{
-                position: "absolute",
-                zIndex: 20,
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-              }}
+              className="absolute z-20 top-1/2 left-1/2 transform translate-x-1/2 translate-y-1/2"
             >
               <Animation variant="loading" />
             </motion.div>
           ) : (
             <motion.video
               key="loaded"
-              style={{
-                width: "100%",
-                height: "auto",
-                position: "absolute",
-                zIndex: 10,
-                borderRadius: 10,
-                transform: "translateX(-50%) translateY(-50%)",
-                top: "50%",
-                left: "50%",
-              }}
+              className="w-full h-auto absolute z-10 rounded-md transform translate-x-1/2 translate-y-1/2 top-1/2 left-1/2"
               exit={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               initial={{ opacity: 0 }}
@@ -63,8 +34,6 @@ export const Video: React.FC<{ videoUrl?: string }> = ({ videoUrl }) => {
               muted
               playsInline
               autoPlay
-              // height="fit-content"
-
               loop
             >
               <source src={videoUrl} type="video/mp4"></source>
@@ -72,11 +41,10 @@ export const Video: React.FC<{ videoUrl?: string }> = ({ videoUrl }) => {
           )}
         </AnimatePresence>
         <div
+          className="absolute z-40"
           style={{
-            position: "absolute",
-            bottom: "2%",
-            left: "2%",
-            zIndex: 40,
+            bottom: '2%',
+            left: '2%',
           }}
         >
           <motion.div

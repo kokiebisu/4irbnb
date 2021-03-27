@@ -8,8 +8,8 @@ export const TransparentButton: React.FC<{
 }> = ({ inverse = false, content }) => {
   return (
     <div
-      className={`rounded-lg flex items-center bg-transparent py-3 px-4 ${
-        inverse ? 'hover:bg-transparent' : 'hover:bg-gray-200'
+      className={`rounded-full flex items-center bg-transparent py-3 px-4 ${
+        inverse ? 'hover:bg-transparent' : 'hover:bg-gray-100'
       }`}
     >
       {content}
