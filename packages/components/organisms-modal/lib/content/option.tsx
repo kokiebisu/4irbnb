@@ -1,4 +1,4 @@
-import { usePost } from '@nextbnb/hooks/dist/bundle.cjs'
+import { usePost } from '@nextbnb/hooks/dist/bundle.esm'
 
 export const getOptionContents = (
   toggleDispatch: any,

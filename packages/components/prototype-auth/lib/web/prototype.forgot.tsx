@@ -5,7 +5,7 @@ import { useFormik } from 'formik'
 import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm'
 import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm'
 import { Bullet, $BULLET } from '@nextbnb/atoms-bullet/dist/bundle.esm'
-import { validateForgotPassword as validate } from '@nextbnb/helper/dist/bundle.cjs'
+import { validateForgotPassword as validate } from '@nextbnb/helper/dist/bundle.esm'
 
 /**
  * Renders the login template component

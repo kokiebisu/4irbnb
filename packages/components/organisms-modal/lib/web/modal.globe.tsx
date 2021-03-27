@@ -1,18 +1,15 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { useState } from 'react';
-import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
-import {
-  Prototype,
-  $PROTOTYPE,
-} from '@nextbnb/prototype-globe/dist/bundle.esm';
-import { $MODAL } from '../constant/appearance';
+import { jsx } from 'theme-ui'
+import { useState } from 'react'
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm'
+import { Prototype, $PROTOTYPE } from '@nextbnb/prototype-globe/dist/bundle.esm'
+import { $MODAL } from '../constant/appearance'
 
 const GlobeModal: React.FC<{ toggleDispatch: (params) => void }> = ({
-  toggleDispatch,
+  toggleDispatch
 }) => {
-  const [prototype, setPrototype] = useState($PROTOTYPE.language);
+  const [prototype, setPrototype] = useState($PROTOTYPE.language)
   return (
     <div>
       <div>
@@ -29,7 +26,7 @@ const GlobeModal: React.FC<{ toggleDispatch: (params) => void }> = ({
           css={{
             display: 'flex',
             alignItems: 'center',
-            marginBottom: 50,
+            marginBottom: 50
           }}
         >
           <div css={{ marginRight: 32 }}>
@@ -56,8 +53,8 @@ const GlobeModal: React.FC<{ toggleDispatch: (params) => void }> = ({
         <Prototype variant={prototype} />
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const globe = (props) => {
   return {
@@ -67,8 +64,8 @@ export const globe = (props) => {
         maxWidth: 720,
         padding: 25,
         height: 'fit-content',
-        borderRadius: 16,
-      },
-    },
-  };
-};
+        borderRadius: 16
+      }
+    }
+  }
+}

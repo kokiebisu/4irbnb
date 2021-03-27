@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui'
 import { useState } from 'react'
 import { styleInput, styleLabel, styleContainer } from './styling.text'
 import { $INPUT } from '../constant/appearance'
-import { validateEmail } from '@nextbnb/helper/dist/bundle.cjs'
+import { validateEmail } from '@nextbnb/helper/dist/bundle.esm'
 
 /**
  * Renders the text input component

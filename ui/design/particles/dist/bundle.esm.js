@@ -1,4 +1,4 @@
-import{jsx as e,ThemeProvider as t}from"theme-ui";import r,{createElement as n,useState as i,useRef as a,useLayoutEffect as o}from"react";import"@nextbnb/design/assets/styles/global.css";import{motion as l}from"framer-motion";
+import{jsx as e,ThemeProvider as t}from"theme-ui";import r,{createElement as n,useState as i,useRef as a,useLayoutEffect as o}from"react";import"@nextbnb/assets/styles/global.css";import{motion as l}from"framer-motion";
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
 

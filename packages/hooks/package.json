@@ -10,8 +10,11 @@
     "react": "^17.0.1"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "clean": "rm -rf dist",
+    "build": "yarn clean && rollup --config rollup.config.js --environment NODE_ENV:production"
   },
   "gitHead": "aea8625838b781eee9402ada4ecc979e746e7e6a",
-  "files": []
+  "files": [
+    "dist"
+  ]
 }

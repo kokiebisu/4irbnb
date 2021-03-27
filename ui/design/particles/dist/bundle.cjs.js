@@ -1,4 +1,4 @@
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("theme-ui"),t=require("react");require("@nextbnb/design/assets/styles/global.css");var r=require("framer-motion");function n(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}var a=n(t),i=function(){return(i=Object.assign||function(e){for(var t,r=1,n=arguments.length;r<n;r++)for(var a in t=arguments[r])Object.prototype.hasOwnProperty.call(t,a)&&(e[a]=t[a]);return e}).apply(this,arguments)};
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0});var e=require("theme-ui"),t=require("react");require("@nextbnb/assets/styles/global.css");var r=require("framer-motion");function n(e){return e&&"object"==typeof e&&"default"in e?e:{default:e}}var a=n(t),i=function(){return(i=Object.assign||function(e){for(var t,r=1,n=arguments.length;r<n;r++)for(var a in t=arguments[r])Object.prototype.hasOwnProperty.call(t,a)&&(e[a]=t[a]);return e}).apply(this,arguments)};
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
 

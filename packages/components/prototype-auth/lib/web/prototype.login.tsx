@@ -10,8 +10,8 @@ import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm'
 import { Bullet, $BULLET } from '@nextbnb/atoms-bullet/dist/bundle.esm'
 import { Card, $CARD } from '@nextbnb/molecules-card/dist/bundle.esm'
 
-import { validateLogin as validate } from '@nextbnb/helper/dist/bundle.cjs'
-import { usePost } from '@nextbnb/hooks/dist/bundle.cjs'
+import { validateLogin as validate } from '@nextbnb/helper/dist/bundle.esm'
+import { usePost } from '@nextbnb/hooks/dist/bundle.esm'
 
 /**
  * Renders the login template component

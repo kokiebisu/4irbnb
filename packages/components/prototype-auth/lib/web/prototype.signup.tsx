@@ -7,8 +7,8 @@ import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm'
 import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm'
 import { Bullet, $BULLET } from '@nextbnb/atoms-bullet/dist/bundle.esm'
 
-import { validateSignup as validate } from '@nextbnb/helper/dist/bundle.cjs'
-import { usePost } from '@nextbnb/hooks/dist/bundle.cjs'
+import { validateSignup as validate } from '@nextbnb/helper/dist/bundle.esm'
+import { usePost } from '@nextbnb/hooks/dist/bundle.esm'
 
 /**
  * Renders the signup template component

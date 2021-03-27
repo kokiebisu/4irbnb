@@ -2,10 +2,10 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { useFormik } from 'formik'
-import { Input, $INPUT } from '@nextbnb/atoms-input'
-import { Button, $BUTTON } from '@nextbnb/atoms-button'
+import { Input, $INPUT } from '@nextbnb/atoms-input/dist/bundle.esm'
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm'
 import { getAuthContents } from '../content/auth'
-import { validateAuth as validate } from '@nextbnb/helper/dist/bundle.cjs'
+import { validateAuth as validate } from '@nextbnb/helper/dist/bundle.esm'
 
 /**
  * Renders the auth template component

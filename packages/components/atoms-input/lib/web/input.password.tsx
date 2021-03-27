@@ -1,11 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { useState } from 'react';
-import { styleInput, styleLabel, styleContainer } from './styling.text';
-import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm.js';
-import { $INPUT } from '../constant/appearance';
-import { validatePassword } from '@nextbnb/helper/dist/bundle.cjs';
+import { jsx } from 'theme-ui'
+import { useState } from 'react'
+import { styleInput, styleLabel, styleContainer } from './styling.text'
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm'
+import { $INPUT } from '../constant/appearance'
+import { validatePassword } from '@nextbnb/helper/dist/bundle.esm'
 
 /**
  * Renders the text input component
@@ -17,22 +17,22 @@ import { validatePassword } from '@nextbnb/helper/dist/bundle.cjs';
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
 const PasswordInput: React.FC<{
-  handleChange?: any;
-  value?: string;
-  direction?: string;
-  errors?: boolean;
+  handleChange?: any
+  value?: string
+  direction?: string
+  errors?: boolean
 }> = ({ handleChange, value = null, direction, errors = false }) => {
-  const [inputValue, setInputValue] = useState('');
-  const [fieldActive, setFieldActive] = useState(false);
-  const [hide, setHide] = useState(true);
+  const [inputValue, setInputValue] = useState('')
+  const [fieldActive, setFieldActive] = useState(false)
+  const [hide, setHide] = useState(true)
 
   const activateField = () => {
-    setFieldActive(true);
-  };
+    setFieldActive(true)
+  }
 
   const deactivateField = () => {
-    setFieldActive(false);
-  };
+    setFieldActive(false)
+  }
 
   // const renderShape = () => {
   //   switch (direction) {
@@ -62,10 +62,10 @@ const PasswordInput: React.FC<{
   // };
 
   const handleinputValue = (e) => {
-    setInputValue(e.target.value);
-  };
+    setInputValue(e.target.value)
+  }
 
-  const displayingValue = typeof value === 'string' ? value : inputValue;
+  const displayingValue = typeof value === 'string' ? value : inputValue
 
   return (
     <div
@@ -74,21 +74,21 @@ const PasswordInput: React.FC<{
         position: 'relative',
         padding: '6px 12px',
         display: 'flex',
-        alignItems: 'center',
+        alignItems: 'center'
       }}
       sx={{
         ...styleContainer(
           errors,
           fieldActive,
           validatePassword(displayingValue)
-        ),
+        )
       }}
     >
       <div
         css={{
           position: 'relative',
           height: '100%',
-          width: '100%',
+          width: '100%'
         }}
       >
         <input
@@ -111,17 +111,17 @@ const PasswordInput: React.FC<{
             top: 0,
             outline: 'none',
             paddingTop: 20,
-            color: 'rgb(104, 104, 104)',
+            color: 'rgb(104, 104, 104)'
           }}
           sx={{
             '::placeholder': {
-              color: 'black',
+              color: 'black'
             },
             ...styleInput(
               errors,
               fieldActive,
               validatePassword(displayingValue)
-            ),
+            )
           }}
           placeholder={fieldActive ? 'Password' : undefined}
         />
@@ -133,7 +133,7 @@ const PasswordInput: React.FC<{
               fieldActive,
               validatePassword(displayingValue),
               displayingValue
-            ),
+            )
           }}
         >
           Password
@@ -144,7 +144,7 @@ const PasswordInput: React.FC<{
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          marginLeft: 18,
+          marginLeft: 18
         }}
       >
         <Button
@@ -155,14 +155,14 @@ const PasswordInput: React.FC<{
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
 export const password = (props) => {
   return {
     [$INPUT.password]: {
       component: <PasswordInput {...props} />,
-      css: {},
-    },
-  };
-};
+      css: {}
+    }
+  }
+}
