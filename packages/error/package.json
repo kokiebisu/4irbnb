@@ -1,5 +1,5 @@
 {
-  "name": "@airbnb/error",
+  "name": "@nextbnb/error",
   "version": "1.0.0",
   "main": "build/index",
   "license": "MIT",

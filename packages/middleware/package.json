@@ -1,5 +1,5 @@
 {
-  "name": "@airbnb/middleware",
+  "name": "@nextbnb/middleware",
   "version": "1.0.0",
   "main": "./build/index.js",
   "license": "MIT",
