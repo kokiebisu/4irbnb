@@ -1,16 +1,16 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 /** styles **/
-import shape from "@styles/shape.module.scss";
-import color from "@styles/color.module.scss";
-import space from "@styles/space.module.scss";
-import layout from "@styles/layout.module.scss";
-import font from "@styles/font.module.scss";
-import input from "@input/input.module.scss";
+import shape from '@styles/shape.module.scss';
+import color from '@styles/color.module.scss';
+import space from '@styles/space.module.scss';
+import layout from '@styles/layout.module.scss';
+import font from '@styles/font.module.scss';
+import input from '@input/input.module.scss';
 
 /** Styling */
-import { styleInput, styleLabel, styleContainer } from "./styling.select";
-import { ChevronDown, ChevronTop } from "@svg/regular";
+import { styleInput, styleLabel, styleContainer } from './styling.select';
+import { ChevronDown, ChevronTop } from '@svg/regular';
 
 /**
  * Renders the text input component
@@ -31,67 +31,32 @@ export const GuestsInput: React.FC<{
 
   const renderShape = () => {
     switch (direction) {
-      case "top":
-        return [
-          color["b-b--white__3"],
-          color["b-l--white__3"],
-          color["b-r--white__3"],
-          shape["bbr--6"],
-        ].join(" ");
-      case "bottom":
-        return [
-          color["b-t--white__3"],
-          color["b-l--white__3"],
-          color["b-r--white__3"],
-          shape["btr--6"],
-        ].join(" ");
+      case 'top':
+        return 'border-b border-l border-r border-gray-400 rounded-b-lg';
+      case 'bottom':
+        return 'border-t border-l border-r border-gray-400 rounded-t-lg';
       default:
-        return [color["b--white__3"], shape["br--8"]].join(" ");
+        return 'border border-gray-400 rounded-lg';
     }
   };
 
   return (
-    <div
-      style={{ height: 50 }}
-      className={`${[
-        layout["flex"],
-        input["outside"],
-        layout["relative"],
-        layout["items-center"],
-      ].join(" ")} `}
-    >
+    <div className="h-12 flex relative items-center">
       <div
-        className={`${renderShape()} ${styleContainer(
+        className={`px-3 relative h-full w-full flex justify-between ${renderShape()} ${styleContainer(
           errors,
           fieldActive,
           value
         )}`}
-        style={{
-          padding: "0 12px",
-          position: "relative",
-          height: "100%",
-          width: "100%",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
       >
         <select
-          style={{ height: "100%", outline: "none" }}
+          style={{ height: '100%', outline: 'none' }}
           id="guests"
           onChange={handleChange}
           value={value}
           onFocus={() => setFieldActive(true)}
           onBlur={() => setFieldActive(false)}
-          className={`${[
-            layout["justify-between"],
-            shape["br--4"],
-            space["p--0"],
-            shape["w--full"],
-            layout["block"],
-            color["b--0"],
-            font["size--14"],
-            font["weight--300"],
-          ].join(" ")}`}
+          className="justify-between rounded p-0 w-full block border-none text-sm font-light"
         >
           <option value="1">1 guest</option>
           <option value="2">2 guests</option>
@@ -99,7 +64,7 @@ export const GuestsInput: React.FC<{
           <option value="4">4 guests</option>
           <option value="5">5 guests</option>
         </select>
-        <div className={[layout["flex"], layout["items-center"]].join(" ")}>
+        <div className="flex items-center">
           {fieldActive ? <ChevronTop width={13} /> : <ChevronDown width={13} />}
         </div>
       </div>

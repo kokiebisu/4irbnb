@@ -1,18 +1,6 @@
-import { useState } from "react";
-
-/** styles */
-import shape from "@styles/shape.module.scss";
-import color from "@styles/color.module.scss";
-import space from "@styles/space.module.scss";
-import layout from "@styles/layout.module.scss";
-import font from "@styles/font.module.scss";
-
-/** styles */
-import input from "@input/input.module.scss";
-import { styleInput, styleLabel, styleContainer } from "./styling.text";
-
-/** helpers */
-import { checkEmail } from "@helper/auth";
+import { useState } from 'react';
+import { styleInput, styleLabel, styleContainer } from './styling.text';
+import { checkEmail } from '@helper/auth';
 
 /**
  * Renders the text input component
@@ -41,47 +29,24 @@ export const EmailInput: React.FC<{
 
   const renderShape = () => {
     switch (direction) {
-      case "top":
-        return [
-          color["b-b--white__3"],
-          color["b-l--white__3"],
-          color["b-r--white__3"],
-          shape["bbr--10"],
-        ].join(" ");
-      case "bottom":
-        return [
-          color["b-t--white__3"],
-          color["b-l--white__3"],
-          color["b-r--white__3"],
-          shape["btr--10"],
-        ].join(" ");
+      case 'top':
+        return 'border-b border-l border-r border-gray-400 rounded-br-lg';
+      case 'bottom':
+        return 'border-t border-l border-r border-gray-300 rounded-tr-lg';
       default:
-        return [color["b--white__3"], shape["br--10"]].join(" ");
+        return 'border rounded-lg border-gray-400';
     }
   };
 
   return (
     <div
-      style={{ height: 60 }}
-      className={`${[
-        input["outside"],
-        layout["relative"],
-        space["p-v--6"],
-        space["p-h--12"],
-        layout["items-center"],
-      ].join(" ")} ${renderShape()} ${styleContainer(
+      className={`h-16 relative py-2 px-4 items-center ${renderShape()} ${styleContainer(
         errors,
         fieldActive,
         checkEmail(value)
       )}`}
     >
-      <div
-        style={{
-          position: "relative",
-          height: "100%",
-          width: "100%",
-        }}
-      >
+      <div className="relative w-full h-full">
         <input
           autoFocus={true}
           id="email"
@@ -91,27 +56,16 @@ export const EmailInput: React.FC<{
           value={value}
           onFocus={activateField}
           onBlur={deactivateField}
-          className={`${[
-            space["p--0"],
-            shape["w--full"],
-            layout["block"],
-            color["b--0"],
-            font["size--16"],
-            font["weight--300"],
-            color["c__placeholder--black"],
-            input["input"],
-          ].join(" ")} ${styleInput(errors, fieldActive, checkEmail(value))}`}
-          placeholder={fieldActive ? "Email" : undefined}
+          className={`pt-4 w-full block border-none text-base font-light outline-none ${styleInput(
+            errors,
+            fieldActive,
+            checkEmail(value)
+          )}`}
+          placeholder={fieldActive ? 'Email' : undefined}
         />
         <label
           htmlFor="email"
-          className={`${[
-            layout["absolute"],
-            font["size--12"],
-            color["c--gray__1"],
-            font["weight--100"],
-            input["label"],
-          ].join(" ")} ${styleLabel(
+          className={`absolute text-gray-400 font-thin transition ease-in-out ${styleLabel(
             errors,
             fieldActive,
             checkEmail(value),

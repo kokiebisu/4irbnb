@@ -1,13 +1,11 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 
 import { Button, ButtonProps, $Button } from '@button';
 
 import font from '@styles/font.module.scss';
 import color from '@styles/color.module.scss';
-import layout from '@styles/layout.module.scss';
 import shape from '@styles/shape.module.scss';
-import space from '@styles/space.module.scss';
 import animation from '@styles/animation.module.scss';
 
 export default {
@@ -268,4 +266,9 @@ Nearby.args = {
 export const Destination = TemplateStory.bind({});
 Destination.args = {
   variant: $Button.DESTINATION,
+};
+
+export const Closed = TemplateStory.bind({});
+Closed.args = {
+  variant: $Button.CLOSED,
 };

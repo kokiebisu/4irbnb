@@ -1,10 +1,10 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react/types-6-0";
+import React from 'react';
+import { Story, Meta } from '@storybook/react/types-6-0';
 
-import { Input, InputProps, $Input } from "@input";
+import { Input, InputProps, $Input } from '@input';
 
 export default {
-  title: "Atoms/Input",
+  title: 'Atoms/Input',
   component: Input,
   argTypes: {
     extendsTo: {
@@ -34,8 +34,8 @@ name.args = {
 name.argTypes = {
   name: {
     control: {
-      type: "select",
-      options: ["firstname", "lastname"],
+      type: 'select',
+      options: ['firstname', 'lastname'],
     },
   },
 };
@@ -96,7 +96,7 @@ checkbox.args = {
 };
 checkbox.argTypes = {
   checked: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
@@ -118,6 +118,11 @@ closed.args = {
 export const price = TemplateStory.bind({});
 price.args = {
   variant: $Input.PRICE,
+};
+
+export const limit = TemplateStory.bind({});
+limit.args = {
+  variant: $Input.LIMIT,
 };
 
 export const photo = TemplateStory.bind({});
