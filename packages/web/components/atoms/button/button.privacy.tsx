@@ -1,11 +1,3 @@
-/** styles **/
-import layout from '@styles/layout.module.scss';
-import font from '@styles/font.module.scss';
-import space from '@styles/space.module.scss';
-import color from '@styles/color.module.scss';
-import shape from '@styles/shape.module.scss';
-import responsive from '@styles/responsive.module.scss';
-
 /**
  * Renders the privacy button component
  * @param {string} title - Title of the button
@@ -17,7 +9,7 @@ export const PrivacyButton: React.FC<{ title?: string; inverse?: boolean }> = ({
 }) => {
   return (
     <div
-      className={`block sm:flex whitespace-nowrap py-5 px-6 font-medium rounded-sm w-full text-sm justify-center ${
+      className={`block sm:flex whitespace-nowrap py-2 px-3 font-medium rounded-md w-full text-sm justify-center ${
         inverse
           ? 'bg-gray-300 border-transparent border'
           : 'bg-transparent border border-block'

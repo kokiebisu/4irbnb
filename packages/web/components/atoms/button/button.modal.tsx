@@ -14,7 +14,7 @@ export const ModalButton: React.FC<{ modal?: string }> = ({
   };
   return (
     <div
-      className="bg-transparent p-3 rounded-full"
+      className="bg-transparent p-3 rounded-full hover:bg-gray-200"
       // className={[
 
       //   button['hover__close'],

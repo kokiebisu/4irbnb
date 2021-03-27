@@ -33,7 +33,7 @@ export const BorderButton: React.FC<{
   };
 
   const styles = {
-    common: 'text-center rounde whitespace-nowrap',
+    common: 'text-center rounded whitespace-nowrap',
     sm: 'text-sm py-2 px-4',
     md: 'text-base py-3 px-5',
     lg: 'text-lg py-4 px-6',

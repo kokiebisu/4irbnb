@@ -1,6 +1,8 @@
 /**
  * Renders the Current Button component
- * @param param0
+ * @param name
+ * @param abbreviation
+ * @param symbol
  * @returns
  */
 export const CurrencyButton: React.FC<{
@@ -9,15 +11,12 @@ export const CurrencyButton: React.FC<{
   symbol?: string;
 }> = ({ name, abbreviation, symbol }) => {
   return (
-    <div
-      className="p--4 rounded"
-      // animation["hover-background--white__1"],
-    >
+    <div className={`pl-3 pr-8 py-3 rounded-md hover:bg-gray-100`}>
       <div>
         <p className="text-sm text-black">{name}</p>
       </div>
       <div>
-        <p className="text-sm text-gray-200">
+        <p className="text-sm text-gray-400">
           <span>{abbreviation}</span>
           <span> - </span>
           <span>{symbol}</span>

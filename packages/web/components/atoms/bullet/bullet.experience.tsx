@@ -1,10 +1,4 @@
-/** vectors */
 import { Activities, Computer, Host } from '@svg/original';
-
-/** styles **/
-import layout from '@styles/layout.module.scss';
-import font from '@styles/font.module.scss';
-import space from '@styles/space.module.scss';
 
 /**
  * Renders the experience bullet

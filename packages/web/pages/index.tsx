@@ -1,49 +1,42 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from 'framer-motion';
 
-import { useToggleState } from "@context/toggle";
+import { useToggleState } from '@context/toggle';
 
-import index from "@styles/index.module.scss";
-import layout from "@styles/layout.module.scss";
-import space from "@styles/space.module.scss";
-import color from "@styles/color.module.scss";
-import shape from "@styles/shape.module.scss";
+import index from '@styles/index.module.scss';
+import layout from '@styles/layout.module.scss';
+import space from '@styles/space.module.scss';
+import color from '@styles/color.module.scss';
+import shape from '@styles/shape.module.scss';
 
-import {
-  categoryItems,
-  anywhereItems,
-  destinationItems,
-} from "@airbnb/content";
+import { categoryItems, anywhereItems, destinationItems } from '../content';
 
-import { nearbyItems } from "../data/nearby";
+import { nearbyItems } from '../data/nearby';
 
-import { Layout } from "@layout";
+import { Layout } from '@layout';
 
-import { Animation } from "@animation";
-import { Modal, $Modal } from "@modal";
-import { Template, $Template } from "@template/index";
-import { Footer } from "@footer";
+import { Animation } from '@animation';
+import { Modal, $Modal } from '@modal';
+import { Template, $Template } from '@template/index';
+import { Footer } from '@footer';
 
-import { Bar, $Bar } from "@bar";
+import { Bar, $Bar } from '@bar';
 
-import { useHandleScroll } from "@hooks/useHandleScroll";
-import { useHandleDocumentResize } from "@hooks/useHandleDocumentResize";
-import { useTimeout } from "@hooks/useTimeout";
-import { useTabTitle } from "@hooks/useTabTitle";
+import { useHandleScroll } from '@hooks/useHandleScroll';
+import { useHandleDocumentResize } from '@hooks/useHandleDocumentResize';
+import { useTimeout } from '@hooks/useTimeout';
+import { useTabTitle } from '@hooks/useTabTitle';
 
-import { APIClient } from "../api/client";
+import { APIClient } from '../api/client';
 
 const LandingPage = ({ currentUser }) => {
-  useTabTitle("Vacation Rentals, Homes, Experiences & Places - Airbnb");
+  useTabTitle('Vacation Rentals, Homes, Experiences & Places - Airbnb');
   const loading = useTimeout(3000);
   const toggleState = useToggleState();
   const scrollPosition = useHandleScroll();
   const pageHeight = useHandleDocumentResize();
 
   return (
-    <div
-      style={{ overflowX: "hidden" }}
-      className={[layout["relative"], shape["min-h--fullv"]].join(" ")}
-    >
+    <div className="relative min-h-screen overflow-x-hidden">
       <div>
         <div>
           <Bar variant={$Bar.COVID} />
@@ -57,7 +50,7 @@ const LandingPage = ({ currentUser }) => {
             <Layout variant="landing" title="Live anywhere" spread>
               <Template variant={$Template.ANYWHERE} items={anywhereItems} />
             </Layout>
-            <div className={space["m-v--32"]}></div>
+            <div className="my-12"></div>
             <Layout
               dark
               spread
@@ -86,27 +79,13 @@ const LandingPage = ({ currentUser }) => {
             </Layout>
           </>
         ) : (
-          <div
-            className={[
-              space["m-v--22"],
-              layout["flex"],
-              layout["items-center"],
-              layout["justify-center"],
-            ].join(" ")}
-          >
+          <div className="my-11 flex items-center justify-center">
             <Animation type="loading" dark />
           </div>
         )}
         <Footer spread />
-        <div
-          style={{ position: "fixed", width: "100%", zIndex: 50 }}
-          className={[
-            layout["fb--0"],
-            layout["flex"],
-            layout["justify-center"],
-          ].join(" ")}
-        >
-          <div className={[index["m__privacy"]].join(" ")}>
+        <div className="fixed w-full z-50 bottom-0 flex justify-center">
+          <div className={[index['m__privacy']].join(' ')}>
             <Modal
               variant={$Modal.PRIVACY}
               criteria={toggleState.privacy}
@@ -122,40 +101,20 @@ const LandingPage = ({ currentUser }) => {
               exit={{ y: 60 }}
               initial={{ y: 0 }}
               transition={{ duration: 0.5 }}
-              className={index["none__menubar"]}
+              className={index['none__menubar']}
             >
-              <div
-                className={[layout["fixed"], shape["w--full"]].join(" ")}
-                style={{ zIndex: 30, bottom: 0 }}
-              >
+              <div className="fixed w-full z-30 bottom-0">
                 <Bar
                   variant={$Bar.MENU}
-                  extendsTo={[color["b-t--white__2"]].join(" ")}
+                  extendsTo={[color['b-t--white__2']].join(' ')}
                 />
               </div>
             </motion.div>
           )}
         </AnimatePresence>
         {toggleState.auth && (
-          <div
-            style={{
-              position: "fixed",
-              zIndex: 60,
-              bottom: 0,
-              left: 0,
-              right: 0,
-              top: 0,
-              backgroundColor: "rgba(0, 0, 0, 0.6)",
-            }}
-          >
-            <div
-              className={[
-                layout["flex"],
-                layout["justify-center"],
-                layout["items-center"],
-                shape["h--100v"],
-              ].join(" ")}
-            >
+          <div className="fixed z-50 bottom-0 left-0 right-0 top-0 bg-black bg-opacity-50">
+            <div className="flex justify-center items-center h-screen">
               <Modal
                 variant={$Modal.AUTH}
                 animate="slideup"
@@ -168,31 +127,31 @@ const LandingPage = ({ currentUser }) => {
         {toggleState.globe && (
           <div
             style={{
-              position: "fixed",
+              position: 'fixed',
               zIndex: 60,
               bottom: 0,
               left: 0,
               right: 0,
               top: 0,
-              backgroundColor: "rgba(0, 0, 0, 0.6)",
+              backgroundColor: 'rgba(0, 0, 0, 0.6)',
             }}
           >
             <div
               className={[
-                layout["flex"],
-                layout["justify-center"],
-                layout["items-center"],
-                shape["h--100v"],
-              ].join(" ")}
+                layout['flex'],
+                layout['justify-center'],
+                layout['items-center'],
+                shape['h--100v'],
+              ].join(' ')}
             >
               <Modal
                 variant={$Modal.GLOBE}
                 extendsTo={[
-                  shape["w--full"],
-                  shape["h--full"],
-                  space["p--40"],
-                  shape["max-w--1100"],
-                ].join(" ")}
+                  shape['w--full'],
+                  shape['h--full'],
+                  space['p--40'],
+                  shape['max-w--1100'],
+                ].join(' ')}
                 animate="slideup"
                 criteria={toggleState.globe}
                 lock
@@ -208,7 +167,7 @@ const LandingPage = ({ currentUser }) => {
 LandingPage.getInitialProps = async (context) => {
   const client = APIClient(context);
   try {
-    const response = await client.get("/api/users/currentuser");
+    const response = await client.get('/api/users/currentuser');
     return response.data;
   } catch (err) {
     return {};

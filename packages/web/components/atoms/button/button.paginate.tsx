@@ -1,10 +1,3 @@
-/** styles **/
-import color from '@styles/color.module.scss';
-import space from '@styles/space.module.scss';
-import shape from '@styles/shape.module.scss';
-import button from '@button/button.module.scss';
-
-/** vectors */
 import { ChevronLeft, ChevronRight } from '@svg/regular';
 
 /**
