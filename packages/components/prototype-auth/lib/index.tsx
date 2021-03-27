@@ -1,19 +1,20 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { generateVariants } from './utils/variants';
-import { jsx } from 'theme-ui';
-import { PLATFORM } from './constant/platform';
-import { webVariants } from './web/variants';
-import { $PROTOTYPE } from './constant/appearance';
+import { generateVariants } from './utils/variants'
+import { jsx, ThemeProvider } from 'theme-ui'
+import { PLATFORM } from './constant/platform'
+import { webVariants } from './web/variants'
+import { $PROTOTYPE } from './constant/appearance'
+import { theme } from '@nextbnb/theme'
 
-export { $PROTOTYPE };
+export { $PROTOTYPE }
 
 export interface PrototypeProps {
-  variant?: string;
-  place?: string;
-  stayType?: string | string[];
-  characteristics?: string;
-  [property: string]: any;
+  variant?: string
+  place?: string
+  stayType?: string | string[]
+  characteristics?: string
+  [property: string]: any
 }
 
 export const Prototype: React.FC<PrototypeProps> = ({
@@ -21,13 +22,15 @@ export const Prototype: React.FC<PrototypeProps> = ({
   variant = $PROTOTYPE.login,
   ...props
 }) => {
-  const variants = generateVariants(platform, webVariants, props);
+  const variants = generateVariants(platform, webVariants, props)
   return (
-    <div
-      sx={{ ...variants[variant].css }}
-      data-testid={`${variant}-auth-prototype`}
-    >
-      {variants[variant].component}
-    </div>
-  );
-};
+    <ThemeProvider theme={theme}>
+      <div
+        sx={{ ...variants[variant].css }}
+        data-testid={`${variant}-auth-prototype`}
+      >
+        {variants[variant].component}
+      </div>
+    </ThemeProvider>
+  )
+}

@@ -1,16 +1,17 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { $BAR } from './constant/appearance';
-import { webVariants } from './web/variants';
-import { generateVariants } from './utils/variants';
-import { PLATFORM } from './constant/platform';
+import { jsx, ThemeProvider } from 'theme-ui'
+import { $BAR } from './constant/appearance'
+import { webVariants } from './web/variants'
+import { generateVariants } from './utils/variants'
+import { PLATFORM } from './constant/platform'
+import { theme } from '@nextbnb/theme'
 
-export { $BAR };
+export { $BAR }
 
 export interface BarProps {
-  variant: string;
-  [property: string]: any;
+  variant: string
+  [property: string]: any
 }
 
 /**
@@ -22,11 +23,13 @@ export const Bar: React.FC<BarProps> = ({
   variant = $BAR.availability,
   ...props
 }) => {
-  const variants = generateVariants(PLATFORM[platform], webVariants, props);
+  const variants = generateVariants(PLATFORM[platform], webVariants, props)
 
   return (
-    <div sx={{ ...variants[variant].css }} data-testid={`${variant}-bar`}>
-      {variants[variant].component}
-    </div>
-  );
-};
+    <ThemeProvider theme={theme}>
+      <div sx={{ ...variants[variant].css }} data-testid={`${variant}-bar`}>
+        {variants[variant].component}
+      </div>
+    </ThemeProvider>
+  )
+}

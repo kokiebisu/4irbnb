@@ -1,11 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, ThemeProvider } from 'theme-ui'
 import { $PROTOTYPE } from './constant/appearance'
 import { PLATFORM } from './constant/platform'
 import { generateVariants } from './utils/variants'
 import { webVariants } from './web/variants'
-
+import { theme } from '@nextbnb/theme'
 export { $PROTOTYPE }
 
 export interface PrototypeProps {
@@ -26,8 +26,13 @@ export const Prototype: React.FC<PrototypeProps> = ({
 }) => {
   const variants = generateVariants(platform, webVariants, props)
   return (
-    <div sx={{ ...variants[variant].css }} data-testid={`${variant}-template`}>
-      {variants[variant].component}
-    </div>
+    <ThemeProvider theme={theme}>
+      <div
+        sx={{ ...variants[variant].css }}
+        data-testid={`${variant}-template`}
+      >
+        {variants[variant].component}
+      </div>
+    </ThemeProvider>
   )
 }

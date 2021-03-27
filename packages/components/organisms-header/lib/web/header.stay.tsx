@@ -1,16 +1,16 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm';
-import { $HEADER } from '../constant/appearance';
+import { jsx } from 'theme-ui'
+import { Button, $BUTTON } from '@nextbnb/atoms-button/dist/bundle.esm'
+import { $HEADER } from '../constant/appearance'
 
 /**
  * Renders the header for the homes page
  * @param {boolean} spread - Whether if the layout should be spread out or not
  */
 const StayHeader: React.FC<{
-  title?: string;
-  navigate?: any;
+  title?: string
+  navigate?: any
 }> = ({ title, navigate }) => {
   return (
     <header
@@ -18,10 +18,10 @@ const StayHeader: React.FC<{
         height: 65,
         padding: '0px 0px',
         bg: 'white',
-        boxShadow: 'rgba(0, 0, 0, 0.08) 0px 1px 12px',
+        boxShadow: 'rgba(0, 0, 0, 0.08) 0px 1px 12px'
       }}
     >
-      <div css={{ display: 'flex', alignItems: 'center' }}>
+      <div css={{ display: 'flex', alignItems: 'center', height: '100%' }}>
         <div>
           <Button
             variant={$BUTTON.logo}
@@ -31,7 +31,7 @@ const StayHeader: React.FC<{
             extendsTo={{
               display: 'inline-block',
               padding: 14,
-              borderRadius: 9999,
+              borderRadius: 9999
             }}
           />
         </div>
@@ -42,14 +42,14 @@ const StayHeader: React.FC<{
         )}
       </div>
     </header>
-  );
-};
+  )
+}
 
 export const stay = (props) => {
   return {
     [$HEADER.stay]: {
       component: <StayHeader {...props} />,
-      css: {},
-    },
-  };
-};
+      css: {}
+    }
+  }
+}

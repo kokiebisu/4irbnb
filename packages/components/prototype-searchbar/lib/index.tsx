@@ -1,10 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
+import { jsx, ThemeProvider } from 'theme-ui'
 import { useRef, useState } from 'react'
 import { Bar, $BAR } from '@nextbnb/organisms-bar/dist/bundle.esm'
 import { Modal } from '@nextbnb/organisms-modal/dist/bundle.esm'
 import { useOnClickOutside } from '@nextbnb/design/hooks/useOnClickOutside'
+import { theme } from '@nextbnb/theme'
 
 export interface PrototypeProps {
   expanded?: boolean
@@ -70,39 +71,41 @@ export const Prototype: React.FC<PrototypeProps> = ({
   }
 
   return (
-    <div css={{ position: 'relative' }}>
-      <Bar
-        variant={$BAR.search}
-        selected={selected}
-        setSelected={setSelected}
-        type={type}
-        setCategory={setCategory}
-        extendsTo={{ padding: '0 12px' }}
-        transparent={transparent}
-      />
-      {Object.keys(contents).map((content, index) => {
-        return (
-          <div
-            key={index}
-            style={{
-              position: 'absolute',
-              top: 60,
-              zIndex: 80,
-              width: '100%',
-              ...contents[content].styles
-            }}
-          >
-            <div css={{ width: '100%' }} ref={containerRef}>
-              <Modal
-                variant={content}
-                dispatch={`toggle_${content}`}
-                extendsTo={{ width: '100%' }}
-                criteria={toggleState[content]}
-              />
+    <ThemeProvider theme={theme}>
+      <div css={{ position: 'relative' }}>
+        <Bar
+          variant={$BAR.search}
+          selected={selected}
+          setSelected={setSelected}
+          type={type}
+          setCategory={setCategory}
+          extendsTo={{ padding: '0 12px' }}
+          transparent={transparent}
+        />
+        {Object.keys(contents).map((content, index) => {
+          return (
+            <div
+              key={index}
+              style={{
+                position: 'absolute',
+                top: 60,
+                zIndex: 80,
+                width: '100%',
+                ...contents[content].styles
+              }}
+            >
+              <div css={{ width: '100%' }} ref={containerRef}>
+                <Modal
+                  variant={content}
+                  dispatch={`toggle_${content}`}
+                  extendsTo={{ width: '100%' }}
+                  criteria={toggleState[content]}
+                />
+              </div>
             </div>
-          </div>
-        )
-      })}
-    </div>
+          )
+        })}
+      </div>
+    </ThemeProvider>
   )
 }
