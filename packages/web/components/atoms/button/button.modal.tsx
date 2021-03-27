@@ -1,19 +1,12 @@
-/** vectors */
-import { Close } from "@svg/original";
-import { ChevronLeft } from "@svg/regular";
-
-/** styles **/
-import color from "@styles/color.module.scss";
-import space from "@styles/space.module.scss";
-import button from "@button/button.module.scss";
-import shape from "@styles/shape.module.scss";
+import { Close } from '@svg/original';
+import { ChevronLeft } from '@svg/regular';
 
 /**
  * Renders the close button component
  * @param {function} onClick - The action taken when the button is pressed
  */
 export const ModalButton: React.FC<{ modal?: string }> = ({
-  modal = "close",
+  modal = 'close',
 }) => {
   const types = {
     close: <Close width={16} height={16} stroke="black" strokeWidth={2} />,
@@ -21,12 +14,11 @@ export const ModalButton: React.FC<{ modal?: string }> = ({
   };
   return (
     <div
-      className={[
-        color["bg--transparent"],
-        space["p--8"],
-        shape["br--circle"],
-        button["hover__close"],
-      ].join(" ")}
+      className="bg-transparent p-3 rounded-full"
+      // className={[
+
+      //   button['hover__close'],
+      // ].join(' ')}
     >
       {types[modal]}
     </div>

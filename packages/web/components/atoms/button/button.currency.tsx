@@ -1,9 +1,8 @@
-import space from "@styles/space.module.scss";
-import shape from "@styles/shape.module.scss";
-import animation from "@styles/animation.module.scss";
-import font from "@styles/font.module.scss";
-import color from "@styles/color.module.scss";
-
+/**
+ * Renders the Current Button component
+ * @param param0
+ * @returns
+ */
 export const CurrencyButton: React.FC<{
   name?: string;
   abbreviation?: string;
@@ -11,19 +10,14 @@ export const CurrencyButton: React.FC<{
 }> = ({ name, abbreviation, symbol }) => {
   return (
     <div
-      className={[
-        space["p--12"],
-        shape["br--8"],
-        animation["hover-background--white__1"],
-      ].join(" ")}
+      className="p--4 rounded"
+      // animation["hover-background--white__1"],
     >
       <div>
-        <p className={[font["size--14"], color["c--black"]].join(" ")}>
-          {name}
-        </p>
+        <p className="text-sm text-black">{name}</p>
       </div>
       <div>
-        <p className={[font["size--14"], color["c--gray__1"]].join(" ")}>
+        <p className="text-sm text-gray-200">
           <span>{abbreviation}</span>
           <span> - </span>
           <span>{symbol}</span>
