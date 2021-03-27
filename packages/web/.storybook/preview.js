@@ -1,8 +1,8 @@
-import "../styles/global.scss";
-import { ContextProvider } from "../context/provider";
+import '../styles/globals.css';
+import { ContextProvider } from '../context/provider';
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
 };
 
 export const decorators = [
