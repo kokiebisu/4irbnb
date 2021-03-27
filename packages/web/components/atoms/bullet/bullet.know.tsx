@@ -1,4 +1,3 @@
-/** vectors */
 import {
   Checkin,
   Clock,
@@ -10,12 +9,7 @@ import {
   Caution,
   Check,
   Cleaning,
-} from "@svg/original";
-
-/** styles **/
-import font from "@styles/font.module.scss";
-import layout from "@styles/layout.module.scss";
-import space from "@styles/space.module.scss";
+} from '@svg/original';
 
 /**
  * Renders the know bullet
@@ -28,9 +22,9 @@ export const KnowBullet: React.FC<{
   checkin?: any;
   checkout?: string;
 }> = ({
-  categoryType = "checkin",
-  checkin = { min: "3:00 p.m.", max: "12:00 a.m." },
-  checkout = "11:00 a.m.",
+  categoryType = 'checkin',
+  checkin = { min: '3:00 p.m.', max: '12:00 a.m.' },
+  checkout = '11:00 a.m.',
 }) => {
   const categories = {
     checkin: {
@@ -43,23 +37,23 @@ export const KnowBullet: React.FC<{
     },
     self: {
       icon: <Checkin width={14} />,
-      description: "Self check-in with lockbox",
+      description: 'Self check-in with lockbox',
     },
     children: {
       icon: <Children width={14} />,
-      description: "Not suitable for children and infants",
+      description: 'Not suitable for children and infants',
     },
     smoking: {
       icon: <Smoking width={14} />,
-      description: "No smoking",
+      description: 'No smoking',
     },
     pets: {
       icon: <Pets width={14} />,
-      description: "No pets",
+      description: 'No pets',
     },
     parties: {
       icon: <Parties width={14} />,
-      description: "No parties or events",
+      description: 'No parties or events',
     },
     cleaning: {
       icon: <Cleaning width={14} />,
@@ -72,20 +66,18 @@ export const KnowBullet: React.FC<{
     },
     caution: {
       icon: <Caution width={14} />,
-      description: "Nearby lake, river, other body of water",
+      description: 'Nearby lake, river, other body of water',
     },
     check: {
       icon: <Check width={14} />,
-      description: "Carbon monoxide alarm",
+      description: 'Carbon monoxide alarm',
     },
   };
   return (
-    <div className={[layout["flex"]].join(" ")}>
-      <div className={[space["m-r--12"]].join(" ")}>
-        {categories[categoryType].icon}
-      </div>
+    <div className="flex">
+      <div className="mr-3">{categories[categoryType].icon}</div>
       <div>
-        <p className={[font["weight--100"], font["size--16"]].join(" ")}>
+        <p className="font-thin text-base">
           {categories[categoryType].description}
         </p>
       </div>
