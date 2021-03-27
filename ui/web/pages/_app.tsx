@@ -1,6 +1,5 @@
 import React from 'react'
 import Head from 'next/head'
-// import '../styles/global.css'
 import { ContextProvider } from '../context/provider'
 import { ThemeProvider } from 'theme-ui'
 import { Global } from '@emotion/core'

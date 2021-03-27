@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { Header, $HEADER } from '@nextbnb/organisms/dist/bundle.cjs'
+import { Header, $HEADER } from '@nextbnb/organisms/dist/bundle.esm'
 
-import { useTabTitle } from '@nextbnb/hooks/useTabTitle'
+import { useTabTitle } from '@nextbnb/hooks/dist/bundle.esm'
 
 // pages/404.js
 const ErrorPage = () => {

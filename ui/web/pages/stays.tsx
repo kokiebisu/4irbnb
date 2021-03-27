@@ -1,15 +1,9 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
 import React from 'react'
-
+import { jsx } from 'theme-ui'
 import { Header, $HEADER } from '@nextbnb/organisms/dist/bundle.cjs'
-import { Footer } from '@nextbnb/organisms/footer/web'
-
-import space from '@styles/space.module.scss'
-import layout from '@styles/layout.module.scss'
-import stays from '@styles/stays.module.scss'
-import styles from '@styles/index.module.scss'
-import shape from '@styles/shape.module.scss'
-import font from '@styles/font.module.scss'
-import color from '@styles/color.module.scss'
+import { Footer } from '@nextbnb/organisms/dist/bundle.esm'
 
 /**
  * Renders /stays
@@ -18,22 +12,27 @@ const StaysPage: () => string | JSX.Element = () => {
   return (
     <>
       <div
-        style={{ top: 0, zIndex: 10 }}
-        className={[layout['sticky']].join(' ')}
+        sx={{
+          top: 0,
+          zIndex: 10,
+          position: 'sticky'
+        }}
       >
         <Header variant={$HEADER.white} spread />
       </div>
       <div
-        style={{
+        sx={{
           zIndex: 1,
           position: 'relative',
           width: '100vw'
         }}
       >
-        <div className={[layout['relative'], stays['p__background']].join(' ')}>
-          <div className={[layout['all-sides']].join(' ')}>
+        <div sx={{ position: 'relative' }}>
+          <div
+            sx={{ position: 'absolute', top: 0, bottom: 0, left: 0, right: 0 }}
+          >
             <div
-              style={{
+              sx={{
                 display: 'inline-block',
                 verticalAlign: 'bottom',
                 height: '100%',
@@ -60,8 +59,8 @@ const StaysPage: () => string | JSX.Element = () => {
                 ></source>
                 <img
                   alt="banner img"
-                  className={[layout['absolute']].join(' ')}
-                  style={{
+                  sx={{
+                    position: 'absolute',
                     height: '100%',
                     width: '100%',
                     objectFit: 'cover',
@@ -73,8 +72,7 @@ const StaysPage: () => string | JSX.Element = () => {
                 />
               </picture>
               <div
-                className={stays['support']}
-                style={{
+                sx={{
                   backgroundImage:
                     'url("https://a0.muscache.com/im/pictures/a4568b94-29ee-49cc-ab9c-5fcc82ca878d.jpg?im_w=720")',
                   backgroundSize: 'cover',
@@ -88,41 +86,28 @@ const StaysPage: () => string | JSX.Element = () => {
               />
             </div>
           </div>
-          <div className={[layout['all-sides']].join(' ')}>
+          <div
+            sx={{
+              position: 'absolute',
+              top: 0,
+              bottom: 0,
+              left: 0,
+              right: 0
+            }}
+          >
             <div
-              className={[
-                styles['container'],
-                layout['z--20'],
-                shape['h--full'],
-                styles['flex__explore']
-              ].join(' ')}
+            // className={[
+            //   styles['container'],
+            //   layout['z--20'],
+            //   shape['h--full'],
+            //   styles['flex__explore']
+            // ].join(' ')}
             >
-              <div
-                className={[stays['m-v__banner'], space['m-h--0']].join(' ')}
-              >
-                <h1
-                  className={[color['c--white'], stays['size__banner']].join(
-                    ' '
-                  )}
-                >
-                  Unique stays
-                </h1>
+              <div>
+                <h1>Unique stays</h1>
               </div>
-              <div
-                className={[
-                  font['c--white'],
-                  stays['w__banner'],
-                  stays['m__banner']
-                ].join(' ')}
-              >
-                <p
-                  className={[
-                    font['size--18'],
-                    font['weight--100'],
-                    font['ls--3'],
-                    color['c--white']
-                  ].join(' ')}
-                >
+              <div>
+                <p>
                   Tents, tree houses, and more—these spaces are more than just a
                   place to sleep.
                 </p>
@@ -130,7 +115,7 @@ const StaysPage: () => string | JSX.Element = () => {
             </div>
           </div>
         </div>
-        <div className={[space['p-v--38']].join(' ')}>
+        <div>
           {/* <div className={[styles['container'], layout['relative']].join(' ')}>
             <div className={[space['m-v--16']].join(' ')}>
               <Section

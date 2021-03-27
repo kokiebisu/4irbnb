@@ -1,17 +1,17 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { PLATFORM } from './constant/platform';
-import { webVariants } from './web/variants';
-import { generateVariants } from './utils/variants';
-import { $HEADER } from './constant/appearance';
-
-export { $HEADER };
+import { jsx, ThemeProvider } from 'theme-ui'
+import { PLATFORM } from './constant/platform'
+import { webVariants } from './web/variants'
+import { generateVariants } from './utils/variants'
+import { $HEADER } from './constant/appearance'
+import { theme } from '@nextbnb/theme'
+export { $HEADER }
 
 export interface HeaderProps {
-  extendsTo?: any;
-  variant: string;
-  [property: string]: any;
+  extendsTo?: any
+  variant: string
+  [property: string]: any
 }
 
 /**
@@ -25,14 +25,16 @@ export const Header: React.FC<HeaderProps> = ({
   extendsTo,
   ...props
 }) => {
-  const variants = generateVariants(platform, webVariants, props);
+  const variants = generateVariants(platform, webVariants, props)
   return (
-    <div
-      sx={{ ...variants[variant].css }}
-      className={extendsTo}
-      data-testid={`${variant}-header`}
-    >
-      {variants[variant].component}
-    </div>
-  );
-};
+    <ThemeProvider theme={theme}>
+      <div
+        sx={{ ...variants[variant].css }}
+        className={extendsTo}
+        data-testid={`${variant}-header`}
+      >
+        {variants[variant].component}
+      </div>
+    </ThemeProvider>
+  )
+}

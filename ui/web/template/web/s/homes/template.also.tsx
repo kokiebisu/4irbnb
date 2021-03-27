@@ -4,9 +4,11 @@ import { jsx } from 'theme-ui'
 import { useRef } from 'react'
 import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm'
 import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
-import * as Helpers from '@nextbnb/helper/array'
-import { useSlider } from '@nextbnb/hooks/useSlider'
-import { useHandleContainerResize } from '@nextbnb/hooks/useHandleContainerResize'
+import * as Helpers from '@nextbnb/helper/dist/bundle.esm'
+import {
+  useSlider,
+  useHandleContainerResize
+} from '@nextbnb/hooks/dist/bundle.esm'
 
 /**
  * Renders the also section

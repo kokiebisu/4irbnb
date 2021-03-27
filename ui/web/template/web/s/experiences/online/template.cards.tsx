@@ -3,7 +3,7 @@
 import { jsx } from 'theme-ui'
 import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
 import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm'
-import { useSlide } from '@nextbnb/design/hooks/useSlide'
+import { useSlide } from '@nextbnb/hooks/dist/bundle.esm'
 
 export const CardsTemplate: React.FC<{ title?: string }> = ({
   title = 'Title here'

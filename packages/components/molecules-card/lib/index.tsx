@@ -1,20 +1,20 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, ThemeProvider } from "theme-ui";
-import { variants as webVariants } from "./web/variants";
-import { $CARD } from "./constant/appearance";
-import { generateVariants } from "./utils/variants";
-import { Platform } from "./constant/platform";
-import { theme } from "@nextbnb/theme";
+import { jsx, ThemeProvider } from 'theme-ui'
+import { variants as webVariants } from './web/variants'
+import { $CARD } from './constant/appearance'
+import { generateVariants } from './utils/variants'
+import { Platform } from './constant/platform'
+import { theme } from '@nextbnb/theme'
 
-export { $CARD };
+export { $CARD }
 
 export interface CardProps {
-  extendsTo?: any;
-  variant?: string;
-  to?: string;
-  navigate?: any;
-  [property: string]: any;
+  extendsTo?: any
+  variant?: string
+  to?: string
+  navigate?: any
+  [property: string]: any
 }
 
 /**
@@ -31,25 +31,27 @@ export const Card: React.FC<CardProps> = ({
   navigate,
   ...props
 }) => {
-  const variants = generateVariants(Platform[platform], webVariants, props);
+  const variants = generateVariants(Platform[platform], webVariants, props)
 
   if (to) {
     return (
-      <div
-        css={{
-          cursor: "pointer",
-          textAlign: "left",
-          display: "block",
-          heigth: "100%",
-          width: "100%",
-          ...extendsTo,
-        }}
-        data-testid={`${variant}-card`}
-        onClick={() => navigate(to)}
-      >
-        {variant && variants[variant].component}
-      </div>
-    );
+      <ThemeProvider theme={theme}>
+        <div
+          css={{
+            cursor: 'pointer',
+            textAlign: 'left',
+            display: 'block',
+            heigth: '100%',
+            width: '100%',
+            ...extendsTo
+          }}
+          data-testid={`${variant}-card`}
+          onClick={() => navigate(to)}
+        >
+          {variant && variants[variant].component}
+        </div>
+      </ThemeProvider>
+    )
   }
 
   return (
@@ -62,5 +64,5 @@ export const Card: React.FC<CardProps> = ({
         {variant && variants[variant].component}
       </div>
     </ThemeProvider>
-  );
-};
+  )
+}

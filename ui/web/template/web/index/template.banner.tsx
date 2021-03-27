@@ -6,8 +6,8 @@ import { useState } from 'react'
 import Router from 'next/router'
 import { Header, $HEADER } from '@nextbnb/organisms/dist/bundle.esm'
 import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm'
-import { useHandleScroll } from '@nextbnb/hooks/useHandleScroll'
-import { ResponsiveImage } from '../../utils/img'
+import { useHandleScroll } from '@nextbnb/hooks/dist/bundle.esm'
+import { ResponsiveImage } from '../../../utils/img'
 
 /**
  * Renders the banner section

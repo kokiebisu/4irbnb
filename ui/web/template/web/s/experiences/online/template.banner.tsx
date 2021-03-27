@@ -1,7 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import { ResponsiveImage } from '@nextbnb/packages/helper/img'
+import { ResponsiveImage } from '../../../../../utils/img'
 
 export const BannerTemplate = () => {
   return (

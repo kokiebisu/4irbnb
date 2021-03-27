@@ -1,7 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import '@nextbnb/assets/styles/global.css'
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ThemeProvider } from 'theme-ui'

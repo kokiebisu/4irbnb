@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
-import { groupByTwo } from '@nextbnb/helper/array'
+import { groupByTwo } from '@nextbnb/helper/dist/bundle.esm'
 
 /**
  * Renders the nearby section

@@ -5,7 +5,7 @@ import { useRef } from 'react'
 import Router from 'next/router'
 import { Button, $BUTTON } from '@nextbnb/atoms/dist/bundle.esm'
 import { Card, $CARD } from '@nextbnb/molecules/dist/bundle.esm'
-import { useSlider, SliderProps } from '@nextbnb/hooks/useSlider'
+import { useSlider, SliderProps } from '@nextbnb/hooks/dist/bundle.esm'
 
 /**
  * Renders the homes banner

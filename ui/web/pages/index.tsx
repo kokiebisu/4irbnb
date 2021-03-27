@@ -1,3 +1,5 @@
+/** @jsxRuntime classic */
+/** @jsx jsx */
 import { AnimatePresence, motion } from 'framer-motion'
 import { useToggleState } from '../context/toggle'
 import {
@@ -15,11 +17,17 @@ import {
   $BAR,
   Footer
 } from '@nextbnb/organisms/dist/bundle.cjs'
-import { useHandleScroll } from '@nextbnb/hooks/useHandleScroll'
-import { useHandleDocumentResize } from '@nextbnb/hooks/useHandleDocumentResize'
-import { useTimeout } from '@nextbnb/hooks/useTimeout'
-import { useTabTitle } from '@nextbnb/hooks/useTabTitle'
+import {
+  useHandleDocumentResize,
+  useTimeout,
+  useTabTitle,
+  useHandleScroll
+} from '@nextbnb/hooks/dist/bundle.esm'
+
 import { APIClient } from '../api/client'
+import React from 'react'
+import { jsx } from 'theme-ui'
+import { $Template, Template } from 'template/web/index'
 
 const LandingPage = ({ currentUser }) => {
   useTabTitle('Vacation Rentals, Homes, Experiences & Places - Airbnb')
@@ -29,13 +37,10 @@ const LandingPage = ({ currentUser }) => {
   const pageHeight = useHandleDocumentResize()
 
   return (
-    <div
-      style={{ overflowX: 'hidden' }}
-      // className={[layout["relative"], shape["min-h--fullv"]].join(" ")}
-    >
+    <div sx={{ overflowX: 'hidden', position: 'relative', minHeight: '100vh' }}>
       <div>
         <div>
-          <Bar variant={$Bar.COVID} />
+          <Bar variant={$BAR.covid} />
         </div>
         <Template variant="banner" data={currentUser || null} />
         {loading ? (
@@ -46,9 +51,7 @@ const LandingPage = ({ currentUser }) => {
             <Layout variant="landing" title="Live anywhere" spread>
               <Template variant={$Template.ANYWHERE} items={anywhereItems} />
             </Layout>
-            <div
-            // className={space["m-v--32"]}
-            ></div>
+            <div sx={{ margin: '32px 0' }}></div>
             <Layout
               dark
               spread
@@ -78,28 +81,28 @@ const LandingPage = ({ currentUser }) => {
           </>
         ) : (
           <div
-          // className={[
-          //   space["m-v--22"],
-          //   layout["flex"],
-          //   layout["items-center"],
-          //   layout["justify-center"],
-          // ].join(" ")}
+            sx={{
+              margin: '22px 0',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
           >
             <Animation type="loading" dark />
           </div>
         )}
         <Footer spread />
         <div
-          style={{ position: 'fixed', width: '100%', zIndex: 50 }}
-          // className={[
-          //   layout["fb--0"],
-          //   layout["flex"],
-          //   layout["justify-center"],
-          // ].join(" ")}
+          sx={{
+            position: 'fixed',
+            width: '100%',
+            zIndex: 50,
+            bottom: 0,
+            display: 'flex',
+            justifyContent: 'center'
+          }}
         >
-          <div
-          // className={[index["m__privacy"]].join(" ")}
-          >
+          <div sx={{ margin: '32px 0' }}>
             <Modal
               variant={$MODAL.privacy}
               criteria={toggleState.privacy}
@@ -115,23 +118,25 @@ const LandingPage = ({ currentUser }) => {
               exit={{ y: 60 }}
               initial={{ y: 0 }}
               transition={{ duration: 0.5 }}
-              // className={index["none__menubar"]}
+              sx={{ display: 'block' }}
             >
               <div
-                // className={[layout["fixed"], shape["w--full"]].join(" ")}
-                style={{ zIndex: 30, bottom: 0 }}
+                sx={{
+                  borderTop: 'gray.100',
+                  display: 'fixed',
+                  width: '100%',
+                  zIndex: 30,
+                  bottom: 0
+                }}
               >
-                <Bar
-                  variant={$Bar.MENU}
-                  // extendsTo={[color["b-t--white__2"]].join(" ")}
-                />
+                <Bar variant={$BAR.menu} />
               </div>
             </motion.div>
           )}
         </AnimatePresence>
         {toggleState.auth && (
           <div
-            style={{
+            sx={{
               position: 'fixed',
               zIndex: 60,
               bottom: 0,
@@ -142,12 +147,12 @@ const LandingPage = ({ currentUser }) => {
             }}
           >
             <div
-            // className={[
-            //   layout["flex"],
-            //   layout["justify-center"],
-            //   layout["items-center"],
-            //   shape["h--100v"],
-            // ].join(" ")}
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '100vh'
+              }}
             >
               <Modal
                 variant={$MODAL.auth}
@@ -160,7 +165,7 @@ const LandingPage = ({ currentUser }) => {
         )}
         {toggleState.globe && (
           <div
-            style={{
+            sx={{
               position: 'fixed',
               zIndex: 60,
               bottom: 0,
@@ -171,21 +176,15 @@ const LandingPage = ({ currentUser }) => {
             }}
           >
             <div
-            // className={[
-            //   layout["flex"],
-            //   layout["justify-center"],
-            //   layout["items-center"],
-            //   shape["h--100v"],
-            // ].join(" ")}
+              sx={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '100vh'
+              }}
             >
               <Modal
                 variant={$MODAL.globe}
-                // extendsTo={[
-                //   shape["w--full"],
-                //   shape["h--full"],
-                //   space["p--40"],
-                //   shape["max-w--1100"],
-                // ].join(" ")}
                 animate="slideup"
                 criteria={toggleState.globe}
                 lock

@@ -2,17 +2,14 @@ import React from 'react'
 import { useRouter } from 'next/router'
 
 import { useToggleState } from '../../context/toggle'
-
 import layout from '@styles/layout.module.scss'
-
 import { Prototype } from '@nextbnb/prototype/dist/bundle.esm'
-import { Modal, $Modal } from '@nextbnb/organisms/modal/web'
-
+import { Modal, $Modal } from '@nextbnb/organisms/dist/bundle.esm'
 import shape from '@styles/shape.module.scss'
 import responsive from '@styles/responsive.module.scss'
 import homes from '@styles/homes.module.scss'
 
-import { useTabTitle } from '@nextbnb/hooks/useTabTitle'
+import { useTabTitle } from '@nextbnb/hooks/dist/bundle.esm'
 
 import '../../global/string'
 
