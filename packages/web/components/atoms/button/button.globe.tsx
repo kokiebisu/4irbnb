@@ -1,32 +1,21 @@
-/** styles */
-import space from "@styles/space.module.scss";
-import shape from "@styles/shape.module.scss";
-import animation from "@styles/animation.module.scss";
-import font from "@styles/font.module.scss";
-import color from "@styles/color.module.scss";
-
+/**
+ * Renders the Globe Button
+ * @param language
+ * @param region
+ * @param selected
+ */
 export const GlobeButton: React.FC<{
   language?: string;
   region?: string;
   selected?: boolean;
-}> = ({ language = "Language", region = "Region", selected = false }) => {
+}> = ({ language = 'Language', region = 'Region', selected = false }) => {
   return (
-    <div
-      className={`${[
-        space["p--12"],
-        shape["br--8"],
-        animation["hover-background--white__1"],
-      ].join(" ")} ${selected && color["b--black"]}`}
-    >
+    <div className={`p--5 rounded-md ${selected && 'border border-black'}`}>
       <div>
-        <p className={[font["size--14"], color["c--black"]].join(" ")}>
-          {language}
-        </p>
+        <p className="text-sm text-black">{language}</p>
       </div>
       <div>
-        <p className={[font["size--14"], color["c--gray__1"]].join(" ")}>
-          {region}
-        </p>
+        <p className="text-sm text-gray-200">{region}</p>
       </div>
     </div>
   );

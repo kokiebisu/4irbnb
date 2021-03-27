@@ -1,28 +1,19 @@
-import font from "@styles/font.module.scss";
-import color from "@styles/color.module.scss";
-import space from "@styles/space.module.scss";
-
+/**
+ * Renders the Destination Button component
+ * @param city
+ * @param location
+ */
 export const DestinationButton: React.FC<{
   city?: String;
   location?: String;
-}> = ({ city = "City", location = "Location" }) => {
+}> = ({ city = 'City', location = 'Location' }) => {
   return (
-    <div className={[space["p-v--16"], space["p-r--16"]].join(" ")}>
+    <div className="py-6 pr-6">
       <div>
-        <h4 className={[font["size--14"], font["text--left"]].join(" ")}>
-          {city}
-        </h4>
+        <h4 className="text-sm text-left">{city}</h4>
       </div>
       <div>
-        <h4
-          className={[
-            font["size--14"],
-            color["c--gray__0"],
-            font["text--left"],
-          ].join(" ")}
-        >
-          {location}
-        </h4>
+        <h4 className="text-sm text-gray-200 text-left">{location}</h4>
       </div>
     </div>
   );

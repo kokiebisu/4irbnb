@@ -14,7 +14,7 @@ $colors: (
   black: #000000,
   darkgreen__3: #008489,
   green__1: #268a04,
-  "transparent": transparent,
+  'transparent': transparent,
 );
 
 @each $name, $color in $colors {
@@ -59,13 +59,4 @@ $colors: (
 
 .b--0 {
   border: none;
-}
-
-.bg--primary {
-  background: linear-gradient(
-    to right,
-    rgb(230, 30, 77) 0%,
-    rgb(227, 28, 95) 50%,
-    rgb(215, 4, 102) 100%
-  );
 }
