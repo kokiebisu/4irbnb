@@ -74,7 +74,7 @@ const LandingPage = ({ currentUser }) => {
           </div>
         )}
         <Footer spread />
-        <div className="fixed w-full z-50 bottom-0 flex justify-center px-16 pb-6">
+        <div className="fixed w-full z-50 bottom-0 flex justify-center px-5 md:px-10 lg:px-16 pb-6">
           <div>
             <Modal
               variant={$Modal.PRIVACY}

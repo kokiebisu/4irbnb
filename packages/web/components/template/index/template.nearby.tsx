@@ -1,9 +1,9 @@
-import space from "@styles/space.module.scss";
-import template from "@template/index/index.module.scss";
+import space from '@styles/space.module.scss';
+import template from '@template/index/index.module.scss';
 
-import { Card, $Card } from "@card";
+import { Card, $Card } from '@card';
 
-import { groupByTwo } from "@helper/array";
+import { groupByTwo } from '@helper/array';
 
 /**
  * Renders the nearby section
@@ -26,15 +26,15 @@ export const NearbyTemplate: React.FC<{
   const displayingItems = groupByTwo(items);
   return (
     <div>
-      <div className={[space["p-h--70"]].join(" ")}>
+      <div className={[space['p-h--70']].join(' ')}>
         <div
           style={{ gridTemplateColumns: `repeat(4, 1fr)` }}
-          className={[template["category__carousel"]].join(" ")}
+          className={[template['category__carousel']].join(' ')}
         >
           {displayingItems.map((item, index) => {
             return (
-              <div key={index} className={[template["w__nearby"]].join(" ")}>
-                <div className={[space["m-b--10"]].join(" ")}>
+              <div key={index} className={[template['w__nearby']].join(' ')}>
+                <div className={[space['m-b--10']].join(' ')}>
                   <Card
                     variant={$Card.NEARBY}
                     to={item[0]?.to}
@@ -57,7 +57,7 @@ export const NearbyTemplate: React.FC<{
               </div>
             );
           })}
-          <div className={template["nearby__space"]}></div>
+          <div className={template['nearby__space']}></div>
         </div>
       </div>
     </div>
