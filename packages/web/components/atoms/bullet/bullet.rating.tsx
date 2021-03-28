@@ -10,12 +10,12 @@ export const RatingBullet: React.FC<{
   reviews?: number;
 }> = ({ ratings = 5, reviews = 100 }) => {
   return (
-    <div className="flex ">
+    <div className="flex items-center">
       <div>
         <Star height={14} />
       </div>
       <h3 className="pl-1 text-gray-600 text-sm">{ratings}</h3>
-      <span className="pl-1 text-gray-200 text-sm font-thin">({reviews})</span>
+      <span className="pl-1 text-gray-400 text-sm font-thin">({reviews})</span>
     </div>
   );
 };

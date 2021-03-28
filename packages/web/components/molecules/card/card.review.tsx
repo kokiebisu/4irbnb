@@ -31,8 +31,8 @@ export const ReviewCard: React.FC<{
         </div>
         <div className="ml-3 pb-3 flex items-center">
           <div className="flex flex-col">
-            <p className="text-gray-400">{user}</p>
-            <p className="text-sm text-gray-200 font-light">{commentedDate}</p>
+            <p className="text-gray-500">{user}</p>
+            <p className="text-sm text-gray-400 font-light">{commentedDate}</p>
           </div>
         </div>
       </div>

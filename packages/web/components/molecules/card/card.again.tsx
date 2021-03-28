@@ -6,7 +6,7 @@ export const AgainCard: React.FC<{}> = () => {
       <div className="p-4">
         <div className="flex">
           <div className="mr-3">
-            <div className="p-3 rounded-full bg-red-500">
+            <div className="p-2 rounded-full bg-red-600">
               <Warning width={18} fill="white" />
             </div>
           </div>
@@ -15,7 +15,7 @@ export const AgainCard: React.FC<{}> = () => {
               <h3 className="text-base">Let's try that again</h3>
             </div>
             <div>
-              <p className="text-sm text-gray-300">
+              <p className="text-sm text-gray-500">
                 There isn’t an account associated with this email address.
                 Please try another email.
               </p>

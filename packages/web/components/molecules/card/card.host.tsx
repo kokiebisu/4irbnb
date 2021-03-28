@@ -16,7 +16,7 @@ export const HostCard: React.FC<{
 }> = ({ imgUrl, host = 'Host', stayType = 'Type', location = 'Location' }) => {
   return (
     <div>
-      <div>
+      <div className="animate-pulse">
         {imgUrl ? (
           <img
             className="rounded-md object-fit"
@@ -28,7 +28,7 @@ export const HostCard: React.FC<{
           />
         ) : (
           <div
-            className="rounded-md bg-gray-300"
+            className="rounded-md bg-gray-400"
             style={{ height: 434, width: 350 }}
           />
         )}
@@ -36,8 +36,8 @@ export const HostCard: React.FC<{
       <div className="mt-2">
         <h3>{host}</h3>
       </div>
-      <div className="my-3">
-        <h4 className="capitalize tracking-wide text-sm text-gray-400">
+      <div className="my-1">
+        <h4 className="capitalize tracking-wide text-sm text-gray-500">
           Hosts a {stayType} in {location}
         </h4>
       </div>
