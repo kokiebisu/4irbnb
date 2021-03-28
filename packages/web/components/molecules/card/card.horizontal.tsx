@@ -8,7 +8,7 @@ import { renderType } from './logic/logic.horizontal';
  * @param {boolean} superhost - Whether if host is the superhost or not
  * @param {boolean} save - Whether if the card can be saved or not
  */
-export const HorizontalCard: React.FC<{
+const HorizontalCard: React.FC<{
   card?: any;
   save?: boolean;
   superhost?: boolean;
@@ -100,4 +100,13 @@ export const HorizontalCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const horizontal = (props) => {
+  return {
+    horizontal: {
+      component: <HorizontalCard {...props} />,
+      style: '',
+    },
+  };
 };

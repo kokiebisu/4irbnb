@@ -29,7 +29,7 @@ export const types = {
   },
 };
 
-export const HostingCard: React.FC<{ type?: string }> = ({ type }) => {
+const HostingCard: React.FC<{ type?: string }> = ({ type }) => {
   return (
     <div className="sm:w-64 w-full">
       <div className="animate-pulse">
@@ -65,4 +65,13 @@ export const HostingCard: React.FC<{ type?: string }> = ({ type }) => {
       </div>
     </div>
   );
+};
+
+export const hosting = (props) => {
+  return {
+    hosting: {
+      component: <HostingCard {...props} />,
+      style: '',
+    },
+  };
 };

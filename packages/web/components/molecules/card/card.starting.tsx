@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Video } from '@video';
 import { Heart, Star } from '@svg/original';
 
-export const StartingCard: React.FC<{
+const StartingCard: React.FC<{
   ratings?: number;
   reviews?: number;
   country?: string;
@@ -90,4 +90,13 @@ export const StartingCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const starting = (props) => {
+  return {
+    starting: {
+      component: <StartingCard {...props} />,
+      style: '',
+    },
+  };
 };

@@ -10,7 +10,7 @@ import {
 /**
  * Renders the checkin card
  */
-export const CheckInCard: React.FC<{
+const CheckInCard: React.FC<{
   length?: number;
 }> = () => {
   const [selected, dispatchSelected] = useCheckin();
@@ -105,4 +105,13 @@ export const CheckInCard: React.FC<{
       </div>
     </>
   );
+};
+
+export const checkin = (props) => {
+  return {
+    checkin: {
+      component: <CheckInCard {...props} />,
+      style: '',
+    },
+  };
 };

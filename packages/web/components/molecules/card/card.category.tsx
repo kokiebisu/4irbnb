@@ -2,7 +2,7 @@
  * @param {string} imgUrl - Image of the card
  * @param {string} title - Title of the card
  */
-export const CategoryCard: React.FC<{
+const CategoryCard: React.FC<{
   imgUrl?: string;
   title?: string;
 }> = ({ imgUrl, title = 'Title' }) => {
@@ -24,4 +24,13 @@ export const CategoryCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const category = (props) => {
+  return {
+    category: {
+      component: <CategoryCard {...props} />,
+      style: '',
+    },
+  };
 };
