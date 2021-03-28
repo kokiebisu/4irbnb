@@ -24,7 +24,7 @@ const NearbyCard: React.FC<{
         )}
       </div>
       <div>
-        <h3 className="text-sm mb-1">{city} hello</h3>
+        <h3 className="text-sm mb-1">{city}</h3>
         <p className="text-sm">{hours} hour drive</p>
       </div>
     </div>

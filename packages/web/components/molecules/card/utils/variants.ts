@@ -1,5 +1,5 @@
-import { nearby } from '@button/button.nearby';
-import { video } from '@button/button.video';
+import { nearby } from '@card/card.nearby';
+import { video } from '@card/card.video';
 import { again } from '@card/card.again';
 import { anywhere } from '@card/card.anywhere';
 import { arrangements } from '@card/card.arrangements';

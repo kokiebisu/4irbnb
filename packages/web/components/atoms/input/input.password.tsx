@@ -29,23 +29,13 @@ export const PasswordInput: React.FC<{
     setFieldActive(false);
   };
 
-  const renderShape = () => {
-    switch (direction) {
-      case 'top':
-        return 'border-b border-l border-r border-gray-400 rounded-br';
-      case 'bottom':
-        return 'border-t border-l border-r rounded-tr';
-      default:
-        return 'border border-gray-400 rounded-md';
-    }
-  };
-
   return (
     <div
-      className={`h-14 relative px-5 items-center flex ${renderShape()} ${styleContainer(
+      className={`h-14 relative px-5 items-center flex ${styleContainer(
         errors,
         fieldActive,
-        checkPassword(value)
+        checkPassword(value),
+        direction
       )}`}
     >
       <div className="relative h-full w-full">

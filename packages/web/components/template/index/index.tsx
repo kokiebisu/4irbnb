@@ -1,17 +1,17 @@
-import { CategoryTemplate } from "./template.category";
-import { NearbyTemplate } from "./template.nearby";
-import { BannerTemplate } from "./template.banner";
-import { OnlineTemplate } from "./template.online";
-import { AnywhereTemplate } from "./template.anywhere";
-import { DestinationsTemplate } from "./template.destinations";
+import { CategoryTemplate } from './template.category';
+import { NearbyTemplate } from './template.nearby';
+import { BannerTemplate } from './template.banner';
+import { OnlineTemplate } from './template.online';
+import { AnywhereTemplate } from './template.anywhere';
+import { DestinationsTemplate } from './template.destinations';
 
 export const $Template = {
-  CATEGORY: "category",
-  NEARBY: "nearby",
-  BANNER: "banner",
-  ONLINE: "online",
-  ANYWHERE: "anywhere",
-  DESTINATIONS: "destinations",
+  CATEGORY: 'category',
+  NEARBY: 'nearby',
+  BANNER: 'banner',
+  ONLINE: 'online',
+  ANYWHERE: 'anywhere',
+  DESTINATIONS: 'destinations',
 };
 
 export interface TemplateProps {
@@ -27,8 +27,8 @@ export interface TemplateProps {
  * @param {Object} children - A JSX that will be part of the component
  */
 export const Template: React.FC<TemplateProps> = ({
-  extendsTo = "",
-  variant = "auth",
+  extendsTo = '',
+  variant = 'auth',
   children,
   onClick,
   to,
@@ -46,6 +46,6 @@ export const Template: React.FC<TemplateProps> = ({
   };
 
   return (
-    <div data-testid={`${variant}-landing--template`}>{variants[variant]}</div>
+    <div data-testid={`${variant}-landing-template`}>{variants[variant]}</div>
   );
 };
