@@ -13,10 +13,15 @@ const SearchbarButton: React.FC<{ mini?: boolean }> = ({ mini = false }) => {
     <>
       {mini ? (
         <div
-          style={{ gridTemplateColumns: 'auto 1fr' }}
-          className="relative py-1 pr-6 w-full px-1 grid items-center border border-gray-300 rounded-full"
+          style={{ gridTemplateColumns: '1fr auto' }}
+          className="relative py-1.5 pl-6 w-full pr-1.5 grid items-center justify-between border border-gray-300 rounded-full"
         >
-          <div className="bg-primary rounded-full h-10 w-10 relative">
+          <div>
+            <p className="whitespace-nowrap text-sm font-medium text-left">
+              Start your search
+            </p>
+          </div>
+          <div className="bg-primary rounded-full h-8 w-8 relative">
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <MagnifyGlass
                 width={12}
@@ -25,12 +30,6 @@ const SearchbarButton: React.FC<{ mini?: boolean }> = ({ mini = false }) => {
                 strokeWidth={6}
               />
             </div>
-          </div>
-
-          <div>
-            <p className="whitespace-nowrap text-sm font-medium">
-              Start your search
-            </p>
           </div>
         </div>
       ) : (

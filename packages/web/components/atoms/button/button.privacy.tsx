@@ -9,13 +9,15 @@ const PrivacyButton: React.FC<{ title?: string; inverse?: boolean }> = ({
 }) => {
   return (
     <div
-      className={`block sm:flex whitespace-nowrap py-2 px-3 font-medium rounded-md w-full text-sm justify-center ${
+      className={`block sm:flex whitespace-nowrap py-3 px-6 font-medium rounded-md w-full text-sm justify-center ${
         inverse
           ? 'bg-gray-900 border-transparent border'
           : 'bg-transparent border border-black'
       }`}
     >
-      <h4 className={inverse ? 'text-white' : 'text-black'}>{title}</h4>
+      <h4 className={`${inverse ? 'text-white' : 'text-black'} font-medium`}>
+        {title}
+      </h4>
     </div>
   );
 };

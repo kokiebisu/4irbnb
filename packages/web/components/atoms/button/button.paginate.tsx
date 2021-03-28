@@ -9,7 +9,7 @@ const PaginateButton: React.FC<{
   direction?: string;
   disable?: boolean;
   size?: number;
-}> = ({ direction = 'left', disable = false, size = 8 }) => {
+}> = ({ direction = 'left', disable = false, size = 3 }) => {
   const icons = {
     left: (
       <ChevronLeft
@@ -27,21 +27,22 @@ const PaginateButton: React.FC<{
     ),
   };
   return (
-    <>
-      <div
-        className={`bg-red-200 p-${size} border border-gray-100 rounded-full`}
-      >
-        {icons[direction]}
-      </div>
-    </>
+    <div
+      className={`${
+        disable ? 'border border-gray-100' : ''
+      } rounded-full p-${size}`}
+    >
+      {icons[direction]}
+    </div>
   );
 };
 
 export const paginate = (props) => {
+  const { disable } = props;
   return {
     paginate: {
       component: <PaginateButton {...props} />,
-      style: '',
+      style: `${disable ? '' : 'shadow-md'} rounded-full `,
     },
   };
 };

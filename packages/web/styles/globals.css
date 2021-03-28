@@ -1,12 +1,4 @@
 @tailwind base;
-.bg-primary {
-  background: linear-gradient(
-    to right,
-    rgb(230, 30, 77) 0%,
-    rgb(227, 28, 95) 50%,
-    rgb(215, 4, 102) 100%
-  );
-}
 @tailwind components;
 @tailwind utilities;
 
@@ -111,5 +103,26 @@
   td {
     margin: 0;
     padding: 0;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-5xl mx-auto px-4 md:px-5 lg:px-6;
+  }
+}
+
+@layer utilities {
+  .pt-full {
+    padding-top: 100%;
+  }
+
+  .bg-primary {
+    background: linear-gradient(
+      to right,
+      rgb(230, 30, 77) 0%,
+      rgb(227, 28, 95) 50%,
+      rgb(215, 4, 102) 100%
+    );
   }
 }
