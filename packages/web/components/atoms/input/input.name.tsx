@@ -77,7 +77,7 @@ export const NameInput: React.FC<{
         />
         <label
           htmlFor={name}
-          className={`top-2 absolute transition font-thin ${styleLabel(
+          className={`absolute transition font-thin ${styleLabel(
             errors,
             fieldActive,
             value,
