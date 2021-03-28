@@ -1,65 +1,67 @@
-/** styles */
-import section from "@template/index.module.scss";
-
+/**
+ *
+ * @param param0
+ * @returns
+ */
 export const ExperiencePanel: React.FC<{ images?: string[] }> = ({
   images = [],
 }) => {
   return (
     <div
+      className="overflow-hidden relative h-0"
       style={{
-        paddingTop: "38%",
-        height: 0,
-        overflow: "hidden",
-        position: "relative",
+        paddingTop: '38%',
       }}
     >
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          bottom: 0,
-          right: 0,
-          left: 0,
-        }}
-      >
-        <div className={[section["grid__panel"]].join(" ")}>
+      <div className="absolute top-0 bottom-0 right-0 left-0">
+        <div
+          style={{ gridTemplateColumns: '1fr 1.5fr 1fr' }}
+          className="h-full grid gap-3"
+        >
+          <div
+            className={`rounded-l-lg bg-cover ${!images[0] && 'bg-gray-500'}`}
+            style={{
+              backgroundImage: images[0] && `url(${images[0]})`,
+            }}
+          />
           <div
             style={{
-              backgroundSize: "cover",
-              backgroundImage: images[0] && `url(${images[0]})`,
-              backgroundColor: !images[0] && "lightgray",
+              gridTemplateColumns: '2fr 1fr',
+              gridTemplateRows: 'auto auto',
             }}
-          ></div>
-          <div className={[section["grid__panel--middle"]].join(" ")}>
+            className="grid h-full gap-3"
+          >
             <div
+              className={`col-start-1 col-end-2 row-start-1 row-end-3 bg-cover ${
+                !images[1] && 'bg-gray-500'
+              }`}
               style={{
-                backgroundSize: "cover",
                 backgroundImage: images[1] && `url(${images[1]})`,
-                backgroundColor: !images[1] && "lightgray",
               }}
-            ></div>
+            />
             <div
+              className={`col-start-2 col-end-3 row-start-1 row-end-2 bg-cover ${
+                !images[2] && 'bg-gray-500'
+              }`}
               style={{
-                backgroundSize: "cover",
                 backgroundImage: images[2] && `url(${images[2]})`,
-                backgroundColor: !images[2] && "lightgray",
               }}
-            ></div>
+            />
             <div
+              className={`col-start-2 col-end-3 row-start-2 row-end-3 bg-cover ${
+                !images[3] && 'bg-gray-500'
+              }`}
               style={{
-                backgroundSize: "cover",
                 backgroundImage: images[3] && `url(${images[3]})`,
-                backgroundColor: !images[3] && "lightgray",
               }}
-            ></div>
+            />
           </div>
           <div
+            className={`rounded-r-lg bg-cover ${!images[4] && 'bg-gray-500'}`}
             style={{
-              backgroundSize: "cover",
-              backgroundImage: images[3] && `url(${images[3]})`,
-              backgroundColor: !images[3] && "lightgray",
+              backgroundImage: images[4] && `url(${images[3]})`,
             }}
-          ></div>
+          />
         </div>
       </div>
     </div>
