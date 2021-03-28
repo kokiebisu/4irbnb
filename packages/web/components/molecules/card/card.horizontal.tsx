@@ -29,13 +29,13 @@ export const HorizontalCard: React.FC<{
       <div className="relative" style={{ paddingTop: '66.6%' }}>
         <div className="absolute top-0 bottom-0 right-0 left-0">
           <div className="h-full">
-            <div className="animate-pulse relative h-full">
+            <div className=" relative h-full">
               {card.images ? (
                 <div className="rounded-md h-full">
                   <ImageSlider slides={card.images} />
                 </div>
               ) : (
-                <div className="w-full h-full rounded-md bg-gray-500" />
+                <div className="animate-pulse w-full h-full rounded-md bg-gray-500" />
               )}
               <div className="py-2 px-3 absolute top-0 flex justify-between w-full">
                 <div className={`z-50 ${superhost ? '' : 'text-white hidden'}`}>
