@@ -1,7 +1,3 @@
-/** styles **/
-import space from '@styles/space.module.scss';
-import layout from '@styles/layout.module.scss';
-import font from '@styles/font.module.scss';
 import card from '@card/card.module.scss';
 
 /** Logic */
@@ -26,7 +22,7 @@ export const NearbyCard: React.FC<{
         {imgUrl ? (
           <img src={imgUrl} style={{ borderRadius: 10 }} />
         ) : (
-          <div className="w-20 h-20 rounded-md bg-gray-200" />
+          <div className="w-12 h-12 rounded-md bg-gray-400" />
         )}
       </div>
       <div>

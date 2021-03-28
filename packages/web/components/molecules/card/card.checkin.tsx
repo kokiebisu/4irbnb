@@ -17,23 +17,25 @@ export const CheckInCard: React.FC<{
 
   return (
     <>
-      <div className="bg-white z-50 rounded-md py-5 border border-gray-300 shadow-lg fixed lg:sticky right-0 bottom-0 lg:top-0">
+      <div className="bg-white z-50 rounded-lg py-5 border border-gray-300 shadow-lg fixed lg:sticky right-0 bottom-0 lg:top-0">
         <div className="px-6">
           <div className="flex justify-between">
-            <h3 className="py-3 text-gray-300 text-lg font-medium">
+            <h3 className="py-3 text-gray-500 text-lg font-medium">
               Add dates for prices
             </h3>
             <div className="py-3 text-gray-300 text-xl font-medium w-32">
               <div className="inline-block mr-1">
                 <Star width={10} />
               </div>
-              <span className="inline-block text-sm mr-1">4.93</span>
-              <span className="inline-block text-sm font-thin text-gray-300">
+              <span className="inline-block text-sm mr-1 text-gray-500">
+                4.93
+              </span>
+              <span className="inline-block text-sm font-thin text-gray-500">
                 (248)
               </span>
             </div>
           </div>
-          <div className="rounded-md mt-3 border border-gray-300">
+          <div className="rounded-md mt-3 border">
             <div className="h-16 flex w-full">
               <div
                 onClick={() => {
@@ -75,7 +77,7 @@ export const CheckInCard: React.FC<{
               }}
               className={
                 selected.guests
-                  ? 'border boder-gray-400 w-full bg-transparent rounded'
+                  ? 'border border-gray-400 w-full bg-transparent rounded'
                   : 'border-b border-l border-r bg-transparent rounded-br-md w-full'
               }
             >

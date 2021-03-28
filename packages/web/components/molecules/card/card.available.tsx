@@ -1,11 +1,5 @@
 import { Button, $Button } from '@button';
 
-import color from '@styles/color.module.scss';
-import shape from '@styles/shape.module.scss';
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
-import font from '@styles/font.module.scss';
-
 /**
  * Renders the available card component
  * @param {string} date - The date which the experience is available
@@ -28,7 +22,7 @@ export const AvailableCard: React.FC<{
   price = 31,
 }) => {
   return (
-    <div className="p-12 border boder-gray-300 rounded-md">
+    <div className="p-6 border boder-gray-300 rounded-md">
       <div className="mb-2">
         <h3 className="text-sm">{date}</h3>
       </div>
@@ -37,10 +31,10 @@ export const AvailableCard: React.FC<{
           {from} - {to} {standard}
         </p>
       </div>
-      <div className="my-3">
+      <div className="my-2">
         <u className="text-sm">Book for a private group</u>
       </div>
-      <div className="my-4">
+      <div className="my-2">
         <span className="text-sm">
           <b>${price}</b>
         </span>

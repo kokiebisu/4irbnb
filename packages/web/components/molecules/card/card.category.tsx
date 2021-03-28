@@ -10,11 +10,11 @@ export const CategoryCard: React.FC<{
     <div>
       <div className="relative" style={{ paddingTop: '66.66%' }}>
         <div className="absolute top-0 bottom-0 right-0 left-0">
-          <div className="w-full h-full">
+          <div className="animate-pulse w-full h-full">
             {imgUrl ? (
               <img src={imgUrl} alt="unique stays" className="rounded-md" />
             ) : (
-              <div className="w-full h-full rounded-md bg-gray-300" />
+              <div className="w-full h-full rounded-md bg-gray-500" />
             )}
           </div>
         </div>

@@ -32,7 +32,7 @@ export const types = {
 export const HostingCard: React.FC<{ type?: string }> = ({ type }) => {
   return (
     <div className="sm:w-64 w-full">
-      <div>
+      <div className="animate-pulse">
         {types[type]?.imgUrl ? (
           <div
             style={{
@@ -43,7 +43,7 @@ export const HostingCard: React.FC<{ type?: string }> = ({ type }) => {
           </div>
         ) : (
           <div
-            className="bg-gray-300 rounded-md"
+            className="bg-gray-500 rounded-md"
             style={{
               width: 260,
               height: 160,
@@ -55,7 +55,7 @@ export const HostingCard: React.FC<{ type?: string }> = ({ type }) => {
         <h2 className="text-xl">{types[type]?.title || 'Title here'}</h2>
       </div>
       <div>
-        <h4 className="tracking-wide text-lg">
+        <h4 className="tracking-wide text-base">
           {types[type]?.description ||
             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}
         </h4>

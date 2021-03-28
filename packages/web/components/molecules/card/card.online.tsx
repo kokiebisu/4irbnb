@@ -53,7 +53,7 @@ export const OnlineCard: React.FC<{
         )}
       </div>
       <div
-        className={`absolute bottom-0 left-0 right-0 border-br-lg shadow-lg ${
+        className={`absolute bottom-0 left-0 right-0 rounded-b-lg shadow-lg ${
           inverse ? 'bg-gray-400' : 'bg-white'
         }`}
       >
@@ -63,7 +63,11 @@ export const OnlineCard: React.FC<{
             minHeight: 75,
           }}
         >
-          <h4 className={`${inverse ? 'text-white' : 'text-base'} text-sm`}>
+          <h4
+            className={`${
+              inverse ? 'text-white' : 'text-gray-600 text-base'
+            } text-sm`}
+          >
             {title}
           </h4>
         </div>
