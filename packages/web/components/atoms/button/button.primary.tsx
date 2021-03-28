@@ -5,7 +5,6 @@ import layout from '@styles/layout.module.scss';
 import font from '@styles/font.module.scss';
 import space from '@styles/space.module.scss';
 
-/** components */
 import { Animation } from '@animation';
 
 /**
@@ -16,7 +15,7 @@ import { Animation } from '@animation';
  * @param {boolean} loading - Show the loading animation if true
  * @param {boolean} disable - Shows gray appearance and disabled users from pressing
  */
-export const PrimaryButton: React.FC<{
+const PrimaryButton: React.FC<{
   title?: string;
   size?: string;
   fill?: string;
@@ -66,4 +65,13 @@ export const PrimaryButton: React.FC<{
       )}
     </div>
   );
+};
+
+export const primary = (props) => {
+  return {
+    primary: {
+      component: <PrimaryButton {...props} />,
+      style: '',
+    },
+  };
 };

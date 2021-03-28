@@ -2,7 +2,7 @@
  * Renders the filter button
  * @param {string} name - Name of the filter button
  */
-export const FilterButton: React.FC<{ label?: string; inverse?: boolean }> = ({
+const FilterButton: React.FC<{ label?: string; inverse?: boolean }> = ({
   label = 'Button',
   inverse = false,
 }) => {
@@ -15,4 +15,13 @@ export const FilterButton: React.FC<{ label?: string; inverse?: boolean }> = ({
       <p className="text-sm">{label}</p>
     </div>
   );
+};
+
+export const filter = (props) => {
+  return {
+    filter: {
+      component: <FilterButton {...props} />,
+      style: '',
+    },
+  };
 };

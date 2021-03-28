@@ -1,9 +1,3 @@
-/** styles **/
-import font from '@styles/font.module.scss';
-import shape from '@styles/shape.module.scss';
-import space from '@styles/space.module.scss';
-import color from '@styles/color.module.scss';
-
 /**
  * Renders the border button props
  * @param {string} to - The link to which it redirects
@@ -12,7 +6,7 @@ import color from '@styles/color.module.scss';
  * @param {string} size - The size of the button
  * @param {boolean} spread - Whether if the button takes full width of the parent
  */
-export const BorderButton: React.FC<{
+const BorderButton: React.FC<{
   title?: string;
   inverse?: boolean;
   size?: 'sm' | 'md' | 'lg';
@@ -44,4 +38,13 @@ export const BorderButton: React.FC<{
       <h4 className={inverse ? 'text-white' : undefined}>{title}</h4>
     </div>
   );
+};
+
+export const border = (props) => {
+  return {
+    border: {
+      component: <BorderButton {...props} />,
+      style: '',
+    },
+  };
 };

@@ -4,7 +4,7 @@ import { ChevronLeft } from '@svg/regular';
  * Renders the back button
  * @returns
  */
-export const BackButton: React.FC<{}> = () => {
+const BackButton: React.FC<{}> = () => {
   return (
     <div className="flex items-center bg-transparent">
       <div>
@@ -15,4 +15,13 @@ export const BackButton: React.FC<{}> = () => {
       </div>
     </div>
   );
+};
+
+export const back = (props) => {
+  return {
+    back: {
+      component: <BackButton {...props} />,
+      style: '',
+    },
+  };
 };

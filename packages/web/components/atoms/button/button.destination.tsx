@@ -3,7 +3,7 @@
  * @param city
  * @param location
  */
-export const DestinationButton: React.FC<{
+const DestinationButton: React.FC<{
   city?: String;
   location?: String;
 }> = ({ city = 'City', location = 'Location' }) => {
@@ -17,4 +17,13 @@ export const DestinationButton: React.FC<{
       </div>
     </div>
   );
+};
+
+export const destination = (props) => {
+  return {
+    destination: {
+      component: <DestinationButton {...props} />,
+      style: '',
+    },
+  };
 };

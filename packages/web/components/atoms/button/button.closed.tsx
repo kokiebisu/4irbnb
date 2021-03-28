@@ -1,6 +1,6 @@
 import { CheckPlain, Close } from '@svg/original';
 
-export const ClosedButton: React.FC<{
+const ClosedButton: React.FC<{
   selected?: boolean;
   content?: string;
 }> = ({ content = 'close', selected = false }) => {
@@ -31,4 +31,13 @@ export const ClosedButton: React.FC<{
       {contents[content]}
     </div>
   );
+};
+
+export const closed = (props) => {
+  return {
+    closed: {
+      component: <ClosedButton {...props} />,
+      style: '',
+    },
+  };
 };

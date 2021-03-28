@@ -2,7 +2,7 @@
  * Renders the globe button component
  * @param {boolean} inverse - Whether if the globe button is styled in inverse
  */
-export const TransparentButton: React.FC<{
+const TransparentButton: React.FC<{
   inverse?: boolean;
   content?: any;
 }> = ({ inverse = false, content }) => {
@@ -15,4 +15,13 @@ export const TransparentButton: React.FC<{
       {content}
     </div>
   );
+};
+
+export const transparent = (props) => {
+  return {
+    transparent: {
+      component: <TransparentButton {...props} />,
+      style: '',
+    },
+  };
 };

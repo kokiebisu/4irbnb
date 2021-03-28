@@ -4,9 +4,7 @@ import { MagnifyGlass } from '@svg/original';
  * Renders the Search Button component
  * @param {expand}
  */
-export const SearchButton: React.FC<{ expand?: boolean }> = ({
-  expand = false,
-}) => {
+const SearchButton: React.FC<{ expand?: boolean }> = ({ expand = false }) => {
   return (
     <div
       className={`flex items-center bg-primary rounded-full ${
@@ -25,4 +23,13 @@ export const SearchButton: React.FC<{ expand?: boolean }> = ({
       </div>
     </div>
   );
+};
+
+export const search = (props) => {
+  return {
+    search: {
+      component: <SearchButton {...props} />,
+      style: '',
+    },
+  };
 };

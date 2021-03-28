@@ -1,31 +1,5 @@
 import { motion } from 'framer-motion';
-
-import { AuthButton } from '@button/button.auth';
-import { MenuButton } from '@button/button.menu';
-import { PrivacyButton } from '@button/button.privacy';
-import { BorderButton } from '@button/button.border';
-import { BannerButton } from '@button/button.banner';
-import { PrimaryButton } from '@button/button.primary';
-import { SearchbarButton } from '@button/button.searchbar';
-import { PaginateButton } from '@button/button.paginate';
-import { ExpandButton } from '@button/button.expand';
-import { OptionButton } from '@button/button.option';
-import { UnderlineButton } from '@button/button.underline';
-import { FilterButton } from '@button/button.filter';
-import { ModalButton } from '@button/button.modal';
-import { BackButton } from '@button/button.back';
-import { ClosedButton } from '@button/button.closed';
-import { TransparentButton } from '@button/button.transparent';
-import { GlobeButton } from '@button/button.globe';
-import { LinkButton } from '@button/button.link';
-import { SearchButton } from '@button/button.search';
-import { LocationButton } from '@button/button.location';
-import { LogoButton } from '@button/button.logo';
-import { NearbyButton } from '@button/button.nearby';
-import { CalendarButton } from '@button/button.calendar';
-import { VideoButton } from '@button/button.video';
-import { DestinationButton } from '@button/button.destination';
-import { CurrencyButton } from '@button/button.currency';
+import { variantsFactory } from './utils/variants';
 
 export const $Button = {
   AUTH: 'auth',
@@ -85,35 +59,12 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const { disable } = props;
-  const variants: { [key: string]: JSX.Element } = {
-    auth: <AuthButton {...props} />,
-    menu: <MenuButton {...props} />,
-    privacy: <PrivacyButton {...props} />,
-    border: <BorderButton {...props} />,
-    banner: <BannerButton {...props} />,
-    primary: <PrimaryButton {...props} />,
-    // searchbar: <SearchbarButton {...props} />,
-    paginate: <PaginateButton {...props} />,
-    expand: <ExpandButton {...props} />,
-    option: <OptionButton {...props} />,
-    underline: <UnderlineButton {...props} />,
-    filter: <FilterButton {...props} />,
-    modal: <ModalButton {...props} />,
-    back: <BackButton {...props} />,
-    transparent: <TransparentButton {...props} />,
-    globe: <GlobeButton {...props} />,
-    link: <LinkButton {...props} />,
-    closed: <ClosedButton {...props} />,
-    search: <SearchButton {...props} />,
-    location: <LocationButton {...props} />,
-    nearby: <NearbyButton {...props} />,
-    calendar: <CalendarButton {...props} />,
-    searchbar: <SearchbarButton {...props} />,
-    logo: <LogoButton {...props} />,
-    video: <VideoButton {...props} />,
-    destination: <DestinationButton {...props} />,
-    currency: <CurrencyButton {...props} />,
-  };
+  const variants: {
+    [key: string]: {
+      component: JSX.Element;
+      style: string;
+    };
+  } = variantsFactory(props);
 
   const styleWidth = (stretch) => {
     return stretch ? 'w-full' : 'w-auto';
@@ -132,13 +83,13 @@ export const Button: React.FC<ButtonProps> = ({
       whileTap={{ scale: disable || !animate ? 1 : 0.995 }}
       whileHover={{ scale: disable || !animate ? 1 : 1.005 }}
       data-testid={`${variant}-button`}
-      className={`${extendsTo} ${styleWidth(stretch)} ${styleDisplay(
-        block
-      )} transition ${styleDisable(disable)}`}
+      className={`${variants[variant].style} ${extendsTo} ${styleWidth(
+        stretch
+      )} ${styleDisplay(block)} transition ${styleDisable(disable)}`}
       onClick={!disable ? onClick : undefined}
       disabled={disable}
     >
-      {variant ? variants[variant] : children}
+      {variant ? variants[variant].component : children}
     </motion.button>
   );
 };

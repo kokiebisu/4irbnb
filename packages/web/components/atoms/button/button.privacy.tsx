@@ -3,7 +3,7 @@
  * @param {string} title - Title of the button
  * @param {boolean} inverse - Whether if the button takes the inverse style or not
  */
-export const PrivacyButton: React.FC<{ title?: string; inverse?: boolean }> = ({
+const PrivacyButton: React.FC<{ title?: string; inverse?: boolean }> = ({
   title = 'Button',
   inverse = false,
 }) => {
@@ -11,11 +11,20 @@ export const PrivacyButton: React.FC<{ title?: string; inverse?: boolean }> = ({
     <div
       className={`block sm:flex whitespace-nowrap py-2 px-3 font-medium rounded-md w-full text-sm justify-center ${
         inverse
-          ? 'bg-gray-300 border-transparent border'
-          : 'bg-transparent border border-block'
+          ? 'bg-gray-900 border-transparent border'
+          : 'bg-transparent border border-black'
       }`}
     >
       <h4 className={inverse ? 'text-white' : 'text-black'}>{title}</h4>
     </div>
   );
+};
+
+export const privacy = (props) => {
+  return {
+    privacy: {
+      component: <PrivacyButton {...props} />,
+      style: '',
+    },
+  };
 };

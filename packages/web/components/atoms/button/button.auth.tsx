@@ -2,7 +2,7 @@
  * Renders the auth button component
  * @param {string} auth - Platform for the authentication
  */
-export const AuthButton: React.FC<{ icon?: any; name?: string }> = ({
+const AuthButton: React.FC<{ icon?: any; name?: string }> = ({
   icon,
   name = 'Email',
 }) => {
@@ -14,4 +14,13 @@ export const AuthButton: React.FC<{ icon?: any; name?: string }> = ({
       </div>
     </div>
   );
+};
+
+export const auth = (props) => {
+  return {
+    auth: {
+      component: <AuthButton {...props} />,
+      style: '',
+    },
+  };
 };
