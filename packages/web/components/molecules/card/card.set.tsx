@@ -1,35 +1,20 @@
-/** styles **/
-import shape from "@styles/shape.module.scss";
-import space from "@styles/space.module.scss";
-import color from "@styles/color.module.scss";
-import layout from "@styles/layout.module.scss";
-import font from "@styles/font.module.scss";
-
-/** vectors */
-import { Check } from "@svg/original";
+import { Check } from '@svg/original';
 
 export const SetCard: React.FC<{}> = () => {
   return (
-    <div className={[shape["br--15"], color["b--white__2"]].join(" ")}>
-      <div
-        className={[
-          shape["w--full"],
-          shape["btr--15"],
-          shape["h--8"],
-          color["bg--green__1"],
-        ].join(" ")}
-      />
-      <div className={[space["p--15"]].join(" ")}>
-        <div className={[layout["flex"]].join(" ")}>
-          <div className={[space["m-r--12"]].join(" ")}>
+    <div className="rounded-md border border-gray-300">
+      <div className="w-full border-tr-lg h-3 bg-green-400" />
+      <div className="p-6">
+        <div className="flex">
+          <div className="mr-3">
             <Check width={18} fill="#268A04" />
           </div>
           <div>
-            <div className={[space["m-b--4"]].join(" ")}>
-              <h3 className={[font["size--16"]].join(" ")}>You're all set!</h3>
+            <div className="mb-1">
+              <h3 className="text-base">You're all set!</h3>
             </div>
             <div>
-              <p className={[font["size--14"], color["c--gray__1"]].join(" ")}>
+              <p className="text-sm text-gray-300">
                 This helps us keep your account secure
               </p>
             </div>

@@ -1,26 +1,16 @@
 import { AnimatePresence, motion } from 'framer-motion';
-
 import { useToggleState } from '@context/toggle';
-
-import index from '@styles/index.module.scss';
-import layout from '@styles/layout.module.scss';
 import space from '@styles/space.module.scss';
 import color from '@styles/color.module.scss';
 import shape from '@styles/shape.module.scss';
-
 import { categoryItems, anywhereItems, destinationItems } from '../content';
-
 import { nearbyItems } from '../data/nearby';
-
 import { Layout } from '@layout';
-
 import { Animation } from '@animation';
 import { Modal, $Modal } from '@modal';
 import { Template, $Template } from '@template/index';
 import { Footer } from '@footer';
-
 import { Bar, $Bar } from '@bar';
-
 import { useHandleScroll } from '@hooks/useHandleScroll';
 import { useHandleDocumentResize } from '@hooks/useHandleDocumentResize';
 import { useTimeout } from '@hooks/useTimeout';
@@ -84,8 +74,8 @@ const LandingPage = ({ currentUser }) => {
           </div>
         )}
         <Footer spread />
-        <div className="fixed w-full z-50 bottom-0 flex justify-center">
-          <div className={[index['m__privacy']].join(' ')}>
+        <div className="fixed w-full z-50 bottom-0 flex justify-center px-16 pb-6">
+          <div>
             <Modal
               variant={$Modal.PRIVACY}
               criteria={toggleState.privacy}
@@ -101,7 +91,7 @@ const LandingPage = ({ currentUser }) => {
               exit={{ y: 60 }}
               initial={{ y: 0 }}
               transition={{ duration: 0.5 }}
-              className={index['none__menubar']}
+              className="md:hidden"
             >
               <div className="fixed w-full z-30 bottom-0">
                 <Bar
@@ -125,25 +115,8 @@ const LandingPage = ({ currentUser }) => {
           </div>
         )}
         {toggleState.globe && (
-          <div
-            style={{
-              position: 'fixed',
-              zIndex: 60,
-              bottom: 0,
-              left: 0,
-              right: 0,
-              top: 0,
-              backgroundColor: 'rgba(0, 0, 0, 0.6)',
-            }}
-          >
-            <div
-              className={[
-                layout['flex'],
-                layout['justify-center'],
-                layout['items-center'],
-                shape['h--100v'],
-              ].join(' ')}
-            >
+          <div className="fixed z-50 bottom-0 top-0 left-0 right-0 bg-black bg-opacity-30">
+            <div className="flex justify-center items-center h-screen">
               <Modal
                 variant={$Modal.GLOBE}
                 extendsTo={[

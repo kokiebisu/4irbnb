@@ -1,14 +1,5 @@
-import { useState } from "react";
-
-/** styles **/
-import space from "@styles/space.module.scss";
-import layout from "@styles/layout.module.scss";
-import color from "@styles/color.module.scss";
-import font from "@styles/font.module.scss";
-import shape from "@styles/shape.module.scss";
-
-/** Logic */
-import { renderDescription } from "./logic/logic.review";
+import { useState } from 'react';
+import { renderDescription } from './logic/logic.review';
 
 /**
  * Renders the review card component
@@ -22,72 +13,38 @@ export const ReviewCard: React.FC<{
   user?: string;
 }> = ({
   imgUrl,
-  user = "User",
+  user = 'User',
   description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-  commentedDate = "Month, Year",
+  commentedDate = 'Month, Year',
 }) => {
   const [display, setDisplay] = useState(false);
 
   return (
-    <div className={[space["p-v--12"]].join(" ")}>
-      <div
-        className={[
-          layout["flex"],
-          layout["items-center"],
-          space["p-b--8"],
-        ].join(" ")}
-      >
-        <div style={{ height: 55, width: 55, borderRadius: 9999 }}>
+    <div className="py-3">
+      <div className="flex items-center pb-3">
+        <div style={{ height: 55, width: 55 }} className="rounded-full">
           {imgUrl ? (
-            <img src={imgUrl} style={{ borderRadius: 9999 }} />
+            <img src={imgUrl} className="rounded-full" />
           ) : (
-            <div
-              className={[
-                shape["w--full"],
-                shape["h--full"],
-                shape["br--circle"],
-                color["bg--white__2"],
-              ].join(" ")}
-            />
+            <div className="w-full h-full rounded-full bg-gray-300" />
           )}
         </div>
-        <div
-          className={[
-            space["m-l--12"],
-            space["p-b--8"],
-            layout["flex"],
-            layout["items-center"],
-          ].join(" ")}
-        >
-          <div className={[layout["flex"], layout["flex-col"]].join(" ")}>
-            <p className={[color["c--gray__3"]].join(" ")}>{user}</p>
-            <p
-              className={[
-                font["size--14"],
-                color["c--gray__1"],
-                font["weight--300"],
-              ].join(" ")}
-            >
-              {commentedDate}
-            </p>
+        <div className="ml-3 pb-3 flex items-center">
+          <div className="flex flex-col">
+            <p className="text-gray-400">{user}</p>
+            <p className="text-sm text-gray-200 font-light">{commentedDate}</p>
           </div>
         </div>
       </div>
-      <div className={space["m-v--12"]}>
-        {display || description.split(" ").length < 75 ? (
-          <p className={[font["weight--100"], font["lh--15"]].join(" ")}>
-            {description}
-          </p>
+      <div className="my-3">
+        {display || description.split(' ').length < 75 ? (
+          <p className="font-thin leading-6">{description}</p>
         ) : (
-          <p className={[font["weight--100"], font["lh--15"]].join(" ")}>
+          <p className="font-thin leading-6">
             {renderDescription(description)}
-            <span
-              className={[layout["inline-block"], space["m-l--6"]].join(" ")}
-            >
+            <span className="inline-block ml-2">
               <div
-                className={[color["bg--transparent"], font["size--16"]].join(
-                  " "
-                )}
+                className="bg-transparent text-base"
                 onClick={() => setDisplay(!display)}
               >
                 <u>read more</u>

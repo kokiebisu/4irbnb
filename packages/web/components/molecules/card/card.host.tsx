@@ -1,11 +1,5 @@
-import Router from "next/router";
-
-import space from "@styles/space.module.scss";
-import color from "@styles/color.module.scss";
-import font from "@styles/font.module.scss";
-import shape from "@styles/shape.module.scss";
-
-import { Button, $Button } from "@button";
+import Router from 'next/router';
+import { Button, $Button } from '@button';
 
 /**
  * Renders the host card component
@@ -19,15 +13,14 @@ export const HostCard: React.FC<{
   host?: string;
   stayType?: string;
   location?: string;
-}> = ({ imgUrl, host = "Host", stayType = "Type", location = "Location" }) => {
+}> = ({ imgUrl, host = 'Host', stayType = 'Type', location = 'Location' }) => {
   return (
     <div>
       <div>
         {imgUrl ? (
           <img
-            className={[shape["br--20"]].join(" ")}
+            className="rounded-md object-fit"
             style={{
-              objectFit: "cover",
               height: 434,
               width: 350,
             }}
@@ -35,29 +28,22 @@ export const HostCard: React.FC<{
           />
         ) : (
           <div
-            className={[shape["br--20"], color["bg--white__2"]].join(" ")}
+            className="rounded-md bg-gray-300"
             style={{ height: 434, width: 350 }}
           />
         )}
       </div>
-      <div style={{ marginTop: 6 }}>
+      <div className="mt-2">
         <h3>{host}</h3>
       </div>
-      <div className={[space["m-v--8"]].join(" ")}>
-        <h4
-          style={{ textTransform: "capitalize" }}
-          className={[
-            font["ls--4"],
-            font["size--15"],
-            color["c--gray__4"],
-          ].join(" ")}
-        >
+      <div className="my-3">
+        <h4 className="capitalize tracking-wide text-sm text-gray-400">
           Hosts a {stayType} in {location}
         </h4>
       </div>
       <div>
         <Button
-          onClick={() => Router.push("/")}
+          onClick={() => Router.push('/')}
           variant={$Button.UNDERLINE}
           title={`Check out some ${stayType}s`}
         />
