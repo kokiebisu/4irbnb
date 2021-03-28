@@ -21,18 +21,10 @@ const BarButton = ({ type = 'menu', selected = 'menu' }) => {
   };
 
   return (
-    <div
-      className={
-        types['menu'].selected
-          ? [menubar['menubar__item'], menubar['selected']].join(' ')
-          : menubar['menubar__item']
-      }
-    >
-      <div className={menubar['menubar__item--logo']}>
-        {types['menu'].component}
-      </div>
-      <div className={menubar['menubar__item--text']}>
-        <p>{types['menu'].name}</p>
+    <div className="flex flex-col items-center mx-6">
+      <div>{types['menu'].component}</div>
+      <div>
+        <p className="text-xs">{types['menu'].name}</p>
       </div>
     </div>
   );

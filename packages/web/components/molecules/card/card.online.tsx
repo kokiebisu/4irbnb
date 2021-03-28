@@ -54,7 +54,7 @@ export const OnlineCard: React.FC<{
       </div>
       <div
         className={`absolute bottom-0 left-0 right-0 rounded-b-lg shadow-lg ${
-          inverse ? 'bg-gray-400' : 'bg-white'
+          inverse ? 'bg-gray-600' : 'bg-white'
         }`}
       >
         <div
