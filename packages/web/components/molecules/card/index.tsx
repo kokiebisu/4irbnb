@@ -1,28 +1,6 @@
 import Router from 'next/router';
 
-import { CategoryCard } from './card.category';
-import { HorizontalCard } from './card.horizontal';
-import { VerticalCard } from './card.vertical';
-import { TypeStayCard } from './card.typestay';
-import { ArrangementsCard } from './card.arrangements';
-import { CheckInCard } from './card.checkin';
-import { ReviewCard } from './card.review';
-import { StayCard } from './card.stay';
-import { NearbyCard } from './card.nearby';
-import { OnlineCard } from './card.online';
-import { ParticipateCard } from './card.participate';
-import { AvailableCard } from './card.available';
-import { HostCard } from './card.host';
-import { SetCard } from './card.set';
-import { AgainCard } from './card.again';
-import { WorksCard } from './card.works';
-import { SharingCard } from './card.sharing';
-import { HowCard } from './card.how';
-import { AnywhereCard } from './card.anywhere';
-import { HostingCard } from './card.hosting';
-import { VideoCard } from './card.video';
-import { StartingCard } from './card.starting';
-import { CollectionCard } from './card.collection';
+import { factoryVariants } from './utils/variants';
 
 export const $Card = {
   CATEGORY: 'category',
@@ -70,48 +48,27 @@ export const Card: React.FC<CardProps> = ({
   ...props
 }) => {
   const variants: {
-    [variant: string]: JSX.Element;
-  } = {
-    category: <CategoryCard {...props} />,
-    horizontal: <HorizontalCard {...props} />,
-    vertical: <VerticalCard {...props} />,
-    typestay: <TypeStayCard {...props} />,
-    arrangements: <ArrangementsCard {...props} />,
-    checkin: <CheckInCard {...props} />,
-    review: <ReviewCard {...props} />,
-    stay: <StayCard {...props} />,
-    nearby: <NearbyCard {...props} />,
-    online: <OnlineCard {...props} />,
-    participate: <ParticipateCard {...props} />,
-    available: <AvailableCard {...props} />,
-    host: <HostCard {...props} />,
-    set: <SetCard {...props} />,
-    again: <AgainCard {...props} />,
-    works: <WorksCard {...props} />,
-    sharing: <SharingCard {...props} />,
-    how: <HowCard {...props} />,
-    anywhere: <AnywhereCard {...props} />,
-    hosting: <HostingCard {...props} />,
-    video: <VideoCard {...props} />,
-    starting: <StartingCard {...props} />,
-    collection: <CollectionCard {...props} />,
-  };
+    [variant: string]: { component: JSX.Element; style: string };
+  } = factoryVariants(props);
 
   if (to) {
     return (
       <div
-        className={`cursor-pointer text-left block h-full w-full' ${extendsTo}`}
+        className={`cursor-pointer text-left block h-full w-full' ${extendsTo} ${variants[variant].style}`}
         data-testid={`${variant}-card`}
         onClick={() => Router.push(to)}
       >
-        {variants[variant]}
+        {variants[variant].component}
       </div>
     );
   }
 
   return (
-    <div data-testid={`${variant}-card`} className={extendsTo}>
-      {variants[variant]}
+    <div
+      data-testid={`${variant}-card`}
+      className={`${extendsTo} ${variants[variant].style}`}
+    >
+      {variants[variant].component}
     </div>
   );
 };

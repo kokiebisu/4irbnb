@@ -2,7 +2,7 @@
  * Renders the participate card component
  * @param {string} categoryType - Type of participate card
  */
-export const HowCard: React.FC<{ how?: string }> = ({ how = 'qualified' }) => {
+const HowCard: React.FC<{ how?: string }> = ({ how = 'qualified' }) => {
   const types = {
     qualified: {
       icon:
@@ -56,4 +56,13 @@ export const HowCard: React.FC<{ how?: string }> = ({ how = 'qualified' }) => {
       )}
     </div>
   );
+};
+
+export const how = (props) => {
+  return {
+    how: {
+      component: <HowCard {...props} />,
+      style: '',
+    },
+  };
 };

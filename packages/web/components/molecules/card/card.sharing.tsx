@@ -1,4 +1,4 @@
-export const SharingCard: React.FC<{
+const SharingCard: React.FC<{
   sharing?: string;
 }> = ({ sharing = 'meditate' }) => {
   const sharings = {
@@ -40,4 +40,13 @@ export const SharingCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const sharing = (props) => {
+  return {
+    sharing: {
+      component: <SharingCard {...props} />,
+      style: '',
+    },
+  };
 };

@@ -1,6 +1,6 @@
 import { getWorkContent } from './logic/logic.work';
 
-export const WorksCard: React.FC<{
+const WorksCard: React.FC<{
   work?: string;
 }> = ({ work = 'design' }) => {
   const works = getWorkContent();
@@ -21,4 +21,13 @@ export const WorksCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const works = (props) => {
+  return {
+    works: {
+      component: <WorksCard {...props} />,
+      style: '',
+    },
+  };
 };

@@ -8,7 +8,7 @@ import { Button, $Button } from '@button';
  * @param {string} stayType - Type of stay
  * @param {string} location - Location of the stay
  */
-export const HostCard: React.FC<{
+const HostCard: React.FC<{
   imgUrl?: string;
   host?: string;
   stayType?: string;
@@ -50,4 +50,13 @@ export const HostCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const host = (props) => {
+  return {
+    host: {
+      component: <HostCard {...props} />,
+      style: '',
+    },
+  };
 };
