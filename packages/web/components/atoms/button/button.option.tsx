@@ -3,7 +3,7 @@
  * @param {string} options - Type of option button
  * @param {boolean} bold - Whether if the option button is styled bold
  */
-export const OptionButton: React.FC<{ name?: string; bold?: boolean }> = ({
+const OptionButton: React.FC<{ name?: string; bold?: boolean }> = ({
   name = 'Option',
   bold = false,
 }) => {
@@ -16,4 +16,13 @@ export const OptionButton: React.FC<{ name?: string; bold?: boolean }> = ({
       {name}
     </div>
   );
+};
+
+export const option = (props) => {
+  return {
+    option: {
+      component: <OptionButton {...props} />,
+      style: '',
+    },
+  };
 };

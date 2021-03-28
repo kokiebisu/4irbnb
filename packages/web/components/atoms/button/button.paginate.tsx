@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from '@svg/regular';
  * @param {string} direction - The direction in which the arrow points
  * @param {boolean} disable - Whether if the button is disabled or not
  */
-export const PaginateButton: React.FC<{
+const PaginateButton: React.FC<{
   direction?: string;
   disable?: boolean;
   size?: number;
@@ -35,4 +35,13 @@ export const PaginateButton: React.FC<{
       </div>
     </>
   );
+};
+
+export const paginate = (props) => {
+  return {
+    paginate: {
+      component: <PaginateButton {...props} />,
+      style: '',
+    },
+  };
 };

@@ -4,7 +4,7 @@
  * @param {number} number
  * @returns
  */
-export const CalendarButton: React.FC<{
+const CalendarButton: React.FC<{
   disabled?: boolean;
   number?: number;
 }> = ({ disabled = false, number }) => {
@@ -20,4 +20,13 @@ export const CalendarButton: React.FC<{
       </div>
     </div>
   );
+};
+
+export const calendar = (props) => {
+  return {
+    calendar: {
+      component: <CalendarButton {...props} />,
+      style: '',
+    },
+  };
 };

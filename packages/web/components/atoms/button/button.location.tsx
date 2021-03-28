@@ -5,7 +5,7 @@
  * @param from
  * @param to
  */
-export const LocationButton: React.FC<{
+const LocationButton: React.FC<{
   type?: 'explore' | 'recent';
   location?: string;
   from?: string;
@@ -53,4 +53,13 @@ export const LocationButton: React.FC<{
       </div>
     </div>
   );
+};
+
+export const location = (props) => {
+  return {
+    location: {
+      component: <LocationButton {...props} />,
+      style: '',
+    },
+  };
 };

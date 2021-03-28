@@ -4,7 +4,7 @@
  * @param region
  * @param selected
  */
-export const GlobeButton: React.FC<{
+const GlobeButton: React.FC<{
   language?: string;
   region?: string;
   selected?: boolean;
@@ -23,4 +23,13 @@ export const GlobeButton: React.FC<{
       </div>
     </div>
   );
+};
+
+export const globe = (props) => {
+  return {
+    globe: {
+      component: <GlobeButton {...props} />,
+      style: '',
+    },
+  };
 };

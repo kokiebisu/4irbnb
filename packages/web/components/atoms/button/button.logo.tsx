@@ -5,7 +5,7 @@ import { NameLogo, NoNameLogo } from '@svg/logo';
  * @param noName
  * @param fill
  */
-export const LogoButton: React.FC<{ noName?: boolean; fill?: string }> = ({
+const LogoButton: React.FC<{ noName?: boolean; fill?: string }> = ({
   noName = false,
   fill = '#F5385D',
 }) => {
@@ -14,4 +14,13 @@ export const LogoButton: React.FC<{ noName?: boolean; fill?: string }> = ({
   ) : (
     <NameLogo fill={fill} width={102} height={32} />
   );
+};
+
+export const logo = (props) => {
+  return {
+    logo: {
+      component: <LogoButton {...props} />,
+      style: '',
+    },
+  };
 };

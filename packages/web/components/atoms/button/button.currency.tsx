@@ -5,7 +5,7 @@
  * @param symbol
  * @returns
  */
-export const CurrencyButton: React.FC<{
+const CurrencyButton: React.FC<{
   name?: string;
   abbreviation?: string;
   symbol?: string;
@@ -24,4 +24,13 @@ export const CurrencyButton: React.FC<{
       </div>
     </div>
   );
+};
+
+export const currency = (props) => {
+  return {
+    currency: {
+      component: <CurrencyButton {...props} />,
+      style: '',
+    },
+  };
 };

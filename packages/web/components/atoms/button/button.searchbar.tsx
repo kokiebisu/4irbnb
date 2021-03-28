@@ -5,23 +5,19 @@ import { MagnifyGlass } from '@svg/original';
  * Renders the searchbar button component
  * @param {boolean} mini - Whether if the button is the minified version or not
  */
-export const SearchbarButton: React.FC<{ mini?: boolean }> = ({
-  mini = false,
-}) => {
+const SearchbarButton: React.FC<{ mini?: boolean }> = ({ mini = false }) => {
   const handlePress = () => {
     alert('searchbar button clicked');
   };
   return (
     <>
       {mini ? (
-        <div className="h-32 w-full py-6 pl-6 pr-3 flex items-center justify-between border border-gray-300 rounded-lg">
-          <div>
-            <p className="whitespace-nowrap text-sm font-medium">
-              Start your search
-            </p>
-          </div>
-          <div>
-            <div className="bg-primary absolute top0-0 bottom-0 left-0 right-0 rounded-full h-24 w-24">
+        <div
+          style={{ gridTemplateColumns: 'auto 1fr' }}
+          className="relative py-1 pr-6 w-full px-1 grid items-center border border-gray-300 rounded-full"
+        >
+          <div className="bg-primary rounded-full h-10 w-10 relative">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <MagnifyGlass
                 width={12}
                 height={12}
@@ -29,6 +25,12 @@ export const SearchbarButton: React.FC<{ mini?: boolean }> = ({
                 strokeWidth={6}
               />
             </div>
+          </div>
+
+          <div>
+            <p className="whitespace-nowrap text-sm font-medium">
+              Start your search
+            </p>
           </div>
         </div>
       ) : (
@@ -48,4 +50,13 @@ export const SearchbarButton: React.FC<{ mini?: boolean }> = ({
       )}
     </>
   );
+};
+
+export const searchbar = (props) => {
+  return {
+    searchbar: {
+      component: <SearchbarButton {...props} />,
+      style: '',
+    },
+  };
 };
