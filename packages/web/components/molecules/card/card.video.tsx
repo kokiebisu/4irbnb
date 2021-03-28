@@ -52,7 +52,7 @@ export const VideoCard: React.FC<{
           <div className="h-full w-full">
             {isHovered && <Video videoUrl={videoUrl} />}
             <img
-              className="h-full rounded-md cursor-pointer object-cover"
+              className="h-full rounded-lg cursor-pointer object-cover"
               src={imgUrl}
             />
           </div>
