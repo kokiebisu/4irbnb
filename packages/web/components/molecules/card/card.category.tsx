@@ -20,7 +20,7 @@ const CategoryCard: React.FC<{
         </div>
       </div>
       <div className="mt-2">
-        <h3 className="text-base text-gray-600">{title}</h3>
+        <h3 className="text-base text-gray-800">{title}</h3>
       </div>
     </div>
   );

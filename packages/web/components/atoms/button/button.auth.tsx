@@ -20,7 +20,8 @@ export const auth = (props) => {
   return {
     auth: {
       component: <AuthButton {...props} />,
-      style: 'border-gray-300 border-solid border-2 hover:border-black',
+      style:
+        'border-gray-300 border-solid border-2 hover:border-black bg-transparent block w-full p-4 py-3 rounded-lg',
     },
   };
 };
