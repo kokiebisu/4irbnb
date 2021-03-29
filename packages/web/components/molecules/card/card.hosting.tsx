@@ -32,7 +32,7 @@ export const types = {
 const HostingCard: React.FC<{ type?: string }> = ({ type }) => {
   return (
     <div className="sm:w-64 w-full">
-      <div className="animate-pulse">
+      <div className="">
         {types[type]?.imgUrl ? (
           <div
             style={{
@@ -43,7 +43,7 @@ const HostingCard: React.FC<{ type?: string }> = ({ type }) => {
           </div>
         ) : (
           <div
-            className="bg-gray-500 rounded-md"
+            className="animate-pulse bg-gray-500 rounded-md"
             style={{
               width: 260,
               height: 160,

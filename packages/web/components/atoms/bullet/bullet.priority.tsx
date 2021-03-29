@@ -1,7 +1,7 @@
 import Router from 'next/router';
 
 import { Guidance, Protection, Requirements } from '@svg/original';
-import { Button } from '@button';
+import { $Button, Button } from '@button';
 
 /**
  * Renders the priority bullet
@@ -43,9 +43,11 @@ export const PriorityBullet: React.FC<{
         <p>{categories[priority].description}</p>
       </div>
       <div>
-        <Button onClick={() => Router.push('/')}>
-          <u className="text-sm">{categories[priority].link}</u>
-        </Button>
+        <Button
+          title={categories[priority].link}
+          variant={$Button.UNDERLINE}
+          onClick={() => Router.push('/')}
+        />
       </div>
     </div>
   );

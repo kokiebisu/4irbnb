@@ -1,5 +1,3 @@
-import Router from 'next/router';
-
 import { factoryVariants } from './utils/variants';
 
 export const $Card = {
@@ -45,19 +43,19 @@ export interface CardProps {
 export const Card: React.FC<CardProps> = ({
   extendsTo,
   variant,
-  to,
+  onClick,
   ...props
 }) => {
   const variants: {
     [variant: string]: { component: JSX.Element; style: string };
   } = factoryVariants(props);
 
-  if (to) {
+  if (onClick) {
     return (
       <div
         className={`cursor-pointer text-left block h-full w-full' ${extendsTo} ${variants[variant].style}`}
         data-testid={`${variant}-card`}
-        onClick={() => Router.push(to)}
+        onClick={onClick}
       >
         {variants[variant].component}
       </div>

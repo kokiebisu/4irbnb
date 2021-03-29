@@ -1,15 +1,16 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
-import layout from "@styles/layout.module.scss";
-import space from "@styles/space.module.scss";
-import font from "@styles/font.module.scss";
-import color from "@styles/color.module.scss";
-import styles from "@template/index.module.scss";
-import sectionStyles from "@template/index.module.scss";
-import section from "@template/index.module.scss";
+import layout from '@styles/layout.module.scss';
+import space from '@styles/space.module.scss';
+import font from '@styles/font.module.scss';
+import color from '@styles/color.module.scss';
+import styles from '@template/index.module.scss';
+import sectionStyles from '@template/index.module.scss';
+import section from '@template/index.module.scss';
 
-import { Card, $Card } from "@card";
-import { Button, $Button } from "@button";
+import { Card, $Card } from '@card';
+import { Button, $Button } from '@button';
+import { useRouter } from 'next/router';
 
 /**
  * Renders the stay section
@@ -34,14 +35,14 @@ export const MultipleTemplate: React.FC<{
   isDescription?: boolean;
   fetchUrl?: string;
 }> = ({
-  title = "Section Title",
-  description = "Section Description",
+  title = 'Section Title',
+  description = 'Section Description',
   pagination = false,
-  showAll = { description: "Show all cards", to: "/" },
-  carouselType = "",
+  showAll = { description: 'Show all cards', to: '/' },
+  carouselType = '',
   save = false,
   isDescription = false,
-  fetchUrl = "",
+  fetchUrl = '',
   items = [
     undefined,
     undefined,
@@ -60,20 +61,20 @@ export const MultipleTemplate: React.FC<{
 
   const TypeStayCarousel = ({ data }) => {
     return (
-      <div className={[layout["relative"], space["p-v--10"]].join(" ")}>
+      <div className={[layout['relative'], space['p-v--10']].join(' ')}>
         <ul
-          className={[layout["hide-scrollbar"]].join(" ")}
+          className={[layout['hide-scrollbar']].join(' ')}
           style={{
             marginLeft: -5,
             marginRight: -5,
-            display: "flex",
-            listStyle: "none",
+            display: 'flex',
+            listStyle: 'none',
             padding: 0,
-            overflowX: "auto",
-            overflowY: "hidden",
-            minWidth: "100%",
-            scrollSnapType: "x mandatory",
-            height: "100%",
+            overflowX: 'auto',
+            overflowY: 'hidden',
+            minWidth: '100%',
+            scrollSnapType: 'x mandatory',
+            height: '100%',
           }}
         >
           {data.length &&
@@ -82,13 +83,13 @@ export const MultipleTemplate: React.FC<{
                 <li
                   key={index}
                   className={[
-                    sectionStyles["w__card"],
-                    sectionStyles["flex__card"],
-                  ].join(" ")}
+                    sectionStyles['w__card'],
+                    sectionStyles['flex__card'],
+                  ].join(' ')}
                   style={{
-                    scrollSnapAlign: "start",
-                    borderLeftStyle: "solid",
-                    borderLeftColor: "transparent",
+                    scrollSnapAlign: 'start',
+                    borderLeftStyle: 'solid',
+                    borderLeftColor: 'transparent',
                   }}
                 >
                   <Card
@@ -123,10 +124,10 @@ export const MultipleTemplate: React.FC<{
     };
 
     useLayoutEffect(() => {
-      window.addEventListener("resize", handleRef);
+      window.addEventListener('resize', handleRef);
       handleRef();
       return () => {
-        window.removeEventListener("resize", handleRef);
+        window.removeEventListener('resize', handleRef);
       };
     });
 
@@ -147,20 +148,20 @@ export const MultipleTemplate: React.FC<{
     };
 
     return (
-      <div style={{ overflowX: "hidden" }}>
+      <div style={{ overflowX: 'hidden' }}>
         <div
           ref={containerRef}
           className={[
-            layout["flex"],
-            layout["items-center"],
-            layout["justify-between"],
-          ].join(" ")}
+            layout['flex'],
+            layout['items-center'],
+            layout['justify-between'],
+          ].join(' ')}
         >
-          <div className={[space["m-v--16"]].join(" ")}>
-            <h3 className={[font["size--20"]].join(" ")}>{title}</h3>
+          <div className={[space['m-v--16']].join(' ')}>
+            <h3 className={[font['size--20']].join(' ')}>{title}</h3>
           </div>
-          <div className={[layout["flex"], layout["items-center"]].join(" ")}>
-            <div className={[space["m-h--4"]].join(" ")}>
+          <div className={[layout['flex'], layout['items-center']].join(' ')}>
+            <div className={[space['m-h--4']].join(' ')}>
               <Button
                 variant={$Button.PAGINATE}
                 animate
@@ -169,7 +170,7 @@ export const MultipleTemplate: React.FC<{
                 disable={state.activeSlide === 0}
               />
             </div>
-            <div className={[space["m-h--4"]].join(" ")}>
+            <div className={[space['m-h--4']].join(' ')}>
               <Button
                 variant={$Button.PAGINATE}
                 animate
@@ -182,22 +183,22 @@ export const MultipleTemplate: React.FC<{
         </div>
         <div
           style={{
-            height: "100%",
+            height: '100%',
             width: width * (items.length / 2),
             transform: `translateX(-${state.translate}px)`,
             transition: `transform ease-out ${state.transition}s`,
           }}
         >
-          <div style={{ display: "flex" }}>
+          <div style={{ display: 'flex' }}>
             {items.map((item, index) => {
               return (
                 <div
                   style={{ width: width / (width > 1128 ? 3 : 2) }}
                   key={index}
-                  className={[section["w__nearby"]].join(" ")}
+                  className={[section['w__nearby']].join(' ')}
                 >
                   <div
-                    className={[space["m-b--10"], space["m-r--16"]].join(" ")}
+                    className={[space['m-b--10'], space['m-r--16']].join(' ')}
                   >
                     <Card
                       variant={$Card.HORIZONTAL}
@@ -216,29 +217,30 @@ export const MultipleTemplate: React.FC<{
   };
 
   const WithoutPagination = () => {
+    const router = useRouter();
     return (
       <div>
         <div>
           <div
-            className={[layout["items-center"], layout["justify-between"]].join(
-              " "
+            className={[layout['items-center'], layout['justify-between']].join(
+              ' '
             )}
           >
             <div>
               <div>
                 <h2
                   className={[
-                    font["weight--500"],
-                    color["c--gray__4"],
-                    font["size--22"],
-                  ].join(" ")}
+                    font['weight--500'],
+                    color['c--gray__4'],
+                    font['size--22'],
+                  ].join(' ')}
                 >
                   {title}
                 </h2>
               </div>
               {isDescription && (
                 <div>
-                  <p className={[font["weight--100"]].join(" ")}>
+                  <p className={[font['weight--100']].join(' ')}>
                     {description}
                   </p>
                 </div>
@@ -246,17 +248,17 @@ export const MultipleTemplate: React.FC<{
             </div>
             <div>
               {pagination && (
-                <div className={[layout["items-center"]].join(" ")}>
-                  <div className={[space["m-r--6"]].join(" ")}>
+                <div className={[layout['items-center']].join(' ')}>
+                  <div className={[space['m-r--6']].join(' ')}>
                     <p
-                      className={[font["weight--300"], font["size--14"]].join(
-                        " "
+                      className={[font['weight--300'], font['size--14']].join(
+                        ' '
                       )}
                     >
                       1 / {items.length}
                     </p>
                   </div>
-                  <div className={[space["m-r--6"]].join(" ")}>
+                  <div className={[space['m-r--6']].join(' ')}>
                     <Button
                       variant={$Button.PAGINATE}
                       animate
@@ -276,12 +278,12 @@ export const MultipleTemplate: React.FC<{
           </div>
           {displayItems(carouselType, save)}
         </div>
-        <div className={[layout["relative"]].join(" ")}>
+        <div className={[layout['relative']].join(' ')}>
           {showAll && (
-            <div className={space["m-v--25"]}>
+            <div className={space['m-v--25']}>
               <Button
                 variant={$Button.EXPAND}
-                to={showAll.to}
+                onClick={() => router.push(showAll.to)}
                 title={showAll.description}
               />
             </div>
@@ -292,23 +294,24 @@ export const MultipleTemplate: React.FC<{
   };
 
   const MultipleRows = ({ data, save }) => {
+    const router = useRouter();
     const displayingData = data.slice(0, 8);
     const evaluateNumber = (index) => {
       if (index > 5) {
         // should disappear below 1128px
-        return [sectionStyles["none__cards--lg"]].join(" ");
+        return [sectionStyles['none__cards--lg']].join(' ');
       } else if (index > 3) {
         // should disappear below 728px
-        return [sectionStyles["none__cards--sm"]].join(" ");
+        return [sectionStyles['none__cards--sm']].join(' ');
       }
       // doesn't disappear
-      return [].join(" ");
+      return [].join(' ');
     };
     return (
       <div style={{ paddingTop: 15, paddingBottom: 15 }}>
         <div
-          style={{ display: "grid" }}
-          className={[styles["multiplerows"]].join(" ")}
+          style={{ display: 'grid' }}
+          className={[styles['multiplerows']].join(' ')}
         >
           {displayingData.length &&
             displayingData.map((item, index) => {
@@ -317,7 +320,7 @@ export const MultipleTemplate: React.FC<{
                   <Card
                     variant={$Card.HORIZONTAL}
                     card={item && item.card}
-                    to={item && item.to}
+                    onClick={() => router.push(item.to)}
                     save={save}
                   />
                 </div>
@@ -330,7 +333,7 @@ export const MultipleTemplate: React.FC<{
 
   const displayItems = (carouselType, save) => {
     switch (carouselType) {
-      case "stayTypes":
+      case 'stayTypes':
         return <TypeStayCarousel data={data} />;
       default:
         return <MultipleRows data={data} save={save} />;
