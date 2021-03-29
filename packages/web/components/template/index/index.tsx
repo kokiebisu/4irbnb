@@ -4,6 +4,7 @@ import { BannerTemplate } from './template.banner';
 import { OnlineTemplate } from './template.online';
 import { AnywhereTemplate } from './template.anywhere';
 import { DestinationsTemplate } from './template.destinations';
+import { WorthTemplate } from './template.worth';
 
 export const $Template = {
   CATEGORY: 'category',
@@ -12,6 +13,7 @@ export const $Template = {
   ONLINE: 'online',
   ANYWHERE: 'anywhere',
   DESTINATIONS: 'destinations',
+  WORTH: 'worth',
 };
 
 export interface TemplateProps {
@@ -43,6 +45,7 @@ export const Template: React.FC<TemplateProps> = ({
     online: <OnlineTemplate {...props} />,
     anywhere: <AnywhereTemplate {...props} />,
     destinations: <DestinationsTemplate {...props} />,
+    worth: <WorthTemplate {...props} />,
   };
 
   return (

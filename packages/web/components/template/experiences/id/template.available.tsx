@@ -1,12 +1,12 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from 'react';
 
-import layout from "@styles/layout.module.scss";
-import space from "@styles/space.module.scss";
-import font from "@styles/font.module.scss";
-import section from "@template/index.module.scss";
+import layout from '@styles/layout.module.scss';
+import space from '@styles/space.module.scss';
+import font from '@styles/font.module.scss';
+import section from '@template/index.module.scss';
 
-import { Card, $Card } from "@card";
-import { Button, $Button } from "@button";
+import { Card, $Card } from '@card';
+import { Button, $Button } from '@button';
 
 /**
  * Renders the available section
@@ -17,38 +17,38 @@ export const AvailableTemplate: React.FC<{
 }> = ({
   availables = [
     {
-      date: "Tue., Nov. 10",
-      from: "1:00 a.m. ",
-      to: "3:00 a.m. ",
-      standard: "PST",
+      date: 'Tue., Nov. 10',
+      from: '1:00 a.m. ',
+      to: '3:00 a.m. ',
+      standard: 'PST',
       price: 31,
     },
     {
-      date: "Tue., Nov. 10",
-      from: "1:00 a.m. ",
-      to: "3:00 a.m. ",
-      standard: "PST",
+      date: 'Tue., Nov. 10',
+      from: '1:00 a.m. ',
+      to: '3:00 a.m. ',
+      standard: 'PST',
       price: 31,
     },
     {
-      date: "Tue., Nov. 11",
-      from: "1:00 a.m. ",
-      to: "3:00 a.m. ",
-      standard: "PST",
+      date: 'Tue., Nov. 11',
+      from: '1:00 a.m. ',
+      to: '3:00 a.m. ',
+      standard: 'PST',
       price: 31,
     },
     {
-      date: "Tue., Nov. 12",
-      from: "1:00 a.m. ",
-      to: "3:00 a.m. ",
-      standard: "PST",
+      date: 'Tue., Nov. 12',
+      from: '1:00 a.m. ',
+      to: '3:00 a.m. ',
+      standard: 'PST',
       price: 31,
     },
     {
-      date: "Tue., Nov. 13",
-      from: "1:00 a.m. ",
-      to: "3:00 a.m. ",
-      standard: "PST",
+      date: 'Tue., Nov. 13',
+      from: '1:00 a.m. ',
+      to: '3:00 a.m. ',
+      standard: 'PST',
       price: 31,
     },
   ],
@@ -82,10 +82,10 @@ export const AvailableTemplate: React.FC<{
   };
 
   useLayoutEffect(() => {
-    window.addEventListener("resize", handleRef);
+    window.addEventListener('resize', handleRef);
     handleRef();
     return () => {
-      window.removeEventListener("resize", handleRef);
+      window.removeEventListener('resize', handleRef);
     };
   });
 
@@ -106,22 +106,22 @@ export const AvailableTemplate: React.FC<{
   };
 
   return (
-    <div style={{ overflowX: "hidden" }}>
+    <div style={{ overflowX: 'hidden' }}>
       <div
         ref={containerRef}
         className={[
-          layout["flex"],
-          layout["items-center"],
-          layout["justify-between"],
-        ].join(" ")}
+          layout['flex'],
+          layout['items-center'],
+          layout['justify-between'],
+        ].join(' ')}
       >
-        <div className={[space["m-v--16"]].join(" ")}>
-          <h3 className={[font["size--20"]].join(" ")}>
+        <div className={[space['m-v--16']].join(' ')}>
+          <h3 className={[font['size--20']].join(' ')}>
             Choose from available dates
           </h3>
         </div>
-        <div className={[layout["flex"], layout["items-center"]].join(" ")}>
-          <div className={[space["m-h--4"]].join(" ")}>
+        <div className={[layout['flex'], layout['items-center']].join(' ')}>
+          <div className={[space['m-h--4']].join(' ')}>
             <Button
               variant={$Button.PAGINATE}
               animate
@@ -130,7 +130,7 @@ export const AvailableTemplate: React.FC<{
               disable={state.activeSlide === 0}
             />
           </div>
-          <div className={[space["m-h--4"]].join(" ")}>
+          <div className={[space['m-h--4']].join(' ')}>
             <Button
               variant={$Button.PAGINATE}
               animate
@@ -146,21 +146,21 @@ export const AvailableTemplate: React.FC<{
       </div>
       <div
         style={{
-          height: "100%",
+          height: '100%',
           width: width * (availables.length / displayingColumns),
           transform: `translateX(-${state.translate}px)`,
           transition: `transform ease-out ${state.transition}s`,
         }}
       >
-        <div style={{ display: "flex" }}>
+        <div style={{ display: 'flex' }}>
           {availables.map((available, index) => {
             return (
               <div
                 style={{ width: width / displayingColumns }}
                 key={index}
-                className={[section["w__nearby"]].join(" ")}
+                className={[section['w__nearby']].join(' ')}
               >
-                <div className={[space["m-b--10"], space["m-r--16"]].join(" ")}>
+                <div className={[space['m-b--10'], space['m-r--16']].join(' ')}>
                   <Card
                     variant={$Card.AVAILABLE}
                     date={available.date}
@@ -175,7 +175,7 @@ export const AvailableTemplate: React.FC<{
           })}
         </div>
       </div>
-      <div className={[space["m-t--32"]].join(" ")}>
+      <div className={[space['m-t--32']].join(' ')}>
         <Button variant={$Button.BORDER} title="See more dates" />
       </div>
     </div>

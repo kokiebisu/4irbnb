@@ -101,6 +101,7 @@ export const FiltersBar: React.FC<{}> = () => {
               direction="left"
               size={3}
               onClick={previous}
+              animate
             />
           </div>
         )}
@@ -141,6 +142,7 @@ export const FiltersBar: React.FC<{}> = () => {
               direction="right"
               size={3}
               onClick={next}
+              animate
             />
           </div>
         )}

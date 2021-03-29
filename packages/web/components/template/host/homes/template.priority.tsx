@@ -1,8 +1,8 @@
-import responsive from "@styles/responsive.module.scss";
-import space from "@styles/space.module.scss";
+import responsive from '@styles/responsive.module.scss';
+import space from '@styles/space.module.scss';
 
-import { Layout } from "@layout";
-import { Bullet, $Bullet } from "@bullet";
+import { Layout } from '@layout';
+import { Bullet, $Bullet } from '@bullet';
 
 /**
  * Renders the priority section
@@ -11,17 +11,17 @@ import { Bullet, $Bullet } from "@bullet";
 export const PriorityTemplate: React.FC<{}> = () => {
   return (
     <Layout variant="homes" title="Safety is our priority">
-      <div className={[space["m-t--16"]].join(" ")}>
+      <div className={[space['m-t--16']].join(' ')}>
         <div
           style={{
-            gridTemplateColumns: "repeat(3, 1fr)",
+            gridTemplateColumns: 'repeat(3, 1fr)',
             columnGap: 12,
           }}
-          className={[responsive["b_to_g--sm"]].join(" ")}
+          className={[responsive['b_to_g--sm']].join(' ')}
         >
-          {["protection", "guidance", "requirements"].map((priority, index) => {
+          {['protection', 'guidance', 'requirements'].map((priority, index) => {
             return (
-              <div key={index} className={[space["m-b--64"]].join(" ")}>
+              <div key={index} className={[space['m-b--64']].join(' ')}>
                 <Bullet variant={$Bullet.PRIORITY} priority={priority} />
               </div>
             );
