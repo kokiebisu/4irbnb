@@ -26,6 +26,7 @@ export const $Card = {
   VIDEO: 'video',
   STARTING: 'starting',
   COLLECTION: 'collection',
+  WORTH: 'worth',
 };
 
 export interface CardProps {

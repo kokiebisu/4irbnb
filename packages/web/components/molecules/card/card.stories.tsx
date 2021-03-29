@@ -1,14 +1,14 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react/types-6-0";
-import { Card, CardProps, $Card } from "@card";
+import React from 'react';
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { Card, CardProps, $Card } from '@card';
 
-import { types as HostingTypes } from "@card/card.hosting";
+import { types as HostingTypes } from '@card/card.hosting';
 
 export default {
-  title: "Molecules/Card",
+  title: 'Molecules/Card',
   component: Card,
   argTypes: {
-    onClick: { action: "clicked" },
+    onClick: { action: 'clicked' },
     variant: {
       control: {
         disable: true,
@@ -27,22 +27,22 @@ export default {
   },
 } as Meta;
 
-const TemplateStory: Story<CardProps> = (args) => <Card {...args} />;
+const CardStory: Story<CardProps> = (args) => <Card {...args} />;
 
-export const Category = TemplateStory.bind({});
+export const Category = CardStory.bind({});
 Category.args = {
   variant: $Card.CATEGORY,
 };
 
 Category.decorators = [
   (Story) => (
-    <div style={{ width: "33.3%" }}>
+    <div style={{ width: '33.3%' }}>
       <Story />
     </div>
   ),
 ];
 
-export const Horizontal = TemplateStory.bind({});
+export const Horizontal = CardStory.bind({});
 Horizontal.args = {
   variant: $Card.HORIZONTAL,
 };
@@ -57,24 +57,24 @@ Horizontal.decorators = [
 
 Horizontal.argTypes = {
   superhost: {
-    control: "boolean",
+    control: 'boolean',
   },
   save: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
-export const Vertical = TemplateStory.bind({});
+export const Vertical = CardStory.bind({});
 Vertical.args = {
   variant: $Card.VERTICAL,
 };
 Vertical.argTypes = {
   save: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
-export const TypeStay = TemplateStory.bind({});
+export const TypeStay = CardStory.bind({});
 TypeStay.args = {
   variant: $Card.TYPESTAY,
 };
@@ -87,12 +87,12 @@ TypeStay.decorators = [
   ),
 ];
 
-export const Arrangements = TemplateStory.bind({});
+export const Arrangements = CardStory.bind({});
 Arrangements.args = {
   variant: $Card.ARRANGEMENTS,
 };
 
-export const Checkin = TemplateStory.bind({});
+export const Checkin = CardStory.bind({});
 Checkin.args = {
   variant: $Card.CHECKIN,
 };
@@ -105,22 +105,22 @@ Checkin.decorators = [
   ),
 ];
 
-export const Review = TemplateStory.bind({});
+export const Review = CardStory.bind({});
 Review.args = {
   variant: $Card.REVIEW,
 };
 
-export const Stay = TemplateStory.bind({});
+export const Stay = CardStory.bind({});
 Stay.args = {
   variant: $Card.STAY,
 };
 
-export const Nearby = TemplateStory.bind({});
+export const Nearby = CardStory.bind({});
 Nearby.args = {
   variant: $Card.NEARBY,
 };
 
-export const Online = TemplateStory.bind({});
+export const Online = CardStory.bind({});
 Online.args = {
   variant: $Card.ONLINE,
 };
@@ -133,32 +133,32 @@ Online.decorators = [
   ),
 ];
 
-export const Participate = TemplateStory.bind({});
+export const Participate = CardStory.bind({});
 Participate.args = {
   variant: $Card.PARTICIPATE,
 };
 Participate.argTypes = {
   categoryType: {
     control: {
-      type: "select",
-      options: ["call", "private"],
+      type: 'select',
+      options: ['call', 'private'],
     },
   },
 };
 
-export const Available = TemplateStory.bind({});
+export const Available = CardStory.bind({});
 Available.args = {
   variant: $Card.AVAILABLE,
 };
 Available.decorators = [
   (Story) => (
-    <div style={{ maxWidth: "25%" }}>
+    <div style={{ maxWidth: '25%' }}>
       <Story />
     </div>
   ),
 ];
 
-export const Host = TemplateStory.bind({});
+export const Host = CardStory.bind({});
 Host.args = {
   variant: $Card.HOST,
 };
@@ -170,51 +170,51 @@ Host.decorators = [
   ),
 ];
 
-export const Set = TemplateStory.bind({});
+export const Set = CardStory.bind({});
 Set.args = {
   variant: $Card.SET,
 };
 
-export const Again = TemplateStory.bind({});
+export const Again = CardStory.bind({});
 Again.args = {
   variant: $Card.AGAIN,
 };
 
-export const Works = TemplateStory.bind({});
+export const Works = CardStory.bind({});
 Works.args = {
   variant: $Card.WORKS,
 };
 Works.argTypes = {
   work: {
     control: {
-      type: "select",
-      options: ["design", "share", "submit", "setup"],
+      type: 'select',
+      options: ['design', 'share', 'submit', 'setup'],
     },
   },
 };
 
-export const Sharing = TemplateStory.bind({});
+export const Sharing = CardStory.bind({});
 Sharing.args = {
   variant: $Card.SHARING,
 };
 Sharing.argsTypes = {
   sharing: {
     control: {
-      type: "select",
-      options: ["meditate", "baking", "magic"],
+      type: 'select',
+      options: ['meditate', 'baking', 'magic'],
     },
   },
 };
 
-export const How = TemplateStory.bind({});
+export const How = CardStory.bind({});
 How.args = {
   variant: $Card.HOW,
 };
 How.argTypes = {
   how: {
     control: {
-      type: "select",
-      options: ["qualified", "control", "notified"],
+      type: 'select',
+      options: ['qualified', 'control', 'notified'],
     },
   },
 };
@@ -226,20 +226,20 @@ How.decorators = [
   ),
 ];
 
-export const Hosting = TemplateStory.bind({});
+export const Hosting = CardStory.bind({});
 Hosting.args = {
   variant: $Card.HOSTING,
 };
 Hosting.argTypes = {
   type: {
     control: {
-      type: "select",
+      type: 'select',
       options: Object.keys(HostingTypes),
     },
   },
 };
 
-export const Video = TemplateStory.bind({});
+export const Video = CardStory.bind({});
 Video.args = {
   variant: $Card.VIDEO,
 };
@@ -251,7 +251,7 @@ Video.decorators = [
   ),
 ];
 
-export const Starting = TemplateStory.bind({});
+export const Starting = CardStory.bind({});
 Starting.args = {
   variant: $Card.STARTING,
 };
@@ -263,7 +263,7 @@ Starting.decorators = [
   ),
 ];
 
-export const Collection = TemplateStory.bind({});
+export const Collection = CardStory.bind({});
 Collection.args = {
   variant: $Card.COLLECTION,
 };
@@ -274,3 +274,8 @@ Collection.decorators = [
     </div>
   ),
 ];
+
+export const Worth = CardStory.bind({});
+Worth.args = {
+  variant: $Card.WORTH,
+};

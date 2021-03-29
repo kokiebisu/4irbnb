@@ -21,6 +21,7 @@ import { stay } from '@card/card.stay';
 import { typestay } from '@card/card.typestay';
 import { vertical } from '@card/card.vertical';
 import { works } from '@card/card.works';
+import { worth } from '@card/card.worth';
 
 export const factoryVariants = (props) => {
   return {
@@ -47,5 +48,6 @@ export const factoryVariants = (props) => {
     ...vertical(props),
     ...video(props),
     ...works(props),
+    ...worth(props),
   };
 };
