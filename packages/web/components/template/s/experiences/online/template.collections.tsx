@@ -1,13 +1,13 @@
-import space from "@styles/space.module.scss";
-import layout from "@styles/layout.module.scss";
-import font from "@styles/font.module.scss";
+import space from '@styles/space.module.scss';
+import layout from '@styles/layout.module.scss';
+import font from '@styles/font.module.scss';
 
-import React, { useLayoutEffect, useRef, useState } from "react";
-import { Button, $Button } from "@button";
-import { Card, $Card } from "@card";
+import React, { useLayoutEffect, useRef, useState } from 'react';
+import { Button, $Button } from '@button';
+import { Card, $Card } from '@card';
 
 export const CollectionsTemplate: React.FC<{ title?: String }> = ({
-  title = "Title here",
+  title = 'Title here',
 }) => {
   const [state, setState] = useState({
     activeSlide: 0,
@@ -24,10 +24,10 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
   };
 
   useLayoutEffect(() => {
-    window.addEventListener("resize", handleRef);
+    window.addEventListener('resize', handleRef);
     handleRef();
     return () => {
-      window.removeEventListener("resize", handleRef);
+      window.removeEventListener('resize', handleRef);
     };
   });
 
@@ -123,18 +123,18 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
     <div ref={containerRef}>
       <div
         className={[
-          space["m-v--16"],
-          layout["flex"],
-          layout["items-center"],
-          layout["justify-between"],
-        ].join(" ")}
+          space['m-v--16'],
+          layout['flex'],
+          layout['items-center'],
+          layout['justify-between'],
+        ].join(' ')}
       >
         <div>
-          <h2 className={[font["size--28"]].join(" ")}>{title}</h2>
+          <h2 className={[font['size--28']].join(' ')}>{title}</h2>
         </div>
-        <div className={[layout["flex"], layout["items-center"]].join(" ")}>
-          <div className={[layout["flex"], layout["items-center"]].join(" ")}>
-            <div className={[space["m-h--4"]].join(" ")}>
+        <div className={[layout['flex'], layout['items-center']].join(' ')}>
+          <div className={[layout['flex'], layout['items-center']].join(' ')}>
+            <div className={[space['m-h--4']].join(' ')}>
               <Button
                 block
                 variant={$Button.PAGINATE}
@@ -144,7 +144,7 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
                 disable={state.activeSlide === 0}
               />
             </div>
-            <div className={[space["m-h--4"]].join(" ")}>
+            <div className={[space['m-h--4']].join(' ')}>
               <Button
                 block
                 variant={$Button.PAGINATE}
@@ -159,19 +159,14 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
           </div>
         </div>
       </div>
-      <div
-        style={{
-          height: "100%",
-          width: "100%",
-        }}
-      >
+      <div className="h-full w-full overflow-x-auto">
         <div
           style={{
             ...collectionStyles(),
             transition: `transform ease-out ${state.transition}s`,
           }}
         >
-          <div style={{ display: "flex" }}>
+          <div style={{ display: 'flex' }}>
             {temporaryCards.map((card, index) => {
               return (
                 <div key={index}>
