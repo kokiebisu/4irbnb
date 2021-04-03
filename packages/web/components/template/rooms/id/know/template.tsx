@@ -1,8 +1,14 @@
-import font from "@styles/font.module.scss";
-import space from "@styles/space.module.scss";
-import color from "@styles/color.module.scss";
+import font from '@styles/font.module.scss';
+import space from '@styles/space.module.scss';
+import color from '@styles/color.module.scss';
 
-import { Bullet, $Bullet } from "@bullet";
+import { Bullet, $Bullet } from '@bullet';
+
+export interface KnowTemplateProps {
+  houseRules?: string[];
+  healths?: string[];
+  layoutType?: string;
+}
 
 /**
  * Renders the know section
@@ -10,51 +16,47 @@ import { Bullet, $Bullet } from "@bullet";
  * @param {string[]} healths - List of health guidelines
  * @param {string} layoutType - The type of layout
  */
-export const KnowTemplate: React.FC<{
-  houseRules?: string[];
-  healths?: string[];
-  layoutType?: string;
-}> = ({
+export const KnowTemplate: React.FC<KnowTemplateProps> = ({
   houseRules = [
-    "checkin",
-    "checkout",
-    "self",
-    "children",
-    "smoking",
-    "pets",
-    "parties",
+    'checkin',
+    'checkout',
+    'self',
+    'children',
+    'smoking',
+    'pets',
+    'parties',
   ],
-  healths = ["cleaning", "distancing", "caution", "check"],
-  layoutType = "room",
+  healths = ['cleaning', 'distancing', 'caution', 'check'],
+  layoutType = 'room',
 }) => {
   return (
     <div>
       <div>
         <h3
           className={[
-            font["weight--500"],
-            space["m-b--20"],
-            color["c--gray__3"],
-            font["size--24"],
-          ].join(" ")}
+            font['weight--500'],
+            space['m-b--20'],
+            color['c--gray__3'],
+            font['size--24'],
+          ].join(' ')}
         >
           Things to know
         </h3>
       </div>
       <div
         style={{
-          display: "flex",
+          display: 'flex',
         }}
-        className={[].join(" ")}
+        className={[].join(' ')}
       >
         <div>
-          <div className={[space["m-b--16"]].join(" ")}>
+          <div className={[space['m-b--16']].join(' ')}>
             <h3>House rules</h3>
           </div>
-          <div className={[space["m-b--32"]].join(" ")}>
+          <div className={[space['m-b--32']].join(' ')}>
             {houseRules.map((item, index) => {
               return (
-                <div key={index} className={[space["m-b--6"]].join(" ")}>
+                <div key={index} className={[space['m-b--6']].join(' ')}>
                   <Bullet variant={$Bullet.KNOW} categoryType={item} />
                 </div>
               );
@@ -66,13 +68,13 @@ export const KnowTemplate: React.FC<{
         </div>
 
         <div>
-          <div className={[space["m-b--16"]].join(" ")}>
+          <div className={[space['m-b--16']].join(' ')}>
             <h3>Health & safety</h3>
           </div>
-          <div className={[space["m-b--32"]].join(" ")}>
+          <div className={[space['m-b--32']].join(' ')}>
             {healths.map((item, index) => {
               return (
-                <div key={index} className={[space["m-b--6"]].join(" ")}>
+                <div key={index} className={[space['m-b--6']].join(' ')}>
                   <Bullet variant={$Bullet.KNOW} categoryType={item} />
                 </div>
               );
@@ -83,11 +85,11 @@ export const KnowTemplate: React.FC<{
           </div>
         </div>
         <div>
-          <div className={[space["m-b--16"]].join(" ")}>
+          <div className={[space['m-b--16']].join(' ')}>
             <h3>Cancellation policy</h3>
           </div>
-          <div className={[space["m-b--32"]].join(" ")}>
-            <p className={[font["weight--100"]].join(" ")}>
+          <div className={[space['m-b--32']].join(' ')}>
+            <p className={[font['weight--100']].join(' ')}>
               Add your trip to get the cancellation details for this stay.
             </p>
           </div>
