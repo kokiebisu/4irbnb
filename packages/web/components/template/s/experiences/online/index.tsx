@@ -1,5 +1,5 @@
 import { Banner } from './banner';
-import { CardsTemplate } from './template.cards';
+import { Cards } from './cards';
 import { StartingTemplate } from './template.starting';
 import { CollectionsTemplate } from './template.collections';
 
@@ -34,7 +34,7 @@ export const Template: React.FC<TemplateProps> = ({
 }) => {
   const variants: { [key: string]: JSX.Element } = {
     banner: <Banner {...props} />,
-    cards: <CardsTemplate {...props} />,
+    cards: <Cards {...props} />,
     starting: <StartingTemplate {...props} />,
     collections: <CollectionsTemplate {...props} />,
   };
