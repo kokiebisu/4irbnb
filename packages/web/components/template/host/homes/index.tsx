@@ -1,19 +1,19 @@
-import { PriorityTemplate } from "./template.priority";
-import { HelpTemplate } from "./template.help";
-import { ReadyTemplate } from "./template.ready";
-import { CommunityTemplate } from "./template.community";
-import { AllTemplate } from "./template.all";
-import { BannerTemplate } from "./template.banner";
-import { HostingTemplate } from "./template.hosting";
+import { PriorityTemplate } from './template.priority';
+import { HelpTemplate } from './template.help';
+import { ReadyTemplate } from './template.ready';
+import { CommunityTemplate } from './template.community';
+import { All } from './all';
+import { BannerTemplate } from './template.banner';
+import { HostingTemplate } from './template.hosting';
 
 export const $Template = {
-  ALL: "all",
-  HELP: "help",
-  BANNER: "banner",
-  COMMUNITY: "community",
-  HOSTING: "hosting",
-  PRIORITY: "priority",
-  READY: "ready",
+  ALL: 'all',
+  HELP: 'help',
+  BANNER: 'banner',
+  COMMUNITY: 'community',
+  HOSTING: 'hosting',
+  PRIORITY: 'priority',
+  READY: 'ready',
 };
 
 export interface TemplateProps {
@@ -29,8 +29,8 @@ export interface TemplateProps {
  * @param {Object} children - A JSX that will be part of the component
  */
 export const Template: React.FC<TemplateProps> = ({
-  extendsTo = "",
-  variant = "help",
+  extendsTo = '',
+  variant = 'help',
   children,
   onClick,
   to,
@@ -43,7 +43,7 @@ export const Template: React.FC<TemplateProps> = ({
     priority: <PriorityTemplate {...props} />,
     community: <CommunityTemplate {...props} />,
     ready: <ReadyTemplate {...props} />,
-    all: <AllTemplate {...props} />,
+    all: <All {...props} />,
     banner: <BannerTemplate {...props} />,
     hosting: <HostingTemplate {...props} />,
   };
