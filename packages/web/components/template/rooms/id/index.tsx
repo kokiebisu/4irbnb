@@ -1,4 +1,4 @@
-import { ReviewsTemplate } from '@template/rooms/id/template.reviews';
+import { Reviews } from '@template/rooms/id/reviews';
 import { Arrangements } from '@template/rooms/id/arrangements';
 import { Amenities } from '@template/rooms/id/amenities';
 import { Know } from '@template/rooms/id/know';
@@ -41,7 +41,7 @@ export const Template: React.FC<TemplateProps> = ({
   ...props
 }) => {
   const variants: { [key: string]: JSX.Element } = {
-    reviews: <ReviewsTemplate {...props} />,
+    reviews: <Reviews {...props} />,
     arrangements: <Arrangements {...props} />,
     amenities: <Amenities {...props} />,
     know: <Know {...props} />,
