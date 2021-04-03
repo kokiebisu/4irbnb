@@ -1,4 +1,4 @@
-import { ExperiencesTemplate } from '@template/experiences/id/template.experiences';
+import { Experiences } from '@template/experiences/id/experiences';
 import { ParticipateTemplate } from '@template/experiences/id/template.participate';
 import { Bring } from '@template/experiences/id/bring';
 import { Characteristics } from '@template/experiences/id/characteristics';
@@ -45,7 +45,7 @@ export const Template: React.FC<TemplateProps> = ({
   ...props
 }) => {
   const variants: { [variant: string]: any } = {
-    experiences: <ExperiencesTemplate {...props} />,
+    experiences: <Experiences {...props} />,
     participate: <ParticipateTemplate {...props} />,
     bring: <Bring {...props} />,
     characteristics: <Characteristics {...props} />,
