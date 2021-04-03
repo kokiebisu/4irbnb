@@ -1,7 +1,7 @@
 import { Banner } from './banner';
 import { Cards } from './cards';
-import { StartingTemplate } from './template.starting';
-import { CollectionsTemplate } from './template.collections';
+import { Starting } from './starting';
+import { Collections } from './collections';
 
 export const $Template = {
   BANNER: 'banner',
@@ -35,9 +35,9 @@ export const Template: React.FC<TemplateProps> = ({
   const variants: { [key: string]: JSX.Element } = {
     banner: <Banner {...props} />,
     cards: <Cards {...props} />,
-    starting: <StartingTemplate {...props} />,
-    collections: <CollectionsTemplate {...props} />,
+    starting: <Starting {...props} />,
+    collections: <Collections {...props} />,
   };
 
-  return <div data-testid={`${variant}--template`}>{variants[variant]}</div>;
+  return <div data-testid={`${variant}-online`}>{variants[variant]}</div>;
 };

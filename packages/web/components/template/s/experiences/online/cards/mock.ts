@@ -72,3 +72,5 @@ export const cards = [
       'https://a0.muscache.com/v/e4/fc/e4fc6b63-de00-5733-bd92-8c5b3b11fc1f/e4fc6b63de005733bd928c5b3b11fc1f_600k_1.mp4?imformat=h265&imwidth=400',
   },
 ];
+
+export const title = 'Title here';

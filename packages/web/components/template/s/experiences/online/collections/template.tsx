@@ -1,51 +1,43 @@
 import space from '@styles/space.module.scss';
 import layout from '@styles/layout.module.scss';
 import font from '@styles/font.module.scss';
-
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React from 'react';
 import { Button, $Button } from '@button';
 import { Card, $Card } from '@card';
+import { useSlider } from './hooks';
 
-export const CollectionsTemplate: React.FC<{ title?: String }> = ({
-  title = 'Title here',
+export interface CollectionsTemplateProps {
+  title?: String;
+  cards?: { imgUrl: string; videoUrl: string }[];
+}
+
+export const CollectionsTemplate: React.FC<CollectionsTemplateProps> = ({
+  title,
+  cards,
 }) => {
-  const [state, setState] = useState({
-    activeSlide: 0,
-    translate: 0,
-    transition: 0.7,
-  });
-
-  const [width, setWidth] = useState(500);
-  const containerRef = useRef<HTMLDivElement>();
-  const handleRef = () => {
-    if (containerRef.current && containerRef.current.getBoundingClientRect()) {
-      setWidth(containerRef.current.getBoundingClientRect().width);
-    }
-  };
-
-  useLayoutEffect(() => {
-    window.addEventListener('resize', handleRef);
-    handleRef();
-    return () => {
-      window.removeEventListener('resize', handleRef);
-    };
-  });
+  const {
+    width,
+    state,
+    containerRef,
+    handleNextSlide,
+    handlePreviousSlide,
+  } = useSlider();
 
   const collectionStyles = () => {
     if (width > 1128) {
       return {
-        width: width * (temporaryCards.length / 2),
+        width: width * (cards.length / 2),
         transform: `translateX(-${state.translate}px)`,
       };
     }
     if (width > 728) {
       return {
-        width: width * (temporaryCards.length / 2),
+        width: width * (cards.length / 2),
         transform: `translateX(-${state.translate}px)`,
       };
     }
     return {
-      width: width * (temporaryCards.length / 2),
+      width: width * (cards.length / 2),
       transform: `translateX(-${state.translate}px)`,
     };
   };
@@ -73,52 +65,6 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
     return 120;
   };
 
-  const temporaryCards = [undefined, undefined, undefined];
-
-  const previous = () => {
-    if (width > 1128) {
-      return setState({
-        ...state,
-        activeSlide: state.activeSlide - 1,
-        translate: (state.activeSlide - 1) * (width / 2),
-      });
-    }
-    if (width > 728) {
-      return setState({
-        ...state,
-        activeSlide: state.activeSlide - 1,
-        translate: (state.activeSlide - 1) * 550,
-      });
-    }
-    setState({
-      ...state,
-      activeSlide: state.activeSlide - 1,
-      translate: (state.activeSlide - 1) * width,
-    });
-  };
-
-  const next = () => {
-    if (width > 1128) {
-      return setState({
-        ...state,
-        activeSlide: state.activeSlide + 1,
-        translate: (state.activeSlide + 1) * (width / 2),
-      });
-    }
-    if (width > 728) {
-      return setState({
-        ...state,
-        activeSlide: state.activeSlide + 1,
-        translate: (state.activeSlide + 1) * 550,
-      });
-    }
-    setState({
-      ...state,
-      activeSlide: state.activeSlide + 1,
-      translate: (state.activeSlide + 1) * width,
-    });
-  };
-
   return (
     <div ref={containerRef}>
       <div
@@ -140,7 +86,7 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
                 variant={$Button.PAGINATE}
                 animate
                 direction="left"
-                onClick={previous}
+                onClick={handlePreviousSlide}
                 disable={state.activeSlide === 0}
               />
             </div>
@@ -150,10 +96,8 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
                 variant={$Button.PAGINATE}
                 animate
                 direction="right"
-                onClick={next}
-                disable={
-                  state.activeSlide === Math.ceil(temporaryCards.length / 2) - 1
-                }
+                onClick={handleNextSlide}
+                disable={state.activeSlide === Math.ceil(cards.length / 2) - 1}
               />
             </div>
           </div>
@@ -167,7 +111,7 @@ export const CollectionsTemplate: React.FC<{ title?: String }> = ({
           }}
         >
           <div style={{ display: 'flex' }}>
-            {temporaryCards.map((card, index) => {
+            {cards.map((card, index) => {
               return (
                 <div key={index}>
                   <div style={{ ...cardStyles(), paddingRight: 10 }}>

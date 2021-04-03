@@ -4,7 +4,7 @@ import { AmenitiesTemplate, AmenitiesTemplateProps } from './template';
 import * as mockData from './mock';
 
 export default {
-  title: 'Templates/Index',
+  title: 'Templates/Rooms/ID',
   component: AmenitiesTemplate,
 } as Meta;
 
