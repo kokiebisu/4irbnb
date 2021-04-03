@@ -23,7 +23,7 @@ export interface AvailableTemplateProps {
  * @param {Object[]} availables - List of available dates for the experience
  */
 export const AvailableTemplate: React.FC<AvailableTemplateProps> = ({
-  availableTimes,
+  availableSlots,
 }) => {
   const [state, setState] = useState({
     activeSlide: 0,

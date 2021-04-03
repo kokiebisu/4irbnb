@@ -1,7 +1,5 @@
-import { necessities } from './mock';
+import * as data from './mock';
 
 export const useBring = () => {
-  return {
-    necessities,
-  };
+  return data;
 };

@@ -1,5 +1,5 @@
 import * as data from './mock';
 
-export const useAvailable = () => {
+export const usePreview = () => {
   return data;
 };
