@@ -6,7 +6,7 @@ import {
 } from '@template/host/homes/community/template';
 
 export default {
-  title: 'Templates/Experiences/ID',
+  title: 'Templates/Host/Homes',
   component: CommunityTemplate,
 } as Meta;
 

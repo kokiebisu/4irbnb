@@ -6,7 +6,7 @@ import {
 } from '@template/host/homes/help/template';
 
 export default {
-  title: 'Templates/Experiences/ID',
+  title: 'Templates/Host/Homes',
   component: HelpTemplate,
 } as Meta;
 
