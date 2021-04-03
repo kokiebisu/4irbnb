@@ -1,17 +1,17 @@
-import { MoreTemplate } from "@template/d/onlinehost/template.more";
-import { FAQTemplate } from "@template/d/onlinehost/template.faq";
-import { BackTemplate } from "@template/d/onlinehost/template.back";
-import { SharingTemplate } from "@template/d/onlinehost/template.sharing";
-import { WorksTemplate } from "@template/d/onlinehost/template.works";
-import { BannerTemplate } from "@template/d/onlinehost/template.banner";
+import { More } from '@template/d/onlinehost/more';
+import { FAQ } from '@template/d/onlinehost/faq';
+import { Back } from '@template/d/onlinehost/back';
+import { Sharing } from '@template/d/onlinehost/sharing';
+import { Works } from '@template/d/onlinehost/works';
+import { Banner } from '@template/d/onlinehost/banner';
 
 export const $Template = {
-  BACK: "back",
-  BANNER: "banner",
-  FAQ: "faq",
-  MORE: "more",
-  SHARING: "sharing",
-  WORKS: "works",
+  BACK: 'back',
+  BANNER: 'banner',
+  FAQ: 'faq',
+  MORE: 'more',
+  SHARING: 'sharing',
+  WORKS: 'works',
 };
 
 export interface TemplateProps {
@@ -27,8 +27,8 @@ export interface TemplateProps {
  * @param {Object} children - A JSX that will be part of the component
  */
 export const Template: React.FC<TemplateProps> = ({
-  extendsTo = "",
-  variant = "more",
+  extendsTo = '',
+  variant = 'more',
   children,
   onClick,
   to,
@@ -37,16 +37,16 @@ export const Template: React.FC<TemplateProps> = ({
   ...props
 }) => {
   const variants: { [variant: string]: any } = {
-    more: <MoreTemplate {...props} />,
-    faq: <FAQTemplate {...props} />,
-    back: <BackTemplate {...props} />,
-    sharing: <SharingTemplate {...props} />,
-    works: <WorksTemplate {...props} />,
-    banner: <BannerTemplate {...props} />,
+    more: <More {...props} />,
+    faq: <FAQ {...props} />,
+    back: <Back {...props} />,
+    sharing: <Sharing {...props} />,
+    works: <Works {...props} />,
+    banner: <Banner {...props} />,
   };
 
   return (
-    <div data-testid={`${variant}-onlinehost--template`}>
+    <div data-testid={`${variant}-onlinehost-template`}>
       {variants[variant]}
     </div>
   );

@@ -1,13 +1,18 @@
-import { Layout } from "@layout";
+import { Layout } from '@layout';
 
-import layout from "@styles/layout.module.scss";
-import space from "@styles/space.module.scss";
+import layout from '@styles/layout.module.scss';
+import space from '@styles/space.module.scss';
 
-import { Card, $Card } from "@card";
-import { Button, $Button } from "@button";
+import { Card, $Card } from '@card';
+import { Button, $Button } from '@button';
 
-export const SharingTemplate: React.FC<{}> = () => {
-  const sharings = ["meditate", "baking", "magic"];
+export interface SharingTemplateProps {
+  sharings?: string[];
+}
+
+export const SharingTemplate: React.FC<SharingTemplateProps> = ({
+  sharings,
+}) => {
   return (
     <Layout
       variant="onlinehost"
@@ -15,10 +20,10 @@ export const SharingTemplate: React.FC<{}> = () => {
       subtitle="These hosts bring the spirit of experiences to the screen with unique small group activities to do together while we're apart."
     >
       <div
-        className={[space["m-v--100"]].join(" ")}
+        className={[space['m-v--100']].join(' ')}
         style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
           columnGap: 25,
         }}
       >
@@ -30,7 +35,7 @@ export const SharingTemplate: React.FC<{}> = () => {
           );
         })}
       </div>
-      <div className={[layout["flex"], layout["justify-center"]].join(" ")}>
+      <div className={[layout['flex'], layout['justify-center']].join(' ')}>
         <Button
           variant={$Button.BORDER}
           bold
