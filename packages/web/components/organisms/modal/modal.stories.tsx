@@ -1,66 +1,66 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react/types-6-0";
+import React from 'react';
+import { Story, Meta } from '@storybook/react/types-6-0';
 
-import { Modal, ModalProps, $Modal } from "@modal";
+import { Modal, ModalProps, $Modal } from '@modal';
 
 export default {
-  title: "Organisms/Modal",
-  argTypes: { onClick: { action: "clicked" } },
+  title: 'Organisms/Modal',
+  argTypes: { onClick: { action: 'clicked' } },
 } as Meta;
 
-const TemplateStory: Story<ModalProps> = (args) => <Modal {...args} />;
+const ModalStory: Story<ModalProps> = (args) => <Modal {...args} />;
 
-export const Privacy = TemplateStory.bind({});
+export const Privacy = ModalStory.bind({});
 Privacy.args = {
   variant: $Modal.PRIVACY,
 };
 
-export const Menu = TemplateStory.bind({});
+export const Menu = ModalStory.bind({});
 Menu.args = {
   variant: $Modal.MENU,
 };
 Menu.argTypes = {
   authenticated: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
-export const Auth = TemplateStory.bind({});
+export const Auth = ModalStory.bind({});
 Auth.args = {
   variant: $Modal.AUTH,
 };
 
-export const Booking = TemplateStory.bind({});
+export const Booking = ModalStory.bind({});
 Booking.args = {
   variant: $Modal.BOOKING,
 };
 
-export const Globe = TemplateStory.bind({});
+export const Globe = ModalStory.bind({});
 Globe.args = {
   variant: $Modal.GLOBE,
 };
 
-export const Location = TemplateStory.bind({});
+export const Location = ModalStory.bind({});
 Location.args = {
   variant: $Modal.LOCATION,
 };
 
-export const Guests = TemplateStory.bind({});
+export const Guests = ModalStory.bind({});
 Guests.args = {
   variant: $Modal.GUESTS,
 };
 
-export const Checkin = TemplateStory.bind({});
+export const Checkin = ModalStory.bind({});
 Checkin.args = {
   variant: $Modal.CHECKIN,
 };
 
-export const Checkout = TemplateStory.bind({});
+export const Checkout = ModalStory.bind({});
 Checkout.args = {
   variant: $Modal.CHECKOUT,
 };
 
-export const Listing = TemplateStory.bind({});
+export const Listing = ModalStory.bind({});
 Listing.args = {
   variant: $Modal.LISTING,
 };
