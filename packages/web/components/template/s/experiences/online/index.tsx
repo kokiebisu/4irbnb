@@ -1,13 +1,13 @@
-import { BannerTemplate } from "./template.banner";
-import { CardsTemplate } from "./template.cards";
-import { StartingTemplate } from "./template.starting";
-import { CollectionsTemplate } from "./template.collections";
+import { Banner } from './banner';
+import { CardsTemplate } from './template.cards';
+import { StartingTemplate } from './template.starting';
+import { CollectionsTemplate } from './template.collections';
 
 export const $Template = {
-  BANNER: "banner",
-  CARDS: "cards",
-  STARTING: "starting",
-  COLLECTIONS: "collections",
+  BANNER: 'banner',
+  CARDS: 'cards',
+  STARTING: 'starting',
+  COLLECTIONS: 'collections',
 };
 
 export interface TemplateProps {
@@ -23,8 +23,8 @@ export interface TemplateProps {
  * @param {Object} children - A JSX that will be part of the component
  */
 export const Template: React.FC<TemplateProps> = ({
-  extendsTo = "",
-  variant = "banner",
+  extendsTo = '',
+  variant = 'banner',
   children,
   onClick,
   to,
@@ -33,7 +33,7 @@ export const Template: React.FC<TemplateProps> = ({
   ...props
 }) => {
   const variants: { [key: string]: JSX.Element } = {
-    banner: <BannerTemplate {...props} />,
+    banner: <Banner {...props} />,
     cards: <CardsTemplate {...props} />,
     starting: <StartingTemplate {...props} />,
     collections: <CollectionsTemplate {...props} />,
