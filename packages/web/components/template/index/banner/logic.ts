@@ -1,9 +1,8 @@
 import { useHandleScroll } from '@hooks/useHandleScroll';
-import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { handleRedirectToHomePage } from '@utils/redirect';
 
 export const useBanner = () => {
-  const router = useRouter();
   const scrollPosition = useHandleScroll();
   const [category, setCategory] = useState('stay');
 
@@ -11,14 +10,10 @@ export const useBanner = () => {
     setCategory(value);
   };
 
-  const handleHomeRedirect = () => {
-    router.push('/');
-  };
-
   return {
     scrollPosition,
     category,
     handleCategoryChange,
-    handleHomeRedirect,
+    handleRedirectToHomePage,
   };
 };

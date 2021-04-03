@@ -4,7 +4,7 @@ import { Banner } from './banner';
 import { Online } from './online';
 import { Anywhere } from './anywhere';
 import { Destinations } from './destinations';
-import { WorthTemplate } from './template.worth';
+import { Worth } from './worth';
 
 export const $Template = {
   CATEGORY: 'category',
@@ -45,7 +45,7 @@ export const Template: React.FC<TemplateProps> = ({
     online: <Online {...props} />,
     anywhere: <Anywhere {...props} />,
     destinations: <Destinations {...props} />,
-    worth: <WorthTemplate {...props} />,
+    worth: <Worth {...props} />,
   };
 
   return (

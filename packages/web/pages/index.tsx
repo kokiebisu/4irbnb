@@ -43,10 +43,7 @@ const LandingPage = ({ currentUser }) => {
               <Template variant={$Template.ANYWHERE} items={anywhereItems} />
             </Layout>
             <Layout spread variant="landing">
-              <Template
-                variant={$Template.WORTH}
-                onRedirect={() => router.push('/host')}
-              />
+              <Template variant={$Template.WORTH} />
             </Layout>
             <Layout
               variant="landing"
