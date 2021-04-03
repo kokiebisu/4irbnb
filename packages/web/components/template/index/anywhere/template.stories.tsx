@@ -6,7 +6,7 @@ import {
 } from '@template/index/anywhere/template';
 
 export default {
-  title: 'Templates/Host/Homes',
+  title: 'Templates/Index',
   component: AnywhereTemplate,
 } as Meta;
 

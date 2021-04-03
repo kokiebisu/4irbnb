@@ -1,6 +1,3 @@
-import { useState } from 'react';
-import Router from 'next/router';
-
 import layout from '@styles/layout.module.scss';
 import index from '@styles/index.module.scss';
 import space from '@styles/space.module.scss';
@@ -11,18 +8,26 @@ import responsive from '@styles/responsive.module.scss';
 
 import { Header, $Header } from '@header';
 import { Button, $Button } from '@button';
-
-import { useHandleScroll } from '@hooks/useHandleScroll';
-
-import { Banner } from '@button/button.stories';
 import { ResponsiveImage } from '@helper/img';
+
+export interface BannerTemplateProps {
+  scrollPosition?: number;
+  category?: string;
+  data?: any;
+  handleCategoryChange?: (value: string) => void;
+  handleHomeRedirect?: () => void;
+}
 
 /**
  * Renders the banner section
  */
-export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
-  const scrollPosition = useHandleScroll();
-  const [category, setCategory] = useState('stay');
+export const BannerTemplate: React.FC<BannerTemplateProps> = ({
+  scrollPosition,
+  category,
+  data,
+  handleCategoryChange,
+  handleHomeRedirect,
+}) => {
   return (
     <div className={index['banner']}>
       <div className={[layout['all-sides']].join(' ')}>
@@ -42,7 +47,7 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
             <Header
               variant={$Header.LANDING}
               category={category}
-              setCategory={setCategory}
+              setCategory={handleCategoryChange}
               data={data}
               extendsTo={`${
                 scrollPosition < 56
@@ -107,7 +112,7 @@ export const BannerTemplate: React.FC<{ data?: any }> = ({ data }) => {
                 <Button
                   variant={$Button.BANNER}
                   title="Explore nearby"
-                  onClick={() => Router.push('/')}
+                  onClick={handleHomeRedirect}
                 />
               </div>
             </div>
