@@ -15,6 +15,4 @@ const TemplateStory: Story<ExperiencesTemplateProps> = (args) => (
 );
 
 export const Experiences = TemplateStory.bind({});
-Experiences.args = {
-  experiences: ['hosts', 'activities', 'global'],
-};
+Experiences.args = {};

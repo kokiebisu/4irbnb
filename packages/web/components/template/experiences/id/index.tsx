@@ -5,7 +5,7 @@ import { Characteristics } from '@template/experiences/id/characteristics';
 import { Available } from '@template/experiences/id/available';
 import { PreviewTemplate } from '@template/experiences/id/template.preview';
 import { ReviewsTemplate } from '@template/experiences/id/template.reviews';
-import { HostTemplate } from '@template/experiences/id/template.host';
+import { Host } from '@template/experiences/id/host';
 import { Description } from '@template/experiences/id/description';
 import { KnowTemplate } from '@template/experiences/id/template.know';
 
@@ -52,7 +52,7 @@ export const Template: React.FC<TemplateProps> = ({
     available: <Available {...props} />,
     preview: <PreviewTemplate {...props} />,
     reviews: <ReviewsTemplate {...props} />,
-    host: <HostTemplate {...props} />,
+    host: <Host {...props} />,
     description: <Description {...props} />,
     know: <KnowTemplate {...props} />,
   };
