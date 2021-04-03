@@ -2,7 +2,7 @@ import { CategoryTemplate } from './template.category';
 import { NearbyTemplate } from './template.nearby';
 import { BannerTemplate } from './template.banner';
 import { OnlineTemplate } from './template.online';
-import { AnywhereTemplate } from './template.anywhere';
+import { Anywhere } from './anywhere';
 import { DestinationsTemplate } from './template.destinations';
 import { WorthTemplate } from './template.worth';
 
@@ -43,7 +43,7 @@ export const Template: React.FC<TemplateProps> = ({
     nearby: <NearbyTemplate {...props} />,
     banner: <BannerTemplate {...props} />,
     online: <OnlineTemplate {...props} />,
-    anywhere: <AnywhereTemplate {...props} />,
+    anywhere: <Anywhere {...props} />,
     destinations: <DestinationsTemplate {...props} />,
     worth: <WorthTemplate {...props} />,
   };
