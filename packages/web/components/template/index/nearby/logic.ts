@@ -1,18 +1,5 @@
-import { groupByTwo } from '@helper/array';
+import * as mockData from './mock';
 
 export const useNearby = () => {
-  const items = [
-    undefined,
-    undefined,
-    undefined,
-    undefined,
-    undefined,
-    undefined,
-    undefined,
-    undefined,
-  ];
-  const displayingItems = groupByTwo(items);
-  return {
-    items: displayingItems,
-  };
+  return mockData;
 };

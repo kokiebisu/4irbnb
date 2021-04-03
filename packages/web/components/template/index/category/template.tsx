@@ -4,7 +4,7 @@ import template from '@template/index/index.module.scss';
 import { Card, $Card } from '@card';
 
 export interface CategoryTemplateProps {
-  items?: any;
+  items?: { imgUrl: string; title: string; to: string }[];
 }
 
 /**

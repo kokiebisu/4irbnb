@@ -4,6 +4,7 @@ import {
   HelpTemplate,
   HelpTemplateProps,
 } from '@template/host/homes/help/template';
+import * as mockData from './mock';
 
 export default {
   title: 'Templates/Host/Homes',
@@ -16,5 +17,5 @@ const TemplateStory: Story<HelpTemplateProps> = (args) => (
 
 export const Help = TemplateStory.bind({});
 Help.args = {
-  helps: ['support', 'tools', 'insights', 'education'],
+  ...mockData,
 };

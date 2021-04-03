@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { CategoryTemplate, CategoryTemplateProps } from './template';
-import { items } from './mock';
+import * as mockData from './mock';
 
 export default {
   title: 'Templates/Index',
@@ -14,5 +14,5 @@ const TemplateStory: Story<CategoryTemplateProps> = (args) => (
 
 export const Category = TemplateStory.bind({});
 Category.args = {
-  items,
+  ...mockData,
 };

@@ -28,9 +28,9 @@ export interface CommunityTemplateProps {
  * @param {Object[]} hosts - List of hosts
  */
 export const CommunityTemplate: React.FC<CommunityTemplateProps> = ({
-  title = 'Title',
-  description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-  hosts = [undefined, undefined, undefined, undefined, undefined],
+  title,
+  description,
+  hosts,
 }) => {
   const width = 366;
   const sliderRef = useRef(null);

@@ -1,6 +1,5 @@
+import * as mockData from './mock';
+
 export const useHelp = () => {
-  const data = {
-    helps: ['support', 'tools', 'insights', 'education'],
-  };
-  return { data };
+  return mockData;
 };

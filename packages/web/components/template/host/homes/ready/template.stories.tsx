@@ -1,9 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import {
-  ReadyTemplate,
-  ReadyTemplateProps,
-} from '@template/host/homes/ready/template';
+import { ReadyTemplate, ReadyTemplateProps } from './template';
 
 export default {
   title: 'Templates/Host/Homes',

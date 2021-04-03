@@ -1,9 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import {
-  WorthTemplate,
-  WorthTemplateProps,
-} from '@template/index/worth/template';
+import { WorthTemplate, WorthTemplateProps } from './template';
+import * as mockData from './mock';
 
 export default {
   title: 'Templates/Index',
@@ -16,5 +14,5 @@ const TemplateStory: Story<WorthTemplateProps> = (args) => (
 
 export const Worth = TemplateStory.bind({});
 Worth.args = {
-  handleRedirectToHostPage: () => alert('Should redirect to host page'),
+  ...mockData,
 };

@@ -1,10 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import {
-  OnlineTemplate,
-  OnlineTemplateProps,
-} from '@template/index/online/template';
-import { items, dark } from './mock';
+import { OnlineTemplate, OnlineTemplateProps } from './template';
+import * as mockData from './mock';
 
 export default {
   title: 'Templates/Index',
@@ -17,6 +14,5 @@ const TemplateStory: Story<OnlineTemplateProps> = (args) => (
 
 export const Online = TemplateStory.bind({});
 Online.args = {
-  items,
-  dark,
+  ...mockData,
 };
