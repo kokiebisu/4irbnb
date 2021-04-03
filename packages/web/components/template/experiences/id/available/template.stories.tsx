@@ -1,7 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { AvailableTemplate, AvailableTemplateProps } from './template';
-import { availableSlots } from './mock';
+import * as data from './mock';
 
 export default {
   title: 'Templates/D/OnlineHosts',
@@ -14,5 +14,5 @@ const TemplateStory: Story<AvailableTemplateProps> = (args) => (
 
 export const Available = TemplateStory.bind({});
 Available.args = {
-  availableSlots,
+  ...data,
 };
