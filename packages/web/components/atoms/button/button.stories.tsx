@@ -46,15 +46,15 @@ const disableTitle = {
   },
 };
 
-const TemplateStory: Story<ButtonProps> = (args) => <Button {...args} />;
+const ButtonStory: Story<ButtonProps> = (args) => <Button {...args} />;
 
-export const Transparent = TemplateStory.bind({});
+export const Transparent = ButtonStory.bind({});
 Transparent.args = {
   variant: $Button.TRANSPARENT,
   content: <h3 className={[font['size--15']].join(' ')}>Button</h3>,
 };
 
-export const Globe = TemplateStory.bind({});
+export const Globe = ButtonStory.bind({});
 Globe.args = {
   variant: $Button.GLOBE,
   extendsTo: [font['text--left']].join(' '),
@@ -65,7 +65,7 @@ Globe.argTypes = {
   },
 };
 
-export const Menu = TemplateStory.bind({});
+export const Menu = ButtonStory.bind({});
 Menu.args = {
   variant: $Button.MENU,
 };
@@ -76,7 +76,7 @@ Menu.argTypes = {
   },
 };
 
-export const Privacy = TemplateStory.bind({});
+export const Privacy = ButtonStory.bind({});
 Privacy.args = {
   variant: $Button.PRIVACY,
 };
@@ -89,7 +89,7 @@ Privacy.decorators = [
   ),
 ];
 
-export const Border = TemplateStory.bind({});
+export const Border = ButtonStory.bind({});
 Border.args = {
   variant: $Button.BORDER,
 };
@@ -105,7 +105,7 @@ Border.argTypes = {
   },
 };
 
-export const Banner = TemplateStory.bind({});
+export const Banner = ButtonStory.bind({});
 Banner.args = {
   variant: $Button.BANNER,
   extendsTo: [color['bg--white'], shape['br--6']].join(' '),
@@ -122,7 +122,7 @@ Banner.decorators = [
   ),
 ];
 
-export const Primary = TemplateStory.bind({});
+export const Primary = ButtonStory.bind({});
 Primary.args = {
   variant: $Button.PRIMARY,
 };
@@ -140,7 +140,7 @@ Primary.argTypes = {
   },
 };
 
-export const Searchbar = TemplateStory.bind({});
+export const Searchbar = ButtonStory.bind({});
 Searchbar.args = {
   variant: $Button.SEARCHBAR,
 };
@@ -151,7 +151,7 @@ Searchbar.argTypes = {
   },
 };
 
-export const Auth = TemplateStory.bind({});
+export const Auth = ButtonStory.bind({});
 Auth.args = {
   variant: $Button.AUTH,
 };
@@ -173,7 +173,7 @@ Auth.argTypes = {
   },
 };
 
-export const Paginate = TemplateStory.bind({});
+export const Paginate = ButtonStory.bind({});
 Paginate.args = {
   variant: $Button.PAGINATE,
 };
@@ -186,17 +186,17 @@ Paginate.argTypes = {
   },
 };
 
-export const Option = TemplateStory.bind({});
+export const Option = ButtonStory.bind({});
 Option.args = {
   variant: $Button.OPTION,
 };
 
-export const Underline = TemplateStory.bind({});
+export const Underline = ButtonStory.bind({});
 Underline.args = {
   variant: $Button.UNDERLINE,
 };
 
-export const Filter = TemplateStory.bind({});
+export const Filter = ButtonStory.bind({});
 Filter.args = {
   variant: $Button.FILTER,
 };
@@ -206,7 +206,7 @@ Filter.argTypes = {
   },
 };
 
-export const Modal = TemplateStory.bind({});
+export const Modal = ButtonStory.bind({});
 Modal.args = {
   variant: $Button.MODAL,
 };
@@ -219,17 +219,17 @@ Modal.argTypes = {
   },
 };
 
-export const Back = TemplateStory.bind({});
+export const Back = ButtonStory.bind({});
 Back.args = {
   variant: $Button.BACK,
 };
 
-export const Link = TemplateStory.bind({});
+export const Link = ButtonStory.bind({});
 Link.args = {
   variant: $Button.LINK,
 };
 
-export const Search = TemplateStory.bind({});
+export const Search = ButtonStory.bind({});
 Search.args = {
   variant: $Button.SEARCH,
 };
@@ -239,12 +239,12 @@ Search.argTypes = {
   },
 };
 
-export const Expand = TemplateStory.bind({});
+export const Expand = ButtonStory.bind({});
 Expand.args = {
   variant: $Button.EXPAND,
 };
 
-export const Location = TemplateStory.bind({});
+export const Location = ButtonStory.bind({});
 Location.args = {
   variant: $Button.LOCATION,
 };
@@ -257,17 +257,17 @@ Location.argTypes = {
   },
 };
 
-export const Nearby = TemplateStory.bind({});
+export const Nearby = ButtonStory.bind({});
 Nearby.args = {
   variant: $Button.NEARBY,
 };
 
-export const Destination = TemplateStory.bind({});
+export const Destination = ButtonStory.bind({});
 Destination.args = {
   variant: $Button.DESTINATION,
 };
 
-export const Closed = TemplateStory.bind({});
+export const Closed = ButtonStory.bind({});
 Closed.args = {
   variant: $Button.CLOSED,
 };

@@ -1,6 +1,6 @@
 import space from '@styles/space.module.scss';
 import color from '@styles/color.module.scss';
-import { Template, $Template } from '@template/host/homes';
+import { Segment, $Segment } from 'components/segments/host/homes';
 import { Footer } from '@footer';
 import { useTabTitle } from '@hooks/useTabTitle';
 import { hosts, allItems } from '../../content';
@@ -14,38 +14,38 @@ const Homes: () => string | JSX.Element = () => {
   return (
     <div>
       <div>
-        <Template variant={$Template.BANNER} />
+        <Segment variant={$Segment.BANNER} />
       </div>
       <div className={[space['p-v--64'], color['b-b--white__2']].join(' ')}>
         <div className={`${[space['p__homes']].join(' ')}`}>
-          <Template variant={$Template.HOSTING} />
+          <Segment variant={$Segment.HOSTING} />
         </div>
       </div>
       <div className={[space['p-v--64'], color['b-b--white__2']].join(' ')}>
-        <Template
-          variant={$Template.COMMUNITY}
+        <Segment
+          variant={$Segment.COMMUNITY}
           hosts={hosts}
           title="Host your home on Airbnb"
         />
       </div>
       <div className={[space['p-v--64'], color['b-b--white__2']].join(' ')}>
         <div className={`${[space['p__homes']].join(' ')}`}>
-          <Template variant={$Template.ALL} items={allItems} />
+          <Segment variant={$Segment.ALL} items={allItems} />
         </div>
       </div>
       <div className={[space['p-v--64']].join(' ')}>
         <div className={`${[space['p__homes']].join(' ')}`}>
-          <Template variant={$Template.PRIORITY} />
+          <Segment variant={$Segment.PRIORITY} />
         </div>
       </div>
       <div className={[space['p-v--64'], color['b-b--white__2']].join(' ')}>
         <div className={`${[space['p__homes']].join(' ')}`}>
-          <Template variant={$Template.HELP} />
+          <Segment variant={$Segment.HELP} />
         </div>
       </div>
       <div className={[space['p-v--64'], color['b-b--white__2']].join(' ')}>
         <div className={`${[space['p__homes']].join(' ')}`}>
-          <Template variant={$Template.READY} />
+          <Segment variant={$Segment.READY} />
         </div>
       </div>
       <div>

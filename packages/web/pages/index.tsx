@@ -8,7 +8,7 @@ import { nearbyItems } from '../data/nearby';
 import { Layout } from '@layout';
 import { Animation } from '@animation';
 import { Modal, $Modal } from '@modal';
-import { Template, $Template } from '@template/index';
+import { Segment, $Segment } from 'components/segments/index/index';
 import { Footer } from '@footer';
 import { Bar, $Bar } from '@bar';
 import { useHandleScroll } from '@hooks/useHandleScroll';
@@ -33,34 +33,31 @@ const LandingPage = ({ currentUser }) => {
         <div>
           <Bar variant={$Bar.COVID} />
         </div>
-        <Template variant="banner" data={currentUser || null} />
+        <Segment variant="banner" data={currentUser || null} />
         {loading ? (
           <>
             <Layout variant="landing" spread>
-              <Template variant={$Template.NEARBY} items={nearbyItems} />
+              <Segment variant={$Segment.NEARBY} />
             </Layout>
             <Layout variant="landing" title="Live anywhere" spread>
-              <Template variant={$Template.ANYWHERE} items={anywhereItems} />
+              <Segment variant={$Segment.ANYWHERE} />
             </Layout>
             <Layout spread variant="landing">
-              <Template variant={$Template.WORTH} />
+              <Segment variant={$Segment.WORTH} />
             </Layout>
             <Layout
               variant="landing"
               spread
               title="Join millions of hosts on Airbnb"
             >
-              <Template variant={$Template.CATEGORY} items={categoryItems} />
+              <Segment variant={$Segment.CATEGORY} />
             </Layout>
             <Layout
               variant="landing"
               spread
               title="Inspiration for future getaways"
             >
-              <Template
-                variant={$Template.DESTINATIONS}
-                items={destinationItems}
-              />
+              <Segment variant={$Segment.DESTINATIONS} />
             </Layout>
           </>
         ) : (

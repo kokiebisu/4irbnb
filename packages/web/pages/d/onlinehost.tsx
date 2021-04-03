@@ -1,5 +1,5 @@
 import { Header, $Header } from '@header';
-import { Template, $Template } from '@template/d/onlinehost/index';
+import { Segment, $Segment } from 'components/segments/d/onlinehost/index';
 import { Footer } from '@footer';
 
 import layout from '@styles/layout.module.scss';
@@ -17,25 +17,25 @@ const OnlineHost = () => {
       </div>
       <div>
         <div className={[layout['container']].join(' ')}>
-          <Template variant={$Template.BANNER} />
+          <Segment variant={$Segment.BANNER} />
         </div>
       </div>
       <div className={[layout['container']].join(' ')}>
-        <Template variant={$Template.WORKS} />
+        <Segment variant={$Segment.WORKS} />
       </div>
       <div
         className={[layout['container--shrink'], space['p-v--64']].join(' ')}
       >
-        <Template variant={$Template.SHARING} />
+        <Segment variant={$Segment.SHARING} />
       </div>
       <div className={[layout['container'], space['p-v--64']].join(' ')}>
-        <Template variant={$Template.BACK} />
+        <Segment variant={$Segment.BACK} />
       </div>
       <div className={[layout['container'], space['p-v--100']].join(' ')}>
-        <Template variant={$Template.FAQ} />
+        <Segment variant={$Segment.FAQ} />
       </div>
       <div>
-        <Template variant={$Template.MORE} />
+        <Segment variant={$Segment.MORE} />
       </div>
       <div>
         <Footer />
