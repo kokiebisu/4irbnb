@@ -4,11 +4,13 @@ import space from '@styles/space.module.scss';
 import { Layout } from '@layout';
 import { Bullet, $Bullet } from '@bullet';
 
+export interface PriorityTemplateProps {}
+
 /**
  * Renders the priority section
  * @param {string[]} priorities - The priorities
  */
-export const PriorityTemplate: React.FC<{}> = () => {
+export const PriorityTemplate: React.FC<PriorityTemplateProps> = () => {
   return (
     <Layout variant="homes" title="Safety is our priority">
       <div className={[space['m-t--16']].join(' ')}>

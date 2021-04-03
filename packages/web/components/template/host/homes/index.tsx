@@ -1,6 +1,6 @@
-import { PriorityTemplate } from './template.priority';
+import { Priority } from './priority';
 import { Help } from './help';
-import { ReadyTemplate } from './template.ready';
+import { Ready } from './ready';
 import { Community } from './community';
 import { All } from './all';
 import { Banner } from './banner';
@@ -40,15 +40,15 @@ export const Template: React.FC<TemplateProps> = ({
 }) => {
   const variants: { [variant: string]: any } = {
     help: <Help {...props} />,
-    priority: <PriorityTemplate {...props} />,
+    priority: <Priority {...props} />,
     community: <Community {...props} />,
-    ready: <ReadyTemplate {...props} />,
+    ready: <Ready {...props} />,
     all: <All {...props} />,
     banner: <Banner {...props} />,
     hosting: <Hosting {...props} />,
   };
 
   return (
-    <div data-testid={`${variant}-landing--template`}>{variants[variant]}</div>
+    <div data-testid={`${variant}-landing-template`}>{variants[variant]}</div>
   );
 };

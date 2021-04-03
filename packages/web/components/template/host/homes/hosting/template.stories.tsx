@@ -6,7 +6,7 @@ import {
 } from '@template/host/homes/hosting/template';
 
 export default {
-  title: 'Templates/Experiences/ID',
+  title: 'Templates/Host/Homes',
   component: HostingTemplate,
 } as Meta;
 
