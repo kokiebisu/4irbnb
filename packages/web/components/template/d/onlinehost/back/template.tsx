@@ -2,7 +2,7 @@ import space from '@styles/space.module.scss';
 import { Layout } from '@layout';
 import { Bullet, $Bullet } from '@bullet';
 
-interface BackTemplateProps {}
+export interface BackTemplateProps {}
 
 export const BackTemplate: React.FC<BackTemplateProps> = () => {
   return (

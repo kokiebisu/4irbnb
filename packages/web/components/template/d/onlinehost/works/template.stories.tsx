@@ -16,4 +16,6 @@ const TemplateStory: Story<SharingTemplateProps> = (args) => (
 );
 
 export const Sharing = TemplateStory.bind({});
-Sharing.args = {};
+Sharing.args = {
+  categories: ['design', 'share', 'submit', 'setup'],
+};

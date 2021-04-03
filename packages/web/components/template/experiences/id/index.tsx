@@ -1,25 +1,25 @@
-import { ExperiencesTemplate } from "@template/experiences/id/template.experiences";
-import { ParticipateTemplate } from "@template/experiences/id/template.participate";
-import { BringTemplate } from "@template/experiences/id/template.bring";
-import { CharacteristicsTemplate } from "@template/experiences/id/template.characteristics";
-import { AvailableTemplate } from "@template/experiences/id/template.available";
-import { PreviewTemplate } from "@template/experiences/id/template.preview";
-import { ReviewsTemplate } from "@template/experiences/id/template.reviews";
-import { HostTemplate } from "@template/experiences/id/template.host";
-import { DescriptionTemplate } from "@template/experiences/id/template.description";
-import { KnowTemplate } from "@template/experiences/id/template.know";
+import { ExperiencesTemplate } from '@template/experiences/id/template.experiences';
+import { ParticipateTemplate } from '@template/experiences/id/template.participate';
+import { BringTemplate } from '@template/experiences/id/template.bring';
+import { CharacteristicsTemplate } from '@template/experiences/id/template.characteristics';
+import { Available } from '@template/experiences/id/available';
+import { PreviewTemplate } from '@template/experiences/id/template.preview';
+import { ReviewsTemplate } from '@template/experiences/id/template.reviews';
+import { HostTemplate } from '@template/experiences/id/template.host';
+import { DescriptionTemplate } from '@template/experiences/id/template.description';
+import { KnowTemplate } from '@template/experiences/id/template.know';
 
 export const $Template = {
-  AVAILABLE: "available",
-  BRING: "bring",
-  CHARACTERISTIC: "characteristic",
-  DESCRIPTION: "description",
-  EXPERIENCES: "experiences",
-  HOST: "host",
-  KNOW: "know",
-  PARTICIPATE: "participate",
-  PREVIEW: "preview",
-  REVIEWS: "reviews",
+  AVAILABLE: 'available',
+  BRING: 'bring',
+  CHARACTERISTIC: 'characteristic',
+  DESCRIPTION: 'description',
+  EXPERIENCES: 'experiences',
+  HOST: 'host',
+  KNOW: 'know',
+  PARTICIPATE: 'participate',
+  PREVIEW: 'preview',
+  REVIEWS: 'reviews',
 };
 
 export interface TemplateProps {
@@ -35,8 +35,8 @@ export interface TemplateProps {
  * @param {Object} children - A JSX that will be part of the component
  */
 export const Template: React.FC<TemplateProps> = ({
-  extendsTo = "",
-  variant = "experiences",
+  extendsTo = '',
+  variant = 'experiences',
   children,
   onClick,
   to,
@@ -49,7 +49,7 @@ export const Template: React.FC<TemplateProps> = ({
     participate: <ParticipateTemplate {...props} />,
     bring: <BringTemplate {...props} />,
     characteristics: <CharacteristicsTemplate {...props} />,
-    available: <AvailableTemplate {...props} />,
+    available: <Available {...props} />,
     preview: <PreviewTemplate {...props} />,
     reviews: <ReviewsTemplate {...props} />,
     host: <HostTemplate {...props} />,
