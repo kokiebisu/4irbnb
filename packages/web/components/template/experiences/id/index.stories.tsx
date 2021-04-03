@@ -1,15 +1,10 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react/types-6-0";
-import { Template, TemplateProps, $Template } from "@template/experiences/id";
+import React from 'react';
+import { Story, Meta } from '@storybook/react';
+import { Template, TemplateProps, $Template } from '@template/experiences/id';
 
 export default {
-  title: "Templates/Experiences/ID",
+  title: 'Templates/Experiences/ID',
   component: Template,
-  argTypes: {
-    onClick: { action: "clicked" },
-    type: { control: { disable: true } },
-    extendsTo: { control: { disable: true } },
-  },
 } as Meta;
 
 const TemplateStory: Story<TemplateProps> = (args) => <Template {...args} />;
@@ -22,21 +17,6 @@ Experiences.args = {
 export const Participate = TemplateStory.bind({});
 Participate.args = {
   variant: $Template.PARTICIPATE,
-};
-
-export const Bring = TemplateStory.bind({});
-Bring.args = {
-  variant: $Template.BRING,
-};
-
-export const Characteristics = TemplateStory.bind({});
-Characteristics.args = {
-  variant: $Template.CHARACTERISTIC,
-};
-
-export const Available = TemplateStory.bind({});
-Available.args = {
-  variant: $Template.AVAILABLE,
 };
 
 export const Preview = TemplateStory.bind({});
