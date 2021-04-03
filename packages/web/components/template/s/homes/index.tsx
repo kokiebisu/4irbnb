@@ -1,11 +1,11 @@
-import { MultipleTemplate } from "./template.multiple";
-import { HomesTemplate } from "./template.homes";
-import { AlsoTemplate } from "./template.also";
+import { MultipleTemplate } from './multiple/template';
+import { Homes } from './homes';
+import { Also } from './also';
 
 export const $Template = {
-  MULTIPLE: "multiple",
-  HOMES: "homes",
-  ALSO: "also",
+  MULTIPLE: 'multiple',
+  HOMES: 'homes',
+  ALSO: 'also',
 };
 
 export interface TemplateProps {
@@ -21,8 +21,8 @@ export interface TemplateProps {
  * @param {Object} children - A JSX that will be part of the component
  */
 export const Template: React.FC<TemplateProps> = ({
-  extendsTo = "",
-  variant = "multiple",
+  extendsTo = '',
+  variant = 'multiple',
   children,
   onClick,
   to,
@@ -31,12 +31,10 @@ export const Template: React.FC<TemplateProps> = ({
   ...props
 }) => {
   const variants: { [key: string]: JSX.Element } = {
-    multiple: <MultipleTemplate {...props} />,
-    homes: <HomesTemplate {...props} />,
-    also: <AlsoTemplate {...props} />,
+    multiple: <Multiple {...props} />,
+    homes: <Homes {...props} />,
+    also: <Also {...props} />,
   };
 
-  return (
-    <div data-testid={`${variant}-help--template`}>{variants[variant]}</div>
-  );
+  return <div data-testid={`${variant}-help`}>{variants[variant]}</div>;
 };

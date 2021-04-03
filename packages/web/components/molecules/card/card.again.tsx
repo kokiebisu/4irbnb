@@ -1,6 +1,6 @@
 import { Warning } from '@svg/original';
 
-export const AgainCard: React.FC<{}> = () => {
+const AgainCard: React.FC<{}> = () => {
   return (
     <div className="rounded-lg border border-gray-300">
       <div className="p-4">
@@ -25,4 +25,13 @@ export const AgainCard: React.FC<{}> = () => {
       </div>
     </div>
   );
+};
+
+export const again = (props) => {
+  return {
+    again: {
+      component: <AgainCard {...props} />,
+      style: '',
+    },
+  };
 };

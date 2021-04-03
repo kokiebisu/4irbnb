@@ -4,7 +4,7 @@ import { DoubleBed } from '@svg/original';
  * Renders the arrangements card component
  * @param {Object} card - Information of the card
  */
-export const ArrangementsCard: React.FC<{ card?: any }> = ({
+const ArrangementsCard: React.FC<{ card?: any }> = ({
   card = {
     type: 'Bedroom',
     beds: [{ type: 'double bed', count: 1 }],
@@ -29,4 +29,13 @@ export const ArrangementsCard: React.FC<{ card?: any }> = ({
       </div>
     </div>
   );
+};
+
+export const arrangements = (props) => {
+  return {
+    arrangements: {
+      component: <ArrangementsCard {...props} />,
+      style: '',
+    },
+  };
 };

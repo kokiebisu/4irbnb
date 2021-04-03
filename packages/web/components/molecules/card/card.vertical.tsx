@@ -1,12 +1,3 @@
-/** styles **/
-import layout from '@styles/layout.module.scss';
-import font from '@styles/font.module.scss';
-import color from '@styles/color.module.scss';
-import space from '@styles/space.module.scss';
-import shape from '@styles/shape.module.scss';
-import styles from '@card/card.module.scss';
-
-/** vectors */
 import { Heart, Star } from '@svg/original';
 
 /**
@@ -14,7 +5,7 @@ import { Heart, Star } from '@svg/original';
  * @param {Object} card - Information about the card
  * @param {boolean} save - Whether if the card can be saved
  */
-export const VerticalCard: React.FC<{
+const VerticalCard: React.FC<{
   imgUrl?: string;
   superhost?: boolean;
   ratings?: number;
@@ -34,7 +25,7 @@ export const VerticalCard: React.FC<{
   cost = 10,
 }) => {
   return (
-    <div className={[styles['w__vertical']].join(' ')}>
+    <div>
       <div style={{ paddingTop: '135%' }} className="relative">
         <div className="animate-pulse absolute top-0 bottom-0 right-0 left-0">
           {imgUrl ? (
@@ -43,13 +34,7 @@ export const VerticalCard: React.FC<{
             <div className="rounded-md w-full h-full bg-gray-500" />
           )}
           <div className="flex py-2 px-3 absolute top-0 justify-between w-full">
-            <div
-              className={
-                superhost
-                  ? [].join(' ')
-                  : [color['c--white'], shape['hidden']].join(' ')
-              }
-            >
+            <div className={superhost ? '' : 'text-white hidden'}>
               <div className="px-3 py-1 bg-gray-200 shadow-lg rounded">
                 <p className="text-xs uppercase tracking-wide">Superhost</p>
               </div>
@@ -93,4 +78,13 @@ export const VerticalCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const vertical = (props) => {
+  return {
+    vertical: {
+      component: <VerticalCard {...props} />,
+      style: '',
+    },
+  };
 };

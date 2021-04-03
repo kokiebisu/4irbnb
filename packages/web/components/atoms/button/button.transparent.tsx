@@ -7,21 +7,20 @@ const TransparentButton: React.FC<{
   content?: any;
 }> = ({ inverse = false, content }) => {
   return (
-    <div
-      className={`rounded-full flex items-center bg-transparent py-3 px-4 ${
-        inverse ? 'hover:bg-transparent' : 'hover:bg-gray-100'
-      }`}
-    >
-      {content}
-    </div>
+    <div className="flex items-center bg-transparent py-3 px-4">{content}</div>
   );
 };
 
 export const transparent = (props) => {
+  const { inverse } = props;
   return {
     transparent: {
       component: <TransparentButton {...props} />,
-      style: '',
+      style: `${
+        inverse
+          ? 'hover:bg-gray-300 bg-opacity-40'
+          : 'hover:bg-gray-300 bg-opacity-40'
+      } rounded-full`,
     },
   };
 };

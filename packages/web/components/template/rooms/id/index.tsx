@@ -1,21 +1,21 @@
-import { ReviewsTemplate } from "@template/rooms/id/template.reviews";
-import { ArrangementsTemplate } from "@template/rooms/id/template.arrangements";
-import { AmenitiesTemplate } from "@template/rooms/id/template.amenities";
-import { KnowTemplate } from "@template/rooms/id/template.know";
-import { HostTemplate } from "@template/rooms/id/template.host";
-import { PreviewTemplate } from "@template/rooms/id/template.preview";
-import { OtherTemplate } from "@template/rooms/id/template.other";
-import { DescriptionTemplate } from "@template/rooms/id/template.description";
+import { Reviews } from '@template/rooms/id/reviews';
+import { Arrangements } from '@template/rooms/id/arrangements';
+import { Amenities } from '@template/rooms/id/amenities';
+import { Know } from '@template/rooms/id/know';
+import { Host } from '@template/rooms/id/host';
+import { Preview } from '@template/rooms/id/preview';
+import { Other } from '@template/rooms/id/other';
+import { Description } from '@template/rooms/id/description';
 
 export const $Template = {
-  REVIEWS: "reviews",
-  ARRANGEMENTS: "arrangements",
-  AMENITIES: "amenities",
-  KNOW: "know",
-  HOST: "host",
-  PREVIEW: "preview",
-  OTHER: "other",
-  DESCRIPTION: "description",
+  REVIEWS: 'reviews',
+  ARRANGEMENTS: 'arrangements',
+  AMENITIES: 'amenities',
+  KNOW: 'know',
+  HOST: 'host',
+  PREVIEW: 'preview',
+  OTHER: 'other',
+  DESCRIPTION: 'description',
 };
 
 export interface TemplateProps {
@@ -31,8 +31,8 @@ export interface TemplateProps {
  * @param {Object} children - A JSX that will be part of the component
  */
 export const Template: React.FC<TemplateProps> = ({
-  extendsTo = "",
-  variant = "reviews",
+  extendsTo = '',
+  variant = 'reviews',
   children,
   onClick,
   to,
@@ -41,17 +41,15 @@ export const Template: React.FC<TemplateProps> = ({
   ...props
 }) => {
   const variants: { [key: string]: JSX.Element } = {
-    reviews: <ReviewsTemplate {...props} />,
-    arrangements: <ArrangementsTemplate {...props} />,
-    amenities: <AmenitiesTemplate {...props} />,
-    know: <KnowTemplate {...props} />,
-    host: <HostTemplate {...props} />,
-    preview: <PreviewTemplate {...props} />,
-    other: <OtherTemplate {...props} />,
-    description: <DescriptionTemplate {...props} />,
+    reviews: <Reviews {...props} />,
+    arrangements: <Arrangements {...props} />,
+    amenities: <Amenities {...props} />,
+    know: <Know {...props} />,
+    host: <Host {...props} />,
+    preview: <Preview {...props} />,
+    other: <Other {...props} />,
+    description: <Description {...props} />,
   };
 
-  return (
-    <div data-testid={`${variant}-stay--template`}>{variants[variant]}</div>
-  );
+  return <div data-testid={`${variant}-stay`}>{variants[variant]}</div>;
 };

@@ -43,10 +43,10 @@ export const AuthPrototype: React.FC<{}> = () => {
   };
 
   return (
-    <div className={[space['p--24']].join(' ')}>
-      <div className={[shape['w--full']].join(' ')}>
+    <div className="p-5">
+      <div className="w-full">
         <form onSubmit={formik.handleSubmit}>
-          <div className={[space['m-b--8']].join(' ')}>
+          <div className="mb-2">
             <div>
               <Input
                 variant={$Input.REGION}
@@ -65,39 +65,19 @@ export const AuthPrototype: React.FC<{}> = () => {
             </div>
           </div>
           <div>
-            <p
-              className={[
-                font['weight--100'],
-                color['c--gray__0'],
-                font['size--12'],
-              ].join(' ')}
-            >
+            <p className="font-thin text-gray-500 text-xs">
               We’ll call or text you to confirm your number. Standard message
               and data rates apply.
             </p>
           </div>
-          <div className={[space['m-t--18'], space['m-b--18']].join(' ')}>
+          <div className="mt-4 mb-4">
             <Button variant={$Button.PRIMARY} title="Continue" block stretch />
           </div>
         </form>
-        <div
-          style={{ zIndex: 1 }}
-          className={[
-            modalStyles['ba'],
-            font['text--center'],
-            layout['relative'],
-          ].join(' ')}
-        >
+        <div className="horizontal-line text-center relative z-10">
           <span
             style={{ zIndex: 3 }}
-            className={[
-              layout['relative'],
-              space['p-h--4'],
-              color['bg--white'],
-              font['weight--100'],
-              color['c--gray__0'],
-              font['size--12'],
-            ].join(' ')}
+            className="z-30 relative px-1 bg-white font-thin text-gray-400 text-sm"
           >
             or
           </span>
@@ -105,17 +85,9 @@ export const AuthPrototype: React.FC<{}> = () => {
         <div>
           {methods.map((method, index) => {
             return (
-              <div key={index} className={[space['m-v--14']].join(' ')}>
+              <div key={index} className="my-3">
                 <Button
                   variant={$Button.AUTH}
-                  extendsTo={[
-                    color['bg--transparent'],
-                    layout['block'],
-                    shape['w--full'],
-                    space['p-h--12'],
-                    space['p-v--12'],
-                    shape['br--8'],
-                  ].join(' ')}
                   auth={method}
                   onClick={auths[method].handleClick}
                   icon={auths[method].icon}
@@ -125,15 +97,9 @@ export const AuthPrototype: React.FC<{}> = () => {
             );
           })}
         </div>
-        <div className={[space['m-t--4']].join(' ')}>
-          <div className={[layout['inline-block'], space['m-r--6']].join(' ')}>
-            <p
-              className={[
-                font['size--14'],
-                font['weight--300'],
-                color['c--gray__1'],
-              ].join(' ')}
-            >
+        <div className="mt-1">
+          <div className="inline-block mr-2">
+            <p className="text-sm font-light text-gray-400">
               {authState.title === 'Log in'
                 ? "Don't have an account?"
                 : 'Already have an account?'}

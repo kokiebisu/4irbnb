@@ -1,4 +1,4 @@
-export const CollectionCard: React.FC<{
+const CollectionCard: React.FC<{
   label?: string;
   imgUrl?: string;
   paddingTop?: number;
@@ -40,4 +40,13 @@ export const CollectionCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const collection = (props) => {
+  return {
+    collection: {
+      component: <CollectionCard {...props} />,
+      style: '',
+    },
+  };
 };

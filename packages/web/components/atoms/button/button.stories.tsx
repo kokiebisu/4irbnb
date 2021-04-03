@@ -68,7 +68,6 @@ Globe.argTypes = {
 export const Menu = TemplateStory.bind({});
 Menu.args = {
   variant: $Button.MENU,
-  extendsTo: [animation['hover-shadow--lg'], shape['br--30']].join(' '),
 };
 Menu.argTypes = {
   ...disableTitle,

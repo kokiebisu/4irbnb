@@ -7,7 +7,7 @@ import { Video } from '@video';
  * @param {Object} card - Information about the card
  * @param {boolean} save - Whether if the card can be saved
  */
-export const VideoCard: React.FC<{
+const VideoCard: React.FC<{
   imgUrl?: string;
   videoUrl?: string;
   superhost?: boolean;
@@ -89,4 +89,13 @@ export const VideoCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const video = (props) => {
+  return {
+    video: {
+      component: <VideoCard {...props} />,
+      style: '',
+    },
+  };
 };

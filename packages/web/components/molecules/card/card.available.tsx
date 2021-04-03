@@ -8,7 +8,7 @@ import { Button, $Button } from '@button';
  * @param {string} standard - The time standard
  * @param {number} price - The price of the experience
  */
-export const AvailableCard: React.FC<{
+const AvailableCard: React.FC<{
   date?: string;
   from?: string;
   to?: string;
@@ -45,4 +45,13 @@ export const AvailableCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const available = (props) => {
+  return {
+    available: {
+      component: <AvailableCard {...props} />,
+      style: '',
+    },
+  };
 };

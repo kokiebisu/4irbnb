@@ -110,6 +110,17 @@
   .container {
     @apply max-w-5xl mx-auto px-4 md:px-5 lg:px-6;
   }
+
+  .horizontal-line {
+    &::after {
+      content: '';
+      width: 100%;
+      position: absolute;
+      border-bottom: 1px solid #868686;
+      left: 0;
+      top: 54%;
+    }
+  }
 }
 
 @layer utilities {

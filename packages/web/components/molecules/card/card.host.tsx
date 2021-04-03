@@ -8,7 +8,7 @@ import { Button, $Button } from '@button';
  * @param {string} stayType - Type of stay
  * @param {string} location - Location of the stay
  */
-export const HostCard: React.FC<{
+const HostCard: React.FC<{
   imgUrl?: string;
   host?: string;
   stayType?: string;
@@ -16,10 +16,10 @@ export const HostCard: React.FC<{
 }> = ({ imgUrl, host = 'Host', stayType = 'Type', location = 'Location' }) => {
   return (
     <div>
-      <div className="animate-pulse">
+      <div className="">
         {imgUrl ? (
           <img
-            className="rounded-md object-fit"
+            className="rounded-md object-cover"
             style={{
               height: 434,
               width: 350,
@@ -28,7 +28,7 @@ export const HostCard: React.FC<{
           />
         ) : (
           <div
-            className="rounded-md bg-gray-400"
+            className="animate-pulse rounded-md bg-gray-400"
             style={{ height: 434, width: 350 }}
           />
         )}
@@ -50,4 +50,13 @@ export const HostCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const host = (props) => {
+  return {
+    host: {
+      component: <HostCard {...props} />,
+      style: '',
+    },
+  };
 };

@@ -4,7 +4,7 @@ import { getParticipateContent } from './logic/logic.participate';
  * Renders the participate card component
  * @param {string} categoryType - Type of participate card
  */
-export const ParticipateCard: React.FC<{
+const ParticipateCard: React.FC<{
   categoryType?: string;
 }> = ({ categoryType = 'call' }) => {
   const participates = getParticipateContent();
@@ -29,4 +29,13 @@ export const ParticipateCard: React.FC<{
       )}
     </div>
   );
+};
+
+export const participate = (props) => {
+  return {
+    participate: {
+      component: <ParticipateCard {...props} />,
+      style: '',
+    },
+  };
 };

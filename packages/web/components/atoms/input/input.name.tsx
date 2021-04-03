@@ -41,20 +41,21 @@ export const NameInput: React.FC<{
   const renderShape = () => {
     switch (direction) {
       case 'top':
-        return 'border-b border-l border-r border-gray-400 rounded-br';
+        return 'border-b border-l border-r rounded-b-lg';
       case 'bottom':
-        return 'border-t border-l border-r rounded-tr';
+        return 'border-t border-l border-r rounded-t-lg';
       default:
-        return 'border border-gray-400 rounded-md';
+        return 'border border-gray-400 rounded-t-lg';
     }
   };
 
   return (
     <div
-      className={`h-12 relative py-3 px-5 items-center flex ${renderShape()} ${styleContainer(
+      className={`h-14 relative px-5 items-center flex ${styleContainer(
         errors,
         fieldActive,
-        value
+        value,
+        direction
       )}`}
     >
       <div className="relative h-full w-full">
@@ -67,16 +68,21 @@ export const NameInput: React.FC<{
           value={value}
           onFocus={activateField}
           onBlur={deactivateField}
-          className={`p-0 w-full block border-none text-base font-light placeholder-black ${[
-            input['input'],
-          ].join(' ')} ${styleInput(errors, fieldActive, value)}`}
+          className={`outline-none pt-5 w-full block border-none text-base font-light placeholder-black ${styleInput(
+            errors,
+            fieldActive,
+            value
+          )}`}
           placeholder={fieldActive ? names[name] : undefined}
         />
         <label
           htmlFor={name}
-          className={`absolute text-xs text-gray-200 font-thin ${[
-            input['label'],
-          ].join(' ')} ${styleLabel(errors, fieldActive, value, value)}`}
+          className={`absolute transition font-thin ${styleLabel(
+            errors,
+            fieldActive,
+            value,
+            value
+          )}`}
         >
           {names[name]}
         </label>

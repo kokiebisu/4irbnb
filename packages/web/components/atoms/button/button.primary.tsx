@@ -19,6 +19,8 @@ const PrimaryButton: React.FC<{
   title?: string;
   size?: string;
   fill?: string;
+  color?: string;
+  bg?: string;
   loading?: boolean;
   disable?: boolean;
 }> = ({
@@ -27,6 +29,7 @@ const PrimaryButton: React.FC<{
   fill,
   loading = false,
   disable = false,
+  color = 'white',
 }) => {
   const renderBackgroundColor = () => {
     if (disable) {
@@ -36,7 +39,7 @@ const PrimaryButton: React.FC<{
   };
 
   const styles = {
-    common: 'text-white w-full rounded-lg',
+    common: 'w-full rounded-lg',
     sm: 'text-sm py-2 px-4',
     md: 'text-base py-4 px-8',
     lg: 'text-base py-5 px-8',
@@ -61,7 +64,7 @@ const PrimaryButton: React.FC<{
           />
         </div>
       ) : (
-        <h4 className="text-white">{title}</h4>
+        <h4 className={`text-${color}`}>{title}</h4>
       )}
     </div>
   );
