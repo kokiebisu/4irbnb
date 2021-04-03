@@ -1,6 +1,6 @@
 import { ExperiencesTemplate } from '@template/experiences/id/template.experiences';
 import { ParticipateTemplate } from '@template/experiences/id/template.participate';
-import { BringTemplate } from '@template/experiences/id/template.bring';
+import { Bring } from '@template/experiences/id/bring';
 import { CharacteristicsTemplate } from '@template/experiences/id/template.characteristics';
 import { Available } from '@template/experiences/id/available';
 import { PreviewTemplate } from '@template/experiences/id/template.preview';
@@ -47,7 +47,7 @@ export const Template: React.FC<TemplateProps> = ({
   const variants: { [variant: string]: any } = {
     experiences: <ExperiencesTemplate {...props} />,
     participate: <ParticipateTemplate {...props} />,
-    bring: <BringTemplate {...props} />,
+    bring: <Bring {...props} />,
     characteristics: <CharacteristicsTemplate {...props} />,
     available: <Available {...props} />,
     preview: <PreviewTemplate {...props} />,
