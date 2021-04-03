@@ -21,9 +21,9 @@ export interface HomesTemplateProps {
  * @param {Object[]} stays - List of objects containing the stays
  */
 export const HomesTemplate: React.FC<HomesTemplateProps> = ({
-  layout = 'vertical',
-  title = 'Section Title',
-  stays = [undefined, undefined, undefined],
+  layout,
+  title,
+  stays,
 }) => {
   const layouts = {
     vertical: (

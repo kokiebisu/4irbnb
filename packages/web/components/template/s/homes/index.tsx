@@ -1,4 +1,4 @@
-import { MultipleTemplate } from './template.multiple';
+import { MultipleTemplate } from './multiple/template';
 import { Homes } from './homes';
 import { Also } from './also';
 
@@ -31,7 +31,7 @@ export const Template: React.FC<TemplateProps> = ({
   ...props
 }) => {
   const variants: { [key: string]: JSX.Element } = {
-    multiple: <MultipleTemplate {...props} />,
+    multiple: <Multiple {...props} />,
     homes: <Homes {...props} />,
     also: <Also {...props} />,
   };

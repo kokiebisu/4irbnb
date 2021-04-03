@@ -70,7 +70,7 @@ export const AlsoTemplate: React.FC<AlsoTemplateProps> = ({ items, title }) => {
         }}
       >
         <div style={{ display: 'flex' }}>
-          {displayingItems.map((item, index) => {
+          {items.map((item, index) => {
             return (
               <div
                 style={{ width: width / (width > 728 ? 3 : 2) }}
