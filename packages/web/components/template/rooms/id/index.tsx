@@ -3,7 +3,7 @@ import { Arrangements } from '@template/rooms/id/arrangements';
 import { Amenities } from '@template/rooms/id/amenities';
 import { Know } from '@template/rooms/id/know';
 import { Host } from '@template/rooms/id/host';
-import { PreviewTemplate } from '@template/rooms/id/template.preview';
+import { Preview } from '@template/rooms/id/preview';
 import { Other } from '@template/rooms/id/other';
 import { Description } from '@template/rooms/id/description';
 
@@ -46,7 +46,7 @@ export const Template: React.FC<TemplateProps> = ({
     amenities: <Amenities {...props} />,
     know: <Know {...props} />,
     host: <Host {...props} />,
-    preview: <PreviewTemplate {...props} />,
+    preview: <Preview {...props} />,
     other: <Other {...props} />,
     description: <Description {...props} />,
   };
