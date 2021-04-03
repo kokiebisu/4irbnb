@@ -13,6 +13,6 @@ export const useNearby = () => {
   ];
   const displayingItems = groupByTwo(items);
   return {
-    displayingItems,
+    items: displayingItems,
   };
 };

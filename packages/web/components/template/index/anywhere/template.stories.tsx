@@ -4,6 +4,7 @@ import {
   AnywhereTemplate,
   AnywhereTemplateProps,
 } from '@template/index/anywhere/template';
+import { items } from './mock';
 
 export default {
   title: 'Templates/Index',
@@ -16,5 +17,5 @@ const TemplateStory: Story<AnywhereTemplateProps> = (args) => (
 
 export const Anywhere = TemplateStory.bind({});
 Anywhere.args = {
-  items: [undefined, undefined, undefined],
+  items,
 };

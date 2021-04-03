@@ -15,4 +15,9 @@ const TemplateStory: Story<BannerTemplateProps> = (args) => (
 );
 
 export const Banner = TemplateStory.bind({});
-Banner.args = {};
+Banner.args = {
+  scrollPosition: 50,
+  category: 'stay',
+  handleCategoryChange: () => alert('Should change category'),
+  handleHomeRedirect: () => alert('Should change category'),
+};

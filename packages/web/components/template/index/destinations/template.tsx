@@ -6,14 +6,14 @@ import color from '@styles/color.module.scss';
 import font from '@styles/font.module.scss';
 import space from '@styles/space.module.scss';
 import shape from '@styles/shape.module.scss';
-import template from './index.module.scss';
+import template from '../index.module.scss';
 
 import { Button, $Button } from '@button';
 
 export interface DestinationsTemplateProps {
   items?: { [destinationType: string]: { city: string; location: string }[] };
   categories?: { name: string; value: string }[];
-  destinationType?: string;
+  destinationType?: 'artsCulture' | 'outdoor' | 'cabins' | 'beach' | 'popular';
   handleDestinationTypeChange?: (destinationType: string) => void;
   handleDestinationRedirect?: (city: string) => void;
 }
@@ -28,7 +28,8 @@ export const DestinationsTemplate: React.FC<DestinationsTemplateProps> = ({
   return (
     <div>
       <div style={{ overflowX: 'auto' }} className={[layout['flex']].join(' ')}>
-        {categories.map(({ name, value }, index) => {
+        {categories.map((category, index) => {
+          const { name, value } = category || {};
           return (
             <div key={index}>
               <CategoryButton

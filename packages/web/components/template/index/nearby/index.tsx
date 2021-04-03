@@ -1,5 +1,7 @@
+import { useNearby } from './logic';
 import { NearbyTemplate } from './template';
 
 export const Nearby = () => {
-  return <NearbyTemplate />;
+  const data = useNearby()
+  return <NearbyTemplate {...data}/>;
 };
