@@ -1,15 +1,23 @@
-import { Star } from "@svg/original";
+import { Star } from '@svg/original';
 
-import space from "@styles/space.module.scss";
-import color from "@styles/color.module.scss";
-import layout from "@styles/layout.module.scss";
-import shape from "@styles/shape.module.scss";
-import font from "@styles/font.module.scss";
-import section from "@template/index.module.scss";
+import space from '@styles/space.module.scss';
+import color from '@styles/color.module.scss';
+import layout from '@styles/layout.module.scss';
+import shape from '@styles/shape.module.scss';
+import font from '@styles/font.module.scss';
+import section from '@template/index.module.scss';
 
-import { Button, $Button } from "@button";
-import { Bullet, $Bullet } from "@bullet";
-import { Card, $Card } from "@card";
+import { Button, $Button } from '@button';
+import { Bullet, $Bullet } from '@bullet';
+import { Card, $Card } from '@card';
+
+export interface ReviewsTemplateProps {
+  ratings?: number;
+  categories?: any;
+  numberOfReviews?: number;
+  reviews?: any;
+  layoutType?: string;
+}
 
 /**
  * Renders the reviews section
@@ -19,13 +27,7 @@ import { Card, $Card } from "@card";
  * @param {number} numberOfReviews - The total number of reviews
  * @param {string} layoutType - The type of layout
  */
-export const ReviewsTemplate: React.FC<{
-  ratings?: number;
-  categories?: any;
-  numberOfReviews?: number;
-  reviews?: any;
-  layoutType?: string;
-}> = ({
+export const ReviewsTemplate: React.FC<ReviewsTemplateProps> = ({
   categories = [
     undefined,
     undefined,
@@ -37,55 +39,55 @@ export const ReviewsTemplate: React.FC<{
   reviews = [undefined, undefined, undefined, undefined],
   ratings = 5.0,
   numberOfReviews = 100,
-  layoutType = "room",
+  layoutType = 'room',
 }) => {
   return (
     <>
-      <div className={[space["m-v--8"]].join(" ")}>
+      <div className={[space['m-v--8']].join(' ')}>
         <div
           className={[
-            space["p-v--8"],
-            layout["flex"],
-            layout["items-center"],
-          ].join(" ")}
+            space['p-v--8'],
+            layout['flex'],
+            layout['items-center'],
+          ].join(' ')}
         >
-          <div className={[layout["flex"], layout["items-center"]].join(" ")}>
-            <div className={[space["m-r--6"]].join(" ")}>
+          <div className={[layout['flex'], layout['items-center']].join(' ')}>
+            <div className={[space['m-r--6']].join(' ')}>
               <Star width={20} />
             </div>
             <h3
               className={[
-                space["m-r--6"],
-                font["size--22"],
-                color["c--gray__3"],
-              ].join(" ")}
+                space['m-r--6'],
+                font['size--22'],
+                color['c--gray__3'],
+              ].join(' ')}
             >
               {ratings.toFixed(1)}
             </h3>
             <h3
               className={[
-                space["m-l--2"],
-                font["size--22"],
-                color["c--gray__3"],
-              ].join(" ")}
+                space['m-l--2'],
+                font['size--22'],
+                color['c--gray__3'],
+              ].join(' ')}
             >
               ({numberOfReviews} reviews)
             </h3>
           </div>
         </div>
-        {layoutType === "room" && (
+        {layoutType === 'room' && (
           <div
-            style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)" }}
-            className={[space["m-t--12"], space["m-r--24"]].join(" ")}
+            style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}
+            className={[space['m-t--12'], space['m-r--24']].join(' ')}
           >
             {categories.map((category, index) => {
               return (
                 <div
                   key={index}
                   className={[
-                    section["m__review--bullet"],
-                    space["p-v--8"],
-                  ].join(" ")}
+                    section['m__review--bullet'],
+                    space['p-v--8'],
+                  ].join(' ')}
                 >
                   <Bullet
                     variant={$Bullet.SCORE}
@@ -99,15 +101,15 @@ export const ReviewsTemplate: React.FC<{
         )}
         <div
           className={[
-            shape["w-full"],
-            space["m-t--16"],
-            section["display__reviews--wrapper"],
-          ].join(" ")}
+            shape['w-full'],
+            space['m-t--16'],
+            section['display__reviews--wrapper'],
+          ].join(' ')}
         >
           {reviews.map((review, index) => {
             return (
               <div
-                className={[section["m__review--card"]].join(" ")}
+                className={[section['m__review--card']].join(' ')}
                 key={index}
               >
                 <Card
@@ -119,7 +121,7 @@ export const ReviewsTemplate: React.FC<{
             );
           })}
         </div>
-        <div className={[space["m-t--16"]].join(" ")}>
+        <div className={[space['m-t--16']].join(' ')}>
           <Button
             variant={$Button.BORDER}
             size="md"
