@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react';
 import { BannerTemplate, BannerTemplateProps } from './template';
 
 export default {
-  title: 'Templates/Index',
+  title: 'Templates/S/Experiences/Online',
   component: BannerTemplate,
 } as Meta;
 

@@ -1,5 +1,5 @@
 import * as mockData from './mock';
 
-export const useCards = () => {
+export const useCollections = () => {
   return mockData;
 };

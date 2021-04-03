@@ -1,18 +1,18 @@
-import { Card, $Card } from '@card';
+import space from '@styles/space.module.scss';
+import layout from '@styles/layout.module.scss';
+import font from '@styles/font.module.scss';
+
 import { Button, $Button } from '@button';
 
-import space from '@styles/space.module.scss';
-import font from '@styles/font.module.scss';
-import layout from '@styles/layout.module.scss';
-import { MutableRefObject } from 'react';
+import { Card, $Card } from '@card';
 import { useSlide } from '@hooks/useSlide';
 
-export interface CardsTemplateProps {
+export interface StartingTemplateProps {
   title?: string;
   cards?: { imgUrl: string; videoUrl: string }[];
 }
 
-export const CardsTemplate: React.FC<CardsTemplateProps> = ({
+export const StartingTemplate: React.FC<StartingTemplateProps> = ({
   title,
   cards,
 }) => {
@@ -20,16 +20,12 @@ export const CardsTemplate: React.FC<CardsTemplateProps> = ({
 
   const displayingColumns = () => {
     if (width > 1128) {
-      return 6;
-    } else if (width > 1028) {
-      return 5;
-    } else if (width > 728) {
-      return 4;
-    } else if (width > 500) {
       return 3;
-    } else {
+    }
+    if (width > 700) {
       return 2;
     }
+    return 1;
   };
 
   return (
@@ -93,19 +89,24 @@ export const CardsTemplate: React.FC<CardsTemplateProps> = ({
           }}
         >
           <div style={{ display: 'flex' }}>
-            {cards.map(({ imgUrl, videoUrl }, index) => {
-              return (
-                <div key={index} style={{ width: width / displayingColumns() }}>
-                  <div style={{ marginRight: 10 }}>
-                    <Card
-                      variant={$Card.VIDEO}
-                      imgUrl={imgUrl}
-                      videoUrl={videoUrl}
-                    />
+            {cards.map(
+              ({ imgUrl = undefined, videoUrl = undefined }, index) => {
+                return (
+                  <div
+                    key={index}
+                    style={{ width: width / displayingColumns() }}
+                  >
+                    <div style={{ marginRight: 10 }}>
+                      <Card
+                        variant={$Card.STARTING}
+                        imgUrl={imgUrl}
+                        videoUrl={videoUrl}
+                      />
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              }
+            )}
           </div>
         </div>
       </div>
