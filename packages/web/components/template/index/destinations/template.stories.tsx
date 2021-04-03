@@ -1,18 +1,18 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import {
-  DestinationsTemplate,
-  DestinationsTemplateProps,
-} from '@template/index/destinations/template';
+  NearbyTemplate,
+  NearbyTemplateProps,
+} from '@template/index/nearby/template';
 
 export default {
   title: 'Templates/Index',
-  component: DestinationsTemplate,
+  component: NearbyTemplate,
 } as Meta;
 
-const TemplateStory: Story<DestinationsTemplateProps> = (args) => (
-  <DestinationsTemplate {...args} />
+const TemplateStory: Story<NearbyTemplateProps> = (args) => (
+  <NearbyTemplate {...args} />
 );
 
-export const Destinations = TemplateStory.bind({});
-Destinations.args = {};
+export const Nearby = TemplateStory.bind({});
+Nearby.args = {};
