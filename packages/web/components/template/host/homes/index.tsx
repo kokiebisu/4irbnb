@@ -1,9 +1,9 @@
 import { PriorityTemplate } from './template.priority';
 import { HelpTemplate } from './template.help';
 import { ReadyTemplate } from './template.ready';
-import { CommunityTemplate } from './template.community';
+import { Community } from './community';
 import { All } from './all';
-import { BannerTemplate } from './template.banner';
+import { Banner } from './banner';
 import { HostingTemplate } from './template.hosting';
 
 export const $Template = {
@@ -41,10 +41,10 @@ export const Template: React.FC<TemplateProps> = ({
   const variants: { [variant: string]: any } = {
     help: <HelpTemplate {...props} />,
     priority: <PriorityTemplate {...props} />,
-    community: <CommunityTemplate {...props} />,
+    community: <Community {...props} />,
     ready: <ReadyTemplate {...props} />,
     all: <All {...props} />,
-    banner: <BannerTemplate {...props} />,
+    banner: <Banner {...props} />,
     hosting: <HostingTemplate {...props} />,
   };
 

@@ -1,6 +1,6 @@
 export const useAll = () => {
-  const props = {
+  const data = {
     items: [undefined, undefined, undefined, undefined, undefined, undefined],
   };
-  return { props };
+  return { data };
 };
