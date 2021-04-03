@@ -2,7 +2,7 @@
  * Renders the typestay card
  * @param {Object} card - Information about the card
  */
-export const TypeStayCard: React.FC<{
+const TypeStayCard: React.FC<{
   card?: any;
 }> = ({
   card = {
@@ -32,4 +32,13 @@ export const TypeStayCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const typestay = (props) => {
+  return {
+    typestay: {
+      component: <TypeStayCard {...props} />,
+      style: '',
+    },
+  };
 };

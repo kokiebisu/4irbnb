@@ -6,7 +6,7 @@ import { renderDescription } from './logic/logic.review';
  * @param {string} imgUrl - Image of the review card
  * @param {string} description - Description of the review card
  */
-export const ReviewCard: React.FC<{
+const ReviewCard: React.FC<{
   imgUrl?: string;
   description?: string;
   commentedDate?: string;
@@ -55,4 +55,13 @@ export const ReviewCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const review = (props) => {
+  return {
+    review: {
+      component: <ReviewCard {...props} />,
+      style: '',
+    },
+  };
 };

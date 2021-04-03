@@ -1,17 +1,19 @@
-import { CategoryTemplate } from "./template.category";
-import { NearbyTemplate } from "./template.nearby";
-import { BannerTemplate } from "./template.banner";
-import { OnlineTemplate } from "./template.online";
-import { AnywhereTemplate } from "./template.anywhere";
-import { DestinationsTemplate } from "./template.destinations";
+import { Category } from './category';
+import { Nearby } from './nearby';
+import { Banner } from './banner';
+import { Online } from './online';
+import { Anywhere } from './anywhere';
+import { Destinations } from './destinations';
+import { Worth } from './worth';
 
 export const $Template = {
-  CATEGORY: "category",
-  NEARBY: "nearby",
-  BANNER: "banner",
-  ONLINE: "online",
-  ANYWHERE: "anywhere",
-  DESTINATIONS: "destinations",
+  CATEGORY: 'category',
+  NEARBY: 'nearby',
+  BANNER: 'banner',
+  ONLINE: 'online',
+  ANYWHERE: 'anywhere',
+  DESTINATIONS: 'destinations',
+  WORTH: 'worth',
 };
 
 export interface TemplateProps {
@@ -27,8 +29,8 @@ export interface TemplateProps {
  * @param {Object} children - A JSX that will be part of the component
  */
 export const Template: React.FC<TemplateProps> = ({
-  extendsTo = "",
-  variant = "auth",
+  extendsTo = '',
+  variant = 'auth',
   children,
   onClick,
   to,
@@ -37,15 +39,16 @@ export const Template: React.FC<TemplateProps> = ({
   ...props
 }) => {
   const variants: { [key: string]: JSX.Element } = {
-    category: <CategoryTemplate {...props} />,
-    nearby: <NearbyTemplate {...props} />,
-    banner: <BannerTemplate {...props} />,
-    online: <OnlineTemplate {...props} />,
-    anywhere: <AnywhereTemplate {...props} />,
-    destinations: <DestinationsTemplate {...props} />,
+    category: <Category {...props} />,
+    nearby: <Nearby {...props} />,
+    banner: <Banner {...props} />,
+    online: <Online {...props} />,
+    anywhere: <Anywhere {...props} />,
+    destinations: <Destinations {...props} />,
+    worth: <Worth {...props} />,
   };
 
   return (
-    <div data-testid={`${variant}-landing--template`}>{variants[variant]}</div>
+    <div data-testid={`${variant}-landing-template`}>{variants[variant]}</div>
   );
 };

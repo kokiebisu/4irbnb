@@ -13,7 +13,7 @@ const DestinationButton: React.FC<{
         <h4 className="text-sm text-left">{city}</h4>
       </div>
       <div>
-        <h4 className="text-sm text-gray-400 text-left">{location}</h4>
+        <h4 className="text-sm text-gray-500 text-left">{location}</h4>
       </div>
     </div>
   );

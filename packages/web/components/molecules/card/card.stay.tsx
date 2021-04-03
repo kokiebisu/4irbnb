@@ -13,7 +13,7 @@ import { Card, $Card } from '@card';
  * @param {Object} accomodations - Information about the accomodations of the stay
  * @param {string[]} characteristics - List of characteristics
  */
-export const StayCard: React.FC<{
+const StayCard: React.FC<{
   images?: string[];
   typeStay?: string;
   location?: string;
@@ -109,4 +109,13 @@ export const StayCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const stay = (props) => {
+  return {
+    stay: {
+      component: <StayCard {...props} />,
+      style: '',
+    },
+  };
 };

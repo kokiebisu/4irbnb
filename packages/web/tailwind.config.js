@@ -7,10 +7,11 @@ module.exports = {
         'input-upload':
           "url('https://a0.muscache.com/airbnb/static/packages/upload-photos-ghosts.56fe723d.png')",
       }),
+      spacing: {
+        112: '28rem',
+      },
     },
   },
-  variants: {
-    extend: {},
-  },
+  variants: {},
   plugins: [],
 };

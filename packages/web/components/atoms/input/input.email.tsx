@@ -27,23 +27,13 @@ export const EmailInput: React.FC<{
     setFieldActive(false);
   };
 
-  const renderShape = () => {
-    switch (direction) {
-      case 'top':
-        return 'border-b border-l border-r border-gray-400 rounded-br-lg';
-      case 'bottom':
-        return 'border-t border-l border-r border-gray-300 rounded-tr-lg';
-      default:
-        return 'border rounded-lg border-gray-400';
-    }
-  };
-
   return (
     <div
-      className={`h-16 relative py-2 px-4 items-center ${renderShape()} ${styleContainer(
+      className={`h-14 relative px-5 items-center ${styleContainer(
         errors,
         fieldActive,
-        checkEmail(value)
+        checkEmail(value),
+        direction
       )}`}
     >
       <div className="relative w-full h-full">
@@ -56,7 +46,7 @@ export const EmailInput: React.FC<{
           value={value}
           onFocus={activateField}
           onBlur={deactivateField}
-          className={`pt-4 w-full block border-none text-base font-light outline-none ${styleInput(
+          className={`pt-5 w-full block border-none text-base font-light outline-none ${styleInput(
             errors,
             fieldActive,
             checkEmail(value)

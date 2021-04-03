@@ -2,7 +2,7 @@
  * @param {string} imgUrl - Image of the card
  * @param {string} title - Title of the card
  */
-export const AnywhereCard: React.FC<{
+const AnywhereCard: React.FC<{
   imgUrl?: string;
   title?: string;
 }> = ({ imgUrl, title = 'Title' }) => {
@@ -20,8 +20,17 @@ export const AnywhereCard: React.FC<{
         </div>
       </div>
       <div className="mt-2">
-        <h3 className="text-base text-gray-500">{title}</h3>
+        <h3 className="text-base text-gray-800">{title}</h3>
       </div>
     </div>
   );
+};
+
+export const anywhere = (props) => {
+  return {
+    anywhere: {
+      component: <AnywhereCard {...props} />,
+      style: '',
+    },
+  };
 };

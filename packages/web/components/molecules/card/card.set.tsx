@@ -1,6 +1,6 @@
 import { Check } from '@svg/original';
 
-export const SetCard: React.FC<{}> = () => {
+const SetCard: React.FC<{}> = () => {
   return (
     <div className="rounded-lg border border-gray-300">
       <div className="w-full rounded-t-lg h-2 bg-green-600" />
@@ -23,4 +23,13 @@ export const SetCard: React.FC<{}> = () => {
       </div>
     </div>
   );
+};
+
+export const set = (props) => {
+  return {
+    set: {
+      component: <SetCard {...props} />,
+      style: '',
+    },
+  };
 };

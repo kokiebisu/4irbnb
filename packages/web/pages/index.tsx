@@ -17,6 +17,7 @@ import { useTimeout } from '@hooks/useTimeout';
 import { useTabTitle } from '@hooks/useTabTitle';
 
 import { APIClient } from '../api/client';
+import { useRouter } from 'next/router';
 
 const LandingPage = ({ currentUser }) => {
   useTabTitle('Vacation Rentals, Homes, Experiences & Places - Airbnb');
@@ -24,6 +25,7 @@ const LandingPage = ({ currentUser }) => {
   const toggleState = useToggleState();
   const scrollPosition = useHandleScroll();
   const pageHeight = useHandleDocumentResize();
+  const router = useRouter();
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
@@ -40,15 +42,8 @@ const LandingPage = ({ currentUser }) => {
             <Layout variant="landing" title="Live anywhere" spread>
               <Template variant={$Template.ANYWHERE} items={anywhereItems} />
             </Layout>
-            <div className="my-12"></div>
-            <Layout
-              dark
-              spread
-              variant="landing"
-              title="Meet Online Experiences"
-              subtitle="Interactive activities you can do together, led by expert hosts."
-            >
-              <Template variant={$Template.ONLINE} sectionType="landing" dark />
+            <Layout spread variant="landing">
+              <Template variant={$Template.WORTH} />
             </Layout>
             <Layout
               variant="landing"
@@ -74,7 +69,7 @@ const LandingPage = ({ currentUser }) => {
           </div>
         )}
         <Footer spread />
-        <div className="fixed w-full z-50 bottom-0 flex justify-center px-16 pb-6">
+        <div className="fixed w-full z-50 bottom-0 flex justify-center px-5 md:px-10 lg:px-16 pb-6">
           <div>
             <Modal
               variant={$Modal.PRIVACY}

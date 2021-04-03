@@ -5,7 +5,7 @@
  * @param {string} title - Title of the card
  * @param {boolean} inverse - Whether if the component takes the inverse styling or not
  */
-export const OnlineCard: React.FC<{
+const OnlineCard: React.FC<{
   small?: string;
   large?: string;
   title?: string;
@@ -74,4 +74,13 @@ export const OnlineCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const online = (props) => {
+  return {
+    online: {
+      component: <OnlineCard {...props} />,
+      style: '',
+    },
+  };
 };
