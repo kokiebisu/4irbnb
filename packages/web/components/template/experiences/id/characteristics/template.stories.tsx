@@ -1,18 +1,18 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 import {
-  CharacteristicsTemplate,
-  CharacteristicsTemplateProps,
-} from '@template/experiences/id/characteristics/template';
+  DescriptionTemplate,
+  DescriptionTemplateProps,
+} from '@template/experiences/id/description/template';
 
 export default {
   title: 'Templates/Experiences/ID',
-  component: CharacteristicsTemplate,
+  component: DescriptionTemplate,
 } as Meta;
 
-const TemplateStory: Story<CharacteristicsTemplateProps> = (args) => (
-  <CharacteristicsTemplate {...args} />
+const TemplateStory: Story<DescriptionTemplateProps> = (args) => (
+  <DescriptionTemplate {...args} />
 );
 
-export const Characteristics = TemplateStory.bind({});
-Characteristics.args = {};
+export const Description = TemplateStory.bind({});
+Description.args = {};

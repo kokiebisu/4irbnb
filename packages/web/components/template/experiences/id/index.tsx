@@ -6,7 +6,7 @@ import { Available } from '@template/experiences/id/available';
 import { PreviewTemplate } from '@template/experiences/id/template.preview';
 import { ReviewsTemplate } from '@template/experiences/id/template.reviews';
 import { HostTemplate } from '@template/experiences/id/template.host';
-import { DescriptionTemplate } from '@template/experiences/id/template.description';
+import { Description } from '@template/experiences/id/description';
 import { KnowTemplate } from '@template/experiences/id/template.know';
 
 export const $Template = {
@@ -53,7 +53,7 @@ export const Template: React.FC<TemplateProps> = ({
     preview: <PreviewTemplate {...props} />,
     reviews: <ReviewsTemplate {...props} />,
     host: <HostTemplate {...props} />,
-    description: <DescriptionTemplate {...props} />,
+    description: <Description {...props} />,
     know: <KnowTemplate {...props} />,
   };
 

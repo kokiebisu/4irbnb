@@ -22,11 +22,11 @@ export interface CharacteristicsTemplateProps {
   location?: string;
   country?: string;
   characteristics?: {
-    time?: number;
-    devices?: string[];
-    people?: number;
-    private?: number;
-    languages?: string[];
+    time: number;
+    devices: string[];
+    people: number;
+    private: number;
+    languages: string[];
   };
 }
 
