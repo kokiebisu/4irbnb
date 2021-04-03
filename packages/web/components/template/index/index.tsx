@@ -1,5 +1,5 @@
 import { Category } from './category';
-import { NearbyTemplate } from './template.nearby';
+import { Nearby } from './nearby';
 import { Banner } from './banner';
 import { OnlineTemplate } from './template.online';
 import { Anywhere } from './anywhere';
@@ -40,7 +40,7 @@ export const Template: React.FC<TemplateProps> = ({
 }) => {
   const variants: { [key: string]: JSX.Element } = {
     category: <Category {...props} />,
-    nearby: <NearbyTemplate {...props} />,
+    nearby: <Nearby {...props} />,
     banner: <Banner {...props} />,
     online: <OnlineTemplate {...props} />,
     anywhere: <Anywhere {...props} />,
