@@ -7,11 +7,11 @@ import { Card, $Card } from '@card';
 import { Button, $Button } from '@button';
 
 export interface SharingTemplateProps {
-  sharings?: string[];
+  categories?: string[];
 }
 
 export const SharingTemplate: React.FC<SharingTemplateProps> = ({
-  sharings,
+  categories,
 }) => {
   return (
     <Layout
@@ -27,7 +27,7 @@ export const SharingTemplate: React.FC<SharingTemplateProps> = ({
           columnGap: 25,
         }}
       >
-        {sharings.map((sharing, index) => {
+        {categories.map((sharing, index) => {
           return (
             <div key={index}>
               <Card variant={$Card.SHARING} sharing={sharing} />

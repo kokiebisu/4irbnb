@@ -1,9 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import {
-  FAQTemplate,
-  FAQTemplateProps,
-} from '@template/d/onlinehost/faq/template';
+import { FAQTemplate, FAQTemplateProps } from './template';
+import { questions } from './mock';
 
 export default {
   title: 'Templates/D/OnlineHosts',
@@ -16,5 +14,5 @@ const TemplateStory: Story<FAQTemplateProps> = (args) => (
 
 export const Faq = TemplateStory.bind({});
 Faq.args = {
-  questions: [{ question: 'Example', answer: 'Answer' }],
+  questions,
 };
