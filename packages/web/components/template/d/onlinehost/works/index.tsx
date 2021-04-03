@@ -1,6 +1,7 @@
+import { useWorks } from './logic';
 import { WorksTemplate } from './template';
 
 export const Works = () => {
-  const categories = ['design', 'share', 'submit', 'setup'];
-  return <WorksTemplate categories={categories} />;
+  const data = useWorks();
+  return <WorksTemplate {...data} />;
 };
