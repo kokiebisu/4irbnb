@@ -1,22 +1,18 @@
-import { useRef } from "react";
-import Router from "next/router";
+import { useRef } from 'react';
+import Router from 'next/router';
 
-import layout from "@styles/layout.module.scss";
-import space from "@styles/space.module.scss";
-import font from "@styles/font.module.scss";
-import banner from "@banner/banner.module.scss";
-import responsive from "@styles/responsive.module.scss";
+import layout from '@styles/layout.module.scss';
+import space from '@styles/space.module.scss';
+import font from '@styles/font.module.scss';
+import banner from '@banner/banner.module.scss';
+import responsive from '@styles/responsive.module.scss';
 
-import { Button, $Button } from "@button";
-import { Card, $Card } from "@card";
+import { Button, $Button } from '@button';
+import { Card, $Card } from '@card';
 
-import { useSlider, SliderProps } from "@hooks/useSlider";
+import { useSlider, SliderProps } from '@hooks/useSlider';
 
-/**
- * Renders the homes banner
- * @param {Object[]} hosts - List of hosts
- */
-export const CommunityTemplate: React.FC<{
+export interface CommunityTemplateProps {
   title?: string;
   description?: string;
   hosts?: {
@@ -25,8 +21,14 @@ export const CommunityTemplate: React.FC<{
     location: string;
     imgUrl: string;
   }[];
-}> = ({
-  title = "Title",
+}
+
+/**
+ * Renders the homes banner
+ * @param {Object[]} hosts - List of hosts
+ */
+export const CommunityTemplate: React.FC<CommunityTemplateProps> = ({
+  title = 'Title',
   description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
   hosts = [undefined, undefined, undefined, undefined, undefined],
 }) => {
@@ -35,45 +37,45 @@ export const CommunityTemplate: React.FC<{
   const { state, previous, next }: SliderProps = useSlider(
     hosts,
     width,
-    "banner"
+    'banner'
   );
 
   return (
     <div
-      className={[responsive["b_to_f--sm"], layout["items-center"]].join(" ")}
+      className={[responsive['b_to_f--sm'], layout['items-center']].join(' ')}
     >
       <div
-        style={{ position: "relative", zIndex: 500 }}
-        className={[banner["w__homes--left"]].join(" ")}
+        style={{ position: 'relative', zIndex: 500 }}
+        className={[banner['w__homes--left']].join(' ')}
       >
-        <div className={`${[responsive["p-l--24_to_64--sm"]].join(" ")} `}>
+        <div className={`${[responsive['p-l--24_to_64--sm']].join(' ')} `}>
           <div
-            style={{ maxWidth: 360, width: "100%" }}
+            style={{ maxWidth: 360, width: '100%' }}
             className={`${[
-              layout["flex"],
-              layout["flex-col"],
-              layout["justify-center"],
-            ].join(" ")} `}
+              layout['flex'],
+              layout['flex-col'],
+              layout['justify-center'],
+            ].join(' ')} `}
           >
-            <div className={[space["m-b--32"]].join(" ")}>
+            <div className={[space['m-b--32']].join(' ')}>
               <h1
                 style={{ lineHeight: 1 }}
-                className={[font["size--45"]].join(" ")}
+                className={[font['size--45']].join(' ')}
               >
                 {title}
               </h1>
             </div>
-            <div className={[space["m-b--32"]].join(" ")}>
-              <h4 className={[font["size--18"], font["lh--15"]].join(" ")}>
+            <div className={[space['m-b--32']].join(' ')}>
+              <h4 className={[font['size--18'], font['lh--15']].join(' ')}>
                 {description}
               </h4>
             </div>
-            <div className={[layout["inline-block"]].join(" ")}>
+            <div className={[layout['inline-block']].join(' ')}>
               <Button
                 variant={$Button.PRIMARY}
                 size="md"
                 title="Get started"
-                onClick={() => Router.push("/become-a-host")}
+                onClick={() => Router.push('/become-a-host')}
                 animate
               />
             </div>
@@ -81,19 +83,19 @@ export const CommunityTemplate: React.FC<{
         </div>
       </div>
       <div
-        style={{ position: "relative", zIndex: 500 }}
+        style={{ position: 'relative', zIndex: 500 }}
         className={[
-          banner["w__homes--right"],
-          responsive["p-l--24_to_64--sm"],
-          space["p-t--50"],
-        ].join(" ")}
+          banner['w__homes--right'],
+          responsive['p-l--24_to_64--sm'],
+          space['p-t--50'],
+        ].join(' ')}
       >
         <div
           style={{
-            position: "relative",
-            width: "100%",
-            height: "100%",
-            overflow: "hidden",
+            position: 'relative',
+            width: '100%',
+            height: '100%',
+            overflow: 'hidden',
             borderRadius: 12,
             zIndex: 50,
           }}
@@ -103,9 +105,9 @@ export const CommunityTemplate: React.FC<{
               borderRadius: 12,
               transform: `translateX(-${state.translate}px)`,
               transition: `transform ease-out ${state.transition}s`,
-              height: "100%",
+              height: '100%',
               width: width * hosts.length,
-              display: "flex",
+              display: 'flex',
             }}
           >
             {hosts.map((host, index) => {
@@ -113,7 +115,7 @@ export const CommunityTemplate: React.FC<{
                 <div
                   key={index}
                   ref={sliderRef}
-                  className={[space["m-r--16"]].join(" ")}
+                  className={[space['m-r--16']].join(' ')}
                 >
                   <Card
                     variant={$Card.HOST}
@@ -129,14 +131,14 @@ export const CommunityTemplate: React.FC<{
         </div>
         <div
           className={[
-            space["m-t--32"],
-            space["m-r--32"],
-            layout["flex"],
-            responsive["justify--start_to_end--sm"],
-          ].join(" ")}
+            space['m-t--32'],
+            space['m-r--32'],
+            layout['flex'],
+            responsive['justify--start_to_end--sm'],
+          ].join(' ')}
         >
-          <div className={[layout["items-center"], layout["flex"]].join(" ")}>
-            <div className={[space["m-r--8"]].join(" ")}>
+          <div className={[layout['items-center'], layout['flex']].join(' ')}>
+            <div className={[space['m-r--8']].join(' ')}>
               <Button
                 variant={$Button.PAGINATE}
                 animate
