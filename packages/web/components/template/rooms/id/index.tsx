@@ -2,10 +2,10 @@ import { ReviewsTemplate } from '@template/rooms/id/template.reviews';
 import { Arrangements } from '@template/rooms/id/arrangements';
 import { Amenities } from '@template/rooms/id/amenities';
 import { KnowTemplate } from '@template/rooms/id/template.know';
-import { HostTemplate } from '@template/rooms/id/template.host';
+import { Host } from '@template/rooms/id/host';
 import { PreviewTemplate } from '@template/rooms/id/template.preview';
 import { OtherTemplate } from '@template/rooms/id/template.other';
-import { DescriptionTemplate } from '@template/rooms/id/template.description';
+import { Description } from '@template/rooms/id/description';
 
 export const $Template = {
   REVIEWS: 'reviews',
@@ -45,10 +45,10 @@ export const Template: React.FC<TemplateProps> = ({
     arrangements: <Arrangements {...props} />,
     amenities: <Amenities {...props} />,
     know: <KnowTemplate {...props} />,
-    host: <HostTemplate {...props} />,
+    host: <Host {...props} />,
     preview: <PreviewTemplate {...props} />,
     other: <OtherTemplate {...props} />,
-    description: <DescriptionTemplate {...props} />,
+    description: <Description {...props} />,
   };
 
   return <div data-testid={`${variant}-stay`}>{variants[variant]}</div>;
