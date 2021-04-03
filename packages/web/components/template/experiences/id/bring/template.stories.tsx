@@ -1,6 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { BringTemplate, BringTemplateProps } from './template';
+import { necessities } from './mock';
 
 export default {
   title: 'Templates/D/OnlineHosts',
@@ -12,4 +13,6 @@ const TemplateStory: Story<BringTemplateProps> = (args) => (
 );
 
 export const Bring = TemplateStory.bind({});
-Bring.args = {};
+Bring.args = {
+  necessities,
+};

@@ -1,6 +1,8 @@
+import { experiences } from './mock';
+
 export const useExperiences = () => {
   const data = {
-    experiences: ['hosts', 'activities', 'global'],
+    experiences,
   };
-  return { data };
+  return data;
 };

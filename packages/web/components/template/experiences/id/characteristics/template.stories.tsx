@@ -4,6 +4,7 @@ import {
   DescriptionTemplate,
   DescriptionTemplateProps,
 } from '@template/experiences/id/description/template';
+import { overview } from './mock';
 
 export default {
   title: 'Templates/Experiences/ID',
@@ -15,4 +16,6 @@ const TemplateStory: Story<DescriptionTemplateProps> = (args) => (
 );
 
 export const Description = TemplateStory.bind({});
-Description.args = {};
+Description.args = {
+  ...overview,
+};

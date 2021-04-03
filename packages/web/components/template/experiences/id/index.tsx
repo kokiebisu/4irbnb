@@ -7,7 +7,7 @@ import { PreviewTemplate } from '@template/experiences/id/template.preview';
 import { ReviewsTemplate } from '@template/experiences/id/template.reviews';
 import { Host } from '@template/experiences/id/host';
 import { Description } from '@template/experiences/id/description';
-import { KnowTemplate } from '@template/experiences/id/template.know';
+import { Know } from '@template/experiences/id/know';
 
 export const $Template = {
   AVAILABLE: 'available',
@@ -54,12 +54,8 @@ export const Template: React.FC<TemplateProps> = ({
     reviews: <ReviewsTemplate {...props} />,
     host: <Host {...props} />,
     description: <Description {...props} />,
-    know: <KnowTemplate {...props} />,
+    know: <Know {...props} />,
   };
 
-  return (
-    <div data-testid={`${variant}-onlinehost--template`}>
-      {variants[variant]}
-    </div>
-  );
+  return <div data-testid={`${variant}-onlinehost`}>{variants[variant]}</div>;
 };
