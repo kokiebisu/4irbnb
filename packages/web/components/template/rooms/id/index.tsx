@@ -1,21 +1,21 @@
-import { ReviewsTemplate } from "@template/rooms/id/template.reviews";
-import { ArrangementsTemplate } from "@template/rooms/id/template.arrangements";
-import { AmenitiesTemplate } from "@template/rooms/id/template.amenities";
-import { KnowTemplate } from "@template/rooms/id/template.know";
-import { HostTemplate } from "@template/rooms/id/template.host";
-import { PreviewTemplate } from "@template/rooms/id/template.preview";
-import { OtherTemplate } from "@template/rooms/id/template.other";
-import { DescriptionTemplate } from "@template/rooms/id/template.description";
+import { ReviewsTemplate } from '@template/rooms/id/template.reviews';
+import { ArrangementsTemplate } from '@template/rooms/id/template.arrangements';
+import { Amenities } from '@template/rooms/id/amenities';
+import { KnowTemplate } from '@template/rooms/id/template.know';
+import { HostTemplate } from '@template/rooms/id/template.host';
+import { PreviewTemplate } from '@template/rooms/id/template.preview';
+import { OtherTemplate } from '@template/rooms/id/template.other';
+import { DescriptionTemplate } from '@template/rooms/id/template.description';
 
 export const $Template = {
-  REVIEWS: "reviews",
-  ARRANGEMENTS: "arrangements",
-  AMENITIES: "amenities",
-  KNOW: "know",
-  HOST: "host",
-  PREVIEW: "preview",
-  OTHER: "other",
-  DESCRIPTION: "description",
+  REVIEWS: 'reviews',
+  ARRANGEMENTS: 'arrangements',
+  AMENITIES: 'amenities',
+  KNOW: 'know',
+  HOST: 'host',
+  PREVIEW: 'preview',
+  OTHER: 'other',
+  DESCRIPTION: 'description',
 };
 
 export interface TemplateProps {
@@ -31,8 +31,8 @@ export interface TemplateProps {
  * @param {Object} children - A JSX that will be part of the component
  */
 export const Template: React.FC<TemplateProps> = ({
-  extendsTo = "",
-  variant = "reviews",
+  extendsTo = '',
+  variant = 'reviews',
   children,
   onClick,
   to,
@@ -43,7 +43,7 @@ export const Template: React.FC<TemplateProps> = ({
   const variants: { [key: string]: JSX.Element } = {
     reviews: <ReviewsTemplate {...props} />,
     arrangements: <ArrangementsTemplate {...props} />,
-    amenities: <AmenitiesTemplate {...props} />,
+    amenities: <Amenities {...props} />,
     know: <KnowTemplate {...props} />,
     host: <HostTemplate {...props} />,
     preview: <PreviewTemplate {...props} />,
@@ -51,7 +51,5 @@ export const Template: React.FC<TemplateProps> = ({
     description: <DescriptionTemplate {...props} />,
   };
 
-  return (
-    <div data-testid={`${variant}-stay--template`}>{variants[variant]}</div>
-  );
+  return <div data-testid={`${variant}-stay`}>{variants[variant]}</div>;
 };
