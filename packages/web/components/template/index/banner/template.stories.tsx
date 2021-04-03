@@ -1,9 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import {
-  BannerTemplate,
-  BannerTemplateProps,
-} from '@template/index/banner/template';
+import { BannerTemplate, BannerTemplateProps } from './template';
+import * as mockData from './mock';
 
 export default {
   title: 'Templates/Index',
@@ -16,8 +14,5 @@ const TemplateStory: Story<BannerTemplateProps> = (args) => (
 
 export const Banner = TemplateStory.bind({});
 Banner.args = {
-  scrollPosition: 50,
-  category: 'stay',
-  handleCategoryChange: () => alert('Should change category'),
-  handleHomeRedirect: () => alert('Should change category'),
+  ...mockData,
 };

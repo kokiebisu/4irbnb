@@ -1,8 +1,5 @@
-import { items, dark } from './mock';
+import * as mockData from './mock';
 
 export const useOnline = () => {
-  return {
-    items,
-    dark,
-  };
+  return mockData;
 };

@@ -13,3 +13,9 @@ export const items = {
   beach: [{ city: 'Florida', location: 'United States' }],
   popular: [{ city: 'San Francisco', location: 'United States' }],
 };
+
+export const destinationType = 'artsCulture';
+export const handleDestinationTypeChange = () =>
+  alert('Should change destinationType');
+export const handleDestinationRedirect = () =>
+  alert('Should redirect to selected destination');

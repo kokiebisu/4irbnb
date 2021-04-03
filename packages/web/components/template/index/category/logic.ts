@@ -1,7 +1,5 @@
-import { items } from './mock';
+import * as mockData from './mock';
 
 export const useCategory = () => {
-  return {
-    items,
-  };
+  return mockData;
 };

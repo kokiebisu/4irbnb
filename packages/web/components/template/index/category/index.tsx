@@ -1,5 +1,7 @@
+import { useCategory } from './logic';
 import { CategoryTemplate } from './template';
 
 export const Category = () => {
-  return <CategoryTemplate />;
+  const data = useCategory()
+  return <CategoryTemplate {...data}/>;
 };

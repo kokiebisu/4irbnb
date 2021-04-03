@@ -1,9 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import {
-  HostingTemplate,
-  HostingTemplateProps,
-} from '@template/host/homes/hosting/template';
+import { HostingTemplate, HostingTemplateProps } from './template';
 
 export default {
   title: 'Templates/Host/Homes',

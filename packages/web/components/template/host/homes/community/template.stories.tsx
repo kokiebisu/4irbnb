@@ -1,9 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import {
-  CommunityTemplate,
-  CommunityTemplateProps,
-} from '@template/host/homes/community/template';
+import { CommunityTemplate, CommunityTemplateProps } from './template';
+import * as mockData from './mock';
 
 export default {
   title: 'Templates/Host/Homes',
@@ -16,8 +14,5 @@ const TemplateStory: Story<CommunityTemplateProps> = (args) => (
 
 export const Community = TemplateStory.bind({});
 Community.args = {
-  title: 'Title',
-  description:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
-  hosts: [undefined, undefined, undefined, undefined, undefined],
+  ...mockData,
 };

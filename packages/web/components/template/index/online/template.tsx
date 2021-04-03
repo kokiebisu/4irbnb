@@ -8,7 +8,7 @@ import layout from '@styles/layout.module.scss';
 import shape from '@styles/shape.module.scss';
 
 export interface OnlineTemplateProps {
-  items?: { small?: string; large?: string; title?: string; to?: string }[];
+  items?: { small: string; large: string; title: string; to: string }[];
   dark?: boolean;
 }
 

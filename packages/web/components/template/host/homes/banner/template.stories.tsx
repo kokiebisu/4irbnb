@@ -1,12 +1,9 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import {
-  BannerTemplate,
-  BannerTemplateProps,
-} from '@template/host/homes/banner/template';
+import { BannerTemplate, BannerTemplateProps } from './template';
 
 export default {
-  title: 'Templates/Experiences/ID',
+  title: 'Templates/Host/Homes',
   component: BannerTemplate,
 } as Meta;
 

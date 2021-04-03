@@ -1,9 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import {
-  PriorityTemplate,
-  PriorityTemplateProps,
-} from '@template/host/homes/priority/template';
+import { PriorityTemplate, PriorityTemplateProps } from './template';
 
 export default {
   title: 'Templates/Host/Homes',
