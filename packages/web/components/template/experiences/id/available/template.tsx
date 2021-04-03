@@ -8,58 +8,29 @@ import section from '@template/index.module.scss';
 import { Card, $Card } from '@card';
 import { Button, $Button } from '@button';
 
+export interface AvailableTemplateProps {
+  availables?: {
+    date: string;
+    from: string;
+    to: string;
+    standard: string;
+    price: number;
+  }[];
+}
+
 /**
  * Renders the available section
  * @param {Object[]} availables - List of available dates for the experience
  */
-export const AvailableTemplate: React.FC<{
-  availables?: any;
-}> = ({
-  availables = [
-    {
-      date: 'Tue., Nov. 10',
-      from: '1:00 a.m. ',
-      to: '3:00 a.m. ',
-      standard: 'PST',
-      price: 31,
-    },
-    {
-      date: 'Tue., Nov. 10',
-      from: '1:00 a.m. ',
-      to: '3:00 a.m. ',
-      standard: 'PST',
-      price: 31,
-    },
-    {
-      date: 'Tue., Nov. 11',
-      from: '1:00 a.m. ',
-      to: '3:00 a.m. ',
-      standard: 'PST',
-      price: 31,
-    },
-    {
-      date: 'Tue., Nov. 12',
-      from: '1:00 a.m. ',
-      to: '3:00 a.m. ',
-      standard: 'PST',
-      price: 31,
-    },
-    {
-      date: 'Tue., Nov. 13',
-      from: '1:00 a.m. ',
-      to: '3:00 a.m. ',
-      standard: 'PST',
-      price: 31,
-    },
-  ],
+export const AvailableTemplate: React.FC<AvailableTemplateProps> = ({
+  availables,
 }) => {
-  const [width, setWidth] = useState(500);
-  const containerRef = useRef<HTMLDivElement>();
   const [state, setState] = useState({
     activeSlide: 0,
     translate: 0,
     transition: 0.45,
   });
+  const [width, setWidth] = useState(500);
 
   const evaluateColumns = () => {
     if (width > 1128) {
@@ -81,15 +52,7 @@ export const AvailableTemplate: React.FC<{
     }
   };
 
-  useLayoutEffect(() => {
-    window.addEventListener('resize', handleRef);
-    handleRef();
-    return () => {
-      window.removeEventListener('resize', handleRef);
-    };
-  });
-
-  const previous = () => {
+  const handlePreviousSlide = () => {
     setState({
       ...state,
       activeSlide: state.activeSlide - 1,
@@ -97,13 +60,23 @@ export const AvailableTemplate: React.FC<{
     });
   };
 
-  const next = () => {
+  const handleNextSlide = () => {
     setState({
       ...state,
       activeSlide: state.activeSlide + 1,
       translate: (state.activeSlide + 1) * width,
     });
   };
+
+  const containerRef = useRef<HTMLDivElement>();
+
+  useLayoutEffect(() => {
+    window.addEventListener('resize', handleRef);
+    handleRef();
+    return () => {
+      window.removeEventListener('resize', handleRef);
+    };
+  });
 
   return (
     <div style={{ overflowX: 'hidden' }}>
@@ -126,7 +99,7 @@ export const AvailableTemplate: React.FC<{
               variant={$Button.PAGINATE}
               animate
               direction="left"
-              onClick={previous}
+              onClick={handlePreviousSlide}
               disable={state.activeSlide === 0}
             />
           </div>
@@ -135,7 +108,7 @@ export const AvailableTemplate: React.FC<{
               variant={$Button.PAGINATE}
               animate
               direction="right"
-              onClick={next}
+              onClick={handleNextSlide}
               disable={
                 state.activeSlide ===
                 Math.ceil(availables.length / displayingColumns) - 1

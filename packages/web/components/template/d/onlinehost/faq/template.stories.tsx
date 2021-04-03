@@ -15,4 +15,6 @@ const TemplateStory: Story<FAQTemplateProps> = (args) => (
 );
 
 export const Faq = TemplateStory.bind({});
-Faq.args = {};
+Faq.args = {
+  questions: [{ question: 'Example', answer: 'Answer' }],
+};
