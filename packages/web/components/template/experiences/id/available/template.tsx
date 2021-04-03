@@ -9,7 +9,7 @@ import { Card, $Card } from '@card';
 import { Button, $Button } from '@button';
 
 export interface AvailableTemplateProps {
-  availables?: {
+  availableSlots?: {
     date: string;
     from: string;
     to: string;
@@ -23,7 +23,7 @@ export interface AvailableTemplateProps {
  * @param {Object[]} availables - List of available dates for the experience
  */
 export const AvailableTemplate: React.FC<AvailableTemplateProps> = ({
-  availables,
+  availableTimes,
 }) => {
   const [state, setState] = useState({
     activeSlide: 0,
@@ -111,7 +111,7 @@ export const AvailableTemplate: React.FC<AvailableTemplateProps> = ({
               onClick={handleNextSlide}
               disable={
                 state.activeSlide ===
-                Math.ceil(availables.length / displayingColumns) - 1
+                Math.ceil(availableSlots.length / displayingColumns) - 1
               }
             />
           </div>
@@ -120,13 +120,13 @@ export const AvailableTemplate: React.FC<AvailableTemplateProps> = ({
       <div
         style={{
           height: '100%',
-          width: width * (availables.length / displayingColumns),
+          width: width * (availableSlots.length / displayingColumns),
           transform: `translateX(-${state.translate}px)`,
           transition: `transform ease-out ${state.transition}s`,
         }}
       >
         <div style={{ display: 'flex' }}>
-          {availables.map((available, index) => {
+          {availableSlots.map((available, index) => {
             return (
               <div
                 style={{ width: width / displayingColumns }}

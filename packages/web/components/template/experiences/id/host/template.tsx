@@ -11,19 +11,7 @@ import { Button, $Button } from '@button';
 import { Bullet, $Bullet } from '@bullet';
 
 import { Shield } from '@svg/original';
-
-/**
- * Modifies the content which should be displayed initially
- * @param {string} content - The content which must be hidden
- */
-const renderContent = (content: string) => {
-  const wordArray = content.split(' ');
-  const newArray = [];
-  for (let i = 0; i < 20; i++) {
-    newArray.push(wordArray[i]);
-  }
-  return newArray;
-};
+import { truncateContent } from '@utils/description';
 
 export interface HostTemplateProps {
   host?: string;
@@ -68,8 +56,8 @@ export const HostTemplate: React.FC<HostTemplateProps> = ({
 }) => {
   const [descriptionDisplay, setDescriptionDisplay] = useState<boolean>(false);
   const [stayDisplay, setStayDisplay] = useState<boolean>(false);
-  const defaultDescription = renderContent(description);
-  const defaultDuringStay = renderContent(duringStay);
+  const defaultDescription = truncateContent(description, 20);
+  const defaultDuringStay = truncateContent(duringStay, 20);
   return (
     <>
       <div className={[space['p-v--20']].join(' ')}>
