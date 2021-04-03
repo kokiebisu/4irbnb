@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 
 import layout from '@styles/layout.module.scss';
 import space from '@styles/space.module.scss';
@@ -12,6 +12,19 @@ import { Card, $Card } from '@card';
 import { Button, $Button } from '@button';
 import { useRouter } from 'next/router';
 
+export interface MultipleTemplateProps {
+  title?: string;
+  description?: string;
+  pagination?: boolean;
+  showAll?: any;
+  type?: string;
+  carouselType?: string;
+  save?: boolean;
+  items?: { card: any; to: string }[];
+  isDescription?: boolean;
+  fetchUrl?: string;
+}
+
 /**
  * Renders the stay section
  * @param {string} title - Title of the section
@@ -23,42 +36,17 @@ import { useRouter } from 'next/router';
  * @param {boolean} isDescription - Whether if the section includes a subtitle
  * @param {Object[]} items - Displaying items
  */
-export const MultipleTemplate: React.FC<{
-  title?: string;
-  description?: string;
-  pagination?: boolean;
-  showAll?: any;
-  type?: string;
-  carouselType?: string;
-  save?: boolean;
-  items?: { card: any; to: string }[];
-  isDescription?: boolean;
-  fetchUrl?: string;
-}> = ({
-  title = 'Section Title',
-  description = 'Section Description',
-  pagination = false,
-  showAll = { description: 'Show all cards', to: '/' },
-  carouselType = '',
-  save = false,
-  isDescription = false,
-  fetchUrl = '',
-  items = [
-    undefined,
-    undefined,
-    undefined,
-    undefined,
-    undefined,
-    undefined,
-    undefined,
-    undefined,
-  ],
+export const MultipleTemplate: React.FC<MultipleTemplateProps> = ({
+  title,
+  description,
+  pagination,
+  showAll,
+  carouselType,
+  save,
+  isDescription,
+  fetchUrl,
+  items,
 }) => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    setData(items);
-  }, []);
-
   const TypeStayCarousel = ({ data }) => {
     return (
       <div className={[layout['relative'], space['p-v--10']].join(' ')}>
@@ -334,14 +322,14 @@ export const MultipleTemplate: React.FC<{
   const displayItems = (carouselType, save) => {
     switch (carouselType) {
       case 'stayTypes':
-        return <TypeStayCarousel data={data} />;
+        return <TypeStayCarousel data={items} />;
       default:
-        return <MultipleRows data={data} save={save} />;
+        return <MultipleRows data={items} save={save} />;
     }
   };
 
   return pagination ? (
-    <WithPagination items={data} save />
+    <WithPagination items={items} save />
   ) : (
     <WithoutPagination />
   );

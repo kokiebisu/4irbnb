@@ -1,4 +1,6 @@
-export const items = [
+import { groupByTwo } from '@helper/array';
+
+export const items = groupByTwo([
   undefined,
   undefined,
   undefined,
@@ -7,5 +9,5 @@ export const items = [
   undefined,
   undefined,
   undefined,
-];
+]);
 export const title = 'Section title';
