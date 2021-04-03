@@ -1,9 +1,9 @@
-import { CategoryTemplate } from './template.category';
+import { Category } from './category';
 import { NearbyTemplate } from './template.nearby';
-import { BannerTemplate } from './template.banner';
+import { Banner } from './banner';
 import { OnlineTemplate } from './template.online';
 import { Anywhere } from './anywhere';
-import { DestinationsTemplate } from './template.destinations';
+import { Destinations } from './destinations';
 import { WorthTemplate } from './template.worth';
 
 export const $Template = {
@@ -39,12 +39,12 @@ export const Template: React.FC<TemplateProps> = ({
   ...props
 }) => {
   const variants: { [key: string]: JSX.Element } = {
-    category: <CategoryTemplate {...props} />,
+    category: <Category {...props} />,
     nearby: <NearbyTemplate {...props} />,
-    banner: <BannerTemplate {...props} />,
+    banner: <Banner {...props} />,
     online: <OnlineTemplate {...props} />,
     anywhere: <Anywhere {...props} />,
-    destinations: <DestinationsTemplate {...props} />,
+    destinations: <Destinations {...props} />,
     worth: <WorthTemplate {...props} />,
   };
 
