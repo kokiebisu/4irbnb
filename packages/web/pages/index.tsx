@@ -50,14 +50,8 @@ const LandingPage = ({ currentUser }) => {
               <Segment variant={$Segment.ANYWHERE} />
             </Layout>
             <div className={space['m-v--32']}></div>
-            <Layout
-              dark
-              spread
-              variant="landing"
-              title="Meet Online Experiences"
-              subtitle="Interactive activities you can do together, led by expert hosts."
-            >
-              <Segment variant={$Segment.ONLINE} sectionType="landing" dark />
+            <Layout spread variant="landing">
+              <Segment variant={$Segment.WORTH} />
             </Layout>
             <Layout
               variant="landing"
