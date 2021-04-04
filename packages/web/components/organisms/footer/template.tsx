@@ -72,7 +72,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
                       >
                         <Button
                           variant={$Button.LINK}
-                          onClick={() => Router.push(url)}
+                          onClick={() => handleRedirectPage(url)}
                           title={name}
                         />
                       </div>
