@@ -7,6 +7,7 @@
   "author": "",
   "license": "ISC",
   "scripts": {
+    "prep": "npm install -g lerna && lerna bootstrap",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
