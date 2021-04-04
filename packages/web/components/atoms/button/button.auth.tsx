@@ -1,24 +1,27 @@
-/** styles */
-import layout from "@styles/layout.module.scss";
-import color from "@styles/color.module.scss";
-import font from "@styles/font.module.scss";
-
 /**
  * Renders the auth button component
  * @param {string} auth - Platform for the authentication
  */
-export const AuthButton: React.FC<{ icon?: any; name?: string }> = ({
+const AuthButton: React.FC<{ icon?: any; name?: string }> = ({
   icon,
-  name = "Email",
+  name = 'Email',
 }) => {
   return (
-    <div className={[layout["relative"], layout["all-center"]].join(" ")}>
-      <div className={[layout["al--0"]].join(" ")}>{icon}</div>
+    <div className="relative top-0 bottom-0 left-0 right-0">
+      <div className="absolute left-0">{icon}</div>
       <div>
-        <h3 className={[font["size--14"], color["c--gray__2"]].join(" ")}>
-          Continue with {name}
-        </h3>
+        <h3 className="text-sm text-gray-700">Continue with {name}</h3>
       </div>
     </div>
   );
+};
+
+export const auth = (props) => {
+  return {
+    auth: {
+      component: <AuthButton {...props} />,
+      style:
+        'border-gray-300 border-solid border-2 hover:border-black bg-transparent block w-full p-4 py-3 rounded-lg',
+    },
+  };
 };

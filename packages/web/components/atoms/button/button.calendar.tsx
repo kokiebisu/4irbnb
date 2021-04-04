@@ -1,39 +1,32 @@
-/** styles */
-import layout from "@styles/layout.module.scss";
-import shape from "@styles/shape.module.scss";
-import font from "@styles/font.module.scss";
-import animation from "@styles/animation.module.scss";
-import color from "@styles/color.module.scss";
-
-export const CalendarButton: React.FC<{
+/**
+ * Renders the Calendar Button
+ * @param {boolean} disabled
+ * @param {number} number
+ * @returns
+ */
+const CalendarButton: React.FC<{
   disabled?: boolean;
   number?: number;
 }> = ({ disabled = false, number }) => {
   return (
-    <div style={{ width: 42, height: 42 }}>
+    <div className="w-16 h-16">
       <div
-        style={{
-          height: "100%",
-          width: "100%",
-        }}
-        className={`${[
-          layout["flex"],
-          layout["justify-center"],
-          layout["items-center"],
-          shape["br--circle"],
-          ,
-        ].join(" ")} ${disabled && animation["hover-border--black"]}`}
+        className={`h-full w-full flex justify-center items-center rounded-full`}
+        // ].join(' ')} ${disabled && animation['hover-border--black']}`}
       >
-        <h3
-          className={`${
-            disabled
-              ? [color["c--black"]].join(" ")
-              : [color["c--white__2"]].join(" ")
-          } ${[font["size--12"]].join(" ")}`}
-        >
+        <h3 className={`${disabled ? 'text-black' : 'text-gray-100'} text-xs`}>
           {number}
         </h3>
       </div>
     </div>
   );
+};
+
+export const calendar = (props) => {
+  return {
+    calendar: {
+      component: <CalendarButton {...props} />,
+      style: '',
+    },
+  };
 };

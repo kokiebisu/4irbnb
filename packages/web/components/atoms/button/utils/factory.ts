@@ -27,7 +27,7 @@ import { video } from '@button/button.video';
 import { expand } from '@button/button.expand';
 import { menu } from '@button/button.menu';
 
-export const variantsFactory = (props) => {
+export const factory = (props) => {
   return {
     ...auth(props),
     ...privacy(props),
