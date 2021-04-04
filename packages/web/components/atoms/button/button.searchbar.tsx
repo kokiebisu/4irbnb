@@ -1,62 +1,28 @@
-import { motion } from "framer-motion";
-
-/** styles */
-import shape from "@styles/shape.module.scss";
-import color from "@styles/color.module.scss";
-import animation from "@styles/animation.module.scss";
-import space from "@styles/space.module.scss";
-import layout from "@styles/layout.module.scss";
-import font from "@styles/font.module.scss";
-
-/** vectors */
-import { MagnifyGlass } from "@svg/original";
+import { motion } from 'framer-motion';
+import { MagnifyGlass } from '@svg/original';
 
 /**
  * Renders the searchbar button component
  * @param {boolean} mini - Whether if the button is the minified version or not
  */
-export const SearchbarButton: React.FC<{ mini?: boolean }> = ({
-  mini = false,
-}) => {
+const SearchbarButton: React.FC<{ mini?: boolean }> = ({ mini = false }) => {
   const handlePress = () => {
-    alert("searchbar button clicked");
+    alert('searchbar button clicked');
   };
   return (
     <>
       {mini ? (
         <div
-          style={{ width: "100%", height: 45 }}
-          className={[
-            space["p-v--15"],
-            space["p-l--18"],
-            space["p-r--8"],
-            layout["flex"],
-            layout["items-center"],
-            layout["justify-between"],
-            color["b--white__3"],
-            shape["br--30"],
-          ].join(" ")}
+          style={{ gridTemplateColumns: '1fr auto' }}
+          className="relative py-1.5 pl-6 w-full pr-1.5 grid items-center justify-between border border-gray-300 rounded-full"
         >
           <div>
-            <p
-              className={[
-                font["no-wrap"],
-                font["size--14"],
-                font["weight--500"],
-              ].join(" ")}
-            >
+            <p className="whitespace-nowrap text-sm font-medium text-left">
               Start your search
             </p>
           </div>
-          <div>
-            <div
-              className={[color["bg--primary"], layout["all-center"]].join(" ")}
-              style={{
-                borderRadius: "50%",
-                height: 30,
-                width: 30,
-              }}
-            >
+          <div className="bg-primary rounded-full h-8 w-8 relative">
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <MagnifyGlass
                 width={12}
                 height={12}
@@ -70,39 +36,26 @@ export const SearchbarButton: React.FC<{ mini?: boolean }> = ({
         <motion.button
           whileTap={{ scale: 0.98 }}
           data-testid="button"
-          className={[
-            shape["w--full"],
-            shape["br--25"],
-            color["bg--white"],
-            color["b--white__2"],
-            animation["hover-shadow--sm"],
-            shape["shadow--sm"],
-          ].join(" ")}
+          className="w-full rounded-lg bg-white border border-gray-300 hover:shadow-sm"
           onClick={handlePress}
         >
-          <div
-            className={[
-              space["p-v--12"],
-              space["p-l--18"],
-              space["p-r--8"],
-              layout["all-center"],
-            ].join(" ")}
-          >
-            <div className={[space["m-r--12"]].join(" ")}>
+          <div className="py-5 pl-6 pr-5 absolute top-0 bottom-0 right-0 left-0">
+            <div className="mr-4">
               <MagnifyGlass width={15} stroke="black" strokeWidth={4} />
             </div>
-            <div
-              className={[
-                font["weight--100"],
-                font["size--15"],
-                color["c--gray__0"],
-              ].join(" ")}
-            >
-              Search stays
-            </div>
+            <div className="font-thin text-sm text-gray-200">Search stays</div>
           </div>
         </motion.button>
       )}
     </>
   );
+};
+
+export const searchbar = (props) => {
+  return {
+    searchbar: {
+      component: <SearchbarButton {...props} />,
+      style: '',
+    },
+  };
 };

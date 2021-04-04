@@ -1,12 +1,11 @@
 /** styles */
-import color from "@styles/color.module.scss";
-import shape from "@styles/shape.module.scss";
-import layout from "@styles/layout.module.scss";
-import font from "@styles/font.module.scss";
-import space from "@styles/space.module.scss";
+import color from '@styles/color.module.scss';
+import shape from '@styles/shape.module.scss';
+import layout from '@styles/layout.module.scss';
+import font from '@styles/font.module.scss';
+import space from '@styles/space.module.scss';
 
-/** components */
-import { Animation } from "@animation";
+import { Animation } from '@animation';
 
 /**
  * Renders the primary button component
@@ -16,37 +15,40 @@ import { Animation } from "@animation";
  * @param {boolean} loading - Show the loading animation if true
  * @param {boolean} disable - Shows gray appearance and disabled users from pressing
  */
-export const PrimaryButton: React.FC<{
+const PrimaryButton: React.FC<{
   title?: string;
   size?: string;
   fill?: string;
+  color?: string;
+  bg?: string;
   loading?: boolean;
   disable?: boolean;
 }> = ({
-  title = "Button",
-  size = "md",
+  title = 'Button',
+  size = 'md',
   fill,
   loading = false,
   disable = false,
+  color = 'white',
 }) => {
   const renderBackgroundColor = () => {
     if (disable) {
-      return [color["bg--white__3"]].join(" ");
+      return 'bg-gray-200';
     }
-    return !fill && !disable && [color["bg--primary"]].join(" ");
+    return !fill && !disable && 'bg-primary';
   };
 
   const styles = {
-    common: [color["c--white"], shape["w--full"], shape["br--8"]].join(" "),
-    sm: [font["size--14"], space["p-v--8"], space["p-h--14"]].join(" "),
-    md: [font["size--16"], space["p-v--14"], space["p-h--20"]].join(" "),
-    lg: [font["size--16"], space["p-v--14"], space["p-h--20"]].join(" "),
+    common: 'w-full rounded-lg',
+    sm: 'text-sm py-2 px-4',
+    md: 'text-base py-4 px-8',
+    lg: 'text-base py-5 px-8',
   };
 
   return (
     <div
       style={{ backgroundColor: !disable && fill }}
-      className={`${styles["common"]} ${
+      className={`${styles['common']} ${
         styles[size]
       } ${renderBackgroundColor()}`}
     >
@@ -54,16 +56,25 @@ export const PrimaryButton: React.FC<{
         <div>
           <Animation
             extendsTo={[
-              layout["flex"],
-              layout["items-center"],
-              layout["justify-center"],
-            ].join(" ")}
+              layout['flex'],
+              layout['items-center'],
+              layout['justify-center'],
+            ].join(' ')}
             type="loading"
           />
         </div>
       ) : (
-        <h4 className={[color["c--white"]].join(" ")}>{title}</h4>
+        <h4 className={`text-${color}`}>{title}</h4>
       )}
     </div>
   );
+};
+
+export const primary = (props) => {
+  return {
+    primary: {
+      component: <PrimaryButton {...props} />,
+      style: '',
+    },
+  };
 };
