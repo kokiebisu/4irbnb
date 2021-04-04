@@ -1,5 +1,5 @@
 import express, { Request, Response } from "express";
-import { BadRequestError } from "@airbnb/error";
+import { BadRequestError } from "@nextbnb/error";
 import { User } from "../models/user";
 import jwt from "jsonwebtoken";
 

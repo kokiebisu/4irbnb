@@ -18,7 +18,7 @@ COPY services/stays/package.json services/stays/tsconfig.json ./
 COPY services/stays/src ./src
 
 WORKDIR /app
-RUN yarn bootstrap --scope=@airbnb/stays --include-dependencies
+RUN yarn bootstrap --scope=@nextbnb/stays --include-dependencies
 
 RUN yarn compile:packages
 WORKDIR /app/services/stays
