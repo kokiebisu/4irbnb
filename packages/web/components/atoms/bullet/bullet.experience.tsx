@@ -1,5 +1,4 @@
 import { $Icon, Icon } from '@icons';
-import React from 'react';
 
 /**
  * Renders the experience bullet
@@ -11,7 +10,12 @@ const ExperienceBullet: React.FC<{
   const experiences = {
     hosts: {
       icon: (
-        <Icon variant={$Icon.EXPERIENCE} experienceType="smile" width={36} />
+        <Icon
+          variant={$Icon.EXPERIENCE}
+          experienceType="smile"
+          width={36}
+          height={36}
+        />
       ),
       title: 'Thoughtful hosts',
       description:
@@ -21,8 +25,9 @@ const ExperienceBullet: React.FC<{
       icon: (
         <Icon
           variant={$Icon.EXPERIENCE}
-          experienceType="activities"
+          experienceType="people"
           width={36}
+          height={36}
         />
       ),
       title: 'Small group activities',
@@ -31,7 +36,12 @@ const ExperienceBullet: React.FC<{
     },
     global: {
       icon: (
-        <Icon variant={$Icon.EXPERIENCE} experienceType="global" width={36} />
+        <Icon
+          variant={$Icon.EXPERIENCE}
+          experienceType="computer"
+          width={36}
+          height={36}
+        />
       ),
       title: 'Simple and global',
       description:
@@ -56,6 +66,8 @@ const ExperienceBullet: React.FC<{
 
 export const experience = (props) => {
   return {
-    experience: { component: <ExperienceBullet {...props} /> },
+    experience: {
+      component: <ExperienceBullet {...props} />,
+    },
   };
 };

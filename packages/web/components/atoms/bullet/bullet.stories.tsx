@@ -79,14 +79,6 @@ export const Experience = TemplateStory.bind({});
 Experience.args = {
   variant: $Bullet.EXPERIENCE,
 };
-Experience.argTypes = {
-  experience: {
-    control: {
-      type: 'select',
-      options: ['host', 'activities', 'global'],
-    },
-  },
-};
 
 export const Priority = TemplateStory.bind({});
 Priority.args = {

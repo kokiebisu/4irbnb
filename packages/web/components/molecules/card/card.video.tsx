@@ -1,4 +1,5 @@
-import { Heart, Star } from '@svg/original';
+import { Star } from '@svg/original';
+import { $Icon, Icon } from '@icons';
 import React, { useState } from 'react';
 import { Video } from '@video';
 
@@ -42,11 +43,11 @@ const VideoCard: React.FC<{
       >
         <div className="absolute top-0 bottom-0 right-0 left-0">
           <div className="absolute pointer-events-none z-40 top-3 right-3">
-            <Heart
+            <Icon
+              variant={$Icon.ACTION}
+              actionType="heart"
               fill="rgba(0, 0, 0, 0.5)"
               width={24}
-              stroke="rgb(255, 255, 255)"
-              strokeWidth={2}
             />
           </div>
           <div className="h-full w-full">

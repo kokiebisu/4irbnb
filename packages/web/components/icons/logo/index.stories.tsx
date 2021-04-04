@@ -9,8 +9,8 @@ export default {
 } as Meta;
 
 const size = {
-  width: 40,
-  height: '100%',
+  width: 24,
+  height: 24,
 };
 
 const IconStory: Story<IconProps & LogoIconTypeProps> = (args) => (

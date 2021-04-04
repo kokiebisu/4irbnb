@@ -1,12 +1,16 @@
-import { AmenityIconTypeProps } from './amenity';
-import { ExperienceIconTypeProps } from './experience';
+import React from 'react';
+import { ActionIcon, ActionIconTypeProps } from './action';
+import { AmenityIcon, AmenityIconTypeProps } from './amenity';
+import { ExperienceIcon, ExperienceIconTypeProps } from './experience';
 import { LogoIcon, LogoIconTypeProps } from './logo';
+import { ProfileIcon, ProfileIconTypeProps } from './profile';
 
 export const $Icon = {
   LOGO: 'logo',
   PROFILE: 'profile',
   AMENITY: 'amenity',
   EXPERIENCE: 'experience',
+  ACTION: 'action',
 };
 
 export interface IconProps {
@@ -19,14 +23,22 @@ export interface IconPropsWithType
   extends IconProps,
     LogoIconTypeProps,
     AmenityIconTypeProps,
-    ExperienceIconTypeProps {}
+    ExperienceIconTypeProps,
+    ActionIconTypeProps,
+    ProfileIconTypeProps {}
 
 export const Icon: React.FC<IconPropsWithType & { variant: string }> = ({
   variant,
+  width,
+  height,
   ...props
 }) => {
   const variants = {
     logo: <LogoIcon {...props} />,
+    action: <ActionIcon {...props} />,
+    amenity: <AmenityIcon {...props} />,
+    experience: <ExperienceIcon {...props} />,
+    profile: <ProfileIcon {...props} />,
   };
-  return variants[variant];
+  return <div style={{ width, height }}>{variants[variant]}</div>;
 };

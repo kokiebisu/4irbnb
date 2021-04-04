@@ -1,6 +1,6 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { ProfileIcon, ProfileTypeProps } from '.';
+import { ProfileIcon, ProfileIconTypeProps } from '.';
 import { IconProps, IconPropsWithType } from '..';
 
 export default {
@@ -9,17 +9,19 @@ export default {
 } as Meta;
 
 const size = {
-  width: 40,
-  height: '100%',
+  width: 24,
+  height: 24,
 };
 
 const IconStory: Story<IconPropsWithType> = (args) => <ProfileIcon {...args} />;
-const IconBundleStory: Story<IconProps & ProfileTypeProps> = () => (
+const IconBundleStory: Story<IconProps & ProfileIconTypeProps> = () => (
   <div className="flex items-center">
-    {[{ title: 'avatar' as const, size: { width: 32, height: 32 } }].map((icon) => {
+    {[{ title: 'avatar' as const }].map((icon) => {
       return (
         <div className="mr-2">
-          <ProfileIcon profileType={icon.title} {...icon.size} />
+          <div style={{ ...size }}>
+            <ProfileIcon profileType={icon.title} />
+          </div>
         </div>
       );
     })}
@@ -31,5 +33,4 @@ export const Overview = IconBundleStory.bind({});
 export const Avatar = IconStory.bind({});
 Avatar.args = {
   profileType: 'avatar',
-  ...size,
 };

@@ -1,4 +1,5 @@
-import { Heart, Star } from '@svg/original';
+import { $Icon, Icon } from '@icons';
+import { Star } from '@svg/original';
 
 /**
  * Renders the vertical card component
@@ -40,11 +41,11 @@ const VerticalCard: React.FC<{
               </div>
             </div>
             <div className={save ? 'text-white' : 'hidden text-white'}>
-              <Heart
+              <Icon
+                variant={$Icon.ACTION}
+                actionType="heart"
                 fill="rgba(0, 0, 0, 0.5)"
                 width={24}
-                stroke="rgb(255, 255, 255)"
-                strokeWidth={2}
               />
             </div>
           </div>
