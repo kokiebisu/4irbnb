@@ -4,7 +4,8 @@ import font from '@styles/font.module.scss';
 import space from '@styles/space.module.scss';
 import section from '@template/index.module.scss';
 
-import { Heart, Share } from '@svg/original';
+import { Share } from '@svg/original';
+import { $Icon, Icon } from '@icons';
 import { Panel, $Panel } from '@panel';
 
 export interface PreviewTemplateProps {
@@ -70,7 +71,12 @@ export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({ images }) => {
               ].join(' ')}
             >
               <div>
-                <Heart fill="#484848" height={17} />
+                <Icon
+                  variant={$Icon.ACTION}
+                  actionType="heart"
+                  fill="#484848"
+                  height={17}
+                />
               </div>
               <u
                 className={[

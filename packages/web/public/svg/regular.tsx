@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export const Search = () => {
   return (
@@ -108,31 +108,6 @@ export const Login = (props) => {
     <svg {...props} viewBox="0 0 24 24">
       <circle cx="12" cy="12" r="10.5"></circle>
       <path d="M4.6 19.2c-.1-1.4 1.7-2.9 5.4-4.5-1-1-1.4-1.7-1.4-3.7S9 6.5 12 6.5s3.5 2.4 3.4 4.5c0 2.1-.4 2.7-1.4 3.8 5.1 2.1 5.4 3.4 5.4 4.4"></path>
-    </svg>
-  );
-};
-
-export const Pause: React.FC<{ fill?: string; [property: string]: any }> = ({
-  fill = "white",
-  ...props
-}) => {
-  return (
-    <svg {...props} style={{ display: "block" }}>
-      <path fill={fill} d="M13 1v14H9V1zM7 1v14H3V1z" />
-    </svg>
-  );
-};
-
-export const Play: React.FC<{
-  fill?: string;
-  [property: string]: any;
-}> = ({ fill = "white", ...props }) => {
-  return (
-    <svg {...props} viewBox="0 0 32 32">
-      <path
-        fill={fill}
-        d="M27.024 14.273L6.008 2.013c-.461-.268-1-.342-1.517-.206A2 2 0 0 0 3 3.741V28.26a2.002 2.002 0 0 0 3.008 1.728l21.015-12.26a2.003 2.003 0 0 0 .001-3.454z"
-      ></path>
     </svg>
   );
 };

@@ -1,4 +1,4 @@
-import { Heart } from '@svg/original';
+import { $Icon, Icon } from '@icons';
 import { ImageSlider } from '../../particles/image.slider';
 import { renderType } from './logic/logic.horizontal';
 
@@ -47,11 +47,11 @@ const HorizontalCard: React.FC<{
                 </div>
                 {save && (
                   <div className={`z-50 ${save ? '' : 'text-white hidden'}`}>
-                    <Heart
+                    <Icon
+                      variant={$Icon.ACTION}
+                      actionType="heart"
                       fill="rgba(0, 0, 0, 0.5)"
                       width={24}
-                      stroke="rgb(255, 255, 255)"
-                      strokeWidth={2}
                     />
                   </div>
                 )}

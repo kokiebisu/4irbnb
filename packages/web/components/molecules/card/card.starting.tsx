@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Video } from '@video';
-import { Heart, Star } from '@svg/original';
+import { $Icon, Icon } from '@icons';
 
 const StartingCard: React.FC<{
   ratings?: number;
@@ -85,7 +85,12 @@ const StartingCard: React.FC<{
           </div>
         </div>
         <div>
-          <Heart width={20} height={20} />
+          <Icon
+            variant={$Icon.ACTION}
+            actionType="heart"
+            width={20}
+            height={20}
+          />
         </div>
       </div>
     </div>

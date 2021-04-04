@@ -1,4 +1,4 @@
-import { Heart } from '@svg/original';
+import { Icon, $Icon } from '@icons';
 
 import { Bullet, $Bullet } from '@bullet';
 import { ImageSlider } from '@particle/image.slider';
@@ -102,7 +102,12 @@ const StayCard: React.FC<{
               </div>
             </div>
             <div>
-              <Heart fill="white" width={24} stroke="black" strokeWidth={2} />
+              <Icon
+                variant={$Icon.ACTION}
+                actionType="heart"
+                fill="white"
+                width={24}
+              />
             </div>
           </div>
         </div>
