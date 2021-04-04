@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 // import { BadRequestError } from "@doitsimple/shared";
-import { BadRequestError } from "@airbnb/error";
+import { BadRequestError } from "@nextbnb/error";
 import { User } from "../models/user";
 import { Password } from "../services/password";
 import jwt from "jsonwebtoken";
