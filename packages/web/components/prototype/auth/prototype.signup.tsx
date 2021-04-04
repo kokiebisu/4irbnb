@@ -18,7 +18,7 @@ import { useAuthDispatch } from '@context/auth';
 /**
  * Renders the signup template component
  */
-export const SignupTemplate: React.FC<{}> = () => {
+export const SignupPrototype: React.FC<{}> = () => {
   const authDispatch = useAuthDispatch();
   const [loading, setLoading] = useState(false);
   const formik = useFormik({

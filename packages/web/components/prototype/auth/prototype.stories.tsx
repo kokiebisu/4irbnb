@@ -13,9 +13,11 @@ export default {
   argTypes: { onClick: { action: 'clicked' } },
 } as Meta;
 
-const TemplateStory: Story<PrototypeProps> = (args) => <Prototype {...args} />;
+const AuthPrototypeStory: Story<PrototypeProps> = (args) => (
+  <Prototype {...args} />
+);
 
-export const auth = TemplateStory.bind({});
+export const auth = AuthPrototypeStory.bind({});
 auth.args = {
   variant: 'auth',
   extendsTo: [
@@ -28,22 +30,22 @@ auth.args = {
   ].join(' '),
 };
 
-export const Login = TemplateStory.bind({});
+export const Login = AuthPrototypeStory.bind({});
 Login.args = {
   variant: $Prototype.LOGIN,
 };
 
-export const Signup = TemplateStory.bind({});
+export const Signup = AuthPrototypeStory.bind({});
 Signup.args = {
   variant: $Prototype.SIGNUP,
 };
 
-export const ForgotPassword = TemplateStory.bind({});
+export const ForgotPassword = AuthPrototypeStory.bind({});
 ForgotPassword.args = {
   variant: $Prototype.FORGOTPASSWORD,
 };
 
-export const Exists = TemplateStory.bind({});
+export const Exists = AuthPrototypeStory.bind({});
 Exists.args = {
   variant: $Prototype.EXISTS,
 };

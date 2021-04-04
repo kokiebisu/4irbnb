@@ -1,20 +1,20 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react/types-6-0";
-import { Panel, PanelProps, $Panel } from "@panel";
+import React from 'react';
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { Panel, PanelProps, $Panel } from '@panel';
 
 export default {
-  title: "Molecules/Panel",
+  title: 'Molecules/Panel',
   component: Panel,
 } as Meta;
 
-const TemplateStory: Story<PanelProps> = (args) => <Panel {...args} />;
+const PanelStory: Story<PanelProps> = (args) => <Panel {...args} />;
 
-export const Experience = TemplateStory.bind({});
+export const Experience = PanelStory.bind({});
 Experience.args = {
   variant: $Panel.EXPERIENCE,
 };
 
-export const Room = TemplateStory.bind({});
+export const Room = PanelStory.bind({});
 Room.args = {
   variant: $Panel.ROOM,
 };
