@@ -1,4 +1,5 @@
-import { Avatar, Bars } from '@svg/original';
+import { Bars } from '@svg/original';
+import { $Icon, Icon } from '@icons';
 
 /**
  * Renders the menu button components
@@ -31,7 +32,7 @@ const MenuButton: React.FC<{
         {authenticated && data ? (
           <img className="block rounded-lg w-14" src={data.imgUrl} />
         ) : (
-          <Avatar width={30} fill="gray" />
+          <Icon variant={$Icon.PROFILE} type="avatar" width={30} fill="gray" />
         )}
       </div>
     </div>

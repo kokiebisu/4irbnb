@@ -48,6 +48,7 @@
       "@layout/*": ["components/layout/*"],
       "@template": ["components/segments"],
       "@template/*": ["components/segments/*"],
+      "@icons": ["components/icons"],
       "@styles/*": ["styles/*"],
       "@svg/*": ["public/svg/*"],
       "@helper/*": ["helper/*"],
