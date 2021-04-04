@@ -1,13 +1,5 @@
-import Router from "next/router";
-
-import { Button, $Button } from "@button";
-
-import layout from "@styles/layout.module.scss";
-import space from "@styles/space.module.scss";
-import color from "@styles/color.module.scss";
-import shape from "@styles/shape.module.scss";
-import bar from "@bar/bar.module.scss";
-import font from "@styles/font.module.scss";
+import Router from 'next/router';
+import { Button, $Button } from '@button';
 
 /**
  * Renders paginate bar component
@@ -23,126 +15,48 @@ export const PaginateBar: React.FC<{
       return (
         <>
           <button
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-            className={`${
+            className={`mh-1 w-8 h-8 inline-flex items-center justify-center ${
               page === 1
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
+                ? 'bg-black text-white rounded-full'
+                : 'hover:underline'
+            }`}
           >
             1
           </button>
-          <div
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              bottom: 4,
-            }}
-            className={[
-              layout["relative"],
-              space["m-h--6"],
-              layout["inline-block"],
-            ].join(" ")}
-          >
+          <div className="relative mx-2 inline-flex w-8 h-8 items-center justify-center bottom-1">
             ...
           </div>
           <button
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-            className={`${[
-              bar["hover__paginate"],
-              space["m-h--6"],
-              layout["inline-block"],
-            ].join(" ")}`}
+            className="w-8 h-8 inline-flex items-center justify-center hover:underline mx-2"
             onClick={() => Router.push(`/s/homes/${page - 1}`)}
           >
             {page - 1}
           </button>
-          <button
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-            className={`${[
-              color["bg--black"],
-              color["c--white"],
-              shape["br--circle"],
-            ].join(" ")} ${[space["m-h--6"], layout["inline-block"]].join(
-              " "
-            )}`}
-          >
+          <button className="bg-black text-white rounded-full w-6 h-6 inline-flex items-center justify-center">
             {page}
           </button>
           <button
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-            className={`${[
-              bar["hover__paginate"],
-              space["m-h--6"],
-              layout["inline-block"],
-            ].join(" ")}`}
+            className="w-8 h-8 inline-flex items-center justify-center hover:paginate mx-2"
             onClick={() => Router.push(`/s/homes/${page + 1}`)}
           >
             {page + 1}
           </button>
           <button
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              bottom: 4,
-            }}
-            className={[
-              layout["relative"],
-              space["m-h--6"],
-              layout["inline-block"],
-            ].join(" ")}
+            className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 inline-block${
+              page === total - 3
+                ? 'bg-black text-white rounded-full'
+                : 'hover:underline'
+            }`}
           >
             ...
           </button>
           <button
             onClick={() => Router.push(`/s/homes/${total}`)}
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              bottom: 4,
-            }}
-            className={[
-              bar["hover__paginate"],
-              space["m-h--12"],
-              layout["inline-block"],
-            ].join(" ")}
+            className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 inline-block${
+              page === total - 3
+                ? 'bg-black text-white rounded-full'
+                : 'hover:underline'
+            }`}
           >
             {total}
           </button>
@@ -153,146 +67,60 @@ export const PaginateBar: React.FC<{
         <>
           <button
             onClick={() => Router.push(`/s/homes/1`)}
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              bottom: 4,
-            }}
-            className={`${
-              page === 1
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
+            className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 inline-block${
+              page === total - 3
+                ? 'bg-black text-white rounded-full'
+                : 'hover:underline'
+            }`}
           >
             1
           </button>
           <button
             onClick={() => Router.push(`/s/homes/2`)}
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              bottom: 4,
-            }}
-            className={`${
-              page === 2
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
+            className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 inline-block${
+              page === total - 3
+                ? 'bg-black text-white rounded-full'
+                : 'hover:underline'
+            }`}
           >
             2
           </button>
           <button
             onClick={() => Router.push(`/s/homes/3`)}
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              bottom: 4,
-            }}
-            className={`${
-              page === 3
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
+            className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 inline-block${
+              page === total - 3
+                ? 'bg-black text-white rounded-full'
+                : 'hover:underline'
+            }`}
           >
             3
           </button>
           <button
             onClick={() => Router.push(`/s/homes/4`)}
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              bottom: 4,
-            }}
-            className={`${
-              page === 4
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
+            className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 inline-block${
+              page === total - 3
+                ? 'bg-black text-white rounded-full'
+                : 'hover:underline'
+            }`}
           >
             4
           </button>
           <button
             onClick={() => Router.push(`/s/homes/5`)}
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              bottom: 4,
-            }}
-            className={`${
-              page === 5
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
+            className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 inline-block${
+              page === total - 3
+                ? 'bg-black text-white rounded-full'
+                : 'hover:underline'
+            }`}
           >
             5
           </button>
-          <a
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              bottom: 4,
-            }}
-            className={[
-              layout["relative"],
-              space["m-h--6"],
-              layout["inline-block"],
-            ].join(" ")}
-          >
+          <a className="relative mx-2 inline-flex items-center justify-center w-6 h-6 bottom-1">
             ...
           </a>
           <a
             onClick={() => Router.push(`/s/homes/${total}`)}
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              bottom: 4,
-            }}
-            className={[
-              bar["hover__paginate"],
-              space["m-h--12"],
-              layout["inline-block"],
-            ].join(" ")}
+            className="relative mx-2 inline-flex items-center justify-center w-6 h-6 bottom-1"
           >
             {total}
           </a>
@@ -303,126 +131,53 @@ export const PaginateBar: React.FC<{
         <>
           <button
             onClick={() => Router.push(`/s/homes/1`)}
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              bottom: 4,
-            }}
-            className={[
-              bar["hover__paginate"],
-              space["m-h--12"],
-              layout["inline-block"],
-            ].join(" ")}
+            className="w-6 h-6 inline-flex items-center justify-center bottom-1 hover:underline mx-3"
           >
             1
           </button>
           <button
-            onClick={() => Router.push("/")}
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              bottom: 4,
-            }}
-            className={[
-              bar["hover__paginate"],
-              layout["relative"],
-              space["m-h--6"],
-              layout["inline-block"],
-            ].join(" ")}
+            onClick={() => Router.push('/')}
+            className="hover:underline relative mx-2 w-6 h-6 inline-flex items-center justify-center bottom-1"
           >
             ...
           </button>
           <button
             onClick={() => Router.push(`/s/homes/${total - 3}`)}
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              bottom: 4,
-            }}
-            className={`${
+            className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 inline-block${
               page === total - 3
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
+                ? 'bg-black text-white rounded-full'
+                : 'hover:underline'
+            }`}
           >
             {total - 3}
           </button>
           <button
             onClick={() => Router.push(`/s/homes/${total - 2}`)}
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              bottom: 4,
-            }}
-            className={`${
+            className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 ${
               page === total - 2
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
+                ? 'bg-black text-white rounded-full'
+                : 'hover:underline'
+            }`}
           >
             {total - 2}
           </button>
           <button
             onClick={() => Router.push(`/s/homes/${total - 1}`)}
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              bottom: 4,
-            }}
-            className={`${
-              page === total - 1
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
+            className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 inline-block${
+              page === total - 3
+                ? 'bg-black text-white rounded-full'
+                : 'hover:underline'
+            }`}
           >
             {total - 1}
           </button>
           <button
             onClick={() => Router.push(`/s/homes/${total}`)}
-            style={{
-              width: 36,
-              height: 36,
-              display: "inline-flex",
-              alignItems: "center",
-              justifyContent: "center",
-              bottom: 4,
-            }}
-            className={`${
+            className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 ${
               page === total
-                ? [
-                    color["bg--black"],
-                    color["c--white"],
-                    shape["br--circle"],
-                  ].join(" ")
-                : [bar["hover__paginate"]].join(" ")
-            } ${[space["m-h--6"], layout["inline-block"]].join(" ")}`}
+                ? 'bg-black text-white rounded-full'
+                : 'hover:underline'
+            } `}
           >
             {total}
           </button>
@@ -431,8 +186,8 @@ export const PaginateBar: React.FC<{
     }
   };
   return (
-    <div className={[layout["inline-block"]].join(" ")}>
-      <div className={[layout["flex"], layout["items-center"]].join(" ")}>
+    <div className="inline-block">
+      <div className="flex items-center">
         {page !== 1 && (
           <Button
             variant={$Button.PAGINATE}
@@ -441,7 +196,7 @@ export const PaginateBar: React.FC<{
             onClick={() => Router.push(`/s/homes/page/${page - 1}`)}
           />
         )}
-        <div className={[space["m-h--8"]].join(" ")}>{displayContent()}</div>
+        <div className="mx-2">{displayContent()}</div>
         {page !== total && (
           <Button
             variant={$Button.PAGINATE}
@@ -451,19 +206,11 @@ export const PaginateBar: React.FC<{
           />
         )}
       </div>
-      <div className={[space["m-t--14"]].join(" ")}>
-        <p className={[layout["text-center"]].join(" ")}>
-          61 – 80 of 300+ places to stay
-        </p>
+      <div className="mt-4">
+        <p className="text-center">61 – 80 of 300+ places to stay</p>
       </div>
-      <div className={[space["m-t--28"]].join(" ")}>
-        <p
-          className={[
-            font["size--12"],
-            layout["text-center"],
-            color["c--gray__1"],
-          ].join(" ")}
-        >
+      <div className="mt-6">
+        <p className="text-xs text-center text-gray-300">
           Enter dates to see full pricing. Additional fees apply. Taxes may be
           added.
         </p>
