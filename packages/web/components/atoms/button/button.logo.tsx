@@ -1,4 +1,4 @@
-import { NameLogo, NoNameLogo } from '@svg/logo';
+import { $Icon, Icon } from '@icons';
 
 /**
  * Renders the Logo Button component
@@ -10,9 +10,21 @@ const LogoButton: React.FC<{ noName?: boolean; fill?: string }> = ({
   fill = '#F5385D',
 }) => {
   return noName ? (
-    <NoNameLogo fill={fill} width={30} height={32} />
+    <Icon
+      variant={$Icon.LOGO}
+      type="noName"
+      fill={fill}
+      width={30}
+      height={32}
+    />
   ) : (
-    <NameLogo fill={fill} width={102} height={32} />
+    <Icon
+      variant={$Icon.LOGO}
+      type="name"
+      fill={fill}
+      width={102}
+      height={32}
+    />
   );
 };
 

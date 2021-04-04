@@ -1,4 +1,5 @@
-import { Activities, Computer, Host } from '@svg/original';
+import { $Icon, Icon } from '@icons';
+import React from 'react';
 
 /**
  * Renders the experience bullet
@@ -9,19 +10,29 @@ const ExperienceBullet: React.FC<{
 }> = ({ experience = 'hosts' }) => {
   const experiences = {
     hosts: {
-      icon: <Host width={36} />,
+      icon: (
+        <Icon variant={$Icon.EXPERIENCE} experienceType="smile" width={36} />
+      ),
       title: 'Thoughtful hosts',
       description:
         'Get to know hosts who share their expertise and a window to their world.',
     },
     activities: {
-      icon: <Activities width={36} />,
+      icon: (
+        <Icon
+          variant={$Icon.EXPERIENCE}
+          experienceType="activities"
+          width={36}
+        />
+      ),
       title: 'Small group activities',
       description:
         'Meet people from all over the world while learning something new together.',
     },
     global: {
-      icon: <Computer width={36} />,
+      icon: (
+        <Icon variant={$Icon.EXPERIENCE} experienceType="global" width={36} />
+      ),
       title: 'Simple and global',
       description:
         'Join easily and participate from home without a lot of prep.',

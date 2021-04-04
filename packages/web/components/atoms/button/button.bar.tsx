@@ -1,10 +1,11 @@
-import { MenuBarLogo } from '@svg/logo';
+import { Icon } from '@icons';
 import { Login, Saved } from '@svg/regular';
+import { $Icon } from 'components/icons';
 
 const BarButton = ({ type = 'menu', selected = 'menu' }) => {
   const types = {
     menu: {
-      component: <MenuBarLogo width={25} />,
+      component: <Icon variant={$Icon.LOGO} type="menubar" width={25} />,
       name: 'Explore',
       selected: selected === 'menu',
     },
