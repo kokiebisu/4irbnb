@@ -1,82 +1,36 @@
-/** styles **/
-import color from "@styles/color.module.scss";
-import font from "@styles/font.module.scss";
-import space from "@styles/space.module.scss";
-// import styles from "@card/card.module.scss";
-import layout from "@styles/layout.module.scss";
-import shape from "@styles/shape.module.scss";
-
 /** Renders the category card component
  * @param {string} imgUrl - Image of the card
  * @param {string} title - Title of the card
  */
-export const CategoryCard: React.FC<{
+const CategoryCard: React.FC<{
   imgUrl?: string;
   title?: string;
-}> = ({ imgUrl, title = "Title" }) => {
+}> = ({ imgUrl, title = 'Title' }) => {
   return (
     <div>
-      <div
-        className={[layout["relative"]].join(" ")}
-        style={{ paddingTop: "66.66%" }}
-      >
-        <div
-          className={[
-            layout["absolute"],
-            layout["t--0"],
-            layout["b--0"],
-            layout["r--0"],
-            layout["l--0"],
-          ].join(" ")}
-        >
-          <div className={[shape["w--full"], shape["h--full"]].join(" ")}>
+      <div className="relative" style={{ paddingTop: '66.66%' }}>
+        <div className="absolute top-0 bottom-0 right-0 left-0">
+          <div className=" w-full h-full">
             {imgUrl ? (
-              <img
-                src={imgUrl}
-                alt="unique stays"
-                className={[shape["br--8"]].join(" ")}
-              />
+              <img src={imgUrl} alt="unique stays" className="rounded-md" />
             ) : (
-              <div
-                className={[
-                  shape["w--full"],
-                  shape["h--full"],
-                  shape["br--8"],
-                  color["bg--white__2"],
-                ].join(" ")}
-              />
+              <div className="animate-pulse w-full h-full rounded-md bg-gray-500" />
             )}
           </div>
         </div>
       </div>
-      <div className={[space["m-t--6"]].join(" ")}>
-        <h3 className={[font["size--16"], color["c--gray__4"]].join(" ")}>
-          {title}
-        </h3>
+      <div className="mt-2">
+        <h3 className="text-base text-gray-800">{title}</h3>
       </div>
     </div>
   );
 };
 
-{
-  /* <div className={styles["category-section__card"]}>
-<div className={styles["category-section__card--img"]}>
-  {imgUrl ? (
-    <img src={imgUrl} alt="unique stays" />
-  ) : (
-    <div style={{ backgroundColor: "lightgray", width: "100%" }} />
-  )}
-</div>
-<div>
-  <h3
-    className={[
-      font["weight--500"],
-      font["size--17"],
-      color["c--gray__4"],
-    ].join(" ")}
-  >
-    {title}
-  </h3>
-</div>
-</div> */
-}
+export const category = (props) => {
+  return {
+    category: {
+      component: <CategoryCard {...props} />,
+      style: '',
+    },
+  };
+};

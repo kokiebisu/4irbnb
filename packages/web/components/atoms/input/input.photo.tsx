@@ -1,9 +1,3 @@
-import shape from '@styles/shape.module.scss';
-import color from '@styles/color.module.scss';
-import space from '@styles/space.module.scss';
-import layout from '@styles/layout.module.scss';
-import font from '@styles/font.module.scss';
-
 import { Upload } from '@svg/original';
 
 /**
@@ -22,86 +16,27 @@ export const PhotoInput: React.FC<{
 }> = ({ handleChange, value }) => {
   return (
     <div style={{ height: 350 }}>
-      <form className={[shape['h--full']].join(' ')}>
+      <form className="h-full">
         <input
           type="file"
           id="upload"
-          style={{ display: 'none' }}
-          className={[shape['h--full']].join(' ')}
+          className="h-full hidden"
           onChange={handleChange}
         />
-        <label htmlFor="upload" className={[shape['h--full']].join(' ')}>
-          <div
-            style={{
-              cursor: 'pointer',
-              padding: 15,
-              border: '1px dashed lightgray',
-            }}
-            className={[shape['h--full']].join(' ')}
-          >
-            <div
-              style={{
-                position: 'relative',
-                width: '100%',
-                height: '100%',
-                backgroundImage:
-                  'url(https://a0.muscache.com/nextbnb/static/packages/upload-photos-ghosts.56fe723d.png)',
-              }}
-            >
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                }}
-              >
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                  }}
-                >
-                  <div>
-                    <div
-                      style={{
-                        padding: '14px 22px',
-                        backgroundColor: '#FF5A5F',
-                        borderRadius: 4,
-                      }}
-                    >
-                      <div
-                        className={[
-                          layout['flex'],
-                          layout['items-center'],
-                        ].join(' ')}
-                      >
-                        <div className={[space['m-r--8']].join(' ')}>
-                          <Upload width={20} stroke="white" />
-                        </div>
-                        <div>
-                          <h3
-                            style={{
-                              fontSize: 14,
-                              whiteSpace: 'nowrap',
-                              color: 'white',
-                            }}
-                          >
-                            Upload Photos
-                          </h3>
-                        </div>
-                      </div>
+        <label htmlFor="upload" className="h-full">
+          <div className="h-full cursor-pointer p-4 border border-gray-200 border-dashed">
+            <div className="relative w-full h-full bg-input-upload">
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <div className="py-4 px-5 bg-red-400 rounded">
+                  <div className="flex items-center">
+                    <div className="mr-3">
+                      <Upload width={20} stroke="white" />
                     </div>
-                  </div>
-                  <div className={[space['m-t--8']].join(' ')}>
-                    <h4
-                      className={[font['size--15'], color['c--gray__0']].join(
-                        ' '
-                      )}
-                    >
-                      or drag them in
-                    </h4>
+                    <div>
+                      <h3 className="text-sm whitespace-nowrap text-white">
+                        Upload Photos
+                      </h3>
+                    </div>
                   </div>
                 </div>
               </div>

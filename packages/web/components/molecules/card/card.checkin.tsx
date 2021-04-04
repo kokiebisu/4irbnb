@@ -1,165 +1,71 @@
-/** styles **/
-import card from "@card/card.module.scss";
-import space from "@styles/space.module.scss";
-import layout from "@styles/layout.module.scss";
-import shape from "@styles/shape.module.scss";
-import color from "@styles/color.module.scss";
-import font from "@styles/font.module.scss";
-
-/** vectors */
-import { Star } from "@svg/original";
-import { ChevronDown } from "@svg/regular";
-
-/** logic */
-import { useCheckin } from "./logic/logic.checkin";
+import { Star } from '@svg/original';
+import { ChevronDown } from '@svg/regular';
+import { useCheckin } from './logic/logic.checkin';
 import {
   checkInBorder,
   checkOutBorder,
   guestBorder,
-} from "./logic/logic.checkin";
+} from './logic/logic.checkin';
 
 /**
  * Renders the checkin card
  */
-export const CheckInCard: React.FC<{
+const CheckInCard: React.FC<{
   length?: number;
 }> = () => {
   const [selected, dispatchSelected] = useCheckin();
 
   return (
     <>
-      <div
-        className={[
-          card["display__checkin--wrapper"],
-          card["position__checkin--wrapper"],
-          shape["shadow--lg"],
-          color["b--white__2"],
-          card["w__checkin--wrapper"],
-          space["p-v--22"],
-        ].join(" ")}
-        style={{
-          backgroundColor: "white",
-          zIndex: 50,
-          borderRadius: 10,
-        }}
-      >
-        <div className={[space["p-h--24"]].join(" ")}>
-          <div
-            className={[layout["flex"], layout["justify-between"]].join(" ")}
-          >
-            <h3
-              className={[
-                space["p-v--10"],
-                color["c--gray__2"],
-                font["size--21"],
-                font["weight--500"],
-              ].join(" ")}
-            >
+      <div className="bg-white z-50 rounded-lg py-5 border border-gray-300 shadow-lg fixed lg:sticky right-0 bottom-0 lg:top-0">
+        <div className="px-6">
+          <div className="flex justify-between">
+            <h3 className="py-3 text-gray-500 text-lg font-medium">
               Add dates for prices
             </h3>
-            <div
-              style={{ width: 100 }}
-              className={[
-                space["p-v--10"],
-                color["c--gray__2"],
-                font["size--21"],
-                font["weight--500"],
-              ].join(" ")}
-            >
-              <div
-                className={[layout["inline-block"], space["m-r--4"]].join(" ")}
-              >
+            <div className="py-3 text-gray-300 text-xl font-medium w-32">
+              <div className="inline-block mr-1">
                 <Star width={10} />
               </div>
-              <span
-                className={[
-                  layout["inline-block"],
-                  font["size--14"],
-                  space["m-r--4"],
-                ].join(" ")}
-              >
+              <span className="inline-block text-sm mr-1 text-gray-500">
                 4.93
               </span>
-              <span
-                className={[
-                  layout["inline-block"],
-                  font["size--14"],
-                  space["weight-100"],
-                  color["c--white__3"],
-                ].join(" ")}
-              >
+              <span className="inline-block text-sm font-thin text-gray-500">
                 (248)
               </span>
             </div>
           </div>
-          <div
-            className={[
-              shape["br--8"],
-              space["m-t--12"],
-              color["b--white__2"],
-            ].join(" ")}
-          >
-            <div
-              style={{ height: 60 }}
-              className={[layout["flex"], shape["w--full"]].join(" ")}
-            >
+          <div className="rounded-md mt-3 border">
+            <div className="h-16 flex w-full">
               <div
                 onClick={() => {
-                  dispatchSelected({ type: "checkin" });
+                  dispatchSelected({ type: 'checkin' });
                 }}
                 className={checkInBorder(selected)}
               >
-                <div className={[space["p-h--12"]].join(" ")}>
-                  <label
-                    className={[
-                      layout["block"],
-                      font["text--left"],
-                      font["size--10"],
-                      font["weight--700"],
-                      color["c--gray__3"],
-                    ].join(" ")}
-                  >
+                <div className="px-3">
+                  <label className="block text-left text-xs font-bold text-gray-400">
                     CHECK-IN
                   </label>
                   <input
-                    className={[
-                      shape["w--full"],
-                      font["weight--300"],
-                      font["size--14"],
-                      color["b--0"],
-                      shape["outline--none"],
-                    ].join(" ")}
+                    className="w-full font-light text-sm border-none outline-none"
                     placeholder="Add date"
                   />
                 </div>
               </div>
               <div
                 onClick={() => {
-                  dispatchSelected({ type: "checkout" });
+                  dispatchSelected({ type: 'checkout' });
                 }}
                 className={checkOutBorder(selected)}
               >
-                <div className={[space["p-h--12"]].join(" ")}>
-                  <label
-                    className={[
-                      layout["block"],
-                      font["text--left"],
-                      font["size--10"],
-                      font["weight--700"],
-                      color["c--gray__3"],
-                    ].join(" ")}
-                  >
+                <div className="px-4">
+                  <label className="block text-left text-xs font-bold text-gray-400">
                     CHECK-OUT
                   </label>
                   <input
                     placeholder="Add date"
-                    className={[
-                      shape["w--full"],
-                      font["weight--300"],
-                      font["size--14"],
-                      color["b--0"],
-                      shape["outline--none"],
-                    ].join(" ")}
+                    className="w-full font-light text-sm border-none outline-none"
                   />
                 </div>
               </div>
@@ -167,55 +73,21 @@ export const CheckInCard: React.FC<{
             <button
               style={{ height: 60 }}
               onClick={() => {
-                dispatchSelected({ type: "guests" });
+                dispatchSelected({ type: 'guests' });
               }}
               className={
                 selected.guests
-                  ? [
-                      color["b--gray__3"],
-                      shape["w--full"],
-                      color["bg--transparent"],
-                      shape["br--6"],
-                    ].join(" ")
-                  : [
-                      color["b-t--transparent"],
-                      color["b-b--white__3"],
-                      color["b-l--white__3"],
-                      color["b-r--white__3"],
-                      color["bg--transparent"],
-                      shape["bbr--6"],
-                      shape["w--full"],
-                    ].join(" ")
+                  ? 'border border-gray-400 w-full bg-transparent rounded'
+                  : 'border-b border-l border-r bg-transparent rounded-br-md w-full'
               }
             >
               <div className={guestBorder(selected)}>
-                <div
-                  className={[
-                    space["p-h--12"],
-                    layout["flex"],
-                    layout["justify-between"],
-                    layout["items-center"],
-                  ].join(" ")}
-                >
+                <div className="px-4 flex justify-between items-center">
                   <div>
-                    <label
-                      className={[
-                        layout["block"],
-                        font["text--left"],
-                        font["size--10"],
-                        font["weight--700"],
-                        color["c--gray__3"],
-                      ].join(" ")}
-                    >
+                    <label className="block text-left text-xs font-bold text-gray-400">
                       GUESTS
                     </label>
-                    <p
-                      className={[font["weight--300"], font["size--14"]].join(
-                        " "
-                      )}
-                    >
-                      1 guest
-                    </p>
+                    <p className="font-light text-sm">1 guest</p>
                   </div>
                   <div>
                     <ChevronDown width={14} />
@@ -224,18 +96,8 @@ export const CheckInCard: React.FC<{
               </div>
             </button>
           </div>
-          <div className={[space["m-t--24"]].join(" ")}>
-            <button
-              className={[
-                shape["w--full"],
-                space["p-v--14"],
-                font["size--15"],
-                shape["br--5"],
-                color["bg--primary"],
-                color["c--white"],
-                font["weight--300"],
-              ].join(" ")}
-            >
+          <div className="mt-4">
+            <button className="w-full py-4 text-sm rounded bg-primary text-white font-light">
               Check availability
             </button>
           </div>
@@ -243,4 +105,13 @@ export const CheckInCard: React.FC<{
       </div>
     </>
   );
+};
+
+export const checkin = (props) => {
+  return {
+    checkin: {
+      component: <CheckInCard {...props} />,
+      style: '',
+    },
+  };
 };
