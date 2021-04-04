@@ -1,26 +1,42 @@
-import { DoubleBed } from '@svg/original';
+/** styles **/
+import shape from "@styles/shape.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
+
+/** vectors */
+import { DoubleBed } from "@svg/original";
 
 /**
  * Renders the arrangements card component
  * @param {Object} card - Information of the card
  */
-const ArrangementsCard: React.FC<{ card?: any }> = ({
+export const ArrangementsCard: React.FC<{ card?: any }> = ({
   card = {
-    type: 'Bedroom',
-    beds: [{ type: 'double bed', count: 1 }],
+    type: "Bedroom",
+    beds: [{ type: "double bed", count: 1 }],
   },
 }) => {
   return (
-    <div className="w-52 py-6 border border-gray-300 rounded-md">
-      <div className="pl-4">
-        <div className="pt-1 pb-2">
+    <div
+      className={[
+        shape["w--48"],
+        space["p-v--25"],
+        color["b--white__2"],
+        shape["br--15"],
+        shape["w--200"],
+      ].join(" ")}
+    >
+      <div className={[space["p-l--14"]].join(" ")}>
+        <div className={[space["p-t--4"], space["p-b--8"]].join(" ")}>
           <DoubleBed width={24} />
         </div>
-        <p className="pt-1 text-gray-500">Bedroom</p>
+        <p className={[space["p-t--4"], color["c--gray__2"]].join(" ")}>
+          Bedroom
+        </p>
         <div>
           {card.beds.map((bed, index) => {
             return (
-              <p key={index} className="text-gray-500">
+              <p key={index} className={[color["c--gray__2"]].join(" ")}>
                 {bed.count} {bed.type}
               </p>
             );
@@ -29,13 +45,4 @@ const ArrangementsCard: React.FC<{ card?: any }> = ({
       </div>
     </div>
   );
-};
-
-export const arrangements = (props) => {
-  return {
-    arrangements: {
-      component: <ArrangementsCard {...props} />,
-      style: '',
-    },
-  };
 };

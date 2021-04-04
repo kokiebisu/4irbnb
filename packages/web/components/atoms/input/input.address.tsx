@@ -1,4 +1,11 @@
-import { renderShape } from './logic/logic.address';
+import shape from "@styles/shape.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import font from "@styles/font.module.scss";
+import input from "@input/input.module.scss";
+
+import { renderShape } from "./logic/logic.address";
 
 /**
  * Renders the text input component
@@ -17,11 +24,24 @@ export const AddressInput: React.FC<{
 }> = ({ handleChange, value, direction }) => {
   return (
     <div
-      className={`h-12 relative py-2 px-5 items-center ${renderShape(
-        direction
-      )}`}
+      className={`${[
+        shape["h--50"],
+        input["outside"],
+        layout["relative"],
+        space["p-v--6"],
+        space["p-h--12"],
+        layout["items-center"],
+      ].join(" ")} ${renderShape(direction)}`}
     >
-      <div className="relative h-full w-full flex items-center">
+      <div
+        style={{
+          position: "relative",
+          height: "100%",
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
         <input
           autoFocus={true}
           id="address"
@@ -29,7 +49,16 @@ export const AddressInput: React.FC<{
           type="text"
           onChange={handleChange}
           value={value}
-          className="p-0 w-full block border-none text-sm font-thin outline-none"
+          className={`${[
+            space["p--0"],
+            shape["w--full"],
+            layout["block"],
+            color["b--0"],
+            font["size--14"],
+            font["weight--100"],
+            color["c__placeholder--black"],
+          ].join(" ")}`}
+          style={{ outline: "none" }}
           placeholder="Address"
         />
       </div>

@@ -6,19 +6,40 @@ export const ProgressBar: React.FC<{
   percentage?: number;
 }> = ({ percentage = 50 }) => {
   return (
-    <div className="relative w-full h-2 bg-gray-200 z-10">
-      <div className="w-full h-2 flex z-50">
+    <div
+      style={{
+        position: "relative",
+        width: "100%",
+        height: 10,
+        backgroundColor: "#EDEFED",
+        zIndex: 1,
+      }}
+    >
+      <div style={{ width: "100%", height: 10, display: "flex", zIndex: 500 }}>
         {Array.from(Array(24).keys()).map((_, index) => {
           return (
             <div
               key={index}
-              className={`w-1/12 h-2 bg-transparent ${
-                index === 23 ? '' : 'border border-gray-200'
-              }`}
+              style={{
+                width: "10%",
+                height: 10,
+                backgroundColor: "transparent",
+                borderRight: index === 23 ? "none" : "1px solid #DCE0E0",
+              }}
             />
           );
         })}
-        <div className="absolute h-full rounded-r-full bg-green-700 z-50"></div>
+        <div
+          style={{
+            position: "absolute",
+            height: "100%",
+            width: `${percentage}%`,
+            borderTopRightRadius: 9999,
+            borderBottomRightRadius: 9999,
+            backgroundColor: "#278489",
+            zIndex: 60,
+          }}
+        ></div>
       </div>
     </div>
   );

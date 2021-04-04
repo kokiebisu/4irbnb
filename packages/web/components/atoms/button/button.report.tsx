@@ -1,9 +1,8 @@
-import { Flag } from '@svg/original';
+/** vectors */
+import { Flag } from "@svg/original";
 
-/**
- * Renders the Report Button
- */
-const ReportButton: React.FC<{}> = () => {
+/** Renders the report button */
+export const ReportButton: React.FC<{}> = () => {
   return (
     <button>
       <div>
@@ -12,13 +11,4 @@ const ReportButton: React.FC<{}> = () => {
       <div>Report this listing</div>
     </button>
   );
-};
-
-export const report = (props) => {
-  return {
-    report: {
-      component: <ReportButton {...props} />,
-      style: '',
-    },
-  };
 };

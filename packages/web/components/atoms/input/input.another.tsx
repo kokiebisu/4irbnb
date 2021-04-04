@@ -1,4 +1,9 @@
-import { Plus } from '@svg/original';
+import shape from "@styles/shape.module.scss";
+import color from "@styles/color.module.scss";
+import layout from "@styles/layout.module.scss";
+import font from "@styles/font.module.scss";
+
+import { Plus } from "@svg/original";
 
 /**
  * Renders the text input component
@@ -15,28 +20,69 @@ export const AnotherInput: React.FC<{
   value?: string;
 }> = ({ handleChange, value }) => {
   return (
-    <div className="h-96 p-7 border border-dashed border-gray-300">
-      <form className="h-full">
+    <div
+      style={{
+        height: 130,
+        padding: 15,
+        border: "1px dashed lightgray",
+      }}
+    >
+      <form className={[shape["h--full"]].join(" ")}>
         <input
           type="file"
           id="upload"
-          style={{ display: 'none' }}
+          style={{ display: "none" }}
           onChange={handleChange}
         />
-        <label htmlFor="upload" className="h-full">
-          <div className="h-full cursor-pointer">
-            <div className="relative w-full h-full">
-              <div className="absolute top-1/2 left-1/2 transform translate-x-1/2 translate-y-1/2">
-                <div className="flex flex-col items-center">
+        <label htmlFor="upload" className={[shape["h--full"]].join(" ")}>
+          <div
+            style={{
+              cursor: "pointer",
+            }}
+            className={[shape["h--full"]].join(" ")}
+          >
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
                   <div>
                     <div>
-                      <div className="flex items-center">
+                      <div
+                        className={[
+                          layout["flex"],
+                          layout["items-center"],
+                        ].join(" ")}
+                      >
                         <Plus width={45} fill="#D8D8D8" />
                       </div>
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-sm text-gray-300 whitespace-nowrap">
+                    <h4
+                      className={[
+                        font["size--14"],
+                        color["c--white__3"],
+                        font["no-wrap"],
+                      ].join(" ")}
+                    >
                       Add another
                     </h4>
                   </div>

@@ -1,14 +1,17 @@
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from "framer-motion";
 
-import space from '@styles/space.module.scss';
-import layout from '@styles/layout.module.scss';
-import color from '@styles/color.module.scss';
-import font from '@styles/font.module.scss';
-import shape from '@styles/shape.module.scss';
-import header from '@header/header.module.scss';
-import { Star } from '@svg/original';
-import { Button, $Button } from '@button';
-import { useHandleScroll } from '@hooks/useHandleScroll';
+import space from "@styles/space.module.scss";
+import layout from "@styles/layout.module.scss";
+import color from "@styles/color.module.scss";
+import font from "@styles/font.module.scss";
+import shape from "@styles/shape.module.scss";
+import header from "@header/header.module.scss";
+
+import { Star } from "@svg/original";
+
+import { Button, $Button } from "@button";
+
+import { useHandleScroll } from "@hooks/useHandleScroll";
 
 /**
  * Renders the details header
@@ -18,34 +21,54 @@ import { useHandleScroll } from '@hooks/useHandleScroll';
 export const DetailsHeader: React.FC<{
   layoutType?: string;
   spread?: boolean;
-}> = ({ layoutType = 'room', spread = false }) => {
+}> = ({ layoutType = "room", spread = false }) => {
   const scrollPosition = useHandleScroll();
   const items =
-    layoutType === 'experience'
+    layoutType === "experience"
       ? [
-          { name: 'Photos' },
-          { name: 'Amenities' },
-          { name: 'Reviews' },
-          { name: 'Location' },
+          { name: "Photos" },
+          { name: "Amenities" },
+          { name: "Reviews" },
+          { name: "Location" },
         ]
       : [
-          { name: 'Overview' },
-          { name: 'The host' },
-          { name: 'Reviews' },
-          { name: 'Availability' },
+          { name: "Overview" },
+          { name: "The host" },
+          { name: "Reviews" },
+          { name: "Availability" },
         ];
-  const displayHeight = layoutType === 'room' ? 1000 : 1600;
+  const displayHeight = layoutType === "room" ? 1000 : 1600;
   return (
-    <header className="h-16 bg-white shadow-sm">
-      <div className="h-full">
-        <div className="h-full flex md:invisible items-center justify-between relative">
-          <div className="flex items-center">
+    <header
+      style={{ height: 80 }}
+      className={`${[color["bg--white"], shape["shadow--sm"]].join(" ")}`}
+    >
+      <div
+        className={`${
+          spread
+            ? [layout["container--spread"]].join(" ")
+            : [layout["container"]].join(" ")
+        } ${[shape["h--full"]].join(" ")}`}
+      >
+        <div
+          className={[
+            shape["h--full"],
+            header["display__transparent--md"],
+            layout["items-center"],
+            layout["justify-between"],
+            layout["relative"],
+          ].join(" ")}
+        >
+          <div className={[layout["flex"], layout["items-center"]].join(" ")}>
             {items.map((item, index) => {
               return (
-                <div key={index} className="mr-4">
+                <div key={index} className={[space["m-r--16"]].join(" ")}>
                   <button
-                    className="text-sm text-gray-400 block"
-                    onClick={() => alert('hello')}
+                    style={{ display: "block" }}
+                    className={[font["size--14"], color["c--gray__2"]].join(
+                      " "
+                    )}
+                    onClick={() => alert("hello")}
                   >
                     {item.name}
                   </button>
@@ -59,51 +82,53 @@ export const DetailsHeader: React.FC<{
                 exit={{ opacity: 0 }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="flex items-center"
+                className={[layout["items-center"]].join(" ")}
               >
-                <div className="flex items-center">
-                  <div className="mr-4">
+                <div
+                  className={[layout["flex"], layout["items-center"]].join(" ")}
+                >
+                  <div className={[space["m-r--16"]].join(" ")}>
                     <h3
                       className={[
-                        color['c--gray__2'],
-                        font['size--16'],
-                        font['weight--500'],
-                      ].join(' ')}
+                        color["c--gray__2"],
+                        font["size--16"],
+                        font["weight--500"],
+                      ].join(" ")}
                     >
                       Add dates for prices
                     </h3>
                     <div
                       style={{ width: 100 }}
                       className={[
-                        color['c--gray__2'],
-                        font['size--21'],
-                        font['weight--500'],
-                      ].join(' ')}
+                        color["c--gray__2"],
+                        font["size--21"],
+                        font["weight--500"],
+                      ].join(" ")}
                     >
                       <div
                         className={[
-                          layout['inline-block'],
-                          space['m-r--4'],
-                        ].join(' ')}
+                          layout["inline-block"],
+                          space["m-r--4"],
+                        ].join(" ")}
                       >
                         <Star width={10} />
                       </div>
                       <span
                         className={[
-                          layout['inline-block'],
-                          font['size--12'],
-                          space['m-r--4'],
-                        ].join(' ')}
+                          layout["inline-block"],
+                          font["size--12"],
+                          space["m-r--4"],
+                        ].join(" ")}
                       >
                         <b>4.93</b>
                       </span>
                       <span
                         className={[
-                          layout['inline-block'],
-                          font['size--12'],
-                          space['weight-100'],
-                          color['c--white__3'],
-                        ].join(' ')}
+                          layout["inline-block"],
+                          font["size--12"],
+                          space["weight-100"],
+                          color["c--white__3"],
+                        ].join(" ")}
                       >
                         (248)
                       </span>

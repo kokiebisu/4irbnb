@@ -1,4 +1,9 @@
-import { CheckInverse } from '@svg/original';
+/** styles **/
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+
+/** vectors */
+import { CheckInverse } from "@svg/original";
 
 /**
  * Renders the bring bullet
@@ -6,10 +11,10 @@ import { CheckInverse } from '@svg/original';
  */
 export const BringBullet: React.FC<{
   title?: string;
-}> = ({ title = 'Description here' }) => {
+}> = ({ title = "Description here" }) => {
   return (
-    <div className="flex">
-      <div className="mr-4">
+    <div className={[layout["flex"]].join(" ")}>
+      <div className={[space["m-r--16"]].join(" ")}>
         <CheckInverse width={24} />
       </div>
       <div>
