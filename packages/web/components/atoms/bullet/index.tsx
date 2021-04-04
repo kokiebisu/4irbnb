@@ -20,6 +20,7 @@ export const $Bullet = {
 
 export interface BulletProps {
   variant: string;
+  [property: string]: any;
 }
 
 /**

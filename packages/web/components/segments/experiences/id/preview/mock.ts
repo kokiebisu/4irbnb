@@ -1,1 +1,1 @@
-export const items = [];
+export const images = [undefined, undefined, undefined, undefined];

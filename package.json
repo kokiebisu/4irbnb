@@ -21,11 +21,11 @@
     "test:auth": "lerna run test:ci --scope=@nextbnb/auth --since",
     "test:web": "lerna run snapshot --scope=@nextbnb/web --since",
     "deploy:storybook": "lerna run chromatic --scope=@nextbnb/web --since",
-    "compile:packages": "lerna run compile --scope=@nextbnb/{error,content,middleware}",
+    "compile:packages": "lerna run compile --scope=@nextbnb/{error,middleware}",
     "compile:services": "lerna run compile --scope=@nextbnb/{auth,stays}",
     "compile:web": "lerna run build --scope=@nextbnb/web",
     "version:upgrade": "lerna version --conventional-commits --yes",
-    "build:storybook": "lerna run compile --scope=@nextbnb/content && lerna run build-storybook --scope=@nextbnb/web"
+    "build:storybook": "lerna run build-storybook --scope=@nextbnb/web"
   },
   "devDependencies": {
     "lerna": "^3.22.1"

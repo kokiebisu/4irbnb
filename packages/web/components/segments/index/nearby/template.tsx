@@ -4,7 +4,7 @@ import template from '@template/index/index.module.scss';
 import { Card, $Card } from '@card';
 
 export interface NearbyTemplateProps {
-  items?: { to: string; imgUrl: string; city: string; hours: string }[][];
+  items?: { to: string; imgUrl: string; city: string; hours: number }[];
 }
 
 /**
