@@ -1,31 +1,31 @@
 {
-  "name": "airbnb",
+  "name": "nextbnb",
   "version": "1.0.0",
-  "description": "<p align=\"center\">     <img src=\"https://user-images.githubusercontent.com/43525282/86524021-e1d52400-be29-11ea-9943-6affd2b8038c.png\" alt=\"airbnb\" width=\"100\" /> </p>",
+  "description": "<p align=\"center\">     <img src=\"https://user-images.githubusercontent.com/43525282/86524021-e1d52400-be29-11ea-9943-6affd2b8038c.png\" alt=\"nextbnb\" width=\"100\" /> </p>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kokiebisu/airbnb.git"
+    "url": "git+https://github.com/kokiebisu/nextbnb.git"
   },
   "keywords": [],
   "author": "kokoaj",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kokiebisu/airbnb/issues"
+    "url": "https://github.com/kokiebisu/nextbnb/issues"
   },
-  "homepage": "https://github.com/kokiebisu/airbnb#readme",
+  "homepage": "https://github.com/kokiebisu/nextbnb#readme",
   "private": true,
   "scripts": {
-    "deploy:storybook": "lerna run build-storybook",
     "bootstrap": "lerna bootstrap",
     "bootstrap:production": "lerna bootstrap -- --production --no-optional",
-    "test:stays": "lerna run test:ci --scope=@airbnb/stays --since",
-    "test:auth": "lerna run test:ci --scope=@airbnb/auth --since",
-    "test:web": "lerna run snapshot --scope=@airbnb/web --since",
-    "compile:packages": "lerna run compile --scope=@airbnb/{error,content,middleware}",
-    "compile:services": "lerna run compile --scope=@airbnb/{auth,stays}",
-    "compile:web": "lerna run build --scope=@airbnb/web",
+    "test:stays": "lerna run test:ci --scope=@nextbnb/stays --since",
+    "test:auth": "lerna run test:ci --scope=@nextbnb/auth --since",
+    "test:web": "lerna run snapshot --scope=@nextbnb/web --since",
+    "deploy:storybook": "lerna run chromatic --scope=@nextbnb/web --since",
+    "compile:packages": "lerna run compile --scope=@nextbnb/{error,content,middleware}",
+    "compile:services": "lerna run compile --scope=@nextbnb/{auth,stays}",
+    "compile:web": "lerna run build --scope=@nextbnb/web",
     "version:upgrade": "lerna version --conventional-commits --yes",
-    "build:storybook": "lerna run compile --scope=@airbnb/content && lerna run build-storybook --scope=@airbnb/web"
+    "build:storybook": "lerna run compile --scope=@nextbnb/content && lerna run build-storybook --scope=@nextbnb/web"
   },
   "devDependencies": {
     "lerna": "^3.22.1"

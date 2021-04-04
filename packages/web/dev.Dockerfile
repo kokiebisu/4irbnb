@@ -14,7 +14,7 @@ COPY ui/web/tsconfig.json .
 COPY ui/web .
 
 WORKDIR /app
-RUN yarn bootstrap --scope=@airbnb/web 
+RUN yarn bootstrap --scope=@nextbnb/web 
 RUN yarn compile:packages
 RUN yarn compile:web
 

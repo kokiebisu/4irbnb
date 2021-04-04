@@ -1,5 +1,5 @@
 {
-  "name": "@airbnb/web",
+  "name": "@nextbnb/web",
   "version": "1.0.0",
   "description": "",
   "main": "./.next/server/pages/index.js",
@@ -7,7 +7,6 @@
   "author": "",
   "license": "ISC",
   "scripts": {
-    "prep": "npm install -g lerna && lerna bootstrap",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
