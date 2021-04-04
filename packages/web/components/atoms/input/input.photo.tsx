@@ -1,10 +1,10 @@
-import shape from "@styles/shape.module.scss";
-import color from "@styles/color.module.scss";
-import space from "@styles/space.module.scss";
-import layout from "@styles/layout.module.scss";
-import font from "@styles/font.module.scss";
+import shape from '@styles/shape.module.scss';
+import color from '@styles/color.module.scss';
+import space from '@styles/space.module.scss';
+import layout from '@styles/layout.module.scss';
+import font from '@styles/font.module.scss';
 
-import { Upload } from "@svg/original";
+import { Upload } from '@svg/original';
 
 /**
  * Renders the text input component
@@ -22,70 +22,70 @@ export const PhotoInput: React.FC<{
 }> = ({ handleChange, value }) => {
   return (
     <div style={{ height: 350 }}>
-      <form className={[shape["h--full"]].join(" ")}>
+      <form className={[shape['h--full']].join(' ')}>
         <input
           type="file"
           id="upload"
-          style={{ display: "none" }}
-          className={[shape["h--full"]].join(" ")}
+          style={{ display: 'none' }}
+          className={[shape['h--full']].join(' ')}
           onChange={handleChange}
         />
-        <label htmlFor="upload" className={[shape["h--full"]].join(" ")}>
+        <label htmlFor="upload" className={[shape['h--full']].join(' ')}>
           <div
             style={{
-              cursor: "pointer",
+              cursor: 'pointer',
               padding: 15,
-              border: "1px dashed lightgray",
+              border: '1px dashed lightgray',
             }}
-            className={[shape["h--full"]].join(" ")}
+            className={[shape['h--full']].join(' ')}
           >
             <div
               style={{
-                position: "relative",
-                width: "100%",
-                height: "100%",
+                position: 'relative',
+                width: '100%',
+                height: '100%',
                 backgroundImage:
-                  "url(https://a0.muscache.com/airbnb/static/packages/upload-photos-ghosts.56fe723d.png)",
+                  'url(https://a0.muscache.com/nextbnb/static/packages/upload-photos-ghosts.56fe723d.png)',
               }}
             >
               <div
                 style={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-50%, -50%)',
                 }}
               >
                 <div
                   style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
                   }}
                 >
                   <div>
                     <div
                       style={{
-                        padding: "14px 22px",
-                        backgroundColor: "#FF5A5F",
+                        padding: '14px 22px',
+                        backgroundColor: '#FF5A5F',
                         borderRadius: 4,
                       }}
                     >
                       <div
                         className={[
-                          layout["flex"],
-                          layout["items-center"],
-                        ].join(" ")}
+                          layout['flex'],
+                          layout['items-center'],
+                        ].join(' ')}
                       >
-                        <div className={[space["m-r--8"]].join(" ")}>
+                        <div className={[space['m-r--8']].join(' ')}>
                           <Upload width={20} stroke="white" />
                         </div>
                         <div>
                           <h3
                             style={{
                               fontSize: 14,
-                              whiteSpace: "nowrap",
-                              color: "white",
+                              whiteSpace: 'nowrap',
+                              color: 'white',
                             }}
                           >
                             Upload Photos
@@ -94,10 +94,10 @@ export const PhotoInput: React.FC<{
                       </div>
                     </div>
                   </div>
-                  <div className={[space["m-t--8"]].join(" ")}>
+                  <div className={[space['m-t--8']].join(' ')}>
                     <h4
-                      className={[font["size--15"], color["c--gray__0"]].join(
-                        " "
+                      className={[font['size--15'], color['c--gray__0']].join(
+                        ' '
                       )}
                     >
                       or drag them in

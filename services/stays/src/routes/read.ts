@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 // import { NotFoundError } from '@doitsimple/shared';
-import { NotFoundError } from "@airbnb/error";
+import { NotFoundError } from "@nextbnb/error";
 import { Stay } from "../models/stay";
 
 const router = express.Router();

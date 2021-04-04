@@ -1,5 +1,5 @@
-import { Request, Response, NextFunction } from "express";
-import { CustomError } from "@airbnb/error";
+import { Request, Response, NextFunction } from 'express';
+import { CustomError } from '@nextbnb/error';
 
 interface ErrorResponse {
   message: string;
@@ -16,6 +16,6 @@ export const errorHandler = (
     return res.status(err.statusCode).json({ errors: err.serializeErrors() });
   }
   res.status(400).send({
-    errors: [{ message: "Something went wrong" }],
+    errors: [{ message: 'Something went wrong' }],
   });
 };
