@@ -1,18 +1,18 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import layout from "@styles/layout.module.scss";
-import font from "@styles/font.module.scss";
-import color from "@styles/color.module.scss";
-import shape from "@styles/shape.module.scss";
-import space from "@styles/space.module.scss";
-import animation from "@styles/animation.module.scss";
+import layout from '@styles/layout.module.scss';
+import font from '@styles/font.module.scss';
+import color from '@styles/color.module.scss';
+import shape from '@styles/shape.module.scss';
+import space from '@styles/space.module.scss';
+import animation from '@styles/animation.module.scss';
 
-import { Button } from "@button";
+import { $Button, Button } from '@button';
 
 export const VerifyInput: React.FC<{
   value?: string;
   handleChange?: () => void;
-}> = ({ value = "", handleChange }) => {
+}> = ({ value = '', handleChange }) => {
   const [active, setActive] = useState(false);
 
   const renderBorder = () => {
@@ -20,9 +20,9 @@ export const VerifyInput: React.FC<{
     //   return animation["border--warning"];
     // }
     if (active) {
-      return animation["focus-border--darkgreen__3"];
+      return animation['focus-border--darkgreen__3'];
     }
-    return "";
+    return '';
   };
 
   const renderBackground = () => {
@@ -30,24 +30,24 @@ export const VerifyInput: React.FC<{
     //   return animation["background--lightred__0"];
     // }
     if (active) {
-      return animation["background--white"];
+      return animation['background--white'];
     }
-    return "";
+    return '';
   };
 
   const renderColor = () => {
     // if (value.length > 0 && !valid) {
     //   return animation["c--warning"];
     // }
-    return animation["c--darkgreen__3"];
+    return animation['c--darkgreen__3'];
   };
 
   return (
     <div>
       <div
         style={{ minHeight: 50 }}
-        className={[layout["relative"], shape["w--full"], space["m-b--4"]].join(
-          " "
+        className={[layout['relative'], shape['w--full'], space['m-b--4']].join(
+          ' '
         )}
       >
         <input
@@ -58,35 +58,35 @@ export const VerifyInput: React.FC<{
           onBlur={() => setActive(false)}
           onChange={handleChange}
           className={`${[
-            layout["relative"],
-            font["weight--300"],
-            color["b--white__2"],
-            shape["br--6"],
-            font["size--15"],
-            color["c--gray__2"],
-            shape["h--full"],
-            shape["w--full"],
-            space["p--12"],
-            animation["transition"],
-          ].join(" ")} ${renderBorder()} ${renderBackground()}`}
+            layout['relative'],
+            font['weight--300'],
+            color['b--white__2'],
+            shape['br--6'],
+            font['size--15'],
+            color['c--gray__2'],
+            shape['h--full'],
+            shape['w--full'],
+            space['p--12'],
+            animation['transition'],
+          ].join(' ')} ${renderBorder()} ${renderBackground()}`}
           style={{
-            outline: "none",
+            outline: 'none',
             minHeight: 50,
           }}
         ></input>
 
         <div
           className={[
-            layout["absolute"],
-            layout["b--15"],
-            layout["r--15"],
-          ].join(" ")}
+            layout['absolute'],
+            layout['b--15'],
+            layout['r--15'],
+          ].join(' ')}
         >
-          <Button onClick={() => alert("verify")}>
-            <h4 className={`${[font["size--16"]].join(" ")} ${renderColor()}`}>
-              Verify
-            </h4>
-          </Button>
+          <Button
+            content="Verify"
+            variant={$Button.TRANSPARENT}
+            onClick={() => alert('verify')}
+          />
         </div>
       </div>
     </div>
