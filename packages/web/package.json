@@ -1,5 +1,5 @@
 {
-  "name": "@airbnb/web",
+  "name": "@nextbnb/web",
   "version": "1.0.0",
   "description": "",
   "main": "./.next/server/pages/index.js",

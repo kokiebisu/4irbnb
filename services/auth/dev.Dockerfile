@@ -18,7 +18,7 @@ COPY services/auth/package.json services/auth/tsconfig.json ./
 COPY services/auth/src ./src
 
 WORKDIR /app
-RUN yarn bootstrap --scope=@airbnb/auth --include-dependencies
+RUN yarn bootstrap --scope=@nextbnb/auth --include-dependencies
 
 RUN yarn compile:packages
 WORKDIR /app/services/auth

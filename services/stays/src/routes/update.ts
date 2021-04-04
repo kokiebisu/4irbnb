@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
-import { NotAuthorizedError, NotFoundError } from "@airbnb/error";
-import { requireAuth } from "@airbnb/middleware";
+import { NotAuthorizedError, NotFoundError } from "@nextbnb/error";
+import { requireAuth } from "@nextbnb/middleware";
 import { Stay } from "../models/stay";
 
 const router = express.Router();

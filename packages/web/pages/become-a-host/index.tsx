@@ -42,7 +42,7 @@ const BecomeAHostPage = () => {
             <div>
               <img
                 style={{ objectFit: "cover", width: "100%" }}
-                src="https://a0.muscache.com/airbnb/static/packages/start.b12a70f6.png"
+                src="https://a0.muscache.com/nextbnb/static/packages/start.b12a70f6.png"
               />
             </div>
           </div>

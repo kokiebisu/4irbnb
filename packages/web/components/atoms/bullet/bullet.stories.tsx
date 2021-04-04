@@ -1,20 +1,12 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react/types-6-0";
-import { Bullet, BulletProps, $Bullet } from "@bullet";
+import React from 'react';
+import { Story, Meta } from '@storybook/react';
+import { Bullet, BulletProps, $Bullet } from '@bullet';
 
-import { types as OnlineHostTypes } from "@bullet/bullet.onlinehost";
+import { types as OnlineHostTypes } from '@bullet/bullet.onlinehost';
 
 export default {
-  title: "Atoms/Bullet",
+  title: 'Atoms/Bullet',
   component: Bullet,
-  argTypes: {
-    variant: {
-      control: { disable: true },
-    },
-    extendsTo: {
-      control: { disable: true },
-    },
-  },
 } as Meta;
 
 const TemplateStory: Story<BulletProps> = (args) => <Bullet {...args} />;
@@ -26,8 +18,8 @@ Characteristic.args = {
 Characteristic.argTypes = {
   characteristicType: {
     control: {
-      type: "select",
-      options: ["house", "sparkle", "door", "calendar", "guidelines", "time"],
+      type: 'select',
+      options: ['house', 'sparkle', 'door', 'calendar', 'guidelines', 'time'],
     },
   },
 };
@@ -38,12 +30,12 @@ Amenity.args = {
 };
 Amenity.argTypes = {
   removed: {
-    control: "boolean",
+    control: 'boolean',
   },
   amenityType: {
     control: {
-      type: "select",
-      options: ["smoke", "tv", "kitchen", "heating", "entrance", "carbon"],
+      type: 'select',
+      options: ['smoke', 'tv', 'kitchen', 'heating', 'entrance', 'carbon'],
     },
   },
 };
@@ -55,19 +47,19 @@ Know.args = {
 Know.argTypes = {
   categoryType: {
     control: {
-      type: "select",
+      type: 'select',
       options: [
-        "checkin",
-        "checkout",
-        "self",
-        "children",
-        "smoking",
-        "pets",
-        "parties",
-        "cleaning",
-        "distancing",
-        "caution",
-        "check",
+        'checkin',
+        'checkout',
+        'self',
+        'children',
+        'smoking',
+        'pets',
+        'parties',
+        'cleaning',
+        'distancing',
+        'caution',
+        'check',
       ],
     },
   },
@@ -90,8 +82,8 @@ Experience.args = {
 Experience.argTypes = {
   experience: {
     control: {
-      type: "select",
-      options: ["host", "activities", "global"],
+      type: 'select',
+      options: ['host', 'activities', 'global'],
     },
   },
 };
@@ -103,8 +95,8 @@ Priority.args = {
 Priority.argTypes = {
   priority: {
     control: {
-      type: "select",
-      options: ["protection", "guidance", "requirements"],
+      type: 'select',
+      options: ['protection', 'guidance', 'requirements'],
     },
   },
 };
@@ -116,8 +108,8 @@ Help.args = {
 Help.argTypes = {
   help: {
     control: {
-      type: "select",
-      options: ["support", "tools", "insights", "education"],
+      type: 'select',
+      options: ['support', 'tools', 'insights', 'education'],
     },
   },
 };
@@ -134,7 +126,7 @@ OnlineHost.args = {
 OnlineHost.argTypes = {
   type: {
     control: {
-      type: "select",
+      type: 'select',
       options: Object.keys(OnlineHostTypes),
     },
   },
