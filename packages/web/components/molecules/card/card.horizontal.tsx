@@ -1,18 +1,6 @@
-/** styles **/
-import layout from "@styles/layout.module.scss";
-import shape from "@styles/shape.module.scss";
-import space from "@styles/space.module.scss";
-import color from "@styles/color.module.scss";
-import font from "@styles/font.module.scss";
-
-/** vectors */
-import { Heart } from "@svg/original";
-
-/** Particles */
-import { ImageSlider } from "../../particles/image.slider";
-
-/** Logic */
-import { renderType } from "./logic/logic.horizontal";
+import { Heart } from '@svg/original';
+import { ImageSlider } from '../../particles/image.slider';
+import { renderType } from './logic/logic.horizontal';
 
 /**
  * Renders the horizontal card component
@@ -20,17 +8,17 @@ import { renderType } from "./logic/logic.horizontal";
  * @param {boolean} superhost - Whether if host is the superhost or not
  * @param {boolean} save - Whether if the card can be saved or not
  */
-export const HorizontalCard: React.FC<{
+const HorizontalCard: React.FC<{
   card?: any;
   save?: boolean;
   superhost?: boolean;
 }> = ({
   card = {
     images: undefined,
-    type: "Type of Stay",
+    type: 'Type of Stay',
     ratings: 5.0,
-    location: "Location",
-    title: "Title should be here",
+    location: 'Location',
+    title: 'Title should be here',
     number_of_reviews: 100,
   },
   superhost = false,
@@ -38,79 +26,27 @@ export const HorizontalCard: React.FC<{
 }) => {
   return (
     <div>
-      <div style={{ position: "relative", paddingTop: "66.6%" }}>
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            bottom: 0,
-            right: 0,
-            left: 0,
-          }}
-        >
-          <div style={{ height: "100%" }}>
-            <div className={[layout["relative"], shape["h--full"]].join(" ")}>
+      <div className="relative" style={{ paddingTop: '66.6%' }}>
+        <div className="absolute top-0 bottom-0 right-0 left-0">
+          <div className="h-full">
+            <div className=" relative h-full">
               {card.images ? (
-                <div className={[shape["br--12"], shape["h--full"]].join(" ")}>
+                <div className="rounded-md h-full">
                   <ImageSlider slides={card.images} />
                 </div>
               ) : (
-                <div
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    borderRadius: 12,
-                    backgroundColor: "lightgray",
-                  }}
-                />
+                <div className="animate-pulse w-full h-full rounded-md bg-gray-500" />
               )}
-              <div
-                className={[
-                  space["p-v--8"],
-                  space["p-h--10"],
-                  layout["at--0"],
-                  layout["flex"],
-                  layout["justify-between"],
-                  shape["w--full"],
-                ].join(" ")}
-              >
-                <div
-                  style={{ zIndex: 50 }}
-                  className={
-                    superhost
-                      ? [].join(" ")
-                      : [color["c--white"], shape["hidden"]].join(" ")
-                  }
-                >
-                  <div
-                    className={[
-                      space["p-h--8"],
-                      space["p-v--4"],
-                      color["bg--white__1"],
-                      shape["shadow--lg"],
-                      shape["br--3"],
-                    ].join(" ")}
-                  >
-                    <h3
-                      className={[
-                        font["size--12"],
-                        font["uppercase"],
-                        font["ls--3"],
-                      ].join(" ")}
-                    >
+              <div className="py-2 px-3 absolute top-0 flex justify-between w-full">
+                <div className={`z-50 ${superhost ? '' : 'text-white hidden'}`}>
+                  <div className="px-3 py-1 bg-gray-100 shadow-lg rounded">
+                    <h3 className="text-xs uppercase tracking-wide">
                       Superhost
                     </h3>
                   </div>
                 </div>
                 {save && (
-                  <div
-                    style={{ zIndex: 50 }}
-                    className={[
-                      save
-                        ? [].join(" ")
-                        : [color["c--white"], shape["hidden"]].join(" "),
-                    ].join(" ")}
-                  >
+                  <div className={`z-50 ${save ? '' : 'text-white hidden'}`}>
                     <Heart
                       fill="rgba(0, 0, 0, 0.5)"
                       width={24}
@@ -124,38 +60,27 @@ export const HorizontalCard: React.FC<{
           </div>
         </div>
       </div>
-      <div style={{ display: "flex", marginTop: 6 }}>
-        <div className={[space["m-r--3"]].join(" ")}>
-          <svg fill="#F5385D" width={14} viewBox="0 0 1000 1000">
+      <div className="flex items-center mt-2">
+        <div className="mr-1">
+          <svg
+            className="block"
+            fill="#F5385D"
+            width={14}
+            viewBox="0 0 1000 1000"
+          >
             <path d="M972 380c9 28 2 50-20 67L725 619l87 280c11 39-18 75-54 75-12 0-23-4-33-12L499 790 273 962a58 58 0 0 1-78-12 50 50 0 0 1-8-51l86-278L46 447c-21-17-28-39-19-67 8-24 29-40 52-40h280l87-279c7-23 28-39 52-39 25 0 47 17 54 41l87 277h280c24 0 45 16 53 40z" />
           </svg>
         </div>
-        <div className={[space["m-r--3"]].join(" ")}>
-          <p className={[font["weight--100"], font["size--13"]].join(" ")}>
-            {card.ratings.toFixed(2)}
-          </p>
+        <div className="mr-1">
+          <p className="font-thin text-xs">{card.ratings.toFixed(2)}</p>
         </div>
         <div>
-          <p
-            className={[
-              font["weight--100"],
-              font["size--13"],
-              color["c--gray__0"],
-            ].join(" ")}
-          >{`(${card.number_of_reviews})`}</p>
+          <p className="font-thin text-sm text-gray-400">{`(${card.number_of_reviews})`}</p>
         </div>
       </div>
-      <div className={[layout["flex"], layout["items-center"]].join(" ")}>
+      <div className="flex items-center">
         <div>
-          <p
-            style={{ textTransform: "capitalize" }}
-            className={[
-              font["ls--4"],
-              font["weight--100"],
-              font["size--15"],
-              color["c--gray__4"],
-            ].join(" ")}
-          >
+          <p className="capitalize tracking-wide font-thin text-sm text-gray-500">
             {renderType(card)}
           </p>
         </div>
@@ -163,36 +88,25 @@ export const HorizontalCard: React.FC<{
           <p>&nbsp; · &nbsp; </p>
         </div>
         <div>
-          <p
-            className={[
-              font["ls--4"],
-              font["weight--100"],
-              font["size--15"],
-              color["c--gray__4"],
-            ].join(" ")}
-          >
+          <p className="tracking-wide font-thin text-sm text-gray-500">
             {card.location}
           </p>
         </div>
       </div>
       <div>
-        <p
-          style={{
-            maxHeight: 250,
-            whiteSpace: "nowrap",
-            overflow: "hidden",
-            textOverflow: "ellipsis",
-          }}
-          className={[
-            font["ls--4"],
-            font["weight--100"],
-            font["size--15"],
-            color["c--gray__4"],
-          ].join(" ")}
-        >
+        <p className="max-h-32 whitespace-nowrap  overflow-ellipsis tracking-wide font-thin text-sm text-gray-500">
           {card.title}
         </p>
       </div>
     </div>
   );
+};
+
+export const horizontal = (props) => {
+  return {
+    horizontal: {
+      component: <HorizontalCard {...props} />,
+      style: '',
+    },
+  };
 };

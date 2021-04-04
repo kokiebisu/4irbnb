@@ -1,5 +1,3 @@
-import input from "@input/input.module.scss";
-
 /**
  * Inputs
  * @param errors
@@ -8,18 +6,18 @@ import input from "@input/input.module.scss";
  */
 export const styleInput = (errors, fieldActive, value) => {
   if (errors && fieldActive && value) {
-    return [input["input__active"]].join(" ");
+    return 'bg-white placeholder-gray-300';
   }
   if (errors && value) {
-    return [input["input__inactive"]].join(" ");
+    return 'bg-white placeholder-gray-300';
   }
   if (errors && fieldActive) {
-    return [input["input__error--active"]].join(" ");
+    return 'bg-white';
   }
   if (errors) {
-    return [input["input__error--inactive"]].join(" ");
+    return 'bg-red-50';
   }
-  return "";
+  return '';
 };
 
 /**
@@ -30,21 +28,21 @@ export const styleInput = (errors, fieldActive, value) => {
  */
 export const styleLabel = (errors, fieldActive, evaluate, value) => {
   if (errors && fieldActive && evaluate) {
-    return [input["label__active"]].join(" ");
+    return 'absolute text-sm top-0.5 text-gray-500';
   }
   if (errors && fieldActive) {
-    return [input["label__error"]].join(" ");
+    return 'absolute text-sm top-0.5 text-red-500 font-medium';
   }
   if (errors && evaluate) {
-    return [input["label__active"]].join(" ");
+    return 'absolute text-sm top-0.5 text-gray-500';
   }
   if (errors) {
-    return [input["label__error"]].join(" ");
+    return 'absolute text-sm top-0.5 text-red-500 font-medium';
   }
   if (fieldActive || value) {
-    return [input["label__active"]].join(" ");
+    return 'absolute text-sm top-0.5 text-gray-500';
   }
-  return "";
+  return 'top-4 text-base text-gray-400';
 };
 
 /**
@@ -53,21 +51,63 @@ export const styleLabel = (errors, fieldActive, evaluate, value) => {
  * @param fieldActive
  * @param value
  */
-export const styleContainer = (errors, fieldActive, value) => {
+export const styleContainer = (errors, fieldActive, value, direction) => {
   if (errors && fieldActive && value) {
-    return [input["container__active"]].join(" ");
+    switch (direction) {
+      case 'top':
+        return 'border-b-2 border-l-2 border-r-2 rounded-b-lg';
+      case 'bottom':
+        return 'border-t-2 border-l-2 border-r-2 rounded-t-lg';
+      default:
+        return 'border-2 border-gray-400 rounded-lg';
+    }
   }
   if (errors && fieldActive) {
-    return [input["container__error--active"]].join(" ");
+    switch (direction) {
+      case 'top':
+        return 'border-2 border-red-500 bg-white rounded-b-lg';
+      case 'bottom':
+        return 'border-2 border-red-500 bg-white rounded-t-lg';
+      default:
+        return 'border-2 border-red-500 bg-white rounded-lg';
+    }
   }
   if (errors && value) {
-    return [input["container__inactive"]].join(" ");
+    switch (direction) {
+      case 'top':
+        return 'border-b border-l border-r rounded-b-lg bg-white';
+      case 'bottom':
+        return 'border-t border-l border-r rounded-t-lg bg-white';
+      default:
+        return 'border border-gray-400 rounded-lg bg-white';
+    }
   }
   if (errors) {
-    return [input["container__error--inactive"]].join(" ");
+    switch (direction) {
+      case 'top':
+        return 'border-b border-l border-r rounded-b-lg border-red-500 bg-red-50';
+      case 'bottom':
+        return 'border-t border-l border-r rounded-t-lg border-red-500 bg-red-50';
+      default:
+        return 'border border-gray-400 rounded-lg border-red-500 bg-red-50';
+    }
   }
   if (fieldActive) {
-    return [input["container__active"]].join(" ");
+    switch (direction) {
+      case 'top':
+        return 'border-2 border-black rounded-b-lg';
+      case 'bottom':
+        return 'border-2 border-black rounded-t-lg';
+      default:
+        return 'border-2 border-black rounded-lg';
+    }
   }
-  return "";
+  switch (direction) {
+    case 'top':
+      return 'border rounded-b-lg border-gray-400';
+    case 'bottom':
+      return 'border-t border-l border-r border-gray-400 rounded-t-lg';
+    default:
+      return 'border border-gray-400 rounded-lg';
+  }
 };

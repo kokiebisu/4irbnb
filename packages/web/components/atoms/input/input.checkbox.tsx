@@ -1,56 +1,42 @@
 /** styles */
-import color from "@styles/color.module.scss";
-import shape from "@styles/shape.module.scss";
-import space from "@styles/space.module.scss";
-import layout from "@styles/layout.module.scss";
-import font from "@styles/font.module.scss";
+import color from '@styles/color.module.scss';
+import shape from '@styles/shape.module.scss';
+import space from '@styles/space.module.scss';
+import layout from '@styles/layout.module.scss';
+import font from '@styles/font.module.scss';
 
 /** vectors */
-import { CheckPlain } from "@svg/original";
+import { CheckPlain } from '@svg/original';
 
 export const CheckboxInput: React.FC<{
   check?: () => void;
   checked?: boolean;
   title?: string;
   description?: string;
-}> = ({ check, checked = true, title = "Title here", description }) => {
+}> = ({ check, checked = true, title = 'Title here', description }) => {
   return (
-    <div className={[layout["flex"]].join(" ")}>
-      <div className={[space["m-r--16"]].join(" ")}>
+    <div className="flex items-center">
+      <div className="mr-5">
         <div
           onClick={check}
-          style={{ cursor: "pointer", height: 24, width: 24 }}
-          className={`${[
-            layout["flex"],
-            layout["items-center"],
-            layout["justify-center"],
-            color["b--white__3"],
-            shape["br--4"],
-          ].join(" ")} ${
+          style={{ cursor: 'pointer', height: 24, width: 24 }}
+          className={`flex items-center justify-center border  rounded ${
             checked
-              ? [color["bg--black"]].join(" ")
-              : [color["bg--white"]].join(" ")
+              ? 'bg-black border-transparent'
+              : 'bg-white border-gray-400 '
           }`}
         >
-          <div
-            className={[
-              layout["relative"],
-              layout["b--1"],
-              space["p--12"],
-            ].join(" ")}
-          >
+          <div className="relative border-none">
             <CheckPlain width={15} stroke="white" strokeWidth={5} />
           </div>
         </div>
       </div>
-      <div className={[layout["relative"], layout["t--2"]].join(" ")}>
+      <div className="relative">
         <div>
           <h4>{title}</h4>
         </div>
         <div>
-          <h4 className={[font["size--14"], color["c--gray__0"]].join(" ")}>
-            {description}
-          </h4>
+          <h4 className="text-sm text-gray-300">{description}</h4>
         </div>
       </div>
     </div>

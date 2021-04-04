@@ -1,10 +1,4 @@
-import { Button, $Button } from "@button";
-
-import color from "@styles/color.module.scss";
-import shape from "@styles/shape.module.scss";
-import layout from "@styles/layout.module.scss";
-import space from "@styles/space.module.scss";
-import font from "@styles/font.module.scss";
+import { Button, $Button } from '@button';
 
 /**
  * Renders the available card component
@@ -14,45 +8,50 @@ import font from "@styles/font.module.scss";
  * @param {string} standard - The time standard
  * @param {number} price - The price of the experience
  */
-export const AvailableCard: React.FC<{
+const AvailableCard: React.FC<{
   date?: string;
   from?: string;
   to?: string;
   standard?: string;
   price?: number;
 }> = ({
-  date = "Tue., Nov. 10",
-  from = "1:00 a.m. ",
-  to = "3:00 a.m. ",
-  standard = "PST",
+  date = 'Tue., Nov. 10',
+  from = '1:00 a.m. ',
+  to = '3:00 a.m. ',
+  standard = 'PST',
   price = 31,
 }) => {
   return (
-    <div
-      className={[space["p--24"], color["b--white__2"], shape["br--6"]].join(
-        " "
-      )}
-    >
-      <div className={[space["m-b--6"]].join(" ")}>
-        <h3 className={[font["size--15"]].join(" ")}>{date}</h3>
+    <div className="p-6 border boder-gray-300 rounded-md">
+      <div className="mb-2">
+        <h3 className="text-sm">{date}</h3>
       </div>
       <div>
-        <p className={[font["size--14"]].join(" ")}>
+        <p className="text-sm">
           {from} - {to} {standard}
         </p>
       </div>
-      <div className={[space["m-v--8"]].join(" ")}>
-        <u className={[font["size--14"]].join(" ")}>Book for a private group</u>
+      <div className="my-2">
+        <u className="text-sm">Book for a private group</u>
       </div>
-      <div className={[space["m-v--16"]].join(" ")}>
-        <span className={[font["size--15"]].join(" ")}>
+      <div className="my-2">
+        <span className="text-sm">
           <b>${price}</b>
         </span>
-        <span className={[font["size--15"]].join(" ")}> /person</span>
+        <span className="text-sm"> /person</span>
       </div>
-      <div className={[layout["inline-block"]].join(" ")}>
+      <div className="inline-block">
         <Button variant={$Button.PRIMARY} size="sm" title="Choose" />
       </div>
     </div>
   );
+};
+
+export const available = (props) => {
+  return {
+    available: {
+      component: <AvailableCard {...props} />,
+      style: '',
+    },
+  };
 };

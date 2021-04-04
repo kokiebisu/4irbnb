@@ -22,7 +22,7 @@ import { typestay } from '@card/card.typestay';
 import { vertical } from '@card/card.vertical';
 import { works } from '@card/card.works';
 
-export const factoryVariants = (props) => {
+export const factory = (props) => {
   return {
     ...again(props),
     ...anywhere(props),
