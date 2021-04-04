@@ -1,4 +1,4 @@
-export const footerItems = [
+export const items = [
   {
     name: 'About',
     items: [
@@ -46,3 +46,8 @@ export const footerItems = [
     ],
   },
 ];
+
+export const handleRedirectPage = (path) =>
+  alert(`Should redirect to /${path}`);
+
+export const spread = false;
