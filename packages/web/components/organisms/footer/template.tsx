@@ -6,17 +6,15 @@ import layout from '@styles/layout.module.scss';
 import { Button, $Button } from '@button';
 import { Globe } from '@svg/original';
 
-import { HandleRedirectPropsWithParam } from '@utils/redirect';
-
 export interface FooterTemplateProps {
   spread?: boolean;
-  handleRedirectPage: HandleRedirectPropsWithParam;
+  handleRedirectToPath: () => void;
   items?: { name: string; items: { url?: string; name?: string }[] }[];
 }
 
 export const FooterTemplate: React.FC<FooterTemplateProps> = ({
   spread,
-  handleRedirectPage,
+  handleRedirectToPath,
   items,
 }) => {
   return (
@@ -71,7 +69,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
                       >
                         <Button
                           variant={$Button.LINK}
-                          onClick={() => handleRedirectPage(url)}
+                          onClick={() => handleRedirectToPath(url)}
                           title={name}
                         />
                       </div>
@@ -125,7 +123,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
                 <Button
                   variant={$Button.LINK}
                   title="Privacy"
-                  onClick={() => handleRedirectPage('/')}
+                  onClick={() => handleRedirectToPath('/')}
                 />
               </div>
               <div>&nbsp;· &nbsp;</div>
@@ -133,7 +131,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
                 <Button
                   variant={$Button.LINK}
                   title="Terms"
-                  onClick={() => handleRedirectPage('/')}
+                  onClick={() => handleRedirectToPath('/')}
                 />
               </div>
               <div>&nbsp;· &nbsp;</div>
@@ -141,7 +139,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
                 <Button
                   variant={$Button.LINK}
                   title="Sitemap"
-                  onClick={() => handleRedirectPage('/')}
+                  onClick={() => handleRedirectToPath('/')}
                 />
               </div>
             </div>

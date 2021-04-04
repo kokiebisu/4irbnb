@@ -1,6 +1,7 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { FooterTemplate, FooterTemplateProps } from './template';
+import * as mockData from './mock';
 
 export default {
   title: 'Organisms',
@@ -12,4 +13,6 @@ const FooterStory: Story<FooterTemplateProps> = (args) => (
 );
 
 export const Footer = FooterStory.bind({});
-Footer.args = {};
+Footer.args = {
+  ...mockData,
+};
