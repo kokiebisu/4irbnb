@@ -104,13 +104,13 @@ jobs:
     steps:
       - docker-setup:
           image-name: 'kokiebisu/nextbnb-web'
-          directory-path: './ui/web/Dockerfile'
+          directory-path: './packages/web/Dockerfile'
   push-dev-web:
     executor: image-executor
     steps:
       - docker-setup:
           image-name: 'kokiebisu/nextbnb-web-dev'
-          directory-path: './ui/web/dev.Dockerfile'
+          directory-path: './packages/web/dev.Dockerfile'
 
 workflows:
   version: 2

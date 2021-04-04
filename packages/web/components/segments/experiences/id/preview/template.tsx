@@ -8,27 +8,11 @@ import { Heart, Share } from '@svg/original';
 import { Panel, $Panel } from '@panel';
 
 export interface PreviewTemplateProps {
-  title?: string;
-  ratings?: number;
-  numberOfReviews?: number;
-  superhost?: boolean;
-  location?: string;
-  province?: string;
-  country?: string;
-  layoutType?: string;
   images?: string[];
 }
 
 /**
  * Renders the panel section
- * @param {string} title - Title of the section
- * @param {number} ratings - Rating of the room/experience
- * @param {number} numberOfReviews - Number of reviews for the room/experience
- * @param {boolean} superhost - Whether if the host is superhost or not
- * @param {string} location - Location of the room/experience
- * @param {string} province - Province of the room/experience
- * @param {string} country - Country of the room/experience
- * @param {string} layoutType - Type of layout
  * @param {string[]} images - Images for the panel
  */
 export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({ images }) => {

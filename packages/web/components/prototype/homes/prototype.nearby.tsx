@@ -5,7 +5,7 @@ import color from '@styles/color.module.scss';
 import font from '@styles/font.module.scss';
 import shape from '@styles/shape.module.scss';
 
-import { Template } from '@template/s/homes';
+import { Segment } from '@template/s/homes';
 import { Bar, $Bar } from '@bar';
 
 import { Button, $Button } from '@button';
@@ -110,7 +110,7 @@ export const NearbyPrototype: React.FC<{
           </div>
         )}
         <div>
-          <Template variant="homes" />
+          <Segment variant="homes" />
         </div>
         <div
           className={[
@@ -123,7 +123,7 @@ export const NearbyPrototype: React.FC<{
         </div>
       </div>
       <div className={[space['p--24'], color['bg--white__1']].join(' ')}>
-        <Template variant="also" />
+        <Segment variant="also" />
       </div>
     </div>
   );

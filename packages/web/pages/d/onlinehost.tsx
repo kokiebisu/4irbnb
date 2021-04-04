@@ -1,14 +1,14 @@
-import { Header, $Header } from "@header";
-import { Template, $Template } from "@template/d/onlinehost";
-import { Footer } from "@footer";
+import { Header, $Header } from '@header';
+import { Segment, $Segment } from '@template/d/onlinehost';
+import { Footer } from '@footer';
 
-import layout from "@styles/layout.module.scss";
-import space from "@styles/space.module.scss";
+import layout from '@styles/layout.module.scss';
+import space from '@styles/space.module.scss';
 
-import { useTabTitle } from "@hooks/useTabTitle";
+import { useTabTitle } from '@hooks/useTabTitle';
 
 const OnlineHost = () => {
-  useTabTitle("Airbnb Experiences: Host an Online Experience");
+  useTabTitle('Airbnb Experiences: Host an Online Experience');
 
   return (
     <div>
@@ -16,26 +16,26 @@ const OnlineHost = () => {
         <Header variant={$Header.ONLINEHOST} />
       </div>
       <div>
-        <div className={[layout["container"]].join(" ")}>
-          <Template variant={$Template.BANNER} />
+        <div className={[layout['container']].join(' ')}>
+          <Segment variant={$Segment.BANNER} />
         </div>
       </div>
-      <div className={[layout["container"]].join(" ")}>
-        <Template variant={$Template.WORKS} />
+      <div className={[layout['container']].join(' ')}>
+        <Segment variant={$Segment.WORKS} />
       </div>
       <div
-        className={[layout["container--shrink"], space["p-v--64"]].join(" ")}
+        className={[layout['container--shrink'], space['p-v--64']].join(' ')}
       >
-        <Template variant={$Template.SHARING} />
+        <Segment variant={$Segment.SHARING} />
       </div>
-      <div className={[layout["container"], space["p-v--64"]].join(" ")}>
-        <Template variant={$Template.BACK} />
+      <div className={[layout['container'], space['p-v--64']].join(' ')}>
+        <Segment variant={$Segment.BACK} />
       </div>
-      <div className={[layout["container"], space["p-v--100"]].join(" ")}>
-        <Template variant={$Template.FAQ} />
+      <div className={[layout['container'], space['p-v--100']].join(' ')}>
+        <Segment variant={$Segment.FAQ} />
       </div>
       <div>
-        <Template variant={$Template.MORE} />
+        <Segment variant={$Segment.MORE} />
       </div>
       <div>
         <Footer />

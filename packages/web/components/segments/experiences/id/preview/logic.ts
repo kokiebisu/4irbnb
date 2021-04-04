@@ -1,5 +1,5 @@
-import * as data from './mock';
+import * as mockData from './mock';
 
 export const usePreview = () => {
-  return data;
+  return mockData;
 };

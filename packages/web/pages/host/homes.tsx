@@ -25,13 +25,12 @@ const Homes: () => string | JSX.Element = () => {
       <div className={[space['p-v--64'], color['b-b--white__2']].join(' ')}>
         <Segment
           variant={$Segment.COMMUNITY}
-          hosts={hosts}
           title="Host your home on Airbnb"
         />
       </div>
       <div className={[space['p-v--64'], color['b-b--white__2']].join(' ')}>
         <div className={`${[space['p__homes']].join(' ')}`}>
-          <Segment variant={$Segment.ALL} items={allItems} />
+          <Segment variant={$Segment.ALL} />
         </div>
       </div>
       <div className={[space['p-v--64']].join(' ')}>
