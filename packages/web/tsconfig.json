@@ -46,8 +46,8 @@
       "@section/*": ["components/organisms/section/*"],
       "@layout": ["components/layout"],
       "@layout/*": ["components/layout/*"],
-      "@template": ["components/template"],
-      "@template/*": ["components/template/*"],
+      "@template": ["components/segments"],
+      "@template/*": ["components/segments/*"],
       "@styles/*": ["styles/*"],
       "@svg/*": ["public/svg/*"],
       "@helper/*": ["helper/*"],
@@ -55,7 +55,8 @@
       "@context/*": ["context/*"],
       "@config": ["config/index.ts"],
       "@api": ["api"],
-      "@api/*": ["api/*"]
+      "@api/*": ["api/*"],
+      "@utils/*": ["utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".storybook/**/*"],

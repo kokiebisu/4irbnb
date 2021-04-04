@@ -1,22 +1,19 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react/types-6-0";
+import React from 'react';
+import { Story, Meta } from '@storybook/react';
 
-import { Button, ButtonProps, $Button } from "@button";
+import { Button, ButtonProps, $Button } from '@button';
 
-import button from "@button/button.module.scss";
-import font from "@styles/font.module.scss";
-import color from "@styles/color.module.scss";
-import layout from "@styles/layout.module.scss";
-import shape from "@styles/shape.module.scss";
-import space from "@styles/space.module.scss";
-import animation from "@styles/animation.module.scss";
+import font from '@styles/font.module.scss';
+import color from '@styles/color.module.scss';
+import shape from '@styles/shape.module.scss';
+import animation from '@styles/animation.module.scss';
 
 export default {
-  title: "Atoms/Button",
+  title: 'Atoms/Button',
   component: Button,
   argTypes: {
     inverse: {
-      control: "boolean",
+      control: 'boolean',
     },
     variant: {
       control: { disable: true },
@@ -49,38 +46,37 @@ const disableTitle = {
   },
 };
 
-const TemplateStory: Story<ButtonProps> = (args) => <Button {...args} />;
+const ButtonStory: Story<ButtonProps> = (args) => <Button {...args} />;
 
-export const Transparent = TemplateStory.bind({});
+export const Transparent = ButtonStory.bind({});
 Transparent.args = {
   variant: $Button.TRANSPARENT,
-  content: <h3 className={[font["size--15"]].join(" ")}>Button</h3>,
+  content: <h3 className={[font['size--15']].join(' ')}>Button</h3>,
 };
 
-export const Globe = TemplateStory.bind({});
+export const Globe = ButtonStory.bind({});
 Globe.args = {
   variant: $Button.GLOBE,
-  extendsTo: [font["text--left"]].join(" "),
+  extendsTo: [font['text--left']].join(' '),
 };
 Globe.argTypes = {
   selected: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
-export const Menu = TemplateStory.bind({});
+export const Menu = ButtonStory.bind({});
 Menu.args = {
   variant: $Button.MENU,
-  extendsTo: [animation["hover-shadow--lg"], shape["br--30"]].join(" "),
 };
 Menu.argTypes = {
   ...disableTitle,
   user: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
-export const Privacy = TemplateStory.bind({});
+export const Privacy = ButtonStory.bind({});
 Privacy.args = {
   variant: $Button.PRIVACY,
 };
@@ -93,26 +89,26 @@ Privacy.decorators = [
   ),
 ];
 
-export const Border = TemplateStory.bind({});
+export const Border = ButtonStory.bind({});
 Border.args = {
   variant: $Button.BORDER,
 };
 Border.argTypes = {
   size: {
     control: {
-      type: "select",
-      options: ["sm", "md", "lg"],
+      type: 'select',
+      options: ['sm', 'md', 'lg'],
     },
   },
   bold: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
-export const Banner = TemplateStory.bind({});
+export const Banner = ButtonStory.bind({});
 Banner.args = {
   variant: $Button.BANNER,
-  extendsTo: [color["bg--white"], shape["br--6"]].join(" "),
+  extendsTo: [color['bg--white'], shape['br--6']].join(' '),
 };
 Banner.argTypes = {
   ...disableInverse,
@@ -126,7 +122,7 @@ Banner.decorators = [
   ),
 ];
 
-export const Primary = TemplateStory.bind({});
+export const Primary = ButtonStory.bind({});
 Primary.args = {
   variant: $Button.PRIMARY,
 };
@@ -140,22 +136,22 @@ Primary.decorators = [
 Primary.argTypes = {
   ...disableInverse,
   loading: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
-export const Searchbar = TemplateStory.bind({});
+export const Searchbar = ButtonStory.bind({});
 Searchbar.args = {
   variant: $Button.SEARCHBAR,
 };
 Searchbar.argTypes = {
   ...disableInverse,
   mini: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
-export const Auth = TemplateStory.bind({});
+export const Auth = ButtonStory.bind({});
 Auth.args = {
   variant: $Button.AUTH,
 };
@@ -171,102 +167,107 @@ Auth.decorators = [
 Auth.argTypes = {
   auth: {
     control: {
-      type: "select",
-      options: ["email", "facebook", "google", "apple"],
+      type: 'select',
+      options: ['email', 'facebook', 'google', 'apple'],
     },
   },
 };
 
-export const Paginate = TemplateStory.bind({});
+export const Paginate = ButtonStory.bind({});
 Paginate.args = {
   variant: $Button.PAGINATE,
 };
 Paginate.argTypes = {
   direction: {
     control: {
-      type: "select",
-      options: ["left", "right"],
+      type: 'select',
+      options: ['left', 'right'],
     },
   },
 };
 
-export const Option = TemplateStory.bind({});
+export const Option = ButtonStory.bind({});
 Option.args = {
   variant: $Button.OPTION,
 };
 
-export const Underline = TemplateStory.bind({});
+export const Underline = ButtonStory.bind({});
 Underline.args = {
   variant: $Button.UNDERLINE,
 };
 
-export const Filter = TemplateStory.bind({});
+export const Filter = ButtonStory.bind({});
 Filter.args = {
   variant: $Button.FILTER,
 };
 Filter.argTypes = {
   inverse: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
-export const Modal = TemplateStory.bind({});
+export const Modal = ButtonStory.bind({});
 Modal.args = {
   variant: $Button.MODAL,
 };
 Modal.argTypes = {
   modalType: {
     control: {
-      type: "select",
-      options: ["close", "back"],
+      type: 'select',
+      options: ['close', 'back'],
     },
   },
 };
 
-export const Back = TemplateStory.bind({});
+export const Back = ButtonStory.bind({});
 Back.args = {
   variant: $Button.BACK,
 };
 
-export const Link = TemplateStory.bind({});
+export const Link = ButtonStory.bind({});
 Link.args = {
   variant: $Button.LINK,
 };
 
-export const Search = TemplateStory.bind({});
+export const Search = ButtonStory.bind({});
 Search.args = {
   variant: $Button.SEARCH,
 };
 Search.argTypes = {
   expand: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
-export const Expand = TemplateStory.bind({});
+export const Expand = ButtonStory.bind({});
 Expand.args = {
   variant: $Button.EXPAND,
 };
 
-export const Location = TemplateStory.bind({});
+export const Location = ButtonStory.bind({});
 Location.args = {
   variant: $Button.LOCATION,
 };
 Location.argTypes = {
   type: {
     control: {
-      type: "select",
-      options: ["explore", "recent"],
+      type: 'select',
+      options: ['explore', 'recent'],
     },
   },
 };
 
-export const Nearby = TemplateStory.bind({});
+export const Nearby = ButtonStory.bind({});
 Nearby.args = {
   variant: $Button.NEARBY,
 };
 
-export const Destination = TemplateStory.bind({});
+export const Destination = ButtonStory.bind({});
 Destination.args = {
   variant: $Button.DESTINATION,
+};
+
+export const Closed = ButtonStory.bind({});
+Closed.args = {
+  variant: $Button.CLOSED,
 };

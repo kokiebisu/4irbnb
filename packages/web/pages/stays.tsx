@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 
-import { Header, $Header } from "@header";
-import { Footer } from "@footer";
+import { Header, $Header } from '@header';
+import { Footer } from '@footer';
 
-import space from "@styles/space.module.scss";
-import layout from "@styles/layout.module.scss";
-import stays from "@styles/stays.module.scss";
-import styles from "@styles/index.module.scss";
-import shape from "@styles/shape.module.scss";
-import font from "@styles/font.module.scss";
-import color from "@styles/color.module.scss";
+import space from '@styles/space.module.scss';
+import layout from '@styles/layout.module.scss';
+import stays from '@styles/stays.module.scss';
+import styles from '@styles/index.module.scss';
+import shape from '@styles/shape.module.scss';
+import font from '@styles/font.module.scss';
+import color from '@styles/color.module.scss';
 
 /**
  * Renders /stays
@@ -17,29 +17,21 @@ import color from "@styles/color.module.scss";
 const StaysPage: () => string | JSX.Element = () => {
   return (
     <>
-      <div
-        style={{ top: 0, zIndex: 10 }}
-        className={[layout["sticky"]].join(" ")}
-      >
+      <div className="top-0 z-10 sticky">
         <Header variant={$Header.WHITE} spread />
       </div>
-      <div
-        style={{
-          zIndex: 1,
-          position: "relative",
-          width: "100vw",
-        }}
-      >
-        <div className={[layout["relative"], stays["p__background"]].join(" ")}>
-          <div className={[layout["all-sides"]].join(" ")}>
+      <div className="z-10 relative w-screen">
+        <div className="relative px-0">
+          <div className="absolute top-0 left-0 right-0 bottom-0">
             <div
-              style={{
-                display: "inline-block",
-                verticalAlign: "bottom",
-                height: "100%",
-                width: "100%",
-                minHeight: 1,
-              }}
+              className="inline-block h-full w-full min-h-full"
+              // style={{
+              //   display: 'inline-block',
+              //   verticalAlign: 'bottom',
+              //   height: '100%',
+              //   width: '100%',
+              //   minHeight: 1,
+              // }}
             >
               <picture>
                 <source
@@ -60,49 +52,43 @@ const StaysPage: () => string | JSX.Element = () => {
                 ></source>
                 <img
                   alt="banner img"
-                  className={[layout["absolute"]].join(" ")}
-                  style={{
-                    height: "100%",
-                    width: "100%",
-                    objectFit: "cover",
-                    verticalAlign: "bottom",
-                  }}
+                  className="absolute block h-full w-full object-cover"
                   loading="lazy"
                   decoding="async"
                   src="https://a0.muscache.com/im/pictures/a4568b94-29ee-49cc-ab9c-5fcc82ca878d.jpg?im_w=720"
                 />
               </picture>
               <div
-                className={stays["support"]}
+                className={stays['support']}
                 style={{
                   backgroundImage:
                     'url("https://a0.muscache.com/im/pictures/a4568b94-29ee-49cc-ab9c-5fcc82ca878d.jpg?im_w=720")',
-                  backgroundSize: "cover",
-                  height: "100%",
-                  width: "100%",
-                  verticalAlign: "bottom",
-                  backgroundPositionX: "50%",
-                  backgroundPositionY: "50%",
-                  backgroundOrigin: "border-box",
+                  backgroundSize: 'cover',
+                  height: '100%',
+                  width: '100%',
+                  verticalAlign: 'bottom',
+                  backgroundPositionX: '50%',
+                  backgroundPositionY: '50%',
+                  backgroundOrigin: 'border-box',
                 }}
               />
             </div>
           </div>
-          <div className={[layout["all-sides"]].join(" ")}>
+          <div className={[layout['all-sides']].join(' ')}>
             <div
               className={[
-                styles["container"],
-                layout["z--20"],
-                shape["h--full"],
-                styles["flex__explore"],
-              ].join(" ")}
+                styles['container'],
+                layout['z--20'],
+                shape['h--full'],
+                styles['flex__explore'],
+              ].join(' ')}
             >
               <div
-                className={[stays["m-v__banner"], space["m-h--0"]].join(" ")}
+                className={[stays['m-v__banner'], space['m-h--0']].join(' ')}
               >
                 <h1
-                  className={[color["c--white"], stays["size__banner"]].join(
-                    " "
+                  className={[color['c--white'], stays['size__banner']].join(
+                    ' '
                   )}
                 >
                   Unique stays
@@ -110,18 +96,18 @@ const StaysPage: () => string | JSX.Element = () => {
               </div>
               <div
                 className={[
-                  font["c--white"],
-                  stays["w__banner"],
-                  stays["m__banner"],
-                ].join(" ")}
+                  font['c--white'],
+                  stays['w__banner'],
+                  stays['m__banner'],
+                ].join(' ')}
               >
                 <p
                   className={[
-                    font["size--18"],
-                    font["weight--100"],
-                    font["ls--3"],
-                    color["c--white"],
-                  ].join(" ")}
+                    font['size--18'],
+                    font['weight--100'],
+                    font['ls--3'],
+                    color['c--white'],
+                  ].join(' ')}
                 >
                   Tents, tree houses, and more—these spaces are more than just a
                   place to sleep.
@@ -130,7 +116,7 @@ const StaysPage: () => string | JSX.Element = () => {
             </div>
           </div>
         </div>
-        <div className={[space["p-v--38"]].join(" ")}>
+        <div className={[space['p-v--38']].join(' ')}>
           {/* <div className={[styles['container'], layout['relative']].join(' ')}>
             <div className={[space['m-v--16']].join(' ')}>
               <Section

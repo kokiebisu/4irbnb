@@ -1,40 +1,40 @@
-import { useState } from "react";
-import { useFormik } from "formik";
-import Router from "next/router";
+import { useState } from 'react';
+import { useFormik } from 'formik';
+import Router from 'next/router';
 
-import space from "@styles/space.module.scss";
-import font from "@styles/font.module.scss";
-import layout from "@styles/layout.module.scss";
-import color from "@styles/color.module.scss";
+import space from '@styles/space.module.scss';
+import font from '@styles/font.module.scss';
+import layout from '@styles/layout.module.scss';
+import color from '@styles/color.module.scss';
 
-import { Input, $Input } from "@input";
-import { Button, $Button } from "@button";
-import { Bullet, $Bullet } from "@bullet";
+import { Input, $Input } from '@input';
+import { Button, $Button } from '@button';
+import { Bullet, $Bullet } from '@bullet';
 
-import { validateSignup as validate } from "@helper/auth";
-import { usePost } from "@hooks/usePost";
-import { useAuthDispatch } from "@context/auth";
+import { validateSignup as validate } from '@helper/auth';
+import { usePost } from '@hooks/usePost';
+import { useAuthDispatch } from '@context/auth';
 
 /**
  * Renders the signup template component
  */
-export const SignupTemplate: React.FC<{}> = () => {
+export const SignupPrototype: React.FC<{}> = () => {
   const authDispatch = useAuthDispatch();
   const [loading, setLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
-      firstname: "",
-      lastname: "",
-      day: "",
-      month: "",
-      year: "",
-      email: "",
-      password: "",
+      firstname: '',
+      lastname: '',
+      day: '',
+      month: '',
+      year: '',
+      email: '',
+      password: '',
     },
     validate,
     onSubmit: async (values) => {
       const submit = await usePost({
-        url: "/api/users/signup",
+        url: '/api/users/signup',
         body: values,
         triggerLoading: (state) => {
           setLoading(state);
@@ -43,7 +43,7 @@ export const SignupTemplate: React.FC<{}> = () => {
           Router.reload();
         },
         onFail: () => {
-          authDispatch({ type: "exists" });
+          authDispatch({ type: 'exists' });
         },
       });
 
@@ -53,7 +53,7 @@ export const SignupTemplate: React.FC<{}> = () => {
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <div className={[space["p--24"]].join(" ")}>
+      <div className="p-5">
         <div>
           <Input
             variant={$Input.NAME}
@@ -73,7 +73,7 @@ export const SignupTemplate: React.FC<{}> = () => {
           />
           <div>
             {formik.errors.firstname !== undefined ? (
-              <div className={[space["m-t--6"]].join(" ")}>
+              <div className={[space['m-t--6']].join(' ')}>
                 <Bullet
                   variant={$Bullet.REQUIRED}
                   message={formik.errors.firstname}
@@ -83,7 +83,7 @@ export const SignupTemplate: React.FC<{}> = () => {
           </div>
           <div>
             {formik.errors.lastname !== undefined ? (
-              <div className={[space["m-t--6"]].join(" ")}>
+              <div className={[space['m-t--6']].join(' ')}>
                 <Bullet
                   variant={$Bullet.REQUIRED}
                   message={formik.errors.lastname}
@@ -96,20 +96,20 @@ export const SignupTemplate: React.FC<{}> = () => {
               formik.errors.lastname === undefined && (
                 <p
                   className={[
-                    space["m-t--8"],
-                    font["size--11"],
-                    color["c--gray__1"],
-                  ].join(" ")}
+                    space['m-t--8'],
+                    font['size--11'],
+                    color['c--gray__1'],
+                  ].join(' ')}
                 >
                   Make sure it matches the name on your government ID.
                 </p>
               )}
           </div>
         </div>
-        <div className={[space["m-t--22"]].join(" ")}>
+        <div className={[space['m-t--22']].join(' ')}>
           <div
-            style={{ border: "1px solid gray", borderRadius: 14 }}
-            className={[layout["flex"]].join(" ")}
+            style={{ border: '1px solid gray', borderRadius: 14 }}
+            className={[layout['flex']].join(' ')}
           >
             <Input
               spread
@@ -140,12 +140,12 @@ export const SignupTemplate: React.FC<{}> = () => {
             />
           </div>
           {formik.errors.day !== undefined && (
-            <div className={[space["m-t--6"]].join(" ")}>
+            <div className="mt-2">
               <Bullet variant={$Bullet.REQUIRED} message={formik.errors.day} />
             </div>
           )}
           {formik.errors.month !== undefined && (
-            <div className={[space["m-t--6"]].join(" ")}>
+            <div className="mt-2">
               <Bullet
                 variant={$Bullet.REQUIRED}
                 message={formik.errors.month}
@@ -153,7 +153,7 @@ export const SignupTemplate: React.FC<{}> = () => {
             </div>
           )}
           {formik.errors.year !== undefined && (
-            <div className={[space["m-t--6"]].join(" ")}>
+            <div className="mt-2">
               <Bullet variant={$Bullet.REQUIRED} message={formik.errors.year} />
             </div>
           )}
@@ -161,18 +161,12 @@ export const SignupTemplate: React.FC<{}> = () => {
         {formik.errors.day !== undefined &&
           formik.errors.month !== undefined &&
           formik.errors.year !== undefined && (
-            <p
-              className={[
-                space["m-t--8"],
-                font["size--11"],
-                color["c--gray__1"],
-              ].join(" ")}
-            >
+            <p className="mt-2 text-xs text-gray-400">
               To sign up, you need to be at least 18. Your birthday won't be
               shared with other people who use Airbnb.
             </p>
           )}
-        <div className={[space["m-t--22"]].join(" ")}>
+        <div className="mt-5">
           <div>
             <Input
               variant={$Input.EMAIL}
@@ -183,26 +177,20 @@ export const SignupTemplate: React.FC<{}> = () => {
           </div>
           <div>
             {formik.errors.email !== undefined ? (
-              <div className={[space["m-t--6"]].join(" ")}>
+              <div className={[space['m-t--6']].join(' ')}>
                 <Bullet
                   variant={$Bullet.REQUIRED}
                   message={formik.errors.email}
                 />
               </div>
             ) : (
-              <p
-                className={[
-                  space["m-t--8"],
-                  font["size--11"],
-                  color["c--gray__1"],
-                ].join(" ")}
-              >
+              <p className="mt-2 text-xs text-gray-300">
                 We'll email you trip confirmations and receipts
               </p>
             )}
           </div>
         </div>
-        <div className={[space["m-t--22"]].join(" ")}>
+        <div className="mt-6">
           <div>
             <Input
               variant={$Input.PASSWORD}
@@ -213,7 +201,7 @@ export const SignupTemplate: React.FC<{}> = () => {
           </div>
           <div>
             {formik.errors.password !== undefined && (
-              <div className={[space["m-t--6"]].join(" ")}>
+              <div className="mt-2">
                 <Bullet
                   variant={$Bullet.REQUIRED}
                   message={formik.errors.password}
@@ -223,50 +211,25 @@ export const SignupTemplate: React.FC<{}> = () => {
           </div>
         </div>
         <div>
-          <p
-            className={[
-              space["m-t--22"],
-              font["size--11"],
-              color["c--gray__1"],
-            ].join(" ")}
-          >
-            By selecting <b>Agree and continue</b> below, I agree to Airbnb's{" "}
-            <u
-              className={[font["weight--500"]].join(" ")}
-              style={{ color: "#1B4CC4" }}
-            >
-              Terms of Service
-            </u>
-            ,{" "}
-            <u
-              className={[font["weight--500"]].join(" ")}
-              style={{ color: "#1B4CC4" }}
-            >
+          <p className="mt-6 text-xs text-gray-500">
+            By selecting <b>Agree and continue</b> below, I agree to Airbnb's{' '}
+            <u className="font-medium text-blue-500">Terms of Service</u>,{' '}
+            <u className="font-medium text-blue-500">
               Payments Terms of Service
             </u>
-            ,{" "}
-            <u
-              className={[font["weight--500"]].join(" ")}
-              style={{ color: "#1B4CC4" }}
-            >
-              Privacy Policy
-            </u>
-            , and{" "}
-            <u
-              className={[font["weight--500"]].join(" ")}
-              style={{ color: "#1B4CC4" }}
-            >
+            , <u className="font-medium text-blue-500">Privacy Policy</u>, and{' '}
+            <u className="font-medium text-blue-500">
               Nondiscrimination Policy
             </u>
             .
           </p>
         </div>
-        <div className={[space["m-t--16"]].join(" ")}>
+        <div className={[space['m-t--16']].join(' ')}>
           <Button
             variant={$Button.PRIMARY}
             title="Agree and continue"
             loading={loading}
-            block
+            stretch
           />
         </div>
       </div>

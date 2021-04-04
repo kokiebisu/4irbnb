@@ -1,16 +1,16 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 /** styles **/
-import shape from "@styles/shape.module.scss";
-import color from "@styles/color.module.scss";
-import space from "@styles/space.module.scss";
-import layout from "@styles/layout.module.scss";
-import font from "@styles/font.module.scss";
-import input from "@input/input.module.scss";
+import shape from '@styles/shape.module.scss';
+import color from '@styles/color.module.scss';
+import space from '@styles/space.module.scss';
+import layout from '@styles/layout.module.scss';
+import font from '@styles/font.module.scss';
+import input from '@input/input.module.scss';
 
 /** Styling */
-import { styleInput, styleLabel, styleContainer } from "./styling.select";
-import { renderShape } from "./logic/logic.region";
+import { styleInput, styleLabel, styleContainer } from './styling.select';
+import { renderShape } from './logic/logic.region';
 
 /**
  * Renders the text input component
@@ -33,11 +33,11 @@ export const RegionInput: React.FC<{
     <div
       style={{ height: 60 }}
       className={`${[
-        layout["flex"],
-        input["outside"],
-        layout["relative"],
-        layout["items-center"],
-      ].join(" ")} `}
+        layout['flex'],
+        input['outside'],
+        layout['relative'],
+        layout['items-center'],
+      ].join(' ')} `}
     >
       <div
         className={`${renderShape(direction)} ${styleContainer(
@@ -46,29 +46,29 @@ export const RegionInput: React.FC<{
           value
         )}`}
         style={{
-          padding: "0 12px",
-          position: "relative",
-          height: "100%",
-          width: "100%",
+          padding: '0 12px',
+          position: 'relative',
+          height: '100%',
+          width: '100%',
         }}
       >
         <select
-          style={{ height: "100%" }}
+          style={{ height: '100%' }}
           id="region"
           onChange={handleChange}
           value={value}
           onFocus={() => setFieldActive(true)}
           onBlur={() => setFieldActive(false)}
           className={`${[
-            shape["br--10"],
-            space["p--0"],
-            shape["w--full"],
-            layout["block"],
-            color["b--0"],
-            font["size--16"],
-            font["weight--300"],
-            input["input"],
-          ].join(" ")} ${styleInput(errors, fieldActive)}`}
+            shape['br--10'],
+            space['p--0'],
+            shape['w--full'],
+            layout['block'],
+            color['b--0'],
+            font['size--16'],
+            font['weight--300'],
+            input['input'],
+          ].join(' ')} ${styleInput(errors, fieldActive)}`}
         >
           <option value="canada">Canada (+1)</option>
           <option value="japan">Afghanistan (+1)</option>
@@ -79,12 +79,12 @@ export const RegionInput: React.FC<{
         <label
           htmlFor="region"
           className={`${[
-            layout["absolute"],
-            font["size--12"],
-            color["c--gray__1"],
-            font["weight--100"],
-            input["label"],
-          ].join(" ")} ${styleLabel(errors, fieldActive)}`}
+            layout['absolute'],
+            font['size--12'],
+            color['c--gray__1'],
+            font['weight--100'],
+            input['label'],
+          ].join(' ')} ${styleLabel(errors, fieldActive)}`}
         >
           Country/Region
         </label>
