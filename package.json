@@ -15,7 +15,8 @@
   "homepage": "https://github.com/kokiebisu/airbnb#readme",
   "private": true,
   "scripts": {
-    "deploy:storybook": "npm install -g lerna && lerna bootstrap && lerna run build-storybook",
+    "prep": "npm install -g lerna && lerna bootstrap",
+    "deploy:storybook": "lerna run build-storybook",
     "bootstrap": "lerna bootstrap",
     "bootstrap:production": "lerna bootstrap -- --production --no-optional",
     "test:stays": "lerna run test:ci --scope=@airbnb/stays --since",
