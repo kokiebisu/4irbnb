@@ -1,5 +1,5 @@
-import { hostData } from './mock';
+import * as mockData from './mock';
 
 export const useHost = () => {
-  return hostData;
+  return mockData;
 };
