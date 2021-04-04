@@ -1,14 +1,12 @@
-import { ExperiencePanel } from "./panel.experience";
-import { RoomPanel } from "./panel.room";
+import { factory } from './utils/factory';
 
 export const $Panel = {
-  EXPERIENCE: "experience",
-  ROOM: "room",
+  EXPERIENCE: 'experience',
+  ROOM: 'room',
 };
 
 export interface PanelProps {
   variant: string;
-  extendsTo?: string;
   [property: string]: any;
 }
 
@@ -17,11 +15,6 @@ export const Panel: React.FC<PanelProps> = ({
   extendsTo,
   ...props
 }) => {
-  const variants = {
-    experience: <ExperiencePanel {...props} />,
-    room: <RoomPanel {...props} />,
-  };
-  return (
-    <div data-testid={`${variant}-panel--molecule`}>{variants[variant]}</div>
-  );
+  const variants = factory(props);
+  return <div data-testid={`${variant}-panel`}>{variants[variant]}</div>;
 };

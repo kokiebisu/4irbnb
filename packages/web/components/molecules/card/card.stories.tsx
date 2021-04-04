@@ -274,8 +274,3 @@ Collection.decorators = [
     </div>
   ),
 ];
-
-export const Worth = CardStory.bind({});
-Worth.args = {
-  variant: $Card.WORTH,
-};

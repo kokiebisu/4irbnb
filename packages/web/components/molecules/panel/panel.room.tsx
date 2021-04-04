@@ -1,131 +1,59 @@
-/** styles */
-import shape from "@styles/shape.module.scss";
-
-export const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
+/**
+ *
+ * @param param0
+ * @returns
+ */
+const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
   return (
-    <div style={{ paddingTop: "42%", position: "relative" }}>
-      <div
-        style={{ position: "absolute", top: 0, bottom: 0, left: 0, right: 0 }}
-      >
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            columnGap: 10,
-            rowGap: 10,
-            width: "100%",
-            height: "100%",
-          }}
-        >
+    <div className="relative" style={{ paddingTop: '42%' }}>
+      <div className="animate-pulse absolute top-0 bottom-0 left-0 right-0">
+        <div className="grid grid-cols-2 gap-3 w-full h-full">
           <div>
             {images[0] ? (
               <img
-                className={[
-                  shape["background-cover"],
-                  shape["background-repeat"],
-                  shape["blr--8"],
-                ].join(" ")}
+                className="bg-cover bg-repeat rounded-lr-lg"
                 src={images[0]}
               />
             ) : (
-              <div
-                className={[shape["blr--16"]].join(" ")}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  backgroundColor: "lightgray",
-                }}
-              />
+              <div className="rounded-l-lg w-full h-full bg-gray-500" />
             )}
           </div>
-          <div
-            style={{
-              display: "grid",
-              columnGap: 10,
-              rowGap: 10,
-              gridTemplateColumns: "repeat(2, 1fr)",
-              gridTemplateRows: "repeat(2, 1fr)",
-            }}
-          >
+          <div className="grid gap-3 grid-cols-2 grid-rows-2">
             <div>
               {images[1] ? (
-                <img
-                  className={[
-                    shape["background-cover"],
-                    shape["background-repeat"],
-                  ].join(" ")}
-                  src={images[1]}
-                />
+                <img className="bg-cover bg-repeat" src={images[1]} />
               ) : (
-                <div
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    backgroundColor: "lightgray",
-                  }}
-                />
+                <div className="w-full h-full bg-gray-500" />
               )}
             </div>
             <div>
               {images[2] ? (
                 <img
-                  className={[
-                    shape["btrr--16"],
-                    shape["background-cover"],
-                    shape["background-repeat"],
-                  ].join(" ")}
+                  className="rounded-tr-lg bg-cover bg-repeat"
                   src={images[2]}
                 />
               ) : (
-                <div
-                  className={[shape["btrr--16"]].join(" ")}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    backgroundColor: "lightgray",
-                  }}
-                />
+                <div className="rounded-tr-lg w-full h-full bg-gray-500" />
               )}
             </div>
             <div>
               {images[3] ? (
                 <img
-                  className={[
-                    shape["bbrr--16"],
-                    shape["background-cover"],
-                    shape["background-repeat"],
-                  ].join(" ")}
+                  className="rounded-br-lg bg-cover bg-repeat"
                   src={images[3]}
                 />
               ) : (
-                <div
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    backgroundColor: "lightgray",
-                  }}
-                />
+                <div className="w-full h-full bg-gray-500" />
               )}
             </div>
             <div>
               {images[3] ? (
                 <img
-                  className={[
-                    shape["bbrr--16"],
-                    shape["background-cover"],
-                    shape["background-repeat"],
-                  ].join(" ")}
+                  className="rounded-br-lg bg-cover bg-repeat"
                   src={images[3]}
                 />
               ) : (
-                <div
-                  className={[shape["bbrr--16"]].join(" ")}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    backgroundColor: "lightgray",
-                  }}
-                />
+                <div className="rounded-br-lg w-full h-full bg-gray-500" />
               )}
             </div>
           </div>
@@ -133,4 +61,12 @@ export const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
       </div>
     </div>
   );
+};
+
+export const room = (props) => {
+  return {
+    room: {
+      component: <RoomPanel {...props} />,
+    },
+  };
 };
