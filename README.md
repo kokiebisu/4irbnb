@@ -8,12 +8,9 @@
   <a href="https://circleci.com/gh/kokiebisu/airbnb">
     <img src="https://circleci.com/gh/kokiebisu/airbnb.svg?style=svg" alt="Build Status on CircleCI" />
   </a>
-  <a href="https://airbnb-storybook.netlify.app/">
+  <a href="https://nextbnb-storybook.vercel.app">
     <img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg" alt="Build Status on CircleCI" />
   </a>
-   <a href="">
-      <img src="https://api.netlify.com/api/v1/badges/dda49c15-af6f-485b-bd6b-5b88b45a5466/deploy-status" />
-    </a>
   <br/>
 </p>
 

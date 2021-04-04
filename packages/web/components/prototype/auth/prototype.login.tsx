@@ -1,40 +1,40 @@
-import { useState } from "react";
-import { useFormik } from "formik";
-import Router from "next/router";
+import { useState } from 'react';
+import { useFormik } from 'formik';
+import Router from 'next/router';
 
-import { useAuthDispatch, useAuthState } from "@context/auth";
+import { useAuthDispatch, useAuthState } from '@context/auth';
 
-import space from "@styles/space.module.scss";
-import font from "@styles/font.module.scss";
-import layout from "@styles/layout.module.scss";
+import space from '@styles/space.module.scss';
+import font from '@styles/font.module.scss';
+import layout from '@styles/layout.module.scss';
 
-import { Input, $Input } from "@input";
-import { Button, $Button } from "@button";
-import { Bullet, $Bullet } from "@bullet";
-import { Card, $Card } from "@card";
+import { Input, $Input } from '@input';
+import { Button, $Button } from '@button';
+import { Bullet, $Bullet } from '@bullet';
+import { Card, $Card } from '@card';
 
-import { validateLogin as validate } from "@helper/auth";
+import { validateLogin as validate } from '@helper/auth';
 
-import { usePost } from "@hooks/usePost";
+import { usePost } from '@hooks/usePost';
 
 /**
  * Renders the login template component
  */
-export const LoginTemplate: React.FC<{}> = () => {
+export const LoginPrototype: React.FC<{}> = () => {
   const authState = useAuthState();
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState("pending");
+  const [status, setStatus] = useState('pending');
   const authDispatch = useAuthDispatch();
 
   const formik = useFormik({
     initialValues: {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     },
     validate,
     onSubmit: (values) => {
       const submit = usePost({
-        url: "/api/users/signin",
+        url: '/api/users/signin',
         body: values,
         triggerLoading(state) {
           setLoading(state);
@@ -43,7 +43,7 @@ export const LoginTemplate: React.FC<{}> = () => {
           Router.reload();
         },
         onFail() {
-          setStatus("fail");
+          setStatus('fail');
         },
       });
       submit();
@@ -51,24 +51,24 @@ export const LoginTemplate: React.FC<{}> = () => {
   });
 
   const switchAuth = () => {
-    if (authState.title === "Log in") {
-      return authDispatch({ type: "auth_signup" });
+    if (authState.title === 'Log in') {
+      return authDispatch({ type: 'auth_signup' });
     }
-    return authDispatch({ type: "auth_login" });
+    return authDispatch({ type: 'auth_login' });
   };
 
   const switchBack = () => {
-    return authDispatch({ type: "auth_login" });
+    return authDispatch({ type: 'auth_login' });
   };
 
   const redirectTo = () => {
-    return authDispatch({ type: "forgot_password" });
+    return authDispatch({ type: 'forgot_password' });
   };
 
   return (
-    <div className={[space["p--24"]].join(" ")}>
-      {status === "fail" && (
-        <div className={[space["m-b--16"]].join(" ")}>
+    <div className="p-5">
+      {status === 'fail' && (
+        <div className="mb-4">
           <Card variant={$Card.AGAIN} />
         </div>
       )}
@@ -92,7 +92,7 @@ export const LoginTemplate: React.FC<{}> = () => {
           </div>
           <div>
             {formik.errors.email !== undefined && (
-              <div className={[space["m-t--6"]].join(" ")}>
+              <div className={[space['m-t--6']].join(' ')}>
                 <Bullet
                   variant={$Bullet.REQUIRED}
                   message={formik.errors.email}
@@ -102,7 +102,7 @@ export const LoginTemplate: React.FC<{}> = () => {
           </div>
           <div>
             {formik.errors.password !== undefined && (
-              <div className={[space["m-t--6"]].join(" ")}>
+              <div className={[space['m-t--6']].join(' ')}>
                 <Bullet
                   variant={$Bullet.REQUIRED}
                   message={formik.errors.password}
@@ -110,38 +110,37 @@ export const LoginTemplate: React.FC<{}> = () => {
               </div>
             )}
           </div>
-          {status === "success" && (
-            <div className={[space["m-t--16"]].join(" ")}>
+          {status === 'success' && (
+            <div className={[space['m-t--16']].join(' ')}>
               <Card variant={$Card.SET} />
             </div>
           )}
         </div>
-        <div className={[space["m-v--16"]].join(" ")}>
+        <div className="my-3">
           <Button
             variant={$Button.PRIMARY}
             title="Log in"
             loading={loading}
             block
+            stretch
           />
         </div>
-        <div className={[space["m-v--16"]].join(" ")}>
+        <div className="my-3">
           <Button
             variant={$Button.UNDERLINE}
             title="Forgot password?"
             onClick={redirectTo}
           />
         </div>
-        <div className={[space["m-v--16"]].join(" ")}>
+        <div className="my-3">
           <Button
             variant={$Button.UNDERLINE}
             title="More login options"
             onClick={switchBack}
           />
         </div>
-        <div className={[layout["flex"]].join(" ")}>
-          <p className={[font["size--14"], space["m-r--8"]].join(" ")}>
-            Don't have an account?
-          </p>
+        <div className="flex">
+          <p className="text-sm mr-2">Don't have an account?</p>
           <Button
             variant={$Button.UNDERLINE}
             title="Sign up"

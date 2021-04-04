@@ -1,10 +1,10 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react/types-6-0";
+import React from 'react';
+import { Story, Meta } from '@storybook/react/types-6-0';
 
-import { Input, InputProps, $Input } from "@input";
+import { Input, InputProps, $Input } from '@input';
 
 export default {
-  title: "Atoms/Input",
+  title: 'Atoms/Input',
   component: Input,
   argTypes: {
     extendsTo: {
@@ -15,112 +15,117 @@ export default {
   },
 } as Meta;
 
-const TemplateStory: Story<InputProps> = (args) => <Input {...args} />;
+const InputStory: Story<InputProps> = (args) => <Input {...args} />;
 
-export const email = TemplateStory.bind({});
+export const email = InputStory.bind({});
 email.args = {
   variant: $Input.EMAIL,
 };
 
-export const password = TemplateStory.bind({});
+export const password = InputStory.bind({});
 password.args = {
   variant: $Input.PASSWORD,
 };
 
-export const name = TemplateStory.bind({});
+export const name = InputStory.bind({});
 name.args = {
   variant: $Input.NAME,
 };
 name.argTypes = {
   name: {
     control: {
-      type: "select",
-      options: ["firstname", "lastname"],
+      type: 'select',
+      options: ['firstname', 'lastname'],
     },
   },
 };
 
-export const birthdate = TemplateStory.bind({});
+export const birthdate = InputStory.bind({});
 birthdate.args = {
   variant: $Input.BIRTHDATE,
 };
 
-export const phone = TemplateStory.bind({});
+export const phone = InputStory.bind({});
 phone.args = {
   variant: $Input.PHONE,
 };
 
-export const region = TemplateStory.bind({});
+export const region = InputStory.bind({});
 region.args = {
   variant: $Input.REGION,
 };
 
-export const place = TemplateStory.bind({});
+export const place = InputStory.bind({});
 place.args = {
   variant: $Input.PLACE,
 };
 
-export const guests = TemplateStory.bind({});
+export const guests = InputStory.bind({});
 guests.args = {
   variant: $Input.GUESTS,
 };
 
-export const address = TemplateStory.bind({});
+export const address = InputStory.bind({});
 address.args = {
   variant: $Input.ADDRESS,
 };
 
-export const select = TemplateStory.bind({});
+export const select = InputStory.bind({});
 select.args = {
   variant: $Input.SELECT,
 };
 
-export const radio = TemplateStory.bind({});
+export const radio = InputStory.bind({});
 radio.args = {
   variant: $Input.RADIO,
 };
 
-export const counter = TemplateStory.bind({});
+export const counter = InputStory.bind({});
 counter.args = {
   variant: $Input.COUNTER,
 };
 
-export const text = TemplateStory.bind({});
+export const text = InputStory.bind({});
 text.args = {
   variant: $Input.TEXT,
 };
 
-export const checkbox = TemplateStory.bind({});
+export const checkbox = InputStory.bind({});
 checkbox.args = {
   variant: $Input.CHECKBOX,
 };
 checkbox.argTypes = {
   checked: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 
-export const textarea = TemplateStory.bind({});
+export const textarea = InputStory.bind({});
 textarea.args = {
   variant: $Input.TEXTAREA,
 };
 
-export const verify = TemplateStory.bind({});
+export const verify = InputStory.bind({});
 verify.args = {
   variant: $Input.VERIFY,
 };
 
-export const closed = TemplateStory.bind({});
+export const closed = InputStory.bind({});
 closed.args = {
   variant: $Input.CLOSED,
 };
 
-export const price = TemplateStory.bind({});
+export const price = InputStory.bind({});
 price.args = {
   variant: $Input.PRICE,
 };
 
-export const photo = TemplateStory.bind({});
+export const limit = InputStory.bind({});
+limit.args = {
+  variant: $Input.LIMIT,
+};
+
+export const photo = InputStory.bind({});
 photo.args = {
   variant: $Input.PHOTO,
 };
@@ -132,7 +137,7 @@ photo.decorators = [
   ),
 ];
 
-export const another = TemplateStory.bind({});
+export const another = InputStory.bind({});
 another.args = {
   variant: $Input.ANOTHER,
 };

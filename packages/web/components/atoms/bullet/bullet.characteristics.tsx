@@ -1,10 +1,3 @@
-/** styles **/
-import color from "@styles/color.module.scss";
-import font from "@styles/font.module.scss";
-import space from "@styles/space.module.scss";
-import layout from "@styles/layout.module.scss";
-
-/** vectors */
 import {
   Calendar,
   Devices,
@@ -15,10 +8,9 @@ import {
   People,
   Sparkle,
   Time,
-} from "@svg/original";
+} from '@svg/original';
 
-/** Helpers */
-import * as Helper from "@helper/time";
+import * as Helper from '@helper/time';
 
 /**
  * Renders the characteristic bullet
@@ -37,40 +29,40 @@ export const CharacteristicBullet: React.FC<{
   people?: number;
   group?: number;
 }> = ({
-  characteristic = "house",
+  characteristic = 'house',
   time = 60,
-  devices = ["computer", "smartphone"],
+  devices = ['computer', 'smartphone'],
   people = 10,
   group = 100,
-  languages = ["English", "Chinese"],
+  languages = ['English', 'Chinese'],
 }) => {
   const characteristics = {
     house: {
       icon: <House width={24} />,
-      title: "Entire home",
-      description: "You’ll have the farm stay to yourself.",
+      title: 'Entire home',
+      description: 'You’ll have the farm stay to yourself.',
     },
     sparkle: {
       icon: <Sparkle width={24} />,
-      title: "Enhanced Clean",
+      title: 'Enhanced Clean',
       description:
         "This host committed to Airbnb's 5-step enhanced cleaning process.",
     },
     door: {
       icon: <Door width={24} />,
-      title: "Self check-in",
-      description: "You can check in with the doorman.",
+      title: 'Self check-in',
+      description: 'You can check in with the doorman.',
     },
     calendar: {
       icon: <Calendar width={24} />,
-      title: "Cancellation policy",
+      title: 'Cancellation policy',
       description:
-        "Add your trip dates to get the cancellation details for this stay.",
+        'Add your trip dates to get the cancellation details for this stay.',
     },
     guidelines: {
       icon: <Guidelines width={24} />,
-      title: "House rules",
-      description: "The host doesn’t allow pets, parties, or smoking.",
+      title: 'House rules',
+      description: 'The host doesn’t allow pets, parties, or smoking.',
     },
     time: {
       icon: <Time width={32} />,
@@ -91,41 +83,18 @@ export const CharacteristicBullet: React.FC<{
   };
 
   return (
-    <div
-      className={[
-        layout["flex"],
-        space["m-v--8"],
-        layout["items-center"],
-        space["p-r--8"],
-      ].join(" ")}
-    >
-      <div className={[space["m-r--14"]].join(" ")}>
-        {characteristics[characteristic].icon}
-      </div>
+    <div className="flex my-4 items-center pr-4">
+      <div className="mr-4">{characteristics[characteristic].icon}</div>
       <div>
         {characteristics[characteristic].description ? (
-          <h3
-            className={[
-              font["ls--3"],
-              space["m-b--4"],
-              color["c--gray__3"],
-              font["size--16"],
-              font["weight--500"],
-            ].join(" ")}
-          >
+          <h3 className="mb-1 font-base text-base text-gray-600 tracking-tight">
             {characteristics[characteristic].title}
           </h3>
         ) : (
           <p>{characteristics[characteristic].title}</p>
         )}
         {characteristics[characteristic].description && (
-          <p
-            className={[
-              color["c--gray__1"],
-              font["weight--100"],
-              font["size--14"],
-            ].join(" ")}
-          >
+          <p className="text-gray-500 font-thin text-sm">
             {characteristics[characteristic].description}
           </p>
         )}

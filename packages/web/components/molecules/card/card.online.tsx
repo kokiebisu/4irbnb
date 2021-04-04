@@ -1,8 +1,3 @@
-/** styles **/
-import color from "@styles/color.module.scss";
-import font from "@styles/font.module.scss";
-import shape from "@styles/shape.module.scss";
-
 /**
  * Renders the online card component
  * @param {string} small - Image with smaller pixels
@@ -10,7 +5,7 @@ import shape from "@styles/shape.module.scss";
  * @param {string} title - Title of the card
  * @param {boolean} inverse - Whether if the component takes the inverse styling or not
  */
-export const OnlineCard: React.FC<{
+const OnlineCard: React.FC<{
   small?: string;
   large?: string;
   title?: string;
@@ -18,18 +13,17 @@ export const OnlineCard: React.FC<{
 }> = ({
   small,
   large,
-  title = "Learn to make soup dumplings in Shanghai",
+  title = 'Learn to make soup dumplings in Shanghai',
   inverse = false,
 }) => {
   return (
-    <div style={{ height: "100%", width: "100%", position: "relative" }}>
+    <div className="relative h-full w-full">
       <div
+        className="inline-block h-full w-full"
         style={{
-          display: "inline-block",
-          verticalAlign: "bottom",
-          minHeight: 1,
-          height: "100%",
-          width: "100%",
+          verticalAlign: 'bottom',
+          height: '100%',
+          width: '100%',
         }}
       >
         {small && large ? (
@@ -47,51 +41,32 @@ export const OnlineCard: React.FC<{
               media="(min-width: 1439.1px)"
             ></source>
             <img
-              style={{ objectFit: "cover", verticalAlign: "bottom" }}
-              className={[shape["br--20"]].join(" ")}
+              style={{ objectFit: 'cover', verticalAlign: 'bottom' }}
+              className="rounded-lg"
               aria-hidden="true"
               decoding="async"
               src={`${small}?im_w=720`}
             ></img>
           </picture>
         ) : (
-          <div
-            className={[
-              shape["w--full"],
-              color["bg--white__2"],
-              shape["br--20"],
-            ].join(" ")}
-            style={{
-              paddingTop: "100%",
-            }}
-          />
+          <div className="w-full bg-gray-300 rounded-lg pt-full" />
         )}
       </div>
       <div
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-        }}
-        className={`${inverse ? color["bg--gray__4"] : color["bg--white"]} ${[
-          shape["bbr--15"],
-          [shape["shadow--lg"]].join(" "),
-        ].join(" ")}`}
+        className={`absolute bottom-0 left-0 right-0 rounded-b-lg shadow-lg ${
+          inverse ? 'bg-gray-600' : 'bg-white'
+        }`}
       >
         <div
+          className="pt-4 pr-4 pb-0 pl-4 w-full rounded-b-lg"
           style={{
-            padding: "15px 15px 0 15px",
-            width: "100%",
             minHeight: 75,
-            borderBottomRightRadius: 15,
-            borderBottomLeftRadius: 15,
           }}
         >
           <h4
-            className={`${inverse ? color["c--white"] : font["weight--500"]} ${[
-              font["size--15"],
-            ].join(" ")}`}
+            className={`${
+              inverse ? 'text-white' : 'text-gray-600 text-base'
+            } text-sm`}
           >
             {title}
           </h4>
@@ -99,4 +74,13 @@ export const OnlineCard: React.FC<{
       </div>
     </div>
   );
+};
+
+export const online = (props) => {
+  return {
+    online: {
+      component: <OnlineCard {...props} />,
+      style: '',
+    },
+  };
 };

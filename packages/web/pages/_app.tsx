@@ -1,8 +1,8 @@
-import React from "react";
-import Head from "next/head";
-import "@styles/global.scss";
-import { ContextProvider } from "@context/provider";
-import { useToggleState } from "@context/toggle";
+import '../styles/globals.css';
+import React from 'react';
+import Head from 'next/head';
+import { ContextProvider } from '@context/provider';
+import { useToggleState } from '@context/toggle';
 
 const MyApp = ({ Component, pageProps }) => {
   return (

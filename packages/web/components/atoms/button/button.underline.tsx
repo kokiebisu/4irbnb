@@ -1,42 +1,45 @@
-/** styles */
-import layout from "@styles/layout.module.scss";
-import color from "@styles/color.module.scss";
-
 /**
  * Renders the underline button component
  * @param {function} onClick - Action taken when the button is pressed
  * @param {string} title - Title of the button
  */
-export const UnderlineButton: React.FC<{
+const UnderlineButton: React.FC<{
   title?: string;
   font?: number;
   bold?: boolean;
   unselected?: boolean;
 }> = ({
-  title = "Title here",
+  title = 'Title here',
   font = 14,
   bold = false,
   unselected = false,
 }) => {
   return (
-    <div
-      className={[layout["inline-block"], color["bg--transparent"]].join(" ")}
-    >
+    <div className="inline-block bg-transparent">
       {bold ? (
         <h3
+          className={unselected ? 'color-gray-200' : null}
           style={{ fontSize: font }}
-          className={unselected ? [color["c--white__3"]].join(" ") : undefined}
         >
           {unselected ? title : <u>{title}</u>}
         </h3>
       ) : (
         <h4
           style={{ fontSize: font }}
-          className={unselected && [color["c--white__3"]].join(" ")}
+          className={unselected ? 'c--white__3' : null}
         >
           {unselected ? title : <u>{title}</u>}
         </h4>
       )}
     </div>
   );
+};
+
+export const underline = (props) => {
+  return {
+    underline: {
+      component: <UnderlineButton {...props} />,
+      style: '',
+    },
+  };
 };
