@@ -1,8 +1,7 @@
 import { $Button, Button } from '@button';
-import { HandleRedirectProps } from '@utils/redirect';
 
 export interface WorthTemplateProps {
-  handleRedirectToHostPage: HandleRedirectProps;
+  handleRedirectToHostPage: () => void;
 }
 
 /**

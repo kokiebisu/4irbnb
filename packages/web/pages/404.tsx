@@ -81,7 +81,7 @@ const ErrorPage = () => {
               className={[space['p-l--16'], responsive['n_to_b--sm']].join(' ')}
             >
               <div style={{ width: 350 }}>
-                <img src="https://a0.muscache.com/nextbnb/static/error_pages/404-Airbnb_final-d652ff855b1335dd3eedc3baa8dc8b69.gif" />
+                <img src="https://a0.muscache.com/airbnb/static/error_pages/404-Airbnb_final-d652ff855b1335dd3eedc3baa8dc8b69.gif" />
               </div>
             </div>
           </div>

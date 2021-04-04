@@ -1,8 +1,10 @@
+import { useRouter } from 'next/router';
 import { useState } from 'react';
-import { handleDestinationRedirect } from '@utils/redirect';
+
 import { categories, items } from './mock';
 
 export const useDestinations = () => {
+  const router = useRouter();
   const [destinationType, setDestinationType] = useState<
     'artsCulture' | 'outdoor' | 'cabins' | 'beach' | 'popular'
   >('artsCulture');
@@ -10,6 +12,9 @@ export const useDestinations = () => {
   const handleDestinationTypeChange = (value) => {
     setDestinationType(value);
   };
+
+  const handleDestinationRedirect = (city) =>
+    router.push(`/${city.toLowerCase().split(' ').join('-')}/stays`);
 
   return {
     destinationType,
