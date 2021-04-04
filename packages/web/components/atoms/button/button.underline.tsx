@@ -3,7 +3,7 @@
  * @param {function} onClick - Action taken when the button is pressed
  * @param {string} title - Title of the button
  */
-const UnderlineButton: React.FC<{
+export const UnderlineButton: React.FC<{
   title?: string;
   font?: number;
   bold?: boolean;
@@ -33,13 +33,4 @@ const UnderlineButton: React.FC<{
       )}
     </div>
   );
-};
-
-export const underline = (props) => {
-  return {
-    underline: {
-      component: <UnderlineButton {...props} />,
-      style: '',
-    },
-  };
 };

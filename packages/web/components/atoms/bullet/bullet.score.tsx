@@ -1,16 +1,9 @@
-/** styles **/
-import font from "@styles/font.module.scss";
-import space from "@styles/space.module.scss";
-import layout from "@styles/layout.module.scss";
-import shape from "@styles/space.module.scss";
-import color from "@styles/color.module.scss";
-
 /**
  * Renders the score bullet
  * @param {string} category - Type of score bullet
  * @param {number} average - Average score
  */
-export const ScoreBullet: React.FC<{
+const ScoreBullet: React.FC<{
   category?: string;
   average?: number;
   reviews?: {
@@ -19,49 +12,24 @@ export const ScoreBullet: React.FC<{
     date: string;
     description: string;
   }[];
-}> = ({ category = "Aspect", average = 5.0 }) => {
+}> = ({ category = 'Aspect', average = 5.0 }) => {
   return (
-    <div
-      className={[
-        space["p-v--2"],
-        layout["flex"],
-        layout["items-center"],
-        layout["justify-between"],
-        shape["w--50p"],
-      ].join(" ")}
-    >
-      <p className={[font["weight--300"]].join(" ")}>{category}</p>
-      <div
-        className={[
-          layout["flex"],
-          layout["items-center"],
-          shape["w-full"],
-        ].join(" ")}
-      >
+    <div className="py-1 flex itesm-center justify-between w-1/2">
+      <p className="font-light">{category}</p>
+      <div className="flex items-center w-full">
         <div>
-          <div
-            className={[
-              color["bg--white__3"],
-              layout["relative"],
-              shape["h__4"],
-            ].join(" ")}
-          >
-            <span
-              className={[
-                layout["absolute"],
-                layout["t--0"],
-                layout["l--0"],
-                layout["b--0"],
-                layout["bg--black"],
-                shape["w--50p"],
-              ].join(" ")}
-            ></span>
+          <div className="relative h-3 bg-gray-300">
+            <span className="absolute t-0 l-0 b-0 bg-black w-1/2"></span>
           </div>
         </div>
-        <p className={[space["p-r--16"], font["size--12"]].join(" ")}>
-          {average}
-        </p>
+        <p className="pr-4 text-2xs">{average}</p>
       </div>
     </div>
   );
+};
+
+export const score = (props) => {
+  return {
+    score: { component: <ScoreBullet {...props} /> },
+  };
 };
