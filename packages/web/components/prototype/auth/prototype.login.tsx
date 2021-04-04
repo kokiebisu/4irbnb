@@ -20,7 +20,7 @@ import { usePost } from '@hooks/usePost';
 /**
  * Renders the login template component
  */
-export const LoginTemplate: React.FC<{}> = () => {
+export const LoginPrototype: React.FC<{}> = () => {
   const authState = useAuthState();
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState('pending');

@@ -1,54 +1,54 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react/types-6-0";
-import { Header, HeaderProps, $Header } from "@header";
+import React from 'react';
+import { Story, Meta } from '@storybook/react';
+import { Header, HeaderProps, $Header } from '@header';
 
 export default {
-  title: "Organisms/Header",
+  title: 'Organisms/Header',
   component: Header,
-  argTypes: { onClick: { action: "clicked" } },
+  argTypes: { onClick: { action: 'clicked' } },
 } as Meta;
 
-const TemplateStory: Story<HeaderProps> = (args) => <Header {...args} />;
+const HeaderStory: Story<HeaderProps> = (args) => <Header {...args} />;
 
-export const landing = TemplateStory.bind({});
+export const landing = HeaderStory.bind({});
 landing.args = {
   variant: $Header.LANDING,
 };
 landing.argTypes = {
   criteria: {
-    control: "boolean",
+    control: 'boolean',
   },
 };
 landing.parameters = {
   storyshots: { disable: true },
 };
 
-export const white = TemplateStory.bind({});
+export const white = HeaderStory.bind({});
 white.args = {
   variant: $Header.WHITE,
 };
 
-export const details = TemplateStory.bind({});
+export const details = HeaderStory.bind({});
 details.args = {
   variant: $Header.DETAILS,
 };
 
-export const homes = TemplateStory.bind({});
+export const homes = HeaderStory.bind({});
 homes.args = {
   variant: $Header.HOMES,
 };
 
-export const experiences = TemplateStory.bind({});
+export const experiences = HeaderStory.bind({});
 experiences.args = {
   variant: $Header.EXPERIENCES,
 };
 
-export const onlineHost = TemplateStory.bind({});
+export const onlineHost = HeaderStory.bind({});
 onlineHost.args = {
   variant: $Header.ONLINEHOST,
 };
 
-export const stay = TemplateStory.bind({});
+export const stay = HeaderStory.bind({});
 stay.args = {
   variant: $Header.STAY,
 };
