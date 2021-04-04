@@ -1,5 +1,11 @@
-import { Button, $Button } from '@button';
-import { Star } from '@svg/original';
+import { Button, $Button } from "@button";
+
+import layout from "@styles/layout.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
+import space from "@styles/space.module.scss";
+
+import { Star } from "@svg/original";
 
 /**
  * Renders the modal which gives all the available options
@@ -11,16 +17,38 @@ export const AvailabilityBar: React.FC<{
   reviews?: number;
 }> = ({ ratings = 4.99, reviews = 271 }) => {
   return (
-    <div className="items-center justify-between flex border-t border-gray-300">
-      <div className="py-4">
+    <div
+      className={[
+        layout["items-center"],
+        layout["justify-between"],
+        layout["flex"],
+        color["b-t--white__2"],
+      ].join(" ")}
+    >
+      <div className={[space["p-v--16"]].join(" ")}>
         <p>Add dates for prices</p>
-        <div className="flex items-center">
+        <div className={[layout["flex"], layout["items-center"]].join(" ")}>
           <div>
             <Star width={12} />
           </div>
           <div>
-            <span className="inline-block text-xs ml-1">{ratings}</span>
-            <span className="inline-block text-xs text-gray-400 ml-1">
+            <span
+              className={[
+                layout["inline-block"],
+                font["size--12"],
+                space["m-l--4"],
+              ].join(" ")}
+            >
+              {ratings}
+            </span>
+            <span
+              className={[
+                layout["inline-block"],
+                font["size--12"],
+                color["c--white__3"],
+                space["m-l--4"],
+              ].join(" ")}
+            >
               ({reviews})
             </span>
           </div>

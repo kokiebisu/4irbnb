@@ -1,26 +1,16 @@
-import { NameLogo, NoNameLogo } from '@svg/logo';
+/** styles */
+import styles from "@styles/index.module.scss";
 
-/**
- * Renders the Logo Button component
- * @param noName
- * @param fill
- */
-const LogoButton: React.FC<{ noName?: boolean; fill?: string }> = ({
+/** vectors */
+import { NameLogo, NoNameLogo } from "@svg/logo";
+
+export const LogoButton: React.FC<{ noName?: boolean; fill?: string }> = ({
   noName = false,
-  fill = '#F5385D',
+  fill = "#F5385D",
 }) => {
   return noName ? (
     <NoNameLogo fill={fill} width={30} height={32} />
   ) : (
     <NameLogo fill={fill} width={102} height={32} />
   );
-};
-
-export const logo = (props) => {
-  return {
-    logo: {
-      component: <LogoButton {...props} />,
-      style: '',
-    },
-  };
 };

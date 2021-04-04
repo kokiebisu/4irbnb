@@ -3,10 +3,9 @@ import space from '@styles/space.module.scss';
 import styles from '@styles/index.module.scss';
 import font from '@styles/font.module.scss';
 import layout from '@styles/layout.module.scss';
-
+import { Button, $Button } from '@button';
 import { Globe } from '@svg/original';
 
-import { Button, $Button } from '@button';
 import { HandleRedirectPropsWithParam } from '@utils/redirect';
 
 export interface FooterTemplateProps {
@@ -16,7 +15,7 @@ export interface FooterTemplateProps {
 }
 
 export const FooterTemplate: React.FC<FooterTemplateProps> = ({
-  spread = false,
+  spread,
   handleRedirectPage,
   items,
 }) => {

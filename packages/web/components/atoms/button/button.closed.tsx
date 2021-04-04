@@ -1,15 +1,16 @@
-import { CheckPlain, Close } from '@svg/original';
+/** vectors */
+import { CheckPlain, Close } from "@svg/original";
 
-const ClosedButton: React.FC<{
+export const ClosedButton: React.FC<{
   selected?: boolean;
   content?: string;
-}> = ({ content = 'close', selected = false }) => {
+}> = ({ content = "close", selected = false }) => {
   const contents = {
     close: (
       <Close
         width={16}
         fill={selected}
-        stroke={selected ? 'white' : 'black'}
+        stroke={selected ? "white" : "black"}
         strokeWidth={2}
       />
     ),
@@ -17,27 +18,24 @@ const ClosedButton: React.FC<{
       <CheckPlain
         width={16}
         fill={selected}
-        stroke={selected ? 'white' : 'black'}
+        stroke={selected ? "white" : "black"}
         strokeWidth={2}
       />
     ),
   };
   return (
     <div
-      className={`flex items-center justify-center p-2 rounded-full border ${
-        selected ? 'bg-black border-black' : 'bg-white border-gray-300'
-      }`}
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 5,
+        borderRadius: 9999,
+        backgroundColor: selected ? "black" : "white",
+        border: `1px solid ${selected ? "black" : "lightgray"}`,
+      }}
     >
       {contents[content]}
     </div>
   );
-};
-
-export const closed = (props) => {
-  return {
-    closed: {
-      component: <ClosedButton {...props} />,
-      style: '',
-    },
-  };
 };

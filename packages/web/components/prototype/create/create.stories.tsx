@@ -1,81 +1,81 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
-import { Prototype, CreateProps, $Prototype } from '@prototype/create';
+import React from "react";
+import { Story, Meta } from "@storybook/react/types-6-0";
+import { Prototype, CreateProps, $Prototype } from "@prototype/create";
 
 export default {
-  title: 'Prototypes/Create',
+  title: "Prototypes/Create",
   component: Prototype,
-  argTypes: { onClick: { action: 'clicked' } },
+  argTypes: { onClick: { action: "clicked" } },
 } as Meta;
 
-const CreatePrototype: Story<CreateProps> = (args) => <Prototype {...args} />;
+const TemplateStory: Story<CreateProps> = (args) => <Prototype {...args} />;
 
-export const GetStarted = CreatePrototype.bind({});
+export const GetStarted = TemplateStory.bind({});
 GetStarted.args = {
   variant: $Prototype.GETSTARTED,
 };
 
-export const Room = CreatePrototype.bind({});
+export const Room = TemplateStory.bind({});
 Room.args = {
   variant: $Prototype.ROOM,
 };
 
-export const Bedrooms = CreatePrototype.bind({});
+export const Bedrooms = TemplateStory.bind({});
 Bedrooms.args = {
   variant: $Prototype.BEDROOMS,
 };
 
-export const Bathrooms = CreatePrototype.bind({});
+export const Bathrooms = TemplateStory.bind({});
 Bathrooms.args = {
   variant: $Prototype.BATHROOMS,
 };
 
-export const Location = CreatePrototype.bind({});
+export const Location = TemplateStory.bind({});
 Location.args = {
   variant: $Prototype.LOCATION,
 };
 
-export const Amenities = CreatePrototype.bind({});
+export const Amenities = TemplateStory.bind({});
 Amenities.args = {
   variant: $Prototype.AMENITIES,
 };
 
-export const Spaces = CreatePrototype.bind({});
+export const Spaces = TemplateStory.bind({});
 Spaces.args = {
   variant: $Prototype.SPACES,
 };
 
-export const Description = CreatePrototype.bind({});
+export const Description = TemplateStory.bind({});
 Description.args = {
   variant: $Prototype.DESCRIPTION,
 };
 
-export const Title = CreatePrototype.bind({});
+export const Title = TemplateStory.bind({});
 Title.args = {
   variant: $Prototype.TITLE,
 };
 
-export const Phone = CreatePrototype.bind({});
+export const Phone = TemplateStory.bind({});
 Phone.args = {
   variant: $Prototype.PHONE,
 };
 
-export const Requirements = CreatePrototype.bind({});
+export const Requirements = TemplateStory.bind({});
 Requirements.args = {
   variant: $Prototype.REQUIREMENTS,
 };
 
-export const Rules = CreatePrototype.bind({});
+export const Rules = TemplateStory.bind({});
 Rules.args = {
   variant: $Prototype.RULES,
 };
 
-export const Checkin = CreatePrototype.bind({});
+export const Checkin = TemplateStory.bind({});
 Checkin.args = {
   variant: $Prototype.CHECKIN,
 };
 
-export const Advance = CreatePrototype.bind({});
+export const Advance = TemplateStory.bind({});
 Advance.args = {
   variant: $Prototype.ADVANCE,
 };

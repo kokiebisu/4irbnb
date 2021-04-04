@@ -1,8 +1,9 @@
-import { Bar, $Bar } from '@bar';
-import { Header, $Header } from '@header';
+import { Bar, $Bar } from "@bar";
+import { Header, $Header } from "@header";
 
-import space from '@styles/space.module.scss';
-import responsive from '@styles/responsive.module.scss';
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import responsive from "@styles/responsive.module.scss";
 
 export const CreateLayout: React.FC<{
   title?: string;
@@ -13,7 +14,7 @@ export const CreateLayout: React.FC<{
   percentage?: number;
   criteria?: boolean;
 }> = ({
-  title = 'Property and guests',
+  title = "Property and guests",
   left,
   right,
   next,
@@ -23,7 +24,7 @@ export const CreateLayout: React.FC<{
 }) => {
   return (
     <div>
-      <div className="z-40 top-0 sticky">
+      <div style={{ position: "sticky", zIndex: 9999, top: 0 }}>
         <div>
           <Header variant={$Header.STAY} title={title} />
         </div>
@@ -32,37 +33,43 @@ export const CreateLayout: React.FC<{
         </div>
       </div>
       <div
-        className="flex overflow-y-auto"
-        style={{ minHeight: 'calc(100vh - 75px)' }}
+        className={[layout["flex"]].join(" ")}
+        style={{ overflowY: "auto", minHeight: "calc(100vh - 75px)" }}
       >
-        <div className="w-full sm:w-3/5 flex justify-end">
+        <div
+          className={[
+            responsive["w100p_to_55p--xs"],
+            layout["flex"],
+            layout["justify-end"],
+          ].join(" ")}
+        >
           <div
-            className={[responsive['full_to_maxw550--xs']].join(' ')}
+            className={[responsive["full_to_maxw550--xs"]].join(" ")}
             style={{
               paddingBottom: 100,
             }}
           >
-            <div className="pt-12 px-5">
-              <div className="z-10">{left}</div>
+            <div className={[space["p-t--64"], space["p-h--32"]].join(" ")}>
+              <div style={{ zIndex: 1 }}>{left}</div>
             </div>
           </div>
           <div
             className={[
-              responsive['maxw100p_to_55p--xs'],
-              responsive['justify--center_to_end--xs'],
-            ].join(' ')}
+              responsive["maxw100p_to_55p--xs"],
+              responsive["justify--center_to_end--xs"],
+            ].join(" ")}
             style={{
-              backgroundColor: 'white',
-              width: '100%',
-              position: 'fixed',
+              backgroundColor: "white",
+              width: "100%",
+              position: "fixed",
               bottom: 0,
               zIndex: 60,
-              display: 'flex',
+              display: "flex",
             }}
           >
             <div
-              style={{ width: '100%', maxWidth: 550 }}
-              className={[space['p-h--32']].join(' ')}
+              style={{ width: "100%", maxWidth: 550 }}
+              className={[space["p-h--32"]].join(" ")}
             >
               <Bar
                 variant={$Bar.CREATE}
@@ -74,8 +81,8 @@ export const CreateLayout: React.FC<{
           </div>
         </div>
         <div
-          className={[responsive['n_to_b--xs']].join(' ')}
-          style={{ width: '45%', backgroundColor: '#FAFAFA' }}
+          className={[responsive["n_to_b--xs"]].join(" ")}
+          style={{ width: "45%", backgroundColor: "#FAFAFA" }}
         >
           {right}
         </div>

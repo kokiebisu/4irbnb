@@ -1,36 +1,36 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { Bar, BarProps, $Bar } from '@bar';
+import React from "react";
+import { Story, Meta } from "@storybook/react/types-6-0";
+import { Bar, BarProps, $Bar } from "@bar";
 
 export default {
-  title: 'Organisms/Bar',
+  title: "Organisms/Bar",
   component: Bar,
   argTypes: { variant: { control: { disable: true } } },
 } as Meta;
 
-const BarStory: Story<BarProps> = (args) => <Bar {...args} />;
+const TemplateStory: Story<BarProps> = (args) => <Bar {...args} />;
 
-export const Paginate = BarStory.bind({});
+export const Paginate = TemplateStory.bind({});
 Paginate.args = {
   variant: $Bar.PAGINATE,
 };
 
-export const Covid = BarStory.bind({});
+export const Covid = TemplateStory.bind({});
 Covid.args = {
   variant: $Bar.COVID,
 };
 
-export const Progress = BarStory.bind({});
+export const Progress = TemplateStory.bind({});
 Progress.args = {
   variant: $Bar.PROGRESS,
 };
 Progress.argTypes = {
   percentage: {
-    control: 'number',
+    control: "number",
   },
 };
 
-export const Search = BarStory.bind({});
+export const Search = TemplateStory.bind({});
 Search.args = {
   variant: $Bar.SEARCH,
 };
@@ -44,34 +44,34 @@ Search.decorators = [
 Search.argTypes = {
   selected: {
     control: {
-      type: 'select',
-      options: [null, 'location', 'checkin', 'checkout', 'guests'],
+      type: "select",
+      options: [null, "location", "checkin", "checkout", "guests"],
     },
   },
   type: {
     control: {
-      type: 'select',
-      options: ['stay', 'experiences'],
+      type: "select",
+      options: ["stay", "experiences"],
     },
   },
 };
 
-export const Create = BarStory.bind({});
+export const Create = TemplateStory.bind({});
 Create.args = {
   variant: $Bar.CREATE,
 };
 
-export const Menu = BarStory.bind({});
+export const Menu = TemplateStory.bind({});
 Menu.args = {
   variant: $Bar.MENU,
 };
 
-export const Availability = BarStory.bind({});
+export const Availability = TemplateStory.bind({});
 Availability.args = {
   variant: $Bar.AVAILABILITY,
 };
 
-export const Filters = BarStory.bind({});
+export const Filters = TemplateStory.bind({});
 Filters.args = {
   variant: $Bar.FILTERS,
 };

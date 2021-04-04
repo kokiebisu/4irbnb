@@ -1,18 +1,25 @@
-import { ChevronRight } from '@svg/regular';
+/** styles */
+import font from "@styles/font.module.scss";
+import layout from "@styles/layout.module.scss";
+
+/** vectors */
+import { ChevronRight } from "@svg/regular";
 
 /**
  * Renders the expand button
  * @param {string} to - Redirects to the path being specified
  * @param {string} title - Title of the button
  */
-const ExpandButton: React.FC<{ to?: string; title?: string }> = ({
-  title = 'Button',
+export const ExpandButton: React.FC<{ to?: string; title?: string }> = ({
+  title = "Button",
 }) => {
   return (
     <div>
-      <div className="flex items-center">
+      <div className={[layout["flex"], layout["items-center"]].join(" ")}>
         <div>
-          <u className="text-sm">{title}</u>
+          <u className={[font["size--15"], font["weight--500"]].join(" ")}>
+            {title}
+          </u>
         </div>
         <div>
           <ChevronRight width={14} stroke="black" strokeWidth={5} />
@@ -20,13 +27,4 @@ const ExpandButton: React.FC<{ to?: string; title?: string }> = ({
       </div>
     </div>
   );
-};
-
-export const expand = (props) => {
-  return {
-    expand: {
-      component: <ExpandButton {...props} />,
-      style: '',
-    },
-  };
 };

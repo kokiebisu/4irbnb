@@ -1,44 +1,78 @@
+/** styles **/
+import shape from "@styles/shape.module.scss";
+import layout from "@styles/layout.module.scss";
+import space from "@styles/space.module.scss";
+import font from "@styles/font.module.scss";
+import color from "@styles/color.module.scss";
+import cardStyles from "@card/card.module.scss";
+
 /**
  * Renders the typestay card
  * @param {Object} card - Information about the card
  */
-const TypeStayCard: React.FC<{
+export const TypeStayCard: React.FC<{
   card?: any;
 }> = ({
   card = {
-    title: 'Type',
+    title: "Type",
     imgUrl:
-      'https://a0.muscache.com/im/pictures/175f945a-a4ac-416c-bb10-7e49a927c42f.jpg?im_w=720',
+      "https://a0.muscache.com/im/pictures/175f945a-a4ac-416c-bb10-7e49a927c42f.jpg?im_w=720",
   },
 }) => {
   return (
-    <div className="block h-full w-full mr-2">
-      <div className="rounded-lg shadow-sm">
-        <div className="relative">
-          <div className="relative top-0 bottom-0 left-0 right-0">
+    <div
+      className={[
+        layout["block"],
+        shape["h--full"],
+        shape["w--full"],
+        space["m-r--8"],
+      ].join(" ")}
+    >
+      <div className={[shape["br--12"], shape["shadow--sm"]].join(" ")}>
+        <div style={{ position: "relative", paddingTop: "66.6667%" }}>
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              bottom: 0,
+              left: 0,
+              right: 0,
+            }}
+          >
             <picture>
               <source srcSet={card.imgUrl}></source>
               <img
                 decoding="async"
                 src={card.imgUrl}
-                className="object-cover rounded-t-md"
+                style={{
+                  objectFit: "cover",
+                  borderTopLeftRadius: 12,
+                  borderTopRightRadius: 12,
+                }}
               />
             </picture>
           </div>
         </div>
-        <div className="h-16 sm:h-auto p-4 bg-white rounded-b-md">
-          <p className="font-medium text-sm text-gray-400">{card.title}</p>
+        <div
+          className={[cardStyles["h__card"]].join(" ")}
+          style={{
+            padding: 16,
+            backgroundColor: "white",
+            borderBottomLeftRadius: 12,
+            borderBottomRightRadius: 12,
+          }}
+        >
+          <p
+            className={[
+              font["weight--500"],
+              font["size--14"],
+              color["c--gray__3"],
+            ].join(" ")}
+          >
+            {card.title}
+          </p>
         </div>
       </div>
     </div>
   );
-};
-
-export const typestay = (props) => {
-  return {
-    typestay: {
-      component: <TypeStayCard {...props} />,
-      style: '',
-    },
-  };
 };

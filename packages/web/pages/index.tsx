@@ -1,23 +1,28 @@
 import { AnimatePresence, motion } from 'framer-motion';
+
 import { useToggleState } from '@context/toggle';
+
+import index from '@styles/index.module.scss';
+import layout from '@styles/layout.module.scss';
 import space from '@styles/space.module.scss';
 import color from '@styles/color.module.scss';
 import shape from '@styles/shape.module.scss';
-import { categoryItems, anywhereItems, destinationItems } from '../content';
-import { nearbyItems } from '../data/nearby';
+
 import { Layout } from '@layout';
+
 import { Animation } from '@animation';
 import { Modal, $Modal } from '@modal';
-import { Segment, $Segment } from 'components/segments/index/index';
+import { Segment, $Segment } from '@template/index';
 import { Footer } from '@footer';
+
 import { Bar, $Bar } from '@bar';
+
 import { useHandleScroll } from '@hooks/useHandleScroll';
 import { useHandleDocumentResize } from '@hooks/useHandleDocumentResize';
 import { useTimeout } from '@hooks/useTimeout';
 import { useTabTitle } from '@hooks/useTabTitle';
 
 import { APIClient } from '../api/client';
-import { useRouter } from 'next/router';
 
 const LandingPage = ({ currentUser }) => {
   useTabTitle('Vacation Rentals, Homes, Experiences & Places - Airbnb');
@@ -25,15 +30,17 @@ const LandingPage = ({ currentUser }) => {
   const toggleState = useToggleState();
   const scrollPosition = useHandleScroll();
   const pageHeight = useHandleDocumentResize();
-  const router = useRouter();
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
+    <div
+      style={{ overflowX: 'hidden' }}
+      className={[layout['relative'], shape['min-h--fullv']].join(' ')}
+    >
       <div>
         <div>
           <Bar variant={$Bar.COVID} />
         </div>
-        <Segment variant="banner" data={currentUser || null} />
+        <Segment variant="banner" />
         {loading ? (
           <>
             <Layout variant="landing" spread>
@@ -42,8 +49,15 @@ const LandingPage = ({ currentUser }) => {
             <Layout variant="landing" title="Live anywhere" spread>
               <Segment variant={$Segment.ANYWHERE} />
             </Layout>
-            <Layout spread variant="landing">
-              <Segment variant={$Segment.WORTH} />
+            <div className={space['m-v--32']}></div>
+            <Layout
+              dark
+              spread
+              variant="landing"
+              title="Meet Online Experiences"
+              subtitle="Interactive activities you can do together, led by expert hosts."
+            >
+              <Segment variant={$Segment.ONLINE} sectionType="landing" dark />
             </Layout>
             <Layout
               variant="landing"
@@ -61,13 +75,27 @@ const LandingPage = ({ currentUser }) => {
             </Layout>
           </>
         ) : (
-          <div className="my-11 flex items-center justify-center">
+          <div
+            className={[
+              space['m-v--22'],
+              layout['flex'],
+              layout['items-center'],
+              layout['justify-center'],
+            ].join(' ')}
+          >
             <Animation type="loading" dark />
           </div>
         )}
         <Footer spread />
-        <div className="fixed w-full z-50 bottom-0 flex justify-center px-5 md:px-10 lg:px-16 pb-6">
-          <div>
+        <div
+          style={{ position: 'fixed', width: '100%', zIndex: 50 }}
+          className={[
+            layout['fb--0'],
+            layout['flex'],
+            layout['justify-center'],
+          ].join(' ')}
+        >
+          <div className={[index['m__privacy']].join(' ')}>
             <Modal
               variant={$Modal.PRIVACY}
               criteria={toggleState.privacy}
@@ -83,9 +111,12 @@ const LandingPage = ({ currentUser }) => {
               exit={{ y: 60 }}
               initial={{ y: 0 }}
               transition={{ duration: 0.5 }}
-              className="md:hidden"
+              className={index['none__menubar']}
             >
-              <div className="fixed w-full z-30 bottom-0">
+              <div
+                className={[layout['fixed'], shape['w--full']].join(' ')}
+                style={{ zIndex: 30, bottom: 0 }}
+              >
                 <Bar
                   variant={$Bar.MENU}
                   extendsTo={[color['b-t--white__2']].join(' ')}
@@ -95,8 +126,25 @@ const LandingPage = ({ currentUser }) => {
           )}
         </AnimatePresence>
         {toggleState.auth && (
-          <div className="fixed z-50 bottom-0 left-0 right-0 top-0 bg-black bg-opacity-50">
-            <div className="flex justify-center items-center h-screen">
+          <div
+            style={{
+              position: 'fixed',
+              zIndex: 60,
+              bottom: 0,
+              left: 0,
+              right: 0,
+              top: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.6)',
+            }}
+          >
+            <div
+              className={[
+                layout['flex'],
+                layout['justify-center'],
+                layout['items-center'],
+                shape['h--100v'],
+              ].join(' ')}
+            >
               <Modal
                 variant={$Modal.AUTH}
                 animate="slideup"
@@ -107,8 +155,25 @@ const LandingPage = ({ currentUser }) => {
           </div>
         )}
         {toggleState.globe && (
-          <div className="fixed z-50 bottom-0 top-0 left-0 right-0 bg-black bg-opacity-30">
-            <div className="flex justify-center items-center h-screen">
+          <div
+            style={{
+              position: 'fixed',
+              zIndex: 60,
+              bottom: 0,
+              left: 0,
+              right: 0,
+              top: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.6)',
+            }}
+          >
+            <div
+              className={[
+                layout['flex'],
+                layout['justify-center'],
+                layout['items-center'],
+                shape['h--100v'],
+              ].join(' ')}
+            >
               <Modal
                 variant={$Modal.GLOBE}
                 extendsTo={[

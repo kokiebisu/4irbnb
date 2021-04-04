@@ -1,5 +1,11 @@
-import Router from 'next/router';
-import { Button, $Button } from '@button';
+import Router from "next/router";
+
+import space from "@styles/space.module.scss";
+import color from "@styles/color.module.scss";
+import font from "@styles/font.module.scss";
+import shape from "@styles/shape.module.scss";
+
+import { Button, $Button } from "@button";
 
 /**
  * Renders the host card component
@@ -8,19 +14,20 @@ import { Button, $Button } from '@button';
  * @param {string} stayType - Type of stay
  * @param {string} location - Location of the stay
  */
-const HostCard: React.FC<{
+export const HostCard: React.FC<{
   imgUrl?: string;
   host?: string;
   stayType?: string;
   location?: string;
-}> = ({ imgUrl, host = 'Host', stayType = 'Type', location = 'Location' }) => {
+}> = ({ imgUrl, host = "Host", stayType = "Type", location = "Location" }) => {
   return (
     <div>
-      <div className="">
+      <div>
         {imgUrl ? (
           <img
-            className="rounded-md object-cover"
+            className={[shape["br--20"]].join(" ")}
             style={{
+              objectFit: "cover",
               height: 434,
               width: 350,
             }}
@@ -28,35 +35,33 @@ const HostCard: React.FC<{
           />
         ) : (
           <div
-            className="animate-pulse rounded-md bg-gray-400"
+            className={[shape["br--20"], color["bg--white__2"]].join(" ")}
             style={{ height: 434, width: 350 }}
           />
         )}
       </div>
-      <div className="mt-2">
+      <div style={{ marginTop: 6 }}>
         <h3>{host}</h3>
       </div>
-      <div className="my-1">
-        <h4 className="capitalize tracking-wide text-sm text-gray-500">
+      <div className={[space["m-v--8"]].join(" ")}>
+        <h4
+          style={{ textTransform: "capitalize" }}
+          className={[
+            font["ls--4"],
+            font["size--15"],
+            color["c--gray__4"],
+          ].join(" ")}
+        >
           Hosts a {stayType} in {location}
         </h4>
       </div>
       <div>
         <Button
-          onClick={() => Router.push('/')}
+          onClick={() => Router.push("/")}
           variant={$Button.UNDERLINE}
           title={`Check out some ${stayType}s`}
         />
       </div>
     </div>
   );
-};
-
-export const host = (props) => {
-  return {
-    host: {
-      component: <HostCard {...props} />,
-      style: '',
-    },
-  };
 };
