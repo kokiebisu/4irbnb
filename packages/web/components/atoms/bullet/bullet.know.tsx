@@ -17,7 +17,7 @@ import {
  * @param {Object[]} checkin - Time range for checkin
  * @param {string} checkout - Time for checkin
  */
-export const KnowBullet: React.FC<{
+const KnowBullet: React.FC<{
   categoryType?: string;
   checkin?: any;
   checkout?: string;
@@ -83,4 +83,10 @@ export const KnowBullet: React.FC<{
       </div>
     </div>
   );
+};
+
+export const know = (props) => {
+  return {
+    know: { component: <KnowBullet {...props} /> },
+  };
 };

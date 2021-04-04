@@ -51,7 +51,7 @@ export const types = {
   },
 };
 
-export const OnlineHostBullet: React.FC<{
+const OnlineHostBullet: React.FC<{
   type?: string;
 }> = ({ type = 'home' }) => {
   return (
@@ -65,4 +65,10 @@ export const OnlineHostBullet: React.FC<{
       </div>
     </div>
   );
+};
+
+export const onlinehost = (props) => {
+  return {
+    onlinehost: { component: <OnlineHostBullet {...props} /> },
+  };
 };

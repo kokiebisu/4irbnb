@@ -21,7 +21,7 @@ import * as Helper from '@helper/time';
  * @param {group} group - Number of people that can join a private group
  * @param {string[]} languages - Languages the host can speak
  */
-export const CharacteristicBullet: React.FC<{
+const CharacteristicBullet: React.FC<{
   characteristic?: string;
   time?: number;
   languages?: string[];
@@ -101,4 +101,10 @@ export const CharacteristicBullet: React.FC<{
       </div>
     </div>
   );
+};
+
+export const characteristic = (props) => {
+  return {
+    characteristic: { component: <CharacteristicBullet {...props} /> },
+  };
 };
