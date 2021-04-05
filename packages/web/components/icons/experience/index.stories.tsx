@@ -26,6 +26,7 @@ const IconBundleStory: Story<IconProps & ExperienceIconTypeProps> = () => (
       { title: 'language' as const },
       { title: 'computer' as const },
       { title: 'smile' as const },
+      { title: 'activity' as const },
     ].map((icon) => {
       return (
         <div className="mr-2">
@@ -58,4 +59,9 @@ Computer.args = {
 export const Smile = IconStory.bind({});
 Smile.args = {
   experienceType: 'smile',
+};
+
+export const Activity = IconStory.bind({});
+Activity.args = {
+  experienceType: 'activity',
 };

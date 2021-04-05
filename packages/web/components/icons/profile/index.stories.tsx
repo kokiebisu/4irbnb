@@ -13,14 +13,22 @@ const size = {
   height: 24,
 };
 
-const IconStory: Story<IconPropsWithType> = (args) => <ProfileIcon {...args} />;
+const IconStory: Story<IconPropsWithType> = (args) => (
+  <div style={{ ...size }}>
+    <ProfileIcon {...args} />
+  </div>
+);
 const IconBundleStory: Story<IconProps & ProfileIconTypeProps> = () => (
   <div className="flex items-center">
-    {[{ title: 'avatar' as const }].map((icon) => {
+    {[
+      { profileType: 'avatar' as const },
+      { profileType: 'star' as const },
+      { profileType: 'superhost' as const },
+    ].map((args) => {
       return (
         <div className="mr-2">
           <div style={{ ...size }}>
-            <ProfileIcon profileType={icon.title} />
+            <ProfileIcon {...args} />
           </div>
         </div>
       );

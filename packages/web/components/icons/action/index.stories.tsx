@@ -22,15 +22,19 @@ const IconStory: Story<IconProps & ActionIconTypeProps> = (args) => (
 const IconBundleStory: Story<{}> = () => (
   <div className="flex items-center">
     {[
-      { title: 'heart' as const, size },
-      { title: 'close' as const, size },
-      { title: 'pause' as const, size },
-      { title: 'play' as const, size },
-    ].map((icon) => {
+      { actionType: 'heart' as const },
+      { actionType: 'close' as const },
+      { actionType: 'pause' as const },
+      { actionType: 'play' as const },
+      { actionType: 'top' as const },
+      { actionType: 'bottom' as const },
+      { actionType: 'left' as const },
+      { actionType: 'right' as const },
+    ].map((args) => {
       return (
         <div className="mr-2">
-          <div style={{ ...icon.size }}>
-            <ActionIcon actionType={icon.title} />
+          <div style={{ ...size }}>
+            <ActionIcon {...args} />
           </div>
         </div>
       );
@@ -58,4 +62,24 @@ Play.args = {
 export const Pause = IconStory.bind({});
 Pause.args = {
   actionType: 'pause',
+};
+
+export const ChevronTop = IconStory.bind({});
+ChevronTop.args = {
+  actionType: 'pause',
+};
+
+export const ChevronBottom = IconStory.bind({});
+ChevronBottom.args = {
+  actionType: 'bottom',
+};
+
+export const ChevronRight = IconStory.bind({});
+ChevronRight.args = {
+  actionType: 'right',
+};
+
+export const ChevronLeft = IconStory.bind({});
+ChevronLeft.args = {
+  actionType: 'left',
 };
