@@ -1,4 +1,4 @@
-import { Warning } from '@svg/original';
+import { Icon, $Icon } from '@icons';
 
 const AgainCard: React.FC<{}> = () => {
   return (
@@ -7,7 +7,12 @@ const AgainCard: React.FC<{}> = () => {
         <div className="flex">
           <div className="mr-3">
             <div className="p-2 rounded-full bg-red-600">
-              <Warning width={18} fill="white" />
+              <Icon
+                variant={$Icon.SEMANTIC}
+                semanticType="exclamation"
+                width={18}
+                fill="white"
+              />
             </div>
           </div>
           <div>
