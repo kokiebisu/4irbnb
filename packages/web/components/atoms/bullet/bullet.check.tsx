@@ -1,4 +1,4 @@
-import { CheckPlain } from '@svg/original';
+import { $Icon, Icon } from '@icons';
 
 const CheckBullet: React.FC<{ title?: string }> = ({
   title = 'Title here',
@@ -6,7 +6,13 @@ const CheckBullet: React.FC<{ title?: string }> = ({
   return (
     <div className="flex items-center">
       <div className="mr-2">
-        <CheckPlain width={24} strokeWidth={2} stroke="green" />
+        <Icon
+          variant={$Icon.SEMANTIC}
+          semanticType="check"
+          width={24}
+          strokeWidth={2}
+          stroke="green"
+        />
       </div>
       <div>
         <h4 className="text-lg text-gray-500">{title}</h4>

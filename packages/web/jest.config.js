@@ -39,7 +39,6 @@ module.exports = {
     '@panel/(.*)': '<rootDir>/components/molecules/panel/$1',
     '@panel': '<rootDir>/components/molecules/panel',
     '@styles/(.*)': '<rootDir>/styles/$1',
-    '@svg/(.*)': '<rootDir>/public/svg/$1',
     '@helper/(.*)': '<rootDir>/helper/$1',
     '@particle/(.*)': '<rootDir>/components/particles/$1',
     '@hooks/(.*)': '<rootDir>/hooks/$1',

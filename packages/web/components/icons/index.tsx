@@ -2,9 +2,11 @@ import React from 'react';
 import { ActionIcon, ActionIconTypeProps } from './action';
 import { AmenityIcon, AmenityIconTypeProps } from './amenity';
 import { ExperienceIcon, ExperienceIconTypeProps } from './experience';
+import { GeneralIcon, GeneralIconTypeProps } from './general';
 import { LogoIcon, LogoIconTypeProps } from './logo';
 import { ProfileIcon, ProfileIconTypeProps } from './profile';
 import { SemanticIcon, SemanticIconTypeProps } from './semantic';
+import { StayIcon, StayIconTypeProps } from './stay';
 
 export const $Icon = {
   LOGO: 'logo',
@@ -13,6 +15,8 @@ export const $Icon = {
   EXPERIENCE: 'experience',
   ACTION: 'action',
   SEMANTIC: 'semantic',
+  GENERAL: 'general',
+  STAY: 'stay',
 };
 
 export interface IconProps {
@@ -30,7 +34,9 @@ export interface IconPropsWithType
     ExperienceIconTypeProps,
     ActionIconTypeProps,
     ProfileIconTypeProps,
-    SemanticIconTypeProps {}
+    SemanticIconTypeProps,
+    GeneralIconTypeProps,
+    StayIconTypeProps {}
 
 export const Icon: React.FC<IconPropsWithType & { variant: string }> = ({
   variant,
@@ -45,6 +51,8 @@ export const Icon: React.FC<IconPropsWithType & { variant: string }> = ({
     experience: <ExperienceIcon {...props} />,
     profile: <ProfileIcon {...props} />,
     semantic: <SemanticIcon {...props} />,
+    general: <GeneralIcon {...props} />,
+    stay: <StayIcon {...props} />,
   };
   return <div style={{ width, height }}>{variants[variant]}</div>;
 };

@@ -4,7 +4,6 @@ import font from '@styles/font.module.scss';
 import space from '@styles/space.module.scss';
 import section from '@template/index.module.scss';
 
-import { Star, Share, Superhost } from '@svg/original';
 import { $Icon, Icon } from '@icons';
 import { Panel, $Panel } from '@panel';
 
@@ -72,7 +71,7 @@ export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({
             ].join(' ')}
           >
             <div>
-              <Star height={14} />
+              <Icon variant={$Icon.PROFILE} profileType="star" height={14} />
             </div>
             <span
               className={[
@@ -100,7 +99,12 @@ export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({
                   &nbsp;·&nbsp;
                 </span>
                 <div>
-                  <Superhost height={14} fill="#E61E4D" />
+                  <Icon
+                    variant={$Icon.PROFILE}
+                    profileType="superhost"
+                    height={14}
+                    fill="#E61E4D"
+                  />
                 </div>
                 <p
                   className={[
@@ -147,7 +151,12 @@ export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({
                 ].join(' ')}
               >
                 <div>
-                  <Share height={14} fill="#484848" />
+                  <Icon
+                    variant={$Icon.GENERAL}
+                    generalType="share"
+                    height={14}
+                    fill="#484848"
+                  />
                 </div>
                 <p
                   className={[

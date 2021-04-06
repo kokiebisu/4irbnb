@@ -10,7 +10,7 @@ import section from '@template/index.module.scss';
 import { Button, $Button } from '@button';
 import { Bullet, $Bullet } from '@bullet';
 
-import { Shield } from '@svg/original';
+import { $Icon, Icon } from '@icons';
 import { truncateContent } from '@utils/description';
 
 export interface HostTemplateProps {
@@ -310,7 +310,11 @@ export const HostTemplate: React.FC<HostTemplateProps> = ({
                 ].join(' ')}`}
               >
                 <div>
-                  <Shield width={24} />
+                  <Icon
+                    variant={$Icon.GENERAL}
+                    generalType="shield"
+                    width={24}
+                  />
                 </div>
                 <p
                   className={[

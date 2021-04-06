@@ -1,4 +1,4 @@
-import { CheckInverse } from '@svg/original';
+import { $Icon, Icon } from '@icons';
 
 /**
  * Renders the bring bullet
@@ -10,7 +10,7 @@ const BringBullet: React.FC<{
   return (
     <div className="flex">
       <div className="mr-4">
-        <CheckInverse width={24} />
+        <Icon variant={$Icon.GENERAL} generalType="check" width={24} />
       </div>
       <div>
         <p>{title}</p>
