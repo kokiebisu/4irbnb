@@ -50,7 +50,6 @@
       "@template/*": ["components/segments/*"],
       "@icons": ["components/icons"],
       "@styles/*": ["styles/*"],
-      "@svg/*": ["public/svg/*"],
       "@helper/*": ["helper/*"],
       "@hooks/*": ["hooks/*"],
       "@context/*": ["context/*"],

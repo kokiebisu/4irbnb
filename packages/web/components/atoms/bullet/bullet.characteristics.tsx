@@ -1,14 +1,4 @@
-import {
-  Calendar,
-  Devices,
-  Door,
-  Guidelines,
-  House,
-  Language,
-  People,
-  Sparkle,
-  Time,
-} from '@svg/original';
+import { Icon, $Icon } from '@icons';
 
 import * as Helper from '@helper/time';
 
@@ -38,46 +28,46 @@ const CharacteristicBullet: React.FC<{
 }) => {
   const characteristics = {
     house: {
-      icon: <House width={24} />,
+      icon: <Icon variant={$Icon.STAY} stayType="house" width={24} />,
       title: 'Entire home',
       description: 'You’ll have the farm stay to yourself.',
     },
     sparkle: {
-      icon: <Sparkle width={24} />,
+      icon: <Icon variant={$Icon.STAY} stayType="sparkle" width={24} />,
       title: 'Enhanced Clean',
       description:
         "This host committed to Airbnb's 5-step enhanced cleaning process.",
     },
     door: {
-      icon: <Door width={24} />,
+      icon: <Icon variant={$Icon.STAY} stayType="door" width={24} />,
       title: 'Self check-in',
       description: 'You can check in with the doorman.',
     },
     calendar: {
-      icon: <Calendar width={24} />,
+      icon: <Icon variant={$Icon.STAY} stayType="calendar" width={24} />,
       title: 'Cancellation policy',
       description:
         'Add your trip dates to get the cancellation details for this stay.',
     },
     guidelines: {
-      icon: <Guidelines width={24} />,
+      icon: <Icon variant={$Icon.STAY} stayType="guidelines" width={24} />,
       title: 'House rules',
       description: 'The host doesn’t allow pets, parties, or smoking.',
     },
     time: {
-      icon: <Time width={32} />,
+      icon: <Icon variant={$Icon.STAY} experienceType="time" width={32} />,
       title: Helper.displayDuration(time),
     },
     devices: {
-      icon: <Devices width={32} />,
+      icon: <Icon variant={$Icon.STAY} experienceType="computer" width={32} />,
       title: `Join from your ${devices}`,
     },
     people: {
-      icon: <People width={32} />,
+      icon: <Icon variant={$Icon.STAY} experienceType="people" width={32} />,
       title: `Up to ${people} people. Private groups available for up to ${group}`,
     },
     language: {
-      icon: <Language width={32} />,
+      icon: <Icon variant={$Icon.STAY} experienceType="language" width={32} />,
       title: `Hosted in ${languages} (Simplified)`,
     },
   };

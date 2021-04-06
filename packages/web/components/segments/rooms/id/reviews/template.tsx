@@ -1,4 +1,4 @@
-import { Star } from '@svg/original';
+import { $Icon, Icon } from '@icons';
 
 import space from '@styles/space.module.scss';
 import color from '@styles/color.module.scss';
@@ -46,7 +46,7 @@ export const ReviewsTemplate: React.FC<ReviewsTemplateProps> = ({
         >
           <div className={[layout['flex'], layout['items-center']].join(' ')}>
             <div className={[space['m-r--6']].join(' ')}>
-              <Star width={20} />
+              <Icon variant={$Icon.PROFILE} profileType="star" width={20} />
             </div>
             <h3
               className={[

@@ -1,5 +1,6 @@
 import { Close } from '@svg/original';
 import { ChevronLeft } from '@svg/regular';
+import { $Icon, Icon } from '@icons';
 
 /**
  * Renders the close button component
@@ -7,8 +8,12 @@ import { ChevronLeft } from '@svg/regular';
  */
 const ModalButton: React.FC<{ modal?: string }> = ({ modal = 'close' }) => {
   const types = {
-    close: <Close width={16} height={16} stroke="black" strokeWidth={2} />,
-    back: <ChevronLeft width={16} height={16} stroke="black" strokeWidth={4} />,
+    close: (
+      <Icon variant={$Icon.ACTION} actionType="close" width={16} height={16} />
+    ),
+    back: (
+      <Icon variant={$Icon.ACTION} actionType="left" width={16} height={16} />
+    ),
   };
   return (
     <div className="bg-transparent p-3 rounded-full hover:bg-gray-100">

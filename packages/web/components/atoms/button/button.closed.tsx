@@ -1,4 +1,4 @@
-import { CheckPlain, Close } from '@svg/original';
+import { $Icon, Icon } from '@icons';
 
 const ClosedButton: React.FC<{
   selected?: boolean;
@@ -6,19 +6,19 @@ const ClosedButton: React.FC<{
 }> = ({ content = 'close', selected = false }) => {
   const contents = {
     close: (
-      <Close
+      <Icon
+        variant={$Icon.ACTION}
+        actionType="close"
         width={16}
-        fill={selected}
-        stroke={selected ? 'white' : 'black'}
-        strokeWidth={2}
+        fill={selected ? 'white' : 'black'}
       />
     ),
     check: (
-      <CheckPlain
+      <Icon
+        variant={$Icon.SEMANTIC}
+        semanticType="check"
         width={16}
-        fill={selected}
-        stroke={selected ? 'white' : 'black'}
-        strokeWidth={2}
+        fill={selected ? 'white' : 'black'}
       />
     ),
   };
