@@ -1,1 +1,1 @@
-export const images = [undefined, undefined, undefined, undefined];
+export const images = new Array(4);

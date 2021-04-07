@@ -1,5 +1,4 @@
 import { $Icon, Icon } from '@icons';
-import { Star } from '@svg/original';
 
 /**
  * Renders the vertical card component
@@ -53,7 +52,7 @@ const VerticalCard: React.FC<{
       </div>
       <div className="mt-1 flex items-center">
         <div className="mr-1">
-          <Star width={15} />
+          <Icon variant={$Icon.PROFILE} profileType="star" width={15} />
         </div>
         <div className="mr-1">
           <p className="font-thin text-xs">{ratings}</p>

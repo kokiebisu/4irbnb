@@ -6,13 +6,4 @@ export const carouselType = '';
 export const save = false;
 export const isDescription = false;
 export const fetchUrl = '';
-export const items = [
-  undefined,
-  undefined,
-  undefined,
-  undefined,
-  undefined,
-  undefined,
-  undefined,
-  undefined,
-];
+export const items = new Array(8);

@@ -4,11 +4,11 @@ import styles from '@styles/index.module.scss';
 import font from '@styles/font.module.scss';
 import layout from '@styles/layout.module.scss';
 import { Button, $Button } from '@button';
-import { Globe } from '@svg/original';
+import { Icon, $Icon } from '@icons';
 
 export interface FooterTemplateProps {
   spread?: boolean;
-  handleRedirectToPath: () => void;
+  handleRedirectToPath: (url: string) => void;
   items?: { name: string; items: { url?: string; name?: string }[] }[];
 }
 
@@ -99,7 +99,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
                   color['b--0'],
                 ].join(' ')}
               >
-                <Globe width={16} className={space['m-r--5']} />
+                <Icon variant={$Icon.GENERAL} generalType="globe" width={16} />
                 <u className={[font['size--14'], space['m-r--7']].join(' ')}>
                   English(CA)
                 </u>

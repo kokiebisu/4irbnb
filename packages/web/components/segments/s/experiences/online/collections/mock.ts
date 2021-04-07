@@ -1,2 +1,2 @@
 export const title = 'Title here';
-export const cards = [undefined, undefined, undefined];
+export const cards = new Array(3);

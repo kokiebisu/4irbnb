@@ -1,15 +1,4 @@
-import {
-  Checkin,
-  Clock,
-  Children,
-  Parties,
-  Smoking,
-  Pets,
-  Distancing,
-  Caution,
-  Check,
-  Cleaning,
-} from '@svg/original';
+import { $Icon, Icon } from '@icons';
 
 /**
  * Renders the know bullet
@@ -28,48 +17,48 @@ const KnowBullet: React.FC<{
 }) => {
   const categories = {
     checkin: {
-      icon: <Clock width={14} />,
+      icon: <Icon variant={$Icon.STAY} stayType="clock" width={14} />,
       description: `Check-in: ${checkin.min}–${checkin.max}`,
     },
     checkout: {
-      icon: <Clock width={14} />,
+      icon: <Icon variant={$Icon.STAY} stayType="clock" width={14} />,
       description: `Checkout: ${checkout}`,
     },
     self: {
-      icon: <Checkin width={14} />,
+      icon: <Icon variant={$Icon.STAY} stayType="checkin" width={14} />,
       description: 'Self check-in with lockbox',
     },
     children: {
-      icon: <Children width={14} />,
+      icon: <Icon variant={$Icon.STAY} stayType="children" width={14} />,
       description: 'Not suitable for children and infants',
     },
     smoking: {
-      icon: <Smoking width={14} />,
+      icon: <Icon variant={$Icon.STAY} stayType="smoking" width={14} />,
       description: 'No smoking',
     },
     pets: {
-      icon: <Pets width={14} />,
+      icon: <Icon variant={$Icon.STAY} stayType="pets" width={14} />,
       description: 'No pets',
     },
     parties: {
-      icon: <Parties width={14} />,
+      icon: <Icon variant={$Icon.STAY} stayType="parties" width={14} />,
       description: 'No parties or events',
     },
     cleaning: {
-      icon: <Cleaning width={14} />,
+      icon: <Icon variant={$Icon.STAY} stayType="cleaning" width={14} />,
       description: "Committed to Airbnb's enhanced cleaning process.",
     },
-    distancing: {
-      icon: <Distancing width={14} />,
-      description:
-        "Airbnb's social-distancing and other COVID-19-related guidelines apply",
-    },
-    caution: {
-      icon: <Caution width={14} />,
-      description: 'Nearby lake, river, other body of water',
-    },
+    // distancing: {
+    //   icon: <Icon variant={$Icon.STAY} stayType="distancing" width={14} />,
+    //   description:
+    //     "Airbnb's social-distancing and other COVID-19-related guidelines apply",
+    // },
+    // caution: {
+    //   icon: <Icon variant={$Icon.STAY} stayType="caution" width={14} />,
+    //   description: 'Nearby lake, river, other body of water',
+    // },
     check: {
-      icon: <Check width={14} />,
+      icon: <Icon variant={$Icon.STAY} stayType="checkin" width={14} />,
       description: 'Carbon monoxide alarm',
     },
   };
