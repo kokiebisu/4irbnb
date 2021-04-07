@@ -1,4 +1,3 @@
-import { Star } from '@svg/original';
 import { $Icon, Icon } from '@icons';
 import React, { useState } from 'react';
 import { Video } from '@video';
@@ -62,7 +61,7 @@ const VideoCard: React.FC<{
 
       <div className="mt-1 flex items-center">
         <div className="mr-1">
-          <Star width={15} />
+          <Icon variant={$Icon.PROFILE} profileType="star" width={15} />
         </div>
         <div className="mr-1">
           <p className="font-thin text-xs">{ratings}</p>

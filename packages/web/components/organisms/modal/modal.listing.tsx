@@ -1,7 +1,7 @@
 import { Button, $Button } from '@button';
 import { Input, $Input } from '@input';
 
-import { Plus } from '@svg/original';
+import { $Icon, Icon } from '@icons';
 
 import layout from '@styles/layout.module.scss';
 import space from '@styles/space.module.scss';
@@ -29,7 +29,13 @@ export const ListingModal: React.FC<{}> = () => {
         ].join(' ')}
       >
         <div>
-          <Plus width={15} height={15} fill="black" />
+          <Icon
+            variant={$Icon.SEMANTIC}
+            semanticType="plus"
+            width={15}
+            height={15}
+            fill="black"
+          />
         </div>
         <div>
           <h3 className={[font['size--14']].join(' ')}>

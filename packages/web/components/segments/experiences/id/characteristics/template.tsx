@@ -4,7 +4,7 @@ import font from '@styles/font.module.scss';
 import color from '@styles/color.module.scss';
 import shape from '@styles/shape.module.scss';
 import { Bullet, $Bullet } from '@bullet';
-import { DevicesInverse, Star } from '@svg/original';
+import { Icon, $Icon } from '@icons';
 import section from '@template/index.module.scss';
 
 export interface CharacteristicsTemplateProps {
@@ -88,7 +88,13 @@ export const CharacteristicsTemplate: React.FC<CharacteristicsTemplateProps> = (
                 className={[layout['flex'], layout['items-center']].join(' ')}
               >
                 <div className={[space['m-r--4']].join(' ')}>
-                  <DevicesInverse width={16} fill="black" />
+                  <Icon
+                    variant={$Icon.EXPERIENCE}
+                    generalType="devices"
+                    inversed
+                    width={16}
+                    fill="black"
+                  />
                 </div>
                 <div>
                   <h3 className={[font['size--12']].join(' ')}>
@@ -107,7 +113,11 @@ export const CharacteristicsTemplate: React.FC<CharacteristicsTemplateProps> = (
                 ].join(' ')}
               >
                 <div>
-                  <Star height={14} />
+                  <Icon
+                    variant={$Icon.PROFILE}
+                    profileType="star"
+                    height={14}
+                  />
                 </div>
                 <h3
                   className={[

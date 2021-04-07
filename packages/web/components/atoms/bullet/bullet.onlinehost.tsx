@@ -1,18 +1,19 @@
-import { Global, Home, Lightening } from '@svg/original';
+import { $Icon, Icon } from '@icons';
+import React from 'react';
 
 export const types = {
   home: {
-    icon: <Home />,
+    icon: <Icon variant={$Icon.GENERAL} generalType="home" />,
     title: 'Host from home',
     description: 'Share your expertise and a window to your world',
   },
   global: {
-    icon: <Global />,
+    icon: <Icon variant={$Icon.GENERAL} generalType="global" />,
     title: 'Meet global guests',
     description: 'Make the world feel a little smaller and a lot friendlier.',
   },
   business: {
-    icon: <Lightening />,
+    icon: <Icon variant={$Icon.GENERAL} generalType="lightening" />,
     title: 'Build a business',
     description:
       'Earn money doing something you love with support from Airbnb.',

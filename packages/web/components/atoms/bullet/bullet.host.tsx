@@ -2,7 +2,7 @@ import layout from '@styles/layout.module.scss';
 import space from '@styles/space.module.scss';
 import font from '@styles/font.module.scss';
 
-import { Star, Superhost, Verified } from '@svg/original';
+import { $Icon, Icon } from '@icons';
 
 /**
  * Renders the host bullet
@@ -14,12 +14,18 @@ export const HostBullet: React.FC<{
   categoryType?: string;
 }> = ({ categoryType = 'review', total = 100 }) => {
   const categories = {
-    review: { icon: <Star width={16} />, description: `${total} Reviews` },
+    review: {
+      icon: <Icon variant={$Icon.PROFILE} profileType="star" width={16} />,
+      description: `${total} Reviews`,
+    },
     verified: {
-      icon: <Verified width={16} />,
+      icon: <Icon variant={$Icon.PROFILE} profileType="verified" width={16} />,
       description: 'Identity verified',
     },
-    superhost: { icon: <Superhost width={16} />, description: 'Superhost' },
+    superhost: {
+      icon: <Icon variant={$Icon.PROFILE} profileType="superhost" width={16} />,
+      description: 'Superhost',
+    },
   };
   return (
     <div

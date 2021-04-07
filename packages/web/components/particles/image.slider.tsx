@@ -1,29 +1,29 @@
-import { useLayoutEffect, useState, useRef } from "react";
-import { Button, $Button } from "@button";
-import particle from "@particle/particle.module.scss";
+import { useLayoutEffect, useState, useRef } from 'react';
+import { Button, $Button } from '@button';
+import particle from '@particle/particle.module.scss';
 
 const Dots = ({ slides, activeSlide }) => {
   return (
     <div
       style={{
-        position: "absolute",
+        position: 'absolute',
         bottom: 25,
-        width: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
     >
       {slides.map((_, index) => (
         <span
           key={index}
           style={{
-            transition: "all 0.2s ease-in",
+            transition: 'all 0.2s ease-in',
             padding: 3,
             marginRight: 5,
-            cursor: "pointer",
-            borderRadius: "50%",
-            background: `${activeSlide === index ? "white" : "lightgray"}`,
+            cursor: 'pointer',
+            borderRadius: '50%',
+            background: `${activeSlide === index ? 'white' : 'lightgray'}`,
           }}
         />
       ))}
@@ -35,19 +35,19 @@ const Slide = ({ slide }) => {
   return (
     <div
       style={{
-        height: "100%",
-        width: "100%",
+        height: '100%',
+        width: '100%',
         backgroundImage: slide && `url(${slide})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundColor: !slide && "lightgray",
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        backgroundColor: !slide && 'lightgray',
       }}
     />
   );
 };
 
-export const ImageSlider = ({ slides = [undefined, undefined, undefined] }) => {
+export const ImageSlider = ({ slides = new Array(3) }) => {
   const [style, setStyle] = useState({
     opacity: 0,
   });
@@ -67,10 +67,10 @@ export const ImageSlider = ({ slides = [undefined, undefined, undefined] }) => {
   };
 
   useLayoutEffect(() => {
-    window.addEventListener("resize", handleRef);
+    window.addEventListener('resize', handleRef);
     handleRef();
     return () => {
-      window.removeEventListener("resize", handleRef);
+      window.removeEventListener('resize', handleRef);
     };
   });
 
@@ -119,10 +119,10 @@ export const ImageSlider = ({ slides = [undefined, undefined, undefined] }) => {
         })
       }
       style={{
-        position: "relative",
-        width: "100%",
-        height: "100%",
-        overflow: "hidden",
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+        overflow: 'hidden',
         borderRadius: 12,
         zIndex: 50,
       }}
@@ -132,9 +132,9 @@ export const ImageSlider = ({ slides = [undefined, undefined, undefined] }) => {
           borderRadius: 12,
           transform: `translateX(-${state.translate}px)`,
           transition: `transform ease-out ${state.transition}s`,
-          height: "100%",
+          height: '100%',
           width: width * slides.length,
-          display: "flex",
+          display: 'flex',
         }}
       >
         {slides.map((slide, index) => {
@@ -144,10 +144,10 @@ export const ImageSlider = ({ slides = [undefined, undefined, undefined] }) => {
       <div
         style={{
           ...style,
-          transition: "opacity 0.2s ease-out",
-          position: "absolute",
-          top: "50%",
-          transform: "translateY(-50%)",
+          transition: 'opacity 0.2s ease-out',
+          position: 'absolute',
+          top: '50%',
+          transform: 'translateY(-50%)',
           left: 10,
           zIndex: 60,
         }}
@@ -162,10 +162,10 @@ export const ImageSlider = ({ slides = [undefined, undefined, undefined] }) => {
       <div
         style={{
           ...style,
-          transition: "opacity 0.2s ease-out",
-          position: "absolute",
-          top: "50%",
-          transform: "translateY(-50%)",
+          transition: 'opacity 0.2s ease-out',
+          position: 'absolute',
+          top: '50%',
+          transform: 'translateY(-50%)',
           right: 10,
           zIndex: 60,
         }}
@@ -179,8 +179,8 @@ export const ImageSlider = ({ slides = [undefined, undefined, undefined] }) => {
       </div>
 
       <div
-        style={{ ...style, transition: "opacity 0.2s ease-out" }}
-        className={[particle["dots"]].join(" ")}
+        style={{ ...style, transition: 'opacity 0.2s ease-out' }}
+        className={[particle['dots']].join(' ')}
       >
         <Dots slides={slides} activeSlide={state.activeSlide} />
       </div>

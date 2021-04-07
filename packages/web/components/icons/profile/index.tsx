@@ -1,7 +1,7 @@
 import { IconProps } from '@icons';
 
 export interface ProfileIconTypeProps {
-  profileType?: 'avatar' | 'star' | 'superhost';
+  profileType?: 'avatar' | 'star' | 'superhost' | 'verified';
 }
 
 export const ProfileIcon: React.FC<IconProps & ProfileIconTypeProps> = ({
