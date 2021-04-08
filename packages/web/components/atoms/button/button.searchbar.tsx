@@ -51,7 +51,7 @@ const SearchbarButton: React.FC<SearchbarButtonProps> = ({ mini = false }) => {
                 variant={$Icon.GENERAL}
                 generalType="magnifyGlass"
                 width={15}
-                stroke="black"
+                stroke="white"
                 strokeWidth={4}
               />
             </div>

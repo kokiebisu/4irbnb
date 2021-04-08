@@ -50,6 +50,8 @@ export const DestinationsTemplate: React.FC<DestinationsTemplateProps> = ({
           return (
             <div key={index} className={[template['destination__w']].join(' ')}>
               <Button
+                block
+                stretch
                 variant={$Button.DESTINATION}
                 city={city}
                 location={location}

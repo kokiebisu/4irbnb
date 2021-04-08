@@ -10,6 +10,9 @@ module.exports = {
       spacing: {
         112: '28rem',
       },
+      width: {
+        'half-screen': '50vw',
+      },
     },
   },
   variants: {},

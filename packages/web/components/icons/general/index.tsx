@@ -66,14 +66,12 @@ export const GeneralIcon: React.FC<IconProps & GeneralIconTypeProps> = ({
   return types[generalType];
 };
 
-const MagnifyGlassIcon: React.FC<IconProps> = ({ fill }) => {
+const MagnifyGlassIcon: React.FC<IconProps> = ({ fill, ...props }) => {
   return (
-    <svg width="100%" height="auto" viewBox="0 0 32 32">
+    <svg {...props} width="100%" height="auto" viewBox="0 0 32 32">
       <g fill="none">
         <path
           fill={fill}
-          stroke="black"
-          strokeWidth={2}
           d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"
         ></path>
       </g>
