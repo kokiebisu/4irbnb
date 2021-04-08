@@ -1,23 +1,16 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react/types-6-0";
-import { Prototype, PrototypeProps } from "@prototype/searchbar";
+import React from 'react';
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { Prototype, PrototypeProps } from '@prototype/searchbar';
 
 export default {
-  title: "Prototypes/Searchbar",
+  title: 'Prototypes/Searchbar',
   component: Prototype,
-  argTypes: { onClick: { action: "clicked" } },
+  argTypes: { onClick: { action: 'clicked' } },
 } as Meta;
 
 const TemplateStory: Story<PrototypeProps> = (args) => <Prototype {...args} />;
 
 export const Stay = TemplateStory.bind({});
 Stay.args = {
-  variant: "stay",
+  variant: 'stay',
 };
-Stay.decorators = [
-  (Story) => (
-    <div style={{ maxWidth: 720 }}>
-      <Story />
-    </div>
-  ),
-];
