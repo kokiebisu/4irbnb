@@ -19,7 +19,7 @@ const IconStory: Story<IconPropsWithType> = (args) => (
   </div>
 );
 const IconBundleStory: Story<IconProps & SemanticIconTypeProps> = () => (
-  <div className="flex items-center">
+  <div className="flex items-center flex-wrap">
     {[
       { semanticType: 'exclamation' as const },
       { semanticType: 'warning' as const },
@@ -31,7 +31,7 @@ const IconBundleStory: Story<IconProps & SemanticIconTypeProps> = () => (
     ].map((args) => {
       return (
         <div className="mr-2">
-          <div style={{ ...size }}>
+          <div className="mb-2" style={{ ...size }}>
             <SemanticIcon {...args} />
           </div>
         </div>

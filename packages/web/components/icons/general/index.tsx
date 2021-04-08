@@ -156,7 +156,10 @@ export const LoginIcon: React.FC<IconProps> = ({ fill }) => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 24 24">
       <circle stroke="black" cx="12" cy="12" r="10.5"></circle>
-      <path d="M4.6 19.2c-.1-1.4 1.7-2.9 5.4-4.5-1-1-1.4-1.7-1.4-3.7S9 6.5 12 6.5s3.5 2.4 3.4 4.5c0 2.1-.4 2.7-1.4 3.8 5.1 2.1 5.4 3.4 5.4 4.4"></path>
+      <path
+        fill="white"
+        d="M4.6 19.2c-.1-1.4 1.7-2.9 5.4-4.5-1-1-1.4-1.7-1.4-3.7S9 6.5 12 6.5s3.5 2.4 3.4 4.5c0 2.1-.4 2.7-1.4 3.8 5.1 2.1 5.4 3.4 5.4 4.4"
+      ></path>
     </svg>
   );
 };

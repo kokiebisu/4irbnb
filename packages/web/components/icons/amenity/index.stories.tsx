@@ -19,7 +19,7 @@ const IconStory: Story<IconProps & AmenityIconTypeProps> = (args) => (
   </div>
 );
 const IconBundleStory: Story<{}> = () => (
-  <div className="flex items-center">
+  <div className="flex items-center flex-wrap">
     {[
       { title: 'smokeAlarm' as const },
       { title: 'tv' as const },
@@ -30,7 +30,7 @@ const IconBundleStory: Story<{}> = () => (
     ].map((icon) => {
       return (
         <div className="mr-2">
-          <div style={{ ...size }}>
+          <div className="mb-2" style={{ ...size }}>
             <AmenityIcon amenityType={icon.title} />
           </div>
         </div>

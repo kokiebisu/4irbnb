@@ -17,7 +17,7 @@ const IconStory: Story<IconProps & LogoIconTypeProps> = (args) => (
   <LogoIcon {...args} />
 );
 const IconBundleStory: Story<{}> = () => (
-  <div className="flex items-center">
+  <div className="flex items-center flex-wrap">
     {[
       { title: 'menubar' as const, size: { width: 32, height: 32 } },
       { title: 'name' as const, size: { width: 102, height: 32 } },
@@ -28,7 +28,9 @@ const IconBundleStory: Story<{}> = () => (
     ].map((icon) => {
       return (
         <div className="mr-2">
-          <LogoIcon logoType={icon.title} {...icon.size} />
+          <div className="mb-2">
+            <LogoIcon logoType={icon.title} {...icon.size} />
+          </div>
         </div>
       );
     })}

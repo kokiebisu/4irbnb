@@ -19,7 +19,7 @@ const IconStory: Story<IconPropsWithType> = (args) => (
   </div>
 );
 const IconBundleStory: Story<IconProps & ProfileIconTypeProps> = () => (
-  <div className="flex items-center">
+  <div className="flex items-center flex-wrap">
     {[
       { profileType: 'avatar' as const },
       { profileType: 'star' as const },
@@ -27,7 +27,7 @@ const IconBundleStory: Story<IconProps & ProfileIconTypeProps> = () => (
     ].map((args) => {
       return (
         <div className="mr-2">
-          <div style={{ ...size }}>
+          <div className="mb-2" style={{ ...size }}>
             <ProfileIcon {...args} />
           </div>
         </div>
