@@ -27,16 +27,12 @@ export const AvatarIcon: React.FC<IconProps> = ({ fill }) => {
   );
 };
 
-export const StarIcon: React.FC<IconProps> = ({ fill }) => {
+export const StarIcon: React.FC<IconProps> = ({ fill = '#E61E4D' }) => {
   return (
-    <svg
-      width="100%"
-      height="auto"
-      style={{ display: 'block', fill: '#E61E4D' }}
-      viewBox="0 0 37.286 37.287"
-    >
+    <svg display="block" width="100%" height="auto" viewBox="0 0 37.286 37.287">
       <g>
         <path
+          fill={fill}
           d="M36.683,16.339l-7.567,7.377l1.786,10.417c0.128,0.75-0.182,1.509-0.797,1.957c-0.348,0.253-0.762,0.382-1.176,0.382
 c-0.318,0-0.638-0.076-0.931-0.23l-9.355-4.918l-9.355,4.918c-0.674,0.355-1.49,0.295-2.107-0.15
 c-0.615-0.448-0.924-1.206-0.795-1.957l1.787-10.417L0.604,16.34c-0.547-0.531-0.741-1.326-0.508-2.05

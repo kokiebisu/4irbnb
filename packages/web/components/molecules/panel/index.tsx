@@ -16,5 +16,9 @@ export const Panel: React.FC<PanelProps> = ({
   ...props
 }) => {
   const variants = factory(props);
-  return <div data-testid={`${variant}-panel`}>{variants[variant]}</div>;
+  return (
+    <div className={variants[variant].style} data-testid={`${variant}-panel`}>
+      {variants[variant].component}
+    </div>
+  );
 };

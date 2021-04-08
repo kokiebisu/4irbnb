@@ -53,7 +53,7 @@ export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({ images }) => {
                 <Icon
                   variant={$Icon.GENERAL}
                   generalType="share"
-                  height={14}
+                  width={16}
                   fill="#484848"
                 />
               </div>
@@ -79,7 +79,7 @@ export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({ images }) => {
                   variant={$Icon.ACTION}
                   actionType="heart"
                   fill="#484848"
-                  height={17}
+                  width={16}
                 />
               </div>
               <u

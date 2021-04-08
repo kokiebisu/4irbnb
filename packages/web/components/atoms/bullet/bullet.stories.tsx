@@ -14,14 +14,12 @@ const TemplateStory: Story<BulletProps> = (args) => <Bullet {...args} />;
 export const Characteristic = TemplateStory.bind({});
 Characteristic.args = {
   variant: $Bullet.CHARACTERISTIC,
-};
-Characteristic.argTypes = {
-  characteristicType: {
-    control: {
-      type: 'select',
-      options: ['house', 'sparkle', 'door', 'calendar', 'guidelines', 'time'],
-    },
-  },
+  characteristic: 'house',
+  time: 60,
+  devices: ['computer', 'smartphone'],
+  people: 10,
+  group: 100,
+  languages: ['English', 'Chinese'],
 };
 
 export const Amenity = TemplateStory.bind({});
