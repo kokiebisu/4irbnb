@@ -121,6 +121,23 @@
       top: 54%;
     }
   }
+
+  .banner {
+    position: relative;
+    padding-top: 133.3%;
+  }
+
+  @media screen and (min-width: 728px) {
+    .banner {
+      padding-top: 100%;
+    }
+  }
+
+  @media screen and (min-width: 960px) {
+    .banner {
+      padding-top: 48%;
+    }
+  }
 }
 
 @layer utilities {

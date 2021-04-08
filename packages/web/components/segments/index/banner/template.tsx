@@ -1,10 +1,9 @@
 import layout from '@styles/layout.module.scss';
 import index from '@styles/index.module.scss';
 import space from '@styles/space.module.scss';
-import shape from '@styles/shape.module.scss';
+
 import font from '@styles/font.module.scss';
 import color from '@styles/color.module.scss';
-import responsive from '@styles/responsive.module.scss';
 
 import { Header, $Header } from '@header';
 import { Button, $Button } from '@button';
@@ -29,18 +28,17 @@ export const BannerTemplate: React.FC<BannerTemplateProps> = ({
   handleHomeRedirect,
 }) => {
   return (
-    <div className={index['banner']}>
-      <div className={[layout['all-sides']].join(' ')}>
+    <div className="banner">
+      <div className="absolute top-0 bottom-0 right-0 left-0">
         <div className={index['banner__background--picture']}>
           <ResponsiveImage />
         </div>
       </div>
-      <div className={[layout['all-sides']].join(' ')}>
+      <div className="absolute top-0 bottom-0 left-0 right-0">
         <div
+          className="grid h-full"
           style={{
-            display: 'grid',
             gridTemplateRows: 'auto 1fr',
-            height: '100%',
           }}
         >
           <div className="z-30">
@@ -51,15 +49,8 @@ export const BannerTemplate: React.FC<BannerTemplateProps> = ({
               data={data}
               extendsTo={`${
                 scrollPosition < 56
-                  ? [color['bg--transparent']].join(' ')
-                  : [
-                      color['bg--white'],
-                      layout['fixed'],
-                      layout['t--0'],
-                      layout['l--0'],
-                      layout['r--0'],
-                      shape['shadow--sm'],
-                    ].join(' ')
+                  ? 'bg-transparent'
+                  : 'bg-white fixed top-0 left-0 right-0 shadow'
               }`}
               criteria={scrollPosition < 56}
             />
@@ -73,15 +64,8 @@ export const BannerTemplate: React.FC<BannerTemplateProps> = ({
             }}
           >
             <div>
-              <div
-                className={[
-                  responsive['f_to_b--sm'],
-                  layout['justify-center'],
-                ].join(' ')}
-              >
-                <h3 className={[color['c--white'], font['size--28']].join(' ')}>
-                  Go Near
-                </h3>
+              <div className="flex sm:block justify-center">
+                <h3 className="text-white text-3xl">Go Near</h3>
               </div>
               <div
                 className={[

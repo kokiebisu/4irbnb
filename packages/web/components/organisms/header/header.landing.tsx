@@ -58,48 +58,34 @@ export const LandingHeader: React.FC<{
 
   return (
     <header
-      className={`${
-        expanded
-          ? [space['p-t--16'], space['p-b--100']].join(' ')
-          : [space['p-v--16']].join(' ')
-      } ${[
+      className={`${expanded ? 'pt-4 pb-32' : 'py-3'} relative ${[
         animation['transition--fast'],
-        layout['relative'],
+
         layout['container--spread'],
       ].join(' ')}`}
     >
-      <div
-        className={[
-          header['display__transparent--md'],
-          layout['justify-between'],
-          layout['relative'],
-        ].join(' ')}
-      >
+      <div className="md:none justify-betweennone md:flex justify-between relative">
         <div>
-          <div
-            className={[responsive['b_to_n--lg'], space['m-t--4']].join(' ')}
-          >
+          <div className="mt-1 block lg:hidden">
             <Icon
               variant={$Icon.LOGO}
-              type="noName"
+              logoType="noName"
               fill={criteria ? 'white' : 'red'}
               width={30}
               height={32}
             />
           </div>
-          <div
-            className={[responsive['n_to_b--lg'], space['m-t--4']].join(' ')}
-          >
+          <div className="hidden lg:block mt-1">
             <Icon
               variant={$Icon.LOGO}
-              type="name"
+              logoType="name"
               fill={criteria ? 'white' : 'red'}
               width={102}
               height={32}
             />
           </div>
         </div>
-        <div className={[layout['flex'], layout['items-center']].join(' ')}>
+        <div className="flex items-center">
           <div
             className={[styles['searchbar__host'], space['m-h--2']].join(' ')}
           >
@@ -111,7 +97,7 @@ export const LandingHeader: React.FC<{
               onClick={() => Router.push('/host/homes')}
             />
           </div>
-          <div className={[space['m-h--2']].join(' ')}>
+          <div className="mx-1">
             <Button
               variant={$Button.TRANSPARENT}
               content={<Content kind="globe" inverse={criteria} />}
@@ -119,7 +105,7 @@ export const LandingHeader: React.FC<{
               onClick={() => toggleDispatch({ type: 'toggle_globe' })}
             />
           </div>
-          <div className={[space['m-l--4']].join(' ')}>
+          <div className="ml-1">
             <Button
               variant={$Button.MENU}
               extendsTo={[animation['hover-shadow--lg'], shape['br--30']].join(
@@ -184,19 +170,12 @@ export const LandingHeader: React.FC<{
                 position: 'relative',
               }}
             >
-              <div className={[layout['relative']].join(' ')}>
-                <div className={[space['m-b--16'], space['m-t--12']].join(' ')}>
-                  <div
-                    className={[layout['flex'], layout['justify-center']].join(
-                      ' '
-                    )}
-                  >
+              <div className="relative">
+                <div className="mt-3 mb-4">
+                  <div className="flex items-center justify-center">
                     {Object.keys(types).map((type, index) => {
                       return (
-                        <div
-                          key={index}
-                          className={[space['m-h--16']].join(' ')}
-                        >
+                        <div key={index} className="mx-4">
                           <button onClick={types[type].onClick}>
                             <div
                               className={`${
