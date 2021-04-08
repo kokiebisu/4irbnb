@@ -1,4 +1,3 @@
-import { Bars } from '@svg/original';
 import { $Icon, Icon } from '@icons';
 
 /**
@@ -26,13 +25,23 @@ const MenuButton: React.FC<{
       } `}
     >
       <div className="mr-3">
-        <Bars fill="black" width={12} />
+        <Icon
+          variant={$Icon.GENERAL}
+          generalType="bars"
+          fill="black"
+          width={12}
+        />
       </div>
       <div>
         {authenticated && data ? (
           <img className="block rounded-lg w-14" src={data.imgUrl} />
         ) : (
-          <Icon variant={$Icon.PROFILE} type="avatar" width={30} fill="gray" />
+          <Icon
+            variant={$Icon.PROFILE}
+            profileType="avatar"
+            width={30}
+            fill="gray"
+          />
         )}
       </div>
     </div>

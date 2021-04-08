@@ -1,8 +1,5 @@
 import React from 'react';
-
 import { useAuthDispatch, useAuthState } from '@context/auth';
-
-import { Email } from '@svg/original';
 import { $Icon, Icon } from '@icons';
 
 export const getAuthContents = () => {
@@ -12,7 +9,7 @@ export const getAuthContents = () => {
   const auths = {
     email: {
       name: 'Email',
-      icon: <Email width={17} />,
+      icon: <Icon variant={$Icon.GENERAL} generalType="email" width={17} />,
       handleClick() {
         if (authState.title === 'Log in') {
           return authDispatch({ type: 'login' });
@@ -22,21 +19,21 @@ export const getAuthContents = () => {
     },
     facebook: {
       name: 'Facebook',
-      icon: <Icon variant={$Icon.LOGO} type="facebook" width={19} />,
+      icon: <Icon variant={$Icon.LOGO} logoType="facebook" width={19} />,
       handleClick() {
         alert('clicked facebook');
       },
     },
     google: {
       name: 'Google',
-      icon: <Icon variant={$Icon.LOGO} type="google" width={17} />,
+      icon: <Icon variant={$Icon.LOGO} logoType="google" width={17} />,
       handleClick() {
         alert('clicked google');
       },
     },
     apple: {
       name: 'Apple',
-      icon: <Icon variant={$Icon.LOGO} type="apple" width={17} />,
+      icon: <Icon variant={$Icon.LOGO} logoType="apple" width={17} />,
       handleClick() {
         alert('clicked apple');
       },

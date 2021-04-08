@@ -1,7 +1,13 @@
 import { IconProps } from '@icons';
 
 export interface SemanticIconTypeProps {
-  semanticType?: 'exclamation' | 'warning' | 'minus' | 'plus' | 'check';
+  semanticType?:
+    | 'exclamation'
+    | 'warning'
+    | 'minus'
+    | 'plus'
+    | 'check'
+    | 'saved';
 }
 
 export const SemanticIcon: React.FC<IconProps & SemanticIconTypeProps> = ({
@@ -14,6 +20,7 @@ export const SemanticIcon: React.FC<IconProps & SemanticIconTypeProps> = ({
     minus: <MinusIcon {...props} />,
     plus: <PlusIcon {...props} />,
     check: <CheckIcon {...props} />,
+    saved: <SavedIcon {...props} />,
   };
   return types[semanticType];
 };

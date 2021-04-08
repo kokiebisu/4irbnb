@@ -1,4 +1,4 @@
-import { Pause, Play } from '@svg/regular';
+import { Icon, $Icon } from '@icons';
 import space from '@styles/space.module.scss';
 import shape from '@styles/shape.module.scss';
 import animation from '@styles/animation.module.scss';
@@ -13,9 +13,14 @@ const VideoButton = ({ play = false }) => {
       ].join(' ')}
     >
       {play ? (
-        <Play width={15} height={15} />
+        <Icon variant={$Icon.ACTION} actionType="play" width={15} height={15} />
       ) : (
-        <Pause width={15} height={15} />
+        <Icon
+          variant={$Icon.ACTION}
+          actionType="pause"
+          width={15}
+          height={15}
+        />
       )}
     </div>
   );
