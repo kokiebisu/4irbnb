@@ -1,13 +1,7 @@
 import { useRef } from 'react';
-
 import { Card, $Card } from '@card';
 import { Button, $Button } from '@button';
-
-import layout from '@styles/layout.module.scss';
-import font from '@styles/font.module.scss';
-import space from '@styles/space.module.scss';
 import section from '@template/index.module.scss';
-
 import { useSlider } from '@hooks/useSlider';
 import { useHandleContainerResize } from '@hooks/useHandleContainerResize';
 
@@ -26,20 +20,13 @@ export const AlsoTemplate: React.FC<AlsoTemplateProps> = ({ items, title }) => {
   const { state, previous, next } = useSlider(items, width, 'also');
 
   return (
-    <div style={{ overflowX: 'hidden' }}>
-      <div
-        ref={containerRef}
-        className={[
-          layout['flex'],
-          layout['items-center'],
-          layout['justify-between'],
-        ].join(' ')}
-      >
-        <div className={[space['m-v--16']].join(' ')}>
-          <h3 className={[font['size--20']].join(' ')}>{title}</h3>
+    <div className="overflow-x-hidden">
+      <div ref={containerRef} className="flex items-center justify-between">
+        <div className="my-4">
+          <h3 className="text-lg">{title}</h3>
         </div>
-        <div className={[layout['flex'], layout['items-center']].join(' ')}>
-          <div className={[space['m-h--2']].join(' ')}>
+        <div className="flex items-center">
+          <div className="mx-2">
             <Button
               variant={$Button.PAGINATE}
               animate
@@ -48,7 +35,7 @@ export const AlsoTemplate: React.FC<AlsoTemplateProps> = ({ items, title }) => {
               disable={state.activeSlide === 0}
             />
           </div>
-          <div className={[space['m-h--2']].join(' ')}>
+          <div className="mx-2">
             <Button
               variant={$Button.PAGINATE}
               animate
@@ -62,14 +49,14 @@ export const AlsoTemplate: React.FC<AlsoTemplateProps> = ({ items, title }) => {
         </div>
       </div>
       <div
+        className="h-full"
         style={{
-          height: '100%',
           width: width * (items.length / 2),
           transform: `translateX(-${state.translate}px)`,
           transition: `transform ease-out ${state.transition}s`,
         }}
       >
-        <div style={{ display: 'flex' }}>
+        <div className="flex">
           {items.map((item, index) => {
             return (
               <div
@@ -77,7 +64,7 @@ export const AlsoTemplate: React.FC<AlsoTemplateProps> = ({ items, title }) => {
                 key={index}
                 className={[section['w__nearby']].join(' ')}
               >
-                <div className={[space['m-b--10']].join(' ')}>
+                <div className="mb-3">
                   <Card
                     variant={$Card.NEARBY}
                     to={item[0]?.to}
