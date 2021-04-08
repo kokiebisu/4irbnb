@@ -1,13 +1,5 @@
 import { motion } from 'framer-motion';
-
-import layout from '@styles/layout.module.scss';
-import animation from '@styles/animation.module.scss';
-import color from '@styles/color.module.scss';
-import font from '@styles/font.module.scss';
-import space from '@styles/space.module.scss';
-import shape from '@styles/shape.module.scss';
 import template from '../index.module.scss';
-
 import { Button, $Button } from '@button';
 
 export interface DestinationsTemplateProps {
@@ -27,7 +19,7 @@ export const DestinationsTemplate: React.FC<DestinationsTemplateProps> = ({
 }) => {
   return (
     <div>
-      <div style={{ overflowX: 'auto' }} className={[layout['flex']].join(' ')}>
+      <div className="flex overflow-x-auto">
         {categories.map((category, index) => {
           const { name, value } = category || {};
           return (
@@ -41,11 +33,8 @@ export const DestinationsTemplate: React.FC<DestinationsTemplateProps> = ({
           );
         })}
       </div>
-      <div
-        className={[color['bg--white__2'], shape['w--full']].join(' ')}
-        style={{ height: 1 }}
-      />
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div className="w-full bg-gray-200 h-0.5" />
+      <div className="flex flex-wrap">
         {items[destinationType].map(({ city, location }, index) => {
           return (
             <div key={index} className={[template['destination__w']].join(' ')}>
@@ -75,32 +64,15 @@ const CategoryButton: React.FC<{
       <motion.button
         whileTap={{ scale: 0.95 }}
         onClick={onClick}
-        className={`${[
-          space['p-v--14'],
-          space['p-h--12'],
-          shape['br--8'],
-          animation['hover-background--white__1'],
-        ].join(' ')}`}
+        className="rounded-md py-4 px-3 hover:bg-gray-200"
       >
         <div>
-          <h3 className={[font['no-wrap'], font['size--14']].join(' ')}>
-            {title}
-          </h3>
+          <h3 className="whitespace-nowrap text-md">{title}</h3>
         </div>
       </motion.button>
-      <div
-        style={{
-          width: '100%',
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
+      <div className="flex w-full justify-center">
         <div
-          style={{
-            width: '80%',
-            height: 2,
-            backgroundColor: selected ? 'black' : 'transparent',
-          }}
+          className={`h-1 ${selected ? 'bg-black' : 'bg-transparent'} w-8/10`}
         />
       </div>
     </div>

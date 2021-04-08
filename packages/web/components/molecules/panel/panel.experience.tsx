@@ -17,7 +17,9 @@ const ExperiencePanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
           className="h-full grid gap-3"
         >
           <div
-            className={`rounded-l-lg bg-cover ${!images[0] && 'bg-gray-500'}`}
+            className={`rounded-l-lg bg-cover ${
+              !images[0] && 'bg-gray-400 animate-pulse'
+            }`}
             style={{
               backgroundImage: images[0] && `url(${images[0]})`,
             }}
@@ -31,7 +33,7 @@ const ExperiencePanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
           >
             <div
               className={`col-start-1 col-end-2 row-start-1 row-end-3 bg-cover ${
-                !images[1] && 'bg-gray-500'
+                !images[1] && 'bg-gray-400 animate-pulse'
               }`}
               style={{
                 backgroundImage: images[1] && `url(${images[1]})`,
@@ -39,7 +41,7 @@ const ExperiencePanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
             />
             <div
               className={`col-start-2 col-end-3 row-start-1 row-end-2 bg-cover ${
-                !images[2] && 'bg-gray-500'
+                !images[2] && 'bg-gray-400 animate-pulse'
               }`}
               style={{
                 backgroundImage: images[2] && `url(${images[2]})`,
@@ -47,7 +49,7 @@ const ExperiencePanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
             />
             <div
               className={`col-start-2 col-end-3 row-start-2 row-end-3 bg-cover ${
-                !images[3] && 'bg-gray-500'
+                !images[3] && 'bg-gray-400 animate-pulse'
               }`}
               style={{
                 backgroundImage: images[3] && `url(${images[3]})`,
@@ -55,7 +57,9 @@ const ExperiencePanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
             />
           </div>
           <div
-            className={`rounded-r-lg bg-cover ${!images[4] && 'bg-gray-500'}`}
+            className={`rounded-r-lg bg-cover ${
+              !images[4] && 'bg-gray-400 animate-pulse'
+            }`}
             style={{
               backgroundImage: images[4] && `url(${images[3]})`,
             }}
