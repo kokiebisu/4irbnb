@@ -1,21 +1,23 @@
-import { Icon } from '@icons';
-import { Login, Saved } from '@svg/regular';
-import { $Icon } from 'components/icons';
+import { Icon, $Icon } from '@icons';
 
 const BarButton = ({ type = 'menu', selected = 'menu' }) => {
   const types = {
     menu: {
-      component: <Icon variant={$Icon.LOGO} type="menubar" width={25} />,
+      component: <Icon variant={$Icon.LOGO} logoType="menubar" width={25} />,
       name: 'Explore',
       selected: selected === 'menu',
     },
     saved: {
-      component: <Saved width={25} />,
+      component: (
+        <Icon variant={$Icon.SEMANTIC} semanticType="saved" width={25} />
+      ),
       name: 'Saved',
       selected: selected === 'saved',
     },
     login: {
-      component: <Login width={25} />,
+      component: (
+        <Icon variant={$Icon.GENERAL} generalType="login" width={25} />
+      ),
       name: 'Log in',
       selected: selected === 'login',
     },

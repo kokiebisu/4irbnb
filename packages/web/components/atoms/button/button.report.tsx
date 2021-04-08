@@ -1,13 +1,15 @@
-import { Flag } from '@svg/original';
+import { Icon, $Icon } from '@icons';
+
+export interface ReportButtonProps {}
 
 /**
  * Renders the Report Button
  */
-const ReportButton: React.FC<{}> = () => {
+const ReportButton: React.FC<ReportButtonProps> = () => {
   return (
     <button>
       <div>
-        <Flag width={16} />
+        <Icon variant={$Icon.GENERAL} generalType="flag" width={16} />
       </div>
       <div>Report this listing</div>
     </button>

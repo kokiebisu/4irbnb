@@ -1,12 +1,14 @@
-import { Close } from '@svg/original';
-import { ChevronLeft } from '@svg/regular';
 import { $Icon, Icon } from '@icons';
+
+export interface ModalButtonProps {
+  modal?: string;
+}
 
 /**
  * Renders the close button component
  * @param {function} onClick - The action taken when the button is pressed
  */
-const ModalButton: React.FC<{ modal?: string }> = ({ modal = 'close' }) => {
+const ModalButton: React.FC<ModalButtonProps> = ({ modal = 'close' }) => {
   const types = {
     close: (
       <Icon variant={$Icon.ACTION} actionType="close" width={16} height={16} />

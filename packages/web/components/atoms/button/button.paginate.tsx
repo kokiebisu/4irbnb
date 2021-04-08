@@ -1,25 +1,35 @@
-import { ChevronLeft, ChevronRight } from '@svg/regular';
+import { Icon, $Icon } from '@icons';
+
+export interface PaginateButtonProps {
+  direction?: string;
+  disable?: boolean;
+  size?: number;
+}
 
 /**
  * Renders the paginate button component
  * @param {string} direction - The direction in which the arrow points
  * @param {boolean} disable - Whether if the button is disabled or not
  */
-const PaginateButton: React.FC<{
-  direction?: string;
-  disable?: boolean;
-  size?: number;
-}> = ({ direction = 'left', disable = false, size = 3 }) => {
+const PaginateButton: React.FC<PaginateButtonProps> = ({
+  direction = 'left',
+  disable = false,
+  size = 3,
+}) => {
   const icons = {
     left: (
-      <ChevronLeft
+      <Icon
+        variant={$Icon.ACTION}
+        actionType="left"
         width={10}
         stroke={`${disable ? 'lightgray' : 'black'}`}
         strokeWidth={5}
       />
     ),
     right: (
-      <ChevronRight
+      <Icon
+        variant={$Icon.ACTION}
+        actionType="right"
         width={10}
         stroke={`${disable ? 'lightgray' : 'black'}`}
         strokeWidth={5}

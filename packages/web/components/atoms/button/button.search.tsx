@@ -1,4 +1,4 @@
-import { MagnifyGlass } from '@svg/original';
+import { Icon, $Icon } from '@icons';
 
 /**
  * Renders the Search Button component
@@ -12,7 +12,14 @@ const SearchButton: React.FC<{ expand?: boolean }> = ({ expand = false }) => {
       } transition`}
     >
       <div className={`${expand ? 'mr-1' : 'p-4'}`}>
-        <MagnifyGlass width={13} height={13} stroke="white" strokeWidth={4} />
+        <Icon
+          variant={$Icon.GENERAL}
+          generalType="magnifyGlass"
+          width={13}
+          height={13}
+          stroke="white"
+          strokeWidth={4}
+        />
       </div>
       <div
         className={`transition ${

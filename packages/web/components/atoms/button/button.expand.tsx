@@ -1,13 +1,16 @@
-import { ChevronRight } from '@svg/regular';
+import { Icon, $Icon } from '@icons';
+
+export interface ExpandButtonProps {
+  to?: string;
+  title?: string;
+}
 
 /**
  * Renders the expand button
  * @param {string} to - Redirects to the path being specified
  * @param {string} title - Title of the button
  */
-const ExpandButton: React.FC<{ to?: string; title?: string }> = ({
-  title = 'Button',
-}) => {
+const ExpandButton: React.FC<ExpandButtonProps> = ({ title = 'Button' }) => {
   return (
     <div>
       <div className="flex items-center">
@@ -15,7 +18,13 @@ const ExpandButton: React.FC<{ to?: string; title?: string }> = ({
           <u className="text-sm">{title}</u>
         </div>
         <div>
-          <ChevronRight width={14} stroke="black" strokeWidth={5} />
+          <Icon
+            variant={$Icon.ACTION}
+            actionType="right"
+            width={14}
+            stroke="black"
+            strokeWidth={5}
+          />
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { ChevronLeft } from '@svg/regular';
+import { Icon, $Icon } from '@icons';
 
 /**
  * Renders the back button
@@ -8,7 +8,13 @@ const BackButton: React.FC<{}> = () => {
   return (
     <div className="flex items-center bg-transparent">
       <div>
-        <ChevronLeft width={20} stroke="#61AFB2" strokeWidth={3} />
+        <Icon
+          variant={$Icon.ACTION}
+          actionType="left"
+          width={20}
+          stroke="#61AFB2"
+          strokeWidth={3}
+        />
       </div>
       <div>
         <h4 className="text-sm text-green-700">Back</h4>
