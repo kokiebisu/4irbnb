@@ -1,9 +1,4 @@
-import space from '@styles/space.module.scss';
-import layout from '@styles/layout.module.scss';
-import font from '@styles/font.module.scss';
-
 import { Button, $Button } from '@button';
-
 import { Card, $Card } from '@card';
 import { useSlide } from '@hooks/useSlide';
 
@@ -29,27 +24,20 @@ export const StartingTemplate: React.FC<StartingTemplateProps> = ({
   };
 
   return (
-    <div ref={containerRef} style={{ overflowX: 'hidden' }}>
-      <div
-        className={[
-          space['m-v--16'],
-          layout['flex'],
-          layout['items-center'],
-          layout['justify-between'],
-        ].join(' ')}
-      >
+    <div ref={containerRef} className="overflow-x-hidden">
+      <div className="my-4 flex items-center justify-between">
         <div>
-          <h3 className={[font['size--20']].join(' ')}>{title}</h3>
+          <h3 className="text-2xl">{title}</h3>
         </div>
-        <div className={[layout['flex'], layout['items-center']].join(' ')}>
-          <div className={[space['m-r--8']].join(' ')}>
+        <div className="flex items-center">
+          <div className="mr-3">
             <Button
               variant={$Button.UNDERLINE}
               title={`Show (${cards.length})`}
             />
           </div>
-          <div className={[layout['flex'], layout['items-center']].join(' ')}>
-            <div className={[space['m-h--4']].join(' ')}>
+          <div className="flex items-center">
+            <div className="mx-2">
               <Button
                 block
                 variant={$Button.PAGINATE}
@@ -59,7 +47,7 @@ export const StartingTemplate: React.FC<StartingTemplateProps> = ({
                 //   disable={state.activeSlide === 0}
               />
             </div>
-            <div className={[space['m-h--4']].join(' ')}>
+            <div className="mx-2">
               <Button
                 block
                 variant={$Button.PAGINATE}
@@ -75,12 +63,7 @@ export const StartingTemplate: React.FC<StartingTemplateProps> = ({
           </div>
         </div>
       </div>
-      <div
-        style={{
-          height: '100%',
-          width: '100%',
-        }}
-      >
+      <div className="h-full w-full">
         <div
           style={{
             width: width * (cards.length / displayingColumns()),
@@ -88,25 +71,21 @@ export const StartingTemplate: React.FC<StartingTemplateProps> = ({
             transition: `transform ease-out ${state.transition}s`,
           }}
         >
-          <div style={{ display: 'flex' }}>
-            {cards.map(
-              ({ imgUrl = undefined, videoUrl = undefined }, index) => {
-                return (
-                  <div
-                    key={index}
-                    style={{ width: width / displayingColumns() }}
-                  >
-                    <div style={{ marginRight: 10 }}>
-                      <Card
-                        variant={$Card.STARTING}
-                        imgUrl={imgUrl}
-                        videoUrl={videoUrl}
-                      />
-                    </div>
+          <div className="flex">
+            {cards.map((card, index) => {
+              const { imgUrl, videoUrl } = card || {};
+              return (
+                <div key={index} style={{ width: width / displayingColumns() }}>
+                  <div className="mr-3">
+                    <Card
+                      variant={$Card.STARTING}
+                      imgUrl={imgUrl}
+                      videoUrl={videoUrl}
+                    />
                   </div>
-                );
-              }
-            )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

@@ -13,13 +13,20 @@ const VideoButton = ({ play = false }) => {
       ].join(' ')}
     >
       {play ? (
-        <Icon variant={$Icon.ACTION} actionType="play" width={15} height={15} />
+        <Icon
+          variant={$Icon.ACTION}
+          actionType="play"
+          width={15}
+          height={15}
+          fill="white"
+        />
       ) : (
         <Icon
           variant={$Icon.ACTION}
           actionType="pause"
           width={15}
           height={15}
+          fill="white"
         />
       )}
     </div>

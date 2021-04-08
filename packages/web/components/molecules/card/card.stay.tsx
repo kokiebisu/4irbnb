@@ -50,7 +50,7 @@ const StayCard: React.FC<{
           <div className="flex justify-between">
             <div className="flex">
               <div
-                className="mr-6"
+                className="mr-6 bg-gray-400 animate-pulse rounded-lg"
                 style={{
                   width: 300,
                   minHeight: 200,
@@ -106,6 +106,8 @@ const StayCard: React.FC<{
                 variant={$Icon.ACTION}
                 actionType="heart"
                 fill="white"
+                stroke="black"
+                strokeWidth={2}
                 width={24}
               />
             </div>

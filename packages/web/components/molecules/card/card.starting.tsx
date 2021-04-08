@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Video } from '@video';
 import { $Icon, Icon } from '@icons';
 
-const StartingCard: React.FC<{
+export interface StartingCardProps {
   ratings?: number;
   reviews?: number;
   country?: string;
@@ -11,7 +11,9 @@ const StartingCard: React.FC<{
   slots?: string[];
   imgUrl?: string;
   videoUrl?: string;
-}> = ({
+}
+
+const StartingCard: React.FC<StartingCardProps> = ({
   ratings = 5,
   reviews = 100,
   country = 'Italy',
@@ -51,7 +53,7 @@ const StartingCard: React.FC<{
         <div className="flex flex-col justify-center">
           <div className="flex items-center mb-3">
             <div className="mr-1">
-              <Star width={10} height={10} />
+              <Icon variant={$Icon.PROFILE} profileType="star" width={10} />
             </div>
             <div className="mr-1">
               <p className="text-xs">{ratings}</p>
