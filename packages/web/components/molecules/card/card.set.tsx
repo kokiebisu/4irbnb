@@ -1,4 +1,4 @@
-import { Check } from '@svg/original';
+import { $Icon, Icon } from '@icons';
 
 const SetCard: React.FC<{}> = () => {
   return (
@@ -7,7 +7,12 @@ const SetCard: React.FC<{}> = () => {
       <div className="p-4">
         <div className="flex items-center">
           <div className="mr-3">
-            <Check width={18} fill="#268A04" />
+            <Icon
+              variant={$Icon.GENERAL}
+              generalType="check"
+              width={18}
+              fill="#268A04"
+            />
           </div>
           <div>
             <div className="mb-1">

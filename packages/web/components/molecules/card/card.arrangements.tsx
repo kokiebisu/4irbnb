@@ -1,4 +1,4 @@
-import { DoubleBed } from '@svg/original';
+import { $Icon, Icon } from '@icons';
 
 /**
  * Renders the arrangements card component
@@ -14,7 +14,7 @@ const ArrangementsCard: React.FC<{ card?: any }> = ({
     <div className="w-52 py-6 border border-gray-300 rounded-md">
       <div className="pl-4">
         <div className="pt-1 pb-2">
-          <DoubleBed width={24} />
+          <Icon variant={$Icon.STAY} stayType="doublebed" width={24} />
         </div>
         <p className="pt-1 text-gray-500">Bedroom</p>
         <div>

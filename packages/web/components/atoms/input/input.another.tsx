@@ -1,4 +1,9 @@
-import { Plus } from '@svg/original';
+import { Icon, $Icon } from '@icons';
+
+export interface AnotherInputProps {
+  handleChange?: (e: any) => void;
+  value?: string;
+}
 
 /**
  * Renders the text input component
@@ -9,11 +14,10 @@ import { Plus } from '@svg/original';
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const AnotherInput: React.FC<{
-  handleChange?: any;
-  handleKeyPress?: any;
-  value?: string;
-}> = ({ handleChange, value }) => {
+export const AnotherInput: React.FC<AnotherInputProps> = ({
+  handleChange,
+  value,
+}) => {
   return (
     <div className="h-96 p-7 border border-dashed border-gray-300">
       <form className="h-full">
@@ -31,7 +35,12 @@ export const AnotherInput: React.FC<{
                   <div>
                     <div>
                       <div className="flex items-center">
-                        <Plus width={45} fill="#D8D8D8" />
+                        <Icon
+                          variant={$Icon.SEMANTIC}
+                          semanticType="plus"
+                          width={45}
+                          fill="#D8D8D8"
+                        />
                       </div>
                     </div>
                   </div>

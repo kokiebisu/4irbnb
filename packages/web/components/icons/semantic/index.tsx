@@ -45,17 +45,26 @@ export const WarningIcon: React.FC<IconProps> = ({ fill }) => {
   );
 };
 
-export const MinusIcon: React.FC<IconProps> = ({ fill = 'black' }) => {
+export const MinusIcon: React.FC<IconProps> = ({
+  fill = 'black',
+  ...props
+}) => {
   return (
-    <svg width="100%" height="auto" strokeWidth={2} viewBox="0 0 24 24">
+    <svg
+      {...props}
+      width="100%"
+      height="auto"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
+    >
       <rect fill={fill} height="2" rx="1" width="12" x="6" y="11"></rect>
     </svg>
   );
 };
 
-export const PlusIcon: React.FC<IconProps> = ({ fill = 'black' }) => {
+export const PlusIcon: React.FC<IconProps> = ({ fill = 'black', ...props }) => {
   return (
-    <svg width="100%" height="auto" viewBox="0 0 24 24">
+    <svg {...props} width="100%" height="auto" viewBox="0 0 24 24">
       <rect fill={fill} height="2" rx="1" width="12" x="6" y="11"></rect>
       <rect fill={fill} height="12" rx="1" width="2" x="11" y="6"></rect>
     </svg>

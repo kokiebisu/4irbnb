@@ -1,16 +1,7 @@
 import { useState } from 'react';
 
-/** styles **/
-import shape from '@styles/shape.module.scss';
-import color from '@styles/color.module.scss';
-import space from '@styles/space.module.scss';
-import layout from '@styles/layout.module.scss';
-import font from '@styles/font.module.scss';
-import input from '@input/input.module.scss';
-
-/** Styling */
 import { styleInput, styleLabel, styleContainer } from './styling.select';
-import { ChevronDown, ChevronTop } from '@svg/regular';
+import { Icon, $Icon } from '@icons';
 
 /**
  * Renders the text input component
@@ -65,7 +56,11 @@ export const GuestsInput: React.FC<{
           <option value="5">5 guests</option>
         </select>
         <div className="flex items-center">
-          {fieldActive ? <ChevronTop width={13} /> : <ChevronDown width={13} />}
+          {fieldActive ? (
+            <Icon variant={$Icon.ACTION} actionType="top" width={13} />
+          ) : (
+            <Icon variant={$Icon.ACTION} actionType="bottom" width={13} />
+          )}
         </div>
       </div>
     </div>

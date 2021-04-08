@@ -25,6 +25,8 @@ export interface IconProps {
   inversed?: boolean;
   width?: number;
   height?: number | string;
+  stroke?: string;
+  strokeWidth?: number;
 }
 
 export interface IconPropsWithType
