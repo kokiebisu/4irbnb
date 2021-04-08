@@ -22,28 +22,13 @@ export const ArrangementsTemplate: React.FC<ArrangementsTemplateProps> = ({
   return (
     <div>
       <div>
-        <h3
-          className={[
-            font['weight--500'],
-            space['m-b--20'],
-            color['c--gray__3'],
-            font['size--24'],
-          ].join(' ')}
-        >
-          {title}
-        </h3>
+        <h3 className="font-medium mb-5 text-gray-700 text-2xl">{title}</h3>
       </div>
       <div style={{ marginLeft: -8, marginRight: -8 }}>
-        <div
-          style={{
-            marginLeft: 8,
-            marginRight: 8,
-          }}
-          className={[layout['flex']].join(' ')}
-        >
+        <div className="flex mx-2">
           {arrangements.map((arrangement, index) => {
             return (
-              <div key={index} style={{ marginRight: 12 }}>
+              <div key={index} className="mr-3">
                 <Card variant={$Card.ARRANGEMENTS} card={arrangement} />
               </div>
             );

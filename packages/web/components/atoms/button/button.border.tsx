@@ -12,7 +12,7 @@ const BorderButton: React.FC<{
   size?: 'sm' | 'md' | 'lg';
   spread?: boolean;
   bold?: boolean;
-}> = ({ title = 'Button', inverse = false, size = 'md', bold = true }) => {
+}> = ({ title, inverse, size, bold }) => {
   const renderBorder = () => {
     if (inverse && bold) {
       return 'border-2 border-white';
@@ -27,7 +27,7 @@ const BorderButton: React.FC<{
   };
 
   const styles = {
-    common: 'text-center rounded whitespace-nowrap',
+    common: 'text-center rounded-lg whitespace-nowrap',
     sm: 'text-sm py-2 px-4',
     md: 'text-base py-3 px-5',
     lg: 'text-lg py-4 px-6',
