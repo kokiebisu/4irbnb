@@ -38,7 +38,7 @@ const PaginateButton: React.FC<PaginateButtonProps> = ({
   };
   return (
     <div
-      className={`${
+      className={`bg-white ${
         disable ? 'border border-gray-100' : ''
       } rounded-full p-${size}`}
     >

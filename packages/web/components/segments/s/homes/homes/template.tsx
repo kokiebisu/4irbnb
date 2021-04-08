@@ -9,7 +9,21 @@ export interface HomesTemplateProps {
   place?: string;
   guests?: number;
   average?: number;
-  stays?: any;
+  stays?: {
+    images: string[];
+    typeStay: string;
+    location: string;
+    title: string;
+    accomodations: {
+      guests: number;
+      bedroom: number;
+      beds: number;
+      bath: number;
+    };
+    characteristics: string[];
+    ratings: number;
+    reviews: number;
+  }[];
   title?: string;
   layout?: 'vertical' | 'horizontal';
 }
@@ -27,14 +41,10 @@ export const HomesTemplate: React.FC<HomesTemplateProps> = ({
 }) => {
   const layouts = {
     vertical: (
-      <div
-        className={
-          title ? [space['m-t--45']].join(' ') : [space['m-t--24']].join(' ')
-        }
-      >
+      <div className={title ? 'mt-8' : 'mt-4'}>
         {title && (
           <div>
-            <h3 className={[font['size--22']].join(' ')}>{title}</h3>
+            <h3 className="text-2xl">{title}</h3>
           </div>
         )}
         <div>
