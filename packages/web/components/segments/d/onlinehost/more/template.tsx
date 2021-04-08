@@ -61,6 +61,7 @@ export const MoreTemplate: React.FC<MoreTemplateProps> = ({ imgUrl }) => {
                   title="Let's go"
                   inverse
                   bold
+                  size="md"
                 />
               </div>
             </div>

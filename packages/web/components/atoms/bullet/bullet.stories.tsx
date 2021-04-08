@@ -130,6 +130,8 @@ Score.args = {
 export const Question = TemplateStory.bind({});
 Question.args = {
   variant: $Bullet.QUESTION,
+  title: 'Question here',
+  answer: 'Answer here',
 };
 
 export const Check = TemplateStory.bind({});
