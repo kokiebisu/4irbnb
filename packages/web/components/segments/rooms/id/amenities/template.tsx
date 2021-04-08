@@ -1,9 +1,6 @@
 import { Bullet, $Bullet } from '@bullet';
 import { Button, $Button } from '@button';
-
-import font from '@styles/font.module.scss';
 import space from '@styles/space.module.scss';
-import color from '@styles/color.module.scss';
 import section from '@template/index.module.scss';
 
 export interface AmenitiesTemplateProps {
@@ -23,16 +20,7 @@ export const AmenitiesTemplate: React.FC<AmenitiesTemplateProps> = ({
   return (
     <div>
       <div>
-        <h3
-          className={[
-            font['weight--500'],
-            space['m-b--20'],
-            color['c--gray__3'],
-            font['size--24'],
-          ].join(' ')}
-        >
-          {title}
-        </h3>
+        <h3 className="font-medium mb-5 text-gray-700 text-2xl">{title}</h3>
       </div>
       <div
         className={[

@@ -92,17 +92,10 @@ Privacy.decorators = [
 export const Border = ButtonStory.bind({});
 Border.args = {
   variant: $Button.BORDER,
-};
-Border.argTypes = {
-  size: {
-    control: {
-      type: 'select',
-      options: ['sm', 'md', 'lg'],
-    },
-  },
-  bold: {
-    control: 'boolean',
-  },
+  title: 'Button',
+  inverse: false,
+  size: 'md',
+  bold: true,
 };
 
 export const Banner = ButtonStory.bind({});

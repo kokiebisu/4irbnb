@@ -36,42 +36,24 @@ export const ReviewsTemplate: React.FC<ReviewsTemplateProps> = ({
 }) => {
   return (
     <>
-      <div className={[space['m-v--8']].join(' ')}>
-        <div
-          className={[
-            space['p-v--8'],
-            layout['flex'],
-            layout['items-center'],
-          ].join(' ')}
-        >
-          <div className={[layout['flex'], layout['items-center']].join(' ')}>
-            <div className={[space['m-r--6']].join(' ')}>
+      <div className="my-3">
+        <div className="py-3 flex items-center">
+          <div className="flex items-center">
+            <div className="mr-2">
               <Icon variant={$Icon.PROFILE} profileType="star" width={20} />
             </div>
-            <h3
-              className={[
-                space['m-r--6'],
-                font['size--22'],
-                color['c--gray__3'],
-              ].join(' ')}
-            >
+            <h3 className="mr-2 text-2xl text-gray-700">
               {ratings.toFixed(1)}
             </h3>
-            <h3
-              className={[
-                space['m-l--2'],
-                font['size--22'],
-                color['c--gray__3'],
-              ].join(' ')}
-            >
+            <h3 className="ml-1 text-2xl text-gray-700">
               ({numberOfReviews} reviews)
             </h3>
           </div>
         </div>
         {layoutType === 'room' && (
           <div
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}
-            className={[space['m-t--12'], space['m-r--24']].join(' ')}
+            style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}
+            className="grid mt-4 mr-6"
           >
             {categories.map((category, index) => {
               return (
@@ -114,7 +96,7 @@ export const ReviewsTemplate: React.FC<ReviewsTemplateProps> = ({
             );
           })}
         </div>
-        <div className={[space['m-t--16']].join(' ')}>
+        <div className="mt-4">
           <Button
             variant={$Button.BORDER}
             size="md"
