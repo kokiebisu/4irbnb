@@ -18,14 +18,7 @@ const CharacteristicBullet: React.FC<{
   devices?: string[];
   people?: number;
   group?: number;
-}> = ({
-  characteristic = 'house',
-  time = 60,
-  devices = ['computer', 'smartphone'],
-  people = 10,
-  group = 100,
-  languages = ['English', 'Chinese'],
-}) => {
+}> = ({ characteristic, time, devices, people, group, languages }) => {
   const characteristics = {
     house: {
       icon: <Icon variant={$Icon.STAY} stayType="house" width={24} />,
@@ -55,19 +48,27 @@ const CharacteristicBullet: React.FC<{
       description: 'The host doesn’t allow pets, parties, or smoking.',
     },
     time: {
-      icon: <Icon variant={$Icon.STAY} experienceType="time" width={32} />,
+      icon: (
+        <Icon variant={$Icon.EXPERIENCE} experienceType="time" width={32} />
+      ),
       title: Helper.displayDuration(time),
     },
     devices: {
-      icon: <Icon variant={$Icon.STAY} experienceType="computer" width={32} />,
+      icon: (
+        <Icon variant={$Icon.EXPERIENCE} experienceType="computer" width={32} />
+      ),
       title: `Join from your ${devices}`,
     },
     people: {
-      icon: <Icon variant={$Icon.STAY} experienceType="people" width={32} />,
+      icon: (
+        <Icon variant={$Icon.EXPERIENCE} experienceType="people" width={32} />
+      ),
       title: `Up to ${people} people. Private groups available for up to ${group}`,
     },
     language: {
-      icon: <Icon variant={$Icon.STAY} experienceType="language" width={32} />,
+      icon: (
+        <Icon variant={$Icon.EXPERIENCE} experienceType="language" width={32} />
+      ),
       title: `Hosted in ${languages} (Simplified)`,
     },
   };

@@ -67,6 +67,7 @@ export const room = (props) => {
   return {
     room: {
       component: <RoomPanel {...props} />,
+      style: '',
     },
   };
 };

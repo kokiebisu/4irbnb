@@ -70,6 +70,7 @@ export const experience = (props) => {
   return {
     experience: {
       component: <ExperiencePanel {...props} />,
+      style: '',
     },
   };
 };

@@ -89,10 +89,10 @@ export const CharacteristicsTemplate: React.FC<CharacteristicsTemplateProps> = (
               >
                 <div className={[space['m-r--4']].join(' ')}>
                   <Icon
-                    variant={$Icon.EXPERIENCE}
+                    variant={$Icon.GENERAL}
                     generalType="devices"
                     inversed
-                    width={16}
+                    width={18}
                     fill="black"
                   />
                 </div>
@@ -113,11 +113,7 @@ export const CharacteristicsTemplate: React.FC<CharacteristicsTemplateProps> = (
                 ].join(' ')}
               >
                 <div>
-                  <Icon
-                    variant={$Icon.PROFILE}
-                    profileType="star"
-                    height={14}
-                  />
+                  <Icon variant={$Icon.PROFILE} profileType="star" width={12} />
                 </div>
                 <h3
                   className={[
@@ -201,26 +197,22 @@ export const CharacteristicsTemplate: React.FC<CharacteristicsTemplateProps> = (
           ].join(' ')}
         >
           <Bullet
-            extendsTo={[space['m-t--24']].join(' ')}
             variant={$Bullet.CHARACTERISTIC}
             characteristic="time"
             time={characteristics['time']}
           />
           <Bullet
-            extendsTo={[space['m-t--24']].join(' ')}
             variant={$Bullet.CHARACTERISTIC}
             characteristic="devices"
             devices={characteristics['devices'].join(', ')}
           />
           <Bullet
-            extendsTo={[space['m-t--24']].join(' ')}
             variant={$Bullet.CHARACTERISTIC}
             characteristic="people"
             people={characteristics['people']}
             private={characteristics['group']}
           />
           <Bullet
-            extendsTo={[space['m-t--24']].join(' ')}
             variant={$Bullet.CHARACTERISTIC}
             characteristic="language"
             languages={characteristics['languages'].join(', ')}
