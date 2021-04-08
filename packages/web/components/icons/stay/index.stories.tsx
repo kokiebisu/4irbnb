@@ -19,8 +19,9 @@ const IconStory: Story<IconPropsWithType> = (args) => (
   </div>
 );
 const IconBundleStory: Story<IconProps & StayIconTypeProps> = () => (
-  <div className="flex items-center">
+  <div className="flex items-center flex-wrap">
     {[
+      { stayType: 'doublebed' as const },
       { stayType: 'house' as const },
       { stayType: 'sparkle' as const },
       { stayType: 'door' as const },
@@ -36,7 +37,7 @@ const IconBundleStory: Story<IconProps & StayIconTypeProps> = () => (
     ].map((args) => {
       return (
         <div className="mr-2">
-          <div style={{ ...size }}>
+          <div className="mb-2" style={{ ...size }}>
             <StayIcon {...args} />
           </div>
         </div>
@@ -46,6 +47,11 @@ const IconBundleStory: Story<IconProps & StayIconTypeProps> = () => (
 );
 
 export const Overview = IconBundleStory.bind({});
+
+export const DoubleBed = IconStory.bind({});
+DoubleBed.args = {
+  stayType: 'doublebed',
+};
 
 export const House = IconStory.bind({});
 House.args = {

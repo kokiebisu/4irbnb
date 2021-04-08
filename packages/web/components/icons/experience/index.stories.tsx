@@ -19,7 +19,7 @@ const IconStory: Story<IconPropsWithType> = (args) => (
   </div>
 );
 const IconBundleStory: Story<IconProps & ExperienceIconTypeProps> = () => (
-  <div className="flex items-center">
+  <div className="flex items-center flex-wrap">
     {[
       { title: 'time' as const },
       { title: 'people' as const },
@@ -30,7 +30,7 @@ const IconBundleStory: Story<IconProps & ExperienceIconTypeProps> = () => (
     ].map((icon) => {
       return (
         <div className="mr-2">
-          <div style={{ ...size }}>
+          <div className="mb-2" style={{ ...size }}>
             <ExperienceIcon experienceType={icon.title} />
           </div>
         </div>
@@ -40,6 +40,11 @@ const IconBundleStory: Story<IconProps & ExperienceIconTypeProps> = () => (
 );
 
 export const Overview = IconBundleStory.bind({});
+
+export const Time = IconStory.bind({});
+Time.args = {
+  experienceType: 'time',
+};
 
 export const People = IconStory.bind({});
 People.args = {

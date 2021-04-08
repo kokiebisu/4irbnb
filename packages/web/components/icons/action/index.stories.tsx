@@ -20,7 +20,7 @@ const IconStory: Story<IconProps & ActionIconTypeProps> = (args) => (
 );
 
 const IconBundleStory: Story<{}> = () => (
-  <div className="flex items-center">
+  <div className="flex items-center flex-wrap">
     {[
       { actionType: 'heart' as const },
       { actionType: 'close' as const },
@@ -33,7 +33,7 @@ const IconBundleStory: Story<{}> = () => (
     ].map((args) => {
       return (
         <div className="mr-2">
-          <div style={{ ...size }}>
+          <div className="mb-2" style={{ ...size }}>
             <ActionIcon {...args} />
           </div>
         </div>
