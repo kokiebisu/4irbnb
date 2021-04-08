@@ -1,4 +1,4 @@
-import { Guidance, Protection, Requirements } from '@svg/original';
+import { Icon, $Icon } from '@icons';
 import { $Button, Button } from '@button';
 
 /**
@@ -11,21 +11,25 @@ const PriorityBullet: React.FC<{
 }> = ({ priority = 'protection', onClick }) => {
   const categories = {
     protection: {
-      icon: <Protection width={40} />,
+      icon: (
+        <Icon variant={$Icon.GENERAL} generalType="protection" width={40} />
+      ),
       title: 'Host insurance and protection',
       description:
         'To support you in the rare event of an incident, each booking on AIrbnb includes property damae protection of up to $1M USD and liability insurance of up to $1M USD.',
       link: "How you're protected while hosting",
     },
     guidance: {
-      icon: <Guidance width={40} />,
+      icon: <Icon variant={$Icon.GENERAL} generalType="guidance" width={40} />,
       title: 'COVID-19 safety guidance and support',
       description:
         'To help protect the health of our community, we’ve partnered with experts to create safety practices for everyone, plus a cleaning process for hosts.',
       link: 'Explore the enhanced cleaning process',
     },
     requirements: {
-      icon: <Requirements width={40} />,
+      icon: (
+        <Icon variant={$Icon.GENERAL} generalType="requirements" width={40} />
+      ),
       title: 'Requirements for all guests',
       description:
         'To give hosts peace of mind, we offer guest identification and let you check out reviews of guests before they book. Our new Guest Standards Policy sets higher expectations for behaviour.',

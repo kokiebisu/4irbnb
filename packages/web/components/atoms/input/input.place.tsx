@@ -1,16 +1,15 @@
-import { useRef, useState } from "react";
+import { useRef, useState } from 'react';
 
-import shape from "@styles/shape.module.scss";
-import color from "@styles/color.module.scss";
-import space from "@styles/space.module.scss";
-import layout from "@styles/layout.module.scss";
-import font from "@styles/font.module.scss";
-import input from "@input/input.module.scss";
+import shape from '@styles/shape.module.scss';
+import color from '@styles/color.module.scss';
+import space from '@styles/space.module.scss';
+import layout from '@styles/layout.module.scss';
+import font from '@styles/font.module.scss';
+import input from '@input/input.module.scss';
 
-import { Checked } from "@svg/original";
-import { ChevronDown, ChevronTop } from "@svg/regular";
+import { Icon, $Icon } from '@icons';
 
-import useOnClickOutside from "@hooks/useOnClickOutside";
+import useOnClickOutside from '@hooks/useOnClickOutside';
 
 /**
  * Renders the text input component
@@ -26,7 +25,7 @@ export const PlaceInput: React.FC<{
   direction?: string;
   errors?: boolean;
   changePlace?: (type: string) => void;
-}> = ({ value = "Entire place", direction, errors = false, changePlace }) => {
+}> = ({ value = 'Entire place', direction, errors = false, changePlace }) => {
   const containerRef = useRef();
   const [expanded, setExpanded] = useState(false);
   useOnClickOutside(containerRef, () => {
@@ -36,24 +35,24 @@ export const PlaceInput: React.FC<{
   });
   const renderShape = () => {
     switch (direction) {
-      case "top":
+      case 'top':
         return [
-          color["b-b--white__3"],
-          color["b-l--white__3"],
-          color["b-r--white__3"],
-          shape["bbr--10"],
-        ].join(" ");
-      case "bottom":
+          color['b-b--white__3'],
+          color['b-l--white__3'],
+          color['b-r--white__3'],
+          shape['bbr--10'],
+        ].join(' ');
+      case 'bottom':
         return [
-          color["b-t--white__3"],
-          color["b-l--white__3"],
-          color["b-r--white__3"],
-          shape["btr--10"],
-        ].join(" ");
-      case "middle":
-        return [color["b--white__3"]].join(" ");
+          color['b-t--white__3'],
+          color['b-l--white__3'],
+          color['b-r--white__3'],
+          shape['btr--10'],
+        ].join(' ');
+      case 'middle':
+        return [color['b--white__3']].join(' ');
       default:
-        return [color["b--white__3"], shape["br--10"]].join(" ");
+        return [color['b--white__3'], shape['br--10']].join(' ');
     }
   };
 
@@ -62,59 +61,63 @@ export const PlaceInput: React.FC<{
       ref={containerRef}
       style={{ height: 50 }}
       className={`${[
-        layout["flex"],
-        input["outside"],
-        layout["relative"],
-        layout["items-center"],
-      ].join(" ")}`}
+        layout['flex'],
+        input['outside'],
+        layout['relative'],
+        layout['items-center'],
+      ].join(' ')}`}
     >
       <div
         className={`${renderShape()} ${
-          expanded && [input["container__active"]].join(" ")
+          expanded && [input['container__active']].join(' ')
         }`}
         style={{
-          position: "relative",
-          height: "100%",
-          width: "100%",
+          position: 'relative',
+          height: '100%',
+          width: '100%',
         }}
       >
         <div
-          style={{ height: "100%", padding: "0 12px" }}
+          style={{ height: '100%', padding: '0 12px' }}
           onClick={() => setExpanded(!expanded)}
           className={`${[
-            layout["flex"],
-            layout["justify-between"],
-            layout["items-center"],
-            color["bg--transparent"],
-            space["p--0"],
-            shape["w--full"],
-            color["b--0"],
-            font["size--16"],
-            font["weight--300"],
-          ].join(" ")}`}
+            layout['flex'],
+            layout['justify-between'],
+            layout['items-center'],
+            color['bg--transparent'],
+            space['p--0'],
+            shape['w--full'],
+            color['b--0'],
+            font['size--16'],
+            font['weight--300'],
+          ].join(' ')}`}
         >
           <div>
             <label
-              style={{ left: 0, top: 15, cursor: "pointer", padding: "0 12px" }}
+              style={{ left: 0, top: 15, cursor: 'pointer', padding: '0 12px' }}
               htmlFor="place"
               className={`${[
-                layout["absolute"],
-                font["size--14"],
-                color["c--gray__3"],
-                font["weight--100"],
-              ].join(" ")}`}
+                layout['absolute'],
+                font['size--14'],
+                color['c--gray__3'],
+                font['weight--100'],
+              ].join(' ')}`}
             >
               {value}
             </label>
           </div>
           <div>
-            {expanded ? <ChevronTop width={13} /> : <ChevronDown width={13} />}
+            {expanded ? (
+              <Icon variant={$Icon.ACTION} actionType="top" width={13} />
+            ) : (
+              <Icon variant={$Icon.ACTION} actionType="bottom" width={13} />
+            )}
           </div>
         </div>
         {expanded && (
           <div
             style={{
-              position: "absolute",
+              position: 'absolute',
               top: 48,
               zIndex: 60,
             }}
@@ -122,33 +125,33 @@ export const PlaceInput: React.FC<{
             <div
               style={{
                 borderRadius: 6,
-                backgroundColor: "white",
-                border: "1px solid lightgray",
+                backgroundColor: 'white',
+                border: '1px solid lightgray',
                 padding: 16,
                 boxShadow:
-                  "rgba(0, 0, 0, 0.15) 0px 2px 6px, rgba(0, 0, 0, 0.07) 0px 0px 0px 1px !important",
+                  'rgba(0, 0, 0, 0.15) 0px 2px 6px, rgba(0, 0, 0, 0.07) 0px 0px 0px 1px !important',
               }}
             >
               <div>
                 <div
                   style={{
                     padding: 12,
-                    display: "flex",
-                    alignItems: "center",
-                    cursor: "pointer",
-                    height: "100%",
+                    display: 'flex',
+                    alignItems: 'center',
+                    cursor: 'pointer',
+                    height: '100%',
                   }}
-                  className={[color["bg--transparent"]].join(" ")}
+                  className={[color['bg--transparent']].join(' ')}
                   onClick={() => {
-                    changePlace("Entire place");
+                    changePlace('Entire place');
                     setExpanded(!expanded);
                   }}
                 >
                   <div>
                     <div>
                       <h3
-                        className={[font["text--left"], font["size--14"]].join(
-                          " "
+                        className={[font['text--left'], font['size--14']].join(
+                          ' '
                         )}
                       >
                         Entire place
@@ -156,8 +159,8 @@ export const PlaceInput: React.FC<{
                     </div>
                     <div>
                       <p
-                        className={[font["size--13"], font["text--left"]].join(
-                          " "
+                        className={[font['size--13'], font['text--left']].join(
+                          ' '
                         )}
                       >
                         Guests have the whole place to themselves--there's a
@@ -166,13 +169,17 @@ export const PlaceInput: React.FC<{
                       </p>
                     </div>
                   </div>
-                  {value === "Entire place" && (
+                  {value === 'Entire place' && (
                     <div
-                      className={[layout["flex"], layout["items-center"]].join(
-                        " "
+                      className={[layout['flex'], layout['items-center']].join(
+                        ' '
                       )}
                     >
-                      <Checked width={32} />
+                      <Icon
+                        variant={$Icon.SEMANTIC}
+                        semanticType="check"
+                        width={32}
+                      />
                     </div>
                   )}
                 </div>
@@ -181,22 +188,22 @@ export const PlaceInput: React.FC<{
                 <div
                   style={{
                     padding: 12,
-                    display: "flex",
-                    alignItems: "center",
-                    cursor: "pointer",
-                    height: "100%",
+                    display: 'flex',
+                    alignItems: 'center',
+                    cursor: 'pointer',
+                    height: '100%',
                   }}
-                  className={[color["bg--transparent"]].join(" ")}
+                  className={[color['bg--transparent']].join(' ')}
                   onClick={() => {
-                    changePlace("Private room");
+                    changePlace('Private room');
                     setExpanded(!expanded);
                   }}
                 >
                   <div>
                     <div>
                       <h3
-                        className={[font["text--left"], font["size--14"]].join(
-                          " "
+                        className={[font['text--left'], font['size--14']].join(
+                          ' '
                         )}
                       >
                         Private room
@@ -204,8 +211,8 @@ export const PlaceInput: React.FC<{
                     </div>
                     <div>
                       <p
-                        className={[font["size--13"], font["text--left"]].join(
-                          " "
+                        className={[font['size--13'], font['text--left']].join(
+                          ' '
                         )}
                       >
                         Guests have their own private room for sleeping. Other
@@ -213,13 +220,17 @@ export const PlaceInput: React.FC<{
                       </p>
                     </div>
                   </div>
-                  {value === "Private room" && (
+                  {value === 'Private room' && (
                     <div
-                      className={[layout["flex"], layout["items-center"]].join(
-                        " "
+                      className={[layout['flex'], layout['items-center']].join(
+                        ' '
                       )}
                     >
-                      <Checked width={32} />
+                      <Icon
+                        variant={$Icon.SEMANTIC}
+                        semanticType="check"
+                        width={32}
+                      />
                     </div>
                   )}
                 </div>
@@ -228,22 +239,22 @@ export const PlaceInput: React.FC<{
                 <div
                   style={{
                     padding: 12,
-                    display: "flex",
-                    alignItems: "center",
-                    cursor: "pointer",
-                    height: "100%",
+                    display: 'flex',
+                    alignItems: 'center',
+                    cursor: 'pointer',
+                    height: '100%',
                   }}
-                  className={[color["bg--transparent"]].join(" ")}
+                  className={[color['bg--transparent']].join(' ')}
                   onClick={() => {
-                    changePlace("Shared room");
+                    changePlace('Shared room');
                     setExpanded(!expanded);
                   }}
                 >
                   <div>
                     <div>
                       <h3
-                        className={[font["text--left"], font["size--14"]].join(
-                          " "
+                        className={[font['text--left'], font['size--14']].join(
+                          ' '
                         )}
                       >
                         Shared room
@@ -251,8 +262,8 @@ export const PlaceInput: React.FC<{
                     </div>
                     <div>
                       <p
-                        className={[font["size--13"], font["text--left"]].join(
-                          " "
+                        className={[font['size--13'], font['text--left']].join(
+                          ' '
                         )}
                       >
                         Guests sleep in a bedroom or a common area that could be
@@ -260,13 +271,17 @@ export const PlaceInput: React.FC<{
                       </p>
                     </div>
                   </div>
-                  {value === "Shared room" && (
+                  {value === 'Shared room' && (
                     <div
-                      className={[layout["flex"], layout["items-center"]].join(
-                        " "
+                      className={[layout['flex'], layout['items-center']].join(
+                        ' '
                       )}
                     >
-                      <Checked width={32} />
+                      <Icon
+                        variant={$Icon.SEMANTIC}
+                        semanticType="check"
+                        width={32}
+                      />
                     </div>
                   )}
                 </div>

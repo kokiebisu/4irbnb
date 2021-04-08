@@ -1,19 +1,18 @@
-/** styles */
-import color from '@styles/color.module.scss';
-import shape from '@styles/shape.module.scss';
-import space from '@styles/space.module.scss';
-import layout from '@styles/layout.module.scss';
-import font from '@styles/font.module.scss';
+import { Icon, $Icon } from '@icons';
 
-/** vectors */
-import { CheckPlain } from '@svg/original';
-
-export const CheckboxInput: React.FC<{
+export interface CheckboxInputProps {
   check?: () => void;
   checked?: boolean;
   title?: string;
   description?: string;
-}> = ({ check, checked = true, title = 'Title here', description }) => {
+}
+
+export const CheckboxInput: React.FC<CheckboxInputProps> = ({
+  check,
+  checked = true,
+  title = 'Title here',
+  description,
+}) => {
   return (
     <div className="flex items-center">
       <div className="mr-5">
@@ -27,7 +26,13 @@ export const CheckboxInput: React.FC<{
           }`}
         >
           <div className="relative border-none">
-            <CheckPlain width={15} stroke="white" strokeWidth={5} />
+            <Icon
+              variant={$Icon.SEMANTIC}
+              semanticType="check"
+              width={15}
+              stroke="white"
+              strokeWidth={5}
+            />
           </div>
         </div>
       </div>

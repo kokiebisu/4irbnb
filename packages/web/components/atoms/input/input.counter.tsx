@@ -1,13 +1,6 @@
-/** styles **/
-import layout from '@styles/layout.module.scss';
-import font from '@styles/font.module.scss';
-import color from '@styles/color.module.scss';
-import space from '@styles/space.module.scss';
+import { Icon, $Icon } from '@icons';
 
-/** vectors */
-import { Minus, Plus } from '@svg/original';
-
-export const CounterInput: React.FC<{
+export interface CounterInputProps {
   title?: string;
   subtitle?: string;
   value?: number;
@@ -16,7 +9,9 @@ export const CounterInput: React.FC<{
   min?: number;
   max?: number;
   type?: string;
-}> = ({
+}
+
+export const CounterInput: React.FC<CounterInputProps> = ({
   title = 'Counter',
   subtitle,
   value = 0,
@@ -55,7 +50,9 @@ export const CounterInput: React.FC<{
             }`}
             onClick={subtract}
           >
-            <Minus
+            <Icon
+              variant={$Icon.SEMANTIC}
+              semanticType="minus"
               width={15}
               stroke={value === min ? 'gray-100' : types[type].color}
             />
@@ -70,7 +67,9 @@ export const CounterInput: React.FC<{
             className="bg-white border rounded-full p-3"
             onClick={add}
           >
-            <Plus
+            <Icon
+              variant={$Icon.SEMANTIC}
+              semanticType="plus"
               width={15}
               stroke={value === max ? 'lightgray' : types[type].color}
             />

@@ -1,5 +1,4 @@
-import { Star } from '@svg/original';
-import { ChevronDown } from '@svg/regular';
+import { Icon, $Icon } from '@icons';
 import { useCheckin } from './logic/logic.checkin';
 import {
   checkInBorder,
@@ -25,7 +24,7 @@ const CheckInCard: React.FC<{
             </h3>
             <div className="py-3 text-gray-300 text-xl font-medium w-32">
               <div className="inline-block mr-1">
-                <Star width={10} />
+                <Icon variant={$Icon.PROFILE} profileType="star" width={10} />
               </div>
               <span className="inline-block text-sm mr-1 text-gray-500">
                 4.93
@@ -90,7 +89,11 @@ const CheckInCard: React.FC<{
                     <p className="font-light text-sm">1 guest</p>
                   </div>
                   <div>
-                    <ChevronDown width={14} />
+                    <Icon
+                      variant={$Icon.ACTION}
+                      actionType="bottom"
+                      width={14}
+                    />
                   </div>
                 </div>
               </div>

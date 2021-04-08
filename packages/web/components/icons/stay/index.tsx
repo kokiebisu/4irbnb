@@ -3,6 +3,7 @@ import React from 'react';
 
 export interface StayIconTypeProps {
   stayType?:
+    | 'doublebed'
     | 'house'
     | 'sparkle'
     | 'door'
@@ -22,6 +23,7 @@ export const StayIcon: React.FC<IconProps & StayIconTypeProps> = ({
   ...props
 }) => {
   const types = {
+    doublebed: <DoubleBed {...props} />,
     house: <HouseIcon {...props} />,
     sparkle: <SparkleIcon {...props} />,
     door: <DoorIcon {...props} />,

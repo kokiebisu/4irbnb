@@ -1,4 +1,4 @@
-import { Upload } from '@svg/original';
+import { Icon, $Icon } from '@icons';
 
 /**
  * Renders the text input component
@@ -30,7 +30,11 @@ export const PhotoInput: React.FC<{
                 <div className="py-4 px-5 bg-red-400 rounded">
                   <div className="flex items-center">
                     <div className="mr-3">
-                      <Upload width={20} stroke="white" />
+                      <Icon
+                        variant={$Icon.ACTION}
+                        actionType="upload"
+                        width={20}
+                      />
                     </div>
                     <div>
                       <h3 className="text-sm whitespace-nowrap text-white">
