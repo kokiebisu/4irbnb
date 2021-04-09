@@ -1,11 +1,11 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react/types-6-0";
-import { Prototype, PrototypeProps, $Prototype } from "@prototype/homes";
+import React from 'react';
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { Prototype, PrototypeProps, $Prototype } from '@prototype/homes';
 
 export default {
-  title: "Prototypes/Homes",
+  title: 'Prototypes/Homes',
   component: Prototype,
-  argTypes: { onClick: { action: "clicked" } },
+  argTypes: { onClick: { action: 'clicked' } },
 } as Meta;
 
 const TemplateStory: Story<PrototypeProps> = (args) => <Prototype {...args} />;
@@ -18,4 +18,14 @@ Nearby.args = {
 export const Category = TemplateStory.bind({});
 Category.args = {
   variant: $Prototype.CATEGORY,
+  subtitle: 'Subtitle',
+  stayType: 'tent',
+  filterCount: 1,
+  filters: [
+    { name: 'Filter', selected: true },
+    { name: 'Filter', selected: false },
+    { name: 'Filter', selected: false },
+    { name: 'Filter', selected: true },
+    { name: 'Filter', selected: false },
+  ],
 };

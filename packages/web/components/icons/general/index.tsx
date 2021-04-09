@@ -13,8 +13,6 @@ export interface GeneralIconTypeProps {
     | 'login'
     | 'search'
     | 'shield'
-    | 'distancing'
-    | 'caution'
     | 'check'
     | 'devices'
     | 'devicesInverse'
@@ -46,9 +44,6 @@ export const GeneralIcon: React.FC<IconProps & GeneralIconTypeProps> = ({
     login: <LoginIcon {...props} />,
     search: <SearchIcon {...props} />,
     shield: <ShieldIcon {...props} />,
-    distancing: <DistancingIcon {...props} />,
-    caution: <CautionIcon {...props} />,
-    check: <CheckIcon {...props} />,
     devices: <DevicesIcon {...props} />,
     devicesInverse: <DevicesInverseIcon {...props} />,
     protection: <ProtectionIcon {...props} />,
@@ -189,29 +184,6 @@ export const ShieldIcon: React.FC<IconProps> = ({ fill }) => {
         fill="#484848"
         d="m14.39 8.32a1.93 1.93 0 0 0 -3.66 0l-2.42 4.85a3.09 3.09 0 0 0 -.4 1.61 2.36 2.36 0 0 0 2.23 2.23 3.95 3.95 0 0 0 2.42-1.06 3.95 3.95 0 0 0 2.42 1.06 2.36 2.36 0 0 0 2.23-2.23 3.09 3.09 0 0 0 -.4-1.61zm-2.72 4.38c0-.05.01-1.23.89-1.23s.88 1.18.88 1.23a3.25 3.25 0 0 1 -.88 1.83 3.25 3.25 0 0 1 -.89-1.83zm3.31 3.31a2.92 2.92 0 0 1 -1.71-.77 4.3 4.3 0 0 0 1.17-2.54 2.02 2.02 0 0 0 -1.8-2.22l-.08-.01a2.02 2.02 0 0 0 -1.89 2.15l.01.08a4.29 4.29 0 0 0 1.17 2.54 2.92 2.92 0 0 1 -1.71.77 1.36 1.36 0 0 1 -1.23-1.23 2.13 2.13 0 0 1 .29-1.16l2.42-4.85c.33-.65.55-.76.94-.76s.61.11.94.76l2.42 4.85a2.13 2.13 0 0 1 .29 1.16 1.36 1.36 0 0 1 -1.23 1.23zm7.01-10.35a.5.5 0 0 0 -.43-.4 13.03 13.03 0 0 1 -8.68-4.57.52.52 0 0 0 -.77 0 13.03 13.03 0 0 1 -8.68 4.57.5.5 0 0 0 -.43.4c-1.58 8.19 1.55 14.02 9.3 17.31a.5.5 0 0 0 .39 0c7.75-3.29 10.87-9.11 9.3-17.31zm-9.49 16.3c-7.1-3.09-9.91-8.25-8.57-15.76a13.98 13.98 0 0 0 8.57-4.43 13.98 13.98 0 0 0 8.57 4.43c1.33 7.51-1.48 12.67-8.57 15.76z"
       />
-    </svg>
-  );
-};
-
-export const DistancingIcon: React.FC<IconProps> = ({ fill }) => {
-  return (
-    <svg width="100%" height="auto" viewBox="0 0 32 32">
-      <path d="M5 5v.414l4 4v3.172L4.464 17.12C3.527 18.06 3 18.674 3 20v9c0 1.644 1.356 2.982 3 3 6.645-.012 10.645-.012 12 0 1.657.014 3-1 3-3v-9c0-1.351-.547-2.126-1.516-3.067L15 12.577V9a2.99 2.99 0 0 1 2.083-2.842 8.957 8.957 0 0 0 2.17 4.798l1.499-1.324A6.959 6.959 0 0 1 19.078 6H23V0H10a5 5 0 0 0-5 5zm14-3h2v2h-2zm-1.032 22.686h.004c.348 0 .69-.034 1.028-.084v2.02c-.34.039-.682.064-1.028.064h-.004a8.946 8.946 0 0 1-6.362-2.636A6.948 6.948 0 0 0 6.659 22h-.003A7.07 7.07 0 0 0 5 22.204v-2.048c.54-.1 1.093-.156 1.655-.156h.005a8.94 8.94 0 0 1 6.36 2.636 6.956 6.956 0 0 0 4.948 2.05zM11 10h2v2h-2zm17-9a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm2 4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3-2a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
-    </svg>
-  );
-};
-
-export const CautionIcon: React.FC<IconProps> = ({ fill }) => {
-  return <span>󱠃</span>;
-};
-
-export const CheckIcon: React.FC<IconProps> = ({ fill }) => {
-  return (
-    <svg width="100%" height="auto" viewBox="0 0 32 32">
-      <path
-        fill={fill}
-        d="M16 1C7.729 1 1 7.729 1 16s6.729 15 15 15 15-6.729 15-15S24.271 1 16 1zm-2.5 22.621L6.879 17 9 14.879l4.5 4.5 9.5-9.5L25.121 12 13.5 23.621z"
-      ></path>
     </svg>
   );
 };

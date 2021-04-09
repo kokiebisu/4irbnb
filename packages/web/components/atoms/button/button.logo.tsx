@@ -12,7 +12,7 @@ const LogoButton: React.FC<{ noName?: boolean; fill?: string }> = ({
   return noName ? (
     <Icon
       variant={$Icon.LOGO}
-      type="noName"
+      logoType="noName"
       fill={fill}
       width={30}
       height={32}
@@ -20,7 +20,7 @@ const LogoButton: React.FC<{ noName?: boolean; fill?: string }> = ({
   ) : (
     <Icon
       variant={$Icon.LOGO}
-      type="name"
+      logoType="name"
       fill={fill}
       width={102}
       height={32}

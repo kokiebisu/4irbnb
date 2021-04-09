@@ -36,24 +36,19 @@ export const NearbyPrototype: React.FC<{
   const displayPlace = city.match(/_/g) ? city.split('_').join(' ') : city;
 
   return (
-    <div className={[layout['relative']].join(' ')}>
-      <div className={[space['p--24']].join(' ')}>
+    <div className="relative">
+      <div className="p-4">
         <div>
-          <p className={[font['size--14']].join(' ')}>300+ stays</p>
+          <p className="text-sm">300+ stays</p>
         </div>
         <div>
-          <h3 className={[font['size--32']].join(' ')}>
+          <h3 className="text-3xl">
             Stays in{' '}
-            <span
-              className={[font['weight--500']].join(' ')}
-              style={{ textTransform: 'capitalize' }}
-            >
-              {displayPlace}
-            </span>
+            <span className="font-medium capitalize">{displayPlace}</span>
           </h3>
         </div>
-        <div className={[space['m-v--22']].join(' ')}>
-          <div className={[shape['from__md--flex']].join(' ')}>
+        <div className="my-4">
+          <div className="md:flex">
             {filters.map((filter, index) => {
               return (
                 <div key={index} className={[space['m-r--8']].join(' ')}>
@@ -62,41 +57,28 @@ export const NearbyPrototype: React.FC<{
               );
             })}
           </div>
-          <div className={[shape['only__sm']].join(' ')}>
+          <div className="md:hidden">
             <Button variant={$Button.FILTER} name={`filters ${filterCount}`} />
           </div>
         </div>
         {city && (
           <div>
-            <div className={[space['m-b--16']].join(' ')}>
-              <p className={[color['c--gray__1'], font['size--14']].join(' ')}>
-                Enter dates and number of guests to see the total price per
-                night.
+            <div className="mb-4">
+              <p className="text-gray-6700 text-sm">
+                Review COVID-19 travel restrictions before you book.
               </p>
             </div>
-            <div
-              style={{
-                backgroundColor: 'lightgray',
-                height: 1,
-                width: '100%',
-              }}
-            />
-            <div className={[layout['flex'], layout['items-center']].join(' ')}>
-              <div
-                className={[
-                  space['m-r--12'],
-                  space['p-v--8'],
-                  space['m-v--8'],
-                ].join(' ')}
-              >
+            <div style={{ height: 1 }} className="bg-gray-400 w-full" />
+            {/* <div className="flex items-center">
+              <div className="mr-3 py-3 my-3">
                 <img
                   src="https://a0.muscache.com/nextbnb/static/packages/icon-uc-trophy.9ee78aa1.gif"
-                  style={{ width: 40 }}
+                  className="w-12"
                 />
               </div>
               <div>
                 <h3 className={[font['size--14']].join(' ')}>
-                  More than {guests} guests have stayed in{' '}
+                  Review COVID-19 travel restrictions before you book.
                   <span
                     className={[font['weight--500']].join(' ')}
                     style={{ textTransform: 'capitalize' }}
@@ -106,7 +88,7 @@ export const NearbyPrototype: React.FC<{
                   . On average they rated their stays {average} out of 5 stars.
                 </h3>
               </div>
-            </div>
+            </div> */}
           </div>
         )}
         <div>

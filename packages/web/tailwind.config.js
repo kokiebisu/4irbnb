@@ -16,6 +16,9 @@ module.exports = {
         '9/10': '90%',
         'half-screen': '50vw',
       },
+      minWidth: {
+        screen: '100vw',
+      },
     },
   },
   variants: {},

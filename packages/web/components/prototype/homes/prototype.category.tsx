@@ -1,11 +1,13 @@
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
-import font from '@styles/font.module.scss';
-import shape from '@styles/shape.module.scss';
-
 import { Segment } from '@template/s/homes';
 import { Bar, $Bar } from '@bar';
 import { Button, $Button } from '@button';
+
+export interface CategoryPrototypeProps {
+  subtitle?: string;
+  stayType?: 'tent' | 'barn' | 'tiny_house' | 'house';
+  filterCount?: number;
+  filters?: any;
+}
 
 /**
  * Renders the category template component
@@ -13,22 +15,11 @@ import { Button, $Button } from '@button';
  * @param {number} filterCount - Number of filters
  * @param {Object[]} filters - List of filters
  */
-export const CategoryPrototype: React.FC<{
-  subtitle?: string;
-  stayType?: string | string[];
-  filterCount?: number;
-  filters?: any;
-}> = ({
-  subtitle = 'Subtitle',
+export const CategoryPrototype: React.FC<CategoryPrototypeProps> = ({
+  subtitle,
   stayType,
-  filterCount = 1,
-  filters = [
-    { name: 'Filter' },
-    { name: 'Filter' },
-    { name: 'Filter' },
-    { name: 'Filter' },
-    { name: 'Filter' },
-  ],
+  filterCount,
+  filters,
 }) => {
   const displayTitle = () => {
     if (
@@ -46,43 +37,45 @@ export const CategoryPrototype: React.FC<{
     }
   };
   return (
-    <div className={[space['p--24']].join(' ')}>
+    <div className="p-4">
       <div>
-        <p className={[font['size--14']].join(' ')}>{subtitle}</p>
+        <p className="size-md">{subtitle}</p>
       </div>
       <div>
-        <h3 className={[font['size--32']].join(' ')}>{displayTitle()}</h3>
+        <h3 className="text-4xl">{displayTitle()}</h3>
       </div>
-      <div className={[space['m-v--22']].join(' ')}>
-        <div className={[shape['from__md--flex']].join(' ')}>
+      <div className="my-4">
+        <div
+          style={{ scrollSnapType: 'x mandatory' }}
+          className="flex overflow-x-auto"
+        >
           {filters.map((filter, index) => {
             return (
-              <div key={index} className={[space['m-r--8']].join(' ')}>
-                <Button variant={$Button.FILTER} name={filter.name} />
+              <div
+                key={index}
+                className="mr-2"
+                style={{ scrollSnapAlign: 'start' }}
+              >
+                <Button
+                  variant={$Button.FILTER}
+                  label={filter.name}
+                  inverse={!filter.selected}
+                />
               </div>
             );
           })}
         </div>
-        <div className={[shape['only__sm']].join(' ')}>
-          <Button variant={$Button.FILTER} name={`filters ${filterCount}`} />
-        </div>
       </div>
-      <div className={[space['m-b--32']].join(' ')}>
+      <div className="mb-5">
         <Segment variant="stay" pagination />
       </div>
-      <div className={[space['m-b--50']].join(' ')}>
+      <div className="mb-6">
         <Segment variant="also" />
       </div>
-      <div className={[space['m-b--45']].join(' ')}>
+      <div className="mb-5">
         <Segment variant="homes" layout="vertical" location={location} />
       </div>
-      <div
-        className={[
-          space['m-t--16'],
-          layout['flex'],
-          layout['justify-center'],
-        ].join(' ')}
-      >
+      <div className="mt-4 flex justify-center">
         <Bar variant={$Bar.PAGINATE} animate />
       </div>
     </div>
