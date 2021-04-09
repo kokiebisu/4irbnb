@@ -49,17 +49,11 @@ export const MultipleTemplate: React.FC<MultipleTemplateProps> = ({
 }) => {
   const TypeStayCarousel = ({ data }) => {
     return (
-      <div className={[layout['relative'], space['p-v--10']].join(' ')}>
+      <div className="relative py-3">
         <ul
-          className={[layout['hide-scrollbar']].join(' ')}
+          className="hide-scrollbar -mx-2 flex p-0 overflox-x-auto overflow-y-hidden"
           style={{
-            marginLeft: -5,
-            marginRight: -5,
-            display: 'flex',
             listStyle: 'none',
-            padding: 0,
-            overflowX: 'auto',
-            overflowY: 'hidden',
             minWidth: '100%',
             scrollSnapType: 'x mandatory',
             height: '100%',

@@ -1,37 +1,25 @@
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
-import color from '@styles/color.module.scss';
-
-import font from '@styles/font.module.scss';
-import shape from '@styles/shape.module.scss';
-
 import { Segment } from '@template/s/homes';
 import { Bar, $Bar } from '@bar';
-
 import { Button, $Button } from '@button';
 
-/**
- * Renders the nearby template component
- * @param param0 Prop
- */
-export const NearbyPrototype: React.FC<{
+export interface NearbyPrototypeProps {
   city?: string;
   filterCount?: number;
   guests?: number;
   average?: number;
   filters?: any;
-}> = ({
-  city = 'location',
-  filterCount = 1,
-  guests = 1000,
-  average = 5.0,
-  filters = [
-    { name: 'Filter' },
-    { name: 'Filter' },
-    { name: 'Filter' },
-    { name: 'Filter' },
-    { name: 'Filter' },
-  ],
+}
+
+/**
+ * Renders the nearby template component
+ * @param param0 Prop
+ */
+export const NearbyPrototype: React.FC<NearbyPrototypeProps> = ({
+  city,
+  filterCount,
+  guests,
+  average,
+  filters,
 }) => {
   const displayPlace = city.match(/_/g) ? city.split('_').join(' ') : city;
 
@@ -51,8 +39,8 @@ export const NearbyPrototype: React.FC<{
           <div className="md:flex">
             {filters.map((filter, index) => {
               return (
-                <div key={index} className={[space['m-r--8']].join(' ')}>
-                  <Button variant={$Button.FILTER} name={filter.name} />
+                <div key={index} className="mr-3">
+                  <Button variant={$Button.FILTER} label={filter.name} />
                 </div>
               );
             })}
@@ -94,17 +82,11 @@ export const NearbyPrototype: React.FC<{
         <div>
           <Segment variant="homes" />
         </div>
-        <div
-          className={[
-            space['m-t--16'],
-            layout['flex'],
-            layout['justify-center'],
-          ].join(' ')}
-        >
+        <div className="mt-4 flex justify-center">
           <Bar variant={$Bar.PAGINATE} animate />
         </div>
       </div>
-      <div className={[space['p--24'], color['bg--white__1']].join(' ')}>
+      <div className="p-5 bg-gray-300">
         <Segment variant="also" />
       </div>
     </div>

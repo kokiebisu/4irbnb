@@ -5,7 +5,6 @@ import { Prototype, PrototypeProps, $Prototype } from '@prototype/homes';
 export default {
   title: 'Prototypes/Homes',
   component: Prototype,
-  argTypes: { onClick: { action: 'clicked' } },
 } as Meta;
 
 const TemplateStory: Story<PrototypeProps> = (args) => <Prototype {...args} />;
@@ -13,6 +12,17 @@ const TemplateStory: Story<PrototypeProps> = (args) => <Prototype {...args} />;
 export const Nearby = TemplateStory.bind({});
 Nearby.args = {
   variant: $Prototype.NEARBY,
+  city: 'Location',
+  filterCount: 1,
+  guests: 1000,
+  average: 5.0,
+  filters: [
+    { name: 'Filter', selected: false },
+    { name: 'Filter', selected: true },
+    { name: 'Filter', selected: false },
+    { name: 'Filter', selected: false },
+    { name: 'Filter', selected: true },
+  ],
 };
 
 export const Category = TemplateStory.bind({});

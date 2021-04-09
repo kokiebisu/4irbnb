@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import { Card, $Card } from '@card';
 import { Button, $Button } from '@button';
-import section from '@template/index.module.scss';
 import { useSlider } from '@hooks/useSlider';
 import { useHandleContainerResize } from '@hooks/useHandleContainerResize';
 

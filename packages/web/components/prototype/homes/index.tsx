@@ -1,24 +1,25 @@
-import { CategoryPrototype } from "@prototype/homes/prototype.category";
-import { NearbyPrototype } from "@prototype/homes/prototype.nearby";
+import {
+  CategoryPrototype,
+  CategoryPrototypeProps,
+} from '@prototype/homes/prototype.category';
+import {
+  NearbyPrototype,
+  NearbyPrototypeProps,
+} from '@prototype/homes/prototype.nearby';
 
 export const $Prototype = {
-  CATEGORY: "category",
-  NEARBY: "nearby",
+  CATEGORY: 'category',
+  NEARBY: 'nearby',
 };
 
-export interface PrototypeProps {
-  variant?: string;
-  place?: string;
-  stayType?: string | string[];
-  characteristics?: string;
-  [property: string]: any;
+export interface PrototypeProps
+  extends CategoryPrototypeProps,
+    NearbyPrototypeProps {
+  variant: string;
 }
 
 export const Prototype: React.FC<PrototypeProps> = ({
   variant = $Prototype.NEARBY,
-  city = "City",
-  stayType = "house",
-  characteristics,
   ...props
 }) => {
   const variants: { [variant: string]: JSX.Element } = {

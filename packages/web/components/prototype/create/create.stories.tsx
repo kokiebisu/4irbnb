@@ -1,11 +1,10 @@
-import React from "react";
-import { Story, Meta } from "@storybook/react/types-6-0";
-import { Prototype, CreateProps, $Prototype } from "@prototype/create";
+import React from 'react';
+import { Story, Meta } from '@storybook/react/types-6-0';
+import { Prototype, CreateProps, $Prototype } from '@prototype/create';
 
 export default {
-  title: "Prototypes/Create",
+  title: 'Prototypes/Create',
   component: Prototype,
-  argTypes: { onClick: { action: "clicked" } },
 } as Meta;
 
 const TemplateStory: Story<CreateProps> = (args) => <Prototype {...args} />;

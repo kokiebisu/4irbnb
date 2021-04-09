@@ -1,41 +1,32 @@
-import { Button, $Button } from "@button";
+import { Button, $Button } from '@button';
 
-import space from "@styles/space.module.scss";
-import font from "@styles/font.module.scss";
+import font from '@styles/font.module.scss';
 
 const Layout: React.FC<{
   items?: { language?: string; region?: string }[];
   type?: string;
-}> = ({ items, type = "suggested" }) => {
+}> = ({ items, type }) => {
   const titles = {
-    suggested: "Suggested languages and regions",
-    choose: "Choose a language and region",
+    suggested: 'Suggested languages and regions',
+    choose: 'Choose a language and region',
   };
   return (
     <div>
-      <div className={[space["m-b--18"]].join(" ")}>
-        <h3 className={[font["size--20"]].join(" ")}>{titles[type]}</h3>
+      <div className="mb-4">
+        <h3 className="text-lg">{titles[type]}</h3>
       </div>
-      <div
-        style={{
-          width: "100%",
-          display: "grid",
-          gridTemplateColumns: "repeat(5, 1fr)",
-          columnGap: 15,
-          rowGap: 15,
-          padding: 10,
-        }}
-      >
+      <div className="w-full grid grid-cols-3 md:grid-cols-5 gap-4 p-3">
         {items.map(({ language, region }, index) => {
           return (
             <div key={index}>
               <Button
+                stretch
                 variant={$Button.GLOBE}
                 language={language}
                 region={region}
-                extendsTo={[font["text--left"]].join(" ")}
+                extendsTo={[font['text--left']].join(' ')}
                 block
-                selected={index === 0 && type === "choose"}
+                selected={index === 0 && type === 'choose'}
               />
             </div>
           );
@@ -48,16 +39,20 @@ const Layout: React.FC<{
 export const LanguagePrototype: React.FC<{}> = () => {
   return (
     <div>
-      {/* <div className={[space["m-b--24"]].join(" ")}>
+      <div className="mb-4">
         <Layout
           type="suggested"
-          items={[{ language: "English", region: "Canada" }]}
+          items={[{ language: 'English', region: 'Canada' }]}
         />
-      </div> */}
+      </div>
       <div>
         <Layout
           type="choose"
-          items={[{ language: "English", region: "Canada" }]}
+          items={[
+            { language: 'English', region: 'Canada' },
+            { language: 'Japanese', region: 'Japan' },
+            { language: 'Chinese', region: 'China' },
+          ]}
         />
       </div>
     </div>

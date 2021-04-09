@@ -12,7 +12,7 @@ const GlobeButton: React.FC<{
   return (
     <div
       className={`pl-3 pr-8 py-3 rounded-md ${
-        selected ? 'hover:bg-gray-100' : null
+        selected ? 'border border-black' : null
       }`}
     >
       <div>
@@ -29,7 +29,7 @@ export const globe = (props) => {
   return {
     globe: {
       component: <GlobeButton {...props} />,
-      style: '',
+      style: `hover:bg-gray-100 rounded-md `,
     },
   };
 };

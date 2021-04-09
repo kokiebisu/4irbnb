@@ -6,4 +6,4 @@ export const carouselType = '';
 export const save = false;
 export const isDescription = false;
 export const fetchUrl = '';
-export const items = new Array(8);
+export const items = new Array(8).fill(undefined);

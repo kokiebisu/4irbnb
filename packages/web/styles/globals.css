@@ -153,4 +153,14 @@
       rgb(215, 4, 102) 100%
     );
   }
+
+  .hide-scrollbar {
+    &::-webkit-scrollbar {
+      width: 0px;
+      display: none; /* Safari and Chrome */
+      background: transparent; /* make scrollbar transparent */
+    }
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
 }
