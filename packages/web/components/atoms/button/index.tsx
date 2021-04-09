@@ -29,6 +29,7 @@ export const $Button = {
   VIDEO: 'video',
   DESTINATION: 'destination',
   CURRENCY: 'currency',
+  VERIFY: 'verify',
 };
 
 export interface ButtonProps {

@@ -1,33 +1,29 @@
-import { Input, $Input } from "@input";
+import { Input, $Input } from '@input';
 
-import font from "@styles/font.module.scss";
-import color from "@styles/color.module.scss";
-import space from "@styles/space.module.scss";
+export interface PhoneCreateProps {
+  data?: { phone: string };
+  setData?: (param: any) => void;
+}
 
 /**
  * Renders the /become-a-host/phone page content
  * @param {object} data - Input data
  * @param {function} setData - Changes the input data
  */
-export const PhoneCreate: React.FC<{ data?: any; setData?: any }> = ({
-  data = { phone: "000-000-0000" },
-  setData,
-}) => {
+export const PhoneCreate: React.FC<PhoneCreateProps> = ({ data, setData }) => {
   return (
     <div>
-      <div className={[space["m-b--12"]].join(" ")}>
-        <h3 className={[font["size--28"], color["c--gray__2"]].join(" ")}>
-          Add your mobile number
-        </h3>
+      <div className="mb-3">
+        <h3 className="text-2xl text-gray-700">Add your mobile number</h3>
       </div>
-      <div className={[space["m-b--45"]].join(" ")}>
-        <p className={[font["size--14"], color["c--gray__2"]].join(" ")}>
+      <div className="mb-8">
+        <p className="text-sm text-gray-700">
           We'll send you booking requests, reminders, and other notifications.
           This number should be able to receive texts or calls.
         </p>
       </div>
-      <div className={[space["m-b--30"]].join(" ")}>
-        <div className={[space["m-b--8"]].join(" ")}>
+      <div className="mb-6">
+        <div className="mb-3">
           <Input
             variant={$Input.VERIFY}
             value={data.phone}

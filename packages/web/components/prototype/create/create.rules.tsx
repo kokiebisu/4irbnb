@@ -1,18 +1,16 @@
-import { Input, $Input } from "@input";
+import { Input, $Input } from '@input';
 
-import font from "@styles/font.module.scss";
-import color from "@styles/color.module.scss";
-import space from "@styles/space.module.scss";
+export interface RulesCreateProps {
+  data?: { details: string[] };
+  setData?: (params: any) => void;
+}
 
 /**
  * Renders the /become-a-host/rules page content
  * @param {object} data - Input data
  * @param {function} setData - Changes the input data
  */
-export const RulesCreate: React.FC<{
-  data?: any;
-  setData?: (params: any) => void;
-}> = ({ data = { details: [] }, setData }) => {
+export const RulesCreate: React.FC<RulesCreateProps> = ({ data, setData }) => {
   const modify = (type: string, params: string) => {
     if (data[type].includes(params)) {
       setData({
@@ -30,17 +28,17 @@ export const RulesCreate: React.FC<{
   return (
     <div>
       <div>
-        <h3 className={[font["size--28"], color["c--gray__2"]].join(" ")}>
+        <h3 className="text-2xl text-gray-700">
           Set house rules for your guests
         </h3>
       </div>
       <div>
-        <p className={[font["size--15"]].join(" ")}>
+        <p className="text-sm">
           Guests must agree to your house rules before they book.
         </p>
       </div>
-      <div className={[space["m-b--22"]].join(" ")}>
-        <div className={[space["m-v--12"]].join(" ")}>
+      <div className="mb-4">
+        <div className="my-3">
           <Input
             variant={$Input.CLOSED}
             title="Smoking allowed"
@@ -49,7 +47,7 @@ export const RulesCreate: React.FC<{
             value="smoking"
           />
         </div>
-        <div className={[space["m-v--12"]].join(" ")}>
+        <div className="my-3">
           <Input
             variant={$Input.CLOSED}
             title="Events allowed"
@@ -59,28 +57,28 @@ export const RulesCreate: React.FC<{
           />
         </div>
       </div>
-      <div className={[space["m-b--50"]].join(" ")}>
-        <div className={[space["m-v--16"]].join(" ")}>
+      <div className="mb-7">
+        <div className="my-4">
           <h3>Details guests must know about your home</h3>
         </div>
         {[
           {
-            title: "Must climb stairs",
-            item: "stairs",
+            title: 'Must climb stairs',
+            item: 'stairs',
           },
           {
-            title: "Potential for noise",
-            item: "noise",
+            title: 'Potential for noise',
+            item: 'noise',
           },
           {
-            title: "Pet(s) live on property",
-            item: "pets",
+            title: 'Pet(s) live on property',
+            item: 'pets',
           },
         ].map(({ title, item }, index) => {
           return (
-            <div key={index} className={[space["m-b--16"]].join(" ")}>
+            <div key={index} className="mb-4">
               <Input
-                check={() => modify("details", item)}
+                check={() => modify('details', item)}
                 checked={data.details.includes(item)}
                 variant={$Input.CHECKBOX}
                 title={title}

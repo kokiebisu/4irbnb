@@ -75,16 +75,10 @@ export const VerifyInput: React.FC<{
           }}
         ></input>
 
-        <div
-          className={[
-            layout['absolute'],
-            layout['b--15'],
-            layout['r--15'],
-          ].join(' ')}
-        >
+        <div className="absolute top-1/2 transform -translate-y-1/2 right-4">
           <Button
             content="Verify"
-            variant={$Button.TRANSPARENT}
+            variant={$Button.VERIFY}
             onClick={() => alert('verify')}
           />
         </div>

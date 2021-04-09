@@ -264,3 +264,8 @@ export const Closed = ButtonStory.bind({});
 Closed.args = {
   variant: $Button.CLOSED,
 };
+
+export const Verify = ButtonStory.bind({});
+Verify.args = {
+  variant: $Button.VERIFY,
+};

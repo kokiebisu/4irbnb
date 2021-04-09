@@ -1,30 +1,28 @@
-import space from "@styles/space.module.scss";
-import font from "@styles/font.module.scss";
+import { Input, $Input } from '@input';
 
-import { Input, $Input } from "@input";
+export interface PeriodCreateProps {
+  setData?: any;
+  data?: any;
+}
 
-export const PeriodCreate: React.FC<{ setData?: any; data?: any }> = ({
+export const PeriodCreate: React.FC<PeriodCreateProps> = ({
   setData,
-  data = {
-    min: 0,
-    max: 0,
-  },
+  data,
 }) => {
-  console.log("data max", data.max);
   return (
     <div>
-      <div className={[space["m-b--30"]].join(" ")}>
+      <div className="mb-6">
         <div>
           <h3>How long can guests stay?</h3>
         </div>
         <div>
-          <p className={[font["size--14"]].join(" ")}>
+          <p className="text-sm">
             Short trips can mean more reservations, but you'll turn over your
             space more often.
           </p>
         </div>
-        <div style={{ width: 300 }} className={[space["m-t--22"]].join(" ")}>
-          <div className={[space["m-b--12"]].join(" ")}>
+        <div style={{ width: 300 }} className="mt-4">
+          <div className="mb-4">
             <Input
               variant={$Input.COUNTER}
               title="nights min"
@@ -35,7 +33,7 @@ export const PeriodCreate: React.FC<{ setData?: any; data?: any }> = ({
               add={() => setData({ ...data, min: data.min + 1 })}
             />
           </div>
-          <div className={[space["m-b--12"]].join(" ")}>
+          <div className="mb-3">
             <Input
               variant={$Input.COUNTER}
               title="nights max"
