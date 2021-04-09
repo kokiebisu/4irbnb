@@ -26,6 +26,7 @@ import { underline } from '@button/button.underline';
 import { video } from '@button/button.video';
 import { expand } from '@button/button.expand';
 import { menu } from '@button/button.menu';
+import { verify } from '@button/button.verify';
 
 export const factory = (props) => {
   return {
@@ -57,5 +58,6 @@ export const factory = (props) => {
     ...video(props),
     ...expand(props),
     ...menu(props),
+    ...verify(props),
   };
 };

@@ -57,6 +57,8 @@ Title.args = {
 export const Phone = TemplateStory.bind({});
 Phone.args = {
   variant: $Prototype.PHONE,
+  data: { phone: '000-000-0000' },
+  setData: () => alert('set phone number'),
 };
 
 export const Requirements = TemplateStory.bind({});
@@ -67,14 +69,34 @@ Requirements.args = {
 export const Rules = TemplateStory.bind({});
 Rules.args = {
   variant: $Prototype.RULES,
+  data: { details: [] },
+  setData: () => alert('set rules'),
 };
 
 export const Checkin = TemplateStory.bind({});
 Checkin.args = {
   variant: $Prototype.CHECKIN,
+  setData: () => alert('set date'),
+  data: {
+    notice: 0,
+  },
 };
 
 export const Advance = TemplateStory.bind({});
 Advance.args = {
   variant: $Prototype.ADVANCE,
+  setData: () => alert('set days in advance'),
+  data: {
+    advance: 0,
+  },
+};
+
+export const Period = TemplateStory.bind({});
+Period.args = {
+  variant: $Prototype.PERIOD,
+  setData: () => alert('set period'),
+  data: {
+    min: 0,
+    max: 0,
+  },
 };

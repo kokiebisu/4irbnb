@@ -3,7 +3,7 @@ import { Layout } from '@layout';
 
 export interface AdvanceCreateProps {
   setData?: (data: any) => void;
-  data?: { advance: number };
+  data?: { advance: number | string };
 }
 
 export const AdvanceCreate: React.FC<AdvanceCreateProps> = ({
@@ -52,8 +52,8 @@ export const AdvanceCreate: React.FC<AdvanceCreateProps> = ({
         </Layout>
       </div>
       <div style={{ maxWidth: 300 }}>
-        <h4 className="text-sm text-gray-300">
-          <span className="text-green-800 font-light">Tip: </span>
+        <h4 className="text-sm text-gray-700">
+          <span className="text-green-700 font-light">Tip: </span>
           Most hosts can keep their calendars updated up to 6 months out.
         </h4>
       </div>
