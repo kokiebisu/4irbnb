@@ -42,7 +42,7 @@ export const AlsoTemplate: React.FC<AlsoTemplateProps> = ({ items, title }) => {
               direction="right"
               onClick={next}
               disable={
-                state.activeSlide === items.length / 2 - (width > 728 ? 3 : 2)
+                state.activeSlide === items.length - (width > 728 ? 3 : 2)
               }
             />
           </div>
@@ -59,11 +59,7 @@ export const AlsoTemplate: React.FC<AlsoTemplateProps> = ({ items, title }) => {
         <div className="flex">
           {items.map((item, index) => {
             return (
-              <div
-                style={{ width: width / (width > 728 ? 3 : 2) }}
-                key={index}
-                className={[section['w__nearby']].join(' ')}
-              >
+              <div style={{ width: width / (width > 728 ? 3 : 2) }} key={index}>
                 <div className="mb-3">
                   <Card
                     variant={$Card.NEARBY}

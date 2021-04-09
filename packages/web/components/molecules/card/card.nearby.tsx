@@ -18,7 +18,7 @@ const NearbyCard: React.FC<{
     <div className="flex items-center">
       <div className={`${renderSize(card, size)} mr-3`}>
         {imgUrl ? (
-          <img src={imgUrl} style={{ borderRadius: 10 }} />
+          <img src={imgUrl} className="rounded-md" />
         ) : (
           <div className="w-12 h-12 rounded-md bg-gray-400" />
         )}

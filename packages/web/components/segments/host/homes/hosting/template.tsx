@@ -16,19 +16,17 @@ export interface HostingTemplateProps {}
 export const HostingTemplate: React.FC<HostingTemplateProps> = () => {
   return (
     <Layout variant="homes" title="How hosting works">
-      <div className={[space['m-t--16']].join(' ')}>
+      <div className="mt-3">
         <div
-          style={{
-            width: '100%',
-          }}
-          className={[responsive['b_to_f--sm'], layout['flex']].join(' ')}
+          style={{ scrollSnapType: 'x mandatory' }}
+          className="w-full flex overflow-x-auto"
         >
           {Object.keys(types).map((type, index) => {
             return (
               <div
                 key={index}
-                style={{ width: '25%' }}
-                className={[space['m-b--64']].join(' ')}
+                className="mb-6 min-w-screen lg:w-full"
+                style={{ scrollSnapAlign: 'start' }}
               >
                 <Card variant={$Card.HOSTING} type={type} />
               </div>

@@ -1,8 +1,5 @@
-/** styles */
-import space from "@styles/space.module.scss";
-import layout from "@styles/layout.module.scss";
-import index from "@styles/index.module.scss";
-import color from "@styles/color.module.scss";
+import layout from '@styles/layout.module.scss';
+import index from '@styles/index.module.scss';
 
 export const LandingLayout: React.FC<{
   title?: string;
@@ -13,22 +10,22 @@ export const LandingLayout: React.FC<{
 }> = ({ title, subtitle, children, dark = false, spread = false }) => {
   return (
     <div
-      className={`${[space["p-v--25"], index["p__category"]].join(" ")} ${
-        dark ? [color["bg--black"]].join() : [].join()
+      className={`py-4 ${[index['p__category']].join(' ')} ${
+        dark ? 'bg-black' : ''
       }`}
     >
       <div
         className={`${
           spread
-            ? [layout["container--spread"]].join(" ")
-            : [layout["container"]].join(" ")
-        }  ${dark ? [color["bg--black"]].join(" ") : [].join(" ")}`}
+            ? [layout['container--spread']].join(' ')
+            : [layout['container']].join(' ')
+        }  ${dark ? 'bg-black' : ''}`}
       >
-        <div className={[space["p-v--16"]].join(" ")}>
+        <div className="py-3">
           {title && (
             <h3
-              className={`${[layout["font__section--title"]].join(" ")} ${
-                dark ? [color["c--white"]].join(" ") : [].join(" ")
+              className={`${[layout['font__section--title']].join(' ')} ${
+                dark ? 'text-white' : ''
               }`}
             >
               {title}
@@ -37,8 +34,8 @@ export const LandingLayout: React.FC<{
           {subtitle && (
             <div style={{ width: 450 }}>
               <p
-                className={`${[layout["font__section--subtitle"]].join(" ")} ${
-                  dark ? [color["c--white"]].join(" ") : [].join(" ")
+                className={`${[layout['font__section--subtitle']].join(' ')} ${
+                  dark ? 'text-white' : ''
                 }`}
               >
                 {subtitle}
@@ -46,7 +43,6 @@ export const LandingLayout: React.FC<{
             </div>
           )}
         </div>
-
         {children}
       </div>
     </div>

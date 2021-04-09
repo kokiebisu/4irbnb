@@ -54,7 +54,7 @@ export const OnlineTemplate: React.FC<OnlineTemplateProps> = ({
               scrollSnapType: 'x mandatory',
             }}
           >
-            <div className={[section['grid__online']].join(' ')}>
+            <div className={`${[section['grid__online']].join(' ')} pb-4`}>
               {items.map((item, index) => {
                 return (
                   <div

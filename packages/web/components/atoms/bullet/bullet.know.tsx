@@ -48,15 +48,15 @@ const KnowBullet: React.FC<{
       icon: <Icon variant={$Icon.STAY} stayType="cleaning" width={14} />,
       description: "Committed to Airbnb's enhanced cleaning process.",
     },
-    // distancing: {
-    //   icon: <Icon variant={$Icon.STAY} stayType="distancing" width={14} />,
-    //   description:
-    //     "Airbnb's social-distancing and other COVID-19-related guidelines apply",
-    // },
-    // caution: {
-    //   icon: <Icon variant={$Icon.STAY} stayType="caution" width={14} />,
-    //   description: 'Nearby lake, river, other body of water',
-    // },
+    distancing: {
+      icon: <Icon variant={$Icon.STAY} stayType="distancing" width={14} />,
+      description:
+        "Airbnb's social-distancing and other COVID-19-related guidelines apply",
+    },
+    caution: {
+      icon: <Icon variant={$Icon.STAY} stayType="caution" width={14} />,
+      description: 'Nearby lake, river, other body of water',
+    },
     check: {
       icon: <Icon variant={$Icon.STAY} stayType="checkin" width={14} />,
       description: 'Carbon monoxide alarm',

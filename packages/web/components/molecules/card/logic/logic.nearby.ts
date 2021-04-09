@@ -1,9 +1,9 @@
 export const renderSize = (card, size) => {
   switch (size) {
-    case "sm":
-      return [card["w__nearby--sm"]].join(" ");
-    case "lg":
-      return [card["w__nearby--lg"]].join(" ");
+    case 'sm':
+      return 'w-8 md:w-12';
+    case 'lg':
+      return 'w-12 md:w-16';
     default:
       return;
   }

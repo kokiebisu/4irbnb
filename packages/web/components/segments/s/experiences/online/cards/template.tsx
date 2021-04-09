@@ -4,7 +4,6 @@ import { Button, $Button } from '@button';
 import space from '@styles/space.module.scss';
 import font from '@styles/font.module.scss';
 import layout from '@styles/layout.module.scss';
-import { MutableRefObject } from 'react';
 import { useSlide } from '@hooks/useSlide';
 
 export interface CardsTemplateProps {
@@ -60,7 +59,7 @@ export const CardsTemplate: React.FC<CardsTemplateProps> = ({
                 animate
                 direction="left"
                 onClick={previous}
-                //   disable={state.activeSlide === 0}
+                disable={state.activeSlide === 0}
               />
             </div>
             <div className={[space['m-h--4']].join(' ')}>
@@ -70,10 +69,10 @@ export const CardsTemplate: React.FC<CardsTemplateProps> = ({
                 animate
                 direction="right"
                 onClick={next}
-                //   disable={
-                //     state.activeSlide ===
-                //     Math.ceil(availables.length / displayingColumns) - 1
-                //   }
+                disable={
+                  state.activeSlide ===
+                  Math.ceil(cards.length / displayingColumns()) - 1
+                }
               />
             </div>
           </div>
