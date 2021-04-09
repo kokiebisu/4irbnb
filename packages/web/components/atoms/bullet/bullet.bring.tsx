@@ -10,7 +10,7 @@ const BringBullet: React.FC<{
   return (
     <div className="flex">
       <div className="mr-4">
-        <Icon variant={$Icon.GENERAL} generalType="check" width={24} />
+        <Icon variant={$Icon.SEMANTIC} semanticType="check" width={24} />
       </div>
       <div>
         <p>{title}</p>

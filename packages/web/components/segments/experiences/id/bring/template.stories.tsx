@@ -4,7 +4,7 @@ import { BringTemplate, BringTemplateProps } from './template';
 import * as mockData from './mock';
 
 export default {
-  title: 'Templates/D/OnlineHosts',
+  title: 'Templates/Experiences/ID',
   component: BringTemplate,
 } as Meta;
 

@@ -1,7 +1,3 @@
-import font from '@styles/font.module.scss';
-import space from '@styles/space.module.scss';
-import color from '@styles/color.module.scss';
-
 import { Card, $Card } from '@card';
 
 export interface HomesTemplateProps {
@@ -52,7 +48,7 @@ export const HomesTemplate: React.FC<HomesTemplateProps> = ({
             return (
               <div key={index}>
                 <Card
-                  extendsTo={!title && [color['b-t--white__2']].join(' ')}
+                  extendsTo={!title && 'border-t border-gray-300'}
                   variant={$Card.STAY}
                   {...stay}
                 />

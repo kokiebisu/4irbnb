@@ -1,18 +1,14 @@
-/** components */
-import { Layout } from "@layout";
-
-/** styles */
-import space from "@styles/space.module.scss";
+import { Layout } from '@layout';
 
 export const CurrencyPrototype: React.FC<{}> = () => {
   return (
     <div>
-      <div className={[space["m-b--24"]].join(" ")}>
+      <div className="mb-4">
         <Layout
           variant="currency"
           title="Choose a currency"
           items={[
-            { name: "Canadian dollar", abbreviation: "CAD", symbol: "$" },
+            { name: 'Canadian dollar', abbreviation: 'CAD', symbol: '$' },
           ]}
         />
       </div>

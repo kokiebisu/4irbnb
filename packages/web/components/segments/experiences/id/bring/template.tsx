@@ -1,7 +1,3 @@
-import font from '@styles/font.module.scss';
-import space from '@styles/space.module.scss';
-import color from '@styles/color.module.scss';
-
 import { Bullet, $Bullet } from '@bullet';
 
 export interface BringTemplateProps {
@@ -18,21 +14,14 @@ export const BringTemplate: React.FC<BringTemplateProps> = ({
   return (
     <div>
       <div>
-        <h3
-          className={[
-            font['weight--500'],
-            space['m-b--20'],
-            color['c--gray__3'],
-            font['size--24'],
-          ].join(' ')}
-        >
+        <h3 className="font-medium mb-4 text-gray-700 text-lg">
           What to bring
         </h3>
       </div>
-      <div className={[space['m-b--32']].join(' ')}>
+      <div className="mb-5">
         {necessities.map((necessity, index) => {
           return (
-            <div key={index} className={[space['m-b--16']].join(' ')}>
+            <div key={index} className="mb-4">
               <Bullet variant={$Bullet.BRING} title={necessity} />
             </div>
           );
