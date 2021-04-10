@@ -14,27 +14,27 @@
   <br/>
 </p>
 
-This is my second iteration creating a replica of Airbnb. 
+This is my second iteration creating a replica of Airbnb.
 The goal for this project is to migrate into using Golang and follow the test driven development approach.
 
 ## Intro
 
 I created a replica called nextbnb in the past and now I am starting a new one by taking approaches I have regretted not taking for the past project. I have experienced numerous pain points as the project got bigger. Some of the pain points were the following:
+
 - [ ] Creating duplicate components unnecessarily
 - [ ] Gathering all the code in one file for multiple purposes (this can result in slow performance on the browser)
 - [ ] Not using React hooks effectively for optimized performance
 
-To fix these problems I decided to take a complete different development flow. I focused into component driven development and a more test driven approach. 
-
+To fix these problems I decided to take a complete different development flow. I focused into component driven development and a more test driven approach.
 
 ## Table of contents
 
 - ✌️ &nbsp;[Getting Started](#getting-started)
 - ❄️ &nbsp;[Aspects](#aspects)
   - 🛠 &nbsp;[Landing](#landing)
-- 👏  &nbsp;[Development](#technology)
-  - 💻  &nbsp;[Hashtags](#hashtags)
-  - 💵  &nbsp;[Stack](#backers)
+- 👏 &nbsp;[Development](#technology)
+  - 💻 &nbsp;[Hashtags](#hashtags)
+  - 💵 &nbsp;[Stack](#backers)
 
 ## Getting Started
 
@@ -49,18 +49,24 @@ docker-compose build
 Check it out [here](https://airbnb-storybook.netlify.app/)
 
 ## References
- - [atomic design](https://bradfrost.com/blog/post/atomic-web-design/)
- - [Design System for Developers](https://www.learnstorybook.com/design-systems-for-developers/)
+
+- [atomic design](https://bradfrost.com/blog/post/atomic-web-design/)
+- [Design System for Developers](https://www.learnstorybook.com/design-systems-for-developers/)
 
 ### Keywords
-- [x] Component Driven Development 
+
+- [x] Component Driven Development
+
+### Naming
+
+- can~: Criterias to do a certain task. If False then disabled. (Ex. canProceedToNextPage)
+- handle~: Used for functions triggered in Segments blocks. (Ex. handleRedirectToNextPage)
+- is~: Variable name used for boolean type props (Ex. isExpanded)
 
 ### Tech Stacks
 
-| Stacks                                      |                                                                            |
-| ------------------------------------------- | -------------------------------------------------------------------------- |
-| [Typescript](https://www.typescriptlang.org)| Superset of Javascript                                                   |
-| [React](https://reactjs.org)                | Library to create reusable UI components                      |
-| [Storybook](https://storybook.js.org)       | Design System tool                                                       |
-| [Go](https://golang.org)                    | Rest Api
-
+| Stacks                                       |                                          |
+| -------------------------------------------- | ---------------------------------------- |
+| [Typescript](https://www.typescriptlang.org) | Superset of Javascript                   |
+| [React](https://reactjs.org)                 | Library to create reusable UI components |
+| [Storybook](https://storybook.js.org)        | Design System tool                       |
