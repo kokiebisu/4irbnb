@@ -80,3 +80,8 @@ export const safeties = [
     item: 'lock',
   },
 ];
+
+export const selectedAmenities = ['wifi'];
+
+export const handleCheckboxChange = (type, _) =>
+  alert(`Handle ${type} checkbox change`);

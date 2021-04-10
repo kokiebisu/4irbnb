@@ -30,7 +30,7 @@ export const CheckboxInput: React.FC<CheckboxInputProps> = ({
               variant={$Icon.SEMANTIC}
               semanticType="check"
               width={15}
-              stroke="white"
+              fill="white"
               strokeWidth={5}
             />
           </div>

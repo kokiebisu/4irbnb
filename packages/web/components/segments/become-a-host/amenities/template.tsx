@@ -3,11 +3,13 @@ import { $Input, Input } from '@input';
 export interface AmenitiesSegmentTemplateProps {
   amenities?: any;
   safeties?: any;
+  selectedAmenities?: string[];
   handleCheckboxChange?: (type: string, item: string) => void;
 }
 
 export const AmenitiesSegmentTemplate: React.FC<AmenitiesSegmentTemplateProps> = ({
   amenities,
+  selectedAmenities,
   safeties,
   handleCheckboxChange,
 }) => {
@@ -28,10 +30,11 @@ export const AmenitiesSegmentTemplate: React.FC<AmenitiesSegmentTemplateProps> =
             <div key={index} className="mb-4">
               <Input
                 check={() => handleCheckboxChange('amenities', item)}
-                checked={amenities.includes(item)}
+                checked={selectedAmenities.includes(item)}
                 variant={$Input.CHECKBOX}
                 title={title}
                 description={description}
+                fill="white"
               />
             </div>
           );

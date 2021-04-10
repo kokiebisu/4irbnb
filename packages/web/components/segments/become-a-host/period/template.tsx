@@ -33,8 +33,8 @@ export const PeriodSegmentTemplate: React.FC<PeriodSegmentTemplateProps> = ({
               min={1}
               max={100}
               value={min}
-              subtract={handleCounterSubtract('min')}
-              add={handleCounterAdd('max')}
+              subtract={() => handleCounterSubtract('min')}
+              add={() => handleCounterAdd('max')}
             />
           </div>
           <div className="mb-3">
@@ -44,8 +44,8 @@ export const PeriodSegmentTemplate: React.FC<PeriodSegmentTemplateProps> = ({
               min={1}
               max={100}
               value={max}
-              subtract={handleCounterSubtract('max')}
-              add={handleCounterAdd('max')}
+              subtract={() => handleCounterSubtract('max')}
+              add={() => handleCounterAdd('max')}
             />
           </div>
         </div>

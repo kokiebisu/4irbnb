@@ -1,5 +1,4 @@
 import { Layout } from '@layout';
-import React from 'react';
 import { useRoomSegment } from './logic';
 import { RoomSegmentTemplate } from './template';
 
