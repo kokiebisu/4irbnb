@@ -17,7 +17,7 @@ export const TitleSegmentTemplate: React.FC<TitleSegmentTemplateProps> = ({
   return (
     <div>
       <div className="mb-4">
-        <h3 className="text-lg text-gray-500">
+        <h3 className="text-xl text-gray-700">
           Create a title for your listing
         </h3>
       </div>

@@ -16,7 +16,7 @@ export const PeriodSegmentTemplate: React.FC<PeriodSegmentTemplateProps> = ({
   return (
     <div>
       <div className="mb-6">
-        <div>
+        <div className="text-xl text-gray-700">
           <h3>How long can guests stay?</h3>
         </div>
         <div>

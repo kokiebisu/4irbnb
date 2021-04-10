@@ -21,7 +21,7 @@ export const RulesSegmentTemplate: React.FC<RulesSegmentTemplateProps> = ({
   return (
     <div>
       <div>
-        <h3 className="text-2xl text-gray-700">
+        <h3 className="text-xl text-gray-700">
           Set house rules for your guests
         </h3>
       </div>

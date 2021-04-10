@@ -12,7 +12,7 @@ export const PhotosSegmentTemplate: React.FC<PhotosSegmentTemplateProps> = ({
   return (
     <div>
       <div className="mb-4">
-        <h3 className="text-lg text-gray-500">
+        <h3 className="text-lg text-gray-700">
           Liven up your listing with photos
         </h3>
       </div>

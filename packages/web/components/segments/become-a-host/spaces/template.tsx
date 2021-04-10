@@ -15,7 +15,7 @@ export const SpacesSegmentTemplate: React.FC<SpacesSegmentTemplateProps> = ({
   return (
     <div>
       <div className="mb-3">
-        <h3 className="text-lg text-gray-500">What spaces can guests use?</h3>
+        <h3 className="text-xl text-gray-700">What spaces can guests use?</h3>
       </div>
       <div className="mb-7">
         <p className="text-md text-gray-500">

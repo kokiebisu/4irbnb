@@ -54,6 +54,7 @@ export const WarningIcon: React.FC<IconProps> = ({ fill }) => {
 
 export const MinusIcon: React.FC<IconProps> = ({
   fill = 'black',
+  strokeWidth = 3,
   ...props
 }) => {
   return (
@@ -61,7 +62,7 @@ export const MinusIcon: React.FC<IconProps> = ({
       {...props}
       width="100%"
       height="auto"
-      strokeWidth={2}
+      strokeWidth={strokeWidth}
       viewBox="0 0 24 24"
     >
       <rect fill={fill} height="2" rx="1" width="12" x="6" y="11"></rect>

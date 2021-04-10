@@ -29,7 +29,7 @@ export const GetStartedSegmentTemplate: React.FC<GetStartedSegmentTemplateProps>
     <div>
       <div>
         <div className="my-5">
-          <h4 className="text-2xl text-gray-700">
+          <h4 className="text-xl text-gray-700">
             Hi, Kenichi! Let's get started listing your space.
           </h4>
         </div>

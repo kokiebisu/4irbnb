@@ -16,7 +16,7 @@ export const AmenitiesSegmentTemplate: React.FC<AmenitiesSegmentTemplateProps> =
   return (
     <div>
       <div className="mb-4">
-        <h3 className="text-lg text-gray-500">What amenities do you offer?</h3>
+        <h3 className="text-xl text-gray-700">What amenities do you offer?</h3>
       </div>
       <div className="mb-7">
         <p className="text-md text-gray-500">

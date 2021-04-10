@@ -24,7 +24,7 @@ export const CounterInput: React.FC<CounterInputProps> = ({
   const types = {
     create: {
       borderWidth: 2,
-      color: 'green-500',
+      color: 'green-700',
     },
     guests: {
       borderWidth: 1,
@@ -45,8 +45,8 @@ export const CounterInput: React.FC<CounterInputProps> = ({
         <div>
           <button
             disabled={value === min}
-            className={`bg-white rounded-full p-2 border border-${
-              value === min ? 'gray-200' : types[type].color
+            className={`bg-white border-solid rounded-full p-2 border-2 border-${
+              value === min ? 'gray-500' : `${types[type].color}`
             }`}
             onClick={subtract}
           >
@@ -54,7 +54,8 @@ export const CounterInput: React.FC<CounterInputProps> = ({
               variant={$Icon.SEMANTIC}
               semanticType="minus"
               width={15}
-              stroke={value === min ? 'gray-100' : types[type].color}
+              fill="green"
+              strokeWidth={5}
             />
           </button>
         </div>
@@ -64,14 +65,16 @@ export const CounterInput: React.FC<CounterInputProps> = ({
         <div>
           <button
             disabled={value === max}
-            className="bg-white border rounded-full p-3"
+            className={`border rounded-full p-3 ${
+              value === max ? 'bg-gray-500' : 'bg-green-600'
+            }`}
             onClick={add}
           >
             <Icon
               variant={$Icon.SEMANTIC}
               semanticType="plus"
               width={15}
-              stroke={value === max ? 'lightgray' : types[type].color}
+              fill="white"
             />
           </button>
         </div>
