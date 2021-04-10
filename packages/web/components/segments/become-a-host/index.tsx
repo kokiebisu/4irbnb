@@ -3,8 +3,8 @@ import { AmenitiesSegment } from './amenities';
 import { BathroomsSegment } from './bathrooms';
 import { BedroomsSegment } from './bedrooms';
 import { CheckInSegment } from './checkin';
-import { DescriptionCreate } from './create.description';
-import { GetStartedCreate } from './create.getstarted';
+import { DescriptionSegment } from './description';
+import { GetStartedSegment } from './getstarted';
 import { LocationCreate } from './create.location';
 import { PhoneCreate } from './create.phone';
 import { RequirementsCreate } from './create.requirements';
@@ -48,14 +48,14 @@ export const Segment: React.FC<CreateProps> = ({
   ...props
 }) => {
   const variants = {
-    getstarted: <GetStartedCreate {...props} />,
+    getstarted: <GetStartedSegment />,
     room: <RoomCreate {...props} />,
     bedrooms: <BedroomsSegment />,
     bathrooms: <BathroomsSegment />,
     location: <LocationCreate {...props} />,
     amenities: <AmenitiesSegment {...props} />,
     spaces: <SpacesCreate {...props} />,
-    description: <DescriptionCreate {...props} />,
+    description: <DescriptionSegment />,
     title: <TitleCreate {...props} />,
     phone: <PhoneCreate {...props} />,
     requirements: <RequirementsCreate {...props} />,

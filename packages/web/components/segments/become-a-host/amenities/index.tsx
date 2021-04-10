@@ -1,6 +1,6 @@
 import { Layout } from '@layout';
 import { useAmenitiesBecomeAHost } from './logic';
-import { AmenitiesBecomeAHostTemplate } from './template';
+import { AmenitiesSegmentTemplate } from './template';
 
 export const AmenitiesSegment: React.FC<{}> = () => {
   const {
@@ -12,7 +12,7 @@ export const AmenitiesSegment: React.FC<{}> = () => {
   return (
     <Layout
       variant="create"
-      left={<AmenitiesBecomeAHostTemplate {...data} />}
+      left={<AmenitiesSegmentTemplate {...data} />}
       percentage={25}
       next={handleRedirectToNextPage}
       back={handleRedirectToPreviousPage}

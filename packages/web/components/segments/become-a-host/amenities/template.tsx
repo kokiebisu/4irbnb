@@ -1,12 +1,12 @@
 import { $Input, Input } from '@input';
 
-export interface AmenitiesBecomeAHostTemplateProps {
+export interface AmenitiesSegmentTemplateProps {
   amenities?: any;
   safeties?: any;
   handleCheckboxChange?: (type: string, item: string) => void;
 }
 
-export const AmenitiesBecomeAHostTemplate: React.FC<AmenitiesBecomeAHostTemplateProps> = ({
+export const AmenitiesSegmentTemplate: React.FC<AmenitiesSegmentTemplateProps> = ({
   amenities,
   safeties,
   handleCheckboxChange,

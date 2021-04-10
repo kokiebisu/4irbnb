@@ -1,21 +1,21 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import {
-  AdvanceBecomeAHostTemplate,
-  AdvanceBecomeAHostTemplateProps,
+  AdvanceSegmentTemplate,
+  AdvanceSegmentTemplateProps,
 } from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/D/OnlineHosts',
-  component: AdvanceBecomeAHostTemplate,
+  component: AdvanceSegmentTemplate,
 } as Meta;
 
-const AdvanceBecomeAHostTemplateStory: Story<AdvanceBecomeAHostTemplateProps> = (
-  args
-) => <AdvanceBecomeAHostTemplate {...args} />;
+const SegmentStory: Story<AdvanceSegmentTemplateProps> = (args) => (
+  <AdvanceSegmentTemplate {...args} />
+);
 
-export const AdvanceBecomeAHost = AdvanceBecomeAHostTemplateStory.bind({});
-AdvanceBecomeAHost.args = {
+export const Advance = SegmentStory.bind({});
+Advance.args = {
   ...mockData,
 };
