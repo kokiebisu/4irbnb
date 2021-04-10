@@ -1,8 +1,8 @@
-import { useState } from "react";
-import Router from "next/router";
-import { Layout } from "@layout";
-import { Prototype, $Prototype } from "@prototype/create";
-import { useStayDispatch, useStayState } from "@context/stay";
+import { useState } from 'react';
+import Router from 'next/router';
+import { Layout } from '@layout';
+import { Prototype, $Prototype } from '@template/become-a-host/create';
+import { useStayDispatch, useStayState } from '@context/stay';
 
 const DescriptionPage = () => {
   const stayDispatch = useStayDispatch();
@@ -15,17 +15,17 @@ const DescriptionPage = () => {
 
   const proceed = () => {
     stayDispatch({
-      type: "add",
+      type: 'add',
       payload: data,
     });
     setTimeout(() => {
-      Router.push("/become-a-host/review-how-guests-book");
+      Router.push('/become-a-host/review-how-guests-book');
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push("/become-a-host/spaces");
+      Router.push('/become-a-host/spaces');
     }, 500);
   };
 
@@ -44,8 +44,8 @@ const DescriptionPage = () => {
       next={proceed}
       back={revert}
       criteria={
-        typeof data.events === "undefined" &&
-        typeof data.smoking === "undefined"
+        typeof data.events === 'undefined' &&
+        typeof data.smoking === 'undefined'
       }
     />
   );

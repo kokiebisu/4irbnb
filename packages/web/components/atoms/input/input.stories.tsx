@@ -1,150 +1,123 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
-
+import { Story, Meta } from '@storybook/react';
 import { Input, InputProps, $Input } from '@input';
 
 export default {
   title: 'Atoms/Input',
   component: Input,
-  argTypes: {
-    extendsTo: {
-      control: {
-        disable: true,
-      },
-    },
-  },
 } as Meta;
 
 const InputStory: Story<InputProps> = (args) => <Input {...args} />;
 
-export const email = InputStory.bind({});
-email.args = {
+export const Email = InputStory.bind({});
+Email.args = {
   variant: $Input.EMAIL,
 };
 
-export const password = InputStory.bind({});
-password.args = {
+export const Password = InputStory.bind({});
+Password.args = {
   variant: $Input.PASSWORD,
 };
 
-export const name = InputStory.bind({});
-name.args = {
+export const Name = InputStory.bind({});
+Name.args = {
   variant: $Input.NAME,
 };
-name.argTypes = {
-  name: {
-    control: {
-      type: 'select',
-      options: ['firstname', 'lastname'],
-    },
-  },
-};
 
-export const birthdate = InputStory.bind({});
-birthdate.args = {
+export const Birthdate = InputStory.bind({});
+Birthdate.args = {
   variant: $Input.BIRTHDATE,
 };
 
-export const phone = InputStory.bind({});
-phone.args = {
+export const Phone = InputStory.bind({});
+Phone.args = {
   variant: $Input.PHONE,
 };
 
-export const region = InputStory.bind({});
-region.args = {
+export const Region = InputStory.bind({});
+Region.args = {
   variant: $Input.REGION,
 };
 
-export const place = InputStory.bind({});
-place.args = {
+export const Place = InputStory.bind({});
+Place.args = {
   variant: $Input.PLACE,
 };
 
-export const guests = InputStory.bind({});
-guests.args = {
+export const Guests = InputStory.bind({});
+Guests.args = {
   variant: $Input.GUESTS,
 };
 
-export const address = InputStory.bind({});
-address.args = {
+export const Address = InputStory.bind({});
+Address.args = {
   variant: $Input.ADDRESS,
 };
 
-export const select = InputStory.bind({});
-select.args = {
+export const Select = InputStory.bind({});
+Select.args = {
   variant: $Input.SELECT,
 };
 
-export const radio = InputStory.bind({});
-radio.args = {
+export const Radio = InputStory.bind({});
+Radio.args = {
   variant: $Input.RADIO,
 };
 
-export const counter = InputStory.bind({});
-counter.args = {
+export const Counter = InputStory.bind({});
+Counter.args = {
   variant: $Input.COUNTER,
+  title: 'Counter',
+  subtitle: '',
+  value: 0,
+  add: () => alert('add'),
+  subtract: () => alert('subtract'),
+  min: 1,
+  max: 4,
+  type: 'create',
 };
 
-export const text = InputStory.bind({});
-text.args = {
+export const Text = InputStory.bind({});
+Text.args = {
   variant: $Input.TEXT,
 };
 
-export const checkbox = InputStory.bind({});
-checkbox.args = {
+export const Checkbox = InputStory.bind({});
+Checkbox.args = {
   variant: $Input.CHECKBOX,
 };
-checkbox.argTypes = {
-  checked: {
-    control: 'boolean',
-  },
-};
 
-export const textarea = InputStory.bind({});
-textarea.args = {
+export const TextArea = InputStory.bind({});
+TextArea.args = {
   variant: $Input.TEXTAREA,
 };
 
-export const verify = InputStory.bind({});
-verify.args = {
+export const Verify = InputStory.bind({});
+Verify.args = {
   variant: $Input.VERIFY,
 };
 
-export const closed = InputStory.bind({});
-closed.args = {
+export const Closed = InputStory.bind({});
+Closed.args = {
   variant: $Input.CLOSED,
 };
 
-export const price = InputStory.bind({});
-price.args = {
+export const Price = InputStory.bind({});
+Price.args = {
   variant: $Input.PRICE,
 };
 
-export const limit = InputStory.bind({});
-limit.args = {
+export const Limit = InputStory.bind({});
+Limit.args = {
   variant: $Input.LIMIT,
 };
 
-export const photo = InputStory.bind({});
-photo.args = {
+export const Photo = InputStory.bind({});
+Photo.args = {
   variant: $Input.PHOTO,
 };
-photo.decorators = [
-  (Story) => (
-    <div style={{ maxWidth: 450 }}>
-      <Story />
-    </div>
-  ),
-];
 
-export const another = InputStory.bind({});
-another.args = {
+export const Another = InputStory.bind({});
+Another.args = {
   variant: $Input.ANOTHER,
 };
-another.decorators = [
-  (Story) => (
-    <div style={{ maxWidth: 250 }}>
-      <Story />
-    </div>
-  ),
-];

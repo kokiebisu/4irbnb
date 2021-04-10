@@ -1,10 +1,10 @@
-import { useState } from "react";
-import Router from "next/router";
+import { useState } from 'react';
+import Router from 'next/router';
 
-import { Layout } from "@layout";
-import { Prototype, $Prototype } from "@prototype/create";
+import { Layout } from '@layout';
+import { Prototype, $Prototype } from '@template/become-a-host/create';
 
-import { useStayDispatch, useStayState } from "@context/stay";
+import { useStayDispatch, useStayState } from '@context/stay';
 
 const PricePage = () => {
   const stayDispatch = useStayDispatch();
@@ -16,17 +16,17 @@ const PricePage = () => {
 
   const proceed = () => {
     stayDispatch({
-      type: "add",
+      type: 'add',
       payload: data,
     });
     setTimeout(() => {
-      Router.push("/become-a-host/booking-scenarios");
+      Router.push('/become-a-host/booking-scenarios');
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push("/period");
+      Router.push('/period');
     }, 500);
   };
 
