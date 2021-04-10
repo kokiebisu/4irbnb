@@ -1,14 +1,14 @@
 import { $Input, Input } from '@input';
 import { Layout } from '@layout';
 
-export interface AdvanceBecomeAHostTemplateProps {
+export interface AdvanceSegmentTemplateProps {
   advance?: number | string;
   handleAdvanceAnyTimeChange?: () => void;
   handleAdvanceMonthsChange?: (month: number) => void;
   handleAdvanceUnavailableChange?: () => void;
 }
 
-export const AdvanceBecomeAHostTemplate: React.FC<AdvanceBecomeAHostTemplateProps> = ({
+export const AdvanceSegmentTemplate: React.FC<AdvanceSegmentTemplateProps> = ({
   advance,
   handleAdvanceAnyTimeChange,
   handleAdvanceMonthsChange,

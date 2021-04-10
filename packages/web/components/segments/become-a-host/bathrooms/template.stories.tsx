@@ -11,11 +11,11 @@ export default {
   component: BathroomsSegmentTemplate,
 } as Meta;
 
-const BathroomsBecomeAHostTemplateStory: Story<BathroomsSegmentTemplateProps> = (
-  args
-) => <BathroomsSegmentTemplate {...args} />;
+const SegmentStory: Story<BathroomsSegmentTemplateProps> = (args) => (
+  <BathroomsSegmentTemplate {...args} />
+);
 
-export const BathroomsBecomeAHost = BathroomsBecomeAHostTemplateStory.bind({});
-BathroomsBecomeAHost.args = {
+export const Bathrooms = SegmentStory.bind({});
+Bathrooms.args = {
   ...mockData,
 };

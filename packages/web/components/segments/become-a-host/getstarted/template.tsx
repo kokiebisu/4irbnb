@@ -1,61 +1,30 @@
-import { useEffect, useState } from 'react';
-import { useFormik } from 'formik';
-import Router from 'next/router';
-
 import { Button, $Button } from '@button';
 import { Input, $Input } from '@input';
 
-import { useStayDispatch } from '@context/stay';
-
-export interface GetStartedBecomeAHostTemplate {
-  loading?: () => void;
+export interface GetStartedSegmentTemplateProps {
+  loading?: boolean;
   handleLoadingChange?: () => void;
-  stay?: () => void;
+  stay?: string;
   handleStayChange?: () => void;
   handleSubmit?: () => void;
-  address?: () => void;
-  handleAddressChang?: () => voide;
+  guests?: number;
+  address?: string;
+  handleChange?: (e: any) => void;
+  handlePlaceChange?: (e: any) => void;
 }
 
 /**
  * Renders the /become-a-host/get-started page content
  */
-export const GetStartedCreate: React.FC<{}> = ({
+export const GetStartedSegmentTemplate: React.FC<GetStartedSegmentTemplateProps> = ({
   loading,
-  handleLoadingChange,
-  stay,
-  handleStayChange,
-  handleSubmit,
+  guests,
   address,
-  handleAddressChange,
+  stay,
+  handleChange,
+  handleSubmit,
+  handlePlaceChange,
 }) => {
-  const [loading, setLoading] = useState(false);
-  const [stay, setStay] = useState('Entire place');
-  const dispatchStay = useStayDispatch();
-  const formik = useFormik({
-    initialValues: {
-      guests: 1,
-      address: '',
-    },
-    onSubmit: async ({ guests, address }) => {
-      setLoading(true);
-      dispatchStay({
-        type: 'add',
-        payload: { stay, guests, address },
-      });
-      setTimeout(() => {
-        Router.push('/become-a-host/room');
-      }, 2000);
-    },
-  });
-
-  useEffect(() => {
-    dispatchStay({
-      type: 'reset',
-      payload: { place: 'Entire place', guests: 0, address: '' },
-    });
-  }, []);
-
   return (
     <div>
       <div>
@@ -73,7 +42,7 @@ export const GetStartedCreate: React.FC<{}> = ({
           </h4>
         </div>
         <div className="mb-3">
-          <form onSubmit={formik.handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <div
               className="mb-3 grid gap-3"
               style={{
@@ -84,22 +53,22 @@ export const GetStartedCreate: React.FC<{}> = ({
                 <Input
                   variant={$Input.PLACE}
                   value={stay}
-                  changePlace={setStay}
+                  changePlace={handlePlaceChange}
                 />
               </div>
               <div>
                 <Input
                   variant={$Input.GUESTS}
-                  handleChange={formik.handleChange}
-                  value={formik.values.guests}
+                  handleChange={handleChange}
+                  value={guests}
                 />
               </div>
             </div>
             <div>
               <Input
                 variant={$Input.ADDRESS}
-                handleChange={formik.handleChange}
-                value={formik.values.address}
+                handleChange={handleChange}
+                value={address}
               />
             </div>
             <div className="mt-4" style={{ width: 150 }}>

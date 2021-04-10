@@ -11,11 +11,11 @@ export default {
   component: CheckInSegmentTemplate,
 } as Meta;
 
-const CheckInBecomeAHostTemplateStory: Story<CheckInSegmentTemplateProps> = (
-  args
-) => <CheckInSegmentTemplate {...args} />;
+const SegmentStory: Story<CheckInSegmentTemplateProps> = (args) => (
+  <CheckInSegmentTemplate {...args} />
+);
 
-export const CheckInBecomeAHost = CheckInBecomeAHostTemplateStory.bind({});
-CheckInBecomeAHost.args = {
+export const CheckIn = SegmentStory.bind({});
+CheckIn.args = {
   ...mockData,
 };

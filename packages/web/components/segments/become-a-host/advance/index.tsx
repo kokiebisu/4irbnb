@@ -1,6 +1,6 @@
 import { Layout } from '@layout';
 import { useAdvanceBecomeAHost } from './logic';
-import { AdvanceBecomeAHostTemplate } from './template';
+import { AdvanceSegmentTemplate } from './template';
 
 export const AdvanceSegment: React.FC<{}> = () => {
   const {
@@ -12,7 +12,7 @@ export const AdvanceSegment: React.FC<{}> = () => {
     <Layout
       variant="create"
       title="Calendar and availability"
-      left={<AdvanceBecomeAHostTemplate {...data} />}
+      left={<AdvanceSegmentTemplate {...data} />}
       percentage={85}
       next={handleRedirectToNextPage}
       back={handleRedirectToPreviousPage}
