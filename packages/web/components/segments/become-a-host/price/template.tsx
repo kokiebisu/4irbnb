@@ -13,7 +13,7 @@ export const PriceSegmentTemplate: React.FC<PriceSegmentTemplateProps> = ({
     <div>
       <div className="mb-6">
         <div className="mb-4">
-          <h3>Price your space</h3>
+          <h3 className="text-xl text-gray-700">Price your space</h3>
         </div>
         <div className="mb-4">
           <div>

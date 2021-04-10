@@ -15,7 +15,7 @@ export const RequirementsSegmentTemplate: React.FC<RequirementsSegmentTemplatePr
   return (
     <div>
       <div className="mb-3">
-        <h3 className="text-3xl text-gray-700">
+        <h3 className="text-xl text-gray-700">
           Review Airbnb's guest requirements
         </h3>
       </div>

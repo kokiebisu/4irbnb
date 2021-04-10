@@ -27,7 +27,7 @@ export const LocationSegmentTemplate: React.FC<LocationSegmentTemplateProps> = (
   return (
     <div>
       <div className="mb-3">
-        <h3 className="text-2xl text-gray-500">Where's your place located?</h3>
+        <h3 className="text-xl text-gray-700">Where's your place located?</h3>
       </div>
       <div className="mb-4">
         <p className="text-sm text-gray-500">

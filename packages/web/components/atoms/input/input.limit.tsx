@@ -2,11 +2,18 @@ import { useState } from 'react';
 
 import animation from '@styles/animation.module.scss';
 
-export const LimitInput: React.FC<{
+export interface LimitInputProps {
   value?: string;
   handleChange?: () => void;
   limit?: number;
-}> = ({ value = '', handleChange, limit = 50 }) => {
+}
+
+export const LimitInput: React.FC<LimitInputProps> = ({
+  value,
+  handleChange,
+  limit,
+}) => {
+  console.log('limit', value);
   const [active, setActive] = useState(false);
 
   const renderBorder = () => {
@@ -41,6 +48,7 @@ export const LimitInput: React.FC<{
       <div className="min-h-full relative w-full">
         <input
           spellCheck
+          value={value}
           onFocus={() => setActive(true)}
           onBlur={() => setActive(false)}
           onChange={handleChange}

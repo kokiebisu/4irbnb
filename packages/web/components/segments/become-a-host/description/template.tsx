@@ -17,9 +17,7 @@ export const DescriptionSegmentTemplate: React.FC<DescriptionSegmentTemplateProp
   return (
     <div>
       <div className="mb-4">
-        <h3 className="text-3xl text-gray-500">
-          Describe your place to guests
-        </h3>
+        <h3 className="text-xl text-gray-700">Describe your place to guests</h3>
       </div>
       <div className="mb-7">
         <p className="text-sm text-gray-500">
@@ -32,7 +30,7 @@ export const DescriptionSegmentTemplate: React.FC<DescriptionSegmentTemplateProp
           <Input
             variant={$Input.TEXTAREA}
             limit={500}
-            value={description}
+            value={description.description}
             handleChange={(e) => handleTextareaChange(e, 'description')}
           />
         </div>

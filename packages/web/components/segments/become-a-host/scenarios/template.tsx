@@ -11,7 +11,9 @@ export const ScenariosSegmentTemplate: React.FC<ScenariosSegmentTemplateProps> =
     <div>
       <div className="mb-6">
         <div className="mb-7">
-          <h3>Based on your settings, here's what you could expect</h3>
+          <h3 className="text-xl text-gray-700">
+            Based on your settings, here's what you could expect
+          </h3>
         </div>
         <div>
           {scenarios.map((type, index) => {

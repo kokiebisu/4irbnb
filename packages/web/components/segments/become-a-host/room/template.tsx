@@ -24,7 +24,7 @@ export const RoomSegmentTemplate: React.FC<RoomSegmentTemplateProps> = ({
   return (
     <div>
       <div className="mb-6">
-        <h3 className="text-lg text-gray-500">
+        <h3 className="text-xl text-gray-700">
           What kind of place are you listing?
         </h3>
       </div>

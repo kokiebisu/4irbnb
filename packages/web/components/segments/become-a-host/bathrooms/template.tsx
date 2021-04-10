@@ -14,7 +14,7 @@ export const BathroomsSegmentTemplate: React.FC<BathroomsSegmentTemplateProps> =
   return (
     <div>
       <div className="mb-6">
-        <h3 className="text-2xl text-gray-700">How many bathrooms?</h3>
+        <h3 className="text-xl text-gray-700">How many bathrooms?</h3>
       </div>
       <div className="mb-6">
         <p className="text-sm text-gray-700">

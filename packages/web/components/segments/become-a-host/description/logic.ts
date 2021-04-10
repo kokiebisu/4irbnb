@@ -27,10 +27,15 @@ export const useDescriptionSegment = () => {
     }, 500);
   };
 
+  const handleTextareaChange = (e, property) => {
+    setData({ ...data, [property]: e.target.value });
+  };
+
   return {
     ...mockData,
     handleRedirectToNextPage,
     handleRedirectToPreviousPage,
     description,
+    handleTextareaChange,
   };
 };

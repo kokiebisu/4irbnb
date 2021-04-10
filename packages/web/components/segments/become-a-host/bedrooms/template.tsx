@@ -21,7 +21,7 @@ export const BedroomsSegmentTemplate: React.FC<BedroomsSegmentTemplateProps> = (
   return (
     <div>
       <div className="mb-6">
-        <h3 className="text-2xl text-gray-700">
+        <h3 className="text-xl text-gray-700">
           How many guests can your place accommodate?
         </h3>
       </div>
