@@ -1,8 +1,8 @@
 import { Input, $Input } from '@input';
 
-export interface PhoneCreateProps {
-  data?: { phone: string };
-  setData?: (param: any) => void;
+export interface PhoneSegmentTemplateProps {
+  phone?: string;
+  handleChange?: (e: any, type: string) => void;
 }
 
 /**
@@ -10,7 +10,10 @@ export interface PhoneCreateProps {
  * @param {object} data - Input data
  * @param {function} setData - Changes the input data
  */
-export const PhoneCreate: React.FC<PhoneCreateProps> = ({ data, setData }) => {
+export const PhoneSegmentTemplate: React.FC<PhoneSegmentTemplateProps> = ({
+  phone,
+  handleChange,
+}) => {
   return (
     <div>
       <div className="mb-3">
@@ -26,8 +29,8 @@ export const PhoneCreate: React.FC<PhoneCreateProps> = ({ data, setData }) => {
         <div className="mb-3">
           <Input
             variant={$Input.VERIFY}
-            value={data.phone}
-            handleChange={(e) => setData({ ...data, phone: e.target.value })}
+            value={phone}
+            handleChange={(e) => handleChange(e, 'phone')}
           />
         </div>
       </div>

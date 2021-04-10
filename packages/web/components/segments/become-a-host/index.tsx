@@ -6,16 +6,16 @@ import { CheckInSegment } from './checkin';
 import { DescriptionSegment } from './description';
 import { GetStartedSegment } from './getstarted';
 import { LocationSegment } from './location';
-import { PhoneCreate } from './create.phone';
+import { PhoneSegment } from './phone';
 import { RequirementsCreate } from './create.requirements';
 import { RoomCreate } from './create.room';
 import { RulesCreate } from './create.rules';
 import { SpacesCreate } from './create.spaces';
 import { TitleSegment } from './title';
-import { PeriodCreate } from './create.period';
-import { PriceCreate } from './create.price';
+import { PeriodSegment } from './period';
+import { PriceSegment } from './price';
 import { ScenariosCreate } from './create.scenarios';
-import { PhotosCreate } from './create.photos';
+import { PhotosSegment } from './photos';
 
 export const $Segment = {
   GETSTARTED: 'getstarted',
@@ -57,15 +57,15 @@ export const Segment: React.FC<CreateProps> = ({
     spaces: <SpacesCreate {...props} />,
     description: <DescriptionSegment />,
     title: <TitleSegment />,
-    phone: <PhoneCreate {...props} />,
+    phone: <PhoneSegment />,
     requirements: <RequirementsCreate {...props} />,
     rules: <RulesCreate {...props} />,
     checkin: <CheckInSegment />,
     advance: <AdvanceSegment {...props} />,
-    period: <PeriodCreate {...props} />,
+    period: <PeriodSegment />,
     price: <PriceCreate {...props} />,
     scenarios: <ScenariosCreate {...props} />,
-    photos: <PhotosCreate {...props} />,
+    photos: <PhotosSegment />,
   };
   return <div data-testid={`${variant}-segment`}>{variants[variant]}</div>;
 };
