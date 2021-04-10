@@ -1,18 +1,18 @@
-import Router from "next/router";
+import Router from 'next/router';
 
-import { Layout } from "@layout";
-import { Prototype, $Prototype } from "@prototype/create";
+import { Layout } from '@layout';
+import { Prototype, $Prototype } from '@template/become-a-host/create';
 
 const BookingScenariosPage = () => {
   const proceed = () => {
     setTimeout(() => {
-      Router.push("/become-a-host/price");
+      Router.push('/become-a-host/price');
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push("/price");
+      Router.push('/price');
     }, 500);
   };
 

@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import Router from "next/router";
+import { useEffect, useState } from 'react';
+import Router from 'next/router';
 
-import { useStayDispatch, useStayState } from "@context/stay";
+import { useStayDispatch, useStayState } from '@context/stay';
 
-import { Prototype, $Prototype } from "@prototype/create";
-import { inputTypes, properties } from "@input/logic/logic.types";
-import { Layout } from "@layout";
+import { Prototype, $Prototype } from '@template/become-a-host/create';
+import { inputTypes, properties } from '@input/logic/logic.types';
+import { Layout } from '@layout';
 
 const RoomPage = () => {
   const stayDispatch = useStayDispatch();
@@ -21,7 +21,7 @@ const RoomPage = () => {
   const proceed = () => {
     if (data.stay && data.property) {
       stayDispatch({
-        type: "add",
+        type: 'add',
         payload: {
           place: data.place,
           property: data.property,
@@ -29,15 +29,15 @@ const RoomPage = () => {
         },
       });
       setTimeout(() => {
-        Router.push("/become-a-host/bedrooms");
+        Router.push('/become-a-host/bedrooms');
       }, 500);
     }
   };
 
   const revert = () => {
-    console.log("revert called");
+    console.log('revert called');
     setTimeout(() => {
-      Router.push("/become-a-host");
+      Router.push('/become-a-host');
     }, 500);
   };
 

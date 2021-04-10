@@ -1,10 +1,10 @@
-import { useState } from "react";
-import Router from "next/router";
+import { useState } from 'react';
+import Router from 'next/router';
 
-import { Layout } from "@layout";
-import { Prototype, $Prototype } from "@prototype/create";
+import { Layout } from '@layout';
+import { Prototype, $Prototype } from '@template/become-a-host/create';
 
-import { useStayDispatch, useStayState } from "@context/stay";
+import { useStayDispatch, useStayState } from '@context/stay';
 
 const PeriodPage = () => {
   const stayDispatch = useStayDispatch();
@@ -16,17 +16,17 @@ const PeriodPage = () => {
 
   const proceed = () => {
     stayDispatch({
-      type: "add",
+      type: 'add',
       payload: data,
     });
     setTimeout(() => {
-      Router.push("/become-a-host/price");
+      Router.push('/become-a-host/price');
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push("/advance");
+      Router.push('/advance');
     }, 500);
   };
 

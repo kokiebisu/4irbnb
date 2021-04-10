@@ -1,16 +1,18 @@
-import { Input, $Input } from '@input';
+import { $Input, Input } from '@input';
 import { Layout } from '@layout';
 
-export interface AdvanceCreateProps {
-  setData?: (data: any) => void;
-  data?: { advance: number | string };
+export interface AdvanceBecomeAHostTemplateProps {
+  advance?: number | string;
+  handleAdvanceAnyTimeChange?: () => void;
+  handleAdvanceMonthsChange?: (month: number) => void;
+  handleAdvanceUnavailableChange?: () => void;
 }
 
-export const AdvanceCreate: React.FC<AdvanceCreateProps> = ({
-  setData,
-  data = {
-    advance: 0,
-  },
+export const AdvanceBecomeAHostTemplate: React.FC<AdvanceBecomeAHostTemplateProps> = ({
+  advance,
+  handleAdvanceAnyTimeChange,
+  handleAdvanceMonthsChange,
+  handleAdvanceUnavailableChange,
 }) => {
   return (
     <div>
@@ -21,8 +23,8 @@ export const AdvanceCreate: React.FC<AdvanceCreateProps> = ({
               <Input
                 variant={$Input.RADIO}
                 title="Any time"
-                selected={data.advance === 0}
-                select={() => setData({ ...data, advance: 0 })}
+                selected={advance === 0}
+                select={handleAdvanceAnyTimeChange}
               />
             </div>
             {[{ months: 3 }, { months: 6 }, { months: 9 }, { months: 12 }].map(
@@ -33,8 +35,8 @@ export const AdvanceCreate: React.FC<AdvanceCreateProps> = ({
                     title={`${months === 12 ? 1 : months} ${
                       months === 12 ? 'year' : 'months in advance'
                     }`}
-                    selected={data.advance === months}
-                    select={() => setData({ ...data, advance: months })}
+                    selected={advance === months}
+                    select={handleAdvanceMonthsChange}
                   />
                 </div>
               )
@@ -44,8 +46,8 @@ export const AdvanceCreate: React.FC<AdvanceCreateProps> = ({
                 variant={$Input.RADIO}
                 title="Dates unavailable by default"
                 subtitle="Your entire calendar will be blocked by default, which means you’ll have to manually unblock dates to get booked."
-                selected={data.advance === 'unavailable'}
-                select={() => setData({ ...data, advance: 'unavailable' })}
+                selected={advance === 'unavailable'}
+                select={handleAdvanceUnavailableChange}
               />
             </div>
           </div>

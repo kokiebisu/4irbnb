@@ -8,18 +8,18 @@ export interface CounterInputProps {
   subtract?: () => void;
   min?: number;
   max?: number;
-  type?: string;
+  type?: 'create' | 'guests';
 }
 
 export const CounterInput: React.FC<CounterInputProps> = ({
-  title = 'Counter',
+  title,
   subtitle,
-  value = 0,
-  add = () => alert('add'),
-  subtract = () => alert('subtract'),
-  min = 1,
-  max = 4,
-  type = 'create',
+  value,
+  add,
+  subtract,
+  min,
+  max,
+  type,
 }) => {
   const types = {
     create: {

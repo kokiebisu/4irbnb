@@ -1,10 +1,10 @@
-import { useState } from "react";
-import Router from "next/router";
+import { useState } from 'react';
+import Router from 'next/router';
 
-import { Layout } from "@layout";
-import { Prototype, $Prototype } from "@prototype/create";
+import { Layout } from '@layout';
+import { Prototype, $Prototype } from '@template/become-a-host/create';
 
-import { useStayDispatch, useStayState } from "@context/stay";
+import { useStayDispatch, useStayState } from '@context/stay';
 
 const TitlePage = () => {
   const stayDispatch = useStayDispatch();
@@ -15,17 +15,17 @@ const TitlePage = () => {
 
   const proceed = () => {
     stayDispatch({
-      type: "add",
+      type: 'add',
       payload: data,
     });
     setTimeout(() => {
-      Router.push("/become-a-host/requirements");
+      Router.push('/become-a-host/requirements');
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push("/become-a-host/description");
+      Router.push('/become-a-host/description');
     }, 500);
   };
 

@@ -1,18 +1,18 @@
-import Router from "next/router";
+import Router from 'next/router';
 
-import { Layout } from "@layout";
-import { Prototype, $Prototype } from "@prototype/create";
+import { Layout } from '@layout';
+import { Prototype, $Prototype } from '@template/become-a-host/create';
 
 const RequirementsPage = () => {
   const proceed = () => {
     setTimeout(() => {
-      Router.push("/become-a-host/rules");
+      Router.push('/become-a-host/rules');
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push("/become-a-host/phone");
+      Router.push('/become-a-host/phone');
     }, 500);
   };
 

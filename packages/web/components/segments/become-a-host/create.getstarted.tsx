@@ -1,73 +1,83 @@
-import { useEffect, useState } from "react";
-import { useFormik } from "formik";
-import Router from "next/router";
+import { useEffect, useState } from 'react';
+import { useFormik } from 'formik';
+import Router from 'next/router';
 
-import font from "@styles/font.module.scss";
-import color from "@styles/color.module.scss";
-import space from "@styles/space.module.scss";
+import { Button, $Button } from '@button';
+import { Input, $Input } from '@input';
 
-import { Button, $Button } from "@button";
-import { Input, $Input } from "@input";
+import { useStayDispatch } from '@context/stay';
 
-import { useStayDispatch } from "@context/stay";
+export interface GetStartedBecomeAHostTemplate {
+  loading?: () => void;
+  handleLoadingChange?: () => void;
+  stay?: () => void;
+  handleStayChange?: () => void;
+  handleSubmit?: () => void;
+  address?: () => void;
+  handleAddressChang?: () => voide;
+}
 
 /**
  * Renders the /become-a-host/get-started page content
  */
-export const GetStartedCreate: React.FC<{}> = () => {
+export const GetStartedCreate: React.FC<{}> = ({
+  loading,
+  handleLoadingChange,
+  stay,
+  handleStayChange,
+  handleSubmit,
+  address,
+  handleAddressChange,
+}) => {
   const [loading, setLoading] = useState(false);
-  const [stay, setStay] = useState("Entire place");
+  const [stay, setStay] = useState('Entire place');
   const dispatchStay = useStayDispatch();
   const formik = useFormik({
     initialValues: {
       guests: 1,
-      address: "",
+      address: '',
     },
     onSubmit: async ({ guests, address }) => {
       setLoading(true);
       dispatchStay({
-        type: "add",
+        type: 'add',
         payload: { stay, guests, address },
       });
       setTimeout(() => {
-        Router.push("/become-a-host/room");
+        Router.push('/become-a-host/room');
       }, 2000);
     },
   });
 
   useEffect(() => {
     dispatchStay({
-      type: "reset",
-      payload: { place: "Entire place", guests: 0, address: "" },
+      type: 'reset',
+      payload: { place: 'Entire place', guests: 0, address: '' },
     });
   }, []);
 
   return (
     <div>
       <div>
-        <div className={[space["m-v--24"]].join(" ")}>
-          <h4 className={[font["size--28"], color["c--gray__2"]].join(" ")}>
+        <div className="my-5">
+          <h4 className="text-2xl text-gray-700">
             Hi, Kenichi! Let's get started listing your space.
           </h4>
         </div>
-        <div className={[space["m-v--8"]].join(" ")}>
-          <h3 className={[font["size--12"], color["c--gray__1"]].join(" ")}>
-            STEP 1
-          </h3>
+        <div className="my-3">
+          <h3 className="text-xs text-gray-600">STEP 1</h3>
         </div>
-        <div className={[space["m-b--16"]].join(" ")}>
-          <h4 className={[font["size--22"], color["c--gray__2"]].join(" ")}>
+        <div className="mb-4">
+          <h4 className="text-lg text-gray-500">
             What kind of place do you have?
           </h4>
         </div>
-        <div className={[space["m-b--10"]].join(" ")}>
+        <div className="mb-3">
           <form onSubmit={formik.handleSubmit}>
             <div
-              className={[space["m-b--10"]].join(" ")}
+              className="mb-3 grid gap-3"
               style={{
-                display: "grid",
-                gridTemplateColumns: "1fr 130px",
-                columnGap: 10,
+                gridTemplateColumns: '1fr 130px',
               }}
             >
               <div>
@@ -92,11 +102,8 @@ export const GetStartedCreate: React.FC<{}> = () => {
                 value={formik.values.address}
               />
             </div>
-            <div
-              className={[space["m-t--16"]].join(" ")}
-              style={{ width: 150 }}
-            >
-              <div style={{ width: "100%" }}>
+            <div className="mt-4" style={{ width: 150 }}>
+              <div className="w-full">
                 <Button
                   variant={$Button.PRIMARY}
                   title="Continue"

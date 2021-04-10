@@ -1,10 +1,10 @@
-import { useState } from "react";
-import Router from "next/router";
+import { useState } from 'react';
+import Router from 'next/router';
 
-import { Prototype, $Prototype } from "@prototype/create";
-import { Layout } from "@layout";
+import { Prototype, $Prototype } from '@template/become-a-host/create';
+import { Layout } from '@layout';
 
-import { useStayDispatch, useStayState } from "@context/stay";
+import { useStayDispatch, useStayState } from '@context/stay';
 
 const CheckInPage = () => {
   const stayDispatch = useStayDispatch();
@@ -17,17 +17,17 @@ const CheckInPage = () => {
 
   const proceed = () => {
     stayDispatch({
-      type: "add",
+      type: 'add',
       payload: data,
     });
     setTimeout(() => {
-      Router.push("/become-a-host/advance");
+      Router.push('/become-a-host/advance');
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push("/become-a-host/review-how-guests-book");
+      Router.push('/become-a-host/review-how-guests-book');
     }, 500);
   };
   return (
