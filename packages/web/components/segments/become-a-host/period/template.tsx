@@ -1,13 +1,17 @@
 import { Input, $Input } from '@input';
 
-export interface PeriodCreateProps {
-  setData?: any;
-  data?: any;
+export interface PeriodSegmentTemplateProps {
+  handleCounterSubtract?: (property: string) => void;
+  handleCounterAdd?: (property: string) => void;
+  min?: number;
+  max?: number;
 }
 
-export const PeriodCreate: React.FC<PeriodCreateProps> = ({
-  setData,
-  data,
+export const PeriodSegmentTemplate: React.FC<PeriodSegmentTemplateProps> = ({
+  handleCounterSubtract,
+  handleCounterAdd,
+  min,
+  max,
 }) => {
   return (
     <div>
@@ -28,9 +32,9 @@ export const PeriodCreate: React.FC<PeriodCreateProps> = ({
               title="nights min"
               min={1}
               max={100}
-              value={data.min}
-              subtract={() => setData({ ...data, min: data.min - 1 })}
-              add={() => setData({ ...data, min: data.min + 1 })}
+              value={min}
+              subtract={handleCounterSubtract('min')}
+              add={handleCounterAdd('max')}
             />
           </div>
           <div className="mb-3">
@@ -39,9 +43,9 @@ export const PeriodCreate: React.FC<PeriodCreateProps> = ({
               title="nights max"
               min={1}
               max={100}
-              value={data.max}
-              subtract={() => setData({ ...data, max: data.max - 1 })}
-              add={() => setData({ ...data, max: data.max + 1 })}
+              value={max}
+              subtract={handleCounterSubtract('max')}
+              add={handleCounterAdd('max')}
             />
           </div>
         </div>
