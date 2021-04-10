@@ -4,7 +4,7 @@ import { PhoneSegmentTemplate, PhoneSegmentTemplateProps } from './template';
 import * as mockData from './mock';
 
 export default {
-  title: 'Templates/D/OnlineHosts',
+  title: 'Templates/Become-A-Host',
   component: PhoneSegmentTemplate,
 } as Meta;
 

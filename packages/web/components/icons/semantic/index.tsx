@@ -82,6 +82,7 @@ export const CheckIcon: React.FC<IconProps> = ({
   fill = 'black',
   circled,
   inversed,
+  strokeWidth = 3,
 }) => {
   if (circled) {
     return (
@@ -90,8 +91,8 @@ export const CheckIcon: React.FC<IconProps> = ({
         height="auto"
         fill={fill}
         fillOpacity={0}
-        stroke="black"
-        strokeWidth={3}
+        stroke={fill}
+        strokeWidth={strokeWidth}
         strokeLinecap="round"
         strokeLinejoin="round"
         viewBox="0 0 52 52"
@@ -106,6 +107,7 @@ export const CheckIcon: React.FC<IconProps> = ({
         <path
           fill={fill}
           stroke={fill}
+          strokeWidth={strokeWidth}
           d="m16 1c8.2842712 0 15 6.71572875 15 15 0 8.2842712-6.7157288 15-15 15-8.28427125 0-15-6.7157288-15-15 0-8.28427125 6.71572875-15 15-15zm0 2c-7.17970175 0-13 5.82029825-13 13 0 7.1797017 5.82029825 13 13 13 7.1797017 0 13-5.8202983 13-13 0-7.17970175-5.8202983-13-13-13zm7 7.5857864 1.4142136 1.4142136-10.9142136 10.9142136-5.91421356-5.9142136 1.41421356-1.4142136 4.5 4.4992136z"
         ></path>
       </svg>
@@ -113,7 +115,12 @@ export const CheckIcon: React.FC<IconProps> = ({
   }
   return (
     <svg width="100%" height="auto" viewBox="0 0 32 32">
-      <path stroke={fill} fill="none" d="m4 16.5 8 8 16-16" />
+      <path
+        strokeWidth={strokeWidth}
+        stroke={fill}
+        fill="none"
+        d="m4 16.5 8 8 16-16"
+      />
     </svg>
   );
 };
