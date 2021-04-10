@@ -9,7 +9,7 @@ import { LocationSegment } from './location';
 import { PhoneSegment } from './phone';
 import { RequirementsSegment } from './requirements';
 import { RoomSegment } from './room';
-import { RulesCreate } from './create.rules';
+import { RulesSegment } from './rules';
 import { SpacesCreate } from './create.spaces';
 import { TitleSegment } from './title';
 import { PeriodSegment } from './period';
@@ -59,7 +59,7 @@ export const Segment: React.FC<CreateProps> = ({
     title: <TitleSegment />,
     phone: <PhoneSegment />,
     requirements: <RequirementsSegment />,
-    rules: <RulesCreate {...props} />,
+    rules: <RulesSegment />,
     checkin: <CheckInSegment />,
     advance: <AdvanceSegment {...props} />,
     period: <PeriodSegment />,

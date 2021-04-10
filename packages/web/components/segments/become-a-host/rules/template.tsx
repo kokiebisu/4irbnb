@@ -1,8 +1,10 @@
 import { Input, $Input } from '@input';
 
-export interface RulesCreateProps {
+export interface RulesSegmentTemplateProps {
   data?: { details: string[] };
   setData?: (params: any) => void;
+  handleChange?: (property: string, item: any) => void;
+  rules?: { title: string; item: string }[];
 }
 
 /**
@@ -10,21 +12,12 @@ export interface RulesCreateProps {
  * @param {object} data - Input data
  * @param {function} setData - Changes the input data
  */
-export const RulesCreate: React.FC<RulesCreateProps> = ({ data, setData }) => {
-  const modify = (type: string, params: string) => {
-    if (data[type].includes(params)) {
-      setData({
-        ...data,
-        [type]: [...data[type]].filter((element) => element !== params),
-      });
-    } else {
-      setData({
-        ...data,
-        [type]: [...data[type], params],
-      });
-    }
-  };
-
+export const RulesSegmentTemplate: React.FC<RulesSegmentTemplateProps> = ({
+  data,
+  setData,
+  handleChange,
+  rules,
+}) => {
   return (
     <div>
       <div>
@@ -61,24 +54,11 @@ export const RulesCreate: React.FC<RulesCreateProps> = ({ data, setData }) => {
         <div className="my-4">
           <h3>Details guests must know about your home</h3>
         </div>
-        {[
-          {
-            title: 'Must climb stairs',
-            item: 'stairs',
-          },
-          {
-            title: 'Potential for noise',
-            item: 'noise',
-          },
-          {
-            title: 'Pet(s) live on property',
-            item: 'pets',
-          },
-        ].map(({ title, item }, index) => {
+        {rules.map(({ title, item }, index) => {
           return (
             <div key={index} className="mb-4">
               <Input
-                check={() => modify('details', item)}
+                check={() => handleChange('details', item)}
                 checked={data.details.includes(item)}
                 variant={$Input.CHECKBOX}
                 title={title}
