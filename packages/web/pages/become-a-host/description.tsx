@@ -1,4 +1,4 @@
 import React from 'react';
-import { Segment } from '@template/become-a-host';
+import { $Segment, Segment } from '@template/become-a-host';
 
-export default () => <Segment />;
+export default () => <Segment variant={$Segment.DESCRIPTION} />;
