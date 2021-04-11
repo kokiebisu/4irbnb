@@ -1,10 +1,20 @@
 import { $Icon, Icon } from '@icons';
 
-const ClosedButton: React.FC<{
+enum kinds {
+  close = 'close',
+  check = 'check',
+}
+
+export interface ClosedButtonProps {
   selected?: boolean;
-  content?: string;
-}> = ({ content = 'close', selected = false }) => {
-  const contents = {
+  closedType?: kinds;
+}
+
+export const ClosedButton: React.FC<ClosedButtonProps> = ({
+  closedType,
+  selected,
+}) => {
+  const types = {
     close: (
       <Icon
         variant={$Icon.ACTION}
@@ -28,7 +38,7 @@ const ClosedButton: React.FC<{
         selected ? 'bg-black border-black' : 'bg-white border-gray-300'
       }`}
     >
-      {contents[content]}
+      {types[closedType]}
     </div>
   );
 };

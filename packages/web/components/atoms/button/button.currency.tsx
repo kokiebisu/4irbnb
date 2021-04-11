@@ -11,7 +11,7 @@ export interface CurrencyButtonProps {
  * @param symbol
  * @returns
  */
-const CurrencyButton: React.FC<CurrencyButtonProps> = ({
+export const CurrencyButton: React.FC<CurrencyButtonProps> = ({
   name,
   abbreviation,
   symbol,
