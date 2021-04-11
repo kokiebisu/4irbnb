@@ -65,8 +65,8 @@ export const CounterInput: React.FC<CounterInputProps> = ({
         <div>
           <button
             disabled={value === max}
-            className={`border rounded-full p-3 ${
-              value === max ? 'bg-gray-500' : 'bg-green-600'
+            className={`bg-white border-solid rounded-full p-2 border-2 border-${
+              value === max ? 'gray-500' : `${types[type].color}`
             }`}
             onClick={add}
           >
@@ -74,7 +74,8 @@ export const CounterInput: React.FC<CounterInputProps> = ({
               variant={$Icon.SEMANTIC}
               semanticType="plus"
               width={15}
-              fill="white"
+              fill="green"
+              strokeWidth={5}
             />
           </button>
         </div>

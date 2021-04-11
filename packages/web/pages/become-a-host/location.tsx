@@ -1,3 +1,5 @@
 import { $Segment, Segment } from '@template/become-a-host';
 
-export default () => <Segment variant={$Segment.LOCATION} />;
+const LocationBecomeAHostPage = () => <Segment variant={$Segment.LOCATION} />;
+
+export default LocationBecomeAHostPage;

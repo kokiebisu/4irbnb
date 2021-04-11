@@ -1,10 +1,10 @@
 import { Bullet, $Bullet } from '@bullet';
 
-export interface ScenariosSegmentTemplateProps {
+export interface BookingScenariosSegmentTemplateProps {
   scenarios?: string[];
 }
 
-export const ScenariosSegmentTemplate: React.FC<ScenariosSegmentTemplateProps> = ({
+export const BookingScenariosSegmentTemplate: React.FC<BookingScenariosSegmentTemplateProps> = ({
   scenarios,
 }) => {
   return (

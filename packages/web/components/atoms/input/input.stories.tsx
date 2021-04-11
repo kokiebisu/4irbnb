@@ -100,11 +100,19 @@ Verify.args = {
 export const Closed = InputStory.bind({});
 Closed.args = {
   variant: $Input.CLOSED,
+  title: 'Title here',
+  flag: false,
+  onClickSwitchToFalse: () => alert('Switches to false'),
+  onClickSwitchToTrue: () => alert('Switches to true'),
 };
 
 export const Price = InputStory.bind({});
 Price.args = {
   variant: $Input.PRICE,
+  name: 'price',
+  handleChange: () => alert('Handle input change'),
+  handleKeyPress: () => alert('Handle key press'),
+  value: 50,
 };
 
 export const Limit = InputStory.bind({});

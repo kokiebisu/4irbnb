@@ -17,18 +17,18 @@ const OnlinePage = () => {
   const toggleState = useToggleState();
   return (
     <div>
-      <div className={[shape['shadow--sm']].join(' ')}>
+      <div className="shadow-sm">
         <div className={[layout['container--spread']].join(' ')}>
           <Header variant={$Header.WHITE} />
         </div>
       </div>
-      <div className={[space['m-v--8']].join(' ')}>
+      <div className="my-3">
         <div className={[layout['container--spread']].join(' ')}>
           <Segment variant={$Segment.BANNER} />
         </div>
       </div>
-      <div style={{ position: 'sticky', top: 0, zIndex: 50 }}>
-        <div className={[color['bg--white']].join(' ')}>
+      <div className="sticky top-0 z-50">
+        <div className="bg-white">
           <div
             className={[layout['container--spread'], space['p-v--16']].join(
               ' '
@@ -37,9 +37,8 @@ const OnlinePage = () => {
             <Bar variant={$Bar.FILTERS} />
           </div>
           <div
-            className={[color['bg--white__2']].join(' ')}
+            className="w-full bg-gray-500"
             style={{
-              width: '100%',
               height: 1,
             }}
           />
@@ -75,9 +74,8 @@ const OnlinePage = () => {
         <Segment variant={$Segment.CARDS} />
       </div>
       <div
+        className="flex justify-center"
         style={{
-          display: 'flex',
-          justifyContent: 'center',
           padding: '40px 0 56px 0',
         }}
       >
@@ -88,24 +86,13 @@ const OnlinePage = () => {
       </div>
       {toggleState.auth && (
         <div
+          className="fixed bottom-0 left-0 right-0 top-0"
           style={{
-            position: 'fixed',
             zIndex: 60,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            top: 0,
             backgroundColor: 'rgba(0, 0, 0, 0.6)',
           }}
         >
-          <div
-            className={[
-              layout['flex'],
-              layout['justify-center'],
-              layout['items-center'],
-              shape['h--100v'],
-            ].join(' ')}
-          >
+          <div className="h-screen flex justify-center items-center">
             <Modal
               variant={$Modal.AUTH}
               animate="slideup"
@@ -117,24 +104,13 @@ const OnlinePage = () => {
       )}
       {toggleState.globe && (
         <div
+          className="fixed bottom-0 left-0 right-0 top-0"
           style={{
-            position: 'fixed',
             zIndex: 60,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            top: 0,
             backgroundColor: 'rgba(0, 0, 0, 0.6)',
           }}
         >
-          <div
-            className={[
-              layout['flex'],
-              layout['justify-center'],
-              layout['items-center'],
-              shape['h--100v'],
-            ].join(' ')}
-          >
+          <div className="flex justify-center items-center h-screen">
             <Modal
               variant={$Modal.GLOBE}
               extendsTo={[

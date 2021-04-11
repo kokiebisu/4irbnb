@@ -41,7 +41,7 @@ export const CheckboxInput: React.FC<CheckboxInputProps> = ({
           <h4>{title}</h4>
         </div>
         <div>
-          <h4 className="text-sm text-gray-300">{description}</h4>
+          <h4 className="text-sm text-gray-500">{description}</h4>
         </div>
       </div>
     </div>

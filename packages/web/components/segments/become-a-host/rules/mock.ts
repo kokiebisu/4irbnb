@@ -12,3 +12,11 @@ export const rules = [
     item: 'pets',
   },
 ];
+
+export const selectedRules = ['stairs'];
+export const isSmokingAllowed = false;
+export const isEventAllowed = false;
+export const handleSwitch = (flag, property) =>
+  alert(`Handle ${property} switched to ${flag}`);
+export const handleChange = (property, _) =>
+  alert(`Handle ${property} changed`);

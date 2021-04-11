@@ -1,4 +1,5 @@
 import { useStayDispatch, useStayState } from '@context/stay';
+import { inputTypes, properties } from '@input/logic/logic.types';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
@@ -8,7 +9,7 @@ export const useRoomSegment = () => {
   const { place, property, stay } = useStayState();
 
   const [data, setData] = useState({
-    place,
+    place: undefined,
     property,
     description: undefined,
     stay,
@@ -31,14 +32,14 @@ export const useRoomSegment = () => {
   };
 
   const handleRedirectToPreviousPage = () => {
-    console.log('revert called');
     setTimeout(() => {
       router.push('/become-a-host');
     }, 500);
   };
 
   useEffect(() => {
-    if (data.property) {
+    console.log('triggered', data.property);
+    if (data.place) {
       setData({
         ...data,
         property: inputTypes[data.place].options[0].props.children,
@@ -58,9 +59,13 @@ export const useRoomSegment = () => {
 
   const canProceedToNextPage = !place || !property;
 
+  const handleChange = (e, property) =>
+    setData({ ...data, [property]: e.target.value });
+
   return {
     handleRedirectToNextPage,
     handleRedirectToPreviousPage,
     canProceedToNextPage,
+    handleChange,
   };
 };

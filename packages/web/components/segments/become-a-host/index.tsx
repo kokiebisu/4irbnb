@@ -14,7 +14,7 @@ import { SpacesSegment } from './spaces';
 import { TitleSegment } from './title';
 import { PeriodSegment } from './period';
 import { PriceSegment } from './price';
-import { ScenariosSegment } from './scenarios';
+import { BookingScenariosSegment } from './booking-scenarios';
 import { PhotosSegment } from './photos';
 
 export const $Segment = {
@@ -34,7 +34,7 @@ export const $Segment = {
   ADVANCE: 'advance',
   PERIOD: 'period',
   PRICE: 'price',
-  SCENARIOS: 'scenarios',
+  BOOKING_SCENARIOS: 'booking-scenarios',
   PHOTOS: 'photos',
 };
 
@@ -60,7 +60,7 @@ export const Segment: React.FC<CreateProps> = ({ variant }) => {
     advance: <AdvanceSegment />,
     period: <PeriodSegment />,
     price: <PriceSegment />,
-    scenarios: <ScenariosSegment />,
+    'booking-scenarios': <BookingScenariosSegment />,
     photos: <PhotosSegment />,
   };
   return <div data-testid={`${variant}-segment`}>{variants[variant]}</div>;

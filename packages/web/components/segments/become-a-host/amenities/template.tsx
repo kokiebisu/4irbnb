@@ -42,7 +42,7 @@ export const AmenitiesSegmentTemplate: React.FC<AmenitiesSegmentTemplateProps> =
       </div>
       <div className="mb-6">
         <div className="mb-8">
-          <h3 className="text-lg text-gray-300">Safety amenities</h3>
+          <h3 className="text-lg text-gray-700">Safety amenities</h3>
         </div>
         {safeties.map(({ title, item, description }, index) => {
           return (

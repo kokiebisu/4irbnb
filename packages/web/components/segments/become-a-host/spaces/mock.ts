@@ -24,3 +24,4 @@ export const spaces = [
     item: 'Hot tub',
   },
 ];
+export const selectedSpaces = ['washer'];

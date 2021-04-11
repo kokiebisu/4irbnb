@@ -26,7 +26,7 @@ export const BedroomsSegmentTemplate: React.FC<BedroomsSegmentTemplateProps> = (
         </h3>
       </div>
       <div className="mb-6">
-        <p className="text-sm text-gray-400">
+        <p className="text-sm text-gray-600">
           Check that you have enough beds to accomodate all your guests
           comfortably.
         </p>
