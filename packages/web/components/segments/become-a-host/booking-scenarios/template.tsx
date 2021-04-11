@@ -1,4 +1,4 @@
-import { Bullet, $Bullet } from '@bullet';
+import { Bullet } from '@bullet';
 
 export interface BookingScenariosSegmentTemplateProps {
   scenarios?: string[];
@@ -16,13 +16,23 @@ export const BookingScenariosSegmentTemplate: React.FC<BookingScenariosSegmentTe
           </h3>
         </div>
         <div>
-          {scenarios.map((type, index) => {
-            return (
-              <div key={index} className="mb-5">
-                <Bullet variant={$Bullet.SCENARIO} type={type} />
-              </div>
-            );
-          })}
+          {scenarios.map(
+            (
+              type:
+                | 'available'
+                | 'requirements'
+                | 'confirmation'
+                | 'welcome'
+                | 'paid',
+              index
+            ) => {
+              return (
+                <div key={index} className="mb-5">
+                  <Bullet variant="scenario" scenarioType={type} />
+                </div>
+              );
+            }
+          )}
         </div>
       </div>
     </div>

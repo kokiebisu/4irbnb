@@ -1,5 +1,5 @@
 import { Layout } from '@layout';
-import { Bullet, $Bullet } from '@bullet';
+import { Bullet } from '@bullet';
 
 export interface FAQTemplateProps {
   questions?: { question: string; answer: string }[];
@@ -19,11 +19,7 @@ export const FAQTemplate: React.FC<FAQTemplateProps> = ({ questions }) => {
         {questions.map(({ question, answer }, index) => {
           return (
             <div className="my-6 w-full" key={index}>
-              <Bullet
-                variant={$Bullet.QUESTION}
-                title={question}
-                answer={answer}
-              />
+              <Bullet variant="question" title={question} answer={answer} />
             </div>
           );
         })}

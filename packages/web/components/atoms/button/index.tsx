@@ -33,8 +33,36 @@ export const $Button = {
 };
 
 export interface ButtonProps {
+  variant:
+    | 'auth'
+    | 'menu'
+    | 'privacy'
+    | 'border'
+    | 'bar'
+    | 'banner'
+    | 'primary'
+    | 'paginate'
+    | 'expand'
+    | 'option'
+    | 'underline'
+    | 'filter'
+    | 'modal'
+    | 'back'
+    | 'transparent'
+    | 'globe'
+    | 'link'
+    | 'closed'
+    | 'search'
+    | 'location'
+    | 'nearby'
+    | 'calendar'
+    | 'searchbar'
+    | 'logo'
+    | 'video'
+    | 'destination'
+    | 'currency'
+    | 'verify';
   extendsTo?: string;
-  variant?: string;
   onClick?: () => void;
   block?: boolean;
   animate?: boolean;

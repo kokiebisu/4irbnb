@@ -1,6 +1,6 @@
 import { Icon, $Icon } from '@icons';
 
-import { Bullet, $Bullet } from '@bullet';
+import { Bullet } from '@bullet';
 import { ImageSlider } from '@particle/image.slider';
 import { Card, $Card } from '@card';
 
@@ -97,7 +97,7 @@ const StayCard: React.FC<{
                   </div>
                 </div>
                 <div>
-                  <Bullet variant={$Bullet.RATING} />
+                  <Bullet variant="rating" />
                 </div>
               </div>
             </div>

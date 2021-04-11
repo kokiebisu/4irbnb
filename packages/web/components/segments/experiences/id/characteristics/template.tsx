@@ -1,9 +1,4 @@
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
-import font from '@styles/font.module.scss';
-import color from '@styles/color.module.scss';
-import shape from '@styles/shape.module.scss';
-import { Bullet, $Bullet } from '@bullet';
+import { Bullet } from '@bullet';
 import { Icon, $Icon } from '@icons';
 import section from '@template/index.module.scss';
 
@@ -64,30 +59,12 @@ export const CharacteristicsTemplate: React.FC<CharacteristicsTemplateProps> = (
 }) => {
   return (
     <div>
-      <div
-        className={[
-          layout['flex'],
-          layout['items-center'],
-          layout['justify-between'],
-          space['m-t--4'],
-        ].join(' ')}
-      >
-        <div
-          className={[layout['flex'], space['p-v--8']].join(' ')}
-          style={{ width: '75%' }}
-        >
-          <div
-            className={[
-              layout['flex'],
-              space['m-t--8'],
-              layout['justify-center'],
-            ].join(' ')}
-          >
-            <div className={[layout['flex'], layout['flex-col']].join(' ')}>
-              <div
-                className={[layout['flex'], layout['items-center']].join(' ')}
-              >
-                <div className={[space['m-r--4']].join(' ')}>
+      <div className="flex items-center justify-between mt-1">
+        <div className="flex py-2" style={{ width: '75%' }}>
+          <div className="flex mt-2 justify-center">
+            <div className="flex flex-col">
+              <div className="flex items-center">
+                <div className="mr-1">
                   <Icon
                     variant={$Icon.GENERAL}
                     generalType="devices"
@@ -97,125 +74,70 @@ export const CharacteristicsTemplate: React.FC<CharacteristicsTemplateProps> = (
                   />
                 </div>
                 <div>
-                  <h3 className={[font['size--12']].join(' ')}>
-                    ONLINE EXPERIENCE
-                  </h3>
+                  <h3 className="text-sm">ONLINE EXPERIENCE</h3>
                 </div>
               </div>
-              <div className={[space['m-v--8']].join(' ')}>
-                <h3 className={[font['size--24']].join(' ')}>{title}</h3>
+              <div className="my-2">
+                <h3 className="text-lg">{title}</h3>
               </div>
-              <div
-                className={[
-                  layout['flex'],
-                  layout['items-center'],
-                  layout['flex-wrap'],
-                ].join(' ')}
-              >
+              <div className="flex items-center flex-wrap">
                 <div>
                   <Icon variant={$Icon.PROFILE} profileType="star" width={12} />
                 </div>
-                <h3
-                  className={[
-                    space['p-l--4'],
-                    color['c--g__2'],
-                    font['size--14'],
-                  ].join(' ')}
-                >
+                <h3 className="pl-1 text-gray-600 text-sm">
                   {ratings.toFixed(1)}
                 </h3>
-                <p
-                  className={[
-                    space['p-l--4'],
-                    color['c--gray__3'],
-                    font['size--14'],
-                  ].join(' ')}
-                >
+                <p className="pl-1 text-gray-700 text-sm">
                   ({numberOfReviews})
                 </p>
-                <span
-                  className={[font['weight--300'], color['c--gray__1']].join(
-                    ' '
-                  )}
-                >
-                  &nbsp;·&nbsp;
-                </span>
-                <a
-                  className={[font['size--14'], color['c--gray__3']].join(' ')}
-                  href=""
-                >
+                <span className="font-light text-gray-500">&nbsp;·&nbsp;</span>
+                <a className="text-sm text-gray-700" href="">
                   <u>
                     {location}, {country}
                   </u>
                 </a>
-                <span
-                  className={[font['weight--300'], color['c--gray__1']].join(
-                    ' '
-                  )}
-                >
-                  &nbsp;·&nbsp;
-                </span>
-                <a
-                  className={[
-                    font['weight--300'],
-                    font['size--14'],
-                    color['c--gray__3'],
-                  ].join(' ')}
-                  href=""
-                >
+                <span className="font-light text-gray 500">&nbsp;·&nbsp;</span>
+                <a className="font-light text-sm text-gray-700" href="">
                   Part of &nbsp;
-                  <u className={[font['weight--500']].join(' ')}>
-                    Airbnb Online Experiences
-                  </u>
+                  <u className="font-medium">Airbnb Online Experiences</u>
                 </a>
               </div>
             </div>
           </div>
         </div>
-        <div className={[layout['flex'], layout['justify-end']].join(' ')}>
+        <div className="flex justify-end">
           <img
-            style={{ objectFit: 'cover' }}
-            className={[
-              shape['br--circle'],
-              shape['h--60'],
-              shape['w--60'],
-            ].join(' ')}
+            className="rounded-full h-32 w-32 object-cover"
             src={hostImgUrl}
           />
         </div>
       </div>
-      <div className={[space['m-v--12'], color['b-t--white__2']].join(' ')}>
-        <div className={[space['m-t--45']].join(' ')}>
-          <h3 className={[font['size--22']].join(' ')}>
-            Online experience hosted by {host}
-          </h3>
+      <div className="my-3 border-t border-gray-600">
+        <div className="mt-7">
+          <h3 className="text-lg">Online experience hosted by {host}</h3>
         </div>
         <div
-          className={[
-            section['display__characteristics'],
-            space['p-v--4'],
-          ].join(' ')}
+          className={`py-1 ${[section['display__characteristics']].join(' ')}`}
         >
           <Bullet
-            variant={$Bullet.CHARACTERISTIC}
-            characteristic="time"
+            variant="characteristic"
+            characteristicType="time"
             time={characteristics['time']}
           />
           <Bullet
-            variant={$Bullet.CHARACTERISTIC}
-            characteristic="devices"
-            devices={characteristics['devices'].join(', ')}
+            variant="characteristic"
+            characteristicType="devices"
+            devices={characteristics['devices']}
           />
           <Bullet
-            variant={$Bullet.CHARACTERISTIC}
-            characteristic="people"
+            variant="characteristic"
+            characteristicType="people"
             people={characteristics['people']}
-            private={characteristics['group']}
           />
           <Bullet
-            variant={$Bullet.CHARACTERISTIC}
-            characteristic="language"
-            languages={characteristics['languages'].join(', ')}
+            variant="characteristic"
+            characteristicType="language"
+            languages={characteristics['languages']}
           />
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Bullet, $Bullet } from '@bullet';
+import { Bullet } from '@bullet';
 
 export interface BringTemplateProps {
   necessities?: string[];
@@ -22,7 +22,7 @@ export const BringTemplate: React.FC<BringTemplateProps> = ({
         {necessities.map((necessity, index) => {
           return (
             <div key={index} className="mb-4">
-              <Bullet variant={$Bullet.BRING} title={necessity} />
+              <Bullet variant="bring" title={necessity} />
             </div>
           );
         })}

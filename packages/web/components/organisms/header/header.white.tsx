@@ -13,7 +13,7 @@ import { useToggleDispatch, useToggleState } from '@context/toggle';
 
 import { $Icon, Icon } from '@icons';
 
-import { Content } from '@button/content/content.transparent';
+import { Content } from '@button/button-transparent/content.transparent';
 
 /**
  * Renders the white header

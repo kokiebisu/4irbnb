@@ -2,14 +2,11 @@ import { useState } from 'react';
 import { useFormik } from 'formik';
 import Router from 'next/router';
 
-import space from '@styles/space.module.scss';
-import font from '@styles/font.module.scss';
 import layout from '@styles/layout.module.scss';
-import color from '@styles/color.module.scss';
 
 import { Input, $Input } from '@input';
-import { Button, $Button } from '@button';
-import { Bullet, $Bullet } from '@bullet';
+import { Button } from '@button';
+import { Bullet } from '@bullet';
 
 import { validateSignup as validate } from '@helper/auth';
 import { usePost } from '@hooks/usePost';
@@ -73,40 +70,28 @@ export const SignupPrototype: React.FC<{}> = () => {
           />
           <div>
             {formik.errors.firstname !== undefined ? (
-              <div className={[space['m-t--6']].join(' ')}>
-                <Bullet
-                  variant={$Bullet.REQUIRED}
-                  message={formik.errors.firstname}
-                />
+              <div className="mt-2">
+                <Bullet variant="required" message={formik.errors.firstname} />
               </div>
             ) : null}
           </div>
           <div>
             {formik.errors.lastname !== undefined ? (
-              <div className={[space['m-t--6']].join(' ')}>
-                <Bullet
-                  variant={$Bullet.REQUIRED}
-                  message={formik.errors.lastname}
-                />
+              <div className="mt-2">
+                <Bullet variant="required" message={formik.errors.lastname} />
               </div>
             ) : null}
           </div>
           <div>
             {formik.errors.firstname === undefined &&
               formik.errors.lastname === undefined && (
-                <p
-                  className={[
-                    space['m-t--8'],
-                    font['size--11'],
-                    color['c--gray__1'],
-                  ].join(' ')}
-                >
+                <p className="mt-2 text-xs text-gray-500">
                   Make sure it matches the name on your government ID.
                 </p>
               )}
           </div>
         </div>
-        <div className={[space['m-t--22']].join(' ')}>
+        <div className="mt-4">
           <div
             style={{ border: '1px solid gray', borderRadius: 14 }}
             className={[layout['flex']].join(' ')}
@@ -141,20 +126,17 @@ export const SignupPrototype: React.FC<{}> = () => {
           </div>
           {formik.errors.day !== undefined && (
             <div className="mt-2">
-              <Bullet variant={$Bullet.REQUIRED} message={formik.errors.day} />
+              <Bullet variant="required" message={formik.errors.day} />
             </div>
           )}
           {formik.errors.month !== undefined && (
             <div className="mt-2">
-              <Bullet
-                variant={$Bullet.REQUIRED}
-                message={formik.errors.month}
-              />
+              <Bullet variant="required" message={formik.errors.month} />
             </div>
           )}
           {formik.errors.year !== undefined && (
             <div className="mt-2">
-              <Bullet variant={$Bullet.REQUIRED} message={formik.errors.year} />
+              <Bullet variant="required" message={formik.errors.year} />
             </div>
           )}
         </div>
@@ -177,11 +159,8 @@ export const SignupPrototype: React.FC<{}> = () => {
           </div>
           <div>
             {formik.errors.email !== undefined ? (
-              <div className={[space['m-t--6']].join(' ')}>
-                <Bullet
-                  variant={$Bullet.REQUIRED}
-                  message={formik.errors.email}
-                />
+              <div className="mt-2">
+                <Bullet variant="required" message={formik.errors.email} />
               </div>
             ) : (
               <p className="mt-2 text-xs text-gray-300">
@@ -202,10 +181,7 @@ export const SignupPrototype: React.FC<{}> = () => {
           <div>
             {formik.errors.password !== undefined && (
               <div className="mt-2">
-                <Bullet
-                  variant={$Bullet.REQUIRED}
-                  message={formik.errors.password}
-                />
+                <Bullet variant="required" message={formik.errors.password} />
               </div>
             )}
           </div>
@@ -224,9 +200,9 @@ export const SignupPrototype: React.FC<{}> = () => {
             .
           </p>
         </div>
-        <div className={[space['m-t--16']].join(' ')}>
+        <div className="mt-4">
           <Button
-            variant={$Button.PRIMARY}
+            variant="primary"
             title="Agree and continue"
             loading={loading}
             stretch

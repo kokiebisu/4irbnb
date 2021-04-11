@@ -1,80 +1,63 @@
-import layout from '@styles/layout.module.scss';
-import font from '@styles/font.module.scss';
-import color from '@styles/color.module.scss';
-import space from '@styles/space.module.scss';
 import banner from '@banner/banner.module.scss';
 
-import { Button, $Button } from '@button';
-import { Bullet, $Bullet } from '@bullet';
+import { Button } from '@button';
+import { Bullet } from '@bullet';
 
 export interface BannerTemplateProps {}
 
 export const BannerTemplate: React.FC<BannerTemplateProps> = () => {
   return (
-    <div
-      className={[
-        layout['flex'],
-        layout['flex-col'],
-        layout['items-center'],
-      ].join(' ')}
-    >
-      <div className={[space['m-v--16']].join(' ')}>
-        <h3 className={[font['size--11'], color['c--gray__2']].join(' ')}>
-          AIRBNB EXPERIENCES
-        </h3>
+    <div className="flex flex-col items-center">
+      <div className="my-4">
+        <h3 className="text-sm text-gray-500">AIRBNB EXPERIENCES</h3>
       </div>
-      <div className={[space['m-b--16']].join(' ')}>
-        <h2 className={[font['size--47'], color['c--']].join(' ')}>
-          Host an online experience
-        </h2>
+      <div className="mb-4">
+        <h2 className="text-5xl">Host an online experience</h2>
       </div>
       <div
-        className={[
-          space['m-v--16'],
+        className={`my-4 ${[
           banner['w__onlinehost--subtitle'],
           banner['text__onlinehost--subtitle'],
-        ].join(' ')}
+        ].join(' ')}`}
       >
-        <h4 className={[font['size--20'], color['c--gray__1']].join(' ')}>
+        <h4 className="text-lg text-gray-600">
           Join a commmunity of hosts bringing the world together in a whole new
           way.
         </h4>
       </div>
-      <div className={[space['m-v--40']].join(' ')}>
-        <Button variant={$Button.PRIMARY} title="Get started" />
+      <div className="my-6">
+        <Button variant="primary" title="Get started" />
       </div>
-      <div className={[space['m-v--32']].join(' ')}>
+      <div className="my-5">
         <img
           src="https://a0.muscache.com/pictures/4bab4990-eda1-4b94-996e-0940464575b7.jpg"
           alt="banner image"
         />
       </div>
       <div
-        className={[
-          space['m-v--45'],
+        className={`my-6 ${[
           banner['w__onlinehost--explanation'],
           banner['text__onlinehost--explanation'],
-        ].join(' ')}
+        ].join(' ')}`}
       >
-        <h4 className={[font['size--20'], color['c--gray__1']].join(' ')}>
+        <h4 className="text-lg text-gray-600">
           Airbnb Experiences are engaging activities designed by locals that go
           beyond the typical tour or class. And now you can host them for
           anyone, from anywhere.
         </h4>
       </div>
       <div
-        className={[
-          space['m-v--16'],
-          banner['display__onlinehost--points'],
-        ].join(' ')}
+        className={`my-4 ${[banner['display__onlinehost--points']].join(' ')}`}
       >
-        {['home', 'global', 'business'].map((type, index) => {
-          return (
-            <div key={index} className={[space['m-b--16']].join(' ')}>
-              <Bullet variant={$Bullet.ONLINEHOST} type={type} />
-            </div>
-          );
-        })}
+        {['home', 'global', 'business'].map(
+          (type: 'home' | 'global' | 'business', index) => {
+            return (
+              <div key={index} className="mb-4">
+                <Bullet variant="onlinehost" onlinehostType={type} />
+              </div>
+            );
+          }
+        )}
       </div>
     </div>
   );
