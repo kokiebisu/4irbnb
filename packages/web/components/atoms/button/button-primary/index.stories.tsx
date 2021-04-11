@@ -19,4 +19,12 @@ Primary.args = {
   loading: false,
   disable: false,
   color: 'white',
+  stretch: false,
+};
+Primary.argTypes = {
+  color: {
+    control: {
+      disable: true,
+    },
+  },
 };

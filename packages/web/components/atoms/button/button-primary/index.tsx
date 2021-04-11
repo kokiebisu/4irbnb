@@ -1,6 +1,5 @@
-import layout from '@styles/layout.module.scss';
-
 import { Animation } from '@animation';
+import { stretchMixin } from '@button/utils/mixin';
 
 export interface PrimaryButtonProps {
   title?: string;
@@ -10,6 +9,7 @@ export interface PrimaryButtonProps {
   bg?: string;
   loading?: boolean;
   disable?: boolean;
+  stretch?: boolean;
 }
 
 /**
@@ -27,6 +27,7 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   loading,
   disable,
   color,
+  stretch,
 }) => {
   const renderBackgroundColor = () => {
     if (disable) {
@@ -36,7 +37,7 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   };
 
   const styles = {
-    common: 'w-full rounded-lg',
+    common: 'rounded-lg',
     sm: 'text-sm py-2 px-4',
     md: 'text-base py-4 px-8',
     lg: 'text-base py-5 px-8',
@@ -45,23 +46,18 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   return (
     <div
       style={{ backgroundColor: !disable && fill }}
-      className={`${styles['common']} ${
+      className={`text-center ${styles['common']} ${
         styles[size]
-      } ${renderBackgroundColor()}`}
+      } ${renderBackgroundColor()} ${stretchMixin(stretch)}`}
     >
       {loading ? (
-        <div>
-          <Animation
-            extendsTo={[
-              layout['flex'],
-              layout['items-center'],
-              layout['justify-center'],
-            ].join(' ')}
-            type="loading"
-          />
+        <div className="h-6 flex items-center justify-center">
+          <Animation type="loading" />
         </div>
       ) : (
-        <h4 className={`text-${color}`}>{title}</h4>
+        <div>
+          <h4 className={`h-6 text-${color}`}>{title}</h4>
+        </div>
       )}
     </div>
   );
@@ -71,7 +67,6 @@ export const primary = (props) => {
   return {
     primary: {
       component: <PrimaryButton {...props} />,
-      style: '',
     },
   };
 };

@@ -1,9 +1,5 @@
 export const stretchMixin = (stretch) => {
-  return stretch ? 'w-full block' : 'w-auto';
-};
-
-export const displayMixin = (block) => {
-  return block ? 'block' : 'inline-block';
+  return stretch ? 'w-full block' : 'w-auto inline-block';
 };
 
 export const styleDisable = (disable) => {

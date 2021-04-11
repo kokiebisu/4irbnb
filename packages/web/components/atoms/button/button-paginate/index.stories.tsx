@@ -15,5 +15,4 @@ export const Paginate = ButtonStory.bind({});
 Paginate.args = {
   direction: 'left',
   disable: false,
-  size: 3,
 };

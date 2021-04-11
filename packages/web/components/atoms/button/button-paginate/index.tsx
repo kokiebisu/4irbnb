@@ -14,7 +14,6 @@ export interface PaginateButtonProps {
 export const PaginateButton: React.FC<PaginateButtonProps> = ({
   direction,
   disable,
-  size,
 }) => {
   const icons = {
     left: (
@@ -38,9 +37,9 @@ export const PaginateButton: React.FC<PaginateButtonProps> = ({
   };
   return (
     <div
-      className={`bg-white ${
-        disable ? 'border border-gray-100' : ''
-      } rounded-full p-${size}`}
+      className={`inline-block bg-white ${
+        disable ? 'border border-gray-100' : 'shadow-md'
+      } rounded-full p-3`}
     >
       {icons[direction]}
     </div>
@@ -48,11 +47,9 @@ export const PaginateButton: React.FC<PaginateButtonProps> = ({
 };
 
 export const paginate = (props) => {
-  const { disable } = props;
   return {
     paginate: {
       component: <PaginateButton {...props} />,
-      style: `${disable ? '' : 'shadow-md'} rounded-full `,
     },
   };
 };

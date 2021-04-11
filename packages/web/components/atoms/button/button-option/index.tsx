@@ -11,7 +11,7 @@ export interface OptionButtonProps {
 export const OptionButton: React.FC<OptionButtonProps> = ({ name, bold }) => {
   return (
     <div
-      className={`text-left text-sm bg-white px-5 py-3 block hover:bg-gray-100 ${
+      className={`inline-block rounded-lg text-left text-sm bg-white px-5 py-3 hover:bg-gray-100 ${
         bold ? 'font-base' : 'font-light'
       }`}
     >
@@ -24,7 +24,6 @@ export const option = (props) => {
   return {
     option: {
       component: <OptionButton {...props} />,
-      style: '',
     },
   };
 };

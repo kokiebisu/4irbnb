@@ -31,7 +31,6 @@ export const privacy = (props) => {
   return {
     privacy: {
       component: <PrivacyButton {...props} />,
-      style: '',
     },
   };
 };
