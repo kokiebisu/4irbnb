@@ -1,15 +1,28 @@
 import { $Icon, Icon } from '@icons';
 
+enum kinds {
+  smoke = 'smoke',
+  tv = 'tv',
+  kitchen = 'kitchen',
+  heating = 'heating',
+  entrance = 'entrance',
+  carbon = 'carbon',
+}
+
+export interface AmenityBulletProps {
+  amenityType?: kinds;
+  removed?: boolean;
+}
+
 /**
  * Renders the amenity bullet
  * @param {string} amenityType - Type of amenity
  * @param {boolean} removed - Strikes through if removed
  */
-const AmenityBullet: React.FC<{
-  amenityType?: string;
-  title?: string;
-  removed?: boolean;
-}> = ({ amenityType = 'kitchen', removed = false }) => {
+export const AmenityBullet: React.FC<AmenityBulletProps> = ({
+  amenityType,
+  removed,
+}) => {
   const amenityTypes = {
     smoke: {
       icon: (

@@ -4,15 +4,26 @@ import font from '@styles/font.module.scss';
 
 import { $Icon, Icon } from '@icons';
 
+enum kinds {
+  review = 'review',
+  verified = 'verified',
+  superhost = 'superhost',
+}
+
+export interface HostBulletProps {
+  total?: number;
+  categoryType?: kinds;
+}
+
 /**
  * Renders the host bullet
  * @param {string} categoryType - Type of host bullet
  * @param {number} total - Number of reviews
  */
-export const HostBullet: React.FC<{
-  total?: number;
-  categoryType?: string;
-}> = ({ categoryType = 'review', total = 100 }) => {
+export const HostBullet: React.FC<HostBulletProps> = ({
+  categoryType,
+  total,
+}) => {
   const categories = {
     review: {
       icon: <Icon variant={$Icon.PROFILE} profileType="star" width={16} />,

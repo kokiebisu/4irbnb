@@ -1,12 +1,22 @@
 import { $Icon, Icon } from '@icons';
 
+export enum kinds {
+  hosts = 'hosts',
+  activities = 'activies',
+  global = 'global',
+}
+
+export interface ExperienceBulletProps {
+  experience?: kinds;
+}
+
 /**
  * Renders the experience bullet
  * @param {string} experience - Type of experience bullet
  */
-const ExperienceBullet: React.FC<{
-  experience?: 'hosts' | 'activities' | 'global';
-}> = ({ experience = 'hosts' }) => {
+export const ExperienceBullet: React.FC<ExperienceBulletProps> = ({
+  experience,
+}) => {
   const experiences = {
     hosts: {
       icon: (

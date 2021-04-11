@@ -10,9 +10,9 @@ export interface RatingBulletProps {
  * @param {number} ratings - Average ratings from users
  * @param {number} reviews - Total number of reviews
  */
-const RatingBullet: React.FC<RatingBulletProps> = ({
-  ratings = 5,
-  reviews = 100,
+export const RatingBullet: React.FC<RatingBulletProps> = ({
+  ratings,
+  reviews,
 }) => {
   return (
     <div className="flex items-center">
