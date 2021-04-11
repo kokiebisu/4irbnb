@@ -1,3 +1,17 @@
+enum sizes {
+  sm = 'sm',
+  md = 'md',
+  lg = 'lg',
+}
+
+export interface BorderButtonProps {
+  title?: string;
+  inverse?: boolean;
+  size?: sizes;
+  spread?: boolean;
+  bold?: boolean;
+}
+
 /**
  * Renders the border button props
  * @param {string} to - The link to which it redirects
@@ -6,13 +20,12 @@
  * @param {string} size - The size of the button
  * @param {boolean} spread - Whether if the button takes full width of the parent
  */
-const BorderButton: React.FC<{
-  title?: string;
-  inverse?: boolean;
-  size?: 'sm' | 'md' | 'lg';
-  spread?: boolean;
-  bold?: boolean;
-}> = ({ title, inverse, size = 'md', bold }) => {
+export const BorderButton: React.FC<BorderButtonProps> = ({
+  title,
+  inverse,
+  size = 'md',
+  bold,
+}) => {
   const renderBorder = () => {
     if (inverse && bold) {
       return 'border-2 border-white';

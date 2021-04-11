@@ -1,13 +1,18 @@
+export interface CalendarButtonProps {
+  disabled?: boolean;
+  number?: number;
+}
+
 /**
  * Renders the Calendar Button
  * @param {boolean} disabled
  * @param {number} number
  * @returns
  */
-const CalendarButton: React.FC<{
-  disabled?: boolean;
-  number?: number;
-}> = ({ disabled = false, number }) => {
+export const CalendarButton: React.FC<CalendarButtonProps> = ({
+  disabled,
+  number,
+}) => {
   return (
     <div className="w-16 h-16">
       <div

@@ -1,10 +1,12 @@
 import { Icon, $Icon } from '@icons';
 
+export interface BackButtonProps {}
+
 /**
  * Renders the back button
  * @returns
  */
-const BackButton: React.FC<{}> = () => {
+export const BackButton: React.FC<BackButtonProps> = () => {
   return (
     <div className="flex items-center bg-transparent">
       <div>

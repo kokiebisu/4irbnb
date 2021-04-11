@@ -1,12 +1,17 @@
+export interface DestinationButtonProps {
+  city?: string;
+  location?: string;
+}
+
 /**
  * Renders the Destination Button component
  * @param city
  * @param location
  */
-const DestinationButton: React.FC<{
-  city?: String;
-  location?: String;
-}> = ({ city = 'City', location = 'Location' }) => {
+export const DestinationButton: React.FC<DestinationButtonProps> = ({
+  city = 'City',
+  location = 'Location',
+}) => {
   return (
     <div className="py-6 pr-16">
       <div>

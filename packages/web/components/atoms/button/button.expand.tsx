@@ -1,7 +1,6 @@
 import { Icon, $Icon } from '@icons';
 
 export interface ExpandButtonProps {
-  to?: string;
   title?: string;
 }
 
@@ -10,7 +9,7 @@ export interface ExpandButtonProps {
  * @param {string} to - Redirects to the path being specified
  * @param {string} title - Title of the button
  */
-const ExpandButton: React.FC<ExpandButtonProps> = ({ title = 'Button' }) => {
+export const ExpandButton: React.FC<ExpandButtonProps> = ({ title }) => {
   return (
     <div>
       <div className="flex items-center">

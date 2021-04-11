@@ -1,6 +1,17 @@
 import { Icon, $Icon } from '@icons';
 
-const BarButton = ({ type = 'menu', selected = 'menu' }) => {
+enum kinds {
+  menu = 'menu',
+  saved = 'saved',
+  login = 'login',
+}
+
+export interface BarButtonProps {
+  barType?: kinds;
+  selected?: string;
+}
+
+export const BarButton: React.FC<BarButtonProps> = ({ barType, selected }) => {
   const types = {
     menu: {
       component: <Icon variant={$Icon.LOGO} logoType="menubar" width={25} />,
@@ -25,9 +36,9 @@ const BarButton = ({ type = 'menu', selected = 'menu' }) => {
 
   return (
     <div className="flex flex-col items-center mx-6">
-      <div>{types['menu'].component}</div>
+      <div>{types[barType].component}</div>
       <div>
-        <p className="text-xs">{types['menu'].name}</p>
+        <p className="text-xs">{types[barType].name}</p>
       </div>
     </div>
   );
