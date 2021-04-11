@@ -28,13 +28,13 @@ export const PriceSegmentTemplate: React.FC<PriceSegmentTemplateProps> = ({
         </div>
         <div className="mb-5">
           <div className="flex items-center">
-            <div className="mr-1">
+            <div className="mr-3">
               <h2 className="text-md">
                 Set up the same base price for each night
               </h2>
             </div>
             <div className="p-1 text-xs bg-gray-300">
-              <h3>RECOMMENDED</h3>
+              <h3 className="text-xs">RECOMMENDED</h3>
             </div>
           </div>
           <div>

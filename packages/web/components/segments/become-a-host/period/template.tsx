@@ -35,6 +35,7 @@ export const PeriodSegmentTemplate: React.FC<PeriodSegmentTemplateProps> = ({
               value={min}
               subtract={() => handleCounterSubtract('min')}
               add={() => handleCounterAdd('max')}
+              type="create"
             />
           </div>
           <div className="mb-3">
@@ -46,6 +47,7 @@ export const PeriodSegmentTemplate: React.FC<PeriodSegmentTemplateProps> = ({
               value={max}
               subtract={() => handleCounterSubtract('max')}
               add={() => handleCounterAdd('max')}
+              type="create"
             />
           </div>
         </div>

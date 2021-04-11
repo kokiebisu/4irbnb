@@ -46,11 +46,18 @@ export const useRulesSegment = () => {
     }
   };
 
+  const handleSwitch = (property, flag) => {
+    setData({ ...data, [property]: flag });
+  };
+
   return {
     ...mockData,
     handleRedirectToNextPage,
     handleRedirectToPreviousPage,
     canProceedToNextPage,
     handleChange,
+    handleSwitch,
+    isSmokingAllowed: data.smoking,
+    isEventAllowed: data.events,
   };
 };

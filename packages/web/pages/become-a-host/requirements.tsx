@@ -1,3 +1,7 @@
 import { $Segment, Segment } from '@template/become-a-host';
 
-export default () => <Segment variant={$Segment.REQUIREMENTS} />;
+const RequirementsBecomeAHostPage = () => (
+  <Segment variant={$Segment.REQUIREMENTS} />
+);
+
+export default RequirementsBecomeAHostPage;

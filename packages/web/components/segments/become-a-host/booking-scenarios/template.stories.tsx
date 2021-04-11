@@ -1,18 +1,18 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import {
-  ScenariosSegmentTemplate,
-  ScenariosSegmentTemplateProps,
+  BookingScenariosSegmentTemplate,
+  BookingScenariosSegmentTemplateProps,
 } from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/Become-A-Host',
-  component: ScenariosSegmentTemplate,
+  component: BookingScenariosSegmentTemplate,
 } as Meta;
 
-const SegmentStory: Story<ScenariosSegmentTemplateProps> = (args) => (
-  <ScenariosSegmentTemplate {...args} />
+const SegmentStory: Story<BookingScenariosSegmentTemplateProps> = (args) => (
+  <BookingScenariosSegmentTemplate {...args} />
 );
 
 export const Scenarios = SegmentStory.bind({});

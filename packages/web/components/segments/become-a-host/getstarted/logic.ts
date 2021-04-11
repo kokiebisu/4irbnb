@@ -13,6 +13,7 @@ export const useGetStartedSegment = () => {
   const [loading, setLoading] = useState(false);
   const [stay, setStay] = useState('Entire place');
   const dispatchStay = useStayDispatch();
+
   const formik = useFormik({
     initialValues: {
       guests: 1,

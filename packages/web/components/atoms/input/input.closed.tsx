@@ -1,17 +1,17 @@
 import { Button, $Button } from '@button';
 
-export const ClosedInput: React.FC<{
+export interface ClosedInputProps {
   title?: string;
-  data?: any;
-  selected?: true;
-  value?: string;
-  setData?: any;
-}> = ({
-  title = 'Title here',
-  data = { value: false },
-  selected = false,
-  setData,
-  value,
+  flag?: boolean;
+  onClickSwitchToFalse?: () => void;
+  onClickSwitchToTrue?: () => void;
+}
+
+export const ClosedInput: React.FC<ClosedInputProps> = ({
+  title,
+  flag,
+  onClickSwitchToFalse,
+  onClickSwitchToTrue,
 }) => {
   return (
     <div className="flex items-center justify-between">
@@ -23,16 +23,16 @@ export const ClosedInput: React.FC<{
           <Button
             variant={$Button.CLOSED}
             content="close"
-            onClick={() => setData({ ...data, [value]: false })}
-            selected={data[value] === false}
+            onClick={onClickSwitchToFalse}
+            selected={flag === false}
           />
         </div>
         <div>
           <Button
             variant={$Button.CLOSED}
             content="check"
-            onClick={() => setData({ ...data, [value]: true })}
-            selected={data[value] === true}
+            onClick={onClickSwitchToTrue}
+            selected={flag === true}
           />
         </div>
       </div>

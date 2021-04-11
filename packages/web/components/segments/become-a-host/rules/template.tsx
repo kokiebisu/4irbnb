@@ -1,10 +1,12 @@
 import { Input, $Input } from '@input';
 
 export interface RulesSegmentTemplateProps {
-  data?: { details: string[] };
-  setData?: (params: any) => void;
-  handleChange?: (property: string, item: any) => void;
   rules?: { title: string; item: string }[];
+  selectedRules?: string[];
+  isSmokingAllowed?: boolean;
+  isEventAllowed?: boolean;
+  handleSwitch?: (flag: boolean, property: string) => void;
+  handleChange?: (property: string, item: any) => void;
 }
 
 /**
@@ -13,10 +15,12 @@ export interface RulesSegmentTemplateProps {
  * @param {function} setData - Changes the input data
  */
 export const RulesSegmentTemplate: React.FC<RulesSegmentTemplateProps> = ({
-  data,
-  setData,
-  handleChange,
   rules,
+  selectedRules,
+  isSmokingAllowed,
+  isEventAllowed,
+  handleSwitch,
+  handleChange,
 }) => {
   return (
     <div>
@@ -35,18 +39,20 @@ export const RulesSegmentTemplate: React.FC<RulesSegmentTemplateProps> = ({
           <Input
             variant={$Input.CLOSED}
             title="Smoking allowed"
-            data={data}
-            setData={setData}
-            value="smoking"
+            property="smoking"
+            flag={isSmokingAllowed}
+            onClickSwitchToFalse={() => handleSwitch(false, 'smoking')}
+            onClickSwitchToTrue={() => handleSwitch(true, 'smoking')}
           />
         </div>
         <div className="my-3">
           <Input
             variant={$Input.CLOSED}
             title="Events allowed"
-            data={data}
-            setData={setData}
-            value="event"
+            property="event"
+            flag={isEventAllowed}
+            onClickSwitchToFalse={() => handleSwitch(false, 'event')}
+            onClickSwitchToTrue={() => handleSwitch(true, 'event')}
           />
         </div>
       </div>
@@ -59,7 +65,7 @@ export const RulesSegmentTemplate: React.FC<RulesSegmentTemplateProps> = ({
             <div key={index} className="mb-4">
               <Input
                 check={() => handleChange('details', item)}
-                checked={data.details.includes(item)}
+                checked={selectedRules.includes(item)}
                 variant={$Input.CHECKBOX}
                 title={title}
               />

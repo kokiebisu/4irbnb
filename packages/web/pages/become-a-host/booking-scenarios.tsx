@@ -1,31 +1,7 @@
-import Router from 'next/router';
+import { $Segment, Segment } from '@template/become-a-host';
 
-import { Layout } from '@layout';
-import { Prototype, $Prototype } from '@template/become-a-host/create';
+const BookingScenariosBecomeAHostPage = () => (
+  <Segment variant={$Segment.BOOKING_SCENARIOS} />
+);
 
-const BookingScenariosPage = () => {
-  const proceed = () => {
-    setTimeout(() => {
-      Router.push('/become-a-host/price');
-    }, 500);
-  };
-
-  const revert = () => {
-    setTimeout(() => {
-      Router.push('/price');
-    }, 500);
-  };
-
-  return (
-    <Layout
-      variant="create"
-      title="Review"
-      left={<Prototype variant={$Prototype.SCENARIOS} />}
-      percentage={95}
-      next={proceed}
-      back={revert}
-    />
-  );
-};
-
-export default BookingScenariosPage;
+export default BookingScenariosBecomeAHostPage;
