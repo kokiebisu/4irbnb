@@ -14,7 +14,7 @@ enum kinds {
 }
 
 export interface CharacteristicsBulletProps {
-  characteristic?: kinds;
+  characteristicType?: kinds;
   time?: number;
   languages?: string[];
   devices?: string[];
@@ -32,7 +32,7 @@ export interface CharacteristicsBulletProps {
  * @param {string[]} languages - Languages the host can speak
  */
 export const CharacteristicsBullet: React.FC<CharacteristicsBulletProps> = ({
-  characteristic,
+  characteristicType,
   time,
   devices,
   people,
@@ -99,18 +99,18 @@ export const CharacteristicsBullet: React.FC<CharacteristicsBulletProps> = ({
 
   return (
     <div className="flex my-4 items-center pr-4">
-      <div className="mr-4">{characteristics[characteristic].icon}</div>
+      <div className="mr-4">{characteristics[characteristicType].icon}</div>
       <div>
-        {characteristics[characteristic].description ? (
+        {characteristics[characteristicType].description ? (
           <h3 className="mb-1 font-base text-base text-gray-600 tracking-tight">
-            {characteristics[characteristic].title}
+            {characteristics[characteristicType].title}
           </h3>
         ) : (
-          <p>{characteristics[characteristic].title}</p>
+          <p>{characteristics[characteristicType].title}</p>
         )}
-        {characteristics[characteristic].description && (
+        {characteristics[characteristicType].description && (
           <p className="text-gray-500 font-thin text-sm">
-            {characteristics[characteristic].description}
+            {characteristics[characteristicType].description}
           </p>
         )}
       </div>
@@ -120,6 +120,6 @@ export const CharacteristicsBullet: React.FC<CharacteristicsBulletProps> = ({
 
 export const characteristic = (props) => {
   return {
-    characteristic: { component: <CharacteristicBullet {...props} /> },
+    characteristic: { component: <CharacteristicsBullet {...props} /> },
   };
 };

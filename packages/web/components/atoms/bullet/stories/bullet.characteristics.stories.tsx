@@ -21,5 +21,10 @@ const CharacteristicsBulletStory: Story<CharacteristicsBulletProps> = (
 ) => <CharacteristicsBullet {...args} />;
 export const Characteristics = CharacteristicsBulletStory.bind({});
 Characteristics.args = {
-  title: 'Title here',
+  characteristicType: 'house',
+  time: 60,
+  devices: ['computer'],
+  people: 5,
+  group: 3,
+  languages: 'English',
 };

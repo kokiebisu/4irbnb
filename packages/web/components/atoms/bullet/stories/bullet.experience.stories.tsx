@@ -18,5 +18,5 @@ const ExperienceBulletStory: Story<ExperienceBulletProps> = (args) => (
 );
 export const Experience = ExperienceBulletStory.bind({});
 Experience.args = {
-  title: 'Title here',
+  experienceType: 'hosts',
 };

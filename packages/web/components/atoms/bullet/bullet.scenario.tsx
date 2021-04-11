@@ -1,5 +1,17 @@
-export const ScenarioBullet: React.FC<{ type?: string }> = ({
-  type = 'available',
+enum kinds {
+  available = 'available',
+  requirements = 'requirements',
+  confirmation = 'confirmation',
+  welcome = 'welcome',
+  paid = 'paid',
+}
+
+export interface ScenarioBulletProps {
+  scenarioType?: kinds;
+}
+
+export const ScenarioBullet: React.FC<ScenarioBulletProps> = ({
+  scenarioType,
 }) => {
   const types = {
     available: {
@@ -43,15 +55,15 @@ export const ScenarioBullet: React.FC<{ type?: string }> = ({
       <div className="mb-2">
         <img
           style={{ width: 150 }}
-          src={types[type].imgUrl}
+          src={types[scenarioType].imgUrl}
           alt="scenario img"
         />
       </div>
       <div className="mb-2">
-        <h3 className="text-sm">{types[type].title}</h3>
+        <h3 className="text-sm">{types[scenarioType].title}</h3>
       </div>
       <div className="mb-2">
-        <p className="text-sm">{types[type].description}</p>
+        <p className="text-sm">{types[scenarioType].description}</p>
       </div>
     </div>
   );

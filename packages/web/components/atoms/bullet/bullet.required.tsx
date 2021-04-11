@@ -4,7 +4,7 @@ export interface RequiredBulletProps {
   message?: string;
 }
 
-const RequiredBullet: React.FC<RequiredBulletProps> = ({ message }) => {
+export const RequiredBullet: React.FC<RequiredBulletProps> = ({ message }) => {
   return (
     <div className="flex items-center">
       <div className="mr-1">

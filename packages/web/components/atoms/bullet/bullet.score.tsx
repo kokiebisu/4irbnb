@@ -1,18 +1,23 @@
+export interface ScoreBulletProps {
+  category?: string;
+  average?: number;
+  // reviews?: {
+  //   imgUrl: string;
+  //   name: string;
+  //   date: string;
+  //   description: string;
+  // }[];
+}
+
 /**
  * Renders the score bullet
  * @param {string} category - Type of score bullet
  * @param {number} average - Average score
  */
-const ScoreBullet: React.FC<{
-  category?: string;
-  average?: number;
-  reviews?: {
-    imgUrl: string;
-    name: string;
-    date: string;
-    description: string;
-  }[];
-}> = ({ category = 'Aspect', average = 5.0 }) => {
+export const ScoreBullet: React.FC<ScoreBulletProps> = ({
+  category,
+  average,
+}) => {
   return (
     <div className="py-1 flex itesm-center justify-between w-1/2">
       <p className="font-light">{category}</p>
