@@ -1,14 +1,16 @@
 import { $Icon, Icon } from '@icons';
 
+export interface LogoButtonProps {
+  noName?: boolean;
+  fill?: string;
+}
+
 /**
  * Renders the Logo Button component
  * @param noName
  * @param fill
  */
-const LogoButton: React.FC<{ noName?: boolean; fill?: string }> = ({
-  noName = false,
-  fill = '#F5385D',
-}) => {
+export const LogoButton: React.FC<LogoButtonProps> = ({ noName, fill }) => {
   return noName ? (
     <Icon
       variant={$Icon.LOGO}

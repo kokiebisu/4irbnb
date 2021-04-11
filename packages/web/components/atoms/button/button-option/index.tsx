@@ -1,12 +1,14 @@
+export interface OptionButtonProps {
+  name?: string;
+  bold?: boolean;
+}
+
 /**
  * Renders the option button components
  * @param {string} options - Type of option button
  * @param {boolean} bold - Whether if the option button is styled bold
  */
-const OptionButton: React.FC<{ name?: string; bold?: boolean }> = ({
-  name = 'Option',
-  bold = false,
-}) => {
+export const OptionButton: React.FC<OptionButtonProps> = ({ name, bold }) => {
   return (
     <div
       className={`text-left text-sm bg-white px-5 py-3 block hover:bg-gray-100 ${

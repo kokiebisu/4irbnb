@@ -1,21 +1,20 @@
 import { $Icon, Icon } from '@icons';
 
-/**
- * Renders the menu button components
- * @param {boolean} inverse - Whether if the button takes the inverse styling or not
- */
-const MenuButton: React.FC<{
+export interface MenuButtonProps {
   authenticated?: boolean;
   data?: {
     imgUrl: string;
   };
   inverse?: boolean;
-}> = ({
-  authenticated = false,
-  data = {
-    imgUrl:
-      'https://images.unsplash.com/photo-1562124638-724e13052daf?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OTV8fGZhY2V8ZW58MHwyfDB8&auto=format&fit=crop&w=500&q=60',
-  },
+}
+
+/**
+ * Renders the menu button components
+ * @param {boolean} inverse - Whether if the button takes the inverse styling or not
+ */
+export const MenuButton: React.FC<MenuButtonProps> = ({
+  authenticated,
+  data,
   inverse,
 }) => {
   return (
