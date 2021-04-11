@@ -3,7 +3,10 @@ export interface QuestionBulletProps {
   answer?: string;
 }
 
-const QuestionBullet: React.FC<QuestionBulletProps> = ({ title, answer }) => {
+export const QuestionBullet: React.FC<QuestionBulletProps> = ({
+  title,
+  answer,
+}) => {
   return (
     <div className="py-4 border-b border-gray-100">
       <div>

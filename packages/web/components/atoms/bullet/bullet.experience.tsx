@@ -2,12 +2,12 @@ import { $Icon, Icon } from '@icons';
 
 export enum kinds {
   hosts = 'hosts',
-  activities = 'activies',
+  activities = 'activities',
   global = 'global',
 }
 
 export interface ExperienceBulletProps {
-  experience?: kinds;
+  experienceType?: kinds;
 }
 
 /**
@@ -15,7 +15,7 @@ export interface ExperienceBulletProps {
  * @param {string} experience - Type of experience bullet
  */
 export const ExperienceBullet: React.FC<ExperienceBulletProps> = ({
-  experience,
+  experienceType,
 }) => {
   const experiences = {
     hosts: {
@@ -61,13 +61,13 @@ export const ExperienceBullet: React.FC<ExperienceBulletProps> = ({
 
   return (
     <div className="flex itesm-center">
-      <div className="mr-4">{experiences[experience].icon}</div>
+      <div className="mr-4">{experiences[experienceType].icon}</div>
       <div>
         <div>
-          <h3 className="text-base">{experiences[experience].title}</h3>
+          <h3 className="text-base">{experiences[experienceType].title}</h3>
         </div>
         <div>
-          <p className="text-sm">{experiences[experience].description}</p>
+          <p className="text-sm">{experiences[experienceType].description}</p>
         </div>
       </div>
     </div>

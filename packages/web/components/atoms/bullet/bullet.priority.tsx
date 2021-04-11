@@ -1,15 +1,26 @@
 import { Icon, $Icon } from '@icons';
 import { $Button, Button } from '@button';
 
+enum kinds {
+  protection = 'protection',
+  guidance = 'guidance',
+  requirements = 'requirements',
+}
+
+export interface PriorityBulletProps {
+  priorityType?: kinds;
+  onClick?: () => void;
+}
+
 /**
  * Renders the priority bullet
  * @param {string} priority - Type of priority bullet
  */
-const PriorityBullet: React.FC<{
-  priority?: 'protection' | 'guidance' | 'requirements';
-  onClick?: () => void;
-}> = ({ priority = 'protection', onClick }) => {
-  const categories = {
+export const PriorityBullet: React.FC<PriorityBulletProps> = ({
+  priorityType,
+  onClick,
+}) => {
+  const types = {
     protection: {
       icon: (
         <Icon variant={$Icon.GENERAL} generalType="protection" width={40} />
@@ -38,16 +49,16 @@ const PriorityBullet: React.FC<{
   };
   return (
     <div>
-      <div>{categories[priority].icon}</div>
+      <div>{types[priorityType].icon}</div>
       <div className="my-4">
-        <h3 className="font-2xl">{categories[priority].title}</h3>
+        <h3 className="font-2xl">{types[priorityType].title}</h3>
       </div>
       <div className="mb-8">
-        <p>{categories[priority].description}</p>
+        <p>{types[priorityType].description}</p>
       </div>
       <div>
         <Button
-          title={categories[priority].link}
+          title={types[priorityType].link}
           variant={$Button.UNDERLINE}
           onClick={onClick}
         />

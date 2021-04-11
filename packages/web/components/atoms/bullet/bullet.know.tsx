@@ -16,7 +16,7 @@ enum kinds {
 
 export interface KnowBulletProps {
   categoryType?: kinds;
-  checkin?: any;
+  checkin?: { min: string; max: string };
   checkout?: string;
 }
 

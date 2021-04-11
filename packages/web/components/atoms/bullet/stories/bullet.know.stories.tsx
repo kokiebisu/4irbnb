@@ -18,6 +18,7 @@ const KnowBulletStory: Story<KnowBulletProps> = (args) => (
 );
 export const Know = KnowBulletStory.bind({});
 Know.args = {
-  categoryType: 'review',
-  total: 100,
+  categoryType: 'checkin',
+  checkin: { min: '10:00am', max: '12:00pm' },
+  checkout: '4:00pm',
 };
