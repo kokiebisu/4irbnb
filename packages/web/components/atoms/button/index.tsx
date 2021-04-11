@@ -1,37 +1,6 @@
 import { motion } from 'framer-motion';
 import { factory } from './utils/factory';
 
-export const $Button = {
-  AUTH: 'auth',
-  MENU: 'menu',
-  PRIVACY: 'privacy',
-  BORDER: 'border',
-  BAR: 'bar',
-  BANNER: 'banner',
-  PRIMARY: 'primary',
-  PAGINATE: 'paginate',
-  EXPAND: 'expand',
-  OPTION: 'option',
-  UNDERLINE: 'underline',
-  FILTER: 'filter',
-  MODAL: 'modal',
-  BACK: 'back',
-  TRANSPARENT: 'transparent',
-  GLOBE: 'globe',
-  LINK: 'link',
-  CLOSED: 'closed',
-  SEARCH: 'search',
-  LOCATION: 'location',
-  NEARBY: 'nearby',
-  CALENDAR: 'calendar',
-  SEARCHBAR: 'searchbar',
-  LOGO: 'logo',
-  VIDEO: 'video',
-  DESTINATION: 'destination',
-  CURRENCY: 'currency',
-  VERIFY: 'verify',
-};
-
 export interface ButtonProps {
   variant:
     | 'auth'

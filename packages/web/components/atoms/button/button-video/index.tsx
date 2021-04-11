@@ -1,17 +1,13 @@
 import { Icon, $Icon } from '@icons';
-import space from '@styles/space.module.scss';
-import shape from '@styles/shape.module.scss';
 import animation from '@styles/animation.module.scss';
 
-const VideoButton = ({ play = false }) => {
+export interface VideoButtonProps {
+  play?: boolean;
+}
+
+export const VideoButton: React.FC<VideoButtonProps> = ({ play }) => {
   return (
-    <div
-      className={[
-        shape['br--circle'],
-        animation['hover-blur'],
-        space['p--8'],
-      ].join(' ')}
-    >
+    <div className={`rounded-full p-3 ${[animation['hover-blur']].join(' ')}`}>
       {play ? (
         <Icon
           variant={$Icon.ACTION}

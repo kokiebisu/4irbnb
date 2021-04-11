@@ -1,4 +1,4 @@
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { useToggleDispatch } from '@context/toggle';
 
 /**
@@ -84,7 +84,7 @@ export const SearchBar: React.FC<{
             <div>
               <Button
                 block
-                variant={$Button.SEARCH}
+                variant="search"
                 onClick={() => alert('hello')}
                 expand={selected}
               />
@@ -140,7 +140,7 @@ export const SearchBar: React.FC<{
             <div>
               <Button
                 block
-                variant={$Button.SEARCH}
+                variant="search"
                 onClick={() => alert('hello')}
                 expand={selected}
               />

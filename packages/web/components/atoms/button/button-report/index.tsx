@@ -5,7 +5,7 @@ export interface ReportButtonProps {}
 /**
  * Renders the Report Button
  */
-const ReportButton: React.FC<ReportButtonProps> = () => {
+export const ReportButton: React.FC<ReportButtonProps> = () => {
   return (
     <button>
       <div>

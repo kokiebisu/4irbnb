@@ -1,4 +1,4 @@
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { $Icon, Icon } from '@icons';
 
 /**
@@ -27,7 +27,7 @@ export const AvailabilityBar: React.FC<{
         </div>
       </div>
       <div>
-        <Button variant={$Button.PRIMARY} title="Check availability" />
+        <Button variant="primary" title="Check availability" />
       </div>
     </div>
   );

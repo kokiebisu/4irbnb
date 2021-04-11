@@ -1,4 +1,4 @@
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { Input, $Input } from '@input';
 
 import { $Icon, Icon } from '@icons';
@@ -45,7 +45,7 @@ export const ListingModal: React.FC<{}> = () => {
       </div>
       <div>
         <Button
-          variant={$Button.PRIMARY}
+          variant="primary"
           fill="black"
           block
           title="Start your listing"

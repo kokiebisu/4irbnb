@@ -9,7 +9,7 @@ import header from '@header/header.module.scss';
 
 import { $Icon, Icon } from '@icons';
 
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 
 import { useHandleScroll } from '@hooks/useHandleScroll';
 
@@ -139,10 +139,7 @@ export const DetailsHeader: React.FC<{
                     </div>
                   </div>
                   <div>
-                    <Button
-                      variant={$Button.PRIMARY}
-                      title="Check availability"
-                    />
+                    <Button variant="primary" title="Check availability" />
                   </div>
                 </div>
               </motion.div>

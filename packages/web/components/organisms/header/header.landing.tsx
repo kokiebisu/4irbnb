@@ -12,7 +12,7 @@ import animation from '@styles/animation.module.scss';
 import responsive from '@styles/responsive.module.scss';
 
 import { Modal, $Modal } from '@modal';
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { Prototype } from '@prototype/searchbar';
 
 import { $Icon, Icon } from '@icons';
@@ -90,7 +90,7 @@ export const LandingHeader: React.FC<{
             className={[styles['searchbar__host'], space['m-h--2']].join(' ')}
           >
             <Button
-              variant={$Button.TRANSPARENT}
+              variant="transparent"
               content={<Content kind="host" inverse={criteria} />}
               inverse={criteria}
               animate
@@ -99,7 +99,7 @@ export const LandingHeader: React.FC<{
           </div>
           <div className="mx-1">
             <Button
-              variant={$Button.TRANSPARENT}
+              variant="transparent"
               content={<Content kind="globe" inverse={criteria} />}
               inverse={criteria}
               onClick={() => toggleDispatch({ type: 'toggle_globe' })}
@@ -107,7 +107,7 @@ export const LandingHeader: React.FC<{
           </div>
           <div className="ml-1">
             <Button
-              variant={$Button.MENU}
+              variant="menu"
               extendsTo={[animation['hover-shadow--lg'], shape['br--30']].join(
                 ' '
               )}
@@ -303,7 +303,7 @@ export const LandingHeader: React.FC<{
                     // animate={{ width: 240, y: 0, opacity: 1 }}
                   >
                     <Button
-                      variant={$Button.SEARCHBAR}
+                      variant="searchbar"
                       mini
                       onClick={() => setExpanded(!expanded)}
                       extendsTo={[shape['w--full']].join(' ')}

@@ -1,11 +1,16 @@
+export interface PrivacyButtonProps {
+  title?: string;
+  inverse?: boolean;
+}
+
 /**
  * Renders the privacy button component
  * @param {string} title - Title of the button
  * @param {boolean} inverse - Whether if the button takes the inverse style or not
  */
-const PrivacyButton: React.FC<{ title?: string; inverse?: boolean }> = ({
-  title = 'Button',
-  inverse = false,
+export const PrivacyButton: React.FC<PrivacyButtonProps> = ({
+  title,
+  inverse,
 }) => {
   return (
     <div

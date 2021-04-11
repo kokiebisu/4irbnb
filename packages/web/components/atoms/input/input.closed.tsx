@@ -1,4 +1,4 @@
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 
 export interface ClosedInputProps {
   title?: string;
@@ -21,7 +21,7 @@ export const ClosedInput: React.FC<ClosedInputProps> = ({
       <div className="flex">
         <div className="mr-3">
           <Button
-            variant={$Button.CLOSED}
+            variant="closed"
             content="close"
             onClick={onClickSwitchToFalse}
             selected={flag === false}
@@ -29,7 +29,7 @@ export const ClosedInput: React.FC<ClosedInputProps> = ({
         </div>
         <div>
           <Button
-            variant={$Button.CLOSED}
+            variant="closed"
             content="check"
             onClick={onClickSwitchToTrue}
             selected={flag === true}

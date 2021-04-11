@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import { Button, $Button } from "@button";
+import { Button } from '@button';
 
-import layout from "@styles/layout.module.scss";
-import space from "@styles/space.module.scss";
+import layout from '@styles/layout.module.scss';
+import space from '@styles/space.module.scss';
 
-import { Prototype, $Prototype } from "@prototype/globe";
+import { Prototype, $Prototype } from '@prototype/globe';
 
-import { useToggleDispatch } from "@context/toggle";
+import { useToggleDispatch } from '@context/toggle';
 
 export const GlobeModal: React.FC<{}> = () => {
   const toggleDispatch = useToggleDispatch();
@@ -17,24 +17,18 @@ export const GlobeModal: React.FC<{}> = () => {
       <div>
         <div>
           <Button
-            variant={$Button.MODAL}
+            variant="modal"
             modal="close"
-            onClick={() => toggleDispatch({ type: "toggle_globe" })}
+            onClick={() => toggleDispatch({ type: 'toggle_globe' })}
           />
         </div>
       </div>
 
       <div>
-        <div
-          className={[
-            layout["flex"],
-            layout["items-center"],
-            space["m-b--50"],
-          ].join(" ")}
-        >
-          <div className={[space["m-r--32"]].join(" ")}>
+        <div className="flex items-center mb-6">
+          <div className="mr-6">
             <Button
-              variant={$Button.UNDERLINE}
+              variant="underline"
               title="Language and region"
               font={16}
               bold
@@ -44,7 +38,7 @@ export const GlobeModal: React.FC<{}> = () => {
           </div>
           <div>
             <Button
-              variant={$Button.UNDERLINE}
+              variant="underline"
               title="Currency"
               font={16}
               bold

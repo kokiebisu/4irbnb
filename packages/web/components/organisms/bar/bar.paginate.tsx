@@ -1,5 +1,5 @@
 import Router from 'next/router';
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 
 /**
  * Renders paginate bar component
@@ -190,7 +190,7 @@ export const PaginateBar: React.FC<{
       <div className="flex items-center">
         {page !== 1 && (
           <Button
-            variant={$Button.PAGINATE}
+            variant="paginate"
             animate
             direction="left"
             onClick={() => Router.push(`/s/homes/page/${page - 1}`)}
@@ -199,7 +199,7 @@ export const PaginateBar: React.FC<{
         <div className="mx-2">{displayContent()}</div>
         {page !== total && (
           <Button
-            variant={$Button.PAGINATE}
+            variant="paginate"
             animate
             direction="right"
             onClick={() => Router.push(`/s/homes/page/${page + 1}`)}
