@@ -1,8 +1,4 @@
-import { Bullet, $Bullet } from '@bullet';
-
-import font from '@styles/font.module.scss';
-import space from '@styles/space.module.scss';
-import responsive from '@styles/responsive.module.scss';
+import { Bullet } from '@bullet';
 
 export interface HelpTemplateProps {
   helps: string[];
@@ -13,18 +9,16 @@ export interface HelpTemplateProps {
  */
 export const HelpTemplate: React.FC<HelpTemplateProps> = ({ helps }) => {
   return (
-    <div className={[responsive['b_to_f--sm']].join(' ')}>
-      <div
-        className={[responsive['w100p_to_50p--sm'], space['m-b--64']].join(' ')}
-      >
-        <h1 className={[font['size--40']].join(' ')}>We're here to help</h1>
+    <div className="sm:flex">
+      <div className="w-full sm:w-1/2 mb-6">
+        <h1 className="text-xl">We're here to help</h1>
       </div>
-      <div className={[responsive['w100p_to_50p--sm']].join(' ')}>
+      <div className="w-full sm:w-1/2">
         <div>
           {helps.map((help, index) => {
             return (
-              <div key={index} className={[space['m-b--24']].join(' ')}>
-                <Bullet variant={$Bullet.HELP} help={help} />
+              <div key={index} className="mb-5">
+                <Bullet variant="help" help={help} />
               </div>
             );
           })}

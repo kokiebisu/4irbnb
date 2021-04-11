@@ -1,9 +1,9 @@
-import shape from "@styles/shape.module.scss";
-import space from "@styles/space.module.scss";
+import shape from '@styles/shape.module.scss';
+import space from '@styles/space.module.scss';
 
-import { Button, $Button } from "@button";
+import { Button, $Button } from '@button';
 
-import { getOptionContents } from "@button/content/content.option";
+import { getOptionContents } from '@button/button-option/content.option';
 
 const Options: React.FC<{
   params?: {
@@ -18,7 +18,7 @@ const Options: React.FC<{
         <div key={index}>
           <Button
             variant={$Button.OPTION}
-            extendsTo={[shape["w--full"]].join(" ")}
+            extendsTo={[shape['w--full']].join(' ')}
             bold={bold}
             onClick={options[kind].handleClick}
             name={options[kind].name}
@@ -36,37 +36,37 @@ export const MenuModal: React.FC<{ authenticated?: boolean }> = ({
   authenticated = false,
 }) => {
   return (
-    <div className={[shape["w--full"], space["p-v--15"]].join(" ")}>
-      <div className={[shape["w--inherit"]].join(" ")}>
+    <div className={[shape['w--full'], space['p-v--15']].join(' ')}>
+      <div className={[shape['w--inherit']].join(' ')}>
         {authenticated ? (
           <Options
             params={[
               // { kind: "messages", bold: true },
               // { kind: "notifications", bold: false },
-              { kind: "trips", bold: false },
-              { kind: "saved", bold: false },
+              { kind: 'trips', bold: false },
+              { kind: 'saved', bold: false },
             ]}
           />
         ) : (
           <Options
             params={[
-              { kind: "signup", bold: true },
-              { kind: "login", bold: false },
+              { kind: 'signup', bold: true },
+              { kind: 'login', bold: false },
             ]}
           />
         )}
         <div
           style={{
-            width: "100%",
+            width: '100%',
             height: 1,
-            backgroundColor: "lightgray",
-            margin: "6px 0",
+            backgroundColor: 'lightgray',
+            margin: '6px 0',
           }}
         ></div>
         {authenticated ? (
           <Options
             params={[
-              { kind: "home", bold: false },
+              { kind: 'home', bold: false },
               // { kind: "experience", bold: false },
               // { kind: "refer", bold: false },
               // { kind: "account", bold: false },
@@ -75,7 +75,7 @@ export const MenuModal: React.FC<{ authenticated?: boolean }> = ({
         ) : (
           <Options
             params={[
-              { kind: "home", bold: false },
+              { kind: 'home', bold: false },
               // { kind: "experience", bold: false },
               // { kind: "help", bold: false },
             ]}
@@ -85,16 +85,16 @@ export const MenuModal: React.FC<{ authenticated?: boolean }> = ({
           <>
             <div
               style={{
-                width: "100%",
+                width: '100%',
                 height: 1,
-                backgroundColor: "lightgray",
-                margin: "6px 0",
+                backgroundColor: 'lightgray',
+                margin: '6px 0',
               }}
             ></div>
             <Options
               params={[
                 // { kind: "help", bold: false },
-                { kind: "logout", bold: false },
+                { kind: 'logout', bold: false },
               ]}
             />
           </>

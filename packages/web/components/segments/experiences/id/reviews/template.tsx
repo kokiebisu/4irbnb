@@ -1,14 +1,9 @@
 import { $Icon, Icon } from '@icons';
 
-import space from '@styles/space.module.scss';
-import color from '@styles/color.module.scss';
-import layout from '@styles/layout.module.scss';
-import shape from '@styles/shape.module.scss';
-import font from '@styles/font.module.scss';
 import section from '@template/index.module.scss';
 
-import { Button, $Button } from '@button';
-import { Bullet, $Bullet } from '@bullet';
+import { Button } from '@button';
+import { Bullet } from '@bullet';
 import { Card, $Card } from '@card';
 
 /**
@@ -28,54 +23,28 @@ export const ReviewsTemplate: React.FC<{
 }> = ({ categories, reviews, ratings, numberOfReviews, layoutType }) => {
   return (
     <>
-      <div className={[space['m-v--8']].join(' ')}>
-        <div
-          className={[
-            space['p-v--8'],
-            layout['flex'],
-            layout['items-center'],
-          ].join(' ')}
-        >
-          <div className={[layout['flex'], layout['items-center']].join(' ')}>
-            <div className={[space['m-r--6']].join(' ')}>
+      <div className="my-2">
+        <div className="py-2 flex items-center">
+          <div className="flex items-center">
+            <div className="mr-2">
               <Icon variant={$Icon.PROFILE} profileType="star" width={20} />
             </div>
-            <h3
-              className={[
-                space['m-r--6'],
-                font['size--22'],
-                color['c--gray__3'],
-              ].join(' ')}
-            >
-              {ratings.toFixed(1)}
-            </h3>
-            <h3
-              className={[
-                space['m-l--2'],
-                font['size--22'],
-                color['c--gray__3'],
-              ].join(' ')}
-            >
+            <h3 className="mr-2 text-lg text-gray-700">{ratings.toFixed(1)}</h3>
+            <h3 className="ml-1 text-lg text-gray-700">
               ({numberOfReviews} reviews)
             </h3>
           </div>
         </div>
         {layoutType === 'room' && (
-          <div
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)' }}
-            className={[space['m-t--12'], space['m-r--24']].join(' ')}
-          >
+          <div className="mt-3 mr-6 grid grid-cols-2">
             {categories.map((category, index) => {
               return (
                 <div
                   key={index}
-                  className={[
-                    section['m__review--bullet'],
-                    space['p-v--8'],
-                  ].join(' ')}
+                  className={`py-3 ${[section['m__review--bullet']].join(' ')}`}
                 >
                   <Bullet
-                    variant={$Bullet.SCORE}
+                    variant="score"
                     category={category?.type}
                     average={category?.average}
                   />
@@ -85,11 +54,9 @@ export const ReviewsTemplate: React.FC<{
           </div>
         )}
         <div
-          className={[
-            shape['w-full'],
-            space['m-t--16'],
-            section['display__reviews--wrapper'],
-          ].join(' ')}
+          className={`w-full mt-4 ${[section['display__reviews--wrapper']].join(
+            ' '
+          )}`}
         >
           {reviews.map((review, index) => {
             return (
@@ -106,9 +73,9 @@ export const ReviewsTemplate: React.FC<{
             );
           })}
         </div>
-        <div className={[space['m-t--16']].join(' ')}>
+        <div className="mt-4">
           <Button
-            variant={$Button.BORDER}
+            variant="border"
             size="md"
             title={`Show all ${numberOfReviews} reviews`}
           />

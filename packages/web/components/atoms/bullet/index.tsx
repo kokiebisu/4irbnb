@@ -1,36 +1,48 @@
-import { AmenityBulletProps } from './bullet.amenity';
-import { CharacteristicBulletProps } from './bullet.characteristics';
-import { RatingBulletProps } from './bullet.rating';
+import { AmenityBulletProps } from './bullet-amenity';
+import { CharacteristicsBulletProps } from './bullet-characteristics';
+import { CheckBulletProps } from './bullet-check';
+import { ExperienceBulletProps } from './bullet-experience';
+import { HelpBulletProps } from './bullet-help';
+import { HostBulletProps } from './bullet-host';
+import { OnlineHostBulletProps } from './bullet-onlinehost';
+import { PriorityBulletProps } from './bullet-priority';
+import { QuestionBulletProps } from './bullet-question';
+import { RatingBulletProps } from './bullet-rating';
+import { RequiredBulletProps } from './bullet-required';
+import { ScenarioBulletProps } from './bullet-scenario';
+import { ScoreBulletProps } from './bullet-score';
 import { factory } from './utils/factory';
 
-enum Variant {
-  'characteristic',
-  'amenity',
-  'score',
-  'host',
-  'know',
-  'rating',
-  'bring',
-  'experience',
-  'priority',
-  'help',
-  'required',
-  'onlinehost',
-  'question',
-  'check',
-  'scenario',
-}
-
-export interface BulletVariantProps {
-  variant: Variant;
-}
-
 export interface BulletProps
-  extends BulletVariantProps,
-    AmenityBulletProps,
-    CharacteristicBulletProps,
-    RatingBulletProps {
-  [property: string]: any;
+  extends AmenityBulletProps,
+    CharacteristicsBulletProps,
+    RatingBulletProps,
+    RequiredBulletProps,
+    ScenarioBulletProps,
+    CheckBulletProps,
+    OnlineHostBulletProps,
+    QuestionBulletProps,
+    ExperienceBulletProps,
+    HostBulletProps,
+    ScoreBulletProps,
+    HelpBulletProps,
+    PriorityBulletProps {
+  variant:
+    | 'characteristic'
+    | 'amenity'
+    | 'score'
+    | 'host'
+    | 'know'
+    | 'rating'
+    | 'bring'
+    | 'experience'
+    | 'priority'
+    | 'help'
+    | 'required'
+    | 'onlinehost'
+    | 'question'
+    | 'check'
+    | 'scenario';
 }
 
 /**

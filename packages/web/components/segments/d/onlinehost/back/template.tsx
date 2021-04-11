@@ -1,6 +1,5 @@
-import space from '@styles/space.module.scss';
 import { Layout } from '@layout';
-import { Bullet, $Bullet } from '@bullet';
+import { Bullet } from '@bullet';
 
 export interface BackTemplateProps {}
 
@@ -17,15 +16,17 @@ export const BackTemplate: React.FC<BackTemplateProps> = () => {
           gridTemplateColumns: 'repeat(3, 1fr)',
           columnGap: 20,
         }}
-        className={[space['m-v--32']].join(' ')}
+        className="my-5"
       >
-        {['resources', 'events', 'community'].map((type, index) => {
-          return (
-            <div key={index} className={[space['m-b--16']].join(' ')}>
-              <Bullet variant={$Bullet.ONLINEHOST} type={type} />
-            </div>
-          );
-        })}
+        {['resources', 'events', 'community'].map(
+          (type: 'resources' | 'events' | 'community', index) => {
+            return (
+              <div key={index} className="mb-4">
+                <Bullet variant="onlinehost" onlinehostType={type} />
+              </div>
+            );
+          }
+        )}
       </div>
     </Layout>
   );

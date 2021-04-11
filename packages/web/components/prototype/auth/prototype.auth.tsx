@@ -12,7 +12,7 @@ import modalStyles from '@modal/modal.module.scss';
 
 import { Input, $Input } from '@input';
 import { Button, $Button } from '@button';
-import { getAuthContents } from '@button/content/content.auth';
+// import { getAuthContents } from '@button/content/content.auth';
 
 import { validateAuth as validate } from '@helper/auth';
 
@@ -20,7 +20,7 @@ import { validateAuth as validate } from '@helper/auth';
  * Renders the auth template component
  */
 export const AuthPrototype: React.FC<{}> = () => {
-  const auths = getAuthContents();
+  // const auths = getAuthContents();
   const authState = useAuthState();
   const authDispatch = useAuthDispatch();
   const methods = ['email', 'facebook', 'google', 'apple'];
@@ -103,7 +103,7 @@ export const AuthPrototype: React.FC<{}> = () => {
             or
           </span>
         </div>
-        <div>
+        {/* <div>
           {methods.map((method, index) => {
             return (
               <div key={index} className={[space['m-v--14']].join(' ')}>
@@ -126,7 +126,7 @@ export const AuthPrototype: React.FC<{}> = () => {
               </div>
             );
           })}
-        </div>
+        </div> */}
         <div className={[space['m-t--4']].join(' ')}>
           <div className={[layout['inline-block'], space['m-r--6']].join(' ')}>
             <p

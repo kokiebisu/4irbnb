@@ -1,14 +1,8 @@
 import { useState } from 'react';
-
-import color from '@styles/color.module.scss';
-import font from '@styles/font.module.scss';
-import space from '@styles/space.module.scss';
-import layout from '@styles/layout.module.scss';
-import shape from '@styles/shape.module.scss';
 import section from '@template/index.module.scss';
 
-import { Button, $Button } from '@button';
-import { Bullet, $Bullet } from '@bullet';
+import { Button } from '@button';
+import { Bullet } from '@bullet';
 
 import { $Icon, Icon } from '@icons';
 import { truncateContent } from '@utils/description';
@@ -60,55 +54,26 @@ export const HostTemplate: React.FC<HostTemplateProps> = ({
   const defaultDuringStay = truncateContent(duringStay, 20);
   return (
     <>
-      <div className={[space['p-v--20']].join(' ')}>
-        <div
-          className={[
-            layout['flex'],
-            layout['items-center'],
-            space['m-b--18'],
-            layout['flex-wrap'],
-          ].join(' ')}
-        >
-          <div className={[layout['flex'], layout['justify-center']].join(' ')}>
+      <div className="py-4">
+        <div className="flex items-center mb-4 flex-wrap">
+          <div className="flex justify-center">
             {hostImgUrl ? (
               <img
-                style={{
-                  objectFit: 'cover',
-                  width: 64,
-                  height: 64,
-                  borderRadius: 9999,
-                }}
-                className={[space['m-r--14']].join(' ')}
+                className="mr-3 rounded-full object-cover w-24 h-24"
                 src={hostImgUrl}
               />
             ) : (
-              <div
-                style={{
-                  width: 64,
-                  height: 64,
-                }}
-                className={[
-                  color['bg--white__2'],
-                  shape['br--circle'],
-                  space['m-r--14'],
-                ].join(' ')}
-              />
+              <div className="w-24 h-24 bg-gray-600 rounded-full mr-3" />
             )}
           </div>
           <div>
-            <div className={[shape['h--50p']].join(' ')}>
-              <h3 className={[font['size--24'], space['m-b--6']].join(' ')}>
+            <div className="h-1/2">
+              <h3 className="text-lg mb-2">
                 {layoutType === 'room'
                   ? `Hosted By ${host}`
                   : `Meet your host, ${host}`}
               </h3>
-              <p
-                className={[
-                  font['weight--100'],
-                  color['c--gray__1'],
-                  font['size--13'],
-                ].join(' ')}
-              >
+              <p className="font-thin text-gray-600 text-sm">
                 {layoutType === 'room'
                   ? `Joined in ${joined}`
                   : `Host on Airbnb since ${joined}`}
@@ -118,72 +83,38 @@ export const HostTemplate: React.FC<HostTemplateProps> = ({
         </div>
         <div>
           <div
-            className={`${layoutType === 'room' && section['w__host--left']} ${[
-              space['p-r--50'],
-            ].join(' ')}`}
+            className={`${
+              layoutType === 'room' && section['w__host--left']
+            } pr-6`}
           >
             <div>
-              <div
-                className={[
-                  layout['flex'],
-                  layout['items-center'],
-                  layout['flex-wrap'],
-                ].join(' ')}
-              >
-                <div
-                  className={[
-                    space['m-r--8'],
-                    space['m-b--12'],
-                    space['p-r--4'],
-                  ].join(' ')}
-                >
+              <div className="flex items-center flex-wrap">
+                <div className="mr-2 mb-4 pr-1">
                   <Bullet
-                    variant={$Bullet.HOST}
+                    variant="host"
                     categoryType="review"
                     total={numberOfReviews}
                   />
                 </div>
                 {verified && (
-                  <div
-                    className={[
-                      space['m-r--8'],
-                      space['m-b--12'],
-                      space['p-r--4'],
-                    ].join(' ')}
-                  >
-                    <Bullet variant={$Bullet.HOST} categoryType="verified" />
+                  <div className="mr-2 mb-3 pr-1">
+                    <Bullet variant="host" categoryType="verified" />
                   </div>
                 )}
                 {layoutType === 'room' && isSuperhost && (
-                  <div
-                    className={[
-                      space['m-r--8'],
-                      space['m-b--12'],
-                      space['p-r--4'],
-                    ].join(' ')}
-                  >
-                    <Bullet variant={$Bullet.HOST} categoryType="superhost" />
+                  <div className="mr-2 mb-3 pr-1">
+                    <Bullet variant="host" categoryType="superhost" />
                   </div>
                 )}
               </div>
-              <div className={[space['m-t--22']].join(' ')}>
+              <div className="mt-4">
                 {descriptionDisplay ? (
-                  <p
-                    className={[font['lh--15'], font['weight--100']].join(' ')}
-                  >
-                    {description}
-                  </p>
+                  <p className="leading-6 font-thin">{description}</p>
                 ) : (
-                  <p
-                    className={[font['weight--100'], font['lh--15']].join(' ')}
-                  >
+                  <p className="font-thin leading-6">
                     {`${defaultDescription.join(' ')}...`}
                     <button
-                      className={[
-                        space['m-l--4'],
-                        color['bg--transparent'],
-                        font['size--16'],
-                      ].join(' ')}
+                      className="ml-1 bg-transparent text-md"
                       onClick={() => setDescriptionDisplay(true)}
                     >
                       <u>read more</u>
@@ -192,39 +123,17 @@ export const HostTemplate: React.FC<HostTemplateProps> = ({
                 )}
               </div>
               {layoutType === 'room' && duringStay && (
-                <div className={[space['m-v--16']].join(' ')}>
-                  <h3
-                    className={[
-                      font['size--16'],
-                      font['weight--500'],
-                      space['m-b--6'],
-                    ].join(' ')}
-                  >
-                    During your stay
-                  </h3>
+                <div className="my-4">
+                  <h3 className="text-md font-medium mb-2">During your stay</h3>
                   {stayDisplay ? (
-                    <div className={[space['p-v--8']].join(' ')}>
-                      <p
-                        className={[font['lh--15'], font['weight--100']].join(
-                          ' '
-                        )}
-                      >
-                        {duringStay}
-                      </p>
+                    <div className="py-2">
+                      <p className="leading-6 font-thin">{duringStay}</p>
                     </div>
                   ) : (
-                    <p
-                      className={[font['weight--100'], font['lh--15']].join(
-                        ' '
-                      )}
-                    >
+                    <p className="font-thin leading-6">
                       {`${defaultDuringStay.join(' ')}...`}
                       <button
-                        className={[
-                          space['m-l--4'],
-                          color['bg--transparent'],
-                          font['size--16'],
-                        ].join(' ')}
+                        className="ml-1 bg-transparent font-medium"
                         onClick={() => setStayDisplay(true)}
                       >
                         <u>read more</u>
@@ -235,15 +144,9 @@ export const HostTemplate: React.FC<HostTemplateProps> = ({
               )}
 
               {layoutType === 'room' && isSuperhost && (
-                <div className={[space['p-v--6']].join(' ')}>
-                  <p
-                    className={[space['p-v--6'], font['weight--500']].join(' ')}
-                  >
-                    {host} is a Superhost
-                  </p>
-                  <p
-                    className={[font['weight--100'], font['lh--15']].join(' ')}
-                  >
+                <div className="py-2">
+                  <p className="py-2 font-medium">{host} is a Superhost</p>
+                  <p className="font-thin leading-6">
                     Superhosts are experienced, highly rated hosts who are
                     committed to providing great stays for guests.
                   </p>
@@ -251,33 +154,19 @@ export const HostTemplate: React.FC<HostTemplateProps> = ({
               )}
             </div>
           </div>
-          <div
-            className={[section['w__host--right'], space['p-r--50']].join(' ')}
-          >
+          <div className={`pr-8 ${[section['w__host--right']].join(' ')}`}>
             {layoutType === 'room' && (
               <div>
-                <div className={[space['m-b--16']].join(' ')}>
-                  <p
-                    className={[font['weight--100'], space['p-b--12']].join(
-                      ' '
-                    )}
-                  >
+                <div className="mb-4">
+                  <p className="font-thin pb-1">
                     Languages:&nbsp;
                     <span>English, Espanol</span>
                   </p>
-                  <p
-                    className={[font['weight--100'], space['p-b--12']].join(
-                      ' '
-                    )}
-                  >
+                  <p className="font-thin pb-3">
                     Response rate:&nbsp;
                     <span>{responseRate}%</span>
                   </p>
-                  <p
-                    className={[font['weight--100'], space['p-b--12']].join(
-                      ' '
-                    )}
-                  >
+                  <p className="font-thin pb-3">
                     Response time:&nbsp;
                     <span>{responseTime}</span>
                   </p>
@@ -285,29 +174,17 @@ export const HostTemplate: React.FC<HostTemplateProps> = ({
               </div>
             )}
             <div
-              className={
-                layoutType === 'experience' &&
-                [space['m-t--32'], layout['flex'], layout['items-center']].join(
-                  ' '
-                )
-              }
+              className={`${
+                layoutType === 'experience' && 'mt-4 flex items-center'
+              }`}
             >
-              <div
-                className={
-                  layoutType === 'experience' && [space['m-r--16']].join(' ')
-                }
-              >
-                <Button
-                  variant={$Button.BORDER}
-                  size="md"
-                  title="Contact host"
-                />
+              <div className={layoutType === 'experience' && 'mr-4'}>
+                <Button variant="border" size="md" title="Contact host" />
               </div>
               <div
-                className={`${layoutType === 'room' && space['m-t--32']} ${[
-                  layout['flex'],
-                  layout['items-center'],
-                ].join(' ')}`}
+                className={`${
+                  layoutType === 'room' && 'mt-5'
+                } flex items-center`}
               >
                 <div>
                   <Icon
@@ -316,13 +193,7 @@ export const HostTemplate: React.FC<HostTemplateProps> = ({
                     width={24}
                   />
                 </div>
-                <p
-                  className={[
-                    font['size--12'],
-                    font['weight--100'],
-                    space['m-l--12'],
-                  ].join(' ')}
-                >
+                <p className="text-sm font-thin ml-3">
                   To protect your payment, never transfer money or communicate
                   outside of the Airbnb website or app.
                 </p>

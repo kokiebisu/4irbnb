@@ -1,6 +1,5 @@
-import { Bullet, $Bullet } from '@bullet';
-import { Button, $Button } from '@button';
-import space from '@styles/space.module.scss';
+import { Bullet } from '@bullet';
+import { Button } from '@button';
 import section from '@template/index.module.scss';
 
 export interface AmenitiesTemplateProps {
@@ -23,30 +22,27 @@ export const AmenitiesTemplate: React.FC<AmenitiesTemplateProps> = ({
         <h3 className="font-medium mb-5 text-gray-700 text-2xl">{title}</h3>
       </div>
       <div
-        className={[
-          section['display__amenities--wrapper'],
-          space['m-b--32'],
-        ].join(' ')}
+        className={`mb-5 ${[section['display__amenities--wrapper']].join(' ')}`}
       >
-        {amenities.map((amenity, index) => {
-          return (
-            <Bullet
-              key={index}
-              variant={$Bullet.AMENITY}
-              amenityType={amenity}
-            />
-          );
-        })}
+        {amenities.map(
+          (
+            amenity:
+              | 'smoke'
+              | 'tv'
+              | 'kitchen'
+              | 'heating'
+              | 'entrance'
+              | 'carbon',
+            index
+          ) => {
+            return (
+              <Bullet key={index} variant="amenity" amenityType={amenity} />
+            );
+          }
+        )}
       </div>
-      <div
-        style={{ width: 300 }}
-        className={[space['m-t--14'], space['m-b--14']].join(' ')}
-      >
-        <Button
-          variant={$Button.BORDER}
-          size="md"
-          title="Show all 40 amenities"
-        />
+      <div style={{ width: 300 }} className="mt-3 mb-3">
+        <Button variant="border" size="md" title="Show all 40 amenities" />
       </div>
     </div>
   );

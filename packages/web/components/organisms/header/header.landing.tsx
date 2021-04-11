@@ -17,7 +17,7 @@ import { Prototype } from '@prototype/searchbar';
 
 import { $Icon, Icon } from '@icons';
 import { useToggleDispatch, useToggleState } from '@context/toggle';
-import { Content } from '@button/content/content.transparent';
+import { Content } from '@button/button-transparent/content.transparent';
 import { useOnClickOutside } from '@hooks/useOnClickOutside';
 
 /**

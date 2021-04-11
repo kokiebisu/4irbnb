@@ -5,12 +5,10 @@ import Router from 'next/router';
 import { useAuthDispatch, useAuthState } from '@context/auth';
 
 import space from '@styles/space.module.scss';
-import font from '@styles/font.module.scss';
-import layout from '@styles/layout.module.scss';
 
 import { Input, $Input } from '@input';
-import { Button, $Button } from '@button';
-import { Bullet, $Bullet } from '@bullet';
+import { Button } from '@button';
+import { Bullet } from '@bullet';
 import { Card, $Card } from '@card';
 
 import { validateLogin as validate } from '@helper/auth';
@@ -93,20 +91,14 @@ export const LoginPrototype: React.FC<{}> = () => {
           <div>
             {formik.errors.email !== undefined && (
               <div className={[space['m-t--6']].join(' ')}>
-                <Bullet
-                  variant={$Bullet.REQUIRED}
-                  message={formik.errors.email}
-                />
+                <Bullet variant="required" message={formik.errors.email} />
               </div>
             )}
           </div>
           <div>
             {formik.errors.password !== undefined && (
               <div className={[space['m-t--6']].join(' ')}>
-                <Bullet
-                  variant={$Bullet.REQUIRED}
-                  message={formik.errors.password}
-                />
+                <Bullet variant="required" message={formik.errors.password} />
               </div>
             )}
           </div>
@@ -118,7 +110,7 @@ export const LoginPrototype: React.FC<{}> = () => {
         </div>
         <div className="my-3">
           <Button
-            variant={$Button.PRIMARY}
+            variant="primary"
             title="Log in"
             loading={loading}
             block
@@ -127,25 +119,21 @@ export const LoginPrototype: React.FC<{}> = () => {
         </div>
         <div className="my-3">
           <Button
-            variant={$Button.UNDERLINE}
+            variant="underline"
             title="Forgot password?"
             onClick={redirectTo}
           />
         </div>
         <div className="my-3">
           <Button
-            variant={$Button.UNDERLINE}
+            variant="underline"
             title="More login options"
             onClick={switchBack}
           />
         </div>
         <div className="flex">
           <p className="text-sm mr-2">Don't have an account?</p>
-          <Button
-            variant={$Button.UNDERLINE}
-            title="Sign up"
-            onClick={switchAuth}
-          />
+          <Button variant="underline" title="Sign up" onClick={switchAuth} />
         </div>
       </form>
     </div>

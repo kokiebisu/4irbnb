@@ -1,4 +1,4 @@
-import { Bullet, $Bullet } from '@bullet';
+import { Bullet } from '@bullet';
 
 export interface RequirementsSegmentTemplateProps {
   mustProvideList?: string[];
@@ -31,7 +31,7 @@ export const RequirementsSegmentTemplate: React.FC<RequirementsSegmentTemplatePr
         {mustProvideList.map((content, index) => {
           return (
             <div key={index} className="mb-3">
-              <Bullet variant={$Bullet.CHECK} title={content} />
+              <Bullet variant="check" title={content} />
             </div>
           );
         })}
@@ -43,7 +43,7 @@ export const RequirementsSegmentTemplate: React.FC<RequirementsSegmentTemplatePr
       {mustDoList.map((content, index) => {
         return (
           <div key={index} className="mb-3">
-            <Bullet variant={$Bullet.CHECK} title={content} />
+            <Bullet variant="check" title={content} />
           </div>
         );
       })}
