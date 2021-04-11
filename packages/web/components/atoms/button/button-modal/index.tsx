@@ -1,14 +1,16 @@
 import { $Icon, Icon } from '@icons';
 
 export interface ModalButtonProps {
-  modal?: string;
+  modal?: 'close' | 'back';
 }
 
 /**
  * Renders the close button component
  * @param {function} onClick - The action taken when the button is pressed
  */
-const ModalButton: React.FC<ModalButtonProps> = ({ modal = 'close' }) => {
+export const ModalButton: React.FC<ModalButtonProps> = ({
+  modal = 'close',
+}) => {
   const types = {
     close: (
       <Icon variant={$Icon.ACTION} actionType="close" width={16} height={16} />

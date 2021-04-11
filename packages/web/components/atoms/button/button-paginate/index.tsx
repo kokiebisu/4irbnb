@@ -1,7 +1,7 @@
 import { Icon, $Icon } from '@icons';
 
 export interface PaginateButtonProps {
-  direction?: string;
+  direction?: 'left' | 'right';
   disable?: boolean;
   size?: number;
 }
@@ -11,10 +11,10 @@ export interface PaginateButtonProps {
  * @param {string} direction - The direction in which the arrow points
  * @param {boolean} disable - Whether if the button is disabled or not
  */
-const PaginateButton: React.FC<PaginateButtonProps> = ({
-  direction = 'left',
-  disable = false,
-  size = 3,
+export const PaginateButton: React.FC<PaginateButtonProps> = ({
+  direction,
+  disable,
+  size,
 }) => {
   const icons = {
     left: (
