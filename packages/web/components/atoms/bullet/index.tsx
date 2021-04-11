@@ -1,25 +1,35 @@
+import { AmenityBulletProps } from './bullet.amenity';
+import { CharacteristicBulletProps } from './bullet.characteristics';
+import { RatingBulletProps } from './bullet.rating';
 import { factory } from './utils/factory';
 
-export const $Bullet = {
-  CHARACTERISTIC: 'characteristic',
-  AMENITY: 'amenity',
-  SCORE: 'score',
-  HOST: 'host',
-  KNOW: 'know',
-  RATING: 'rating',
-  BRING: 'bring',
-  EXPERIENCE: 'experience',
-  PRIORITY: 'priority',
-  HELP: 'help',
-  REQUIRED: 'required',
-  ONLINEHOST: 'onlinehost',
-  QUESTION: 'question',
-  CHECK: 'check',
-  SCENARIO: 'scenario',
-};
+enum Variant {
+  'characteristic',
+  'amenity',
+  'score',
+  'host',
+  'know',
+  'rating',
+  'bring',
+  'experience',
+  'priority',
+  'help',
+  'required',
+  'onlinehost',
+  'question',
+  'check',
+  'scenario',
+}
 
-export interface BulletProps {
-  variant: string;
+export interface BulletVariantProps {
+  variant: Variant;
+}
+
+export interface BulletProps
+  extends BulletVariantProps,
+    AmenityBulletProps,
+    CharacteristicBulletProps,
+    RatingBulletProps {
   [property: string]: any;
 }
 

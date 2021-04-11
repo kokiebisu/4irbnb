@@ -1,15 +1,21 @@
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
-import font from '@styles/font.module.scss';
 import { $Icon, Icon } from '@icons';
+
+enum kinds {
+  support = 'support',
+  tools = 'tools',
+  insights = 'insights',
+  education = 'education',
+}
+
+export interface HelpBulletProps {
+  help?: kinds;
+}
 
 /**
  * Renders the help bullet
  * @param {string} help - Type of help bullet
  */
-const HelpBullet: React.FC<{
-  help?: 'support' | 'tools' | 'insights' | 'education';
-}> = ({ help = 'support' }) => {
+export const HelpBullet: React.FC<HelpBulletProps> = ({ help }) => {
   const helps = {
     support: {
       icon: (
@@ -43,16 +49,14 @@ const HelpBullet: React.FC<{
     },
   };
   return (
-    <div className={[layout['flex']].join(' ')}>
-      <div className={[space['m-r--16']].join(' ')}>{helps[help].icon}</div>
+    <div className="flex">
+      <div className="mr-4">{helps[help].icon}</div>
       <div>
-        <div className={[space['m-b--6']].join(' ')}>
+        <div className="mb-2">
           <h3>{helps[help].title}</h3>
         </div>
         <div>
-          <h4 className={[font['size--16'], font['lh--15']].join(' ')}>
-            {helps[help].description}
-          </h4>
+          <h4 className="text-md leading-6">{helps[help].description}</h4>
         </div>
       </div>
     </div>

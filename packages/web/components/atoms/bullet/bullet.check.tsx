@@ -1,6 +1,10 @@
 import { $Icon, Icon } from '@icons';
 
-const CheckBullet: React.FC<{ title?: string }> = ({
+export interface CheckBulletProps {
+  title?: string;
+}
+
+export const CheckBullet: React.FC<CheckBulletProps> = ({
   title = 'Title here',
 }) => {
   return (

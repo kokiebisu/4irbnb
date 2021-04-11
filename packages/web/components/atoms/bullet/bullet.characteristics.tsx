@@ -1,6 +1,26 @@
 import { Icon, $Icon } from '@icons';
-
 import * as Helper from '@helper/time';
+
+enum kinds {
+  house = 'house',
+  sparkle = 'sparkle',
+  door = 'door',
+  calendar = 'calendar',
+  guidelines = 'guidelines',
+  time = 'time',
+  devices = 'devices',
+  people = 'people',
+  language = 'language',
+}
+
+export interface CharacteristicsBulletProps {
+  characteristic?: kinds;
+  time?: number;
+  languages?: string[];
+  devices?: string[];
+  people?: number;
+  group?: number;
+}
 
 /**
  * Renders the characteristic bullet
@@ -11,14 +31,14 @@ import * as Helper from '@helper/time';
  * @param {group} group - Number of people that can join a private group
  * @param {string[]} languages - Languages the host can speak
  */
-const CharacteristicBullet: React.FC<{
-  characteristic?: string;
-  time?: number;
-  languages?: string[];
-  devices?: string[];
-  people?: number;
-  group?: number;
-}> = ({ characteristic, time, devices, people, group, languages }) => {
+export const CharacteristicsBullet: React.FC<CharacteristicsBulletProps> = ({
+  characteristic,
+  time,
+  devices,
+  people,
+  group,
+  languages,
+}) => {
   const characteristics = {
     house: {
       icon: <Icon variant={$Icon.STAY} stayType="house" width={24} />,
@@ -52,24 +72,28 @@ const CharacteristicBullet: React.FC<{
         <Icon variant={$Icon.EXPERIENCE} experienceType="time" width={32} />
       ),
       title: Helper.displayDuration(time),
+      description: null,
     },
     devices: {
       icon: (
         <Icon variant={$Icon.EXPERIENCE} experienceType="computer" width={32} />
       ),
-      title: `Join from your ${devices}`,
+      title: `Join from your ${devices.join(', ')}`,
+      description: null,
     },
     people: {
       icon: (
         <Icon variant={$Icon.EXPERIENCE} experienceType="people" width={32} />
       ),
       title: `Up to ${people} people. Private groups available for up to ${group}`,
+      description: null,
     },
     language: {
       icon: (
         <Icon variant={$Icon.EXPERIENCE} experienceType="language" width={32} />
       ),
       title: `Hosted in ${languages} (Simplified)`,
+      description: null,
     },
   };
 

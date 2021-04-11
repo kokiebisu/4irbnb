@@ -1,19 +1,35 @@
 import { $Icon, Icon } from '@icons';
 
+enum kinds {
+  checkin = 'checkin',
+  checkout = 'checkout',
+  self = 'self',
+  children = 'children',
+  smoking = 'smoking',
+  pets = 'pets',
+  parties = 'parties',
+  cleaning = 'cleaning',
+  distancing = 'distancing',
+  caution = 'caution',
+  check = 'check',
+}
+
+export interface KnowBulletProps {
+  categoryType?: kinds;
+  checkin?: any;
+  checkout?: string;
+}
+
 /**
  * Renders the know bullet
  * @param {string} categoryType - Type of know bullet
  * @param {Object[]} checkin - Time range for checkin
  * @param {string} checkout - Time for checkin
  */
-const KnowBullet: React.FC<{
-  categoryType?: string;
-  checkin?: any;
-  checkout?: string;
-}> = ({
-  categoryType = 'checkin',
-  checkin = { min: '3:00 p.m.', max: '12:00 a.m.' },
-  checkout = '11:00 a.m.',
+export const KnowBullet: React.FC<KnowBulletProps> = ({
+  categoryType,
+  checkin,
+  checkout,
 }) => {
   const categories = {
     checkin: {

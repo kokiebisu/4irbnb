@@ -1,12 +1,14 @@
 import { $Icon, Icon } from '@icons';
 
+export interface BringBulletProps {
+  title?: 'Description here';
+}
+
 /**
  * Renders the bring bullet
  * @param {string} title - Description of the bullet
  */
-const BringBullet: React.FC<{
-  title?: string;
-}> = ({ title = 'Description here' }) => {
+export const BringBullet: React.FC<BringBulletProps> = ({ title }) => {
   return (
     <div className="flex">
       <div className="mr-4">

@@ -1,15 +1,14 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
+import React from 'react';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
-import { Bullet } from "@bullet";
-import { Characteristic } from "@bullet/bullet.stories";
+import { Bullet } from '@bullet';
 
-describe("Characteristic Button", () => {
-  it("renders correctly", () => {
+describe('Characteristic Button', () => {
+  it('renders correctly', () => {
     const { getByTestId } = render(
-      <Bullet {...Characteristic.args} onClick={() => console.log("clicked")} />
+      <Bullet variant="characteristic" onClick={() => console.log('clicked')} />
     );
-    expect(getByTestId("characteristic-bullet--atom")).toBeInTheDocument();
+    expect(getByTestId('characteristic-bullet--atom')).toBeInTheDocument();
   });
 });
