@@ -3,7 +3,7 @@ import space from '@styles/space.module.scss';
 import styles from '@styles/index.module.scss';
 import font from '@styles/font.module.scss';
 import layout from '@styles/layout.module.scss';
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { Icon, $Icon } from '@icons';
 
 export interface FooterTemplateProps {
@@ -68,7 +68,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
                         key={index}
                       >
                         <Button
-                          variant={$Button.LINK}
+                          variant="link"
                           onClick={() => handleRedirectToPath(url)}
                           title={name}
                         />
@@ -106,7 +106,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
               </button>
             </div>
             <div>
-              <Button variant={$Button.UNDERLINE} title={`$ CAD`} bold />
+              <Button variant="underline" title={`$ CAD`} bold />
             </div>
           </div>
           <div className={[layout['flex'], layout['items-center']].join(' ')}>
@@ -121,7 +121,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
               </div>
               <div className={space['m-r--10']}>
                 <Button
-                  variant={$Button.LINK}
+                  variant="link"
                   title="Privacy"
                   onClick={() => handleRedirectToPath('/')}
                 />
@@ -129,7 +129,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
               <div>&nbsp;· &nbsp;</div>
               <div className={space['m-r--10']}>
                 <Button
-                  variant={$Button.LINK}
+                  variant="link"
                   title="Terms"
                   onClick={() => handleRedirectToPath('/')}
                 />
@@ -137,7 +137,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
               <div>&nbsp;· &nbsp;</div>
               <div className={space['m-r--10']}>
                 <Button
-                  variant={$Button.LINK}
+                  variant="link"
                   title="Sitemap"
                   onClick={() => handleRedirectToPath('/')}
                 />

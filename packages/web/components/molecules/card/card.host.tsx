@@ -1,5 +1,5 @@
 import Router from 'next/router';
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 
 /**
  * Renders the host card component
@@ -44,7 +44,7 @@ const HostCard: React.FC<{
       <div>
         <Button
           onClick={() => Router.push('/')}
-          variant={$Button.UNDERLINE}
+          variant="underline"
           title={`Check out some ${stayType}s`}
         />
       </div>

@@ -21,7 +21,7 @@ import { primary } from '@button/button-primary';
 import { report } from '@button/button-report';
 import { search } from '@button/button-search';
 import { searchbar } from '@button/button-searchbar';
-import { transparent } from '@button/button-transparent/button.transparent';
+import { transparent } from '@button/button-transparent';
 import { underline } from '@button/button-underline';
 import { video } from '@button/button-video';
 import { expand } from '@button/button-expand';

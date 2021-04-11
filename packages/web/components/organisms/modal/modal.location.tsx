@@ -4,7 +4,7 @@ import color from '@styles/color.module.scss';
 import layout from '@styles/layout.module.scss';
 import animation from '@styles/animation.module.scss';
 
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { Layout } from '@layout';
 
 export const LocationModal: React.FC<{}> = () => {
@@ -27,7 +27,7 @@ export const LocationModal: React.FC<{}> = () => {
     <div>
       <div>
         <Button
-          variant={$Button.LOCATION}
+          variant="location"
           type="explore"
           extendsTo={[
             space['p-h--25'],
@@ -38,14 +38,14 @@ export const LocationModal: React.FC<{}> = () => {
       </div>
       <div>
         <Layout
-          variant={$Button.LOCATION}
+          variant="location"
           title="Recent Searches"
           content={recentLocations.map(
             ({ location, from, to, guests }, index) => {
               return (
                 <div key={index}>
                   <Button
-                    variant={$Button.LOCATION}
+                    variant="location"
                     type="recent"
                     location={location}
                     from={from}
@@ -67,19 +67,12 @@ export const LocationModal: React.FC<{}> = () => {
           variant="location"
           title="Nearby Getaways"
           content={
-            <div
-              style={{ position: 'relative', right: 3 }}
-              className={[
-                space['m-h--25'],
-                layout['flex'],
-                layout['flex-wrap'],
-              ].join(' ')}
-            >
+            <div className="relative right-1 mx-6 flex flex-wrap">
               {nearbyLocations.map((nearbyLocation, index) => {
                 return (
                   <div key={index}>
                     <Button
-                      variant={$Button.NEARBY}
+                      variant="nearby"
                       label={nearbyLocation}
                       onClick={() => alert(`clicked ${nearbyLocation}`)}
                     />

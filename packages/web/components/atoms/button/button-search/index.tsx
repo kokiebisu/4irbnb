@@ -1,10 +1,14 @@
 import { Icon, $Icon } from '@icons';
 
+export interface SearchButtonProps {
+  expand?: boolean;
+}
+
 /**
  * Renders the Search Button component
  * @param {expand}
  */
-const SearchButton: React.FC<{ expand?: boolean }> = ({ expand = false }) => {
+export const SearchButton: React.FC<SearchButtonProps> = ({ expand }) => {
   return (
     <div
       className={`flex items-center bg-primary rounded-full ${

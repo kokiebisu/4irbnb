@@ -1,5 +1,5 @@
 import { Icon, $Icon } from '@icons';
-import { $Button, Button } from '@button';
+import { Button } from '@button';
 
 export interface PriorityBulletProps {
   priorityType?: 'protection' | 'guidance' | 'requirements';
@@ -53,7 +53,7 @@ export const PriorityBullet: React.FC<PriorityBulletProps> = ({
       <div>
         <Button
           title={types[priorityType].link}
-          variant={$Button.UNDERLINE}
+          variant="underline"
           onClick={onClick}
         />
       </div>

@@ -1,7 +1,4 @@
-import { Button, $Button } from '@button';
-
-import space from '@styles/space.module.scss';
-import font from '@styles/font.module.scss';
+import { Button } from '@button';
 
 /**
  * Layout for Currency modal
@@ -23,7 +20,7 @@ export const CurrencyLayout: React.FC<{
             <div key={index}>
               <Button
                 stretch
-                variant={$Button.CURRENCY}
+                variant="currency"
                 name={name}
                 abbreviation={abbreviation}
                 symbol={symbol}

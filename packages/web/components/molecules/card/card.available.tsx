@@ -1,4 +1,4 @@
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 
 /**
  * Renders the available card component
@@ -41,7 +41,7 @@ const AvailableCard: React.FC<{
         <span className="text-sm"> /person</span>
       </div>
       <div className="inline-block">
-        <Button variant={$Button.PRIMARY} size="sm" title="Choose" />
+        <Button variant="primary" size="sm" title="Choose" />
       </div>
     </div>
   );

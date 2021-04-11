@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useRef, useState } from 'react';
 import { Animation } from '@animation';
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { useTimeout } from '@hooks/useTimeout';
 
 export const Video: React.FC<{ videoUrl?: string }> = ({ videoUrl }) => {
@@ -55,7 +55,7 @@ export const Video: React.FC<{ videoUrl?: string }> = ({ videoUrl }) => {
             initial={{ opacity: 0 }}
           >
             <Button
-              variant={$Button.VIDEO}
+              variant="video"
               play={!play}
               onClick={() => {
                 if (!play) {

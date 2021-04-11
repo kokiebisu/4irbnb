@@ -1,4 +1,4 @@
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { useLayoutEffect, useRef, useState } from 'react';
 
 export const FiltersBar: React.FC<{}> = () => {
@@ -81,7 +81,7 @@ export const FiltersBar: React.FC<{}> = () => {
         {primaryFilters.map((filter, index) => {
           return (
             <div key={index} className="mr-2">
-              <Button variant={$Button.FILTER} inverse label={filter} />
+              <Button variant="filter" inverse label={filter} />
             </div>
           );
         })}
@@ -97,7 +97,7 @@ export const FiltersBar: React.FC<{}> = () => {
             }}
           >
             <Button
-              variant={$Button.PAGINATE}
+              variant="paginate"
               direction="left"
               size={3}
               onClick={previous}
@@ -114,17 +114,13 @@ export const FiltersBar: React.FC<{}> = () => {
         >
           {state.activeSlide > 0 && (
             <div className="absolute left-0 z-40">
-              <Button variant={$Button.PAGINATE} direction="left" size={3} />
+              <Button variant="paginate" direction="left" size={3} />
             </div>
           )}
           {secondaryFilters.map((filter, index) => {
             return (
               <div key={index} className="mr-2">
-                <Button
-                  variant={$Button.FILTER}
-                  label={filter}
-                  onClick={previous}
-                />
+                <Button variant="filter" label={filter} onClick={previous} />
               </div>
             );
           })}
@@ -138,7 +134,7 @@ export const FiltersBar: React.FC<{}> = () => {
             }}
           >
             <Button
-              variant={$Button.PAGINATE}
+              variant="paginate"
               direction="right"
               size={3}
               onClick={next}

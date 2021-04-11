@@ -1,4 +1,4 @@
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 
 /**
  * Renders the menubar component
@@ -10,7 +10,7 @@ export const MenuBar: React.FC<{}> = () => {
       {items.map((item, index) => {
         return (
           <div key={index}>
-            <Button variant={$Button.BAR} type={item} />
+            <Button variant="bar" type={item} />
           </div>
         );
       })}

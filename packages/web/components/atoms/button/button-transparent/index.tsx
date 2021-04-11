@@ -1,11 +1,14 @@
+export interface TransparentButtonProps {
+  content?: any;
+}
+
 /**
  * Renders the globe button component
  * @param {boolean} inverse - Whether if the globe button is styled in inverse
  */
-const TransparentButton: React.FC<{
-  inverse?: boolean;
-  content?: any;
-}> = ({ inverse = false, content }) => {
+export const TransparentButton: React.FC<TransparentButtonProps> = ({
+  content,
+}) => {
   return (
     <div className="flex items-center bg-transparent py-3 px-4">{content}</div>
   );

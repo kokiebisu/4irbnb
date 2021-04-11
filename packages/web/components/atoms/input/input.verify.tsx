@@ -7,7 +7,7 @@ import shape from '@styles/shape.module.scss';
 import space from '@styles/space.module.scss';
 import animation from '@styles/animation.module.scss';
 
-import { $Button, Button } from '@button';
+import { Button } from '@button';
 
 export const VerifyInput: React.FC<{
   value?: string;
@@ -78,7 +78,7 @@ export const VerifyInput: React.FC<{
         <div className="absolute top-1/2 transform -translate-y-1/2 right-4">
           <Button
             content="Verify"
-            variant={$Button.VERIFY}
+            variant="verify"
             onClick={() => alert('verify')}
           />
         </div>

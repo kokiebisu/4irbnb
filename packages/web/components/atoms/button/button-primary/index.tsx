@@ -1,11 +1,16 @@
-/** styles */
-import color from '@styles/color.module.scss';
-import shape from '@styles/shape.module.scss';
 import layout from '@styles/layout.module.scss';
-import font from '@styles/font.module.scss';
-import space from '@styles/space.module.scss';
 
 import { Animation } from '@animation';
+
+export interface PrimaryButtonProps {
+  title?: string;
+  size?: 'sm' | 'md' | 'lg';
+  fill?: string;
+  color?: string;
+  bg?: string;
+  loading?: boolean;
+  disable?: boolean;
+}
 
 /**
  * Renders the primary button component
@@ -15,21 +20,13 @@ import { Animation } from '@animation';
  * @param {boolean} loading - Show the loading animation if true
  * @param {boolean} disable - Shows gray appearance and disabled users from pressing
  */
-const PrimaryButton: React.FC<{
-  title?: string;
-  size?: string;
-  fill?: string;
-  color?: string;
-  bg?: string;
-  loading?: boolean;
-  disable?: boolean;
-}> = ({
-  title = 'Button',
-  size = 'md',
+export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
+  title,
+  size,
   fill,
-  loading = false,
-  disable = false,
-  color = 'white',
+  loading,
+  disable,
+  color,
 }) => {
   const renderBackgroundColor = () => {
     if (disable) {

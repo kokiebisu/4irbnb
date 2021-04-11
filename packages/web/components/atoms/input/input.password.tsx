@@ -1,7 +1,14 @@
 import { useState } from 'react';
 import { styleInput, styleLabel, styleContainer } from './styling.text';
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { checkPassword } from '@helper/auth';
+
+export interface PasswordInputProps {
+  handleChange?: (e: any) => void;
+  value?: string;
+  direction?: string;
+  errors?: boolean;
+}
 
 /**
  * Renders the text input component
@@ -12,12 +19,12 @@ import { checkPassword } from '@helper/auth';
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const PasswordInput: React.FC<{
-  handleChange?: any;
-  value?: string;
-  direction?: string;
-  errors?: boolean;
-}> = ({ handleChange, value, direction, errors = false }) => {
+export const PasswordInput: React.FC<PasswordInputProps> = ({
+  handleChange,
+  value,
+  direction,
+  errors = false,
+}) => {
   const [fieldActive, setFieldActive] = useState(false);
   const [hide, setHide] = useState(true);
 
@@ -69,7 +76,7 @@ export const PasswordInput: React.FC<{
       </div>
       <div className="flex items-center justify-center ml-6">
         <Button
-          variant={$Button.UNDERLINE}
+          variant="underline"
           onClick={() => setHide((prevHide) => !prevHide)}
           font={13}
           title={hide ? 'Show' : 'Hide'}

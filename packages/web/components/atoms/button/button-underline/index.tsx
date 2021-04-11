@@ -1,18 +1,20 @@
+export interface UnderlineButtonProps {
+  title?: string;
+  font?: number;
+  bold?: boolean;
+  unselected?: boolean;
+}
+
 /**
  * Renders the underline button component
  * @param {function} onClick - Action taken when the button is pressed
  * @param {string} title - Title of the button
  */
-const UnderlineButton: React.FC<{
-  title?: string;
-  font?: number;
-  bold?: boolean;
-  unselected?: boolean;
-}> = ({
-  title = 'Title here',
-  font = 14,
-  bold = false,
-  unselected = false,
+export const UnderlineButton: React.FC<UnderlineButtonProps> = ({
+  title,
+  font,
+  bold,
+  unselected,
 }) => {
   return (
     <div className="inline-block bg-transparent">

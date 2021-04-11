@@ -1,14 +1,10 @@
 import layout from '@styles/layout.module.scss';
-import color from '@styles/color.module.scss';
-import shape from '@styles/shape.module.scss';
-import space from '@styles/space.module.scss';
-import font from '@styles/font.module.scss';
-
 import { $Icon, Icon } from '@icons';
+import { Button } from '@button';
 
-import { Button, $Button } from '@button';
+export interface CheckModalProps {}
 
-export const CheckModal: React.FC<{}> = () => {
+export const CheckModal: React.FC<CheckModalProps> = () => {
   return (
     <div className={[layout['flex'], layout['justify-center']].join(' ')}>
       <div
@@ -29,96 +25,83 @@ export const CheckModal: React.FC<{}> = () => {
   );
 };
 
-const Calendar: React.FC<{
+interface CalendarProps {
   next?: () => void;
   previous?: () => void;
-}> = ({ next, previous }) => {
+}
+
+const Calendar: React.FC<CalendarProps> = ({ next, previous }) => {
   return (
     <div style={{ width: 294 }}>
-      <div
-        className={[
-          layout['flex'],
-          layout['justify-center'],
-          layout['items-center'],
-          layout['relative'],
-          space['m-t--8'],
-          space['m-b--16'],
-        ].join(' ')}
-      >
-        <div style={{ position: 'absolute', left: 0 }}>
+      <div className="flex justify-center items-center relative mt-2 mb-4">
+        <div className="absolute left-0">
           {previous && (
             <Icon variant={$Icon.ACTION} actionType="left" width={12} />
           )}
         </div>
         <div>
-          <h3 className={[font['size--14']].join(' ')}>December 2020</h3>
+          <h3 className="text-sm">December 2020</h3>
         </div>
-        <div style={{ position: 'absolute', right: 0 }}>
+        <div className="absolute right-0">
           {next && (
             <Icon variant={$Icon.ACTION} actionType="right" width={12} />
           )}
         </div>
       </div>
-      <div className={[shape['w--full']].join(' ')}>
+      <div className="w-full">
         <div style={{ display: 'table', tableLayout: 'fixed' }}>
           <div>
             {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map((day, index) => {
               return (
                 <div key={index} style={{ display: 'table-cell', width: 42 }}>
-                  <div
-                    className={[layout['flex'], layout['justify-center']].join(
-                      ' '
-                    )}
-                  >
-                    <h4 className={[font['size--10']].join(' ')}>{day}</h4>
+                  <div className="flex justify-center">
+                    <h4 className="text-xs">{day}</h4>
                   </div>
                 </div>
               );
             })}
           </div>
-          <div className={[space['m-v--4']].join(' ')}>
+          <div className="my-1">
             {[1, 2, 3, 4, 5, 6, 7].map((number, index) => {
               return (
                 <div key={index} style={{ display: 'table-cell' }}>
-                  <Button variant={$Button.CALENDAR} number={number} />
+                  <Button variant="calendar" number={number} />
                 </div>
               );
             })}
           </div>
-          <div className={[space['m-v--4']].join(' ')}>
+          <div className="my-1">
             {[8, 9, 10, 11, 12, 13, 14].map((number, index) => {
               return (
                 <div key={index} style={{ display: 'table-cell' }}>
-                  <Button variant={$Button.CALENDAR} number={number} />
+                  <Button variant="calendar" number={number} />
                 </div>
               );
             })}
           </div>
-          <div className={[space['m-v--4']].join(' ')}>
+          <div className="my-1">
             {[15, 16, 17, 18, 19, 20, 21].map((number, index) => {
               return (
                 <div key={index} style={{ display: 'table-cell' }}>
-                  <Button variant={$Button.CALENDAR} number={number} />
+                  <Button variant="calendar" number={number} />
                 </div>
               );
             })}
           </div>
-          <div className={[space['m-v--4']].join(' ')}>
+          <div className="my-1">
             {[22, 23, 24, 25, 26, 27, 28].map((number, index) => {
               return (
                 <div key={index} style={{ display: 'table-cell' }}>
-                  <Button variant={$Button.CALENDAR} number={number} />
+                  <Button variant="calendar" number={number} />
                 </div>
               );
             })}
           </div>
-          <div className={[space['m-v--4']].join(' ')}>
+          <div className="my-1">
             {[29, 30, 31, null, null, null, null].map((number, index) => {
               return (
                 <div key={index} style={{ display: 'table-cell' }}>
-                  {number && (
-                    <Button variant={$Button.CALENDAR} number={number} />
-                  )}
+                  {number && <Button variant="calendar" number={number} />}
                 </div>
               );
             })}

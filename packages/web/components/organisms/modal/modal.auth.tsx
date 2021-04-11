@@ -4,7 +4,7 @@ import color from '@styles/color.module.scss';
 import space from '@styles/space.module.scss';
 import font from '@styles/font.module.scss';
 
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { Prototype } from '@prototype/auth';
 
 import { useToggleDispatch } from '@context/toggle';
@@ -41,13 +41,13 @@ export const AuthModal: React.FC<{}> = () => {
           >
             {authState.title === 'Forgot password' ? (
               <Button
-                variant={$Button.MODAL}
+                variant="modal"
                 modal="back"
                 onClick={() => authDispatch({ type: 'auth_login' })}
               />
             ) : (
               <Button
-                variant={$Button.MODAL}
+                variant="modal"
                 modal="close"
                 onClick={() => toggleDispatch({ type: 'close_register' })}
               />

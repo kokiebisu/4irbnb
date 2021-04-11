@@ -7,7 +7,7 @@ import layout from '@styles/layout.module.scss';
 import color from '@styles/color.module.scss';
 
 import { Modal, $Modal } from '@modal';
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 
 import { useToggleDispatch, useToggleState } from '@context/toggle';
 
@@ -38,7 +38,7 @@ export const WhiteHeader: React.FC<{
         <div className={[styles['searchbar__logo--md']].join(' ')}>
           <Button
             block
-            variant={$Button.LOGO}
+            variant="logo"
             noName
             onClick={() => Router.push('/')}
           />
@@ -51,7 +51,7 @@ export const WhiteHeader: React.FC<{
             className={[styles['searchbar__host'], space['m-h--2']].join(' ')}
           >
             <Button
-              variant={$Button.TRANSPARENT}
+              variant="transparent"
               animate
               content={<Content kind="host" />}
               onClick={() => Router.push('/host/homes')}
@@ -59,14 +59,14 @@ export const WhiteHeader: React.FC<{
           </div>
           <div className={[space['m-h--2']].join(' ')}>
             <Button
-              variant={$Button.TRANSPARENT}
+              variant="transparent"
               content={<Content kind="globe" />}
               onClick={() => toggleDispatch({ type: 'toggle_globe' })}
             />
           </div>
           <div className={[space['m-l--4']].join(' ')}>
             <Button
-              variant={$Button.MENU}
+              variant="menu"
               extendsTo={[space['p-v--3']].join(' ')}
               inverse
               authenticated={data}
@@ -100,7 +100,7 @@ export const WhiteHeader: React.FC<{
           </div>
           <div style={{ width: '100%', flexGrow: 1 }}>
             <Button
-              variant={$Button.SEARCHBAR}
+              variant='searchbar'
               onClick={() => console.log('pressed')}
             />
           </div>

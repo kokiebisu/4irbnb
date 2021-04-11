@@ -1,4 +1,4 @@
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 
 /**
  *
@@ -18,11 +18,11 @@ export const CreateBar: React.FC<{
     <div className="w-full border-t border-gray-200 py-4">
       <div className="w-full flex items-center justify-between">
         <div>
-          <Button variant={$Button.BACK} onClick={back} />
+          <Button variant="back" onClick={back} />
         </div>
         <div>
           <Button
-            variant={$Button.PRIMARY}
+            variant="primary"
             title="Next"
             size="md"
             fill="#018489"

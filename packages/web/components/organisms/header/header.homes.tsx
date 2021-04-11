@@ -1,11 +1,11 @@
-import Router from "next/router";
+import Router from 'next/router';
 
-import space from "@styles/space.module.scss";
-import layout from "@styles/layout.module.scss";
-import shape from "@styles/shape.module.scss";
-import header from "@header/header.module.scss";
+import space from '@styles/space.module.scss';
+import layout from '@styles/layout.module.scss';
+import shape from '@styles/shape.module.scss';
+import header from '@header/header.module.scss';
 
-import { Button, $Button } from "@button";
+import { Button } from '@button';
 
 /**
  * Renders the header for the homes page
@@ -15,21 +15,21 @@ export const HomesHeader: React.FC<{
   spread?: boolean;
 }> = ({ spread = false }) => {
   return (
-    <header style={{ height: 80 }} className={[space["p-h--0"]].join(" ")}>
+    <header style={{ height: 80 }} className={[space['p-h--0']].join(' ')}>
       <div
         style={{ padding: 20 }}
-        className={` ${[shape["h--full"]].join(" ")}`}
+        className={` ${[shape['h--full']].join(' ')}`}
       >
         <div>
           <Button
-            variant={$Button.LOGO}
+            variant="logo"
             extendsTo={[
-              layout["inline-block"],
-              header["hover__logo"],
-              space["p--14"],
-              shape["br--circle"],
-            ].join(" ")}
-            onClick={() => Router.push("/")}
+              layout['inline-block'],
+              header['hover__logo'],
+              space['p--14'],
+              shape['br--circle'],
+            ].join(' ')}
+            onClick={() => Router.push('/')}
             noName
             fill="black"
           />
