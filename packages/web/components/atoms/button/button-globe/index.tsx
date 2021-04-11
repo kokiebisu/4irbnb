@@ -1,14 +1,20 @@
+export interface GlobeButtonProps {
+  language?: string;
+  region?: string;
+  selected?: boolean;
+}
+
 /**
  * Renders the Globe Button
  * @param language
  * @param region
  * @param selected
  */
-const GlobeButton: React.FC<{
-  language?: string;
-  region?: string;
-  selected?: boolean;
-}> = ({ language = 'Language', region = 'Region', selected = false }) => {
+export const GlobeButton: React.FC<GlobeButtonProps> = ({
+  language,
+  region,
+  selected,
+}) => {
   return (
     <div
       className={`pl-3 pr-8 py-3 rounded-md ${

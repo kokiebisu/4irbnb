@@ -1,3 +1,11 @@
+export interface LocationButtonProps {
+  locationType?: 'explore' | 'recent';
+  location?: string;
+  from?: string;
+  to?: string;
+  guests?: number | null;
+}
+
 /**
  * Renders the Location Button component
  * @param type
@@ -5,13 +13,13 @@
  * @param from
  * @param to
  */
-const LocationButton: React.FC<{
-  type?: 'explore' | 'recent';
-  location?: string;
-  from?: string;
-  to?: string;
-  guests?: number | null;
-}> = ({ type = 'explore', location, from, to, guests }) => {
+export const LocationButton: React.FC<LocationButtonProps> = ({
+  locationType,
+  location,
+  from,
+  to,
+  guests,
+}) => {
   const types = {
     explore: {
       icon: (
@@ -31,13 +39,13 @@ const LocationButton: React.FC<{
   return (
     <div className="flex items-center py-3">
       <div className="mr-6">
-        <div>{types[type].icon}</div>
+        <div>{types[locationType].icon}</div>
       </div>
       <div>
         <div>
-          <h4 className="text-left text-sm">{types[type].title}</h4>
+          <h4 className="text-left text-sm">{types[locationType].title}</h4>
         </div>
-        {type === 'recent' && (
+        {locationType === 'recent' && (
           <div>
             <h4 className="text-left text-2xs text-gray-100">
               {from ? from : ''}

@@ -1,13 +1,7 @@
-enum sizes {
-  sm = 'sm',
-  md = 'md',
-  lg = 'lg',
-}
-
 export interface BorderButtonProps {
   title?: string;
   inverse?: boolean;
-  size?: sizes;
+  size?: 'sm' | 'md' | 'lg';
   spread?: boolean;
   bold?: boolean;
 }

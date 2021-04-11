@@ -10,6 +10,4 @@ export default {
 const ButtonStory: Story<BackButtonProps> = (args) => <BackButton {...args} />;
 
 export const Back = ButtonStory.bind({});
-Back.args = {
-  BackType: 'email',
-};
+Back.args = {};

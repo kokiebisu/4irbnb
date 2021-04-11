@@ -1,13 +1,7 @@
 import { Icon, $Icon } from '@icons';
 
-enum kinds {
-  menu = 'menu',
-  saved = 'saved',
-  login = 'login',
-}
-
 export interface BarButtonProps {
-  barType?: kinds;
+  barType?: 'menu' | 'saved' | 'login';
   selected?: string;
 }
 

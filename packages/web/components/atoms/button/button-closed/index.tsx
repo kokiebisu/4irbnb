@@ -1,13 +1,8 @@
 import { $Icon, Icon } from '@icons';
 
-enum kinds {
-  close = 'close',
-  check = 'check',
-}
-
 export interface ClosedButtonProps {
   selected?: boolean;
-  closedType?: kinds;
+  closedType?: 'close' | 'check';
 }
 
 export const ClosedButton: React.FC<ClosedButtonProps> = ({

@@ -1,10 +1,15 @@
+export interface FilterButtonProps {
+  label?: string;
+  inverse?: boolean;
+}
+
 /**
  * Renders the filter button
  * @param {string} name - Name of the filter button
  */
-const FilterButton: React.FC<{ label?: string; inverse?: boolean }> = ({
-  label = 'Button',
-  inverse = false,
+export const FilterButton: React.FC<FilterButtonProps> = ({
+  label,
+  inverse,
 }) => {
   return (
     <div
