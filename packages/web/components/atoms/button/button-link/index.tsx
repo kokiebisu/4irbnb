@@ -1,8 +1,12 @@
+export interface LinkButtonProps {
+  title?: string;
+}
+
 /**
  * Renders the Link Button component
  * @param title
  */
-const LinkButton: React.FC<{ title?: string }> = ({ title }) => {
+export const LinkButton: React.FC<LinkButtonProps> = ({ title }) => {
   return (
     <div>
       <h4 className="text-sm">{title}</h4>

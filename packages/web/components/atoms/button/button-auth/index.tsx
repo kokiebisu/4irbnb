@@ -1,14 +1,7 @@
 import { $Icon, Icon } from '@icons';
 
-enum kinds {
-  email = 'email',
-  facebook = 'facebook',
-  google = 'google',
-  apple = 'apple',
-}
-
 export interface AuthButtonProps {
-  authType?: kinds;
+  authType?: 'email' | 'facebook' | 'google' | 'apple';
 }
 
 /**

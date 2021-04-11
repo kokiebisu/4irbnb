@@ -1,20 +1,18 @@
-import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
-import { Button, $Button } from "@button";
+import React from 'react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { Button } from '@button';
+import '@testing-library/jest-dom/extend-expect';
 
-describe("auth button", () => {
-  it("renders correctly", () => {
+describe('auth button', () => {
+  it('renders correctly', () => {
     const { getByTestId } = render(
-      <Button variant={$Button.AUTH} onClick={() => console.log("clicked")} />
+      <Button variant="auth" onClick={() => console.log('clicked')} />
     );
-    expect(getByTestId("auth-button--atom")).toHaveTextContent(
-      "Continue with Email"
-    );
+    expect(getByTestId('auth-button')).toHaveTextContent('Continue with Email');
   });
-  it("calls onClick prop when clicked", () => {
+  it('calls onClick prop when clicked', () => {
     const handleClick = jest.fn();
-    render(<Button variant={$Button.AUTH} onClick={handleClick} />);
+    render(<Button variant="auth" onClick={handleClick} />);
     fireEvent.click(screen.getByText(/Continue with Email/i));
     expect(handleClick).toHaveBeenCalledTimes(1);
   });

@@ -1,31 +1,31 @@
-import React from "react";
-import { screen, fireEvent, render, cleanup } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
-import { Button, $Button } from "@button";
+import React from 'react';
+import { screen, fireEvent, render, cleanup } from '@testing-library/react';
+import { Button } from '@button';
+import '@testing-library/jest-dom/extend-expect';
 
 afterEach(cleanup);
 
-describe("banner button", () => {
-  it("renders correctly", () => {
+describe('banner button', () => {
+  it('renders correctly', () => {
     const { getByTestId } = render(
-      <Button variant={$Button.BANNER} onClick={() => console.log("clicked")} />
+      <Button variant="banner" onClick={() => console.log('clicked')} />
     );
-    expect(getByTestId("banner-button--atom")).toHaveTextContent("Button");
+    expect(getByTestId('banner-button')).toHaveTextContent('Button');
   });
 
-  it("calls onClick prop when clicked", () => {
+  it('calls onClick prop when clicked', () => {
     const handleClick = jest.fn();
-    render(<Button variant={$Button.BANNER} onClick={handleClick} />);
+    render(<Button variant="banner" onClick={handleClick} />);
     fireEvent.click(screen.getByText(/Button/i));
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
-  it("rerenders correctly with prop change", () => {
+  it('rerenders correctly with prop change', () => {
     const { getByText, rerender } = render(
-      <Button variant={$Button.BANNER} title="Previous" />
+      <Button variant="banner" title="Previous" />
     );
-    getByText("Previous");
-    rerender(<Button variant={$Button.BANNER} title="After" />);
-    getByText("After");
+    getByText('Previous');
+    rerender(<Button variant="banner" title="After" />);
+    getByText('After');
   });
 });
