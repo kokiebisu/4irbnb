@@ -1,14 +1,8 @@
 import { $Icon, Icon } from '@icons';
-
-import space from '@styles/space.module.scss';
-import color from '@styles/color.module.scss';
-import layout from '@styles/layout.module.scss';
-import shape from '@styles/shape.module.scss';
-import font from '@styles/font.module.scss';
 import section from '@template/index.module.scss';
 
-import { Button, $Button } from '@button';
-import { Bullet, $Bullet } from '@bullet';
+import { Button } from '@button';
+import { Bullet } from '@bullet';
 import { Card, $Card } from '@card';
 
 export interface ReviewsTemplateProps {
@@ -51,21 +45,15 @@ export const ReviewsTemplate: React.FC<ReviewsTemplateProps> = ({
           </div>
         </div>
         {layoutType === 'room' && (
-          <div
-            style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}
-            className="grid mt-4 mr-6"
-          >
+          <div className="grid mt-4 mr-6 grid-cols-2">
             {categories.map((category, index) => {
               return (
                 <div
                   key={index}
-                  className={[
-                    section['m__review--bullet'],
-                    space['p-v--8'],
-                  ].join(' ')}
+                  className={`${[section['m__review--bullet']].join(' ')} py-2`}
                 >
                   <Bullet
-                    variant={$Bullet.SCORE}
+                    variant="score"
                     category={category?.type}
                     average={category?.average}
                   />
@@ -75,11 +63,9 @@ export const ReviewsTemplate: React.FC<ReviewsTemplateProps> = ({
           </div>
         )}
         <div
-          className={[
-            shape['w-full'],
-            space['m-t--16'],
-            section['display__reviews--wrapper'],
-          ].join(' ')}
+          className={`w-full mt-4 ${[section['display__reviews--wrapper']].join(
+            ' '
+          )}`}
         >
           {reviews.map((review, index) => {
             return (
@@ -98,7 +84,7 @@ export const ReviewsTemplate: React.FC<ReviewsTemplateProps> = ({
         </div>
         <div className="mt-4">
           <Button
-            variant={$Button.BORDER}
+            variant="border"
             size="md"
             title={`Show all ${numberOfReviews} reviews`}
           />
