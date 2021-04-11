@@ -1,4 +1,3 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { ModalButton, ModalButtonProps } from '.';
 
@@ -13,5 +12,5 @@ const ButtonStory: Story<ModalButtonProps> = (args) => (
 
 export const Modal = ButtonStory.bind({});
 Modal.args = {
-  modal: 'close',
+  modalType: 'close',
 };

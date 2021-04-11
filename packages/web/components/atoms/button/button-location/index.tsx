@@ -47,7 +47,7 @@ export const LocationButton: React.FC<LocationButtonProps> = ({
         </div>
         {locationType === 'recent' && (
           <div>
-            <h4 className="text-left text-2xs text-gray-100">
+            <h4 className="text-left text-xs text-gray-500">
               {from ? from : ''}
               {to ? ` - ${to}` : ''}
               {guests
@@ -67,7 +67,6 @@ export const location = (props) => {
   return {
     location: {
       component: <LocationButton {...props} />,
-      style: '',
     },
   };
 };

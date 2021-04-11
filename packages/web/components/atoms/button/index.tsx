@@ -62,24 +62,10 @@ export const Button: React.FC<ButtonProps> = ({
     };
   } = factory(props);
 
-  const styleWidth = (stretch) => {
-    return stretch ? 'w-full' : 'w-auto';
-  };
-
-  const styleDisplay = (block) => {
-    return block ? 'block' : 'inline-block';
-  };
-
-  const styleDisable = (disable) => {
-    return disable ? 'cursor-default' : 'cursor-pointer';
-  };
-
   return (
     <motion.button
       data-testid={`${variant}-button`}
-      className={`${styleWidth(stretch)} ${styleDisplay(
-        block
-      )} transition ${styleDisable(disable)}`}
+      className="transition"
       onClick={!disable ? onClick : undefined}
     >
       {variant ? variants[variant].component : children}

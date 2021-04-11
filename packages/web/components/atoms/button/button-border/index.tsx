@@ -1,9 +1,13 @@
+import { displayMixin, stretchMixin } from '@button/utils/mixin';
+
 export interface BorderButtonProps {
   title?: string;
   inverse?: boolean;
   size?: 'sm' | 'md' | 'lg';
   spread?: boolean;
   bold?: boolean;
+  stretch?: boolean;
+  block?: boolean;
 }
 
 /**
@@ -17,8 +21,10 @@ export interface BorderButtonProps {
 export const BorderButton: React.FC<BorderButtonProps> = ({
   title,
   inverse,
-  size = 'md',
+  size,
   bold,
+  stretch,
+  block,
 }) => {
   const renderBorder = () => {
     if (inverse && bold) {
@@ -28,7 +34,7 @@ export const BorderButton: React.FC<BorderButtonProps> = ({
       return 'border border-white';
     }
     if (bold) {
-      return 'border-2 border-white';
+      return 'border-2 border-black';
     }
     return 'border border-black';
   };
@@ -41,7 +47,11 @@ export const BorderButton: React.FC<BorderButtonProps> = ({
   };
 
   return (
-    <div className={`${styles['common']} ${styles[size]} ${renderBorder()}`}>
+    <div
+      className={`${stretchMixin(stretch)} ${displayMixin(block)}  ${
+        styles['common']
+      } ${styles[size]} ${renderBorder()}`}
+    >
       <h4 className={inverse ? 'text-white' : undefined}>{title}</h4>
     </div>
   );
@@ -51,7 +61,6 @@ export const border = (props) => {
   return {
     border: {
       component: <BorderButton {...props} />,
-      style: '',
     },
   };
 };

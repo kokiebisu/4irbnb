@@ -1,4 +1,3 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { BorderButton, BorderButtonProps } from '.';
 
@@ -17,4 +16,6 @@ Border.args = {
   inverse: false,
   size: 'md',
   bold: false,
+  stretch: false,
+  block: false,
 };

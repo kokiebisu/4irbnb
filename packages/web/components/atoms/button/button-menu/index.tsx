@@ -19,9 +19,9 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
 }) => {
   return (
     <div
-      className={`flex items-center py-2 pl-3 pr-2 bg-white rounded-full ${
-        inverse ? '' : 'border-2 border-gray-200'
-      } `}
+      className={`${
+        inverse ? 'border-2 border-gray-200 hover:shadow-md' : ''
+      } inline-flex items-center py-2 pl-3 pr-2 bg-white rounded-full`}
     >
       <div className="mr-3">
         <Icon
@@ -33,7 +33,7 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
       </div>
       <div>
         {authenticated && data ? (
-          <img className="block rounded-lg w-14" src={data.imgUrl} />
+          <img className="block rounded-full w-8 h-8" src={data.imgUrl} />
         ) : (
           <Icon
             variant={$Icon.PROFILE}
@@ -48,11 +48,9 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
 };
 
 export const menu = ({ ...props }) => {
-  const { inverse } = props;
   return {
     menu: {
       component: <MenuButton {...props} />,
-      style: inverse ? '' : 'hover:shadow-md rounded-full',
     },
   };
 };

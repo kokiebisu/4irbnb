@@ -29,7 +29,7 @@ export const BarButton: React.FC<BarButtonProps> = ({ barType, selected }) => {
   };
 
   return (
-    <div className="flex flex-col items-center mx-6">
+    <div className="inline-flex flex-col items-center">
       <div>{types[barType].component}</div>
       <div>
         <p className="text-xs">{types[barType].name}</p>
@@ -42,7 +42,6 @@ export const bar = (props) => {
   return {
     bar: {
       component: <BarButton {...props} />,
-      style: '',
     },
   };
 };

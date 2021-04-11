@@ -13,7 +13,7 @@ export const FilterButton: React.FC<FilterButtonProps> = ({
 }) => {
   return (
     <div
-      className={`whitespace-nowrap py-2 px-6 rounded-full ${
+      className={`inline-block whitespace-nowrap py-2 px-6 rounded-full ${
         inverse
           ? 'bg-transparent border-2 border-gray-300 hover:border-black'
           : 'bg-gray-100 border-gray-100 border-2'
