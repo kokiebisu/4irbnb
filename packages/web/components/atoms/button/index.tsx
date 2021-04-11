@@ -46,7 +46,6 @@ export interface ButtonProps {
  * @param {Object} children - A JSX that will be part of the component
  */
 export const Button: React.FC<ButtonProps> = ({
-  extendsTo = '',
   variant,
   children,
   onClick,
@@ -60,7 +59,6 @@ export const Button: React.FC<ButtonProps> = ({
   const variants: {
     [key: string]: {
       component: JSX.Element;
-      style: string;
     };
   } = factory(props);
 
@@ -78,14 +76,11 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <motion.button
-      whileTap={{ scale: disable || !animate ? 1 : 0.995 }}
-      whileHover={{ scale: disable || !animate ? 1 : 1.005 }}
       data-testid={`${variant}-button`}
-      className={`${variants[variant].style} ${extendsTo} ${styleWidth(
-        stretch
-      )} ${styleDisplay(block)} transition ${styleDisable(disable)}`}
+      className={`${styleWidth(stretch)} ${styleDisplay(
+        block
+      )} transition ${styleDisable(disable)}`}
       onClick={!disable ? onClick : undefined}
-      disabled={disable}
     >
       {variant ? variants[variant].component : children}
     </motion.button>

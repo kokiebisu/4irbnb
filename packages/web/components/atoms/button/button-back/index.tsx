@@ -29,7 +29,6 @@ export const back = (props) => {
   return {
     back: {
       component: <BackButton {...props} />,
-      style: '',
     },
   };
 };
