@@ -1,29 +1,18 @@
 import { useLayoutEffect, useState, useRef } from 'react';
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import particle from '@particle/particle.module.scss';
 
 const Dots = ({ slides, activeSlide }) => {
   return (
-    <div
-      style={{
-        position: 'absolute',
-        bottom: 25,
-        width: '100%',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
+    <div className="absolute bottom-4 w-full flex items-center justify-center">
       {slides.map((_, index) => (
         <span
           key={index}
+          className={`mr-2 p-1 cursor-pointer rounded-full ${
+            activeSlide === index ? 'bg-white' : 'bg-gray-400'
+          }`}
           style={{
             transition: 'all 0.2s ease-in',
-            padding: 3,
-            marginRight: 5,
-            cursor: 'pointer',
-            borderRadius: '50%',
-            background: `${activeSlide === index ? 'white' : 'lightgray'}`,
           }}
         />
       ))}
@@ -34,13 +23,9 @@ const Dots = ({ slides, activeSlide }) => {
 const Slide = ({ slide }) => {
   return (
     <div
+      className="h-full w-full bg-cover bg-no-repeat bg-center"
       style={{
-        height: '100%',
-        width: '100%',
         backgroundImage: slide && `url(${slide})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
         backgroundColor: !slide && 'lightgray',
       }}
     />
@@ -118,23 +103,14 @@ export const ImageSlider = ({ slides = new Array(3) }) => {
           opacity: 0,
         })
       }
-      style={{
-        position: 'relative',
-        width: '100%',
-        height: '100%',
-        overflow: 'hidden',
-        borderRadius: 12,
-        zIndex: 50,
-      }}
+      className="relative w-full h-full overflow-hidden rounded-md z-50"
     >
       <div
+        className="flex h-full rounded-md"
         style={{
-          borderRadius: 12,
           transform: `translateX(-${state.translate}px)`,
           transition: `transform ease-out ${state.transition}s`,
-          height: '100%',
           width: width * slides.length,
-          display: 'flex',
         }}
       >
         {slides.map((slide, index) => {
@@ -142,18 +118,14 @@ export const ImageSlider = ({ slides = new Array(3) }) => {
         })}
       </div>
       <div
+        className="absolute left-3 z-50 top-1/2 -translate-y-1/2"
         style={{
           ...style,
           transition: 'opacity 0.2s ease-out',
-          position: 'absolute',
-          top: '50%',
-          transform: 'translateY(-50%)',
-          left: 10,
-          zIndex: 60,
         }}
       >
         <Button
-          variant={$Button.PAGINATE}
+          variant="paginate"
           animate
           direction="left"
           onClick={previousSlide}
@@ -163,15 +135,11 @@ export const ImageSlider = ({ slides = new Array(3) }) => {
         style={{
           ...style,
           transition: 'opacity 0.2s ease-out',
-          position: 'absolute',
-          top: '50%',
-          transform: 'translateY(-50%)',
-          right: 10,
-          zIndex: 60,
         }}
+        className="absolute top-1/2 -translate-y-1/2 right-3 z-50"
       >
         <Button
-          variant={$Button.PAGINATE}
+          variant="paginate"
           animate
           direction="right"
           onClick={nextSlide}

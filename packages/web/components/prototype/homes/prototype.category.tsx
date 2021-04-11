@@ -1,6 +1,6 @@
 import { Segment } from '@template/s/homes';
 import { Bar, $Bar } from '@bar';
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 
 export interface CategoryPrototypeProps {
   subtitle?: string;
@@ -57,7 +57,7 @@ export const CategoryPrototype: React.FC<CategoryPrototypeProps> = ({
                 style={{ scrollSnapAlign: 'start' }}
               >
                 <Button
-                  variant={$Button.FILTER}
+                  variant="filter"
                   label={filter.name}
                   inverse={!filter.selected}
                 />

@@ -1,12 +1,7 @@
 import { useLayoutEffect, useRef, useState } from 'react';
-
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
-import font from '@styles/font.module.scss';
 import section from '@template/index.module.scss';
-
 import { Card, $Card } from '@card';
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 
 export interface AvailableTemplateProps {
   availableSlots?: {
@@ -79,33 +74,24 @@ export const AvailableTemplate: React.FC<AvailableTemplateProps> = ({
   });
 
   return (
-    <div style={{ overflowX: 'hidden' }}>
-      <div
-        ref={containerRef}
-        className={[
-          layout['flex'],
-          layout['items-center'],
-          layout['justify-between'],
-        ].join(' ')}
-      >
-        <div className={[space['m-v--16']].join(' ')}>
-          <h3 className={[font['size--20']].join(' ')}>
-            Choose from available dates
-          </h3>
+    <div className="overflow-x-hidden">
+      <div ref={containerRef} className="flex items-center justify-between">
+        <div className="my-4">
+          <h3 className="text-lg">Choose from available dates</h3>
         </div>
-        <div className={[layout['flex'], layout['items-center']].join(' ')}>
-          <div className={[space['m-h--4']].join(' ')}>
+        <div className="flex items-center">
+          <div className="mx-1">
             <Button
-              variant={$Button.PAGINATE}
+              variant="paginate"
               animate
               direction="left"
               onClick={handlePreviousSlide}
               disable={state.activeSlide === 0}
             />
           </div>
-          <div className={[space['m-h--4']].join(' ')}>
+          <div className="mx-1">
             <Button
-              variant={$Button.PAGINATE}
+              variant="paginate"
               animate
               direction="right"
               onClick={handleNextSlide}
@@ -118,14 +104,14 @@ export const AvailableTemplate: React.FC<AvailableTemplateProps> = ({
         </div>
       </div>
       <div
+        classname="h-full"
         style={{
-          height: '100%',
           width: width * (availableSlots.length / displayingColumns),
           transform: `translateX(-${state.translate}px)`,
           transition: `transform ease-out ${state.transition}s`,
         }}
       >
-        <div style={{ display: 'flex' }}>
+        <div className="flex">
           {availableSlots.map((available, index) => {
             return (
               <div
@@ -133,7 +119,7 @@ export const AvailableTemplate: React.FC<AvailableTemplateProps> = ({
                 key={index}
                 className={[section['w__nearby']].join(' ')}
               >
-                <div className={[space['m-b--10'], space['m-r--16']].join(' ')}>
+                <div className="mb-3 mr-4">
                   <Card
                     variant={$Card.AVAILABLE}
                     date={available.date}
@@ -148,8 +134,8 @@ export const AvailableTemplate: React.FC<AvailableTemplateProps> = ({
           })}
         </div>
       </div>
-      <div className={[space['m-t--32']].join(' ')}>
-        <Button variant={$Button.BORDER} title="See more dates" />
+      <div className="mt-5">
+        <Button variant="border" title="See more dates" />
       </div>
     </div>
   );

@@ -1,8 +1,4 @@
-import space from '@styles/space.module.scss';
-import layout from '@styles/layout.module.scss';
-import font from '@styles/font.module.scss';
-import React from 'react';
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { Card, $Card } from '@card';
 import { useSlider } from './hooks';
 
@@ -67,33 +63,26 @@ export const CollectionsTemplate: React.FC<CollectionsTemplateProps> = ({
 
   return (
     <div ref={containerRef}>
-      <div
-        className={[
-          space['m-v--16'],
-          layout['flex'],
-          layout['items-center'],
-          layout['justify-between'],
-        ].join(' ')}
-      >
+      <div className="my-4 flex items-center justify-between">
         <div>
-          <h2 className={[font['size--28']].join(' ')}>{title}</h2>
+          <h2 className="text-xl">{title}</h2>
         </div>
-        <div className={[layout['flex'], layout['items-center']].join(' ')}>
-          <div className={[layout['flex'], layout['items-center']].join(' ')}>
-            <div className={[space['m-h--4']].join(' ')}>
+        <div className="flex items-center">
+          <div className="flex items-center">
+            <div className="mx-1">
               <Button
                 block
-                variant={$Button.PAGINATE}
+                variant="paginate"
                 animate
                 direction="left"
                 onClick={handlePreviousSlide}
                 disable={state.activeSlide === 0}
               />
             </div>
-            <div className={[space['m-h--4']].join(' ')}>
+            <div className="mx-1">
               <Button
                 block
-                variant={$Button.PAGINATE}
+                variant="paginate"
                 animate
                 direction="right"
                 onClick={handleNextSlide}
@@ -110,11 +99,11 @@ export const CollectionsTemplate: React.FC<CollectionsTemplateProps> = ({
             transition: `transform ease-out ${state.transition}s`,
           }}
         >
-          <div style={{ display: 'flex' }}>
+          <div className="flex">
             {cards.map((card, index) => {
               return (
                 <div key={index}>
-                  <div style={{ ...cardStyles(), paddingRight: 10 }}>
+                  <div className="pr-3" style={{ ...cardStyles() }}>
                     <Card
                       variant={$Card.COLLECTION}
                       paddingTop={paddingTopStyles()}

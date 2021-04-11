@@ -6,7 +6,7 @@ import space from '@styles/space.module.scss';
 import responsive from '@styles/responsive.module.scss';
 import modal from '@modal/modal.module.scss';
 
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 
 import { $Icon, Icon } from '@icons';
 
@@ -33,18 +33,9 @@ export const PrivacyModal: React.FC<{}> = () => {
     <div>
       <div className={[modal['flex__privacy--content']].join(' ')}>
         <div>
-          <div
-            className={[
-              layout['flex'],
-              layout['items-center'],
-              space['m-t--6'],
-              space['m-b--6'],
-              space['m-l--0'],
-              space['m-r--0'],
-            ].join(' ')}
-          >
-            <div className={space['m-r--10']}>Your Privacy</div>
-            <div className={space['r-t--1']}>
+          <div className="flex items-center mt-2 mb-2 ml-0 mr-0">
+            <div className="mr-3">Your Privacy</div>
+            <div className="relative top-1">
               <Icon
                 variant={$Icon.GENERAL}
                 generalType="lock"
@@ -53,15 +44,8 @@ export const PrivacyModal: React.FC<{}> = () => {
               />
             </div>
           </div>
-          <div className={space['m-b--30']}>
-            <p
-              className={[
-                font['size--14'],
-                font['weight--300'],
-                font['lh--15'],
-                color['c--gray__0'],
-              ].join(' ')}
-            >
+          <div className="mb-5">
+            <p className="text-sm font-light leading-6 text-gray-500">
               We use cookies to help personalize content, tailor and measure
               ads, and provide a safer experience. By navigating the site, you
               agree to the use of cookies to collect information on and off
@@ -75,15 +59,10 @@ export const PrivacyModal: React.FC<{}> = () => {
         </div>
         <div className={modal['flex__privacy--buttons']}>
           <div
-            className={[
-              space['m-t--6'],
-              space['m-b--6'],
-              space['m-l--0'],
-              modal['m-r--privacy'],
-            ].join(' ')}
+            className={`mt-2 mb-2 ml-0 ${[modal['m-r--privacy']].join(' ')}`}
           >
             <Button
-              variant={$Button.PRIVACY}
+              variant="privacy"
               extendsTo={[
                 shape['w--full'],
                 responsive['b_to_f--sm'],
@@ -93,16 +72,9 @@ export const PrivacyModal: React.FC<{}> = () => {
               onClick={handleSave}
             />
           </div>
-          <div
-            className={[
-              space['m-t--6'],
-              space['m-b--6'],
-              space['m-l--0'],
-              space['m-r--0'],
-            ].join(' ')}
-          >
+          <div className="mt-2 mb-2 ml-0 mr-0">
             <Button
-              variant={$Button.PRIVACY}
+              variant="privacy"
               extendsTo={[
                 shape['w--full'],
                 responsive['b_to_f--sm'],

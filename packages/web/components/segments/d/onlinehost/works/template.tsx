@@ -1,9 +1,5 @@
 import { Layout } from '@layout';
-
-import space from '@styles/space.module.scss';
-import layout from '@styles/layout.module.scss';
-
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { Card, $Card } from '@card';
 
 export interface WorksTemplateProps {
@@ -17,21 +13,15 @@ export const WorksTemplate: React.FC<WorksTemplateProps> = ({ categories }) => {
         <div>
           {categories.map((category, index) => {
             return (
-              <div className={[space['m-b--8']].join(' ')} key={index}>
+              <div className="mb-2" key={index}>
                 <Card variant={$Card.WORKS} work={category} />
               </div>
             );
           })}
         </div>
-        <div
-          className={[
-            space['m-t--32'],
-            layout['flex'],
-            layout['justify-center'],
-          ].join(' ')}
-        >
+        <div className="mt-5 flex justify-center">
           <Button
-            variant={$Button.BORDER}
+            variant="border"
             bold
             title="Start creating your experience"
           />

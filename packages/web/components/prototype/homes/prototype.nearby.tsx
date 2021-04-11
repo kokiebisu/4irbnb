@@ -1,6 +1,6 @@
 import { Segment } from '@template/s/homes';
 import { Bar, $Bar } from '@bar';
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 
 export interface NearbyPrototypeProps {
   city?: string;
@@ -40,13 +40,13 @@ export const NearbyPrototype: React.FC<NearbyPrototypeProps> = ({
             {filters.map((filter, index) => {
               return (
                 <div key={index} className="mr-3">
-                  <Button variant={$Button.FILTER} label={filter.name} />
+                  <Button variant="filter" label={filter.name} />
                 </div>
               );
             })}
           </div>
           <div className="md:hidden">
-            <Button variant={$Button.FILTER} name={`filters ${filterCount}`} />
+            <Button variant="filter" name={`filters ${filterCount}`} />
           </div>
         </div>
         {city && (

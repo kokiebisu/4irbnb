@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { Card, $Card } from '@card';
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { useSlider } from '@hooks/useSlider';
 import { useHandleContainerResize } from '@hooks/useHandleContainerResize';
 
@@ -27,7 +27,7 @@ export const AlsoTemplate: React.FC<AlsoTemplateProps> = ({ items, title }) => {
         <div className="flex items-center">
           <div className="mx-2">
             <Button
-              variant={$Button.PAGINATE}
+              variant="paginate"
               animate
               direction="left"
               onClick={previous}
@@ -36,7 +36,7 @@ export const AlsoTemplate: React.FC<AlsoTemplateProps> = ({ items, title }) => {
           </div>
           <div className="mx-2">
             <Button
-              variant={$Button.PAGINATE}
+              variant="paginate"
               animate
               direction="right"
               onClick={next}

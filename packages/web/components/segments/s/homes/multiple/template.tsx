@@ -9,7 +9,7 @@ import sectionStyles from '@template/index.module.scss';
 import section from '@template/index.module.scss';
 
 import { Card, $Card } from '@card';
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { useRouter } from 'next/router';
 
 export interface MultipleTemplateProps {
@@ -130,31 +130,24 @@ export const MultipleTemplate: React.FC<MultipleTemplateProps> = ({
     };
 
     return (
-      <div style={{ overflowX: 'hidden' }}>
-        <div
-          ref={containerRef}
-          className={[
-            layout['flex'],
-            layout['items-center'],
-            layout['justify-between'],
-          ].join(' ')}
-        >
-          <div className={[space['m-v--16']].join(' ')}>
-            <h3 className={[font['size--20']].join(' ')}>{title}</h3>
+      <div className="overflow-x-hidden">
+        <div ref={containerRef} className="flex items-center justify-between">
+          <div className="my-4">
+            <h3 className="text-lg">{title}</h3>
           </div>
-          <div className={[layout['flex'], layout['items-center']].join(' ')}>
-            <div className={[space['m-h--4']].join(' ')}>
+          <div className="flex items-center">
+            <div className="mx-1">
               <Button
-                variant={$Button.PAGINATE}
+                variant="paginate"
                 animate
                 direction="left"
                 onClick={previous}
                 disable={state.activeSlide === 0}
               />
             </div>
-            <div className={[space['m-h--4']].join(' ')}>
+            <div className="mx-1">
               <Button
-                variant={$Button.PAGINATE}
+                variant="paginate"
                 animate
                 direction="right"
                 onClick={next}
@@ -164,14 +157,14 @@ export const MultipleTemplate: React.FC<MultipleTemplateProps> = ({
           </div>
         </div>
         <div
+          className="h-full"
           style={{
-            height: '100%',
             width: width * (items.length / 2),
             transform: `translateX(-${state.translate}px)`,
             transition: `transform ease-out ${state.transition}s`,
           }}
         >
-          <div style={{ display: 'flex' }}>
+          <div className="flex">
             {items.map((item, index) => {
               return (
                 <div
@@ -179,9 +172,7 @@ export const MultipleTemplate: React.FC<MultipleTemplateProps> = ({
                   key={index}
                   className={[section['w__nearby']].join(' ')}
                 >
-                  <div
-                    className={[space['m-b--10'], space['m-r--16']].join(' ')}
-                  >
+                  <div className="mb-3 mr-4">
                     <Card
                       variant={$Card.HORIZONTAL}
                       card={item && item.card}
@@ -203,56 +194,28 @@ export const MultipleTemplate: React.FC<MultipleTemplateProps> = ({
     return (
       <div>
         <div>
-          <div
-            className={[layout['items-center'], layout['justify-between']].join(
-              ' '
-            )}
-          >
+          <div className="flex items-center justify-between">
             <div>
               <div>
-                <h2
-                  className={[
-                    font['weight--500'],
-                    color['c--gray__4'],
-                    font['size--22'],
-                  ].join(' ')}
-                >
-                  {title}
-                </h2>
+                <h2 className="font-medium text-gray-800 text-lg">{title}</h2>
               </div>
               {isDescription && (
                 <div>
-                  <p className={[font['weight--100']].join(' ')}>
-                    {description}
-                  </p>
+                  <p className="font-thin">{description}</p>
                 </div>
               )}
             </div>
             <div>
               {pagination && (
-                <div className={[layout['items-center']].join(' ')}>
-                  <div className={[space['m-r--6']].join(' ')}>
-                    <p
-                      className={[font['weight--300'], font['size--14']].join(
-                        ' '
-                      )}
-                    >
-                      1 / {items.length}
-                    </p>
+                <div className="flex items-center">
+                  <div className="mr-2">
+                    <p className="font-light text-sm">1 / {items.length}</p>
                   </div>
-                  <div className={[space['m-r--6']].join(' ')}>
-                    <Button
-                      variant={$Button.PAGINATE}
-                      animate
-                      direction="left"
-                    />
+                  <div className="mr-2">
+                    <Button variant="paginate" animate direction="left" />
                   </div>
                   <div>
-                    <Button
-                      variant={$Button.PAGINATE}
-                      animate
-                      direction="right"
-                    />
+                    <Button variant="paginate" animate direction="right" />
                   </div>
                 </div>
               )}
@@ -260,11 +223,11 @@ export const MultipleTemplate: React.FC<MultipleTemplateProps> = ({
           </div>
           {displayItems(carouselType, save)}
         </div>
-        <div className={[layout['relative']].join(' ')}>
+        <div className="relative">
           {showAll && (
-            <div className={space['m-v--25']}>
+            <div className="my-6">
               <Button
-                variant={$Button.EXPAND}
+                variant="expand"
                 onClick={() => router.push(showAll.to)}
                 title={showAll.description}
               />
@@ -290,11 +253,8 @@ export const MultipleTemplate: React.FC<MultipleTemplateProps> = ({
       return [].join(' ');
     };
     return (
-      <div style={{ paddingTop: 15, paddingBottom: 15 }}>
-        <div
-          style={{ display: 'grid' }}
-          className={[styles['multiplerows']].join(' ')}
-        >
+      <div className="py-4">
+        <div className={`grid ${[styles['multiplerows']].join(' ')}`}>
           {displayingData.length &&
             displayingData.map((item, index) => {
               return (

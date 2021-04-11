@@ -1,9 +1,5 @@
 import { Card, $Card } from '@card';
-import { Button, $Button } from '@button';
-
-import space from '@styles/space.module.scss';
-import font from '@styles/font.module.scss';
-import layout from '@styles/layout.module.scss';
+import { Button } from '@button';
 import { useSlide } from '@hooks/useSlide';
 
 export interface CardsTemplateProps {
@@ -32,40 +28,30 @@ export const CardsTemplate: React.FC<CardsTemplateProps> = ({
   };
 
   return (
-    <div ref={containerRef} style={{ overflowX: 'hidden' }}>
-      <div
-        className={[
-          space['m-v--16'],
-          layout['flex'],
-          layout['items-center'],
-          layout['justify-between'],
-        ].join(' ')}
-      >
+    <div ref={containerRef} className="overflow-x-hidden">
+      <div className="my-4 flex items-center justify-between">
         <div>
-          <h3 className={[font['size--20']].join(' ')}>{title}</h3>
+          <h3 className="text-lg">{title}</h3>
         </div>
-        <div className={[layout['flex'], layout['items-center']].join(' ')}>
-          <div className={[space['m-r--8']].join(' ')}>
-            <Button
-              variant={$Button.UNDERLINE}
-              title={`Show (${cards.length})`}
-            />
+        <div className="flex items-center">
+          <div className="mr-2">
+            <Button variant="underline" title={`Show (${cards.length})`} />
           </div>
-          <div className={[layout['flex'], layout['items-center']].join(' ')}>
-            <div className={[space['m-h--4']].join(' ')}>
+          <div className="flex items-center">
+            <div className="mx-1">
               <Button
                 block
-                variant={$Button.PAGINATE}
+                variant="paginate"
                 animate
                 direction="left"
                 onClick={previous}
                 disable={state.activeSlide === 0}
               />
             </div>
-            <div className={[space['m-h--4']].join(' ')}>
+            <div className="px-1">
               <Button
                 block
-                variant={$Button.PAGINATE}
+                variant="paginate"
                 animate
                 direction="right"
                 onClick={next}
@@ -78,12 +64,7 @@ export const CardsTemplate: React.FC<CardsTemplateProps> = ({
           </div>
         </div>
       </div>
-      <div
-        style={{
-          height: '100%',
-          width: '100%',
-        }}
-      >
+      <div className="w-full h-full">
         <div
           style={{
             width: width * (cards.length / displayingColumns()),
@@ -91,11 +72,11 @@ export const CardsTemplate: React.FC<CardsTemplateProps> = ({
             transition: `transform ease-out ${state.transition}s`,
           }}
         >
-          <div style={{ display: 'flex' }}>
+          <div className="flex">
             {cards.map(({ imgUrl, videoUrl }, index) => {
               return (
                 <div key={index} style={{ width: width / displayingColumns() }}>
-                  <div style={{ marginRight: 10 }}>
+                  <div className="mr-3">
                     <Card
                       variant={$Card.VIDEO}
                       imgUrl={imgUrl}

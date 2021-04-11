@@ -1,4 +1,4 @@
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { Input, $Input } from '@input';
 
 export interface GetStartedSegmentTemplateProps {
@@ -74,7 +74,7 @@ export const GetStartedSegmentTemplate: React.FC<GetStartedSegmentTemplateProps>
             <div className="mt-4" style={{ width: 150 }}>
               <div className="w-full">
                 <Button
-                  variant={$Button.PRIMARY}
+                  variant="primary"
                   title="Continue"
                   size="sm"
                   loading={loading}

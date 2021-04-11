@@ -1,4 +1,4 @@
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { Card, $Card } from '@card';
 import { useSlide } from '@hooks/useSlide';
 
@@ -31,16 +31,13 @@ export const StartingTemplate: React.FC<StartingTemplateProps> = ({
         </div>
         <div className="flex items-center">
           <div className="mr-3">
-            <Button
-              variant={$Button.UNDERLINE}
-              title={`Show (${cards.length})`}
-            />
+            <Button variant="underline" title={`Show (${cards.length})`} />
           </div>
           <div className="flex items-center">
             <div className="mx-2">
               <Button
                 block
-                variant={$Button.PAGINATE}
+                variant="paginate"
                 animate
                 direction="left"
                 onClick={previous}
@@ -50,7 +47,7 @@ export const StartingTemplate: React.FC<StartingTemplateProps> = ({
             <div className="mx-2">
               <Button
                 block
-                variant={$Button.PAGINATE}
+                variant="paginate"
                 animate
                 direction="right"
                 onClick={next}
