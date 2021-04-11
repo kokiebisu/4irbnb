@@ -1,4 +1,3 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { ClosedButton, ClosedButtonProps } from '.';
 
@@ -13,6 +12,6 @@ const ButtonStory: Story<ClosedButtonProps> = (args) => (
 
 export const Closed = ButtonStory.bind({});
 Closed.args = {
-  content: 'close',
+  closedType: 'close',
   selected: false,
 };

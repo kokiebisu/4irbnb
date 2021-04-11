@@ -29,7 +29,7 @@ export const ClosedButton: React.FC<ClosedButtonProps> = ({
   };
   return (
     <div
-      className={`flex items-center justify-center p-2 rounded-full border ${
+      className={`inline-flex items-center justify-center p-2 rounded-full border ${
         selected ? 'bg-black border-black' : 'bg-white border-gray-300'
       }`}
     >

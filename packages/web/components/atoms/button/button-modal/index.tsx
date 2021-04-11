@@ -1,27 +1,37 @@
 import { $Icon, Icon } from '@icons';
 
 export interface ModalButtonProps {
-  modal?: 'close' | 'back';
+  modalType?: 'close' | 'back';
 }
 
 /**
  * Renders the close button component
  * @param {function} onClick - The action taken when the button is pressed
  */
-export const ModalButton: React.FC<ModalButtonProps> = ({
-  modal = 'close',
-}) => {
+export const ModalButton: React.FC<ModalButtonProps> = ({ modalType }) => {
   const types = {
     close: (
-      <Icon variant={$Icon.ACTION} actionType="close" width={16} height={16} />
+      <Icon
+        variant={$Icon.ACTION}
+        actionType="close"
+        width={16}
+        height={16}
+        stroke="black"
+      />
     ),
     back: (
-      <Icon variant={$Icon.ACTION} actionType="left" width={16} height={16} />
+      <Icon
+        variant={$Icon.ACTION}
+        actionType="left"
+        width={16}
+        height={16}
+        stroke="black"
+      />
     ),
   };
   return (
-    <div className="bg-transparent p-3 rounded-full hover:bg-gray-100">
-      {types[modal]}
+    <div className="inline-block bg-transparent p-3 rounded-full hover:bg-gray-100">
+      {types[modalType]}
     </div>
   );
 };

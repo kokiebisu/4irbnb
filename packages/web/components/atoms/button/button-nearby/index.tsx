@@ -8,10 +8,8 @@ export interface NearbyButtonProps {
  */
 export const NearbyButton: React.FC<NearbyButtonProps> = ({ label }) => {
   return (
-    <div className="p-1 hover:border-gray-400 border border-transparent rounded-lg">
-      <div className="border border-gray-100 px-5 py-3 rounded-sm">
-        <h4 className="text-xs">{label}</h4>
-      </div>
+    <div className="inline-block px-3 py-2 hover:border-gray-400 border border-gray-200 rounded-lg">
+      <h4 className="text-xs">{label}</h4>
     </div>
   );
 };
@@ -20,7 +18,6 @@ export const nearby = (props) => {
   return {
     nearby: {
       component: <NearbyButton {...props} />,
-      style: '',
     },
   };
 };

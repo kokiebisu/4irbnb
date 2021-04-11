@@ -34,7 +34,6 @@ export const logo = (props) => {
   return {
     logo: {
       component: <LogoButton {...props} />,
-      style: '',
     },
   };
 };
