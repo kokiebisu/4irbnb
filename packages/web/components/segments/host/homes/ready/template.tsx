@@ -1,11 +1,5 @@
 import Router from 'next/router';
-
-import { Button, $Button } from '@button';
-
-import space from '@styles/space.module.scss';
-import font from '@styles/font.module.scss';
-import layout from '@styles/layout.module.scss';
-
+import { Button } from '@button';
 export interface ReadyTemplateProps {}
 
 /**
@@ -13,20 +7,20 @@ export interface ReadyTemplateProps {}
  */
 export const ReadyTemplate: React.FC<ReadyTemplateProps> = () => {
   return (
-    <div className={[layout['flex']].join(' ')}>
-      <div style={{ width: '50%' }} className={[].join(' ')}>
-        <h1 className={[font['size--40']].join(' ')}>Ready to host?</h1>
+    <div className="flex">
+      <div className="w-1/2">
+        <h1 className="text-2xl">Ready to host?</h1>
       </div>
-      <div style={{ width: '50%' }} className={[].join(' ')}>
-        <div className={[space['m-b--32']].join(' ')}>
-          <h4 className={[font['size--20']].join(' ')}>
+      <div className="w-1/2">
+        <div className="mb-6">
+          <h4 className="text-lg">
             Create a listing that fits your hosting style—we'll give you tips to
             make your place shine. Start now and finish any time.
           </h4>
         </div>
-        <div style={{ display: 'inline-block' }}>
+        <div className="inline-block">
           <Button
-            variant={$Button.PRIMARY}
+            variant="primary"
             size="md"
             title="Get started"
             onClick={() => Router.push('/become-a-host')}

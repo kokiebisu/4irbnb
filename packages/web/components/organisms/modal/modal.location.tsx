@@ -7,7 +7,9 @@ import animation from '@styles/animation.module.scss';
 import { Button } from '@button';
 import { Layout } from '@layout';
 
-export const LocationModal: React.FC<{}> = () => {
+export interface LocationModalProps {}
+
+export const LocationModal: React.FC<LocationModalProps> = () => {
   const recentLocations = [
     { location: 'Chilliwack', from: 'Jan. 7', to: 'Jan. 21', guests: 4 },
     { location: 'Tofino' },

@@ -1,5 +1,4 @@
-import { Button, $Button } from '@button';
-
+import { Button } from '@button';
 import font from '@styles/font.module.scss';
 
 const Layout: React.FC<{
@@ -21,7 +20,7 @@ const Layout: React.FC<{
             <div key={index}>
               <Button
                 stretch
-                variant={$Button.GLOBE}
+                variant="globe"
                 language={language}
                 region={region}
                 extendsTo={[font['text--left']].join(' ')}

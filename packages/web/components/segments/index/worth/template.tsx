@@ -1,4 +1,4 @@
-import { $Button, Button } from '@button';
+import { Button } from '@button';
 
 export interface WorthTemplateProps {
   handleRedirectToHostPage: () => void;
@@ -34,7 +34,7 @@ export const WorthTemplate: React.FC<WorthTemplateProps> = ({
             </div>
             <div>
               <Button
-                variant={$Button.PRIMARY}
+                variant="primary"
                 color="black"
                 fill="white"
                 size="md"

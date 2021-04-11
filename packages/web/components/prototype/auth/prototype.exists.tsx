@@ -1,19 +1,11 @@
 import { useState } from 'react';
 import Router from 'next/router';
 import { useFormik } from 'formik';
-
 import { Bullet } from '@bullet';
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { Input, $Input } from '@input';
-
 import { validateExists as validate } from '@helper/auth';
-
 import { usePost } from '@hooks/usePost';
-
-import space from '@styles/space.module.scss';
-import shape from '@styles/shape.module.scss';
-import font from '@styles/font.module.scss';
-import layout from '@styles/layout.module.scss';
 
 export const ExistsPrototype: React.FC<{
   data?: {
@@ -51,41 +43,31 @@ export const ExistsPrototype: React.FC<{
   });
 
   return (
-    <div className={[space['p--24']].join(' ')}>
-      <div
-        className={[
-          layout['flex'],
-          layout['flex-col'],
-          layout['items-center'],
-        ].join(' ')}
-      >
-        <div className={[space['m-v--16']].join(' ')}>
-          <p className={[font['size--13'], font['text--center']].join(' ')}>
+    <div className="p-4">
+      <div className="flex flex-col items-center">
+        <div className="my-4">
+          <p className="text-sm text-center">
             Looks like you already have an account. Please log in instead.
           </p>
         </div>
-        <div className={[space['m-v--16']].join(' ')}>
+        <div className="my-4">
           <img
             style={{ width: 120 }}
-            className={[shape['br--circle']].join(' ')}
+            className="rounded-full"
             src={data.imgUrl}
           />
         </div>
-        <div className={[space['m-v--8']].join(' ')}>
+        <div className="my-2">
           <div>
-            <p className={[font['size--13'], font['text--center']].join(' ')}>
-              {data.firstname}
-            </p>
+            <p className="text-sm text-center">{data.firstname}</p>
           </div>
           <div>
-            <p className={[font['size--13'], font['text--center']].join(' ')}>
-              {data.email}
-            </p>
+            <p className="text-sm text-center">{data.email}</p>
           </div>
         </div>
       </div>
       <form onSubmit={formik.handleSubmit}>
-        <div className={[space['m-v--16']].join(' ')}>
+        <div className="my-4">
           <Input
             variant={$Input.PASSWORD}
             handleChange={formik.handleChange}
@@ -93,25 +75,25 @@ export const ExistsPrototype: React.FC<{
             errors={formik.errors.password !== undefined}
           />
         </div>
-        <div className={[space['m-v--16']].join(' ')}>
+        <div className="my-4">
           <Button variant="primary" loading={loading} title="Log in" />
         </div>
         <div>
           {formik.errors.password !== undefined && (
-            <div className={[space['m-t--6']].join(' ')}>
+            <div className="mt-2">
               <Bullet variant="required" message={formik.errors.password} />
             </div>
           )}
         </div>
       </form>
-      <div className={[space['m-v--16']].join(' ')}>
+      <div className="my-4">
         <Button
           variant="underline"
           title="Login with a different account"
           onClick={() => alert('button pressed')}
         />
       </div>
-      <div className={[space['m-v--16']].join(' ')}>
+      <div className="my-4">
         <Button
           variant="underline"
           title="Forgot password?"

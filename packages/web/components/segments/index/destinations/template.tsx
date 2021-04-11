@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import template from '../index.module.scss';
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 
 export interface DestinationsTemplateProps {
   items?: { [destinationType: string]: { city: string; location: string }[] };
@@ -41,7 +41,7 @@ export const DestinationsTemplate: React.FC<DestinationsTemplateProps> = ({
               <Button
                 block
                 stretch
-                variant={$Button.DESTINATION}
+                variant="destination"
                 city={city}
                 location={location}
                 onClick={() => handleDestinationRedirect(city)}

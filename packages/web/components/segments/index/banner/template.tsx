@@ -1,12 +1,8 @@
 import layout from '@styles/layout.module.scss';
 import index from '@styles/index.module.scss';
-import space from '@styles/space.module.scss';
-
-import font from '@styles/font.module.scss';
-import color from '@styles/color.module.scss';
 
 import { Header, $Header } from '@header';
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { ResponsiveImage } from '@helper/img';
 
 export interface BannerTemplateProps {
@@ -74,27 +70,21 @@ export const BannerTemplate: React.FC<BannerTemplateProps> = ({
                 ].join(' ')}
               >
                 <p
-                  className={[
-                    font['c--white'],
+                  className={`text-white font-light tracking-tight ${[
                     index['size__explore--subtitle'],
-                    font['weight--300'],
-                    font['ls--3'],
-                    color['c--white'],
-                  ].join(' ')}
+                  ].join(' ')}`}
                 >
                   Settle in somewhere new. Discover nearby stays to live, work,
                   or just relax.
                 </p>
               </div>
               <div
-                className={[
-                  space['m-t--15'],
-                  space['m-h--0'],
-                  index['justify__explore--button'],
-                ].join(' ')}
+                className={`mt-4 mx-0${[index['justify__explore--button']].join(
+                  ' '
+                )}`}
               >
                 <Button
-                  variant={$Button.BANNER}
+                  variant="banner"
                   title="Explore nearby"
                   onClick={handleHomeRedirect}
                 />

@@ -1,5 +1,5 @@
 import { Card, $Card } from '@card';
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 
 import section from '@template/index.module.scss';
 import color from '@styles/color.module.scss';
@@ -88,12 +88,7 @@ export const OnlineTemplate: React.FC<OnlineTemplateProps> = ({
         </div>
       </div>
       <div className={[space['m-v--32']].join(' ')}>
-        <Button
-          variant={$Button.BORDER}
-          title="Explore all"
-          size="sm"
-          inverse={dark}
-        />
+        <Button variant="border" title="Explore all" size="sm" inverse={dark} />
       </div>
     </div>
   );

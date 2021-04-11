@@ -1,12 +1,7 @@
 import { useFormik } from 'formik';
-
-import space from '@styles/space.module.scss';
-import layout from '@styles/layout.module.scss';
-
 import { Input, $Input } from '@input';
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { Bullet } from '@bullet';
-
 import { validateForgotPassword as validate } from '@helper/auth';
 
 /**
@@ -25,18 +20,11 @@ export const ForgotPasswordPrototype: React.FC<{}> = () => {
   });
 
   return (
-    <div className={[space['p--24']].join(' ')}>
+    <div className="p-5">
       <form onSubmit={formik.handleSubmit}>
-        <div
-          style={{ height: 300 }}
-          className={[
-            layout['flex'],
-            layout['flex-col'],
-            layout['justify-between'],
-          ].join(' ')}
-        >
+        <div style={{ height: 300 }} className="flex flex-col justify-between">
           <div>
-            <div className={[space['m-b--16']].join(' ')}>
+            <div className="mb-4">
               <p>
                 Enter the email address associated with your account, and we’ll
                 email you a link to reset your password.
@@ -53,7 +41,7 @@ export const ForgotPasswordPrototype: React.FC<{}> = () => {
               </div>
               <div>
                 {formik.errors.email !== undefined && (
-                  <div className={[space['m-t--6']].join(' ')}>
+                  <div className="mt-2">
                     <Bullet variant="required" message={formik.errors.email} />
                   </div>
                 )}

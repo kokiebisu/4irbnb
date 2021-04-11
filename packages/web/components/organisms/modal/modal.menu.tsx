@@ -1,7 +1,7 @@
 import shape from '@styles/shape.module.scss';
 import space from '@styles/space.module.scss';
 
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 
 import { getOptionContents } from '@button/button-option/content.option';
 
@@ -17,7 +17,7 @@ const Options: React.FC<{
       {params.map(({ kind, bold }, index) => (
         <div key={index}>
           <Button
-            variant={$Button.OPTION}
+            variant="option"
             extendsTo={[shape['w--full']].join(' ')}
             bold={bold}
             onClick={options[kind].handleClick}
@@ -29,15 +29,19 @@ const Options: React.FC<{
   );
 };
 
+export interface MenuModalProps {
+  authenticated?: boolean;
+}
+
 /**
  * Renders the menu modal
  */
-export const MenuModal: React.FC<{ authenticated?: boolean }> = ({
+export const MenuModal: React.FC<MenuModalProps> = ({
   authenticated = false,
 }) => {
   return (
-    <div className={[shape['w--full'], space['p-v--15']].join(' ')}>
-      <div className={[shape['w--inherit']].join(' ')}>
+    <div className="w-full py-4">
+      <div className="w-full">
         {authenticated ? (
           <Options
             params={[
@@ -83,14 +87,7 @@ export const MenuModal: React.FC<{ authenticated?: boolean }> = ({
         )}
         {authenticated && (
           <>
-            <div
-              style={{
-                width: '100%',
-                height: 1,
-                backgroundColor: 'lightgray',
-                margin: '6px 0',
-              }}
-            ></div>
+            <div className="w-full bg-gray-600 my-2"></div>
             <Options
               params={[
                 // { kind: "help", bold: false },

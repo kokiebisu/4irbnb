@@ -1,13 +1,10 @@
 import { useRef } from 'react';
 import Router from 'next/router';
 
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
-import font from '@styles/font.module.scss';
 import banner from '@banner/banner.module.scss';
 import responsive from '@styles/responsive.module.scss';
 
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 import { Card, $Card } from '@card';
 
 import { useSlider, SliderProps } from '@hooks/useSlider';
@@ -41,38 +38,24 @@ export const CommunityTemplate: React.FC<CommunityTemplateProps> = ({
   );
 
   return (
-    <div
-      className={[responsive['b_to_f--sm'], layout['items-center']].join(' ')}
-    >
-      <div
-        style={{ position: 'relative', zIndex: 500 }}
-        className={[banner['w__homes--left']].join(' ')}
-      >
+    <div className="sm:flex items-center">
+      <div className={`relative z-70 ${[banner['w__homes--left']].join(' ')}`}>
         <div className={`${[responsive['p-l--24_to_64--sm']].join(' ')} `}>
           <div
-            style={{ maxWidth: 360, width: '100%' }}
-            className={`${[
-              layout['flex'],
-              layout['flex-col'],
-              layout['justify-center'],
-            ].join(' ')} `}
+            style={{ maxWidth: 360 }}
+            className="w-full flex flex-col justify-center"
           >
-            <div className={[space['m-b--32']].join(' ')}>
-              <h1
-                style={{ lineHeight: 1 }}
-                className={[font['size--45']].join(' ')}
-              >
+            <div className="mb-6">
+              <h1 style={{ lineHeight: 1 }} className="text-2xl">
                 {title}
               </h1>
             </div>
-            <div className={[space['m-b--32']].join(' ')}>
-              <h4 className={[font['size--18'], font['lh--15']].join(' ')}>
-                {description}
-              </h4>
+            <div className="mb-6">
+              <h4 className="text-lg leading-6">{description}</h4>
             </div>
-            <div className={[layout['inline-block']].join(' ')}>
+            <div className="inline-block">
               <Button
-                variant={$Button.PRIMARY}
+                variant="primary"
                 size="md"
                 title="Get started"
                 onClick={() => Router.push('/become-a-host')}
@@ -83,40 +66,22 @@ export const CommunityTemplate: React.FC<CommunityTemplateProps> = ({
         </div>
       </div>
       <div
-        style={{ position: 'relative', zIndex: 500 }}
-        className={[
-          banner['w__homes--right'],
-          responsive['p-l--24_to_64--sm'],
-          space['p-t--50'],
-        ].join(' ')}
+        className={`pl-4 sm:pl-7 pt-6 z-50 ${[banner['w__homes--right']].join(
+          ' '
+        )}`}
       >
-        <div
-          style={{
-            position: 'relative',
-            width: '100%',
-            height: '100%',
-            overflow: 'hidden',
-            borderRadius: 12,
-            zIndex: 50,
-          }}
-        >
+        <div className="relative w-full h-full overflow-hidden rounded-md z-10">
           <div
+            className="flex rounded-md h-full"
             style={{
-              borderRadius: 12,
               transform: `translateX(-${state.translate}px)`,
               transition: `transform ease-out ${state.transition}s`,
-              height: '100%',
               width: width * hosts.length,
-              display: 'flex',
             }}
           >
             {hosts.map((host, index) => {
               return (
-                <div
-                  key={index}
-                  ref={sliderRef}
-                  className={[space['m-r--16']].join(' ')}
-                >
+                <div key={index} ref={sliderRef} className="mr-4">
                   <Card
                     variant={$Card.HOST}
                     host={host?.name}
@@ -129,18 +94,11 @@ export const CommunityTemplate: React.FC<CommunityTemplateProps> = ({
             })}
           </div>
         </div>
-        <div
-          className={[
-            space['m-t--32'],
-            space['m-r--32'],
-            layout['flex'],
-            responsive['justify--start_to_end--sm'],
-          ].join(' ')}
-        >
-          <div className={[layout['items-center'], layout['flex']].join(' ')}>
-            <div className={[space['m-r--8']].join(' ')}>
+        <div className="mt-6 mr-6 flex sm:justify-end">
+          <div className="flex items-center">
+            <div className="mr-2">
               <Button
-                variant={$Button.PAGINATE}
+                variant="paginate"
                 animate
                 direction="left"
                 onClick={previous}
@@ -148,7 +106,7 @@ export const CommunityTemplate: React.FC<CommunityTemplateProps> = ({
             </div>
             <div>
               <Button
-                variant={$Button.PAGINATE}
+                variant="paginate"
                 animate
                 direction="right"
                 onClick={next}

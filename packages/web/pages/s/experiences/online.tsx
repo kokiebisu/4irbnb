@@ -7,11 +7,10 @@ import { Footer } from '@footer';
 import layout from '@styles/layout.module.scss';
 import space from '@styles/space.module.scss';
 import shape from '@styles/shape.module.scss';
-import color from '@styles/color.module.scss';
 
 import { useToggleState } from '@context/toggle';
 
-import { Button, $Button } from '@button';
+import { Button } from '@button';
 
 const OnlinePage = () => {
   const toggleState = useToggleState();
@@ -44,33 +43,19 @@ const OnlinePage = () => {
           />
         </div>
       </div>
-      <div
-        className={[
-          layout['container--spread'],
-          space['m-b--12'],
-          space['m-t--20'],
-        ].join(' ')}
-      >
+      <div className={`mb-4 mt-5 ${[layout['container--spread']].join(' ')}`}>
         <Segment variant={$Segment.CARDS} />
       </div>
-      <div
-        className={[layout['container--spread'], space['m-v--12']].join(' ')}
-      >
+      <div className={`my-4 ${[layout['container--spread']].join(' ')}`}>
         <Segment variant={$Segment.CARDS} />
       </div>
-      <div
-        className={[layout['container--spread'], space['m-v--12']].join(' ')}
-      >
+      <div className={`my-4 ${[layout['container--spread']].join(' ')}`}>
         <Segment variant={$Segment.STARTING} />
       </div>
-      <div
-        className={[layout['container--spread'], space['m-v--12']].join(' ')}
-      >
+      <div className={`my-4 ${[layout['container--spread']].join(' ')}`}>
         <Segment variant={$Segment.COLLECTIONS} />
       </div>
-      <div
-        className={[layout['container--spread'], space['m-v--12']].join(' ')}
-      >
+      <div className={`my-4 ${[layout['container--spread']].join(' ')}`}>
         <Segment variant={$Segment.CARDS} />
       </div>
       <div
@@ -79,7 +64,7 @@ const OnlinePage = () => {
           padding: '40px 0 56px 0',
         }}
       >
-        <Button variant={$Button.PRIMARY} title="Load more" fill="black" />
+        <Button variant="primary" title="Load more" fill="black" />
       </div>
       <div>
         <Footer />
