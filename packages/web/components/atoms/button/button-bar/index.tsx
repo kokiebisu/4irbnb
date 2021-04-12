@@ -2,7 +2,7 @@ import { Icon, $Icon } from '@icons';
 
 export interface BarButtonProps {
   barType?: 'menu' | 'saved' | 'login';
-  selected?: string;
+  selected?: boolean;
 }
 
 export const BarButton: React.FC<BarButtonProps> = ({ barType, selected }) => {
@@ -10,21 +10,18 @@ export const BarButton: React.FC<BarButtonProps> = ({ barType, selected }) => {
     menu: {
       component: <Icon variant={$Icon.LOGO} logoType="menubar" width={25} />,
       name: 'Explore',
-      selected: selected === 'menu',
     },
     saved: {
       component: (
         <Icon variant={$Icon.SEMANTIC} semanticType="saved" width={25} />
       ),
       name: 'Saved',
-      selected: selected === 'saved',
     },
     login: {
       component: (
         <Icon variant={$Icon.GENERAL} generalType="login" width={25} />
       ),
       name: 'Log in',
-      selected: selected === 'login',
     },
   };
 

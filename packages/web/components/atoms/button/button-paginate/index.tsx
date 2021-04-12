@@ -3,7 +3,6 @@ import { Icon, $Icon } from '@icons';
 export interface PaginateButtonProps {
   direction?: 'left' | 'right';
   disable?: boolean;
-  size?: number;
 }
 
 /**

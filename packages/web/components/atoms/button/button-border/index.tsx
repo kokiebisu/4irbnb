@@ -1,4 +1,4 @@
-import { displayMixin, stretchMixin } from '@button/utils/mixin';
+import { stretchMixin } from '@button/utils/mixin';
 
 export interface BorderButtonProps {
   title?: string;
@@ -48,9 +48,9 @@ export const BorderButton: React.FC<BorderButtonProps> = ({
 
   return (
     <div
-      className={`${stretchMixin(stretch)} ${displayMixin(block)}  ${
-        styles['common']
-      } ${styles[size]} ${renderBorder()}`}
+      className={`${stretchMixin(stretch)} ${styles['common']} ${
+        styles[size]
+      } ${renderBorder()}`}
     >
       <h4 className={inverse ? 'text-white' : undefined}>{title}</h4>
     </div>
