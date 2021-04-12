@@ -1,4 +1,3 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { PlaceInput, PlaceInputProps } from '.';
 
@@ -13,5 +12,5 @@ export const Place = InputStory.bind({});
 Place.args = {
   value: 'Location',
   direction: undefined,
-  onPlaceChange: () => alert('on place change'),
+  onChange: () => alert('on change'),
 };

@@ -1,12 +1,11 @@
 import { useState } from 'react';
-
 import { styleLabel, styleContainer, styleInput } from '../styling.text';
 
 export interface NameInputProps {
-  onChange?: any;
-  value?: string;
-  direction?: string;
-  name?: 'first' | 'last';
+  onChange?: (e: any) => void;
+  value?: any;
+  direction?: 'top' | 'bottom' | undefined;
+  name?: string;
   errors?: boolean;
 }
 
@@ -38,17 +37,6 @@ export const NameInput: React.FC<NameInputProps> = ({
 
   const deactivateField = () => {
     setFieldActive(false);
-  };
-
-  const renderShape = () => {
-    switch (direction) {
-      case 'top':
-        return 'border-b border-l border-r rounded-b-lg';
-      case 'bottom':
-        return 'border-t border-l border-r rounded-t-lg';
-      default:
-        return 'border border-gray-400 rounded-t-lg';
-    }
   };
 
   return (
@@ -91,4 +79,10 @@ export const NameInput: React.FC<NameInputProps> = ({
       </div>
     </div>
   );
+};
+
+export const name = (props) => {
+  return {
+    name: <NameInput {...props} />,
+  };
 };

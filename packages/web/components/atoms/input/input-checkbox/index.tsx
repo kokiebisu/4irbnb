@@ -1,28 +1,25 @@
 import { Icon, $Icon } from '@icons';
 
 export interface CheckboxInputProps {
-  check?: () => void;
-  checked?: boolean;
+  onChange?: (e: any) => void;
+  value?: any;
   title?: string;
   description?: string;
 }
 
 export const CheckboxInput: React.FC<CheckboxInputProps> = ({
-  check,
-  checked = true,
-  title = 'Title here',
+  onChange,
+  value,
+  title,
   description,
 }) => {
   return (
     <div className="flex items-center">
       <div className="mr-5">
         <div
-          onClick={check}
-          style={{ cursor: 'pointer', height: 24, width: 24 }}
-          className={`flex items-center justify-center border  rounded ${
-            checked
-              ? 'bg-black border-transparent'
-              : 'bg-white border-gray-400 '
+          onClick={onChange}
+          className={`cursor-pointer h-6 w-6 flex items-center justify-center border rounded ${
+            value ? 'bg-black border-transparent' : 'bg-white border-gray-400 '
           }`}
         >
           <div className="relative border-none">
@@ -46,4 +43,10 @@ export const CheckboxInput: React.FC<CheckboxInputProps> = ({
       </div>
     </div>
   );
+};
+
+export const checkbox = (props) => {
+  return {
+    checkbox: <CheckboxInput {...props} />,
+  };
 };

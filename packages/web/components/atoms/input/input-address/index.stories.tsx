@@ -1,4 +1,3 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { AddressInput, AddressInputProps } from '.';
 
@@ -15,5 +14,5 @@ export const Address = InputStory.bind({});
 Address.args = {
   onChange: () => alert('on change'),
   value: 'value',
-  direction: null,
+  direction: undefined,
 };

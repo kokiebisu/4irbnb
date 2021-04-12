@@ -79,9 +79,7 @@ const id: () => string | JSX.Element = () => {
             />
           )}
         </div>
-        <div
-          className={[layout['container'], staysDetail['m__content']].join(' ')}
-        >
+        <div className={`container ${[staysDetail['m__content']].join(' ')}`}>
           <div className={[details['flex__details']].join(' ')}>
             <div className={[details['w__details--left']].join(' ')}>
               <div className={[staysDetail['b__characteristics']].join(' ')}>

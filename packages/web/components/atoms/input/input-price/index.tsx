@@ -8,17 +8,15 @@ export interface PriceInputProps {
   name?: string;
   onChange?: (e: any) => void;
   onKeyPress?: (e: any) => void;
-  value?: string;
+  value?: any;
 }
 
 /**
  * Renders the text input component
  * @param {string} name - Type of input
- * @param {string} placeholder - Placeholder
  * @param {function} onChange - handles key press event
  * @param {string} value - Current value of the input
- * @param {string} direction - direction in which the input if attached to another
- * @param {string} inputType - Whether if the input is text-based or select-based
+ * @param {function} onKeyPress - Event happened on key press
  */
 export const PriceInput: React.FC<PriceInputProps> = ({
   name,
@@ -59,10 +57,16 @@ export const PriceInput: React.FC<PriceInputProps> = ({
         />
       </div>
       {(active || value) && (
-        <div className="absolute left-3" style={{ bottom: 13 }}>
+        <div className="absolute left-3 bottom-4">
           <h4 className="text-sm">$</h4>
         </div>
       )}
     </div>
   );
+};
+
+export const price = (props) => {
+  return {
+    price: <PriceInput {...props} />,
+  };
 };

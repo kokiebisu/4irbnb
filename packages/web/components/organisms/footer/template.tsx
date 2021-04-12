@@ -1,7 +1,5 @@
-import color from '@styles/color.module.scss';
 import space from '@styles/space.module.scss';
 import styles from '@styles/index.module.scss';
-import font from '@styles/font.module.scss';
 import layout from '@styles/layout.module.scss';
 import { Button } from '@button';
 import { Icon, $Icon } from '@icons';
@@ -18,53 +16,37 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
   items,
 }) => {
   return (
-    <footer
-      className={[
-        color['b-t--white__2'],
-        space['p-v--22'],
-        color['bg--white__1'],
-      ].join(' ')}
-    >
-      <div
-        className={spread ? layout['container--spread'] : layout['container']}
-      >
+    <footer className="border-t border-gray-300 py-6 bg-gray-300">
+      <div className={spread ? 'container-spread' : 'container'}>
         <div
-          className={[
-            font['b-b--white__1'],
+          className={`border-b border-gray-300 ${[
             styles['flex__footer--section'],
-          ].join(' ')}
+          ].join(' ')}`}
         >
           {items.map((section, index) => {
             return (
               <div
                 key={index}
-                className={[
-                  color['bt--white__2'],
+                className={`border-t border-gray-300 ${[
                   space['nf-m-t--20'],
                   styles['p-b__footer--section'],
                   styles['w__footer--section'],
-                ].join(' ')}
+                ].join(' ')}`}
               >
                 <div>
-                  <h3
-                    className={[font['size--12'], font['uppercase']].join(' ')}
-                  >
-                    {section.name}
-                  </h3>
+                  <h3 className="uppercase text-sm">{section.name}</h3>
                 </div>
                 <div
-                  className={[
-                    space['m-v--15'],
-                    styles['grid__footer--items'],
-                  ].join(' ')}
+                  className={`my-4 ${[styles['grid__footer--items']].join(
+                    ' '
+                  )}`}
                 >
                   {section.items.map(({ name, url }, index) => {
                     return (
                       <div
-                        className={[
-                          space['m-v--15'],
-                          styles['m__footer--item'],
-                        ].join(' ')}
+                        className={`my-4 ${[styles['m__footer--item']].join(
+                          ' '
+                        )}`}
                         key={index}
                       >
                         <Button
@@ -81,45 +63,28 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
           })}
         </div>
         <div className={styles['flex__footer--others']}>
-          <div
-            className={[
-              layout['flex'],
-              layout['items-center'],
-              space['m-h--0'],
-              space['m-v--20'],
-            ].join(' ')}
-          >
+          <div className="flex items-center mx-0 my-8">
             <div>
-              <button
-                className={[
-                  layout['flex'],
-                  layout['items-center'],
-                  space['m-r--10'],
-                  color['bg--transparent'],
-                  color['b--0'],
-                ].join(' ')}
-              >
+              <button className="flex items-center mr-3 bg-transparent border-none">
                 <Icon variant={$Icon.GENERAL} generalType="globe" width={16} />
-                <u className={[font['size--14'], space['m-r--7']].join(' ')}>
-                  English(CA)
-                </u>
+                <u className="text-sm mr-3">English(CA)</u>
               </button>
             </div>
             <div>
-              <Button variant="underline" title={`$ CAD`} bold />
+              <Button variant="underline" title="$ CAD" bold />
             </div>
           </div>
-          <div className={[layout['flex'], layout['items-center']].join(' ')}>
+          <div className="flex items-center">
             <div className={styles['footer__rights']}>
-              <h4 className={[font['size--15']].join(' ')}>
+              <h4 className="text-md">
                 &copy; 2020 Airbnb, Inc. All rights reserved
               </h4>
             </div>
-            <div className={[layout['flex'], layout['items-center']].join(' ')}>
+            <div className="flex items-center">
               <div className={styles['block__footer--dot']}>
                 &nbsp;&nbsp;· &nbsp;
               </div>
-              <div className={space['m-r--10']}>
+              <div className="mr-3">
                 <Button
                   variant="link"
                   title="Privacy"
@@ -127,7 +92,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
                 />
               </div>
               <div>&nbsp;· &nbsp;</div>
-              <div className={space['m-r--10']}>
+              <div className="mr-3">
                 <Button
                   variant="link"
                   title="Terms"
@@ -135,7 +100,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
                 />
               </div>
               <div>&nbsp;· &nbsp;</div>
-              <div className={space['m-r--10']}>
+              <div className="mr-3">
                 <Button
                   variant="link"
                   title="Sitemap"

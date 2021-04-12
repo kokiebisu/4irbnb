@@ -16,7 +16,7 @@ export const BannerTemplate: React.FC<BannerTemplateProps> = () => {
       <div>
         <Header variant={$Header.HOMES} />
       </div>
-      <div className={[layout['container--spread'], layout['flex']].join(' ')}>
+      <div className="flex container-spread">
         <div
           className={[layout['flex'], layout['items-center']].join(' ')}
           style={{ width: '50%' }}

@@ -3,9 +3,9 @@ import { styleInput, styleLabel, styleContainer } from '../styling.text';
 import { checkEmail } from '@helper/auth';
 
 export interface EmailInputProps {
-  onChange?: any;
-  value?: string;
-  direction?: string;
+  onChange?: (e: any) => void;
+  value?: any;
+  direction?: 'top' | 'bottom';
   errors?: boolean;
 }
 
@@ -74,4 +74,10 @@ export const EmailInput: React.FC<EmailInputProps> = ({
       </div>
     </div>
   );
+};
+
+export const email = (props) => {
+  return {
+    email: <EmailInput {...props} />,
+  };
 };

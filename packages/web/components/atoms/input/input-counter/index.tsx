@@ -3,7 +3,7 @@ import { Icon, $Icon } from '@icons';
 export interface CounterInputProps {
   title?: string;
   subtitle?: string;
-  value?: number;
+  value?: any;
   onAdd?: () => void;
   onSubtract?: () => void;
   min?: number;
@@ -38,7 +38,7 @@ export const CounterInput: React.FC<CounterInputProps> = ({
           <h3 className="text-sm">{title}</h3>
         </div>
         <div>
-          <p className="text-xs text-gray-200">{subtitle}</p>
+          <p className="text-xs text-gray-600">{subtitle}</p>
         </div>
       </div>
       <div className="flex items-center">
@@ -74,7 +74,7 @@ export const CounterInput: React.FC<CounterInputProps> = ({
               variant={$Icon.SEMANTIC}
               semanticType="plus"
               width={15}
-              fill="green"
+              fill={value === max ? 'black' : 'green'}
               strokeWidth={5}
             />
           </button>
@@ -82,4 +82,10 @@ export const CounterInput: React.FC<CounterInputProps> = ({
       </div>
     </div>
   );
+};
+
+export const counter = (props) => {
+  return {
+    counter: <CounterInput {...props} />,
+  };
 };

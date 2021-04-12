@@ -19,6 +19,9 @@ module.exports = {
       minWidth: {
         screen: '100vw',
       },
+      inset: {
+        '4/10': '40%',
+      },
     },
   },
   variants: {},

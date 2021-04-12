@@ -3,14 +3,14 @@ import { useState } from 'react';
 import animation from '@styles/animation.module.scss';
 
 export interface LimitInputProps {
-  value?: string;
-  handleChange?: () => void;
+  value?: any;
+  onChange?: (e: any) => void;
   limit?: number;
 }
 
 export const LimitInput: React.FC<LimitInputProps> = ({
   value,
-  handleChange,
+  onChange,
   limit,
 }) => {
   const [active, setActive] = useState(false);
@@ -50,7 +50,7 @@ export const LimitInput: React.FC<LimitInputProps> = ({
           value={value}
           onFocus={() => setActive(true)}
           onBlur={() => setActive(false)}
-          onChange={handleChange}
+          onChange={onChange}
           className={`min-h-full h-12 outline-none relative font-light border border-gray-300 rounded text-sm text-gray-700 w-full px-4 py-2 ${renderBorder()} ${renderBackground()}`}
         ></input>
         <div className="absolute bottom-1 right-2">
@@ -66,4 +66,10 @@ export const LimitInput: React.FC<LimitInputProps> = ({
       )}
     </div>
   );
+};
+
+export const limit = (props) => {
+  return {
+    limit: <LimitInput {...props} />,
+  };
 };

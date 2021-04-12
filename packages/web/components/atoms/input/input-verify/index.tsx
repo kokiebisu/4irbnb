@@ -1,16 +1,9 @@
 import { useState } from 'react';
-
-import layout from '@styles/layout.module.scss';
-import font from '@styles/font.module.scss';
-import color from '@styles/color.module.scss';
-import shape from '@styles/shape.module.scss';
-import space from '@styles/space.module.scss';
 import animation from '@styles/animation.module.scss';
-
 import { Button } from '@button';
 
 export interface VerifyInputProps {
-  value?: string;
+  value?: any;
   onChange?: () => void;
 }
 
@@ -27,7 +20,7 @@ export const VerifyInput: React.FC<VerifyInputProps> = ({
     if (active) {
       return animation['focus-border--darkgreen__3'];
     }
-    return '';
+    return 'border border-gray-300';
   };
 
   const renderBackground = () => {
@@ -49,44 +42,32 @@ export const VerifyInput: React.FC<VerifyInputProps> = ({
 
   return (
     <div>
-      <div
-        style={{ minHeight: 50 }}
-        className={[layout['relative'], shape['w--full'], space['m-b--4']].join(
-          ' '
-        )}
-      >
+      <div style={{ minHeight: 50 }} className="relative w-full mb-1">
         <input
           type="tel"
+          value={value}
           spellCheck
           pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           onFocus={() => setActive(true)}
           onBlur={() => setActive(false)}
           onChange={onChange}
-          className={`${[
-            layout['relative'],
-            font['weight--300'],
-            color['b--white__2'],
-            shape['br--6'],
-            font['size--15'],
-            color['c--gray__2'],
-            shape['h--full'],
-            shape['w--full'],
-            space['p--12'],
+          className={`outline-none relative font-thin rounded-md text-md text-gray-700 h-full w-full p-4 ${[
             animation['transition'],
           ].join(' ')} ${renderBorder()} ${renderBackground()}`}
           style={{
-            outline: 'none',
             minHeight: 50,
           }}
         />
         <div className="absolute top-1/2 transform -translate-y-1/2 right-4">
-          <Button
-            content="Verify"
-            variant="verify"
-            onClick={() => alert('verify')}
-          />
+          <Button variant="verify" onClick={() => alert('verify')} />
         </div>
       </div>
     </div>
   );
+};
+
+export const verify = (props) => {
+  return {
+    verify: <VerifyInput {...props} />,
+  };
 };

@@ -57,9 +57,7 @@ const id: () => string | JSX.Element = () => {
             variant="panel"
           />
         </div> */}
-        <div
-          className={[layout['container'], staysDetail['m__content']].join(' ')}
-        >
+        <div className={`container ${[staysDetail['m__content']].join(' ')}`}>
           <div className={[details['flex__details']].join(' ')}>
             <div className={[details['w__details--left']].join(' ')}>
               {/* <Section
@@ -117,7 +115,7 @@ const id: () => string | JSX.Element = () => {
             variant={$Segment.KNOW}
           />
         </div>
-        <div className={[layout['container']].join(' ')}>
+        <div className="container">
           <Segment
             extendsTo={[
               color['b-t--white__2'],

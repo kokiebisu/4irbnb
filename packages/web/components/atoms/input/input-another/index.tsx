@@ -49,3 +49,9 @@ export const AnotherInput: React.FC<AnotherInputProps> = ({ onChange }) => {
     </div>
   );
 };
+
+export const another = (props) => {
+  return {
+    another: <AnotherInput {...props} />,
+  };
+};

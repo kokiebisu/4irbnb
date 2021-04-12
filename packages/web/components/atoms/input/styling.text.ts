@@ -40,9 +40,9 @@ export const styleLabel = (errors, fieldActive, evaluate, value) => {
     return 'absolute text-sm top-0.5 text-red-500 font-medium';
   }
   if (fieldActive || value) {
-    return 'absolute text-sm top-0.5 text-gray-500';
+    return 'transition-input absolute text-xs top-2 text-gray-500';
   }
-  return 'top-4 text-base text-gray-400';
+  return 'transition-input top-4 text-base text-gray-400';
 };
 
 /**

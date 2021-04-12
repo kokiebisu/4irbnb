@@ -58,11 +58,9 @@ export const LandingHeader: React.FC<{
 
   return (
     <header
-      className={`${expanded ? 'pt-4 pb-32' : 'py-3'} relative ${[
-        animation['transition--fast'],
-
-        layout['container--spread'],
-      ].join(' ')}`}
+      className={`${
+        expanded ? 'pt-4 pb-32' : 'py-3'
+      } relative container-spread ${[animation['transition--fast']].join(' ')}`}
     >
       <div className="md:none justify-betweennone md:flex justify-between relative">
         <div>

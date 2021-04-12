@@ -3,15 +3,15 @@ import { Button } from '@button';
 export interface ClosedInputProps {
   title?: string;
   flag?: boolean;
-  onClickSwitchToFalse?: () => void;
-  onClickSwitchToTrue?: () => void;
+  onSwitchToFalse?: () => void;
+  onSwitchToTrue?: () => void;
 }
 
 export const ClosedInput: React.FC<ClosedInputProps> = ({
   title,
   flag,
-  onClickSwitchToFalse,
-  onClickSwitchToTrue,
+  onSwitchToFalse,
+  onSwitchToTrue,
 }) => {
   return (
     <div className="flex items-center justify-between">
@@ -22,20 +22,26 @@ export const ClosedInput: React.FC<ClosedInputProps> = ({
         <div className="mr-3">
           <Button
             variant="closed"
-            content="close"
-            onClick={onClickSwitchToFalse}
+            closedType="close"
+            onClick={onSwitchToFalse}
             selected={flag === false}
           />
         </div>
         <div>
           <Button
             variant="closed"
-            content="check"
-            onClick={onClickSwitchToTrue}
+            closedType="check"
+            onClick={onSwitchToTrue}
             selected={flag === true}
           />
         </div>
       </div>
     </div>
   );
+};
+
+export const closed = (props) => {
+  return {
+    closed: <ClosedInput {...props} />,
+  };
 };
