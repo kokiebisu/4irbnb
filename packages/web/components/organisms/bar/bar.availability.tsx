@@ -1,5 +1,5 @@
 import { Button } from '@button';
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
 /**
  * Renders the modal which gives all the available options
@@ -16,7 +16,7 @@ export const AvailabilityBar: React.FC<{
         <p>Add dates for prices</p>
         <div className="flex items-center">
           <div>
-            <Icon variant={$Icon.PROFILE} profileType="star" width={12} />
+            <Icon variant={'profile'} profileType="star" width={12} />
           </div>
           <div>
             <span className="inline-block text-xs ml-1">{ratings}</span>

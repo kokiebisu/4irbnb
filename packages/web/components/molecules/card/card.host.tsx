@@ -1,6 +1,13 @@
 import Router from 'next/router';
 import { Button } from '@button';
 
+export interface HostCardProps {
+  imgUrl?: string;
+  host?: string;
+  stayType?: string;
+  location?: string;
+}
+
 /**
  * Renders the host card component
  * @param {string} imgUrl - Image of the host
@@ -8,12 +15,12 @@ import { Button } from '@button';
  * @param {string} stayType - Type of stay
  * @param {string} location - Location of the stay
  */
-const HostCard: React.FC<{
-  imgUrl?: string;
-  host?: string;
-  stayType?: string;
-  location?: string;
-}> = ({ imgUrl, host = 'Host', stayType = 'Type', location = 'Location' }) => {
+const HostCard: React.FC<HostCardProps> = ({
+  imgUrl,
+  host = 'Host',
+  stayType = 'Type',
+  location = 'Location',
+}) => {
   return (
     <div>
       <div className="">
@@ -56,7 +63,6 @@ export const host = (props) => {
   return {
     host: {
       component: <HostCard {...props} />,
-      style: '',
     },
   };
 };

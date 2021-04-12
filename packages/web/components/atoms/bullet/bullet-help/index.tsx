@@ -1,4 +1,4 @@
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface HelpBulletProps {
   helpType?: 'support' | 'tools' | 'insights' | 'education';
@@ -11,31 +11,25 @@ export interface HelpBulletProps {
 export const HelpBullet: React.FC<HelpBulletProps> = ({ helpType }) => {
   const types = {
     support: {
-      icon: (
-        <Icon
-          variant={$Icon.GENERAL}
-          generalType="customerService"
-          width={28}
-        />
-      ),
+      icon: <Icon variant="general" generalType="customerService" width={28} />,
       title: '24/7 customer support',
       description:
         'From setting up your listing to concerns about guests, our global team is here to support you by phone, email, and chat, every step of the way.',
     },
     tools: {
-      icon: <Icon variant={$Icon.GENERAL} generalType="toolbox" width={28} />,
+      icon: <Icon variant="general" generalType="toolbox" width={28} />,
       title: 'Tools to help you succeed',
       description:
         'Our tools make it easy to set the right prices, manage reservations, message with guests, receive payments, track earnings, and more.',
     },
     insights: {
-      icon: <Icon variant={$Icon.GENERAL} generalType="analytics" width={28} />,
+      icon: <Icon variant="general" generalType="analytics" width={28} />,
       title: 'Personalized insights',
       description:
         "We'll share local travel trends and suggest ways to improve to help you earn great reviews and grow your business.",
     },
     education: {
-      icon: <Icon variant={$Icon.GENERAL} generalType="education" width={28} />,
+      icon: <Icon variant="general" generalType="education" width={28} />,
       title: 'Education and training',
       description:
         'Find guidance in the Resource Centre, join a free webinar on hosting basics, and connect with other hosts in our Community Centre.',

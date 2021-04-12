@@ -1,4 +1,4 @@
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface PaginateButtonProps {
   direction?: 'left' | 'right';
@@ -17,7 +17,7 @@ export const PaginateButton: React.FC<PaginateButtonProps> = ({
   const icons = {
     left: (
       <Icon
-        variant={$Icon.ACTION}
+        variant="action"
         actionType="left"
         width={10}
         stroke={`${disable ? 'lightgray' : 'black'}`}
@@ -26,7 +26,7 @@ export const PaginateButton: React.FC<PaginateButtonProps> = ({
     ),
     right: (
       <Icon
-        variant={$Icon.ACTION}
+        variant="action"
         actionType="right"
         width={10}
         stroke={`${disable ? 'lightgray' : 'black'}`}

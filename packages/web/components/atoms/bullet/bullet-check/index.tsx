@@ -1,4 +1,4 @@
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface CheckBulletProps {
   title?: string;
@@ -11,7 +11,7 @@ export const CheckBullet: React.FC<CheckBulletProps> = ({
     <div className="flex items-center">
       <div className="mr-2">
         <Icon
-          variant={$Icon.SEMANTIC}
+          variant="semantic"
           semanticType="check"
           width={24}
           strokeWidth={2}

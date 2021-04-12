@@ -1,10 +1,12 @@
+export interface TypeStayCardProps {
+  card?: any;
+}
+
 /**
  * Renders the typestay card
  * @param {Object} card - Information about the card
  */
-const TypeStayCard: React.FC<{
-  card?: any;
-}> = ({
+const TypeStayCard: React.FC<TypeStayCardProps> = ({
   card = {
     title: 'Type',
     imgUrl:

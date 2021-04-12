@@ -1,17 +1,19 @@
 import { useState } from 'react';
 import { renderDescription } from './logic/logic.review';
 
+export interface ReviewCardProps {
+  imgUrl?: string;
+  description?: string;
+  commentedDate?: string;
+  user?: string;
+}
+
 /**
  * Renders the review card component
  * @param {string} imgUrl - Image of the review card
  * @param {string} description - Description of the review card
  */
-const ReviewCard: React.FC<{
-  imgUrl?: string;
-  description?: string;
-  commentedDate?: string;
-  user?: string;
-}> = ({
+const ReviewCard: React.FC<ReviewCardProps> = ({
   imgUrl,
   user = 'User',
   description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",

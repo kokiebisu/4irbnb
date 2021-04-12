@@ -10,7 +10,7 @@ import color from '@styles/color.module.scss';
 import layout from '@styles/layout.module.scss';
 import space from '@styles/space.module.scss';
 
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
 const HowGuestsWillBookPage = () => {
   const proceed = () => {
@@ -61,11 +61,7 @@ const HowGuestsWillBookPage = () => {
             </div>
             <div className={[layout['flex']].join(' ')}>
               <div className={[space['m-r--32']].join(' ')}>
-                <Icon
-                  variant={$Icon.GENERAL}
-                  generalType="protected"
-                  width={50}
-                />
+                <Icon variant="general" generalType="protected" width={50} />
               </div>
               <div style={{ width: '65%' }}>
                 <h3

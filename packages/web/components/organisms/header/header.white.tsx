@@ -11,7 +11,7 @@ import { Button } from '@button';
 
 import { useToggleDispatch, useToggleState } from '@context/toggle';
 
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
 import { Content } from '@button/button-transparent/content.transparent';
 
@@ -96,11 +96,11 @@ export const WhiteHeader: React.FC<{
       <div className={[shape['only__sm']].join(' ')}>
         <div className={[layout['all-center'], styles['container']].join(' ')}>
           <div style={{ width: 30 }}>
-            <Icon variant={$Icon.ACTION} actionType="left" width={12} />
+            <Icon variant="action" actionType="left" width={12} />
           </div>
           <div style={{ width: '100%', flexGrow: 1 }}>
             <Button
-              variant='searchbar'
+              variant="searchbar"
               onClick={() => console.log('pressed')}
             />
           </div>

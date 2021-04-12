@@ -1,12 +1,16 @@
 import { getParticipateContent } from './logic/logic.participate';
 
+export interface ParticipateCardProps {
+  categoryType?: string;
+}
+
 /**
  * Renders the participate card component
  * @param {string} categoryType - Type of participate card
  */
-const ParticipateCard: React.FC<{
-  categoryType?: string;
-}> = ({ categoryType = 'call' }) => {
+const ParticipateCard: React.FC<ParticipateCardProps> = ({
+  categoryType = 'call',
+}) => {
   const participates = getParticipateContent();
   return (
     <div

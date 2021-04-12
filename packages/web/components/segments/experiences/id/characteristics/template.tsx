@@ -1,5 +1,5 @@
 import { Bullet } from '@bullet';
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 import section from '@template/index.module.scss';
 
 export interface CharacteristicsTemplateProps {
@@ -66,7 +66,7 @@ export const CharacteristicsTemplate: React.FC<CharacteristicsTemplateProps> = (
               <div className="flex items-center">
                 <div className="mr-1">
                   <Icon
-                    variant={$Icon.GENERAL}
+                    variant="general"
                     generalType="devices"
                     inversed
                     width={18}
@@ -82,7 +82,7 @@ export const CharacteristicsTemplate: React.FC<CharacteristicsTemplateProps> = (
               </div>
               <div className="flex items-center flex-wrap">
                 <div>
-                  <Icon variant={$Icon.PROFILE} profileType="star" width={12} />
+                  <Icon variant={'profile'} profileType="star" width={12} />
                 </div>
                 <h3 className="pl-1 text-gray-600 text-sm">
                   {ratings.toFixed(1)}

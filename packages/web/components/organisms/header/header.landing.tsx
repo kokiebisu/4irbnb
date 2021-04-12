@@ -15,7 +15,7 @@ import { Modal, $Modal } from '@modal';
 import { Button } from '@button';
 import { Prototype } from '@prototype/searchbar';
 
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 import { useToggleDispatch, useToggleState } from '@context/toggle';
 import { Content } from '@button/button-transparent/content.transparent';
 import { useOnClickOutside } from '@hooks/useOnClickOutside';
@@ -66,7 +66,7 @@ export const LandingHeader: React.FC<{
         <div>
           <div className="mt-1 block lg:hidden">
             <Icon
-              variant={$Icon.LOGO}
+              variant={'logo'}
               logoType="noName"
               fill={criteria ? 'white' : 'red'}
               width={30}
@@ -75,7 +75,7 @@ export const LandingHeader: React.FC<{
           </div>
           <div className="hidden lg:block mt-1">
             <Icon
-              variant={$Icon.LOGO}
+              variant={'logo'}
               logoType="name"
               fill={criteria ? 'white' : 'red'}
               width={102}

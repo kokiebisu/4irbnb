@@ -1,4 +1,4 @@
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 import { PhoneNumberInput } from '@input/input-phone';
 
 export interface PhotoInputProps {
@@ -26,11 +26,7 @@ export const PhotoInput: React.FC<PhotoInputProps> = ({ onChange }) => {
                 <div className="py-4 px-5 bg-red-400 rounded">
                   <div className="flex items-center">
                     <div className="mr-3">
-                      <Icon
-                        variant={$Icon.ACTION}
-                        actionType="upload"
-                        width={20}
-                      />
+                      <Icon variant="action" actionType="upload" width={20} />
                     </div>
                     <div>
                       <h3 className="text-sm whitespace-nowrap text-white">

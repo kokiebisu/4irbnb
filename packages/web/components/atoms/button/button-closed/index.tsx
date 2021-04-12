@@ -1,4 +1,4 @@
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface ClosedButtonProps {
   selected?: boolean;
@@ -12,7 +12,7 @@ export const ClosedButton: React.FC<ClosedButtonProps> = ({
   const types = {
     close: (
       <Icon
-        variant={$Icon.ACTION}
+        variant="action"
         actionType="close"
         width={16}
         fill={selected ? 'white' : 'black'}
@@ -20,7 +20,7 @@ export const ClosedButton: React.FC<ClosedButtonProps> = ({
     ),
     check: (
       <Icon
-        variant={$Icon.SEMANTIC}
+        variant="semantic"
         semanticType="check"
         width={16}
         fill={selected ? 'white' : 'black'}

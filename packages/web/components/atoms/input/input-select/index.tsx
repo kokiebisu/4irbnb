@@ -3,7 +3,7 @@ import { useState } from 'react';
 import shape from '@styles/shape.module.scss';
 import input from '@input/input.module.scss';
 import { styleContainer } from '../styling.select';
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 import { inputTypes } from '../logic/logic.types';
 import { renderShape } from '../logic/logic.select';
 
@@ -70,10 +70,10 @@ export const SelectInput: React.FC<SelectInputProps> = ({
         </select>
         <div className="flex items-center">
           {fieldActive ? (
-            <Icon variant={$Icon.ACTION} actionType="top" width={13} />
+            <Icon variant="action" actionType="top" width={13} />
           ) : (
             <Icon
-              variant={$Icon.ACTION}
+              variant="action"
               actionType="bottom"
               width={13}
               fill={disabled ? '#DDDDDD' : 'black'}

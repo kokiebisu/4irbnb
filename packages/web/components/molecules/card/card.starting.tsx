@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Video } from '@video';
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface StartingCardProps {
   ratings?: number;
@@ -53,7 +53,7 @@ const StartingCard: React.FC<StartingCardProps> = ({
         <div className="flex flex-col justify-center">
           <div className="flex items-center mb-3">
             <div className="mr-1">
-              <Icon variant={$Icon.PROFILE} profileType="star" width={10} />
+              <Icon variant={'profile'} profileType="star" width={10} />
             </div>
             <div className="mr-1">
               <p className="text-xs">{ratings}</p>
@@ -87,12 +87,7 @@ const StartingCard: React.FC<StartingCardProps> = ({
           </div>
         </div>
         <div>
-          <Icon
-            variant={$Icon.ACTION}
-            actionType="heart"
-            width={20}
-            height={20}
-          />
+          <Icon variant="action" actionType="heart" width={20} height={20} />
         </div>
       </div>
     </div>

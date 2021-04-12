@@ -1,4 +1,4 @@
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface OnlineHostBulletProps {
   onlinehostType?:
@@ -15,17 +15,17 @@ export const OnlineHostBullet: React.FC<OnlineHostBulletProps> = ({
 }) => {
   const types = {
     home: {
-      icon: <Icon variant={$Icon.GENERAL} generalType="home" />,
+      icon: <Icon variant="general" generalType="home" />,
       title: 'Host from home',
       description: 'Share your expertise and a window to your world',
     },
     global: {
-      icon: <Icon variant={$Icon.GENERAL} generalType="global" />,
+      icon: <Icon variant="general" generalType="global" />,
       title: 'Meet global guests',
       description: 'Make the world feel a little smaller and a lot friendlier.',
     },
     business: {
-      icon: <Icon variant={$Icon.GENERAL} generalType="lightening" />,
+      icon: <Icon variant="general" generalType="lightening" />,
       title: 'Build a business',
       description:
         'Earn money doing something you love with support from Airbnb.',

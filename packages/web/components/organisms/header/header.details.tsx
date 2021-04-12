@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import shape from '@styles/shape.module.scss';
 import header from '@header/header.module.scss';
 
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
 import { Button } from '@button';
 
@@ -78,7 +78,7 @@ export const DetailsHeader: React.FC<{
                     >
                       <div className="inline-block mr-1">
                         <Icon
-                          variant={$Icon.PROFILE}
+                          variant={'profile'}
                           profileType="star"
                           width={10}
                         />

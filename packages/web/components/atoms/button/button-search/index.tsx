@@ -1,4 +1,4 @@
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface SearchButtonProps {
   expand?: boolean;
@@ -17,7 +17,7 @@ export const SearchButton: React.FC<SearchButtonProps> = ({ expand }) => {
     >
       <div className={`${expand ? 'mr-1' : 'p-4'}`}>
         <Icon
-          variant={$Icon.GENERAL}
+          variant="general"
           generalType="magnifyGlass"
           width={13}
           height={13}

@@ -8,7 +8,7 @@ import modal from '@modal/modal.module.scss';
 
 import { Button } from '@button';
 
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
 import { useToggleDispatch } from '@context/toggle';
 
@@ -37,7 +37,7 @@ export const PrivacyModal: React.FC<{}> = () => {
             <div className="mr-3">Your Privacy</div>
             <div className="relative top-1">
               <Icon
-                variant={$Icon.GENERAL}
+                variant="general"
                 generalType="lock"
                 width={16}
                 fill="#428BFF"

@@ -1,4 +1,4 @@
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 
 export const Content: React.FC<{ kind?: string; inverse?: boolean }> = ({
   kind,
@@ -9,7 +9,7 @@ export const Content: React.FC<{ kind?: string; inverse?: boolean }> = ({
       <>
         <div className="items-center mr-2">
           <Icon
-            variant={$Icon.GENERAL}
+            variant="general"
             generalType="globe"
             width={16}
             fill={inverse ? 'white' : '#363636'}

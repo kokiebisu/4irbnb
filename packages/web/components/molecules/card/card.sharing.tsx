@@ -1,6 +1,8 @@
-const SharingCard: React.FC<{
+export interface SharingCardProps {
   sharing?: string;
-}> = ({ sharing = 'meditate' }) => {
+}
+
+const SharingCard: React.FC<SharingCardProps> = ({ sharing = 'meditate' }) => {
   const sharings = {
     meditate: {
       imgUrl:

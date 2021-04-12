@@ -1,6 +1,8 @@
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 
-const AgainCard: React.FC<{}> = () => {
+export interface AgainCardProps {}
+
+const AgainCard: React.FC<AgainCardProps> = () => {
   return (
     <div className="rounded-lg border border-gray-300">
       <div className="p-4">
@@ -8,7 +10,7 @@ const AgainCard: React.FC<{}> = () => {
           <div className="mr-3">
             <div className="p-2 rounded-full bg-red-600">
               <Icon
-                variant={$Icon.SEMANTIC}
+                variant="semantic"
                 semanticType="exclamation"
                 width={18}
                 fill="white"
@@ -36,7 +38,6 @@ export const again = (props) => {
   return {
     again: {
       component: <AgainCard {...props} />,
-      style: '',
     },
   };
 };

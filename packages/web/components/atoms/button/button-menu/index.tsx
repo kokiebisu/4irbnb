@@ -1,4 +1,4 @@
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface MenuButtonProps {
   authenticated?: boolean;
@@ -24,23 +24,13 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
       } inline-flex items-center py-2 pl-3 pr-2 bg-white rounded-full`}
     >
       <div className="mr-3">
-        <Icon
-          variant={$Icon.GENERAL}
-          generalType="bars"
-          fill="black"
-          width={12}
-        />
+        <Icon variant="general" generalType="bars" fill="black" width={12} />
       </div>
       <div>
         {authenticated && data ? (
           <img className="block rounded-full w-8 h-8" src={data.imgUrl} />
         ) : (
-          <Icon
-            variant={$Icon.PROFILE}
-            profileType="avatar"
-            width={30}
-            fill="gray"
-          />
+          <Icon variant="profile" profileType="avatar" width={30} fill="gray" />
         )}
       </div>
     </div>

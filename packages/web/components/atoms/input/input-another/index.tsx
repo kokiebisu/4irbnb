@@ -1,4 +1,4 @@
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface AnotherInputProps {
   onChange?: (e: any) => void;
@@ -27,7 +27,7 @@ export const AnotherInput: React.FC<AnotherInputProps> = ({ onChange }) => {
                     <div>
                       <div className="flex items-center">
                         <Icon
-                          variant={$Icon.SEMANTIC}
+                          variant="semantic"
                           semanticType="plus"
                           width={45}
                           fill="#D8D8D8"

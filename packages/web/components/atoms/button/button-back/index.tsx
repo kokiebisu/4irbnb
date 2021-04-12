@@ -1,4 +1,4 @@
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface BackButtonProps {}
 
@@ -11,7 +11,7 @@ export const BackButton: React.FC<BackButtonProps> = () => {
     <div className="flex items-center bg-transparent">
       <div>
         <Icon
-          variant={$Icon.ACTION}
+          variant="action"
           actionType="left"
           width={20}
           stroke="#61AFB2"

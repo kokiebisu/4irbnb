@@ -1,11 +1,16 @@
+export interface CategoryCardProps {
+  imgUrl?: string;
+  title?: string;
+}
+
 /** Renders the category card component
  * @param {string} imgUrl - Image of the card
  * @param {string} title - Title of the card
  */
-const CategoryCard: React.FC<{
-  imgUrl?: string;
-  title?: string;
-}> = ({ imgUrl, title = 'Title' }) => {
+const CategoryCard: React.FC<CategoryCardProps> = ({
+  imgUrl,
+  title = 'Title',
+}) => {
   return (
     <div>
       <div className="relative" style={{ paddingTop: '66.66%' }}>

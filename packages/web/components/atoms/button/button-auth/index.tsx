@@ -1,4 +1,4 @@
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface AuthButtonProps {
   authType?: 'email' | 'facebook' | 'google' | 'apple';
@@ -12,19 +12,19 @@ export const AuthButton: React.FC<AuthButtonProps> = ({ authType }) => {
   const types = {
     email: {
       name: 'Email',
-      icon: <Icon variant={$Icon.GENERAL} generalType="email" width={17} />,
+      icon: <Icon variant="general" generalType="email" width={17} />,
     },
     facebook: {
       name: 'Facebook',
-      icon: <Icon variant={$Icon.LOGO} logoType="facebook" width={19} />,
+      icon: <Icon variant="logo" logoType="facebook" width={19} />,
     },
     google: {
       name: 'Google',
-      icon: <Icon variant={$Icon.LOGO} logoType="google" width={17} />,
+      icon: <Icon variant="logo" logoType="google" width={17} />,
     },
     apple: {
       name: 'Apple',
-      icon: <Icon variant={$Icon.LOGO} logoType="apple" width={17} />,
+      icon: <Icon variant="logo" logoType="apple" width={17} />,
     },
   };
   return (

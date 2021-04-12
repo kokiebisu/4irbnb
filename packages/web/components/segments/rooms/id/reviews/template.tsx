@@ -1,4 +1,4 @@
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 import section from '@template/index.module.scss';
 
 import { Button } from '@button';
@@ -34,7 +34,7 @@ export const ReviewsTemplate: React.FC<ReviewsTemplateProps> = ({
         <div className="py-3 flex items-center">
           <div className="flex items-center">
             <div className="mr-2">
-              <Icon variant={$Icon.PROFILE} profileType="star" width={20} />
+              <Icon variant={'profile'} profileType="star" width={20} />
             </div>
             <h3 className="mr-2 text-2xl text-gray-700">
               {ratings.toFixed(1)}

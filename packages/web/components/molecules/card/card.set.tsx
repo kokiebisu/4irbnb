@@ -1,6 +1,8 @@
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
-const SetCard: React.FC<{}> = () => {
+export interface SetCardProps {}
+
+const SetCard: React.FC<SetCardProps> = () => {
   return (
     <div className="rounded-lg border border-gray-300">
       <div className="w-full rounded-t-lg h-2 bg-green-600" />
@@ -8,7 +10,7 @@ const SetCard: React.FC<{}> = () => {
         <div className="flex items-center">
           <div className="mr-3">
             <Icon
-              variant={$Icon.GENERAL}
+              variant="general"
               generalType="check"
               width={18}
               fill="#268A04"

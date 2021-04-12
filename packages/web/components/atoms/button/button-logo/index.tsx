@@ -1,4 +1,4 @@
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface LogoButtonProps {
   noName?: boolean;
@@ -12,21 +12,9 @@ export interface LogoButtonProps {
  */
 export const LogoButton: React.FC<LogoButtonProps> = ({ noName, fill }) => {
   return noName ? (
-    <Icon
-      variant={$Icon.LOGO}
-      logoType="noName"
-      fill={fill}
-      width={30}
-      height={32}
-    />
+    <Icon variant="logo" logoType="noName" fill={fill} width={30} height={32} />
   ) : (
-    <Icon
-      variant={$Icon.LOGO}
-      logoType="name"
-      fill={fill}
-      width={102}
-      height={32}
-    />
+    <Icon variant="logo" logoType="name" fill={fill} width={102} height={32} />
   );
 };
 

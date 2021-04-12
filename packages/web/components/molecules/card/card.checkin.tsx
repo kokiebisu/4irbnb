@@ -1,4 +1,4 @@
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 import { useCheckin } from './logic/logic.checkin';
 import {
   checkInBorder,
@@ -6,12 +6,14 @@ import {
   guestBorder,
 } from './logic/logic.checkin';
 
+export interface CheckInCardProps {
+  length?: number;
+}
+
 /**
  * Renders the checkin card
  */
-const CheckInCard: React.FC<{
-  length?: number;
-}> = () => {
+const CheckInCard: React.FC<CheckInCardProps> = () => {
   const [selected, dispatchSelected] = useCheckin();
 
   return (
@@ -24,7 +26,7 @@ const CheckInCard: React.FC<{
             </h3>
             <div className="py-3 text-gray-300 text-xl font-medium w-32">
               <div className="inline-block mr-1">
-                <Icon variant={$Icon.PROFILE} profileType="star" width={10} />
+                <Icon variant={'profile'} profileType="star" width={10} />
               </div>
               <span className="inline-block text-sm mr-1 text-gray-500">
                 4.93
@@ -89,11 +91,7 @@ const CheckInCard: React.FC<{
                     <p className="font-light text-sm">1 guest</p>
                   </div>
                   <div>
-                    <Icon
-                      variant={$Icon.ACTION}
-                      actionType="bottom"
-                      width={14}
-                    />
+                    <Icon variant="action" actionType="bottom" width={14} />
                   </div>
                 </div>
               </div>

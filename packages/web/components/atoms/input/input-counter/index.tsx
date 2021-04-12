@@ -1,4 +1,4 @@
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface CounterInputProps {
   title?: string;
@@ -51,7 +51,7 @@ export const CounterInput: React.FC<CounterInputProps> = ({
             onClick={onSubtract}
           >
             <Icon
-              variant={$Icon.SEMANTIC}
+              variant="semantic"
               semanticType="minus"
               width={15}
               fill="green"
@@ -71,7 +71,7 @@ export const CounterInput: React.FC<CounterInputProps> = ({
             onClick={onAdd}
           >
             <Icon
-              variant={$Icon.SEMANTIC}
+              variant="semantic"
               semanticType="plus"
               width={15}
               fill={value === max ? 'black' : 'green'}
