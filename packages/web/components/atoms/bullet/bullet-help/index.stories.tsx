@@ -18,5 +18,5 @@ const HelpBulletStory: Story<HelpBulletProps> = (args) => (
 );
 export const Help = HelpBulletStory.bind({});
 Help.args = {
-  help: 'support',
+  helpType: 'support',
 };

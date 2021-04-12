@@ -1,4 +1,3 @@
-import React from 'react';
 import { ActionIcon, ActionIconTypeProps } from './action';
 import { AmenityIcon, AmenityIconTypeProps } from './amenity';
 import { ExperienceIcon, ExperienceIconTypeProps } from './experience';
@@ -8,18 +7,7 @@ import { ProfileIcon, ProfileIconTypeProps } from './profile';
 import { SemanticIcon, SemanticIconTypeProps } from './semantic';
 import { StayIcon, StayIconTypeProps } from './stay';
 
-export const $Icon = {
-  LOGO: 'logo',
-  PROFILE: 'profile',
-  AMENITY: 'amenity',
-  EXPERIENCE: 'experience',
-  ACTION: 'action',
-  SEMANTIC: 'semantic',
-  GENERAL: 'general',
-  STAY: 'stay',
-};
-
-export interface IconProps {
+export interface BaseIconProps {
   fill?: string;
   circled?: boolean;
   inversed?: boolean;
@@ -29,8 +17,8 @@ export interface IconProps {
   strokeWidth?: number;
 }
 
-export interface IconPropsWithType
-  extends IconProps,
+export interface IconProps
+  extends BaseIconProps,
     LogoIconTypeProps,
     AmenityIconTypeProps,
     ExperienceIconTypeProps,
@@ -38,9 +26,19 @@ export interface IconPropsWithType
     ProfileIconTypeProps,
     SemanticIconTypeProps,
     GeneralIconTypeProps,
-    StayIconTypeProps {}
+    StayIconTypeProps {
+  variant:
+    | 'logo'
+    | 'profile'
+    | 'amenity'
+    | 'experience'
+    | 'action'
+    | 'semantic'
+    | 'general'
+    | 'stay';
+}
 
-export const Icon: React.FC<IconPropsWithType & { variant: string }> = ({
+export const Icon: React.FC<IconProps> = ({
   variant,
   width,
   height,

@@ -1,10 +1,10 @@
-import { IconProps } from '@icons';
+import { BaseIconProps } from '@icons';
 
 export interface ProfileIconTypeProps {
   profileType?: 'avatar' | 'star' | 'superhost' | 'verified';
 }
 
-export const ProfileIcon: React.FC<IconProps & ProfileIconTypeProps> = ({
+export const ProfileIcon: React.FC<BaseIconProps & ProfileIconTypeProps> = ({
   profileType,
   ...props
 }) => {
@@ -16,7 +16,7 @@ export const ProfileIcon: React.FC<IconProps & ProfileIconTypeProps> = ({
   return types[profileType];
 };
 
-export const AvatarIcon: React.FC<IconProps> = ({ fill }) => {
+export const AvatarIcon: React.FC<BaseIconProps> = ({ fill }) => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -27,7 +27,7 @@ export const AvatarIcon: React.FC<IconProps> = ({ fill }) => {
   );
 };
 
-export const StarIcon: React.FC<IconProps> = ({ fill = '#E61E4D' }) => {
+export const StarIcon: React.FC<BaseIconProps> = ({ fill = '#E61E4D' }) => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 37.286 37.287">
       <g>
@@ -45,7 +45,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
   );
 };
 
-export const SuperhostIcon: React.FC<IconProps> = ({ fill }) => {
+export const SuperhostIcon: React.FC<BaseIconProps> = ({ fill }) => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 511.999 511.999">
       <g clipRule="evenodd" fillRule="evenodd">
@@ -70,7 +70,7 @@ export const SuperhostIcon: React.FC<IconProps> = ({ fill }) => {
   );
 };
 
-export const Verified: React.FC<IconProps> = ({ fill }) => {
+export const Verified: React.FC<BaseIconProps> = ({ fill }) => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 512.02797 512">
       <path
