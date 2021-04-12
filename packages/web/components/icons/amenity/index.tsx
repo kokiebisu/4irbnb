@@ -1,4 +1,4 @@
-import { IconProps } from '@icons';
+import { BaseIconProps } from '@icons';
 
 export interface AmenityIconTypeProps {
   amenityType?:
@@ -10,7 +10,7 @@ export interface AmenityIconTypeProps {
     | 'carbonAlarm';
 }
 
-export const AmenityIcon: React.FC<IconProps & AmenityIconTypeProps> = ({
+export const AmenityIcon: React.FC<BaseIconProps & AmenityIconTypeProps> = ({
   amenityType,
 }) => {
   const types = {
@@ -24,7 +24,7 @@ export const AmenityIcon: React.FC<IconProps & AmenityIconTypeProps> = ({
   return types[amenityType];
 };
 
-export const SmokeAlarmIcon = ({ fill = 'black' }) => {
+export const SmokeAlarmIcon: React.FC<BaseIconProps> = ({ fill = 'black' }) => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -35,7 +35,7 @@ export const SmokeAlarmIcon = ({ fill = 'black' }) => {
   );
 };
 
-export const TVIcon = ({ fill = 'black' }) => {
+export const TVIcon: React.FC<BaseIconProps> = ({ fill = 'black' }) => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -46,7 +46,7 @@ export const TVIcon = ({ fill = 'black' }) => {
   );
 };
 
-export const KitchenIcon = ({ fill = 'black' }) => {
+export const KitchenIcon: React.FC<BaseIconProps> = ({ fill = 'black' }) => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -57,7 +57,7 @@ export const KitchenIcon = ({ fill = 'black' }) => {
   );
 };
 
-export const HeatingIcon = ({ fill = 'black' }) => {
+export const HeatingIcon: React.FC<BaseIconProps> = ({ fill = 'black' }) => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -68,7 +68,9 @@ export const HeatingIcon = ({ fill = 'black' }) => {
   );
 };
 
-export const PrivateEntranceIcon = ({ fill = 'black' }) => {
+export const PrivateEntranceIcon: React.FC<BaseIconProps> = ({
+  fill = 'black',
+}) => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -79,7 +81,9 @@ export const PrivateEntranceIcon = ({ fill = 'black' }) => {
   );
 };
 
-export const CarbonMonoxideAlarmIcon = ({ fill = 'black' }) => {
+export const CarbonMonoxideAlarmIcon: React.FC<BaseIconProps> = ({
+  fill = 'black',
+}) => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 32 32">
       <path

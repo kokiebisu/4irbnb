@@ -1,7 +1,6 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { StayIcon, StayIconTypeProps } from '.';
-import { IconProps, IconPropsWithType } from '..';
+import { BaseIconProps, IconProps } from '..';
 
 export default {
   title: 'Atoms/Icons/Stay',
@@ -13,7 +12,7 @@ const size = {
   height: 24,
 };
 
-const IconStory: Story<IconPropsWithType> = (args) => (
+const IconStory: Story<BaseIconProps> = (args) => (
   <div style={{ ...size }}>
     <StayIcon {...args} />
   </div>

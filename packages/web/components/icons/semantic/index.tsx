@@ -1,4 +1,4 @@
-import { IconProps } from '@icons';
+import { BaseIconProps } from '@icons';
 
 export interface SemanticIconTypeProps {
   semanticType?:
@@ -10,7 +10,7 @@ export interface SemanticIconTypeProps {
     | 'saved';
 }
 
-export const SemanticIcon: React.FC<IconProps & SemanticIconTypeProps> = ({
+export const SemanticIcon: React.FC<BaseIconProps & SemanticIconTypeProps> = ({
   semanticType,
   ...props
 }) => {
@@ -25,7 +25,7 @@ export const SemanticIcon: React.FC<IconProps & SemanticIconTypeProps> = ({
   return types[semanticType];
 };
 
-export const ExclamationIcon: React.FC<IconProps> = ({ fill = '#000' }) => {
+export const ExclamationIcon: React.FC<BaseIconProps> = ({ fill = '#000' }) => {
   return (
     <svg
       stroke={fill}
@@ -41,7 +41,7 @@ export const ExclamationIcon: React.FC<IconProps> = ({ fill = '#000' }) => {
   );
 };
 
-export const WarningIcon: React.FC<IconProps> = ({ fill }) => {
+export const WarningIcon: React.FC<BaseIconProps> = ({ fill }) => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 16 16">
       <path
@@ -52,7 +52,7 @@ export const WarningIcon: React.FC<IconProps> = ({ fill }) => {
   );
 };
 
-export const MinusIcon: React.FC<IconProps> = ({
+export const MinusIcon: React.FC<BaseIconProps> = ({
   fill = 'black',
   strokeWidth = 3,
   ...props
@@ -70,7 +70,10 @@ export const MinusIcon: React.FC<IconProps> = ({
   );
 };
 
-export const PlusIcon: React.FC<IconProps> = ({ fill = 'black', ...props }) => {
+export const PlusIcon: React.FC<BaseIconProps> = ({
+  fill = 'black',
+  ...props
+}) => {
   return (
     <svg {...props} width="100%" height="auto" viewBox="0 0 24 24">
       <rect fill={fill} height="2" rx="1" width="12" x="6" y="11"></rect>
@@ -79,7 +82,7 @@ export const PlusIcon: React.FC<IconProps> = ({ fill = 'black', ...props }) => {
   );
 };
 
-export const CheckIcon: React.FC<IconProps> = ({
+export const CheckIcon: React.FC<BaseIconProps> = ({
   fill = 'black',
   circled,
   inversed,
@@ -126,7 +129,7 @@ export const CheckIcon: React.FC<IconProps> = ({
   );
 };
 
-export const SavedIcon: React.FC<IconProps> = ({ fill }) => {
+export const SavedIcon: React.FC<BaseIconProps> = ({ fill }) => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 24 24">
       <path
