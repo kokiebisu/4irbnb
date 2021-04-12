@@ -1,7 +1,65 @@
 import { motion } from 'framer-motion';
+import { AuthButtonProps } from './button-auth';
+import { BackButtonProps } from './button-back';
+import { BannerButtonProps } from './button-banner';
+import { BarButtonProps } from './button-bar';
+import { BorderButtonProps } from './button-border';
+import { CalendarButtonProps } from './button-calendar';
+import { ClosedButtonProps } from './button-closed';
+import { CurrencyButtonProps } from './button-currency';
+import { DestinationButtonProps } from './button-destination';
+import { ExpandButtonProps } from './button-expand';
+import { FilterButtonProps } from './button-filter';
+import { GlobeButtonProps } from './button-globe';
+import { LinkButtonProps } from './button-link';
+import { LocationButtonProps } from './button-location';
+import { LogoButtonProps } from './button-logo';
+import { MenuButtonProps } from './button-menu';
+import { ModalButtonProps } from './button-modal';
+import { NearbyButtonProps } from './button-nearby';
+import { OptionButtonProps } from './button-option';
+import { PaginateButtonProps } from './button-paginate';
+import { PrimaryButtonProps } from './button-primary';
+import { PrivacyButtonProps } from './button-privacy';
+import { ReportButtonProps } from './button-report';
+import { SearchButtonProps } from './button-search';
+import { SearchbarButtonProps } from './button-searchbar';
+import { TransparentButtonProps } from './button-transparent';
+import { UnderlineButtonProps } from './button-underline';
+import { VerifyButtonProps } from './button-verify';
+import { VideoButtonProps } from './button-video';
 import { factory } from './utils/factory';
 
-export interface ButtonProps {
+export interface ButtonProps
+  extends AuthButtonProps,
+    BackButtonProps,
+    BannerButtonProps,
+    BarButtonProps,
+    BorderButtonProps,
+    CalendarButtonProps,
+    ClosedButtonProps,
+    CurrencyButtonProps,
+    DestinationButtonProps,
+    ExpandButtonProps,
+    FilterButtonProps,
+    GlobeButtonProps,
+    LinkButtonProps,
+    LocationButtonProps,
+    LogoButtonProps,
+    MenuButtonProps,
+    ModalButtonProps,
+    NearbyButtonProps,
+    OptionButtonProps,
+    PaginateButtonProps,
+    PrimaryButtonProps,
+    PrivacyButtonProps,
+    ReportButtonProps,
+    SearchButtonProps,
+    SearchbarButtonProps,
+    TransparentButtonProps,
+    UnderlineButtonProps,
+    VerifyButtonProps,
+    VideoButtonProps {
   variant:
     | 'auth'
     | 'menu'
@@ -31,12 +89,8 @@ export interface ButtonProps {
     | 'destination'
     | 'currency'
     | 'verify';
-  extendsTo?: string;
   onClick?: () => void;
-  block?: boolean;
-  animate?: boolean;
   stretch?: boolean;
-  [property: string]: any;
 }
 
 /**
@@ -49,9 +103,6 @@ export const Button: React.FC<ButtonProps> = ({
   variant,
   children,
   onClick,
-  to,
-  block,
-  animate,
   stretch,
   ...props
 }) => {
@@ -62,6 +113,8 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <motion.button
+      whileTap={{ ...(disable && { scale: 0.95 }) }}
+      whileHover={{ ...(disable && { scale: 1.05 }) }}
       data-testid={`${variant}-button`}
       className="transition"
       onClick={!disable ? onClick : undefined}

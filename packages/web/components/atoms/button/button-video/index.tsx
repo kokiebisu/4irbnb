@@ -7,7 +7,11 @@ export interface VideoButtonProps {
 
 export const VideoButton: React.FC<VideoButtonProps> = ({ play }) => {
   return (
-    <div className={`rounded-full p-3 ${[animation['hover-blur']].join(' ')}`}>
+    <div
+      className={`inline-block rounded-full p-3 ${[
+        animation['hover-blur'],
+      ].join(' ')}`}
+    >
       {play ? (
         <Icon
           variant={$Icon.ACTION}

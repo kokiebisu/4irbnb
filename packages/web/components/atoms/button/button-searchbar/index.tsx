@@ -35,17 +35,17 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({ mini }) => {
           </div>
         </div>
       ) : (
-        <div className="py-5 pl-6 pr-12 absolute top-0 bottom-0 right-0 left-0">
-          <div className="mr-4">
+        <div className="shadow-md rounded-full py-3 pl-6 pr-12 flex items-center">
+          <div className="mr-2">
             <Icon
               variant={$Icon.GENERAL}
               generalType="magnifyGlass"
               width={15}
-              stroke="white"
+              stroke="black"
               strokeWidth={4}
             />
           </div>
-          <div className="font-thin text-sm text-gray-200">Search stays</div>
+          <div className="font-thin text-sm text-gray-500">Search stays</div>
         </div>
       )}
     </>
