@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-import { styleInput, styleLabel, styleContainer } from '../styling.select';
+import { styleContainer } from '../styling.select';
 import { Icon, $Icon } from '@icons';
 
 export interface GuestsInputProps {
-  onChange?: any;
-  value?: string;
-  direction?: string;
+  onChange?: (e: any) => void;
+  value?: any;
+  direction?: undefined | 'top' | 'bottom';
   errors?: boolean;
 }
 
@@ -72,4 +72,10 @@ export const GuestsInput: React.FC<GuestsInputProps> = ({
       </div>
     </div>
   );
+};
+
+export const guests = (props) => {
+  return {
+    guests: <GuestsInput {...props} />,
+  };
 };

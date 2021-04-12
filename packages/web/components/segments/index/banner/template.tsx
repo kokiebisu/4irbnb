@@ -52,7 +52,7 @@ export const BannerTemplate: React.FC<BannerTemplateProps> = ({
             />
           </div>
           <div
-            className={[layout['container--spread']].join(' ')}
+            className="container-spread"
             style={{
               display: 'flex',
               flexDirection: 'column',

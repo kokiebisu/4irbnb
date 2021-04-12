@@ -5,8 +5,8 @@ import { checkPassword } from '@helper/auth';
 
 export interface PasswordInputProps {
   onChange?: (e: any) => void;
-  value?: string;
-  direction?: string;
+  value?: any;
+  direction?: 'top' | 'bottom' | undefined;
   errors?: boolean;
 }
 
@@ -84,4 +84,10 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
       </div>
     </div>
   );
+};
+
+export const password = (props) => {
+  return {
+    password: <PasswordInput {...props} />,
+  };
 };

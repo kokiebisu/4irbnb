@@ -2,8 +2,8 @@ import { useState } from 'react';
 import animation from '@styles/animation.module.scss';
 
 export interface TextAreaInputProps {
-  value?: string;
-  onChange?: () => void;
+  value?: any;
+  onChange?: (e: any) => void;
   limit?: number;
 }
 
@@ -50,7 +50,7 @@ export const TextAreaInput: React.FC<TextAreaInputProps> = ({
           onFocus={() => setActive(true)}
           onBlur={() => setActive(false)}
           onChange={onChange}
-          className={`relative font-light border border-gray-400 rounded text-md text-gray-500 h-full w-full p-3 outline-none ${[
+          className={`relative font-thin border border-gray-400 rounded text-md text-gray-700 h-full w-full p-3 outline-none ${[
             animation['transition'],
           ].join(' ')} ${renderBorder()} ${renderBackground()}`}
           style={{
@@ -71,4 +71,10 @@ export const TextAreaInput: React.FC<TextAreaInputProps> = ({
       )}
     </div>
   );
+};
+
+export const textarea = (props) => {
+  return {
+    textarea: <TextAreaInput {...props} />,
+  };
 };

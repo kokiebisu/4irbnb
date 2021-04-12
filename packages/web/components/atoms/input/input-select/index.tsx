@@ -8,9 +8,9 @@ import { inputTypes } from '../logic/logic.types';
 import { renderShape } from '../logic/logic.select';
 
 export interface SelectInputProps {
-  onChange?: () => void;
-  value?: string;
-  direction?: string;
+  onChange?: (e: any) => void;
+  value?: any;
+  direction?: 'top' | 'bottom' | undefined;
   errors?: boolean;
   disabled?: boolean;
   inputType?: string;
@@ -83,4 +83,10 @@ export const SelectInput: React.FC<SelectInputProps> = ({
       </div>
     </div>
   );
+};
+
+export const select = (props) => {
+  return {
+    select: <SelectInput {...props} />,
+  };
 };

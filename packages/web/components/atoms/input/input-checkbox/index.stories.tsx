@@ -1,4 +1,3 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { CheckboxInput, CheckboxInputProps } from '.';
 
@@ -14,4 +13,7 @@ const InputStory: Story<CheckboxInputProps> = (args) => (
 export const Checkbox = InputStory.bind({});
 Checkbox.args = {
   onChange: () => alert('on change'),
+  value: false,
+  title: 'Title here',
+  description: 'Description here',
 };

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { BirthdateInput, BirthdateInputProps } from '.';
 
@@ -14,4 +13,8 @@ const InputStory: Story<BirthdateInputProps> = (args) => (
 export const Birthdate = InputStory.bind({});
 Birthdate.args = {
   onChange: () => alert('on change'),
+  value: '1995',
+  direction: undefined,
+  errors: false,
+  dateType: 'year',
 };

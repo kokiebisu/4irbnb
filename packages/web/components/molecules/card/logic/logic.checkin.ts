@@ -1,97 +1,41 @@
-import shape from "@styles/shape.module.scss";
-import color from "@styles/color.module.scss";
-import space from "@styles/space.module.scss";
-import { useReducer } from "react";
+import { useReducer } from 'react';
 
 export const checkInBorder = (selected) => {
   if (selected.checkin) {
   } else if (selected.checkout) {
   } else if (selected.guests) {
-    return [
-      shape["w--50p"],
-      shape["btlr--6"],
-      color["b-l--white__3"],
-      color["b-r--white__3"],
-      color["b-t--white__3"],
-      space["p-v--10"],
-    ].join(" ");
+    return 'py-3 border-t border-r border-l rounded-tl-md w-1/2 border-gray-800';
   }
-  return [
-    shape["w--50p"],
-    shape["btlr--6"],
-    color["b-l--white__3"],
-    color["b-r--white__3"],
-    color["b-b--white__3"],
-    color["b-t--white__3"],
-    space["p-v--10"],
-  ].join(" ");
+  return 'w-1/2 rounded-tl-md border border-gray-300 py-3';
 };
 
 export const checkOutBorder = (selected) => {
   if (selected.checkin) {
   } else if (selected.checkout) {
   } else if (selected.guests) {
-    return [
-      shape["w--50p"],
-      shape["btrr--6"],
-      color["b-r--white__3"],
-      color["b-t--white__3"],
-      space["p-v--10"],
-    ].join(" ");
+    return 'w-1/2 rounded-tr-md border-r border-t border-gray-300 py-3';
   }
-  return [
-    shape["w--50p"],
-    shape["btrr--6"],
-    color["b-r--white__3"],
-    color["b-b--white__3"],
-    color["b-t--white__3"],
-    space["p-v--10"],
-  ].join(" ");
+  return 'w-1/2 rounded-tr-md border-r border-b border-t border-gray-300 py-3';
 };
 
 export const guestBorder = (selected) => {
   if (selected.checkin) {
-    return [
-      shape["h--full"],
-      color["b-t--transparent"],
-      color["b-b--transparent"],
-      color["b-l--transparent"],
-      color["b-r--transparent"],
-      space["p-v--12"],
-      shape["w--full"],
-      shape["bbr--6"],
-      color["bg--transparent"],
-    ].join(" ");
+    return 'h-full border border-transparent py-3 w-full rounded-b-md bg-transparent';
   } else if (selected.checkout) {
   } else if (selected.guests) {
-    return [
-      shape["h--full"],
-      color["b--gray__3"],
-      space["p-v--12"],
-      shape["br--6"],
-    ].join(" ");
+    return 'h-full border border-gray-800 py-4 rounded-md';
   }
-  return [
-    shape["h--full"],
-    color["b-t--transparent"],
-    color["b-b--transparent"],
-    color["b-l--transparent"],
-    color["b-r--transparent"],
-    space["p-v--12"],
-    shape["w--full"],
-    shape["bbr--6"],
-    color["bg--transparent"],
-  ].join(" ");
+  return 'h-full border border-transparent py-3 w-full rounded-b-md bg-transparent';
 };
 
 export const useCheckin = () => {
   const reducer = (state, action) => {
     switch (action.type) {
-      case "guests":
+      case 'guests':
         return { ...state, guests: !state.guests };
-      case "checkout":
+      case 'checkout':
         return { ...state, checkout: !state.checkout };
-      case "checkin":
+      case 'checkin':
         return { ...state, checkin: !state.checkin };
       default:
         return state;

@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 import { styleInput, styleLabel, styleContainer } from '../styling.select';
-import { birthdate, renderShape } from '../logic/logic.birthdate';
+import { birthdates, renderShape } from '../logic/logic.birthdate';
 
 export interface BirthdateInputProps {
-  handleChange?: any;
-  value?: string;
-  direction?: string;
+  onChange?: (e: any) => void;
+  value?: any;
+  direction?: 'top' | 'bottom' | undefined;
   errors?: boolean;
   dateType?: 'year' | 'month' | 'day';
 }
@@ -15,13 +15,13 @@ export interface BirthdateInputProps {
  * Renders the text input component
  * @param {string} name - Type of input
  * @param {string} placeholder - Placeholder
- * @param handleChange
+ * @param onChange
  * @param {string} value - Current value of the input
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
 export const BirthdateInput: React.FC<BirthdateInputProps> = ({
-  handleChange,
+  onChange,
   value,
   direction,
   errors = false,
@@ -41,12 +41,12 @@ export const BirthdateInput: React.FC<BirthdateInputProps> = ({
         <select
           id={dateType}
           name={dateType}
-          onChange={handleChange}
+          onChange={onChange}
           value={value}
           defaultValue=""
           onFocus={() => setFieldActive(true)}
           onBlur={() => setFieldActive(false)}
-          className={`h-full rounded-md p-0 w-full block border-none text-base font-light relative top-0 outline-none pt-5 text-gray-400 ${styleInput(
+          className={`h-full rounded-md p-0 w-full block border-none text-base font-light relative top-0 outline-none pt-5 text-gray-800 ${styleInput(
             errors,
             fieldActive
           )}`}
@@ -83,9 +83,15 @@ export const BirthdateInput: React.FC<BirthdateInputProps> = ({
             fieldActive
           )}`}
         >
-          {birthdate[dateType]}
+          {birthdates[dateType]}
         </label>
       </div>
     </div>
   );
+};
+
+export const birthdate = (props) => {
+  return {
+    birthdate: <BirthdateInput {...props} />,
+  };
 };

@@ -3,34 +3,32 @@ import animation from '@styles/animation.module.scss';
 export interface RadioInputProps {
   title?: string;
   subtitle?: string;
-  selected?: boolean;
-  onSelect?: (params: string) => void;
+  value?: any;
+  onChange?: (e: any) => void;
 }
 
 export const RadioInput: React.FC<RadioInputProps> = ({
   title,
   subtitle,
-  selected,
-  onSelect,
+  value,
+  onChange,
 }) => {
   return (
-    <div className="flex">
+    <div className="flex items-center">
       <div className="mr-3 relative">
         <button
-          className={`w-12 h-12 border border-gray-500 rounded-full ${[
-            animation['hover-border--black'],
-          ].join(' ')}`}
+          className={`w-5 h-5 border border-gray-600 border-solid rounded-full hover:border-black`}
           style={{
-            backgroundColor: selected ? 'black' : 'white',
+            backgroundColor: value ? 'black' : 'white',
           }}
-          onClick={() => onSelect(title)}
+          onClick={() => onChange(title)}
         ></button>
-        {selected && (
-          <div className="absolute top-3 left-3 bg-white w-3 h-3 rounded-full"></div>
+        {value && (
+          <div className="absolute top-4/10 left-1/2 transform -translate-y-1/2 -translate-x-1/2 bg-white w-2 h-2 rounded-full"></div>
         )}
       </div>
       <div>
-        <div className="mb-3">
+        <div>
           <p className="text-sm text-black">{title}</p>
         </div>
         <div>
@@ -39,4 +37,10 @@ export const RadioInput: React.FC<RadioInputProps> = ({
       </div>
     </div>
   );
+};
+
+export const radio = (props) => {
+  return {
+    radio: <RadioInput {...props} />,
+  };
 };

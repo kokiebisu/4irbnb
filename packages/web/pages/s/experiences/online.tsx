@@ -17,22 +17,18 @@ const OnlinePage = () => {
   return (
     <div>
       <div className="shadow-sm">
-        <div className={[layout['container--spread']].join(' ')}>
+        <div className="container-spread">
           <Header variant={$Header.WHITE} />
         </div>
       </div>
       <div className="my-3">
-        <div className={[layout['container--spread']].join(' ')}>
+        <div className="container-spread">
           <Segment variant={$Segment.BANNER} />
         </div>
       </div>
       <div className="sticky top-0 z-50">
         <div className="bg-white">
-          <div
-            className={[layout['container--spread'], space['p-v--16']].join(
-              ' '
-            )}
-          >
+          <div className="container-spread py-4">
             <Bar variant={$Bar.FILTERS} />
           </div>
           <div
@@ -43,19 +39,19 @@ const OnlinePage = () => {
           />
         </div>
       </div>
-      <div className={`mb-4 mt-5 ${[layout['container--spread']].join(' ')}`}>
+      <div className={`mb-4 mt-5 container-spread`}>
         <Segment variant={$Segment.CARDS} />
       </div>
-      <div className={`my-4 ${[layout['container--spread']].join(' ')}`}>
+      <div className="my-1 container-spread">
         <Segment variant={$Segment.CARDS} />
       </div>
-      <div className={`my-4 ${[layout['container--spread']].join(' ')}`}>
+      <div className="my-1 container-spread">
         <Segment variant={$Segment.STARTING} />
       </div>
-      <div className={`my-4 ${[layout['container--spread']].join(' ')}`}>
+      <div className="my-1 container-spread">
         <Segment variant={$Segment.COLLECTIONS} />
       </div>
-      <div className={`my-4 ${[layout['container--spread']].join(' ')}`}>
+      <div className="my-1 container-spread">
         <Segment variant={$Segment.CARDS} />
       </div>
       <div

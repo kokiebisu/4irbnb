@@ -1,20 +1,13 @@
-import React from 'react';
-
 import { Icon, $Icon } from '@icons';
 
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
-import font from '@styles/font.module.scss';
-import color from '@styles/color.module.scss';
-
 export const Content: React.FC<{ kind?: string; inverse?: boolean }> = ({
-  kind = 'globe',
-  inverse = false,
+  kind,
+  inverse,
 }) => {
   const kinds = {
     globe: (
       <>
-        <div className={[layout['items-center'], space['m-r--8']].join(' ')}>
+        <div className="items-center mr-2">
           <Icon
             variant={$Icon.GENERAL}
             generalType="globe"
@@ -25,11 +18,7 @@ export const Content: React.FC<{ kind?: string; inverse?: boolean }> = ({
       </>
     ),
     host: (
-      <h3
-        className={`${[font['size--14']].join(' ')} ${
-          inverse ? color['c--white'] : color['c--gray__4']
-        }`}
-      >
+      <h3 className={`text-sm ${inverse ? 'text-white' : 'text-gray-800'}`}>
         Become a host
       </h3>
     ),

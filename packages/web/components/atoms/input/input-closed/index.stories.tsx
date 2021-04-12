@@ -1,4 +1,3 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { ClosedInput, ClosedInputProps } from '.';
 
@@ -13,6 +12,6 @@ export const Closed = InputStory.bind({});
 Closed.args = {
   title: 'Title',
   flag: false,
-  onClickSwitchToFalse: () => alert('on click switch to false'),
-  onClickSwitchToTrue: () => alert('on click switch to true'),
+  onSwitchToFalse: () => alert('on switch to false'),
+  onSwitchToTrue: () => alert('on switch to true'),
 };

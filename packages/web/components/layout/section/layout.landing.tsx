@@ -15,11 +15,9 @@ export const LandingLayout: React.FC<{
       }`}
     >
       <div
-        className={`${
-          spread
-            ? [layout['container--spread']].join(' ')
-            : [layout['container']].join(' ')
-        }  ${dark ? 'bg-black' : ''}`}
+        className={`${spread ? 'container-spread' : 'container'}  ${
+          dark ? 'bg-black' : ''
+        }`}
       >
         <div className="py-3">
           {title && (

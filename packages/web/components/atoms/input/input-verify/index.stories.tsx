@@ -11,6 +11,6 @@ const InputStory: Story<VerifyInputProps> = (args) => <VerifyInput {...args} />;
 
 export const Verify = InputStory.bind({});
 Verify.args = {
-  value: '',
+  value: '765-465-7642',
   onChange: () => alert('on change'),
 };

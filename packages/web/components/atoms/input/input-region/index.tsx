@@ -1,13 +1,12 @@
 import { useState } from 'react';
 import input from '@input/input.module.scss';
-
 import { styleInput, styleLabel, styleContainer } from '../styling.select';
 import { renderShape } from '../logic/logic.region';
 
 export interface RegionInputProps {
-  onChange?: any;
-  value?: string;
-  direction?: string;
+  onChange?: (e: any) => void;
+  value?: any;
+  direction?: 'top' | 'bottom' | undefined;
   errors?: boolean;
 }
 
@@ -31,20 +30,20 @@ export const RegionInput: React.FC<RegionInputProps> = ({
   return (
     <div
       style={{ height: 60 }}
-      className={`flex relative items-center ${[input['outside']].join(' ')} `}
+      className={`${styleContainer(
+        errors,
+        fieldActive,
+        value
+      )} flex relative items-center ${[input['outside']].join(' ')} `}
     >
-      <div
-        className={`h-full w-full relative px-3 ${renderShape(
-          direction
-        )} ${styleContainer(errors, fieldActive, value)}`}
-      >
+      <div className={`h-full w-full relative ${renderShape(direction)}`}>
         <select
           id="region"
           onChange={onChange}
           value={value}
           onFocus={() => setFieldActive(true)}
           onBlur={() => setFieldActive(false)}
-          className={`h-full rounded-md p-0 w-full black border-none text-md font-light ${[
+          className={`h-full rounded-lg px-3 w-full black border-none text-md font-light ${[
             input['input'],
           ].join(' ')} ${styleInput(errors, fieldActive)}`}
         >
@@ -56,13 +55,20 @@ export const RegionInput: React.FC<RegionInputProps> = ({
         </select>
         <label
           htmlFor="region"
-          className={`absolute text-sm text-gray-600 font-thin ${[
-            input['label'],
-          ].join(' ')} ${styleLabel(errors, fieldActive)}`}
+          className={`absolute text-xs left-3 text-gray-600 font-thin ${styleLabel(
+            errors,
+            fieldActive
+          )}`}
         >
           Country/Region
         </label>
       </div>
     </div>
   );
+};
+
+export const region = (props) => {
+  return {
+    region: <RegionInput {...props} />,
+  };
 };

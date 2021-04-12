@@ -1,9 +1,4 @@
 import { AnimatePresence, motion } from 'framer-motion';
-
-import space from '@styles/space.module.scss';
-import layout from '@styles/layout.module.scss';
-import color from '@styles/color.module.scss';
-import font from '@styles/font.module.scss';
 import shape from '@styles/shape.module.scss';
 import header from '@header/header.module.scss';
 
@@ -39,35 +34,23 @@ export const DetailsHeader: React.FC<{
         ];
   const displayHeight = layoutType === 'room' ? 1000 : 1600;
   return (
-    <header
-      style={{ height: 80 }}
-      className={`${[color['bg--white'], shape['shadow--sm']].join(' ')}`}
-    >
+    <header style={{ height: 80 }} className="bg-white shadow-sm">
       <div
-        className={`${
-          spread
-            ? [layout['container--spread']].join(' ')
-            : [layout['container']].join(' ')
-        } ${[shape['h--full']].join(' ')}`}
+        className={`${spread ? 'container-spread' : 'container'} ${[
+          shape['h--full'],
+        ].join(' ')}`}
       >
         <div
-          className={[
-            shape['h--full'],
+          className={`h-full items-center justify-between relative flex ${[
             header['display__transparent--md'],
-            layout['items-center'],
-            layout['justify-between'],
-            layout['relative'],
-          ].join(' ')}
+          ].join(' ')}`}
         >
-          <div className={[layout['flex'], layout['items-center']].join(' ')}>
+          <div className="flex items-center">
             {items.map((item, index) => {
               return (
-                <div key={index} className={[space['m-r--16']].join(' ')}>
+                <div key={index} className="mr-4">
                   <button
-                    style={{ display: 'block' }}
-                    className={[font['size--14'], color['c--gray__2']].join(
-                      ' '
-                    )}
+                    className="text-sm block text-gray-700"
                     onClick={() => alert('hello')}
                   >
                     {item.name}
@@ -82,58 +65,28 @@ export const DetailsHeader: React.FC<{
                 exit={{ opacity: 0 }}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className={[layout['items-center']].join(' ')}
+                className="flex items-center"
               >
-                <div
-                  className={[layout['flex'], layout['items-center']].join(' ')}
-                >
-                  <div className={[space['m-r--16']].join(' ')}>
-                    <h3
-                      className={[
-                        color['c--gray__2'],
-                        font['size--16'],
-                        font['weight--500'],
-                      ].join(' ')}
-                    >
+                <div className="flex items-center">
+                  <div className="mr-4">
+                    <h3 className="text-gray-700 text-md font-medium">
                       Add dates for prices
                     </h3>
                     <div
                       style={{ width: 100 }}
-                      className={[
-                        color['c--gray__2'],
-                        font['size--21'],
-                        font['weight--500'],
-                      ].join(' ')}
+                      className="text-gray-700 text-lg font-medium"
                     >
-                      <div
-                        className={[
-                          layout['inline-block'],
-                          space['m-r--4'],
-                        ].join(' ')}
-                      >
+                      <div className="inline-block mr-1">
                         <Icon
                           variant={$Icon.PROFILE}
                           profileType="star"
                           width={10}
                         />
                       </div>
-                      <span
-                        className={[
-                          layout['inline-block'],
-                          font['size--12'],
-                          space['m-r--4'],
-                        ].join(' ')}
-                      >
+                      <span className="inline-block text-sm mr-1">
                         <b>4.93</b>
                       </span>
-                      <span
-                        className={[
-                          layout['inline-block'],
-                          font['size--12'],
-                          space['weight-100'],
-                          color['c--white__3'],
-                        ].join(' ')}
-                      >
+                      <span className="inline-block text-sm font-thin text-gray-800">
                         (248)
                       </span>
                     </div>

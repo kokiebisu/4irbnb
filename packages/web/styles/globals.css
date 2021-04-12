@@ -127,15 +127,40 @@
     padding-top: 133.3%;
   }
 
+  .container-spread {
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+
   @media screen and (min-width: 728px) {
     .banner {
       padding-top: 100%;
+    }
+
+    .container-spread {
+      padding-left: 40px;
+      padding-right: 40px;
     }
   }
 
   @media screen and (min-width: 960px) {
     .banner {
       padding-top: 48%;
+    }
+  }
+
+  @media screen and (min-width: 1128px) {
+    .container-spread {
+      padding-left: 70px;
+      padding-right: 70px;
+    }
+  }
+
+  @media screen and (min-width: 1760px) {
+    .container-spread {
+      max-width: 1780px;
+      width: 100%;
+      margin: 0 auto;
     }
   }
 }
@@ -162,5 +187,9 @@
     }
     -ms-overflow-style: none; /* Internet Explorer 10+ */
     scrollbar-width: none; /* Firefox */
+  }
+
+  .transition-input {
+    transition: all 150ms ease-in;
   }
 }

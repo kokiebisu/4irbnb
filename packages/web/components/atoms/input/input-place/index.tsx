@@ -5,9 +5,9 @@ import { Icon, $Icon } from '@icons';
 import useOnClickOutside from '@hooks/useOnClickOutside';
 
 export interface PlaceInputProps {
-  value?: string;
-  direction?: string;
-  onPlaceChange?: (type: string) => void;
+  value?: any;
+  direction?: 'top' | 'bottom' | undefined;
+  onChange?: (e: any) => void;
 }
 
 /**
@@ -22,7 +22,7 @@ export interface PlaceInputProps {
 export const PlaceInput: React.FC<PlaceInputProps> = ({
   value,
   direction,
-  onPlaceChange,
+  onChange,
 }) => {
   const containerRef = useRef();
   const [expanded, setExpanded] = useState(false);
@@ -102,7 +102,7 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
                     padding: 12,
                   }}
                   onClick={() => {
-                    onPlaceChange('Entire place');
+                    onChange('Entire place');
                     setExpanded(!expanded);
                   }}
                 >
@@ -136,7 +136,7 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
                     padding: 12,
                   }}
                   onClick={() => {
-                    onPlaceChange('Private room');
+                    onChange('Private room');
                     setExpanded(!expanded);
                   }}
                 >
@@ -169,7 +169,7 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
                     padding: 12,
                   }}
                   onClick={() => {
-                    onPlaceChange('Shared room');
+                    onChange('Shared room');
                     setExpanded(!expanded);
                   }}
                 >
@@ -201,4 +201,10 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
       </div>
     </div>
   );
+};
+
+export const place = (props) => {
+  return {
+    place: <PlaceInput {...props} />,
+  };
 };

@@ -1,4 +1,5 @@
 import { Icon, $Icon } from '@icons';
+import { PhoneNumberInput } from '@input/input-phone';
 
 export interface PhotoInputProps {
   onChange?: (e: any) => void;
@@ -6,12 +7,7 @@ export interface PhotoInputProps {
 
 /**
  * Renders the text input component
- * @param {string} name - Type of input
- * @param {string} placeholder - Placeholder
  * @param {function} onChange - handles key press event
- * @param {string} value - Current value of the input
- * @param {string} direction - direction in which the input if attached to another
- * @param {string} inputType - Whether if the input is text-based or select-based
  */
 export const PhotoInput: React.FC<PhotoInputProps> = ({ onChange }) => {
   return (
@@ -50,4 +46,10 @@ export const PhotoInput: React.FC<PhotoInputProps> = ({ onChange }) => {
       </form>
     </div>
   );
+};
+
+export const photo = (props) => {
+  return {
+    photo: <PhoneNumberInput {...props} />,
+  };
 };

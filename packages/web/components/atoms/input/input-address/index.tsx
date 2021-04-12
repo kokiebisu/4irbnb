@@ -2,8 +2,8 @@ import { renderShape } from '../logic/logic.address';
 
 export interface AddressInputProps {
   onChange?: (e: any) => void;
-  value?: string;
-  direction?: string;
+  value?: any;
+  direction?: 'top' | 'bottom' | undefined;
 }
 
 /**
@@ -44,8 +44,6 @@ export const AddressInput: React.FC<AddressInputProps> = ({
 
 export const address = (props) => {
   return {
-    address: {
-      component: <AddressInput {...props} />,
-    },
+    address: <AddressInput {...props} />,
   };
 };

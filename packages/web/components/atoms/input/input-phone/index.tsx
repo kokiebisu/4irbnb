@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { styleLabel, styleContainer, styleInput } from '../styling.text';
 
 export interface PhoneNumberInputProps {
-  onChange?: any;
-  value?: string;
-  direction?: string;
+  onChange?: (e: any) => void;
+  value?: any;
+  direction?: 'top' | 'bottom' | undefined;
   errors?: boolean;
 }
 
@@ -52,7 +52,8 @@ export const PhoneNumberInput: React.FC<PhoneNumberInputProps> = ({
           value={value}
           onFocus={activateField}
           onBlur={deactivateField}
-          className={`outline-none pt-5 w-full block border-none text-base font-light placeholder-black ${styleInput(
+          style={{ paddingTop: 24 }}
+          className={`outline-none w-full block border-none text-base font-light placeholder-black ${styleInput(
             errors,
             fieldActive,
             value
@@ -73,4 +74,10 @@ export const PhoneNumberInput: React.FC<PhoneNumberInputProps> = ({
       </div>
     </div>
   );
+};
+
+export const phone = (props) => {
+  return {
+    phone: <PhoneNumberInput {...props} />,
+  };
 };

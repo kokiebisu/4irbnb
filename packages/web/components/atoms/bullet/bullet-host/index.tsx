@@ -1,7 +1,3 @@
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
-import font from '@styles/font.module.scss';
-
 import { $Icon, Icon } from '@icons';
 
 export interface HostBulletProps {
@@ -33,19 +29,9 @@ export const HostBullet: React.FC<HostBulletProps> = ({
     },
   };
   return (
-    <div
-      className={[
-        layout['flex'],
-        layout['items-center'],
-        space['m-r--18'],
-      ].join(' ')}
-    >
-      <div className={[space['m-r--8']].join(' ')}>
-        {categories[categoryType].icon}
-      </div>
-      <p className={[font['weight--100']].join(' ')}>
-        {categories[categoryType].description}
-      </p>
+    <div className="flex items-center mr-5">
+      <div className="mr-2">{categories[categoryType].icon}</div>
+      <p className="font-thin">{categories[categoryType].description}</p>
     </div>
   );
 };

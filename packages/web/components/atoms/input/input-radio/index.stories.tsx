@@ -1,4 +1,3 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { RadioInput, RadioInputProps } from '.';
 
@@ -13,6 +12,6 @@ export const Radio = InputStory.bind({});
 Radio.args = {
   title: 'Radio Title',
   subtitle: 'Radio Subtitle',
-  selected: false,
-  onSelect: () => alert('on select'),
+  value: false,
+  onChange: () => alert('on select'),
 };

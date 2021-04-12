@@ -7,7 +7,6 @@ import space from '@styles/space.module.scss';
 import layout from '@styles/layout.module.scss';
 import stays from '@styles/stays.module.scss';
 import styles from '@styles/index.module.scss';
-import shape from '@styles/shape.module.scss';
 import font from '@styles/font.module.scss';
 import color from '@styles/color.module.scss';
 
@@ -76,12 +75,9 @@ const StaysPage: () => string | JSX.Element = () => {
           </div>
           <div className={[layout['all-sides']].join(' ')}>
             <div
-              className={[
-                styles['container'],
-                layout['z--20'],
-                shape['h--full'],
+              className={`container z-20 h-full ${[
                 styles['flex__explore'],
-              ].join(' ')}
+              ].join(' ')}`}
             >
               <div
                 className={[stays['m-v__banner'], space['m-h--0']].join(' ')}
