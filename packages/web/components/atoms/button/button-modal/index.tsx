@@ -1,4 +1,4 @@
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface ModalButtonProps {
   modalType?: 'close' | 'back';
@@ -12,7 +12,7 @@ export const ModalButton: React.FC<ModalButtonProps> = ({ modalType }) => {
   const types = {
     close: (
       <Icon
-        variant={$Icon.ACTION}
+        variant="action"
         actionType="close"
         width={16}
         height={16}
@@ -21,7 +21,7 @@ export const ModalButton: React.FC<ModalButtonProps> = ({ modalType }) => {
     ),
     back: (
       <Icon
-        variant={$Icon.ACTION}
+        variant="action"
         actionType="left"
         width={16}
         height={16}

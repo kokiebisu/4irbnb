@@ -1,3 +1,10 @@
+export interface OnlineCardProps {
+  small?: string;
+  large?: string;
+  title?: string;
+  inverse?: boolean;
+}
+
 /**
  * Renders the online card component
  * @param {string} small - Image with smaller pixels
@@ -5,12 +12,7 @@
  * @param {string} title - Title of the card
  * @param {boolean} inverse - Whether if the component takes the inverse styling or not
  */
-const OnlineCard: React.FC<{
-  small?: string;
-  large?: string;
-  title?: string;
-  inverse?: boolean;
-}> = ({
+const OnlineCard: React.FC<OnlineCardProps> = ({
   small,
   large,
   title = 'Learn to make soup dumplings in Shanghai',

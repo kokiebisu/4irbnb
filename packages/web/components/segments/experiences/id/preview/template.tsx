@@ -4,7 +4,7 @@ import font from '@styles/font.module.scss';
 import space from '@styles/space.module.scss';
 import section from '@template/index.module.scss';
 
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 import { Panel, $Panel } from '@panel';
 
 export interface PreviewTemplateProps {
@@ -51,7 +51,7 @@ export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({ images }) => {
             >
               <div>
                 <Icon
-                  variant={$Icon.GENERAL}
+                  variant="general"
                   generalType="share"
                   width={16}
                   fill="#484848"
@@ -76,7 +76,7 @@ export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({ images }) => {
             >
               <div>
                 <Icon
-                  variant={$Icon.ACTION}
+                  variant="action"
                   actionType="heart"
                   fill="#484848"
                   width={16}

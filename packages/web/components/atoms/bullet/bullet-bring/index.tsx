@@ -1,4 +1,4 @@
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface BringBulletProps {
   title?: 'Description here';
@@ -12,7 +12,7 @@ export const BringBullet: React.FC<BringBulletProps> = ({ title }) => {
   return (
     <div className="flex">
       <div className="mr-4">
-        <Icon variant={$Icon.SEMANTIC} semanticType="check" width={24} />
+        <Icon variant="semantic" semanticType="check" width={24} />
       </div>
       <div>
         <p>{title}</p>

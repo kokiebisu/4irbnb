@@ -1,4 +1,4 @@
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface SearchbarButtonProps {
   mini?: boolean;
@@ -24,7 +24,7 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({ mini }) => {
           <div className="bg-primary rounded-full h-8 w-8 relative">
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <Icon
-                variant={$Icon.GENERAL}
+                variant="general"
                 generalType="magnifyGlass"
                 width={12}
                 height={12}
@@ -38,7 +38,7 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({ mini }) => {
         <div className="shadow-md rounded-full py-3 pl-6 pr-12 flex items-center">
           <div className="mr-2">
             <Icon
-              variant={$Icon.GENERAL}
+              variant="general"
               generalType="magnifyGlass"
               width={15}
               stroke="black"

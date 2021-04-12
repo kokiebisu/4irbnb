@@ -4,7 +4,7 @@ import section from '@template/index.module.scss';
 import { Button } from '@button';
 import { Bullet } from '@bullet';
 
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 import { truncateContent } from '@utils/description';
 
 export interface HostTemplateProps {
@@ -187,11 +187,7 @@ export const HostTemplate: React.FC<HostTemplateProps> = ({
                 } flex items-center`}
               >
                 <div>
-                  <Icon
-                    variant={$Icon.GENERAL}
-                    generalType="shield"
-                    width={24}
-                  />
+                  <Icon variant="general" generalType="shield" width={24} />
                 </div>
                 <p className="text-sm font-thin ml-3">
                   To protect your payment, never transfer money or communicate

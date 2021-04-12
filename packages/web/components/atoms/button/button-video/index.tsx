@@ -1,4 +1,4 @@
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 import animation from '@styles/animation.module.scss';
 
 export interface VideoButtonProps {
@@ -14,7 +14,7 @@ export const VideoButton: React.FC<VideoButtonProps> = ({ play }) => {
     >
       {play ? (
         <Icon
-          variant={$Icon.ACTION}
+          variant="action"
           actionType="play"
           width={15}
           height={15}
@@ -22,7 +22,7 @@ export const VideoButton: React.FC<VideoButtonProps> = ({ play }) => {
         />
       ) : (
         <Icon
-          variant={$Icon.ACTION}
+          variant="action"
           actionType="pause"
           width={15}
           height={15}

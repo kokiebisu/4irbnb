@@ -1,5 +1,5 @@
 import layout from '@styles/layout.module.scss';
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 import { Button } from '@button';
 
 export interface CheckModalProps {}
@@ -35,17 +35,13 @@ const Calendar: React.FC<CalendarProps> = ({ next, previous }) => {
     <div style={{ width: 294 }}>
       <div className="flex justify-center items-center relative mt-2 mb-4">
         <div className="absolute left-0">
-          {previous && (
-            <Icon variant={$Icon.ACTION} actionType="left" width={12} />
-          )}
+          {previous && <Icon variant="action" actionType="left" width={12} />}
         </div>
         <div>
           <h3 className="text-sm">December 2020</h3>
         </div>
         <div className="absolute right-0">
-          {next && (
-            <Icon variant={$Icon.ACTION} actionType="right" width={12} />
-          )}
+          {next && <Icon variant="action" actionType="right" width={12} />}
         </div>
       </div>
       <div className="w-full">

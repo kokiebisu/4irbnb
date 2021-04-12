@@ -2,7 +2,7 @@ import space from '@styles/space.module.scss';
 import styles from '@styles/index.module.scss';
 import layout from '@styles/layout.module.scss';
 import { Button } from '@button';
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface FooterTemplateProps {
   spread?: boolean;
@@ -66,7 +66,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
           <div className="flex items-center mx-0 my-8">
             <div>
               <button className="flex items-center mr-3 bg-transparent border-none">
-                <Icon variant={$Icon.GENERAL} generalType="globe" width={16} />
+                <Icon variant="general" generalType="globe" width={16} />
                 <u className="text-sm mr-3">English(CA)</u>
               </button>
             </div>

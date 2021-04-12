@@ -1,11 +1,6 @@
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
-/**
- * Renders the vertical card component
- * @param {Object} card - Information about the card
- * @param {boolean} save - Whether if the card can be saved
- */
-const VerticalCard: React.FC<{
+export interface VerticalCardProps {
   imgUrl?: string;
   superhost?: boolean;
   ratings?: number;
@@ -14,7 +9,14 @@ const VerticalCard: React.FC<{
   country?: string;
   title?: string;
   cost?: number;
-}> = ({
+}
+
+/**
+ * Renders the vertical card component
+ * @param {Object} card - Information about the card
+ * @param {boolean} save - Whether if the card can be saved
+ */
+const VerticalCard: React.FC<VerticalCardProps> = ({
   imgUrl,
   superhost,
   ratings = 5.0,
@@ -41,7 +43,7 @@ const VerticalCard: React.FC<{
             </div>
             <div className={save ? 'text-white' : 'hidden text-white'}>
               <Icon
-                variant={$Icon.ACTION}
+                variant="action"
                 actionType="heart"
                 fill="rgba(0, 0, 0, 0.5)"
                 width={24}
@@ -52,7 +54,7 @@ const VerticalCard: React.FC<{
       </div>
       <div className="mt-1 flex items-center">
         <div className="mr-1">
-          <Icon variant={$Icon.PROFILE} profileType="star" width={15} />
+          <Icon variant={'profile'} profileType="star" width={15} />
         </div>
         <div className="mr-1">
           <p className="font-thin text-xs">{ratings}</p>

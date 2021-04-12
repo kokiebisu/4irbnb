@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import color from '@styles/color.module.scss';
 import input from '@input/input.module.scss';
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 import useOnClickOutside from '@hooks/useOnClickOutside';
 
 export interface PlaceInputProps {
@@ -74,9 +74,9 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
           </div>
           <div>
             {expanded ? (
-              <Icon variant={$Icon.ACTION} actionType="top" width={13} />
+              <Icon variant="action" actionType="top" width={13} />
             ) : (
-              <Icon variant={$Icon.ACTION} actionType="bottom" width={13} />
+              <Icon variant="action" actionType="bottom" width={13} />
             )}
           </div>
         </div>
@@ -121,7 +121,7 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
                   {value === 'Entire place' && (
                     <div className="flex items-center">
                       <Icon
-                        variant={$Icon.SEMANTIC}
+                        variant="semantic"
                         semanticType="check"
                         width={32}
                       />
@@ -154,7 +154,7 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
                   {value === 'Private room' && (
                     <div className="flex items-center">
                       <Icon
-                        variant={$Icon.SEMANTIC}
+                        variant="semantic"
                         semanticType="check"
                         width={32}
                       />
@@ -187,7 +187,7 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
                   {value === 'Shared room' && (
                     <div className="flex items-center">
                       <Icon
-                        variant={$Icon.SEMANTIC}
+                        variant="semantic"
                         semanticType="check"
                         width={32}
                       />

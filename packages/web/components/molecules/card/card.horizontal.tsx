@@ -1,6 +1,12 @@
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 import { ImageSlider } from '../../particles/image.slider';
 import { renderType } from './logic/logic.horizontal';
+
+export interface HorizontalCardProps {
+  card?: any;
+  save?: boolean;
+  superhost?: boolean;
+}
 
 /**
  * Renders the horizontal card component
@@ -8,11 +14,7 @@ import { renderType } from './logic/logic.horizontal';
  * @param {boolean} superhost - Whether if host is the superhost or not
  * @param {boolean} save - Whether if the card can be saved or not
  */
-const HorizontalCard: React.FC<{
-  card?: any;
-  save?: boolean;
-  superhost?: boolean;
-}> = ({
+const HorizontalCard: React.FC<HorizontalCardProps> = ({
   card = {
     images: undefined,
     type: 'Type of Stay',
@@ -48,7 +50,7 @@ const HorizontalCard: React.FC<{
                 {save && (
                   <div className={`z-50 ${save ? '' : 'text-white hidden'}`}>
                     <Icon
-                      variant={$Icon.ACTION}
+                      variant="action"
                       actionType="heart"
                       fill="rgba(0, 0, 0, 0.5)"
                       width={24}

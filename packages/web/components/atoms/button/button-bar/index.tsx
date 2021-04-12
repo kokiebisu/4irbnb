@@ -1,4 +1,4 @@
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface BarButtonProps {
   barType?: 'menu' | 'saved' | 'login';
@@ -8,19 +8,15 @@ export interface BarButtonProps {
 export const BarButton: React.FC<BarButtonProps> = ({ barType, selected }) => {
   const types = {
     menu: {
-      component: <Icon variant={$Icon.LOGO} logoType="menubar" width={25} />,
+      component: <Icon variant="logo" logoType="menubar" width={25} />,
       name: 'Explore',
     },
     saved: {
-      component: (
-        <Icon variant={$Icon.SEMANTIC} semanticType="saved" width={25} />
-      ),
+      component: <Icon variant="semantic" semanticType="saved" width={25} />,
       name: 'Saved',
     },
     login: {
-      component: (
-        <Icon variant={$Icon.GENERAL} generalType="login" width={25} />
-      ),
+      component: <Icon variant="general" generalType="login" width={25} />,
       name: 'Log in',
     },
   };

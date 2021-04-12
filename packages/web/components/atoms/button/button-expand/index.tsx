@@ -1,4 +1,4 @@
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface ExpandButtonProps {
   title?: string;
@@ -18,7 +18,7 @@ export const ExpandButton: React.FC<ExpandButtonProps> = ({ title }) => {
         </div>
         <div>
           <Icon
-            variant={$Icon.ACTION}
+            variant="action"
             actionType="right"
             width={14}
             stroke="black"

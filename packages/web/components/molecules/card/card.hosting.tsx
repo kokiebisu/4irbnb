@@ -29,7 +29,11 @@ export const types = {
   },
 };
 
-const HostingCard: React.FC<{ type?: string }> = ({ type }) => {
+export interface HostingCardProps {
+  type?: string;
+}
+
+const HostingCard: React.FC<HostingCardProps> = ({ type }) => {
   return (
     <div className="sm:w-64 w-full">
       <div className="">
@@ -71,7 +75,6 @@ export const hosting = (props) => {
   return {
     hosting: {
       component: <HostingCard {...props} />,
-      style: '',
     },
   };
 };

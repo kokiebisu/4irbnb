@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { styleContainer } from '../styling.select';
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface GuestsInputProps {
   onChange?: (e: any) => void;
@@ -64,9 +64,9 @@ export const GuestsInput: React.FC<GuestsInputProps> = ({
         </select>
         <div className="flex items-center">
           {fieldActive ? (
-            <Icon variant={$Icon.ACTION} actionType="top" width={13} />
+            <Icon variant="action" actionType="top" width={13} />
           ) : (
-            <Icon variant={$Icon.ACTION} actionType="bottom" width={13} />
+            <Icon variant="action" actionType="bottom" width={13} />
           )}
         </div>
       </div>

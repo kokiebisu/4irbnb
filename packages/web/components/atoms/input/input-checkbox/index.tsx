@@ -1,4 +1,4 @@
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface CheckboxInputProps {
   onChange?: (e: any) => void;
@@ -24,7 +24,7 @@ export const CheckboxInput: React.FC<CheckboxInputProps> = ({
         >
           <div className="relative border-none">
             <Icon
-              variant={$Icon.SEMANTIC}
+              variant="semantic"
               semanticType="check"
               width={15}
               fill="white"

@@ -1,19 +1,9 @@
-import { Icon, $Icon } from '@icons';
-
+import { Icon } from '@icons';
 import { Bullet } from '@bullet';
 import { ImageSlider } from '@particle/image.slider';
 import { Card, $Card } from '@card';
 
-/**
- * Renders the stay card component
- * @param {string[]} images - List of images to be displayed
- * @param {string} typeStay - Type of stay
- * @param {string} location - Location of the stay
- * @param {string} title - Title of the stay
- * @param {Object} accomodations - Information about the accomodations of the stay
- * @param {string[]} characteristics - List of characteristics
- */
-const StayCard: React.FC<{
+export interface StayCardProps {
   images?: string[];
   typeStay?: string;
   location?: string;
@@ -27,7 +17,18 @@ const StayCard: React.FC<{
   characteristics?: string[];
   ratings?: number;
   reviews?: number;
-}> = ({
+}
+
+/**
+ * Renders the stay card component
+ * @param {string[]} images - List of images to be displayed
+ * @param {string} typeStay - Type of stay
+ * @param {string} location - Location of the stay
+ * @param {string} title - Title of the stay
+ * @param {Object} accomodations - Information about the accomodations of the stay
+ * @param {string[]} characteristics - List of characteristics
+ */
+const StayCard: React.FC<StayCardProps> = ({
   images,
   typeStay = 'Type of stay',
   location = 'Location',
@@ -103,7 +104,7 @@ const StayCard: React.FC<{
             </div>
             <div>
               <Icon
-                variant={$Icon.ACTION}
+                variant="action"
                 actionType="heart"
                 fill="white"
                 stroke="black"

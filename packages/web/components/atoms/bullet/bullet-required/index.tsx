@@ -1,4 +1,4 @@
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface RequiredBulletProps {
   message?: any;
@@ -9,7 +9,7 @@ export const RequiredBullet: React.FC<RequiredBulletProps> = ({ message }) => {
     <div className="flex items-center">
       <div className="mr-1">
         <Icon
-          variant={$Icon.SEMANTIC}
+          variant="semantic"
           semanticType="exclamation"
           width={16}
           stroke="#C54A32"

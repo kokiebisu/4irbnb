@@ -1,4 +1,4 @@
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface ReportButtonProps {}
 
@@ -9,7 +9,7 @@ export const ReportButton: React.FC<ReportButtonProps> = () => {
   return (
     <div className="flex items-center">
       <div className="mr-3">
-        <Icon variant={$Icon.GENERAL} generalType="flag" width={16} />
+        <Icon variant="general" generalType="flag" width={16} />
       </div>
       <div>
         <h5 className="font-light text-sm">Report this listing</h5>

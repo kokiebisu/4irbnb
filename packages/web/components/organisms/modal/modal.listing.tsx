@@ -1,7 +1,7 @@
 import { Button } from '@button';
 import { Input, $Input } from '@input';
 
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
 import layout from '@styles/layout.module.scss';
 import space from '@styles/space.module.scss';
@@ -30,7 +30,7 @@ export const ListingModal: React.FC<{}> = () => {
       >
         <div>
           <Icon
-            variant={$Icon.SEMANTIC}
+            variant="semantic"
             semanticType="plus"
             width={15}
             height={15}

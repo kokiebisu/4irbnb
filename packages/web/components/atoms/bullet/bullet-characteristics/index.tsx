@@ -1,4 +1,4 @@
-import { Icon, $Icon } from '@icons';
+import { Icon } from '@icons';
 import * as Helper from '@helper/time';
 
 export interface CharacteristicsBulletProps {
@@ -38,57 +38,49 @@ export const CharacteristicsBullet: React.FC<CharacteristicsBulletProps> = ({
 }) => {
   const characteristics = {
     house: {
-      icon: <Icon variant={$Icon.STAY} stayType="house" width={24} />,
+      icon: <Icon variant="stay" stayType="house" width={24} />,
       title: 'Entire home',
       description: 'You’ll have the farm stay to yourself.',
     },
     sparkle: {
-      icon: <Icon variant={$Icon.STAY} stayType="sparkle" width={24} />,
+      icon: <Icon variant="stay" stayType="sparkle" width={24} />,
       title: 'Enhanced Clean',
       description:
         "This host committed to Airbnb's 5-step enhanced cleaning process.",
     },
     door: {
-      icon: <Icon variant={$Icon.STAY} stayType="door" width={24} />,
+      icon: <Icon variant="stay" stayType="door" width={24} />,
       title: 'Self check-in',
       description: 'You can check in with the doorman.',
     },
     calendar: {
-      icon: <Icon variant={$Icon.STAY} stayType="calendar" width={24} />,
+      icon: <Icon variant="stay" stayType="calendar" width={24} />,
       title: 'Cancellation policy',
       description:
         'Add your trip dates to get the cancellation details for this stay.',
     },
     guidelines: {
-      icon: <Icon variant={$Icon.STAY} stayType="guidelines" width={24} />,
+      icon: <Icon variant="stay" stayType="guidelines" width={24} />,
       title: 'House rules',
       description: 'The host doesn’t allow pets, parties, or smoking.',
     },
     time: {
-      icon: (
-        <Icon variant={$Icon.EXPERIENCE} experienceType="time" width={32} />
-      ),
+      icon: <Icon variant="experience" experienceType="time" width={32} />,
       title: Helper.displayDuration(time),
       description: null,
     },
     devices: {
-      icon: (
-        <Icon variant={$Icon.EXPERIENCE} experienceType="computer" width={32} />
-      ),
+      icon: <Icon variant="experience" experienceType="computer" width={32} />,
       title: `Join from your ${devices.join(', ')}`,
       description: null,
     },
     people: {
-      icon: (
-        <Icon variant={$Icon.EXPERIENCE} experienceType="people" width={32} />
-      ),
+      icon: <Icon variant="experience" experienceType="people" width={32} />,
       title: `Up to ${people} people. Private groups available for up to ${group}`,
       description: null,
     },
     language: {
-      icon: (
-        <Icon variant={$Icon.EXPERIENCE} experienceType="language" width={32} />
-      ),
+      icon: <Icon variant="experience" experienceType="language" width={32} />,
       title: `Hosted in ${languages} (Simplified)`,
       description: null,
     },

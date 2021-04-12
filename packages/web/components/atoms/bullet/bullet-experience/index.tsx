@@ -1,4 +1,4 @@
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface ExperienceBulletProps {
   experienceType?: 'hosts' | 'activities' | 'global';
@@ -15,7 +15,7 @@ export const ExperienceBullet: React.FC<ExperienceBulletProps> = ({
     hosts: {
       icon: (
         <Icon
-          variant={$Icon.EXPERIENCE}
+          variant="experience"
           experienceType="smile"
           width={36}
           height={36}
@@ -28,7 +28,7 @@ export const ExperienceBullet: React.FC<ExperienceBulletProps> = ({
     activities: {
       icon: (
         <Icon
-          variant={$Icon.EXPERIENCE}
+          variant="experience"
           experienceType="people"
           width={36}
           height={36}
@@ -41,7 +41,7 @@ export const ExperienceBullet: React.FC<ExperienceBulletProps> = ({
     global: {
       icon: (
         <Icon
-          variant={$Icon.EXPERIENCE}
+          variant="experience"
           experienceType="computer"
           width={36}
           height={36}

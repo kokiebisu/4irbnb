@@ -1,5 +1,13 @@
 import { Button } from '@button';
 
+export interface AvailableCardProps {
+  date?: string;
+  from?: string;
+  to?: string;
+  standard?: string;
+  price?: number;
+}
+
 /**
  * Renders the available card component
  * @param {string} date - The date which the experience is available
@@ -8,13 +16,7 @@ import { Button } from '@button';
  * @param {string} standard - The time standard
  * @param {number} price - The price of the experience
  */
-const AvailableCard: React.FC<{
-  date?: string;
-  from?: string;
-  to?: string;
-  standard?: string;
-  price?: number;
-}> = ({
+const AvailableCard: React.FC<AvailableCardProps> = ({
   date = 'Tue., Nov. 10',
   from = '1:00 a.m. ',
   to = '3:00 a.m. ',

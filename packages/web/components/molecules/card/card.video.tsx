@@ -1,13 +1,8 @@
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 import React, { useState } from 'react';
 import { Video } from '@video';
 
-/**
- * Renders the vertical card component
- * @param {Object} card - Information about the card
- * @param {boolean} save - Whether if the card can be saved
- */
-const VideoCard: React.FC<{
+export interface VideoCardProps {
   imgUrl?: string;
   videoUrl?: string;
   superhost?: boolean;
@@ -17,7 +12,14 @@ const VideoCard: React.FC<{
   country?: string;
   title?: string;
   cost?: number;
-}> = ({
+}
+
+/**
+ * Renders the vertical card component
+ * @param {Object} card - Information about the card
+ * @param {boolean} save - Whether if the card can be saved
+ */
+const VideoCard: React.FC<VideoCardProps> = ({
   imgUrl = 'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster',
   videoUrl = 'https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400',
   ratings = 5.0,
@@ -43,7 +45,7 @@ const VideoCard: React.FC<{
         <div className="absolute top-0 bottom-0 right-0 left-0">
           <div className="absolute pointer-events-none z-40 top-3 right-3">
             <Icon
-              variant={$Icon.ACTION}
+              variant="action"
               actionType="heart"
               fill="rgba(0, 0, 0, 0.5)"
               width={24}
@@ -61,7 +63,7 @@ const VideoCard: React.FC<{
 
       <div className="mt-1 flex items-center">
         <div className="mr-1">
-          <Icon variant={$Icon.PROFILE} profileType="star" width={15} />
+          <Icon variant={'profile'} profileType="star" width={15} />
         </div>
         <div className="mr-1">
           <p className="font-thin text-xs">{ratings}</p>

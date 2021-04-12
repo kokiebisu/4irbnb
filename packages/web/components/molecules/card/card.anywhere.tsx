@@ -1,11 +1,16 @@
+export interface AnywhereCardProps {
+  imgUrl?: string;
+  title?: string;
+}
+
 /** Renders the category card component
  * @param {string} imgUrl - Image of the card
  * @param {string} title - Title of the card
  */
-const AnywhereCard: React.FC<{
-  imgUrl?: string;
-  title?: string;
-}> = ({ imgUrl, title = 'Title' }) => {
+const AnywhereCard: React.FC<AnywhereCardProps> = ({
+  imgUrl,
+  title = 'Title',
+}) => {
   return (
     <div>
       <div className="relative pt-full">
@@ -30,7 +35,6 @@ export const anywhere = (props) => {
   return {
     anywhere: {
       component: <AnywhereCard {...props} />,
-      style: '',
     },
   };
 };

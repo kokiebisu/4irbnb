@@ -1,4 +1,4 @@
-import { $Icon, Icon } from '@icons';
+import { Icon } from '@icons';
 
 export interface HostBulletProps {
   total?: number;
@@ -16,15 +16,15 @@ export const HostBullet: React.FC<HostBulletProps> = ({
 }) => {
   const categories = {
     review: {
-      icon: <Icon variant={$Icon.PROFILE} profileType="star" width={16} />,
+      icon: <Icon variant="profile" profileType="star" width={16} />,
       description: `${total} Reviews`,
     },
     verified: {
-      icon: <Icon variant={$Icon.PROFILE} profileType="verified" width={16} />,
+      icon: <Icon variant="profile" profileType="verified" width={16} />,
       description: 'Identity verified',
     },
     superhost: {
-      icon: <Icon variant={$Icon.PROFILE} profileType="superhost" width={16} />,
+      icon: <Icon variant="profile" profileType="superhost" width={16} />,
       description: 'Superhost',
     },
   };
