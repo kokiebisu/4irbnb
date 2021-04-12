@@ -14,7 +14,7 @@ export const PrivacyButton: React.FC<PrivacyButtonProps> = ({
 }) => {
   return (
     <div
-      className={`block sm:flex whitespace-nowrap py-3 px-6 font-medium rounded-md w-full text-sm justify-center ${
+      className={`inline-block sm:inline-flex whitespace-nowrap py-3 px-6 font-medium rounded-md text-sm justify-center ${
         inverse
           ? 'bg-gray-900 border-transparent border'
           : 'bg-transparent border border-black'
@@ -29,8 +29,6 @@ export const PrivacyButton: React.FC<PrivacyButtonProps> = ({
 
 export const privacy = (props) => {
   return {
-    privacy: {
-      component: <PrivacyButton {...props} />,
-    },
+    privacy: <PrivacyButton {...props} />,
   };
 };

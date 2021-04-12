@@ -57,9 +57,7 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   const { disable } = props;
   const variants: {
-    [key: string]: {
-      component: JSX.Element;
-    };
+    [key: string]: JSX.Element;
   } = factory(props);
 
   return (
@@ -68,7 +66,7 @@ export const Button: React.FC<ButtonProps> = ({
       className="transition"
       onClick={!disable ? onClick : undefined}
     >
-      {variant ? variants[variant].component : children}
+      {variant ? variants[variant] : children}
     </motion.button>
   );
 };

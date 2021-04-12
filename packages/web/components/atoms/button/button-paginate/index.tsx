@@ -48,8 +48,6 @@ export const PaginateButton: React.FC<PaginateButtonProps> = ({
 
 export const paginate = (props) => {
   return {
-    paginate: {
-      component: <PaginateButton {...props} />,
-    },
+    paginate: <PaginateButton {...props} />,
   };
 };

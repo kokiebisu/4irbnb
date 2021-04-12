@@ -17,7 +17,7 @@ export const GlobeButton: React.FC<GlobeButtonProps> = ({
 }) => {
   return (
     <div
-      className={`pl-3 pr-8 py-3 rounded-md ${
+      className={`hover:bg-gray-100 pl-3 pr-8 py-3 rounded-md ${
         selected ? 'border border-black' : null
       }`}
     >
@@ -33,9 +33,6 @@ export const GlobeButton: React.FC<GlobeButtonProps> = ({
 
 export const globe = (props) => {
   return {
-    globe: {
-      component: <GlobeButton {...props} />,
-      style: `hover:bg-gray-100 rounded-md `,
-    },
+    globe: <GlobeButton {...props} />,
   };
 };

@@ -7,20 +7,19 @@ export interface ReportButtonProps {}
  */
 export const ReportButton: React.FC<ReportButtonProps> = () => {
   return (
-    <button>
-      <div>
+    <div className="flex items-center">
+      <div className="mr-3">
         <Icon variant={$Icon.GENERAL} generalType="flag" width={16} />
       </div>
-      <div>Report this listing</div>
-    </button>
+      <div>
+        <h5 className="font-light text-sm">Report this listing</h5>
+      </div>
+    </div>
   );
 };
 
 export const report = (props) => {
   return {
-    report: {
-      component: <ReportButton {...props} />,
-      style: '',
-    },
+    report: <ReportButton {...props} />,
   };
 };

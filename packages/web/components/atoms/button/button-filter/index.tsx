@@ -26,9 +26,6 @@ export const FilterButton: React.FC<FilterButtonProps> = ({
 
 export const filter = (props) => {
   return {
-    filter: {
-      component: <FilterButton {...props} />,
-      style: '',
-    },
+    filter: <FilterButton {...props} />,
   };
 };

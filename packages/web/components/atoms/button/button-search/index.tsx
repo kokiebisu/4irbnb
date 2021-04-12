@@ -11,7 +11,7 @@ export interface SearchButtonProps {
 export const SearchButton: React.FC<SearchButtonProps> = ({ expand }) => {
   return (
     <div
-      className={`flex items-center bg-primary rounded-full ${
+      className={`inline-flex items-center bg-primary rounded-full ${
         expand ? 'px-5 py-3' : null
       } transition`}
     >
@@ -38,9 +38,6 @@ export const SearchButton: React.FC<SearchButtonProps> = ({ expand }) => {
 
 export const search = (props) => {
   return {
-    search: {
-      component: <SearchButton {...props} />,
-      style: '',
-    },
+    search: <SearchButton {...props} />,
   };
 };

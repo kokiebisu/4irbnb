@@ -26,9 +26,6 @@ export const CalendarButton: React.FC<CalendarButtonProps> = ({
 
 export const calendar = (props) => {
   return {
-    calendar: {
-      component: <CalendarButton {...props} />,
-      style: '',
-    },
+    calendar: <CalendarButton {...props} />,
   };
 };

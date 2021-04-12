@@ -16,8 +16,6 @@ export const BannerButton: React.FC<BannerButtonProps> = ({ title }) => {
 
 export const banner = (props) => {
   return {
-    banner: {
-      component: <BannerButton {...props} />,
-    },
+    banner: <BannerButton {...props} />,
   };
 };

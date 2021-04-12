@@ -38,9 +38,6 @@ export const ModalButton: React.FC<ModalButtonProps> = ({ modalType }) => {
 
 export const modal = (props) => {
   return {
-    modal: {
-      component: <ModalButton {...props} />,
-      style: '',
-    },
+    modal: <ModalButton {...props} />,
   };
 };

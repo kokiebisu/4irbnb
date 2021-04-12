@@ -14,9 +14,9 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({ mini }) => {
       {mini ? (
         <div
           style={{ gridTemplateColumns: '1fr auto' }}
-          className="relative py-1.5 pl-6 w-full pr-1.5 grid items-center justify-between border border-gray-300 rounded-full"
+          className="relative py-1.5 pl-6 pr-1.5 inline-grid items-center justify-between border border-gray-300 rounded-full"
         >
-          <div>
+          <div className="mr-9">
             <p className="whitespace-nowrap text-sm font-medium text-left">
               Start your search
             </p>
@@ -35,7 +35,7 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({ mini }) => {
           </div>
         </div>
       ) : (
-        <div className="py-5 pl-6 pr-5 absolute top-0 bottom-0 right-0 left-0">
+        <div className="py-5 pl-6 pr-12 absolute top-0 bottom-0 right-0 left-0">
           <div className="mr-4">
             <Icon
               variant={$Icon.GENERAL}
@@ -54,9 +54,6 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({ mini }) => {
 
 export const searchbar = (props) => {
   return {
-    searchbar: {
-      component: <SearchbarButton {...props} />,
-      style: '',
-    },
+    searchbar: <SearchbarButton {...props} />,
   };
 };
