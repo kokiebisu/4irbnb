@@ -40,8 +40,6 @@ export const BarButton: React.FC<BarButtonProps> = ({ barType, selected }) => {
 
 export const bar = (props) => {
   return {
-    bar: {
-      component: <BarButton {...props} />,
-    },
+    bar: <BarButton {...props} />,
   };
 };

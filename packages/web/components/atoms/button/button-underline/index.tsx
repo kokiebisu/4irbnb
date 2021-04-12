@@ -39,9 +39,6 @@ export const UnderlineButton: React.FC<UnderlineButtonProps> = ({
 
 export const underline = (props) => {
   return {
-    underline: {
-      component: <UnderlineButton {...props} />,
-      style: '',
-    },
+    underline: <UnderlineButton {...props} />,
   };
 };

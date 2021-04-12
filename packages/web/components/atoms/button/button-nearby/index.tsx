@@ -16,8 +16,6 @@ export const NearbyButton: React.FC<NearbyButtonProps> = ({ label }) => {
 
 export const nearby = (props) => {
   return {
-    nearby: {
-      component: <NearbyButton {...props} />,
-    },
+    nearby: <NearbyButton {...props} />,
   };
 };

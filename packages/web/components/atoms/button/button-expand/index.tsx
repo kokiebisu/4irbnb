@@ -32,9 +32,6 @@ export const ExpandButton: React.FC<ExpandButtonProps> = ({ title }) => {
 
 export const expand = (props) => {
   return {
-    expand: {
-      component: <ExpandButton {...props} />,
-      style: '',
-    },
+    expand: <ExpandButton {...props} />,
   };
 };

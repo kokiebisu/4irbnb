@@ -59,8 +59,6 @@ export const BorderButton: React.FC<BorderButtonProps> = ({
 
 export const border = (props) => {
   return {
-    border: {
-      component: <BorderButton {...props} />,
-    },
+    border: <BorderButton {...props} />,
   };
 };

@@ -16,9 +16,6 @@ export const LinkButton: React.FC<LinkButtonProps> = ({ title }) => {
 
 export const link = (props) => {
   return {
-    link: {
-      component: <LinkButton {...props} />,
-      style: '',
-    },
+    link: <LinkButton {...props} />,
   };
 };

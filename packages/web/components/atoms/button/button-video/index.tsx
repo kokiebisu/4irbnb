@@ -31,9 +31,6 @@ export const VideoButton: React.FC<VideoButtonProps> = ({ play }) => {
 
 export const video = (props) => {
   return {
-    video: {
-      component: <VideoButton {...props} />,
-      style: '',
-    },
+    video: <VideoButton {...props} />,
   };
 };

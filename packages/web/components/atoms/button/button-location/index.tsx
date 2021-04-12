@@ -65,8 +65,6 @@ export const LocationButton: React.FC<LocationButtonProps> = ({
 
 export const location = (props) => {
   return {
-    location: {
-      component: <LocationButton {...props} />,
-    },
+    location: <LocationButton {...props} />,
   };
 };

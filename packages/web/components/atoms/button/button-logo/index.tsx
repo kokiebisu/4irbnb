@@ -32,8 +32,6 @@ export const LogoButton: React.FC<LogoButtonProps> = ({ noName, fill }) => {
 
 export const logo = (props) => {
   return {
-    logo: {
-      component: <LogoButton {...props} />,
-    },
+    logo: <LogoButton {...props} />,
   };
 };

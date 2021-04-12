@@ -13,5 +13,6 @@ const ButtonStory: Story<TransparentButtonProps> = (args) => (
 
 export const Transparent = ButtonStory.bind({});
 Transparent.args = {
-  content: 'Button',
+  children: 'Transparent',
+  inverse: false,
 };

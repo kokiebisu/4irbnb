@@ -10,9 +10,6 @@ export const VerifyButton: React.FC<VerifyButtonProps> = () => {
 
 export const verify = (props) => {
   return {
-    verify: {
-      component: <VerifyButton {...props} />,
-      style: '',
-    },
+    verify: <VerifyButton {...props} />,
   };
 };

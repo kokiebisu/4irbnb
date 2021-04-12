@@ -49,8 +49,6 @@ export const MenuButton: React.FC<MenuButtonProps> = ({
 
 export const menu = ({ ...props }) => {
   return {
-    menu: {
-      component: <MenuButton {...props} />,
-    },
+    menu: <MenuButton {...props} />,
   };
 };

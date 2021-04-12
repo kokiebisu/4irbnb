@@ -40,9 +40,6 @@ export const ClosedButton: React.FC<ClosedButtonProps> = ({
 
 export const closed = (props) => {
   return {
-    closed: {
-      component: <ClosedButton {...props} />,
-      style: '',
-    },
+    closed: <ClosedButton {...props} />,
   };
 };

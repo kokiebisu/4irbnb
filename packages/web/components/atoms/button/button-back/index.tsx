@@ -27,8 +27,6 @@ export const BackButton: React.FC<BackButtonProps> = () => {
 
 export const back = (props) => {
   return {
-    back: {
-      component: <BackButton {...props} />,
-    },
+    back: <BackButton {...props} />,
   };
 };

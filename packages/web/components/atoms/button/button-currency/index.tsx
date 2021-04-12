@@ -34,9 +34,6 @@ export const CurrencyButton: React.FC<CurrencyButtonProps> = ({
 
 export const currency = (props) => {
   return {
-    currency: {
-      component: <CurrencyButton {...props} />,
-      style: '',
-    },
+    currency: <CurrencyButton {...props} />,
   };
 };

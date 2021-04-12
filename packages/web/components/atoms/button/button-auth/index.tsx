@@ -43,8 +43,6 @@ export const AuthButton: React.FC<AuthButtonProps> = ({ authType }) => {
 
 export const auth = (props) => {
   return {
-    auth: {
-      component: <AuthButton {...props} />,
-    },
+    auth: <AuthButton {...props} />,
   };
 };

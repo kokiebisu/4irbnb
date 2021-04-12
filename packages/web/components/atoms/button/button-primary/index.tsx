@@ -65,8 +65,6 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
 
 export const primary = (props) => {
   return {
-    primary: {
-      component: <PrimaryButton {...props} />,
-    },
+    primary: <PrimaryButton {...props} />,
   };
 };

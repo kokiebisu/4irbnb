@@ -22,8 +22,6 @@ export const OptionButton: React.FC<OptionButtonProps> = ({ name, bold }) => {
 
 export const option = (props) => {
   return {
-    option: {
-      component: <OptionButton {...props} />,
-    },
+    option: <OptionButton {...props} />,
   };
 };
