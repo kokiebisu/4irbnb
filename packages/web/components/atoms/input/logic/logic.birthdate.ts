@@ -1,6 +1,3 @@
-import color from '@styles/color.module.scss';
-import shape from '@styles/shape.module.scss';
-
 export const birthdates = {
   year: 'Year',
   month: 'Month',
@@ -10,12 +7,12 @@ export const birthdates = {
 export const renderShape = (direction: string) => {
   switch (direction) {
     case 'left':
-      return [color['b-r--white__3']].join(' ');
+      return 'border-right border-gray-700';
     case 'center':
-      return [].join(' ');
+      return '';
     case 'right':
-      return [color['b-l--white__3']].join(' ');
+      return 'border-left border-gray-700';
     default:
-      return [color['b--white__3'], shape['br--10']].join(' ');
+      return 'border-gray-700 rounded-md';
   }
 };

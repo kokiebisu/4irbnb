@@ -1,23 +1,11 @@
-import color from "@styles/color.module.scss";
-import shape from "@styles/shape.module.scss";
-
 export const renderShape = (direction: string) => {
   switch (direction) {
-    case "top":
-      return [
-        color["b-b--white__3"],
-        color["b-l--white__3"],
-        color["b-r--white__3"],
-        shape["bbr--8"],
-      ].join(" ");
-    case "bottom":
-      return [
-        color["b-t--white__3"],
-        color["b-l--white__3"],
-        color["b-r--white__3"],
-        shape["btr--8"],
-      ].join(" ");
+    case 'top':
+      return 'border-bottom border-left border-right rounded-b-md';
+
+    case 'bottom':
+      return 'border-top border-left border-right border-gray-700 rounded-t-md';
     default:
-      return [shape["br--8"]].join(" ");
+      return 'rounded-md';
   }
 };

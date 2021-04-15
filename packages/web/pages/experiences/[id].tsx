@@ -1,21 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-
 import { Header, $Header } from '@header';
 import { Segment, $Segment } from 'components/segments/experiences/id';
 import { Modal, $Modal } from '@modal';
 import { Footer } from '@footer';
-
 import { useToggleState } from '@context/toggle';
-
-import layout from '@styles/layout.module.scss';
 import details from '@styles/details.module.scss';
-import color from '@styles/color.module.scss';
-import space from '@styles/space.module.scss';
-import shape from '@styles/shape.module.scss';
 import staysDetail from '@styles/staysDetail.module.scss';
-import responsive from '@styles/responsive.module.scss';
 
 /** sample data */
 import { experiences } from '../../data/experiences';
@@ -49,7 +41,7 @@ const id: () => string | JSX.Element = () => {
   return (
     <>
       <div>
-        <div style={{ position: 'relative', zIndex: 9000 }}>
+        <div className="relative z-100">
           <Header variant={$Header.WHITE} />
         </div>
         <AnimatePresence>
@@ -58,12 +50,7 @@ const id: () => string | JSX.Element = () => {
               exit={{ opacity: 0 }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              style={{
-                position: 'fixed',
-                top: 0,
-                zIndex: 60,
-                width: '100%',
-              }}
+              className="fixed top-0 z-60 w-full"
             >
               <Header variant={$Header.DETAILS} />
             </motion.div>
@@ -92,11 +79,7 @@ const id: () => string | JSX.Element = () => {
                 )}
               </div>
               {experiences[experienceID] && (
-                <div
-                  className={[color['b-t--white__2'], space['p-v--32']].join(
-                    ' '
-                  )}
-                >
+                <div className="border-top border-gray-600 py-6">
                   <Segment
                     layoutType="experience"
                     variant={$Segment.DESCRIPTION}
@@ -105,11 +88,7 @@ const id: () => string | JSX.Element = () => {
                 </div>
               )}
               {experiences[experienceID] && (
-                <div
-                  className={[color['b-t--white__2'], space['p-v--32']].join(
-                    ' '
-                  )}
-                >
+                <div className="border-top border-gray-600 py-6">
                   <Segment
                     variant={$Segment.PARTICIPATE}
                     {...experiences[experienceID]}
@@ -117,11 +96,7 @@ const id: () => string | JSX.Element = () => {
                 </div>
               )}
               {experiences[experienceID]?.necessities && (
-                <div
-                  className={[color['b-t--white__2'], space['p-v--32']].join(
-                    ' '
-                  )}
-                >
+                <div className="border-top border-gray-600 py-6">
                   <Segment
                     variant={$Segment.BRING}
                     {...experiences[experienceID]}
@@ -129,22 +104,14 @@ const id: () => string | JSX.Element = () => {
                 </div>
               )}
             </div>
-            <div
-              style={{ paddingTop: 20, paddingBottom: 56, width: '36%' }}
-              className={[responsive['n_to_b--sm']].join(' ')}
-            >
+            <div className="hidden sm:block pt-8 pb-12 w-4/10">
               <div
                 style={{ top: 82 }}
-                className={[
-                  layout['flex'],
-                  layout['justify-end'],
-                  layout['sticky'],
-                ].join(' ')}
+                className="flex justify-end sticky top-24"
               >
                 {experiences[experienceID] && (
                   <Modal
                     variant={$Modal.BOOKING}
-                    extendsTo={[shape['w--full']].join(' ')}
                     {...experiences[experienceID]}
                   />
                 )}
@@ -152,23 +119,17 @@ const id: () => string | JSX.Element = () => {
             </div>
           </div>
           {experiences[experienceID] && (
-            <div
-              className={[color['b-t--white__2'], space['p-v--32']].join(' ')}
-            >
+            <div className="border-top border-gray-600 py-8">
               <Segment variant={$Segment.HOST} {...experiences[experienceID]} />
             </div>
           )}
           {experiences[experienceID] ? (
-            <div
-              className={[color['b-t--white__2'], space['p-v--32']].join(' ')}
-            >
+            <div className="border-top border-gray-600 py-8">
               <Segment variant={$Segment.EXPERIENCES} />
             </div>
           ) : null}
           {experiences[experienceID] ? (
-            <div
-              className={[color['b-t--white__2'], space['p-v--32']].join(' ')}
-            >
+            <div className="border-top border-gray-600 py-8">
               <Segment
                 layoutType="experience"
                 variant={$Segment.REVIEWS}
@@ -177,9 +138,7 @@ const id: () => string | JSX.Element = () => {
             </div>
           ) : null}
           {experiences[experienceID] ? (
-            <div
-              className={[color['b-t--white__2'], space['p-v--32']].join(' ')}
-            >
+            <div className="border-top border-gray-600 py-8">
               <Segment
                 layoutType="experience"
                 variant={$Segment.AVAILABLE}
@@ -188,40 +147,22 @@ const id: () => string | JSX.Element = () => {
             </div>
           ) : null}
           {experiences[experienceID] ? (
-            <div
-              className={[
-                color['b-t--white__2'],
-                space['p-t--32'],
-                space['p-b--64'],
-              ].join(' ')}
-            >
+            <div className="border-top border-gray-600 pt-8 pb-16">
               <Segment layoutType="experience" variant={$Segment.KNOW} />
             </div>
           ) : null}
         </div>
         <Footer />
         <div
-          className={[
+          className={`fixed bottom-0 z-100 w-full ${[
             staysDetail['display__availability'],
-            shape['w--full'],
-          ].join(' ')}
-          style={{ position: 'fixed', bottom: 0, zIndex: 9999 }}
+          ].join(' ')}`}
         >
           {/* <Modal variant="availability" /> */}
         </div>
       </div>
       {toggleState.auth && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            zIndex: 60,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.6)',
-          }}
-        >
+        <div className="fixed top-0 z-60 bottom-0 left-0 right-0">
           <Modal variant={$Modal.MENU} />
         </div>
       )}

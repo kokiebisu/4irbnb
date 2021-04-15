@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react';
-import color from '@styles/color.module.scss';
 import input from '@input/input.module.scss';
 import { Icon } from '@icons';
 import useOnClickOutside from '@hooks/useOnClickOutside';
@@ -38,8 +37,6 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
         return 'border-b border-l border-r border-gray-400 rounded-b-lg';
       case 'bottom':
         return 'border-t border-l border-r border-gray-400 rounded-t-lg';
-      case 'middle':
-        return 'border border-gray-400';
       default:
         return 'border border-gray-400 rounded-lg';
     }
@@ -57,17 +54,13 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
         }`}
       >
         <div
-          style={{ padding: '0 12px' }}
           onClick={() => setExpanded(!expanded)}
-          className={`h-full flex justify-between items-center bg-transparent p-0 w-full text-md font-light ${[
-            color['b--0'],
-          ].join(' ')}`}
+          className="border-none h-full flex justify-between items-center bg-transparent px-3 w-full text-md font-light"
         >
           <div>
             <label
-              style={{ top: 15, padding: '0 12px' }}
               htmlFor="place"
-              className="absolute text-sm text-gray-700 font-thin left-0 cursor-pointer"
+              className="top-4 px-4 absolute text-sm text-gray-700 font-thin left-0 cursor-pointer"
             >
               {value}
             </label>
@@ -82,25 +75,15 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
         </div>
         {expanded && (
           <div
-            className="w-full"
+            className="absolute z-60 w-full"
             style={{
-              position: 'absolute',
               top: 48,
-              zIndex: 60,
             }}
           >
-            <div
-              className="rounded-md bg-white border border-gray-300 shadow-md"
-              style={{
-                padding: 16,
-              }}
-            >
+            <div className="p-4 rounded-md bg-white border border-gray-300 shadow-md">
               <div>
                 <div
-                  className="flex items-center cursor-pointer h-full justify-between bg-transparent"
-                  style={{
-                    padding: 12,
-                  }}
+                  className="p-3 flex items-center cursor-pointer h-full justify-between bg-transparent"
                   onClick={() => {
                     onChange('Entire place');
                     setExpanded(!expanded);
@@ -131,10 +114,7 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
               </div>
               <div>
                 <div
-                  className="flex items-center cursor-pointer h-full bg-transparent"
-                  style={{
-                    padding: 12,
-                  }}
+                  className="p-3 flex items-center cursor-pointer h-full bg-transparent"
                   onClick={() => {
                     onChange('Private room');
                     setExpanded(!expanded);
@@ -164,10 +144,7 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
               </div>
               <div>
                 <div
-                  className="flex items-center cursor-pointer h-full bg-transparent"
-                  style={{
-                    padding: 12,
-                  }}
+                  className="p-3 flex items-center cursor-pointer h-full bg-transparent"
                   onClick={() => {
                     onChange('Shared room');
                     setExpanded(!expanded);

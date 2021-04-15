@@ -1,10 +1,5 @@
 import { Card, $Card } from '@card';
 
-import space from '@styles/space.module.scss';
-import color from '@styles/color.module.scss';
-import font from '@styles/font.module.scss';
-import layout from '@styles/layout.module.scss';
-
 export interface ArrangementsTemplateProps {
   title?: string;
   arrangements?: { type: string; beds: { type: string; count: number }[] }[];
