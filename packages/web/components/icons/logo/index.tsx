@@ -19,10 +19,13 @@ export const LogoIcon: React.FC<BaseIconProps & LogoIconTypeProps> = ({
   return types[logoType];
 };
 
-export const MenuBarLogo: React.FC<BaseIconProps> = (props) => {
+export const MenuBarLogo: React.FC<BaseIconProps> = ({
+  stroke = '#737373',
+  ...props
+}) => {
   return (
     <svg
-      stroke="#737373"
+      stroke={stroke}
       strokeWidth="1.5"
       strokeLinecap="round"
       fillOpacity={0}

@@ -129,7 +129,7 @@ export const CheckIcon: React.FC<BaseIconProps> = ({
   );
 };
 
-export const SavedIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const SavedIcon: React.FC<BaseIconProps> = ({ fill = '#737373' }) => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 24 24">
       <path

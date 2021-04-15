@@ -8,15 +8,36 @@ export interface BarButtonProps {
 export const BarButton: React.FC<BarButtonProps> = ({ barType, selected }) => {
   const types = {
     menu: {
-      component: <Icon variant="logo" logoType="menubar" width={25} />,
+      component: (
+        <Icon
+          variant="general"
+          generalType="explore"
+          width={25}
+          stroke={selected ? 'red' : '#737373'}
+        />
+      ),
       name: 'Explore',
     },
     saved: {
-      component: <Icon variant="semantic" semanticType="saved" width={25} />,
+      component: (
+        <Icon
+          variant="semantic"
+          semanticType="saved"
+          width={25}
+          fill={selected ? 'red' : '#737373'}
+        />
+      ),
       name: 'Saved',
     },
     login: {
-      component: <Icon variant="general" generalType="login" width={25} />,
+      component: (
+        <Icon
+          variant="general"
+          generalType="login"
+          width={25}
+          fill={selected ? 'red' : '#737373'}
+        />
+      ),
       name: 'Log in',
     },
   };
@@ -25,7 +46,9 @@ export const BarButton: React.FC<BarButtonProps> = ({ barType, selected }) => {
     <div className="inline-flex flex-col items-center">
       <div>{types[barType].component}</div>
       <div>
-        <p className="text-xs">{types[barType].name}</p>
+        <p className={`text-xs ${selected ? 'text-black' : 'text-gray-500'}`}>
+          {types[barType].name}
+        </p>
       </div>
     </div>
   );
