@@ -1,5 +1,3 @@
-import animation from '@styles/animation.module.scss';
-
 export interface RadioInputProps {
   title?: string;
   subtitle?: string;
@@ -17,10 +15,9 @@ export const RadioInput: React.FC<RadioInputProps> = ({
     <div className="flex items-center">
       <div className="mr-3 relative">
         <button
-          className={`w-5 h-5 border border-gray-600 border-solid rounded-full hover:border-black`}
-          style={{
-            backgroundColor: value ? 'black' : 'white',
-          }}
+          className={`${
+            value ? 'bg-black' : 'bg-white'
+          } w-5 h-5 border border-gray-600 border-solid rounded-full hover:border-black`}
           onClick={() => onChange(title)}
         ></button>
         {value && (

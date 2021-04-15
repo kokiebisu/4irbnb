@@ -18,7 +18,7 @@ $pixels: (
 );
 
 $colors: (
-  white__transparent: "rgba(255, 255, 255, 0.2)",
+  white__transparent: 'rgba(255, 255, 255, 0.2)',
   white: #ffffff,
   white__1: #f7f7f7,
   white__2: #dddddd,
@@ -29,7 +29,7 @@ $colors: (
   lightred__0: #fef8f6,
   warning: #c54a32,
   darkgreen__3: #008489,
-  "transparent": transparent,
+  'transparent': transparent,
 );
 
 @each $name, $value in $pixels {

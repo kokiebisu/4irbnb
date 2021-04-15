@@ -1,9 +1,3 @@
-import React from "react";
-
-/** styles */
-import animation from "./animation.module.scss";
-import color from "../../styles/color.module.scss";
-
 /**
  * Renders the loading animation
  */
@@ -11,24 +5,27 @@ export const LoadingAnimation: React.FC<{
   dark?: boolean;
 }> = ({ dark }) => {
   return (
-    <div className={[animation["circle__wrapper"]].join(" ")}>
+    <div className="w-12 h-6 flex justify-around items-center">
       <span
-        className={`${[
-          animation["circle__content"],
-          animation["circle__1"],
-        ].join(" ")} ${dark ? color["bg--black"] : color["bg--white"]}`}
+        className={`block w-4 h-4 rounded-sm circle-animation ${
+          dark ? 'bg-black' : 'bg-white'
+        }`}
       />
       <span
-        className={`${[
-          animation["circle__content"],
-          animation["circle__2"],
-        ].join(" ")} ${dark ? color["bg--black"] : color["bg--white"]}`}
+        style={{
+          animationDelay: '0.3s',
+        }}
+        className={`block w-4 h-4 rounded-sm circle-animation ${
+          dark ? 'bg-black' : 'bg-white'
+        }`}
       />
       <span
-        className={`${[
-          animation["circle__content"],
-          animation["circle__3"],
-        ].join(" ")} ${dark ? color["bg--black"] : color["bg--white"]}`}
+        style={{
+          animationDelay: '0.6s',
+        }}
+        className={`block w-4 h-4 rounded-sm circle-animation ${
+          dark ? 'bg-black' : 'bg-white'
+        }`}
       />
     </div>
   );

@@ -1,15 +1,8 @@
 import { useRef, useState } from 'react';
 import Router from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
-
-import space from '@styles/space.module.scss';
 import styles from '@styles/index.module.scss';
-import layout from '@styles/layout.module.scss';
-import color from '@styles/color.module.scss';
-import shape from '@styles/shape.module.scss';
 import header from '@header/header.module.scss';
-import animation from '@styles/animation.module.scss';
-import responsive from '@styles/responsive.module.scss';
 
 import { Modal, $Modal } from '@modal';
 import { Button } from '@button';
@@ -60,9 +53,9 @@ export const LandingHeader: React.FC<{
     <header
       className={`${
         expanded ? 'pt-4 pb-32' : 'py-3'
-      } relative container-spread ${[animation['transition--fast']].join(' ')}`}
+      } relative container-spread transition ease-in-out duration-100`}
     >
-      <div className="md:none justify-betweennone md:flex justify-between relative">
+      <div className="md:none none md:flex justify-between relative">
         <div>
           <div className="mt-1 block lg:hidden">
             <Icon
@@ -84,50 +77,36 @@ export const LandingHeader: React.FC<{
           </div>
         </div>
         <div className="flex items-center">
-          <div
-            className={[styles['searchbar__host'], space['m-h--2']].join(' ')}
-          >
+          <div className={`mx-1 ${[styles['searchbar__host']].join(' ')}`}>
             <Button
               variant="transparent"
-              content={<Content kind="host" inverse={criteria} />}
               inverse={criteria}
-              animate
               onClick={() => Router.push('/host/homes')}
-            />
+            >
+              <Content kind="host" inverse={criteria} />
+            </Button>
           </div>
           <div className="mx-1">
             <Button
               variant="transparent"
-              content={<Content kind="globe" inverse={criteria} />}
               inverse={criteria}
               onClick={() => toggleDispatch({ type: 'toggle_globe' })}
-            />
+            >
+              <Content kind="globe" inverse={criteria} />
+            </Button>
           </div>
           <div className="ml-1">
             <Button
               variant="menu"
-              extendsTo={[animation['hover-shadow--lg'], shape['br--30']].join(
-                ' '
-              )}
               inverse={criteria}
               authenticated={data}
               onClick={() => toggleDispatch({ type: 'toggle_menu' })}
             />
           </div>
         </div>
-        <div
-          style={{ zIndex: 70 }}
-          className={[
-            layout['absolute'],
-            layout['r--0'],
-            layout['t--55'],
-            color['bg--transparent'],
-            shape['w--230'],
-          ].join(' ')}
-        >
+        <div className="z-70 absolute bg-transparent t-1/2">
           <Modal
             variant={$Modal.MENU}
-            extendsTo={[shape['w--200']].join(" '")}
             authenticated={data}
             criteria={toggleState.menu}
             dispatch="toggle_menu"
@@ -135,18 +114,9 @@ export const LandingHeader: React.FC<{
         </div>
       </div>
       <div
-        className={[
-          responsive['n_to_b--sm'],
-          space['p-h--20'],
-          responsive['t--80p_to_20p--sm'],
-        ].join(' ')}
+        className={`top-8/10 sm:top-2/10 px-6 hidden sm:block absolute w-full left-1/2 bottom-0 z-50`}
         style={{
-          position: 'absolute',
-          width: '100%',
           maxWidth: 760,
-          left: '50%',
-          bottom: 0,
-          zIndex: 50,
           transform: 'translate(-50%, 0)',
           height: 'fit-content',
         }}
@@ -154,6 +124,7 @@ export const LandingHeader: React.FC<{
         <AnimatePresence>
           {criteria ? (
             <motion.div
+              className="relative"
               key="transparentmodal"
               exit={{
                 y: 0,
@@ -164,9 +135,6 @@ export const LandingHeader: React.FC<{
               transition={{ type: 'tween', duration: 0.2 }}
               initial={{ y: -100, scale: 0.3, opacity: 0, width: 500 }}
               animate={{ y: 0, scale: 1, opacity: 1, width: 'auto' }}
-              style={{
-                position: 'relative',
-              }}
             >
               <div className="relative">
                 <div className="mt-3 mb-4">
@@ -176,18 +144,13 @@ export const LandingHeader: React.FC<{
                         <div key={index} className="mx-4">
                           <button onClick={types[type].onClick}>
                             <div
-                              className={`${
+                              className={`pb-3 ${
                                 category === type
                                   ? header['landing__bb--selected']
                                   : header['landing__bb']
-                              } ${[space['p-b--8']].join(' ')}`}
+                              }`}
                             >
-                              <p
-                                className={`${[color['c--white']].join(' ')} ${[
-                                  responsive['size__12_to_14--md'],
-                                  responsive['weight__500_to_300--md'],
-                                ].join(' ')}`}
-                              >
+                              <p className="text-white text-xs md:text-md font-medium md:font-light">
                                 {types[type].title}
                               </p>
                             </div>
@@ -205,51 +168,31 @@ export const LandingHeader: React.FC<{
               {expanded ? (
                 <motion.div
                   key="modal"
+                  className="relative"
                   exit={{
                     opacity: 0,
                     y: -20,
                   }}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  style={{ position: 'relative' }}
                 >
-                  <div className={[layout['relative']].join(' ')}>
-                    <div
-                      className={[space['m-b--16'], space['m-t--12']].join(' ')}
-                    >
-                      <div
-                        className={[
-                          layout['flex'],
-                          layout['justify-center'],
-                        ].join(' ')}
-                      >
+                  <div className="relative">
+                    <div className="mb-4 mt-6">
+                      <div className="flex justify-center">
                         {Object.keys(types).map((type, index) => {
                           return (
-                            <div
-                              key={index}
-                              className={[space['m-h--16']].join(' ')}
-                            >
+                            <div key={index} className="mx-4">
                               <button onClick={() => setCategory('stay')}>
-                                <div className={[space['p-b--8']].join(' ')}>
+                                <div className="pb-3">
                                   <p
                                     className={`${
-                                      expanded
-                                        ? [color['c--black']].join(' ')
-                                        : [color['c--white']].join(' ')
-                                    } ${[
-                                      responsive['size__12_to_14--md'],
-                                      responsive['weight__500_to_300--md'],
-                                    ].join(' ')}`}
+                                      expanded ? 'text-black' : 'text-white'
+                                    } font-medium md:font-light text-xs md:text-md`}
                                   >
                                     {types[type].title}
                                   </p>
                                 </div>
-                                <div
-                                  className={[
-                                    layout['flex'],
-                                    layout['justify-center'],
-                                  ].join(' ')}
-                                >
+                                <div className="flex justify-center">
                                   {/* {category === type && (
                                     <motion.div
                                       whileHover={{ width: 15 }}
@@ -275,36 +218,21 @@ export const LandingHeader: React.FC<{
               ) : (
                 <motion.div
                   key="minimodal"
-                  className={[
-                    responsive['justify--start_to_center--md'],
-                    responsive['t__-45_to_0--md'],
-                  ].join(' ')}
-                  style={{
-                    position: 'absolute',
-                    width: '100%',
-                    display: 'flex',
-                  }}
+                  className="-top-14 md:t-0 absolute w-full flex"
                 >
                   <motion.div
-                    className={[
-                      layout['relative'],
-                      responsive['l__30_to_0--md'],
-                    ].join(' ')}
+                    className="relative l-8 md:l-0"
+                    initial={{ width: 0, y: 50, opacity: 0 }}
                     exit={{
                       width: 0,
                       y: 50,
                       opacity: 0,
                     }}
-                    // transition={{ type: "spring", stiffness: 30, duration: 0.03 }}
-                    initial={{ width: 0, y: 50, opacity: 0 }}
                     animate={{ width: 240, y: 0, opacity: 1 }}
-                    // animate={{ width: 240, y: 0, opacity: 1 }}
                   >
                     <Button
                       variant="searchbar"
-                      mini
                       onClick={() => setExpanded(!expanded)}
-                      extendsTo={[shape['w--full']].join(' ')}
                     />
                   </motion.div>
                 </motion.div>

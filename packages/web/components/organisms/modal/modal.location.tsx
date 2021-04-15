@@ -1,9 +1,3 @@
-import shape from '@styles/shape.module.scss';
-import space from '@styles/space.module.scss';
-import color from '@styles/color.module.scss';
-import layout from '@styles/layout.module.scss';
-import animation from '@styles/animation.module.scss';
-
 import { Button } from '@button';
 import { Layout } from '@layout';
 
@@ -28,15 +22,7 @@ export const LocationModal: React.FC<LocationModalProps> = () => {
   return (
     <div>
       <div>
-        <Button
-          variant="location"
-          type="explore"
-          extendsTo={[
-            space['p-h--25'],
-            animation['hover-background--white__1'],
-          ].join(' ')}
-          block
-        />
+        <Button variant="location" locationType="explore" block />
       </div>
       <div>
         <Layout
@@ -48,14 +34,10 @@ export const LocationModal: React.FC<LocationModalProps> = () => {
                 <div key={index}>
                   <Button
                     variant="location"
-                    type="recent"
+                    locationType="recent"
                     location={location}
                     from={from}
                     guests={guests}
-                    extendsTo={[
-                      space['p-h--25'],
-                      animation['hover-background--white__1'],
-                    ].join(' ')}
                     block
                   />
                 </div>
