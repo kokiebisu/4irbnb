@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import animation from '@styles/animation.module.scss';
 
 export interface TextAreaInputProps {
   value?: any;
@@ -16,29 +15,33 @@ export const TextAreaInput: React.FC<TextAreaInputProps> = ({
 
   const renderBorder = () => {
     if (value.length >= limit) {
-      return animation['border--warning'];
+      return 'transition-colors border-red-500 ease-in-out';
     }
     if (active) {
-      return animation['focus-border--darkgreen__3'];
+      return 'transition-colors focus:border-green-600 ease-in-out duration-300';
     }
     return '';
   };
 
   const renderBackground = () => {
     if (value.length >= limit) {
-      return animation['background--lightred__0'];
+      // return animation['background--lightred__0'];
+      return 'transition-colors bg-red-50 ease-in-out';
     }
     if (active) {
-      return animation['background--white'];
+      // return animation['background--white'];
+      return 'transition-colors bg-white ease-in-out';
     }
     return '';
   };
 
   const renderColor = () => {
     if (value.length >= limit) {
-      return animation['c--warning'];
+      // return animation['c--warning'];
+      return 'transition-colors text-red-500 ease-in-out';
     }
-    return animation['c--darkgreen__3'];
+    // return animation['c--darkgreen__3'];
+    return 'transition-colors text-green-800 ease-in-out';
   };
 
   return (
@@ -50,9 +53,7 @@ export const TextAreaInput: React.FC<TextAreaInputProps> = ({
           onFocus={() => setActive(true)}
           onBlur={() => setActive(false)}
           onChange={onChange}
-          className={`relative font-thin border border-gray-400 rounded text-md text-gray-700 h-full w-full p-3 outline-none ${[
-            animation['transition'],
-          ].join(' ')} ${renderBorder()} ${renderBackground()}`}
+          className={`transition ease-in-out duration-500 relative font-thin border border-gray-400 rounded text-md text-gray-700 h-full w-full p-3 outline-none ${renderBorder()} ${renderBackground()}`}
           style={{
             resize: 'vertical',
             minHeight: 300,

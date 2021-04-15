@@ -1,5 +1,4 @@
 import { Icon } from '@icons';
-import animation from '@styles/animation.module.scss';
 
 export interface VideoButtonProps {
   play?: boolean;
@@ -7,11 +6,7 @@ export interface VideoButtonProps {
 
 export const VideoButton: React.FC<VideoButtonProps> = ({ play }) => {
   return (
-    <div
-      className={`inline-block rounded-full p-3 ${[
-        animation['hover-blur'],
-      ].join(' ')}`}
-    >
+    <div className={`inline-block rounded-full p-3 hover:bg-blur`}>
       {play ? (
         <Icon
           variant="action"
