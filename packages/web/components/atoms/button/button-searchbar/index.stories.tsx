@@ -13,4 +13,5 @@ const ButtonStory: Story<SearchbarButtonProps> = (args) => (
 export const Searchbar = ButtonStory.bind({});
 Searchbar.args = {
   mini: false,
+  inverse: false,
 };

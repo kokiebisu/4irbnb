@@ -2,13 +2,18 @@ import { Icon } from '@icons';
 
 export interface SearchbarButtonProps {
   mini?: boolean;
+  inverse?: boolean;
 }
 
 /**
  * Renders the searchbar button component
  * @param {boolean} mini - Whether if the button is the minified version or not
+ * @param {boolean} inverse - Triggered when the searchbar is selected
  */
-export const SearchbarButton: React.FC<SearchbarButtonProps> = ({ mini }) => {
+export const SearchbarButton: React.FC<SearchbarButtonProps> = ({
+  mini,
+  inverse,
+}) => {
   return (
     <>
       {mini ? (
@@ -35,8 +40,14 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({ mini }) => {
           </div>
         </div>
       ) : (
-        <div className="shadow-md rounded-full py-3 pl-6 pr-12 flex items-center">
-          <div className="mr-2">
+        <div
+          className={`${
+            inverse
+              ? 'border border-gray-300 bg-gray-100'
+              : 'shadow-md border border-transparent'
+          } text-gray-700 rounded-full py-3 pl-6 pr-12 flex items-center`}
+        >
+          <div className="mr-4">
             <Icon
               variant="general"
               generalType="magnifyGlass"
@@ -45,7 +56,9 @@ export const SearchbarButton: React.FC<SearchbarButtonProps> = ({ mini }) => {
               strokeWidth={4}
             />
           </div>
-          <div className="font-thin text-sm text-gray-500">Search stays</div>
+          <div className="font-thin text-md tracking-wide text-gray-400">
+            Search stays
+          </div>
         </div>
       )}
     </>

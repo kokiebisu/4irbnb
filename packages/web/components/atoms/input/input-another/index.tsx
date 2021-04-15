@@ -12,16 +12,11 @@ export const AnotherInput: React.FC<AnotherInputProps> = ({ onChange }) => {
   return (
     <div className="h-96 p-7 border border-dashed border-gray-300">
       <form className="h-full">
-        <input
-          type="file"
-          id="upload"
-          style={{ display: 'none' }}
-          onChange={onChange}
-        />
+        <input type="file" id="upload" className="hidden" onChange={onChange} />
         <label htmlFor="upload" className="h-full">
           <div className="h-full cursor-pointer">
             <div className="relative w-full h-full">
-              <div className="absolute top-1/2 left-1/2 transform translate-x-1/2 translate-y-1/2">
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <div className="flex flex-col items-center">
                   <div>
                     <div>
