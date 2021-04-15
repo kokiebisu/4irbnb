@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react';
 
 import shape from '@styles/shape.module.scss';
-import color from '@styles/color.module.scss';
 import input from '@input/input.module.scss';
 
 export interface PriceInputProps {
@@ -29,8 +28,7 @@ export const PriceInput: React.FC<PriceInputProps> = ({
 
   return (
     <div
-      className={`relative py-3 px-4 items-center rounded-lg border border-gray-700 ${[
-        shape['h--50'],
+      className={`relative py-3 px-4 items-center rounded-lg border border-gray-700 h-12 ${[
         input['outside'],
       ].join(' ')} ${
         active
@@ -51,9 +49,7 @@ export const PriceInput: React.FC<PriceInputProps> = ({
           onBlur={() => setActive(false)}
           value={value}
           onKeyPress={onKeyPress}
-          className={`outline-none pl-4 w-full block border-none text-sm font-thin ${[
-            color['c__placeholder--black'],
-          ].join(' ')} `}
+          className="opacity-50placeholder-black::placeholder outline-none pl-4 w-full block border-none text-sm font-thin"
         />
       </div>
       {(active || value) && (

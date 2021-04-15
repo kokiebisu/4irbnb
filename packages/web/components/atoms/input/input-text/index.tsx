@@ -1,9 +1,5 @@
 import { useState } from 'react';
-
-import shape from '@styles/shape.module.scss';
-import color from '@styles/color.module.scss';
 import input from '@input/input.module.scss';
-
 import { renderShape } from '../logic/logic.address';
 
 export interface TextInputProps {
@@ -32,8 +28,7 @@ export const TextInput: React.FC<TextInputProps> = ({
   const [active, setActive] = useState(false);
   return (
     <div
-      className={`relative py-2 px-4 items-center ${[
-        shape['h--50'],
+      className={`h-16 relative py-2 px-4 items-center ${[
         input['outside'],
       ].join(' ')} ${renderShape(direction)} ${
         active ? 'border-2 border-black' : 'border border-gray-800'
@@ -49,9 +44,7 @@ export const TextInput: React.FC<TextInputProps> = ({
           onFocus={() => setActive(true)}
           onBlur={() => setActive(false)}
           value={value}
-          className={`outline-none p-0 w-full block border-none text-sm font-thin ${[
-            color['c__placeholder--black'],
-          ].join(' ')} `}
+          className="placeholder-black::placeholder outline-none p-0 w-full block border-none text-sm font-thin"
           placeholder={placeholder}
         />
       </div>

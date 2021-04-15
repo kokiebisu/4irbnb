@@ -1,11 +1,4 @@
 import Router from 'next/router';
-
-import space from '@styles/space.module.scss';
-import layout from '@styles/layout.module.scss';
-import shape from '@styles/shape.module.scss';
-import color from '@styles/color.module.scss';
-import font from '@styles/font.module.scss';
-
 import { Button } from '@button';
 
 /**
@@ -24,11 +17,6 @@ export const StayHeader: React.FC<{
             noName
             fill="##008489"
             onClick={() => Router.push('/')}
-            extendsTo={[
-              layout['inline-block'],
-              space['p--14'],
-              shape['br--circle'],
-            ].join(' ')}
           />
         </div>
         {title && (

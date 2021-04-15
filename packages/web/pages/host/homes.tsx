@@ -1,9 +1,6 @@
 import space from '@styles/space.module.scss';
-import color from '@styles/color.module.scss';
-
 import { Segment, $Segment } from '@template/host/homes';
 import { Footer } from '@footer';
-
 import { useTabTitle } from '@hooks/useTabTitle';
 
 /**
@@ -17,33 +14,33 @@ const Homes: () => string | JSX.Element = () => {
       <div>
         <Segment variant={$Segment.BANNER} />
       </div>
-      <div className={[space['p-v--64'], color['b-b--white__2']].join(' ')}>
+      <div className="py-18 border-bottom border-gray-600">
         <div className={`${[space['p__homes']].join(' ')}`}>
           <Segment variant={$Segment.HOSTING} />
         </div>
       </div>
-      <div className={[space['p-v--64'], color['b-b--white__2']].join(' ')}>
+      <div className="py-18 border-bottom border-gray-600">
         <Segment
           variant={$Segment.COMMUNITY}
           title="Host your home on Airbnb"
         />
       </div>
-      <div className={[space['p-v--64'], color['b-b--white__2']].join(' ')}>
+      <div className="py-18 border-bottom border-gray-600">
         <div className={`${[space['p__homes']].join(' ')}`}>
           <Segment variant={$Segment.ALL} />
         </div>
       </div>
-      <div className={[space['p-v--64']].join(' ')}>
+      <div className="py-18">
         <div className={`${[space['p__homes']].join(' ')}`}>
           <Segment variant={$Segment.PRIORITY} />
         </div>
       </div>
-      <div className={[space['p-v--64'], color['b-b--white__2']].join(' ')}>
+      <div className="py-18 border-bottom border-gray-700">
         <div className={`${[space['p__homes']].join(' ')}`}>
           <Segment variant={$Segment.HELP} />
         </div>
       </div>
-      <div className={[space['p-v--64'], color['b-b--white__2']].join(' ')}>
+      <div className="py-18 border-bottom border-gray-700">
         <div className={`${[space['p__homes']].join(' ')}`}>
           <Segment variant={$Segment.READY} />
         </div>
