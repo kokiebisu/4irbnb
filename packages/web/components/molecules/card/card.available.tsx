@@ -43,7 +43,7 @@ const AvailableCard: React.FC<AvailableCardProps> = ({
         <span className="text-sm"> /person</span>
       </div>
       <div className="inline-block">
-        <Button variant="primary" size="sm" title="Choose" />
+        <Button variant="primary" size="sm" title="Choose" color="white" />
       </div>
     </div>
   );
