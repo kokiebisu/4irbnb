@@ -1,9 +1,5 @@
 import layout from '@styles/layout.module.scss';
-import color from '@styles/color.module.scss';
-import font from '@styles/font.module.scss';
-import space from '@styles/space.module.scss';
 import section from '@template/index.module.scss';
-
 import { Icon } from '@icons';
 import { Panel, $Panel } from '@panel';
 
@@ -44,25 +40,9 @@ export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({
     <div>
       <div>
         <div>
-          <h3
-            className={[
-              color['c--gray__4'],
-              font['size--28'],
-              font['weight--500'],
-            ].join(' ')}
-          >
-            {title}
-          </h3>
+          <h3 className="text-gray-800 text-lg font-medium">{title}</h3>
         </div>
-        <div
-          className={[
-            space['m-t--16'],
-            space['m-b--28'],
-            layout['flex'],
-            layout['justify-between'],
-            layout['items-center'],
-          ].join(' ')}
-        >
+        <div className="mt-4 mb-5 flex justify-between items-center">
           <div
             className={[
               layout['flex'],
@@ -71,85 +51,40 @@ export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({
             ].join(' ')}
           >
             <div>
-              <Icon variant={'profile'} profileType="star" height={14} />
+              <Icon variant="profile" profileType="star" height={14} />
             </div>
-            <span
-              className={[
-                space['p-l--4'],
-                color['c--g__2'],
-                font['size--14'],
-                font['weight--700'],
-              ].join(' ')}
-            >
+            <span className="pl-1 text-gray-700 text-sm font-bold">
               {ratings}
             </span>
-            <span
-              className={[
-                space['p-l--4'],
-                color['c--gray__1'],
-                font['size--14'],
-                font['weight--300'],
-              ].join(' ')}
-            >
+            <span className="pl-1 text-gray-600 text-sm font-thin">
               ({numberOfReviews})
             </span>
             {superhost && (
               <>
-                <span className={[color['c--gray__1']].join(' ')}>
-                  &nbsp;·&nbsp;
-                </span>
+                <span className="text-gray-600">&nbsp;·&nbsp;</span>
                 <div>
                   <Icon
-                    variant={'profile'}
+                    variant="profile"
                     profileType="superhost"
                     height={14}
                     fill="#E61E4D"
                   />
                 </div>
-                <p
-                  className={[
-                    space['p-l--3'],
-                    color['c--gray__1'],
-                    font['size--14'],
-                    font['weight--300'],
-                  ].join(' ')}
-                >
+                <p className="pl-1 text-gray-600 text-sm font-light">
                   Superhost
                 </p>
               </>
             )}
-            <span
-              className={[font['weight--300'], color['c--gray__1']].join(' ')}
-            >
-              &nbsp;·&nbsp;
-            </span>
-            <a
-              className={[font['size--14'], color['c--gray__1']].join(' ')}
-              href=""
-            >
+            <span className="font-thin text-gray-600">&nbsp;·&nbsp;</span>
+            <a className="text-sm text-gray-600" href="">
               <u>
                 {location}, {province}, {country}
               </u>
             </a>
           </div>
-          <div
-            className={[layout['flex'], section['hidden__options']].join(' ')}
-          >
-            <div
-              className={[
-                space['p-r--6'],
-                layout['flex'],
-                layout['items-center'],
-              ].join(' ')}
-            >
-              <a
-                href="#"
-                className={[
-                  layout['flex'],
-                  space['p-l--6'],
-                  layout['items-center'],
-                ].join(' ')}
-              >
+          <div className={`flex ${[section['hidden__options']].join(' ')}`}>
+            <div className="pr-2 flex items-center">
+              <a href="#" className="flex pl-2 items-center">
                 <div>
                   <Icon
                     variant="general"
@@ -158,23 +93,11 @@ export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({
                     fill="#484848"
                   />
                 </div>
-                <p
-                  className={[
-                    space['p-l--10'],
-                    font['size--14'],
-                    color['c--gray__2'],
-                  ].join(' ')}
-                >
+                <p className="pl-3 text-sm text-gray-700">
                   <u>Share</u>
                 </p>
               </a>
-              <a
-                className={[
-                  layout['flex'],
-                  space['m-l--12'],
-                  layout['items-center'],
-                ].join(' ')}
-              >
+              <a className="flex ml-3 items-center">
                 <div>
                   <Icon
                     variant="action"
@@ -183,15 +106,7 @@ export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({
                     height={17}
                   />
                 </div>
-                <u
-                  className={[
-                    space['p-l--10'],
-                    font['size--14'],
-                    color['c--gray__2'],
-                  ].join(' ')}
-                >
-                  Save
-                </u>
+                <u className="pl-3 text-sm text-gray-700">Save</u>
               </a>
             </div>
           </div>

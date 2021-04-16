@@ -1,15 +1,6 @@
-import shape from '@styles/shape.module.scss';
-import color from '@styles/color.module.scss';
-import font from '@styles/font.module.scss';
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
-import responsive from '@styles/responsive.module.scss';
 import modal from '@modal/modal.module.scss';
-
 import { Button } from '@button';
-
 import { Icon } from '@icons';
-
 import { useToggleDispatch } from '@context/toggle';
 
 /**
@@ -61,25 +52,11 @@ export const PrivacyModal: React.FC<{}> = () => {
           <div
             className={`mt-2 mb-2 ml-0 ${[modal['m-r--privacy']].join(' ')}`}
           >
-            <Button
-              variant="privacy"
-              extendsTo={[
-                shape['w--full'],
-                responsive['b_to_f--sm'],
-                font['text--center'],
-              ].join(' ')}
-              title="Save"
-              onClick={handleSave}
-            />
+            <Button variant="privacy" title="Save" onClick={handleSave} />
           </div>
           <div className="mt-2 mb-2 ml-0 mr-0">
             <Button
               variant="privacy"
-              extendsTo={[
-                shape['w--full'],
-                responsive['b_to_f--sm'],
-                font['text--center'],
-              ].join(' ')}
               title="Cookie Preferences"
               inverse
               onClick={handleSettings}

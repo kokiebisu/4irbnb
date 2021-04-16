@@ -1,12 +1,5 @@
-import layout from '@styles/layout.module.scss';
-import shape from '@styles/shape.module.scss';
-import color from '@styles/color.module.scss';
-import space from '@styles/space.module.scss';
-import font from '@styles/font.module.scss';
-
 import { Button } from '@button';
 import { Prototype } from '@prototype/auth';
-
 import { useToggleDispatch } from '@context/toggle';
 import { useAuthDispatch, useAuthState } from '@context/auth';
 
@@ -24,37 +17,26 @@ export const AuthModal: React.FC<{}> = () => {
     >
       <div
         style={{ height: 60 }}
-        className={[
-          layout['flex'],
-          layout['items-center'],
-          color['b-b--white__2'],
-          space['p-h--24'],
-        ].join(' ')}
+        className="flex items-center border-b border-gray-500 px-4"
       >
-        <div className={[layout['relative'], shape['w--full']].join(' ')}>
-          <div
-            className={[
-              layout['al--0'],
-              layout['t---3'],
-              color['bg--transparent'],
-            ].join(' ')}
-          >
+        <div className="relative w-full">
+          <div className="absolute left-0 top-2 bg-transparent">
             {authState.title === 'Forgot password' ? (
               <Button
                 variant="modal"
-                modal="back"
+                modalType="back"
                 onClick={() => authDispatch({ type: 'auth_login' })}
               />
             ) : (
               <Button
                 variant="modal"
-                modal="close"
+                modalType="close"
                 onClick={() => toggleDispatch({ type: 'close_register' })}
               />
             )}
           </div>
-          <div className={[layout['all-center']].join(' ')}>
-            <h3 className={[font['size--16']].join(' ')}>{authState.title}</h3>
+          <div className="flex justify-center items-center">
+            <h3 className="text-md">{authState.title}</h3>
           </div>
         </div>
       </div>

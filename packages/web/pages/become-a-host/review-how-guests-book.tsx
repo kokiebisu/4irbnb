@@ -3,13 +3,9 @@ import Router from 'next/router';
 import { Bar, $Bar } from '@bar';
 import { Header, $Header } from '@header';
 import { Card, $Card } from '@card';
-
-import font from '@styles/font.module.scss';
 import responsive from '@styles/responsive.module.scss';
-import color from '@styles/color.module.scss';
 import layout from '@styles/layout.module.scss';
 import space from '@styles/space.module.scss';
-
 import { Icon } from '@icons';
 
 const HowGuestsWillBookPage = () => {
@@ -53,9 +49,9 @@ const HowGuestsWillBookPage = () => {
               </div>
             ))}
           </div>
-          <div className={[space['m-v--64']].join(' ')}>
-            <div className={[space['m-b--16']].join(' ')}>
-              <h3 className={[font['size--14'], color['c--gray__2']].join(' ')}>
+          <div className="my-7">
+            <div className="mb-4">
+              <h3 className="text-sm text-gray-700">
                 You're protected throughout
               </h3>
             </div>
@@ -64,9 +60,7 @@ const HowGuestsWillBookPage = () => {
                 <Icon variant="general" generalType="protected" width={50} />
               </div>
               <div style={{ width: '65%' }}>
-                <h3
-                  className={[font['size--14'], color['c--gray__0']].join(' ')}
-                >
+                <h3 className="text-sm text-gray-500">
                   In the rare case there are issues, Airbnb has you covered with
                   24/7 customer support, a $1,000,000 CAD Host Guarantee, and
                   completely penalty-free cancellations if you’re uncomfortable
@@ -76,21 +70,13 @@ const HowGuestsWillBookPage = () => {
             </div>
           </div>
         </div>
-        <div
-          style={{ width: '100%', display: 'flex', justifyContent: 'center' }}
-        >
+        <div className="w-full flex justify-center">
           <div
-            className={[responsive['justify--center_to_end--xs']].join(' ')}
-            style={{
-              backgroundColor: 'white',
-              width: '100%',
-              position: 'fixed',
-              bottom: 0,
-              zIndex: 60,
-              display: 'flex',
-            }}
+            className={`bg-white w-full fixed bottom-0 z-60 flex ${[
+              responsive['justify--center_to_end--xs'],
+            ].join(' ')}`}
           >
-            <div style={{ width: '100%', maxWidth: 700, margin: '0 auto' }}>
+            <div className="w-full my-0 mx-auto" style={{ maxWidth: 700 }}>
               <Bar variant={$Bar.CREATE} next={proceed} back={revert} />
             </div>
           </div>

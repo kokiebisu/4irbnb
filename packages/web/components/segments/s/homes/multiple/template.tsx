@@ -1,9 +1,4 @@
 import { useLayoutEffect, useRef, useState } from 'react';
-
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
-import font from '@styles/font.module.scss';
-import color from '@styles/color.module.scss';
 import styles from '@template/index.module.scss';
 import sectionStyles from '@template/index.module.scss';
 import section from '@template/index.module.scss';
@@ -51,12 +46,9 @@ export const MultipleTemplate: React.FC<MultipleTemplateProps> = ({
     return (
       <div className="relative py-3">
         <ul
-          className="hide-scrollbar -mx-2 flex p-0 overflox-x-auto overflow-y-hidden"
+          className="hide-scrollbar -mx-2 flex p-0 overflox-x-auto overflow-y-hidden list-none min-w-full h-full"
           style={{
-            listStyle: 'none',
-            minWidth: '100%',
             scrollSnapType: 'x mandatory',
-            height: '100%',
           }}
         >
           {data.length &&
@@ -139,7 +131,6 @@ export const MultipleTemplate: React.FC<MultipleTemplateProps> = ({
             <div className="mx-1">
               <Button
                 variant="paginate"
-                animate
                 direction="left"
                 onClick={previous}
                 disable={state.activeSlide === 0}
@@ -148,7 +139,6 @@ export const MultipleTemplate: React.FC<MultipleTemplateProps> = ({
             <div className="mx-1">
               <Button
                 variant="paginate"
-                animate
                 direction="right"
                 onClick={next}
                 disable={state.activeSlide === Math.floor(items.length / 2) - 1}
@@ -212,10 +202,10 @@ export const MultipleTemplate: React.FC<MultipleTemplateProps> = ({
                     <p className="font-light text-sm">1 / {items.length}</p>
                   </div>
                   <div className="mr-2">
-                    <Button variant="paginate" animate direction="left" />
+                    <Button variant="paginate" direction="left" />
                   </div>
                   <div>
-                    <Button variant="paginate" animate direction="right" />
+                    <Button variant="paginate" direction="right" />
                   </div>
                 </div>
               )}

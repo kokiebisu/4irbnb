@@ -1,22 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion';
-
 import { useToggleState } from '@context/toggle';
-
 import index from '@styles/index.module.scss';
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
-import color from '@styles/color.module.scss';
-import shape from '@styles/shape.module.scss';
-
 import { Layout } from '@layout';
-
 import { Animation } from '@animation';
 import { Modal, $Modal } from '@modal';
 import { Segment, $Segment } from '@template/index';
 import { Footer } from '@footer';
-
 import { Bar, $Bar } from '@bar';
-
 import { useHandleScroll } from '@hooks/useHandleScroll';
 import { useHandleDocumentResize } from '@hooks/useHandleDocumentResize';
 import { useTimeout } from '@hooks/useTimeout';
@@ -32,10 +22,7 @@ const LandingPage = ({ currentUser }) => {
   const pageHeight = useHandleDocumentResize();
 
   return (
-    <div
-      style={{ overflowX: 'hidden' }}
-      className={[layout['relative'], shape['min-h--fullv']].join(' ')}
-    >
+    <div className="min-h-screen overflow-x-hidden relative ">
       <div>
         <div>
           <Bar variant={$Bar.COVID} />
@@ -49,7 +36,7 @@ const LandingPage = ({ currentUser }) => {
             <Layout variant="landing" title="Live anywhere" spread>
               <Segment variant={$Segment.ANYWHERE} />
             </Layout>
-            <div className={space['m-v--32']}></div>
+            <div className="my-7"></div>
             <Layout spread variant="landing">
               <Segment variant={$Segment.WORTH} />
             </Layout>
@@ -69,26 +56,12 @@ const LandingPage = ({ currentUser }) => {
             </Layout>
           </>
         ) : (
-          <div
-            className={[
-              space['m-v--22'],
-              layout['flex'],
-              layout['items-center'],
-              layout['justify-center'],
-            ].join(' ')}
-          >
+          <div className="my-4 flex items-center justify-center">
             <Animation type="loading" dark />
           </div>
         )}
         <Footer spread />
-        <div
-          style={{ position: 'fixed', width: '100%', zIndex: 50 }}
-          className={[
-            layout['fb--0'],
-            layout['flex'],
-            layout['justify-center'],
-          ].join(' ')}
-        >
+        <div className="fixed bottom-0 w-full z-50 flex justify-center">
           <div className={[index['m__privacy']].join(' ')}>
             <Modal
               variant={$Modal.PRIVACY}
@@ -107,38 +80,15 @@ const LandingPage = ({ currentUser }) => {
               transition={{ duration: 0.5 }}
               className={index['none__menubar']}
             >
-              <div
-                className={[layout['fixed'], shape['w--full']].join(' ')}
-                style={{ zIndex: 30, bottom: 0 }}
-              >
-                <Bar
-                  variant={$Bar.MENU}
-                  extendsTo={[color['b-t--white__2']].join(' ')}
-                />
+              <div className="fixed w-full z-30 bottom-0">
+                <Bar variant={$Bar.MENU} />
               </div>
             </motion.div>
           )}
         </AnimatePresence>
         {toggleState.auth && (
-          <div
-            style={{
-              position: 'fixed',
-              zIndex: 60,
-              bottom: 0,
-              left: 0,
-              right: 0,
-              top: 0,
-              backgroundColor: 'rgba(0, 0, 0, 0.6)',
-            }}
-          >
-            <div
-              className={[
-                layout['flex'],
-                layout['justify-center'],
-                layout['items-center'],
-                shape['h--100v'],
-              ].join(' ')}
-            >
+          <div className="fixed z-60 bottom-0 left-0 right-0 top-0 bg-blur">
+            <div className="flex justify-center items-center h-screen">
               <Modal
                 variant={$Modal.AUTH}
                 animate="slideup"
@@ -149,33 +99,10 @@ const LandingPage = ({ currentUser }) => {
           </div>
         )}
         {toggleState.globe && (
-          <div
-            style={{
-              position: 'fixed',
-              zIndex: 60,
-              bottom: 0,
-              left: 0,
-              right: 0,
-              top: 0,
-              backgroundColor: 'rgba(0, 0, 0, 0.6)',
-            }}
-          >
-            <div
-              className={[
-                layout['flex'],
-                layout['justify-center'],
-                layout['items-center'],
-                shape['h--100v'],
-              ].join(' ')}
-            >
+          <div className="fixed z-60 bottom-0 left-0 right-0 top-0 bg-blur">
+            <div className="flex justify-center items-center h-screen">
               <Modal
                 variant={$Modal.GLOBE}
-                extendsTo={[
-                  shape['w--full'],
-                  shape['h--full'],
-                  space['p--40'],
-                  shape['max-w--1100'],
-                ].join(' ')}
                 animate="slideup"
                 criteria={toggleState.globe}
                 lock

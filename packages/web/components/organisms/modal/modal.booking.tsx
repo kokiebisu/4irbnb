@@ -1,5 +1,4 @@
 import modal from '@modal/modal.module.scss';
-import color from '@styles/color.module.scss';
 import { Button } from '@button';
 
 /**
@@ -87,13 +86,7 @@ export const BookingModal: React.FC<{
         </div>
         <div className="mt-4">
           <div>
-            <Button
-              variant="border"
-              extendsTo={[color['bg--transparent']].join(' ')}
-              size="md"
-              title="See more dates"
-              block
-            />
+            <Button variant="border" size="md" title="See more dates" block />
           </div>
         </div>
       </div>
