@@ -1,11 +1,6 @@
 import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
+import { Story, Meta } from '@storybook/react';
 import { Prototype, PrototypeProps, $Prototype } from '@prototype/auth';
-
-import color from '@styles/color.module.scss';
-import layout from '@styles/layout.module.scss';
-import shape from '@styles/shape.module.scss';
-import space from '@styles/space.module.scss';
 
 export default {
   title: 'Prototypes/Auth',
@@ -18,14 +13,6 @@ const TemplateStory: Story<PrototypeProps> = (args) => <Prototype {...args} />;
 export const auth = TemplateStory.bind({});
 auth.args = {
   variant: 'auth',
-  extendsTo: [
-    color['bg--transparent'],
-    layout['block'],
-    shape['w--full'],
-    space['p-h--12'],
-    space['p-v--12'],
-    shape['br--8'],
-  ].join(' '),
 };
 
 export const Login = TemplateStory.bind({});

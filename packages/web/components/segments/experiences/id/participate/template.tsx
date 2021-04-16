@@ -1,8 +1,3 @@
-import font from '@styles/font.module.scss';
-import space from '@styles/space.module.scss';
-import color from '@styles/color.module.scss';
-import layout from '@styles/layout.module.scss';
-
 import { Card, $Card } from '@card';
 
 export interface ParticipateTemplateProps {
@@ -19,21 +14,14 @@ export const ParticipateTemplate: React.FC<ParticipateTemplateProps> = ({
   return (
     <div>
       <div>
-        <h3
-          className={[
-            font['weight--500'],
-            space['m-b--20'],
-            color['c--gray__3'],
-            font['size--24'],
-          ].join(' ')}
-        >
+        <h3 className="font-medium mb-4 text-gray-800 text-lg">
           How to participate
         </h3>
       </div>
-      <div className={[layout['flex'], space['m-b--32']].join(' ')}>
+      <div className="flex mb-5">
         {participatingMethods.map((participate, index) => {
           return (
-            <div key={index} className={[space['m-r--16']].join(' ')}>
+            <div key={index} className="mr-4">
               <Card variant={$Card.PARTICIPATE} categoryType={participate} />
             </div>
           );

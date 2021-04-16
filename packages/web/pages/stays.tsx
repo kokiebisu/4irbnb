@@ -1,14 +1,9 @@
 import React from 'react';
-
 import { Header, $Header } from '@header';
 import { Footer } from '@footer';
-
-import space from '@styles/space.module.scss';
 import layout from '@styles/layout.module.scss';
 import stays from '@styles/stays.module.scss';
 import styles from '@styles/index.module.scss';
-import font from '@styles/font.module.scss';
-import color from '@styles/color.module.scss';
 
 /**
  * Renders /stays
@@ -58,13 +53,12 @@ const StaysPage: () => string | JSX.Element = () => {
                 />
               </picture>
               <div
-                className={stays['support']}
+                className={`bg-cover h-full w-full ${[stays['support']].join(
+                  ''
+                )}`}
                 style={{
                   backgroundImage:
                     'url("https://a0.muscache.com/im/pictures/a4568b94-29ee-49cc-ab9c-5fcc82ca878d.jpg?im_w=720")',
-                  backgroundSize: 'cover',
-                  height: '100%',
-                  width: '100%',
                   verticalAlign: 'bottom',
                   backgroundPositionX: '50%',
                   backgroundPositionY: '50%',
@@ -79,32 +73,20 @@ const StaysPage: () => string | JSX.Element = () => {
                 styles['flex__explore'],
               ].join(' ')}`}
             >
-              <div
-                className={[stays['m-v__banner'], space['m-h--0']].join(' ')}
-              >
+              <div className={`mx-0 ${[stays['m-v__banner']].join(' ')}`}>
                 <h1
-                  className={[color['c--white'], stays['size__banner']].join(
-                    ' '
-                  )}
+                  className={`text-white ${[stays['size__banner']].join(' ')}`}
                 >
                   Unique stays
                 </h1>
               </div>
               <div
-                className={[
-                  font['c--white'],
+                className={`text-white ${[
                   stays['w__banner'],
                   stays['m__banner'],
-                ].join(' ')}
+                ].join(' ')}`}
               >
-                <p
-                  className={[
-                    font['size--18'],
-                    font['weight--100'],
-                    font['ls--3'],
-                    color['c--white'],
-                  ].join(' ')}
-                >
+                <p className="text-lg font-thin tracking-wide text-white">
                   Tents, tree houses, and more—these spaces are more than just a
                   place to sleep.
                 </p>
@@ -112,7 +94,7 @@ const StaysPage: () => string | JSX.Element = () => {
             </div>
           </div>
         </div>
-        <div className={[space['p-v--38']].join(' ')}>
+        <div className="py-6">
           {/* <div className={[styles['container'], layout['relative']].join(' ')}>
             <div className={[space['m-v--16']].join(' ')}>
               <Section

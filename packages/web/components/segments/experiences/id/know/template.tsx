@@ -1,7 +1,3 @@
-import font from '@styles/font.module.scss';
-import space from '@styles/space.module.scss';
-import color from '@styles/color.module.scss';
-
 export interface KnowTemplateProps {
   houseRules?: string[];
   healths?: string[];
@@ -22,30 +18,16 @@ export const KnowTemplate: React.FC<KnowTemplateProps> = ({
   return (
     <div>
       <div>
-        <h3
-          className={[
-            font['weight--500'],
-            space['m-b--20'],
-            color['c--gray__3'],
-            font['size--24'],
-          ].join(' ')}
-        >
+        <h3 className="font-medium mb-4 text-gray-800 text-lg">
           Things to know
         </h3>
       </div>
-      <div
-        style={{
-          display: 'flex',
-        }}
-        className={[].join(' ')}
-      >
-        <div style={{ width: '50%' }} className={[space['m-r--32']].join(' ')}>
-          <div className={[space['m-b--16']].join(' ')}>
-            <h3 className={[font['size--16']].join(' ')}>
-              Cancellation policy
-            </h3>
+      <div className="flex">
+        <div className="w-1/2 mr-5">
+          <div className="mb-4">
+            <h3 className="text-lg">Cancellation policy</h3>
           </div>
-          <div className={[space['m-b--32']].join(' ')}>
+          <div className="mb-5">
             <p>
               Any experience can be cancelled and fully refunded within 24 hours
               of purchase, or at least 7 days before the experience starts.
@@ -56,11 +38,11 @@ export const KnowTemplate: React.FC<KnowTemplateProps> = ({
           </div>
         </div>
 
-        <div style={{ width: '50%' }} className={[space['m-r--32']].join(' ')}>
-          <div className={[space['m-b--16']].join(' ')}>
-            <h3 className={[font['size--16']].join(' ')}>Guest requirements</h3>
+        <div className="w-1/2 mr-5">
+          <div className="mb-4">
+            <h3 className="text-lg">Guest requirements</h3>
           </div>
-          <div className={[space['m-b--32']].join(' ')}>
+          <div className="mb-5">
             <p>
               You’ll need an internet connection and the ability to stream audio
               and video to participate. A link and details on how to join will

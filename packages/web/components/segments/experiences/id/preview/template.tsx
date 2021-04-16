@@ -1,7 +1,3 @@
-import layout from '@styles/layout.module.scss';
-import color from '@styles/color.module.scss';
-import font from '@styles/font.module.scss';
-import space from '@styles/space.module.scss';
 import section from '@template/index.module.scss';
 
 import { Icon } from '@icons';
@@ -18,37 +14,14 @@ export interface PreviewTemplateProps {
 export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({ images }) => {
   return (
     <div>
-      <div
-        style={{ position: 'relative', zIndex: 500 }}
-        className={[
-          space['m-v--32'],
-          layout['flex'],
-          layout['items-center'],
-          layout['justify-between'],
-        ].join(' ')}
-      >
+      <div className="relative z-100 my-5 flex items-center justify-between">
         <div>
-          <u className={[font['size--14'], font['weight--100']].join(' ')}>
-            All online experiences
-          </u>
+          <u className="text-sm font-thin">All online experiences</u>
         </div>
 
-        <div className={[layout['flex'], section['hidden__options']].join(' ')}>
-          <div
-            className={[
-              space['p-r--6'],
-              layout['flex'],
-              layout['items-center'],
-            ].join(' ')}
-          >
-            <a
-              href="#"
-              className={[
-                layout['flex'],
-                space['p-l--6'],
-                layout['items-center'],
-              ].join(' ')}
-            >
+        <div className={`flex ${[section['hidden__options']].join(' ')}`}>
+          <div className="pr-2 flex items-center">
+            <a href="#" className="flex pl-2 items-center">
               <div>
                 <Icon
                   variant="general"
@@ -57,23 +30,11 @@ export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({ images }) => {
                   fill="#484848"
                 />
               </div>
-              <p
-                className={[
-                  space['p-l--10'],
-                  font['size--14'],
-                  color['c--gray__2'],
-                ].join(' ')}
-              >
+              <p className="pl-3 text-sm text-gray-700">
                 <u>Share</u>
               </p>
             </a>
-            <a
-              className={[
-                layout['flex'],
-                space['m-l--12'],
-                layout['items-center'],
-              ].join(' ')}
-            >
+            <a className="flex ml-3 items-center">
               <div>
                 <Icon
                   variant="action"
@@ -82,15 +43,7 @@ export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({ images }) => {
                   width={16}
                 />
               </div>
-              <u
-                className={[
-                  space['p-l--10'],
-                  font['size--14'],
-                  color['c--gray__2'],
-                ].join(' ')}
-              >
-                Save
-              </u>
+              <u className="pl-3 text-sm text-gray-700">Save</u>
             </a>
           </div>
         </div>

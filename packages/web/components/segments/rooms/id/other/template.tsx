@@ -1,9 +1,4 @@
 import section from '@template/index.module.scss';
-import font from '@styles/font.module.scss';
-import space from '@styles/space.module.scss';
-import color from '@styles/color.module.scss';
-import layout from '@styles/layout.module.scss';
-import shape from '@styles/shape.module.scss';
 
 export interface OtherTemplateProps {
   location?: any;
@@ -35,98 +30,38 @@ export const OtherTemplate: React.FC<OtherTemplateProps> = ({
   return (
     <div>
       <div>
-        <h3
-          className={[
-            font['weight--500'],
-            space['m-b--20'],
-            color['c--gray__3'],
-            font['size--22'],
-          ].join(' ')}
-        >
+        <h3 className="font-medium mb-4 text-gry-800 text-lg">
           Explore other options in and around {location}
         </h3>
       </div>
-      <div className={[space['m-b--8']].join(' ')}>
+      <div className="mb-3">
         <div>
-          <p className={[font['weight--100']].join(' ')}>
-            More place to stay in Penafiel:
-          </p>
+          <p className="font-thin">More place to stay in Penafiel:</p>
         </div>
         <div>
-          <span
-            className={[font['weight--100'], color['c--gray__1']].join(' ')}
-          >
-            Apartments
-          </span>
-          <span
-            className={[font['weight--100'], color['c--gray__1']].join(' ')}
-          >
-            {' '}
-            ·{' '}
-          </span>
-          <span
-            className={[font['weight--100'], color['c--gray__1']].join(' ')}
-          >
-            Houses
-          </span>
-          <span
-            className={[font['weight--100'], color['c--gray__1']].join(' ')}
-          >
-            {' '}
-            ·{' '}
-          </span>
-          <span
-            className={[font['weight--100'], color['c--gray__1']].join(' ')}
-          >
-            Bed and breakfasts
-          </span>
-          <span
-            className={[font['weight--100'], color['c--gray__1']].join(' ')}
-          >
-            {' '}
-            ·{' '}
-          </span>
-          <span
-            className={[font['weight--100'], color['c--gray__1']].join(' ')}
-          >
-            Lofts
-          </span>
-          <span
-            className={[font['weight--100'], color['c--gray__1']].join(' ')}
-          >
-            {' '}
-            ·{' '}
-          </span>
-          <span
-            className={[font['weight--100'], color['c--gray__1']].join(' ')}
-          >
-            Villas
-          </span>
+          <span className="font-thin text-gray-700">Apartments</span>
+          <span className="font-thin text-gray-600"> · </span>
+          <span className="font-thin text-gray-600">Houses</span>
+          <span className="font-thin text-gray-600"> · </span>
+          <span className="font-thin text-gray-600">Bed and breakfasts</span>
+          <span className="font-thin text-gray-600"> · </span>
+          <span className="font-thin text-gray-600">Lofts</span>
+          <span className="font-thin text-gray-600"> · </span>
+          <span className="font-thin text-gray-600">Villas</span>
         </div>
       </div>
 
-      <div className={[layout['flex'], layout['justify-between']].join(' ')}>
+      <div className="flex justify-between">
         <ul
-          style={{
-            padding: 0,
-            listStyle: 'none',
-          }}
-          className={[
+          className={`p-0 list-none w-full mt-5 ${[
             section['display__other'],
-            shape['w--full'],
-            space['m-t--32'],
-          ].join(' ')}
+          ].join(' ')}`}
         >
           {locations.map((location, index) => {
             return (
-              <li
-                key={index}
-                className={[font['weight--100'], color['c--gray__1']].join(' ')}
-              >
-                <div className={[space['m-b--18']].join(' ')}>
-                  <p className={[font['size--15']].join(' ')}>
-                    {location.name}
-                  </p>
+              <li key={index} className="font-thin text-gray-600">
+                <div className="mb-4">
+                  <p className="text-sm">{location.name}</p>
                 </div>
               </li>
             );
