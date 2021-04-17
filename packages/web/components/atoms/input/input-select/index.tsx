@@ -1,6 +1,4 @@
 import { useState } from 'react';
-
-import shape from '@styles/shape.module.scss';
 import input from '@input/input.module.scss';
 import { styleContainer } from '../styling.select';
 import { Icon } from '@icons';
@@ -36,10 +34,9 @@ export const SelectInput: React.FC<SelectInputProps> = ({
   const [fieldActive, setFieldActive] = useState(false);
   return (
     <div
-      className={`flex relative items-center ${[
-        shape['h--50'],
-        input['outside'],
-      ].join(' ')} `}
+      className={`flex relative items-center h-32 ${[input['outside']].join(
+        ' '
+      )} `}
     >
       <div
         className={`relative px-3 h-full w-full flex justify-between ${renderShape(

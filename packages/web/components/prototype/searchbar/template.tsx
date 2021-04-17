@@ -1,5 +1,3 @@
-import space from '@styles/space.module.scss';
-import shape from '@styles/shape.module.scss';
 import { Bar, $Bar } from '@bar';
 import { Modal } from '@modal';
 import useOnClickOutside from '@hooks/useOnClickOutside';
@@ -47,7 +45,6 @@ export const SearchbarPrototypeTemplate: React.FC<SearchbarPrototypeTemplateProp
         setSelected={handleSelectedChange}
         type={type}
         setCategory={setCategory}
-        extendsTo={[space['p-h--12']].join(' ')}
         transparent={transparent}
       />
       {Object.keys(contents).map((content, index) => {
@@ -64,7 +61,6 @@ export const SearchbarPrototypeTemplate: React.FC<SearchbarPrototypeTemplateProp
               <Modal
                 variant={content}
                 dispatch={`toggle_${content}`}
-                extendsTo={[shape['w--full']].join(' ')}
                 criteria={toggleState[content]}
               />
             </div>

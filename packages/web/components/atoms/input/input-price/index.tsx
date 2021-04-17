@@ -1,6 +1,4 @@
 import { useRef, useState } from 'react';
-
-import shape from '@styles/shape.module.scss';
 import input from '@input/input.module.scss';
 
 export interface PriceInputProps {

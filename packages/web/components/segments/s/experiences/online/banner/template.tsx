@@ -1,5 +1,3 @@
-import space from '@styles/space.module.scss';
-import font from '@styles/font.module.scss';
 import { ResponsiveImage } from '@helper/img';
 
 export interface BannerTemplateProps {}
@@ -19,13 +17,11 @@ export const BannerTemplate: React.FC<BannerTemplateProps> = () => {
               justifyContent: 'center',
             }}
           >
-            <div className={[space['m-b--16']].join(' ')}>
-              <h2 className={[font['size--50']].join(' ')}>
-                Online Experiences
-              </h2>
+            <div className="mb-4">
+              <h2 className="text-3xl">Online Experiences</h2>
             </div>
             <div>
-              <h4 className={[font['size--18']].join(' ')}>
+              <h4 className="text-lg">
                 Find unique activities led by one-of-a-kind hosts—all without
                 leaving home.
               </h4>
