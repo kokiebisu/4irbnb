@@ -12,7 +12,7 @@ import { GuestsModal } from '@modal/modal.guests';
 import { CheckModal } from '@modal/modal.check';
 import { ListingModal } from '@modal/modal.listing';
 import { useToggleDispatch } from '@context/toggle';
-import shape from '@styles/shape.module.scss';
+
 import modal from '@modal/modal.module.scss';
 
 export const $Modal = {
@@ -90,7 +90,7 @@ export const Modal: React.FC<ModalProps> = ({
     },
     menu: {
       component: <MenuModal {...props} />,
-      extendsTo: `rounded-lg ${[shape['w--200']].join(' ')}`,
+      extendsTo: 'rounded-lg w-96',
     },
     auth: {
       component: <AuthModal {...props} />,
@@ -102,29 +102,27 @@ export const Modal: React.FC<ModalProps> = ({
     },
     globe: {
       component: <GlobeModal {...props} />,
-      extendsTo: `p-4 rounded-lg ${[shape['max-w--720'], shape['h--fit']].join(
-        ' '
-      )}`,
+      extendsTo: 'p-4 rounded-lg max-w-3xl h-fit',
     },
     location: {
       component: <LocationModal {...props} />,
-      extendsTo: `rounded-lg p-5 ${[shape['max-w--400']].join(' ')}`,
+      extendsTo: 'rounded-lg p-5 max-w-sm',
     },
     guests: {
       component: <GuestsModal {...props} />,
-      extendsTo: `p-5 rounded-lg ${[shape['max-w--325']].join(' ')}`,
+      extendsTo: 'p-5 rounded-lg max-w-xs',
     },
     checkin: {
       component: <CheckModal {...props} />,
-      extendsTo: `px-7 py-5  rounded-lg ${[shape['max-w--720']].join(' ')}`,
+      extendsTo: 'px-7 py-5  rounded-lg max-w-2.5xl',
     },
     checkout: {
       component: <CheckModal {...props} />,
-      extendsTo: `rounded-lg px-7 py-5 ${[shape['max-w--720']].join(' ')}`,
+      extendsTo: 'rounded-lg px-7 py-5 max-w-2.5xl',
     },
     listing: {
       component: <ListingModal {...props} />,
-      extendsTo: `p-5 rounded-lg ${[shape['max-w--500']].join(' ')}`,
+      extendsTo: 'p-5 rounded-lg max-w-lg',
     },
   };
 

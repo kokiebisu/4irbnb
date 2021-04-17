@@ -1,5 +1,4 @@
 import input from '@input/input.module.scss';
-import shape from '@styles/shape.module.scss';
 
 /**
  * Birthdate Input
@@ -30,14 +29,14 @@ export const styleContainer = (errors, fieldActive, direction) => {
   }
   if (errors) {
     if (direction === 'left') {
-      return [input['select-container__error--inactive'], shape['blr--8']].join(
+      return `rounded-l-lg ${[input['select-container__error--inactive']].join(
         ' '
-      );
+      )}`;
     }
     if (direction === 'right') {
-      return [input['select-container__error--inactive'], shape['brr--8']].join(
+      return `rounded-r-lg ${[input['select-container__error--inactive']].join(
         ' '
-      );
+      )}`;
     }
     return [input['select-container__error--inactive']].join(' ');
   }

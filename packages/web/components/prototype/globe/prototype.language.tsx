@@ -1,10 +1,11 @@
 import { Button } from '@button';
-import font from '@styles/font.module.scss';
 
-const Layout: React.FC<{
+export interface LanguageLayoutProps {
   items?: { language?: string; region?: string }[];
   type?: string;
-}> = ({ items, type }) => {
+}
+
+const Layout: React.FC<LanguageLayoutProps> = ({ items, type }) => {
   const titles = {
     suggested: 'Suggested languages and regions',
     choose: 'Choose a language and region',
@@ -23,7 +24,6 @@ const Layout: React.FC<{
                 variant="globe"
                 language={language}
                 region={region}
-                extendsTo={[font['text--left']].join(' ')}
                 block
                 selected={index === 0 && type === 'choose'}
               />

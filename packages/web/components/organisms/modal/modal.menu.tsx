@@ -1,8 +1,4 @@
-import shape from '@styles/shape.module.scss';
-import space from '@styles/space.module.scss';
-
 import { Button } from '@button';
-
 import { getOptionContents } from '@button/button-option/content.option';
 
 const Options: React.FC<{
@@ -18,7 +14,6 @@ const Options: React.FC<{
         <div key={index}>
           <Button
             variant="option"
-            extendsTo={[shape['w--full']].join(' ')}
             bold={bold}
             onClick={options[kind].handleClick}
             name={options[kind].name}
@@ -59,14 +54,7 @@ export const MenuModal: React.FC<MenuModalProps> = ({
             ]}
           />
         )}
-        <div
-          style={{
-            width: '100%',
-            height: 1,
-            backgroundColor: 'lightgray',
-            margin: '6px 0',
-          }}
-        ></div>
+        <div style={{ height: 1 }} className="w-full bg-gray-400 my-2"></div>
         {authenticated ? (
           <Options
             params={[

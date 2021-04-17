@@ -3,13 +3,7 @@ import { Bar, $Bar } from '@bar';
 import { Segment, $Segment } from '@template/s/experiences/online';
 import { Modal, $Modal } from '@modal';
 import { Footer } from '@footer';
-
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
-import shape from '@styles/shape.module.scss';
-
 import { useToggleState } from '@context/toggle';
-
 import { Button } from '@button';
 
 const OnlinePage = () => {
@@ -66,13 +60,7 @@ const OnlinePage = () => {
         <Footer />
       </div>
       {toggleState.auth && (
-        <div
-          className="fixed bottom-0 left-0 right-0 top-0"
-          style={{
-            zIndex: 60,
-            backgroundColor: 'rgba(0, 0, 0, 0.6)',
-          }}
-        >
+        <div className="z-60 bg-blur fixed bottom-0 left-0 right-0 top-0">
           <div className="h-screen flex justify-center items-center">
             <Modal
               variant={$Modal.AUTH}
@@ -94,12 +82,6 @@ const OnlinePage = () => {
           <div className="flex justify-center items-center h-screen">
             <Modal
               variant={$Modal.GLOBE}
-              extendsTo={[
-                shape['w--full'],
-                shape['h--full'],
-                space['p--40'],
-                shape['max-w--1100'],
-              ].join(' ')}
               animate="slideup"
               criteria={toggleState.globe}
               lock

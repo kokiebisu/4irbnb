@@ -19,6 +19,9 @@ module.exports = {
       minWidth: {
         screen: '100vw',
       },
+      maxWidth: {
+        '2.5xl': '45rem',
+      },
       inset: {
         '2/10': '20%',
         '4/10': '40%',

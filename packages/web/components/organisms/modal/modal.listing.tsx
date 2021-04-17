@@ -1,33 +1,25 @@
 import { Button } from '@button';
-import { Input, $Input } from '@input';
+import { Input } from '@input';
 
 import { Icon } from '@icons';
 
 import layout from '@styles/layout.module.scss';
 import space from '@styles/space.module.scss';
-import font from '@styles/font.module.scss';
 
 export const ListingModal: React.FC<{}> = () => {
   return (
     <div>
       <div className={[space['m-b--24']].join(' ')}>
-        <h4 className={[font['size--16']].join(' ')}>
+        <h4 className="text-lg">
           To get started, tell us more about your place
         </h4>
       </div>
       <div>
-        <Input variant={$Input.ADDRESS} direction="bottom" />
-        <Input variant={$Input.PLACE} direction="middle" />
-        <Input variant={$Input.GUESTS} direction="top" />
+        <Input variant="address" direction="bottom" />
+        <Input variant="place" />
+        <Input variant="guests" direction="top" />
       </div>
-      <div
-        className={[
-          space['m-t--20'],
-          space['m-b--45'],
-          layout['flex'],
-          layout['items-center'],
-        ].join(' ')}
-      >
+      <div className="mt-4 mb-7 flex items-center">
         <div>
           <Icon
             variant="semantic"
@@ -38,7 +30,7 @@ export const ListingModal: React.FC<{}> = () => {
           />
         </div>
         <div>
-          <h3 className={[font['size--14']].join(' ')}>
+          <h3 className="text-sm">
             Let us know any special spaces guests can access
           </h3>
         </div>

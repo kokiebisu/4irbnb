@@ -166,6 +166,10 @@
 }
 
 @layer utilities {
+  .h-fit {
+    height: fit-content;
+  }
+
   .pt-full {
     padding-top: 100%;
   }
