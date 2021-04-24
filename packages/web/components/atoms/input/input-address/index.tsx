@@ -1,4 +1,4 @@
-import { renderShape } from '../logic/logic.address';
+import { renderShape } from './logic';
 
 export interface AddressInputProps {
   onChange?: (e: any) => void;
