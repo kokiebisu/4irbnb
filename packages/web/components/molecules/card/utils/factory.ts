@@ -1,9 +1,9 @@
 import { nearby } from '@card/card.nearby';
 import { video } from '@card/card.video';
-import { again } from '@card/card.again';
-import { anywhere } from '@card/card.anywhere';
-import { arrangements } from '@card/card.arrangements';
-import { available } from '@card/card.available';
+import { again } from '@card/card-again';
+import { anywhere } from '@card/card-anywhere';
+import { arrangements } from '@card/card-arrangements';
+import { available } from '@card/card-available/card.available';
 import { category } from '@card/card.category';
 import { checkin } from '@card/card.checkin';
 import { collection } from '@card/card.collection';

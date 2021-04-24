@@ -36,7 +36,7 @@ export const PaginateButton: React.FC<PaginateButtonProps> = ({
   };
   return (
     <div
-      className={`inline-block bg-white ${
+      className={`bg-white ${
         disable ? 'border border-gray-100' : 'shadow-md'
       } rounded-full p-3`}
     >

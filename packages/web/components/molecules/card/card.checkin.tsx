@@ -16,9 +16,10 @@ export interface CheckInCardProps {
 const CheckInCard: React.FC<CheckInCardProps> = () => {
   const [selected, dispatchSelected] = useCheckin();
 
+  // fixed lg:sticky right-0 bottom-0 lg:top-0 // position logic
   return (
     <>
-      <div className="bg-white z-50 rounded-lg py-5 border border-gray-300 shadow-lg fixed lg:sticky right-0 bottom-0 lg:top-0">
+      <div className="bg-white rounded-lg py-5 border border-gray-300 shadow-lg">
         <div className="px-6">
           <div className="flex justify-between">
             <h3 className="py-3 text-gray-500 text-lg font-medium">

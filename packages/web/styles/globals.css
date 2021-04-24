@@ -112,11 +112,11 @@
   }
 
   .container--spread {
-    @apply px-[19px] sm:px-[40px] md:px-[70px] lg:max-w-[1780px] lg:w-full lg:mx-auto;
+    @apply px-4 sm:px-8 md:px-36 lg:max-w-4xl lg:w-full lg:mx-auto;
   }
 
   .container--shrink {
-    @apply px-[19px] sm:px-[80px] lg:max-w-[1600px] lg:w-full lg:mx-auto;
+    @apply px-4 sm:px-24 lg:max-w-3xl lg:w-full lg:mx-auto;
   }
 
   .horizontal-line {
