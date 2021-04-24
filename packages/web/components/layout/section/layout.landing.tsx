@@ -1,4 +1,3 @@
-import layout from '@styles/layout.module.scss';
 import index from '@styles/index.module.scss';
 
 export const LandingLayout: React.FC<{
@@ -15,14 +14,14 @@ export const LandingLayout: React.FC<{
       }`}
     >
       <div
-        className={`${spread ? 'container-spread' : 'container'}  ${
+        className={`${spread ? 'container--spread' : 'container'}  ${
           dark ? 'bg-black' : ''
         }`}
       >
         <div className="py-3">
           {title && (
             <h3
-              className={`${[layout['font__section--title']].join(' ')} ${
+              className={`text-md sm:text-lg md:text-xl ${
                 dark ? 'text-white' : ''
               }`}
             >
@@ -31,11 +30,7 @@ export const LandingLayout: React.FC<{
           )}
           {subtitle && (
             <div style={{ width: 450 }}>
-              <p
-                className={`${[layout['font__section--subtitle']].join(' ')} ${
-                  dark ? 'text-white' : ''
-                }`}
-              >
+              <p className={`text-sm md:text-md ${dark ? 'text-white' : ''}`}>
                 {subtitle}
               </p>
             </div>

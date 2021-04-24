@@ -1,6 +1,4 @@
-import layout from '@styles/layout.module.scss';
 import index from '@styles/index.module.scss';
-
 import { Header, $Header } from '@header';
 import { Button } from '@button';
 import { ResponsiveImage } from '@helper/img';

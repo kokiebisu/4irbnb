@@ -1,11 +1,7 @@
 import Router from 'next/router';
-
 import { Bar, $Bar } from '@bar';
 import { Header, $Header } from '@header';
 import { Card, $Card } from '@card';
-import responsive from '@styles/responsive.module.scss';
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
 import { Icon } from '@icons';
 
 const HowGuestsWillBookPage = () => {
@@ -55,8 +51,8 @@ const HowGuestsWillBookPage = () => {
                 You're protected throughout
               </h3>
             </div>
-            <div className={[layout['flex']].join(' ')}>
-              <div className={[space['m-r--32']].join(' ')}>
+            <div className="flex">
+              <div className="mr-6">
                 <Icon variant="general" generalType="protected" width={50} />
               </div>
               <div style={{ width: '65%' }}>
@@ -71,12 +67,8 @@ const HowGuestsWillBookPage = () => {
           </div>
         </div>
         <div className="w-full flex justify-center">
-          <div
-            className={`bg-white w-full fixed bottom-0 z-60 flex ${[
-              responsive['justify--center_to_end--xs'],
-            ].join(' ')}`}
-          >
-            <div className="w-full my-0 mx-auto" style={{ maxWidth: 700 }}>
+          <div className="bg-white w-full fixed bottom-0 z-60 flex justify-center sm:justify-end">
+            <div className="w-full my-0 mx-auto max-w-[700px]">
               <Bar variant={$Bar.CREATE} next={proceed} back={revert} />
             </div>
           </div>

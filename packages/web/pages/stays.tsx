@@ -1,7 +1,5 @@
-import React from 'react';
 import { Header, $Header } from '@header';
 import { Footer } from '@footer';
-import layout from '@styles/layout.module.scss';
 import stays from '@styles/stays.module.scss';
 import styles from '@styles/index.module.scss';
 
@@ -67,7 +65,7 @@ const StaysPage: () => string | JSX.Element = () => {
               />
             </div>
           </div>
-          <div className={[layout['all-sides']].join(' ')}>
+          <div className="absolute top-0 right-0 bottom-0 left-0">
             <div
               className={`container z-20 h-full ${[
                 styles['flex__explore'],

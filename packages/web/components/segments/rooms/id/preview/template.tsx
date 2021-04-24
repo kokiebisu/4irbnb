@@ -1,4 +1,3 @@
-import layout from '@styles/layout.module.scss';
 import section from '@template/index.module.scss';
 import { Icon } from '@icons';
 import { Panel, $Panel } from '@panel';
@@ -43,13 +42,7 @@ export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({
           <h3 className="text-gray-800 text-lg font-medium">{title}</h3>
         </div>
         <div className="mt-4 mb-5 flex justify-between items-center">
-          <div
-            className={[
-              layout['flex'],
-              layout['items-center'],
-              layout['flex-wrap'],
-            ].join(' ')}
-          >
+          <div className="flex items-center flex-wrap">
             <div>
               <Icon variant="profile" profileType="star" height={14} />
             </div>
