@@ -1,8 +1,6 @@
 import { useGetStartedSegment } from './logic';
 import { Header, $Header } from '@header';
-
 import responsive from '@styles/responsive.module.scss';
-import layout from '@styles/layout.module.scss';
 import { GetStartedSegmentTemplate } from './template';
 
 export const GetStartedSegment = () => {
@@ -14,7 +12,7 @@ export const GetStartedSegment = () => {
           <Header variant={$Header.STAY} />
         </div>
       </div>
-      <div className={`mt-3 ${[layout['container']].join(' ')}`}>
+      <div className="mt-3 container">
         <div className="sm:flex">
           <div
             style={{ paddingRight: 60, marginTop: 60 }}

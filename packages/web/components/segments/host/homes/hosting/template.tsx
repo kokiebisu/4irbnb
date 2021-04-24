@@ -1,12 +1,6 @@
-import responsive from '@styles/responsive.module.scss';
-import space from '@styles/space.module.scss';
-import layout from '@styles/layout.module.scss';
-
 import { Layout } from '@layout';
 import { Card, $Card } from '@card';
-
 import { types } from '@card/card.hosting';
-
 export interface HostingTemplateProps {}
 
 /**

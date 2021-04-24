@@ -1,7 +1,6 @@
 import { Header, $Header } from '@header';
 import { Segment, $Segment } from '@template/d/onlinehost';
 import { Footer } from '@footer';
-import layout from '@styles/layout.module.scss';
 import { useTabTitle } from '@hooks/useTabTitle';
 
 const OnlineHost = () => {
@@ -20,7 +19,7 @@ const OnlineHost = () => {
       <div className="container">
         <Segment variant={$Segment.WORKS} />
       </div>
-      <div className={`py-10 ${[layout['container--shrink']].join(' ')}`}>
+      <div className={`py-10 container--shrink`}>
         <Segment variant={$Segment.SHARING} />
       </div>
       <div className="py-10 container">

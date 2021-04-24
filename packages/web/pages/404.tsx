@@ -1,7 +1,5 @@
-import React from 'react';
 import Link from 'next/link';
 import { Header, $Header } from '@header';
-import layout from '@styles/layout.module.scss';
 import { useTabTitle } from '@hooks/useTabTitle';
 
 // pages/404.js
@@ -21,7 +19,7 @@ const ErrorPage = () => {
         style={{ height: 'calc(100vh - 80px)' }}
         className="flex items-center"
       >
-        <div className={[layout['container']].join(' ')}>
+        <div className="container">
           <div className="flex">
             <div className="w-1/2 sm:w-full">
               <div>

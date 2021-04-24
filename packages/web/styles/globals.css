@@ -111,6 +111,14 @@
     @apply max-w-5xl mx-auto px-4 md:px-5 lg:px-6;
   }
 
+  .container--spread {
+    @apply px-[19px] sm:px-[40px] md:px-[70px] lg:max-w-[1780px] lg:w-full lg:mx-auto;
+  }
+
+  .container--shrink {
+    @apply px-[19px] sm:px-[80px] lg:max-w-[1600px] lg:w-full lg:mx-auto;
+  }
+
   .horizontal-line {
     &::after {
       content: '';

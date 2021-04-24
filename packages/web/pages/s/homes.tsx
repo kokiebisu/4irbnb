@@ -1,9 +1,7 @@
-import React from 'react';
 import { useRouter } from 'next/router';
 import { useToggleState } from '@context/toggle';
 import { Prototype } from '@prototype/homes';
 import { Modal, $Modal } from '@modal';
-import homes from '@styles/homes.module.scss';
 import { useTabTitle } from '@hooks/useTabTitle';
 import '../../global/string';
 
@@ -26,8 +24,8 @@ const Homes = () => {
   const toggleState = useToggleState();
   useTabTitle(`${city.capitalize()} · Stays · Airbnb`);
   return (
-    <div className={[homes['display__content']].join(' ')}>
-      <div className={[homes['w__section']].join(' ')}>
+    <div className="md:flex">
+      <div className="w-full md:w-[840px]">
         <Prototype
           variant={type}
           city={city}
