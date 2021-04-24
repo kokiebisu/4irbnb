@@ -1,4 +1,4 @@
-export interface AnywhereCardProps {
+export interface AnywhereCardTemplateProps {
   imgUrl?: string;
   title?: string;
 }
@@ -7,7 +7,7 @@ export interface AnywhereCardProps {
  * @param {string} imgUrl - Image of the card
  * @param {string} title - Title of the card
  */
-export const AnywhereCardTemplate: React.FC<AnywhereCardProps> = ({
+export const AnywhereCardTemplate: React.FC<AnywhereCardTemplateProps> = ({
   imgUrl,
   title = 'Title',
 }) => {

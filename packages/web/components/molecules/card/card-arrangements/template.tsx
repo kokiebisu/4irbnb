@@ -1,6 +1,6 @@
 import { Icon } from '@icons';
 
-export interface ArrangementsCardProps {
+export interface ArrangementsCardTemplateProps {
   card?: {
     type: string;
     beds: { type: string; count: number }[];
@@ -11,7 +11,7 @@ export interface ArrangementsCardProps {
  * Renders the arrangements card component
  * @param {Object} card - Information of the card
  */
-export const ArrangementsCardTemplate: React.FC<ArrangementsCardProps> = ({
+export const ArrangementsCardTemplate: React.FC<ArrangementsCardTemplateProps> = ({
   card,
 }) => {
   return (

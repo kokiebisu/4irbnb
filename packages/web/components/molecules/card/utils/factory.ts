@@ -3,10 +3,10 @@ import { video } from '@card/card.video';
 import { again } from '@card/card-again';
 import { anywhere } from '@card/card-anywhere';
 import { arrangements } from '@card/card-arrangements';
-import { available } from '@card/card-available/card.available';
-import { category } from '@card/card.category';
-import { checkin } from '@card/card.checkin';
-import { collection } from '@card/card.collection';
+import { available } from '@card/card-available';
+import { category } from '@card/card-category';
+import { checkin } from '@card/card-checkin';
+import { collection } from '@card/card-collection';
 import { horizontal } from '@card/card.horizontal';
 import { host } from '@card/card.host';
 import { hosting } from '@card/card.hosting';
@@ -24,7 +24,7 @@ import { works } from '@card/card.works';
 
 export const factory = (props) => {
   return {
-    ...again(props),
+    ...again(),
     ...anywhere(props),
     ...arrangements(props),
     ...available(props),

@@ -1,6 +1,6 @@
 import { Button } from '@button';
 
-export interface AvailableCardProps {
+export interface AvailableCardTemplateProps {
   date?: string;
   from?: string;
   to?: string;
@@ -16,12 +16,12 @@ export interface AvailableCardProps {
  * @param {string} standard - The time standard
  * @param {number} price - The price of the experience
  */
-const AvailableCard: React.FC<AvailableCardProps> = ({
-  date = 'Tue., Nov. 10',
-  from = '1:00 a.m. ',
-  to = '3:00 a.m. ',
-  standard = 'PST',
-  price = 31,
+export const AvailableCardTemplate: React.FC<AvailableCardTemplateProps> = ({
+  date,
+  from,
+  to,
+  standard,
+  price,
 }) => {
   return (
     <div className="p-6 border boder-gray-300 rounded-md">
@@ -47,13 +47,4 @@ const AvailableCard: React.FC<AvailableCardProps> = ({
       </div>
     </div>
   );
-};
-
-export const available = (props) => {
-  return {
-    available: {
-      component: <AvailableCard {...props} />,
-      style: '',
-    },
-  };
 };

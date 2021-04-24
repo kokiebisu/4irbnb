@@ -1,12 +1,15 @@
 import { Meta, Story } from '@storybook/react';
-import { ArrangementsCardTemplate, ArrangementsCardProps } from './template';
+import {
+  ArrangementsCardTemplate,
+  ArrangementsCardTemplateProps,
+} from './template';
 
 export default {
   title: 'Design System/Molecules/Card',
   component: ArrangementsCardTemplate,
 } as Meta;
 
-const CardStory: Story<ArrangementsCardProps> = (args) => (
+const CardStory: Story<ArrangementsCardTemplateProps> = (args) => (
   <ArrangementsCardTemplate {...args} />
 );
 

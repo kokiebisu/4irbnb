@@ -1,20 +1,14 @@
 import { Icon } from '@icons';
-import { useCheckin } from './logic/logic.checkin';
-import {
-  checkInBorder,
-  checkOutBorder,
-  guestBorder,
-} from './logic/logic.checkin';
+import { useCheckInCard } from './logic';
+import { checkInBorder, checkOutBorder, guestBorder } from './logic';
 
-export interface CheckInCardProps {
-  length?: number;
-}
+export interface CheckInCardTemplateProps {}
 
 /**
  * Renders the checkin card
  */
-const CheckInCard: React.FC<CheckInCardProps> = () => {
-  const [selected, dispatchSelected] = useCheckin();
+export const CheckInCardTemplate: React.FC<CheckInCardTemplateProps> = () => {
+  const [selected, dispatchSelected] = useCheckInCard();
 
   // fixed lg:sticky right-0 bottom-0 lg:top-0 // position logic
   return (
@@ -27,7 +21,7 @@ const CheckInCard: React.FC<CheckInCardProps> = () => {
             </h3>
             <div className="py-3 text-gray-300 text-xl font-medium w-32">
               <div className="inline-block mr-1">
-                <Icon variant={'profile'} profileType="star" width={10} />
+                <Icon variant="profile" profileType="star" width={10} />
               </div>
               <span className="inline-block text-sm mr-1 text-gray-500">
                 4.93
@@ -107,13 +101,4 @@ const CheckInCard: React.FC<CheckInCardProps> = () => {
       </div>
     </>
   );
-};
-
-export const checkin = (props) => {
-  return {
-    checkin: {
-      component: <CheckInCard {...props} />,
-      style: '',
-    },
-  };
 };

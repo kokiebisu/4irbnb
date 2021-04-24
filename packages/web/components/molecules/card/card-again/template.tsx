@@ -1,8 +1,8 @@
 import { Icon } from '@icons';
 
-export interface AgainCardProps {}
+export interface AgainCardTemplateProps {}
 
-export const AgainCardTemplate: React.FC<AgainCardProps> = () => {
+export const AgainCardTemplate: React.FC<AgainCardTemplateProps> = () => {
   return (
     <div className="rounded-lg border border-gray-300">
       <div className="p-4">

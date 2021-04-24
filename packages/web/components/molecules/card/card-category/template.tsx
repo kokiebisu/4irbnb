@@ -1,4 +1,4 @@
-export interface CategoryCardProps {
+export interface CategoryCardTemplateProps {
   imgUrl?: string;
   title?: string;
 }
@@ -7,9 +7,9 @@ export interface CategoryCardProps {
  * @param {string} imgUrl - Image of the card
  * @param {string} title - Title of the card
  */
-const CategoryCard: React.FC<CategoryCardProps> = ({
+export const CategoryCardTemplate: React.FC<CategoryCardTemplateProps> = ({
   imgUrl,
-  title = 'Title',
+  title,
 }) => {
   return (
     <div>
@@ -29,13 +29,4 @@ const CategoryCard: React.FC<CategoryCardProps> = ({
       </div>
     </div>
   );
-};
-
-export const category = (props) => {
-  return {
-    category: {
-      component: <CategoryCard {...props} />,
-      style: '',
-    },
-  };
 };
