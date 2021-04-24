@@ -1,18 +1,18 @@
 import { Icon } from '@icons';
 
 export interface ArrangementsCardProps {
-  card?: any;
+  card?: {
+    type: string;
+    beds: { type: string; count: number }[];
+  };
 }
 
 /**
  * Renders the arrangements card component
  * @param {Object} card - Information of the card
  */
-const ArrangementsCard: React.FC<ArrangementsCardProps> = ({
-  card = {
-    type: 'Bedroom',
-    beds: [{ type: 'double bed', count: 1 }],
-  },
+export const ArrangementsCardTemplate: React.FC<ArrangementsCardProps> = ({
+  card,
 }) => {
   return (
     <div className="w-52 py-6 border border-gray-400 rounded-md">
@@ -33,13 +33,4 @@ const ArrangementsCard: React.FC<ArrangementsCardProps> = ({
       </div>
     </div>
   );
-};
-
-export const arrangements = (props) => {
-  return {
-    arrangements: {
-      component: <ArrangementsCard {...props} />,
-      style: '',
-    },
-  };
 };

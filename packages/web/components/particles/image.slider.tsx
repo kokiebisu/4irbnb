@@ -124,12 +124,7 @@ export const ImageSlider = ({ slides = new Array(3) }) => {
           transition: 'opacity 0.2s ease-out',
         }}
       >
-        <Button
-          variant="paginate"
-          animate
-          direction="left"
-          onClick={previousSlide}
-        />
+        <Button variant="paginate" direction="left" onClick={previousSlide} />
       </div>
       <div
         style={{
@@ -138,12 +133,7 @@ export const ImageSlider = ({ slides = new Array(3) }) => {
         }}
         className="absolute top-1/2 -translate-y-1/2 right-3 z-50"
       >
-        <Button
-          variant="paginate"
-          animate
-          direction="right"
-          onClick={nextSlide}
-        />
+        <Button variant="paginate" direction="right" onClick={nextSlide} />
       </div>
 
       <div
