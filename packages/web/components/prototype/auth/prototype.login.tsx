@@ -1,12 +1,8 @@
 import { useState } from 'react';
 import { useFormik } from 'formik';
 import Router from 'next/router';
-
 import { useAuthDispatch, useAuthState } from '@context/auth';
-
-import space from '@styles/space.module.scss';
-
-import { Input, $Input } from '@input';
+import { Input } from '@input';
 import { Button } from '@button';
 import { Bullet } from '@bullet';
 import { Card, $Card } from '@card';
@@ -74,36 +70,36 @@ export const LoginPrototype: React.FC<{}> = () => {
         <div>
           <div>
             <Input
-              variant={$Input.EMAIL}
+              variant="email"
               direction="bottom"
-              handleChange={formik.handleChange}
+              onChange={formik.handleChange}
               value={formik.values.email}
               errors={formik.errors.email !== undefined}
             />
             <Input
-              variant={$Input.PASSWORD}
+              variant="password"
               direction="top"
-              handleChange={formik.handleChange}
+              onChange={formik.handleChange}
               value={formik.values.password}
               errors={formik.errors.password !== undefined}
             />
           </div>
           <div>
             {formik.errors.email !== undefined && (
-              <div className={[space['m-t--6']].join(' ')}>
+              <div className="mt-2">
                 <Bullet variant="required" message={formik.errors.email} />
               </div>
             )}
           </div>
           <div>
             {formik.errors.password !== undefined && (
-              <div className={[space['m-t--6']].join(' ')}>
+              <div className="mt-2">
                 <Bullet variant="required" message={formik.errors.password} />
               </div>
             )}
           </div>
           {status === 'success' && (
-            <div className={[space['m-t--16']].join(' ')}>
+            <div className="mt-4">
               <Card variant={$Card.SET} />
             </div>
           )}

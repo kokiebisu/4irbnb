@@ -1,4 +1,3 @@
-import layout from '@styles/layout.module.scss';
 import { Icon } from '@icons';
 import { Button } from '@button';
 
@@ -6,14 +5,8 @@ export interface CheckModalProps {}
 
 export const CheckModal: React.FC<CheckModalProps> = () => {
   return (
-    <div className={[layout['flex'], layout['justify-center']].join(' ')}>
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(2, 1fr)',
-          columnGap: 50,
-        }}
-      >
+    <div className="flex justify-center">
+      <div className="grid grid-cols-2 gap-x-7">
         <div>
           <Calendar previous={() => alert('previous')} />
         </div>

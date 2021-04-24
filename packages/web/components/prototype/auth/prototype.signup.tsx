@@ -1,10 +1,7 @@
 import { useState } from 'react';
 import { useFormik } from 'formik';
 import Router from 'next/router';
-
-import layout from '@styles/layout.module.scss';
-
-import { Input, $Input } from '@input';
+import { Input } from '@input';
 import { Button } from '@button';
 import { Bullet } from '@bullet';
 
@@ -53,19 +50,19 @@ export const SignupPrototype: React.FC<{}> = () => {
       <div className="p-5">
         <div>
           <Input
-            variant={$Input.NAME}
+            variant="name"
             direction="bottom"
             name="firstname"
             errors={formik.errors.firstname !== undefined}
-            handleChange={formik.handleChange}
+            onChange={formik.handleChange}
             value={formik.values.firstname}
           />
           <Input
-            variant={$Input.NAME}
+            variant="name"
             direction="top"
             name="lastname"
             errors={formik.errors.lastname !== undefined}
-            handleChange={formik.handleChange}
+            onChange={formik.handleChange}
             value={formik.values.lastname}
           />
           <div>
@@ -92,14 +89,11 @@ export const SignupPrototype: React.FC<{}> = () => {
           </div>
         </div>
         <div className="mt-4">
-          <div
-            style={{ border: '1px solid gray', borderRadius: 14 }}
-            className={[layout['flex']].join(' ')}
-          >
+          <div className="flex rounded-md border border-gray-500">
             <Input
               spread
               dateType="day"
-              variant={$Input.BIRTHDATE}
+              variant="birthdate"
               direction="left"
               handleChange={formik.handleChange}
               value={formik.values.day}
@@ -108,7 +102,7 @@ export const SignupPrototype: React.FC<{}> = () => {
             <Input
               spread
               dateType="month"
-              variant={$Input.BIRTHDATE}
+              variant="birthdate"
               direction="center"
               handleChange={formik.handleChange}
               value={formik.values.month}
@@ -117,7 +111,7 @@ export const SignupPrototype: React.FC<{}> = () => {
             <Input
               spread
               dateType="year"
-              variant={$Input.BIRTHDATE}
+              variant="birthdate"
               direction="right"
               handleChange={formik.handleChange}
               value={formik.values.year}
@@ -151,8 +145,8 @@ export const SignupPrototype: React.FC<{}> = () => {
         <div className="mt-5">
           <div>
             <Input
-              variant={$Input.EMAIL}
-              handleChange={formik.handleChange}
+              variant="email"
+              onChange={formik.handleChange}
               value={formik.values.email}
               errors={formik.errors.email !== undefined}
             />
@@ -172,8 +166,8 @@ export const SignupPrototype: React.FC<{}> = () => {
         <div className="mt-6">
           <div>
             <Input
-              variant={$Input.PASSWORD}
-              handleChange={formik.handleChange}
+              variant="password"
+              onChange={formik.handleChange}
               value={formik.values.password}
               errors={formik.errors.password !== undefined}
             />

@@ -1,6 +1,4 @@
-import space from '@styles/space.module.scss';
 import styles from '@styles/index.module.scss';
-import layout from '@styles/layout.module.scss';
 import { Button } from '@button';
 import { Icon } from '@icons';
 
@@ -27,8 +25,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
             return (
               <div
                 key={index}
-                className={`border-t border-gray-300 ${[
-                  space['nf-m-t--20'],
+                className={`border-t border-gray-300 mt-6 first:mt-0 ${[
                   styles['p-b__footer--section'],
                   styles['w__footer--section'],
                 ].join(' ')}`}

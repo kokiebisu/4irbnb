@@ -1,12 +1,6 @@
 import { useState } from 'react';
-
 import { Button } from '@button';
-
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
-
 import { Prototype, $Prototype } from '@prototype/globe';
-
 import { useToggleDispatch } from '@context/toggle';
 
 export const GlobeModal: React.FC<{}> = () => {

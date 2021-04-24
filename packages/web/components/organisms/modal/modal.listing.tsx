@@ -1,15 +1,11 @@
 import { Button } from '@button';
 import { Input } from '@input';
-
 import { Icon } from '@icons';
-
-import layout from '@styles/layout.module.scss';
-import space from '@styles/space.module.scss';
 
 export const ListingModal: React.FC<{}> = () => {
   return (
     <div>
-      <div className={[space['m-b--24']].join(' ')}>
+      <div className="mb-6">
         <h4 className="text-lg">
           To get started, tell us more about your place
         </h4>
