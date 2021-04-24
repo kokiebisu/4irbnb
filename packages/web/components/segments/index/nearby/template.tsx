@@ -1,6 +1,3 @@
-import space from '@styles/space.module.scss';
-import template from '@template/index/index.module.scss';
-
 import { Card, $Card } from '@card';
 
 export interface NearbyTemplateProps {
@@ -13,20 +10,10 @@ export interface NearbyTemplateProps {
  */
 export const NearbyTemplate: React.FC<NearbyTemplateProps> = ({ items }) => {
   return (
-    <div
-      className="grid overflow-x-auto"
-      style={{
-        gridTemplateColumns: `repeat(4, 1fr)`,
-        scrollSnapType: 'x mandatory',
-      }}
-    >
+    <div className="grid overflow-x-auto grid-col-4 snap-type-x">
       {items.map((item, index) => {
         return (
-          <div
-            key={index}
-            className="w-half-screen md:w-auto"
-            style={{ scrollSnapAlign: 'start' }}
-          >
+          <div key={index} className="w-half-screen md:w-auto snap-align-start">
             <div className="mb-3">
               <Card
                 variant={$Card.NEARBY}

@@ -205,6 +205,14 @@
     transition: all 150ms ease-in;
   }
 
+  .snap-type-x {
+    scroll-snap-type: x mandatory;
+  }
+
+  .snap-align-start {
+    scroll-snap-align: start;
+  }
+
   .circle-animation {
     animation: colors 1s infinite;
   }

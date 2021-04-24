@@ -1,5 +1,4 @@
 import { Layout } from '@layout';
-import space from '@styles/space.module.scss';
 import { Card, $Card } from '@card';
 import { Button } from '@button';
 
@@ -16,9 +15,7 @@ export const SharingTemplate: React.FC<SharingTemplateProps> = ({
       title="How hosts are sharing their world"
       subtitle="These hosts bring the spirit of experiences to the screen with unique small group activities to do together while we're apart."
     >
-      <div
-        className={`${[space['m-v--100']].join(' ')} grid grid-cols-3 gap-6`}
-      >
+      <div className="my-9 grid grid-cols-3 gap-6">
         {categories.map((sharing, index) => {
           return (
             <div key={index}>

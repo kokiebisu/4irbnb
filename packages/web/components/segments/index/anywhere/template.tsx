@@ -1,4 +1,3 @@
-import space from '@styles/space.module.scss';
 import template from '@template/index/index.module.scss';
 
 import { Card, $Card } from '@card';
@@ -20,7 +19,7 @@ export const AnywhereTemplate: React.FC<AnywhereTemplateProps> = ({
 }) => {
   return (
     <div>
-      <div className={[space['p-h--70']].join(' ')}>
+      <div className="px-8">
         <div
           style={{ gridTemplateColumns: `repeat(${items.length}, 1fr)` }}
           className={[template['category__carousel']].join(' ')}

@@ -1,5 +1,3 @@
-import layout from '@styles/layout.module.scss';
-
 export const OnlineHostLayout: React.FC<{
   title?: string;
   subtitle?: string;
@@ -13,7 +11,7 @@ export const OnlineHostLayout: React.FC<{
         {title && (
           <div>
             <h3
-              className={`${[layout['font__onlinehost--title']].join(' ')} ${
+              className={`text-lg md:text-xl lg:text-2xl ${
                 dark ? 'text-white' : ''
               }`}
             >
@@ -24,7 +22,7 @@ export const OnlineHostLayout: React.FC<{
         {subtitle && (
           <div className="mt-4">
             <p
-              className={`${[layout['font__onlinehost--subtitle']].join(' ')} ${
+              className={`text-sm sm:text-md text-center leading-8 ${
                 dark ? 'text-white' : ''
               }`}
             >
