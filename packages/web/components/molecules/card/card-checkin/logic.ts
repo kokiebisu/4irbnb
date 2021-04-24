@@ -28,7 +28,7 @@ export const guestBorder = (selected) => {
   return 'h-full border border-transparent py-3 w-full rounded-b-md bg-transparent';
 };
 
-export const useCheckin = () => {
+export const useCheckInCard = () => {
   const reducer = (state, action) => {
     switch (action.type) {
       case 'guests':
