@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import input from '@input/input.module.scss';
-import { renderShape } from '../logic/logic.address';
+import { renderShape } from './logic';
 
 export interface TextInputProps {
   name?: string;
