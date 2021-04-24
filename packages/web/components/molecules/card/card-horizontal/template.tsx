@@ -1,30 +1,37 @@
 import { Icon } from '@icons';
-import { ImageSlider } from '../../particles/image.slider';
-import { renderType } from './logic/logic.horizontal';
+import { ImageSlider } from '../../../particles/image.slider';
 
-export interface HorizontalCardProps {
-  card?: any;
+export interface HorizontalCardTemplateProps {
+  images?: string[];
+  type: string;
+  ratings: number;
+  location: string;
+  title: string;
+  numberOfReviews: string;
   save?: boolean;
   superhost?: boolean;
 }
 
 /**
  * Renders the horizontal card component
- * @param {Object} card - Information about the card
+ * @param {string[]} images
+ * @param {string} type
+ * @param {number} ratings
+ * @param {string} location
+ * @param {string} title
+ * @param {number} numberOfReviews
  * @param {boolean} superhost - Whether if host is the superhost or not
  * @param {boolean} save - Whether if the card can be saved or not
  */
-const HorizontalCard: React.FC<HorizontalCardProps> = ({
-  card = {
-    images: undefined,
-    type: 'Type of Stay',
-    ratings: 5.0,
-    location: 'Location',
-    title: 'Title should be here',
-    number_of_reviews: 100,
-  },
-  superhost = false,
-  save = false,
+export const HorizontalCardTemplate: React.FC<HorizontalCardTemplateProps> = ({
+  images,
+  type,
+  ratings,
+  location,
+  title,
+  numberOfReviews,
+  superhost,
+  save,
 }) => {
   return (
     <div>
@@ -32,9 +39,9 @@ const HorizontalCard: React.FC<HorizontalCardProps> = ({
         <div className="absolute top-0 bottom-0 right-0 left-0">
           <div className="h-full">
             <div className=" relative h-full">
-              {card.images ? (
+              {images ? (
                 <div className="rounded-md h-full">
-                  <ImageSlider slides={card.images} />
+                  <ImageSlider slides={images} />
                 </div>
               ) : (
                 <div className="animate-pulse w-full h-full rounded-md bg-gray-500" />
@@ -74,16 +81,16 @@ const HorizontalCard: React.FC<HorizontalCardProps> = ({
           </svg>
         </div>
         <div className="mr-1">
-          <p className="font-thin text-xs">{card.ratings.toFixed(2)}</p>
+          <p className="font-thin text-xs">{ratings.toFixed(2)}</p>
         </div>
         <div>
-          <p className="font-thin text-sm text-gray-400">{`(${card.number_of_reviews})`}</p>
+          <p className="font-thin text-sm text-gray-400">{`(${numberOfReviews})`}</p>
         </div>
       </div>
       <div className="flex items-center">
         <div>
           <p className="capitalize tracking-wide font-thin text-sm text-gray-500">
-            {renderType(card)}
+            {type}
           </p>
         </div>
         <div>
@@ -91,24 +98,15 @@ const HorizontalCard: React.FC<HorizontalCardProps> = ({
         </div>
         <div>
           <p className="tracking-wide font-thin text-sm text-gray-500">
-            {card.location}
+            {location}
           </p>
         </div>
       </div>
       <div>
         <p className="max-h-32 whitespace-nowrap  overflow-ellipsis tracking-wide font-thin text-sm text-gray-500">
-          {card.title}
+          {title}
         </p>
       </div>
     </div>
   );
-};
-
-export const horizontal = (props) => {
-  return {
-    horizontal: {
-      component: <HorizontalCard {...props} />,
-      style: '',
-    },
-  };
 };
