@@ -17,8 +17,8 @@ import { review } from '@card/card-review';
 import { set } from '@card/card-set';
 import { sharing } from '@card/card-sharing';
 import { starting } from '@card/card-starting';
-import { stay } from '@card/card.stay';
-import { typestay } from '@card/card.typestay';
+import { stay } from '@card/card-stay';
+import { typestay } from '@card/card-typestay';
 import { vertical } from '@card/card.vertical';
 import { works } from '@card/card.works';
 

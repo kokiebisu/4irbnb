@@ -3,7 +3,7 @@ import { Bullet } from '@bullet';
 import { ImageSlider } from '@particle/image.slider';
 import { Card, $Card } from '@card';
 
-export interface StayCardProps {
+export interface StayCardTemplateProps {
   images?: string[];
   typeStay?: string;
   location?: string;
@@ -28,7 +28,7 @@ export interface StayCardProps {
  * @param {Object} accomodations - Information about the accomodations of the stay
  * @param {string[]} characteristics - List of characteristics
  */
-const StayCard: React.FC<StayCardProps> = ({
+export const StayCardTemplate: React.FC<StayCardTemplateProps> = ({
   images,
   typeStay = 'Type of stay',
   location = 'Location',
@@ -117,13 +117,4 @@ const StayCard: React.FC<StayCardProps> = ({
       </div>
     </div>
   );
-};
-
-export const stay = (props) => {
-  return {
-    stay: {
-      component: <StayCard {...props} />,
-      style: '',
-    },
-  };
 };
