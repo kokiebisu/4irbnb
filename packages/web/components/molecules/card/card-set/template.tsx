@@ -1,8 +1,8 @@
 import { Icon } from '@icons';
 
-export interface SetCardProps {}
+export interface SetCardTemplateProps {}
 
-const SetCard: React.FC<SetCardProps> = () => {
+export const SetCardTemplate: React.FC<SetCardTemplateProps> = () => {
   return (
     <div className="rounded-lg border border-gray-300">
       <div className="w-full rounded-t-lg h-2 bg-green-600" />
@@ -30,13 +30,4 @@ const SetCard: React.FC<SetCardProps> = () => {
       </div>
     </div>
   );
-};
-
-export const set = (props) => {
-  return {
-    set: {
-      component: <SetCard {...props} />,
-      style: '',
-    },
-  };
 };

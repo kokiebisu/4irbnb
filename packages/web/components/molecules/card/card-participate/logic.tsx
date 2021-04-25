@@ -1,6 +1,6 @@
 import { Icon } from '@icons';
 
-export const getParticipateContent = () => {
+export const useParticipateCard = ({ categoryType }) => {
   const types = {
     call: {
       icon: (
@@ -26,5 +26,10 @@ export const getParticipateContent = () => {
     },
   };
 
-  return types;
+  return {
+    icon: types[categoryType].icon,
+    title: types[categoryType].title,
+    description: types[categoryType].description,
+    more: types[categoryType].more,
+  };
 };

@@ -1,11 +1,9 @@
-import { useState } from 'react';
-import { renderDescription } from './logic/logic.review';
-
-export interface ReviewCardProps {
+export interface ReviewCardTemplateProps {
   imgUrl?: string;
   description?: string;
   commentedDate?: string;
   user?: string;
+  renderDescription?: () => string;
 }
 
 /**
@@ -13,14 +11,13 @@ export interface ReviewCardProps {
  * @param {string} imgUrl - Image of the review card
  * @param {string} description - Description of the review card
  */
-const ReviewCard: React.FC<ReviewCardProps> = ({
+export const ReviewCardTemplate: React.FC<ReviewCardTemplateProps> = ({
   imgUrl,
-  user = 'User',
-  description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-  commentedDate = 'Month, Year',
+  user,
+  description,
+  commentedDate,
+  renderDescription,
 }) => {
-  const [display, setDisplay] = useState(false);
-
   return (
     <div className="py-3">
       <div className="flex items-center pb-3">
@@ -57,13 +54,4 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
       </div>
     </div>
   );
-};
-
-export const review = (props) => {
-  return {
-    review: {
-      component: <ReviewCard {...props} />,
-      style: '',
-    },
-  };
 };

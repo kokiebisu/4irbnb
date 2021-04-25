@@ -1,7 +1,9 @@
+import { useNearbyCard } from './logic';
 import { NearbyCardTemplate } from './template';
 
 const NearbyCard = (props) => {
-  return <NearbyCardTemplate {...props} />;
+  const data = useNearbyCard();
+  return <NearbyCardTemplate {...props} {...data} />;
 };
 
 export const nearby = (props) => {
