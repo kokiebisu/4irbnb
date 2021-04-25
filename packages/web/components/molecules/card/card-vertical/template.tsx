@@ -1,6 +1,6 @@
 import { Icon } from '@icons';
 
-export interface VerticalCardProps {
+export interface VerticalCardTemplateProps {
   imgUrl?: string;
   superhost?: boolean;
   ratings?: number;
@@ -16,15 +16,15 @@ export interface VerticalCardProps {
  * @param {Object} card - Information about the card
  * @param {boolean} save - Whether if the card can be saved
  */
-const VerticalCard: React.FC<VerticalCardProps> = ({
+export const VerticalCardTemplate: React.FC<VerticalCardTemplateProps> = ({
   imgUrl,
   superhost,
-  ratings = 5.0,
-  number_of_reviews = 100,
+  ratings,
+  number_of_reviews,
   save,
-  country = 'Country',
-  title = 'Title',
-  cost = 10,
+  country,
+  title,
+  cost,
 }) => {
   return (
     <div>
@@ -80,13 +80,4 @@ const VerticalCard: React.FC<VerticalCardProps> = ({
       </div>
     </div>
   );
-};
-
-export const vertical = (props) => {
-  return {
-    vertical: {
-      component: <VerticalCard {...props} />,
-      style: '',
-    },
-  };
 };
