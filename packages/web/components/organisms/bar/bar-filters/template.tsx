@@ -7,12 +7,10 @@ export interface FiltersBarTemplateProps {
     translate: number;
     transition: number;
   };
-  width?: number;
-  primaryFilters?: string[];
-  secondaryFilters?: string[];
-  handleWidthChange?: (width: number) => void;
   handlePreviousSlide?: () => void;
   handleNextSlide?: () => void;
+  primaryFilters?: string[];
+  secondaryFilters?: string[];
 }
 
 /**
@@ -21,18 +19,15 @@ export interface FiltersBarTemplateProps {
  * @returns
  */
 export const FiltersBarTemplate: React.FC<FiltersBarTemplateProps> = ({
-  state,
-  width,
   primaryFilters,
   secondaryFilters,
-  handleWidthChange,
-  handleNextSlide,
-  handlePreviousSlide,
 }) => {
-  const { containerRef } = useFiltersBarInteraction({
-    width,
-    handleWidthChange,
-  });
+  const {
+    containerRef,
+    state,
+    handleNextSlide,
+    handlePreviousSlide,
+  } = useFiltersBarInteraction();
   return (
     <div className="flex items-center">
       <div className="flex">
