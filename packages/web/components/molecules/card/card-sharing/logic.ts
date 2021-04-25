@@ -1,9 +1,5 @@
-export interface SharingCardProps {
-  sharing?: string;
-}
-
-const SharingCard: React.FC<SharingCardProps> = ({ sharing = 'meditate' }) => {
-  const sharings = {
+export const useSharingCard = ({ sharing }) => {
+  const types = {
     meditate: {
       imgUrl:
         'https://a0.muscache.com/pictures/1f129c2b-4da0-463e-a918-ff3f9f8fa325.jpg',
@@ -26,29 +22,9 @@ const SharingCard: React.FC<SharingCardProps> = ({ sharing = 'meditate' }) => {
         'Part show and part masterclass, guests learn magic psychology and tricks they can do at home.',
     },
   };
-  return (
-    <div>
-      <div>
-        <img src={sharings[sharing].imgUrl} />
-      </div>
-      <div className="my-3">
-        <h3>{sharings[sharing].title}</h3>
-      </div>
-      <div className="mb-3">
-        <p className="text-sm leading-6">{sharings[sharing].description}</p>
-      </div>
-      <div>
-        <p className="text-sm text-green-700">Go to experience</p>
-      </div>
-    </div>
-  );
-};
-
-export const sharing = (props) => {
   return {
-    sharing: {
-      component: <SharingCard {...props} />,
-      style: '',
-    },
+    imgUrl: types[sharing].imgUrl,
+    title: types[sharing].title,
+    description: types[sharing].description,
   };
 };
