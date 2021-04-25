@@ -1,7 +1,7 @@
 import card from '@card/card.module.scss';
-import { renderSize } from './logic/logic.nearby';
+import { renderSize } from '../logic/logic.nearby';
 
-export interface NearbyCardProps {
+export interface NearbyCardTemplateProps {
   imgUrl?: string;
   city?: string;
   hours?: number;
@@ -15,11 +15,11 @@ export interface NearbyCardProps {
  * @param {number} hours - Time it takes to reach the destination
  * @param {string} size - Size of the component
  */
-const NearbyCard: React.FC<NearbyCardProps> = ({
+export const NearbyCardTemplate: React.FC<NearbyCardTemplateProps> = ({
   imgUrl,
-  city = 'City',
-  hours = 1,
-  size = 'sm',
+  city,
+  hours,
+  size,
 }) => {
   return (
     <div className="flex items-center">
@@ -36,13 +36,4 @@ const NearbyCard: React.FC<NearbyCardProps> = ({
       </div>
     </div>
   );
-};
-
-export const nearby = (props) => {
-  return {
-    nearby: {
-      component: <NearbyCard {...props} />,
-      style: '',
-    },
-  };
 };
