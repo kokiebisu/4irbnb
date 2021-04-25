@@ -4,13 +4,6 @@ import { VerticalCardTemplate, VerticalCardTemplateProps } from './template';
 export default {
   title: 'Design System/Molecules/Card',
   component: VerticalCardTemplate,
-  decorators: [
-    (Story) => (
-      <div style={{ maxWidth: 300 }}>
-        <Story />
-      </div>
-    ),
-  ],
 } as Meta;
 
 const CardStory: Story<VerticalCardTemplateProps> = (args) => (
@@ -26,3 +19,10 @@ Vertical.args = {
   title: 'Title',
   cost: 10,
 };
+Vertical.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 300 }}>
+      <Story />
+    </div>
+  ),
+];

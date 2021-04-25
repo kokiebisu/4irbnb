@@ -4,13 +4,6 @@ import { HowCardTemplate, HowCardTemplateProps } from './template';
 export default {
   title: 'Design System/Molecules/Card',
   component: HowCardTemplate,
-  decorators: [
-    (Story) => (
-      <div style={{ maxWidth: 250 }}>
-        <Story />
-      </div>
-    ),
-  ],
 } as Meta;
 
 const CardStory: Story<HowCardTemplateProps> = (args) => (
@@ -25,3 +18,10 @@ How.args = {
   description:
     'Anyone who wants to book with you needs to confirm their contact information, provide payment details, and tell you about their trip.',
 };
+How.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 250 }}>
+      <Story />
+    </div>
+  ),
+];

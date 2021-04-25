@@ -4,13 +4,6 @@ import { HostingCardTemplate, HostingCardTemplateProps } from './template';
 export default {
   title: 'Design System/Molecules/Card',
   component: HostingCardTemplate,
-  decorators: [
-    (Story) => (
-      <div style={{ maxWidth: 300 }}>
-        <Story />
-      </div>
-    ),
-  ],
 } as Meta;
 
 const CardStory: Story<HostingCardTemplateProps> = (args) => (
@@ -25,3 +18,10 @@ Hosting.args = {
   description:
     'Decide how many people can stay and for how long. Set house rules that guests must follow when staying at your place.',
 };
+Hosting.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 300 }}>
+      <Story />
+    </div>
+  ),
+];

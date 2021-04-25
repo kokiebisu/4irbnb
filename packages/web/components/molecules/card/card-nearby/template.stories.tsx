@@ -5,13 +5,6 @@ import * as utils from './util';
 export default {
   title: 'Design System/Molecules/Card',
   component: NearbyCardTemplate,
-  decorators: [
-    (Story) => (
-      <div style={{ maxWidth: 300 }}>
-        <Story />
-      </div>
-    ),
-  ],
 } as Meta;
 
 const CardStory: Story<NearbyCardTemplateProps> = (args) => (
@@ -25,3 +18,10 @@ Nearby.args = {
   hours: 3,
   size: 'sm',
 };
+Nearby.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 300 }}>
+      <Story />
+    </div>
+  ),
+];

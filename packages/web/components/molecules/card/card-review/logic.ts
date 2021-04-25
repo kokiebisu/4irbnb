@@ -1,13 +1,10 @@
 import { useState } from 'react';
+import * as utils from './utils';
 
 export const useReviewCard = () => {
   const [display, setDisplay] = useState(false);
 
-  const renderDescription = (description: string) => {
-    return `${description.split(' ').slice(0, 30).join(' ')}...`;
-  };
-
   const handleDisplayChange = () => setDisplay(!display);
 
-  return { renderDescription, display, handleDisplayChange };
+  return { ...utils, display, handleDisplayChange };
 };

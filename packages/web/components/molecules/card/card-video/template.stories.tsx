@@ -4,13 +4,6 @@ import { VideoCardTemplate, VideoCardTemplateProps } from './template';
 export default {
   title: 'Design System/Molecules/Card',
   component: VideoCardTemplate,
-  decorators: [
-    (Story) => (
-      <div style={{ maxWidth: 300 }}>
-        <Story />
-      </div>
-    ),
-  ],
 } as Meta;
 
 const CardStory: Story<VideoCardTemplateProps> = (args) => (
@@ -28,4 +21,12 @@ Video.args = {
   country: 'Country',
   title: 'Title',
   cost: 10,
+  handleIsHoveredChange: () => alert('handle is hovered change'),
 };
+Video.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 300 }}>
+      <Story />
+    </div>
+  ),
+];
