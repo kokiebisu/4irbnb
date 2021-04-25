@@ -8,7 +8,7 @@ import { category } from '@card/card-category';
 import { checkin } from '@card/card-checkin';
 import { collection } from '@card/card-collection';
 import { horizontal } from '@card/card-horizontal';
-import { host } from '@card/card.host';
+import { host } from '@card/card-host';
 import { hosting } from '@card/card.hosting';
 import { how } from '@card/card.how';
 import { online } from '@card/card.online';
