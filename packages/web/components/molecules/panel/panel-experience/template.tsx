@@ -1,9 +1,23 @@
+export interface ExperiencePanelTemplateProps {
+  firstImage?: string;
+  secondImage?: string;
+  thirdImage?: string;
+  fourthImage?: string;
+  fifthImage?: string;
+}
+
 /**
  *
  * @param param0
  * @returns
  */
-const ExperiencePanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
+export const ExperiencePanelTemplate: React.FC<ExperiencePanelTemplateProps> = ({
+  firstImage,
+  secondImage,
+  thirdImage,
+  fourthImage,
+  fifthImage,
+}) => {
   return (
     <div
       className="overflow-hidden relative h-0"
@@ -18,10 +32,10 @@ const ExperiencePanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
         >
           <div
             className={`rounded-l-lg bg-cover ${
-              !images[0] && 'bg-gray-400 animate-pulse'
+              !firstImage && 'bg-gray-400 animate-pulse'
             }`}
             style={{
-              backgroundImage: images[0] && `url(${images[0]})`,
+              backgroundImage: firstImage && `url(${firstImage})`,
             }}
           />
           <div
@@ -33,48 +47,39 @@ const ExperiencePanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
           >
             <div
               className={`col-start-1 col-end-2 row-start-1 row-end-3 bg-cover ${
-                !images[1] && 'bg-gray-400 animate-pulse'
+                !secondImage && 'bg-gray-400 animate-pulse'
               }`}
               style={{
-                backgroundImage: images[1] && `url(${images[1]})`,
+                backgroundImage: secondImage && `url(${secondImage})`,
               }}
             />
             <div
               className={`col-start-2 col-end-3 row-start-1 row-end-2 bg-cover ${
-                !images[2] && 'bg-gray-400 animate-pulse'
+                !thirdImage && 'bg-gray-400 animate-pulse'
               }`}
               style={{
-                backgroundImage: images[2] && `url(${images[2]})`,
+                backgroundImage: thirdImage && `url(${thirdImage})`,
               }}
             />
             <div
               className={`col-start-2 col-end-3 row-start-2 row-end-3 bg-cover ${
-                !images[3] && 'bg-gray-400 animate-pulse'
+                !fourthImage && 'bg-gray-400 animate-pulse'
               }`}
               style={{
-                backgroundImage: images[3] && `url(${images[3]})`,
+                backgroundImage: fourthImage && `url(${fourthImage})`,
               }}
             />
           </div>
           <div
             className={`rounded-r-lg bg-cover ${
-              !images[4] && 'bg-gray-400 animate-pulse'
+              !fifthImage && 'bg-gray-400 animate-pulse'
             }`}
             style={{
-              backgroundImage: images[4] && `url(${images[3]})`,
+              backgroundImage: fifthImage && `url(${fifthImage})`,
             }}
           />
         </div>
       </div>
     </div>
   );
-};
-
-export const experience = (props) => {
-  return {
-    experience: {
-      component: <ExperiencePanel {...props} />,
-      style: '',
-    },
-  };
 };

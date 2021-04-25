@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/react';
 import { CategoryCardTemplate, CategoryCardTemplateProps } from './template';
 
 export default {
-  title: 'Design System/Molecules/Card',
+  title: 'Molecules/Card',
   component: CategoryCardTemplate,
 } as Meta;
 
