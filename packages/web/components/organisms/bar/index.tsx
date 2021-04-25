@@ -1,5 +1,5 @@
 /** components */
-import { PaginateBar } from '@bar/bar.paginate';
+import { PaginateBar } from '@bar/bar-paginate';
 import { ProgressBar } from '@bar/bar.progress';
 import { SearchBar } from '@bar/bar.search';
 import { CovidBar } from '@bar/bar.covid';
