@@ -1,0 +1,9 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/error" },
+    { "path": "packages/middleware" }
+  ],
+  "include": [],
+  "exclude": ["**/node_modules"]
+}
