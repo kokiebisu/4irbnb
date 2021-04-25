@@ -4,6 +4,13 @@ import { OnlineCardTemplate, OnlineCardTemplateProps } from './template';
 export default {
   title: 'Design System/Molecules/Card',
   component: OnlineCardTemplate,
+  decorators: [
+    (Story) => (
+      <div style={{ maxWidth: 300 }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as Meta;
 
 const CardStory: Story<OnlineCardTemplateProps> = (args) => (

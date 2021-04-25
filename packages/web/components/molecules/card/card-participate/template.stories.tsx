@@ -1,3 +1,4 @@
+import { Icon } from '@icons';
 import { Meta, Story } from '@storybook/react';
 import {
   ParticipateCardTemplate,
@@ -7,6 +8,13 @@ import {
 export default {
   title: 'Design System/Molecules/Card',
   component: ParticipateCardTemplate,
+  decorators: [
+    (Story) => (
+      <div style={{ maxWidth: 300 }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as Meta;
 
 const CardStory: Story<ParticipateCardTemplateProps> = (args) => (
@@ -15,7 +23,9 @@ const CardStory: Story<ParticipateCardTemplateProps> = (args) => (
 
 export const Participate = CardStory.bind({});
 Participate.args = {
-  city: 'City',
-  hours: 1,
-  size: 'sm',
+  icon: <Icon variant="stay" stayType="calendar" width={32} />,
+  title: 'Request availability',
+  description:
+    'Can’t find a date that works? Cici can schedule and customize an experience based on your preferences.',
+  more: 'Contact Cici',
 };

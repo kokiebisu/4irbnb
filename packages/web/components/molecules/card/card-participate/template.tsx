@@ -7,7 +7,10 @@ export interface ParticipateCardTemplateProps {
 
 /**
  * Renders the participate card component
- * @param {string} categoryType - Type of participate card
+ * @param {JSX.Element} icon - Type of participate card
+ * @param {string} title
+ * @param {string} description
+ * @param {string} more
  */
 export const ParticipateCardTemplate: React.FC<ParticipateCardTemplateProps> = ({
   icon,

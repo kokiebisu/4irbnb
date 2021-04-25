@@ -4,6 +4,13 @@ import { TypeStayCardTemplate, TypeStayCardTemplateProps } from './template';
 export default {
   title: 'Design System/Molecules/Card',
   component: TypeStayCardTemplate,
+  decorators: [
+    (Story) => (
+      <div style={{ maxWidth: 300 }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as Meta;
 
 const CardStory: Story<TypeStayCardTemplateProps> = (args) => (

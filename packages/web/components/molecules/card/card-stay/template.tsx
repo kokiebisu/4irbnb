@@ -30,21 +30,23 @@ export interface StayCardTemplateProps {
  */
 export const StayCardTemplate: React.FC<StayCardTemplateProps> = ({
   images,
-  typeStay = 'Type of stay',
-  location = 'Location',
-  title = 'Title of stay',
-  accomodations = {
-    guests: 1,
-    bedroom: 1,
-    beds: 1,
-    bath: 1,
-  },
-  characteristics = ['characteristic'],
+  typeStay,
+  location,
+  title,
+  accomodations,
+  characteristics,
 }) => {
   return (
     <div>
       <div className="sm:hidden sm:mb-8">
-        <Card variant={$Card.HORIZONTAL} />
+        <Card
+          variant={$Card.HORIZONTAL}
+          type="Type of Stay"
+          ratings={5.0}
+          location="Location"
+          title="Title should be here"
+          numberOfReviews={100}
+        />
       </div>
       <div className="hidden sm:block">
         <div className="py-8">

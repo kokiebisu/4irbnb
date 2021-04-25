@@ -1,11 +1,9 @@
-import card from '@card/card.module.scss';
-import { renderSize } from '../logic/logic.nearby';
-
 export interface NearbyCardTemplateProps {
   imgUrl?: string;
   city?: string;
   hours?: number;
   size?: 'sm' | 'lg';
+  renderSize?: (size: 'sm' | 'lg') => string;
 }
 
 /**
@@ -20,10 +18,11 @@ export const NearbyCardTemplate: React.FC<NearbyCardTemplateProps> = ({
   city,
   hours,
   size,
+  renderSize,
 }) => {
   return (
     <div className="flex items-center">
-      <div className={`${renderSize(card, size)} mr-3`}>
+      <div className={`${renderSize(size)} mr-3`}>
         {imgUrl ? (
           <img src={imgUrl} className="rounded-md" />
         ) : (
