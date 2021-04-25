@@ -1,4 +1,4 @@
-import { nearby } from '@card/card.nearby';
+import { nearby } from '@card/card-nearby';
 import { video } from '@card/card.video';
 import { again } from '@card/card-again';
 import { anywhere } from '@card/card-anywhere';
