@@ -26,7 +26,7 @@ export const CreateLayout: React.FC<{
           <Header variant={$Header.STAY} title={title} />
         </div>
         <div>
-          <Bar variant={$Bar.PROGRESS} percentage={percentage} />
+          <Bar variant="progress" percentage={percentage} />
         </div>
       </div>
       <div
@@ -55,7 +55,7 @@ export const CreateLayout: React.FC<{
           >
             <div style={{ maxWidth: 550 }} className="px-8 w-full">
               <Bar
-                variant={$Bar.CREATE}
+                variant="create"
                 next={next}
                 back={back}
                 criteria={criteria}
