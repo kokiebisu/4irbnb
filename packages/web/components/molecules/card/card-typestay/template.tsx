@@ -1,17 +1,15 @@
-export interface TypeStayCardProps {
-  card?: any;
+export interface TypeStayCardTemplateProps {
+  title?: string;
+  imgUrl?: string;
 }
 
 /**
  * Renders the typestay card
  * @param {Object} card - Information about the card
  */
-const TypeStayCard: React.FC<TypeStayCardProps> = ({
-  card = {
-    title: 'Type',
-    imgUrl:
-      'https://a0.muscache.com/im/pictures/175f945a-a4ac-416c-bb10-7e49a927c42f.jpg?im_w=720',
-  },
+export const TypeStayCardTemplate: React.FC<TypeStayCardTemplateProps> = ({
+  title,
+  imgUrl,
 }) => {
   return (
     <div className="block h-full w-full mr-2">
@@ -19,28 +17,19 @@ const TypeStayCard: React.FC<TypeStayCardProps> = ({
         <div className="relative">
           <div className="relative top-0 bottom-0 left-0 right-0">
             <picture>
-              <source srcSet={card.imgUrl}></source>
+              <source srcSet={imgUrl}></source>
               <img
                 decoding="async"
-                src={card.imgUrl}
+                src={imgUrl}
                 className="object-cover rounded-t-md"
               />
             </picture>
           </div>
         </div>
         <div className="h-16 sm:h-auto p-4 bg-white rounded-b-md">
-          <p className="font-medium text-sm text-gray-400">{card.title}</p>
+          <p className="font-medium text-sm text-gray-400">{title}</p>
         </div>
       </div>
     </div>
   );
-};
-
-export const typestay = (props) => {
-  return {
-    typestay: {
-      component: <TypeStayCard {...props} />,
-      style: '',
-    },
-  };
 };
