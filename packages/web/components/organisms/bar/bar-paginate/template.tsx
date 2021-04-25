@@ -1,15 +1,20 @@
 import Router from 'next/router';
 import { Button } from '@button';
 
+export interface PaginateBarTemplateProps {
+  page?: number;
+  total?: number;
+}
+
 /**
  * Renders paginate bar component
  * @param {number} page - Current page
  * @param {number} total - Total number of pages
  */
-export const PaginateBar: React.FC<{
-  page?: number;
-  total?: number;
-}> = ({ page = 1, total = 15 }) => {
+export const PaginateBarTemplate: React.FC<PaginateBarTemplateProps> = ({
+  page = 1,
+  total = 15,
+}) => {
   const displayContent = () => {
     if (page > 4 && page + 3 < total) {
       return (
@@ -191,7 +196,6 @@ export const PaginateBar: React.FC<{
         {page !== 1 && (
           <Button
             variant="paginate"
-            animate
             direction="left"
             onClick={() => Router.push(`/s/homes/page/${page - 1}`)}
           />
@@ -200,7 +204,6 @@ export const PaginateBar: React.FC<{
         {page !== total && (
           <Button
             variant="paginate"
-            animate
             direction="right"
             onClick={() => Router.push(`/s/homes/page/${page + 1}`)}
           />
