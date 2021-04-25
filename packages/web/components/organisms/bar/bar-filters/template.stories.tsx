@@ -20,7 +20,4 @@ Filters.args = {
     transition: 0.45,
   },
   width: 500,
-  handleWidthChange: () => alert('handle width change'),
-  handleNextSlide: () => alert('handle next slide'),
-  handlePreviousSlide: () => alert('handle previous slide'),
 };
