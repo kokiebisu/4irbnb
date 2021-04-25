@@ -1,8 +1,10 @@
+export interface CovidBarTemplateProps {}
+
 /**
  *
  * @returns
  */
-export const CovidBar: React.FC<{}> = () => {
+export const CovidBarTemplate: React.FC<CovidBarTemplateProps> = () => {
   return (
     <aside className="text-sm bg-black text-center py-4 px-6 z-50">
       <a href="">
