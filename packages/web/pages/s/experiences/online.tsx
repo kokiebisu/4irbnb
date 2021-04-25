@@ -23,7 +23,7 @@ const OnlinePage = () => {
       <div className="sticky top-0 z-50">
         <div className="bg-white">
           <div className="container-spread py-4">
-            <Bar variant={$Bar.FILTERS} />
+            <Bar variant="filters" />
           </div>
           <div
             className="w-full bg-gray-500"

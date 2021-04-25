@@ -25,7 +25,7 @@ const LandingPage = ({ currentUser }) => {
     <div className="min-h-screen overflow-x-hidden relative ">
       <div>
         <div>
-          <Bar variant={$Bar.COVID} />
+          <Bar variant="covid" />
         </div>
         <Segment variant="banner" />
         {loading ? (
@@ -81,7 +81,7 @@ const LandingPage = ({ currentUser }) => {
               className={index['none__menubar']}
             >
               <div className="fixed w-full z-30 bottom-0">
-                <Bar variant={$Bar.MENU} />
+                <Bar variant="menu" />
               </div>
             </motion.div>
           )}

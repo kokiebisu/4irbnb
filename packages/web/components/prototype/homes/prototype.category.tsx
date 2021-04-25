@@ -76,7 +76,7 @@ export const CategoryPrototype: React.FC<CategoryPrototypeProps> = ({
         <Segment variant="homes" layout="vertical" location={location} />
       </div>
       <div className="mt-4 flex justify-center">
-        <Bar variant={$Bar.PAGINATE} animate />
+        <Bar variant="paginate" />
       </div>
     </div>
   );

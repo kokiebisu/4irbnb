@@ -40,7 +40,7 @@ export const SearchbarPrototypeTemplate: React.FC<SearchbarPrototypeTemplateProp
   return (
     <div className="relative">
       <Bar
-        variant={$Bar.SEARCH}
+        variant="search"
         selected={selected}
         setSelected={handleSelectedChange}
         type={type}

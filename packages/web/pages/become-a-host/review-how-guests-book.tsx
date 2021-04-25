@@ -23,7 +23,7 @@ const HowGuestsWillBookPage = () => {
           <Header variant={$Header.STAY} title="Booking settings" />
         </div>
         <div>
-          <Bar variant={$Bar.PROGRESS} percentage={80} />
+          <Bar variant="progress" percentage={80} />
         </div>
       </div>
       <div style={{ padding: '50px 0' }}>
@@ -69,7 +69,7 @@ const HowGuestsWillBookPage = () => {
         <div className="w-full flex justify-center">
           <div className="bg-white w-full fixed bottom-0 z-60 flex justify-center sm:justify-end">
             <div className="w-full my-0 mx-auto max-w-[700px]">
-              <Bar variant={$Bar.CREATE} next={proceed} back={revert} />
+              <Bar variant="create" next={proceed} back={revert} />
             </div>
           </div>
         </div>

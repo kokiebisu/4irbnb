@@ -83,7 +83,7 @@ export const NearbyPrototype: React.FC<NearbyPrototypeProps> = ({
           <Segment variant="homes" />
         </div>
         <div className="mt-4 flex justify-center">
-          <Bar variant={$Bar.PAGINATE} animate />
+          <Bar variant="paginate" />
         </div>
       </div>
       <div className="p-5 bg-gray-300">
