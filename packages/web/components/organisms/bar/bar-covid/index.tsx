@@ -1,7 +1,11 @@
 import { CovidBarTemplate } from './template';
 
 const CovidBar = (props) => {
-  return <CovidBarTemplate {...props} />;
+  return (
+    <div data-testid="bar-covid--organism">
+      <CovidBarTemplate {...props} />
+    </div>
+  );
 };
 
 export const covid = (props) => {

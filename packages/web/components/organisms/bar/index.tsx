@@ -1,3 +1,5 @@
+import { barFactory } from './util/factory';
+
 export const $Bar = {
   AVAILABILITY: 'availability',
   PAGINATE: 'paginate',
@@ -19,15 +21,6 @@ export interface BarProps {
  * @param {string} type - Specifies the type of bar component
  */
 export const Bar: React.FC<BarProps> = ({ variant = 'paginate', ...props }) => {
-  const variants = {
-    availability: <AvailabilityBar {...props} />,
-    paginate: <PaginateBar {...props} />,
-    covid: <CovidBar {...props} />,
-    progress: <ProgressBar {...props} />,
-    search: <SearchBar {...props} />,
-    create: <CreateBar {...props} />,
-    menu: <MenuBar {...props} />,
-    filters: <FiltersBar {...props} />,
-  };
-  return <div data-testid={`${variant}-bar`}>{variants[variant]}</div>;
+  const variants = barFactory(props);
+  return variants[variant].component;
 };

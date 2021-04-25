@@ -1,7 +1,11 @@
 import { CreateBarTemplate } from './template';
 
 const CreateBar = (props) => {
-  return <CreateBarTemplate {...props} />;
+  return (
+    <div data-testid="bar-create--organism">
+      <CreateBarTemplate {...props} />
+    </div>
+  );
 };
 
 export const create = (props) => {

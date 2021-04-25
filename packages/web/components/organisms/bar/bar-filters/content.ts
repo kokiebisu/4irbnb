@@ -1,0 +1,20 @@
+export const primaryFilters = ['Filters', 'Dates', 'Group size'];
+export const secondaryFilters = [
+  'Great for groups',
+  'Family friendly',
+  'Animals',
+  'Arts & writing',
+  'Baking',
+  'Cooking',
+  'Dance',
+  'Drinks',
+  'Entertainment',
+  'Fitness',
+  'History & culture',
+  'Magic',
+  'Music',
+  'Social impact',
+  'Wellness',
+  'Olympians & Paralympians',
+  'Designed for accessibility',
+];
