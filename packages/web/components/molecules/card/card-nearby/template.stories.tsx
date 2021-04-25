@@ -12,7 +12,7 @@ const CardStory: Story<NearbyCardTemplateProps> = (args) => (
 
 export const Nearby = CardStory.bind({});
 Nearby.args = {
-  city: 'City',
-  hours: 1,
+  city: 'Toronto',
+  hours: 3,
   size: 'sm',
 };
