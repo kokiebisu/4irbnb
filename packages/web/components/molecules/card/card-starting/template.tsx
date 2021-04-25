@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
 import { Video } from '@video';
 import { Icon } from '@icons';
 
-export interface StartingCardProps {
+export interface StartingCardTemplateProps {
   ratings?: number;
   reviews?: number;
   country?: string;
@@ -11,25 +10,27 @@ export interface StartingCardProps {
   slots?: string[];
   imgUrl?: string;
   videoUrl?: string;
+  handleIsHoveredChange?: (state: boolean) => boolean;
+  isHovered?: boolean;
 }
 
-const StartingCard: React.FC<StartingCardProps> = ({
-  ratings = 5,
-  reviews = 100,
-  country = 'Italy',
-  title = 'Title',
-  minCost = 56,
-  slots = ['11:30', '3:30'],
-  imgUrl = 'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster',
-  videoUrl = 'https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400',
+export const StartingCardTemplate: React.FC<StartingCardTemplateProps> = ({
+  ratings,
+  reviews,
+  country,
+  title,
+  minCost,
+  slots,
+  imgUrl,
+  videoUrl,
+  handleIsHoveredChange,
+  isHovered,
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
   return (
     <div
-      style={{ cursor: 'pointer' }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="border border-gray-300 rounded-md p-3"
+      onMouseEnter={() => handleIsHoveredChange(true)}
+      onMouseLeave={() => handleIsHoveredChange(false)}
+      className="border border-gray-300 rounded-md p-3 cursor-pointer"
     >
       <div
         className="h-full grid"
@@ -92,13 +93,4 @@ const StartingCard: React.FC<StartingCardProps> = ({
       </div>
     </div>
   );
-};
-
-export const starting = (props) => {
-  return {
-    starting: {
-      component: <StartingCard {...props} />,
-      style: '',
-    },
-  };
 };
