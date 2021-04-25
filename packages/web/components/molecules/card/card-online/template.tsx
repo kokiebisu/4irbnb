@@ -1,4 +1,4 @@
-export interface OnlineCardProps {
+export interface OnlineCardTemplateProps {
   small?: string;
   large?: string;
   title?: string;
@@ -12,11 +12,11 @@ export interface OnlineCardProps {
  * @param {string} title - Title of the card
  * @param {boolean} inverse - Whether if the component takes the inverse styling or not
  */
-const OnlineCard: React.FC<OnlineCardProps> = ({
+export const OnlineCardTemplate: React.FC<OnlineCardTemplateProps> = ({
   small,
   large,
-  title = 'Learn to make soup dumplings in Shanghai',
-  inverse = false,
+  title,
+  inverse,
 }) => {
   return (
     <div className="relative h-full w-full">
@@ -76,13 +76,4 @@ const OnlineCard: React.FC<OnlineCardProps> = ({
       </div>
     </div>
   );
-};
-
-export const online = (props) => {
-  return {
-    online: {
-      component: <OnlineCard {...props} />,
-      style: '',
-    },
-  };
 };
