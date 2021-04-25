@@ -1,12 +1,4 @@
-export interface HowCardProps {
-  how?: string;
-}
-
-/**
- * Renders the participate card component
- * @param {string} categoryType - Type of participate card
- */
-const HowCard: React.FC<HowCardProps> = ({ how = 'qualified' }) => {
+export const useHowCard = ({ how }) => {
   const types = {
     qualified: {
       icon:
@@ -32,40 +24,11 @@ const HowCard: React.FC<HowCardProps> = ({ how = 'qualified' }) => {
         'You’ll immediately get a confirmation email with information like why they’re coming, when they’re arriving, and who they’re coming with.',
     },
   };
-  return (
-    <div
-      style={{ minHeight: 350 }}
-      className="h-full p-6 border border-gray-300 rounded"
-    >
-      <div className="pt-3 pb-6 px-auto flex justify-content">
-        <div
-          className="w-32 h-28 bg-cover bg-no-repeat bg-center"
-          style={{
-            backgroundImage: `url(${types[how].icon})`,
-          }}
-        />
-      </div>
-      <div className="my-3">
-        <h3 className="text-base">{types[how].title}</h3>
-      </div>
-      <div className="mb-3">
-        <p className="text-sm">{types[how].description}</p>
-      </div>
-      {types[how].more && (
-        <div>
-          <h3 className="text-xs text-green-500">
-            <u>{types[how].more}</u>
-          </h3>
-        </div>
-      )}
-    </div>
-  );
-};
 
-export const how = (props) => {
   return {
-    how: {
-      component: <HowCard {...props} />,
-    },
+    icon: types[how].icon,
+    title: types[how].title,
+    description: types[how].description,
+    more: types[how].more,
   };
 };
