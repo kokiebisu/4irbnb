@@ -2,8 +2,6 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 import { Card, CardProps, $Card } from '@card';
 
-import { types as HostingTypes } from '@card/card.hosting';
-
 export default {
   title: 'Molecules/Card',
   component: Card,
@@ -216,7 +214,7 @@ Hosting.argTypes = {
   type: {
     control: {
       type: 'select',
-      options: Object.keys(HostingTypes),
+      options: ['requirements', 'decide', 'prices', 'help'],
     },
   },
 };

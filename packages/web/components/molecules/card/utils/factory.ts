@@ -9,7 +9,7 @@ import { checkin } from '@card/card-checkin';
 import { collection } from '@card/card-collection';
 import { horizontal } from '@card/card-horizontal';
 import { host } from '@card/card-host';
-import { hosting } from '@card/card.hosting';
+import { hosting } from '@card/card-hosting';
 import { how } from '@card/card.how';
 import { online } from '@card/card.online';
 import { participate } from '@card/card.participate';

@@ -1,6 +1,6 @@
 import { Layout } from '@layout';
 import { Card, $Card } from '@card';
-import { types } from '@card/card.hosting';
+
 export interface HostingTemplateProps {}
 
 /**
@@ -15,7 +15,7 @@ export const HostingTemplate: React.FC<HostingTemplateProps> = () => {
           style={{ scrollSnapType: 'x mandatory' }}
           className="w-full flex overflow-x-auto"
         >
-          {Object.keys(types).map((type, index) => {
+          {['requirements', 'decide', 'prices', 'help'].map((type, index) => {
             return (
               <div
                 key={index}
