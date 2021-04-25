@@ -1,22 +1,29 @@
 import { Button } from '@button';
 import { useToggleDispatch } from '@context/toggle';
 
-/**
- * Renders the Searchbar
- */
-export const SearchBar: React.FC<{
+export interface SearchBarTemplateProps {
   type?: string;
   selected?: string;
   setSelected?: (param: string) => void;
   transparent?: boolean;
-}> = ({
-  type = 'stay',
-  selected = null,
-  setSelected = () => console.log('clicked'),
-  transparent,
-}) => {
-  const dispatchToggle = useToggleDispatch();
+  dispatchToggle?: any;
+  handleGuestsSelected?: () => void;
+  handleCheckInSelected?: () => void;
+  handleSearch?: () => void;
+}
 
+/**
+ * Renders the Searchbar
+ */
+export const SearchBarTemplate: React.FC<SearchBarTemplateProps> = ({
+  type,
+  selected,
+  setSelected,
+  transparent,
+  handleGuestsSelected,
+  handleCheckInSelected,
+  handleSearch,
+}) => {
   const types = {
     stay: (
       <div
@@ -57,10 +64,7 @@ export const SearchBar: React.FC<{
           className={`${
             selected === 'guests' && 'shadow-lg'
           } block py-2 pr-2 pl-5 rounded-full`}
-          onClick={() => {
-            setSelected('guests');
-            dispatchToggle({ type: 'toggle_guests' });
-          }}
+          onClick={handleGuestsSelected}
         >
           <div
             className={`flex justify-between items-center ${
@@ -115,10 +119,7 @@ export const SearchBar: React.FC<{
           className={`block py-2 pr-3 pl-4 rounded-full hover:bg-gray-200 ${
             selected === 'checkin' && 'shadow-lg'
           }`}
-          onClick={() => {
-            setSelected('checkin');
-            dispatchToggle({ type: 'toggle_checkin' });
-          }}
+          onClick={handleCheckInSelected}
         >
           <div
             className={`flex justify-between items-center ${
@@ -141,7 +142,7 @@ export const SearchBar: React.FC<{
               <Button
                 block
                 variant="search"
-                onClick={() => alert('hello')}
+                onClick={handleSearch}
                 expand={selected}
               />
             </div>
