@@ -11,4 +11,7 @@ const BarStory: Story<PaginateBarTemplateProps> = (args) => (
 );
 
 export const Paginate = BarStory.bind({});
-Paginate.args = {};
+Paginate.args = {
+  page: 1,
+  total: 15,
+};

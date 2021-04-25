@@ -12,8 +12,8 @@ export interface PaginateBarTemplateProps {
  * @param {number} total - Total number of pages
  */
 export const PaginateBarTemplate: React.FC<PaginateBarTemplateProps> = ({
-  page = 1,
-  total = 15,
+  page,
+  total,
 }) => {
   const displayContent = () => {
     if (page > 4 && page + 3 < total) {
