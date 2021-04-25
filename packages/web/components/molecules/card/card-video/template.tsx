@@ -1,8 +1,7 @@
 import { Icon } from '@icons';
-import React, { useState } from 'react';
 import { Video } from '@video';
 
-export interface VideoCardProps {
+export interface VideoCardTemplateProps {
   imgUrl?: string;
   videoUrl?: string;
   superhost?: boolean;
@@ -12,6 +11,8 @@ export interface VideoCardProps {
   country?: string;
   title?: string;
   cost?: number;
+  isHovered?: boolean;
+  handleIsHoveredChange?: (state: boolean) => boolean;
 }
 
 /**
@@ -19,25 +20,25 @@ export interface VideoCardProps {
  * @param {Object} card - Information about the card
  * @param {boolean} save - Whether if the card can be saved
  */
-const VideoCard: React.FC<VideoCardProps> = ({
-  imgUrl = 'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster',
-  videoUrl = 'https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400',
-  ratings = 5.0,
-  number_of_reviews = 100,
-  country = 'Country',
-  title = 'Title',
-  cost = 10,
+export const VideoCardTemplate: React.FC<VideoCardTemplateProps> = ({
+  imgUrl,
+  videoUrl,
+  ratings,
+  number_of_reviews,
+  country,
+  title,
+  cost,
+  isHovered,
+  handleIsHoveredChange,
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <div>
       <div
         onMouseEnter={() => {
-          setIsHovered(true);
+          handleIsHoveredChange(true);
         }}
         onMouseLeave={() => {
-          setIsHovered(false);
+          handleIsHoveredChange(false);
         }}
         style={{ paddingTop: '133%' }}
         className="relative"
@@ -91,13 +92,4 @@ const VideoCard: React.FC<VideoCardProps> = ({
       </div>
     </div>
   );
-};
-
-export const video = (props) => {
-  return {
-    video: {
-      component: <VideoCard {...props} />,
-      style: '',
-    },
-  };
 };
