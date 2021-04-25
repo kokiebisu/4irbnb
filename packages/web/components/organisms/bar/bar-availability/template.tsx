@@ -1,15 +1,20 @@
 import { Button } from '@button';
 import { Icon } from '@icons';
 
+export interface AvailabilityBarTemplateProps {
+  ratings?: number;
+  reviews?: number;
+}
+
 /**
  * Renders the modal which gives all the available options
  * @param {number} ratings - Average ratings from the users
  * @param {number} reviews - Total number of reviews from the users
  */
-export const AvailabilityBar: React.FC<{
-  ratings?: number;
-  reviews?: number;
-}> = ({ ratings = 4.99, reviews = 271 }) => {
+export const AvailabilityBarTemplate: React.FC<AvailabilityBarTemplateProps> = ({
+  ratings,
+  reviews,
+}) => {
   return (
     <div className="items-center justify-between flex border-t border-gray-300">
       <div className="py-4">

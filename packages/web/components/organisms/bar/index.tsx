@@ -1,13 +1,3 @@
-/** components */
-import { PaginateBar } from '@bar/bar-paginate';
-import { ProgressBar } from '@bar/bar.progress';
-import { SearchBar } from '@bar/bar.search';
-import { CovidBar } from '@bar/bar.covid';
-import { CreateBar } from '@bar/bar.create';
-import { MenuBar } from '@bar/bar.menu';
-import { AvailabilityBar } from '@bar/bar.availability';
-import { FiltersBar } from '@bar/bar.filters';
-
 export const $Bar = {
   AVAILABILITY: 'availability',
   PAGINATE: 'paginate',
