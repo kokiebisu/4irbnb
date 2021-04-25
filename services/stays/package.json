@@ -1,11 +1,13 @@
 {
+  "private": true,
   "name": "@nextbnb/stays",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./src/index.ts",
   "scripts": {
-    "clean": "rm -rf ./build/*",
-    "compile": "yarn clean && tsc --build tsconfig.json",
+    "clean": "rm -rf ./dist/*",
+    "compile": "tsc -b .",
     "start": "node ./build/index.js",
     "dev": "ts-node-dev --poll src/index.ts",
     "test": "jest --watchAll --no-cache",
