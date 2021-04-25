@@ -3,7 +3,7 @@ import { ReviewCardTemplate, ReviewCardTemplateProps } from './template';
 import * as utils from './utils';
 
 export default {
-  title: 'Design System/Molecules/Card',
+  title: 'Molecules/Card',
   component: ReviewCardTemplate,
 } as Meta;
 

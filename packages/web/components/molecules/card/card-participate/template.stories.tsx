@@ -6,7 +6,7 @@ import {
 } from './template';
 
 export default {
-  title: 'Design System/Molecules/Card',
+  title: 'Molecules/Card',
   component: ParticipateCardTemplate,
 } as Meta;
 

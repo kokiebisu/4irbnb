@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/react';
 import { TypeStayCardTemplate, TypeStayCardTemplateProps } from './template';
 
 export default {
-  title: 'Design System/Molecules/Card',
+  title: 'Molecules/Card',
   component: TypeStayCardTemplate,
 } as Meta;
 

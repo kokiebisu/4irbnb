@@ -3,7 +3,7 @@ import { NearbyCardTemplate, NearbyCardTemplateProps } from './template';
 import * as utils from './util';
 
 export default {
-  title: 'Design System/Molecules/Card',
+  title: 'Molecules/Card',
   component: NearbyCardTemplate,
 } as Meta;
 

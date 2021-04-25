@@ -1,18 +1,32 @@
+export interface RoomPanelTemplateProps {
+  firstImage?: string;
+  secondImage?: string;
+  thirdImage?: string;
+  fourthImage?: string;
+  fifthImage?: string;
+}
+
 /**
  *
  * @param param0
  * @returns
  */
-const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
+export const RoomPanelTemplate: React.FC<RoomPanelTemplateProps> = ({
+  firstImage,
+  secondImage,
+  thirdImage,
+  fourthImage,
+  fifthImage,
+}) => {
   return (
     <div className="relative" style={{ paddingTop: '42%' }}>
       <div className="animate-pulse absolute top-0 bottom-0 left-0 right-0">
         <div className="grid grid-cols-2 gap-3 w-full h-full">
           <div>
-            {images[0] ? (
+            {firstImage ? (
               <img
                 className="bg-cover bg-repeat rounded-lr-lg"
-                src={images[0]}
+                src={firstImage}
               />
             ) : (
               <div className="rounded-l-lg w-full h-full bg-gray-500" />
@@ -20,37 +34,37 @@ const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
           </div>
           <div className="grid gap-3 grid-cols-2 grid-rows-2">
             <div>
-              {images[1] ? (
-                <img className="bg-cover bg-repeat" src={images[1]} />
+              {secondImage ? (
+                <img className="bg-cover bg-repeat" src={secondImage} />
               ) : (
                 <div className="w-full h-full bg-gray-500" />
               )}
             </div>
             <div>
-              {images[2] ? (
+              {thirdImage ? (
                 <img
                   className="rounded-tr-lg bg-cover bg-repeat"
-                  src={images[2]}
+                  src={thirdImage}
                 />
               ) : (
                 <div className="rounded-tr-lg w-full h-full bg-gray-500" />
               )}
             </div>
             <div>
-              {images[3] ? (
+              {fourthImage ? (
                 <img
                   className="rounded-br-lg bg-cover bg-repeat"
-                  src={images[3]}
+                  src={fourthImage}
                 />
               ) : (
                 <div className="w-full h-full bg-gray-500" />
               )}
             </div>
             <div>
-              {images[3] ? (
+              {fifthImage ? (
                 <img
                   className="rounded-br-lg bg-cover bg-repeat"
-                  src={images[3]}
+                  src={fifthImage}
                 />
               ) : (
                 <div className="rounded-br-lg w-full h-full bg-gray-500" />
@@ -61,13 +75,4 @@ const RoomPanel: React.FC<{ images?: string[] }> = ({ images = [] }) => {
       </div>
     </div>
   );
-};
-
-export const room = (props) => {
-  return {
-    room: {
-      component: <RoomPanel {...props} />,
-      style: '',
-    },
-  };
 };
