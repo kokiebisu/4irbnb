@@ -11,9 +11,4 @@ const CardStory: Story<AgainCardTemplateProps> = (args) => (
 );
 
 export const Again = CardStory.bind({});
-Again.args = {
-  card: {
-    type: 'Bedroom',
-    beds: [{ type: 'double bed', count: 1 }],
-  },
-};
+Again.args = {};

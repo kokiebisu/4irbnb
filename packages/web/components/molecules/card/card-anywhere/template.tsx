@@ -9,7 +9,7 @@ export interface AnywhereCardTemplateProps {
  */
 export const AnywhereCardTemplate: React.FC<AnywhereCardTemplateProps> = ({
   imgUrl,
-  title = 'Title',
+  title,
 }) => {
   return (
     <div>

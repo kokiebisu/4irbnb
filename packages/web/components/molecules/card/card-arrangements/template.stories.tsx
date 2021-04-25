@@ -15,8 +15,6 @@ const CardStory: Story<ArrangementsCardTemplateProps> = (args) => (
 
 export const Arrangements = CardStory.bind({});
 Arrangements.args = {
-  card: {
-    type: 'Bedroom',
-    beds: [{ type: 'double bed', count: 1 }],
-  },
+  type: 'double bed',
+  count: 1,
 };

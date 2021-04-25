@@ -4,6 +4,13 @@ import { CheckInCardTemplate, CheckInCardTemplateProps } from './template';
 export default {
   title: 'Design System/Molecules/Card',
   component: CheckInCardTemplate,
+  decorators: [
+    (Story) => (
+      <div style={{ maxWidth: 450 }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as Meta;
 
 const CardStory: Story<CheckInCardTemplateProps> = (args) => (

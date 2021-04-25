@@ -7,6 +7,13 @@ import {
 export default {
   title: 'Design System/Molecules/Card',
   component: CollectionCardTemplate,
+  decorators: [
+    (Story) => (
+      <div style={{ maxWidth: 550 }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as Meta;
 
 const CardStory: Story<CollectionCardTemplateProps> = (args) => (

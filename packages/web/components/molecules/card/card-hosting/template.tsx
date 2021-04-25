@@ -18,7 +18,7 @@ export const HostingCardTemplate: React.FC<HostingCardTemplateProps> = ({
               height: 160,
             }}
           >
-            <img src={imgUrl} className="object-fit rounded-md" />
+            <img src={imgUrl} className="object-cover rounded-md" />
           </div>
         ) : (
           <div
