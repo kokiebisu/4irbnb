@@ -8,13 +8,6 @@ import {
 export default {
   title: 'Design System/Molecules/Card',
   component: ParticipateCardTemplate,
-  decorators: [
-    (Story) => (
-      <div style={{ maxWidth: 300 }}>
-        <Story />
-      </div>
-    ),
-  ],
 } as Meta;
 
 const CardStory: Story<ParticipateCardTemplateProps> = (args) => (
@@ -29,3 +22,10 @@ Participate.args = {
     'Can’t find a date that works? Cici can schedule and customize an experience based on your preferences.',
   more: 'Contact Cici',
 };
+Participate.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 300 }}>
+      <Story />
+    </div>
+  ),
+];

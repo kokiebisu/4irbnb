@@ -3,13 +3,15 @@ export interface ReviewCardTemplateProps {
   description?: string;
   commentedDate?: string;
   user?: string;
-  renderDescription?: () => string;
+  renderDescription?: (description: string) => string;
+  display?: boolean;
+  handleDisplayChange?: () => boolean;
 }
 
 /**
  * Renders the review card component
  * @param {string} imgUrl - Image of the review card
- * @param {string} description - Description of the review card
+ * @param {string} user - Description of the review card
  */
 export const ReviewCardTemplate: React.FC<ReviewCardTemplateProps> = ({
   imgUrl,
@@ -17,6 +19,8 @@ export const ReviewCardTemplate: React.FC<ReviewCardTemplateProps> = ({
   description,
   commentedDate,
   renderDescription,
+  display,
+  handleDisplayChange,
 }) => {
   return (
     <div className="py-3">
@@ -44,7 +48,7 @@ export const ReviewCardTemplate: React.FC<ReviewCardTemplateProps> = ({
             <span className="inline-block ml-2">
               <div
                 className="bg-transparent text-base"
-                onClick={() => setDisplay(!display)}
+                onClick={handleDisplayChange}
               >
                 <u>read more</u>
               </div>

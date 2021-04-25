@@ -13,12 +13,8 @@ const CardStory: Story<WorksCardTemplateProps> = (args) => (
 export const Works = CardStory.bind({});
 Works.args = {
   imgUrl:
-    'https://a0.muscache.com/im/pictures/lombard/MtTemplate-1652939-media_library/original/a7f906fc-f4c8-4b27-a5e2-b783115350e4.jpeg?aki_policy=poster',
-  WorksUrl:
-    'https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400',
-  ratings: 5.0,
-  number_of_reviews: 100,
-  country: 'Country',
-  title: 'Title',
-  cost: 10,
+    'https://a0.muscache.com/pictures/54019d2c-f00e-4d2b-9eb2-7b738e6b9eb8.jpg',
+  title: 'Design your experience',
+  description:
+    'All experiences start with our quality standards—expertise, access, and connection. But also think about how to engage with guests online, and minimize the supplies they might need to participate. When you have an idea, start the submission process.',
 };

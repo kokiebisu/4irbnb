@@ -4,13 +4,6 @@ import { AvailableCardTemplate, AvailableCardTemplateProps } from './template';
 export default {
   title: 'Design System/Molecules/Card',
   component: AvailableCardTemplate,
-  decorators: [
-    (Story) => (
-      <div style={{ maxWidth: 300 }}>
-        <Story />
-      </div>
-    ),
-  ],
 } as Meta;
 
 const CardStory: Story<AvailableCardTemplateProps> = (args) => (
@@ -25,3 +18,10 @@ Available.args = {
   standard: 'PST',
   price: 31,
 };
+Available.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 300 }}>
+      <Story />
+    </div>
+  ),
+];

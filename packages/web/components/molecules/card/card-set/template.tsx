@@ -10,8 +10,8 @@ export const SetCardTemplate: React.FC<SetCardTemplateProps> = () => {
         <div className="flex items-center">
           <div className="mr-3">
             <Icon
-              variant="general"
-              generalType="check"
+              variant="semantic"
+              semanticType="check"
               width={18}
               fill="#268A04"
             />

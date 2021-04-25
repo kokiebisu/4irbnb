@@ -4,13 +4,6 @@ import { SharingCardTemplate, SharingCardTemplateProps } from './template';
 export default {
   title: 'Design System/Molecules/Card',
   component: SharingCardTemplate,
-  decorators: [
-    (Story) => (
-      <div style={{ maxWidth: 300 }}>
-        <Story />
-      </div>
-    ),
-  ],
 } as Meta;
 
 const CardStory: Story<SharingCardTemplateProps> = (args) => (
@@ -25,3 +18,10 @@ Sharing.args = {
   description:
     'Part show and part masterclass, guests learn magic psychology and tricks they can do at home.',
 };
+Sharing.decorators = [
+  (Story) => (
+    <div style={{ maxWidth: 300 }}>
+      <Story />
+    </div>
+  ),
+];
