@@ -1,5 +1,5 @@
 import { nearby } from '@card/card-nearby';
-import { video } from '@card/card.video';
+import { video } from '@card/card-video';
 import { again } from '@card/card-again';
 import { anywhere } from '@card/card-anywhere';
 import { arrangements } from '@card/card-arrangements';
@@ -20,7 +20,7 @@ import { starting } from '@card/card-starting';
 import { stay } from '@card/card-stay';
 import { typestay } from '@card/card-typestay';
 import { vertical } from '@card/card-vertical';
-import { works } from '@card/card.works';
+import { works } from '@card/card-works';
 
 export const factory = (props) => {
   return {

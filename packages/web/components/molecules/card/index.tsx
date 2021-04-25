@@ -46,13 +46,13 @@ export const Card: React.FC<CardProps> = ({
   ...props
 }) => {
   const variants: {
-    [variant: string]: { component: JSX.Element; style: string };
+    [variant: string]: { component: JSX.Element };
   } = factory(props);
 
   if (onClick) {
     return (
       <div
-        className={`cursor-pointer text-left block h-full w-full' ${extendsTo} ${variants[variant].style}`}
+        className="cursor-pointer text-left block h-full w-full"
         data-testid={`${variant}-card`}
         onClick={onClick}
       >
@@ -62,11 +62,6 @@ export const Card: React.FC<CardProps> = ({
   }
 
   return (
-    <div
-      data-testid={`${variant}-card`}
-      className={`${extendsTo} ${variants[variant].style}`}
-    >
-      {variants[variant].component}
-    </div>
+    <div data-testid={`${variant}-card`}>{variants[variant].component}</div>
   );
 };
