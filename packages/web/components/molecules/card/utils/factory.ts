@@ -11,7 +11,7 @@ import { horizontal } from '@card/card-horizontal';
 import { host } from '@card/card-host';
 import { hosting } from '@card/card-hosting';
 import { how } from '@card/card-how';
-import { online } from '@card/card.online';
+import { online } from '@card/card-online';
 import { participate } from '@card/card.participate';
 import { review } from '@card/card.review';
 import { set } from '@card/card.set';
