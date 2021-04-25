@@ -1,15 +1,17 @@
 import { Button } from '@button';
 
+export interface CreateBarTemplateProps {
+  next?: () => void;
+  back?: () => void;
+  criteria?: boolean;
+}
+
 /**
  *
  * @param param0
  * @returns
  */
-export const CreateBar: React.FC<{
-  next?: () => void;
-  back?: () => void;
-  criteria?: boolean;
-}> = ({
+export const CreateBarTemplate: React.FC<CreateBarTemplateProps> = ({
   next = () => alert('next button pressed'),
   back = () => alert('back button pressed'),
   criteria = true,
