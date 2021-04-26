@@ -1,13 +1,15 @@
 import { BaseIconProps } from '@icons';
 
+export type SemanticIconTypes =
+  | 'exclamation'
+  | 'warning'
+  | 'minus'
+  | 'plus'
+  | 'check'
+  | 'saved';
+
 export interface SemanticIconTypeProps {
-  semanticType?:
-    | 'exclamation'
-    | 'warning'
-    | 'minus'
-    | 'plus'
-    | 'check'
-    | 'saved';
+  semanticType?: SemanticIconTypes;
 }
 
 export const SemanticIcon: React.FC<BaseIconProps & SemanticIconTypeProps> = ({

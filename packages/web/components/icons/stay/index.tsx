@@ -1,23 +1,25 @@
 import { BaseIconProps } from '@icons';
 
+export type StayIconTypes =
+  | 'doublebed'
+  | 'house'
+  | 'sparkle'
+  | 'door'
+  | 'calendar'
+  | 'guidelines'
+  | 'clock'
+  | 'checkin'
+  | 'children'
+  | 'smoking'
+  | 'pets'
+  | 'parties'
+  | 'cleaning'
+  | 'distancing'
+  | 'caution'
+  | 'check';
+
 export interface StayIconTypeProps {
-  stayType?:
-    | 'doublebed'
-    | 'house'
-    | 'sparkle'
-    | 'door'
-    | 'calendar'
-    | 'guidelines'
-    | 'clock'
-    | 'checkin'
-    | 'children'
-    | 'smoking'
-    | 'pets'
-    | 'parties'
-    | 'cleaning'
-    | 'distancing'
-    | 'caution'
-    | 'check';
+  stayType?: StayIconTypes;
 }
 
 export const StayIcon: React.FC<BaseIconProps & StayIconTypeProps> = ({

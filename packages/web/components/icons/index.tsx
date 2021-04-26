@@ -17,6 +17,16 @@ export interface BaseIconProps {
   strokeWidth?: number;
 }
 
+export type IconVariants =
+  | 'logo'
+  | 'profile'
+  | 'amenity'
+  | 'experience'
+  | 'action'
+  | 'semantic'
+  | 'general'
+  | 'stay';
+
 export interface IconProps
   extends BaseIconProps,
     LogoIconTypeProps,
@@ -27,15 +37,7 @@ export interface IconProps
     SemanticIconTypeProps,
     GeneralIconTypeProps,
     StayIconTypeProps {
-  variant:
-    | 'logo'
-    | 'profile'
-    | 'amenity'
-    | 'experience'
-    | 'action'
-    | 'semantic'
-    | 'general'
-    | 'stay';
+  variant: IconVariants;
 }
 
 export const Icon: React.FC<IconProps> = ({

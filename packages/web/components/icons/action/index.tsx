@@ -1,16 +1,18 @@
 import { BaseIconProps } from '@icons';
 
+export type ActionIconTypes =
+  | 'heart'
+  | 'close'
+  | 'pause'
+  | 'play'
+  | 'left'
+  | 'right'
+  | 'top'
+  | 'bottom'
+  | 'upload';
+
 export interface ActionIconTypeProps {
-  actionType?:
-    | 'heart'
-    | 'close'
-    | 'pause'
-    | 'play'
-    | 'left'
-    | 'right'
-    | 'top'
-    | 'bottom'
-    | 'upload';
+  actionType?: ActionIconTypes;
 }
 
 export const ActionIcon: React.FC<BaseIconProps & ActionIconTypeProps> = ({

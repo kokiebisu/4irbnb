@@ -1,13 +1,15 @@
 import { BaseIconProps } from '@icons';
 
+type AmenityIconTypes =
+  | 'smokeAlarm'
+  | 'tv'
+  | 'kitchen'
+  | 'heating'
+  | 'privateEntrance'
+  | 'carbonAlarm';
+
 export interface AmenityIconTypeProps {
-  amenityType?:
-    | 'smokeAlarm'
-    | 'tv'
-    | 'kitchen'
-    | 'heating'
-    | 'privateEntrance'
-    | 'carbonAlarm';
+  amenityType?: AmenityIconTypes;
 }
 
 export const AmenityIcon: React.FC<BaseIconProps & AmenityIconTypeProps> = ({

@@ -1,13 +1,15 @@
 import { BaseIconProps } from '@icons';
 
+export type ExperienceIconTypes =
+  | 'time'
+  | 'people'
+  | 'language'
+  | 'computer'
+  | 'smile'
+  | 'activity';
+
 export interface ExperienceIconTypeProps {
-  experienceType?:
-    | 'time'
-    | 'people'
-    | 'language'
-    | 'computer'
-    | 'smile'
-    | 'activity';
+  experienceType?: ExperienceIconTypes;
 }
 
 export const ExperienceIcon: React.FC<

@@ -1,32 +1,34 @@
 import { BaseIconProps } from '@icons';
 
+export type GeneralIconTypes =
+  | 'magnifyGlass'
+  | 'lock'
+  | 'globe'
+  | 'share'
+  | 'email'
+  | 'flag'
+  | 'bars'
+  | 'login'
+  | 'search'
+  | 'shield'
+  | 'check'
+  | 'devices'
+  | 'devicesInverse'
+  | 'protection'
+  | 'guidance'
+  | 'requirements'
+  | 'customerService'
+  | 'toolbox'
+  | 'analytics'
+  | 'education'
+  | 'home'
+  | 'global'
+  | 'lightening'
+  | 'protected'
+  | 'explore';
+
 export interface GeneralIconTypeProps {
-  generalType?:
-    | 'magnifyGlass'
-    | 'lock'
-    | 'globe'
-    | 'share'
-    | 'email'
-    | 'flag'
-    | 'bars'
-    | 'login'
-    | 'search'
-    | 'shield'
-    | 'check'
-    | 'devices'
-    | 'devicesInverse'
-    | 'protection'
-    | 'guidance'
-    | 'requirements'
-    | 'customerService'
-    | 'toolbox'
-    | 'analytics'
-    | 'education'
-    | 'home'
-    | 'global'
-    | 'lightening'
-    | 'protected'
-    | 'explore';
+  generalType?: GeneralIconTypes;
 }
 
 export const GeneralIcon: React.FC<BaseIconProps & GeneralIconTypeProps> = ({

@@ -1,12 +1,14 @@
 import { Story, Meta } from '@storybook/react';
-import { BarButton, BarButtonProps } from '.';
+import { BarButtonTemplate, BarButtonTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Button',
-  component: BarButton,
+  component: BarButtonTemplate,
 } as Meta;
 
-const ButtonStory: Story<BarButtonProps> = (args) => <BarButton {...args} />;
+const ButtonStory: Story<BarButtonTemplateProps> = (args) => (
+  <BarButtonTemplate {...args} />
+);
 
 export const Bar = ButtonStory.bind({});
 Bar.args = {
