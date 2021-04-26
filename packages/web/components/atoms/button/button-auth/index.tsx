@@ -1,4 +1,3 @@
-import { Icon } from '@icons';
 import { AuthButtonTemplate, AuthButtonTemplateProps } from './template';
 
 export interface AuthButtonProps extends AuthButtonTemplateProps {
@@ -9,19 +8,35 @@ const AuthButton: React.FC<AuthButtonProps> = ({ authType, ...props }) => {
   const types = {
     email: {
       name: 'Email',
-      icon: <Icon variant="general" generalType="email" width={17} />,
+      icon: {
+        variant: 'general' as const,
+        generalType: 'email' as const,
+        width: 17,
+      },
     },
     facebook: {
       name: 'Facebook',
-      icon: <Icon variant="logo" logoType="facebook" width={19} />,
+      icon: {
+        variant: 'logo' as const,
+        logoType: 'facebook' as const,
+        width: 19,
+      },
     },
     google: {
       name: 'Google',
-      icon: <Icon variant="logo" logoType="google" width={17} />,
+      icon: {
+        variant: 'logo' as const,
+        logoType: 'google' as const,
+        width: 17,
+      },
     },
     apple: {
       name: 'Apple',
-      icon: <Icon variant="logo" logoType="apple" width={17} />,
+      icon: {
+        variant: 'logo' as const,
+        logoType: 'apple' as const,
+        width: 17,
+      },
     },
   };
   const data = types[authType];

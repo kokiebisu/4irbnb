@@ -30,6 +30,36 @@ import { VerifyButtonProps } from './button-verify';
 import { VideoButtonProps } from './button-video';
 import { factory } from './utils/factory';
 
+export type ButtonVariants =
+  | 'auth'
+  | 'menu'
+  | 'privacy'
+  | 'border'
+  | 'bar'
+  | 'banner'
+  | 'primary'
+  | 'paginate'
+  | 'expand'
+  | 'option'
+  | 'underline'
+  | 'filter'
+  | 'modal'
+  | 'back'
+  | 'transparent'
+  | 'globe'
+  | 'link'
+  | 'closed'
+  | 'search'
+  | 'location'
+  | 'nearby'
+  | 'calendar'
+  | 'searchbar'
+  | 'logo'
+  | 'video'
+  | 'destination'
+  | 'currency'
+  | 'verify';
+
 export interface ButtonProps
   extends AuthButtonProps,
     BackButtonProps,
@@ -60,35 +90,7 @@ export interface ButtonProps
     UnderlineButtonProps,
     VerifyButtonProps,
     VideoButtonProps {
-  variant:
-    | 'auth'
-    | 'menu'
-    | 'privacy'
-    | 'border'
-    | 'bar'
-    | 'banner'
-    | 'primary'
-    | 'paginate'
-    | 'expand'
-    | 'option'
-    | 'underline'
-    | 'filter'
-    | 'modal'
-    | 'back'
-    | 'transparent'
-    | 'globe'
-    | 'link'
-    | 'closed'
-    | 'search'
-    | 'location'
-    | 'nearby'
-    | 'calendar'
-    | 'searchbar'
-    | 'logo'
-    | 'video'
-    | 'destination'
-    | 'currency'
-    | 'verify';
+  variant: ButtonVariants;
   onClick?: () => void;
   stretch?: boolean;
 }

@@ -1,7 +1,15 @@
 import { BaseIconProps } from '..';
 
+export type LogoIconTypes =
+  | 'menubar'
+  | 'name'
+  | 'noName'
+  | 'facebook'
+  | 'google'
+  | 'apple';
+
 export interface LogoIconTypeProps {
-  logoType?: 'menubar' | 'name' | 'noName' | 'facebook' | 'google' | 'apple';
+  logoType?: LogoIconTypes;
 }
 
 export const LogoIcon: React.FC<BaseIconProps & LogoIconTypeProps> = ({

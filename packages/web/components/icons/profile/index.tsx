@@ -1,7 +1,9 @@
 import { BaseIconProps } from '@icons';
 
+export type ProfileIconTypes = 'avatar' | 'star' | 'superhost' | 'verified';
+
 export interface ProfileIconTypeProps {
-  profileType?: 'avatar' | 'star' | 'superhost' | 'verified';
+  profileType?: ProfileIconTypes;
 }
 
 export const ProfileIcon: React.FC<BaseIconProps & ProfileIconTypeProps> = ({

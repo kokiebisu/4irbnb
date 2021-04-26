@@ -8,6 +8,8 @@ const BackButton: React.FC<BackButtonProps> = (props) => {
 
 export const back = (props) => {
   return {
-    back: <BackButton {...props} />,
+    back: {
+      component: <BackButton {...props} />,
+    }
   };
 };
