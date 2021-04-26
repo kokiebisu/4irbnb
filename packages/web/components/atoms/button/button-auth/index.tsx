@@ -1,7 +1,7 @@
 import { Icon } from '@icons';
-import { AuthButtonTemplate } from './template';
+import { AuthButtonTemplate, AuthButtonTemplateProps } from './template';
 
-export interface AuthButtonProps {
+export interface AuthButtonProps extends AuthButtonTemplateProps {
   authType?: 'email' | 'facebook' | 'google' | 'apple';
 }
 
