@@ -1,14 +1,14 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { OptionButton, OptionButtonProps } from '.';
+import { OptionButtonTemplate, OptionButtonTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Button',
-  component: OptionButton,
+  component: OptionButtonTemplate,
 } as Meta;
 
-const ButtonStory: Story<OptionButtonProps> = (args) => (
-  <OptionButton {...args} />
+const ButtonStory: Story<OptionButtonTemplateProps> = (args) => (
+  <OptionButtonTemplate {...args} />
 );
 
 export const Option = ButtonStory.bind({});
