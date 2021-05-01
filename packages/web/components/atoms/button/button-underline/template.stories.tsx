@@ -1,14 +1,17 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { UnderlineButton, UnderlineButtonProps } from '.';
+import {
+  UnderlineButtonTemplate,
+  UnderlineButtonTemplateProps,
+} from './template';
 
 export default {
   title: 'Atoms/Button',
-  component: UnderlineButton,
+  component: UnderlineButtonTemplate,
 } as Meta;
 
-const ButtonStory: Story<UnderlineButtonProps> = (args) => (
-  <UnderlineButton {...args} />
+const ButtonStory: Story<UnderlineButtonTemplateProps> = (args) => (
+  <UnderlineButtonTemplate {...args} />
 );
 
 export const Underline = ButtonStory.bind({});
