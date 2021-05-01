@@ -1,31 +1,20 @@
-export interface TransparentButtonProps {
-  children?: any;
-  inverse?: boolean;
-}
+import React from 'react';
+import {
+  TransparentButtonTemplate,
+  TransparentButtonTemplateProps,
+} from './template';
 
-/**
- * Renders the globe button component
- * @param {boolean} inverse - Whether if the globe button is styled in inverse
- */
-export const TransparentButton: React.FC<TransparentButtonProps> = ({
-  children,
-  inverse,
-}) => {
-  return (
-    <div
-      className={`${
-        inverse
-          ? 'hover:bg-gray-300 bg-opacity-40'
-          : 'hover:bg-gray-300 bg-opacity-40'
-      } rounded-full inline-flex items-center bg-transparent py-3 px-4`}
-    >
-      {children}
-    </div>
-  );
+export interface TransparentButtonProps
+  extends TransparentButtonTemplateProps {}
+
+const TransparentButton: React.FC<TransparentButtonProps> = (props) => {
+  return <TransparentButtonTemplate {...props} />;
 };
 
 export const transparent = (props) => {
   return {
-    transparent: <TransparentButton {...props} />,
+    transparent: {
+      component: <TransparentButton {...props} />,
+    },
   };
 };
