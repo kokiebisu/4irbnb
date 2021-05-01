@@ -12,6 +12,8 @@ const DestinationButton: React.FC<DestinationButtonProps> = (props) => {
 
 export const destination = (props) => {
   return {
-    destination: <DestinationButton {...props} />,
+    destination: {
+      component: <DestinationButton {...props} />,
+    },
   };
 };
