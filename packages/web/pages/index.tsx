@@ -6,7 +6,7 @@ import { Animation } from '@animation';
 import { Modal, $Modal } from '@modal';
 import { Segment, $Segment } from '@template/index';
 import { Footer } from '@footer';
-import { Bar, $Bar } from '@bar';
+import { Bar } from '@bar';
 import { useHandleScroll } from '@hooks/useHandleScroll';
 import { useHandleDocumentResize } from '@hooks/useHandleDocumentResize';
 import { useTimeout } from '@hooks/useTimeout';
@@ -62,7 +62,7 @@ const LandingPage = ({ currentUser }) => {
         )}
         <Footer spread />
         <div className="fixed bottom-0 w-full z-50 flex justify-center">
-          <div className={[index['m__privacy']].join(' ')}>
+          <div className="mt-0 mx-8 mb-8 sm:mx-16 md:mx-36 lg:mx-0">
             <Modal
               variant={$Modal.PRIVACY}
               criteria={toggleState.privacy}
@@ -78,7 +78,7 @@ const LandingPage = ({ currentUser }) => {
               exit={{ y: 60 }}
               initial={{ y: 0 }}
               transition={{ duration: 0.5 }}
-              className={index['none__menubar']}
+              className="sm:hidden"
             >
               <div className="fixed w-full z-30 bottom-0">
                 <Bar variant="menu" />

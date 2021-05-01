@@ -8,11 +8,7 @@ export const LandingLayout: React.FC<{
   spread?: boolean;
 }> = ({ title, subtitle, children, dark = false, spread = false }) => {
   return (
-    <div
-      className={`py-4 ${[index['p__category']].join(' ')} ${
-        dark ? 'bg-black' : ''
-      }`}
-    >
+    <div className={`py-4 ${dark ? 'bg-black' : ''}`}>
       <div
         className={`${spread ? 'container--spread' : 'container'}  ${
           dark ? 'bg-black' : ''

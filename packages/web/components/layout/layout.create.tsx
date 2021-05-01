@@ -33,26 +33,13 @@ export const CreateLayout: React.FC<{
         className="flex overflow-y-auto"
         style={{ minHeight: 'calc(100vh - 75px)' }}
       >
-        <div
-          className={`flex justify-end ${[responsive['w100p_to_55p--xs']].join(
-            ' '
-          )}`}
-        >
-          <div
-            className={[responsive['full_to_maxw550--xs']].join(' ')}
-            style={{
-              paddingBottom: 100,
-            }}
-          >
+        <div className="flex justify-end w-full sm:w-55/100">
+          <div className="w-full sm:max-w-[550px] pb-36">
             <div className="pt-10 px-8">
               <div className="z-10">{left}</div>
             </div>
           </div>
-          <div
-            className={`justify-center sm:justify-end bg-white w-full fixed bottom-0 z-50 flex ${[
-              responsive['maxw100p_to_55p--xs'],
-            ].join(' ')}`}
-          >
+          <div className="justify-center sm:justify-end bg-white w-full fixed bottom-0 z-50 flex max-w-full sm:max-w-55/100">
             <div style={{ maxWidth: 550 }} className="px-8 w-full">
               <Bar
                 variant="create"

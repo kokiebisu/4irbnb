@@ -66,24 +66,13 @@ const StaysPage: () => string | JSX.Element = () => {
             </div>
           </div>
           <div className="absolute top-0 right-0 bottom-0 left-0">
-            <div
-              className={`container z-20 h-full ${[
-                styles['flex__explore'],
-              ].join(' ')}`}
-            >
-              <div className={`mx-0 ${[stays['m-v__banner']].join(' ')}`}>
-                <h1
-                  className={`text-white ${[stays['size__banner']].join(' ')}`}
-                >
+            <div className="container z-20 h-full block text-center sm:text-left sm:flex sm:flex-col sm:justify-center">
+              <div className="mx-0 mt-16 mb-3 sm:mt-3">
+                <h1 className="text-white text-lg sm:text-xl md:text-3xl">
                   Unique stays
                 </h1>
               </div>
-              <div
-                className={`text-white ${[
-                  stays['w__banner'],
-                  stays['m__banner'],
-                ].join(' ')}`}
-              >
+              <div className="text-white mx-auto my-0 sm:m-initial w-1/2 sm:w-4/10">
                 <p className="text-lg font-thin tracking-wide text-white">
                   Tents, tree houses, and more—these spaces are more than just a
                   place to sleep.

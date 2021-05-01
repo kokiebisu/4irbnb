@@ -40,7 +40,7 @@ export const CommunityTemplate: React.FC<CommunityTemplateProps> = ({
   return (
     <div className="sm:flex items-center">
       <div className={`relative z-70 ${[banner['w__homes--left']].join(' ')}`}>
-        <div className={`${[responsive['p-l--24_to_64--sm']].join(' ')} `}>
+        <div className="pl-5 sm:pl-8">
           <div
             style={{ maxWidth: 360 }}
             className="w-full flex flex-col justify-center"

@@ -24,7 +24,7 @@ export const BannerTemplate: React.FC<BannerTemplateProps> = ({
   return (
     <div className="banner">
       <div className="absolute top-0 bottom-0 right-0 left-0">
-        <div className={index['banner__background--picture']}>
+        <div className="h-full w-full bg-cover inline-block">
           <ResponsiveImage />
         </div>
       </div>
@@ -61,26 +61,13 @@ export const BannerTemplate: React.FC<BannerTemplateProps> = ({
               <div className="flex sm:block justify-center">
                 <h3 className="text-white text-3xl">Go Near</h3>
               </div>
-              <div
-                className={[
-                  index['w__explore--subtitle'],
-                  index['text__explore--subtitle'],
-                ].join(' ')}
-              >
-                <p
-                  className={`text-white font-light tracking-tight ${[
-                    index['size__explore--subtitle'],
-                  ].join(' ')}`}
-                >
+              <div className="text-center sm:text-left w-full sm:w-96">
+                <p className="text-white font-light tracking-tight text-xs sm:text-sm">
                   Settle in somewhere new. Discover nearby stays to live, work,
                   or just relax.
                 </p>
               </div>
-              <div
-                className={`mt-4 mx-0${[index['justify__explore--button']].join(
-                  ' '
-                )}`}
-              >
+              <div className="mt-4 mx-0 flex justify-center sm:justify-start">
                 <Button
                   variant="banner"
                   title="Explore nearby"

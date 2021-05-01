@@ -16,7 +16,7 @@ export const GetStartedSegment = () => {
         <div className="sm:flex">
           <div
             style={{ paddingRight: 60, marginTop: 60 }}
-            className={[responsive['w100p_to_55p--sm']].join(' ')}
+            className="w-full sm:w-55/100 pr-24 mt-24"
           >
             <div
               className="w-full"
