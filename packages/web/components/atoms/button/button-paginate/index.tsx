@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import {
   PaginateButtonTemplate,
   PaginateButtonTemplateProps,
@@ -12,6 +11,8 @@ const PaginateButton: React.FC<PaginateButtonProps> = ({ ...props }) => {
 
 export const paginate = (props) => {
   return {
-    paginate: <PaginateButton {...props} />,
+    paginate: {
+      component: <PaginateButton {...props} />,
+    },
   };
 };

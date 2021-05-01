@@ -1,14 +1,14 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { PrimaryButton, PrimaryButtonProps } from '.';
+import { PrimaryButtonTemplate, PrimaryButtonTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Button',
-  component: PrimaryButton,
+  component: PrimaryButtonTemplate,
 } as Meta;
 
-const ButtonStory: Story<PrimaryButtonProps> = (args) => (
-  <PrimaryButton {...args} />
+const ButtonStory: Story<PrimaryButtonTemplateProps> = (args) => (
+  <PrimaryButtonTemplate {...args} />
 );
 
 export const Primary = ButtonStory.bind({});
