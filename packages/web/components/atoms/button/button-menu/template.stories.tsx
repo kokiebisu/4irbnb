@@ -1,12 +1,14 @@
 import { Story, Meta } from '@storybook/react';
-import { MenuButton, MenuButtonProps } from '.';
+import { MenuButtonTemplate, MenuButtonTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Button',
-  component: MenuButton,
+  component: MenuButtonTemplate,
 } as Meta;
 
-const ButtonStory: Story<MenuButtonProps> = (args) => <MenuButton {...args} />;
+const ButtonStory: Story<MenuButtonTemplateProps> = (args) => (
+  <MenuButtonTemplate {...args} />
+);
 
 export const Menu = ButtonStory.bind({});
 Menu.args = {
