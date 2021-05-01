@@ -1,16 +1,9 @@
 import { Story, Meta } from '@storybook/react';
-import { HostBullet, HostBulletProps } from '.';
+import { HostBullet, HostBulletProps } from './template';
 
 export default {
   component: HostBullet,
   title: 'Atoms/Bullet',
-  argTypes: {
-    variant: {
-      control: {
-        disable: true,
-      },
-    },
-  },
 } as Meta;
 
 const HostBulletStory: Story<HostBulletProps> = (args) => (
@@ -18,6 +11,6 @@ const HostBulletStory: Story<HostBulletProps> = (args) => (
 );
 export const Host = HostBulletStory.bind({});
 Host.args = {
-  categoryType: 'review',
+  hostType: 'review',
   total: 100,
 };
