@@ -1,6 +1,6 @@
 import { BaseIconProps } from '@icons';
 
-type AmenityIconTypes =
+export type AmenityIconTypes =
   | 'smokeAlarm'
   | 'tv'
   | 'kitchen'

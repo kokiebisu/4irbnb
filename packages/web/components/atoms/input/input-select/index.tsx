@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import input from '@input/input.module.scss';
 import { styleContainer } from '../styling.select';
 import { Icon } from '@icons';
 import { inputTypes } from '../logic/logic.types';

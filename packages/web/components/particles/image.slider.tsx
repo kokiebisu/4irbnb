@@ -1,6 +1,5 @@
 import { useLayoutEffect, useState, useRef } from 'react';
 import { Button } from '@button';
-import particle from '@particle/particle.module.scss';
 
 const Dots = ({ slides, activeSlide }) => {
   return (

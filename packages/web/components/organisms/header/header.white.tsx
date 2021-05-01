@@ -1,5 +1,4 @@
 import Router from 'next/router';
-import styles from '@styles/index.module.scss';
 import { Modal, $Modal } from '@modal';
 import { Button } from '@button';
 import { useToggleDispatch, useToggleState } from '@context/toggle';

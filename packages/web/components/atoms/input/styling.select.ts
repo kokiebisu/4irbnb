@@ -1,5 +1,3 @@
-import input from '@input/input.module.scss';
-
 /**
  * Birthdate Input
  */

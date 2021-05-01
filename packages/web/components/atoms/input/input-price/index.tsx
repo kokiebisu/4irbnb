@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react';
-import input from '@input/input.module.scss';
 
 export interface PriceInputProps {
   name?: string;
