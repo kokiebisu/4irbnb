@@ -1,15 +1,15 @@
+import { VerifyButtonTemplate } from './template';
+
 export interface VerifyButtonProps {}
 
-export const VerifyButton: React.FC<VerifyButtonProps> = () => {
-  return (
-    <div>
-      <h3 className="text-green-700 font-light">Verify</h3>
-    </div>
-  );
+const VerifyButton: React.FC<VerifyButtonProps> = (props) => {
+  return <VerifyButtonTemplate {...props} />;
 };
 
 export const verify = (props) => {
   return {
-    verify: <VerifyButton {...props} />,
+    verify: {
+      component: <VerifyButton {...props} />,
+    },
   };
 };
