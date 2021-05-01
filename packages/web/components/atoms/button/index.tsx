@@ -5,7 +5,7 @@ import { BarButtonProps } from './button-bar';
 import { BorderButtonProps } from './button-border';
 import { CalendarButtonProps } from './button-calendar';
 import { ClosedButtonProps } from './button-closed';
-import { CurrencyButtonProps } from './button-currency/template';
+import { CurrencyButtonProps } from './button-currency';
 import { DestinationButtonProps } from './button-destination';
 import { ExpandButtonProps } from './button-expand';
 import { FilterButtonProps } from './button-filter';
