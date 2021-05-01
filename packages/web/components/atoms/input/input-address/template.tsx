@@ -1,4 +1,4 @@
-import { useAddressInputStyle } from './logic';
+import { useAddressInputAppearance } from './appearance';
 
 export interface AddressInputTemplateProps {
   onChange?: (e: any) => void;
@@ -20,7 +20,7 @@ export const AddressInputTemplate: React.FC<AddressInputTemplateProps> = ({
   value,
   direction,
 }) => {
-  const { dynamicStyle } = useAddressInputStyle({ direction });
+  const { dynamicStyle } = useAddressInputAppearance({ direction });
   return (
     <div className={`h-12 relative py-2 px-5 items-center ${dynamicStyle}`}>
       <div className="relative h-full w-full flex items-center">

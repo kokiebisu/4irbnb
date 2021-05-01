@@ -1,13 +1,16 @@
 import { Story, Meta } from '@storybook/react';
-import { BirthdateInput, BirthdateInputProps } from '.';
+import {
+  BirthdateInputTemplate,
+  BirthdateInputTemplateProps,
+} from './template';
 
 export default {
   title: 'Atoms/Input',
-  component: BirthdateInput,
+  component: BirthdateInputTemplate,
 } as Meta;
 
-const InputStory: Story<BirthdateInputProps> = (args) => (
-  <BirthdateInput {...args} />
+const InputStory: Story<BirthdateInputTemplateProps> = (args) => (
+  <BirthdateInputTemplate {...args} />
 );
 
 export const Birthdate = InputStory.bind({});

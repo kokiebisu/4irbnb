@@ -79,5 +79,7 @@ export const Input: React.FC<InputProps> = ({ variant, ...props }) => {
     };
   } = factory(props);
 
-  return <div data-testid={`${variant}-input`}>{variants[variant]}</div>;
+  return (
+    <div data-testid={`${variant}-input`}>{variants[variant].component}</div>
+  );
 };

@@ -1,4 +1,4 @@
-export const useAddressInputStyle = ({ direction }) => {
+export const useAddressInputAppearance = ({ direction }) => {
   const renderShape = (direction: string) => {
     switch (direction) {
       case 'top':

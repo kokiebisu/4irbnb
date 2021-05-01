@@ -1,12 +1,14 @@
 import { Story, Meta } from '@storybook/react';
-import { ClosedInput, ClosedInputProps } from '.';
+import { ClosedInputTemplate, ClosedInputTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Input',
-  component: ClosedInput,
+  component: ClosedInputTemplate,
 } as Meta;
 
-const InputStory: Story<ClosedInputProps> = (args) => <ClosedInput {...args} />;
+const InputStory: Story<ClosedInputTemplateProps> = (args) => (
+  <ClosedInputTemplate {...args} />
+);
 
 export const Closed = InputStory.bind({});
 Closed.args = {

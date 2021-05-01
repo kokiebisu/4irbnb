@@ -1,12 +1,14 @@
 import { Story, Meta } from '@storybook/react';
-import { EmailInput, EmailInputProps } from '.';
+import { EmailInputTemplate, EmailInputTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Input',
-  component: EmailInput,
+  component: EmailInputTemplate,
 } as Meta;
 
-const InputStory: Story<EmailInputProps> = (args) => <EmailInput {...args} />;
+const InputStory: Story<EmailInputTemplateProps> = (args) => (
+  <EmailInputTemplate {...args} />
+);
 
 export const Email = InputStory.bind({});
 Email.args = {

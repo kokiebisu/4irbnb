@@ -1,13 +1,13 @@
 import { Story, Meta } from '@storybook/react';
-import { CounterInput, CounterInputProps } from '.';
+import { CounterInputTemplate, CounterInputTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Input',
-  component: CounterInput,
+  component: CounterInputTemplate,
 } as Meta;
 
-const InputStory: Story<CounterInputProps> = (args) => (
-  <CounterInput {...args} />
+const InputStory: Story<CounterInputTemplateProps> = (args) => (
+  <CounterInputTemplate {...args} />
 );
 
 export const Counter = InputStory.bind({});
