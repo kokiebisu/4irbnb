@@ -21,6 +21,28 @@ import { TextInputProps } from './input-text';
 import { TextAreaInputProps } from './input-textarea';
 import { factory } from './utils/factory';
 
+export type InputVariants =
+  | 'email'
+  | 'password'
+  | 'name'
+  | 'birthdate'
+  | 'phone'
+  | 'region'
+  | 'place'
+  | 'guests'
+  | 'address'
+  | 'select'
+  | 'radio'
+  | 'counter'
+  | 'text'
+  | 'checkbox'
+  | 'textarea'
+  | 'limit'
+  | 'verify'
+  | 'closed'
+  | 'price'
+  | 'photo'
+  | 'another';
 export interface InputProps
   extends AddressInputProps,
     AnotherInputProps,
@@ -43,28 +65,7 @@ export interface InputProps
     TextInputProps,
     TextAreaInputProps,
     VerifyButtonProps {
-  variant:
-    | 'email'
-    | 'password'
-    | 'name'
-    | 'birthdate'
-    | 'phone'
-    | 'region'
-    | 'place'
-    | 'guests'
-    | 'address'
-    | 'select'
-    | 'radio'
-    | 'counter'
-    | 'text'
-    | 'checkbox'
-    | 'textarea'
-    | 'limit'
-    | 'verify'
-    | 'closed'
-    | 'price'
-    | 'photo'
-    | 'another';
+  variant: InputVariants;
 }
 
 /**
@@ -72,7 +73,11 @@ export interface InputProps
  * @param {string} variant - Specifies the variant of input component
  */
 export const Input: React.FC<InputProps> = ({ variant, ...props }) => {
-  const variants = factory(props);
+  const variants: {
+    [variant: string]: {
+      component: JSX.Element;
+    };
+  } = factory(props);
 
   return <div data-testid={`${variant}-input`}>{variants[variant]}</div>;
 };

@@ -1,13 +1,13 @@
 import { Story, Meta } from '@storybook/react';
-import { AddressInput, AddressInputProps } from '.';
+import { AddressInputTemplate, AddressInputTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Input',
-  component: AddressInput,
+  component: AddressInputTemplate,
 } as Meta;
 
-const InputStory: Story<AddressInputProps> = (args) => (
-  <AddressInput {...args} />
+const InputStory: Story<AddressInputTemplateProps> = (args) => (
+  <AddressInputTemplate {...args} />
 );
 
 export const Address = InputStory.bind({});

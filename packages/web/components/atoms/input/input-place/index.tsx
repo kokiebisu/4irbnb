@@ -50,7 +50,7 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
     >
       <div
         className={`relative h-full w-full ${renderShape()} ${
-          expanded && [input['container__active']].join(' ')
+          expanded && 'border-2 border-black'
         }`}
       >
         <div
