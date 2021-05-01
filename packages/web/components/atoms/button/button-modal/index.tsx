@@ -8,6 +8,8 @@ const ModalButton: React.FC<ModalButtonProps> = (props) => {
 
 export const modal = (props) => {
   return {
-    modal: <ModalButton {...props} />,
+    modal: {
+      component: <ModalButton {...props} />,
+    },
   };
 };
