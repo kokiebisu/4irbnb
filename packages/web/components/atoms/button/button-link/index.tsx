@@ -1,21 +1,15 @@
-export interface LinkButtonProps {
-  title?: string;
-}
+import { LinkButtonTemplate } from './template';
 
-/**
- * Renders the Link Button component
- * @param title
- */
-export const LinkButton: React.FC<LinkButtonProps> = ({ title }) => {
-  return (
-    <div>
-      <h4 className="text-sm">{title}</h4>
-    </div>
-  );
+export interface LinkButtonProps {}
+
+const LinkButton: React.FC<LinkButtonProps> = (props) => {
+  return <LinkButtonTemplate {...props} />;
 };
 
 export const link = (props) => {
   return {
-    link: <LinkButton {...props} />,
+    link: {
+      component: <LinkButton {...props} />,
+    },
   };
 };

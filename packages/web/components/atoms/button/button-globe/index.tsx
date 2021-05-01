@@ -8,6 +8,8 @@ const GlobeButton: React.FC<GlobeButtonProps> = (props) => {
 
 export const globe = (props) => {
   return {
-    globe: <GlobeButton {...props} />,
+    globe: {
+      component: <GlobeButton {...props} />,
+    },
   };
 };
