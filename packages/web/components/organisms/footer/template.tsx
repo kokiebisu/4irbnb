@@ -1,4 +1,3 @@
-import styles from '@styles/index.module.scss';
 import { Button } from '@button';
 import { Icon } from '@icons';
 

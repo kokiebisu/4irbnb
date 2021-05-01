@@ -1,20 +1,15 @@
 import { useFormik } from 'formik';
 import { useAuthDispatch, useAuthState } from '@context/auth';
-import modalStyles from '@modal/modal.module.scss';
-import { Input, $Input } from '@input';
+import { Input } from '@input';
 import { Button } from '@button';
-// import { getAuthContents } from '@button/content/content.auth';
-
 import { validateAuth as validate } from '@helper/auth';
 
 /**
  * Renders the auth template component
  */
 export const AuthPrototype: React.FC<{}> = () => {
-  // const auths = getAuthContents();
   const authState = useAuthState();
   const authDispatch = useAuthDispatch();
-  const methods = ['email', 'facebook', 'google', 'apple'];
 
   const formik = useFormik({
     initialValues: {
@@ -41,18 +36,18 @@ export const AuthPrototype: React.FC<{}> = () => {
           <div className="mb-2">
             <div>
               <Input
-                variant={$Input.REGION}
+                variant="region"
                 direction="bottom"
-                handleChange={formik.handleChange}
+                onChange={formik.handleChange}
                 value={formik.values.region}
-                errors={formik.errors.region}
+                errors={!!formik.errors.region}
               />
               <Input
-                variant={$Input.PHONE}
+                variant="phone"
                 direction="top"
-                handleChange={formik.handleChange}
+                onChange={formik.handleChange}
                 value={formik.values.phone}
-                errors={formik.errors.phone}
+                errors={!!formik.errors.phone}
               />
             </div>
           </div>
@@ -66,11 +61,7 @@ export const AuthPrototype: React.FC<{}> = () => {
             <Button variant="primary" title="Continue" stretch />
           </div>
         </form>
-        <div
-          className={`z-10 text-center relative ${[modalStyles['ba']].join(
-            ' '
-          )}`}
-        >
+        <div className="z-10 text-center relative ba">
           <span className="z-30 relative px-1 bg-white font-thin text-gray-500 text-sm">
             or
           </span>

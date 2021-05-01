@@ -1,5 +1,4 @@
 import { useRef, useState } from 'react';
-import input from '@input/input.module.scss';
 import { Icon } from '@icons';
 import useOnClickOutside from '@hooks/useOnClickOutside';
 
@@ -46,7 +45,7 @@ export const PlaceInput: React.FC<PlaceInputProps> = ({
     <div
       ref={containerRef}
       style={{ height: 50 }}
-      className={`flex relative items-center ${[input['outside']].join(' ')}`}
+      className={`flex relative items-center`}
     >
       <div
         className={`relative h-full w-full ${renderShape()} ${

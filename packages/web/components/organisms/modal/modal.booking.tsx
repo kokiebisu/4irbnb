@@ -1,4 +1,3 @@
-import modal from '@modal/modal.module.scss';
 import { Button } from '@button';
 
 /**

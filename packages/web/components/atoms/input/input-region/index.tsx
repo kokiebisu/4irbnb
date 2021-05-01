@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import input from '@input/input.module.scss';
 import { styleInput, styleLabel, styleContainer } from '../styling.select';
 import { renderShape } from '../logic/logic.region';
 
@@ -34,7 +33,7 @@ export const RegionInput: React.FC<RegionInputProps> = ({
         errors,
         fieldActive,
         value
-      )} flex relative items-center ${[input['outside']].join(' ')} `}
+      )} flex relative items-center`}
     >
       <div className={`h-full w-full relative ${renderShape(direction)}`}>
         <select
@@ -43,9 +42,10 @@ export const RegionInput: React.FC<RegionInputProps> = ({
           value={value}
           onFocus={() => setFieldActive(true)}
           onBlur={() => setFieldActive(false)}
-          className={`h-full rounded-lg px-3 w-full black border-none text-md font-light ${[
-            input['input'],
-          ].join(' ')} ${styleInput(errors, fieldActive)}`}
+          className={`h-full rounded-lg px-3 w-full black border-none text-md font-light ${styleInput(
+            errors,
+            fieldActive
+          )}`}
         >
           <option value="canada">Canada (+1)</option>
           <option value="japan">Afghanistan (+1)</option>

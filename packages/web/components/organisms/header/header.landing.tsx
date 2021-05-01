@@ -1,9 +1,6 @@
 import { useRef, useState } from 'react';
 import Router from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
-import styles from '@styles/index.module.scss';
-import header from '@header/header.module.scss';
-
 import { Modal, $Modal } from '@modal';
 import { Button } from '@button';
 import { Prototype } from '@prototype/searchbar';

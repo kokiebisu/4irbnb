@@ -1,7 +1,7 @@
 import { ClosedButtonTemplate, ClosedButtonTemplateProps } from './template';
 
 export interface ClosedButtonProps extends ClosedButtonTemplateProps {
-  closedType: 'close' | 'check';
+  closedType?: 'close' | 'check';
 }
 
 const ClosedButton: React.FC<ClosedButtonProps> = ({
