@@ -1,13 +1,16 @@
 import { Story, Meta } from '@storybook/react';
-import { LocationButton, LocationButtonProps } from '.';
+import {
+  LocationButtonTemplate,
+  LocationButtonTemplateProps,
+} from './template';
 
 export default {
-  component: LocationButton,
+  component: LocationButtonTemplate,
   title: 'Atoms/Button',
 } as Meta;
 
-const ButtonStory: Story<LocationButtonProps> = (args) => (
-  <LocationButton {...args} />
+const ButtonStory: Story<LocationButtonTemplateProps> = (args) => (
+  <LocationButtonTemplate {...args} />
 );
 
 export const Location = ButtonStory.bind({});
