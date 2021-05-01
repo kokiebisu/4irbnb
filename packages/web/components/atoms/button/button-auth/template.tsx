@@ -1,15 +1,8 @@
-import { Icon, IconVariants } from '@icons';
-import { GeneralIconTypes } from 'components/icons/general';
-import { LogoIconTypes } from 'components/icons/logo';
+import { Icon } from '@icons';
+import { useAuthButtonContent } from './content';
 
 export interface AuthButtonTemplateProps {
-  icon?: {
-    variant: IconVariants;
-    generalType?: GeneralIconTypes;
-    logoType?: LogoIconTypes;
-    width: number;
-  };
-  name?: string;
+  authType?: 'email' | 'facebook' | 'google' | 'apple';
 }
 
 /**
@@ -17,9 +10,9 @@ export interface AuthButtonTemplateProps {
  * @param {string} auth - Platform for the authentication
  */
 export const AuthButtonTemplate: React.FC<AuthButtonTemplateProps> = ({
-  icon,
-  name,
+  authType,
 }) => {
+  const { icon, name } = useAuthButtonContent({ authType });
   return (
     <div className="border-gray-300 border-solid border-2 hover:border-black bg-transparent block w-full px-4 py-3 rounded-lg">
       <div className="relative w-full flex justify-center">

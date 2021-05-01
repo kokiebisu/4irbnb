@@ -8,6 +8,8 @@ const SearchButton: React.FC<SearchButtonProps> = ({ ...props }) => {
 
 export const search = (props) => {
   return {
-    search: <SearchButton {...props} />,
+    search: {
+      component: <SearchButton {...props} />,
+    },
   };
 };

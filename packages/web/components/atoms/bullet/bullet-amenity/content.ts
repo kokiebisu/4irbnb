@@ -1,4 +1,4 @@
-export const useAmenityBullet = () => {
+export const useAmenityBulletContent = ({ amenityType }) => {
   const amenityTypes = {
     smoke: {
       icon: {
@@ -44,5 +44,5 @@ export const useAmenityBullet = () => {
     },
   };
 
-  return;
+  return { ...amenityTypes[amenityType] };
 };

@@ -1,17 +1,17 @@
 import { Story, Meta } from '@storybook/react';
-import { KnowBullet, KnowBulletProps } from './template';
+import { KnowBulletTemplate, KnowBulletTemplateProps } from './template';
 
 export default {
-  component: KnowBullet,
+  component: KnowBulletTemplate,
   title: 'Atoms/Bullet',
 } as Meta;
 
-const KnowBulletStory: Story<KnowBulletProps> = (args) => (
-  <KnowBullet {...args} />
+const KnowBulletTemplateStory: Story<KnowBulletTemplateProps> = (args) => (
+  <KnowBulletTemplate {...args} />
 );
-export const Know = KnowBulletStory.bind({});
+export const Know = KnowBulletTemplateStory.bind({});
 Know.args = {
-  categoryType: 'checkin',
+  knowType: 'checkin',
   checkin: { min: '10:00am', max: '12:00pm' },
   checkout: '4:00pm',
 };

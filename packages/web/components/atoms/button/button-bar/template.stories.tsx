@@ -13,5 +13,5 @@ const ButtonStory: Story<BarButtonTemplateProps> = (args) => (
 export const Bar = ButtonStory.bind({});
 Bar.args = {
   barType: 'menu',
-  selected: 'menu',
+  selected: false,
 };

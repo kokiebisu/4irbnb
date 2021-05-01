@@ -102,14 +102,13 @@ export interface ButtonProps
  */
 export const Button: React.FC<ButtonProps> = ({
   variant,
-  children,
   onClick,
   stretch,
   ...props
 }) => {
   const { disable } = props;
   const variants: {
-    [property: string]: {
+    [variant: string]: {
       component: JSX.Element;
     };
   } = factory(props);
@@ -119,7 +118,7 @@ export const Button: React.FC<ButtonProps> = ({
       data-testid={`${variant}-button--atoms`}
       onClick={!disable ? onClick : undefined}
     >
-      {variants[variant]}
+      {variants[variant].component}
     </button>
   );
 };

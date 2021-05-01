@@ -1,25 +1,9 @@
 import { ClosedButtonTemplate, ClosedButtonTemplateProps } from './template';
 
-export interface ClosedButtonProps extends ClosedButtonTemplateProps {
-  closedType?: 'close' | 'check';
-}
+export interface ClosedButtonProps extends ClosedButtonTemplateProps {}
 
-const ClosedButton: React.FC<ClosedButtonProps> = ({
-  closedType,
-  ...props
-}) => {
-  const types = {
-    close: {
-      variant: 'action',
-      actionType: 'close',
-    },
-    check: {
-      variant: 'semantic',
-      semantictype: 'check',
-    },
-  };
-  const icon = types[closedType];
-  return <ClosedButtonTemplate {...props} {...icon} />;
+const ClosedButton: React.FC<ClosedButtonProps> = ({ ...props }) => {
+  return <ClosedButtonTemplate {...props} />;
 };
 
 export const closed = (props) => {

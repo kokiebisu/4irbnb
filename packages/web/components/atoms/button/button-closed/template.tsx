@@ -1,20 +1,17 @@
 import { Icon } from '@icons';
-import { ActionIconTypes } from 'components/icons/action';
-import { SemanticIconTypes } from 'components/icons/semantic';
+import { useClosedButtonContent } from './content';
 
 export interface ClosedButtonTemplateProps {
   selected?: boolean;
-  icon?: {
-    variant: 'action' | 'semantic';
-    actionType?: ActionIconTypes;
-    semanticType?: SemanticIconTypes;
-  };
+  closedType?: 'close' | 'check';
 }
 
 export const ClosedButtonTemplate: React.FC<ClosedButtonTemplateProps> = ({
-  icon,
+  closedType,
   selected,
 }) => {
+  const { icon } = useClosedButtonContent({ closedType });
+
   return (
     <div
       className={`inline-flex items-center justify-center p-2 rounded-full border ${

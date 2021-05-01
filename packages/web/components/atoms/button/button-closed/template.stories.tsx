@@ -12,9 +12,6 @@ const ButtonStory: Story<ClosedButtonTemplateProps> = (args) => (
 
 export const Closed = ButtonStory.bind({});
 Closed.args = {
-  icon: {
-    variant: 'action' as const,
-    actionType: 'close' as const,
-  },
+  closedType: 'check',
   selected: false,
 };

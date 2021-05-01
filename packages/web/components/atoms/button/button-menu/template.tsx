@@ -2,9 +2,7 @@ import { Icon } from '@icons';
 
 export interface MenuButtonTemplateProps {
   authenticated?: boolean;
-  data?: {
-    imgUrl: string;
-  };
+  imgUrl?: string;
   inverse?: boolean;
 }
 
@@ -14,7 +12,7 @@ export interface MenuButtonTemplateProps {
  */
 export const MenuButtonTemplate: React.FC<MenuButtonTemplateProps> = ({
   authenticated,
-  data,
+  imgUrl,
   inverse,
 }) => {
   return (
@@ -27,8 +25,8 @@ export const MenuButtonTemplate: React.FC<MenuButtonTemplateProps> = ({
         <Icon variant="general" generalType="bars" fill="black" width={12} />
       </div>
       <div>
-        {authenticated && data ? (
-          <img className="block rounded-full w-8 h-8" src={data.imgUrl} />
+        {authenticated && imgUrl ? (
+          <img className="block rounded-full w-8 h-8" src={imgUrl} />
         ) : (
           <Icon variant="profile" profileType="avatar" width={30} fill="gray" />
         )}
