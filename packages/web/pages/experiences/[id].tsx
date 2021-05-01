@@ -6,7 +6,6 @@ import { Segment, $Segment } from 'components/segments/experiences/id';
 import { Modal, $Modal } from '@modal';
 import { Footer } from '@footer';
 import { useToggleState } from '@context/toggle';
-import details from '@styles/details.module.scss';
 import staysDetail from '@styles/staysDetail.module.scss';
 
 /** sample data */
@@ -60,16 +59,15 @@ const id: () => string | JSX.Element = () => {
           {experiences[experienceID] && (
             <Segment
               layoutType={$Segment.EXPERIENCES}
-              extendsTo={[staysDetail['flex__panel']].join(' ')}
               variant="panel"
               {...experiences[experienceID]}
             />
           )}
         </div>
-        <div className={`container ${[staysDetail['m__content']].join(' ')}`}>
-          <div className={[details['flex__details']].join(' ')}>
-            <div className={[details['w__details--left']].join(' ')}>
-              <div className={[staysDetail['b__characteristics']].join(' ')}>
+        <div className={`container md:mx-auto md:my-0`}>
+          <div className="sm:flex justify-between">
+            <div className="sm:w-6/10">
+              <div className="border-t border-gray-100 sm:border-none">
                 {experiences[experienceID] && (
                   <Segment
                     layoutType={$Segment.EXPERIENCES}
@@ -153,11 +151,7 @@ const id: () => string | JSX.Element = () => {
           ) : null}
         </div>
         <Footer />
-        <div
-          className={`fixed bottom-0 z-100 w-full ${[
-            staysDetail['display__availability'],
-          ].join(' ')}`}
-        >
+        <div className="fixed bottom-0 z-100 w-full sm:hidden">
           {/* <Modal variant="availability" /> */}
         </div>
       </div>

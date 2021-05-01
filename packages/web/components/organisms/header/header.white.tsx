@@ -19,19 +19,14 @@ export const WhiteHeader: React.FC<{
   return (
     <header className="py-3 bg-white">
       <div className="md:flex relative justify-between items-center">
-        <div className={[styles['searchbar__logo--md']].join(' ')}>
-          <Button
-            block
-            variant="logo"
-            noName
-            onClick={() => Router.push('/')}
-          />
+        <div className="hidden sm:block md:hidden">
+          <Button variant="logo" noName onClick={() => Router.push('/')} />
         </div>
-        <div className={[styles['searchbar__logo--lg']].join(' ')}>
-          <Button block variant="logo" onClick={() => Router.push('/')} />
+        <div className="hidden md:block">
+          <Button variant="logo" onClick={() => Router.push('/')} />
         </div>
         <div className="flex items-center">
-          <div className={`mx-1 ${[styles['searchbar__host']].join(' ')}`}>
+          <div className="mx-1">
             <Button
               variant="transparent"
               onClick={() => Router.push('/host/homes')}

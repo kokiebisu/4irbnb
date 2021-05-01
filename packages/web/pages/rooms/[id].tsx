@@ -38,16 +38,16 @@ const id: () => string | JSX.Element = () => {
         </AnimatePresence>
         {/* <div className={[].join(" ")}>
           <Segment
-            extendsTo={[staysDetail["flex__panel"]].join(" ")}
+            
             variant="panel"
           />
         </div> */}
-        <div className={`container ${[staysDetail['m__content']].join(' ')}`}>
+        <div className={`container md:mx-auto md:my-0`}>
           <div className={[details['flex__details']].join(' ')}>
-            <div className={[details['w__details--left']].join(' ')}>
+            <div className="sm:w-6/10">
               {/* <Section
                 layoutType='room'
-                extendsTo={[staysDetail['b__characteristics']].join(' ')}
+                extendsTo='border-t border-gray-100 sm:border-none'
                 type='characteristics'
                 characteristics={[
                   'house',
@@ -66,7 +66,7 @@ const id: () => string | JSX.Element = () => {
             </div>
             <div
               style={{ paddingTop: 20, paddingBottom: 56 }}
-              className={[details['w__details--right']].join(' ')}
+              className="hidden sm:w-4/10"
             >
               <div className="flex justify-end sticky top-32">
                 <Card variant={$Card.CHECKIN} />
@@ -81,11 +81,7 @@ const id: () => string | JSX.Element = () => {
           <Segment variant={$Segment.OTHER} />
         </div>
         <Footer />
-        <div
-          className={`fixed bottom-0 z-100 w-full ${[
-            staysDetail['display__availability'],
-          ].join(' ')}`}
-        >
+        <div className="fixed bottom-0 z-100 w-full sm:hidden">
           <Modal variant="availability" />
         </div>
       </div>
