@@ -1,22 +1,10 @@
-import { useCharacteristicsBullet } from './logic';
-import { CharacteristicsBulletTemplate } from './template';
+import {
+  CharacteristicsBulletTemplate,
+  CharacteristicsBulletTemplateProps,
+} from './template';
 
-export interface CharacteristicsBulletProps {
-  characteristicType?:
-    | 'house'
-    | 'sparkle'
-    | 'door'
-    | 'calendar'
-    | 'guidelines'
-    | 'time'
-    | 'devices'
-    | 'people'
-    | 'language';
-  time?: string;
-  devices?: string[];
-  people?: number;
-  languages?: string[];
-}
+export interface CharacteristicsBulletProps
+  extends CharacteristicsBulletTemplateProps {}
 
 const CharacteristicsBullet: React.FC<CharacteristicsBulletProps> = (props) => {
   const data = useCharacteristicsBullet(props);

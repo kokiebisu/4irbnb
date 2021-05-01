@@ -8,6 +8,8 @@ const ExpandButton: React.FC<ExpandButtonProps> = (props) => {
 
 export const expand = (props) => {
   return {
-    expand: <ExpandButton {...props} />,
+    expand: {
+      component: <ExpandButton {...props} />,
+    },
   };
 };

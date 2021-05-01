@@ -1,9 +1,21 @@
 import { Icon } from '@icons';
+import { useCharacteristicsBulletContent } from './content';
 
 export interface CharacteristicsBulletTemplateProps {
-  icon?: any;
-  title?: string;
-  description?: string;
+  characteristicType?:
+    | 'house'
+    | 'sparkle'
+    | 'door'
+    | 'calendar'
+    | 'guidelines'
+    | 'time'
+    | 'devices'
+    | 'people'
+    | 'language';
+  duration?: string;
+  devices?: string[];
+  people?: number;
+  languages?: string[];
 }
 
 /**
@@ -16,10 +28,21 @@ export interface CharacteristicsBulletTemplateProps {
  * @param {string[]} languages - Languages the host can speak
  */
 export const CharacteristicsBulletTemplate: React.FC<CharacteristicsBulletTemplateProps> = ({
-  icon,
-  title,
-  description,
+  duration,
+  characteristicType,
+  devices,
+  people,
+  languages,
+  group,
 }) => {
+  const { icon, title, description } = useCharacteristicsBulletContent({
+    characteristicType,
+    duration,
+    devices,
+    people,
+    languages,
+    group,
+  });
   return (
     <div className="flex my-4 items-center pr-4">
       <div className="mr-4">

@@ -1,23 +1,17 @@
 import { Icon } from '@icons';
-import { GeneralIconTypes } from 'components/icons/general';
-import { SemanticIconTypes } from 'components/icons/semantic';
+import { useBarButtonContent } from './content';
 
 export interface BarButtonTemplateProps {
-  icon: {
-    variant: 'general' | 'semantic';
-    generalType?: GeneralIconTypes;
-    semanticType?: SemanticIconTypes;
-    fill?: string;
-  };
-  name: string;
+  barType?: 'menu' | 'saved' | 'login';
   selected?: boolean;
 }
 
 export const BarButtonTemplate: React.FC<BarButtonTemplateProps> = ({
-  icon,
-  name,
+  barType,
   selected,
 }) => {
+  const { icon, name } = useBarButtonContent({ barType, selected });
+
   return (
     <div className="inline-flex flex-col items-center">
       <div>

@@ -1,12 +1,8 @@
 import { Icon } from '@icons';
-import { AmenityIconTypes } from 'components/icons/amenity';
+import { useAmenityBulletContent } from './content';
 
 export interface AmenityBulletTemplateProps {
-  icon?: {
-    variant: 'amenity';
-    amenityType: AmenityIconTypes;
-  };
-  description?: string;
+  amenityType?: 'smoke' | 'tv' | 'kitchen' | 'heating' | 'entrance' | 'carbon';
   removed?: boolean;
 }
 
@@ -16,10 +12,11 @@ export interface AmenityBulletTemplateProps {
  * @param {boolean} removed - Strikes through if removed
  */
 export const AmenityBulletTemplate: React.FC<AmenityBulletTemplateProps> = ({
-  icon,
-  description,
+  amenityType,
   removed,
 }) => {
+  const { icon, description } = useAmenityBulletContent({ amenityType });
+
   return (
     <div className="flex items-center p-3 w-1/2">
       <Icon {...icon} width={24} />
