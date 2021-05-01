@@ -1,24 +1,9 @@
-import { Icon } from '@icons';
+import { BringBulletTemplate } from './template';
 
-export interface BringBulletProps {
-  title?: 'Description here';
-}
+export interface BringBulletProps {}
 
-/**
- * Renders the bring bullet
- * @param {string} title - Description of the bullet
- */
-export const BringBullet: React.FC<BringBulletProps> = ({ title }) => {
-  return (
-    <div className="flex">
-      <div className="mr-4">
-        <Icon variant="semantic" semanticType="check" width={24} />
-      </div>
-      <div>
-        <p>{title}</p>
-      </div>
-    </div>
-  );
+const BringBullet: React.FC<BringBulletProps> = (props) => {
+  return <BringBulletTemplate {...props} />;
 };
 
 export const bring = (props) => {

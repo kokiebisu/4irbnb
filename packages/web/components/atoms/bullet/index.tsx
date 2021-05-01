@@ -13,6 +13,22 @@ import { ScenarioBulletProps } from './bullet-scenario';
 import { ScoreBulletProps } from './bullet-score';
 import { factory } from './utils/factory';
 
+export type BulletVariants =
+  | 'characteristic'
+  | 'amenity'
+  | 'score'
+  | 'host'
+  | 'know'
+  | 'rating'
+  | 'bring'
+  | 'experience'
+  | 'priority'
+  | 'help'
+  | 'required'
+  | 'onlinehost'
+  | 'question'
+  | 'check'
+  | 'scenario';
 export interface BulletProps
   extends AmenityBulletProps,
     CharacteristicsBulletProps,
@@ -27,22 +43,7 @@ export interface BulletProps
     ScoreBulletProps,
     HelpBulletProps,
     PriorityBulletProps {
-  variant:
-    | 'characteristic'
-    | 'amenity'
-    | 'score'
-    | 'host'
-    | 'know'
-    | 'rating'
-    | 'bring'
-    | 'experience'
-    | 'priority'
-    | 'help'
-    | 'required'
-    | 'onlinehost'
-    | 'question'
-    | 'check'
-    | 'scenario';
+  variant: BulletVariants;
 }
 
 /**
