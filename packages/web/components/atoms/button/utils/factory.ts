@@ -4,7 +4,7 @@ import { banner } from '@button/button-banner';
 import { bar } from '@button/button-bar';
 import { border } from '@button/button-border';
 import { calendar } from '@button/button-calendar';
-import { privacy } from '@button/button-privacy/template';
+import { privacy } from '@button/button-privacy';
 import { closed } from '@button/button-closed';
 import { currency } from '@button/button-currency';
 import { destination } from '@button/button-destination';
