@@ -1,6 +1,6 @@
-import { AuthButtonTemplate, AuthButtonTemplateProps } from './template';
+import { AuthButtonTemplate } from './template';
 
-export interface AuthButtonProps extends AuthButtonTemplateProps {
+export interface AuthButtonProps {
   authType?: 'email' | 'facebook' | 'google' | 'apple';
 }
 
