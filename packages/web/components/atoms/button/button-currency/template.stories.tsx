@@ -1,13 +1,16 @@
 import { Story, Meta } from '@storybook/react';
-import { CurrencyButton, CurrencyButtonProps } from '.';
+import {
+  CurrencyButtonTemplate,
+  CurrencyButtonTemplateProps,
+} from './template';
 
 export default {
   title: 'Atoms/Button',
-  component: CurrencyButton,
+  component: CurrencyButtonTemplate,
 } as Meta;
 
-const ButtonStory: Story<CurrencyButtonProps> = (args) => (
-  <CurrencyButton {...args} />
+const ButtonStory: Story<CurrencyButtonTemplateProps> = (args) => (
+  <CurrencyButtonTemplate {...args} />
 );
 
 export const Currency = ButtonStory.bind({});
