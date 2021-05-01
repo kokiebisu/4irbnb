@@ -47,6 +47,8 @@ export const CheckboxInput: React.FC<CheckboxInputProps> = ({
 
 export const checkbox = (props) => {
   return {
-    checkbox: <CheckboxInput {...props} />,
+    checkbox: {
+      component: <CheckboxInput {...props} />,
+    },
   };
 };
