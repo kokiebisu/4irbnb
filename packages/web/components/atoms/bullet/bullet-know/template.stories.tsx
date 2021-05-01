@@ -1,16 +1,9 @@
 import { Story, Meta } from '@storybook/react';
-import { KnowBullet, KnowBulletProps } from '.';
+import { KnowBullet, KnowBulletProps } from './template';
 
 export default {
   component: KnowBullet,
   title: 'Atoms/Bullet',
-  argTypes: {
-    variant: {
-      control: {
-        disable: true,
-      },
-    },
-  },
 } as Meta;
 
 const KnowBulletStory: Story<KnowBulletProps> = (args) => (

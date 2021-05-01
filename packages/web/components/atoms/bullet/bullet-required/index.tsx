@@ -1,26 +1,12 @@
-import { Icon } from '@icons';
+import {
+  RequiredBulletTemplate,
+  RequiredBulletTemplateProps,
+} from './template';
 
-export interface RequiredBulletProps {
-  message?: any;
-}
+export interface RequiredBulletProps extends RequiredBulletTemplateProps {}
 
-export const RequiredBullet: React.FC<RequiredBulletProps> = ({ message }) => {
-  return (
-    <div className="flex items-center">
-      <div className="mr-1">
-        <Icon
-          variant="semantic"
-          semanticType="exclamation"
-          width={16}
-          stroke="#C54A32"
-          strokeWidth={2}
-        />
-      </div>
-      <div>
-        <p className="text-xs text-red-500">{message}</p>
-      </div>
-    </div>
-  );
+const RequiredBullet: React.FC<RequiredBulletProps> = (props) => {
+  return <RequiredBulletTemplate {...props} />;
 };
 
 export const required = (props) => {

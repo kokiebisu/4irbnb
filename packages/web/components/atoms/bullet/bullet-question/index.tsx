@@ -1,20 +1,13 @@
-export interface QuestionBulletProps {
-  title?: string;
-  answer?: string;
-}
+import React from 'react';
+import {
+  QuestionBulletTemplate,
+  QuestionBulletTemplateProps,
+} from './template';
 
-export const QuestionBullet: React.FC<QuestionBulletProps> = ({
-  title,
-  answer,
-}) => {
-  return (
-    <div className="py-4 border-b border-gray-100">
-      <div>
-        <h4 className="text-lg text-green-700">{title}</h4>
-      </div>
-      {/* <div>{answer}</div> */}
-    </div>
-  );
+export interface QuestionBulletProps extends QuestionBulletTemplateProps {}
+
+const QuestionBullet: React.FC<QuestionBulletProps> = (props) => {
+  return <QuestionBulletTemplate {...props} />;
 };
 
 export const question = (props) => {

@@ -1,39 +1,9 @@
-import { Icon } from '@icons';
+import { HostBulletTemplateProps } from './template';
 
-export interface HostBulletProps {
-  total?: number;
-  categoryType?: 'review' | 'verified' | 'superhost';
-}
+export interface HostBulletProps extends HostBulletTemplateProps {}
 
-/**
- * Renders the host bullet
- * @param {string} categoryType - Type of host bullet
- * @param {number} total - Number of reviews
- */
-export const HostBullet: React.FC<HostBulletProps> = ({
-  categoryType,
-  total,
-}) => {
-  const categories = {
-    review: {
-      icon: <Icon variant="profile" profileType="star" width={16} />,
-      description: `${total} Reviews`,
-    },
-    verified: {
-      icon: <Icon variant="profile" profileType="verified" width={16} />,
-      description: 'Identity verified',
-    },
-    superhost: {
-      icon: <Icon variant="profile" profileType="superhost" width={16} />,
-      description: 'Superhost',
-    },
-  };
-  return (
-    <div className="flex items-center mr-5">
-      <div className="mr-2">{categories[categoryType].icon}</div>
-      <p className="font-thin">{categories[categoryType].description}</p>
-    </div>
-  );
+const HostBullet: React.FC<HostBulletProps> = (props) => {
+  return <HostBullet {...props} />;
 };
 
 export const host = (props) => {
