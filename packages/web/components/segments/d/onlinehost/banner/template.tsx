@@ -14,12 +14,7 @@ export const BannerTemplate: React.FC<BannerTemplateProps> = () => {
       <div className="mb-4">
         <h2 className="text-5xl">Host an online experience</h2>
       </div>
-      <div
-        className={`my-4 ${[
-          banner['w__onlinehost--subtitle'],
-          banner['text__onlinehost--subtitle'],
-        ].join(' ')}`}
-      >
+      <div style={{ width: 600 }} className="my-4 text-center">
         <h4 className="text-lg text-gray-600">
           Join a commmunity of hosts bringing the world together in a whole new
           way.
@@ -34,21 +29,14 @@ export const BannerTemplate: React.FC<BannerTemplateProps> = () => {
           alt="banner image"
         />
       </div>
-      <div
-        className={`my-6 ${[
-          banner['w__onlinehost--explanation'],
-          banner['text__onlinehost--explanation'],
-        ].join(' ')}`}
-      >
+      <div style={{ width: 550 }} className={`my-6 text-center`}>
         <h4 className="text-lg text-gray-600">
           Airbnb Experiences are engaging activities designed by locals that go
           beyond the typical tour or class. And now you can host them for
           anyone, from anywhere.
         </h4>
       </div>
-      <div
-        className={`my-4 ${[banner['display__onlinehost--points']].join(' ')}`}
-      >
+      <div className="my-4 block sm:grid sm:grid-cols-3 sm:col-gap-6">
         {['home', 'global', 'business'].map(
           (type: 'home' | 'global' | 'business', index) => {
             return (

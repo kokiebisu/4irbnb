@@ -1,5 +1,3 @@
-import section from '@template/index.module.scss';
-
 export interface OtherTemplateProps {
   location?: any;
   locations?: any;
@@ -52,11 +50,7 @@ export const OtherTemplate: React.FC<OtherTemplateProps> = ({
       </div>
 
       <div className="flex justify-between">
-        <ul
-          className={`p-0 list-none w-full mt-5 ${[
-            section['display__other'],
-          ].join(' ')}`}
-        >
+        <ul className="p-0 list-none w-full mt-5 grid grid-cols-2 md:grid-cols-4">
           {locations.map((location, index) => {
             return (
               <li key={index} className="font-thin text-gray-600">

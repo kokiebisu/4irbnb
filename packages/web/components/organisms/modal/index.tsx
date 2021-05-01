@@ -86,7 +86,7 @@ export const Modal: React.FC<ModalProps> = ({
   } = {
     privacy: {
       component: <PrivacyModal {...props} />,
-      extendsTo: `rounded-md p-5 ${[modal['modal__privacy']].join(' ')}`,
+      extendsTo: 'rounded-md p-5 lg:w-full max-w-[1600px]',
     },
     menu: {
       component: <MenuModal {...props} />,
@@ -94,7 +94,7 @@ export const Modal: React.FC<ModalProps> = ({
     },
     auth: {
       component: <AuthModal {...props} />,
-      extendsTo: `rounded-lg ${[modal['w__auth']].join(' ')}`,
+      extendsTo: `rounded-lg w-full sm:w-[550px]`,
     },
     booking: {
       component: <BookingModal {...props} />,

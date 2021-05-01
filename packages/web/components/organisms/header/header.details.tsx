@@ -32,11 +32,7 @@ export const DetailsHeader: React.FC<{
   return (
     <header style={{ height: 80 }} className="bg-white shadow-sm">
       <div className={`${spread ? 'container-spread' : 'container'} h-full`}>
-        <div
-          className={`h-full items-center justify-between relative flex ${[
-            header['display__transparent--md'],
-          ].join(' ')}`}
-        >
+        <div className="h-full items-center justify-between relative hidden md:flex">
           <div className="flex items-center">
             {items.map((item, index) => {
               return (

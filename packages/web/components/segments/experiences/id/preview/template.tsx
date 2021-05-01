@@ -19,7 +19,7 @@ export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({ images }) => {
           <u className="text-sm font-thin">All online experiences</u>
         </div>
 
-        <div className={`flex ${[section['hidden__options']].join(' ')}`}>
+        <div className="hidden md:inline-block">
           <div className="pr-2 flex items-center">
             <a href="#" className="flex pl-2 items-center">
               <div>
