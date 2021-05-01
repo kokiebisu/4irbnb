@@ -3,13 +3,13 @@ import { GeneralIconTypes } from 'components/icons/general';
 import { SemanticIconTypes } from 'components/icons/semantic';
 
 export interface BarButtonTemplateProps {
-  icon?: {
+  icon: {
     variant: 'general' | 'semantic';
     generalType?: GeneralIconTypes;
     semanticType?: SemanticIconTypes;
-    fill: string;
+    fill?: string;
   };
-  name?: string;
+  name: string;
   selected?: boolean;
 }
 

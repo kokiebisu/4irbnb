@@ -12,5 +12,10 @@ const ButtonStory: Story<AuthButtonTemplateProps> = (args) => (
 
 export const Auth = ButtonStory.bind({});
 Auth.args = {
-  authType: 'email',
+  name: 'Email',
+  icon: {
+    variant: 'general' as const,
+    generalType: 'email' as const,
+    width: 17,
+  },
 };

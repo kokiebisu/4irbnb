@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { AuthButtonProps } from './button-auth';
 import { BackButtonProps } from './button-back';
 import { BannerButtonProps } from './button-banner';
@@ -110,18 +109,17 @@ export const Button: React.FC<ButtonProps> = ({
 }) => {
   const { disable } = props;
   const variants: {
-    [key: string]: JSX.Element;
+    [property: string]: {
+      component: JSX.Element;
+    };
   } = factory(props);
 
   return (
-    <motion.button
-      whileTap={{ ...(disable && { scale: 0.95 }) }}
-      whileHover={{ ...(disable && { scale: 1.05 }) }}
-      data-testid={`${variant}-button`}
-      className="transition"
+    <button
+      data-testid={`${variant}-button--atoms`}
       onClick={!disable ? onClick : undefined}
     >
-      {variant ? variants[variant] : children}
-    </motion.button>
+      {variants[variant]}
+    </button>
   );
 };
