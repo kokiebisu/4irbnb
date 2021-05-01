@@ -1,6 +1,11 @@
-import { CurrencyButtonTemplate } from './template';
+import {
+  CurrencyButtonTemplate,
+  CurrencyButtonTemplateProps,
+} from './template';
 
-const CurrencyButton = ({ ...props }) => {
+export interface CurrencyButtonProps extends CurrencyButtonTemplateProps {}
+
+const CurrencyButton: React.FC<CurrencyButtonProps> = ({ ...props }) => {
   return <CurrencyButtonTemplate {...props} />;
 };
 
