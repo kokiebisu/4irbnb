@@ -1,14 +1,17 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { PaginateButton, PaginateButtonProps } from '.';
+import {
+  PaginateButtonTemplate,
+  PaginateButtonTemplateProps,
+} from './template';
 
 export default {
   title: 'Atoms/Button',
-  component: PaginateButton,
+  component: PaginateButtonTemplate,
 } as Meta;
 
-const ButtonStory: Story<PaginateButtonProps> = (args) => (
-  <PaginateButton {...args} />
+const ButtonStory: Story<PaginateButtonTemplateProps> = (args) => (
+  <PaginateButtonTemplate {...args} />
 );
 
 export const Paginate = ButtonStory.bind({});

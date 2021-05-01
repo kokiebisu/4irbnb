@@ -1,13 +1,13 @@
 import { Story, Meta } from '@storybook/react';
-import { BorderButton, BorderButtonProps } from '.';
+import { BorderButtonTemplate, BorderButtonTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Button',
-  component: BorderButton,
+  component: BorderButtonTemplate,
 } as Meta;
 
-const ButtonStory: Story<BorderButtonProps> = (args) => (
-  <BorderButton {...args} />
+const ButtonStory: Story<BorderButtonTemplateProps> = (args) => (
+  <BorderButtonTemplate {...args} />
 );
 
 export const Border = ButtonStory.bind({});
@@ -17,5 +17,4 @@ Border.args = {
   size: 'md',
   bold: false,
   stretch: false,
-  block: false,
 };

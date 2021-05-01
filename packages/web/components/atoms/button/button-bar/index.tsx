@@ -1,4 +1,3 @@
-import { Icon } from '@icons';
 import { BarButtonTemplate } from './template';
 
 export interface BarButtonProps {
@@ -6,19 +5,20 @@ export interface BarButtonProps {
   selected?: boolean;
 }
 
-const BarButton: React.FC<BarButtonProps> = ({ barType, selected }) => {
+const BarButton: React.FC<BarButtonProps> = ({ ...props }) => {
+  const { barType, selected } = props;
   const types = {
     menu: {
       icon: {
-        variant: 'general',
-        generalType: 'explore',
+        variant: 'general' as const,
+        generalType: 'explore' as const,
         stroke: selected ? 'red' : '#737373',
       },
       name: 'Explore',
     },
     saved: {
       icon: {
-        variant: 'semantic',
+        variant: 'semantic' as const,
         semanticType: 'saved' as const,
         fill: selected ? 'red' : '#737373',
       },
@@ -34,7 +34,7 @@ const BarButton: React.FC<BarButtonProps> = ({ barType, selected }) => {
     },
   };
   const data = types[barType];
-  return <BarButtonTemplate {...data} />;
+  return <BarButtonTemplate {...data} {...props}/>;
 };
 
 export const bar = (props) => {
