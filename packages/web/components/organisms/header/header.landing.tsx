@@ -146,8 +146,8 @@ export const LandingHeader: React.FC<{
                             <div
                               className={`pb-3 ${
                                 category === type
-                                  ? header['landing__bb--selected']
-                                  : header['landing__bb']
+                                  ? 'landing__bb--selected'
+                                  : 'landing__bb'
                               }`}
                             >
                               <p className="text-white text-xs md:text-md font-medium md:font-light">

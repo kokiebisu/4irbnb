@@ -69,10 +69,7 @@ export const ReviewsTemplate: React.FC<ReviewsTemplateProps> = ({
         >
           {reviews.map((review, index) => {
             return (
-              <div
-                className={[section['m__review--card']].join(' ')}
-                key={index}
-              >
+              <div className="mr-12 mb-6" key={index}>
                 <Card
                   variant={$Card.REVIEW}
                   imgUrl={review?.imgUrl}

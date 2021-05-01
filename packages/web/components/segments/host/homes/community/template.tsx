@@ -39,7 +39,7 @@ export const CommunityTemplate: React.FC<CommunityTemplateProps> = ({
 
   return (
     <div className="sm:flex items-center">
-      <div className={`relative z-70 ${[banner['w__homes--left']].join(' ')}`}>
+      <div className="relative z-70 w-full sm:w-1/2 md:w-4/10">
         <div className="pl-5 sm:pl-8">
           <div
             style={{ maxWidth: 360 }}
@@ -59,17 +59,12 @@ export const CommunityTemplate: React.FC<CommunityTemplateProps> = ({
                 size="md"
                 title="Get started"
                 onClick={() => Router.push('/become-a-host')}
-                animate
               />
             </div>
           </div>
         </div>
       </div>
-      <div
-        className={`pl-4 sm:pl-7 pt-6 z-50 ${[banner['w__homes--right']].join(
-          ' '
-        )}`}
-      >
+      <div className="pl-4 sm:pl-7 pt-6 z-50 w-full sm:w-1/2 md:w-6/10">
         <div className="relative w-full h-full overflow-hidden rounded-md z-10">
           <div
             className="flex rounded-md h-full"

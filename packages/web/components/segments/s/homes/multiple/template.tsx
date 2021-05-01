@@ -234,10 +234,10 @@ export const MultipleTemplate: React.FC<MultipleTemplateProps> = ({
     const evaluateNumber = (index) => {
       if (index > 5) {
         // should disappear below 1128px
-        return [sectionStyles['none__cards--lg']].join(' ');
+        return 'hidden md:block';
       } else if (index > 3) {
         // should disappear below 728px
-        return [sectionStyles['none__cards--sm']].join(' ');
+        return 'hidden sm:block';
       }
       // doesn't disappear
       return [].join(' ');

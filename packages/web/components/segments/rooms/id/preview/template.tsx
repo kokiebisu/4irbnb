@@ -1,4 +1,3 @@
-import section from '@template/index.module.scss';
 import { Icon } from '@icons';
 import { Panel, $Panel } from '@panel';
 
@@ -75,7 +74,7 @@ export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({
               </u>
             </a>
           </div>
-          <div className={`flex ${[section['hidden__options']].join(' ')}`}>
+          <div className="hidden md:inline-block">
             <div className="pr-2 flex items-center">
               <a href="#" className="flex pl-2 items-center">
                 <div>

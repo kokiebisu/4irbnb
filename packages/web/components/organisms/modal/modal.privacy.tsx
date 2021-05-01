@@ -22,7 +22,7 @@ export const PrivacyModal: React.FC<{}> = () => {
 
   return (
     <div>
-      <div className={[modal['flex__privacy--content']].join(' ')}>
+      <div className="block lg:flex lg:items-center">
         <div>
           <div className="flex items-center mt-2 mb-2 ml-0 mr-0">
             <div className="mr-3">Your Privacy</div>
@@ -48,10 +48,8 @@ export const PrivacyModal: React.FC<{}> = () => {
             </p>
           </div>
         </div>
-        <div className={modal['flex__privacy--buttons']}>
-          <div
-            className={`mt-2 mb-2 ml-0 ${[modal['m-r--privacy']].join(' ')}`}
-          >
+        <div className="sm:flex">
+          <div className="mt-2 mb-2 ml-0 mr-0 sm:mr-3">
             <Button variant="privacy" title="Save" onClick={handleSave} />
           </div>
           <div className="mt-2 mb-2 ml-0 mr-0">

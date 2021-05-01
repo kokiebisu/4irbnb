@@ -39,10 +39,7 @@ export const ReviewsTemplate: React.FC<{
           <div className="mt-3 mr-6 grid grid-cols-2">
             {categories.map((category, index) => {
               return (
-                <div
-                  key={index}
-                  className={`py-3 ${[section['m__review--bullet']].join(' ')}`}
-                >
+                <div key={index} className={`py-3 sm:mr-12`}>
                   <Bullet
                     variant="score"
                     category={category?.type}
@@ -60,10 +57,7 @@ export const ReviewsTemplate: React.FC<{
         >
           {reviews.map((review, index) => {
             return (
-              <div
-                className={[section['m__review--card']].join(' ')}
-                key={index}
-              >
+              <div className="sm:mr-12 mb-6" key={index}>
                 <Card
                   variant={$Card.REVIEW}
                   imgUrl={review?.imgUrl}
