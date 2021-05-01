@@ -171,6 +171,13 @@
       margin: 0 auto;
     }
   }
+
+  .label {
+    position: absolute;
+    transition: all 150ms ease-in;
+    font-size: 16px;
+    top: 12px;
+  }
 }
 
 @layer utilities {

@@ -5,12 +5,12 @@ import input from '@input/input.module.scss';
  */
 export const styleInput = (errors, fieldActive) => {
   if (errors && fieldActive) {
-    return [input['select-input__error--active']].join(' ');
+    return 'bg-white';
   }
   if (errors) {
-    return [input['select-input__error--inactive']].join(' ');
+    return 'bg-gray-100';
   }
-  return [input['select-input__active']].join(' ');
+  return 'bg-white placeholder-gray-200';
 };
 
 export const styleLabel = (errors, fieldActive) => {
@@ -41,6 +41,6 @@ export const styleContainer = (errors, fieldActive, direction) => {
     return [input['select-container__error--inactive']].join(' ');
   }
   if (fieldActive) {
-    return [input['select-container__active']].join(' ');
+    return 'border-2 border-black';
   }
 };
