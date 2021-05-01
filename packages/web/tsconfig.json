@@ -59,6 +59,12 @@
       "@utils/*": ["utils/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".storybook/**/*"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".storybook/**/*",
+    "components/atoms/bullet/bullet-bring/template"
+  ],
   "exclude": ["node_modules"]
 }
