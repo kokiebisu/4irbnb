@@ -1,45 +1,15 @@
-import { Icon } from '@icons';
+import { ClosedButtonTemplate, ClosedButtonTemplateProps } from './template';
 
-export interface ClosedButtonProps {
-  selected?: boolean;
-  closedType?: 'close' | 'check';
-}
+export interface ClosedButtonProps extends ClosedButtonTemplateProps {}
 
-export const ClosedButton: React.FC<ClosedButtonProps> = ({
-  closedType,
-  selected,
-}) => {
-  const types = {
-    close: (
-      <Icon
-        variant="action"
-        actionType="close"
-        width={16}
-        fill={selected ? 'white' : 'black'}
-      />
-    ),
-    check: (
-      <Icon
-        variant="semantic"
-        semanticType="check"
-        width={16}
-        fill={selected ? 'white' : 'black'}
-      />
-    ),
-  };
-  return (
-    <div
-      className={`inline-flex items-center justify-center p-2 rounded-full border ${
-        selected ? 'bg-black border-black' : 'bg-white border-gray-300'
-      }`}
-    >
-      {types[closedType]}
-    </div>
-  );
+const ClosedButton: React.FC<ClosedButtonProps> = ({ ...props }) => {
+  return <ClosedButtonTemplate {...props} />;
 };
 
 export const closed = (props) => {
   return {
-    closed: <ClosedButton {...props} />,
+    closed: {
+      component: <ClosedButton {...props} />,
+    },
   };
 };
