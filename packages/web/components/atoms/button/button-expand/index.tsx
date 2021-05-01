@@ -1,33 +1,9 @@
-import { Icon } from '@icons';
+import { ExpandButtonTemplate, ExpandButtonTemplateProps } from './template';
 
-export interface ExpandButtonProps {
-  title?: string;
-}
+export interface ExpandButtonProps extends ExpandButtonTemplateProps {}
 
-/**
- * Renders the expand button
- * @param {string} to - Redirects to the path being specified
- * @param {string} title - Title of the button
- */
-export const ExpandButton: React.FC<ExpandButtonProps> = ({ title }) => {
-  return (
-    <div>
-      <div className="flex items-center">
-        <div>
-          <u className="text-sm">{title}</u>
-        </div>
-        <div>
-          <Icon
-            variant="action"
-            actionType="right"
-            width={14}
-            stroke="black"
-            strokeWidth={5}
-          />
-        </div>
-      </div>
-    </div>
-  );
+const ExpandButton: React.FC<ExpandButtonProps> = (props) => {
+  return <ExpandButtonTemplate {...props} />;
 };
 
 export const expand = (props) => {
