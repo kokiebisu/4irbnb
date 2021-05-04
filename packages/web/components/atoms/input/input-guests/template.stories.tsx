@@ -1,12 +1,14 @@
 import { Story, Meta } from '@storybook/react';
-import { GuestsInput, GuestsInputProps } from '.';
+import { GuestsInputTemplate, GuestsInputTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Input',
-  component: GuestsInput,
+  component: GuestsInputTemplate,
 } as Meta;
 
-const InputStory: Story<GuestsInputProps> = (args) => <GuestsInput {...args} />;
+const InputStory: Story<GuestsInputTemplateProps> = (args) => (
+  <GuestsInputTemplate {...args} />
+);
 
 export const Guests = InputStory.bind({});
 Guests.args = {
