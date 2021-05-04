@@ -1,13 +1,13 @@
 import { Story, Meta } from '@storybook/react';
-import { CheckboxInput, CheckboxInputProps } from '.';
+import { CheckboxInputTemplate, CheckboxInputTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Input',
-  component: CheckboxInput,
+  component: CheckboxInputTemplate,
 } as Meta;
 
-const InputStory: Story<CheckboxInputProps> = (args) => (
-  <CheckboxInput {...args} />
+const InputStory: Story<CheckboxInputTemplateProps> = (args) => (
+  <CheckboxInputTemplate {...args} />
 );
 
 export const Checkbox = InputStory.bind({});
