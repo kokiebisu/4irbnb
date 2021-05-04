@@ -1,13 +1,13 @@
 import { Story, Meta } from '@storybook/react';
-import { PasswordInput, PasswordInputProps } from '.';
+import { PasswordInputTemplate, PasswordInputTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Input',
-  component: PasswordInput,
+  component: PasswordInputTemplate,
 } as Meta;
 
-const InputStory: Story<PasswordInputProps> = (args) => (
-  <PasswordInput {...args} />
+const InputStory: Story<PasswordInputTemplateProps> = (args) => (
+  <PasswordInputTemplate {...args} />
 );
 
 export const Password = InputStory.bind({});

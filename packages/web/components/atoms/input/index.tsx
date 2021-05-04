@@ -1,4 +1,3 @@
-import { VerifyButtonProps } from '@button/button-verify';
 import { AddressInputProps } from './input-address';
 import { AnotherInputProps } from './input-another';
 import { BirthdateInputProps } from './input-birthdate';
@@ -19,6 +18,7 @@ import { RegionInputProps } from './input-region';
 import { SelectInputProps } from './input-select';
 import { TextInputProps } from './input-text';
 import { TextAreaInputProps } from './input-textarea';
+import { VerifyInputProps } from './input-verify';
 import { factory } from './utils/factory';
 
 export type InputVariants =

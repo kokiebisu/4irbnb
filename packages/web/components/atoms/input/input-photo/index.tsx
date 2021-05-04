@@ -1,6 +1,4 @@
 import { Icon } from '@icons';
-import { PhoneNumberInput } from '@input/input-phone';
-
 export interface PhotoInputProps {
   onChange?: (e: any) => void;
 }
