@@ -1,12 +1,14 @@
 import { Story, Meta } from '@storybook/react';
-import { NameInput, NameInputProps } from '.';
+import { NameInputTemplate, NameInputTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Input',
-  component: NameInput,
+  component: NameInputTemplate,
 } as Meta;
 
-const InputStory: Story<NameInputProps> = (args) => <NameInput {...args} />;
+const InputStory: Story<NameInputTemplateProps> = (args) => (
+  <NameInputTemplate {...args} />
+);
 
 export const Name = InputStory.bind({});
 Name.args = {
