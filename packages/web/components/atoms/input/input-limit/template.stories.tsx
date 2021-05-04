@@ -1,12 +1,14 @@
 import { Story, Meta } from '@storybook/react';
-import { LimitInput, LimitInputProps } from '.';
+import { LimitInputTemplate, LimitInputTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Input',
-  component: LimitInput,
+  component: LimitInputTemplate,
 } as Meta;
 
-const InputStory: Story<LimitInputProps> = (args) => <LimitInput {...args} />;
+const InputStory: Story<LimitInputTemplateProps> = (args) => (
+  <LimitInputTemplate {...args} />
+);
 
 export const Limit = InputStory.bind({});
 Limit.args = {
