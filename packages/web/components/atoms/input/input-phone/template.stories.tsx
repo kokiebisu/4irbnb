@@ -1,14 +1,17 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { PhoneNumberInput, PhoneNumberInputProps } from '.';
+import {
+  PhoneNumberInputTemplate,
+  PhoneNumberInputTemplateProps,
+} from './template';
 
 export default {
   title: 'Atoms/Input',
-  component: PhoneNumberInput,
+  component: PhoneNumberInputTemplate,
 } as Meta;
 
-const InputStory: Story<PhoneNumberInputProps> = (args) => (
-  <PhoneNumberInput {...args} />
+const InputStory: Story<PhoneNumberInputTemplateProps> = (args) => (
+  <PhoneNumberInputTemplate {...args} />
 );
 
 export const PhoneNumber = InputStory.bind({});
