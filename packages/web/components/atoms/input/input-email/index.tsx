@@ -9,7 +9,9 @@ const EmailInput: React.FC<EmailInputProps> = (props) => {
 export const email = (props) => {
   return {
     email: {
-      component: <EmailInput {...props} />,
+      component: {
+        component: <EmailInput {...props} />,
+      },
     },
   };
 };

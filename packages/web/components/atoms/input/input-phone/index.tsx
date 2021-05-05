@@ -12,6 +12,8 @@ export const PhoneNumberInput: React.FC<PhoneNumberInputProps> = (props) => {
 
 export const phone = (props) => {
   return {
-    phone: <PhoneNumberInput {...props} />,
+    phone: {
+      component: <PhoneNumberInput {...props} />,
+    },
   };
 };

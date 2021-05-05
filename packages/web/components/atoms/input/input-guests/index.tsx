@@ -8,6 +8,8 @@ export const GuestsInput: React.FC<GuestsInputProps> = (props) => {
 
 export const guests = (props) => {
   return {
-    guests: <GuestsInput {...props} />,
+    guests: {
+      component: <GuestsInput {...props} />,
+    },
   };
 };

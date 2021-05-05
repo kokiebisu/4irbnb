@@ -1,13 +1,15 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { VerifyInput, VerifyInputProps } from '.';
+import { VerifyInputTemplate, VerifyInputTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Input',
-  component: VerifyInput,
+  component: VerifyInputTemplate,
 } as Meta;
 
-const InputStory: Story<VerifyInputProps> = (args) => <VerifyInput {...args} />;
+const InputStory: Story<VerifyInputTemplateProps> = (args) => (
+  <VerifyInputTemplate {...args} />
+);
 
 export const Verify = InputStory.bind({});
 Verify.args = {

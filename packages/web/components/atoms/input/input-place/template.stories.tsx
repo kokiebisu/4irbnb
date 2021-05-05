@@ -1,12 +1,14 @@
 import { Story, Meta } from '@storybook/react';
-import { PlaceInput, PlaceInputProps } from '.';
+import { PlaceInputTemplate, PlaceInputTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Input',
-  component: PlaceInput,
+  component: PlaceInputTemplate,
 } as Meta;
 
-const InputStory: Story<PlaceInputProps> = (args) => <PlaceInput {...args} />;
+const InputStory: Story<PlaceInputTemplateProps> = (args) => (
+  <PlaceInputTemplate {...args} />
+);
 
 export const Place = InputStory.bind({});
 Place.args = {

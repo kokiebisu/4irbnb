@@ -8,6 +8,8 @@ export const NameInput: React.FC<NameInputProps> = (props) => {
 
 export const name = (props) => {
   return {
-    name: <NameInput {...props} />,
+    name: {
+      component: <NameInput {...props} />,
+    },
   };
 };
