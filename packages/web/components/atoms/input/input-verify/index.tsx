@@ -9,6 +9,8 @@ export const VerifyInput: React.FC<VerifyInputProps> = (props) => {
 
 export const verify = (props) => {
   return {
-    verify: <VerifyInput {...props} />,
+    verify: {
+      component: <VerifyInput {...props} />,
+    },
   };
 };

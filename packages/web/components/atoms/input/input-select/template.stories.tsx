@@ -1,12 +1,14 @@
 import { Story, Meta } from '@storybook/react';
-import { SelectInput, SelectInputProps } from '.';
+import { SelectInputTemplate, SelectInputTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Input',
-  component: SelectInput,
+  component: SelectInputTemplate,
 } as Meta;
 
-const InputStory: Story<SelectInputProps> = (args) => <SelectInput {...args} />;
+const InputStory: Story<SelectInputTemplateProps> = (args) => (
+  <SelectInputTemplate {...args} />
+);
 
 export const Select = InputStory.bind({});
 Select.args = {

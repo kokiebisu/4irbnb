@@ -1,12 +1,14 @@
 import { Story, Meta } from '@storybook/react';
-import { TextInput, TextInputProps } from '.';
+import { TextInputTemplate, TextInputTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Input',
-  component: TextInput,
+  component: TextInputTemplate,
 } as Meta;
 
-const InputStory: Story<TextInputProps> = (args) => <TextInput {...args} />;
+const InputStory: Story<TextInputTemplateProps> = (args) => (
+  <TextInputTemplate {...args} />
+);
 
 export const Text = InputStory.bind({});
 Text.args = {

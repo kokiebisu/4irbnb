@@ -1,14 +1,14 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { TextAreaInput, TextAreaInputProps } from '.';
+import { TextAreaInputTemplate, TextAreaInputTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Input',
-  component: TextAreaInput,
+  component: TextAreaInputTemplate,
 } as Meta;
 
-const InputStory: Story<TextAreaInputProps> = (args) => (
-  <TextAreaInput {...args} />
+const InputStory: Story<TextAreaInputTemplateProps> = (args) => (
+  <TextAreaInputTemplate {...args} />
 );
 
 export const TextArea = InputStory.bind({});
