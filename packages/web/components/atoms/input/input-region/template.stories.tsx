@@ -1,12 +1,14 @@
 import { Story, Meta } from '@storybook/react';
-import { RegionInput, RegionInputProps } from '.';
+import { RegionInputTemplate, RegionInputTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Input',
-  component: RegionInput,
+  component: RegionInputTemplate,
 } as Meta;
 
-const InputStory: Story<RegionInputProps> = (args) => <RegionInput {...args} />;
+const InputStory: Story<RegionInputTemplateProps> = (args) => (
+  <RegionInputTemplate {...args} />
+);
 
 export const Region = InputStory.bind({});
 Region.args = {

@@ -1,36 +1,19 @@
-import { Icon } from '@icons';
+import React from 'react';
+import {
+  SearchbarInputTemplate,
+  SearchbarInputTemplateProps,
+} from './template';
 
-export interface SearchbarInputProps {
-  inverse?: boolean;
-  value?: string;
-  onChange?: (e: any) => void;
-}
+export interface SearchbarInputProps extends SearchbarInputTemplateProps {}
 
-export const SearchbarInput: React.FC<SearchbarInputProps> = ({
-  inverse,
-  value,
-  onChange,
-}) => {
-  return (
-    <div
-      className={`${
-        inverse
-          ? 'border border-gray-300 bg-gray-100'
-          : 'shadow-md border border-transparent'
-      } text-gray-700 rounded-full py-3 pl-6 pr-12 flex items-center`}
-    >
-      <div className="mr-4">
-        <Icon
-          variant="general"
-          generalType="magnifyGlass"
-          width={15}
-          stroke="black"
-          strokeWidth={4}
-        />
-      </div>
-      <div className="font-thin text-md tracking-wide text-gray-400">
-        <input value={value} onChange={onChange} placeholder="Search stays" />
-      </div>
-    </div>
-  );
+export const SearchbarInput: React.FC<SearchbarInputProps> = (props) => {
+  return <SearchbarInputTemplate {...props} />;
+};
+
+export const searchbar = (props) => {
+  return {
+    searchbar: {
+      component: <SearchbarInput {...props} />,
+    },
+  };
 };

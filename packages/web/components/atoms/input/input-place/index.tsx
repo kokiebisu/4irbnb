@@ -9,6 +9,8 @@ export const PlaceInput: React.FC<PlaceInputProps> = (props) => {
 
 export const place = (props) => {
   return {
-    place: <PlaceInput {...props} />,
+    place: {
+      component: <PlaceInput {...props} />,
+    },
   };
 };

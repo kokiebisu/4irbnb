@@ -1,13 +1,16 @@
 import { Story, Meta } from '@storybook/react';
-import { SearchbarInput, SearchbarInputProps } from '.';
+import {
+  SearchbarInputTemplate,
+  SearchbarInputTemplateProps,
+} from './template';
 
 export default {
   title: 'Atoms/Input',
-  component: SearchbarInput,
+  component: SearchbarInputTemplate,
 } as Meta;
 
-const InputStory: Story<SearchbarInputProps> = (args) => (
-  <SearchbarInput {...args} />
+const InputStory: Story<SearchbarInputTemplateProps> = (args) => (
+  <SearchbarInputTemplate {...args} />
 );
 
 export const Searchbar = InputStory.bind({});
