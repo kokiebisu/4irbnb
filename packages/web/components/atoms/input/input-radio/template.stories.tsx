@@ -1,12 +1,14 @@
 import { Story, Meta } from '@storybook/react';
-import { RadioInput, RadioInputProps } from '.';
+import { RadioInputTemplate, RadioInputTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Input',
-  component: RadioInput,
+  component: RadioInputTemplate,
 } as Meta;
 
-const InputStory: Story<RadioInputProps> = (args) => <RadioInput {...args} />;
+const InputStory: Story<RadioInputTemplateProps> = (args) => (
+  <RadioInputTemplate {...args} />
+);
 
 export const Radio = InputStory.bind({});
 Radio.args = {

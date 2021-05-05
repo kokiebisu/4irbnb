@@ -8,6 +8,8 @@ export const LimitInput: React.FC<LimitInputProps> = (props) => {
 
 export const limit = (props) => {
   return {
-    limit: <LimitInput {...props} />,
+    limit: {
+      component: <LimitInput {...props} />,
+    },
   };
 };

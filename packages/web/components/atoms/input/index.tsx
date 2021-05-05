@@ -64,7 +64,7 @@ export interface InputProps
     SelectInputProps,
     TextInputProps,
     TextAreaInputProps,
-    VerifyButtonProps {
+    VerifyInputProps {
   variant: InputVariants;
 }
 

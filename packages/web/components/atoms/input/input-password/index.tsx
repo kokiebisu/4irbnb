@@ -8,6 +8,8 @@ export const PasswordInput: React.FC<PasswordInputProps> = (props) => {
 
 export const password = (props) => {
   return {
-    password: <PasswordInput {...props} />,
+    password: {
+      component: <PasswordInput {...props} />,
+    },
   };
 };

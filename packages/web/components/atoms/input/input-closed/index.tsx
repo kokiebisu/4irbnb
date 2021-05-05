@@ -9,7 +9,7 @@ const ClosedInput: React.FC<ClosedInputProps> = (props) => {
 export const closed = (props) => {
   return {
     closed: {
-        component: <ClosedInput {...props} />,
-    }
+      component: <ClosedInput {...props} />,
+    },
   };
 };
