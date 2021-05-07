@@ -1,13 +1,15 @@
 import { useFormik } from 'formik';
-import { Input, $Input } from '@input';
+import { Input } from '@input';
 import { Button } from '@button';
 import { Bullet } from '@bullet';
 import { validateForgotPassword as validate } from '@helper/auth';
 
+export interface ForgotPasswordPrototypeTemplateProps {}
+
 /**
  * Renders the login template component
  */
-export const ForgotPasswordPrototype: React.FC<{}> = () => {
+export const ForgotPasswordPrototypeTemplate: React.FC<ForgotPasswordPrototypeTemplateProps> = () => {
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -33,8 +35,8 @@ export const ForgotPasswordPrototype: React.FC<{}> = () => {
             <div>
               <div>
                 <Input
-                  variant={$Input.EMAIL}
-                  handleChange={formik.handleChange}
+                  variant="email"
+                  onChange={formik.handleChange}
                   value={formik.values.email}
                   errors={formik.errors.email !== undefined}
                 />
@@ -54,7 +56,6 @@ export const ForgotPasswordPrototype: React.FC<{}> = () => {
               size="md"
               fill="black"
               title="Send reset link"
-              block
             />
           </div>
         </div>

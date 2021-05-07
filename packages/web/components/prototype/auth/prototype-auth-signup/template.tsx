@@ -9,10 +9,12 @@ import { validateSignup as validate } from '@helper/auth';
 import { usePost } from '@hooks/usePost';
 import { useAuthDispatch } from '@context/auth';
 
+export interface SignupPrototypeTemplateProps {}
+
 /**
  * Renders the signup template component
  */
-export const SignupPrototype: React.FC<{}> = () => {
+export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = () => {
   const authDispatch = useAuthDispatch();
   const [loading, setLoading] = useState(false);
   const formik = useFormik({

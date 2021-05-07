@@ -1,19 +1,14 @@
-import { AuthPrototype } from '@prototype/auth/prototype.auth';
-import { LoginPrototype } from '@prototype/auth/prototype.login';
-import { SignupPrototype } from '@prototype/auth/prototype.signup';
-import { ForgotPasswordPrototype } from '@prototype/auth/prototype.forgot';
-import { ExistsPrototype } from '@prototype/auth/prototype.exists';
+import { factory } from './util/factory';
 
-export const $Prototype = {
-  LOGIN: 'login',
-  SIGNUP: 'signup',
-  AUTH: 'auth',
-  FORGOTPASSWORD: 'forgotpassword',
-  EXISTS: 'exists',
-};
+export type AuthPrototypeVariants =
+  | 'login'
+  | 'signup'
+  | 'auth'
+  | 'forgotpassword'
+  | 'exists';
 
 export interface PrototypeProps {
-  variant?: string;
+  variant?: AuthPrototypeVariants;
   place?: string;
   stayType?: string | string[];
   characteristics?: string;
@@ -21,16 +16,12 @@ export interface PrototypeProps {
 }
 
 export const Prototype: React.FC<PrototypeProps> = ({
-  variant = $Prototype.LOGIN,
+  variant = 'login',
   ...props
 }) => {
-  const variants: { [variant: string]: JSX.Element } = {
-    login: <LoginPrototype {...props} />,
-    signup: <SignupPrototype {...props} />,
-    auth: <AuthPrototype {...props} />,
-    forgotpassword: <ForgotPasswordPrototype {...props} />,
-    exists: <ExistsPrototype {...props} />,
-  };
+  const variants: {
+    [variant: string]: { component: JSX.Element };
+  } = factory(props);
   return (
     <div data-testid={`${variant}-auth-prototype`}>{variants[variant]}</div>
   );
