@@ -24,14 +24,14 @@ const Options: React.FC<{
   );
 };
 
-export interface MenuModalProps {
+export interface MenuModalTemplateProps {
   authenticated?: boolean;
 }
 
 /**
  * Renders the menu modal
  */
-export const MenuModal: React.FC<MenuModalProps> = ({
+export const MenuModalTemplate: React.FC<MenuModalTemplateProps> = ({
   authenticated = false,
 }) => {
   return (
