@@ -1,12 +1,13 @@
-import modal from '@modal/modal.module.scss';
 import { Button } from '@button';
 import { Icon } from '@icons';
 import { useToggleDispatch } from '@context/toggle';
 
+export interface PrivacyModalTemplateProps {}
+
 /**
  * Renders the privacy modal
  */
-export const PrivacyModal: React.FC<{}> = () => {
+export const PrivacyModalTemplate: React.FC<PrivacyModalTemplateProps> = () => {
   const toggleDispatch = useToggleDispatch();
 
   const handleSave = () => {
