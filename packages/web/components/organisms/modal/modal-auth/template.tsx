@@ -3,10 +3,12 @@ import { Prototype } from '@prototype/auth';
 import { useToggleDispatch } from '@context/toggle';
 import { useAuthDispatch, useAuthState } from '@context/auth';
 
+export interface AuthModalTemplateProps {}
+
 /**
  * Renders the auth modal
  */
-export const AuthModal: React.FC<{}> = () => {
+export const AuthModalTemplate: React.FC<AuthModalTemplateProps> = () => {
   const toggleDispatch = useToggleDispatch();
   const authDispatch = useAuthDispatch();
   const authState = useAuthState();
