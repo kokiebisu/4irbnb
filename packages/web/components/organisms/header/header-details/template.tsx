@@ -1,18 +1,22 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import header from '@header/header.module.scss';
 import { Icon } from '@icons';
 import { Button } from '@button';
 import { useHandleScroll } from '@hooks/useHandleScroll';
+
+export interface DetailsHeaderTemplateProps {
+  layoutType?: string;
+  spread?: boolean;
+}
 
 /**
  * Renders the details header
  * @param {stirng} layoutType - Type of layout
  * @param {boolean} spread - Whether if the layout should be spread out or not
  */
-export const DetailsHeader: React.FC<{
-  layoutType?: string;
-  spread?: boolean;
-}> = ({ layoutType = 'room', spread = false }) => {
+export const DetailsHeaderTemplate: React.FC<DetailsHeaderTemplateProps> = ({
+  layoutType = 'room',
+  spread = false,
+}) => {
   const scrollPosition = useHandleScroll();
   const items =
     layoutType === 'experience'

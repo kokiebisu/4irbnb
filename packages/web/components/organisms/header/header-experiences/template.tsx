@@ -1,10 +1,12 @@
 import Router from 'next/router';
 import { Button } from '@button';
 
+export interface ExperiencesHeaderTemplateProps {}
+
 /**
  * Renders the experiences header
  */
-export const ExperiencesHeader: React.FC<{}> = () => {
+export const ExperiencesHeaderTemplate: React.FC<ExperiencesHeaderTemplateProps> = () => {
   return (
     <header className="px-0 h-48">
       <div className="p-4 flex items-center justify-between h-full">

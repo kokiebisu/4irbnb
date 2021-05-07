@@ -1,24 +1,17 @@
-import { DetailsHeader } from "@header/header.details";
-import { ExperiencesHeader } from "@header/header.experiences";
-import { HomesHeader } from "@header/header.homes";
-import { OnlineHostHeader } from "@header/header.onlinehost";
-import { StayHeader } from "@header/header.stay";
-import { LandingHeader } from "@header/header.landing";
-import { WhiteHeader } from "@header/header.white";
+import { factory } from './util/factory';
 
-export const $Header = {
-  LANDING: "landing",
-  WHITE: "white",
-  DETAILS: "details",
-  HOMES: "homes",
-  EXPERIENCES: "experiences",
-  ONLINEHOST: "onlinehost",
-  STAY: "stay",
-};
+export type HeaderVariants =
+  | 'landing'
+  | 'white'
+  | 'details'
+  | 'homes'
+  | 'experiences'
+  | 'onlinehost'
+  | 'stay';
 
 export interface HeaderProps {
   extendsTo?: any;
-  variant: string;
+  variant: HeaderVariants;
   [property: string]: any;
 }
 
@@ -32,20 +25,8 @@ export const Header: React.FC<HeaderProps> = ({
   extendsTo,
   ...props
 }) => {
-  const variants: {
-    [variant: string]: any;
-  } = {
-    landing: <LandingHeader {...props} />,
-    white: <WhiteHeader {...props} />,
-    details: <DetailsHeader {...props} />,
-    homes: <HomesHeader {...props} />,
-    experiences: <ExperiencesHeader {...props} />,
-    onlinehost: <OnlineHostHeader {...props} />,
-    stay: <StayHeader {...props} />,
-  };
+  const variants = factory(props);
   return (
-    <div className={extendsTo} data-testid={`${variant}-header`}>
-      {variants[variant]}
-    </div>
+    <div data-testid={`${variant}-header`}>{variants[variant].component}</div>
   );
 };

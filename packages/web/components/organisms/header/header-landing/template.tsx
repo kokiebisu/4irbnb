@@ -10,15 +10,22 @@ import { useToggleDispatch, useToggleState } from '@context/toggle';
 import { Content } from '@button/button-transparent/content.transparent';
 import { useOnClickOutside } from '@hooks/useOnClickOutside';
 
-/**
- * Renders the transparent header
- */
-export const LandingHeader: React.FC<{
+export interface LandingHeaderTemplate {
   category?: any;
   setCategory?: any;
   data?: any;
   criteria?: any;
-}> = ({ data, category, setCategory, criteria }) => {
+}
+
+/**
+ * Renders the transparent header
+ */
+export const LandingHeaderTemplate: React.FC<> = ({
+  data,
+  category,
+  setCategory,
+  criteria,
+}) => {
   const toggleState = useToggleState();
   const searchbarRef = useRef();
   const [expanded, setExpanded] = useState(false);
