@@ -10,7 +10,7 @@ import { useToggleDispatch, useToggleState } from '@context/toggle';
 import { Content } from '@button/button-transparent/content.transparent';
 import { useOnClickOutside } from '@hooks/useOnClickOutside';
 
-export interface LandingHeaderTemplate {
+export interface LandingHeaderTemplateProps {
   category?: any;
   setCategory?: any;
   data?: any;
@@ -20,7 +20,7 @@ export interface LandingHeaderTemplate {
 /**
  * Renders the transparent header
  */
-export const LandingHeaderTemplate: React.FC<> = ({
+export const LandingHeaderTemplate: React.FC<LandingHeaderTemplateProps> = ({
   data,
   category,
   setCategory,

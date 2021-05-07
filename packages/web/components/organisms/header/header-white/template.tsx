@@ -5,14 +5,18 @@ import { useToggleDispatch, useToggleState } from '@context/toggle';
 import { Icon } from '@icons';
 import { Content } from '@button/button-transparent/content.transparent';
 
+export interface WhiteHeaderTemplateProps {
+  spread?: boolean;
+  data?: any;
+}
+
 /**
  * Renders the white header
  * @param {boolean} spread - Whether if the layout should be spread out or not
  */
-export const WhiteHeader: React.FC<{
-  spread?: boolean;
-  data?: any;
-}> = ({ data }) => {
+export const WhiteHeaderTemplate: React.FC<WhiteHeaderTemplateProps> = ({
+  data,
+}) => {
   const toggleState = useToggleState();
   const toggleDispatch = useToggleDispatch();
   return (
