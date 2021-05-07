@@ -1,7 +1,7 @@
 import { useSearchbar } from './logic';
 import { SearchbarPrototypeTemplate } from './template';
 
-export interface PrototypeProps {
+export interface SearchbarPrototypeProps {
   expanded?: boolean;
   setExpanded?: any;
   type?: any;
@@ -9,7 +9,7 @@ export interface PrototypeProps {
   transparent?: boolean;
 }
 
-export const Prototype: React.FC<PrototypeProps> = ({
+export const SearchbarPrototype: React.FC<SearchbarPrototypeProps> = ({
   type,
   setCategory,
   transparent = false,

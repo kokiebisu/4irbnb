@@ -11,10 +11,12 @@ import { validateLogin as validate } from '@helper/auth';
 
 import { usePost } from '@hooks/usePost';
 
+export interface LoginPrototypeTemplateProps {}
+
 /**
  * Renders the login template component
  */
-export const LoginPrototype: React.FC<{}> = () => {
+export const LoginPrototypeTemplate: React.FC<LoginPrototypeTemplateProps> = () => {
   const authState = useAuthState();
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState('pending');

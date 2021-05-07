@@ -1,4 +1,4 @@
-import { Bar, $Bar } from '@bar';
+import { Bar } from '@bar';
 import { Modal } from '@modal';
 import useOnClickOutside from '@hooks/useOnClickOutside';
 import { useRef } from 'react';

@@ -3,17 +3,19 @@ import Router from 'next/router';
 import { useFormik } from 'formik';
 import { Bullet } from '@bullet';
 import { Button } from '@button';
-import { Input, $Input } from '@input';
+import { Input } from '@input';
 import { validateExists as validate } from '@helper/auth';
 import { usePost } from '@hooks/usePost';
 
-export const ExistsPrototype: React.FC<{
+export interface ExistsPrototypeTemplateProps {
   data?: {
     imgUrl: string;
     firstname: string;
     email: string;
   };
-}> = ({
+}
+
+export const ExistsPrototypeTemplate: React.FC<ExistsPrototypeTemplateProps> = ({
   data = {
     imgUrl: 'https://a0.muscache.com/defaults/user_pic-225x225.png?v=3',
     firstname: 'Kenichi',
@@ -69,8 +71,8 @@ export const ExistsPrototype: React.FC<{
       <form onSubmit={formik.handleSubmit}>
         <div className="my-4">
           <Input
-            variant={$Input.PASSWORD}
-            handleChange={formik.handleChange}
+            variant="password"
+            onChange={formik.handleChange}
             value={formik.values.password}
             errors={formik.errors.password !== undefined}
           />

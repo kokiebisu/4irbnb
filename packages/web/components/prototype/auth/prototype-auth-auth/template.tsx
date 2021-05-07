@@ -4,10 +4,12 @@ import { Input } from '@input';
 import { Button } from '@button';
 import { validateAuth as validate } from '@helper/auth';
 
+export interface AuthPrototypeTemplateProps {}
+
 /**
  * Renders the auth template component
  */
-export const AuthPrototype: React.FC<{}> = () => {
+export const AuthPrototypeTemplate: React.FC<AuthPrototypeTemplateProps> = () => {
   const authState = useAuthState();
   const authDispatch = useAuthDispatch();
 
