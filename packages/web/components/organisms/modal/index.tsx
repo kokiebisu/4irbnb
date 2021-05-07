@@ -5,7 +5,7 @@ import { useLockBodyScroll } from '@hooks/useLockBodyScroll';
 import { MenuModal } from '@modal/modal.menu';
 import { PrivacyModal } from '@modal/modal.privacy';
 import { AuthModal } from '@modal/modal-auth';
-import { BookingModal } from '@modal/modal.booking';
+import { BookingModal } from '@modal/modal-booking';
 import { GlobeModal } from '@modal/modal.globe';
 import { LocationModal } from '@modal/modal.location';
 import { GuestsModal } from '@modal/modal.guests';
@@ -13,21 +13,20 @@ import { CheckModal } from '@modal/modal.check';
 import { ListingModal } from '@modal/modal.listing';
 import { useToggleDispatch } from '@context/toggle';
 
-export const $Modal = {
-  PRIVACY: 'privacy',
-  MENU: 'menu',
-  AUTH: 'auth',
-  BOOKING: 'booking',
-  GLOBE: 'globe',
-  LOCATION: 'location',
-  GUESTS: 'guests',
-  CHECKIN: 'checkin',
-  CHECKOUT: 'checkout',
-  LISTING: 'listing',
-};
+export type ModalVariants =
+  | 'privacy'
+  | 'menu'
+  | 'auth'
+  | 'booking'
+  | 'globe'
+  | 'location'
+  | 'guests'
+  | 'checkin'
+  | 'checkout'
+  | 'listing';
 
 export interface ModalProps {
-  variant: string;
+  variant: ModalVariants;
   extendsTo?: string;
   dispatch?: any;
   animate?: string;
