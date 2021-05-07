@@ -1,9 +1,9 @@
 import { Icon } from '@icons';
 import { Button } from '@button';
 
-export interface CheckModalProps {}
+export interface CheckModalTemplateProps {}
 
-export const CheckModal: React.FC<CheckModalProps> = () => {
+export const CheckModalTemplate: React.FC<CheckModalTemplateProps> = () => {
   return (
     <div className="flex justify-center">
       <div className="grid grid-cols-2 gap-x-7">

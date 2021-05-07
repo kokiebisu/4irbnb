@@ -3,7 +3,9 @@ import { Button } from '@button';
 import { Prototype, $Prototype } from '@prototype/globe';
 import { useToggleDispatch } from '@context/toggle';
 
-export const GlobeModal: React.FC<{}> = () => {
+export interface GlobeModalTemplateProps {}
+
+export const GlobeModalTemplate: React.FC<GlobeModalTemplateProps> = () => {
   const toggleDispatch = useToggleDispatch();
   const [prototype, setPrototype] = useState($Prototype.LANGUAGE);
   return (
