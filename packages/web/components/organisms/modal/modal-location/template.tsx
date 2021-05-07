@@ -1,9 +1,9 @@
 import { Button } from '@button';
 import { Layout } from '@layout';
 
-export interface LocationModalProps {}
+export interface LocationModalTemplateProps {}
 
-export const LocationModal: React.FC<LocationModalProps> = () => {
+export const LocationModalTemplate: React.FC<LocationModalTemplateProps> = () => {
   const recentLocations = [
     { location: 'Chilliwack', from: 'Jan. 7', to: 'Jan. 21', guests: 4 },
     { location: 'Tofino' },
