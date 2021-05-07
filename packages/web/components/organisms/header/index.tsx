@@ -26,7 +26,5 @@ export const Header: React.FC<HeaderProps> = ({
   ...props
 }) => {
   const variants = factory(props);
-  return (
-    <div data-testid={`${variant}-header`}>{variants[variant].component}</div>
-  );
+  return variants[variant].component;
 };

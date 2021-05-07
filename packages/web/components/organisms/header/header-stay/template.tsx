@@ -1,13 +1,17 @@
 import Router from 'next/router';
 import { Button } from '@button';
 
+export interface StayHeaderTemplateProps {
+  title?: string;
+}
+
 /**
  * Renders the header for the homes page
  * @param {boolean} spread - Whether if the layout should be spread out or not
  */
-export const StayHeader: React.FC<{
-  title?: string;
-}> = ({ title }) => {
+export const StayHeaderTemplate: React.FC<StayHeaderTemplateProps> = ({
+  title,
+}) => {
   return (
     <header style={{ height: 65 }} className="px-0 bg-white shadow-sm">
       <div className="flex items-center">
