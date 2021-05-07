@@ -7,7 +7,7 @@ import { PrivacyModal } from '@modal/modal.privacy';
 import { AuthModal } from '@modal/modal-auth';
 import { BookingModal } from '@modal/modal-booking';
 import { GlobeModal } from '@modal/modal-globe';
-import { LocationModal } from '@modal/modal.location';
+import { LocationModal } from '@modal/modal-location';
 import { GuestsModal } from '@modal/modal-guests';
 import { CheckModal } from '@modal/modal-check';
 import { ListingModal } from '@modal/modal-listing';
