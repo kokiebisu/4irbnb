@@ -1,12 +1,14 @@
 import { Button } from '@button';
 
+export interface BookingModalTemplateProps {
+  availables?: any;
+}
+
 /**
  * Renders the booking modal
  * @param {Object[]} availables - Lists all the available dates
  */
-export const BookingModal: React.FC<{
-  availables?: any;
-}> = ({
+export const BookingModalTemplate: React.FC<BookingModalTemplateProps> = ({
   availables = [
     {
       date: 'Tue., Nov. 10',
