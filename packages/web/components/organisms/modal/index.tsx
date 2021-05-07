@@ -4,7 +4,7 @@ import useOnClickOutside from '@hooks/useOnClickOutside';
 import { useLockBodyScroll } from '@hooks/useLockBodyScroll';
 import { MenuModal } from '@modal/modal.menu';
 import { PrivacyModal } from '@modal/modal.privacy';
-import { AuthModal } from '@modal/modal.auth';
+import { AuthModal } from '@modal/modal-auth';
 import { BookingModal } from '@modal/modal.booking';
 import { GlobeModal } from '@modal/modal.globe';
 import { LocationModal } from '@modal/modal.location';
@@ -12,8 +12,6 @@ import { GuestsModal } from '@modal/modal.guests';
 import { CheckModal } from '@modal/modal.check';
 import { ListingModal } from '@modal/modal.listing';
 import { useToggleDispatch } from '@context/toggle';
-
-import modal from '@modal/modal.module.scss';
 
 export const $Modal = {
   PRIVACY: 'privacy',
