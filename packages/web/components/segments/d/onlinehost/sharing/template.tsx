@@ -2,11 +2,11 @@ import { Layout } from '@layout';
 import { Card, $Card } from '@card';
 import { Button } from '@button';
 
-export interface SharingTemplateProps {
+export interface SharingSegmentTemplateProps {
   categories?: string[];
 }
 
-export const SharingTemplate: React.FC<SharingTemplateProps> = ({
+export const SharingSegmentTemplate: React.FC<SharingSegmentTemplateProps> = ({
   categories,
 }) => {
   return (

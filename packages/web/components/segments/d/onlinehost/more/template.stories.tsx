@@ -1,15 +1,15 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { MoreTemplate, MoreTemplateProps } from './template';
+import { MoreSegmentTemplate, MoreSegmentTemplateProps } from './template';
 
 export default {
   title: 'Templates/D/OnlineHosts',
-  component: MoreTemplate,
+  component: MoreSegmentTemplate,
 } as Meta;
 
-const MoreTemplateStory: Story<MoreTemplateProps> = (args) => (
-  <MoreTemplate {...args} />
+const SegmentTemplateStory: Story<MoreSegmentTemplateProps> = (args) => (
+  <MoreSegmentTemplate {...args} />
 );
 
-export const More = MoreTemplateStory.bind({});
+export const More = SegmentTemplateStory.bind({});
 More.args = {};

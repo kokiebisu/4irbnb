@@ -1,6 +1,6 @@
 import { categories } from './mock';
 
-export const useWorks = () => {
+export const useWorksSegment = () => {
   return {
     categories,
   };

@@ -1,12 +1,13 @@
 import section from '@template/index.module.scss';
-
 import { Button } from '@button';
 
-export interface MoreTemplateProps {
+export interface MoreSegmentTemplateProps {
   imgUrl?: string;
 }
 
-export const MoreTemplate: React.FC<MoreTemplateProps> = ({ imgUrl }) => {
+export const MoreSegmentTemplate: React.FC<MoreSegmentTemplateProps> = ({
+  imgUrl,
+}) => {
   return (
     <div>
       <div className="relative h-0" style={{ paddingTop: '50%' }}>

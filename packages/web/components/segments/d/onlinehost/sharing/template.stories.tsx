@@ -1,18 +1,21 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { SharingTemplate, SharingTemplateProps } from './template';
+import {
+  SharingSegmentTemplate,
+  SharingSegmentTemplateProps,
+} from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/D/OnlineHosts',
-  component: SharingTemplate,
+  component: SharingSegmentTemplate,
 } as Meta;
 
-const SharingTemplateStory: Story<SharingTemplateProps> = (args) => (
-  <SharingTemplate {...args} />
+const SegmentStory: Story<SharingSegmentTemplateProps> = (args) => (
+  <SharingSegmentTemplate {...args} />
 );
 
-export const Sharing = SharingTemplateStory.bind({});
+export const Sharing = SegmentStory.bind({});
 Sharing.args = {
   ...mockData,
 };

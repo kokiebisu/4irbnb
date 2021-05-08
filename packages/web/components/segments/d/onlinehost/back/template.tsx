@@ -1,9 +1,9 @@
 import { Layout } from '@layout';
 import { Bullet } from '@bullet';
 
-export interface BackTemplateProps {}
+export interface BackSegmentTemplateProps {}
 
-export const BackTemplate: React.FC<BackTemplateProps> = () => {
+export const BackSegmentTemplate: React.FC<BackSegmentTemplateProps> = () => {
   return (
     <Layout
       variant="onlinehost"
