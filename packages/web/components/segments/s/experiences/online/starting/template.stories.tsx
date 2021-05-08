@@ -1,18 +1,21 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { StartingTemplate, StartingTemplateProps } from './template';
+import {
+  StartingSegmentTemplate,
+  StartingSegmentTemplateProps,
+} from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/S/Experiences/Online',
-  component: StartingTemplate,
+  component: StartingSegmentTemplate,
 } as Meta;
 
-const StartingTemplateStory: Story<StartingTemplateProps> = (args) => (
-  <StartingTemplate {...args} />
-);
+const StartingSegmentTemplateStory: Story<StartingSegmentTemplateProps> = (
+  args
+) => <StartingSegmentTemplate {...args} />;
 
-export const Starting = StartingTemplateStory.bind({});
-Starting.args = {
+export const StartingSegment = StartingSegmentTemplateStory.bind({});
+StartingSegment.args = {
   ...mockData,
 };

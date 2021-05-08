@@ -1,18 +1,13 @@
-import { Banner } from './banner';
-import { Cards } from './cards';
-import { Starting } from './starting';
-import { Collections } from './collections';
+import { factory } from './utils/factory';
 
-export const $Segment = {
-  BANNER: 'banner',
-  CARDS: 'cards',
-  STARTING: 'starting',
-  COLLECTIONS: 'collections',
-};
+export type OnlineExperienceSegmentVariants =
+  | 'banner'
+  | 'cards'
+  | 'starting'
+  | 'collections';
 
 export interface SegmentProps {
-  extendsTo?: string;
-  variant?: string;
+  variant: OnlineExperienceSegmentVariants;
   [property: string]: any;
 }
 
@@ -23,8 +18,7 @@ export interface SegmentProps {
  * @param {Object} children - A JSX that will be part of the component
  */
 export const Segment: React.FC<SegmentProps> = ({
-  extendsTo = '',
-  variant = 'banner',
+  variant,
   children,
   onClick,
   to,
@@ -32,12 +26,9 @@ export const Segment: React.FC<SegmentProps> = ({
   animate,
   ...props
 }) => {
-  const variants: { [key: string]: JSX.Element } = {
-    banner: <Banner {...props} />,
-    cards: <Cards {...props} />,
-    starting: <Starting {...props} />,
-    collections: <Collections {...props} />,
-  };
+  const variants = factory(props);
 
-  return <div data-testid={`${variant}-online`}>{variants[variant]}</div>;
+  return (
+    <div data-testid={`${variant}-online`}>{variants[variant].component}</div>
+  );
 };

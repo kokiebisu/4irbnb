@@ -1,16 +1,9 @@
-import { Multiple } from './multiple';
-import { Homes } from './homes';
-import { Also } from './also';
+import { factory } from './utils/factory';
 
-export const $Segment = {
-  MULTIPLE: 'multiple',
-  HOMES: 'homes',
-  ALSO: 'also',
-};
+export type HomesSegmentVariants = 'multiple' | 'homes' | 'also';
 
 export interface SegmentProps {
-  extendsTo?: string;
-  variant?: string;
+  variant: HomesSegmentVariants;
   [property: string]: any;
 }
 
@@ -21,8 +14,7 @@ export interface SegmentProps {
  * @param {Object} children - A JSX that will be part of the component
  */
 export const Segment: React.FC<SegmentProps> = ({
-  extendsTo = '',
-  variant = 'multiple',
+  variant,
   children,
   onClick,
   to,
@@ -30,11 +22,7 @@ export const Segment: React.FC<SegmentProps> = ({
   animate,
   ...props
 }) => {
-  const variants: { [key: string]: JSX.Element } = {
-    multiple: <Multiple {...props} />,
-    homes: <Homes {...props} />,
-    also: <Also {...props} />,
-  };
+  const variants = factory(props);
 
   return <div data-testid={`${variant}-help`}>{variants[variant]}</div>;
 };

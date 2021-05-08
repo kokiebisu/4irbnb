@@ -1,5 +1,13 @@
-import { BannerTemplate } from './template';
+import { BannerSegmentTemplate } from './template';
 
-export const Banner = () => {
-  return <BannerTemplate />;
+export const BannerSegment = (props) => {
+  return <BannerSegmentTemplate {...props} />;
+};
+
+export const banner = (props) => {
+  return {
+    banner: {
+      component: <BannerSegment {...props} />,
+    },
+  };
 };

@@ -1,7 +1,15 @@
-import { useCollections } from './logic';
-import { CollectionsTemplate } from './template';
+import { useCollectionsSegment } from './logic';
+import { CollectionsSegmentTemplate } from './template';
 
-export const Collections = () => {
-  const data = useCollections();
-  return <CollectionsTemplate {...data} />;
+export const CollectionsSegment = () => {
+  const data = useCollectionsSegment();
+  return <CollectionsSegmentTemplate {...data} />;
+};
+
+export const collections = (props) => {
+  return {
+    collections: {
+      component: <CollectionsSegment {...props} />,
+    },
+  };
 };

@@ -5,3 +5,11 @@ export const HomesSegment = () => {
   const data = useHomesSegment();
   return <HomesSegmentTemplate {...data} />;
 };
+
+export const homes = (props) => {
+  return {
+    homes: {
+      component: <HomesSegment {...props} />,
+    },
+  };
+};
