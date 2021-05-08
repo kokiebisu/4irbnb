@@ -1,13 +1,8 @@
-import { LanguagePrototype } from "@prototype/globe/prototype.language";
-import { CurrencyPrototype } from "@prototype/globe/prototype.currency";
+import { factory } from './util/factory';
 
-export const $Prototype = {
-  LANGUAGE: "language",
-  CURRENCY: "currency",
-};
-
+export type GlobePrototypeVariants = 'language' | 'currency';
 export interface PrototypeProps {
-  variant?: string;
+  variant: GlobePrototypeVariants;
   place?: string;
   stayType?: string | string[];
   characteristics?: string;
@@ -15,16 +10,13 @@ export interface PrototypeProps {
 }
 
 export const Prototype: React.FC<PrototypeProps> = ({
-  variant = $Prototype.LANGUAGE,
-  city = "Paris",
-  stayType = "house",
+  variant,
+  city = 'Paris',
+  stayType = 'house',
   characteristics,
   ...props
 }) => {
-  const variants: { [variant: string]: JSX.Element } = {
-    language: <LanguagePrototype {...props} />,
-    currency: <CurrencyPrototype {...props} />,
-  };
+  const variants = factory(props);
   return (
     <div data-testid={`${variant}-globe-template`}>{variants[variant]}</div>
   );

@@ -35,7 +35,9 @@ const Layout: React.FC<LanguageLayoutProps> = ({ items, type }) => {
   );
 };
 
-export const LanguagePrototype: React.FC<{}> = () => {
+export interface LanguagePrototypeTemplateProps {}
+
+export const LanguagePrototypeTemplate: React.FC<LanguagePrototypeTemplateProps> = () => {
   return (
     <div>
       <div className="mb-4">
