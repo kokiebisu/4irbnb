@@ -1,8 +1,8 @@
 import { Segment } from '@template/s/homes';
-import { Bar, $Bar } from '@bar';
+import { Bar } from '@bar';
 import { Button } from '@button';
 
-export interface NearbyPrototypeProps {
+export interface NearbyPrototypeTemplateProps {
   city?: string;
   filterCount?: number;
   guests?: number;
@@ -14,7 +14,7 @@ export interface NearbyPrototypeProps {
  * Renders the nearby template component
  * @param param0 Prop
  */
-export const NearbyPrototype: React.FC<NearbyPrototypeProps> = ({
+export const NearbyPrototypeTemplate: React.FC<NearbyPrototypeTemplateProps> = ({
   city,
   filterCount,
   guests,

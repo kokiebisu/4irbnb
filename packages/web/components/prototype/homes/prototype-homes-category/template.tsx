@@ -1,8 +1,8 @@
 import { Segment } from '@template/s/homes';
-import { Bar, $Bar } from '@bar';
+import { Bar } from '@bar';
 import { Button } from '@button';
 
-export interface CategoryPrototypeProps {
+export interface CategoryPrototypeTemplateProps {
   subtitle?: string;
   stayType?: 'tent' | 'barn' | 'tiny_house' | 'house';
   filterCount?: number;
@@ -15,7 +15,7 @@ export interface CategoryPrototypeProps {
  * @param {number} filterCount - Number of filters
  * @param {Object[]} filters - List of filters
  */
-export const CategoryPrototype: React.FC<CategoryPrototypeProps> = ({
+export const CategoryPrototypeTemplate: React.FC<CategoryPrototypeTemplateProps> = ({
   subtitle,
   stayType,
   filterCount,

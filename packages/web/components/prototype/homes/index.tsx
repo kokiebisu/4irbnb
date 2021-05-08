@@ -1,27 +1,20 @@
 import {
   CategoryPrototype,
   CategoryPrototypeProps,
-} from '@prototype/homes/prototype.category';
+} from './prototype-homes-category';
 import {
   NearbyPrototype,
   NearbyPrototypeProps,
-} from '@prototype/homes/prototype.nearby';
+} from './prototype-homes-nearby';
 
-export const $Prototype = {
-  CATEGORY: 'category',
-  NEARBY: 'nearby',
-};
-
+export type HomesPrototypeVariants = 'category' | 'nearby';
 export interface PrototypeProps
   extends CategoryPrototypeProps,
     NearbyPrototypeProps {
-  variant: string;
+  variant: HomesPrototypeVariants;
 }
 
-export const Prototype: React.FC<PrototypeProps> = ({
-  variant = $Prototype.NEARBY,
-  ...props
-}) => {
+export const Prototype: React.FC<PrototypeProps> = ({ variant, ...props }) => {
   const variants: { [variant: string]: JSX.Element } = {
     nearby: <NearbyPrototype {...props} />,
     category: <CategoryPrototype {...props} />,
