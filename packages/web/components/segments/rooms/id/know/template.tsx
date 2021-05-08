@@ -1,6 +1,6 @@
 import { Bullet } from '@bullet';
 
-export interface KnowTemplateProps {
+export interface KnowSegmentTemplateProps {
   houseRules?: string[];
   healths?: string[];
   layoutType?: string;
@@ -12,7 +12,7 @@ export interface KnowTemplateProps {
  * @param {string[]} healths - List of health guidelines
  * @param {string} layoutType - The type of layout
  */
-export const KnowTemplate: React.FC<KnowTemplateProps> = ({
+export const KnowSegmentTemplate: React.FC<KnowSegmentTemplateProps> = ({
   houseRules,
   healths,
   layoutType,

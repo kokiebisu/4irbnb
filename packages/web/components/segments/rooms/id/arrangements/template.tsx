@@ -1,6 +1,6 @@
 import { Card, $Card } from '@card';
 
-export interface ArrangementsTemplateProps {
+export interface ArrangementsSegmentTemplateProps {
   title?: string;
   arrangements?: { type: string; beds: { type: string; count: number }[] }[];
 }
@@ -10,7 +10,7 @@ export interface ArrangementsTemplateProps {
  * @param {string} title - Title of the section
  * @param {Object[]} arrangements - List of amenities
  */
-export const ArrangementsTemplate: React.FC<ArrangementsTemplateProps> = ({
+export const ArrangementsSegmentTemplate: React.FC<ArrangementsSegmentTemplateProps> = ({
   title,
   arrangements,
 }) => {

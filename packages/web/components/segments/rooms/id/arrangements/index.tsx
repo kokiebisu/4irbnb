@@ -1,7 +1,15 @@
-import { useArrangements } from './logic';
-import { ArrangementsTemplate } from './template';
+import { useArrangementsSegment } from './logic';
+import { ArrangementsSegmentTemplate } from './template';
 
-export const Arrangements = () => {
-  const data = useArrangements();
-  return <ArrangementsTemplate {...data} />;
+export const ArrangementsSegment = () => {
+  const data = useArrangementsSegment();
+  return <ArrangementsSegmentTemplate {...data} />;
+};
+
+export const arrangements = (props) => {
+  return {
+    arrangements: {
+      component: <ArrangementsSegment {...props} />,
+    },
+  };
 };

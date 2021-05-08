@@ -1,7 +1,15 @@
-import { DescriptionTemplate } from 'components/segments/experiences/id/description/template';
-import { useDescription } from './logic';
+import { DescriptionSegmentTemplate } from 'components/segments/experiences/id/DescriptionSegment/template';
+import { useDescriptionSegment } from './logic';
 
-export const Description = () => {
-  const data = useDescription();
-  return <DescriptionTemplate {...data} />;
+export const DescriptionSegment = () => {
+  const data = useDescriptionSegment();
+  return <DescriptionSegmentTemplate {...data} />;
+};
+
+export const description = (props) => {
+  return {
+    description: {
+      component: <DescriptionSegment {...props} />,
+    },
+  };
 };

@@ -1,18 +1,18 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { OtherTemplate, OtherTemplateProps } from './template';
+import { OtherSegmentTemplate, OtherSegmentTemplateProps } from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/Rooms/ID',
-  component: OtherTemplate,
+  component: OtherSegmentTemplate,
 } as Meta;
 
-const OtherTemplateStory: Story<OtherTemplateProps> = (args) => (
-  <OtherTemplate {...args} />
+const OtherSegmentTemplateStory: Story<OtherSegmentTemplateProps> = (args) => (
+  <OtherSegmentTemplate {...args} />
 );
 
-export const Other = OtherTemplateStory.bind({});
-Other.args = {
+export const OtherSegment = OtherSegmentTemplateStory.bind({});
+OtherSegment.args = {
   ...mockData,
 };

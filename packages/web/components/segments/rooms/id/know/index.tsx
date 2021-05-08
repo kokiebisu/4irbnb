@@ -1,7 +1,15 @@
-import { KnowTemplate } from './template';
-import { useKnow } from './logic';
+import { KnowSegmentTemplate } from './template';
+import { useKnowSegment } from './logic';
 
-export const Know = () => {
-  const data = useKnow();
-  return <KnowTemplate {...data} />;
+export const KnowSegment = () => {
+  const data = useKnowSegment();
+  return <KnowSegmentTemplate {...data} />;
 };
+
+export const know = (props) => {
+  return {
+    know: {
+      component: <KnowSegment {...props} />
+    }
+  }
+}
