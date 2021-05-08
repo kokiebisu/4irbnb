@@ -1,14 +1,16 @@
 import { Card, $Card } from '@card';
 import { Layout } from '@layout';
 
-export interface AllTemplateProps {
+export interface AllSegmentTemplateProps {
   items?: { name: string; imgUrl: string }[];
 }
 
 /**
  * Renders the All section
  */
-export const AllTemplate: React.FC<AllTemplateProps> = ({ items }) => {
+export const AllSegmentTemplate: React.FC<AllSegmentTemplateProps> = ({
+  items,
+}) => {
   return (
     <Layout variant="homes" title="From castles to condos, guests book it all">
       <div

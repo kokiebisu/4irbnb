@@ -1,5 +1,5 @@
 import * as mockData from './mock';
 
-export const useOnline = () => {
+export const useOnlineSegment = () => {
   return mockData;
 };

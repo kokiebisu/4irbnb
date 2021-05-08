@@ -1,7 +1,15 @@
-import { useHelp } from './logic';
-import { HelpTemplate } from './template';
+import { useHelpSegment } from './logic';
+import { HelpSegmentTemplate } from './template';
 
-export const Help = () => {
-  const data = useHelp();
-  return <HelpTemplate {...data} />;
+export const HelpSegment = () => {
+  const data = useHelpSegment();
+  return <HelpSegmentTemplate {...data} />;
+};
+
+export const help = (props) => {
+  return {
+    help: {
+      component: <HelpSegment {...props} />,
+    },
+  };
 };

@@ -1,13 +1,13 @@
 import { Layout } from '@layout';
 import { Bullet } from '@bullet';
 
-export interface PriorityTemplateProps {}
+export interface PrioritySegmentTemplateProps {}
 
 /**
  * Renders the priority section
  * @param {string[]} priorities - The priorities
  */
-export const PriorityTemplate: React.FC<PriorityTemplateProps> = () => {
+export const PrioritySegmentTemplate: React.FC<PrioritySegmentTemplateProps> = () => {
   return (
     <Layout variant="homes" title="Safety is our priority">
       <div className="mt-4">

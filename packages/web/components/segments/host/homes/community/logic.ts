@@ -1,5 +1,5 @@
 import * as mockData from './mock';
 
-export const useCommunity = () => {
+export const useCommunitySegment = () => {
   return mockData;
 };

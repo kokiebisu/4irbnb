@@ -1,9 +1,8 @@
-import index from '@styles/index.module.scss';
-import { Header, $Header } from '@header';
+import { Header } from '@header';
 import { Button } from '@button';
 import { ResponsiveImage } from '@helper/img';
 
-export interface BannerTemplateProps {
+export interface BannerSegmentTemplateProps {
   scrollPosition?: number;
   category?: string;
   data?: any;
@@ -14,7 +13,7 @@ export interface BannerTemplateProps {
 /**
  * Renders the banner section
  */
-export const BannerTemplate: React.FC<BannerTemplateProps> = ({
+export const BannerSegmentTemplate: React.FC<BannerSegmentTemplateProps> = ({
   scrollPosition,
   category,
   data,
@@ -37,7 +36,7 @@ export const BannerTemplate: React.FC<BannerTemplateProps> = ({
         >
           <div className="z-30">
             <Header
-              variant={$Header.LANDING}
+              variant="landing"
               category={category}
               setCategory={handleCategoryChange}
               data={data}

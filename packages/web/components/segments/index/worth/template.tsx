@@ -1,13 +1,13 @@
 import { Button } from '@button';
 
-export interface WorthTemplateProps {
+export interface WorthSegmentTemplateProps {
   handleRedirectToHostPage: () => void;
 }
 
 /**
  * @param {function} onRedirect - Triggered when user clicked 'Become a host' button
  */
-export const WorthTemplate: React.FC<WorthTemplateProps> = ({
+export const WorthSegmentTemplate: React.FC<WorthSegmentTemplateProps> = ({
   handleRedirectToHostPage,
 }) => {
   return (

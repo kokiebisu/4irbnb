@@ -1,11 +1,12 @@
 import Router from 'next/router';
 import { Button } from '@button';
-export interface ReadyTemplateProps {}
+
+export interface ReadySegmentTemplateProps {}
 
 /**
  * Renders the ready section
  */
-export const ReadyTemplate: React.FC<ReadyTemplateProps> = () => {
+export const ReadySegmentTemplate: React.FC<ReadySegmentTemplateProps> = () => {
   return (
     <div className="flex">
       <div className="w-1/2">

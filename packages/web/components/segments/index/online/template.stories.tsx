@@ -1,18 +1,18 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { OnlineTemplate, OnlineTemplateProps } from './template';
+import { OnlineSegmentTemplate, OnlineSegmentTemplateProps } from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/Index',
-  component: OnlineTemplate,
+  component: OnlineSegmentTemplate,
 } as Meta;
 
-const OnlineTemplateStory: Story<OnlineTemplateProps> = (args) => (
-  <OnlineTemplate {...args} />
-);
+const OnlineSegmentTemplateStory: Story<OnlineSegmentTemplateProps> = (
+  args
+) => <OnlineSegmentTemplate {...args} />;
 
-export const Online = OnlineTemplateStory.bind({});
-Online.args = {
+export const OnlineSegment = OnlineSegmentTemplateStory.bind({});
+OnlineSegment.args = {
   ...mockData,
 };

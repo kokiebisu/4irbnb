@@ -1,13 +1,13 @@
-import { Modal, $Modal } from '@modal';
-import { Header, $Header } from '@header';
+import { Modal } from '@modal';
+import { Header } from '@header';
 
-export interface BannerTemplateProps {}
+export interface BannerSegmentTemplateProps {}
 
-export const BannerTemplate: React.FC<BannerTemplateProps> = () => {
+export const BannerSegmentTemplate: React.FC<BannerSegmentTemplateProps> = () => {
   return (
     <div className="pb-8" style={{ backgroundColor: '#F2ECE2' }}>
       <div>
-        <Header variant={$Header.HOMES} />
+        <Header variant="homes" />
       </div>
       <div className="flex container-spread">
         <div className="flex items-center w-1/2">
@@ -25,7 +25,7 @@ export const BannerTemplate: React.FC<BannerTemplateProps> = () => {
           </div>
         </div>
         <div className="flex justify-center items-center w-1/2">
-          <Modal variant={$Modal.LISTING} />
+          <Modal variant="listing" />
         </div>
       </div>
     </div>

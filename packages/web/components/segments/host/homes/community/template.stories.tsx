@@ -1,18 +1,21 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { CommunityTemplate, CommunityTemplateProps } from './template';
+import {
+  CommunitySegmentTemplate,
+  CommunitySegmentTemplateProps,
+} from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/Host/Homes',
-  component: CommunityTemplate,
+  component: CommunitySegmentTemplate,
 } as Meta;
 
-const CommunityTemplateStory: Story<CommunityTemplateProps> = (args) => (
-  <CommunityTemplate {...args} />
-);
+const CommunitySegmentTemplateStory: Story<CommunitySegmentTemplateProps> = (
+  args
+) => <CommunitySegmentTemplate {...args} />;
 
-export const Community = CommunityTemplateStory.bind({});
-Community.args = {
+export const CommunitySegment = CommunitySegmentTemplateStory.bind({});
+CommunitySegment.args = {
   ...mockData,
 };

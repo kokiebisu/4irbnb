@@ -1,15 +1,15 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { ReadyTemplate, ReadyTemplateProps } from './template';
+import { ReadySegmentTemplate, ReadySegmentTemplateProps } from './template';
 
 export default {
   title: 'Templates/Host/Homes',
-  component: ReadyTemplate,
+  component: ReadySegmentTemplate,
 } as Meta;
 
-const ReadyTemplateStory: Story<ReadyTemplateProps> = (args) => (
-  <ReadyTemplate {...args} />
+const ReadySegmentTemplateStory: Story<ReadySegmentTemplateProps> = (args) => (
+  <ReadySegmentTemplate {...args} />
 );
 
-export const Ready = ReadyTemplateStory.bind({});
-Ready.args = {};
+export const ReadySegment = ReadySegmentTemplateStory.bind({});
+ReadySegment.args = {};

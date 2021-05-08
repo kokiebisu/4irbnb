@@ -1,24 +1,14 @@
-import { Priority } from './priority';
-import { Help } from './help';
-import { Ready } from './ready';
-import { Community } from './community';
-import { All } from './all';
-import { Banner } from './banner';
-import { Hosting } from './hosting';
-
-export const $Segment = {
-  ALL: 'all',
-  HELP: 'help',
-  BANNER: 'banner',
-  COMMUNITY: 'community',
-  HOSTING: 'hosting',
-  PRIORITY: 'priority',
-  READY: 'ready',
-};
+export type HomesSegmentVariants =
+  | 'all'
+  | 'help'
+  | 'banner'
+  | 'community'
+  | 'hosting'
+  | 'priority'
+  | 'ready';
 
 export interface SegmentProps {
-  extendsTo?: string;
-  variant?: string;
+  variant: HomesSegmentVariants;
   [property: string]: any;
 }
 
@@ -29,7 +19,6 @@ export interface SegmentProps {
  * @param {Object} children - A JSX that will be part of the component
  */
 export const Segment: React.FC<SegmentProps> = ({
-  extendsTo = '',
   variant = 'help',
   children,
   onClick,
@@ -38,15 +27,8 @@ export const Segment: React.FC<SegmentProps> = ({
   animate,
   ...props
 }) => {
-  const variants: { [variant: string]: any } = {
-    help: <Help {...props} />,
-    priority: <Priority {...props} />,
-    community: <Community {...props} />,
-    ready: <Ready {...props} />,
-    all: <All {...props} />,
-    banner: <Banner {...props} />,
-    hosting: <Hosting {...props} />,
-  };
-
-  return <div data-testid={`${variant}-landing`}>{variants[variant]}</div>;
+  const variants = factory(props);
+  return (
+    <div data-testid={`${variant}-landing`}>{variants[variant].component}</div>
+  );
 };

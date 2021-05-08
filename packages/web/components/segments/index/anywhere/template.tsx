@@ -2,7 +2,7 @@ import template from '@template/index/index.module.scss';
 
 import { Card, $Card } from '@card';
 
-export interface AnywhereTemplateProps {
+export interface AnywhereSegmentTemplateProps {
   items?: {
     imgUrl: string;
     title: string;
@@ -14,7 +14,7 @@ export interface AnywhereTemplateProps {
  *
  * @param {Object[]} items - List of categories to be displayed
  */
-export const AnywhereTemplate: React.FC<AnywhereTemplateProps> = ({
+export const AnywhereSegmentTemplate: React.FC<AnywhereSegmentTemplateProps> = ({
   items,
 }) => {
   return (
@@ -28,7 +28,7 @@ export const AnywhereTemplate: React.FC<AnywhereTemplateProps> = ({
             return (
               <div key={index}>
                 <Card
-                  variant={$Card.ANYWHERE}
+                  variant={$Card.AnywhereSegment}
                   imgUrl={item?.imgUrl}
                   title={item?.title}
                   to={item?.to}

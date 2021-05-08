@@ -1,7 +1,15 @@
-import { WorthTemplate } from './template';
-import { useWorth } from './logic';
+import { WorthSegmentTemplate } from './template';
+import { useWorthSegment } from './logic';
 
-export const Worth = () => {
-  const data = useWorth();
-  return <WorthTemplate {...data} />;
+export const WorthSegment = () => {
+  const data = useWorthSegment();
+  return <WorthSegmentTemplate {...data} />;
+};
+
+export const worth = (props) => {
+  return {
+    worth: {
+      component: <WorthSegment {...props} />,
+    },
+  };
 };

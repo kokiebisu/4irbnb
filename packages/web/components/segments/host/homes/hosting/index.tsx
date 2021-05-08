@@ -1,5 +1,13 @@
-import { HostingTemplate } from './template';
+import { HostingSegmentTemplate } from './template';
 
-export const Hosting = () => {
-  return <HostingTemplate />;
+export const HostingSegment = (props) => {
+  return <HostingSegmentTemplate {...props} />;
+};
+
+export const hosting = (props) => {
+  return {
+    hosting: {
+      component: <HostingSegment {...props} />,
+    },
+  };
 };
