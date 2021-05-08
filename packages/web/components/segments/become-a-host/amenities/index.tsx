@@ -1,5 +1,5 @@
 import { Layout } from '@layout';
-import { useAmenitiesBecomeAHost } from './logic';
+import { useAmenitiesSegment } from './logic';
 import { AmenitiesSegmentTemplate } from './template';
 
 export const AmenitiesSegment: React.FC<{}> = () => {
@@ -7,7 +7,7 @@ export const AmenitiesSegment: React.FC<{}> = () => {
     handleRedirectToNextPage,
     handleRedirectToPreviousPage,
     ...data
-  } = useAmenitiesBecomeAHost();
+  } = useAmenitiesSegment();
 
   return (
     <Layout

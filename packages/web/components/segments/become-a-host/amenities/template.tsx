@@ -1,4 +1,4 @@
-import { $Input, Input } from '@input';
+import { Input } from '@input';
 
 export interface AmenitiesSegmentTemplateProps {
   amenities?: any;
@@ -31,7 +31,7 @@ export const AmenitiesSegmentTemplate: React.FC<AmenitiesSegmentTemplateProps> =
               <Input
                 check={() => handleCheckboxChange('amenities', item)}
                 checked={selectedAmenities.includes(item)}
-                variant={$Input.CHECKBOX}
+                variant="checkbox"
                 title={title}
                 description={description}
                 fill="white"
@@ -50,7 +50,7 @@ export const AmenitiesSegmentTemplate: React.FC<AmenitiesSegmentTemplateProps> =
               <Input
                 check={() => handleCheckboxChange('safeties', item)}
                 checked={safeties.includes(item)}
-                variant={$Input.CHECKBOX}
+                variant="checkbox"
                 title={title}
                 description={description}
               />
