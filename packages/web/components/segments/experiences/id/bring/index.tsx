@@ -1,7 +1,15 @@
-import { useBring } from './logic';
-import { BringTemplate } from './template';
+import { useBringSegment } from './logic';
+import { BringSegmentTemplate } from './template';
 
-export const Bring = () => {
-  const data = useBring();
-  return <BringTemplate {...data} />;
+export const BringSegment = (props) => {
+  const data = useBringSegment();
+  return <BringSegmentTemplate {...data} {...props} />;
+};
+
+export const bring = (props) => {
+  return {
+    bring: {
+      component: <BringSegment {...props} />,
+    },
+  };
 };

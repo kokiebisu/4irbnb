@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export interface DescriptionTemplateProps {
+export interface DescriptionSegmentTemplateProps {
   mainDescription?: string;
   spaceDescription?: string;
   accessDescription?: string;
@@ -14,7 +14,7 @@ export interface DescriptionTemplateProps {
  * @param {string} accessDescription - The description under the access section
  * @param {string} layoutType
  */
-export const DescriptionTemplate: React.FC<DescriptionTemplateProps> = ({
+export const DescriptionSegmentTemplate: React.FC<DescriptionSegmentTemplateProps> = ({
   mainDescription,
   spaceDescription,
   accessDescription,

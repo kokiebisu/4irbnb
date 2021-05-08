@@ -1,13 +1,13 @@
 import { Bullet } from '@bullet';
 
-export interface ExperiencesTemplateProps {
+export interface ExperiencesSegmentTemplateProps {
   experiences?: string[];
 }
 
 /**
  * Renders the experiences section
  */
-export const ExperiencesTemplate: React.FC<ExperiencesTemplateProps> = ({
+export const ExperiencesSegmentTemplate: React.FC<ExperiencesSegmentTemplateProps> = ({
   experiences,
 }) => {
   return (

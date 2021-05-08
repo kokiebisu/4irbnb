@@ -6,6 +6,14 @@ import { Button } from '@button';
 import { Bullet } from '@bullet';
 import { Card, $Card } from '@card';
 
+export interface ReviewsSegmentTemplateProps {
+  ratings?: number;
+  categories?: any;
+  numberOfReviews?: number;
+  reviews?: any;
+  layoutType?: string;
+}
+
 /**
  * Renders the reviews section
  * @param {Object[]} categories - Aspects of the ratings
@@ -14,13 +22,13 @@ import { Card, $Card } from '@card';
  * @param {number} numberOfReviews - The total number of reviews
  * @param {string} layoutType - The type of layout
  */
-export const ReviewsTemplate: React.FC<{
-  ratings?: number;
-  categories?: any;
-  numberOfReviews?: number;
-  reviews?: any;
-  layoutType?: string;
-}> = ({ categories, reviews, ratings, numberOfReviews, layoutType }) => {
+export const ReviewsSegmentTemplate: React.FC<ReviewsSegmentTemplateProps> = ({
+  categories,
+  reviews,
+  ratings,
+  numberOfReviews,
+  layoutType,
+}) => {
   return (
     <>
       <div className="my-2">

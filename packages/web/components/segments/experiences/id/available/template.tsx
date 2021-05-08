@@ -3,7 +3,7 @@ import section from '@template/index.module.scss';
 import { Card, $Card } from '@card';
 import { Button } from '@button';
 
-export interface AvailableTemplateProps {
+export interface AvailableSegmentTemplateProps {
   availableSlots?: {
     date: string;
     from: string;
@@ -17,7 +17,7 @@ export interface AvailableTemplateProps {
  * Renders the available section
  * @param {Object[]} availables - List of available dates for the experience
  */
-export const AvailableTemplate: React.FC<AvailableTemplateProps> = ({
+export const AvailableSegmentTemplate: React.FC<AvailableSegmentTemplateProps> = ({
   availableSlots,
 }) => {
   const [state, setState] = useState({
@@ -83,7 +83,6 @@ export const AvailableTemplate: React.FC<AvailableTemplateProps> = ({
           <div className="mx-1">
             <Button
               variant="paginate"
-              animate
               direction="left"
               onClick={handlePreviousSlide}
               disable={state.activeSlide === 0}
@@ -92,7 +91,6 @@ export const AvailableTemplate: React.FC<AvailableTemplateProps> = ({
           <div className="mx-1">
             <Button
               variant="paginate"
-              animate
               direction="right"
               onClick={handleNextSlide}
               disable={
@@ -104,7 +102,7 @@ export const AvailableTemplate: React.FC<AvailableTemplateProps> = ({
         </div>
       </div>
       <div
-        classname="h-full"
+        className="h-full"
         style={{
           width: width * (availableSlots.length / displayingColumns),
           transform: `translateX(-${state.translate}px)`,

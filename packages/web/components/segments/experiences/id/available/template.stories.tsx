@@ -1,18 +1,21 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { AvailableTemplate, AvailableTemplateProps } from './template';
+import {
+  AvailableSegmentTemplate,
+  AvailableSegmentTemplateProps,
+} from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/D/OnlineHosts',
-  component: AvailableTemplate,
+  component: AvailableSegmentTemplate,
 } as Meta;
 
-const AvailableTemplateStory: Story<AvailableTemplateProps> = (args) => (
-  <AvailableTemplate {...args} />
-);
+const AvailableSegmentTemplateStory: Story<AvailableSegmentTemplateProps> = (
+  args
+) => <AvailableSegmentTemplate {...args} />;
 
-export const Available = AvailableTemplateStory.bind({});
-Available.args = {
+export const AvailableSegment = AvailableSegmentTemplateStory.bind({});
+AvailableSegment.args = {
   ...mockData,
 };

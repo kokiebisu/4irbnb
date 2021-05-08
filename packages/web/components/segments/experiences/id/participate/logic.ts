@@ -1,5 +1,5 @@
 import * as data from './mock';
 
-export const useParticipate = () => {
+export const useParticipateSegment = () => {
   return data;
 };

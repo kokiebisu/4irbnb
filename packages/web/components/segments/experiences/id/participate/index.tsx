@@ -1,7 +1,15 @@
-import { useParticipate } from './logic';
-import { ParticipateTemplate } from './template';
+import { useParticipateSegment } from './logic';
+import { ParticipateSegmentTemplate } from './template';
 
-export const Participate = () => {
-  const data = useParticipate();
-  return <ParticipateTemplate {...data} />;
+export const ParticipateSegment = () => {
+  const data = useParticipateSegment();
+  return <ParticipateSegmentTemplate {...data} />;
+};
+
+export const participate = (props) => {
+  return {
+    participate: {
+      component: <ParticipateSegment {...props} />,
+    },
+  };
 };

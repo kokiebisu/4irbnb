@@ -1,9 +1,7 @@
-import section from '@template/index.module.scss';
-
 import { Icon } from '@icons';
 import { Panel, $Panel } from '@panel';
 
-export interface PreviewTemplateProps {
+export interface PreviewSegmentTemplateProps {
   images?: string[];
 }
 
@@ -11,7 +9,9 @@ export interface PreviewTemplateProps {
  * Renders the panel section
  * @param {string[]} images - Images for the panel
  */
-export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({ images }) => {
+export const PreviewSegmentTemplate: React.FC<PreviewSegmentTemplateProps> = ({
+  images,
+}) => {
   return (
     <div>
       <div className="relative z-100 my-5 flex items-center justify-between">
