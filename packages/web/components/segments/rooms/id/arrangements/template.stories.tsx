@@ -1,18 +1,21 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { ArrangementsTemplate, ArrangementsTemplateProps } from './template';
+import {
+  ArrangementsSegmentTemplate,
+  ArrangementsSegmentTemplateProps,
+} from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/Rooms/ID',
-  component: ArrangementsTemplate,
+  component: ArrangementsSegmentTemplate,
 } as Meta;
 
-const ArrangementsTemplateStory: Story<ArrangementsTemplateProps> = (args) => (
-  <ArrangementsTemplate {...args} />
-);
+const ArrangementsSegmentTemplateStory: Story<ArrangementsSegmentTemplateProps> = (
+  args
+) => <ArrangementsSegmentTemplate {...args} />;
 
-export const Arrangements = ArrangementsTemplateStory.bind({});
-Arrangements.args = {
+export const ArrangementsSegment = ArrangementsSegmentTemplateStory.bind({});
+ArrangementsSegment.args = {
   ...mockData,
 };

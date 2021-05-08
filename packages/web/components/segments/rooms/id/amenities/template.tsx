@@ -2,7 +2,7 @@ import { Bullet } from '@bullet';
 import { Button } from '@button';
 import section from '@template/index.module.scss';
 
-export interface AmenitiesTemplateProps {
+export interface AmenitiesSegmentTemplateProps {
   title?: string;
   amenities?: string[];
 }
@@ -12,7 +12,7 @@ export interface AmenitiesTemplateProps {
  * @param {string} title - Title of the section
  * @param {Object[]} amenities - List of amenities
  */
-export const AmenitiesTemplate: React.FC<AmenitiesTemplateProps> = ({
+export const AmenitiesSegmentTemplate: React.FC<AmenitiesSegmentTemplateProps> = ({
   title,
   amenities,
 }) => {

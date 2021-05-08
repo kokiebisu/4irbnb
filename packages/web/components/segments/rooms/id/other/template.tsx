@@ -1,4 +1,4 @@
-export interface OtherTemplateProps {
+export interface OtherSegmentTemplateProps {
   location?: any;
   locations?: any;
 }
@@ -8,7 +8,7 @@ export interface OtherTemplateProps {
  * @param {string} location - Location of the page
  * @param {Object[]} locations - List of other locations
  */
-export const OtherTemplate: React.FC<OtherTemplateProps> = ({
+export const OtherSegmentTemplate: React.FC<OtherSegmentTemplateProps> = ({
   location = 'Location',
   locations = [
     { name: 'Anchorage', url: '/' },

@@ -1,7 +1,7 @@
 import { Icon } from '@icons';
 import { Panel, $Panel } from '@panel';
 
-export interface PreviewTemplateProps {
+export interface PreviewSegmentTemplateProps {
   title?: string;
   ratings?: number;
   numberOfReviews?: number;
@@ -25,7 +25,7 @@ export interface PreviewTemplateProps {
  * @param {string} layoutType - Type of layout
  * @param {string[]} images - Images for the panel
  */
-export const PreviewTemplate: React.FC<PreviewTemplateProps> = ({
+export const PreviewSegmentTemplate: React.FC<PreviewSegmentTemplateProps> = ({
   title = 'Title here',
   ratings = 5.0,
   numberOfReviews = 100,

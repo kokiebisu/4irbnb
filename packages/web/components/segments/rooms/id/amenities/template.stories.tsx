@@ -1,18 +1,21 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { AmenitiesTemplate, AmenitiesTemplateProps } from './template';
+import {
+  AmenitiesSegmentTemplate,
+  AmenitiesSegmentTemplateProps,
+} from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/Rooms/ID',
-  component: AmenitiesTemplate,
+  component: AmenitiesSegmentTemplate,
 } as Meta;
 
-const AmenitiesTemplateStory: Story<AmenitiesTemplateProps> = (args) => (
-  <AmenitiesTemplate {...args} />
-);
+const AmenitiesSegmentTemplateStory: Story<AmenitiesSegmentTemplateProps> = (
+  args
+) => <AmenitiesSegmentTemplate {...args} />;
 
-export const Amenities = AmenitiesTemplateStory.bind({});
-Amenities.args = {
+export const AmenitiesSegment = AmenitiesSegmentTemplateStory.bind({});
+AmenitiesSegment.args = {
   ...mockData,
 };

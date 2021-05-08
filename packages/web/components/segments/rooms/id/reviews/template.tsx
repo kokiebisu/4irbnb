@@ -5,7 +5,7 @@ import { Button } from '@button';
 import { Bullet } from '@bullet';
 import { Card, $Card } from '@card';
 
-export interface ReviewsTemplateProps {
+export interface ReviewsSegmentTemplateProps {
   ratings?: number;
   categories?: any;
   numberOfReviews?: number;
@@ -21,7 +21,7 @@ export interface ReviewsTemplateProps {
  * @param {number} numberOfReviews - The total number of reviews
  * @param {string} layoutType - The type of layout
  */
-export const ReviewsTemplate: React.FC<ReviewsTemplateProps> = ({
+export const ReviewsSegmentTemplate: React.FC<ReviewsSegmentTemplateProps> = ({
   categories,
   reviews,
   ratings,

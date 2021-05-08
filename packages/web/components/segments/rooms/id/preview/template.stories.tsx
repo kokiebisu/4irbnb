@@ -1,18 +1,21 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { PreviewTemplate, PreviewTemplateProps } from './template';
+import {
+  PreviewSegmentTemplate,
+  PreviewSegmentTemplateProps,
+} from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/Rooms/ID',
-  component: PreviewTemplate,
+  component: PreviewSegmentTemplate,
 } as Meta;
 
-const PreviewTemplateStory: Story<PreviewTemplateProps> = (args) => (
-  <PreviewTemplate {...args} />
-);
+const PreviewSegmentTemplateStory: Story<PreviewSegmentTemplateProps> = (
+  args
+) => <PreviewSegmentTemplate {...args} />;
 
-export const Preview = PreviewTemplateStory.bind({});
-Preview.args = {
+export const PreviewSegment = PreviewSegmentTemplateStory.bind({});
+PreviewSegment.args = {
   ...mockData,
 };

@@ -19,7 +19,7 @@ const renderContent = (content: string) => {
   return newArray;
 };
 
-export interface HostTemplateProps {
+export interface HostSegmentTemplateProps {
   host?: string;
   isSuperhost?: boolean;
   description?: string;
@@ -47,7 +47,7 @@ export interface HostTemplateProps {
  * @param {string} layoutType - Type of either room or experience
  * @param {boolean} verified - Whether is the user if verified or not
  */
-export const HostTemplate: React.FC<HostTemplateProps> = ({
+export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
   host,
   isSuperhost,
   description,
