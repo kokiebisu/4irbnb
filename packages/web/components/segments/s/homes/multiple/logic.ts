@@ -1,5 +1,5 @@
 import * as mockData from './mock';
 
-export const useMultiple = () => {
+export const useMultipleSegment = () => {
   return mockData;
 };

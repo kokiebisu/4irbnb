@@ -1,5 +1,5 @@
 import * as mockData from './mock';
 
-export const useAlso = () => {
+export const useAlsoSegment = () => {
   return mockData;
 };

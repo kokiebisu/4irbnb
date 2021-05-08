@@ -1,4 +1,4 @@
-import { $Input, Input } from '@input';
+import { Input } from '@input';
 import { Layout } from '@layout';
 
 export interface AdvanceSegmentTemplateProps {
@@ -21,7 +21,7 @@ export const AdvanceSegmentTemplate: React.FC<AdvanceSegmentTemplateProps> = ({
           <div className="mt-4">
             <div className="mb-3">
               <Input
-                variant={$Input.RADIO}
+                variant="radio"
                 title="Any time"
                 selected={advance === 0}
                 select={handleAdvanceAnyTimeChange}
@@ -31,7 +31,7 @@ export const AdvanceSegmentTemplate: React.FC<AdvanceSegmentTemplateProps> = ({
               ({ months }, index) => (
                 <div key={index} className="mb-3">
                   <Input
-                    variant={$Input.RADIO}
+                    variant="radio"
                     title={`${months === 12 ? 1 : months} ${
                       months === 12 ? 'year' : 'months in advance'
                     }`}
@@ -43,7 +43,7 @@ export const AdvanceSegmentTemplate: React.FC<AdvanceSegmentTemplateProps> = ({
             )}
             <div className="mb-3">
               <Input
-                variant={$Input.RADIO}
+                variant="radio"
                 title="Dates unavailable by default"
                 subtitle="Your entire calendar will be blocked by default, which means you’ll have to manually unblock dates to get booked."
                 selected={advance === 'unavailable'}
