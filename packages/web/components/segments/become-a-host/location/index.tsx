@@ -20,3 +20,11 @@ export const LocationSegment = () => {
     />
   );
 };
+
+export const location = (props) => {
+  return {
+    location: {
+      component: <LocationSegment {...props} />,
+    },
+  };
+};

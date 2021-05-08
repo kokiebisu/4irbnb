@@ -1,4 +1,4 @@
-import { Input, $Input } from '@input';
+import { Input } from '@input';
 
 export interface TitleSegmentTemplateProps {
   title?: string;
@@ -30,10 +30,10 @@ export const TitleSegmentTemplate: React.FC<TitleSegmentTemplateProps> = ({
       <div className="mb-6">
         <div className="mb-3">
           <Input
-            variant={$Input.LIMIT}
+            variant="limit"
             limit={50}
             value={title}
-            handleChange={(e) => handleChange(e, 'title')}
+            onChange={(e) => handleChange(e, 'title')}
           />
         </div>
       </div>

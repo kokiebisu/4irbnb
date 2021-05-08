@@ -1,4 +1,4 @@
-import { Input, $Input } from '@input';
+import { Input } from '@input';
 
 export interface PhotosSegmentTemplateProps {
   preview?: string[];
@@ -31,15 +31,12 @@ export const PhotosSegmentTemplate: React.FC<PhotosSegmentTemplateProps> = ({
               </div>
               <div className="mt-4 grid grid-cols-2 gap-x-3">
                 <div>
-                  <Input
-                    variant={$Input.ANOTHER}
-                    handleChange={handlePhotosChange}
-                  />
+                  <Input variant="another" onChange={handlePhotosChange} />
                 </div>
               </div>
             </div>
           ) : (
-            <Input variant={$Input.PHOTO} handleChange={handlePhotosChange} />
+            <Input variant="photo" onChange={handlePhotosChange} />
           )}
         </div>
       </div>

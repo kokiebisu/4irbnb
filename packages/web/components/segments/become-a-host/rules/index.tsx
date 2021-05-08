@@ -20,3 +20,11 @@ export const RulesSegment = () => {
     />
   );
 };
+
+export const rules = (props) => {
+  return {
+    rules: {
+      component: <RulesSegment {...props} />,
+    },
+  };
+};

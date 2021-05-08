@@ -1,4 +1,4 @@
-import { Input, $Input } from '@input';
+import { Input } from '@input';
 
 export interface PriceSegmentTemplateProps {
   basePrice?: number;
@@ -57,7 +57,7 @@ export const PriceSegmentTemplate: React.FC<PriceSegmentTemplateProps> = ({
           </div>
           <div>
             <Input
-              variant={$Input.PRICE}
+              variant="price"
               title="Base price"
               subtitle="This will be your default price gor days when you decide to turn off Smart Pricing."
               tip={17}
@@ -75,7 +75,7 @@ export const PriceSegmentTemplate: React.FC<PriceSegmentTemplateProps> = ({
             <h3 className="text-sm">Currency</h3>
           </div>
           <div>
-            <Input variant={$Input.SELECT} inputType="currency" />
+            <Input variant="select" inputType="currency" />
           </div>
         </div>
       </div>

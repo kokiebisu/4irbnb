@@ -1,4 +1,4 @@
-import { Input, $Input } from '@input';
+import { Input } from '@input';
 
 export interface PeriodSegmentTemplateProps {
   handleCounterSubtract?: (property: string) => void;
@@ -28,25 +28,25 @@ export const PeriodSegmentTemplate: React.FC<PeriodSegmentTemplateProps> = ({
         <div style={{ width: 300 }} className="mt-4">
           <div className="mb-4">
             <Input
-              variant={$Input.COUNTER}
+              variant="counter"
               title="nights min"
               min={1}
               max={100}
               value={min}
-              subtract={() => handleCounterSubtract('min')}
-              add={() => handleCounterAdd('max')}
+              onSubtract={() => handleCounterSubtract('min')}
+              onAdd={() => handleCounterAdd('max')}
               type="create"
             />
           </div>
           <div className="mb-3">
             <Input
-              variant={$Input.COUNTER}
+              variant="counter"
               title="nights max"
               min={1}
               max={100}
               value={max}
-              subtract={() => handleCounterSubtract('max')}
-              add={() => handleCounterAdd('max')}
+              onSubtract={() => handleCounterSubtract('max')}
+              onAdd={() => handleCounterAdd('max')}
               type="create"
             />
           </div>

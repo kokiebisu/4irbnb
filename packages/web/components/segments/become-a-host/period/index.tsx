@@ -21,3 +21,11 @@ export const PeriodSegment = () => {
     />
   );
 };
+
+export const period = (props) => {
+  return {
+    period: {
+      component: <PeriodSegment {...props} />,
+    },
+  };
+};

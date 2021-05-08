@@ -1,4 +1,4 @@
-import { Input, $Input } from '@input';
+import { Input } from '@input';
 
 export interface RulesSegmentTemplateProps {
   rules?: { title: string; item: string }[];
@@ -37,22 +37,20 @@ export const RulesSegmentTemplate: React.FC<RulesSegmentTemplateProps> = ({
       <div className="mb-4">
         <div className="my-3">
           <Input
-            variant={$Input.CLOSED}
+            variant="closed"
             title="Smoking allowed"
-            property="smoking"
             flag={isSmokingAllowed}
-            onClickSwitchToFalse={() => handleSwitch(false, 'smoking')}
-            onClickSwitchToTrue={() => handleSwitch(true, 'smoking')}
+            onSwitchToFalse={() => handleSwitch(false, 'smoking')}
+            onSwitchToTrue={() => handleSwitch(true, 'smoking')}
           />
         </div>
         <div className="my-3">
           <Input
-            variant={$Input.CLOSED}
+            variant="closed"
             title="Events allowed"
-            property="event"
             flag={isEventAllowed}
-            onClickSwitchToFalse={() => handleSwitch(false, 'event')}
-            onClickSwitchToTrue={() => handleSwitch(true, 'event')}
+            onSwitchToFalse={() => handleSwitch(false, 'event')}
+            onSwitchToTrue={() => handleSwitch(true, 'event')}
           />
         </div>
       </div>
@@ -64,9 +62,9 @@ export const RulesSegmentTemplate: React.FC<RulesSegmentTemplateProps> = ({
           return (
             <div key={index} className="mb-4">
               <Input
-                check={() => handleChange('details', item)}
-                checked={selectedRules.includes(item)}
-                variant={$Input.CHECKBOX}
+                onChange={() => handleChange('details', item)}
+                value={selectedRules.includes(item)}
+                variant="checkbox"
                 title={title}
               />
             </div>

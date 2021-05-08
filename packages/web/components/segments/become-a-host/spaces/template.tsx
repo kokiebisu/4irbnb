@@ -1,4 +1,4 @@
-import { Input, $Input } from '@input';
+import { Input } from '@input';
 
 export interface SpacesSegmentTemplateProps {
   spaces?: { title: string; item: string }[];
@@ -30,9 +30,9 @@ export const SpacesSegmentTemplate: React.FC<SpacesSegmentTemplateProps> = ({
           return (
             <div key={index} className="mb-4">
               <Input
-                check={() => handleChange('spaces', item)}
-                checked={selectedSpaces.includes(item)}
-                variant={$Input.CHECKBOX}
+                onChange={() => handleChange('spaces', item)}
+                value={selectedSpaces.includes(item)}
+                variant="checkbox"
                 title={title}
               />
             </div>
