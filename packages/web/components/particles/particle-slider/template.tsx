@@ -137,7 +137,7 @@ export const ImageSlider = ({ slides = new Array(3) }) => {
 
       <div
         style={{ ...style, transition: 'opacity 0.2s ease-out' }}
-        className={[particle['dots']].join(' ')}
+        className="dots"
       >
         <Dots slides={slides} activeSlide={state.activeSlide} />
       </div>
