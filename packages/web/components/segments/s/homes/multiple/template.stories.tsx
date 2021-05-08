@@ -1,18 +1,21 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { MultipleTemplate, MultipleTemplateProps } from './template';
+import {
+  MultipleSegmentTemplate,
+  MultipleSegmentTemplateProps,
+} from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/S/Homes',
-  component: MultipleTemplate,
+  component: MultipleSegmentTemplate,
 } as Meta;
 
-const MultipleTemplateStory: Story<MultipleTemplateProps> = (args) => (
-  <MultipleTemplate {...args} />
-);
+const MultipleSegmentTemplateStory: Story<MultipleSegmentTemplateProps> = (
+  args
+) => <MultipleSegmentTemplate {...args} />;
 
-export const Multiple = MultipleTemplateStory.bind({});
-Multiple.args = {
+export const MultipleSegment = MultipleSegmentTemplateStory.bind({});
+MultipleSegment.args = {
   ...mockData,
 };

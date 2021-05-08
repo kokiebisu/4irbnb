@@ -1,7 +1,7 @@
-import { useHomes } from './logic';
-import { HomesTemplate } from './template';
+import { useHomesSegment } from './logic';
+import { HomesSegmentTemplate } from './template';
 
-export const Homes = () => {
-  const data = useHomes();
-  return <HomesTemplate {...data}/>;
+export const HomesSegment = () => {
+  const data = useHomesSegment();
+  return <HomesSegmentTemplate {...data} />;
 };

@@ -7,7 +7,7 @@ import { Card, $Card } from '@card';
 import { Button } from '@button';
 import { useRouter } from 'next/router';
 
-export interface MultipleTemplateProps {
+export interface MultipleSegmentTemplateProps {
   title?: string;
   description?: string;
   pagination?: boolean;
@@ -31,7 +31,7 @@ export interface MultipleTemplateProps {
  * @param {boolean} isDescription - Whether if the section includes a subtitle
  * @param {Object[]} items - Displaying items
  */
-export const MultipleTemplate: React.FC<MultipleTemplateProps> = ({
+export const MultipleSegmentTemplate: React.FC<MultipleSegmentTemplateProps> = ({
   title,
   description,
   pagination,
@@ -228,7 +228,7 @@ export const MultipleTemplate: React.FC<MultipleTemplateProps> = ({
     );
   };
 
-  const MultipleRows = ({ data, save }) => {
+  const MultipleSegmentRows = ({ data, save }) => {
     const router = useRouter();
     const displayingData = data.slice(0, 8);
     const evaluateNumber = (index) => {
@@ -244,7 +244,7 @@ export const MultipleTemplate: React.FC<MultipleTemplateProps> = ({
     };
     return (
       <div className="py-4">
-        <div className={`grid ${[styles['multiplerows']].join(' ')}`}>
+        <div className={`grid ${[styles['MultipleSegmentrows']].join(' ')}`}>
           {displayingData.length &&
             displayingData.map((item, index) => {
               return (
@@ -268,7 +268,7 @@ export const MultipleTemplate: React.FC<MultipleTemplateProps> = ({
       case 'stayTypes':
         return <TypeStayCarousel data={items} />;
       default:
-        return <MultipleRows data={items} save={save} />;
+        return <MultipleSegmentRows data={items} save={save} />;
     }
   };
 

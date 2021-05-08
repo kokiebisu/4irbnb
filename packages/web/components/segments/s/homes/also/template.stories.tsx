@@ -1,15 +1,15 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { AlsoTemplate, AlsoTemplateProps } from './template';
+import { AlsoSegmentTemplate, AlsoSegmentTemplateProps } from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/S/Homes',
-  component: AlsoTemplate,
+  component: AlsoSegmentTemplate,
 } as Meta;
 
-const AlsoTemplateStory: Story<AlsoTemplateProps> = (args) => (
-  <AlsoTemplate {...args} />
+const AlsoTemplateStory: Story<AlsoSegmentTemplateProps> = (args) => (
+  <AlsoSegmentTemplate {...args} />
 );
 
 export const Also = AlsoTemplateStory.bind({});

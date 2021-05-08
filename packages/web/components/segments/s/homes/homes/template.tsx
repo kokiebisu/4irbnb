@@ -1,6 +1,6 @@
 import { Card, $Card } from '@card';
 
-export interface HomesTemplateProps {
+export interface HomesSegmentTemplateProps {
   filterCount?: number;
   place?: string;
   guests?: number;
@@ -25,12 +25,12 @@ export interface HomesTemplateProps {
 }
 
 /**
- * Renders the homes section
+ * Renders the HomesSegment section
  * @param {string} layout - Layout of how to list the items
  * @param {string} title - Title of the section
  * @param {Object[]} stays - List of objects containing the stays
  */
-export const HomesTemplate: React.FC<HomesTemplateProps> = ({
+export const HomesSegmentTemplate: React.FC<HomesSegmentTemplateProps> = ({
   layout,
   title,
   stays,

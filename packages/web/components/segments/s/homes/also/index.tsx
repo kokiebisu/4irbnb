@@ -1,7 +1,7 @@
-import { useAlso } from './logic';
-import { AlsoTemplate } from './template';
+import { useAlsoSegment } from './logic';
+import { AlsoSegmentTemplate } from './template';
 
-export const Also = () => {
-  const data = useAlso();
-  return <AlsoTemplate {...data} />;
+export const AlsoSegment = () => {
+  const data = useAlsoSegment();
+  return <AlsoSegmentTemplate {...data} />;
 };

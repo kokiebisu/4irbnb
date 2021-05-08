@@ -4,7 +4,7 @@ import { Button } from '@button';
 import { useSlider } from '@hooks/useSlider';
 import { useHandleContainerResize } from '@hooks/useHandleContainerResize';
 
-export interface AlsoTemplateProps {
+export interface AlsoSegmentTemplateProps {
   items?: any;
   title?: string;
 }
@@ -13,7 +13,10 @@ export interface AlsoTemplateProps {
  * Renders the also section
  * @param {string[]} items - List of suggested cities
  */
-export const AlsoTemplate: React.FC<AlsoTemplateProps> = ({ items, title }) => {
+export const AlsoSegmentTemplate: React.FC<AlsoSegmentTemplateProps> = ({
+  items,
+  title,
+}) => {
   const containerRef = useRef<HTMLDivElement>();
   const width: number = useHandleContainerResize(containerRef)[0];
   const { state, previous, next } = useSlider(items, width, 'also');
