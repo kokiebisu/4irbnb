@@ -2,7 +2,7 @@ import template from '@template/index/index.module.scss';
 
 import { Card, $Card } from '@card';
 
-export interface CategoryTemplateProps {
+export interface CategorySegmentTemplateProps {
   items?: { imgUrl: string; title: string; to: string }[];
 }
 
@@ -10,7 +10,7 @@ export interface CategoryTemplateProps {
  *
  * @param {Object[]} items - List of categories to be displayed
  */
-export const CategoryTemplate: React.FC<CategoryTemplateProps> = ({
+export const CategorySegmentTemplate: React.FC<CategorySegmentTemplateProps> = ({
   items,
 }) => {
   return (

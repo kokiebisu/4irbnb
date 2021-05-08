@@ -2,7 +2,7 @@ import { useHandleScroll } from '@hooks/useHandleScroll';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
-export const useBanner = () => {
+export const useBannerSegment = () => {
   const router = useRouter();
   const scrollPosition = useHandleScroll();
 

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import template from '../index.module.scss';
 import { Button } from '@button';
 
-export interface DestinationsTemplateProps {
+export interface DestinationsSegmentTemplateProps {
   items?: { [destinationType: string]: { city: string; location: string }[] };
   categories?: { name: string; value: string }[];
   destinationType?: 'artsCulture' | 'outdoor' | 'cabins' | 'beach' | 'popular';
@@ -10,7 +10,7 @@ export interface DestinationsTemplateProps {
   handleDestinationRedirect?: (city: string) => void;
 }
 
-export const DestinationsTemplate: React.FC<DestinationsTemplateProps> = ({
+export const DestinationsSegmentTemplate: React.FC<DestinationsSegmentTemplateProps> = ({
   items,
   categories,
   handleDestinationTypeChange,

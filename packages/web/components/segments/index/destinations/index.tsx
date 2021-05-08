@@ -1,7 +1,15 @@
-import { useDestinations } from './logic';
-import { DestinationsTemplate } from './template';
+import { useDestinationsSegment } from './logic';
+import { DestinationsSegmentTemplate } from './template';
 
-export const Destinations = () => {
-  const data = useDestinations();
-  return <DestinationsTemplate {...data} />;
+export const DestinationsSegment = () => {
+  const data = useDestinationsSegment();
+  return <DestinationsSegmentTemplate {...data} />;
+};
+
+export const destinations = (props) => {
+  return {
+    destinations: {
+      component: <DestinationsSegment {...props} />,
+    },
+  };
 };

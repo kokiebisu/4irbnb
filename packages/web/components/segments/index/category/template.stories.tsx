@@ -1,18 +1,21 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { CategoryTemplate, CategoryTemplateProps } from './template';
+import {
+  CategorySegmentTemplate,
+  CategorySegmentTemplateProps,
+} from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/Index',
-  component: CategoryTemplate,
+  component: CategorySegmentTemplate,
 } as Meta;
 
-const CategoryTemplateStory: Story<CategoryTemplateProps> = (args) => (
-  <CategoryTemplate {...args} />
-);
+const CategorySegmentTemplateStory: Story<CategorySegmentTemplateProps> = (
+  args
+) => <CategorySegmentTemplate {...args} />;
 
-export const Category = CategoryTemplateStory.bind({});
-Category.args = {
+export const CategorySegment = CategorySegmentTemplateStory.bind({});
+CategorySegment.args = {
   ...mockData,
 };

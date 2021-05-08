@@ -1,21 +1,18 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import {
-  HelpTemplate,
-  HelpTemplateProps,
-} from 'components/segments/host/homes/help/template';
+import { HelpSegmentTemplate, HelpSegmentTemplateProps } from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/Host/Homes',
-  component: HelpTemplate,
+  component: HelpSegmentTemplate,
 } as Meta;
 
-const HelpTemplateStory: Story<HelpTemplateProps> = (args) => (
-  <HelpTemplate {...args} />
+const HelpSegmentTemplateStory: Story<HelpSegmentTemplateProps> = (args) => (
+  <HelpSegmentTemplate {...args} />
 );
 
-export const Help = HelpTemplateStory.bind({});
-Help.args = {
+export const HelpSegment = HelpSegmentTemplateStory.bind({});
+HelpSegment.args = {
   ...mockData,
 };

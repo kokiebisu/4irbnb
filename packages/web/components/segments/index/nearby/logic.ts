@@ -1,5 +1,5 @@
 import * as mockData from './mock';
 
-export const useNearby = () => {
+export const useNearbySegment = () => {
   return mockData;
 };

@@ -1,15 +1,18 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { PriorityTemplate, PriorityTemplateProps } from './template';
+import {
+  PrioritySegmentTemplate,
+  PrioritySegmentTemplateProps,
+} from './template';
 
 export default {
   title: 'Templates/Host/Homes',
-  component: PriorityTemplate,
+  component: PrioritySegmentTemplate,
 } as Meta;
 
-const PriorityTemplateStory: Story<PriorityTemplateProps> = (args) => (
-  <PriorityTemplate {...args} />
-);
+const PrioritySegmentTemplateStory: Story<PrioritySegmentTemplateProps> = (
+  args
+) => <PrioritySegmentTemplate {...args} />;
 
-export const Priority = PriorityTemplateStory.bind({});
-Priority.args = {};
+export const PrioritySegment = PrioritySegmentTemplateStory.bind({});
+PrioritySegment.args = {};

@@ -1,18 +1,18 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { BannerTemplate, BannerTemplateProps } from './template';
+import { BannerSegmentTemplate, BannerSegmentTemplateProps } from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/Index',
-  component: BannerTemplate,
+  component: BannerSegmentTemplate,
 } as Meta;
 
-const BannerTemplateStory: Story<BannerTemplateProps> = (args) => (
-  <BannerTemplate {...args} />
-);
+const BannerSegmentTemplateStory: Story<BannerSegmentTemplateProps> = (
+  args
+) => <BannerSegmentTemplate {...args} />;
 
-export const Banner = BannerTemplateStory.bind({});
-Banner.args = {
+export const BannerSegment = BannerSegmentTemplateStory.bind({});
+BannerSegment.args = {
   ...mockData,
 };

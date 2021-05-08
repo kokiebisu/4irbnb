@@ -1,5 +1,5 @@
 import * as mockData from './mock';
 
-export const useAnywhere = () => {
+export const useAnywhereSegment = () => {
   return mockData;
 };

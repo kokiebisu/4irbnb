@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { categories, items } from './mock';
 
-export const useDestinations = () => {
+export const useDestinationsSegment = () => {
   const router = useRouter();
   const [destinationType, setDestinationType] = useState<
     'artsCulture' | 'outdoor' | 'cabins' | 'beach' | 'popular'

@@ -9,7 +9,7 @@ import { Card, $Card } from '@card';
 
 import { useSlider, SliderProps } from '@hooks/useSlider';
 
-export interface CommunityTemplateProps {
+export interface CommunitySegmentTemplateProps {
   title?: string;
   description?: string;
   hosts?: {
@@ -24,7 +24,7 @@ export interface CommunityTemplateProps {
  * Renders the homes banner
  * @param {Object[]} hosts - List of hosts
  */
-export const CommunityTemplate: React.FC<CommunityTemplateProps> = ({
+export const CommunitySegmentTemplate: React.FC<CommunitySegmentTemplateProps> = ({
   title,
   description,
   hosts,

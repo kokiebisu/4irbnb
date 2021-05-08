@@ -1,5 +1,13 @@
-import { ReadyTemplate } from './template';
+import { ReadySegmentTemplate } from './template';
 
-export const Ready = () => {
-  return <ReadyTemplate />;
+export const Ready = (props) => {
+  return <ReadySegmentTemplate />;
+};
+
+export const ready = (props) => {
+  return {
+    ready: {
+      component: <ReadySegmentTemplate {...props} />,
+    },
+  };
 };

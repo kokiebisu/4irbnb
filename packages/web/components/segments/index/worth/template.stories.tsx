@@ -1,18 +1,18 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { WorthTemplate, WorthTemplateProps } from './template';
+import { WorthSegmentTemplate, WorthSegmentTemplateProps } from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/Index',
-  component: WorthTemplate,
+  component: WorthSegmentTemplate,
 } as Meta;
 
-const WorthTemplateStory: Story<WorthTemplateProps> = (args) => (
-  <WorthTemplate {...args} />
+const WorthSegmentTemplateStory: Story<WorthSegmentTemplateProps> = (args) => (
+  <WorthSegmentTemplate {...args} />
 );
 
-export const Worth = WorthTemplateStory.bind({});
-Worth.args = {
+export const WorthSegment = WorthSegmentTemplateStory.bind({});
+WorthSegment.args = {
   ...mockData,
 };

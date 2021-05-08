@@ -1,7 +1,15 @@
-import { useAnywhere } from './logic';
-import { AnywhereTemplate } from './template';
+import { useAnywhereSegment } from './logic';
+import { AnywhereSegmentTemplate } from './template';
 
-export const Anywhere = () => {
-  const data = useAnywhere();
-  return <AnywhereTemplate {...data} />;
+export const AnywhereSegment = (props) => {
+  const data = useAnywhereSegment();
+  return <AnywhereSegmentTemplate {...data} />;
+};
+
+export const anywhere = (props) => {
+  return {
+    anywhere: {
+      component: <AnywhereSegment {...props} />,
+    },
+  };
 };

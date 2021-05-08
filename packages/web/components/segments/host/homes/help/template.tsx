@@ -1,13 +1,15 @@
 import { Bullet } from '@bullet';
 
-export interface HelpTemplateProps {
+export interface HelpSegmentTemplateProps {
   helps: string[];
 }
 
 /**
  * Renders the help section
  */
-export const HelpTemplate: React.FC<HelpTemplateProps> = ({ helps }) => {
+export const HelpSegmentTemplate: React.FC<HelpSegmentTemplateProps> = ({
+  helps,
+}) => {
   return (
     <div className="sm:flex">
       <div className="w-full sm:w-1/2 mb-6">
@@ -15,13 +17,15 @@ export const HelpTemplate: React.FC<HelpTemplateProps> = ({ helps }) => {
       </div>
       <div className="w-full sm:w-1/2">
         <div>
-          {helps.map((help, index) => {
-            return (
-              <div key={index} className="mb-5">
-                <Bullet variant="help" help={help} />
-              </div>
-            );
-          })}
+          {helps.map(
+            (help: 'support' | 'tools' | 'insights' | 'education', index) => {
+              return (
+                <div key={index} className="mb-5">
+                  <Bullet variant="help" helpType={help} />
+                </div>
+              );
+            }
+          )}
         </div>
       </div>
     </div>

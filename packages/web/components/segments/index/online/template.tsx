@@ -2,7 +2,7 @@ import { Card, $Card } from '@card';
 import { Button } from '@button';
 import section from '@template/index.module.scss';
 
-export interface OnlineTemplateProps {
+export interface OnlineSegmentTemplateProps {
   items?: { small: string; large: string; title: string; to: string }[];
   dark?: boolean;
 }
@@ -12,7 +12,7 @@ export interface OnlineTemplateProps {
  * @param {Object[]} items - List of online experiences for the landing page
  * @param {boolean} dark - Whether if the section is dark mode or not
  */
-export const OnlineTemplate: React.FC<OnlineTemplateProps> = ({
+export const OnlineSegmentTemplate: React.FC<OnlineSegmentTemplateProps> = ({
   items,
   dark,
 }) => {

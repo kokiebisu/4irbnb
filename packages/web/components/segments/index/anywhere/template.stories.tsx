@@ -1,18 +1,18 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import {
-  AnywhereTemplate,
-  AnywhereTemplateProps,
-} from 'components/segments/index/anywhere/template';
+  AnywhereSegmentTemplate,
+  AnywhereSegmentTemplateProps,
+} from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/Index',
-  component: AnywhereTemplate,
+  component: AnywhereSegmentTemplate,
 } as Meta;
 
-const AnywhereTemplateStory: Story<AnywhereTemplateProps> = (args) => (
-  <AnywhereTemplate {...args} />
+const AnywhereTemplateStory: Story<AnywhereSegmentTemplateProps> = (args) => (
+  <AnywhereSegmentTemplate {...args} />
 );
 
 export const Anywhere = AnywhereTemplateStory.bind({});

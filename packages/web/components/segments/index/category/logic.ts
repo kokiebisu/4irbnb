@@ -1,5 +1,5 @@
 import * as mockData from './mock';
 
-export const useCategory = () => {
+export const useCategorySegment = () => {
   return mockData;
 };

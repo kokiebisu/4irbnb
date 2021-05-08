@@ -1,15 +1,18 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { HostingTemplate, HostingTemplateProps } from './template';
+import {
+  HostingSegmentTemplate,
+  HostingSegmentTemplateProps,
+} from './template';
 
 export default {
   title: 'Templates/Host/Homes',
-  component: HostingTemplate,
+  component: HostingSegmentTemplate,
 } as Meta;
 
-const HostingTemplateStory: Story<HostingTemplateProps> = (args) => (
-  <HostingTemplate {...args} />
-);
+const HostingSegmentTemplateStory: Story<HostingSegmentTemplateProps> = (
+  args
+) => <HostingSegmentTemplate {...args} />;
 
-export const Hosting = HostingTemplateStory.bind({});
-Hosting.args = {};
+export const HostingSegment = HostingSegmentTemplateStory.bind({});
+HostingSegment.args = {};

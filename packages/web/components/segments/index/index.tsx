@@ -1,23 +1,16 @@
-import { Category } from './category';
-import { Nearby } from './nearby';
-import { Banner } from './banner';
-import { Online } from './online';
-import { Anywhere } from './anywhere';
-import { Destinations } from './destinations';
-import { Worth } from './worth';
+import { factory } from './utils/factory';
 
-export const $Segment = {
-  CATEGORY: 'category',
-  NEARBY: 'nearby',
-  BANNER: 'banner',
-  ONLINE: 'online',
-  ANYWHERE: 'anywhere',
-  DESTINATIONS: 'destinations',
-  WORTH: 'worth',
-};
+export type IndexSegmentVariants =
+  | 'category'
+  | 'nearby'
+  | 'banner'
+  | 'online'
+  | 'anywhere'
+  | 'destinations'
+  | 'worth';
 
 export interface SegmentProps {
-  variant: string;
+  variant: IndexSegmentVariants;
 }
 
 /**
@@ -26,16 +19,9 @@ export interface SegmentProps {
  * @param {string} type - Specifies the type of button component
  * @param {Object} children - A JSX that will be part of the component
  */
-export const Segment: React.FC<SegmentProps> = ({ variant }) => {
-  const variants: { [key: string]: JSX.Element } = {
-    category: <Category />,
-    nearby: <Nearby />,
-    banner: <Banner />,
-    online: <Online />,
-    anywhere: <Anywhere />,
-    destinations: <Destinations />,
-    worth: <Worth />,
-  };
-
-  return <div data-testid={`${variant}-landing`}>{variants[variant]}</div>;
+export const Segment: React.FC<SegmentProps> = ({ variant, ...props }) => {
+  const variants = factory(props);
+  return (
+    <div data-testid={`${variant}-landing`}>{variants[variant].component}</div>
+  );
 };

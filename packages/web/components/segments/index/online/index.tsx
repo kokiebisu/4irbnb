@@ -1,7 +1,15 @@
-import { useOnline } from './logic';
-import { OnlineTemplate } from './template';
+import { useOnlineSegment } from './logic';
+import { OnlineSegmentTemplate } from './template';
 
-export const Online = () => {
-  const data = useOnline();
-  return <OnlineTemplate {...data} />;
+export const OnlineSegment = () => {
+  const data = useOnlineSegment();
+  return <OnlineSegmentTemplate {...data} />;
+};
+
+export const online = (props) => {
+  return {
+    online: {
+      component: <OnlineSegment {...props} />,
+    },
+  };
 };

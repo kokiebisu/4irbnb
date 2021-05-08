@@ -1,13 +1,13 @@
 import { Layout } from '@layout';
 import { Card, $Card } from '@card';
 
-export interface HostingTemplateProps {}
+export interface HostingSegmentTemplateProps {}
 
 /**
  * Renders the priority section
  * @param {string[]} priorities - The priorities
  */
-export const HostingTemplate: React.FC<HostingTemplateProps> = () => {
+export const HostingSegmentTemplate: React.FC<HostingSegmentTemplateProps> = () => {
   return (
     <Layout variant="homes" title="How hosting works">
       <div className="mt-3">

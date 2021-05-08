@@ -1,5 +1,5 @@
 import * as mockData from './mock';
 
-export const useHelp = () => {
+export const useHelpSegment = () => {
   return mockData;
 };
