@@ -1,8 +1,8 @@
 import { ResponsiveImage } from '@helper/img';
 
-export interface BannerTemplateProps {}
+export interface BannerSegmentTemplateProps {}
 
-export const BannerTemplate: React.FC<BannerTemplateProps> = () => {
+export const BannerSegmentTemplate: React.FC<BannerSegmentTemplateProps> = () => {
   return (
     <div style={{ position: 'relative', paddingTop: '40%', width: '100%' }}>
       <div

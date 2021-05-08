@@ -1,18 +1,18 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { CardsTemplate, CardsTemplateProps } from './template';
+import { CardsSegmentTemplate, CardsSegmentTemplateProps } from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/S/Experiences/Online',
-  component: CardsTemplate,
+  component: CardsSegmentTemplate,
 } as Meta;
 
-const CardsTemplateStory: Story<CardsTemplateProps> = (args) => (
-  <CardsTemplate {...args} />
+const CardsSegmentTemplateStory: Story<CardsSegmentTemplateProps> = (args) => (
+  <CardsSegmentTemplate {...args} />
 );
 
-export const Cards = CardsTemplateStory.bind({});
-Cards.args = {
+export const CardsSegment = CardsSegmentTemplateStory.bind({});
+CardsSegment.args = {
   ...mockData,
 };

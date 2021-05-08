@@ -1,13 +1,13 @@
 import { Button } from '@button';
 import { Card, $Card } from '@card';
-import { useSlider } from './hooks';
+import { useSlider } from './appearance';
 
-export interface CollectionsTemplateProps {
+export interface CollectionsSegmentTemplateProps {
   title?: String;
   cards?: { imgUrl: string; videoUrl: string }[];
 }
 
-export const CollectionsTemplate: React.FC<CollectionsTemplateProps> = ({
+export const CollectionsSegmentTemplate: React.FC<CollectionsSegmentTemplateProps> = ({
   title,
   cards,
 }) => {

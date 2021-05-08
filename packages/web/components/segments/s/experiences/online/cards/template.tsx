@@ -2,12 +2,12 @@ import { Card, $Card } from '@card';
 import { Button } from '@button';
 import { useSlide } from '@hooks/useSlide';
 
-export interface CardsTemplateProps {
+export interface CardsSegmentTemplateProps {
   title?: string;
   cards?: { imgUrl: string; videoUrl: string }[];
 }
 
-export const CardsTemplate: React.FC<CardsTemplateProps> = ({
+export const CardsSegmentTemplate: React.FC<CardsSegmentTemplateProps> = ({
   title,
   cards,
 }) => {
@@ -40,9 +40,7 @@ export const CardsTemplate: React.FC<CardsTemplateProps> = ({
           <div className="flex items-center">
             <div className="mx-1">
               <Button
-                block
                 variant="paginate"
-                animate
                 direction="left"
                 onClick={previous}
                 disable={state.activeSlide === 0}
@@ -50,9 +48,7 @@ export const CardsTemplate: React.FC<CardsTemplateProps> = ({
             </div>
             <div className="px-1">
               <Button
-                block
                 variant="paginate"
-                animate
                 direction="right"
                 onClick={next}
                 disable={

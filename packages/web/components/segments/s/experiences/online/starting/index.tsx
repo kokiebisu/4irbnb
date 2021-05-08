@@ -1,7 +1,15 @@
-import { useStarting } from './logic';
-import { StartingTemplate } from './template';
+import { useStartingSegment } from './logic';
+import { StartingSegmentTemplate } from './template';
 
-export const Starting = () => {
-  const data = useStarting();
-  return <StartingTemplate {...data} />;
+export const StartingSegment = () => {
+  const data = useStartingSegment();
+  return <StartingSegmentTemplate {...data} />;
 };
+
+export const starting = (props) => {
+  return {
+    starting: {
+      component: <StartingSegment {...props} />
+    }
+  }
+}

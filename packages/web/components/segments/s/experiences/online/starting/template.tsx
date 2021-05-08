@@ -2,12 +2,12 @@ import { Button } from '@button';
 import { Card, $Card } from '@card';
 import { useSlide } from '@hooks/useSlide';
 
-export interface StartingTemplateProps {
+export interface StartingSegmentTemplateProps {
   title?: string;
   cards?: { imgUrl: string; videoUrl: string }[];
 }
 
-export const StartingTemplate: React.FC<StartingTemplateProps> = ({
+export const StartingSegmentTemplate: React.FC<StartingSegmentTemplateProps> = ({
   title,
   cards,
 }) => {
