@@ -1,5 +1,13 @@
-import { BackTemplate } from './template';
+import { BackSegmentTemplate } from './template';
 
-export const Back = () => {
-  return <BackTemplate />;
+export const BackSegment = () => {
+  return <BackSegmentTemplate />;
+};
+
+export const back = (props) => {
+  return {
+    back: {
+      component: <BackSegment {...props} />,
+    },
+  };
 };

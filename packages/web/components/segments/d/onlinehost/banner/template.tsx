@@ -1,11 +1,9 @@
-import banner from '@banner/banner.module.scss';
-
 import { Button } from '@button';
 import { Bullet } from '@bullet';
 
-export interface BannerTemplateProps {}
+export interface BannerSegmentTemplateProps {}
 
-export const BannerTemplate: React.FC<BannerTemplateProps> = () => {
+export const BannerSegmentTemplate: React.FC<BannerSegmentTemplateProps> = () => {
   return (
     <div className="flex flex-col items-center">
       <div className="my-4">

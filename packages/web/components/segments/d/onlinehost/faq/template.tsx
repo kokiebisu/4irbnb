@@ -1,11 +1,13 @@
 import { Layout } from '@layout';
 import { Bullet } from '@bullet';
 
-export interface FAQTemplateProps {
+export interface FAQSegmentTemplateProps {
   questions?: { question: string; answer: string }[];
 }
 
-export const FAQTemplate: React.FC<FAQTemplateProps> = ({ questions }) => {
+export const FAQSegmentTemplate: React.FC<FAQSegmentTemplateProps> = ({
+  questions,
+}) => {
   return (
     <Layout variant="onlinehost" title="Frequently asked questions">
       <div

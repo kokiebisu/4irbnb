@@ -1,6 +1,14 @@
-import { FAQTemplate } from './template';
+import { FAQSegmentTemplate } from './template';
 
-export const FAQ = () => {
+export const FAQSegment = (props) => {
   const questions = [{ question: 'Example', answer: 'Answer' }];
-  return <FAQTemplate questions={questions} />;
+  return <FAQSegmentTemplate questions={questions} />;
+};
+
+export const faq = (props) => {
+  return {
+    faq: {
+      component: <FAQSegment {...props} />,
+    },
+  };
 };

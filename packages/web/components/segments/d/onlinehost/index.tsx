@@ -1,22 +1,15 @@
-import { More } from 'components/segments/d/onlinehost/more';
-import { FAQ } from 'components/segments/d/onlinehost/faq';
-import { Back } from 'components/segments/d/onlinehost/back';
-import { Sharing } from 'components/segments/d/onlinehost/sharing';
-import { Works } from 'components/segments/d/onlinehost/works';
-import { Banner } from 'components/segments/d/onlinehost/banner';
+import { factory } from './utils/factory';
 
-export const $Segment = {
-  BACK: 'back',
-  BANNER: 'banner',
-  FAQ: 'faq',
-  MORE: 'more',
-  SHARING: 'sharing',
-  WORKS: 'works',
-};
+export type OnlineHostSegmentVariants =
+  | 'back'
+  | 'banner'
+  | 'faq'
+  | 'more'
+  | 'sharing'
+  | 'works';
 
 export interface SegmentProps {
-  extendsTo?: string;
-  variant?: string;
+  variant: OnlineHostSegmentVariants;
   [property: string]: any;
 }
 
@@ -27,8 +20,7 @@ export interface SegmentProps {
  * @param {Object} children - A JSX that will be part of the component
  */
 export const Segment: React.FC<SegmentProps> = ({
-  extendsTo = '',
-  variant = 'more',
+  variant,
   children,
   onClick,
   to,
@@ -36,14 +28,10 @@ export const Segment: React.FC<SegmentProps> = ({
   animate,
   ...props
 }) => {
-  const variants: { [variant: string]: any } = {
-    more: <More {...props} />,
-    faq: <FAQ {...props} />,
-    back: <Back {...props} />,
-    sharing: <Sharing {...props} />,
-    works: <Works {...props} />,
-    banner: <Banner {...props} />,
-  };
-
-  return <div data-testid={`${variant}-onlinehost`}>{variants[variant]}</div>;
+  const variants = factory(props);
+  return (
+    <div data-testid={`${variant}-onlinehost`}>
+      {variants[variant].component}
+    </div>
+  );
 };

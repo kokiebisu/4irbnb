@@ -1,18 +1,18 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { WorksTemplate, WorksTemplateProps } from './template';
+import { WorksSegmentTemplate, WorksSegmentTemplateProps } from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/D/OnlineHosts',
-  component: WorksTemplate,
+  component: WorksSegmentTemplate,
 } as Meta;
 
-const WorksTemplateStory: Story<WorksTemplateProps> = (args) => (
-  <WorksTemplate {...args} />
+const WorksSegmentTemplateStory: Story<WorksSegmentTemplateProps> = (args) => (
+  <WorksSegmentTemplate {...args} />
 );
 
-export const Works = WorksTemplateStory.bind({});
+export const Works = WorksSegmentTemplateStory.bind({});
 Works.args = {
   ...mockData,
 };

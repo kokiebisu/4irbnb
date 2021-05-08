@@ -1,14 +1,14 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { BannerTemplate, BannerTemplateProps } from './template';
+import { BannerSegmentTemplate, BannerSegmentTemplateProps } from './template';
 
 export default {
   title: 'Templates/D/OnlineHosts',
-  component: BannerTemplate,
+  component: BannerSegmentTemplate,
 } as Meta;
 
-const BannerTemplateStory: Story<BannerTemplateProps> = (args) => (
-  <BannerTemplate {...args} />
+const BannerTemplateStory: Story<BannerSegmentTemplateProps> = (args) => (
+  <BannerSegmentTemplate {...args} />
 );
 
 export const Banner = BannerTemplateStory.bind({});

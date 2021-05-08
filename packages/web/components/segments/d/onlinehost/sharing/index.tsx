@@ -1,7 +1,15 @@
 import { useSharing } from './logic';
-import { SharingTemplate } from './template';
+import { SharingSegmentTemplate } from './template';
 
-export const Sharing = () => {
+export const SharingSegment = () => {
   const data = useSharing();
-  return <SharingTemplate {...data} />;
+  return <SharingSegmentTemplate {...data} />;
+};
+
+export const sharing = (props) => {
+  return {
+    sharing: {
+      component: <SharingSegment {...props} />,
+    },
+  };
 };

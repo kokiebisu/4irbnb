@@ -2,11 +2,13 @@ import { Layout } from '@layout';
 import { Button } from '@button';
 import { Card, $Card } from '@card';
 
-export interface WorksTemplateProps {
+export interface WorksSegmentTemplateProps {
   categories?: string[];
 }
 
-export const WorksTemplate: React.FC<WorksTemplateProps> = ({ categories }) => {
+export const WorksSegmentTemplate: React.FC<WorksSegmentTemplateProps> = ({
+  categories,
+}) => {
   return (
     <div>
       <Layout variant="homes" title="How hosting works">
