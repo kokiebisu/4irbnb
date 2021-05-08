@@ -19,3 +19,11 @@ export const AmenitiesSegment: React.FC<{}> = () => {
     />
   );
 };
+
+export const amenities = (props) => {
+  return {
+    amenities: {
+      component: <AmenitiesSegment {...props} />,
+    },
+  };
+};

@@ -20,3 +20,11 @@ export const BookingScenariosSegment = () => {
     />
   );
 };
+
+export const bookingScenarios = (props) => {
+  return {
+    bookingScenarios: {
+      component: <BookingScenariosSegment {...props} />,
+    },
+  };
+};

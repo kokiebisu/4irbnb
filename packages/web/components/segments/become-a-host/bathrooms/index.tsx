@@ -18,3 +18,11 @@ export const BathroomsSegment = () => {
     />
   );
 };
+
+export const bathrooms = (props) => {
+  return {
+    bathrooms: {
+      component: <BathroomsSegment {...props} />,
+    },
+  };
+};

@@ -1,4 +1,4 @@
-import { Input, $Input } from '@input';
+import { Input } from '@input';
 import { Layout } from '@layout';
 
 export interface RoomSegmentTemplateProps {
@@ -32,9 +32,9 @@ export const RoomSegmentTemplate: React.FC<RoomSegmentTemplateProps> = ({
         <Layout variant="input" title="First, let's narrow things down">
           <Input
             inputType="place"
-            variant={$Input.SELECT}
+            variant="select"
             value={place}
-            handleChange={(e) => handleChange(e, 'place')}
+            onChange={(e) => handleChange(e, 'place')}
           />
         </Layout>
       </div>
@@ -43,9 +43,9 @@ export const RoomSegmentTemplate: React.FC<RoomSegmentTemplateProps> = ({
           <Input
             disabled={!place}
             inputType={place}
-            variant={$Input.SELECT}
+            variant="select"
             value={property}
-            handleChange={(e) => handleChange(e, 'property')}
+            onChange={(e) => handleChange(e, 'property')}
           />
         </Layout>
       </div>
@@ -76,11 +76,11 @@ export const RoomSegmentTemplate: React.FC<RoomSegmentTemplateProps> = ({
                 ].map((stayType, index) => (
                   <div key={index} className="mb-4">
                     <Input
-                      variant={$Input.RADIO}
+                      variant="radio"
                       title={stayType.title}
                       subtitle={stayType.subtitle}
-                      selected={stay === stayType.title}
-                      select={() => handleChange(stayType.title, 'stay')}
+                      value={stay === stayType.title}
+                      onChange={() => handleChange(stayType.title, 'stay')}
                     />
                   </div>
                 ))}

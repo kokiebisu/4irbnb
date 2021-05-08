@@ -1,4 +1,4 @@
-import { Input, $Input } from '@input';
+import { Input } from '@input';
 
 export interface DescriptionSegmentTemplate {
   data?: any;
@@ -28,10 +28,10 @@ export const DescriptionSegmentTemplate: React.FC<DescriptionSegmentTemplateProp
       <div className="mb-6">
         <div className="mb-3">
           <Input
-            variant={$Input.TEXTAREA}
+            variant="textarea"
             limit={500}
             value={description.description}
-            handleChange={(e) => handleTextareaChange(e, 'description')}
+            onChange={(e) => handleTextareaChange(e, 'description')}
           />
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Input, $Input } from '@input';
+import { Input } from '@input';
 
 export interface PhoneSegmentTemplateProps {
   phone?: string;
@@ -28,9 +28,9 @@ export const PhoneSegmentTemplate: React.FC<PhoneSegmentTemplateProps> = ({
       <div className="mb-6">
         <div className="mb-3">
           <Input
-            variant={$Input.VERIFY}
+            variant="verify"
             value={phone}
-            handleChange={(e) => handleChange(e, 'phone')}
+            onChange={(e) => handleChange(e, 'phone')}
           />
         </div>
       </div>

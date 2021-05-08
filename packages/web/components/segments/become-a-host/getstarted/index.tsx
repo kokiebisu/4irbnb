@@ -1,6 +1,5 @@
 import { useGetStartedSegment } from './logic';
-import { Header, $Header } from '@header';
-import responsive from '@styles/responsive.module.scss';
+import { Header } from '@header';
 import { GetStartedSegmentTemplate } from './template';
 
 export const GetStartedSegment = () => {
@@ -9,7 +8,7 @@ export const GetStartedSegment = () => {
     <div className="h-screen">
       <div style={{ zIndex: 60, height: 65 }}>
         <div className="sm:hidden">
-          <Header variant={$Header.STAY} />
+          <Header variant="stay" />
         </div>
       </div>
       <div className="mt-3 container">
@@ -40,4 +39,12 @@ export const GetStartedSegment = () => {
       </div>
     </div>
   );
+};
+
+export const getstarted = (props) => {
+  return {
+    getstarted: {
+      component: <GetStartedSegment {...props} />,
+    },
+  };
 };
