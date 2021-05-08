@@ -1,6 +1,8 @@
 import { Layout } from '@layout';
 
-export const CurrencyPrototype: React.FC<{}> = () => {
+export interface CurrencyPrototypeTemplateProps {}
+
+export const CurrencyPrototypeTemplate: React.FC<CurrencyPrototypeTemplateProps> = () => {
   return (
     <div>
       <div className="mb-4">
