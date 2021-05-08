@@ -1,5 +1,5 @@
 import * as data from './mock';
 
-export const useBring = () => {
+export const useBringSegment = () => {
   return data;
 };

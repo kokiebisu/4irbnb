@@ -1,7 +1,15 @@
-import { useAvailable } from './logic';
-import { AvailableTemplate } from './template';
+import { useAvailableSegment } from './logic';
+import { AvailableSegmentTemplate } from './template';
 
-export const Available = () => {
-  const data = useAvailable();
-  return <AvailableTemplate {...data} />;
+export const AvailableSegment = () => {
+  const data = useAvailableSegment();
+  return <AvailableSegmentTemplate {...data} />;
+};
+
+export const available = (props) => {
+  return {
+    available: {
+      component: <AvailableSegment {...props} />,
+    },
+  };
 };

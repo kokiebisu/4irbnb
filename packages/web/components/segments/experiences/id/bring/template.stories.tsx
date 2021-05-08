@@ -1,18 +1,18 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { BringTemplate, BringTemplateProps } from './template';
+import { BringSegmentTemplate, BringSegmentTemplateProps } from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/Experiences/ID',
-  component: BringTemplate,
+  component: BringSegmentTemplate,
 } as Meta;
 
-const BringTemplateStory: Story<BringTemplateProps> = (args) => (
-  <BringTemplate {...args} />
+const BringSegmentTemplateStory: Story<BringSegmentTemplateProps> = (args) => (
+  <BringSegmentTemplate {...args} />
 );
 
-export const Bring = BringTemplateStory.bind({});
-Bring.args = {
+export const BringSegment = BringSegmentTemplateStory.bind({});
+BringSegment.args = {
   ...mockData,
 };

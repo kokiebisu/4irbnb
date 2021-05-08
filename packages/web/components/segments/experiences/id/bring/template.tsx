@@ -1,21 +1,21 @@
 import { Bullet } from '@bullet';
 
-export interface BringTemplateProps {
+export interface BringSegmentTemplateProps {
   necessities?: string[];
 }
 
 /**
- * Renders the 'What to bring' section
- * @param {Object[]} necessities - List of things the users have to bring
+ * Renders the 'What to BringSegment' section
+ * @param {Object[]} necessities - List of things the users have to BringSegment
  */
-export const BringTemplate: React.FC<BringTemplateProps> = ({
+export const BringSegmentTemplate: React.FC<BringSegmentTemplateProps> = ({
   necessities,
 }) => {
   return (
     <div>
       <div>
         <h3 className="font-medium mb-4 text-gray-700 text-lg">
-          What to bring
+          What to Bring
         </h3>
       </div>
       <div className="mb-5">

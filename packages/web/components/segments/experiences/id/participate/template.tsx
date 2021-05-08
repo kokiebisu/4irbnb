@@ -1,6 +1,6 @@
 import { Card, $Card } from '@card';
 
-export interface ParticipateTemplateProps {
+export interface ParticipateSegmentTemplateProps {
   participatingMethods?: string[];
 }
 
@@ -8,7 +8,7 @@ export interface ParticipateTemplateProps {
  * Renders the participate section
  * @param {string[]} participates - Ways to participate
  */
-export const ParticipateTemplate: React.FC<ParticipateTemplateProps> = ({
+export const ParticipateSegmentTemplate: React.FC<ParticipateSegmentTemplateProps> = ({
   participatingMethods,
 }) => {
   return (

@@ -1,18 +1,18 @@
 import React from 'react';
 import { Story, Meta } from '@storybook/react';
-import { KnowTemplate, KnowTemplateProps } from './template';
+import { KnowSegmentTemplate, KnowSegmentTemplateProps } from './template';
 import * as mockData from './mock';
 
 export default {
   title: 'Templates/Experiences/ID',
-  component: KnowTemplate,
+  component: KnowSegmentTemplate,
 } as Meta;
 
-const KnowTemplateStory: Story<KnowTemplateProps> = (args) => (
-  <KnowTemplate {...args} />
+const KnowSegmentTemplateStory: Story<KnowSegmentTemplateProps> = (args) => (
+  <KnowSegmentTemplate {...args} />
 );
 
-export const Know = KnowTemplateStory.bind({});
-Know.args = {
+export const KnowSegment = KnowSegmentTemplateStory.bind({});
+KnowSegment.args = {
   ...mockData,
 };

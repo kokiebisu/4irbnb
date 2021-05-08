@@ -7,7 +7,7 @@ import { Bullet } from '@bullet';
 import { Icon } from '@icons';
 import { truncateContent } from '@utils/description';
 
-export interface HostTemplateProps {
+export interface HostSegmentTemplateProps {
   host?: string;
   isSuperhost?: boolean;
   description?: string;
@@ -35,7 +35,7 @@ export interface HostTemplateProps {
  * @param {string} layoutType - Type of either room or experience
  * @param {boolean} verified - Whether is the user if verified or not
  */
-export const HostTemplate: React.FC<HostTemplateProps> = ({
+export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
   host,
   isSuperhost,
   description,
@@ -92,18 +92,18 @@ export const HostTemplate: React.FC<HostTemplateProps> = ({
                 <div className="mr-2 mb-4 pr-1">
                   <Bullet
                     variant="host"
-                    categoryType="review"
+                    hostType="review"
                     total={numberOfReviews}
                   />
                 </div>
                 {verified && (
                   <div className="mr-2 mb-3 pr-1">
-                    <Bullet variant="host" categoryType="verified" />
+                    <Bullet variant="host" hostType="verified" />
                   </div>
                 )}
                 {layoutType === 'room' && isSuperhost && (
                   <div className="mr-2 mb-3 pr-1">
-                    <Bullet variant="host" categoryType="superhost" />
+                    <Bullet variant="host" hostType="superhost" />
                   </div>
                 )}
               </div>

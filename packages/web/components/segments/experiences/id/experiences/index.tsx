@@ -1,7 +1,15 @@
-import { useExperiences } from './logic';
-import { ExperiencesTemplate } from './template';
+import { useExperiencesSegment } from './logic';
+import { ExperiencesSegmentTemplate } from './template';
 
-export const Experiences = () => {
-  const data = useExperiences();
-  return <ExperiencesTemplate {...data} />;
+export const ExperiencesSegment = () => {
+  const data = useExperiencesSegment();
+  return <ExperiencesSegmentTemplate {...data} />;
+};
+
+export const experiences = (props) => {
+  return {
+    experiences: {
+      component: <ExperiencesSegment {...props} />,
+    },
+  };
 };

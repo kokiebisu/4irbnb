@@ -2,7 +2,7 @@ import { Bullet } from '@bullet';
 import { Icon } from '@icons';
 import section from '@template/index.module.scss';
 
-export interface CharacteristicsTemplateProps {
+export interface CharacteristicsSegmentTemplateProps {
   title?: string;
   stayType?: string;
   host?: string;
@@ -26,7 +26,7 @@ export interface CharacteristicsTemplateProps {
 }
 
 /**
- * Renders the characteristics of the room/experience
+ * Renders the Characteristics of the room/experience
  * @param {string} title - Title of the room/experience
  * @param {string} stayType - Type of stay
  * @param {string} host - Name of the host
@@ -39,9 +39,9 @@ export interface CharacteristicsTemplateProps {
  * @param {number} numberOfReviews - Number of reviews received
  * @param {string} location - Location of the room/experience
  * @param {string} country - Country of the room/experience
- * @param {Object} characteristics - The characteristics of the room/experience
+ * @param {Object} characteristics - The CharacteristicsSegment of the room/experience
  */
-export const CharacteristicsTemplate: React.FC<CharacteristicsTemplateProps> = ({
+export const CharacteristicsSegmentTemplate: React.FC<CharacteristicsSegmentTemplateProps> = ({
   title,
   stayType,
   host,
@@ -117,7 +117,9 @@ export const CharacteristicsTemplate: React.FC<CharacteristicsTemplateProps> = (
           <h3 className="text-lg">Online experience hosted by {host}</h3>
         </div>
         <div
-          className={`py-1 ${[section['display__characteristics']].join(' ')}`}
+          className={`py-1 ${[section['display__CharacteristicsSegment']].join(
+            ' '
+          )}`}
         >
           <Bullet
             variant="characteristic"

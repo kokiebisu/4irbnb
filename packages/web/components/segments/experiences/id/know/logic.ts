@@ -1,5 +1,5 @@
 import * as data from './mock';
 
-export const useKnow = () => {
+export const useKnowSegment = () => {
   return data;
 };

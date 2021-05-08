@@ -1,8 +1,16 @@
 import React from 'react';
-import { useCharacteristics } from './logic';
-import { CharacteristicsTemplate } from './template';
+import { useCharacteristicsSegment } from './logic';
+import { CharacteristicsSegmentTemplate } from './template';
 
-export const Characteristics = () => {
-  const data = useCharacteristics();
-  return <CharacteristicsTemplate {...data} />;
+export const CharacteristicsSegment = (props) => {
+  const data = useCharacteristicsSegment();
+  return <CharacteristicsSegmentTemplate {...data} {...props} />;
+};
+
+export const characteristics = (props) => {
+  return {
+    characteristics: {
+      component: <CharacteristicsSegment {...props} />,
+    },
+  };
 };
