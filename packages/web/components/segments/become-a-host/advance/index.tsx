@@ -1,5 +1,5 @@
 import { Layout } from '@layout';
-import { useAdvanceBecomeAHost } from './logic';
+import { useAdvanceSegment } from './logic';
 import { AdvanceSegmentTemplate } from './template';
 
 export const AdvanceSegment: React.FC<{}> = () => {
@@ -7,7 +7,7 @@ export const AdvanceSegment: React.FC<{}> = () => {
     handleRedirectToNextPage,
     handleRedirectToPreviousPage,
     ...data
-  } = useAdvanceBecomeAHost();
+  } = useAdvanceSegment();
   return (
     <Layout
       variant="create"

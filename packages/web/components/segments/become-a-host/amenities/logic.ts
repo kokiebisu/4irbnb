@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import * as mockData from './mock';
 
-export const useAmenitiesBecomeAHost = () => {
+export const useAmenitiesSegment = () => {
   const router = useRouter();
   const stayDispatch = useStayDispatch();
   const { amenities, safeties } = useStayState();

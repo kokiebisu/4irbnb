@@ -1,4 +1,4 @@
-import { Input, $Input } from '@input';
+import { Input } from '@input';
 
 export interface BathroomsSegmentTemplateProps {
   bathrooms?: number;
@@ -26,7 +26,7 @@ export const BathroomsSegmentTemplate: React.FC<BathroomsSegmentTemplateProps> =
         <div className="mb-3">
           <Input
             title="Bathrooms"
-            variant={$Input.COUNTER}
+            variant="counter"
             value={bathrooms}
             add={() => handleCounterAdd('bathrooms')}
             subtract={() => handleCounterSubtract('bathrooms')}
