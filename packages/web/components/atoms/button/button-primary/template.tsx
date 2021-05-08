@@ -51,7 +51,7 @@ export const PrimaryButtonTemplate: React.FC<PrimaryButtonTemplateProps> = ({
       } ${renderBackgroundColor()} ${stretchMixin(stretch)}`}
     >
       {loading ? (
-        <div className="h-6 flex items-center justify-center">
+        <div className="flex items-center justify-center">
           <Animation type="loading" />
         </div>
       ) : (

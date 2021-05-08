@@ -1,5 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 import { CreateBarTemplate, CreateBarTemplateProps } from './template';
+import * as mockData from './mock';
 
 export default {
   title: 'Organisms/Bar',
@@ -11,4 +12,6 @@ const BarStory: Story<CreateBarTemplateProps> = (args) => (
 );
 
 export const Create = BarStory.bind({});
-Create.args = {};
+Create.args = {
+  ...mockData,
+};

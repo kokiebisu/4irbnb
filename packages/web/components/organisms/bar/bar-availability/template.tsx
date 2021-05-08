@@ -32,7 +32,12 @@ export const AvailabilityBarTemplate: React.FC<AvailabilityBarTemplateProps> = (
         </div>
       </div>
       <div>
-        <Button variant="primary" title="Check availability" />
+        <Button
+          variant="primary"
+          title="Check availability"
+          color="white"
+          size="sm"
+        />
       </div>
     </div>
   );

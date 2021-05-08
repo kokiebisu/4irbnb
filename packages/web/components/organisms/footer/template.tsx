@@ -55,7 +55,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
             </div>
           </div>
           <div className="flex items-center">
-            <div className={styles['footer__rights']}>
+            <div>
               <h4 className="text-md">
                 &copy; 2020 Airbnb, Inc. All rights reserved
               </h4>

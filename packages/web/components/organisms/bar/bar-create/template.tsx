@@ -1,8 +1,8 @@
 import { Button } from '@button';
 
 export interface CreateBarTemplateProps {
-  next?: () => void;
-  back?: () => void;
+  handleNextPage?: () => void;
+  handlePreviousPage?: () => void;
   criteria?: boolean;
 }
 
@@ -12,23 +12,25 @@ export interface CreateBarTemplateProps {
  * @returns
  */
 export const CreateBarTemplate: React.FC<CreateBarTemplateProps> = ({
-  next = () => alert('next button pressed'),
-  back = () => alert('back button pressed'),
-  criteria = true,
+  handleNextPage,
+  handlePreviousPage,
+  criteria,
 }) => {
   return (
     <div className="w-full border-t border-gray-200 py-4">
       <div className="w-full flex items-center justify-between">
         <div>
-          <Button variant="back" onClick={back} />
+          <Button variant="back" onClick={handlePreviousPage} />
         </div>
         <div>
           <Button
             variant="primary"
             title="Next"
             size="md"
+            color="white"
             fill="#018489"
-            onClick={next}
+            disable={!criteria}
+            onClick={handleNextPage}
           />
         </div>
       </div>

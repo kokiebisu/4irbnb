@@ -1,5 +1,5 @@
 import { Icon } from '@icons';
-import { ImageSlider } from '../../../particles/image.slider';
+import { ImageSlider } from '../../../particles/particle-slider/template';
 
 export interface HorizontalCardTemplateProps {
   images?: string[];
