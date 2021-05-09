@@ -1,11 +1,6 @@
-import {
-  CategoryPrototype,
-  CategoryPrototypeProps,
-} from './prototype-homes-category';
-import {
-  NearbyPrototype,
-  NearbyPrototypeProps,
-} from './prototype-homes-nearby';
+import { CategoryPrototypeProps } from './prototype-homes-category';
+import { NearbyPrototypeProps } from './prototype-homes-nearby';
+import { factory } from './util/factory';
 
 export type HomesPrototypeVariants = 'category' | 'nearby';
 export interface PrototypeProps
@@ -15,9 +10,8 @@ export interface PrototypeProps
 }
 
 export const Prototype: React.FC<PrototypeProps> = ({ variant, ...props }) => {
-  const variants: { [variant: string]: JSX.Element } = {
-    nearby: <NearbyPrototype {...props} />,
-    category: <CategoryPrototype {...props} />,
-  };
+  const variants: { [variant: string]: { component: JSX.Element } } = factory(
+    props
+  );
   return <div data-testid={`${variant}-template`}>{variants[variant]}</div>;
 };

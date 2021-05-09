@@ -1,10 +1,9 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useToggleState } from '@context/toggle';
-import index from '@styles/index.module.scss';
 import { Layout } from '@layout';
 import { Animation } from '@animation';
-import { Modal, $Modal } from '@modal';
-import { Segment, $Segment } from '@template/index';
+import { Modal } from '@modal';
+import { Segment } from '@template/index';
 import { Footer } from '@footer';
 import { Bar } from '@bar';
 import { useHandleScroll } from '@hooks/useHandleScroll';
@@ -12,9 +11,7 @@ import { useHandleDocumentResize } from '@hooks/useHandleDocumentResize';
 import { useTimeout } from '@hooks/useTimeout';
 import { useTabTitle } from '@hooks/useTabTitle';
 
-import { APIClient } from '../api/client';
-
-const LandingPage = ({ currentUser }) => {
+const LandingPage: React.FC<{}> = () => {
   useTabTitle('Vacation Rentals, Homes, Experiences & Places - Airbnb');
   const loading = useTimeout(3000);
   const toggleState = useToggleState();
@@ -31,40 +28,40 @@ const LandingPage = ({ currentUser }) => {
         {loading ? (
           <>
             <Layout variant="landing" spread>
-              <Segment variant={$Segment.NEARBY} />
+              <Segment variant="nearby" />
             </Layout>
             <Layout variant="landing" title="Live anywhere" spread>
-              <Segment variant={$Segment.ANYWHERE} />
+              <Segment variant="anywhere" />
             </Layout>
             <div className="my-7"></div>
             <Layout spread variant="landing">
-              <Segment variant={$Segment.WORTH} />
+              <Segment variant="worth" />
             </Layout>
             <Layout
               variant="landing"
               spread
               title="Join millions of hosts on Airbnb"
             >
-              <Segment variant={$Segment.CATEGORY} />
+              <Segment variant="category" />
             </Layout>
             <Layout
               variant="landing"
               spread
               title="Inspiration for future getaways"
             >
-              <Segment variant={$Segment.DESTINATIONS} />
+              <Segment variant="destinations" />
             </Layout>
           </>
         ) : (
           <div className="my-4 flex items-center justify-center">
-            <Animation type="loading" dark />
+            <Animation variant="loading" dark />
           </div>
         )}
         <Footer spread />
         <div className="fixed bottom-0 w-full z-50 flex justify-center">
           <div className="mt-0 mx-8 mb-8 sm:mx-16 md:mx-36 lg:mx-0">
             <Modal
-              variant={$Modal.PRIVACY}
+              variant="privacy"
               criteria={toggleState.privacy}
               animate="slideup"
             />
@@ -90,7 +87,7 @@ const LandingPage = ({ currentUser }) => {
           <div className="fixed z-60 bottom-0 left-0 right-0 top-0 bg-blur">
             <div className="flex justify-center items-center h-screen">
               <Modal
-                variant={$Modal.AUTH}
+                variant="auth"
                 animate="slideup"
                 criteria={toggleState.auth}
                 lock
@@ -102,7 +99,7 @@ const LandingPage = ({ currentUser }) => {
           <div className="fixed z-60 bottom-0 left-0 right-0 top-0 bg-blur">
             <div className="flex justify-center items-center h-screen">
               <Modal
-                variant={$Modal.GLOBE}
+                variant="globe"
                 animate="slideup"
                 criteria={toggleState.globe}
                 lock
@@ -113,16 +110,6 @@ const LandingPage = ({ currentUser }) => {
       </div>
     </div>
   );
-};
-
-LandingPage.getInitialProps = async (context) => {
-  const client = APIClient(context);
-  try {
-    const response = await client.get('/api/users/currentuser');
-    return response.data;
-  } catch (err) {
-    return {};
-  }
 };
 
 export default LandingPage;

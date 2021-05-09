@@ -2,9 +2,14 @@ import { Segment } from '@template/s/homes';
 import { Bar } from '@bar';
 import { Button } from '@button';
 
+export type CategoryPrototypeStayTypeVariants =
+  | 'tent'
+  | 'barn'
+  | 'tiny_house'
+  | 'house';
 export interface CategoryPrototypeTemplateProps {
   subtitle?: string;
-  stayType?: 'tent' | 'barn' | 'tiny_house' | 'house';
+  stayType?: CategoryPrototypeStayTypeVariants;
   filterCount?: number;
   filters?: any;
 }

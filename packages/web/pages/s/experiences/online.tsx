@@ -1,7 +1,7 @@
-import { Header, $Header } from '@header';
-import { Bar, $Bar } from '@bar';
-import { Segment, $Segment } from '@template/s/experiences/online';
-import { Modal, $Modal } from '@modal';
+import { Header } from '@header';
+import { Bar } from '@bar';
+import { Segment } from '@template/s/experiences/online';
+import { Modal } from '@modal';
 import { Footer } from '@footer';
 import { useToggleState } from '@context/toggle';
 import { Button } from '@button';
@@ -12,12 +12,12 @@ const OnlinePage = () => {
     <div>
       <div className="shadow-sm">
         <div className="container-spread">
-          <Header variant={$Header.WHITE} />
+          <Header variant="white" />
         </div>
       </div>
       <div className="my-3">
         <div className="container-spread">
-          <Segment variant={$Segment.BANNER} />
+          <Segment variant="banner" />
         </div>
       </div>
       <div className="sticky top-0 z-50">
@@ -34,19 +34,19 @@ const OnlinePage = () => {
         </div>
       </div>
       <div className={`mb-4 mt-5 container-spread`}>
-        <Segment variant={$Segment.CARDS} />
+        <Segment variant="cards" />
       </div>
       <div className="my-1 container-spread">
-        <Segment variant={$Segment.CARDS} />
+        <Segment variant="cards" />
       </div>
       <div className="my-1 container-spread">
-        <Segment variant={$Segment.STARTING} />
+        <Segment variant="starting" />
       </div>
       <div className="my-1 container-spread">
-        <Segment variant={$Segment.COLLECTIONS} />
+        <Segment variant="collections" />
       </div>
       <div className="my-1 container-spread">
-        <Segment variant={$Segment.CARDS} />
+        <Segment variant="cards" />
       </div>
       <div
         className="flex justify-center"
@@ -63,7 +63,7 @@ const OnlinePage = () => {
         <div className="z-60 bg-blur fixed bottom-0 left-0 right-0 top-0">
           <div className="h-screen flex justify-center items-center">
             <Modal
-              variant={$Modal.AUTH}
+              variant="auth"
               animate="slideup"
               criteria={toggleState.auth}
               lock
@@ -81,7 +81,7 @@ const OnlinePage = () => {
         >
           <div className="flex justify-center items-center h-screen">
             <Modal
-              variant={$Modal.GLOBE}
+              variant="globe"
               animate="slideup"
               criteria={toggleState.globe}
               lock

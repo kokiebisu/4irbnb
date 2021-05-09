@@ -1,9 +1,8 @@
 import Link from 'next/link';
-import { Header, $Header } from '@header';
+import { Header } from '@header';
 import { useTabTitle } from '@hooks/useTabTitle';
 
-// pages/404.js
-const ErrorPage = () => {
+const ErrorPage: React.FC<{}> = () => {
   useTabTitle('Page not found - Airbnb');
   const links = [
     { name: 'Home', url: '/' },
@@ -13,7 +12,7 @@ const ErrorPage = () => {
   return (
     <div>
       <div>
-        <Header variant={$Header.HOMES} />
+        <Header variant="homes" />
       </div>
       <div
         style={{ height: 'calc(100vh - 80px)' }}
