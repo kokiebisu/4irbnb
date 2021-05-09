@@ -1,12 +1,17 @@
 import { useReviewsSegment } from './logic';
-import { ReviewsSegmentTemplate } from './template';
+import {
+  ReviewsSegmentTemplate,
+  ReviewsSegmentTemplateProps,
+} from './template';
 
-export const ReviewsSegment = () => {
+export interface ReviewsSegmentProps extends ReviewsSegmentTemplateProps {}
+
+export const ReviewsSegment: React.FC<ReviewsSegmentProps> = () => {
   const data = useReviewsSegment();
   return <ReviewsSegmentTemplate {...data} />;
 };
 
-export const reviews = (props) => {
+export const reviews = (props: ReviewsSegmentProps) => {
   return {
     reviews: {
       component: <ReviewsSegment {...props} />,

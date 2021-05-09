@@ -1,3 +1,4 @@
+import { SegmentProps } from '..';
 import { available } from '../available';
 import { bring } from '../bring';
 import { characteristics } from '../characteristics';
@@ -9,7 +10,7 @@ import { participate } from '../participate';
 import { preview } from '../preview';
 import { reviews } from '../reviews';
 
-export const factory = (props) => {
+export const factory = (props: SegmentProps) => {
   return {
     ...available(props),
     ...bring(props),

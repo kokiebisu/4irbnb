@@ -1,4 +1,38 @@
-export const experiences = {
+export const experiences: {
+  title: string;
+  ratings: number;
+  numberOfReviews: number;
+  location: string;
+  country: string;
+  layoutType: string;
+  images: string[];
+  characteristics: {
+    time: number;
+    devices: string[];
+    people: number;
+    group: number;
+    languages: string[];
+  };
+  hostImgUrl: string;
+  host: string;
+  mainDescription: string;
+  partipates: string[];
+  necessities: string[];
+  available: {
+    date: string;
+    from: string;
+    to: string;
+    standard: string;
+    price: number;
+  }[];
+  verified: boolean;
+  reviews: {
+    imgUrl: string;
+    name: string;
+    date: string;
+    description: string;
+  }[];
+}[] = {
   1715106: {
     title: 'Making & Eating Soup Dumplings vegan Ok',
     ratings: 5.0,

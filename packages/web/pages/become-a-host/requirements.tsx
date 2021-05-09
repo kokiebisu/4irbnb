@@ -1,7 +1,7 @@
-import { $Segment, Segment } from '@template/become-a-host';
+import { Segment } from '@template/become-a-host';
 
 const RequirementsBecomeAHostPage = () => (
-  <Segment variant={$Segment.REQUIREMENTS} />
+  <Segment variant='requirements />
 );
 
 export default RequirementsBecomeAHostPage;

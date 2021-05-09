@@ -1,5 +1,5 @@
-import { Segment, $Segment } from '@template/become-a-host';
+import { Segment } from '@template/become-a-host';
 
-const PhotosBecomeAHostPage = () => <Segment variant={$Segment.PHOTOS} />;
+const PhotosBecomeAHostPage = () => <Segment variant="photos" />;
 
 export default PhotosBecomeAHostPage;

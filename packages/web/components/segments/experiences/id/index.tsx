@@ -1,3 +1,13 @@
+import { AvailableSegmentProps } from './available';
+import { BringSegmentProps } from './bring';
+import { CharacteristicsSegmentProps } from './characteristics';
+import { DescriptionSegmentProps } from './description';
+import { ExperiencesSegmentProps } from './experiences';
+import { HostSegmentProps } from './host';
+import { KnowSegmentProps } from './know';
+import { ParticipateSegmentProps } from './participate';
+import { PreviewSegmentProps } from './preview';
+import { ReviewsSegmentProps } from './reviews';
 import { factory } from './utils/factory';
 
 export type ExperiencesSegmentVariants =
@@ -12,27 +22,25 @@ export type ExperiencesSegmentVariants =
   | 'preview'
   | 'reviews';
 
-export interface SegmentProps {
+export interface SegmentProps
+  extends AvailableSegmentProps,
+    BringSegmentProps,
+    CharacteristicsSegmentProps,
+    DescriptionSegmentProps,
+    ExperiencesSegmentProps,
+    HostSegmentProps,
+    KnowSegmentProps,
+    ParticipateSegmentProps,
+    PreviewSegmentProps,
+    ReviewsSegmentProps {
   variant: ExperiencesSegmentVariants;
-  [property: string]: any;
 }
 
 /**
  * Bundles the button components
- * @param {string} extendsTo - Add custom styling to the specified component
- * @param {string} type - Specifies the type of button component
- * @param {Object} children - A JSX that will be part of the component
+ * @param {string} variant - Specifies the type of button component
  */
-export const Segment: React.FC<SegmentProps> = ({
-  extendsTo = '',
-  variant = 'experiences',
-  children,
-  onClick,
-  to,
-  block,
-  animate,
-  ...props
-}) => {
+export const Segment: React.FC<SegmentProps> = ({ variant, ...props }) => {
   const variants = factory(props);
   return (
     <div data-testid={`${variant}-onlinehost`}>
