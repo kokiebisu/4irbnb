@@ -1,9 +1,13 @@
+export interface LoadingAnimationTemplateProps {
+  dark?: boolean;
+}
+
 /**
  * Renders the loading animation
  */
-export const LoadingAnimation: React.FC<{
-  dark?: boolean;
-}> = ({ dark }) => {
+export const LoadingAnimationTemplate: React.FC<LoadingAnimationTemplateProps> = ({
+  dark,
+}) => {
   return (
     <div className="w-8 h-6 flex justify-around items-center">
       <span
