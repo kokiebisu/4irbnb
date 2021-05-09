@@ -1,15 +1,18 @@
 {
   "compilerOptions": {
+    "types": [],
+    "sourceMap": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "declaration": true,
+    "strict": true,
+    "rootDir": ".",
     "target": "es5",
-    "noImplicitAny": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
-    "noUnusedLocals": true,
-    "noImplicitReturns": true,
     "stripInternal": true,
-    "types": [],
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -60,7 +63,9 @@
       "@api": ["api"],
       "@api/*": ["api/*"],
       "@utils/*": ["utils/*"]
-    }
+    },
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "./.storybook/**"]
