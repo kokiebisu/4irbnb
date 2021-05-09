@@ -1,8 +1,15 @@
 import { Icon } from '@icons';
 import { useAmenityBulletContent } from './content';
 
+export type AmenityBulletTypeVariants =
+  | 'smoke'
+  | 'tv'
+  | 'kitchen'
+  | 'heating'
+  | 'entrance'
+  | 'carbon';
 export interface AmenityBulletTemplateProps {
-  amenityType?: 'smoke' | 'tv' | 'kitchen' | 'heating' | 'entrance' | 'carbon';
+  amenityType?: AmenityBulletTypeVariants;
   removed?: boolean;
 }
 
