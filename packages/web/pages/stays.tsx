@@ -1,16 +1,15 @@
-import { Header, $Header } from '@header';
+import { Header } from '@header';
 import { Footer } from '@footer';
 import stays from '@styles/stays.module.scss';
-import styles from '@styles/index.module.scss';
 
 /**
  * Renders /stays
  */
-const StaysPage: () => string | JSX.Element = () => {
+const StaysPage: React.FC<{}> = () => {
   return (
-    <>
+    <div>
       <div className="top-0 z-10 sticky">
-        <Header variant={$Header.WHITE} spread />
+        <Header variant="white" spread />
       </div>
       <div className="z-10 relative w-screen">
         <div className="relative px-0">
@@ -158,7 +157,7 @@ const StaysPage: () => string | JSX.Element = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

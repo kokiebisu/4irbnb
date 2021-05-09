@@ -10,7 +10,7 @@ export const CategoryPrototype: React.FC<CategoryPrototypeProps> = (props) => {
   return <CategoryPrototypeTemplate {...props} />;
 };
 
-export const category = (props) => {
+export const category = (props: CategoryPrototypeProps) => {
   return {
     category: {
       component: <CategoryPrototype {...props} />,
