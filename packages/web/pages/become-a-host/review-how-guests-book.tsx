@@ -1,6 +1,6 @@
 import Router from 'next/router';
-import { Bar, $Bar } from '@bar';
-import { Header, $Header } from '@header';
+import { Bar } from '@bar';
+import { Header } from '@header';
 import { Card, $Card } from '@card';
 import { Icon } from '@icons';
 
@@ -20,7 +20,7 @@ const HowGuestsWillBookPage = () => {
     <div>
       <div style={{ position: 'sticky', zIndex: 9999, top: 0 }}>
         <div>
-          <Header variant={$Header.STAY} title="Booking settings" />
+          <Header variant="stay" title="Booking settings" />
         </div>
         <div>
           <Bar variant="progress" percentage={80} />
@@ -69,7 +69,11 @@ const HowGuestsWillBookPage = () => {
         <div className="w-full flex justify-center">
           <div className="bg-white w-full fixed bottom-0 z-60 flex justify-center sm:justify-end">
             <div className="w-full my-0 mx-auto max-w-[700px]">
-              <Bar variant="create" next={proceed} back={revert} />
+              <Bar
+                variant="create"
+                handleNextPage={proceed}
+                handlePreviousPage={revert}
+              />
             </div>
           </div>
         </div>

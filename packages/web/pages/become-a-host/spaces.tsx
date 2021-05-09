@@ -1,5 +1,5 @@
-import { $Segment, Segment } from '@template/become-a-host';
+import { Segment } from '@template/become-a-host';
 
-const SpacesBecomeAHostPage = () => <Segment variant={$Segment.SPACES} />;
+const SpacesBecomeAHostPage = () => <Segment variant="spaces" />;
 
 export default SpacesBecomeAHostPage;

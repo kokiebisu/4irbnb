@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useRouter } from 'next/router';
-import { Header, $Header } from '@header';
-import { Segment, $Segment } from 'components/segments/experiences/id';
-import { Modal, $Modal } from '@modal';
+import { Header } from '@header';
+import { Segment } from 'components/segments/experiences/id';
+import { Modal } from '@modal';
 import { Footer } from '@footer';
 import { useToggleState } from '@context/toggle';
-import staysDetail from '@styles/staysDetail.module.scss';
 
 /** sample data */
 import { experiences } from '../../data/experiences';
@@ -17,8 +16,10 @@ import { useTabTitle } from '@hooks/useTabTitle';
  */
 const id: () => string | JSX.Element = () => {
   const router = useRouter();
-  const { id: experienceID }: { id?: string } = router.query;
-  useTabTitle(experiences[experienceID].title);
+  const { id: experienceID }: { id?: number } = router.query;
+  if (experienceID && experiences[experienceID].title) {
+    useTabTitle(experiences[experienceID].title);
+  }
 
   const toggleState = useToggleState();
 
@@ -41,7 +42,7 @@ const id: () => string | JSX.Element = () => {
     <>
       <div>
         <div className="relative z-100">
-          <Header variant={$Header.WHITE} />
+          <Header variant="white" />
         </div>
         <AnimatePresence>
           {scrollPosition > 470 && (
@@ -51,14 +52,14 @@ const id: () => string | JSX.Element = () => {
               animate={{ opacity: 1 }}
               className="fixed top-0 z-60 w-full"
             >
-              <Header variant={$Header.DETAILS} />
+              <Header variant="details" />
             </motion.div>
           )}
         </AnimatePresence>
         <div className={[].join(' ')}>
-          {experiences[experienceID] && (
+          {experienceID && experiences[experienceID] && (
             <Segment
-              layoutType={$Segment.EXPERIENCES}
+              layoutType="experiences"
               variant="panel"
               {...experiences[experienceID]}
             />
@@ -68,37 +69,34 @@ const id: () => string | JSX.Element = () => {
           <div className="sm:flex justify-between">
             <div className="sm:w-6/10">
               <div className="border-t border-gray-100 sm:border-none">
-                {experiences[experienceID] && (
+                {experienceID && experiences[experienceID] && (
                   <Segment
-                    layoutType={$Segment.EXPERIENCES}
-                    variant="characteristics"
                     {...experiences[experienceID]}
+                    layoutType="experiences"
+                    variant="characteristics"
                   />
                 )}
               </div>
-              {experiences[experienceID] && (
+              {experienceID && experiences[experienceID] && (
                 <div className="border-top border-gray-600 py-6">
                   <Segment
+                    {...experiences[experienceID]}
                     layoutType="experience"
-                    variant={$Segment.DESCRIPTION}
-                    {...experiences[experienceID]}
+                    variant="description"
                   />
                 </div>
               )}
-              {experiences[experienceID] && (
+              {experienceID && experiences[experienceID] && (
                 <div className="border-top border-gray-600 py-6">
                   <Segment
-                    variant={$Segment.PARTICIPATE}
                     {...experiences[experienceID]}
+                    variant="participate"
                   />
                 </div>
               )}
-              {experiences[experienceID]?.necessities && (
+              {experienceID && experiences[experienceID]?.necessities && (
                 <div className="border-top border-gray-600 py-6">
-                  <Segment
-                    variant={$Segment.BRING}
-                    {...experiences[experienceID]}
-                  />
+                  <Segment {...experiences[experienceID]} variant="bring" />
                 </div>
               )}
             </div>
@@ -107,46 +105,43 @@ const id: () => string | JSX.Element = () => {
                 style={{ top: 82 }}
                 className="flex justify-end sticky top-24"
               >
-                {experiences[experienceID] && (
-                  <Modal
-                    variant={$Modal.BOOKING}
-                    {...experiences[experienceID]}
-                  />
+                {experienceID && experiences[experienceID] && (
+                  <Modal {...experiences[experienceID]} variant="booking" />
                 )}
               </div>
             </div>
           </div>
-          {experiences[experienceID] && (
+          {experienceID && experiences[experienceID] && (
             <div className="border-top border-gray-600 py-8">
-              <Segment variant={$Segment.HOST} {...experiences[experienceID]} />
+              <Segment variant="host" {...experiences[experienceID]} />
             </div>
           )}
-          {experiences[experienceID] ? (
+          {experienceID && experiences[experienceID] ? (
             <div className="border-top border-gray-600 py-8">
-              <Segment variant={$Segment.EXPERIENCES} />
+              <Segment variant="experiences" />
             </div>
           ) : null}
-          {experiences[experienceID] ? (
+          {experienceID && experiences[experienceID] ? (
             <div className="border-top border-gray-600 py-8">
               <Segment
-                layoutType="experience"
-                variant={$Segment.REVIEWS}
                 {...experiences[experienceID]}
+                layoutType="experience"
+                variant="reviews"
               />
             </div>
           ) : null}
-          {experiences[experienceID] ? (
+          {experienceID && experiences[experienceID] ? (
             <div className="border-top border-gray-600 py-8">
               <Segment
-                layoutType="experience"
-                variant={$Segment.AVAILABLE}
                 {...experiences[experienceID]}
+                layoutType="experience"
+                variant="available"
               />
             </div>
           ) : null}
-          {experiences[experienceID] ? (
+          {experienceID && experiences[experienceID] ? (
             <div className="border-top border-gray-600 pt-8 pb-16">
-              <Segment layoutType="experience" variant={$Segment.KNOW} />
+              <Segment layoutType="experience" variant="know" />
             </div>
           ) : null}
         </div>
@@ -157,7 +152,7 @@ const id: () => string | JSX.Element = () => {
       </div>
       {toggleState.auth && (
         <div className="fixed top-0 z-60 bottom-0 left-0 right-0">
-          <Modal variant={$Modal.MENU} />
+          <Modal variant="menu" />
         </div>
       )}
     </>

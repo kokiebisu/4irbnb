@@ -1,5 +1,5 @@
-import { $Segment, Segment } from '@template/become-a-host';
+import { Segment } from '@template/become-a-host';
 
-const PhoneBecomeAHostPage = () => <Segment variant={$Segment.PHONE} />;
+const PhoneBecomeAHostPage = () => <Segment variant="phone" />;
 
 export default PhoneBecomeAHostPage;

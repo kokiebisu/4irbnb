@@ -1,8 +1,6 @@
 import React from 'react';
-import { $Segment, Segment } from '@template/become-a-host';
+import { Segment } from '@template/become-a-host';
 
-const DescriptionBecomeAHostPage = () => (
-  <Segment variant={$Segment.DESCRIPTION} />
-);
+const DescriptionBecomeAHostPage = () => <Segment variant="description" />;
 
 export default DescriptionBecomeAHostPage;

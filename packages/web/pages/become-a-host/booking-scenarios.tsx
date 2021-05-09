@@ -1,7 +1,7 @@
-import { $Segment, Segment } from '@template/become-a-host';
+import { Segment } from '@template/become-a-host';
 
 const BookingScenariosBecomeAHostPage = () => (
-  <Segment variant={$Segment.BOOKING_SCENARIOS} />
+  <Segment variant="booking-scenarios" />
 );
 
 export default BookingScenariosBecomeAHostPage;

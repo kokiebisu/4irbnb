@@ -1,4 +1,4 @@
-import { Segment, $Segment } from '@template/host/homes';
+import { Segment } from '@template/host/homes';
 import { Footer } from '@footer';
 import { useTabTitle } from '@hooks/useTabTitle';
 
@@ -11,37 +11,34 @@ const Homes: () => string | JSX.Element = () => {
   return (
     <div>
       <div>
-        <Segment variant={$Segment.BANNER} />
+        <Segment variant="banner" />
       </div>
       <div className="py-18 border-bottom border-gray-600">
         <div className="px-5 sm:px-9">
-          <Segment variant={$Segment.HOSTING} />
+          <Segment variant="hosting" />
         </div>
       </div>
       <div className="py-18 border-bottom border-gray-600">
-        <Segment
-          variant={$Segment.COMMUNITY}
-          title="Host your home on Airbnb"
-        />
+        <Segment variant="community" title="Host your home on Airbnb" />
       </div>
       <div className="py-18 border-bottom border-gray-600">
         <div className="px-5 sm:px-9">
-          <Segment variant={$Segment.ALL} />
+          <Segment variant="all" />
         </div>
       </div>
       <div className="py-18">
         <div className="px-5 sm:px-9">
-          <Segment variant={$Segment.PRIORITY} />
+          <Segment variant="priority" />
         </div>
       </div>
       <div className="py-18 border-bottom border-gray-700">
         <div className="px-5 sm:px-9">
-          <Segment variant={$Segment.HELP} />
+          <Segment variant="help" />
         </div>
       </div>
       <div className="py-18 border-bottom border-gray-700">
         <div className="px-5 sm:px-9">
-          <Segment variant={$Segment.READY} />
+          <Segment variant="ready" />
         </div>
       </div>
       <div>

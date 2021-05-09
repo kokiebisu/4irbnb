@@ -1,5 +1,5 @@
-import { Header, $Header } from '@header';
-import { Segment, $Segment } from '@template/d/onlinehost';
+import { Header } from '@header';
+import { Segment } from '@template/d/onlinehost';
 import { Footer } from '@footer';
 import { useTabTitle } from '@hooks/useTabTitle';
 
@@ -9,27 +9,27 @@ const OnlineHost = () => {
   return (
     <div>
       <div>
-        <Header variant={$Header.ONLINEHOST} />
+        <Header variant="onlinehost" />
       </div>
       <div>
         <div className="container">
-          <Segment variant={$Segment.BANNER} />
+          <Segment variant="banner" />
         </div>
       </div>
       <div className="container">
-        <Segment variant={$Segment.WORKS} />
+        <Segment variant="works" />
       </div>
       <div className={`py-10 container--shrink`}>
-        <Segment variant={$Segment.SHARING} />
+        <Segment variant="sharing" />
       </div>
       <div className="py-10 container">
-        <Segment variant={$Segment.BACK} />
+        <Segment variant="back" />
       </div>
       <div className="container py-16">
-        <Segment variant={$Segment.FAQ} />
+        <Segment variant="faq" />
       </div>
       <div>
-        <Segment variant={$Segment.MORE} />
+        <Segment variant="more" />
       </div>
       <div>
         <Footer />

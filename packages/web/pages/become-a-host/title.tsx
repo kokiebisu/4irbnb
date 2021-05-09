@@ -1,5 +1,5 @@
-import { $Segment, Segment } from '@template/become-a-host';
+import { Segment } from '@template/become-a-host';
 
-const TitleBecomeAHostPage = () => <Segment variant={$Segment.TITLE} />;
+const TitleBecomeAHostPage = () => <Segment variant="title" />;
 
 export default TitleBecomeAHostPage;
