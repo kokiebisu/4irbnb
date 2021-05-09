@@ -1,29 +1,17 @@
-import React from "react";
+import { LoadingAnimationProps } from './animation-loading';
+import { factory } from './utils/factory';
 
-/** components */
-import { LoadingAnimation } from "./animation.loading";
+export type AnimationVariants = 'loading';
 
-export interface AnimationProps {
-  type?: string;
-  extends?: any;
-  [x: string]: any;
+export interface AnimationProps extends LoadingAnimationProps {
+  variant: AnimationVariants;
 }
 
 /**
  * Bundles the animation components
  * @param {string} type - Specifies the type of animation component
  */
-export const Animation: React.FC<AnimationProps> = ({
-  type = "loading",
-  extendsTo,
-  ...props
-}) => {
-  const types = {
-    loading: <LoadingAnimation {...props} />,
-  };
-  return (
-    <div data-testid="animation" className={extendsTo}>
-      {types[type]}
-    </div>
-  );
+export const Animation: React.FC<AnimationProps> = ({ variant, ...props }) => {
+  const variants = factory(props);
+  return <div data-testid="animation">{variants[variant].component}</div>;
 };
