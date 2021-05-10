@@ -1,4 +1,8 @@
 {
   /** lets us update all packages which are not the latest */
-  "references": [{ "path": "error" }, { "path": "middleware" }]
+  "references": [
+    { "path": "error" },
+    { "path": "middleware" },
+    { "path": "types" }
+  ]
 }
