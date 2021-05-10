@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf dist *.tsbuildinfo",
-    "build": "tsc -b ."
+    "build": "tsc -b .",
+    "lint": "eslint src --ext js,ts"
   },
   "dependencies": {
     "@nextbnb/error": "1.0.0",
