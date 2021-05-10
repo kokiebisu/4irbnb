@@ -10,7 +10,8 @@
   "scripts": {
     "clean": "rimraf dist *.tsbuildinfo",
     "build": "tsc -b .",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src --ext js,ts"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",

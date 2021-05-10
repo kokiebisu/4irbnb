@@ -12,7 +12,8 @@
   "scripts": {
     "clean": "rimraf dist *.tsbuildinfo",
     "build": "tsc -b .",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src --ext js,ts"
   },
   "dependencies": {
     "date-fns": "^2.21.3"

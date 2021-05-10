@@ -1,4 +1,4 @@
-import { formatDistance, subDays } from 'date-fns';
+import { formatDistance } from 'date-fns';
 
 export const generateTimestamp = (datetime) => {
   return formatDistance(datetime, new Date(), {
