@@ -4,11 +4,6 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
-  "devDependencies": {
-    "@types/jest": "^26.0.23",
-    "jest": "^26.6.3",
-    "typescript": "^4.2.4"
-  },
   "scripts": {
     "clean": "rimraf dist *.tsbuildinfo",
     "build": "tsc -b .",
@@ -17,5 +12,10 @@
   },
   "dependencies": {
     "date-fns": "^2.21.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "jest": "^26.6.3",
+    "typescript": "^4.2.4"
   }
 }
