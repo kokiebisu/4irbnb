@@ -1,0 +1,9 @@
+{
+  /** lets us update all packages which are not the latest */
+  "references": [
+    { "path": "packages/error" },
+    { "path": "packages/middleware" },
+    { "path": "packages/common" },
+    { "path": "packages/utils" }
+  ]
+}

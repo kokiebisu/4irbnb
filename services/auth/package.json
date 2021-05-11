@@ -1,25 +1,18 @@
 {
-  "private": true,
   "name": "@nextbnb/auth",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.js",
-  "module": "./src/index.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "clean": "rm -rf ./build",
-    "build": "tsc -b .",
-    "start": "node ./build/index.js",
-    "dev": "ts-node-dev --poll src/index.ts",
-    "test": "jest --watchAll --no-cache",
-    "test:ci": "jest",
-    "testing:local": "JWT_KEY=airbnb MONGO_URI=sdifajdsoia node ./build/index.js"
+    "clean": "rimraf dist *.tsbuildinfo",
+    "build": "scripty",
+    "start": "scripty",
+    "dev": "scripty",
+    "test": "scripty"
   },
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "node",
-    "setupFilesAfterEnv": [
-      "./src/test/setup.ts"
-    ]
+  "scripty": {
+    "path": "../../scripts/service"
   },
   "keywords": [],
   "author": "",
@@ -30,13 +23,13 @@
     "cookie-session": "^1.4.0",
     "express": "^4.17.1",
     "express-async-errors": "^3.1.1",
-    "jest": "^26.6.3",
     "jsonwebtoken": "^8.5.1",
-    "mongodb-memory-server": "^6.9.2",
     "mongoose": "5.11.10",
     "supertest": "^6.0.1"
   },
   "devDependencies": {
+    "jest": "^26.6.3",
+    "mongodb-memory-server": "^6.9.2",
     "@types/cookie-session": "^2.0.41",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/mongoose": "^5.10.3",
