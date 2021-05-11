@@ -15,19 +15,13 @@
   },
   "homepage": "https://github.com/kokiebisu/nextbnb#readme",
   "scripts": {
-    "bootstrap": "lerna bootstrap --use-workspaces",
-    "bootstrap:production": "lerna bootstrap -- --production --no-optional",
-    "build": "lerna run build",
-    "clean": "lerna run clean",
-    "test:stays": "lerna run test:ci --scope=@nextbnb/stays --since",
-    "test:auth": "lerna run test:ci --scope=@nextbnb/auth --since",
-    "test:web": "lerna run snapshot --scope=@nextbnb/web --since",
-    "deploy:storybook": "lerna run chromatic --scope=@nextbnb/web --since",
-    "compile:packages": "lerna run compile --scope=@nextbnb/{error,middleware}",
-    "compile:services": "lerna run compile --scope=@nextbnb/{auth,stays}",
-    "compile:web": "lerna run build --scope=@nextbnb/web",
-    "version:upgrade": "lerna version --conventional-commits --yes",
-    "build:storybook": "lerna run build-storybook --scope=@nextbnb/web"
+    "lint": "scripty",
+    "build": "scripty",
+    "clean": "scripty",
+    "test": "scripty"
+  },
+  "scripty": {
+    "path": "./scripts/workspace"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.22.1",

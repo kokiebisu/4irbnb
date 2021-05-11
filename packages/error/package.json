@@ -6,8 +6,12 @@
   "license": "MIT",
   "scripts": {
     "clean": "rimraf dist *.tsbuildinfo",
-    "build": "tsc -b .",
-    "lint": "eslint src --ext js,ts"
+    "build": "scripty",
+    "lint": "scripty",
+    "test": "scripty"
+  },
+  "scripty": {
+    "path": "../../scripts/package"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
