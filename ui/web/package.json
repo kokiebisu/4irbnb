@@ -14,15 +14,13 @@
     "build-storybook": "build-storybook -c .storybook watch-css -s ./public",
     "test": "jest",
     "snapshot": "jest --updateSnapshot",
-    "chromatic": "npx chromatic --project-token e017nqnn22h --exit-zero-on-changes"
+    "chromatic": "npx chromatic --project-token e017nqnn22h --exit-zero-on-changes",
+    "clean": "rimraf .next"
   },
   "dependencies": {
-    "@storybook/addon-storyshots": "^6.2.9",
-    "@storybook/react": "^6.2.9",
     "axios": "^0.21.0",
     "formik": "^2.2.2",
     "framer-motion": "^3.2.1",
-    "lerna": "^4.0.0",
     "next": "10.0.4",
     "react": "17.0.1",
     "react-dom": "17.0.1",
@@ -60,6 +58,6 @@
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "ts-loader": "^8.0.14",
     "tsconfig-paths-webpack-plugin": "^3.3.0",
-    "typescript": "^4.0.3"
+    "typescript": "^4.2.4"
   }
 }
