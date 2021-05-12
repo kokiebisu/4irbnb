@@ -22,6 +22,9 @@ export const AmenityBulletTemplate: React.FC<AmenityBulletTemplateProps> = ({
   amenityType,
   removed,
 }) => {
+  if (!amenityType) {
+    return null;
+  }
   const { icon, description } = useAmenityBulletContent({ amenityType });
 
   return (

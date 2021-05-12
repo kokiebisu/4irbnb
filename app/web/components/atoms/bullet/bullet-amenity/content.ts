@@ -3,8 +3,8 @@ import { AmenityBulletTypeVariants } from './template';
 export const useAmenityBulletContent = ({
   amenityType,
 }: {
-  amenityType?: AmenityBulletTypeVariants;
-}) => {
+  amenityType: AmenityBulletTypeVariants;
+}): { icon: any; description: string } => {
   const amenityTypes = {
     smoke: {
       icon: {
@@ -50,9 +50,5 @@ export const useAmenityBulletContent = ({
     },
   };
 
-  if (amenityType) {
-    return { ...amenityTypes[amenityType] };
-  }
-
-  return null;
+  return { ...amenityTypes[amenityType] } as { icon: any; description: string };
 };
