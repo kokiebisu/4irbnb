@@ -10,5 +10,5 @@
  * @packageDocumentation
  */
 export * from './experience';
-export * from './stay';
 export * from './user';
+export * from './stay';
