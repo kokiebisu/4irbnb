@@ -15,6 +15,7 @@
   },
   "homepage": "https://github.com/kokiebisu/nextbnb#readme",
   "scripts": {
+    "bootstrap": "lerna bootstrap",
     "lint": "scripty",
     "build": "scripty",
     "clean": "scripty",
