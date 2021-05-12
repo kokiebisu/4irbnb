@@ -34,7 +34,7 @@
   },
   "workspaces": [
     "packages/*",
-    "ui/*",
+    "app/*",
     "services/*"
   ]
 }
