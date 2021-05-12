@@ -9,7 +9,11 @@
     "strict": true,
     "rootDir": ".",
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "stripInternal": true,
@@ -21,52 +25,143 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@panel": ["components/molecules/panel"],
-      "@panel/*": ["components/molecules/panel/*"],
-      "@bullet": ["components/atoms/bullet"],
-      "@bullet/*": ["components/atoms/bullet/*"],
-      "@button": ["components/atoms/button"],
-      "@button/*": ["components/atoms/button/*"],
-      "@input": ["components/atoms/input"],
-      "@input/*": ["components/atoms/input/*"],
-      "@video": ["components/atoms/video"],
-      "@video/*": ["components/atoms/video/*"],
-      "@card": ["components/molecules/card"],
-      "@card/*": ["components/molecules/card/*"],
-      "@particle/*": ["components/particles/*"],
-      "@prototype": ["components/prototype"],
-      "@prototype/*": ["components/prototype/*"],
-      "@animation": ["components/animation"],
-      "@animation/*": ["components/animation/*"],
-      "@banner/*": ["components/organisms/banner/*"],
-      "@create": ["components/segments/become-a-host/create"],
-      "@create/*": ["components/segments/become-a-host/create/*"],
-      "@bar": ["components/organisms/bar"],
-      "@bar/*": ["components/organisms/bar/*"],
-      "@footer": ["components/organisms/footer"],
-      "@footer/*": ["components/organisms/footer/*"],
-      "@header": ["components/organisms/header"],
-      "@header/*": ["components/organisms/header/*"],
-      "@modal": ["components/organisms/modal"],
-      "@modal/*": ["components/organisms/modal/*"],
-      "@section/*": ["components/organisms/section/*"],
-      "@layout": ["components/layout"],
-      "@layout/*": ["components/layout/*"],
-      "@template": ["components/segments"],
-      "@template/*": ["components/segments/*"],
-      "@icons": ["components/icons"],
-      "@styles/*": ["styles/*"],
-      "@helper/*": ["helper/*"],
-      "@hooks/*": ["hooks/*"],
-      "@context/*": ["context/*"],
-      "@config": ["config/index.ts"],
-      "@api": ["api"],
-      "@api/*": ["api/*"],
-      "@utils/*": ["utils/*"]
+      "@panel": [
+        "components/molecules/panel"
+      ],
+      "@panel/*": [
+        "components/molecules/panel/*"
+      ],
+      "@bullet": [
+        "components/atoms/bullet"
+      ],
+      "@bullet/*": [
+        "components/atoms/bullet/*"
+      ],
+      "@button": [
+        "components/atoms/button"
+      ],
+      "@button/*": [
+        "components/atoms/button/*"
+      ],
+      "@input": [
+        "components/atoms/input"
+      ],
+      "@input/*": [
+        "components/atoms/input/*"
+      ],
+      "@video": [
+        "components/atoms/video"
+      ],
+      "@video/*": [
+        "components/atoms/video/*"
+      ],
+      "@card": [
+        "components/molecules/card"
+      ],
+      "@card/*": [
+        "components/molecules/card/*"
+      ],
+      "@particle/*": [
+        "components/particles/*"
+      ],
+      "@prototype": [
+        "components/prototype"
+      ],
+      "@prototype/*": [
+        "components/prototype/*"
+      ],
+      "@animation": [
+        "components/animation"
+      ],
+      "@animation/*": [
+        "components/animation/*"
+      ],
+      "@banner/*": [
+        "components/organisms/banner/*"
+      ],
+      "@create": [
+        "components/segments/become-a-host/create"
+      ],
+      "@create/*": [
+        "components/segments/become-a-host/create/*"
+      ],
+      "@bar": [
+        "components/organisms/bar"
+      ],
+      "@bar/*": [
+        "components/organisms/bar/*"
+      ],
+      "@footer": [
+        "components/organisms/footer"
+      ],
+      "@footer/*": [
+        "components/organisms/footer/*"
+      ],
+      "@header": [
+        "components/organisms/header"
+      ],
+      "@header/*": [
+        "components/organisms/header/*"
+      ],
+      "@modal": [
+        "components/organisms/modal"
+      ],
+      "@modal/*": [
+        "components/organisms/modal/*"
+      ],
+      "@section/*": [
+        "components/organisms/section/*"
+      ],
+      "@layout": [
+        "components/layout"
+      ],
+      "@layout/*": [
+        "components/layout/*"
+      ],
+      "@template": [
+        "components/segments"
+      ],
+      "@template/*": [
+        "components/segments/*"
+      ],
+      "@icons": [
+        "components/icons"
+      ],
+      "@styles/*": [
+        "styles/*"
+      ],
+      "@helper/*": [
+        "helper/*"
+      ],
+      "@hooks/*": [
+        "hooks/*"
+      ],
+      "@context/*": [
+        "context/*"
+      ],
+      "@config": [
+        "config/index.ts"
+      ],
+      "@api": [
+        "api"
+      ],
+      "@api/*": [
+        "api/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ]
     },
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "./.storybook/**"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "./.storybook/**"
+  ]
 }

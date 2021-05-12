@@ -1,9 +1,10 @@
-import express, { Request, Response } from "express";
-import { currentUser, requireAuth } from "@nextbnb/middleware";
+import * as express from 'express';
+import { Request, Response } from 'express';
+import { currentUser, requireAuth } from '@nextbnb/middleware';
 const router = express.Router();
 
 router.get(
-  "/api/users/currentuser",
+  '/api/users/currentuser',
   currentUser,
   requireAuth,
   (req: Request, res: Response) => {

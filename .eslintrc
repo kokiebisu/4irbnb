@@ -49,6 +49,10 @@
         "format": ["PascalCase"]
       },
       {
+        "selector": "type",
+        "format": ["PascalCase"]
+      },
+      {
         "selector": "class",
         "format": ["PascalCase"]
       }
