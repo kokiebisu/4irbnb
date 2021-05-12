@@ -8,7 +8,8 @@
     "clean": "rimraf dist *.tsbuildinfo",
     "build": "scripty",
     "start": "scripty",
-    "dev": "scripty"
+    "dev": "scripty",
+    "lint": "scripty"
   },
   "scripty": {
     "path": "../../scripts/service"

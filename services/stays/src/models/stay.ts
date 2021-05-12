@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import * as mongoose from 'mongoose';
 
 interface StayAttribute {
   title: string;
@@ -33,7 +33,7 @@ const staySchema = new mongoose.Schema(
   },
   {
     toJSON: {
-      transform(_, ret) {
+      transform(_, ret: any) {
         ret.id = ret._id;
         delete ret._id;
         delete ret.__v;
