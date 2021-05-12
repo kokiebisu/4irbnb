@@ -9,7 +9,8 @@
     "build": "scripty",
     "start": "scripty",
     "dev": "scripty",
-    "test": "scripty"
+    "test": "scripty",
+    "lint": "scripty"
   },
   "scripty": {
     "path": "../../scripts/service"
