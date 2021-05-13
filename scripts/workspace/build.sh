@@ -1,3 +1,3 @@
 #!/bin/bash
 echo "---------- 📦 Building All Packages ----------"
-yarn tsc -b .
+yarn tsc -b packages

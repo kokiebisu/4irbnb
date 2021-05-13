@@ -12,5 +12,6 @@
     {
       "path": "../../packages/middleware"
     }
-  ]
+  ],
+  "include": ["src"]
 }
