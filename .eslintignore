@@ -3,3 +3,4 @@
 infrastructure/*
 node_modules/*
 scripts/*
+commitlint.config.js
