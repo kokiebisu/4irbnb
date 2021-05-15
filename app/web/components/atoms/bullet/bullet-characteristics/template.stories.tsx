@@ -26,5 +26,5 @@ Characteristics.args = {
   devices: ['computer'],
   people: 5,
   group: 3,
-  languages: 'English',
+  languages: ['English'],
 };

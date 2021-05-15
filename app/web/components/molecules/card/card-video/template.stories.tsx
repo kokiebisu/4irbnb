@@ -17,11 +17,10 @@ Video.args = {
   videoUrl:
     'https://a0.muscache.com/v/6f/00/6f00cc13-2903-5153-b36d-07cc55e453b3/6f00cc1329035153b36d07cc55e453b3_600k_1.mp4?imformat=h265&imwidth=400',
   ratings: 5.0,
-  number_of_reviews: 100,
+  numberOfReviews: 100,
   country: 'Country',
   title: 'Title',
   cost: 10,
-  handleIsHoveredChange: () => alert('handle is hovered change'),
 };
 Video.decorators = [
   (Story) => (

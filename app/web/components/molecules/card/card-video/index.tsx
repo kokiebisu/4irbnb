@@ -1,10 +1,12 @@
-import { VideoCardTemplate } from './template';
+import { VideoCardTemplate, VideoCardTemplateProps } from './template';
 
-const VideoCard = (props) => {
+export interface VideoCardProps extends VideoCardTemplateProps {}
+
+const VideoCard = (props: VideoCardProps) => {
   return <VideoCardTemplate {...props} />;
 };
 
-export const video = (props) => {
+export const video = (props: VideoCardProps) => {
   return {
     video: {
       component: <VideoCard {...props} />,

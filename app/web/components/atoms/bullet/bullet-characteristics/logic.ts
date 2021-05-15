@@ -1,4 +1,4 @@
-export const useCharacteristicsBullet = ({ time }) => {
+export const useCharacteristicsBullet = ({ time }: { time: number }) => {
   const displayDuration = (time: number) => {
     if (time % 60 !== 0) {
       return `${time} mins`;

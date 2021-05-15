@@ -5,6 +5,22 @@ export const useCharacteristicsBulletContent = ({
   people,
   languages,
   group,
+}: {
+  characteristicType:
+    | 'house'
+    | 'sparkle'
+    | 'door'
+    | 'calendar'
+    | 'guidelines'
+    | 'time'
+    | 'devices'
+    | 'people'
+    | 'language';
+  duration: number;
+  devices: string[];
+  people: number;
+  languages: string[];
+  group: number;
 }) => {
   const characteristics = {
     house: {
@@ -87,7 +103,7 @@ export const useCharacteristicsBulletContent = ({
         experienceType: 'language',
         width: 32,
       },
-      title: `Hosted in ${languages} (Simplified)`,
+      title: `Hosted in ${languages.join(', ')} (Simplified)`,
       description: null,
     },
   };
