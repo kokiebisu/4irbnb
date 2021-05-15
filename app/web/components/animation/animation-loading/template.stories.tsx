@@ -1,12 +1,16 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react/types-6-0';
-import { Animation, AnimationProps } from '@animation';
+import { Story, Meta } from '@storybook/react';
+import {
+  LoadingAnimationTemplate,
+  LoadingAnimationTemplateProps,
+} from './template';
 
 export default {
   title: 'Particles/Animation',
 } as Meta;
 
-const AnimationStory: Story<AnimationProps> = (args) => <Animation {...args} />;
+const AnimationStory: Story<LoadingAnimationTemplateProps> = (args) => (
+  <LoadingAnimationTemplate {...args} />
+);
 
 export const Loading = AnimationStory.bind({});
 Loading.args = {};

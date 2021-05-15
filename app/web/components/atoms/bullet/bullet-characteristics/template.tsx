@@ -2,7 +2,7 @@ import { Icon } from '@icons';
 import { useCharacteristicsBulletContent } from './content';
 
 export interface CharacteristicsBulletTemplateProps {
-  characteristicType?:
+  characteristicType:
     | 'house'
     | 'sparkle'
     | 'door'
@@ -12,10 +12,11 @@ export interface CharacteristicsBulletTemplateProps {
     | 'devices'
     | 'people'
     | 'language';
-  duration?: string;
-  devices?: string[];
-  people?: number;
-  languages?: string[];
+  duration: number;
+  devices: string[];
+  people: number;
+  languages: string[];
+  group: number;
 }
 
 /**

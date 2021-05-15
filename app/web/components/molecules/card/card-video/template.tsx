@@ -7,7 +7,7 @@ export interface VideoCardTemplateProps {
   superhost?: boolean;
   ratings?: number;
   save?: boolean;
-  number_of_reviews?: number;
+  numberOfReviews?: number;
   country?: string;
   title?: string;
   cost?: number;
@@ -24,7 +24,7 @@ export const VideoCardTemplate: React.FC<VideoCardTemplateProps> = ({
   imgUrl,
   videoUrl,
   ratings,
-  number_of_reviews,
+  numberOfReviews,
   country,
   title,
   cost,
@@ -35,10 +35,14 @@ export const VideoCardTemplate: React.FC<VideoCardTemplateProps> = ({
     <div>
       <div
         onMouseEnter={() => {
-          handleIsHoveredChange(true);
+          if (handleIsHoveredChange) {
+            handleIsHoveredChange(true);
+          }
         }}
         onMouseLeave={() => {
-          handleIsHoveredChange(false);
+          if (handleIsHoveredChange) {
+            handleIsHoveredChange(false);
+          }
         }}
         style={{ paddingTop: '133%' }}
         className="relative"
@@ -70,7 +74,7 @@ export const VideoCardTemplate: React.FC<VideoCardTemplateProps> = ({
           <p className="font-thin text-xs">{ratings}</p>
         </div>
         <div>
-          <p className="font-thin text-sm text-gray-500">{`(${number_of_reviews})`}</p>
+          <p className="font-thin text-sm text-gray-500">{`(${numberOfReviews})`}</p>
         </div>
         <div>
           <p className="text-gray-500">&nbsp; · &nbsp; </p>
