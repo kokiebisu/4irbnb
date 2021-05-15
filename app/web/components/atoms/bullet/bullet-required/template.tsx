@@ -1,7 +1,7 @@
 import { Icon } from '@icons';
 
 export interface RequiredBulletTemplateProps {
-  message?: any;
+  message?: string;
 }
 
 export const RequiredBulletTemplate: React.FC<RequiredBulletTemplateProps> = ({

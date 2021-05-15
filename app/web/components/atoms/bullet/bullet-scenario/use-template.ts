@@ -1,4 +1,4 @@
-export const useScenarioBulletContent = ({ scenarioType }) => {
+export const useScenarioBulletTemplate = ({ scenarioType }) => {
   const scenarioTypes = {
     available: {
       imgUrl:

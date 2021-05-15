@@ -1,8 +1,10 @@
 import { Icon } from '@icons';
 import { useHelpBulletContent } from './content';
 
+export type HelpBulletVariants = 'support' | 'tools' | 'insights' | 'education';
+
 export interface HelpBulletTemplateProps {
-  helpType?: 'support' | 'tools' | 'insights' | 'education';
+  helpType?: HelpBulletVariants;
 }
 
 /**
