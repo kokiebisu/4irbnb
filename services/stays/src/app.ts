@@ -1,10 +1,11 @@
-import express, { json } from 'express';
+import * as express from 'express';
+import { json } from 'express';
 require('express-async-errors');
 
 // import { errorHandler, NotFoundError, currentUser } from '@doitsimple/shared';
 import { NotFoundError } from '@nextbnb/error';
 import { errorHandler, currentUser } from '@nextbnb/middleware';
-import cookieSession from 'cookie-session';
+import cookieSession = require('cookie-session');
 
 /** Routes */
 import { CreateRouter } from './routes/create';
@@ -30,8 +31,10 @@ app.use(CreateRouter);
 app.use(ReadRouter);
 app.use(UpdateRouter);
 
-app.all('*', async () => {
-  throw new NotFoundError();
+app.all('*', () => {
+  () => {
+    throw new NotFoundError();
+  };
 });
 
 app.use(errorHandler);

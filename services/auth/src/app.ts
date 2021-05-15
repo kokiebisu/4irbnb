@@ -1,4 +1,5 @@
-import express, { json } from 'express';
+import * as express from 'express';
+import { json } from 'express';
 require('express-async-errors');
 import { currentUserRouter } from './routes/current_user';
 import { signinRouter } from './routes/signin';
@@ -6,7 +7,7 @@ import { signoutRouter } from './routes/signout';
 import { signupRouter } from './routes/signup';
 import { errorHandler } from '@nextbnb/middleware';
 import { NotFoundError } from '@nextbnb/error';
-import cookieSession from 'cookie-session';
+// import cookieSession from 'cookie-session';
 
 const app = express();
 
@@ -14,18 +15,19 @@ const app = express();
 // make sure express trusts the proxy
 app.set('trust proxy', true);
 app.use(json());
-app.use(
-  cookieSession({
-    signed: false, // not encrypted
-    secure: process.env.NODE_ENV !== 'test', // must be on https connection
-  })
-);
+app
+  .use
+  // cookieSession({
+  //   signed: false, // not encrypted
+  //   secure: process.env.NODE_ENV !== 'test', // must be on https connection
+  // })
+  ();
 app.use(currentUserRouter);
 app.use(signinRouter);
 app.use(signoutRouter);
 app.use(signupRouter);
 
-app.all('*', async () => {
+app.all('*', () => {
   throw new NotFoundError();
 });
 

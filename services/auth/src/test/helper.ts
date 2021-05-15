@@ -1,4 +1,4 @@
-import request from 'supertest';
+import * as request from 'supertest';
 import server from '../app';
 
 export const user = {
@@ -6,7 +6,7 @@ export const user = {
   password: 'password',
 };
 
-export const signup = async () => {
+export const signup: () => Promise<string[]> = async () => {
   const response = await request(server).post('/api/users/signup').send(user);
 
   const cookie = response.get('Set-Cookie');

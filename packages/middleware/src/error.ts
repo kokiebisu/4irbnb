@@ -1,21 +1,16 @@
 import { Request, Response, NextFunction } from 'express';
 import { CustomError } from '@nextbnb/error';
 
-interface ErrorResponse {
-  message: string;
-  field?: string;
-}
-
 export const errorHandler = (
   err: Error,
-  req: Request,
+  _req: Request,
   res: Response,
-  next: NextFunction
-) => {
+  _next: NextFunction
+): Response<any, Record<string, any>> | undefined => {
   if (err instanceof CustomError) {
     return res.status(err.statusCode).json({ errors: err.serializeErrors() });
   }
-  res.status(400).send({
+  return res.status(400).send({
     errors: [{ message: 'Something went wrong' }],
   });
 };

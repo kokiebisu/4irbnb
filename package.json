@@ -1,7 +1,6 @@
 {
   "name": "nextbnb",
-  "private": true,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "<p align=\"center\">     <img src=\"https://user-images.githubusercontent.com/43525282/86524021-e1d52400-be29-11ea-9943-6affd2b8038c.png\" alt=\"nextbnb\" width=\"100\" /> </p>",
   "repository": {
     "type": "git",
@@ -15,27 +14,40 @@
   },
   "homepage": "https://github.com/kokiebisu/nextbnb#readme",
   "scripts": {
-    "bootstrap": "lerna bootstrap --use-workspaces",
-    "bootstrap:production": "lerna bootstrap -- --production --no-optional",
-    "build": "lerna run build",
-    "clean": "lerna run clean",
-    "test:stays": "lerna run test:ci --scope=@nextbnb/stays --since",
-    "test:auth": "lerna run test:ci --scope=@nextbnb/auth --since",
-    "test:web": "lerna run snapshot --scope=@nextbnb/web --since",
-    "deploy:storybook": "lerna run chromatic --scope=@nextbnb/web --since",
-    "compile:packages": "lerna run compile --scope=@nextbnb/{error,middleware}",
-    "compile:services": "lerna run compile --scope=@nextbnb/{auth,stays}",
-    "compile:web": "lerna run build --scope=@nextbnb/web",
-    "version:upgrade": "lerna version --conventional-commits --yes",
-    "build:storybook": "lerna run build-storybook --scope=@nextbnb/web"
+    "bootstrap": "lerna bootstrap",
+    "lint": "scripty",
+    "build": "scripty",
+    "clean": "scripty",
+    "test": "scripty",
+    "prepare": "husky install"
+  },
+  "scripty": {
+    "path": "./scripts/workspace"
   },
   "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@commitlint/config-lerna-scopes": "^12.1.4",
+    "@typescript-eslint/eslint-plugin": "^4.22.1",
+    "@typescript-eslint/parser": "^4.22.1",
+    "commitlint": "^12.1.4",
+    "eslint": "^7.26.0",
+    "husky": "^6.0.0",
     "lerna": "^3.22.1",
+    "lerna-changelog": "^1.0.1",
+    "rimraf": "^3.0.2",
+    "scripty": "^2.0.0",
     "typescript": "^4.2.4"
   },
   "workspaces": [
     "packages/*",
-    "ui/*",
+    "app/*",
     "services/*"
-  ]
+  ],
+  "dependencies": {
+    "verdaccio": "^5.0.4"
+  },
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  }
 }
