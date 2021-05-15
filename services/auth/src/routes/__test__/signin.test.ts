@@ -1,4 +1,4 @@
-import request from 'supertest';
+import * as request from 'supertest';
 import server from '../../app';
 import { user as data } from '../../test/helper';
 
@@ -30,6 +30,6 @@ describe('/api/users/signin POST', () => {
 
     const response = await request(server).post('/api/users/signin').send(data);
 
-    return expect(response.get('Set-Cookie')).toBeDefined();
+    expect(response.get('Set-Cookie')).toBeDefined();
   });
 });
