@@ -6,7 +6,7 @@ const HelpBullet: React.FC<HelpBulletProps> = (props) => {
   return <HelpBulletTemplate {...props} />;
 };
 
-export const help = (props) => {
+export const help = (props: HelpBulletProps) => {
   return {
     help: {
       component: <HelpBullet {...props} />,

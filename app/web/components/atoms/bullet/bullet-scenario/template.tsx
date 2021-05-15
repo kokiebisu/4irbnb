@@ -1,18 +1,19 @@
-import { useScenarioBulletContent } from './content';
+import { useScenarioBulletTemplate } from './use-template';
 
+export type ScenarioTypeVariants =
+  | 'available'
+  | 'requirements'
+  | 'confirmation'
+  | 'welcome'
+  | 'paid';
 export interface ScenarioBulletTemplateProps {
-  scenarioType?:
-    | 'available'
-    | 'requirements'
-    | 'confirmation'
-    | 'welcome'
-    | 'paid';
+  scenarioType: ScenarioTypeVariants;
 }
 
 export const ScenarioBulletTemplate: React.FC<ScenarioBulletTemplateProps> = ({
   scenarioType,
 }) => {
-  const { imgUrl, title, description } = useScenarioBulletContent({
+  const { imgUrl, title, description } = useScenarioBulletTemplate({
     scenarioType,
   });
   return (

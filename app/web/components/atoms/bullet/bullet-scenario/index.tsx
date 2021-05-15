@@ -9,7 +9,7 @@ const ScenarioBullet: React.FC<ScenarioBulletProps> = (props) => {
   return <ScenarioBulletTemplate {...props} />;
 };
 
-export const scenario = (props) => {
+export const scenario = (props: ScenarioBulletProps) => {
   return {
     scenario: { component: <ScenarioBullet {...props} /> },
   };

@@ -1,8 +1,9 @@
 import { Icon } from '@icons';
 import { useExperienceBulletContent } from './content';
 
+export type ExperienceBulletVariants = 'hosts' | 'activities' | 'global';
 export interface ExperienceBulletTemplateProps {
-  experienceType?: string;
+  experienceType: ExperienceBulletVariants;
 }
 
 /**

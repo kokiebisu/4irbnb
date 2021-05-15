@@ -9,7 +9,7 @@ const RequiredBullet: React.FC<RequiredBulletProps> = (props) => {
   return <RequiredBulletTemplate {...props} />;
 };
 
-export const required = (props) => {
+export const required = (props: RequiredBulletProps) => {
   return {
     required: { component: <RequiredBullet {...props} /> },
   };

@@ -6,7 +6,7 @@ const RatingBullet: React.FC<RatingBulletProps> = (props) => {
   return <RatingBulletTemplate {...props} />;
 };
 
-export const rating = (props) => {
+export const rating = (props: RatingBulletProps) => {
   return {
     rating: { component: <RatingBullet {...props} /> },
   };

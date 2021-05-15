@@ -1,12 +1,6 @@
 export interface ScoreBulletTemplateProps {
   category?: string;
   average?: number;
-  // reviews?: {
-  //   imgUrl: string;
-  //   name: string;
-  //   date: string;
-  //   description: string;
-  // }[];
 }
 
 /**

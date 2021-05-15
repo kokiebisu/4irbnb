@@ -1,4 +1,10 @@
-export const useHelpBulletContent = ({ helpType }) => {
+import { HelpBulletVariants } from './template';
+
+export const useHelpBulletContent = ({
+  helpType,
+}: {
+  helpType: HelpBulletVariants;
+}) => {
   const helpTypes = {
     support: {
       icon: { variant: 'general', generalType: 'customerService' },
@@ -25,5 +31,12 @@ export const useHelpBulletContent = ({ helpType }) => {
         'Find guidance in the Resource Centre, join a free webinar on hosting basics, and connect with other hosts in our Community Centre.',
     },
   };
-  return { ...helpTypes[helpType] };
+  return { ...helpTypes[helpType] } as {
+    icon: {
+      variant: string;
+      generalType: string;
+    };
+    title: string;
+    description: string;
+  };
 };

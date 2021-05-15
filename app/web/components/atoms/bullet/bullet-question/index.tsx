@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   QuestionBulletTemplate,
   QuestionBulletTemplateProps,
@@ -10,7 +9,7 @@ const QuestionBullet: React.FC<QuestionBulletProps> = (props) => {
   return <QuestionBulletTemplate {...props} />;
 };
 
-export const question = (props) => {
+export const question = (props: QuestionBulletProps) => {
   return {
     question: { component: <QuestionBullet {...props} /> },
   };

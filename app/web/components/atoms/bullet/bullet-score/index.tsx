@@ -6,7 +6,7 @@ const ScoreBullet: React.FC<ScoreBulletProps> = (props) => {
   return <ScoreBulletTemplate {...props} />;
 };
 
-export const score = (props) => {
+export const score = (props: ScoreBulletProps) => {
   return {
     score: { component: <ScoreBullet {...props} /> },
   };

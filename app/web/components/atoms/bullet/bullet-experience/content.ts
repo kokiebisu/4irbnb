@@ -1,4 +1,14 @@
-export const useExperienceBulletContent = ({ experienceType }) => {
+import { ExperienceBulletVariants } from './template';
+
+export const useExperienceBulletContent: ({
+  experienceType,
+}: {
+  experienceType: ExperienceBulletVariants;
+}) => {
+  icon: { variant: string; experienceType: string };
+  title: string;
+  description: string;
+} = ({ experienceType }) => {
   const experiences = {
     hosts: {
       icon: { variant: 'experience', experienceType: 'smile' },
@@ -20,5 +30,9 @@ export const useExperienceBulletContent = ({ experienceType }) => {
     },
   };
 
-  return { ...experiences[experienceType] };
+  return { ...experiences[experienceType] } as {
+    icon: { variant: string; experienceType: string };
+    title: string;
+    description: string;
+  };
 };

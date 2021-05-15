@@ -4,13 +4,6 @@ import { RatingBulletTemplate, RatingBulletTemplateProps } from './template';
 export default {
   component: RatingBulletTemplate,
   title: 'Atoms/Bullet',
-  argTypes: {
-    variant: {
-      control: {
-        disable: true,
-      },
-    },
-  },
 } as Meta;
 
 const RatingBulletTemplateStory: Story<RatingBulletTemplateProps> = (args) => (
