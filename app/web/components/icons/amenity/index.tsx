@@ -9,7 +9,8 @@ export type AmenityIconTypes =
   | 'carbonAlarm';
 
 export interface AmenityIconTypeProps {
-  amenityType?: AmenityIconTypes;
+  variant: 'amenity';
+  amenityType: AmenityIconTypes;
 }
 
 export const AmenityIcon: React.FC<BaseIconProps & AmenityIconTypeProps> = ({
@@ -23,7 +24,7 @@ export const AmenityIcon: React.FC<BaseIconProps & AmenityIconTypeProps> = ({
     privateEntrance: <PrivateEntranceIcon />,
     carbonAlarm: <CarbonMonoxideAlarmIcon />,
   };
-  return types[amenityType];
+  return types[amenityType] as JSX.Element;
 };
 
 export const SmokeAlarmIcon: React.FC<BaseIconProps> = ({ fill = 'black' }) => {

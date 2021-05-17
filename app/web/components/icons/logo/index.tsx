@@ -9,7 +9,8 @@ export type LogoIconTypes =
   | 'apple';
 
 export interface LogoIconTypeProps {
-  logoType?: LogoIconTypes;
+  variant: 'logo';
+  logoType: LogoIconTypes;
 }
 
 export const LogoIcon: React.FC<BaseIconProps & LogoIconTypeProps> = ({
@@ -24,7 +25,7 @@ export const LogoIcon: React.FC<BaseIconProps & LogoIconTypeProps> = ({
     google: <GoogleLogoIcon {...props} />,
     apple: <AppleLogoIcon {...props} />,
   };
-  return types[logoType];
+  return types[logoType] as JSX.Element;
 };
 
 export const MenuBarLogo: React.FC<BaseIconProps> = ({
