@@ -1,7 +1,7 @@
 import { Icon } from '@icons';
 
 export interface CheckBulletTemplateProps {
-  title?: string;
+  title: string;
 }
 
 export const CheckBulletTemplate: React.FC<CheckBulletTemplateProps> = ({

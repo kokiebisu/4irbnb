@@ -1,10 +1,10 @@
 import { Icon } from '@icons';
-import { useHelpBulletContent } from './content';
+import { useHelpBulletTemplate } from './template-logic';
 
 export type HelpBulletVariants = 'support' | 'tools' | 'insights' | 'education';
 
 export interface HelpBulletTemplateProps {
-  helpType?: HelpBulletVariants;
+  helpType: HelpBulletVariants;
 }
 
 /**
@@ -14,7 +14,7 @@ export interface HelpBulletTemplateProps {
 export const HelpBulletTemplate: React.FC<HelpBulletTemplateProps> = ({
   helpType,
 }) => {
-  const { icon, title, description } = useHelpBulletContent({
+  const { icon, title, description } = useHelpBulletTemplate({
     helpType,
   });
   return (

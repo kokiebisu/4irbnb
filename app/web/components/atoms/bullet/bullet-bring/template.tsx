@@ -1,7 +1,7 @@
 import { Icon } from '@icons';
 
 export interface BringBulletTemplateProps {
-  title?: string;
+  title: string;
 }
 
 /**

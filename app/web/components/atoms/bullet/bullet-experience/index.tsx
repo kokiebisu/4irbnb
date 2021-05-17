@@ -1,17 +1,19 @@
-import React from 'react';
-import { ExperienceBulletTemplate } from './template';
+import {
+  ExperienceBulletTemplate,
+  ExperienceBulletTemplateProps,
+} from './template';
 
 export type ExperienceTypeProps = 'hosts' | 'activities' | 'global';
 
-export interface ExperienceBulletProps {
-  experienceType?: ExperienceTypeProps;
+export interface ExperienceBulletProps extends ExperienceBulletTemplateProps {
+  variant: 'experience';
 }
 
 const ExperienceBullet: React.FC<ExperienceBulletProps> = (props) => {
   return <ExperienceBulletTemplate {...props} />;
 };
 
-export const experience = (props) => {
+export const experience = (props: ExperienceBulletProps) => {
   return {
     experience: {
       component: <ExperienceBullet {...props} />,

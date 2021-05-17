@@ -1,5 +1,5 @@
 import { Icon } from '@icons';
-import { useAmenityBulletContent } from './content';
+import { useAmenityBulletTemplate } from './template-logic';
 
 export type AmenityBulletTypeVariants =
   | 'smoke'
@@ -9,8 +9,8 @@ export type AmenityBulletTypeVariants =
   | 'entrance'
   | 'carbon';
 export interface AmenityBulletTemplateProps {
-  amenityType?: AmenityBulletTypeVariants;
-  removed?: boolean;
+  amenityType: AmenityBulletTypeVariants;
+  removed: boolean;
 }
 
 /**
@@ -22,10 +22,7 @@ export const AmenityBulletTemplate: React.FC<AmenityBulletTemplateProps> = ({
   amenityType,
   removed,
 }) => {
-  if (!amenityType) {
-    return null;
-  }
-  const { icon, description } = useAmenityBulletContent({ amenityType });
+  const { icon, description } = useAmenityBulletTemplate({ amenityType });
 
   return (
     <div className="flex items-center p-3 w-1/2">

@@ -1,4 +1,5 @@
 import { AmenityBulletProps } from './bullet-amenity';
+import { BringBulletProps } from './bullet-bring';
 import { CharacteristicsBulletProps } from './bullet-characteristics';
 import { CheckBulletProps } from './bullet-check';
 import { ExperienceBulletProps } from './bullet-experience';
@@ -32,17 +33,16 @@ export type BulletVariants =
 
 export type BulletProps =
   | CharacteristicsBulletProps
-  | {
-      variant: 'bullet';
-      title: string;
-    };
+  | BringBulletProps
+  | AmenityBulletProps
+  | CheckBulletProps;
 // export interface BulletProps
-//   extends AmenityBulletProps,
+//   extends ,
 //     CharacteristicsBulletProps,
 //     RatingBulletProps,
 //     RequiredBulletProps,
 //     ScenarioBulletProps,
-//     CheckBulletProps,
+//     ,
 //     OnlineHostBulletProps,
 //     QuestionBulletProps,
 //     ExperienceBulletProps,

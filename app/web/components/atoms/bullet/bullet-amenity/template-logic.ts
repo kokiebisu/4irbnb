@@ -1,6 +1,6 @@
 import { AmenityBulletTypeVariants } from './template';
 
-export const useAmenityBulletContent = ({
+export const useAmenityBulletTemplate = ({
   amenityType,
 }: {
   amenityType: AmenityBulletTypeVariants;
