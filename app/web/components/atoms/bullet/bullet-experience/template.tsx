@@ -1,5 +1,5 @@
 import { Icon } from '@icons';
-import { useExperienceBulletContent } from './content';
+import { useExperienceBulletTemplate } from './template-logic';
 
 export type ExperienceBulletVariants = 'hosts' | 'activities' | 'global';
 export interface ExperienceBulletTemplateProps {
@@ -13,7 +13,7 @@ export interface ExperienceBulletTemplateProps {
 export const ExperienceBulletTemplate: React.FC<ExperienceBulletTemplateProps> = ({
   experienceType,
 }) => {
-  const { icon, title, description } = useExperienceBulletContent({
+  const { icon, title, description } = useExperienceBulletTemplate({
     experienceType,
   });
 

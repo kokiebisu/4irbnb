@@ -1,6 +1,6 @@
 import { ExperienceBulletVariants } from './template';
 
-export const useExperienceBulletContent: ({
+export const useExperienceBulletTemplate: ({
   experienceType,
 }: {
   experienceType: ExperienceBulletVariants;
