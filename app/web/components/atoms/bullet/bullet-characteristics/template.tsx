@@ -1,5 +1,5 @@
 import { Icon } from '@icons';
-import { useCharacteristicsBulletContent } from './content';
+import { useCharacteristicsBulletTemplate } from './template-logic';
 
 export interface CharacteristicsBulletTemplateProps {
   characteristicType:
@@ -12,7 +12,7 @@ export interface CharacteristicsBulletTemplateProps {
     | 'devices'
     | 'people'
     | 'language';
-  duration: number;
+  duration: string;
   devices: string[];
   people: number;
   languages: string[];
@@ -36,7 +36,7 @@ export const CharacteristicsBulletTemplate: React.FC<CharacteristicsBulletTempla
   languages,
   group,
 }) => {
-  const { icon, title, description } = useCharacteristicsBulletContent({
+  const { icon, title, description } = useCharacteristicsBulletTemplate({
     characteristicType,
     duration,
     devices,

@@ -4,13 +4,6 @@ import { AmenityBulletTemplate, AmenityBulletTemplateProps } from './template';
 export default {
   component: AmenityBulletTemplate,
   title: 'Atoms/Bullet',
-  argTypes: {
-    variant: {
-      control: {
-        disable: true,
-      },
-    },
-  },
 } as Meta;
 
 const AmenityBulletTemplateStory: Story<AmenityBulletTemplateProps> = (
