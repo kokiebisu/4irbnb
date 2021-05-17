@@ -5,11 +5,17 @@ import {
 import { useCharacteristicsBullet } from './logic';
 
 export interface CharacteristicsBulletProps
-  extends CharacteristicsBulletTemplateProps {}
+  extends CharacteristicsBulletTemplateProps {
+  time: number;
+  variant: 'characteristic';
+}
 
-const CharacteristicsBullet: React.FC<CharacteristicsBulletProps> = (props) => {
-  const data = useCharacteristicsBullet(props as { time: number });
-  return <CharacteristicsBulletTemplate {...data} />;
+const CharacteristicsBullet: React.FC<CharacteristicsBulletProps> = ({
+  time,
+  ...props
+}) => {
+  const data = useCharacteristicsBullet({ time });
+  return <CharacteristicsBulletTemplate {...data} {...props} />;
 };
 
 export const characteristic = (props: CharacteristicsBulletProps) => {

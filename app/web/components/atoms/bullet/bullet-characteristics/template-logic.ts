@@ -1,4 +1,4 @@
-export const useCharacteristicsBulletContent = ({
+export const useCharacteristicsBulletTemplate = ({
   characteristicType,
   duration,
   devices,
@@ -16,7 +16,7 @@ export const useCharacteristicsBulletContent = ({
     | 'devices'
     | 'people'
     | 'language';
-  duration: number;
+  duration: string;
   devices: string[];
   people: number;
   languages: string[];

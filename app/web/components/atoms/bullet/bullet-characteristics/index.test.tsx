@@ -1,8 +1,7 @@
 import React from 'react';
+import { Bullet } from '@bullet';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-
-import { Bullet } from '@bullet';
 
 describe('Characteristic Button', () => {
   it('renders correctly', () => {

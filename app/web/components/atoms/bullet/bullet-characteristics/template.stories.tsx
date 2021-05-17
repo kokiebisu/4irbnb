@@ -22,7 +22,7 @@ const CharacteristicsBulletTemplateStory: Story<CharacteristicsBulletTemplatePro
 export const Characteristics = CharacteristicsBulletTemplateStory.bind({});
 Characteristics.args = {
   characteristicType: 'house',
-  time: 60,
+  duration: '1 hour',
   devices: ['computer'],
   people: 5,
   group: 3,

@@ -29,22 +29,29 @@ export type BulletVariants =
   | 'question'
   | 'check'
   | 'scenario';
-export interface BulletProps
-  extends AmenityBulletProps,
-    CharacteristicsBulletProps,
-    RatingBulletProps,
-    RequiredBulletProps,
-    ScenarioBulletProps,
-    CheckBulletProps,
-    OnlineHostBulletProps,
-    QuestionBulletProps,
-    ExperienceBulletProps,
-    HostBulletProps,
-    ScoreBulletProps,
-    HelpBulletProps,
-    PriorityBulletProps {
-  variant: BulletVariants;
-}
+
+export type BulletProps =
+  | CharacteristicsBulletProps
+  | {
+      variant: 'bullet';
+      title: string;
+    };
+// export interface BulletProps
+//   extends AmenityBulletProps,
+//     CharacteristicsBulletProps,
+//     RatingBulletProps,
+//     RequiredBulletProps,
+//     ScenarioBulletProps,
+//     CheckBulletProps,
+//     OnlineHostBulletProps,
+//     QuestionBulletProps,
+//     ExperienceBulletProps,
+//     HostBulletProps,
+//     ScoreBulletProps,
+//     HelpBulletProps,
+//     PriorityBulletProps {
+//   variant: BulletVariants;
+// }
 
 /**
  * Bundles the bullet components
@@ -59,6 +66,8 @@ export const Bullet: React.FC<BulletProps> = ({ variant, ...props }) => {
   } = factory(props);
 
   return (
-    <div data-testid={`${variant}-bullet`}>{variants[variant].component}</div>
+    <div data-testid={`${variant as BulletVariants}-bullet`}>
+      {variants[variant].component}
+    </div>
   );
 };
