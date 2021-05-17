@@ -1,4 +1,4 @@
-import { ActionIcon, ActionIconTypeProps } from './action';
+import { ActionIcon, ActionIconProps } from './action';
 import { AmenityIcon, AmenityIconTypeProps } from './amenity';
 import { ExperienceIcon, ExperienceIconTypeProps } from './experience';
 import { GeneralIcon, GeneralIconTypeProps } from './general';
@@ -27,25 +27,24 @@ export type IconVariants =
   | 'general'
   | 'stay';
 
-export interface IconProps
-  extends BaseIconProps,
-    LogoIconTypeProps,
-    AmenityIconTypeProps,
-    ExperienceIconTypeProps,
-    ActionIconTypeProps,
-    ProfileIconTypeProps,
-    SemanticIconTypeProps,
-    GeneralIconTypeProps,
-    StayIconTypeProps {
-  variant: IconVariants;
-}
+export type IconProps = ActionIconProps & {
+  width: number;
+  height: number;
+};
+//   extends BaseIconProps,
+//     LogoIconTypeProps,
+//     AmenityIconTypeProps,
+//     ExperienceIconTypeProps,
+//     ActionIconTypeProps,
+//     ProfileIconTypeProps,
+//     SemanticIconTypeProps,
+//     GeneralIconTypeProps,
+//     StayIconTypeProps {
+//   variant: IconVariants;
+// }
 
-export const Icon: React.FC<IconProps> = ({
-  variant,
-  width,
-  height,
-  ...props
-}) => {
+export const Icon: React.FC<IconProps> = ({ width, height, ...props }) => {
+  const { variant } = props;
   const variants = {
     logo: <LogoIcon {...props} />,
     action: <ActionIcon {...props} />,

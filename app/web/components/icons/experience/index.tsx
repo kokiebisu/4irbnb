@@ -9,7 +9,8 @@ export type ExperienceIconTypes =
   | 'activity';
 
 export interface ExperienceIconTypeProps {
-  experienceType?: ExperienceIconTypes;
+  variant: 'experience';
+  experienceType: ExperienceIconTypes;
 }
 
 export const ExperienceIcon: React.FC<
@@ -23,7 +24,7 @@ export const ExperienceIcon: React.FC<
     smile: <SmileIcon {...props} />,
     activity: <ActivityIcon {...props} />,
   };
-  return types[experienceType];
+  return types[experienceType] as JSX.Element;
 };
 
 export const TimeIcon: React.FC<BaseIconProps> = ({ fill }) => {

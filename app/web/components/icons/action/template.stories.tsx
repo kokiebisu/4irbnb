@@ -1,10 +1,10 @@
 import { Story, Meta } from '@storybook/react';
-import { ActionIcon, ActionIconTypeProps } from '.';
+import { ActionIconTemplate, ActionIconTemplateProps } from './template';
 import { IconProps } from '..';
 
 export default {
   title: 'Atoms/Icons/Action',
-  component: ActionIcon,
+  component: ActionIconTemplate,
 } as Meta;
 
 const size = {
@@ -12,9 +12,9 @@ const size = {
   height: 24,
 };
 
-const IconStory: Story<IconProps & ActionIconTypeProps> = (args) => (
+const IconStory: Story<IconProps & ActionIconTemplateProps> = (args) => (
   <div style={{ ...size }}>
-    <ActionIcon {...args} />
+    <ActionIconTemplate {...args} />
   </div>
 );
 

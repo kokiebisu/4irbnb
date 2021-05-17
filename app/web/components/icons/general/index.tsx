@@ -28,7 +28,8 @@ export type GeneralIconTypes =
   | 'explore';
 
 export interface GeneralIconTypeProps {
-  generalType?: GeneralIconTypes;
+  variant: 'general';
+  generalType: GeneralIconTypes;
 }
 
 export const GeneralIcon: React.FC<BaseIconProps & GeneralIconTypeProps> = ({
@@ -61,7 +62,7 @@ export const GeneralIcon: React.FC<BaseIconProps & GeneralIconTypeProps> = ({
     lightening: <LighteningIcon {...props} />,
     protected: <ProtectedIcon {...props} />,
   };
-  return types[generalType];
+  return types[generalType] as JSX.Element;
 };
 
 const MagnifyGlassIcon: React.FC<BaseIconProps> = ({ fill, ...props }) => {

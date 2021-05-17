@@ -1,3 +1,4 @@
+import { BulletProps } from '@bullet';
 import { amenity } from '@bullet/bullet-amenity';
 import { bring } from '@bullet/bullet-bring';
 import { characteristic } from '@bullet/bullet-characteristics';
@@ -14,7 +15,7 @@ import { required } from '@bullet/bullet-required';
 import { scenario } from '@bullet/bullet-scenario';
 import { score } from '@bullet/bullet-score';
 
-export const factory = (props) => {
+export const factory = (props: BulletProps) => {
   return {
     ...amenity(props),
     ...bring(props),
@@ -31,5 +32,5 @@ export const factory = (props) => {
     ...required(props),
     ...scenario(props),
     ...score(props),
-  };
+  } as {};
 };
