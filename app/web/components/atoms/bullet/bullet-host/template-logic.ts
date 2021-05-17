@@ -1,4 +1,12 @@
-export const useHostBulletContent = ({ hostType, total }) => {
+import { HostTypeVariants } from './template';
+
+export const useHostBulletTemplate = ({
+  hostType,
+  total,
+}: {
+  hostType: HostTypeVariants;
+  total: number;
+}) => {
   const hostTypes = {
     review: {
       icon: { variant: 'profile', profileType: 'star' },
@@ -14,5 +22,8 @@ export const useHostBulletContent = ({ hostType, total }) => {
     },
   };
 
-  return { ...hostTypes[hostType] };
+  return { ...hostTypes[hostType] } as {
+    icon: { variant: string; profileType: string };
+    description: string;
+  };
 };

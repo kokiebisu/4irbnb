@@ -1,9 +1,10 @@
 import { Icon } from '@icons';
-import { useHostBulletContent } from './content';
+import { useHostBulletTemplate } from './template-logic';
 
+export type HostTypeVariants = 'review' | 'verified' | 'superhost';
 export interface HostBulletTemplateProps {
-  total?: number;
-  hostType?: 'review' | 'verified' | 'superhost';
+  total: number;
+  hostType: HostTypeVariants;
 }
 
 /**
@@ -15,7 +16,7 @@ export const HostBulletTemplate: React.FC<HostBulletTemplateProps> = ({
   hostType,
   total,
 }) => {
-  const { icon, description } = useHostBulletContent({
+  const { icon, description } = useHostBulletTemplate({
     hostType,
     total,
   });
