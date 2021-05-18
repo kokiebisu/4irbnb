@@ -1,7 +1,7 @@
-export interface OptionButtonTemplateProps {
-  name?: string;
+export type OptionButtonTemplateProps = {
+  name: string;
   bold?: boolean;
-}
+};
 
 /**
  * Renders the option button components

@@ -1,15 +1,7 @@
 import { MenuButtonTemplate, MenuButtonTemplateProps } from './template';
 
-export interface MenuButtonProps extends MenuButtonTemplateProps {}
+export type MenuButtonProps = MenuButtonTemplateProps;
 
-const MenuButton: React.FC<MenuButtonProps> = (props) => {
+export const MenuButton: React.FC<MenuButtonProps> = (props) => {
   return <MenuButtonTemplate {...props} />;
-};
-
-export const menu = ({ ...props }) => {
-  return {
-    menu: {
-      component: <MenuButton {...props} />,
-    },
-  };
 };

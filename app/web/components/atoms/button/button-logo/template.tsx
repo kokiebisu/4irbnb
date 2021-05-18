@@ -1,9 +1,9 @@
 import { Icon } from '@icons';
 
-export interface LogoButtonTemplateProps {
-  noName?: boolean;
-  fill?: string;
-}
+export type LogoButtonTemplateProps = {
+  noName: boolean;
+  fill: string;
+};
 
 /**
  * Renders the Logo Button component

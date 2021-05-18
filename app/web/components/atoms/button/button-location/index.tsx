@@ -3,16 +3,8 @@ import {
   LocationButtonTemplateProps,
 } from './template';
 
-export interface LocationButtonProps extends LocationButtonTemplateProps {}
+export type LocationButtonProps = LocationButtonTemplateProps;
 
-const LocationButton: React.FC<LocationButtonProps> = (props) => {
+export const LocationButton: React.FC<LocationButtonProps> = (props) => {
   return <LocationButtonTemplate {...props} />;
-};
-
-export const location = (props) => {
-  return {
-    location: {
-      component: <LocationButton {...props} />,
-    },
-  };
 };
