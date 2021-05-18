@@ -9,14 +9,6 @@ export interface ExperienceBulletProps extends ExperienceBulletTemplateProps {
   variant: 'experience';
 }
 
-const ExperienceBullet: React.FC<ExperienceBulletProps> = (props) => {
+export const ExperienceBullet: React.FC<ExperienceBulletProps> = (props) => {
   return <ExperienceBulletTemplate {...props} />;
-};
-
-export const experience = (props: ExperienceBulletProps) => {
-  return {
-    experience: {
-      component: <ExperienceBullet {...props} />,
-    },
-  };
 };
