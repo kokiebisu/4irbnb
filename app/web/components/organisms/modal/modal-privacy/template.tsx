@@ -1,26 +1,18 @@
 import { Button } from '@button';
 import { Icon } from '@icons';
-import { useToggleDispatch } from '@context/toggle';
 
-export interface PrivacyModalTemplateProps {}
+export interface PrivacyModalTemplateProps {
+  handleSave: () => void;
+  handleSettings: () => void;
+}
 
 /**
  * Renders the privacy modal
  */
-export const PrivacyModalTemplate: React.FC<PrivacyModalTemplateProps> = () => {
-  const toggleDispatch = useToggleDispatch();
-
-  const handleSave = () => {
-    // add cookie
-    console.log('entered');
-    return toggleDispatch({ type: 'toggle_privacy' });
-  };
-
-  const handleSettings = () => {
-    // open settings
-    return toggleDispatch({ type: 'toggle_privacy' });
-  };
-
+export const PrivacyModalTemplate: React.FC<PrivacyModalTemplateProps> = ({
+  handleSave,
+  handleSettings,
+}) => {
   return (
     <div>
       <div className="block lg:flex lg:items-center">

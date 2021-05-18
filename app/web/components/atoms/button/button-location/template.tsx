@@ -1,10 +1,10 @@
-export interface LocationButtonTemplateProps {
+export type LocationButtonTemplateProps = {
   locationType: 'explore' | 'recent';
-  location: string;
-  from: string;
-  to: string;
-  guests: number | null;
-}
+  location?: string;
+  from?: string;
+  to?: string;
+  guests?: number;
+};
 
 /**
  * Renders the Location Button component
