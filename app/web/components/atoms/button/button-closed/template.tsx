@@ -1,9 +1,9 @@
 import { Icon } from '@icons';
-import { useClosedButtonContent } from './content';
+import { ClosedTypeVariants, useClosedButtonContent } from './use-template';
 
 export interface ClosedButtonTemplateProps {
-  selected?: boolean;
-  closedType?: 'close' | 'check';
+  selected: boolean;
+  closedType: ClosedTypeVariants;
 }
 
 export const ClosedButtonTemplate: React.FC<ClosedButtonTemplateProps> = ({
