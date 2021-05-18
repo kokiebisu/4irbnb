@@ -1,6 +1,6 @@
-export interface LinkButtonTemplateProps {
-  title?: string;
-}
+export type LinkButtonTemplateProps = {
+  title: string;
+};
 
 /**
  * Renders the Link Button component

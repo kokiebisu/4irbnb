@@ -1,8 +1,8 @@
 import { Icon } from '@icons';
 
-export interface ModalButtonTemplateProps {
-  modalType?: 'close' | 'back';
-}
+export type ModalButtonTemplateProps = {
+  modalType: 'close' | 'back';
+};
 
 /**
  * Renders the close button component

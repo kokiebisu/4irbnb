@@ -1,9 +1,9 @@
 export interface LocationButtonTemplateProps {
-  locationType?: 'explore' | 'recent';
-  location?: string;
-  from?: string;
-  to?: string;
-  guests?: number | null;
+  locationType: 'explore' | 'recent';
+  location: string;
+  from: string;
+  to: string;
+  guests: number | null;
 }
 
 /**

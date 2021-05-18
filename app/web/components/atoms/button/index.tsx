@@ -59,12 +59,11 @@ export type ButtonProps = (
   | ({ variant: 'underline' } & UnderlineButtonProps)
   | ({ variant: 'verify' } & VerifyButtonProps)
   | ({ variant: 'video' } & VideoButtonProps)
-) & { onClick: () => void; stretch: boolean; disable: boolean };
+) & { onClick: () => void; stretch?: boolean; disable?: boolean };
 
 /**
  * Bundles the button components
- * @param {string} extendsTo - Add custom styling to the specified component
- * @param {string} type - Specifies the type of button component
+ * @param {string} variant - Specifies the type of button component
  * @param {Object} children - A JSX that will be part of the component
  */
 export const Button: React.FC<ButtonProps> = ({

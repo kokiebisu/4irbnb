@@ -1,10 +1,10 @@
 import { Icon } from '@icons';
 
-export interface MenuButtonTemplateProps {
-  authenticated?: boolean;
-  imgUrl?: string;
-  inverse?: boolean;
-}
+export type MenuButtonTemplateProps = {
+  authenticated: boolean;
+  imgUrl: string;
+  inverse: boolean;
+};
 
 /**
  * Renders the menu button components

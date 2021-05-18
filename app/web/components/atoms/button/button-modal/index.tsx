@@ -1,15 +1,7 @@
 import { ModalButtonTemplate, ModalButtonTemplateProps } from './template';
 
-export interface ModalButtonProps extends ModalButtonTemplateProps {}
+export type ModalButtonProps = ModalButtonTemplateProps;
 
-const ModalButton: React.FC<ModalButtonProps> = (props) => {
+export const ModalButton: React.FC<ModalButtonProps> = (props) => {
   return <ModalButtonTemplate {...props} />;
-};
-
-export const modal = (props) => {
-  return {
-    modal: {
-      component: <ModalButton {...props} />,
-    },
-  };
 };

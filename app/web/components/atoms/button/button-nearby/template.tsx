@@ -1,6 +1,6 @@
-export interface NearbyButtonTemplateProps {
-  label?: string;
-}
+export type NearbyButtonTemplateProps = {
+  label: string;
+};
 
 /**
  * Renders the Nearby Button component
