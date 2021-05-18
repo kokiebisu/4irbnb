@@ -1,7 +1,7 @@
 import { Icon } from '@icons';
 
 export interface ExpandButtonTemplateProps {
-  title?: string;
+  title: string;
 }
 
 /**

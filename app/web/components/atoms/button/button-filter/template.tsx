@@ -1,6 +1,6 @@
 export interface FilterButtonTemplateProps {
-  label?: string;
-  inverse?: boolean;
+  label: string;
+  inverse: boolean;
 }
 
 /**

@@ -1,6 +1,6 @@
 export interface DestinationButtonTemplateProps {
-  city?: string;
-  location?: string;
+  city: string;
+  location: string;
 }
 
 /**

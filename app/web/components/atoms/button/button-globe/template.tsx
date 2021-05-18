@@ -1,8 +1,8 @@
-export interface GlobeButtonTemplateProps {
-  language?: string;
-  region?: string;
-  selected?: boolean;
-}
+export type GlobeButtonTemplateProps = {
+  language: string;
+  region: string;
+  selected: boolean;
+};
 
 /**
  * Renders the Globe Button
@@ -18,7 +18,7 @@ export const GlobeButtonTemplate: React.FC<GlobeButtonTemplateProps> = ({
   return (
     <div
       className={`hover:bg-gray-100 pl-3 pr-8 py-3 rounded-md ${
-        selected ? 'border border-black' : null
+        selected ? 'border border-black' : ''
       }`}
     >
       <div>

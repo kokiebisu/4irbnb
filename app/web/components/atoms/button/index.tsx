@@ -29,70 +29,37 @@ import { VerifyButtonProps } from './button-verify';
 import { VideoButtonProps } from './button-video';
 import { factory } from './utils/factory';
 
-export type ButtonVariants =
-  | 'auth'
-  | 'menu'
-  | 'privacy'
-  | 'border'
-  | 'bar'
-  | 'banner'
-  | 'primary'
-  | 'paginate'
-  | 'expand'
-  | 'option'
-  | 'underline'
-  | 'filter'
-  | 'modal'
-  | 'back'
-  | 'transparent'
-  | 'globe'
-  | 'link'
-  | 'closed'
-  | 'search'
-  | 'location'
-  | 'nearby'
-  | 'calendar'
-  | 'searchbar'
-  | 'logo'
-  | 'video'
-  | 'destination'
-  | 'currency'
-  | 'verify';
-
-export interface ButtonProps
-  extends AuthButtonProps,
-    BackButtonProps,
-    BannerButtonProps,
-    BarButtonProps,
-    BorderButtonProps,
-    CalendarButtonProps,
-    ClosedButtonProps,
-    CurrencyButtonProps,
-    DestinationButtonProps,
-    ExpandButtonProps,
-    FilterButtonProps,
-    GlobeButtonProps,
-    LinkButtonProps,
-    LocationButtonProps,
-    LogoButtonProps,
-    MenuButtonProps,
-    ModalButtonProps,
-    NearbyButtonProps,
-    OptionButtonProps,
-    PaginateButtonProps,
-    PrimaryButtonProps,
-    PrivacyButtonProps,
-    ReportButtonProps,
-    SearchButtonProps,
-    SearchbarButtonProps,
-    TransparentButtonProps,
-    UnderlineButtonProps,
-    VerifyButtonProps,
-    VideoButtonProps {
-  variant: ButtonVariants;
-  onClick?: () => void;
-  stretch?: boolean;
-}
+export type ButtonProps = (
+  | ({ variant: 'auth' } & AuthButtonProps)
+  | ({ variant: 'back' } & BackButtonProps)
+  | ({ variant: 'banner' } & BannerButtonProps)
+  | ({ variant: 'bar' } & BarButtonProps)
+  | ({ variant: 'border' } & BorderButtonProps)
+  | ({ variant: 'calendar' } & CalendarButtonProps)
+  | ({ variant: 'closed' } & ClosedButtonProps)
+  | ({ variant: 'currency' } & CurrencyButtonProps)
+  | ({ variant: 'destination' } & DestinationButtonProps)
+  | ({ variant: 'expand' } & ExpandButtonProps)
+  | ({ variant: 'filter' } & FilterButtonProps)
+  | ({ variant: 'globe' } & GlobeButtonProps)
+  | ({ variant: 'link' } & LinkButtonProps)
+  | ({ variant: 'location' } & LocationButtonProps)
+  | ({ variant: 'logo' } & LogoButtonProps)
+  | ({ variant: 'menu' } & MenuButtonProps)
+  | ({ variant: 'modal' } & ModalButtonProps)
+  | ({ variant: 'nearby' } & NearbyButtonProps)
+  | ({ variant: 'option' } & OptionButtonProps)
+  | ({ variant: 'paginate' } & PaginateButtonProps)
+  | ({ variant: 'primary' } & PrimaryButtonProps)
+  | ({ variant: 'privacy' } & PrivacyButtonProps)
+  | ({ variant: 'report' } & ReportButtonProps)
+  | ({ variant: 'search' } & SearchButtonProps)
+  | ({ variant: 'searchbar' } & SearchbarButtonProps)
+  | ({ variant: 'transparent' } & TransparentButtonProps)
+  | ({ variant: 'underline' } & UnderlineButtonProps)
+  | ({ variant: 'verify' } & VerifyButtonProps)
+  | ({ variant: 'video' } & VideoButtonProps)
+) & { onClick: () => void; stretch: boolean; disable: boolean };
 
 /**
  * Bundles the button components
@@ -101,24 +68,18 @@ export interface ButtonProps
  * @param {Object} children - A JSX that will be part of the component
  */
 export const Button: React.FC<ButtonProps> = ({
-  variant,
   onClick,
   stretch,
   ...props
 }) => {
   const { disable } = props;
-  const variants: {
-    [variant: string]: {
-      component: JSX.Element;
-    };
-  } = factory(props);
 
   return (
     <button
-      data-testid={`${variant}-button--atoms`}
+      data-testid={`${props.variant as string}-button--atoms`}
       onClick={!disable ? onClick : undefined}
     >
-      {variants[variant].component}
+      {factory(props)}
     </button>
   );
 };
