@@ -22,7 +22,12 @@ export const LocationModalTemplate: React.FC<LocationModalTemplateProps> = () =>
   return (
     <div>
       <div>
-        <Button variant="location" locationType="explore" block />
+        <Button
+          variant="location"
+          locationType="explore"
+          stretch
+          onClick={() => alert('clicked')}
+        />
       </div>
       <div>
         <Layout
@@ -37,8 +42,10 @@ export const LocationModalTemplate: React.FC<LocationModalTemplateProps> = () =>
                     locationType="recent"
                     location={location}
                     from={from}
+                    to={to}
                     guests={guests}
-                    block
+                    stretch
+                    onClick={() => alert('clicked')}
                   />
                 </div>
               );
