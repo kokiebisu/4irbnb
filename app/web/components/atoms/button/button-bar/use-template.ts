@@ -1,4 +1,12 @@
-export const useBarButtonContent = ({ barType, selected }) => {
+export type BarTypeVariants = 'menu' | 'saved' | 'login';
+
+export const useBarButtonTemplate = ({
+  barType,
+  selected,
+}: {
+  barType: BarTypeVariants;
+  selected: boolean;
+}) => {
   const barTypes = {
     menu: {
       icon: {

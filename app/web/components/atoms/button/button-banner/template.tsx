@@ -1,5 +1,5 @@
 export interface BannerButtonTemplateProps {
-  title?: string;
+  title: string;
 }
 
 /**

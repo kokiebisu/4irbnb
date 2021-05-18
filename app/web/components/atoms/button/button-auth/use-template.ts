@@ -1,4 +1,19 @@
-export const useAuthButtonContent = ({ authType }) => {
+export type AuthTypeVariants = 'email' | 'facebook' | 'google' | 'apple';
+
+type Props = {
+  name: string;
+  icon: {
+    variant: 'general' | 'logo';
+    generalType?: 'email';
+    logoType?: 'facebook' | 'google' | 'apple';
+  };
+};
+
+export const useAuthButtonTemplate = ({
+  authType,
+}: {
+  authType: AuthTypeVariants;
+}) => {
   const authTypes = {
     email: {
       name: 'Email',
@@ -34,5 +49,5 @@ export const useAuthButtonContent = ({ authType }) => {
     },
   };
 
-  return { ...authTypes[authType] };
+  return { ...authTypes[authType] } as Props;
 };
