@@ -1,6 +1,6 @@
 export interface CalendarButtonTemplateProps {
-  disabled?: boolean;
-  number?: number;
+  disabled: boolean;
+  number: number;
 }
 
 /**

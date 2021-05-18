@@ -1,12 +1,12 @@
 import { stretchMixin } from '@button/utils/mixin';
 
 export interface BorderButtonTemplateProps {
-  title?: string;
-  inverse?: boolean;
-  size?: 'sm' | 'md' | 'lg';
-  spread?: boolean;
-  bold?: boolean;
-  stretch?: boolean;
+  title: string;
+  inverse: boolean;
+  size: 'sm' | 'md' | 'lg';
+  spread: boolean;
+  bold: boolean;
+  stretch: boolean;
 }
 
 /**
@@ -44,9 +44,11 @@ export const BorderButtonTemplate: React.FC<BorderButtonTemplateProps> = ({
     lg: 'text-lg py-4 px-6',
   };
 
+  const mixin: string = stretchMixin(stretch);
+
   return (
     <div
-      className={`${stretchMixin(stretch)} ${styles['common']} ${
+      className={`${mixin} ${styles['common']} ${
         styles[size]
       } ${renderBorder()}`}
     >
