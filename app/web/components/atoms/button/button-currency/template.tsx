@@ -1,7 +1,7 @@
 export interface CurrencyButtonTemplateProps {
-  name?: string;
-  abbreviation?: string;
-  symbol?: string;
+  name: string;
+  abbreviation: string;
+  symbol: string;
 }
 
 /**

@@ -1,4 +1,10 @@
-export const useClosedButtonContent = ({ closedType }) => {
+export type ClosedTypeVariants = 'close' | 'check';
+
+export const useClosedButtonContent = ({
+  closedType,
+}: {
+  closedType: ClosedTypeVariants;
+}) => {
   const closedTypes = {
     close: {
       icon: {
