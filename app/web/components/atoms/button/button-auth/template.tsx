@@ -1,8 +1,8 @@
 import { Icon } from '@icons';
-import { useAuthButtonContent } from './content';
+import { AuthTypeVariants, useAuthButtonTemplate } from './use-template';
 
 export interface AuthButtonTemplateProps {
-  authType?: 'email' | 'facebook' | 'google' | 'apple';
+  authType: AuthTypeVariants;
 }
 
 /**
@@ -12,7 +12,7 @@ export interface AuthButtonTemplateProps {
 export const AuthButtonTemplate: React.FC<AuthButtonTemplateProps> = ({
   authType,
 }) => {
-  const { icon, name } = useAuthButtonContent({ authType });
+  const { icon, name } = useAuthButtonTemplate({ authType });
   return (
     <div className="border-gray-300 border-solid border-2 hover:border-black bg-transparent block w-full px-4 py-3 rounded-lg">
       <div className="relative w-full flex justify-center">

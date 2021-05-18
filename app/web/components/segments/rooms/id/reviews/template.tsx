@@ -46,20 +46,29 @@ export const ReviewsSegmentTemplate: React.FC<ReviewsSegmentTemplateProps> = ({
         </div>
         {layoutType === 'room' && (
           <div className="grid mt-4 mr-6 grid-cols-2">
-            {categories.map((category, index) => {
-              return (
-                <div
-                  key={index}
-                  className={`${[section['m__review--bullet']].join(' ')} py-2`}
-                >
-                  <Bullet
-                    variant="score"
-                    category={category?.type}
-                    average={category?.average}
-                  />
-                </div>
-              );
-            })}
+            {categories.length
+              ? categories.map(
+                  (
+                    category: { type: string; average: number },
+                    index: number
+                  ) => {
+                    return (
+                      <div
+                        key={index}
+                        className={`${[section['m__review--bullet']].join(
+                          ' '
+                        )} py-2`}
+                      >
+                        <Bullet
+                          variant="score"
+                          category={category?.type}
+                          average={category?.average}
+                        />
+                      </div>
+                    );
+                  }
+                )
+              : null}
           </div>
         )}
         <div

@@ -1,16 +1,16 @@
 import { Icon } from '@icons';
-import { useBarButtonContent } from './content';
+import { BarTypeVariants, useBarButtonTemplate } from './use-template';
 
 export interface BarButtonTemplateProps {
-  barType?: 'menu' | 'saved' | 'login';
-  selected?: boolean;
+  barType: BarTypeVariants;
+  selected: boolean;
 }
 
 export const BarButtonTemplate: React.FC<BarButtonTemplateProps> = ({
   barType,
   selected,
 }) => {
-  const { icon, name } = useBarButtonContent({ barType, selected });
+  const { icon, name } = useBarButtonTemplate({ barType, selected });
 
   return (
     <div className="inline-flex flex-col items-center">
