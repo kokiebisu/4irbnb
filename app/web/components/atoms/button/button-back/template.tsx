@@ -1,6 +1,6 @@
 import { Icon } from '@icons';
 
-export interface BackButtonTemplateProps {}
+export type BackButtonTemplateProps = {};
 
 /**
  * Renders the back button

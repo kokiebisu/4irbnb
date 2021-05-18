@@ -1,9 +1,9 @@
 import { Icon } from '@icons';
 import { AuthTypeVariants, useAuthButtonTemplate } from './use-template';
 
-export interface AuthButtonTemplateProps {
+export type AuthButtonTemplateProps = {
   authType: AuthTypeVariants;
-}
+};
 
 /**
  * Renders the auth button component
