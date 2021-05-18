@@ -4,12 +4,6 @@ export interface AmenityBulletProps extends AmenityBulletTemplateProps {
   variant: 'amenity';
 }
 
-const AmenityBullet: React.FC<AmenityBulletProps> = (props) => {
+export const AmenityBullet: React.FC<AmenityBulletProps> = (props) => {
   return <AmenityBulletTemplate {...props} />;
-};
-
-export const amenity = (props: AmenityBulletProps) => {
-  return {
-    amenity: { component: <AmenityBullet {...props} /> },
-  };
 };

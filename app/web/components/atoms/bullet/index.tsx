@@ -5,6 +5,7 @@ import { CheckBulletProps } from './bullet-check';
 import { ExperienceBulletProps } from './bullet-experience';
 import { HelpBulletProps } from './bullet-help';
 import { HostBulletProps } from './bullet-host';
+import { KnowBulletProps } from './bullet-know';
 import { OnlineHostBulletProps } from './bullet-onlinehost';
 import { PriorityBulletProps } from './bullet-priority';
 import { QuestionBulletProps } from './bullet-question';
@@ -14,60 +15,28 @@ import { ScenarioBulletProps } from './bullet-scenario';
 import { ScoreBulletProps } from './bullet-score';
 import { factory } from './utils/factory';
 
-export type BulletVariants =
-  | 'characteristic'
-  | 'amenity'
-  | 'score'
-  | 'host'
-  | 'know'
-  | 'rating'
-  | 'bring'
-  | 'experience'
-  | 'priority'
-  | 'help'
-  | 'required'
-  | 'onlinehost'
-  | 'question'
-  | 'check'
-  | 'scenario';
-
 export type BulletProps =
-  | CharacteristicsBulletProps
-  | BringBulletProps
-  | AmenityBulletProps
-  | CheckBulletProps;
-// export interface BulletProps
-//   extends ,
-//     CharacteristicsBulletProps,
-//     RatingBulletProps,
-//     RequiredBulletProps,
-//     ScenarioBulletProps,
-//     ,
-//     OnlineHostBulletProps,
-//     QuestionBulletProps,
-//     ExperienceBulletProps,
-//     HostBulletProps,
-//     ScoreBulletProps,
-//     HelpBulletProps,
-//     PriorityBulletProps {
-//   variant: BulletVariants;
-// }
+  | ({ variant: 'characteristics' } & CharacteristicsBulletProps)
+  | ({ variant: 'bring' } & BringBulletProps)
+  | ({ variant: 'amenity' } & AmenityBulletProps)
+  | ({ variant: 'check' } & CheckBulletProps)
+  | ({ variant: 'score' } & ScoreBulletProps)
+  | ({ variant: 'host' } & HostBulletProps)
+  | ({ variant: 'know' } & KnowBulletProps)
+  | ({ variant: 'rating' } & RatingBulletProps)
+  | ({ variant: 'experience' } & ExperienceBulletProps)
+  | ({ variant: 'priority' } & PriorityBulletProps)
+  | ({ variant: 'help' } & HelpBulletProps)
+  | ({ variant: 'required' } & RequiredBulletProps)
+  | ({ variant: 'onlinehost' } & OnlineHostBulletProps)
+  | ({ variant: 'question' } & QuestionBulletProps)
+  | ({ variant: 'scenario' } & ScenarioBulletProps);
 
 /**
  * Bundles the bullet components
  * @param {string} extendsTo - Adds custom styyling to the bullet component
  * @param {string} variant - Specify the variant of the bullet
  */
-export const Bullet: React.FC<BulletProps> = ({ variant, ...props }) => {
-  const variants: {
-    [variant: string]: {
-      component: JSX.Element;
-    };
-  } = factory(props);
-
-  return (
-    <div data-testid={`${variant as BulletVariants}-bullet`}>
-      {variants[variant].component}
-    </div>
-  );
+export const Bullet: React.FC<BulletProps> = (props) => {
+  return factory(props);
 };
