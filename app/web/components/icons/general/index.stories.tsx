@@ -1,9 +1,9 @@
 import { Story, Meta } from '@storybook/react';
-import { GeneralIcon, GeneralIconProps } from '.';
+import { GeneralIconTemplate, GeneralIconTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Icons/General',
-  component: GeneralIcon,
+  component: GeneralIconTemplate,
 } as Meta;
 
 const size = {
@@ -11,12 +11,12 @@ const size = {
   height: 20,
 };
 
-const IconStory: Story<GeneralIconProps> = (args) => (
+const IconStory: Story<GeneralIconTemplateProps> = (args) => (
   <div style={{ ...size }}>
-    <GeneralIcon {...args} />
+    <GeneralIconTemplate {...args} />
   </div>
 );
-const IconBundleStory: Story<GeneralIconProps> = () => (
+const IconBundleStory: Story<GeneralIconTemplateProps> = () => (
   <div className="flex items-center flex-wrap">
     {[
       { generalType: 'magnifyGlass' as const },
@@ -47,7 +47,7 @@ const IconBundleStory: Story<GeneralIconProps> = () => (
       return (
         <div className="mr-2">
           <div className="mb-2" style={{ ...size }}>
-            <GeneralIcon variant="general" {...args} />
+            <GeneralIconTemplate {...args} />
           </div>
         </div>
       );
