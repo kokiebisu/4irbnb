@@ -10,9 +10,9 @@ export interface ExperienceBulletTemplateProps {
  * Renders the experience bullet
  * @param {string} experience - Type of experience bullet
  */
-export const ExperienceBulletTemplate: React.FC<ExperienceBulletTemplateProps> = ({
+export const ExperienceBulletTemplate = ({
   experienceType,
-}) => {
+}: ExperienceBulletTemplateProps): JSX.Element => {
   const { icon, title, description } = useExperienceBulletTemplate({
     experienceType,
   });

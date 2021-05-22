@@ -1,22 +1,23 @@
 import { Icon } from '@icons';
-import { useKnowBulletContent } from './content';
+import { useKnowBulletTemplate } from './use-template';
 
-export interface KnowBulletTemplateProps {
-  knowType?:
-    | 'checkin'
-    | 'checkout'
-    | 'self'
-    | 'children'
-    | 'smoking'
-    | 'pets'
-    | 'parties'
-    | 'cleaning'
-    | 'distancing'
-    | 'caution'
-    | 'check';
-  checkin?: { min: string; max: string };
-  checkout?: string;
-}
+export type KnowTypeVariants =
+  | 'checkin'
+  | 'checkout'
+  | 'self'
+  | 'children'
+  | 'smoking'
+  | 'pets'
+  | 'parties'
+  | 'cleaning'
+  | 'distancing'
+  | 'caution'
+  | 'check';
+export type KnowBulletTemplateProps = {
+  knowType: KnowTypeVariants;
+  checkin: { min: string; max: string };
+  checkout: string;
+};
 
 /**
  * Renders the know bullet
@@ -24,12 +25,12 @@ export interface KnowBulletTemplateProps {
  * @param {Object[]} checkin - Time range for checkin
  * @param {string} checkout - Time for checkin
  */
-export const KnowBulletTemplate: React.FC<KnowBulletTemplateProps> = ({
+export const KnowBulletTemplate = ({
   knowType,
   checkin,
   checkout,
-}) => {
-  const { icon, description } = useKnowBulletContent({
+}: KnowBulletTemplateProps): JSX.Element => {
+  const { icon, description } = useKnowBulletTemplate({
     knowType,
     checkin,
     checkout,
@@ -37,7 +38,7 @@ export const KnowBulletTemplate: React.FC<KnowBulletTemplateProps> = ({
   return (
     <div className="flex">
       <div className="mr-3">
-        <Icon {...icon} width={14} />
+        <Icon {...icon} />
       </div>
       <div>
         <p className="font-thin text-base">{description}</p>

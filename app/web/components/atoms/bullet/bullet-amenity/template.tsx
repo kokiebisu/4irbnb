@@ -8,20 +8,20 @@ export type AmenityBulletTypeVariants =
   | 'heating'
   | 'entrance'
   | 'carbon';
-export interface AmenityBulletTemplateProps {
+export type AmenityBulletTemplateProps = {
   amenityType: AmenityBulletTypeVariants;
   removed: boolean;
-}
+};
 
 /**
  * Renders the amenity bullet
  * @param {string} amenityType - Type of amenity
  * @param {boolean} removed - Strikes through if removed
  */
-export const AmenityBulletTemplate: React.FC<AmenityBulletTemplateProps> = ({
+export const AmenityBulletTemplate = ({
   amenityType,
   removed,
-}) => {
+}: AmenityBulletTemplateProps): JSX.Element => {
   const { icon, description } = useAmenityBulletTemplate({ amenityType });
 
   return (

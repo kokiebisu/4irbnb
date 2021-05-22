@@ -1,16 +1,16 @@
 import { Icon } from '@icons';
 
-export interface BringBulletTemplateProps {
+export type BringBulletTemplateProps = {
   title: string;
-}
+};
 
 /**
  * Renders the bring bullet
  * @param {string} title - Description of the bullet
  */
-export const BringBulletTemplate: React.FC<BringBulletTemplateProps> = ({
+export const BringBulletTemplate = ({
   title,
-}) => {
+}: BringBulletTemplateProps): JSX.Element => {
   return (
     <div className="flex">
       <div className="mr-4">

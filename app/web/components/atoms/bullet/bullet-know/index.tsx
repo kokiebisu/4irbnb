@@ -1,7 +1,7 @@
 import { KnowBulletTemplate, KnowBulletTemplateProps } from './template';
 
-export interface KnowBulletProps extends KnowBulletTemplateProps {}
+export type KnowBulletProps = KnowBulletTemplateProps;
 
-export const KnowBullet: React.FC<KnowBulletProps> = (props) => {
+export const KnowBullet = (props: KnowBulletProps): JSX.Element => {
   return <KnowBulletTemplate {...props} />;
 };

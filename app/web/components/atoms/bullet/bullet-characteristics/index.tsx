@@ -4,15 +4,14 @@ import {
 } from './template';
 import { useCharacteristicsBullet } from './logic';
 
-export interface CharacteristicsBulletProps
-  extends CharacteristicsBulletTemplateProps {
+export type CharacteristicsBulletProps = CharacteristicsBulletTemplateProps & {
   time: number;
-}
+};
 
-export const CharacteristicsBullet: React.FC<CharacteristicsBulletProps> = ({
+export const CharacteristicsBullet = ({
   time,
   ...props
-}) => {
+}: CharacteristicsBulletProps): JSX.Element => {
   const data = useCharacteristicsBullet({ time });
   return <CharacteristicsBulletTemplate {...data} {...props} />;
 };

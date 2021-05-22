@@ -1,7 +1,7 @@
 import { Icon } from '@icons';
 import { useCharacteristicsBulletTemplate } from './use-template';
 
-export interface CharacteristicsBulletTemplateProps {
+export type CharacteristicsBulletTemplateProps = {
   characteristicType:
     | 'house'
     | 'sparkle'
@@ -17,7 +17,7 @@ export interface CharacteristicsBulletTemplateProps {
   people: number;
   languages: string[];
   group: number;
-}
+};
 
 /**
  * Renders the characteristic bullet
@@ -28,14 +28,14 @@ export interface CharacteristicsBulletTemplateProps {
  * @param {group} group - Number of people that can join a private group
  * @param {string[]} languages - Languages the host can speak
  */
-export const CharacteristicsBulletTemplate: React.FC<CharacteristicsBulletTemplateProps> = ({
+export const CharacteristicsBulletTemplate = ({
   duration,
   characteristicType,
   devices,
   people,
   languages,
   group,
-}) => {
+}: CharacteristicsBulletTemplateProps): JSX.Element => {
   const { icon, title, description } = useCharacteristicsBulletTemplate({
     characteristicType,
     duration,

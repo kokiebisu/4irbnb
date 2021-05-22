@@ -5,10 +5,8 @@ import {
 
 export type ExperienceTypeProps = 'hosts' | 'activities' | 'global';
 
-export interface ExperienceBulletProps extends ExperienceBulletTemplateProps {
-  variant: 'experience';
-}
+export type ExperienceBulletProps = ExperienceBulletTemplateProps;
 
-export const ExperienceBullet: React.FC<ExperienceBulletProps> = (props) => {
+export const ExperienceBullet = (props: ExperienceBulletProps): JSX.Element => {
   return <ExperienceBulletTemplate {...props} />;
 };

@@ -1,6 +1,6 @@
 import { BaseIconProps } from '@icons';
 
-export type GeneralIconTypes =
+export type GeneralTypeVariants =
   | 'magnifyGlass'
   | 'lock'
   | 'globe'
@@ -27,7 +27,7 @@ export type GeneralIconTypes =
   | 'explore';
 
 export type GeneralIconTemplateProps = {
-  generalType: GeneralIconTypes;
+  generalType: GeneralTypeVariants;
 };
 
 export const GeneralIconTemplate = ({

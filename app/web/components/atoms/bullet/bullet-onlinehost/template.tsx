@@ -8,13 +8,13 @@ export type OnlinehostTypeVariants =
   | 'resources'
   | 'events'
   | 'community';
-export interface OnlineHostBulletTemplateProps {
+export type OnlineHostBulletTemplateProps = {
   onlinehostType: OnlinehostTypeVariants;
-}
+};
 
-export const OnlineHostBulletTemplate: React.FC<OnlineHostBulletTemplateProps> = ({
+export const OnlineHostBulletTemplate = ({
   onlinehostType,
-}) => {
+}: OnlineHostBulletTemplateProps): JSX.Element => {
   const { icon, title, description } = useOnlinehostBulletTemplate({
     onlinehostType,
   });

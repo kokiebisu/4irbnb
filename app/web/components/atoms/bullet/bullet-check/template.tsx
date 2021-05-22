@@ -1,12 +1,12 @@
 import { Icon } from '@icons';
 
-export interface CheckBulletTemplateProps {
+export type CheckBulletTemplateProps = {
   title: string;
-}
+};
 
-export const CheckBulletTemplate: React.FC<CheckBulletTemplateProps> = ({
+export const CheckBulletTemplate = ({
   title = 'Title here',
-}) => {
+}: CheckBulletTemplateProps): JSX.Element => {
   return (
     <div className="flex items-center">
       <div className="mr-2">

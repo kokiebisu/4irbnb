@@ -1,7 +1,7 @@
 import { BringBulletTemplate, BringBulletTemplateProps } from './template';
 
-export interface BringBulletProps extends BringBulletTemplateProps {}
+export type BringBulletProps = BringBulletTemplateProps;
 
-export const BringBullet: React.FC<BringBulletProps> = (props) => {
+export const BringBullet = (props: BringBulletProps): JSX.Element => {
   return <BringBulletTemplate {...props} />;
 };

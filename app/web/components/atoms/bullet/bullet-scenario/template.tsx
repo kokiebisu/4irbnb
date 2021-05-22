@@ -6,13 +6,13 @@ export type ScenarioTypeVariants =
   | 'confirmation'
   | 'welcome'
   | 'paid';
-export interface ScenarioBulletTemplateProps {
+export type ScenarioBulletTemplateProps = {
   scenarioType: ScenarioTypeVariants;
-}
+};
 
-export const ScenarioBulletTemplate: React.FC<ScenarioBulletTemplateProps> = ({
+export const ScenarioBulletTemplate = ({
   scenarioType,
-}) => {
+}: ScenarioBulletTemplateProps): JSX.Element => {
   const { imgUrl, title, description } = useScenarioBulletTemplate({
     scenarioType,
   });
