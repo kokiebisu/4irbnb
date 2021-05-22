@@ -8,9 +8,11 @@ export type SemanticIconTypes =
   | 'check'
   | 'saved';
 
-export interface SemanticIconTemplateProps {
+export type SemanticIconTemplateProps = {
   semanticType: SemanticIconTypes;
-}
+  inversed?: boolean;
+  circled?: boolean;
+};
 
 export const SemanticIconTemplate = ({
   semanticType,
