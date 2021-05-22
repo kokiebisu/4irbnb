@@ -30,7 +30,6 @@ const IconBundleStory: Story<GeneralIconProps> = () => (
       { generalType: 'login' as const },
       { generalType: 'search' as const },
       { generalType: 'shield' as const },
-      { generalType: 'check' as const },
       { generalType: 'devices' as const },
       { generalType: 'devicesInverse' as const },
       { generalType: 'protection' as const },
@@ -96,11 +95,6 @@ Search.args = {
 export const Shield = IconStory.bind({});
 Shield.args = {
   generalType: 'shield',
-};
-
-export const Check = IconStory.bind({});
-Check.args = {
-  generalType: 'check',
 };
 
 export const Devices = IconStory.bind({});
