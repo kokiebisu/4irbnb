@@ -1,31 +1,34 @@
 import { HelpBulletVariants } from './template';
 
-export const useHelpBulletContent = ({
+export const useHelpBulletTemplate = ({
   helpType,
 }: {
   helpType: HelpBulletVariants;
 }) => {
   const helpTypes = {
     support: {
-      icon: { variant: 'general', generalType: 'customerService' },
+      icon: {
+        variant: 'general' as const,
+        generalType: 'customerService' as const,
+      },
       title: '24/7 customer support',
       description:
         'From setting up your listing to concerns about guests, our global team is here to support you by phone, email, and chat, every step of the way.',
     },
     tools: {
-      icon: { variant: 'general', generalType: 'toolbox' },
+      icon: { variant: 'general' as const, generalType: 'toolbox' as const },
       title: 'Tools to help you succeed',
       description:
         'Our tools make it easy to set the right prices, manage reservations, message with guests, receive payments, track earnings, and more.',
     },
     insights: {
-      icon: { variant: 'general', generalType: 'analytics' },
+      icon: { variant: 'general' as const, generalType: 'analytics' as const },
       title: 'Personalized insights',
       description:
         "We'll share local travel trends and suggest ways to improve to help you earn great reviews and grow your business.",
     },
     education: {
-      icon: { variant: 'general', generalType: 'education' },
+      icon: { variant: 'general' as const, generalType: 'education' as const },
       title: 'Education and training',
       description:
         'Find guidance in the Resource Centre, join a free webinar on hosting basics, and connect with other hosts in our Community Centre.',
@@ -33,8 +36,8 @@ export const useHelpBulletContent = ({
   };
   return { ...helpTypes[helpType] } as {
     icon: {
-      variant: string;
-      generalType: string;
+      variant: 'general';
+      generalType: 'customerService' | 'toolbox' | 'analytics' | 'education';
     };
     title: string;
     description: string;
