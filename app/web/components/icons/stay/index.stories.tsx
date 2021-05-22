@@ -1,10 +1,9 @@
 import { Story, Meta } from '@storybook/react';
-import { StayIcon, StayIconTypeProps } from '.';
-import { BaseIconProps, IconProps } from '..';
+import { StayIconTemplate, StayIconTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Icons/Stay',
-  component: StayIcon,
+  component: StayIconTemplate,
 } as Meta;
 
 const size = {
@@ -12,12 +11,12 @@ const size = {
   height: 24,
 };
 
-const IconStory: Story<BaseIconProps> = (args) => (
+const IconStory: Story<StayIconTemplateProps> = (args) => (
   <div style={{ ...size }}>
-    <StayIcon {...args} />
+    <StayIconTemplate {...args} />
   </div>
 );
-const IconBundleStory: Story<IconProps & StayIconTypeProps> = () => (
+const IconBundleStory: Story<StayIconTemplateProps> = () => (
   <div className="flex items-center flex-wrap">
     {[
       { stayType: 'doublebed' as const },
@@ -37,7 +36,7 @@ const IconBundleStory: Story<IconProps & StayIconTypeProps> = () => (
       return (
         <div className="mr-2">
           <div className="mb-2" style={{ ...size }}>
-            <StayIcon {...args} />
+            <StayIconTemplate {...args} />
           </div>
         </div>
       );
