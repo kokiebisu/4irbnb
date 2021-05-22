@@ -1,10 +1,9 @@
 import { Story, Meta } from '@storybook/react';
-import { ProfileIcon, ProfileIconTypeProps } from '.';
-import { IconProps, BaseIconProps } from '..';
+import { ProfileIconTemplate, ProfileIconTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Icons/Profile',
-  component: ProfileIcon,
+  component: ProfileIconTemplate,
 } as Meta;
 
 const size = {
@@ -12,12 +11,12 @@ const size = {
   height: 24,
 };
 
-const IconStory: Story<BaseIconProps> = (args) => (
+const IconStory: Story<ProfileIconTemplateProps> = (args) => (
   <div style={{ ...size }}>
-    <ProfileIcon {...args} />
+    <ProfileIconTemplate {...args} />
   </div>
 );
-const IconBundleStory: Story<IconProps & ProfileIconTypeProps> = () => (
+const IconBundleStory: Story<ProfileIconTemplateProps> = () => (
   <div className="flex items-center flex-wrap">
     {[
       { profileType: 'avatar' as const },
@@ -27,7 +26,7 @@ const IconBundleStory: Story<IconProps & ProfileIconTypeProps> = () => (
       return (
         <div className="mr-2">
           <div className="mb-2" style={{ ...size }}>
-            <ProfileIcon {...args} />
+            <ProfileIconTemplate {...args} />
           </div>
         </div>
       );
