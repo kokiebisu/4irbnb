@@ -11,14 +11,14 @@ export type ActionIconTypes =
   | 'bottom'
   | 'upload';
 
-export interface ActionIconTemplateProps {
+export type ActionIconTemplateProps = {
   actionType: ActionIconTypes;
-}
+};
 
-export const ActionIconTemplate: React.FC<ActionIconTemplateProps> = ({
+export const ActionIconTemplate = ({
   actionType,
   ...props
-}) => {
+}: ActionIconTemplateProps): JSX.Element => {
   const types = {
     heart: <HeartIcon {...props} />,
     close: <CloseIcon {...props} />,
@@ -48,7 +48,7 @@ export const HeartIcon = ({
   );
 };
 
-export const CloseIcon: React.FC<BaseIconProps> = ({ fill = 'black' }) => {
+export const CloseIcon = ({ fill = 'black' }: BaseIconProps): JSX.Element => {
   return (
     <svg viewBox="0 0 32 32" width="100%" height="auto">
       <path stroke={fill} d="m6 6 20 20" />
@@ -57,7 +57,7 @@ export const CloseIcon: React.FC<BaseIconProps> = ({ fill = 'black' }) => {
   );
 };
 
-export const PauseIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const PauseIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg viewBox="0 0 16 16" width="100%" height="auto">
       <path fill={fill} d="M13 1v14H9V1zM7 1v14H3V1z" />
@@ -65,7 +65,7 @@ export const PauseIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const PlayIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const PlayIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg viewBox="0 0 32 32" width="100%" height="auto">
       <path
@@ -76,7 +76,7 @@ export const PlayIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const ChevronBottom: React.FC<BaseIconProps> = (props) => {
+export const ChevronBottom = (props: BaseIconProps): JSX.Element => {
   return (
     <svg {...props} viewBox="0 0 256 256">
       <g>
@@ -88,11 +88,11 @@ export const ChevronBottom: React.FC<BaseIconProps> = (props) => {
   );
 };
 
-export const ChevronLeft: React.FC<BaseIconProps> = ({
+export const ChevronLeft = ({
   stroke,
   strokeWidth,
   ...props
-}) => {
+}: BaseIconProps): JSX.Element => {
   return (
     <svg {...props} viewBox="0 0 32 32">
       <g fill="none">
@@ -106,7 +106,7 @@ export const ChevronLeft: React.FC<BaseIconProps> = ({
   );
 };
 
-export const ChevronRight: React.FC<BaseIconProps> = (props) => {
+export const ChevronRight = (props: BaseIconProps): JSX.Element => {
   return (
     <svg {...props} viewBox="0 0 32 32">
       <g fill="none">
@@ -116,7 +116,7 @@ export const ChevronRight: React.FC<BaseIconProps> = (props) => {
   );
 };
 
-export const ChevronTop: React.FC<BaseIconProps> = (props) => {
+export const ChevronTop = (props: BaseIconProps): JSX.Element => {
   return (
     <svg stroke="black" fill="black" {...props} viewBox="0 0 284.929 284.929">
       <g>
@@ -132,7 +132,7 @@ export const ChevronTop: React.FC<BaseIconProps> = (props) => {
   );
 };
 
-export const UploadIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const UploadIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg viewBox="0 0 24 24">
       <path
