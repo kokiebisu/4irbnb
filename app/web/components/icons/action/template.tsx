@@ -34,10 +34,10 @@ export const ActionIconTemplate: React.FC<ActionIconTemplateProps> = ({
   return types[actionType];
 };
 
-export const HeartIcon: React.FC<BaseIconProps> = ({
+export const HeartIcon = ({
   fill = 'black',
   ...props
-}) => {
+}: BaseIconProps): JSX.Element => {
   return (
     <svg {...props} viewBox="0 0 32 32" width="100%" height="auto">
       <path

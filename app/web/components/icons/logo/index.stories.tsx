@@ -1,6 +1,5 @@
 import { Story, Meta } from '@storybook/react';
-import { LogoIcon, LogoIconTypeProps } from '.';
-import { IconProps } from '..';
+import { LogoIcon, LogoIconProps } from '.';
 
 export default {
   title: 'Atoms/Icons/Logo',
@@ -12,7 +11,7 @@ const size = {
   height: 24,
 };
 
-const IconStory: Story<IconProps & LogoIconTypeProps> = (args) => (
+const IconStory: Story<LogoIconProps> = (args): JSX.Element => (
   <LogoIcon {...args} />
 );
 const IconBundleStory: Story<{}> = () => (
@@ -28,7 +27,7 @@ const IconBundleStory: Story<{}> = () => (
       return (
         <div className="mr-2">
           <div className="mb-2">
-            <LogoIcon logoType={icon.title} {...icon.size} />
+            <LogoIcon variant="logo" logoType={icon.title} {...icon.size} />
           </div>
         </div>
       );
