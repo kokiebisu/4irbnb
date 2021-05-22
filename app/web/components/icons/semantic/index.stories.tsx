@@ -1,6 +1,5 @@
 import { Story, Meta } from '@storybook/react';
 import { SemanticIconTemplate, SemanticIconTemplateProps } from './template';
-import { BaseIconProps } from '..';
 
 export default {
   title: 'Atoms/Icons/Semantic',
@@ -12,7 +11,7 @@ const size = {
   height: 24,
 };
 
-const IconStory: Story<BaseIconProps> = (args) => (
+const IconStory: Story<SemanticIconTemplateProps> = (args) => (
   <div style={{ ...size }}>
     <SemanticIconTemplate {...args} />
   </div>

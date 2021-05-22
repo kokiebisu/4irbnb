@@ -27,7 +27,7 @@ const IconBundleStory: Story<{}> = () => (
       return (
         <div className="mr-2">
           <div className="mb-2">
-            <LogoIcon variant="logo" logoType={icon.title} {...icon.size} />
+            <LogoIcon logoType={icon.title} {...icon.size} />
           </div>
         </div>
       );
