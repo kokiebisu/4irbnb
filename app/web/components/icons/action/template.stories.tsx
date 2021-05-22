@@ -33,7 +33,7 @@ const IconBundleStory: Story<{}> = () => (
       return (
         <div className="mr-2">
           <div className="mb-2" style={{ ...size }}>
-            <ActionIcon {...args} />
+            <ActionIconTemplate {...args} />
           </div>
         </div>
       );
