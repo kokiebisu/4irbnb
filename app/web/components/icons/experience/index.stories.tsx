@@ -1,9 +1,12 @@
 import { Story, Meta } from '@storybook/react';
-import { ExperienceIcon, ExperienceIconProps } from '.';
+import {
+  ExperienceIconTemplateProps,
+  ExperienceIconTemplate,
+} from './template';
 
 export default {
   title: 'Atoms/Icons/Experience',
-  component: ExperienceIcon,
+  component: ExperienceIconTemplate,
 } as Meta;
 
 const size = {
@@ -11,12 +14,12 @@ const size = {
   height: 24,
 };
 
-const IconStory: Story<ExperienceIconProps> = (args) => (
+const IconStory: Story<ExperienceIconTemplateProps> = (args) => (
   <div style={{ ...size }}>
-    <ExperienceIcon {...args} />
+    <ExperienceIconTemplate {...args} />
   </div>
 );
-const IconBundleStory: Story<ExperienceIconProps> = () => (
+const IconBundleStory: Story<ExperienceIconTemplateProps> = () => (
   <div className="flex items-center flex-wrap">
     {[
       { title: 'time' as const },
@@ -29,7 +32,7 @@ const IconBundleStory: Story<ExperienceIconProps> = () => (
       return (
         <div className="mr-2">
           <div className="mb-2" style={{ ...size }}>
-            <ExperienceIcon variant="experience" experienceType={icon.title} />
+            <ExperienceIconTemplate experienceType={icon.title} />
           </div>
         </div>
       );

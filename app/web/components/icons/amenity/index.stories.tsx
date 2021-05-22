@@ -1,10 +1,10 @@
 import { Story, Meta } from '@storybook/react';
-import { AmenityIcon, AmenityIconTypeProps } from '.';
 import { IconProps } from '..';
+import { AmenityIconTemplate, AmenityIconTemplateProps } from './template';
 
 export default {
   title: 'Atoms/Icons/Amenity',
-  component: AmenityIcon,
+  component: AmenityIconTemplate,
 } as Meta;
 
 const size = {
@@ -12,9 +12,9 @@ const size = {
   height: 24,
 };
 
-const IconStory: Story<IconProps & AmenityIconTypeProps> = (args) => (
+const IconStory: Story<IconProps & AmenityIconTemplateProps> = (args) => (
   <div style={{ ...size }}>
-    <AmenityIcon {...args} />
+    <AmenityIconTemplate {...args} />
   </div>
 );
 const IconBundleStory: Story<{}> = () => (
@@ -30,7 +30,7 @@ const IconBundleStory: Story<{}> = () => (
       return (
         <div className="mr-2">
           <div className="mb-2" style={{ ...size }}>
-            <AmenityIcon amenityType={icon.title} />
+            <AmenityIconTemplate amenityType={icon.title} />
           </div>
         </div>
       );
