@@ -27,15 +27,17 @@ export type GeneralIconTypes =
   | 'protected'
   | 'explore';
 
-export interface GeneralIconTypeProps {
+interface GeneralIconTypeProps {
   variant: 'general';
   generalType: GeneralIconTypes;
 }
 
-export const GeneralIcon: React.FC<BaseIconProps & GeneralIconTypeProps> = ({
+export type GeneralIconProps = BaseIconProps & GeneralIconTypeProps;
+
+export const GeneralIcon = ({
   generalType,
   ...props
-}) => {
+}: GeneralIconProps): JSX.Element => {
   const types = {
     magnifyGlass: <MagnifyGlassIcon {...props} />,
     lock: <LockIcon {...props} />,
@@ -62,10 +64,10 @@ export const GeneralIcon: React.FC<BaseIconProps & GeneralIconTypeProps> = ({
     lightening: <LighteningIcon {...props} />,
     protected: <ProtectedIcon {...props} />,
   };
-  return types[generalType] as JSX.Element;
+  return types[generalType];
 };
 
-const MagnifyGlassIcon: React.FC<BaseIconProps> = ({ fill, ...props }) => {
+const MagnifyGlassIcon = ({ fill, ...props }: BaseIconProps): JSX.Element => {
   return (
     <svg {...props} width="100%" height="auto" viewBox="0 0 32 32">
       <g fill="none">
@@ -78,7 +80,9 @@ const MagnifyGlassIcon: React.FC<BaseIconProps> = ({ fill, ...props }) => {
   );
 };
 
-export const LockIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const LockIcon: React.FC<BaseIconProps> = ({
+  fill,
+}: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 16 16">
       <path
@@ -89,7 +93,7 @@ export const LockIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const GlobeIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const GlobeIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 16 16">
       <path
@@ -100,7 +104,7 @@ export const GlobeIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const ShareIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const ShareIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 512 512.00578">
       <path
@@ -115,7 +119,7 @@ export const ShareIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const EmailIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const EmailIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 24 24">
       <path
@@ -127,7 +131,7 @@ export const EmailIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const FlagIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const FlagIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 24 24">
       <path
@@ -138,7 +142,7 @@ export const FlagIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const BarsIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const BarsIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 448 512">
       <path
@@ -149,7 +153,7 @@ export const BarsIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const ExploreIcon: React.FC<BaseIconProps> = () => {
+export const ExploreIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg
       viewBox="0 0 32 32"
@@ -159,19 +163,22 @@ export const ExploreIcon: React.FC<BaseIconProps> = () => {
       focusable="false"
       display="block"
       fill="none"
-      height={24}
-      width={24}
+      height="auto%"
+      width="100%"
       stroke="red"
       strokeWidth={4}
     >
       <g fill="none">
-        <path d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"></path>
+        <path
+          fill={fill}
+          d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9"
+        ></path>
       </g>
     </svg>
   );
 };
 
-export const LoginIcon: React.FC<BaseIconProps> = ({ fill = 'white' }) => {
+export const LoginIcon = ({ fill = 'white' }: BaseIconProps): JSX.Element => {
   return (
     <svg
       viewBox="0 0 32 32"
@@ -189,7 +196,7 @@ export const LoginIcon: React.FC<BaseIconProps> = ({ fill = 'white' }) => {
   );
 };
 
-export const SearchIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const SearchIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 56.966 56.966">
       <path
@@ -203,7 +210,7 @@ export const SearchIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const ShieldIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const ShieldIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 24 24">
       <path
@@ -218,7 +225,7 @@ export const ShieldIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const DevicesIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const DevicesIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -229,7 +236,7 @@ export const DevicesIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const DevicesInverseIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const DevicesInverseIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 16 16">
       <path
@@ -240,7 +247,7 @@ export const DevicesInverseIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const ProtectionIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const ProtectionIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg
       width="100%"
@@ -266,7 +273,7 @@ export const ProtectionIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const GuidanceIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const GuidanceIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg
       width="100%"
@@ -291,7 +298,7 @@ export const GuidanceIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const RequirementsIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const RequirementsIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg
       width="100%"
@@ -317,7 +324,7 @@ export const RequirementsIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const CustomerServiceIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const CustomerServiceIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -328,7 +335,7 @@ export const CustomerServiceIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const ToolBoxIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const ToolBoxIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -339,7 +346,7 @@ export const ToolBoxIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const AnalyticsIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const AnalyticsIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -350,7 +357,7 @@ export const AnalyticsIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const EducationIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const EducationIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -361,7 +368,7 @@ export const EducationIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const HomeIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const HomeIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <img
       style={{ width: 40 }}
@@ -371,7 +378,7 @@ export const HomeIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const GlobalIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const GlobalIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <img
       style={{ width: 40 }}
@@ -381,7 +388,7 @@ export const GlobalIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const LighteningIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const LighteningIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <img
       style={{ width: 40 }}
@@ -391,7 +398,7 @@ export const LighteningIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const ProtectedIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const ProtectedIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg viewBox="0 0 48 48">
       <path

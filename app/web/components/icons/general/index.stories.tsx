@@ -1,6 +1,5 @@
 import { Story, Meta } from '@storybook/react';
-import { GeneralIcon, GeneralIconTypeProps } from '.';
-import { IconProps } from '..';
+import { GeneralIcon, GeneralIconProps } from '.';
 
 export default {
   title: 'Atoms/Icons/General',
@@ -12,12 +11,12 @@ const size = {
   height: 20,
 };
 
-const IconStory: Story<IconProps & GeneralIconTypeProps> = (args) => (
+const IconStory: Story<GeneralIconProps> = (args) => (
   <div style={{ ...size }}>
     <GeneralIcon {...args} />
   </div>
 );
-const IconBundleStory: Story<IconProps & GeneralIconTypeProps> = () => (
+const IconBundleStory: Story<GeneralIconProps> = () => (
   <div className="flex items-center flex-wrap">
     {[
       { generalType: 'magnifyGlass' as const },
@@ -49,7 +48,7 @@ const IconBundleStory: Story<IconProps & GeneralIconTypeProps> = () => (
       return (
         <div className="mr-2">
           <div className="mb-2" style={{ ...size }}>
-            <GeneralIcon {...args} />
+            <GeneralIcon variant="general" {...args} />
           </div>
         </div>
       );
@@ -97,16 +96,6 @@ Search.args = {
 export const Shield = IconStory.bind({});
 Shield.args = {
   generalType: 'shield',
-};
-
-export const Distancing = IconStory.bind({});
-Distancing.args = {
-  generalType: 'distancing',
-};
-
-export const Caution = IconStory.bind({});
-Caution.args = {
-  generalType: 'caution',
 };
 
 export const Check = IconStory.bind({});
