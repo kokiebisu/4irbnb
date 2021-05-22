@@ -1,10 +1,10 @@
 import { Story, Meta } from '@storybook/react';
-import { SemanticIcon, SemanticIconTypeProps } from '.';
-import { IconProps, BaseIconProps } from '..';
+import { SemanticIconTemplate, SemanticIconTemplateProps } from './template';
+import { BaseIconProps } from '..';
 
 export default {
   title: 'Atoms/Icons/Semantic',
-  component: SemanticIcon,
+  component: SemanticIconTemplate,
 } as Meta;
 
 const size = {
@@ -14,10 +14,10 @@ const size = {
 
 const IconStory: Story<BaseIconProps> = (args) => (
   <div style={{ ...size }}>
-    <SemanticIcon {...args} />
+    <SemanticIconTemplate {...args} />
   </div>
 );
-const IconBundleStory: Story<IconProps & SemanticIconTypeProps> = () => (
+const IconBundleStory: Story<SemanticIconTemplateProps> = () => (
   <div className="flex items-center flex-wrap">
     {[
       { semanticType: 'exclamation' as const },
@@ -31,7 +31,7 @@ const IconBundleStory: Story<IconProps & SemanticIconTypeProps> = () => (
       return (
         <div className="mr-2">
           <div className="mb-2" style={{ ...size }}>
-            <SemanticIcon {...args} />
+            <SemanticIconTemplate {...args} />
           </div>
         </div>
       );
