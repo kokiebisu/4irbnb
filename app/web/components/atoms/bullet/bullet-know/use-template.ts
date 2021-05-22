@@ -1,4 +1,14 @@
-export const useKnowBulletContent = ({ knowType, checkin, checkout }) => {
+import { KnowTypeVariants } from './template';
+
+export const useKnowBulletTemplate = ({
+  knowType,
+  checkin,
+  checkout,
+}: {
+  knowType: KnowTypeVariants;
+  checkin: { min: string; max: string };
+  checkout: string;
+}) => {
   const knowTypes = {
     checkin: {
       icon: { variant: 'stay', stayType: 'clock' },
@@ -47,5 +57,21 @@ export const useKnowBulletContent = ({ knowType, checkin, checkout }) => {
     },
   };
 
-  return { ...knowTypes[knowType] };
+  return { ...knowTypes[knowType] } as {
+    icon: {
+      variant: 'stay';
+      stayType:
+        | 'clock'
+        | 'checkin'
+        | 'children'
+        | 'smoking'
+        | 'pets'
+        | 'parties'
+        | 'cleaning'
+        | 'distancing'
+        | 'caution'
+        | 'checkin';
+    };
+    description: string;
+  };
 };

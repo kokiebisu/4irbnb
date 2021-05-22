@@ -1,7 +1,7 @@
 import { HostBulletTemplateProps } from './template';
 
-export interface HostBulletProps extends HostBulletTemplateProps {}
+export type HostBulletProps = HostBulletTemplateProps;
 
-export const HostBullet: React.FC<HostBulletProps> = (props) => {
+export const HostBullet = (props: HostBulletProps): JSX.Element => {
   return <HostBullet {...props} />;
 };

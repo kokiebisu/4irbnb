@@ -1,3 +1,4 @@
+import { GeneralTypeVariants } from 'components/icons/general/template';
 import { OnlinehostTypeVariants } from './template';
 
 export const useOnlinehostBulletTemplate = ({
@@ -61,7 +62,19 @@ export const useOnlinehostBulletTemplate = ({
   };
 
   return { ...onlinehostTypes[onlinehostType] } as {
-    icon: any;
+    icon:
+      | {
+          type: 'img';
+          width: number;
+          src: string;
+        }
+      | {
+          type: 'component';
+          width: number;
+          height: number;
+          variant: 'general';
+          generalType: GeneralTypeVariants;
+        };
     title: string;
     description: string;
   };

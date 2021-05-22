@@ -3,8 +3,8 @@ import {
   PriorityBulletTemplateProps,
 } from './template';
 
-export interface PriorityBulletProps extends PriorityBulletTemplateProps {}
+export type PriorityBulletProps = PriorityBulletTemplateProps;
 
-export const PriorityBullet: React.FC<PriorityBulletProps> = (props) => {
+export const PriorityBullet = (props: PriorityBulletProps) => {
   return <PriorityBulletTemplate {...props} />;
 };

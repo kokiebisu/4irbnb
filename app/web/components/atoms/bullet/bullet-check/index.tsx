@@ -1,9 +1,7 @@
 import { CheckBulletTemplate, CheckBulletTemplateProps } from './template';
 
-export interface CheckBulletProps extends CheckBulletTemplateProps {
-  variant: 'check';
-}
+export type CheckBulletProps = CheckBulletTemplateProps;
 
-export const CheckBullet: React.FC<CheckBulletProps> = (props) => {
+export const CheckBullet = (props: CheckBulletProps): JSX.Element => {
   return <CheckBulletTemplate {...props} />;
 };

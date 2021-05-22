@@ -3,8 +3,8 @@ import {
   ScenarioBulletTemplateProps,
 } from './template';
 
-export interface ScenarioBulletProps extends ScenarioBulletTemplateProps {}
+export type ScenarioBulletProps = ScenarioBulletTemplateProps;
 
-export const ScenarioBullet: React.FC<ScenarioBulletProps> = (props) => {
+export const ScenarioBullet = (props: ScenarioBulletProps): JSX.Element => {
   return <ScenarioBulletTemplate {...props} />;
 };

@@ -5,6 +5,6 @@ import {
 
 export interface OnlineHostBulletProps extends OnlineHostBulletTemplateProps {}
 
-export const OnlineHostBullet: React.FC<OnlineHostBulletProps> = (props) => {
+export const OnlineHostBullet = (props: OnlineHostBulletProps): JSX.Element => {
   return <OnlineHostBulletTemplate {...props} />;
 };

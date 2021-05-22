@@ -3,17 +3,17 @@ import { useHelpBulletTemplate } from './use-template';
 
 export type HelpBulletVariants = 'support' | 'tools' | 'insights' | 'education';
 
-export interface HelpBulletTemplateProps {
+export type HelpBulletTemplateProps = {
   helpType: HelpBulletVariants;
-}
+};
 
 /**
  * Renders the help bullet
  * @param {string} help - Type of help bullet
  */
-export const HelpBulletTemplate: React.FC<HelpBulletTemplateProps> = ({
+export const HelpBulletTemplate = ({
   helpType,
-}) => {
+}: HelpBulletTemplateProps): JSX.Element => {
   const { icon, title, description } = useHelpBulletTemplate({
     helpType,
   });
