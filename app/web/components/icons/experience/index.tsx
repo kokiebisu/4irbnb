@@ -8,14 +8,17 @@ export type ExperienceIconTypes =
   | 'smile'
   | 'activity';
 
-export interface ExperienceIconTypeProps {
+export type ExperienceIconTypeProps = {
   variant: 'experience';
   experienceType: ExperienceIconTypes;
-}
+};
 
-export const ExperienceIcon: React.FC<
-  BaseIconProps & ExperienceIconTypeProps
-> = ({ experienceType, ...props }) => {
+export type ExperienceIconProps = BaseIconProps & ExperienceIconTypeProps;
+
+export const ExperienceIcon = ({
+  experienceType,
+  ...props
+}: ExperienceIconProps): JSX.Element => {
   const types = {
     time: <TimeIcon {...props} />,
     people: <PeopleIcon {...props} />,
@@ -27,7 +30,7 @@ export const ExperienceIcon: React.FC<
   return types[experienceType] as JSX.Element;
 };
 
-export const TimeIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const TimeIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -38,7 +41,7 @@ export const TimeIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const PeopleIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const PeopleIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -49,7 +52,7 @@ export const PeopleIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const LanguageIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const LanguageIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -60,7 +63,7 @@ export const LanguageIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const ComputerIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const ComputerIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -71,7 +74,7 @@ export const ComputerIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const SmileIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const SmileIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 24 24">
       <path
@@ -82,7 +85,7 @@ export const SmileIcon: React.FC<BaseIconProps> = ({ fill }) => {
   );
 };
 
-export const ActivityIcon: React.FC<BaseIconProps> = ({ fill }) => {
+export const ActivityIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 24 24">
       <path
