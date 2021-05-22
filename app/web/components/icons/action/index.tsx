@@ -1,8 +1,7 @@
-import { BaseIconProps } from '@icons';
 import { ActionIconTemplate, ActionIconTemplateProps } from './template';
 
-export type ActionIconProps = BaseIconProps & ActionIconTemplateProps;
+export type ActionIconProps = ActionIconTemplateProps;
 
-export const ActionIcon: React.FC<ActionIconProps> = ({ ...props }) => {
+export const ActionIcon = ({ ...props }: ActionIconProps): JSX.Element => {
   return <ActionIconTemplate {...props} />;
 };
