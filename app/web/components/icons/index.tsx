@@ -1,20 +1,12 @@
-import { ActionIcon, ActionIconProps } from './action';
-import { AmenityIcon, AmenityIconProps, AmenityIconTypeProps } from './amenity';
-import {
-  ExperienceIcon,
-  ExperienceIconProps,
-  ExperienceIconTypeProps,
-} from './experience';
-import { GeneralIcon, GeneralIconProps, GeneralIconTypeProps } from './general';
-import { LogoIcon, LogoIconProps, LogoIconTypeProps } from './logo';
-import { ProfileIcon, ProfileIconProps, ProfileIconTypeProps } from './profile';
-import {
-  SemanticIcon,
-  SemanticIconProps,
-  SemanticIconTypeProps,
-} from './semantic';
-import { StayIcon, StayIconProps, StayIconTypeProps } from './stay';
-
+import { ActionIconProps } from './action';
+import { AmenityIconProps } from './amenity';
+import { ExperienceIconProps } from './experience';
+import { GeneralIconProps } from './general';
+import { LogoIconProps } from './logo';
+import { ProfileIconProps } from './profile';
+import { SemanticIconProps } from './semantic';
+import { StayIconProps } from './stay';
+import { factory } from './utils/factory';
 export interface BaseIconProps {
   fill?: string;
   circled?: boolean;
@@ -45,23 +37,6 @@ export type IconProps =
   | ({ variant: 'general' } & GeneralIconProps)
   | ({ variant: 'stay' } & StayIconProps);
 
-export const Icon: React.FC<IconProps> = ({ ...props }) => {
-  switch (props.variant) {
-    case 'logo':
-      return <LogoIcon {...props} />;
-    case 'action':
-      return <ActionIcon {...props} />;
-    case 'amenity':
-      return <AmenityIcon {...props} />;
-    case 'experience':
-      return <ExperienceIcon {...props} />;
-    case 'profile':
-      return <ProfileIcon {...props} />;
-    case 'semantic':
-      return <SemanticIcon {...props} />;
-    case 'general':
-      return <GeneralIcon {...props} />;
-    case 'stay':
-      return <StayIcon {...props} />;
-  }
+export const Icon = (props: IconProps): JSX.Element => {
+  return factory(props) as JSX.Element;
 };

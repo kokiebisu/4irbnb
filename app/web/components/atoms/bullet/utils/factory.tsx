@@ -15,7 +15,7 @@ import { RequiredBullet } from '@bullet/bullet-required';
 import { ScenarioBullet } from '@bullet/bullet-scenario';
 import { ScoreBullet } from '@bullet/bullet-score';
 
-export const factory: React.FC<BulletProps> = (props) => {
+export const factory = (props: BulletProps): JSX.Element => {
   switch (props.variant) {
     case 'amenity':
       return <AmenityBullet {...props} />;
