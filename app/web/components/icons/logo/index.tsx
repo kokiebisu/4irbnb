@@ -15,7 +15,10 @@ interface LogoIconTypeProps {
 
 export type LogoIconProps = BaseIconProps & LogoIconTypeProps;
 
-export const LogoIcon: React.FC<LogoIconProps> = ({ logoType, ...props }) => {
+export const LogoIcon = ({
+  logoType,
+  ...props
+}: LogoIconProps): JSX.Element => {
   const types = {
     menubar: <MenuBarLogo {...props} />,
     name: <NameLogo {...props} />,

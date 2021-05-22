@@ -11,7 +11,6 @@ export type GeneralIconTypes =
   | 'login'
   | 'search'
   | 'shield'
-  | 'check'
   | 'devices'
   | 'devicesInverse'
   | 'protection'
@@ -64,7 +63,8 @@ export const GeneralIcon = ({
     lightening: <LighteningIcon {...props} />,
     protected: <ProtectedIcon {...props} />,
   };
-  return types[generalType];
+
+  return types[generalType] as JSX.Element;
 };
 
 const MagnifyGlassIcon = ({ fill, ...props }: BaseIconProps): JSX.Element => {
@@ -80,9 +80,7 @@ const MagnifyGlassIcon = ({ fill, ...props }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const LockIcon: React.FC<BaseIconProps> = ({
-  fill,
-}: BaseIconProps): JSX.Element => {
+export const LockIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 16 16">
       <path
