@@ -25,18 +25,20 @@ export const useCharacteristicsBulletTemplate = ({
   const characteristics = {
     house: {
       icon: {
-        variant: 'stay',
-        stayType: 'house',
+        variant: 'stay' as const,
+        stayType: 'house' as const,
         width: 24,
+        height: 24,
       },
       title: 'Entire home',
       description: 'You’ll have the farm stay to yourself.',
     },
     sparkle: {
       icon: {
-        variant: 'stay',
-        stayType: 'sparkle',
+        variant: 'stay' as const,
+        stayType: 'sparkle' as const,
         width: 24,
+        height: 24,
       },
       title: 'Enhanced Clean',
       description:
@@ -44,18 +46,20 @@ export const useCharacteristicsBulletTemplate = ({
     },
     door: {
       icon: {
-        variant: 'stay',
-        stayType: 'door',
+        variant: 'stay' as const,
+        stayType: 'door' as const,
         width: 24,
+        height: 24,
       },
       title: 'Self check-in',
       description: 'You can check in with the doorman.',
     },
     calendar: {
       icon: {
-        variant: 'stay',
-        stayType: 'calendar',
+        variant: 'stay' as const,
+        stayType: 'calendar' as const,
         width: 24,
+        height: 24,
       },
       title: 'Cancellation policy',
       description:
@@ -63,50 +67,55 @@ export const useCharacteristicsBulletTemplate = ({
     },
     guidelines: {
       icon: {
-        variant: 'stay',
-        stayType: 'guidelines',
+        variant: 'stay' as const,
+        stayType: 'guidelines' as const,
         width: 24,
+        height: 24,
       },
       title: 'House rules',
       description: 'The host doesn’t allow pets, parties, or smoking.',
     },
     time: {
       icon: {
-        variant: 'experience',
-        experienceType: 'time',
+        variant: 'experience' as const,
+        experienceType: 'time' as const,
         width: 32,
+        height: 32,
       },
       title: duration,
       description: null,
     },
     devices: {
       icon: {
-        variant: 'experience',
-        experienceType: 'computer',
+        variant: 'experience' as const,
+        experienceType: 'computer' as const,
         width: 32,
+        height: 32,
       },
       title: `Join from your ${devices.join(', ')}`,
       description: null,
     },
     people: {
       icon: {
-        variant: 'experience',
-        experienceType: 'people',
+        variant: 'experience' as const,
+        experienceType: 'people' as const,
         width: 32,
+        height: 32,
       },
       title: `Up to ${people} people. Private groups available for up to ${group}`,
       description: null,
     },
     language: {
       icon: {
-        variant: 'experience',
-        experienceType: 'language',
+        variant: 'experience' as const,
+        experienceType: 'language' as const,
         width: 32,
+        height: 32,
       },
       title: `Hosted in ${languages.join(', ')} (Simplified)`,
       description: null,
     },
   };
 
-  return { ...characteristics[characteristicType] };
+  return characteristics[characteristicType];
 };

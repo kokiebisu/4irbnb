@@ -14,7 +14,7 @@ export const BringBulletTemplate: React.FC<BringBulletTemplateProps> = ({
   return (
     <div className="flex">
       <div className="mr-4">
-        <Icon variant="semantic" semanticType="check" width={24} />
+        <Icon variant="semantic" semanticType="check" width={24} height={24} />
       </div>
       <div>
         <p>{title}</p>

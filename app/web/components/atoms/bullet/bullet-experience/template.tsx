@@ -1,5 +1,5 @@
 import { Icon } from '@icons';
-import { useExperienceBulletTemplate } from './template-logic';
+import { useExperienceBulletTemplate } from './use-template';
 
 export type ExperienceBulletVariants = 'hosts' | 'activities' | 'global';
 export interface ExperienceBulletTemplateProps {

@@ -14,6 +14,7 @@ export const CheckBulletTemplate: React.FC<CheckBulletTemplateProps> = ({
           variant="semantic"
           semanticType="check"
           width={24}
+          height={24}
           strokeWidth={2}
           stroke="green"
         />

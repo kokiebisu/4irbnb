@@ -12,6 +12,8 @@ export type SemanticIconTemplateProps = {
   semanticType: SemanticIconTypes;
   inversed?: boolean;
   circled?: boolean;
+  strokeWidth?: number;
+  stroke?: string;
 };
 
 export const SemanticIconTemplate = ({
@@ -93,6 +95,7 @@ export const CheckIcon = ({
   circled,
   inversed,
   strokeWidth = 3,
+  stroke,
 }: BaseIconProps): JSX.Element => {
   if (circled) {
     return (
@@ -101,7 +104,7 @@ export const CheckIcon = ({
         height="auto"
         fill={fill}
         fillOpacity={0}
-        stroke={fill}
+        stroke={stroke}
         strokeWidth={strokeWidth}
         strokeLinecap="round"
         strokeLinejoin="round"

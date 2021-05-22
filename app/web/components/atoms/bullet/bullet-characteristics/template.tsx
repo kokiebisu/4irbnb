@@ -1,5 +1,5 @@
 import { Icon } from '@icons';
-import { useCharacteristicsBulletTemplate } from './template-logic';
+import { useCharacteristicsBulletTemplate } from './use-template';
 
 export interface CharacteristicsBulletTemplateProps {
   characteristicType:

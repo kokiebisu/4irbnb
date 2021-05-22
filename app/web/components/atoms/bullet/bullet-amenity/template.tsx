@@ -1,5 +1,5 @@
 import { Icon } from '@icons';
-import { useAmenityBulletTemplate } from './template-logic';
+import { useAmenityBulletTemplate } from './use-template';
 
 export type AmenityBulletTypeVariants =
   | 'smoke'

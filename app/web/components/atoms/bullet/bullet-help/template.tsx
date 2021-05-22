@@ -1,5 +1,5 @@
 import { Icon } from '@icons';
-import { useHelpBulletTemplate } from './template-logic';
+import { useHelpBulletTemplate } from './use-template';
 
 export type HelpBulletVariants = 'support' | 'tools' | 'insights' | 'education';
 
