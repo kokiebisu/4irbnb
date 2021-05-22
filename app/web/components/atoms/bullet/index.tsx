@@ -34,9 +34,8 @@ export type BulletProps =
 
 /**
  * Bundles the bullet components
- * @param {string} extendsTo - Adds custom styyling to the bullet component
  * @param {string} variant - Specify the variant of the bullet
  */
 export const Bullet: React.FC<BulletProps> = (props) => {
-  return factory(props);
+  return factory(props) as JSX.Element;
 };
