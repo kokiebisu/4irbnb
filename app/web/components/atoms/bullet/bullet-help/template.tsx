@@ -20,7 +20,7 @@ export const HelpBulletTemplate = ({
   return (
     <div className="flex">
       <div className="mr-4">
-        <Icon {...icon} width={28} />
+        <Icon {...icon} width={28} height={28}/>
       </div>
       <div>
         <div className="mb-2">

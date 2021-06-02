@@ -2,7 +2,7 @@ import { Icon } from '@icons';
 import { useExperienceBulletTemplate } from './use-template';
 
 export type ExperienceBulletVariants = 'hosts' | 'activities' | 'global';
-export interface ExperienceBulletTemplateProps {
+export type ExperienceBulletTemplateProps = {
   experienceType: ExperienceBulletVariants;
 }
 
