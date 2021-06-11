@@ -158,7 +158,7 @@ export const ExploreIcon = ({ fill }: BaseIconProps): JSX.Element => {
       focusable="false"
       display="block"
       fill="none"
-      height="auto%"
+      height="auto"
       width="100%"
       stroke="red"
       strokeWidth={4}
@@ -182,8 +182,8 @@ export const LoginIcon = ({ fill = 'white' }: BaseIconProps): JSX.Element => {
       role="presentation"
       focusable="false"
       display="block"
-      height={24}
-      width={24}
+      width="100%"
+      height="auto"
       fill="red"
     >
       <path

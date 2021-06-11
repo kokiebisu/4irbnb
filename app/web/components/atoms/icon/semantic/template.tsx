@@ -38,6 +38,7 @@ export const ExclamationIcon = ({
     <svg
       stroke={fill}
       strokeWidth={2}
+      display="block"
       width="100%"
       height="auto"
       viewBox="0 0 32 32"
@@ -51,7 +52,7 @@ export const ExclamationIcon = ({
 
 export const WarningIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
-    <svg width="100%" height="auto" viewBox="0 0 16 16">
+    <svg display="block" width="100%" height="auto" viewBox="0 0 16 16">
       <path
         fill={fill}
         d="m8 12c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2zm1.6-12v9.6h-3.2v-9.6z"
@@ -67,7 +68,7 @@ export const MinusIcon = ({
 }: BaseIconProps): JSX.Element => {
   return (
     <svg
-      {...props}
+      display="block"
       width="100%"
       height="auto"
       strokeWidth={strokeWidth}
@@ -83,7 +84,7 @@ export const PlusIcon = ({
   ...props
 }: BaseIconProps): JSX.Element => {
   return (
-    <svg {...props} width="100%" height="auto" viewBox="0 0 24 24">
+    <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
       <rect fill={fill} height="2" rx="1" width="12" x="6" y="11"></rect>
       <rect fill={fill} height="12" rx="1" width="2" x="11" y="6"></rect>
     </svg>
@@ -100,6 +101,7 @@ export const CheckIcon = ({
   if (circled) {
     return (
       <svg
+        display="block"
         width="100%"
         height="auto"
         fill={fill}
@@ -116,7 +118,7 @@ export const CheckIcon = ({
   }
   if (inversed) {
     return (
-      <svg width="100%" height="auto" viewBox="0 0 32 32">
+      <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
         <path
           fill={fill}
           stroke={fill}
@@ -127,7 +129,7 @@ export const CheckIcon = ({
     );
   }
   return (
-    <svg width="100%" height="auto" viewBox="0 0 32 32">
+    <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
         strokeWidth={strokeWidth}
         stroke={fill}
@@ -140,7 +142,7 @@ export const CheckIcon = ({
 
 export const SavedIcon = ({ fill = '#737373' }: BaseIconProps): JSX.Element => {
   return (
-    <svg width="100%" height="auto" viewBox="0 0 24 24">
+    <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
       <path
         fill={fill}
         d="m17.5 2.9c-2.1 0-4.1 1.3-5.4 2.8-1.6-1.6-3.8-3.2-6.2-2.7-1.5.2-2.9 1.2-3.6 2.6-2.3 4.1 1 8.3 3.9 11.1 1.4 1.3 2.8 2.5 4.3 3.6.4.3 1.1.9 1.6.9s1.2-.6 1.6-.9c3.2-2.3 6.6-5.1 8.2-8.8 1.5-3.4 0-8.6-4.4-8.6"

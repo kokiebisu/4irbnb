@@ -1,4 +1,4 @@
-import { Icon } from 'components/atoms/icon';
+import { Icon } from '@atoms';
 
 export interface CheckboxInputTemplateProps {
   onChange?: (e: any) => void;

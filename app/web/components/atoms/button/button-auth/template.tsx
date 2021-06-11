@@ -1,4 +1,4 @@
-import { Icon } from 'components/atoms/icon';
+import { Icon } from '@atoms';
 import { AuthTypeVariants, useAuthButtonTemplate } from './use-template';
 
 export type AuthButtonTemplateProps = {

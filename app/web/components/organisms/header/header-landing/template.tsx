@@ -1,11 +1,11 @@
 import { useRef, useState } from 'react';
 import Router from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Modal, $Modal } from '@modal';
+import { Modal } from '@modal';
 import { Button } from '@button';
 import { Prototype } from '@prototype/searchbar';
 
-import { Icon } from 'components/atoms/icon';
+import { Icon } from '@atoms';
 import { useToggleDispatch, useToggleState } from '@context/toggle';
 import { Content } from '@button/button-transparent/content.transparent';
 import { useOnClickOutside } from '@hooks/useOnClickOutside';

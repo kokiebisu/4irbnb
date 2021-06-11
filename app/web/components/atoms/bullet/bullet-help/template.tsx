@@ -1,4 +1,4 @@
-import { Icon } from 'components/atoms/icon';
+import { Icon } from '@atoms';
 import { useHelpBulletTemplate } from './use-template';
 
 export type HelpBulletVariants = 'support' | 'tools' | 'insights' | 'education';

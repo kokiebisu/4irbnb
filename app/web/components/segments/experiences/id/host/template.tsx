@@ -4,7 +4,7 @@ import section from '@template/index.module.scss';
 import { Button } from '@button';
 import { Bullet } from '@bullet';
 
-import { Icon } from 'components/atoms/icon';
+import { Icon } from '@atoms';
 import { truncateContent } from '@utils/description';
 
 export interface HostSegmentTemplateProps {
