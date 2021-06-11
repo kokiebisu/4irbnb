@@ -4,7 +4,7 @@ import { Segment } from '@template/s/experiences/online';
 import { Modal } from '@modal';
 import { Footer } from '@footer';
 import { useToggleState } from '@context/toggle';
-import { Button } from '@button';
+import { Button } from '@atoms';
 
 const OnlinePage = () => {
   const toggleState = useToggleState();

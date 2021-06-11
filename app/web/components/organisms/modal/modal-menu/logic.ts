@@ -1,4 +1,4 @@
-import { getOptionContents } from '@button/button-option/logic';
+import { getOptionContents } from '@atoms/button-option/logic';
 
 export const useMenuModal = () => {
   const options = getOptionContents();

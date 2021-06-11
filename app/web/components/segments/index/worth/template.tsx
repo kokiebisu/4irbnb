@@ -1,4 +1,4 @@
-import { Button } from '@button';
+import { Button } from '@atoms';
 
 export interface WorthSegmentTemplateProps {
   handleRedirectToHostPage: () => void;

@@ -1,6 +1,6 @@
 import { Segment } from '@template/s/homes';
 import { Bar } from '@bar';
-import { Button } from '@button';
+import { Button } from '@atoms';
 
 export interface NearbyPrototypeTemplateProps {
   city?: string;

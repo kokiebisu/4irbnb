@@ -1,6 +1,6 @@
 import { useFormik } from 'formik';
 import { Input } from '@input';
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { Bullet } from '@atoms';
 import { validateForgotPassword as validate } from '@helper/auth';
 

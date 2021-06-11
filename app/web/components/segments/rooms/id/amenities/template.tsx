@@ -1,5 +1,5 @@
 import { Bullet } from '@atoms';
-import { Button } from '@button';
+import { Button } from '@atoms';
 import section from '@template/index.module.scss';
 
 export interface AmenitiesSegmentTemplateProps {

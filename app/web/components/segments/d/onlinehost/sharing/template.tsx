@@ -1,6 +1,6 @@
 import { Layout } from '@layout';
 import { Card, $Card } from '@card';
-import { Button } from '@button';
+import { Button } from '@atoms';
 
 export interface SharingSegmentTemplateProps {
   categories?: string[];

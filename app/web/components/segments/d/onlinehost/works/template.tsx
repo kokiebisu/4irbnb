@@ -1,5 +1,5 @@
 import { Layout } from '@layout';
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { Card, $Card } from '@card';
 
 export interface WorksSegmentTemplateProps {

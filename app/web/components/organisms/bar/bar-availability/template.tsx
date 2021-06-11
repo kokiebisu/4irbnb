@@ -1,4 +1,4 @@
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { Icon } from '@atoms';
 
 export interface AvailabilityBarTemplateProps {

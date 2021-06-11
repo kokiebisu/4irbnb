@@ -1,7 +1,7 @@
 import { useFormik } from 'formik';
 import { useAuthDispatch, useAuthState } from '@context/auth';
 import { Input } from '@input';
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { validateAuth as validate } from '@helper/auth';
 
 export interface AuthPrototypeTemplateProps {}

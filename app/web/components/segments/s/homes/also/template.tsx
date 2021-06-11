@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { Card, $Card } from '@card';
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { useSlider } from '@hooks/useSlider';
 import { useHandleContainerResize } from '@hooks/useHandleContainerResize';
 

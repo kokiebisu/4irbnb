@@ -4,7 +4,7 @@ import sectionStyles from '@template/index.module.scss';
 import section from '@template/index.module.scss';
 
 import { Card, $Card } from '@card';
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { useRouter } from 'next/router';
 
 export interface MultipleSegmentTemplateProps {
