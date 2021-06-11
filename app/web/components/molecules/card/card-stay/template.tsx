@@ -1,4 +1,4 @@
-import { Icon } from '@icons';
+import { Icon } from 'components/atoms/icon';
 import { Bullet } from '@bullet';
 import { ImageSlider } from '../../../particles/particle-slider/template';
 import { Card, $Card } from '@card';

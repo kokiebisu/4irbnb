@@ -1,4 +1,4 @@
-import { Icon } from '@icons';
+import { Icon } from 'components/atoms/icon';
 import { motion } from 'framer-motion';
 
 export interface PaginateButtonTemplateProps {

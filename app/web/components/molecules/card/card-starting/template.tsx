@@ -1,5 +1,5 @@
 import { Video } from '@video';
-import { Icon } from '@icons';
+import { Icon } from 'components/atoms/icon';
 
 export interface StartingCardTemplateProps {
   ratings?: number;

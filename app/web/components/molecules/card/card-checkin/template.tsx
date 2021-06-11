@@ -1,4 +1,4 @@
-import { Icon } from '@icons';
+import { Icon } from 'components/atoms/icon';
 import { useCheckInCard } from './logic';
 import { checkInBorder, checkOutBorder, guestBorder } from './logic';
 

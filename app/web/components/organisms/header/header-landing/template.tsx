@@ -5,7 +5,7 @@ import { Modal, $Modal } from '@modal';
 import { Button } from '@button';
 import { Prototype } from '@prototype/searchbar';
 
-import { Icon } from '@icons';
+import { Icon } from 'components/atoms/icon';
 import { useToggleDispatch, useToggleState } from '@context/toggle';
 import { Content } from '@button/button-transparent/content.transparent';
 import { useOnClickOutside } from '@hooks/useOnClickOutside';

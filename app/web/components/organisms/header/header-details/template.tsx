@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { Icon } from '@icons';
+import { Icon } from 'components/atoms/icon';
 import { Button } from '@button';
 import { useHandleScroll } from '@hooks/useHandleScroll';
 

@@ -54,7 +54,7 @@
       "@layout/*": ["components/layout/*"],
       "@template": ["components/segments"],
       "@template/*": ["components/segments/*"],
-      "@icons": ["components/icons"],
+      "@icons": ["components/atoms/icons"],
       "@styles/*": ["styles/*"],
       "@helper/*": ["helper/*"],
       "@hooks/*": ["hooks/*"],
