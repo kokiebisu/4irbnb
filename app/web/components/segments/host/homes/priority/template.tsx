@@ -1,5 +1,5 @@
 import { Layout } from '@layout';
-import { Bullet } from '@bullet';
+import { Bullet } from '@atoms';
 
 export interface PrioritySegmentTemplateProps {}
 

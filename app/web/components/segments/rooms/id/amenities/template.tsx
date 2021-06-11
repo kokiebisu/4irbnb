@@ -1,4 +1,4 @@
-import { Bullet } from '@bullet';
+import { Bullet } from '@atoms';
 import { Button } from '@button';
 import section from '@template/index.module.scss';
 

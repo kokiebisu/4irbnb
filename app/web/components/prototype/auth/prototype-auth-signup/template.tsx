@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useFormik } from 'formik';
 import { Input } from '@input';
 import { Button } from '@button';
-import { Bullet } from '@bullet';
+import { Bullet } from '@atoms';
 import { validateSignup as validate } from '@helper/auth';
 import { useAuthDispatch } from '@context/auth';
 

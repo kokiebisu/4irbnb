@@ -4,7 +4,7 @@ import Router from 'next/router';
 import { useAuthDispatch, useAuthState } from '@context/auth';
 import { Input } from '@input';
 import { Button } from '@button';
-import { Bullet } from '@bullet';
+import { Bullet } from '@atoms';
 import { Card, $Card } from '@card';
 import { validateLogin as validate } from '@helper/auth';
 

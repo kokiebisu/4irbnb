@@ -1,19 +1,19 @@
-import { BulletProps } from '@bullet';
-import { AmenityBullet } from '@bullet/bullet-amenity';
-import { BringBullet } from '@bullet/bullet-bring';
-import { CharacteristicsBullet } from '@bullet/bullet-characteristics';
-import { CheckBullet } from '@bullet/bullet-check';
-import { ExperienceBullet } from '@bullet/bullet-experience';
-import { HelpBullet } from '@bullet/bullet-help';
-import { HostBullet } from '@bullet/bullet-host';
-import { KnowBullet } from '@bullet/bullet-know';
-import { OnlineHostBullet } from '@bullet/bullet-onlinehost';
-import { PriorityBullet } from '@bullet/bullet-priority';
-import { QuestionBullet } from '@bullet/bullet-question';
-import { RatingBullet } from '@bullet/bullet-rating';
-import { RequiredBullet } from '@bullet/bullet-required';
-import { ScenarioBullet } from '@bullet/bullet-scenario';
-import { ScoreBullet } from '@bullet/bullet-score';
+import { BulletProps } from '..';
+import { AmenityBullet } from '../bullet-amenity';
+import { BringBullet } from '../bullet-bring';
+import { CharacteristicsBullet } from '../bullet-characteristics';
+import { CheckBullet } from '../bullet-check';
+import { ExperienceBullet } from '../bullet-experience';
+import { HelpBullet } from '../bullet-help';
+import { HostBullet } from '../bullet-host';
+import { KnowBullet } from '../bullet-know';
+import { OnlineHostBullet } from '../bullet-onlinehost';
+import { PriorityBullet } from '../bullet-priority';
+import { QuestionBullet } from '../bullet-question';
+import { RatingBullet } from '../bullet-rating';
+import { RequiredBullet } from '../bullet-required';
+import { ScenarioBullet } from '../bullet-scenario';
+import { ScoreBullet } from '../bullet-score';
 
 export const factory = (props: BulletProps): JSX.Element => {
   switch (props.variant) {

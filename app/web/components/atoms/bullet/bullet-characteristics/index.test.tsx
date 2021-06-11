@@ -1,5 +1,5 @@
 import React from 'react';
-import { Bullet } from '@bullet';
+import { Bullet } from '@atoms';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 

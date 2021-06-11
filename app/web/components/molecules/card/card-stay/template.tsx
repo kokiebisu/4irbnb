@@ -1,5 +1,5 @@
 import { Icon } from '@atoms';
-import { Bullet } from '@bullet';
+import { Bullet } from '@atoms';
 import { ImageSlider } from '../../../particles/particle-slider/template';
 import { Card, $Card } from '@card';
 

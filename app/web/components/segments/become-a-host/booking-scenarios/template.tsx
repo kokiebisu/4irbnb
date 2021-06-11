@@ -1,4 +1,4 @@
-import { Bullet } from '@bullet';
+import { Bullet } from '@atoms';
 
 export interface BookingScenariosSegmentTemplateProps {
   scenarios?: string[];
