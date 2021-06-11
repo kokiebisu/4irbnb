@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useFormik } from 'formik';
-import { Input } from '@input';
+import { Input } from '@atoms';
 import { Button } from '@atoms';
 import { Bullet } from '@atoms';
 import { validateSignup as validate } from '@helper/auth';
