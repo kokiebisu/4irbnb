@@ -1,6 +1,6 @@
 import React from 'react';
 import { screen, fireEvent, render, cleanup } from '@testing-library/react';
-import { Button } from '@button';
+import { Button } from '@atoms';
 import '@testing-library/jest-dom/extend-expect';
 
 afterEach(cleanup);

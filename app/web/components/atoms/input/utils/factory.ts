@@ -1,4 +1,4 @@
-import { verify } from '@button/button-verify';
+import { verify } from '@atoms/button-verify';
 import { address } from '@input/input-address';
 import { another } from '@input/input-another';
 import { birthdate } from '@input/input-birthdate';

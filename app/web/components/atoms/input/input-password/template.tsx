@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { styleInput, styleLabel, styleContainer } from '../styling.text';
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { checkPassword } from '@helper/auth';
 
 export interface PasswordInputTemplateProps {

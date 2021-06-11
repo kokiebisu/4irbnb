@@ -1,5 +1,5 @@
 import { Icon } from '@atoms';
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { usePriorityBulletTemplate } from './use-template';
 
 export type PriorityTypeBulletVariants =

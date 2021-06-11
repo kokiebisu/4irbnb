@@ -1,4 +1,4 @@
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { useToggleDispatch } from '@context/toggle';
 
 export interface SearchBarTemplateProps {

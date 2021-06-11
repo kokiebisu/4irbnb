@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import template from '../index.module.scss';
-import { Button } from '@button';
+import { Button } from '@atoms';
 
 export interface DestinationsSegmentTemplateProps {
   items?: { [destinationType: string]: { city: string; location: string }[] };

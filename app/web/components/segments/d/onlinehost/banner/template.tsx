@@ -1,4 +1,4 @@
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { Bullet } from '@atoms';
 
 export interface BannerSegmentTemplateProps {}

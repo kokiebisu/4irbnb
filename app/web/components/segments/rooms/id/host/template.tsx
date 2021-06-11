@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import section from '@template/index.module.scss';
 
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { Bullet } from '@atoms';
 
 import { Icon } from '@atoms';

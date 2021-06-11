@@ -1,4 +1,4 @@
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { Input, $Input } from '@input';
 
 export interface GetStartedSegmentTemplateProps {

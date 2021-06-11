@@ -1,4 +1,4 @@
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { Layout } from '@layout';
 
 export interface LocationModalTemplateProps {}

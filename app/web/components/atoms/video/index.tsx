@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useRef, useState } from 'react';
 import { Animation } from '@animation';
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { useTimeout } from '@hooks/useTimeout';
 
 export const Video: React.FC<{ videoUrl?: string }> = ({ videoUrl }) => {

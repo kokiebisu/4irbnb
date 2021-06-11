@@ -1,5 +1,5 @@
 import { Animation } from '@animation';
-import { stretchMixin } from '@button/utils/mixin';
+import { stretchMixin } from '../utils/mixin';
 
 export interface PrimaryButtonTemplateProps {
   title?: string;

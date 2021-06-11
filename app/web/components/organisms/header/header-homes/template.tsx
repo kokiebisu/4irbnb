@@ -1,5 +1,5 @@
 import Router from 'next/router';
-import { Button } from '@button';
+import { Button } from '@atoms';
 
 export interface HomesHeaderTemplateProps {
   spread?: boolean;

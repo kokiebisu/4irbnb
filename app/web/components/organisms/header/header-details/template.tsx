@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { Icon } from '@atoms';
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { useHandleScroll } from '@hooks/useHandleScroll';
 
 export interface DetailsHeaderTemplateProps {

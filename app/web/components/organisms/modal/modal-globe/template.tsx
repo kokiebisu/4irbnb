@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { Prototype, $Prototype } from '@prototype/globe';
 import { useToggleDispatch } from '@context/toggle';
 
