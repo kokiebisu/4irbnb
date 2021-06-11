@@ -3,11 +3,11 @@ import Router from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Modal } from '@modal';
 import { Button } from '@atoms';
-import { Prototype } from '@prototype/searchbar';
+// import { Prototype } from '@prototype/searchbar';
 
 import { Icon } from '@atoms';
 import { useToggleDispatch, useToggleState } from '@context/toggle';
-import { Content } from '@atoms/button-transparent/content.transparent';
+// import { Content } from '@atoms/button-transparent/content.transparent';
 import { useOnClickOutside } from '@hooks/useOnClickOutside';
 
 export interface LandingHeaderTemplateProps {

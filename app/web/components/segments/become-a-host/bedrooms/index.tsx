@@ -18,11 +18,3 @@ export const BedroomsSegment = () => {
     />
   );
 };
-
-export const bedrooms = (props) => {
-  return {
-    bedrooms: {
-      component: <BedroomsSegment {...props} />,
-    },
-  };
-};

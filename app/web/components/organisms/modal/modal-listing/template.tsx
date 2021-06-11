@@ -1,6 +1,4 @@
-import { Button } from '@atoms';
-import { Input } from '@input';
-import { Icon } from '@atoms';
+import { Button, Input, Icon } from '@atoms';
 
 export interface ListingModalTemplateProps {}
 

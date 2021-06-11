@@ -5,11 +5,3 @@ export const SpacesSegment = () => {
   const data = useSpacesSegment();
   return <SpacesSegmentTemplate {...data} />;
 };
-
-export const spaces = (props) => {
-  return {
-    spaces: {
-      component: <SpacesSegment {...props} />,
-    },
-  };
-};
