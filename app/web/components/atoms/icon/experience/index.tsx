@@ -8,9 +8,13 @@ export type ExperienceIconProps = ExperienceIconTemplateProps & {
   height: number;
 };
 
-export const ExperienceIcon = (props: ExperienceIconProps): JSX.Element => {
+export const ExperienceIcon = ({
+  width,
+  height,
+  ...props
+}: ExperienceIconProps): JSX.Element => {
   return (
-    <div data-testid="experience-icon">
+    <div data-testid="experience-icon" style={{ width, height }}>
       <ExperienceIconTemplate {...props} />
     </div>
   );

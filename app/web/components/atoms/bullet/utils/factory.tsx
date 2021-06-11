@@ -1,7 +1,4 @@
 import { BulletProps } from '..';
-import { BringBullet } from '../bullet-bring';
-import { CharacteristicsBullet } from '../bullet-characteristics';
-import { CheckBullet } from '../bullet-check';
 import { ExperienceBullet } from '../bullet-experience';
 import { HelpBullet } from '../bullet-help';
 import { HostBullet } from '../bullet-host';
@@ -18,12 +15,6 @@ import { SecondaryBullet } from '../bullet-secondary';
 
 export const factory = (props: BulletProps): JSX.Element => {
   switch (props.variant) {
-    case 'bring':
-      return <BringBullet {...props} />;
-    case 'characteristics':
-      return <CharacteristicsBullet {...props} />;
-    case 'check':
-      return <CheckBullet {...props} />;
     case 'experience':
       return <ExperienceBullet {...props} />;
     case 'help':

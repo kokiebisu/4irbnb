@@ -1,6 +1,3 @@
-import { BringBulletProps } from './bullet-bring';
-import { CharacteristicsBulletProps } from './bullet-characteristics';
-import { CheckBulletProps } from './bullet-check';
 import { ExperienceBulletProps } from './bullet-experience';
 import { HelpBulletProps } from './bullet-help';
 import { HostBulletProps } from './bullet-host';
@@ -17,9 +14,6 @@ import { SecondaryBulletProps } from './bullet-secondary';
 import { factory } from './utils/factory';
 
 export type BulletProps =
-  | ({ variant: 'characteristics' } & CharacteristicsBulletProps)
-  | ({ variant: 'bring' } & BringBulletProps)
-  | ({ variant: 'check' } & CheckBulletProps)
   | ({ variant: 'score' } & ScoreBulletProps)
   | ({ variant: 'host' } & HostBulletProps)
   | ({ variant: 'know' } & KnowBulletProps)

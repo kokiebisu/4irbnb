@@ -16,13 +16,11 @@ export interface CharacteristicsSegmentTemplateProps {
   numberOfReviews?: number;
   location?: string;
   country?: string;
-  characteristics?: {
-    time: number;
-    devices: string[];
-    people: number;
-    private: number;
-    languages: string[];
-  };
+  characteristics: {
+    title: string;
+    description: string;
+    icon: any;
+  }[];
 }
 
 /**
@@ -121,7 +119,17 @@ export const CharacteristicsSegmentTemplate: React.FC<CharacteristicsSegmentTemp
             ' '
           )}`}
         >
-          <Bullet
+          {characteristics.map((characteristic, index) => (
+            <div key={index}>
+              <Bullet
+                variant={characteristic.description ? 'secondary' : 'primary'}
+                title={characteristic.title}
+                description={characteristic.description}
+                icon={<Icon {...characteristic.icon} />}
+              />
+            </div>
+          ))}
+          {/* <Bullet
             variant="characteristic"
             characteristicType="time"
             time={characteristics['time']}
@@ -140,7 +148,7 @@ export const CharacteristicsSegmentTemplate: React.FC<CharacteristicsSegmentTemp
             variant="characteristic"
             characteristicType="language"
             languages={characteristics['languages']}
-          />
+          /> */}
         </div>
       </div>
     </div>

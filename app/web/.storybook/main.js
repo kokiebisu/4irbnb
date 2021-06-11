@@ -58,8 +58,6 @@ module.exports = {
 
     config.resolve.extensions.push('.ts', '.tsx');
 
-    console.log(config.resolve.alias);
-
     return config;
   },
 };
