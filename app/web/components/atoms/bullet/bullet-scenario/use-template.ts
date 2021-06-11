@@ -1,4 +1,10 @@
-export const useScenarioBulletTemplate = ({ scenarioType }) => {
+import { ScenarioTypeVariants } from './template';
+
+export const useScenarioBulletTemplate = ({
+  scenarioType,
+}: {
+  scenarioType: ScenarioTypeVariants;
+}) => {
   const scenarioTypes = {
     available: {
       imgUrl:
@@ -37,5 +43,9 @@ export const useScenarioBulletTemplate = ({ scenarioType }) => {
     },
   };
 
-  return { ...scenarioTypes[scenarioType] };
+  return scenarioTypes[scenarioType] as {
+    imgUrl: string;
+    title: string;
+    description: string;
+  };
 };

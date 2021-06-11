@@ -8,7 +8,7 @@ export type PriorityTypeBulletVariants =
   | 'requirements';
 export type PriorityBulletTemplateProps = {
   priorityType: PriorityTypeBulletVariants;
-  onClick?: () => void;
+  onClick: () => void;
 };
 
 /**
@@ -18,7 +18,7 @@ export type PriorityBulletTemplateProps = {
 export const PriorityBulletTemplate = ({
   priorityType,
   onClick,
-}): PriorityBulletTemplateProps => {
+}: PriorityBulletTemplateProps): JSX.Element => {
   const { icon, title, description, link } = usePriorityBulletTemplate({
     priorityType,
   });

@@ -4,9 +4,7 @@ import Router from 'next/router';
 import { Input } from '@input';
 import { Button } from '@button';
 import { Bullet } from '@bullet';
-
 import { validateSignup as validate } from '@helper/auth';
-import { usePost } from '@hooks/usePost';
 import { useAuthDispatch } from '@context/auth';
 
 export interface SignupPrototypeTemplateProps {}
@@ -29,21 +27,20 @@ export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = (
     },
     validate,
     onSubmit: async (values) => {
-      const submit = await usePost({
-        url: '/api/users/signup',
-        body: values,
-        triggerLoading: (state) => {
-          setLoading(state);
-        },
-        onSuccess: () => {
-          Router.reload();
-        },
-        onFail: () => {
-          authDispatch({ type: 'exists' });
-        },
-      });
-
-      await submit();
+      // const submit = await usePost({
+      //   url: '/api/users/signup',
+      //   body: values,
+      //   triggerLoading: (state) => {
+      //     setLoading(state);
+      //   },
+      //   onSuccess: () => {
+      //     Router.reload();
+      //   },
+      //   onFail: () => {
+      //     authDispatch({ type: 'exists' });
+      //   },
+      // });
+      // await submit();
     },
   });
 
@@ -93,29 +90,28 @@ export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = (
         <div className="mt-4">
           <div className="flex rounded-md border border-gray-500">
             <Input
-              spread
               dateType="day"
               variant="birthdate"
-              direction="left"
-              handleChange={formik.handleChange}
+              direction={undefined}
+              // handleChange={formik.handleChange}
               value={formik.values.day}
               errors={formik.errors.year !== undefined}
             />
             <Input
-              spread
+              // spread
               dateType="month"
               variant="birthdate"
-              direction="center"
-              handleChange={formik.handleChange}
+              // direction="center"
+              // handleChange={formik.handleChange}
               value={formik.values.month}
               errors={formik.errors.year !== undefined}
             />
             <Input
-              spread
+              // spread
               dateType="year"
               variant="birthdate"
-              direction="right"
-              handleChange={formik.handleChange}
+              // direction="right"
+              // handleChange={formik.handleChange}
               value={formik.values.year}
               errors={formik.errors.year !== undefined}
             />
@@ -202,6 +198,7 @@ export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = (
             title="Agree and continue"
             loading={loading}
             stretch
+            onClick={() => alert('clicked')}
           />
         </div>
       </div>

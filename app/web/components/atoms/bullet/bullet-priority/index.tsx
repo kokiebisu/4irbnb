@@ -5,6 +5,6 @@ import {
 
 export type PriorityBulletProps = PriorityBulletTemplateProps;
 
-export const PriorityBullet = (props: PriorityBulletProps) => {
+export const PriorityBullet = (props: PriorityBulletProps): JSX.Element => {
   return <PriorityBulletTemplate {...props} />;
 };

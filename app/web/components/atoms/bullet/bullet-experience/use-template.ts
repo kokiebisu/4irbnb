@@ -43,7 +43,10 @@ export const useExperienceBulletTemplate: ({
   };
 
   return { ...experiences[experienceType] } as {
-    icon: { variant: string; experienceType: string };
+    icon: {
+      variant: 'experience';
+      experienceType: 'smile' | 'people' | 'computer';
+    };
     title: string;
     description: string;
   };

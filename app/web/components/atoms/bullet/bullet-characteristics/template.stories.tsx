@@ -7,13 +7,6 @@ import {
 export default {
   component: CharacteristicsBulletTemplate,
   title: 'Atoms/Bullet',
-  argTypes: {
-    variant: {
-      control: {
-        disable: true,
-      },
-    },
-  },
 } as Meta;
 
 const CharacteristicsBulletTemplateStory: Story<CharacteristicsBulletTemplateProps> = (

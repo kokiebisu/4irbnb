@@ -5,7 +5,6 @@ import { Bullet } from '@bullet';
 import { Button } from '@button';
 import { Input } from '@input';
 import { validateExists as validate } from '@helper/auth';
-import { usePost } from '@hooks/usePost';
 
 export interface ExistsPrototypeTemplateProps {
   data?: {
@@ -30,17 +29,17 @@ export const ExistsPrototypeTemplate: React.FC<ExistsPrototypeTemplateProps> = (
     },
     validate,
     onSubmit: (values) => {
-      const submit = usePost({
-        url: '/api/users/signin',
-        body: values,
-        triggerLoading(state) {
-          setLoading(state);
-        },
-        onSuccess() {
-          Router.reload();
-        },
-      });
-      submit();
+      // const submit = usePost({
+      //   url: '/api/users/signin',
+      //   body: values,
+      //   triggerLoading(state) {
+      //     setLoading(state);
+      //   },
+      //   onSuccess() {
+      //     Router.reload();
+      //   },
+      // });
+      // submit();
     },
   });
 
@@ -78,7 +77,12 @@ export const ExistsPrototypeTemplate: React.FC<ExistsPrototypeTemplateProps> = (
           />
         </div>
         <div className="my-4">
-          <Button variant="primary" loading={loading} title="Log in" />
+          <Button
+            variant="primary"
+            loading={loading}
+            title="Log in"
+            onClick={() => alert('clicked')}
+          />
         </div>
         <div>
           {formik.errors.password !== undefined && (
