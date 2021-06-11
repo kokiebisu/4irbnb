@@ -1,6 +1,6 @@
 import { Icon } from '@icons';
 import { Bullet } from '@bullet';
-import { ImageSlider } from '@particle/particle-slider/template';
+import { ImageSlider } from '../../../particles/particle-slider/template';
 import { Card, $Card } from '@card';
 
 export interface StayCardTemplateProps {

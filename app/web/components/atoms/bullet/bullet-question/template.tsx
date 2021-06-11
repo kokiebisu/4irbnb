@@ -12,7 +12,7 @@ export const QuestionBulletTemplate = ({
       <div>
         <h4 className="text-lg text-green-700">{title}</h4>
       </div>
-      {/* <div>{answer}</div> */}
+      <div>{answer}</div>
     </div>
   );
 };

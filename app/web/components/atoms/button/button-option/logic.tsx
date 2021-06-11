@@ -1,6 +1,6 @@
 import { useAuthDispatch } from '@context/auth';
 import { useToggleDispatch } from '@context/toggle';
-import { usePost } from '@hooks/usePost';
+
 import Router from 'next/router';
 
 export const getOptionContents = () => {
@@ -79,11 +79,11 @@ export const getOptionContents = () => {
     logout: {
       name: 'Logout',
       handleClick: async () => {
-        const submit = usePost({
-          url: '/api/users/signout',
-          body: {},
-          onSuccess: () => Router.reload(),
-        });
+        // const submit = usePost({
+        //   url: '/api/users/signout',
+        //   body: {},
+        //   onSuccess: () => Router.reload(),
+        // });
         await submit();
       },
     },

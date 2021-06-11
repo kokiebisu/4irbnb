@@ -48,6 +48,6 @@ export const factory = (props: BulletProps): JSX.Element => {
     case 'score':
       return <ScoreBullet {...props} />;
     default:
-      throw new Error('Variant specified does not exist');
+      throw new Error(`[Bullet] Variant does not exist`);
   }
 };
