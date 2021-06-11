@@ -11,7 +11,7 @@ export const ProfileIcon = ({
   ...props
 }: ProfileIconProps): JSX.Element => {
   return (
-    <div>
+    <div data-testid="profile-icon" style={{ width, height }}>
       <ProfileIconTemplate {...props} />
     </div>
   );

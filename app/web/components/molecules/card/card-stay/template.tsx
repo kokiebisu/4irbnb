@@ -100,7 +100,7 @@ export const StayCardTemplate: React.FC<StayCardTemplateProps> = ({
                   </div>
                 </div>
                 <div>
-                  <Bullet variant="rating" />
+                  <Bullet variant="rating" ratings={5} reviews={70} />
                 </div>
               </div>
             </div>
