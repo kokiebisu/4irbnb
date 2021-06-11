@@ -4,7 +4,7 @@ import section from '@template/index.module.scss';
 import { Button } from '@button';
 import { Bullet } from '@bullet';
 
-import { Icon } from '@icons';
+import { Icon } from 'components/atoms/icon';
 
 /**
  * Modifies the content which should be displayed initially

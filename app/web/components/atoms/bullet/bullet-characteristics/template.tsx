@@ -1,4 +1,4 @@
-import { Icon } from '@icons';
+import { Icon } from 'components/atoms/icon';
 import { useCharacteristicsBulletTemplate } from './use-template';
 
 export type CharacteristicsBulletTemplateProps = {

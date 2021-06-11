@@ -1,4 +1,4 @@
-import { BaseIconProps } from '@icons';
+import { BaseIconProps } from 'components/atoms/icon';
 
 export type ExperienceIconTypes =
   | 'time'

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useFormik } from 'formik';
-import Router from 'next/router';
 import { Input } from '@input';
 import { Button } from '@button';
 import { Bullet } from '@bullet';

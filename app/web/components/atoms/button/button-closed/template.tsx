@@ -1,4 +1,4 @@
-import { Icon } from '@icons';
+import { Icon } from 'components/atoms/icon';
 import { ClosedTypeVariants, useClosedButtonContent } from './use-template';
 
 export interface ClosedButtonTemplateProps {

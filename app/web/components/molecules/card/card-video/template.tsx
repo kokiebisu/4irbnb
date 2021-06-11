@@ -1,4 +1,4 @@
-import { Icon } from '@icons';
+import { Icon } from 'components/atoms/icon';
 import { Video } from '@video';
 
 export interface VideoCardTemplateProps {

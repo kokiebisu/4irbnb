@@ -1,10 +1,10 @@
-import { Icon } from '@icons';
+import { Icon } from 'components/atoms/icon';
 import { useExperienceBulletTemplate } from './use-template';
 
 export type ExperienceBulletVariants = 'hosts' | 'activities' | 'global';
 export type ExperienceBulletTemplateProps = {
   experienceType: ExperienceBulletVariants;
-}
+};
 
 /**
  * Renders the experience bullet

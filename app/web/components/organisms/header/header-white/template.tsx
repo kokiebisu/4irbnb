@@ -2,7 +2,7 @@ import Router from 'next/router';
 import { Modal, $Modal } from '@modal';
 import { Button } from '@button';
 import { useToggleDispatch, useToggleState } from '@context/toggle';
-import { Icon } from '@icons';
+import { Icon } from 'components/atoms/icon';
 import { Content } from '@button/button-transparent/content.transparent';
 
 export interface WhiteHeaderTemplateProps {

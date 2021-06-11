@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { styleContainer } from '../styling.select';
-import { Icon } from '@icons';
+import { Icon } from 'components/atoms/icon';
 
 export interface GuestsInputTemplateProps {
   onChange?: (e: any) => void;

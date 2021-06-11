@@ -1,5 +1,5 @@
 import { Bullet } from '@bullet';
-import { Icon } from '@icons';
+import { Icon } from 'components/atoms/icon';
 import section from '@template/index.module.scss';
 
 export interface CharacteristicsSegmentTemplateProps {

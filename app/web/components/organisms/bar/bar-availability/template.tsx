@@ -1,5 +1,5 @@
 import { Button } from '@button';
-import { Icon } from '@icons';
+import { Icon } from 'components/atoms/icon';
 
 export interface AvailabilityBarTemplateProps {
   ratings?: number;

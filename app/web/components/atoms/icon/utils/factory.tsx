@@ -1,4 +1,4 @@
-import { IconProps } from '@icons';
+import { IconProps } from 'components/atoms/icon';
 import React from 'react';
 import { ActionIcon } from '../action';
 import { AmenityIcon } from '../amenity';

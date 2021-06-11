@@ -1,4 +1,4 @@
-import { Icon } from '@icons';
+import { Icon } from 'components/atoms/icon';
 
 export const Content: React.FC<{ kind?: string; inverse?: boolean }> = ({
   kind,

@@ -1,4 +1,4 @@
-import { GeneralTypeVariants } from 'components/icons/general/template';
+import { GeneralTypeVariants } from 'components/atoms/icon/general/template';
 import { OnlinehostTypeVariants } from './template';
 
 export const useOnlinehostBulletTemplate = ({

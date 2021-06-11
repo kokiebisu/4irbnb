@@ -1,4 +1,4 @@
-import { Icon } from '@icons';
+import { Icon } from 'components/atoms/icon';
 import { BarTypeVariants, useBarButtonTemplate } from './use-template';
 
 export interface BarButtonTemplateProps {
