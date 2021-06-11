@@ -3,7 +3,7 @@ import Router from 'next/router';
 import { useFormik } from 'formik';
 import { Bullet } from '@atoms';
 import { Button } from '@atoms';
-import { Input } from '@input';
+import { Input } from '@atoms';
 import { validateExists as validate } from '@helper/auth';
 
 export interface ExistsPrototypeTemplateProps {

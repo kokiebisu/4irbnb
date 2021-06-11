@@ -1,4 +1,4 @@
-import { Video } from '@video';
+import { Video } from '@atoms';
 import { Icon } from '@atoms';
 
 export interface StartingCardTemplateProps {

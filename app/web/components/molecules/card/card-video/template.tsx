@@ -1,5 +1,5 @@
 import { Icon } from '@atoms';
-import { Video } from '@video';
+import { Video } from '@atoms';
 
 export interface VideoCardTemplateProps {
   imgUrl?: string;

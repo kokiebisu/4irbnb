@@ -1,5 +1,5 @@
 import { Button } from '@atoms';
-import { Input, $Input } from '@input';
+import { Input, $Input } from '@atoms';
 
 export interface GetStartedSegmentTemplateProps {
   loading?: boolean;
