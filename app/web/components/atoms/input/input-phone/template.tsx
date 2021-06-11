@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { styleLabel, styleContainer, styleInput } from '../styling.text';
 
-export interface PhoneNumberInputTemplateProps {
+export interface PhoneInputTemplateProps {
   onChange?: (e: any) => void;
   value?: any;
   direction?: 'top' | 'bottom' | undefined;
@@ -17,7 +17,7 @@ export interface PhoneNumberInputTemplateProps {
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const PhoneNumberInputTemplate: React.FC<PhoneNumberInputTemplateProps> = ({
+export const PhoneInputTemplate: React.FC<PhoneInputTemplateProps> = ({
   onChange,
   value,
   direction,

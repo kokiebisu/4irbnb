@@ -59,6 +59,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "components/atoms/input/utils/factory.tss"
+  ],
   "exclude": ["node_modules", "./.storybook/**"]
 }
