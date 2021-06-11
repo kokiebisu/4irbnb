@@ -1,4 +1,3 @@
-import { AmenityBulletProps } from './bullet-amenity';
 import { BringBulletProps } from './bullet-bring';
 import { CharacteristicsBulletProps } from './bullet-characteristics';
 import { CheckBulletProps } from './bullet-check';
@@ -7,18 +6,19 @@ import { HelpBulletProps } from './bullet-help';
 import { HostBulletProps } from './bullet-host';
 import { KnowBulletProps } from './bullet-know';
 import { OnlineHostBulletProps } from './bullet-onlinehost';
+import { PrimaryBulletProps } from './bullet-primary';
 import { PriorityBulletProps } from './bullet-priority';
 import { QuestionBulletProps } from './bullet-question';
 import { RatingBulletProps } from './bullet-rating';
 import { RequiredBulletProps } from './bullet-required';
 import { ScenarioBulletProps } from './bullet-scenario';
 import { ScoreBulletProps } from './bullet-score';
+import { SecondaryBulletProps } from './bullet-secondary';
 import { factory } from './utils/factory';
 
 export type BulletProps =
   | ({ variant: 'characteristics' } & CharacteristicsBulletProps)
   | ({ variant: 'bring' } & BringBulletProps)
-  | ({ variant: 'amenity' } & AmenityBulletProps)
   | ({ variant: 'check' } & CheckBulletProps)
   | ({ variant: 'score' } & ScoreBulletProps)
   | ({ variant: 'host' } & HostBulletProps)
@@ -30,7 +30,9 @@ export type BulletProps =
   | ({ variant: 'required' } & RequiredBulletProps)
   | ({ variant: 'onlinehost' } & OnlineHostBulletProps)
   | ({ variant: 'question' } & QuestionBulletProps)
-  | ({ variant: 'scenario' } & ScenarioBulletProps);
+  | ({ variant: 'scenario' } & ScenarioBulletProps)
+  | ({ variant: 'primary' } & PrimaryBulletProps)
+  | ({ variant: 'secondary' } & SecondaryBulletProps);
 
 /**
  * Bundles the bullet components

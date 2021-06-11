@@ -1,5 +1,4 @@
 import { BulletProps } from '..';
-import { AmenityBullet } from '../bullet-amenity';
 import { BringBullet } from '../bullet-bring';
 import { CharacteristicsBullet } from '../bullet-characteristics';
 import { CheckBullet } from '../bullet-check';
@@ -8,17 +7,17 @@ import { HelpBullet } from '../bullet-help';
 import { HostBullet } from '../bullet-host';
 import { KnowBullet } from '../bullet-know';
 import { OnlineHostBullet } from '../bullet-onlinehost';
+import { PrimaryBullet } from '../bullet-primary';
 import { PriorityBullet } from '../bullet-priority';
 import { QuestionBullet } from '../bullet-question';
 import { RatingBullet } from '../bullet-rating';
 import { RequiredBullet } from '../bullet-required';
 import { ScenarioBullet } from '../bullet-scenario';
 import { ScoreBullet } from '../bullet-score';
+import { SecondaryBullet } from '../bullet-secondary';
 
 export const factory = (props: BulletProps): JSX.Element => {
   switch (props.variant) {
-    case 'amenity':
-      return <AmenityBullet {...props} />;
     case 'bring':
       return <BringBullet {...props} />;
     case 'characteristics':
@@ -47,6 +46,10 @@ export const factory = (props: BulletProps): JSX.Element => {
       return <ScenarioBullet {...props} />;
     case 'score':
       return <ScoreBullet {...props} />;
+    case 'primary':
+      return <PrimaryBullet {...props} />;
+    case 'secondary':
+      return <SecondaryBullet {...props} />;
     default:
       throw new Error(`[Bullet] Variant does not exist`);
   }
