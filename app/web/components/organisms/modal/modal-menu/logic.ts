@@ -1,9 +1,8 @@
-import { getOptionContents } from '@atoms/button-option/logic';
+// import { getOptionContents } from '@atoms/button-option/logic';
 
 export const useMenuModal = () => {
-  const options = getOptionContents();
-
-  return {
-    options,
-  };
+  // const options = getOptionContents();
+  // return {
+  //   options,
+  // };
 };

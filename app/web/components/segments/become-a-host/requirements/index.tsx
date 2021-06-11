@@ -19,11 +19,3 @@ export const RequirementsSegment = () => {
     />
   );
 };
-
-export const requirements = (props) => {
-  return {
-    requirements: {
-      component: <RequirementsSegment {...props} />,
-    },
-  };
-};

@@ -3,7 +3,7 @@ import { Modal } from '@modal';
 import { Button } from '@atoms';
 import { useToggleDispatch, useToggleState } from '@context/toggle';
 import { Icon } from '@atoms';
-import { Content } from '@atoms/button-transparent/content.transparent';
+// import { Content } from '@atoms/button-transparent/content.transparent';
 
 export interface WhiteHeaderTemplateProps {
   spread?: boolean;

@@ -19,11 +19,3 @@ export const CheckInSegment = () => {
     />
   );
 };
-
-export const checkin = (props) => {
-  return {
-    checkin: {
-      component: <CheckInSegment {...props} />,
-    },
-  };
-};

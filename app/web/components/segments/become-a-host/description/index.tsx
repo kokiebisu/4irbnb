@@ -20,11 +20,3 @@ export const DescriptionSegment = () => {
     />
   );
 };
-
-export const description = (props) => {
-  return {
-    description: {
-      component: <DescriptionSegment {...props} />,
-    },
-  };
-};
