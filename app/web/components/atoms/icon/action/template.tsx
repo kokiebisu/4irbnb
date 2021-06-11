@@ -94,7 +94,6 @@ export const ChevronBottom = (props: BaseIconProps): JSX.Element => {
 export const ChevronLeft = ({
   stroke,
   strokeWidth,
-  ...props
 }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" display="block" viewBox="0 0 32 32">

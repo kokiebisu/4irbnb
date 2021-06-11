@@ -1,4 +1,4 @@
-import { Icon } from 'components/atoms/icon';
+import { Icon } from '@atoms';
 import { useHostBulletTemplate } from './use-template';
 
 export type HostTypeVariants = 'review' | 'verified' | 'superhost';

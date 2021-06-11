@@ -1,4 +1,5 @@
 export * from './atoms/bullet';
+export * from './atoms/icon';
 export * from './atoms/button';
 export * from './atoms/input';
 export * from './atoms/video';

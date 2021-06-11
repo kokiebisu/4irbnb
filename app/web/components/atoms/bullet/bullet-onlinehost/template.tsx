@@ -1,4 +1,4 @@
-import { Icon } from 'components/atoms/icon';
+import { Icon } from '@atoms';
 import { useOnlinehostBulletTemplate } from './use-template';
 
 export type OnlinehostTypeVariants =

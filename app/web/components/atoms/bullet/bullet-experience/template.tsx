@@ -1,4 +1,4 @@
-import { Icon } from 'components/atoms/icon';
+import { Icon } from '@atoms';
 import { useExperienceBulletTemplate } from './use-template';
 
 export type ExperienceBulletVariants = 'hosts' | 'activities' | 'global';

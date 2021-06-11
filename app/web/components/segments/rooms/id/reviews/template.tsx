@@ -1,4 +1,4 @@
-import { Icon } from 'components/atoms/icon';
+import { Icon } from '@atoms';
 import section from '@template/index.module.scss';
 
 import { Button } from '@button';
