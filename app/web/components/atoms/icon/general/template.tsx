@@ -66,7 +66,7 @@ export const GeneralIconTemplate = ({
 
 const MagnifyGlassIcon = ({ fill, ...props }: BaseIconProps): JSX.Element => {
   return (
-    <svg {...props} width="100%" height="auto" viewBox="0 0 32 32">
+    <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <g fill="none">
         <path
           fill={fill}
@@ -79,7 +79,7 @@ const MagnifyGlassIcon = ({ fill, ...props }: BaseIconProps): JSX.Element => {
 
 export const LockIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
-    <svg width="100%" height="auto" viewBox="0 0 16 16">
+    <svg display="block" width="100%" height="auto" viewBox="0 0 16 16">
       <path
         fill={fill}
         d="M10.25 4a2.25 2.25 0 0 0-4.495-.154L5.75 4v2h-1.5V4a3.75 3.75 0 0 1 7.495-.2l.005.2v2H13a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h7.25V4z"
@@ -90,7 +90,7 @@ export const LockIcon = ({ fill }: BaseIconProps): JSX.Element => {
 
 export const GlobeIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
-    <svg width="100%" height="auto" viewBox="0 0 16 16">
+    <svg display="block" width="100%" height="auto" viewBox="0 0 16 16">
       <path
         fill={fill}
         d="m8.002.25a7.77 7.77 0 0 1 7.748 7.776 7.75 7.75 0 0 1 -7.521 7.72l-.246.004a7.75 7.75 0 0 1 -7.73-7.513l-.003-.245a7.75 7.75 0 0 1 7.752-7.742zm1.949 8.5h-3.903c.155 2.897 1.176 5.343 1.886 5.493l.068.007c.68-.002 1.72-2.365 1.932-5.23zm4.255 0h-2.752c-.091 1.96-.53 3.783-1.188 5.076a6.257 6.257 0 0 0 3.905-4.829zm-9.661 0h-2.75a6.257 6.257 0 0 0 3.934 5.075c-.615-1.208-1.036-2.875-1.162-4.686l-.022-.39zm1.188-6.576-.115.046a6.257 6.257 0 0 0 -3.823 5.03h2.75c.085-1.83.471-3.54 1.059-4.81zm2.262-.424c-.702.002-1.784 2.512-1.947 5.5h3.904c-.156-2.903-1.178-5.343-1.892-5.494l-.065-.007zm2.28.432.023.05c.643 1.288 1.069 3.084 1.157 5.018h2.748a6.275 6.275 0 0 0 -3.929-5.068z"
@@ -101,7 +101,7 @@ export const GlobeIcon = ({ fill }: BaseIconProps): JSX.Element => {
 
 export const ShareIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
-    <svg width="100%" height="auto" viewBox="0 0 512 512.00578">
+    <svg display="block" width="100%" height="auto" viewBox="0 0 512 512.00578">
       <path
         fill={fill}
         d="m507.523438 148.890625-138.667969-144c-4.523438-4.691406-11.457031-6.164063-17.492188-3.734375-6.058593 2.453125-10.027343 8.320312-10.027343 14.847656v69.335938h-5.332032c-114.6875 0-208 93.3125-208 208v32c0 7.421875 5.226563 13.609375 12.457032 15.296875 1.175781.296875 2.347656.425781 3.519531.425781 6.039062 0 11.820312-3.542969 14.613281-9.109375 29.996094-60.011719 90.304688-97.28125 157.398438-97.28125h25.34375v69.332031c0 6.53125 3.96875 12.398438 10.027343 14.828125 5.996094 2.453125 12.96875.960938 17.492188-3.734375l138.667969-144c5.972656-6.207031 5.972656-15.976562 0-22.207031zm0 0"
@@ -116,7 +116,7 @@ export const ShareIcon = ({ fill }: BaseIconProps): JSX.Element => {
 
 export const EmailIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
-    <svg width="100%" height="auto" viewBox="0 0 24 24">
+    <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
       <path
         fill={fill}
         d="m22.5 4h-21c-.83 0-1.5.67-1.5 1.51v12.99c0 .83.67 1.5 1.5 1.5h20.99a1.5 1.5 0 0 0 1.51-1.51v-12.98c0-.84-.67-1.51-1.5-1.51zm.5 14.2-6.14-7.91 6.14-4.66v12.58zm-.83-13.2-9.69 7.36c-.26.2-.72.2-.98 0l-9.67-7.36h20.35zm-21.17.63 6.14 4.67-6.14 7.88zm.63 13.37 6.3-8.1 2.97 2.26c.62.47 1.57.47 2.19 0l2.97-2.26 6.29 8.1z"
@@ -128,7 +128,7 @@ export const EmailIcon = ({ fill }: BaseIconProps): JSX.Element => {
 
 export const FlagIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
-    <svg width="100%" height="auto" viewBox="0 0 24 24">
+    <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
       <path
         fill={fill}
         d="M22.39 5.798c-.088-.208-1.252-2.89-1.759-4.018a228.077 228.077 0 0 0-.677-1.49.5.5 0 0 0-.838-.11 7.236 7.236 0 0 1-.407.435 10.66 10.66 0 0 1-1.134.985C16.404 2.479 15.187 3 14 3c-1.21 0-1.995-.133-3.309-.483l-.4-.107C9.194 2.121 8.47 2 7.5 2a6.35 6.35 0 0 0-1.186.12c-.87.165-1.786.49-2.715.928-.48.225-.932.467-1.345.708l-.112.068-.171-.49a.5.5 0 1 0-.944.331l7 20a.5.5 0 0 0 .944-.33l-2.986-8.531a21.773 21.773 0 0 1 1.77-.843c.73-.307 1.44-.556 2.102-.724.61-.155 1.163-.237 1.642-.237.869 0 1.515.108 2.536.377l.398.106c1.39.371 2.255.517 3.566.517 2.853 0 5.29-1.786 5.974-3.842a.5.5 0 0 0 0-.316c-.324-.974-.87-2.355-1.584-4.044z"
@@ -139,7 +139,7 @@ export const FlagIcon = ({ fill }: BaseIconProps): JSX.Element => {
 
 export const BarsIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
-    <svg width="100%" height="auto" viewBox="0 0 448 512">
+    <svg display="block" width="100%" height="auto" viewBox="0 0 448 512">
       <path
         fill={fill}
         d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
@@ -186,7 +186,10 @@ export const LoginIcon = ({ fill = 'white' }: BaseIconProps): JSX.Element => {
       width={24}
       fill="red"
     >
-      <path d="m16 1c8.2842712 0 15 6.71572875 15 15 0 8.2842712-6.7157288 15-15 15-8.28427125 0-15-6.7157288-15-15 0-8.28427125 6.71572875-15 15-15zm0 8c-2.7614237 0-5 2.2385763-5 5 0 2.0143973 1.2022141 3.7998876 2.9996346 4.5835001l.0003231 2.0984999-.1499943.0278452c-2.8326474.5613112-5.31897338 2.2230336-6.93575953 4.5872979 2.34343054 2.291067 5.54974273 3.7028569 9.08579613 3.7028569 3.5355506 0 6.7414538-1.4113884 9.0850203-3.701476-1.6141801-2.3628535-4.0978119-4.0247647-6.929184-4.5867938l-.1558786-.0287302.001228-2.0991413c1.7288399-.7547474 2.9066959-2.4357565 2.9936498-4.355479l.0051645-.2283797c0-2.7614237-2.2385763-5-5-5zm0-6c-7.17970175 0-13 5.82029825-13 13 0 2.9045768.95257276 5.5866683 2.56235849 7.7509147 1.42074739-1.9134907 3.33951478-3.4002416 5.53860831-4.2955956l.3480332-.1363191-.0229565-.0189706c-1.43704227-1.2411241-2.34462949-3.045583-2.42083359-5.0285539l-.00520991-.2714755c0-3.8659932 3.1340068-7 7-7s7 3.1340068 7 7c0 1.9941317-.8415062 3.8279876-2.224566 5.1193683l-.225434.2006317.0447787.0163138c2.3268368.8792152 4.3570558 2.4138611 5.8430586 4.4127726 1.6098837-2.1632453 2.5621627-4.8449575 2.5621627-7.7490864 0-7.17970175-5.8202983-13-13-13z"></path>
+      <path
+        fill={fill}
+        d="m16 1c8.2842712 0 15 6.71572875 15 15 0 8.2842712-6.7157288 15-15 15-8.28427125 0-15-6.7157288-15-15 0-8.28427125 6.71572875-15 15-15zm0 8c-2.7614237 0-5 2.2385763-5 5 0 2.0143973 1.2022141 3.7998876 2.9996346 4.5835001l.0003231 2.0984999-.1499943.0278452c-2.8326474.5613112-5.31897338 2.2230336-6.93575953 4.5872979 2.34343054 2.291067 5.54974273 3.7028569 9.08579613 3.7028569 3.5355506 0 6.7414538-1.4113884 9.0850203-3.701476-1.6141801-2.3628535-4.0978119-4.0247647-6.929184-4.5867938l-.1558786-.0287302.001228-2.0991413c1.7288399-.7547474 2.9066959-2.4357565 2.9936498-4.355479l.0051645-.2283797c0-2.7614237-2.2385763-5-5-5zm0-6c-7.17970175 0-13 5.82029825-13 13 0 2.9045768.95257276 5.5866683 2.56235849 7.7509147 1.42074739-1.9134907 3.33951478-3.4002416 5.53860831-4.2955956l.3480332-.1363191-.0229565-.0189706c-1.43704227-1.2411241-2.34462949-3.045583-2.42083359-5.0285539l-.00520991-.2714755c0-3.8659932 3.1340068-7 7-7s7 3.1340068 7 7c0 1.9941317-.8415062 3.8279876-2.224566 5.1193683l-.225434.2006317.0447787.0163138c2.3268368.8792152 4.3570558 2.4138611 5.8430586 4.4127726 1.6098837-2.1632453 2.5621627-4.8449575 2.5621627-7.7490864 0-7.17970175-5.8202983-13-13-13z"
+      ></path>
     </svg>
   );
 };
@@ -207,7 +210,7 @@ export const SearchIcon = ({ fill }: BaseIconProps): JSX.Element => {
 
 export const ShieldIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
-    <svg width="100%" height="auto" viewBox="0 0 24 24">
+    <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
       <path
         fill="rgb(255, 180, 0)"
         d="m5 20.5a.5.5 0 0 1 -.5.5h-.5v.5a.5.5 0 0 1 -1 0v-.5h-.5a.5.5 0 0 1 0-1h .5v-.5a.5.5 0 0 1 1 0v .5h.5a.5.5 0 0 1 .5.5zm1.5 1.5a.5.5 0 1 0 .5.5.5.5 0 0 0 -.5-.5zm16-20h-.5v-.5a.5.5 0 0 0 -1 0v .5h-.5a.5.5 0 0 0 0 1h .5v.5a.5.5 0 0 0 1 0v-.5h.5a.5.5 0 0 0 0-1zm-2.58 4.87a13.41 13.41 0 0 1 -6.76-3.2.37.37 0 0 0 -.63.26l.08 16.22a.38.38 0 0 0 .55.32 11.98 11.98 0 0 0 7.07-13.31.37.37 0 0 0 -.31-.3z"
@@ -222,7 +225,7 @@ export const ShieldIcon = ({ fill }: BaseIconProps): JSX.Element => {
 
 export const DevicesIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
-    <svg width="100%" height="auto" viewBox="0 0 32 32">
+    <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
         fill={fill}
         d="M26 3a5 5 0 0 1 4.995 4.783L31 8v12a5 5 0 0 1-4.783 4.995L26 25h-5v2h2v2H9v-2h2v-2H6a5 5 0 0 1-4.995-4.783L1 20V8a5 5 0 0 1 4.783-4.995L6 3zm-7 22h-6v2h6zm7-20H6a3 3 0 0 0-2.995 2.824L3 8v12a3 3 0 0 0 2.824 2.995L6 23h20a3 3 0 0 0 2.995-2.824L29 20V8a3 3 0 0 0-3-3zM5 11c5.43 0 9.848 4.327 9.996 9.72L15 21h-2a8 8 0 0 0-7.75-7.996L5 13zm0 4a6 6 0 0 1 5.996 5.775L11 21H9a4 4 0 0 0-3.8-3.995L5 17zm0 4a2 2 0 0 1 1.995 1.85L7 21H5z"
@@ -233,7 +236,7 @@ export const DevicesIcon = ({ fill }: BaseIconProps): JSX.Element => {
 
 export const DevicesInverseIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
-    <svg width="100%" height="auto" viewBox="0 0 16 16">
+    <svg display="block" width="100%" height="auto" viewBox="0 0 16 16">
       <path
         fill={fill}
         d="M13.5 1a2.5 2.5 0 0 1 2.495 2.336L16 3.5v7a2.5 2.5 0 0 1-2.336 2.495L13.5 13h-2.25v1.5H13V16H3v-1.5h1.75V13H2.5a2.5 2.5 0 0 1-2.495-2.336L0 10.5v-7a2.5 2.5 0 0 1 2.336-2.495L2.5 1h11zM9.75 13h-3.5v1.5h3.5V13zm-7-6.5c-.172 0-.34.012-.506.034L2 6.575v1.553a2.25 2.25 0 0 1 2.927 2.693l-.054.18h1.553A3.75 3.75 0 0 0 2.75 6.5zm0-3c-.169 0-.337.006-.503.018L2 3.541v1.512a5.25 5.25 0 0 1 5.977 5.7l-.03.248h1.512A6.75 6.75 0 0 0 2.75 3.5zm0 6a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5z"
@@ -245,6 +248,7 @@ export const DevicesInverseIcon = ({ fill }: BaseIconProps): JSX.Element => {
 export const ProtectionIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg
+      display="block"
       width="100%"
       height="auto"
       fill="rgb(227, 28, 95)"
@@ -271,6 +275,7 @@ export const ProtectionIcon = ({ fill }: BaseIconProps): JSX.Element => {
 export const GuidanceIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg
+      display="block"
       width="100%"
       height="auto"
       fill="rgb(227, 28, 95)"
@@ -296,6 +301,7 @@ export const GuidanceIcon = ({ fill }: BaseIconProps): JSX.Element => {
 export const RequirementsIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg
+      display="block"
       width="100%"
       height="auto"
       viewBox="0 0 48 48"
@@ -332,7 +338,7 @@ export const CustomerServiceIcon = ({ fill }: BaseIconProps): JSX.Element => {
 
 export const ToolBoxIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
-    <svg width="100%" height="auto" viewBox="0 0 32 32">
+    <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
         fill={fill}
         d="m20 2c1.0543618 0 1.9181651.81587779 1.9945143 1.85073766l.0054857.14926234v2h4c2.6887547 0 4.8818181 2.12230671 4.9953805 4.7831104l.0046195.2168896v14c0 2.6887547-2.1223067 4.8818181-4.7831104 4.9953805l-.2168896.0046195h-20c-2.6887547 0-4.88181811-2.1223067-4.99538049-4.7831104l-.00461951-.2168896v-14c0-2.6887547 2.12230671-4.88181811 4.78311038-4.99538049l.21688962-.00461951h4v-2c0-1.0543618.8158778-1.91816512 1.8507377-1.99451426l.1492623-.00548574zm-17 23c0 1.5976809 1.24891996 2.9036609 2.82372721 2.9949073l.17627279.0050927h20c1.5976809 0 2.9036609-1.24892 2.9949073-2.8237272l.0050927-.1762728v-6h-7v2h-2v-2h-8v2h-2v-2h-7zm23-17h-20c-1.59768088 0-2.90366088 1.24891996-2.99490731 2.8237272l-.00509269.1762728v6h7v-2h2v2h8v-2h2v2h7v-6c0-1.65685425-1.3431458-3-3-3zm-6-4h-8v2h8z"
@@ -343,7 +349,7 @@ export const ToolBoxIcon = ({ fill }: BaseIconProps): JSX.Element => {
 
 export const AnalyticsIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
-    <svg width="100%" height="auto" viewBox="0 0 32 32">
+    <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
         fill={fill}
         d="m27 5h-4a2.00229 2.00229 0 0 0 -2 2v4h-4v-8a2.002 2.002 0 0 0 -2-2h-4a2.002 2.002 0 0 0 -2 2v8h-4a2.002 2.002 0 0 0 -2 2v16a2.00229 2.00229 0 0 0 2 2h22a2.0026 2.0026 0 0 0 2-2v-22a2.00229 2.00229 0 0 0 -2-2zm-18 24h-4l-.00146-16h4.00146zm6 0h-4v-16l-.00092-.00891-.00054-9.99109h4.00146zm6 0h-4v-16h4zm6 0h-4v-16l-.00073-.007-.00027-5.993h4.001z"
@@ -354,7 +360,7 @@ export const AnalyticsIcon = ({ fill }: BaseIconProps): JSX.Element => {
 
 export const EducationIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
-    <svg width="100%" height="auto" viewBox="0 0 32 32">
+    <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
         fill={fill}
         d="M16 1c5.96 0 10.832 4.747 10.996 10.706L27 12c0 3.7-2.03 7.136-5.998 10.297L21 29.333c0 .92-.746 1.667-1.667 1.667h-6.666c-.92 0-1.667-.746-1.667-1.667v-7.035c-3.848-3.064-5.874-6.387-5.995-9.978L5 12C5 5.925 9.925 1 16 1zm2.999 26h-6v2h6v-2zm0-4h-6v2h6v-2zM16 3c-4.97 0-9 4.03-9 8.983l.005.286c.097 2.9 1.794 5.7 5.17 8.408l.412.323.412-.001.001-9.666a3 3 0 0 1 6 0L18.999 21h.412l.432-.337c3.356-2.696 5.046-5.482 5.152-8.36l.005-.288-.003-.266A9 9 0 0 0 16 3zm0 7.333l-.117.007a1 1 0 0 0-.883.993L14.999 21h2L17 11.333a1 1 0 0 0-1-1z"
@@ -366,7 +372,7 @@ export const EducationIcon = ({ fill }: BaseIconProps): JSX.Element => {
 export const HomeIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <img
-      style={{ width: 40 }}
+      style={{ display: 'block', width: '100%', height: 'auto' }}
       src="https://a0.muscache.com/pictures/b0fe7d1b-2c8b-48ba-9310-5cbeb3f25a32.jpg"
       alt="home"
     />
@@ -376,7 +382,7 @@ export const HomeIcon = ({ fill }: BaseIconProps): JSX.Element => {
 export const GlobalIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <img
-      style={{ width: 40 }}
+      style={{ display: 'block', width: '100%', height: 'auto' }}
       src="https://a0.muscache.com/pictures/eba31c9e-9c99-4a7e-bb58-bc1dd3c58dd5.jpg"
       alt="global"
     />
@@ -386,7 +392,7 @@ export const GlobalIcon = ({ fill }: BaseIconProps): JSX.Element => {
 export const LighteningIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <img
-      style={{ width: 40 }}
+      style={{ display: 'block', width: '100%', height: 'auto' }}
       src="https://a0.muscache.com/pictures/70888c58-8a67-4b03-9b07-3beed0f97275.jpg"
       alt="lightening"
     />
@@ -395,7 +401,7 @@ export const LighteningIcon = ({ fill }: BaseIconProps): JSX.Element => {
 
 export const ProtectedIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
-    <svg viewBox="0 0 48 48">
+    <svg display="block" width="100%" height="auto" viewBox="0 0 48 48">
       <path
         fill="#64DEE2"
         d="M25 5c-4.462 0-9.204.909-14.23 2.743l-.77.286V27l4.5-7 4.5 1 9.05 20.361 11.356-5.047a1 1 0 0 0 .586-.783L40 35.4V8.03l-.082-.032c-5.062-1.921-9.839-2.913-14.333-2.993L25 5z"
