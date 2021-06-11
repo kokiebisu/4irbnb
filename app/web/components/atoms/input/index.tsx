@@ -19,7 +19,7 @@ import { SelectInputProps } from './input-select';
 import { TextInputProps } from './input-text';
 import { TextAreaInputProps } from './input-textarea';
 import { VerifyInputProps } from './input-verify';
-import { factory } from './utils/factory';
+import { factory } from './utils/factory.tss';
 
 export type InputVariants =
   | 'email'

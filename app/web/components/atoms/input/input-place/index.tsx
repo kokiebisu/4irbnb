@@ -6,11 +6,3 @@ export interface PlaceInputProps extends PlaceInputTemplateProps {}
 export const PlaceInput: React.FC<PlaceInputProps> = (props) => {
   return <PlaceInputTemplate {...props} />;
 };
-
-export const place = (props) => {
-  return {
-    place: {
-      component: <PlaceInput {...props} />,
-    },
-  };
-};
