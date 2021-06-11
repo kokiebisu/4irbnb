@@ -1,7 +1,7 @@
 import { useFormik } from 'formik';
 import { Input } from '@input';
 import { Button } from '@button';
-import { Bullet } from '@bullet';
+import { Bullet } from '@atoms';
 import { validateForgotPassword as validate } from '@helper/auth';
 
 export interface ForgotPasswordPrototypeTemplateProps {}

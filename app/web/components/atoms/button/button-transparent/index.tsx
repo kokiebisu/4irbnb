@@ -7,14 +7,6 @@ import {
 export interface TransparentButtonProps
   extends TransparentButtonTemplateProps {}
 
-const TransparentButton: React.FC<TransparentButtonProps> = (props) => {
+export const TransparentButton: React.FC<TransparentButtonProps> = (props) => {
   return <TransparentButtonTemplate {...props} />;
-};
-
-export const transparent = (props) => {
-  return {
-    transparent: {
-      component: <TransparentButton {...props} />,
-    },
-  };
 };

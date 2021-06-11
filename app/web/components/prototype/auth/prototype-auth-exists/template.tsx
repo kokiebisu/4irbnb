@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Router from 'next/router';
 import { useFormik } from 'formik';
-import { Bullet } from '@bullet';
+import { Bullet } from '@atoms';
 import { Button } from '@button';
 import { Input } from '@input';
 import { validateExists as validate } from '@helper/auth';
