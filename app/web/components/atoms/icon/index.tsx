@@ -7,15 +7,24 @@ import { ProfileIconProps } from './profile';
 import { SemanticIconProps } from './semantic';
 import { StayIconProps } from './stay';
 import { factory } from './utils/factory';
-export interface BaseIconProps {
-  fill?: string;
-  circled?: boolean;
-  inversed?: boolean;
-  width?: number;
-  height?: number | string;
-  stroke?: string;
-  strokeWidth?: number;
-}
+// export interface BaseIconProps {
+//   fill?: string;
+//   circled?: boolean;
+//   inversed?: boolean;
+//   width?: number;
+//   height?: number | string;
+//   stroke?: string;
+//   strokeWidth?: number;
+// }
+
+export type FillIconProps = {
+  fill: string;
+};
+
+export type StrokeIconProps = {
+  stroke: string;
+  strokeWidth: number;
+};
 
 export type IconVariants =
   | 'logo'
