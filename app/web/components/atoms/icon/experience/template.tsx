@@ -24,7 +24,7 @@ export const ExperienceIconTemplate = ({
       return <ActivityIcon {...props} />;
     default:
       throw new Error(
-        '[Experience Icon] experienceType was provided invalid type'
+        `[EXPERIENCE ICON] Provided experienceType doesn't exist`
       );
   }
 };

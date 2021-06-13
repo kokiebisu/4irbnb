@@ -43,7 +43,7 @@ export const StayIconTemplate = ({
     case 'caution':
       return <CautionIcon {...props} />;
     default:
-      throw new Error(`[Stay Icon] stayType was provided invalid type`);
+      throw new Error(`[STAY ICON] Provided stayType doesn't exist`);
   }
 };
 

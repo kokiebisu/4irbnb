@@ -29,7 +29,7 @@ export const ActionIconTemplate = ({
     case 'upload':
       return <UploadIcon {...props} />;
     default:
-      throw new Error('[Action Icon] actionType is invalid');
+      throw new Error(`[ACTION ICON] Provided actionType doesn't exist`);
   }
 };
 

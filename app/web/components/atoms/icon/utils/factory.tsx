@@ -1,5 +1,4 @@
-import { IconProps } from 'components/atoms/icon';
-import React from 'react';
+import { IconProps } from '..';
 import { ActionIcon } from '../action';
 import { AmenityIcon } from '../amenity';
 import { ExperienceIcon } from '../experience';
@@ -28,6 +27,6 @@ export const factory = (props: IconProps): JSX.Element => {
     case 'stay':
       return <StayIcon {...props} />;
     default:
-      throw new Error('Invalid variant');
+      throw new Error('[ICON] Invalid variant');
   }
 };
