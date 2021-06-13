@@ -19,6 +19,7 @@ export const BackButtonTemplate = ({
             variant="action"
             actionType="left"
             width={20}
+            height={20}
             stroke="#61AFB2"
             strokeWidth={3}
           />

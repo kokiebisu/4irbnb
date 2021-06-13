@@ -12,21 +12,7 @@ const items = {
 export default {
   title: 'Atoms/Button',
   component: AuthButtonTemplate,
-  argTypes: {
-    icon: {
-      options: Object.keys(items),
-      mapping: items,
-      control: {
-        type: 'select',
-        labels: {
-          email: 'Email',
-          facebook: 'Facebook',
-          google: 'Google',
-          apple: 'Apple',
-        },
-      },
-    },
-  },
+  
 } as Meta;
 
 const ButtonStory: Story<AuthButtonTemplateProps> = (args) => (
@@ -35,9 +21,25 @@ const ButtonStory: Story<AuthButtonTemplateProps> = (args) => (
 
 export const Auth = ButtonStory.bind({});
 Auth.args = {
-  icon: <Icon variant="general" generalType="email" width={17} height={17} />,
+  icon: <Icon variant="general" generalType="email" fill="gray" width={17} height={17} />,
   name: 'Email',
   disabled: false,
   onClick: () => alert('Triggered onClick'),
   stretched: false,
 };
+
+Auth.argTypes={
+  icon: {
+    options: Object.keys(items),
+    mapping: items,
+    control: {
+      type: 'select',
+      labels: {
+        email: 'Email',
+        facebook: 'Facebook',
+        google: 'Google',
+        apple: 'Apple',
+      },
+    },
+  },
+},
