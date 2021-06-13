@@ -1,42 +1,37 @@
-import { BaseIconProps } from '..';
-import { GeneralTypeVariants } from '.';
+import { FillIconProps, StrokeIconProps } from '..';
 
-export type GeneralIconTemplateProps = {
-  generalType: GeneralTypeVariants;
-};
+export type GeneralIconTemplateProps =
+  | ({
+      generalType: 'magnifyGlass';
+    } & StrokeIconProps)
+  | ({ generalType: 'lock' } & FillIconProps)
+  | ({ generalType: 'globe' } & FillIconProps)
+  | ({ generalType: 'share' } & FillIconProps)
+  | ({ generalType: 'email' } & FillIconProps)
+  | ({ generalType: 'explore' } & FillIconProps)
+  | ({ generalType: 'flag' } & FillIconProps)
+  | ({ generalType: 'bars' } & FillIconProps)
+  | ({ generalType: 'login' } & FillIconProps)
+  | ({ generalType: 'search' } & FillIconProps)
+  | ({ generalType: 'shield' } & FillIconProps)
+  | ({ generalType: 'devices' } & FillIconProps)
+  | ({ generalType: 'devicesInverse' } & FillIconProps)
+  | ({ generalType: 'protection' } & FillIconProps)
+  | ({ generalType: 'guidance' } & FillIconProps)
+  | ({ generalType: 'requirements' } & FillIconProps)
+  | ({ generalType: 'customerService' } & FillIconProps)
+  | ({ generalType: 'toolbox' } & FillIconProps)
+  | ({ generalType: 'analytics' } & FillIconProps)
+  | ({ generalType: 'education' } & FillIconProps)
+  | { generalType: 'home' }
+  | { generalType: 'global' }
+  | { generalType: 'lightening' }
+  | ({ generalType: 'protected' } & FillIconProps);
 
 export const GeneralIconTemplate = ({
-  generalType,
   ...props
 }: GeneralIconTemplateProps): JSX.Element => {
-  const types = {
-    magnifyGlass: <MagnifyGlassIcon {...props} />,
-    lock: <LockIcon {...props} />,
-    globe: <GlobeIcon {...props} />,
-    share: <ShareIcon {...props} />,
-    email: <EmailIcon {...props} />,
-    explore: <ExploreIcon {...props} />,
-    flag: <FlagIcon {...props} />,
-    bars: <BarsIcon {...props} />,
-    login: <LoginIcon {...props} />,
-    search: <SearchIcon {...props} />,
-    shield: <ShieldIcon {...props} />,
-    devices: <DevicesIcon {...props} />,
-    devicesInverse: <DevicesInverseIcon {...props} />,
-    protection: <ProtectionIcon {...props} />,
-    guidance: <GuidanceIcon {...props} />,
-    requirements: <RequirementsIcon {...props} />,
-    customerService: <CustomerServiceIcon {...props} />,
-    toolbox: <ToolBoxIcon {...props} />,
-    analytics: <AnalyticsIcon {...props} />,
-    education: <EducationIcon {...props} />,
-    home: <HomeIcon {...props} />,
-    global: <GlobalIcon {...props} />,
-    lightening: <LighteningIcon {...props} />,
-    protected: <ProtectedIcon {...props} />,
-  };
-
-  switch (generalType) {
+  switch (props.generalType) {
     case 'magnifyGlass':
       return <MagnifyGlassIcon {...props} />;
     case 'lock':
@@ -78,11 +73,11 @@ export const GeneralIconTemplate = ({
     case 'education':
       return <EducationIcon {...props} />;
     case 'home':
-      return <HomeIcon {...props} />;
+      return <HomeIcon />;
     case 'global':
-      return <GlobalIcon {...props} />;
+      return <GlobalIcon />;
     case 'lightening':
-      return <LighteningIcon {...props} />;
+      return <LighteningIcon />;
     case 'protected':
       return <ProtectedIcon {...props} />;
     default:
@@ -93,7 +88,7 @@ export const GeneralIconTemplate = ({
 const MagnifyGlassIcon = ({
   stroke,
   strokeWidth,
-}: BaseIconProps): JSX.Element => {
+}: StrokeIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <g fill="none">
@@ -107,7 +102,7 @@ const MagnifyGlassIcon = ({
   );
 };
 
-export const LockIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const LockIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 16 16">
       <path
@@ -118,7 +113,7 @@ export const LockIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const GlobeIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const GlobeIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 16 16">
       <path
@@ -129,7 +124,7 @@ export const GlobeIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const ShareIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const ShareIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 512 512.00578">
       <path
@@ -144,7 +139,7 @@ export const ShareIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const EmailIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const EmailIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
       <path
@@ -156,7 +151,7 @@ export const EmailIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const FlagIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const FlagIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
       <path
@@ -167,7 +162,7 @@ export const FlagIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const BarsIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const BarsIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 448 512">
       <path
@@ -178,7 +173,7 @@ export const BarsIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const ExploreIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const ExploreIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg
       viewBox="0 0 32 32"
@@ -203,7 +198,7 @@ export const ExploreIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const LoginIcon = ({ fill = 'white' }: BaseIconProps): JSX.Element => {
+export const LoginIcon = ({ fill = 'white' }: FillIconProps): JSX.Element => {
   return (
     <svg
       viewBox="0 0 32 32"
@@ -224,7 +219,7 @@ export const LoginIcon = ({ fill = 'white' }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const SearchIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const SearchIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 56.966 56.966">
       <path
@@ -238,7 +233,7 @@ export const SearchIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const ShieldIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const ShieldIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
       <path
@@ -253,7 +248,7 @@ export const ShieldIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const DevicesIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const DevicesIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -264,7 +259,7 @@ export const DevicesIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const DevicesInverseIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const DevicesInverseIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 16 16">
       <path
@@ -275,7 +270,7 @@ export const DevicesInverseIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const ProtectionIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const ProtectionIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg
       display="block"
@@ -302,7 +297,7 @@ export const ProtectionIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const GuidanceIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const GuidanceIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg
       display="block"
@@ -328,7 +323,7 @@ export const GuidanceIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const RequirementsIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const RequirementsIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg
       display="block"
@@ -355,7 +350,7 @@ export const RequirementsIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const CustomerServiceIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const CustomerServiceIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -366,7 +361,7 @@ export const CustomerServiceIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const ToolBoxIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const ToolBoxIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -377,7 +372,7 @@ export const ToolBoxIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const AnalyticsIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const AnalyticsIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -388,7 +383,7 @@ export const AnalyticsIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const EducationIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const EducationIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -399,7 +394,7 @@ export const EducationIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const HomeIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const HomeIcon = (): JSX.Element => {
   return (
     <img
       style={{ display: 'block' }}
@@ -411,7 +406,7 @@ export const HomeIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const GlobalIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const GlobalIcon = (): JSX.Element => {
   return (
     <img
       style={{ display: 'block' }}
@@ -423,7 +418,7 @@ export const GlobalIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const LighteningIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const LighteningIcon = (): JSX.Element => {
   return (
     <img
       style={{ display: 'block' }}
@@ -435,7 +430,7 @@ export const LighteningIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const ProtectedIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const ProtectedIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 48 48">
       <path

@@ -1,15 +1,20 @@
-import { BaseIconProps } from '..';
-import { ActionIconTypes } from '.';
+import { FillIconProps, StrokeIconProps } from '..';
 
-export type ActionIconTemplateProps = {
-  actionType: ActionIconTypes;
-};
+export type ActionIconTemplateProps =
+  | ({ actionType: 'heart' } & FillIconProps)
+  | ({ actionType: 'close' } & StrokeIconProps)
+  | ({ actionType: 'pause' } & FillIconProps)
+  | ({ actionType: 'play' } & FillIconProps)
+  | ({ actionType: 'top' } & StrokeIconProps)
+  | ({ actionType: 'bottom' } & StrokeIconProps)
+  | ({ actionType: 'left' } & StrokeIconProps)
+  | ({ actionType: 'right' } & StrokeIconProps)
+  | { actionType: 'upload'; fill: string };
 
-export const ActionIconTemplate = ({
-  actionType,
-  ...props
-}: ActionIconTemplateProps): JSX.Element => {
-  switch (actionType) {
+export const ActionIconTemplate = (
+  props: ActionIconTemplateProps
+): JSX.Element => {
+  switch (props.actionType) {
     case 'heart':
       return <HeartIcon {...props} />;
     case 'close':
@@ -33,7 +38,7 @@ export const ActionIconTemplate = ({
   }
 };
 
-export const HeartIcon = ({ fill = 'black' }: BaseIconProps): JSX.Element => {
+export const HeartIcon = ({ fill = 'black' }: FillIconProps): JSX.Element => {
   return (
     <svg viewBox="0 0 32 32" width="100%" height="auto" display="block">
       <path
@@ -44,16 +49,18 @@ export const HeartIcon = ({ fill = 'black' }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const CloseIcon = ({ fill = 'black' }: BaseIconProps): JSX.Element => {
+export const CloseIcon = ({
+  stroke = 'black',
+}: StrokeIconProps): JSX.Element => {
   return (
     <svg viewBox="0 0 32 32" width="100%" height="auto" display="block">
-      <path stroke={fill} d="m6 6 20 20" />
-      <path stroke={fill} d="m26 6-20 20" />
+      <path stroke={stroke} d="m6 6 20 20" />
+      <path stroke={stroke} d="m26 6-20 20" />
     </svg>
   );
 };
 
-export const PauseIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const PauseIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg viewBox="0 0 16 16" width="100%" height="auto" display="block">
       <path fill={fill} d="M13 1v14H9V1zM7 1v14H3V1z" />
@@ -61,7 +68,7 @@ export const PauseIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const PlayIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const PlayIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg viewBox="0 0 32 32" width="100%" height="auto" display="block">
       <path
@@ -72,10 +79,14 @@ export const PlayIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const ChevronBottomIcon = (props: BaseIconProps): JSX.Element => {
+export const ChevronBottomIcon = ({
+  stroke,
+  strokeWidth,
+}: StrokeIconProps): JSX.Element => {
   return (
     <svg
-      {...props}
+      stroke={stroke}
+      strokeWidth={strokeWidth}
       viewBox="0 0 256 256"
       width="100%"
       height="auto"
@@ -83,7 +94,7 @@ export const ChevronBottomIcon = (props: BaseIconProps): JSX.Element => {
     >
       <g>
         <g>
-          <polygon points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093 		" />
+          <polygon points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093" />
         </g>
       </g>
     </svg>
@@ -93,7 +104,7 @@ export const ChevronBottomIcon = (props: BaseIconProps): JSX.Element => {
 export const ChevronLeftIcon = ({
   stroke,
   strokeWidth,
-}: BaseIconProps): JSX.Element => {
+}: StrokeIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" display="block" viewBox="0 0 32 32">
       <g fill="none">
@@ -110,7 +121,7 @@ export const ChevronLeftIcon = ({
 export const ChevronRightIcon = ({
   stroke,
   strokeWidth,
-}: BaseIconProps): JSX.Element => {
+}: StrokeIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" display="block" viewBox="0 0 32 32">
       <g fill="none">
@@ -124,11 +135,13 @@ export const ChevronRightIcon = ({
   );
 };
 
-export const ChevronTopIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const ChevronTopIcon = ({
+  stroke,
+  strokeWidth,
+}: StrokeIconProps): JSX.Element => {
   return (
     <svg
       stroke="black"
-      fill={fill}
       display="block"
       viewBox="0 0 284.929 284.929"
       width="100%"
@@ -136,6 +149,8 @@ export const ChevronTopIcon = ({ fill }: BaseIconProps): JSX.Element => {
     >
       <g>
         <path
+          stroke={stroke}
+          strokeWidth={strokeWidth}
           d="M282.082,195.285L149.028,62.24c-1.901-1.903-4.088-2.856-6.562-2.856s-4.665,0.953-6.567,2.856L2.856,195.285
 		C0.95,197.191,0,199.378,0,201.853c0,2.474,0.953,4.664,2.856,6.566l14.272,14.271c1.903,1.903,4.093,2.854,6.567,2.854
 		c2.474,0,4.664-0.951,6.567-2.854l112.204-112.202l112.208,112.209c1.902,1.903,4.093,2.848,6.563,2.848
@@ -147,7 +162,7 @@ export const ChevronTopIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const UploadIcon = ({ fill = 'white' }: BaseIconProps): JSX.Element => {
+export const UploadIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" viewBox="0 0 24 24" width="100%" height="auto">
       <path

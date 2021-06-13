@@ -1,15 +1,19 @@
-import { BaseIconProps } from '..';
-import { ExperienceTypeVariants } from '.';
+import { FillIconProps } from '..';
 
-export type ExperienceIconTemplateProps = {
-  experienceType: ExperienceTypeVariants;
-};
+export type ExperienceIconTemplateProps =
+  | ({
+      experienceType: 'time';
+    } & FillIconProps)
+  | ({ experienceType: 'people' } & FillIconProps)
+  | ({ experienceType: 'language' } & FillIconProps)
+  | ({ experienceType: 'computer' } & FillIconProps)
+  | ({ experienceType: 'smile' } & FillIconProps)
+  | ({ experienceType: 'activity' } & FillIconProps);
 
 export const ExperienceIconTemplate = ({
-  experienceType,
   ...props
 }: ExperienceIconTemplateProps): JSX.Element => {
-  switch (experienceType) {
+  switch (props.experienceType) {
     case 'time':
       return <TimeIcon {...props} />;
     case 'people':
@@ -29,7 +33,7 @@ export const ExperienceIconTemplate = ({
   }
 };
 
-export const TimeIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const TimeIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -40,7 +44,7 @@ export const TimeIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const PeopleIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const PeopleIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -51,7 +55,7 @@ export const PeopleIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const LanguageIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const LanguageIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -62,7 +66,7 @@ export const LanguageIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const ComputerIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const ComputerIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -73,7 +77,7 @@ export const ComputerIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const SmileIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const SmileIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
       <path
@@ -84,7 +88,7 @@ export const SmileIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const ActivityIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const ActivityIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
       <path

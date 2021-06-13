@@ -1,15 +1,17 @@
-import { BaseIconProps } from '..';
-import { AmenityIconTypes } from '.';
+import { FillIconProps } from '..';
 
-export interface AmenityIconTemplateProps {
-  amenityType: AmenityIconTypes;
-}
+export type AmenityIconTemplateProps =
+  | ({ amenityType: 'smokeAlarm' } & FillIconProps)
+  | ({ amenityType: 'tv' } & FillIconProps)
+  | ({ amenityType: 'kitchen' } & FillIconProps)
+  | ({ amenityType: 'heating' } & FillIconProps)
+  | ({ amenityType: 'privateEntrance' } & FillIconProps)
+  | ({ amenityType: 'carbonAlarm' } & FillIconProps);
 
 export const AmenityIconTemplate = ({
-  amenityType,
   ...props
 }: AmenityIconTemplateProps): JSX.Element => {
-  switch (amenityType) {
+  switch (props.amenityType) {
     case 'smokeAlarm':
       return <SmokeAlarmIcon {...props} />;
     case 'tv':
@@ -29,7 +31,7 @@ export const AmenityIconTemplate = ({
 
 export const SmokeAlarmIcon = ({
   fill = 'black',
-}: BaseIconProps): JSX.Element => {
+}: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -40,7 +42,7 @@ export const SmokeAlarmIcon = ({
   );
 };
 
-export const TVIcon = ({ fill = 'black' }: BaseIconProps): JSX.Element => {
+export const TVIcon = ({ fill = 'black' }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -51,7 +53,7 @@ export const TVIcon = ({ fill = 'black' }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const KitchenIcon = ({ fill = 'black' }: BaseIconProps): JSX.Element => {
+export const KitchenIcon = ({ fill = 'black' }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -62,7 +64,7 @@ export const KitchenIcon = ({ fill = 'black' }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const HeatingIcon = ({ fill = 'black' }: BaseIconProps): JSX.Element => {
+export const HeatingIcon = ({ fill = 'black' }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -75,7 +77,7 @@ export const HeatingIcon = ({ fill = 'black' }: BaseIconProps): JSX.Element => {
 
 export const PrivateEntranceIcon = ({
   fill = 'black',
-}: BaseIconProps): JSX.Element => {
+}: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -88,7 +90,7 @@ export const PrivateEntranceIcon = ({
 
 export const CarbonMonoxideAlarmIcon = ({
   fill = 'black',
-}: BaseIconProps): JSX.Element => {
+}: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
