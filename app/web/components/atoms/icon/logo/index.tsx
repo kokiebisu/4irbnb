@@ -17,3 +17,11 @@ export const LogoIcon = ({
     </div>
   );
 };
+
+export type LogoTypeVariants =
+  | 'menubar'
+  | 'name'
+  | 'noName'
+  | 'facebook'
+  | 'google'
+  | 'apple';

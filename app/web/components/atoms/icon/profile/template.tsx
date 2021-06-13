@@ -1,22 +1,26 @@
-import { BaseIconProps } from 'components/atoms/icon';
-
-export type ProfileIconTypes = 'avatar' | 'star' | 'superhost' | 'verified';
+import { ProfileTypeVariants } from '.';
+import { BaseIconProps } from '..';
 
 export type ProfileIconTemplateProps = {
-  profileType: ProfileIconTypes;
+  profileType: ProfileTypeVariants;
 };
 
 export const ProfileIconTemplate = ({
   profileType,
   ...props
 }: ProfileIconTemplateProps): JSX.Element => {
-  const types = {
-    avatar: <AvatarIcon {...props} />,
-    star: <StarIcon {...props} />,
-    superhost: <SuperhostIcon {...props} />,
-    verified: <VerifiedIcon {...props} />,
-  };
-  return types[profileType];
+  switch (profileType) {
+    case 'avatar':
+      return <AvatarIcon {...props} />;
+    case 'star':
+      return <StarIcon {...props} />;
+    case 'superhost':
+      return <SuperhostIcon {...props} />;
+    case 'verified':
+      return <VerifiedIcon {...props} />;
+    default:
+      throw new Error(`[Profile Icon] profileType was provided invalid type`);
+  }
 };
 
 export const AvatarIcon = ({ fill }: BaseIconProps): JSX.Element => {

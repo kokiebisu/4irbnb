@@ -1,33 +1,33 @@
 import { BaseIconProps } from '..';
-
-export type LogoIconTypes =
-  | 'menubar'
-  | 'name'
-  | 'noName'
-  | 'facebook'
-  | 'google'
-  | 'apple';
+import { LogoTypeVariants } from '.';
 
 export type LogoIconTemplateProps = {
-  logoType: LogoIconTypes;
+  logoType: LogoTypeVariants;
 };
 
 export const LogoIconTemplate = ({
   logoType,
   ...props
 }: LogoIconTemplateProps): JSX.Element => {
-  const types = {
-    menubar: <MenuBarLogo {...props} />,
-    name: <NameLogo {...props} />,
-    noName: <NoNameLogo {...props} />,
-    facebook: <FacebookLogoIcon {...props} />,
-    google: <GoogleLogoIcon {...props} />,
-    apple: <AppleLogoIcon {...props} />,
-  };
-  return types[logoType];
+  switch (logoType) {
+    case 'menubar':
+      return <MenuBarLogoIcon {...props} />;
+    case 'name':
+      return <NameLogoIcon {...props} />;
+    case 'noName':
+      return <NoNameLogoIcon {...props} />;
+    case 'facebook':
+      return <FacebookLogoIcon {...props} />;
+    case 'google':
+      return <GoogleLogoIcon {...props} />;
+    case 'apple':
+      return <AppleLogoIcon {...props} />;
+    default:
+      throw new Error('[Logo Icon] logoType was provided invalid type');
+  }
 };
 
-export const MenuBarLogo = ({
+export const MenuBarLogoIcon = ({
   stroke = '#737373',
   ...props
 }: BaseIconProps): JSX.Element => {
@@ -48,7 +48,7 @@ export const MenuBarLogo = ({
   );
 };
 
-export const NameLogo = ({ fill }: BaseIconProps): JSX.Element => {
+export const NameLogoIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" display="block">
       <path
@@ -59,7 +59,7 @@ export const NameLogo = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const NoNameLogo = ({ fill }: BaseIconProps): JSX.Element => {
+export const NoNameLogoIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 1000 1000">
       <path

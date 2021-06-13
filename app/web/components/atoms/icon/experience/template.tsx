@@ -1,4 +1,5 @@
-import { BaseIconProps, ExperienceTypeVariants } from '@atoms';
+import { BaseIconProps } from '..';
+import { ExperienceTypeVariants } from '.';
 
 export type ExperienceIconTemplateProps = {
   experienceType: ExperienceTypeVariants;

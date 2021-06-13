@@ -1,4 +1,5 @@
-import { ActionIconTypes, BaseIconProps } from '@atoms';
+import { BaseIconProps } from '..';
+import { ActionIconTypes } from '.';
 
 export type ActionIconTemplateProps = {
   actionType: ActionIconTypes;

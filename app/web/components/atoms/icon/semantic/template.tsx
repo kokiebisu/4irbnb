@@ -1,15 +1,8 @@
-import { BaseIconProps } from 'components/atoms/icon';
-
-export type SemanticIconTypes =
-  | 'exclamation'
-  | 'warning'
-  | 'minus'
-  | 'plus'
-  | 'check'
-  | 'saved';
+import { BaseIconProps } from '..';
+import { SemanticTypeVariants } from '.';
 
 export type SemanticIconTemplateProps = {
-  semanticType: SemanticIconTypes;
+  semanticType: SemanticTypeVariants;
   inversed?: boolean;
   circled?: boolean;
   strokeWidth?: number;
@@ -20,15 +13,22 @@ export const SemanticIconTemplate = ({
   semanticType,
   ...props
 }: SemanticIconTemplateProps): JSX.Element => {
-  const types = {
-    exclamation: <ExclamationIcon {...props} />,
-    warning: <WarningIcon {...props} />,
-    minus: <MinusIcon {...props} />,
-    plus: <PlusIcon {...props} />,
-    check: <CheckIcon {...props} />,
-    saved: <SavedIcon {...props} />,
-  };
-  return types[semanticType];
+  switch (semanticType) {
+    case 'exclamation':
+      return <ExclamationIcon {...props} />;
+    case 'warning':
+      return <WarningIcon {...props} />;
+    case 'minus':
+      return <MinusIcon {...props} />;
+    case 'plus':
+      return <PlusIcon {...props} />;
+    case 'check':
+      return <CheckIcon {...props} />;
+    case 'saved':
+      return <SavedIcon {...props} />;
+    default:
+      throw new Error(`[Semantic Icon] semanticType was provided invalid type`);
+  }
 };
 
 export const ExclamationIcon = ({
@@ -64,7 +64,6 @@ export const WarningIcon = ({ fill }: BaseIconProps): JSX.Element => {
 export const MinusIcon = ({
   fill = 'black',
   strokeWidth = 3,
-  ...props
 }: BaseIconProps): JSX.Element => {
   return (
     <svg
@@ -79,10 +78,7 @@ export const MinusIcon = ({
   );
 };
 
-export const PlusIcon = ({
-  fill = 'black',
-  ...props
-}: BaseIconProps): JSX.Element => {
+export const PlusIcon = ({ fill = 'black' }: BaseIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
       <rect fill={fill} height="2" rx="1" width="12" x="6" y="11"></rect>
