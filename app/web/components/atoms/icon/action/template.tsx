@@ -1,15 +1,4 @@
-import { BaseIconProps } from 'components/atoms/icon';
-
-export type ActionIconTypes =
-  | 'heart'
-  | 'close'
-  | 'pause'
-  | 'play'
-  | 'left'
-  | 'right'
-  | 'top'
-  | 'bottom'
-  | 'upload';
+import { ActionIconTypes, BaseIconProps } from '@atoms';
 
 export type ActionIconTemplateProps = {
   actionType: ActionIconTypes;
@@ -19,19 +8,28 @@ export const ActionIconTemplate = ({
   actionType,
   ...props
 }: ActionIconTemplateProps): JSX.Element => {
-  const types = {
-    heart: <HeartIcon {...props} />,
-    close: <CloseIcon {...props} />,
-    pause: <PauseIcon {...props} />,
-    play: <PlayIcon {...props} />,
-    top: <ChevronTop {...props} />,
-    bottom: <ChevronBottom {...props} />,
-    left: <ChevronLeft {...props} />,
-    right: <ChevronRight {...props} />,
-    upload: <UploadIcon {...props} />,
-  };
-
-  return types[actionType];
+  switch (actionType) {
+    case 'heart':
+      return <HeartIcon {...props} />;
+    case 'close':
+      return <CloseIcon {...props} />;
+    case 'pause':
+      return <PauseIcon {...props} />;
+    case 'play':
+      return <PlayIcon {...props} />;
+    case 'top':
+      return <ChevronTopIcon {...props} />;
+    case 'bottom':
+      return <ChevronBottomIcon {...props} />;
+    case 'left':
+      return <ChevronLeftIcon {...props} />;
+    case 'right':
+      return <ChevronRightIcon {...props} />;
+    case 'upload':
+      return <UploadIcon {...props} />;
+    default:
+      throw new Error('[Action Icon] actionType is invalid');
+  }
 };
 
 export const HeartIcon = ({ fill = 'black' }: BaseIconProps): JSX.Element => {
@@ -73,7 +71,7 @@ export const PlayIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const ChevronBottom = (props: BaseIconProps): JSX.Element => {
+export const ChevronBottomIcon = (props: BaseIconProps): JSX.Element => {
   return (
     <svg
       {...props}
@@ -91,7 +89,7 @@ export const ChevronBottom = (props: BaseIconProps): JSX.Element => {
   );
 };
 
-export const ChevronLeft = ({
+export const ChevronLeftIcon = ({
   stroke,
   strokeWidth,
 }: BaseIconProps): JSX.Element => {
@@ -108,7 +106,7 @@ export const ChevronLeft = ({
   );
 };
 
-export const ChevronRight = ({ fill }: BaseIconProps): JSX.Element => {
+export const ChevronRightIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" display="block" viewBox="0 0 32 32">
       <g fill="none">
@@ -121,7 +119,7 @@ export const ChevronRight = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const ChevronTop = ({ fill }: BaseIconProps): JSX.Element => {
+export const ChevronTopIcon = ({ fill }: BaseIconProps): JSX.Element => {
   return (
     <svg
       stroke="black"

@@ -16,3 +16,14 @@ export const ActionIcon = ({
     </div>
   );
 };
+
+export type ActionIconTypes =
+  | 'heart'
+  | 'close'
+  | 'pause'
+  | 'play'
+  | 'left'
+  | 'right'
+  | 'top'
+  | 'bottom'
+  | 'upload';

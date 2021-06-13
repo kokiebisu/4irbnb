@@ -1,12 +1,4 @@
-import { BaseIconProps } from 'components/atoms/icon';
-
-export type AmenityIconTypes =
-  | 'smokeAlarm'
-  | 'tv'
-  | 'kitchen'
-  | 'heating'
-  | 'privateEntrance'
-  | 'carbonAlarm';
+import { AmenityIconTypes, BaseIconProps } from '@atoms';
 
 export interface AmenityIconTemplateProps {
   amenityType: AmenityIconTypes;
@@ -14,16 +6,24 @@ export interface AmenityIconTemplateProps {
 
 export const AmenityIconTemplate = ({
   amenityType,
+  ...props
 }: AmenityIconTemplateProps): JSX.Element => {
-  const types = {
-    smokeAlarm: <SmokeAlarmIcon />,
-    tv: <TVIcon />,
-    kitchen: <KitchenIcon />,
-    heating: <HeatingIcon />,
-    privateEntrance: <PrivateEntranceIcon />,
-    carbonAlarm: <CarbonMonoxideAlarmIcon />,
-  };
-  return types[amenityType];
+  switch (amenityType) {
+    case 'smokeAlarm':
+      return <SmokeAlarmIcon {...props} />;
+    case 'tv':
+      return <TVIcon {...props} />;
+    case 'kitchen':
+      return <KitchenIcon {...props} />;
+    case 'heating':
+      return <HeatingIcon {...props} />;
+    case 'privateEntrance':
+      return <PrivateEntranceIcon {...props} />;
+    case 'carbonAlarm':
+      return <CarbonMonoxideAlarmIcon {...props} />;
+    default:
+      throw new Error('[Amenity Icon] amenityType was provided invalid type');
+  }
 };
 
 export const SmokeAlarmIcon = ({

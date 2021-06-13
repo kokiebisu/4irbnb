@@ -12,3 +12,11 @@ export const AmenityIcon = ({ width, height, ...props }: AmenityIconProps) => {
     </div>
   );
 };
+
+export type AmenityIconTypes =
+  | 'smokeAlarm'
+  | 'tv'
+  | 'kitchen'
+  | 'heating'
+  | 'privateEntrance'
+  | 'carbonAlarm';
