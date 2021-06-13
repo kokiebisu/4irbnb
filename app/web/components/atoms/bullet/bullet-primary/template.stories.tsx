@@ -24,3 +24,9 @@ Checklist.args = {
   icon: <Icon variant="semantic" semanticType="check" width={24} height={24} />,
   title: 'Bring these...',
 };
+
+export const Know = BulletStory.bind({});
+Know.args = {
+  icon: <Icon variant="stay" stayType="smoking" width={20} height={20} />,
+  title: `Check-in: 10:00am – 12:00pm`,
+};
