@@ -103,19 +103,48 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
               <div className="flex items-center flex-wrap">
                 <div className="mr-2 mb-3 pr-1">
                   <Bullet
-                    variant="host"
-                    categoryType="review"
-                    total={numberOfReviews}
+                    variant="primary"
+                    icon={
+                      <Icon
+                        variant="profile"
+                        profileType="star"
+                        width={16}
+                        height={16}
+                      />
+                    }
+                    title={`15 Reviews`}
                   />
                 </div>
                 {verified && (
                   <div className="mr-2 mb-3 pr-1">
-                    <Bullet variant="host" categoryType="verified" />
+                    <Bullet
+                      variant="primary"
+                      icon={
+                        <Icon
+                          variant="profile"
+                          profileType="verified"
+                          width={16}
+                          height={16}
+                        />
+                      }
+                      title="Identity Verified"
+                    />
                   </div>
                 )}
                 {layoutType === 'room' && isSuperhost && (
                   <div className="mr-2 mb-3 pr-1">
-                    <Bullet variant="host" categoryType="superhost" />
+                    <Bullet
+                      variant="primary"
+                      icon={
+                        <Icon
+                          variant="profile"
+                          profileType="superhost"
+                          width={16}
+                          height={16}
+                        />
+                      }
+                      title="Superhost"
+                    />
                   </div>
                 )}
               </div>
