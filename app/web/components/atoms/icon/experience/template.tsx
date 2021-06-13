@@ -1,23 +1,31 @@
-import { BaseIconProps } from 'components/atoms/icon';
-import { ExperienceIconTypes } from '.';
+import { BaseIconProps, ExperienceTypeVariants } from '@atoms';
 
 export type ExperienceIconTemplateProps = {
-  experienceType: ExperienceIconTypes;
+  experienceType: ExperienceTypeVariants;
 };
 
 export const ExperienceIconTemplate = ({
   experienceType,
   ...props
 }: ExperienceIconTemplateProps): JSX.Element => {
-  const types = {
-    time: <TimeIcon {...props} />,
-    people: <PeopleIcon {...props} />,
-    language: <LanguageIcon {...props} />,
-    computer: <ComputerIcon {...props} />,
-    smile: <SmileIcon {...props} />,
-    activity: <ActivityIcon {...props} />,
-  };
-  return types[experienceType];
+  switch (experienceType) {
+    case 'time':
+      return <TimeIcon {...props} />;
+    case 'people':
+      return <PeopleIcon {...props} />;
+    case 'language':
+      return <LanguageIcon {...props} />;
+    case 'computer':
+      return <ComputerIcon {...props} />;
+    case 'smile':
+      return <SmileIcon {...props} />;
+    case 'activity':
+      return <ActivityIcon {...props} />;
+    default:
+      throw new Error(
+        '[Experience Icon] experienceType was provided invalid type'
+      );
+  }
 };
 
 export const TimeIcon = ({ fill }: BaseIconProps): JSX.Element => {
