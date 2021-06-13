@@ -1,15 +1,17 @@
-import { BaseIconProps } from '..';
-import { LogoTypeVariants } from '.';
+import { FillIconProps, StrokeIconProps } from '..';
 
-export type LogoIconTemplateProps = {
-  logoType: LogoTypeVariants;
-};
+export type LogoIconTemplateProps =
+  | ({ logoType: 'menubar' } & StrokeIconProps)
+  | ({ logoType: 'name' } & FillIconProps)
+  | ({ logoType: 'noName' } & FillIconProps)
+  | { logoType: 'facebook' }
+  | { logoType: 'google' }
+  | { logoType: 'apple' };
 
 export const LogoIconTemplate = ({
-  logoType,
   ...props
 }: LogoIconTemplateProps): JSX.Element => {
-  switch (logoType) {
+  switch (props.logoType) {
     case 'menubar':
       return <MenuBarLogoIcon {...props} />;
     case 'name':
@@ -17,11 +19,11 @@ export const LogoIconTemplate = ({
     case 'noName':
       return <NoNameLogoIcon {...props} />;
     case 'facebook':
-      return <FacebookLogoIcon {...props} />;
+      return <FacebookLogoIcon />;
     case 'google':
-      return <GoogleLogoIcon {...props} />;
+      return <GoogleLogoIcon />;
     case 'apple':
-      return <AppleLogoIcon {...props} />;
+      return <AppleLogoIcon />;
     default:
       throw new Error(`[LOGO ICON] Provided logoType doesn't exist`);
   }
@@ -29,12 +31,12 @@ export const LogoIconTemplate = ({
 
 export const MenuBarLogoIcon = ({
   stroke = '#737373',
-  ...props
-}: BaseIconProps): JSX.Element => {
+  strokeWidth = 1.5,
+}: StrokeIconProps): JSX.Element => {
   return (
     <svg
       stroke={stroke}
-      strokeWidth="1.5"
+      strokeWidth={strokeWidth}
       strokeLinecap="round"
       fillOpacity={0}
       viewBox="0 0 24 24"
@@ -48,7 +50,7 @@ export const MenuBarLogoIcon = ({
   );
 };
 
-export const NameLogoIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const NameLogoIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" display="block">
       <path
@@ -59,7 +61,7 @@ export const NameLogoIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const NoNameLogoIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const NoNameLogoIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" viewBox="0 0 1000 1000">
       <path
