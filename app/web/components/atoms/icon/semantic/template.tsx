@@ -1,19 +1,21 @@
-import { BaseIconProps } from '..';
-import { SemanticTypeVariants } from '.';
+import { FillIconProps, StrokeIconProps } from '..';
 
-export type SemanticIconTemplateProps = {
-  semanticType: SemanticTypeVariants;
-  inversed?: boolean;
-  circled?: boolean;
-  strokeWidth?: number;
-  stroke?: string;
-};
+export type SemanticIconTemplateProps =
+  | ({
+      semanticType: 'exclamation';
+    } & FillIconProps &
+      StrokeIconProps)
+  | ({ semanticType: 'warning' } & FillIconProps)
+  | ({ semanticType: 'minus' } & StrokeIconProps)
+  | ({ semanticType: 'plus' } & FillIconProps)
+  | ({ semanticType: 'check' } & FillIconProps &
+      StrokeIconProps & { circled?: boolean; inversed?: boolean })
+  | ({ semanticType: 'saved' } & FillIconProps);
 
 export const SemanticIconTemplate = ({
-  semanticType,
   ...props
 }: SemanticIconTemplateProps): JSX.Element => {
-  switch (semanticType) {
+  switch (props.semanticType) {
     case 'exclamation':
       return <ExclamationIcon {...props} />;
     case 'warning':
@@ -33,24 +35,38 @@ export const SemanticIconTemplate = ({
 
 export const ExclamationIcon = ({
   fill = '#000',
-}: BaseIconProps): JSX.Element => {
+  stroke = '#000',
+  strokeWidth = 2,
+}: FillIconProps & StrokeIconProps): JSX.Element => {
   return (
     <svg
-      stroke={fill}
-      strokeWidth={2}
+      stroke={stroke}
+      strokeWidth={strokeWidth}
       display="block"
       width="100%"
       height="auto"
       viewBox="0 0 32 32"
     >
-      <circle cx="16" cy="16" r="14" fill="none" strokeWidth={2}></circle>
-      <path d="m16 8v10" fill="none" strokeWidth={2}></path>
-      <circle cx="16" cy="22.5" fill={fill} r=".5" strokeWidth={2}></circle>
+      <circle
+        cx="16"
+        cy="16"
+        r="14"
+        fill="none"
+        strokeWidth={strokeWidth}
+      ></circle>
+      <path d="m16 8v10" fill="none" strokeWidth={strokeWidth}></path>
+      <circle
+        cx="16"
+        cy="22.5"
+        fill={fill}
+        r=".5"
+        strokeWidth={strokeWidth}
+      ></circle>
     </svg>
   );
 };
 
-export const WarningIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const WarningIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 16 16">
       <path
@@ -62,23 +78,25 @@ export const WarningIcon = ({ fill }: BaseIconProps): JSX.Element => {
 };
 
 export const MinusIcon = ({
-  fill = 'black',
+  stroke = 'black',
   strokeWidth = 3,
-}: BaseIconProps): JSX.Element => {
+}: StrokeIconProps): JSX.Element => {
   return (
-    <svg
-      display="block"
-      width="100%"
-      height="auto"
-      strokeWidth={strokeWidth}
-      viewBox="0 0 24 24"
-    >
-      <rect fill={fill} height="2" rx="1" width="12" x="6" y="11"></rect>
+    <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
+      <rect
+        stroke={stroke}
+        strokeWidth={strokeWidth}
+        height="2"
+        rx="1"
+        width="12"
+        x="6"
+        y="11"
+      ></rect>
     </svg>
   );
 };
 
-export const PlusIcon = ({ fill = 'black' }: BaseIconProps): JSX.Element => {
+export const PlusIcon = ({ fill = 'black' }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
       <rect fill={fill} height="2" rx="1" width="12" x="6" y="11"></rect>
@@ -93,7 +111,8 @@ export const CheckIcon = ({
   inversed,
   strokeWidth = 3,
   stroke,
-}: BaseIconProps): JSX.Element => {
+}: FillIconProps &
+  StrokeIconProps & { circled?: boolean; inversed?: boolean }): JSX.Element => {
   if (circled) {
     return (
       <svg
@@ -136,7 +155,7 @@ export const CheckIcon = ({
   );
 };
 
-export const SavedIcon = ({ fill = '#737373' }: BaseIconProps): JSX.Element => {
+export const SavedIcon = ({ fill = '#737373' }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
       <path
