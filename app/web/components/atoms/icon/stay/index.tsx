@@ -16,3 +16,21 @@ export const StayIcon = ({
     </div>
   );
 };
+
+export type StayTypeVariants =
+  | 'doublebed'
+  | 'house'
+  | 'sparkle'
+  | 'door'
+  | 'calendar'
+  | 'guidelines'
+  | 'clock'
+  | 'checkin'
+  | 'children'
+  | 'smoking'
+  | 'pets'
+  | 'parties'
+  | 'cleaning'
+  | 'distancing'
+  | 'caution'
+  | 'check';

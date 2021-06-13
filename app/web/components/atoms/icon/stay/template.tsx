@@ -1,25 +1,8 @@
 import { BaseIconProps } from 'components/atoms/icon';
-
-export type StayIconTypes =
-  | 'doublebed'
-  | 'house'
-  | 'sparkle'
-  | 'door'
-  | 'calendar'
-  | 'guidelines'
-  | 'clock'
-  | 'checkin'
-  | 'children'
-  | 'smoking'
-  | 'pets'
-  | 'parties'
-  | 'cleaning'
-  | 'distancing'
-  | 'caution'
-  | 'check';
+import { StayTypeVariants } from '.';
 
 export interface StayIconTemplateProps {
-  stayType: StayIconTypes;
+  stayType: StayTypeVariants;
 }
 
 export const StayIconTemplate = ({
