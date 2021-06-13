@@ -1,15 +1,27 @@
-import { BaseIconProps } from 'components/atoms/icon';
-import { StayTypeVariants } from '.';
+import { FillIconProps } from '..';
 
-export interface StayIconTemplateProps {
-  stayType: StayTypeVariants;
-}
+export type StayIconTemplateProps =
+  | ({ stayType: 'doublebed' } & FillIconProps)
+  | ({ stayType: 'house' } & FillIconProps)
+  | ({ stayType: 'sparkle' } & FillIconProps)
+  | ({ stayType: 'door' } & FillIconProps)
+  | ({ stayType: 'calendar' } & FillIconProps)
+  | ({ stayType: 'guidelines' } & FillIconProps)
+  | { stayType: 'clock' }
+  | { stayType: 'checkin' }
+  | { stayType: 'children' }
+  | { stayType: 'smoking' }
+  | { stayType: 'pets' }
+  | { stayType: 'parties' }
+  | { stayType: 'cleaning' }
+  | { stayType: 'distancing' }
+  | { stayType: 'check' }
+  | { stayType: 'caution' };
 
 export const StayIconTemplate = ({
-  stayType,
   ...props
 }: StayIconTemplateProps): JSX.Element => {
-  switch (stayType) {
+  switch (props.stayType) {
     case 'doublebed':
       return <DoubleBedIcon {...props} />;
     case 'house':
@@ -23,31 +35,31 @@ export const StayIconTemplate = ({
     case 'guidelines':
       return <GuidelinesIcon {...props} />;
     case 'clock':
-      return <ClockIcon {...props} />;
+      return <ClockIcon />;
     case 'checkin':
-      return <CheckInIcon {...props} />;
+      return <CheckInIcon />;
     case 'children':
-      return <ChildrenIcon {...props} />;
+      return <ChildrenIcon />;
     case 'smoking':
-      return <SmokingIcon {...props} />;
+      return <SmokingIcon />;
     case 'pets':
-      return <PetsIcon {...props} />;
+      return <PetsIcon />;
     case 'parties':
-      return <PartiesIcon {...props} />;
+      return <PartiesIcon />;
     case 'cleaning':
-      return <CleaningIcon {...props} />;
+      return <CleaningIcon />;
     case 'distancing':
-      return <DistancingIcon {...props} />;
+      return <DistancingIcon />;
     case 'check':
-      return <CheckIcon {...props} />;
+      return <CheckIcon />;
     case 'caution':
-      return <CautionIcon {...props} />;
+      return <CautionIcon />;
     default:
       throw new Error(`[STAY ICON] Provided stayType doesn't exist`);
   }
 };
 
-const HouseIcon = ({ fill }: BaseIconProps): JSX.Element => {
+const HouseIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -58,7 +70,7 @@ const HouseIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-const SparkleIcon = ({ fill }: BaseIconProps): JSX.Element => {
+const SparkleIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -69,7 +81,7 @@ const SparkleIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-const DoorIcon = ({ fill }: BaseIconProps): JSX.Element => {
+const DoorIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -80,7 +92,7 @@ const DoorIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-const CalendarIcon = ({ fill }: BaseIconProps): JSX.Element => {
+const CalendarIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -91,7 +103,7 @@ const CalendarIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-const GuidelinesIcon = ({ fill }: BaseIconProps): JSX.Element => {
+const GuidelinesIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -102,7 +114,7 @@ const GuidelinesIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const DoubleBedIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const DoubleBedIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 480 480">
       <g>
@@ -146,49 +158,49 @@ c0,13.255-10.745,24-24,24h-64c-13.255,0-24-10.745-24-24v-16c0-13.255,10.745-24,2
   );
 };
 
-const ClockIcon = (props: BaseIconProps): JSX.Element => {
+const ClockIcon = (): JSX.Element => {
   return (
     <span style={{ width: '100%', height: 'auto', display: 'block' }}>󰀥</span>
   );
 };
 
-const CheckInIcon = (props: BaseIconProps): JSX.Element => {
+const CheckInIcon = (): JSX.Element => {
   return (
     <span style={{ width: '100%', height: 'auto', display: 'block' }}>󰄄</span>
   );
 };
 
-const ChildrenIcon = (props: BaseIconProps): JSX.Element => {
+const ChildrenIcon = (): JSX.Element => {
   return (
     <span style={{ width: '100%', height: 'auto', display: 'block' }}>󱤄</span>
   );
 };
 
-const SmokingIcon = (props: BaseIconProps): JSX.Element => {
+const SmokingIcon = (): JSX.Element => {
   return (
     <span style={{ width: '100%', height: 'auto', display: 'block' }}>󱤈</span>
   );
 };
 
-const PetsIcon = (props: BaseIconProps): JSX.Element => {
+const PetsIcon = (): JSX.Element => {
   return (
     <span style={{ width: '100%', height: 'auto', display: 'block' }}>󱤆</span>
   );
 };
 
-const PartiesIcon = (props: BaseIconProps): JSX.Element => {
+const PartiesIcon = (): JSX.Element => {
   return (
     <span style={{ width: '100%', height: 'auto', display: 'block' }}>󱤂</span>
   );
 };
 
-const CleaningIcon = (props: BaseIconProps): JSX.Element => {
+const CleaningIcon = (): JSX.Element => {
   return (
     <span style={{ width: '100%', height: 'auto', display: 'block' }}>󹀁</span>
   );
 };
 
-const DistancingIcon = ({ fill }: BaseIconProps): JSX.Element => {
+const DistancingIcon = (): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path d="M5 5v.414l4 4v3.172L4.464 17.12C3.527 18.06 3 18.674 3 20v9c0 1.644 1.356 2.982 3 3 6.645-.012 10.645-.012 12 0 1.657.014 3-1 3-3v-9c0-1.351-.547-2.126-1.516-3.067L15 12.577V9a2.99 2.99 0 0 1 2.083-2.842 8.957 8.957 0 0 0 2.17 4.798l1.499-1.324A6.959 6.959 0 0 1 19.078 6H23V0H10a5 5 0 0 0-5 5zm14-3h2v2h-2zm-1.032 22.686h.004c.348 0 .69-.034 1.028-.084v2.02c-.34.039-.682.064-1.028.064h-.004a8.946 8.946 0 0 1-6.362-2.636A6.948 6.948 0 0 0 6.659 22h-.003A7.07 7.07 0 0 0 5 22.204v-2.048c.54-.1 1.093-.156 1.655-.156h.005a8.94 8.94 0 0 1 6.36 2.636 6.956 6.956 0 0 0 4.948 2.05zM11 10h2v2h-2zm17-9a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm2 4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3-2a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
@@ -196,13 +208,13 @@ const DistancingIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-const CautionIcon = ({ fill }: BaseIconProps): JSX.Element => {
+const CautionIcon = (): JSX.Element => {
   return (
     <span style={{ display: 'block', width: '100%', height: 'auto' }}>󱠃</span>
   );
 };
 
-export const CheckIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const CheckIcon = (): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
