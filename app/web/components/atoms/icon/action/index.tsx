@@ -17,7 +17,7 @@ export const ActionIcon = ({
   );
 };
 
-export type ActionIconTypes =
+export type ActionTypeVariants =
   | 'heart'
   | 'close'
   | 'pause'
