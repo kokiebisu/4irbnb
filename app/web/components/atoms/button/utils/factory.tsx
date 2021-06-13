@@ -28,7 +28,7 @@ import { UnderlineButton } from '../button-underline';
 import { VerifyButton } from '../button-verify';
 import { VideoButton } from '../button-video';
 
-export const factory = (props: ButtonProps) => {
+export const factory = (props: ButtonProps): JSX.Element => {
   switch (props.variant) {
     case 'auth':
       return <AuthButton {...props} />;

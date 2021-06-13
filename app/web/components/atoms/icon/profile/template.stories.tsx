@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react';
 import { ProfileIconTemplate, ProfileIconTemplateProps } from './template';
 
 export default {
-  title: 'Atoms/Icons/Profile',
+  title: 'Atoms/Icon/Profile',
   component: ProfileIconTemplate,
 } as Meta;
 

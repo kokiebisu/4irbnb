@@ -5,7 +5,7 @@ import {
 } from './template';
 
 export default {
-  title: 'Atoms/Icons/Experience',
+  title: 'Atoms/Icon/Experience',
   component: ExperienceIconTemplate,
 } as Meta;
 
