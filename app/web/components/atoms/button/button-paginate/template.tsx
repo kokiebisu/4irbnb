@@ -2,7 +2,7 @@ import { Icon } from '@atoms';
 import { motion } from 'framer-motion';
 
 export interface PaginateButtonTemplateProps {
-  direction?: 'left' | 'right';
+  direction: 'left' | 'right';
   disable?: boolean;
 }
 

@@ -3,7 +3,6 @@ import { PrimaryBullet } from '../bullet-primary';
 import { QuestionBullet } from '../bullet-question';
 import { RatingBullet } from '../bullet-rating';
 import { RequiredBullet } from '../bullet-required';
-import { ScenarioBullet } from '../bullet-scenario';
 import { ScoreBullet } from '../bullet-score';
 import { SecondaryBullet } from '../bullet-secondary';
 
@@ -15,8 +14,6 @@ export const factory = (props: BulletProps): JSX.Element => {
       return <RatingBullet {...props} />;
     case 'required':
       return <RequiredBullet {...props} />;
-    case 'scenario':
-      return <ScenarioBullet {...props} />;
     case 'score':
       return <ScoreBullet {...props} />;
     case 'primary':
