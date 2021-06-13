@@ -8,7 +8,7 @@ export type ExperienceIconProps = ExperienceIconTemplateProps & {
   height: number;
 };
 
-export type ExperienceIconTypes =
+export type ExperienceTypeVariants =
   | 'time'
   | 'people'
   | 'language'
