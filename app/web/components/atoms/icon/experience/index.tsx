@@ -8,6 +8,14 @@ export type ExperienceIconProps = ExperienceIconTemplateProps & {
   height: number;
 };
 
+export type ExperienceIconTypes =
+  | 'time'
+  | 'people'
+  | 'language'
+  | 'computer'
+  | 'smile'
+  | 'activity';
+
 export const ExperienceIcon = ({
   width,
   height,

@@ -1,12 +1,5 @@
 import { BaseIconProps } from 'components/atoms/icon';
-
-export type ExperienceIconTypes =
-  | 'time'
-  | 'people'
-  | 'language'
-  | 'computer'
-  | 'smile'
-  | 'activity';
+import { ExperienceIconTypes } from '.';
 
 export type ExperienceIconTemplateProps = {
   experienceType: ExperienceIconTypes;

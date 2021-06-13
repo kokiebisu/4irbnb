@@ -16,3 +16,29 @@ export const GeneralIcon = ({
     </div>
   );
 };
+
+export type GeneralTypeVariants =
+  | 'magnifyGlass'
+  | 'lock'
+  | 'globe'
+  | 'share'
+  | 'email'
+  | 'flag'
+  | 'bars'
+  | 'login'
+  | 'search'
+  | 'shield'
+  | 'devices'
+  | 'devicesInverse'
+  | 'protection'
+  | 'guidance'
+  | 'requirements'
+  | 'customerService'
+  | 'toolbox'
+  | 'analytics'
+  | 'education'
+  | 'home'
+  | 'global'
+  | 'lightening'
+  | 'protected'
+  | 'explore';

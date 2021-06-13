@@ -1,7 +1,11 @@
-import { Bullet } from '@atoms';
+import { Bullet, GeneralTypeVariants, Icon } from '@atoms';
 
 export interface HelpSegmentTemplateProps {
-  helps: string[];
+  helps: {
+    icon: GeneralTypeVariants;
+    title: string;
+    description: string;
+  }[];
 }
 
 /**
@@ -17,15 +21,25 @@ export const HelpSegmentTemplate: React.FC<HelpSegmentTemplateProps> = ({
       </div>
       <div className="w-full sm:w-1/2">
         <div>
-          {helps.map(
-            (help: 'support' | 'tools' | 'insights' | 'education', index) => {
-              return (
-                <div key={index} className="mb-5">
-                  <Bullet variant="help" helpType={help} />
-                </div>
-              );
-            }
-          )}
+          {helps.map(({ icon, title, description }, index) => {
+            return (
+              <div key={index} className="mb-5">
+                <Bullet
+                  variant="tertiary"
+                  icon={
+                    <Icon
+                      variant="general"
+                      generalType={icon}
+                      width={28}
+                      height={28}
+                    />
+                  }
+                  title={title}
+                  description={description}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
