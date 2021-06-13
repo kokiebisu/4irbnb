@@ -16,3 +16,11 @@ export const SemanticIcon = ({
     </div>
   );
 };
+
+export type SemanticTypeVariants =
+  | 'exclamation'
+  | 'warning'
+  | 'minus'
+  | 'plus'
+  | 'check'
+  | 'saved';

@@ -16,3 +16,5 @@ export const ProfileIcon = ({
     </div>
   );
 };
+
+export type ProfileTypeVariants = 'avatar' | 'star' | 'superhost' | 'verified';

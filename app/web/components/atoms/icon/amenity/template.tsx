@@ -1,4 +1,5 @@
-import { AmenityIconTypes, BaseIconProps } from '@atoms';
+import { BaseIconProps } from '..';
+import { AmenityIconTypes } from '.';
 
 export interface AmenityIconTemplateProps {
   amenityType: AmenityIconTypes;
