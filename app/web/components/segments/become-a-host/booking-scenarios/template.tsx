@@ -1,7 +1,11 @@
 import { Bullet } from '@atoms';
 
 export interface BookingScenariosSegmentTemplateProps {
-  scenarios?: string[];
+  scenarios: {
+    imgSrc: string;
+    title: string;
+    description: string;
+  }[];
 }
 
 export const BookingScenariosSegmentTemplate: React.FC<BookingScenariosSegmentTemplateProps> = ({
@@ -16,23 +20,18 @@ export const BookingScenariosSegmentTemplate: React.FC<BookingScenariosSegmentTe
           </h3>
         </div>
         <div>
-          {scenarios.map(
-            (
-              type:
-                | 'available'
-                | 'requirements'
-                | 'confirmation'
-                | 'welcome'
-                | 'paid',
-              index
-            ) => {
-              return (
-                <div key={index} className="mb-5">
-                  <Bullet variant="scenario" scenarioType={type} />
-                </div>
-              );
-            }
-          )}
+          {scenarios.map(({ imgSrc, title, description }, index) => {
+            return (
+              <div key={index} className="mb-5">
+                <Bullet
+                  variant="quaternary"
+                  icon={<img style={{ width: 150 }} src={imgSrc} />}
+                  title={title}
+                  description={description}
+                />
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

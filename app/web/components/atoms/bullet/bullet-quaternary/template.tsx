@@ -1,4 +1,4 @@
-import { Button, Icon } from '@atoms';
+import { Button } from '@atoms';
 import React from 'react';
 
 export type QuaternaryBulletTemplateProps = {

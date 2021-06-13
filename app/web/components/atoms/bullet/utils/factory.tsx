@@ -1,7 +1,5 @@
 import { BulletProps } from '..';
-import { OnlineHostBullet } from '../bullet-onlinehost';
 import { PrimaryBullet } from '../bullet-primary';
-import { PriorityBullet } from '../bullet-priority';
 import { QuestionBullet } from '../bullet-question';
 import { RatingBullet } from '../bullet-rating';
 import { RequiredBullet } from '../bullet-required';
@@ -11,10 +9,6 @@ import { SecondaryBullet } from '../bullet-secondary';
 
 export const factory = (props: BulletProps): JSX.Element => {
   switch (props.variant) {
-    case 'onlinehost':
-      return <OnlineHostBullet {...props} />;
-    case 'priority':
-      return <PriorityBullet {...props} />;
     case 'question':
       return <QuestionBullet {...props} />;
     case 'rating':

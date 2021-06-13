@@ -1,9 +1,18 @@
-import { Button } from '@atoms';
+import { Button, GeneralTypeVariants, Icon } from '@atoms';
 import { Bullet } from '@atoms';
+import React from 'react';
 
-export interface BannerSegmentTemplateProps {}
+export interface BannerSegmentTemplateProps {
+  items: {
+    icon: GeneralTypeVariants;
+    title: string;
+    description: string;
+  }[];
+}
 
-export const BannerSegmentTemplate: React.FC<BannerSegmentTemplateProps> = () => {
+export const BannerSegmentTemplate: React.FC<BannerSegmentTemplateProps> = ({
+  items,
+}) => {
   return (
     <div className="flex flex-col items-center">
       <div className="my-4">
@@ -35,15 +44,25 @@ export const BannerSegmentTemplate: React.FC<BannerSegmentTemplateProps> = () =>
         </h4>
       </div>
       <div className="my-4 block sm:grid sm:grid-cols-3 sm:col-gap-6">
-        {['home', 'global', 'business'].map(
-          (type: 'home' | 'global' | 'business', index) => {
-            return (
-              <div key={index} className="mb-4">
-                <Bullet variant="onlinehost" onlinehostType={type} />
-              </div>
-            );
-          }
-        )}
+        {items.map(({ icon, title, description }, index) => {
+          return (
+            <div key={index} className="mb-4">
+              <Bullet
+                variant="quaternary"
+                icon={
+                  <Icon
+                    variant="general"
+                    generalType={icon}
+                    width={16}
+                    height={16}
+                  />
+                }
+                title={title}
+                description={description}
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
   );
