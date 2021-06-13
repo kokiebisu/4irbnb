@@ -27,7 +27,7 @@ export const SemanticIconTemplate = ({
     case 'saved':
       return <SavedIcon {...props} />;
     default:
-      throw new Error(`[Semantic Icon] semanticType was provided invalid type`);
+      throw new Error(`[SEMANTIC ICON] Provided semanticType doesn't exist`);
   }
 };
 

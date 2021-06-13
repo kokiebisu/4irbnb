@@ -23,7 +23,7 @@ export const AmenityIconTemplate = ({
     case 'carbonAlarm':
       return <CarbonMonoxideAlarmIcon {...props} />;
     default:
-      throw new Error('[Amenity Icon] amenityType was provided invalid type');
+      throw new Error(`[AMENITY ICON] Provided amenityType doesn't exist`);
   }
 };
 

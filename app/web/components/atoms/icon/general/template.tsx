@@ -85,6 +85,8 @@ export const GeneralIconTemplate = ({
       return <LighteningIcon {...props} />;
     case 'protected':
       return <ProtectedIcon {...props} />;
+    default:
+      throw new Error(`[GENERAL ICON] Provided generalType doesn't exist`);
   }
 };
 

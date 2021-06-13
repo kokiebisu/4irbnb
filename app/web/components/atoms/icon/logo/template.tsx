@@ -23,7 +23,7 @@ export const LogoIconTemplate = ({
     case 'apple':
       return <AppleLogoIcon {...props} />;
     default:
-      throw new Error('[Logo Icon] logoType was provided invalid type');
+      throw new Error(`[LOGO ICON] Provided logoType doesn't exist`);
   }
 };
 

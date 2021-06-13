@@ -19,7 +19,7 @@ export const ProfileIconTemplate = ({
     case 'verified':
       return <VerifiedIcon {...props} />;
     default:
-      throw new Error(`[Profile Icon] profileType was provided invalid type`);
+      throw new Error(`[PROFILE ICON] Provided profileType doesn't exist`);
   }
 };
 
