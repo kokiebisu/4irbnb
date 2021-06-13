@@ -40,3 +40,12 @@ export type IconProps =
 export const Icon = (props: IconProps): JSX.Element => {
   return factory(props) as JSX.Element;
 };
+
+export * from './action';
+export * from './amenity';
+export * from './experience';
+export * from './general';
+export * from './logo';
+export * from './profile';
+export * from './semantic';
+export * from './stay';
