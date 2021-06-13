@@ -107,12 +107,16 @@ export const ChevronLeftIcon = ({
   );
 };
 
-export const ChevronRightIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const ChevronRightIcon = ({
+  stroke,
+  strokeWidth,
+}: BaseIconProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" display="block" viewBox="0 0 32 32">
       <g fill="none">
         <path
-          fill={fill}
+          stroke={stroke}
+          strokeWidth={strokeWidth}
           d="m12 4 11.2928932 11.2928932c.3905243.3905243.3905243 1.0236893 0 1.4142136l-11.2928932 11.2928932"
         />
       </g>

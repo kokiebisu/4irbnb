@@ -1,3 +1,4 @@
+import { ButtonProps } from '..';
 import { AuthButton } from '../button-auth';
 import { BackButton } from '../button-back';
 import { BannerButton } from '../button-banner';
@@ -27,7 +28,7 @@ import { UnderlineButton } from '../button-underline';
 import { VerifyButton } from '../button-verify';
 import { VideoButton } from '../button-video';
 
-export const factory = (props) => {
+export const factory = (props: ButtonProps) => {
   switch (props.variant) {
     case 'auth':
       return <AuthButton {...props} />;
