@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react';
 import { LogoIcon, LogoIconProps } from '.';
 
 export default {
-  title: 'Atoms/Icons/Logo',
+  title: 'Atoms/Icon/Logo',
   component: LogoIcon,
 } as Meta;
 

@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react';
 import { GeneralIconTemplate, GeneralIconTemplateProps } from './template';
 
 export default {
-  title: 'Atoms/Icons/General',
+  title: 'Atoms/Icon/General',
   component: GeneralIconTemplate,
 } as Meta;
 

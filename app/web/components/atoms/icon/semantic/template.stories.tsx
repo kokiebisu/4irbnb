@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react';
 import { SemanticIconTemplate, SemanticIconTemplateProps } from './template';
 
 export default {
-  title: 'Atoms/Icons/Semantic',
+  title: 'Atoms/Icon/Semantic',
   component: SemanticIconTemplate,
 } as Meta;
 

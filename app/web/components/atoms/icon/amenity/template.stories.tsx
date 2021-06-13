@@ -3,7 +3,7 @@ import { IconProps } from '..';
 import { AmenityIconTemplate, AmenityIconTemplateProps } from './template';
 
 export default {
-  title: 'Atoms/Icons/Amenity',
+  title: 'Atoms/Icon/Amenity',
   component: AmenityIconTemplate,
 } as Meta;
 

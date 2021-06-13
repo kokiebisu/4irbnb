@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react';
 import { StayIconTemplate, StayIconTemplateProps } from './template';
 
 export default {
-  title: 'Atoms/Icons/Stay',
+  title: 'Atoms/Icon/Stay',
   component: StayIconTemplate,
 } as Meta;
 

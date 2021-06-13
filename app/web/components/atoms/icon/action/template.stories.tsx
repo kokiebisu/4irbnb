@@ -3,7 +3,7 @@ import { ActionIconTemplate, ActionIconTemplateProps } from './template';
 import { IconProps } from '..';
 
 export default {
-  title: 'Atoms/Icons/Action',
+  title: 'Atoms/Icon/Action',
   component: ActionIconTemplate,
 } as Meta;
 

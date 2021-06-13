@@ -29,7 +29,7 @@ import { VerifyButtonProps } from './button-verify';
 import { VideoButtonProps } from './button-video';
 import { factory } from './utils/factory';
 
-export type ButtonProps = (
+export type ButtonProps =
   | ({ variant: 'auth' } & AuthButtonProps)
   | ({ variant: 'back' } & BackButtonProps)
   | ({ variant: 'banner' } & BannerButtonProps)
@@ -58,27 +58,13 @@ export type ButtonProps = (
   | ({ variant: 'transparent' } & TransparentButtonProps)
   | ({ variant: 'underline' } & UnderlineButtonProps)
   | ({ variant: 'verify' } & VerifyButtonProps)
-  | ({ variant: 'video' } & VideoButtonProps)
-) & { onClick: () => void; stretch?: boolean; disable?: boolean };
+  | ({ variant: 'video' } & VideoButtonProps);
 
 /**
  * Bundles the button components
  * @param {string} variant - Specifies the type of button component
  * @param {Object} children - A JSX that will be part of the component
  */
-export const Button: React.FC<ButtonProps> = ({
-  onClick,
-  stretch,
-  ...props
-}) => {
-  const { disable } = props;
-
-  return (
-    <button
-      data-testid={`${props.variant as string}-button--atoms`}
-      onClick={!disable ? onClick : undefined}
-    >
-      {factory(props)}
-    </button>
-  );
+export const Button = ({ ...props }: ButtonProps) => {
+  return factory(props) as JSX.Element;
 };
