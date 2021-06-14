@@ -1,13 +1,14 @@
 import { stretchMixin } from '../utils/mixin';
 
-export interface BorderButtonTemplateProps {
+export type BorderButtonTemplateProps = {
   title: string;
   inverse: boolean;
   size: 'sm' | 'md' | 'lg';
   spread: boolean;
   bold: boolean;
   stretch: boolean;
-}
+  onClick: () => void;
+};
 
 /**
  * Renders the border button props
@@ -17,13 +18,14 @@ export interface BorderButtonTemplateProps {
  * @param {string} size - The size of the button
  * @param {boolean} spread - Whether if the button takes full width of the parent
  */
-export const BorderButtonTemplate: React.FC<BorderButtonTemplateProps> = ({
+export const BorderButtonTemplate = ({
   title,
   inverse,
   size,
   bold,
   stretch,
-}) => {
+  onClick,
+}: BorderButtonTemplateProps): JSX.Element => {
   const renderBorder = () => {
     if (inverse && bold) {
       return 'border-2 border-white';
@@ -47,12 +49,18 @@ export const BorderButtonTemplate: React.FC<BorderButtonTemplateProps> = ({
   const mixin: string = stretchMixin(stretch);
 
   return (
-    <div
-      className={`${mixin} ${styles['common']} ${
-        styles[size]
-      } ${renderBorder()}`}
+    <button
+      data-testid="border-button"
+      className="inline-block"
+      onClick={onClick}
     >
-      <h4 className={inverse ? 'text-white' : undefined}>{title}</h4>
-    </div>
+      <div
+        className={`${mixin} ${styles['common']} ${
+          styles[size]
+        } ${renderBorder()}`}
+      >
+        <h4 className={inverse ? 'text-white' : undefined}>{title}</h4>
+      </div>
+    </button>
   );
 };

@@ -5,6 +5,6 @@ import {
 
 export type LocationButtonProps = LocationButtonTemplateProps;
 
-export const LocationButton: React.FC<LocationButtonProps> = (props) => {
+export const LocationButton = (props: LocationButtonProps): JSX.Element => {
   return <LocationButtonTemplate {...props} />;
 };

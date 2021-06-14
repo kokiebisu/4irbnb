@@ -1,23 +1,21 @@
 import { Icon } from '@atoms';
-import { useClosedButtonTemplate } from './use-template';
 
-export interface ClosedButtonTemplateProps {
+export type ClosedButtonTemplateProps = {
   onClick: () => void;
+  selected?: boolean;
   icon: any;
-}
+};
 
-export const ClosedButtonTemplate: React.FC<ClosedButtonTemplateProps> = ({
+export const ClosedButtonTemplate = ({
   onClick,
+  selected,
   icon,
-}) => {
-  const { toggleButtonColor, selected } = useClosedButtonTemplate();
-
+}: ClosedButtonTemplateProps): JSX.Element => {
   return (
     <button
-      onClick={() => {
-        toggleButtonColor();
-        onClick();
-      }}
+      data-testid="closed-button"
+      onClick={onClick}
+      className="inline-block"
     >
       <div
         className={`inline-flex items-center justify-center p-2 rounded-full border ${
