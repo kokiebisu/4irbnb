@@ -11,4 +11,6 @@ const ButtonStory: Story<BackButtonTemplateProps> = (args) => (
 );
 
 export const Back = ButtonStory.bind({});
-Back.args = {};
+Back.args = {
+  onClick: () => alert('Triggered onClick'),
+};

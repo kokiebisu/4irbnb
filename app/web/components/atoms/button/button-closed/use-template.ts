@@ -1,24 +1,9 @@
+import { useState } from 'react';
+
 export type ClosedTypeVariants = 'close' | 'check';
 
-export const useClosedButtonContent = ({
-  closedType,
-}: {
-  closedType: ClosedTypeVariants;
-}) => {
-  const closedTypes = {
-    close: {
-      icon: {
-        variant: 'action' as const,
-        actionType: 'close' as const,
-      },
-    },
-    check: {
-      icon: {
-        variant: 'semantic' as const,
-        semanticType: 'check' as const,
-      },
-    },
-  };
-
-  return { ...closedTypes[closedType] };
+export const useClosedButtonTemplate = () => {
+  const [selected, setSelected] = useState(false);
+  const toggleButtonColor = () => setSelected((selected) => !selected);
+  return { toggleButtonColor, selected };
 };

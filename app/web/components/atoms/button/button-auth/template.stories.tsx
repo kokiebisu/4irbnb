@@ -21,7 +21,7 @@ const ButtonStory: Story<AuthButtonTemplateProps> = (args) => (
 
 export const Auth = ButtonStory.bind({});
 Auth.args = {
-  icon: <Icon variant="general" generalType="email" fill="gray" width={17} height={17} />,
+  icon: <Icon variant="general" generalType="email" width={17} height={17} />,
   name: 'Email',
   disabled: false,
   onClick: () => alert('Triggered onClick'),

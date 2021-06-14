@@ -1,27 +1,26 @@
-import { Icon } from '@atoms';
-import { BarTypeVariants, useBarButtonTemplate } from './use-template';
-
 export interface BarButtonTemplateProps {
-  barType: BarTypeVariants;
-  selected: boolean;
+  icon: JSX.Element;
+  onClick: () => void;
+  selected?: boolean;
+  name: string;
 }
 
 export const BarButtonTemplate: React.FC<BarButtonTemplateProps> = ({
-  barType,
+  onClick,
   selected,
+  name,
+  icon,
 }) => {
-  const { icon, name } = useBarButtonTemplate({ barType, selected });
-
   return (
-    <div className="inline-flex flex-col items-center">
-      <div>
-        <Icon {...icon} width={25} />
+    <button className="inline-block" onClick={onClick}>
+      <div className="inline-flex flex-col items-center">
+        <div>{icon}</div>
+        <div>
+          <p className={`text-xs ${selected ? 'text-black' : 'text-gray-500'}`}>
+            {name}
+          </p>
+        </div>
       </div>
-      <div>
-        <p className={`text-xs ${selected ? 'text-black' : 'text-gray-500'}`}>
-          {name}
-        </p>
-      </div>
-    </div>
+    </button>
   );
 };

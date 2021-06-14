@@ -1,24 +1,31 @@
 import { Icon } from '@atoms';
-import { ClosedTypeVariants, useClosedButtonContent } from './use-template';
+import { useClosedButtonTemplate } from './use-template';
 
 export interface ClosedButtonTemplateProps {
-  selected: boolean;
-  closedType: ClosedTypeVariants;
+  onClick: () => void;
+  icon: any;
 }
 
 export const ClosedButtonTemplate: React.FC<ClosedButtonTemplateProps> = ({
-  closedType,
-  selected,
+  onClick,
+  icon,
 }) => {
-  const { icon } = useClosedButtonContent({ closedType });
+  const { toggleButtonColor, selected } = useClosedButtonTemplate();
 
   return (
-    <div
-      className={`inline-flex items-center justify-center p-2 rounded-full border ${
-        selected ? 'bg-black border-black' : 'bg-white border-gray-300'
-      }`}
+    <button
+      onClick={() => {
+        toggleButtonColor();
+        onClick();
+      }}
     >
-      <Icon {...icon} width={16} fill={selected ? 'white' : 'black'} />
-    </div>
+      <div
+        className={`inline-flex items-center justify-center p-2 rounded-full border ${
+          selected ? 'bg-black border-black' : 'bg-white border-gray-300'
+        }`}
+      >
+        <Icon {...icon} width={16} fill={selected ? 'white' : 'black'} />
+      </div>
+    </button>
   );
 };
