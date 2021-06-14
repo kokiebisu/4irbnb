@@ -1,4 +1,3 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { PrimaryButtonTemplate, PrimaryButtonTemplateProps } from './template';
 
@@ -17,14 +16,8 @@ Primary.args = {
   size: 'md',
   fill: 'black',
   loading: false,
-  disable: false,
+  disabled: false,
   color: 'white',
   stretch: false,
-};
-Primary.argTypes = {
-  color: {
-    control: {
-      disable: true,
-    },
-  },
+  onClick: () => alert('Triggered onClick'),
 };

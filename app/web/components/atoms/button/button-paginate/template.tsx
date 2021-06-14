@@ -1,35 +1,42 @@
 import { Icon } from '@atoms';
 import { motion } from 'framer-motion';
 
-export interface PaginateButtonTemplateProps {
+export type PaginateButtonTemplateProps = {
   direction: 'left' | 'right';
-  disable?: boolean;
-}
+  disabled?: boolean;
+  onClick: () => void;
+};
 
 /**
  * Renders the paginate button component
  * @param {string} direction - The direction in which the arrow points
  * @param {boolean} disable - Whether if the button is disabled or not
  */
-export const PaginateButtonTemplate: React.FC<PaginateButtonTemplateProps> = ({
+export const PaginateButtonTemplate = ({
   direction,
-  disable,
-}) => {
+  disabled,
+  onClick,
+}: PaginateButtonTemplateProps): JSX.Element => {
   return (
-    <motion.div
-      whileTap={{ ...(!disable && { scale: 0.95 }) }}
-      whileHover={{ ...(!disable && { scale: 1.05 }) }}
+    <motion.button
+      data-testid="paginate-button"
       className={`inline-block bg-white ${
-        disable ? 'border border-gray-100' : 'shadow-md'
+        disabled ? 'border border-gray-100' : 'shadow-md'
       } rounded-full p-3`}
+      whileTap={{ ...(!disabled && { scale: 0.95 }) }}
+      whileHover={{ ...(!disabled && { scale: 1.05 }) }}
+      onClick={onClick}
     >
-      <Icon
-        variant="action"
-        actionType={direction}
-        width={10}
-        stroke={`${disable ? 'lightgray' : 'black'}`}
-        strokeWidth={5}
-      />
-    </motion.div>
+      <div>
+        <Icon
+          variant="action"
+          actionType={direction}
+          width={10}
+          height={10}
+          stroke={`${disabled ? 'lightgray' : 'black'}`}
+          strokeWidth={5}
+        />
+      </div>
+    </motion.button>
   );
 };

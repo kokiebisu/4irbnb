@@ -15,4 +15,5 @@ export const Option = ButtonStory.bind({});
 Option.args = {
   name: 'Option',
   bold: false,
+  onClick: () => alert('Triggered onClick'),
 };
