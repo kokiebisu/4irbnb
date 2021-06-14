@@ -12,7 +12,11 @@ export const BackButtonTemplate = ({
   onClick,
 }: BackButtonTemplateProps): JSX.Element => {
   return (
-    <button onClick={onClick} className="block">
+    <button
+      data-testid="back-button"
+      onClick={onClick}
+      className="inline-block"
+    >
       <div className="flex items-center bg-transparent">
         <div>
           <Icon

@@ -12,7 +12,7 @@ export const BarButtonTemplate: React.FC<BarButtonTemplateProps> = ({
   icon,
 }) => {
   return (
-    <button className="inline-block" onClick={onClick}>
+    <button data-testid="bar-button" className="inline-block" onClick={onClick}>
       <div className="inline-flex flex-col items-center">
         <div>{icon}</div>
         <div>

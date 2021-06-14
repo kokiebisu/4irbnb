@@ -12,7 +12,11 @@ export const BannerButtonTemplate = ({
   onClick,
 }: BannerButtonTemplateProps) => {
   return (
-    <button onClick={onClick}>
+    <button
+      data-testid="banner-button"
+      onClick={onClick}
+      className="inline-block"
+    >
       <div className="bg-black rounded-lg py-2 px-4 shadow-sm inline-block">
         <h3 className="text-sm font-light text-white">{title}</h3>
       </div>
