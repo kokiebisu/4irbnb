@@ -3,8 +3,8 @@ import {
   UnderlineButtonTemplateProps,
 } from './template';
 
-export interface UnderlineButtonProps extends UnderlineButtonTemplateProps {}
+export type UnderlineButtonProps = UnderlineButtonTemplateProps;
 
-export const UnderlineButton: React.FC<UnderlineButtonProps> = (props) => {
+export const UnderlineButton = (props: UnderlineButtonProps): JSX.Element => {
   return <UnderlineButtonTemplate {...props} />;
 };

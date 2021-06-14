@@ -1,7 +1,10 @@
-import { SearchbarButtonTemplate } from './template';
+import {
+  SearchbarButtonTemplate,
+  SearchbarButtonTemplateProps,
+} from './template';
 
-export interface SearchbarButtonProps {}
+export type SearchbarButtonProps = SearchbarButtonTemplateProps;
 
-export const SearchbarButton: React.FC<SearchbarButtonProps> = (props) => {
+export const SearchbarButton = (props: SearchbarButtonProps): JSX.Element => {
   return <SearchbarButtonTemplate {...props} />;
 };
