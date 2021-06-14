@@ -14,4 +14,6 @@ const ButtonStory: Story<SearchbarButtonTemplateProps> = (args) => (
 );
 
 export const Searchbar = ButtonStory.bind({});
-Searchbar.args = {};
+Searchbar.args = {
+  onClick: () => alert('Triggered onClick'),
+};

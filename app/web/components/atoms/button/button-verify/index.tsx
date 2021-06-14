@@ -1,7 +1,7 @@
-import { VerifyButtonTemplate } from './template';
+import { VerifyButtonTemplate, VerifyButtonTemplateProps } from './template';
 
-export interface VerifyButtonProps {}
+export type VerifyButtonProps = VerifyButtonTemplateProps;
 
-export const VerifyButton: React.FC<VerifyButtonProps> = (props) => {
+export const VerifyButton = (props: VerifyButtonProps): JSX.Element => {
   return <VerifyButtonTemplate {...props} />;
 };
