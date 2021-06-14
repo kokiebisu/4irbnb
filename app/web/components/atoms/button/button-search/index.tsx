@@ -1,7 +1,7 @@
 import { SearchButtonTemplate, SearchButtonTemplateProps } from './template';
 
-export interface SearchButtonProps extends SearchButtonTemplateProps {}
+export type SearchButtonProps = SearchButtonTemplateProps;
 
-export const SearchButton: React.FC<SearchButtonProps> = ({ ...props }) => {
+export const SearchButton = ({ ...props }: SearchButtonProps): JSX.Element => {
   return <SearchButtonTemplate {...props} />;
 };

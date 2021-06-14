@@ -1,7 +1,7 @@
 import { PrivacyButtonTemplate, PrivacyButtonTemplateProps } from './template';
 
-export interface PrivacyButtonProps extends PrivacyButtonTemplateProps {}
+export type PrivacyButtonProps = PrivacyButtonTemplateProps;
 
-export const PrivacyButton: React.FC<PrivacyButtonProps> = (props) => {
+export const PrivacyButton = (props: PrivacyButtonProps): JSX.Element => {
   return <PrivacyButtonTemplate {...props} />;
 };

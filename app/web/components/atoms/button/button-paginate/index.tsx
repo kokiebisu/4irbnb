@@ -3,8 +3,10 @@ import {
   PaginateButtonTemplateProps,
 } from './template';
 
-export interface PaginateButtonProps extends PaginateButtonTemplateProps {}
+export type PaginateButtonProps = PaginateButtonTemplateProps;
 
-export const PaginateButton: React.FC<PaginateButtonProps> = ({ ...props }) => {
+export const PaginateButton = ({
+  ...props
+}: PaginateButtonProps): JSX.Element => {
   return <PaginateButtonTemplate {...props} />;
 };

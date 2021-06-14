@@ -11,4 +11,6 @@ const ButtonStory: Story<ReportButtonTemplateProps> = (args) => (
 );
 
 export const Report = ButtonStory.bind({});
-Report.args = {};
+Report.args = {
+  onClick: () => alert('Triggered onClick'),
+};
