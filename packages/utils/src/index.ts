@@ -1,1 +1,2 @@
-export { generateTimestamp } from './date';
+export * from './date';
+export * from './logger';
