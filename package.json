@@ -44,10 +44,5 @@
     "app/*",
     "services/*"
   ],
-  "dependencies": {
-    "verdaccio": "^5.0.4"
-  },
-  "publishConfig": {
-    "registry": "http://localhost:4873"
-  }
+  "private": true
 }
