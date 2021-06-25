@@ -1,7 +1,7 @@
 import * as winston from 'winston';
 import { ILogger } from './interface';
 
-export class Logger {
+export class LoggerUtil {
   #logger: winston.Logger;
 
   /**
@@ -21,10 +21,10 @@ export class Logger {
     });
   }
 
-  output(
+  output = (
     type: 'error' | 'warning' | 'info' | 'log',
     args: winston.LogEntry
-  ): void {
+  ): void => {
     this.#logger[type](args);
-  }
+  };
 }
