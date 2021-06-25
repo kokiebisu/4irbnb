@@ -12,5 +12,6 @@ const ButtonStory: Story<SearchButtonTemplateProps> = (args) => (
 
 export const Search = ButtonStory.bind({});
 Search.args = {
-  expand: false,
+  expanded: false,
+  onClick: () => alert('Triggered onClick'),
 };

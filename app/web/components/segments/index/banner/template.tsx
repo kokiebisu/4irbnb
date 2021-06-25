@@ -1,5 +1,5 @@
 import { Header } from '@header';
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { ResponsiveImage } from '@helper/img';
 
 export interface BannerSegmentTemplateProps {

@@ -17,4 +17,5 @@ export const Calendar = ButtonStory.bind({});
 Calendar.args = {
   disabled: false,
   number: 3,
+  onClick: () => alert('Triggered onClick'),
 };

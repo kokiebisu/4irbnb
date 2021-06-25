@@ -1,7 +1,6 @@
 import { useFormik } from 'formik';
 import { useAuthDispatch, useAuthState } from '@context/auth';
-import { Input } from '@input';
-import { Button } from '@button';
+import { Button, Input } from '@atoms';
 import { validateAuth as validate } from '@helper/auth';
 
 export interface AuthPrototypeTemplateProps {}
@@ -26,9 +25,9 @@ export const AuthPrototypeTemplate: React.FC<AuthPrototypeTemplateProps> = () =>
 
   const switchAuth = () => {
     if (authState.title === 'Log in') {
-      return authDispatch({ type: 'auth_signup' });
+      // return authDispatch({ type: 'auth_signup' });
     }
-    return authDispatch({ type: 'auth_login' });
+    // return authDispatch({ type: 'auth_login' });
   };
 
   return (
@@ -60,7 +59,12 @@ export const AuthPrototypeTemplate: React.FC<AuthPrototypeTemplateProps> = () =>
             </p>
           </div>
           <div className="my-4">
-            <Button variant="primary" title="Continue" stretch />
+            <Button
+              variant="primary"
+              title="Continue"
+              stretch
+              onClick={() => alert('yo')}
+            />
           </div>
         </form>
         <div className="z-10 text-center relative ba">

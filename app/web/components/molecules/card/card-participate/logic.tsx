@@ -1,4 +1,4 @@
-import { Icon } from '@icons';
+import { Icon } from '@atoms';
 
 export const useParticipateCard = ({ categoryType }) => {
   const types = {

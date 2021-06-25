@@ -20,11 +20,3 @@ export const PhotosSegment = () => {
     />
   );
 };
-
-export const photos = (props) => {
-  return {
-    photos: {
-      component: <PhotosSegment {...props} />,
-    },
-  };
-};

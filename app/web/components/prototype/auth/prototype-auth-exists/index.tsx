@@ -1,15 +1,7 @@
 import { ExistsPrototypeTemplateProps } from './template';
 
-export interface ExistsPrototypeProps extends ExistsPrototypeTemplateProps {}
+export type ExistsPrototypeProps = ExistsPrototypeTemplateProps;
 
-export const ExistsPrototype: React.FC<ExistsPrototypeProps> = (props) => {
+export const ExistsPrototype = (props: ExistsPrototypeProps): JSX.Element => {
   return <ExistsPrototype {...props} />;
-};
-
-export const exists = (props) => {
-  return {
-    exists: {
-      component: <ExistsPrototype {...props} />,
-    },
-  };
 };

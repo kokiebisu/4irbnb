@@ -15,6 +15,4 @@ const ExistsPrototypeStory: Story<ExistsPrototypeTemplateProps> = (args) => (
 );
 
 export const Exists = ExistsPrototypeStory.bind({});
-Exists.args = {
-  variant: 'Exists',
-};
+Exists.args = {};

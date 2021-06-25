@@ -1,16 +1,16 @@
-import { Bullet } from '@bullet';
+import { Bullet, Icon } from '@atoms';
 
-export interface BringSegmentTemplateProps {
-  necessities?: string[];
-}
+export type BringSegmentTemplateProps = {
+  necessities: string[];
+};
 
 /**
  * Renders the 'What to BringSegment' section
  * @param {Object[]} necessities - List of things the users have to BringSegment
  */
-export const BringSegmentTemplate: React.FC<BringSegmentTemplateProps> = ({
+export const BringSegmentTemplate = ({
   necessities,
-}) => {
+}: BringSegmentTemplateProps): JSX.Element => {
   return (
     <div>
       <div>
@@ -22,7 +22,18 @@ export const BringSegmentTemplate: React.FC<BringSegmentTemplateProps> = ({
         {necessities.map((necessity, index) => {
           return (
             <div key={index} className="mb-4">
-              <Bullet variant="bring" title={necessity} />
+              <Bullet
+                variant="primary"
+                icon={
+                  <Icon
+                    variant="semantic"
+                    semanticType="check"
+                    width={24}
+                    height={24}
+                  />
+                }
+                title={necessity}
+              />
             </div>
           );
         })}

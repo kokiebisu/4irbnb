@@ -1,5 +1,5 @@
 import { useStayDispatch, useStayState } from '@context/stay';
-import { inputTypes, properties } from '@input/logic/logic.types';
+// import { inputTypes, properties } from '../../logic/logic.types';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 

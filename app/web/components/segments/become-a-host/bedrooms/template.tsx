@@ -1,4 +1,4 @@
-import { Input, $Input } from '@input';
+import { Input, $Input } from '@atoms';
 import { Layout } from '@layout';
 
 export interface BedroomsSegmentTemplateProps {

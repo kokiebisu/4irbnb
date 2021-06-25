@@ -1,5 +1,5 @@
 import { useLayoutEffect, useState, useRef } from 'react';
-import { Button } from '@button';
+import { Button } from '@atoms';
 
 const Dots = ({ slides, activeSlide }) => {
   return (

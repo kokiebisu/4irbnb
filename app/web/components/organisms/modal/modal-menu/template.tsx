@@ -1,4 +1,4 @@
-import { Button } from '@button';
+import { Button } from '@atoms';
 
 const Options: React.FC<{
   params: {
@@ -16,7 +16,12 @@ const Options: React.FC<{
     <>
       {params.map(({ kind, bold }, index) => (
         <div key={index}>
-          <Button variant="option" name={kind} bold={bold} onClick={} />
+          <Button
+            variant="option"
+            name={kind}
+            bold={bold}
+            onClick={() => alert('selected')}
+          />
         </div>
       ))}
     </>

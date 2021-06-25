@@ -1,12 +1,12 @@
-import { Icon } from '@icons';
+import { Icon } from '@atoms';
 
-export interface RequiredBulletTemplateProps {
-  message?: string;
-}
+export type RequiredBulletTemplateProps = {
+  message: string;
+};
 
-export const RequiredBulletTemplate: React.FC<RequiredBulletTemplateProps> = ({
+export const RequiredBulletTemplate = ({
   message,
-}) => {
+}: RequiredBulletTemplateProps): JSX.Element => {
   return (
     <div className="flex items-center">
       <div className="mr-1">
@@ -14,6 +14,7 @@ export const RequiredBulletTemplate: React.FC<RequiredBulletTemplateProps> = ({
           variant="semantic"
           semanticType="exclamation"
           width={16}
+          height={16}
           stroke="#C54A32"
           strokeWidth={2}
         />

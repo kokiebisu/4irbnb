@@ -1,39 +1,25 @@
-import { Icon } from '@icons';
-
 export type ModalButtonTemplateProps = {
-  modalType: 'close' | 'back';
+  icon: JSX.Element;
+  onClick: () => void;
 };
 
 /**
  * Renders the close button component
  * @param {function} onClick - The action taken when the button is pressed
  */
-export const ModalButtonTemplate: React.FC<ModalButtonTemplateProps> = ({
-  modalType,
-}) => {
-  const types = {
-    close: (
-      <Icon
-        variant="action"
-        actionType="close"
-        width={16}
-        height={16}
-        stroke="black"
-      />
-    ),
-    back: (
-      <Icon
-        variant="action"
-        actionType="left"
-        width={16}
-        height={16}
-        stroke="black"
-      />
-    ),
-  };
+export const ModalButtonTemplate = ({
+  icon,
+  onClick,
+}: ModalButtonTemplateProps): JSX.Element => {
   return (
-    <div className="inline-block bg-transparent p-3 rounded-full hover:bg-gray-100">
-      {types[modalType]}
-    </div>
+    <button
+      data-testid="modal-button"
+      className="inline-block"
+      onClick={onClick}
+    >
+      <div className="inline-block bg-transparent p-3 rounded-full hover:bg-gray-100">
+        {icon}
+      </div>
+    </button>
   );
 };

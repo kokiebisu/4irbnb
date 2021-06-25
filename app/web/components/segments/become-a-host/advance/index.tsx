@@ -19,11 +19,3 @@ export const AdvanceSegment: React.FC<{}> = () => {
     />
   );
 };
-
-export const advance = (props) => {
-  return {
-    advance: {
-      component: <AdvanceSegment {...props} />,
-    },
-  };
-};

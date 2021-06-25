@@ -1,15 +1,7 @@
-import { ReportButtonTemplate } from './template';
+import { ReportButtonTemplate, ReportButtonTemplateProps } from './template';
 
-export interface ReportButtonProps {}
+export type ReportButtonProps = ReportButtonTemplateProps;
 
-const ReportButton: React.FC<ReportButtonProps> = (props) => {
+export const ReportButton = (props: ReportButtonProps): JSX.Element => {
   return <ReportButtonTemplate {...props} />;
-};
-
-export const report = (props) => {
-  return {
-    report: {
-      component: <ReportButton {...props} />,
-    },
-  };
 };

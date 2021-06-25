@@ -20,11 +20,3 @@ export const PhoneSegment = () => {
     />
   );
 };
-
-export const phone = (props) => {
-  return {
-    phone: {
-      component: <PhoneSegment {...props} />,
-    },
-  };
-};

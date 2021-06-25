@@ -6,11 +6,3 @@ export interface PhotoInputProps extends PhotoInputTemplateProps {}
 export const PhotoInput: React.FC<PhotoInputProps> = (props) => {
   return <PhotoInputTemplate {...props} />;
 };
-
-export const photo = (props) => {
-  return {
-    photo: {
-      component: <PhotoInput {...props} />,
-    },
-  };
-};

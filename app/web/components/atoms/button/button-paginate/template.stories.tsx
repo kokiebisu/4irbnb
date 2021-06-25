@@ -1,4 +1,3 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import {
   PaginateButtonTemplate,
@@ -17,5 +16,6 @@ const ButtonStory: Story<PaginateButtonTemplateProps> = (args) => (
 export const Paginate = ButtonStory.bind({});
 Paginate.args = {
   direction: 'left',
-  disable: false,
+  disabled: false,
+  onClick: () => alert('Triggered onClick'),
 };

@@ -1,16 +1,7 @@
-import React from 'react';
 import { OptionButtonTemplate, OptionButtonTemplateProps } from './template';
 
-export interface OptionButtonProps extends OptionButtonTemplateProps {}
+export type OptionButtonProps = OptionButtonTemplateProps;
 
-const OptionButton: React.FC<OptionButtonProps> = ({ ...props }) => {
+export const OptionButton = ({ ...props }: OptionButtonProps): JSX.Element => {
   return <OptionButtonTemplate {...props} />;
-};
-
-export const option = (props) => {
-  return {
-    option: {
-      component: <OptionButton {...props} />,
-    },
-  };
 };

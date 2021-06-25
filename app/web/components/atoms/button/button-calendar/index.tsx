@@ -3,8 +3,10 @@ import {
   CalendarButtonTemplateProps,
 } from './template';
 
-export interface CalendarButtonProps extends CalendarButtonTemplateProps {}
+export type CalendarButtonProps = CalendarButtonTemplateProps;
 
-export const CalendarButton: React.FC<CalendarButtonProps> = ({ ...props }) => {
+export const CalendarButton = ({
+  ...props
+}: CalendarButtonProps): JSX.Element => {
   return <CalendarButtonTemplate {...props} />;
 };

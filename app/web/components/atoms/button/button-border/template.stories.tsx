@@ -17,4 +17,5 @@ Border.args = {
   size: 'md',
   bold: false,
   stretch: false,
+  onClick: () => alert('Triggered onClick'),
 };

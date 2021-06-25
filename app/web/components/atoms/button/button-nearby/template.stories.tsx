@@ -13,4 +13,5 @@ const ButtonStory: Story<NearbyButtonTemplateProps> = (args) => (
 export const Nearby = ButtonStory.bind({});
 Nearby.args = {
   label: 'Nearby',
+  onClick: () => alert('Triggered onClick'),
 };

@@ -2,7 +2,7 @@ import Router from 'next/router';
 import { Bar } from '@bar';
 import { Header } from '@header';
 import { Card, $Card } from '@card';
-import { Icon } from '@icons';
+import { Icon } from 'components/atoms/icon';
 
 const HowGuestsWillBookPage = () => {
   const proceed = () => {

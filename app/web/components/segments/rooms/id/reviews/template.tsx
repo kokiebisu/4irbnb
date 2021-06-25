@@ -1,8 +1,8 @@
-import { Icon } from '@icons';
+import { Icon } from '@atoms';
 import section from '@template/index.module.scss';
 
-import { Button } from '@button';
-import { Bullet } from '@bullet';
+import { Button } from '@atoms';
+import { Bullet } from '@atoms';
 import { Card, $Card } from '@card';
 
 export interface ReviewsSegmentTemplateProps {

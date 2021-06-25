@@ -1,4 +1,3 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { VerifyButtonTemplate, VerifyButtonTemplateProps } from './template';
 
@@ -12,4 +11,6 @@ const ButtonStory: Story<VerifyButtonTemplateProps> = (args) => (
 );
 
 export const Verify = ButtonStory.bind({});
-Verify.args = {};
+Verify.args = {
+  onClick: () => alert('Triggered onClick'),
+};

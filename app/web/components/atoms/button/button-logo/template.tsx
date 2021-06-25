@@ -1,8 +1,9 @@
-import { Icon } from '@icons';
+import { Icon } from '@atoms';
 
 export type LogoButtonTemplateProps = {
   noName: boolean;
   fill: string;
+  onClick: () => void;
 };
 
 /**
@@ -10,13 +11,24 @@ export type LogoButtonTemplateProps = {
  * @param noName
  * @param fill
  */
-export const LogoButtonTemplate: React.FC<LogoButtonTemplateProps> = ({
+export const LogoButtonTemplate = ({
   noName,
   fill,
-}) => {
-  return noName ? (
-    <Icon variant="logo" logoType="noName" fill={fill} width={30} height={32} />
-  ) : (
-    <Icon variant="logo" logoType="name" fill={fill} width={102} height={32} />
+  onClick,
+}: LogoButtonTemplateProps): JSX.Element => {
+  return (
+    <button
+      data-testid="logo-button"
+      className="inline-block"
+      onClick={onClick}
+    >
+      <Icon
+        variant="logo"
+        logoType={noName ? 'noName' : 'name'}
+        fill={fill}
+        width={noName ? 30 : 102}
+        height={32}
+      />
+    </button>
   );
 };

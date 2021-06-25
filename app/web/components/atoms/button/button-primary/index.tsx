@@ -1,15 +1,7 @@
 import { PrimaryButtonTemplate, PrimaryButtonTemplateProps } from './template';
 
-export interface PrimaryButtonProps extends PrimaryButtonTemplateProps {}
+export type PrimaryButtonProps = PrimaryButtonTemplateProps;
 
-const PrimaryButton: React.FC<PrimaryButtonProps> = (props) => {
+export const PrimaryButton = (props: PrimaryButtonProps): JSX.Element => {
   return <PrimaryButtonTemplate {...props} />;
-};
-
-export const primary = (props) => {
-  return {
-    primary: {
-      component: <PrimaryButton {...props} />,
-    },
-  };
 };
