@@ -1,4 +1,4 @@
-import { Input } from '@input';
+import { Input } from '@atoms';
 
 export interface PeriodSegmentTemplateProps {
   handleCounterSubtract?: (property: string) => void;

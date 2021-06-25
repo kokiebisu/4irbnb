@@ -1,4 +1,4 @@
-export const stretchMixin = (stretch: boolean): string => {
+export const stretchMixin = (stretch?: boolean): string => {
   return stretch ? 'w-full block' : 'w-auto inline-block';
 };
 

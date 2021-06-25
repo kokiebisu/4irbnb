@@ -1,4 +1,4 @@
-import { Input } from '@input';
+import { Input } from '@atoms';
 
 export interface DescriptionSegmentTemplate {
   data?: any;

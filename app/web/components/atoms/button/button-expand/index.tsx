@@ -1,7 +1,7 @@
 import { ExpandButtonTemplate, ExpandButtonTemplateProps } from './template';
 
-export interface ExpandButtonProps extends ExpandButtonTemplateProps {}
+export type ExpandButtonProps = ExpandButtonTemplateProps;
 
-export const ExpandButton: React.FC<ExpandButtonProps> = (props) => {
+export const ExpandButton = (props: ExpandButtonProps): JSX.Element => {
   return <ExpandButtonTemplate {...props} />;
 };

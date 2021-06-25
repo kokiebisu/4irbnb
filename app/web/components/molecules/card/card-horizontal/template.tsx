@@ -1,4 +1,4 @@
-import { Icon } from '@icons';
+import { Icon } from '@atoms';
 import { ImageSlider } from '../../../particles/particle-slider/template';
 
 export interface HorizontalCardTemplateProps {

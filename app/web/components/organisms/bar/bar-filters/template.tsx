@@ -1,4 +1,4 @@
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { useFiltersBarInteraction } from './interaction';
 
 export interface FiltersBarTemplateProps {

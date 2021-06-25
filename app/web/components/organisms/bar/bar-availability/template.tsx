@@ -1,27 +1,27 @@
-import { Button } from '@button';
-import { Icon } from '@icons';
+import { Button } from '@atoms';
+import { Icon } from '@atoms';
 
-export interface AvailabilityBarTemplateProps {
+export type AvailabilityBarTemplateProps = {
   ratings?: number;
   reviews?: number;
-}
+};
 
 /**
  * Renders the modal which gives all the available options
  * @param {number} ratings - Average ratings from the users
  * @param {number} reviews - Total number of reviews from the users
  */
-export const AvailabilityBarTemplate: React.FC<AvailabilityBarTemplateProps> = ({
+export const AvailabilityBarTemplate = ({
   ratings,
   reviews,
-}) => {
+}: AvailabilityBarTemplateProps): JSX.Element => {
   return (
     <div className="items-center justify-between flex border-t border-gray-300">
       <div className="py-4">
         <p>Add dates for prices</p>
         <div className="flex items-center">
           <div>
-            <Icon variant={'profile'} profileType="star" width={12} />
+            <Icon variant="profile" profileType="star" width={12} height={12} />
           </div>
           <div>
             <span className="inline-block text-xs ml-1">{ratings}</span>
@@ -37,6 +37,7 @@ export const AvailabilityBarTemplate: React.FC<AvailabilityBarTemplateProps> = (
           title="Check availability"
           color="white"
           size="sm"
+          onClick={() => alert('Triggered onClick')}
         />
       </div>
     </div>

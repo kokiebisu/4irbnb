@@ -1,4 +1,3 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { VideoButtonTemplate, VideoButtonTemplateProps } from './template';
 
@@ -14,4 +13,5 @@ const ButtonStory: Story<VideoButtonTemplateProps> = (args) => (
 export const Video = ButtonStory.bind({});
 Video.args = {
   play: false,
+  onClick: () => alert('Triggered onClick'),
 };

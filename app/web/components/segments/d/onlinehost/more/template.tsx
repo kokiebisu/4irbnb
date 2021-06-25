@@ -1,5 +1,5 @@
 import section from '@template/index.module.scss';
-import { Button } from '@button';
+import { Button } from '@atoms';
 
 export interface MoreSegmentTemplateProps {
   imgUrl?: string;

@@ -9,7 +9,7 @@ import { GuestsInputProps } from './input-guests';
 import { LimitInputProps } from './input-limit';
 import { NameInputProps } from './input-name';
 import { PasswordInputProps } from './input-password';
-import { PhoneNumberInputProps } from './input-phone';
+import { PhoneInputProps } from './input-phone';
 import { PhotoInputProps } from './input-photo';
 import { PlaceInputProps } from './input-place';
 import { PriceInputProps } from './input-price';
@@ -55,7 +55,7 @@ export interface InputProps
     LimitInputProps,
     NameInputProps,
     PasswordInputProps,
-    PhoneNumberInputProps,
+    PhoneInputProps,
     PhotoInputProps,
     PlaceInputProps,
     PriceInputProps,

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button } from '@button';
+import { Button } from '@atoms';
 
 export interface VerifyInputTemplateProps {
   value?: any;

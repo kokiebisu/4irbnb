@@ -1,4 +1,4 @@
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { Prototype } from '@prototype/auth';
 import { useToggleDispatch } from '@context/toggle';
 import { useAuthDispatch, useAuthState } from '@context/auth';

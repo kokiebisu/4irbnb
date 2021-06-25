@@ -1,5 +1,5 @@
-import { Icon } from '@icons';
-import { Button } from '@button';
+import { Icon } from '@atoms';
+import { Button } from '@atoms';
 
 export interface CheckModalTemplateProps {}
 

@@ -1,17 +1,17 @@
-export interface ScoreBulletTemplateProps {
-  category?: string;
-  average?: number;
-}
+export type ScoreBulletTemplateProps = {
+  category: string;
+  average: number;
+};
 
 /**
  * Renders the score bullet
  * @param {string} category - Type of score bullet
  * @param {number} average - Average score
  */
-export const ScoreBulletTemplate: React.FC<ScoreBulletTemplateProps> = ({
+export const ScoreBulletTemplate = ({
   category,
   average,
-}) => {
+}: ScoreBulletTemplateProps): JSX.Element => {
   return (
     <div className="py-1 flex itesm-center justify-between w-1/2">
       <p className="font-light">{category}</p>

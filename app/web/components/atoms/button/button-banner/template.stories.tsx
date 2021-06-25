@@ -13,4 +13,5 @@ const ButtonStory: Story<BannerButtonTemplateProps> = (args) => (
 export const Banner = ButtonStory.bind({});
 Banner.args = {
   title: 'Button',
+  onClick: () => alert('Triggered onClick'),
 };

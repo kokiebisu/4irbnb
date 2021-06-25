@@ -1,15 +1,7 @@
 import { VideoButtonTemplate, VideoButtonTemplateProps } from './template';
 
-export interface VideoButtonProps extends VideoButtonTemplateProps {}
+export type VideoButtonProps = VideoButtonTemplateProps;
 
-const VideoButton: React.FC<VideoButtonProps> = (props) => {
-  return <VideoButtonTemplate />;
-};
-
-export const video = (props) => {
-  return {
-    video: {
-      component: <VideoButton {...props} />,
-    },
-  };
+export const VideoButton = (props: VideoButtonProps): JSX.Element => {
+  return <VideoButtonTemplate {...props} />;
 };

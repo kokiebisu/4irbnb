@@ -40,11 +40,3 @@ export const GetStartedSegment = () => {
     </div>
   );
 };
-
-export const getstarted = (props) => {
-  return {
-    getstarted: {
-      component: <GetStartedSegment {...props} />,
-    },
-  };
-};

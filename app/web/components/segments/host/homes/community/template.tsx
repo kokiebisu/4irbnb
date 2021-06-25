@@ -4,7 +4,7 @@ import Router from 'next/router';
 import banner from '@banner/banner.module.scss';
 import responsive from '@styles/responsive.module.scss';
 
-import { Button } from '@button';
+import { Button } from '@atoms';
 import { Card, $Card } from '@card';
 
 import { useSlider, SliderProps } from '@hooks/useSlider';

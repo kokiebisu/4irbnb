@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { Icon } from '@icons';
+import { Icon } from '@atoms';
 import useOnClickOutside from '@hooks/useOnClickOutside';
 
 export interface PlaceInputTemplateProps {

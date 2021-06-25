@@ -1,9 +1,13 @@
 import { Layout } from '@layout';
-import { Bullet } from '@bullet';
+import { Bullet } from '@atoms';
 
-export interface BackSegmentTemplateProps {}
+export interface BackSegmentTemplateProps {
+  items: { icon: string; title: string; description: string }[];
+}
 
-export const BackSegmentTemplate: React.FC<BackSegmentTemplateProps> = () => {
+export const BackSegmentTemplate: React.FC<BackSegmentTemplateProps> = ({
+  items,
+}) => {
   return (
     <Layout
       variant="onlinehost"
@@ -18,15 +22,18 @@ export const BackSegmentTemplate: React.FC<BackSegmentTemplateProps> = () => {
         }}
         className="my-5"
       >
-        {['resources', 'events', 'community'].map(
-          (type: 'resources' | 'events' | 'community', index) => {
-            return (
-              <div key={index} className="mb-4">
-                <Bullet variant="onlinehost" onlinehostType={type} />
-              </div>
-            );
-          }
-        )}
+        {items.map(({ icon, title, description }, index) => {
+          return (
+            <div key={index} className="mb-4">
+              <Bullet
+                variant="quatertiary"
+                icon={<img src={icon} width={40} height={40} />}
+                title={title}
+                description={description}
+              />
+            </div>
+          );
+        })}
       </div>
     </Layout>
   );

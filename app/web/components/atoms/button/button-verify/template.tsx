@@ -1,9 +1,19 @@
-export interface VerifyButtonTemplateProps {}
+export type VerifyButtonTemplateProps = {
+  onClick: () => void;
+};
 
-export const VerifyButtonTemplate: React.FC<VerifyButtonTemplateProps> = () => {
+export const VerifyButtonTemplate = ({
+  onClick,
+}: VerifyButtonTemplateProps): JSX.Element => {
   return (
-    <div>
-      <h3 className="text-green-700 font-light">Verify</h3>
-    </div>
+    <button
+      data-testid="verify-button"
+      className="inline-block"
+      onClick={onClick}
+    >
+      <div>
+        <h3 className="text-green-700 font-light">Verify</h3>
+      </div>
+    </button>
   );
 };

@@ -3,8 +3,8 @@ import {
   RequiredBulletTemplateProps,
 } from './template';
 
-export interface RequiredBulletProps extends RequiredBulletTemplateProps {}
+export type RequiredBulletProps = RequiredBulletTemplateProps;
 
-export const RequiredBullet: React.FC<RequiredBulletProps> = (props) => {
+export const RequiredBullet = (props: RequiredBulletProps): JSX.Element => {
   return <RequiredBulletTemplate {...props} />;
 };

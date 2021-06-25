@@ -1,7 +1,7 @@
 import { ScoreBulletTemplate, ScoreBulletTemplateProps } from './template';
 
-export interface ScoreBulletProps extends ScoreBulletTemplateProps {}
+export type ScoreBulletProps = ScoreBulletTemplateProps;
 
-export const ScoreBullet: React.FC<ScoreBulletProps> = (props) => {
+export const ScoreBullet = (props: ScoreBulletProps): JSX.Element => {
   return <ScoreBulletTemplate {...props} />;
 };

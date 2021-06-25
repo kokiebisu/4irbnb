@@ -20,11 +20,3 @@ export const RoomSegment = () => {
     />
   );
 };
-
-export const room = (props) => {
-  return {
-    room: {
-      component: <RoomSegment {...props} />,
-    },
-  };
-};

@@ -20,11 +20,3 @@ export const PriceSegment = () => {
     />
   );
 };
-
-export const price = (props) => {
-  return {
-    price: {
-      component: <PriceSegment {...props} />
-    }
-  }
-}

@@ -1,4 +1,4 @@
-import { Input } from '@input';
+import { Input } from '@atoms';
 import { Layout } from '@layout';
 
 export interface RoomSegmentTemplateProps {

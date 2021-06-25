@@ -1,5 +1,5 @@
-import { Button } from '@button';
-import { Icon } from '@icons';
+import { Button } from '@atoms';
+import { Icon } from '@atoms';
 
 export interface PrivacyModalTemplateProps {
   handleSave: () => void;

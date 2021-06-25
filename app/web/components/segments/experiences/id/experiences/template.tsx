@@ -1,7 +1,11 @@
-import { Bullet } from '@bullet';
+import { Bullet, ExperienceIconTypes } from '@atoms';
 
 export interface ExperiencesSegmentTemplateProps {
-  experiences?: string[];
+  experiences: {
+    icon: { experienceType: ExperienceIconTypes };
+    title: string;
+    description: string;
+  }[];
 }
 
 /**
@@ -16,15 +20,18 @@ export const ExperiencesSegmentTemplate: React.FC<ExperiencesSegmentTemplateProp
         <h3 className="text-xl">Airbnb Online Experiences</h3>
       </div>
       <div className="grid grid-cols-3 gap-4">
-        {experiences.map(
-          (experience: 'hosts' | 'activities' | 'global', index) => {
-            return (
-              <div key={index}>
-                <Bullet variant="experience" experienceType={experience} />
-              </div>
-            );
-          }
-        )}
+        {experiences.map(({ icon, title, description }, index) => {
+          return (
+            <div key={index}>
+              <Bullet
+                variant="secondary"
+                experienceType={icon}
+                title={title}
+                description={description}
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

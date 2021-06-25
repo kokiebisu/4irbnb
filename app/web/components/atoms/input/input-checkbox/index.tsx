@@ -5,11 +5,3 @@ export interface CheckboxInputProps extends CheckboxInputTemplateProps {}
 export const CheckboxInput: React.FC<CheckboxInputProps> = (props) => {
   return <CheckboxInputTemplate {...props} />;
 };
-
-export const checkbox = (props) => {
-  return {
-    checkbox: {
-      component: <CheckboxInput {...props} />,
-    },
-  };
-};

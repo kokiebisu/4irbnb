@@ -1,5 +1,8 @@
 import * as mockData from './mock';
 
 export const useCharacteristicsSegment = () => {
-  return mockData;
+  const characteristics = mockData.characteristics.filter(
+    (characteristic) => characteristic.icon.variant === 'experience'
+  );
+  return { ...mockData, characteristics };
 };

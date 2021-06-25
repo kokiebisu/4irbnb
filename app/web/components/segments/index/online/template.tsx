@@ -1,5 +1,5 @@
 import { Card, $Card } from '@card';
-import { Button } from '@button';
+import { Button } from '@atoms';
 import section from '@template/index.module.scss';
 
 export interface OnlineSegmentTemplateProps {
