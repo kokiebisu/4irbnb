@@ -1,7 +1,7 @@
 import { ClosedInputTemplate, ClosedInputTemplateProps } from './template';
 
-export interface ClosedInputProps extends ClosedInputTemplateProps {}
+export type ClosedInputProps = ClosedInputTemplateProps;
 
-export const ClosedInput: React.FC<ClosedInputProps> = (props) => {
+export const ClosedInput = (props: ClosedInputProps): JSX.Element => {
   return <ClosedInputTemplate {...props} />;
 };

@@ -1,17 +1,17 @@
 import { Icon } from '@atoms';
 
-export interface CounterInputTemplateProps {
+export type CounterInputTemplateProps = {
   title?: string;
   subtitle?: string;
   value?: any;
-  onAdd?: () => void;
-  onSubtract?: () => void;
-  min?: number;
-  max?: number;
-  type?: 'create' | 'guests';
-}
+  onAdd: () => void;
+  onSubtract: () => void;
+  min: number;
+  max: number;
+  type: 'create' | 'guests';
+};
 
-export const CounterInputTemplate: React.FC<CounterInputTemplateProps> = ({
+export const CounterInputTemplate = ({
   title,
   subtitle,
   value,
@@ -20,7 +20,7 @@ export const CounterInputTemplate: React.FC<CounterInputTemplateProps> = ({
   min,
   max,
   type,
-}) => {
+}: CounterInputTemplateProps): JSX.Element => {
   const types = {
     create: {
       borderWidth: 2,
