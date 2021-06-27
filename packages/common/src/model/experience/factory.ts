@@ -1,4 +1,4 @@
-import { Experience } from '.';
+import { Experience, IExperience } from '.';
 
 /**
  * Factory to create Experience
@@ -10,6 +10,6 @@ export const createExperience = (
   id: string,
   title: string,
   imgUrls: string[]
-): Experience => {
+): IExperience => {
   return new Experience({ id, title, imgUrls });
 };
