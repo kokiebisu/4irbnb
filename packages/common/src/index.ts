@@ -9,4 +9,4 @@
  *
  * @packageDocumentation
  */
-export * from './models/http';
+export * from './model';
