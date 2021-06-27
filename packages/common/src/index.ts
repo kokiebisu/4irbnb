@@ -10,3 +10,6 @@
  * @packageDocumentation
  */
 export * from './model';
+export * from './service';
+export * from './error';
+export * from './enum';
