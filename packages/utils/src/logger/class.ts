@@ -1,5 +1,5 @@
 import * as winston from 'winston';
-import { ILogger } from './interface';
+import { ILogger, TLoggerLevel } from './type';
 import { TEnvironment } from '@nextbnb/common';
 
 export class Logger {
@@ -43,10 +43,7 @@ export class Logger {
     );
   }
 
-  output = (
-    type: 'error' | 'warning' | 'info' | 'log',
-    args: winston.LogEntry
-  ): void => {
+  output = (type: TLoggerLevel, args: winston.LogEntry): void => {
     this.#logger[type](args);
   };
 }
