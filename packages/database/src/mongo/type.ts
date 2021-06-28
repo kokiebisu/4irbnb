@@ -1,7 +1,7 @@
-import { Service } from '@nextbnb/common';
+import { Service, TEnvironment } from '@nextbnb/common';
 
 export interface IMongo {
-  environment: string;
+  environment: TEnvironment;
   providedPackage: any;
   serviceName: Service;
   options?: any;
