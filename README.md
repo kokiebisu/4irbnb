@@ -48,6 +48,10 @@ docker-compose build
 
 Check it out [here](https://airbnb-storybook.netlify.app/)
 
+## Docs
+
+https://kokiebisu.github.io/nextbnb/
+
 ## References
 
 - [atomic design](https://bradfrost.com/blog/post/atomic-web-design/)
