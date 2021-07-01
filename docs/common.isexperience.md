@@ -4,7 +4,7 @@
 
 ## isExperience() function
 
-Checks whether a given value is an 
+Checks whether a given value is an [IExperience](./common.iexperience.md)
 
 <b>Signature:</b>
 

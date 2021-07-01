@@ -1515,7 +1515,7 @@
         {
           "kind": "Function",
           "canonicalReference": "@nextbnb/common!isExperience:function(1)",
-          "docComment": "/**\n * Checks whether a given value is an {@link @nextbnb/experience#IExperience}\n *\n * @param arg - Value to be evaluated\n *\n * @example\n *\n * Here's an example of how to use this guard\n * ```ts\n * const experience = { id: '1', title: 'Cozy fireplace condo', imgUrl: ['www.imgUrl.com/1', ['www.imgUrl.com/2']] }\n * isExperience(experience); // true\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Checks whether a given value is an {@link @nextbnb/common#IExperience}\n *\n * @param arg - Value to be evaluated\n *\n * @example\n *\n * Here's an example of how to use this guard\n * ```ts\n * const experience = { id: '1', title: 'Cozy fireplace condo', imgUrl: ['www.imgUrl.com/1', ['www.imgUrl.com/2']] }\n * isExperience(experience); // true\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -1568,7 +1568,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "@nextbnb/common!isHost:var",
-          "docComment": "/**\n * Checks whether a given value is an {@link @nextbnb/type#IHost}\n *\n * @param arg - Value to be evaluated\n *\n * @example\n *\n * Here's an example of how to use this guard\n * ```ts\n * const host = { id: '1', username: 'john', name: '}\n * isHost(host) // true\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Checks whether a given value is an {@link @nextbnb/common#IHost}\n *\n * @param arg - Value to be evaluated\n *\n * @example\n *\n * Here's an example of how to use this guard\n * ```ts\n * const host = { id: '1', username: 'john', name: '}\n * isHost(host) // true\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -1603,7 +1603,7 @@
         {
           "kind": "Function",
           "canonicalReference": "@nextbnb/common!isStay:function(1)",
-          "docComment": "/**\n * Checks whether a given value is an {@link @nextbnb/type#IStay}\n *\n * @remarks\n *\n * Id may switch to a string later on\n *\n * @param arg - Value to be evaluated\n *\n * @example\n *\n * Here's an example of how to use this guard\n * ```ts\n * const stay = { id: '1', title: 'Cozy fireplace condo', imgUrl: ['www.imgUrl.com/1', ['www.imgUrl.com/2']] }\n * isStay(stay); // true\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Checks whether a given value is an {@link @nextbnb/common#IStay}\n *\n * @remarks\n *\n * Id may switch to a string later on\n *\n * @param arg - Value to be evaluated\n *\n * @example\n *\n * Here's an example of how to use this guard\n * ```ts\n * const stay = { id: '1', title: 'Cozy fireplace condo', imgUrl: ['www.imgUrl.com/1', ['www.imgUrl.com/2']] }\n * isStay(stay); // true\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -2049,7 +2049,7 @@
             {
               "kind": "Method",
               "canonicalReference": "@nextbnb/common!UnauthorizedError#get:member(1)",
-              "docComment": "/**\n * Retrieves the error information\n *\n * @returns an object of type {@link @nextbnb/unauthorized#IUnauthorizedError}\n */\n",
+              "docComment": "/**\n * Retrieves the error information\n *\n * @returns an object of type {@link @nextbnb/common#IUnauthorizedError}\n */\n",
               "excerptTokens": [
                 {
                   "kind": "Content",

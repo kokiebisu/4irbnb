@@ -1,7 +1,7 @@
 import { IExperience } from './type';
 
 /**
- * Checks whether a given value is an {@link @nextbnb/experience#IExperience}
+ * Checks whether a given value is an {@link @nextbnb/common#IExperience}
  * @param arg - Value to be evaluated
  * @public
  *

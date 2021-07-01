@@ -15,7 +15,7 @@ export class UnauthorizedError extends BaseError {
 
   /**
    * Retrieves the error information
-   * @returns an object of type {@link @nextbnb/unauthorized#IUnauthorizedError}
+   * @returns an object of type {@link @nextbnb/common#IUnauthorizedError}
    */
   get(): IUnauthorizedError {
     return {

@@ -30,8 +30,8 @@ Interfaces have a prefix of 'I'
 
 |  Function | Description |
 |  --- | --- |
-|  [isExperience(arg)](./common.isexperience.md) | Checks whether a given value is an  |
-|  [isStay(arg)](./common.isstay.md) | Checks whether a given value is an  |
+|  [isExperience(arg)](./common.isexperience.md) | Checks whether a given value is an [IExperience](./common.iexperience.md) |
+|  [isStay(arg)](./common.isstay.md) | Checks whether a given value is an [IStay](./common.istay.md) |
 |  [isUser(arg)](./common.isuser.md) | Checks whether a given value is an [IUser](./common.iuser.md) |
 
 ## Interfaces
@@ -58,7 +58,7 @@ Interfaces have a prefix of 'I'
 |  [createHost](./common.createhost.md) | Factory to create Hosts |
 |  [createStay](./common.createstay.md) | Factory to create the Stay instance |
 |  [createUser](./common.createuser.md) | Factory to create the User instance |
-|  [isHost](./common.ishost.md) | Checks whether a given value is an  |
+|  [isHost](./common.ishost.md) | Checks whether a given value is an [IHost](./common.ihost.md) |
 
 ## Type Aliases
 
