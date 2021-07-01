@@ -21,14 +21,14 @@ export class Logger {
       format: winston.format.combine(
         winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
         winston.format.json(),
-        this.#serviceFormat()
+        this._serviceFormat()
       ),
       defaultMeta: { service },
     });
     this.#environment = environment;
   }
 
-  #serviceFormat(): winston.Logform.Format {
+  private _serviceFormat(): winston.Logform.Format {
     return winston.format.printf(
       ({
         level,
