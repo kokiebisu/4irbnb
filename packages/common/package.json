@@ -12,7 +12,7 @@
     "build": "scripty",
     "test": "scripty",
     "lint": "scripty",
-    "document": "scripty"
+    "extract": "scripty"
   },
   "scripty": {
     "path": "../../scripts/package"
