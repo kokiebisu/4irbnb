@@ -95,7 +95,7 @@ export interface IBaseErrorConstructor {
     statusCode: THttpStatus;
 }
 
-// @public (undocumented)
+// @public
 export interface IContext {
     // (undocumented)
     params?: {
@@ -143,7 +143,7 @@ export interface IHostConstructor {
     lastName: string;
 }
 
-// @public (undocumented)
+// @public
 export interface IRole {
     // Warning: (ae-forgotten-export) The symbol "IPermission" needs to be exported by the entry point index.d.ts
     //
@@ -191,13 +191,13 @@ export interface IUser {
     username: string;
 }
 
-// @public (undocumented)
+// @public
 export enum Service {
     // (undocumented)
     Auth = "AuthService"
 }
 
-// @public (undocumented)
+// @public
 export type TEnvironment = 'production' | 'development';
 
 // @public

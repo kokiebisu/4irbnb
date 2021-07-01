@@ -1,11 +1,14 @@
 import { Stay } from './class';
 
 /**
+ * @public
  * Factory to create the Stay instance
- * @param id
- * @param title
- * @param imgUrls
- * @returns
+ *
+ * @param id -
+ * @param title -
+ * @param imgUrls -
+ *
+ * @returns a new {@link @nextbnb/model#Stay} instance
  */
 export const createStay = (
   id: string,

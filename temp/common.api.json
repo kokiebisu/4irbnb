@@ -431,7 +431,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "@nextbnb/common!createExperience:var",
-          "docComment": "/**\n * Factory to create Experience\n *\n * @param id - \n *\n * @param title - \n *\n * @param imgUrls - \n */\n",
+          "docComment": "/**\n * Factory to create Experience\n *\n * @param id - \n *\n * @param title - \n *\n * @param imgUrls - \n *\n * @returns an {@link @nextbnb/common#Experience} instance\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -457,7 +457,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "@nextbnb/common!createHost:var",
-          "docComment": "/**\n * Factory to create Hosts\n *\n * @param firstName - \n *\n * @param lastName - \n *\n * @param createdAt - \n *\n * @returns {Obj}\n *\n * @public\n */\n",
+          "docComment": "/**\n * Factory to create Hosts\n *\n * @param firstName - \n *\n * @param lastName - \n *\n * @param createdAt - \n *\n * @returns a new {@link @nextbnb/host#Host} instance\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -492,7 +492,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "@nextbnb/common!createStay:var",
-          "docComment": "/**\n * Factory to create the Stay instance\n *\n * @param id - \n *\n * @param title - \n *\n * @param imgUrls - \n *\n * @returns \n */\n",
+          "docComment": "/**\n * Factory to create the Stay instance\n *\n * @param id - \n *\n * @param title - \n *\n * @param imgUrls - \n *\n * @returns a new {@link @nextbnb/model#Stay} instance\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -518,7 +518,7 @@
         {
           "kind": "Variable",
           "canonicalReference": "@nextbnb/common!createUser:var",
-          "docComment": "/**\n * Factory to create the User instance\n *\n * @param id - \n *\n * @param username - \n *\n * @param name - \n *\n * @param iconUrl - \n *\n * @returns {Obj}\n */\n",
+          "docComment": "/**\n * Factory to create the User instance\n *\n * @param id - \n *\n * @param username - \n *\n * @param name - \n *\n * @param iconUrl - \n *\n * @returns a new {@link @nextbnb/user#User} instance\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -672,7 +672,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "@nextbnb/common!HttpMethods:enum",
-          "docComment": "/**\n * Varieties of the HTTP methods\n *\n * @public\n */\n",
+          "docComment": "/**\n * List of all the HTTP methods\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -1036,7 +1036,7 @@
         {
           "kind": "Interface",
           "canonicalReference": "@nextbnb/common!IContext:interface",
-          "docComment": "",
+          "docComment": "/**\n * Interface of the Context\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -1442,7 +1442,7 @@
         {
           "kind": "Interface",
           "canonicalReference": "@nextbnb/common!IRole:interface",
-          "docComment": "",
+          "docComment": "/**\n * Interface of the serviceRoles property in Context\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -1603,7 +1603,7 @@
         {
           "kind": "Function",
           "canonicalReference": "@nextbnb/common!isStay:function(1)",
-          "docComment": "/**\n * Checks whether a given value is an {@link @nextbnb/type#IStay}\n *\n * @param arg - Value to be evaluated\n *\n * @remark Id may switch to a string later on\n *\n * @example\n *\n * Here's an example of how to use this guard\n * ```ts\n * const stay = { id: '1', title: 'Cozy fireplace condo', imgUrl: ['www.imgUrl.com/1', ['www.imgUrl.com/2']] }\n * isStay(stay); // true\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Checks whether a given value is an {@link @nextbnb/type#IStay}\n *\n * @remarks\n *\n * Id may switch to a string later on\n *\n * @param arg - Value to be evaluated\n *\n * @example\n *\n * Here's an example of how to use this guard\n * ```ts\n * const stay = { id: '1', title: 'Cozy fireplace condo', imgUrl: ['www.imgUrl.com/1', ['www.imgUrl.com/2']] }\n * isStay(stay); // true\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -1750,7 +1750,7 @@
         {
           "kind": "Function",
           "canonicalReference": "@nextbnb/common!isUser:function(1)",
-          "docComment": "/**\n * Checks whether a given value is an {@link @nextbnb/type#IUser}\n *\n * @param arg - Value to be evaluated\n *\n * @example\n *\n * Here's an example of how to use this guard\n * ```ts\n * const user = { id: '1', username: 'john', name: 'John Parker', iconUrl: 'www.iconUrl.com' }\n * isUser(user); // true\n * ```\n *\n * @public\n */\n",
+          "docComment": "/**\n * Checks whether a given value is an {@link @nextbnb/common#IUser}\n *\n * @param arg - Value to be evaluated\n *\n * @example\n *\n * Here's an example of how to use this guard\n * ```ts\n * const user = { id: '1', username: 'john', name: 'John Parker', iconUrl: 'www.iconUrl.com' }\n * isUser(user); // true\n * ```\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -1952,7 +1952,7 @@
         {
           "kind": "Enum",
           "canonicalReference": "@nextbnb/common!Service:enum",
-          "docComment": "",
+          "docComment": "/**\n * List of all the Services\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",
@@ -1988,7 +1988,7 @@
         {
           "kind": "TypeAlias",
           "canonicalReference": "@nextbnb/common!TEnvironment:type",
-          "docComment": "",
+          "docComment": "/**\n * Type of environment\n *\n * @remarks\n *\n * Either 'production' or 'development'\n *\n * @public\n */\n",
           "excerptTokens": [
             {
               "kind": "Content",

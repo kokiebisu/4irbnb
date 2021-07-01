@@ -1,6 +1,7 @@
 import { IUser } from './type';
 
 /**
+ * @public
  * Blueprint of the User instance
  */
 export class User {

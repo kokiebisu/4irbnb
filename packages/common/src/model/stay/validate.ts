@@ -5,7 +5,7 @@ import { IStay } from './type';
  * @param arg - Value to be evaluated
  * @public
  *
- * @remark
+ * @remarks
  * Id may switch to a string later on
  *
  * @example
