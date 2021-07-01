@@ -1,6 +1,6 @@
 /**
- * A user
  * @public
+ * A user
  */
 export interface IUser {
   id: string;

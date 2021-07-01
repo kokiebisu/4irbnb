@@ -3,10 +3,10 @@ import { Host } from './class';
 /**
  * @public
  * Factory to create Hosts
- * @param {string} firstName
- * @param {string} lastName
- * @param {string} createdAt
- * @returns {Obj}
+ * @param firstName -
+ * @param lastName -
+ * @param createdAt -
+ * @returns a new {@link @nextbnb/host#Host} instance
  */
 export const createHost = (
   firstName: string,

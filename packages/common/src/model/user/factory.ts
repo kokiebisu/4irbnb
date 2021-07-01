@@ -1,12 +1,15 @@
 import { User } from './class';
 
 /**
+ * @public
  * Factory to create the User instance
- * @param {string} id
- * @param {string} username
- * @param {string} name
- * @param {string} iconUrl
- * @returns {Obj}
+ *
+ * @param id -
+ * @param username -
+ * @param name -
+ * @param iconUrl -
+ *
+ * @returns a new {@link @nextbnb/user#User} instance
  */
 export const createUser = (
   id: string,

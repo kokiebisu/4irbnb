@@ -1,6 +1,6 @@
 /**
  * @public
- * Varieties of the HTTP methods
+ * List of all the HTTP methods
  */
 export enum HttpMethods {
   ALL = 'ALL',

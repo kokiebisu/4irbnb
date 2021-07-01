@@ -1,10 +1,13 @@
 import { Experience, IExperience } from '.';
 
 /**
+ * @public
  * Factory to create Experience
- * @param {string} id
- * @param {string} title
- * @param {string[]} imgUrls
+ * @param id -
+ * @param title -
+ * @param imgUrls -
+ *
+ * @returns an {@link @nextbnb/common#Experience} instance
  */
 export const createExperience = (
   id: string,

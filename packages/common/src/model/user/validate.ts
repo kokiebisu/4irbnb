@@ -1,9 +1,9 @@
 import { IUser } from './type';
 
 /**
- * Checks whether a given value is an {@link @nextbnb/type#IUser}
- * @param arg - Value to be evaluated
  * @public
+ * Checks whether a given value is an {@link @nextbnb/common#IUser}
+ * @param arg - Value to be evaluated
  *
  * @example
  * Here's an example of how to use this guard
