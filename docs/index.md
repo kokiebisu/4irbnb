@@ -9,4 +9,6 @@
 |  Package | Description |
 |  --- | --- |
 |  [@nextbnb/common](./common.md) | <code>@nextbnb/common</code> is a package containing the interfaces and functions to validate the interface that can be utilized in other packages. |
+|  [@nextbnb/database](./database.md) | <code>@nextbnb/database</code> is a package containing the interfaces and functions to setup a database client that can be utilized in other packages. |
+|  [@nextbnb/utils](./utils.md) |  |
 

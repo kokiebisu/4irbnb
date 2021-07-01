@@ -4,7 +4,7 @@
 
 ## isHost variable
 
-Checks whether a given value is an 
+Checks whether a given value is an [IHost](./common.ihost.md)
 
 <b>Signature:</b>
 

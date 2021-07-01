@@ -1,7 +1,7 @@
 import { IHost } from './type';
 
 /**
- * Checks whether a given value is an {@link @nextbnb/type#IHost}
+ * Checks whether a given value is an {@link @nextbnb/common#IHost}
  * @param arg - Value to be evaluated
  * @public
  *

@@ -15,5 +15,5 @@ get(): IUnauthorizedError;
 
 [IUnauthorizedError](./common.iunauthorizederror.md)
 
-an object of type 
+an object of type [IUnauthorizedError](./common.iunauthorizederror.md)
 

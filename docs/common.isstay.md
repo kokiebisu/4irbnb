@@ -4,7 +4,7 @@
 
 ## isStay() function
 
-Checks whether a given value is an 
+Checks whether a given value is an [IStay](./common.istay.md)
 
 <b>Signature:</b>
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 echo "Extracting API"
 yarn clean
 yarn build
@@ -10,6 +10,7 @@ then
     echo "Github pages config file detected..."
     # Temporarily copying over the _config.yml temporarily
     cp docs/_config.yml .
+    rm docs
 fi
 
 yarn api-documenter markdown -i temp -o docs
