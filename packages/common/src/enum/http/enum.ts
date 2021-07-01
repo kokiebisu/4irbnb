@@ -1,3 +1,7 @@
+/**
+ * @public
+ * Varieties of the HTTP methods
+ */
 export enum HttpMethods {
   ALL = 'ALL',
   DELETE = 'DELETE',

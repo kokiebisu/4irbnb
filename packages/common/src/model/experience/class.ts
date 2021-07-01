@@ -1,10 +1,10 @@
 import { IExperience } from './type';
 
 /**
- * @private
+ * @public
  * Class to create the Experience instance
  *
- * @remark
+ * @remarks
  * Do not instantiate using the class directory.
  * Used the factory function {@link @nextbnb/common#createExperience}
  */
