@@ -11,7 +11,8 @@
     "clean": "rimraf dist *.tsbuildinfo",
     "build": "scripty",
     "test": "scripty",
-    "lint": "scripty"
+    "lint": "scripty",
+    "document": "scripty"
   },
   "scripty": {
     "path": "../../scripts/package"

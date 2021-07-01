@@ -1,6 +1,10 @@
 import { BaseError } from '../base';
 import { IApiError } from './type';
 
+/**
+ * @public
+ * Blueprint for the ApiError
+ */
 export class ApiError extends BaseError {
   serviceName: string;
 
@@ -10,14 +14,5 @@ export class ApiError extends BaseError {
       message: `[${serviceName}] There was an error in the API`,
     });
     this.serviceName = serviceName;
-  }
-
-  get() {
-    return {
-      message: this.message,
-      statusCode: this.statusCode,
-      status: this.status,
-      serviceName: this.serviceName,
-    };
   }
 }
