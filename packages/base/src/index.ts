@@ -1,8 +1,7 @@
 /**
  * @packageDocumentation
  *
- * `@nextbnb/common` is a package containing the interfaces and functions to validate the interface
- * that can be utilized in other packages.
+ * `@nextbnb/base` is the foundation for the custom microservice packages and acts as the abstracted layer.
  *
  * @remarks
  * Interfaces have a prefix of 'I'

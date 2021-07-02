@@ -2,10 +2,15 @@ import * as winston from 'winston';
 import { ILogger, TLoggerLevel } from './type';
 import { TEnvironment } from '@nextbnb/common';
 
+/**
+ * @public
+ * Blue that implements the util that logs
+ */
 export class Logger {
   #logger: winston.Logger;
   #requester?: string;
   #environment: TEnvironment;
+  #level: TLoggerLevel;
 
   /**
    * Constructs the Logger instance
@@ -26,6 +31,7 @@ export class Logger {
       defaultMeta: { service },
     });
     this.#environment = environment;
+    this.#level = level;
   }
 
   private _serviceFormat(): winston.Logform.Format {
@@ -43,7 +49,10 @@ export class Logger {
     );
   }
 
-  output = (type: TLoggerLevel, args: winston.LogEntry): void => {
-    this.#logger[type](args);
+  output = (message: string): void => {
+    this.#logger[this.#level]({
+      level: this.#level,
+      message,
+    });
   };
 }
