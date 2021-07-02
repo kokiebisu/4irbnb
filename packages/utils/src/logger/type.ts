@@ -1,5 +1,3 @@
-import { TEnvironment } from '@nextbnb/common';
-
 export type TLoggerLevel =
   | 'error'
   | 'warn'
@@ -13,7 +11,7 @@ export interface ILogger {
   service: string;
   level: TLoggerLevel;
   requestId?: string;
-  environment: TEnvironment;
+  // environment: TEnvironment;
 }
 
 export interface IInfo {
