@@ -10,9 +10,10 @@ async function main() {
     server = new Server(ServiceEnum.Auth, EnvironmentEnum.dev, 4000);
   }
 
+  await server.configure();
+
   registerRoutes(server);
 
-  await server.configure();
   await server.listen();
 }
 
