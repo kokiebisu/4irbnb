@@ -1,11 +1,11 @@
 import * as winston from 'winston';
 import { ILogger, TLoggerLevel } from './type';
-import { TEnvironment } from '@nextbnb/common';
+// import { TEnvironment } from '@nextbnb/common';
 
 export class Logger {
   #logger: winston.Logger;
   #requester?: string;
-  #environment: TEnvironment;
+  // #environment: TEnvironment;
 
   /**
    * Constructs the Logger instance
