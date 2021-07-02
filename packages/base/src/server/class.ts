@@ -1,5 +1,5 @@
 import { Logger } from '@nextbnb/utils';
-import { TEnvironment, ServiceEnum } from '@nextbnb/common';
+import { TEnvironment, ServiceEnum, HttpMethods } from '@nextbnb/common';
 import * as Fastify from 'fastify';
 import middie from 'middie';
 import * as cors from 'cors';
@@ -8,11 +8,11 @@ import * as cors from 'cors';
  * @public
  * An abstraction of the microservice servers
  */
-export abstract class BaseServer {
-  logger: Logger;
-  environment: TEnvironment;
-  serviceName: ServiceEnum;
-  server: Fastify.FastifyInstance;
+export class Server {
+  #logger: Logger;
+  #environment: TEnvironment;
+  #serviceName: ServiceEnum;
+  #server: Fastify.FastifyInstance;
   #port: number;
 
   constructor(
@@ -20,32 +20,45 @@ export abstract class BaseServer {
     environment: TEnvironment,
     port: number
   ) {
-    this.logger = new Logger({
+    this.#logger = new Logger({
       level: 'info',
       service: serviceName,
       environment,
     });
-    this.environment = environment;
-    this.serviceName = serviceName;
+    this.#environment = environment;
+    this.#serviceName = serviceName;
     this.#port = port;
 
-    this.server = Fastify.fastify({ logger: true });
+    this.#server = Fastify.fastify({ logger: true });
   }
 
   async configure() {
-    this.logger.output(
-      `[${this.environment}] Initializing HTTP server on port: ${this.#port}`
+    this.#logger.output(
+      `[${this.#environment}] Initializing HTTP server for the ${
+        this.#serviceName
+      }`
     );
-    await this.server.register(middie);
-    this.server.use(cors());
+    await this.#server.register(middie);
+    this.#server.use(cors());
+  }
+
+  registerRoute(method: HttpMethods, path: string, schema: any, handler: any) {
+    switch (method) {
+      case 'GET':
+        this.#server.get(path, schema, handler);
+        break;
+      case 'POST':
+        this.#server.post(path, schema, handler);
+        break;
+    }
   }
 
   async listen() {
     try {
-      await this.server.listen(this.#port);
-      this.logger.output(`Server is listening to ${this.#port}`);
+      await this.#server.listen(this.#port);
+      this.#logger.output(`Server is listening on ${this.#port}`);
     } catch (err) {
-      this.logger.output(`Failed to start server: ${err as string}`);
+      this.#logger.output(`Failed to start server: ${err as string}`);
     }
   }
 }
