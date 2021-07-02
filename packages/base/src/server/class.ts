@@ -1,6 +1,6 @@
 import { Logger } from '@nextbnb/utils';
 import { Service } from '../service';
-import { TEnvironment } from '../types';
+import { TEnvironment } from '@nextbnb/common';
 
 /**
  * @public
