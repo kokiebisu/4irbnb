@@ -24,14 +24,17 @@ const schema = {
   },
 };
 
-const handler = async (req: any, _: any) => {
+const handler = async (req: any, res: any) => {
   const database = 'something';
   const service = createAuthService(database);
   const { username, password } = req.body;
   const user = await service.login(username, password); // will eventually add 'async'
-  return user;
+  res.send({
+    status: 200,
+    data: user,
+  });
 };
 
 export const registerLoginRoute = (server: Server) => {
-  server.registerRoute(HttpMethods.GET, '/', { schema }, handler);
+  server.registerRoute(HttpMethods.POST, '/login', { schema }, handler);
 };
