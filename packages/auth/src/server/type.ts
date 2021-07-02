@@ -1,4 +1,4 @@
-import { Service, TEnvironment } from '@nextbnb/common';
+import { ServiceEnum, TEnvironment } from '@nextbnb/common';
 
 /**
  * @public
@@ -7,6 +7,6 @@ import { Service, TEnvironment } from '@nextbnb/common';
 export interface ISetupServerArgs {
   environment: TEnvironment;
   port: number;
-  serviceName: Service;
+  serviceName: ServiceEnum;
   baseApiPath: string;
 }
