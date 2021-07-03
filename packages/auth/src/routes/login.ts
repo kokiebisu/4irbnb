@@ -1,5 +1,5 @@
 import { Server } from '@nextbnb/base';
-import { HttpMethods } from '../../../common/dist';
+import { HttpMethods } from '@nextbnb/common';
 import { createAuthService } from '../service';
 
 const schema = {
