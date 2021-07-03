@@ -9,7 +9,7 @@
   },
   "scripts": {
     "clean": "rimraf dist *.tsbuildinfo",
-    "build": "scripty",
+    "build": "tsc -b .",
     "test": "scripty",
     "lint": "scripty",
     "extract": "scripty"
