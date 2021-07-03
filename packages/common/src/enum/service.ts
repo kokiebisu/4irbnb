@@ -2,6 +2,6 @@
  * @public
  * List of all the Services
  */
-export enum Service {
+export enum ServiceEnum {
   Auth = 'AuthService',
 }
