@@ -1,4 +1,4 @@
-import { THttpStatus } from '../../enum/status/type';
+import { THttpStatus } from '../../types';
 import { IBaseError, IBaseErrorConstructor } from './type';
 
 /**
