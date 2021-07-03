@@ -19,7 +19,10 @@
     "path": "../../scripts/package"
   },
   "dependencies": {
-    "fastify": "^3.18.1"
+    "fastify": "^3.18.1",
+    "@nextbnb/common": "file:../common",
+    "@nextbnb/utils": "file:../utils",
+    "@nextbnb/base": "file:../base"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",

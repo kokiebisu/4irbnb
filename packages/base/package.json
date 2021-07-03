@@ -9,7 +9,7 @@
   },
   "scripts": {
     "clean": "rimraf dist *.tsbuildinfo",
-    "build": "scripty",
+    "build": "tsc -b .",
     "test": "scripty",
     "lint": "scripty",
     "extract": "scripty"
@@ -29,6 +29,8 @@
     "cors": "^2.8.5",
     "fastify": "^3.18.1",
     "fastify-express": "^0.3.3",
-    "middie": "^5.3.0"
+    "middie": "^5.3.0",
+    "@nextbnb/utils": "file:../utils",
+    "@nextbnb/common": "file:../common"
   }
 }

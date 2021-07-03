@@ -16,12 +16,13 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "lint": "scripty",
-    "build": "scripty",
+    "build": "tsc -b .",
     "clean": "scripty",
     "test": "scripty",
     "prepare": "husky install",
     "document": "scripty",
-    "extract": "scripty"
+    "extract": "scripty",
+    "pack:auth": "docker build -t nextbnb/auth -f ./packages/auth/Dockerfile ."
   },
   "scripty": {
     "path": "./scripts/workspace"

@@ -55,7 +55,7 @@ export class Server {
 
   async listen() {
     try {
-      await this.#server.listen(this.#port);
+      await this.#server.listen(this.#port, '0.0.0.0');
       this.#logger.output(`Server is listening on ${this.#port}`);
     } catch (err) {
       this.#logger.output(`Failed to start server: ${err as string}`);
