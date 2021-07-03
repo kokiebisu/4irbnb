@@ -9,13 +9,10 @@
   },
   "scripts": {
     "clean": "rimraf dist *.tsbuildinfo",
-    "build": "scripty",
-    "test": "scripty",
-    "lint": "scripty",
-    "extract": "scripty"
-  },
-  "scripty": {
-    "path": "../../scripts/package"
+    "build": "tsc -b .",
+    "test": "jest --passWithNoTests --concurrency 1",
+    "lint": "eslint src --ext js,ts,tsx",
+    "extract": "api-extractor run --local"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
