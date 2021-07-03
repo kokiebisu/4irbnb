@@ -7,12 +7,9 @@
   "scripts": {
     "clean": "rimraf dist *.tsbuildinfo",
     "build": "tsc -b .",
-    "test": "scripty",
-    "lint": "scripty",
-    "extract": "scripty"
-  },
-  "scripty": {
-    "path": "../../scripts/package"
+    "test": "jest --passWithNoTests --concurrency 1",
+    "lint": "eslint src --ext js,ts,tsx",
+    "extract": "api-extractor run --local"
   },
   "dependencies": {
     "date-fns": "^2.21.3",
