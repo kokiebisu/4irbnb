@@ -3,9 +3,7 @@ FROM node:alpine
 WORKDIR /app
 
 COPY package.json tsconfig.json tsconfig.settings.json ./
-
 COPY ./packages/tsconfig.json ./packages/
-
 RUN npm install
 
 WORKDIR /app/packages/common
