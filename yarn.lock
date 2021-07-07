@@ -2832,8 +2832,8 @@
 "@nextbnb/base@file:packages/base":
   version "1.1.0"
   dependencies:
-    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-base-1.1.0-ca8b13aa-59b0-4c1e-aa15-25a1d9c87502-1625463770741/node_modules/@nextbnb/common"
-    "@nextbnb/utils" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-base-1.1.0-ca8b13aa-59b0-4c1e-aa15-25a1d9c87502-1625463770741/node_modules/@nextbnb/utils"
+    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-base-1.1.0-e44c0623-17b3-4ea4-880b-458fa54ae595-1625630746806/node_modules/@nextbnb/common"
+    "@nextbnb/utils" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-base-1.1.0-e44c0623-17b3-4ea4-880b-458fa54ae595-1625630746806/node_modules/@nextbnb/utils"
     "@types/connect" "^3.4.34"
     connect "^3.7.0"
     cors "^2.8.5"
@@ -2849,10 +2849,9 @@
   dependencies:
     "@microsoft/api-documenter" "^7.13.27"
     "@microsoft/api-extractor" "^7.17.0"
-    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-utils-1.1.0-c1199f0b-d4fe-4b97-85bb-3ce0e9e09f4e-1625463770725/node_modules/@nextbnb/common"
+    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-utils-1.1.0-21933a40-0d1c-488b-896a-f2d12a6cac7b-1625630746803/node_modules/@nextbnb/common"
     "@typescript-eslint/eslint-plugin" "^4.22.1"
     "@typescript-eslint/parser" "^4.22.1"
-    aws-sdk "^2.939.0"
     date-fns "^2.21.3"
     eslint "^7.26.0"
     typescript "^4.2.4"
@@ -5205,10 +5204,10 @@ avvio@^7.1.2:
     fastq "^1.6.1"
     queue-microtask "^1.1.2"
 
-aws-sdk@^2.939.0:
-  version "2.939.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.939.0.tgz#c07c9d726bcb2ffdb69016f880ae310ad72f36a5"
-  integrity sha512-2KEAtTlVMDcpHP6+P9JU+mXTNhX3KZ0StW0Qi87oh8EUoRITZj64FrUylNvrCg69thCliAcNzBdlA1g5Iq+qEA==
+aws-sdk@^2.940.0:
+  version "2.940.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.940.0.tgz#a5c9c2a9642df8a76811162bee529dafdbbefe33"
+  integrity sha512-3m3CglRKuSULo2bPBWUYeE6ugmNHVIw6pFru6bRy/s/em7+4GEZmB4TnlqACgds/X0NyQTKDhPUz0P237dGGmA==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"

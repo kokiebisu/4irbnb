@@ -1,4 +1,4 @@
-import { AWSServiceEnum } from '../../enum';
+import { AWSServiceEnum } from '@nextbnb/aws';
 import { IBaseError } from '../base';
 
 /**

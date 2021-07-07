@@ -5,13 +5,13 @@ import {
   AWSServiceError,
   AWSServiceEnum,
 } from '@nextbnb/common';
-import { Logger } from '../logger';
+import { Logger } from '@nextbnb/utils';
 
-export class Config {
+export class SSM {
   environment?: TEnvironment;
   serviceName?: ServiceEnum;
   logger: Logger;
-  ssm: any;
+  service: any;
 
   constructor(serviceName: ServiceEnum, environment: TEnvironment) {
     this.logger = new Logger({
@@ -19,7 +19,7 @@ export class Config {
       level: 'info',
       environment,
     });
-    this.ssm = new AWS.SSM();
+    this.service = new AWS.SSM();
   }
 
   async getServiceSecret(
@@ -31,7 +31,7 @@ export class Config {
       includeEnvironment ? `/${this.environment as TEnvironment}` : ''
     }/${key}`;
     try {
-      const value = await this.ssm.get(path, true);
+      const value = await this.service.get(path, true);
       return value as string;
     } catch (err) {
       throw new AWSServiceError(AWSServiceEnum.ssm);
