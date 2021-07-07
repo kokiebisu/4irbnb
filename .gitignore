@@ -9,5 +9,4 @@ yarn-error.log*
 node_modules
 
 terraform/variables.tf
-
 terraform/.terraform
