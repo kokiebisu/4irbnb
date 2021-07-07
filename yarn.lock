@@ -2832,8 +2832,8 @@
 "@nextbnb/base@file:packages/base":
   version "1.1.0"
   dependencies:
-    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-base-1.1.0-e44c0623-17b3-4ea4-880b-458fa54ae595-1625630746806/node_modules/@nextbnb/common"
-    "@nextbnb/utils" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-base-1.1.0-e44c0623-17b3-4ea4-880b-458fa54ae595-1625630746806/node_modules/@nextbnb/utils"
+    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-base-1.1.0-65432b9e-4dab-4712-bf1c-bd985af15158-1625663616445/node_modules/@nextbnb/common"
+    "@nextbnb/utils" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-base-1.1.0-65432b9e-4dab-4712-bf1c-bd985af15158-1625663616445/node_modules/@nextbnb/utils"
     "@types/connect" "^3.4.34"
     connect "^3.7.0"
     cors "^2.8.5"
@@ -2849,7 +2849,7 @@
   dependencies:
     "@microsoft/api-documenter" "^7.13.27"
     "@microsoft/api-extractor" "^7.17.0"
-    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-utils-1.1.0-21933a40-0d1c-488b-896a-f2d12a6cac7b-1625630746803/node_modules/@nextbnb/common"
+    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-utils-1.1.0-1483e4c4-62da-4555-bcf7-b5b2956061c4-1625663616443/node_modules/@nextbnb/common"
     "@typescript-eslint/eslint-plugin" "^4.22.1"
     "@typescript-eslint/parser" "^4.22.1"
     date-fns "^2.21.3"
@@ -9649,11 +9649,6 @@ humanize-ms@^1.2.1:
   integrity sha1-xG4xWaKT9riW2ikxbYtv6Lt5u+0=
   dependencies:
     ms "^2.0.0"
-
-husky@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/husky/-/husky-6.0.0.tgz#810f11869adf51604c32ea577edbc377d7f9319e"
-  integrity sha512-SQS2gDTB7tBN486QSoKPKQItZw97BMOd+Kdb6ghfpBc0yXyzrddI0oDV5MkDAbuB4X2mO3/nj60TRMcYxwzZeQ==
 
 iconv-lite@0.4.24, iconv-lite@^0.4.24:
   version "0.4.24"
