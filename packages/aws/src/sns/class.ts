@@ -1,10 +1,10 @@
-import * as AWS from 'aws-sdk';
-import { IAWSServiceConstructor } from '../type';
+import { SNSClient } from "@aws-sdk/client-sns";
+import { IAWSServiceConstructor } from "../type";
 
 export class SNS {
-  service: any;
+  service: SNSClient;
 
   constructor({ region }: IAWSServiceConstructor) {
-    this.service = new AWS.SNS({ region });
+    this.service = new SNSClient({ region });
   }
 }

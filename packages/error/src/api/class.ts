@@ -1,5 +1,5 @@
-import { BaseError } from '../base';
-import { IApiError } from './type';
+import { IApiError } from ".";
+import { BaseError } from "../base";
 
 /**
  * @public
