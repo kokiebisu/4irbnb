@@ -6,7 +6,8 @@
     { "path": "./utils" },
     { "path": "./database" },
     { "path": "./base" },
-    { "path": "./auth" }
+    { "path": "./auth" },
+    { "path": "./aws" }
   ],
   "include": ["src"]
 }

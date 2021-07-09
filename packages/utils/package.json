@@ -12,9 +12,15 @@
     "extract": "api-extractor run --local"
   },
   "dependencies": {
+    "@microsoft/api-documenter": "^7.13.27",
+    "@microsoft/api-extractor": "^7.17.0",
+    "@nextbnb/common": "file:../common",
+    "@typescript-eslint/eslint-plugin": "^4.22.1",
+    "@typescript-eslint/parser": "^4.22.1",
     "date-fns": "^2.21.3",
-    "winston": "^3.3.3",
-    "@nextbnb/common": "file:../common"
+    "eslint": "^7.26.0",
+    "typescript": "^4.2.4",
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
