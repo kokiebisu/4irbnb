@@ -1,4 +1,4 @@
-import { BaseError } from '../../../common/dist';
+import { BaseError } from '@nextbnb/error';
 import { MongoClient } from './class';
 import { IMongoConstructor, TDatabaseClient } from './type';
 

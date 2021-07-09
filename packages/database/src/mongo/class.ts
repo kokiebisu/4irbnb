@@ -36,12 +36,9 @@ export class MongoClient {
         useUnifiedTopology: true,
       });
 
-      this.#logger.output('info', {
-        level: 'info',
-        message: 'Successfully connected to MongoDB',
-      });
+      this.#logger.output('Successfully connected to MongoDB');
     } catch (err) {
-      this.#logger.output('error', { level: 'error', message: err.message });
+      this.#logger.output(err);
     }
   }
 }
