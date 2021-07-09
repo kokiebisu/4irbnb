@@ -34,13 +34,12 @@ export class SSM {
       includeEnvironment ? `/${this.environment as TEnvironment}` : ""
     }/${key}`;
     try {
-      const response = await this.service.send(
+      return await this.service.send(
         new GetParameterCommand({
           Name: path,
           WithDecryption: true,
         })
       );
-      return response;
     } catch (err) {
       throw new ApiError({
         serviceName: `AWS ${AWSServiceEnum.ssm}`,
