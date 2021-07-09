@@ -2,9 +2,9 @@ import * as AWS from 'aws-sdk';
 import {
   ServiceEnum,
   TEnvironment,
-  AWSServiceError,
-  AWSServiceEnum,
 } from '@nextbnb/common';
+import {  AWSServiceError,
+  AWSServiceEnum} from '@nextbnb/error';
 import { Logger } from '@nextbnb/utils';
 
 export class SSM {
@@ -24,7 +24,7 @@ export class SSM {
 
   async getServiceSecret(
     key: string,
-    value: string,
+    // value: string,
     includeEnvironment: boolean
   ): Promise<string> {
     const path = `/${this.serviceName as ServiceEnum}${
