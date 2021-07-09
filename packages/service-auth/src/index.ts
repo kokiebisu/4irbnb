@@ -21,8 +21,6 @@ async function main() {
     "development"
   );
 
-  client.console.log("TYPE", typeof client);
-
   registerRoutes(server);
 
   await server.listen();

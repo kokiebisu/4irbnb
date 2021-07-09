@@ -7,16 +7,13 @@ import {
 } from "@aws-sdk/client-ssm";
 import { ServiceEnum, TEnvironment } from "@nextbnb/common";
 import { ApiError } from "@nextbnb/error";
-import { Logger } from "@nextbnb/utils";
+import { AWSService } from "../class";
 import { AWSServiceEnum } from "../enum";
 
 /**
  * @public
  */
-export class SSM {
-  environment: TEnvironment;
-  serviceName?: ServiceEnum;
-  logger: Logger;
+export class SSM extends AWSService {
   service: SSMClient;
 
   /**
@@ -29,11 +26,8 @@ export class SSM {
     region: string,
     environment: TEnvironment
   ) {
-    this.serviceName = serviceName;
+    super(serviceName, AWSServiceEnum.ssm, environment);
     this.service = new SSMClient({ region });
-    this.environment = environment;
-
-    this.logger = new Logger(AWSServiceEnum.ssm, "info", "1111", "development");
   }
 
   /**

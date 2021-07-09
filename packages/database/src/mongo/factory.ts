@@ -1,6 +1,6 @@
-import { BaseError } from '@nextbnb/error';
-import { MongoClient } from './class';
-import { IMongoConstructor, TDatabaseClient } from './type';
+import { BaseError } from "@nextbnb/error";
+import { MongoClient } from "./class";
+import { IMongoConstructor, TDatabaseClient } from "./type";
 
 /**
  * Factory function to create the Mongoose Client instance
@@ -10,15 +10,12 @@ import { IMongoConstructor, TDatabaseClient } from './type';
 export const createDB = (dbType: TDatabaseClient, args: IMongoConstructor) => {
   try {
     switch (dbType) {
-      case 'mongo':
+      case "mongo":
         return new MongoClient(args);
       default:
         throw new Error();
     }
   } catch (err) {
-    throw new BaseError({
-      message: 'Invalid database type specified',
-      statusCode: 500,
-    });
+    throw new BaseError("Invalid database type specified", 500);
   }
 };

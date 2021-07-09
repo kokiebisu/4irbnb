@@ -1,13 +1,13 @@
 import { SNSClient } from "@aws-sdk/client-sns";
 import { ServiceEnum, TEnvironment } from "@nextbnb/common";
+import { AWSService } from "../class";
+import { AWSServiceEnum } from "../enum";
 
 /**
  * @public
  */
-export class SNS {
-  serviceName: ServiceEnum;
+export class SNS extends AWSService {
   service: SNSClient;
-  environment: TEnvironment;
 
   /**
    *
@@ -19,8 +19,7 @@ export class SNS {
     region: string,
     environment: TEnvironment
   ) {
-    this.serviceName = serviceName;
+    super(serviceName, AWSServiceEnum.sns, environment);
     this.service = new SNSClient({ region });
-    this.environment = environment;
   }
 }

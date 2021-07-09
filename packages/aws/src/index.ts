@@ -9,5 +9,8 @@
  *
  * @packageDocumentation
  */
-export * from "./factory";
+export * from "./s3";
+export * from "./ssm";
+export * from "./sns";
+
 export * from "./enum";

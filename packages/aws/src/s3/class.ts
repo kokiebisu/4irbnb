@@ -5,14 +5,14 @@ import {
 } from "@aws-sdk/client-s3";
 import { ServiceEnum, TEnvironment } from "@nextbnb/common";
 import { ApiError } from "@nextbnb/error";
+import { AWSService } from "../class";
+import { AWSServiceEnum } from "../enum";
 
 /**
  * @public
  */
-export class S3 {
+export class S3 extends AWSService {
   client: S3Client;
-  serviceName: ServiceEnum;
-  environment: TEnvironment;
 
   /**
    *
@@ -24,6 +24,7 @@ export class S3 {
     region: string,
     environment: TEnvironment
   ) {
+    super(serviceName, AWSServiceEnum.s3, environment);
     this.client = new S3Client({ region });
     this.serviceName = serviceName;
     this.environment = environment;
