@@ -19,7 +19,8 @@
     "fastify": "^3.18.1",
     "@nextbnb/common": "file:../common",
     "@nextbnb/utils": "file:../utils",
-    "@nextbnb/base": "file:../base"
+    "@nextbnb/base": "file:../base",
+    "@nextbnb/aws": "file:../aws"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",

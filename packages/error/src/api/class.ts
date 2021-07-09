@@ -1,4 +1,3 @@
-import { IApiError } from ".";
 import { BaseError } from "../base";
 
 /**
@@ -8,11 +7,8 @@ import { BaseError } from "../base";
 export class ApiError extends BaseError {
   serviceName: string;
 
-  constructor({ serviceName }: IApiError) {
-    super({
-      statusCode: 500,
-      message: `[${serviceName}] There was an error in the API`,
-    });
+  constructor(serviceName: string) {
+    super(`[${serviceName}] There was an error in the API`, 500);
     this.serviceName = serviceName;
   }
 }

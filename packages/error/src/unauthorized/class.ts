@@ -1,5 +1,5 @@
-import { IUnauthorizedError } from '.';
-import { BaseError } from '..';
+import { IUnauthorizedError } from ".";
+import { BaseError } from "..";
 
 /**
  * @public
@@ -7,10 +7,7 @@ import { BaseError } from '..';
  */
 export class UnauthorizedError extends BaseError {
   constructor() {
-    super({
-      statusCode: 401,
-      message: 'You are not authenticated',
-    });
+    super("You are not authenticated", 401);
   }
 
   /**

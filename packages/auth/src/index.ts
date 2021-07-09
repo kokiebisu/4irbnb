@@ -1,6 +1,6 @@
-import { Server } from '@nextbnb/base';
-import { ServiceEnum, EnvironmentEnum } from '@nextbnb/common';
-import { registerRoutes } from './routes';
+import { Server } from "@nextbnb/base";
+import { ServiceEnum, EnvironmentEnum } from "@nextbnb/common";
+import { registerRoutes } from "./routes";
 
 async function main() {
   let server: Server;

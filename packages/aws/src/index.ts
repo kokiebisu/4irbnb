@@ -9,5 +9,4 @@
  *
  * @packageDocumentation
  */
-export * from './sns';
-export * from './ssm';
+export * from "./factory";

@@ -3,25 +3,51 @@ import {
   CreateBucketCommand,
   PutObjectCommand,
 } from "@aws-sdk/client-s3";
-import { ServiceEnum } from "@nextbnb/common";
+import { ServiceEnum, TEnvironment } from "@nextbnb/common";
 import { ApiError } from "@nextbnb/error";
 
+/**
+ * @public
+ */
 export class S3 {
   client: S3Client;
   serviceName: ServiceEnum;
+  environment: TEnvironment;
 
-  constructor({ region, serviceName }) {
+  /**
+   *
+   * @param region
+   * @param serviceName
+   */
+  constructor(
+    serviceName: ServiceEnum,
+    region: string,
+    environment: TEnvironment
+  ) {
     this.client = new S3Client({ region });
     this.serviceName = serviceName;
+    this.environment = environment;
   }
 
-  public async createBucket({ bucketName }) {
+  /**
+   *
+   * @param bucketName
+   * @returns
+   */
+  public async createBucket(bucketName: string) {
     return await this.client.send(
       new CreateBucketCommand({ Bucket: bucketName })
     );
   }
 
-  public async storeObject({ bucketName, name, data }) {
+  /**
+   *
+   * @param bucketName
+   * @param name
+   * @param data
+   * @returns
+   */
+  public async storeObject(bucketName: string, name: string, data: any) {
     try {
       return await this.client.send(
         new PutObjectCommand({
@@ -31,7 +57,7 @@ export class S3 {
         })
       );
     } catch (err) {
-      throw new ApiError({ serviceName: `AWS ${this.serviceName}` });
+      throw new ApiError(`AWS ${this.serviceName}`);
     }
   }
 }

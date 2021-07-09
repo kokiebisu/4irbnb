@@ -10,21 +10,42 @@ import { ApiError } from "@nextbnb/error";
 import { Logger } from "@nextbnb/utils";
 import { AWSServiceEnum } from "../enum";
 
+/**
+ * @public
+ */
 export class SSM {
-  environment?: TEnvironment;
+  environment: TEnvironment;
   serviceName?: ServiceEnum;
   logger: Logger;
   service: SSMClient;
 
-  constructor(region: string, environment: TEnvironment) {
+  /**
+   *
+   * @param region
+   * @param environment
+   */
+  constructor(
+    serviceName: ServiceEnum,
+    region: string,
+    environment: TEnvironment
+  ) {
+    this.serviceName = serviceName;
+    this.service = new SSMClient({ region });
+    this.environment = environment;
+
     this.logger = new Logger({
       service: AWSServiceEnum.ssm,
       level: "info",
       environment,
     });
-    this.service = new SSMClient({ region });
   }
 
+  /**
+   *
+   * @param key
+   * @param includeEnvironment
+   * @returns
+   */
   async getServiceSecret(
     key: string,
     // value: string,
@@ -41,12 +62,16 @@ export class SSM {
         })
       );
     } catch (err) {
-      throw new ApiError({
-        serviceName: `AWS ${AWSServiceEnum.ssm}`,
-      });
+      throw new ApiError(`AWS ${AWSServiceEnum.ssm}`);
     }
   }
 
+  /**
+   *
+   * @param key
+   * @param value
+   * @returns
+   */
   async setServiceSecret(
     key: string,
     value: string
@@ -64,9 +89,7 @@ export class SSM {
         })
       );
     } catch (err) {
-      throw new ApiError({
-        serviceName: `AWS ${AWSServiceEnum.ssm}`,
-      });
+      throw new ApiError(`AWS ${AWSServiceEnum.ssm}`);
     }
   }
 }

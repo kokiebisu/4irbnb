@@ -1,5 +1,5 @@
-import { THttpStatus } from '@nextbnb/common';
-import { IBaseError, IBaseErrorConstructor } from './type';
+import { THttpStatus } from "@nextbnb/common";
+import { IBaseError } from "./type";
 
 /**
  * @public
@@ -17,11 +17,11 @@ export class BaseError extends Error {
   status: string;
   statusCode: THttpStatus;
 
-  constructor({ message, statusCode }: IBaseErrorConstructor) {
-    super(message || 'Base Error');
+  constructor(message: string, statusCode: THttpStatus) {
+    super(message || "Base Error");
 
-    this.message = message || 'Base Error';
-    this.status = 'failure';
+    this.message = message || "Base Error";
+    this.status = "failure";
     this.statusCode = statusCode;
   }
 
