@@ -1,3 +1,5 @@
+import { AWSServiceFactory } from "@nextbnb/aws";
+import { AWSServiceEnum } from "@nextbnb/aws";
 import { Server } from "@nextbnb/base";
 import { ServiceEnum, EnvironmentEnum } from "@nextbnb/common";
 import { registerRoutes } from "./routes";
@@ -11,6 +13,15 @@ async function main() {
   }
 
   await server.configure();
+
+  const client = AWSServiceFactory(
+    ServiceEnum.Auth,
+    AWSServiceEnum.ssm,
+    "us-east-1",
+    "development"
+  );
+
+  client.console.log("TYPE", typeof client);
 
   registerRoutes(server);
 

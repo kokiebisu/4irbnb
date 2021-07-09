@@ -33,11 +33,7 @@ export class SSM {
     this.service = new SSMClient({ region });
     this.environment = environment;
 
-    this.logger = new Logger({
-      service: AWSServiceEnum.ssm,
-      level: "info",
-      environment,
-    });
+    this.logger = new Logger(AWSServiceEnum.ssm, "info", "1111", "development");
   }
 
   /**
@@ -46,7 +42,7 @@ export class SSM {
    * @param includeEnvironment
    * @returns
    */
-  async getServiceSecret(
+  public async getServiceSecret(
     key: string,
     // value: string,
     includeEnvironment: boolean
@@ -72,7 +68,7 @@ export class SSM {
    * @param value
    * @returns
    */
-  async setServiceSecret(
+  public async setServiceSecret(
     key: string,
     value: string
   ): Promise<PutParameterCommandOutput> {
