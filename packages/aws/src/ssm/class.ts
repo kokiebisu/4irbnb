@@ -6,7 +6,7 @@ import {
   PutParameterCommandOutput,
 } from "@aws-sdk/client-ssm";
 import { ServiceEnum, TEnvironment } from "@nextbnb/common";
-import { ApiError } from "@nextbnb/error";
+// import { ApiError } from "@nextbnb/error";
 import { AWSService } from "../class";
 import { AWSServiceEnum } from "../enum";
 
@@ -52,7 +52,7 @@ export class SSM extends AWSService {
         })
       );
     } catch (err) {
-      throw new ApiError(`AWS ${AWSServiceEnum.ssm}`);
+      throw new Error(err);
     }
   }
 
@@ -76,10 +76,11 @@ export class SSM extends AWSService {
           Value: value,
           Overwrite: true,
           DataType: "text",
+          Type: "string",
         })
       );
     } catch (err) {
-      throw new ApiError(`AWS ${AWSServiceEnum.ssm}`);
+      throw new Error(err);
     }
   }
 }

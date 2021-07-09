@@ -1,8 +1,8 @@
-import { Logger } from '@nextbnb/utils';
-import { TEnvironment, ServiceEnum, HttpMethods } from '@nextbnb/common';
-import * as Fastify from 'fastify';
-import middie from 'middie';
-import * as cors from 'cors';
+import { Logger } from "@nextbnb/utils";
+import { TEnvironment, ServiceEnum, HttpMethods } from "@nextbnb/common";
+import * as Fastify from "fastify";
+import middie from "middie";
+import * as cors from "cors";
 
 /**
  * @public
@@ -20,11 +20,7 @@ export class Server {
     environment: TEnvironment,
     port: number
   ) {
-    this.#logger = new Logger({
-      level: 'info',
-      service: serviceName,
-      environment,
-    });
+    this.#logger = new Logger(serviceName, "info", "1111", "development");
     this.#environment = environment;
     this.#serviceName = serviceName;
     this.#port = port;
@@ -44,10 +40,10 @@ export class Server {
 
   registerRoute(method: HttpMethods, path: string, schema: any, handler: any) {
     switch (method) {
-      case 'GET':
+      case "GET":
         this.#server.get(path, schema, handler);
         break;
-      case 'POST':
+      case "POST":
         this.#server.post(path, schema, handler);
         break;
     }
@@ -55,7 +51,7 @@ export class Server {
 
   async listen() {
     try {
-      await this.#server.listen(this.#port, '0.0.0.0');
+      await this.#server.listen(this.#port, "0.0.0.0");
       this.#logger.output(`Server is listening on ${this.#port}`);
     } catch (err) {
       this.#logger.output(`Failed to start server: ${err as string}`);
