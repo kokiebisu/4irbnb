@@ -1,11 +1,8 @@
-import * as AWS from 'aws-sdk';
-import {
-  ServiceEnum,
-  TEnvironment,
-  AWSServiceError,
-  AWSServiceEnum,
-} from '@nextbnb/common';
-import { Logger } from '@nextbnb/utils';
+import * as AWS from "aws-sdk";
+import { ServiceEnum, TEnvironment } from "@nextbnb/common";
+import { BaseError } from "@nextbnb/error";
+import { Logger } from "@nextbnb/utils";
+import { AWSServiceEnum } from "../enum";
 
 export class SSM {
   environment?: TEnvironment;
@@ -16,7 +13,7 @@ export class SSM {
   constructor(serviceName: ServiceEnum, environment: TEnvironment) {
     this.logger = new Logger({
       service: serviceName,
-      level: 'info',
+      level: "info",
       environment,
     });
     this.service = new AWS.SSM();
@@ -24,17 +21,20 @@ export class SSM {
 
   async getServiceSecret(
     key: string,
-    value: string,
+    // value: string,
     includeEnvironment: boolean
   ): Promise<string> {
     const path = `/${this.serviceName as ServiceEnum}${
-      includeEnvironment ? `/${this.environment as TEnvironment}` : ''
+      includeEnvironment ? `/${this.environment as TEnvironment}` : ""
     }/${key}`;
     try {
       const value = await this.service.get(path, true);
       return value as string;
     } catch (err) {
-      throw new AWSServiceError(AWSServiceEnum.ssm);
+      throw new BaseError({
+        statusCode: 400,
+        message: `AWS Service ${AWSServiceEnum.ssm} had an error`,
+      });
     }
   }
 
@@ -43,9 +43,12 @@ export class SSM {
       this.environment as TEnvironment
     }/${key}`;
     try {
-      this.ssm.set(path, value, true);
+      this.service.set(path, value, true);
     } catch (err) {
-      throw new AWSServiceError(AWSServiceEnum.ssm);
+      throw new BaseError({
+        statusCode: 400,
+        message: `AWS Service ${AWSServiceEnum.ssm} had an error`,
+      });
     }
   }
 }
