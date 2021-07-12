@@ -8,6 +8,7 @@
     "access": "public"
   },
   "scripts": {
+    "update": "yarn --check-files",
     "clean": "rimraf dist *.tsbuildinfo",
     "build": "tsc -b .",
     "test": "jest --passWithNoTests --concurrency 1",

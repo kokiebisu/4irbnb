@@ -1,3 +1,5 @@
 export enum AWSServiceEnum {
-  ssm = 'SSM',
+  ssm = "SSM",
+  s3 = "S3",
+  sns = "SNS",
 }

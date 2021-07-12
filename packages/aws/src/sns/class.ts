@@ -1,10 +1,25 @@
-import * as AWS from 'aws-sdk';
-import { IAWSServiceConstructor } from '../type';
+import { SNSClient } from "@aws-sdk/client-sns";
+import { ServiceEnum, TEnvironment } from "@nextbnb/common";
+import { AWSService } from "../class";
+import { AWSServiceEnum } from "../enum";
 
-export class SNS {
-  service: any;
+/**
+ * @public
+ */
+export class SNS extends AWSService {
+  service: SNSClient;
 
-  constructor({ region }: IAWSServiceConstructor) {
-    this.service = new AWS.SNS({ region });
+  /**
+   *
+   * @param region
+   * @param environment
+   */
+  constructor(
+    serviceName: ServiceEnum,
+    region: string,
+    environment: TEnvironment
+  ) {
+    super(serviceName, AWSServiceEnum.sns, environment);
+    this.service = new SNSClient({ region });
   }
 }

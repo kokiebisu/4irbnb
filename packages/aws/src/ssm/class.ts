@@ -1,54 +1,86 @@
-import * as AWS from "aws-sdk";
+import {
+  SSMClient,
+  GetParameterCommand,
+  GetParameterCommandOutput,
+  PutParameterCommand,
+  PutParameterCommandOutput,
+} from "@aws-sdk/client-ssm";
 import { ServiceEnum, TEnvironment } from "@nextbnb/common";
-import { BaseError } from "@nextbnb/error";
-import { Logger } from "@nextbnb/utils";
+// import { ApiError } from "@nextbnb/error";
+import { AWSService } from "../class";
 import { AWSServiceEnum } from "../enum";
 
-export class SSM {
-  environment?: TEnvironment;
-  serviceName?: ServiceEnum;
-  logger: Logger;
-  service: any;
+/**
+ * @public
+ */
+export class SSM extends AWSService {
+  service: SSMClient;
 
-  constructor(serviceName: ServiceEnum, environment: TEnvironment) {
-    this.logger = new Logger({
-      service: serviceName,
-      level: "info",
-      environment,
-    });
-    this.service = new AWS.SSM();
+  /**
+   *
+   * @param region
+   * @param environment
+   */
+  constructor(
+    serviceName: ServiceEnum,
+    region: string,
+    environment: TEnvironment
+  ) {
+    super(serviceName, AWSServiceEnum.ssm, environment);
+    this.service = new SSMClient({ region });
   }
 
-  async getServiceSecret(
+  /**
+   *
+   * @param key
+   * @param includeEnvironment
+   * @returns
+   */
+  public async getServiceSecret(
     key: string,
     // value: string,
     includeEnvironment: boolean
-  ): Promise<string> {
+  ): Promise<GetParameterCommandOutput> {
     const path = `/${this.serviceName as ServiceEnum}${
       includeEnvironment ? `/${this.environment as TEnvironment}` : ""
     }/${key}`;
     try {
-      const value = await this.service.get(path, true);
-      return value as string;
+      return await this.service.send(
+        new GetParameterCommand({
+          Name: path,
+          WithDecryption: true,
+        })
+      );
     } catch (err) {
-      throw new BaseError({
-        statusCode: 400,
-        message: `AWS Service ${AWSServiceEnum.ssm} had an error`,
-      });
+      throw new Error(err);
     }
   }
 
-  async setServiceSecret(key: string, value: string): Promise<void> {
+  /**
+   *
+   * @param key
+   * @param value
+   * @returns
+   */
+  public async setServiceSecret(
+    key: string,
+    value: string
+  ): Promise<PutParameterCommandOutput> {
     const path = `/${this.serviceName as ServiceEnum}/${
       this.environment as TEnvironment
     }/${key}`;
     try {
-      this.service.set(path, value, true);
+      return await this.service.send(
+        new PutParameterCommand({
+          Name: path,
+          Value: value,
+          Overwrite: true,
+          DataType: "text",
+          Type: "string",
+        })
+      );
     } catch (err) {
-      throw new BaseError({
-        statusCode: 400,
-        message: `AWS Service ${AWSServiceEnum.ssm} had an error`,
-      });
+      throw new Error(err);
     }
   }
 }

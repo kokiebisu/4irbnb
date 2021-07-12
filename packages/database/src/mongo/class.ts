@@ -1,5 +1,5 @@
-import { Logger } from '@nextbnb/utils';
-import { IMongoConstructor } from '.';
+import { Logger } from "@nextbnb/utils";
+import { IMongoConstructor } from ".";
 // import { Service } from '@nextbnb/common';
 
 export class MongoClient {
@@ -12,22 +12,13 @@ export class MongoClient {
     providedPackage,
     serviceName,
   }: IMongoConstructor) {
-    this.#logger = new Logger({
-      service: serviceName,
-      environment,
-      level: 'info',
-    });
+    this.#logger = new Logger(serviceName, "info", "1111", environment);
     // this.#service = serviceName;
     this.#package = providedPackage;
   }
 
   async setup() {
     try {
-      // this.#logger.output('info', {
-      //   level: 'info',
-      //   message: `Initializing connection to MongoDB using URI ${sanitizedUri}`,
-      // });
-
       const uri = `temporary value`;
 
       await this.#package.connect(uri, {
@@ -36,9 +27,9 @@ export class MongoClient {
         useUnifiedTopology: true,
       });
 
-      this.#logger.output('Successfully connected to MongoDB');
+      this.#logger.output("Successfully connected to MongoDB");
     } catch (err) {
-      this.#logger.output(err);
+      this.#logger.output(err as string);
     }
   }
 }

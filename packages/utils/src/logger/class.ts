@@ -1,6 +1,6 @@
-import * as winston from 'winston';
-import { ILogger, TLoggerLevel } from './type';
-import { TEnvironment } from '@nextbnb/common';
+import * as winston from "winston";
+import { TLoggerLevel } from "./type";
+import { TEnvironment } from "@nextbnb/common";
 
 /**
  * @public
@@ -19,16 +19,21 @@ export class Logger {
    * @param requestId - Entity that requested the logging
    * @param environment - 'production' or 'development'
    */
-  constructor({ service, level, requestId, environment }: ILogger) {
+  constructor(
+    serviceName: string,
+    level: TLoggerLevel,
+    requestId: string,
+    environment: TEnvironment
+  ) {
     this.#requester = requestId;
     this.#logger = winston.createLogger({
       level,
       format: winston.format.combine(
-        winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+        winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
         winston.format.json(),
         this._serviceFormat()
       ),
-      defaultMeta: { service },
+      defaultMeta: { service: serviceName },
     });
     this.#environment = environment;
     this.#level = level;
@@ -42,7 +47,7 @@ export class Logger {
         label,
         timestamp,
       }: winston.Logform.TransformableInfo): string => {
-        return `[${this.#environment as string} ${this.#requester || ''} ${
+        return `[${this.#environment as string} ${this.#requester || ""} ${
           timestamp as string
         } ${label as string}] ${level}: ${message}`;
       }
