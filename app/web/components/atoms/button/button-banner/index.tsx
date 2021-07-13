@@ -1,7 +1,7 @@
-import { BannerButtonTemplate, BannerButtonTemplateProps } from './template';
+import { BannerButtonTemplate, BannerButtonTemplateProps } from "./template";
 
-export interface BannerButtonProps extends BannerButtonTemplateProps {}
+export type BannerButtonProps = BannerButtonTemplateProps;
 
-export const BannerButton: React.FC<BannerButtonProps> = (props) => {
+export const BannerButton = (props: BannerButtonProps): JSX.Element => {
   return <BannerButtonTemplate {...props} />;
 };
