@@ -1,47 +1,47 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-export interface TextAreaInputTemplateProps {
+export type TextAreaInputTemplateProps = {
   value?: any;
   onChange?: (e: any) => void;
   limit?: number;
-}
+};
 
-export const TextAreaInputTemplate: React.FC<TextAreaInputTemplateProps> = ({
+export const TextAreaInputTemplate = ({
   value,
   onChange,
   limit,
-}) => {
+}: TextAreaInputTemplateProps): JSX.Element => {
   const [active, setActive] = useState(false);
 
   const renderBorder = () => {
     if (value.length >= limit) {
-      return 'transition-colors border-red-500 ease-in-out';
+      return "transition-colors border-red-500 ease-in-out";
     }
     if (active) {
-      return 'transition-colors focus:border-green-600 ease-in-out duration-300';
+      return "transition-colors focus:border-green-600 ease-in-out duration-300";
     }
-    return '';
+    return "";
   };
 
   const renderBackground = () => {
     if (value.length >= limit) {
       // return animation['background--lightred__0'];
-      return 'transition-colors bg-red-50 ease-in-out';
+      return "transition-colors bg-red-50 ease-in-out";
     }
     if (active) {
       // return animation['background--white'];
-      return 'transition-colors bg-white ease-in-out';
+      return "transition-colors bg-white ease-in-out";
     }
-    return '';
+    return "";
   };
 
   const renderColor = () => {
     if (value.length >= limit) {
       // return animation['c--warning'];
-      return 'transition-colors text-red-500 ease-in-out';
+      return "transition-colors text-red-500 ease-in-out";
     }
     // return animation['c--darkgreen__3'];
-    return 'transition-colors text-green-800 ease-in-out';
+    return "transition-colors text-green-800 ease-in-out";
   };
 
   return (
@@ -55,7 +55,7 @@ export const TextAreaInputTemplate: React.FC<TextAreaInputTemplateProps> = ({
           onChange={onChange}
           className={`transition ease-in-out duration-500 relative font-thin border border-gray-400 rounded text-md text-gray-700 h-full w-full p-3 outline-none ${renderBorder()} ${renderBackground()}`}
           style={{
-            resize: 'vertical',
+            resize: "vertical",
             minHeight: 300,
           }}
         />

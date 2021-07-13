@@ -6,6 +6,6 @@ import {
 
 export type PhoneInputProps = PhoneNumberInputTemplateProps;
 
-export const PhonNumberInput = (props: PhoneInputProps): JSX.Element => (
+export const PhoneNumberInput = (props: PhoneInputProps): JSX.Element => (
   <PhoneNumberInputTemplate {...props} />
 );

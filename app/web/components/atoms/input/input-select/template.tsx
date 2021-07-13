@@ -1,17 +1,17 @@
-import { useState } from 'react';
-import { styleContainer } from '../styling.select';
-import { Icon } from '@atoms';
-import { inputTypes } from '../logic/logic.types';
-import { renderShape } from '../logic/logic.select';
+import { useState } from "react";
+import { styleContainer } from "../styling.select";
+import { Icon } from "@atoms";
+import { inputTypes } from "../logic/logic.types";
+import { renderShape } from "../logic/logic.select";
 
-export interface SelectInputTemplateProps {
+export type SelectInputTemplateProps = {
   onChange?: (e: any) => void;
   value?: any;
-  direction?: 'top' | 'bottom' | undefined;
+  direction?: "top" | "bottom" | undefined;
   errors?: boolean;
   disabled?: boolean;
   inputType?: string;
-}
+};
 
 /**
  * Renders the text input component
@@ -22,19 +22,19 @@ export interface SelectInputTemplateProps {
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const SelectInputTemplate: React.FC<SelectInputTemplateProps> = ({
+export const SelectInputTemplate = ({
   onChange,
   value,
   direction,
   errors,
   disabled,
   inputType,
-}) => {
+}: SelectInputTemplateProps): JSX.Element => {
   const [fieldActive, setFieldActive] = useState(false);
   return (
     <div
-      className={`flex relative items-center h-32 ${[input['outside']].join(
-        ' '
+      className={`flex relative items-center h-32 ${[input["outside"]].join(
+        " "
       )} `}
     >
       <div
@@ -42,8 +42,8 @@ export const SelectInputTemplate: React.FC<SelectInputTemplateProps> = ({
           direction
         )} ${styleContainer(errors, fieldActive, value)}`}
         style={{
-          borderColor: disabled ? '#EBEBEB' : '#B0B0B0',
-          backgroundColor: disabled ? '#F7F7F7' : 'white',
+          borderColor: disabled ? "#EBEBEB" : "#B0B0B0",
+          backgroundColor: disabled ? "#F7F7F7" : "white",
         }}
       >
         <select
@@ -54,7 +54,7 @@ export const SelectInputTemplate: React.FC<SelectInputTemplateProps> = ({
           onFocus={() => setFieldActive(true)}
           onBlur={() => setFieldActive(false)}
           className={`h-full outline-none bg-transparent justify-between rounded-lg p-0 w-full block border-none text-sm font-light ${
-            disabled ? 'text-gray-200' : 'text-black'
+            disabled ? "text-gray-200" : "text-black"
           }`}
         >
           {inputTypes[inputType].default && (
@@ -72,7 +72,7 @@ export const SelectInputTemplate: React.FC<SelectInputTemplateProps> = ({
               variant="action"
               actionType="bottom"
               width={13}
-              fill={disabled ? '#DDDDDD' : 'black'}
+              fill={disabled ? "#DDDDDD" : "black"}
             />
           )}
         </div>

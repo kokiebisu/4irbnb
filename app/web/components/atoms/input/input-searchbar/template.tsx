@@ -1,22 +1,22 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
-export interface SearchbarInputTemplateProps {
+export type SearchbarInputTemplateProps = {
   inverse?: boolean;
   value?: string;
   onChange?: (e: any) => void;
-}
+};
 
-export const SearchbarInputTemplate: React.FC<SearchbarInputTemplateProps> = ({
+export const SearchbarInputTemplate = ({
   inverse,
   value,
   onChange,
-}) => {
+}: SearchbarInputTemplateProps): JSX.Element => {
   return (
     <div
       className={`${
         inverse
-          ? 'border border-gray-300 bg-gray-100'
-          : 'shadow-md border border-transparent'
+          ? "border border-gray-300 bg-gray-100"
+          : "shadow-md border border-transparent"
       } text-gray-700 rounded-full py-3 pl-6 pr-12 flex items-center`}
     >
       <div className="mr-4">

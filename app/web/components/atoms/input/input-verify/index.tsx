@@ -1,8 +1,8 @@
-import React from 'react';
-import { VerifyInputTemplate, VerifyInputTemplateProps } from './template';
+import React from "react";
+import { VerifyInputTemplate, VerifyInputTemplateProps } from "./template";
 
-export interface VerifyInputProps extends VerifyInputTemplateProps {}
+export type VerifyInputProps = VerifyInputTemplateProps;
 
-export const VerifyInput: React.FC<VerifyInputProps> = (props) => {
+export const VerifyInput = (props: VerifyInputProps): JSX.Element => {
   return <VerifyInputTemplate {...props} />;
 };

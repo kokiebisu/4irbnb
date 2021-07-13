@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import {
   SearchbarInputTemplate,
   SearchbarInputTemplateProps,
-} from './template';
+} from "./template";
 
-export interface SearchbarInputProps extends SearchbarInputTemplateProps {}
+export type SearchbarInputProps = SearchbarInputTemplateProps;
 
-export const SearchbarInput: React.FC<SearchbarInputProps> = (props) => {
+export const SearchbarInput = (props: SearchbarInputProps): JSX.Element => {
   return <SearchbarInputTemplate {...props} />;
 };
