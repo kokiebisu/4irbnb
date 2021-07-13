@@ -6,11 +6,17 @@ terraform {
     }
 }
 
+locals {
+  app_name = "nextbnb"
+}
+
 
 module "networking" {
     source = "./resources"
-    profile = "personal"
-    region = "us-east-1"
+
+    app_name = local.app_name
+    profile = var.profile
+    region = var.region
 }
 
 

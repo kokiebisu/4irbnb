@@ -3,5 +3,7 @@ resource "aws_vpc" "nextbnb-vpc" {
    instance_tenancy = "default"
    enable_dns_support = true
    enable_dns_hostnames = true
-   tags = var.vpc_tags
+   tags = {
+       Name = "${var.app_name}-vpc"
+   }
 }

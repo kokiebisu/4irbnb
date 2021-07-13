@@ -1,7 +1,3 @@
-variable "app_name" {
-    type = string
-}
-
 ### Provider
 variable "region" {
     type = string
