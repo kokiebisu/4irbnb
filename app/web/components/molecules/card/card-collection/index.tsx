@@ -1,13 +1,10 @@
-import { CollectionCardTemplate } from './template';
+import {
+  CollectionCardTemplate,
+  CollectionCardTemplateProps,
+} from "./template";
 
-export const CollectionCard = (props) => {
-  return <CollectionCardTemplate {...props} />;
-};
+export type CollectionCardProps = CollectionCardTemplateProps;
 
-export const collection = (props) => {
-  return {
-    collection: {
-      component: <CollectionCard {...props} />,
-    },
-  };
-};
+export const CollectionCard = (props: CollectionCardProps): JSX.Element => (
+  <CollectionCardTemplate {...props} />
+);

@@ -1,16 +1,16 @@
-export interface CollectionCardTemplateProps {
+export type CollectionCardTemplateProps = {
   label?: string;
   imgUrl?: string;
   paddingTop?: number;
-}
+};
 
-export const CollectionCardTemplate: React.FC<CollectionCardTemplateProps> = ({
-  label = 'Wellness in the New Year',
-  imgUrl = 'https://a0.muscache.com/im/pictures/67494b8d-129d-493b-94e7-6141b2b454e3.jpg?im_w=720',
+export const CollectionCardTemplate = ({
+  label = "Wellness in the New Year",
+  imgUrl = "https://a0.muscache.com/im/pictures/67494b8d-129d-493b-94e7-6141b2b454e3.jpg?im_w=720",
   paddingTop = 66,
-}) => {
+}: CollectionCardTemplateProps): JSX.Element => {
   return (
-    <div style={{ paddingTop: `${paddingTop}%`, position: 'relative' }}>
+    <div style={{ paddingTop: `${paddingTop}%`, position: "relative" }}>
       <div className="absolute top-0 bottom-0 left-0 right-0">
         <div className="h-full w-full relative">
           <div

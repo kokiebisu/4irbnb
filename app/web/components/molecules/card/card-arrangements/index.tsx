@@ -1,13 +1,10 @@
-import { ArrangementsCardTemplate } from './template';
+import {
+  ArrangementsCardTemplate,
+  ArrangementsCardTemplateProps,
+} from "./template";
 
-export const ArrangementsCard = (props) => {
+export type ArrangementsCardProps = ArrangementsCardTemplateProps;
+
+export const ArrangementsCard = (props: ArrangementsCardProps): JSX.Element => {
   return <ArrangementsCardTemplate {...props} />;
-};
-
-export const arrangements = (props) => {
-  return {
-    arrangements: {
-      component: <ArrangementsCard {...props} />,
-    },
-  };
 };

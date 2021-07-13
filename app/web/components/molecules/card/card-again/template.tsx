@@ -1,8 +1,8 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
-export interface AgainCardTemplateProps {}
+export type AgainCardTemplateProps = {};
 
-export const AgainCardTemplate: React.FC<AgainCardTemplateProps> = () => {
+export const AgainCardTemplate = (): JSX.Element => {
   return (
     <div className="rounded-lg border border-gray-300">
       <div className="p-4">

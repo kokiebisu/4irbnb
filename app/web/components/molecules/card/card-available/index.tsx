@@ -1,13 +1,7 @@
-import { AvailableCardTemplate } from './template';
+import { AvailableCardTemplate, AvailableCardTemplateProps } from "./template";
 
-const AvailableCard = (props) => {
-  return <AvailableCardTemplate {...props} />;
-};
+export type AvailableCardProps = AvailableCardTemplateProps;
 
-export const available = (props) => {
-  return {
-    available: {
-      component: <AvailableCard {...props} />,
-    },
-  };
-};
+const AvailableCard = (props: AvailableCardProps): JSX.Element => (
+  <AvailableCardTemplate {...props} />
+);

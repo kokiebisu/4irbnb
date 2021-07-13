@@ -1,16 +1,16 @@
-export interface AnywhereCardTemplateProps {
+export type AnywhereCardTemplateProps = {
   imgUrl?: string;
   title?: string;
-}
+};
 
 /** Renders the category card component
  * @param {string} imgUrl - Image of the card
  * @param {string} title - Title of the card
  */
-export const AnywhereCardTemplate: React.FC<AnywhereCardTemplateProps> = ({
+export const AnywhereCardTemplate = ({
   imgUrl,
   title,
-}) => {
+}: AnywhereCardTemplateProps): JSX.Element => {
   return (
     <div>
       <div className="relative pt-full">

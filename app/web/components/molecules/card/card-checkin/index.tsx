@@ -1,13 +1,7 @@
-import { CheckInCardTemplate } from './template';
+import { CheckInCardTemplate, CheckInCardTemplateProps } from "./template";
 
-export const CheckInCard = (props) => {
-  return <CheckInCardTemplate {...props} />;
-};
+export type CheckInCardProps = CheckInCardTemplateProps;
 
-export const checkin = (props) => {
-  return {
-    checkin: {
-      component: <CheckInCard {...props} />,
-    },
-  };
-};
+export const CheckInCard = (props: CheckInCardProps): JSX.Element => (
+  <CheckInCardTemplate {...props} />
+);
