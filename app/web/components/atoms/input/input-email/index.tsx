@@ -1,7 +1,7 @@
-import { EmailInputTemplate, EmailInputTemplateProps } from './template';
+import { EmailInputTemplate, EmailInputTemplateProps } from "./template";
 
-export interface EmailInputProps extends EmailInputTemplateProps {}
+export type EmailInputProps = EmailInputTemplateProps;
 
-export const EmailInput: React.FC<EmailInputProps> = (props) => {
+export const EmailInput = (props: EmailInputProps): JSX.Element => {
   return <EmailInputTemplate {...props} />;
 };

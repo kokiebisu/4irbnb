@@ -1,7 +1,7 @@
-import { NameInputTemplate, NameInputTemplateProps } from './template';
+import { NameInputTemplate, NameInputTemplateProps } from "./template";
 
-export interface NameInputProps extends NameInputTemplateProps {}
+export type NameInputProps = NameInputTemplateProps;
 
-export const NameInput: React.FC<NameInputProps> = (props) => {
+export const NameInput = (props: NameInputProps): JSX.Element => {
   return <NameInputTemplate {...props} />;
 };

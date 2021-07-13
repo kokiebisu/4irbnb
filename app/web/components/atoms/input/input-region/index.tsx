@@ -1,7 +1,7 @@
-import { RegionInputTemplate, RegionInputTemplateProps } from './template';
+import { RegionInputTemplate, RegionInputTemplateProps } from "./template";
 
-export interface RegionInputProps extends RegionInputTemplateProps {}
+export type RegionInputProps = RegionInputTemplateProps;
 
-export const RegionInput: React.FC<RegionInputProps> = (props) => {
+export const RegionInput = (props: RegionInputProps): JSX.Element => {
   return <RegionInputTemplate {...props} />;
 };

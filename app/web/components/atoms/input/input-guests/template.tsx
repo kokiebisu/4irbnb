@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-import { styleContainer } from '../styling.select';
-import { Icon } from '@atoms';
+import { styleContainer } from "../styling.select";
+import { Icon } from "@atoms";
 
-export interface GuestsInputTemplateProps {
+export type GuestsInputTemplateProps = {
   onChange?: (e: any) => void;
   value?: any;
-  direction?: undefined | 'top' | 'bottom';
+  direction?: undefined | "top" | "bottom";
   errors?: boolean;
-}
+};
 
 /**
  * Renders the text input component
@@ -19,22 +19,22 @@ export interface GuestsInputTemplateProps {
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const GuestsInputTemplate: React.FC<GuestsInputTemplateProps> = ({
+export const GuestsInputTemplate = ({
   onChange,
   value,
   direction,
   errors,
-}): JSX.Element => {
+}: GuestsInputTemplateProps): JSX.Element => {
   const [fieldActive, setFieldActive] = useState(false);
 
   const renderShape = () => {
     switch (direction) {
-      case 'top':
-        return 'border-b border-l border-r border-gray-400 rounded-b-lg';
-      case 'bottom':
-        return 'border-t border-l border-r border-gray-400 rounded-t-lg';
+      case "top":
+        return "border-b border-l border-r border-gray-400 rounded-b-lg";
+      case "bottom":
+        return "border-t border-l border-r border-gray-400 rounded-t-lg";
       default:
-        return 'border border-gray-400 rounded-lg';
+        return "border border-gray-400 rounded-lg";
     }
   };
 
@@ -48,7 +48,7 @@ export const GuestsInputTemplate: React.FC<GuestsInputTemplateProps> = ({
         )}`}
       >
         <select
-          style={{ height: '100%', outline: 'none' }}
+          style={{ height: "100%", outline: "none" }}
           id="guests"
           onChange={onChange}
           value={value}

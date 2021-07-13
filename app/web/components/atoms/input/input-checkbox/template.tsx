@@ -1,4 +1,4 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
 export interface CheckboxInputTemplateProps {
   onChange?: (e: any) => void;
@@ -7,19 +7,19 @@ export interface CheckboxInputTemplateProps {
   description?: string;
 }
 
-export const CheckboxInputTemplate: React.FC<CheckboxInputTemplateProps> = ({
+export const CheckboxInputTemplate = ({
   onChange,
   value,
   title,
   description,
-}) => {
+}: CheckboxInputTemplateProps): JSX.Element => {
   return (
     <div className="flex items-center">
       <div className="mr-5">
         <div
           onClick={onChange}
           className={`cursor-pointer h-6 w-6 flex items-center justify-center border rounded ${
-            value ? 'bg-black border-transparent' : 'bg-white border-gray-400 '
+            value ? "bg-black border-transparent" : "bg-white border-gray-400 "
           }`}
         >
           <div className="relative border-none">

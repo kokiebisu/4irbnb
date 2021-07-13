@@ -1,7 +1,7 @@
-import { PasswordInputTemplate, PasswordInputTemplateProps } from './template';
+import { PasswordInputTemplate, PasswordInputTemplateProps } from "./template";
 
-export interface PasswordInputProps extends PasswordInputTemplateProps {}
+export type PasswordInputProps = PasswordInputTemplateProps;
 
-export const PasswordInput: React.FC<PasswordInputProps> = (props) => {
+export const PasswordInput = (props: PasswordInputProps): JSX.Element => {
   return <PasswordInputTemplate {...props} />;
 };

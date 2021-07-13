@@ -1,8 +1,8 @@
-import React from 'react';
-import { PhotoInputTemplate, PhotoInputTemplateProps } from './template';
+import React from "react";
+import { PhotoInputTemplate, PhotoInputTemplateProps } from "./template";
 
-export interface PhotoInputProps extends PhotoInputTemplateProps {}
+export type PhotoInputProps = PhotoInputTemplateProps;
 
-export const PhotoInput: React.FC<PhotoInputProps> = (props) => {
+export const PhotoInput = (props: PhotoInputProps): JSX.Element => {
   return <PhotoInputTemplate {...props} />;
 };

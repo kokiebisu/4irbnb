@@ -1,16 +1,16 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
-export interface PhotoInputTemplateProps {
+export type PhotoInputTemplateProps = {
   onChange?: (e: any) => void;
-}
+};
 
 /**
  * Renders the text input component
  * @param {function} onChange - handles key press event
  */
-export const PhotoInputTemplate: React.FC<PhotoInputTemplateProps> = ({
+export const PhotoInputTemplate = ({
   onChange,
-}) => {
+}: PhotoInputTemplateProps): JSX.Element => {
   return (
     <div style={{ height: 350 }}>
       <form className="h-full">
