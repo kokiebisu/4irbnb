@@ -1,4 +1,4 @@
-export interface ReviewCardTemplateProps {
+export type ReviewCardTemplateProps = {
   imgUrl?: string;
   description?: string;
   commentedDate?: string;
@@ -6,14 +6,14 @@ export interface ReviewCardTemplateProps {
   renderDescription?: (description: string) => string;
   display?: boolean;
   handleDisplayChange?: () => boolean;
-}
+};
 
 /**
  * Renders the review card component
  * @param {string} imgUrl - Image of the review card
  * @param {string} user - Description of the review card
  */
-export const ReviewCardTemplate: React.FC<ReviewCardTemplateProps> = ({
+export const ReviewCardTemplate = ({
   imgUrl,
   user,
   description,
@@ -21,7 +21,7 @@ export const ReviewCardTemplate: React.FC<ReviewCardTemplateProps> = ({
   renderDescription,
   display,
   handleDisplayChange,
-}) => {
+}: ReviewCardTemplateProps): JSX.Element => {
   return (
     <div className="py-3">
       <div className="flex items-center pb-3">
@@ -40,7 +40,7 @@ export const ReviewCardTemplate: React.FC<ReviewCardTemplateProps> = ({
         </div>
       </div>
       <div className="my-3">
-        {display || description.split(' ').length < 75 ? (
+        {display || description.split(" ").length < 75 ? (
           <p className="font-thin leading-6">{description}</p>
         ) : (
           <p className="font-thin leading-6">

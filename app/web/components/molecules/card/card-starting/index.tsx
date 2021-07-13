@@ -1,13 +1,7 @@
-import { StartingCardTemplate } from './template';
+import { StartingCardTemplate, StartingCardTemplateProps } from "./template";
 
-const StartingCard = (props) => {
+export type StartingCardProps = StartingCardTemplateProps;
+
+export const StartingCard = (props: StartingCardProps): JSX.Element => {
   return <StartingCardTemplate {...props} />;
-};
-
-export const starting = (props) => {
-  return {
-    starting: {
-      component: <StartingCard {...props} />,
-    },
-  };
 };

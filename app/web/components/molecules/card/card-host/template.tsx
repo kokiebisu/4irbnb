@@ -1,12 +1,12 @@
-import Router from 'next/router';
-import { Button } from '@atoms';
+import Router from "next/router";
+import { Button } from "@atoms";
 
-export interface HostCardTemplateProps {
+export type HostCardTemplateProps = {
   imgUrl?: string;
   host?: string;
   stayType?: string;
   location?: string;
-}
+};
 
 /**
  * Renders the host card component
@@ -15,12 +15,12 @@ export interface HostCardTemplateProps {
  * @param {string} stayType - Type of stay
  * @param {string} location - Location of the stay
  */
-export const HostCardTemplate: React.FC<HostCardTemplateProps> = ({
+export const HostCardTemplate = ({
   imgUrl,
   host,
   stayType,
   location,
-}) => {
+}: HostCardTemplateProps): JSX.Element => {
   return (
     <div>
       <div className="">
@@ -50,7 +50,7 @@ export const HostCardTemplate: React.FC<HostCardTemplateProps> = ({
       </div>
       <div>
         <Button
-          onClick={() => Router.push('/')}
+          onClick={() => Router.push("/")}
           variant="underline"
           title={`Check out some ${stayType}s`}
         />

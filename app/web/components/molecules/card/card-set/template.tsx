@@ -1,8 +1,8 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
-export interface SetCardTemplateProps {}
+export type SetCardTemplateProps = {};
 
-export const SetCardTemplate: React.FC<SetCardTemplateProps> = () => {
+export const SetCardTemplate = (): JSX.Element => {
   return (
     <div className="rounded-lg border border-gray-300">
       <div className="w-full rounded-t-lg h-2 bg-green-600" />

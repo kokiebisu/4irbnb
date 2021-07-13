@@ -1,15 +1,9 @@
-import { useReviewCard } from './logic';
-import { ReviewCardTemplate } from './template';
+import { useReviewCard } from "./logic";
+import { ReviewCardTemplate, ReviewCardTemplateProps } from "./template";
 
-const ReviewCard = (props) => {
+export type ReviewCardProps = ReviewCardTemplateProps;
+
+export const ReviewCard = (props: ReviewCardProps): JSX.Element => {
   const data = useReviewCard();
-  return <ReviewCardTemplate {...props} {...data}/>;
-};
-
-export const review = (props) => {
-  return {
-    review: {
-      component: <ReviewCard {...props} />,
-    },
-  };
+  return <ReviewCardTemplate {...props} {...data} />;
 };
