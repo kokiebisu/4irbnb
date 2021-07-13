@@ -11,14 +11,8 @@ provider aws {
     region = "us-east-1"
 }
 
-resource "aws_vpc" "nextbnb-vpc" {
-   cidr_block = "10.0.0.0/16" 
-   instance_tenancy = "default"
-   enable_dns_support = true
-   enable_dns_hostnames = true
-   tags = {
-       Name = "nextbnb-vpc"
-   }
+module "vpc" {
+    source = "./netow"
 }
 
 resource "aws_default_route_table" "nextbnb-public-route-table" {
@@ -26,6 +20,11 @@ resource "aws_default_route_table" "nextbnb-public-route-table" {
 
     tags = {
         Name = "nextbnb-public-route-table"
+    }
+
+    route {
+        cidr_block = "0.0.0.0/0"
+        gateway_id = aws_internet_gateway.nextbnb-internet-gateway.id
     }
 }
 
@@ -35,6 +34,14 @@ resource "aws_route_table" "nextbnb-private-route-table" {
     tags = {
         Name = "nextbnb-private-route-table"
     }  
+}
+
+resource "aws_internet_gateway" "nextbnb-internet-gateway" {
+    vpc_id = aws_vpc.nextbnb-vpc.id
+
+    tags = {
+        Name = "nextbnb-internet-gateway"
+    }
 }
 
 resource "aws_route_table_association" "nextbnb-public-route-table" {
@@ -66,4 +73,3 @@ resource "aws_subnet" "private-subnet" {
         Name = "nextbnb-private-subnet"
     }
 }
-
