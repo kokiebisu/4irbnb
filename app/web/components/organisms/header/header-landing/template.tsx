@@ -1,14 +1,14 @@
-import { useRef, useState } from 'react';
-import Router from 'next/router';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Modal } from '@modal';
-import { Button } from '@atoms';
+import { useRef, useState } from "react";
+import Router from "next/router";
+import { AnimatePresence, motion } from "framer-motion";
+import { Modal } from "@modal";
+import { Button } from "@atoms";
 // import { Prototype } from '@prototype/searchbar';
 
-import { Icon } from '@atoms';
-import { useToggleDispatch, useToggleState } from '@context/toggle';
+import { Icon } from "@atoms";
+import { useToggleDispatch, useToggleState } from "@context/toggle";
 // import { Content } from '@atoms/button-transparent/content.transparent';
-import { useOnClickOutside } from '@hooks/useOnClickOutside';
+import { useOnClickOutside } from "@hooks/useOnClickOutside";
 
 export interface LandingHeaderTemplateProps {
   category?: any;
@@ -20,12 +20,12 @@ export interface LandingHeaderTemplateProps {
 /**
  * Renders the transparent header
  */
-export const LandingHeaderTemplate: React.FC<LandingHeaderTemplateProps> = ({
+export const LandingHeaderTemplate = ({
   data,
   category,
   setCategory,
   criteria,
-}) => {
+}: LandingHeaderTemplateProps): JSX.Element => {
   const toggleState = useToggleState();
   const searchbarRef = useRef();
   const [expanded, setExpanded] = useState(false);
@@ -33,59 +33,59 @@ export const LandingHeaderTemplate: React.FC<LandingHeaderTemplateProps> = ({
 
   useOnClickOutside(searchbarRef, () => {
     toggleDispatch({
-      type: 'toggle_reset',
+      type: "toggle_reset",
     });
     setExpanded(!expanded);
   });
 
   const types: { [type: string]: { title: string; onClick: any } } = {
     stay: {
-      title: 'Places to stay',
-      onClick: () => setCategory('stay'),
+      title: "Places to stay",
+      onClick: () => setCategory("stay"),
     },
     experiences: {
-      title: 'Experiences',
-      onClick: () => setCategory('experiences'),
+      title: "Experiences",
+      onClick: () => setCategory("experiences"),
     },
     online: {
-      title: 'Online Experiences',
-      onClick: () => Router.push('/s/experiences/online'),
+      title: "Online Experiences",
+      onClick: () => Router.push("/s/experiences/online"),
     },
   };
 
   return (
     <header
       className={`${
-        expanded ? 'pt-4 pb-32' : 'py-3'
+        expanded ? "pt-4 pb-32" : "py-3"
       } relative container-spread transition ease-in-out duration-100`}
     >
       <div className="md:none none md:flex justify-between relative">
         <div>
           <div className="mt-1 block lg:hidden">
             <Icon
-              variant={'logo'}
+              variant={"logo"}
               logoType="noName"
-              fill={criteria ? 'white' : 'red'}
+              fill={criteria ? "white" : "red"}
               width={30}
               height={32}
             />
           </div>
           <div className="hidden lg:block mt-1">
             <Icon
-              variant={'logo'}
+              variant={"logo"}
               logoType="name"
-              fill={criteria ? 'white' : 'red'}
+              fill={criteria ? "white" : "red"}
               width={102}
               height={32}
             />
           </div>
         </div>
         <div className="flex items-center">
-          <div className={`mx-1 ${[styles['searchbar__host']].join(' ')}`}>
+          <div className={`mx-1 ${[styles["searchbar__host"]].join(" ")}`}>
             <Button
               variant="transparent"
               inverse={criteria}
-              onClick={() => Router.push('/host/homes')}
+              onClick={() => Router.push("/host/homes")}
             >
               <Content kind="host" inverse={criteria} />
             </Button>
@@ -94,7 +94,7 @@ export const LandingHeaderTemplate: React.FC<LandingHeaderTemplateProps> = ({
             <Button
               variant="transparent"
               inverse={criteria}
-              onClick={() => toggleDispatch({ type: 'toggle_globe' })}
+              onClick={() => toggleDispatch({ type: "toggle_globe" })}
             >
               <Content kind="globe" inverse={criteria} />
             </Button>
@@ -104,7 +104,7 @@ export const LandingHeaderTemplate: React.FC<LandingHeaderTemplateProps> = ({
               variant="menu"
               inverse={criteria}
               authenticated={data}
-              onClick={() => toggleDispatch({ type: 'toggle_menu' })}
+              onClick={() => toggleDispatch({ type: "toggle_menu" })}
             />
           </div>
         </div>
@@ -121,8 +121,8 @@ export const LandingHeaderTemplate: React.FC<LandingHeaderTemplateProps> = ({
         className={`top-8/10 sm:top-2/10 px-6 hidden sm:block absolute w-full left-1/2 bottom-0 z-50`}
         style={{
           maxWidth: 760,
-          transform: 'translate(-50%, 0)',
-          height: 'fit-content',
+          transform: "translate(-50%, 0)",
+          height: "fit-content",
         }}
       >
         <AnimatePresence>
@@ -136,9 +136,9 @@ export const LandingHeaderTemplate: React.FC<LandingHeaderTemplateProps> = ({
                 width: 500,
                 opacity: 0,
               }}
-              transition={{ type: 'tween', duration: 0.2 }}
+              transition={{ type: "tween", duration: 0.2 }}
               initial={{ y: -100, scale: 0.3, opacity: 0, width: 500 }}
-              animate={{ y: 0, scale: 1, opacity: 1, width: 'auto' }}
+              animate={{ y: 0, scale: 1, opacity: 1, width: "auto" }}
             >
               <div className="relative">
                 <div className="mt-3 mb-4">
@@ -150,8 +150,8 @@ export const LandingHeaderTemplate: React.FC<LandingHeaderTemplateProps> = ({
                             <div
                               className={`pb-3 ${
                                 category === type
-                                  ? 'landing__bb--selected'
-                                  : 'landing__bb'
+                                  ? "landing__bb--selected"
+                                  : "landing__bb"
                               }`}
                             >
                               <p className="text-white text-xs md:text-md font-medium md:font-light">
@@ -186,11 +186,11 @@ export const LandingHeaderTemplate: React.FC<LandingHeaderTemplateProps> = ({
                         {Object.keys(types).map((type, index) => {
                           return (
                             <div key={index} className="mx-4">
-                              <button onClick={() => setCategory('stay')}>
+                              <button onClick={() => setCategory("stay")}>
                                 <div className="pb-3">
                                   <p
                                     className={`${
-                                      expanded ? 'text-black' : 'text-white'
+                                      expanded ? "text-black" : "text-white"
                                     } font-medium md:font-light text-xs md:text-md`}
                                   >
                                     {types[type].title}

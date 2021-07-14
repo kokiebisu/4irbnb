@@ -1,15 +1,11 @@
-import { useFooter } from './logic';
-import { FooterTemplate } from './template';
-
-export interface FooterProps {
-  spread?: boolean;
-}
+import { useFooter } from "./logic";
+import { FooterTemplate } from "./template";
 
 /**
  * Renders the footer
  * @param {boolean} spread - Whether if the layout should be spread out or not
  */
-export const Footer: React.FC<FooterProps> = () => {
+export const Footer = (): JSX.Element => {
   const data = useFooter();
   return <FooterTemplate {...data} />;
 };

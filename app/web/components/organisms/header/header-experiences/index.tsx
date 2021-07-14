@@ -1,19 +1,10 @@
 import {
   ExperiencesHeaderTemplate,
   ExperiencesHeaderTemplateProps,
-} from './template';
+} from "./template";
 
-export interface ExperiencesHeaderProps
-  extends ExperiencesHeaderTemplateProps {}
+export type ExperiencesHeaderProps = ExperiencesHeaderTemplateProps;
 
-export const ExperiencesHeader = (props) => {
+export const ExperiencesHeader = (props: ExperiencesHeaderProps) => {
   return <ExperiencesHeaderTemplate {...props} />;
-};
-
-export const experiences = (props) => {
-  return {
-    experiences: {
-      component: <ExperiencesHeader {...props} />,
-    },
-  };
 };

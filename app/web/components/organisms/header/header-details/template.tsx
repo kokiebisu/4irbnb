@@ -1,7 +1,7 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { Icon } from '@atoms';
-import { Button } from '@atoms';
-import { useHandleScroll } from '@hooks/useHandleScroll';
+import { AnimatePresence, motion } from "framer-motion";
+import { Icon } from "@atoms";
+import { Button } from "@atoms";
+import { useHandleScroll } from "@hooks/useHandleScroll";
 
 export interface DetailsHeaderTemplateProps {
   layoutType?: string;
@@ -13,29 +13,29 @@ export interface DetailsHeaderTemplateProps {
  * @param {stirng} layoutType - Type of layout
  * @param {boolean} spread - Whether if the layout should be spread out or not
  */
-export const DetailsHeaderTemplate: React.FC<DetailsHeaderTemplateProps> = ({
-  layoutType = 'room',
+export const DetailsHeaderTemplate = ({
+  layoutType = "room",
   spread = false,
-}) => {
+}: DetailsHeaderTemplateProps): JSX.Element => {
   const scrollPosition = useHandleScroll();
   const items =
-    layoutType === 'experience'
+    layoutType === "experience"
       ? [
-          { name: 'Photos' },
-          { name: 'Amenities' },
-          { name: 'Reviews' },
-          { name: 'Location' },
+          { name: "Photos" },
+          { name: "Amenities" },
+          { name: "Reviews" },
+          { name: "Location" },
         ]
       : [
-          { name: 'Overview' },
-          { name: 'The host' },
-          { name: 'Reviews' },
-          { name: 'Availability' },
+          { name: "Overview" },
+          { name: "The host" },
+          { name: "Reviews" },
+          { name: "Availability" },
         ];
-  const displayHeight = layoutType === 'room' ? 1000 : 1600;
+  const displayHeight = layoutType === "room" ? 1000 : 1600;
   return (
     <header style={{ height: 80 }} className="bg-white shadow-sm">
-      <div className={`${spread ? 'container-spread' : 'container'} h-full`}>
+      <div className={`${spread ? "container-spread" : "container"} h-full`}>
         <div className="h-full items-center justify-between relative hidden md:flex">
           <div className="flex items-center">
             {items.map((item, index) => {
@@ -43,7 +43,7 @@ export const DetailsHeaderTemplate: React.FC<DetailsHeaderTemplateProps> = ({
                 <div key={index} className="mr-4">
                   <button
                     className="text-sm block text-gray-700"
-                    onClick={() => alert('hello')}
+                    onClick={() => alert("hello")}
                   >
                     {item.name}
                   </button>
@@ -70,7 +70,7 @@ export const DetailsHeaderTemplate: React.FC<DetailsHeaderTemplateProps> = ({
                     >
                       <div className="inline-block mr-1">
                         <Icon
-                          variant={'profile'}
+                          variant={"profile"}
                           profileType="star"
                           width={10}
                         />
