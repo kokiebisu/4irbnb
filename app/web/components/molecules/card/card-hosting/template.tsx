@@ -1,14 +1,14 @@
-export interface HostingCardTemplateProps {
+export type HostingCardTemplateProps = {
   imgUrl?: string;
   title?: string;
   description?: string;
-}
+};
 
-export const HostingCardTemplate: React.FC<HostingCardTemplateProps> = ({
+export const HostingCardTemplate = ({
   imgUrl,
   title,
   description,
-}) => {
+}: HostingCardTemplateProps): JSX.Element => {
   return (
     <div className="sm:w-64 w-full">
       <div className="">
@@ -31,7 +31,7 @@ export const HostingCardTemplate: React.FC<HostingCardTemplateProps> = ({
         )}
       </div>
       <div className="my-4">
-        <h2 className="text-xl">{title || 'Title here'}</h2>
+        <h2 className="text-xl">{title || "Title here"}</h2>
       </div>
       <div>
         <h4 className="tracking-wide text-base">

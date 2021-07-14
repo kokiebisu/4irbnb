@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { styleInput, styleLabel, styleContainer } from '../styling.text';
-import { Button } from '@atoms';
-import { checkPassword } from '@helper/auth';
+import { useState } from "react";
+import { styleInput, styleLabel, styleContainer } from "../styling.text";
+import { Button } from "@atoms";
+import { checkPassword } from "@helper/auth";
 
-export interface PasswordInputTemplateProps {
+export type PasswordInputTemplateProps = {
   onChange?: (e: any) => void;
   value?: any;
-  direction?: 'top' | 'bottom' | undefined;
+  direction?: "top" | "bottom" | undefined;
   errors?: boolean;
-}
+};
 
 /**
  * Renders the text input component
@@ -19,12 +19,12 @@ export interface PasswordInputTemplateProps {
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const PasswordInputTemplate: React.FC<PasswordInputTemplateProps> = ({
+export const PasswordInputTemplate = ({
   onChange,
   value,
   direction,
   errors,
-}) => {
+}: PasswordInputTemplateProps): JSX.Element => {
   const [fieldActive, setFieldActive] = useState(false);
   const [hide, setHide] = useState(true);
 
@@ -50,7 +50,7 @@ export const PasswordInputTemplate: React.FC<PasswordInputTemplateProps> = ({
           autoFocus={true}
           id="password"
           name="password"
-          type={hide ? 'password' : 'text'}
+          type={hide ? "password" : "text"}
           onChange={onChange}
           value={value}
           onFocus={activateField}
@@ -60,7 +60,7 @@ export const PasswordInputTemplate: React.FC<PasswordInputTemplateProps> = ({
             fieldActive,
             checkPassword(value)
           )}`}
-          placeholder={fieldActive ? 'Password' : undefined}
+          placeholder={fieldActive ? "Password" : undefined}
         />
         <label
           htmlFor="password"
@@ -79,7 +79,7 @@ export const PasswordInputTemplate: React.FC<PasswordInputTemplateProps> = ({
           variant="underline"
           onClick={() => setHide((prevHide) => !prevHide)}
           font={13}
-          title={hide ? 'Show' : 'Hide'}
+          title={hide ? "Show" : "Hide"}
         />
       </div>
     </div>

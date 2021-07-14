@@ -7,10 +7,10 @@ export interface TypeStayCardTemplateProps {
  * Renders the typestay card
  * @param {Object} card - Information about the card
  */
-export const TypeStayCardTemplate: React.FC<TypeStayCardTemplateProps> = ({
+export const TypeStayCardTemplate = ({
   title,
   imgUrl,
-}) => {
+}: TypeStayCardTemplateProps) => {
   return (
     <div className="block h-full w-full mr-2">
       <div className="rounded-lg shadow-sm">

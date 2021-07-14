@@ -1,19 +1,13 @@
-import { useFiltersBar } from './logic';
-import { FiltersBarTemplate } from './template';
+import { useFiltersBar } from "./logic";
+import { FiltersBarTemplate, FiltersBarTemplateProps } from "./template";
 
-const FiltersBar = (props) => {
+export type FiltersBarProps = FiltersBarTemplateProps;
+
+export const FiltersBar = (props: FiltersBarProps): JSX.Element => {
   const data = useFiltersBar();
   return (
     <div data-testid="bar-filters--organism">
       <FiltersBarTemplate {...props} {...data} />
     </div>
   );
-};
-
-export const filters = (props) => {
-  return {
-    filters: {
-      component: <FiltersBar {...props} />,
-    },
-  };
 };

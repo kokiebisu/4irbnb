@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { styleLabel, styleContainer, styleInput } from '../styling.text';
+import { useState } from "react";
+import { styleLabel, styleContainer, styleInput } from "../styling.text";
 
-export interface PhoneInputTemplateProps {
+export interface PhoneNumberInputTemplateProps {
   onChange?: (e: any) => void;
   value?: any;
-  direction?: 'top' | 'bottom' | undefined;
+  direction?: "top" | "bottom" | undefined;
   errors?: boolean;
 }
 
@@ -17,12 +17,12 @@ export interface PhoneInputTemplateProps {
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const PhoneInputTemplate: React.FC<PhoneInputTemplateProps> = ({
+export const PhoneNumberInputTemplate = ({
   onChange,
   value,
   direction,
   errors,
-}) => {
+}: PhoneNumberInputTemplateProps): JSX.Element => {
   const [fieldActive, setFieldActive] = useState(false);
 
   const activateField = () => {
@@ -58,7 +58,7 @@ export const PhoneInputTemplate: React.FC<PhoneInputTemplateProps> = ({
             fieldActive,
             value
           )}`}
-          placeholder={fieldActive ? '090-999-9999' : undefined}
+          placeholder={fieldActive ? "090-999-9999" : undefined}
         />
         <label
           htmlFor="tel"

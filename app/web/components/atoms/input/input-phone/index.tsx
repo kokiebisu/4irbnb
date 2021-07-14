@@ -1,8 +1,11 @@
-import React from 'react';
-import { PhoneInputTemplate, PhoneInputTemplateProps } from './template';
+import React from "react";
+import {
+  PhoneNumberInputTemplate,
+  PhoneNumberInputTemplateProps,
+} from "./template";
 
-export interface PhoneInputProps extends PhoneInputTemplateProps {}
+export type PhoneInputProps = PhoneNumberInputTemplateProps;
 
-export const PhoneInput: React.FC<PhoneInputProps> = (props) => {
-  return <PhoneInputTemplate {...props} />;
-};
+export const PhoneNumberInput = (props: PhoneInputProps): JSX.Element => (
+  <PhoneNumberInputTemplate {...props} />
+);

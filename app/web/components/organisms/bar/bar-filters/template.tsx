@@ -1,5 +1,5 @@
-import { Button } from '@atoms';
-import { useFiltersBarInteraction } from './interaction';
+import { Button } from "@atoms";
+import { useFiltersBarInteraction } from "./interaction";
 
 export interface FiltersBarTemplateProps {
   state?: {
@@ -18,10 +18,10 @@ export interface FiltersBarTemplateProps {
  * @param param0
  * @returns
  */
-export const FiltersBarTemplate: React.FC<FiltersBarTemplateProps> = ({
+export const FiltersBarTemplate = ({
   primaryFilters,
   secondaryFilters,
-}) => {
+}: FiltersBarTemplateProps): JSX.Element => {
   const {
     containerRef,
     state,
@@ -46,7 +46,7 @@ export const FiltersBarTemplate: React.FC<FiltersBarTemplateProps> = ({
             className="absolute h-full left-0 top-0 z-40 w-24 flex items-center"
             style={{
               backgroundImage:
-                'linear-gradient(to right, rgb(255, 255, 255) 56.77%, rgba(255, 255, 255, 0) 94.47%)',
+                "linear-gradient(to right, rgb(255, 255, 255) 56.77%, rgba(255, 255, 255, 0) 94.47%)",
             }}
           >
             <Button
@@ -85,7 +85,7 @@ export const FiltersBarTemplate: React.FC<FiltersBarTemplateProps> = ({
             className="h-full absolute right-0 top-0 z-40 w-24 flex justify-end items-center"
             style={{
               backgroundImage:
-                'linear-gradient(to left, rgb(255, 255, 255) 56.77%, rgba(255, 255, 255, 0) 94.47%)',
+                "linear-gradient(to left, rgb(255, 255, 255) 56.77%, rgba(255, 255, 255, 0) 94.47%)",
             }}
           >
             <Button

@@ -1,5 +1,5 @@
-import { Button } from '@atoms';
-import { Icon } from '@atoms';
+import { Button } from "@atoms";
+import { Icon } from "@atoms";
 
 export interface FooterTemplateProps {
   spread?: boolean;
@@ -7,14 +7,14 @@ export interface FooterTemplateProps {
   items?: { name: string; items: { url?: string; name?: string }[] }[];
 }
 
-export const FooterTemplate: React.FC<FooterTemplateProps> = ({
+export const FooterTemplate = ({
   spread,
   handleRedirectToPath,
   items,
-}) => {
+}: FooterTemplateProps) => {
   return (
     <footer className="border-t border-gray-300 py-6 bg-gray-300">
-      <div className={spread ? 'container-spread' : 'container'}>
+      <div className={spread ? "container-spread" : "container"}>
         <div className="border-b border-gray-300 md:flex">
           {items.map((section, index) => {
             return (
@@ -66,7 +66,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
                 <Button
                   variant="link"
                   title="Privacy"
-                  onClick={() => handleRedirectToPath('/')}
+                  onClick={() => handleRedirectToPath("/")}
                 />
               </div>
               <div>&nbsp;· &nbsp;</div>
@@ -74,7 +74,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
                 <Button
                   variant="link"
                   title="Terms"
-                  onClick={() => handleRedirectToPath('/')}
+                  onClick={() => handleRedirectToPath("/")}
                 />
               </div>
               <div>&nbsp;· &nbsp;</div>
@@ -82,7 +82,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
                 <Button
                   variant="link"
                   title="Sitemap"
-                  onClick={() => handleRedirectToPath('/')}
+                  onClick={() => handleRedirectToPath("/")}
                 />
               </div>
             </div>

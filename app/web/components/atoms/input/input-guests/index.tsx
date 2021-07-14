@@ -1,7 +1,7 @@
-import { GuestsInputTemplate, GuestsInputTemplateProps } from './template';
+import { GuestsInputTemplate, GuestsInputTemplateProps } from "./template";
 
-export interface GuestsInputProps extends GuestsInputTemplateProps {}
+export type GuestsInputProps = GuestsInputTemplateProps;
 
-export const GuestsInput: React.FC<GuestsInputProps> = (props) => {
+export const GuestsInput = (props: GuestsInputProps): JSX.Element => {
   return <GuestsInputTemplate {...props} />;
 };

@@ -1,10 +1,12 @@
 import {
   CurrencyButtonTemplate,
   CurrencyButtonTemplateProps,
-} from './template';
+} from "./template";
 
-export interface CurrencyButtonProps extends CurrencyButtonTemplateProps {}
+export type CurrencyButtonProps = CurrencyButtonTemplateProps;
 
-export const CurrencyButton: React.FC<CurrencyButtonProps> = ({ ...props }) => {
+export const CurrencyButton = ({
+  ...props
+}: CurrencyButtonProps): JSX.Element => {
   return <CurrencyButtonTemplate {...props} />;
 };

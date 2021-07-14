@@ -1,7 +1,7 @@
-import { Icon } from '@atoms';
-import { Bullet } from '@atoms';
-import { ImageSlider } from '../../../particles/particle-slider/template';
-import { Card, $Card } from '@card';
+import { Icon } from "@atoms";
+import { Bullet } from "@atoms";
+import { ImageSlider } from "../../../particles/particle-slider/template";
+import { Card, $Card } from "@card";
 
 export interface StayCardTemplateProps {
   images?: string[];
@@ -28,14 +28,14 @@ export interface StayCardTemplateProps {
  * @param {Object} accomodations - Information about the accomodations of the stay
  * @param {string[]} characteristics - List of characteristics
  */
-export const StayCardTemplate: React.FC<StayCardTemplateProps> = ({
+export const StayCardTemplate = ({
   images,
   typeStay,
   location,
   title,
   accomodations,
   characteristics,
-}) => {
+}: StayCardTemplateProps): JSX.Element => {
   return (
     <div>
       <div className="sm:hidden sm:mb-8">

@@ -1,15 +1,15 @@
-import { useState } from 'react';
-import { Button } from '@atoms';
+import { useState } from "react";
+import { Button } from "@atoms";
 
-export interface VerifyInputTemplateProps {
+export type VerifyInputTemplateProps = {
   value?: any;
   onChange?: (e: any) => void;
-}
+};
 
-export const VerifyInputTemplate: React.FC<VerifyInputTemplateProps> = ({
+export const VerifyInputTemplate = ({
   value,
   onChange,
-}) => {
+}: VerifyInputTemplateProps): JSX.Element => {
   const [active, setActive] = useState(false);
 
   const renderBorder = () => {
@@ -17,9 +17,9 @@ export const VerifyInputTemplate: React.FC<VerifyInputTemplateProps> = ({
     //   return animation["border--warning"];
     // }
     if (active) {
-      return 'transition-colors focus:border-green-600 ease-in-out duration-300';
+      return "transition-colors focus:border-green-600 ease-in-out duration-300";
     }
-    return 'border border-gray-300';
+    return "border border-gray-300";
   };
 
   const renderBackground = () => {
@@ -27,16 +27,16 @@ export const VerifyInputTemplate: React.FC<VerifyInputTemplateProps> = ({
     //   return animation["background--lightred__0"];
     // }
     if (active) {
-      return 'transition-colors bg-white ease-in-out';
+      return "transition-colors bg-white ease-in-out";
     }
-    return '';
+    return "";
   };
 
   const renderColor = () => {
     // if (value.length > 0 && !valid) {
     //   return animation["c--warning"];
     // }
-    return 'transition-colors text-green-800 ease-in-out';
+    return "transition-colors text-green-800 ease-in-out";
   };
 
   return (
@@ -56,7 +56,7 @@ export const VerifyInputTemplate: React.FC<VerifyInputTemplateProps> = ({
           }}
         />
         <div className="absolute top-1/2 transform -translate-y-1/2 right-4">
-          <Button variant="verify" onClick={() => alert('verify')} />
+          <Button variant="verify" onClick={() => alert("verify")} />
         </div>
       </div>
     </div>

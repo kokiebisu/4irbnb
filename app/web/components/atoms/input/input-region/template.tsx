@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { styleInput, styleLabel, styleContainer } from '../styling.select';
-import { renderShape } from '../logic/logic.region';
+import { useState } from "react";
+import { styleInput, styleLabel, styleContainer } from "../styling.select";
+import { renderShape } from "../logic/logic.region";
 
-export interface RegionInputTemplateProps {
+export type RegionInputTemplateProps = {
   onChange?: (e: any) => void;
   value?: any;
-  direction?: 'top' | 'bottom' | undefined;
+  direction?: "top" | "bottom" | undefined;
   errors?: boolean;
-}
+};
 
 /**
  * Renders the text input component
@@ -18,12 +18,12 @@ export interface RegionInputTemplateProps {
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const RegionInputTemplate: React.FC<RegionInputTemplateProps> = ({
+export const RegionInputTemplate = ({
   onChange,
   value,
   direction,
   errors,
-}) => {
+}: RegionInputTemplateProps): JSX.Element => {
   const [fieldActive, setFieldActive] = useState(false);
 
   return (

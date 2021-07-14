@@ -1,12 +1,12 @@
-import { useRef, useState } from 'react';
-import { Icon } from '@atoms';
-import useOnClickOutside from '@hooks/useOnClickOutside';
+import { useRef, useState } from "react";
+import { Icon } from "@atoms";
+import useOnClickOutside from "@hooks/useOnClickOutside";
 
-export interface PlaceInputTemplateProps {
+export type PlaceInputTemplateProps = {
   value?: any;
-  direction?: 'top' | 'bottom' | undefined;
+  direction?: "top" | "bottom" | undefined;
   onChange?: (e: any) => void;
-}
+};
 
 /**
  * Renders the text input component
@@ -17,11 +17,11 @@ export interface PlaceInputTemplateProps {
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const PlaceInputTemplate: React.FC<PlaceInputTemplateProps> = ({
+export const PlaceInputTemplate = ({
   value,
   direction,
   onChange,
-}) => {
+}: PlaceInputTemplateProps): JSX.Element => {
   const containerRef = useRef();
   const [expanded, setExpanded] = useState(false);
   useOnClickOutside(containerRef, () => {
@@ -32,12 +32,12 @@ export const PlaceInputTemplate: React.FC<PlaceInputTemplateProps> = ({
 
   const renderShape = () => {
     switch (direction) {
-      case 'top':
-        return 'border-b border-l border-r border-gray-400 rounded-b-lg';
-      case 'bottom':
-        return 'border-t border-l border-r border-gray-400 rounded-t-lg';
+      case "top":
+        return "border-b border-l border-r border-gray-400 rounded-b-lg";
+      case "bottom":
+        return "border-t border-l border-r border-gray-400 rounded-t-lg";
       default:
-        return 'border border-gray-400 rounded-lg';
+        return "border border-gray-400 rounded-lg";
     }
   };
 
@@ -49,7 +49,7 @@ export const PlaceInputTemplate: React.FC<PlaceInputTemplateProps> = ({
     >
       <div
         className={`relative h-full w-full ${renderShape()} ${
-          expanded && 'border-2 border-black'
+          expanded && "border-2 border-black"
         }`}
       >
         <div
@@ -84,7 +84,7 @@ export const PlaceInputTemplate: React.FC<PlaceInputTemplateProps> = ({
                 <div
                   className="p-3 flex items-center cursor-pointer h-full justify-between bg-transparent"
                   onClick={() => {
-                    onChange('Entire place');
+                    onChange("Entire place");
                     setExpanded(!expanded);
                   }}
                 >
@@ -100,7 +100,7 @@ export const PlaceInputTemplate: React.FC<PlaceInputTemplateProps> = ({
                       </p>
                     </div>
                   </div>
-                  {value === 'Entire place' && (
+                  {value === "Entire place" && (
                     <div className="flex items-center">
                       <Icon
                         variant="semantic"
@@ -115,7 +115,7 @@ export const PlaceInputTemplate: React.FC<PlaceInputTemplateProps> = ({
                 <div
                   className="p-3 flex items-center cursor-pointer h-full bg-transparent"
                   onClick={() => {
-                    onChange('Private room');
+                    onChange("Private room");
                     setExpanded(!expanded);
                   }}
                 >
@@ -130,7 +130,7 @@ export const PlaceInputTemplate: React.FC<PlaceInputTemplateProps> = ({
                       </p>
                     </div>
                   </div>
-                  {value === 'Private room' && (
+                  {value === "Private room" && (
                     <div className="flex items-center">
                       <Icon
                         variant="semantic"
@@ -145,7 +145,7 @@ export const PlaceInputTemplate: React.FC<PlaceInputTemplateProps> = ({
                 <div
                   className="p-3 flex items-center cursor-pointer h-full bg-transparent"
                   onClick={() => {
-                    onChange('Shared room');
+                    onChange("Shared room");
                     setExpanded(!expanded);
                   }}
                 >
@@ -160,7 +160,7 @@ export const PlaceInputTemplate: React.FC<PlaceInputTemplateProps> = ({
                       </p>
                     </div>
                   </div>
-                  {value === 'Shared room' && (
+                  {value === "Shared room" && (
                     <div className="flex items-center">
                       <Icon
                         variant="semantic"

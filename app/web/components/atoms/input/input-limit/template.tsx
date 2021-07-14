@@ -1,49 +1,49 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-export interface LimitInputTemplateProps {
+export type LimitInputTemplateProps = {
   value?: any;
   onChange?: (e: any) => void;
   limit?: number;
-}
+};
 
-export const LimitInputTemplate: React.FC<LimitInputTemplateProps> = ({
+export const LimitInputTemplate = ({
   value,
   onChange,
   limit,
-}) => {
+}: LimitInputTemplateProps): JSX.Element => {
   const [active, setActive] = useState(false);
 
   const renderBorder = () => {
     if (value.length >= limit) {
       // return animation['border--warning'];
-      return 'transition-colors border-red-500 ease-in-out';
+      return "transition-colors border-red-500 ease-in-out";
     }
     if (active) {
       // return animation['focus-border--darkgreen__3'];
-      return 'transition-colors focus:border-green-600 ease-in-out duration-300';
+      return "transition-colors focus:border-green-600 ease-in-out duration-300";
     }
-    return '';
+    return "";
   };
 
   const renderBackground = () => {
     if (value.length >= limit) {
       // return animation['background--lightred__0'];
-      return 'transition-colors bg-red-50 ease-in-out';
+      return "transition-colors bg-red-50 ease-in-out";
     }
     if (active) {
       // return animation['background--white'];
-      return 'transition-colors bg-white ease-in-out';
+      return "transition-colors bg-white ease-in-out";
     }
-    return '';
+    return "";
   };
 
   const renderColor = () => {
     if (value.length >= limit) {
       // return animation['c--warning'];
-      return 'transition-colors text-red-500 ease-in-out';
+      return "transition-colors text-red-500 ease-in-out";
     }
     // return animation['c--darkgreen__3'];
-    return 'transition-colors text-green-800 ease-in-out';
+    return "transition-colors text-green-800 ease-in-out";
   };
 
   return (

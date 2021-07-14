@@ -1,7 +1,7 @@
-import { FilterButtonTemplate, FilterButtonTemplateProps } from './template';
+import { FilterButtonTemplate, FilterButtonTemplateProps } from "./template";
 
-export interface FilterButtonProps extends FilterButtonTemplateProps {}
+export type FilterButtonProps = FilterButtonTemplateProps;
 
-export const FilterButton: React.FC<FilterButtonProps> = (props) => {
+export const FilterButton = (props: FilterButtonProps): JSX.Element => {
   return <FilterButtonTemplate {...props} />;
 };

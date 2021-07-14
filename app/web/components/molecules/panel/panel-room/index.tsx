@@ -1,13 +1,7 @@
-import { RoomPanelTemplate } from './template';
+import { RoomPanelTemplate, RoomPanelTemplateProps } from "./template";
 
-export const RoomPanel = (props) => {
+export type RoomPanelProps = RoomPanelTemplateProps;
+
+export const RoomPanel = (props: RoomPanelProps): JSX.Element => {
   return <RoomPanelTemplate {...props} />;
-};
-
-export const room = (props) => {
-  return {
-    room: {
-      component: <RoomPanel {...props} />,
-    },
-  };
 };

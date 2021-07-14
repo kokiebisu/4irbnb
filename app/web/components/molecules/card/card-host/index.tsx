@@ -1,13 +1,7 @@
-import { HostCardTemplate } from './template';
+import { HostCardTemplate, HostCardTemplateProps } from "./template";
 
-export const HostCard = (props) => {
+export type HostCardProps = HostCardTemplateProps;
+
+export const HostCard = (props: HostCardProps): JSX.Element => {
   return <HostCardTemplate {...props} />;
-};
-
-export const host = (props) => {
-  return {
-    host: {
-      component: <HostCard {...props} />,
-    },
-  };
 };

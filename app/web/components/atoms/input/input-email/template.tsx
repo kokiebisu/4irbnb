@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { styleInput, styleLabel, styleContainer } from '../styling.text';
-import { checkEmail } from '@helper/auth';
+import { useState } from "react";
+import { styleInput, styleLabel, styleContainer } from "../styling.text";
+import { checkEmail } from "@helper/auth";
 
-export interface EmailInputTemplateProps {
+export type EmailInputTemplateProps = {
   onChange?: (e: any) => void;
   value?: any;
-  direction?: 'top' | 'bottom';
+  direction?: "top" | "bottom";
   errors?: boolean;
-}
+};
 
 /**
  * Renders the text input component
@@ -18,12 +18,12 @@ export interface EmailInputTemplateProps {
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const EmailInputTemplate: React.FC<EmailInputTemplateProps> = ({
+export const EmailInputTemplate = ({
   onChange,
   value,
   direction,
   errors,
-}) => {
+}: EmailInputTemplateProps): JSX.Element => {
   const [fieldActive, setFieldActive] = useState(false);
 
   const activateField = () => {
@@ -58,7 +58,7 @@ export const EmailInputTemplate: React.FC<EmailInputTemplateProps> = ({
             fieldActive,
             checkEmail(value)
           )}`}
-          placeholder={fieldActive ? 'Email' : undefined}
+          placeholder={fieldActive ? "Email" : undefined}
         />
         <label
           htmlFor="email"

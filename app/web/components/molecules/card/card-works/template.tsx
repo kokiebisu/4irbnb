@@ -4,11 +4,11 @@ export interface WorksCardTemplateProps {
   description?: string;
 }
 
-export const WorksCardTemplate: React.FC<WorksCardTemplateProps> = ({
+export const WorksCardTemplate = ({
   imgUrl,
   title,
   description,
-}) => {
+}: WorksCardTemplateProps): JSX.Element => {
   return (
     <div>
       <div className="block sm:flex items-center">

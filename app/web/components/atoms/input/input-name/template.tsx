@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { styleLabel, styleContainer, styleInput } from '../styling.text';
+import { useState } from "react";
+import { styleLabel, styleContainer, styleInput } from "../styling.text";
 
-export interface NameInputTemplateProps {
+export type NameInputTemplateProps = {
   onChange?: (e: any) => void;
   value?: any;
-  direction?: 'top' | 'bottom' | undefined;
+  direction?: "top" | "bottom" | undefined;
   name?: string;
   errors?: boolean;
-}
+};
 
 /**
  * Renders the text input component
@@ -18,16 +18,16 @@ export interface NameInputTemplateProps {
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const NameInputTemplate: React.FC<NameInputTemplateProps> = ({
+export const NameInputTemplate = ({
   onChange,
   value,
   direction,
   name,
   errors,
-}) => {
+}: NameInputTemplateProps): JSX.Element => {
   const names = {
-    firstname: 'First name',
-    lastname: 'Last name',
+    firstname: "First name",
+    lastname: "Last name",
   };
   const [fieldActive, setFieldActive] = useState(false);
 

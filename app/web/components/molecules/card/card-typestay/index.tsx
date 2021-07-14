@@ -1,13 +1,7 @@
-import { TypeStayCardTemplate } from './template';
+import { TypeStayCardTemplate, TypeStayCardTemplateProps } from "./template";
 
-const TypeStayCard = (props) => {
+export type TypeStayCardProps = TypeStayCardTemplateProps;
+
+const TypeStayCard = (props: TypeStayCardProps): JSX.Element => {
   return <TypeStayCardTemplate {...props} />;
-};
-
-export const typestay = (props) => {
-  return {
-    typestay: {
-      component: <TypeStayCard {...props} />,
-    },
-  };
 };

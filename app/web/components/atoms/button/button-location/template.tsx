@@ -12,12 +12,12 @@ export type LocationButtonTemplateProps = {
  * @param from
  * @param to
  */
-export const LocationButtonTemplate: React.FC<LocationButtonTemplateProps> = ({
+export const LocationButtonTemplate = ({
   icon,
   title,
   description,
   onClick,
-}) => {
+}: LocationButtonTemplateProps): JSX.Element => {
   return (
     <button
       data-testid="location-button"

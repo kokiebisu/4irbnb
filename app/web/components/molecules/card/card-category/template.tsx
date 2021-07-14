@@ -1,19 +1,19 @@
-export interface CategoryCardTemplateProps {
+export type CategoryCardTemplateProps = {
   imgUrl?: string;
   title?: string;
-}
+};
 
 /** Renders the category card component
  * @param {string} imgUrl - Image of the card
  * @param {string} title - Title of the card
  */
-export const CategoryCardTemplate: React.FC<CategoryCardTemplateProps> = ({
+export const CategoryCardTemplate = ({
   imgUrl,
   title,
-}) => {
+}: CategoryCardTemplateProps): JSX.Element => {
   return (
     <div>
-      <div className="relative" style={{ paddingTop: '66.66%' }}>
+      <div className="relative" style={{ paddingTop: "66.66%" }}>
         <div className="absolute top-0 bottom-0 right-0 left-0">
           <div className=" w-full h-full">
             {imgUrl ? (

@@ -1,17 +1,11 @@
-import { CovidBarTemplate } from './template';
+import { CovidBarTemplate, CovidBarTemplateProps } from "./template";
 
-const CovidBar = (props) => {
+export type CovidBarProps = CovidBarTemplateProps;
+
+const CovidBar = (props: CovidBarProps): JSX.Element => {
   return (
     <div data-testid="bar-covid--organism">
       <CovidBarTemplate {...props} />
     </div>
   );
-};
-
-export const covid = (props) => {
-  return {
-    covid: {
-      component: <CovidBar {...props} />,
-    },
-  };
 };

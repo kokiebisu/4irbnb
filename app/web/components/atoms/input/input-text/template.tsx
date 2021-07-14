@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { useTextInputAppearance } from './appearance';
+import { useState } from "react";
+import { useTextInputAppearance } from "./appearance";
 
-export interface TextInputTemplateProps {
+export type TextInputTemplateProps = {
   name?: string;
   placeholder?: string;
   onChange?: (e: any) => void;
   value?: any;
-  direction?: 'top' | 'bottom' | undefined;
-}
+  direction?: "top" | "bottom" | undefined;
+};
 
 /**
  * Renders the text input component
@@ -17,19 +17,19 @@ export interface TextInputTemplateProps {
  * @param {string} value - Current value of the input
  * @param {string} direction - direction in which the input if attached to another
  */
-export const TextInputTemplate: React.FC<TextInputTemplateProps> = ({
+export const TextInputTemplate = ({
   name,
   onChange,
   value,
   direction,
   placeholder,
-}) => {
+}: TextInputTemplateProps): JSX.Element => {
   const { dynamicStyle } = useTextInputAppearance({ direction });
   const [active, setActive] = useState(false);
   return (
     <div
       className={`h-16 relative py-2 px-4 items-center ${dynamicStyle} ${
-        active ? 'border-2 border-black' : 'border border-gray-800'
+        active ? "border-2 border-black" : "border border-gray-800"
       }`}
     >
       <div className="relative h-full w-full flex items-center">

@@ -1,13 +1,7 @@
-import { HowCardTemplate } from './template';
+import { HowCardTemplate, HowCardTemplateProps } from "./template";
 
-const HowCard = (props) => {
-  return <HowCardTemplate {...props} />;
-};
+export type HowCardProps = HowCardTemplateProps;
 
-export const how = (props) => {
-  return {
-    how: {
-      component: <HowCard {...props} />,
-    },
-  };
-};
+const HowCard = (props: HowCardProps): JSX.Element => (
+  <HowCardTemplate {...props} />
+);

@@ -1,13 +1,7 @@
-import { SetCardTemplate } from './template';
+import { SetCardTemplate, SetCardTemplateProps } from "./template";
 
-const SetCard = (props) => {
-  return <SetCardTemplate {...props} />;
-};
+export type SetCardProps = SetCardTemplateProps;
 
-export const set = (props) => {
-  return {
-    set: {
-      component: <SetCard {...props} />,
-    },
-  };
-};
+export const SetCard = (props: SetCardProps): JSX.Element => (
+  <SetCardTemplate {...props} />
+);

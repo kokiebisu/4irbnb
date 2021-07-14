@@ -1,5 +1,5 @@
-import Router from 'next/router';
-import { Button } from '@atoms';
+import Router from "next/router";
+import { Button } from "@atoms";
 
 export interface PaginateBarTemplateProps {
   page?: number;
@@ -11,10 +11,10 @@ export interface PaginateBarTemplateProps {
  * @param {number} page - Current page
  * @param {number} total - Total number of pages
  */
-export const PaginateBarTemplate: React.FC<PaginateBarTemplateProps> = ({
+export const PaginateBarTemplate = ({
   page,
   total,
-}) => {
+}: PaginateBarTemplateProps): JSX.Element => {
   const displayContent = () => {
     if (page > 4 && page + 3 < total) {
       return (
@@ -22,8 +22,8 @@ export const PaginateBarTemplate: React.FC<PaginateBarTemplateProps> = ({
           <button
             className={`mh-1 w-8 h-8 inline-flex items-center justify-center ${
               page === 1
-                ? 'bg-black text-white rounded-full'
-                : 'hover:underline'
+                ? "bg-black text-white rounded-full"
+                : "hover:underline"
             }`}
           >
             1
@@ -49,8 +49,8 @@ export const PaginateBarTemplate: React.FC<PaginateBarTemplateProps> = ({
           <button
             className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 inline-block${
               page === total - 3
-                ? 'bg-black text-white rounded-full'
-                : 'hover:underline'
+                ? "bg-black text-white rounded-full"
+                : "hover:underline"
             }`}
           >
             ...
@@ -59,8 +59,8 @@ export const PaginateBarTemplate: React.FC<PaginateBarTemplateProps> = ({
             onClick={() => Router.push(`/s/homes/${total}`)}
             className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 inline-block${
               page === total - 3
-                ? 'bg-black text-white rounded-full'
-                : 'hover:underline'
+                ? "bg-black text-white rounded-full"
+                : "hover:underline"
             }`}
           >
             {total}
@@ -74,8 +74,8 @@ export const PaginateBarTemplate: React.FC<PaginateBarTemplateProps> = ({
             onClick={() => Router.push(`/s/homes/1`)}
             className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 inline-block${
               page === total - 3
-                ? 'bg-black text-white rounded-full'
-                : 'hover:underline'
+                ? "bg-black text-white rounded-full"
+                : "hover:underline"
             }`}
           >
             1
@@ -84,8 +84,8 @@ export const PaginateBarTemplate: React.FC<PaginateBarTemplateProps> = ({
             onClick={() => Router.push(`/s/homes/2`)}
             className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 inline-block${
               page === total - 3
-                ? 'bg-black text-white rounded-full'
-                : 'hover:underline'
+                ? "bg-black text-white rounded-full"
+                : "hover:underline"
             }`}
           >
             2
@@ -94,8 +94,8 @@ export const PaginateBarTemplate: React.FC<PaginateBarTemplateProps> = ({
             onClick={() => Router.push(`/s/homes/3`)}
             className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 inline-block${
               page === total - 3
-                ? 'bg-black text-white rounded-full'
-                : 'hover:underline'
+                ? "bg-black text-white rounded-full"
+                : "hover:underline"
             }`}
           >
             3
@@ -104,8 +104,8 @@ export const PaginateBarTemplate: React.FC<PaginateBarTemplateProps> = ({
             onClick={() => Router.push(`/s/homes/4`)}
             className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 inline-block${
               page === total - 3
-                ? 'bg-black text-white rounded-full'
-                : 'hover:underline'
+                ? "bg-black text-white rounded-full"
+                : "hover:underline"
             }`}
           >
             4
@@ -114,8 +114,8 @@ export const PaginateBarTemplate: React.FC<PaginateBarTemplateProps> = ({
             onClick={() => Router.push(`/s/homes/5`)}
             className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 inline-block${
               page === total - 3
-                ? 'bg-black text-white rounded-full'
-                : 'hover:underline'
+                ? "bg-black text-white rounded-full"
+                : "hover:underline"
             }`}
           >
             5
@@ -141,7 +141,7 @@ export const PaginateBarTemplate: React.FC<PaginateBarTemplateProps> = ({
             1
           </button>
           <button
-            onClick={() => Router.push('/')}
+            onClick={() => Router.push("/")}
             className="hover:underline relative mx-2 w-6 h-6 inline-flex items-center justify-center bottom-1"
           >
             ...
@@ -150,8 +150,8 @@ export const PaginateBarTemplate: React.FC<PaginateBarTemplateProps> = ({
             onClick={() => Router.push(`/s/homes/${total - 3}`)}
             className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 inline-block${
               page === total - 3
-                ? 'bg-black text-white rounded-full'
-                : 'hover:underline'
+                ? "bg-black text-white rounded-full"
+                : "hover:underline"
             }`}
           >
             {total - 3}
@@ -160,8 +160,8 @@ export const PaginateBarTemplate: React.FC<PaginateBarTemplateProps> = ({
             onClick={() => Router.push(`/s/homes/${total - 2}`)}
             className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 ${
               page === total - 2
-                ? 'bg-black text-white rounded-full'
-                : 'hover:underline'
+                ? "bg-black text-white rounded-full"
+                : "hover:underline"
             }`}
           >
             {total - 2}
@@ -170,8 +170,8 @@ export const PaginateBarTemplate: React.FC<PaginateBarTemplateProps> = ({
             onClick={() => Router.push(`/s/homes/${total - 1}`)}
             className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 inline-block${
               page === total - 3
-                ? 'bg-black text-white rounded-full'
-                : 'hover:underline'
+                ? "bg-black text-white rounded-full"
+                : "hover:underline"
             }`}
           >
             {total - 1}
@@ -180,8 +180,8 @@ export const PaginateBarTemplate: React.FC<PaginateBarTemplateProps> = ({
             onClick={() => Router.push(`/s/homes/${total}`)}
             className={`w-6 h-6 inline-flex items-center justify-center bottom-1 mx-2 ${
               page === total
-                ? 'bg-black text-white rounded-full'
-                : 'hover:underline'
+                ? "bg-black text-white rounded-full"
+                : "hover:underline"
             } `}
           >
             {total}

@@ -1,5 +1,5 @@
-import { Button } from '@atoms';
-import { useToggleDispatch } from '@context/toggle';
+import { Button } from "@atoms";
+import { useToggleDispatch } from "@context/toggle";
 
 export interface SearchBarTemplateProps {
   type?: string;
@@ -15,7 +15,7 @@ export interface SearchBarTemplateProps {
 /**
  * Renders the Searchbar
  */
-export const SearchBarTemplate: React.FC<SearchBarTemplateProps> = ({
+export const SearchBarTemplate = ({
   type,
   selected,
   setSelected,
@@ -23,16 +23,16 @@ export const SearchBarTemplate: React.FC<SearchBarTemplateProps> = ({
   handleGuestsSelected,
   handleCheckInSelected,
   handleSearch,
-}) => {
+}: SearchBarTemplateProps): JSX.Element => {
   const types = {
     stay: (
       <div
         className={`${
-          transparent ? 'shadow-sm' : null
+          transparent ? "shadow-sm" : null
         } border border-gray-200 grid rounded-full bg-white`}
         style={{
           gridTemplateColumns: `1.5fr 1px 1fr 1px  1fr 1px ${
-            !selected ? '1.5fr' : '2fr'
+            !selected ? "1.5fr" : "2fr"
           }`,
         }}
       >
@@ -62,13 +62,13 @@ export const SearchBarTemplate: React.FC<SearchBarTemplateProps> = ({
         <Seperator />
         <button
           className={`${
-            selected === 'guests' && 'shadow-lg'
+            selected === "guests" && "shadow-lg"
           } block py-2 pr-2 pl-5 rounded-full`}
           onClick={handleGuestsSelected}
         >
           <div
             className={`flex justify-between items-center ${
-              selected === 'guests' && 'rounded-full'
+              selected === "guests" && "rounded-full"
             }`}
           >
             <div className="flex items-center">
@@ -89,7 +89,7 @@ export const SearchBarTemplate: React.FC<SearchBarTemplateProps> = ({
               <Button
                 block
                 variant="search"
-                onClick={() => alert('hello')}
+                onClick={() => alert("hello")}
                 expand={selected}
               />
             </div>
@@ -100,10 +100,10 @@ export const SearchBarTemplate: React.FC<SearchBarTemplateProps> = ({
     experiences: (
       <div
         className={`${
-          transparent ? 'shadow-sm' : null
+          transparent ? "shadow-sm" : null
         } border-gray-300 grid rounded-full bg-white`}
         style={{
-          gridTemplateColumns: `1fr 1px ${selected ? '1.25fr' : '1fr'}`,
+          gridTemplateColumns: `1fr 1px ${selected ? "1.25fr" : "1fr"}`,
         }}
       >
         <Option
@@ -117,13 +117,13 @@ export const SearchBarTemplate: React.FC<SearchBarTemplateProps> = ({
 
         <button
           className={`block py-2 pr-3 pl-4 rounded-full hover:bg-gray-200 ${
-            selected === 'checkin' && 'shadow-lg'
+            selected === "checkin" && "shadow-lg"
           }`}
           onClick={handleCheckInSelected}
         >
           <div
             className={`flex justify-between items-center ${
-              selected === 'checkin' && 'rounded-full'
+              selected === "checkin" && "rounded-full"
             }`}
           >
             <div className="flex items-center">
@@ -174,7 +174,7 @@ const Option: React.FC<{
   return (
     <button
       className={`${
-        selected === name && 'shadow-lg'
+        selected === name && "shadow-lg"
       } hover:bg-gray-200 block py-2 px-4 rounded-full`}
       onClick={() => {
         setSelected(name);

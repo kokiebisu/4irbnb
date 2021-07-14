@@ -1,13 +1,10 @@
-import { ExperiencePanelTemplate } from './template';
+import {
+  ExperiencePanelTemplate,
+  ExperiencePanelTemplateProps,
+} from "./template";
 
-export const ExperiencePanel = (props) => {
+export type ExperiencePanelProps = ExperiencePanelTemplateProps;
+
+export const ExperiencePanel = (props: ExperiencePanelProps): JSX.Element => {
   return <ExperiencePanelTemplate {...props} />;
-};
-
-export const experience = (props) => {
-  return {
-    experience: {
-      component: <ExperiencePanel {...props} />,
-    },
-  };
 };

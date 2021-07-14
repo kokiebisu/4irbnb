@@ -1,7 +1,7 @@
-import { GlobeButtonTemplate, GlobeButtonTemplateProps } from './template';
+import { GlobeButtonTemplate, GlobeButtonTemplateProps } from "./template";
 
 export type GlobeButtonProps = GlobeButtonTemplateProps;
 
-export const GlobeButton: React.FC<GlobeButtonProps> = (props) => {
+export const GlobeButton = (props: GlobeButtonProps): JSX.Element => {
   return <GlobeButtonTemplate {...props} />;
 };

@@ -1,14 +1,19 @@
-import { Button } from '@atoms';
+import { Button } from "@atoms";
+
+export type CurrencyLayoutProps = {
+  items?: { name?: string; abbreviation?: string; symbol?: string }[];
+  title?: string;
+};
 
 /**
  * Layout for Currency modal
  * @param {Object[]} items - Currency type
  * @param {string} title - Title of the Template
  */
-export const CurrencyLayout: React.FC<{
-  items?: { name?: string; abbreviation?: string; symbol?: string }[];
-  title?: string;
-}> = ({ items = [], title = 'Title here' }) => {
+export const CurrencyLayout = ({
+  items = [],
+  title = "Title here",
+}: CurrencyLayoutProps): JSX.Element => {
   return (
     <div>
       <div className="mb-4">

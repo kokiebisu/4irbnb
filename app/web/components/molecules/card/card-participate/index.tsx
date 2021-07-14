@@ -1,15 +1,12 @@
-import { useParticipateCard } from './logic';
-import { ParticipateCardTemplate } from './template';
+import { useParticipateCard } from "./logic";
+import {
+  ParticipateCardTemplate,
+  ParticipateCardTemplateProps,
+} from "./template";
 
-const ParticipateCard = (props) => {
+export type ParticipateCardProps = ParticipateCardTemplateProps;
+
+export const ParticipateCard = (props: ParticipateCardProps): JSX.Element => {
   const data = useParticipateCard(props);
   return <ParticipateCardTemplate {...props} {...data} />;
-};
-
-export const participate = (props) => {
-  return {
-    participate: {
-      component: <ParticipateCard {...props} />,
-    },
-  };
 };

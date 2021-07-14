@@ -1,7 +1,7 @@
-import { Video } from '@atoms';
-import { Icon } from '@atoms';
+import { Video } from "@atoms";
+import { Icon } from "@atoms";
 
-export interface StartingCardTemplateProps {
+export type StartingCardTemplateProps = {
   ratings?: number;
   reviews?: number;
   country?: string;
@@ -12,9 +12,9 @@ export interface StartingCardTemplateProps {
   videoUrl?: string;
   handleIsHoveredChange?: (state: boolean) => boolean;
   isHovered?: boolean;
-}
+};
 
-export const StartingCardTemplate: React.FC<StartingCardTemplateProps> = ({
+export const StartingCardTemplate = ({
   ratings,
   reviews,
   country,
@@ -25,7 +25,7 @@ export const StartingCardTemplate: React.FC<StartingCardTemplateProps> = ({
   videoUrl,
   handleIsHoveredChange,
   isHovered,
-}) => {
+}: StartingCardTemplateProps): JSX.Element => {
   return (
     <div
       onMouseEnter={() => handleIsHoveredChange(true)}
@@ -35,11 +35,11 @@ export const StartingCardTemplate: React.FC<StartingCardTemplateProps> = ({
       <div
         className="h-full grid"
         style={{
-          gridTemplateColumns: '130px 1fr 20px',
+          gridTemplateColumns: "130px 1fr 20px",
         }}
       >
         <div className="mr-3">
-          <div className="relative" style={{ paddingTop: '130%' }}>
+          <div className="relative" style={{ paddingTop: "130%" }}>
             <div className="absolute top-0 bottom-0 left-0 right-0">
               <div className="relative h-full w-full">
                 {isHovered && <Video videoUrl={videoUrl} />}
@@ -54,7 +54,7 @@ export const StartingCardTemplate: React.FC<StartingCardTemplateProps> = ({
         <div className="flex flex-col justify-center">
           <div className="flex items-center mb-3">
             <div className="mr-1">
-              <Icon variant={'profile'} profileType="star" width={10} />
+              <Icon variant={"profile"} profileType="star" width={10} />
             </div>
             <div className="mr-1">
               <p className="text-xs">{ratings}</p>

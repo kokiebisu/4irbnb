@@ -1,13 +1,7 @@
-import { CategoryCardTemplate } from './template';
+import { CategoryCardTemplate, CategoryCardTemplateProps } from "./template";
 
-export const CategoryCard = (props) => {
+export type CategoryCardProps = CategoryCardTemplateProps;
+
+export const CategoryCard = (props: CategoryCardProps): JSX.Element => {
   return <CategoryCardTemplate {...props} />;
-};
-
-export const category = (props) => {
-  return {
-    category: {
-      component: <CategoryCard {...props} />,
-    },
-  };
 };

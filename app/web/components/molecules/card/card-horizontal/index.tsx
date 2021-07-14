@@ -1,15 +1,15 @@
-import { useHorizontalCard } from './logic';
-import { HorizontalCardTemplate } from './template';
+import { useHorizontalCard } from "./logic";
+import {
+  HorizontalCardTemplate,
+  HorizontalCardTemplateProps,
+} from "./template";
 
-export const HorizontalCard = ({ card, ...props }) => {
+export type HorizontalCardProps = HorizontalCardTemplateProps;
+
+export const HorizontalCard = ({
+  card,
+  ...props
+}: HorizontalCardProps): JSX.Element => {
   const data = useHorizontalCard({ card });
   return <HorizontalCardTemplate {...card} {...props} {...data} />;
-};
-
-export const horizontal = (props) => {
-  return {
-    horizontal: {
-      component: <HorizontalCard {...props} />,
-    },
-  };
 };

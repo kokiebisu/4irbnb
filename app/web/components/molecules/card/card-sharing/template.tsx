@@ -1,15 +1,15 @@
-export interface SharingCardTemplateProps {
+export type SharingCardTemplateProps = {
   imgUrl?: string;
   title?;
   string;
   description?: string;
-}
+};
 
-export const SharingCardTemplate: React.FC<SharingCardTemplateProps> = ({
+export const SharingCardTemplate = ({
   imgUrl,
   title,
   description,
-}) => {
+}: SharingCardTemplateProps): JSX.Element => {
   return (
     <div>
       <div>

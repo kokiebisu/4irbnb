@@ -1,15 +1,7 @@
-import { StayHeaderTemplate, StayHeaderTemplateProps } from './template';
+import { StayHeaderTemplate, StayHeaderTemplateProps } from "./template";
 
 export interface StayHeaderProps extends StayHeaderTemplateProps {}
 
-export const StayHeader: React.FC<StayHeaderProps> = (props) => {
+export const StayHeader = (props: StayHeaderProps): JSX.Element => {
   return <StayHeaderTemplate {...props} />;
-};
-
-export const stay = (props) => {
-  return {
-    stay: {
-      component: <StayHeader {...props} />,
-    },
-  };
 };

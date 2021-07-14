@@ -1,7 +1,7 @@
-import { CounterInputTemplate, CounterInputTemplateProps } from './template';
+import { CounterInputTemplate, CounterInputTemplateProps } from "./template";
 
-export interface CounterInputProps extends CounterInputTemplateProps {}
+export type CounterInputProps = CounterInputTemplateProps;
 
-export const CounterInput: React.FC<CounterInputProps> = (props) => {
+export const CounterInput = (props: CounterInputProps): JSX.Element => {
   return <CounterInputTemplate {...props} />;
 };

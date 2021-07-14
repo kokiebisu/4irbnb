@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
 export interface LocationLayoutProps {
   title?: string;
   content?: any;
 }
 
-export const LocationLayout: React.FC<LocationLayoutProps> = ({
-  title = 'Recent Searches',
+export const LocationLayout = ({
+  title = "Recent Searches",
   content = <div>Content here</div>,
-}) => {
+}: LocationLayoutProps): JSX.Element => {
   return (
     <div>
       <div className="my-2 mx-7">

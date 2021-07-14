@@ -1,8 +1,8 @@
-import React from 'react';
-import { PriceInputTemplate, PriceInputTemplateProps } from './template';
+import React from "react";
+import { PriceInputTemplate, PriceInputTemplateProps } from "./template";
 
-export interface PriceInputProps extends PriceInputTemplateProps {}
+export type PriceInputProps = PriceInputTemplateProps;
 
-export const PriceInput: React.FC<PriceInputProps> = (props) => {
-  return <PriceInputTemplate {...props} />;
-};
+export const PriceInput = (props: PriceInputProps): JSX.Element => (
+  <PriceInputTemplate {...props} />
+);

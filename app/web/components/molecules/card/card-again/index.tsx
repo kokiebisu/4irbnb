@@ -1,13 +1,3 @@
-import { AgainCardTemplate } from './template';
+import { AgainCardTemplate } from "./template";
 
-export const AgainCard = () => {
-  return <AgainCardTemplate />;
-};
-
-export const again = () => {
-  return {
-    again: {
-      component: <AgainCard />,
-    },
-  };
-};
+export const AgainCard = () => <AgainCardTemplate />;

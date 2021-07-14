@@ -1,20 +1,20 @@
-export interface HowCardTemplateProps {
+export type HowCardTemplateProps = {
   icon?: string;
   title?: string;
   description?: string;
   more?: string;
-}
+};
 
 /**
  * Renders the participate card component
  * @param {string} categoryType - Type of participate card
  */
-export const HowCardTemplate: React.FC<HowCardTemplateProps> = ({
+export const HowCardTemplate = ({
   icon,
   title,
   description,
   more,
-}) => {
+}: HowCardTemplateProps): JSX.Element => {
   return (
     <div
       style={{ minHeight: 350 }}

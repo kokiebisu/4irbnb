@@ -1,9 +1,9 @@
-export interface OnlineCardTemplateProps {
+export type OnlineCardTemplateProps = {
   small?: string;
   large?: string;
   title?: string;
   inverse?: boolean;
-}
+};
 
 /**
  * Renders the online card component
@@ -12,20 +12,20 @@ export interface OnlineCardTemplateProps {
  * @param {string} title - Title of the card
  * @param {boolean} inverse - Whether if the component takes the inverse styling or not
  */
-export const OnlineCardTemplate: React.FC<OnlineCardTemplateProps> = ({
+export const OnlineCardTemplate = ({
   small,
   large,
   title,
   inverse,
-}) => {
+}: OnlineCardTemplateProps): JSX.Element => {
   return (
     <div className="relative h-full w-full">
       <div
         className="inline-block h-full w-full"
         style={{
-          verticalAlign: 'bottom',
-          height: '100%',
-          width: '100%',
+          verticalAlign: "bottom",
+          height: "100%",
+          width: "100%",
         }}
       >
         {small && large ? (
@@ -43,7 +43,7 @@ export const OnlineCardTemplate: React.FC<OnlineCardTemplateProps> = ({
               media="(min-width: 1439.1px)"
             ></source>
             <img
-              style={{ objectFit: 'cover', verticalAlign: 'bottom' }}
+              style={{ objectFit: "cover", verticalAlign: "bottom" }}
               className="rounded-lg"
               aria-hidden="true"
               decoding="async"
@@ -56,7 +56,7 @@ export const OnlineCardTemplate: React.FC<OnlineCardTemplateProps> = ({
       </div>
       <div
         className={`absolute bottom-0 left-0 right-0 rounded-b-lg shadow-lg ${
-          inverse ? 'bg-gray-600' : 'bg-white'
+          inverse ? "bg-gray-600" : "bg-white"
         }`}
       >
         <div
@@ -67,7 +67,7 @@ export const OnlineCardTemplate: React.FC<OnlineCardTemplateProps> = ({
         >
           <h4
             className={`${
-              inverse ? 'text-white' : 'text-gray-600 text-base'
+              inverse ? "text-white" : "text-gray-600 text-base"
             } text-sm`}
           >
             {title}

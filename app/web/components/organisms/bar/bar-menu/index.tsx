@@ -1,20 +1,14 @@
-import React from 'react';
-import { useMenuBar } from './logic';
-import { MenuBarTemplate } from './template';
+import React from "react";
+import { useMenuBar } from "./logic";
+import { MenuBarTemplate, MenuBarTemplateProps } from "./template";
 
-const MenuBar = (props) => {
+export type MenuBarProps = MenuBarTemplateProps;
+
+const MenuBar = (props: MenuBarProps): JSX.Element => {
   const data = useMenuBar();
   return (
     <div data-testid="bar-menu--organism">
       <MenuBarTemplate {...props} {...data} />
     </div>
   );
-};
-
-export const menu = (props) => {
-  return {
-    menu: {
-      component: <MenuBar {...props} />,
-    },
-  };
 };

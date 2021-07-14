@@ -1,22 +1,22 @@
-export interface RadioInputTemplateProps {
+export type RadioInputTemplateProps = {
   title?: string;
   subtitle?: string;
   value?: any;
   onChange?: (e: any) => void;
-}
+};
 
-export const RadioInputTemplate: React.FC<RadioInputTemplateProps> = ({
+export const RadioInputTemplate = ({
   title,
   subtitle,
   value,
   onChange,
-}) => {
+}: RadioInputTemplateProps): JSX.Element => {
   return (
     <div className="flex items-center">
       <div className="mr-3 relative">
         <button
           className={`${
-            value ? 'bg-black' : 'bg-white'
+            value ? "bg-black" : "bg-white"
           } w-5 h-5 border border-gray-600 border-solid rounded-full hover:border-black`}
           onClick={() => onChange(title)}
         ></button>

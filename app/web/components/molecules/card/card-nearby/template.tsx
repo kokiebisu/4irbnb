@@ -1,10 +1,10 @@
-export interface NearbyCardTemplateProps {
+export type NearbyCardTemplateProps = {
   imgUrl?: string;
   city?: string;
   hours?: number;
-  size?: 'sm' | 'lg';
-  renderSize?: (size: 'sm' | 'lg') => string;
-}
+  size?: "sm" | "lg";
+  renderSize?: (size: "sm" | "lg") => string;
+};
 
 /**
  * Renders the nearby card component
@@ -13,13 +13,13 @@ export interface NearbyCardTemplateProps {
  * @param {number} hours - Time it takes to reach the destination
  * @param {string} size - Size of the component
  */
-export const NearbyCardTemplate: React.FC<NearbyCardTemplateProps> = ({
+export const NearbyCardTemplate = ({
   imgUrl,
   city,
   hours,
   size,
   renderSize,
-}) => {
+}: NearbyCardTemplateProps): JSX.Element => {
   return (
     <div className="flex items-center">
       <div className={`${renderSize(size)} mr-3`}>

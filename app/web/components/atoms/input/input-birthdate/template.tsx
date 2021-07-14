@@ -1,19 +1,19 @@
-import { useState } from 'react';
-import { styleInput, styleLabel, styleContainer } from '../styling.select';
-import { useBirthdateInputAppearance } from './appearance';
+import { useState } from "react";
+import { styleInput, styleLabel, styleContainer } from "../styling.select";
+import { useBirthdateInputAppearance } from "./appearance";
 
 export interface BirthdateInputTemplateProps {
   onChange?: (e: any) => void;
   value?: any;
-  direction?: 'top' | 'bottom' | undefined;
+  direction?: "top" | "bottom" | undefined;
   errors?: boolean;
-  dateType?: 'year' | 'month' | 'day';
+  dateType?: "year" | "month" | "day";
 }
 
 enum birthdates {
-  year = 'Year',
-  month = 'Month',
-  day = 'Day',
+  year = "Year",
+  month = "Month",
+  day = "Day",
 }
 
 /**
@@ -25,13 +25,13 @@ enum birthdates {
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const BirthdateInputTemplate: React.FC<BirthdateInputTemplateProps> = ({
+export const BirthdateInputTemplate = ({
   onChange,
   value,
   direction,
   errors = false,
-  dateType = 'year',
-}) => {
+  dateType = "year",
+}: BirthdateInputTemplateProps): JSX.Element => {
   const [fieldActive, setFieldActive] = useState(false);
   const { dynamicStyle } = useBirthdateInputAppearance({ direction });
 
@@ -57,7 +57,7 @@ export const BirthdateInputTemplate: React.FC<BirthdateInputTemplateProps> = ({
             fieldActive
           )}`}
         >
-          {dateType === 'year' &&
+          {dateType === "year" &&
             new Array(99).fill(null).map((_, index) => {
               return (
                 <option key={index} value={index + 1920}>
@@ -65,7 +65,7 @@ export const BirthdateInputTemplate: React.FC<BirthdateInputTemplateProps> = ({
                 </option>
               );
             })}
-          {dateType === 'month' &&
+          {dateType === "month" &&
             new Array(12).fill(null).map((_, index) => {
               return (
                 <option key={index} value={index + 1}>
@@ -73,7 +73,7 @@ export const BirthdateInputTemplate: React.FC<BirthdateInputTemplateProps> = ({
                 </option>
               );
             })}
-          {dateType === 'day' &&
+          {dateType === "day" &&
             new Array(31).fill(null).map((_, index) => {
               return (
                 <option key={index} value={index + 1}>

@@ -1,13 +1,13 @@
-import { Icon } from '@atoms';
-import { useCheckInCard } from './logic';
-import { checkInBorder, checkOutBorder, guestBorder } from './logic';
+import { Icon } from "@atoms";
+import { useCheckInCard } from "./logic";
+import { checkInBorder, checkOutBorder, guestBorder } from "./logic";
 
 export interface CheckInCardTemplateProps {}
 
 /**
  * Renders the checkin card
  */
-export const CheckInCardTemplate: React.FC<CheckInCardTemplateProps> = () => {
+export const CheckInCardTemplate = (): JSX.Element => {
   const [selected, dispatchSelected] = useCheckInCard();
 
   // fixed lg:sticky right-0 bottom-0 lg:top-0 // position logic
@@ -35,7 +35,7 @@ export const CheckInCardTemplate: React.FC<CheckInCardTemplateProps> = () => {
             <div className="h-16 flex w-full">
               <div
                 onClick={() => {
-                  dispatchSelected({ type: 'checkin' });
+                  dispatchSelected({ type: "checkin" });
                 }}
                 className={checkInBorder(selected)}
               >
@@ -51,7 +51,7 @@ export const CheckInCardTemplate: React.FC<CheckInCardTemplateProps> = () => {
               </div>
               <div
                 onClick={() => {
-                  dispatchSelected({ type: 'checkout' });
+                  dispatchSelected({ type: "checkout" });
                 }}
                 className={checkOutBorder(selected)}
               >
@@ -69,12 +69,12 @@ export const CheckInCardTemplate: React.FC<CheckInCardTemplateProps> = () => {
             <button
               style={{ height: 60 }}
               onClick={() => {
-                dispatchSelected({ type: 'guests' });
+                dispatchSelected({ type: "guests" });
               }}
               className={
                 selected.guests
-                  ? 'border border-gray-400 w-full bg-transparent rounded'
-                  : 'border-b border-l border-r bg-transparent rounded-br-md w-full'
+                  ? "border border-gray-400 w-full bg-transparent rounded"
+                  : "border-b border-l border-r bg-transparent rounded-br-md w-full"
               }
             >
               <div className={guestBorder(selected)}>

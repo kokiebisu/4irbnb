@@ -1,7 +1,7 @@
-import { TextInputTemplate, TextInputTemplateProps } from './template';
+import { TextInputTemplate, TextInputTemplateProps } from "./template";
 
-export interface TextInputProps extends TextInputTemplateProps {}
+export type TextInputProps = TextInputTemplateProps;
 
-export const TextInput: React.FC<TextInputProps> = (props) => {
+export const TextInput = (props: TextInputProps): JSX.Element => {
   return <TextInputTemplate {...props} />;
 };
