@@ -1,17 +1,11 @@
-import { PaginateBarTemplate } from './template';
+import { PaginateBarTemplate, PaginateBarTemplateProps } from "./template";
 
-export const PaginateBar = (props) => {
+export type PaginateBarProps = PaginateBarTemplateProps;
+
+export const PaginateBar = (props: PaginateBarProps): JSX.Element => {
   return (
     <div data-testid="bar-paginate--organism">
       <PaginateBarTemplate {...props} />;
     </div>
   );
-};
-
-export const paginate = (props) => {
-  return {
-    paginate: {
-      component: <PaginateBar {...props} />,
-    },
-  };
 };

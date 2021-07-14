@@ -1,17 +1,14 @@
-import { AvailabilityBarTemplate } from './template';
+import {
+  AvailabilityBarTemplate,
+  AvailabilityBarTemplateProps,
+} from "./template";
 
-const AvailabilityBar = (props) => {
+export type AvailabilityBarProps = AvailabilityBarTemplateProps;
+
+export const AvailabilityBar = (props: AvailabilityBarProps): JSX.Element => {
   return (
     <div data-testid="bar-availability--organism">
       <AvailabilityBarTemplate {...props} />
     </div>
   );
-};
-
-export const availability = (props) => {
-  return {
-    availability: {
-      component: <AvailabilityBar {...props} />,
-    },
-  };
 };

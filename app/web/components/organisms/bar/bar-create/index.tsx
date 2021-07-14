@@ -1,17 +1,11 @@
-import { CreateBarTemplate } from './template';
+import { CreateBarTemplate, CreateBarTemplateProps } from "./template";
 
-const CreateBar = (props) => {
+export type CreateBarProps = CreateBarTemplateProps;
+
+const CreateBar = (props: CreateBarProps): JSX.Element => {
   return (
     <div data-testid="bar-create--organism">
       <CreateBarTemplate {...props} />
     </div>
   );
-};
-
-export const create = (props) => {
-  return {
-    create: {
-      component: <CreateBar {...props} />,
-    },
-  };
 };
