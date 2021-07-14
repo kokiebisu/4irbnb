@@ -1,15 +1,7 @@
-import { VideoCardTemplate, VideoCardTemplateProps } from './template';
+import { VideoCardTemplate, VideoCardTemplateProps } from "./template";
 
 export interface VideoCardProps extends VideoCardTemplateProps {}
 
-const VideoCard = (props: VideoCardProps) => {
+const VideoCard = (props: VideoCardProps): JSX.Element => {
   return <VideoCardTemplate {...props} />;
-};
-
-export const video = (props: VideoCardProps) => {
-  return {
-    video: {
-      component: <VideoCard {...props} />,
-    },
-  };
 };

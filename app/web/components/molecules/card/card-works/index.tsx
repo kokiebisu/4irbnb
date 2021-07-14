@@ -1,15 +1,9 @@
-import { useWorksCard } from './logic';
-import { WorksCardTemplate } from './template';
+import { useWorksCard } from "./logic";
+import { WorksCardTemplate, WorksCardTemplateProps } from "./template";
 
-const WorksCard = (props) => {
+export type WorksCardProps = WorksCardTemplateProps;
+
+const WorksCard = (props: WorksCardProps): JSX.Element => {
   const data = useWorksCard(props);
   return <WorksCardTemplate {...props} {...data} />;
-};
-
-export const works = (props) => {
-  return {
-    works: {
-      component: <WorksCard {...props} />,
-    },
-  };
 };
