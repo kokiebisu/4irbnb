@@ -40,7 +40,7 @@ export const Layout: React.FC<LayoutProps> = ({
     landing: <LandingLayout {...props} />,
     onlinehost: <OnlineHostLayout {...props} />,
     currency: <CurrencyLayout {...props} />,
-    location: <LocationLayout {...props} />,
+    location: <LocationLayout />,
   };
 
   return (

@@ -1,8 +1,7 @@
-import { Bar, $Bar } from '@bar';
-import { Header, $Header } from '@header';
-import responsive from '@styles/responsive.module.scss';
+import { Bar } from "@bar";
+import { Header } from "@header";
 
-export const CreateLayout: React.FC<{
+export type CreateLayoutProps = {
   title?: string;
   left?: React.ReactNode;
   right?: React.ReactNode;
@@ -10,20 +9,22 @@ export const CreateLayout: React.FC<{
   back?: () => void;
   percentage?: number;
   criteria?: boolean;
-}> = ({
-  title = 'Property and guests',
+};
+
+export const CreateLayout = ({
+  title = "Property and guests",
   left,
   right,
   next,
   back,
   criteria = false,
   percentage,
-}) => {
+}: CreateLayoutProps): JSX.Element => {
   return (
     <div>
       <div className="sticky z-50 top-0">
         <div>
-          <Header variant={$Header.STAY} title={title} />
+          <Header variant="stay" title={title} />
         </div>
         <div>
           <Bar variant="progress" percentage={percentage} />
@@ -31,7 +32,7 @@ export const CreateLayout: React.FC<{
       </div>
       <div
         className="flex overflow-y-auto"
-        style={{ minHeight: 'calc(100vh - 75px)' }}
+        style={{ minHeight: "calc(100vh - 75px)" }}
       >
         <div className="flex justify-end w-full sm:w-55/100">
           <div className="w-full sm:max-w-[550px] pb-36">
@@ -50,7 +51,7 @@ export const CreateLayout: React.FC<{
             </div>
           </div>
         </div>
-        <div className="hidden sm:block bg-gray-100" style={{ width: '45%' }}>
+        <div className="hidden sm:block bg-gray-100" style={{ width: "45%" }}>
           {right}
         </div>
       </div>

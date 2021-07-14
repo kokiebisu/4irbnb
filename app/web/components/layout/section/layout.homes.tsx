@@ -1,8 +1,14 @@
-export const HomesLayout: React.FC<{
+export type HomesLayoutProps = {
   title?: string;
   children?: React.ReactNode;
   spread?: boolean;
-}> = ({ title = 'Title here', children, spread = false }) => {
+};
+
+export const HomesLayout = ({
+  title = "Title here",
+  children,
+  spread = false,
+}: HomesLayoutProps): JSX.Element => {
   return (
     <div className="py-4">
       <div>
