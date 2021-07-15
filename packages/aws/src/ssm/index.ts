@@ -1,1 +1,2 @@
-export * from "./factory";
+export * from "./creator";
+export * from "./class";

@@ -1,11 +1,7 @@
 import { ServiceEnum, TEnvironment, TRegion } from "@nextbnb/common";
 import { Logger } from "@nextbnb/utils";
-import { AWSServiceEnum } from "./enum";
-import { S3 } from "./s3/class";
-import { SNS } from "./sns/class";
-import { SQS } from "./sqs/class";
-import { SSM } from "./ssm/class";
-import { STS } from "./sts/class";
+import { AWSServiceEnum } from ".";
+import { S3, SNS, SQS, SSM, STS } from ".";
 
 export class AWSService {
   protected environment: TEnvironment;

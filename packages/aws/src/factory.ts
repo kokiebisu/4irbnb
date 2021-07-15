@@ -1,5 +1,5 @@
 import { ServiceEnum, TEnvironment, TRegion } from "@nextbnb/common";
-import { AWSServiceCreator } from "./class";
+import { AWSServiceCreator } from ".";
 
 /**
  * Creator

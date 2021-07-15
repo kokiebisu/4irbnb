@@ -41,14 +41,12 @@ export class SSM extends AWSService {
       this.serviceName as ServiceEnum
     }/${key}`;
     try {
-      console.log("path", path);
       const response = await this.#service.send(
         new GetParameterCommand({
           Name: path,
           WithDecryption: true,
         })
       );
-      console.log("response", response);
       return response.Parameter?.Value;
     } catch (err) {
       throw new Error(`[SSM GetParameterCommand] ${err}`);
@@ -69,7 +67,6 @@ export class SSM extends AWSService {
       this.serviceName as ServiceEnum
     }/${key}`;
     try {
-      console.log("path1", path);
       const response = await this.#service.send(
         new PutParameterCommand({
           Name: path,
@@ -79,7 +76,6 @@ export class SSM extends AWSService {
           Type: "String",
         })
       );
-      console.log("response2", response);
       return response;
     } catch (err) {
       throw new Error(`[SSM PutParameterCommand] ${err}`);
