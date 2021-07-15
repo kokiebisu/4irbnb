@@ -4,7 +4,7 @@ import {
   PutParameterCommand,
   PutParameterCommandOutput,
 } from "@aws-sdk/client-ssm";
-import { ServiceEnum, TEnvironment } from "@nextbnb/common";
+import { ServiceEnum, TEnvironment, TRegion } from "@nextbnb/common";
 // import { ApiError } from "@nextbnb/error";
 import { AWSService } from "../class";
 import { AWSServiceEnum } from "../enum";

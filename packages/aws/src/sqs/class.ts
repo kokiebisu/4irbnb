@@ -1,6 +1,6 @@
 import { AddPermissionCommand } from "@aws-sdk/client-sqs";
 import { SQSClient } from "@aws-sdk/client-sqs";
-import { ServiceEnum, TEnvironment } from "@nextbnb/common";
+import { ServiceEnum, TEnvironment, TRegion } from "@nextbnb/common";
 import { AWSService } from "../class";
 import { AWSServiceEnum } from "../enum";
 

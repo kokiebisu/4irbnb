@@ -1,5 +1,5 @@
 import { STSClient, GetCallerIdentityCommand } from "@aws-sdk/client-sts";
-import { ServiceEnum, TEnvironment } from "@nextbnb/common";
+import { ServiceEnum, TEnvironment, TRegion } from "@nextbnb/common";
 import { AWSService } from "../class";
 import { AWSServiceEnum } from "../enum";
 
