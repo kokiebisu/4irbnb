@@ -1,13 +1,15 @@
 import { AddPermissionCommand } from "@aws-sdk/client-sqs";
 import { SQSClient } from "@aws-sdk/client-sqs";
 import { ServiceEnum, TEnvironment, TRegion } from "@nextbnb/common";
-import { AWSService } from "../class";
+import { AWSService, AWSServiceCreator } from "../class";
 import { AWSServiceEnum } from "../enum";
 
+/**
+ * @public
+ * Blueprint of the class which enables performing SQS Service actions
+ */
 export class SQS extends AWSService {
   #service: SQSClient;
-  #serviceName: ServiceEnum;
-  #region: string;
   #topicArn: string | undefined;
 
   /**
@@ -25,8 +27,6 @@ export class SQS extends AWSService {
   ) {
     super(serviceName, AWSServiceEnum.sqs, environment);
     this.#service = new SQSClient({ region });
-    this.#serviceName = serviceName;
-    this.#region = region;
   }
 
   /**

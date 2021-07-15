@@ -10,6 +10,7 @@ import { AWSServiceEnum } from "../enum";
 
 /**
  * @public
+ * Blueprint of the class which enables performing S3 Service actions
  */
 export class S3 extends AWSService {
   client: S3Client;

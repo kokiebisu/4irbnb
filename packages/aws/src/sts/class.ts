@@ -3,6 +3,9 @@ import { ServiceEnum, TEnvironment, TRegion } from "@nextbnb/common";
 import { AWSService } from "../class";
 import { AWSServiceEnum } from "../enum";
 
+/**
+ * Blueprint of the class which enables performing STS Service actions
+ */
 export class STS extends AWSService {
   #service: STSClient;
 

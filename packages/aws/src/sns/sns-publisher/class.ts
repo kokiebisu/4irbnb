@@ -2,36 +2,25 @@ import {
   CreateTopicCommand,
   GetTopicAttributesCommand,
   PublishCommand,
-  SNSClient,
 } from "@aws-sdk/client-sns";
 import { ServiceEnum, TEnvironment, TRegion } from "@nextbnb/common";
-import { AWSService } from "../../class";
-import { AWSServiceEnum } from "../../enum";
-import { createSSMService } from "../../ssm";
+import { createAWSService } from "../../factory";
+import { SSM } from "../../ssm/class";
+import { SNS } from "../class";
+import { SSMCreator } from "../creator";
 
 /**
  * @public
  */
-export class SNS extends AWSService {
-  service: SNSClient;
-  serviceName: ServiceEnum;
-  #region: string;
+export class Publisher extends SNS {
   #topicArn: string | undefined;
 
-  /**
-   *
-   * @param region
-   * @param environment
-   */
   constructor(
     serviceName: ServiceEnum,
     region: TRegion,
     environment: TEnvironment
   ) {
-    super(serviceName, AWSServiceEnum.sns, environment);
-    this.service = new SNSClient({ region });
-    this.serviceName = serviceName;
-    this.#region = region;
+    super(serviceName, region, environment);
   }
 
   /**
@@ -61,14 +50,15 @@ export class SNS extends AWSService {
       })
     );
     this.#topicArn = TopicArn;
-    3;
 
     // Must save the topic Arn to SSM so that it can be retrieved by Subscribers
-    const client = createSSMService(
+    const client = createAWSService(
+      new SSMCreator(),
       this.serviceName,
-      this.#region,
-      this.environment
-    );
+      this.region,
+      this.environment,
+      null
+    ) as SSM;
     try {
       if (TopicArn) {
         client.setServiceSecret(topicName, TopicArn);

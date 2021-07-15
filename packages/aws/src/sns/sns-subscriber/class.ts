@@ -1,35 +1,24 @@
 import {
   GetSubscriptionAttributesCommand,
-  SNSClient,
   SubscribeCommand,
 } from "@aws-sdk/client-sns";
-import { ServiceEnum, TEnvironment } from "@nextbnb/common";
-import { AWSServiceEnum } from "../..";
-import { AWSService } from "../../class";
-import { createSSMService } from "../../ssm";
+import { ServiceEnum, TEnvironment, TRegion } from "@nextbnb/common";
+import { createAWSService } from "../../factory";
+import { SSM } from "../../ssm/class";
+import { SNS } from "../class";
+import { SSMCreator } from "../creator";
 
-export class SNSSubscriber extends AWSService {
-  service: SNSClient;
-  serviceName: ServiceEnum;
-  #region: string;
-  #subscriptionArn: string | undefined;
+export class Subscriber extends SNS {
+  #subscriptionARN: { [topic: string]: string };
 
-  /**
-   *
-   * @param region
-   * @param environment
-   */
   constructor(
     serviceName: ServiceEnum,
     region: TRegion,
     environment: TEnvironment
   ) {
-    super(serviceName, AWSServiceEnum.sns, environment);
-    this.service = new SNSClient({ region });
-    this.serviceName = serviceName;
-    this.#region = region;
+    super(serviceName, region, environment);
+    this.#subscriptionARN = {};
   }
-
   /**
    * @public
    * Subscribes to the given topic name passed on the instantiation
@@ -42,11 +31,13 @@ export class SNSSubscriber extends AWSService {
     protocol: "sqs",
     endpoint: string
   ): Promise<void> {
-    const client = createSSMService(
+    const client = createAWSService(
+      new SSMCreator(),
       this.serviceName,
-      this.#region,
-      this.environment
-    );
+      this.region,
+      this.environment,
+      null
+    ) as SSM;
     const topicArn = await client.getServiceSecret(topicName);
 
     const { SubscriptionArn } = await this.service.send(
@@ -57,18 +48,22 @@ export class SNSSubscriber extends AWSService {
         Endpoint: endpoint,
       })
     );
-    this.#subscriptionArn = SubscriptionArn;
+    if (SubscriptionArn) {
+      this.#subscriptionARN[topicName] = SubscriptionArn;
+    } else {
+      throw new Error("Subscription ARN creation was not successful");
+    }
   }
 
   /**
    * @public
    * Retrieves the subscription information
    */
-  async getSubscriptionAttribute() {
+  async getSubscriptionAttribute(topicName: string) {
     return (
       await this.service.send(
         new GetSubscriptionAttributesCommand({
-          SubscriptionArn: this.#subscriptionArn,
+          SubscriptionArn: this.#subscriptionARN[topicName],
         })
       )
     ).Attributes;

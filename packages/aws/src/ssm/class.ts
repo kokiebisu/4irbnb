@@ -11,9 +11,10 @@ import { AWSServiceEnum } from "../enum";
 
 /**
  * @public
+ * Blueprint of the class which performing SSM Service actions
  */
 export class SSM extends AWSService {
-  service: SSMClient;
+  #service: SSMClient;
 
   /**
    *
@@ -26,7 +27,7 @@ export class SSM extends AWSService {
     environment: TEnvironment
   ) {
     super(serviceName, AWSServiceEnum.ssm, environment);
-    this.service = new SSMClient({ region });
+    this.#service = new SSMClient({ region });
   }
 
   /**
@@ -41,7 +42,7 @@ export class SSM extends AWSService {
     }/${key}`;
     try {
       console.log("path", path);
-      const response = await this.service.send(
+      const response = await this.#service.send(
         new GetParameterCommand({
           Name: path,
           WithDecryption: true,
@@ -69,7 +70,7 @@ export class SSM extends AWSService {
     }/${key}`;
     try {
       console.log("path1", path);
-      const response = await this.service.send(
+      const response = await this.#service.send(
         new PutParameterCommand({
           Name: path,
           Value: value,
