@@ -8,7 +8,7 @@ import { SNS } from "./class";
  * @param environment
  * @returns
  */
-export const createSNSService = (
+export const createSNSPublisherService = (
   serviceName: ServiceEnum,
   region: string,
   environment: TEnvironment

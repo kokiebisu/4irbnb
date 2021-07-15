@@ -6,12 +6,13 @@ import {
 import { ServiceEnum, TEnvironment } from "@nextbnb/common";
 import { AWSServiceEnum } from "../..";
 import { AWSService } from "../../class";
+import { createSSMService } from "../../ssm";
 
 export class SNSSubscriber extends AWSService {
   service: SNSClient;
   serviceName: ServiceEnum;
-  topicName: string;
-  private subscriptionArn: string | undefined;
+  #region: string;
+  #subscriptionArn: string | undefined;
 
   /**
    *
@@ -21,31 +22,42 @@ export class SNSSubscriber extends AWSService {
   constructor(
     serviceName: ServiceEnum,
     region: string,
-    environment: TEnvironment,
-    topicName: string
+    environment: TEnvironment
   ) {
     super(serviceName, AWSServiceEnum.sns, environment);
     this.service = new SNSClient({ region });
     this.serviceName = serviceName;
-    this.topicName = topicName;
+    this.#region = region;
   }
 
   /**
    * @public
    * Subscribes to the given topic name passed on the instantiation
+   *
+   * @param topicName
+   * @param protocol
    */
-  async registerSubscription(): Promise<void> {
-    // Fetch topic arn from SSM
-    const topicArn = "safioj"; // to be changed
+  async registerSubscription(
+    topicName: string,
+    protocol: "sqs",
+    endpoint: string
+  ): Promise<void> {
+    const client = createSSMService(
+      this.serviceName,
+      this.#region,
+      this.environment
+    );
+    const topicArn = await client.getServiceSecret(topicName);
 
     const { SubscriptionArn } = await this.service.send(
       new SubscribeCommand({
         Attributes: undefined,
-        Protocol: "sqs",
+        Protocol: protocol,
         TopicArn: topicArn,
+        Endpoint: endpoint,
       })
     );
-    this.subscriptionArn = SubscriptionArn;
+    this.#subscriptionArn = SubscriptionArn;
   }
 
   /**
@@ -56,7 +68,7 @@ export class SNSSubscriber extends AWSService {
     return (
       await this.service.send(
         new GetSubscriptionAttributesCommand({
-          SubscriptionArn: this.subscriptionArn,
+          SubscriptionArn: this.#subscriptionArn,
         })
       )
     ).Attributes;

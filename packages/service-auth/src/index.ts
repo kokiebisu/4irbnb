@@ -1,7 +1,10 @@
 import { Server } from "@nextbnb/base";
 import { ServiceEnum, EnvironmentEnum } from "@nextbnb/common";
 import { registerRoutes } from "./routes";
-import { createSSMService } from "@nextbnb/aws";
+import {
+  createSNSPublisherService,
+  createSnsSubscriberService,
+} from "@nextbnb/aws";
 
 async function main() {
   let server: Server;
@@ -13,13 +16,25 @@ async function main() {
 
   await server.configure();
 
-  const client = createSSMService(ServiceEnum.Auth, "us-east-1", "development");
+  const publisher = createSNSPublisherService(
+    ServiceEnum.Auth,
+    "us-east-1",
+    "development"
+  );
+  const subscriber = createSnsSubscriberService(
+    ServiceEnum.Auth,
+    "us-east-1",
+    "development"
+  );
   try {
-    const response = await client.setServiceSecret(
-      "MyStringParameter",
-      "random value"
-    );
-    console.log("RESPONSE", response);
+    await publisher.registerTopic("topic");
+    await subscriber.registerSubscription("topic");
+    console.log("EN2");
+    // await publisher.publish(
+    //   JSON.stringify({
+    //     message: "HELLO WORLD!",
+    //   })
+    // );
   } catch (err) {
     console.log("EEE", err);
   }

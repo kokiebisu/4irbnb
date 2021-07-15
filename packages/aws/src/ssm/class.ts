@@ -1,7 +1,6 @@
 import {
   SSMClient,
   GetParameterCommand,
-  GetParameterCommandOutput,
   PutParameterCommand,
   PutParameterCommandOutput,
 } from "@aws-sdk/client-ssm";
@@ -36,23 +35,22 @@ export class SSM extends AWSService {
    * @param includeEnvironment
    * @returns
    */
-  public async getServiceSecret(
-    key: string,
-    // value: string,
-    includeEnvironment: boolean
-  ): Promise<GetParameterCommandOutput> {
-    const path = `/${this.serviceName as ServiceEnum}${
-      includeEnvironment ? `/${this.environment as TEnvironment}` : ""
+  public async getServiceSecret(key: string): Promise<string | undefined> {
+    const path = `/${this.environment as TEnvironment}/${
+      this.serviceName as ServiceEnum
     }/${key}`;
     try {
-      return await this.service.send(
+      console.log("path", path);
+      const response = await this.service.send(
         new GetParameterCommand({
           Name: path,
           WithDecryption: true,
         })
       );
+      console.log("response", response);
+      return response.Parameter?.Value;
     } catch (err) {
-      throw new Error(err);
+      throw new Error(`[SSM GetParameterCommand] ${err}`);
     }
   }
 
@@ -66,21 +64,24 @@ export class SSM extends AWSService {
     key: string,
     value: string
   ): Promise<PutParameterCommandOutput> {
-    const path = `/${this.serviceName as ServiceEnum}/${
-      this.environment as TEnvironment
+    const path = `/${this.environment as TEnvironment}/${
+      this.serviceName as ServiceEnum
     }/${key}`;
     try {
-      return await this.service.send(
+      console.log("path1", path);
+      const response = await this.service.send(
         new PutParameterCommand({
           Name: path,
           Value: value,
           Overwrite: true,
           DataType: "text",
-          Type: "string",
+          Type: "String",
         })
       );
+      console.log("response2", response);
+      return response;
     } catch (err) {
-      throw new Error(err);
+      throw new Error(`[SSM PutParameterCommand] ${err}`);
     }
   }
 }

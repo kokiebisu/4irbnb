@@ -1,11 +1,13 @@
 import {
   CreateTopicCommand,
   GetTopicAttributesCommand,
+  PublishCommand,
   SNSClient,
 } from "@aws-sdk/client-sns";
 import { ServiceEnum, TEnvironment } from "@nextbnb/common";
 import { AWSService } from "../../class";
 import { AWSServiceEnum } from "../../enum";
+import { createSSMService } from "../../ssm";
 
 /**
  * @public
@@ -13,7 +15,8 @@ import { AWSServiceEnum } from "../../enum";
 export class SNS extends AWSService {
   service: SNSClient;
   serviceName: ServiceEnum;
-  private topicArn: string | undefined;
+  #region: string;
+  #topicArn: string | undefined;
 
   /**
    *
@@ -28,6 +31,7 @@ export class SNS extends AWSService {
     super(serviceName, AWSServiceEnum.sns, environment);
     this.service = new SNSClient({ region });
     this.serviceName = serviceName;
+    this.#region = region;
   }
 
   /**
@@ -41,8 +45,8 @@ export class SNS extends AWSService {
    * deregisterTopic()
    * ```
    */
-  async registerTopic(): Promise<void> {
-    if (this.topicArn) {
+  async registerTopic(topicName: string): Promise<void> {
+    if (this.#topicArn) {
       throw new Error(
         "Topic Arn is already set. Remove the topic before registering new one"
       );
@@ -56,10 +60,24 @@ export class SNS extends AWSService {
         Name: `${this.serviceName}`,
       })
     );
-    this.topicArn = TopicArn;
+    this.#topicArn = TopicArn;
     3;
 
     // Must save the topic Arn to SSM so that it can be retrieved by Subscribers
+    const client = createSSMService(
+      this.serviceName,
+      this.#region,
+      this.environment
+    );
+    try {
+      if (TopicArn) {
+        client.setServiceSecret(topicName, TopicArn);
+      } else {
+        throw new Error();
+      }
+    } catch (err) {
+      console.error("TopicARN was not generated properly");
+    }
   }
 
   /**
@@ -71,13 +89,26 @@ export class SNS extends AWSService {
   async getTopicAttribute(): Promise<{ [key: string]: string } | undefined> {
     return (
       await this.service.send(
-        new GetTopicAttributesCommand({ TopicArn: this.topicArn })
+        new GetTopicAttributesCommand({ TopicArn: this.#topicArn })
       )
     ).Attributes;
   }
 
   /**
+   * @public
    * Sends a message to the registerd topic
+   *
+   * @param message
+   * @param publishTo - Topic ARN you want to send the message to
    */
-  async publish() {}
+  async publish(message: string) {
+    await this.service.send(
+      new PublishCommand({
+        Message: message,
+        MessageAttributes: undefined,
+        MessageStructure: "json",
+        TopicArn: this.#topicArn,
+      })
+    );
+  }
 }
