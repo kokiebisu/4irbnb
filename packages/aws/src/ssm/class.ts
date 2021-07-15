@@ -22,7 +22,7 @@ export class SSM extends AWSService {
    */
   constructor(
     serviceName: ServiceEnum,
-    region: string,
+    region: TRegion,
     environment: TEnvironment
   ) {
     super(serviceName, AWSServiceEnum.ssm, environment);

@@ -21,7 +21,7 @@ export class SNSSubscriber extends AWSService {
    */
   constructor(
     serviceName: ServiceEnum,
-    region: string,
+    region: TRegion,
     environment: TEnvironment
   ) {
     super(serviceName, AWSServiceEnum.sns, environment);

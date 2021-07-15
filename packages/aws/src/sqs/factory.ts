@@ -3,6 +3,6 @@ import { SQS } from "./class";
 
 export const createSQSService = (
   serviceName: ServiceEnum,
-  region: string,
+  region: TRegion,
   environment: TEnvironment
 ) => new SQS(serviceName, region, environment);

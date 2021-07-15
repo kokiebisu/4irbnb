@@ -1,3 +1,4 @@
+import { AddPermissionCommand } from "@aws-sdk/client-sqs";
 import { SQSClient } from "@aws-sdk/client-sqs";
 import { ServiceEnum, TEnvironment } from "@nextbnb/common";
 import { AWSService } from "../class";
@@ -19,12 +20,39 @@ export class SQS extends AWSService {
    */
   constructor(
     serviceName: ServiceEnum,
-    region: string,
+    region: TRegion,
     environment: TEnvironment
   ) {
     super(serviceName, AWSServiceEnum.sqs, environment);
     this.#service = new SQSClient({ region });
     this.#serviceName = serviceName;
     this.#region = region;
+  }
+
+  /**
+   *
+   * @param target - Target ARN
+   */
+  async register(target: string) {
+    await this.addPermission();
+  }
+
+  /**
+   * @public
+   * Adds permission to itself
+   */
+  private async addPermission() {
+    /**
+     * Get account id of the caller
+     */
+
+    /**
+     * Attach the retrieved id as the principal
+     */
+    this.#service.send(
+      new AddPermissionCommand({
+        AWSAccountIds,
+      })
+    );
   }
 }

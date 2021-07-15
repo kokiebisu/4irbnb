@@ -3,6 +3,6 @@ import { SNSSubscriber } from "./class";
 
 export const createSnsSubscriberService = (
   serviceName: ServiceEnum,
-  region: string,
+  region: TRegion,
   environment: TEnvironment
 ) => new SNSSubscriber(serviceName, region, environment);

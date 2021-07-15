@@ -1,4 +1,4 @@
-import { ServiceEnum, TEnvironment } from "@nextbnb/common";
+import { ServiceEnum, TEnvironment, TRegion } from "@nextbnb/common";
 import { S3 } from "./class";
 
 /**
@@ -10,6 +10,6 @@ import { S3 } from "./class";
  */
 export const createS3Service = (
   serviceName: ServiceEnum,
-  region: string,
+  region: TRegion,
   environment: TEnvironment
 ) => new S3(serviceName, region, environment);

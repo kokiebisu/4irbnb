@@ -10,6 +10,6 @@ import { ServiceEnum, TEnvironment } from "@nextbnb/common";
  */
 export const createSSMService = (
   serviceName: ServiceEnum,
-  region: string,
+  region: TRegion,
   environment: TEnvironment
 ) => new SSM(serviceName, region, environment);

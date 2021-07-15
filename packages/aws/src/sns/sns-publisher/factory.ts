@@ -10,6 +10,6 @@ import { SNS } from "./class";
  */
 export const createSNSPublisherService = (
   serviceName: ServiceEnum,
-  region: string,
+  region: TRegion,
   environment: TEnvironment
 ) => new SNS(serviceName, region, environment);
