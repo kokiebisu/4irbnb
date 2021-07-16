@@ -6,6 +6,7 @@ export type AvailableCardTemplateProps = {
   to?: string;
   standard?: string;
   price?: number;
+  onClick: () => void;
 };
 
 /**
@@ -22,6 +23,7 @@ export const AvailableCardTemplate = ({
   to,
   standard,
   price,
+  onClick,
 }: AvailableCardTemplateProps): JSX.Element => {
   return (
     <div className="p-6 border boder-gray-300 rounded-md">
@@ -43,7 +45,13 @@ export const AvailableCardTemplate = ({
         <span className="text-sm"> /person</span>
       </div>
       <div className="inline-block">
-        <Button variant="primary" size="sm" title="Choose" color="white" />
+        <Button
+          variant="primary"
+          size="sm"
+          title="Choose"
+          color="white"
+          onClick={onClick}
+        />
       </div>
     </div>
   );
