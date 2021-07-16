@@ -15,7 +15,7 @@ import { AWSServiceCreator } from "./creator";
  */
 export const createAWSService = (
   creator: AWSServiceCreator,
-  serviceName: ServiceEnum,
+  serviceName: ServiceEnum | null,
   region: TRegion,
   environment: TEnvironment,
   variant: any | null

@@ -12,7 +12,7 @@ export abstract class AWSServiceCreator {
    * Creates the AWS Service Instance
    */
   public abstract create(
-    serviceName: ServiceEnum,
+    serviceName: ServiceEnum | null,
     region: TRegion,
     environment: TEnvironment,
     variant?: any
