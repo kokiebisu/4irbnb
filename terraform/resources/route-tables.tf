@@ -1,18 +1,14 @@
-resource "aws_internet_gateway" "nextbnb-internet-gateway" {
-    vpc_id = aws_vpc.nextbnb-vpc.id
-    tags = {
-        Name = "${var.app_name}-internet-gateway"
-    }
-}
+# resource "aws_internet_gateway" "nextbnb-internet-gateway" {
+#     vpc_id = aws_vpc.nextbnb-vpc.id
+#     tags = {
+#         Name = "${var.app_name}-internet-gateway"
+#     }
+# }
 
 resource "aws_default_route_table" "nextbnb-public-route-table" {
     default_route_table_id = aws_vpc.nextbnb-vpc.default_route_table_id
     tags = {
         Name = "${var.app_name}-public-route-table"
-    }
-    route {
-        cidr_block = "0.0.0.0/0"
-        gateway_id = aws_internet_gateway.nextbnb_internet_gateway.id
     }
 }
 
