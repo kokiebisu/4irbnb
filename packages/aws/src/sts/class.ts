@@ -2,6 +2,7 @@ import { STSClient, GetCallerIdentityCommand } from "@aws-sdk/client-sts";
 import { ServiceEnum, TEnvironment, TRegion } from "@nextbnb/common";
 import { AWSService } from "../class";
 import { AWSServiceEnum } from "../enum";
+import { IGetCallerInfo } from "./type";
 
 /**
  * Blueprint of the class which enables performing STS Service actions
@@ -25,7 +26,18 @@ export class STS extends AWSService {
    * - Arn
    * - Account ID number
    */
-  async getCallerInfo() {
-    await this.service.send(new GetCallerIdentityCommand({}));
+  async getCallerInfo(): Promise<IGetCallerInfo | undefined> {
+    try {
+      const { Account, Arn, UserId } = await this.service.send(
+        new GetCallerIdentityCommand({})
+      );
+      return {
+        account: Account,
+        arn: Arn,
+        userId: UserId,
+      };
+    } catch (err) {
+      throw err;
+    }
   }
 }

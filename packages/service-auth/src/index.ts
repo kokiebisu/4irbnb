@@ -38,7 +38,7 @@ async function main() {
       "development",
       null
     ) as STS;
-    const info = client.getCallerInfo();
+    const info = await client.getCallerInfo();
     console.log("INFO", info);
     // await publisher.registerTopic("topic");
     // await subscriber.registerSubscription("topic");
