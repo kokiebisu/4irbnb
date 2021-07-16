@@ -2,8 +2,12 @@ import { Server } from "@nextbnb/base";
 import { ServiceEnum, EnvironmentEnum } from "@nextbnb/common";
 import { registerRoutes } from "./routes";
 import {
-  createSNSPublisherService,
-  createSnsSubscriberService,
+  createAWSService,
+  // createSNSPublisherService,
+  // createSnsSubscriberService,
+  // SSMCreator,
+  STS,
+  STSCreator,
 } from "@nextbnb/aws";
 
 async function main() {
@@ -16,20 +20,29 @@ async function main() {
 
   await server.configure();
 
-  const publisher = createSNSPublisherService(
-    ServiceEnum.Auth,
-    "us-east-1",
-    "development"
-  );
-  const subscriber = createSnsSubscriberService(
-    ServiceEnum.Auth,
-    "us-east-1",
-    "development"
-  );
+  // const publisher = createSNSPublisherService(
+  //   ServiceEnum.Auth,
+  //   "us-east-1",
+  //   "development"
+  // );
+  // const subscriber = createSnsSubscriberService(
+  //   ServiceEnum.Auth,
+  //   "us-east-1",
+  //   "development"
+  // );
   try {
-    await publisher.registerTopic("topic");
-    await subscriber.registerSubscription("topic");
-    console.log("EN2");
+    const client = createAWSService(
+      new STSCreator(),
+      ServiceEnum.Auth,
+      "us-east-1",
+      "development",
+      null
+    ) as STS;
+    const info = client.getCallerInfo();
+    console.log("INFO", info);
+    // await publisher.registerTopic("topic");
+    // await subscriber.registerSubscription("topic");
+    // console.log("EN2");
     // await publisher.publish(
     //   JSON.stringify({
     //     message: "HELLO WORLD!",

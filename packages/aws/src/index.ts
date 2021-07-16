@@ -18,3 +18,4 @@ export * from "./sts";
 export * from "./enum";
 export * from "./factory";
 export * from "./class";
+export * from "./creator";

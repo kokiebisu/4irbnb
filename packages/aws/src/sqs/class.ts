@@ -1,4 +1,4 @@
-import { AddPermissionCommand } from "@aws-sdk/client-sqs";
+// import { AddPermissionCommand } from "@aws-sdk/client-sqs";
 import { SQSClient } from "@aws-sdk/client-sqs";
 import { ServiceEnum, TEnvironment, TRegion } from "@nextbnb/common";
 import { AWSService } from "../class";
@@ -10,7 +10,6 @@ import { AWSServiceEnum } from "../enum";
  */
 export class SQS extends AWSService {
   protected service: SQSClient;
-  #topicArn: string | undefined;
 
   /**
    * @public
@@ -29,30 +28,30 @@ export class SQS extends AWSService {
     this.service = new SQSClient({ region });
   }
 
-  /**
-   *
-   * @param target - Target ARN
-   */
-  async register(target: string) {
-    await this.addPermission();
-  }
+  // /**
+  //  *
+  //  * @param target - Target ARN
+  //  */
+  // async register(targetArn: string) {
+  //   await this.addPermission();
+  // }
 
-  /**
-   * @public
-   * Adds permission to itself
-   */
-  private async addPermission() {
-    /**
-     * Get account id of the caller
-     */
+  // /**
+  //  * @public
+  //  * Adds permission to itself
+  //  */
+  // private async addPermission() {
+  //   /**
+  //    * Get account id of the caller
+  //    */
 
-    /**
-     * Attach the retrieved id as the principal
-     */
-    this.service.send(
-      new AddPermissionCommand({
-        AWSAccountIds,
-      })
-    );
-  }
+  //   /**
+  //    * Attach the retrieved id as the principal
+  //    */
+  //   this.service.send(
+  //     new AddPermissionCommand({
+  //       AWSAccountIds,
+  //     })
+  //   );
+  // }
 }

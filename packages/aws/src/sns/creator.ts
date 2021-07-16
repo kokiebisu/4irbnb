@@ -1,7 +1,7 @@
 import { ServiceEnum, TEnvironment, TRegion } from "@nextbnb/common";
-import { AWSServiceCreator } from "../class";
-import { Publisher } from "./sns-publisher/class";
-import { Subscriber } from "./sns-subscriber/class";
+import { AWSServiceCreator } from "../creator";
+import { Publisher } from "./sns-publisher";
+import { Subscriber } from "./sns-subscriber";
 
 /**
  * @public

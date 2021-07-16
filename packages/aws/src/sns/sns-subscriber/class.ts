@@ -3,10 +3,10 @@ import {
   SubscribeCommand,
 } from "@aws-sdk/client-sns";
 import { ServiceEnum, TEnvironment, TRegion } from "@nextbnb/common";
-import { createAWSService } from "../../factory";
 import { SSM } from "../../ssm/class";
+import { SSMCreator } from "../../ssm/creator";
+import { createAWSService } from "../../factory";
 import { SNS } from "../class";
-import { SSMCreator } from "../creator";
 
 export class Subscriber extends SNS {
   #subscriptionARN: { [topic: string]: string };

@@ -1,6 +1,6 @@
 import { SNSClient } from "@aws-sdk/client-sns";
 import { ServiceEnum, TEnvironment, TRegion } from "@nextbnb/common";
-import { AWSServiceEnum } from "..";
+import { AWSServiceEnum } from "../enum";
 import { AWSService } from "../class";
 
 /**
