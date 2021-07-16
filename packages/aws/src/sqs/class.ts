@@ -1,7 +1,7 @@
 import { AddPermissionCommand } from "@aws-sdk/client-sqs";
 import { SQSClient } from "@aws-sdk/client-sqs";
 import { ServiceEnum, TEnvironment, TRegion } from "@nextbnb/common";
-import { AWSService, AWSServiceCreator } from "../class";
+import { AWSService } from "../class";
 import { AWSServiceEnum } from "../enum";
 
 /**
@@ -9,7 +9,7 @@ import { AWSServiceEnum } from "../enum";
  * Blueprint of the class which enables performing SQS Service actions
  */
 export class SQS extends AWSService {
-  #service: SQSClient;
+  protected service: SQSClient;
   #topicArn: string | undefined;
 
   /**
@@ -26,7 +26,7 @@ export class SQS extends AWSService {
     environment: TEnvironment
   ) {
     super(serviceName, AWSServiceEnum.sqs, environment);
-    this.#service = new SQSClient({ region });
+    this.service = new SQSClient({ region });
   }
 
   /**
@@ -49,7 +49,7 @@ export class SQS extends AWSService {
     /**
      * Attach the retrieved id as the principal
      */
-    this.#service.send(
+    this.service.send(
       new AddPermissionCommand({
         AWSAccountIds,
       })

@@ -7,7 +7,7 @@ import { AWSService } from "../class";
  * @public
  * Blueprint
  */
-export abstract class SNS extends AWSService {
+export class SNS extends AWSService {
   protected service: SNSClient;
   protected region: TRegion;
 

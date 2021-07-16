@@ -7,7 +7,7 @@ import { AWSServiceEnum } from "../enum";
  * Blueprint of the class which enables performing STS Service actions
  */
 export class STS extends AWSService {
-  #service: STSClient;
+  protected service: STSClient;
 
   constructor(
     serviceName: ServiceEnum,
@@ -15,7 +15,7 @@ export class STS extends AWSService {
     environment: TEnvironment
   ) {
     super(serviceName, AWSServiceEnum.sts, environment);
-    this.#service = new STSClient({ region });
+    this.service = new STSClient({ region });
   }
 
   /**
@@ -26,6 +26,6 @@ export class STS extends AWSService {
    * - Account ID number
    */
   async getCallerInfo() {
-    await this.#service.send(new GetCallerIdentityCommand({}));
+    await this.service.send(new GetCallerIdentityCommand({}));
   }
 }

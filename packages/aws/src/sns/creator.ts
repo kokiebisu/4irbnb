@@ -7,7 +7,7 @@ import { Subscriber } from "./sns-subscriber/class";
  * @public
  * Blueprint of the class which creates the SSM instance
  */
-export class SSMCreator extends AWSServiceCreator {
+export class SNSCreator extends AWSServiceCreator {
   create(
     serviceName: ServiceEnum,
     region: TRegion,
