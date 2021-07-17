@@ -85,7 +85,7 @@ export const SearchBarTemplate = ({
                 </div>
               </div>
             </div>
-            <div>
+            <div className="h-full flex items-center">
               <Button
                 variant="search"
                 onClick={() => alert("hello")}
@@ -137,7 +137,7 @@ export const SearchBarTemplate = ({
                 </div>
               </div>
             </div>
-            <div>
+            <div className="inline-flex items-center">
               <Button
                 variant="search"
                 onClick={handleSearch}
@@ -172,8 +172,8 @@ const Option: React.FC<{
   return (
     <button
       className={`${
-        selected === name && "shadow-lg"
-      } hover:bg-gray-200 block py-2 px-4 rounded-full`}
+        selected === name ? "shadow-lg" : ""
+      } hover:bg-gray-200 block pl-6 pr-4 rounded-full`}
       onClick={() => {
         setSelected(name);
         dispatchToggle({ type: `toggle_${name}` });

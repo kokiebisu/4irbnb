@@ -41,7 +41,13 @@ const LandingPage: React.FC<{}> = () => {
                 bannerImg="https://a0.muscache.com/im/pictures/2da67c1c-0c61-4629-8798-1d4de1ac9291.jpg?im_w=1440"
               />
             </Layout>
-
+            <Layout
+              variant="landing"
+              title="Discover Experiences"
+              subtitle="Unique activities with local experts—in person or online."
+            >
+              <Segment variant="category" />
+            </Layout>
             <Layout spread variant="landing">
               <Segment
                 variant="wide"
@@ -51,27 +57,20 @@ const LandingPage: React.FC<{}> = () => {
                 bannerImg="https://a0.muscache.com/im/pictures/2595054e-d1d9-4fde-8046-58d51fcb3164.jpg?im_w=1440"
               />
             </Layout>
-            {/* <Layout
-              variant="landing"
-              spread
-              title="Join millions of hosts on Airbnb"
-            >
-              <Segment variant="category" />
-            </Layout>
             <Layout
               variant="landing"
               spread
               title="Inspiration for future getaways"
             >
               <Segment variant="destinations" />
-            </Layout> */}
+            </Layout>
           </>
         ) : (
           <div className="my-4 flex items-center justify-center">
             <Animation variant="loading" dark />
           </div>
         )}
-        {/* <Footer spread /> */}
+        <Footer />
         {/* <div className="fixed bottom-0 w-full z-50 flex justify-center">
           <div className="mt-0 mx-8 mb-8 sm:mx-16 md:mx-36 lg:mx-0">
             <Modal

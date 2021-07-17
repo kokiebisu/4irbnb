@@ -125,7 +125,7 @@ export const LandingHeaderTemplate = ({
       <div
         className={`top-8/10 sm:top-2/10 px-6 hidden sm:block absolute w-full left-1/2 bottom-0 z-50`}
         style={{
-          maxWidth: 760,
+          maxWidth: 900,
           transform: "translate(-50%, 0)",
           height: "fit-content",
         }}

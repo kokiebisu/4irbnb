@@ -27,8 +27,8 @@ export const LandingLayout = ({
             </h3>
           )}
           {subtitle && (
-            <div style={{ width: 450 }}>
-              <p className={`text-sm md:text-md ${dark ? "text-white" : ""}`}>
+            <div>
+              <p className={`text-lg md:text-2xl ${dark ? "text-white" : ""}`}>
                 {subtitle}
               </p>
             </div>

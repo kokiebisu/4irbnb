@@ -1,4 +1,4 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
 export type SearchbarButtonTemplateProps = {
   onClick: () => void;
@@ -17,7 +17,7 @@ export const SearchbarButtonTemplate = ({
       onClick={onClick}
     >
       <div
-        style={{ gridTemplateColumns: '1fr auto' }}
+        style={{ gridTemplateColumns: "1fr auto" }}
         className="relative py-1.5 pl-6 pr-1.5 inline-grid items-center justify-between border border-gray-300 rounded-full"
       >
         <div className="mr-9">

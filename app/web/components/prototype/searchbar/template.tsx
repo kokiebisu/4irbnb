@@ -42,7 +42,7 @@ export const SearchbarPrototypeTemplate = ({
         variant="search"
         selected={selected}
         handleSelectedChange={handleSelectedChange}
-        type={type}
+        type={"stay"}
         transparent={transparent}
         handleGuestsSelected={() => alert("yo")}
         handleCheckInSelected={() => alert("yo")}
