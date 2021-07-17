@@ -1,17 +1,18 @@
 import { Button } from "@atoms";
-import { useFiltersBarInteraction } from "./interaction";
+import { useFilterBarsTemplate } from "./use-template";
 
-export interface FiltersBarTemplateProps {
-  state?: {
+export type FiltersBarTemplateProps = {
+  state: {
     activeSlide: number;
     translate: number;
     transition: number;
   };
   handlePreviousSlide?: () => void;
   handleNextSlide?: () => void;
-  primaryFilters?: string[];
-  secondaryFilters?: string[];
-}
+  primaryFilters: string[];
+  secondaryFilters: string[];
+  handleFilterSelect: () => void;
+};
 
 /**
  *
@@ -21,20 +22,26 @@ export interface FiltersBarTemplateProps {
 export const FiltersBarTemplate = ({
   primaryFilters,
   secondaryFilters,
+  handleFilterSelect,
 }: FiltersBarTemplateProps): JSX.Element => {
   const {
     containerRef,
     state,
     handleNextSlide,
     handlePreviousSlide,
-  } = useFiltersBarInteraction();
+  } = useFilterBarsTemplate();
   return (
     <div className="flex items-center">
       <div className="flex">
         {primaryFilters.map((filter, index) => {
           return (
             <div key={index} className="mr-2">
-              <Button variant="filter" inverse label={filter} />
+              <Button
+                variant="filter"
+                inverse
+                label={filter}
+                onClick={() => handleFilterSelect(filter)}
+              />
             </div>
           );
         })}

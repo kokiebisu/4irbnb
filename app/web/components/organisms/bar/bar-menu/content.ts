@@ -1,1 +1,1 @@
-export const items = ['menu', 'saved', 'login'];
+export const items: ("menu" | "saved" | "login")[] = ["menu", "saved", "login"];

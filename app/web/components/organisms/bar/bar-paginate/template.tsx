@@ -2,8 +2,8 @@ import Router from "next/router";
 import { Button } from "@atoms";
 
 export interface PaginateBarTemplateProps {
-  page?: number;
-  total?: number;
+  page: number;
+  total: number;
 }
 
 /**

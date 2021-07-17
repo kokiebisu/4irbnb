@@ -2,14 +2,14 @@ import { Button } from "@atoms";
 import { useToggleDispatch } from "@context/toggle";
 
 export interface SearchBarTemplateProps {
-  type?: string;
-  selected?: string;
-  setSelected?: (param: string) => void;
+  type: string;
+  selected: string;
+  setSelected: (param: string) => void;
   transparent?: boolean;
   dispatchToggle?: any;
   handleGuestsSelected?: () => void;
   handleCheckInSelected?: () => void;
-  handleSearch?: () => void;
+  handleSearch: () => void;
 }
 
 /**

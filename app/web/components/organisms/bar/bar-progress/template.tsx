@@ -1,5 +1,5 @@
 export interface ProgressBarTemplateProps {
-  percentage?: number;
+  percentage: number;
 }
 
 /**
