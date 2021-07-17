@@ -1,18 +1,10 @@
 import {
   NearbyPrototypeTemplate,
   NearbyPrototypeTemplateProps,
-} from './template';
+} from "./template";
 
-export interface NearbyPrototypeProps extends NearbyPrototypeTemplateProps {}
+export type NearbyPrototypeProps = NearbyPrototypeTemplateProps;
 
-export const NearbyPrototype: React.FC<NearbyPrototypeProps> = (props) => {
-  return <NearbyPrototypeTemplate {...props} />;
-};
-
-export const nearby = (props: NearbyPrototypeProps) => {
-  return {
-    nearby: {
-      component: <NearbyPrototype {...props} />,
-    },
-  };
-};
+export const NearbyPrototype = (props: NearbyPrototypeProps): JSX.Element => (
+  <NearbyPrototypeTemplate {...props} />
+);

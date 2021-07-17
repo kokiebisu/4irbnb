@@ -1,10 +1,10 @@
-import { Animation } from '@animation';
-import { stretchMixin } from '../utils/mixin';
-import { usePrimaryButtonTemplate } from './use-template';
+import { Animation } from "@animation";
+import { stretchMixin } from "../utils/mixin";
+import { usePrimaryButtonTemplate } from "./use-template";
 
 export type PrimaryButtonTemplateProps = {
   title: string;
-  size: 'sm' | 'md' | 'lg';
+  size: "sm" | "md" | "lg";
   fill?: string;
   color: string;
   bg?: string;
@@ -40,14 +40,12 @@ export const PrimaryButtonTemplate = ({
   return (
     <button
       data-testid="primary-button"
-      className="inline-block"
+      className={`inline-block ${stretchMixin(stretch)}`}
       onClick={onClick}
     >
       <div
         style={{ backgroundColor: !disabled ? fill : undefined }}
-        className={`text-center ${commonStyle} ${sizeStyle} ${bgColor} ${stretchMixin(
-          stretch
-        )}`}
+        className={`text-center ${commonStyle} ${sizeStyle} ${bgColor}`}
       >
         {loading ? (
           <div className="flex items-center justify-center">

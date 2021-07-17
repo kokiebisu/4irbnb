@@ -1,7 +1,7 @@
-import { useFormik } from 'formik';
-import { useAuthDispatch, useAuthState } from '@context/auth';
-import { Button, Input } from '@atoms';
-import { validateAuth as validate } from '@helper/auth';
+import { useFormik } from "formik";
+import { useAuthDispatch, useAuthState } from "@context/auth";
+import { Button, Input } from "@atoms";
+import { validateAuth as validate } from "@helper/auth";
 
 export interface AuthPrototypeTemplateProps {}
 
@@ -14,8 +14,8 @@ export const AuthPrototypeTemplate: React.FC<AuthPrototypeTemplateProps> = () =>
 
   const formik = useFormik({
     initialValues: {
-      region: '',
-      phone: '',
+      region: "",
+      phone: "",
     },
     validate,
     onSubmit(values) {
@@ -24,7 +24,7 @@ export const AuthPrototypeTemplate: React.FC<AuthPrototypeTemplateProps> = () =>
   });
 
   const switchAuth = () => {
-    if (authState.title === 'Log in') {
+    if (authState.title === "Log in") {
       // return authDispatch({ type: 'auth_signup' });
     }
     // return authDispatch({ type: 'auth_login' });
@@ -63,7 +63,9 @@ export const AuthPrototypeTemplate: React.FC<AuthPrototypeTemplateProps> = () =>
               variant="primary"
               title="Continue"
               stretch
-              onClick={() => alert('yo')}
+              size="md"
+              color="white"
+              onClick={() => alert("yo")}
             />
           </div>
         </form>
@@ -99,15 +101,15 @@ export const AuthPrototypeTemplate: React.FC<AuthPrototypeTemplateProps> = () =>
         <div className="mt-1">
           <div className="inline-block mr-2">
             <p className="text-sm font-light text-gray-600">
-              {authState.title === 'Log in'
+              {authState.title === "Log in"
                 ? "Don't have an account?"
-                : 'Already have an account?'}
+                : "Already have an account?"}
             </p>
           </div>
           <Button
             variant="underline"
             onClick={switchAuth}
-            title={authState.title === 'Log in' ? 'Sign up' : 'Log in'}
+            title={authState.title === "Log in" ? "Sign up" : "Log in"}
           />
         </div>
       </div>

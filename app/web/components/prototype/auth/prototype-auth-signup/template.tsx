@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { useFormik } from 'formik';
-import { Input } from '@atoms';
-import { Button } from '@atoms';
-import { Bullet } from '@atoms';
-import { validateSignup as validate } from '@helper/auth';
-import { useAuthDispatch } from '@context/auth';
+import { useState } from "react";
+import { useFormik } from "formik";
+import { Input } from "@atoms";
+import { Button } from "@atoms";
+import { Bullet } from "@atoms";
+import { validateSignup as validate } from "@helper/auth";
+import { useAuthDispatch } from "@context/auth";
 
 export interface SignupPrototypeTemplateProps {}
 
@@ -16,13 +16,13 @@ export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = (
   const [loading, setLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
-      firstname: '',
-      lastname: '',
-      day: '',
-      month: '',
-      year: '',
-      email: '',
-      password: '',
+      firstname: "",
+      lastname: "",
+      day: "",
+      month: "",
+      year: "",
+      email: "",
+      password: "",
     },
     validate,
     onSubmit: async (values) => {
@@ -179,12 +179,12 @@ export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = (
         </div>
         <div>
           <p className="mt-6 text-xs text-gray-500">
-            By selecting <b>Agree and continue</b> below, I agree to Airbnb's{' '}
-            <u className="font-medium text-blue-500">Terms of Service</u>,{' '}
+            By selecting <b>Agree and continue</b> below, I agree to Airbnb's{" "}
+            <u className="font-medium text-blue-500">Terms of Service</u>,{" "}
             <u className="font-medium text-blue-500">
               Payments Terms of Service
             </u>
-            , <u className="font-medium text-blue-500">Privacy Policy</u>, and{' '}
+            , <u className="font-medium text-blue-500">Privacy Policy</u>, and{" "}
             <u className="font-medium text-blue-500">
               Nondiscrimination Policy
             </u>
@@ -197,7 +197,9 @@ export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = (
             title="Agree and continue"
             loading={loading}
             stretch
-            onClick={() => alert('clicked')}
+            onClick={() => alert("clicked")}
+            size="md"
+            color="white"
           />
         </div>
       </div>

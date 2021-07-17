@@ -1,8 +1,8 @@
-import { useFormik } from 'formik';
-import { Input } from '@atoms';
-import { Button } from '@atoms';
-import { Bullet } from '@atoms';
-import { validateForgotPassword as validate } from '@helper/auth';
+import { useFormik } from "formik";
+import { Input } from "@atoms";
+import { Button } from "@atoms";
+import { Bullet } from "@atoms";
+import { validateForgotPassword as validate } from "@helper/auth";
 
 export interface ForgotPasswordPrototypeTemplateProps {}
 
@@ -12,7 +12,7 @@ export interface ForgotPasswordPrototypeTemplateProps {}
 export const ForgotPasswordPrototypeTemplate: React.FC<ForgotPasswordPrototypeTemplateProps> = () => {
   const formik = useFormik({
     initialValues: {
-      email: '',
+      email: "",
     },
     validate,
     onSubmit: (values) => {
@@ -54,8 +54,11 @@ export const ForgotPasswordPrototypeTemplate: React.FC<ForgotPasswordPrototypeTe
             <Button
               variant="primary"
               size="md"
-              fill="black"
               title="Send reset link"
+              stretch
+              fill="black"
+              color="white"
+              onClick={() => alert("click")}
             />
           </div>
         </div>

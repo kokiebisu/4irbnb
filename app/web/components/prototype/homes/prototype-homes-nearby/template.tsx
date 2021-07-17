@@ -1,13 +1,13 @@
-import { Segment } from '@template/s/homes';
-import { Bar } from '@bar';
-import { Button } from '@atoms';
+import { Segment } from "@template/s/homes";
+import { Bar } from "@bar";
+import { Button } from "@atoms";
 
 export interface NearbyPrototypeTemplateProps {
-  city?: string;
+  city: string;
   filterCount?: number;
-  guests?: number;
-  average?: number;
-  filters?: any;
+  guests: number;
+  average: number;
+  filters: any;
 }
 
 /**
@@ -21,7 +21,7 @@ export const NearbyPrototypeTemplate: React.FC<NearbyPrototypeTemplateProps> = (
   average,
   filters,
 }) => {
-  const displayPlace = city.match(/_/g) ? city.split('_').join(' ') : city;
+  const displayPlace = city.match(/_/g) ? city.split("_").join(" ") : city;
 
   return (
     <div className="relative">
@@ -31,7 +31,7 @@ export const NearbyPrototypeTemplate: React.FC<NearbyPrototypeTemplateProps> = (
         </div>
         <div>
           <h3 className="text-3xl">
-            Stays in{' '}
+            Stays in{" "}
             <span className="font-medium capitalize">{displayPlace}</span>
           </h3>
         </div>
@@ -40,13 +40,21 @@ export const NearbyPrototypeTemplate: React.FC<NearbyPrototypeTemplateProps> = (
             {filters.map((filter, index) => {
               return (
                 <div key={index} className="mr-3">
-                  <Button variant="filter" label={filter.name} />
+                  <Button
+                    variant="filter"
+                    label={filter.name}
+                    onClick={() => alert("ho")}
+                  />
                 </div>
               );
             })}
           </div>
           <div className="md:hidden">
-            <Button variant="filter" name={`filters ${filterCount}`} />
+            <Button
+              variant="filter"
+              label={`filters ${filterCount}`}
+              onClick={() => alert("clicked")}
+            />
           </div>
         </div>
         {city && (
@@ -83,7 +91,7 @@ export const NearbyPrototypeTemplate: React.FC<NearbyPrototypeTemplateProps> = (
           <Segment variant="homes" />
         </div>
         <div className="mt-4 flex justify-center">
-          <Bar variant="paginate" />
+          <Bar variant="paginate" page={3} total={15} />
         </div>
       </div>
       <div className="p-5 bg-gray-300">
