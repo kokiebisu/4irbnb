@@ -20,20 +20,20 @@ export const NearbySegmentTemplate: React.FC<NearbySegmentTemplateProps> = ({
               <Card
                 variant="nearby"
                 // to={items[0]?.to}
-                imgUrl={items[0]?.imgUrl}
-                city={items[0]?.city}
-                hours={items[0]?.hours}
-                size="sm"
+                imgUrl={item[0]?.imgUrl}
+                city={item[0]?.city}
+                hours={item[0]?.hours}
+                size="lg"
               />
             </div>
             <div className="">
               <Card
                 variant="nearby"
                 // to={items[1]?.to}
-                imgUrl={items[1]?.imgUrl}
-                city={items[1]?.city}
-                hours={items[1]?.hours}
-                size="sm"
+                imgUrl={item[1]?.imgUrl}
+                city={item[1]?.city}
+                hours={item[1]?.hours}
+                size="lg"
               />
             </div>
           </div>

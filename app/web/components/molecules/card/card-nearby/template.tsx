@@ -1,9 +1,10 @@
+import { renderSize } from "./util";
+
 export type NearbyCardTemplateProps = {
-  imgUrl?: string;
-  city?: string;
-  hours?: number;
-  size?: "sm" | "lg";
-  renderSize?: (size: "sm" | "lg") => string;
+  imgUrl: string;
+  city: string;
+  hours: number;
+  size: "sm" | "lg";
 };
 
 /**
@@ -18,7 +19,6 @@ export const NearbyCardTemplate = ({
   city,
   hours,
   size,
-  renderSize,
 }: NearbyCardTemplateProps): JSX.Element => {
   return (
     <div className="flex items-center">
@@ -26,12 +26,12 @@ export const NearbyCardTemplate = ({
         {imgUrl ? (
           <img src={imgUrl} className="rounded-md" />
         ) : (
-          <div className="w-12 h-12 rounded-md bg-gray-400" />
+          <div className="w-full h-full rounded-md bg-gray-400" />
         )}
       </div>
       <div>
-        <h3 className="text-sm mb-1">{city}</h3>
-        <p className="text-sm">{hours} hour drive</p>
+        <h3 className="text-md font-medium">{city}</h3>
+        <p className="text-md font-light">{hours} hour drive</p>
       </div>
     </div>
   );

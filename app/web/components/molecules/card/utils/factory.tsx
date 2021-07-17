@@ -56,7 +56,7 @@ export const factory = (props: CardProps) => {
     case "review":
       return <ReviewCard {...props} />;
     case "set":
-      return <SetCard {...props} />;
+      return <SetCard />;
     case "sharing":
       return <SharingCard {...props} />;
     case "starting":
