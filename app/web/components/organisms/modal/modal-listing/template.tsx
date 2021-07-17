@@ -1,8 +1,6 @@
-import { Button, Input, Icon } from '@atoms';
+import { Button, Input, Icon } from "@atoms";
 
-export interface ListingModalTemplateProps {}
-
-export const ListingModalTemplate: React.FC<ListingModalTemplateProps> = () => {
+export const ListingModalTemplate = () => {
   return (
     <div>
       <div className="mb-6">

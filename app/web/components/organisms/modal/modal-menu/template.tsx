@@ -1,4 +1,4 @@
-import { Button } from '@atoms';
+import { Button } from "@atoms";
 
 const Options: React.FC<{
   params: {
@@ -20,7 +20,7 @@ const Options: React.FC<{
             variant="option"
             name={kind}
             bold={bold}
-            onClick={() => alert('selected')}
+            onClick={() => alert("selected")}
           />
         </div>
       ))}
@@ -28,7 +28,7 @@ const Options: React.FC<{
   );
 };
 
-export interface MenuModalTemplateProps {
+export type MenuModalTemplateProps = {
   authenticated?: boolean;
   options: {
     [option: string]: {
@@ -36,15 +36,15 @@ export interface MenuModalTemplateProps {
       handleClick: () => void;
     };
   };
-}
+};
 
 /**
  * Renders the menu modal
  */
-export const MenuModalTemplate: React.FC<MenuModalTemplateProps> = ({
+export const MenuModalTemplate = ({
   authenticated = false,
   options,
-}) => {
+}: MenuModalTemplateProps): JSX.Element => {
   return (
     <div className="w-full py-4">
       <div className="w-full">
@@ -54,16 +54,16 @@ export const MenuModalTemplate: React.FC<MenuModalTemplateProps> = ({
             params={[
               // { kind: "messages", bold: true },
               // { kind: "notifications", bold: false },
-              { kind: 'trips', bold: false },
-              { kind: 'saved', bold: false },
+              { kind: "trips", bold: false },
+              { kind: "saved", bold: false },
             ]}
           />
         ) : (
           <Options
             options={options}
             params={[
-              { kind: 'signup', bold: true },
-              { kind: 'login', bold: false },
+              { kind: "signup", bold: true },
+              { kind: "login", bold: false },
             ]}
           />
         )}
@@ -72,7 +72,7 @@ export const MenuModalTemplate: React.FC<MenuModalTemplateProps> = ({
           <Options
             options={options}
             params={[
-              { kind: 'home', bold: false },
+              { kind: "home", bold: false },
               // { kind: "experience", bold: false },
               // { kind: "refer", bold: false },
               // { kind: "account", bold: false },
@@ -82,7 +82,7 @@ export const MenuModalTemplate: React.FC<MenuModalTemplateProps> = ({
           <Options
             options={options}
             params={[
-              { kind: 'home', bold: false },
+              { kind: "home", bold: false },
               // { kind: "experience", bold: false },
               // { kind: "help", bold: false },
             ]}
@@ -95,7 +95,7 @@ export const MenuModalTemplate: React.FC<MenuModalTemplateProps> = ({
               options={options}
               params={[
                 // { kind: "help", bold: false },
-                { kind: 'logout', bold: false },
+                { kind: "logout", bold: false },
               ]}
             />
           </>

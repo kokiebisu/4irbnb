@@ -1,21 +1,19 @@
-import { Button } from '@atoms';
-import { Prototype } from '@prototype/auth';
-import { useToggleDispatch } from '@context/toggle';
-import { useAuthDispatch, useAuthState } from '@context/auth';
-
-export interface AuthModalTemplateProps {}
+import { Button } from "@atoms";
+import { Prototype } from "@prototype/auth";
+import { useToggleDispatch } from "@context/toggle";
+import { useAuthDispatch, useAuthState } from "@context/auth";
 
 /**
  * Renders the auth modal
  */
-export const AuthModalTemplate: React.FC<AuthModalTemplateProps> = () => {
+export const AuthModalTemplate = (): JSX.Element => {
   const toggleDispatch = useToggleDispatch();
   const authDispatch = useAuthDispatch();
   const authState = useAuthState();
   return (
     <div
       className="grid"
-      style={{ maxHeight: '90vh', gridTemplateRows: 'auto 1fr' }}
+      style={{ maxHeight: "90vh", gridTemplateRows: "auto 1fr" }}
     >
       <div
         style={{ height: 60 }}
@@ -23,17 +21,17 @@ export const AuthModalTemplate: React.FC<AuthModalTemplateProps> = () => {
       >
         <div className="relative w-full">
           <div className="absolute left-0 top-2 bg-transparent">
-            {authState.title === 'Forgot password' ? (
+            {authState.title === "Forgot password" ? (
               <Button
                 variant="modal"
                 modalType="back"
-                onClick={() => authDispatch({ type: 'auth_login' })}
+                onClick={() => authDispatch({ type: "auth_login" })}
               />
             ) : (
               <Button
                 variant="modal"
                 modalType="close"
-                onClick={() => toggleDispatch({ type: 'close_register' })}
+                onClick={() => toggleDispatch({ type: "close_register" })}
               />
             )}
           </div>

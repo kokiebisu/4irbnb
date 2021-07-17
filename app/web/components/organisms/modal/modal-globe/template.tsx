@@ -1,11 +1,9 @@
-import { useState } from 'react';
-import { Button } from '@atoms';
-import { Prototype, $Prototype } from '@prototype/globe';
-import { useToggleDispatch } from '@context/toggle';
+import { useState } from "react";
+import { Button } from "@atoms";
+import { Prototype } from "@prototype/globe";
+import { useToggleDispatch } from "@context/toggle";
 
-export interface GlobeModalTemplateProps {}
-
-export const GlobeModalTemplate: React.FC<GlobeModalTemplateProps> = () => {
+export const GlobeModalTemplate = (): JSX.Element => {
   const toggleDispatch = useToggleDispatch();
   const [prototype, setPrototype] = useState($Prototype.LANGUAGE);
   return (
@@ -15,7 +13,7 @@ export const GlobeModalTemplate: React.FC<GlobeModalTemplateProps> = () => {
           <Button
             variant="modal"
             modal="close"
-            onClick={() => toggleDispatch({ type: 'toggle_globe' })}
+            onClick={() => toggleDispatch({ type: "toggle_globe" })}
           />
         </div>
       </div>

@@ -1,8 +1,6 @@
-import { Input } from '@atoms';
+import { Input } from "@atoms";
 
-export interface GuestsModalTemplateProps {}
-
-export const GuestsModalTemplate: React.FC<GuestsModalTemplateProps> = () => {
+export const GuestsModalTemplate = (): JSX.Element => {
   return (
     <div>
       <div>
@@ -13,7 +11,7 @@ export const GuestsModalTemplate: React.FC<GuestsModalTemplateProps> = () => {
           subtitle="Ages 13 or above"
         />
       </div>
-      <div style={{ height: 1, width: '100%', backgroundColor: '#EBEBEB' }} />
+      <div style={{ height: 1, width: "100%", backgroundColor: "#EBEBEB" }} />
       <div>
         <Input
           variant="counter"
@@ -22,7 +20,7 @@ export const GuestsModalTemplate: React.FC<GuestsModalTemplateProps> = () => {
           subtitle="Ages 2 - 12"
         />
       </div>
-      <div style={{ height: 1, width: '100%', backgroundColor: '#EBEBEB' }} />
+      <div style={{ height: 1, width: "100%", backgroundColor: "#EBEBEB" }} />
       <div>
         <Input
           variant="counter"

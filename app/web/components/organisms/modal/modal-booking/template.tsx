@@ -1,44 +1,44 @@
-import { Button } from '@atoms';
+import { Button } from "@atoms";
 
-export interface BookingModalTemplateProps {
-  availables?: any;
-}
+export type BookingModalTemplateProps = {
+  availables: any;
+};
 
 /**
  * Renders the booking modal
  * @param {Object[]} availables - Lists all the available dates
  */
-export const BookingModalTemplate: React.FC<BookingModalTemplateProps> = ({
+export const BookingModalTemplate = ({
   availables = [
     {
-      date: 'Tue., Nov. 10',
-      from: '1:00 a.m. ',
-      to: '3:00 a.m. ',
-      standard: 'PST',
+      date: "Tue., Nov. 10",
+      from: "1:00 a.m. ",
+      to: "3:00 a.m. ",
+      standard: "PST",
       price: 31,
     },
     {
-      date: 'Tue., Nov. 10',
-      from: '1:00 a.m. ',
-      to: '3:00 a.m. ',
-      standard: 'PST',
+      date: "Tue., Nov. 10",
+      from: "1:00 a.m. ",
+      to: "3:00 a.m. ",
+      standard: "PST",
       price: 31,
     },
     {
-      date: 'Tue., Nov. 10',
-      from: '1:00 a.m. ',
-      to: '3:00 a.m. ',
-      standard: 'PST',
+      date: "Tue., Nov. 10",
+      from: "1:00 a.m. ",
+      to: "3:00 a.m. ",
+      standard: "PST",
       price: 31,
     },
   ],
-}) => {
+}: BookingModalTemplateProps): JSX.Element => {
   const displayingAvailables = [...availables].splice(0, 3);
   return (
     <div
       className={`w-full inline-block ${[
-        modal['position__checkin--wrapper'],
-      ].join(' ')}`}
+        modal["position__checkin--wrapper"],
+      ].join(" ")}`}
     >
       <div>
         <div>

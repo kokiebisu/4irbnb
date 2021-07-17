@@ -1,23 +1,21 @@
-import { Button } from '@atoms';
-import { Layout } from '@layout';
+import { Button } from "@atoms";
+import { Layout } from "@layout";
 
-export interface LocationModalTemplateProps {}
-
-export const LocationModalTemplate: React.FC<LocationModalTemplateProps> = () => {
+export const LocationModalTemplate = (): JSX.Element => {
   const recentLocations = [
-    { location: 'Chilliwack', from: 'Jan. 7', to: 'Jan. 21', guests: 4 },
-    { location: 'Tofino' },
-    { location: 'Nanaimo' },
+    { location: "Chilliwack", from: "Jan. 7", to: "Jan. 21", guests: 4 },
+    { location: "Tofino" },
+    { location: "Nanaimo" },
   ];
   const nearbyLocations = [
-    'Whistler',
-    'Victora',
-    'Tofino',
-    'Kelowna',
-    'Uclulet',
-    'Chilliwack',
-    'Sooke',
-    'Pemberton',
+    "Whistler",
+    "Victora",
+    "Tofino",
+    "Kelowna",
+    "Uclulet",
+    "Chilliwack",
+    "Sooke",
+    "Pemberton",
   ];
   return (
     <div>
@@ -26,7 +24,7 @@ export const LocationModalTemplate: React.FC<LocationModalTemplateProps> = () =>
           variant="location"
           locationType="explore"
           stretch
-          onClick={() => alert('clicked')}
+          onClick={() => alert("clicked")}
         />
       </div>
       <div>
@@ -45,7 +43,7 @@ export const LocationModalTemplate: React.FC<LocationModalTemplateProps> = () =>
                     to={to}
                     guests={guests}
                     stretch
-                    onClick={() => alert('clicked')}
+                    onClick={() => alert("clicked")}
                   />
                 </div>
               );

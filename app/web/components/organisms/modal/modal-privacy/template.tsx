@@ -1,18 +1,18 @@
-import { Button } from '@atoms';
-import { Icon } from '@atoms';
+import { Button } from "@atoms";
+import { Icon } from "@atoms";
 
-export interface PrivacyModalTemplateProps {
+export type PrivacyModalTemplateProps = {
   handleSave: () => void;
   handleSettings: () => void;
-}
+};
 
 /**
  * Renders the privacy modal
  */
-export const PrivacyModalTemplate: React.FC<PrivacyModalTemplateProps> = ({
+export const PrivacyModalTemplate = ({
   handleSave,
   handleSettings,
-}) => {
+}: PrivacyModalTemplateProps): JSX.Element => {
   return (
     <div>
       <div className="block lg:flex lg:items-center">
@@ -33,10 +33,10 @@ export const PrivacyModalTemplate: React.FC<PrivacyModalTemplateProps> = ({
               We use cookies to help personalize content, tailor and measure
               ads, and provide a safer experience. By navigating the site, you
               agree to the use of cookies to collect information on and off
-              Airbnb. Read our{' '}
+              Airbnb. Read our{" "}
               <u>
                 <b>Cookie Policy</b>
-              </u>{' '}
+              </u>{" "}
               to learn more or go to Cookie Preferences to manage your settings.
             </p>
           </div>
