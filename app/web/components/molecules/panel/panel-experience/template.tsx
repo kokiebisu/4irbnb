@@ -1,10 +1,10 @@
-export interface ExperiencePanelTemplateProps {
-  firstImage?: string;
-  secondImage?: string;
-  thirdImage?: string;
-  fourthImage?: string;
-  fifthImage?: string;
-}
+export type ExperiencePanelTemplateProps = {
+  firstImage: string;
+  secondImage: string;
+  thirdImage: string;
+  fourthImage: string;
+  fifthImage: string;
+};
 
 /**
  *
