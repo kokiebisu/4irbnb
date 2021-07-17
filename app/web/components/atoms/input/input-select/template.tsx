@@ -5,12 +5,12 @@ import { inputTypes } from "../logic/logic.types";
 import { renderShape } from "../logic/logic.select";
 
 export type SelectInputTemplateProps = {
-  onChange?: (e: any) => void;
-  value?: any;
+  onChange: (e: any) => void;
+  value: any;
   direction?: "top" | "bottom" | undefined;
   errors?: boolean;
   disabled?: boolean;
-  inputType?: string;
+  inputType: string;
 };
 
 /**
@@ -32,11 +32,7 @@ export const SelectInputTemplate = ({
 }: SelectInputTemplateProps): JSX.Element => {
   const [fieldActive, setFieldActive] = useState(false);
   return (
-    <div
-      className={`flex relative items-center h-32 ${[input["outside"]].join(
-        " "
-      )} `}
-    >
+    <div className="flex relative items-center h-32">
       <div
         className={`relative px-3 h-full w-full flex justify-between ${renderShape(
           direction
@@ -79,10 +75,4 @@ export const SelectInputTemplate = ({
       </div>
     </div>
   );
-};
-
-export const select = (props) => {
-  return {
-    select: <SelectInputTemplate {...props} />,
-  };
 };

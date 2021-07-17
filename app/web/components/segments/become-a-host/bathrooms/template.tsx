@@ -1,10 +1,10 @@
-import { Input } from '@atoms';
+import { Input } from "@atoms";
 
-export interface BathroomsSegmentTemplateProps {
-  bathrooms?: number;
-  handleCounterAdd?: (type: string) => void;
-  handleCounterSubtract?: (type: string) => void;
-}
+export type BathroomsSegmentTemplateProps = {
+  bathrooms: number;
+  handleCounterAdd: (type: string) => void;
+  handleCounterSubtract: (type: string) => void;
+};
 
 export const BathroomsSegmentTemplate: React.FC<BathroomsSegmentTemplateProps> = ({
   bathrooms,
@@ -28,8 +28,8 @@ export const BathroomsSegmentTemplate: React.FC<BathroomsSegmentTemplateProps> =
             title="Bathrooms"
             variant="counter"
             value={bathrooms}
-            add={() => handleCounterAdd('bathrooms')}
-            subtract={() => handleCounterSubtract('bathrooms')}
+            onAdd={() => handleCounterAdd("bathrooms")}
+            onSubtract={() => handleCounterSubtract("bathrooms")}
             min={1}
             max={15}
             type="create"

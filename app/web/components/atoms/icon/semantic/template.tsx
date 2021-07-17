@@ -78,8 +78,8 @@ export const WarningIcon = ({ fill }: FillIconProps): JSX.Element => {
 };
 
 export const MinusIcon = ({
-  stroke = "black",
-  strokeWidth = 3,
+  stroke = "green",
+  strokeWidth = 1,
 }: StrokeIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">

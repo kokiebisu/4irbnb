@@ -1,8 +1,8 @@
-import { Input } from '@atoms';
+import { Input } from "@atoms";
 
 export interface PhotosSegmentTemplateProps {
-  preview?: string[];
-  handlePhotosChange?: (e: any) => void;
+  preview: string[];
+  handlePhotosChange: (e: any) => void;
 }
 
 export const PhotosSegmentTemplate: React.FC<PhotosSegmentTemplateProps> = ({

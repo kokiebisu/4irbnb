@@ -1,13 +1,13 @@
-import { Input, $Input } from '@atoms';
-import { Layout } from '@layout';
+import { Input } from "@atoms";
+import { Layout } from "@layout";
 
 export interface BedroomsSegmentTemplateProps {
-  guests?: number;
-  bedrooms?: number;
-  beds?: number;
-  handleCounterAdd?: (type: string) => void;
-  handleCounterSubtract?: (type: string) => void;
-  handleSelectChange?: (type: string, e: any) => void;
+  guests: number;
+  bedrooms: number;
+  beds: number;
+  handleCounterAdd: (type: string) => void;
+  handleCounterSubtract: (type: string) => void;
+  handleSelectChange: (type: string, e: any) => void;
 }
 
 export const BedroomsSegmentTemplate: React.FC<BedroomsSegmentTemplateProps> = ({
@@ -35,10 +35,10 @@ export const BedroomsSegmentTemplate: React.FC<BedroomsSegmentTemplateProps> = (
         <div className="mb-3">
           <Input
             title="Guests"
-            variant={$Input.COUNTER}
+            variant="counter"
             value={guests}
-            add={() => handleCounterAdd('guests')}
-            subtract={() => handleCounterSubtract('guests')}
+            onAdd={() => handleCounterAdd("guests")}
+            onSubtract={() => handleCounterSubtract("guests")}
             min={1}
             max={16}
             type="create"
@@ -49,10 +49,10 @@ export const BedroomsSegmentTemplate: React.FC<BedroomsSegmentTemplateProps> = (
         <Layout variant="input" title="How many bedrooms can guests use?">
           <div className="mt-4">
             <Input
-              variant={$Input.SELECT}
+              variant="select"
               inputType="bedrooms"
               value={bedrooms}
-              handleChange={(e) => handleSelectChange('bedrooms', e)}
+              onChange={(e) => handleSelectChange("bedrooms", e)}
             />
           </div>
         </Layout>
@@ -62,10 +62,10 @@ export const BedroomsSegmentTemplate: React.FC<BedroomsSegmentTemplateProps> = (
           <div className="mt-4">
             <Input
               title="Beds"
-              variant={$Input.COUNTER}
+              variant="counter"
               value={beds}
-              add={() => handleCounterAdd('beds')}
-              subtract={() => handleCounterSubtract('beds')}
+              onAdd={() => handleCounterAdd("beds")}
+              onSubtract={() => handleCounterSubtract("beds")}
               min={1}
               max={50}
               type="create"

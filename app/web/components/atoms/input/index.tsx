@@ -50,6 +50,4 @@ export type InputProps =
  * Bundles the input components
  * @param {string} variant - Specifies the variant of input component
  */
-export const Input = ({ ...props }: InputProps): JSX.Element => {
-  return factory(props);
-};
+export const Input = ({ ...props }: InputProps): JSX.Element => factory(props);

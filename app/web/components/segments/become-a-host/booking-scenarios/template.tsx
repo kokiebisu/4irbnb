@@ -1,16 +1,16 @@
-import { Bullet } from '@atoms';
+import { Bullet } from "@atoms";
 
-export interface BookingScenariosSegmentTemplateProps {
+export type BookingScenariosSegmentTemplateProps = {
   scenarios: {
     imgSrc: string;
     title: string;
     description: string;
   }[];
-}
+};
 
-export const BookingScenariosSegmentTemplate: React.FC<BookingScenariosSegmentTemplateProps> = ({
+export const BookingScenariosSegmentTemplate = ({
   scenarios,
-}) => {
+}: BookingScenariosSegmentTemplateProps): JSX.Element => {
   return (
     <div>
       <div className="mb-6">
@@ -28,6 +28,8 @@ export const BookingScenariosSegmentTemplate: React.FC<BookingScenariosSegmentTe
                   icon={<img style={{ width: 150 }} src={imgSrc} />}
                   title={title}
                   description={description}
+                  link="/"
+                  onClick={() => alert("something")}
                 />
               </div>
             );
