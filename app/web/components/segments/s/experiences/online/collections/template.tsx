@@ -1,10 +1,10 @@
-import { Button } from '@atoms';
-import { Card, $Card } from '@card';
-import { useSlider } from './appearance';
+import { Button } from "@atoms";
+import { Card, $Card } from "@card";
+import { useSlider } from "./appearance";
 
 export interface CollectionsSegmentTemplateProps {
-  title?: String;
-  cards?: { imgUrl: string; videoUrl: string }[];
+  title: String;
+  cards: { imgUrl: string; videoUrl: string }[];
 }
 
 export const CollectionsSegmentTemplate: React.FC<CollectionsSegmentTemplateProps> = ({
@@ -71,7 +71,6 @@ export const CollectionsSegmentTemplate: React.FC<CollectionsSegmentTemplateProp
           <div className="flex items-center">
             <div className="mx-1">
               <Button
-                block
                 variant="paginate"
                 animate
                 direction="left"
@@ -81,7 +80,6 @@ export const CollectionsSegmentTemplate: React.FC<CollectionsSegmentTemplateProp
             </div>
             <div className="mx-1">
               <Button
-                block
                 variant="paginate"
                 animate
                 direction="right"
@@ -105,7 +103,7 @@ export const CollectionsSegmentTemplate: React.FC<CollectionsSegmentTemplateProp
                 <div key={index}>
                   <div className="pr-3" style={{ ...cardStyles() }}>
                     <Card
-                      variant={$Card.COLLECTION}
+                      variant="collection"
                       paddingTop={paddingTopStyles()}
                     />
                   </div>

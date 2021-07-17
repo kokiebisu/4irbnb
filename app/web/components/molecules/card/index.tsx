@@ -12,7 +12,6 @@ import { NearbyCardProps } from "./card-nearby";
 import { OnlineCardProps } from "./card-online";
 import { ParticipateCardProps } from "./card-participate";
 import { ReviewCardProps } from "./card-review";
-import { SetCardProps } from "./card-set";
 import { SharingCardProps } from "./card-sharing";
 import { StartingCardProps } from "./card-starting";
 import { StayCardProps } from "./card-stay";
@@ -64,7 +63,7 @@ export type CardProps =
   | ({ variant: "online" } & OnlineCardProps)
   | ({ variant: "participate" } & ParticipateCardProps)
   | ({ variant: "review" } & ReviewCardProps)
-  | ({ variant: "set" } & SetCardProps)
+  | { variant: "set" }
   | ({ variant: "sharing" } & SharingCardProps)
   | ({ variant: "starting" } & StartingCardProps)
   | ({ variant: "stay" } & StayCardProps)
@@ -79,6 +78,4 @@ export type CardProps =
  * @param {string} variant - Specifies the variant of card component
  * @param {string} to - Redirects to the path when clicked
  */
-export const Card: React.FC<CardProps> = ({ ...props }) => {
-  return factory(props);
-};
+export const Card = ({ ...props }: CardProps): JSX.Element => factory(props);

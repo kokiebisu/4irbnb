@@ -1,16 +1,16 @@
-import { Icon } from '@atoms';
-import section from '@template/index.module.scss';
+import { Icon } from "@atoms";
+import section from "@template/index.module.scss";
 
-import { Button } from '@atoms';
-import { Bullet } from '@atoms';
-import { Card, $Card } from '@card';
+import { Button } from "@atoms";
+import { Bullet } from "@atoms";
+import { Card } from "@card";
 
 export interface ReviewsSegmentTemplateProps {
-  ratings?: number;
-  categories?: any;
-  numberOfReviews?: number;
-  reviews?: any;
-  layoutType?: string;
+  ratings: number;
+  categories: any;
+  numberOfReviews: number;
+  reviews: any;
+  layoutType: string;
 }
 
 /**
@@ -34,7 +34,7 @@ export const ReviewsSegmentTemplate: React.FC<ReviewsSegmentTemplateProps> = ({
         <div className="py-3 flex items-center">
           <div className="flex items-center">
             <div className="mr-2">
-              <Icon variant={'profile'} profileType="star" width={20} />
+              <Icon variant={"profile"} profileType="star" width={20} />
             </div>
             <h3 className="mr-2 text-2xl text-gray-700">
               {ratings.toFixed(1)}
@@ -44,7 +44,7 @@ export const ReviewsSegmentTemplate: React.FC<ReviewsSegmentTemplateProps> = ({
             </h3>
           </div>
         </div>
-        {layoutType === 'room' && (
+        {layoutType === "room" && (
           <div className="grid mt-4 mr-6 grid-cols-2">
             {categories.length
               ? categories.map(
@@ -55,8 +55,8 @@ export const ReviewsSegmentTemplate: React.FC<ReviewsSegmentTemplateProps> = ({
                     return (
                       <div
                         key={index}
-                        className={`${[section['m__review--bullet']].join(
-                          ' '
+                        className={`${[section["m__review--bullet"]].join(
+                          " "
                         )} py-2`}
                       >
                         <Bullet
@@ -72,15 +72,15 @@ export const ReviewsSegmentTemplate: React.FC<ReviewsSegmentTemplateProps> = ({
           </div>
         )}
         <div
-          className={`w-full mt-4 ${[section['display__reviews--wrapper']].join(
-            ' '
+          className={`w-full mt-4 ${[section["display__reviews--wrapper"]].join(
+            " "
           )}`}
         >
           {reviews.map((review, index) => {
             return (
               <div className="mr-12 mb-6" key={index}>
                 <Card
-                  variant={$Card.REVIEW}
+                  variant="review"
                   imgUrl={review?.imgUrl}
                   description={review?.description}
                 />
@@ -93,6 +93,7 @@ export const ReviewsSegmentTemplate: React.FC<ReviewsSegmentTemplateProps> = ({
             variant="border"
             size="md"
             title={`Show all ${numberOfReviews} reviews`}
+            onClick={() => alert("yo")}
           />
         </div>
       </div>

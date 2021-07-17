@@ -1,6 +1,6 @@
 import template from "@template/index/index.module.scss";
 
-import { Card, $Card } from "@card";
+import { Card } from "@card";
 
 export interface CategorySegmentTemplateProps {
   items: { imgUrl: string; title: string; to: string }[];
@@ -23,11 +23,9 @@ export const CategorySegmentTemplate: React.FC<CategorySegmentTemplateProps> = (
           return (
             <div key={index}>
               <Card
-                variant={$Card.CATEGORY}
+                variant="category"
                 imgUrl={item?.imgUrl}
                 title={item?.title}
-                to={item?.to}
-                extendsTo={[template["category__card"]].join(" ")}
               />
             </div>
           );

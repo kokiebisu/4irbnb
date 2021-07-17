@@ -3,15 +3,15 @@ import { Icon } from "@atoms";
 import { useStartingCardTemplate } from "./use-template";
 
 export type StartingCardTemplateProps = {
-  ratings?: number;
-  reviews?: number;
-  country?: string;
-  title?: string;
-  minCost?: number;
-  slots?: string[];
+  ratings: number;
+  reviews: number;
+  country: string;
+  title: string;
+  minCost: number;
+  slots: string[];
   imgUrl?: string;
   videoUrl?: string;
-  handleIsHoveredChange?: (state: boolean) => boolean;
+  handleIsHoveredChange: (state: boolean) => boolean;
   isHovered?: boolean;
 };
 

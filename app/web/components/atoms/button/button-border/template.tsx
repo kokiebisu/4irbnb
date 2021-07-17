@@ -1,12 +1,12 @@
-import { stretchMixin } from '../utils/mixin';
+import { stretchMixin } from "../utils/mixin";
 
 export type BorderButtonTemplateProps = {
   title: string;
-  inverse: boolean;
-  size: 'sm' | 'md' | 'lg';
-  spread: boolean;
-  bold: boolean;
-  stretch: boolean;
+  inverse?: boolean;
+  size: "sm" | "md" | "lg";
+  spread?: boolean;
+  bold?: boolean;
+  stretch?: boolean;
   onClick: () => void;
 };
 
@@ -28,22 +28,22 @@ export const BorderButtonTemplate = ({
 }: BorderButtonTemplateProps): JSX.Element => {
   const renderBorder = () => {
     if (inverse && bold) {
-      return 'border-2 border-white';
+      return "border-2 border-white";
     }
     if (inverse) {
-      return 'border border-white';
+      return "border border-white";
     }
     if (bold) {
-      return 'border-2 border-black';
+      return "border-2 border-black";
     }
-    return 'border border-black';
+    return "border border-black";
   };
 
   const styles = {
-    common: 'text-center rounded-lg whitespace-nowrap',
-    sm: 'text-sm py-2 px-4',
-    md: 'text-base py-3 px-5',
-    lg: 'text-lg py-4 px-6',
+    common: "text-center rounded-lg whitespace-nowrap",
+    sm: "text-sm py-2 px-4",
+    md: "text-base py-3 px-5",
+    lg: "text-lg py-4 px-6",
   };
 
   const mixin: string = stretchMixin(stretch);
@@ -55,11 +55,11 @@ export const BorderButtonTemplate = ({
       onClick={onClick}
     >
       <div
-        className={`${mixin} ${styles['common']} ${
+        className={`${mixin} ${styles["common"]} ${
           styles[size]
         } ${renderBorder()}`}
       >
-        <h4 className={inverse ? 'text-white' : undefined}>{title}</h4>
+        <h4 className={inverse ? "text-white" : undefined}>{title}</h4>
       </div>
     </button>
   );

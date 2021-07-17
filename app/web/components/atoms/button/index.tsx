@@ -65,6 +65,4 @@ export type ButtonProps =
  * @param {string} variant - Specifies the type of button component
  * @param {Object} children - A JSX that will be part of the component
  */
-export const Button = ({ ...props }: ButtonProps) => {
-  return factory(props);
-};
+export const Button = ({ ...props }: ButtonProps) => factory(props);

@@ -1,7 +1,7 @@
-import { Card, $Card } from '@card';
+import { Card } from "@card";
 
 export interface ParticipateSegmentTemplateProps {
-  participatingMethods?: string[];
+  participatingMethods: string[];
 }
 
 /**
@@ -22,7 +22,7 @@ export const ParticipateSegmentTemplate: React.FC<ParticipateSegmentTemplateProp
         {participatingMethods.map((participate, index) => {
           return (
             <div key={index} className="mr-4">
-              <Card variant={$Card.PARTICIPATE} categoryType={participate} />
+              <Card variant="participate" categoryType={participate} />
             </div>
           );
         })}

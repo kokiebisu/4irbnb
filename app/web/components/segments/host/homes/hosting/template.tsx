@@ -1,5 +1,5 @@
-import { Layout } from '@layout';
-import { Card, $Card } from '@card';
+import { Layout } from "@layout";
+import { Card } from "@card";
 
 export interface HostingSegmentTemplateProps {}
 
@@ -12,17 +12,17 @@ export const HostingSegmentTemplate: React.FC<HostingSegmentTemplateProps> = () 
     <Layout variant="homes" title="How hosting works">
       <div className="mt-3">
         <div
-          style={{ scrollSnapType: 'x mandatory' }}
+          style={{ scrollSnapType: "x mandatory" }}
           className="w-full flex overflow-x-auto"
         >
-          {['requirements', 'decide', 'prices', 'help'].map((type, index) => {
+          {["requirements", "decide", "prices", "help"].map((type, index) => {
             return (
               <div
                 key={index}
                 className="mb-6 min-w-screen lg:w-full"
-                style={{ scrollSnapAlign: 'start' }}
+                style={{ scrollSnapAlign: "start" }}
               >
-                <Card variant={$Card.HOSTING} type={type} />
+                <Card variant="hosting" type={type} />
               </div>
             );
           })}

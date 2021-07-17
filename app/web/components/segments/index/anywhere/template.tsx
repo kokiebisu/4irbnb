@@ -29,8 +29,6 @@ export const AnywhereSegmentTemplate: React.FC<AnywhereSegmentTemplateProps> = (
                 variant="anywhere"
                 imgUrl={item?.imgUrl}
                 title={item?.title}
-                to={item?.to}
-                extendsTo={[template["category__card"]].join(" ")}
               />
             </div>
           );

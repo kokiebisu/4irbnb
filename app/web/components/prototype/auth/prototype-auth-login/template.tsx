@@ -62,7 +62,7 @@ export const LoginPrototypeTemplate: React.FC<LoginPrototypeTemplateProps> = () 
     <div className="p-5">
       {status === "fail" && (
         <div className="mb-4">
-          <Card variant={$Card.AGAIN} />
+          <Card variant="again" />
         </div>
       )}
       <form onSubmit={formik.handleSubmit}>
@@ -99,7 +99,7 @@ export const LoginPrototypeTemplate: React.FC<LoginPrototypeTemplateProps> = () 
           </div>
           {status === "success" && (
             <div className="mt-4">
-              <Card variant={$Card.SET} />
+              <Card variant="set" />
             </div>
           )}
         </div>

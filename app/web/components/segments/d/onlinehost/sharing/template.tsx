@@ -1,9 +1,9 @@
-import { Layout } from '@layout';
-import { Card, $Card } from '@card';
-import { Button } from '@atoms';
+import { Layout } from "@layout";
+import { Card } from "@card";
+import { Button } from "@atoms";
 
 export interface SharingSegmentTemplateProps {
-  categories?: string[];
+  categories: string[];
 }
 
 export const SharingSegmentTemplate: React.FC<SharingSegmentTemplateProps> = ({
@@ -19,13 +19,19 @@ export const SharingSegmentTemplate: React.FC<SharingSegmentTemplateProps> = ({
         {categories.map((sharing, index) => {
           return (
             <div key={index}>
-              <Card variant={$Card.SHARING} sharing={sharing} />
+              <Card variant="sharing" sharing={sharing} />
             </div>
           );
         })}
       </div>
       <div className="flex justify-center">
-        <Button variant="border" bold title="Start creating your experience" />
+        <Button
+          variant="border"
+          bold
+          title="Start creating your experience"
+          size="md"
+          onClick={() => alert("yo")}
+        />
       </div>
     </Layout>
   );
