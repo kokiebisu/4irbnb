@@ -1,4 +1,4 @@
-import { factory } from "@template/become-a-host/utils/factory";
+import { factory } from "./util/factory";
 import { AvailabilityBarProps } from "./bar-availability";
 import { CovidBarProps } from "./bar-covid";
 import { CreateBarProps } from "./bar-create";

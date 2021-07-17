@@ -4,12 +4,12 @@ import { useToggleDispatch } from "@context/toggle";
 export interface SearchBarTemplateProps {
   type: string;
   selected: string;
-  setSelected: (param: string) => void;
   transparent?: boolean;
   dispatchToggle?: any;
-  handleGuestsSelected?: () => void;
-  handleCheckInSelected?: () => void;
+  handleGuestsSelected: () => void;
+  handleCheckInSelected: () => void;
   handleSearch: () => void;
+  handleSelectedChange: (param: string) => void;
 }
 
 /**
@@ -18,7 +18,7 @@ export interface SearchBarTemplateProps {
 export const SearchBarTemplate = ({
   type,
   selected,
-  setSelected,
+  handleSelectedChange,
   transparent,
   handleGuestsSelected,
   handleCheckInSelected,
@@ -40,7 +40,7 @@ export const SearchBarTemplate = ({
           title="Where are you going?"
           subtitle="Location"
           selected={selected}
-          setSelected={setSelected}
+          setSelected={() => handleSelectedChange("location")}
           name="location"
         />
         <Seperator />
@@ -48,7 +48,7 @@ export const SearchBarTemplate = ({
           title="Add dates"
           subtitle="Check in"
           selected={selected}
-          setSelected={setSelected}
+          setSelected={() => handleSelectedChange("checkin")}
           name="checkin"
         />
         <Seperator />
@@ -56,7 +56,7 @@ export const SearchBarTemplate = ({
           title="Add dates"
           subtitle="Check out"
           selected={selected}
-          setSelected={setSelected}
+          setSelected={() => handleSelectedChange("checkout")}
           name="checkout"
         />
         <Seperator />
@@ -87,10 +87,9 @@ export const SearchBarTemplate = ({
             </div>
             <div>
               <Button
-                block
                 variant="search"
                 onClick={() => alert("hello")}
-                expand={selected}
+                expanded={selected === "guests"}
               />
             </div>
           </div>
@@ -110,7 +109,7 @@ export const SearchBarTemplate = ({
           title="Where are you going?"
           subtitle="Location"
           selected={selected}
-          setSelected={setSelected}
+          setSelected={handleSelectedChange}
           name="location"
         />
         <Seperator />
@@ -140,10 +139,9 @@ export const SearchBarTemplate = ({
             </div>
             <div>
               <Button
-                block
                 variant="search"
                 onClick={handleSearch}
-                expand={selected}
+                expanded={selected === "location"}
               />
             </div>
           </div>

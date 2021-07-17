@@ -1,32 +1,24 @@
-import { factory } from './utils/factory';
+import { factory } from "./utils/factory";
 
-export type BecomeAHostSegments =
-  | 'getstarted'
-  | 'room'
-  | 'bedrooms'
-  | 'bathrooms'
-  | 'location'
-  | 'amenities'
-  | 'spaces'
-  | 'description'
-  | 'title'
-  | 'phone'
-  | 'requirements'
-  | 'rules'
-  | 'checkin'
-  | 'advance'
-  | 'period'
-  | 'price'
-  | 'booking-scenarios'
-  | 'photos';
-export interface CreateProps {
-  variant: BecomeAHostSegments;
-  [props: string]: any;
-}
+export type BecomeAHostSegmentProps =
+  | { variant: "getstarted" }
+  | { variant: "room" }
+  | { variant: "bedrooms" }
+  | { variant: "bathrooms" }
+  | { variant: "location" }
+  | { variant: "amenities" }
+  | { variant: "spaces" }
+  | { variant: "description" }
+  | { variant: "title" }
+  | { variant: "phone" }
+  | { variant: "requirements" }
+  | { variant: "rules" }
+  | { variant: "checkin" }
+  | { variant: "advance" }
+  | { variant: "period" }
+  | { variant: "price" }
+  | { variant: "booking-scenarios" }
+  | { variant: "photos" };
 
-export const Segment: React.FC<CreateProps> = ({ variant, ...props }) => {
-  const variants = factory(props);
-  return (
-    <div data-testid={`${variant}-segment`}>{variants[variant].component}</div>
-  );
-};
+export const Segment = ({ ...props }: BecomeAHostSegmentProps) =>
+  factory(props);

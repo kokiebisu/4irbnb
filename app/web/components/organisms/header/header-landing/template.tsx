@@ -3,7 +3,7 @@ import Router from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 import { Modal } from "@modal";
 import { Button } from "@atoms";
-// import { Prototype } from '@prototype/searchbar';
+import { SearchbarPrototype } from "@prototype/searchbar";
 
 import { Icon } from "@atoms";
 import { useToggleDispatch, useToggleState } from "@context/toggle";
@@ -159,7 +159,7 @@ export const LandingHeaderTemplate = ({
                                   : "landing__bb"
                               }`}
                             >
-                              <p className="text-white text-xs md:text-md font-medium md:font-light">
+                              <p className="text-white text-md md:text-md md:font-thin">
                                 {types[type].title}
                               </p>
                             </div>
@@ -169,7 +169,7 @@ export const LandingHeaderTemplate = ({
                     })}
                   </div>
                 </div>
-                {/* <Prototype type={category} transparent /> */}
+                <SearchbarPrototype type={category} transparent />
               </div>
             </motion.div>
           ) : (
@@ -202,7 +202,7 @@ export const LandingHeaderTemplate = ({
                                   </p>
                                 </div>
                                 <div className="flex justify-center">
-                                  {/* {category === type && (
+                                  {category === type && (
                                     <motion.div
                                       whileHover={{ width: 15 }}
                                       style={{
@@ -211,7 +211,7 @@ export const LandingHeaderTemplate = ({
                                         backgroundColor: "white",
                                       }}
                                     />
-                                  )} */}
+                                  )}
                                 </div>
                               </button>
                             </div>
@@ -219,9 +219,9 @@ export const LandingHeaderTemplate = ({
                         })}
                       </div>
                     </div>
-                    {/* <div ref={searchbarRef}>
+                    <div ref={searchbarRef}>
                       <Prototype type={category} />
-                    </div> */}
+                    </div>
                   </div>
                 </motion.div>
               ) : (
