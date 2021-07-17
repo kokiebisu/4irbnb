@@ -17,10 +17,9 @@ export const AuthButtonTemplate = ({
   onClick,
   stretched,
 }: AuthButtonTemplateProps): JSX.Element => {
-  // const { icon } = useAuthButtonTemplate({ authType });
   return (
     <button
-      className={`${stretched ? 'w-full block' : 'inline-block'}`}
+      className={`${stretched ? "w-full block" : "inline-block"}`}
       data-testid="auth-button"
       onClick={!disabled ? onClick : undefined}
     >

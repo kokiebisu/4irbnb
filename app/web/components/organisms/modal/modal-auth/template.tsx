@@ -12,25 +12,39 @@ export const AuthModalTemplate = (): JSX.Element => {
   const authState = useAuthState();
   return (
     <div
-      className="grid"
+      className="grid bg-white rounded-2xl"
       style={{ maxHeight: "90vh", gridTemplateRows: "auto 1fr" }}
     >
       <div
         style={{ height: 60 }}
-        className="flex items-center border-b border-gray-500 px-4"
+        className="flex items-center border-b border-gray-200 px-4"
       >
         <div className="relative w-full">
-          <div className="absolute left-0 top-2 bg-transparent">
+          <div className="absolute left-0 -top-2 bg-transparent">
             {authState.title === "Forgot password" ? (
               <Button
                 variant="modal"
-                icon={<Icon variant="action" actionType="close" />}
+                icon={
+                  <Icon
+                    variant="action"
+                    actionType="close"
+                    stroke="black"
+                    strokeWidth={3}
+                  />
+                }
                 onClick={() => authDispatch({ type: "auth_login" })}
               />
             ) : (
               <Button
                 variant="modal"
-                icon={<Icon variant="action" actionType="close" />}
+                icon={
+                  <Icon
+                    variant="action"
+                    actionType="close"
+                    stroke="black"
+                    strokeWidth={3}
+                  />
+                }
                 onClick={() => toggleDispatch({ type: "close_register" })}
               />
             )}
