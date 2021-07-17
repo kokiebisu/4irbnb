@@ -7,7 +7,7 @@ export type HorizontalCardTemplateProps = {
   ratings: number;
   location: string;
   title: string;
-  numberOfReviews: string;
+  numberOfReviews: number;
   save?: boolean;
   superhost?: boolean;
 };

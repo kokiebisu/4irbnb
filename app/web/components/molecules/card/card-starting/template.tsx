@@ -1,5 +1,6 @@
 import { Video } from "@atoms";
 import { Icon } from "@atoms";
+import { useStartingCardTemplate } from "./use-template";
 
 export type StartingCardTemplateProps = {
   ratings?: number;
@@ -23,9 +24,9 @@ export const StartingCardTemplate = ({
   slots,
   imgUrl,
   videoUrl,
-  handleIsHoveredChange,
   isHovered,
 }: StartingCardTemplateProps): JSX.Element => {
+  const { handleIsHoveredChange } = useStartingCardTemplate();
   return (
     <div
       onMouseEnter={() => handleIsHoveredChange(true)}
