@@ -14,7 +14,7 @@ export const PrivacyModalTemplate = ({
   handleSettings,
 }: PrivacyModalTemplateProps): JSX.Element => {
   return (
-    <div>
+    <div className="bg-white rounded-lg shadow-xl py-4 px-8">
       <div className="block lg:flex lg:items-center">
         <div>
           <div className="flex items-center mt-2 mb-2 ml-0 mr-0">

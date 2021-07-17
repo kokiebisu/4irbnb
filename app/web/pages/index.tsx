@@ -71,15 +71,17 @@ const LandingPage: React.FC<{}> = () => {
           </div>
         )}
         <Footer />
-        {/* <div className="fixed bottom-0 w-full z-50 flex justify-center">
-          <div className="mt-0 mx-8 mb-8 sm:mx-16 md:mx-36 lg:mx-0">
+        <div className="fixed bottom-0 w-full z-50 flex justify-center">
+          <div className="mt-0 mb-8 sm:px-10 lg:px-20">
             <Modal
               variant="privacy"
               criteria={toggleState.privacy}
               animate="slideup"
+              handleSave={() => alert("save")}
+              handleSettings={() => alert("settings")}
             />
           </div>
-        </div> */}
+        </div>
 
         {/* <AnimatePresence>
           {scrollPosition < pageHeight && (
@@ -96,7 +98,7 @@ const LandingPage: React.FC<{}> = () => {
             </motion.div>
           )}
         </AnimatePresence> */}
-        {/* {toggleState.auth && (
+        {toggleState.auth && (
           <div className="fixed z-60 bottom-0 left-0 right-0 top-0 bg-blur">
             <div className="flex justify-center items-center h-screen">
               <Modal
@@ -107,7 +109,7 @@ const LandingPage: React.FC<{}> = () => {
               />
             </div>
           </div>
-        )} */}
+        )}
         {/* {toggleState.globe && (
           <div className="fixed z-60 bottom-0 left-0 right-0 top-0 bg-blur">
             <div className="flex justify-center items-center h-screen">

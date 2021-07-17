@@ -7,7 +7,7 @@ import { Input } from "@atoms";
 import { validateExists as validate } from "@helper/auth";
 
 export interface ExistsPrototypeTemplateProps {
-  data?: {
+  data: {
     imgUrl: string;
     firstname: string;
     email: string;

@@ -58,7 +58,7 @@ export const LandingHeaderTemplate = ({
         expanded ? "pt-4 pb-32" : "py-3"
       } relative container-spread transition ease-in-out duration-100`}
     >
-      <div className="md:none none md:flex justify-between relative">
+      <div className="hidden sm:flex justify-between relative">
         <div>
           <div className="mt-1 block lg:hidden">
             <Icon
@@ -113,17 +113,25 @@ export const LandingHeaderTemplate = ({
             />
           </div>
         </div>
-        <div className="z-70 absolute bg-transparent t-1/2">
-          {/* <Modal
+        <div className="z-70 absolute right-0 bg-transparent top-14">
+          <Modal
             variant="menu"
             authenticated={data}
             criteria={toggleState.menu}
             dispatch="toggle_menu"
-          /> */}
+            options={[
+              {
+                name: "Login",
+                handleClick: () => toggleDispatch({ type: "toggle_auth" }),
+                bold: false,
+              },
+            ]}
+            animate="default"
+          />
         </div>
       </div>
       <div
-        className={`top-8/10 sm:top-2/10 px-6 hidden sm:block absolute w-full left-1/2 bottom-0 z-50`}
+        className={`top-9/10 md:top-2/10 px-6 hidden sm:block absolute w-full left-1/2 bottom-0 z-50`}
         style={{
           maxWidth: 900,
           transform: "translate(-50%, 0)",

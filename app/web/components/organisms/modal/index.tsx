@@ -37,7 +37,7 @@ export const Modal = ({
   lock?: boolean;
   noPadding?: boolean;
   animate: string;
-  dispatch: string;
+  dispatch?: string;
 }): JSX.Element => {
   const { criteria } = props;
   const containerRef = useRef<any>();

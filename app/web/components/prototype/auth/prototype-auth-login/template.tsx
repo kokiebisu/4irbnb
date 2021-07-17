@@ -5,15 +5,13 @@ import { useAuthDispatch, useAuthState } from "@context/auth";
 import { Input } from "@atoms";
 import { Button } from "@atoms";
 import { Bullet } from "@atoms";
-import { Card, $Card } from "@card";
+import { Card } from "@card";
 import { validateLogin as validate } from "@helper/auth";
-
-export interface LoginPrototypeTemplateProps {}
 
 /**
  * Renders the login template component
  */
-export const LoginPrototypeTemplate: React.FC<LoginPrototypeTemplateProps> = () => {
+export const LoginPrototypeTemplate = (): JSX.Element => {
   const authState = useAuthState();
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("pending");

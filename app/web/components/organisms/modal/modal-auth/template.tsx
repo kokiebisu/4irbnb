@@ -2,7 +2,6 @@ import { Button, Icon } from "@atoms";
 import { Prototype } from "@prototype/auth";
 import { useToggleDispatch } from "@context/toggle";
 import { useAuthDispatch, useAuthState } from "@context/auth";
-import React from "react";
 
 /**
  * Renders the auth modal
@@ -42,7 +41,7 @@ export const AuthModalTemplate = (): JSX.Element => {
         </div>
       </div>
       <div className="overflow-y-auto">
-        {/* <Prototype variant={authState.display} /> */}
+        <Prototype variant={authState.display} />
       </div>
     </div>
   );
