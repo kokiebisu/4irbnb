@@ -1,4 +1,5 @@
 import { factory } from "./utils/factory";
+import { WideSegmentProps } from "./wide";
 
 export type IndexSegmentProps =
   | { variant: "category" }
@@ -7,7 +8,7 @@ export type IndexSegmentProps =
   | { variant: "online" }
   | { variant: "anywhere" }
   | { variant: "destinations" }
-  | { variant: "worth" };
+  | ({ variant: "wide" } & WideSegmentProps);
 
 /**
  * Bundles the button components

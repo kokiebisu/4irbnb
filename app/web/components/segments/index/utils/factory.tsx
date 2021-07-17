@@ -4,6 +4,7 @@ import { BannerSegment } from "../banner";
 import { CategorySegment } from "../category";
 import { DestinationsSegment } from "../destinations";
 import { NearbySegment } from "../nearby";
+import { WideSegment } from "../wide";
 
 export const factory = (props: IndexSegmentProps) => {
   switch (props.variant) {
@@ -17,6 +18,8 @@ export const factory = (props: IndexSegmentProps) => {
       return <DestinationsSegment />;
     case "nearby":
       return <NearbySegment />;
+    case "wide":
+      return <WideSegment {...props} />;
     default:
       throw new Error("[Index Page]");
   }

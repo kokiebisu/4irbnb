@@ -1,7 +1,7 @@
-import { Card, $Card } from '@card';
+import { Card, $Card } from "@card";
 
 export interface NearbySegmentTemplateProps {
-  items?: { to: string; imgUrl: string; city: string; hours: number }[];
+  items: { to: string; imgUrl: string; city: string; hours: number }[];
 }
 
 /**
@@ -12,7 +12,7 @@ export const NearbySegmentTemplate: React.FC<NearbySegmentTemplateProps> = ({
   items,
 }) => {
   return (
-    <div className="grid overflow-x-auto grid-col-4 snap-type-x">
+    <div className="grid overflow-x-auto grid-cols-4 snap-type-x">
       {items.map((item, index) => {
         return (
           <div key={index} className="w-half-screen md:w-auto snap-align-start">

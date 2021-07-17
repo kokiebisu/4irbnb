@@ -25,19 +25,33 @@ const LandingPage: React.FC<{}> = () => {
           <Bar variant="covid" />
         </div>
         <Segment variant="banner" />
-        {/* {loading ? (
+        {loading ? (
           <>
-            <Layout variant="landing" spread>
+            <Layout title="Explore nearby" variant="landing" spread>
               <Segment variant="nearby" />
             </Layout>
             <Layout variant="landing" title="Live anywhere" spread>
               <Segment variant="anywhere" />
             </Layout>
-            <div className="my-7"></div>
             <Layout spread variant="landing">
-              <Segment variant="worth" />
+              <Segment
+                variant="wide"
+                title="The Greatest Outdoors"
+                description="Wishlists curated by Airbnb."
+                bannerImg="https://a0.muscache.com/im/pictures/2da67c1c-0c61-4629-8798-1d4de1ac9291.jpg?im_w=1440"
+              />
             </Layout>
-            <Layout
+
+            <Layout spread variant="landing">
+              <Segment
+                variant="wide"
+                title="Your world is Wide sharing"
+                description="Turn your extra space into your next opportunity."
+                inverse
+                bannerImg="https://a0.muscache.com/im/pictures/2595054e-d1d9-4fde-8046-58d51fcb3164.jpg?im_w=1440"
+              />
+            </Layout>
+            {/* <Layout
               variant="landing"
               spread
               title="Join millions of hosts on Airbnb"
@@ -50,13 +64,13 @@ const LandingPage: React.FC<{}> = () => {
               title="Inspiration for future getaways"
             >
               <Segment variant="destinations" />
-            </Layout>
+            </Layout> */}
           </>
         ) : (
           <div className="my-4 flex items-center justify-center">
             <Animation variant="loading" dark />
           </div>
-        )} */}
+        )}
         {/* <Footer spread /> */}
         {/* <div className="fixed bottom-0 w-full z-50 flex justify-center">
           <div className="mt-0 mx-8 mb-8 sm:mx-16 md:mx-36 lg:mx-0">
