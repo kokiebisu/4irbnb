@@ -1,8 +1,6 @@
 import Router from "next/router";
 import { Button } from "@atoms";
 
-export interface OnlineHostHeaderTemplateProps {}
-
 export const OnlineHostHeaderTemplate = (): JSX.Element => {
   return (
     <header className="h-48 px-0">

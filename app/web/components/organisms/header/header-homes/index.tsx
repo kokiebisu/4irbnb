@@ -1,6 +1,6 @@
 import { HomesHeaderTemplate, HomesHeaderTemplateProps } from "./template";
 
-export interface HomesHeaderProps extends HomesHeaderTemplateProps {}
+export type HomesHeaderProps = HomesHeaderTemplateProps;
 
 export const HomesHeader = (props: HomesHeaderProps): JSX.Element => {
   return <HomesHeaderTemplate {...props} />;

@@ -3,10 +3,10 @@ import { Icon } from "@atoms";
 import { Button } from "@atoms";
 import { useHandleScroll } from "@hooks/useHandleScroll";
 
-export interface DetailsHeaderTemplateProps {
+export type DetailsHeaderTemplateProps = {
   layoutType?: string;
   spread?: boolean;
-}
+};
 
 /**
  * Renders the details header

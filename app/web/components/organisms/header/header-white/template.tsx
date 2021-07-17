@@ -5,10 +5,10 @@ import { useToggleDispatch, useToggleState } from "@context/toggle";
 import { Icon } from "@atoms";
 // import { Content } from '@atoms/button-transparent/content.transparent';
 
-export interface WhiteHeaderTemplateProps {
+export type WhiteHeaderTemplateProps = {
   spread?: boolean;
-  data?: any;
-}
+  data: any;
+};
 
 /**
  * Renders the white header

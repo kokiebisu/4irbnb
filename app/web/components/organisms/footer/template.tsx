@@ -4,14 +4,14 @@ import { Icon } from "@atoms";
 export interface FooterTemplateProps {
   spread?: boolean;
   handleRedirectToPath: (url: string) => void;
-  items?: { name: string; items: { url?: string; name?: string }[] }[];
+  items: { name: string; items: { url: string; name: string }[] }[];
 }
 
 export const FooterTemplate = ({
   spread,
   handleRedirectToPath,
   items,
-}: FooterTemplateProps) => {
+}: FooterTemplateProps): JSX.Element => {
   return (
     <footer className="border-t border-gray-300 py-6 bg-gray-300">
       <div className={spread ? "container-spread" : "container"}>

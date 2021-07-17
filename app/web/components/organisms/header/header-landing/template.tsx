@@ -10,12 +10,12 @@ import { useToggleDispatch, useToggleState } from "@context/toggle";
 // import { Content } from '@atoms/button-transparent/content.transparent';
 import { useOnClickOutside } from "@hooks/useOnClickOutside";
 
-export interface LandingHeaderTemplateProps {
-  category?: any;
-  setCategory?: any;
-  data?: any;
+export type LandingHeaderTemplateProps = {
+  category: any;
+  setCategory: any;
+  data: any;
   criteria?: any;
-}
+};
 
 /**
  * Renders the transparent header
