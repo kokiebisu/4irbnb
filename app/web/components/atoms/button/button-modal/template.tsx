@@ -14,7 +14,7 @@ export const ModalButtonTemplate = ({
   return (
     <button
       data-testid="modal-button"
-      className="inline-block"
+      className="inline-block w-10 h-10"
       onClick={onClick}
     >
       <div className="inline-block bg-transparent p-3 rounded-full hover:bg-gray-100">

@@ -2,6 +2,8 @@ import { Button } from "@atoms";
 
 export type BookingModalTemplateProps = {
   availables: any;
+  handleBookSelect: () => void;
+  handleMoreDatesSelect: () => void;
 };
 
 /**
@@ -32,14 +34,12 @@ export const BookingModalTemplate = ({
       price: 31,
     },
   ],
+  handleBookSelect,
+  handleMoreDatesSelect,
 }: BookingModalTemplateProps): JSX.Element => {
   const displayingAvailables = [...availables].splice(0, 3);
   return (
-    <div
-      className={`w-full inline-block ${[
-        modal["position__checkin--wrapper"],
-      ].join(" ")}`}
-    >
+    <div>
       <div>
         <div>
           <div>
@@ -78,7 +78,14 @@ export const BookingModalTemplate = ({
                     <span className="text-sm"> /person</span>
                   </div>
                   <div>
-                    <Button variant="primary" size="sm" title="Choose" spread />
+                    <Button
+                      variant="primary"
+                      size="sm"
+                      title="Choose"
+                      stretch
+                      color="black"
+                      onClick={handleBookSelect}
+                    />
                   </div>
                 </div>
               </div>
@@ -87,7 +94,13 @@ export const BookingModalTemplate = ({
         </div>
         <div className="mt-4">
           <div>
-            <Button variant="border" size="md" title="See more dates" block />
+            <Button
+              variant="border"
+              size="md"
+              title="See more dates"
+              stretch
+              onClick={handleMoreDatesSelect}
+            />
           </div>
         </div>
       </div>
