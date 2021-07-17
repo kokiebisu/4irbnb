@@ -41,6 +41,9 @@ export const AuthPrototypeTemplate = ({
   return (
     <div className="p-5">
       <div className="w-full">
+        <div className="mb-4">
+          <h3 className="text-2xl">Welcome to Airbnb</h3>
+        </div>
         <form onSubmit={formik.handleSubmit}>
           <div className="mb-2">
             <div>

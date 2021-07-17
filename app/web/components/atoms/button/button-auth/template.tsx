@@ -23,7 +23,7 @@ export const AuthButtonTemplate = ({
       data-testid="auth-button"
       onClick={!disabled ? onClick : undefined}
     >
-      <div className="border-gray-300 border-solid border-2 hover:border-black bg-transparent block w-full px-4 py-3 rounded-lg">
+      <div className="border-gray-400 border-solid border-2 hover:border-black bg-transparent block w-full px-4 py-3 rounded-lg">
         <div className="relative w-full flex justify-between items-center">
           <div className="">{icon}</div>
           <div>

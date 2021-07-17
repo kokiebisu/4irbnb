@@ -8,15 +8,6 @@ export const useAuthPrototype = () => {
 
   const authMethods = [
     {
-      name: "Email",
-      icon: {
-        variant: "general" as const,
-        generalType: "email" as const,
-        width: 17,
-      },
-      handleClick: handleFacebookLogin,
-    },
-    {
       name: "Facebook",
       icon: {
         variant: "logo" as const,
@@ -39,6 +30,15 @@ export const useAuthPrototype = () => {
       icon: {
         variant: "logo" as const,
         logoType: "apple" as const,
+        width: 17,
+      },
+      handleClick: handleFacebookLogin,
+    },
+    {
+      name: "Email",
+      icon: {
+        variant: "general" as const,
+        generalType: "email" as const,
         width: 17,
       },
       handleClick: handleFacebookLogin,
