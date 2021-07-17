@@ -1,4 +1,4 @@
-import { ProfileIconTemplate, ProfileIconTemplateProps } from './template';
+import { ProfileIconTemplate, ProfileIconTemplateProps } from "./template";
 
 export type ProfileIconProps = ProfileIconTemplateProps & {
   width: number;
@@ -17,4 +17,4 @@ export const ProfileIcon = ({
   );
 };
 
-export type ProfileTypeVariants = 'avatar' | 'star' | 'superhost' | 'verified';
+export type ProfileTypeVariants = "avatar" | "star" | "superhost" | "verified";

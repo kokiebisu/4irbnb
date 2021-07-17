@@ -4,7 +4,7 @@ import { Button } from "@atoms";
 import { useHandleScroll } from "@hooks/useHandleScroll";
 
 export type DetailsHeaderTemplateProps = {
-  layoutType?: string;
+  layoutType: string;
   spread?: boolean;
 };
 
@@ -73,6 +73,7 @@ export const DetailsHeaderTemplate = ({
                           variant={"profile"}
                           profileType="star"
                           width={10}
+                          height={10}
                         />
                       </div>
                       <span className="inline-block text-sm mr-1">
@@ -84,7 +85,13 @@ export const DetailsHeaderTemplate = ({
                     </div>
                   </div>
                   <div>
-                    <Button variant="primary" title="Check availability" />
+                    <Button
+                      variant="primary"
+                      title="Check availability"
+                      size="md"
+                      color="white"
+                      onClick={() => alert("yo")}
+                    />
                   </div>
                 </div>
               </motion.div>

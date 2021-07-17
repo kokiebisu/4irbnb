@@ -1,25 +1,25 @@
-import { Header } from '@header';
-import { Button } from '@atoms';
-import { ResponsiveImage } from '@helper/img';
+import { Header } from "@header";
+import { Button } from "@atoms";
+import { ResponsiveImage } from "@helper/img";
 
-export interface BannerSegmentTemplateProps {
-  scrollPosition?: number;
-  category?: string;
-  data?: any;
-  handleCategoryChange?: (value: string) => void;
-  handleHomeRedirect?: () => void;
-}
+export type BannerSegmentTemplateProps = {
+  scrollPosition: number;
+  category: string;
+  data: any;
+  handleCategoryChange: (value: string) => void;
+  handleHomeRedirect: () => void;
+};
 
 /**
  * Renders the banner section
  */
-export const BannerSegmentTemplate: React.FC<BannerSegmentTemplateProps> = ({
+export const BannerSegmentTemplate = ({
   scrollPosition,
   category,
   data,
   handleCategoryChange,
   handleHomeRedirect,
-}) => {
+}: BannerSegmentTemplateProps): JSX.Element => {
   return (
     <div className="banner">
       <div className="absolute top-0 bottom-0 right-0 left-0">
@@ -31,7 +31,7 @@ export const BannerSegmentTemplate: React.FC<BannerSegmentTemplateProps> = ({
         <div
           className="grid h-full"
           style={{
-            gridTemplateRows: 'auto 1fr',
+            gridTemplateRows: "auto 1fr",
           }}
         >
           <div className="z-30">
@@ -40,20 +40,15 @@ export const BannerSegmentTemplate: React.FC<BannerSegmentTemplateProps> = ({
               category={category}
               setCategory={handleCategoryChange}
               data={data}
-              extendsTo={`${
-                scrollPosition < 56
-                  ? 'bg-transparent'
-                  : 'bg-white fixed top-0 left-0 right-0 shadow'
-              }`}
               criteria={scrollPosition < 56}
             />
           </div>
           <div
             className="container-spread"
             style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
             }}
           >
             <div>
@@ -80,3 +75,7 @@ export const BannerSegmentTemplate: React.FC<BannerSegmentTemplateProps> = ({
     </div>
   );
 };
+
+// scrollPosition < 56
+// ? 'bg-transparent'
+// : 'bg-white fixed top-0 left-0 right-0 shadow'

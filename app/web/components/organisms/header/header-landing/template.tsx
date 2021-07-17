@@ -7,7 +7,6 @@ import { Button } from "@atoms";
 
 import { Icon } from "@atoms";
 import { useToggleDispatch, useToggleState } from "@context/toggle";
-// import { Content } from '@atoms/button-transparent/content.transparent';
 import { useOnClickOutside } from "@hooks/useOnClickOutside";
 
 export type LandingHeaderTemplateProps = {
@@ -81,13 +80,13 @@ export const LandingHeaderTemplate = ({
           </div>
         </div>
         <div className="flex items-center">
-          <div className={`mx-1 ${[styles["searchbar__host"]].join(" ")}`}>
+          <div className={`mx-1 `}>
             <Button
               variant="transparent"
               inverse={criteria}
               onClick={() => Router.push("/host/homes")}
             >
-              <Content kind="host" inverse={criteria} />
+              <h5 className="text-white text-sm font-light ">Become a Host</h5>
             </Button>
           </div>
           <div className="mx-1">
@@ -96,7 +95,13 @@ export const LandingHeaderTemplate = ({
               inverse={criteria}
               onClick={() => toggleDispatch({ type: "toggle_globe" })}
             >
-              <Content kind="globe" inverse={criteria} />
+              <Icon
+                variant="general"
+                generalType="globe"
+                fill="white"
+                width={16}
+                height={16}
+              />
             </Button>
           </div>
           <div className="ml-1">
@@ -109,12 +114,12 @@ export const LandingHeaderTemplate = ({
           </div>
         </div>
         <div className="z-70 absolute bg-transparent t-1/2">
-          <Modal
-            variant={$Modal.MENU}
+          {/* <Modal
+            variant="menu"
             authenticated={data}
             criteria={toggleState.menu}
             dispatch="toggle_menu"
-          />
+          /> */}
         </div>
       </div>
       <div
@@ -164,7 +169,7 @@ export const LandingHeaderTemplate = ({
                     })}
                   </div>
                 </div>
-                <Prototype type={category} transparent />
+                {/* <Prototype type={category} transparent /> */}
               </div>
             </motion.div>
           ) : (
@@ -214,9 +219,9 @@ export const LandingHeaderTemplate = ({
                         })}
                       </div>
                     </div>
-                    <div ref={searchbarRef}>
+                    {/* <div ref={searchbarRef}>
                       <Prototype type={category} />
-                    </div>
+                    </div> */}
                   </div>
                 </motion.div>
               ) : (

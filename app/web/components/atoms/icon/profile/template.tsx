@@ -1,29 +1,32 @@
-import { ProfileTypeVariants } from '.';
-import { BaseIconProps } from '..';
+import { FillIconProps } from "..";
 
-export type ProfileIconTemplateProps = {
-  profileType: ProfileTypeVariants;
-};
+export type ProfileIconTemplateProps = (
+  | { profileType: "avatar" }
+  | { profileType: "star" }
+  | { profileType: "superhost" }
+  | { profileType: "verified" }
+) &
+  FillIconProps;
 
 export const ProfileIconTemplate = ({
   profileType,
   ...props
 }: ProfileIconTemplateProps): JSX.Element => {
   switch (profileType) {
-    case 'avatar':
+    case "avatar":
       return <AvatarIcon {...props} />;
-    case 'star':
+    case "star":
       return <StarIcon {...props} />;
-    case 'superhost':
+    case "superhost":
       return <SuperhostIcon {...props} />;
-    case 'verified':
+    case "verified":
       return <VerifiedIcon {...props} />;
     default:
       throw new Error(`[PROFILE ICON] Provided profileType doesn't exist`);
   }
 };
 
-export const AvatarIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const AvatarIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
       <path
@@ -34,7 +37,7 @@ export const AvatarIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const StarIcon = ({ fill = '#E61E4D' }: BaseIconProps): JSX.Element => {
+export const StarIcon = ({ fill = "#E61E4D" }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 37.286 37.287">
       <g>
@@ -52,7 +55,7 @@ C37.425,15.013,37.226,15.808,36.683,16.339z"
   );
 };
 
-export const SuperhostIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const SuperhostIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg
       display="block"
@@ -82,7 +85,7 @@ export const SuperhostIcon = ({ fill }: BaseIconProps): JSX.Element => {
   );
 };
 
-export const VerifiedIcon = ({ fill }: BaseIconProps): JSX.Element => {
+export const VerifiedIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 512.02797 512">
       <path
