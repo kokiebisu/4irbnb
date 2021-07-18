@@ -1,9 +1,4 @@
-# resource "aws_internet_gateway" "nextbnb-internet-gateway" {
-#     vpc_id = aws_vpc.nextbnb-vpc.id
-#     tags = {
-#         Name = "${var.app_name}-internet-gateway"
-#     }
-# }
+
 
 resource "aws_default_route_table" "nextbnb_public_route_table" {
     default_route_table_id = aws_vpc.nextbnb_vpc.default_route_table_id
