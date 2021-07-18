@@ -22,8 +22,10 @@ module.exports = {
       },
       minWidth: {
         screen: "100vw",
+        5: "1.25rem",
         24: "5rem",
         60: "15rem",
+        72: "18rem",
       },
       maxWidth: {
         "2.5xl": "45rem",

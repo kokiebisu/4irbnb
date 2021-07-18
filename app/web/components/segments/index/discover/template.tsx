@@ -12,14 +12,17 @@ export const DiscoverSegmentTemplate = ({
   return (
     <div>
       <div
-        style={{ scrollbarWidth: "none" }}
-        className="relative w-full flex md:grid md:grid-cols-3 md:gap-x-4 scroll-snap-x h-full overflow-x-scroll scrollbar-hide"
+        style={{
+          scrollbarWidth: "none",
+          scrollPadding: "0px 2rem",
+        }}
+        className="w-screen px-8 -mx-8 relative md:w-full flex md:grid md:grid-cols-3 md:gap-x-4 scroll-snap-x h-full overflow-x-scroll scrollbar-hide"
       >
         {items.map(({ title, description, imgUrl }, index) => {
           return (
             <div
               style={{ scrollSnapAlign: "start" }}
-              className="mr-4 md:mr-0 md:min-w-full min-w-60"
+              className="mr-4 md:mr-0 md:min-w-full min-w-72"
               key={index}
             >
               {/* card */}
@@ -43,7 +46,7 @@ export const DiscoverSegmentTemplate = ({
             </div>
           );
         })}
-        <div />
+        <div className="min-w-5 h-16"></div>
       </div>
     </div>
   );

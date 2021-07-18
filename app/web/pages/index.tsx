@@ -46,8 +46,9 @@ const LandingPage: React.FC<{}> = () => {
               title="Discover Experiences"
               subtitle="Unique activities with local experts—in person or online."
             >
-              <Segment variant="category" />
+              <Segment variant="discover" />
             </Layout>
+
             <Layout spread variant="landing">
               <Segment
                 variant="wide"
@@ -71,7 +72,7 @@ const LandingPage: React.FC<{}> = () => {
           </div>
         )}
         <Footer />
-        <div className="fixed bottom-0 w-full z-50 flex justify-center">
+        {/* <div className="fixed bottom-0 w-full z-50 flex justify-center">
           <div className="mt-0 mb-8 sm:px-10 lg:px-20">
             <Modal
               variant="privacy"
@@ -81,7 +82,7 @@ const LandingPage: React.FC<{}> = () => {
               handleSettings={() => alert("settings")}
             />
           </div>
-        </div>
+        </div> */}
 
         {/* <AnimatePresence>
           {scrollPosition < pageHeight && (
