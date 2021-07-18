@@ -18,9 +18,9 @@ export const SemanticIcon = ({
 };
 
 export type SemanticTypeVariants =
-  | "exclamation"
-  | "warning"
-  | "minus"
-  | "plus"
-  | "check"
-  | "saved";
+  | { semanticType: "exclamation" }
+  | { semanticType: "warning" }
+  | { semanticType: "minus" }
+  | { semanticType: "plus" }
+  | { semanticType: "check" }
+  | { semanticType: "saved" };

@@ -27,9 +27,7 @@ export type IconProps =
   | ({ variant: "general" } & GeneralIconProps)
   | ({ variant: "stay" } & StayIconProps);
 
-export const Icon = (props: IconProps): JSX.Element => {
-  return factory(props);
-};
+export const Icon = (props: IconProps): JSX.Element => factory(props);
 
 export * from "./action";
 export * from "./amenity";
