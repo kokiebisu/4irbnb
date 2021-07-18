@@ -2,10 +2,10 @@ import { ServiceEnum, TEnvironment } from "@nextbnb/common";
 import { Logger } from "@nextbnb/utils";
 import { AWSServiceEnum } from "./enum";
 
-export abstract class AWSService {
-  environment: TEnvironment;
-  serviceName?: ServiceEnum;
-  logger: Logger;
+export class AWSService {
+  protected environment: TEnvironment;
+  protected serviceName: ServiceEnum;
+  protected logger: Logger;
 
   constructor(
     serviceName: ServiceEnum,

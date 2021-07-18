@@ -3,13 +3,14 @@ import {
   CreateBucketCommand,
   PutObjectCommand,
 } from "@aws-sdk/client-s3";
-import { ServiceEnum, TEnvironment } from "@nextbnb/common";
+import { ServiceEnum, TEnvironment, TRegion } from "@nextbnb/common";
 import { ApiError } from "@nextbnb/error";
 import { AWSService } from "../class";
 import { AWSServiceEnum } from "../enum";
 
 /**
  * @public
+ * Blueprint of the class which enables performing S3 Service actions
  */
 export class S3 extends AWSService {
   client: S3Client;
@@ -21,7 +22,7 @@ export class S3 extends AWSService {
    */
   constructor(
     serviceName: ServiceEnum,
-    region: string,
+    region: TRegion,
     environment: TEnvironment
   ) {
     super(serviceName, AWSServiceEnum.s3, environment);

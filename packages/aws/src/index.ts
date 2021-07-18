@@ -12,5 +12,10 @@
 export * from "./s3";
 export * from "./ssm";
 export * from "./sns";
+export * from "./sqs";
+export * from "./sts";
 
 export * from "./enum";
+export * from "./factory";
+export * from "./class";
+export * from "./creator";

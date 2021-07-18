@@ -1,20 +1,20 @@
 import {
   SSMClient,
   GetParameterCommand,
-  GetParameterCommandOutput,
   PutParameterCommand,
   PutParameterCommandOutput,
 } from "@aws-sdk/client-ssm";
-import { ServiceEnum, TEnvironment } from "@nextbnb/common";
+import { ServiceEnum, TEnvironment, TRegion } from "@nextbnb/common";
 // import { ApiError } from "@nextbnb/error";
 import { AWSService } from "../class";
 import { AWSServiceEnum } from "../enum";
 
 /**
  * @public
+ * Blueprint of the class which performing SSM Service actions
  */
 export class SSM extends AWSService {
-  service: SSMClient;
+  protected service: SSMClient;
 
   /**
    *
@@ -23,7 +23,7 @@ export class SSM extends AWSService {
    */
   constructor(
     serviceName: ServiceEnum,
-    region: string,
+    region: TRegion,
     environment: TEnvironment
   ) {
     super(serviceName, AWSServiceEnum.ssm, environment);
@@ -36,23 +36,20 @@ export class SSM extends AWSService {
    * @param includeEnvironment
    * @returns
    */
-  public async getServiceSecret(
-    key: string,
-    // value: string,
-    includeEnvironment: boolean
-  ): Promise<GetParameterCommandOutput> {
-    const path = `/${this.serviceName as ServiceEnum}${
-      includeEnvironment ? `/${this.environment as TEnvironment}` : ""
+  public async getServiceSecret(key: string): Promise<string | undefined> {
+    const path = `/${this.environment as TEnvironment}/${
+      this.serviceName as ServiceEnum
     }/${key}`;
     try {
-      return await this.service.send(
+      const response = await this.service.send(
         new GetParameterCommand({
           Name: path,
           WithDecryption: true,
         })
       );
+      return response.Parameter?.Value;
     } catch (err) {
-      throw new Error(err);
+      throw new Error(`[SSM GetParameterCommand] ${err}`);
     }
   }
 
@@ -66,21 +63,22 @@ export class SSM extends AWSService {
     key: string,
     value: string
   ): Promise<PutParameterCommandOutput> {
-    const path = `/${this.serviceName as ServiceEnum}/${
-      this.environment as TEnvironment
+    const path = `/${this.environment as TEnvironment}/${
+      this.serviceName as ServiceEnum
     }/${key}`;
     try {
-      return await this.service.send(
+      const response = await this.service.send(
         new PutParameterCommand({
           Name: path,
           Value: value,
           Overwrite: true,
           DataType: "text",
-          Type: "string",
+          Type: "String",
         })
       );
+      return response;
     } catch (err) {
-      throw new Error(err);
+      throw new Error(`[SSM PutParameterCommand] ${err}`);
     }
   }
 }

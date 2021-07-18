@@ -21,7 +21,8 @@
     "test": "yarn lerna run test --stream",
     "document": "scripty",
     "extract": "lerna run extract --scope=@nextbnb/{common,database,utils}",
-    "pack:auth": "docker build -t nextbnb/auth -f ./packages/auth/Dockerfile ."
+    "pack:auth": "docker build -t nextbnb/auth -f ./packages/auth/Dockerfile .",
+    "terraform:apply": "cd terraform && terraform apply"
   },
   "scripty": {
     "path": "./scripts/workspace"

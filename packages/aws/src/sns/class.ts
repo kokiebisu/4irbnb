@@ -1,25 +1,29 @@
 import { SNSClient } from "@aws-sdk/client-sns";
-import { ServiceEnum, TEnvironment } from "@nextbnb/common";
-import { AWSService } from "../class";
+import { ServiceEnum, TEnvironment, TRegion } from "@nextbnb/common";
 import { AWSServiceEnum } from "../enum";
+import { AWSService } from "../class";
 
 /**
  * @public
+ * Blueprint
  */
 export class SNS extends AWSService {
-  service: SNSClient;
+  protected service: SNSClient;
+  protected region: TRegion;
 
   /**
-   *
+   * Constructs
    * @param region
    * @param environment
    */
   constructor(
     serviceName: ServiceEnum,
-    region: string,
+    region: TRegion,
     environment: TEnvironment
   ) {
     super(serviceName, AWSServiceEnum.sns, environment);
     this.service = new SNSClient({ region });
+    this.serviceName = serviceName;
+    this.region = region;
   }
 }
