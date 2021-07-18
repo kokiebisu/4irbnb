@@ -17,9 +17,10 @@ jobs:
         with:
           cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
       - name: DEBUG
-        working-directory: ../nextbnb
+        working-directory: ../nextbnb/terraform
         run: ls
       - name: DEBUG1
+        working-directory: ./terraform
         run: ls
       - name: Terraform Format
         id: fmt
