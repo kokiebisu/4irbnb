@@ -1,44 +1,44 @@
 terraform {
-    required_providers {
-        aws = {
-            source = "hashicorp/aws"
-        }
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
     }
-    backend "remote" {
-        organization = "do-it-simple"
+  }
+  backend "remote" {
+    organization = "do-it-simple"
 
-        workspaces {
-        name = "nextbnb"
-        }
+    workspaces {
+      name = "nextbnb"
+    }
   }
 }
 
 locals {
   app_name = "nextbnb"
-  profile = "personal"
-  region = "us-east-1"
+  profile  = "personal"
+  region   = "us-east-1"
 }
 
-provider aws {
-    profile = local.profile
-    region = local.region
+provider "aws" {
+  profile = local.profile
+  region  = local.region
 }
 
 module "networking" {
-    source = "./resources"
+  source = "./resources"
 
-    app_name = local.app_name
-    profile = "personal"
-    region = "us-east-1"
+  app_name = local.app_name
+  profile  = "personal"
+  region   = "us-east-1"
 }
 
 module "services" {
-    source = "../packages/terraform"
+  source = "../packages/terraform"
 }
 
 module "auth" {
-    source = "../packages/service-auth/terraform"
+  source = "../packages/service-auth/terraform"
 
-    dead_letter_queue = module.services.dead_letter_queue
+  dead_letter_queue = module.services.dead_letter_queue
 }
 
