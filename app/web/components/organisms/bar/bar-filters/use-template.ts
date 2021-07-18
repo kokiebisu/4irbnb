@@ -1,6 +1,6 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from "react";
 
-export const useFiltersBarInteraction = () => {
+export const useFilterBarsTemplate = () => {
   const [width, setWidth] = useState(500);
   const [state, setState] = useState({
     activeSlide: 0,
@@ -50,10 +50,10 @@ export const useFiltersBarInteraction = () => {
   };
 
   useLayoutEffect(() => {
-    window.addEventListener('resize', handleRef);
+    window.addEventListener("resize", handleRef);
     handleRef();
     return () => {
-      window.removeEventListener('resize', handleRef);
+      window.removeEventListener("resize", handleRef);
     };
   });
 

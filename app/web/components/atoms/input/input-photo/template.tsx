@@ -27,7 +27,13 @@ export const PhotoInputTemplate = ({
                 <div className="py-4 px-5 bg-red-400 rounded">
                   <div className="flex items-center">
                     <div className="mr-3">
-                      <Icon variant="action" actionType="upload" width={20} />
+                      <Icon
+                        variant="action"
+                        actionType="upload"
+                        width={20}
+                        fill="white"
+                        height={20}
+                      />
                     </div>
                     <div>
                       <h3 className="text-sm whitespace-nowrap text-white">

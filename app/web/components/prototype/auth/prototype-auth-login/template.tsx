@@ -1,28 +1,26 @@
-import { useState } from 'react';
-import { useFormik } from 'formik';
-import Router from 'next/router';
-import { useAuthDispatch, useAuthState } from '@context/auth';
-import { Input } from '@atoms';
-import { Button } from '@atoms';
-import { Bullet } from '@atoms';
-import { Card, $Card } from '@card';
-import { validateLogin as validate } from '@helper/auth';
-
-export interface LoginPrototypeTemplateProps {}
+import { useState } from "react";
+import { useFormik } from "formik";
+import Router from "next/router";
+import { useAuthDispatch, useAuthState } from "@context/auth";
+import { Input } from "@atoms";
+import { Button } from "@atoms";
+import { Bullet } from "@atoms";
+import { Card } from "@card";
+import { validateLogin as validate } from "@helper/auth";
 
 /**
  * Renders the login template component
  */
-export const LoginPrototypeTemplate: React.FC<LoginPrototypeTemplateProps> = () => {
+export const LoginPrototypeTemplate = (): JSX.Element => {
   const authState = useAuthState();
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState('pending');
+  const [status, setStatus] = useState("pending");
   const authDispatch = useAuthDispatch();
 
   const formik = useFormik({
     initialValues: {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
     },
     validate,
     onSubmit: (values) => {
@@ -60,9 +58,9 @@ export const LoginPrototypeTemplate: React.FC<LoginPrototypeTemplateProps> = () 
 
   return (
     <div className="p-5">
-      {status === 'fail' && (
+      {status === "fail" && (
         <div className="mb-4">
-          <Card variant={$Card.AGAIN} />
+          <Card variant="again" />
         </div>
       )}
       <form onSubmit={formik.handleSubmit}>
@@ -97,9 +95,9 @@ export const LoginPrototypeTemplate: React.FC<LoginPrototypeTemplateProps> = () 
               </div>
             )}
           </div>
-          {status === 'success' && (
+          {status === "success" && (
             <div className="mt-4">
-              <Card variant={$Card.SET} />
+              <Card variant="set" />
             </div>
           )}
         </div>
@@ -109,21 +107,25 @@ export const LoginPrototypeTemplate: React.FC<LoginPrototypeTemplateProps> = () 
             title="Log in"
             loading={loading}
             stretch
-            onClick={() => alert('log in')}
+            onClick={() => alert("log in")}
+            size="md"
+            color="white"
           />
         </div>
         <div className="my-3">
           <Button
             variant="underline"
             title="Forgot password?"
-            onClick={() => alert('redirect to')}
+            onClick={() => alert("redirect to")}
+            font={14}
           />
         </div>
         <div className="my-3">
           <Button
             variant="underline"
             title="More login options"
-            onClick={() => alert('switch back')}
+            onClick={() => alert("switch back")}
+            font={14}
           />
         </div>
         <div className="flex">
@@ -131,7 +133,8 @@ export const LoginPrototypeTemplate: React.FC<LoginPrototypeTemplateProps> = () 
           <Button
             variant="underline"
             title="Sign up"
-            onClick={() => alert('switch auth')}
+            onClick={() => alert("switch auth")}
+            font={14}
           />
         </div>
       </form>

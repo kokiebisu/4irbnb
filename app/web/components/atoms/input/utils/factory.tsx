@@ -1,3 +1,4 @@
+import { InputProps } from "..";
 import { AddressInput } from "../input-address";
 import { AnotherInput } from "../input-another";
 import { BirthdateInput } from "../input-birthdate";
@@ -21,7 +22,7 @@ import { TextInput } from "../input-text";
 import { TextAreaInput } from "../input-textarea";
 import { VerifyInput } from "../input-verify";
 
-export const factory = (props) => {
+export const factory = (props: InputProps) => {
   switch (props.variant) {
     case "address":
       return <AddressInput {...props} />;

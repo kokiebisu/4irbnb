@@ -2,14 +2,14 @@ import { Button } from "@atoms";
 import { useToggleDispatch } from "@context/toggle";
 
 export interface SearchBarTemplateProps {
-  type?: string;
-  selected?: string;
-  setSelected?: (param: string) => void;
+  type: string;
+  selected: string;
   transparent?: boolean;
   dispatchToggle?: any;
-  handleGuestsSelected?: () => void;
-  handleCheckInSelected?: () => void;
-  handleSearch?: () => void;
+  handleGuestsSelected: () => void;
+  handleCheckInSelected: () => void;
+  handleSearch: () => void;
+  handleSelectedChange: (param: string) => void;
 }
 
 /**
@@ -18,7 +18,7 @@ export interface SearchBarTemplateProps {
 export const SearchBarTemplate = ({
   type,
   selected,
-  setSelected,
+  handleSelectedChange,
   transparent,
   handleGuestsSelected,
   handleCheckInSelected,
@@ -40,7 +40,7 @@ export const SearchBarTemplate = ({
           title="Where are you going?"
           subtitle="Location"
           selected={selected}
-          setSelected={setSelected}
+          setSelected={() => handleSelectedChange("location")}
           name="location"
         />
         <Seperator />
@@ -48,7 +48,7 @@ export const SearchBarTemplate = ({
           title="Add dates"
           subtitle="Check in"
           selected={selected}
-          setSelected={setSelected}
+          setSelected={() => handleSelectedChange("checkin")}
           name="checkin"
         />
         <Seperator />
@@ -56,7 +56,7 @@ export const SearchBarTemplate = ({
           title="Add dates"
           subtitle="Check out"
           selected={selected}
-          setSelected={setSelected}
+          setSelected={() => handleSelectedChange("checkout")}
           name="checkout"
         />
         <Seperator />
@@ -85,12 +85,11 @@ export const SearchBarTemplate = ({
                 </div>
               </div>
             </div>
-            <div>
+            <div className="h-full flex items-center">
               <Button
-                block
                 variant="search"
                 onClick={() => alert("hello")}
-                expand={selected}
+                expanded={selected === "guests"}
               />
             </div>
           </div>
@@ -110,7 +109,7 @@ export const SearchBarTemplate = ({
           title="Where are you going?"
           subtitle="Location"
           selected={selected}
-          setSelected={setSelected}
+          setSelected={handleSelectedChange}
           name="location"
         />
         <Seperator />
@@ -138,12 +137,11 @@ export const SearchBarTemplate = ({
                 </div>
               </div>
             </div>
-            <div>
+            <div className="inline-flex items-center">
               <Button
-                block
                 variant="search"
                 onClick={handleSearch}
-                expand={selected}
+                expanded={selected === "location"}
               />
             </div>
           </div>
@@ -174,8 +172,8 @@ const Option: React.FC<{
   return (
     <button
       className={`${
-        selected === name && "shadow-lg"
-      } hover:bg-gray-200 block py-2 px-4 rounded-full`}
+        selected === name ? "shadow-lg" : ""
+      } hover:bg-gray-200 block pl-6 pr-4 rounded-full`}
       onClick={() => {
         setSelected(name);
         dispatchToggle({ type: `toggle_${name}` });

@@ -1,13 +1,13 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { useToggleState } from '@context/toggle';
-import { Header } from '@header';
-import { Footer } from '@footer';
-import { Segment } from '@template/rooms/id';
-import { Card, $Card } from '@card';
-import { Modal } from '@modal';
-import details from '@styles/details.module.scss';
-import { useHandleScroll } from '@hooks/useHandleScroll';
-import { Bar } from '@bar';
+import { AnimatePresence, motion } from "framer-motion";
+import { useToggleState } from "@context/toggle";
+import { Header } from "@header";
+import { Footer } from "@footer";
+import { Segment } from "@template/rooms/id";
+import { Card, $Card } from "@card";
+import { Modal } from "@modal";
+import details from "@styles/details.module.scss";
+import { useHandleScroll } from "@hooks/useHandleScroll";
+import { Bar } from "@bar";
 
 /**
  * Render the component for path /rooms/[id]
@@ -20,7 +20,7 @@ const id: () => string | JSX.Element = () => {
       <div>
         <div className="z-100 relative">
           <Header
-            extendsTo={[details['w__wrapper']].join(' ')}
+            extendsTo={[details["w__wrapper"]].join(" ")}
             variant="white"
           />
         </div>
@@ -43,7 +43,7 @@ const id: () => string | JSX.Element = () => {
           />
         </div> */}
         <div className={`container md:mx-auto md:my-0`}>
-          <div className={[details['flex__details']].join(' ')}>
+          <div className={[details["flex__details"]].join(" ")}>
             <div className="sm:w-6/10">
               {/* <Section
                 layoutType='room'
@@ -66,7 +66,7 @@ const id: () => string | JSX.Element = () => {
               className="hidden sm:w-4/10"
             >
               <div className="flex justify-end sticky top-32">
-                <Card variant={$Card.CHECKIN} />
+                <Card variant="checkin" />
               </div>
             </div>
           </div>

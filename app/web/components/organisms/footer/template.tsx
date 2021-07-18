@@ -4,28 +4,28 @@ import { Icon } from "@atoms";
 export interface FooterTemplateProps {
   spread?: boolean;
   handleRedirectToPath: (url: string) => void;
-  items?: { name: string; items: { url?: string; name?: string }[] }[];
+  items: { name: string; items: { url: string; name: string }[] }[];
 }
 
 export const FooterTemplate = ({
   spread,
   handleRedirectToPath,
   items,
-}: FooterTemplateProps) => {
+}: FooterTemplateProps): JSX.Element => {
   return (
-    <footer className="border-t border-gray-300 py-6 bg-gray-300">
-      <div className={spread ? "container-spread" : "container"}>
+    <footer className="border-t border-gray-300 py-6 bg-gray-50">
+      <div className="px-8 md:px-20 max-w-11xl">
         <div className="border-b border-gray-300 md:flex">
           {items.map((section, index) => {
             return (
               <div
                 key={index}
-                className="border-t border-gray-300 mt-6 first:mt-0 md:w-1/4 md:pb-6"
+                className="border-gray-300 mt-6 first:mt-0 md:w-1/4 md:pb-6"
               >
                 <div>
                   <h3 className="uppercase text-sm">{section.name}</h3>
                 </div>
-                <div className="my-4 grid grid-cols-3">
+                <div className="my-4 grid md:grid-cols-3 lg:block">
                   {section.items.map(({ name, url }, index) => {
                     return (
                       <div className="my-4 mt-3 mb-3" key={index}>

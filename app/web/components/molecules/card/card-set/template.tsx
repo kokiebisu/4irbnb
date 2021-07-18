@@ -1,7 +1,5 @@
 import { Icon } from "@atoms";
 
-export type SetCardTemplateProps = {};
-
 export const SetCardTemplate = (): JSX.Element => {
   return (
     <div className="rounded-lg border border-gray-300">

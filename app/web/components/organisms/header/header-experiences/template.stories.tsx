@@ -1,16 +1,13 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
-import {
-  ExperiencesHeaderTemplate,
-  ExperiencesHeaderTemplateProps,
-} from './template';
+import React from "react";
+import { Story, Meta } from "@storybook/react";
+import { ExperiencesHeaderTemplate } from "./template";
 
 export default {
-  title: 'Organisms/Header',
+  title: "Organisms/Header",
   component: ExperiencesHeaderTemplate,
 } as Meta;
 
-const HeaderStory: Story<ExperiencesHeaderTemplateProps> = (args) => (
+const HeaderStory: Story<{}> = (args) => (
   <ExperiencesHeaderTemplate {...args} />
 );
 

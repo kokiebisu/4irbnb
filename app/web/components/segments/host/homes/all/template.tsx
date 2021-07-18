@@ -1,8 +1,8 @@
-import { Card, $Card } from '@card';
-import { Layout } from '@layout';
+import { Card } from "@card";
+import { Layout } from "@layout";
 
 export interface AllSegmentTemplateProps {
-  items?: { name: string; imgUrl: string }[];
+  items: { name: string; imgUrl: string }[];
 }
 
 /**
@@ -15,18 +15,18 @@ export const AllSegmentTemplate: React.FC<AllSegmentTemplateProps> = ({
     <Layout variant="homes" title="From castles to condos, guests book it all">
       <div
         style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(6, 1fr)',
+          display: "grid",
+          gridTemplateColumns: "repeat(6, 1fr)",
           columnGap: 25,
-          overflowX: 'scroll',
-          scrollSnapType: 'x mandatory',
+          overflowX: "scroll",
+          scrollSnapType: "x mandatory",
         }}
       >
         {items.map((item, index) => {
           return (
-            <div key={index} style={{ scrollSnapAlign: 'start' }}>
+            <div key={index} style={{ scrollSnapAlign: "start" }}>
               <Card
-                variant={$Card.CATEGORY}
+                variant="category"
                 imgUrl={item?.imgUrl}
                 title={item?.name}
               />

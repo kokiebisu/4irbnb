@@ -1,44 +1,44 @@
-import { FillIconProps, StrokeIconProps } from '..';
+import { FillIconProps, StrokeIconProps } from "..";
 
 export type ActionIconTemplateProps =
-  | ({ actionType: 'heart' } & FillIconProps)
-  | ({ actionType: 'close' } & StrokeIconProps)
-  | ({ actionType: 'pause' } & FillIconProps)
-  | ({ actionType: 'play' } & FillIconProps)
-  | ({ actionType: 'top' } & StrokeIconProps)
-  | ({ actionType: 'bottom' } & StrokeIconProps)
-  | ({ actionType: 'left' } & StrokeIconProps)
-  | ({ actionType: 'right' } & StrokeIconProps)
-  | { actionType: 'upload'; fill: string };
+  | ({ actionType: "heart" } & FillIconProps)
+  | ({ actionType: "close" } & StrokeIconProps)
+  | ({ actionType: "pause" } & FillIconProps)
+  | ({ actionType: "play" } & FillIconProps)
+  | ({ actionType: "top" } & StrokeIconProps)
+  | ({ actionType: "bottom" } & StrokeIconProps)
+  | ({ actionType: "left" } & StrokeIconProps)
+  | ({ actionType: "right" } & StrokeIconProps)
+  | { actionType: "upload"; fill: string };
 
 export const ActionIconTemplate = (
   props: ActionIconTemplateProps
 ): JSX.Element => {
   switch (props.actionType) {
-    case 'heart':
+    case "heart":
       return <HeartIcon {...props} />;
-    case 'close':
+    case "close":
       return <CloseIcon {...props} />;
-    case 'pause':
+    case "pause":
       return <PauseIcon {...props} />;
-    case 'play':
+    case "play":
       return <PlayIcon {...props} />;
-    case 'top':
+    case "top":
       return <ChevronTopIcon {...props} />;
-    case 'bottom':
+    case "bottom":
       return <ChevronBottomIcon {...props} />;
-    case 'left':
+    case "left":
       return <ChevronLeftIcon {...props} />;
-    case 'right':
+    case "right":
       return <ChevronRightIcon {...props} />;
-    case 'upload':
+    case "upload":
       return <UploadIcon {...props} />;
     default:
       throw new Error(`[ACTION ICON] Provided actionType doesn't exist`);
   }
 };
 
-export const HeartIcon = ({ fill = 'black' }: FillIconProps): JSX.Element => {
+export const HeartIcon = ({ fill = "black" }: FillIconProps): JSX.Element => {
   return (
     <svg viewBox="0 0 32 32" width="100%" height="auto" display="block">
       <path
@@ -50,12 +50,13 @@ export const HeartIcon = ({ fill = 'black' }: FillIconProps): JSX.Element => {
 };
 
 export const CloseIcon = ({
-  stroke = 'black',
+  stroke = "black",
+  strokeWidth,
 }: StrokeIconProps): JSX.Element => {
   return (
     <svg viewBox="0 0 32 32" width="100%" height="auto" display="block">
-      <path stroke={stroke} d="m6 6 20 20" />
-      <path stroke={stroke} d="m26 6-20 20" />
+      <path strokeWidth={strokeWidth} stroke={stroke} d="m6 6 20 20" />
+      <path strokeWidth={strokeWidth} stroke={stroke} d="m26 6-20 20" />
     </svg>
   );
 };

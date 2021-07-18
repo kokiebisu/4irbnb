@@ -1,13 +1,7 @@
-import { StayCardTemplate } from './template';
+import { StayCardTemplate, StayCardTemplateProps } from "./template";
 
-const StayCard = (props) => {
+export type StayCardProps = StayCardTemplateProps;
+
+export const StayCard = (props: StayCardProps) => {
   return <StayCardTemplate {...props} />;
-};
-
-export const stay = (props) => {
-  return {
-    stay: {
-      component: <StayCard {...props} />,
-    },
-  };
 };

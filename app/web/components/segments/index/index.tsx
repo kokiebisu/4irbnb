@@ -1,27 +1,16 @@
-import { factory } from './utils/factory';
+import { factory } from "./utils/factory";
+import { WideSegmentProps } from "./wide";
 
-export type IndexSegmentVariants =
-  | 'category'
-  | 'nearby'
-  | 'banner'
-  | 'online'
-  | 'anywhere'
-  | 'destinations'
-  | 'worth';
-
-export interface SegmentProps {
-  variant: IndexSegmentVariants;
-}
+export type IndexSegmentProps =
+  | { variant: "category" }
+  | { variant: "nearby" }
+  | { variant: "banner" }
+  | { variant: "online" }
+  | { variant: "anywhere" }
+  | { variant: "destinations" }
+  | ({ variant: "wide" } & WideSegmentProps);
 
 /**
  * Bundles the button components
- * @param {string} extendsTo - Add custom styling to the specified component
- * @param {string} type - Specifies the type of button component
- * @param {Object} children - A JSX that will be part of the component
  */
-export const Segment: React.FC<SegmentProps> = ({ variant, ...props }) => {
-  const variants = factory(props);
-  return (
-    <div data-testid={`${variant}-landing`}>{variants[variant].component}</div>
-  );
-};
+export const Segment = ({ ...props }: IndexSegmentProps) => factory(props);

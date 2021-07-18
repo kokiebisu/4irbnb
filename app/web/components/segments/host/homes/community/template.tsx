@@ -1,18 +1,15 @@
-import { useRef } from 'react';
-import Router from 'next/router';
+import { useRef } from "react";
+import Router from "next/router";
 
-import banner from '@banner/banner.module.scss';
-import responsive from '@styles/responsive.module.scss';
+import { Button } from "@atoms";
+import { Card } from "@card";
 
-import { Button } from '@atoms';
-import { Card, $Card } from '@card';
-
-import { useSlider, SliderProps } from '@hooks/useSlider';
+import { useSlider, SliderProps } from "@hooks/useSlider";
 
 export interface CommunitySegmentTemplateProps {
-  title?: string;
+  title: string;
   description?: string;
-  hosts?: {
+  hosts: {
     name: string;
     stayType: string;
     location: string;
@@ -34,7 +31,7 @@ export const CommunitySegmentTemplate: React.FC<CommunitySegmentTemplateProps> =
   const { state, previous, next }: SliderProps = useSlider(
     hosts,
     width,
-    'banner'
+    "banner"
   );
 
   return (
@@ -58,7 +55,8 @@ export const CommunitySegmentTemplate: React.FC<CommunitySegmentTemplateProps> =
                 variant="primary"
                 size="md"
                 title="Get started"
-                onClick={() => Router.push('/become-a-host')}
+                color="red"
+                onClick={() => Router.push("/become-a-host")}
               />
             </div>
           </div>
@@ -78,7 +76,7 @@ export const CommunitySegmentTemplate: React.FC<CommunitySegmentTemplateProps> =
               return (
                 <div key={index} ref={sliderRef} className="mr-4">
                   <Card
-                    variant={$Card.HOST}
+                    variant="host"
                     host={host?.name}
                     imgUrl={host?.imgUrl}
                     stayType={host?.stayType}

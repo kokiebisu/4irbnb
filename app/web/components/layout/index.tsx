@@ -29,7 +29,6 @@ export interface LayoutProps {
  * @param {string} variant - Specify the variant of the component
  */
 export const Layout: React.FC<LayoutProps> = ({
-  extendsTo,
   variant = "input",
   ...props
 }) => {
@@ -43,9 +42,5 @@ export const Layout: React.FC<LayoutProps> = ({
     location: <LocationLayout />,
   };
 
-  return (
-    <div className={extendsTo} data-testid={`${variant}-layout`}>
-      {variants[variant]}
-    </div>
-  );
+  return <div data-testid={`${variant}-layout`}>{variants[variant]}</div>;
 };

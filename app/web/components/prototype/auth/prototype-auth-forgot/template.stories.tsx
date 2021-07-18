@@ -1,12 +1,12 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
+import React from "react";
+import { Story, Meta } from "@storybook/react";
 import {
   ForgotPasswordPrototypeTemplate,
   ForgotPasswordPrototypeTemplateProps,
-} from './template';
+} from "./template";
 
 export default {
-  title: 'Prototypes/ForgotPassword',
+  title: "Prototypes",
   component: ForgotPasswordPrototypeTemplate,
 } as Meta;
 

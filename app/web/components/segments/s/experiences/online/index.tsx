@@ -1,15 +1,12 @@
-import { factory } from './utils/factory';
+import { factory } from "./utils/factory";
 
-export type OnlineExperienceSegmentVariants =
-  | 'banner'
-  | 'cards'
-  | 'starting'
-  | 'collections';
+// export type OnlineExperienceSegmentVariants =
 
-export interface SegmentProps {
-  variant: OnlineExperienceSegmentVariants;
-  [property: string]: any;
-}
+export type SegmentProps =
+  | { variant: "banner" }
+  | { variant: "cards" }
+  | { variant: "starting" }
+  | { variant: "collections" };
 
 /**
  * Bundles the button components
@@ -17,18 +14,4 @@ export interface SegmentProps {
  * @param {string} type - Specifies the type of button component
  * @param {Object} children - A JSX that will be part of the component
  */
-export const Segment: React.FC<SegmentProps> = ({
-  variant,
-  children,
-  onClick,
-  to,
-  block,
-  animate,
-  ...props
-}) => {
-  const variants = factory(props);
-
-  return (
-    <div data-testid={`${variant}-online`}>{variants[variant].component}</div>
-  );
-};
+export const Segment: React.FC<SegmentProps> = ({ ...props }) => factory(props);

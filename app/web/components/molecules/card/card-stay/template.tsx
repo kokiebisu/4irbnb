@@ -4,19 +4,19 @@ import { ImageSlider } from "../../../particles/particle-slider/template";
 import { Card, $Card } from "@card";
 
 export interface StayCardTemplateProps {
-  images?: string[];
-  typeStay?: string;
-  location?: string;
-  title?: string;
-  accomodations?: {
+  images: string[];
+  typeStay: string;
+  location: string;
+  title: string;
+  accomodations: {
     guests: number;
     bedroom: number;
     beds: number;
     bath: number;
   };
-  characteristics?: string[];
-  ratings?: number;
-  reviews?: number;
+  characteristics: string[];
+  ratings: number;
+  reviews: number;
 }
 
 /**
@@ -40,7 +40,7 @@ export const StayCardTemplate = ({
     <div>
       <div className="sm:hidden sm:mb-8">
         <Card
-          variant={$Card.HORIZONTAL}
+          variant="horizontal"
           type="Type of Stay"
           ratings={5.0}
           location="Location"

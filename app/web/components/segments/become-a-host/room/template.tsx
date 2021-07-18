@@ -1,26 +1,26 @@
-import { Input } from '@atoms';
-import { Layout } from '@layout';
+import { Input } from "@atoms";
+import { Layout } from "@layout";
 
-export interface RoomSegmentTemplateProps {
-  place?: string;
-  property?: string;
-  stay?: string;
-  description?: string;
-  handleChange?: (e: any, property: string) => void;
-}
+export type RoomSegmentTemplateProps = {
+  place: string;
+  property: string;
+  stay: string;
+  description: string;
+  handleChange: (e: any, property: string) => void;
+};
 
 /**
  * Renders the /become-a-host/room page content
  * @param {object} data - Input data
  * @param {function} setData - Changes the input data
  */
-export const RoomSegmentTemplate: React.FC<RoomSegmentTemplateProps> = ({
+export const RoomSegmentTemplate = ({
   place,
   property,
   stay,
   description,
   handleChange,
-}) => {
+}: RoomSegmentTemplateProps): JSX.Element => {
   return (
     <div>
       <div className="mb-6">
@@ -34,7 +34,7 @@ export const RoomSegmentTemplate: React.FC<RoomSegmentTemplateProps> = ({
             inputType="place"
             variant="select"
             value={place}
-            onChange={(e) => handleChange(e, 'place')}
+            onChange={(e) => handleChange(e, "place")}
           />
         </Layout>
       </div>
@@ -45,7 +45,7 @@ export const RoomSegmentTemplate: React.FC<RoomSegmentTemplateProps> = ({
             inputType={place}
             variant="select"
             value={property}
-            onChange={(e) => handleChange(e, 'property')}
+            onChange={(e) => handleChange(e, "property")}
           />
         </Layout>
       </div>
@@ -59,19 +59,19 @@ export const RoomSegmentTemplate: React.FC<RoomSegmentTemplateProps> = ({
               <div className="mt-4">
                 {[
                   {
-                    title: 'Entire place',
+                    title: "Entire place",
                     subtitle:
-                      'Guests have the whole place to themselves. This usually includes a bedroom, a bathroom, and a kitchen.',
+                      "Guests have the whole place to themselves. This usually includes a bedroom, a bathroom, and a kitchen.",
                   },
                   {
-                    title: 'Private place',
+                    title: "Private place",
                     subtitle:
-                      'Guests have their own private room for sleeping. Other areas could be shared.',
+                      "Guests have their own private room for sleeping. Other areas could be shared.",
                   },
                   {
-                    title: 'Shared room',
+                    title: "Shared room",
                     subtitle:
-                      'Guests sleep in a bedroom or a common area that could be shared with others.',
+                      "Guests sleep in a bedroom or a common area that could be shared with others.",
                   },
                 ].map((stayType, index) => (
                   <div key={index} className="mb-4">
@@ -80,7 +80,7 @@ export const RoomSegmentTemplate: React.FC<RoomSegmentTemplateProps> = ({
                       title={stayType.title}
                       subtitle={stayType.subtitle}
                       value={stay === stayType.title}
-                      onChange={() => handleChange(stayType.title, 'stay')}
+                      onChange={() => handleChange(stayType.title, "stay")}
                     />
                   </div>
                 ))}

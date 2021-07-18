@@ -1,24 +1,24 @@
-import Router from 'next/router';
-import { Bar } from '@bar';
-import { Header } from '@header';
-import { Card, $Card } from '@card';
-import { Icon } from 'components/atoms/icon';
+import Router from "next/router";
+import { Bar } from "@bar";
+import { Header } from "@header";
+import { Card, $Card } from "@card";
+import { Icon } from "components/atoms/icon";
 
 const HowGuestsWillBookPage = () => {
   const proceed = () => {
     setTimeout(() => {
-      Router.push('/become-a-host/checkin');
+      Router.push("/become-a-host/checkin");
     }, 500);
   };
 
   const revert = () => {
     setTimeout(() => {
-      Router.push('/become-a-host/house-rules');
+      Router.push("/become-a-host/house-rules");
     }, 500);
   };
   return (
     <div>
-      <div style={{ position: 'sticky', zIndex: 9999, top: 0 }}>
+      <div style={{ position: "sticky", zIndex: 9999, top: 0 }}>
         <div>
           <Header variant="stay" title="Booking settings" />
         </div>
@@ -26,22 +26,22 @@ const HowGuestsWillBookPage = () => {
           <Bar variant="progress" percentage={80} />
         </div>
       </div>
-      <div style={{ padding: '50px 0' }}>
-        <div style={{ maxWidth: 700, margin: '0 auto' }}>
+      <div style={{ padding: "50px 0" }}>
+        <div style={{ maxWidth: 700, margin: "0 auto" }}>
           <div style={{ marginBottom: 25 }}>
             <h3>Here's how guests will book with you</h3>
           </div>
           <div
             style={{
-              width: '100%',
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
+              width: "100%",
+              display: "grid",
+              gridTemplateColumns: "repeat(3, 1fr)",
               columnGap: 15,
             }}
           >
-            {['qualified', 'control', 'notified'].map((how, index) => (
+            {["qualified", "control", "notified"].map((how, index) => (
               <div key={index}>
-                <Card variant={$Card.HOW} how={how} />
+                <Card variant="how" how={how} />
               </div>
             ))}
           </div>
@@ -55,7 +55,7 @@ const HowGuestsWillBookPage = () => {
               <div className="mr-6">
                 <Icon variant="general" generalType="protected" width={50} />
               </div>
-              <div style={{ width: '65%' }}>
+              <div style={{ width: "65%" }}>
                 <h3 className="text-sm text-gray-500">
                   In the rare case there are issues, Airbnb has you covered with
                   24/7 customer support, a $1,000,000 CAD Host Guarantee, and

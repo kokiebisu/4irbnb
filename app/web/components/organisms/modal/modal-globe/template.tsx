@@ -1,21 +1,19 @@
-import { useState } from 'react';
-import { Button } from '@atoms';
-import { Prototype, $Prototype } from '@prototype/globe';
-import { useToggleDispatch } from '@context/toggle';
+import { useState } from "react";
+import { Button, Icon } from "@atoms";
+import { Prototype } from "@prototype/globe";
+import { useToggleDispatch } from "@context/toggle";
 
-export interface GlobeModalTemplateProps {}
-
-export const GlobeModalTemplate: React.FC<GlobeModalTemplateProps> = () => {
+export const GlobeModalTemplate = (): JSX.Element => {
   const toggleDispatch = useToggleDispatch();
-  const [prototype, setPrototype] = useState($Prototype.LANGUAGE);
+  const [prototype, setPrototype] = useState("language");
   return (
     <div>
       <div>
         <div>
           <Button
             variant="modal"
-            modal="close"
-            onClick={() => toggleDispatch({ type: 'toggle_globe' })}
+            icon={<Icon variant="action" actionType="close" />}
+            onClick={() => toggleDispatch({ type: "toggle_globe" })}
           />
         </div>
       </div>
@@ -28,8 +26,8 @@ export const GlobeModalTemplate: React.FC<GlobeModalTemplateProps> = () => {
               title="Language and region"
               font={16}
               bold
-              unselected={prototype !== $Prototype.LANGUAGE}
-              onClick={() => setPrototype($Prototype.LANGUAGE)}
+              unselected={prototype !== "language"}
+              onClick={() => setPrototype("language")}
             />
           </div>
           <div>
@@ -38,12 +36,12 @@ export const GlobeModalTemplate: React.FC<GlobeModalTemplateProps> = () => {
               title="Currency"
               font={16}
               bold
-              unselected={prototype !== $Prototype.CURRENCY}
-              onClick={() => setPrototype($Prototype.CURRENCY)}
+              unselected={prototype !== "currency"}
+              onClick={() => setPrototype("currency")}
             />
           </div>
         </div>
-        <Prototype variant={prototype} />
+        {/* <Prototype variant={prototype} /> */}
       </div>
     </div>
   );

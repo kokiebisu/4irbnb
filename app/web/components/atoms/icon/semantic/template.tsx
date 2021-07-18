@@ -1,32 +1,32 @@
-import { FillIconProps, StrokeIconProps } from '..';
+import { FillIconProps, StrokeIconProps } from "..";
 
 export type SemanticIconTemplateProps =
   | ({
-      semanticType: 'exclamation';
+      semanticType: "exclamation";
     } & FillIconProps &
       StrokeIconProps)
-  | ({ semanticType: 'warning' } & FillIconProps)
-  | ({ semanticType: 'minus' } & StrokeIconProps)
-  | ({ semanticType: 'plus' } & FillIconProps)
-  | ({ semanticType: 'check' } & FillIconProps &
+  | ({ semanticType: "warning" } & FillIconProps)
+  | ({ semanticType: "minus" } & StrokeIconProps)
+  | ({ semanticType: "plus" } & FillIconProps)
+  | ({ semanticType: "check" } & FillIconProps &
       StrokeIconProps & { circled?: boolean; inversed?: boolean })
-  | ({ semanticType: 'saved' } & FillIconProps);
+  | ({ semanticType: "saved" } & FillIconProps);
 
 export const SemanticIconTemplate = ({
   ...props
 }: SemanticIconTemplateProps): JSX.Element => {
   switch (props.semanticType) {
-    case 'exclamation':
+    case "exclamation":
       return <ExclamationIcon {...props} />;
-    case 'warning':
+    case "warning":
       return <WarningIcon {...props} />;
-    case 'minus':
+    case "minus":
       return <MinusIcon {...props} />;
-    case 'plus':
+    case "plus":
       return <PlusIcon {...props} />;
-    case 'check':
+    case "check":
       return <CheckIcon {...props} />;
-    case 'saved':
+    case "saved":
       return <SavedIcon {...props} />;
     default:
       throw new Error(`[SEMANTIC ICON] Provided semanticType doesn't exist`);
@@ -34,8 +34,8 @@ export const SemanticIconTemplate = ({
 };
 
 export const ExclamationIcon = ({
-  fill = '#000',
-  stroke = '#000',
+  fill = "#000",
+  stroke = "#000",
   strokeWidth = 2,
 }: FillIconProps & StrokeIconProps): JSX.Element => {
   return (
@@ -78,8 +78,8 @@ export const WarningIcon = ({ fill }: FillIconProps): JSX.Element => {
 };
 
 export const MinusIcon = ({
-  stroke = 'black',
-  strokeWidth = 3,
+  stroke = "green",
+  strokeWidth = 1,
 }: StrokeIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
@@ -96,7 +96,7 @@ export const MinusIcon = ({
   );
 };
 
-export const PlusIcon = ({ fill = 'black' }: FillIconProps): JSX.Element => {
+export const PlusIcon = ({ fill = "black" }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
       <rect fill={fill} height="2" rx="1" width="12" x="6" y="11"></rect>
@@ -106,7 +106,7 @@ export const PlusIcon = ({ fill = 'black' }: FillIconProps): JSX.Element => {
 };
 
 export const CheckIcon = ({
-  fill = 'black',
+  fill = "black",
   circled,
   inversed,
   strokeWidth = 3,
@@ -155,7 +155,7 @@ export const CheckIcon = ({
   );
 };
 
-export const SavedIcon = ({ fill = '#737373' }: FillIconProps): JSX.Element => {
+export const SavedIcon = ({ fill = "#737373" }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
       <path

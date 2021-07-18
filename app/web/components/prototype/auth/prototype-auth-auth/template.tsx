@@ -1,21 +1,29 @@
-import { useFormik } from 'formik';
-import { useAuthDispatch, useAuthState } from '@context/auth';
-import { Button, Input } from '@atoms';
-import { validateAuth as validate } from '@helper/auth';
+import { useFormik } from "formik";
+import { useAuthDispatch, useAuthState } from "@context/auth";
+import { Button, Icon, Input } from "@atoms";
+import { validateAuth as validate } from "@helper/auth";
 
-export interface AuthPrototypeTemplateProps {}
+export interface AuthPrototypeTemplateProps {
+  authMethods: {
+    name: string;
+    icon: any;
+    handleClick: any;
+  }[];
+}
 
 /**
  * Renders the auth template component
  */
-export const AuthPrototypeTemplate: React.FC<AuthPrototypeTemplateProps> = () => {
+export const AuthPrototypeTemplate = ({
+  authMethods,
+}: AuthPrototypeTemplateProps): JSX.Element => {
   const authState = useAuthState();
   const authDispatch = useAuthDispatch();
 
   const formik = useFormik({
     initialValues: {
-      region: '',
-      phone: '',
+      region: "",
+      phone: "",
     },
     validate,
     onSubmit(values) {
@@ -24,7 +32,7 @@ export const AuthPrototypeTemplate: React.FC<AuthPrototypeTemplateProps> = () =>
   });
 
   const switchAuth = () => {
-    if (authState.title === 'Log in') {
+    if (authState.title === "Log in") {
       // return authDispatch({ type: 'auth_signup' });
     }
     // return authDispatch({ type: 'auth_login' });
@@ -33,6 +41,9 @@ export const AuthPrototypeTemplate: React.FC<AuthPrototypeTemplateProps> = () =>
   return (
     <div className="p-5">
       <div className="w-full">
+        <div className="mb-4">
+          <h3 className="text-2xl">Welcome to Airbnb</h3>
+        </div>
         <form onSubmit={formik.handleSubmit}>
           <div className="mb-2">
             <div>
@@ -63,7 +74,9 @@ export const AuthPrototypeTemplate: React.FC<AuthPrototypeTemplateProps> = () =>
               variant="primary"
               title="Continue"
               stretch
-              onClick={() => alert('yo')}
+              size="md"
+              color="white"
+              onClick={() => alert("yo")}
             />
           </div>
         </form>
@@ -72,43 +85,21 @@ export const AuthPrototypeTemplate: React.FC<AuthPrototypeTemplateProps> = () =>
             or
           </span>
         </div>
-        {/* <div>
-          {methods.map((method, index) => {
+        <div>
+          {authMethods.map((method, index) => {
             return (
-              <div key={index} className={[space['m-v--14']].join(' ')}>
+              <div key={index} className="my-4">
                 <Button
-                  variant={$Button.AUTH}
-                  extendsTo={[
-                    button['hover__auth'],
-                    color['bg--transparent'],
-                    layout['block'],
-                    shape['w--full'],
-                    space['p-h--12'],
-                    space['p-v--12'],
-                    shape['br--8'],
-                  ].join(' ')}
+                  variant="auth"
                   auth={method}
-                  onClick={auths[method].handleClick}
-                  icon={auths[method].icon}
-                  name={auths[method].name}
+                  onClick={method.handleClick}
+                  icon={<Icon {...method.icon} />}
+                  name={method.name}
+                  stretched
                 />
               </div>
             );
           })}
-        </div> */}
-        <div className="mt-1">
-          <div className="inline-block mr-2">
-            <p className="text-sm font-light text-gray-600">
-              {authState.title === 'Log in'
-                ? "Don't have an account?"
-                : 'Already have an account?'}
-            </p>
-          </div>
-          <Button
-            variant="underline"
-            onClick={switchAuth}
-            title={authState.title === 'Log in' ? 'Sign up' : 'Log in'}
-          />
         </div>
       </div>
     </div>

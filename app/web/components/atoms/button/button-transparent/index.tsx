@@ -1,13 +1,11 @@
-import React from 'react';
+import React from "react";
 import {
   TransparentButtonTemplate,
   TransparentButtonTemplateProps,
-} from './template';
+} from "./template";
 
 export type TransparentButtonProps = TransparentButtonTemplateProps;
 
 export const TransparentButton = (
   props: TransparentButtonProps
-): JSX.Element => {
-  return <TransparentButtonTemplate {...props} />;
-};
+): JSX.Element => <TransparentButtonTemplate {...props} />;

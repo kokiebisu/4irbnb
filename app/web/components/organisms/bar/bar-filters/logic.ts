@@ -1,7 +1,9 @@
-import * as content from './content';
+import * as content from "./content";
 
 export const useFiltersBar = () => {
+  const handleFilterSelect = (filter: string) => alert("h");
   return {
     ...content,
+    handleFilterSelect,
   };
 };

@@ -1,90 +1,93 @@
-import { ButtonProps } from '..';
-import { AuthButton } from '../button-auth';
-import { BackButton } from '../button-back';
-import { BannerButton } from '../button-banner';
-import { BarButton } from '../button-bar';
-import { BorderButton } from '../button-border';
-import { CalendarButton } from '../button-calendar';
-import { ClosedButton } from '../button-closed';
-import { CurrencyButton } from '../button-currency';
-import { DestinationButton } from '../button-destination';
-import { ExpandButton } from '../button-expand';
-import { FilterButton } from '../button-filter';
-import { GlobeButton } from '../button-globe';
-import { LinkButton } from '../button-link';
-import { LocationButton } from '../button-location';
-import { LogoButton } from '../button-logo';
-import { MenuButton } from '../button-menu';
-import { ModalButton } from '../button-modal';
-import { NearbyButton } from '../button-nearby';
-import { OptionButton } from '../button-option';
-import { PaginateButton } from '../button-paginate';
-import { PrivacyButton } from '../button-privacy';
-import { ReportButton } from '../button-report';
-import { SearchButton } from '../button-search';
-import { SearchbarButton } from '../button-searchbar';
-import { TransparentButton } from '../button-transparent';
-import { UnderlineButton } from '../button-underline';
-import { VerifyButton } from '../button-verify';
-import { VideoButton } from '../button-video';
+import { ButtonProps } from "..";
+import { AuthButton } from "../button-auth";
+import { BackButton } from "../button-back";
+import { BannerButton } from "../button-banner";
+import { BarButton } from "../button-bar";
+import { BorderButton } from "../button-border";
+import { CalendarButton } from "../button-calendar";
+import { ClosedButton } from "../button-closed";
+import { CurrencyButton } from "../button-currency";
+import { DestinationButton } from "../button-destination";
+import { ExpandButton } from "../button-expand";
+import { FilterButton } from "../button-filter";
+import { GlobeButton } from "../button-globe";
+import { LinkButton } from "../button-link";
+import { LocationButton } from "../button-location";
+import { LogoButton } from "../button-logo";
+import { MenuButton } from "../button-menu";
+import { ModalButton } from "../button-modal";
+import { NearbyButton } from "../button-nearby";
+import { OptionButton } from "../button-option";
+import { PaginateButton } from "../button-paginate";
+import { PrimaryButton } from "../button-primary";
+import { PrivacyButton } from "../button-privacy";
+import { ReportButton } from "../button-report";
+import { SearchButton } from "../button-search";
+import { SearchbarButton } from "../button-searchbar";
+import { TransparentButton } from "../button-transparent";
+import { UnderlineButton } from "../button-underline";
+import { VerifyButton } from "../button-verify";
+import { VideoButton } from "../button-video";
 
 export const factory = (props: ButtonProps): JSX.Element => {
   switch (props.variant) {
-    case 'auth':
+    case "auth":
       return <AuthButton {...props} />;
-    case 'back':
+    case "back":
       return <BackButton {...props} />;
-    case 'banner':
+    case "banner":
       return <BannerButton {...props} />;
-    case 'bar':
+    case "bar":
       return <BarButton {...props} />;
-    case 'border':
+    case "border":
       return <BorderButton {...props} />;
-    case 'calendar':
+    case "calendar":
       return <CalendarButton {...props} />;
-    case 'closed':
+    case "closed":
       return <ClosedButton {...props} />;
-    case 'currency':
+    case "currency":
       return <CurrencyButton {...props} />;
-    case 'destination':
+    case "destination":
       return <DestinationButton {...props} />;
-    case 'expand':
+    case "expand":
       return <ExpandButton {...props} />;
-    case 'filter':
+    case "filter":
       return <FilterButton {...props} />;
-    case 'globe':
+    case "globe":
       return <GlobeButton {...props} />;
-    case 'link':
+    case "link":
       return <LinkButton {...props} />;
-    case 'location':
+    case "location":
       return <LocationButton {...props} />;
-    case 'logo':
+    case "logo":
       return <LogoButton {...props} />;
-    case 'menu':
+    case "menu":
       return <MenuButton {...props} />;
-    case 'modal':
+    case "modal":
       return <ModalButton {...props} />;
-    case 'nearby':
+    case "nearby":
       return <NearbyButton {...props} />;
-    case 'option':
+    case "option":
       return <OptionButton {...props} />;
-    case 'paginate':
+    case "paginate":
       return <PaginateButton {...props} />;
-    case 'privacy':
+    case "primary":
+      return <PrimaryButton {...props} />;
+    case "privacy":
       return <PrivacyButton {...props} />;
-    case 'report':
+    case "report":
       return <ReportButton {...props} />;
-    case 'search':
+    case "search":
       return <SearchButton {...props} />;
-    case 'searchbar':
+    case "searchbar":
       return <SearchbarButton {...props} />;
-    case 'transparent':
+    case "transparent":
       return <TransparentButton {...props} />;
-    case 'underline':
+    case "underline":
       return <UnderlineButton {...props} />;
-    case 'verify':
+    case "verify":
       return <VerifyButton {...props} />;
-    case 'video':
+    case "video":
       return <VideoButton {...props} />;
     default:
       throw new Error(`[BUTTON] Invalid variant provided`);

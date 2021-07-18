@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import Router from 'next/router';
-import { useFormik } from 'formik';
-import { Bullet } from '@atoms';
-import { Button } from '@atoms';
-import { Input } from '@atoms';
-import { validateExists as validate } from '@helper/auth';
+import { useState } from "react";
+import Router from "next/router";
+import { useFormik } from "formik";
+import { Bullet } from "@atoms";
+import { Button } from "@atoms";
+import { Input } from "@atoms";
+import { validateExists as validate } from "@helper/auth";
 
 export interface ExistsPrototypeTemplateProps {
-  data?: {
+  data: {
     imgUrl: string;
     firstname: string;
     email: string;
@@ -16,16 +16,16 @@ export interface ExistsPrototypeTemplateProps {
 
 export const ExistsPrototypeTemplate: React.FC<ExistsPrototypeTemplateProps> = ({
   data = {
-    imgUrl: 'https://a0.muscache.com/defaults/user_pic-225x225.png?v=3',
-    firstname: 'Kenichi',
-    email: 'a01056715@gmail.com',
+    imgUrl: "https://a0.muscache.com/defaults/user_pic-225x225.png?v=3",
+    firstname: "Kenichi",
+    email: "a01056715@gmail.com",
   },
 }) => {
   const [loading, setLoading] = useState(false);
 
   const formik = useFormik({
     initialValues: {
-      password: '',
+      password: "",
     },
     validate,
     onSubmit: (values) => {
@@ -81,7 +81,10 @@ export const ExistsPrototypeTemplate: React.FC<ExistsPrototypeTemplateProps> = (
             variant="primary"
             loading={loading}
             title="Log in"
-            onClick={() => alert('clicked')}
+            size="md"
+            color="white"
+            stretch
+            onClick={() => alert("clicked")}
           />
         </div>
         <div>
@@ -96,14 +99,14 @@ export const ExistsPrototypeTemplate: React.FC<ExistsPrototypeTemplateProps> = (
         <Button
           variant="underline"
           title="Login with a different account"
-          onClick={() => alert('button pressed')}
+          onClick={() => alert("button pressed")}
         />
       </div>
       <div className="my-4">
         <Button
           variant="underline"
           title="Forgot password?"
-          onClick={() => alert('button pressed')}
+          onClick={() => alert("button pressed")}
         />
       </div>
     </div>

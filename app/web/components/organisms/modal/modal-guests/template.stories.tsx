@@ -1,15 +1,13 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
-import { GuestsModalTemplate, GuestsModalTemplateProps } from './template';
+import React from "react";
+import { Story, Meta } from "@storybook/react";
+import { GuestsModalTemplate } from "./template";
 
 export default {
-  title: 'Organisms/Modal',
+  title: "Organisms/Modal",
   component: GuestsModalTemplate,
 } as Meta;
 
-const ModalStory: Story<GuestsModalTemplateProps> = (args) => (
-  <GuestsModalTemplate {...args} />
-);
+const ModalStory: Story<{}> = (args) => <GuestsModalTemplate {...args} />;
 
 export const Guests = ModalStory.bind({});
 Guests.args = {};

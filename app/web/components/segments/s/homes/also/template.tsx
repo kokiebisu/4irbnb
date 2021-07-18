@@ -1,13 +1,13 @@
-import { useRef } from 'react';
-import { Card, $Card } from '@card';
-import { Button } from '@atoms';
-import { useSlider } from '@hooks/useSlider';
-import { useHandleContainerResize } from '@hooks/useHandleContainerResize';
+import { useRef } from "react";
+import { Card } from "@card";
+import { Button } from "@atoms";
+import { useSlider } from "@hooks/useSlider";
+import { useHandleContainerResize } from "@hooks/useHandleContainerResize";
 
-export interface AlsoSegmentTemplateProps {
-  items?: any;
-  title?: string;
-}
+export type AlsoSegmentTemplateProps = {
+  items: any;
+  title: string;
+};
 
 /**
  * Renders the also section
@@ -19,7 +19,7 @@ export const AlsoSegmentTemplate: React.FC<AlsoSegmentTemplateProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>();
   const width: number = useHandleContainerResize(containerRef)[0];
-  const { state, previous, next } = useSlider(items, width, 'also');
+  const { state, previous, next } = useSlider(items, width, "also");
 
   return (
     <div className="overflow-x-hidden">
@@ -64,20 +64,18 @@ export const AlsoSegmentTemplate: React.FC<AlsoSegmentTemplateProps> = ({
               <div style={{ width: width / (width > 728 ? 3 : 2) }} key={index}>
                 <div className="mb-3">
                   <Card
-                    variant={$Card.NEARBY}
-                    to={item[0]?.to}
+                    variant="nearby"
                     imgUrl={item?.pic}
-                    title={item[0]?.city || 'Item'}
+                    title={item[0]?.city || "Item"}
                     subtitle={`${item[0]?.hours || 1} hour drive`}
                     size="lg"
                   />
                 </div>
                 <div>
                   <Card
-                    variant={$Card.NEARBY}
-                    to={item[1]?.to}
+                    variant="nearby"
                     imgUrl={item?.pic}
-                    title={item[1]?.city || 'Item'}
+                    title={item[1]?.city || "Item"}
                     subtitle={`${item[0]?.hours || 1} hour drive`}
                     size="lg"
                   />

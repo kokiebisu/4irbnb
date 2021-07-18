@@ -4,7 +4,7 @@ import { MenuBarTemplate, MenuBarTemplateProps } from "./template";
 
 export type MenuBarProps = MenuBarTemplateProps;
 
-const MenuBar = (props: MenuBarProps): JSX.Element => {
+export const MenuBar = (props: MenuBarProps): JSX.Element => {
   const data = useMenuBar();
   return (
     <div data-testid="bar-menu--organism">

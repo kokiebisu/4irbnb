@@ -1,15 +1,13 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
-import { ListingModalTemplate, ListingModalTemplateProps } from './template';
+import React from "react";
+import { Story, Meta } from "@storybook/react";
+import { ListingModalTemplate } from "./template";
 
 export default {
-  title: 'Organisms/Modal',
+  title: "Organisms/Modal",
   component: ListingModalTemplate,
 } as Meta;
 
-const ModalStory: Story<ListingModalTemplateProps> = (args) => (
-  <ListingModalTemplate {...args} />
-);
+const ModalStory: Story<{}> = (args) => <ListingModalTemplate {...args} />;
 
 export const Listing = ModalStory.bind({});
 Listing.args = {};

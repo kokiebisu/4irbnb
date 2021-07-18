@@ -1,9 +1,9 @@
-import { Layout } from '@layout';
-import { Button } from '@atoms';
-import { Card, $Card } from '@card';
+import { Layout } from "@layout";
+import { Button } from "@atoms";
+import { Card } from "@card";
 
 export interface WorksSegmentTemplateProps {
-  categories?: string[];
+  categories: string[];
 }
 
 export const WorksSegmentTemplate: React.FC<WorksSegmentTemplateProps> = ({
@@ -16,7 +16,7 @@ export const WorksSegmentTemplate: React.FC<WorksSegmentTemplateProps> = ({
           {categories.map((category, index) => {
             return (
               <div className="mb-2" key={index}>
-                <Card variant={$Card.WORKS} work={category} />
+                <Card variant="works" work={category} />
               </div>
             );
           })}
@@ -26,6 +26,8 @@ export const WorksSegmentTemplate: React.FC<WorksSegmentTemplateProps> = ({
             variant="border"
             bold
             title="Start creating your experience"
+            size="md"
+            onClick={() => alert("yo")}
           />
         </div>
       </Layout>

@@ -1,18 +1,10 @@
 import {
   SignupPrototypeTemplate,
   SignupPrototypeTemplateProps,
-} from './template';
+} from "./template";
 
-export interface SignupPrototypeProps extends SignupPrototypeTemplateProps {}
+export type SignupPrototypeProps = SignupPrototypeTemplateProps;
 
-export const SignupPrototype: React.FC<SignupPrototypeProps> = (props) => {
-  return <SignupPrototypeTemplate {...props} />;
-};
-
-export const signup = (props) => {
-  return {
-    signup: {
-      component: <SignupPrototype {...props} />,
-    },
-  };
-};
+export const SignupPrototype = (props: SignupPrototypeProps): JSX.Element => (
+  <SignupPrototypeTemplate {...props} />
+);

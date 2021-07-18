@@ -1,15 +1,13 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
-import { GlobeModalTemplate, GlobeModalTemplateProps } from './template';
+import React from "react";
+import { Story, Meta } from "@storybook/react";
+import { GlobeModalTemplate } from "./template";
 
 export default {
-  title: 'Organisms/Modal',
+  title: "Organisms/Modal",
   component: GlobeModalTemplate,
 } as Meta;
 
-const ModalStory: Story<GlobeModalTemplateProps> = (args) => (
-  <GlobeModalTemplate {...args} />
-);
+const ModalStory: Story<{}> = (args) => <GlobeModalTemplate {...args} />;
 
 export const Globe = ModalStory.bind({});
 Globe.args = {};

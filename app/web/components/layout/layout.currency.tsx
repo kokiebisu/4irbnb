@@ -1,7 +1,7 @@
 import { Button } from "@atoms";
 
 export type CurrencyLayoutProps = {
-  items?: { name?: string; abbreviation?: string; symbol?: string }[];
+  items: { name?: string; abbreviation?: string; symbol?: string }[];
   title?: string;
 };
 

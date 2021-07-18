@@ -3,19 +3,18 @@ import Router from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 import { Modal } from "@modal";
 import { Button } from "@atoms";
-// import { Prototype } from '@prototype/searchbar';
+import { SearchbarPrototype } from "@prototype/searchbar";
 
 import { Icon } from "@atoms";
 import { useToggleDispatch, useToggleState } from "@context/toggle";
-// import { Content } from '@atoms/button-transparent/content.transparent';
 import { useOnClickOutside } from "@hooks/useOnClickOutside";
 
-export interface LandingHeaderTemplateProps {
-  category?: any;
-  setCategory?: any;
-  data?: any;
+export type LandingHeaderTemplateProps = {
+  category: any;
+  setCategory: any;
+  data: any;
   criteria?: any;
-}
+};
 
 /**
  * Renders the transparent header
@@ -59,7 +58,7 @@ export const LandingHeaderTemplate = ({
         expanded ? "pt-4 pb-32" : "py-3"
       } relative container-spread transition ease-in-out duration-100`}
     >
-      <div className="md:none none md:flex justify-between relative">
+      <div className="hidden sm:flex justify-between relative">
         <div>
           <div className="mt-1 block lg:hidden">
             <Icon
@@ -81,13 +80,13 @@ export const LandingHeaderTemplate = ({
           </div>
         </div>
         <div className="flex items-center">
-          <div className={`mx-1 ${[styles["searchbar__host"]].join(" ")}`}>
+          <div className={`mx-1 `}>
             <Button
               variant="transparent"
               inverse={criteria}
               onClick={() => Router.push("/host/homes")}
             >
-              <Content kind="host" inverse={criteria} />
+              <h5 className="text-white text-sm font-light ">Become a Host</h5>
             </Button>
           </div>
           <div className="mx-1">
@@ -96,7 +95,13 @@ export const LandingHeaderTemplate = ({
               inverse={criteria}
               onClick={() => toggleDispatch({ type: "toggle_globe" })}
             >
-              <Content kind="globe" inverse={criteria} />
+              <Icon
+                variant="general"
+                generalType="globe"
+                fill="white"
+                width={16}
+                height={16}
+              />
             </Button>
           </div>
           <div className="ml-1">
@@ -108,19 +113,27 @@ export const LandingHeaderTemplate = ({
             />
           </div>
         </div>
-        <div className="z-70 absolute bg-transparent t-1/2">
+        <div className="z-70 absolute right-0 bg-transparent top-14">
           <Modal
-            variant={$Modal.MENU}
+            variant="menu"
             authenticated={data}
             criteria={toggleState.menu}
             dispatch="toggle_menu"
+            options={[
+              {
+                name: "Login",
+                handleClick: () => toggleDispatch({ type: "toggle_auth" }),
+                bold: false,
+              },
+            ]}
+            animate="default"
           />
         </div>
       </div>
       <div
-        className={`top-8/10 sm:top-2/10 px-6 hidden sm:block absolute w-full left-1/2 bottom-0 z-50`}
+        className={`top-9/10 md:top-2/10 px-6 hidden sm:block absolute w-full left-1/2 bottom-0 z-50`}
         style={{
-          maxWidth: 760,
+          maxWidth: 900,
           transform: "translate(-50%, 0)",
           height: "fit-content",
         }}
@@ -154,7 +167,7 @@ export const LandingHeaderTemplate = ({
                                   : "landing__bb"
                               }`}
                             >
-                              <p className="text-white text-xs md:text-md font-medium md:font-light">
+                              <p className="text-white text-md md:text-md md:font-thin">
                                 {types[type].title}
                               </p>
                             </div>
@@ -164,7 +177,7 @@ export const LandingHeaderTemplate = ({
                     })}
                   </div>
                 </div>
-                <Prototype type={category} transparent />
+                <SearchbarPrototype type={category} transparent />
               </div>
             </motion.div>
           ) : (
@@ -197,7 +210,7 @@ export const LandingHeaderTemplate = ({
                                   </p>
                                 </div>
                                 <div className="flex justify-center">
-                                  {/* {category === type && (
+                                  {category === type && (
                                     <motion.div
                                       whileHover={{ width: 15 }}
                                       style={{
@@ -206,7 +219,7 @@ export const LandingHeaderTemplate = ({
                                         backgroundColor: "white",
                                       }}
                                     />
-                                  )} */}
+                                  )}
                                 </div>
                               </button>
                             </div>

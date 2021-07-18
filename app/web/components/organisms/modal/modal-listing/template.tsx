@@ -1,8 +1,6 @@
-import { Button, Input, Icon } from '@atoms';
+import { Button, Input, Icon } from "@atoms";
 
-export interface ListingModalTemplateProps {}
-
-export const ListingModalTemplate: React.FC<ListingModalTemplateProps> = () => {
+export const ListingModalTemplate = () => {
   return (
     <div>
       <div className="mb-6">
@@ -11,9 +9,41 @@ export const ListingModalTemplate: React.FC<ListingModalTemplateProps> = () => {
         </h4>
       </div>
       <div>
-        <Input variant="address" direction="bottom" />
-        <Input variant="place" />
-        <Input variant="guests" direction="top" />
+        <Input
+          flag={false}
+          onSwitchToFalse={() => alert("false")}
+          onSwitchToTrue={() => alert("true")}
+          onAdd={() => alert("add")}
+          onSubtract={() => alert("subtract")}
+          min={0}
+          max={0}
+          type="create"
+          variant="address"
+          direction="bottom"
+        />
+        <Input
+          flag={false}
+          onSwitchToFalse={() => alert("false")}
+          onSwitchToTrue={() => alert("true")}
+          onAdd={() => alert("add")}
+          onSubtract={() => alert("subtract")}
+          min={0}
+          max={0}
+          type="create"
+          variant="place"
+        />
+        <Input
+          flag={false}
+          onSwitchToFalse={() => alert("false")}
+          onSwitchToTrue={() => alert("true")}
+          onAdd={() => alert("add")}
+          onSubtract={() => alert("subtract")}
+          min={0}
+          max={0}
+          type="create"
+          variant="guests"
+          direction="top"
+        />
       </div>
       <div className="mt-4 mb-7 flex items-center">
         <div>
@@ -35,9 +65,11 @@ export const ListingModalTemplate: React.FC<ListingModalTemplateProps> = () => {
         <Button
           variant="primary"
           fill="black"
-          block
           title="Start your listing"
           stretch
+          size="md"
+          color="black"
+          onClick={() => alert("clicked")}
         />
       </div>
     </div>

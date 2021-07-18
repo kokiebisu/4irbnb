@@ -1,10 +1,5 @@
-import {
-  OnlineHostHeaderTemplate,
-  OnlineHostHeaderTemplateProps,
-} from "./template";
+import { OnlineHostHeaderTemplate } from "./template";
 
-export interface OnlineHostHeaderProps extends OnlineHostHeaderTemplateProps {}
-
-export const OnlineHostHeader = (props: OnlineHostHeaderProps): JSX.Element => {
-  return <OnlineHostHeaderTemplate {...props} />;
+export const OnlineHostHeader = (): JSX.Element => {
+  return <OnlineHostHeaderTemplate />;
 };

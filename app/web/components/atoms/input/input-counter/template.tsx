@@ -1,4 +1,4 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
 export type CounterInputTemplateProps = {
   title?: string;
@@ -8,7 +8,7 @@ export type CounterInputTemplateProps = {
   onSubtract: () => void;
   min: number;
   max: number;
-  type: 'create' | 'guests';
+  type: "create" | "guests";
 };
 
 export const CounterInputTemplate = ({
@@ -24,11 +24,11 @@ export const CounterInputTemplate = ({
   const types = {
     create: {
       borderWidth: 2,
-      color: 'green-700',
+      color: "green-700",
     },
     guests: {
       borderWidth: 1,
-      color: 'gray-500',
+      color: "gray-500",
     },
   };
   return (
@@ -46,7 +46,7 @@ export const CounterInputTemplate = ({
           <button
             disabled={value === min}
             className={`bg-white border-solid rounded-full p-2 border-2 border-${
-              value === min ? 'gray-500' : `${types[type].color}`
+              value === min ? "gray-500" : `${types[type].color}`
             }`}
             onClick={onSubtract}
           >
@@ -54,8 +54,8 @@ export const CounterInputTemplate = ({
               variant="semantic"
               semanticType="minus"
               width={15}
-              fill="green"
-              strokeWidth={5}
+              fill={value === min ? "black" : "green"}
+              strokeWidth={1}
             />
           </button>
         </div>
@@ -66,7 +66,7 @@ export const CounterInputTemplate = ({
           <button
             disabled={value === max}
             className={`bg-white border-solid rounded-full p-2 border-2 border-${
-              value === max ? 'gray-500' : `${types[type].color}`
+              value === max ? "gray-500" : `${types[type].color}`
             }`}
             onClick={onAdd}
           >
@@ -74,7 +74,7 @@ export const CounterInputTemplate = ({
               variant="semantic"
               semanticType="plus"
               width={15}
-              fill={value === max ? 'black' : 'green'}
+              fill={value === max ? "black" : "green"}
               strokeWidth={5}
             />
           </button>

@@ -1,9 +1,9 @@
 import Router from "next/router";
 import { Button } from "@atoms";
 
-export interface StayHeaderTemplateProps {
-  title?: string;
-}
+export type StayHeaderTemplateProps = {
+  title: string;
+};
 
 /**
  * Renders the header for the homes page

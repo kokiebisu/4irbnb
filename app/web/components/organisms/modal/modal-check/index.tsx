@@ -1,15 +1,5 @@
-import { CheckModalTemplate, CheckModalTemplateProps } from './template';
+import { CheckModalTemplate } from "./template";
 
-export interface CheckModalProps extends CheckModalTemplateProps {}
-
-export const CheckModal: React.FC<CheckModalProps> = (props) => {
-  return <CheckModalTemplate {...props} />;
-};
-
-export const check = (props) => {
-  return {
-    check: {
-      component: <CheckModal {...props} />,
-    },
-  };
+export const CheckModal = (): JSX.Element => {
+  return <CheckModalTemplate />;
 };

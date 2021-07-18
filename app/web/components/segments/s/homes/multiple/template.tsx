@@ -1,24 +1,24 @@
-import { useLayoutEffect, useRef, useState } from 'react';
-import styles from '@template/index.module.scss';
-import sectionStyles from '@template/index.module.scss';
-import section from '@template/index.module.scss';
+import { useLayoutEffect, useRef, useState } from "react";
+import styles from "@template/index.module.scss";
+import sectionStyles from "@template/index.module.scss";
+import section from "@template/index.module.scss";
 
-import { Card, $Card } from '@card';
-import { Button } from '@atoms';
-import { useRouter } from 'next/router';
+import { Card, $Card } from "@card";
+import { Button } from "@atoms";
+import { useRouter } from "next/router";
 
-export interface MultipleSegmentTemplateProps {
-  title?: string;
+export type MultipleSegmentTemplateProps = {
+  title: string;
   description?: string;
   pagination?: boolean;
   showAll?: any;
-  type?: string;
-  carouselType?: string;
-  save?: boolean;
-  items?: { card: any; to: string }[];
-  isDescription?: boolean;
-  fetchUrl?: string;
-}
+  type: string;
+  carouselType: string;
+  save: boolean;
+  items: { card: any; to: string }[];
+  isDescription: boolean;
+  fetchUrl: string;
+};
 
 /**
  * Renders the stay section
@@ -48,7 +48,7 @@ export const MultipleSegmentTemplate: React.FC<MultipleSegmentTemplateProps> = (
         <ul
           className="hide-scrollbar -mx-2 flex p-0 overflox-x-auto overflow-y-hidden list-none min-w-full h-full"
           style={{
-            scrollSnapType: 'x mandatory',
+            scrollSnapType: "x mandatory",
           }}
         >
           {data.length &&
@@ -57,17 +57,17 @@ export const MultipleSegmentTemplate: React.FC<MultipleSegmentTemplateProps> = (
                 <li
                   key={index}
                   className={[
-                    sectionStyles['w__card'],
-                    sectionStyles['flex__card'],
-                  ].join(' ')}
+                    sectionStyles["w__card"],
+                    sectionStyles["flex__card"],
+                  ].join(" ")}
                   style={{
-                    scrollSnapAlign: 'start',
-                    borderLeftStyle: 'solid',
-                    borderLeftColor: 'transparent',
+                    scrollSnapAlign: "start",
+                    borderLeftStyle: "solid",
+                    borderLeftColor: "transparent",
                   }}
                 >
                   <Card
-                    variant={$Card.TYPESTAY}
+                    variant="typestay"
                     card={item && item.card}
                     to={item && item.to}
                   />
@@ -98,10 +98,10 @@ export const MultipleSegmentTemplate: React.FC<MultipleSegmentTemplateProps> = (
     };
 
     useLayoutEffect(() => {
-      window.addEventListener('resize', handleRef);
+      window.addEventListener("resize", handleRef);
       handleRef();
       return () => {
-        window.removeEventListener('resize', handleRef);
+        window.removeEventListener("resize", handleRef);
       };
     });
 
@@ -133,7 +133,7 @@ export const MultipleSegmentTemplate: React.FC<MultipleSegmentTemplateProps> = (
                 variant="paginate"
                 direction="left"
                 onClick={previous}
-                disable={state.activeSlide === 0}
+                disabled={state.activeSlide === 0}
               />
             </div>
             <div className="mx-1">
@@ -141,7 +141,9 @@ export const MultipleSegmentTemplate: React.FC<MultipleSegmentTemplateProps> = (
                 variant="paginate"
                 direction="right"
                 onClick={next}
-                disable={state.activeSlide === Math.floor(items.length / 2) - 1}
+                disabled={
+                  state.activeSlide === Math.floor(items.length / 2) - 1
+                }
               />
             </div>
           </div>
@@ -160,11 +162,11 @@ export const MultipleSegmentTemplate: React.FC<MultipleSegmentTemplateProps> = (
                 <div
                   style={{ width: width / (width > 1128 ? 3 : 2) }}
                   key={index}
-                  className={[section['w__nearby']].join(' ')}
+                  className={[section["w__nearby"]].join(" ")}
                 >
                   <div className="mb-3 mr-4">
                     <Card
-                      variant={$Card.HORIZONTAL}
+                      variant="horizontal"
                       card={item && item.card}
                       to={item && item.to}
                       save={save}
@@ -234,23 +236,23 @@ export const MultipleSegmentTemplate: React.FC<MultipleSegmentTemplateProps> = (
     const evaluateNumber = (index) => {
       if (index > 5) {
         // should disappear below 1128px
-        return 'hidden md:block';
+        return "hidden md:block";
       } else if (index > 3) {
         // should disappear below 728px
-        return 'hidden sm:block';
+        return "hidden sm:block";
       }
       // doesn't disappear
-      return [].join(' ');
+      return [].join(" ");
     };
     return (
       <div className="py-4">
-        <div className={`grid ${[styles['MultipleSegmentrows']].join(' ')}`}>
+        <div className={`grid ${[styles["MultipleSegmentrows"]].join(" ")}`}>
           {displayingData.length &&
             displayingData.map((item, index) => {
               return (
                 <div key={index} className={evaluateNumber(index)}>
                   <Card
-                    variant={$Card.HORIZONTAL}
+                    variant="horizontal"
                     card={item && item.card}
                     onClick={() => router.push(item.to)}
                     save={save}
@@ -265,7 +267,7 @@ export const MultipleSegmentTemplate: React.FC<MultipleSegmentTemplateProps> = (
 
   const displayItems = (carouselType, save) => {
     switch (carouselType) {
-      case 'stayTypes':
+      case "stayTypes":
         return <TypeStayCarousel data={items} />;
       default:
         return <MultipleSegmentRows data={items} save={save} />;

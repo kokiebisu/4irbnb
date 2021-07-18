@@ -13,7 +13,8 @@ export const AgainCardTemplate = (): JSX.Element => {
                 variant="semantic"
                 semanticType="exclamation"
                 width={18}
-                fill="white"
+                stroke="white"
+                strokeWidth={3}
               />
             </div>
           </div>

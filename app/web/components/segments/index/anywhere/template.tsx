@@ -1,9 +1,9 @@
-import template from '@template/index/index.module.scss';
+import template from "@template/index/index.module.scss";
 
-import { Card, $Card } from '@card';
+import { Card } from "@card";
 
 export interface AnywhereSegmentTemplateProps {
-  items?: {
+  items: {
     imgUrl: string;
     title: string;
     to: string;
@@ -19,26 +19,21 @@ export const AnywhereSegmentTemplate: React.FC<AnywhereSegmentTemplateProps> = (
 }) => {
   return (
     <div>
-      <div className="px-8">
-        <div
-          style={{ gridTemplateColumns: `repeat(${items.length}, 1fr)` }}
-          className={[template['category__carousel']].join(' ')}
-        >
-          {items.map((item, index) => {
-            return (
-              <div key={index}>
-                <Card
-                  variant={$Card.AnywhereSegment}
-                  imgUrl={item?.imgUrl}
-                  title={item?.title}
-                  to={item?.to}
-                  extendsTo={[template['category__card']].join(' ')}
-                />
-              </div>
-            );
-          })}
-          <div className={template['category__space']}></div>
-        </div>
+      <div
+        className={`grid-cols-4 ${[template["category__carousel"]].join(" ")}`}
+      >
+        {items.map((item, index) => {
+          return (
+            <div key={index}>
+              <Card
+                variant="anywhere"
+                imgUrl={item?.imgUrl}
+                title={item?.title}
+              />
+            </div>
+          );
+        })}
+        <div className={template["category__space"]}></div>
       </div>
     </div>
   );

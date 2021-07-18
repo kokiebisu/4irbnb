@@ -1,7 +1,5 @@
-import { LocationModalTemplate, LocationModalTemplateProps } from './template';
+import { LocationModalTemplate } from "./template";
 
-export interface LocationModalProps extends LocationModalTemplateProps {}
-
-export const LocationModal: React.FC<LocationModalProps> = (props) => {
-  return <LocationModalTemplate {...props} />;
+export const LocationModal = (): JSX.Element => {
+  return <LocationModalTemplate />;
 };

@@ -21,9 +21,7 @@ export const TransparentButtonTemplate = ({
     >
       <div
         className={`${
-          inverse
-            ? 'hover:bg-gray-300 bg-opacity-40'
-            : 'hover:bg-gray-300 bg-opacity-40'
+          inverse ? "bg-gray-100 bg-opacity-10" : "bg-gray-100 bg-opacity-70"
         } rounded-full inline-flex items-center bg-transparent py-3 px-4`}
       >
         {children}

@@ -1,7 +1,7 @@
 import { Button } from "@atoms";
 
 export interface MenuBarTemplateProps {
-  items?: ("menu" | "saved" | "login")[];
+  items: ("menu" | "saved" | "login")[];
 }
 
 /**

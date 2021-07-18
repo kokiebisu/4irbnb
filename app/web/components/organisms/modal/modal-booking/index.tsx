@@ -1,15 +1,9 @@
-import { BookingModalTemplate, BookingModalTemplateProps } from './template';
+import { useBookingModal } from "./logic";
+import { BookingModalTemplate, BookingModalTemplateProps } from "./template";
 
-export interface BookingModalProps extends BookingModalTemplateProps {}
+export type BookingModalProps = BookingModalTemplateProps;
 
-export const BookingModal: React.FC<BookingModalProps> = (props) => {
-  return <BookingModalTemplate {...props} />;
-};
-
-export const booking = (props) => {
-  return {
-    booking: {
-      component: <BookingModal {...props} />,
-    },
-  };
+export const BookingModal = (props: BookingModalProps): JSX.Element => {
+  const data = useBookingModal();
+  return <BookingModalTemplate {...props} {...data} />;
 };

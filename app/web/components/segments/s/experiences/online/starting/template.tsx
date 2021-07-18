@@ -1,17 +1,17 @@
-import { Button } from '@atoms';
-import { Card, $Card } from '@card';
-import { useSlide } from '@hooks/useSlide';
+import { Button } from "@atoms";
+import { Card } from "@card";
+import { useSlide } from "@hooks/useSlide";
 
 export interface StartingSegmentTemplateProps {
-  title?: string;
-  cards?: { imgUrl: string; videoUrl: string }[];
+  title: string;
+  cards: { imgUrl: string; videoUrl: string }[];
 }
 
 export const StartingSegmentTemplate: React.FC<StartingSegmentTemplateProps> = ({
   title,
   cards,
 }) => {
-  const { state, containerRef, width, previous, next } = useSlide('whole');
+  const { state, containerRef, width, previous, next } = useSlide("whole");
 
   const displayingColumns = () => {
     if (width > 1128) {
@@ -75,7 +75,7 @@ export const StartingSegmentTemplate: React.FC<StartingSegmentTemplateProps> = (
                 <div key={index} style={{ width: width / displayingColumns() }}>
                   <div className="mr-3">
                     <Card
-                      variant={$Card.STARTING}
+                      variant="starting"
                       imgUrl={imgUrl}
                       videoUrl={videoUrl}
                     />

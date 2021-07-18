@@ -1,18 +1,18 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { useToggleState } from '@context/toggle';
-import { Layout } from '@layout';
-import { Animation } from '@animation';
-import { Modal } from '@modal';
-import { Segment } from '@template/index';
-import { Footer } from '@footer';
-import { Bar } from '@bar';
-import { useHandleScroll } from '@hooks/useHandleScroll';
-import { useHandleDocumentResize } from '@hooks/useHandleDocumentResize';
-import { useTimeout } from '@hooks/useTimeout';
-import { useTabTitle } from '@hooks/useTabTitle';
+import { AnimatePresence, motion } from "framer-motion";
+import { useToggleState } from "@context/toggle";
+import { Layout } from "@layout";
+import { Animation } from "@animation";
+import { Modal } from "@modal";
+import { Segment } from "@template/index";
+import { Footer } from "@footer";
+import { Bar } from "@bar";
+import { useHandleScroll } from "@hooks/useHandleScroll";
+import { useHandleDocumentResize } from "@hooks/useHandleDocumentResize";
+import { useTimeout } from "@hooks/useTimeout";
+import { useTabTitle } from "@hooks/useTabTitle";
 
 const LandingPage: React.FC<{}> = () => {
-  useTabTitle('Vacation Rentals, Homes, Experiences & Places - Airbnb');
+  useTabTitle("Vacation Rentals, Homes, Experiences & Places - Airbnb");
   const loading = useTimeout(3000);
   const toggleState = useToggleState();
   const scrollPosition = useHandleScroll();
@@ -27,22 +27,35 @@ const LandingPage: React.FC<{}> = () => {
         <Segment variant="banner" />
         {loading ? (
           <>
-            <Layout variant="landing" spread>
+            <Layout title="Explore nearby" variant="landing" spread>
               <Segment variant="nearby" />
             </Layout>
             <Layout variant="landing" title="Live anywhere" spread>
               <Segment variant="anywhere" />
             </Layout>
-            <div className="my-7"></div>
             <Layout spread variant="landing">
-              <Segment variant="worth" />
+              <Segment
+                variant="wide"
+                title="The Greatest Outdoors"
+                description="Wishlists curated by Airbnb."
+                bannerImg="https://a0.muscache.com/im/pictures/2da67c1c-0c61-4629-8798-1d4de1ac9291.jpg?im_w=1440"
+              />
             </Layout>
             <Layout
               variant="landing"
-              spread
-              title="Join millions of hosts on Airbnb"
+              title="Discover Experiences"
+              subtitle="Unique activities with local experts—in person or online."
             >
               <Segment variant="category" />
+            </Layout>
+            <Layout spread variant="landing">
+              <Segment
+                variant="wide"
+                title="Your world is Wide sharing"
+                description="Turn your extra space into your next opportunity."
+                inverse
+                bannerImg="https://a0.muscache.com/im/pictures/2595054e-d1d9-4fde-8046-58d51fcb3164.jpg?im_w=1440"
+              />
             </Layout>
             <Layout
               variant="landing"
@@ -57,18 +70,20 @@ const LandingPage: React.FC<{}> = () => {
             <Animation variant="loading" dark />
           </div>
         )}
-        <Footer spread />
+        <Footer />
         <div className="fixed bottom-0 w-full z-50 flex justify-center">
-          <div className="mt-0 mx-8 mb-8 sm:mx-16 md:mx-36 lg:mx-0">
+          <div className="mt-0 mb-8 sm:px-10 lg:px-20">
             <Modal
               variant="privacy"
               criteria={toggleState.privacy}
               animate="slideup"
+              handleSave={() => alert("save")}
+              handleSettings={() => alert("settings")}
             />
           </div>
         </div>
 
-        <AnimatePresence>
+        {/* <AnimatePresence>
           {scrollPosition < pageHeight && (
             <motion.div
               animate={{ y: 0 }}
@@ -82,7 +97,7 @@ const LandingPage: React.FC<{}> = () => {
               </div>
             </motion.div>
           )}
-        </AnimatePresence>
+        </AnimatePresence> */}
         {toggleState.auth && (
           <div className="fixed z-60 bottom-0 left-0 right-0 top-0 bg-blur">
             <div className="flex justify-center items-center h-screen">
@@ -95,7 +110,7 @@ const LandingPage: React.FC<{}> = () => {
             </div>
           </div>
         )}
-        {toggleState.globe && (
+        {/* {toggleState.globe && (
           <div className="fixed z-60 bottom-0 left-0 right-0 top-0 bg-blur">
             <div className="flex justify-center items-center h-screen">
               <Modal
@@ -106,7 +121,7 @@ const LandingPage: React.FC<{}> = () => {
               />
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

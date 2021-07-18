@@ -1,10 +1,10 @@
-export interface RoomPanelTemplateProps {
-  firstImage?: string;
-  secondImage?: string;
-  thirdImage?: string;
-  fourthImage?: string;
-  fifthImage?: string;
-}
+export type RoomPanelTemplateProps = {
+  firstImage: string;
+  secondImage: string;
+  thirdImage: string;
+  fourthImage: string;
+  fifthImage: string;
+};
 
 /**
  *

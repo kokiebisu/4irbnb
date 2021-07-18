@@ -1,8 +1,8 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
 export type MenuButtonTemplateProps = {
   authenticated: boolean;
-  imgUrl: string;
+  imgUrl?: string;
   inverse: boolean;
   onClick: () => void;
 };
@@ -25,8 +25,8 @@ export const MenuButtonTemplate = ({
     >
       <div
         className={`${
-          inverse ? 'border-2 border-gray-200 hover:shadow-md' : ''
-        } inline-flex items-center py-2 pl-3 pr-2 bg-white rounded-full`}
+          inverse ? "border-2 border-gray-200 hover:shadow-md" : ""
+        } inline-flex items-center py-1 pl-2 pr-1 bg-white rounded-full`}
       >
         <div className="mr-3">
           <Icon
@@ -46,6 +46,7 @@ export const MenuButtonTemplate = ({
               profileType="avatar"
               width={30}
               height={30}
+              fill="gray"
             />
           )}
         </div>

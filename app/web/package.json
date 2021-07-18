@@ -8,7 +8,7 @@
   "license": "ISC",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "storybook": "start-storybook -p 6006 -c .storybook watch-css -s ./public",
     "build-storybook": "build-storybook -c .storybook watch-css -s ./public",

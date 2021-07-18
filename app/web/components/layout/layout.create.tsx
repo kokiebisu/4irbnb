@@ -7,8 +7,8 @@ export type CreateLayoutProps = {
   right?: React.ReactNode;
   next?: () => void;
   back?: () => void;
-  percentage?: number;
-  criteria?: boolean;
+  percentage: number;
+  criteria: boolean;
 };
 
 export const CreateLayout = ({

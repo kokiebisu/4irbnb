@@ -1,7 +1,3 @@
-import { SetCardTemplate, SetCardTemplateProps } from "./template";
+import { SetCardTemplate } from "./template";
 
-export type SetCardProps = SetCardTemplateProps;
-
-export const SetCard = (props: SetCardProps): JSX.Element => (
-  <SetCardTemplate {...props} />
-);
+export const SetCard = (): JSX.Element => <SetCardTemplate />;
