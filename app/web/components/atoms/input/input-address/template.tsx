@@ -1,9 +1,9 @@
-import { useAddressInputAppearance } from './appearance';
+import { useAddressInputAppearance } from "./appearance";
 
 export interface AddressInputTemplateProps {
   onChange?: (e: any) => void;
   value?: any;
-  direction?: 'top' | 'bottom' | undefined;
+  direction?: "top" | "bottom";
 }
 
 /**

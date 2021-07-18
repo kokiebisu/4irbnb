@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { styleInput, styleLabel, styleContainer } from "../styling.select";
-import { useBirthdateInputAppearance } from "./appearance";
+import { useBirthDateInputTemplate } from "./use-template";
 
 export interface BirthdateInputTemplateProps {
   onChange?: (e: any) => void;
@@ -33,7 +33,7 @@ export const BirthdateInputTemplate = ({
   dateType = "year",
 }: BirthdateInputTemplateProps): JSX.Element => {
   const [fieldActive, setFieldActive] = useState(false);
-  const { dynamicStyle } = useBirthdateInputAppearance({ direction });
+  const { dynamicStyle } = useBirthDateInputTemplate({ direction });
 
   return (
     <div className="h-14 flex relative items-center">

@@ -1,4 +1,4 @@
-import { Button } from '@atoms';
+import { Button } from "@atoms";
 
 export type ClosedInputTemplateProps = {
   title: string;
@@ -23,8 +23,8 @@ export const ClosedInputTemplate = ({
           <Button
             variant="closed"
             icon={{
-              variant: 'action',
-              actionType: 'close',
+              variant: "action",
+              actionType: "close",
               width: 16,
               height: 16,
             }}
@@ -36,8 +36,8 @@ export const ClosedInputTemplate = ({
           <Button
             variant="closed"
             icon={{
-              variant: 'semantic',
-              semanticType: 'check',
+              variant: "semantic",
+              semanticType: "check",
               width: 16,
               height: 16,
             }}

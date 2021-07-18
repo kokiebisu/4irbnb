@@ -16,7 +16,7 @@ export const DiscoverSegmentTemplate = ({
           scrollbarWidth: "none",
           scrollPadding: "0px 2rem",
         }}
-        className="w-screen px-8 -mx-8 relative md:w-full flex md:grid md:grid-cols-3 md:gap-x-4 scroll-snap-x h-full overflow-x-scroll scrollbar-hide"
+        className="w-screen px-8 -mx-8 md:mx-0 md:px-0 relative md:w-full flex md:grid md:grid-cols-3 md:gap-x-4 scroll-snap-x h-full overflow-x-scroll scrollbar-hide"
       >
         {items.map(({ title, description, imgUrl }, index) => {
           return (
@@ -46,7 +46,7 @@ export const DiscoverSegmentTemplate = ({
             </div>
           );
         })}
-        <div className="min-w-5 h-16"></div>
+        <div className="min-w-5 h-16 md:min-w-auto"></div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
 export type ClosedButtonTemplateProps = {
   onClick: () => void;
@@ -19,10 +19,15 @@ export const ClosedButtonTemplate = ({
     >
       <div
         className={`inline-flex items-center justify-center p-2 rounded-full border ${
-          selected ? 'bg-black border-black' : 'bg-white border-gray-300'
+          selected ? "bg-black border-black" : "bg-white border-gray-300"
         }`}
       >
-        <Icon {...icon} width={16} fill={selected ? 'white' : 'black'} />
+        <Icon
+          {...icon}
+          width={16}
+          strokeWidth={2}
+          stroke={selected ? "white" : "black"}
+        />
       </div>
     </button>
   );

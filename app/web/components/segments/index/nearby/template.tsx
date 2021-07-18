@@ -18,7 +18,7 @@ export const NearbySegmentTemplate = ({
           scrollbarWidth: "none",
           scrollPadding: "0px 2rem",
         }}
-        className="w-screen px-8 -mx-8 relative md:w-full flex md:grid md:grid-cols-4 md:gap-x-4 scroll-snap-x h-full overflow-x-scroll scrollbar-hide"
+        className="w-screen px-8 -mx-8 md:mx-0 md:px-0 relative md:w-full flex md:grid md:grid-cols-4 md:gap-x-4 scroll-snap-x h-full overflow-x-scroll scrollbar-hide"
       >
         {items.map((item, index) => {
           return (
