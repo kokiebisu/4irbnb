@@ -1,16 +1,16 @@
 import { Card } from "@card";
 
-export interface NearbySegmentTemplateProps {
+export type NearbySegmentTemplateProps = {
   items: { to: string; imgUrl: string; city: string; hours: number }[];
-}
+};
 
 /**
  * Renders the nearby section
  * @param {Object[]} items - List of cities which are nearby
  */
-export const NearbySegmentTemplate: React.FC<NearbySegmentTemplateProps> = ({
+export const NearbySegmentTemplate = ({
   items,
-}) => {
+}: NearbySegmentTemplateProps) => {
   return (
     <div className="grid overflow-x-auto grid-cols-4 snap-type-x">
       {items.map((item, index) => {
