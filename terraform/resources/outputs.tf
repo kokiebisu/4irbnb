@@ -1,14 +1,14 @@
 output "vpc" {
-    value = aws_vpc.nextbnb-vpc
+    value = aws_vpc.nextbnb_vpc
 }
 
 ### Route Table
 output "public_route_table" {
-  value = aws_default_route_table.nextbnb-public-route-table
+  value = aws_default_route_table.nextbnb_public_route_table
 }
 
 output "private_route_table" {
-    value = aws_route_table.nextbnb-private-route-table
+    value = aws_route_table.nextbnb_private_route_table
 }
 
 # ### Internet Gateway
@@ -18,9 +18,9 @@ output "private_route_table" {
 
 ### Subnet
 output "public_subnet" {
-    value = aws_subnet.public-subnet
+    value = aws_subnet.public_subnet
 }
 
 output "private_subnet" {
-    value = aws_subnet.private-subnet
+    value = aws_subnet.private_subnet
 }
