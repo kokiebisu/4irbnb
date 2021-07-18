@@ -26,21 +26,21 @@ provider aws {
     region = local.region
 }
 
-module "networking" {
-    source = "./resources"
+# module "networking" {
+#     source = "./resources"
 
-    app_name = local.app_name
-    profile = "personal"
-    region = "us-east-1"
-}
+#     app_name = local.app_name
+#     profile = "personal"
+#     region = "us-east-1"
+# }
 
-module "services" {
-    source = "../packages/terraform"
-}
+# module "services" {
+#     source = "../packages/terraform"
+# }
 
-module "auth" {
-    source = "../packages/service-auth/terraform"
+# module "auth" {
+#     source = "../packages/service-auth/terraform"
 
-    dead_letter_queue = module.services.dead_letter_queue
-}
+#     dead_letter_queue = module.services.dead_letter_queue
+# }
 
