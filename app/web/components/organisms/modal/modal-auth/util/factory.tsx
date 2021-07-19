@@ -1,8 +1,8 @@
 import React from "react";
-import { AuthPrototype } from "../prototype-auth-auth";
-import { ExistsPrototype } from "../prototype-auth-exists";
-import { ForgotPasswordPrototype } from "../prototype-auth-forgot";
-import { SignupPrototype } from "../prototype-auth-signup";
+import { AuthPrototype } from "../auth";
+import { ExistsPrototype } from "../exists";
+import { ForgotPasswordPrototype } from "../forgot";
+import { SignupPrototype } from "../signup";
 
 export const factory = (props) => {
   switch (props.variant) {
