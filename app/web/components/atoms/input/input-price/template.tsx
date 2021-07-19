@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
 
 export type PriceInputTemplateProps = {
-  name?: string;
-  onChange?: (e: any) => void;
-  onKeyPress?: (e: any) => void;
-  value?: any;
+  name: string;
+  onChange: (e: any) => void;
+  onKeyPress: (e: any) => void;
+  value: number;
 };
 
 /**
@@ -25,9 +25,7 @@ export const PriceInputTemplate = ({
 
   return (
     <div
-      className={`relative py-3 px-4 items-center rounded-lg border border-gray-700 h-12 ${[
-        input["outside"],
-      ].join(" ")} ${
+      className={`relative py-3 px-4 items-center rounded-lg border border-gray-700 h-12 ${
         active
           ? "border-2 border-black border-solid"
           : "border-1 border-gray-400 border-solid"

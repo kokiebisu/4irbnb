@@ -78,13 +78,13 @@ export const WarningIcon = ({ fill }: FillIconProps): JSX.Element => {
 };
 
 export const MinusIcon = ({
-  stroke = "green",
+  color,
   strokeWidth = 1,
 }: StrokeIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
       <rect
-        stroke={stroke}
+        stroke={color}
         strokeWidth={strokeWidth}
         height="2"
         rx="1"
@@ -96,11 +96,11 @@ export const MinusIcon = ({
   );
 };
 
-export const PlusIcon = ({ fill = "black" }: FillIconProps): JSX.Element => {
+export const PlusIcon = ({ color }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
-      <rect fill={fill} height="2" rx="1" width="12" x="6" y="11"></rect>
-      <rect fill={fill} height="12" rx="1" width="2" x="11" y="6"></rect>
+      <rect fill={color} height="2" rx="1" width="12" x="6" y="11"></rect>
+      <rect fill={color} height="12" rx="1" width="2" x="11" y="6"></rect>
     </svg>
   );
 };
