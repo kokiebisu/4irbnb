@@ -1,4 +1,4 @@
-import { GeneralIconTemplateProps, GeneralIconTemplate } from './template';
+import { GeneralIconTemplateProps, GeneralIconTemplate } from "./template";
 
 export type GeneralIconProps = GeneralIconTemplateProps & {
   width: number;
@@ -18,27 +18,28 @@ export const GeneralIcon = ({
 };
 
 export type GeneralTypeVariants =
-  | 'magnifyGlass'
-  | 'lock'
-  | 'globe'
-  | 'share'
-  | 'email'
-  | 'flag'
-  | 'bars'
-  | 'login'
-  | 'search'
-  | 'shield'
-  | 'devices'
-  | 'devicesInverse'
-  | 'protection'
-  | 'guidance'
-  | 'requirements'
-  | 'customerService'
-  | 'toolbox'
-  | 'analytics'
-  | 'education'
-  | 'home'
-  | 'global'
-  | 'lightening'
-  | 'protected'
-  | 'explore';
+  | "magnifyGlass"
+  | "lock"
+  | "globe"
+  | "share"
+  | "email"
+  | "flag"
+  | "bars"
+  | "login"
+  | "search"
+  | "shield"
+  | "devices"
+  | "devicesInverse"
+  | "protection"
+  | "guidance"
+  | "requirements"
+  | "customerService"
+  | "toolbox"
+  | "analytics"
+  | "education"
+  | "home"
+  | "global"
+  | "lightening"
+  | "protected"
+  | "explore"
+  | "phone";

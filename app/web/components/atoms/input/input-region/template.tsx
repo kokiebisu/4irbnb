@@ -25,7 +25,6 @@ export const RegionInputTemplate = ({
   errors,
 }: RegionInputTemplateProps): JSX.Element => {
   const [fieldActive, setFieldActive] = useState(false);
-  console.log("DIRECTION", direction);
 
   return (
     <div

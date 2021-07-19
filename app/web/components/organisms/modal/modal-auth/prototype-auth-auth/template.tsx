@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import { useAuthDispatch, useAuthState } from "@context/auth";
 import { Button, Icon, Input } from "@atoms";
 import { validateAuth as validate } from "@helper/auth";
+import { phone } from "@template/become-a-host/phone/mock";
 
 export interface AuthPrototypeTemplateProps {
   authMethods: {
@@ -9,6 +10,16 @@ export interface AuthPrototypeTemplateProps {
     icon: any;
     handleClick: any;
   }[];
+  phone: {
+    name: string;
+    icon: any;
+    handleClick: any;
+  };
+  email: {
+    name: string;
+    icon: any;
+    handleClick: any;
+  };
 }
 
 /**
@@ -16,6 +27,8 @@ export interface AuthPrototypeTemplateProps {
  */
 export const AuthPrototypeTemplate = ({
   authMethods,
+  phone,
+  email,
 }: AuthPrototypeTemplateProps): JSX.Element => {
   const authState = useAuthState();
   const authDispatch = useAuthDispatch();
@@ -38,6 +51,8 @@ export const AuthPrototypeTemplate = ({
     // return authDispatch({ type: 'auth_login' });
   };
 
+  console.log("authState.display", authState.display);
+
   return (
     <div className="p-5">
       <div className="w-full">
@@ -45,24 +60,35 @@ export const AuthPrototypeTemplate = ({
           <h3 className="text-2xl">Welcome to Airbnb</h3>
         </div>
         <form onSubmit={formik.handleSubmit}>
-          <div className="mb-2">
-            <div>
+          {authState.display === "auth_phone" ? (
+            <div className="mb-2">
+              <div>
+                <Input
+                  variant="region"
+                  direction="bottom"
+                  onChange={formik.handleChange}
+                  value={formik.values.region}
+                  errors={!!formik.errors.region}
+                />
+                <Input
+                  variant="phone"
+                  direction="top"
+                  onChange={formik.handleChange}
+                  value={formik.values.phone}
+                  errors={!!formik.errors.phone}
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="mb-2">
               <Input
-                variant="region"
-                direction="bottom"
+                variant="email"
                 onChange={formik.handleChange}
                 value={formik.values.region}
                 errors={!!formik.errors.region}
               />
-              <Input
-                variant="phone"
-                direction="top"
-                onChange={formik.handleChange}
-                value={formik.values.phone}
-                errors={!!formik.errors.phone}
-              />
             </div>
-          </div>
+          )}
           <div>
             <p className="font-thin text-gray-500 text-sm">
               We’ll call or text you to confirm your number. Standard message
@@ -100,6 +126,27 @@ export const AuthPrototypeTemplate = ({
               </div>
             );
           })}
+          {authState.display === "auth_phone" ? (
+            <div className="my-4">
+              <Button
+                variant="auth"
+                onClick={email.handleClick}
+                icon={<Icon {...email.icon} />}
+                name={email.name}
+                stretched
+              />
+            </div>
+          ) : (
+            <div className="my-4">
+              <Button
+                variant="auth"
+                onClick={phone.handleClick}
+                icon={<Icon {...phone.icon} />}
+                name={phone.name}
+                stretched
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>

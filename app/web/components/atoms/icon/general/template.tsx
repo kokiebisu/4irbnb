@@ -1,85 +1,88 @@
-import { FillIconProps, StrokeIconProps } from '..';
+import { FillIconProps, StrokeIconProps } from "..";
 
 export type GeneralIconTemplateProps =
   | ({
-      generalType: 'magnifyGlass';
+      generalType: "magnifyGlass";
     } & StrokeIconProps)
-  | ({ generalType: 'lock' } & FillIconProps)
-  | ({ generalType: 'globe' } & FillIconProps)
-  | ({ generalType: 'share' } & FillIconProps)
-  | { generalType: 'email' }
-  | ({ generalType: 'explore' } & FillIconProps)
-  | ({ generalType: 'flag' } & FillIconProps)
-  | ({ generalType: 'bars' } & FillIconProps)
-  | ({ generalType: 'login' } & FillIconProps)
-  | ({ generalType: 'search' } & FillIconProps)
-  | ({ generalType: 'shield' } & FillIconProps)
-  | ({ generalType: 'devices' } & FillIconProps)
-  | ({ generalType: 'devicesInverse' } & FillIconProps)
-  | ({ generalType: 'protection' } & FillIconProps)
-  | ({ generalType: 'guidance' } & FillIconProps)
-  | ({ generalType: 'requirements' } & FillIconProps)
-  | ({ generalType: 'customerService' } & FillIconProps)
-  | ({ generalType: 'toolbox' } & FillIconProps)
-  | ({ generalType: 'analytics' } & FillIconProps)
-  | ({ generalType: 'education' } & FillIconProps)
-  | { generalType: 'home' }
-  | { generalType: 'global' }
-  | { generalType: 'lightening' }
-  | ({ generalType: 'protected' } & FillIconProps);
+  | ({ generalType: "lock" } & FillIconProps)
+  | ({ generalType: "globe" } & FillIconProps)
+  | ({ generalType: "share" } & FillIconProps)
+  | { generalType: "email" }
+  | ({ generalType: "explore" } & FillIconProps)
+  | ({ generalType: "flag" } & FillIconProps)
+  | ({ generalType: "bars" } & FillIconProps)
+  | ({ generalType: "login" } & FillIconProps)
+  | ({ generalType: "search" } & FillIconProps)
+  | ({ generalType: "shield" } & FillIconProps)
+  | ({ generalType: "devices" } & FillIconProps)
+  | ({ generalType: "devicesInverse" } & FillIconProps)
+  | ({ generalType: "protection" } & FillIconProps)
+  | ({ generalType: "guidance" } & FillIconProps)
+  | ({ generalType: "requirements" } & FillIconProps)
+  | ({ generalType: "customerService" } & FillIconProps)
+  | ({ generalType: "toolbox" } & FillIconProps)
+  | ({ generalType: "analytics" } & FillIconProps)
+  | ({ generalType: "education" } & FillIconProps)
+  | { generalType: "home" }
+  | { generalType: "global" }
+  | { generalType: "lightening" }
+  | ({ generalType: "protected" } & FillIconProps)
+  | { generalType: "phone" };
 
 export const GeneralIconTemplate = ({
   ...props
 }: GeneralIconTemplateProps): JSX.Element => {
   switch (props.generalType) {
-    case 'magnifyGlass':
+    case "magnifyGlass":
       return <MagnifyGlassIcon {...props} />;
-    case 'lock':
+    case "lock":
       return <LockIcon {...props} />;
-    case 'globe':
+    case "globe":
       return <GlobeIcon {...props} />;
-    case 'share':
+    case "share":
       return <ShareIcon {...props} />;
-    case 'email':
+    case "email":
       return <EmailIcon {...props} />;
-    case 'explore':
+    case "explore":
       return <ExploreIcon {...props} />;
-    case 'flag':
+    case "flag":
       return <FlagIcon {...props} />;
-    case 'bars':
+    case "bars":
       return <BarsIcon {...props} />;
-    case 'login':
+    case "login":
       return <LoginIcon {...props} />;
-    case 'search':
+    case "search":
       return <SearchIcon {...props} />;
-    case 'shield':
+    case "shield":
       return <ShieldIcon {...props} />;
-    case 'devices':
+    case "devices":
       return <DevicesIcon {...props} />;
-    case 'devicesInverse':
+    case "devicesInverse":
       return <DevicesInverseIcon {...props} />;
-    case 'protection':
+    case "protection":
       return <ProtectionIcon {...props} />;
-    case 'guidance':
+    case "guidance":
       return <GuidanceIcon {...props} />;
-    case 'requirements':
+    case "requirements":
       return <RequirementsIcon {...props} />;
-    case 'customerService':
+    case "customerService":
       return <CustomerServiceIcon {...props} />;
-    case 'toolbox':
+    case "toolbox":
       return <ToolBoxIcon {...props} />;
-    case 'analytics':
+    case "analytics":
       return <AnalyticsIcon {...props} />;
-    case 'education':
+    case "education":
       return <EducationIcon {...props} />;
-    case 'home':
+    case "home":
       return <HomeIcon />;
-    case 'global':
+    case "global":
       return <GlobalIcon />;
-    case 'lightening':
+    case "lightening":
       return <LighteningIcon />;
-    case 'protected':
+    case "protected":
       return <ProtectedIcon {...props} />;
+    case "phone":
+      return <PhoneIcon {...props} />;
     default:
       throw new Error(`[GENERAL ICON] Provided generalType doesn't exist`);
   }
@@ -198,7 +201,7 @@ export const ExploreIcon = ({ fill }: FillIconProps): JSX.Element => {
   );
 };
 
-export const LoginIcon = ({ fill = 'white' }: FillIconProps): JSX.Element => {
+export const LoginIcon = ({ fill = "white" }: FillIconProps): JSX.Element => {
   return (
     <svg
       viewBox="0 0 32 32"
@@ -397,7 +400,7 @@ export const EducationIcon = ({ fill }: FillIconProps): JSX.Element => {
 export const HomeIcon = (): JSX.Element => {
   return (
     <img
-      style={{ display: 'block' }}
+      style={{ display: "block" }}
       width="100%"
       height="auto"
       src="https://a0.muscache.com/pictures/b0fe7d1b-2c8b-48ba-9310-5cbeb3f25a32.jpg"
@@ -409,7 +412,7 @@ export const HomeIcon = (): JSX.Element => {
 export const GlobalIcon = (): JSX.Element => {
   return (
     <img
-      style={{ display: 'block' }}
+      style={{ display: "block" }}
       width="100%"
       height="auto"
       src="https://a0.muscache.com/pictures/eba31c9e-9c99-4a7e-bb58-bc1dd3c58dd5.jpg"
@@ -421,7 +424,7 @@ export const GlobalIcon = (): JSX.Element => {
 export const LighteningIcon = (): JSX.Element => {
   return (
     <img
-      style={{ display: 'block' }}
+      style={{ display: "block" }}
       width="100%"
       height="auto"
       src="https://a0.muscache.com/pictures/70888c58-8a67-4b03-9b07-3beed0f97275.jpg"
@@ -441,6 +444,14 @@ export const ProtectedIcon = ({ fill }: FillIconProps): JSX.Element => {
         fill="#222"
         d="M22.872 47c-.247 0-.495-.015-.743-.044-.965-.112-1.897-.428-2.85-.966-1.084-.612-2.134-1.48-3.28-2.708-1.144 1.229-2.195 2.096-3.28 2.708-.952.538-1.884.854-2.85.966a6.247 6.247 0 0 1-3.086-.411 6.103 6.103 0 0 1-3.721-4.776c-.145-1.02-.035-2.027.337-3.078.113-.319.245-.635.409-1.008.204-.467.423-.942.634-1.402l.913-1.972.642-1.365L6 6.67a2 2 0 0 1 1.245-1.853C13.483 2.275 19.401 1 25 1c5.599 0 11.518 1.275 17.755 3.816a2 2 0 0 1 1.239 1.691L44 6.67V35.4a5 5 0 0 1-2.764 4.472l-.205.097-15.043 6.685c-.659.23-1.655.345-2.988.345l.175-.007c-.1.005-.202.007-.303.007zM16 21c-.854 0-1.608.357-2.182 1.032-.307.361-.54.78-.773 1.213l-.33.63-.414.804a318.107 318.107 0 0 0-5.199 10.616l-.833 1.8c-.21.457-.426.928-.63 1.393l-.194.453c-.059.143-.112.28-.16.417-.266.751-.343 1.427-.243 2.128a4.097 4.097 0 0 0 2.497 3.207 4.238 4.238 0 0 0 2.1.277c.697-.081 1.383-.317 2.097-.72.988-.56 1.99-1.418 3.115-2.676-1.792-2.224-2.912-4.274-3.326-6.1-.19-.835-.23-1.624-.12-2.347.107-.698.352-1.33.728-1.882.839-1.228 2.284-1.914 3.867-1.914 1.582 0 3.027.686 3.866 1.914.376.551.58 1.058.687 1.755.11.722.07 1.511-.118 2.346-.415 1.827-1.494 4.003-3.287 6.228 1.126 1.258 2.127 2.116 3.116 2.675.713.404 1.4.64 2.096.72a4.239 4.239 0 0 0 2.1-.276 4.096 4.096 0 0 0 2.498-3.207c.1-.701.022-1.377-.243-2.127a12.53 12.53 0 0 0-.354-.872l-.308-.687-.34-.742a315.525 315.525 0 0 0-5.118-10.616l-.98-1.926a80.888 80.888 0 0 0-.66-1.27c-.233-.433-.466-.853-.773-1.214C17.608 21.357 16.853 21 16 21zm9-18C19.879 3 14.443 4.128 8.692 6.391L8 6.67l-.002 22.126a362.24 362.24 0 0 1 1.471-2.958l1.141-2.244c.2-.388.374-.728.545-1.051l.127-.24c.273-.51.576-1.052 1.012-1.566C13.246 19.616 14.562 19 16 19c1.438 0 2.754.617 3.706 1.737.435.514.738 1.055 1.012 1.566l.336.638.425.829a319.459 319.459 0 0 1 5.229 10.676l.895 1.935c.196.428.398.867.588 1.299l.224.528c.068.166.129.325.185.484.372 1.051.483 2.057.338 3.076a6.07 6.07 0 0 1-.475 1.636l.02-.046 11.735-5.216a3 3 0 0 0 1.776-2.545l.006-.196V6.669l-.692-.278C35.557 4.128 30.121 3 25 3zm-9 28.331c-.956 0-1.763.38-2.215 1.041a2.543 2.543 0 0 0-.403 1.058c-.072.473-.041 1.012.093 1.6.315 1.388 1.163 2.99 2.523 4.767 1.273-1.689 2.15-3.407 2.487-4.893.133-.59.164-1.128.09-1.6a1.959 1.959 0 0 0-.361-.931c-.445-.652-1.273-1.042-2.214-1.042z"
       />
+    </svg>
+  );
+};
+
+export const PhoneIcon = (): JSX.Element => {
+  return (
+    <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
+      <path d="m22 1c2.6887547 0 4.8818181 2.12230671 4.9953805 4.78311038l.0046195.21688962v20c0 2.6887547-2.1223067 4.8818181-4.7831104 4.9953805l-.2168896.0046195h-12c-2.6887547 0-4.88181811-2.1223067-4.99538049-4.7831104l-.00461951-.2168896v-20c0-2.6887547 2.12230671-4.88181811 4.78311038-4.99538049l.21688962-.00461951zm0 2h-12c-1.59768088 0-2.90366088 1.24891996-2.99490731 2.82372721l-.00509269.17627279v20c0 1.5976809 1.24891996 2.9036609 2.82372721 2.9949073l.17627279.0050927h12c1.5976809 0 2.9036609-1.24892 2.9949073-2.8237272l.0050927-.1762728v-20c0-1.59768088-1.24892-2.90366088-2.8237272-2.99490731zm-6 22c.5522847 0 1 .4477153 1 1s-.4477153 1-1 1-1-.4477153-1-1 .4477153-1 1-1zm4-4c.5522847 0 1 .4477153 1 1s-.4477153 1-1 1-1-.4477153-1-1 .4477153-1 1-1zm-4 0c.5522847 0 1 .4477153 1 1s-.4477153 1-1 1-1-.4477153-1-1 .4477153-1 1-1zm-4 0c.5522847 0 1 .4477153 1 1s-.4477153 1-1 1-1-.4477153-1-1 .4477153-1 1-1zm8-4c.5522847 0 1 .4477153 1 1s-.4477153 1-1 1-1-.4477153-1-1 .4477153-1 1-1zm-4 0c.5522847 0 1 .4477153 1 1s-.4477153 1-1 1-1-.4477153-1-1 .4477153-1 1-1zm-4 0c.5522847 0 1 .4477153 1 1s-.4477153 1-1 1-1-.4477153-1-1 .4477153-1 1-1zm8-4c.5522847 0 1 .4477153 1 1s-.4477153 1-1 1-1-.4477153-1-1 .4477153-1 1-1zm-4 0c.5522847 0 1 .4477153 1 1s-.4477153 1-1 1-1-.4477153-1-1 .4477153-1 1-1zm-4 0c.5522847 0 1 .4477153 1 1s-.4477153 1-1 1-1-.4477153-1-1 .4477153-1 1-1z" />
     </svg>
   );
 };

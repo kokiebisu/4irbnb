@@ -4,6 +4,7 @@ type Dispatch = (action: Action) => void;
 type Action = { type: string };
 
 type State = {
+  template: string;
   display: string;
   title: string;
 };
@@ -15,18 +16,41 @@ const AuthDispatchContext = createContext<Dispatch | undefined>(undefined);
 
 const authReducer = (state: State, action: Action) => {
   switch (action.type) {
-    case "auth_login":
-      return { ...state, display: "auth", title: "Log in or sign up" };
-    case "auth_signup":
-      return { ...state, display: "auth", title: "Log in or sign up" };
-    case "login":
-      return { ...state, display: "login", title: "Log in or sign up" };
+    case "auth_email":
+      return {
+        ...state,
+        template: "auth",
+        display: "auth_email",
+        title: "Log in or sign up",
+      };
+    case "auth_phone":
+      return {
+        ...state,
+        template: "auth",
+        display: "auth_phone",
+        title: "Log in or sign up",
+      };
     case "signup":
-      return { ...state, display: "signup", title: "Finish signing up" };
+      return {
+        ...state,
+        template: "signup",
+        display: "signup",
+        title: "Finish signing up",
+      };
     case "forgot_password":
-      return { ...state, display: "forgot_password", title: "Forgot password" };
+      return {
+        ...state,
+        template: "forgot_password",
+        display: "forgot_password",
+        title: "Forgot password",
+      };
     case "exists":
-      return { ...state, display: "exists", title: "Account exists" };
+      return {
+        ...state,
+        template: "exists",
+        display: "exists",
+        title: "Account exists",
+      };
     default:
       return state;
   }
@@ -34,8 +58,9 @@ const authReducer = (state: State, action: Action) => {
 
 const AuthProvider = ({ children }: AuthProviderProps) => {
   const [state, dispatch] = useReducer(authReducer, {
-    display: "auth",
+    display: "auth_phone",
     title: "Log in and sign up",
+    template: "auth",
   });
 
   return (

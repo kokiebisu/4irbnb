@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Router from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 import { Modal } from "@modal";
@@ -227,9 +227,9 @@ export const LandingHeaderTemplate = ({
                         })}
                       </div>
                     </div>
-                    <div ref={searchbarRef}>
+                    {/* <div ref={searchbarRef}>
                       <Prototype type={category} />
-                    </div>
+                    </div> */}
                   </div>
                 </motion.div>
               ) : (
