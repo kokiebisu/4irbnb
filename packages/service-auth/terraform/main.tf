@@ -1,8 +1,3 @@
-resource "aws_cognito_user_pool" "pool" {
-    name = "nextbnb-pool"
-    auto_verified_attributes = [ "email" ]
-}
-
 resource "aws_sqs_queue" "terraform_queue" {
     name = "auth-service"
     delay_seconds = 90
