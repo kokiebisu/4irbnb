@@ -1,4 +1,4 @@
-import { IExperience } from './type';
+import { IExperience } from "./type";
 
 /**
  * Checks whether a given value is an {@link @nextbnb/common#IExperience}
@@ -14,8 +14,9 @@ import { IExperience } from './type';
  */
 export function isExperience(arg: any): arg is IExperience {
   return (
-    typeof arg.id === 'string' &&
-    typeof arg.title === 'string' &&
-    typeof arg.imgUrls === 'string'
+    typeof arg.id === "string" &&
+    typeof arg.title === "string" &&
+    Array.isArray(arg.imgUrls) &&
+    arg.imgUrls.every((imgUrl: any) => typeof imgUrl === "string")
   );
 }
