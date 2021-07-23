@@ -1,0 +1,35 @@
+{
+  "name": "@nextbnb/service-stay",
+  "version": "1.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "update": "rm -rf node_modules && yarn",
+    "start": "node dist/index.js",
+    "clean": "rimraf dist *.tsbuildinfo",
+    "build": "tsc -b .",
+    "dev": "export AWS_PROFILE=personal && ts-node-dev src/index.ts",
+    "test": "jest --passWithNoTests --concurrency 1",
+    "lint": "eslint src --ext js,ts,tsx",
+    "extract": "api-extractor run --local"
+  },
+  "dependencies": {
+    "@nextbnb/aws": "file:../aws",
+    "@nextbnb/base": "file:../base",
+    "@nextbnb/common": "file:../common",
+    "@nextbnb/utils": "file:../utils",
+    "fastify": "^3.18.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.14.0",
+    "@types/restify": "^8.5.1",
+    "jest": "^26.6.3",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.3.4"
+  }
+}

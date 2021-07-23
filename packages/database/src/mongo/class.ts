@@ -1,8 +1,9 @@
 import { Logger } from "@nextbnb/utils";
 import { IMongoConstructor } from ".";
+import { IDatabaseService } from "../type";
 // import { Service } from '@nextbnb/common';
 
-export class MongoClient {
+export class MongoClient implements IDatabaseService {
   #logger: Logger;
   // #service: Service; to be used
   #package: any;
@@ -32,4 +33,10 @@ export class MongoClient {
       this.#logger.output(err as string);
     }
   }
+
+  insert() {}
+
+  findOne() {}
+
+  findMany() {}
 }
