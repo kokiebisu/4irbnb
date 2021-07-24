@@ -1,4 +1,4 @@
-import { Logger } from "@nextbnb/utils";
+import { Logger } from "../utils";
 
 import {
   IConstructorParams,
