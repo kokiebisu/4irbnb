@@ -1,10 +1,11 @@
 import { IStay } from "../models";
+import { IDatabaseService, IWithIdentifierParams } from "@nextbnb/database";
 
 export interface IStayService {
-  get(params: IServiceGet): Promise<IStay>;
-  post(params: IServicePost): Promise<void>;
-  delete(params: IServiceDelete): Promise<void>;
-  patch(params: IServicePatch): Promise<IStay>;
+  get(params: IStayServiceGet): Promise<IStay>;
+  post(params: IStayServicePost): Promise<void>;
+  delete(params: IStayServiceDelete): Promise<void>;
+  patch(params: IStayServicePatch): Promise<IStay>;
 }
 
 export interface IStayServiceConstructorParams {
@@ -12,19 +13,14 @@ export interface IStayServiceConstructorParams {
   idValidator(): boolean;
 }
 
-export interface IServiceGet {
-  id: string;
-}
+export interface IStayServiceGet extends IWithIdentifierParams {}
 
-export interface IServicePost {
+export interface IStayServicePost {
   data: any;
 }
 
-export interface IServiceDelete {
-  id: string;
-}
+export interface IStayServiceDelete extends IWithIdentifierParams {}
 
-export interface IServicePatch {
-  id: string;
+export interface IStayServicePatch extends IWithIdentifierParams {
   data: any;
 }

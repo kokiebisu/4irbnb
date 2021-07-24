@@ -9,5 +9,5 @@
  *
  * @packageDocumentation
  */
-export * from "./class";
 export * from "./type";
+export * from "./factory";

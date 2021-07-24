@@ -1,30 +1,32 @@
 import { createStay } from "../models";
 import {
-  IServiceDelete,
-  IServiceGet,
-  IServicePatch,
-  IServicePost,
+  IStayServiceDelete,
+  IStayServiceGet,
+  IStayServicePatch,
+  IStayServicePost,
   IStayService,
+  IStayServiceConstructorParams,
 } from "./type";
+import { IDatabaseService } from "@nextbnb/database";
 
 export class StayService implements IStayService {
   #db: IDatabaseService;
-  #idEvaluator: any;
-  constructor({ db, idEvaluator }: IStayServiceConstructorParams) {
+  #idValidator: any;
+  constructor({ db, idValidator }: IStayServiceConstructorParams) {
     this.#db = db;
-    this.#idEvaluator = idEvaluator;
+    this.#idValidator = idValidator;
   }
 
-  async get({ id }: IServiceGet) {
+  async get({ identifier }: IStayServiceGet) {
     try {
-      if (this.#idEvaluator(id)) {
+      if (this.#idValidator(id)) {
         throw new Error("Must be a valid id");
       }
     } catch (error) {
       console.error(`[@stay:get:idEvaluator]: ${error}`);
     }
     try {
-      const stay = await this.#db.findOne();
+      const stay = await this.#db.findOne({ identifier: id });
       if (!stay) {
         throw new Error("Did find matching id");
       }
@@ -34,9 +36,9 @@ export class StayService implements IStayService {
     }
   }
 
-  async post({ data }: IServicePost) {
+  async post({ data }: IStayServicePost) {
     const stay = createStay(data);
-    const exists = await this.#db.findOne();
+    const exists = await this.#db.findOne({ identifier });
     if (exists) {
       return exists;
     }
@@ -48,8 +50,8 @@ export class StayService implements IStayService {
     });
   }
 
-  async delete({ id }: IServiceDelete) {
-    if (this.#idEvaluator(id)) {
+  async delete({ id }: IStayServiceDelete) {
+    if (this.#idValidator(id)) {
       throw new Error("Must be a valid id");
     }
 
@@ -62,8 +64,8 @@ export class StayService implements IStayService {
     return this.#db.delete(id);
   }
 
-  async patch({ id, data }: IServicePatch) {
-    if (this.#idEvaluator(id)) {
+  async patch({ id, data }: IStayServicePatch) {
+    if (this.#idValidator(id)) {
       throw new Error("Must be a valid id");
     }
 

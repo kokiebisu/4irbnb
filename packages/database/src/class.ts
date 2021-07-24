@@ -2,10 +2,8 @@ import {
   IDatabaseService,
   IDatabaseServiceConstructorParams,
   IDatabaseServiceDeleteParams,
-  IDatabaseServiceFindManyParams,
   IDatabaseServiceFindOneParams,
   IDatabaseServiceInsertParams,
-  IDatabaseServiceUpdateParams,
 } from "./type";
 
 export class DatabaseService {
@@ -15,23 +13,15 @@ export class DatabaseService {
     this.#client = client;
   }
 
-  insert({ data }: IDatabaseServiceInsertParams) {
-    this.#client.insert(data);
+  insert({ tableName, data }: IDatabaseServiceInsertParams) {
+    this.#client.insert({ tableName, data });
   }
 
-  findOne({ identifier }: IDatabaseServiceFindOneParams) {
-    this.#client.findOne({ identifier });
+  findOne({ tableName, identifier }: IDatabaseServiceFindOneParams) {
+    this.#client.findOne({ tableName, identifier });
   }
 
-  findMany({ filter }: IDatabaseServiceFindManyParams) {
-    this.#client.findMany(filter);
-  }
-
-  delete({ identifier }: IDatabaseServiceDeleteParams) {
-    this.#client.delete({ identifier });
-  }
-
-  update({ identifier, data }: IDatabaseServiceUpdateParams) {
-    this.#client.update({ identifier, data });
+  delete({ tableName, identifier }: IDatabaseServiceDeleteParams) {
+    this.#client.delete({ tableName, identifier });
   }
 }
