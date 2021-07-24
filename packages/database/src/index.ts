@@ -9,4 +9,4 @@
  *
  * @packageDocumentation
  */
-export * from './mongo';
+export * from "./class";

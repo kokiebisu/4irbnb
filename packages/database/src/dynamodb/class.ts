@@ -4,7 +4,9 @@ import { IDatabaseService } from "../type";
 
 export class DynamoDB implements IDatabaseService {
   #client?: DynamoDBClient;
-  constructor(region:TRegion) {}
+  constructor({region}:IConstructorParams) {
+
+  }
 
   setup() {
     if (!this.#client) {
@@ -17,7 +19,7 @@ export class DynamoDB implements IDatabaseService {
     }
   }
 
-  insert() {
+  async insert() {
     const command = new Create();
   }
 
@@ -31,4 +33,8 @@ export class DynamoDB implements IDatabaseService {
   async findMany(filter) {
     const command = new Batch();
   }
+
+  async delete() {}
+
+  async update() {}
 }
