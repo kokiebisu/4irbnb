@@ -1,4 +1,4 @@
-import { format, formatDistance, isValid } from 'date-fns';
+import { format, formatDistance, isValid } from "date-fns";
 
 export class DateUtils {
   /**
@@ -8,7 +8,7 @@ export class DateUtils {
    * @returns string
    */
   static formatDate(date: Date): string {
-    return format(date, 'yyyy-MM-dd');
+    return format(date, "yyyy-MM-dd");
   }
 
   static formatDateByElapsedTime(date: Date): string {

@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "@nextbnb/aws": "file:../aws",
-    "@nextbnb/common": "file:../common"
+    "@nextbnb/common": "file:../common",
+    "@nextbnb/database": "file:../database"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",

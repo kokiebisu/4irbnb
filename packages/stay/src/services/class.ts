@@ -10,7 +10,7 @@ import {
 export class StayService implements IStayService {
   #db: IDatabaseService;
   #idEvaluator: any;
-  constructor(db: IDatabaseService, idEvaluator: IIdEvaluator) {
+  constructor({ db, idEvaluator }: IStayServiceConstructorParams) {
     this.#db = db;
     this.#idEvaluator = idEvaluator;
   }

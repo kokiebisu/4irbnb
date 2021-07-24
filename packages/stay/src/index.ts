@@ -1,20 +1,30 @@
-import { Server } from "@nextbnb/base";
-import { ServiceEnum, EnvironmentEnum } from "@nextbnb/common";
+import {
+  createServer,
+  ServiceEnum,
+  EnvironmentEnum,
+  IServer,
+} from "@nextbnb/common";
 import { registerRoutes } from "./routes";
 
 async function main() {
-  let server: Server;
+  let server: IServer;
   if (process.env.environment === EnvironmentEnum.prod) {
-    server = new Server(ServiceEnum.Auth, EnvironmentEnum.prod, 4000);
+    server = createServer({
+      serviceName: ServiceEnum.Auth,
+      environment: EnvironmentEnum.prod,
+    });
   } else {
-    server = new Server(ServiceEnum.Auth, EnvironmentEnum.dev, 4000);
+    server = createServer({
+      serviceName: ServiceEnum.Auth,
+      environment: EnvironmentEnum.dev,
+    });
   }
 
-  await server.configure();
+  await server.setup();
 
   registerRoutes(server);
 
-  await server.listen();
+  await server.listen({ port: 4000 });
 }
 
 main()

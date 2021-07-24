@@ -1,4 +1,4 @@
-import { THttpStatus } from "@nextbnb/common";
+import { THttpStatus } from "../..";
 
 /**
  * @public

@@ -6,19 +6,23 @@ export interface IResponse {
   body: any;
 }
 
-export interface IControllerGet {
+export interface IStayControllerGetParams {
   id: string;
 }
 
-export interface IControllerPost {
+export interface IStayControllerPostParams {
   id: string;
 }
 
-export interface IControllerPatch {
+export interface IStayControllerPatchParams {
   id: string;
   data: any;
 }
 
-export interface IControllerDelete {
+export interface IStayControllerDeleteParams {
   id: string;
+}
+
+export interface IStayControllerConstructorParams {
+  db: IDatabaseService;
 }

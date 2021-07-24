@@ -1,18 +1,20 @@
 import { StayService } from "../services/class";
+import { IStayService } from "../services/type";
 import {
-  IControllerDelete,
-  IControllerGet,
-  IControllerPatch,
-  IControllerPost,
+  IStayControllerDeleteParams,
+  IStayControllerGetParams,
+  IStayControllerPatchParams,
+  IStayControllerPostParams,
   IResponse,
+  IStayControllerConstructorParams,
 } from "./type";
 
 export class StayController {
-  #service: StayService;
-  constructor(service: StayService) {
-    this.#service = service;
+  #service: IStayService;
+  constructor({ db, idValidator }: IStayControllerConstructorParams) {
+    this.#service = new StayService({ db, idValidator });
   }
-  async get({ id }: IControllerGet): Promise<IResponse> {
+  async get({ id }: IStayControllerGetParams): Promise<IResponse> {
     const headers = {
       "Content-Type": "application/json",
     };
@@ -35,7 +37,7 @@ export class StayController {
     }
   }
 
-  async post({ data }: IControllerPost): Promise<IResponse> {
+  async post({ data }: IStayControllerPostParams): Promise<IResponse> {
     const headers = {
       "Content-Type": "application/json",
     };
@@ -58,7 +60,7 @@ export class StayController {
     }
   }
 
-  async delete({ id }: IControllerDelete): Promise<IResponse> {
+  async delete({ id }: IStayControllerDeleteParams): Promise<IResponse> {
     const headers = {
       "Content-Type": "application/json",
     };
@@ -81,7 +83,7 @@ export class StayController {
     }
   }
 
-  async patch({ id, data }: IControllerPatch): Promise<IResponse> {
+  async patch({ id, data }: IStayControllerPatchParams): Promise<IResponse> {
     const headers = {
       "Content-Type": "application/json",
     };

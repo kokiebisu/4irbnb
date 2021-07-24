@@ -1,6 +1,7 @@
-import { StayController } from "./controllers";
+import { HttpMethods, IServer } from "@nextbnb/common";
+import { StayController } from "../controllers";
 
-export const registerRoutes = (server) => {
+export const registerRoutes = (server: IServer) => {
   const handler = new StayController();
-  server.registerRoute(HttpMethods.GET, "/", { schema }, handler.get);
+  server.registerRoute({method: HttpMethods.GET, path: '/stay/:id', handler: handler.});
 };

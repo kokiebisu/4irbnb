@@ -7,6 +7,11 @@ export interface IStayService {
   patch(params: IServicePatch): Promise<IStay>;
 }
 
+export interface IStayServiceConstructorParams {
+  db: IDatabaseService;
+  idValidator(): boolean;
+}
+
 export interface IServiceGet {
   id: string;
 }
