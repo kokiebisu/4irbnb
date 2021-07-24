@@ -10,10 +10,6 @@ export class WinstonService implements ILoggerService {
 
   /**
    * Constructs the Logger instance
-   * @param service
-   * @param level
-   * @param requestId - Entity that requested the logging
-   * @param environment - 'production' or 'development'
    */
   constructor() {
     this.#client = winston.createLogger();

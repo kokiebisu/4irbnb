@@ -1,5 +1,3 @@
-import { PackageEnum } from "../../types/package";
-
 /**
  * @public
  * Type of the logger level used in winston
@@ -11,18 +9,23 @@ export interface ILoggerService {
   error(params: IServiceErrorParams): void;
 }
 
-export interface ILoggerConstructorParams {
+export interface ILoggerConstructorParams extends IWithLocationParams {
   service: ILoggerService;
-  packageName: PackageEnum;
+}
+
+export interface IServiceErrorParams extends IWithMessageParams {}
+
+export interface IServiceLogParams extends IWithMessageParams {}
+
+export interface ICreateLoggerParams extends IWithLocationParams {}
+
+export interface IWithMessageParams {
+  message: string;
+}
+
+export interface IWithLocationParams {
+  packageName: string;
   className: string;
   methodName: string;
   helperMethodName: string;
-}
-
-export interface IServiceErrorParams {
-  message: string;
-}
-
-export interface IServiceLogParams {
-  message: string;
 }
