@@ -1,10 +1,13 @@
 import { DynamoDBClient, GetItemCommand } from "@aws-sdk/client-dynamodb";
-import { IDatabaseService } from "../type";
+import { TRegion } from "@nextbnb/common";
+import { IDatabaseService, IDatabaseServiceDeleteParams, IDatabaseServiceFindManyParams, IDatabaseServiceFindOneParams, IDatabaseServiceUpdateParams } from "../type";
+import { IDynamoDBConstructorParams } from "./type";
 
-export class DynamoDB implements IDatabaseService {
+export class DynamoDBService implements IDatabaseService {
+  #region: TRegion
   #client?: DynamoDBClient;
-  constructor({region}:IConstructorParams) {
-
+  constructor({region}:IDynamoDBConstructorParams) {
+    this.#region = region
   }
 
   setup() {
@@ -22,18 +25,18 @@ export class DynamoDB implements IDatabaseService {
     const command = new Create();
   }
 
-  async findOne(identifier: string) {
+  async findOne({identifier}: IDatabaseServiceFindOneParams) {
     const command = new GetItemCommand({
       Key: identifier,
     });
-    return;
+
   }
 
-  async findMany(filter) {
-    const command = new Batch();
+  async findMany({filter}: IDatabaseServiceFindManyParams) {
+   
   }
 
-  async delete() {}
+  async delete({identifier}: IDatabaseServiceDeleteParams) {}
 
-  async update() {}
+  async update({identifier, data}: IDatabaseServiceUpdateParams) {}
 }

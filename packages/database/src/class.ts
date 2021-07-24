@@ -1,37 +1,37 @@
 import {
   IDatabaseService,
-  IServiceConstructorParams,
-  IServiceDeleteParams,
-  IServiceFindManyParams,
-  IServiceFindOneParams,
-  IServiceInsertParams,
-  IServiceUpdateParams,
+  IDatabaseServiceConstructorParams,
+  IDatabaseServiceDeleteParams,
+  IDatabaseServiceFindManyParams,
+  IDatabaseServiceFindOneParams,
+  IDatabaseServiceInsertParams,
+  IDatabaseServiceUpdateParams,
 } from "./type";
 
 export class DatabaseService {
   #client: IDatabaseService;
 
-  constructor({ client }: IServiceConstructorParams) {
+  constructor({ client }: IDatabaseServiceConstructorParams) {
     this.#client = client;
   }
 
-  insert({ data }: IServiceInsertParams) {
+  insert({ data }: IDatabaseServiceInsertParams) {
     this.#client.insert(data);
   }
 
-  findOne({ identifier }: IServiceFindOneParams) {
+  findOne({ identifier }: IDatabaseServiceFindOneParams) {
     this.#client.findOne({ identifier });
   }
 
-  findMany({ filter }: IServiceFindManyParams) {
+  findMany({ filter }: IDatabaseServiceFindManyParams) {
     this.#client.findMany(filter);
   }
 
-  delete({ identifier }: IServiceDeleteParams) {
+  delete({ identifier }: IDatabaseServiceDeleteParams) {
     this.#client.delete({ identifier });
   }
 
-  update({ identifier, data }: IServiceUpdateParams) {
+  update({ identifier, data }: IDatabaseServiceUpdateParams) {
     this.#client.update({ identifier, data });
   }
 }

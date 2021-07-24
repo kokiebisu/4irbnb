@@ -1,24 +1,24 @@
 export interface IDatabaseService {
-  insert(data: IServiceInsertParams): Promise<void>;
-  findOne(params: IServiceFindOneParams): Promise<any>;
-  findMany(params: IServiceFindManyParams): Promise<any>;
-  delete(params: IServiceDeleteParams): Promise<void>;
-  update(params: IServiceUpdateParams): Promise<void>;
+  insert(data: IDatabaseServiceInsertParams): Promise<void>;
+  findOne(params: IDatabaseServiceFindOneParams): Promise<any>;
+  findMany(params: IDatabaseServiceFindManyParams): Promise<any>;
+  delete(params: IDatabaseServiceDeleteParams): Promise<void>;
+  update(params: IDatabaseServiceUpdateParams): Promise<void>;
 }
 
-export interface IServiceConstructorParams {
+export interface IDatabaseServiceConstructorParams {
   client: IDatabaseService;
 }
 
-export interface IServiceInsertParams extends IWithDataParams {}
+export interface IDatabaseServiceInsertParams extends IWithDataParams {}
 
-export interface IServiceFindOneParams extends IWithIdentiferParams {}
+export interface IDatabaseServiceFindOneParams extends IWithIdentiferParams {}
 
-export interface IServiceFindManyParams extends IWithFilterParams {}
+export interface IDatabaseServiceFindManyParams extends IWithFilterParams {}
 
-export interface IServiceDeleteParams extends IWithIdentiferParams {}
+export interface IDatabaseServiceDeleteParams extends IWithIdentiferParams {}
 
-export interface IServiceUpdateParams
+export interface IDatabaseServiceUpdateParams
   extends IWithIdentiferParams,
     IWithDataParams {}
 
