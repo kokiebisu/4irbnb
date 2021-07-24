@@ -1,6 +1,6 @@
 import * as winston from "winston";
 import { TLoggerLevel } from "./type";
-import { TEnvironment } from "@nextbnb/common";
+import { TEnvironment } from "../../types";
 
 /**
  * @public

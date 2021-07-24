@@ -1,7 +1,5 @@
 import { Logger } from "@nextbnb/utils";
-import * as Fastify from "fastify";
-import middie from "middie";
-import * as cors from "cors";
+
 import {
   IConstructorParams,
   IListenParams,
@@ -13,42 +11,32 @@ import {
  * @public
  * An abstraction of the microservice servers
  */
-export class Server implements IServer {
+export class Server {
   #logger: Logger;
-  #server: Fastify.FastifyInstance;
+  #server: IServer;
 
   constructor({ server, environment, serviceName }: IConstructorParams) {
     this.#logger = new Logger(serviceName, "info", "1111", environment);
-
     this.#server = server;
   }
 
   async setup() {
     try {
-      await this.#server.register(middie);
-      this.#server.use(cors());
+      await this.#server.setup();
     } catch (error) {
-      console.error(`[@common:server:setup:register]`);
+      this.#logger.output(`[@common:server:setup:setup]: ${error}`);
     }
   }
 
   registerRoute({ method, path, handler, schema }: IRegisterRouteParams) {
-    switch (method) {
-      case "GET":
-        this.#server.get(path, schema, handler);
-        break;
-      case "POST":
-        this.#server.post(path, schema, handler);
-        break;
-    }
+    this.#server.registerRoute({ method, path, handler, schema });
   }
 
   async listen({ port }: IListenParams) {
     try {
-      await this.#server.listen(port, "0.0.0.0");
-      this.#logger.output(`Server is listening on ${this.#port}`);
-    } catch (err) {
-      this.#logger.output(`Failed to start server: ${err as string}`);
+      await this.#server.listen({ port });
+    } catch (error) {
+      this.#logger.output(`[@common:server:listen:listen]: ${error}`);
     }
   }
 }

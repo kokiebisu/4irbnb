@@ -19,7 +19,6 @@
   },
   "dependencies": {
     "@nextbnb/aws": "file:../aws",
-    "@nextbnb/base": "file:../base",
     "@nextbnb/common": "file:../common",
     "@nextbnb/utils": "file:../utils",
     "fastify": "^3.18.1"

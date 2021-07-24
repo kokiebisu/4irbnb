@@ -1,4 +1,7 @@
+/**
+ * @public
+ */
 export enum EnvironmentEnum {
-  'dev' = 'development',
-  'prod' = 'production',
+  "dev" = "development",
+  "prod" = "production",
 }

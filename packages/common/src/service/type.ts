@@ -1,4 +1,4 @@
-import { IUser } from '@nextbnb/common';
+import { IUser } from "../model";
 
 /**
  * @public

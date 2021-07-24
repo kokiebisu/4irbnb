@@ -8,13 +8,12 @@
     "access": "public"
   },
   "scripts": {
-    "update": "yarn --check-files",
+    "update": "rimraf node_modules && yarn",
     "clean": "rimraf dist *.tsbuildinfo",
     "build": "tsc -b .",
     "test": "jest --passWithNoTests --concurrency 1",
     "lint": "eslint src --ext js,ts,tsx",
-    "extract": "api-extractor run --local",
-    "@nextbnb/aws": "file:../aws"
+    "extract": "api-extractor run --local"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",

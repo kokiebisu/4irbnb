@@ -8,7 +8,7 @@
     "access": "public"
   },
   "scripts": {
-    "update": "rm -rf node_modules && yarn",
+    "update": "rimraf node_modules && yarn",
     "start": "node dist/index.js",
     "clean": "rimraf dist *.tsbuildinfo",
     "build": "tsc -b .",
@@ -19,10 +19,8 @@
   },
   "dependencies": {
     "@nextbnb/aws": "file:../aws",
-    "@nextbnb/base": "file:../base",
     "@nextbnb/common": "file:../common",
-    "@nextbnb/utils": "file:../utils",
-    "fastify": "^3.18.1"
+    "@nextbnb/utils": "file:../utils"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",

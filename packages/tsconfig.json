@@ -3,9 +3,7 @@
   /** lets us update all packages which are not the latest */
   "references": [
     { "path": "./common" },
-    { "path": "./utils" },
     { "path": "./database" },
-    { "path": "./base" },
     { "path": "./auth" },
     { "path": "./aws" }
   ],

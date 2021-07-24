@@ -1,28 +1,25 @@
-import { Logger } from "@nextbnb/utils";
-import { TEnvironment, ServiceEnum } from "@nextbnb/common";
-import { FastifyInstance } from "fastify";
-import { HttpMethods } from "../enum";
+import { IEnvironment } from "..";
+import { HttpMethods, IServiceName } from "../enum";
 
-// export interface IServer {
-//   logger: Logger;
-//   environment: TEnvironment;
-//   serviceName: ServiceEnum;
-//   server: FastifyInstance;
-//   port: number;
-// }
-
+/**
+ * @public
+ */
 export interface IServer {
   setup(): Promise<void>;
   registerRoute(params: IRegisterRouteParams): void;
   listen(port: IListenParams): Promise<void>;
 }
 
-export interface IConstructorParams {
+/**
+ * @public
+ */
+export interface IConstructorParams extends IEnvironment, IServiceName {
   server: any;
-  environment: TEnvironment;
-  serviceName: ServiceEnum;
 }
 
+/**
+ * @public
+ */
 export interface IRegisterRouteParams {
   method: HttpMethods;
   path: string;
@@ -30,6 +27,14 @@ export interface IRegisterRouteParams {
   schema?: any;
 }
 
+/**
+ * @public
+ */
 export interface IListenParams {
   port: number;
 }
+
+/**
+ * @public
+ */
+export interface ICreateServerParams extends IEnvironment, IServiceName {}

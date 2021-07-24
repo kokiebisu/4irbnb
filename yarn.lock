@@ -4379,20 +4379,8 @@
     "@aws-sdk/client-sqs" "^3.21.0"
     "@aws-sdk/client-ssm" "^3.20.0"
     "@aws-sdk/client-sts" "^3.21.0"
-    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-aws-1.1.0-d54a62ce-cea6-4070-9ed1-b828fc14591a-1627086134760/node_modules/@nextbnb/common"
-    "@nextbnb/utils" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-aws-1.1.0-d54a62ce-cea6-4070-9ed1-b828fc14591a-1627086134760/node_modules/@nextbnb/utils"
-    "@types/connect" "^3.4.34"
-    connect "^3.7.0"
-    cors "^2.8.5"
-    fastify "^3.18.1"
-    fastify-express "^0.3.3"
-    middie "^5.3.0"
-
-"@nextbnb/base@file:packages/base":
-  version "1.1.0"
-  dependencies:
-    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-base-1.1.0-43b5fd61-e807-4bb1-bf44-f7b3e24c5962-1627086134764/node_modules/@nextbnb/common"
-    "@nextbnb/utils" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-base-1.1.0-43b5fd61-e807-4bb1-bf44-f7b3e24c5962-1627086134764/node_modules/@nextbnb/utils"
+    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-aws-1.1.0-403ac687-dfc3-4d83-93bb-f1eabd8726a4-1627148298673/node_modules/@nextbnb/common"
+    "@nextbnb/utils" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-aws-1.1.0-403ac687-dfc3-4d83-93bb-f1eabd8726a4-1627148298673/node_modules/@nextbnb/utils"
     "@types/connect" "^3.4.34"
     connect "^3.7.0"
     cors "^2.8.5"
@@ -4408,7 +4396,7 @@
   dependencies:
     "@microsoft/api-documenter" "^7.13.27"
     "@microsoft/api-extractor" "^7.17.0"
-    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-utils-1.1.0-d1da9ff4-bb49-4610-9a5a-c5236800208c-1627086134763/node_modules/@nextbnb/common"
+    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-utils-1.1.0-a68021a4-fcc7-4d82-ba8c-38926dec1c7b-1627148298672/node_modules/@nextbnb/common"
     "@typescript-eslint/eslint-plugin" "^4.22.1"
     "@typescript-eslint/parser" "^4.22.1"
     date-fns "^2.21.3"
