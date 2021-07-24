@@ -1,3 +1,9 @@
+import {
+  IDatabaseService,
+  IWithIdentifierParams,
+  IWithDataParams,
+} from "@nextbnb/database";
+
 export interface IResponse {
   headers: {
     "Content-Type": string;
@@ -6,23 +12,17 @@ export interface IResponse {
   body: any;
 }
 
-export interface IStayControllerGetParams {
-  id: string;
-}
+export interface IStayControllerGetParams extends IWithIdentifierParams {}
 
-export interface IStayControllerPostParams {
-  id: string;
-}
+export interface IStayControllerPostParams extends IWithDataParams {}
 
-export interface IStayControllerPatchParams {
-  id: string;
-  data: any;
-}
+export interface IStayControllerPatchParams
+  extends IWithIdentifierParams,
+    IWithDataParams {}
 
-export interface IStayControllerDeleteParams {
-  id: string;
-}
+export interface IStayControllerDeleteParams extends IWithIdentifierParams {}
 
 export interface IStayControllerConstructorParams {
   db: IDatabaseService;
+  idValidator({ identifier }: IWithIdentifierParams): boolean;
 }

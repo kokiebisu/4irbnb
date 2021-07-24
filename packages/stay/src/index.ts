@@ -22,7 +22,7 @@ async function main() {
 
   await server.setup();
 
-  registerRoutes(server);
+  registerRoutes({ server });
 
   await server.listen({ port: 4000 });
 }

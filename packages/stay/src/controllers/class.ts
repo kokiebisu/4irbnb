@@ -14,12 +14,12 @@ export class StayController {
   constructor({ db, idValidator }: IStayControllerConstructorParams) {
     this.#service = new StayService({ db, idValidator });
   }
-  async get({ id }: IStayControllerGetParams): Promise<IResponse> {
+  async get({ identifier }: IStayControllerGetParams): Promise<IResponse> {
     const headers = {
       "Content-Type": "application/json",
     };
     try {
-      const stay = await this.#service.get({ id });
+      const stay = await this.#service.get({ identifier });
       return {
         headers,
         statusCode: 200,
@@ -31,7 +31,7 @@ export class StayController {
         headers,
         statusCode: 400,
         body: {
-          error: error.message,
+          error,
         },
       };
     }
@@ -54,18 +54,20 @@ export class StayController {
         headers,
         statusCode: 400,
         body: {
-          error: error.message,
+          error,
         },
       };
     }
   }
 
-  async delete({ id }: IStayControllerDeleteParams): Promise<IResponse> {
+  async delete({
+    identifier,
+  }: IStayControllerDeleteParams): Promise<IResponse> {
     const headers = {
       "Content-Type": "application/json",
     };
     try {
-      const stay = await this.#service.delete({ id });
+      const stay = await this.#service.delete({ identifier });
       return {
         headers,
         statusCode: 200,
@@ -77,18 +79,21 @@ export class StayController {
         headers,
         statusCode: 400,
         body: {
-          error: error.message,
+          error,
         },
       };
     }
   }
 
-  async patch({ id, data }: IStayControllerPatchParams): Promise<IResponse> {
+  async patch({
+    identifier,
+    data,
+  }: IStayControllerPatchParams): Promise<IResponse> {
     const headers = {
       "Content-Type": "application/json",
     };
     try {
-      const stay = await this.#service.patch({ id, data });
+      const stay = await this.#service.patch({ identifier, data });
       return {
         headers,
         statusCode: 200,
@@ -100,7 +105,7 @@ export class StayController {
         headers,
         statusCode: 400,
         body: {
-          error: error.message,
+          error,
         },
       };
     }
