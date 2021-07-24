@@ -11,28 +11,24 @@ import {
  */
 export class Logger {
   #service: ILoggerService;
-  #location: string;
+  #serviceLocation: string;
 
-  constructor({
-    service,
-    packageName,
-    className,
-    methodName,
-    helperMethodName,
-  }: ILoggerConstructorParams) {
+  constructor({ service, packageName, className }: ILoggerConstructorParams) {
     this.#service = service;
-    this.#location = `${packageName}:${className}:${methodName}:${helperMethodName}`;
+    this.#serviceLocation = `${packageName}:${className}`;
   }
 
-  error({ message }: IServiceErrorParams) {
+  error({ location, message }: IServiceErrorParams) {
     this.#service.error({
-      message: `[${this.#location}]:${message}`,
+      location: `${this.#serviceLocation}:${location}`,
+      message: `[${this.#serviceLocation}]:${message}`,
     });
   }
 
-  log({ message }: IServiceLogParams) {
+  log({ location, message }: IServiceLogParams) {
     this.#service.error({
-      message: `[${this.#location}]:${message}`,
+      location: `${this.#serviceLocation}:${location}`,
+      message: `[${this.#serviceLocation}]:${message}`,
     });
   }
 }

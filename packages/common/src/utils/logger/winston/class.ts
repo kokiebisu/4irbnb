@@ -15,11 +15,11 @@ export class WinstonService implements ILoggerService {
     this.#client = winston.createLogger();
   }
 
-  log({ message }: IServiceLogParams): void {
-    this.#client.log("info", message);
+  log({ location, message }: IServiceLogParams): void {
+    this.#client.log("info", `[${location}]:${message}`);
   }
 
-  error({ message }: IServiceErrorParams): void {
-    this.#client.log("error", message);
+  error({ location, message }: IServiceErrorParams): void {
+    this.#client.log("error", `[${location}]:${message}`);
   }
 }

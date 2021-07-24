@@ -6,6 +6,7 @@ import { IRegisterRoutesParams } from "./types";
 export const registerRoutes = ({ server }: IRegisterRoutesParams) => {
   const handler = new StayController({
     db: createDatabase({ region: "us-east-1" }),
+    idValidator: () => true,
   });
   registerGetRoute({ server, handler });
 };

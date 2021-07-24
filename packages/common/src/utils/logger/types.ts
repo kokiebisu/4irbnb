@@ -20,12 +20,11 @@ export interface IServiceLogParams extends IWithMessageParams {}
 export interface ICreateLoggerParams extends IWithLocationParams {}
 
 export interface IWithMessageParams {
+  location: string;
   message: string;
 }
 
 export interface IWithLocationParams {
   packageName: string;
   className: string;
-  methodName: string;
-  helperMethodName: string;
 }

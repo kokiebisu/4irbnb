@@ -2,21 +2,27 @@ import { createStay } from "../models";
 import {
   IStayServiceDelete,
   IStayServiceGet,
-  IStayServicePatch,
+  // IStayServicePatch,
   IStayServicePost,
   IStayService,
   IStayServiceConstructorParams,
 } from "./type";
 import { IDatabaseService } from "@nextbnb/database";
+import { createLogger, ILoggerService, PackageEnum } from "@nextbnb/common";
 
 export class StayService implements IStayService {
   #db: IDatabaseService;
   #idValidator: any;
   #tableName: string;
+  #logger: ILoggerService;
   constructor({ db, idValidator }: IStayServiceConstructorParams) {
     this.#db = db;
     this.#idValidator = idValidator;
     this.#tableName = "StayService";
+    this.#logger = createLogger({
+      packageName: PackageEnum.stay,
+      className: "StayService",
+    });
   }
 
   async get({ identifier }: IStayServiceGet) {
@@ -25,7 +31,10 @@ export class StayService implements IStayService {
         throw new Error("Must be a valid id");
       }
     } catch (error) {
-      console.error(`[@stay:get:idEvaluator]: ${error}`);
+      this.#logger.error({
+        location: "get:idValidator",
+        message: error as string,
+      });
     }
     try {
       const stay = await this.#db.findOne({
@@ -37,24 +46,41 @@ export class StayService implements IStayService {
       }
       return stay;
     } catch (error) {
-      console.error(`[@stay:get:#db.findOne]: ${error}`);
+      this.#logger.error({
+        location: "get:findOne",
+        message: error as string,
+      });
     }
   }
 
   async post({ data }: IStayServicePost) {
     const stay = createStay(data);
-    const exists = await this.#db.findOne({
-      identifier: data.primary_key.id,
-      tableName: this.#tableName,
-    });
-    if (exists) {
-      return exists;
+    try {
+      const exists = await this.#db.findOne({
+        identifier: data.primary_key.id,
+        tableName: this.#tableName,
+      });
+      if (exists) {
+        return exists;
+      }
+    } catch (error) {
+      this.#logger.error({
+        location: "post:findOne",
+        message: error as string,
+      });
     }
 
-    return this.#db.insert({
-      tableName: this.#tableName,
-      data: { id: stay.id, title: stay.title, imgUrls: stay.imgUrls },
-    });
+    try {
+      return await this.#db.insert({
+        tableName: this.#tableName,
+        data: { id: stay.id, title: stay.title, imgUrls: stay.imgUrls },
+      });
+    } catch (error) {
+      this.#logger.error({
+        location: "post:insert",
+        message: error as string,
+      });
+    }
   }
 
   async delete({ identifier }: IStayServiceDelete) {
@@ -63,7 +89,10 @@ export class StayService implements IStayService {
         throw new Error("Must be a valid id");
       }
     } catch (error) {
-      console.error(`[@stay:StayService:delete:idValidator]: ${error}`);
+      this.#logger.error({
+        location: "delete:idValidator",
+        message: error as string,
+      });
     }
 
     try {
@@ -78,39 +107,57 @@ export class StayService implements IStayService {
 
       return this.#db.delete({ identifier, tableName: this.#tableName });
     } catch (error) {
-      console.log(`[@stay:StayService:delete:delete]: ${error}`);
+      this.#logger.error({
+        location: "delete:findOne",
+        message: error as string,
+      });
     }
   }
 
-  async patch({ identifier, data }: IStayServicePatch) {
-    try {
-      if (this.#idValidator({ identifier })) {
-        throw new Error("Must be a valid id");
-      }
-    } catch (error) {
-      console.error(`[@stay:StayService:patch:idValidator]: ${error}`);
-    }
+  // async patch({ identifier, data }: IStayServicePatch) {
+  //   try {
+  //     if (this.#idValidator({ identifier })) {
+  //       throw new Error("Must be a valid id");
+  //     }
+  //   } catch (error) {
+  //     this.#logger.error({
+  //       location: "patch:idValidator",
+  //       message: error as string,
+  //     });
+  //   }
 
-    try {
-      const stay = await this.#db.findOne({
-        identifier,
-        tableName: this.#tableName,
-      });
-      if (!stay) {
-        throw new Error("Not found");
-      }
-      const newStay = createStay({
-        ...stay,
-        ...data,
-      });
+  //   let stay;
 
-      return await this.#db.update({
-        id: newStay.id,
-        title: newStay.title,
-        imgUrls: newStay.imgUrls,
-      });
-    } catch (error) {
-      console.error(`[@stay:StayService:patch:update]: ${error}`);
-    }
-  }
+  //   try {
+  //     stay = await this.#db.findOne({
+  //       identifier,
+  //       tableName: this.#tableName,
+  //     });
+  //     if (!stay) {
+  //       throw new Error("Not found");
+  //     }
+  //   } catch (error) {
+  //     this.#logger.error({
+  //       location: "patch:findOne",
+  //       message: error as string,
+  //     });
+  //   }
+  //   const newStay = createStay({
+  //     ...stay,
+  //     ...data,
+  //   });
+
+  //   try {
+  //     return await this.#db.update({
+  //       id: newStay.id,
+  //       title: newStay.title,
+  //       imgUrls: newStay.imgUrls,
+  //     });
+  //   } catch (error) {
+  //     this.#logger.error({
+  //       location: "patch:update",
+  //       message: error as string,
+  //     });
+  //   }
+  // }
 }

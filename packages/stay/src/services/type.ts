@@ -5,12 +5,12 @@ export interface IStayService {
   get(params: IStayServiceGet): Promise<IStay>;
   post(params: IStayServicePost): Promise<void>;
   delete(params: IStayServiceDelete): Promise<void>;
-  patch(params: IStayServicePatch): Promise<IStay>;
+  // patch(params: IStayServicePatch): Promise<IStay>;
 }
 
 export interface IStayServiceConstructorParams {
   db: IDatabaseService;
-  idValidator(): boolean;
+  idValidator({ identifier }: IWithIdentifierParams): boolean;
 }
 
 export interface IStayServiceGet extends IWithIdentifierParams {}
