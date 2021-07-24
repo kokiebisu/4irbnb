@@ -1,63 +1,38 @@
-import * as winston from "winston";
-import { TLoggerLevel } from "./type";
-import { TEnvironment } from "../../types";
+import {
+  ILoggerConstructorParams,
+  ILoggerService,
+  IServiceErrorParams,
+  IServiceLogParams,
+} from "./types";
 
 /**
  * @public
  * Blue that implements the util that logs
  */
 export class Logger {
-  #logger: winston.Logger;
-  #requester?: string;
-  #environment: TEnvironment;
-  #level: TLoggerLevel;
+  #service: ILoggerService;
+  #location: string;
 
-  /**
-   * Constructs the Logger instance
-   * @param service
-   * @param level
-   * @param requestId - Entity that requested the logging
-   * @param environment - 'production' or 'development'
-   */
-  constructor(
-    serviceName: string,
-    level: TLoggerLevel,
-    requestId: string,
-    environment: TEnvironment
-  ) {
-    this.#requester = requestId;
-    this.#logger = winston.createLogger({
-      level,
-      format: winston.format.combine(
-        winston.format.timestamp({ format: "YYYY-MM-DD HH:mm:ss" }),
-        winston.format.json(),
-        this._serviceFormat()
-      ),
-      defaultMeta: { service: serviceName },
-    });
-    this.#environment = environment;
-    this.#level = level;
+  constructor({
+    service,
+    packageName,
+    className,
+    methodName,
+    helperMethodName,
+  }: ILoggerConstructorParams) {
+    this.#service = service;
+    this.#location = `${packageName}:${className}:${methodName}:${helperMethodName}`;
   }
 
-  private _serviceFormat(): winston.Logform.Format {
-    return winston.format.printf(
-      ({
-        level,
-        message,
-        label,
-        timestamp,
-      }: winston.Logform.TransformableInfo): string => {
-        return `[${this.#environment as string} ${this.#requester || ""} ${
-          timestamp as string
-        } ${label as string}] ${level}: ${message}`;
-      }
-    );
+  error({ message }: IServiceErrorParams) {
+    this.#service.error({
+      message: `[${this.#location}]:${message}`,
+    });
   }
 
-  output = (message: string): void => {
-    this.#logger[this.#level]({
-      level: this.#level,
-      message,
+  log({ message }: IServiceLogParams) {
+    this.#service.error({
+      message: `[${this.#location}]:${message}`,
     });
-  };
+  }
 }
