@@ -1,18 +1,6 @@
 import { Server } from "@nextbnb/base";
 import { ServiceEnum, EnvironmentEnum } from "@nextbnb/common";
 import { registerRoutes } from "./routes";
-import {
-  createAWSService,
-  Publisher,
-  SNSCreator,
-  SQS,
-  SQSCreator,
-
-  // SSMCreator,
-  STS,
-  STSCreator,
-  Subscriber,
-} from "@nextbnb/aws";
 
 async function main() {
   let server: Server;
@@ -23,20 +11,6 @@ async function main() {
   }
 
   await server.configure();
-
-  try {
-    // await publisher.registerTopic("randomName");
-    // create sqs
-    // await subscriber.registerSubscription("topic");
-    // console.log("EN2");
-    // await publisher.publish(
-    //   JSON.stringify({
-    //     message: "HELLO WORLD!",
-    //   })
-    // );
-  } catch (err) {
-    throw err;
-  }
 
   registerRoutes(server);
 

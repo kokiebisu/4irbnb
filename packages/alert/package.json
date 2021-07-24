@@ -26,5 +26,8 @@
     "@nextbnb/common": "file:../common",
     "@slack/web-api": "^6.3.0",
     "yarn": "^1.22.10"
+  },
+  "engines": {
+    "node": "14.17.3"
   }
 }

@@ -1,8 +1,8 @@
 /**
- * An experience posted by the user
+ * A stay posted by the user
  * @public
  */
-export interface IExperience {
+export interface IStay {
   id: string;
   title: string;
   imgUrls: string[];

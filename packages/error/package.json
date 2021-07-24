@@ -22,5 +22,8 @@
     "typescript": "^4.3.4",
     "@nextbnb/aws": "file:../aws"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "engines": {
+    "node": "14.17.3"
+  }
 }

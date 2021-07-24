@@ -48,5 +48,8 @@
     "app/*",
     "services/*"
   ],
-  "private": true
+  "private": true,
+  "engines": {
+    "node": "14.17.3"
+  }
 }

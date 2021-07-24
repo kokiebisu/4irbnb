@@ -35,5 +35,8 @@
     "fastify": "^3.18.1",
     "fastify-express": "^0.3.3",
     "middie": "^5.3.0"
+  },
+  "engines": {
+    "node": "14.17.3"
   }
 }

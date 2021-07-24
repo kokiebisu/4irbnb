@@ -1,25 +1,16 @@
-import { Experience, IExperience } from ".";
+import { Stay } from "./class";
+import { IStay } from "./type";
 
 /**
  * @public
- * Factory to create Experience
+ * Factory to create the Stay instance
+ *
  * @param id -
  * @param title -
  * @param imgUrls -
  *
- * @returns an {@link @nextbnb/common#Experience} instance
+ * @returns a new {@link @nextbnb/model#Stay} instance
  */
-export const buildCreateExperience = (imgUrlValidator: RegExp) => {
-  return function createExperience({ id, title, imgUrls }: IExperience) {
-    if (!id) {
-      throw new Error("ID cannot be an empty string");
-    }
-    if (!title) {
-      throw new Error("Title cannot be an empty string");
-    }
-    if (imgUrls.every((imgUrl) => imgUrl.match(imgUrlValidator))) {
-      throw new Error("Not all imgUrls are valid");
-    }
-    return new Experience({ id, title, imgUrls });
-  };
+export const createStay = ({ id, title, imgUrls }: IStay): Stay => {
+  return new Stay({ id, title, imgUrls });
 };

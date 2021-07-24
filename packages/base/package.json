@@ -30,5 +30,8 @@
     "middie": "^5.3.0",
     "@nextbnb/utils": "file:../utils",
     "@nextbnb/common": "file:../common"
+  },
+  "engines": {
+    "node": "14.17.3"
   }
 }
