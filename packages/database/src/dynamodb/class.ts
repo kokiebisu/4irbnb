@@ -1,5 +1,4 @@
 import { DynamoDBClient, GetItemCommand } from "@aws-sdk/client-dynamodb";
-import { TRegion } from "@nextbnb/common";
 import { IDatabaseService } from "../type";
 
 export class DynamoDB implements IDatabaseService {

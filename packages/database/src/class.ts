@@ -31,7 +31,7 @@ export class DatabaseService {
     this.#client.delete({ identifier });
   }
 
-  update({ identifier }: IServiceUpdateParams) {
-    this.#client.update({ identifier });
+  update({ identifier, data }: IServiceUpdateParams) {
+    this.#client.update({ identifier, data });
   }
 }

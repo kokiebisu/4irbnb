@@ -14,3 +14,4 @@ export * from "./enum";
 export * from "./types";
 export * from "./server";
 export * from "./service";
+export * from "./error";
