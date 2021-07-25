@@ -1,4 +1,4 @@
-import { IListenParams, IRegisterRouteParams, IServer } from "../type";
+import { IListenParams, IRegisterRouteParams, IServer } from "../types";
 import * as Fastify from "fastify";
 import * as cors from "cors";
 import middie from "middie";
@@ -15,13 +15,13 @@ export class FastifyServer implements IServer {
     this.#client.use(cors());
   }
 
-  registerRoute({ method, path, handler, schema }: IRegisterRouteParams) {
+  registerRoute({ method, path, handler }: IRegisterRouteParams) {
     switch (method) {
       case "GET":
-        this.#client.get(path, schema, handler);
+        this.#client.get(path, handler);
         break;
       case "POST":
-        this.#client.post(path, schema, handler);
+        this.#client.post(path, handler);
         break;
     }
   }

@@ -1,6 +1,7 @@
-import { IStay } from './type';
+import { IStay } from "./type";
 
 /**
+ * @public
  * Blueprint of the Stay instance
  */
 export class Stay {

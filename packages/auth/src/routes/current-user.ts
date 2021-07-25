@@ -1,5 +1,4 @@
-import { Server } from "@nextbnb/base";
-import { HttpMethods } from "@nextbnb/common";
+import { HttpMethods, IServer } from "@nextbnb/common";
 
 const schema = {
   response: {
@@ -24,6 +23,11 @@ const handler = async (_: any, res: any) => {
   });
 };
 
-export const registerCurrentUserRoute = (server: Server) => {
-  server.registerRoute(HttpMethods.GET, "/current-user", { schema }, handler);
+export const registerCurrentUserRoute = (server: IServer) => {
+  server.registerRoute({
+    method: HttpMethods.GET,
+    path: "/current-user",
+    schema,
+    handler,
+  });
 };

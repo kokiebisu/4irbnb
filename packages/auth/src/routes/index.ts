@@ -1,8 +1,9 @@
-import { registerLoginRoute } from './login';
-import { Server } from '@nextbnb/base';
-import { registerCurrentUserRoute } from './current-user';
+import { registerLoginRoute } from "./login";
 
-export const registerRoutes = (server: Server) => {
+import { registerCurrentUserRoute } from "./current-user";
+import { IServer } from "@nextbnb/common";
+
+export const registerRoutes = (server: IServer) => {
   registerCurrentUserRoute(server);
   registerLoginRoute(server);
 };

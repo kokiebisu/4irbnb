@@ -4,7 +4,7 @@ import {
   IDatabaseServiceDeleteParams,
   IDatabaseServiceFindOneParams,
   IDatabaseServiceInsertParams,
-} from "./type";
+} from "./types";
 
 export class DatabaseService {
   #client: IDatabaseService;
@@ -13,15 +13,15 @@ export class DatabaseService {
     this.#client = client;
   }
 
-  insert({ tableName, data }: IDatabaseServiceInsertParams) {
-    this.#client.insert({ tableName, data });
+  async insert({ tableName, data }: IDatabaseServiceInsertParams) {
+    await this.#client.insert({ tableName, data });
   }
 
-  findOne({ tableName, identifier }: IDatabaseServiceFindOneParams) {
-    this.#client.findOne({ tableName, identifier });
+  async findOne({ tableName, identifier }: IDatabaseServiceFindOneParams) {
+    await this.#client.findOne({ tableName, identifier });
   }
 
-  delete({ tableName, identifier }: IDatabaseServiceDeleteParams) {
-    this.#client.delete({ tableName, identifier });
+  async delete({ tableName, identifier }: IDatabaseServiceDeleteParams) {
+    await this.#client.delete({ tableName, identifier });
   }
 }

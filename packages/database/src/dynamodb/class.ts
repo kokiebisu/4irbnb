@@ -10,8 +10,8 @@ import {
   IDatabaseServiceDeleteParams,
   IDatabaseServiceFindOneParams,
   IDatabaseServiceInsertParams,
-} from "../type";
-import { IDynamoDBConstructorParams } from "./type";
+} from "../types";
+import { IDynamoDBConstructorParams } from "./types";
 
 export class DynamoDBService implements IDatabaseService {
   #region: TRegion;

@@ -12,14 +12,22 @@ export class WinstonService implements ILoggerService {
    * Constructs the Logger instance
    */
   constructor() {
-    this.#client = winston.createLogger();
+    this.#client = winston.createLogger({
+      transports: [new winston.transports.Console()],
+    });
   }
 
-  log({ location, message }: IServiceLogParams): void {
-    this.#client.log("info", `[${location}]:${message}`);
+  async log({ location, message }: IServiceLogParams): Promise<void> {
+    console.log("location", location);
+    console.log("message", message);
+    try {
+      await this.#client.log("info", `[${location}]:${message}`);
+    } catch (error) {
+      console.error("LOG", error);
+    }
   }
 
-  error({ location, message }: IServiceErrorParams): void {
-    this.#client.log("error", `[${location}]:${message}`);
+  async error({ location, message }: IServiceErrorParams): Promise<void> {
+    await this.#client.log("error", `[${location}]:${message}`);
   }
 }

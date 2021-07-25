@@ -8,6 +8,7 @@ import { registerRoutes } from "./routes";
 
 async function main() {
   let server: IServer;
+
   if (process.env.environment === EnvironmentEnum.prod) {
     server = createServer({
       serviceName: ServiceEnum.Auth,

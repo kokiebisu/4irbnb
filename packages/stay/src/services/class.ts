@@ -2,11 +2,10 @@ import { createStay } from "../models";
 import {
   IStayServiceDelete,
   IStayServiceGet,
-  // IStayServicePatch,
   IStayServicePost,
   IStayService,
   IStayServiceConstructorParams,
-} from "./type";
+} from "./types";
 import { IDatabaseService } from "@nextbnb/database";
 import { createLogger, ILoggerService, PackageEnum } from "@nextbnb/common";
 

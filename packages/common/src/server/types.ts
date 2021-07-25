@@ -1,5 +1,6 @@
 import { IEnvironment } from "..";
 import { HttpMethods, IServiceName } from "../enum";
+import { FastifyRequest, FastifyReply } from "fastify";
 
 /**
  * @public
@@ -23,8 +24,7 @@ export interface IConstructorParams extends IEnvironment, IServiceName {
 export interface IRegisterRouteParams {
   method: HttpMethods;
   path: string;
-  handler: any;
-  schema?: any;
+  handler(req: any, res: any): any;
 }
 
 /**
@@ -38,3 +38,7 @@ export interface IListenParams {
  * @public
  */
 export interface ICreateServerParams extends IEnvironment, IServiceName {}
+
+export type TRequest = FastifyRequest;
+
+export type TResponse = FastifyReply;

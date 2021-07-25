@@ -3,7 +3,7 @@ import {
   IListenParams,
   IRegisterRouteParams,
   IServer,
-} from "./type";
+} from "./types";
 
 /**
  * @public
@@ -20,8 +20,8 @@ export class Server {
     await this.#server.setup();
   }
 
-  registerRoute({ method, path, handler, schema }: IRegisterRouteParams) {
-    this.#server.registerRoute({ method, path, handler, schema });
+  registerRoute({ method, path, handler }: IRegisterRouteParams) {
+    this.#server.registerRoute({ method, path, handler });
   }
 
   async listen({ port }: IListenParams) {

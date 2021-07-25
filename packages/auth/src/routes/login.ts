@@ -1,23 +1,22 @@
-import { Server } from '@nextbnb/base';
-import { HttpMethods } from '@nextbnb/common';
-import { createAuthService } from '../service';
+import { HttpMethods, IServer } from "@nextbnb/common";
+import { createAuthService } from "../service";
 
 const schema = {
   body: {
-    type: 'object',
-    require: ['username', 'password'],
+    type: "object",
+    require: ["username", "password"],
     properties: {
-      username: { type: 'string' },
-      password: { type: 'string' },
+      username: { type: "string" },
+      password: { type: "string" },
     },
     additionalProperties: false,
   },
   response: {
     200: {
-      type: 'object',
-      require: ['jwt'],
+      type: "object",
+      require: ["jwt"],
       properties: {
-        jwt: { type: 'string' },
+        jwt: { type: "string" },
       },
       additionalProperties: false,
     },
@@ -25,7 +24,7 @@ const schema = {
 };
 
 const handler = async (req: any, res: any) => {
-  const database = 'something';
+  const database = "something";
   const service = createAuthService(database);
   const { username, password } = req.body;
   const user = await service.login(username, password); // will eventually add 'async'
@@ -35,6 +34,11 @@ const handler = async (req: any, res: any) => {
   });
 };
 
-export const registerLoginRoute = (server: Server) => {
-  server.registerRoute(HttpMethods.POST, '/login', { schema }, handler);
+export const registerLoginRoute = (server: IServer) => {
+  server.registerRoute({
+    method: HttpMethods.POST,
+    path: "/login",
+    schema,
+    handler,
+  });
 };
