@@ -17,17 +17,11 @@ export class WinstonService implements ILoggerService {
     });
   }
 
-  async log({ location, message }: IServiceLogParams): Promise<void> {
-    console.log("location", location);
-    console.log("message", message);
-    try {
-      await this.#client.log("info", `[${location}]:${message}`);
-    } catch (error) {
-      console.error("LOG", error);
-    }
+  log({ location, message }: IServiceLogParams): any {
+    this.#client.log("info", `[${location}]:${message}`);
   }
 
-  async error({ location, message }: IServiceErrorParams): Promise<void> {
-    await this.#client.log("error", `[${location}]:${message}`);
+  error({ location, message }: IServiceErrorParams): any {
+    this.#client.log("error", `[${location}]:${message}`);
   }
 }

@@ -5,87 +5,69 @@ import {
   TResponse,
 } from "@nextbnb/common";
 import { createLogger } from "@nextbnb/common";
+import { IStayService, StayService } from "../services";
+import { IStayControllerConstructorParams } from "./types";
 
 export class StayController {
-  // #service: IStayService;
-  // { db, idValidator }: IStayControllerConstructorParams
-  logger: ILoggerService;
+  #service: IStayService;
+  #logger: ILoggerService;
 
-  constructor() {
-    // this.#service = new StayService({ db, idValidator });
-    this.logger = createLogger({
+  constructor({ db, idValidator }: IStayControllerConstructorParams) {
+    this.#service = new StayService({ db, idValidator });
+    this.#logger = createLogger({
       packageName: PackageEnum.stay,
       className: "StayController",
     });
   }
 
   // { identifier }: IStayControllerGetParams
-  async get(_: any, res: any): Promise<any> {
+  get = async (_: any, res: any) => {
     try {
-      // const stay = await this.#service.get({ identifier });
-      await this.logger.log({
-        location: "get:get",
-        message: "Incoming into get method",
-      });
-
+      this.#service.get({ identifier });
       res
         .code(200)
         .header("Content-Type", "application/json; charset=utf-8")
         .send({ body: "stay service: GET" });
-      console.log("ENER2");
     } catch (error) {
+      this.#logger.error({ location: "get:get", message: error as string });
       res
         .code(400)
         .header("Content-Type", "application/json; charset=utf-8")
-        .send({ body: "Error" });
+        .send({ body: error });
     }
-  }
+  };
 
-  post(_req: TRequest, res: TResponse): any {
-    const headers = {
-      "Content-Type": "application/json",
-    };
+  post = async (_req: TRequest, res: TResponse) => {
     try {
-      // const stay = await this.#service.post({ data });
-      res.send({
-        headers,
-        statusCode: 200,
-        body: "stay service: POST",
-      });
+      const stay = await this.#service.post({ data });
+      res
+        .code(200)
+        .header("Content-Type", "application/json; charset=utf-8")
+        .send({ body: "stay service: GET" });
     } catch (error) {
-      console.error(`[@stay#postStayResponse/postStay]`);
-      res.send({
-        headers,
-        statusCode: 400,
-        body: {
-          error,
-        },
-      });
+      this.#logger.error({ location: "get:get", message: error as string });
+      res
+        .code(400)
+        .header("Content-Type", "application/json; charset=utf-8")
+        .send({ body: error });
     }
-  }
+  };
 
-  delete(_req: TRequest, res: TResponse): any {
-    const headers = {
-      "Content-Type": "application/json",
-    };
+  delete = async (_req: TRequest, res: TResponse) => {
     try {
-      // const stay = await this.#service.delete({ identifier });
-      res.send({
-        headers,
-        statusCode: 200,
-        body: "stay service: DELETE",
-      });
+      const stay = await this.#service.delete({ identifier });
+      res
+        .code(200)
+        .header("Content-Type", "application/json; charset=utf-8")
+        .send({ body: stay });
     } catch (error) {
       console.error(`[@stay#deleteStayResponse/deleteStay]`);
-      res.send({
-        headers,
-        statusCode: 400,
-        body: {
-          error,
-        },
-      });
+      res
+        .code(400)
+        .header("Content-Type", "application/json; charset=utf-8")
+        .send({ body: error });
     }
-  }
+  };
 
   // async patch({
   //   identifier,

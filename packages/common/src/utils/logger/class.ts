@@ -18,25 +18,17 @@ export class LoggerService {
     this.serviceLocation = `${packageName}:${className}`;
   }
 
-  async log({ location, message }: IServiceLogParams): Promise<void> {
-    try {
-      await this.#service.log({
-        location: `${this.serviceLocation}:${location}`,
-        message,
-      });
-    } catch (error) {
-      console.error(error);
-    }
+  log({ location, message }: IServiceLogParams): void {
+    this.#service.log({
+      location: `${this.serviceLocation}:${location}`,
+      message,
+    });
   }
 
-  async error({ location, message }: IServiceErrorParams): Promise<void> {
-    try {
-      await this.#service.error({
-        location: `${this.serviceLocation}:${location}`,
-        message: `[${this.serviceLocation}]:${message}`,
-      });
-    } catch (error) {
-      console.error(error);
-    }
+  error({ location, message }: IServiceErrorParams): void {
+    this.#service.error({
+      location: `${this.serviceLocation}:${location}`,
+      message: `[${this.serviceLocation}]:${message}`,
+    });
   }
 }
