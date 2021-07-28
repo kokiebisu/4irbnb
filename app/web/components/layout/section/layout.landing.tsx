@@ -4,6 +4,7 @@ export type LandingLayoutProps = {
   children?: React.ReactNode;
   dark?: boolean;
   spread?: boolean;
+  carousel?: boolean;
 };
 
 export const LandingLayout = ({
@@ -11,15 +12,19 @@ export const LandingLayout = ({
   subtitle,
   children,
   dark = false,
-  spread = false,
+  carousel,
 }: LandingLayoutProps): JSX.Element => {
   return (
     <div className={`py-4 ${dark ? "bg-black" : ""}`}>
-      <div className={`px-8 md:px-20 max-w-11xl ${dark ? "bg-black" : ""}`}>
-        <div className="py-6">
+      <div
+        className={`${dark ? "bg-black" : ""} ${
+          carousel ? "" : "px-8"
+        } md:px-10 lg:px-20 max-w-11xl`}
+      >
+        <div className={`py-6`}>
           {title && (
             <h3
-              className={`text-md sm:text-lg md:text-3xl font-bold ${
+              className={`text-xl md:text-3xl font-bold ${
                 dark ? "text-white" : ""
               }`}
             >

@@ -5,7 +5,7 @@ export type IndexSegmentProps =
   | { variant: "category" }
   | { variant: "nearby" }
   | { variant: "banner" }
-  | { variant: "online" }
+  | { variant: "discover" }
   | { variant: "anywhere" }
   | { variant: "destinations" }
   | ({ variant: "wide" } & WideSegmentProps);

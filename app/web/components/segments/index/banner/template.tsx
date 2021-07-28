@@ -1,9 +1,9 @@
 import { Header } from "@header";
 import { Button } from "@atoms";
 import { ResponsiveImage } from "@helper/img";
+import { useHandleScroll } from "@hooks/useHandleScroll";
 
 export type BannerSegmentTemplateProps = {
-  scrollPosition: number;
   category: string;
   data: any;
   handleCategoryChange: (value: string) => void;
@@ -14,12 +14,12 @@ export type BannerSegmentTemplateProps = {
  * Renders the banner section
  */
 export const BannerSegmentTemplate = ({
-  scrollPosition,
   category,
   data,
   handleCategoryChange,
   handleHomeRedirect,
 }: BannerSegmentTemplateProps): JSX.Element => {
+  const scrollPosition = useHandleScroll();
   return (
     <div className="banner">
       <div className="absolute top-0 bottom-0 right-0 left-0">

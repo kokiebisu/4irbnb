@@ -21,12 +21,12 @@
   }
 
   body {
-    font-family: 'AirbnbCereal';
+    font-family: "AirbnbCereal";
     touch-action: manipulation;
   }
 
   input {
-    font-family: 'AirbnbCereal';
+    font-family: "AirbnbCereal";
     margin: 0;
   }
 
@@ -49,7 +49,7 @@
 
   button {
     cursor: pointer;
-    font-family: 'AirbnbCereal';
+    font-family: "AirbnbCereal";
     padding: 0;
     margin: 0;
     border: none;
@@ -121,7 +121,7 @@
 
   .horizontal-line {
     &::after {
-      content: '';
+      content: "";
       width: 100%;
       position: absolute;
       border-bottom: 1px solid #868686;
@@ -202,7 +202,7 @@
   }
 
   .landing__bb--selected:after {
-    content: '';
+    content: "";
     display: block;
     width: 30%;
     padding-top: 10px;
@@ -212,7 +212,7 @@
   }
 
   .landing__bb:after {
-    content: '';
+    content: "";
     display: block;
     width: 0%;
     padding-top: 10px;
@@ -226,7 +226,7 @@
   }
 
   .ba::after {
-    content: '';
+    content: "";
     width: 100%;
     position: absolute;
     border-bottom: 1px solid #868686;
@@ -246,6 +246,25 @@
 
   .p__online {
     padding-top: calc(-64px + (1.45 * (100% - 84px)));
+  }
+
+  .scroll-snap-none {
+    scroll-snap-type: none;
+  }
+  .scroll-snap-x {
+    scroll-snap-type: x mandatory;
+  }
+  .scroll-snap-y {
+    scroll-snap-type: y;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 
   @media screen and (min-width: 742px) {

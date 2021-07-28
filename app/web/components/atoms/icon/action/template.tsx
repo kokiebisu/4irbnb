@@ -50,7 +50,7 @@ export const HeartIcon = ({ fill = "black" }: FillIconProps): JSX.Element => {
 };
 
 export const CloseIcon = ({
-  stroke = "black",
+  stroke,
   strokeWidth,
 }: StrokeIconProps): JSX.Element => {
   return (

@@ -12,7 +12,8 @@ const WideSegmentTemplateStory: Story<WideSegmentTemplateProps> = (args) => (
   <WideSegmentTemplate {...args} />
 );
 
-export const WideSegment = WideSegmentTemplateStory.bind({});
-WideSegment.args = {
+export const Wide = WideSegmentTemplateStory.bind({});
+Wide.args = {
   ...mockData,
+  handleRedirectToHostPage: () => alert("yo"),
 };
