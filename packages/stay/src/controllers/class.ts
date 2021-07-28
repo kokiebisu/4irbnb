@@ -1,12 +1,6 @@
-import {
-  ILoggerService,
-  PackageEnum,
-  TRequest,
-  TResponse,
-} from "@nextbnb/common";
+import { ILoggerService, PackageEnum, ILambdaArgs } from "@nextbnb/common";
 import { createLogger } from "@nextbnb/common";
-// import { StayService } from "../services";
-// import { IStayControllerConstructorParams } from "./types";
+import { isStay } from "../models";
 
 export class StayController {
   // #service: IStayService;
@@ -21,7 +15,18 @@ export class StayController {
   }
 
   // { identifier }: IStayControllerGetParams
-  get = async () => {
+  get = async ({ callback }: ILambdaArgs) => {
+    const stay = {
+      id: "3149209fgj09h2",
+      title: "sdifjiosdjfoiwe",
+      imgUrls: ["sdfjs", "fhfhw"],
+    };
+    callback(null, {
+      statusCode: 200,
+      body: JSON.stringify({
+        stay,
+      }),
+    });
     // try {
     //   // this.#service.get({ identifier });
     //   res
@@ -35,66 +40,74 @@ export class StayController {
     //     .header("Content-Type", "application/json; charset=utf-8")
     //     .send({ body: error });
     // }
-    return {
-      something: "IMPORTANT",
-    };
   };
 
-  post = async (_req: TRequest, res: TResponse) => {
+  post = async ({ callback }: ILambdaArgs) => {
     try {
       // const stay = await this.#service.post({ data });
-      res
-        .code(200)
-        .header("Content-Type", "application/json; charset=utf-8")
-        .send({ body: "stay service: GET" });
+      callback(null, {
+        statusCode: 200,
+        body: JSON.stringify({}),
+      });
     } catch (error) {
       this.#logger.error({ location: "get:get", message: error as string });
-      res
-        .code(400)
-        .header("Content-Type", "application/json; charset=utf-8")
-        .send({ body: error });
+      callback(
+        {
+          statusCode: 400,
+          body: "Something went wrong",
+        },
+        null
+      );
     }
   };
 
-  delete = async (_req: TRequest, res: TResponse) => {
+  delete = async ({ callback }: ILambdaArgs) => {
     try {
       // const stay = await this.#service.delete({ identifier });
-      // res
-      //   .code(200)
-      //   .header("Content-Type", "application/json; charset=utf-8")
-      //   .send({ body: stay });
+
+      callback(null, {
+        statusCode: 200,
+        body: JSON.stringify({}),
+      });
     } catch (error) {
       console.error(`[@stay#deleteStayResponse/deleteStay]`);
-      res
-        .code(400)
-        .header("Content-Type", "application/json; charset=utf-8")
-        .send({ body: error });
+      callback(
+        {
+          statusCode: 400,
+          body: "Something went wrong",
+        },
+        null
+      );
     }
   };
 
-  // async patch({
-  //   identifier,
-  //   data,
-  // }: IStayControllerPatchParams): Promise<IResponse> {
-  //   const headers = {
-  //     "Content-Type": "application/json",
-  //   };
-  //   try {
-  //     const stay = await this.#service.patch({ identifier, data });
-  //     return {
-  //       headers,
-  //       statusCode: 200,
-  //       body: stay,
-  //     };
-  //   } catch (error) {
-  //     console.error(`[@stay#patchStayResponse/patchStay]`);
-  //     return {
-  //       headers,
-  //       statusCode: 400,
-  //       body: {
-  //         error,
-  //       },
-  //     };
-  //   }
-  // }
+  async patch({ callback }: ILambdaArgs): Promise<void> {
+    try {
+      // const stay = await this.#service.patch({ identifier, data });
+      const stay = {
+        id: "2309ru90jg9",
+        title: "A good house",
+        imgUrls: ["asfjiosdajfoi", "sfhaiusdhfiusa"],
+      };
+      if (!isStay(stay)) {
+        this.#logger.error({
+          location: "patch:isStay",
+          message: "Data was not a stay type",
+        });
+      }
+      callback(null, {
+        statusCode: 200,
+        body: JSON.stringify({}),
+      });
+    } catch (error) {
+      console.error(`[@stay#patchStayResponse/patchStay]`);
+      callback(
+        {
+          statusCode: 400,
+          body: "Something went wrong",
+        },
+        null
+      );
+    }
+  }
 }
