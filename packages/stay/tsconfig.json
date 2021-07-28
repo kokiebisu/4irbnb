@@ -4,7 +4,7 @@
     "composite": true,
     "rootDir": "src",
     "outDir": "dist",
-    "types": ["node"]
+    "module": "commonjs"
   },
   "include": ["src/**/*.ts", "src/**/*.js"]
 }

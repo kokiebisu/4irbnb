@@ -1,4 +1,4 @@
-resource "aws_internet_gateway" "nextbnb_internet_gateway" {
+resource "aws_internet_gateway" "default" {
     vpc_id = aws_vpc.nextbnb_vpc.id
 
     tags = {

@@ -16,11 +16,11 @@ resource "aws_route_table" "nextbnb_private_route_table" {
 
 resource "aws_route_table_association" "nextbnb_public_route_table" {
     route_table_id = aws_default_route_table.nextbnb_public_route_table.id
-    subnet_id = aws_subnet.public_subnet.id
+    subnet_id = aws_subnet.public.id
 }
 
 resource "aws_route_table_association" "nextbnb_private_route_table" {
     route_table_id = aws_route_table.nextbnb_private_route_table.id
-    subnet_id = aws_subnet.private_subnet.id
+    subnet_id = aws_subnet.private.id
 }
 

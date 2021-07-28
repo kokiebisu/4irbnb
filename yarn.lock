@@ -4379,7 +4379,7 @@
     "@aws-sdk/client-sqs" "^3.21.0"
     "@aws-sdk/client-ssm" "^3.20.0"
     "@aws-sdk/client-sts" "^3.21.0"
-    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-aws-1.1.0-76ee1988-6cc5-4854-a6bd-bbc96c286090-1627151497848/node_modules/@nextbnb/common"
+    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-aws-1.1.0-1fee557c-1324-4bc1-82ff-9cd5ad310bd8-1627449435434/node_modules/@nextbnb/common"
     "@types/connect" "^3.4.34"
     connect "^3.7.0"
     cors "^2.8.5"
@@ -4390,14 +4390,19 @@
 "@nextbnb/common@file:packages/common":
   version "1.1.0"
   dependencies:
+    "@types/connect" "^3.4.35"
+    connect "^3.7.0"
+    cors "^2.8.5"
     date-fns "^2.23.0"
+    fastify "^3.19.2"
+    middie "^5.3.0"
     winston "^3.3.3"
 
 "@nextbnb/database@file:packages/database":
   version "1.1.0"
   dependencies:
     "@aws-sdk/client-dynamodb" "^3.23.0"
-    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-database-1.1.0-cafc58e7-9949-453a-aaf8-f951e1c79f6c-1627151497850/node_modules/@nextbnb/common"
+    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-database-1.1.0-d2ef6d17-9f41-4437-ad2f-23c66027476f-1627449435437/node_modules/@nextbnb/common"
     yarn "^1.22.10"
 
 "@nodelib/fs.scandir@2.1.5":
@@ -5560,6 +5565,11 @@
   resolved "https://registry.yarnpkg.com/@types/aria-query/-/aria-query-4.2.2.tgz#ed4e0ad92306a704f9fb132a0cfcf77486dbe2bc"
   integrity sha512-HnYpAE1Y6kRyKM/XkEuiRQhTHvkzMBurTHnpFLYLBGPIylZNPs9jJcuOOYWxPLJCSEtmZT0Y8rHDokKN7rRTig==
 
+"@types/aws-lambda@^8.10.81":
+  version "8.10.81"
+  resolved "https://registry.yarnpkg.com/@types/aws-lambda/-/aws-lambda-8.10.81.tgz#6d405269aad82e05a348687631aa9a587cdbe158"
+  integrity sha512-C1rFKGVZ8KwqhwBOYlpoybTSRtxu2433ea6JaO3amc6ubEe08yQoFsPa9aU9YqvX7ppeZ25CnCtC4AH9mhtxsQ==
+
 "@types/babel__core@^7.0.0", "@types/babel__core@^7.1.7":
   version "7.1.15"
   resolved "https://registry.yarnpkg.com/@types/babel__core/-/babel__core-7.1.15.tgz#2ccfb1ad55a02c83f8e0ad327cbc332f55eb1024"
@@ -5617,7 +5627,7 @@
   resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
   integrity sha512-rr+OQyAjxze7GgWrSaJwydHStIhHq2lvY3BOC2Mj7KnzI7XK0Uw1TOOdI9lDoajEbSWLiYgoo4f1R51erQfhPQ==
 
-"@types/connect@^3.4.34":
+"@types/connect@^3.4.34", "@types/connect@^3.4.35":
   version "3.4.35"
   resolved "https://registry.yarnpkg.com/@types/connect/-/connect-3.4.35.tgz#5fcf6ae445e4021d1fc2219a4873cc73a3bb2ad1"
   integrity sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==
@@ -5628,6 +5638,11 @@
   version "2.8.11"
   resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.11.tgz#0bbd036cc6c8c63e0e5d64115fa9692eabb7eaa3"
   integrity sha512-64aQQZXPSo1fdLEE/utClOFVUqDUjyh5j3JorcCTlYQm4r5wsfggx6yhSY6hNudJLkbmIt+pO6xWyCnM0EQgPw==
+
+"@types/cors@^2.8.12":
+  version "2.8.12"
+  resolved "https://registry.yarnpkg.com/@types/cors/-/cors-2.8.12.tgz#6b2c510a7ad7039e98e7b8d3d6598f4359e5c080"
+  integrity sha512-vt+kDhq/M2ayberEtJcIN/hxXy1Pk+59g2FV/ZQceeaTyCtCucjL2Q7FXlFjtWn4n15KCr1NE2lNNFhp0lEThw==
 
 "@types/formidable@*":
   version "1.2.3"
@@ -9957,7 +9972,7 @@ fast-redact@^3.0.0:
   resolved "https://registry.yarnpkg.com/fast-redact/-/fast-redact-3.0.1.tgz#d6015b971e933d03529b01333ba7f22c29961e92"
   integrity sha512-kYpn4Y/valC9MdrISg47tZOpYBNoTXKgT9GYXFpHN/jYFs+lFkPoisY+LcBODdKVMY96ATzvzsWv+ES/4Kmufw==
 
-fast-safe-stringify@^2.0.4:
+fast-safe-stringify@^2.0.4, fast-safe-stringify@^2.0.8:
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/fast-safe-stringify/-/fast-safe-stringify-2.0.8.tgz#dc2af48c46cf712b683e849b2bbd446b32de936f"
   integrity sha512-lXatBjf3WPjmWD6DpIZxkeSsCOwqI0maYMpgDlx8g4U2qi4lbjA9oH/HD2a87G+KfsUmo5WbJFmqBZlPxtptag==
@@ -10010,6 +10025,28 @@ fastify@^3.18.1:
     flatstr "^1.0.12"
     light-my-request "^4.2.0"
     pino "^6.2.1"
+    proxy-addr "^2.0.7"
+    readable-stream "^3.4.0"
+    rfdc "^1.1.4"
+    secure-json-parse "^2.0.0"
+    semver "^7.3.2"
+    tiny-lru "^7.0.0"
+
+fastify@^3.19.2:
+  version "3.19.2"
+  resolved "https://registry.yarnpkg.com/fastify/-/fastify-3.19.2.tgz#4e592835183a83f5b797897312a1a84eb6ff861d"
+  integrity sha512-s9naCdC0V1ynEzxMoe/0oX8XgcLk90VAnIms4z6KcF7Rpn1XiguoMyZSviTmv1x5rgy/OjGGBM45sNpMoBzCUQ==
+  dependencies:
+    "@fastify/ajv-compiler" "^1.0.0"
+    abstract-logging "^2.0.0"
+    avvio "^7.1.2"
+    fast-json-stringify "^2.5.2"
+    fastify-error "^0.3.0"
+    fastify-warning "^0.2.0"
+    find-my-way "^4.0.0"
+    flatstr "^1.0.12"
+    light-my-request "^4.2.0"
+    pino "^6.13.0"
     proxy-addr "^2.0.7"
     readable-stream "^3.4.0"
     rfdc "^1.1.4"
@@ -14792,6 +14829,18 @@ pino-std-serializers@^3.1.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/pino-std-serializers/-/pino-std-serializers-3.2.0.tgz#b56487c402d882eb96cd67c257868016b61ad671"
   integrity sha512-EqX4pwDPrt3MuOAAUBMU0Tk5kR/YcCM5fNPEzgCO2zJ5HfX0vbiH9HbJglnyeQsN96Kznae6MWD47pZB5avTrg==
+
+pino@^6.13.0:
+  version "6.13.0"
+  resolved "https://registry.yarnpkg.com/pino/-/pino-6.13.0.tgz#41810b9be213af6f8f7c23a1b17058d880267e7b"
+  integrity sha512-mRXSTfa34tbfrWqCIp1sUpZLqBhcoaGapoyxfEwaWwJGMpLijlRdDKIQUyvq4M3DUfFH5vEglwSw8POZYwbThA==
+  dependencies:
+    fast-redact "^3.0.0"
+    fast-safe-stringify "^2.0.8"
+    flatstr "^1.0.12"
+    pino-std-serializers "^3.1.0"
+    quick-format-unescaped "^4.0.3"
+    sonic-boom "^1.0.2"
 
 pino@^6.2.1:
   version "6.11.3"

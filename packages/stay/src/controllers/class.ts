@@ -5,15 +5,15 @@ import {
   TResponse,
 } from "@nextbnb/common";
 import { createLogger } from "@nextbnb/common";
-import { IStayService, StayService } from "../services";
-import { IStayControllerConstructorParams } from "./types";
+// import { StayService } from "../services";
+// import { IStayControllerConstructorParams } from "./types";
 
 export class StayController {
-  #service: IStayService;
+  // #service: IStayService;
   #logger: ILoggerService;
-
-  constructor({ db, idValidator }: IStayControllerConstructorParams) {
-    this.#service = new StayService({ db, idValidator });
+  // { db, idValidator }: IStayControllerConstructorParams
+  constructor() {
+    // this.#service = new StayService({ db, idValidator });
     this.#logger = createLogger({
       packageName: PackageEnum.stay,
       className: "StayController",
@@ -21,25 +21,28 @@ export class StayController {
   }
 
   // { identifier }: IStayControllerGetParams
-  get = async (_: any, res: any) => {
-    try {
-      this.#service.get({ identifier });
-      res
-        .code(200)
-        .header("Content-Type", "application/json; charset=utf-8")
-        .send({ body: "stay service: GET" });
-    } catch (error) {
-      this.#logger.error({ location: "get:get", message: error as string });
-      res
-        .code(400)
-        .header("Content-Type", "application/json; charset=utf-8")
-        .send({ body: error });
-    }
+  get = async () => {
+    // try {
+    //   // this.#service.get({ identifier });
+    //   res
+    //     .code(200)
+    //     .header("Content-Type", "application/json; charset=utf-8")
+    //     .send({ body: "stay service: GET" });
+    // } catch (error) {
+    //   this.#logger.error({ location: "get:get", message: error as string });
+    //   res
+    //     .code(400)
+    //     .header("Content-Type", "application/json; charset=utf-8")
+    //     .send({ body: error });
+    // }
+    return {
+      something: "IMPORTANT",
+    };
   };
 
   post = async (_req: TRequest, res: TResponse) => {
     try {
-      const stay = await this.#service.post({ data });
+      // const stay = await this.#service.post({ data });
       res
         .code(200)
         .header("Content-Type", "application/json; charset=utf-8")
@@ -55,11 +58,11 @@ export class StayController {
 
   delete = async (_req: TRequest, res: TResponse) => {
     try {
-      const stay = await this.#service.delete({ identifier });
-      res
-        .code(200)
-        .header("Content-Type", "application/json; charset=utf-8")
-        .send({ body: stay });
+      // const stay = await this.#service.delete({ identifier });
+      // res
+      //   .code(200)
+      //   .header("Content-Type", "application/json; charset=utf-8")
+      //   .send({ body: stay });
     } catch (error) {
       console.error(`[@stay#deleteStayResponse/deleteStay]`);
       res

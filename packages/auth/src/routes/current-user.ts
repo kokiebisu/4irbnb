@@ -1,17 +1,17 @@
 import { HttpMethods, IServer } from "@nextbnb/common";
 
-const schema = {
-  response: {
-    200: {
-      type: "object",
-      properties: {
-        data: {
-          username: { type: "string" },
-        },
-      },
-    },
-  },
-};
+// const schema = {
+//   response: {
+//     200: {
+//       type: "object",
+//       properties: {
+//         data: {
+//           username: { type: "string" },
+//         },
+//       },
+//     },
+//   },
+// };
 
 const handler = async (_: any, res: any) => {
   //   const database = 'something';
@@ -27,7 +27,7 @@ export const registerCurrentUserRoute = (server: IServer) => {
   server.registerRoute({
     method: HttpMethods.GET,
     path: "/current-user",
-    schema,
+    // schema,
     handler,
   });
 };
