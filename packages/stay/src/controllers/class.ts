@@ -17,7 +17,6 @@ export class StayController {
   }
 
   get = async ({ callback }: ILambdaArgs): Promise<void> => {
-    console.log("ENTERED");
     const identifier = {
       KEY: {
         stayId: {
@@ -28,7 +27,7 @@ export class StayController {
     };
 
     const stay = await this.#service.get({ identifier });
-    console.log("STAY", stay);
+
     callback(null, {
       statusCode: 200,
       body: JSON.stringify({

@@ -33,7 +33,6 @@ export class StayService implements IStayService {
         identifier,
         tableName: "StayService",
       });
-      console.log("STAY", stay);
       if (!stay) {
         throw new Error("Did find matching id");
       }

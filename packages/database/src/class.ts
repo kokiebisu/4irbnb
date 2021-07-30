@@ -18,7 +18,7 @@ export class DatabaseService {
   }
 
   async findOne({ tableName, identifier }: IDatabaseServiceFindOneParams) {
-    await this.#client.findOne({ tableName, identifier });
+    return await this.#client.findOne({ tableName, identifier });
   }
 
   async delete({ tableName, identifier }: IDatabaseServiceDeleteParams) {

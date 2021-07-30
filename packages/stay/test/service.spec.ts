@@ -13,14 +13,10 @@ describe("Stay Service", () => {
       });
 
       const identifier = {
-        KEY: {
-          stayId: {
-            S: "fsdafsdaf",
-          },
-        },
+        stayId: "fsdafsdaf",
       };
       const stay = await service.get({ identifier });
-      console.log("stay", stay);
+      expect(stay).not.toBeNull();
     });
   });
 });

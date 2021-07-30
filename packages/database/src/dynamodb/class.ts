@@ -1,10 +1,9 @@
 import {
   DeleteItemCommand,
   DynamoDBClient,
-  GetItemCommand,
   PutItemCommand,
 } from "@aws-sdk/client-dynamodb";
-import { DynamoDBDocumentClient } from "@aws-sdk/lib-dynamodb";
+import { DynamoDBDocumentClient, GetCommand } from "@aws-sdk/lib-dynamodb";
 import { createLogger, TRegion } from "@nextbnb/common";
 import { LoggerService } from "@nextbnb/common/dist/utils/logger/class";
 import {
@@ -40,42 +39,57 @@ export class DynamoDBService implements IDatabaseService {
     }
   }
 
-  async insert({ tableName, data }: IDatabaseServiceInsertParams) {
-    this.#logger.log({ location: "insert", message: "Entered" });
+  async findOne({ tableName, identifier }: IDatabaseServiceFindOneParams) {
     this.setup();
-    await this.#client?.send(
-      new PutItemCommand({
-        TableName: tableName,
-        Item: data,
-      })
-    );
+    try {
+      const data = await this.#client?.send(
+        new GetCommand({
+          TableName: tableName,
+          Key: identifier,
+        })
+      );
+
+      return data?.Item;
+    } catch (error) {
+      this.#logger.error({
+        location: "findOne:send",
+        message: error as string,
+      });
+      return null;
+    }
   }
 
-  async findOne({ tableName, identifier }: IDatabaseServiceFindOneParams) {
-    this.#logger.log({ location: "findOne", message: "Entered" });
-
-    console.log("FindOne `before", identifier, tableName);
+  async insert({ tableName, data }: IDatabaseServiceInsertParams) {
     this.setup();
-    const data = await this.#client?.send(
-      new GetItemCommand({
-        TableName: tableName,
-        Key: identifier,
-      })
-    );
-
-    console.log("FindOne `Data", data);
-
-    return data;
+    try {
+      await this.#client?.send(
+        new PutItemCommand({
+          TableName: tableName,
+          Item: data,
+        })
+      );
+    } catch (error) {
+      this.#logger.error({
+        location: "insert:send",
+        message: error as string,
+      });
+    }
   }
 
   async delete({ tableName, identifier }: IDatabaseServiceDeleteParams) {
-    this.#logger.log({ location: "delete", message: "Entered" });
     this.setup();
-    await this.#client?.send(
-      new DeleteItemCommand({
-        TableName: tableName,
-        Key: identifier,
-      })
-    );
+    try {
+      await this.#client?.send(
+        new DeleteItemCommand({
+          TableName: tableName,
+          Key: identifier,
+        })
+      );
+    } catch (error) {
+      this.#logger.error({
+        location: "delete:send",
+        message: error as string,
+      });
+    }
   }
 }
