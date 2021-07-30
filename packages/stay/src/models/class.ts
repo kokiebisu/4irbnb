@@ -7,7 +7,7 @@ import { IStay } from "./type";
 export class Stay {
   id: string;
   title: string;
-  imgUrls: string[];
+  imgUrls: Set<string>;
 
   constructor({ id, title, imgUrls }: IStay) {
     this.id = id;

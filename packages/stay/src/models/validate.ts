@@ -1,4 +1,4 @@
-import { IStay } from './type';
+import { IStay } from "./type";
 
 /**
  * Checks whether a given value is an {@link @nextbnb/common#IStay}
@@ -17,8 +17,8 @@ import { IStay } from './type';
  */
 export function isStay(arg: any): arg is IStay {
   return (
-    typeof arg.id === 'string' &&
-    typeof arg.title === 'string' &&
-    typeof arg.imgUrls === 'string'
+    typeof arg.id === "string" &&
+    typeof arg.title === "string" &&
+    arg.imgUrls instanceof Set
   );
 }

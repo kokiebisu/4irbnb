@@ -24,9 +24,11 @@ export class StayController {
 
       return {
         statusCode: 200,
-        body: JSON.stringify({
-          stay,
-        }),
+        body: stay
+          ? JSON.stringify({
+              stay,
+            })
+          : null,
       };
     } catch (error) {
       this.#logger.error({ location: "get:get", message: "Entered" });

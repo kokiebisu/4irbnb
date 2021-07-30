@@ -1,9 +1,9 @@
+import { DynamoDBClient, PutItemCommand } from "@aws-sdk/client-dynamodb";
 import {
-  DeleteItemCommand,
-  DynamoDBClient,
-  PutItemCommand,
-} from "@aws-sdk/client-dynamodb";
-import { DynamoDBDocumentClient, GetCommand } from "@aws-sdk/lib-dynamodb";
+  DeleteCommand,
+  DynamoDBDocumentClient,
+  GetCommand,
+} from "@aws-sdk/lib-dynamodb";
 import { createLogger, PackageEnum, TRegion } from "@nextbnb/common";
 import { LoggerService } from "@nextbnb/common/dist/utils/logger/class";
 import {
@@ -76,11 +76,15 @@ export class DynamoDBService implements IDatabaseService {
     }
   }
 
+  /**
+   * Delete operation performed on the DynamoDB database
+   * @param param0
+   */
   async delete({ tableName, identifier }: IDatabaseServiceDeleteParams) {
     this.setup();
     try {
       await this.#client?.send(
-        new DeleteItemCommand({
+        new DeleteCommand({
           TableName: tableName,
           Key: identifier,
         })

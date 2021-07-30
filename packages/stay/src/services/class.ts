@@ -29,6 +29,11 @@ export class StayService implements IStayService {
     });
   }
 
+  /**
+   * Retrieves the stay based on the provided id
+   * @param param0
+   * @returns
+   */
   async get({ identifier }: IStayServiceGet) {
     try {
       if (!this.#idValidator({ identifier })) {
@@ -41,7 +46,10 @@ export class StayService implements IStayService {
         tableName: this.#tableName,
         identifier,
       });
-      const { imgUrls } = stay;
+
+      if (!stay) {
+        return null;
+      }
 
       if (isStay(stay)) {
         throw new InternalError({
@@ -49,10 +57,7 @@ export class StayService implements IStayService {
           message: "Did find matching id",
         });
       }
-      return {
-        ...stay,
-        imgUrls: Array.from(imgUrls),
-      };
+      return stay;
     } catch (error) {
       if (error instanceof InternalError) {
         const { location, message } = error;
@@ -69,24 +74,27 @@ export class StayService implements IStayService {
     }
   }
 
+  /**
+   * Inserts the provided data
+   * @param param0
+   * @returns
+   */
   async post({ data }: IStayServicePost) {
     try {
       const stay = createStay(data);
       const exists = await this.#db.findOne({
         tableName: this.#tableName,
         identifier: {
-          stayId: data.id,
+          id: data.id,
         },
       });
-      console.log("exists", exists);
       if (exists) {
         return exists;
       }
-      console.log("insert");
       await this.#db.insert({
         tableName: this.#tableName,
         data: {
-          stayId: {
+          id: {
             S: stay.id,
           },
           title: {
@@ -97,7 +105,6 @@ export class StayService implements IStayService {
           },
         },
       });
-      console.log("inserted");
     } catch (error) {
       this.#logger.error({
         location: "post",
@@ -106,34 +113,54 @@ export class StayService implements IStayService {
     }
   }
 
+  /**
+   * Deletes data based on the provided identifies
+   * @param param0
+   * @returns
+   */
   async delete({ identifier }: IStayServiceDelete) {
     try {
-      if (this.#idValidator({ identifier })) {
-        throw new Error("Must be a valid id");
+      if (!this.#idValidator({ identifier })) {
+        throw new InternalError({
+          location: "delete:idValidator",
+          message: "Must be a valid id",
+        });
       }
-    } catch (error) {
-      this.#logger.error({
-        location: "delete:idValidator",
-        message: error as string,
-      });
-    }
 
-    try {
       const stay = await this.#db.findOne({
         identifier,
         tableName: this.#tableName,
       });
 
       if (!stay) {
-        throw new Error("Cannot find by identifier");
+        throw new InternalError({
+          location: "delete:!stay",
+          message: "Stay was empty",
+        });
       }
 
-      return this.#db.delete({ identifier, tableName: this.#tableName });
+      if (!isStay(stay)) {
+        console.log(stay);
+        throw new InternalError({
+          location: "delete:isStay",
+          message: "Stay retrieved was invalid",
+        });
+      }
+
+      return this.#db.delete({ tableName: this.#tableName, identifier });
     } catch (error) {
-      this.#logger.error({
-        location: "delete:findOne",
-        message: error as string,
-      });
+      if (error instanceof InternalError) {
+        const { location, message } = error;
+        this.#logger.error({
+          location,
+          message,
+        });
+      } else {
+        this.#logger.error({
+          location: "delete",
+          message: error as string,
+        });
+      }
     }
   }
 
