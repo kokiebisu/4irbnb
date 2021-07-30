@@ -1,4 +1,4 @@
-import { createStay } from "../models";
+import { createStay, isStay } from "../models";
 import {
   IStayServiceDelete,
   IStayServiceGet,
@@ -7,7 +7,12 @@ import {
   IStayServiceConstructorParams,
 } from "./types";
 import { IDatabaseService } from "@nextbnb/database";
-import { createLogger, ILoggerService, PackageEnum } from "@nextbnb/common";
+import {
+  createLogger,
+  ILoggerService,
+  PackageEnum,
+  InternalError,
+} from "@nextbnb/common";
 
 export class StayService implements IStayService {
   #db: IDatabaseService;
@@ -27,49 +32,75 @@ export class StayService implements IStayService {
   async get({ identifier }: IStayServiceGet) {
     try {
       if (!this.#idValidator({ identifier })) {
-        throw new Error("Must be a valid id");
+        throw new InternalError({
+          location: "get:idValidator",
+          message: "Must be a valid id",
+        });
       }
       const stay = await this.#db.findOne({
+        tableName: this.#tableName,
         identifier,
-        tableName: "StayService",
       });
-      if (!stay) {
-        throw new Error("Did find matching id");
+      const { imgUrls } = stay;
+
+      if (isStay(stay)) {
+        throw new InternalError({
+          location: "get:isStay",
+          message: "Did find matching id",
+        });
       }
-      return stay;
+      return {
+        ...stay,
+        imgUrls: Array.from(imgUrls),
+      };
     } catch (error) {
-      this.#logger.error({
-        location: "get:idValidator",
-        message: error as string,
-      });
+      if (error instanceof InternalError) {
+        const { location, message } = error;
+        this.#logger.error({
+          location,
+          message,
+        });
+      } else {
+        this.#logger.error({
+          location: "get:findOne",
+          message: error as string,
+        });
+      }
     }
   }
 
   async post({ data }: IStayServicePost) {
-    const stay = createStay(data);
     try {
+      const stay = createStay(data);
       const exists = await this.#db.findOne({
-        identifier: data.primary_key.id,
         tableName: this.#tableName,
+        identifier: {
+          stayId: data.id,
+        },
       });
+      console.log("exists", exists);
       if (exists) {
         return exists;
       }
-    } catch (error) {
-      this.#logger.error({
-        location: "post:findOne",
-        message: error as string,
-      });
-    }
-
-    try {
-      return await this.#db.insert({
+      console.log("insert");
+      await this.#db.insert({
         tableName: this.#tableName,
-        data: { id: stay.id, title: stay.title, imgUrls: stay.imgUrls },
+        data: {
+          stayId: {
+            S: stay.id,
+          },
+          title: {
+            S: stay.title,
+          },
+          imgUrls: {
+            SS: stay.imgUrls,
+          },
+        },
       });
+      console.log("inserted");
     } catch (error) {
       this.#logger.error({
-        location: "post:insert",
+        location: "post",
         message: error as string,
       });
     }

@@ -4,7 +4,7 @@ import {
   PutItemCommand,
 } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, GetCommand } from "@aws-sdk/lib-dynamodb";
-import { createLogger, TRegion } from "@nextbnb/common";
+import { createLogger, PackageEnum, TRegion } from "@nextbnb/common";
 import { LoggerService } from "@nextbnb/common/dist/utils/logger/class";
 import {
   IDatabaseService,
@@ -23,7 +23,7 @@ export class DynamoDBService implements IDatabaseService {
   constructor({ region }: IDynamoDBConstructorParams) {
     this.#region = region;
     this.#logger = createLogger({
-      packageName: "database",
+      packageName: PackageEnum.database,
       className: "DynamoDBService",
     });
   }

@@ -26,3 +26,7 @@ export interface IStayControllerConstructorParams {
   db: IDatabaseService;
   idValidator({ identifier }: IWithIdentifierParams): boolean;
 }
+
+export interface IStayControllerPayloadParams {
+  payload: any;
+}

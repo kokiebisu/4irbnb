@@ -1,8 +1,10 @@
 import { ILoggerService, PackageEnum, ILambdaArgs } from "@nextbnb/common";
 import { createLogger } from "@nextbnb/common";
+import { IWithIdentifierParams } from "@nextbnb/database";
 import { IStayControllerConstructorParams } from ".";
 import { isStay } from "../models";
 import { IStayService, StayService } from "../services";
+import { IStayControllerPayloadParams } from "./types";
 
 export class StayController {
   #service: IStayService;
@@ -16,46 +18,42 @@ export class StayController {
     });
   }
 
-  get = async ({ callback }: ILambdaArgs): Promise<void> => {
-    const identifier = {
-      KEY: {
-        stayId: {
-          S: "fsdafsdaf",
-        },
-      },
-      ProjectionExpression: "title",
-    };
-
-    const stay = await this.#service.get({ identifier });
-
-    callback(null, {
-      statusCode: 200,
-      body: JSON.stringify({
-        stay,
-      }),
-    });
-  };
-
-  post = async ({ callback, event }: ILambdaArgs): Promise<void> => {
+  async get({ identifier }: IWithIdentifierParams): Promise<any> {
     try {
-      const stay = await this.#service.post({ data: event.data });
-      callback(null, {
+      const stay = await this.#service.get({ identifier });
+
+      return {
         statusCode: 200,
         body: JSON.stringify({
           stay,
         }),
-      });
+      };
+    } catch (error) {
+      this.#logger.error({ location: "get:get", message: "Entered" });
+      return {
+        statusCode: 500,
+        body: {
+          error: "Internal Error",
+        },
+      };
+    }
+  }
+
+  async post({ payload }: IStayControllerPayloadParams): Promise<any> {
+    try {
+      console.log("PAYLOAD", payload);
+      await this.#service.post({ data: payload });
+      return {
+        statusCode: 200,
+      };
     } catch (error) {
       this.#logger.error({ location: "get:get", message: error as string });
-      callback(
-        {
-          statusCode: 400,
-          body: "Something went wrong",
-        },
-        null
-      );
+      return {
+        statusCode: 400,
+        body: "Something went wrong",
+      };
     }
-  };
+  }
 
   delete = async ({ callback }: ILambdaArgs): Promise<void> => {
     try {
