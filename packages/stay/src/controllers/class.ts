@@ -1,53 +1,50 @@
 import { ILoggerService, PackageEnum, ILambdaArgs } from "@nextbnb/common";
 import { createLogger } from "@nextbnb/common";
+import { IStayControllerConstructorParams } from ".";
 import { isStay } from "../models";
+import { IStayService, StayService } from "../services";
 
 export class StayController {
-  // #service: IStayService;
+  #service: IStayService;
   #logger: ILoggerService;
-  // { db, idValidator }: IStayControllerConstructorParams
-  constructor() {
-    // this.#service = new StayService({ db, idValidator });
+
+  constructor({ db, idValidator }: IStayControllerConstructorParams) {
+    this.#service = new StayService({ db, idValidator });
     this.#logger = createLogger({
       packageName: PackageEnum.stay,
       className: "StayController",
     });
   }
 
-  // { identifier }: IStayControllerGetParams
-  get = async ({ callback }: ILambdaArgs) => {
-    const stay = {
-      id: "3149209fgj09h2",
-      title: "sdifjiosdjfoiwe",
-      imgUrls: ["sdfjs", "fhfhw"],
+  get = async ({ callback }: ILambdaArgs): Promise<void> => {
+    console.log("ENTERED");
+    const identifier = {
+      KEY: {
+        stayId: {
+          S: "fsdafsdaf",
+        },
+      },
+      ProjectionExpression: "title",
     };
+
+    const stay = await this.#service.get({ identifier });
+    console.log("STAY", stay);
     callback(null, {
       statusCode: 200,
       body: JSON.stringify({
         stay,
       }),
     });
-    // try {
-    //   // this.#service.get({ identifier });
-    //   res
-    //     .code(200)
-    //     .header("Content-Type", "application/json; charset=utf-8")
-    //     .send({ body: "stay service: GET" });
-    // } catch (error) {
-    //   this.#logger.error({ location: "get:get", message: error as string });
-    //   res
-    //     .code(400)
-    //     .header("Content-Type", "application/json; charset=utf-8")
-    //     .send({ body: error });
-    // }
   };
 
-  post = async ({ callback }: ILambdaArgs) => {
+  post = async ({ callback, event }: ILambdaArgs): Promise<void> => {
     try {
-      // const stay = await this.#service.post({ data });
+      const stay = await this.#service.post({ data: event.data });
       callback(null, {
         statusCode: 200,
-        body: JSON.stringify({}),
+        body: JSON.stringify({
+          stay,
+        }),
       });
     } catch (error) {
       this.#logger.error({ location: "get:get", message: error as string });
@@ -61,16 +58,19 @@ export class StayController {
     }
   };
 
-  delete = async ({ callback }: ILambdaArgs) => {
+  delete = async ({ callback }: ILambdaArgs): Promise<void> => {
     try {
-      // const stay = await this.#service.delete({ identifier });
+      // const stay = await this.#service.delete({ identifier: event.data });
 
       callback(null, {
         statusCode: 200,
         body: JSON.stringify({}),
       });
     } catch (error) {
-      console.error(`[@stay#deleteStayResponse/deleteStay]`);
+      this.#logger.error({
+        location: "delete:delete",
+        message: error as string,
+      });
       callback(
         {
           statusCode: 400,
@@ -81,9 +81,12 @@ export class StayController {
     }
   };
 
-  async patch({ callback }: ILambdaArgs): Promise<void> {
+  patch = async ({ callback }: ILambdaArgs): Promise<void> => {
     try {
-      // const stay = await this.#service.patch({ identifier, data });
+      // const stay = await this.#service.patch({
+      //   identifier: event.data.id,
+      //   data: event.data.data,
+      // });
       const stay = {
         id: "2309ru90jg9",
         title: "A good house",
@@ -100,7 +103,7 @@ export class StayController {
         body: JSON.stringify({}),
       });
     } catch (error) {
-      console.error(`[@stay#patchStayResponse/patchStay]`);
+      this.#logger.error({ location: "patch:patch", message: error as string });
       callback(
         {
           statusCode: 400,
@@ -109,5 +112,5 @@ export class StayController {
         null
       );
     }
-  }
+  };
 }

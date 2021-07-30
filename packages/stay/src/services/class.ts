@@ -26,27 +26,21 @@ export class StayService implements IStayService {
 
   async get({ identifier }: IStayServiceGet) {
     try {
-      if (this.#idValidator({ identifier })) {
+      if (!this.#idValidator({ identifier })) {
         throw new Error("Must be a valid id");
       }
-    } catch (error) {
-      this.#logger.error({
-        location: "get:idValidator",
-        message: error as string,
-      });
-    }
-    try {
       const stay = await this.#db.findOne({
         identifier,
         tableName: "StayService",
       });
+      console.log("STAY", stay);
       if (!stay) {
         throw new Error("Did find matching id");
       }
       return stay;
     } catch (error) {
       this.#logger.error({
-        location: "get:findOne",
+        location: "get:idValidator",
         message: error as string,
       });
     }

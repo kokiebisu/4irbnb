@@ -1,4 +1,3 @@
-import { AttributeValue } from "@aws-sdk/client-dynamodb";
 import { IRegion } from "@nextbnb/common";
 
 export interface IDatabaseService {
@@ -65,14 +64,7 @@ export interface IWithDataParams {
  * @public
  */
 export interface IWithIdentifierParams {
-  identifier: IDataIdentifier;
-}
-
-/**
- * @public
- */
-export interface IDataIdentifier {
-  [key: string]: AttributeValue;
+  identifier: {} | undefined;
 }
 
 /**

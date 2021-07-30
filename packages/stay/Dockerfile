@@ -1,43 +1,68 @@
-FROM amazon/aws-lambda-nodejs:14 as builder
+FROM node:14-alpine as builder
 
 WORKDIR /nextbnb
 RUN npm install lerna -g
 
-COPY package.json lerna.json tsconfig.json tsconfig.settings.json ./
-# RUN npm install
+COPY package.json lerna.json tsconfig.json tsconfig.settings.json yarn.lock ./
+RUN yarn
+RUN yarn cache clean
 
 WORKDIR /nextbnb/packages
-COPY tsconfig.json .
+COPY packages/tsconfig.json .
 
-# COMMON
 WORKDIR /nextbnb/packages/common
-COPY packages/common/package.json packages/common/tsconfig.json ./
-COPY packages/common/src ./src
-RUN npm install
-RUN npm run build
+COPY packages/common ./
 
-### DATABASE
 WORKDIR /nextbnb/packages/database
-COPY packages/database/package.json packages/database/tsconfig.json ./
-COPY packages/database/src ./src
-RUN npm install
-RUN npm run build
+COPY packages/database ./
 
-### STAY
 WORKDIR /nextbnb/packages/stay
-COPY packages/stay/package.json packages/stay/tsconfig.json ./
-COPY packages/stay/src ./src
-RUN npm install typescript -g
-ENV NODE_ENV=production
-RUN npm install
-RUN npm run build
+COPY packages/stay ./
+
+RUN yarn --pure-lockfile --non-interactive
+
+WORKDIR /nextbnb/packages/common
+RUN yarn build
+RUN yarn cache clean
+
+WORKDIR /nextbnb/packages/database
+RUN yarn build
+RUN yarn cache clean
+
+WORKDIR /nextbnb/packages/stay
+RUN yarn build
+RUN yarn cache clean
+
+FROM node:14-alpine as extract
+WORKDIR /nextbnb
+
+COPY package.json yarn.lock ./
+
+WORKDIR /nextbnb/packages/common
+COPY --from=builder /nextbnb/packages/common/package.json ./
+COPY --from=builder /nextbnb/packages/common/dist ./dist
+
+WORKDIR /nextbnb/packages/database
+COPY --from=builder /nextbnb/packages/database/package.json ./
+COPY --from=builder /nextbnb/packages/database/dist ./dist
+
+WORKDIR /nextbnb/packages/stay
+COPY --from=builder /nextbnb/packages/stay/package.json ./
+COPY --from=builder /nextbnb/packages/stay/dist ./dist
+
+WORKDIR /nextbnb
+
+RUN yarn install --pure-lockfile --non-interactive --production
 
 FROM amazon/aws-lambda-nodejs:14 as prod
+
 WORKDIR /var/task
-RUN mkdir -p node_modules/@nextbnb
-COPY --from=builder /nextbnb/packages/stay/node_modules/@nextbnb/common ./node_modules/@nextbnb/common
-COPY --from=builder /nextbnb/packages/stay/node_modules/@nextbnb/database ./node_modules/@nextbnb/database
-COPY --from=builder /nextbnb/packages/stay/package.json .
-COPY --from=builder /nextbnb/packages/stay/dist ./dist
+
+COPY --from=extract /nextbnb/packages/stay/package.json .
+COPY --from=extract /nextbnb/packages/stay/dist ./dist
+COPY --from=extract /nextbnb/node_modules/ ./node_modules
+COPY --from=extract /nextbnb/node_modules/@nextbnb/common ./node_modules/@nextbnb/common
+COPY --from=extract /nextbnb/node_modules/@nextbnb/database ./node_modules/@nextbnb/database
+
 
 CMD ["dist/index.handler"]

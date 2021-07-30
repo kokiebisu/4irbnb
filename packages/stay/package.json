@@ -1,5 +1,5 @@
 {
-  "name": "@nextbnb/service-stay",
+  "name": "@nextbnb/stay",
   "version": "1.1.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,10 +13,11 @@
     "clean": "rimraf dist *.tsbuildinfo",
     "build": "tsc -b .",
     "dev": "export AWS_PROFILE=personal && ts-node-dev src/index.ts",
-    "test": "jest --passWithNoTests --concurrency 1",
+    "test": "jest --passWithNoTests",
     "lint": "eslint src --ext js,ts,tsx",
     "extract": "api-extractor run --local",
-    "deploy": "cd ../../ && yarn docker:stay && docker tag nextbnb-stay:latest 776733965771.dkr.ecr.us-east-1.amazonaws.com/nextbnb-stay:latest && docker push 776733965771.dkr.ecr.us-east-1.amazonaws.com/nextbnb-stay:latest"
+    "aws:authenticate": "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 776733965771.dkr.ecr.us-east-1.amazonaws.com",
+    "deploy": "yarn aws:authenticate && cd ../../ && yarn docker:stay && docker tag nextbnb-stay:latest 776733965771.dkr.ecr.us-east-1.amazonaws.com/nextbnb-stay:latest && docker push 776733965771.dkr.ecr.us-east-1.amazonaws.com/nextbnb-stay:latest"
   },
   "dependencies": {
     "@nextbnb/common": "file:../common",
