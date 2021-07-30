@@ -5,5 +5,5 @@
 export interface IStay {
   id: string;
   title: string;
-  imgUrls: Set<string>;
+  imgUrls: string[];
 }

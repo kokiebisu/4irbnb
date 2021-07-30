@@ -51,13 +51,13 @@ export class StayService implements IStayService {
         return null;
       }
 
-      if (isStay(stay)) {
+      if (!isStay(stay)) {
         throw new InternalError({
           location: "get:isStay",
-          message: "Did find matching id",
+          message: "Not a valid stay was retrieved",
         });
       }
-      return stay;
+      return { ...stay, imgUrls: Array.from(stay.imgUrls) };
     } catch (error) {
       if (error instanceof InternalError) {
         const { location, message } = error;
@@ -71,6 +71,7 @@ export class StayService implements IStayService {
           message: error as string,
         });
       }
+      return null;
     }
   }
 

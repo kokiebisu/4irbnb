@@ -16,9 +16,5 @@ import { IStay } from "./type";
  * ```
  */
 export function isStay(arg: any): arg is IStay {
-  return (
-    typeof arg.id === "string" &&
-    typeof arg.title === "string" &&
-    arg.imgUrls instanceof Set
-  );
+  return typeof arg.id === "string" && typeof arg.title === "string";
 }

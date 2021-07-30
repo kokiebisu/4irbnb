@@ -1,5 +1,5 @@
 export const data = {
   id: "test id",
   title: "test title",
-  imgUrls: new Set(["test img 1", "test img 2"]),
+  imgUrls: ["test img", "test img2"],
 };

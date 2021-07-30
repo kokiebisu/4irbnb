@@ -3,17 +3,21 @@ import { StayService } from "../src/services/class";
 import { data } from "./data";
 
 describe("delete", () => {
+  const db = createDatabase({ region: "us-east-1" });
+  let stay;
+  const service = new StayService({
+    db,
+    idValidator: () => {
+      return true;
+    },
+  });
+  beforeAll(async () => {
+    await service.post({ data });
+  });
+  /** TESTS */
   it("removes data properly from database", async () => {
-    const db = createDatabase({ region: "us-east-1" });
-    const service = new StayService({
-      db,
-      idValidator: () => {
-        return true;
-      },
-    });
-
-    await service.delete({ identifier: data.id });
-    const stay = await service.get({ identifier: data.id });
+    await service.delete({ identifier: { id: data.id } });
+    stay = await service.get({ identifier: { id: data.id } });
     expect(stay).toBeNull();
   });
 });
