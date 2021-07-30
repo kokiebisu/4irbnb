@@ -1,4 +1,4 @@
-import { createStay, isStay } from "../models";
+import { createStay, isStay, IStay } from "../models";
 import {
   IStayServiceDelete,
   IStayServiceGet,
@@ -34,7 +34,7 @@ export class StayService implements IStayService {
    * @param param0
    * @returns
    */
-  async get({ identifier }: IStayServiceGet) {
+  async get({ identifier }: IStayServiceGet): Promise<IStay | null> {
     try {
       if (!this.#idValidator({ identifier })) {
         throw new InternalError({

@@ -2,7 +2,7 @@ import { IStay } from "../models";
 import { IDatabaseService, IWithIdentifierParams } from "@nextbnb/database";
 
 export interface IStayService {
-  get(params: IStayServiceGet): Promise<IStay>;
+  get(params: IStayServiceGet): Promise<IStay | null>;
   post(params: IStayServicePost): Promise<void>;
   delete(params: IStayServiceDelete): Promise<void>;
   // patch(params: IStayServicePatch): Promise<IStay>;
