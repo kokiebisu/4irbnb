@@ -1,5 +1,5 @@
 variable "app_name" {
-  type = string
+  type    = string
   default = "nextbnb"
 }
 variable "region" {
@@ -9,11 +9,11 @@ variable "region" {
 }
 
 variable "aws_access_key" {
-  type = string
+  type      = string
   sensitive = true
 }
 
 variable "aws_secret_key" {
-  type = string
+  type      = string
   sensitive = true
 }

@@ -13,7 +13,7 @@ export const registerPostStay = async ({ event, callback }: ILambdaArgs) => {
       idValidator: ({}) => {
         return true;
       },
-    }).post({ payload: event.payload });
+    }).post({ data: event.payload.data });
 
     callback(null, response);
   }
