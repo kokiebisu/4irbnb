@@ -25,7 +25,8 @@ const Options = ({ options }: { options: OptionsProps }): JSX.Element => {
 
 export type MenuModalTemplateProps = {
   authenticated?: boolean;
-  options: OptionsProps;
+  topOptions: OptionsProps;
+  bottomOptions: OptionsProps;
 };
 
 /**
@@ -33,30 +34,25 @@ export type MenuModalTemplateProps = {
  */
 export const MenuModalTemplate = ({
   authenticated = false,
-  options,
+  topOptions,
+  bottomOptions,
 }: MenuModalTemplateProps): JSX.Element => {
   return (
     <div
-      style={{ width: 230, backgroundColor: "white" }}
-      className="w-full py-2 rounded-lg"
+      style={{ width: 230, padding: "14px 0" }}
+      className="w-full rounded-2xl bg-white shadow-lg"
     >
       <div className="w-full">
         {authenticated ? (
-          <Options options={options} />
+          <Options options={topOptions} />
         ) : (
-          <Options options={options} />
+          <Options options={topOptions} />
         )}
-        <div style={{ height: 1 }} className="w-full bg-gray-400 my-2"></div>
+        <div style={{ height: 1 }} className="w-full bg-gray-200 my-2"></div>
         {authenticated ? (
-          <Options options={options} />
+          <Options options={bottomOptions} />
         ) : (
-          <Options options={options} />
-        )}
-        {authenticated && (
-          <>
-            <div className="w-full bg-gray-600 my-2"></div>
-            <Options options={options} />
-          </>
+          <Options options={bottomOptions} />
         )}
       </div>
     </div>

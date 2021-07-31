@@ -119,10 +119,32 @@ export const LandingHeaderTemplate = ({
             authenticated={data}
             criteria={toggleState.menu}
             dispatch="toggle_menu"
-            options={[
+            topOptions={[
+              {
+                name: "Sign up",
+                handleClick: () => toggleDispatch({ type: "toggle_auth" }),
+                bold: true,
+              },
               {
                 name: "Login",
-                handleClick: () => toggleDispatch({ type: "toggle_auth" }),
+                handleClick: () => alert("Clicked"),
+                bold: false,
+              },
+            ]}
+            bottomOptions={[
+              {
+                name: "Host your home",
+                handleClick: () => alert("Clicked"),
+                bold: false,
+              },
+              {
+                name: "Host an experience",
+                handleClick: () => alert("Clicked"),
+                bold: false,
+              },
+              {
+                name: "Help",
+                handleClick: () => alert("Clicked"),
                 bold: false,
               },
             ]}
