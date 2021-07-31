@@ -18,11 +18,16 @@ provider "aws" {
   secret_key = var.aws_secret_key
   region  = var.region
 }
+
 module "services" {
   source = "../packages/terraform"
 }
 
-module "auth" {
-  source = "../packages/service-auth/terraform"
+module "stay" {
+  source = "../packages/stay/terraform"
+
+  read_capacity = 10
+  write_capacity = 10
 }
+
 
