@@ -1,10 +1,12 @@
 import { ILoggerService, PackageEnum } from "@nextbnb/common";
 import { createLogger } from "@nextbnb/common";
 import { IStayControllerConstructorParams } from ".";
+import { isStay } from "../models";
 import { IStayService, StayService } from "../services";
 import {
   IStayControllerDeleteParams,
   IStayControllerGetParams,
+  IStayControllerPatchParams,
   IStayControllerPostParams,
 } from "./types";
 
@@ -77,36 +79,28 @@ export class StayController {
     }
   }
 
-  // patch = async ({ callback }: IStayControllerPatchParams): Promise<void> => {
-  //   try {
-  //     // const stay = await this.#service.patch({
-  //     //   identifier: event.data.id,
-  //     //   data: event.data.data,
-  //     // });
-  //     const stay = {
-  //       id: "2309ru90jg9",
-  //       title: "A good house",
-  //       imgUrls: ["asfjiosdajfoi", "sfhaiusdhfiusa"],
-  //     };
-  //     if (!isStay(stay)) {
-  //       this.#logger.error({
-  //         location: "patch:isStay",
-  //         message: "Data was not a stay type",
-  //       });
-  //     }
-  //     callback(null, {
-  //       statusCode: 200,
-  //       body: JSON.stringify({}),
-  //     });
-  //   } catch (error) {
-  //     this.#logger.error({ location: "patch:patch", message: error as string });
-  //     callback(
-  //       {
-  //         statusCode: 400,
-  //         body: "Something went wrong",
-  //       },
-  //       null
-  //     );
-  //   }
-  // };
+  async patch({ identifier, data }: IStayControllerPatchParams): Promise<any> {
+    try {
+      const stay = await this.#service.patch({
+        identifier,
+        data,
+      });
+      if (!isStay(stay)) {
+        this.#logger.error({
+          location: "patch:isStay",
+          message: "Data was not a stay type",
+        });
+      }
+      return {
+        statusCode: 200,
+        body: stay,
+      };
+    } catch (error) {
+      this.#logger.error({ location: "patch:patch", message: error as string });
+      return {
+        statusCode: 400,
+        body: "Something went wrong",
+      };
+    }
+  }
 }

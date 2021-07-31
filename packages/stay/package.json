@@ -12,12 +12,11 @@
     "start": "node dist/index.js",
     "clean": "rimraf dist *.tsbuildinfo",
     "build": "tsc -b .",
-    "dev": "export AWS_PROFILE=personal && ts-node-dev src/index.ts",
     "test": "jest --passWithNoTests",
     "lint": "eslint src --ext js,ts,tsx",
     "extract": "api-extractor run --local",
     "aws:authenticate": "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 776733965771.dkr.ecr.us-east-1.amazonaws.com",
-    "deploy": "yarn aws:authenticate && cd ../../ && yarn docker:stay && docker tag nextbnb-stay:latest 776733965771.dkr.ecr.us-east-1.amazonaws.com/nextbnb-stay:latest && docker push 776733965771.dkr.ecr.us-east-1.amazonaws.com/nextbnb-stay:latest"
+    "deploy": "bash script/deploy.sh"
   },
   "dependencies": {
     "@nextbnb/common": "file:../common",

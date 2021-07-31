@@ -1,8 +1,13 @@
-import { DynamoDBClient, PutItemCommand } from "@aws-sdk/client-dynamodb";
+import {
+  DynamoDBClient,
+  PutItemCommand,
+  Update,
+} from "@aws-sdk/client-dynamodb";
 import {
   DeleteCommand,
   DynamoDBDocumentClient,
   GetCommand,
+  UpdateCommand,
 } from "@aws-sdk/lib-dynamodb";
 import { createLogger, PackageEnum, TRegion } from "@nextbnb/common";
 import { LoggerService } from "@nextbnb/common/dist/utils/logger/class";
@@ -11,6 +16,7 @@ import {
   IDatabaseServiceDeleteParams,
   IDatabaseServiceFindOneParams,
   IDatabaseServiceInsertParams,
+  IDatabaseServiceUpdateParams,
 } from "../types";
 import { translateConfig } from "./config";
 import { IDynamoDBConstructorParams } from "./types";
@@ -92,6 +98,27 @@ export class DynamoDBService implements IDatabaseService {
     } catch (error) {
       this.#logger.error({
         location: "delete:send",
+        message: error as string,
+      });
+    }
+  }
+
+  /**
+   * Update operation performed on the DynamoDB database
+   * @param param0
+   */
+  async update({ tableName, identifier }: IDatabaseServiceUpdateParams) {
+    this.setup();
+    try {
+      await this.#client?.send(
+        new UpdateCommand({
+          TableName: tableName,
+          Key: identifier,
+        })
+      );
+    } catch (error) {
+      this.#logger.error({
+        location: "update:send",
         message: error as string,
       });
     }

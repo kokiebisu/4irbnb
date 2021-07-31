@@ -52,4 +52,15 @@ export class DatabaseService {
       });
     }
   }
+
+  async update({ tableName, identifier, data }: IDatabaseServiceDeleteParams) {
+    try {
+      await this.#client.update({ tableName, identifier, data });
+    } catch (error) {
+      this.#logger.error({
+        location: "update:update",
+        message: error as string,
+      });
+    }
+  }
 }

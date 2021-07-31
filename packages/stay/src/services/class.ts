@@ -5,6 +5,7 @@ import {
   IStayServicePost,
   IStayService,
   IStayServiceConstructorParams,
+  IStayServicePatch,
 } from "./types";
 import { IDatabaseService } from "@nextbnb/database";
 import {
@@ -165,50 +166,47 @@ export class StayService implements IStayService {
     }
   }
 
-  // async patch({ identifier, data }: IStayServicePatch) {
-  //   try {
-  //     if (this.#idValidator({ identifier })) {
-  //       throw new Error("Must be a valid id");
-  //     }
-  //   } catch (error) {
-  //     this.#logger.error({
-  //       location: "patch:idValidator",
-  //       message: error as string,
-  //     });
-  //   }
+  async patch({ identifier, data }: IStayServicePatch) {
+    try {
+      if (!this.#idValidator({ identifier })) {
+        throw new InternalError({
+          location: "patch:{idValidator}",
+          message: "Must be a valid id",
+        });
+      }
+      const stay = await this.#db.findOne({
+        identifier,
+        tableName: this.#tableName,
+      });
 
-  //   let stay;
-
-  //   try {
-  //     stay = await this.#db.findOne({
-  //       identifier,
-  //       tableName: this.#tableName,
-  //     });
-  //     if (!stay) {
-  //       throw new Error("Not found");
-  //     }
-  //   } catch (error) {
-  //     this.#logger.error({
-  //       location: "patch:findOne",
-  //       message: error as string,
-  //     });
-  //   }
-  //   const newStay = createStay({
-  //     ...stay,
-  //     ...data,
-  //   });
-
-  //   try {
-  //     return await this.#db.update({
-  //       id: newStay.id,
-  //       title: newStay.title,
-  //       imgUrls: newStay.imgUrls,
-  //     });
-  //   } catch (error) {
-  //     this.#logger.error({
-  //       location: "patch:update",
-  //       message: error as string,
-  //     });
-  //   }
-  // }
+      const newStay = createStay({
+        ...stay,
+        ...data,
+      });
+      if (!stay) {
+        throw new InternalError({
+          location: "patch:{stay}",
+          message: "Not found",
+        });
+      }
+      return await this.#db.update({
+        tableName: this.#tableName,
+        identifier,
+        data: newStay,
+      });
+    } catch (error) {
+      if (error instanceof InternalError) {
+        const { location, message } = error;
+        this.#logger.error({
+          location,
+          message,
+        });
+      } else {
+        this.#logger.error({
+          location: "patch:update",
+          message: error as string,
+        });
+      }
+    }
+  }
 }
