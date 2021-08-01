@@ -1,14 +1,29 @@
-import { useAuthDispatch } from "@context/auth";
+import { useAuthDispatch, useAuthState } from "@context/auth";
+import { useFormik } from "formik";
 
 export type AuthTypeVariants = "email" | "facebook" | "google" | "apple";
 
-export const useAuthPrototype = () => {
+export const usePhonePrototype = () => {
   const authDispatch = useAuthDispatch();
+  const authState = useAuthState();
+
+  const formik = useFormik({
+    initialValues: {
+      region: "",
+      tel: "",
+    },
+    // validate,
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
+    },
+  });
+
   const handleFacebookLogin = () => alert("facebook login");
-  const handleEmailLogin = () => authDispatch({ type: "auth_email" });
+  const handleEmailLogin = () => authDispatch({ type: "email" });
   const handleGoogleLogin = () => alert("google login");
   const handleAppleLogin = () => alert("apple login");
-  const handlePhoneLogin = () => authDispatch({ type: "auth_phone" });
+
+  const handleRegionChange = (e: any) => formik.handleChange(e);
 
   const authMethods = [
     {
@@ -40,7 +55,7 @@ export const useAuthPrototype = () => {
     },
   ];
 
-  const email = {
+  const emailSwitchButton = {
     name: "Email",
     icon: {
       variant: "general" as const,
@@ -50,15 +65,22 @@ export const useAuthPrototype = () => {
     handleClick: handleEmailLogin,
   };
 
-  const phone = {
-    name: "Phone",
-    icon: {
-      variant: "general" as const,
-      generalType: "phone" as const,
-      width: 17,
-    },
-    handleClick: handlePhoneLogin,
-  };
+  const handlePhoneNumberChange = (e: any) => formik.handleChange(e);
+  const handleEmailChange = (e: any) => formik.handleChange(e);
 
-  return { authMethods, email, phone };
+  const handleSubmit = (e: any) => formik.handleSubmit(e);
+
+  return {
+    display: authState.display,
+    region: formik.values.region,
+    tel: formik.values.tel,
+    regionError: !!formik.errors.region,
+    telError: !!formik.errors.region,
+    authMethods,
+    handleSubmit,
+    handleRegionChange,
+    handlePhoneNumberChange,
+    handleEmailChange,
+    emailSwitchButton,
+  };
 };
