@@ -1,7 +1,7 @@
 import { createStorage } from "../src/storage";
 import { storageData } from "./mock";
 
-describe("Storage Service", () => {
+describe.skip("Storage Service", () => {
   const service = createStorage();
   const { storageName, key, content } = storageData;
   it("checks if created storage exists", async () => {

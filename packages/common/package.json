@@ -11,7 +11,7 @@
     "update": "rimraf node_modules && yarn",
     "clean": "rimraf dist *.tsbuildinfo",
     "build": "tsc -b .",
-    "test": "jest --passWithNoTests --detectOpenHandles",
+    "test": "jest --passWithNoTests --detectOpenHandles --runInBand",
     "lint": "eslint src --ext js,ts,tsx",
     "extract": "api-extractor run --local"
   },
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.24.0",
+    "@aws-sdk/client-ssm": "^3.24.0",
     "@types/connect": "^3.4.35",
     "connect": "^3.7.0",
     "cors": "^2.8.5",
