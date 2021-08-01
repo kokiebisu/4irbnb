@@ -1,4 +1,5 @@
 import { useAuthDispatch, useAuthState } from "@context/auth";
+import { authClient } from "../../../../../auth/okta";
 import { useFormik } from "formik";
 
 export type AuthTypeVariants = "email" | "facebook" | "google" | "apple";
@@ -12,7 +13,11 @@ export const useEmailPrototype = () => {
       email: "",
     },
     // validate,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
+      const idToken = await authClient.token.getWithRedirect({
+        responseType: "id_token",
+      });
+      console.log("ITTOKEN", idToken);
       alert(JSON.stringify(values, null, 2));
     },
   });
