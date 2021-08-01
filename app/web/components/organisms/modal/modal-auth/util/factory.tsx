@@ -1,7 +1,9 @@
 import React from "react";
+import { EmailPrototype } from "../email";
 
 import { ExistsPrototype } from "../exists";
 import { ForgotPasswordPrototype } from "../forgot";
+import { PhonePrototype } from "../phone";
 import { SignupPrototype } from "../signup";
 
 export const factory = (props) => {

@@ -57,7 +57,7 @@ export const AuthModalTemplate = (): JSX.Element => {
         </div>
       </div>
       <div className="overflow-y-auto">
-        <Prototype variant={authState.template} />
+        <Prototype variant={authState.display} />
       </div>
     </div>
   );

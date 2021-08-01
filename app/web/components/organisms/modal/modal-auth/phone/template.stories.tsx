@@ -15,6 +15,4 @@ const PhonePrototypeStory: Story<PhonePrototypeTemplateProps> = (args) => (
 );
 
 export const Auth = PhonePrototypeStory.bind({});
-Auth.args = {
-  variant: "phone",
-};
+Auth.args = {};

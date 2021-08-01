@@ -11,42 +11,22 @@ export interface EmailPrototypeTemplateProps {
     icon: any;
     handleClick: any;
   };
-  emailSwitchButton: {
-    name: string;
-    icon: any;
-    handleClick: any;
-  };
   handleSubmit: () => void;
-  handleRegionChange: (e: any) => void;
-  handlePhoneNumberChange: (e: any) => void;
   handleEmailChange: (e: any) => void;
-  display: "auth_phone" | "auth_email";
-  region: string;
-  regionError: boolean;
   email: string;
   emailError: boolean;
-  tel: string;
-  telError: boolean;
 }
 
 /**
  * Renders the auth template component
  */
 export const EmailPrototypeTemplate = ({
-  display,
-  region,
-  regionError,
-  tel,
-  telError,
   email,
   emailError,
   authMethods,
   handleSubmit,
-  handleRegionChange,
-  handlePhoneNumberChange,
   handleEmailChange,
   phoneSwitchButton,
-  emailSwitchButton,
 }: EmailPrototypeTemplateProps): JSX.Element => {
   return (
     <div className="p-5">
@@ -55,35 +35,14 @@ export const EmailPrototypeTemplate = ({
           <h3 className="text-xl">Welcome to Airbnb</h3>
         </div>
         <form onSubmit={handleSubmit}>
-          {display === "auth_phone" ? (
-            <div className="mb-2">
-              <div>
-                <Input
-                  variant="region"
-                  direction="bottom"
-                  onChange={handleRegionChange}
-                  value={region}
-                  errors={regionError}
-                />
-                <Input
-                  variant="phone"
-                  direction="top"
-                  onChange={handlePhoneNumberChange}
-                  value={tel}
-                  errors={telError}
-                />
-              </div>
-            </div>
-          ) : (
-            <div className="mb-2">
-              <Input
-                variant="email"
-                onChange={handleEmailChange}
-                value={email}
-                errors={emailError}
-              />
-            </div>
-          )}
+          <div className="mb-2">
+            <Input
+              variant="email"
+              onChange={handleEmailChange}
+              value={email}
+              errors={emailError}
+            />
+          </div>
           <div>
             <p className="font-thin text-gray-500 text-sm">
               We’ll call or text you to confirm your number. Standard message
@@ -121,27 +80,15 @@ export const EmailPrototypeTemplate = ({
               </div>
             );
           })}
-          {display === "auth_phone" ? (
-            <div className="my-4">
-              <Button
-                variant="auth"
-                onClick={emailSwitchButton.handleClick}
-                icon={<Icon {...emailSwitchButton.icon} />}
-                name={emailSwitchButton.name}
-                stretched
-              />
-            </div>
-          ) : (
-            <div className="my-4">
-              <Button
-                variant="auth"
-                onClick={phoneSwitchButton.handleClick}
-                icon={<Icon {...phoneSwitchButton.icon} />}
-                name={phoneSwitchButton.name}
-                stretched
-              />
-            </div>
-          )}
+          <div className="my-4">
+            <Button
+              variant="auth"
+              onClick={phoneSwitchButton.handleClick}
+              icon={<Icon {...phoneSwitchButton.icon} />}
+              name={phoneSwitchButton.name}
+              stretched
+            />
+          </div>
         </div>
       </div>
     </div>

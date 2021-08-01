@@ -11,7 +11,6 @@ export const usePhonePrototype = () => {
     initialValues: {
       region: "",
       tel: "",
-      email: "",
     },
     // validate,
     onSubmit: (values) => {
@@ -20,10 +19,9 @@ export const usePhonePrototype = () => {
   });
 
   const handleFacebookLogin = () => alert("facebook login");
-  const handleEmailLogin = () => authDispatch({ type: "auth_email" });
+  const handleEmailLogin = () => authDispatch({ type: "email" });
   const handleGoogleLogin = () => alert("google login");
   const handleAppleLogin = () => alert("apple login");
-  const handlePhoneLogin = () => authDispatch({ type: "auth_phone" });
 
   const handleRegionChange = (e: any) => formik.handleChange(e);
 
@@ -67,16 +65,6 @@ export const usePhonePrototype = () => {
     handleClick: handleEmailLogin,
   };
 
-  const phoneSwitchButton = {
-    name: "Phone",
-    icon: {
-      variant: "general" as const,
-      generalType: "phone" as const,
-      width: 17,
-    },
-    handleClick: handlePhoneLogin,
-  };
-
   const handlePhoneNumberChange = (e: any) => formik.handleChange(e);
   const handleEmailChange = (e: any) => formik.handleChange(e);
 
@@ -84,10 +72,8 @@ export const usePhonePrototype = () => {
 
   return {
     display: authState.display,
-    email: formik.values.email,
     region: formik.values.region,
     tel: formik.values.tel,
-    emailError: formik.errors.email,
     regionError: !!formik.errors.region,
     telError: !!formik.errors.region,
     authMethods,
@@ -96,6 +82,5 @@ export const usePhonePrototype = () => {
     handlePhoneNumberChange,
     handleEmailChange,
     emailSwitchButton,
-    phoneSwitchButton,
   };
 };
