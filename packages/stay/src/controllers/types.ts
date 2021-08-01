@@ -5,9 +5,6 @@ import {
 } from "@nextbnb/database";
 
 export interface IResponse {
-  headers: {
-    "Content-Type": string;
-  };
   statusCode: number;
   body: any;
 }
@@ -26,3 +23,11 @@ export interface IStayControllerConstructorParams {
   db: IDatabaseService;
   idValidator({ identifier }: IWithIdentifierParams): boolean;
 }
+
+export interface IStayControllerPayloadParams {
+  payload: any;
+}
+
+export interface IStayControllerPatchParams
+  extends IWithIdentifierParams,
+    IWithDataParams {}

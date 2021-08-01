@@ -28,7 +28,7 @@ export class LoggerService {
   error({ location, message }: IServiceErrorParams): void {
     this.#service.error({
       location: `${this.serviceLocation}:${location}`,
-      message: `[${this.serviceLocation}]:${message}`,
+      message,
     });
   }
 }

@@ -1,4 +1,3 @@
-import { AttributeValue } from "@aws-sdk/client-dynamodb";
 import { IRegion } from "@nextbnb/common";
 
 export interface IDatabaseService {
@@ -6,7 +5,7 @@ export interface IDatabaseService {
   findOne(params: IDatabaseServiceFindOneParams): Promise<any>;
   // findMany(params: IDatabaseServiceFindManyParams): Promise<any>;
   delete(params: IDatabaseServiceDeleteParams): Promise<void>;
-  // update(params: IDatabaseServiceUpdateParams): Promise<void>;
+  update(params: IDatabaseServiceUpdateParams): Promise<any>;
 }
 
 /**
@@ -52,7 +51,8 @@ export interface IDatabaseServiceDeleteParams
  */
 export interface IDatabaseServiceUpdateParams
   extends IWithIdentifierParams,
-    IWithDataParams {}
+    IWithDataParams,
+    IWithTableNameParams {}
 
 /**
  * @public
@@ -65,14 +65,7 @@ export interface IWithDataParams {
  * @public
  */
 export interface IWithIdentifierParams {
-  identifier: IDataIdentifier;
-}
-
-/**
- * @public
- */
-export interface IDataIdentifier {
-  [key: string]: AttributeValue;
+  identifier: {} | undefined;
 }
 
 /**

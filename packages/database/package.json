@@ -22,10 +22,12 @@
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.23.0",
+    "@aws-sdk/lib-dynamodb": "^3.24.0",
+    "@aws-sdk/util-dynamodb": "^3.24.0",
     "@nextbnb/common": "file:../common",
     "yarn": "^1.22.10"
   },
   "engines": {
-    "node": "14.17.3"
+    "node": ">= 14.17.1"
   }
 }
