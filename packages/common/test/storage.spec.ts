@@ -1,4 +1,4 @@
-import { createStorage } from "../src/storage";
+import { createStorage } from "../src/utils/storage";
 import { storageData } from "./mock";
 
 describe.skip("Storage Service", () => {

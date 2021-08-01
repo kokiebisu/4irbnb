@@ -7,8 +7,8 @@ import {
   DeleteBucketCommand,
   GetBucketLocationCommand,
 } from "@aws-sdk/client-s3";
-import { PackageEnum } from "../../enum";
-import { ILoggerService, createLogger } from "../../utils";
+import { PackageEnum } from "../../../enum";
+import { ILoggerService, createLogger } from "../..";
 
 import {
   IStorageService,

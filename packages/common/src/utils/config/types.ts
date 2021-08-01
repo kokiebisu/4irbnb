@@ -1,4 +1,4 @@
-import { PackageEnum } from "../enum";
+import { PackageEnum } from "../../enum";
 
 // Service
 export interface IConfigService {

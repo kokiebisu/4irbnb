@@ -4,8 +4,8 @@ import {
   PutParameterCommand,
   DeleteParameterCommand,
 } from "@aws-sdk/client-ssm";
-import { createLogger } from "../..";
-import { PackageEnum } from "../../enum";
+import { createLogger } from "../../..";
+import { PackageEnum } from "../../../enum";
 import {
   IConfigService,
   IConfigServiceDeleteParams,

@@ -21,9 +21,9 @@ const apiPermissions = [
  * Blueprint that implements the AuthService
  */
 export class AuthService {
-  #service: IAuthClient;
-  constructor({ service }: IAuthServiceConstructoParams) {
-    this.#service = service;
+  #client: IAuthClient;
+  constructor({ client }: IAuthServiceConstructoParams) {
+    this.#client = client;
   }
 
   /**
@@ -36,17 +36,17 @@ export class AuthService {
    * your token is verified and what your Identity Provider returns.
    */
   async validateToken({ authorizationToken }: IAuthServiceValidateTokenParams) {
-    this.#service.validateToken({ authorizationToken });
+    this.#client.validateToken({ authorizationToken });
   }
 
   async register({ data }: IAuthServiceRegisterParams) {
-    this.#service.register({
+    this.#client.register({
       data,
     });
   }
 
   async login({ email, password }: IAuthServiceLoginParams) {
-    this.#service.login({ email, password });
+    this.#client.login({ email, password });
   }
 
   /**

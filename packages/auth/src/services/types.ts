@@ -1,12 +1,21 @@
+/**
+ * @public
+ */
 export interface IAuthServiceConstructoParams {
-  service: IAuthClient;
+  client: IAuthClient;
 }
 
+/**
+ * @public
+ */
 export interface IAuthService extends IAuthClient {
   generateIAMPolicy(params: IAuthServiceGenerateIAMPolicyParams): IIAMPolicy;
   convertClaimsToPolicyStatements(params: IClaims): IIAMPolicyStatement[];
 }
 
+/**
+ * @public
+ */
 export interface IAuthClient {
   validateToken({
     authorizationToken,
@@ -15,6 +24,9 @@ export interface IAuthClient {
   login(params: any): Promise<any>;
 }
 
+/**
+ * @public
+ */
 export interface IIAMPolicy {
   prinicpalId: string;
   policyDocument: {
@@ -23,26 +35,41 @@ export interface IIAMPolicy {
   };
 }
 
+/**
+ * @public
+ */
 export interface IClaims {
   [key: string]: any;
 }
 
+/**
+ * @public
+ */
 export interface IIAMPolicyStatement {
   Action: string;
   Effect: string;
   Resource: string;
 }
 
+/**
+ * @public
+ */
 export interface IAuthServiceGenerateIAMPolicyParams {
   claims: { method: "*"; path: string }[];
   awsAccountId: string;
   apiGatewayARN: string;
 }
 
+/**
+ * @public
+ */
 export interface IAuthServiceValidateTokenParams {
   authorizationToken: string;
 }
 
+/**
+ * @public
+ */
 export interface IAuthServiceRegisterParams {
   data: {
     firstName: string;
@@ -55,6 +82,9 @@ export interface IAuthServiceRegisterParams {
   };
 }
 
+/**
+ * @public
+ */
 export interface IAuthServiceLoginParams {
   firstName: string;
   lastName: string;

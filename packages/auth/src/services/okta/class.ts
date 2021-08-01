@@ -12,7 +12,7 @@ import { createLogger, ILoggerService, PackageEnum } from "@nextbnb/common";
  * Implementation of the AuthService using the Okta Client
  */
 export class OktaClient implements IAuthClient {
-  #client: any;
+  #package: any;
   #verifier: any;
   #logger: ILoggerService;
 
@@ -30,8 +30,8 @@ export class OktaClient implements IAuthClient {
    * @public
    */
   private async configureClient() {
-    if (!this.#client) {
-      this.#client = new Client({});
+    if (!this.#package) {
+      this.#package = new Client({});
     }
   }
 
@@ -91,7 +91,7 @@ export class OktaClient implements IAuthClient {
       },
     };
     try {
-      const user = await this.#client.createUser(newUser);
+      const user = await this.#package.createUser(newUser);
       return user;
     } catch (error) {
       this.#logger.error({
