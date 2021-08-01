@@ -6,9 +6,20 @@ export interface IAuthService {
   validateToken({
     authorizationToken,
   }: IAuthServiceValidateTokenParams): Promise<boolean>;
-  generateIAMPolicy({ policyStatements }: any): any;
+  register(params: any): Promise<any>;
+  login(params: any): Promise<any>;
 }
 
 export interface IAuthServiceValidateTokenParams {
   authorizationToken: string;
+}
+
+export interface IAuthServiceRegisterParams {
+  firstName: string;
+  lastName: string;
+  birthYear: number;
+  birthMonth: number;
+  birthDay: number;
+  email: string;
+  password: string;
 }

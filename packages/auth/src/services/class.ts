@@ -38,6 +38,14 @@ export class AuthService {
     this.#service.validateToken({ authorizationToken });
   }
 
+  async register({}) {
+    this.#service.register({});
+  }
+
+  async login({}) {
+    this.#service.login({});
+  }
+
   /**
    * @public
    * Converts the claims to policy statements that can be used to generate iam policies to be returned

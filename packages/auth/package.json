@@ -20,6 +20,7 @@
   "dependencies": {
     "@nextbnb/aws": "file:../aws",
     "@nextbnb/common": "file:../common",
+    "@okta/okta-sdk-nodejs": "^5.0.0",
     "fastify": "^3.18.1"
   },
   "devDependencies": {
