@@ -1,81 +1,76 @@
-import { useFormik } from "formik";
-import { useAuthDispatch, useAuthState } from "@context/auth";
 import { Button, Icon, Input } from "@atoms";
-import { validateAuth as validate } from "@helper/auth";
-import { phone } from "@template/become-a-host/phone/mock";
 
-export interface AuthPrototypeTemplateProps {
+export interface EmailPrototypeTemplateProps {
   authMethods: {
     name: string;
     icon: any;
     handleClick: any;
   }[];
-  phone: {
+  phoneSwitchButton: {
     name: string;
     icon: any;
     handleClick: any;
   };
-  email: {
+  emailSwitchButton: {
     name: string;
     icon: any;
     handleClick: any;
   };
+  handleSubmit: () => void;
+  handleRegionChange: (e: any) => void;
+  handlePhoneNumberChange: (e: any) => void;
+  handleEmailChange: (e: any) => void;
+  display: "auth_phone" | "auth_email";
+  region: string;
+  regionError: boolean;
+  email: string;
+  emailError: boolean;
+  tel: string;
+  telError: boolean;
 }
 
 /**
  * Renders the auth template component
  */
-export const AuthPrototypeTemplate = ({
-  authMethods,
-  phone,
+export const EmailPrototypeTemplate = ({
+  display,
+  region,
+  regionError,
+  tel,
+  telError,
   email,
-}: AuthPrototypeTemplateProps): JSX.Element => {
-  const authState = useAuthState();
-  const authDispatch = useAuthDispatch();
-
-  const formik = useFormik({
-    initialValues: {
-      region: "",
-      phone: "",
-    },
-    validate,
-    onSubmit(values) {
-      alert(JSON.stringify(values, null, 2));
-    },
-  });
-
-  const switchAuth = () => {
-    if (authState.title === "Log in") {
-      // return authDispatch({ type: 'auth_signup' });
-    }
-    // return authDispatch({ type: 'auth_login' });
-  };
-
-  console.log("authState.display", authState.display);
-
+  emailError,
+  authMethods,
+  handleSubmit,
+  handleRegionChange,
+  handlePhoneNumberChange,
+  handleEmailChange,
+  phoneSwitchButton,
+  emailSwitchButton,
+}: EmailPrototypeTemplateProps): JSX.Element => {
   return (
     <div className="p-5">
       <div className="w-full">
-        <div className="mb-4">
-          <h3 className="text-2xl">Welcome to Airbnb</h3>
+        <div className="mb-6 mt-2">
+          <h3 className="text-xl">Welcome to Airbnb</h3>
         </div>
-        <form onSubmit={formik.handleSubmit}>
-          {authState.display === "auth_phone" ? (
+        <form onSubmit={handleSubmit}>
+          {display === "auth_phone" ? (
             <div className="mb-2">
               <div>
                 <Input
                   variant="region"
                   direction="bottom"
-                  onChange={formik.handleChange}
-                  value={formik.values.region}
-                  errors={!!formik.errors.region}
+                  onChange={handleRegionChange}
+                  value={region}
+                  errors={regionError}
                 />
                 <Input
                   variant="phone"
                   direction="top"
-                  onChange={formik.handleChange}
-                  value={formik.values.phone}
-                  errors={!!formik.errors.phone}
+                  onChange={handlePhoneNumberChange}
+                  value={tel}
+                  errors={telError}
                 />
               </div>
             </div>
@@ -83,9 +78,9 @@ export const AuthPrototypeTemplate = ({
             <div className="mb-2">
               <Input
                 variant="email"
-                onChange={formik.handleChange}
-                value={formik.values.region}
-                errors={!!formik.errors.region}
+                onChange={handleEmailChange}
+                value={email}
+                errors={emailError}
               />
             </div>
           )}
@@ -126,13 +121,13 @@ export const AuthPrototypeTemplate = ({
               </div>
             );
           })}
-          {authState.display === "auth_phone" ? (
+          {display === "auth_phone" ? (
             <div className="my-4">
               <Button
                 variant="auth"
-                onClick={email.handleClick}
-                icon={<Icon {...email.icon} />}
-                name={email.name}
+                onClick={emailSwitchButton.handleClick}
+                icon={<Icon {...emailSwitchButton.icon} />}
+                name={emailSwitchButton.name}
                 stretched
               />
             </div>
@@ -140,9 +135,9 @@ export const AuthPrototypeTemplate = ({
             <div className="my-4">
               <Button
                 variant="auth"
-                onClick={phone.handleClick}
-                icon={<Icon {...phone.icon} />}
-                name={phone.name}
+                onClick={phoneSwitchButton.handleClick}
+                icon={<Icon {...phoneSwitchButton.icon} />}
+                name={phoneSwitchButton.name}
                 stretched
               />
             </div>

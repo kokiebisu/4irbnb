@@ -1,13 +1,15 @@
 import React from "react";
-import { AuthPrototype } from "../auth";
+
 import { ExistsPrototype } from "../exists";
 import { ForgotPasswordPrototype } from "../forgot";
 import { SignupPrototype } from "../signup";
 
 export const factory = (props) => {
   switch (props.variant) {
-    case "auth":
-      return <AuthPrototype {...props} />;
+    case "phone":
+      return <PhonePrototype {...props} />;
+    case "email":
+      return <EmailPrototype {...props} />;
     case "exists":
       return <ExistsPrototype {...props} />;
     case "forgot":

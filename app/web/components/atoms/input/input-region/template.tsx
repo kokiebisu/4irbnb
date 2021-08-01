@@ -35,9 +35,10 @@ export const RegionInputTemplate = ({
         value
       )} flex relative items-center`}
     >
-      <div className={`h-full w-full relative `}>
+      <div className="h-full w-full relative">
         <select
           id="region"
+          name="region"
           onChange={onChange}
           value={value}
           onFocus={() => setFieldActive(true)}
