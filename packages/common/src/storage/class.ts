@@ -1,9 +1,11 @@
 import {
   IStorageService,
   IStorageServiceConstructorParams,
-  IStorageServiceCreateParams,
+  IStorageServiceCreateStorageParams,
+  IStorageServiceDeleteStorageParams,
   IStorageServiceRemoveParams,
   IStorageServiceRetrieveParams,
+  IStorageServiceRetrieveStorageParams,
   IStorageServiceStoreParams,
 } from "./types";
 
@@ -18,16 +20,33 @@ export class StorageService {
    * @public
    * Creates storage
    */
-  create({ storageName }: IStorageServiceCreateParams) {
-    this.#service.create({ storageName });
+  async createStorage({ storageName }: IStorageServiceCreateStorageParams) {
+    await this.#service.createStorage({ storageName });
+  }
+
+  /**
+   * @public
+   * Retrieve storage
+   * @param param0
+   */
+  async validateStorage({ storageName }: IStorageServiceRetrieveStorageParams) {
+    return await this.#service.validateStorage({ storageName });
+  }
+
+  /**
+   * @public
+   * Delets storage
+   */
+  async deleteStorage({ storageName }: IStorageServiceDeleteStorageParams) {
+    await this.#service.deleteStorage({ storageName });
   }
 
   /**
    * @public
    * Stores the provided data to the storage
    */
-  store({ storageName, data, key }: IStorageServiceStoreParams) {
-    this.#service.store({ storageName, key, data });
+  async store({ storageName, data, key }: IStorageServiceStoreParams) {
+    await this.#service.store({ storageName, key, data });
   }
 
   /**
@@ -35,8 +54,8 @@ export class StorageService {
    * Retrieves the data from the provided storage name
    * @param params
    */
-  retrieve({ storageName, key }: IStorageServiceRetrieveParams) {
-    this.#service.retrieve({ storageName, key });
+  async retrieve({ storageName, key }: IStorageServiceRetrieveParams) {
+    return this.#service.retrieve({ storageName, key });
   }
 
   /**
@@ -44,7 +63,7 @@ export class StorageService {
    * Removes the data from the provided storage
    * @param params
    */
-  remove({ storageName, key }: IStorageServiceRemoveParams) {
-    this.#service.remove({ storageName, key });
+  async remove({ storageName, key }: IStorageServiceRemoveParams) {
+    await this.#service.remove({ storageName, key });
   }
 }

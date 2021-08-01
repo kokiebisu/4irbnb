@@ -3,6 +3,9 @@ export interface IStorageService {
   createStorage({
     storageName,
   }: IStorageServiceCreateStorageParams): Promise<void>;
+  validateStorage({
+    storageName,
+  }: IStorageServiceCreateStorageParams): Promise<boolean>;
   deleteStorage({
     storageName,
   }: IStorageServiceDeleteStorageParams): Promise<void>;
@@ -17,6 +20,9 @@ export interface IStorageServiceConstructorParams {
 
 // PARAMS
 export interface IStorageServiceCreateStorageParams
+  extends IWithStorageNameParams {}
+
+export interface IStorageServiceRetrieveStorageParams
   extends IWithStorageNameParams {}
 
 export interface IStorageServiceDeleteStorageParams

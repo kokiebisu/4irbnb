@@ -5,6 +5,7 @@ import {
   GetObjectCommand,
   DeleteObjectCommand,
   DeleteBucketCommand,
+  GetBucketLocationCommand,
 } from "@aws-sdk/client-s3";
 import { PackageEnum } from "../../enum";
 import { ILoggerService, createLogger } from "../../utils";
@@ -15,6 +16,7 @@ import {
   IStorageServiceDeleteStorageParams,
   IStorageServiceRemoveParams,
   IStorageServiceRetrieveParams,
+  IStorageServiceRetrieveStorageParams,
   IStorageServiceStoreParams,
 } from "../types";
 import { IS3ConstructorParams } from "./types";
@@ -46,6 +48,28 @@ export class S3 implements IStorageService {
         location: "create:send",
         message: error as string,
       });
+    }
+  }
+
+  /**
+   * @public
+   * Checks if the bucket exists
+   * @param param0
+   */
+  async validateStorage({ storageName }: IStorageServiceRetrieveStorageParams) {
+    try {
+      const config = await this.#client.send(
+        new GetBucketLocationCommand({
+          Bucket: storageName,
+        })
+      );
+      return !!config;
+    } catch (error) {
+      this.#logger.error({
+        location: "retrieveStorage:send",
+        message: error as string,
+      });
+      return false;
     }
   }
 
@@ -92,7 +116,7 @@ export class S3 implements IStorageService {
    */
   async retrieve({ storageName, key }: IStorageServiceRetrieveParams) {
     try {
-      await this.#client.send(
+      return await this.#client.send(
         new GetObjectCommand({
           Bucket: storageName,
           Key: key,
@@ -103,6 +127,7 @@ export class S3 implements IStorageService {
         location: "retrieve:send",
         message: error as string,
       });
+      return null;
     }
   }
 
