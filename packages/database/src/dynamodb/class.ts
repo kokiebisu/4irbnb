@@ -1,8 +1,4 @@
-import {
-  DynamoDBClient,
-  PutItemCommand,
-  Update,
-} from "@aws-sdk/client-dynamodb";
+import { DynamoDBClient, PutItemCommand } from "@aws-sdk/client-dynamodb";
 import {
   DeleteCommand,
   DynamoDBDocumentClient,
@@ -34,7 +30,7 @@ export class DynamoDBService implements IDatabaseService {
     });
   }
 
-  setup() {
+  configureClient() {
     if (!this.#client) {
       this.#client = DynamoDBDocumentClient.from(
         new DynamoDBClient({
@@ -46,7 +42,7 @@ export class DynamoDBService implements IDatabaseService {
   }
 
   async findOne({ tableName, identifier }: IDatabaseServiceFindOneParams) {
-    this.setup();
+    this.configureClient();
     try {
       const data = await this.#client?.send(
         new GetCommand({
@@ -66,7 +62,7 @@ export class DynamoDBService implements IDatabaseService {
   }
 
   async insert({ tableName, data }: IDatabaseServiceInsertParams) {
-    this.setup();
+    this.configureClient();
     try {
       await this.#client?.send(
         new PutItemCommand({
@@ -87,7 +83,7 @@ export class DynamoDBService implements IDatabaseService {
    * @param param0
    */
   async delete({ tableName, identifier }: IDatabaseServiceDeleteParams) {
-    this.setup();
+    this.configureClient();
     try {
       await this.#client?.send(
         new DeleteCommand({
@@ -108,7 +104,7 @@ export class DynamoDBService implements IDatabaseService {
    * @param param0
    */
   async update({ tableName, identifier }: IDatabaseServiceUpdateParams) {
-    this.setup();
+    this.configureClient();
     try {
       await this.#client?.send(
         new UpdateCommand({
