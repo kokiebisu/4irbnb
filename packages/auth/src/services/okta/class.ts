@@ -1,6 +1,7 @@
 import { Client } from "@okta/okta-sdk-nodejs";
 import {
-  IAuthService,
+  IAuthClient,
+  IAuthServiceLoginParams,
   IAuthServiceRegisterParams,
   IAuthServiceValidateTokenParams,
 } from "../types";
@@ -10,7 +11,7 @@ import { createLogger, ILoggerService, PackageEnum } from "@nextbnb/common";
 /**
  * Implementation of the AuthService using the Okta Client
  */
-export class OktaService implements IAuthService {
+export class OktaClient implements IAuthClient {
   #client: any;
   #verifier: any;
   #logger: ILoggerService;
@@ -77,29 +78,15 @@ export class OktaService implements IAuthService {
    * @param param0
    * @returns
    */
-  async register({
-    firstName,
-    lastName,
-    birthYear,
-    birthMonth,
-    birthDay,
-    email,
-    password,
-  }: IAuthServiceRegisterParams) {
+  async register({ data }: IAuthServiceRegisterParams) {
     await this.configureClient();
     const newUser = {
       profile: {
-        firstName,
-        lastName,
-        email,
-        login: email,
-        birthYear,
-        birthMonth,
-        birthDay,
+        data,
       },
       credentials: {
         password: {
-          value: password,
+          value: data.password,
         },
       },
     };
@@ -119,7 +106,7 @@ export class OktaService implements IAuthService {
    * @public
    * Okta's implementation of logging in users
    */
-  async login() {
+  async login({ email, password }: IAuthServiceLoginParams) {
     await this.configureClient();
   }
 }

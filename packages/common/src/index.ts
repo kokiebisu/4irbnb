@@ -15,3 +15,6 @@ export * from "./types";
 export * from "./service";
 export * from "./utils";
 export * from "./error";
+export * from "./config";
+export * from "./identity";
+export * from "./storage";

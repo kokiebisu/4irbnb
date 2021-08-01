@@ -22,11 +22,15 @@ export class AuthController {
      * @public
      * Validates the authorization token with the Identity Provider
      */
-    const claims = await this.#service.validateToken({ authorizationToken });
-    const policyStatements = await this.#service.convertClaimsToPolicyStatements(
-      { claims }
-    );
-    const iamPolicy = this.#service.generateIAMPolicy({ policyStatements });
+    // const claims = await this.#service.validateToken({ authorizationToken });
+    // const policyStatements = await this.#service.convertClaimsToPolicyStatements(
+    //   { claims }
+    // );
+
+    const iamPolicy = this.#service.generateIAMPolicy({
+      awsAccountNumber,
+      apiGatewayNumber,
+    });
     return iamPolicy;
   }
 

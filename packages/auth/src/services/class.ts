@@ -1,6 +1,9 @@
 import {
-  IAuthService,
+  IAuthClient,
   IAuthServiceConstructoParams,
+  IAuthServiceGenerateIAMPolicyParams,
+  IAuthServiceLoginParams,
+  IAuthServiceRegisterParams,
   IAuthServiceValidateTokenParams,
 } from "./types";
 
@@ -18,7 +21,7 @@ const apiPermissions = [
  * Blueprint that implements the AuthService
  */
 export class AuthService {
-  #service: IAuthService;
+  #service: IAuthClient;
   constructor({ service }: IAuthServiceConstructoParams) {
     this.#service = service;
   }
@@ -32,18 +35,18 @@ export class AuthService {
    * the decoded token, you may need to modify your code according to how
    * your token is verified and what your Identity Provider returns.
    */
-  async validateAuthToken({
-    authorizationToken,
-  }: IAuthServiceValidateTokenParams) {
+  async validateToken({ authorizationToken }: IAuthServiceValidateTokenParams) {
     this.#service.validateToken({ authorizationToken });
   }
 
-  async register({}) {
-    this.#service.register({});
+  async register({ data }: IAuthServiceRegisterParams) {
+    this.#service.register({
+      data,
+    });
   }
 
-  async login({}) {
-    this.#service.login({});
+  async login({ email, password }: IAuthServiceLoginParams) {
+    this.#service.login({ email, password });
   }
 
   /**
@@ -55,6 +58,10 @@ export class AuthService {
     /**
      * Some logic
      */
+    return {
+      firstName: "John",
+      lastName: "Parker",
+    };
   }
 
   /**
@@ -64,8 +71,12 @@ export class AuthService {
    *
    * @returns a policy document object
    */
-  generatePolicy({ policyStatements }) {
-    if (!policyStatements.length) {
+  generateIAMPolicy({
+    claims,
+    awsAccountId,
+    apiGatewayARN,
+  }: IAuthServiceGenerateIAMPolicyParams) {
+    if (!claims.length) {
       return {
         principalId: "user",
         policyDocument: {
@@ -80,19 +91,18 @@ export class AuthService {
         },
       };
     }
+
     return {
       principalId: "user",
       policyDocument: {
         Version: "2012-10-17",
-        Statement: policyStatements.map(
-          ({ action, apiName, apiStage, apiVerb, apiResource }) => {
-            return {
-              Action: "execute-api:Invoke",
-              Effect: action,
-              Resource: `${apiName}/${apiStage}/${apiVerb}/${apiResource}`,
-            };
-          }
-        ),
+        Statement: claims.map(({ method, path }: any) => {
+          return {
+            Action: "execute-api:Invoke",
+            Effect: "Allow",
+            Resource: `arn:aws:execute-api:us-east-1:${awsAccountId}:${apiGatewayARN}/${method}/${path}`,
+          };
+        }),
       },
     };
   }

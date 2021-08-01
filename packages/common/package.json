@@ -24,6 +24,7 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.24.0",
     "@aws-sdk/client-ssm": "^3.24.0",
+    "@aws-sdk/client-sts": "^3.24.0",
     "@types/connect": "^3.4.35",
     "connect": "^3.7.0",
     "cors": "^2.8.5",

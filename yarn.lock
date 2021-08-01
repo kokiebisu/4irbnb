@@ -387,7 +387,7 @@
     "@aws-sdk/util-utf8-node" "3.23.0"
     tslib "^2.3.0"
 
-"@aws-sdk/client-sts@3.24.0", "@aws-sdk/client-sts@^3.21.0":
+"@aws-sdk/client-sts@3.24.0", "@aws-sdk/client-sts@^3.21.0", "@aws-sdk/client-sts@^3.24.0":
   version "3.24.0"
   resolved "https://registry.yarnpkg.com/@aws-sdk/client-sts/-/client-sts-3.24.0.tgz#784252bb00710184bdb12c2636d75c496b3ea352"
   integrity sha512-GifVktvnDQlEJfspoERAFhS+vm7b0OmK3ACN/a6/wFc3hXEGIcS/WRzfRERXJfYg8Ial4Sr8bxDXMW30jPk3fQ==
@@ -3794,7 +3794,7 @@
     "@aws-sdk/client-sqs" "^3.21.0"
     "@aws-sdk/client-ssm" "^3.20.0"
     "@aws-sdk/client-sts" "^3.21.0"
-    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-aws-1.1.0-672e8030-43a6-4abb-a867-a07b3833433d-1627795874693/node_modules/@nextbnb/common"
+    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-aws-1.1.0-6f604cb4-5804-4009-9f25-540f5a2744c4-1627857581448/node_modules/@nextbnb/common"
     "@types/connect" "^3.4.34"
     connect "^3.7.0"
     cors "^2.8.5"
@@ -3806,6 +3806,7 @@
   version "1.1.0"
   dependencies:
     "@aws-sdk/client-s3" "^3.24.0"
+    "@aws-sdk/client-ssm" "^3.24.0"
     "@types/connect" "^3.4.35"
     connect "^3.7.0"
     cors "^2.8.5"
@@ -3820,7 +3821,7 @@
     "@aws-sdk/client-dynamodb" "^3.23.0"
     "@aws-sdk/lib-dynamodb" "^3.24.0"
     "@aws-sdk/util-dynamodb" "^3.24.0"
-    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-database-1.1.0-676c7557-2d4e-40fa-b9ab-5662af8fb9d1-1627795874691/node_modules/@nextbnb/common"
+    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-database-1.1.0-8c24a0b5-f5c6-46c1-8289-c6d165455016-1627857581447/node_modules/@nextbnb/common"
     yarn "^1.22.10"
 
 "@nodelib/fs.scandir@2.1.5":

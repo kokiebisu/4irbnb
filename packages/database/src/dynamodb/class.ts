@@ -30,6 +30,9 @@ export class DynamoDBService implements IDatabaseService {
     });
   }
 
+  /**
+   * @public
+   */
   configureClient() {
     if (!this.#client) {
       this.#client = DynamoDBDocumentClient.from(
@@ -41,6 +44,12 @@ export class DynamoDBService implements IDatabaseService {
     }
   }
 
+  /**
+   * @public
+   * Finds data to the database
+   * @param param0
+   * @returns
+   */
   async findOne({ tableName, identifier }: IDatabaseServiceFindOneParams) {
     this.configureClient();
     try {
@@ -61,6 +70,11 @@ export class DynamoDBService implements IDatabaseService {
     }
   }
 
+  /**
+   * @public
+   * Inserts data to the database
+   * @param param0
+   */
   async insert({ tableName, data }: IDatabaseServiceInsertParams) {
     this.configureClient();
     try {
