@@ -1,4 +1,4 @@
-resource "aws_dynamodb_table" "this" {
+resource "aws_dynamodb_table" "test_database" {
   name           = "TestService"
   billing_mode   = "PROVISIONED"
   read_capacity  = var.read_capacity

@@ -5,6 +5,7 @@ import {
   IDatabaseServiceDeleteParams,
   IDatabaseServiceFindOneParams,
   IDatabaseServiceInsertParams,
+  IDatabaseServiceUpdateParams,
 } from "./types";
 
 export class DatabaseService {
@@ -21,13 +22,13 @@ export class DatabaseService {
 
   async findOne({ tableName, identifier }: IDatabaseServiceFindOneParams) {
     try {
-      const data = await this.#client.findOne({ tableName, identifier });
-      return data;
+      return await this.#client.findOne({ tableName, identifier });
     } catch (error) {
       this.#logger.error({
         location: "findOne:findOne",
         message: error as string,
       });
+      return null;
     }
   }
 
@@ -53,7 +54,7 @@ export class DatabaseService {
     }
   }
 
-  async update({ tableName, identifier, data }: IDatabaseServiceDeleteParams) {
+  async update({ tableName, identifier, data }: IDatabaseServiceUpdateParams) {
     try {
       await this.#client.update({ tableName, identifier, data });
     } catch (error) {

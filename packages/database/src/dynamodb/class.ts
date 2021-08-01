@@ -51,7 +51,7 @@ export class DynamoDBService implements IDatabaseService {
         })
       );
 
-      return data?.Item;
+      return data?.Item || null;
     } catch (error) {
       this.#logger.error({
         location: "findOne:send",

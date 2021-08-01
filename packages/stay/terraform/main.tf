@@ -10,7 +10,7 @@
 #     })
 # }
 
-resource "aws_dynamodb_table" "basic-dynamodb-table" {
+resource "aws_dynamodb_table" "stay_database" {
   name           = "StayService"
   billing_mode   = "PROVISIONED"
   read_capacity  = var.read_capacity
