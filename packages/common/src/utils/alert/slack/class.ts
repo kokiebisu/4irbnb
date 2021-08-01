@@ -1,29 +1,29 @@
 import { WebClient } from "@slack/web-api";
-import { IFile } from "../type";
-import { IAlertService, IMessage } from "../type";
+import { IAlertService } from "../types";
+import {
+  IAlertClientSendFileParams,
+  IAlertClientSendMessageParams,
+} from "./types";
 
 export class SlackAlertService implements IAlertService {
-  private client: WebClient;
+  #package: WebClient;
 
   constructor(token: string) {
-    this.client = new WebClient(token);
+    this.#package = new WebClient(token);
   }
 
   /**
    * @public
    * Sends message to given Slack channel name
    *
-   * @param channelName
-   * @param username
-   * @param icon_emoji
-   * @param text
+   * @param params
    */
-  async sendMessage(
-    to: string,
-    from: string,
-    message: IMessage
-  ): Promise<void> {
-    const { channels } = await this.client.conversations.list();
+  async sendMessage({
+    to,
+    from,
+    message,
+  }: IAlertClientSendMessageParams): Promise<void> {
+    const { channels } = await this.#package.conversations.list();
 
     const channelId =
       channels?.find((channel) => to === channel.name)?.id || null;
@@ -33,7 +33,7 @@ export class SlackAlertService implements IAlertService {
       );
     }
 
-    await this.client.chat.postMessage({
+    await this.#package.chat.postMessage({
       username: from,
       icon_emoji: message.emoji,
       text: message.text,
@@ -41,9 +41,13 @@ export class SlackAlertService implements IAlertService {
     });
   }
 
-  async sendFile(to: string, file: IFile, comment: string): Promise<void> {
+  async sendFile({
+    to,
+    file,
+    comment,
+  }: IAlertClientSendFileParams): Promise<void> {
     const { filetype, content, filename } = file;
-    const { channels } = await this.client.conversations.list();
+    const { channels } = await this.#package.conversations.list();
 
     const channelId =
       channels?.find((channel) => to === channel.name)?.id || null;
@@ -54,7 +58,7 @@ export class SlackAlertService implements IAlertService {
       );
     }
 
-    await this.client.files.upload({
+    await this.#package.files.upload({
       filetype,
       file: content,
       filename,

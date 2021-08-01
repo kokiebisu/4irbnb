@@ -10,6 +10,6 @@ export class STSClient implements IIdentityClient {
     });
   }
   async retrieveCallerAccountId() {
-    return await this.#package.getCallerIdentity({});
+    return (await this.#package.getCallerIdentity({})).Account;
   }
 }

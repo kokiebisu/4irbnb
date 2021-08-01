@@ -56,8 +56,6 @@ export interface IIAMPolicyStatement {
  */
 export interface IAuthServiceGenerateIAMPolicyParams {
   claims: { method: "*"; path: string }[];
-  awsAccountId: string;
-  apiGatewayARN: string;
 }
 
 /**

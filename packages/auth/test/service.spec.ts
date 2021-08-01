@@ -6,7 +6,6 @@ describe("Auth Service", () => {
   it("generates IAM policies correctly", async () => {
     service.generateIAMPolicy({
       claims: [{ method: "*", path: "*" }],
-      awsAccountId: 
     });
   });
 });

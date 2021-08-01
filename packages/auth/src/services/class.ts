@@ -1,3 +1,4 @@
+import { createIdentityService } from "@nextbnb/common";
 import {
   IAuthClient,
   IAuthServiceConstructoParams,
@@ -71,11 +72,9 @@ export class AuthService {
    *
    * @returns a policy document object
    */
-  generateIAMPolicy({
-    claims,
-    awsAccountId,
-    apiGatewayARN,
-  }: IAuthServiceGenerateIAMPolicyParams) {
+  async generateIAMPolicy({ claims }: IAuthServiceGenerateIAMPolicyParams) {
+    const awsAccountId = await createIdentityService().retrieveCallerAccountId();
+    const apiGatewayARN = "";
     if (!claims.length) {
       return {
         principalId: "user",
