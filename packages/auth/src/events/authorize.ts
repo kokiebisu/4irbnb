@@ -2,7 +2,7 @@ import { createLogger, PackageEnum } from "@nextbnb/common";
 import { createAuthController } from "../controllers/factory";
 import { ILambdaArgs } from "./types";
 
-export const registerVerify = async ({ event }: ILambdaArgs) => {
+export const registerAuthorize = async ({ event }: ILambdaArgs) => {
   const controller = createAuthController();
   const logger = createLogger({
     packageName: PackageEnum.auth,
@@ -15,8 +15,7 @@ export const registerVerify = async ({ event }: ILambdaArgs) => {
   }
 
   try {
-    const policy = await controller.authorize({ authorizationToken: token });
-    return policy;
+    return await controller.authorize({ authorizationToken: "" });
   } catch (error) {
     logger.error({ location: "authorize", message: error as string });
   }

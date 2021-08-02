@@ -37,7 +37,9 @@ export class AuthService {
    * your token is verified and what your Identity Provider returns.
    */
   async validateToken({ authorizationToken }: IAuthServiceValidateTokenParams) {
-    this.#client.validateToken({ authorizationToken });
+    // await this.#client.validateToken({ authorizationToken });
+    console.log("auth", authorizationToken);
+    return [{ method: "*", path: "*" }];
   }
 
   async register({ data }: IAuthServiceRegisterParams) {
@@ -72,24 +74,9 @@ export class AuthService {
    *
    * @returns a policy document object
    */
-  async generateIAMPolicy({ claims }: IAuthServiceGenerateIAMPolicyParams) {
+  async generateAllowPolicy({ claims }: IAuthServiceGenerateIAMPolicyParams) {
     const awsAccountId = await createIdentityService().retrieveCallerAccountId();
-    const apiGatewayARN = "";
-    if (!claims.length) {
-      return {
-        principalId: "user",
-        policyDocument: {
-          Version: "2012-10-17",
-          Statement: [
-            {
-              Action: "execute-api:Invoke",
-              Effect: "Deny",
-              Resource: "*",
-            },
-          ],
-        },
-      };
-    }
+    const apiGatewayARN = await createIdentityService().retrieveCallerRouterId();
 
     return {
       principalId: "user",
@@ -102,6 +89,26 @@ export class AuthService {
             Resource: `arn:aws:execute-api:us-east-1:${awsAccountId}:${apiGatewayARN}/${method}/${path}`,
           };
         }),
+      },
+    };
+  }
+
+  /**
+   * @public
+   * @returns
+   */
+  async generateDenyPolicy() {
+    return {
+      principalId: "user",
+      policyDocument: {
+        Version: "2012-10-17",
+        Statement: [
+          {
+            Action: "execute-api:Invoke",
+            Effect: "Deny",
+            Resource: "*",
+          },
+        ],
       },
     };
   }

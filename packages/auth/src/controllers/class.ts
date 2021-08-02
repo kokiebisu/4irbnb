@@ -14,24 +14,12 @@ export class AuthController {
    * Generates Allow or Deny policy
    * @returns
    */
-  async authorize({
-    authorizationToken,
-    resource,
-  }: IAuthControllerAuthorizeParams) {
-    /**
-     * @public
-     * Validates the authorization token with the Identity Provider
-     */
-    // const claims = await this.#service.validateToken({ authorizationToken });
-    // const policyStatements = await this.#service.convertClaimsToPolicyStatements(
-    //   { claims }
-    // );
-
-    const iamPolicy = this.#service.generateIAMPolicy({
-      awsAccountNumber,
-      apiGatewayNumber,
-    });
-    return iamPolicy;
+  async authorize({ authorizationToken }: IAuthControllerAuthorizeParams) {
+    const claims = await this.#service.validateToken({ authorizationToken });
+    if (!claims) {
+      return this.#service.generateDenyPolicy();
+    }
+    return this.#service.generateAllowPolicy({ claims });
   }
 
   /**

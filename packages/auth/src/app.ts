@@ -1,5 +1,5 @@
-import { registerVerify } from "./events";
+import { registerAuthorize } from "./events";
 
 export const handler = async (event: any, _context: any) => {
-  await registerVerify({ event });
+  await registerAuthorize({ event });
 };

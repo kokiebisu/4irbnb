@@ -6,5 +6,4 @@ export interface IAuthControllerConstructorParams {
 
 export interface IAuthControllerAuthorizeParams {
   authorizationToken: string;
-  resource: string;
 }

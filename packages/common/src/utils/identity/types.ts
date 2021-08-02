@@ -1,9 +1,13 @@
+import { APIGatewayClient } from "./api-gateway";
+import { STSClient } from "./sts";
+
 export interface IIdentityService extends IIdentityClient {}
 
 export interface IIdentityClient {
-  retrieveCallerAccountId(): Promise<any>;
+  retrieve(): Promise<any>;
 }
 
 export interface IIdentityServiceConstructorParams {
-  client: IIdentityClient;
+  stsClient: STSClient;
+  apiGatewayClient: APIGatewayClient;
 }

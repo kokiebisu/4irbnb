@@ -9,7 +9,7 @@ export class STSClient implements IIdentityClient {
       region,
     });
   }
-  async retrieveCallerAccountId() {
+  async retrieve() {
     return (await this.#package.getCallerIdentity({})).Account;
   }
 }
