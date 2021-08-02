@@ -3744,7 +3744,7 @@
     "@aws-sdk/client-dynamodb" "^3.23.0"
     "@aws-sdk/lib-dynamodb" "^3.24.0"
     "@aws-sdk/util-dynamodb" "^3.24.0"
-    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-database-1.1.0-d3348693-8a58-47aa-9399-daf2e373afa3-1627868640408/node_modules/@nextbnb/common"
+    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-database-1.1.0-e9f46849-f6b9-4a81-b49d-f1fa8054e21d-1627944736648/node_modules/@nextbnb/common"
     yarn "^1.22.10"
 
 "@nodelib/fs.scandir@2.1.5":
@@ -4098,6 +4098,29 @@
   integrity sha512-c/qwwcHyafOQuVQJj0IlBjf5yYgBI7YPJ77k4fOJYesb41jio65eaJODRUmfYKhTOFBrIZ66kgvGPlNbjuoRdQ==
   dependencies:
     any-observable "^0.3.0"
+
+"@sendgrid/client@^7.4.3":
+  version "7.4.3"
+  resolved "https://registry.yarnpkg.com/@sendgrid/client/-/client-7.4.3.tgz#bc71aae05de2cd9aa607f4eb1d886711d09f9595"
+  integrity sha512-tTaHx893w5iqG0sVtUnMyRchuwYF95k4UOkmov1MouMIeMUbNvbalITo7cG7YSXUTY9rT2t4eBY6HcEBCVeqfg==
+  dependencies:
+    "@sendgrid/helpers" "^7.4.3"
+    axios "^0.21.1"
+
+"@sendgrid/helpers@^7.4.3":
+  version "7.4.3"
+  resolved "https://registry.yarnpkg.com/@sendgrid/helpers/-/helpers-7.4.3.tgz#231a4405266cfa291054df8b668fe3a4dc9387aa"
+  integrity sha512-Wt+68g1sVEM5UspJh34O/cxtv6BBbtAIk7U9B3PB2ySOtPs9e6hI1QkgYVwpNmkt7k2p86muUNyma/Aig25agg==
+  dependencies:
+    deepmerge "^4.2.2"
+
+"@sendgrid/mail@^7.4.5":
+  version "7.4.5"
+  resolved "https://registry.yarnpkg.com/@sendgrid/mail/-/mail-7.4.5.tgz#22cef36e793134833b36aff5d3f4f53e8f81dd52"
+  integrity sha512-adXMvrTUOlYr7+UTigZRGSYR9vheBv1y4fF2mugn29NBdQMfcQPGLQ5vIHgSAfcboBFCagZdamZqM5FeSGU0Hw==
+  dependencies:
+    "@sendgrid/client" "^7.4.3"
+    "@sendgrid/helpers" "^7.4.3"
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.3"

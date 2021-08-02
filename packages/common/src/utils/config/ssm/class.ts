@@ -4,7 +4,7 @@ import {
   PutParameterCommand,
   DeleteParameterCommand,
 } from "@aws-sdk/client-ssm";
-import { createLogger } from "../../..";
+import { createLoggerService } from "../../..";
 import { PackageEnum } from "../../../enum";
 import {
   IConfigService,
@@ -20,7 +20,7 @@ export class SSMClient implements IConfigService {
 
   constructor({ region }: ISSMClientConstructorParams) {
     this.#client = new SSM({ region });
-    this.#logger = createLogger({
+    this.#logger = createLoggerService({
       packageName: PackageEnum.common,
       className: "SSMClient",
     });
@@ -56,7 +56,7 @@ export class SSMClient implements IConfigService {
     try {
       await this.#client.send(
         new PutParameterCommand({
-          Name: `/${name}/${key}`,
+          Name: `/nextbnb/${name}/${key}`,
           Value: value,
           Overwrite: true,
           DataType: "text",

@@ -1,8 +1,8 @@
-import { createStorage } from "../src/utils/storage";
+import { createStorageService } from "../src/utils/storage";
 import { storageData } from "./mock";
 
 describe.skip("Storage Service", () => {
-  const service = createStorage();
+  const service = createStorageService();
   const { storageName, key, content } = storageData;
   it("checks if created storage exists", async () => {
     await service.createStorage({ storageName });

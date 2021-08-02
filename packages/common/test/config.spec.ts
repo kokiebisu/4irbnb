@@ -1,8 +1,8 @@
-import { createConfig } from "../src/utils/config";
+import { createConfigService } from "../src/utils/config";
 import { configData } from "./mock";
 
 describe.skip("Config Service", () => {
-  const service = createConfig();
+  const service = createConfigService();
   const { packageName, key, value } = configData;
 
   it("creates param", async () => {

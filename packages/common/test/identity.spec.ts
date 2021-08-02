@@ -1,6 +1,6 @@
 import { createIdentityService } from "../src";
 
-describe("Identity Service", () => {
+describe.skip("Identity Service", () => {
   const service = createIdentityService();
   // it("gets caller's account id", async () => {
   //   const result = await service.retrieveCallerAccountId();
