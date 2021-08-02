@@ -1,20 +1,14 @@
 import { ILambdaArgs } from "@nextbnb/common";
-import { createDatabase } from "@nextbnb/database";
-import { StayController } from "../controllers";
+import { createStayController } from "../controllers/factory";
 
 /**
+ * @public
  * Handlers the 'PostStay' event
  * @param param0
  */
-export const registerPostStay = async ({ event, callback }: ILambdaArgs) => {
+export const registerPostStay = async ({ event }: ILambdaArgs) => {
   if (event.eventName === "PostStay") {
-    const response = await new StayController({
-      db: createDatabase({ region: "us-east-1" }),
-      idValidator: ({}) => {
-        return true;
-      },
-    }).post({ data: event.payload.data });
-
-    callback(null, response);
+    const controller = createStayController();
+    return await controller.post({ data: event.payload.data });
   }
 };

@@ -1,9 +1,3 @@
-# variable "dead_letter_queue" {
-#   type = object({
-#     arn = string
-#   })
-# }
-
 variable "read_capacity" {
   type    = number
   default = 10
@@ -11,7 +5,4 @@ variable "read_capacity" {
 variable "write_capacity" {
   type    = number
   default = 10
-}
-variable "api_gateway_id" {
-  type = string
 }

@@ -10,6 +10,9 @@ import {
   IStayControllerPostParams,
 } from "./types";
 
+/**
+ * @public
+ */
 export class StayController {
   #service: IStayService;
   #logger: ILoggerService;
@@ -28,6 +31,9 @@ export class StayController {
 
       return {
         statusCode: 200,
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: stay
           ? JSON.stringify({
               stay,
@@ -38,6 +44,9 @@ export class StayController {
       this.#logger.error({ location: "get:get", message: "Entered" });
       return {
         statusCode: 500,
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: {
           error: "Internal Error",
         },
@@ -50,11 +59,17 @@ export class StayController {
       await this.#service.post({ data });
       return {
         statusCode: 200,
+        headers: {
+          "Content-Type": "application/json",
+        },
       };
     } catch (error) {
       this.#logger.error({ location: "get:get", message: error as string });
       return {
         statusCode: 400,
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: "Something went wrong",
       };
     }
@@ -65,6 +80,9 @@ export class StayController {
       await this.#service.delete({ identifier });
 
       return {
+        headers: {
+          "Content-Type": "application/json",
+        },
         statusCode: 200,
       };
     } catch (error) {
@@ -74,6 +92,9 @@ export class StayController {
       });
       return {
         statusCode: 400,
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: "Something went wrong",
       };
     }
@@ -93,12 +114,18 @@ export class StayController {
       }
       return {
         statusCode: 200,
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: stay,
       };
     } catch (error) {
       this.#logger.error({ location: "patch:patch", message: error as string });
       return {
         statusCode: 400,
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: "Something went wrong",
       };
     }

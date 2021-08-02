@@ -1,20 +1,15 @@
 import { ILambdaArgs } from "@nextbnb/common";
-import { createDatabase } from "@nextbnb/database";
-import { StayController } from "../controllers";
+import { createStayController } from "../controllers/factory";
 
 /**
  * Handles the 'GetStay' event
  * @param param0
  */
-export const registerDeleteStay = async ({ event, callback }: ILambdaArgs) => {
+export const registerDeleteStay = async ({ event }: ILambdaArgs) => {
   if (event.eventName === "DeleteStay") {
-    const response = await new StayController({
-      db: createDatabase({ region: "us-east-1" }),
-      idValidator: ({}) => {
-        return true;
-      },
-    }).delete({ identifier: event.payload.identifier });
-
-    callback(null, response);
+    const controller = createStayController();
+    return await controller.delete({
+      identifier: event.payload.identifier,
+    });
   }
 };

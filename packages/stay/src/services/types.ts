@@ -5,7 +5,7 @@ export interface IStayService {
   get(params: IStayServiceGet): Promise<IStay | null>;
   post(params: IStayServicePost): Promise<void>;
   delete(params: IStayServiceDelete): Promise<void>;
-  // patch(params: IStayServicePatch): Promise<IStay>;
+  patch(params: IStayServicePatch): Promise<IStay>;
 }
 
 export interface IStayServiceConstructorParams {

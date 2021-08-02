@@ -65,4 +65,4 @@ COPY --from=extract /nextbnb/node_modules/@nextbnb/common ./node_modules/@nextbn
 COPY --from=extract /nextbnb/node_modules/@nextbnb/database ./node_modules/@nextbnb/database
 
 
-CMD ["dist/index.handler"]
+CMD ["dist/app.handler"]

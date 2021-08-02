@@ -19,10 +19,7 @@ provider "aws" {
   region     = var.region
 }
 
-resource "aws_apigatewayv2_api" "nextbnb" {
-    name = "nextbnb"
-    protocol_type = "HTTP"
-}
+
 
 module "services" {
   source = "../packages/terraform"
@@ -33,8 +30,6 @@ module "stay" {
 
   read_capacity  = 10
   write_capacity = 10
-
-  api_gateway_id = aws_apigatewayv2_api.nextbnb.id
 }
 
 module "database" {
