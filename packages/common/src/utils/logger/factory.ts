@@ -1,13 +1,18 @@
 import { LoggerService } from "./class";
 import { ICreateLoggerParams } from "./types";
-import { createWinstonLogger } from "./winston/factory";
+import { WinstonClient } from "./winston";
 
+/**
+ * @public
+ * @param param0
+ * @returns
+ */
 export const createLoggerService = ({
   packageName,
   className,
 }: ICreateLoggerParams) =>
   new LoggerService({
-    service: createWinstonLogger(),
+    client: new WinstonClient(),
     packageName,
     className,
   });
