@@ -1,5 +1,9 @@
 import { IRegion } from "@nextbnb/common";
+import { IDatabaseClient } from "./dynamodb";
 
+/**
+ * @public
+ */
 export interface IDatabaseService {
   insert(data: IDatabaseServiceInsertParams): Promise<void>;
   findOne(params: IDatabaseServiceFindOneParams): Promise<any>;
@@ -12,7 +16,7 @@ export interface IDatabaseService {
  * @public
  */
 export interface IDatabaseServiceConstructorParams {
-  client: IDatabaseService;
+  client: IDatabaseClient;
 }
 
 /**

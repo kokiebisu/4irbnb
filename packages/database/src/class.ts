@@ -1,6 +1,6 @@
 import { createLogger, ILoggerService, PackageEnum } from "@nextbnb/common";
+import { IDatabaseClient } from "./dynamodb";
 import {
-  IDatabaseService,
   IDatabaseServiceConstructorParams,
   IDatabaseServiceDeleteParams,
   IDatabaseServiceFindOneParams,
@@ -9,9 +9,13 @@ import {
 } from "./types";
 
 export class DatabaseService {
-  #client: IDatabaseService;
+  #client: IDatabaseClient;
   #logger: ILoggerService;
 
+  /**
+   * @public
+   * @param param0
+   */
   constructor({ client }: IDatabaseServiceConstructorParams) {
     this.#client = client;
     this.#logger = createLogger({
@@ -20,6 +24,10 @@ export class DatabaseService {
     });
   }
 
+  /**
+   * @public
+   * @param param0
+   */
   async findOne({ tableName, identifier }: IDatabaseServiceFindOneParams) {
     try {
       return await this.#client.findOne({ tableName, identifier });
@@ -32,6 +40,10 @@ export class DatabaseService {
     }
   }
 
+  /**
+   * @public
+   * @param param0
+   */
   async insert({ tableName, data }: IDatabaseServiceInsertParams) {
     try {
       await this.#client.insert({ tableName, data });
@@ -43,6 +55,10 @@ export class DatabaseService {
     }
   }
 
+  /**
+   * @public
+   * @param param0
+   */
   async delete({ tableName, identifier }: IDatabaseServiceDeleteParams) {
     try {
       await this.#client.delete({ tableName, identifier });
@@ -54,6 +70,10 @@ export class DatabaseService {
     }
   }
 
+  /**
+   * @public
+   * @param param0
+   */
   async update({ tableName, identifier, data }: IDatabaseServiceUpdateParams) {
     try {
       await this.#client.update({ tableName, identifier, data });

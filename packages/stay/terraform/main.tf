@@ -82,3 +82,28 @@ resource "aws_iam_policy" "dynamodb" {
     ]
   })
 }
+
+resource "aws_apigatewayv2_route" "nextbnb" {
+  api_id    = var.api_gateway_id
+  route_key = "ANY /{proxy+}"
+  target = "integrations/${aws_apigatewayv2_integration.nextbnb.id}"
+}
+
+resource "aws_apigatewayv2_integration" "nextbnb" {
+  api_id           = var.api_gateway_id
+  integration_type = "AWS_PROXY"
+
+  connection_type           = "INTERNET"
+  integration_method        = "POST"
+  passthrough_behavior      = "WHEN_NO_MATCH"
+  integration_uri = aws_lambda_function.stay_service.invoke_arn
+}
+
+# resource "aws_apigatewayv2_deployment" "example" {
+#   api_id      = var.api_gateway_id
+#   description = "Example deployment"
+
+#   lifecycle {
+#     create_before_destroy = true
+#   }
+# }

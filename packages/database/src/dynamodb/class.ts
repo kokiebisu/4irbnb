@@ -1,4 +1,7 @@
-import { DynamoDBClient, PutItemCommand } from "@aws-sdk/client-dynamodb";
+import {
+  DynamoDBClient as Client,
+  PutItemCommand,
+} from "@aws-sdk/client-dynamodb";
 import {
   DeleteCommand,
   DynamoDBDocumentClient,
@@ -7,36 +10,39 @@ import {
 } from "@aws-sdk/lib-dynamodb";
 import { createLogger, PackageEnum, TRegion } from "@nextbnb/common";
 import { LoggerService } from "@nextbnb/common/dist/utils/logger/class";
-import {
-  IDatabaseService,
-  IDatabaseServiceDeleteParams,
-  IDatabaseServiceFindOneParams,
-  IDatabaseServiceInsertParams,
-  IDatabaseServiceUpdateParams,
-} from "../types";
 import { translateConfig } from "./config";
-import { IDynamoDBConstructorParams } from "./types";
+import {
+  IDatabaseClient,
+  IDatabaseClientDeleteParams,
+  IDatabaseClientFindOneParams,
+  IDatabaseClientInsertParams,
+  IDatabaseClientUpdateParams,
+  IDynamoDBConstructorParams,
+} from "./types";
 
-export class DynamoDBService implements IDatabaseService {
+/**
+ * @public
+ */
+export class DynamoDBClient implements IDatabaseClient {
   #region: TRegion;
-  #client?: DynamoDBClient;
+  #package?: DynamoDBDocumentClient;
   #logger: LoggerService;
 
   constructor({ region }: IDynamoDBConstructorParams) {
     this.#region = region;
     this.#logger = createLogger({
       packageName: PackageEnum.database,
-      className: "DynamoDBService",
+      className: "DynamoDBClient",
     });
   }
 
   /**
    * @public
    */
-  configureClient() {
-    if (!this.#client) {
-      this.#client = DynamoDBDocumentClient.from(
-        new DynamoDBClient({
+  #configureClient() {
+    if (!this.#package) {
+      this.#package = DynamoDBDocumentClient.from(
+        new Client({
           region: this.#region,
         }),
         translateConfig
@@ -50,10 +56,10 @@ export class DynamoDBService implements IDatabaseService {
    * @param param0
    * @returns
    */
-  async findOne({ tableName, identifier }: IDatabaseServiceFindOneParams) {
-    this.configureClient();
+  async findOne({ tableName, identifier }: IDatabaseClientFindOneParams) {
+    this.#configureClient();
     try {
-      const data = await this.#client?.send(
+      const data = await this.#package?.send(
         new GetCommand({
           TableName: tableName,
           Key: identifier,
@@ -75,10 +81,10 @@ export class DynamoDBService implements IDatabaseService {
    * Inserts data to the database
    * @param param0
    */
-  async insert({ tableName, data }: IDatabaseServiceInsertParams) {
-    this.configureClient();
+  async insert({ tableName, data }: IDatabaseClientInsertParams) {
+    this.#configureClient();
     try {
-      await this.#client?.send(
+      await this.#package?.send(
         new PutItemCommand({
           TableName: tableName,
           Item: data,
@@ -96,10 +102,10 @@ export class DynamoDBService implements IDatabaseService {
    * Delete operation performed on the DynamoDB database
    * @param param0
    */
-  async delete({ tableName, identifier }: IDatabaseServiceDeleteParams) {
-    this.configureClient();
+  async delete({ tableName, identifier }: IDatabaseClientDeleteParams) {
+    this.#configureClient();
     try {
-      await this.#client?.send(
+      await this.#package?.send(
         new DeleteCommand({
           TableName: tableName,
           Key: identifier,
@@ -117,10 +123,10 @@ export class DynamoDBService implements IDatabaseService {
    * Update operation performed on the DynamoDB database
    * @param param0
    */
-  async update({ tableName, identifier }: IDatabaseServiceUpdateParams) {
-    this.configureClient();
+  async update({ tableName, identifier }: IDatabaseClientUpdateParams) {
+    this.#configureClient();
     try {
-      await this.#client?.send(
+      await this.#package?.send(
         new UpdateCommand({
           TableName: tableName,
           Key: identifier,
