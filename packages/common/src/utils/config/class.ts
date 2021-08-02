@@ -1,5 +1,5 @@
+import { IConfigClient } from "./ssm";
 import {
-  IConfigService,
   IConfigServiceConstructorParams,
   IConfigServiceDeleteParams,
   IConfigServiceGetParams,
@@ -7,20 +7,40 @@ import {
 } from "./types";
 
 export class ConfigService {
-  #service: IConfigService;
-  constructor({ service }: IConfigServiceConstructorParams) {
-    this.#service = service;
+  #client: IConfigClient;
+
+  /**
+   * @public
+   * @param param0
+   */
+  constructor({ client }: IConfigServiceConstructorParams) {
+    this.#client = client;
   }
 
+  /**
+   * @public
+   * @param param0
+   * @returns
+   */
   async get({ packageName, key }: IConfigServiceGetParams) {
-    return await this.#service.get({ packageName, key });
+    return await this.#client.get({ packageName, key });
   }
 
+  /**
+   * @public
+   * @param param0
+   * @returns
+   */
   async set({ packageName, key, value }: IConfigServiceSetParams) {
-    await this.#service.set({ packageName, key, value });
+    await this.#client.set({ packageName, key, value });
   }
 
+  /**
+   * @public
+   * @param param0
+   * @returns
+   */
   async delete({ packageName, key }: IConfigServiceDeleteParams) {
-    await this.#service.delete({ packageName, key });
+    await this.#client.delete({ packageName, key });
   }
 }

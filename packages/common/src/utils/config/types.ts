@@ -1,4 +1,9 @@
-import { PackageEnum } from "../../enum";
+import {
+  IConfigClient,
+  IConfigClientDeleteParams,
+  IConfigClientGetParams,
+  IConfigClientSetParams,
+} from "./ssm";
 
 // Service
 export interface IConfigService {
@@ -9,32 +14,12 @@ export interface IConfigService {
 
 // Constructor
 export interface IConfigServiceConstructorParams {
-  service: IConfigService;
+  client: IConfigClient;
 }
 
 // Params
-export interface IConfigServiceGetParams
-  extends IWithPackageNameParams,
-    IWithKeyParams {}
+export interface IConfigServiceGetParams extends IConfigClientGetParams {}
 
-export interface IConfigServiceSetParams
-  extends IWithPackageNameParams,
-    IWithKeyParams,
-    IWithValueParams {}
+export interface IConfigServiceSetParams extends IConfigClientSetParams {}
 
-export interface IConfigServiceDeleteParams
-  extends IWithPackageNameParams,
-    IWithKeyParams {}
-
-// With Params
-export interface IWithPackageNameParams {
-  packageName: PackageEnum;
-}
-
-export interface IWithKeyParams {
-  key: string;
-}
-
-export interface IWithValueParams {
-  value: string | undefined;
-}
+export interface IConfigServiceDeleteParams extends IConfigClientDeleteParams {}

@@ -8,7 +8,7 @@ import {
   GetBucketLocationCommand,
 } from "@aws-sdk/client-s3";
 import { PackageEnum } from "../../../enum";
-import { ILoggerService, createLogger } from "../..";
+import { ILoggerService, createLoggerService } from "../..";
 
 import {
   IStorageService,
@@ -26,7 +26,7 @@ export class S3 implements IStorageService {
   #logger: ILoggerService;
 
   constructor({ region }: IS3ConstructorParams) {
-    this.#logger = createLogger({
+    this.#logger = createLoggerService({
       packageName: PackageEnum.common,
       className: "S3",
     });

@@ -5,6 +5,9 @@ import { createConfigService } from "../../config";
 import { createLoggerService, ILoggerService } from "../../logger";
 import { IEmailClient, IEmailClientSendParams } from "./types";
 
+/**
+ * @public
+ */
 export class SendGridClient implements IEmailClient {
   #package?: MailService;
   #logger: ILoggerService;

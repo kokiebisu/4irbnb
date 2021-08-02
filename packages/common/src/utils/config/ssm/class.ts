@@ -4,17 +4,20 @@ import {
   PutParameterCommand,
   DeleteParameterCommand,
 } from "@aws-sdk/client-ssm";
-import { createLoggerService } from "../../..";
+import { createLoggerService } from "../../logger";
 import { PackageEnum } from "../../../enum";
 import {
-  IConfigService,
-  IConfigServiceDeleteParams,
-  IConfigServiceGetParams,
-  IConfigServiceSetParams,
-} from "../types";
-import { ISSMClientConstructorParams } from "./types";
+  IConfigClient,
+  IConfigClientDeleteParams,
+  IConfigClientGetParams,
+  IConfigClientSetParams,
+  ISSMClientConstructorParams,
+} from "./types";
 
-export class SSMClient implements IConfigService {
+/**
+ * @public
+ */
+export class SSMClient implements IConfigClient {
   #client;
   #logger;
 
@@ -29,7 +32,7 @@ export class SSMClient implements IConfigService {
   /**
    * @public
    */
-  async get({ packageName, key }: IConfigServiceGetParams) {
+  async get({ packageName, key }: IConfigClientGetParams) {
     const name = packageName.replace("@", "");
     try {
       return (
@@ -51,7 +54,7 @@ export class SSMClient implements IConfigService {
   /**
    * @public
    */
-  async set({ packageName, key, value }: IConfigServiceSetParams) {
+  async set({ packageName, key, value }: IConfigClientSetParams) {
     const name = packageName.replace("@", "");
     try {
       await this.#client.send(
@@ -74,7 +77,7 @@ export class SSMClient implements IConfigService {
   /**
    * @public
    */
-  async delete({ packageName, key }: IConfigServiceDeleteParams) {
+  async delete({ packageName, key }: IConfigClientDeleteParams) {
     const name = packageName.replace("@", "");
     try {
       await this.#client.send(

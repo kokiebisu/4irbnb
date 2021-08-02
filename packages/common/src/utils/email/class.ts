@@ -4,6 +4,9 @@ import {
   IEmailServiceSendParams,
 } from "./types";
 
+/**
+ * @public
+ */
 export class EmailService {
   #client: IEmailClient;
 
