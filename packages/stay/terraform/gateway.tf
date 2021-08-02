@@ -7,23 +7,6 @@ resource "aws_apigatewayv2_stage" "this" {
   api_id = aws_apigatewayv2_api.lambda.id
   name   = "$default"
   auto_deploy = true
-
-  access_log_settings {
-    destination_arn = aws_cloudwatch_log_group.this.arn
-  format = jsonencode({
-      requestId               = "$context.requestId"
-      sourceIp                = "$context.identity.sourceIp"
-      requestTime             = "$context.requestTime"
-      protocol                = "$context.protocol"
-      httpMethod              = "$context.httpMethod"
-      resourcePath            = "$context.resourcePath"
-      routeKey                = "$context.routeKey"
-      status                  = "$context.status"
-      responseLength          = "$context.responseLength"
-      integrationErrorMessage = "$context.integrationErrorMessage"
-      }
-    )
-  }
 }
 
 resource "aws_apigatewayv2_integration" "this" {
@@ -52,12 +35,12 @@ resource "aws_apigatewayv2_route" "delete_stay" {
   target = "integrations/${aws_apigatewayv2_integration.this.id}"
 }
 
-resource "aws_apigatewayv2_deployment" "this" {
-  api_id      = aws_apigatewayv2_api.lambda.id
-  description = "Example deployment"
+# resource "aws_apigatewayv2_deployment" "this" {
+#   api_id      = aws_apigatewayv2_api.lambda.id
+#   description = "Example deployment"
 
-  lifecycle {
-    create_before_destroy = true
-  }
-}
+#   lifecycle {
+#     create_before_destroy = true
+#   }
+# }
 

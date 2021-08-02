@@ -31,7 +31,7 @@ resource "aws_iam_role" "stay_service_role" {
     ]
   })
 
-  managed_policy_arns = [aws_iam_policy.dynamodb.arn]
+  managed_policy_arns = [aws_iam_policy.dynamodb.arn, aws_iam_policy.cloudwatch_logs.arn]
 }
 
 resource "aws_iam_policy" "dynamodb" {
@@ -50,6 +50,23 @@ resource "aws_iam_policy" "dynamodb" {
       }
     ]
   })
+}
+
+resource "aws_iam_policy" "cloudwatch_logs" {
+  name = "cloudwatch_logs"
+
+  policy = jsonencode({
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "logs:*"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        }
+    ]
+})
 }
 
 resource "aws_lambda_permission" "stay" {
