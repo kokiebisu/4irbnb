@@ -22,6 +22,7 @@ export class SendGridClient implements IEmailClient {
           packageName: PackageEnum.common,
           key: "utils/email",
         });
+        ``;
         if (!apiKey) {
           throw new InternalError({
             location: "configureClient:get",

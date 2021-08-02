@@ -9,4 +9,4 @@
  *
  * @packageDocumentation
  */
-export * from "./class";
+export * from "./factory";

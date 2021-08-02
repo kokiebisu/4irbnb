@@ -1,15 +1,52 @@
 import { WebClient } from "@slack/web-api";
-import { IAlertService } from "../types";
+import { PackageEnum } from "../../../enum";
+import { InternalError } from "../../../error";
+import { createConfigService } from "../../config";
+import { createLoggerService, ILoggerService } from "../../logger";
 import {
+  IAlertClient,
   IAlertClientSendFileParams,
   IAlertClientSendMessageParams,
 } from "./types";
 
-export class SlackAlertService implements IAlertService {
-  #package: WebClient;
+export class SlackClient implements IAlertClient {
+  #package?: WebClient;
+  #logger: ILoggerService;
 
-  constructor(token: string) {
-    this.#package = new WebClient(token);
+  constructor() {
+    this.#logger = createLoggerService({
+      packageName: PackageEnum.common,
+      className: "SlackClient",
+    });
+  }
+
+  async #configureClient() {
+    if (!this.#package) {
+      const service = createConfigService();
+      try {
+        const token = await service.get({
+          packageName: PackageEnum.common,
+          key: "utils/alert",
+        });
+        if (!token) {
+          throw new InternalError({
+            location: "configureClient:{!token}",
+            message: "Unable to retrieve token",
+          });
+        }
+        this.#package = new WebClient(token);
+      } catch (error: any) {
+        if (error instanceof InternalError) {
+          const { location, message } = error;
+          this.#logger.error({ location, message });
+        } else {
+          this.#logger.error({
+            location: "configureClient:get",
+            message: error,
+          });
+        }
+      }
+    }
   }
 
   /**
@@ -23,47 +60,97 @@ export class SlackAlertService implements IAlertService {
     from,
     message,
   }: IAlertClientSendMessageParams): Promise<void> {
-    const { channels } = await this.#package.conversations.list();
+    await this.#configureClient();
 
-    const channelId =
-      channels?.find((channel) => to === channel.name)?.id || null;
-    if (!channelId) {
-      throw new Error(
-        "[@slack-alert-service#sendMessage] Unable to find channel from the channel name"
-      );
+    try {
+      if (!this.#package) {
+        throw new InternalError({
+          location: "sendMessage:{!this.#package}",
+          message: "Package wasn't configured",
+        });
+      }
+      const { channels } = await this.#package.conversations.list();
+
+      const channelId =
+        channels?.find((channel) => to === channel.name)?.id || null;
+      if (!channelId) {
+        throw new InternalError({
+          location: "sendMessage:{!channelId}",
+          message: "Unable to find channel from the channel name",
+        });
+      }
+
+      await this.#package.chat.postMessage({
+        username: from,
+        icon_emoji: message.emoji,
+        text: message.text,
+        channel: channelId,
+      });
+    } catch (error: any) {
+      if (error instanceof InternalError) {
+        const { location, message } = error;
+        this.#logger.error({
+          location,
+          message,
+        });
+      } else {
+        this.#logger.error({
+          location: "sendMessage",
+          message: error,
+        });
+      }
     }
-
-    await this.#package.chat.postMessage({
-      username: from,
-      icon_emoji: message.emoji,
-      text: message.text,
-      channel: channelId,
-    });
   }
 
+  /**
+   * @public
+   * @param param0
+   */
   async sendFile({
     to,
     file,
     comment,
   }: IAlertClientSendFileParams): Promise<void> {
-    const { filetype, content, filename } = file;
-    const { channels } = await this.#package.conversations.list();
+    await this.#configureClient();
+    try {
+      if (!this.#package) {
+        throw new InternalError({
+          location: "sendFile:{!this.#package}",
+          message: "Package wasn't configured",
+        });
+      }
+      const { channels } = await this.#package.conversations.list();
+      const { filetype, content, filename } = file;
+      const channelId =
+        channels?.find((channel) => to === channel.name)?.id || null;
 
-    const channelId =
-      channels?.find((channel) => to === channel.name)?.id || null;
+      if (!channelId) {
+        throw new InternalError({
+          location: "sendFile:{!channelId}",
+          message: "Unable to find channel from the channel name",
+        });
+      }
 
-    if (!channelId) {
-      throw new Error(
-        "[@slack-alert-service#sendFile] Unable to find channel from the channel name"
-      );
+      await this.#package.files.upload({
+        filetype,
+        file: content,
+        filename,
+        channel: channelId,
+        initial_comment: comment,
+      });
+    } catch (error: any) {
+      if (error instanceof InternalError) {
+        const { location, message } = error;
+        this.#logger.error({
+          location,
+          message,
+        });
+      } else {
+        this.#logger.error({
+          location: "sendMessage",
+          message: error,
+        });
+      }
     }
-
-    await this.#package.files.upload({
-      filetype,
-      file: content,
-      filename,
-      channel: channelId,
-      initial_comment: comment,
-    });
   }
 }

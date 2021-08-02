@@ -3,6 +3,8 @@ import {
   IAlertServiceSendMessageParams,
 } from "../types";
 
+export interface IAlertClient {}
+
 export interface IAlertClientSendMessageParams
   extends IAlertServiceSendMessageParams {}
 

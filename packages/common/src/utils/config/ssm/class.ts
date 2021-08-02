@@ -35,7 +35,7 @@ export class SSMClient implements IConfigService {
       return (
         await this.#client.send(
           new GetParameterCommand({
-            Name: `/${name}/${key}`,
+            Name: `/nextbnb/${name}/${key}`,
           })
         )
       ).Parameter?.Value;
@@ -79,7 +79,7 @@ export class SSMClient implements IConfigService {
     try {
       await this.#client.send(
         new DeleteParameterCommand({
-          Name: `/${name}/${key}`,
+          Name: `/nextbnb/${name}/${key}`,
         })
       );
     } catch (error) {
