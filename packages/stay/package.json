@@ -15,7 +15,6 @@
     "test": "jest --passWithNoTests",
     "lint": "eslint src --ext js,ts,tsx",
     "extract": "api-extractor run --local",
-    "aws:authenticate": "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 776733965771.dkr.ecr.us-east-1.amazonaws.com",
     "deploy": "bash script/deploy.sh"
   },
   "dependencies": {

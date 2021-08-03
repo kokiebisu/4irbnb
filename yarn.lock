@@ -178,7 +178,7 @@
     "@aws-sdk/util-utf8-node" "3.23.0"
     tslib "^2.3.0"
 
-"@aws-sdk/client-dynamodb@^3.23.0":
+"@aws-sdk/client-dynamodb@^3.23.0", "@aws-sdk/client-dynamodb@^3.24.0":
   version "3.24.0"
   resolved "https://registry.yarnpkg.com/@aws-sdk/client-dynamodb/-/client-dynamodb-3.24.0.tgz#bedc8c48f1dccc5eea16fcea96832e2abb5044d4"
   integrity sha512-OQAK939GYRJmUAuENFPnumXyUQs2o+rQuCm2SJMuY2ZNa4DzDv0vMqmMIKdRPjC7jdNfRQmNIr5iubog+MYe8A==
@@ -3734,6 +3734,7 @@
     "@aws-sdk/client-s3" "^3.24.0"
     "@aws-sdk/client-ssm" "^3.24.0"
     "@aws-sdk/client-sts" "^3.24.0"
+    "@sendgrid/mail" "^7.4.5"
     "@slack/web-api" "^6.3.0"
     date-fns "^2.23.0"
     winston "^3.3.3"
@@ -3744,8 +3745,7 @@
     "@aws-sdk/client-dynamodb" "^3.23.0"
     "@aws-sdk/lib-dynamodb" "^3.24.0"
     "@aws-sdk/util-dynamodb" "^3.24.0"
-    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-database-1.1.0-e9f46849-f6b9-4a81-b49d-f1fa8054e21d-1627944736648/node_modules/@nextbnb/common"
-    yarn "^1.22.10"
+    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-database-1.1.0-e9429715-5226-4dce-9aea-e2ce22e27ea7-1627956059167/node_modules/@nextbnb/common"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -18478,11 +18478,6 @@ yarn-or-npm@^3.0.1:
   dependencies:
     cross-spawn "^6.0.5"
     pkg-dir "^4.2.0"
-
-yarn@^1.22.10:
-  version "1.22.11"
-  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.11.tgz#d0104043e7349046e0e2aec977c24be106925ed6"
-  integrity sha512-AWje4bzqO9RUn3sdnM5N8n4ZJ0BqCc/kqFJvpOI5/EVkINXui0yuvU7NDCEF//+WaxHuNay2uOHxA4+tq1P3cg==
 
 yocto-queue@^0.1.0:
   version "0.1.0"

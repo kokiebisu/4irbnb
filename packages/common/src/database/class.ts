@@ -1,4 +1,8 @@
-import { createLogger, ILoggerService, PackageEnum } from "@nextbnb/common";
+import {
+  createLoggerService,
+  ILoggerService,
+  PackageEnum,
+} from "@nextbnb/common";
 import { IDatabaseClient } from "./dynamodb";
 import {
   IDatabaseServiceConstructorParams,
@@ -18,7 +22,7 @@ export class DatabaseService {
    */
   constructor({ client }: IDatabaseServiceConstructorParams) {
     this.#client = client;
-    this.#logger = createLogger({
+    this.#logger = createLoggerService({
       packageName: PackageEnum.database,
       className: "DatabaseService",
     });

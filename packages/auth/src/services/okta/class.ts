@@ -57,14 +57,14 @@ export class OktaClient implements IAuthClient {
    * @param param0
    * @returns
    */
-  async validateToken({ authorizationToken }: IAuthServiceValidateTokenParams) {
+  async validateToken({ token }: IAuthServiceValidateTokenParams) {
     await this.configureVerifier();
     /**
      * Okta validation
      */
     try {
       const jwt = await this.#verifier.verifyAccessToken(
-        authorizationToken,
+        token,
         "api://default"
       );
       return !!jwt;

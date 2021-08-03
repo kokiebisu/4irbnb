@@ -8,7 +8,7 @@ import {
   GetCommand,
   UpdateCommand,
 } from "@aws-sdk/lib-dynamodb";
-import { createLogger, PackageEnum, TRegion } from "@nextbnb/common";
+import { createLoggerService, PackageEnum, TRegion } from "@nextbnb/common";
 import { LoggerService } from "@nextbnb/common/dist/utils/logger/class";
 import { translateConfig } from "./config";
 import {
@@ -30,7 +30,7 @@ export class DynamoDBClient implements IDatabaseClient {
 
   constructor({ region }: IDynamoDBConstructorParams) {
     this.#region = region;
-    this.#logger = createLogger({
+    this.#logger = createLoggerService({
       packageName: PackageEnum.database,
       className: "DynamoDBClient",
     });

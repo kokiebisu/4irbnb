@@ -1,9 +1,8 @@
-import { createIdentityService } from "@nextbnb/common";
 import {
   IAuthClient,
   IAuthService,
   IAuthServiceConstructoParams,
-  IAuthServiceGenerateIAMPolicyParams,
+  IAuthServiceGenerateAllowPolicyParams,
   IAuthServiceLoginParams,
   IAuthServiceRegisterParams,
   IAuthServiceValidateTokenParams,
@@ -37,10 +36,9 @@ export class AuthService implements IAuthService {
    * the decoded token, you may need to modify your code according to how
    * your token is verified and what your Identity Provider returns.
    */
-  async validateToken({ authorizationToken }: IAuthServiceValidateTokenParams) {
+  async validateToken({ token }: IAuthServiceValidateTokenParams) {
     // await this.#client.validateToken({ authorizationToken });
-    console.log("auth", authorizationToken);
-    return [{ method: "*", path: "*" }];
+    return token;
   }
 
   /**
@@ -87,7 +85,7 @@ export class AuthService implements IAuthService {
    *
    * @returns a policy document object
    */
-  async generateAllowPolicy({ resource }: IAuthServiceGenerateIAMPolicyParams) {
+  generateAllowPolicy({ resource }: IAuthServiceGenerateAllowPolicyParams) {
     return {
       principalId: "user",
       policyDocument: {

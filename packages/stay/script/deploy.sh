@@ -1,6 +1,6 @@
 #!/bin/zsh
-yarn aws:authenticate
 cd ../../
+yarn aws:authenticate
 yarn docker:stay
 docker tag nextbnb-stay:latest 776733965771.dkr.ecr.us-east-1.amazonaws.com/nextbnb-stay:latest
 docker push 776733965771.dkr.ecr.us-east-1.amazonaws.com/nextbnb-stay:latest

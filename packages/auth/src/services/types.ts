@@ -11,13 +11,13 @@ export interface IAuthServiceConstructoParams {
 export interface IAuthService extends IAuthClient {
   generateAllowPolicy(
     params: IAuthServiceGenerateAllowPolicyParams
-  ): Promise<{
+  ): {
     principalId: string;
     policyDocument: {
       Version: string;
       Statement: { Action: string; Effect: string; Resource: string }[];
     };
-  }>;
+  };
   generateDenyPolicy(): {
     principalId: string;
     policyDocument: {
@@ -32,9 +32,7 @@ export interface IAuthService extends IAuthClient {
  * @public
  */
 export interface IAuthClient {
-  validateToken({
-    authorizationToken,
-  }: IAuthServiceValidateTokenParams): Promise<any>;
+  validateToken({ token }: IAuthServiceValidateTokenParams): Promise<any>;
   register(params: any): Promise<any>;
   login(params: any): Promise<any>;
 }
