@@ -1,8 +1,5 @@
-import {
-  createLoggerService,
-  ILoggerService,
-  PackageEnum,
-} from "@nextbnb/common";
+import { PackageEnum } from "../enum";
+import { createLoggerService, ILoggerService } from "../utils";
 import { IDatabaseClient } from "./dynamodb";
 import {
   IDatabaseServiceConstructorParams,

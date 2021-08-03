@@ -3,7 +3,6 @@
   /** lets us update all packages which are not the latest */
   "references": [
     { "path": "./common" },
-    { "path": "./database" },
     { "path": "./auth" },
     { "path": "./stay" }
   ],

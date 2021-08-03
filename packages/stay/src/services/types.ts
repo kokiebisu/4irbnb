@@ -1,5 +1,5 @@
 import { IStay } from "../models";
-import { IDatabaseService, IWithIdentifierParams } from "@nextbnb/database";
+import { IDatabaseService, IWithIdentifierParams } from "@nextbnb/common";
 
 export interface IStayService {
   get(params: IStayServiceGet): Promise<IStay | null>;

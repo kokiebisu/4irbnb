@@ -1,4 +1,4 @@
-import { IRegion } from "@nextbnb/common";
+import { IRegion } from "../types";
 import { IDatabaseClient } from "./dynamodb";
 
 /**

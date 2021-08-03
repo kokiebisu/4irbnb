@@ -1,4 +1,4 @@
-import { createDatabase } from "@nextbnb/database";
+import { createDatabaseService } from "@nextbnb/common";
 import { StayController } from "./class";
 
 /**
@@ -8,7 +8,7 @@ import { StayController } from "./class";
  */
 export const createStayController = () =>
   new StayController({
-    db: createDatabase({ region: "us-east-1" }),
+    db: createDatabaseService({ region: "us-east-1" }),
     idValidator: ({}) => {
       return true;
     },

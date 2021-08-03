@@ -4,9 +4,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
+  "private": true,
   "scripts": {
     "update": "rm -rf node_modules && yarn",
     "start": "node dist/index.js",

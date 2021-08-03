@@ -7,7 +7,7 @@ import {
   IStayServiceConstructorParams,
   IStayServicePatch,
 } from "./types";
-import { IDatabaseService } from "@nextbnb/database";
+import { IDatabaseService } from "@nextbnb/common";
 import {
   createLoggerService,
   ILoggerService,

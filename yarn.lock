@@ -178,7 +178,7 @@
     "@aws-sdk/util-utf8-node" "3.23.0"
     tslib "^2.3.0"
 
-"@aws-sdk/client-dynamodb@^3.23.0", "@aws-sdk/client-dynamodb@^3.24.0":
+"@aws-sdk/client-dynamodb@^3.24.0":
   version "3.24.0"
   resolved "https://registry.yarnpkg.com/@aws-sdk/client-dynamodb/-/client-dynamodb-3.24.0.tgz#bedc8c48f1dccc5eea16fcea96832e2abb5044d4"
   integrity sha512-OQAK939GYRJmUAuENFPnumXyUQs2o+rQuCm2SJMuY2ZNa4DzDv0vMqmMIKdRPjC7jdNfRQmNIr5iubog+MYe8A==
@@ -3731,21 +3731,16 @@
   version "1.1.0"
   dependencies:
     "@aws-sdk/client-apigatewayv2" "^3.24.0"
+    "@aws-sdk/client-dynamodb" "^3.24.0"
     "@aws-sdk/client-s3" "^3.24.0"
     "@aws-sdk/client-ssm" "^3.24.0"
     "@aws-sdk/client-sts" "^3.24.0"
+    "@aws-sdk/lib-dynamodb" "^3.24.0"
+    "@aws-sdk/util-dynamodb" "^3.24.0"
     "@sendgrid/mail" "^7.4.5"
     "@slack/web-api" "^6.3.0"
     date-fns "^2.23.0"
     winston "^3.3.3"
-
-"@nextbnb/database@file:packages/database":
-  version "1.1.0"
-  dependencies:
-    "@aws-sdk/client-dynamodb" "^3.23.0"
-    "@aws-sdk/lib-dynamodb" "^3.24.0"
-    "@aws-sdk/util-dynamodb" "^3.24.0"
-    "@nextbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@nextbnb-database-1.1.0-e9429715-5226-4dce-9aea-e2ce22e27ea7-1627956059167/node_modules/@nextbnb/common"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"

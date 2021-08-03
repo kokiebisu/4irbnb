@@ -4,9 +4,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
+  "private": true,
   "scripts": {
     "update": "rimraf node_modules && yarn",
     "start": "node dist/index.js",
@@ -18,8 +16,7 @@
     "deploy": "bash script/deploy.sh"
   },
   "dependencies": {
-    "@nextbnb/common": "file:../common",
-    "@nextbnb/database": "file:../database"
+    "@nextbnb/common": "file:../common"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.81",

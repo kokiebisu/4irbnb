@@ -1,6 +1,5 @@
 import { DatabaseService } from "./class";
 import { DynamoDBClient } from "./dynamodb/class";
-
 import { ICreateDatabaseParams } from "./types";
 
 /**

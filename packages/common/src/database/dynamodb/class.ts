@@ -8,8 +8,9 @@ import {
   GetCommand,
   UpdateCommand,
 } from "@aws-sdk/lib-dynamodb";
-import { createLoggerService, PackageEnum, TRegion } from "@nextbnb/common";
-import { LoggerService } from "@nextbnb/common/dist/utils/logger/class";
+import { PackageEnum } from "../../enum";
+import { TRegion } from "../../types";
+import { createLoggerService, ILoggerService } from "../../utils";
 import { translateConfig } from "./config";
 import {
   IDatabaseClient,
@@ -26,7 +27,7 @@ import {
 export class DynamoDBClient implements IDatabaseClient {
   #region: TRegion;
   #package?: DynamoDBDocumentClient;
-  #logger: LoggerService;
+  #logger: ILoggerService;
 
   constructor({ region }: IDynamoDBConstructorParams) {
     this.#region = region;

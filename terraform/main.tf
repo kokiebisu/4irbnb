@@ -32,11 +32,4 @@ module "stay" {
   write_capacity = 10
 }
 
-module "database" {
-  source = "../packages/database/terraform"
-
-  read_capacity  = 10
-  write_capacity = 10
-}
-
 
