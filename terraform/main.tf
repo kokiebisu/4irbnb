@@ -32,4 +32,6 @@ module "stay" {
   write_capacity = 10
 }
 
-
+module "web" {
+  source = "../app/web/terraform"
+}
