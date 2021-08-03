@@ -8,15 +8,6 @@ import { SemanticIconProps } from "./semantic";
 import { StayIconProps } from "./stay";
 import { factory } from "./utils/factory";
 
-export type FillIconProps = {
-  fill: string;
-};
-
-export type StrokeIconProps = {
-  stroke: string;
-  strokeWidth: number;
-};
-
 export type IconProps =
   | ({ variant: "action" } & ActionIconProps)
   | ({ variant: "amenity" } & AmenityIconProps)
