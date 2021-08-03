@@ -7,9 +7,9 @@ import {
   IStayServiceConstructorParams,
   IStayServicePatch,
 } from "./types";
-import { IDatabaseService } from "@nextbnb/database";
+import { IDatabaseService } from "@nextbnb/common";
 import {
-  createLogger,
+  createLoggerService,
   ILoggerService,
   PackageEnum,
   InternalError,
@@ -24,7 +24,7 @@ export class StayService implements IStayService {
     this.#db = db;
     this.#idValidator = idValidator;
     this.#tableName = "StayService";
-    this.#logger = createLogger({
+    this.#logger = createLoggerService({
       packageName: PackageEnum.stay,
       className: "StayService",
     });

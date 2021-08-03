@@ -5,3 +5,4 @@ resource "aws_internet_gateway" "default" {
     Name = "${var.app_name}-internet-gateway"
   }
 }
+

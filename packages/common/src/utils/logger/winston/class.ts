@@ -1,27 +1,34 @@
-import * as winston from "winston";
-import {
-  ILoggerService,
-  IServiceErrorParams,
-  IServiceLogParams,
-} from "../types";
+import { createLogger, Logger, transports } from "winston";
+import { IServiceErrorParams, IServiceLogParams } from "../types";
+import { ILoggerClient } from "./types";
 
-export class WinstonService implements ILoggerService {
-  #client: winston.Logger;
+export class WinstonClient implements ILoggerClient {
+  #package: Logger;
 
   /**
    * Constructs the Logger instance
    */
   constructor() {
-    this.#client = winston.createLogger({
-      transports: [new winston.transports.Console()],
+    this.#package = createLogger({
+      transports: [new transports.Console()],
     });
   }
 
+  /**
+   * @public
+   * Logs
+   * @param param0
+   */
   log({ location, message }: IServiceLogParams): any {
-    this.#client.log("info", `[${location}]:${message}`);
+    this.#package.log("info", `[${location}]:${message}`);
   }
 
+  /**
+   * @public
+   * Logs
+   * @param param0
+   */
   error({ location, message }: IServiceErrorParams): any {
-    this.#client.log("error", `[${location}]:${message}`);
+    this.#package.log("error", `[${location}]:${message}`);
   }
 }

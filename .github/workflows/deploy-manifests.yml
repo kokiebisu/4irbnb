@@ -38,7 +38,7 @@ jobs:
         id: plan
         if: github.event_name == 'pull_request'
         working-directory: ./terraform
-        run: terraform plan
+        run: terraform plan -lock=false
         continue-on-error: true
 
       - name: Update Pull Request
@@ -78,4 +78,4 @@ jobs:
       - name: Terraform Apply
         if: github.ref == 'refs/heads/develop' && github.event_name == 'push'
         working-directory: ./terraform
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve -lock=false

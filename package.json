@@ -21,9 +21,10 @@
     "test": "yarn lerna run test --stream",
     "document": "scripty",
     "extract": "lerna run extract --scope=@nextbnb/{common,database}",
-    "pack:auth": "docker build -t nextbnb/auth -f ./packages/auth/Dockerfile .",
     "terraform:apply": "cd terraform && terraform apply",
-    "docker:stay": "docker build -t nextbnb-stay -f ./packages/stay/Dockerfile ."
+    "docker:stay": "docker build -t nextbnb-stay -f ./packages/stay/Dockerfile .",
+    "docker:auth": "docker build -t nextbnb-auth -f ./packages/auth/Dockerfile .",
+    "aws:authenticate": "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 776733965771.dkr.ecr.us-east-1.amazonaws.com"
   },
   "scripty": {
     "path": "./scripts/workspace"

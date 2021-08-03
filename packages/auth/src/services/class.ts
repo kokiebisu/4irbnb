@@ -1,26 +1,30 @@
 import {
+  IAuthClient,
   IAuthService,
   IAuthServiceConstructoParams,
+  IAuthServiceGenerateAllowPolicyParams,
+  IAuthServiceLoginParams,
+  IAuthServiceRegisterParams,
   IAuthServiceValidateTokenParams,
 } from "./types";
 
-const apiPermissions = [
-  {
-    arn: "arn:aws:execute-api:REGION:ACCOUNTID:my-api-gw", // NOTE: Replace with your API Gateway API ARN
-    resource: "my-resource", // NOTE: Replace with your API Gateway Resource
-    stage: "dev", // NOTE: Replace with your API Gateway Stage
-    httpVerb: "GET",
-    scope: "email",
-  },
-];
+// const apiPermissions = [
+//   {
+//     arn: "arn:aws:execute-api:REGION:ACCOUNTID:my-api-gw", // NOTE: Replace with your API Gateway API ARN
+//     resource: "my-resource", // NOTE: Replace with your API Gateway Resource
+//     stage: "dev", // NOTE: Replace with your API Gateway Stage
+//     httpVerb: "GET",
+//     scope: "email",
+//   },
+// ];
 
 /**
  * Blueprint that implements the AuthService
  */
-export class AuthService {
-  #service: IAuthService;
-  constructor({ service }: IAuthServiceConstructoParams) {
-    this.#service = service;
+export class AuthService implements IAuthService {
+  #client: IAuthClient;
+  constructor({ client }: IAuthServiceConstructoParams) {
+    this.#client = client;
   }
 
   /**
@@ -32,18 +36,27 @@ export class AuthService {
    * the decoded token, you may need to modify your code according to how
    * your token is verified and what your Identity Provider returns.
    */
-  async validateAuthToken({
-    authorizationToken,
-  }: IAuthServiceValidateTokenParams) {
-    this.#service.validateToken({ authorizationToken });
+  async validateToken({ token }: IAuthServiceValidateTokenParams) {
+    // await this.#client.validateToken({ authorizationToken });
+    return token;
   }
 
-  async register({}) {
-    this.#service.register({});
+  /**
+   * @public
+   * @param param0
+   */
+  async register({ data }: IAuthServiceRegisterParams) {
+    this.#client.register({
+      data,
+    });
   }
 
-  async login({}) {
-    this.#service.login({});
+  /**
+   * @public
+   * @param param0
+   */
+  async login({ email, password }: IAuthServiceLoginParams) {
+    this.#client.login({ email, password });
   }
 
   /**
@@ -51,10 +64,18 @@ export class AuthService {
    * Converts the claims to policy statements that can be used to generate iam policies to be returned
    * to the user
    */
-  convertClaimsToPolicyStatements({ claims }) {
+  convertClaimsToPolicyStatements({ claims }: any) {
     /**
      * Some logic
      */
+    console.log(claims);
+    return [
+      {
+        Action: "John",
+        Effect: "Parker",
+        Resource: "",
+      },
+    ];
   }
 
   /**
@@ -64,35 +85,40 @@ export class AuthService {
    *
    * @returns a policy document object
    */
-  generatePolicy({ policyStatements }) {
-    if (!policyStatements.length) {
-      return {
-        principalId: "user",
-        policyDocument: {
-          Version: "2012-10-17",
-          Statement: [
-            {
-              Action: "execute-api:Invoke",
-              Effect: "Deny",
-              Resource: "*",
-            },
-          ],
-        },
-      };
-    }
+  generateAllowPolicy({ resource }: IAuthServiceGenerateAllowPolicyParams) {
     return {
       principalId: "user",
       policyDocument: {
         Version: "2012-10-17",
-        Statement: policyStatements.map(
-          ({ action, apiName, apiStage, apiVerb, apiResource }) => {
-            return {
-              Action: "execute-api:Invoke",
-              Effect: action,
-              Resource: `${apiName}/${apiStage}/${apiVerb}/${apiResource}`,
-            };
-          }
-        ),
+        Statement: [
+          {
+            Action: "execute-api:Invoke",
+            Effect: "Allow",
+            Resource: resource,
+          },
+        ],
+        context: {},
+      },
+    };
+  }
+
+  /**
+   * @public
+   * @returns
+   */
+  generateDenyPolicy() {
+    return {
+      principalId: "user",
+      policyDocument: {
+        Version: "2012-10-17",
+        Statement: [
+          {
+            Action: "execute-api:Invoke",
+            Effect: "Deny",
+            Resource: "*",
+          },
+        ],
+        context: {},
       },
     };
   }

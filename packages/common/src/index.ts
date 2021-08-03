@@ -12,6 +12,6 @@
 export * from "./model";
 export * from "./enum";
 export * from "./types";
-export * from "./service";
 export * from "./utils";
 export * from "./error";
+export * from "./database";
