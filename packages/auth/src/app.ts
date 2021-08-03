@@ -1,27 +1,23 @@
 import { createLoggerService, PackageEnum } from "@nextbnb/common";
 import { createAuthController } from "./controllers/factory";
 
+/**
+ * @public
+ * Handler for the Lambda authorizer
+ * @param event
+ * @returns
+ */
 export const handler = async (event: any) => {
   const controller = createAuthController();
   const logger = createLoggerService({
     packageName: PackageEnum.auth,
     className: "registerVerify",
   });
+  logger.log({ location: "handler", message: "Entered handler..." });
+  console.log("EVENT", event);
 
-  const token = event.authorizationToken.replace("Bearer ", "");
-  if (!token) {
-    return null;
-  }
-
-  try {
-    await controller.authorize({ authorizationToken: "" });
-  } catch (error) {
-    logger.error({ location: "authorize", message: error as string });
-  }
-  return {
-    statusCode: 200,
-    body: JSON.stringify({
-      policy: "POLICY HERE",
-    }),
-  };
+  return await controller.authorize({
+    authorization: event.headers.authorization,
+    resource: event.routeArn,
+  });
 };

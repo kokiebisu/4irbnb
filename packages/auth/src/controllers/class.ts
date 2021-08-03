@@ -11,15 +11,20 @@ export class AuthController {
   }
 
   /**
+   * @public
    * Generates Allow or Deny policy
    * @returns
    */
-  async authorize({ authorizationToken }: IAuthControllerAuthorizeParams) {
-    const claims = await this.#service.validateToken({ authorizationToken });
-    if (!claims) {
+  async authorize({ authorization, resource }: IAuthControllerAuthorizeParams) {
+    if (!authorization) {
       return this.#service.generateDenyPolicy();
     }
-    return this.#service.generateAllowPolicy({ claims });
+    const token = authorization.replace("Bearer ", "");
+    const valid = await this.#service.validateToken({ token });
+    if (!valid) {
+      return this.#service.generateDenyPolicy();
+    }
+    return this.#service.generateAllowPolicy({ resource });
   }
 
   /**

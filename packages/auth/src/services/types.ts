@@ -10,7 +10,7 @@ export interface IAuthServiceConstructoParams {
  */
 export interface IAuthService extends IAuthClient {
   generateAllowPolicy(
-    params: IAuthServiceGenerateIAMPolicyParams
+    params: IAuthServiceGenerateAllowPolicyParams
   ): Promise<{
     principalId: string;
     policyDocument: {
@@ -58,15 +58,15 @@ export interface IIAMPolicyStatement {
 /**
  * @public
  */
-export interface IAuthServiceGenerateIAMPolicyParams {
-  claims: { method: "*"; path: string }[];
+export interface IAuthServiceGenerateAllowPolicyParams {
+  resource: string;
 }
 
 /**
  * @public
  */
 export interface IAuthServiceValidateTokenParams {
-  authorizationToken: string;
+  token: string;
 }
 
 /**

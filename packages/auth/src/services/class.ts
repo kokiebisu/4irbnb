@@ -43,12 +43,20 @@ export class AuthService implements IAuthService {
     return [{ method: "*", path: "*" }];
   }
 
+  /**
+   * @public
+   * @param param0
+   */
   async register({ data }: IAuthServiceRegisterParams) {
     this.#client.register({
       data,
     });
   }
 
+  /**
+   * @public
+   * @param param0
+   */
   async login({ email, password }: IAuthServiceLoginParams) {
     this.#client.login({ email, password });
   }
@@ -79,21 +87,19 @@ export class AuthService implements IAuthService {
    *
    * @returns a policy document object
    */
-  async generateAllowPolicy({ claims }: IAuthServiceGenerateIAMPolicyParams) {
-    const awsAccountId = await createIdentityService().retrieveCallerAccountId();
-    const apiGatewayARN = await createIdentityService().retrieveCallerRouterId();
-
+  async generateAllowPolicy({ resource }: IAuthServiceGenerateIAMPolicyParams) {
     return {
       principalId: "user",
       policyDocument: {
         Version: "2012-10-17",
-        Statement: claims.map(({ method, path }: any) => {
-          return {
+        Statement: [
+          {
             Action: "execute-api:Invoke",
             Effect: "Allow",
-            Resource: `arn:aws:execute-api:us-east-1:${awsAccountId}:${apiGatewayARN}/${method}/${path}`,
-          };
-        }),
+            Resource: resource,
+          },
+        ],
+        context: {},
       },
     };
   }
@@ -114,6 +120,7 @@ export class AuthService implements IAuthService {
             Resource: "*",
           },
         ],
+        context: {},
       },
     };
   }
