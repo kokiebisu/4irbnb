@@ -9,8 +9,22 @@ export interface IAuthServiceConstructoParams {
  * @public
  */
 export interface IAuthService extends IAuthClient {
-  generateAllowPolicy(params: IAuthServiceGenerateIAMPolicyParams): IIAMPolicy;
-  generateDenyPolicy(): IIAMPolicy;
+  generateAllowPolicy(
+    params: IAuthServiceGenerateIAMPolicyParams
+  ): Promise<{
+    principalId: string;
+    policyDocument: {
+      Version: string;
+      Statement: { Action: string; Effect: string; Resource: string }[];
+    };
+  }>;
+  generateDenyPolicy(): {
+    principalId: string;
+    policyDocument: {
+      Version: string;
+      Statement: { Action: string; Effect: string; Resource: string }[];
+    };
+  };
   convertClaimsToPolicyStatements(params: IClaims): IIAMPolicyStatement[];
 }
 
@@ -23,17 +37,6 @@ export interface IAuthClient {
   }: IAuthServiceValidateTokenParams): Promise<any>;
   register(params: any): Promise<any>;
   login(params: any): Promise<any>;
-}
-
-/**
- * @public
- */
-export interface IIAMPolicy {
-  prinicpalId: string;
-  policyDocument: {
-    Version: "string";
-    Statement: IIAMPolicyStatement[];
-  };
 }
 
 /**

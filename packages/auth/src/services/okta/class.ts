@@ -6,7 +6,11 @@ import {
   IAuthServiceValidateTokenParams,
 } from "../types";
 import * as Verifier from "@okta/jwt-verifier";
-import { createLogger, ILoggerService, PackageEnum } from "@nextbnb/common";
+import {
+  createLoggerService,
+  ILoggerService,
+  PackageEnum,
+} from "@nextbnb/common";
 
 /**
  * Implementation of the AuthService using the Okta Client
@@ -20,7 +24,7 @@ export class OktaClient implements IAuthClient {
    * @public
    */
   constructor() {
-    this.#logger = createLogger({
+    this.#logger = createLoggerService({
       packageName: PackageEnum.auth,
       className: "OktaService",
     });
@@ -108,5 +112,6 @@ export class OktaClient implements IAuthClient {
    */
   async login({ email, password }: IAuthServiceLoginParams) {
     await this.configureClient();
+    console.log(email, password);
   }
 }

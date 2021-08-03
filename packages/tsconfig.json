@@ -5,8 +5,6 @@
     { "path": "./common" },
     { "path": "./database" },
     { "path": "./auth" },
-    { "path": "./aws" },
-    { "path": "./alert" },
     { "path": "./stay" }
   ],
   "include": ["src"]

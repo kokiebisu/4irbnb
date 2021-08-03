@@ -1,5 +1,5 @@
 import { ILoggerService, PackageEnum } from "@nextbnb/common";
-import { createLogger } from "@nextbnb/common";
+import { createLoggerService } from "@nextbnb/common";
 import { IStayControllerConstructorParams } from ".";
 import { isStay } from "../models";
 import { IStayService, StayService } from "../services";
@@ -19,7 +19,7 @@ export class StayController {
 
   constructor({ db, idValidator }: IStayControllerConstructorParams) {
     this.#service = new StayService({ db, idValidator });
-    this.#logger = createLogger({
+    this.#logger = createLoggerService({
       packageName: PackageEnum.stay,
       className: "StayController",
     });

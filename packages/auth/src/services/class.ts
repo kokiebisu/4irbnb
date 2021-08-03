@@ -1,6 +1,7 @@
 import { createIdentityService } from "@nextbnb/common";
 import {
   IAuthClient,
+  IAuthService,
   IAuthServiceConstructoParams,
   IAuthServiceGenerateIAMPolicyParams,
   IAuthServiceLoginParams,
@@ -8,20 +9,20 @@ import {
   IAuthServiceValidateTokenParams,
 } from "./types";
 
-const apiPermissions = [
-  {
-    arn: "arn:aws:execute-api:REGION:ACCOUNTID:my-api-gw", // NOTE: Replace with your API Gateway API ARN
-    resource: "my-resource", // NOTE: Replace with your API Gateway Resource
-    stage: "dev", // NOTE: Replace with your API Gateway Stage
-    httpVerb: "GET",
-    scope: "email",
-  },
-];
+// const apiPermissions = [
+//   {
+//     arn: "arn:aws:execute-api:REGION:ACCOUNTID:my-api-gw", // NOTE: Replace with your API Gateway API ARN
+//     resource: "my-resource", // NOTE: Replace with your API Gateway Resource
+//     stage: "dev", // NOTE: Replace with your API Gateway Stage
+//     httpVerb: "GET",
+//     scope: "email",
+//   },
+// ];
 
 /**
  * Blueprint that implements the AuthService
  */
-export class AuthService {
+export class AuthService implements IAuthService {
   #client: IAuthClient;
   constructor({ client }: IAuthServiceConstructoParams) {
     this.#client = client;
@@ -57,14 +58,18 @@ export class AuthService {
    * Converts the claims to policy statements that can be used to generate iam policies to be returned
    * to the user
    */
-  convertClaimsToPolicyStatements({ claims }) {
+  convertClaimsToPolicyStatements({ claims }: any) {
     /**
      * Some logic
      */
-    return {
-      firstName: "John",
-      lastName: "Parker",
-    };
+    console.log(claims);
+    return [
+      {
+        Action: "John",
+        Effect: "Parker",
+        Resource: "",
+      },
+    ];
   }
 
   /**
@@ -97,7 +102,7 @@ export class AuthService {
    * @public
    * @returns
    */
-  async generateDenyPolicy() {
+  generateDenyPolicy() {
     return {
       principalId: "user",
       policyDocument: {
