@@ -11,3 +11,5 @@ node_modules
 terraform/.terraform
 terraform/*.tfstate*
 *.tfvars
+
+.DS_STORE
