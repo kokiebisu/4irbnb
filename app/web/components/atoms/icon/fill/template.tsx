@@ -16,6 +16,16 @@ export const FillIconTemplate = (props: FillIconProps) => {
       return <HeartIcon {...props} />;
     case "upload":
       return <UploadIcon {...props} />;
+    case "calendar":
+      return <CalendarIcon {...props} />;
+    case "guidelines":
+      return <GuidelinesIcon {...props} />;
+    case "doublebed":
+      return <DoubleBedIcon {...props} />;
+    case "distancing":
+      return <DistancingIcon {...props} />;
+    case "check":
+      return <CheckIcon {...props} />;
     default:
       throw new Error("Invalid fillType provided");
   }
@@ -58,7 +68,7 @@ const DoorIcon = ({ fill }: FillIconTemplateProps): JSX.Element => {
   );
 };
 
-export const PauseIcon = ({ fill }: FillIconTemplateProps): JSX.Element => {
+const PauseIcon = ({ fill }: FillIconTemplateProps): JSX.Element => {
   return (
     <svg viewBox="0 0 16 16" width="100%" height="auto" display="block">
       <path fill={fill} d="M13 1v14H9V1zM7 1v14H3V1z" />
@@ -66,7 +76,7 @@ export const PauseIcon = ({ fill }: FillIconTemplateProps): JSX.Element => {
   );
 };
 
-export const PlayIcon = ({ fill }: FillIconTemplateProps): JSX.Element => {
+const PlayIcon = ({ fill }: FillIconTemplateProps): JSX.Element => {
   return (
     <svg viewBox="0 0 32 32" width="100%" height="auto" display="block">
       <path
@@ -77,7 +87,7 @@ export const PlayIcon = ({ fill }: FillIconTemplateProps): JSX.Element => {
   );
 };
 
-export const HeartIcon = ({ fill = "black" }: FillIconProps): JSX.Element => {
+const HeartIcon = ({ fill = "black" }: FillIconProps): JSX.Element => {
   return (
     <svg viewBox="0 0 32 32" width="100%" height="auto" display="block">
       <path
@@ -88,13 +98,101 @@ export const HeartIcon = ({ fill = "black" }: FillIconProps): JSX.Element => {
   );
 };
 
-export const UploadIcon = ({ fill }: FillIconProps): JSX.Element => {
+const UploadIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" viewBox="0 0 24 24" width="100%" height="auto">
       <path
         fill={fill}
         d="m24 14.5c0 3.12-2.55 5.5-5.5 5.5h-4a .5.5 0 0 1 0-1h4c2.41 0 4.5-1.95 4.5-4.5 0-1.17-.41-2.08-1.1-2.77a3.98 3.98 0 0 0 -.76-.6 2.54 2.54 0 0 0 -.32-.17l-.31-.13v-.33c0-3.95-2.96-6.5-7-6.5-1.62 0-3.01.61-4.17 1.63-.41.36-.76.75-1.06 1.13-.17.23-.29.4-.34.49l-.28.49-.46-.34a2.83 2.83 0 0 0 -.5-.28c-.96-.43-1.95-.43-2.9.28-.45.34-.74.74-.9 1.21-.2.59-.19 1.24-.04 1.86.04.17.08.29.1.35l.17.43-.41.21c-.2.1-.52.33-.85.7-.54.6-.87 1.38-.87 2.34 0 2.83 1.91 4.5 5.5 4.5h2a .5.5 0 1 1 0 1h-2c-4.12 0-6.5-2.08-6.5-5.5 0-1.22.42-2.23 1.13-3.02.27-.31.54-.53.78-.7-.01-.03-.01-.05-.02-.08-.19-.79-.21-1.62.06-2.42a3.5 3.5 0 0 1 1.25-1.68c1.28-.96 2.65-.96 3.91-.39.09.04.16.08.23.12.04-.06.08-.11.13-.18.33-.44.73-.87 1.19-1.28 1.35-1.16 2.96-1.87 4.84-1.87 4.45 0 7.82 2.83 7.98 7.18.33.18.73.45 1.12.85.87.87 1.4 2.03 1.4 3.48zm-9.15-.65a.5.5 0 0 0 0-.71l-2.96-2.96a.56.56 0 0 0 -.79 0l-2.96 2.96a.5.5 0 1 0 .71.71l2.15-2.14v11.79a.5.5 0 0 0 1 0v-11.79l2.15 2.15a.5.5 0 0 0 .71 0z"
       />
+    </svg>
+  );
+};
+
+const CalendarIcon = ({ fill }: FillIconProps): JSX.Element => {
+  return (
+    <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
+      <path
+        fill={fill}
+        d="M12 0v2h8V0h2v2h6a2 2 0 0 1 1.995 1.85L30 4v15.586a2 2 0 0 1-.467 1.284l-.119.13L21 29.414a2 2 0 0 1-1.238.578l-.176.008H7a5 5 0 0 1-4.995-4.783L2 25V4a2 2 0 0 1 1.85-1.995L4 2h6V0zM4 12v13a3 3 0 0 0 2.824 2.995L7 28h11v-5a5 5 0 0 1 4.783-4.995L23 18h5v-6zm23.585 8H23a3 3 0 0 0-2.995 2.824L20 23v4.585zM4 10h24V4h-6v2h-2V4h-8v2h-2V4H4z"
+      ></path>
+    </svg>
+  );
+};
+
+const GuidelinesIcon = ({ fill }: FillIconProps): JSX.Element => {
+  return (
+    <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
+      <path
+        fill={fill}
+        d="M28.477 1.07a2 2 0 0 1 2.515 1.754L31 3v23.04a2 2 0 0 1-1.34 1.888l-.153.047-13 3.41a2 2 0 0 1-.813.041l-.201-.041-13-3.41a2 2 0 0 1-1.487-1.776L1 26.04V3a2 2 0 0 1 2.35-1.969l.173.039L16 4.448zM29 3L16.523 6.378a2 2 0 0 1-.873.039l-.173-.039L3 3v23.04l13 3.41 13-3.41zm-2 17.984v2l-9 2.5v-2zm0-7v2l-9 2.5v-2zm0-7v2l-9 2.5v-2z"
+      ></path>
+    </svg>
+  );
+};
+
+const DoubleBedIcon = ({ fill }: FillIconProps): JSX.Element => {
+  return (
+    <svg display="block" width="100%" height="auto" viewBox="0 0 480 480">
+      <g>
+        <g>
+          <path
+            fill={fill}
+            d="M472,272h-8v-24c-0.021-15.886-9.44-30.254-24-36.608V88c-0.002-3.18-1.886-6.056-4.8-7.328
+  c3.121-5.002,4.783-10.776,4.8-16.672c0-17.673-14.327-32-32-32c-17.673,0-32,14.327-32,32c0.033,5.634,1.569,11.157,4.448,16
+  H99.552c2.879-4.843,4.415-10.366,4.448-16c0-17.673-14.327-32-32-32S40,46.327,40,64c0.017,5.896,1.679,11.67,4.8,16.672
+  C41.886,81.944,40.002,84.82,40,88v123.392C25.44,217.746,16.021,232.114,16,248v24H8c-4.418,0-8,3.582-8,8v112
+  c0,4.418,3.582,8,8,8h8v40c0,4.418,3.582,8,8,8h32c4.418,0,8-3.582,8-8v-40h352v40c0,4.418,3.582,8,8,8h32c4.418,0,8-3.582,8-8
+  v-40h8c4.418,0,8-3.582,8-8V280C480,275.582,476.418,272,472,272z M408,48c8.837,0,16,7.163,16,16s-7.163,16-16,16
+  s-16-7.163-16-16S399.163,48,408,48z M72,48c8.837,0,16,7.163,16,16s-7.163,16-16,16s-16-7.163-16-16S63.163,48,72,48z M56,96h368
+  v112h-32.208c5.294-6.883,8.179-15.316,8.208-24v-16c-0.026-22.08-17.92-39.974-40-40h-64c-22.08,0.026-39.974,17.92-40,40v16
+  c0.029,8.684,2.914,17.117,8.208,24h-48.416c5.294-6.883,8.179-15.316,8.208-24v-16c-0.026-22.08-17.92-39.974-40-40h-64
+  c-22.08,0.026-39.974,17.92-40,40v16c0.029,8.684,2.914,17.117,8.208,24H56V96z M384,168v16c0,13.255-10.745,24-24,24h-64
+  c-13.255,0-24-10.745-24-24v-16c0-13.255,10.745-24,24-24h64C373.255,144,384,154.745,384,168z M208,168v16
+  c0,13.255-10.745,24-24,24h-64c-13.255,0-24-10.745-24-24v-16c0-13.255,10.745-24,24-24h64C197.255,144,208,154.745,208,168z
+   M32,248c0-13.255,10.745-24,24-24h368c13.255,0,24,10.745,24,24v24H32V248z M48,432H32v-32h16V432z M448,432h-16v-32h16V432z
+   M464,384H16v-96h448V384z"
+          />
+        </g>
+      </g>
+      <g>
+        <g>
+          <path
+            fill={fill}
+            d="M72,352H40c-4.418,0-8,3.582-8,8s3.582,8,8,8h32c4.418,0,8-3.582,8-8S76.418,352,72,352z"
+          />
+        </g>
+      </g>
+      <g>
+        <g>
+          <path
+            fill={fill}
+            d="M440,352H104c-4.418,0-8,3.582-8,8s3.582,8,8,8h336c4.418,0,8-3.582,8-8S444.418,352,440,352z"
+          />
+        </g>
+      </g>
+    </svg>
+  );
+};
+
+const DistancingIcon = ({ fill }: FillIconProps): JSX.Element => {
+  return (
+    <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
+      <path
+        fill={fill}
+        d="M5 5v.414l4 4v3.172L4.464 17.12C3.527 18.06 3 18.674 3 20v9c0 1.644 1.356 2.982 3 3 6.645-.012 10.645-.012 12 0 1.657.014 3-1 3-3v-9c0-1.351-.547-2.126-1.516-3.067L15 12.577V9a2.99 2.99 0 0 1 2.083-2.842 8.957 8.957 0 0 0 2.17 4.798l1.499-1.324A6.959 6.959 0 0 1 19.078 6H23V0H10a5 5 0 0 0-5 5zm14-3h2v2h-2zm-1.032 22.686h.004c.348 0 .69-.034 1.028-.084v2.02c-.34.039-.682.064-1.028.064h-.004a8.946 8.946 0 0 1-6.362-2.636A6.948 6.948 0 0 0 6.659 22h-.003A7.07 7.07 0 0 0 5 22.204v-2.048c.54-.1 1.093-.156 1.655-.156h.005a8.94 8.94 0 0 1 6.36 2.636 6.956 6.956 0 0 0 4.948 2.05zM11 10h2v2h-2zm17-9a1 1 0 1 1 2 0 1 1 0 0 1-2 0zm2 4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-3-2a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"
+      ></path>
+    </svg>
+  );
+};
+
+const CheckIcon = ({ fill }: FillIconProps): JSX.Element => {
+  return (
+    <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
+      <path
+        fill={fill}
+        d="M16 1C7.729 1 1 7.729 1 16s6.729 15 15 15 15-6.729 15-15S24.271 1 16 1zm-2.5 22.621L6.879 17 9 14.879l4.5 4.5 9.5-9.5L25.121 12 13.5 23.621z"
+      ></path>
     </svg>
   );
 };

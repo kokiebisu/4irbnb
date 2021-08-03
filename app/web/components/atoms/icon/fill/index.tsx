@@ -7,7 +7,12 @@ export type FillIconVariants =
   | "pause"
   | "play"
   | "heart"
-  | "upload";
+  | "upload"
+  | "calendar"
+  | "guidelines"
+  | "doublebed"
+  | "distancing"
+  | "check";
 
 export type FillIconProps = FillIconTemplateProps & {
   fillType: FillIconVariants;
