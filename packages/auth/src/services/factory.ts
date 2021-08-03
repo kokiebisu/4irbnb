@@ -1,5 +1,5 @@
 import { AuthService } from "./class";
-import { OktaService } from "./okta";
+import { OktaClient } from "./okta";
 
 export const createAuthService = () =>
-  new AuthService({ service: new OktaService() });
+  new AuthService({ client: new OktaClient() });

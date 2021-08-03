@@ -1,17 +1,22 @@
 import { Client } from "@okta/okta-sdk-nodejs";
 import {
-  IAuthService,
+  IAuthClient,
+  IAuthServiceLoginParams,
   IAuthServiceRegisterParams,
   IAuthServiceValidateTokenParams,
 } from "../types";
 import * as Verifier from "@okta/jwt-verifier";
-import { createLogger, ILoggerService, PackageEnum } from "@nextbnb/common";
+import {
+  createLoggerService,
+  ILoggerService,
+  PackageEnum,
+} from "@nextbnb/common";
 
 /**
  * Implementation of the AuthService using the Okta Client
  */
-export class OktaService implements IAuthService {
-  #client: any;
+export class OktaClient implements IAuthClient {
+  #package: any;
   #verifier: any;
   #logger: ILoggerService;
 
@@ -19,7 +24,7 @@ export class OktaService implements IAuthService {
    * @public
    */
   constructor() {
-    this.#logger = createLogger({
+    this.#logger = createLoggerService({
       packageName: PackageEnum.auth,
       className: "OktaService",
     });
@@ -29,8 +34,8 @@ export class OktaService implements IAuthService {
    * @public
    */
   private async configureClient() {
-    if (!this.#client) {
-      this.#client = new Client({});
+    if (!this.#package) {
+      this.#package = new Client({});
     }
   }
 
@@ -52,14 +57,14 @@ export class OktaService implements IAuthService {
    * @param param0
    * @returns
    */
-  async validateToken({ authorizationToken }: IAuthServiceValidateTokenParams) {
+  async validateToken({ token }: IAuthServiceValidateTokenParams) {
     await this.configureVerifier();
     /**
      * Okta validation
      */
     try {
       const jwt = await this.#verifier.verifyAccessToken(
-        authorizationToken,
+        token,
         "api://default"
       );
       return !!jwt;
@@ -77,34 +82,20 @@ export class OktaService implements IAuthService {
    * @param param0
    * @returns
    */
-  async register({
-    firstName,
-    lastName,
-    birthYear,
-    birthMonth,
-    birthDay,
-    email,
-    password,
-  }: IAuthServiceRegisterParams) {
+  async register({ data }: IAuthServiceRegisterParams) {
     await this.configureClient();
     const newUser = {
       profile: {
-        firstName,
-        lastName,
-        email,
-        login: email,
-        birthYear,
-        birthMonth,
-        birthDay,
+        data,
       },
       credentials: {
         password: {
-          value: password,
+          value: data.password,
         },
       },
     };
     try {
-      const user = await this.#client.createUser(newUser);
+      const user = await this.#package.createUser(newUser);
       return user;
     } catch (error) {
       this.#logger.error({
@@ -119,7 +110,8 @@ export class OktaService implements IAuthService {
    * @public
    * Okta's implementation of logging in users
    */
-  async login() {
+  async login({ email, password }: IAuthServiceLoginParams) {
     await this.configureClient();
+    console.log(email, password);
   }
 }

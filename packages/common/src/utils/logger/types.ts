@@ -1,3 +1,5 @@
+import { ILoggerClient } from "./winston";
+
 /**
  * @public
  * Type of the logger level used in winston
@@ -9,8 +11,8 @@ export interface ILoggerService {
   error(params: IServiceErrorParams): void;
 }
 
-export interface ILoggerConstructorParams extends IWithLocationParams {
-  service: ILoggerService;
+export interface ILoggerServiceConstructorParams extends IWithLocationParams {
+  client: ILoggerClient;
 }
 
 export interface IServiceErrorParams extends IWithMessageParams {}
