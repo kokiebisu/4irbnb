@@ -12,7 +12,18 @@ export type FillIconVariants =
   | "guidelines"
   | "doublebed"
   | "distancing"
-  | "check";
+  | "check"
+  | "smokeAlarm"
+  | "tv"
+  | "kitchen"
+  | "heating"
+  | "privateEntrance"
+  | "carbonMonoxide"
+  | "people"
+  | "language"
+  | "computer"
+  | "smile"
+  | "activity";
 
 export type FillIconProps = FillIconTemplateProps & {
   fillType: FillIconVariants;
