@@ -1,6 +1,6 @@
 variable "app_name" {
   type    = string
-  default = "nextbnb"
+  default = "4irbnb"
 }
 variable "region" {
   type        = string
