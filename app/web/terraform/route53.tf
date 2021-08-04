@@ -1,52 +1,22 @@
-resource "aws_route53_zone" "this" {
-  name = "nextbnb.dev"
+data "aws_route53_zone" "this" {
+  name = "4irbnb.com"
+  private_zone = false
 }
 
 // should be alias to cloudfront
 resource "aws_route53_record" "default" {
-  zone_id = aws_route53_zone.this.zone_id
-  name    = "nextbnb.dev"
-  type    = "A"
-  alias {
-      name = aws_s3_bucket.plain.website_domain
-      zone_id = aws_s3_bucket.plain.hosted_zone_id
-      evaluate_target_health = false
+  for_each = {
+    for option in aws_acm_certificate.this.domain_validation_options : option.domain_name => {
+      name   = option.resource_record_name
+      record = option.resource_record_value
+      type   = option.resource_record_type
+    }
   }
+
   allow_overwrite = true
+  name            = each.value.name
+  records         = [each.value.record]
+  ttl             = 60
+  type            = each.value.type
+  zone_id         = data.aws_route53_zone.this.zone_id
 }
-
-// should be alias to cloudfront
-resource "aws_route53_record" "www" {
-  zone_id = aws_route53_zone.this.zone_id
-  name    = "www.nextbnb.dev"
-  type    = "A"
-  alias {
-      name = aws_s3_bucket.www.website_domain
-      zone_id = aws_s3_bucket.www.hosted_zone_id
-      evaluate_target_health = false
-  }
-  allow_overwrite = true
-}
-
-# resource "aws_route53_record" "api" {
-#   zone_id = aws_route53_zone.this.zone_id
-#   name    = "api.nextbnb.dev"
-#   type    = "A"
-#   ttl     = "30"
-#   records = ["api.nextbnb.dev"]
-# }
-
-
-resource "aws_acm_certificate" "this" {
-  domain_name               = "nextbnb.dev"
-  subject_alternative_names = ["www.nextbnb.dev"]
-  validation_method         = "DNS"
-}
-
-resource "aws_acm_certificate_validation" "example" {
-  certificate_arn         = aws_acm_certificate.this.arn
-  validation_record_fqdns = [aws_route53_record.default.fqdn, aws_route53_record.www.fqdn]
-}
-
-
-

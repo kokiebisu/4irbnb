@@ -34,4 +34,6 @@ module "stay" {
 
 module "web" {
   source = "../app/web/terraform"
+
+  site_domain = "4irbnb.com"
 }
