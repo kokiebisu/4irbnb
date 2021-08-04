@@ -9,12 +9,14 @@ import { StayIconProps } from "./stay";
 import { factory } from "./utils/factory";
 
 export type FillIconProps = {
-  fill: string;
+  fill?: string;
+  color?: string;
 };
 
 export type StrokeIconProps = {
   stroke: string;
   strokeWidth: number;
+  color?: string;
 };
 
 export type IconProps =
