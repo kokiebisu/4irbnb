@@ -8,10 +8,17 @@ export type OthersIconVariants =
   | "pets"
   | "parties"
   | "cleaning"
-  | "caution";
+  | "caution"
+  | "home"
+  | "global"
+  | "lightening"
+  | "protected"
+  | "phone";
 
 export type OthersIconProps = {
   othersType: OthersIconVariants;
 };
 
-export const OthersIcon = () => <OthersIconTemplate />;
+export const OthersIcon = (props: OthersIconProps) => (
+  <OthersIconTemplate {...props} />
+);
