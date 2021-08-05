@@ -1,5 +1,5 @@
 import { FillIconProps } from ".";
-import { Education, Protection } from "../general/template.stories";
+import { Education } from "./template.stories";
 
 export const FillIconTemplate = (props: FillIconProps) => {
   switch (props.fillType) {

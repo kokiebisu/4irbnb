@@ -1,5 +1,5 @@
-import { Button } from '@atoms';
-import React from 'react';
+import { Button } from "@atoms";
+import React from "react";
 
 export type QuaternaryBulletTemplateProps = {
   icon: JSX.Element;
@@ -26,7 +26,7 @@ export const QuaternaryBulletTemplate = ({
     </div>
     {link ? (
       <div>
-        <Button title={link} variant="underline" onClick={onClick} />
+        <Button font={14} title={link} variant="underline" onClick={onClick} />
       </div>
     ) : null}
   </div>

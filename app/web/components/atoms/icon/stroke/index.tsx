@@ -9,7 +9,8 @@ export type StrokeIconVariants =
   | "chevronRight"
   | "exclamation"
   | "menubarLogo"
-  | "check";
+  | "check"
+  | "magnifyGlass";
 
 export type StrokeIconProps = StrokeIconTemplateProps & {
   strokeType: StrokeIconVariants;

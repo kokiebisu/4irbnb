@@ -15,8 +15,8 @@ export const Amenity = BulletStory.bind({});
 Amenity.args = {
   icon: (
     <Icon
-      variant="amenity"
-      amenityType="carbonAlarm"
+      variant="fill"
+      fillType="carbonMonoxide"
       width={24}
       height={24}
       fill="black"
@@ -27,12 +27,21 @@ Amenity.args = {
 
 export const Checklist = BulletStory.bind({});
 Checklist.args = {
-  icon: <Icon variant="semantic" semanticType="check" width={24} height={24} />,
+  icon: (
+    <Icon
+      variant="stroke"
+      strokeType="check"
+      width={24}
+      height={24}
+      stroke="black"
+      strokeWidth={1}
+    />
+  ),
   title: "Bring these...",
 };
 
 export const Know = BulletStory.bind({});
 Know.args = {
-  icon: <Icon variant="stay" stayType="smoking" width={20} height={20} />,
+  icon: <Icon variant="others" othersType="smoking" width={20} height={20} />,
   title: `Check-in: 10:00am – 12:00pm`,
 };
