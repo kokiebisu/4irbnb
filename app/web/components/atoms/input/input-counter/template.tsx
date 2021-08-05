@@ -41,10 +41,11 @@ export const CounterInputTemplate = ({
             onClick={onSubtract}
           >
             <Icon
-              variant="semantic"
-              semanticType="minus"
+              variant="stroke"
+              strokeType="minus"
               width={15}
-              color={value === min ? "black" : "green"}
+              height={15}
+              stroke={value === min ? "black" : "green"}
               strokeWidth={1}
             />
           </button>
@@ -61,11 +62,11 @@ export const CounterInputTemplate = ({
             onClick={onAdd}
           >
             <Icon
-              variant="semantic"
-              semanticType="plus"
+              variant="fill"
+              fillType="plus"
               width={15}
-              color={value === max ? "black" : "green"}
-              strokeWidth={5}
+              height={15}
+              fill={value === max ? "black" : "green"}
             />
           </button>
         </div>

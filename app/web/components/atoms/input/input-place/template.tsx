@@ -66,9 +66,23 @@ export const PlaceInputTemplate = ({
           </div>
           <div>
             {expanded ? (
-              <Icon variant="action" actionType="top" width={13} />
+              <Icon
+                variant="stroke"
+                strokeType="chevronTop"
+                stroke="black"
+                strokeWidth={2}
+                width={13}
+                height={13}
+              />
             ) : (
-              <Icon variant="action" actionType="bottom" width={13} />
+              <Icon
+                variant="stroke"
+                strokeType="chevronBottom"
+                stroke="black"
+                strokeWidth={2}
+                width={13}
+                height={13}
+              />
             )}
           </div>
         </div>
@@ -103,9 +117,12 @@ export const PlaceInputTemplate = ({
                   {value === "Entire place" && (
                     <div className="flex items-center">
                       <Icon
-                        variant="semantic"
-                        semanticType="check"
+                        variant="stroke"
+                        strokeType="check"
                         width={32}
+                        height={32}
+                        stroke="black"
+                        strokeWidth={2}
                       />
                     </div>
                   )}
@@ -133,9 +150,12 @@ export const PlaceInputTemplate = ({
                   {value === "Private room" && (
                     <div className="flex items-center">
                       <Icon
-                        variant="semantic"
-                        semanticType="check"
+                        variant="stroke"
+                        strokeType="check"
                         width={32}
+                        height={32}
+                        stroke="black"
+                        strokeWidth={2}
                       />
                     </div>
                   )}
@@ -163,9 +183,12 @@ export const PlaceInputTemplate = ({
                   {value === "Shared room" && (
                     <div className="flex items-center">
                       <Icon
-                        variant="semantic"
-                        semanticType="check"
+                        variant="stroke"
+                        strokeType="check"
                         width={32}
+                        height={32}
+                        stroke="black"
+                        strokeWidth={2}
                       />
                     </div>
                   )}

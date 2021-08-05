@@ -50,10 +50,11 @@ export const VideoCardTemplate = ({
         <div className="absolute top-0 bottom-0 right-0 left-0">
           <div className="absolute pointer-events-none z-40 top-3 right-3">
             <Icon
-              variant="action"
-              actionType="heart"
+              variant="fill"
+              fillType="heart"
               fill="rgba(0, 0, 0, 0.5)"
               width={24}
+              height={24}
             />
           </div>
           <div className="h-full w-full">
@@ -68,7 +69,13 @@ export const VideoCardTemplate = ({
 
       <div className="mt-1 flex items-center">
         <div className="mr-1">
-          <Icon variant={"profile"} profileType="star" width={15} />
+          <Icon
+            variant="fill"
+            fillType="star"
+            width={15}
+            height={15}
+            fill="black"
+          />
         </div>
         <div className="mr-1">
           <p className="font-thin text-xs">{ratings}</p>

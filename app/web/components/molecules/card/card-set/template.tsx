@@ -8,9 +8,10 @@ export const SetCardTemplate = (): JSX.Element => {
         <div className="flex items-center">
           <div className="mr-3">
             <Icon
-              variant="semantic"
-              semanticType="check"
+              variant="fill"
+              fillType="check"
               width={18}
+              height={18}
               fill="#268A04"
             />
           </div>

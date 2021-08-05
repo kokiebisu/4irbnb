@@ -106,12 +106,11 @@ export const StayCardTemplate = ({
             </div>
             <div>
               <Icon
-                variant="action"
-                actionType="heart"
+                variant="fill"
+                fillType="heart"
                 fill="white"
-                stroke="black"
-                strokeWidth={2}
                 width={24}
+                height={24}
               />
             </div>
           </div>

@@ -55,7 +55,13 @@ export const StartingCardTemplate = ({
         <div className="flex flex-col justify-center">
           <div className="flex items-center mb-3">
             <div className="mr-1">
-              <Icon variant={"profile"} profileType="star" width={10} />
+              <Icon
+                variant="fill"
+                fillType="star"
+                width={10}
+                height={10}
+                fill="black"
+              />
             </div>
             <div className="mr-1">
               <p className="text-xs">{ratings}</p>
@@ -89,7 +95,13 @@ export const StartingCardTemplate = ({
           </div>
         </div>
         <div>
-          <Icon variant="action" actionType="heart" width={20} height={20} />
+          <Icon
+            variant="fill"
+            fillType="heart"
+            fill="black"
+            width={20}
+            height={20}
+          />
         </div>
       </div>
     </div>

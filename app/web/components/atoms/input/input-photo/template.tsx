@@ -28,10 +28,10 @@ export const PhotoInputTemplate = ({
                   <div className="flex items-center">
                     <div className="mr-3">
                       <Icon
-                        variant="action"
-                        actionType="upload"
-                        width={20}
+                        variant="fill"
+                        fillType="upload"
                         fill="white"
+                        width={20}
                         height={20}
                       />
                     </div>

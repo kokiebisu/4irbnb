@@ -46,12 +46,24 @@ export const FooterTemplate = ({
           <div className="flex items-center mx-0 my-8">
             <div>
               <button className="flex items-center mr-3 bg-transparent border-none">
-                <Icon variant="general" generalType="globe" width={16} />
+                <Icon
+                  variant="fill"
+                  fillType="globe"
+                  width={16}
+                  height={16}
+                  fill="black"
+                />
                 <u className="text-sm mr-3">English(CA)</u>
               </button>
             </div>
             <div>
-              <Button variant="underline" title="$ CAD" bold />
+              <Button
+                font={24}
+                onClick={() => alert("clicked")}
+                variant="underline"
+                title="$ CAD"
+                bold
+              />
             </div>
           </div>
           <div className="flex items-center">

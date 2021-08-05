@@ -62,13 +62,22 @@ export const SelectInputTemplate = ({
         </select>
         <div className="flex items-center">
           {fieldActive ? (
-            <Icon variant="action" actionType="top" width={13} />
+            <Icon
+              variant="stroke"
+              stroke="black"
+              strokeType="chevronTop"
+              strokeWidth={2}
+              width={13}
+              height={13}
+            />
           ) : (
             <Icon
-              variant="action"
-              actionType="bottom"
+              variant="stroke"
+              strokeType="chevronBottom"
               width={13}
-              fill={disabled ? "#DDDDDD" : "black"}
+              height={13}
+              stroke={disabled ? "#DDDDDD" : "black"}
+              strokeWidth={2}
             />
           )}
         </div>

@@ -43,10 +43,11 @@ export const VerticalCardTemplate = ({
             </div>
             <div className={save ? "text-white" : "hidden text-white"}>
               <Icon
-                variant="action"
-                actionType="heart"
+                variant="fill"
+                fillType="heart"
                 fill="rgba(0, 0, 0, 0.5)"
                 width={24}
+                height={24}
               />
             </div>
           </div>
@@ -54,7 +55,13 @@ export const VerticalCardTemplate = ({
       </div>
       <div className="mt-1 flex items-center">
         <div className="mr-1">
-          <Icon variant={"profile"} profileType="star" width={15} />
+          <Icon
+            variant="fill"
+            fillType="star"
+            width={15}
+            height={15}
+            fill="black"
+          />
         </div>
         <div className="mr-1">
           <p className="font-thin text-xs">{ratings}</p>

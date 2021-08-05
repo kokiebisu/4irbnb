@@ -64,9 +64,23 @@ export const GuestsInputTemplate = ({
         </select>
         <div className="flex items-center">
           {fieldActive ? (
-            <Icon variant="action" actionType="top" width={13} />
+            <Icon
+              variant="stroke"
+              strokeType="chevronTop"
+              width={13}
+              height={13}
+              stroke="black"
+              strokeWidth={2}
+            />
           ) : (
-            <Icon variant="action" actionType="bottom" width={13} />
+            <Icon
+              variant="stroke"
+              strokeType="chevronBottom"
+              width={13}
+              height={13}
+              stroke="black"
+              strokeWidth={2}
+            />
           )}
         </div>
       </div>

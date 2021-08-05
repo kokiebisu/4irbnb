@@ -21,9 +21,10 @@ export const SearchbarInputTemplate = ({
     >
       <div className="mr-4">
         <Icon
-          variant="general"
-          generalType="magnifyGlass"
+          variant="stroke"
+          strokeType="magnifyGlass"
           width={15}
+          height={15}
           stroke="black"
           strokeWidth={4}
         />

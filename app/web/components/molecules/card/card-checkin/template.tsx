@@ -21,7 +21,13 @@ export const CheckInCardTemplate = (): JSX.Element => {
             </h3>
             <div className="py-3 text-gray-300 text-xl font-medium w-32">
               <div className="inline-block mr-1">
-                <Icon variant="profile" profileType="star" width={10} />
+                <Icon
+                  variant="fill"
+                  fillType="star"
+                  width={10}
+                  height={10}
+                  fill="red"
+                />
               </div>
               <span className="inline-block text-sm mr-1 text-gray-500">
                 4.93
@@ -86,7 +92,14 @@ export const CheckInCardTemplate = (): JSX.Element => {
                     <p className="font-light text-sm">1 guest</p>
                   </div>
                   <div>
-                    <Icon variant="action" actionType="bottom" width={14} />
+                    <Icon
+                      variant="stroke"
+                      strokeType="chevronBottom"
+                      width={14}
+                      height={14}
+                      stroke="black"
+                      strokeWidth={2}
+                    />
                   </div>
                 </div>
               </div>

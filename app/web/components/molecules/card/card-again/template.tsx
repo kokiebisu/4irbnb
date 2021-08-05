@@ -10,9 +10,10 @@ export const AgainCardTemplate = (): JSX.Element => {
           <div className="mr-3">
             <div className="p-2 rounded-full bg-red-600">
               <Icon
-                variant="semantic"
-                semanticType="exclamation"
+                variant="stroke"
+                strokeType="exclamation"
                 width={18}
+                height={18}
                 stroke="white"
                 strokeWidth={3}
               />

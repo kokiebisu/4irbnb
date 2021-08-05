@@ -57,10 +57,11 @@ export const HorizontalCardTemplate = ({
                 {save && (
                   <div className={`z-50 ${save ? "" : "text-white hidden"}`}>
                     <Icon
-                      variant="action"
-                      actionType="heart"
+                      variant="fill"
+                      fillType="heart"
                       fill="rgba(0, 0, 0, 0.5)"
                       width={24}
+                      height={24}
                     />
                   </div>
                 )}
