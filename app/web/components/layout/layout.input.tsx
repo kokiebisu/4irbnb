@@ -1,5 +1,5 @@
 export type InputLayoutProps = {
-  title?: string;
+  title: string;
   children: JSX.Element;
 };
 

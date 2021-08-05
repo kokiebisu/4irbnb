@@ -1,7 +1,7 @@
 export type OnlineHostLayoutProps = {
   title?: string;
   subtitle?: string;
-  children?: React.ReactNode;
+  children: React.ReactNode;
   dark?: boolean;
   spread?: boolean;
 };
@@ -10,8 +10,7 @@ export const OnlineHostLayout = ({
   title,
   subtitle,
   children,
-  dark = false,
-  spread = false,
+  dark,
 }: OnlineHostLayoutProps): JSX.Element => {
   return (
     <div className="sm:flex flex-col items-center">

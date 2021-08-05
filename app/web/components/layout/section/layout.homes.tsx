@@ -1,13 +1,11 @@
 export type HomesLayoutProps = {
   title?: string;
-  children?: React.ReactNode;
-  spread?: boolean;
+  children: JSX.Element;
 };
 
 export const HomesLayout = ({
   title = "Title here",
   children,
-  spread = false,
 }: HomesLayoutProps): JSX.Element => {
   return (
     <div className="py-4">

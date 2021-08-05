@@ -51,6 +51,7 @@ export const AvailableCardTemplate = ({
           title="Choose"
           color="white"
           onClick={onClick}
+          fill="black"
         />
       </div>
     </div>
