@@ -28,8 +28,8 @@ export const SearchbarButtonTemplate = ({
         <div className="bg-primary rounded-full h-8 w-8 relative">
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <Icon
-              variant="general"
-              generalType="magnifyGlass"
+              variant="stroke"
+              strokeType="magnifyGlass"
               width={12}
               height={12}
               stroke="white"

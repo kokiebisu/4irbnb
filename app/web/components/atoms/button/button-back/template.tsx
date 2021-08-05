@@ -1,4 +1,4 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
 export type BackButtonTemplateProps = {
   onClick: () => void;
@@ -20,8 +20,8 @@ export const BackButtonTemplate = ({
       <div className="flex items-center bg-transparent">
         <div>
           <Icon
-            variant="action"
-            actionType="left"
+            variant="stroke"
+            strokeType="chevronLeft"
             width={20}
             height={20}
             stroke="#61AFB2"

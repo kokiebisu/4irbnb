@@ -26,8 +26,8 @@ export const SearchButtonTemplate = ({
       >
         <div className={`${expanded ? "mr-1" : "p-4"}`}>
           <Icon
-            variant="general"
-            generalType="magnifyGlass"
+            variant="stroke"
+            strokeType="magnifyGlass"
             width={13}
             height={13}
             stroke="white"

@@ -1,4 +1,4 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
 export type ExpandButtonTemplateProps = {
   title: string;
@@ -27,8 +27,8 @@ export const ExpandButtonTemplate = ({
           </div>
           <div>
             <Icon
-              variant="action"
-              actionType="right"
+              variant="stroke"
+              strokeType="chevronRight"
               width={14}
               height={14}
               stroke="black"

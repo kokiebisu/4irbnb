@@ -1,12 +1,12 @@
-import { Story, Meta } from '@storybook/react';
+import { Story, Meta } from "@storybook/react";
 import {
   TransparentButtonTemplate,
   TransparentButtonTemplateProps,
-} from './template';
-import { Icon } from '@atoms';
+} from "./template";
+import { Icon } from "@atoms";
 
 export default {
-  title: 'Atoms/Button/Transparent',
+  title: "Atoms/Button/Transparent",
   component: TransparentButtonTemplate,
 } as Meta;
 
@@ -19,19 +19,19 @@ Globe.args = {
   children: (
     <div className="items-center mr-2">
       <Icon
-        variant="general"
-        generalType="globe"
+        variant="fill"
+        fillType="globe"
         width={16}
         height={16}
         fill="gray"
       />
     </div>
   ),
-  onClick: () => alert('Triggered onClick'),
+  onClick: () => alert("Triggered onClick"),
 };
 
 export const Host = ButtonStory.bind({});
 Host.args = {
   children: <h3 className={`text-sm text-gray-500`}>Become a host</h3>,
-  onClick: () => alert('Triggered onClick'),
+  onClick: () => alert("Triggered onClick"),
 };

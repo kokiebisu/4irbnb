@@ -1,12 +1,12 @@
-import { Icon } from '@atoms';
-import { Story, Meta } from '@storybook/react';
-import { BarButtonTemplate, BarButtonTemplateProps } from './template';
+import { Icon } from "@atoms";
+import { Story, Meta } from "@storybook/react";
+import { BarButtonTemplate, BarButtonTemplateProps } from "./template";
 
 const items = {
   explore: (
     <Icon
-      variant="general"
-      generalType="magnifyGlass"
+      variant="stroke"
+      strokeType="magnifyGlass"
       stroke="#737373"
       strokeWidth={4.5}
       width={25}
@@ -16,18 +16,17 @@ const items = {
 
   saved: (
     <Icon
-      variant="semantic"
-      semanticType="saved"
+      variant="fill"
+      fillType="saved"
       width={25}
       height={25}
       fill="#737373"
     />
   ),
-
   login: (
     <Icon
-      variant="general"
-      generalType="login"
+      variant="fill"
+      fillType="login"
       width={25}
       height={25}
       fill="#737373"
@@ -36,7 +35,7 @@ const items = {
 };
 
 export default {
-  title: 'Atoms/Button',
+  title: "Atoms/Button",
   component: BarButtonTemplate,
 } as Meta;
 
@@ -49,16 +48,16 @@ Bar.args = {
   selected: false,
   icon: (
     <Icon
-      variant="general"
-      generalType="magnifyGlass"
+      variant="stroke"
+      strokeType="magnifyGlass"
       stroke="#737373"
       strokeWidth={4}
       width={25}
       height={25}
     />
   ),
-  name: 'Explore',
-  onClick: () => alert('Triggered onClick'),
+  name: "Explore",
+  onClick: () => alert("Triggered onClick"),
 };
 
 Bar.argTypes = {
@@ -66,11 +65,11 @@ Bar.argTypes = {
     options: Object.keys(items),
     mapping: items,
     control: {
-      type: 'select',
+      type: "select",
       labels: {
-        explore: 'Explore',
-        saved: 'Saved',
-        login: 'Login',
+        explore: "Explore",
+        saved: "Saved",
+        login: "Login",
       },
     },
   },

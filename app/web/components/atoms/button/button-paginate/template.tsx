@@ -1,8 +1,8 @@
-import { Icon } from '@atoms';
-import { motion } from 'framer-motion';
+import { Icon } from "@atoms";
+import { motion } from "framer-motion";
 
 export type PaginateButtonTemplateProps = {
-  direction: 'left' | 'right';
+  direction: "chevronLeft" | "chevronRight";
   disabled?: boolean;
   onClick: () => void;
 };
@@ -21,7 +21,7 @@ export const PaginateButtonTemplate = ({
     <motion.button
       data-testid="paginate-button"
       className={`inline-block bg-white ${
-        disabled ? 'border border-gray-100' : 'shadow-md'
+        disabled ? "border border-gray-100" : "shadow-md"
       } rounded-full p-3`}
       whileTap={{ ...(!disabled && { scale: 0.95 }) }}
       whileHover={{ ...(!disabled && { scale: 1.05 }) }}
@@ -29,11 +29,11 @@ export const PaginateButtonTemplate = ({
     >
       <div>
         <Icon
-          variant="action"
-          actionType={direction}
+          variant="stroke"
+          strokeType={direction}
           width={10}
           height={10}
-          stroke={`${disabled ? 'lightgray' : 'black'}`}
+          stroke={`${disabled ? "lightgray" : "black"}`}
           strokeWidth={5}
         />
       </div>

@@ -1,4 +1,4 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
 export type ReportButtonTemplateProps = {
   onClick: () => void;
@@ -19,8 +19,8 @@ export const ReportButtonTemplate = ({
       <div className="flex items-center">
         <div className="mr-3">
           <Icon
-            variant="general"
-            generalType="flag"
+            variant="fill"
+            fillType="flag"
             width={16}
             height={16}
             fill="black"

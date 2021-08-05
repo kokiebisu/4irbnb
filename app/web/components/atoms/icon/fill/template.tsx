@@ -460,7 +460,7 @@ const AvatarIcon = ({ fill }: FillIconProps): JSX.Element => {
   );
 };
 
-const StarIcon = ({ fill = "#E61E4D" }: FillIconProps): JSX.Element => {
+const StarIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 37.286 37.287">
       <g>
@@ -545,7 +545,7 @@ const NoNameLogoIcon = ({ fill }: FillIconProps): JSX.Element => {
   );
 };
 
-const FacebookLogoIcon = ({ fill = "#1877F2" }): JSX.Element => {
+const FacebookLogoIcon = ({ fill }: FillIconTemplateProps): JSX.Element => {
   return (
     <svg
       style={{ position: "relative", right: 2 }}
@@ -562,7 +562,9 @@ const FacebookLogoIcon = ({ fill = "#1877F2" }): JSX.Element => {
   );
 };
 
-const GoogleLogoIcon = ({ fill = "black" }): JSX.Element => {
+const GoogleLogoIcon = ({
+  fill = "black",
+}: FillIconTemplateProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" display="block" viewBox="0 0 18 18">
       <g fill="none" fillRule="evenodd">
@@ -588,7 +590,7 @@ const GoogleLogoIcon = ({ fill = "black" }): JSX.Element => {
   );
 };
 
-const AppleLogoIcon = ({ fill = "black" }): JSX.Element => {
+const AppleLogoIcon = ({ fill }: FillIconTemplateProps): JSX.Element => {
   return (
     <svg width="100%" height="auto" display="block" viewBox="0 0 24 24">
       <path

@@ -30,8 +30,8 @@ export const MenuButtonTemplate = ({
       >
         <div className="mr-3">
           <Icon
-            variant="general"
-            generalType="bars"
+            variant="fill"
+            fillType="bars"
             fill="black"
             width={12}
             height={12}
@@ -42,8 +42,8 @@ export const MenuButtonTemplate = ({
             <img className="block rounded-full w-8 h-8" src={imgUrl} />
           ) : (
             <Icon
-              variant="profile"
-              profileType="avatar"
+              variant="fill"
+              fillType="avatar"
               width={30}
               height={30}
               fill="gray"

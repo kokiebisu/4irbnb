@@ -1,4 +1,4 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
 export type LogoButtonTemplateProps = {
   noName: boolean;
@@ -23,8 +23,8 @@ export const LogoButtonTemplate = ({
       onClick={onClick}
     >
       <Icon
-        variant="logo"
-        logoType={noName ? 'noName' : 'name'}
+        variant="fill"
+        fillType={noName ? "noNameLogo" : "nameLogo"}
         fill={fill}
         width={noName ? 30 : 102}
         height={32}

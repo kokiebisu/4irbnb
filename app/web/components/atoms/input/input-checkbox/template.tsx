@@ -24,11 +24,11 @@ export const CheckboxInputTemplate = ({
         >
           <div className="relative border-none">
             <Icon
-              variant="semantic"
-              semanticType="check"
+              variant="fill"
+              fillType="check"
               width={15}
+              height={15}
               fill="white"
-              strokeWidth={5}
             />
           </div>
         </div>
