@@ -1,5 +1,4 @@
 import { FillIconProps } from ".";
-import { Education } from "./template.stories";
 
 export const FillIconTemplate = (props: FillIconProps) => {
   switch (props.fillType) {
@@ -67,12 +66,6 @@ export const FillIconTemplate = (props: FillIconProps) => {
       return <NameLogoIcon {...props} />;
     case "noNameLogo":
       return <NoNameLogoIcon {...props} />;
-    case "facebookLogo":
-      return <FacebookLogoIcon {...props} />;
-    case "googleLogo":
-      return <GoogleLogoIcon {...props} />;
-    case "appleLogo":
-      return <AppleLogoIcon {...props} />;
     case "lock":
       return <LockIcon {...props} />;
     case "globe":
@@ -91,18 +84,10 @@ export const FillIconTemplate = (props: FillIconProps) => {
       return <LoginIcon {...props} />;
     case "search":
       return <SearchIcon {...props} />;
-    case "shield":
-      return <ShieldIcon {...props} />;
     case "devices":
       return <DevicesIcon {...props} />;
     case "devicesInverse":
       return <DevicesInverseIcon {...props} />;
-    case "protection":
-      return <ProtectionIcon {...props} />;
-    case "guidance":
-      return <GuidanceIcon {...props} />;
-    case "requirements":
-      return <RequirementsIcon {...props} />;
     case "customerService":
       return <CustomerServiceIcon {...props} />;
     case "toolbox":
@@ -110,7 +95,7 @@ export const FillIconTemplate = (props: FillIconProps) => {
     case "analytics":
       return <AnalyticsIcon {...props} />;
     case "education":
-      return <Education {...props} />;
+      return <EducationIcon {...props} />;
     default:
       throw new Error("Invalid fillType provided");
   }
@@ -545,62 +530,6 @@ const NoNameLogoIcon = ({ fill }: FillIconProps): JSX.Element => {
   );
 };
 
-const FacebookLogoIcon = ({ fill }: FillIconTemplateProps): JSX.Element => {
-  return (
-    <svg
-      style={{ position: "relative", right: 2 }}
-      width="100%"
-      height="auto"
-      viewBox="126.445 2.281 589 589"
-    >
-      <circle cx="420.945" cy="296.781" r="294.5" fill={fill} />
-      <path
-        d="M516.704 92.677h-65.239c-38.715 0-81.777 16.283-81.777 72.402.189 19.554 0 38.281 0 59.357H324.9v71.271h46.174v205.177h84.847V294.353h56.002l5.067-70.117h-62.531s.14-31.191 0-40.249c0-22.177 23.076-20.907 24.464-20.907 10.981 0 32.332.032 37.813 0V92.677h-.032z"
-        fill="#fff"
-      />
-    </svg>
-  );
-};
-
-const GoogleLogoIcon = ({
-  fill = "black",
-}: FillIconTemplateProps): JSX.Element => {
-  return (
-    <svg width="100%" height="auto" display="block" viewBox="0 0 18 18">
-      <g fill="none" fillRule="evenodd">
-        <path
-          fill="#EA4335"
-          d="M9 3.48c1.69 0 2.83.73 3.48 1.34l2.54-2.48C13.46.89 11.43 0 9 0 5.48 0 2.44 2.02.96 4.96l2.91 2.26C4.6 5.05 6.62 3.48 9 3.48z"
-        />
-        <path
-          fill="#4285F4"
-          d="M17.64 9.2c0-.74-.06-1.28-.19-1.84H9v3.34h4.96c-.1.83-.64 2.08-1.84 2.92l2.84 2.2c1.7-1.57 2.68-3.88 2.68-6.62z"
-        />
-        <path
-          fill="#FBBC05"
-          d="M3.88 10.78A5.54 5.54 0 0 1 3.58 9c0-.62.11-1.22.29-1.78L.96 4.96A9.008 9.008 0 0 0 0 9c0 1.45.35 2.82.96 4.04l2.92-2.26z"
-        />
-        <path
-          fill="#34A853"
-          d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.84-2.2c-.76.53-1.78.9-3.12.9-2.38 0-4.4-1.57-5.12-3.74L.97 13.04C2.45 15.98 5.48 18 9 18z"
-        />
-        <path d="M0 0h18v18H0V0z" />
-      </g>
-    </svg>
-  );
-};
-
-const AppleLogoIcon = ({ fill }: FillIconTemplateProps): JSX.Element => {
-  return (
-    <svg width="100%" height="auto" display="block" viewBox="0 0 24 24">
-      <path
-        fill={fill}
-        d="m13.3 2.1a5.1 5.1 0 0 1 3.8-2.1 5.1 5.1 0 0 1 -1.2 3.8 4.1 4.1 0 0 1 -3.6 1.7 4.5 4.5 0 0 1 1-3.4zm-5 3.7c-2.8 0-5.8 2.5-5.8 7.3 0 4.9 3.5 10.9 6.3 10.9 1 0 2.5-1 4-1s2.6.9 4 .9c3.1 0 5.3-6.4 5.3-6.4a5.3 5.3 0 0 1 -3.2-4.9 5.2 5.2 0 0 1 2.6-4.5 5.4 5.4 0 0 0 -4.7-2.4c-2 0-3.5 1.1-4.3 1.1-.9 0-2.4-1-4.2-1z"
-      />
-    </svg>
-  );
-};
-
 const LockIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 16 16">
@@ -732,21 +661,6 @@ const SearchIcon = ({ fill }: FillIconProps): JSX.Element => {
   );
 };
 
-const ShieldIcon = ({ fill }: FillIconProps): JSX.Element => {
-  return (
-    <svg display="block" width="100%" height="auto" viewBox="0 0 24 24">
-      <path
-        fill="rgb(255, 180, 0)"
-        d="m5 20.5a.5.5 0 0 1 -.5.5h-.5v.5a.5.5 0 0 1 -1 0v-.5h-.5a.5.5 0 0 1 0-1h .5v-.5a.5.5 0 0 1 1 0v .5h.5a.5.5 0 0 1 .5.5zm1.5 1.5a.5.5 0 1 0 .5.5.5.5 0 0 0 -.5-.5zm16-20h-.5v-.5a.5.5 0 0 0 -1 0v .5h-.5a.5.5 0 0 0 0 1h .5v.5a.5.5 0 0 0 1 0v-.5h.5a.5.5 0 0 0 0-1zm-2.58 4.87a13.41 13.41 0 0 1 -6.76-3.2.37.37 0 0 0 -.63.26l.08 16.22a.38.38 0 0 0 .55.32 11.98 11.98 0 0 0 7.07-13.31.37.37 0 0 0 -.31-.3z"
-      />
-      <path
-        fill="#484848"
-        d="m14.39 8.32a1.93 1.93 0 0 0 -3.66 0l-2.42 4.85a3.09 3.09 0 0 0 -.4 1.61 2.36 2.36 0 0 0 2.23 2.23 3.95 3.95 0 0 0 2.42-1.06 3.95 3.95 0 0 0 2.42 1.06 2.36 2.36 0 0 0 2.23-2.23 3.09 3.09 0 0 0 -.4-1.61zm-2.72 4.38c0-.05.01-1.23.89-1.23s.88 1.18.88 1.23a3.25 3.25 0 0 1 -.88 1.83 3.25 3.25 0 0 1 -.89-1.83zm3.31 3.31a2.92 2.92 0 0 1 -1.71-.77 4.3 4.3 0 0 0 1.17-2.54 2.02 2.02 0 0 0 -1.8-2.22l-.08-.01a2.02 2.02 0 0 0 -1.89 2.15l.01.08a4.29 4.29 0 0 0 1.17 2.54 2.92 2.92 0 0 1 -1.71.77 1.36 1.36 0 0 1 -1.23-1.23 2.13 2.13 0 0 1 .29-1.16l2.42-4.85c.33-.65.55-.76.94-.76s.61.11.94.76l2.42 4.85a2.13 2.13 0 0 1 .29 1.16 1.36 1.36 0 0 1 -1.23 1.23zm7.01-10.35a.5.5 0 0 0 -.43-.4 13.03 13.03 0 0 1 -8.68-4.57.52.52 0 0 0 -.77 0 13.03 13.03 0 0 1 -8.68 4.57.5.5 0 0 0 -.43.4c-1.58 8.19 1.55 14.02 9.3 17.31a.5.5 0 0 0 .39 0c7.75-3.29 10.87-9.11 9.3-17.31zm-9.49 16.3c-7.1-3.09-9.91-8.25-8.57-15.76a13.98 13.98 0 0 0 8.57-4.43 13.98 13.98 0 0 0 8.57 4.43c1.33 7.51-1.48 12.67-8.57 15.76z"
-      />
-    </svg>
-  );
-};
-
 const DevicesIcon = ({ fill }: FillIconProps): JSX.Element => {
   return (
     <svg display="block" width="100%" height="auto" viewBox="0 0 32 32">
@@ -765,86 +679,6 @@ const DevicesInverseIcon = ({ fill }: FillIconProps): JSX.Element => {
         fill={fill}
         d="M13.5 1a2.5 2.5 0 0 1 2.495 2.336L16 3.5v7a2.5 2.5 0 0 1-2.336 2.495L13.5 13h-2.25v1.5H13V16H3v-1.5h1.75V13H2.5a2.5 2.5 0 0 1-2.495-2.336L0 10.5v-7a2.5 2.5 0 0 1 2.336-2.495L2.5 1h11zM9.75 13h-3.5v1.5h3.5V13zm-7-6.5c-.172 0-.34.012-.506.034L2 6.575v1.553a2.25 2.25 0 0 1 2.927 2.693l-.054.18h1.553A3.75 3.75 0 0 0 2.75 6.5zm0-3c-.169 0-.337.006-.503.018L2 3.541v1.512a5.25 5.25 0 0 1 5.977 5.7l-.03.248h1.512A6.75 6.75 0 0 0 2.75 3.5zm0 6a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5z"
       ></path>
-    </svg>
-  );
-};
-
-const ProtectionIcon = ({ fill }: FillIconProps): JSX.Element => {
-  return (
-    <svg
-      display="block"
-      width="100%"
-      height="auto"
-      fill="rgb(227, 28, 95)"
-      stroke="currentcolor"
-      viewBox="0 0 48 48"
-    >
-      <g>
-        <g stroke="none">
-          <path
-            fillOpacity={0.2}
-            d="M28 5l.585.005c4.29.076 8.837.984 13.645 2.737l.77.288V35.4l-.008.13a1 1 0 0 1-.47.724l-.116.06L28 42.716l-2-.216V31.414L14.707 19.707 13 19V8.029l.77-.286c4.797-1.75 9.336-2.658 13.62-2.737L28 5z"
-          ></path>
-          <path d="M28 1c5.599 0 11.518 1.275 17.755 3.816a2 2 0 0 1 1.239 1.691L47 6.67V35.4a5 5 0 0 1-2.764 4.472l-.205.097L28 47h-3l-1.853-1H25a1 1 0 0 0 1-1h2l15.218-6.858a3 3 0 0 0 1.757-2.351l.019-.194.006-.196V6.669l-.692-.278C38.557 4.128 33.121 3 28 3S17.443 4.128 11.692 6.391L11 6.67 10.999 22 9 23.999V6.669a2 2 0 0 1 1.098-1.786l.147-.067C16.483 2.275 22.401 1 28 1z"></path>
-        </g>
-        <g fill="none" strokeWidth={2}>
-          <path d="M2 31.414V45a1 1 0 0 0 1 1h22a1 1 0 0 0 1-1V31.414a1 1 0 0 0-.293-.707l-11-11a1 1 0 0 0-1.414 0l-11 11a1 1 0 0 0-.293.707z"></path>
-          <path d="M10 46V35a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v11"></path>
-        </g>
-      </g>
-    </svg>
-  );
-};
-
-const GuidanceIcon = ({ fill }: FillIconProps): JSX.Element => {
-  return (
-    <svg
-      display="block"
-      width="100%"
-      height="auto"
-      fill="rgb(227, 28, 95)"
-      stroke="currentcolor"
-      viewBox="0 0 48 48"
-    >
-      <g>
-        <g stroke="none">
-          <path
-            fillOpacity={0.2}
-            d="M26.928 16h-1.857l-4.523 11.942c1.55.107 2.7.793 3.452 2.058 1.237 2.081 2.737 6.414 4.5 13h7.208a1 1 0 0 0 .97-1.243l-.035-.111L26.928 16z"
-          ></path>
-          <path d="M41 1v8h-5.878a10.118 10.118 0 0 0 2.387 5.07l.224.25-1.466 1.36C34.533 13.81 33.428 11.493 33.1 9H33a3 3 0 0 0-2.995 2.824L30 12v.816l10.383 27.413a5 5 0 0 1-4.373 6.762l-.302.009H29.5v-2h6.208a3 3 0 0 0 2.863-3.896l-.058-.167L28.309 14H23.69l-5.44 14.362-1.87-.709 5.455-14.403L17 8.414V6a5 5 0 0 1 4.783-4.995L22 1h19zm-8 2H22a3 3 0 0 0-2.995 2.824L19 6v1.585L23.415 12H28a5 5 0 0 1 4.563-4.981l.22-.014L33 7V3zm14 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm-8-3h-4v4h4V3zm5 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3-2a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"></path>
-        </g>
-        <g fill="none" strokeWidth={2}>
-          <path d="M30 47l-1.587-5M1 42v5m4-5v5m4-5v5m4-5v5m4-5v5m4-5v5m4-5v5m-3.954-19a4 4 0 0 1 3.759 2.632l.064.192L28.413 42H1v-5a1 1 0 0 1 .883-.993L2 36h11.283l1.519-4H1v-4h20.046z"></path>
-        </g>
-      </g>
-    </svg>
-  );
-};
-
-const RequirementsIcon = ({ fill }: FillIconProps): JSX.Element => {
-  return (
-    <svg
-      display="block"
-      width="100%"
-      height="auto"
-      viewBox="0 0 48 48"
-      fill="rgb(227, 28, 95)"
-      stroke="currentcolor"
-    >
-      <g>
-        <g stroke="none">
-          <path
-            fillOpacity={0.2}
-            d="M26 6c9.941 0 18 8.059 18 18s-8.059 18-18 18c-1.277 0-2.524-.133-3.726-.386A11.944 11.944 0 0 0 25 34c0-6.627-5.373-12-12-12-1.775 0-3.46.386-4.977 1.077C8.503 13.565 16.368 6 26 6z"
-          ></path>
-          <path d="M26 2c12.15 0 22 9.85 22 22s-9.85 22-22 22c-2.643 0-5.177-.466-7.524-1.32a11.978 11.978 0 0 0 2.147-1.412A19.97 19.97 0 0 0 26 44a19.941 19.941 0 0 0 14.368-6.088 17.01 17.01 0 0 0-11.15-7.608l-.383-.069-.835-.14v-2.314l.667-.236a8 8 0 1 0-9.864-4.049 11.822 11.822 0 0 0-2.495-1.034 9.9 9.9 0 0 1-.304-2.172L16 20c0-5.523 4.477-10 10-10s10 4.477 10 10c0 3.592-1.911 6.82-4.876 8.59l-.129.074.09.025a19.03 19.03 0 0 1 10.65 7.657A19.91 19.91 0 0 0 46 24c0-11.046-8.954-20-20-20S6 12.954 6 24l.003.25a12.068 12.068 0 0 0-1.917 1.716A22.461 22.461 0 0 1 4 24C4 11.85 13.85 2 26 2z"></path>
-        </g>
-        <g fill="none">
-          <circle cx={13} cy={34} r={12}></circle>
-          <path d="M7 35L11 39 19 31"></path>
-        </g>
-      </g>
     </svg>
   );
 };

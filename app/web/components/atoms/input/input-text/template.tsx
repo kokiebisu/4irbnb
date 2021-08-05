@@ -6,7 +6,7 @@ export type TextInputTemplateProps = {
   placeholder?: string;
   onChange?: (e: any) => void;
   value?: any;
-  direction?: "top" | "bottom" | undefined;
+  direction?: "top" | "bottom";
 };
 
 /**

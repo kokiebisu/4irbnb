@@ -1,7 +1,7 @@
 export const useBirthDateInputTemplate = ({
   direction,
 }: {
-  direction: "left" | "center" | "right";
+  direction: "top" | "bottom" | "left" | "center" | "right" | "default";
 }) => {
   const renderShape = (direction: string) => {
     switch (direction) {

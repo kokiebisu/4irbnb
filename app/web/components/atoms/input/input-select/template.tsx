@@ -7,10 +7,19 @@ import { renderShape } from "../logic/logic.select";
 export type SelectInputTemplateProps = {
   onChange: (e: any) => void;
   value: any;
-  direction?: "top" | "bottom" | undefined;
+  direction?: "top" | "bottom";
   errors?: boolean;
   disabled?: boolean;
-  inputType: string;
+  inputType:
+    | "place"
+    | "Apartment"
+    | "Bed and breakfast"
+    | "Secondary unit"
+    | "Unique space"
+    | "House"
+    | "Boutique hotel"
+    | "checkinFrom"
+    | "checkinTo";
 };
 
 /**
@@ -35,8 +44,8 @@ export const SelectInputTemplate = ({
     <div className="flex relative items-center h-32">
       <div
         className={`relative px-3 h-full w-full flex justify-between ${renderShape(
-          direction
-        )} ${styleContainer(errors, fieldActive, value)}`}
+          { direction }
+        )} ${styleContainer({ errors, fieldActive, direction })}`}
         style={{
           borderColor: disabled ? "#EBEBEB" : "#B0B0B0",
           backgroundColor: disabled ? "#F7F7F7" : "white",

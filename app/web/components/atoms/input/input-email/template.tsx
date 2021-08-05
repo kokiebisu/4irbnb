@@ -36,12 +36,12 @@ export const EmailInputTemplate = ({
 
   return (
     <div
-      className={`h-14 relative px-5 items-center ${styleContainer(
+      className={`h-14 relative px-5 items-center ${styleContainer({
         errors,
         fieldActive,
-        checkEmail(value),
-        direction
-      )}`}
+        value,
+        direction,
+      })}`}
     >
       <div className="relative w-full h-full">
         <input
@@ -54,19 +54,14 @@ export const EmailInputTemplate = ({
           onFocus={activateField}
           onBlur={deactivateField}
           className={`pt-5 w-full block border-none text-base font-light outline-none ${styleInput(
-            errors,
-            fieldActive,
-            checkEmail(value)
+            { fieldActive, errors: checkEmail(value) }
           )}`}
           placeholder={fieldActive ? "Email" : undefined}
         />
         <label
           htmlFor="email"
           className={`absolute text-gray-400 font-thin transition ease-in-out ${styleLabel(
-            errors,
-            fieldActive,
-            checkEmail(value),
-            value
+            { errors, fieldActive, evaluate: checkEmail(value), value }
           )}`}
         >
           Email

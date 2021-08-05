@@ -20,7 +20,7 @@ export const PriceInputTemplate = ({
   onKeyPress,
   value,
 }: PriceInputTemplateProps): JSX.Element => {
-  const inputRef = useRef();
+  const inputRef = useRef<HTMLInputElement>(null);
   const [active, setActive] = useState(false);
 
   return (

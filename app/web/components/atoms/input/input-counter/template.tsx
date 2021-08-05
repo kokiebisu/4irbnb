@@ -8,7 +8,6 @@ export type CounterInputTemplateProps = {
   onSubtract: () => void;
   min: number;
   max: number;
-  type: "create" | "guests";
 };
 
 export const CounterInputTemplate = ({
@@ -19,7 +18,6 @@ export const CounterInputTemplate = ({
   onSubtract,
   min,
   max,
-  type,
 }: CounterInputTemplateProps): JSX.Element => {
   return (
     <div className="py-3 flex items-center justify-between">

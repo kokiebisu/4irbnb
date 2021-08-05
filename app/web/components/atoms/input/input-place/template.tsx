@@ -3,9 +3,9 @@ import { Icon } from "@atoms";
 import useOnClickOutside from "@hooks/useOnClickOutside";
 
 export type PlaceInputTemplateProps = {
-  value?: any;
-  direction?: "top" | "bottom" | undefined;
-  onChange?: (e: any) => void;
+  value: any;
+  direction: "top" | "bottom" | "default";
+  onChange: (e: any) => void;
 };
 
 /**
@@ -22,7 +22,7 @@ export const PlaceInputTemplate = ({
   direction,
   onChange,
 }: PlaceInputTemplateProps): JSX.Element => {
-  const containerRef = useRef();
+  const containerRef = useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = useState(false);
   useOnClickOutside(containerRef, () => {
     if (expanded) {

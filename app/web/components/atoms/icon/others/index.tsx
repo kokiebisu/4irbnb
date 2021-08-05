@@ -13,7 +13,14 @@ export type OthersIconVariants =
   | "global"
   | "lightening"
   | "protected"
-  | "phone";
+  | "phone"
+  | "shield"
+  | "protection"
+  | "guidance"
+  | "requirements"
+  | "facebookLogo"
+  | "googleLogo"
+  | "appleLogo";
 
 export type OthersIconProps = {
   othersType: OthersIconVariants;

@@ -3,11 +3,11 @@ import { styleInput, styleLabel, styleContainer } from "../styling.select";
 import { useBirthDateInputTemplate } from "./use-template";
 
 export interface BirthdateInputTemplateProps {
-  onChange?: (e: any) => void;
-  value?: any;
-  direction?: "top" | "bottom" | undefined;
+  onChange: (e: any) => void;
+  value: any;
+  direction: "top" | "bottom";
   errors?: boolean;
-  dateType?: "year" | "month" | "day";
+  dateType: "year" | "month" | "day";
 }
 
 enum birthdates {
@@ -38,11 +38,11 @@ export const BirthdateInputTemplate = ({
   return (
     <div className="h-14 flex relative items-center">
       <div
-        className={`${dynamicStyle} ${styleContainer(
+        className={`${dynamicStyle} ${styleContainer({
           errors,
           fieldActive,
-          direction
-        )} h-full w-full relative px-4`}
+          direction,
+        })} h-full w-full relative px-4`}
       >
         <select
           id={dateType}

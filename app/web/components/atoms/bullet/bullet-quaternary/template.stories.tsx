@@ -18,13 +18,7 @@ const BulletStory: Story<QuaternaryBulletTemplateProps> = (args) => (
 export const Onlinehost = BulletStory.bind({});
 Onlinehost.args = {
   icon: (
-    <Icon
-      variant="fill"
-      fillType="protection"
-      width={40}
-      height={40}
-      fill="black"
-    />
+    <Icon variant="others" othersType="protection" width={40} height={40} />
   ),
   title: "Host insurance and protection",
   description:

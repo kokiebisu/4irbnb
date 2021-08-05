@@ -1,4 +1,8 @@
-export const renderShape = (direction: "top" | "bottom" | null) => {
+export const renderShape = ({
+  direction,
+}: {
+  direction?: "top" | "bottom";
+}) => {
   switch (direction) {
     case "top":
       return "rounded-b-md border-bottom border-left border-right";

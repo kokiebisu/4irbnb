@@ -3,7 +3,7 @@ import { useState } from "react";
 export type LimitInputTemplateProps = {
   value?: any;
   onChange?: (e: any) => void;
-  limit?: number;
+  limit: number;
 };
 
 export const LimitInputTemplate = ({

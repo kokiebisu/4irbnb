@@ -1,11 +1,11 @@
-import { Story, Meta } from '@storybook/react';
+import { Story, Meta } from "@storybook/react";
 import {
   PaginateButtonTemplate,
   PaginateButtonTemplateProps,
-} from './template';
+} from "./template";
 
 export default {
-  title: 'Atoms/Button',
+  title: "Atoms/Button",
   component: PaginateButtonTemplate,
 } as Meta;
 
@@ -15,7 +15,7 @@ const ButtonStory: Story<PaginateButtonTemplateProps> = (args) => (
 
 export const Paginate = ButtonStory.bind({});
 Paginate.args = {
-  direction: 'left',
+  direction: "chevronLeft",
   disabled: false,
-  onClick: () => alert('Triggered onClick'),
+  onClick: () => alert("Triggered onClick"),
 };

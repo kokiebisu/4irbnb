@@ -1,7 +1,7 @@
 export const useAddressInputAppearance = ({
   direction,
 }: {
-  direction: "top" | "bottom";
+  direction: "top" | "bottom" | "default";
 }) => {
   const renderShape = (direction: string) => {
     switch (direction) {

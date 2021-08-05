@@ -38,12 +38,13 @@ export const PasswordInputTemplate = ({
 
   return (
     <div
-      className={`h-14 relative px-5 items-center flex ${styleContainer(
+      className={`h-14 relative px-5 items-center flex ${styleContainer({
         errors,
         fieldActive,
-        checkPassword(value),
-        direction
-      )}`}
+        // evaluate: checkPassword(value),
+        direction,
+        value,
+      })}`}
     >
       <div className="relative h-full w-full">
         <input
@@ -56,20 +57,21 @@ export const PasswordInputTemplate = ({
           onFocus={activateField}
           onBlur={deactivateField}
           className={`pt-5 w-full block border-none text-base font-light placeholder-black relative top-0 outline-none text-gray-400 ${styleInput(
-            errors,
-            fieldActive,
-            checkPassword(value)
+            {
+              fieldActive,
+              errors: checkPassword(value),
+            }
           )}`}
           placeholder={fieldActive ? "Password" : undefined}
         />
         <label
           htmlFor="password"
-          className={`top-2 absolute transition font-thin ${styleLabel(
+          className={`top-2 absolute transition font-thin ${styleLabel({
             errors,
             fieldActive,
-            checkPassword(value),
-            value
-          )}`}
+            evaluate: checkPassword(value),
+            value,
+          })}`}
         >
           Password
         </label>

@@ -14,6 +14,5 @@ export const Region = InputStory.bind({});
 Region.args = {
   onChange: () => alert("on change"),
   value: "canada",
-  direction: null,
   errors: false,
 };
