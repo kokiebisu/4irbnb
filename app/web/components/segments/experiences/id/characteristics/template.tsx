@@ -1,6 +1,6 @@
-import { Bullet } from '@atoms';
-import { Icon } from '@atoms';
-import section from '@template/index.module.scss';
+import { Bullet } from "@atoms";
+import { Icon } from "@atoms";
+import section from "@template/index.module.scss";
 
 export interface CharacteristicsSegmentTemplateProps {
   title?: string;
@@ -58,16 +58,17 @@ export const CharacteristicsSegmentTemplate: React.FC<CharacteristicsSegmentTemp
   return (
     <div>
       <div className="flex items-center justify-between mt-1">
-        <div className="flex py-2" style={{ width: '75%' }}>
+        <div className="flex py-2" style={{ width: "75%" }}>
           <div className="flex mt-2 justify-center">
             <div className="flex flex-col">
               <div className="flex items-center">
                 <div className="mr-1">
                   <Icon
-                    variant="general"
-                    generalType="devices"
+                    variant="fill"
+                    fillType="devices"
                     inversed
                     width={18}
+                    height={18}
                     fill="black"
                   />
                 </div>
@@ -80,7 +81,13 @@ export const CharacteristicsSegmentTemplate: React.FC<CharacteristicsSegmentTemp
               </div>
               <div className="flex items-center flex-wrap">
                 <div>
-                  <Icon variant={'profile'} profileType="star" width={12} />
+                  <Icon
+                    variant="fill"
+                    fillType="star"
+                    width={12}
+                    height={12}
+                    fill="red"
+                  />
                 </div>
                 <h3 className="pl-1 text-gray-600 text-sm">
                   {ratings.toFixed(1)}
@@ -115,14 +122,14 @@ export const CharacteristicsSegmentTemplate: React.FC<CharacteristicsSegmentTemp
           <h3 className="text-lg">Online experience hosted by {host}</h3>
         </div>
         <div
-          className={`py-1 ${[section['display__CharacteristicsSegment']].join(
-            ' '
+          className={`py-1 ${[section["display__CharacteristicsSegment"]].join(
+            " "
           )}`}
         >
           {characteristics.map((characteristic, index) => (
             <div key={index}>
               <Bullet
-                variant={characteristic.description ? 'secondary' : 'primary'}
+                variant={characteristic.description ? "secondary" : "primary"}
                 title={characteristic.title}
                 description={characteristic.description}
                 icon={<Icon {...characteristic.icon} />}

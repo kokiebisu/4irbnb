@@ -1,6 +1,6 @@
-import { Button, GeneralTypeVariants, Icon } from '@atoms';
-import { Bullet } from '@atoms';
-import React from 'react';
+import { Button, GeneralTypeVariants, Icon } from "@atoms";
+import { Bullet } from "@atoms";
+import React from "react";
 
 export interface BannerSegmentTemplateProps {
   items: {
@@ -51,14 +51,17 @@ export const BannerSegmentTemplate: React.FC<BannerSegmentTemplateProps> = ({
                 variant="quaternary"
                 icon={
                   <Icon
-                    variant="general"
-                    generalType={icon}
+                    variant="fill"
+                    fillType={icon}
                     width={16}
                     height={16}
+                    fill="black"
                   />
                 }
                 title={title}
                 description={description}
+                link=""
+                onClick={() => alert("clicked")}
               />
             </div>
           );

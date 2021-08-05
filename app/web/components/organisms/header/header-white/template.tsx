@@ -34,6 +34,7 @@ export const WhiteHeaderTemplate = ({
           <Button
             fill="white"
             variant="logo"
+            noName
             onClick={() => Router.push("/")}
           />
         </div>
@@ -52,8 +53,8 @@ export const WhiteHeaderTemplate = ({
               onClick={() => toggleDispatch({ type: "toggle_globe" })}
             >
               <Icon
-                variant="general"
-                generalType="globe"
+                variant="fill"
+                fillType="globe"
                 fill="white"
                 width={16}
                 height={16}
@@ -93,7 +94,14 @@ export const WhiteHeaderTemplate = ({
       <div className="md:hidden">
         <div className={`flex justify-center items-center`}>
           <div style={{ width: 30 }}>
-            <Icon variant="action" actionType="left" width={12} />
+            <Icon
+              variant="stroke"
+              strokeType="chevronLeft"
+              width={12}
+              height={12}
+              stroke="black"
+              strokeWidth={2}
+            />
           </div>
           <div className="flex-1 w-full">
             <Button

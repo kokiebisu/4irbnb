@@ -21,9 +21,10 @@ export const PrivacyModalTemplate = ({
             <div className="mr-3">Your Privacy</div>
             <div className="relative top-1">
               <Icon
-                variant="general"
-                generalType="lock"
+                variant="fill"
+                fillType="lock"
                 width={16}
+                height={16}
                 fill="#428BFF"
               />
             </div>

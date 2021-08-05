@@ -33,7 +33,6 @@ export const ListingModalTemplate = () => {
           variant="place"
         />
         <Input
-          flag={false}
           onSwitchToFalse={() => alert("false")}
           onSwitchToTrue={() => alert("true")}
           onAdd={() => alert("add")}
@@ -48,8 +47,8 @@ export const ListingModalTemplate = () => {
       <div className="mt-4 mb-7 flex items-center">
         <div>
           <Icon
-            variant="semantic"
-            semanticType="plus"
+            variant="fill"
+            fillType="plus"
             width={15}
             height={15}
             fill="black"

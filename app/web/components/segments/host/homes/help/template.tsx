@@ -1,4 +1,4 @@
-import { Bullet, GeneralTypeVariants, Icon } from '@atoms';
+import { Bullet, GeneralTypeVariants, Icon } from "@atoms";
 
 export interface HelpSegmentTemplateProps {
   helps: {
@@ -28,10 +28,11 @@ export const HelpSegmentTemplate: React.FC<HelpSegmentTemplateProps> = ({
                   variant="tertiary"
                   icon={
                     <Icon
-                      variant="general"
-                      generalType={icon}
+                      variant="fill"
+                      fillType={icon}
                       width={28}
                       height={28}
+                      fill="black"
                     />
                   }
                   title={title}

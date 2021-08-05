@@ -1,5 +1,5 @@
-import { Layout } from '@layout';
-import { Bullet, GeneralTypeVariants, Icon } from '@atoms';
+import { Layout } from "@layout";
+import { Bullet, GeneralTypeVariants, Icon } from "@atoms";
 
 export interface PrioritySegmentTemplateProps {
   priorities: {
@@ -29,10 +29,11 @@ export const PrioritySegmentTemplate: React.FC<PrioritySegmentTemplateProps> = (
                   variant="quatertiary"
                   icon={
                     <Icon
-                      variant="general"
-                      generalType={icon}
+                      variant="fill"
+                      fillType={icon}
                       width={40}
                       height={40}
+                      fill="black"
                     />
                   }
                   title={title}

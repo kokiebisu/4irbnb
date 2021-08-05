@@ -34,7 +34,13 @@ export const ReviewsSegmentTemplate: React.FC<ReviewsSegmentTemplateProps> = ({
         <div className="py-3 flex items-center">
           <div className="flex items-center">
             <div className="mr-2">
-              <Icon variant={"profile"} profileType="star" width={20} />
+              <Icon
+                variant="fill"
+                fillType="star"
+                width={20}
+                height={20}
+                fill="black"
+              />
             </div>
             <h3 className="mr-2 text-2xl text-gray-700">
               {ratings.toFixed(1)}

@@ -1,5 +1,5 @@
-import { Icon } from '@atoms';
-import { Panel, $Panel } from '@panel';
+import { Icon } from "@atoms";
+import { Panel, $Panel } from "@panel";
 
 export interface PreviewSegmentTemplateProps {
   images?: string[];
@@ -24,9 +24,10 @@ export const PreviewSegmentTemplate: React.FC<PreviewSegmentTemplateProps> = ({
             <a href="#" className="flex pl-2 items-center">
               <div>
                 <Icon
-                  variant="general"
-                  generalType="share"
+                  variant="fill"
+                  fillType="share"
                   width={16}
+                  height={16}
                   fill="#484848"
                 />
               </div>
@@ -37,10 +38,11 @@ export const PreviewSegmentTemplate: React.FC<PreviewSegmentTemplateProps> = ({
             <a className="flex ml-3 items-center">
               <div>
                 <Icon
-                  variant="action"
-                  actionType="heart"
+                  variant="fill"
+                  fillType="heart"
                   fill="#484848"
                   width={16}
+                  height={16}
                 />
               </div>
               <u className="pl-3 text-sm text-gray-700">Save</u>

@@ -70,10 +70,11 @@ export const DetailsHeaderTemplate = ({
                     >
                       <div className="inline-block mr-1">
                         <Icon
-                          variant={"profile"}
-                          profileType="star"
+                          variant="fill"
+                          fillType="star"
                           width={10}
                           height={10}
+                          fill="black"
                         />
                       </div>
                       <span className="inline-block text-sm mr-1">

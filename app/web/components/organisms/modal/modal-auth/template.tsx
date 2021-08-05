@@ -28,10 +28,12 @@ export const AuthModalTemplate = (): JSX.Element => {
                 variant="modal"
                 icon={
                   <Icon
-                    variant="action"
-                    actionType="close"
+                    variant="stroke"
+                    strokeType="close"
                     stroke="black"
                     strokeWidth={3}
+                    width={24}
+                    height={24}
                   />
                 }
                 onClick={() => authDispatch({ type: "auth_login" })}
@@ -41,10 +43,12 @@ export const AuthModalTemplate = (): JSX.Element => {
                 variant="modal"
                 icon={
                   <Icon
-                    variant="action"
-                    actionType="close"
+                    variant="stroke"
+                    strokeType="close"
                     stroke="black"
                     strokeWidth={3}
+                    width={24}
+                    height={24}
                   />
                 }
                 onClick={() => toggleDispatch({ type: "close_register" })}

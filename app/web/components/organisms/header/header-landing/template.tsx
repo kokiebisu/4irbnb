@@ -62,8 +62,8 @@ export const LandingHeaderTemplate = ({
         <div>
           <div className="mt-1 block lg:hidden">
             <Icon
-              variant={"logo"}
-              logoType="noName"
+              variant="fill"
+              fillType="noNameLogo"
               fill={criteria ? "white" : "red"}
               width={30}
               height={32}
@@ -71,8 +71,8 @@ export const LandingHeaderTemplate = ({
           </div>
           <div className="hidden lg:block mt-1">
             <Icon
-              variant={"logo"}
-              logoType="name"
+              variant="fill"
+              fillType="nameLogo"
               fill={criteria ? "white" : "red"}
               width={102}
               height={32}
@@ -96,8 +96,8 @@ export const LandingHeaderTemplate = ({
               onClick={() => toggleDispatch({ type: "toggle_globe" })}
             >
               <Icon
-                variant="general"
-                generalType="globe"
+                variant="fill"
+                fillType="globe"
                 fill="white"
                 width={16}
                 height={16}

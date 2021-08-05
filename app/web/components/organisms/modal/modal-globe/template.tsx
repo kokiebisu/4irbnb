@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Button, Icon } from "@atoms";
-import { Prototype } from "@prototype/globe";
 import { useToggleDispatch } from "@context/toggle";
 
 export const GlobeModalTemplate = (): JSX.Element => {
@@ -12,7 +11,16 @@ export const GlobeModalTemplate = (): JSX.Element => {
         <div>
           <Button
             variant="modal"
-            icon={<Icon variant="action" actionType="close" />}
+            icon={
+              <Icon
+                variant="stroke"
+                strokeType="close"
+                stroke="black"
+                strokeWidth={2}
+                width={24}
+                height={24}
+              />
+            }
             onClick={() => toggleDispatch({ type: "toggle_globe" })}
           />
         </div>

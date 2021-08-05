@@ -1,5 +1,5 @@
-import { Icon } from '@atoms';
-import { Panel, $Panel } from '@panel';
+import { Icon } from "@atoms";
+import { Panel, $Panel } from "@panel";
 
 export interface PreviewSegmentTemplateProps {
   title?: string;
@@ -26,13 +26,13 @@ export interface PreviewSegmentTemplateProps {
  * @param {string[]} images - Images for the panel
  */
 export const PreviewSegmentTemplate: React.FC<PreviewSegmentTemplateProps> = ({
-  title = 'Title here',
+  title = "Title here",
   ratings = 5.0,
   numberOfReviews = 100,
   superhost = false,
-  location = 'City',
-  province = 'Province',
-  country = 'Country',
+  location = "City",
+  province = "Province",
+  country = "Country",
 }) => {
   return (
     <div>
@@ -43,7 +43,13 @@ export const PreviewSegmentTemplate: React.FC<PreviewSegmentTemplateProps> = ({
         <div className="mt-4 mb-5 flex justify-between items-center">
           <div className="flex items-center flex-wrap">
             <div>
-              <Icon variant="profile" profileType="star" height={14} />
+              <Icon
+                variant="fill"
+                fillType="star"
+                height={14}
+                width={14}
+                fill="black"
+              />
             </div>
             <span className="pl-1 text-gray-700 text-sm font-bold">
               {ratings}
@@ -56,9 +62,10 @@ export const PreviewSegmentTemplate: React.FC<PreviewSegmentTemplateProps> = ({
                 <span className="text-gray-600">&nbsp;·&nbsp;</span>
                 <div>
                   <Icon
-                    variant="profile"
-                    profileType="superhost"
+                    variant="fill"
+                    fillType="superhost"
                     height={14}
+                    width={14}
                     fill="#E61E4D"
                   />
                 </div>
@@ -79,9 +86,10 @@ export const PreviewSegmentTemplate: React.FC<PreviewSegmentTemplateProps> = ({
               <a href="#" className="flex pl-2 items-center">
                 <div>
                   <Icon
-                    variant="general"
-                    generalType="share"
+                    variant="fill"
+                    fillType="share"
                     height={14}
+                    width={14}
                     fill="#484848"
                   />
                 </div>
@@ -92,10 +100,11 @@ export const PreviewSegmentTemplate: React.FC<PreviewSegmentTemplateProps> = ({
               <a className="flex ml-3 items-center">
                 <div>
                   <Icon
-                    variant="action"
-                    actionType="heart"
+                    variant="fill"
+                    fillType="heart"
                     fill="#484848"
                     height={17}
+                    width={17}
                   />
                 </div>
                 <u className="pl-3 text-sm text-gray-700">Save</u>

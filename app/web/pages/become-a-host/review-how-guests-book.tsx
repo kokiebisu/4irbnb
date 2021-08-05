@@ -53,7 +53,12 @@ const HowGuestsWillBookPage = () => {
             </div>
             <div className="flex">
               <div className="mr-6">
-                <Icon variant="general" generalType="protected" width={50} />
+                <Icon
+                  variant="others"
+                  othersType="protected"
+                  width={50}
+                  height={50}
+                />
               </div>
               <div style={{ width: "65%" }}>
                 <h3 className="text-sm text-gray-500">

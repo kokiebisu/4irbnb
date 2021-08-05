@@ -1,17 +1,17 @@
-import { useState } from 'react';
-import section from '@template/index.module.scss';
+import { useState } from "react";
+import section from "@template/index.module.scss";
 
-import { Button } from '@atoms';
-import { Bullet } from '@atoms';
+import { Button } from "@atoms";
+import { Bullet } from "@atoms";
 
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
 /**
  * Modifies the content which should be displayed initially
  * @param {string} content - The content which must be hidden
  */
 const renderContent = (content: string) => {
-  const wordArray = content.split(' ');
+  const wordArray = content.split(" ");
   const newArray = [];
   for (let i = 0; i < 20; i++) {
     newArray.push(wordArray[i]);
@@ -81,12 +81,12 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
           <div>
             <div className="h-1/2">
               <h3 className="text-lg mb-2">
-                {layoutType === 'room'
+                {layoutType === "room"
                   ? `Hosted By ${host}`
                   : `Meet your host, ${host}`}
               </h3>
               <p className="font-thin text-gray-600 text-sm">
-                {layoutType === 'room'
+                {layoutType === "room"
                   ? `Joined in ${joined}`
                   : `Host on Airbnb since ${joined}`}
               </p>
@@ -96,7 +96,7 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
         <div>
           <div
             className={`${
-              layoutType === 'room' && section['w__host--left']
+              layoutType === "room" && section["w__host--left"]
             } pr-8`}
           >
             <div>
@@ -106,10 +106,11 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
                     variant="primary"
                     icon={
                       <Icon
-                        variant="profile"
-                        profileType="star"
+                        variant="fill"
+                        fillType="star"
                         width={16}
                         height={16}
+                        fill="black"
                       />
                     }
                     title={`15 Reviews`}
@@ -121,26 +122,28 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
                       variant="primary"
                       icon={
                         <Icon
-                          variant="profile"
-                          profileType="verified"
+                          variant="fill"
+                          fillType="verified"
                           width={16}
                           height={16}
+                          fill="black"
                         />
                       }
                       title="Identity Verified"
                     />
                   </div>
                 )}
-                {layoutType === 'room' && isSuperhost && (
+                {layoutType === "room" && isSuperhost && (
                   <div className="mr-2 mb-3 pr-1">
                     <Bullet
                       variant="primary"
                       icon={
                         <Icon
-                          variant="profile"
-                          profileType="superhost"
+                          variant="fill"
+                          fillType="superhost"
                           width={16}
                           height={16}
+                          fill="black"
                         />
                       }
                       title="Superhost"
@@ -153,7 +156,7 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
                   <p className="leading-6 font-thin">{description}</p>
                 ) : (
                   <p className="font-thin leading-6">
-                    {`${defaultDescription.join(' ')}...`}
+                    {`${defaultDescription.join(" ")}...`}
                     <button
                       className="ml-1 bg-transparent font-lg"
                       onClick={() => setDescriptionDisplay(true)}
@@ -163,7 +166,7 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
                   </p>
                 )}
               </div>
-              {layoutType === 'room' && duringStay && (
+              {layoutType === "room" && duringStay && (
                 <div className="my-3">
                   <h3 className="text-md font-base mb-2">During your stay</h3>
                   {stayDisplay ? (
@@ -172,7 +175,7 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
                     </div>
                   ) : (
                     <p className="font-thin leading-6">
-                      {`${defaultDuringStay.join(' ')}...`}
+                      {`${defaultDuringStay.join(" ")}...`}
                       <button
                         className="ml-1 bg-transparent text-md"
                         onClick={() => setStayDisplay(true)}
@@ -184,7 +187,7 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
                 </div>
               )}
 
-              {layoutType === 'room' && isSuperhost && (
+              {layoutType === "room" && isSuperhost && (
                 <div className="py-2">
                   <p className="py-2 font-base">{host} is a Superhost</p>
                   <p className="font-thin leading-6">
@@ -195,8 +198,8 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
               )}
             </div>
           </div>
-          <div className={`pr-5 ${[section['w__host--right']].join(' ')}`}>
-            {layoutType === 'room' && (
+          <div className={`pr-5 ${[section["w__host--right"]].join(" ")}`}>
+            {layoutType === "room" && (
               <div>
                 <div className="mb-4">
                   <p className="pb-4 font-thin">
@@ -216,19 +219,25 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
             )}
             <div
               className={
-                layoutType === 'experience' && 'mt-6 flex items-center'
+                layoutType === "experience" && "mt-6 flex items-center"
               }
             >
-              <div className={layoutType === 'experience' && 'mr-4'}>
+              <div className={layoutType === "experience" && "mr-4"}>
                 <Button variant="border" size="md" title="Contact host" />
               </div>
               <div
                 className={`${
-                  layoutType === 'room' && 'mt-5'
+                  layoutType === "room" && "mt-5"
                 } flex items-center`}
               >
                 <div>
-                  <Icon variant="general" generalType="shield" width={24} />
+                  <Icon
+                    variant="fill"
+                    fillType="shield"
+                    fill="black"
+                    width={24}
+                    height={24}
+                  />
                 </div>
                 <p className="text-xs font-thin ml-3">
                   To protect your payment, never transfer money or communicate

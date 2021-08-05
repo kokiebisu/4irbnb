@@ -26,13 +26,31 @@ const Calendar = ({ next, previous }: CalendarProps): JSX.Element => {
     <div style={{ width: 294 }}>
       <div className="flex justify-center items-center relative mt-2 mb-4">
         <div className="absolute left-0">
-          {previous && <Icon variant="action" actionType="left" width={12} />}
+          {previous && (
+            <Icon
+              variant="stroke"
+              strokeType="chevronLeft"
+              width={12}
+              height={12}
+              stroke="black"
+              strokeWidth={2}
+            />
+          )}
         </div>
         <div>
           <h3 className="text-sm">December 2020</h3>
         </div>
         <div className="absolute right-0">
-          {next && <Icon variant="action" actionType="right" width={12} />}
+          {next && (
+            <Icon
+              variant="stroke"
+              strokeType="chevronRight"
+              width={12}
+              height={12}
+              stroke="black"
+              strokeWidth={2}
+            />
+          )}
         </div>
       </div>
       <div className="w-full">

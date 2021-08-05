@@ -1,4 +1,4 @@
-import { Bullet, Icon } from '@atoms';
+import { Bullet, Icon } from "@atoms";
 
 export type BringSegmentTemplateProps = {
   necessities: string[];
@@ -26,8 +26,9 @@ export const BringSegmentTemplate = ({
                 variant="primary"
                 icon={
                   <Icon
-                    variant="semantic"
-                    semanticType="check"
+                    variant="fill"
+                    fillType="check"
+                    fill="black"
                     width={24}
                     height={24}
                   />
