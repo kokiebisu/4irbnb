@@ -1,9 +1,9 @@
 export const useBirthDateInputTemplate = ({
   direction,
 }: {
-  direction: "top" | "bottom" | "left" | "center" | "right" | "default";
+  direction?: "top" | "bottom" | "left" | "center" | "right" | "default";
 }) => {
-  const renderShape = (direction: string) => {
+  const renderShape = ({ direction }: { direction: string }) => {
     switch (direction) {
       case "left":
         return "border-right border-gray-700";
@@ -16,5 +16,5 @@ export const useBirthDateInputTemplate = ({
     }
   };
 
-  return { dynamicStyle: renderShape(direction) };
+  return { dynamicStyle: direction && renderShape({ direction }) };
 };

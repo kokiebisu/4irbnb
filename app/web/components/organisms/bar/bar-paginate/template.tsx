@@ -188,7 +188,7 @@ export const PaginateBarTemplate = ({
           </button>
         </>
       );
-    }
+    } else return null;
   };
   return (
     <div className="inline-block">
@@ -196,7 +196,7 @@ export const PaginateBarTemplate = ({
         {page !== 1 && (
           <Button
             variant="paginate"
-            direction="left"
+            direction="chevronLeft"
             onClick={() => Router.push(`/s/homes/page/${page - 1}`)}
           />
         )}
@@ -204,7 +204,7 @@ export const PaginateBarTemplate = ({
         {page !== total && (
           <Button
             variant="paginate"
-            direction="right"
+            direction="chevronRight"
             onClick={() => Router.push(`/s/homes/page/${page + 1}`)}
           />
         )}

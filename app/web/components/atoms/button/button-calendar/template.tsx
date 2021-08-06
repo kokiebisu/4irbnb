@@ -1,5 +1,5 @@
 export type CalendarButtonTemplateProps = {
-  disabled: boolean;
+  disabled?: boolean;
   number: number;
   onClick: () => void;
 };
@@ -24,7 +24,7 @@ export const CalendarButtonTemplate = ({
       <div className="w-16 h-16">
         <div className="h-full w-full flex justify-center items-center rounded-full">
           <h3
-            className={`${disabled ? 'text-black' : 'text-gray-100'} text-xs`}
+            className={`${disabled ? "text-black" : "text-gray-100"} text-xs`}
           >
             {number}
           </h3>

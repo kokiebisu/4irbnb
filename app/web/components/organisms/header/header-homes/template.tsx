@@ -9,9 +9,7 @@ export interface HomesHeaderTemplateProps {
  * Renders the header for the homes page
  * @param {boolean} spread - Whether if the layout should be spread out or not
  */
-export const HomesHeaderTemplate = ({
-  spread = false,
-}: HomesHeaderTemplateProps): JSX.Element => {
+export const HomesHeaderTemplate = (): JSX.Element => {
   return (
     <header className="px-0 h-48">
       <div style={{ padding: 20 }} className="h-full">

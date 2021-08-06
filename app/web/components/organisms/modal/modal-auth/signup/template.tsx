@@ -4,7 +4,7 @@ import { Input } from "@atoms";
 import { Button } from "@atoms";
 import { Bullet } from "@atoms";
 import { validateSignup as validate } from "@helper/auth";
-import { useAuthDispatch } from "@context/auth";
+// import { useAuthDispatch } from "@context/auth";
 
 export interface SignupPrototypeTemplateProps {}
 
@@ -12,8 +12,8 @@ export interface SignupPrototypeTemplateProps {}
  * Renders the signup template component
  */
 export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = () => {
-  const authDispatch = useAuthDispatch();
-  const [loading, setLoading] = useState(false);
+  // const authDispatch = useAuthDispatch();
+  const [loading, _] = useState(false);
   const formik = useFormik({
     initialValues: {
       firstname: "",
@@ -25,7 +25,7 @@ export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = (
       password: "",
     },
     validate,
-    onSubmit: async (values) => {
+    onSubmit: async (_) => {
       // const submit = await usePost({
       //   url: '/api/users/signup',
       //   body: values,
@@ -91,10 +91,10 @@ export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = (
             <Input
               dateType="day"
               variant="birthdate"
-              direction={undefined}
               // handleChange={formik.handleChange}
               value={formik.values.day}
               errors={formik.errors.year !== undefined}
+              onChange={() => console.log("click")}
             />
             <Input
               // spread
@@ -104,6 +104,7 @@ export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = (
               // handleChange={formik.handleChange}
               value={formik.values.month}
               errors={formik.errors.year !== undefined}
+              onChange={() => console.log("click")}
             />
             <Input
               // spread
@@ -113,6 +114,7 @@ export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = (
               // handleChange={formik.handleChange}
               value={formik.values.year}
               errors={formik.errors.year !== undefined}
+              onChange={() => console.log("click")}
             />
           </div>
           {formik.errors.day !== undefined && (
@@ -200,6 +202,7 @@ export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = (
             onClick={() => alert("clicked")}
             size="md"
             color="white"
+            fill="black"
           />
         </div>
       </div>

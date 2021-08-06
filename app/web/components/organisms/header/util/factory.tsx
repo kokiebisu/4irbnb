@@ -14,7 +14,7 @@ export const factory = (props: HeaderProps) => {
     case "experiences":
       return <ExperiencesHeader />;
     case "homes":
-      return <HomesHeader {...props} />;
+      return <HomesHeader />;
     case "landing":
       return <LandingHeader {...props} />;
     case "onlinehost":

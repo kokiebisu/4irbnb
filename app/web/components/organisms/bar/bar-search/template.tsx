@@ -24,7 +24,9 @@ export const SearchBarTemplate = ({
   handleCheckInSelected,
   handleSearch,
 }: SearchBarTemplateProps): JSX.Element => {
-  const types = {
+  const types: {
+    [key: string]: JSX.Element;
+  } = {
     stay: (
       <div
         className={`${

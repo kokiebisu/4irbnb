@@ -8,6 +8,8 @@ export const useFilterBarsTemplate = () => {
     transition: 0.45,
   });
 
+  console.log(width);
+
   const handlePreviousSlide = () => {
     // if (state.activeSlide === 0) {
     //   return setState({

@@ -85,6 +85,7 @@ export const BookingModalTemplate = ({
                       stretch
                       color="black"
                       onClick={handleBookSelect}
+                      fill="black"
                     />
                   </div>
                 </div>

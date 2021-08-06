@@ -20,8 +20,8 @@ export const usePhonePrototype = () => {
 
   const handleFacebookLogin = () => alert("facebook login");
   const handleEmailLogin = () => authDispatch({ type: "email" });
-  const handleGoogleLogin = () => alert("google login");
-  const handleAppleLogin = () => alert("apple login");
+  // const handleGoogleLogin = () => alert("google login");
+  // const handleAppleLogin = () => alert("apple login");
 
   const handleRegionChange = (e: any) => formik.handleChange(e);
 

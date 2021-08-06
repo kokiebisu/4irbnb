@@ -12,10 +12,15 @@ export const MenuBarTemplate = ({
 }: MenuBarTemplateProps): JSX.Element => {
   return (
     <div className="flex justify-center items-center p-3 bg-white w-full">
-      {items.map((item, index) => {
+      {items.map((_, index) => {
         return (
           <div key={index}>
-            <Button variant="bar" barType={item} />
+            <Button
+              variant="bar"
+              name="name"
+              icon={<div></div>}
+              onClick={() => alert("clicked")}
+            />
           </div>
         );
       })}

@@ -91,6 +91,7 @@ export const DetailsHeaderTemplate = ({
                       title="Check availability"
                       size="md"
                       color="white"
+                      fill="black"
                       onClick={() => alert("yo")}
                     />
                   </div>

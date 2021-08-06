@@ -1,5 +1,5 @@
 import { GuestsModalTemplate } from "./template";
 
-export const GuestsModal = (props): JSX.Element => {
-  return <GuestsModalTemplate {...props} />;
-};
+export const GuestsModal = (props: any): JSX.Element => (
+  <GuestsModalTemplate {...props} />
+);

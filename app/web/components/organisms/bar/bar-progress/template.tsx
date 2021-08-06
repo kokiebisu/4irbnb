@@ -6,9 +6,7 @@ export interface ProgressBarTemplateProps {
  * Renders the Progress Bar
  * @param {number} percentage - percentage of the progress bar
  */
-export const ProgressBarTemplate = ({
-  percentage,
-}: ProgressBarTemplateProps): JSX.Element => {
+export const ProgressBarTemplate = (): JSX.Element => {
   return (
     <div className="relative w-full h-2 bg-gray-200 z-10">
       <div className="w-full h-2 flex z-50">

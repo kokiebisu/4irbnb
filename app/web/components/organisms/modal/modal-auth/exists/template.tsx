@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Router from "next/router";
 import { useFormik } from "formik";
 import { Bullet } from "@atoms";
 import { Button } from "@atoms";
@@ -21,14 +20,14 @@ export const ExistsPrototypeTemplate: React.FC<ExistsPrototypeTemplateProps> = (
     email: "a01056715@gmail.com",
   },
 }) => {
-  const [loading, setLoading] = useState(false);
+  const [loading, _] = useState(false);
 
   const formik = useFormik({
     initialValues: {
       password: "",
     },
     validate,
-    onSubmit: (values) => {
+    onSubmit: (_) => {
       // const submit = usePost({
       //   url: '/api/users/signin',
       //   body: values,
@@ -84,6 +83,7 @@ export const ExistsPrototypeTemplate: React.FC<ExistsPrototypeTemplateProps> = (
             size="md"
             color="white"
             stretch
+            fill="black"
             onClick={() => alert("clicked")}
           />
         </div>
@@ -100,6 +100,7 @@ export const ExistsPrototypeTemplate: React.FC<ExistsPrototypeTemplateProps> = (
           variant="underline"
           title="Login with a different account"
           onClick={() => alert("button pressed")}
+          font={14}
         />
       </div>
       <div className="my-4">
@@ -107,6 +108,7 @@ export const ExistsPrototypeTemplate: React.FC<ExistsPrototypeTemplateProps> = (
           variant="underline"
           title="Forgot password?"
           onClick={() => alert("button pressed")}
+          font={14}
         />
       </div>
     </div>

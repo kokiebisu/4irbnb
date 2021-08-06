@@ -5,7 +5,7 @@ import { useBirthDateInputTemplate } from "./use-template";
 export interface BirthdateInputTemplateProps {
   onChange: (e: any) => void;
   value: any;
-  direction: "top" | "bottom";
+  direction?: "top" | "bottom";
   errors?: boolean;
   dateType: "year" | "month" | "day";
 }
