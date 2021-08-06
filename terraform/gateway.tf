@@ -32,3 +32,4 @@ resource "aws_apigatewayv2_api_mapping" "this" {
   domain_name = aws_apigatewayv2_domain_name.this.id
   stage = aws_apigatewayv2_stage.this.id
 }
+
