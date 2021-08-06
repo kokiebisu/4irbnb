@@ -8,6 +8,8 @@ export const useFilterBarsTemplate = () => {
     transition: 0.45,
   });
 
+  console.log(width);
+
   const handlePreviousSlide = () => {
     // if (state.activeSlide === 0) {
     //   return setState({
@@ -41,7 +43,7 @@ export const useFilterBarsTemplate = () => {
 
   const handleWidthChange = (widthState: number) => setWidth(widthState);
 
-  const containerRef = useRef<HTMLDivElement>();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleRef = () => {
     if (containerRef.current && containerRef.current.getBoundingClientRect()) {

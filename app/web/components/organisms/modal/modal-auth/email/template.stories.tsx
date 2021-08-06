@@ -15,6 +15,4 @@ const EmailPrototypeStory: Story<EmailPrototypeTemplateProps> = (args) => (
 );
 
 export const Auth = EmailPrototypeStory.bind({});
-Auth.args = {
-  variant: "email",
-};
+Auth.args = {};

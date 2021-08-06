@@ -1,8 +1,8 @@
 export type RadioInputTemplateProps = {
-  title?: string;
-  subtitle?: string;
-  value?: any;
-  onChange?: (e: any) => void;
+  title: string;
+  subtitle: string;
+  value: any;
+  onChange: (e: any) => void;
 };
 
 export const RadioInputTemplate = ({

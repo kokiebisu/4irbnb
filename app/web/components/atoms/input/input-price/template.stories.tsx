@@ -1,8 +1,8 @@
-import { Story, Meta } from '@storybook/react';
-import { PriceInputTemplate, PriceInputTemplateProps } from './template';
+import { Story, Meta } from "@storybook/react";
+import { PriceInputTemplate, PriceInputTemplateProps } from "./template";
 
 export default {
-  title: 'Atoms/Input',
+  title: "Atoms/Input",
   component: PriceInputTemplate,
 } as Meta;
 
@@ -12,8 +12,8 @@ const InputStory: Story<PriceInputTemplateProps> = (args) => (
 
 export const Price = InputStory.bind({});
 Price.args = {
-  name: 'text',
-  onChange: () => alert('on change'),
-  onKeyPress: () => alert('on key press'),
-  value: '500',
+  name: "text",
+  onChange: () => alert("on change"),
+  onKeyPress: () => alert("on key press"),
+  value: 500,
 };

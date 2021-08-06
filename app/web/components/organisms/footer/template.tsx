@@ -2,13 +2,11 @@ import { Button } from "@atoms";
 import { Icon } from "@atoms";
 
 export interface FooterTemplateProps {
-  spread?: boolean;
   handleRedirectToPath: (url: string) => void;
   items: { name: string; items: { url: string; name: string }[] }[];
 }
 
 export const FooterTemplate = ({
-  spread,
   handleRedirectToPath,
   items,
 }: FooterTemplateProps): JSX.Element => {

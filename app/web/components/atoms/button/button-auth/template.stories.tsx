@@ -7,31 +7,13 @@ const items = {
     <Icon variant="fill" fillType="email" fill="black" width={17} height={17} />
   ),
   facebook: (
-    <Icon
-      variant="fill"
-      fillType="facebookLogo"
-      fill="#1877F2"
-      width={17}
-      height={17}
-    />
+    <Icon variant="others" othersType="facebookLogo" width={17} height={17} />
   ),
   google: (
-    <Icon
-      variant="fill"
-      fillType="googleLogo"
-      fill="black"
-      width={17}
-      height={17}
-    />
+    <Icon variant="others" othersType="googleLogo" width={17} height={17} />
   ),
   apple: (
-    <Icon
-      variant="fill"
-      fillType="appleLogo"
-      fill="black"
-      width={17}
-      height={17}
-    />
+    <Icon variant="others" othersType="appleLogo" width={17} height={17} />
   ),
 };
 

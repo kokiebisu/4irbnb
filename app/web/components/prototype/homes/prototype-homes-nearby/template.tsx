@@ -17,8 +17,7 @@ export interface NearbyPrototypeTemplateProps {
 export const NearbyPrototypeTemplate: React.FC<NearbyPrototypeTemplateProps> = ({
   city,
   filterCount,
-  guests,
-  average,
+
   filters,
 }) => {
   const displayPlace = city.match(/_/g) ? city.split("_").join(" ") : city;
@@ -37,7 +36,7 @@ export const NearbyPrototypeTemplate: React.FC<NearbyPrototypeTemplateProps> = (
         </div>
         <div className="my-4">
           <div className="md:flex">
-            {filters.map((filter, index) => {
+            {filters.map((filter: any, index: any) => {
               return (
                 <div key={index} className="mr-3">
                   <Button

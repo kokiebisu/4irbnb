@@ -1,6 +1,7 @@
 export type PrivacyButtonTemplateProps = {
   title: string;
   inverse?: boolean;
+  onClick: () => void;
 };
 
 /**
@@ -16,11 +17,11 @@ export const PrivacyButtonTemplate = ({
     <div
       className={`inline-block sm:inline-flex whitespace-nowrap py-3 px-6 font-medium rounded-md text-sm justify-center ${
         inverse
-          ? 'bg-gray-900 border-transparent border'
-          : 'bg-transparent border border-black'
+          ? "bg-gray-900 border-transparent border"
+          : "bg-transparent border border-black"
       }`}
     >
-      <h4 className={`${inverse ? 'text-white' : 'text-black'} font-medium`}>
+      <h4 className={`${inverse ? "text-white" : "text-black"} font-medium`}>
         {title}
       </h4>
     </div>

@@ -1,9 +1,9 @@
 export const useTextInputAppearance = ({
   direction,
 }: {
-  direction: "top" | "bottom";
+  direction?: "top" | "bottom";
 }) => {
-  const renderShape = (direction: string) => {
+  const renderShape = ({ direction }: { direction?: string }) => {
     switch (direction) {
       case "top":
         return "border-bottom border-left border-right rounded-b-md";
@@ -14,5 +14,5 @@ export const useTextInputAppearance = ({
     }
   };
 
-  return { dynamicStyle: renderShape(direction) };
+  return { dynamicStyle: renderShape({ direction }) || "rounded-md" };
 };

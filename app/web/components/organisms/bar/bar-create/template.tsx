@@ -1,8 +1,8 @@
 import { Button } from "@atoms";
 
 export interface CreateBarTemplateProps {
-  handleNextPage?: () => void;
-  handlePreviousPage?: () => void;
+  handleNextPage: () => void;
+  handlePreviousPage: () => void;
   criteria?: boolean;
 }
 
@@ -29,7 +29,7 @@ export const CreateBarTemplate = ({
             size="md"
             color="white"
             fill="#018489"
-            disable={!criteria}
+            disabled={!criteria}
             onClick={handleNextPage}
           />
         </div>

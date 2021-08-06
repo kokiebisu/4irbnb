@@ -1,12 +1,10 @@
 import {
   CalendarButtonTemplate,
   CalendarButtonTemplateProps,
-} from './template';
+} from "./template";
 
 export type CalendarButtonProps = CalendarButtonTemplateProps;
 
 export const CalendarButton = ({
   ...props
-}: CalendarButtonProps): JSX.Element => {
-  return <CalendarButtonTemplate {...props} />;
-};
+}: CalendarButtonProps): JSX.Element => <CalendarButtonTemplate {...props} />;

@@ -1,6 +1,6 @@
 export type LocationButtonTemplateProps = {
   title: string;
-  description: string;
+  description?: string;
   onClick: () => void;
   icon: JSX.Element;
 };

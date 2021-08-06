@@ -6,7 +6,7 @@ import { ForgotPasswordPrototype } from "../forgot";
 import { PhonePrototype } from "../phone";
 import { SignupPrototype } from "../signup";
 
-export const factory = (props) => {
+export const factory = (props: any) => {
   switch (props.variant) {
     case "phone":
       return <PhonePrototype {...props} />;

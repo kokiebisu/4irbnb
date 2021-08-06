@@ -1,6 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react/types-6-0";
-import { Panel, PanelProps, $Panel } from "@panel";
+import { Panel, PanelProps } from "@panel";
 
 export default {
   title: "Molecules/Panel",
@@ -11,10 +11,10 @@ const TemplateStory: Story<PanelProps> = (args) => <Panel {...args} />;
 
 export const Experience = TemplateStory.bind({});
 Experience.args = {
-  variant: $Panel.EXPERIENCE,
+  variant: "experience",
 };
 
 export const Room = TemplateStory.bind({});
 Room.args = {
-  variant: $Panel.ROOM,
+  variant: "room",
 };

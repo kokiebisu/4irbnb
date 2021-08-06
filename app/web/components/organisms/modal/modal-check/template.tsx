@@ -70,7 +70,11 @@ const Calendar = ({ next, previous }: CalendarProps): JSX.Element => {
             {[1, 2, 3, 4, 5, 6, 7].map((number, index) => {
               return (
                 <div key={index} style={{ display: "table-cell" }}>
-                  <Button variant="calendar" number={number} />
+                  <Button
+                    variant="calendar"
+                    number={number}
+                    onClick={() => alert("clicked")}
+                  />
                 </div>
               );
             })}
@@ -79,7 +83,11 @@ const Calendar = ({ next, previous }: CalendarProps): JSX.Element => {
             {[8, 9, 10, 11, 12, 13, 14].map((number, index) => {
               return (
                 <div key={index} style={{ display: "table-cell" }}>
-                  <Button variant="calendar" number={number} />
+                  <Button
+                    variant="calendar"
+                    number={number}
+                    onClick={() => alert("clicked")}
+                  />
                 </div>
               );
             })}
@@ -88,7 +96,11 @@ const Calendar = ({ next, previous }: CalendarProps): JSX.Element => {
             {[15, 16, 17, 18, 19, 20, 21].map((number, index) => {
               return (
                 <div key={index} style={{ display: "table-cell" }}>
-                  <Button variant="calendar" number={number} />
+                  <Button
+                    variant="calendar"
+                    number={number}
+                    onClick={() => alert("clicked")}
+                  />
                 </div>
               );
             })}
@@ -97,7 +109,11 @@ const Calendar = ({ next, previous }: CalendarProps): JSX.Element => {
             {[22, 23, 24, 25, 26, 27, 28].map((number, index) => {
               return (
                 <div key={index} style={{ display: "table-cell" }}>
-                  <Button variant="calendar" number={number} />
+                  <Button
+                    variant="calendar"
+                    number={number}
+                    onClick={() => alert("clicked")}
+                  />
                 </div>
               );
             })}
@@ -106,7 +122,13 @@ const Calendar = ({ next, previous }: CalendarProps): JSX.Element => {
             {[29, 30, 31, null, null, null, null].map((number, index) => {
               return (
                 <div key={index} style={{ display: "table-cell" }}>
-                  {number && <Button variant="calendar" number={number} />}
+                  {number && (
+                    <Button
+                      variant="calendar"
+                      number={number}
+                      onClick={() => alert("clicked")}
+                    />
+                  )}
                 </div>
               );
             })}

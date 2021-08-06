@@ -2,11 +2,11 @@ import { Bar } from "@bar";
 import { Header } from "@header";
 
 export type CreateLayoutProps = {
-  title?: string;
-  left?: React.ReactNode;
-  right?: React.ReactNode;
-  next?: () => void;
-  back?: () => void;
+  title: string;
+  left?: JSX.Element;
+  right?: JSX.Element;
+  next: () => void;
+  back: () => void;
   percentage: number;
   criteria: boolean;
 };
@@ -44,8 +44,8 @@ export const CreateLayout = ({
             <div style={{ maxWidth: 550 }} className="px-8 w-full">
               <Bar
                 variant="create"
-                next={next}
-                back={back}
+                handleNextPage={next}
+                handlePreviousPage={back}
                 criteria={criteria}
               />
             </div>

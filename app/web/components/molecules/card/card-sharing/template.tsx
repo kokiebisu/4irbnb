@@ -1,7 +1,6 @@
 export type SharingCardTemplateProps = {
   imgUrl?: string;
-  title?;
-  string;
+  title: string;
   description?: string;
 };
 

@@ -80,12 +80,20 @@ export const WhiteHeaderTemplate = ({
               authenticated={data}
               criteria={toggleState.menu}
               dispatch="toggle_menu"
-              options={{
-                login: {
+              topOptions={[
+                {
                   name: "login",
                   handleClick: () => toggleDispatch({ type: "toggle_auth" }),
+                  bold: false,
                 },
-              }}
+              ]}
+              bottomOptions={[
+                {
+                  name: "login",
+                  handleClick: () => toggleDispatch({ type: "toggle_auth" }),
+                  bold: false,
+                },
+              ]}
               animate="default"
             />
           </div>

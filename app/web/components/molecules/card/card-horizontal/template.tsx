@@ -2,14 +2,16 @@ import { Icon } from "@atoms";
 import { ImageSlider } from "../../../particles/particle-slider/template";
 
 export type HorizontalCardTemplateProps = {
-  images?: string[];
-  type: string;
-  ratings: number;
-  location: string;
-  title: string;
-  numberOfReviews: number;
-  save?: boolean;
-  superhost?: boolean;
+  card: {
+    images?: string[];
+    type: string;
+    ratings: number;
+    location: string;
+    title: string;
+    numberOfReviews: number;
+    save?: boolean;
+    superhost?: boolean;
+  };
 };
 
 /**
@@ -24,14 +26,16 @@ export type HorizontalCardTemplateProps = {
  * @param {boolean} save - Whether if the card can be saved or not
  */
 export const HorizontalCardTemplate = ({
-  images,
-  type,
-  ratings,
-  location,
-  title,
-  numberOfReviews,
-  superhost,
-  save,
+  card: {
+    images,
+    type,
+    ratings,
+    location,
+    title,
+    numberOfReviews,
+    superhost,
+    save,
+  },
 }: HorizontalCardTemplateProps): JSX.Element => {
   return (
     <div>

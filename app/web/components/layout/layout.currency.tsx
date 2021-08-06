@@ -1,8 +1,8 @@
 import { Button } from "@atoms";
 
 export type CurrencyLayoutProps = {
-  items: { name?: string; abbreviation?: string; symbol?: string }[];
-  title?: string;
+  items: { name: string; abbreviation: string; symbol: string }[];
+  title: string;
 };
 
 /**
@@ -24,12 +24,11 @@ export const CurrencyLayout = ({
           return (
             <div key={index}>
               <Button
-                stretch
                 variant="currency"
                 name={name}
                 abbreviation={abbreviation}
                 symbol={symbol}
-                block
+                onClick={() => alert("clicked")}
               />
             </div>
           );

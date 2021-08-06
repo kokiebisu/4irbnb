@@ -16,7 +16,7 @@ export interface PhonePrototypeTemplateProps {
     icon: any;
     handleClick: any;
   };
-  handleSubmit: () => void;
+  handleSubmit: (e: any) => void;
   handleRegionChange: (e: any) => void;
   handlePhoneNumberChange: (e: any) => void;
   region: string;
@@ -78,6 +78,7 @@ export const PhonePrototypeTemplate = ({
               size="md"
               color="white"
               onClick={() => alert("yo")}
+              fill="black"
             />
           </div>
         </form>
@@ -92,7 +93,7 @@ export const PhonePrototypeTemplate = ({
               <div key={index} className="my-4">
                 <Button
                   variant="auth"
-                  auth={method}
+                  // auth={method}
                   onClick={method.handleClick}
                   icon={<Icon {...method.icon} />}
                   name={method.name}

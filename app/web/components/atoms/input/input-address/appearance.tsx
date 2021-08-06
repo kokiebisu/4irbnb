@@ -1,9 +1,9 @@
 export const useAddressInputAppearance = ({
   direction,
 }: {
-  direction: "top" | "bottom";
+  direction?: "top" | "bottom" | "default";
 }) => {
-  const renderShape = (direction: string) => {
+  const renderShape = ({ direction }: { direction: string }) => {
     switch (direction) {
       case "top":
         return "border-b border-l border-r border-gray-400 rounded-br-lg";
@@ -14,5 +14,5 @@ export const useAddressInputAppearance = ({
     }
   };
 
-  return { dynamicStyle: renderShape(direction) };
+  return { dynamicStyle: direction && renderShape({ direction }) };
 };

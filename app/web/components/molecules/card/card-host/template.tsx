@@ -53,6 +53,7 @@ export const HostCardTemplate = ({
           onClick={() => Router.push("/")}
           variant="underline"
           title={`Check out some ${stayType}s`}
+          font={18}
         />
       </div>
     </div>

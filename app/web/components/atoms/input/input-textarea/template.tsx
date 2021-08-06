@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 export type TextAreaInputTemplateProps = {
-  value?: any;
-  onChange?: (e: any) => void;
-  limit?: number;
+  value: any;
+  onChange: (e: any) => void;
+  limit: number;
 };
 
 export const TextAreaInputTemplate = ({

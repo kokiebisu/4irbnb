@@ -11,7 +11,7 @@ export type FiltersBarTemplateProps = {
   handleNextSlide?: () => void;
   primaryFilters: string[];
   secondaryFilters: string[];
-  handleFilterSelect: () => void;
+  handleFilterSelect: (filter: string) => void;
 };
 
 /**
@@ -58,7 +58,7 @@ export const FiltersBarTemplate = ({
           >
             <Button
               variant="paginate"
-              direction="left"
+              direction="chevronLeft"
               onClick={handlePreviousSlide}
             />
           </div>
@@ -72,7 +72,11 @@ export const FiltersBarTemplate = ({
         >
           {state.activeSlide > 0 && (
             <div className="absolute left-0 z-40">
-              <Button variant="paginate" direction="left" />
+              <Button
+                variant="paginate"
+                direction="chevronLeft"
+                onClick={() => alert("clicked")}
+              />
             </div>
           )}
           {secondaryFilters.map((filter, index) => {
@@ -97,7 +101,7 @@ export const FiltersBarTemplate = ({
           >
             <Button
               variant="paginate"
-              direction="right"
+              direction="chevronRight"
               onClick={handleNextSlide}
             />
           </div>

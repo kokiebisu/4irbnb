@@ -11,10 +11,10 @@ export interface EmailPrototypeTemplateProps {
     icon: any;
     handleClick: any;
   };
-  handleSubmit: () => void;
+  handleSubmit: (e: any) => void;
   handleEmailChange: (e: any) => void;
   email: string;
-  emailError: boolean;
+  emailError: string | undefined;
 }
 
 /**
@@ -40,7 +40,7 @@ export const EmailPrototypeTemplate = ({
               variant="email"
               onChange={handleEmailChange}
               value={email}
-              errors={emailError}
+              errors={!!emailError}
             />
           </div>
           <div>
@@ -57,6 +57,7 @@ export const EmailPrototypeTemplate = ({
               size="md"
               color="white"
               onClick={() => alert("yo")}
+              fill="black"
             />
           </div>
         </form>
@@ -71,7 +72,7 @@ export const EmailPrototypeTemplate = ({
               <div key={index} className="my-4">
                 <Button
                   variant="auth"
-                  auth={method}
+                  // auth={}
                   onClick={method.handleClick}
                   icon={<Icon {...method.icon} />}
                   name={method.name}

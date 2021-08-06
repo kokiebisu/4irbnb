@@ -32,12 +32,12 @@ export const VerifyInputTemplate = ({
     return "";
   };
 
-  const renderColor = () => {
-    // if (value.length > 0 && !valid) {
-    //   return animation["c--warning"];
-    // }
-    return "transition-colors text-green-800 ease-in-out";
-  };
+  // const renderColor = () => {
+  //   // if (value.length > 0 && !valid) {
+  //   //   return animation["c--warning"];
+  //   // }
+  //   return "transition-colors text-green-800 ease-in-out";
+  // };
 
   return (
     <div>

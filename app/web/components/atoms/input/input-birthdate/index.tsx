@@ -5,6 +5,6 @@ import {
 
 export type BirthdateInputProps = BirthdateInputTemplateProps;
 
-export const BirthdateInput = (props: BirthdateInputProps): JSX.Element => {
-  return <BirthdateInputTemplate {...props} />;
-};
+export const BirthdateInput = (props: BirthdateInputProps): JSX.Element => (
+  <BirthdateInputTemplate {...props} />
+);

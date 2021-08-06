@@ -1,4 +1,3 @@
-import { Segment } from "@template/s/homes";
 import { Bar } from "@bar";
 import { Button } from "@atoms";
 
@@ -23,7 +22,7 @@ export interface CategoryPrototypeTemplateProps {
 export const CategoryPrototypeTemplate: React.FC<CategoryPrototypeTemplateProps> = ({
   subtitle,
   stayType,
-  filterCount,
+
   filters,
 }) => {
   const displayTitle = () => {
@@ -54,7 +53,7 @@ export const CategoryPrototypeTemplate: React.FC<CategoryPrototypeTemplateProps>
           style={{ scrollSnapType: "x mandatory" }}
           className="flex overflow-x-auto"
         >
-          {filters.map((filter, index) => {
+          {filters.map((filter: any, index: any) => {
             return (
               <div
                 key={index}

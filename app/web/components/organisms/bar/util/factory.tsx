@@ -1,3 +1,4 @@
+import { BarProps } from "@bar";
 import { AvailabilityBar } from "@bar/bar-availability";
 import { CovidBar } from "@bar/bar-covid";
 import { CreateBar } from "@bar/bar-create";
@@ -7,7 +8,7 @@ import { PaginateBar } from "@bar/bar-paginate";
 import { ProgressBar } from "@bar/bar-progress";
 import { SearchBar } from "@bar/bar-search";
 
-export const factory = (props) => {
+export const factory = (props: BarProps) => {
   switch (props.variant) {
     case "availability":
       return <AvailabilityBar {...props} />;
@@ -22,7 +23,7 @@ export const factory = (props) => {
     case "paginate":
       return <PaginateBar {...props} />;
     case "progress":
-      return <ProgressBar {...props} />;
+      return <ProgressBar />;
     case "search":
       return <SearchBar {...props} />;
     default:

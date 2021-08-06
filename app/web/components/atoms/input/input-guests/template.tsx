@@ -4,10 +4,10 @@ import { styleContainer } from "../styling.select";
 import { Icon } from "@atoms";
 
 export type GuestsInputTemplateProps = {
-  onChange?: (e: any) => void;
-  value?: any;
-  direction?: undefined | "top" | "bottom";
-  errors?: boolean;
+  onChange: (e: any) => void;
+  value: any;
+  direction?: "top" | "bottom";
+  errors: boolean;
 };
 
 /**
@@ -42,9 +42,7 @@ export const GuestsInputTemplate = ({
     <div className="h-12 flex relative items-center">
       <div
         className={`px-3 relative h-full w-full flex justify-between ${renderShape()} ${styleContainer(
-          errors,
-          fieldActive,
-          value
+          { errors, fieldActive, direction }
         )}`}
       >
         <select

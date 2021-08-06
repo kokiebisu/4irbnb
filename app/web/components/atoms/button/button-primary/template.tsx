@@ -5,7 +5,7 @@ import { usePrimaryButtonTemplate } from "./use-template";
 export type PrimaryButtonTemplateProps = {
   title: string;
   size: "sm" | "md" | "lg";
-  fill?: string;
+  fill: string;
   color: string;
   bg?: string;
   loading?: boolean;

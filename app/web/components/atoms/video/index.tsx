@@ -7,7 +7,7 @@ import { useTimeout } from "@hooks/useTimeout";
 export type VideoProps = { videoUrl?: string };
 
 export const Video = ({ videoUrl }: VideoProps): JSX.Element => {
-  const videoRef = useRef<HTMLVideoElement>();
+  const videoRef = useRef<HTMLVideoElement>(null);
   const isLoading = useTimeout(1000);
   const [play, setPlay] = useState(true);
 
@@ -60,10 +60,12 @@ export const Video = ({ videoUrl }: VideoProps): JSX.Element => {
               variant="video"
               play={!play}
               onClick={() => {
-                if (!play) {
-                  videoRef.current.play();
-                } else {
-                  videoRef.current.pause();
+                if (videoRef.current) {
+                  if (!play) {
+                    videoRef.current.play();
+                  } else {
+                    videoRef.current.pause();
+                  }
                 }
                 setPlay(!play);
               }}

@@ -21,11 +21,15 @@ export const styleLabel = (errors: boolean, fieldActive: boolean) => {
   return "absolute transition text-xs top-2 text-gray-500";
 };
 
-export const styleContainer = (
-  errors: boolean,
-  fieldActive: boolean,
-  direction: "top" | "bottom" | "left" | "right" | null
-) => {
+export const styleContainer = ({
+  errors,
+  fieldActive,
+  direction,
+}: {
+  errors?: boolean;
+  fieldActive?: boolean;
+  direction?: "top" | "bottom" | "left" | "right";
+}) => {
   if (errors && fieldActive) {
     return "border-red-600 border-2";
   }

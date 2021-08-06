@@ -5,7 +5,7 @@ import { renderShape } from "../shape";
 export type RegionInputTemplateProps = {
   onChange: (e: any) => void;
   value: any;
-  direction: "top" | "bottom" | null;
+  direction?: "top" | "bottom";
   errors: boolean;
 };
 
@@ -29,11 +29,11 @@ export const RegionInputTemplate = ({
   return (
     <div
       style={{ height: 60 }}
-      className={`${renderShape(direction)} ${styleContainer(
+      className={`${renderShape({ direction })} ${styleContainer({
         errors,
         fieldActive,
-        value
-      )} flex relative items-center`}
+        direction,
+      })} flex relative items-center`}
     >
       <div className="h-full w-full relative">
         <select
