@@ -6,4 +6,4 @@ export type PanelProps =
   | ({ variant: "experience" } & ExperiencePanelProps)
   | ({ variant: "room" } & RoomPanelProps);
 
-export const Panel = ({ ...props }) => factory(props);
+export const Panel = ({ ...props }: PanelProps): JSX.Element => factory(props);

@@ -43,6 +43,7 @@ export const AvailabilityBarTemplate = ({
           title="Check availability"
           color="white"
           size="sm"
+          fill="black"
           onClick={() => alert("Triggered onClick")}
         />
       </div>

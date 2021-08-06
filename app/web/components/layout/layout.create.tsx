@@ -5,8 +5,8 @@ export type CreateLayoutProps = {
   title: string;
   left?: JSX.Element;
   right?: JSX.Element;
-  next?: () => void;
-  back?: () => void;
+  next: () => void;
+  back: () => void;
   percentage: number;
   criteria: boolean;
 };

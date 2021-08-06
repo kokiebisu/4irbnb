@@ -1,7 +1,7 @@
 export type ParticipateCardTemplateProps = {
-  icon?: any;
-  title?: string;
-  description?: string;
+  icon: any;
+  title: string;
+  description: string;
   more?: string;
 };
 

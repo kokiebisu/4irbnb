@@ -11,7 +11,7 @@ export type StartingCardTemplateProps = {
   slots: string[];
   imgUrl?: string;
   videoUrl?: string;
-  handleIsHoveredChange: (state: boolean) => boolean;
+  handleIsHoveredChange: (state: boolean) => void;
   isHovered?: boolean;
 };
 

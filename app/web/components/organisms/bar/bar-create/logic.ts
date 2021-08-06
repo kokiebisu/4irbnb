@@ -1,5 +1,5 @@
-import * as mockData from './mock';
+import * as mockData from "./mock";
 
-export const useCreateBar = (props) => {
+export const useCreateBar = (props: any) => {
   return { ...mockData, props };
 };

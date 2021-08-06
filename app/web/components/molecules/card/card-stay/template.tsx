@@ -1,7 +1,7 @@
 import { Icon } from "@atoms";
 import { Bullet } from "@atoms";
 import { ImageSlider } from "../../../particles/particle-slider/template";
-import { Card, $Card } from "@card";
+import { Card } from "@card";
 
 export interface StayCardTemplateProps {
   images: string[];
@@ -41,11 +41,13 @@ export const StayCardTemplate = ({
       <div className="sm:hidden sm:mb-8">
         <Card
           variant="horizontal"
-          type="Type of Stay"
-          ratings={5.0}
-          location="Location"
-          title="Title should be here"
-          numberOfReviews={100}
+          card={{
+            type: "Type of Stay",
+            ratings: 5.0,
+            location: "Location",
+            title: "Title should be here",
+            numberOfReviews: 100,
+          }}
         />
       </div>
       <div className="hidden sm:block">

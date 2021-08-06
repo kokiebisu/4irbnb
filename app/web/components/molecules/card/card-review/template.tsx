@@ -1,11 +1,11 @@
 export type ReviewCardTemplateProps = {
   imgUrl?: string;
-  description?: string;
+  description: string;
   commentedDate?: string;
   user?: string;
-  renderDescription?: (description: string) => string;
+  renderDescription: (description: string) => string;
   display?: boolean;
-  handleDisplayChange?: () => boolean;
+  handleDisplayChange?: () => void;
 };
 
 /**

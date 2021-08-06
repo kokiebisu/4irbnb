@@ -4,6 +4,6 @@ import { HostingCardTemplate, HostingCardTemplateProps } from "./template";
 export type HostingCardProps = HostingCardTemplateProps;
 
 export const HostingCard = (props: HostingCardProps): JSX.Element => {
-  const data = useHorizontalCard(props);
+  const data = useHorizontalCard();
   return <HostingCardTemplate {...props} {...data} />;
 };

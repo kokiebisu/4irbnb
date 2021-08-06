@@ -1,7 +1,18 @@
 import { Icon } from "@atoms";
 
-export const useParticipateCard = ({ categoryType }) => {
-  const types = {
+export const useParticipateCard = ({
+  categoryType,
+}: {
+  categoryType: "call" | "private" | "request";
+}) => {
+  const types: {
+    [key: string]: {
+      icon: JSX.Element;
+      title: string;
+      description: string;
+      more?: string;
+    };
+  } = {
     call: {
       icon: (
         <Icon
@@ -52,6 +63,6 @@ export const useParticipateCard = ({ categoryType }) => {
     icon: types[categoryType].icon,
     title: types[categoryType].title,
     description: types[categoryType].description,
-    more: types[categoryType].more,
+    ...(types[categoryType].more && { more: types[categoryType].more }),
   };
 };

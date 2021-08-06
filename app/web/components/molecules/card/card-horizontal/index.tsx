@@ -6,10 +6,7 @@ import {
 
 export type HorizontalCardProps = HorizontalCardTemplateProps;
 
-export const HorizontalCard = ({
-  card,
-  ...props
-}: HorizontalCardProps): JSX.Element => {
-  const data = useHorizontalCard({ card });
-  return <HorizontalCardTemplate {...card} {...props} {...data} />;
+export const HorizontalCard = (props: HorizontalCardProps): JSX.Element => {
+  const data = useHorizontalCard();
+  return <HorizontalCardTemplate {...props} {...data} />;
 };

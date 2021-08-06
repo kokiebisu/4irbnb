@@ -1,11 +1,11 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, Story } from "@storybook/react";
 import {
   CollectionCardTemplate,
   CollectionCardTemplateProps,
-} from './template';
+} from "./template";
 
 export default {
-  title: 'Molecules/Card',
+  title: "Molecules/Card",
   component: CollectionCardTemplate,
 } as Meta;
 
@@ -15,7 +15,7 @@ const CardStory: Story<CollectionCardTemplateProps> = (args) => (
 
 export const Collection = CardStory.bind({});
 Collection.args = {
-  title: 'Title',
+  // title: 'Title',
 };
 Collection.decorators = [
   (Story) => (
