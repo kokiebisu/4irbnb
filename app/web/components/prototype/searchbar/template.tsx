@@ -1,5 +1,4 @@
 import { Bar } from "@bar";
-import { Modal } from "@modal";
 import useOnClickOutside from "@hooks/useOnClickOutside";
 import { useRef } from "react";
 
@@ -17,14 +16,11 @@ export type SearchbarPrototypeTemplateProps = {
 };
 
 export const SearchbarPrototypeTemplate = ({
-  toggleState,
   transparent,
-  type,
   handleSelectedChange,
   setExpanded,
   expanded,
   selected,
-  contents,
 }: SearchbarPrototypeTemplateProps): JSX.Element => {
   const containerRef = useRef();
 

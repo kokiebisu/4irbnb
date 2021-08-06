@@ -1,14 +1,14 @@
-import { Button } from '@atoms';
+import { Button } from "@atoms";
 
 export interface LanguageLayoutProps {
-  items?: { language?: string; region?: string }[];
-  type?: string;
+  items: { language: string; region: string }[];
+  type: "suggested" | "choose";
 }
 
 const Layout: React.FC<LanguageLayoutProps> = ({ items, type }) => {
   const titles = {
-    suggested: 'Suggested languages and regions',
-    choose: 'Choose a language and region',
+    suggested: "Suggested languages and regions",
+    choose: "Choose a language and region",
   };
   return (
     <div>
@@ -20,12 +20,11 @@ const Layout: React.FC<LanguageLayoutProps> = ({ items, type }) => {
           return (
             <div key={index}>
               <Button
-                stretch
                 variant="globe"
                 language={language}
                 region={region}
-                block
-                selected={index === 0 && type === 'choose'}
+                selected={index === 0 && type === "choose"}
+                onClick={() => alert("clicked")}
               />
             </div>
           );
@@ -43,16 +42,16 @@ export const LanguagePrototypeTemplate: React.FC<LanguagePrototypeTemplateProps>
       <div className="mb-4">
         <Layout
           type="suggested"
-          items={[{ language: 'English', region: 'Canada' }]}
+          items={[{ language: "English", region: "Canada" }]}
         />
       </div>
       <div>
         <Layout
           type="choose"
           items={[
-            { language: 'English', region: 'Canada' },
-            { language: 'Japanese', region: 'Japan' },
-            { language: 'Chinese', region: 'China' },
+            { language: "English", region: "Canada" },
+            { language: "Japanese", region: "Japan" },
+            { language: "Chinese", region: "China" },
           ]}
         />
       </div>

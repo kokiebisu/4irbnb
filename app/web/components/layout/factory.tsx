@@ -7,22 +7,22 @@ import { HomesLayout } from "./section/layout.homes";
 import { LandingLayout } from "./section/layout.landing";
 import { OnlineHostLayout } from "./section/layout.onlinehost";
 
-export const factory = ({ children, ...props }: LayoutProps): JSX.Element => {
+export const factory = ({ ...props }: LayoutProps): JSX.Element => {
   switch (props.variant) {
     case "create":
-      return <CreateLayout {...props}>{children}</CreateLayout>;
+      return <CreateLayout {...props} />;
     case "currency":
-      return <CurrencyLayout {...props}>{children}</CurrencyLayout>;
+      return <CurrencyLayout {...props} />;
     case "input":
-      return <InputLayout {...props}>{children}</InputLayout>;
+      return <InputLayout {...props}>{props.children}</InputLayout>;
     case "homes":
-      return <HomesLayout {...props}>{children}</HomesLayout>;
+      return <HomesLayout {...props}>{props.children}</HomesLayout>;
     case "landing":
-      return <LandingLayout {...props}>{children}</LandingLayout>;
+      return <LandingLayout {...props}>{props.children}</LandingLayout>;
     case "onlinehost":
-      return <OnlineHostLayout {...props}>{children}</OnlineHostLayout>;
+      return <OnlineHostLayout {...props}>{props.children}</OnlineHostLayout>;
     case "location":
-      return <LocationLayout {...props}>{children}</LocationLayout>;
+      return <LocationLayout {...props} />;
     default:
       throw new Error(`[Layout]: Invalid variant`);
   }

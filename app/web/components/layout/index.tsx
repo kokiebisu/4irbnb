@@ -8,15 +8,16 @@ import { CurrencyLayoutProps } from "./layout.currency";
 import { LocationLayoutProps } from "./modal/layout.location";
 import { factory } from "./factory";
 
-export type LayoutProps = (
-  | ({ variant: "input" } & InputLayoutProps)
+export type LayoutProps =
+  | ({ variant: "input" } & InputLayoutProps & { children: JSX.Element })
   | ({ variant: "create" } & CreateLayoutProps)
-  | ({ variant: "homes" } & HomesLayoutProps)
-  | ({ variant: "landing" } & LandingLayoutProps)
-  | ({ variant: "onlinehost" } & OnlineHostLayoutProps)
+  | ({ variant: "homes" } & HomesLayoutProps & { children: JSX.Element })
+  | ({ variant: "landing" } & LandingLayoutProps & { children: JSX.Element })
+  | ({ variant: "onlinehost" } & OnlineHostLayoutProps & {
+        children: JSX.Element;
+      })
   | ({ variant: "currency" } & CurrencyLayoutProps)
-  | ({ variant: "location" } & LocationLayoutProps)
-) & { children: JSX.Element };
+  | ({ variant: "location" } & LocationLayoutProps);
 
 /**
  * Bundles the Layout components

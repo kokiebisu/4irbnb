@@ -1,5 +1,5 @@
-import { Input } from '@atoms';
-import { Layout } from '@layout';
+import { Input } from "@atoms";
+import { Layout } from "@layout";
 
 export interface AdvanceSegmentTemplateProps {
   advance?: number | string;
@@ -8,12 +8,7 @@ export interface AdvanceSegmentTemplateProps {
   handleAdvanceUnavailableChange?: () => void;
 }
 
-export const AdvanceSegmentTemplate: React.FC<AdvanceSegmentTemplateProps> = ({
-  advance,
-  handleAdvanceAnyTimeChange,
-  handleAdvanceMonthsChange,
-  handleAdvanceUnavailableChange,
-}) => {
+export const AdvanceSegmentTemplate: React.FC<AdvanceSegmentTemplateProps> = ({}) => {
   return (
     <div>
       <div style={{ width: 300 }} className="mb-5">
@@ -23,8 +18,11 @@ export const AdvanceSegmentTemplate: React.FC<AdvanceSegmentTemplateProps> = ({
               <Input
                 variant="radio"
                 title="Any time"
-                selected={advance === 0}
-                select={handleAdvanceAnyTimeChange}
+                subtitle=""
+                value="sdf"
+                onChange={() => console.log("changed")}
+                // selected="d"
+                // select={handleAdvanceAnyTimeChange}
               />
             </div>
             {[{ months: 3 }, { months: 6 }, { months: 9 }, { months: 12 }].map(
@@ -33,10 +31,13 @@ export const AdvanceSegmentTemplate: React.FC<AdvanceSegmentTemplateProps> = ({
                   <Input
                     variant="radio"
                     title={`${months === 12 ? 1 : months} ${
-                      months === 12 ? 'year' : 'months in advance'
+                      months === 12 ? "year" : "months in advance"
                     }`}
-                    selected={advance === months}
-                    select={handleAdvanceMonthsChange}
+                    subtitle=""
+                    value="sdf"
+                    onChange={() => console.log("changed")}
+                    // selected={advance === months}
+                    // select={handleAdvanceMonthsChange}
                   />
                 </div>
               )
@@ -46,8 +47,10 @@ export const AdvanceSegmentTemplate: React.FC<AdvanceSegmentTemplateProps> = ({
                 variant="radio"
                 title="Dates unavailable by default"
                 subtitle="Your entire calendar will be blocked by default, which means you’ll have to manually unblock dates to get booked."
-                selected={advance === 'unavailable'}
-                select={handleAdvanceUnavailableChange}
+                value="sdf"
+                onChange={() => console.log("changed")}
+                // selected={advance === 'unavailable'}
+                // select={handleAdvanceUnavailableChange}
               />
             </div>
           </div>

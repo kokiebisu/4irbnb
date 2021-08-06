@@ -4,7 +4,7 @@ import useOnClickOutside from "@hooks/useOnClickOutside";
 
 export type PlaceInputTemplateProps = {
   value: any;
-  direction: "top" | "bottom" | "default";
+  direction?: "top" | "bottom";
   onChange: (e: any) => void;
 };
 

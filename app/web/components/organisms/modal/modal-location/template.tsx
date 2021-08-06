@@ -21,9 +21,9 @@ export const LocationModalTemplate = (): JSX.Element => {
     <div>
       <div>
         <Button
+          title="title"
           variant="location"
-          locationType="explore"
-          stretch
+          icon={<div>icon</div>}
           onClick={() => alert("clicked")}
         />
       </div>
@@ -31,24 +31,24 @@ export const LocationModalTemplate = (): JSX.Element => {
         <Layout
           variant="location"
           title="Recent Searches"
-          content={recentLocations.map(
-            ({ location, from, to, guests }, index) => {
-              return (
-                <div key={index}>
-                  <Button
-                    variant="location"
-                    locationType="recent"
-                    location={location}
-                    from={from}
-                    to={to}
-                    guests={guests}
-                    stretch
-                    onClick={() => alert("clicked")}
-                  />
-                </div>
-              );
-            }
-          )}
+          content={recentLocations.map((_, index) => {
+            return (
+              <div key={index}>
+                <Button
+                  title=""
+                  variant="location"
+                  // locationType="recent"
+                  // location={location}
+                  // from={from}
+                  // to={to}
+                  // guests={guests}
+                  // stretch
+                  icon={<div>icon</div>}
+                  onClick={() => alert("clicked")}
+                />
+              </div>
+            );
+          })}
         />
       </div>
       <div>

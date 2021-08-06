@@ -10,38 +10,21 @@ export const ListingModalTemplate = () => {
       </div>
       <div>
         <Input
-          flag={false}
-          onSwitchToFalse={() => alert("false")}
-          onSwitchToTrue={() => alert("true")}
-          onAdd={() => alert("add")}
-          onSubtract={() => alert("subtract")}
-          min={0}
-          max={0}
-          type="create"
+          onChange={() => alert("cloci")}
           variant="address"
           direction="bottom"
         />
         <Input
-          flag={false}
-          onSwitchToFalse={() => alert("false")}
-          onSwitchToTrue={() => alert("true")}
-          onAdd={() => alert("add")}
-          onSubtract={() => alert("subtract")}
-          min={0}
-          max={0}
-          type="create"
+          value={""}
           variant="place"
+          onChange={() => console.log("change")}
         />
         <Input
-          onSwitchToFalse={() => alert("false")}
-          onSwitchToTrue={() => alert("true")}
-          onAdd={() => alert("add")}
-          onSubtract={() => alert("subtract")}
-          min={0}
-          max={0}
-          type="create"
+          onChange={() => console.log("oncahnge")}
+          value="sdaf"
           variant="guests"
           direction="top"
+          errors={false}
         />
       </div>
       <div className="mt-4 mb-7 flex items-center">
