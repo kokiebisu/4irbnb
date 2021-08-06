@@ -75,5 +75,5 @@ resource "aws_lambda_permission" "stay" {
     function_name = aws_lambda_function.stay_service.function_name
     principal = "apigateway.amazonaws.com"
 
-    source_arn = "${aws_apigatewayv2_api.lambda.execution_arn}/*/*"
+    source_arn = "${var.api_gateway_execution_arn}/*/*"
 }

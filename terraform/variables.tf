@@ -17,3 +17,8 @@ variable "aws_secret_key" {
   type      = string
   sensitive = true
 }
+
+variable "site_domain" {
+  type = string
+  default = "4irbnb.com"
+}
