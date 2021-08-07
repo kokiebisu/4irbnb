@@ -41,7 +41,7 @@ export const BedroomsSegmentTemplate: React.FC<BedroomsSegmentTemplateProps> = (
             onSubtract={() => handleCounterSubtract("guests")}
             min={1}
             max={16}
-            type="create"
+            // type="create"
           />
         </div>
       </div>
@@ -50,7 +50,7 @@ export const BedroomsSegmentTemplate: React.FC<BedroomsSegmentTemplateProps> = (
           <div className="mt-4">
             <Input
               variant="select"
-              inputType="bedrooms"
+              inputType="place"
               value={bedrooms}
               onChange={(e) => handleSelectChange("bedrooms", e)}
             />
@@ -68,7 +68,7 @@ export const BedroomsSegmentTemplate: React.FC<BedroomsSegmentTemplateProps> = (
               onSubtract={() => handleCounterSubtract("beds")}
               min={1}
               max={50}
-              type="create"
+              // type="create"
             />
           </div>
         </Layout>

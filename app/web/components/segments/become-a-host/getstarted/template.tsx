@@ -3,14 +3,14 @@ import { Input } from "@atoms";
 
 export interface GetStartedSegmentTemplateProps {
   loading?: boolean;
-  handleLoadingChange?: () => void;
-  stay?: string;
-  handleStayChange?: () => void;
-  handleSubmit?: () => void;
-  guests?: number;
-  address?: string;
-  handleChange?: (e: any) => void;
-  handlePlaceChange?: (e: any) => void;
+  handleLoadingChange: () => void;
+  stay: string;
+  handleStayChange: () => void;
+  handleSubmit: () => void;
+  guests: number;
+  address: string;
+  handleChange: (e: any) => void;
+  handlePlaceChange: (e: any) => void;
   handleContinueSelect: () => void;
 }
 
@@ -55,21 +55,23 @@ export const GetStartedSegmentTemplate = ({
                 <Input
                   variant="place"
                   value={stay}
-                  // changePlace={handlePlaceChange}
+                  onChange={handlePlaceChange}
+                  // changePlace={}
                 />
               </div>
               <div>
                 <Input
                   variant="guests"
-                  // handleChange={handleChange}
+                  onChange={() => alert("yo")}
                   value={guests}
+                  errors={false}
                 />
               </div>
             </div>
             <div>
               <Input
                 variant="address"
-                // handleChange={handleChange}
+                onChange={handleChange}
                 value={address}
               />
             </div>
@@ -82,6 +84,7 @@ export const GetStartedSegmentTemplate = ({
                   loading={loading}
                   color="white"
                   onClick={handleContinueSelect}
+                  fill="black"
                 />
               </div>
             </div>

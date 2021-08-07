@@ -38,7 +38,7 @@ export const LandingHeaderTemplate = ({
   return (
     <header
       className={`${
-        expanded ? "pt-4 pb-32" : "py-3"
+        expanded ? "pt-4 pb-32" : "py-5"
       } relative container-spread transition ease-in-out duration-100`}
     >
       <div className="hidden sm:flex justify-between relative">

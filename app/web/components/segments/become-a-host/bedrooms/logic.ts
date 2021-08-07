@@ -1,13 +1,13 @@
-import { useStayDispatch, useStayState } from '@context/stay';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
-import * as mockData from './mock';
+import { useStayDispatch, useStayState } from "@context/stay";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import * as mockData from "./mock";
 
 export const useBedroomsSegment = () => {
   const router = useRouter();
   const stayDispatch = useStayDispatch();
   const { guests, bedrooms, beds } = useStayState();
-  const [data, setData] = useState({
+  const [data, _] = useState({
     guests,
     bedrooms,
     beds,
@@ -15,7 +15,7 @@ export const useBedroomsSegment = () => {
 
   const handleRedirectToNextPage = () => {
     stayDispatch({
-      type: 'add',
+      type: "add",
       payload: {
         guests: data.guests,
         bedrooms: data.bedrooms,
@@ -23,13 +23,13 @@ export const useBedroomsSegment = () => {
       },
     });
     setTimeout(() => {
-      router.push('/become-a-host/bathrooms');
+      router.push("/become-a-host/bathrooms");
     }, 500);
   };
 
   const handleRedirectToPreviousPage = () => {
     setTimeout(() => {
-      router.push('/become-a-host/room');
+      router.push("/become-a-host/room");
     }, 500);
   };
   return {

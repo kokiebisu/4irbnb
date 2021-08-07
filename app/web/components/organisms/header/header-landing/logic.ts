@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export const useLandingHeader = () => {
   const toggleState = useToggleState();
-  const [category, setCategory] = useState("stay");
+  const [_, setCategory] = useState("stay");
   const toggleDispatch = useToggleDispatch();
   const types: { [type: string]: { title: string; onClick: any } } = {
     stay: {

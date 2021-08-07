@@ -7,7 +7,8 @@ export interface LocationSegmentTemplateProps {
   apt: string;
   city: string;
   state: string;
-  handleChange: (e, property) => void;
+  handleChange: (e: any, property: string) => void;
+  handleAptInputChange: () => void;
 }
 
 /**
@@ -23,6 +24,7 @@ export const LocationSegmentTemplate: React.FC<LocationSegmentTemplateProps> = (
   city,
   state,
   handleChange,
+  handleAptInputChange,
 }) => {
   return (
     <div>
@@ -44,7 +46,7 @@ export const LocationSegmentTemplate: React.FC<LocationSegmentTemplateProps> = (
             variant="select"
             onChange={(e) => handleChange(e, "country")}
             value={country}
-            inputType="country"
+            inputType="place"
           />
         </div>
         <div className="mb-3">
@@ -83,7 +85,7 @@ export const LocationSegmentTemplate: React.FC<LocationSegmentTemplateProps> = (
           <Input
             name="apt"
             variant="text"
-            onChange={(e) => setData({ ...data, apt: e.target.value })}
+            onChange={handleAptInputChange}
             value={apt}
           />
         </div>

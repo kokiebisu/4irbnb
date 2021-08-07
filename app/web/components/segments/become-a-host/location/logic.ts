@@ -1,7 +1,7 @@
-import { useStayDispatch, useStayState } from '@context/stay';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
-import * as mockData from './mock';
+import { useStayDispatch, useStayState } from "@context/stay";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import * as mockData from "./mock";
 
 export const useLocationSegment = () => {
   const router = useRouter();
@@ -18,30 +18,34 @@ export const useLocationSegment = () => {
 
   const handleRedirectToNextPage = () => {
     stayDispatch({
-      type: 'add',
+      type: "add",
       payload: data,
     });
     setTimeout(() => {
-      router.push('/become-a-host/amenities');
+      router.push("/become-a-host/amenities");
     }, 500);
   };
 
   const handleRedirectToPreviousPage = () => {
     setTimeout(() => {
-      router.push('/become-a-host/bathrooms');
+      router.push("/become-a-host/bathrooms");
     }, 500);
   };
 
+  const handleAptInputChange = (e: any) =>
+    setData({ ...data, apt: e.target.value });
+
   const canProceedToNextPage = () =>
-    data.street === '' ||
-    data.city === '' ||
-    data.state === '' ||
-    data.postal === '';
+    data.street === "" ||
+    data.city === "" ||
+    data.state === "" ||
+    data.postal === "";
 
   return {
     ...mockData,
     handleRedirectToNextPage,
     handleRedirectToPreviousPage,
     canProceedToNextPage,
+    handleAptInputChange,
   };
 };
