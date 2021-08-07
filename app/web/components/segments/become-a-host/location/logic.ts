@@ -35,7 +35,7 @@ export const useLocationSegment = () => {
   const handleAptInputChange = (e: any) =>
     setData({ ...data, apt: e.target.value });
 
-  const canProceedToNextPage = () =>
+  const canProceedToNextPage =
     data.street === "" ||
     data.city === "" ||
     data.state === "" ||

@@ -1,6 +1,6 @@
-import { Layout } from '@layout';
-import { useLocationSegment } from './logic';
-import { LocationSegmentTemplate } from './template';
+import { Layout } from "@layout";
+import { useLocationSegment } from "./logic";
+import { LocationSegmentTemplate } from "./template";
 
 export const LocationSegment = () => {
   const {

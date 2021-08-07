@@ -1,8 +1,8 @@
-import { Input } from '@atoms';
+import { Input } from "@atoms";
 
 export interface PeriodSegmentTemplateProps {
-  handleCounterSubtract?: (property: string) => void;
-  handleCounterAdd?: (property: string) => void;
+  handleCounterSubtract: (property: "min" | "max") => void;
+  handleCounterAdd: (property: "min" | "max") => void;
   min?: number;
   max?: number;
 }
@@ -33,9 +33,8 @@ export const PeriodSegmentTemplate: React.FC<PeriodSegmentTemplateProps> = ({
               min={1}
               max={100}
               value={min}
-              onSubtract={() => handleCounterSubtract('min')}
-              onAdd={() => handleCounterAdd('max')}
-              type="create"
+              onSubtract={() => handleCounterSubtract("min")}
+              onAdd={() => handleCounterAdd("max")}
             />
           </div>
           <div className="mb-3">
@@ -45,9 +44,8 @@ export const PeriodSegmentTemplate: React.FC<PeriodSegmentTemplateProps> = ({
               min={1}
               max={100}
               value={max}
-              onSubtract={() => handleCounterSubtract('max')}
-              onAdd={() => handleCounterAdd('max')}
-              type="create"
+              onSubtract={() => handleCounterSubtract("max")}
+              onAdd={() => handleCounterAdd("max")}
             />
           </div>
         </div>

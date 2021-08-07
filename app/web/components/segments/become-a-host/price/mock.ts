@@ -1,2 +1,3 @@
 export const basePrice = 0;
-export const handleChange = (e, property) => alert(`handle ${property} change`);
+export const handleChange = (_: any, property: string) =>
+  alert(`handle ${property} change`);

@@ -8,7 +8,7 @@ export interface LocationSegmentTemplateProps {
   city: string;
   state: string;
   handleChange: (e: any, property: string) => void;
-  handleAptInputChange: () => void;
+  handleAptInputChange: (e: any) => void;
 }
 
 /**

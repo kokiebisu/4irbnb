@@ -1,8 +1,8 @@
-import { Input } from '@atoms';
+import { Input } from "@atoms";
 
 export interface PriceSegmentTemplateProps {
-  basePrice?: number;
-  handleChange?: (e: any, property: string) => void;
+  basePrice: number;
+  handleChange: (e: any, property: string) => void;
 }
 
 export const PriceSegmentTemplate: React.FC<PriceSegmentTemplateProps> = ({
@@ -63,7 +63,7 @@ export const PriceSegmentTemplate: React.FC<PriceSegmentTemplateProps> = ({
               tip={17}
               name="basePrice"
               value={basePrice}
-              handleChange={(e) => handleChange(e, 'basePrice')}
+              handleChange={(e) => handleChange(e, "basePrice")}
             />
           </div>
           <div className="my-3">
