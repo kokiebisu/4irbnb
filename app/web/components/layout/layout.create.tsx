@@ -2,13 +2,13 @@ import { Bar } from "@bar";
 import { Header } from "@header";
 
 export type CreateLayoutProps = {
-  title: string;
+  title?: string;
   left?: JSX.Element;
   right?: JSX.Element;
   next: () => void;
   back: () => void;
   percentage: number;
-  criteria: boolean;
+  criteria?: boolean;
 };
 
 export const CreateLayout = ({

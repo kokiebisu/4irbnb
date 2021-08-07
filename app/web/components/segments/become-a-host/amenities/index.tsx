@@ -1,6 +1,6 @@
-import { Layout } from '@layout';
-import { useAmenitiesSegment } from './logic';
-import { AmenitiesSegmentTemplate } from './template';
+import { Layout } from "@layout";
+import { useAmenitiesSegment } from "./logic";
+import { AmenitiesSegmentTemplate } from "./template";
 
 export const AmenitiesSegment: React.FC<{}> = () => {
   const {

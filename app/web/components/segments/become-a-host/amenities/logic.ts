@@ -1,7 +1,7 @@
-import { useStayDispatch, useStayState } from '@context/stay';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
-import * as mockData from './mock';
+import { useStayDispatch, useStayState } from "@context/stay";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import * as mockData from "./mock";
 
 export const useAmenitiesSegment = () => {
   const router = useRouter();
@@ -14,30 +14,30 @@ export const useAmenitiesSegment = () => {
 
   const handleRedirectToNextPage = () => {
     stayDispatch({
-      type: 'add',
+      type: "add",
       payload: data,
     });
     setTimeout(() => {
-      router.push('/become-a-host/spaces');
+      router.push("/become-a-host/spaces");
     }, 500);
   };
 
   const handleRedirectToPreviousPage = () => {
     setTimeout(() => {
-      router.push('/become-a-host/location');
+      router.push("/become-a-host/location");
     }, 500);
   };
 
-  const modify = (type: string, params: string) => {
-    if (data[type].includes(params)) {
+  const modify = (type: "amenities" | "safeties", params: string) => {
+    if (data[type]!.includes(params)) {
       setData({
         ...data,
-        [type]: [...data[type]].filter((element) => element !== params),
+        [type]: [...data[type]!].filter((element) => element !== params),
       });
     } else {
       setData({
         ...data,
-        [type]: [...data[type], params],
+        [type]: [...data[type]!, params],
       });
     }
   };
