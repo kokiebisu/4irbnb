@@ -3,9 +3,8 @@ import { useToggleState } from "@context/toggle";
 import { Header } from "@header";
 import { Footer } from "@footer";
 import { Segment } from "@template/rooms/id";
-import { Card, $Card } from "@card";
+import { Card } from "@card";
 import { Modal } from "@modal";
-import details from "@styles/details.module.scss";
 import { useHandleScroll } from "@hooks/useHandleScroll";
 import { Bar } from "@bar";
 

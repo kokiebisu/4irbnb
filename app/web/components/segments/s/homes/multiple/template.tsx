@@ -1,9 +1,6 @@
 import { useLayoutEffect, useRef, useState } from "react";
-import styles from "@template/index.module.scss";
-import sectionStyles from "@template/index.module.scss";
-import section from "@template/index.module.scss";
 
-import { Card, $Card } from "@card";
+import { Card } from "@card";
 import { Button } from "@atoms";
 import { useRouter } from "next/router";
 

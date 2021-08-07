@@ -1,7 +1,3 @@
-import template from "@template/index/index.module.scss";
-
-import { Card } from "@card";
-
 export interface AnywhereSegmentTemplateProps {
   items: {
     imgUrl: string;

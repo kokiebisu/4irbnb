@@ -1,5 +1,4 @@
 import { Icon } from "@atoms";
-import section from "@template/index.module.scss";
 
 import { Button } from "@atoms";
 import { Bullet } from "@atoms";

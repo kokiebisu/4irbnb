@@ -21,9 +21,6 @@ const LandingPage: React.FC<{}> = () => {
   return (
     <div className="min-h-screen overflow-x-hidden relative ">
       <div>
-        <div>
-          <Bar variant="covid" />
-        </div>
         <Segment variant="banner" />
         {loading ? (
           <>

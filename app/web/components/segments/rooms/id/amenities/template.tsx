@@ -1,6 +1,5 @@
 import { Bullet, Icon } from "@atoms";
 import { Button } from "@atoms";
-import section from "@template/index.module.scss";
 
 export type AmenitiesSegmentTemplateProps = {
   title: string;

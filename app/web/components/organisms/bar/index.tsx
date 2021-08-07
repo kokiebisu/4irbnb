@@ -1,6 +1,5 @@
 import { factory } from "./util/factory";
 import { AvailabilityBarProps } from "./bar-availability";
-import { CovidBarProps } from "./bar-covid";
 import { CreateBarProps } from "./bar-create";
 import { FiltersBarProps } from "./bar-filters";
 import { MenuBarProps } from "./bar-menu";
@@ -10,7 +9,6 @@ import { SearchBarProps } from "./bar-search";
 
 export type BarProps =
   | ({ variant: "availability" } & AvailabilityBarProps)
-  | ({ variant: "covid" } & CovidBarProps)
   | ({ variant: "create" } & CreateBarProps)
   | ({ variant: "filters" } & FiltersBarProps)
   | ({ variant: "menu" } & MenuBarProps)

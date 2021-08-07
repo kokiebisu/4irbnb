@@ -1,5 +1,4 @@
 import { useLayoutEffect, useRef, useState } from "react";
-import section from "@template/index.module.scss";
 import { Card } from "@card";
 import { Button } from "@atoms";
 
