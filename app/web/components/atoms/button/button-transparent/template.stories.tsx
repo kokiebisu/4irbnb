@@ -17,7 +17,7 @@ const ButtonStory: Story<TransparentButtonTemplateProps> = (args) => (
 export const Globe = ButtonStory.bind({});
 Globe.args = {
   children: (
-    <div className="items-center mr-2">
+    <div className="items-center">
       <Icon
         variant="fill"
         fillType="globe"

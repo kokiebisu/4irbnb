@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import Router from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 import { Modal } from "@modal";
@@ -6,14 +6,18 @@ import { Button } from "@atoms";
 import { SearchbarPrototype } from "@prototype/searchbar";
 
 import { Icon } from "@atoms";
-import { useToggleDispatch, useToggleState } from "@context/toggle";
-import { useOnClickOutside } from "@hooks/useOnClickOutside";
+import { useLandingHeaderTemplate } from "./use-template";
 
 export type LandingHeaderTemplateProps = {
   category: any;
   setCategory: any;
   data: any;
   criteria?: any;
+  types: any;
+  menuCriteria: boolean;
+  handleGlobeToggle: () => void;
+  handleMenuToggle: () => void;
+  handleSignUpModalToggle: () => void;
 };
 
 /**
@@ -21,37 +25,16 @@ export type LandingHeaderTemplateProps = {
  */
 export const LandingHeaderTemplate = ({
   data,
+  types,
   category,
   setCategory,
   criteria,
+  menuCriteria,
+  handleGlobeToggle,
+  handleMenuToggle,
+  handleSignUpModalToggle,
 }: LandingHeaderTemplateProps): JSX.Element => {
-  const toggleState = useToggleState();
-  const searchbarRef = useRef();
-  const [expanded, setExpanded] = useState(false);
-  const toggleDispatch = useToggleDispatch();
-
-  useOnClickOutside(searchbarRef, () => {
-    toggleDispatch({
-      type: "toggle_reset",
-    });
-    setExpanded(!expanded);
-  });
-
-  const types: { [type: string]: { title: string; onClick: any } } = {
-    stay: {
-      title: "Places to stay",
-      onClick: () => setCategory("stay"),
-    },
-    experiences: {
-      title: "Experiences",
-      onClick: () => setCategory("experiences"),
-    },
-    online: {
-      title: "Online Experiences",
-      onClick: () => Router.push("/s/experiences/online"),
-    },
-  };
-
+  const { expanded, handleSearchbarExpand } = useLandingHeaderTemplate();
   return (
     <header
       className={`${
@@ -80,7 +63,7 @@ export const LandingHeaderTemplate = ({
           </div>
         </div>
         <div className="flex items-center">
-          <div className={`mx-1 `}>
+          <div className="relative left-3 mx-1">
             <Button
               variant="transparent"
               inverse={criteria}
@@ -93,15 +76,17 @@ export const LandingHeaderTemplate = ({
             <Button
               variant="transparent"
               inverse={criteria}
-              onClick={() => toggleDispatch({ type: "toggle_globe" })}
+              onClick={handleGlobeToggle}
             >
-              <Icon
-                variant="fill"
-                fillType="globe"
-                fill="white"
-                width={16}
-                height={16}
-              />
+              <div className="items-center">
+                <Icon
+                  variant="fill"
+                  fillType="globe"
+                  width={16}
+                  height={16}
+                  fill="white"
+                />
+              </div>
             </Button>
           </div>
           <div className="ml-1">
@@ -109,7 +94,7 @@ export const LandingHeaderTemplate = ({
               variant="menu"
               inverse={criteria}
               authenticated={data}
-              onClick={() => toggleDispatch({ type: "toggle_menu" })}
+              onClick={handleMenuToggle}
             />
           </div>
         </div>
@@ -117,12 +102,12 @@ export const LandingHeaderTemplate = ({
           <Modal
             variant="menu"
             authenticated={data}
-            criteria={toggleState.menu}
+            criteria={menuCriteria}
             dispatch="toggle_menu"
             topOptions={[
               {
                 name: "Sign up",
-                handleClick: () => toggleDispatch({ type: "toggle_auth" }),
+                handleClick: handleSignUpModalToggle,
                 bold: true,
               },
               {
@@ -271,7 +256,7 @@ export const LandingHeaderTemplate = ({
                   >
                     <Button
                       variant="searchbar"
-                      onClick={() => setExpanded(!expanded)}
+                      onClick={handleSearchbarExpand}
                     />
                   </motion.div>
                 </motion.div>
