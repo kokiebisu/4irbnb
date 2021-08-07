@@ -4,7 +4,7 @@ export type PriceInputTemplateProps = {
   name: string;
   onChange: (e: any) => void;
   onKeyPress: (e: any) => void;
-  value: number;
+  value?: number;
 };
 
 /**

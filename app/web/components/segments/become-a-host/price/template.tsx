@@ -1,7 +1,7 @@
 import { Input } from "@atoms";
 
 export interface PriceSegmentTemplateProps {
-  basePrice: number;
+  basePrice?: number;
   handleChange: (e: any, property: string) => void;
 }
 
@@ -58,12 +58,13 @@ export const PriceSegmentTemplate: React.FC<PriceSegmentTemplateProps> = ({
           <div>
             <Input
               variant="price"
-              title="Base price"
-              subtitle="This will be your default price gor days when you decide to turn off Smart Pricing."
-              tip={17}
+              // title="Base price"
+              // subtitle="This will be your default price gor days when you decide to turn off Smart Pricing."
+              // tip={17}
               name="basePrice"
               value={basePrice}
-              handleChange={(e) => handleChange(e, "basePrice")}
+              onKeyPress={() => alert("clicked")}
+              onChange={(e: any) => handleChange(e, "basePrice")}
             />
           </div>
           <div className="my-3">
@@ -75,7 +76,12 @@ export const PriceSegmentTemplate: React.FC<PriceSegmentTemplateProps> = ({
             <h3 className="text-sm">Currency</h3>
           </div>
           <div>
-            <Input variant="select" inputType="currency" />
+            <Input
+              variant="select"
+              inputType="place"
+              value=""
+              onChange={() => alert("clicked")}
+            />
           </div>
         </div>
       </div>

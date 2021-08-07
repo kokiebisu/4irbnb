@@ -1,8 +1,8 @@
-import { Input } from '@atoms';
+import { Input } from "@atoms";
 
 export interface TitleSegmentTemplateProps {
   title?: string;
-  handleChange?: (e: any, property: string) => void;
+  handleChange: (e: any, property: string) => void;
 }
 
 /**
@@ -33,7 +33,7 @@ export const TitleSegmentTemplate: React.FC<TitleSegmentTemplateProps> = ({
             variant="limit"
             limit={50}
             value={title}
-            onChange={(e) => handleChange(e, 'title')}
+            onChange={(e) => handleChange(e, "title")}
           />
         </div>
       </div>

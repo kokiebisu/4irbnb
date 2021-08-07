@@ -1,22 +1,21 @@
 export const rules = [
   {
-    title: 'Must climb stairs',
-    item: 'stairs',
+    title: "Must climb stairs",
+    item: "stairs",
   },
   {
-    title: 'Potential for noise',
-    item: 'noise',
+    title: "Potential for noise",
+    item: "noise",
   },
   {
-    title: 'Pet(s) live on property',
-    item: 'pets',
+    title: "Pet(s) live on property",
+    item: "pets",
   },
 ];
 
-export const selectedRules = ['stairs'];
+export const selectedRules = ["stairs"];
 export const isSmokingAllowed = false;
 export const isEventAllowed = false;
-export const handleSwitch = (flag, property) =>
+export const handleSwitch = (flag: boolean, property: string) =>
   alert(`Handle ${property} switched to ${flag}`);
-export const handleChange = (property, _) =>
-  alert(`Handle ${property} changed`);
+export const handleChange = () => alert(`Handle changed`);

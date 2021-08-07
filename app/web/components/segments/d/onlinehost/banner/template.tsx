@@ -1,18 +1,18 @@
-import { Button, GeneralTypeVariants, Icon } from "@atoms";
+import { Icon } from "@atoms";
 import { Bullet } from "@atoms";
 import React from "react";
 
 export interface BannerSegmentTemplateProps {
   items: {
-    icon: GeneralTypeVariants;
+    icon: any;
     title: string;
     description: string;
   }[];
 }
 
-export const BannerSegmentTemplate: React.FC<BannerSegmentTemplateProps> = ({
+export const BannerSegmentTemplate = ({
   items,
-}) => {
+}: BannerSegmentTemplateProps): JSX.Element => {
   return (
     <div className="flex flex-col items-center">
       <div className="my-4">
@@ -28,7 +28,7 @@ export const BannerSegmentTemplate: React.FC<BannerSegmentTemplateProps> = ({
         </h4>
       </div>
       <div className="my-6">
-        <Button variant="primary" title="Get started" />
+        {/* <Button variant="primary" title="Get started" /> */}
       </div>
       <div className="my-5">
         <img

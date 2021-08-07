@@ -13,9 +13,7 @@ export type LayoutProps =
   | ({ variant: "create" } & CreateLayoutProps)
   | ({ variant: "homes" } & HomesLayoutProps & { children: JSX.Element })
   | ({ variant: "landing" } & LandingLayoutProps & { children: JSX.Element })
-  | ({ variant: "onlinehost" } & OnlineHostLayoutProps & {
-        children: JSX.Element;
-      })
+  | ({ variant: "onlinehost" } & OnlineHostLayoutProps)
   | ({ variant: "currency" } & CurrencyLayoutProps)
   | ({ variant: "location" } & LocationLayoutProps);
 

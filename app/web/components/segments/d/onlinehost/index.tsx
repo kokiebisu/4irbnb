@@ -1,17 +1,16 @@
-import { factory } from './utils/factory';
+import { BackSegmentProps } from "./back";
+import { BannerSegmentProps } from "./banner";
+import { FAQSegmentProps } from "./faq";
+import { MoreSegmentProps } from "./more";
+import { SharingSegmentProps } from "./sharing";
+import { factory } from "./utils/factory";
 
-export type OnlineHostSegmentVariants =
-  | 'back'
-  | 'banner'
-  | 'faq'
-  | 'more'
-  | 'sharing'
-  | 'works';
-
-export interface SegmentProps {
-  variant: OnlineHostSegmentVariants;
-  [property: string]: any;
-}
+export type OnlineHostSegmentProps =
+  | ({ variant: "back" } & BackSegmentProps)
+  | ({ variant: "banner" } & BannerSegmentProps)
+  | ({ variant: "faq" } & FAQSegmentProps)
+  | ({ variant: "more" } & MoreSegmentProps)
+  | ({ variant: "sharing" } & SharingSegmentProps);
 
 /**
  * Bundles the button components
@@ -19,19 +18,5 @@ export interface SegmentProps {
  * @param {string} type - Specifies the type of button component
  * @param {Object} children - A JSX that will be part of the component
  */
-export const Segment: React.FC<SegmentProps> = ({
-  variant,
-  children,
-  onClick,
-  to,
-  block,
-  animate,
-  ...props
-}) => {
-  const variants = factory(props);
-  return (
-    <div data-testid={`${variant}-onlinehost`}>
-      {variants[variant].component}
-    </div>
-  );
-};
+export const Segment = (props: OnlineHostSegmentProps): JSX.Element =>
+  factory(props);

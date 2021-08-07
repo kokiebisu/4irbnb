@@ -1,13 +1,14 @@
-import { Layout } from '@layout';
-import { Bullet } from '@atoms';
+import { Layout } from "@layout";
 
 export interface BackSegmentTemplateProps {
   items: { icon: string; title: string; description: string }[];
 }
 
-export const BackSegmentTemplate: React.FC<BackSegmentTemplateProps> = ({
-  items,
-}) => {
+export const BackSegmentTemplate: React.FC<BackSegmentTemplateProps> = (
+  {
+    // items,
+  }
+) => {
   return (
     <Layout
       variant="onlinehost"
@@ -16,13 +17,13 @@ export const BackSegmentTemplate: React.FC<BackSegmentTemplateProps> = ({
     >
       <div
         style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(3, 1fr)',
+          display: "grid",
+          gridTemplateColumns: "repeat(3, 1fr)",
           columnGap: 20,
         }}
         className="my-5"
       >
-        {items.map(({ icon, title, description }, index) => {
+        {/* {items.map(({ icon, title, description }, index) => {
           return (
             <div key={index} className="mb-4">
               <Bullet
@@ -33,7 +34,7 @@ export const BackSegmentTemplate: React.FC<BackSegmentTemplateProps> = ({
               />
             </div>
           );
-        })}
+        })} */}
       </div>
     </Layout>
   );

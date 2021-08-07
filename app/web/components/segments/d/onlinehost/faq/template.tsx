@@ -1,8 +1,8 @@
-import { Layout } from '@layout';
-import { Bullet } from '@atoms';
+import { Layout } from "@layout";
+import { Bullet } from "@atoms";
 
 export interface FAQSegmentTemplateProps {
-  questions?: { question: string; answer: string }[];
+  questions: { question: string; answer: string }[];
 }
 
 export const FAQSegmentTemplate: React.FC<FAQSegmentTemplateProps> = ({
@@ -14,7 +14,7 @@ export const FAQSegmentTemplate: React.FC<FAQSegmentTemplateProps> = ({
         className="w-full grid"
         style={{
           maxWidth: 900,
-          gridTemplateColumns: 'repeat(2, 1fr)',
+          gridTemplateColumns: "repeat(2, 1fr)",
           columnGap: 13,
         }}
       >

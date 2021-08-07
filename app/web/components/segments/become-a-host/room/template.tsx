@@ -2,10 +2,10 @@ import { Input } from "@atoms";
 import { Layout } from "@layout";
 
 export type RoomSegmentTemplateProps = {
-  place: string;
-  property: string;
-  stay: string;
-  description: string;
+  place?: string;
+  property?: string;
+  stay?: string;
+  description?: string;
   handleChange: (e: any, property: string) => void;
 };
 
@@ -39,7 +39,7 @@ export const RoomSegmentTemplate = ({
         </Layout>
       </div>
       <div className="mb-2" style={{ width: 250 }}>
-        <Layout variant="input" title="Now choose a property type">
+        {/* <Layout variant="input" title="Now choose a property type">
           <Input
             disabled={!place}
             inputType={place}
@@ -47,7 +47,7 @@ export const RoomSegmentTemplate = ({
             value={property}
             onChange={(e) => handleChange(e, "property")}
           />
-        </Layout>
+        </Layout> */}
       </div>
       {property && description && (
         <div>

@@ -1,14 +1,10 @@
-import React from 'react';
-import { BannerSegmentTemplate } from './template';
+import React from "react";
+import { useBannerSegment } from "./logic";
+import { BannerSegmentTemplate, BannerSegmentTemplateProps } from "./template";
 
-export const BannerSegment = (props) => {
-  return <BannerSegmentTemplate {...props} />;
-};
+export type BannerSegmentProps = BannerSegmentTemplateProps;
 
-export const banner = (props) => {
-  return {
-    banner: {
-      component: <BannerSegment {...props} />,
-    },
-  };
+export const BannerSegment = () => {
+  const data = useBannerSegment();
+  return <BannerSegmentTemplate {...data} />;
 };
