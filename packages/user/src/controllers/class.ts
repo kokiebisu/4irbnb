@@ -1,5 +1,8 @@
-import { ILoggerService, PackageEnum } from "@nextbnb/common";
-import { createLoggerService } from "@nextbnb/common";
+import {
+  ILoggerService,
+  PackageEnum,
+  createLoggerService,
+} from "@4irbnb/common";
 import { IUserService } from "..";
 import { createUserService } from "../services/factory";
 import {

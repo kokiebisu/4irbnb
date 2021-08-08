@@ -1,18 +1,18 @@
 {
   "name": "4irbnb",
   "version": "1.1.0",
-  "description": "<p align=\"center\">     <img src=\"https://user-images.githubusercontent.com/43525282/86524021-e1d52400-be29-11ea-9943-6affd2b8038c.png\" alt=\"nextbnb\" width=\"100\" /> </p>",
+  "description": "<p align=\"center\">     <img src=\"https://user-images.githubusercontent.com/43525282/86524021-e1d52400-be29-11ea-9943-6affd2b8038c.png\" alt=\"4irbnb\" width=\"100\" /> </p>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kokiebisu/nextbnb.git"
+    "url": "git+https://github.com/kokiebisu/4irbnb.git"
   },
   "keywords": [],
   "author": "kokoaj",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kokiebisu/nextbnb/issues"
+    "url": "https://github.com/kokiebisu/4irbnb/issues"
   },
-  "homepage": "https://github.com/kokiebisu/nextbnb#readme",
+  "homepage": "https://github.com/kokiebisu/4irbnb#readme",
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "lint": "yarn lerna run lint --stream --concurrency 2",
@@ -20,7 +20,7 @@
     "clean": "yarn lerna run clean",
     "test": "yarn lerna run test --stream",
     "document": "scripty",
-    "extract": "lerna run extract --scope=@nextbnb/{common,database}",
+    "extract": "lerna run extract --scope=@4irbnb/{common,database}",
     "terraform:apply": "cd terraform && terraform apply"
   },
   "scripty": {

@@ -1,4 +1,4 @@
-import { IDatabaseService, IWithIdentifierParams } from "@nextbnb/common";
+import { IDatabaseService, IWithIdentifierParams } from "@4irbnb/common";
 import { IUser } from "..";
 
 /**

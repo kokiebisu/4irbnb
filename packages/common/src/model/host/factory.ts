@@ -1,4 +1,4 @@
-import { Host } from './class';
+import { Host } from "./class";
 
 /**
  * @public
@@ -6,7 +6,7 @@ import { Host } from './class';
  * @param firstName -
  * @param lastName -
  * @param createdAt -
- * @returns a new {@link @nextbnb/host#Host} instance
+ * @returns a new {@link @4irbnb/host#Host} instance
  */
 export const createHost = (
   firstName: string,

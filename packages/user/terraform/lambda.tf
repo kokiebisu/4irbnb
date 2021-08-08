@@ -1,5 +1,5 @@
 data "aws_ecr_repository" "repo" {
-  name = "nextbnb-stay"
+  name = "4irbnb-stay"
 }
 
 data "aws_ecr_image" "image" {
@@ -8,14 +8,14 @@ data "aws_ecr_image" "image" {
 }
 
 resource "aws_lambda_function" "stay_service" {
-  function_name = "nextbnb-stay-service"
+  function_name = "4irbnb-stay-service"
   role          = aws_iam_role.stay_service_role.arn
   package_type  = "Image"
   image_uri = "${data.aws_ecr_repository.repo.repository_url}@${data.aws_ecr_image.image.id}"
 }
 
 resource "aws_iam_role" "stay_service_role" {
-  name = "nextbnb-stay-role"
+  name = "4irbnb-stay-role"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"

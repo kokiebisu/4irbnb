@@ -8,7 +8,7 @@
   <a href="https://circleci.com/gh/kokiebisu/airbnb">
     <img src="https://circleci.com/gh/kokiebisu/airbnb.svg?style=svg" alt="Build Status on CircleCI" />
   </a>
-  <a href="https://nextbnb-storybook.vercel.app">
+  <a href="https://4irbnb-storybook.vercel.app">
     <img src="https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg" alt="Build Status on CircleCI" />
   </a>
   <br/>
@@ -19,7 +19,7 @@ The goal for this project is to migrate into using Golang and follow the test dr
 
 ## Intro
 
-I created a replica called nextbnb in the past and now I am starting a new one by taking approaches I have regretted not taking for the past project. I have experienced numerous pain points as the project got bigger. Some of the pain points were the following:
+I created a replica in the past and now I am starting a new one by taking approaches I have regretted not taking for the past project. I have experienced numerous pain points as the project got bigger. Some of the pain points were the following:
 
 - [ ] Creating duplicate components unnecessarily
 - [ ] Gathering all the code in one file for multiple purposes (this can result in slow performance on the browser)
@@ -50,7 +50,7 @@ Check it out [here](https://airbnb-storybook.netlify.app/)
 
 ## Docs
 
-https://kokiebisu.github.io/nextbnb/
+https://kokiebisu.github.io/4irbnb/
 
 ## References
 

@@ -1,4 +1,4 @@
-import { createDatabaseService, TRegion } from "@nextbnb/common";
+import { createDatabaseService, TRegion } from "@4irbnb/common";
 import { UserService } from ".";
 
 export const createUserService = ({ region }: IFactoryParams) =>

@@ -2,7 +2,7 @@ import { IUser } from "../models/type";
 
 /**
  * @public
- * Checks whether a given value is an {@link @nextbnb/common#IUser}
+ * Checks whether a given value is an {@link @4irbnb/common#IUser}
  * @param arg - Value to be evaluated
  *
  * @example

@@ -2,6 +2,23 @@
 # yarn lockfile v1
 
 
+"@4irbnb/common@file:packages/common":
+  version "1.1.0"
+  dependencies:
+    "@aws-sdk/client-apigatewayv2" "^3.24.0"
+    "@aws-sdk/client-dynamodb" "^3.24.0"
+    "@aws-sdk/client-elasticache" "^3.25.0"
+    "@aws-sdk/client-s3" "^3.24.0"
+    "@aws-sdk/client-sqs" "^3.25.0"
+    "@aws-sdk/client-ssm" "^3.24.0"
+    "@aws-sdk/client-sts" "^3.24.0"
+    "@aws-sdk/lib-dynamodb" "^3.24.0"
+    "@aws-sdk/util-dynamodb" "^3.24.0"
+    "@sendgrid/mail" "^7.4.5"
+    "@slack/web-api" "^6.3.0"
+    date-fns "^2.23.0"
+    winston "^3.3.3"
+
 "@actions/core@^1.2.4":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@actions/core/-/core-1.4.0.tgz#cf2e6ee317e314b03886adfeb20e448d50d6e524"
@@ -4503,23 +4520,6 @@
   version "10.0.4"
   resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-10.0.4.tgz#5ad753572891aa7cb1010b358cc4241d7be20d20"
   integrity sha512-kZ/37aSQaR0GCZVqh7WDLkeEZqzjPQoZUDdo6TOWiIEb+089AmfYp8A4/1ra9Fu8T4b4wnB76TRl6tp6DeJLXg==
-
-"@nextbnb/common@file:packages/common":
-  version "1.1.0"
-  dependencies:
-    "@aws-sdk/client-apigatewayv2" "^3.24.0"
-    "@aws-sdk/client-dynamodb" "^3.24.0"
-    "@aws-sdk/client-elasticache" "^3.25.0"
-    "@aws-sdk/client-s3" "^3.24.0"
-    "@aws-sdk/client-sqs" "^3.25.0"
-    "@aws-sdk/client-ssm" "^3.24.0"
-    "@aws-sdk/client-sts" "^3.24.0"
-    "@aws-sdk/lib-dynamodb" "^3.24.0"
-    "@aws-sdk/util-dynamodb" "^3.24.0"
-    "@sendgrid/mail" "^7.4.5"
-    "@slack/web-api" "^6.3.0"
-    date-fns "^2.23.0"
-    winston "^3.3.3"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"

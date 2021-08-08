@@ -1,8 +1,8 @@
-import { IUser } from './type';
+import { IUser } from "./type";
 
 /**
  * @public
- * Checks whether a given value is an {@link @nextbnb/common#IUser}
+ * Checks whether a given value is an {@link @4irbnb/common#IUser}
  * @param arg - Value to be evaluated
  *
  * @example
@@ -14,9 +14,9 @@ import { IUser } from './type';
  */
 export function isUser(arg: any): arg is IUser {
   return (
-    typeof arg.id === 'string' &&
-    typeof arg.username === 'string' &&
-    typeof arg.name === 'string' &&
-    typeof arg.iconUrl === 'string'
+    typeof arg.id === "string" &&
+    typeof arg.username === "string" &&
+    typeof arg.name === "string" &&
+    typeof arg.iconUrl === "string"
   );
 }

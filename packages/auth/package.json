@@ -1,5 +1,5 @@
 {
-  "name": "@nextbnb/service-auth",
+  "name": "@4irbnb/auth",
   "version": "1.1.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -17,7 +17,7 @@
     "deploy": "bash script/deploy.sh"
   },
   "dependencies": {
-    "@nextbnb/common": "file:../common",
+    "@4irbnb/common": "file:../common",
     "@okta/jwt-verifier": "^2.3.0",
     "@okta/okta-sdk-nodejs": "^5.0.0"
   },

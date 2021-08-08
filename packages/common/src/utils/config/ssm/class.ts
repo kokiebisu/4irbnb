@@ -38,7 +38,7 @@ export class SSMClient implements IConfigClient {
       return (
         await this.#client.send(
           new GetParameterCommand({
-            Name: `/nextbnb/${name}/${key}`,
+            Name: `/4irbnb/${name}/${key}`,
           })
         )
       ).Parameter?.Value;
@@ -59,7 +59,7 @@ export class SSMClient implements IConfigClient {
     try {
       await this.#client.send(
         new PutParameterCommand({
-          Name: `/nextbnb/${name}/${key}`,
+          Name: `/4irbnb/${name}/${key}`,
           Value: value,
           Overwrite: true,
           DataType: "text",
@@ -82,7 +82,7 @@ export class SSMClient implements IConfigClient {
     try {
       await this.#client.send(
         new DeleteParameterCommand({
-          Name: `/nextbnb/${name}/${key}`,
+          Name: `/4irbnb/${name}/${key}`,
         })
       );
     } catch (error) {

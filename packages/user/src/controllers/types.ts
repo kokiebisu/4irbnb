@@ -2,7 +2,7 @@ import {
   IWithIdentifierParams,
   IWithDataParams,
   IRegion,
-} from "@nextbnb/common";
+} from "@4irbnb/common";
 
 export interface IResponse {
   statusCode: number;

@@ -3,14 +3,14 @@ executors:
   test-executor:
     docker:
       - image: circleci/node:10
-    working_directory: ~/nextbnb
+    working_directory: ~/4irbnb
   image-executor:
     machine:
       image: ubuntu-2004:202010-01
-    working_directory: ~/nextbnb
+    working_directory: ~/4irbnb
 commands:
   prepare-env:
-    description: 'Installs and builds the lerna environment'
+    description: "Installs and builds the lerna environment"
     steps:
       - checkout:
           path: ~/nextbnb
@@ -29,7 +29,7 @@ commands:
         type: string
       directory-path:
         type: string
-    description: 'Builds the docker image and pushes up to Dockerhub'
+    description: "Builds the docker image and pushes up to Dockerhub"
     steps:
       - checkout:
           path: ~/nextbnb
@@ -55,14 +55,14 @@ jobs:
     executor: image-executor
     steps:
       - docker-setup:
-          image-name: 'kokiebisu/nextbnb-auth'
-          directory-path: './services/auth/Dockerfile'
+          image-name: "kokiebisu/nextbnb-auth"
+          directory-path: "./services/auth/Dockerfile"
   push-dev-auth:
     executor: image-executor
     steps:
       - docker-setup:
-          image-name: 'kokiebisu/nextbnb-auth-dev'
-          directory-path: './services/auth/dev.Dockerfile'
+          image-name: "kokiebisu/nextbnb-auth-dev"
+          directory-path: "./services/auth/dev.Dockerfile"
   test-stays:
     executor: test-executor
     steps:
@@ -74,14 +74,14 @@ jobs:
     executor: image-executor
     steps:
       - docker-setup:
-          image-name: 'kokiebisu/nextbnb-stays'
-          directory-path: './services/stays/Dockerfile'
+          image-name: "kokiebisu/nextbnb-stays"
+          directory-path: "./services/stays/Dockerfile"
   push-dev-stays:
     executor: image-executor
     steps:
       - docker-setup:
-          image-name: 'kokiebisu/nextbnb-stays-dev'
-          directory-path: './services/stays/dev.Dockerfile'
+          image-name: "kokiebisu/nextbnb-stays-dev"
+          directory-path: "./services/stays/dev.Dockerfile"
   test-web:
     executor: test-executor
     steps:
@@ -103,14 +103,14 @@ jobs:
     executor: image-executor
     steps:
       - docker-setup:
-          image-name: 'kokiebisu/nextbnb-web'
-          directory-path: './packages/web/Dockerfile'
+          image-name: "kokiebisu/nextbnb-web"
+          directory-path: "./packages/web/Dockerfile"
   push-dev-web:
     executor: image-executor
     steps:
       - docker-setup:
-          image-name: 'kokiebisu/nextbnb-web-dev'
-          directory-path: './packages/web/dev.Dockerfile'
+          image-name: "kokiebisu/nextbnb-web-dev"
+          directory-path: "./packages/web/dev.Dockerfile"
 
 workflows:
   version: 2
