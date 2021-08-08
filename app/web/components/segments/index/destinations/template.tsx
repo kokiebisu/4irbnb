@@ -2,11 +2,16 @@ import { motion } from "framer-motion";
 import { Button } from "@atoms";
 
 export interface DestinationsSegmentTemplateProps {
-  items?: { [destinationType: string]: { city: string; location: string }[] };
-  categories?: { name: string; value: string }[];
-  destinationType?: "artsCulture" | "outdoor" | "cabins" | "beach" | "popular";
-  handleDestinationTypeChange?: (destinationType: string) => void;
-  handleDestinationRedirect?: (city: string) => void;
+  items: { [destinationType: string]: { city: string; location: string }[] };
+  categories: {
+    name: string;
+    value: "artsCulture" | "outdoor" | "cabins" | "beach" | "popular";
+  }[];
+  destinationType: "artsCulture" | "outdoor" | "cabins" | "beach" | "popular";
+  handleDestinationTypeChange: (
+    destinationType: "artsCulture" | "outdoor" | "cabins" | "beach" | "popular"
+  ) => void;
+  handleDestinationRedirect: (city: string) => void;
 }
 
 export const DestinationsSegmentTemplate: React.FC<DestinationsSegmentTemplateProps> = ({
@@ -38,8 +43,6 @@ export const DestinationsSegmentTemplate: React.FC<DestinationsSegmentTemplatePr
           return (
             <div key={index}>
               <Button
-                block
-                stretch
                 variant="destination"
                 city={city}
                 location={location}

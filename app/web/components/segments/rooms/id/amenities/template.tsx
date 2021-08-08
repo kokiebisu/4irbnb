@@ -20,9 +20,7 @@ export const AmenitiesSegmentTemplate = ({
       <div>
         <h3 className="font-medium mb-5 text-gray-700 text-2xl">{title}</h3>
       </div>
-      <div
-        className={`mb-5 ${[section["display__amenities--wrapper"]].join(" ")}`}
-      >
+      <div className={`mb-5 `}>
         {amenities.map(({ icon, description }, index) => {
           return (
             <Bullet

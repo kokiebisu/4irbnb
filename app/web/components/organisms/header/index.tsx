@@ -1,5 +1,6 @@
 import { DetailsHeaderProps } from "./header-details";
 import { HomesHeaderProps } from "./header-homes";
+import { LandingHeaderProps } from "./header-landing";
 import { StayHeaderProps } from "./header-stay";
 import { WhiteHeaderProps } from "./header-white";
 import { factory } from "./util/factory";
@@ -8,7 +9,7 @@ export type HeaderProps =
   | ({ variant: "details" } & DetailsHeaderProps)
   | { variant: "experiences" }
   | ({ variant: "homes" } & HomesHeaderProps)
-  | { variant: "landing" }
+  | ({ variant: "landing" } & LandingHeaderProps)
   | { variant: "onlinehost" }
   | ({ variant: "stay" } & StayHeaderProps)
   | ({ variant: "white" } & WhiteHeaderProps);

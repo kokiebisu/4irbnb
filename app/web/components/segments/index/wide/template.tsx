@@ -1,6 +1,7 @@
 import { Button } from "@atoms";
 
 export type WideSegmentTemplateProps = {
+  handleRedirectToHostPage: () => void;
   title: string;
   description: string;
   inverse?: boolean;

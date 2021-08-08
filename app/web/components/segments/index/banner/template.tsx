@@ -1,11 +1,9 @@
 import { Header } from "@header";
 import { Button } from "@atoms";
 import { ResponsiveImage } from "@helper/img";
-import { useHandleScroll } from "@hooks/useHandleScroll";
 
 export type BannerSegmentTemplateProps = {
   category: string;
-  data: any;
   handleCategoryChange: (value: string) => void;
   handleHomeRedirect: () => void;
 };
@@ -14,12 +12,8 @@ export type BannerSegmentTemplateProps = {
  * Renders the banner section
  */
 export const BannerSegmentTemplate = ({
-  category,
-  data,
-  handleCategoryChange,
   handleHomeRedirect,
 }: BannerSegmentTemplateProps): JSX.Element => {
-  const scrollPosition = useHandleScroll();
   return (
     <div className="banner">
       <div className="absolute top-0 bottom-0 right-0 left-0">
@@ -35,13 +29,7 @@ export const BannerSegmentTemplate = ({
           }}
         >
           <div className="z-30">
-            <Header
-              variant="landing"
-              category={category}
-              setCategory={handleCategoryChange}
-              data={data}
-              criteria={scrollPosition < 56}
-            />
+            <Header variant="landing" />
           </div>
           <div
             className="container-spread"
