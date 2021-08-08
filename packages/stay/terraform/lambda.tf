@@ -1,5 +1,5 @@
 resource "aws_lambda_function" "stay_api" {
-  function_name = "4irbnb-stay-service"
+  function_name = "4irbnb-stay-api"
   role          = var.service_role_arn
   package_type  = "Image"
   image_uri = "${data.aws_ecr_repository.stay_api.repository_url}@${data.aws_ecr_image.stay_api.id}"
