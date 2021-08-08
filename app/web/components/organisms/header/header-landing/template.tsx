@@ -39,13 +39,16 @@ export const LandingHeaderTemplate = ({
   } = useLandingHeaderTemplate();
   return (
     <header
-      className={`w-full ${expanded ? "pt-4 pb-32" : "py-5"} ${
+      className={`w-full ${expanded ? "pt-4 pb-32" : "py-4"} ${
         positionAtPageTop ? "bg-transparent" : "bg-white shadow-md"
       } relative container-spread transition ease-in-out duration-100`}
     >
-      <div className="hidden sm:flex justify-between relative">
+      <div
+        style={{ gridTemplateColumns: "auto 1fr auto" }}
+        className="hidden sm:grid relative"
+      >
         <div>
-          <div className="mt-1 block lg:hidden">
+          <div className="mt-1 block lg:hidden relative top-1">
             <Icon
               variant="fill"
               fillType="noNameLogo"
@@ -54,7 +57,7 @@ export const LandingHeaderTemplate = ({
               height={32}
             />
           </div>
-          <div className="hidden lg:block mt-1">
+          <div className="hidden lg:block mt-1 relative top-1">
             <Icon
               variant="fill"
               fillType="nameLogo"
@@ -64,7 +67,7 @@ export const LandingHeaderTemplate = ({
             />
           </div>
         </div>
-        <div>
+        <div className="flex lg:justify-center px-8">
           {positionAtPageTop ? null : (
             <Button variant="searchbar" onClick={handleSearchbarExpand} />
           )}
