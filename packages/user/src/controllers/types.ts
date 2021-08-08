@@ -1,7 +1,7 @@
 import {
-  IDatabaseService,
   IWithIdentifierParams,
   IWithDataParams,
+  IRegion,
 } from "@nextbnb/common";
 
 export interface IResponse {
@@ -9,25 +9,22 @@ export interface IResponse {
   body: any;
 }
 
-export interface IStayControllerGetParams extends IWithIdentifierParams {}
+export interface IUserControllerGetParams extends IWithIdentifierParams {}
 
-export interface IStayControllerPostParams extends IWithDataParams {}
+export interface IUserControllerPostParams extends IWithDataParams {}
 
-export interface IStayControllerPatchParams
+export interface IUserControllerPatchParams
   extends IWithIdentifierParams,
     IWithDataParams {}
 
-export interface IStayControllerDeleteParams extends IWithIdentifierParams {}
+export interface IUserControllerDeleteParams extends IWithIdentifierParams {}
 
-export interface IStayControllerConstructorParams {
-  db: IDatabaseService;
-  idValidator({ identifier }: IWithIdentifierParams): boolean;
-}
+export interface IUserControllerConstructorParams extends IRegion {}
 
-export interface IStayControllerPayloadParams {
+export interface IUserControllerPayloadParams {
   payload: any;
 }
 
-export interface IStayControllerPatchParams
+export interface IUserControllerPatchParams
   extends IWithIdentifierParams,
     IWithDataParams {}

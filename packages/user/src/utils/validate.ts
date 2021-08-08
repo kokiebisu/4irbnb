@@ -8,7 +8,7 @@ import { IUser } from "../models/type";
  * @example
  * Here's an example of how to use this guard
  * ```ts
- * const user = { id: '1', username: 'john', name: 'John Parker', iconUrl: 'www.iconUrl.com' }
+ * const user = { id: '1', emailAddress: 'john', firstName: 'John Parker', lastName: 'www.iconUrl.com' }
  * isUser(user); // true
  * ```
  */

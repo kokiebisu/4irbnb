@@ -2,7 +2,10 @@ import { ILoggerService, PackageEnum } from "@nextbnb/common";
 import { createLoggerService } from "@nextbnb/common";
 import { IUserService } from "..";
 import { createUserService } from "../services/factory";
-import { IStayControllerGetParams } from "./types";
+import {
+  IUserControllerConstructorParams,
+  IUserControllerGetParams,
+} from "./types";
 
 /**
  * @public
@@ -11,17 +14,17 @@ export class UserController {
   #service: IUserService;
   #logger: ILoggerService;
 
-  constructor({ region }) {
+  constructor({ region }: IUserControllerConstructorParams) {
     this.#service = createUserService({ region });
     this.#logger = createLoggerService({
       packageName: PackageEnum.stay,
-      className: "StayController",
+      className: "UserController",
     });
   }
 
   async checkIfExistsByEmail({
     identifier,
-  }: IStayControllerGetParams): Promise<any> {
+  }: IUserControllerGetParams): Promise<any> {
     try {
       const user = await this.#service.get({ identifier });
 

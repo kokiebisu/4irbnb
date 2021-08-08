@@ -1,8 +1,8 @@
 import { createLoggerService, PackageEnum } from "@nextbnb/common";
-import { createStayController } from "./controllers";
+import { UserController } from ".";
 
 export const handler = async (event: any) => {
-  const controller = createStayController();
+  const controller = new UserController({ region: "us-east-1" });
   const logger = createLoggerService({
     packageName: PackageEnum.stay,
     className: "",

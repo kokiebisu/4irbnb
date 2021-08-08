@@ -1,4 +1,4 @@
-import { User } from './class';
+import { User } from "./class";
 
 /**
  * @public
@@ -13,9 +13,7 @@ import { User } from './class';
  */
 export const createUser = (
   id: string,
-  username: string,
-  name: string,
-  iconUrl: string
-): User => {
-  return new User({ id, username, name, iconUrl });
-};
+  emailAddress: string,
+  firstName: string,
+  lastName: string
+): User => new User({ id, emailAddress, firstName, lastName });

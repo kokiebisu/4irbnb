@@ -19,6 +19,6 @@ variable "aws_secret_key" {
 }
 
 variable "site_domain" {
-  type = string
+  type    = string
   default = "4irbnb.com"
 }

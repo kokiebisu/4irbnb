@@ -14,5 +14,6 @@ export class User {
     this.id = id;
     this.emailAddress = emailAddress;
     this.firstName = firstName;
-    this.lastName = lastName
+    this.lastName = lastName;
+  }
 }
