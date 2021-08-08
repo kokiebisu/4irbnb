@@ -10,11 +10,11 @@ import { useLandingHeaderTemplate } from "./use-template";
 
 export type LandingHeaderTemplateProps = {
   category: any;
-  setCategory: any;
-  data: any;
+  handleCategorySelect: any;
+  data?: any;
   criteria?: any;
   types: any;
-  menuCriteria: boolean;
+  menuCriteria?: boolean;
   handleGlobeToggle: () => void;
   handleMenuToggle: () => void;
   handleSignUpModalToggle: () => void;
@@ -27,7 +27,7 @@ export const LandingHeaderTemplate = ({
   data,
   types,
   category,
-  setCategory,
+  handleCategorySelect,
   criteria,
   menuCriteria,
   handleGlobeToggle,
@@ -206,7 +206,9 @@ export const LandingHeaderTemplate = ({
                         {Object.keys(types).map((type, index) => {
                           return (
                             <div key={index} className="mx-4">
-                              <button onClick={() => setCategory("stay")}>
+                              <button
+                                onClick={() => handleCategorySelect(type)}
+                              >
                                 <div className="pb-3">
                                   <p
                                     className={`${

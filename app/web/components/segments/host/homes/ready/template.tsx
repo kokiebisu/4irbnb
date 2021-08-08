@@ -1,5 +1,5 @@
-import Router from 'next/router';
-import { Button } from '@atoms';
+import Router from "next/router";
+import { Button } from "@atoms";
 
 export interface ReadySegmentTemplateProps {}
 
@@ -24,7 +24,9 @@ export const ReadySegmentTemplate: React.FC<ReadySegmentTemplateProps> = () => {
             variant="primary"
             size="md"
             title="Get started"
-            onClick={() => Router.push('/become-a-host')}
+            onClick={() => Router.push("/become-a-host")}
+            color="white"
+            fill="black"
           />
         </div>
       </div>

@@ -1,16 +1,14 @@
-export type HomesSegmentVariants =
-  | 'all'
-  | 'help'
-  | 'banner'
-  | 'community'
-  | 'hosting'
-  | 'priority'
-  | 'ready';
+import { PrioritySegmentProps } from "./priority";
+import { factory } from "./utils/factory";
 
-export interface SegmentProps {
-  variant: HomesSegmentVariants;
-  [property: string]: any;
-}
+export type HomesSegmentProps =
+  | { variant: "all" }
+  | { variant: "help" }
+  | { variant: "banner" }
+  | { variant: "community" }
+  | { variant: "hosting" }
+  | ({ variant: "priority" } & PrioritySegmentProps)
+  | { variant: "ready" };
 
 /**
  * Bundles the button components
@@ -18,17 +16,5 @@ export interface SegmentProps {
  * @param {string} type - Specifies the type of button component
  * @param {Object} children - A JSX that will be part of the component
  */
-export const Segment: React.FC<SegmentProps> = ({
-  variant = 'help',
-  children,
-  onClick,
-  to,
-  block,
-  animate,
-  ...props
-}) => {
-  const variants = factory(props);
-  return (
-    <div data-testid={`${variant}-landing`}>{variants[variant].component}</div>
-  );
-};
+export const Segment = ({ ...props }: HomesSegmentProps): JSX.Element =>
+  factory(props);

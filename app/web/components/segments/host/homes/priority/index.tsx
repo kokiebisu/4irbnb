@@ -1,13 +1,10 @@
-import { PrioritySegmentTemplate } from './template';
+import {
+  PrioritySegmentTemplate,
+  PrioritySegmentTemplateProps,
+} from "./template";
 
-export const PrioritySegment = (props) => {
-  return <PrioritySegmentTemplate />;
-};
+export type PrioritySegmentProps = PrioritySegmentTemplateProps;
 
-export const priority = (props) => {
-  return {
-    priority: {
-      component: <PrioritySegment {...props} />,
-    },
-  };
-};
+export const PrioritySegment = (props: PrioritySegmentProps) => (
+  <PrioritySegmentTemplate {...props} />
+);

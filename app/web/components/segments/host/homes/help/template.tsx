@@ -1,8 +1,8 @@
-import { Bullet, GeneralTypeVariants, Icon } from "@atoms";
+import { Bullet, Icon } from "@atoms";
 
 export interface HelpSegmentTemplateProps {
   helps: {
-    icon: GeneralTypeVariants;
+    icon: any;
     title: string;
     description: string;
   }[];

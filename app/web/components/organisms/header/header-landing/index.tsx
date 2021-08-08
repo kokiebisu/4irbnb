@@ -1,9 +1,7 @@
 import { useLandingHeader } from "./logic";
-import { LandingHeaderTemplate, LandingHeaderTemplateProps } from "./template";
+import { LandingHeaderTemplate } from "./template";
 
-export type LandingHeaderProps = LandingHeaderTemplateProps;
-
-export const LandingHeader = (props: LandingHeaderProps): JSX.Element => {
+export const LandingHeader = (): JSX.Element => {
   const data = useLandingHeader();
-  return <LandingHeaderTemplate {...props} {...data} />;
+  return <LandingHeaderTemplate {...data} />;
 };

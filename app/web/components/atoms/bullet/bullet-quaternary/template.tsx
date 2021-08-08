@@ -4,7 +4,7 @@ import React from "react";
 export type QuaternaryBulletTemplateProps = {
   icon: JSX.Element;
   title: string;
-  description: string;
+  description?: string;
   link: string;
   onClick: () => void;
 };

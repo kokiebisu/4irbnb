@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export const useLandingHeader = () => {
   const toggleState = useToggleState();
-  const [_, setCategory] = useState("stay");
+  const [category, setCategory] = useState("stay");
   const toggleDispatch = useToggleDispatch();
   const types: { [type: string]: { title: string; onClick: any } } = {
     stay: {
@@ -21,6 +21,8 @@ export const useLandingHeader = () => {
     },
   };
 
+  const handleCategorySelect = (type: string) => setCategory(type);
+
   const menuCriteria = toggleState.menu;
 
   const handleGlobeToggle = () => toggleDispatch({ type: "toggle_globe" });
@@ -32,8 +34,10 @@ export const useLandingHeader = () => {
   return {
     types,
     menuCriteria,
+    category,
     handleGlobeToggle,
     handleMenuToggle,
     handleSignUpModalToggle,
+    handleCategorySelect,
   };
 };

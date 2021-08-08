@@ -1,6 +1,6 @@
 export type HostingCardTemplateProps = {
-  imgUrl?: string;
-  title?: string;
+  imgUrl: string;
+  title: string;
   description?: string;
 };
 
