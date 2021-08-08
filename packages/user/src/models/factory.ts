@@ -13,7 +13,7 @@ import { User } from "./class";
  */
 export const createUser = (
   id: string,
-  emailAddress: string,
+  email: string,
   firstName: string,
   lastName: string
-): User => new User({ id, emailAddress, firstName, lastName });
+): User => new User({ id, email, firstName, lastName });

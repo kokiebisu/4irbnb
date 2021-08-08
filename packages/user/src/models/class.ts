@@ -6,13 +6,13 @@ import { IUser } from "./type";
  */
 export class User {
   id: string;
-  emailAddress: string;
+  email: string;
   firstName: string;
   lastName: string;
 
   constructor({ id, emailAddress, firstName, lastName }: IUser) {
     this.id = id;
-    this.emailAddress = emailAddress;
+    this.email = email;
     this.firstName = firstName;
     this.lastName = lastName;
   }

@@ -4,7 +4,7 @@
  */
 export interface IUser {
   id: string;
-  emailAddress: string;
+  email: string;
   firstName: string;
   lastName: string;
 }

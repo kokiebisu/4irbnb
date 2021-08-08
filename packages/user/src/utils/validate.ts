@@ -13,4 +13,4 @@ import { IUser } from "../models/type";
  * ```
  */
 export const isUser = (arg: any): arg is IUser =>
-  typeof arg.id === "string" && typeof arg.emailAddress === "string";
+  typeof arg.id === "string" && typeof arg.email === "string";
