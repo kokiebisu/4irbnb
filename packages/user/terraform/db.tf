@@ -1,4 +1,4 @@
-resource "aws_dynamodb_table" "stay_database" {
+resource "aws_dynamodb_table" "user_database" {
   name           = "UserService"
   billing_mode   = "PROVISIONED"
   read_capacity  = var.read_capacity
