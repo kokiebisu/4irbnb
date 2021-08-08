@@ -2,18 +2,14 @@ resource "aws_lambda_function" "stay_api" {
   function_name = "nextbnb-stay-service"
   role          = aws_iam_role.stay_service_role.arn
   package_type  = "Image"
-  image_uri = "${aws_ecr_repository.stay_api.repository_url}@${data.aws_ecr_image.stay_api.id}"
-
-  depends_on = [data.aws_ecr_image.stay_api.id]
+  image_uri = "${data.aws_ecr_repository.stay_api.repository_url}@${data.aws_ecr_image.stay_api.id}"
 }
 
 resource "aws_lambda_function" "stay_consumer" {
   function_name = "nextbnb-stay-consumer"
   role          = aws_iam_role.stay_service_role.arn
   package_type  = "Image"
-  image_uri = "${aws_ecr_repository.stay_consumer.repository_url}@${data.aws_ecr_image.stay_consumer.id}"
-
-  depends_on = [data.aws_ecr_image.stay_consumer.id]
+  image_uri = "${data.aws_ecr_repository.stay_consumer.repository_url}@${data.aws_ecr_image.stay_consumer.id}"
 }
 
 
