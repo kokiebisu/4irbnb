@@ -18,13 +18,7 @@
   "dependencies": {
     "@nextbnb/common": "file:../common"
   },
-  "devDependencies": {
-    "@types/aws-lambda": "^8.10.81",
-    "@types/jest": "^26.0.23",
-    "@types/node": "^15.14.0",
-    "jest": "^26.6.3",
-    "typescript": "^4.3.4"
-  },
+  "devDependencies": {},
   "engines": {
     "node": ">= 14.17.1"
   },

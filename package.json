@@ -35,15 +35,19 @@
     "@commitlint/config-lerna-scopes": "^12.1.4",
     "@microsoft/api-documenter": "^7.13.27",
     "@microsoft/api-extractor": "^7.17.0",
+    "@types/aws-lambda": "^8.10.81",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.4.13",
     "@typescript-eslint/eslint-plugin": "^4.22.1",
     "@typescript-eslint/parser": "^4.22.1",
     "commitlint": "^12.1.4",
     "eslint": "^7.26.0",
+    "jest": "^27.0.6",
     "lerna": "^3.22.1",
     "lerna-changelog": "^1.0.1",
     "rimraf": "^3.0.2",
     "scripty": "^2.0.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.3.4"
   },
   "workspaces": [
     "packages/*",
