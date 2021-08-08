@@ -20,15 +20,13 @@ export const MenuButtonTemplate = ({
   return (
     <button
       data-testid="menu-button"
-      className="inline-block"
+      className={`inline-block bg-white rounded-full ${
+        inverse ? "" : "border border-solid border-gray-300 hover:shadow-md"
+      } py-1 pl-2 pr-1`}
       onClick={onClick}
     >
-      <div
-        className={`${
-          inverse ? "border-2 border-gray-200 hover:shadow-md" : ""
-        } inline-flex items-center py-1 pl-2 pr-1 bg-white rounded-full`}
-      >
-        <div className="mr-3">
+      <div className={`inline-flex items-center`}>
+        <div className=" pl-1 mr-3">
           <Icon
             variant="fill"
             fillType="bars"

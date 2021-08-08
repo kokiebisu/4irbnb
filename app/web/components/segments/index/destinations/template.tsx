@@ -38,7 +38,7 @@ export const DestinationsSegmentTemplate: React.FC<DestinationsSegmentTemplatePr
         })}
       </div>
       <div className="w-full bg-gray-200 h-0.5" />
-      <div className="flex flex-wrap">
+      <div className="grid grid-cols-4">
         {items[destinationType].map(({ city, location }, index) => {
           return (
             <div key={index}>

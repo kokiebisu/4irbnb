@@ -1,4 +1,4 @@
-import { Header } from "@header";
+// import { Header } from "@header";
 import { Button } from "@atoms";
 import { ResponsiveImage } from "@helper/img";
 
@@ -22,23 +22,8 @@ export const BannerSegmentTemplate = ({
         </div>
       </div>
       <div className="absolute top-0 bottom-0 left-0 right-0">
-        <div
-          className="grid h-full"
-          style={{
-            gridTemplateRows: "auto 1fr",
-          }}
-        >
-          <div className="z-30">
-            <Header variant="landing" />
-          </div>
-          <div
-            className="container-spread"
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-            }}
-          >
+        <div className="grid h-full">
+          <div className="h-full flex items-center px-16">
             <div>
               <div className="flex sm:block justify-center">
                 <h3 className="text-white text-3xl">Go Near</h3>

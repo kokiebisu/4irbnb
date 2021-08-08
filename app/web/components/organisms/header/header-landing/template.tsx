@@ -12,7 +12,6 @@ export type LandingHeaderTemplateProps = {
   category: any;
   handleCategorySelect: any;
   data?: any;
-  criteria?: any;
   types: any;
   menuCriteria?: boolean;
   handleGlobeToggle: () => void;
@@ -28,17 +27,20 @@ export const LandingHeaderTemplate = ({
   types,
   category,
   handleCategorySelect,
-  criteria,
   menuCriteria,
   handleGlobeToggle,
   handleMenuToggle,
   handleSignUpModalToggle,
 }: LandingHeaderTemplateProps): JSX.Element => {
-  const { expanded, handleSearchbarExpand } = useLandingHeaderTemplate();
+  const {
+    expanded,
+    handleSearchbarExpand,
+    positionAtPageTop,
+  } = useLandingHeaderTemplate();
   return (
     <header
-      className={`${
-        expanded ? "pt-4 pb-32" : "py-5"
+      className={`w-full ${expanded ? "pt-4 pb-32" : "py-5"} ${
+        positionAtPageTop ? "bg-transparent" : "bg-white"
       } relative container-spread transition ease-in-out duration-100`}
     >
       <div className="hidden sm:flex justify-between relative">
@@ -47,7 +49,7 @@ export const LandingHeaderTemplate = ({
             <Icon
               variant="fill"
               fillType="noNameLogo"
-              fill={criteria ? "white" : "red"}
+              fill={positionAtPageTop ? "white" : "red"}
               width={30}
               height={32}
             />
@@ -56,7 +58,7 @@ export const LandingHeaderTemplate = ({
             <Icon
               variant="fill"
               fillType="nameLogo"
-              fill={criteria ? "white" : "red"}
+              fill={positionAtPageTop ? "white" : "red"}
               width={102}
               height={32}
             />
@@ -66,16 +68,24 @@ export const LandingHeaderTemplate = ({
           <div className="relative left-3 mx-1">
             <Button
               variant="transparent"
-              inverse={criteria}
+              inverse={positionAtPageTop}
               onClick={() => Router.push("/host/homes")}
             >
-              <h5 className="text-white text-sm font-light ">Become a Host</h5>
+              <h5
+                className={`${
+                  positionAtPageTop
+                    ? "text-white font-light"
+                    : "text-gray-800 font-medium"
+                } text-sm`}
+              >
+                Become a Host
+              </h5>
             </Button>
           </div>
           <div className="mx-1">
             <Button
               variant="transparent"
-              inverse={criteria}
+              inverse={positionAtPageTop}
               onClick={handleGlobeToggle}
             >
               <div className="items-center">
@@ -84,7 +94,7 @@ export const LandingHeaderTemplate = ({
                   fillType="globe"
                   width={16}
                   height={16}
-                  fill="white"
+                  fill={`${positionAtPageTop ? "white" : "black"}`}
                 />
               </div>
             </Button>
@@ -92,7 +102,7 @@ export const LandingHeaderTemplate = ({
           <div className="ml-1">
             <Button
               variant="menu"
-              inverse={criteria}
+              inverse={positionAtPageTop}
               authenticated={data}
               onClick={handleMenuToggle}
             />
@@ -137,7 +147,7 @@ export const LandingHeaderTemplate = ({
           />
         </div>
       </div>
-      <div
+      {/* <div
         className={`top-9/10 md:top-2/10 px-6 hidden sm:block absolute w-full left-1/2 bottom-0 z-50`}
         style={{
           maxWidth: 900,
@@ -236,9 +246,9 @@ export const LandingHeaderTemplate = ({
                         })}
                       </div>
                     </div>
-                    {/* <div ref={searchbarRef}>
+                    <div ref={searchbarRef}>
                       <Prototype type={category} />
-                    </div> */}
+                    </div>
                   </div>
                 </motion.div>
               ) : (
@@ -266,7 +276,7 @@ export const LandingHeaderTemplate = ({
             </div>
           )}
         </AnimatePresence>
-      </div>
+      </div> */}
     </header>
   );
 };

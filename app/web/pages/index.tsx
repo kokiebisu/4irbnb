@@ -10,18 +10,25 @@ import { Footer } from "@footer";
 // import { useHandleDocumentResize } from "@hooks/useHandleDocumentResize";
 import { useTimeout } from "@hooks/useTimeout";
 import { useTabTitle } from "@hooks/useTabTitle";
+import React from "react";
+import { Header } from "@header";
 
 const LandingPage: React.FC<{}> = () => {
   useTabTitle("Vacation Rentals, Homes, Experiences & Places - Airbnb");
   const loading = useTimeout(3000);
   const toggleState = useToggleState();
-  // const scrollPosition = useHandleScroll();
+
   // const pageHeight = useHandleDocumentResize();
 
   return (
     <div className="min-h-screen overflow-x-hidden relative ">
       <div>
-        <Segment variant="banner" />
+        <div>
+          <div className="w-full fixed top-0 z-30">
+            <Header variant="landing" />
+          </div>
+          <Segment variant="banner" />
+        </div>
         {loading ? (
           <>
             <Layout title="Explore nearby" variant="landing" spread>
