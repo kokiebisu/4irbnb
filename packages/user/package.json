@@ -1,28 +1,27 @@
 {
-  "name": "@nextbnb/service-auth",
+  "name": "@nextbnb/user",
   "version": "1.1.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "update": "rm -rf node_modules && yarn",
+    "update": "rimraf node_modules && yarn",
     "start": "node dist/index.js",
     "clean": "rimraf dist *.tsbuildinfo",
     "build": "tsc -b .",
-    "dev": "export AWS_PROFILE=personal && ts-node-dev src/index.ts",
     "test": "jest --passWithNoTests",
     "lint": "eslint src --ext js,ts,tsx",
     "extract": "api-extractor run --local",
-    "deploy": "bash script/deploy.sh"
+    "deploy:api": "bash ../../scripts/deploy.sh user api",
+    "deploy:consumer": "bash ../../script/deploy.sh user consumer"
   },
   "dependencies": {
-    "@nextbnb/common": "file:../common",
-    "@okta/jwt-verifier": "^2.3.0",
-    "@okta/okta-sdk-nodejs": "^5.0.0"
+    "@nextbnb/common": "file:../common"
   },
   "devDependencies": {},
   "engines": {
     "node": ">= 14.17.1"
-  }
+  },
+  "type": "commonjs"
 }

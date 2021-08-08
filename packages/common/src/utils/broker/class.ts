@@ -9,5 +9,6 @@ export class BrokerService implements IBrokerService {
 
   constructor({ client }: IBrokerServiceConstructorParams) {
     this.#client = client;
+    console.log(this.#client);
   }
 }
