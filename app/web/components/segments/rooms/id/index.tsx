@@ -1,28 +1,15 @@
-export const $Segment = {
-  REVIEWS: 'reviews',
-  ARRANGEMENTS: 'arrangements',
-  AMENITIES: 'amenities',
-  KNOW: 'know',
-  HOST: 'host',
-  PREVIEW: 'preview',
-  OTHER: 'other',
-  DESCRIPTION: 'description',
-};
+import { factory } from "./utils/factory";
 
-export type RoomsSegmentVariants =
-  | 'reviews'
-  | 'arrangements'
-  | 'amenities'
-  | 'know'
-  | 'host'
-  | 'preview'
-  | 'other'
-  | 'description';
-
-export interface SegmentProps {
-  variant: RoomsSegmentVariants;
-  [property: string]: any;
-}
+export type SegmentProps =
+  | {
+      variant: "amenities";
+    }
+  | { variant: "arrangements" }
+  | { variant: "description" }
+  | { variant: "host" }
+  | { variant: "other" }
+  | { variant: "preview" }
+  | { variant: "reviews" };
 
 /**
  * Bundles the button components
@@ -30,15 +17,4 @@ export interface SegmentProps {
  * @param {string} type - Specifies the type of button component
  * @param {Object} children - A JSX that will be part of the component
  */
-export const Segment: React.FC<SegmentProps> = ({
-  extendsTo = '',
-  variant = 'reviews',
-  children,
-  onClick,
-  to,
-  block,
-  animate,
-  ...props
-}) => {
-  return <div data-testid={`${variant}-stay`}>{variants[variant]}</div>;
-};
+export const Segment = ({ ...props }: SegmentProps) => factory(props);

@@ -1,6 +1,7 @@
 import { FillIconProps } from ".";
 
 export const FillIconTemplate = (props: FillIconProps) => {
+  const fillType = props.fillType;
   switch (props.fillType) {
     case "house":
       return <HouseIcon {...props} />;
@@ -97,7 +98,7 @@ export const FillIconTemplate = (props: FillIconProps) => {
     case "education":
       return <EducationIcon {...props} />;
     default:
-      throw new Error("Invalid fillType provided");
+      throw new Error(`Invalid fillType provided ${fillType}`);
   }
 };
 

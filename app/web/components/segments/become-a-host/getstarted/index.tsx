@@ -1,6 +1,6 @@
-import { useGetStartedSegment } from './logic';
-import { Header } from '@header';
-import { GetStartedSegmentTemplate } from './template';
+import { useGetStartedSegment } from "./logic";
+import { Header } from "@header";
+import { GetStartedSegmentTemplate } from "./template";
 
 export const GetStartedSegment = () => {
   const data = useGetStartedSegment();
@@ -8,7 +8,7 @@ export const GetStartedSegment = () => {
     <div className="h-screen">
       <div style={{ zIndex: 60, height: 65 }}>
         <div className="sm:hidden">
-          <Header variant="stay" />
+          <Header variant="stay" title="" />
         </div>
       </div>
       <div className="mt-3 container">
@@ -20,7 +20,7 @@ export const GetStartedSegment = () => {
             <div
               className="w-full"
               style={{
-                margin: '50px auto 0',
+                margin: "50px auto 0",
                 maxWidth: 400,
               }}
             >

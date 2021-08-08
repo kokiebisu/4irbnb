@@ -15,7 +15,7 @@ const Layout: React.FC<LanguageLayoutProps> = ({ items, type }) => {
       <div className="mb-4">
         <h3 className="text-lg">{titles[type]}</h3>
       </div>
-      <div className="w-full grid grid-cols-3 md:grid-cols-5 gap-4 p-3">
+      <div className="w-full grid grid-cols-3 md:grid-cols-5 gap-4">
         {items.map(({ language, region }, index) => {
           return (
             <div key={index}>
@@ -34,9 +34,7 @@ const Layout: React.FC<LanguageLayoutProps> = ({ items, type }) => {
   );
 };
 
-export interface LanguagePrototypeTemplateProps {}
-
-export const LanguagePrototypeTemplate: React.FC<LanguagePrototypeTemplateProps> = () => {
+export const LanguageInnerTemplate: React.FC<{}> = () => {
   return (
     <div>
       <div className="mb-4">

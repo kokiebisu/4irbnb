@@ -1,6 +1,6 @@
-import { Layout } from '@layout';
-import { usePhotosSegment } from './logic';
-import { PhotosSegmentTemplate } from './template';
+import { Layout } from "@layout";
+import { usePhotosSegment } from "./logic";
+import { PhotosSegmentTemplate } from "./template";
 
 export const PhotosSegment = () => {
   const {

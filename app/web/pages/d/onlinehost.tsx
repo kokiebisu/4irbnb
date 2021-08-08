@@ -1,10 +1,10 @@
-import { Header } from '@header';
-import { Segment } from '@template/d/onlinehost';
-import { Footer } from '@footer';
-import { useTabTitle } from '@hooks/useTabTitle';
+import { Header } from "@header";
+import { Segment } from "@template/d/onlinehost";
+import { Footer } from "@footer";
+import { useTabTitle } from "@hooks/useTabTitle";
 
 const OnlineHost = () => {
-  useTabTitle('Airbnb Experiences: Host an Online Experience');
+  useTabTitle("Airbnb Experiences: Host an Online Experience");
 
   return (
     <div>
@@ -16,7 +16,7 @@ const OnlineHost = () => {
           <Segment variant="banner" />
         </div>
       </div>
-      <div className="container">
+      {/* <div className="container">
         <Segment variant="works" />
       </div>
       <div className={`py-10 container--shrink`}>
@@ -30,7 +30,7 @@ const OnlineHost = () => {
       </div>
       <div>
         <Segment variant="more" />
-      </div>
+      </div> */}
       <div>
         <Footer />
       </div>

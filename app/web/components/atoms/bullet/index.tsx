@@ -5,6 +5,7 @@ import { RatingBulletProps } from "./bullet-rating";
 import { RequiredBulletProps } from "./bullet-required";
 import { ScoreBulletProps } from "./bullet-score";
 import { SecondaryBulletProps } from "./bullet-secondary";
+import { TertiaryBulletProps } from "./bullet-tertiary";
 import { factory } from "./utils/factory";
 
 export type BulletProps =
@@ -14,12 +15,11 @@ export type BulletProps =
   | ({ variant: "question" } & QuestionBulletProps)
   | ({ variant: "primary" } & PrimaryBulletProps)
   | ({ variant: "secondary" } & SecondaryBulletProps)
+  | ({ variant: "tertiary" } & TertiaryBulletProps)
   | ({ variant: "quaternary" } & QuaternaryBulletProps);
 
 /**
  * Bundles the bullet components
  * @param {string} variant - Specify the variant of the bullet
  */
-export const Bullet: React.FC<BulletProps> = (props) => {
-  return factory(props);
-};
+export const Bullet = (props: BulletProps): JSX.Element => factory(props);

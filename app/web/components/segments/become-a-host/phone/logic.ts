@@ -1,6 +1,6 @@
-import { useStayDispatch, useStayState } from '@context/stay';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useStayDispatch, useStayState } from "@context/stay";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 export const usePhoneSegment = () => {
   const router = useRouter();
@@ -12,17 +12,17 @@ export const usePhoneSegment = () => {
 
   const handleRedirectToNextPage = () => {
     stayDispatch({
-      type: 'add',
+      type: "add",
       payload: data,
     });
     setTimeout(() => {
-      router.push('/become-a-host/requirements');
+      router.push("/become-a-host/requirements");
     }, 500);
   };
 
   const handleRedirectToPreviousPage = () => {
     setTimeout(() => {
-      router.push('/become-a-host/description');
+      router.push("/become-a-host/description");
     }, 500);
   };
 
@@ -37,5 +37,6 @@ export const usePhoneSegment = () => {
     handleRedirectToPreviousPage,
     handleChange,
     canProceedToNextPage,
+    phone,
   };
 };

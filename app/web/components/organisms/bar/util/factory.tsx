@@ -1,6 +1,5 @@
 import { BarProps } from "@bar";
 import { AvailabilityBar } from "@bar/bar-availability";
-import { CovidBar } from "@bar/bar-covid";
 import { CreateBar } from "@bar/bar-create";
 import { FiltersBar } from "@bar/bar-filters";
 import { MenuBar } from "@bar/bar-menu";
@@ -14,8 +13,6 @@ export const factory = (props: BarProps) => {
       return <AvailabilityBar {...props} />;
     case "create":
       return <CreateBar {...props} />;
-    case "covid":
-      return <CovidBar {...props} />;
     case "filters":
       return <FiltersBar {...props} />;
     case "menu":

@@ -1,6 +1,6 @@
 export type HomesLayoutProps = {
   title?: string;
-  children: JSX.Element;
+  children: React.ReactNode;
 };
 
 export const HomesLayout = ({

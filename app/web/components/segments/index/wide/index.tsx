@@ -1,9 +1,7 @@
-import { WideSegmentTemplate, WideSegmentTemplateProps } from "./template";
+import { WideSegmentTemplate } from "./template";
 import { useWideSegment } from "./logic";
 
-export type WideSegmentProps = WideSegmentTemplateProps;
-
-export const WideSegment = (props: WideSegmentProps) => {
+export const WideSegment = () => {
   const data = useWideSegment();
-  return <WideSegmentTemplate {...data} {...props} />;
+  return <WideSegmentTemplate {...data} />;
 };

@@ -10,11 +10,11 @@ export const useBannerSegment = () => {
     setCategory(value);
   };
 
-  const handleRedirectToHomePage = () => router.push("/");
+  const handleHomeRedirect = () => router.push("/");
 
   return {
     category,
     handleCategoryChange,
-    handleRedirectToHomePage,
+    handleHomeRedirect,
   };
 };

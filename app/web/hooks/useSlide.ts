@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState } from "react";
 
-export const useSlide = (moveBy: string) => {
+export const useSlide = (moveBy: "whole") => {
   const [state, setState] = useState({
     activeSlide: 0,
     translate: 0,
@@ -14,7 +14,7 @@ export const useSlide = (moveBy: string) => {
   const moveByType = {
     whole: width,
   };
-  const containerRef = useRef<HTMLDivElement>();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleRef = () => {
     if (containerRef.current && containerRef.current.getBoundingClientRect()) {

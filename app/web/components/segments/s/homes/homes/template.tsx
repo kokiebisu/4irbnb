@@ -31,7 +31,7 @@ export type HomesSegmentTemplateProps = {
  * @param {Object[]} stays - List of objects containing the stays
  */
 export const HomesSegmentTemplate: React.FC<HomesSegmentTemplateProps> = ({
-  layout,
+  // layout,
   title,
   stays,
 }) => {
@@ -56,5 +56,5 @@ export const HomesSegmentTemplate: React.FC<HomesSegmentTemplateProps> = ({
     ),
   };
 
-  return layouts[layout];
+  return layouts.vertical;
 };

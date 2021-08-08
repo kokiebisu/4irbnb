@@ -1,13 +1,5 @@
-import { MoreSegmentTemplate } from './template';
+import { MoreSegmentTemplate, MoreSegmentTemplateProps } from "./template";
 
-export const MoreSegment = (props) => {
-  return <MoreSegmentTemplate {...props} />;
-};
+export type MoreSegmentProps = MoreSegmentTemplateProps;
 
-export const more = (props) => {
-  return {
-    more: {
-      component: <MoreSegment {...props} />,
-    },
-  };
-};
+export const MoreSegment = () => <MoreSegmentTemplate />;

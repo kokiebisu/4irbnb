@@ -1,5 +1,5 @@
 import { Button } from "@atoms";
-import { Card } from "@card";
+// import { Card } from "@card";
 import { useSlide } from "@hooks/useSlide";
 
 export interface StartingSegmentTemplateProps {
@@ -31,25 +31,26 @@ export const StartingSegmentTemplate: React.FC<StartingSegmentTemplateProps> = (
         </div>
         <div className="flex items-center">
           <div className="mr-3">
-            <Button variant="underline" title={`Show (${cards.length})`} />
+            <Button
+              variant="underline"
+              title={`Show (${cards.length})`}
+              font={14}
+              onClick={() => alert("clicked")}
+            />
           </div>
           <div className="flex items-center">
             <div className="mx-2">
               <Button
-                block
                 variant="paginate"
-                animate
-                direction="left"
+                direction="chevronLeft"
                 onClick={previous}
                 //   disable={state.activeSlide === 0}
               />
             </div>
             <div className="mx-2">
               <Button
-                block
                 variant="paginate"
-                animate
-                direction="right"
+                direction="chevronRight"
                 onClick={next}
                 //   disable={
                 //     state.activeSlide ===
@@ -69,7 +70,7 @@ export const StartingSegmentTemplate: React.FC<StartingSegmentTemplateProps> = (
           }}
         >
           <div className="flex">
-            {cards.map((card, index) => {
+            {/* {cards.map((card, index) => {
               const { imgUrl, videoUrl } = card || {};
               return (
                 <div key={index} style={{ width: width / displayingColumns() }}>
@@ -82,7 +83,7 @@ export const StartingSegmentTemplate: React.FC<StartingSegmentTemplateProps> = (
                   </div>
                 </div>
               );
-            })}
+            })} */}
           </div>
         </div>
       </div>

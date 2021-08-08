@@ -22,7 +22,7 @@ export const AuthModalTemplate = (): JSX.Element => {
         className="flex items-center border-b border-gray-200 px-4"
       >
         <div className="relative w-full">
-          <div className="absolute left-0 -top-2 bg-transparent">
+          <div className="absolute left-0 bg-transparent">
             {authState.display === "Forgot password" ? (
               <Button
                 variant="modal"
@@ -32,8 +32,8 @@ export const AuthModalTemplate = (): JSX.Element => {
                     strokeType="close"
                     stroke="black"
                     strokeWidth={3}
-                    width={24}
-                    height={24}
+                    width={14}
+                    height={14}
                   />
                 }
                 onClick={() => authDispatch({ type: "auth_login" })}
@@ -47,15 +47,15 @@ export const AuthModalTemplate = (): JSX.Element => {
                     strokeType="close"
                     stroke="black"
                     strokeWidth={3}
-                    width={24}
-                    height={24}
+                    width={14}
+                    height={14}
                   />
                 }
                 onClick={() => toggleDispatch({ type: "close_register" })}
               />
             )}
           </div>
-          <div className="flex justify-center items-center">
+          <div className="flex justify-center top-1 relative">
             <h3 className="text-md">{authState.title}</h3>
           </div>
         </div>

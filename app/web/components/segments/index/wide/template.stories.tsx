@@ -1,7 +1,6 @@
 import React from "react";
 import { Story, Meta } from "@storybook/react";
 import { WideSegmentTemplate, WideSegmentTemplateProps } from "./template";
-import * as mockData from "./mock";
 
 export default {
   title: "Templates/Index",
@@ -14,6 +13,8 @@ const WideSegmentTemplateStory: Story<WideSegmentTemplateProps> = (args) => (
 
 export const Wide = WideSegmentTemplateStory.bind({});
 Wide.args = {
-  ...mockData,
-  handleRedirectToHostPage: () => alert("yo"),
+  title: "Title",
+  description: "Description",
+  bannerImg: "",
+  handleRedirectToHostPage: () => alert(""),
 };

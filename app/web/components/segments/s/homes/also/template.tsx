@@ -17,7 +17,7 @@ export const AlsoSegmentTemplate: React.FC<AlsoSegmentTemplateProps> = ({
   items,
   title,
 }) => {
-  const containerRef = useRef<HTMLDivElement>();
+  const containerRef = useRef<HTMLDivElement>(null);
   const width: number = useHandleContainerResize(containerRef)[0];
   const { state, previous, next } = useSlider(items, width, "also");
 
@@ -31,19 +31,17 @@ export const AlsoSegmentTemplate: React.FC<AlsoSegmentTemplateProps> = ({
           <div className="mx-2">
             <Button
               variant="paginate"
-              animate
-              direction="left"
+              direction="chevronLeft"
               onClick={previous}
-              disable={state.activeSlide === 0}
+              disabled={state.activeSlide === 0}
             />
           </div>
           <div className="mx-2">
             <Button
               variant="paginate"
-              animate
-              direction="right"
+              direction="chevronRight"
               onClick={next}
-              disable={
+              disabled={
                 state.activeSlide === items.length - (width > 728 ? 3 : 2)
               }
             />
@@ -59,15 +57,15 @@ export const AlsoSegmentTemplate: React.FC<AlsoSegmentTemplateProps> = ({
         }}
       >
         <div className="flex">
-          {items.map((item, index) => {
+          {items.map((item: any, index: any) => {
             return (
               <div style={{ width: width / (width > 728 ? 3 : 2) }} key={index}>
                 <div className="mb-3">
                   <Card
                     variant="nearby"
                     imgUrl={item?.pic}
-                    title={item[0]?.city || "Item"}
-                    subtitle={`${item[0]?.hours || 1} hour drive`}
+                    city={item[0]?.city || "Item"}
+                    hours={item[0]?.hours}
                     size="lg"
                   />
                 </div>
@@ -75,8 +73,8 @@ export const AlsoSegmentTemplate: React.FC<AlsoSegmentTemplateProps> = ({
                   <Card
                     variant="nearby"
                     imgUrl={item?.pic}
-                    title={item[1]?.city || "Item"}
-                    subtitle={`${item[0]?.hours || 1} hour drive`}
+                    city={item[1]?.city || "Item"}
+                    hours={item[0]?.hours}
                     size="lg"
                   />
                 </div>

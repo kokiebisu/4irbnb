@@ -1,11 +1,9 @@
-import { Modal } from '@modal';
-import { Header } from '@header';
+import { Modal } from "@modal";
+import { Header } from "@header";
 
-export interface BannerSegmentTemplateProps {}
-
-export const BannerSegmentTemplate: React.FC<BannerSegmentTemplateProps> = () => {
+export const BannerSegmentTemplate = () => {
   return (
-    <div className="pb-8" style={{ backgroundColor: '#F2ECE2' }}>
+    <div className="pb-8" style={{ backgroundColor: "#F2ECE2" }}>
       <div>
         <Header variant="homes" />
       </div>

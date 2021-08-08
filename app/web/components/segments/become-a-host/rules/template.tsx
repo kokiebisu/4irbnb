@@ -1,5 +1,3 @@
-import { Input } from '@atoms';
-
 export interface RulesSegmentTemplateProps {
   rules?: { title: string; item: string }[];
   selectedRules?: string[];
@@ -14,14 +12,16 @@ export interface RulesSegmentTemplateProps {
  * @param {object} data - Input data
  * @param {function} setData - Changes the input data
  */
-export const RulesSegmentTemplate: React.FC<RulesSegmentTemplateProps> = ({
-  rules,
-  selectedRules,
-  isSmokingAllowed,
-  isEventAllowed,
-  handleSwitch,
-  handleChange,
-}) => {
+export const RulesSegmentTemplate: React.FC<RulesSegmentTemplateProps> = (
+  {
+    // rules,
+    // selectedRules,
+    // isSmokingAllowed,
+    // isEventAllowed,
+    // handleSwitch,
+    // handleChange,
+  }
+) => {
   return (
     <div>
       <div>
@@ -35,7 +35,7 @@ export const RulesSegmentTemplate: React.FC<RulesSegmentTemplateProps> = ({
         </p>
       </div>
       <div className="mb-4">
-        <div className="my-3">
+        {/* <div className="my-3">
           <Input
             variant="closed"
             title="Smoking allowed"
@@ -52,13 +52,13 @@ export const RulesSegmentTemplate: React.FC<RulesSegmentTemplateProps> = ({
             onSwitchToFalse={() => handleSwitch(false, 'event')}
             onSwitchToTrue={() => handleSwitch(true, 'event')}
           />
-        </div>
+        </div> */}
       </div>
       <div className="mb-7">
         <div className="my-4">
           <h3>Details guests must know about your home</h3>
         </div>
-        {rules.map(({ title, item }, index) => {
+        {/* {rules.map(({ title, item }, index) => {
           return (
             <div key={index} className="mb-4">
               <Input
@@ -69,7 +69,7 @@ export const RulesSegmentTemplate: React.FC<RulesSegmentTemplateProps> = ({
               />
             </div>
           );
-        })}
+        })} */}
       </div>
     </div>
   );

@@ -40,9 +40,9 @@ export const useGetStartedSegment = () => {
 
   const handleSubmit = () => formik.handleSubmit();
 
-  const handleChange = (e) => formik.handleChange(e);
+  const handleChange = (e: any) => formik.handleChange(e);
 
-  const handlePlaceChange = (value) => setStay(value);
+  const handlePlaceChange = (value: string) => setStay(value);
 
   const handleContinueSelect = () => alert("sadf");
 
@@ -55,5 +55,6 @@ export const useGetStartedSegment = () => {
     handleChange,
     handleSubmit,
     handlePlaceChange,
+    handleContinueSelect,
   };
 };

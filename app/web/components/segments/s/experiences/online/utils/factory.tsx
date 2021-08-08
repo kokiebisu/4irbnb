@@ -8,7 +8,7 @@ import { SegmentProps } from "..";
 export const factory = (props: SegmentProps) => {
   switch (props.variant) {
     case "banner":
-      return <BannerSegment {...props} />;
+      return <BannerSegment />;
     case "collections":
       return <CollectionsSegment />;
     case "cards":

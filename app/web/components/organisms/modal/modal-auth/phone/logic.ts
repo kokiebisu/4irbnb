@@ -29,8 +29,8 @@ export const usePhonePrototype = () => {
     {
       name: "Facebook",
       icon: {
-        variant: "logo" as const,
-        logoType: "facebook" as const,
+        variant: "others" as const,
+        othersType: "facebookLogo" as const,
         width: 19,
       },
       handleClick: handleFacebookLogin,
@@ -38,8 +38,8 @@ export const usePhonePrototype = () => {
     {
       name: "Google",
       icon: {
-        variant: "logo" as const,
-        logoType: "google" as const,
+        variant: "others" as const,
+        othersType: "googleLogo" as const,
         width: 17,
       },
       handleClick: handleFacebookLogin,
@@ -47,8 +47,8 @@ export const usePhonePrototype = () => {
     {
       name: "Apple",
       icon: {
-        variant: "logo" as const,
-        logoType: "apple" as const,
+        variant: "others" as const,
+        othersType: "appleLogo" as const,
         width: 17,
       },
       handleClick: handleFacebookLogin,
@@ -58,8 +58,8 @@ export const usePhonePrototype = () => {
   const emailSwitchButton = {
     name: "Email",
     icon: {
-      variant: "general" as const,
-      generalType: "email" as const,
+      variant: "fill" as const,
+      fillType: "email" as const,
       width: 17,
     },
     handleClick: handleEmailLogin,

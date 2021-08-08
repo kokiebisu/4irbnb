@@ -1,14 +1,14 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 /**
  * A custom hook which allows modals to close when clicked outside of itself
  * @param ref
  * @param handler
  */
-export const useOnClickOutside = (ref, handler) => {
+export const useOnClickOutside = (ref: any, handler: any) => {
   useEffect(
     () => {
-      const listener = (event) => {
+      const listener = (event: any) => {
         // Do nothing if clicking ref's element or descendent elements
         if (!ref.current || ref.current.contains(event.target)) {
           return;
@@ -17,12 +17,12 @@ export const useOnClickOutside = (ref, handler) => {
         handler(event);
       };
 
-      document.addEventListener('mousedown', listener);
-      document.addEventListener('touchstart', listener);
+      document.addEventListener("mousedown", listener);
+      document.addEventListener("touchstart", listener);
 
       return () => {
-        document.removeEventListener('mousedown', listener);
-        document.removeEventListener('touchstart', listener);
+        document.removeEventListener("mousedown", listener);
+        document.removeEventListener("touchstart", listener);
       };
     },
     // Add ref and handler to effect dependencies

@@ -1,7 +1,6 @@
 import Router from "next/router";
 import { Bar } from "@bar";
 import { Header } from "@header";
-import { Card, $Card } from "@card";
 import { Icon } from "components/atoms/icon";
 
 const HowGuestsWillBookPage = () => {
@@ -39,11 +38,11 @@ const HowGuestsWillBookPage = () => {
               columnGap: 15,
             }}
           >
-            {["qualified", "control", "notified"].map((how, index) => (
+            {/* {["qualified", "control", "notified"].map((how, index) => (
               <div key={index}>
                 <Card variant="how" how={how} />
               </div>
-            ))}
+            ))} */}
           </div>
           <div className="my-7">
             <div className="mb-4">

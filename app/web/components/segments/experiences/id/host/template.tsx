@@ -1,5 +1,4 @@
 import { useState } from "react";
-import section from "@template/index.module.scss";
 
 import { Button } from "@atoms";
 import { Bullet } from "@atoms";
@@ -8,16 +7,16 @@ import { Icon } from "@atoms";
 import { truncateContent } from "@utils/description";
 
 export interface HostSegmentTemplateProps {
-  host?: string;
+  host: string;
   isSuperhost?: boolean;
-  description?: string;
-  joined?: string;
-  duringStay?: string;
-  numberOfReviews?: number;
-  hostImgUrl?: string;
-  responseTime?: string;
-  responseRate?: number;
-  layoutType?: string;
+  description: string;
+  joined: string;
+  duringStay: string;
+  numberOfReviews: number;
+  hostImgUrl: string;
+  responseTime: string;
+  responseRate: number;
+  layoutType: string;
   verified?: boolean;
 }
 
@@ -41,7 +40,7 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
   description,
   joined,
   duringStay,
-  numberOfReviews,
+  // numberOfReviews,
   hostImgUrl,
   responseTime,
   responseRate,
@@ -82,11 +81,7 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
           </div>
         </div>
         <div>
-          <div
-            className={`${
-              layoutType === "room" && section["w__host--left"]
-            } pr-6`}
-          >
+          <div className={` pr-6`}>
             <div>
               <div className="flex items-center flex-wrap">
                 <div className="mr-2 mb-4 pr-1">
@@ -186,7 +181,7 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
               )}
             </div>
           </div>
-          <div className={`pr-8 ${[section["w__host--right"]].join(" ")}`}>
+          <div className={`pr-8`}>
             {layoutType === "room" && (
               <div>
                 <div className="mb-4">
@@ -225,11 +220,10 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
               >
                 <div>
                   <Icon
-                    variant="fill"
-                    fillType="shield"
+                    variant="others"
+                    othersType="shield"
                     width={24}
                     height={24}
-                    fill="black"
                   />
                 </div>
                 <p className="text-sm font-thin ml-3">

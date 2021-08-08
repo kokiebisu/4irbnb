@@ -32,7 +32,7 @@ export const BathroomsSegmentTemplate: React.FC<BathroomsSegmentTemplateProps> =
             onSubtract={() => handleCounterSubtract("bathrooms")}
             min={1}
             max={15}
-            type="create"
+            // type="create"
           />
         </div>
       </div>

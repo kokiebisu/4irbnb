@@ -1,16 +1,13 @@
 import { Icon } from "@atoms";
-import { Panel, $Panel } from "@panel";
 
 export interface PreviewSegmentTemplateProps {
-  title?: string;
-  ratings?: number;
-  numberOfReviews?: number;
+  title: string;
+  ratings: number;
+  numberOfReviews: number;
   superhost?: boolean;
-  location?: string;
-  province?: string;
-  country?: string;
-  layoutType?: string;
-  images?: string[];
+  location: string;
+  province: string;
+  country: string;
 }
 
 /**
@@ -22,8 +19,6 @@ export interface PreviewSegmentTemplateProps {
  * @param {string} location - Location of the room/experience
  * @param {string} province - Province of the room/experience
  * @param {string} country - Country of the room/experience
- * @param {string} layoutType - Type of layout
- * @param {string[]} images - Images for the panel
  */
 export const PreviewSegmentTemplate: React.FC<PreviewSegmentTemplateProps> = ({
   title = "Title here",
@@ -113,9 +108,9 @@ export const PreviewSegmentTemplate: React.FC<PreviewSegmentTemplateProps> = ({
           </div>
         </div>
       </div>
-      <div>
+      {/* <div>
         <Panel variant={$Panel.ROOM} />
-      </div>
+      </div> */}
     </div>
   );
 };

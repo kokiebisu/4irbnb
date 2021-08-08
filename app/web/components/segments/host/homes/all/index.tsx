@@ -1,15 +1,7 @@
-import { useAllSegment } from './logic';
-import { AllTemplate } from './template';
+import { useAllSegment } from "./logic";
+import { AllSegmentTemplate } from "./template";
 
-export const AllSegment = (props) => {
+export const AllSegment = () => {
   const data = useAllSegment();
-  return <AllTemplate {...data} {...props} />;
-};
-
-export const all = (props) => {
-  return {
-    all: {
-      component: <AllSegment {...props} />,
-    },
-  };
+  return <AllSegmentTemplate {...data} />;
 };

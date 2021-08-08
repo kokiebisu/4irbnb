@@ -1,7 +1,7 @@
-import { useStayDispatch, useStayState } from '@context/stay';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
-import * as mockData from './mock';
+import { useStayDispatch, useStayState } from "@context/stay";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import * as mockData from "./mock";
 
 export const useRulesSegment = () => {
   const router = useRouter();
@@ -15,38 +15,39 @@ export const useRulesSegment = () => {
 
   const handleRedirectToNextPage = () => {
     stayDispatch({
-      type: 'add',
+      type: "add",
       payload: data,
     });
     setTimeout(() => {
-      router.push('/become-a-host/review-how-guests-book');
+      router.push("/become-a-host/review-how-guests-book");
     }, 500);
   };
 
   const handleRedirectToPreviousPage = () => {
     setTimeout(() => {
-      router.push('/become-a-host/spaces');
+      router.push("/become-a-host/spaces");
     }, 500);
   };
 
   const canProceedToNextPage =
-    typeof data.events === 'undefined' && typeof data.smoking === 'undefined';
+    typeof data.events === "undefined" && typeof data.smoking === "undefined";
 
-  const handleChange = (type: string, params: string) => {
-    if (data[type].includes(params)) {
-      setData({
-        ...data,
-        [type]: [...data[type]].filter((element) => element !== params),
-      });
-    } else {
-      setData({
-        ...data,
-        [type]: [...data[type], params],
-      });
-    }
+  // type: string, params: string
+  const handleChange = () => {
+    // if (data[type].includes(params)) {
+    //   setData({
+    //     ...data,
+    //     [type]: [...data[type]].filter((element) => element !== params),
+    //   });
+    // } else {
+    //   setData({
+    //     ...data,
+    //     [type]: [...data[type], params],
+    //   });
+    // }
   };
 
-  const handleSwitch = (property, flag) => {
+  const handleSwitch = (flag: boolean, property: string) => {
     setData({ ...data, [property]: flag });
   };
 

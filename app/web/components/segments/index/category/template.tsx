@@ -1,5 +1,3 @@
-import template from "@template/index/index.module.scss";
-
 import { Card } from "@card";
 
 export interface CategorySegmentTemplateProps {
@@ -15,10 +13,7 @@ export const CategorySegmentTemplate: React.FC<CategorySegmentTemplateProps> = (
 }) => {
   return (
     <div>
-      <div
-        style={{ gridTemplateColumns: `repeat(${items.length}, 1fr)` }}
-        className={[template["category__carousel"]].join(" ")}
-      >
+      <div style={{ gridTemplateColumns: `repeat(${items.length}, 1fr)` }}>
         {items.map((item, index) => {
           return (
             <div key={index}>
@@ -30,7 +25,7 @@ export const CategorySegmentTemplate: React.FC<CategorySegmentTemplateProps> = (
             </div>
           );
         })}
-        <div className={template["category__space"]}></div>
+        <div></div>
       </div>
     </div>
   );

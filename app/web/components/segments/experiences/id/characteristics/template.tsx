@@ -1,24 +1,23 @@
 import { Bullet } from "@atoms";
 import { Icon } from "@atoms";
-import section from "@template/index.module.scss";
 
 export interface CharacteristicsSegmentTemplateProps {
-  title?: string;
-  stayType?: string;
-  host?: string;
-  guests?: number;
-  bedrooms?: number;
-  beds?: number;
-  bathrooms?: number;
-  hostImgUrl?: string;
-  layoutType?: string;
-  ratings?: number;
-  numberOfReviews?: number;
-  location?: string;
-  country?: string;
+  title: string;
+  stayType: string;
+  host: string;
+  guests: number;
+  bedrooms: number;
+  beds: number;
+  bathrooms: number;
+  hostImgUrl: string;
+  layoutType: string;
+  ratings: number;
+  numberOfReviews: number;
+  location: string;
+  country: string;
   characteristics: {
     title: string;
-    description: string;
+    description?: string | null;
     icon: any;
   }[];
 }
@@ -41,14 +40,14 @@ export interface CharacteristicsSegmentTemplateProps {
  */
 export const CharacteristicsSegmentTemplate: React.FC<CharacteristicsSegmentTemplateProps> = ({
   title,
-  stayType,
+  // stayType,
   host,
-  guests,
-  bedrooms,
-  beds,
-  bathrooms,
+  // guests,
+  // bedrooms,
+  // beds,
+  // bathrooms,
   hostImgUrl,
-  layoutType,
+  // layoutType,
   ratings,
   numberOfReviews,
   location,
@@ -66,7 +65,7 @@ export const CharacteristicsSegmentTemplate: React.FC<CharacteristicsSegmentTemp
                   <Icon
                     variant="fill"
                     fillType="devices"
-                    inversed
+                    // inversed
                     width={18}
                     height={18}
                     fill="black"
@@ -121,11 +120,7 @@ export const CharacteristicsSegmentTemplate: React.FC<CharacteristicsSegmentTemp
         <div className="mt-7">
           <h3 className="text-lg">Online experience hosted by {host}</h3>
         </div>
-        <div
-          className={`py-1 ${[section["display__CharacteristicsSegment"]].join(
-            " "
-          )}`}
-        >
+        <div className={`py-1`}>
           {characteristics.map((characteristic, index) => (
             <div key={index}>
               <Bullet

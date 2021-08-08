@@ -30,8 +30,8 @@ export const CheckInSegmentTemplate: React.FC<CheckInSegmentTemplateProps> = ({
               <Input
                 variant="radio"
                 title="Same day"
-                selected={notice === 0}
-                select={handleNoticeSameDayChange}
+                value={notice === 0}
+                onChange={handleNoticeSameDayChange}
               />
             </div>
             {[{ day: 1 }, { day: 2 }, { day: 3 }, { day: 7 }].map(
@@ -40,8 +40,8 @@ export const CheckInSegmentTemplate: React.FC<CheckInSegmentTemplateProps> = ({
                   <Input
                     variant="radio"
                     title={`${day} ${day > 1 ? "days" : "day"}`}
-                    selected={notice === day}
-                    select={() => handleNoticeDayChange(day)}
+                    value={notice === day}
+                    onChange={() => handleNoticeDayChange(day)}
                   />
                 </div>
               )
@@ -71,7 +71,7 @@ export const CheckInSegmentTemplate: React.FC<CheckInSegmentTemplateProps> = ({
                 variant="select"
                 inputType="checkinFrom"
                 value={checkinFrom}
-                handleChange={(e) => handleSelectChange(e, "checkinFrom")}
+                onChange={(e) => handleSelectChange(e, "checkinFrom")}
               />
             </div>
           </div>
@@ -84,7 +84,7 @@ export const CheckInSegmentTemplate: React.FC<CheckInSegmentTemplateProps> = ({
                 variant="select"
                 inputType="checkinTo"
                 value={checkinTo}
-                handleChange={(e) => handleSelectChange(e, "checkinTo")}
+                onChange={(e) => handleSelectChange(e, "checkinTo")}
               />
             </div>
           </div>

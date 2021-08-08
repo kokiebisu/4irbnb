@@ -14,3 +14,5 @@ terraform/*.tfstate*
 *.tfvars
 
 .DS_STORE
+
+out

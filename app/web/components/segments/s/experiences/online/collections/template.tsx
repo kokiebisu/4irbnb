@@ -1,5 +1,5 @@
 import { Button } from "@atoms";
-import { Card, $Card } from "@card";
+import { Card } from "@card";
 import { useSlider } from "./appearance";
 
 export interface CollectionsSegmentTemplateProps {
@@ -72,19 +72,17 @@ export const CollectionsSegmentTemplate: React.FC<CollectionsSegmentTemplateProp
             <div className="mx-1">
               <Button
                 variant="paginate"
-                animate
-                direction="left"
+                direction="chevronLeft"
                 onClick={handlePreviousSlide}
-                disable={state.activeSlide === 0}
+                disabled={state.activeSlide === 0}
               />
             </div>
             <div className="mx-1">
               <Button
                 variant="paginate"
-                animate
-                direction="right"
+                direction="chevronRight"
                 onClick={handleNextSlide}
-                disable={state.activeSlide === Math.ceil(cards.length / 2) - 1}
+                disabled={state.activeSlide === Math.ceil(cards.length / 2) - 1}
               />
             </div>
           </div>
@@ -98,7 +96,7 @@ export const CollectionsSegmentTemplate: React.FC<CollectionsSegmentTemplateProp
           }}
         >
           <div className="flex">
-            {cards.map((card, index) => {
+            {cards.map((_, index) => {
               return (
                 <div key={index}>
                   <div className="pr-3" style={{ ...cardStyles() }}>

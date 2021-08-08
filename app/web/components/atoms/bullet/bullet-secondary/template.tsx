@@ -1,7 +1,7 @@
 export type SecondaryBulletTemplateProps = {
   icon: JSX.Element;
   title: string;
-  description: string;
+  description?: string | null;
 };
 
 export const SecondaryBulletTemplate = ({

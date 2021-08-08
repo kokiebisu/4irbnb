@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import Router from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
 import { Modal } from "@modal";
@@ -6,14 +6,17 @@ import { Button } from "@atoms";
 import { SearchbarPrototype } from "@prototype/searchbar";
 
 import { Icon } from "@atoms";
-import { useToggleDispatch, useToggleState } from "@context/toggle";
-import { useOnClickOutside } from "@hooks/useOnClickOutside";
+import { useLandingHeaderTemplate } from "./use-template";
 
 export type LandingHeaderTemplateProps = {
   category: any;
-  setCategory: any;
-  data: any;
-  criteria?: any;
+  handleCategorySelect: any;
+  data?: any;
+  types: any;
+  menuCriteria?: boolean;
+  handleGlobeToggle: () => void;
+  handleMenuToggle: () => void;
+  handleSignUpModalToggle: () => void;
 };
 
 /**
@@ -21,95 +24,97 @@ export type LandingHeaderTemplateProps = {
  */
 export const LandingHeaderTemplate = ({
   data,
+  types,
   category,
-  setCategory,
-  criteria,
+  handleCategorySelect,
+  menuCriteria,
+  handleGlobeToggle,
+  handleMenuToggle,
+  handleSignUpModalToggle,
 }: LandingHeaderTemplateProps): JSX.Element => {
-  const toggleState = useToggleState();
-  const searchbarRef = useRef();
-  const [expanded, setExpanded] = useState(false);
-  const toggleDispatch = useToggleDispatch();
-
-  useOnClickOutside(searchbarRef, () => {
-    toggleDispatch({
-      type: "toggle_reset",
-    });
-    setExpanded(!expanded);
-  });
-
-  const types: { [type: string]: { title: string; onClick: any } } = {
-    stay: {
-      title: "Places to stay",
-      onClick: () => setCategory("stay"),
-    },
-    experiences: {
-      title: "Experiences",
-      onClick: () => setCategory("experiences"),
-    },
-    online: {
-      title: "Online Experiences",
-      onClick: () => Router.push("/s/experiences/online"),
-    },
-  };
-
+  const {
+    expanded,
+    handleSearchbarExpand,
+    positionAtPageTop,
+  } = useLandingHeaderTemplate();
   return (
     <header
-      className={`${
-        expanded ? "pt-4 pb-32" : "py-3"
+      className={`w-full ${expanded ? "pt-4 pb-32" : "py-4"} ${
+        positionAtPageTop ? "bg-transparent" : "bg-white shadow-md"
       } relative container-spread transition ease-in-out duration-100`}
     >
-      <div className="hidden sm:flex justify-between relative">
+      <div
+        style={{ gridTemplateColumns: "auto 1fr auto" }}
+        className="hidden sm:grid relative"
+      >
         <div>
-          <div className="mt-1 block lg:hidden">
+          <div className="mt-1 block lg:hidden relative top-1">
             <Icon
               variant="fill"
               fillType="noNameLogo"
-              fill={criteria ? "white" : "red"}
+              fill={positionAtPageTop ? "white" : "red"}
               width={30}
               height={32}
             />
           </div>
-          <div className="hidden lg:block mt-1">
+          <div className="hidden lg:block mt-1 relative top-1">
             <Icon
               variant="fill"
               fillType="nameLogo"
-              fill={criteria ? "white" : "red"}
+              fill={positionAtPageTop ? "white" : "red"}
               width={102}
               height={32}
             />
           </div>
         </div>
-        <div className="flex items-center">
-          <div className={`mx-1 `}>
-            <Button
-              variant="transparent"
-              inverse={criteria}
-              onClick={() => Router.push("/host/homes")}
-            >
-              <h5 className="text-white text-sm font-light ">Become a Host</h5>
-            </Button>
-          </div>
-          <div className="mx-1">
-            <Button
-              variant="transparent"
-              inverse={criteria}
-              onClick={() => toggleDispatch({ type: "toggle_globe" })}
-            >
-              <Icon
-                variant="fill"
-                fillType="globe"
-                fill="white"
-                width={16}
-                height={16}
-              />
-            </Button>
+        <div className="flex lg:justify-center px-8">
+          {positionAtPageTop ? null : (
+            <Button variant="searchbar" onClick={handleSearchbarExpand} />
+          )}
+        </div>
+        <div className="relative flex items-center">
+          <div className="absolute flex items-center right-20">
+            <div className="relative left-3 mx-1">
+              <Button
+                variant="transparent"
+                inverse={positionAtPageTop}
+                onClick={() => Router.push("/host/homes")}
+              >
+                <h5
+                  className={`whitespace-nowrap ${
+                    positionAtPageTop
+                      ? "text-white font-light"
+                      : "text-gray-800 font-medium"
+                  } text-sm`}
+                >
+                  Become a Host
+                </h5>
+              </Button>
+            </div>
+            <div className="mx-1">
+              <Button
+                variant="transparent"
+                inverse={positionAtPageTop}
+                onClick={handleGlobeToggle}
+              >
+                <div className="items-center">
+                  <Icon
+                    variant="fill"
+                    fillType="globe"
+                    width={16}
+                    height={16}
+                    fill={`${positionAtPageTop ? "white" : "black"}`}
+                  />
+                </div>
+              </Button>
+            </div>
           </div>
           <div className="ml-1">
             <Button
               variant="menu"
-              inverse={criteria}
+              inverse={positionAtPageTop}
               authenticated={data}
-              onClick={() => toggleDispatch({ type: "toggle_menu" })}
+              onClick={handleMenuToggle}
             />
           </div>
         </div>
@@ -117,12 +122,12 @@ export const LandingHeaderTemplate = ({
           <Modal
             variant="menu"
             authenticated={data}
-            criteria={toggleState.menu}
+            criteria={menuCriteria}
             dispatch="toggle_menu"
             topOptions={[
               {
                 name: "Sign up",
-                handleClick: () => toggleDispatch({ type: "toggle_auth" }),
+                handleClick: handleSignUpModalToggle,
                 bold: true,
               },
               {
@@ -152,7 +157,7 @@ export const LandingHeaderTemplate = ({
           />
         </div>
       </div>
-      <div
+      {/* <div
         className={`top-9/10 md:top-2/10 px-6 hidden sm:block absolute w-full left-1/2 bottom-0 z-50`}
         style={{
           maxWidth: 900,
@@ -221,7 +226,9 @@ export const LandingHeaderTemplate = ({
                         {Object.keys(types).map((type, index) => {
                           return (
                             <div key={index} className="mx-4">
-                              <button onClick={() => setCategory("stay")}>
+                              <button
+                                onClick={() => handleCategorySelect(type)}
+                              >
                                 <div className="pb-3">
                                   <p
                                     className={`${
@@ -249,9 +256,9 @@ export const LandingHeaderTemplate = ({
                         })}
                       </div>
                     </div>
-                    {/* <div ref={searchbarRef}>
+                    <div ref={searchbarRef}>
                       <Prototype type={category} />
-                    </div> */}
+                    </div>
                   </div>
                 </motion.div>
               ) : (
@@ -269,17 +276,14 @@ export const LandingHeaderTemplate = ({
                     }}
                     animate={{ width: 240, y: 0, opacity: 1 }}
                   >
-                    <Button
-                      variant="searchbar"
-                      onClick={() => setExpanded(!expanded)}
-                    />
+                    
                   </motion.div>
                 </motion.div>
               )}
             </div>
           )}
         </AnimatePresence>
-      </div>
+      </div> */}
     </header>
   );
 };

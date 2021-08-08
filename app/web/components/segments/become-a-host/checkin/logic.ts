@@ -1,13 +1,13 @@
-import { useStayDispatch, useStayState } from '@context/stay';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
-import * as mockData from './mock';
+import { useStayDispatch, useStayState } from "@context/stay";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import * as mockData from "./mock";
 
 export const useCheckInSegment = () => {
   const router = useRouter();
   const stayDispatch = useStayDispatch();
   const { notice, checkinFrom, checkinTo } = useStayState();
-  const [data, setData] = useState({
+  const [data, _] = useState({
     notice,
     checkinFrom,
     checkinTo,
@@ -15,17 +15,17 @@ export const useCheckInSegment = () => {
 
   const handleRedirectToNextPage = () => {
     stayDispatch({
-      type: 'add',
+      type: "add",
       payload: data,
     });
     setTimeout(() => {
-      router.push('/become-a-host/advance');
+      router.push("/become-a-host/advance");
     }, 500);
   };
 
   const handleRedirectToPreviousPage = () => {
     setTimeout(() => {
-      router.push('/become-a-host/review-how-guests-book');
+      router.push("/become-a-host/review-how-guests-book");
     }, 500);
   };
 

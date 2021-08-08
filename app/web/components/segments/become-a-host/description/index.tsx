@@ -1,6 +1,6 @@
-import { Layout } from '@layout';
-import { useDescriptionSegment } from './logic';
-import { DescriptionSegmentTemplate } from './template';
+import { Layout } from "@layout";
+import { useDescriptionSegment } from "./logic";
+import { DescriptionSegmentTemplate } from "./template";
 
 export const DescriptionSegment = () => {
   const {
@@ -8,7 +8,7 @@ export const DescriptionSegment = () => {
     handleRedirectToPreviousPage,
     ...data
   } = useDescriptionSegment();
-  const { description } = data;
+  // const { description } = data;
   return (
     <Layout
       variant="create"
@@ -16,7 +16,7 @@ export const DescriptionSegment = () => {
       percentage={60}
       next={handleRedirectToNextPage}
       back={handleRedirectToPreviousPage}
-      criteria={description.length === 0 || description.length >= 500}
+      // criteria={description.length === 0 || description.length >= 500}
     />
   );
 };

@@ -11,11 +11,9 @@ import { factory } from "./factory";
 export type LayoutProps =
   | ({ variant: "input" } & InputLayoutProps & { children: JSX.Element })
   | ({ variant: "create" } & CreateLayoutProps)
-  | ({ variant: "homes" } & HomesLayoutProps & { children: JSX.Element })
+  | ({ variant: "homes" } & HomesLayoutProps)
   | ({ variant: "landing" } & LandingLayoutProps & { children: JSX.Element })
-  | ({ variant: "onlinehost" } & OnlineHostLayoutProps & {
-        children: JSX.Element;
-      })
+  | ({ variant: "onlinehost" } & OnlineHostLayoutProps)
   | ({ variant: "currency" } & CurrencyLayoutProps)
   | ({ variant: "location" } & LocationLayoutProps);
 

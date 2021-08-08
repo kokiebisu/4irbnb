@@ -1,5 +1,4 @@
 import { useState } from "react";
-import section from "@template/index.module.scss";
 
 import { Button } from "@atoms";
 import { Bullet } from "@atoms";
@@ -20,16 +19,16 @@ const renderContent = (content: string) => {
 };
 
 export interface HostSegmentTemplateProps {
-  host?: string;
+  host: string;
   isSuperhost?: boolean;
-  description?: string;
-  joined?: string;
-  duringStay?: string;
-  numberOfReviews?: number;
+  description: string;
+  joined: string;
+  duringStay: string;
+  // numberOfReviews: number;
   hostImgUrl?: string;
-  responseTime?: string;
-  responseRate?: number;
-  layoutType?: string;
+  responseTime: string;
+  responseRate: number;
+  layoutType: string;
   verified?: boolean;
 }
 
@@ -53,7 +52,7 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
   description,
   joined,
   duringStay,
-  numberOfReviews,
+  // numberOfReviews,
   hostImgUrl,
   responseTime,
   responseRate,
@@ -94,11 +93,7 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
           </div>
         </div>
         <div>
-          <div
-            className={`${
-              layoutType === "room" && section["w__host--left"]
-            } pr-8`}
-          >
+          <div className={`pr-8`}>
             <div>
               <div className="flex items-center flex-wrap">
                 <div className="mr-2 mb-3 pr-1">
@@ -198,7 +193,7 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
               )}
             </div>
           </div>
-          <div className={`pr-5 ${[section["w__host--right"]].join(" ")}`}>
+          <div className={`pr-5`}>
             {layoutType === "room" && (
               <div>
                 <div className="mb-4">
@@ -219,11 +214,16 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
             )}
             <div
               className={
-                layoutType === "experience" && "mt-6 flex items-center"
+                layoutType === "experience" ? "mt-6 flex items-center" : ""
               }
             >
-              <div className={layoutType === "experience" && "mr-4"}>
-                <Button variant="border" size="md" title="Contact host" />
+              <div className={layoutType === "experience" ? "mr-4" : ""}>
+                <Button
+                  variant="border"
+                  size="md"
+                  title="Contact host"
+                  onClick={() => alert("clicked")}
+                />
               </div>
               <div
                 className={`${
@@ -232,9 +232,8 @@ export const HostSegmentTemplate: React.FC<HostSegmentTemplateProps> = ({
               >
                 <div>
                   <Icon
-                    variant="fill"
-                    fillType="shield"
-                    fill="black"
+                    variant="others"
+                    othersType="shield"
                     width={24}
                     height={24}
                   />
