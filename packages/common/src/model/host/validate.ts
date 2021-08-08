@@ -1,7 +1,7 @@
-import { IHost } from './type';
+import { IHost } from "./type";
 
 /**
- * Checks whether a given value is an {@link @nextbnb/common#IHost}
+ * Checks whether a given value is an {@link @4irbnb/common#IHost}
  * @param arg - Value to be evaluated
  * @public
  *
@@ -14,8 +14,8 @@ import { IHost } from './type';
  */
 export const isHost = (arg: any): arg is IHost => {
   return (
-    typeof arg.firstName === 'string' &&
-    typeof arg.lastName === 'string' &&
-    typeof arg.createdAt === 'object'
+    typeof arg.firstName === "string" &&
+    typeof arg.lastName === "string" &&
+    typeof arg.createdAt === "object"
   );
 };

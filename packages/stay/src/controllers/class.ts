@@ -1,5 +1,8 @@
-import { ILoggerService, PackageEnum } from "@nextbnb/common";
-import { createLoggerService } from "@nextbnb/common";
+import {
+  ILoggerService,
+  PackageEnum,
+  createLoggerService,
+} from "@4irbnb/common";
 import { IStayControllerConstructorParams } from ".";
 import { isStay } from "../models";
 import { IStayService, StayService } from "../services";

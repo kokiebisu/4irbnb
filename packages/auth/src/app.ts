@@ -1,4 +1,4 @@
-import { createLoggerService, PackageEnum } from "@nextbnb/common";
+import { createLoggerService, PackageEnum } from "@4irbnb/common";
 import { createAuthController } from "./controllers/factory";
 
 /**

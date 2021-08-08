@@ -1,7 +1,7 @@
 /**
  * @packageDocumentation
  *
- * `@nextbnb/common` is a package containing the interfaces and functions to validate the interface
+ * `@4irbnb/common` is a package containing the interfaces and functions to validate the interface
  * that can be utilized in other packages.
  *
  * @remarks

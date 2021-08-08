@@ -3,12 +3,14 @@ import {
   IUserServiceConstructorParams,
   IUserServiceGetParams,
 } from "./types";
-import { IDatabaseService, InternalError } from "@nextbnb/common";
 import {
+  IDatabaseService,
+  InternalError,
   createLoggerService,
   ILoggerService,
   PackageEnum,
-} from "@nextbnb/common";
+} from "@4irbnb/common";
+
 import { isUser } from "../utils";
 import { IUser } from "..";
 

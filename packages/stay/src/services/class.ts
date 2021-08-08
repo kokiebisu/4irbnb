@@ -7,13 +7,13 @@ import {
   IStayServiceConstructorParams,
   IStayServicePatch,
 } from "./types";
-import { IDatabaseService } from "@nextbnb/common";
 import {
+  IDatabaseService,
   createLoggerService,
   ILoggerService,
   PackageEnum,
   InternalError,
-} from "@nextbnb/common";
+} from "@4irbnb/common";
 
 export class StayService implements IStayService {
   #db: IDatabaseService;

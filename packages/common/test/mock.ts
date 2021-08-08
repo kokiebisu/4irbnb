@@ -1,7 +1,7 @@
 import { PackageEnum } from "../src/enum";
 
 export const storageData = {
-  storageName: "nextbnb-test",
+  storageName: "4irbnb-test",
   key: "test key",
   content: "test data",
 };

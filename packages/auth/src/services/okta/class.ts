@@ -10,7 +10,7 @@ import {
   createLoggerService,
   ILoggerService,
   PackageEnum,
-} from "@nextbnb/common";
+} from "@4irbnb/common";
 
 /**
  * Implementation of the AuthService using the Okta Client

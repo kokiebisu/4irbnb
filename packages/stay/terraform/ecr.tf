@@ -1,9 +1,9 @@
 data "aws_ecr_repository" "stay_api" {
-  name                 = "nextbnb-stay-api"
+  name                 = "4irbnb-stay-api"
 }
 
 data "aws_ecr_repository" "stay_consumer" {
-  name                 = "nextbnb-stay-consumer"
+  name                 = "4irbnb-stay-consumer"
 }
 
 data "aws_ecr_image" "stay_api" {

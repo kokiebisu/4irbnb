@@ -1,4 +1,4 @@
-import { createDatabase } from "@nextbnb/database";
+import { createDatabase } from "@4irbnb/common";
 import { StayService } from "../src/services/class";
 import { data } from "./data";
 

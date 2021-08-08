@@ -10,7 +10,7 @@ COPY packages/web/tsconfig.json .
 COPY packages/web .
 
 WORKDIR /app
-RUN yarn bootstrap --scope=@nextbnb/web 
+RUN yarn bootstrap --scope=@4irbnb/web 
 RUN yarn compile:web
 
 FROM node:alpine as production

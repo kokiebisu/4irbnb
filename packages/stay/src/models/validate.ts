@@ -1,7 +1,7 @@
 import { IStay } from "./type";
 
 /**
- * Checks whether a given value is an {@link @nextbnb/common#IStay}
+ * Checks whether a given value is an {@link @4irbnb/common#IStay}
  * @param arg - Value to be evaluated
  * @public
  *

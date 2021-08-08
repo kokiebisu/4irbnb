@@ -1,4 +1,4 @@
-import { User } from './class';
+import { User } from "./class";
 
 /**
  * @public
@@ -9,7 +9,7 @@ import { User } from './class';
  * @param name -
  * @param iconUrl -
  *
- * @returns a new {@link @nextbnb/user#User} instance
+ * @returns a new {@link @4irbnb/user#User} instance
  */
 export const createUser = (
   id: string,

@@ -1,7 +1,7 @@
 /**
  * @packageDocumentation
  *
- * `@nextbnb/database` is a package containing the interfaces and functions to setup a database client
+ * `@4irbnb/database` is a package containing the interfaces and functions to setup a database client
  * that can be utilized in other packages.
  *
  * @remarks
