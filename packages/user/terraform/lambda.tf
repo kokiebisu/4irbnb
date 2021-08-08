@@ -1,78 +1,48 @@
-data "aws_ecr_repository" "repo" {
-  name = "4irbnb-stay"
+data "aws_ecr_repository" "user_api" {
+  name = "4irbnb-user-api"
 }
 
-data "aws_ecr_image" "image" {
-  repository_name = data.aws_ecr_repository.repo.name
+data "aws_ecr_repository" "user_consumer" {
+  name = "4irbnb-user-consumer"
+}
+
+data "aws_ecr_image" "user_api" {
+  repository_name = data.aws_ecr_repository.user_api.name
   image_tag = "latest"
 }
 
-resource "aws_lambda_function" "stay_service" {
-  function_name = "4irbnb-stay-service"
-  role          = aws_iam_role.stay_service_role.arn
+data "aws_ecr_image" "user_consumer" {
+  repository_name = data.aws_ecr_repository.user_consumer.name
+  image_tag = "latest"
+}
+
+resource "aws_lambda_function" "user_api" {
+  function_name = "4irbnb-user-api"
+  role          = aws_iam_role.user_service_role.arn
   package_type  = "Image"
-  image_uri = "${data.aws_ecr_repository.repo.repository_url}@${data.aws_ecr_image.image.id}"
+  image_uri = "${data.aws_ecr_repository.user_api.repository_url}@${data.aws_ecr_image.user_api.id}"
 }
 
-resource "aws_iam_role" "stay_service_role" {
-  name = "4irbnb-stay-role"
-
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Action = "sts:AssumeRole"
-        Effect = "Allow"
-        Sid    = ""
-        Principal = {
-          Service = "lambda.amazonaws.com"
-        }
-      },
-    ]
-  })
-
-  managed_policy_arns = [aws_iam_policy.dynamodb.arn, aws_iam_policy.cloudwatch_logs.arn]
+resource "aws_lambda_function" "user_consumer" {
+  function_name = "4irbnb-user-consumer"
+  role          = aws_iam_role.user_service_role.arn
+  package_type  = "Image"
+  image_uri = "${data.aws_ecr_repository.user_consumer.repository_url}@${data.aws_ecr_image.user_consumer.id}"
 }
 
-resource "aws_iam_policy" "dynamodb" {
-  name = "dynamodb"
-
-  policy = jsonencode({
-    "Version" : "2012-10-17",
-    "Statement" : [
-      {
-        "Sid" : "VisualEditor0",
-        "Effect" : "Allow",
-        "Action" : [
-          "dynamodb:*",
-        ],
-        "Resource" : "*"
-      }
-    ]
-  })
-}
-
-resource "aws_iam_policy" "cloudwatch_logs" {
-  name = "cloudwatch_logs"
-
-  policy = jsonencode({
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Action": [
-                "logs:*"
-            ],
-            "Effect": "Allow",
-            "Resource": "*"
-        }
-    ]
-})
-}
-
-resource "aws_lambda_permission" "stay" {
+resource "aws_lambda_permission" "user" {
     statement_id = "AllowExecutionFromAPIGateway"
     action = "lambda:InvokeFunction"
-    function_name = aws_lambda_function.stay_service.function_name
+    function_name = aws_lambda_function.user_api.function_name
+    principal = "apigateway.amazonaws.com"
+
+    source_arn = "${var.api_gateway_execution_arn}/*/*"
+}
+
+resource "aws_lambda_permission" "user" {
+    statement_id = "AllowExecutionFromAPIGateway"
+    action = "lambda:InvokeFunction"
+    function_name = aws_lambda_function.user_consumer.function_name
     principal = "apigateway.amazonaws.com"
 
     source_arn = "${var.api_gateway_execution_arn}/*/*"
