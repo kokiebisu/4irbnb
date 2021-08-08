@@ -36,7 +36,7 @@ export const Modal = ({
   criteria?: boolean;
   lock?: boolean;
   noPadding?: boolean;
-  animate: string;
+  animate?: string;
   dispatch?: string;
 }): JSX.Element => {
   const { criteria } = props;

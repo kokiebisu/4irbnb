@@ -57,6 +57,7 @@ export const CommunitySegmentTemplate: React.FC<CommunitySegmentTemplateProps> =
                 title="Get started"
                 color="red"
                 onClick={() => Router.push("/become-a-host")}
+                fill="black"
               />
             </div>
           </div>
@@ -92,16 +93,14 @@ export const CommunitySegmentTemplate: React.FC<CommunitySegmentTemplateProps> =
             <div className="mr-2">
               <Button
                 variant="paginate"
-                animate
-                direction="left"
+                direction="chevronLeft"
                 onClick={previous}
               />
             </div>
             <div>
               <Button
                 variant="paginate"
-                animate
-                direction="right"
+                direction="chevronRight"
                 onClick={next}
               />
             </div>

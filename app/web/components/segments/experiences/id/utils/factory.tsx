@@ -13,25 +13,25 @@ import { ReviewsSegment } from "../reviews";
 export const factory = (props: SegmentProps) => {
   switch (props.variant) {
     case "available":
-      return <AvailableSegment {...props} />;
+      return <AvailableSegment />;
     case "bring":
-      return <BringSegment {...props} />;
+      return <BringSegment />;
     case "characteristics":
-      return <CharacteristicsSegment {...props} />;
+      return <CharacteristicsSegment />;
     case "description":
-      return <DescriptionSegment {...props} />;
+      return <DescriptionSegment />;
     case "experiences":
-      return <ExperiencesSegment {...props} />;
+      return <ExperiencesSegment />;
     case "host":
-      return <HostSegment {...props} />;
+      return <HostSegment />;
     case "know":
-      return <KnowSegment {...props} />;
+      return <KnowSegment />;
     case "participate":
-      return <ParticipateSegment {...props} />;
+      return <ParticipateSegment />;
     case "preview":
-      return <PreviewSegment {...props} />;
+      return <PreviewSegment />;
     case "reviews":
-      return <ReviewsSegment {...props} />;
+      return <ReviewsSegment />;
     default:
       throw new Error(`[Invalid variant] Experiences`);
   }

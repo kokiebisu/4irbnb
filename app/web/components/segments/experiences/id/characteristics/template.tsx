@@ -17,7 +17,7 @@ export interface CharacteristicsSegmentTemplateProps {
   country: string;
   characteristics: {
     title: string;
-    description: string | null;
+    description?: string | null;
     icon: any;
   }[];
 }

@@ -1,7 +1,7 @@
-import { PrimaryBulletTemplate, PrimaryBulletTemplateProps } from './template';
+import { PrimaryBulletTemplate, PrimaryBulletTemplateProps } from "./template";
 
 export type PrimaryBulletProps = PrimaryBulletTemplateProps;
 
-export const PrimaryBullet = (props: PrimaryBulletProps): JSX.Element => {
-  return <PrimaryBulletTemplate {...props} />;
-};
+export const PrimaryBullet = (props: PrimaryBulletProps): JSX.Element => (
+  <PrimaryBulletTemplate {...props} />
+);

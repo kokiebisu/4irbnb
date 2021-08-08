@@ -1,15 +1,7 @@
-import { useCommunitySegment } from './logic';
-import { CommunitySegmentTemplate } from './template';
+import { useCommunitySegment } from "./logic";
+import { CommunitySegmentTemplate } from "./template";
 
-export const CommunitySegmentSegment = (props) => {
+export const CommunitySegmentSegment = () => {
   const data = useCommunitySegment();
-  return <CommunitySegmentTemplate {...data} {...props} />;
-};
-
-export const community = (props) => {
-  return {
-    community: {
-      component: <CommunitySegmentSegment {...props} />,
-    },
-  };
+  return <CommunitySegmentTemplate {...data} />;
 };

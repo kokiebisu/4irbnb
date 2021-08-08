@@ -1,24 +1,16 @@
-import { AvailableSegmentProps } from "./available";
-import { BringSegmentProps } from "./bring";
-import { CharacteristicsSegmentProps } from "./characteristics";
-import { DescriptionSegmentProps } from "./description";
-import { ExperiencesSegmentProps } from "./experiences";
-import { HostSegmentProps } from "./host";
-import { PreviewSegmentProps } from "./preview";
-import { ReviewsSegmentProps } from "./reviews";
 import { factory } from "./utils/factory";
 
 export type SegmentProps =
-  | ({ variable: "available" } & AvailableSegmentProps)
-  | ({ variant: "bring" } & BringSegmentProps)
-  | ({ variant: "characteristics" } & CharacteristicsSegmentProps)
-  | ({ variant: "description" } & DescriptionSegmentProps)
-  | ({ variant: "experiences" } & ExperiencesSegmentProps)
-  | ({ variant: "host" } & HostSegmentProps)
+  | { variant: "available" }
+  | { variant: "bring" }
+  | { variant: "characteristics" }
+  | { variant: "description" }
+  | { variant: "experiences" }
+  | { variant: "host" }
   | { variant: "know" }
   | { variant: "participate" }
-  | ({ variant: "preview" } & PreviewSegmentProps)
-  | ({ variant: "reviews" } & ReviewsSegmentProps);
+  | { variant: "preview" }
+  | { variant: "reviews" };
 
 /**
  * Bundles the button components
