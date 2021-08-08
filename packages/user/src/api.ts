@@ -7,35 +7,20 @@ export const handler = async (event: any) => {
     packageName: PackageEnum.stay,
     className: "",
   });
+  console.log(controller);
   logger.log({ location: "handler", message: "Entered handler..." });
   try {
     switch (event.requestContext.resourceId) {
-      case "GET /stay/{id}":
-        logger.log({
-          location: "handler",
-          message: "Entered GET /stay/{id}...",
-        });
-        return await controller.get({
-          identifier: {
-            id: event.pathParameters.id,
-          },
-        });
-      case "DELETE /stay/{id}":
-        logger.log({
-          location: "handler",
-          message: "Entered DELETE /stay/{id}...",
-        });
-        return await controller.delete({
-          identifier: {
-            id: event.payload.identifier,
-          },
-        });
-      case "PUT /stays":
-        logger.log({
-          location: "handler",
-          message: "Entered PUT /stays...",
-        });
-        return await controller.post({ data: JSON.parse(event.body) });
+      // case "GET /stay/{id}":
+      //   logger.log({
+      //     location: "handler",
+      //     message: "Entered GET /stay/{id}...",
+      //   });
+      //   return await controller.get({
+      //     identifier: {
+      //       id: event.pathParameters.id,
+      //     },
+      //   })
       default:
         throw new Error(
           `Unsupported route: "${event.requestContext.resourceId}"`

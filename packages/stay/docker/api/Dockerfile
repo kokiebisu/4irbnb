@@ -28,4 +28,4 @@ WORKDIR /var/task
 COPY --from=builder /4irbnb/packages/stay/dist ./dist
 COPY --from=builder /4irbnb/packages/stay/node_modules ./node_modules
 
-CMD ["dist/app.handler"]
+CMD ["dist/api.handler"]

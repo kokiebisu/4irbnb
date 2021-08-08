@@ -25,7 +25,7 @@ RUN yarn build
 FROM amazon/aws-lambda-nodejs:14 as prod
 
 WORKDIR /var/task
-COPY --from=builder /4irbnb/packages/stay/dist ./dist
-COPY --from=builder /4irbnb/packages/stay/node_modules ./node_modules
+COPY --from=builder /4irbnb/packages/user/dist ./dist
+COPY --from=builder /4irbnb/packages/user/node_modules ./node_modules
 
-CMD ["dist/app.handler"]
+CMD ["dist/api.handler"]
