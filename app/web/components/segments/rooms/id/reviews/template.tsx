@@ -2,7 +2,7 @@ import { Icon } from "@atoms";
 
 import { Button } from "@atoms";
 import { Bullet } from "@atoms";
-import { Card } from "@card";
+// import { Card } from "@card";
 
 export interface ReviewsSegmentTemplateProps {
   ratings: number;
@@ -22,7 +22,7 @@ export interface ReviewsSegmentTemplateProps {
  */
 export const ReviewsSegmentTemplate: React.FC<ReviewsSegmentTemplateProps> = ({
   categories,
-  reviews,
+  // reviews,
   ratings,
   numberOfReviews,
   layoutType,
@@ -58,12 +58,7 @@ export const ReviewsSegmentTemplate: React.FC<ReviewsSegmentTemplateProps> = ({
                     index: number
                   ) => {
                     return (
-                      <div
-                        key={index}
-                        className={`${[section["m__review--bullet"]].join(
-                          " "
-                        )} py-2`}
-                      >
+                      <div key={index} className={`py-2`}>
                         <Bullet
                           variant="score"
                           category={category?.type}
@@ -76,12 +71,8 @@ export const ReviewsSegmentTemplate: React.FC<ReviewsSegmentTemplateProps> = ({
               : null}
           </div>
         )}
-        <div
-          className={`w-full mt-4 ${[section["display__reviews--wrapper"]].join(
-            " "
-          )}`}
-        >
-          {reviews.map((review, index) => {
+        <div className={`w-full mt-4`}>
+          {/* {reviews.map((review: any, index: any) => {
             return (
               <div className="mr-12 mb-6" key={index}>
                 <Card
@@ -91,7 +82,7 @@ export const ReviewsSegmentTemplate: React.FC<ReviewsSegmentTemplateProps> = ({
                 />
               </div>
             );
-          })}
+          })} */}
         </div>
         <div className="mt-4">
           <Button

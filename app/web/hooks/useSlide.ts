@@ -14,7 +14,7 @@ export const useSlide = (moveBy: string) => {
   const moveByType = {
     whole: width,
   };
-  const containerRef = useRef<HTMLDivElement>();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleRef = () => {
     if (containerRef.current && containerRef.current.getBoundingClientRect()) {

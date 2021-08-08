@@ -8,8 +8,6 @@ export interface PreviewSegmentTemplateProps {
   location: string;
   province: string;
   country: string;
-  layoutType: string;
-  images: string[];
 }
 
 /**
@@ -21,8 +19,6 @@ export interface PreviewSegmentTemplateProps {
  * @param {string} location - Location of the room/experience
  * @param {string} province - Province of the room/experience
  * @param {string} country - Country of the room/experience
- * @param {string} layoutType - Type of layout
- * @param {string[]} images - Images for the panel
  */
 export const PreviewSegmentTemplate: React.FC<PreviewSegmentTemplateProps> = ({
   title = "Title here",

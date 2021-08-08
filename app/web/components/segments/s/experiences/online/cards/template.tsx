@@ -1,4 +1,4 @@
-import { Card, $Card } from "@card";
+import { Card } from "@card";
 import { Button } from "@atoms";
 import { useSlide } from "@hooks/useSlide";
 
@@ -46,7 +46,7 @@ export const CardsSegmentTemplate = ({
             <div className="mx-1">
               <Button
                 variant="paginate"
-                direction="left"
+                direction="chevronLeft"
                 onClick={previous}
                 disabled={state.activeSlide === 0}
               />
@@ -54,7 +54,7 @@ export const CardsSegmentTemplate = ({
             <div className="px-1">
               <Button
                 variant="paginate"
-                direction="right"
+                direction="chevronRight"
                 onClick={next}
                 disabled={
                   state.activeSlide ===
