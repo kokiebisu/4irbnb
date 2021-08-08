@@ -1,15 +1,9 @@
-import { useHorizontalCard } from '@card/card-horizontal/logic';
-import { HostingCardTemplate } from './template';
+import { useHorizontalCard } from "@card/card-horizontal/logic";
+import { HostingCardTemplate, HostingCardTemplateProps } from "./template";
 
-export const HostingCard = (props) => {
-  const data = useHorizontalCard(props);
+export type HostingCardProps = HostingCardTemplateProps;
+
+export const HostingCard = (props: HostingCardProps): JSX.Element => {
+  const data = useHorizontalCard();
   return <HostingCardTemplate {...props} {...data} />;
-};
-
-export const hosting = (props) => {
-  return {
-    hosting: {
-      component: <HostingCard {...props} />,
-    },
-  };
 };

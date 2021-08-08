@@ -1,11 +1,11 @@
-import { useRef, useState } from 'react';
+import { useRef, useState } from "react";
 
-export interface PriceInputTemplateProps {
-  name?: string;
-  onChange?: (e: any) => void;
-  onKeyPress?: (e: any) => void;
-  value?: any;
-}
+export type PriceInputTemplateProps = {
+  name: string;
+  onChange: (e: any) => void;
+  onKeyPress: (e: any) => void;
+  value?: number;
+};
 
 /**
  * Renders the text input component
@@ -14,23 +14,21 @@ export interface PriceInputTemplateProps {
  * @param {string} value - Current value of the input
  * @param {function} onKeyPress - Event happened on key press
  */
-export const PriceInputTemplate: React.FC<PriceInputTemplateProps> = ({
+export const PriceInputTemplate = ({
   name,
   onChange,
   onKeyPress,
   value,
-}) => {
-  const inputRef = useRef();
+}: PriceInputTemplateProps): JSX.Element => {
+  const inputRef = useRef<HTMLInputElement>(null);
   const [active, setActive] = useState(false);
 
   return (
     <div
-      className={`relative py-3 px-4 items-center rounded-lg border border-gray-700 h-12 ${[
-        input['outside'],
-      ].join(' ')} ${
+      className={`relative py-3 px-4 items-center rounded-lg border border-gray-700 h-12 ${
         active
-          ? 'border-2 border-black border-solid'
-          : 'border-1 border-gray-400 border-solid'
+          ? "border-2 border-black border-solid"
+          : "border-1 border-gray-400 border-solid"
       }`}
     >
       <div className="relative h-full w-full flex items-center">

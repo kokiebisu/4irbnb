@@ -1,11 +1,13 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import React, { useRef, useState } from 'react';
-import { Animation } from '@animation';
-import { Button } from '@atoms';
-import { useTimeout } from '@hooks/useTimeout';
+import { AnimatePresence, motion } from "framer-motion";
+import React, { useRef, useState } from "react";
+import { Animation } from "@animation";
+import { Button } from "@atoms";
+import { useTimeout } from "@hooks/useTimeout";
 
-export const Video: React.FC<{ videoUrl?: string }> = ({ videoUrl }) => {
-  const videoRef = useRef<HTMLVideoElement>();
+export type VideoProps = { videoUrl?: string };
+
+export const Video = ({ videoUrl }: VideoProps): JSX.Element => {
+  const videoRef = useRef<HTMLVideoElement>(null);
   const isLoading = useTimeout(1000);
   const [play, setPlay] = useState(true);
 
@@ -43,8 +45,8 @@ export const Video: React.FC<{ videoUrl?: string }> = ({ videoUrl }) => {
         <div
           className="absolute z-40"
           style={{
-            bottom: '2%',
-            left: '2%',
+            bottom: "2%",
+            left: "2%",
           }}
         >
           <motion.div
@@ -58,10 +60,12 @@ export const Video: React.FC<{ videoUrl?: string }> = ({ videoUrl }) => {
               variant="video"
               play={!play}
               onClick={() => {
-                if (!play) {
-                  videoRef.current.play();
-                } else {
-                  videoRef.current.pause();
+                if (videoRef.current) {
+                  if (!play) {
+                    videoRef.current.play();
+                  } else {
+                    videoRef.current.pause();
+                  }
                 }
                 setPlay(!play);
               }}

@@ -1,15 +1,9 @@
-import { useNearbyCard } from './logic';
-import { NearbyCardTemplate } from './template';
+import { useNearbyCard } from "./logic";
+import { NearbyCardTemplate, NearbyCardTemplateProps } from "./template";
 
-const NearbyCard = (props) => {
+export type NearbyCardProps = NearbyCardTemplateProps;
+
+export const NearbyCard = (props: NearbyCardProps): JSX.Element => {
   const data = useNearbyCard();
   return <NearbyCardTemplate {...props} {...data} />;
-};
-
-export const nearby = (props) => {
-  return {
-    nearby: {
-      component: <NearbyCard {...props} />,
-    },
-  };
 };

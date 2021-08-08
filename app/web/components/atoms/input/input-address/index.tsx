@@ -1,7 +1,7 @@
-import { AddressInputTemplate, AddressInputTemplateProps } from './template';
+import { AddressInputTemplate, AddressInputTemplateProps } from "./template";
 
-export interface AddressInputProps extends AddressInputTemplateProps {}
+export type AddressInputProps = AddressInputTemplateProps;
 
-export const AddressInput: React.FC<AddressInputProps> = ({ ...props }) => {
+export const AddressInput = ({ ...props }: AddressInputProps): JSX.Element => {
   return <AddressInputTemplate {...props} />;
 };

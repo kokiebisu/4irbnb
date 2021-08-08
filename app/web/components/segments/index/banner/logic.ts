@@ -1,23 +1,20 @@
-import { useHandleScroll } from '@hooks/useHandleScroll';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 export const useBannerSegment = () => {
   const router = useRouter();
-  const scrollPosition = useHandleScroll();
 
-  const [category, setCategory] = useState('stay');
+  const [category, setCategory] = useState("stay");
 
-  const handleCategoryChange = (value) => {
+  const handleCategoryChange = (value: string) => {
     setCategory(value);
   };
 
-  const handleRedirectToHomePage = () => router.push('/');
+  const handleHomeRedirect = () => router.push("/");
 
   return {
-    scrollPosition,
     category,
     handleCategoryChange,
-    handleRedirectToHomePage,
+    handleHomeRedirect,
   };
 };

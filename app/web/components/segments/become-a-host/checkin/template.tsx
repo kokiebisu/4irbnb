@@ -1,13 +1,13 @@
-import { Input, $Input } from '@atoms';
-import { Layout } from '@layout';
+import { Input } from "@atoms";
+import { Layout } from "@layout";
 
 export interface CheckInSegmentTemplateProps {
   notice?: number;
   checkinFrom?: any;
   checkinTo?: any;
-  handleNoticeSameDayChange?: () => void;
-  handleNoticeDayChange?: (day: any) => void;
-  handleSelectChange?: (e: any, type: string) => void;
+  handleNoticeSameDayChange: () => void;
+  handleNoticeDayChange: (day: any) => void;
+  handleSelectChange: (e: any, type: string) => void;
 }
 
 export const CheckInSegmentTemplate: React.FC<CheckInSegmentTemplateProps> = ({
@@ -28,20 +28,20 @@ export const CheckInSegmentTemplate: React.FC<CheckInSegmentTemplateProps> = ({
           <div className="mt-4">
             <div className="mb-3">
               <Input
-                variant={$Input.RADIO}
+                variant="radio"
                 title="Same day"
-                selected={notice === 0}
-                select={handleNoticeSameDayChange}
+                value={notice === 0}
+                onChange={handleNoticeSameDayChange}
               />
             </div>
             {[{ day: 1 }, { day: 2 }, { day: 3 }, { day: 7 }].map(
               ({ day }, index) => (
                 <div key={index} className="mb-3">
                   <Input
-                    variant={$Input.RADIO}
-                    title={`${day} ${day > 1 ? 'days' : 'day'}`}
-                    selected={notice === day}
-                    select={() => handleNoticeDayChange(day)}
+                    variant="radio"
+                    title={`${day} ${day > 1 ? "days" : "day"}`}
+                    value={notice === day}
+                    onChange={() => handleNoticeDayChange(day)}
                   />
                 </div>
               )
@@ -68,10 +68,10 @@ export const CheckInSegmentTemplate: React.FC<CheckInSegmentTemplateProps> = ({
             </div>
             <div>
               <Input
-                variant={$Input.SELECT}
+                variant="select"
                 inputType="checkinFrom"
                 value={checkinFrom}
-                handleChange={(e) => handleSelectChange(e, 'checkinFrom')}
+                onChange={(e) => handleSelectChange(e, "checkinFrom")}
               />
             </div>
           </div>
@@ -81,10 +81,10 @@ export const CheckInSegmentTemplate: React.FC<CheckInSegmentTemplateProps> = ({
             </div>
             <div>
               <Input
-                variant={$Input.SELECT}
+                variant="select"
                 inputType="checkinTo"
                 value={checkinTo}
-                handleChange={(e) => handleSelectChange(e, 'checkinTo')}
+                onChange={(e) => handleSelectChange(e, "checkinTo")}
               />
             </div>
           </div>

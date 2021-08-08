@@ -1,8 +1,8 @@
-import { Card, $Card } from '@card';
+import { Card } from "@card";
 
 export interface ArrangementsSegmentTemplateProps {
-  title?: string;
-  arrangements?: { type: string; beds: { type: string; count: number }[] }[];
+  title: string;
+  arrangements: { type: string; beds: { type: string; count: number } }[];
 }
 
 /**
@@ -24,7 +24,7 @@ export const ArrangementsSegmentTemplate: React.FC<ArrangementsSegmentTemplatePr
           {arrangements.map((arrangement, index) => {
             return (
               <div key={index} className="mr-3">
-                <Card variant={$Card.ARRANGEMENTS} card={arrangement} />
+                <Card variant="arrangements" {...arrangement.beds} />
               </div>
             );
           })}

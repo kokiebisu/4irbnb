@@ -1,22 +1,22 @@
-import { Icon } from '@atoms';
-import { Bullet } from '@atoms';
-import { ImageSlider } from '../../../particles/particle-slider/template';
-import { Card, $Card } from '@card';
+import { Icon } from "@atoms";
+import { Bullet } from "@atoms";
+import { ImageSlider } from "../../../particles/particle-slider/template";
+import { Card } from "@card";
 
 export interface StayCardTemplateProps {
-  images?: string[];
-  typeStay?: string;
-  location?: string;
-  title?: string;
-  accomodations?: {
+  images: string[];
+  typeStay: string;
+  location: string;
+  title: string;
+  accomodations: {
     guests: number;
     bedroom: number;
     beds: number;
     bath: number;
   };
-  characteristics?: string[];
-  ratings?: number;
-  reviews?: number;
+  characteristics: string[];
+  ratings: number;
+  reviews: number;
 }
 
 /**
@@ -28,24 +28,26 @@ export interface StayCardTemplateProps {
  * @param {Object} accomodations - Information about the accomodations of the stay
  * @param {string[]} characteristics - List of characteristics
  */
-export const StayCardTemplate: React.FC<StayCardTemplateProps> = ({
+export const StayCardTemplate = ({
   images,
   typeStay,
   location,
   title,
   accomodations,
   characteristics,
-}) => {
+}: StayCardTemplateProps): JSX.Element => {
   return (
     <div>
       <div className="sm:hidden sm:mb-8">
         <Card
-          variant={$Card.HORIZONTAL}
-          type="Type of Stay"
-          ratings={5.0}
-          location="Location"
-          title="Title should be here"
-          numberOfReviews={100}
+          variant="horizontal"
+          card={{
+            type: "Type of Stay",
+            ratings: 5.0,
+            location: "Location",
+            title: "Title should be here",
+            numberOfReviews: 100,
+          }}
         />
       </div>
       <div className="hidden sm:block">
@@ -106,12 +108,11 @@ export const StayCardTemplate: React.FC<StayCardTemplateProps> = ({
             </div>
             <div>
               <Icon
-                variant="action"
-                actionType="heart"
+                variant="fill"
+                fillType="heart"
                 fill="white"
-                stroke="black"
-                strokeWidth={2}
                 width={24}
+                height={24}
               />
             </div>
           </div>

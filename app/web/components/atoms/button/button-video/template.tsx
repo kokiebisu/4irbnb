@@ -1,4 +1,4 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
 export type VideoButtonTemplateProps = {
   play?: boolean;
@@ -18,16 +18,16 @@ export const VideoButtonTemplate = ({
       <div className={`inline-block rounded-full p-3 hover:bg-blur`}>
         {play ? (
           <Icon
-            variant="action"
-            actionType="play"
+            variant="fill"
+            fillType="play"
             width={15}
             height={15}
             fill="white"
           />
         ) : (
           <Icon
-            variant="action"
-            actionType="pause"
+            variant="fill"
+            fillType="pause"
             width={15}
             height={15}
             fill="white"

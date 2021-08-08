@@ -1,8 +1,9 @@
-import React from 'react';
+import React from "react";
 
 export type PrimaryBulletTemplateProps = {
   icon: JSX.Element;
   title: string;
+  description?: string | null;
 };
 
 export const PrimaryBulletTemplate = ({

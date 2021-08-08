@@ -1,10 +1,10 @@
-import { Header } from '@header';
-import { Bar } from '@bar';
-import { Segment } from '@template/s/experiences/online';
-import { Modal } from '@modal';
-import { Footer } from '@footer';
-import { useToggleState } from '@context/toggle';
-import { Button } from '@atoms';
+import { Header } from "@header";
+// import { Bar } from "@bar";
+import { Segment } from "@template/s/experiences/online";
+import { Modal } from "@modal";
+import { Footer } from "@footer";
+import { useToggleState } from "@context/toggle";
+// import { Button } from "@atoms";
 
 const OnlinePage = () => {
   const toggleState = useToggleState();
@@ -12,7 +12,7 @@ const OnlinePage = () => {
     <div>
       <div className="shadow-sm">
         <div className="container-spread">
-          <Header variant="white" />
+          <Header variant="white" data={{}} />
         </div>
       </div>
       <div className="my-3">
@@ -22,9 +22,9 @@ const OnlinePage = () => {
       </div>
       <div className="sticky top-0 z-50">
         <div className="bg-white">
-          <div className="container-spread py-4">
+          {/* <div className="container-spread py-4">
             <Bar variant="filters" />
-          </div>
+          </div> */}
           <div
             className="w-full bg-gray-500"
             style={{
@@ -39,23 +39,23 @@ const OnlinePage = () => {
       <div className="my-1 container-spread">
         <Segment variant="cards" />
       </div>
-      <div className="my-1 container-spread">
+      {/* <div className="my-1 container-spread">
         <Segment variant="starting" />
-      </div>
+      </div> */}
       <div className="my-1 container-spread">
         <Segment variant="collections" />
       </div>
       <div className="my-1 container-spread">
         <Segment variant="cards" />
       </div>
-      <div
+      {/* <div
         className="flex justify-center"
         style={{
-          padding: '40px 0 56px 0',
+          padding: "40px 0 56px 0",
         }}
       >
         <Button variant="primary" title="Load more" fill="black" />
-      </div>
+      </div> */}
       <div>
         <Footer />
       </div>
@@ -76,7 +76,7 @@ const OnlinePage = () => {
           className="fixed bottom-0 left-0 right-0 top-0"
           style={{
             zIndex: 60,
-            backgroundColor: 'rgba(0, 0, 0, 0.6)',
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
           }}
         >
           <div className="flex justify-center items-center h-screen">

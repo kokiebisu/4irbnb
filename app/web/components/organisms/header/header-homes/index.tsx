@@ -1,15 +1,5 @@
-import { HomesHeaderTemplate, HomesHeaderTemplateProps } from './template';
+import { HomesHeaderTemplate, HomesHeaderTemplateProps } from "./template";
 
-export interface HomesHeaderProps extends HomesHeaderTemplateProps {}
+export type HomesHeaderProps = HomesHeaderTemplateProps;
 
-export const HomesHeader: React.FC<HomesHeaderProps> = (props) => {
-  return <HomesHeaderTemplate {...props} />;
-};
-
-export const homes = (props) => {
-  return {
-    homes: {
-      component: <HomesHeader {...props} />,
-    },
-  };
-};
+export const HomesHeader = (): JSX.Element => <HomesHeaderTemplate />;

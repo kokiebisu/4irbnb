@@ -1,9 +1,8 @@
-import { Bar } from '@bar';
-import { Modal } from '@modal';
-import useOnClickOutside from '@hooks/useOnClickOutside';
-import { useRef } from 'react';
+import { Bar } from "@bar";
+import useOnClickOutside from "@hooks/useOnClickOutside";
+import { useRef } from "react";
 
-export interface SearchbarPrototypeTemplateProps {
+export type SearchbarPrototypeTemplateProps = {
   containerRef?: any;
   toggleState?: any;
   transparent?: any;
@@ -14,19 +13,15 @@ export interface SearchbarPrototypeTemplateProps {
   contents?: any;
   setCategory?: any;
   expanded?: boolean;
-}
+};
 
-export const SearchbarPrototypeTemplate: React.FC<SearchbarPrototypeTemplateProps> = ({
-  toggleState,
+export const SearchbarPrototypeTemplate = ({
   transparent,
-  type,
   handleSelectedChange,
   setExpanded,
   expanded,
   selected,
-  contents,
-  setCategory,
-}) => {
+}: SearchbarPrototypeTemplateProps): JSX.Element => {
   const containerRef = useRef();
 
   useOnClickOutside(containerRef, () => {
@@ -42,12 +37,14 @@ export const SearchbarPrototypeTemplate: React.FC<SearchbarPrototypeTemplateProp
       <Bar
         variant="search"
         selected={selected}
-        setSelected={handleSelectedChange}
-        type={type}
-        setCategory={setCategory}
+        handleSelectedChange={handleSelectedChange}
+        type={"stay"}
         transparent={transparent}
+        handleGuestsSelected={() => alert("yo")}
+        handleCheckInSelected={() => alert("yo")}
+        handleSearch={() => alert("search")}
       />
-      {Object.keys(contents).map((content, index) => {
+      {/* {Object.keys(contents).map((content, index) => {
         return (
           <div
             key={index}
@@ -66,7 +63,7 @@ export const SearchbarPrototypeTemplate: React.FC<SearchbarPrototypeTemplateProp
             </div>
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 };

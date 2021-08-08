@@ -1,4 +1,4 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
 export type SearchButtonTemplateProps = {
   expanded?: boolean;
@@ -16,18 +16,18 @@ export const SearchButtonTemplate = ({
   return (
     <button
       data-testid="search-button"
-      className="inline-block"
+      className="inline-flex items-center"
       onClick={onClick}
     >
       <div
         className={`inline-flex items-center bg-primary rounded-full ${
-          expanded ? 'px-5 py-3' : ''
+          expanded ? "px-5 py-3" : ""
         } transition`}
       >
-        <div className={`${expanded ? 'mr-1' : 'p-4'}`}>
+        <div className={`${expanded ? "mr-1" : "p-4"}`}>
           <Icon
-            variant="general"
-            generalType="magnifyGlass"
+            variant="stroke"
+            strokeType="magnifyGlass"
             width={13}
             height={13}
             stroke="white"

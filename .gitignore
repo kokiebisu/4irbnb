@@ -3,9 +3,16 @@
 
 # debug
 npm-debug.log*
+lerna-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
 node_modules
 
-terraform/variables.tf
+terraform/.terraform
+terraform/*.tfstate*
+*.tfvars
+
+.DS_STORE
+
+out

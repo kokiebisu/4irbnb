@@ -1,5 +1,5 @@
-import { Button } from '@atoms';
-import { Icon } from '@atoms';
+import { Button } from "@atoms";
+import { Icon } from "@atoms";
 
 export type AvailabilityBarTemplateProps = {
   ratings?: number;
@@ -21,7 +21,13 @@ export const AvailabilityBarTemplate = ({
         <p>Add dates for prices</p>
         <div className="flex items-center">
           <div>
-            <Icon variant="profile" profileType="star" width={12} height={12} />
+            <Icon
+              variant="fill"
+              fillType="star"
+              width={12}
+              height={12}
+              fill="black"
+            />
           </div>
           <div>
             <span className="inline-block text-xs ml-1">{ratings}</span>
@@ -37,7 +43,8 @@ export const AvailabilityBarTemplate = ({
           title="Check availability"
           color="white"
           size="sm"
-          onClick={() => alert('Triggered onClick')}
+          fill="black"
+          onClick={() => alert("Triggered onClick")}
         />
       </div>
     </div>

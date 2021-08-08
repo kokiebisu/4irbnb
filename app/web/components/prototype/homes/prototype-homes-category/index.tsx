@@ -1,19 +1,11 @@
 import {
   CategoryPrototypeTemplate,
   CategoryPrototypeTemplateProps,
-} from './template';
+} from "./template";
 
 export interface CategoryPrototypeProps
   extends CategoryPrototypeTemplateProps {}
 
-export const CategoryPrototype: React.FC<CategoryPrototypeProps> = (props) => {
-  return <CategoryPrototypeTemplate {...props} />;
-};
-
-export const category = (props: CategoryPrototypeProps) => {
-  return {
-    category: {
-      component: <CategoryPrototype {...props} />,
-    },
-  };
-};
+export const CategoryPrototype: React.FC<CategoryPrototypeProps> = (props) => (
+  <CategoryPrototypeTemplate {...props} />
+);

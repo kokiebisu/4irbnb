@@ -1,18 +1,3 @@
-import {
-  OnlineHostHeaderTemplate,
-  OnlineHostHeaderTemplateProps,
-} from './template';
+import { OnlineHostHeaderTemplate } from "./template";
 
-export interface OnlineHostHeaderProps extends OnlineHostHeaderTemplateProps {}
-
-export const OnlineHostHeader: React.FC<OnlineHostHeaderProps> = (props) => {
-  return <OnlineHostHeaderTemplate {...props} />;
-};
-
-export const onlinehost = (props) => {
-  return {
-    onlinehost: {
-      component: <OnlineHostHeader {...props} />,
-    },
-  };
-};
+export const OnlineHostHeader = (): JSX.Element => <OnlineHostHeaderTemplate />;

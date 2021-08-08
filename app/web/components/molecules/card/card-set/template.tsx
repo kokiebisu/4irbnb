@@ -1,8 +1,6 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
-export interface SetCardTemplateProps {}
-
-export const SetCardTemplate: React.FC<SetCardTemplateProps> = () => {
+export const SetCardTemplate = (): JSX.Element => {
   return (
     <div className="rounded-lg border border-gray-300">
       <div className="w-full rounded-t-lg h-2 bg-green-600" />
@@ -10,9 +8,10 @@ export const SetCardTemplate: React.FC<SetCardTemplateProps> = () => {
         <div className="flex items-center">
           <div className="mr-3">
             <Icon
-              variant="semantic"
-              semanticType="check"
+              variant="fill"
+              fillType="check"
               width={18}
+              height={18}
               fill="#268A04"
             />
           </div>

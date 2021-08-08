@@ -1,7 +1,7 @@
-import { BackButtonTemplate, BackButtonTemplateProps } from './template';
+import { BackButtonTemplate, BackButtonTemplateProps } from "./template";
 
-export interface BackButtonProps extends BackButtonTemplateProps {}
+export type BackButtonProps = BackButtonTemplateProps;
 
-export const BackButton: React.FC<BackButtonProps> = (props) => {
+export const BackButton = (props: BackButtonProps): JSX.Element => {
   return <BackButtonTemplate {...props} />;
 };

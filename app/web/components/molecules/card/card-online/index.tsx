@@ -1,13 +1,7 @@
-import { OnlineCardTemplate } from './template';
+import { OnlineCardTemplate, OnlineCardTemplateProps } from "./template";
 
-const OnlineCard = (props) => {
-  return <OnlineCardTemplate {...props} />;
-};
+export type OnlineCardProps = OnlineCardTemplateProps;
 
-export const online = (props) => {
-  return {
-    online: {
-      component: <OnlineCard {...props} />,
-    },
-  };
-};
+export const OnlineCard = (props: OnlineCardProps): JSX.Element => (
+  <OnlineCardTemplate {...props} />
+);

@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { styleLabel, styleContainer, styleInput } from '../styling.text';
+import { useState } from "react";
+import { styleLabel, styleContainer, styleInput } from "../styling.text";
 
-export interface NameInputTemplateProps {
-  onChange?: (e: any) => void;
-  value?: any;
-  direction?: 'top' | 'bottom' | undefined;
-  name?: string;
-  errors?: boolean;
-}
+export type NameInputTemplateProps = {
+  onChange: (e: any) => void;
+  value: any;
+  direction?: "top" | "bottom";
+  name: "firstname" | "lastname";
+  errors: boolean;
+};
 
 /**
  * Renders the text input component
@@ -18,16 +18,16 @@ export interface NameInputTemplateProps {
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const NameInputTemplate: React.FC<NameInputTemplateProps> = ({
+export const NameInputTemplate = ({
   onChange,
   value,
   direction,
   name,
   errors,
-}) => {
+}: NameInputTemplateProps): JSX.Element => {
   const names = {
-    firstname: 'First name',
-    lastname: 'Last name',
+    firstname: "First name",
+    lastname: "Last name",
   };
   const [fieldActive, setFieldActive] = useState(false);
 
@@ -41,12 +41,12 @@ export const NameInputTemplate: React.FC<NameInputTemplateProps> = ({
 
   return (
     <div
-      className={`h-14 relative px-5 items-center flex ${styleContainer(
+      className={`h-14 relative px-5 items-center flex ${styleContainer({
         errors,
         fieldActive,
         value,
-        direction
-      )}`}
+        direction,
+      })}`}
     >
       <div className="relative h-full w-full">
         <input
@@ -59,20 +59,17 @@ export const NameInputTemplate: React.FC<NameInputTemplateProps> = ({
           onFocus={activateField}
           onBlur={deactivateField}
           className={`outline-none pt-5 w-full block border-none text-base font-light placeholder-black ${styleInput(
-            errors,
-            fieldActive,
-            value
+            { errors, fieldActive, value }
           )}`}
           placeholder={fieldActive ? names[name] : undefined}
         />
         <label
           htmlFor={name}
-          className={`absolute transition font-thin ${styleLabel(
+          className={`absolute transition font-thin ${styleLabel({
             errors,
             fieldActive,
             value,
-            value
-          )}`}
+          })}`}
         >
           {names[name]}
         </label>

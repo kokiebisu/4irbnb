@@ -1,17 +1,17 @@
-import { useLayoutEffect, useState, useRef } from 'react';
-import { Button } from '@atoms';
+import { useLayoutEffect, useState, useRef } from "react";
+import { Button } from "@atoms";
 
-const Dots = ({ slides, activeSlide }) => {
+const Dots = ({ slides, activeSlide }: any) => {
   return (
     <div className="absolute bottom-4 w-full flex items-center justify-center">
-      {slides.map((_, index) => (
+      {slides.map((_: any, index: number) => (
         <span
           key={index}
           className={`mr-2 p-1 cursor-pointer rounded-full ${
-            activeSlide === index ? 'bg-white' : 'bg-gray-400'
+            activeSlide === index ? "bg-white" : "bg-gray-400"
           }`}
           style={{
-            transition: 'all 0.2s ease-in',
+            transition: "all 0.2s ease-in",
           }}
         />
       ))}
@@ -19,13 +19,13 @@ const Dots = ({ slides, activeSlide }) => {
   );
 };
 
-const Slide = ({ slide }) => {
+const Slide = ({ slide }: any) => {
   return (
     <div
       className="h-full w-full bg-cover bg-no-repeat bg-center"
       style={{
         backgroundImage: slide && `url(${slide})`,
-        backgroundColor: !slide && 'lightgray',
+        backgroundColor: !slide ? "lightgray" : "",
       }}
     />
   );
@@ -42,7 +42,7 @@ export const ImageSlider = ({ slides = new Array(3) }) => {
     transition: 0.45,
   });
 
-  const containerRef = useRef<HTMLDivElement>();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleRef = () => {
     if (containerRef.current && containerRef.current.getBoundingClientRect()) {
@@ -51,10 +51,10 @@ export const ImageSlider = ({ slides = new Array(3) }) => {
   };
 
   useLayoutEffect(() => {
-    window.addEventListener('resize', handleRef);
+    window.addEventListener("resize", handleRef);
     handleRef();
     return () => {
-      window.removeEventListener('resize', handleRef);
+      window.removeEventListener("resize", handleRef);
     };
   });
 
@@ -120,23 +120,31 @@ export const ImageSlider = ({ slides = new Array(3) }) => {
         className="absolute left-3 z-50 top-1/2 -translate-y-1/2"
         style={{
           ...style,
-          transition: 'opacity 0.2s ease-out',
+          transition: "opacity 0.2s ease-out",
         }}
       >
-        <Button variant="paginate" direction="left" onClick={previousSlide} />
+        <Button
+          variant="paginate"
+          direction="chevronLeft"
+          onClick={previousSlide}
+        />
       </div>
       <div
         style={{
           ...style,
-          transition: 'opacity 0.2s ease-out',
+          transition: "opacity 0.2s ease-out",
         }}
         className="absolute top-1/2 -translate-y-1/2 right-3 z-50"
       >
-        <Button variant="paginate" direction="right" onClick={nextSlide} />
+        <Button
+          variant="paginate"
+          direction="chevronRight"
+          onClick={nextSlide}
+        />
       </div>
 
       <div
-        style={{ ...style, transition: 'opacity 0.2s ease-out' }}
+        style={{ ...style, transition: "opacity 0.2s ease-out" }}
         className="dots"
       >
         <Dots slides={slides} activeSlide={state.activeSlide} />

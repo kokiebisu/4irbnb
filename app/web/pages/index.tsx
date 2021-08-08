@@ -1,48 +1,55 @@
-import { AnimatePresence, motion } from 'framer-motion';
-import { useToggleState } from '@context/toggle';
-import { Layout } from '@layout';
-import { Animation } from '@animation';
-import { Modal } from '@modal';
-import { Segment } from '@template/index';
-import { Footer } from '@footer';
-import { Bar } from '@bar';
-import { useHandleScroll } from '@hooks/useHandleScroll';
-import { useHandleDocumentResize } from '@hooks/useHandleDocumentResize';
-import { useTimeout } from '@hooks/useTimeout';
-import { useTabTitle } from '@hooks/useTabTitle';
+// import { AnimatePresence, motion } from "framer-motion";
+import { useToggleState } from "@context/toggle";
+import { Layout } from "@layout";
+import { Animation } from "@animation";
+import { Modal } from "@modal";
+import { Segment } from "@template/index";
+import { Footer } from "@footer";
+// import { Bar } from "@bar";
+// import { useHandleScroll } from "@hooks/useHandleScroll";
+// import { useHandleDocumentResize } from "@hooks/useHandleDocumentResize";
+import { useTimeout } from "@hooks/useTimeout";
+import { useTabTitle } from "@hooks/useTabTitle";
+import React from "react";
+import { Header } from "@header";
 
 const LandingPage: React.FC<{}> = () => {
-  useTabTitle('Vacation Rentals, Homes, Experiences & Places - Airbnb');
+  useTabTitle("Vacation Rentals, Homes, Experiences & Places - Airbnb");
   const loading = useTimeout(3000);
   const toggleState = useToggleState();
-  const scrollPosition = useHandleScroll();
-  const pageHeight = useHandleDocumentResize();
+
+  // const pageHeight = useHandleDocumentResize();
 
   return (
     <div className="min-h-screen overflow-x-hidden relative ">
       <div>
         <div>
-          <Bar variant="covid" />
+          <div className="w-full fixed top-0 z-30">
+            <Header variant="landing" />
+          </div>
+          <Segment variant="banner" />
         </div>
-        <Segment variant="banner" />
         {loading ? (
           <>
-            <Layout variant="landing" spread>
+            <Layout title="Explore nearby" variant="landing" spread>
               <Segment variant="nearby" />
             </Layout>
             <Layout variant="landing" title="Live anywhere" spread>
               <Segment variant="anywhere" />
             </Layout>
-            <div className="my-7"></div>
             <Layout spread variant="landing">
-              <Segment variant="worth" />
+              <Segment variant="wide" />
             </Layout>
             <Layout
               variant="landing"
-              spread
-              title="Join millions of hosts on Airbnb"
+              title="Discover Experiences"
+              subtitle="Unique activities with local experts—in person or online."
             >
-              <Segment variant="category" />
+              <Segment variant="discover" />
+            </Layout>
+
+            <Layout spread variant="landing">
+              <Segment variant="wide" />
             </Layout>
             <Layout
               variant="landing"
@@ -57,18 +64,20 @@ const LandingPage: React.FC<{}> = () => {
             <Animation variant="loading" dark />
           </div>
         )}
-        <Footer spread />
-        <div className="fixed bottom-0 w-full z-50 flex justify-center">
-          <div className="mt-0 mx-8 mb-8 sm:mx-16 md:mx-36 lg:mx-0">
+        <Footer />
+        {/* <div className="fixed bottom-0 w-full z-50 flex justify-center">
+          <div className="mt-0 mb-8 sm:px-10 lg:px-20">
             <Modal
               variant="privacy"
               criteria={toggleState.privacy}
               animate="slideup"
+              handleSave={() => alert("save")}
+              handleSettings={() => alert("settings")}
             />
           </div>
-        </div>
+        </div> */}
 
-        <AnimatePresence>
+        {/* <AnimatePresence>
           {scrollPosition < pageHeight && (
             <motion.div
               animate={{ y: 0 }}
@@ -82,28 +91,34 @@ const LandingPage: React.FC<{}> = () => {
               </div>
             </motion.div>
           )}
-        </AnimatePresence>
+        </AnimatePresence> */}
         {toggleState.auth && (
           <div className="fixed z-60 bottom-0 left-0 right-0 top-0 bg-blur">
-            <div className="flex justify-center items-center h-screen">
-              <Modal
-                variant="auth"
-                animate="slideup"
-                criteria={toggleState.auth}
-                lock
-              />
+            <div className="flex justify-center items-center h-screen ">
+              <div className="w-full md:max-w-xl absolute bottom-0 md:bottom-auto">
+                <Modal
+                  variant="auth"
+                  animate="slideup"
+                  criteria={toggleState.auth}
+                  dispatch="toggle_auth"
+                  lock
+                />
+              </div>
             </div>
           </div>
         )}
         {toggleState.globe && (
           <div className="fixed z-60 bottom-0 left-0 right-0 top-0 bg-blur">
             <div className="flex justify-center items-center h-screen">
-              <Modal
-                variant="globe"
-                animate="slideup"
-                criteria={toggleState.globe}
-                lock
-              />
+              <div className="w-full max-w-6xl px-16">
+                <Modal
+                  variant="globe"
+                  animate="slideup"
+                  criteria={toggleState.globe}
+                  dispatch="toggle_globe"
+                  lock
+                />
+              </div>
             </div>
           </div>
         )}

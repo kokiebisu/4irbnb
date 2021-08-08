@@ -1,15 +1,7 @@
-import { DetailsHeaderTemplate, DetailsHeaderTemplateProps } from './template';
+import { DetailsHeaderTemplate, DetailsHeaderTemplateProps } from "./template";
 
-export interface DetailsHeaderProps extends DetailsHeaderTemplateProps {}
+export type DetailsHeaderProps = DetailsHeaderTemplateProps;
 
-export const DetailsHeader: React.FC<DetailsHeaderProps> = (props) => {
-  return <DetailsHeaderTemplate {...props} />;
-};
-
-export const details = (props) => {
-  return {
-    details: {
-      component: <DetailsHeader {...props} />,
-    },
-  };
-};
+export const DetailsHeader = (props: DetailsHeaderProps): JSX.Element => (
+  <DetailsHeaderTemplate {...props} />
+);

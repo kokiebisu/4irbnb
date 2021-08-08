@@ -1,24 +1,9 @@
-import { factory } from './utils/factory';
+import { ExperiencePanelProps } from "./panel-experience";
+import { RoomPanelProps } from "./panel-room";
+import { factory } from "./utils/factory";
 
-export const $Panel = {
-  EXPERIENCE: 'experience',
-  ROOM: 'room',
-};
+export type PanelProps =
+  | ({ variant: "experience" } & ExperiencePanelProps)
+  | ({ variant: "room" } & RoomPanelProps);
 
-export interface PanelProps {
-  variant: string;
-  [property: string]: any;
-}
-
-export const Panel: React.FC<PanelProps> = ({
-  variant,
-  extendsTo,
-  ...props
-}) => {
-  const variants = factory(props);
-  return (
-    <div className={variants[variant].style} data-testid={`${variant}-panel`}>
-      {variants[variant].component}
-    </div>
-  );
-};
+export const Panel = ({ ...props }: PanelProps): JSX.Element => factory(props);

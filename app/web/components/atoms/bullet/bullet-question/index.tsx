@@ -1,10 +1,10 @@
 import {
   QuestionBulletTemplate,
   QuestionBulletTemplateProps,
-} from './template';
+} from "./template";
 
 export type QuestionBulletProps = QuestionBulletTemplateProps;
 
-export const QuestionBullet = (props: QuestionBulletProps): JSX.Element => {
-  return <QuestionBulletTemplate {...props} />;
-};
+export const QuestionBullet = (props: QuestionBulletProps): JSX.Element => (
+  <QuestionBulletTemplate {...props} />
+);

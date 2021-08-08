@@ -1,8 +1,8 @@
-import { Input } from '@atoms';
+import { Input } from "@atoms";
 
 export interface PhoneSegmentTemplateProps {
-  phone?: string;
-  handleChange?: (e: any, type: string) => void;
+  phone?: number;
+  handleChange: (e: any, type: string) => void;
 }
 
 /**
@@ -30,7 +30,7 @@ export const PhoneSegmentTemplate: React.FC<PhoneSegmentTemplateProps> = ({
           <Input
             variant="verify"
             value={phone}
-            onChange={(e) => handleChange(e, 'phone')}
+            onChange={(e) => handleChange(e, "phone")}
           />
         </div>
       </div>

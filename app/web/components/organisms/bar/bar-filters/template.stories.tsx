@@ -1,9 +1,9 @@
-import { Meta, Story } from '@storybook/react';
-import { FiltersBarTemplate, FiltersBarTemplateProps } from './template';
-import * as content from './content';
+import { Meta, Story } from "@storybook/react";
+import { FiltersBarTemplate, FiltersBarTemplateProps } from "./template";
+import * as content from "./content";
 
 export default {
-  title: 'Organisms/Bar',
+  title: "Organisms/Bar",
   component: FiltersBarTemplate,
 } as Meta;
 
@@ -19,5 +19,5 @@ Filters.args = {
     translate: 0,
     transition: 0.45,
   },
-  width: 500,
+  // width: 500,
 };

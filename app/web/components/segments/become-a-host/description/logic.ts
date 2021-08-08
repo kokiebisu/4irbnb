@@ -1,7 +1,7 @@
-import { useStayDispatch, useStayState } from '@context/stay';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
-import * as mockData from './mock';
+import { useStayDispatch, useStayState } from "@context/stay";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import * as mockData from "./mock";
 
 export const useDescriptionSegment = () => {
   const router = useRouter();
@@ -13,21 +13,21 @@ export const useDescriptionSegment = () => {
 
   const handleRedirectToNextPage = () => {
     stayDispatch({
-      type: 'add',
+      type: "add",
       payload: data,
     });
     setTimeout(() => {
-      router.push('/become-a-host/title');
+      router.push("/become-a-host/title");
     }, 500);
   };
 
   const handleRedirectToPreviousPage = () => {
     setTimeout(() => {
-      router.push('/become-a-host/spaces');
+      router.push("/become-a-host/spaces");
     }, 500);
   };
 
-  const handleTextareaChange = (e, property) => {
+  const handleTextareaChange = (e: any, property: string) => {
     setData({ ...data, [property]: e.target.value });
   };
 

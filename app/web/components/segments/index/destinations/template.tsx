@@ -1,13 +1,17 @@
-import { motion } from 'framer-motion';
-import template from '../index.module.scss';
-import { Button } from '@atoms';
+import { motion } from "framer-motion";
+import { Button } from "@atoms";
 
 export interface DestinationsSegmentTemplateProps {
-  items?: { [destinationType: string]: { city: string; location: string }[] };
-  categories?: { name: string; value: string }[];
-  destinationType?: 'artsCulture' | 'outdoor' | 'cabins' | 'beach' | 'popular';
-  handleDestinationTypeChange?: (destinationType: string) => void;
-  handleDestinationRedirect?: (city: string) => void;
+  items: { [destinationType: string]: { city: string; location: string }[] };
+  categories: {
+    name: string;
+    value: "artsCulture" | "outdoor" | "cabins" | "beach" | "popular";
+  }[];
+  destinationType: "artsCulture" | "outdoor" | "cabins" | "beach" | "popular";
+  handleDestinationTypeChange: (
+    destinationType: "artsCulture" | "outdoor" | "cabins" | "beach" | "popular"
+  ) => void;
+  handleDestinationRedirect: (city: string) => void;
 }
 
 export const DestinationsSegmentTemplate: React.FC<DestinationsSegmentTemplateProps> = ({
@@ -34,13 +38,11 @@ export const DestinationsSegmentTemplate: React.FC<DestinationsSegmentTemplatePr
         })}
       </div>
       <div className="w-full bg-gray-200 h-0.5" />
-      <div className="flex flex-wrap">
+      <div className="grid grid-cols-4">
         {items[destinationType].map(({ city, location }, index) => {
           return (
-            <div key={index} className={[template['destination__w']].join(' ')}>
+            <div key={index}>
               <Button
-                block
-                stretch
                 variant="destination"
                 city={city}
                 location={location}
@@ -72,7 +74,7 @@ const CategoryButton: React.FC<{
       </motion.button>
       <div className="flex w-full justify-center">
         <div
-          className={`h-1 ${selected ? 'bg-black' : 'bg-transparent'} w-8/10`}
+          className={`h-1 ${selected ? "bg-black" : "bg-transparent"} w-8/10`}
         />
       </div>
     </div>

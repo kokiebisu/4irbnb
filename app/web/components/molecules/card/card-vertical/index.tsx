@@ -1,13 +1,7 @@
-import { VerticalCardTemplate } from './template';
+import { VerticalCardTemplate, VerticalCardTemplateProps } from "./template";
 
-const VerticalCard = (props) => {
+export type VerticalCardProps = VerticalCardTemplateProps;
+
+export const VerticalCard = (props: VerticalCardProps): JSX.Element => {
   return <VerticalCardTemplate {...props} />;
-};
-
-export const vertical = (props) => {
-  return {
-    vertical: {
-      component: <VerticalCard {...props} />,
-    },
-  };
 };

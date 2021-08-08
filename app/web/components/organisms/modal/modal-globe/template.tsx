@@ -1,23 +1,30 @@
-import { useState } from 'react';
-import { Button } from '@atoms';
-import { Prototype, $Prototype } from '@prototype/globe';
-import { useToggleDispatch } from '@context/toggle';
+import { useState } from "react";
+import { Button, Icon } from "@atoms";
+import { useToggleDispatch } from "@context/toggle";
+import { inner } from "./utils/factory";
 
-export interface GlobeModalTemplateProps {}
-
-export const GlobeModalTemplate: React.FC<GlobeModalTemplateProps> = () => {
+export const GlobeModalTemplate = (): JSX.Element => {
   const toggleDispatch = useToggleDispatch();
-  const [prototype, setPrototype] = useState($Prototype.LANGUAGE);
+  const [prototype, setPrototype] = useState<"language" | "currency">(
+    "language"
+  );
   return (
-    <div>
-      <div>
-        <div>
-          <Button
-            variant="modal"
-            modal="close"
-            onClick={() => toggleDispatch({ type: 'toggle_globe' })}
-          />
-        </div>
+    <div className="bg-white px-6 py-8 rounded-2xl">
+      <div className="mb-6 relative right-2">
+        <Button
+          variant="modal"
+          icon={
+            <Icon
+              variant="stroke"
+              strokeType="close"
+              stroke="black"
+              strokeWidth={2}
+              width={16}
+              height={16}
+            />
+          }
+          onClick={() => toggleDispatch({ type: "toggle_globe" })}
+        />
       </div>
 
       <div>
@@ -26,24 +33,24 @@ export const GlobeModalTemplate: React.FC<GlobeModalTemplateProps> = () => {
             <Button
               variant="underline"
               title="Language and region"
-              font={16}
+              font={14}
               bold
-              unselected={prototype !== $Prototype.LANGUAGE}
-              onClick={() => setPrototype($Prototype.LANGUAGE)}
+              unselected={prototype !== "language"}
+              onClick={() => setPrototype("language")}
             />
           </div>
           <div>
             <Button
               variant="underline"
               title="Currency"
-              font={16}
+              font={14}
               bold
-              unselected={prototype !== $Prototype.CURRENCY}
-              onClick={() => setPrototype($Prototype.CURRENCY)}
+              unselected={prototype !== "currency"}
+              onClick={() => setPrototype("currency")}
             />
           </div>
         </div>
-        <Prototype variant={prototype} />
+        {inner({ variant: prototype })}
       </div>
     </div>
   );

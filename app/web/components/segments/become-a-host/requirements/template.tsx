@@ -1,5 +1,3 @@
-import { Bullet } from '@atoms';
-
 export interface RequirementsSegmentTemplateProps {
   mustProvideList?: string[];
   mustDoList?: string[];
@@ -28,25 +26,29 @@ export const RequirementsSegmentTemplate: React.FC<RequirementsSegmentTemplatePr
         <div className="mb-4">
           <h4 className="text-xl">All Airbnb guests must provide:</h4>
         </div>
-        {mustProvideList.map((content, index) => {
-          return (
-            <div key={index} className="mb-3">
-              <Bullet variant="check" title={content} />
-            </div>
-          );
-        })}
+        {mustProvideList
+          ? mustProvideList.map((_, index) => {
+              return (
+                <div key={index} className="mb-3">
+                  {/* <Bullet variant="check" title={content} /> */}
+                </div>
+              );
+            })
+          : null}
       </div>
       <div style={{ height: 1 }} className="w-full bg-gray-300 mb-6"></div>
       <div className="mb-4">
         <h4 className="text-xl">Before booking your home, each guest must:</h4>
       </div>
-      {mustDoList.map((content, index) => {
-        return (
-          <div key={index} className="mb-3">
-            <Bullet variant="check" title={content} />
-          </div>
-        );
-      })}
+      {mustDoList
+        ? mustDoList.map((_, index) => {
+            return (
+              <div key={index} className="mb-3">
+                {/* <Bullet variant="check" title={content} /> */}
+              </div>
+            );
+          })
+        : null}
     </div>
   );
 };

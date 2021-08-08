@@ -1,17 +1,11 @@
-import { ProgressBarTemplate } from './template';
+import { ProgressBarTemplate, ProgressBarTemplateProps } from "./template";
 
-const ProgressBar = (props) => {
+export type ProgressBarProps = ProgressBarTemplateProps;
+
+export const ProgressBar = (): JSX.Element => {
   return (
     <div data-testid="bar-progress--organism">
-      <ProgressBarTemplate {...props} />
+      <ProgressBarTemplate />
     </div>
   );
-};
-
-export const progress = (props) => {
-  return {
-    progress: {
-      component: <ProgressBar {...props} />,
-    },
-  };
 };

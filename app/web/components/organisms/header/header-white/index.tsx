@@ -1,15 +1,7 @@
-import { WhiteHeaderTemplate, WhiteHeaderTemplateProps } from './template';
+import { WhiteHeaderTemplate, WhiteHeaderTemplateProps } from "./template";
 
-export interface WhiteHeaderProps extends WhiteHeaderTemplateProps {}
+export type WhiteHeaderProps = WhiteHeaderTemplateProps;
 
-export const WhiteHeader: React.FC<WhiteHeaderProps> = (props) => {
+export const WhiteHeader = (props: WhiteHeaderProps): JSX.Element => {
   return <WhiteHeaderTemplate {...props} />;
-};
-
-export const white = (props) => {
-  return {
-    white: {
-      component: <WhiteHeader {...props} />,
-    },
-  };
 };

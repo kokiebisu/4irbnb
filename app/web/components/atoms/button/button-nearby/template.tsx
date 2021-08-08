@@ -7,10 +7,10 @@ export type NearbyButtonTemplateProps = {
  * Renders the Nearby Button component
  * @param label
  */
-export const NearbyButtonTemplate: React.FC<NearbyButtonTemplateProps> = ({
+export const NearbyButtonTemplate = ({
   label,
   onClick,
-}) => {
+}: NearbyButtonTemplateProps): JSX.Element => {
   return (
     <button
       data-testid="label-button"

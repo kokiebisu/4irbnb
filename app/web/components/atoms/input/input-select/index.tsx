@@ -1,8 +1,8 @@
-import React from 'react';
-import { SelectInputTemplate, SelectInputTemplateProps } from './template';
+import React from "react";
+import { SelectInputTemplate, SelectInputTemplateProps } from "./template";
 
-export interface SelectInputProps extends SelectInputTemplateProps {}
+export type SelectInputProps = SelectInputTemplateProps;
 
-export const SelectInput: React.FC<SelectInputProps> = (props) => {
-  return <SelectInputTemplate {...props} />;
-};
+export const SelectInput = (props: SelectInputProps): JSX.Element => (
+  <SelectInputTemplate {...props} />
+);

@@ -1,12 +1,13 @@
-import { Button } from '@atoms';
+import { Button } from "@atoms";
 
-export interface AvailableCardTemplateProps {
+export type AvailableCardTemplateProps = {
   date?: string;
   from?: string;
   to?: string;
   standard?: string;
   price?: number;
-}
+  onClick: () => void;
+};
 
 /**
  * Renders the available card component
@@ -16,13 +17,14 @@ export interface AvailableCardTemplateProps {
  * @param {string} standard - The time standard
  * @param {number} price - The price of the experience
  */
-export const AvailableCardTemplate: React.FC<AvailableCardTemplateProps> = ({
+export const AvailableCardTemplate = ({
   date,
   from,
   to,
   standard,
   price,
-}) => {
+  onClick,
+}: AvailableCardTemplateProps): JSX.Element => {
   return (
     <div className="p-6 border boder-gray-300 rounded-md">
       <div className="mb-2">
@@ -43,7 +45,14 @@ export const AvailableCardTemplate: React.FC<AvailableCardTemplateProps> = ({
         <span className="text-sm"> /person</span>
       </div>
       <div className="inline-block">
-        <Button variant="primary" size="sm" title="Choose" color="white" />
+        <Button
+          variant="primary"
+          size="sm"
+          title="Choose"
+          color="white"
+          onClick={onClick}
+          fill="black"
+        />
       </div>
     </div>
   );

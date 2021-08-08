@@ -1,13 +1,13 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
+import React from "react";
+import { Story, Meta } from "@storybook/react";
 import {
   CharacteristicsSegmentTemplate,
   CharacteristicsSegmentTemplateProps,
-} from './template';
-import * as mockData from './mock';
+} from "./template";
+// import * as mockData from "./mock";
 
 export default {
-  title: 'Templates/Experiences/ID',
+  title: "Templates/Experiences/ID",
   component: CharacteristicsSegmentTemplate,
 } as Meta;
 
@@ -19,5 +19,5 @@ export const CharacteristicsSegment = CharacteristicsSegmentTemplateStory.bind(
   {}
 );
 CharacteristicsSegment.args = {
-  ...mockData,
+  // ...mockData,
 };

@@ -1,8 +1,8 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
-export interface AgainCardTemplateProps {}
+export type AgainCardTemplateProps = {};
 
-export const AgainCardTemplate: React.FC<AgainCardTemplateProps> = () => {
+export const AgainCardTemplate = (): JSX.Element => {
   return (
     <div className="rounded-lg border border-gray-300">
       <div className="p-4">
@@ -10,10 +10,12 @@ export const AgainCardTemplate: React.FC<AgainCardTemplateProps> = () => {
           <div className="mr-3">
             <div className="p-2 rounded-full bg-red-600">
               <Icon
-                variant="semantic"
-                semanticType="exclamation"
+                variant="stroke"
+                strokeType="exclamation"
                 width={18}
-                fill="white"
+                height={18}
+                stroke="white"
+                strokeWidth={3}
               />
             </div>
           </div>

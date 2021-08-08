@@ -1,7 +1,7 @@
-import { AuthButtonTemplate, AuthButtonTemplateProps } from './template';
+import { AuthButtonTemplate, AuthButtonTemplateProps } from "./template";
 
 export type AuthButtonProps = AuthButtonTemplateProps;
 
-export const AuthButton: React.FC<AuthButtonProps> = ({ ...props }) => {
-  return <AuthButtonTemplate {...props} />;
-};
+export const AuthButton = ({ ...props }: AuthButtonProps): JSX.Element => (
+  <AuthButtonTemplate {...props} />
+);

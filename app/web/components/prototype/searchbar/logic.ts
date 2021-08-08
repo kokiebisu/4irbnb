@@ -1,5 +1,5 @@
-import { useToggleState } from '@context/toggle';
-import { useState } from 'react';
+import { useToggleState } from "@context/toggle";
+import { useState } from "react";
 
 export type useSearchbarProps = () => {
   contents?: any;
@@ -35,13 +35,13 @@ export const useSearchbar: useSearchbarProps = () => {
       styles: {
         right: 0,
         maxWidth: 325,
-        display: 'flex',
-        justifyContent: 'flex-end',
+        display: "flex",
+        justifyContent: "flex-end",
       },
     },
   };
 
-  const handleSelectedChange = (value) => setSelected(value);
+  const handleSelectedChange = (value: any) => setSelected(value);
 
   return {
     contents,

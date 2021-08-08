@@ -1,20 +1,7 @@
-import { usePreviewSegment } from './logic';
-import {
-  PreviewSegmentTemplate,
-  PreviewSegmentTemplateProps,
-} from './template';
+import { usePreviewSegment } from "./logic";
+import { PreviewSegmentTemplate } from "./template";
 
-export interface PreviewSegmentProps extends PreviewSegmentTemplateProps {}
-
-export const PreviewSegment: React.FC<PreviewSegmentProps> = () => {
+export const PreviewSegment = () => {
   const data = usePreviewSegment();
   return <PreviewSegmentTemplate {...data} />;
-};
-
-export const preview = (props: PreviewSegmentProps) => {
-  return {
-    preview: {
-      component: <PreviewSegment {...props} />,
-    },
-  };
 };

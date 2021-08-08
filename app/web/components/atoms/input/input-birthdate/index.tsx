@@ -1,10 +1,10 @@
 import {
   BirthdateInputTemplate,
   BirthdateInputTemplateProps,
-} from './template';
+} from "./template";
 
-export interface BirthdateInputProps extends BirthdateInputTemplateProps {}
+export type BirthdateInputProps = BirthdateInputTemplateProps;
 
-export const BirthdateInput: React.FC<BirthdateInputProps> = (props) => {
-  return <BirthdateInputTemplate {...props} />;
-};
+export const BirthdateInput = (props: BirthdateInputProps): JSX.Element => (
+  <BirthdateInputTemplate {...props} />
+);

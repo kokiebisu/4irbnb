@@ -1,8 +1,8 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
 export type MenuButtonTemplateProps = {
   authenticated: boolean;
-  imgUrl: string;
+  imgUrl?: string;
   inverse: boolean;
   onClick: () => void;
 };
@@ -20,18 +20,16 @@ export const MenuButtonTemplate = ({
   return (
     <button
       data-testid="menu-button"
-      className="inline-block"
+      className={`inline-block bg-white rounded-full ${
+        inverse ? "" : "border border-solid border-gray-300 hover:shadow-md"
+      } py-1 pl-2 pr-1`}
       onClick={onClick}
     >
-      <div
-        className={`${
-          inverse ? 'border-2 border-gray-200 hover:shadow-md' : ''
-        } inline-flex items-center py-2 pl-3 pr-2 bg-white rounded-full`}
-      >
-        <div className="mr-3">
+      <div className={`inline-flex items-center`}>
+        <div className=" pl-1 mr-3">
           <Icon
-            variant="general"
-            generalType="bars"
+            variant="fill"
+            fillType="bars"
             fill="black"
             width={12}
             height={12}
@@ -42,10 +40,11 @@ export const MenuButtonTemplate = ({
             <img className="block rounded-full w-8 h-8" src={imgUrl} />
           ) : (
             <Icon
-              variant="profile"
-              profileType="avatar"
+              variant="fill"
+              fillType="avatar"
               width={30}
               height={30}
+              fill="gray"
             />
           )}
         </div>

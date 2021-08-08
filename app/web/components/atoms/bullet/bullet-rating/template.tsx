@@ -1,4 +1,4 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
 export type RatingBulletTemplateProps = {
   ratings: number;
@@ -17,7 +17,13 @@ export const RatingBulletTemplate = ({
   return (
     <div className="flex items-center">
       <div>
-        <Icon variant="profile" profileType="star" width={14} height={14} />
+        <Icon
+          variant="fill"
+          fillType="star"
+          fill="#E61E4D"
+          width={14}
+          height={14}
+        />
       </div>
       <h3 className="pl-1 text-gray-700 text-sm">{ratings}</h3>
       <span className="pl-1 text-gray-600 text-sm font-thin">({reviews})</span>

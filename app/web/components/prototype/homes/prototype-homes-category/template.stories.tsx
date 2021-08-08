@@ -1,12 +1,12 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
+import React from "react";
+import { Story, Meta } from "@storybook/react";
 import {
   CategoryPrototypeTemplate,
   CategoryPrototypeTemplateProps,
-} from './template';
+} from "./template";
 
 export default {
-  title: 'Prototypes/Category',
+  title: "Prototypes/Category",
   component: CategoryPrototypeTemplate,
 } as Meta;
 
@@ -15,4 +15,11 @@ const CategoryPrototypeStory: Story<CategoryPrototypeTemplateProps> = (
 ) => <CategoryPrototypeTemplate {...args} />;
 
 export const Category = CategoryPrototypeStory.bind({});
-Category.args = {};
+Category.args = {
+  filters: [
+    {
+      name: "he",
+      selected: true,
+    },
+  ],
+};

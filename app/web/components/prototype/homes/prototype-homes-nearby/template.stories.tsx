@@ -1,12 +1,12 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
+import React from "react";
+import { Story, Meta } from "@storybook/react";
 import {
   NearbyPrototypeTemplate,
   NearbyPrototypeTemplateProps,
-} from './template';
+} from "./template";
 
 export default {
-  title: 'Prototypes/Nearby',
+  title: "Prototypes/Nearby",
   component: NearbyPrototypeTemplate,
 } as Meta;
 
@@ -15,4 +15,7 @@ const NearbyPrototypeStory: Story<NearbyPrototypeTemplateProps> = (args) => (
 );
 
 export const Nearby = NearbyPrototypeStory.bind({});
-Nearby.args = {};
+Nearby.args = {
+  city: "Tofino",
+  filters: [{ name: "Vancouver" }],
+};

@@ -1,6 +1,5 @@
-import { Header } from '@header';
-import { Footer } from '@footer';
-import stays from '@styles/stays.module.scss';
+// import { Header } from "@header";
+import { Footer } from "@footer";
 
 /**
  * Renders /stays
@@ -9,7 +8,7 @@ const StaysPage: React.FC<{}> = () => {
   return (
     <div>
       <div className="top-0 z-10 sticky">
-        <Header variant="white" spread />
+        {/* <Header variant="white" spread /> */}
       </div>
       <div className="z-10 relative w-screen">
         <div className="relative px-0">
@@ -50,16 +49,14 @@ const StaysPage: React.FC<{}> = () => {
                 />
               </picture>
               <div
-                className={`bg-cover h-full w-full ${[stays['support']].join(
-                  ''
-                )}`}
+                className={`bg-cover h-full w-full`}
                 style={{
                   backgroundImage:
                     'url("https://a0.muscache.com/im/pictures/a4568b94-29ee-49cc-ab9c-5fcc82ca878d.jpg?im_w=720")',
-                  verticalAlign: 'bottom',
-                  backgroundPositionX: '50%',
-                  backgroundPositionY: '50%',
-                  backgroundOrigin: 'border-box',
+                  verticalAlign: "bottom",
+                  backgroundPositionX: "50%",
+                  backgroundPositionY: "50%",
+                  backgroundOrigin: "border-box",
                 }}
               />
             </div>

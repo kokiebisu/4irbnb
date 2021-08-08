@@ -1,8 +1,8 @@
-import { Meta, Story } from '@storybook/react';
-import { RoomPanelTemplate, RoomPanelTemplateProps } from './template';
+import { Meta, Story } from "@storybook/react";
+import { RoomPanelTemplate, RoomPanelTemplateProps } from "./template";
 
 export default {
-  title: 'Molecules/Panel',
+  title: "Molecules/Panel",
   component: RoomPanelTemplate,
 } as Meta;
 
@@ -12,5 +12,9 @@ const CardStory: Story<RoomPanelTemplateProps> = (args) => (
 
 export const Room = CardStory.bind({});
 Room.args = {
-  images: [],
+  firstImage: "",
+  secondImage: "",
+  thirdImage: "",
+  fourthImage: "",
+  fifthImage: "",
 };

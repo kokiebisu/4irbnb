@@ -1,5 +1,5 @@
 {
-  "name": "nextbnb",
+  "name": "4irbnb",
   "version": "1.1.0",
   "description": "<p align=\"center\">     <img src=\"https://user-images.githubusercontent.com/43525282/86524021-e1d52400-be29-11ea-9943-6affd2b8038c.png\" alt=\"nextbnb\" width=\"100\" /> </p>",
   "repository": {
@@ -15,14 +15,13 @@
   "homepage": "https://github.com/kokiebisu/nextbnb#readme",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "lint": "scripty",
-    "build": "tsc -b .",
-    "clean": "scripty",
-    "test": "scripty",
-    "prepare": "husky install",
+    "lint": "yarn lerna run lint --stream --concurrency 2",
+    "build": "yarn tsc -b packages",
+    "clean": "yarn lerna run clean",
+    "test": "yarn lerna run test --stream",
     "document": "scripty",
-    "extract": "scripty",
-    "pack:auth": "docker build -t nextbnb/auth -f ./packages/auth/Dockerfile ."
+    "extract": "lerna run extract --scope=@nextbnb/{common,database}",
+    "terraform:apply": "cd terraform && terraform apply"
   },
   "scripty": {
     "path": "./scripts/workspace"
@@ -33,21 +32,26 @@
     "@commitlint/config-lerna-scopes": "^12.1.4",
     "@microsoft/api-documenter": "^7.13.27",
     "@microsoft/api-extractor": "^7.17.0",
+    "@types/aws-lambda": "^8.10.81",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.4.13",
     "@typescript-eslint/eslint-plugin": "^4.22.1",
     "@typescript-eslint/parser": "^4.22.1",
     "commitlint": "^12.1.4",
     "eslint": "^7.26.0",
-    "husky": "^6.0.0",
+    "jest": "^27.0.6",
     "lerna": "^3.22.1",
     "lerna-changelog": "^1.0.1",
     "rimraf": "^3.0.2",
     "scripty": "^2.0.0",
-    "typescript": "^4.2.4"
+    "typescript": "^4.3.4"
   },
   "workspaces": [
     "packages/*",
-    "app/*",
-    "services/*"
+    "app/*"
   ],
-  "private": true
+  "private": true,
+  "engines": {
+    "node": ">= 14.17.1"
+  }
 }

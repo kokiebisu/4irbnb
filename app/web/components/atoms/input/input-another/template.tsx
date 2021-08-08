@@ -1,4 +1,4 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
 export interface AnotherInputTemplateProps {
   onChange?: (e: any) => void;
@@ -24,9 +24,10 @@ export const AnotherInputTemplate: React.FC<AnotherInputTemplateProps> = ({
                     <div>
                       <div className="flex items-center">
                         <Icon
-                          variant="semantic"
-                          semanticType="plus"
+                          variant="fill"
+                          fillType="plus"
                           width={45}
+                          height={45}
                           fill="#D8D8D8"
                         />
                       </div>

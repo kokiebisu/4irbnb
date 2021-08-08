@@ -1,7 +1,7 @@
-import { LimitInputTemplate, LimitInputTemplateProps } from './template';
+import { LimitInputTemplate, LimitInputTemplateProps } from "./template";
 
-export interface LimitInputProps extends LimitInputTemplateProps {}
+export type LimitInputProps = LimitInputTemplateProps;
 
-export const LimitInput: React.FC<LimitInputProps> = (props) => {
+export const LimitInput = (props: LimitInputProps): JSX.Element => {
   return <LimitInputTemplate {...props} />;
 };

@@ -1,38 +1,40 @@
-import { Button } from '@atoms';
-import { useToggleDispatch } from '@context/toggle';
+import { Button } from "@atoms";
+import { useToggleDispatch } from "@context/toggle";
 
 export interface SearchBarTemplateProps {
-  type?: string;
-  selected?: string;
-  setSelected?: (param: string) => void;
+  type: string;
+  selected: string;
   transparent?: boolean;
   dispatchToggle?: any;
-  handleGuestsSelected?: () => void;
-  handleCheckInSelected?: () => void;
-  handleSearch?: () => void;
+  handleGuestsSelected: () => void;
+  handleCheckInSelected: () => void;
+  handleSearch: () => void;
+  handleSelectedChange: (param: string) => void;
 }
 
 /**
  * Renders the Searchbar
  */
-export const SearchBarTemplate: React.FC<SearchBarTemplateProps> = ({
+export const SearchBarTemplate = ({
   type,
   selected,
-  setSelected,
+  handleSelectedChange,
   transparent,
   handleGuestsSelected,
   handleCheckInSelected,
   handleSearch,
-}) => {
-  const types = {
+}: SearchBarTemplateProps): JSX.Element => {
+  const types: {
+    [key: string]: JSX.Element;
+  } = {
     stay: (
       <div
         className={`${
-          transparent ? 'shadow-sm' : null
+          transparent ? "shadow-sm" : null
         } border border-gray-200 grid rounded-full bg-white`}
         style={{
           gridTemplateColumns: `1.5fr 1px 1fr 1px  1fr 1px ${
-            !selected ? '1.5fr' : '2fr'
+            !selected ? "1.5fr" : "2fr"
           }`,
         }}
       >
@@ -40,7 +42,7 @@ export const SearchBarTemplate: React.FC<SearchBarTemplateProps> = ({
           title="Where are you going?"
           subtitle="Location"
           selected={selected}
-          setSelected={setSelected}
+          setSelected={() => handleSelectedChange("location")}
           name="location"
         />
         <Seperator />
@@ -48,7 +50,7 @@ export const SearchBarTemplate: React.FC<SearchBarTemplateProps> = ({
           title="Add dates"
           subtitle="Check in"
           selected={selected}
-          setSelected={setSelected}
+          setSelected={() => handleSelectedChange("checkin")}
           name="checkin"
         />
         <Seperator />
@@ -56,19 +58,19 @@ export const SearchBarTemplate: React.FC<SearchBarTemplateProps> = ({
           title="Add dates"
           subtitle="Check out"
           selected={selected}
-          setSelected={setSelected}
+          setSelected={() => handleSelectedChange("checkout")}
           name="checkout"
         />
         <Seperator />
         <button
           className={`${
-            selected === 'guests' && 'shadow-lg'
+            selected === "guests" && "shadow-lg"
           } block py-2 pr-2 pl-5 rounded-full`}
           onClick={handleGuestsSelected}
         >
           <div
             className={`flex justify-between items-center ${
-              selected === 'guests' && 'rounded-full'
+              selected === "guests" && "rounded-full"
             }`}
           >
             <div className="flex items-center">
@@ -85,12 +87,11 @@ export const SearchBarTemplate: React.FC<SearchBarTemplateProps> = ({
                 </div>
               </div>
             </div>
-            <div>
+            <div className="h-full flex items-center">
               <Button
-                block
                 variant="search"
-                onClick={() => alert('hello')}
-                expand={selected}
+                onClick={() => alert("hello")}
+                expanded={selected === "guests"}
               />
             </div>
           </div>
@@ -100,30 +101,30 @@ export const SearchBarTemplate: React.FC<SearchBarTemplateProps> = ({
     experiences: (
       <div
         className={`${
-          transparent ? 'shadow-sm' : null
+          transparent ? "shadow-sm" : null
         } border-gray-300 grid rounded-full bg-white`}
         style={{
-          gridTemplateColumns: `1fr 1px ${selected ? '1.25fr' : '1fr'}`,
+          gridTemplateColumns: `1fr 1px ${selected ? "1.25fr" : "1fr"}`,
         }}
       >
         <Option
           title="Where are you going?"
           subtitle="Location"
           selected={selected}
-          setSelected={setSelected}
+          setSelected={handleSelectedChange}
           name="location"
         />
         <Seperator />
 
         <button
           className={`block py-2 pr-3 pl-4 rounded-full hover:bg-gray-200 ${
-            selected === 'checkin' && 'shadow-lg'
+            selected === "checkin" && "shadow-lg"
           }`}
           onClick={handleCheckInSelected}
         >
           <div
             className={`flex justify-between items-center ${
-              selected === 'checkin' && 'rounded-full'
+              selected === "checkin" && "rounded-full"
             }`}
           >
             <div className="flex items-center">
@@ -138,12 +139,11 @@ export const SearchBarTemplate: React.FC<SearchBarTemplateProps> = ({
                 </div>
               </div>
             </div>
-            <div>
+            <div className="inline-flex items-center">
               <Button
-                block
                 variant="search"
                 onClick={handleSearch}
-                expand={selected}
+                expanded={selected === "location"}
               />
             </div>
           </div>
@@ -174,8 +174,8 @@ const Option: React.FC<{
   return (
     <button
       className={`${
-        selected === name && 'shadow-lg'
-      } hover:bg-gray-200 block py-2 px-4 rounded-full`}
+        selected === name ? "shadow-lg" : ""
+      } hover:bg-gray-200 block pl-6 pr-4 rounded-full`}
       onClick={() => {
         setSelected(name);
         dispatchToggle({ type: `toggle_${name}` });

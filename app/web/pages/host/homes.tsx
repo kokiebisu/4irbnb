@@ -1,12 +1,12 @@
-import { Segment } from '@template/host/homes';
-import { Footer } from '@footer';
-import { useTabTitle } from '@hooks/useTabTitle';
+import { Segment } from "@template/host/homes";
+import { Footer } from "@footer";
+import { useTabTitle } from "@hooks/useTabTitle";
 
 /**
  * Renders the component for path /host/homes
  */
 const Homes: () => string | JSX.Element = () => {
-  useTabTitle('Host your home on Airbnb');
+  useTabTitle("Host your home on Airbnb");
 
   return (
     <div>
@@ -18,8 +18,8 @@ const Homes: () => string | JSX.Element = () => {
           <Segment variant="hosting" />
         </div>
       </div>
-      <div className="py-18 border-bottom border-gray-600">
-        <Segment variant="community" title="Host your home on Airbnb" />
+      {/* <div className="py-18 border-bottom border-gray-600">
+        <Segment variant="community" />
       </div>
       <div className="py-18 border-bottom border-gray-600">
         <div className="px-5 sm:px-9">
@@ -40,7 +40,7 @@ const Homes: () => string | JSX.Element = () => {
         <div className="px-5 sm:px-9">
           <Segment variant="ready" />
         </div>
-      </div>
+      </div> */}
       <div>
         <Footer />
       </div>

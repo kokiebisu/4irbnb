@@ -1,14 +1,14 @@
-import { Icon } from '@atoms';
-import { useCheckInCard } from './logic';
-import { checkInBorder, checkOutBorder, guestBorder } from './logic';
+import { Icon } from "@atoms";
+// import { useCheckInCard } from "./logic";
+// import { checkInBorder, checkOutBorder, guestBorder } from "./logic";
 
 export interface CheckInCardTemplateProps {}
 
 /**
  * Renders the checkin card
  */
-export const CheckInCardTemplate: React.FC<CheckInCardTemplateProps> = () => {
-  const [selected, dispatchSelected] = useCheckInCard();
+export const CheckInCardTemplate = (): JSX.Element => {
+  // const [selected, dispatchSelected] = useCheckInCard();
 
   // fixed lg:sticky right-0 bottom-0 lg:top-0 // position logic
   return (
@@ -21,7 +21,13 @@ export const CheckInCardTemplate: React.FC<CheckInCardTemplateProps> = () => {
             </h3>
             <div className="py-3 text-gray-300 text-xl font-medium w-32">
               <div className="inline-block mr-1">
-                <Icon variant="profile" profileType="star" width={10} />
+                <Icon
+                  variant="fill"
+                  fillType="star"
+                  width={10}
+                  height={10}
+                  fill="red"
+                />
               </div>
               <span className="inline-block text-sm mr-1 text-gray-500">
                 4.93
@@ -35,9 +41,10 @@ export const CheckInCardTemplate: React.FC<CheckInCardTemplateProps> = () => {
             <div className="h-16 flex w-full">
               <div
                 onClick={() => {
-                  dispatchSelected({ type: 'checkin' });
+                  alert("checkin");
+                  // dispatchSelected({ type: "checkin" });
                 }}
-                className={checkInBorder(selected)}
+                // className={checkInBorder(selected)}
               >
                 <div className="px-3">
                   <label className="block text-left text-xs font-bold text-gray-400">
@@ -51,9 +58,10 @@ export const CheckInCardTemplate: React.FC<CheckInCardTemplateProps> = () => {
               </div>
               <div
                 onClick={() => {
-                  dispatchSelected({ type: 'checkout' });
+                  alert("checkin");
+                  // dispatchSelected({ type: "checkout" });
                 }}
-                className={checkOutBorder(selected)}
+                // className={checkOutBorder(selected)}
               >
                 <div className="px-4">
                   <label className="block text-left text-xs font-bold text-gray-400">
@@ -69,15 +77,18 @@ export const CheckInCardTemplate: React.FC<CheckInCardTemplateProps> = () => {
             <button
               style={{ height: 60 }}
               onClick={() => {
-                dispatchSelected({ type: 'guests' });
+                // dispatchSelected({ type: "guests" });
+                alert("clicked");
               }}
-              className={
-                selected.guests
-                  ? 'border border-gray-400 w-full bg-transparent rounded'
-                  : 'border-b border-l border-r bg-transparent rounded-br-md w-full'
-              }
+              // className={
+              //   selected.guests
+              //     ? "border border-gray-400 w-full bg-transparent rounded"
+              //     : "border-b border-l border-r bg-transparent rounded-br-md w-full"
+              // }
             >
-              <div className={guestBorder(selected)}>
+              <div
+              // className={guestBorder(selected)}
+              >
                 <div className="px-4 flex justify-between items-center">
                   <div>
                     <label className="block text-left text-xs font-bold text-gray-400">
@@ -86,7 +97,14 @@ export const CheckInCardTemplate: React.FC<CheckInCardTemplateProps> = () => {
                     <p className="font-light text-sm">1 guest</p>
                   </div>
                   <div>
-                    <Icon variant="action" actionType="bottom" width={14} />
+                    <Icon
+                      variant="stroke"
+                      strokeType="chevronBottom"
+                      width={14}
+                      height={14}
+                      stroke="black"
+                      strokeWidth={2}
+                    />
                   </div>
                 </div>
               </div>

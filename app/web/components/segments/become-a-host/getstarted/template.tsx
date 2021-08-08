@@ -1,22 +1,23 @@
-import { Button } from '@atoms';
-import { Input, $Input } from '@atoms';
+import { Button } from "@atoms";
+import { Input } from "@atoms";
 
 export interface GetStartedSegmentTemplateProps {
   loading?: boolean;
-  handleLoadingChange?: () => void;
-  stay?: string;
-  handleStayChange?: () => void;
-  handleSubmit?: () => void;
-  guests?: number;
-  address?: string;
-  handleChange?: (e: any) => void;
-  handlePlaceChange?: (e: any) => void;
+  handleLoadingChange: () => void;
+  stay: string;
+  handleStayChange: () => void;
+  handleSubmit: () => void;
+  guests: number;
+  address: string;
+  handleChange: (e: any) => void;
+  handlePlaceChange: (e: any) => void;
+  handleContinueSelect: () => void;
 }
 
 /**
  * Renders the /become-a-host/get-started page content
  */
-export const GetStartedSegmentTemplate: React.FC<GetStartedSegmentTemplateProps> = ({
+export const GetStartedSegmentTemplate = ({
   loading,
   guests,
   address,
@@ -24,7 +25,8 @@ export const GetStartedSegmentTemplate: React.FC<GetStartedSegmentTemplateProps>
   handleChange,
   handleSubmit,
   handlePlaceChange,
-}) => {
+  handleContinueSelect,
+}: GetStartedSegmentTemplateProps): JSX.Element => {
   return (
     <div>
       <div>
@@ -46,28 +48,30 @@ export const GetStartedSegmentTemplate: React.FC<GetStartedSegmentTemplateProps>
             <div
               className="mb-3 grid gap-3"
               style={{
-                gridTemplateColumns: '1fr 130px',
+                gridTemplateColumns: "1fr 130px",
               }}
             >
               <div>
                 <Input
-                  variant={$Input.PLACE}
+                  variant="place"
                   value={stay}
-                  changePlace={handlePlaceChange}
+                  onChange={handlePlaceChange}
+                  // changePlace={}
                 />
               </div>
               <div>
                 <Input
-                  variant={$Input.GUESTS}
-                  handleChange={handleChange}
+                  variant="guests"
+                  onChange={() => alert("yo")}
                   value={guests}
+                  errors={false}
                 />
               </div>
             </div>
             <div>
               <Input
-                variant={$Input.ADDRESS}
-                handleChange={handleChange}
+                variant="address"
+                onChange={handleChange}
                 value={address}
               />
             </div>
@@ -78,6 +82,9 @@ export const GetStartedSegmentTemplate: React.FC<GetStartedSegmentTemplateProps>
                   title="Continue"
                   size="sm"
                   loading={loading}
+                  color="white"
+                  onClick={handleContinueSelect}
+                  fill="black"
                 />
               </div>
             </div>

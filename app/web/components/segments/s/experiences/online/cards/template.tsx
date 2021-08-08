@@ -1,17 +1,17 @@
-import { Card, $Card } from '@card';
-import { Button } from '@atoms';
-import { useSlide } from '@hooks/useSlide';
+import { Card } from "@card";
+import { Button } from "@atoms";
+import { useSlide } from "@hooks/useSlide";
 
-export interface CardsSegmentTemplateProps {
-  title?: string;
-  cards?: { imgUrl: string; videoUrl: string }[];
-}
+export type CardsSegmentTemplateProps = {
+  title: string;
+  cards: { imgUrl: string; videoUrl: string }[];
+};
 
-export const CardsSegmentTemplate: React.FC<CardsSegmentTemplateProps> = ({
+export const CardsSegmentTemplate = ({
   title,
   cards,
-}) => {
-  const { state, containerRef, width, previous, next } = useSlide('whole');
+}: CardsSegmentTemplateProps): JSX.Element => {
+  const { state, containerRef, width, previous, next } = useSlide("whole");
 
   const displayingColumns = () => {
     if (width > 1128) {
@@ -35,23 +35,28 @@ export const CardsSegmentTemplate: React.FC<CardsSegmentTemplateProps> = ({
         </div>
         <div className="flex items-center">
           <div className="mr-2">
-            <Button variant="underline" title={`Show (${cards.length})`} />
+            <Button
+              variant="underline"
+              title={`Show (${cards.length})`}
+              font={500}
+              onClick={() => alert("yo")}
+            />
           </div>
           <div className="flex items-center">
             <div className="mx-1">
               <Button
                 variant="paginate"
-                direction="left"
+                direction="chevronLeft"
                 onClick={previous}
-                disable={state.activeSlide === 0}
+                disabled={state.activeSlide === 0}
               />
             </div>
             <div className="px-1">
               <Button
                 variant="paginate"
-                direction="right"
+                direction="chevronRight"
                 onClick={next}
-                disable={
+                disabled={
                   state.activeSlide ===
                   Math.ceil(cards.length / displayingColumns()) - 1
                 }
@@ -73,11 +78,7 @@ export const CardsSegmentTemplate: React.FC<CardsSegmentTemplateProps> = ({
               return (
                 <div key={index} style={{ width: width / displayingColumns() }}>
                   <div className="mr-3">
-                    <Card
-                      variant={$Card.VIDEO}
-                      imgUrl={imgUrl}
-                      videoUrl={videoUrl}
-                    />
+                    <Card variant="video" imgUrl={imgUrl} videoUrl={videoUrl} />
                   </div>
                 </div>
               );

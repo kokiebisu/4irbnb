@@ -1,13 +1,13 @@
-import { useRef } from 'react';
-import { Card, $Card } from '@card';
-import { Button } from '@atoms';
-import { useSlider } from '@hooks/useSlider';
-import { useHandleContainerResize } from '@hooks/useHandleContainerResize';
+import { useRef } from "react";
+import { Card } from "@card";
+import { Button } from "@atoms";
+import { useSlider } from "@hooks/useSlider";
+import { useHandleContainerResize } from "@hooks/useHandleContainerResize";
 
-export interface AlsoSegmentTemplateProps {
-  items?: any;
-  title?: string;
-}
+export type AlsoSegmentTemplateProps = {
+  items: any;
+  title: string;
+};
 
 /**
  * Renders the also section
@@ -17,9 +17,9 @@ export const AlsoSegmentTemplate: React.FC<AlsoSegmentTemplateProps> = ({
   items,
   title,
 }) => {
-  const containerRef = useRef<HTMLDivElement>();
+  const containerRef = useRef<HTMLDivElement>(null);
   const width: number = useHandleContainerResize(containerRef)[0];
-  const { state, previous, next } = useSlider(items, width, 'also');
+  const { state, previous, next } = useSlider(items, width, "also");
 
   return (
     <div className="overflow-x-hidden">
@@ -31,19 +31,17 @@ export const AlsoSegmentTemplate: React.FC<AlsoSegmentTemplateProps> = ({
           <div className="mx-2">
             <Button
               variant="paginate"
-              animate
-              direction="left"
+              direction="chevronLeft"
               onClick={previous}
-              disable={state.activeSlide === 0}
+              disabled={state.activeSlide === 0}
             />
           </div>
           <div className="mx-2">
             <Button
               variant="paginate"
-              animate
-              direction="right"
+              direction="chevronRight"
               onClick={next}
-              disable={
+              disabled={
                 state.activeSlide === items.length - (width > 728 ? 3 : 2)
               }
             />
@@ -59,26 +57,24 @@ export const AlsoSegmentTemplate: React.FC<AlsoSegmentTemplateProps> = ({
         }}
       >
         <div className="flex">
-          {items.map((item, index) => {
+          {items.map((item: any, index: any) => {
             return (
               <div style={{ width: width / (width > 728 ? 3 : 2) }} key={index}>
                 <div className="mb-3">
                   <Card
-                    variant={$Card.NEARBY}
-                    to={item[0]?.to}
+                    variant="nearby"
                     imgUrl={item?.pic}
-                    title={item[0]?.city || 'Item'}
-                    subtitle={`${item[0]?.hours || 1} hour drive`}
+                    city={item[0]?.city || "Item"}
+                    hours={item[0]?.hours}
                     size="lg"
                   />
                 </div>
                 <div>
                   <Card
-                    variant={$Card.NEARBY}
-                    to={item[1]?.to}
+                    variant="nearby"
                     imgUrl={item?.pic}
-                    title={item[1]?.city || 'Item'}
-                    subtitle={`${item[0]?.hours || 1} hour drive`}
+                    city={item[1]?.city || "Item"}
+                    hours={item[0]?.hours}
                     size="lg"
                   />
                 </div>

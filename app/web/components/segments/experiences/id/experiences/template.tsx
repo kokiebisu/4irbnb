@@ -1,8 +1,8 @@
-import { Bullet, ExperienceIconTypes } from '@atoms';
+import { Bullet } from "@atoms";
 
 export interface ExperiencesSegmentTemplateProps {
   experiences: {
-    icon: { experienceType: ExperienceIconTypes };
+    icon: { experienceType: any };
     title: string;
     description: string;
   }[];
@@ -20,12 +20,12 @@ export const ExperiencesSegmentTemplate: React.FC<ExperiencesSegmentTemplateProp
         <h3 className="text-xl">Airbnb Online Experiences</h3>
       </div>
       <div className="grid grid-cols-3 gap-4">
-        {experiences.map(({ icon, title, description }, index) => {
+        {experiences.map(({ title, description }, index) => {
           return (
             <div key={index}>
               <Bullet
                 variant="secondary"
-                experienceType={icon}
+                icon={<div></div>}
                 title={title}
                 description={description}
               />

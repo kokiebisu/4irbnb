@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { styleInput, styleLabel, styleContainer } from '../styling.text';
-import { Button } from '@atoms';
-import { checkPassword } from '@helper/auth';
+import { useState } from "react";
+import { styleInput, styleLabel, styleContainer } from "../styling.text";
+import { Button } from "@atoms";
+import { checkPassword } from "@helper/auth";
 
-export interface PasswordInputTemplateProps {
+export type PasswordInputTemplateProps = {
   onChange?: (e: any) => void;
   value?: any;
-  direction?: 'top' | 'bottom' | undefined;
+  direction?: "top" | "bottom" | undefined;
   errors?: boolean;
-}
+};
 
 /**
  * Renders the text input component
@@ -19,12 +19,12 @@ export interface PasswordInputTemplateProps {
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const PasswordInputTemplate: React.FC<PasswordInputTemplateProps> = ({
+export const PasswordInputTemplate = ({
   onChange,
   value,
   direction,
   errors,
-}) => {
+}: PasswordInputTemplateProps): JSX.Element => {
   const [fieldActive, setFieldActive] = useState(false);
   const [hide, setHide] = useState(true);
 
@@ -38,38 +38,40 @@ export const PasswordInputTemplate: React.FC<PasswordInputTemplateProps> = ({
 
   return (
     <div
-      className={`h-14 relative px-5 items-center flex ${styleContainer(
+      className={`h-14 relative px-5 items-center flex ${styleContainer({
         errors,
         fieldActive,
-        checkPassword(value),
-        direction
-      )}`}
+        // evaluate: checkPassword(value),
+        direction,
+        value,
+      })}`}
     >
       <div className="relative h-full w-full">
         <input
           autoFocus={true}
           id="password"
           name="password"
-          type={hide ? 'password' : 'text'}
+          type={hide ? "password" : "text"}
           onChange={onChange}
           value={value}
           onFocus={activateField}
           onBlur={deactivateField}
           className={`pt-5 w-full block border-none text-base font-light placeholder-black relative top-0 outline-none text-gray-400 ${styleInput(
-            errors,
-            fieldActive,
-            checkPassword(value)
+            {
+              fieldActive,
+              errors: checkPassword(value),
+            }
           )}`}
-          placeholder={fieldActive ? 'Password' : undefined}
+          placeholder={fieldActive ? "Password" : undefined}
         />
         <label
           htmlFor="password"
-          className={`top-2 absolute transition font-thin ${styleLabel(
+          className={`top-2 absolute transition font-thin ${styleLabel({
             errors,
             fieldActive,
-            checkPassword(value),
-            value
-          )}`}
+            evaluate: checkPassword(value),
+            value,
+          })}`}
         >
           Password
         </label>
@@ -79,7 +81,7 @@ export const PasswordInputTemplate: React.FC<PasswordInputTemplateProps> = ({
           variant="underline"
           onClick={() => setHide((prevHide) => !prevHide)}
           font={13}
-          title={hide ? 'Show' : 'Hide'}
+          title={hide ? "Show" : "Hide"}
         />
       </div>
     </div>

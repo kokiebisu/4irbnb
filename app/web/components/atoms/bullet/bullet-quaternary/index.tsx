@@ -1,10 +1,10 @@
 import {
   QuaternaryBulletTemplate,
   QuaternaryBulletTemplateProps,
-} from './template';
+} from "./template";
 
 export type QuaternaryBulletProps = QuaternaryBulletTemplateProps;
 
-export const QuaternaryBullet = (props: QuaternaryBulletProps): JSX.Element => {
-  return <QuaternaryBulletTemplate {...props} />;
-};
+export const QuaternaryBullet = (props: QuaternaryBulletProps): JSX.Element => (
+  <QuaternaryBulletTemplate {...props} />
+);

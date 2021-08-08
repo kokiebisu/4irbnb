@@ -1,15 +1,11 @@
-import { useSharingCard } from './logic';
-import { SharingCardTemplate } from './template';
+import { useSharingCard } from "./logic";
+import { SharingCardTemplate } from "./template";
 
-const SharingCard = (props) => {
-  const data = useSharingCard(props);
-  return <SharingCardTemplate {...props} {...data} />;
+export type SharingCardProps = {
+  sharing: "meditate" | "baking" | "magic";
 };
 
-export const sharing = (props) => {
-  return {
-    sharing: {
-      component: <SharingCard {...props} />,
-    },
-  };
+export const SharingCard = (props: SharingCardProps): JSX.Element => {
+  const data = useSharingCard(props);
+  return <SharingCardTemplate {...props} {...data} />;
 };

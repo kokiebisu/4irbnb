@@ -1,14 +1,16 @@
-import { Input } from '@atoms';
+// import { Input } from "@atoms";
 
 export interface PhotosSegmentTemplateProps {
   preview?: string[];
-  handlePhotosChange?: (e: any) => void;
+  handlePhotosChange: (e: any) => void;
 }
 
-export const PhotosSegmentTemplate: React.FC<PhotosSegmentTemplateProps> = ({
-  preview,
-  handlePhotosChange,
-}) => {
+export const PhotosSegmentTemplate: React.FC<PhotosSegmentTemplateProps> = (
+  {
+    // preview,
+    // handlePhotosChange,
+  }
+) => {
   return (
     <div>
       <div className="mb-4">
@@ -24,7 +26,7 @@ export const PhotosSegmentTemplate: React.FC<PhotosSegmentTemplateProps> = ({
       </div>
       <div className="mb-6">
         <div className="mb-3">
-          {preview.length > 0 ? (
+          {/* {preview.length > 0 ? (
             <div>
               <div>
                 <img src={preview[0]} />
@@ -37,7 +39,7 @@ export const PhotosSegmentTemplate: React.FC<PhotosSegmentTemplateProps> = ({
             </div>
           ) : (
             <Input variant="photo" onChange={handlePhotosChange} />
-          )}
+          )} */}
         </div>
       </div>
     </div>

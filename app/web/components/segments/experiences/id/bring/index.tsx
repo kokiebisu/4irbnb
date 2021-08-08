@@ -1,17 +1,7 @@
-import { useBringSegment } from './logic';
-import { BringSegmentTemplate, BringSegmentTemplateProps } from './template';
+import { useBringSegment } from "./logic";
+import { BringSegmentTemplate } from "./template";
 
-export interface BringSegmentProps extends BringSegmentTemplateProps {}
-
-export const BringSegment: React.FC<BringSegmentProps> = (props) => {
+export const BringSegment = () => {
   const data = useBringSegment();
-  return <BringSegmentTemplate {...data} {...props} />;
-};
-
-export const bring = (props: BringSegmentProps) => {
-  return {
-    bring: {
-      component: <BringSegment {...props} />,
-    },
-  };
+  return <BringSegmentTemplate {...data} />;
 };

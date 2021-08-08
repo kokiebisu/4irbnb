@@ -1,38 +1,23 @@
-import { AvailabilityBarTemplateProps } from './bar-availability/template';
-import { CovidBarTemplateProps } from './bar-covid/template';
-import { CreateBarTemplateProps } from './bar-create/template';
-import { FiltersBarTemplateProps } from './bar-filters/template';
-import { MenuBarTemplateProps } from './bar-menu/template';
-import { PaginateBarTemplateProps } from './bar-paginate/template';
-import { ProgressBarTemplateProps } from './bar-progress/template';
-import { SearchBarTemplateProps } from './bar-search/template';
-import { barFactory } from './util/factory';
+import { factory } from "./util/factory";
+import { AvailabilityBarProps } from "./bar-availability";
+import { CreateBarProps } from "./bar-create";
+import { FiltersBarProps } from "./bar-filters";
+import { MenuBarProps } from "./bar-menu";
+import { PaginateBarProps } from "./bar-paginate";
+import { ProgressBarProps } from "./bar-progress";
+import { SearchBarProps } from "./bar-search";
 
-export interface BarProps
-  extends AvailabilityBarTemplateProps,
-    CovidBarTemplateProps,
-    CreateBarTemplateProps,
-    FiltersBarTemplateProps,
-    MenuBarTemplateProps,
-    PaginateBarTemplateProps,
-    ProgressBarTemplateProps,
-    SearchBarTemplateProps {
-  variant:
-    | 'availability'
-    | 'paginate'
-    | 'covid'
-    | 'progress'
-    | 'search'
-    | 'create'
-    | 'menu'
-    | 'filters';
-}
+export type BarProps =
+  | ({ variant: "availability" } & AvailabilityBarProps)
+  | ({ variant: "create" } & CreateBarProps)
+  | ({ variant: "filters" } & FiltersBarProps)
+  | ({ variant: "menu" } & MenuBarProps)
+  | ({ variant: "paginate" } & PaginateBarProps)
+  | ({ variant: "progress" } & ProgressBarProps)
+  | ({ variant: "search" } & SearchBarProps);
 
 /**
  * Bundles the bar components
  * @param {string} variant - Specifies the variant of bar component
  */
-export const Bar: React.FC<BarProps> = ({ variant = 'paginate', ...props }) => {
-  const variants = barFactory(props);
-  return variants[variant].component;
-};
+export const Bar = ({ ...props }: BarProps): JSX.Element => factory(props);

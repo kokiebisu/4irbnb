@@ -1,8 +1,8 @@
-import { Story, Meta } from '@storybook/react';
-import { RegionInputTemplate, RegionInputTemplateProps } from './template';
+import { Story, Meta } from "@storybook/react";
+import { RegionInputTemplate, RegionInputTemplateProps } from "./template";
 
 export default {
-  title: 'Atoms/Input',
+  title: "Atoms/Input",
   component: RegionInputTemplate,
 } as Meta;
 
@@ -12,8 +12,7 @@ const InputStory: Story<RegionInputTemplateProps> = (args) => (
 
 export const Region = InputStory.bind({});
 Region.args = {
-  onChange: () => alert('on change'),
-  value: 'canada',
-  direction: undefined,
+  onChange: () => alert("on change"),
+  value: "canada",
   errors: false,
 };

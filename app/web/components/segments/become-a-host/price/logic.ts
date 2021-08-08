@@ -1,6 +1,6 @@
-import { useStayDispatch, useStayState } from '@context/stay';
-import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useStayDispatch, useStayState } from "@context/stay";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 export const usePriceSegment = () => {
   const router = useRouter();
@@ -13,23 +13,23 @@ export const usePriceSegment = () => {
 
   const handleRedirectToNextPage = () => {
     stayDispatch({
-      type: 'add',
+      type: "add",
       payload: data,
     });
     setTimeout(() => {
-      router.push('/become-a-host/booking-scenarios');
+      router.push("/become-a-host/booking-scenarios");
     }, 500);
   };
 
   const handleRedirectToPreviousPage = () => {
     setTimeout(() => {
-      router.push('/period');
+      router.push("/period");
     }, 500);
   };
 
-  const handleChange = (e, property) => {
+  const handleChange = (e: any, property: string) => {
     const onlyNumbers = /^[0-9\b]+$/;
-    if (e.target.value == '' || onlyNumbers.test(e.target.value)) {
+    if (e.target.value == "" || onlyNumbers.test(e.target.value)) {
       setData({ ...data, [property]: e.target.value });
     }
   };

@@ -1,15 +1,11 @@
-import { useWorksCard } from './logic';
-import { WorksCardTemplate } from './template';
+import { useWorksCard } from "./logic";
+import { WorksCardTemplate } from "./template";
 
-const WorksCard = (props) => {
-  const data = useWorksCard(props);
-  return <WorksCardTemplate {...props} {...data} />;
+export type WorksCardProps = {
+  work: "design" | "share" | "submit" | "setup";
 };
 
-export const works = (props) => {
-  return {
-    works: {
-      component: <WorksCard {...props} />,
-    },
-  };
+export const WorksCard = (props: WorksCardProps): JSX.Element => {
+  const data = useWorksCard(props);
+  return <WorksCardTemplate {...props} {...data} />;
 };

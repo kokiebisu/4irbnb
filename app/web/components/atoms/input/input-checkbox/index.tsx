@@ -1,7 +1,7 @@
-import { CheckboxInputTemplate, CheckboxInputTemplateProps } from './template';
+import { CheckboxInputTemplate, CheckboxInputTemplateProps } from "./template";
 
-export interface CheckboxInputProps extends CheckboxInputTemplateProps {}
+export type CheckboxInputProps = CheckboxInputTemplateProps;
 
-export const CheckboxInput: React.FC<CheckboxInputProps> = (props) => {
-  return <CheckboxInputTemplate {...props} />;
-};
+export const CheckboxInput = (props: CheckboxInputProps): JSX.Element => (
+  <CheckboxInputTemplate {...props} />
+);

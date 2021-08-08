@@ -1,25 +1,25 @@
-export interface RoomPanelTemplateProps {
-  firstImage?: string;
-  secondImage?: string;
-  thirdImage?: string;
-  fourthImage?: string;
-  fifthImage?: string;
-}
+export type RoomPanelTemplateProps = {
+  firstImage: string;
+  secondImage: string;
+  thirdImage: string;
+  fourthImage: string;
+  fifthImage: string;
+};
 
 /**
  *
  * @param param0
  * @returns
  */
-export const RoomPanelTemplate: React.FC<RoomPanelTemplateProps> = ({
+export const RoomPanelTemplate = ({
   firstImage,
   secondImage,
   thirdImage,
   fourthImage,
   fifthImage,
-}) => {
+}: RoomPanelTemplateProps): JSX.Element => {
   return (
-    <div className="relative" style={{ paddingTop: '42%' }}>
+    <div className="relative" style={{ paddingTop: "42%" }}>
       <div className="animate-pulse absolute top-0 bottom-0 left-0 right-0">
         <div className="grid grid-cols-2 gap-3 w-full h-full">
           <div>

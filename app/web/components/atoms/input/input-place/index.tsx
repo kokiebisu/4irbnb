@@ -1,8 +1,8 @@
-import React from 'react';
-import { PlaceInputTemplate, PlaceInputTemplateProps } from './template';
+import React from "react";
+import { PlaceInputTemplate, PlaceInputTemplateProps } from "./template";
 
-export interface PlaceInputProps extends PlaceInputTemplateProps {}
+export type PlaceInputProps = PlaceInputTemplateProps;
 
-export const PlaceInput: React.FC<PlaceInputProps> = (props) => {
-  return <PlaceInputTemplate {...props} />;
-};
+export const PlaceInput = (props: PlaceInputProps): JSX.Element => (
+  <PlaceInputTemplate {...props} />
+);

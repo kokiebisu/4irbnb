@@ -1,12 +1,12 @@
-import { useRef, useState } from 'react';
-import { Icon } from '@atoms';
-import useOnClickOutside from '@hooks/useOnClickOutside';
+import { useRef, useState } from "react";
+import { Icon } from "@atoms";
+import useOnClickOutside from "@hooks/useOnClickOutside";
 
-export interface PlaceInputTemplateProps {
-  value?: any;
-  direction?: 'top' | 'bottom' | undefined;
-  onChange?: (e: any) => void;
-}
+export type PlaceInputTemplateProps = {
+  value: any;
+  direction?: "top" | "bottom";
+  onChange: (e: any) => void;
+};
 
 /**
  * Renders the text input component
@@ -17,12 +17,12 @@ export interface PlaceInputTemplateProps {
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const PlaceInputTemplate: React.FC<PlaceInputTemplateProps> = ({
+export const PlaceInputTemplate = ({
   value,
   direction,
   onChange,
-}) => {
-  const containerRef = useRef();
+}: PlaceInputTemplateProps): JSX.Element => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const [expanded, setExpanded] = useState(false);
   useOnClickOutside(containerRef, () => {
     if (expanded) {
@@ -32,12 +32,12 @@ export const PlaceInputTemplate: React.FC<PlaceInputTemplateProps> = ({
 
   const renderShape = () => {
     switch (direction) {
-      case 'top':
-        return 'border-b border-l border-r border-gray-400 rounded-b-lg';
-      case 'bottom':
-        return 'border-t border-l border-r border-gray-400 rounded-t-lg';
+      case "top":
+        return "border-b border-l border-r border-gray-400 rounded-b-lg";
+      case "bottom":
+        return "border-t border-l border-r border-gray-400 rounded-t-lg";
       default:
-        return 'border border-gray-400 rounded-lg';
+        return "border border-gray-400 rounded-lg";
     }
   };
 
@@ -49,7 +49,7 @@ export const PlaceInputTemplate: React.FC<PlaceInputTemplateProps> = ({
     >
       <div
         className={`relative h-full w-full ${renderShape()} ${
-          expanded && 'border-2 border-black'
+          expanded && "border-2 border-black"
         }`}
       >
         <div
@@ -66,9 +66,23 @@ export const PlaceInputTemplate: React.FC<PlaceInputTemplateProps> = ({
           </div>
           <div>
             {expanded ? (
-              <Icon variant="action" actionType="top" width={13} />
+              <Icon
+                variant="stroke"
+                strokeType="chevronTop"
+                stroke="black"
+                strokeWidth={2}
+                width={13}
+                height={13}
+              />
             ) : (
-              <Icon variant="action" actionType="bottom" width={13} />
+              <Icon
+                variant="stroke"
+                strokeType="chevronBottom"
+                stroke="black"
+                strokeWidth={2}
+                width={13}
+                height={13}
+              />
             )}
           </div>
         </div>
@@ -84,7 +98,7 @@ export const PlaceInputTemplate: React.FC<PlaceInputTemplateProps> = ({
                 <div
                   className="p-3 flex items-center cursor-pointer h-full justify-between bg-transparent"
                   onClick={() => {
-                    onChange('Entire place');
+                    onChange("Entire place");
                     setExpanded(!expanded);
                   }}
                 >
@@ -100,12 +114,15 @@ export const PlaceInputTemplate: React.FC<PlaceInputTemplateProps> = ({
                       </p>
                     </div>
                   </div>
-                  {value === 'Entire place' && (
+                  {value === "Entire place" && (
                     <div className="flex items-center">
                       <Icon
-                        variant="semantic"
-                        semanticType="check"
+                        variant="stroke"
+                        strokeType="check"
                         width={32}
+                        height={32}
+                        stroke="black"
+                        strokeWidth={2}
                       />
                     </div>
                   )}
@@ -115,7 +132,7 @@ export const PlaceInputTemplate: React.FC<PlaceInputTemplateProps> = ({
                 <div
                   className="p-3 flex items-center cursor-pointer h-full bg-transparent"
                   onClick={() => {
-                    onChange('Private room');
+                    onChange("Private room");
                     setExpanded(!expanded);
                   }}
                 >
@@ -130,12 +147,15 @@ export const PlaceInputTemplate: React.FC<PlaceInputTemplateProps> = ({
                       </p>
                     </div>
                   </div>
-                  {value === 'Private room' && (
+                  {value === "Private room" && (
                     <div className="flex items-center">
                       <Icon
-                        variant="semantic"
-                        semanticType="check"
+                        variant="stroke"
+                        strokeType="check"
                         width={32}
+                        height={32}
+                        stroke="black"
+                        strokeWidth={2}
                       />
                     </div>
                   )}
@@ -145,7 +165,7 @@ export const PlaceInputTemplate: React.FC<PlaceInputTemplateProps> = ({
                 <div
                   className="p-3 flex items-center cursor-pointer h-full bg-transparent"
                   onClick={() => {
-                    onChange('Shared room');
+                    onChange("Shared room");
                     setExpanded(!expanded);
                   }}
                 >
@@ -160,12 +180,15 @@ export const PlaceInputTemplate: React.FC<PlaceInputTemplateProps> = ({
                       </p>
                     </div>
                   </div>
-                  {value === 'Shared room' && (
+                  {value === "Shared room" && (
                     <div className="flex items-center">
                       <Icon
-                        variant="semantic"
-                        semanticType="check"
+                        variant="stroke"
+                        strokeType="check"
                         width={32}
+                        height={32}
+                        stroke="black"
+                        strokeWidth={2}
                       />
                     </div>
                   )}

@@ -1,9 +1,7 @@
-import Router from 'next/router';
-import { Button } from '@atoms';
+import Router from "next/router";
+import { Button } from "@atoms";
 
-export interface OnlineHostHeaderTemplateProps {}
-
-export const OnlineHostHeaderTemplate: React.FC<OnlineHostHeaderTemplateProps> = () => {
+export const OnlineHostHeaderTemplate = (): JSX.Element => {
   return (
     <header className="h-48 px-0">
       <div className="p-4 h-full">
@@ -12,7 +10,7 @@ export const OnlineHostHeaderTemplate: React.FC<OnlineHostHeaderTemplateProps> =
             variant="logo"
             noName
             fill="black"
-            onClick={() => Router.push('/')}
+            onClick={() => Router.push("/")}
           />
         </div>
       </div>

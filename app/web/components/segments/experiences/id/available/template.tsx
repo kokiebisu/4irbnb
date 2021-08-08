@@ -1,17 +1,16 @@
-import { useLayoutEffect, useRef, useState } from 'react';
-import section from '@template/index.module.scss';
-import { Card, $Card } from '@card';
-import { Button } from '@atoms';
+import { useLayoutEffect, useRef, useState } from "react";
+import { Card } from "@card";
+import { Button } from "@atoms";
 
-export interface AvailableSegmentTemplateProps {
-  availableSlots?: {
+export type AvailableSegmentTemplateProps = {
+  availableSlots: {
     date: string;
     from: string;
     to: string;
     standard: string;
     price: number;
   }[];
-}
+};
 
 /**
  * Renders the available section
@@ -63,13 +62,13 @@ export const AvailableSegmentTemplate: React.FC<AvailableSegmentTemplateProps> =
     });
   };
 
-  const containerRef = useRef<HTMLDivElement>();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
-    window.addEventListener('resize', handleRef);
+    window.addEventListener("resize", handleRef);
     handleRef();
     return () => {
-      window.removeEventListener('resize', handleRef);
+      window.removeEventListener("resize", handleRef);
     };
   });
 
@@ -83,17 +82,17 @@ export const AvailableSegmentTemplate: React.FC<AvailableSegmentTemplateProps> =
           <div className="mx-1">
             <Button
               variant="paginate"
-              direction="left"
+              direction="chevronLeft"
               onClick={handlePreviousSlide}
-              disable={state.activeSlide === 0}
+              disabled={state.activeSlide === 0}
             />
           </div>
           <div className="mx-1">
             <Button
               variant="paginate"
-              direction="right"
+              direction="chevronRight"
               onClick={handleNextSlide}
-              disable={
+              disabled={
                 state.activeSlide ===
                 Math.ceil(availableSlots.length / displayingColumns) - 1
               }
@@ -115,16 +114,17 @@ export const AvailableSegmentTemplate: React.FC<AvailableSegmentTemplateProps> =
               <div
                 style={{ width: width / displayingColumns }}
                 key={index}
-                className={[section['w__nearby']].join(' ')}
+                // className={[section["w__nearby"]].join(" ")}
               >
                 <div className="mb-3 mr-4">
                   <Card
-                    variant={$Card.AVAILABLE}
+                    variant="available"
                     date={available.date}
                     from={available.from}
                     to={available.to}
                     standard={available.standard}
                     price={available.price}
+                    onClick={() => alert("yo")}
                   />
                 </div>
               </div>
@@ -133,7 +133,12 @@ export const AvailableSegmentTemplate: React.FC<AvailableSegmentTemplateProps> =
         </div>
       </div>
       <div className="mt-5">
-        <Button variant="border" title="See more dates" />
+        <Button
+          variant="border"
+          title="See more dates"
+          size="md"
+          onClick={() => alert("yo")}
+        />
       </div>
     </div>
   );

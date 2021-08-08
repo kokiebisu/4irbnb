@@ -1,9 +1,9 @@
-export interface ParticipateCardTemplateProps {
-  icon?: any;
-  title?: string;
-  description?: string;
+export type ParticipateCardTemplateProps = {
+  icon: any;
+  title: string;
+  description: string;
   more?: string;
-}
+};
 
 /**
  * Renders the participate card component
@@ -12,12 +12,12 @@ export interface ParticipateCardTemplateProps {
  * @param {string} description
  * @param {string} more
  */
-export const ParticipateCardTemplate: React.FC<ParticipateCardTemplateProps> = ({
+export const ParticipateCardTemplate = ({
   icon,
   title,
   description,
   more,
-}) => {
+}: ParticipateCardTemplateProps): JSX.Element => {
   return (
     <div
       style={{ minHeight: 300, width: 210 }}

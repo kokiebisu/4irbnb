@@ -17,15 +17,22 @@ export const OptionButtonTemplate = ({
   return (
     <button
       data-testid="option-button"
-      className="inline-block"
+      className="w-full block"
       onClick={onClick}
     >
       <div
-        className={`inline-block rounded-lg text-left text-sm bg-white px-5 py-3 hover:bg-gray-100 ${
-          bold ? 'font-base' : 'font-light'
+        style={{ padding: "8px 16px" }}
+        className={`w-full text-left bg-white hover:bg-gray-100 ${
+          bold ? "font-base" : "font-light"
         }`}
       >
-        {name}
+        <p
+          className={`text-sm ${
+            bold ? "text-gray-900 font-medium" : "text-gray-700"
+          }`}
+        >
+          {name}
+        </p>
       </div>
     </button>
   );

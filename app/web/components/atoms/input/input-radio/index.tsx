@@ -1,7 +1,7 @@
-import { RadioInputTemplate, RadioInputTemplateProps } from './template';
+import { RadioInputTemplate, RadioInputTemplateProps } from "./template";
 
-export interface RadioInputProps extends RadioInputTemplateProps {}
+export type RadioInputProps = RadioInputTemplateProps;
 
-export const RadioInput: React.FC<RadioInputProps> = (props) => {
-  return <RadioInputTemplate {...props} />;
-};
+export const RadioInput = (props: RadioInputProps): JSX.Element => (
+  <RadioInputTemplate {...props} />
+);

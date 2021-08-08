@@ -1,15 +1,9 @@
-import { LandingHeaderTemplate, LandingHeaderTemplateProps } from './template';
+import { useLandingHeader } from "./logic";
+import { LandingHeaderTemplate } from "./template";
 
-export interface LandingHeaderProps extends LandingHeaderTemplateProps {}
+export type LandingHeaderProps = {};
 
-export const LandingHeader: React.FC<LandingHeaderProps> = (props) => {
-  return <LandingHeaderTemplate {...props} />;
-};
-
-export const landing = (props) => {
-  return {
-    landing: {
-      component: <LandingHeader {...props} />,
-    },
-  };
+export const LandingHeader = (): JSX.Element => {
+  const data = useLandingHeader();
+  return <LandingHeaderTemplate {...data} />;
 };

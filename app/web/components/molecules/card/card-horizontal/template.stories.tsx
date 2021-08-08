@@ -1,11 +1,11 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta, Story } from "@storybook/react";
 import {
   HorizontalCardTemplate,
   HorizontalCardTemplateProps,
-} from './template';
+} from "./template";
 
 export default {
-  title: 'Molecules/Card',
+  title: "Molecules/Card",
   component: HorizontalCardTemplate,
 } as Meta;
 
@@ -15,14 +15,15 @@ const CardStory: Story<HorizontalCardTemplateProps> = (args) => (
 
 export const Horizontal = CardStory.bind({});
 Horizontal.args = {
-  images: undefined,
-  type: 'Type of Stay',
-  ratings: 5.0,
-  location: 'Location',
-  title: 'Title should be here',
-  numberOfReviews: 100,
-  superhost: false,
-  save: false,
+  card: {
+    type: "Type of Stay",
+    ratings: 5.0,
+    location: "Location",
+    title: "Title should be here",
+    numberOfReviews: 100,
+    superhost: false,
+    save: false,
+  },
 };
 Horizontal.decorators = [
   (Story) => (

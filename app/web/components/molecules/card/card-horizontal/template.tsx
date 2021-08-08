@@ -1,16 +1,18 @@
-import { Icon } from '@atoms';
-import { ImageSlider } from '../../../particles/particle-slider/template';
+import { Icon } from "@atoms";
+import { ImageSlider } from "../../../particles/particle-slider/template";
 
-export interface HorizontalCardTemplateProps {
-  images?: string[];
-  type: string;
-  ratings: number;
-  location: string;
-  title: string;
-  numberOfReviews: string;
-  save?: boolean;
-  superhost?: boolean;
-}
+export type HorizontalCardTemplateProps = {
+  card: {
+    images?: string[];
+    type: string;
+    ratings: number;
+    location: string;
+    title: string;
+    numberOfReviews: number;
+    save?: boolean;
+    superhost?: boolean;
+  };
+};
 
 /**
  * Renders the horizontal card component
@@ -23,19 +25,21 @@ export interface HorizontalCardTemplateProps {
  * @param {boolean} superhost - Whether if host is the superhost or not
  * @param {boolean} save - Whether if the card can be saved or not
  */
-export const HorizontalCardTemplate: React.FC<HorizontalCardTemplateProps> = ({
-  images,
-  type,
-  ratings,
-  location,
-  title,
-  numberOfReviews,
-  superhost,
-  save,
-}) => {
+export const HorizontalCardTemplate = ({
+  card: {
+    images,
+    type,
+    ratings,
+    location,
+    title,
+    numberOfReviews,
+    superhost,
+    save,
+  },
+}: HorizontalCardTemplateProps): JSX.Element => {
   return (
     <div>
-      <div className="relative" style={{ paddingTop: '66.6%' }}>
+      <div className="relative" style={{ paddingTop: "66.6%" }}>
         <div className="absolute top-0 bottom-0 right-0 left-0">
           <div className="h-full">
             <div className=" relative h-full">
@@ -47,7 +51,7 @@ export const HorizontalCardTemplate: React.FC<HorizontalCardTemplateProps> = ({
                 <div className="animate-pulse w-full h-full rounded-md bg-gray-500" />
               )}
               <div className="py-2 px-3 absolute top-0 flex justify-between w-full">
-                <div className={`z-50 ${superhost ? '' : 'text-white hidden'}`}>
+                <div className={`z-50 ${superhost ? "" : "text-white hidden"}`}>
                   <div className="px-3 py-1 bg-gray-100 shadow-lg rounded">
                     <h3 className="text-xs uppercase tracking-wide">
                       Superhost
@@ -55,12 +59,13 @@ export const HorizontalCardTemplate: React.FC<HorizontalCardTemplateProps> = ({
                   </div>
                 </div>
                 {save && (
-                  <div className={`z-50 ${save ? '' : 'text-white hidden'}`}>
+                  <div className={`z-50 ${save ? "" : "text-white hidden"}`}>
                     <Icon
-                      variant="action"
-                      actionType="heart"
+                      variant="fill"
+                      fillType="heart"
                       fill="rgba(0, 0, 0, 0.5)"
                       width={24}
+                      height={24}
                     />
                   </div>
                 )}

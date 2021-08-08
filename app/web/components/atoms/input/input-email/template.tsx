@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { styleInput, styleLabel, styleContainer } from '../styling.text';
-import { checkEmail } from '@helper/auth';
+import { useState } from "react";
+import { styleInput, styleLabel, styleContainer } from "../styling.text";
+import { checkEmail } from "@helper/auth";
 
-export interface EmailInputTemplateProps {
+export type EmailInputTemplateProps = {
   onChange?: (e: any) => void;
   value?: any;
-  direction?: 'top' | 'bottom';
+  direction?: "top" | "bottom";
   errors?: boolean;
-}
+};
 
 /**
  * Renders the text input component
@@ -18,12 +18,12 @@ export interface EmailInputTemplateProps {
  * @param {string} direction - direction in which the input if attached to another
  * @param {string} inputType - Whether if the input is text-based or select-based
  */
-export const EmailInputTemplate: React.FC<EmailInputTemplateProps> = ({
+export const EmailInputTemplate = ({
   onChange,
   value,
   direction,
   errors,
-}) => {
+}: EmailInputTemplateProps): JSX.Element => {
   const [fieldActive, setFieldActive] = useState(false);
 
   const activateField = () => {
@@ -36,12 +36,12 @@ export const EmailInputTemplate: React.FC<EmailInputTemplateProps> = ({
 
   return (
     <div
-      className={`h-14 relative px-5 items-center ${styleContainer(
+      className={`h-14 relative px-5 items-center ${styleContainer({
         errors,
         fieldActive,
-        checkEmail(value),
-        direction
-      )}`}
+        value,
+        direction,
+      })}`}
     >
       <div className="relative w-full h-full">
         <input
@@ -54,19 +54,14 @@ export const EmailInputTemplate: React.FC<EmailInputTemplateProps> = ({
           onFocus={activateField}
           onBlur={deactivateField}
           className={`pt-5 w-full block border-none text-base font-light outline-none ${styleInput(
-            errors,
-            fieldActive,
-            checkEmail(value)
+            { fieldActive, errors: checkEmail(value) }
           )}`}
-          placeholder={fieldActive ? 'Email' : undefined}
+          placeholder={fieldActive ? "Email" : undefined}
         />
         <label
           htmlFor="email"
           className={`absolute text-gray-400 font-thin transition ease-in-out ${styleLabel(
-            errors,
-            fieldActive,
-            checkEmail(value),
-            value
+            { errors, fieldActive, evaluate: checkEmail(value), value }
           )}`}
         >
           Email

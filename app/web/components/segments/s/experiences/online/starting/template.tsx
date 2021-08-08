@@ -1,17 +1,17 @@
-import { Button } from '@atoms';
-import { Card, $Card } from '@card';
-import { useSlide } from '@hooks/useSlide';
+import { Button } from "@atoms";
+// import { Card } from "@card";
+import { useSlide } from "@hooks/useSlide";
 
 export interface StartingSegmentTemplateProps {
-  title?: string;
-  cards?: { imgUrl: string; videoUrl: string }[];
+  title: string;
+  cards: { imgUrl: string; videoUrl: string }[];
 }
 
 export const StartingSegmentTemplate: React.FC<StartingSegmentTemplateProps> = ({
   title,
   cards,
 }) => {
-  const { state, containerRef, width, previous, next } = useSlide('whole');
+  const { state, containerRef, width, previous, next } = useSlide("whole");
 
   const displayingColumns = () => {
     if (width > 1128) {
@@ -31,25 +31,26 @@ export const StartingSegmentTemplate: React.FC<StartingSegmentTemplateProps> = (
         </div>
         <div className="flex items-center">
           <div className="mr-3">
-            <Button variant="underline" title={`Show (${cards.length})`} />
+            <Button
+              variant="underline"
+              title={`Show (${cards.length})`}
+              font={14}
+              onClick={() => alert("clicked")}
+            />
           </div>
           <div className="flex items-center">
             <div className="mx-2">
               <Button
-                block
                 variant="paginate"
-                animate
-                direction="left"
+                direction="chevronLeft"
                 onClick={previous}
                 //   disable={state.activeSlide === 0}
               />
             </div>
             <div className="mx-2">
               <Button
-                block
                 variant="paginate"
-                animate
-                direction="right"
+                direction="chevronRight"
                 onClick={next}
                 //   disable={
                 //     state.activeSlide ===
@@ -69,20 +70,20 @@ export const StartingSegmentTemplate: React.FC<StartingSegmentTemplateProps> = (
           }}
         >
           <div className="flex">
-            {cards.map((card, index) => {
+            {/* {cards.map((card, index) => {
               const { imgUrl, videoUrl } = card || {};
               return (
                 <div key={index} style={{ width: width / displayingColumns() }}>
                   <div className="mr-3">
                     <Card
-                      variant={$Card.STARTING}
+                      variant="starting"
                       imgUrl={imgUrl}
                       videoUrl={videoUrl}
                     />
                   </div>
                 </div>
               );
-            })}
+            })} */}
           </div>
         </div>
       </div>

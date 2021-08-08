@@ -1,14 +1,12 @@
 export interface ProgressBarTemplateProps {
-  percentage?: number;
+  percentage: number;
 }
 
 /**
  * Renders the Progress Bar
  * @param {number} percentage - percentage of the progress bar
  */
-export const ProgressBarTemplate: React.FC<ProgressBarTemplateProps> = ({
-  percentage,
-}) => {
+export const ProgressBarTemplate = (): JSX.Element => {
   return (
     <div className="relative w-full h-2 bg-gray-200 z-10">
       <div className="w-full h-2 flex z-50">
@@ -17,7 +15,7 @@ export const ProgressBarTemplate: React.FC<ProgressBarTemplateProps> = ({
             <div
               key={index}
               className={`w-1/12 h-2 bg-transparent ${
-                index === 23 ? '' : 'border border-gray-200'
+                index === 23 ? "" : "border border-gray-200"
               }`}
             />
           );

@@ -1,104 +1,58 @@
-import { Button } from '@atoms';
+import { Button } from "@atoms";
 
-const Options: React.FC<{
-  params: {
-    kind: string;
-    bold?: boolean;
-  }[];
-  options: {
-    [option: string]: {
-      name: string;
-      handleClick: () => void;
-    };
-  };
-}> = ({ params }) => {
+export type OptionsProps = {
+  name: string;
+  handleClick: () => void;
+  bold: boolean;
+}[];
+
+const Options = ({ options }: { options: OptionsProps }): JSX.Element => {
   return (
-    <>
-      {params.map(({ kind, bold }, index) => (
+    <div>
+      {options.map(({ name, handleClick, bold }, index) => (
         <div key={index}>
           <Button
             variant="option"
-            name={kind}
+            name={name}
             bold={bold}
-            onClick={() => alert('selected')}
+            onClick={handleClick}
           />
         </div>
       ))}
-    </>
+    </div>
   );
 };
 
-export interface MenuModalTemplateProps {
+export type MenuModalTemplateProps = {
   authenticated?: boolean;
-  options: {
-    [option: string]: {
-      name: string;
-      handleClick: () => void;
-    };
-  };
-}
+  topOptions: OptionsProps;
+  bottomOptions: OptionsProps;
+};
 
 /**
  * Renders the menu modal
  */
-export const MenuModalTemplate: React.FC<MenuModalTemplateProps> = ({
+export const MenuModalTemplate = ({
   authenticated = false,
-  options,
-}) => {
+  topOptions,
+  bottomOptions,
+}: MenuModalTemplateProps): JSX.Element => {
   return (
-    <div className="w-full py-4">
+    <div
+      style={{ width: 230, padding: "14px 0" }}
+      className="w-full rounded-2xl bg-white shadow-lg"
+    >
       <div className="w-full">
         {authenticated ? (
-          <Options
-            options={options}
-            params={[
-              // { kind: "messages", bold: true },
-              // { kind: "notifications", bold: false },
-              { kind: 'trips', bold: false },
-              { kind: 'saved', bold: false },
-            ]}
-          />
+          <Options options={topOptions} />
         ) : (
-          <Options
-            options={options}
-            params={[
-              { kind: 'signup', bold: true },
-              { kind: 'login', bold: false },
-            ]}
-          />
+          <Options options={topOptions} />
         )}
-        <div style={{ height: 1 }} className="w-full bg-gray-400 my-2"></div>
+        <div style={{ height: 1 }} className="w-full bg-gray-200 my-2"></div>
         {authenticated ? (
-          <Options
-            options={options}
-            params={[
-              { kind: 'home', bold: false },
-              // { kind: "experience", bold: false },
-              // { kind: "refer", bold: false },
-              // { kind: "account", bold: false },
-            ]}
-          />
+          <Options options={bottomOptions} />
         ) : (
-          <Options
-            options={options}
-            params={[
-              { kind: 'home', bold: false },
-              // { kind: "experience", bold: false },
-              // { kind: "help", bold: false },
-            ]}
-          />
-        )}
-        {authenticated && (
-          <>
-            <div className="w-full bg-gray-600 my-2"></div>
-            <Options
-              options={options}
-              params={[
-                // { kind: "help", bold: false },
-                { kind: 'logout', bold: false },
-              ]}
-            />
-          </>
+          <Options options={bottomOptions} />
         )}
       </div>
     </div>

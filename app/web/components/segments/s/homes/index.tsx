@@ -1,11 +1,9 @@
-import { factory } from './utils/factory';
+import { factory } from "./utils/factory";
 
-export type HomesSegmentVariants = 'multiple' | 'homes' | 'also';
-
-export interface SegmentProps {
-  variant: HomesSegmentVariants;
-  [property: string]: any;
-}
+export type SegmentProps =
+  | { variant: "multiple" }
+  | { variant: "homes" }
+  | { variant: "also" };
 
 /**
  * Bundles the button components
@@ -13,16 +11,5 @@ export interface SegmentProps {
  * @param {string} type - Specifies the type of button component
  * @param {Object} children - A JSX that will be part of the component
  */
-export const Segment: React.FC<SegmentProps> = ({
-  variant,
-  children,
-  onClick,
-  to,
-  block,
-  animate,
-  ...props
-}) => {
-  const variants = factory(props);
-
-  return <div data-testid={`${variant}-help`}>{variants[variant]}</div>;
-};
+export const Segment = ({ ...props }: SegmentProps): JSX.Element =>
+  factory(props);

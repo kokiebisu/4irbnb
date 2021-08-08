@@ -1,20 +1,10 @@
-export interface KnowSegmentTemplateProps {
-  houseRules?: string[];
-  healths?: string[];
-  layoutType?: string;
-}
-
 /**
  * Renders the know section
  * @param {string[]} houseRules - List of rules the users must follow
  * @param {string[]} healths - List of health guidelines
  * @param {string} layoutType - The type of layout
  */
-export const KnowSegmentTemplate: React.FC<KnowSegmentTemplateProps> = ({
-  houseRules,
-  healths,
-  layoutType,
-}) => {
+export const KnowSegmentTemplate = () => {
   return (
     <div>
       <div>

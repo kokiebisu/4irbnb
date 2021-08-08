@@ -1,7 +1,7 @@
-import { OptionButtonTemplate, OptionButtonTemplateProps } from './template';
+import { OptionButtonTemplate, OptionButtonTemplateProps } from "./template";
 
 export type OptionButtonProps = OptionButtonTemplateProps;
 
-export const OptionButton = ({ ...props }: OptionButtonProps): JSX.Element => {
-  return <OptionButtonTemplate {...props} />;
-};
+export const OptionButton = ({ ...props }: OptionButtonProps): JSX.Element => (
+  <OptionButtonTemplate {...props} />
+);

@@ -1,14 +1,14 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
-import { HomesHeaderTemplate, HomesHeaderTemplateProps } from './template';
+import React from "react";
+import { Story, Meta } from "@storybook/react";
+import { HomesHeaderTemplate, HomesHeaderTemplateProps } from "./template";
 
 export default {
-  title: 'Organisms/Header',
+  title: "Organisms/Header",
   component: HomesHeaderTemplate,
 } as Meta;
 
-const HeaderStory: Story<HomesHeaderTemplateProps> = (args) => (
-  <HomesHeaderTemplate {...args} />
+const HeaderStory: Story<HomesHeaderTemplateProps> = () => (
+  <HomesHeaderTemplate />
 );
 
 export const Details = HeaderStory.bind({});

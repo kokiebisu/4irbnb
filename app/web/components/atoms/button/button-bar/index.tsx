@@ -1,7 +1,7 @@
-import { BarButtonTemplate, BarButtonTemplateProps } from './template';
+import { BarButtonTemplate, BarButtonTemplateProps } from "./template";
 
 export interface BarButtonProps extends BarButtonTemplateProps {}
 
-export const BarButton: React.FC<BarButtonProps> = ({ ...props }) => {
-  return <BarButtonTemplate {...props} />;
-};
+export const BarButton: React.FC<BarButtonProps> = ({ ...props }) => (
+  <BarButtonTemplate {...props} />
+);

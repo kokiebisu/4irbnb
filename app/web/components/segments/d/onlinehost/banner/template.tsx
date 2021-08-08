@@ -1,18 +1,17 @@
-import { Button, GeneralTypeVariants, Icon } from '@atoms';
-import { Bullet } from '@atoms';
-import React from 'react';
+// import { Icon } from "@atoms";
+// import { Bullet } from "@atoms";
+import React from "react";
 
 export interface BannerSegmentTemplateProps {
   items: {
-    icon: GeneralTypeVariants;
+    icon: any;
     title: string;
     description: string;
   }[];
 }
 
-export const BannerSegmentTemplate: React.FC<BannerSegmentTemplateProps> = ({
-  items,
-}) => {
+export const BannerSegmentTemplate = ({}: // items,
+BannerSegmentTemplateProps): JSX.Element => {
   return (
     <div className="flex flex-col items-center">
       <div className="my-4">
@@ -28,7 +27,7 @@ export const BannerSegmentTemplate: React.FC<BannerSegmentTemplateProps> = ({
         </h4>
       </div>
       <div className="my-6">
-        <Button variant="primary" title="Get started" />
+        {/* <Button variant="primary" title="Get started" /> */}
       </div>
       <div className="my-5">
         <img
@@ -44,25 +43,28 @@ export const BannerSegmentTemplate: React.FC<BannerSegmentTemplateProps> = ({
         </h4>
       </div>
       <div className="my-4 block sm:grid sm:grid-cols-3 sm:col-gap-6">
-        {items.map(({ icon, title, description }, index) => {
+        {/* {items.map(({ icon, title, description }, index) => {
           return (
             <div key={index} className="mb-4">
               <Bullet
                 variant="quaternary"
                 icon={
                   <Icon
-                    variant="general"
-                    generalType={icon}
+                    variant="fill"
+                    fillType={icon}
                     width={16}
                     height={16}
+                    fill="black"
                   />
                 }
                 title={title}
                 description={description}
+                link=""
+                onClick={() => alert("clicked")}
               />
             </div>
           );
-        })}
+        })} */}
       </div>
     </div>
   );

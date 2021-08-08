@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from "react";
 
 export const useSlider = () => {
   const [state, setState] = useState({
@@ -8,7 +8,7 @@ export const useSlider = () => {
   });
 
   const [width, setWidth] = useState(500);
-  const containerRef = useRef<HTMLDivElement>();
+  const containerRef = useRef<HTMLDivElement>(null);
   const handleRef = () => {
     if (containerRef.current && containerRef.current.getBoundingClientRect()) {
       setWidth(containerRef.current.getBoundingClientRect().width);
@@ -16,10 +16,10 @@ export const useSlider = () => {
   };
 
   useLayoutEffect(() => {
-    window.addEventListener('resize', handleRef);
+    window.addEventListener("resize", handleRef);
     handleRef();
     return () => {
-      window.removeEventListener('resize', handleRef);
+      window.removeEventListener("resize", handleRef);
     };
   });
 

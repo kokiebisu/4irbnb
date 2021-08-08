@@ -1,10 +1,17 @@
-export const OnlineHostLayout: React.FC<{
+export type OnlineHostLayoutProps = {
   title?: string;
   subtitle?: string;
-  children?: React.ReactNode;
+  children: React.ReactNode;
   dark?: boolean;
   spread?: boolean;
-}> = ({ title, subtitle, children, dark = false, spread = false }) => {
+};
+
+export const OnlineHostLayout = ({
+  title,
+  subtitle,
+  children,
+  dark,
+}: OnlineHostLayoutProps): JSX.Element => {
   return (
     <div className="sm:flex flex-col items-center">
       <div className="sm:flex flex-col items-center py-4">
@@ -12,7 +19,7 @@ export const OnlineHostLayout: React.FC<{
           <div>
             <h3
               className={`text-lg md:text-xl lg:text-2xl ${
-                dark ? 'text-white' : ''
+                dark ? "text-white" : ""
               }`}
             >
               {title}
@@ -23,7 +30,7 @@ export const OnlineHostLayout: React.FC<{
           <div className="mt-4">
             <p
               className={`text-sm sm:text-md text-center leading-8 ${
-                dark ? 'text-white' : ''
+                dark ? "text-white" : ""
               }`}
             >
               {subtitle}

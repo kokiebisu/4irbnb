@@ -1,0 +1,27 @@
+{
+  "name": "@nextbnb/stay",
+  "version": "1.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "update": "rimraf node_modules && yarn",
+    "start": "node dist/index.js",
+    "clean": "rimraf dist *.tsbuildinfo",
+    "build": "tsc -b .",
+    "test": "jest --passWithNoTests",
+    "lint": "eslint src --ext js,ts,tsx",
+    "extract": "api-extractor run --local",
+    "deploy:api": "bash ../../scripts/deploy.sh stay api",
+    "deploy:consumer": "bash ../../scripts/deploy.sh stay consumer"
+  },
+  "dependencies": {
+    "@nextbnb/common": "file:../common"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">= 14.17.1"
+  },
+  "type": "commonjs"
+}

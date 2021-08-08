@@ -1,9 +1,9 @@
-import { Layout } from '@layout';
-import { Bullet, GeneralTypeVariants, Icon } from '@atoms';
+import { Layout } from "@layout";
+import { Bullet, Icon } from "@atoms";
 
 export interface PrioritySegmentTemplateProps {
   priorities: {
-    icon: GeneralTypeVariants;
+    icon: any;
     title: string;
     description: string;
     link: string;
@@ -26,13 +26,14 @@ export const PrioritySegmentTemplate: React.FC<PrioritySegmentTemplateProps> = (
             return (
               <div key={index} className="mb-6">
                 <Bullet
-                  variant="quatertiary"
+                  variant="quaternary"
                   icon={
                     <Icon
-                      variant="general"
-                      generalType={icon}
+                      variant="fill"
+                      fillType={icon}
                       width={40}
                       height={40}
+                      fill="black"
                     />
                   }
                   title={title}

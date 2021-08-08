@@ -1,6 +1,6 @@
-import { Layout } from '@layout';
-import { usePhoneSegment } from './logic';
-import { PhoneSegmentTemplate } from './template';
+import { Layout } from "@layout";
+import { usePhoneSegment } from "./logic";
+import { PhoneSegmentTemplate } from "./template";
 
 export const PhoneSegment = () => {
   const {

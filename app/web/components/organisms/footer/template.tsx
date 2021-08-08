@@ -1,31 +1,29 @@
-import { Button } from '@atoms';
-import { Icon } from '@atoms';
+import { Button } from "@atoms";
+import { Icon } from "@atoms";
 
 export interface FooterTemplateProps {
-  spread?: boolean;
   handleRedirectToPath: (url: string) => void;
-  items?: { name: string; items: { url?: string; name?: string }[] }[];
+  items: { name: string; items: { url: string; name: string }[] }[];
 }
 
-export const FooterTemplate: React.FC<FooterTemplateProps> = ({
-  spread,
+export const FooterTemplate = ({
   handleRedirectToPath,
   items,
-}) => {
+}: FooterTemplateProps): JSX.Element => {
   return (
-    <footer className="border-t border-gray-300 py-6 bg-gray-300">
-      <div className={spread ? 'container-spread' : 'container'}>
+    <footer className="border-t border-gray-300 py-6 bg-gray-50">
+      <div className="px-8 md:px-20 max-w-11xl">
         <div className="border-b border-gray-300 md:flex">
           {items.map((section, index) => {
             return (
               <div
                 key={index}
-                className="border-t border-gray-300 mt-6 first:mt-0 md:w-1/4 md:pb-6"
+                className="border-gray-300 mt-6 first:mt-0 md:w-1/4 md:pb-6"
               >
                 <div>
                   <h3 className="uppercase text-sm">{section.name}</h3>
                 </div>
-                <div className="my-4 grid grid-cols-3">
+                <div className="my-4 grid md:grid-cols-3 lg:block">
                   {section.items.map(({ name, url }, index) => {
                     return (
                       <div className="my-4 mt-3 mb-3" key={index}>
@@ -46,12 +44,24 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
           <div className="flex items-center mx-0 my-8">
             <div>
               <button className="flex items-center mr-3 bg-transparent border-none">
-                <Icon variant="general" generalType="globe" width={16} />
+                <Icon
+                  variant="fill"
+                  fillType="globe"
+                  width={16}
+                  height={16}
+                  fill="black"
+                />
                 <u className="text-sm mr-3">English(CA)</u>
               </button>
             </div>
             <div>
-              <Button variant="underline" title="$ CAD" bold />
+              <Button
+                font={24}
+                onClick={() => alert("clicked")}
+                variant="underline"
+                title="$ CAD"
+                bold
+              />
             </div>
           </div>
           <div className="flex items-center">
@@ -66,7 +76,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
                 <Button
                   variant="link"
                   title="Privacy"
-                  onClick={() => handleRedirectToPath('/')}
+                  onClick={() => handleRedirectToPath("/")}
                 />
               </div>
               <div>&nbsp;· &nbsp;</div>
@@ -74,7 +84,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
                 <Button
                   variant="link"
                   title="Terms"
-                  onClick={() => handleRedirectToPath('/')}
+                  onClick={() => handleRedirectToPath("/")}
                 />
               </div>
               <div>&nbsp;· &nbsp;</div>
@@ -82,7 +92,7 @@ export const FooterTemplate: React.FC<FooterTemplateProps> = ({
                 <Button
                   variant="link"
                   title="Sitemap"
-                  onClick={() => handleRedirectToPath('/')}
+                  onClick={() => handleRedirectToPath("/")}
                 />
               </div>
             </div>

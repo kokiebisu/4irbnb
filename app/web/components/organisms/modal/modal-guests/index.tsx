@@ -1,15 +1,5 @@
-import { GuestsModalTemplate, GuestsModalTemplateProps } from './template';
+import { GuestsModalTemplate } from "./template";
 
-export interface GuestsModalProps extends GuestsModalTemplateProps {}
-
-export const GuestsModal: React.FC<GuestsModalProps> = (props) => {
-  return <GuestsModalTemplate {...props} />;
-};
-
-export const Guests = (props) => {
-  return {
-    guests: {
-      component: <GuestsModal {...props} />,
-    },
-  };
-};
+export const GuestsModal = (props: any): JSX.Element => (
+  <GuestsModalTemplate {...props} />
+);

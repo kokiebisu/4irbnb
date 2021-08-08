@@ -1,128 +1,168 @@
-import { useRef, useState } from 'react';
-import Router from 'next/router';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Modal } from '@modal';
-import { Button } from '@atoms';
-// import { Prototype } from '@prototype/searchbar';
+import React from "react";
+import Router from "next/router";
+import { AnimatePresence, motion } from "framer-motion";
+import { Modal } from "@modal";
+import { Button } from "@atoms";
+import { SearchbarPrototype } from "@prototype/searchbar";
 
-import { Icon } from '@atoms';
-import { useToggleDispatch, useToggleState } from '@context/toggle';
-// import { Content } from '@atoms/button-transparent/content.transparent';
-import { useOnClickOutside } from '@hooks/useOnClickOutside';
+import { Icon } from "@atoms";
+import { useLandingHeaderTemplate } from "./use-template";
 
-export interface LandingHeaderTemplateProps {
-  category?: any;
-  setCategory?: any;
+export type LandingHeaderTemplateProps = {
+  category: any;
+  handleCategorySelect: any;
   data?: any;
-  criteria?: any;
-}
+  types: any;
+  menuCriteria?: boolean;
+  handleGlobeToggle: () => void;
+  handleMenuToggle: () => void;
+  handleSignUpModalToggle: () => void;
+};
 
 /**
  * Renders the transparent header
  */
-export const LandingHeaderTemplate: React.FC<LandingHeaderTemplateProps> = ({
+export const LandingHeaderTemplate = ({
   data,
+  types,
   category,
-  setCategory,
-  criteria,
-}) => {
-  const toggleState = useToggleState();
-  const searchbarRef = useRef();
-  const [expanded, setExpanded] = useState(false);
-  const toggleDispatch = useToggleDispatch();
-
-  useOnClickOutside(searchbarRef, () => {
-    toggleDispatch({
-      type: 'toggle_reset',
-    });
-    setExpanded(!expanded);
-  });
-
-  const types: { [type: string]: { title: string; onClick: any } } = {
-    stay: {
-      title: 'Places to stay',
-      onClick: () => setCategory('stay'),
-    },
-    experiences: {
-      title: 'Experiences',
-      onClick: () => setCategory('experiences'),
-    },
-    online: {
-      title: 'Online Experiences',
-      onClick: () => Router.push('/s/experiences/online'),
-    },
-  };
-
+  handleCategorySelect,
+  menuCriteria,
+  handleGlobeToggle,
+  handleMenuToggle,
+  handleSignUpModalToggle,
+}: LandingHeaderTemplateProps): JSX.Element => {
+  const {
+    expanded,
+    handleSearchbarExpand,
+    positionAtPageTop,
+  } = useLandingHeaderTemplate();
   return (
     <header
-      className={`${
-        expanded ? 'pt-4 pb-32' : 'py-3'
+      className={`w-full ${expanded ? "pt-4 pb-32" : "py-4"} ${
+        positionAtPageTop ? "bg-transparent" : "bg-white shadow-md"
       } relative container-spread transition ease-in-out duration-100`}
     >
-      <div className="md:none none md:flex justify-between relative">
+      <div
+        style={{ gridTemplateColumns: "auto 1fr auto" }}
+        className="hidden sm:grid relative"
+      >
         <div>
-          <div className="mt-1 block lg:hidden">
+          <div className="mt-1 block lg:hidden relative top-1">
             <Icon
-              variant={'logo'}
-              logoType="noName"
-              fill={criteria ? 'white' : 'red'}
+              variant="fill"
+              fillType="noNameLogo"
+              fill={positionAtPageTop ? "white" : "red"}
               width={30}
               height={32}
             />
           </div>
-          <div className="hidden lg:block mt-1">
+          <div className="hidden lg:block mt-1 relative top-1">
             <Icon
-              variant={'logo'}
-              logoType="name"
-              fill={criteria ? 'white' : 'red'}
+              variant="fill"
+              fillType="nameLogo"
+              fill={positionAtPageTop ? "white" : "red"}
               width={102}
               height={32}
             />
           </div>
         </div>
-        <div className="flex items-center">
-          <div className={`mx-1 ${[styles['searchbar__host']].join(' ')}`}>
-            <Button
-              variant="transparent"
-              inverse={criteria}
-              onClick={() => Router.push('/host/homes')}
-            >
-              <Content kind="host" inverse={criteria} />
-            </Button>
-          </div>
-          <div className="mx-1">
-            <Button
-              variant="transparent"
-              inverse={criteria}
-              onClick={() => toggleDispatch({ type: 'toggle_globe' })}
-            >
-              <Content kind="globe" inverse={criteria} />
-            </Button>
+        <div className="flex lg:justify-center px-8">
+          {positionAtPageTop ? null : (
+            <Button variant="searchbar" onClick={handleSearchbarExpand} />
+          )}
+        </div>
+        <div className="relative flex items-center">
+          <div className="absolute flex items-center right-20">
+            <div className="relative left-3 mx-1">
+              <Button
+                variant="transparent"
+                inverse={positionAtPageTop}
+                onClick={() => Router.push("/host/homes")}
+              >
+                <h5
+                  className={`whitespace-nowrap ${
+                    positionAtPageTop
+                      ? "text-white font-light"
+                      : "text-gray-800 font-medium"
+                  } text-sm`}
+                >
+                  Become a Host
+                </h5>
+              </Button>
+            </div>
+            <div className="mx-1">
+              <Button
+                variant="transparent"
+                inverse={positionAtPageTop}
+                onClick={handleGlobeToggle}
+              >
+                <div className="items-center">
+                  <Icon
+                    variant="fill"
+                    fillType="globe"
+                    width={16}
+                    height={16}
+                    fill={`${positionAtPageTop ? "white" : "black"}`}
+                  />
+                </div>
+              </Button>
+            </div>
           </div>
           <div className="ml-1">
             <Button
               variant="menu"
-              inverse={criteria}
+              inverse={positionAtPageTop}
               authenticated={data}
-              onClick={() => toggleDispatch({ type: 'toggle_menu' })}
+              onClick={handleMenuToggle}
             />
           </div>
         </div>
-        <div className="z-70 absolute bg-transparent t-1/2">
+        <div className="z-70 absolute right-0 bg-transparent top-14">
           <Modal
-            variant={$Modal.MENU}
+            variant="menu"
             authenticated={data}
-            criteria={toggleState.menu}
+            criteria={menuCriteria}
             dispatch="toggle_menu"
+            topOptions={[
+              {
+                name: "Sign up",
+                handleClick: handleSignUpModalToggle,
+                bold: true,
+              },
+              {
+                name: "Login",
+                handleClick: () => alert("Clicked"),
+                bold: false,
+              },
+            ]}
+            bottomOptions={[
+              {
+                name: "Host your home",
+                handleClick: () => alert("Clicked"),
+                bold: false,
+              },
+              {
+                name: "Host an experience",
+                handleClick: () => alert("Clicked"),
+                bold: false,
+              },
+              {
+                name: "Help",
+                handleClick: () => alert("Clicked"),
+                bold: false,
+              },
+            ]}
+            animate="default"
           />
         </div>
       </div>
-      <div
-        className={`top-8/10 sm:top-2/10 px-6 hidden sm:block absolute w-full left-1/2 bottom-0 z-50`}
+      {/* <div
+        className={`top-9/10 md:top-2/10 px-6 hidden sm:block absolute w-full left-1/2 bottom-0 z-50`}
         style={{
-          maxWidth: 760,
-          transform: 'translate(-50%, 0)',
-          height: 'fit-content',
+          maxWidth: 900,
+          transform: "translate(-50%, 0)",
+          height: "fit-content",
         }}
       >
         <AnimatePresence>
@@ -136,9 +176,9 @@ export const LandingHeaderTemplate: React.FC<LandingHeaderTemplateProps> = ({
                 width: 500,
                 opacity: 0,
               }}
-              transition={{ type: 'tween', duration: 0.2 }}
+              transition={{ type: "tween", duration: 0.2 }}
               initial={{ y: -100, scale: 0.3, opacity: 0, width: 500 }}
-              animate={{ y: 0, scale: 1, opacity: 1, width: 'auto' }}
+              animate={{ y: 0, scale: 1, opacity: 1, width: "auto" }}
             >
               <div className="relative">
                 <div className="mt-3 mb-4">
@@ -150,11 +190,11 @@ export const LandingHeaderTemplate: React.FC<LandingHeaderTemplateProps> = ({
                             <div
                               className={`pb-3 ${
                                 category === type
-                                  ? 'landing__bb--selected'
-                                  : 'landing__bb'
+                                  ? "landing__bb--selected"
+                                  : "landing__bb"
                               }`}
                             >
-                              <p className="text-white text-xs md:text-md font-medium md:font-light">
+                              <p className="text-white text-md md:text-md md:font-thin">
                                 {types[type].title}
                               </p>
                             </div>
@@ -164,7 +204,7 @@ export const LandingHeaderTemplate: React.FC<LandingHeaderTemplateProps> = ({
                     })}
                   </div>
                 </div>
-                <Prototype type={category} transparent />
+                <SearchbarPrototype type={category} transparent />
               </div>
             </motion.div>
           ) : (
@@ -186,18 +226,20 @@ export const LandingHeaderTemplate: React.FC<LandingHeaderTemplateProps> = ({
                         {Object.keys(types).map((type, index) => {
                           return (
                             <div key={index} className="mx-4">
-                              <button onClick={() => setCategory('stay')}>
+                              <button
+                                onClick={() => handleCategorySelect(type)}
+                              >
                                 <div className="pb-3">
                                   <p
                                     className={`${
-                                      expanded ? 'text-black' : 'text-white'
+                                      expanded ? "text-black" : "text-white"
                                     } font-medium md:font-light text-xs md:text-md`}
                                   >
                                     {types[type].title}
                                   </p>
                                 </div>
                                 <div className="flex justify-center">
-                                  {/* {category === type && (
+                                  {category === type && (
                                     <motion.div
                                       whileHover={{ width: 15 }}
                                       style={{
@@ -206,7 +248,7 @@ export const LandingHeaderTemplate: React.FC<LandingHeaderTemplateProps> = ({
                                         backgroundColor: "white",
                                       }}
                                     />
-                                  )} */}
+                                  )}
                                 </div>
                               </button>
                             </div>
@@ -234,17 +276,14 @@ export const LandingHeaderTemplate: React.FC<LandingHeaderTemplateProps> = ({
                     }}
                     animate={{ width: 240, y: 0, opacity: 1 }}
                   >
-                    <Button
-                      variant="searchbar"
-                      onClick={() => setExpanded(!expanded)}
-                    />
+                    
                   </motion.div>
                 </motion.div>
               )}
             </div>
           )}
         </AnimatePresence>
-      </div>
+      </div> */}
     </header>
   );
 };

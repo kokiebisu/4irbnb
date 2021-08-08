@@ -1,8 +1,8 @@
-import { Button } from '@atoms';
+import { Button } from "@atoms";
 
 export interface CreateBarTemplateProps {
-  handleNextPage?: () => void;
-  handlePreviousPage?: () => void;
+  handleNextPage: () => void;
+  handlePreviousPage: () => void;
   criteria?: boolean;
 }
 
@@ -11,11 +11,11 @@ export interface CreateBarTemplateProps {
  * @param param0
  * @returns
  */
-export const CreateBarTemplate: React.FC<CreateBarTemplateProps> = ({
+export const CreateBarTemplate = ({
   handleNextPage,
   handlePreviousPage,
   criteria,
-}) => {
+}: CreateBarTemplateProps): JSX.Element => {
   return (
     <div className="w-full border-t border-gray-200 py-4">
       <div className="w-full flex items-center justify-between">
@@ -29,7 +29,7 @@ export const CreateBarTemplate: React.FC<CreateBarTemplateProps> = ({
             size="md"
             color="white"
             fill="#018489"
-            disable={!criteria}
+            disabled={!criteria}
             onClick={handleNextPage}
           />
         </div>

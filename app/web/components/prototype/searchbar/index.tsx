@@ -1,5 +1,5 @@
-import { useSearchbar } from './logic';
-import { SearchbarPrototypeTemplate } from './template';
+import { useSearchbar } from "./logic";
+import { SearchbarPrototypeTemplate } from "./template";
 
 export interface SearchbarPrototypeProps {
   expanded?: boolean;
@@ -9,13 +9,13 @@ export interface SearchbarPrototypeProps {
   transparent?: boolean;
 }
 
-export const SearchbarPrototype: React.FC<SearchbarPrototypeProps> = ({
+export const SearchbarPrototype = ({
   type,
   setCategory,
   transparent = false,
   expanded,
   setExpanded,
-}) => {
+}: SearchbarPrototypeProps): JSX.Element => {
   const data = useSearchbar();
 
   return (

@@ -1,38 +1,38 @@
-export interface ExperiencePanelTemplateProps {
-  firstImage?: string;
-  secondImage?: string;
-  thirdImage?: string;
-  fourthImage?: string;
-  fifthImage?: string;
-}
+export type ExperiencePanelTemplateProps = {
+  firstImage: string;
+  secondImage: string;
+  thirdImage: string;
+  fourthImage: string;
+  fifthImage: string;
+};
 
 /**
  *
  * @param param0
  * @returns
  */
-export const ExperiencePanelTemplate: React.FC<ExperiencePanelTemplateProps> = ({
+export const ExperiencePanelTemplate = ({
   firstImage,
   secondImage,
   thirdImage,
   fourthImage,
   fifthImage,
-}) => {
+}: ExperiencePanelTemplateProps): JSX.Element => {
   return (
     <div
       className="overflow-hidden relative h-0"
       style={{
-        paddingTop: '38%',
+        paddingTop: "38%",
       }}
     >
       <div className="absolute top-0 bottom-0 right-0 left-0">
         <div
-          style={{ gridTemplateColumns: '1fr 1.5fr 1fr' }}
+          style={{ gridTemplateColumns: "1fr 1.5fr 1fr" }}
           className="h-full grid gap-3"
         >
           <div
             className={`rounded-l-lg bg-cover ${
-              !firstImage && 'bg-gray-400 animate-pulse'
+              !firstImage && "bg-gray-400 animate-pulse"
             }`}
             style={{
               backgroundImage: firstImage && `url(${firstImage})`,
@@ -40,14 +40,14 @@ export const ExperiencePanelTemplate: React.FC<ExperiencePanelTemplateProps> = (
           />
           <div
             style={{
-              gridTemplateColumns: '2fr 1fr',
-              gridTemplateRows: 'auto auto',
+              gridTemplateColumns: "2fr 1fr",
+              gridTemplateRows: "auto auto",
             }}
             className="grid h-full gap-3"
           >
             <div
               className={`col-start-1 col-end-2 row-start-1 row-end-3 bg-cover ${
-                !secondImage && 'bg-gray-400 animate-pulse'
+                !secondImage && "bg-gray-400 animate-pulse"
               }`}
               style={{
                 backgroundImage: secondImage && `url(${secondImage})`,
@@ -55,7 +55,7 @@ export const ExperiencePanelTemplate: React.FC<ExperiencePanelTemplateProps> = (
             />
             <div
               className={`col-start-2 col-end-3 row-start-1 row-end-2 bg-cover ${
-                !thirdImage && 'bg-gray-400 animate-pulse'
+                !thirdImage && "bg-gray-400 animate-pulse"
               }`}
               style={{
                 backgroundImage: thirdImage && `url(${thirdImage})`,
@@ -63,7 +63,7 @@ export const ExperiencePanelTemplate: React.FC<ExperiencePanelTemplateProps> = (
             />
             <div
               className={`col-start-2 col-end-3 row-start-2 row-end-3 bg-cover ${
-                !fourthImage && 'bg-gray-400 animate-pulse'
+                !fourthImage && "bg-gray-400 animate-pulse"
               }`}
               style={{
                 backgroundImage: fourthImage && `url(${fourthImage})`,
@@ -72,7 +72,7 @@ export const ExperiencePanelTemplate: React.FC<ExperiencePanelTemplateProps> = (
           </div>
           <div
             className={`rounded-r-lg bg-cover ${
-              !fifthImage && 'bg-gray-400 animate-pulse'
+              !fifthImage && "bg-gray-400 animate-pulse"
             }`}
             style={{
               backgroundImage: fifthImage && `url(${fifthImage})`,

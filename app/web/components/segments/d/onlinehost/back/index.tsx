@@ -1,13 +1,9 @@
-import { BackSegmentTemplate } from './template';
+import { useBackSegment } from "./logic";
+import { BackSegmentTemplate, BackSegmentTemplateProps } from "./template";
+
+export type BackSegmentProps = BackSegmentTemplateProps;
 
 export const BackSegment = () => {
-  return <BackSegmentTemplate />;
-};
-
-export const back = (props) => {
-  return {
-    back: {
-      component: <BackSegment {...props} />,
-    },
-  };
+  const data = useBackSegment();
+  return <BackSegmentTemplate {...data} />;
 };

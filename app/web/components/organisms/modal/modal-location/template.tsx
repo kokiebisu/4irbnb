@@ -1,56 +1,54 @@
-import { Button } from '@atoms';
-import { Layout } from '@layout';
+import { Button } from "@atoms";
+import { Layout } from "@layout";
 
-export interface LocationModalTemplateProps {}
-
-export const LocationModalTemplate: React.FC<LocationModalTemplateProps> = () => {
+export const LocationModalTemplate = (): JSX.Element => {
   const recentLocations = [
-    { location: 'Chilliwack', from: 'Jan. 7', to: 'Jan. 21', guests: 4 },
-    { location: 'Tofino' },
-    { location: 'Nanaimo' },
+    { location: "Chilliwack", from: "Jan. 7", to: "Jan. 21", guests: 4 },
+    { location: "Tofino" },
+    { location: "Nanaimo" },
   ];
   const nearbyLocations = [
-    'Whistler',
-    'Victora',
-    'Tofino',
-    'Kelowna',
-    'Uclulet',
-    'Chilliwack',
-    'Sooke',
-    'Pemberton',
+    "Whistler",
+    "Victora",
+    "Tofino",
+    "Kelowna",
+    "Uclulet",
+    "Chilliwack",
+    "Sooke",
+    "Pemberton",
   ];
   return (
     <div>
       <div>
         <Button
+          title="title"
           variant="location"
-          locationType="explore"
-          stretch
-          onClick={() => alert('clicked')}
+          icon={<div>icon</div>}
+          onClick={() => alert("clicked")}
         />
       </div>
       <div>
         <Layout
           variant="location"
           title="Recent Searches"
-          content={recentLocations.map(
-            ({ location, from, to, guests }, index) => {
-              return (
-                <div key={index}>
-                  <Button
-                    variant="location"
-                    locationType="recent"
-                    location={location}
-                    from={from}
-                    to={to}
-                    guests={guests}
-                    stretch
-                    onClick={() => alert('clicked')}
-                  />
-                </div>
-              );
-            }
-          )}
+          content={recentLocations.map((_, index) => {
+            return (
+              <div key={index}>
+                <Button
+                  title=""
+                  variant="location"
+                  // locationType="recent"
+                  // location={location}
+                  // from={from}
+                  // to={to}
+                  // guests={guests}
+                  // stretch
+                  icon={<div>icon</div>}
+                  onClick={() => alert("clicked")}
+                />
+              </div>
+            );
+          })}
         />
       </div>
       <div>

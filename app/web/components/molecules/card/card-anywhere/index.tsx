@@ -1,18 +1,12 @@
-import { AnywhereCardTemplate } from './template';
+import { AnywhereCardTemplate, AnywhereCardTemplateProps } from "./template";
+
+export type AnywhereCardProps = AnywhereCardTemplateProps;
 
 /**
  * Presentational Component
  * @param props
  * @returns
  */
-export const AnywhereCard = (props) => {
-  return <AnywhereCardTemplate {...props} />;
-};
-
-export const anywhere = (props) => {
-  return {
-    anywhere: {
-      component: <AnywhereCard {...props} />,
-    },
-  };
-};
+export const AnywhereCard = (props: AnywhereCardProps) => (
+  <AnywhereCardTemplate {...props} />
+);

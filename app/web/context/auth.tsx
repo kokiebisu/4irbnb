@@ -15,18 +15,36 @@ const AuthDispatchContext = createContext<Dispatch | undefined>(undefined);
 
 const authReducer = (state: State, action: Action) => {
   switch (action.type) {
-    case "auth_login":
-      return { ...state, display: "auth", title: "Log in" };
-    case "auth_signup":
-      return { ...state, display: "auth", title: "Sign in" };
-    case "login":
-      return { ...state, display: "login", title: "Log in" };
+    case "email":
+      return {
+        ...state,
+        display: "email",
+        title: "Log in or sign up",
+      };
+    case "phone":
+      return {
+        ...state,
+        display: "phone",
+        title: "Log in or sign up",
+      };
     case "signup":
-      return { ...state, display: "signup", title: "Finish signing up" };
+      return {
+        ...state,
+        display: "signup",
+        title: "Finish signing up",
+      };
     case "forgot_password":
-      return { ...state, display: "forgot_password", title: "Forgot password" };
+      return {
+        ...state,
+        display: "forgot_password",
+        title: "Forgot password",
+      };
     case "exists":
-      return { ...state, display: "exists", title: "Account exists" };
+      return {
+        ...state,
+        display: "exists",
+        title: "Account exists",
+      };
     default:
       return state;
   }
@@ -34,8 +52,8 @@ const authReducer = (state: State, action: Action) => {
 
 const AuthProvider = ({ children }: AuthProviderProps) => {
   const [state, dispatch] = useReducer(authReducer, {
-    display: "auth",
-    title: "Log in",
+    display: "phone",
+    title: "Log in and sign up",
   });
 
   return (

@@ -1,4 +1,4 @@
-import { Icon } from '@atoms';
+import { Icon } from "@atoms";
 
 export interface VerticalCardTemplateProps {
   imgUrl?: string;
@@ -16,7 +16,7 @@ export interface VerticalCardTemplateProps {
  * @param {Object} card - Information about the card
  * @param {boolean} save - Whether if the card can be saved
  */
-export const VerticalCardTemplate: React.FC<VerticalCardTemplateProps> = ({
+export const VerticalCardTemplate = ({
   imgUrl,
   superhost,
   ratings,
@@ -25,10 +25,10 @@ export const VerticalCardTemplate: React.FC<VerticalCardTemplateProps> = ({
   country,
   title,
   cost,
-}) => {
+}: VerticalCardTemplateProps): JSX.Element => {
   return (
     <div>
-      <div style={{ paddingTop: '135%' }} className="relative">
+      <div style={{ paddingTop: "135%" }} className="relative">
         <div className="animate-pulse absolute top-0 bottom-0 right-0 left-0">
           {imgUrl ? (
             <img className="rounded-md" src={imgUrl} />
@@ -36,17 +36,18 @@ export const VerticalCardTemplate: React.FC<VerticalCardTemplateProps> = ({
             <div className="rounded-md w-full h-full bg-gray-500" />
           )}
           <div className="flex py-2 px-3 absolute top-0 justify-between w-full">
-            <div className={superhost ? '' : 'text-white hidden'}>
+            <div className={superhost ? "" : "text-white hidden"}>
               <div className="px-3 py-1 bg-gray-200 shadow-lg rounded">
                 <p className="text-xs uppercase tracking-wide">Superhost</p>
               </div>
             </div>
-            <div className={save ? 'text-white' : 'hidden text-white'}>
+            <div className={save ? "text-white" : "hidden text-white"}>
               <Icon
-                variant="action"
-                actionType="heart"
+                variant="fill"
+                fillType="heart"
                 fill="rgba(0, 0, 0, 0.5)"
                 width={24}
+                height={24}
               />
             </div>
           </div>
@@ -54,7 +55,13 @@ export const VerticalCardTemplate: React.FC<VerticalCardTemplateProps> = ({
       </div>
       <div className="mt-1 flex items-center">
         <div className="mr-1">
-          <Icon variant={'profile'} profileType="star" width={15} />
+          <Icon
+            variant="fill"
+            fillType="star"
+            width={15}
+            height={15}
+            fill="black"
+          />
         </div>
         <div className="mr-1">
           <p className="font-thin text-xs">{ratings}</p>

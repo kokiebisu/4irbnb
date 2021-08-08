@@ -1,51 +1,25 @@
 /** layouts */
-import { InputLayout } from "./layout.input";
-import { CreateLayout } from "./layout.create";
-import { HomesLayout } from "./section/layout.homes";
-import { LandingLayout } from "./section/layout.landing";
-import { OnlineHostLayout } from "./section/layout.onlinehost";
-import { CurrencyLayout } from "./layout.currency";
-import { LocationLayout } from "./modal/layout.location";
+import { InputLayoutProps } from "./layout.input";
+import { CreateLayoutProps } from "./layout.create";
+import { HomesLayoutProps } from "./section/layout.homes";
+import { LandingLayoutProps } from "./section/layout.landing";
+import { OnlineHostLayoutProps } from "./section/layout.onlinehost";
+import { CurrencyLayoutProps } from "./layout.currency";
+import { LocationLayoutProps } from "./modal/layout.location";
+import { factory } from "./factory";
 
-export const $Layout = {
-  INPUT: "input",
-  CREATE: "create",
-  HOMES: "homes",
-  LANDING: "landing",
-  ONLINEHOST: "onlinehost",
-  CURRENCY: "currency",
-  LOCATION: "location",
-};
-
-export interface LayoutProps {
-  extendsTo?: string;
-  variant: string;
-  [property: string]: any;
-}
+export type LayoutProps =
+  | ({ variant: "input" } & InputLayoutProps & { children: JSX.Element })
+  | ({ variant: "create" } & CreateLayoutProps)
+  | ({ variant: "homes" } & HomesLayoutProps)
+  | ({ variant: "landing" } & LandingLayoutProps & { children: JSX.Element })
+  | ({ variant: "onlinehost" } & OnlineHostLayoutProps)
+  | ({ variant: "currency" } & CurrencyLayoutProps)
+  | ({ variant: "location" } & LocationLayoutProps);
 
 /**
  * Bundles the Layout components
  * @param {string} extendsTo - Customize the component wrapper
  * @param {string} variant - Specify the variant of the component
  */
-export const Layout: React.FC<LayoutProps> = ({
-  extendsTo,
-  variant = "input",
-  ...props
-}) => {
-  const variants: { [variant: string]: JSX.Element } = {
-    input: <InputLayout {...props} />,
-    create: <CreateLayout {...props} />,
-    homes: <HomesLayout {...props} />,
-    landing: <LandingLayout {...props} />,
-    onlinehost: <OnlineHostLayout {...props} />,
-    currency: <CurrencyLayout {...props} />,
-    location: <LocationLayout {...props} />,
-  };
-
-  return (
-    <div className={extendsTo} data-testid={`${variant}-layout`}>
-      {variants[variant]}
-    </div>
-  );
-};
+export const Layout = (props: LayoutProps): JSX.Element => factory(props);
