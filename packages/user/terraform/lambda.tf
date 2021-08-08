@@ -12,7 +12,7 @@ resource "aws_lambda_function" "user_consumer" {
   image_uri = "${data.aws_ecr_repository.user_consumer.repository_url}@${data.aws_ecr_image.user_consumer.id}"
 }
 
-resource "aws_lambda_permission" "user" {
+resource "aws_lambda_permission" "user_api" {
     statement_id = "AllowExecutionFromAPIGateway"
     action = "lambda:InvokeFunction"
     function_name = aws_lambda_function.user_api.function_name
@@ -21,7 +21,7 @@ resource "aws_lambda_permission" "user" {
     source_arn = "${var.api_gateway_execution_arn}/*/*"
 }
 
-resource "aws_lambda_permission" "user" {
+resource "aws_lambda_permission" "user_consumer" {
     statement_id = "AllowExecutionFromAPIGateway"
     action = "lambda:InvokeFunction"
     function_name = aws_lambda_function.user_consumer.function_name
