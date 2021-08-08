@@ -3,7 +3,7 @@ resource "aws_apigatewayv2_integration" "this" {
   
   integration_type = "AWS_PROXY"
   integration_method        = "POST"
-  integration_uri = aws_lambda_function.stay_service.invoke_arn
+  integration_uri = aws_lambda_function.user_api.invoke_arn
 }
 
 resource "aws_apigatewayv2_route" "check_user" {
