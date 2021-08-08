@@ -13,6 +13,17 @@ export const useEmailPrototype = () => {
     },
     // validate,
     onSubmit: async (values) => {
+      /**
+       * Checks if email exists
+       */
+
+      /**
+       * If exists then open password enter
+       */
+
+      /**
+       * If the user doesn't exist then display register form
+       */
       alert(JSON.stringify(values, null, 2));
     },
   });

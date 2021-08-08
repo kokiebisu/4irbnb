@@ -15,7 +15,10 @@ export const AuthModalTemplate = (): JSX.Element => {
   return (
     <div
       className="grid bg-white rounded-2xl"
-      style={{ maxHeight: "90vh", gridTemplateRows: "auto 1fr" }}
+      style={{
+        maxHeight: "90vh",
+        gridTemplateRows: "auto 1fr",
+      }}
     >
       <div
         style={{ height: 60 }}
