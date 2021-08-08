@@ -94,14 +94,16 @@ const LandingPage: React.FC<{}> = () => {
         </AnimatePresence> */}
         {toggleState.auth && (
           <div className="fixed z-60 bottom-0 left-0 right-0 top-0 bg-blur">
-            <div className="flex justify-center items-center h-screen">
-              <Modal
-                variant="auth"
-                animate="slideup"
-                criteria={toggleState.auth}
-                dispatch="toggle_auth"
-                lock
-              />
+            <div className="flex justify-center items-center h-screen ">
+              <div className="w-full md:max-w-xl absolute bottom-0 md:bottom-auto">
+                <Modal
+                  variant="auth"
+                  animate="slideup"
+                  criteria={toggleState.auth}
+                  dispatch="toggle_auth"
+                  lock
+                />
+              </div>
             </div>
           </div>
         )}

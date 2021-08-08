@@ -43,12 +43,6 @@ export const EmailPrototypeTemplate = ({
               errors={!!emailError}
             />
           </div>
-          <div>
-            <p className="font-thin text-gray-500 text-sm">
-              We’ll call or text you to confirm your number. Standard message
-              and data rates apply.
-            </p>
-          </div>
           <div className="my-4">
             <Button
               variant="primary"
