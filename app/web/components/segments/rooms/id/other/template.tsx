@@ -1,6 +1,6 @@
 export interface OtherSegmentTemplateProps {
-  location?: any;
-  locations?: any;
+  location: any;
+  locations: any;
 }
 
 /**
@@ -9,20 +9,20 @@ export interface OtherSegmentTemplateProps {
  * @param {Object[]} locations - List of other locations
  */
 export const OtherSegmentTemplate: React.FC<OtherSegmentTemplateProps> = ({
-  location = 'Location',
+  location = "Location",
   locations = [
-    { name: 'Anchorage', url: '/' },
-    { name: 'Talkeetna', url: '/' },
-    { name: 'Wasilla', url: '/' },
-    { name: 'Palmer', url: '/' },
-    { name: 'Big Lake', url: '/' },
-    { name: 'Willow', url: '/' },
-    { name: 'Nancy Lake', url: '/' },
-    { name: 'Houston', url: '/' },
-    { name: 'Hatcher Pass', url: '/' },
-    { name: 'Cantwell', url: '/' },
-    { name: 'Glacier View', url: '/' },
-    { name: 'Eureka Roadhouse', url: '/' },
+    { name: "Anchorage", url: "/" },
+    { name: "Talkeetna", url: "/" },
+    { name: "Wasilla", url: "/" },
+    { name: "Palmer", url: "/" },
+    { name: "Big Lake", url: "/" },
+    { name: "Willow", url: "/" },
+    { name: "Nancy Lake", url: "/" },
+    { name: "Houston", url: "/" },
+    { name: "Hatcher Pass", url: "/" },
+    { name: "Cantwell", url: "/" },
+    { name: "Glacier View", url: "/" },
+    { name: "Eureka Roadhouse", url: "/" },
   ],
 }) => {
   return (
@@ -51,7 +51,7 @@ export const OtherSegmentTemplate: React.FC<OtherSegmentTemplateProps> = ({
 
       <div className="flex justify-between">
         <ul className="p-0 list-none w-full mt-5 grid grid-cols-2 md:grid-cols-4">
-          {locations.map((location, index) => {
+          {locations.map((location: any, index: any) => {
             return (
               <li key={index} className="font-thin text-gray-600">
                 <div className="mb-4">

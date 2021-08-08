@@ -1,16 +1,15 @@
 import { Icon } from "@atoms";
-import { Panel, $Panel } from "@panel";
 
 export interface PreviewSegmentTemplateProps {
-  title?: string;
-  ratings?: number;
-  numberOfReviews?: number;
+  title: string;
+  ratings: number;
+  numberOfReviews: number;
   superhost?: boolean;
-  location?: string;
-  province?: string;
-  country?: string;
-  layoutType?: string;
-  images?: string[];
+  location: string;
+  province: string;
+  country: string;
+  layoutType: string;
+  images: string[];
 }
 
 /**
@@ -113,9 +112,9 @@ export const PreviewSegmentTemplate: React.FC<PreviewSegmentTemplateProps> = ({
           </div>
         </div>
       </div>
-      <div>
+      {/* <div>
         <Panel variant={$Panel.ROOM} />
-      </div>
+      </div> */}
     </div>
   );
 };

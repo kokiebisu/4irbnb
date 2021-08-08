@@ -1,8 +1,8 @@
 import { Icon } from "@atoms";
 
 export type ArrangementsCardTemplateProps = {
-  type?: string;
-  count?: number;
+  type: string;
+  count: number;
 };
 
 /**
