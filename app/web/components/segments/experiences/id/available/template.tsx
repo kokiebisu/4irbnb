@@ -62,7 +62,7 @@ export const AvailableSegmentTemplate: React.FC<AvailableSegmentTemplateProps> =
     });
   };
 
-  const containerRef = useRef<HTMLDivElement>();
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     window.addEventListener("resize", handleRef);
@@ -82,7 +82,7 @@ export const AvailableSegmentTemplate: React.FC<AvailableSegmentTemplateProps> =
           <div className="mx-1">
             <Button
               variant="paginate"
-              direction="left"
+              direction="chevronLeft"
               onClick={handlePreviousSlide}
               disabled={state.activeSlide === 0}
             />
@@ -90,7 +90,7 @@ export const AvailableSegmentTemplate: React.FC<AvailableSegmentTemplateProps> =
           <div className="mx-1">
             <Button
               variant="paginate"
-              direction="right"
+              direction="chevronRight"
               onClick={handleNextSlide}
               disabled={
                 state.activeSlide ===
@@ -114,7 +114,7 @@ export const AvailableSegmentTemplate: React.FC<AvailableSegmentTemplateProps> =
               <div
                 style={{ width: width / displayingColumns }}
                 key={index}
-                className={[section["w__nearby"]].join(" ")}
+                // className={[section["w__nearby"]].join(" ")}
               >
                 <div className="mb-3 mr-4">
                   <Card

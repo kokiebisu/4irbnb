@@ -1,21 +1,7 @@
-import { useExperiencesSegment } from './logic';
-import {
-  ExperiencesSegmentTemplate,
-  ExperiencesSegmentTemplateProps,
-} from './template';
+import { useExperiencesSegment } from "./logic";
+import { ExperiencesSegmentTemplate } from "./template";
 
-export interface ExperiencesSegmentProps
-  extends ExperiencesSegmentTemplateProps {}
-
-export const ExperiencesSegment: React.FC<ExperiencesSegmentProps> = () => {
+export const ExperiencesSegment = () => {
   const data = useExperiencesSegment();
   return <ExperiencesSegmentTemplate {...data} />;
-};
-
-export const experiences = (props: ExperiencesSegmentProps) => {
-  return {
-    experiences: {
-      component: <ExperiencesSegment {...props} />,
-    },
-  };
 };

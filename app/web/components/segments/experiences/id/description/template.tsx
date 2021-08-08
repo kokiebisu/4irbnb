@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export interface DescriptionSegmentTemplateProps {
-  mainDescription?: string;
+  mainDescription: string;
   spaceDescription?: string;
   accessDescription?: string;
   layoutType?: string;
@@ -27,7 +27,7 @@ export const DescriptionSegmentTemplate: React.FC<DescriptionSegmentTemplateProp
   };
 
   const renderDescription = (description: string) => {
-    const wordArray = description.split(' ');
+    const wordArray = description.split(" ");
     const newArray = [];
     for (let i = 0; i < 75; i++) {
       newArray.push(wordArray[i]);
@@ -38,7 +38,7 @@ export const DescriptionSegmentTemplate: React.FC<DescriptionSegmentTemplateProp
   const newArray = renderDescription(mainDescription);
   return (
     <div>
-      {layoutType === 'experience' && (
+      {layoutType === "experience" && (
         <div className="my-4">
           <h3>What you'll do</h3>
         </div>
@@ -68,7 +68,7 @@ export const DescriptionSegmentTemplate: React.FC<DescriptionSegmentTemplateProp
       ) : (
         <>
           <p className="font-light ml-1 leading-6 text-gray-700">
-            {`${newArray.join(' ')}...`}
+            {`${newArray.join(" ")}...`}
             <span>
               <button
                 onClick={() => {
@@ -83,7 +83,7 @@ export const DescriptionSegmentTemplate: React.FC<DescriptionSegmentTemplateProp
           </p>
         </>
       )}
-      {layoutType === 'room' && (
+      {layoutType === "room" && (
         <div className="mt-4">
           <a
             onClick={() => {

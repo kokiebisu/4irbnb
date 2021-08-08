@@ -8,15 +8,15 @@ import { SharingSegment } from "../sharing";
 export const factory = (props: OnlineHostSegmentProps) => {
   switch (props.variant) {
     case "back":
-      return <BackSegment {...props} />;
+      return <BackSegment />;
     case "banner":
-      return <BannerSegment {...props} />;
+      return <BannerSegment />;
     case "faq":
-      return <FAQSegment {...props} />;
+      return <FAQSegment />;
     case "more":
-      return <MoreSegment {...props} />;
+      return <MoreSegment />;
     case "sharing":
-      return <SharingSegment {...props} />;
+      return <SharingSegment />;
     default:
       throw new Error("[Invalid OnlinehostSegment]");
   }

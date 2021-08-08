@@ -20,6 +20,4 @@ export type BulletProps =
  * Bundles the bullet components
  * @param {string} variant - Specify the variant of the bullet
  */
-export const Bullet: React.FC<BulletProps> = (props) => {
-  return factory(props);
-};
+export const Bullet = (props: BulletProps): JSX.Element => factory(props);

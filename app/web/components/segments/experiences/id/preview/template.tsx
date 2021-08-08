@@ -1,17 +1,18 @@
 import { Icon } from "@atoms";
-import { Panel, $Panel } from "@panel";
 
 export interface PreviewSegmentTemplateProps {
-  images?: string[];
+  images: string[];
 }
 
 /**
  * Renders the panel section
  * @param {string[]} images - Images for the panel
  */
-export const PreviewSegmentTemplate: React.FC<PreviewSegmentTemplateProps> = ({
-  images,
-}) => {
+export const PreviewSegmentTemplate: React.FC<PreviewSegmentTemplateProps> = (
+  {
+    // images,
+  }
+) => {
   return (
     <div>
       <div className="relative z-100 my-5 flex items-center justify-between">
@@ -50,9 +51,9 @@ export const PreviewSegmentTemplate: React.FC<PreviewSegmentTemplateProps> = ({
           </div>
         </div>
       </div>
-      <div>
+      {/* <div>
         <Panel images={images} variant={$Panel.EXPERIENCE} />
-      </div>
+      </div> */}
     </div>
   );
 };

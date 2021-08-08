@@ -1,4 +1,4 @@
-import { Card } from "@card";
+// import { Card } from "@card";
 
 export interface ParticipateSegmentTemplateProps {
   participatingMethods: string[];
@@ -8,9 +8,11 @@ export interface ParticipateSegmentTemplateProps {
  * Renders the participate section
  * @param {string[]} participates - Ways to participate
  */
-export const ParticipateSegmentTemplate: React.FC<ParticipateSegmentTemplateProps> = ({
-  participatingMethods,
-}) => {
+export const ParticipateSegmentTemplate: React.FC<ParticipateSegmentTemplateProps> = (
+  {
+    // participatingMethods,
+  }
+) => {
   return (
     <div>
       <div>
@@ -19,13 +21,13 @@ export const ParticipateSegmentTemplate: React.FC<ParticipateSegmentTemplateProp
         </h3>
       </div>
       <div className="flex mb-5">
-        {participatingMethods.map((participate, index) => {
+        {/* {participatingMethods.map((participate, index) => {
           return (
             <div key={index} className="mr-4">
               <Card variant="participate" categoryType={participate} />
             </div>
           );
-        })}
+        })} */}
       </div>
     </div>
   );

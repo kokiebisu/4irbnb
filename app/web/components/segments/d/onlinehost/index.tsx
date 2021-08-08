@@ -1,16 +1,11 @@
-import { BackSegmentProps } from "./back";
-import { BannerSegmentProps } from "./banner";
-import { FAQSegmentProps } from "./faq";
-import { MoreSegmentProps } from "./more";
-import { SharingSegmentProps } from "./sharing";
 import { factory } from "./utils/factory";
 
 export type OnlineHostSegmentProps =
-  | ({ variant: "back" } & BackSegmentProps)
-  | ({ variant: "banner" } & BannerSegmentProps)
-  | ({ variant: "faq" } & FAQSegmentProps)
-  | ({ variant: "more" } & MoreSegmentProps)
-  | ({ variant: "sharing" } & SharingSegmentProps);
+  | { variant: "back" }
+  | { variant: "banner" }
+  | { variant: "faq" }
+  | { variant: "more" }
+  | { variant: "sharing" };
 
 /**
  * Bundles the button components

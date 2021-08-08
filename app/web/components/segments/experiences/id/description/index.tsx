@@ -1,21 +1,7 @@
-import { useDescriptionSegment } from './logic';
-import {
-  DescriptionSegmentTemplate,
-  DescriptionSegmentTemplateProps,
-} from './template';
+import { useDescriptionSegment } from "./logic";
+import { DescriptionSegmentTemplate } from "./template";
 
-export interface DescriptionSegmentProps
-  extends DescriptionSegmentTemplateProps {}
-
-export const DescriptionSegment: React.FC<DescriptionSegmentProps> = () => {
+export const DescriptionSegment = () => {
   const data = useDescriptionSegment();
   return <DescriptionSegmentTemplate {...data} />;
-};
-
-export const description = (props: DescriptionSegmentProps) => {
-  return {
-    description: {
-      component: <DescriptionSegment {...props} />,
-    },
-  };
 };

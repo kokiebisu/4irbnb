@@ -1,14 +1,14 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
-import { KnowSegmentTemplate, KnowSegmentTemplateProps } from './template';
-import * as mockData from './mock';
+import React from "react";
+import { Story, Meta } from "@storybook/react";
+import { KnowSegmentTemplate } from "./template";
+import * as mockData from "./mock";
 
 export default {
-  title: 'Templates/Experiences/ID',
+  title: "Templates/Experiences/ID",
   component: KnowSegmentTemplate,
 } as Meta;
 
-const KnowSegmentTemplateStory: Story<KnowSegmentTemplateProps> = (args) => (
+const KnowSegmentTemplateStory: Story<{}> = (args) => (
   <KnowSegmentTemplate {...args} />
 );
 
