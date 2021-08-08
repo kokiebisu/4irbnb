@@ -25,6 +25,8 @@ module "stay" {
   api_gateway_id            = aws_apigatewayv2_api.lambda.id
   api_gateway_execution_arn = aws_apigatewayv2_api.lambda.execution_arn
 
+  service_role_arn = aws_iam_role.service_role.arn
+
 }
 
 module "web" {
