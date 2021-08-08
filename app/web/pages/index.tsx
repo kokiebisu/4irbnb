@@ -99,23 +99,27 @@ const LandingPage: React.FC<{}> = () => {
                 variant="auth"
                 animate="slideup"
                 criteria={toggleState.auth}
+                dispatch="toggle_auth"
                 lock
               />
             </div>
           </div>
         )}
-        {/* {toggleState.globe && (
+        {toggleState.globe && (
           <div className="fixed z-60 bottom-0 left-0 right-0 top-0 bg-blur">
             <div className="flex justify-center items-center h-screen">
-              <Modal
-                variant="globe"
-                animate="slideup"
-                criteria={toggleState.globe}
-                lock
-              />
+              <div className="w-full max-w-6xl px-16">
+                <Modal
+                  variant="globe"
+                  animate="slideup"
+                  criteria={toggleState.globe}
+                  dispatch="toggle_globe"
+                  lock
+                />
+              </div>
             </div>
           </div>
-        )} */}
+        )}
       </div>
     </div>
   );

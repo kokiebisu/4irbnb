@@ -20,12 +20,12 @@ export const GlobeButtonTemplate = ({
   return (
     <button
       data-testid="globe-button"
-      className="inline-block"
+      className="w-full text-left"
       onClick={onClick}
     >
       <div
         className={`hover:bg-gray-100 pl-3 pr-8 py-3 rounded-md ${
-          selected ? 'border border-black' : ''
+          selected ? "border border-black" : ""
         }`}
       >
         <div>

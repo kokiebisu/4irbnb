@@ -40,7 +40,7 @@ export const LandingHeaderTemplate = ({
   return (
     <header
       className={`w-full ${expanded ? "pt-4 pb-32" : "py-5"} ${
-        positionAtPageTop ? "bg-transparent" : "bg-white"
+        positionAtPageTop ? "bg-transparent" : "bg-white shadow-md"
       } relative container-spread transition ease-in-out duration-100`}
     >
       <div className="hidden sm:flex justify-between relative">
@@ -64,40 +64,47 @@ export const LandingHeaderTemplate = ({
             />
           </div>
         </div>
-        <div className="flex items-center">
-          <div className="relative left-3 mx-1">
-            <Button
-              variant="transparent"
-              inverse={positionAtPageTop}
-              onClick={() => Router.push("/host/homes")}
-            >
-              <h5
-                className={`${
-                  positionAtPageTop
-                    ? "text-white font-light"
-                    : "text-gray-800 font-medium"
-                } text-sm`}
+        <div>
+          {positionAtPageTop ? null : (
+            <Button variant="searchbar" onClick={handleSearchbarExpand} />
+          )}
+        </div>
+        <div className="relative flex items-center">
+          <div className="absolute flex items-center right-20">
+            <div className="relative left-3 mx-1">
+              <Button
+                variant="transparent"
+                inverse={positionAtPageTop}
+                onClick={() => Router.push("/host/homes")}
               >
-                Become a Host
-              </h5>
-            </Button>
-          </div>
-          <div className="mx-1">
-            <Button
-              variant="transparent"
-              inverse={positionAtPageTop}
-              onClick={handleGlobeToggle}
-            >
-              <div className="items-center">
-                <Icon
-                  variant="fill"
-                  fillType="globe"
-                  width={16}
-                  height={16}
-                  fill={`${positionAtPageTop ? "white" : "black"}`}
-                />
-              </div>
-            </Button>
+                <h5
+                  className={`whitespace-nowrap ${
+                    positionAtPageTop
+                      ? "text-white font-light"
+                      : "text-gray-800 font-medium"
+                  } text-sm`}
+                >
+                  Become a Host
+                </h5>
+              </Button>
+            </div>
+            <div className="mx-1">
+              <Button
+                variant="transparent"
+                inverse={positionAtPageTop}
+                onClick={handleGlobeToggle}
+              >
+                <div className="items-center">
+                  <Icon
+                    variant="fill"
+                    fillType="globe"
+                    width={16}
+                    height={16}
+                    fill={`${positionAtPageTop ? "white" : "black"}`}
+                  />
+                </div>
+              </Button>
+            </div>
           </div>
           <div className="ml-1">
             <Button
@@ -266,10 +273,7 @@ export const LandingHeaderTemplate = ({
                     }}
                     animate={{ width: 240, y: 0, opacity: 1 }}
                   >
-                    <Button
-                      variant="searchbar"
-                      onClick={handleSearchbarExpand}
-                    />
+                    
                   </motion.div>
                 </motion.div>
               )}

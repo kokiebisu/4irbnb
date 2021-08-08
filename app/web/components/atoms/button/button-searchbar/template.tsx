@@ -13,14 +13,14 @@ export const SearchbarButtonTemplate = ({
   return (
     <button
       data-testid="searchbar-button"
-      className="inline-block"
+      className="inline-block shadow-md hover:shadow-lg transition rounded-full border border-gray-300 border-solid"
       onClick={onClick}
     >
       <div
-        style={{ gridTemplateColumns: "1fr auto" }}
-        className="relative py-1.5 pl-6 pr-1.5 inline-grid items-center justify-between border border-gray-300 rounded-full"
+        style={{ gridTemplateColumns: "1fr auto", padding: "8px 8px 8px 22px" }}
+        className="relative inline-grid items-center justify-between"
       >
-        <div className="mr-9">
+        <div className="mr-9 pr-20">
           <p className="whitespace-nowrap text-sm font-medium text-left">
             Start your search
           </p>
