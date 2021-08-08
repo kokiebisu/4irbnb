@@ -1,17 +1,18 @@
-import { IStay } from "./type";
+import { IUser } from "./type";
 
 /**
  * @public
- * Blueprint of the Stay instance
+ * Blueprint of the User instance
  */
-export class Stay {
+export class User {
   id: string;
-  title: string;
-  imgUrls: string[];
+  emailAddress: string;
+  firstName: string;
+  lastName: string;
 
-  constructor({ id, title, imgUrls }: IStay) {
+  constructor({ id, emailAddress, firstName, lastName }: IUser) {
     this.id = id;
-    this.title = title;
-    this.imgUrls = imgUrls;
-  }
+    this.emailAddress = emailAddress;
+    this.firstName = firstName;
+    this.lastName = lastName
 }

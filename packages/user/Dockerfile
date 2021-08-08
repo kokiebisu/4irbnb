@@ -16,9 +16,9 @@ COPY packages/common/package.json packages/common/tsconfig.json ./
 RUN yarn --production
 RUN yarn build
 
-WORKDIR /nextbnb/packages/stay
-COPY packages/stay/src ./src
-COPY packages/stay/package.json packages/stay/tsconfig.json ./
+WORKDIR /nextbnb/packages/user
+COPY packages/user/src ./src
+COPY packages/user/package.json packages/user/tsconfig.json ./
 RUN yarn --production
 RUN yarn build
 

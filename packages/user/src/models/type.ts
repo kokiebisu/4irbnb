@@ -1,9 +1,10 @@
 /**
- * A stay posted by the user
  * @public
+ * A user
  */
-export interface IStay {
+export interface IUser {
   id: string;
-  title: string;
-  imgUrls: string[];
+  emailAddress: string;
+  firstName: string;
+  lastName: string;
 }

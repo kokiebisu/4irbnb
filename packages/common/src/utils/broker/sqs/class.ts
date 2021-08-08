@@ -5,5 +5,6 @@ export class SQSClient implements IBrokerClient {
   #package: Client;
   constructor({ region }: ISQSClientConstructorParams) {
     this.#package = new Client({ region });
+    console.log(this.#package);
   }
 }

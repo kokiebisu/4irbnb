@@ -1,16 +1,21 @@
-import { Stay } from "./class";
-import { IStay } from "./type";
+import { User } from './class';
 
 /**
  * @public
- * Factory to create the Stay instance
+ * Factory to create the User instance
  *
  * @param id -
- * @param title -
- * @param imgUrls -
+ * @param username -
+ * @param name -
+ * @param iconUrl -
  *
- * @returns a new {@link @nextbnb/model#Stay} instance
+ * @returns a new {@link @nextbnb/user#User} instance
  */
-export const createStay = ({ id, title, imgUrls }: IStay): Stay => {
-  return new Stay({ id, title, imgUrls });
+export const createUser = (
+  id: string,
+  username: string,
+  name: string,
+  iconUrl: string
+): User => {
+  return new User({ id, username, name, iconUrl });
 };
