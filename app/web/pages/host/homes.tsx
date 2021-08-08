@@ -18,7 +18,7 @@ const Homes: () => string | JSX.Element = () => {
           <Segment variant="hosting" />
         </div>
       </div>
-      <div className="py-18 border-bottom border-gray-600">
+      {/* <div className="py-18 border-bottom border-gray-600">
         <Segment variant="community" />
       </div>
       <div className="py-18 border-bottom border-gray-600">
@@ -40,7 +40,7 @@ const Homes: () => string | JSX.Element = () => {
         <div className="px-5 sm:px-9">
           <Segment variant="ready" />
         </div>
-      </div>
+      </div> */}
       <div>
         <Footer />
       </div>

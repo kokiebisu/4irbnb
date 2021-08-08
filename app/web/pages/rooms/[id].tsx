@@ -2,11 +2,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useToggleState } from "@context/toggle";
 // import { Header } from "@header";
 import { Footer } from "@footer";
-import { Segment } from "@template/rooms/id";
+// import { Segment } from "@template/rooms/id";
 import { Card } from "@card";
 // import { Modal } from "@modal";
 import { useHandleScroll } from "@hooks/useHandleScroll";
-import { Bar } from "@bar";
+// import { Bar } from "@bar";
 
 /**
  * Render the component for path /rooms/[id]
@@ -51,9 +51,9 @@ const id: () => string | JSX.Element = () => {
                   'guidelines',
                 ]}
               /> */}
-              <Segment variant="description" />
+              {/* <Segment variant="description" />
               <Segment variant="arrangements" />
-              <Segment variant="amenities" />
+              <Segment variant="amenities" /> */}
             </div>
             <div
               style={{ paddingTop: 20, paddingBottom: 56 }}
@@ -64,15 +64,13 @@ const id: () => string | JSX.Element = () => {
               </div>
             </div>
           </div>
-          <Segment variant="reviews" />
-          <Segment variant="host" />
+          {/* <Segment variant="reviews" />
+          <Segment variant="host" /> */}
         </div>
-        <div className="container">
-          <Segment variant="other" />
-        </div>
+        <div className="container">{/* <Segment variant="other" /> */}</div>
         <Footer />
         <div className="fixed bottom-0 z-100 w-full sm:hidden">
-          <Bar variant="availability" />
+          {/* <Bar variant="availability" /> */}
         </div>
       </div>
       {toggleState.auth && (
