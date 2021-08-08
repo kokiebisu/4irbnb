@@ -1,5 +1,5 @@
 resource "aws_dynamodb_table" "stay_database" {
-  name           = "StayService"
+  name           = "UserService"
   billing_mode   = "PROVISIONED"
   read_capacity  = var.read_capacity
   write_capacity = var.write_capacity

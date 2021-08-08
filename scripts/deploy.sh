@@ -23,14 +23,6 @@ echo "-------------- 🌬 Pushing the image... 🌬 ----------------------------
 docker push 776733965771.dkr.ecr.us-east-1.amazonaws.com/4irbnb-$1-$2:latest
 docker push 776733965771.dkr.ecr.us-east-1.amazonaws.com/4irbnb-$1-$3:latest
 
-cd terraform
-
-echo "-------------- ⚽️ Formatting Terraform script... ⚽️ ---------------------------------"
-terraform fmt
-
-echo "--------------- 🚗  Building the Infrastructure... 🚗 --------------------------------"
-terraform apply --auto-approve -lock=false
-
 
 
 
