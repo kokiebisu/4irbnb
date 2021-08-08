@@ -13,8 +13,7 @@
     "test": "jest --passWithNoTests",
     "lint": "eslint src --ext js,ts,tsx",
     "extract": "api-extractor run --local",
-    "deploy:api": "bash ../../scripts/deploy.sh user api",
-    "deploy:consumer": "bash ../../script/deploy.sh user consumer"
+    "deploy": "bash ../../scripts/deploy.sh user api consumer"
   },
   "dependencies": {
     "@4irbnb/common": "file:../common"
