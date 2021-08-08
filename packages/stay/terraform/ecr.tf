@@ -17,11 +17,13 @@ resource "aws_ecr_repository" "stay_consumer" {
 }
 
 data "aws_ecr_image" "stay_api" {
+  count = 0
   repository_name = aws_ecr_repository.stay_api.name
   image_tag = "latest"
 }
 
 data "aws_ecr_image" "stay_consumer" {
+  count = 0
   repository_name = aws_ecr_repository.stay_consumer.name
   image_tag = "latest"
 }
