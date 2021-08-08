@@ -1,15 +1,15 @@
-import { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { useRouter } from 'next/router';
-import { Header } from '@header';
-import { Segment } from 'components/segments/experiences/id';
-import { Modal } from '@modal';
-import { Footer } from '@footer';
-import { useToggleState } from '@context/toggle';
+import { useEffect, useState } from "react";
+// import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "next/router";
+// import { Header } from "@header";
+// import { Segment } from "components/segments/experiences/id";
+// import { Modal } from "@modal";
+import { Footer } from "@footer";
+// import { useToggleState } from "@context/toggle";
 
 /** sample data */
-import { experiences } from '../../data/experiences';
-import { useTabTitle } from '@hooks/useTabTitle';
+import { experiences } from "../../data/experiences";
+import { useTabTitle } from "@hooks/useTabTitle";
 
 /**
  * Renders the component for path /experiences/[id]
@@ -21,9 +21,9 @@ const id: () => string | JSX.Element = () => {
     useTabTitle(experiences[experienceID].title);
   }
 
-  const toggleState = useToggleState();
+  // const toggleState = useToggleState();
 
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [_, setScrollPosition] = useState(0);
 
   const handleScroll = () => {
     const position = window.pageYOffset;
@@ -31,17 +31,17 @@ const id: () => string | JSX.Element = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
     <>
       <div>
-        <div className="relative z-100">
+        {/* <div className="relative z-100">
           <Header variant="white" />
         </div>
         <AnimatePresence>
@@ -64,8 +64,8 @@ const id: () => string | JSX.Element = () => {
               {...experiences[experienceID]}
             />
           )}
-        </div>
-        <div className={`container md:mx-auto md:my-0`}>
+        </div> */}
+        {/* <div className={`container md:mx-auto md:my-0`}>
           <div className="sm:flex justify-between">
             <div className="sm:w-6/10">
               <div className="border-t border-gray-100 sm:border-none">
@@ -144,17 +144,17 @@ const id: () => string | JSX.Element = () => {
               <Segment layoutType="experience" variant="know" />
             </div>
           ) : null}
-        </div>
+        </div> */}
         <Footer />
         <div className="fixed bottom-0 z-100 w-full sm:hidden">
           {/* <Modal variant="availability" /> */}
         </div>
       </div>
-      {toggleState.auth && (
+      {/* {toggleState.auth && (
         <div className="fixed top-0 z-60 bottom-0 left-0 right-0">
           <Modal variant="menu" />
         </div>
-      )}
+      )} */}
     </>
   );
 };

@@ -1,6 +1,6 @@
 import { useLayoutEffect, useRef, useState } from "react";
 
-export const useSlide = (moveBy: string) => {
+export const useSlide = (moveBy: "whole") => {
   const [state, setState] = useState({
     activeSlide: 0,
     translate: 0,

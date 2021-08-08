@@ -1,6 +1,6 @@
 import { useLayoutEffect, useState } from "react";
 
-export const useHandleContainerResize = (ref) => {
+export const useHandleContainerResize = (ref: any) => {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
 

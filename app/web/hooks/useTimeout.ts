@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 /**
  * Simulates the loading time (for fetching)
  * @param {number} time - Number of milliseconds in which it timesout
  */
-export const useTimeout = (time) => {
+export const useTimeout = (time: number) => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setTimeout(() => {

@@ -1,13 +1,10 @@
-import { APIClient } from "api/client";
 import useSWR from "swr";
 
-const fetcher = async (url) => {
-  const client = APIClient();
-  const { data } = await client.post(url);
-
+const fetcher = async () => {
+  // const client = APIClient();
+  // const { data } = await client.post(url);
   // add error handling here...
-
-  return data;
+  // return data;
 };
 
 export const useGet = ({ url }: { url: string }) => {

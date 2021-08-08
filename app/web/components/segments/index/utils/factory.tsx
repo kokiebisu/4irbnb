@@ -20,7 +20,7 @@ export const factory = (props: IndexSegmentProps) => {
     case "nearby":
       return <NearbySegment />;
     case "wide":
-      return <WideSegment {...props} />;
+      return <WideSegment />;
     case "discover":
       return <DiscoverSegment />;
     default:

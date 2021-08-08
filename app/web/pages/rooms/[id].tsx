@@ -1,10 +1,10 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useToggleState } from "@context/toggle";
-import { Header } from "@header";
+// import { Header } from "@header";
 import { Footer } from "@footer";
 import { Segment } from "@template/rooms/id";
 import { Card } from "@card";
-import { Modal } from "@modal";
+// import { Modal } from "@modal";
 import { useHandleScroll } from "@hooks/useHandleScroll";
 import { Bar } from "@bar";
 
@@ -17,12 +17,7 @@ const id: () => string | JSX.Element = () => {
   return (
     <>
       <div>
-        <div className="z-100 relative">
-          <Header
-            extendsTo={[details["w__wrapper"]].join(" ")}
-            variant="white"
-          />
-        </div>
+        <div className="z-100 relative">{/* <Header variant="white" /> */}</div>
         <AnimatePresence>
           {scrollPosition > 506 && (
             <motion.div
@@ -31,7 +26,7 @@ const id: () => string | JSX.Element = () => {
               animate={{ opacity: 1 }}
               className="hidden sm:block fixed top-0 z-50 w-full"
             >
-              <Header variant="details" />
+              {/* <Header variant="details" /> */}
             </motion.div>
           )}
         </AnimatePresence>
@@ -42,7 +37,7 @@ const id: () => string | JSX.Element = () => {
           />
         </div> */}
         <div className={`container md:mx-auto md:my-0`}>
-          <div className={[details["flex__details"]].join(" ")}>
+          <div>
             <div className="sm:w-6/10">
               {/* <Section
                 layoutType='room'
@@ -57,8 +52,8 @@ const id: () => string | JSX.Element = () => {
                 ]}
               /> */}
               <Segment variant="description" />
-              <Segment variant="arrangements" title="Sleeping arrangements" />
-              <Segment variant="amenities" title="Amenities" />
+              <Segment variant="arrangements" />
+              <Segment variant="amenities" />
             </div>
             <div
               style={{ paddingTop: 20, paddingBottom: 56 }}
@@ -71,7 +66,6 @@ const id: () => string | JSX.Element = () => {
           </div>
           <Segment variant="reviews" />
           <Segment variant="host" />
-          <Segment variant="know" />
         </div>
         <div className="container">
           <Segment variant="other" />
@@ -83,9 +77,9 @@ const id: () => string | JSX.Element = () => {
       </div>
       {toggleState.auth && (
         <div className="fixed top-0 z-60 bottom-0 left-0 right-0">
-          <div className="flex justify-center items-center h-screen">
+          {/* <div className="flex justify-center items-center h-screen">
             <Modal variant="menu" />
-          </div>
+          </div> */}
         </div>
       )}
     </>

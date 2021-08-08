@@ -81,7 +81,7 @@ type StayProviderProps = { children: React.ReactNode };
 const StayStateContext = createContext<State | undefined>(undefined);
 const StayDispatchContext = createContext<Dispatch | undefined>(undefined);
 
-const stayReducer = (state: State, { type, payload }: Action) => {
+const stayReducer = (state: any, { type, payload }: any) => {
   switch (type) {
     case "reset":
       return {

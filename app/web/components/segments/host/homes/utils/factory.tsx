@@ -21,7 +21,7 @@ export const factory = (props: HomesSegmentProps) => {
     case "hosting":
       return <HostingSegment />;
     case "priority":
-      return <PrioritySegment {...props} />;
+      return <PrioritySegment />;
     case "ready":
       return <ReadySegment />;
     default:

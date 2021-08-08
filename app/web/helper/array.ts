@@ -1,9 +1,9 @@
-export const groupByTwo = (items) => {
+export const groupByTwo = (items: any) => {
   return items.reduce(function (
-    accumulator,
-    currentValue,
-    currentIndex,
-    items
+    accumulator: any,
+    _: any,
+    currentIndex: any,
+    items: any
   ) {
     if (currentIndex % 2 === 0) {
       accumulator.push(items.slice(currentIndex, currentIndex + 2));

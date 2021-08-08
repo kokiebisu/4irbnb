@@ -1,4 +1,3 @@
-import { PrioritySegmentProps } from "./priority";
 import { factory } from "./utils/factory";
 
 export type HomesSegmentProps =
@@ -7,7 +6,7 @@ export type HomesSegmentProps =
   | { variant: "banner" }
   | { variant: "community" }
   | { variant: "hosting" }
-  | ({ variant: "priority" } & PrioritySegmentProps)
+  | { variant: "priority" }
   | { variant: "ready" };
 
 /**

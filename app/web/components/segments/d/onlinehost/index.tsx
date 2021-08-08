@@ -5,7 +5,8 @@ export type OnlineHostSegmentProps =
   | { variant: "banner" }
   | { variant: "faq" }
   | { variant: "more" }
-  | { variant: "sharing" };
+  | { variant: "sharing" }
+  | { variant: "works" };
 
 /**
  * Bundles the button components

@@ -1,13 +1,13 @@
-import { AnimatePresence, motion } from "framer-motion";
+// import { AnimatePresence, motion } from "framer-motion";
 import { useToggleState } from "@context/toggle";
 import { Layout } from "@layout";
 import { Animation } from "@animation";
 import { Modal } from "@modal";
 import { Segment } from "@template/index";
 import { Footer } from "@footer";
-import { Bar } from "@bar";
-import { useHandleScroll } from "@hooks/useHandleScroll";
-import { useHandleDocumentResize } from "@hooks/useHandleDocumentResize";
+// import { Bar } from "@bar";
+// import { useHandleScroll } from "@hooks/useHandleScroll";
+// import { useHandleDocumentResize } from "@hooks/useHandleDocumentResize";
 import { useTimeout } from "@hooks/useTimeout";
 import { useTabTitle } from "@hooks/useTabTitle";
 
@@ -15,8 +15,8 @@ const LandingPage: React.FC<{}> = () => {
   useTabTitle("Vacation Rentals, Homes, Experiences & Places - Airbnb");
   const loading = useTimeout(3000);
   const toggleState = useToggleState();
-  const scrollPosition = useHandleScroll();
-  const pageHeight = useHandleDocumentResize();
+  // const scrollPosition = useHandleScroll();
+  // const pageHeight = useHandleDocumentResize();
 
   return (
     <div className="min-h-screen overflow-x-hidden relative ">
@@ -31,12 +31,7 @@ const LandingPage: React.FC<{}> = () => {
               <Segment variant="anywhere" />
             </Layout>
             <Layout spread variant="landing">
-              <Segment
-                variant="wide"
-                title="The Greatest Outdoors"
-                description="Wishlists curated by Airbnb."
-                bannerImg="https://a0.muscache.com/im/pictures/2da67c1c-0c61-4629-8798-1d4de1ac9291.jpg?im_w=1440"
-              />
+              <Segment variant="wide" />
             </Layout>
             <Layout
               variant="landing"
@@ -47,13 +42,7 @@ const LandingPage: React.FC<{}> = () => {
             </Layout>
 
             <Layout spread variant="landing">
-              <Segment
-                variant="wide"
-                title="Your world is Wide sharing"
-                description="Turn your extra space into your next opportunity."
-                inverse
-                bannerImg="https://a0.muscache.com/im/pictures/2595054e-d1d9-4fde-8046-58d51fcb3164.jpg?im_w=1440"
-              />
+              <Segment variant="wide" />
             </Layout>
             <Layout
               variant="landing"

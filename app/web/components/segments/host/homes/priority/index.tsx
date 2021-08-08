@@ -1,10 +1,7 @@
-import {
-  PrioritySegmentTemplate,
-  PrioritySegmentTemplateProps,
-} from "./template";
+import { usePrioritySegment } from "./logo";
+import { PrioritySegmentTemplate } from "./template";
 
-export type PrioritySegmentProps = PrioritySegmentTemplateProps;
-
-export const PrioritySegment = (props: PrioritySegmentProps) => (
-  <PrioritySegmentTemplate {...props} />
-);
+export const PrioritySegment = () => {
+  const data = usePrioritySegment();
+  return <PrioritySegmentTemplate {...data} />;
+};

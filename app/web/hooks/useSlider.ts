@@ -10,7 +10,7 @@ export interface SliderProps {
   previous: any;
 }
 
-export const useSlider = (items, width, type) => {
+export const useSlider = (items: any, width: any, type: "banner" | "also") => {
   const [state, setState] = useState({
     activeSlide: 0,
     translate: 0,
