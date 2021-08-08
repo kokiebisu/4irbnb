@@ -4,13 +4,6 @@ terraform {
       source = "hashicorp/aws"
     }
   }
-  backend "remote" {
-    organization = "do-it-simple"
-
-    workspaces {
-      name = "nextbnb"
-    }
-  }
 }
 
 provider "aws" {
