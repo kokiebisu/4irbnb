@@ -13,8 +13,7 @@
     "test": "jest --passWithNoTests",
     "lint": "eslint src --ext js,ts,tsx",
     "extract": "api-extractor run --local",
-    "deploy:api": "bash ../../scripts/deploy.sh stay api",
-    "deploy:consumer": "bash ../../scripts/deploy.sh stay consumer"
+    "deploy": "bash ../../scripts/deploy.sh stay api consumer"
   },
   "dependencies": {
     "@nextbnb/common": "file:../common"
