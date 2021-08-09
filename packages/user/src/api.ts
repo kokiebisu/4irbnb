@@ -28,7 +28,7 @@ export const handler = async (event: any) => {
         });
         return await controller.checkIfExistsByEmail({
           identifier: {
-            email: event.pathParameters.email,
+            email: event.queryStringParameters.email,
           },
         });
       default:
