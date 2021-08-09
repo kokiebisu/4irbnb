@@ -10,6 +10,11 @@ resource "aws_dynamodb_table" "test_database" {
     type = "S"
   }
 
+  attribute {
+    name = "title"
+    type = "S"
+  }
+
   tags = {
     Environment        = "dev"
   }
