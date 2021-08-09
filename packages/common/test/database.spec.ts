@@ -1,8 +1,8 @@
-import { createDatabase } from "../src";
+import { createDatabaseService } from "../src";
 import { data, dataSchema, tableName } from "./mock";
 
 describe("Database Service", () => {
-  const service = createDatabase({ region: "us-east-1" });
+  const service = createDatabaseService({ region: "us-east-1" });
   beforeAll(async () => {
     await service.insert({ tableName, data: dataSchema });
   });

@@ -20,7 +20,7 @@ export class DatabaseService {
   constructor({ client }: IDatabaseServiceConstructorParams) {
     this.#client = client;
     this.#logger = createLoggerService({
-      packageName: PackageEnum.database,
+      packageName: PackageEnum.common,
       className: "DatabaseService",
     });
   }

@@ -24,7 +24,7 @@ export const handler = async (event: any) => {
       case "GET /user/check":
         logger.log({
           location: "handler",
-          message: "Entered GET /user/check/{email}...",
+          message: "Entered GET /user/check...",
         });
         return await controller.checkIfExistsByEmail({
           identifier: {

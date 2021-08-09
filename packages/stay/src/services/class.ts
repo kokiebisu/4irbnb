@@ -16,6 +16,7 @@ import {
 } from "@4irbnb/common";
 
 export class StayService implements IStayService {
+  #serviceName = "StayService";
   #db: IDatabaseService;
   #idValidator: any;
   #tableName: string;
@@ -23,10 +24,10 @@ export class StayService implements IStayService {
   constructor({ db, idValidator }: IStayServiceConstructorParams) {
     this.#db = db;
     this.#idValidator = idValidator;
-    this.#tableName = "StayService";
+    this.#tableName = this.#serviceName;
     this.#logger = createLoggerService({
       packageName: PackageEnum.stay,
-      className: "StayService",
+      className: this.#serviceName,
     });
   }
 

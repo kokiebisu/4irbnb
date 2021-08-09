@@ -15,17 +15,19 @@ import { isUser } from "../utils";
 import { IUser } from "..";
 
 export class UserService implements IUserService {
+  #serviceName = "UserService";
   #db: IDatabaseService;
   #idValidator: any;
   #tableName: string;
   #logger: ILoggerService;
+
   constructor({ db, idValidator }: IUserServiceConstructorParams) {
     this.#db = db;
     this.#idValidator = idValidator;
-    this.#tableName = "StayService";
+    this.#tableName = this.#serviceName;
     this.#logger = createLoggerService({
       packageName: PackageEnum.stay,
-      className: "StayService",
+      className: this.#serviceName,
     });
   }
 

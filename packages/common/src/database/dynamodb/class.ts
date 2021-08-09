@@ -32,7 +32,7 @@ export class DynamoDBClient implements IDatabaseClient {
   constructor({ region }: IDynamoDBConstructorParams) {
     this.#region = region;
     this.#logger = createLoggerService({
-      packageName: PackageEnum.database,
+      packageName: PackageEnum.common,
       className: "DynamoDBClient",
     });
   }
