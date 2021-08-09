@@ -4,7 +4,8 @@ import { IDatabaseClient } from "./dynamodb";
 import {
   IDatabaseServiceConstructorParams,
   IDatabaseServiceDeleteParams,
-  IDatabaseServiceFindOneParams,
+  IDatabaseServiceFindOneByAttributesParams,
+  IDatabaseServiceFindOneByIdParams,
   IDatabaseServiceInsertParams,
   IDatabaseServiceUpdateParams,
 } from "./types";
@@ -29,9 +30,28 @@ export class DatabaseService {
    * @public
    * @param param0
    */
-  async findOne({ tableName, identifier }: IDatabaseServiceFindOneParams) {
+  async findOneById({ tableName, id }: IDatabaseServiceFindOneByIdParams) {
     try {
-      return await this.#client.findOne({ tableName, identifier });
+      return await this.#client.get({ tableName, id });
+    } catch (error) {
+      this.#logger.error({
+        location: "findOne:findOne",
+        message: error as string,
+      });
+      return null;
+    }
+  }
+
+  /**
+   * @public
+   * @param param0
+   */
+  async findOneByAttributes({
+    tableName,
+    attributes,
+  }: IDatabaseServiceFindOneByAttributesParams) {
+    try {
+      return await this.#client.query({ tableName, filter: attributes });
     } catch (error) {
       this.#logger.error({
         location: "findOne:findOne",
@@ -47,7 +67,7 @@ export class DatabaseService {
    */
   async insert({ tableName, data }: IDatabaseServiceInsertParams) {
     try {
-      await this.#client.insert({ tableName, data });
+      await this.#client.put({ tableName, data });
     } catch (error) {
       this.#logger.error({
         location: "insert:insert",
@@ -60,9 +80,9 @@ export class DatabaseService {
    * @public
    * @param param0
    */
-  async delete({ tableName, identifier }: IDatabaseServiceDeleteParams) {
+  async delete({ tableName, id }: IDatabaseServiceDeleteParams) {
     try {
-      await this.#client.delete({ tableName, identifier });
+      await this.#client.delete({ tableName, id });
     } catch (error) {
       this.#logger.error({
         location: "delete:delete",
@@ -75,9 +95,9 @@ export class DatabaseService {
    * @public
    * @param param0
    */
-  async update({ tableName, identifier, data }: IDatabaseServiceUpdateParams) {
+  async update({ tableName, id, data }: IDatabaseServiceUpdateParams) {
     try {
-      await this.#client.update({ tableName, identifier, data });
+      await this.#client.update({ tableName, id, data });
     } catch (error) {
       this.#logger.error({
         location: "update:update",

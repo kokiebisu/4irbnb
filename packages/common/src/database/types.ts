@@ -34,9 +34,20 @@ export interface IDatabaseServiceInsertParams
 /**
  * @public
  */
-export interface IDatabaseServiceFindOneParams
-  extends IWithIdentifierParams,
-    IWithTableNameParams {}
+export interface IDatabaseServiceFindOneByIdParams {
+  tableName: string;
+  id: string;
+}
+
+/**
+ * @public
+ */
+export interface IDatabaseServiceFindOneByAttributesParams {
+  tableName: string;
+  attributes: {
+    [key: string]: string;
+  };
+}
 
 /**
  * @public
@@ -46,17 +57,21 @@ export interface IDatabaseServiceFindManyParams extends IWithFilterParams {}
 /**
  * @public
  */
-export interface IDatabaseServiceDeleteParams
-  extends IWithIdentifierParams,
-    IWithTableNameParams {}
+export interface IDatabaseServiceDeleteParams {
+  tableName: string;
+  id: string;
+}
 
 /**
  * @public
  */
-export interface IDatabaseServiceUpdateParams
-  extends IWithIdentifierParams,
-    IWithDataParams,
-    IWithTableNameParams {}
+export interface IDatabaseServiceUpdateParams {
+  tableName: string;
+  id: string;
+  data: {
+    [key: string]: string;
+  };
+}
 
 /**
  * @public

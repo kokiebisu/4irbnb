@@ -16,6 +16,14 @@ module "services" {
   source = "../packages/terraform"
 }
 
+module "common" {
+  source = "../packages/stay/terraform"
+
+  read_capacity  = 10
+  write_capacity = 10
+}
+
+
 module "stay" {
   source = "../packages/stay/terraform"
 

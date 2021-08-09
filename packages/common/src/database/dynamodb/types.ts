@@ -10,17 +10,12 @@ import {
  * @public
  */
 export interface IDatabaseClient {
-  insert(data: IDatabaseClientInsertParams): Promise<void>;
-  findOne(params: IDatabaseClientFindOneParams): Promise<any>;
-  // findMany(params: IDatabaseServiceFindManyParams): Promise<any>;
+  get(params: IDatabaseClientGetParams): Promise<any | null>;
+  query(params: IDatabaseClientQueryParams): Promise<any | null>;
+  put(params: IDatabaseClientPutParams): Promise<void>;
   delete(params: IDatabaseClientDeleteParams): Promise<void>;
-  update(params: IDatabaseClientUpdateParams): Promise<any>;
+  update(params: IDatabaseClientUpdateParams): Promise<void>;
 }
-
-/**
- * @public
- */
-export interface ICreateDynamoDB extends IRegion {}
 
 /**
  * @public
@@ -30,7 +25,43 @@ export interface IDynamoDBConstructorParams extends IRegion {}
 /**
  * @public
  */
-export interface IDynamoDBFindOneParams extends IWithIdentifierParams {}
+export interface IDatabaseClientGetParams {
+  tableName: string;
+  id: string;
+}
+
+/**
+ * @public
+ */
+export interface IDatabaseClientQueryParams {
+  tableName: string;
+  filter: any;
+}
+
+/**
+ * @public
+ */
+export interface IDatabaseClientPutParams {
+  tableName: string;
+  data: any;
+}
+
+/**
+ * @public
+ */
+export interface IDatabaseClientDeleteParams {
+  tableName: string;
+  id: string;
+}
+
+/**
+ * @public
+ */
+export interface IDatabaseClientUpdateParams {
+  tableName: string;
+  id: string;
+  data: any;
+}
 
 /**
  * @public
@@ -38,27 +69,3 @@ export interface IDynamoDBFindOneParams extends IWithIdentifierParams {}
 export interface IWithIdentifierParams {
   identifier: string;
 }
-
-/**
- * @public
- */
-export interface IDatabaseClientInsertParams
-  extends IDatabaseServiceInsertParams {}
-
-/**
- * @public
- */
-export interface IDatabaseClientFindOneParams
-  extends IDatabaseServiceFindOneParams {}
-
-/**
- * @public
- */
-export interface IDatabaseClientDeleteParams
-  extends IDatabaseServiceDeleteParams {}
-
-/**
- * @public
- */
-export interface IDatabaseClientUpdateParams
-  extends IDatabaseServiceUpdateParams {}
