@@ -17,7 +17,9 @@ export class RelationalDatabaseService
   /**
    * @public
    */
-  findOneById({ id }) {}
+  async findOneById({ tableName, id }) {
+    return this.#client;
+  }
 
   /**
    * @public

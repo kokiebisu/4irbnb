@@ -5,6 +5,7 @@ import {
   IDatabaseService,
   IDatabaseServiceConstructorParams,
   IDatabaseServiceDeleteParams,
+  IDatabaseServiceFindOneByIdParams,
   IDatabaseServiceInsertParams,
   IDatabaseServiceUpdateParams,
 } from "./types";
@@ -28,7 +29,10 @@ export abstract class DatabaseService implements IDatabaseService {
     });
   }
 
-  abstract findOneById(): Promise<any | null>;
+  abstract findOneById({
+    tableName,
+    id,
+  }: IDatabaseServiceFindOneByIdParams): Promise<any | null>;
 
   /**
    * @public
