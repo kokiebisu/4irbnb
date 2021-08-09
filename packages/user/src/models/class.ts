@@ -10,7 +10,7 @@ export class User {
   firstName: string;
   lastName: string;
 
-  constructor({ id, emailAddress, firstName, lastName }: IUser) {
+  constructor({ id, email, firstName, lastName }: IUser) {
     this.id = id;
     this.email = email;
     this.firstName = firstName;

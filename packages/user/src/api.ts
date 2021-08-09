@@ -8,6 +8,7 @@ export const handler = async (event: any) => {
     className: "",
   });
   logger.log({ location: "handler", message: "Entered handler..." });
+  console.log("EVENT", event);
   try {
     switch (event.requestContext.resourceId) {
       // case "GET /stay/{id}":
@@ -20,7 +21,7 @@ export const handler = async (event: any) => {
       //     id: event.pathParameters.id,
       //   },
       // })
-      case "GET /user/check/{email}":
+      case "GET /user/check":
         logger.log({
           location: "handler",
           message: "Entered GET /user/check/{email}...",
