@@ -99,11 +99,15 @@ export class DynamoDBClient implements INoSqlDatabaseClient {
    * }
    * ```
    */
-  async query({ tableName, filter }: INoSqlDatabaseClientQueryParams) {
+  async query({
+    tableName,
+    attribute,
+    range,
+  }: INoSqlDatabaseClientQueryParams) {
     this.#configureClient();
-    const expressions = Object.keys(filter).map(
-      (attribute) => `${attribute} = ${filter[attribute]}`
-    );
+    // const expressions = Object.keys(filter).map(
+    //   (attribute) => `${attribute} = ${filter[attribute]}`
+    // );
 
     try {
       const params = {

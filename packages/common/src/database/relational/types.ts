@@ -1,13 +1,9 @@
-import { IDatabaseClient } from "../nosql/dynamodb";
+import { IDatabaseService } from "../types";
 
 export interface IRelationalDatabaseConstructorParams {
   client: IRelationalDatabaseClient;
 }
 
-export interface IRelationalDatabaseService extends IDatabaseService {
-  findOneById(): Promise<any | null>;
-}
+export interface IRelationalDatabaseService extends IDatabaseService {}
 
-export interface IRelationalDatabaseClient extends IDatabaseClient {
-  findOneById(): Promise<any | null>;
-}
+export interface IRelationalDatabaseClient {}

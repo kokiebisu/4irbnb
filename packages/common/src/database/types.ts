@@ -1,5 +1,7 @@
 import { IRegion } from "../types";
 import { IDatabaseClient } from "./nosql/dynamodb";
+import { INoSqlDatabaseClient } from "./nosql/types";
+import { IRelationalDatabaseClient } from "./relational";
 
 /**
  * @public
@@ -26,9 +28,10 @@ export interface ICreateDatabaseParams extends IRegion {}
 /**
  * @public
  */
-export interface IDatabaseServiceInsertParams
-  extends IWithDataParams,
-    IWithTableNameParams {}
+export interface IDatabaseServiceInsertParams {
+  tableName: string;
+  data: any;
+}
 
 /**
  * @public
@@ -51,11 +54,6 @@ export interface IDatabaseServiceFindOneByAttributesParams {
 /**
  * @public
  */
-export interface IDatabaseServiceFindManyParams extends IWithFilterParams {}
-
-/**
- * @public
- */
 export interface IDatabaseServiceDeleteParams {
   tableName: string;
   id: string;
@@ -72,30 +70,7 @@ export interface IDatabaseServiceUpdateParams {
   };
 }
 
-/**
- * @public
- */
-export interface IWithDataParams {
-  data: any;
-}
-
-/**
- * @public
- */
-export interface IWithIdentifierParams {
-  identifier: {} | undefined;
-}
-
-/**
- * @public
- */
-export interface IWithFilterParams {
-  filter: any;
-}
-
-/**
- * @public
- */
-export interface IWithTableNameParams {
-  tableName: string;
-}
+/** Client */
+export interface IDatabaseClient
+  extends INoSqlDatabaseClient,
+    IRelationalDatabaseClient {}

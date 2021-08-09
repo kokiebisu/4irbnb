@@ -22,6 +22,7 @@ export interface INoSqlDatabaseServiceConstructorParams {
  * @public
  */
 export interface INoSqlDatabaseServiceFindByIdParams {
+  tableName: string;
   id: string;
 }
 
@@ -29,12 +30,11 @@ export interface INoSqlDatabaseServiceFindByIdParams {
  * @public
  */
 export interface INoSqlDatabaseServiceFindByRangeParams {
-  attribute: {
-    name: string;
-  };
+  tableName: string;
+  attribute: string;
   range: {
-    start: string;
-    end: string;
+    start: any;
+    end: any;
   };
 }
 
@@ -42,6 +42,7 @@ export interface INoSqlDatabaseServiceFindByRangeParams {
  * @public
  */
 export interface INoSqlDatabaseServiceFindByKeyParams {
+  tableName: string;
   attributes: {
     [key: string]: any;
   };
@@ -65,7 +66,10 @@ export interface INoSqlDatabaseClient {
  */
 export interface INoSqlDatabaseClientGetParams {
   tableName: string;
-  id: string;
+  id?: string;
+  attributes?: {
+    [key: string]: any;
+  };
 }
 
 /**
@@ -73,7 +77,11 @@ export interface INoSqlDatabaseClientGetParams {
  */
 export interface INoSqlDatabaseClientQueryParams {
   tableName: string;
-  filter: any;
+  attribute: string;
+  range: {
+    start: any;
+    end: any;
+  };
 }
 
 /**

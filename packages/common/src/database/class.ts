@@ -1,7 +1,7 @@
 import { PackageEnum } from "../enum";
 import { createLoggerService, ILoggerService } from "../utils";
-import { IDatabaseClient } from "./nosql/dynamodb";
 import {
+  IDatabaseClient,
   IDatabaseService,
   IDatabaseServiceConstructorParams,
   IDatabaseServiceDeleteParams,
@@ -12,7 +12,7 @@ import {
 /**
  * @public
  */
-export class DatabaseService implements IDatabaseService {
+export abstract class DatabaseService implements IDatabaseService {
   #client: IDatabaseClient;
   #logger: ILoggerService;
 
@@ -27,6 +27,8 @@ export class DatabaseService implements IDatabaseService {
       className: `${databaseType}DatabaseService`,
     });
   }
+
+  abstract findOneById(): Promise<any | null>;
 
   /**
    * @public

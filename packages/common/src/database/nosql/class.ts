@@ -20,24 +20,28 @@ export class NoSqlDatabaseService
   /**
    * @public
    */
-  async findById({ id }: INoSqlDatabaseServiceFindByIdParams) {
-    return this.#client.get({ id });
+  async findOneById({ tableName, id }: INoSqlDatabaseServiceFindByIdParams) {
+    return this.#client.get({ tableName, id });
   }
 
   /**
    * @public
    */
   async findByRange({
+    tableName,
     attribute,
     range,
   }: INoSqlDatabaseServiceFindByRangeParams) {
-    return this.#client.query({ attribute, range });
+    return this.#client.query({ tableName, attribute, range });
   }
 
   /**
    * @public
    */
-  async findByKey({ attributes }: INoSqlDatabaseServiceFindByKeyParams) {
-    return this.#client.get({ attributes });
+  async findByKey({
+    tableName,
+    attributes,
+  }: INoSqlDatabaseServiceFindByKeyParams) {
+    return this.#client.get({ tableName, attributes });
   }
 }
