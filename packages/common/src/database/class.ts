@@ -1,16 +1,18 @@
 import { PackageEnum } from "../enum";
 import { createLoggerService, ILoggerService } from "../utils";
-import { IDatabaseClient } from "./dynamodb";
+import { IDatabaseClient } from "./nosql/dynamodb";
 import {
+  IDatabaseService,
   IDatabaseServiceConstructorParams,
   IDatabaseServiceDeleteParams,
-  IDatabaseServiceFindOneByAttributesParams,
-  IDatabaseServiceFindOneByIdParams,
   IDatabaseServiceInsertParams,
   IDatabaseServiceUpdateParams,
 } from "./types";
 
-export class DatabaseService {
+/**
+ * @public
+ */
+export class DatabaseService implements IDatabaseService {
   #client: IDatabaseClient;
   #logger: ILoggerService;
 
@@ -18,47 +20,12 @@ export class DatabaseService {
    * @public
    * @param param0
    */
-  constructor({ client }: IDatabaseServiceConstructorParams) {
+  constructor({ client, databaseType }: IDatabaseServiceConstructorParams) {
     this.#client = client;
     this.#logger = createLoggerService({
       packageName: PackageEnum.common,
-      className: "DatabaseService",
+      className: `${databaseType}DatabaseService`,
     });
-  }
-
-  /**
-   * @public
-   * @param param0
-   */
-  async findOneById({ tableName, id }: IDatabaseServiceFindOneByIdParams) {
-    try {
-      return await this.#client.get({ tableName, id });
-    } catch (error) {
-      this.#logger.error({
-        location: "findOne:findOne",
-        message: error as string,
-      });
-      return null;
-    }
-  }
-
-  /**
-   * @public
-   * @param param0
-   */
-  async findOneByAttributes({
-    tableName,
-    attributes,
-  }: IDatabaseServiceFindOneByAttributesParams) {
-    try {
-      return await this.#client.query({ tableName, filter: attributes });
-    } catch (error) {
-      this.#logger.error({
-        location: "findOne:findOne",
-        message: error as string,
-      });
-      return null;
-    }
   }
 
   /**

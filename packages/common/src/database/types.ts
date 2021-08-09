@@ -1,13 +1,11 @@
 import { IRegion } from "../types";
-import { IDatabaseClient } from "./dynamodb";
+import { IDatabaseClient } from "./nosql/dynamodb";
 
 /**
  * @public
  */
 export interface IDatabaseService {
   insert(data: IDatabaseServiceInsertParams): Promise<void>;
-  findOne(params: IDatabaseServiceFindOneParams): Promise<any>;
-  // findMany(params: IDatabaseServiceFindManyParams): Promise<any>;
   delete(params: IDatabaseServiceDeleteParams): Promise<void>;
   update(params: IDatabaseServiceUpdateParams): Promise<any>;
 }
@@ -17,6 +15,7 @@ export interface IDatabaseService {
  */
 export interface IDatabaseServiceConstructorParams {
   client: IDatabaseClient;
+  databaseType: "Relational" | "Nosql";
 }
 
 /**

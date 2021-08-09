@@ -1,33 +1,32 @@
-import {
-  DynamoDBClient as Client,
-  PutItemCommand,
-} from "@aws-sdk/client-dynamodb";
+import { DynamoDBClient as Client } from "@aws-sdk/client-dynamodb";
 import {
   DeleteCommand,
   DynamoDBDocumentClient,
   GetCommand,
   UpdateCommand,
-  QueryCommand,
+  PutCommand,
 } from "@aws-sdk/lib-dynamodb";
-import { IDatabaseClientQueryParams } from ".";
-import { PackageEnum } from "../../enum";
-import { TRegion } from "../../types";
-import { createLoggerService, ILoggerService } from "../../utils";
+import { PackageEnum } from "../../../enum";
+import { TRegion } from "../../../types";
+import { createLoggerService, ILoggerService } from "../../../utils";
 import { translateConfig } from "./config";
-import {
-  IDatabaseClient,
-  IDatabaseClientDeleteParams,
-  IDatabaseClientGetParams,
-  IDatabaseClientPutParams,
-  IDatabaseClientUpdateParams,
-  IDynamoDBConstructorParams,
-} from "./types";
+import { IDynamoDBConstructorParams } from "./types";
 import { v4 as uuid } from "uuid";
+import {
+  INoSqlDatabaseClient,
+  INoSqlDatabaseClientDeleteParams,
+  INoSqlDatabaseClientGetParams,
+  INoSqlDatabaseClientPutParams,
+  INoSqlDatabaseClientQueryParams,
+  INoSqlDatabaseClientUpdateParams,
+} from "../types";
 
 /**
  * @public
+ * NoSQL Database that can be used for listing
+ * - Transactions
  */
-export class DynamoDBClient implements IDatabaseClient {
+export class DynamoDBClient implements INoSqlDatabaseClient {
   #region: TRegion;
   #package?: DynamoDBDocumentClient;
   #logger: ILoggerService;
@@ -59,7 +58,7 @@ export class DynamoDBClient implements IDatabaseClient {
    * Finds data to the database
    * @returns
    */
-  async get({ tableName, id }: IDatabaseClientGetParams) {
+  async get({ tableName, id }: INoSqlDatabaseClientGetParams) {
     this.#configureClient();
     try {
       const data = await this.#package?.send(
@@ -100,17 +99,27 @@ export class DynamoDBClient implements IDatabaseClient {
    * }
    * ```
    */
-  async query({ tableName, filter }: IDatabaseClientQueryParams) {
+  async query({ tableName, filter }: INoSqlDatabaseClientQueryParams) {
+    this.#configureClient();
     const expressions = Object.keys(filter).map(
       (attribute) => `${attribute} = ${filter[attribute]}`
     );
 
     try {
       const params = {
-        TableName: tableName,
-        KeyConditionExpression: expressions.join(", "),
+        // FilterExpression: "property1 = :attribute",
       };
-      return await this.#package?.send(new QueryCommand(params));
+      console.log("params", params);
+      const response = await this.#package?.send(
+        new GetCommand({
+          TableName: "StayService",
+          Key: {
+            title: "test title",
+          },
+        })
+      );
+      console.log("RESPONSE", response);
+      return response;
     } catch (error) {
       this.#logger.error({
         location: "query:send",
@@ -125,18 +134,19 @@ export class DynamoDBClient implements IDatabaseClient {
    * Inserts data to the database
    * @param param0
    */
-  async put({ tableName, data }: IDatabaseClientPutParams) {
+  async put({ tableName, data }: INoSqlDatabaseClientPutParams) {
     this.#configureClient();
+    const params = {
+      TableName: tableName,
+      Item: {
+        id: uuid(),
+        ...data,
+      },
+    };
+
     try {
-      await this.#package?.send(
-        new PutItemCommand({
-          TableName: tableName,
-          Item: {
-            id: uuid(),
-            ...data,
-          },
-        })
-      );
+      const response = await this.#package?.send(new PutCommand(params));
+      console.log("response", response);
     } catch (error) {
       this.#logger.error({
         location: "put:send",
@@ -149,7 +159,7 @@ export class DynamoDBClient implements IDatabaseClient {
    * Delete operation performed on the DynamoDB database
    * @param param0
    */
-  async delete({ tableName, id }: IDatabaseClientDeleteParams) {
+  async delete({ tableName, id }: INoSqlDatabaseClientDeleteParams) {
     this.#configureClient();
     try {
       await this.#package?.send(
@@ -172,7 +182,7 @@ export class DynamoDBClient implements IDatabaseClient {
    * Update operation performed on the DynamoDB database
    * @param param0
    */
-  async update({ tableName, id, data }: IDatabaseClientUpdateParams) {
+  async update({ tableName, id, data }: INoSqlDatabaseClientUpdateParams) {
     this.#configureClient();
     const expression = Object.keys(data).map(
       (attribute) => `${attribute} = ${data[attribute]}`

@@ -1,21 +1,25 @@
 import { createDatabaseService } from "../src";
-import { data, dataSchema, tableName } from "./mock";
+// import { data, dataSchema, tableName } from "./mock";
 
 describe("DatabaseService Stay", () => {
   const service = createDatabaseService({ region: "us-east-1" });
-  beforeAll(async () => {
-    await service.insert({
+  // beforeAll(async () => {
+  //   await service.insert({
+  //     tableName: "TestService",
+  //     data: {
+  //       property1: "test",
+  //     },
+  //   });
+  // });
+  it("retrieves added data", async () => {
+    const result = await service.findOneByAttributes({
       tableName: "TestService",
-      data: {
-        property1: "random",
+      attributes: {
+        property1: "test",
       },
     });
-  });
-  it("retrieves added data", async () => {
-    // const result = await service.findOneById({
-    //   tableName,
-    // });
-    // expect(result).not.toBeNull();
+    console.log("RESULT", result);
+    expect(result).not.toBeNull();
   });
   // it("deletes data", async () => {
   //   await service.delete({ tableName, identifier: { id: data.id } });

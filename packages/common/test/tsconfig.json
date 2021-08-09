@@ -3,7 +3,7 @@
   "compilerOptions": {
     "lib": ["DOM", "ES2018"],
     "types": ["jest"],
-    "baseUrl": "..",
+    "baseUrl": "../..",
     "noEmit": true
   },
   "include": ["."]
