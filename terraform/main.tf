@@ -18,9 +18,6 @@ module "services" {
 
 module "common" {
   source = "../packages/common/terraform"
-
-  read_capacity  = 10
-  write_capacity = 10
 }
 
 
