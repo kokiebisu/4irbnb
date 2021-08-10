@@ -1,10 +1,10 @@
 variable "db_username" {
   type = string
-  default = "user"
+  default = "testuser"
 }
 
 variable "db_password" {
   type = string
-  default = "password"
+  default = "testpassword"
   sensitive = true
 }
