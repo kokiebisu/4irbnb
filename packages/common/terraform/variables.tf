@@ -3,7 +3,7 @@ variable "db_cluster_identifier" {
 }
 
 variable "db_name" {
-    type = string;
+    type = string
 }
 
 variable "db_master_username" {
