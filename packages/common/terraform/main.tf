@@ -17,7 +17,7 @@
 
 resource "aws_db_instance" "test" {
   identifier = "test"
-  instance_class = "db.t3.small"
+  instance_class = "db.t3.medium"
   allocated_storage = 2
   engine = "aurora-postgresql"
   engine_version = "12.6"
