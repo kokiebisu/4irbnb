@@ -15,14 +15,22 @@
 #   }
 # }
 
-resource "aws_db_instance" "test" {
-  identifier = "test"
-  instance_class = "db.t3.micro"
-  allocated_storage = 5
-  engine = "postgres"
-  engine_version = "13.1"
-  username = var.db_username
-  password = var.db_password
-  publicly_accessible = true
-  skip_final_snapshot = true
+resource "aws_rds_cluster" "postgres" {
+    cluster_identifier = "4irbnb"
+    engine = "aurora-postgresql"
+    database_name = "4irbnb"
+    master_username = "admin1234"
+    master_password = "admin1234"
+    enable_http_endpoint = true
+    engine_mode = "serverless"
+    engine_version = "10.14"
+    skip_final_snapshot  = true
+
+    scaling_configuration {
+        auto_pause = true
+        max_capacity = 2
+        min_capacity = 2
+        seconds_until_auto_pause = 300
+        timeout_action = "ForceApplyCapacityChange"
+    }
 }
