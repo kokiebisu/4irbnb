@@ -17,10 +17,10 @@
 
 resource "aws_db_instance" "test" {
   identifier = "test"
-  instance_class = "db.t3.medium"
+  instance_class = "db.t3.micro"
   allocated_storage = 2
-  engine = "aurora-postgresql"
-  engine_version = "12.6"
+  engine = "postgres"
+  engine_version = "13.1"
   username = var.db_username
   password = var.db_password
   publicly_accessible = true
