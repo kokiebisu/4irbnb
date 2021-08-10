@@ -1,8 +1,9 @@
-variable "read_capacity" {
-  type    = number
-  default = 10
+variable "db_username" {
+  type = string
+  default = "user"
 }
-variable "write_capacity" {
-  type    = number
-  default = 10
+
+variable "db_password" {
+  type = string
+  default = "password"
 }
