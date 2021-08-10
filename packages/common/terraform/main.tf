@@ -16,11 +16,11 @@
 # }
 
 resource "aws_rds_cluster" "postgres" {
-    cluster_identifier = "4irbnb"
+    cluster_identifier = var.db_cluster_identifier
     engine = "aurora-postgresql"
-    database_name = "4irbnb"
-    master_username = "admin1234"
-    master_password = "admin1234"
+    database_name = var.db_name
+    master_username = var.db_master_username
+    master_password = var.db_master_password
     enable_http_endpoint = true
     engine_mode = "serverless"
     engine_version = "10.14"

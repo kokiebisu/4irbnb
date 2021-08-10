@@ -1,10 +1,15 @@
-variable "db_username" {
+variable "db_cluster_identifier" {
   type = string
-  default = "testuser"
 }
 
-variable "db_password" {
+variable "db_name" {
+    type = string;
+}
+
+variable "db_master_username" {
   type = string
-  default = "testpassword"
-  sensitive = true
+}
+
+variable "db_master_password" {
+  type = string
 }

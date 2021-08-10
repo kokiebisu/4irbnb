@@ -22,3 +22,13 @@ variable "site_domain" {
   type    = string
   default = "4irbnb.com"
 }
+
+variable "db_master_username" {
+  type = string
+  sensitive = true
+}
+
+variable "db_master_password" {
+  type = string
+  sensitive = true
+}
