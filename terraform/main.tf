@@ -19,7 +19,7 @@ module "services" {
 module "common" {
   source = "../packages/common/terraform"
 
-  db_cluster_identifier = "4irbnb"
+  db_cluster_identifier = "cluster-4irbnb"
   db_name = "4irbnb"
   db_master_username = var.db_master_username
   db_master_password = var.db_master_password
