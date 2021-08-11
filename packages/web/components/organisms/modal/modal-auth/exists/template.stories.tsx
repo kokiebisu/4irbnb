@@ -1,12 +1,12 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
+import React from "react";
+import { Story, Meta } from "@storybook/react";
 import {
   ExistsPrototypeTemplate,
   ExistsPrototypeTemplateProps,
-} from './template';
+} from "./template";
 
 export default {
-  title: 'Prototypes/Exists',
+  title: "Organisms/Modal/Auth/Exists",
   component: ExistsPrototypeTemplate,
 } as Meta;
 
@@ -15,4 +15,11 @@ const ExistsPrototypeStory: Story<ExistsPrototypeTemplateProps> = (args) => (
 );
 
 export const Exists = ExistsPrototypeStory.bind({});
-Exists.args = {};
+Exists.args = {
+  handleSubmit: () => alert("handleSubmit"),
+  handlePasswordChange: () => alert("handlePasswordChange"),
+  handleLoading: () => alert("handleLoading"),
+  password: "",
+  passwordErrors: "",
+  loading: false,
+};
