@@ -1,29 +1,26 @@
-import { useFormik } from "formik";
 import { Input } from "@atoms";
 import { Button } from "@atoms";
 import { Bullet } from "@atoms";
-import { validateForgotPassword as validate } from "@helper/auth";
 
-export interface ForgotPasswordPrototypeTemplateProps {}
+export interface ForgotPasswordPrototypeTemplateProps {
+  handleSubmit: (e: any) => void;
+  handleEmailChange: (e: string) => void;
+  email: string;
+  emailErrors: string;
+}
 
 /**
  * Renders the login template component
  */
-export const ForgotPasswordPrototypeTemplate: React.FC<ForgotPasswordPrototypeTemplateProps> = () => {
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-    },
-    validate,
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-      formik.resetForm();
-    },
-  });
-
+export const ForgotPasswordPrototypeTemplate: React.FC<ForgotPasswordPrototypeTemplateProps> = ({
+  handleSubmit,
+  handleEmailChange,
+  email,
+  emailErrors,
+}) => {
   return (
     <div className="p-5">
-      <form onSubmit={formik.handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <div style={{ height: 300 }} className="flex flex-col justify-between">
           <div>
             <div className="mb-4">
@@ -36,15 +33,15 @@ export const ForgotPasswordPrototypeTemplate: React.FC<ForgotPasswordPrototypeTe
               <div>
                 <Input
                   variant="email"
-                  onChange={formik.handleChange}
-                  value={formik.values.email}
-                  errors={formik.errors.email !== undefined}
+                  onChange={handleEmailChange}
+                  value={email}
+                  errors={!!emailErrors}
                 />
               </div>
               <div>
-                {formik.errors.email !== undefined && (
+                {!!emailErrors && (
                   <div className="mt-2">
-                    <Bullet variant="required" message={formik.errors.email} />
+                    <Bullet variant="required" message={emailErrors} />
                   </div>
                 )}
               </div>

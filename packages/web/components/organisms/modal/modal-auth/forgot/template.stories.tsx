@@ -6,7 +6,7 @@ import {
 } from "./template";
 
 export default {
-  title: "Prototypes",
+  title: "Organisms/Modal/Auth",
   component: ForgotPasswordPrototypeTemplate,
 } as Meta;
 
@@ -15,4 +15,9 @@ const ForgotPasswordPrototypeStory: Story<ForgotPasswordPrototypeTemplateProps> 
 ) => <ForgotPasswordPrototypeTemplate {...args} />;
 
 export const ForgotPassword = ForgotPasswordPrototypeStory.bind({});
-ForgotPassword.args = {};
+ForgotPassword.args = {
+  handleSubmit: () => alert("handleSubmit"),
+  handleEmailChange: () => alert("handleEmailChange"),
+  email: "",
+  emailErrors: "",
+};
