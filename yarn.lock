@@ -277,10 +277,10 @@
     fast-xml-parser "3.19.0"
     tslib "^2.3.0"
 
-"@aws-sdk/client-rds@^3.25.0":
+"@aws-sdk/client-rds-data@^3.25.0":
   version "3.25.0"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/client-rds/-/client-rds-3.25.0.tgz#f86b2545dfb94700e67299d2a5ac048fc268091f"
-  integrity sha512-rVTGtPAkqU95dqAIXHS3ep5nJY69Jc5YTz3AN/0bKzFgVEwOwax7JmwEWhBfK7pLUGDg6dRuEmvXVBSo1/qboA==
+  resolved "https://registry.yarnpkg.com/@aws-sdk/client-rds-data/-/client-rds-data-3.25.0.tgz#d8d58e7c0e91c85ae78cb1e5281d041eab7f479a"
+  integrity sha512-8DxEMhNIgBMHj5OeuizodCeBLOcr2aCsTW8FE41kDODTq1gt9XMKQrWo0Ohp1j3ygXwXYprT5IG04aTBW8dnFA==
   dependencies:
     "@aws-crypto/sha256-browser" "^1.0.0"
     "@aws-crypto/sha256-js" "^1.0.0"
@@ -294,7 +294,6 @@
     "@aws-sdk/middleware-host-header" "3.25.0"
     "@aws-sdk/middleware-logger" "3.25.0"
     "@aws-sdk/middleware-retry" "3.25.0"
-    "@aws-sdk/middleware-sdk-rds" "3.25.0"
     "@aws-sdk/middleware-serde" "3.25.0"
     "@aws-sdk/middleware-signing" "3.25.0"
     "@aws-sdk/middleware-stack" "3.25.0"
@@ -313,9 +312,6 @@
     "@aws-sdk/util-user-agent-node" "3.25.0"
     "@aws-sdk/util-utf8-browser" "3.23.0"
     "@aws-sdk/util-utf8-node" "3.23.0"
-    "@aws-sdk/util-waiter" "3.25.0"
-    entities "2.2.0"
-    fast-xml-parser "3.19.0"
     tslib "^2.3.0"
 
 "@aws-sdk/client-s3@^3.24.0":
@@ -835,18 +831,6 @@
     tslib "^2.3.0"
     uuid "^8.3.2"
 
-"@aws-sdk/middleware-sdk-rds@3.25.0":
-  version "3.25.0"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/middleware-sdk-rds/-/middleware-sdk-rds-3.25.0.tgz#bdf06d36605bc316ce03b48d84db12da291fbc55"
-  integrity sha512-UV0mZPLWHPAS4/spmJi91ieZoa1frwZOsgOjr/S1pkAQYJ/9ch/CKQDXREPQunZ4+XFqKBiFSeqxBB0DqdP+vg==
-  dependencies:
-    "@aws-sdk/protocol-http" "3.25.0"
-    "@aws-sdk/signature-v4" "3.25.0"
-    "@aws-sdk/types" "3.25.0"
-    "@aws-sdk/util-format-url" "3.25.0"
-    "@aws-sdk/util-uri-escape" "3.23.0"
-    tslib "^2.3.0"
-
 "@aws-sdk/middleware-sdk-s3@3.25.0":
   version "3.25.0"
   resolved "https://registry.yarnpkg.com/@aws-sdk/middleware-sdk-s3/-/middleware-sdk-s3-3.25.0.tgz#64278bbc97c3a2c26411f155642cc35e8de38887"
@@ -1078,15 +1062,6 @@
   resolved "https://registry.yarnpkg.com/@aws-sdk/util-dynamodb/-/util-dynamodb-3.25.0.tgz#1bfc3773fa3a1df5c6a7809b44ff5a5199a0d412"
   integrity sha512-V6HludGuCv40JO7uVAU2dUq5K31bUCLRfkZ8gjiQthUdp3mwMbS7Q83fncPN5lFJ7ZELW1K7C1/BH5+Oci3kJQ==
   dependencies:
-    tslib "^2.3.0"
-
-"@aws-sdk/util-format-url@3.25.0":
-  version "3.25.0"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/util-format-url/-/util-format-url-3.25.0.tgz#f02fe22907e79176a04df159f12d0d60fc836ad2"
-  integrity sha512-/qtyFO36k/ZHgDbu4UM/Xtnfd/SsRZHKBDkzoVvNe932Bc6rXW+3DqJaI5EjOnrUHINWZB4LQ203rSxXsNCgPQ==
-  dependencies:
-    "@aws-sdk/querystring-builder" "3.25.0"
-    "@aws-sdk/types" "3.25.0"
     tslib "^2.3.0"
 
 "@aws-sdk/util-hex-encoding@3.23.0":
