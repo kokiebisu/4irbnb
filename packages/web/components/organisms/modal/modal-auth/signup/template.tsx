@@ -1,89 +1,103 @@
-import { useState } from "react";
-import { useFormik } from "formik";
 import { Input } from "@atoms";
 import { Button } from "@atoms";
 import { Bullet } from "@atoms";
-import { validateSignup as validate } from "@helper/auth";
-// import { useAuthDispatch } from "@context/auth";
 
-export interface SignupPrototypeTemplateProps {}
+export interface SignupPrototypeTemplateProps {
+  handleSubmit: (e: any) => void;
+  firstName: string;
+  firstNameErrors: string;
+  handleFirstNameChange: (e: any) => void;
+  lastName: string;
+  lastNameErrors: string;
+  handleLastNameChange: (e: any) => void;
+  day: string;
+  dayErrors: string;
+  handleDayChange: (e: any) => void;
+  month: string;
+  monthErrors: string;
+  handleMonthChange: (e: any) => void;
+  year: string;
+  yearErrors: string;
+  handleYearChange: (e: any) => void;
+  email: string;
+  handleEmailChange: (e: any) => void;
+  emailErrors: string;
+  password: string;
+  handlePasswordChange: (e: any) => void;
+  passwordErrors: string;
+  loading: boolean;
+  handleLoadingChange: (state: boolean) => void;
+}
 
 /**
  * Renders the signup template component
  */
-export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = () => {
-  // const authDispatch = useAuthDispatch();
-  const [loading, _] = useState(false);
-  const formik = useFormik({
-    initialValues: {
-      firstname: "",
-      lastname: "",
-      day: "",
-      month: "",
-      year: "",
-      email: "",
-      password: "",
-    },
-    validate,
-    onSubmit: async (_) => {
-      // const submit = await usePost({
-      //   url: '/api/users/signup',
-      //   body: values,
-      //   triggerLoading: (state) => {
-      //     setLoading(state);
-      //   },
-      //   onSuccess: () => {
-      //     Router.reload();
-      //   },
-      //   onFail: () => {
-      //     authDispatch({ type: 'exists' });
-      //   },
-      // });
-      // await submit();
-    },
-  });
-
+export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = ({
+  handleSubmit,
+  firstName,
+  firstNameErrors,
+  handleFirstNameChange,
+  lastName,
+  lastNameErrors,
+  handleLastNameChange,
+  day,
+  dayErrors,
+  handleDayChange,
+  month,
+  monthErrors,
+  handleMonthChange,
+  year,
+  yearErrors,
+  handleYearChange,
+  email,
+  handleEmailChange,
+  emailErrors,
+  password,
+  handlePasswordChange,
+  passwordErrors,
+  loading,
+  handleLoadingChange,
+}) => {
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div className="p-5">
         <div>
           <Input
             variant="name"
             direction="bottom"
             name="firstname"
-            errors={formik.errors.firstname !== undefined}
-            onChange={formik.handleChange}
-            value={formik.values.firstname}
+            errors={!!firstNameErrors}
+            onChange={handleFirstNameChange}
+            value={firstName}
           />
           <Input
             variant="name"
             direction="top"
             name="lastname"
-            errors={formik.errors.lastname !== undefined}
-            onChange={formik.handleChange}
-            value={formik.values.lastname}
+            errors={!!lastNameErrors}
+            onChange={handleLastNameChange}
+            value={lastName}
           />
           <div>
-            {formik.errors.firstname !== undefined ? (
+            {firstNameErrors ? (
               <div className="mt-2">
-                <Bullet variant="required" message={formik.errors.firstname} />
+                <Bullet variant="required" message={firstNameErrors} />
               </div>
             ) : null}
           </div>
           <div>
-            {formik.errors.lastname !== undefined ? (
+            {lastNameErrors ? (
               <div className="mt-2">
-                <Bullet variant="required" message={formik.errors.lastname} />
+                <Bullet variant="required" message={lastNameErrors} />
               </div>
             ) : null}
           </div>
           <div>
-            {formik.errors.firstname === undefined &&
-              formik.errors.lastname === undefined && (
-                <p className="mt-2 text-xs text-gray-500">
-                  Make sure it matches the name on your government ID.
-                </p>
-              )}
+            {firstNameErrors && lastNameErrors && (
+              <p className="mt-2 text-xs text-gray-500">
+                Make sure it matches the name on your government ID.
+              </p>
+            )}
           </div>
         </div>
         <div className="mt-4">
@@ -92,9 +106,9 @@ export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = (
               dateType="day"
               variant="birthdate"
               // handleChange={formik.handleChange}
-              value={formik.values.day}
-              errors={formik.errors.year !== undefined}
-              onChange={() => console.log("click")}
+              value={day}
+              errors={!!dayErrors}
+              onChange={handleDayChange}
             />
             <Input
               // spread
@@ -102,9 +116,9 @@ export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = (
               variant="birthdate"
               // direction="center"
               // handleChange={formik.handleChange}
-              value={formik.values.month}
-              errors={formik.errors.year !== undefined}
-              onChange={() => console.log("click")}
+              value={month}
+              errors={!!monthErrors}
+              onChange={handleMonthChange}
             />
             <Input
               // spread
@@ -112,48 +126,46 @@ export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = (
               variant="birthdate"
               // direction="right"
               // handleChange={formik.handleChange}
-              value={formik.values.year}
-              errors={formik.errors.year !== undefined}
-              onChange={() => console.log("click")}
+              value={year}
+              errors={!!yearErrors}
+              onChange={handleYearChange}
             />
           </div>
-          {formik.errors.day !== undefined && (
+          {day && (
             <div className="mt-2">
-              <Bullet variant="required" message={formik.errors.day} />
+              <Bullet variant="required" message={day} />
             </div>
           )}
-          {formik.errors.month !== undefined && (
+          {month && (
             <div className="mt-2">
-              <Bullet variant="required" message={formik.errors.month} />
+              <Bullet variant="required" message={month} />
             </div>
           )}
-          {formik.errors.year !== undefined && (
+          {year && (
             <div className="mt-2">
-              <Bullet variant="required" message={formik.errors.year} />
+              <Bullet variant="required" message={year} />
             </div>
           )}
         </div>
-        {formik.errors.day !== undefined &&
-          formik.errors.month !== undefined &&
-          formik.errors.year !== undefined && (
-            <p className="mt-2 text-xs text-gray-400">
-              To sign up, you need to be at least 18. Your birthday won't be
-              shared with other people who use Airbnb.
-            </p>
-          )}
+        {day && month && year ? (
+          <p className="mt-2 text-xs text-gray-400">
+            To sign up, you need to be at least 18. Your birthday won't be
+            shared with other people who use Airbnb.
+          </p>
+        ) : null}
         <div className="mt-5">
           <div>
             <Input
               variant="email"
-              onChange={formik.handleChange}
-              value={formik.values.email}
-              errors={formik.errors.email !== undefined}
+              onChange={handleEmailChange}
+              value={email}
+              errors={!!emailErrors}
             />
           </div>
           <div>
-            {formik.errors.email !== undefined ? (
+            {emailErrors ? (
               <div className="mt-2">
-                <Bullet variant="required" message={formik.errors.email} />
+                <Bullet variant="required" message={emailErrors} />
               </div>
             ) : (
               <p className="mt-2 text-xs text-gray-300">
@@ -166,17 +178,17 @@ export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = (
           <div>
             <Input
               variant="password"
-              onChange={formik.handleChange}
-              value={formik.values.password}
-              errors={formik.errors.password !== undefined}
+              onChange={handlePasswordChange}
+              value={password}
+              errors={!!passwordErrors}
             />
           </div>
           <div>
-            {formik.errors.password !== undefined && (
+            {passwordErrors ? (
               <div className="mt-2">
-                <Bullet variant="required" message={formik.errors.password} />
+                <Bullet variant="required" message={passwordErrors} />
               </div>
-            )}
+            ) : null}
           </div>
         </div>
         <div>
@@ -199,7 +211,7 @@ export const SignupPrototypeTemplate: React.FC<SignupPrototypeTemplateProps> = (
             title="Agree and continue"
             loading={loading}
             stretch
-            onClick={() => alert("clicked")}
+            onClick={handleLoadingChange}
             size="md"
             color="white"
             fill="black"
