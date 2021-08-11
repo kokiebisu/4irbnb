@@ -1,12 +1,12 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
+import React from "react";
+import { Story, Meta } from "@storybook/react";
 import {
   SignupPrototypeTemplate,
   SignupPrototypeTemplateProps,
-} from './template';
+} from "./template";
 
 export default {
-  title: 'Prototypes/Signup',
+  title: "Organisms/Modal/Auth",
   component: SignupPrototypeTemplate,
 } as Meta;
 

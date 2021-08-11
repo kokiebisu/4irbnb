@@ -1,17 +1,20 @@
-import { useState } from "react";
-import { useFormik } from "formik";
 import { Bullet } from "@atoms";
 import { Button } from "@atoms";
 import { Input } from "@atoms";
-import { validateExists as validate } from "@helper/auth";
 
-export interface ExistsPrototypeTemplateProps {
+export type ExistsPrototypeTemplateProps = {
   data: {
     imgUrl: string;
     firstname: string;
     email: string;
   };
-}
+  handleSubmit: (e: any) => void;
+  handlePasswordChange: (e: any) => void;
+  password: string;
+  passwordErrors: string;
+  loading: boolean;
+  handleLoading: (state: boolean) => void;
+};
 
 export const ExistsPrototypeTemplate: React.FC<ExistsPrototypeTemplateProps> = ({
   data = {
@@ -19,29 +22,13 @@ export const ExistsPrototypeTemplate: React.FC<ExistsPrototypeTemplateProps> = (
     firstname: "Kenichi",
     email: "a01056715@gmail.com",
   },
+  handleSubmit,
+  handlePasswordChange,
+  password,
+  passwordErrors,
+  loading,
+  handleLoading,
 }) => {
-  const [loading, _] = useState(false);
-
-  const formik = useFormik({
-    initialValues: {
-      password: "",
-    },
-    validate,
-    onSubmit: (_) => {
-      // const submit = usePost({
-      //   url: '/api/users/signin',
-      //   body: values,
-      //   triggerLoading(state) {
-      //     setLoading(state);
-      //   },
-      //   onSuccess() {
-      //     Router.reload();
-      //   },
-      // });
-      // submit();
-    },
-  });
-
   return (
     <div className="p-4">
       <div className="flex flex-col items-center">
@@ -66,13 +53,13 @@ export const ExistsPrototypeTemplate: React.FC<ExistsPrototypeTemplateProps> = (
           </div>
         </div>
       </div>
-      <form onSubmit={formik.handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <div className="my-4">
           <Input
             variant="password"
-            onChange={formik.handleChange}
-            value={formik.values.password}
-            errors={formik.errors.password !== undefined}
+            onChange={handlePasswordChange}
+            value={password}
+            errors={!!passwordErrors}
           />
         </div>
         <div className="my-4">
@@ -84,13 +71,13 @@ export const ExistsPrototypeTemplate: React.FC<ExistsPrototypeTemplateProps> = (
             color="white"
             stretch
             fill="black"
-            onClick={() => alert("clicked")}
+            onClick={() => handleLoading(!loading)}
           />
         </div>
         <div>
-          {formik.errors.password !== undefined && (
+          {!!passwordErrors && (
             <div className="mt-2">
-              <Bullet variant="required" message={formik.errors.password} />
+              <Bullet variant="required" message={passwordErrors} />
             </div>
           )}
         </div>
