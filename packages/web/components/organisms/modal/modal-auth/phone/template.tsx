@@ -6,11 +6,6 @@ export interface PhonePrototypeTemplateProps {
     icon: any;
     handleClick: any;
   }[];
-  phoneSwitchButton: {
-    name: string;
-    icon: any;
-    handleClick: any;
-  };
   emailSwitchButton: {
     name: string;
     icon: any;
@@ -20,9 +15,9 @@ export interface PhonePrototypeTemplateProps {
   handleRegionChange: (e: any) => void;
   handlePhoneNumberChange: (e: any) => void;
   region: string;
-  regionError: boolean;
+  regionErrors: string;
   tel: string;
-  telError: boolean;
+  telErrors: string;
 }
 
 /**
@@ -30,9 +25,9 @@ export interface PhonePrototypeTemplateProps {
  */
 export const PhonePrototypeTemplate = ({
   region,
-  regionError,
+  regionErrors,
   tel,
-  telError,
+  telErrors,
   authMethods,
   handleSubmit,
   handleRegionChange,
@@ -53,14 +48,14 @@ export const PhonePrototypeTemplate = ({
                 direction="bottom"
                 onChange={handleRegionChange}
                 value={region}
-                errors={regionError}
+                errors={!!regionErrors}
               />
               <Input
                 variant="phone"
                 direction="top"
                 onChange={handlePhoneNumberChange}
                 value={tel}
-                errors={telError}
+                errors={!!telErrors}
               />
             </div>
           </div>
