@@ -53,7 +53,7 @@ module "user" {
 }
 
 module "web" {
-  source = "../packages/user/terraform"
+  source = "../packages/web/terraform"
 
   site_domain     = var.site_domain
   certificate_arn = aws_acm_certificate_validation.this.certificate_arn
