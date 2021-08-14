@@ -1,8 +1,6 @@
-export interface ObjectProps {
-  [key: string]: any;
-}
+export type TValueObject = string | number;
 
-export abstract class ValueObject<T extends ObjectProps> {
+export abstract class ValueObject<T extends TValueObject> {
   public props: T;
 
   constructor(props: T) {

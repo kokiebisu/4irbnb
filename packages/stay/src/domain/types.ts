@@ -1,4 +1,4 @@
-import { Image, Title } from "./fields";
+import { ImgUrl, Title } from "./fields";
 
 /**
  * A stay posted by the user
@@ -6,5 +6,5 @@ import { Image, Title } from "./fields";
  */
 export interface IStay {
   title: Title;
-  imgUrls: Image[];
+  imgUrls: ImgUrl[];
 }
