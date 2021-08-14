@@ -1,4 +1,4 @@
-import { createStay, isStay, IStay } from "../models";
+import { createStay, isStay, IStay } from "../domain";
 import {
   IStayServiceDelete,
   IStayServiceGet,

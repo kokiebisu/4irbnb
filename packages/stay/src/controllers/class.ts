@@ -4,7 +4,7 @@ import {
   createLoggerService,
 } from "@4irbnb/common";
 import { IStayControllerConstructorParams } from ".";
-import { isStay } from "../models";
+import { isStay } from "../domain";
 import { IStayService, StayService } from "../services";
 import {
   IStayControllerDeleteParams,

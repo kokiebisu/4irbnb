@@ -1,4 +1,4 @@
-import { IStay } from "../models";
+import { IStay } from "../domain";
 import { IDatabaseService, IWithIdentifierParams } from "@4irbnb/common";
 
 export interface IStayService {
