@@ -1,52 +1,58 @@
 /**
  * @public
  */
-export interface IDatabaseService<T> {
-  create(params: IDatabaseServiceCreateProps<T>): Promise<void>;
-  read(params: IDatabaseServiceReadProps): Promise<T | null>;
+export interface IDatabaseService {
+  create(params: IDatabaseServiceCreateProps): Promise<void>;
+  findById(params: IDatabaseServiceReadProps): Promise<any>;
   delete(params: IDatabaseServiceDeleteParams): Promise<void>;
   update(params: IDatabaseServiceUpdateParams): Promise<void>;
 }
 
-export interface RepositoryConstructorProps<T> {
-  db: IDatabaseService<T>;
+export interface IDatabaseServiceConstructorProps<T> {
+  client: IDatabaseClient<T>;
 }
 
 export interface DatabaseCommonArgs {
-  type: string;
+  tableName: string;
 }
 
 /**
  * @public
  */
-export interface IDatabaseServiceCreateProps<T> {
-  type: string;
-  data: T;
+export interface IDatabaseServiceCreateProps {
+  tableName: string;
+  data: any;
 }
 
 /**
  * @public
  */
 export interface IDatabaseServiceReadProps {
-  type: string;
+  tableName: string;
   id: string;
 }
 
 /**
  * @public
  */
-export interface IDatabaseServiceDeleteParams {
-  type: string;
+export interface IDatabaseServiceDeleteProps {
+  tableName: string;
   id: string;
 }
 
 /**
  * @public
  */
-export interface IDatabaseServiceUpdateParams {
-  type: string;
+export interface IDatabaseServiceUpdateProps {
+  tableName: string;
   id: string;
+  data: any;
 }
 
 // /** Client */
-// export interface IDatabaseClient extends INoSqlDatabaseClient {}
+export interface IDatabaseClient<T> {
+  find(args: any): Promise<T | null>;
+  create(args: any): Promise<void>;
+  delete(args: any): Promise<void>;
+  update(args: any): Promise<void>;
+}

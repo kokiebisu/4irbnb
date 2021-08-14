@@ -1,17 +1,5 @@
-import { IDatabaseService, RepositoryConstructorProps } from "./types";
-
-export abstract class Repository<T> {
-  #db: IDatabaseService<T>;
-  constructor({ db }: RepositoryConstructorProps<T>) {
-    this.#db = db;
-  }
-
-  abstract create(): null;
-  abstract findById(): T;
-  async update(args) {
-    await this.#db.update(args);
-  }
-  async delete(args) {
-    await this.#db.delete(args);
-  }
+export interface Repo<T> {
+  exists(args: T): Promise<boolean>;
+  delete(args: T): Promise<any>;
+  save(args: T): Promise<any>;
 }

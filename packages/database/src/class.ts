@@ -3,44 +3,53 @@ import { createLoggerService, ILoggerService } from "../utils";
 import {
   IDatabaseClient,
   IDatabaseService,
-  IDatabaseServiceConstructorParams,
-  IDatabaseServiceDeleteParams,
-  IDatabaseServiceFindOneByIdParams,
-  IDatabaseServiceInsertParams,
-  IDatabaseServiceUpdateParams,
+  IDatabaseServiceCreateProps,
+  IDatabaseServiceDeleteProps,
+  IDatabaseServiceUpdateProps,
+  IDatabaseServiceConstructorProps,
 } from "./types";
 
 /**
  * @public
  */
-export abstract class DatabaseService implements IDatabaseService {
-  #client: IDatabaseClient;
+export abstract class DatabaseService<T> implements IDatabaseService {
+  #client: IDatabaseClient<T>;
   #logger: ILoggerService;
 
   /**
    * @public
    * @param param0
    */
-  constructor({ client, databaseType }: IDatabaseServiceConstructorParams) {
+  constructor({ client }: IDatabaseServiceConstructorProps<T>) {
     this.#client = client;
     this.#logger = createLoggerService({
       packageName: PackageEnum.common,
-      className: `${databaseType}DatabaseService`,
+      className: `DatabaseService`,
     });
   }
-
-  abstract findOneById({
-    tableName,
-    id,
-  }: IDatabaseServiceFindOneByIdParams): Promise<any | null>;
 
   /**
    * @public
    * @param param0
    */
-  async insert({ tableName, data }: IDatabaseServiceInsertParams) {
+  async findById({ tableName, id }: IDatabaseServiceUpdateProps) {
     try {
-      await this.#client.put({ tableName, data });
+      await this.#client.find({ tableName, id });
+    } catch (error) {
+      this.#logger.error({
+        location: "findById:find",
+        message: error as string,
+      });
+    }
+  }
+
+  /**
+   * @public
+   * @param param0
+   */
+  async create({ tableName, data }: IDatabaseServiceCreateProps) {
+    try {
+      await this.#client.create({ tableName, data });
     } catch (error) {
       this.#logger.error({
         location: "insert:insert",
@@ -53,7 +62,7 @@ export abstract class DatabaseService implements IDatabaseService {
    * @public
    * @param param0
    */
-  async delete({ tableName, id }: IDatabaseServiceDeleteParams) {
+  async delete({ tableName, id }: IDatabaseServiceDeleteProps) {
     try {
       await this.#client.delete({ tableName, id });
     } catch (error) {
@@ -68,7 +77,7 @@ export abstract class DatabaseService implements IDatabaseService {
    * @public
    * @param param0
    */
-  async update({ tableName, id, data }: IDatabaseServiceUpdateParams) {
+  async update({ tableName, id, data }: IDatabaseServiceUpdateProps) {
     try {
       await this.#client.update({ tableName, id, data });
     } catch (error) {

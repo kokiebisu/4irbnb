@@ -1,10 +1,11 @@
 import {
   ILoggerService,
-  ILoggerServiceConstructorParams,
-  IServiceErrorParams,
-  IServiceLogParams,
+  IServiceConstructorProps,
+  IServiceCreateProps,
+  IServiceErrorProps,
+  IServiceLogProps,
 } from "./types";
-import { ILoggerClient } from "./winston";
+import { ILoggerClient, WinstonClient } from "./winston";
 
 /**
  * @public
@@ -14,23 +15,23 @@ export class LoggerService implements ILoggerService {
   #client: ILoggerClient;
   serviceLocation: string;
 
-  constructor({
-    client,
-    packageName,
-    className,
-  }: ILoggerServiceConstructorParams) {
-    this.#client = client;
+  private constructor({ packageName, className }: IServiceConstructorProps) {
+    this.#client = new WinstonClient();
     this.serviceLocation = `${packageName}:${className}`;
   }
 
-  log({ location, message }: IServiceLogParams): void {
+  public static create({ packageName, className }: IServiceCreateProps) {
+    return new LoggerService({ packageName, className });
+  }
+
+  public log({ location, message }: IServiceLogProps): void {
     this.#client.log({
       location: `${this.serviceLocation}:${location}`,
       message,
     });
   }
 
-  error({ location, message }: IServiceErrorParams): void {
+  public error({ location, message }: IServiceErrorProps): void {
     this.#client.error({
       location: `${this.serviceLocation}:${location}`,
       message,

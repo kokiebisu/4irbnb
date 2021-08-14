@@ -4,7 +4,6 @@ import {
   PutParameterCommand,
   DeleteParameterCommand,
 } from "@aws-sdk/client-ssm";
-import { createLoggerService } from "../../logger";
 import { PackageEnum } from "../../../enum";
 import {
   IConfigClient,
@@ -13,6 +12,7 @@ import {
   IConfigClientSetParams,
   ISSMClientConstructorParams,
 } from "./types";
+import { LoggerService } from "../../logger/class";
 
 /**
  * @public
@@ -23,7 +23,7 @@ export class SSMClient implements IConfigClient {
 
   constructor({ region }: ISSMClientConstructorParams) {
     this.#client = new SSM({ region });
-    this.#logger = createLoggerService({
+    this.#logger = LoggerService.create({
       packageName: PackageEnum.common,
       className: "SSMClient",
     });

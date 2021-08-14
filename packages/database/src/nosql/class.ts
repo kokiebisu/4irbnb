@@ -8,9 +8,7 @@ import {
   INoSqlDatabaseServiceFindByRangeParams,
 } from "./types";
 
-export class NoSqlDatabaseService
-  extends DatabaseService
-  implements INoSqlDatabaseService {
+export class NoSqlDatabaseService implements INoSqlDatabaseService {
   #client: INoSqlDatabaseClient;
   constructor({ client }: INoSqlDatabaseServiceConstructorParams) {
     super({ client, databaseType: "Relational" });

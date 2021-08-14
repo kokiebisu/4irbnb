@@ -1,14 +1,14 @@
 export interface ILoggerClient {
-  log(params: ILoggerClientLogParams): void;
-  error(params: ILoggerClientErrorParams): void;
+  log(args: ILoggerClientLogProps): void;
+  error(args: ILoggerClientErrorProps): void;
 }
 
-export interface ILoggerClientLogParams {
+export interface ILoggerClientLogProps {
   location: string;
   message: string;
 }
 
-export interface ILoggerClientErrorParams {
+export interface ILoggerClientErrorProps {
   location: string;
   message: string;
 }

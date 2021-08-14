@@ -1,5 +1,5 @@
 import { createLogger, Logger, transports } from "winston";
-import { IServiceErrorParams, IServiceLogParams } from "../types";
+import { IServiceErrorProps, IServiceLogProps } from "..";
 import { ILoggerClient } from "./types";
 
 export class WinstonClient implements ILoggerClient {
@@ -19,7 +19,7 @@ export class WinstonClient implements ILoggerClient {
    * Logs
    * @param param0
    */
-  log({ location, message }: IServiceLogParams): any {
+  log({ location, message }: IServiceLogProps): any {
     this.#package.log("info", `[${location}]:${message}`);
   }
 
@@ -28,7 +28,7 @@ export class WinstonClient implements ILoggerClient {
    * Logs
    * @param param0
    */
-  error({ location, message }: IServiceErrorParams): any {
+  error({ location, message }: IServiceErrorProps): any {
     this.#package.log("error", `[${location}]:${message}`);
   }
 }
