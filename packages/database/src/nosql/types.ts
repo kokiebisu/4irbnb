@@ -31,7 +31,9 @@ export interface INoSqlDatabaseServiceFindByIdParams {
  */
 export interface INoSqlDatabaseServiceFindByRangeParams {
   tableName: string;
-  attribute: string;
+  attributes: {
+    [key: string]: any;
+  };
   range: {
     start: any;
     end: any;
@@ -77,8 +79,10 @@ export interface INoSqlDatabaseClientGetParams {
  */
 export interface INoSqlDatabaseClientQueryParams {
   tableName: string;
-  attribute: string;
-  range: {
+  attributes: {
+    [key: string]: any;
+  };
+  range?: {
     start: any;
     end: any;
   };

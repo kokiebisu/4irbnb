@@ -29,10 +29,10 @@ export class NoSqlDatabaseService
    */
   async findByRange({
     tableName,
-    attribute,
+    attributes,
     range,
   }: INoSqlDatabaseServiceFindByRangeParams) {
-    return this.#client.query({ tableName, attribute, range });
+    return this.#client.query({ tableName, attributes, range });
   }
 
   /**
@@ -44,4 +44,6 @@ export class NoSqlDatabaseService
   }: INoSqlDatabaseServiceFindByKeyParams) {
     return this.#client.get({ tableName, attributes });
   }
+
+  async findById() {}
 }

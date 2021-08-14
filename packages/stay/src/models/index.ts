@@ -1,3 +1,2 @@
-export * from './type';
-export * from './validate';
-export * from './factory';
+export * from "./types";
+export * from "./validate";

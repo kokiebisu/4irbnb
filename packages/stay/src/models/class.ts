@@ -1,17 +1,15 @@
-import { IStay } from "./type";
+import { IStay } from "./types";
 
 /**
  * @public
  * Blueprint of the Stay instance
  */
-export class Stay {
-  id: string;
-  title: string;
-  imgUrls: string[];
+export class Stay implements Entity<IStay> {
+  props: IStay;
 
-  constructor({ id, title, imgUrls }: IStay) {
-    this.id = id;
-    this.title = title;
-    this.imgUrls = imgUrls;
+  private constructor(props: IStay) {
+    this.props = props;
   }
+
+  create() {}
 }

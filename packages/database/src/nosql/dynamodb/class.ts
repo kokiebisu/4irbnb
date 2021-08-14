@@ -7,10 +7,10 @@ import {
   PutCommand,
 } from "@aws-sdk/lib-dynamodb";
 import { PackageEnum } from "../../../enum";
-import { TRegion } from "../../../types";
+import { IRegion, TRegion } from "../../../types";
 import { createLoggerService, ILoggerService } from "../../../utils";
 import { translateConfig } from "./config";
-import { IDynamoDBConstructorParams } from "./types";
+
 import { v4 as uuid } from "uuid";
 import {
   INoSqlDatabaseClient,
@@ -31,7 +31,7 @@ export class DynamoDBClient implements INoSqlDatabaseClient {
   #package?: DynamoDBDocumentClient;
   #logger: ILoggerService;
 
-  constructor({ region }: IDynamoDBConstructorParams) {
+  constructor({ region }: IRegion) {
     this.#region = region;
     this.#logger = createLoggerService({
       packageName: PackageEnum.common,
@@ -101,25 +101,24 @@ export class DynamoDBClient implements INoSqlDatabaseClient {
    */
   async query({
     tableName,
-    attribute,
+    attributes,
     range,
   }: INoSqlDatabaseClientQueryParams) {
     this.#configureClient();
-    // const expressions = Object.keys(filter).map(
-    //   (attribute) => `${attribute} = ${filter[attribute]}`
-    // );
+    const expressions = Object.keys(attributes).map(
+      (property) => `${property} = ${attributes[property]}`
+    );
+    console.log("range", range);
 
     try {
       const params = {
-        // FilterExpression: "property1 = :attribute",
+        FilterExpression: "property1 = :attribute",
       };
       console.log("params", params);
       const response = await this.#package?.send(
         new GetCommand({
-          TableName: "StayService",
-          Key: {
-            title: "test title",
-          },
+          TableName: tableName,
+          Key: expressions,
         })
       );
       console.log("RESPONSE", response);

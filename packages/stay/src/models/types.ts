@@ -4,6 +4,6 @@
  */
 export interface IStay {
   id: string;
-  title: string;
-  imgUrls: string[];
+  title: StayTitle;
+  imgUrls: Image[];
 }
