@@ -10,7 +10,15 @@ export class Stay extends Entity<IStay> {
     super(props);
   }
 
-  create(props: IStay) {
+  static create(props: IStay) {
     return new Stay(props);
+  }
+
+  get title() {
+    return this.props.title;
+  }
+
+  get imgUrls() {
+    return this.props.imgUrls;
   }
 }

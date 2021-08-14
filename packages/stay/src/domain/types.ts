@@ -5,7 +5,6 @@ import { Image, Title } from "./fields";
  * @public
  */
 export interface IStay {
-  id: string;
   title: Title;
   imgUrls: Image[];
 }

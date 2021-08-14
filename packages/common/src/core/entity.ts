@@ -12,6 +12,4 @@ export abstract class Entity<T> {
   equals(target: Entity<T>) {
     return this.id.equals(target.id);
   }
-
-  abstract create(props: T): any;
 }

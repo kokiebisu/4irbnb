@@ -18,23 +18,20 @@ export class Title extends ValueObject<TitleProps> {
   }
 }
 
-interface ImageProps {
+interface ImgUrlProps {
   value: string;
 }
 
-export class Image extends ValueObject<ImageProps> {
-  private constructor(props: ImageProps) {
+export class ImgUrl extends ValueObject<ImgUrlProps> {
+  private constructor(props: ImgUrlProps) {
     super(props);
   }
 
-  public static create(props: ImageProps): Image {
-    if (
-      Array.isArray(props.value) &&
-      props.value.every((url) => typeof url === "string")
-    ) {
-      return new Image(props);
-    } else {
+  public static create(imgUrl: string): ImgUrl {
+    if (imgUrl === undefined || imgUrl === null || typeof imgUrl === "string") {
       throw new Error("imgUrls were not valid");
+    } else {
+      return new ImgUrl(imgUrl);
     }
   }
 }
