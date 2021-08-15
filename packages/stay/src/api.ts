@@ -14,11 +14,7 @@ export const handler = async (event: any) => {
     switch (event.requestContext.resourceId) {
       case "GET /s/homes":
         console.log("EVENT", event);
-        logger.log({
-          location: "handler",
-          message: "Entered GET /stay/{id}...",
-        });
-        return await controller.getStaysByCategory();
+        return await controller.getStaysByCategory(event);
       default:
         throw new Error(
           `Unsupported route: "${event.requestContext.resourceId}"`

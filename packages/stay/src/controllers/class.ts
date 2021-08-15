@@ -25,9 +25,18 @@ export class StayController {
     return new StayController();
   }
 
-  async getStaysByCategory(): Promise<any> {
+  async getStaysByCategory(event: any): Promise<any> {
     try {
       // const stay = await this.#service.get({ identifier });
+      const propertyTypeIds =
+        event.multiValueQueryStringParameters["property_type_id[]"];
+      const pattern =
+        event.multiValueQueryStringParameters["refinement_paths[]"];
+      const room_types = event.multiValueQueryStringParameters["room_types[]"];
+
+      console.log("PROPERTY_TYPE_IDS", propertyTypeIds);
+      console.log("PATTERN", pattern);
+      console.log("ROOM_TYPES", room_types);
 
       return {
         statusCode: 200,
