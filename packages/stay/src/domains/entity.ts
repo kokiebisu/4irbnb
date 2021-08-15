@@ -18,6 +18,14 @@ export class Stay extends Entity<IStay> {
     return this.props.title;
   }
 
+  get numberOfReviews() {
+    return this.props.numberOfReviews;
+  }
+
+  get averateRatings() {
+    return this.props.averateRatings;
+  }
+
   get imgUrls() {
     return this.props.imgUrls;
   }

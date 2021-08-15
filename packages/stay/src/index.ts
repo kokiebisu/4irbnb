@@ -1,3 +1,3 @@
 export * from "./controllers";
-export * from "./domain";
+export * from "./domains";
 export * from "./services";

@@ -1,8 +1,8 @@
 import { IStayService, IStayServiceConstructorParams } from "./types";
 import { ILoggerUtils, LoggerUtils } from "@4irbnb/common";
-import { IStayRepo } from "../repo/types";
-import { PACKAGE_NAME } from "../config";
-import { StayRepo } from "../repo/class";
+import { IStayRepo } from "../repos/types";
+import { PACKAGE_NAME } from "../configs";
+import { StayRepo } from "../repos/class";
 
 export class StayService implements IStayService {
   #repo: IStayRepo;
