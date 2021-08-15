@@ -1,8 +1,11 @@
 import { WebClient } from "@slack/web-api";
-import { PackageEnum } from "../../../enum";
-import { InternalError } from "../../../error";
-import { createConfigService } from "../../config";
-import { createLoggerService, ILoggerService } from "../../logger";
+import { PackageEnum } from "../../../common/src/enum";
+import { InternalError } from "../../../common/src/error";
+import { createConfigService } from "../../../common/src/utils/config";
+import {
+  createLoggerService,
+  ILoggerService,
+} from "../../../common/src/utils/logger";
 import {
   IAlertClient,
   IAlertClientSendFileParams,

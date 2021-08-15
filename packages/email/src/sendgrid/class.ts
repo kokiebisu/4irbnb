@@ -1,51 +1,43 @@
-import { MailService, send, setApiKey } from "@sendgrid/mail";
-import { PackageEnum } from "../../../enum";
-import { InternalError } from "../../../error";
-import { createConfigService } from "../../config";
-import { createLoggerService, ILoggerService } from "../../logger";
-import { IEmailClient, IEmailClientSendParams } from "./types";
+import { send, setApiKey } from "@sendgrid/mail";
+
+import {
+  PackageEnum,
+  LoggerService,
+  ILoggerService,
+  InternalError,
+} from "@4irbnb/common";
+import { IEmailClient, IEmailClientSendProps } from "../types";
 
 /**
  * @public
  */
 export class SendGridClient implements IEmailClient {
-  #package?: MailService;
   #logger: ILoggerService;
-  constructor() {
-    this.#logger = createLoggerService({
+
+  private constructor() {
+    this.#logger = LoggerService.create({
       packageName: PackageEnum.common,
       className: "SendGridClient",
     });
   }
 
-  async #configureClient() {
-    if (!this.#package) {
-      try {
-        const apiKey = await createConfigService().get({
-          packageName: PackageEnum.common,
-          key: "utils/email",
-        });
-        ``;
-        if (!apiKey) {
-          throw new InternalError({
-            location: "configureClient:get",
-            message: "Invalid key provided",
-          });
-        }
-        setApiKey(apiKey);
-      } catch (error: any) {
-        if (error instanceof InternalError) {
-          const { location, message } = error;
-          this.#logger.error({ location, message });
-        } else {
-          this.#logger.error({ location: "configureClient", message: error });
-        }
-      }
+  public static async create() {
+    const apiKey = await createConfigService().get({
+      packageName: PackageEnum.common,
+      key: "utils/email",
+    });
+    if (!apiKey) {
+      throw new InternalError({
+        location: "configureClient:get",
+        message: "Invalid key provided",
+      });
     }
+    setApiKey(apiKey);
+
+    return new SendGridClient();
   }
 
-  async send({ to, message }: IEmailClientSendParams) {
-    await this.#configureClient();
+  async send({ to, message }: IEmailClientSendProps) {
     try {
       await send({
         to,

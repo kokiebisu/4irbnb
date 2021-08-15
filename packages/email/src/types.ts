@@ -1,9 +1,22 @@
-import { IEmailClient, IEmailClientSendParams } from "./sendgrid";
-
 export interface IEmailService extends IEmailClient {}
 
-export interface IEmailServiceConstructorParams {
+export interface IEmailServiceConstructorProps {
   client: IEmailClient;
 }
 
-export interface IEmailServiceSendParams extends IEmailClientSendParams {}
+export interface IEmailServiceSendProps extends IEmailClientSendProps {}
+
+/**
+ * @public
+ */
+export interface IEmailClient {
+  send(args: IEmailServiceSendProps): Promise<void>;
+}
+
+/**
+ * @public
+ */
+export interface IEmailClientSendProps {
+  to: string;
+  message: string;
+}

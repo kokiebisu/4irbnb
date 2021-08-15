@@ -1,18 +1,16 @@
-import { IEmailClient } from "./sendgrid";
-import {
-  IEmailServiceConstructorParams,
-  IEmailServiceSendParams,
-} from "./types";
+import { IEmailService } from "./types";
 
 /**
  * @public
  */
-export class EmailService {
+export class EmailService implements IEmailService {
   #client: IEmailClient;
 
-  constructor({ client }: IEmailServiceConstructorParams) {
+  private constructor({ client }: IEmailServiceConstructorParams) {
     this.#client = client;
   }
+
+  create;
 
   /**
    * @public
