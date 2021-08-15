@@ -1,4 +1,6 @@
-export interface IEmailService extends IEmailClient {}
+export interface IEmailService {
+  send(args: IEmailServiceSendProps): Promise<void>;
+}
 
 export interface IEmailServiceConstructorProps {
   client: IEmailClient;
@@ -10,7 +12,7 @@ export interface IEmailServiceSendProps extends IEmailClientSendProps {}
  * @public
  */
 export interface IEmailClient {
-  send(args: IEmailServiceSendProps): Promise<void>;
+  send(args: IEmailClientSendProps): Promise<void>;
 }
 
 /**

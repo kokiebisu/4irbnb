@@ -12,21 +12,20 @@ import {
   IStorageClientRemoveProps,
   IStorageClientRetrieveProps,
   IStorageClientStoreProps,
-  ILoggerService,
+  ILoggerUtils,
   IStorageClient,
   IStorageClientConstructorProps,
+  LoggerUtils,
 } from "../..";
-
-import { LoggerService } from "../../logger/class";
 import { InternalError } from "../../..";
 
 export class S3Client implements IStorageClient {
   #client: Client;
-  #logger: ILoggerService;
+  #logger: ILoggerUtils;
   #storageName: string;
 
   private constructor({ region, storageName }: IStorageClientConstructorProps) {
-    this.#logger = LoggerService.create({
+    this.#logger = LoggerUtils.create({
       packageName: PackageEnum.common,
       className: "S3Client",
     });

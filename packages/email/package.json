@@ -14,10 +14,12 @@
     "extract": "api-extractor run --local"
   },
   "dependencies": {
-    "@sendgrid/mail": "^7.4.5",
-    "@4irbnb/common": "file:../common"
+    "@4irbnb/common": "file:../common",
+    "@sendgrid/mail": "^7.4.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/node": "^16.6.1"
+  },
   "workspaces": {
     "nohoist": [
       "**/**"

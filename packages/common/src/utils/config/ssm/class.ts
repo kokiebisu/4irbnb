@@ -12,8 +12,8 @@ import {
   IConfigClientSetProps,
   ISSMClientConstructorProps,
 } from "../types";
-import { LoggerService } from "../../logger/class";
 import { IConfigClientCreateProps } from "..";
+import { LoggerUtils } from "../..";
 
 /**
  * @public
@@ -24,7 +24,7 @@ export class SSMClient implements IConfigClient {
 
   private constructor({ region }: ISSMClientConstructorProps) {
     this.#client = new SSM({ region });
-    this.#logger = LoggerService.create({
+    this.#logger = LoggerUtils.create({
       packageName: PackageEnum.common,
       className: "SSMClient",
     });

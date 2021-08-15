@@ -1,6 +1,5 @@
 import { createLogger, Logger, transports } from "winston";
-import { IServiceErrorProps, IServiceLogProps } from "..";
-import { ILoggerClient } from "./types";
+import { ILoggerClient, IServiceErrorProps, IServiceLogProps } from "..";
 
 export class WinstonClient implements ILoggerClient {
   #package: Logger;

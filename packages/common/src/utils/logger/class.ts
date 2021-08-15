@@ -1,17 +1,18 @@
 import {
-  ILoggerService,
+  ILoggerClient,
+  ILoggerUtils,
   IServiceConstructorProps,
   IServiceCreateProps,
   IServiceErrorProps,
   IServiceLogProps,
 } from "./types";
-import { ILoggerClient, WinstonClient } from "./winston";
+import { WinstonClient } from "./winston";
 
 /**
  * @public
  * Blue that implements the util that logs
  */
-export class LoggerService implements ILoggerService {
+export class LoggerUtils implements ILoggerUtils {
   #client: ILoggerClient;
   serviceLocation: string;
 
@@ -21,7 +22,7 @@ export class LoggerService implements ILoggerService {
   }
 
   public static create({ packageName, className }: IServiceCreateProps) {
-    return new LoggerService({ packageName, className });
+    return new LoggerUtils({ packageName, className });
   }
 
   public log({ location, message }: IServiceLogProps): void {

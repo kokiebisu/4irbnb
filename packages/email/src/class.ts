@@ -1,4 +1,10 @@
-import { IEmailService } from "./types";
+import { SendGridClient } from "./sendgrid";
+import {
+  IEmailClient,
+  IEmailService,
+  IEmailServiceConstructorProps,
+  IEmailServiceSendProps,
+} from "./types";
 
 /**
  * @public
@@ -6,18 +12,20 @@ import { IEmailService } from "./types";
 export class EmailService implements IEmailService {
   #client: IEmailClient;
 
-  private constructor({ client }: IEmailServiceConstructorParams) {
+  private constructor({ client }: IEmailServiceConstructorProps) {
     this.#client = client;
   }
 
-  create;
+  public static async create() {
+    return new EmailService({ client: await SendGridClient.create() });
+  }
 
   /**
    * @public
    * Sends message
    * @param param0
    */
-  send({ to, message }: IEmailServiceSendParams) {
-    this.#client.send({ to, message });
+  public async send({ to, message }: IEmailServiceSendProps) {
+    await this.#client.send({ to, message });
   }
 }

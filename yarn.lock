@@ -10,7 +10,6 @@
     "@aws-sdk/client-sqs" "^3.25.0"
     "@aws-sdk/client-ssm" "^3.24.0"
     "@aws-sdk/client-sts" "^3.24.0"
-    "@sendgrid/mail" "^7.4.5"
     "@slack/web-api" "^6.3.0"
     "@types/uuid" "^8.3.1"
     date-fns "^2.23.0"
@@ -5503,6 +5502,11 @@
   version "15.14.7"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-15.14.7.tgz#29fea9a5b14e2b75c19028e1c7a32edd1e89fe92"
   integrity sha512-FA45p37/mLhpebgbPWWCKfOisTjxGK9lwcHlJ6XVLfu3NgfcazOJHdYUZCWPMK8QX4LhNZdmfo6iMz9FqpUbaw==
+
+"@types/node@^16.6.1":
+  version "16.6.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.6.1.tgz#aee62c7b966f55fc66c7b6dfa1d58db2a616da61"
+  integrity sha512-Sr7BhXEAer9xyGuCN3Ek9eg9xPviCF2gfu9kTfuU2HkTVAMYSDeX40fvpmo72n5nansg3nsBjuQBrsS28r+NUw==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"

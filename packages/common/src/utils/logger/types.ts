@@ -4,7 +4,7 @@
  */
 export type TLoggerLevel = "error" | "info";
 
-export interface ILoggerService {
+export interface ILoggerUtils {
   log(args: IServiceLogProps): void;
   error(args: IServiceErrorProps): void;
 }
@@ -27,4 +27,19 @@ export interface IWithMessageProps {
 export interface IWithLocationProps {
   packageName: string;
   className: string;
+}
+
+export interface ILoggerClient {
+  log(args: ILoggerClientLogProps): void;
+  error(args: ILoggerClientErrorProps): void;
+}
+
+export interface ILoggerClientLogProps {
+  location: string;
+  message: string;
+}
+
+export interface ILoggerClientErrorProps {
+  location: string;
+  message: string;
 }

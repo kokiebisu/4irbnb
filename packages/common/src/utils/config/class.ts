@@ -1,25 +1,25 @@
 import { SSMClient } from "./ssm";
 import {
   IConfigClient,
-  IConfigServiceConstructorParams,
-  IConfigServiceDeleteParams,
-  IConfigServiceGetParams,
-  IConfigServiceSetParams,
+  IConfigUtilsConstructorParams,
+  IConfigUtilsDeleteParams,
+  IConfigUtilsGetParams,
+  IConfigUtilsSetParams,
 } from "./types";
 
-export class ConfigService {
+export class ConfigUtils {
   #client: IConfigClient;
 
   /**
    * @public
    * @param param0
    */
-  private constructor({ client }: IConfigServiceConstructorParams) {
+  private constructor({ client }: IConfigUtilsConstructorParams) {
     this.#client = client;
   }
 
   public static create() {
-    return new ConfigService({
+    return new ConfigUtils({
       client: SSMClient.create({ region: "us-east-1" }),
     });
   }
@@ -29,7 +29,7 @@ export class ConfigService {
    * @param param0
    * @returns
    */
-  async get({ packageName, key }: IConfigServiceGetParams) {
+  async get({ packageName, key }: IConfigUtilsGetParams) {
     return await this.#client.get({ packageName, key });
   }
 
@@ -38,7 +38,7 @@ export class ConfigService {
    * @param param0
    * @returns
    */
-  async set({ packageName, key, value }: IConfigServiceSetParams) {
+  async set({ packageName, key, value }: IConfigUtilsSetParams) {
     await this.#client.set({ packageName, key, value });
   }
 
@@ -47,7 +47,7 @@ export class ConfigService {
    * @param param0
    * @returns
    */
-  async delete({ packageName, key }: IConfigServiceDeleteParams) {
+  async delete({ packageName, key }: IConfigUtilsDeleteParams) {
     await this.#client.delete({ packageName, key });
   }
 }

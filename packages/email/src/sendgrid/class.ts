@@ -2,9 +2,10 @@ import { send, setApiKey } from "@sendgrid/mail";
 
 import {
   PackageEnum,
-  LoggerService,
-  ILoggerService,
+  LoggerUtils,
+  ILoggerUtils,
   InternalError,
+  ConfigUtils,
 } from "@4irbnb/common";
 import { IEmailClient, IEmailClientSendProps } from "../types";
 
@@ -12,17 +13,18 @@ import { IEmailClient, IEmailClientSendProps } from "../types";
  * @public
  */
 export class SendGridClient implements IEmailClient {
-  #logger: ILoggerService;
+  #logger: ILoggerUtils;
 
   private constructor() {
-    this.#logger = LoggerService.create({
+    this.#logger = LoggerUtils.create({
       packageName: PackageEnum.common,
       className: "SendGridClient",
     });
   }
 
   public static async create() {
-    const apiKey = await createConfigService().get({
+    const utils = await ConfigUtils.create();
+    const apiKey = await utils.get({
       packageName: PackageEnum.common,
       key: "utils/email",
     });

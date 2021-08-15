@@ -1,23 +1,23 @@
 import { PackageEnum, TRegion } from "../..";
 
 // Service
-export interface IConfigService {
-  get(params: IConfigServiceGetParams): Promise<string | undefined>;
-  set(params: IConfigServiceSetParams): Promise<void>;
-  delete(params: IConfigServiceDeleteParams): Promise<void>;
+export interface IConfigUtils {
+  get(params: IConfigUtilsGetParams): Promise<string | undefined>;
+  set(params: IConfigUtilsSetParams): Promise<void>;
+  delete(params: IConfigUtilsDeleteParams): Promise<void>;
 }
 
 // Constructor
-export interface IConfigServiceConstructorParams {
+export interface IConfigUtilsConstructorParams {
   client: IConfigClient;
 }
 
 // Params
-export interface IConfigServiceGetParams extends IConfigClientGetProps {}
+export interface IConfigUtilsGetParams extends IConfigClientGetProps {}
 
-export interface IConfigServiceSetParams extends IConfigClientSetProps {}
+export interface IConfigUtilsSetParams extends IConfigClientSetProps {}
 
-export interface IConfigServiceDeleteParams extends IConfigClientDeleteProps {}
+export interface IConfigUtilsDeleteParams extends IConfigClientDeleteProps {}
 
 /**
  * @public
