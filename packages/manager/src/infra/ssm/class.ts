@@ -13,7 +13,7 @@ import {
   ISSMClientConstructorProps,
 } from "../../service";
 
-import { LoggerUtils } from "../../../../common/src/utils";
+import { ILoggerUtils, LoggerUtils } from "@4irbnb/common";
 import { PACKAGE_NAME } from "../..";
 
 /**
@@ -21,25 +21,27 @@ import { PACKAGE_NAME } from "../..";
  */
 export class SSMClient implements IConfigClient {
   #client;
-  #logger;
+  #logger: ILoggerUtils;
+  #groupName: string;
 
-  private constructor({ region }: ISSMClientConstructorProps) {
+  private constructor({ region, groupName }: ISSMClientConstructorProps) {
     this.#client = new SSM({ region });
-    this.#logger = LoggerUtils.create({
+    this.#logger = LoggerUtils.initialize({
       packageName: PACKAGE_NAME,
       className: this.constructor.name,
     });
+    this.#groupName = groupName;
   }
 
-  public static create({ region }: IConfigClientCreateProps) {
-    return new SSMClient({ region });
+  public static initialize({ region, groupName }: IConfigClientCreateProps) {
+    return new SSMClient({ region, groupName });
   }
 
   /**
    * @public
    */
-  async get({ packageName, key }: IConfigClientGetProps) {
-    const name = packageName.replace("@", "");
+  async get({ key }: IConfigClientGetProps) {
+    const name = this.#groupName.replace("@", "");
     try {
       return (
         await this.#client.send(
@@ -60,8 +62,8 @@ export class SSMClient implements IConfigClient {
   /**
    * @public
    */
-  async set({ packageName, key, value }: IConfigClientSetProps) {
-    const name = packageName.replace("@", "");
+  async set({ key, value }: IConfigClientSetProps) {
+    const name = this.#groupName.replace("@", "");
     try {
       await this.#client.send(
         new PutParameterCommand({
@@ -83,8 +85,8 @@ export class SSMClient implements IConfigClient {
   /**
    * @public
    */
-  async delete({ packageName, key }: IConfigClientDeleteProps) {
-    const name = packageName.replace("@", "");
+  async delete({ key }: IConfigClientDeleteProps) {
+    const name = this.#groupName.replace("@", "");
     try {
       await this.#client.send(
         new DeleteParameterCommand({

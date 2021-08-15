@@ -16,7 +16,8 @@
     "deploy": "bash ../../scripts/deploy.sh stay api consumer"
   },
   "dependencies": {
-    "@4irbnb/common": "file:../common"
+    "@4irbnb/common": "file:../common",
+    "@4irbnb/database": "file:../database"
   },
   "devDependencies": {},
   "engines": {

@@ -3,7 +3,7 @@ import { IStorageClient } from "..";
 import { S3Client } from "./s3";
 import {
   IStorageServiceConstructorProps,
-  IStorageServiceCreateProps,
+  IStorageServiceInitializeProps,
   IStorageServiceRemoveProps,
   IStorageServiceRetrieveProps,
   IStorageServiceStoreProps,
@@ -16,9 +16,12 @@ export class StorageService implements IStorageService {
     this.#client = client;
   }
 
-  public static create({ region, storageName }: IStorageServiceCreateProps) {
+  public static initialize({
+    region,
+    storageName,
+  }: IStorageServiceInitializeProps) {
     return new StorageService({
-      client: S3Client.create({ region, storageName }),
+      client: S3Client.initialize({ region, storageName }),
     });
   }
 

@@ -1,26 +1,37 @@
+import { PACKAGE_NAME } from "..";
+import { ILoggerUtils, LoggerUtils } from "../../../common/dist";
 import { SSMClient } from "../infra/ssm";
 import {
   IConfigClient,
-  IConfigUtilsConstructorParams,
-  IConfigUtilsDeleteParams,
-  IConfigUtilsGetParams,
-  IConfigUtilsSetParams,
+  IManagerServiceConstructorProps,
+  IManagerServiceDeleteParams,
+  IManagerServiceGetParams,
+  IManagerServiceInitializeProps,
+  IManagerServiceSetParams,
 } from "./types";
 
-export class ConfigUtils {
+export class ManagerService {
   #client: IConfigClient;
+  #logger: ILoggerUtils;
 
   /**
    * @public
    * @param param0
    */
-  private constructor({ client }: IConfigUtilsConstructorParams) {
+  private constructor({ client }: IManagerServiceConstructorProps) {
     this.#client = client;
+    this.#logger = LoggerUtils.initialize({
+      packageName: PACKAGE_NAME,
+      className: this.constructor.name,
+    });
   }
 
-  public static create() {
-    return new ConfigUtils({
-      client: SSMClient.create({ region: "us-east-1" }),
+  public static initialize({
+    groupName,
+    region,
+  }: IManagerServiceInitializeProps) {
+    return new ManagerService({
+      client: SSMClient.initialize({ region, groupName }),
     });
   }
 
@@ -29,8 +40,8 @@ export class ConfigUtils {
    * @param param0
    * @returns
    */
-  async get({ packageName, key }: IConfigUtilsGetParams) {
-    return await this.#client.get({ packageName, key });
+  async get({ key }: IManagerServiceGetParams) {
+    return await this.#client.get({ key });
   }
 
   /**
@@ -38,8 +49,12 @@ export class ConfigUtils {
    * @param param0
    * @returns
    */
-  async set({ packageName, key, value }: IConfigUtilsSetParams) {
-    await this.#client.set({ packageName, key, value });
+  async set({ key, value }: IManagerServiceSetParams) {
+    try {
+      await this.#client.set({ key, value });
+    } catch (error: any) {
+      this.#logger.error({ location: "set:set", message: error });
+    }
   }
 
   /**
@@ -47,7 +62,11 @@ export class ConfigUtils {
    * @param param0
    * @returns
    */
-  async delete({ packageName, key }: IConfigUtilsDeleteParams) {
-    await this.#client.delete({ packageName, key });
+  async delete({ key }: IManagerServiceDeleteParams) {
+    try {
+      await this.#client.delete({ key });
+    } catch (error: any) {
+      this.#logger.error({ location: "delete:delete", message: error });
+    }
   }
 }

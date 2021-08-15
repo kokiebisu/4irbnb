@@ -13,6 +13,10 @@ export class WinstonClient implements ILoggerClient {
     });
   }
 
+  public static initialize() {
+    return new WinstonClient();
+  }
+
   /**
    * @public
    * Logs

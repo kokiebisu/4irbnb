@@ -1,20 +1,20 @@
 import { SlackClient } from "../infra/slack";
 import {
   IAlertClient,
-  IAlertClientConstructorParams,
   IAlertService,
+  IAlertServiceConstructorParams,
   IAlertServiceSendFileParams,
   IAlertServiceSendMessageParams,
 } from "./types";
 
 export class AlertService implements IAlertService {
   #client: IAlertClient;
-  private constructor({ client }: IAlertClientConstructorParams) {
+  private constructor({ client }: IAlertServiceConstructorParams) {
     this.#client = client;
   }
 
-  public static async create() {
-    return new AlertService({ client: await SlackClient.create() });
+  public static async initialize() {
+    return new AlertService({ client: await SlackClient.initialize() });
   }
 
   async sendMessage({ to, from, message }: IAlertServiceSendMessageParams) {

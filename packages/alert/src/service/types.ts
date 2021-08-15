@@ -18,7 +18,10 @@ export interface IFile {
 /**
  * @public
  */
-export interface IAlertService extends IAlertClient {}
+export interface IAlertService {
+  sendMessage(params: IAlertServiceSendMessageParams): Promise<void>;
+  sendFile(params: IAlertServiceSendFileParams): Promise<void>;
+}
 
 export interface IAlertServiceConstructorParams {
   client: IAlertClient;
@@ -28,8 +31,8 @@ export interface IAlertServiceConstructorParams {
  * @public
  */
 export interface IAlertClient {
-  sendMessage(params: IAlertServiceSendMessageParams): Promise<void>;
-  sendFile(params: IAlertServiceSendFileParams): Promise<void>;
+  sendMessage(params: IAlertClientSendMessageParams): Promise<void>;
+  sendFile(params: IAlertClientSendFileParams): Promise<void>;
 }
 
 /**
@@ -50,8 +53,6 @@ export interface IAlertServiceSendFileParams {
   comment: string;
 }
 
-export interface IAlertClient {}
-
 export interface IAlertClientConstructorParams {
   client: IAlertClient;
 }
@@ -59,7 +60,7 @@ export interface IAlertClientConstructorParams {
 export interface IAlertClientSendMessageParams {
   to: string;
   from: string;
-  message: string;
+  message: IMessage;
 }
 
 export interface IAlertClientSendFileParams {

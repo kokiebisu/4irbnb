@@ -1,4 +1,5 @@
-import { createLoggerService, PackageEnum } from "@4irbnb/common";
+import { LoggerUtils } from "@4irbnb/common";
+import { PACKAGE_NAME } from ".";
 import { createAuthController } from "./controllers/factory";
 
 /**
@@ -9,9 +10,9 @@ import { createAuthController } from "./controllers/factory";
  */
 export const handler = async (event: any) => {
   const controller = createAuthController();
-  const logger = createLoggerService({
-    packageName: PackageEnum.auth,
-    className: "registerVerify",
+  const logger = LoggerUtils.create({
+    packageName: PACKAGE_NAME,
+    className: "handler",
   });
   logger.log({ location: "handler", message: "Entered handler..." });
   console.log("EVENT", event);

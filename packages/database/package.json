@@ -14,15 +14,17 @@
     "extract": "api-extractor run --local"
   },
   "dependencies": {
+    "@4irbnb/common": "file:../common",
     "@aws-sdk/client-dynamodb": "^3.24.0",
     "@aws-sdk/client-elasticache": "^3.25.0",
     "@aws-sdk/client-rds-data": "^3.25.0",
     "@aws-sdk/client-ssm": "^3.24.0",
     "@aws-sdk/lib-dynamodb": "^3.24.0",
-    "@aws-sdk/util-dynamodb": "^3.24.0",
-    "@4irbnb/common": "file:../common"
+    "@aws-sdk/util-dynamodb": "^3.24.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/uuid": "^8.3.1"
+  },
   "workspaces": {
     "nohoist": [
       "**/**"

@@ -16,6 +16,8 @@ export class ElastiCacheClient implements ICacheClient {
       packageName: PACKAGE_NAME,
       className: this.constructor.name,
     });
+    console.log(this.#logger);
+    console.log(this.#package);
   }
 
   public static create({ region }: ICacheClientCreateProps) {

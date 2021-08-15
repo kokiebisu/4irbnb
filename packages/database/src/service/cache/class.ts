@@ -10,6 +10,7 @@ export class CacheService implements ICacheService {
   #client: ICacheClient;
   private constructor({ client }: ICacheServiceConstructorParams) {
     this.#client = client;
+    console.log(this.#client);
   }
 
   public static create({ region }: ICacheServiceCreateProps) {

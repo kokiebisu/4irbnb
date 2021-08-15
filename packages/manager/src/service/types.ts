@@ -1,23 +1,21 @@
-import { PackageEnum, TRegion } from "../..";
-
 // Service
-export interface IConfigUtils {
-  get(params: IConfigUtilsGetParams): Promise<string | undefined>;
-  set(params: IConfigUtilsSetParams): Promise<void>;
-  delete(params: IConfigUtilsDeleteParams): Promise<void>;
+export interface IManagerService {
+  get(params: IManagerServiceGetParams): Promise<string | undefined>;
+  set(params: IManagerServiceSetParams): Promise<void>;
+  delete(params: IManagerServiceDeleteParams): Promise<void>;
 }
 
 // Constructor
-export interface IConfigUtilsConstructorParams {
+export interface IManagerServiceConstructorProps {
   client: IConfigClient;
 }
 
 // Params
-export interface IConfigUtilsGetParams extends IConfigClientGetProps {}
+export interface IManagerServiceGetParams extends IConfigClientGetProps {}
 
-export interface IConfigUtilsSetParams extends IConfigClientSetProps {}
+export interface IManagerServiceSetParams extends IConfigClientSetProps {}
 
-export interface IConfigUtilsDeleteParams extends IConfigClientDeleteProps {}
+export interface IManagerServiceDeleteParams extends IConfigClientDeleteProps {}
 
 /**
  * @public
@@ -32,14 +30,19 @@ export interface IConfigClient {
  * @public
  */
 export interface ISSMClientConstructorProps {
-  region: "us-east-1";
+  region: string;
+  groupName: string;
+}
+
+export interface IManagerServiceInitializeProps {
+  groupName: string;
+  region: string;
 }
 
 /**
  * @public
  */
 export interface IConfigClientGetProps {
-  packageName: PackageEnum;
   key: string;
 }
 
@@ -47,7 +50,6 @@ export interface IConfigClientGetProps {
  * @public
  */
 export interface IConfigClientSetProps {
-  packageName: PackageEnum;
   key: string;
   value: string;
 }
@@ -56,10 +58,10 @@ export interface IConfigClientSetProps {
  * @public
  */
 export interface IConfigClientDeleteProps {
-  packageName: PackageEnum;
   key: string;
 }
 
 export interface IConfigClientCreateProps {
-  region: TRegion;
+  region: string;
+  groupName: string;
 }

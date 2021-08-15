@@ -2,9 +2,9 @@ import {
   ILoggerClient,
   ILoggerUtils,
   IServiceConstructorProps,
-  IServiceCreateProps,
   IServiceErrorProps,
   IServiceLogProps,
+  IServiceInitializeProps,
 } from "./types";
 import { WinstonClient } from "./winston";
 
@@ -21,7 +21,10 @@ export class LoggerUtils implements ILoggerUtils {
     this.serviceLocation = `${packageName}:${className}`;
   }
 
-  public static create({ packageName, className }: IServiceCreateProps) {
+  public static initialize({
+    packageName,
+    className,
+  }: IServiceInitializeProps) {
     return new LoggerUtils({ packageName, className });
   }
 

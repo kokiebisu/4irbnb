@@ -1,34 +1,32 @@
 import { WebClient } from "@slack/web-api";
-import {
-  ConfigUtils,
-  LoggerUtils,
-  ILoggerUtils,
-  InternalError,
-  PackageEnum,
-} from "@4irbnb/common";
+import { LoggerUtils, ILoggerUtils, InternalError } from "@4irbnb/common";
+import { ManagerService } from "@4irbnb/manager";
 import {
   IAlertClient,
   IAlertClientSendFileParams,
   IAlertClientSendMessageParams,
   ISlackClientConstructorProps,
-} from "./types";
+} from "../../service";
+import { PACKAGE_NAME } from "../..";
 
 export class SlackClient implements IAlertClient {
   #package?: WebClient;
   #logger: ILoggerUtils;
 
   private constructor({ token }: ISlackClientConstructorProps) {
-    this.#logger = LoggerUtils.create({
-      packageName: PackageEnum.common,
-      className: "SlackClient",
+    this.#logger = LoggerUtils.initialize({
+      packageName: PACKAGE_NAME,
+      className: this.constructor.name,
     });
     this.#package = new WebClient(token);
   }
 
-  public static async create() {
-    const config = ConfigUtils.create();
+  public static async initialize() {
+    const config = ManagerService.initialize({
+      groupName: "Slack",
+      region: "us-east-1",
+    });
     const token = await config.get({
-      packageName: PackageEnum.common,
       key: "utils/alert",
     });
     if (!token) {

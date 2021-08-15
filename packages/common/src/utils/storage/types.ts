@@ -17,7 +17,7 @@ export interface IStorageServiceConstructorProps {
 /**
  * @public
  */
-export interface IStorageServiceCreateProps {
+export interface IStorageServiceInitializeProps {
   region: TRegion;
   storageName: string;
 }
@@ -62,7 +62,7 @@ export interface IStorageClientConstructorProps {
 /**
  * @public
  */
-export interface IStorageClientCreateProps {
+export interface IStorageClientInitializeProps {
   region: TRegion;
   storageName: string;
 }

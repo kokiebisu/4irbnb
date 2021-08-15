@@ -6,9 +6,8 @@ import {
   DeleteObjectCommand,
   GetBucketLocationCommand,
 } from "@aws-sdk/client-s3";
-import { PackageEnum } from "../../../enum";
 import {
-  IStorageClientCreateProps,
+  IStorageClientInitializeProps,
   IStorageClientRemoveProps,
   IStorageClientRetrieveProps,
   IStorageClientStoreProps,
@@ -17,7 +16,7 @@ import {
   IStorageClientConstructorProps,
   LoggerUtils,
 } from "../..";
-import { InternalError } from "../../..";
+import { InternalError, PACKAGE_NAME } from "../../..";
 
 export class S3Client implements IStorageClient {
   #client: Client;
@@ -25,15 +24,18 @@ export class S3Client implements IStorageClient {
   #storageName: string;
 
   private constructor({ region, storageName }: IStorageClientConstructorProps) {
-    this.#logger = LoggerUtils.create({
-      packageName: PackageEnum.common,
-      className: "S3Client",
+    this.#logger = LoggerUtils.initialize({
+      packageName: PACKAGE_NAME,
+      className: this.constructor.name,
     });
     this.#client = new Client({ region });
     this.#storageName = storageName;
   }
 
-  public static create({ region, storageName }: IStorageClientCreateProps) {
+  public static initialize({
+    region,
+    storageName,
+  }: IStorageClientInitializeProps) {
     return new S3Client({ region, storageName });
   }
 

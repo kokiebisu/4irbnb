@@ -11,7 +11,7 @@ export interface ILoggerUtils {
 
 export interface IServiceConstructorProps extends IWithLocationProps {}
 
-export interface IServiceCreateProps extends IWithLocationProps {}
+export interface IServiceInitializeProps extends IWithLocationProps {}
 
 export interface IServiceErrorProps extends IWithMessageProps {}
 

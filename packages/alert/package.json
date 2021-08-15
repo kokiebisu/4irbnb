@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "@slack/web-api": "^6.3.0",
-    "@4irbnb/common": "file:../common"
+    "@4irbnb/common": "file:../common",
+    "@4irbnb/manager": "file:../manager"
   },
   "devDependencies": {},
   "workspaces": {

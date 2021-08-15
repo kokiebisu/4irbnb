@@ -1,5 +1,5 @@
 import { IStay } from "../domain";
-import { IDatabaseService, IWithIdentifierParams } from "@4irbnb/common";
+import { INoSqlDatabaseService } from "@4irbnb/database";
 
 export interface IStayService {
   get(params: IStayServiceGet): Promise<IStay | null>;
@@ -9,7 +9,7 @@ export interface IStayService {
 }
 
 export interface IStayServiceConstructorParams {
-  db: IDatabaseService;
+  db: INoSqlDatabaseService;
   idValidator({ identifier }: IWithIdentifierParams): boolean;
 }
 
@@ -23,4 +23,8 @@ export interface IStayServiceDelete extends IWithIdentifierParams {}
 
 export interface IStayServicePatch extends IWithIdentifierParams {
   data: IStay;
+}
+
+export interface IWithIdentifierParams {
+  identifier: string;
 }
