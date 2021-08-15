@@ -9,6 +9,7 @@ export const handler = async (event: any) => {
     className: "",
   });
   logger.log({ location: "handler", message: "Entered handler..." });
+  console.log("EVENT", event);
   try {
     switch (event.requestContext.resourceId) {
       case "GET /s/homes":
