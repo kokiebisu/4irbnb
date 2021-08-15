@@ -9,4 +9,5 @@
  *
  * @packageDocumentation
  */
-export * from "./factory";
+export * from "./class";
+export * from "./types";

@@ -1,3 +1,4 @@
+import { SlackClient } from "./slack";
 import {
   IAlertClient,
   IAlertService,
@@ -8,8 +9,12 @@ import {
 
 export class AlertService implements IAlertService {
   #client: IAlertClient;
-  constructor({ client }: IAlertServiceConstructorParams) {
+  private constructor({ client }: IAlertServiceConstructorParams) {
     this.#client = client;
+  }
+
+  public static async create() {
+    return new AlertService({ client: await SlackClient.create() });
   }
 
   async sendMessage({ to, from, message }: IAlertServiceSendMessageParams) {

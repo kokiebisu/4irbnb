@@ -10,3 +10,7 @@ export interface IAlertClientSendMessageParams
 
 export interface IAlertClientSendFileParams
   extends IAlertServiceSendFileParams {}
+
+export interface ISlackClientConstructorProps {
+  token: string;
+}

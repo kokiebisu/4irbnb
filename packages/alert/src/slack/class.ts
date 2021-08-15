@@ -1,55 +1,44 @@
 import { WebClient } from "@slack/web-api";
-import { PackageEnum } from "../../../common/src/enum";
-import { InternalError } from "../../../common/src/error";
-import { createConfigService } from "../../../common/src/utils/config";
 import {
-  createLoggerService,
-  ILoggerService,
-} from "../../../common/src/utils/logger";
+  ConfigUtils,
+  LoggerUtils,
+  ILoggerUtils,
+  InternalError,
+  PackageEnum,
+} from "@4irbnb/common";
 import {
   IAlertClient,
   IAlertClientSendFileParams,
   IAlertClientSendMessageParams,
+  ISlackClientConstructorProps,
 } from "./types";
 
 export class SlackClient implements IAlertClient {
   #package?: WebClient;
-  #logger: ILoggerService;
+  #logger: ILoggerUtils;
 
-  constructor() {
-    this.#logger = createLoggerService({
+  private constructor({ token }: ISlackClientConstructorProps) {
+    this.#logger = LoggerUtils.create({
       packageName: PackageEnum.common,
       className: "SlackClient",
     });
+    this.#package = new WebClient(token);
   }
 
-  async #configureClient() {
-    if (!this.#package) {
-      const service = createConfigService();
-      try {
-        const token = await service.get({
-          packageName: PackageEnum.common,
-          key: "utils/alert",
-        });
-        if (!token) {
-          throw new InternalError({
-            location: "configureClient:{!token}",
-            message: "Unable to retrieve token",
-          });
-        }
-        this.#package = new WebClient(token);
-      } catch (error: any) {
-        if (error instanceof InternalError) {
-          const { location, message } = error;
-          this.#logger.error({ location, message });
-        } else {
-          this.#logger.error({
-            location: "configureClient:get",
-            message: error,
-          });
-        }
-      }
+  public static async create() {
+    const config = ConfigUtils.create();
+    const token = await config.get({
+      packageName: PackageEnum.common,
+      key: "utils/alert",
+    });
+    if (!token) {
+      throw new InternalError({
+        location: "configureClient:{!token}",
+        message: "Unable to retrieve token",
+      });
     }
+
+    return new SlackClient({ token });
   }
 
   /**
@@ -63,8 +52,6 @@ export class SlackClient implements IAlertClient {
     from,
     message,
   }: IAlertClientSendMessageParams): Promise<void> {
-    await this.#configureClient();
-
     try {
       if (!this.#package) {
         throw new InternalError({
@@ -114,7 +101,6 @@ export class SlackClient implements IAlertClient {
     file,
     comment,
   }: IAlertClientSendFileParams): Promise<void> {
-    await this.#configureClient();
     try {
       if (!this.#package) {
         throw new InternalError({

@@ -1,0 +1,29 @@
+{
+  "name": "@4irbnb/alert",
+  "version": "1.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "update": "rimraf node_modules && yarn",
+    "clean": "rimraf dist *.tsbuildinfo",
+    "build": "tsc -b .",
+    "test": "jest --passWithNoTests --detectOpenHandles --runInBand",
+    "lint": "eslint src --ext js,ts,tsx",
+    "extract": "api-extractor run --local"
+  },
+  "dependencies": {
+    "@slack/web-api": "^6.3.0",
+    "@4irbnb/common": "file:../common"
+  },
+  "devDependencies": {},
+  "workspaces": {
+    "nohoist": [
+      "**/**"
+    ]
+  },
+  "engines": {
+    "node": ">= 14"
+  }
+}
