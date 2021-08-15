@@ -11,4 +11,5 @@
  */
 export * from "./repository";
 export * from "./config";
-export * from "./nosql";
+export * from "./service";
+export * from "./infra";
