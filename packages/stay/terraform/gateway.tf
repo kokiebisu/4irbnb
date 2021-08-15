@@ -9,18 +9,18 @@ resource "aws_apigatewayv2_integration" "this" {
 
 resource "aws_apigatewayv2_route" "get_stays" {
   api_id    = var.api_gateway_id
-  route_key = "GET /stays"
+  route_key = "GET /s/homes"
   target = "integrations/${aws_apigatewayv2_integration.this.id}"
 }
 
-resource "aws_apigatewayv2_route" "get_stay" {
-  api_id    = var.api_gateway_id
-  route_key = "GET /stay/{id}"
-  target = "integrations/${aws_apigatewayv2_integration.this.id}"
-}
+# resource "aws_apigatewayv2_route" "get_stay" {
+#   api_id    = var.api_gateway_id
+#   route_key = "GET /stay/{id}"
+#   target = "integrations/${aws_apigatewayv2_integration.this.id}"
+# }
 
-resource "aws_apigatewayv2_route" "delete_stay" {
-  api_id    = var.api_gateway_id
-  route_key = "DELETE /stay/{id}"
-  target = "integrations/${aws_apigatewayv2_integration.this.id}"
-}
+# resource "aws_apigatewayv2_route" "delete_stay" {
+#   api_id    = var.api_gateway_id
+#   route_key = "DELETE /stay/{id}"
+#   target = "integrations/${aws_apigatewayv2_integration.this.id}"
+# }
