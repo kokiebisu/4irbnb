@@ -14,3 +14,4 @@ export * from "./types";
 export * from "./utils";
 export * from "./error";
 export * from "./core";
+export * from "./config";

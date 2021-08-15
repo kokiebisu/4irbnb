@@ -1,18 +1,33 @@
-import { DatabaseService } from "../class";
+import { DynamoDBClient } from "./dynamodb";
 import {
   INoSqlDatabaseClient,
   INoSqlDatabaseService,
   INoSqlDatabaseServiceConstructorParams,
+  INoSqlDatabaseServiceCreateProps,
+  INoSqlDatabaseServiceDeleteProps,
   INoSqlDatabaseServiceFindByIdParams,
   INoSqlDatabaseServiceFindByKeyParams,
   INoSqlDatabaseServiceFindByRangeParams,
+  INoSqlDatabaseServiceUpdateProps,
 } from "./types";
+import { IRegion, LoggerUtils, ILoggerUtils } from "@4irbnb/common";
+import { PACKAGE_NAME } from "..";
 
 export class NoSqlDatabaseService implements INoSqlDatabaseService {
+  #logger: ILoggerUtils;
   #client: INoSqlDatabaseClient;
   constructor({ client }: INoSqlDatabaseServiceConstructorParams) {
-    super({ client, databaseType: "Relational" });
     this.#client = client;
+    this.#logger = LoggerUtils.create({
+      packageName: PACKAGE_NAME,
+      className: this.constructor.name,
+    });
+  }
+
+  public static async create({ region }: IRegion) {
+    return new NoSqlDatabaseService({
+      client: await DynamoDBClient.create({ region }),
+    });
   }
 
   /**
@@ -43,5 +58,63 @@ export class NoSqlDatabaseService implements INoSqlDatabaseService {
     return this.#client.get({ tableName, attributes });
   }
 
-  async findById() {}
+  /**
+   * @public
+   * @param param0
+   */
+  async findById({ tableName, id }: INoSqlDatabaseServiceUpdateProps) {
+    try {
+      await this.#client.get({ tableName, id });
+    } catch (error) {
+      this.#logger.error({
+        location: "findById:find",
+        message: error as string,
+      });
+    }
+  }
+
+  /**
+   * @public
+   * @param param0
+   */
+  async create({ tableName, data }: INoSqlDatabaseServiceCreateProps) {
+    try {
+      await this.#client.put({ tableName, data });
+    } catch (error) {
+      this.#logger.error({
+        location: "insert:insert",
+        message: error as string,
+      });
+    }
+  }
+
+  /**
+   * @public
+   * @param param0
+   */
+  async delete({ tableName, id }: INoSqlDatabaseServiceDeleteProps) {
+    try {
+      await this.#client.delete({ tableName, id });
+    } catch (error) {
+      this.#logger.error({
+        location: "delete:delete",
+        message: error as string,
+      });
+    }
+  }
+
+  /**
+   * @public
+   * @param param0
+   */
+  async update({ tableName, id, data }: INoSqlDatabaseServiceUpdateProps) {
+    try {
+      await this.#client.update({ tableName, id, data });
+    } catch (error) {
+      this.#logger.error({
+        location: "update:update",
+        message: error as string,
+      });
+    }
+  }
 }

@@ -120,3 +120,19 @@ export interface INoSqlDatabaseClientPutParams {
   tableName: string;
   data: any;
 }
+
+export interface INoSqlDatabaseServiceUpdateProps {
+  tableName: string;
+  id: any;
+  data: any;
+}
+
+export interface INoSqlDatabaseServiceCreateProps {
+  tableName: string;
+  data: any;
+}
+
+export interface INoSqlDatabaseServiceDeleteProps {
+  tableName: string;
+  id: any;
+}

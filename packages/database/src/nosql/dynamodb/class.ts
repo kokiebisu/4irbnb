@@ -6,9 +6,7 @@ import {
   UpdateCommand,
   PutCommand,
 } from "@aws-sdk/lib-dynamodb";
-import { PackageEnum } from "../../../enum";
-import { IRegion, TRegion } from "../../../types";
-import { createLoggerService, ILoggerService } from "../../../utils";
+
 import { translateConfig } from "./config";
 
 import { v4 as uuid } from "uuid";
@@ -20,6 +18,8 @@ import {
   INoSqlDatabaseClientQueryParams,
   INoSqlDatabaseClientUpdateParams,
 } from "../types";
+import { PACKAGE_NAME } from "../..";
+import { LoggerUtils, ILoggerUtils, IRegion } from "@4irbnb/common";
 
 /**
  * @public
@@ -27,30 +27,25 @@ import {
  * - Transactions
  */
 export class DynamoDBClient implements INoSqlDatabaseClient {
-  #region: TRegion;
   #package?: DynamoDBDocumentClient;
-  #logger: ILoggerService;
+  #logger: ILoggerUtils;
 
-  constructor({ region }: IRegion) {
-    this.#region = region;
-    this.#logger = createLoggerService({
-      packageName: PackageEnum.common,
+  private constructor({ region }: IRegion) {
+    this.#package = DynamoDBDocumentClient.from(
+      new Client({
+        region,
+      }),
+      translateConfig
+    );
+
+    this.#logger = LoggerUtils.create({
+      packageName: PACKAGE_NAME,
       className: "DynamoDBClient",
     });
   }
 
-  /**
-   * @public
-   */
-  #configureClient() {
-    if (!this.#package) {
-      this.#package = DynamoDBDocumentClient.from(
-        new Client({
-          region: this.#region,
-        }),
-        translateConfig
-      );
-    }
+  public static async create({ region }: IRegion) {
+    return new DynamoDBClient({ region });
   }
 
   /**
@@ -59,7 +54,6 @@ export class DynamoDBClient implements INoSqlDatabaseClient {
    * @returns
    */
   async get({ tableName, id }: INoSqlDatabaseClientGetParams) {
-    this.#configureClient();
     try {
       const data = await this.#package?.send(
         new GetCommand({
@@ -104,7 +98,6 @@ export class DynamoDBClient implements INoSqlDatabaseClient {
     attributes,
     range,
   }: INoSqlDatabaseClientQueryParams) {
-    this.#configureClient();
     const expressions = Object.keys(attributes).map(
       (property) => `${property} = ${attributes[property]}`
     );
@@ -138,7 +131,6 @@ export class DynamoDBClient implements INoSqlDatabaseClient {
    * @param param0
    */
   async put({ tableName, data }: INoSqlDatabaseClientPutParams) {
-    this.#configureClient();
     const params = {
       TableName: tableName,
       Item: {
@@ -163,7 +155,6 @@ export class DynamoDBClient implements INoSqlDatabaseClient {
    * @param param0
    */
   async delete({ tableName, id }: INoSqlDatabaseClientDeleteParams) {
-    this.#configureClient();
     try {
       await this.#package?.send(
         new DeleteCommand({
@@ -186,7 +177,6 @@ export class DynamoDBClient implements INoSqlDatabaseClient {
    * @param param0
    */
   async update({ tableName, id, data }: INoSqlDatabaseClientUpdateParams) {
-    this.#configureClient();
     const expression = Object.keys(data).map(
       (attribute) => `${attribute} = ${data[attribute]}`
     );
