@@ -1,5 +1,6 @@
-import { IConfigClient } from "./ssm";
+import { SSMClient } from "./ssm";
 import {
+  IConfigClient,
   IConfigServiceConstructorParams,
   IConfigServiceDeleteParams,
   IConfigServiceGetParams,
@@ -13,8 +14,14 @@ export class ConfigService {
    * @public
    * @param param0
    */
-  constructor({ client }: IConfigServiceConstructorParams) {
+  private constructor({ client }: IConfigServiceConstructorParams) {
     this.#client = client;
+  }
+
+  public static create() {
+    return new ConfigService({
+      client: SSMClient.create({ region: "us-east-1" }),
+    });
   }
 
   /**

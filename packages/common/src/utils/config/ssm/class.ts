@@ -7,12 +7,13 @@ import {
 import { PackageEnum } from "../../../enum";
 import {
   IConfigClient,
-  IConfigClientDeleteParams,
-  IConfigClientGetParams,
-  IConfigClientSetParams,
-  ISSMClientConstructorParams,
-} from "./types";
+  IConfigClientDeleteProps,
+  IConfigClientGetProps,
+  IConfigClientSetProps,
+  ISSMClientConstructorProps,
+} from "../types";
 import { LoggerService } from "../../logger/class";
+import { IConfigClientCreateProps } from "..";
 
 /**
  * @public
@@ -21,7 +22,7 @@ export class SSMClient implements IConfigClient {
   #client;
   #logger;
 
-  constructor({ region }: ISSMClientConstructorParams) {
+  private constructor({ region }: ISSMClientConstructorProps) {
     this.#client = new SSM({ region });
     this.#logger = LoggerService.create({
       packageName: PackageEnum.common,
@@ -29,10 +30,14 @@ export class SSMClient implements IConfigClient {
     });
   }
 
+  public static create({ region }: IConfigClientCreateProps) {
+    return new SSMClient({ region });
+  }
+
   /**
    * @public
    */
-  async get({ packageName, key }: IConfigClientGetParams) {
+  async get({ packageName, key }: IConfigClientGetProps) {
     const name = packageName.replace("@", "");
     try {
       return (
@@ -54,7 +59,7 @@ export class SSMClient implements IConfigClient {
   /**
    * @public
    */
-  async set({ packageName, key, value }: IConfigClientSetParams) {
+  async set({ packageName, key, value }: IConfigClientSetProps) {
     const name = packageName.replace("@", "");
     try {
       await this.#client.send(
@@ -77,7 +82,7 @@ export class SSMClient implements IConfigClient {
   /**
    * @public
    */
-  async delete({ packageName, key }: IConfigClientDeleteParams) {
+  async delete({ packageName, key }: IConfigClientDeleteProps) {
     const name = packageName.replace("@", "");
     try {
       await this.#client.send(
