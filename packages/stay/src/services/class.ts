@@ -1,213 +1,72 @@
-import { createStay, isStay, IStay } from "../models";
-import {
-  IStayServiceDelete,
-  IStayServiceGet,
-  IStayServicePost,
-  IStayService,
-  IStayServiceConstructorParams,
-  IStayServicePatch,
-} from "./types";
-import {
-  IDatabaseService,
-  createLoggerService,
-  ILoggerService,
-  PackageEnum,
-  InternalError,
-} from "@4irbnb/common";
+import { IStayService, IStayServiceConstructorParams } from "./types";
+import { ILoggerUtils, LoggerUtils } from "@4irbnb/common";
+import { IStayRepo } from "../repos/types";
+import { PACKAGE_NAME } from "../configs";
+import { StayRepo } from "../repos/class";
+import { stayA, stayB } from "../mocks";
 
 export class StayService implements IStayService {
-  #serviceName = "StayService";
-  #db: IDatabaseService;
+  #repo: IStayRepo;
   #idValidator: any;
-  #tableName: string;
-  #logger: ILoggerService;
-  constructor({ db, idValidator }: IStayServiceConstructorParams) {
-    this.#db = db;
+  #logger: ILoggerUtils = LoggerUtils.initialize({
+    packageName: PACKAGE_NAME,
+    className: this.constructor.name,
+  });
+
+  private constructor({ repo, idValidator }: IStayServiceConstructorParams) {
+    this.#repo = repo;
     this.#idValidator = idValidator;
-    this.#tableName = this.#serviceName;
-    this.#logger = createLoggerService({
-      packageName: PackageEnum.stay,
-      className: this.#serviceName,
+    this.#logger.log({
+      location: "constructor",
+      message: "Successfully initialized...",
+    });
+    console.log(this.#repo);
+    console.log(this.#idValidator);
+  }
+
+  /**
+   * @public
+   *
+   * @returns
+   */
+  public static async initialize() {
+    return new StayService({
+      repo: await StayRepo.initialize(),
+      idValidator: () => true,
     });
   }
 
   /**
-   * Retrieves the stay based on the provided id
-   * @param param0
-   * @returns
+   * @public
    */
-  async get({ identifier }: IStayServiceGet): Promise<IStay | null> {
-    try {
-      if (!this.#idValidator({ identifier })) {
-        throw new InternalError({
-          location: "get:idValidator",
-          message: "Must be a valid id",
-        });
-      }
-      const stay = await this.#db.findOne({
-        tableName: this.#tableName,
-        identifier,
-      });
+  public async getStaysWithinGivenCoordinate() {}
 
-      if (!stay) {
-        return null;
-      }
+  /**
+   * @public
+   */
+  public async getStaysByCity() {}
 
-      if (!isStay(stay)) {
-        throw new InternalError({
-          location: "get:isStay",
-          message: "Not a valid stay was retrieved",
-        });
-      }
-      return { ...stay, imgUrls: Array.from(stay.imgUrls) };
-    } catch (error) {
-      if (error instanceof InternalError) {
-        const { location, message } = error;
-        this.#logger.error({
-          location,
-          message,
-        });
-      } else {
-        this.#logger.error({
-          location: "get:findOne",
-          message: error as string,
-        });
-      }
-      return null;
-    }
+  /**
+   * @public
+   */
+  public async getStaysByCountry() {
+    return [stayA, stayB];
   }
 
   /**
-   * Inserts the provided data
-   * @param param0
-   * @returns
+   * @public
    */
-  async post({ data }: IStayServicePost) {
-    try {
-      const stay = createStay(data);
-      const exists = await this.#db.findOne({
-        tableName: this.#tableName,
-        identifier: {
-          id: data.id,
-        },
-      });
-      if (exists) {
-        return exists;
-      }
-      await this.#db.insert({
-        tableName: this.#tableName,
-        data: {
-          id: {
-            S: stay.id,
-          },
-          title: {
-            S: stay.title,
-          },
-          imgUrls: {
-            SS: stay.imgUrls,
-          },
-        },
-      });
-    } catch (error) {
-      this.#logger.error({
-        location: "post",
-        message: error as string,
-      });
-    }
+  public async getStaysByHostId() {}
+
+  /**
+   * @public
+   */
+  public async getStayDetail() {
+    return stayA;
   }
 
   /**
-   * Deletes data based on the provided identifies
-   * @param param0
-   * @returns
+   * @public
    */
-  async delete({ identifier }: IStayServiceDelete) {
-    try {
-      if (!this.#idValidator({ identifier })) {
-        throw new InternalError({
-          location: "delete:idValidator",
-          message: "Must be a valid id",
-        });
-      }
-
-      const stay = await this.#db.findOne({
-        identifier,
-        tableName: this.#tableName,
-      });
-
-      if (!stay) {
-        throw new InternalError({
-          location: "delete:!stay",
-          message: "Stay was empty",
-        });
-      }
-
-      if (!isStay(stay)) {
-        console.log(stay);
-        throw new InternalError({
-          location: "delete:isStay",
-          message: "Stay retrieved was invalid",
-        });
-      }
-
-      return this.#db.delete({ tableName: this.#tableName, identifier });
-    } catch (error) {
-      if (error instanceof InternalError) {
-        const { location, message } = error;
-        this.#logger.error({
-          location,
-          message,
-        });
-      } else {
-        this.#logger.error({
-          location: "delete",
-          message: error as string,
-        });
-      }
-    }
-  }
-
-  async patch({ identifier, data }: IStayServicePatch) {
-    try {
-      if (!this.#idValidator({ identifier })) {
-        throw new InternalError({
-          location: "patch:{idValidator}",
-          message: "Must be a valid id",
-        });
-      }
-      const stay = await this.#db.findOne({
-        identifier,
-        tableName: this.#tableName,
-      });
-
-      const newStay = createStay({
-        ...stay,
-        ...data,
-      });
-      if (!stay) {
-        throw new InternalError({
-          location: "patch:{stay}",
-          message: "Not found",
-        });
-      }
-      return await this.#db.update({
-        tableName: this.#tableName,
-        identifier,
-        data: newStay,
-      });
-    } catch (error) {
-      if (error instanceof InternalError) {
-        const { location, message } = error;
-        this.#logger.error({
-          location,
-          message,
-        });
-      } else {
-        this.#logger.error({
-          location: "patch:update",
-          message: error as string,
-        });
-      }
-    }
-  }
+  public async book() {}
 }

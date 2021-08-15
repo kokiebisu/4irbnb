@@ -1,0 +1,36 @@
+{
+  "name": "@4irbnb/database",
+  "version": "1.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "update": "rimraf node_modules && yarn",
+    "clean": "rimraf dist *.tsbuildinfo",
+    "build": "tsc -b .",
+    "test": "jest --passWithNoTests --detectOpenHandles --runInBand",
+    "lint": "eslint src --ext js,ts,tsx",
+    "extract": "api-extractor run --local"
+  },
+  "dependencies": {
+    "@4irbnb/common": "file:../common",
+    "@aws-sdk/client-dynamodb": "^3.24.0",
+    "@aws-sdk/client-elasticache": "^3.25.0",
+    "@aws-sdk/client-rds-data": "^3.25.0",
+    "@aws-sdk/client-ssm": "^3.24.0",
+    "@aws-sdk/lib-dynamodb": "^3.24.0",
+    "@aws-sdk/util-dynamodb": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/uuid": "^8.3.1"
+  },
+  "workspaces": {
+    "nohoist": [
+      "**/**"
+    ]
+  },
+  "engines": {
+    "node": ">= 14"
+  }
+}

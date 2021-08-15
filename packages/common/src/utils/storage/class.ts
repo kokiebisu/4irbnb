@@ -1,69 +1,53 @@
+import { IStorageService } from ".";
+import { IStorageClient } from "..";
+import { S3Client } from "./s3";
 import {
-  IStorageService,
-  IStorageServiceConstructorParams,
-  IStorageServiceCreateStorageParams,
-  IStorageServiceDeleteStorageParams,
-  IStorageServiceRemoveParams,
-  IStorageServiceRetrieveParams,
-  IStorageServiceRetrieveStorageParams,
-  IStorageServiceStoreParams,
+  IStorageServiceConstructorProps,
+  IStorageServiceInitializeProps,
+  IStorageServiceRemoveProps,
+  IStorageServiceRetrieveProps,
+  IStorageServiceStoreProps,
 } from "./types";
 
-export class StorageService {
-  #service: IStorageService;
+export class StorageService implements IStorageService {
+  #client: IStorageClient;
 
-  constructor({ service }: IStorageServiceConstructorParams) {
-    this.#service = service;
+  private constructor({ client }: IStorageServiceConstructorProps) {
+    this.#client = client;
   }
 
-  /**
-   * @public
-   * Creates storage
-   */
-  async createStorage({ storageName }: IStorageServiceCreateStorageParams) {
-    await this.#service.createStorage({ storageName });
-  }
-
-  /**
-   * @public
-   * Retrieve storage
-   * @param param0
-   */
-  async validateStorage({ storageName }: IStorageServiceRetrieveStorageParams) {
-    return await this.#service.validateStorage({ storageName });
-  }
-
-  /**
-   * @public
-   * Delets storage
-   */
-  async deleteStorage({ storageName }: IStorageServiceDeleteStorageParams) {
-    await this.#service.deleteStorage({ storageName });
+  public static initialize({
+    region,
+    storageName,
+  }: IStorageServiceInitializeProps) {
+    return new StorageService({
+      client: S3Client.initialize({ region, storageName }),
+    });
   }
 
   /**
    * @public
    * Stores the provided data to the storage
    */
-  async store({ storageName, data, key }: IStorageServiceStoreParams) {
-    await this.#service.store({ storageName, key, data });
+  public async store({ key, value }: IStorageServiceStoreProps) {
+    await this.#client.store({ key, value });
   }
 
   /**
    * @public
    * Retrieves the data from the provided storage name
-   * @param params
+   * @param Props
    */
-  async retrieve({ storageName, key }: IStorageServiceRetrieveParams) {
-    return this.#service.retrieve({ storageName, key });
+  public async retrieve({ key }: IStorageServiceRetrieveProps) {
+    return this.#client.retrieve({ key });
   }
 
   /**
    * @public
    * Removes the data from the provided storage
-   * @param params
+   * @param Props
    */
-  async remove({ storageName, key }: IStorageServiceRemoveParams) {
-    await this.#service.remove({ storageName, key });
+  public async remove({ key }: IStorageServiceRemoveProps) {
+    await this.#client.remove({ key });
   }
 }

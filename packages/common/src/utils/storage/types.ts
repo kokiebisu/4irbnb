@@ -1,55 +1,90 @@
+import { TRegion } from "../..";
+
 // SERVICE
 export interface IStorageService {
-  createStorage({
-    storageName,
-  }: IStorageServiceCreateStorageParams): Promise<void>;
-  validateStorage({
-    storageName,
-  }: IStorageServiceCreateStorageParams): Promise<boolean>;
-  deleteStorage({
-    storageName,
-  }: IStorageServiceDeleteStorageParams): Promise<void>;
-  store({ storageName, data }: IStorageServiceStoreParams): Promise<void>;
-  retrieve({ storageName }: IStorageServiceRetrieveParams): Promise<any>;
-  remove({ storageName, key }: IStorageServiceRemoveParams): Promise<void>;
+  store({ key, value }: IStorageServiceStoreProps): Promise<void>;
+  retrieve({ key }: IStorageServiceRetrieveProps): Promise<any>;
+  remove({ key }: IStorageServiceRemoveProps): Promise<void>;
 }
 
-export interface IStorageServiceConstructorParams {
-  service: IStorageService;
+/**
+ * @public
+ */
+export interface IStorageServiceConstructorProps {
+  client: IStorageClient;
 }
 
-// PARAMS
-export interface IStorageServiceCreateStorageParams
-  extends IWithStorageNameParams {}
-
-export interface IStorageServiceRetrieveStorageParams
-  extends IWithStorageNameParams {}
-
-export interface IStorageServiceDeleteStorageParams
-  extends IWithStorageNameParams {}
-
-export interface IStorageServiceStoreParams
-  extends IWithStorageNameParams,
-    IWithDataParams,
-    IWithKeyParams {}
-
-export interface IStorageServiceRetrieveParams
-  extends IWithStorageNameParams,
-    IWithKeyParams {}
-
-export interface IStorageServiceRemoveParams
-  extends IWithStorageNameParams,
-    IWithKeyParams {}
-
-// ATTACHMENT
-export interface IWithStorageNameParams {
+/**
+ * @public
+ */
+export interface IStorageServiceInitializeProps {
+  region: TRegion;
   storageName: string;
 }
 
-export interface IWithDataParams {
-  data: any;
+/**
+ * @public
+ */
+export interface IStorageServiceStoreProps {
+  key: string;
+  value: any;
 }
 
-export interface IWithKeyParams {
+/**
+ * @public
+ */
+export interface IStorageServiceRetrieveProps {
+  key: string;
+}
+
+/**
+ * @public
+ */
+export interface IStorageServiceRemoveProps {
+  key: string;
+}
+
+// CLIENT
+export interface IStorageClient {
+  store(params: IStorageClientStoreProps): Promise<void>;
+  retrieve(params: IStorageClientRetrieveProps): Promise<any>;
+  remove(params: IStorageClientRemoveProps): Promise<void>;
+}
+
+/**
+ * @public
+ */
+export interface IStorageClientConstructorProps {
+  region: TRegion;
+  storageName: string;
+}
+
+/**
+ * @public
+ */
+export interface IStorageClientInitializeProps {
+  region: TRegion;
+  storageName: string;
+}
+
+/**
+ * @public
+ */
+export interface IStorageClientStoreProps {
+  key: string;
+  value: any;
+}
+
+/**
+ * @public
+ */
+export interface IStorageClientRetrieveProps {
+  key: string;
+}
+
+/**
+ * @public
+ */
+export interface IStorageClientRemoveProps {
   key: string;
 }

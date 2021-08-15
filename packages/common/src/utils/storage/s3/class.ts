@@ -1,46 +1,52 @@
 import {
-  S3Client,
+  S3Client as Client,
   CreateBucketCommand,
   PutObjectCommand,
   GetObjectCommand,
   DeleteObjectCommand,
-  DeleteBucketCommand,
   GetBucketLocationCommand,
 } from "@aws-sdk/client-s3";
-import { PackageEnum } from "../../../enum";
-import { ILoggerService, createLoggerService } from "../..";
-
 import {
-  IStorageService,
-  IStorageServiceCreateStorageParams,
-  IStorageServiceDeleteStorageParams,
-  IStorageServiceRemoveParams,
-  IStorageServiceRetrieveParams,
-  IStorageServiceRetrieveStorageParams,
-  IStorageServiceStoreParams,
-} from "../types";
-import { IS3ConstructorParams } from "./types";
+  IStorageClientInitializeProps,
+  IStorageClientRemoveProps,
+  IStorageClientRetrieveProps,
+  IStorageClientStoreProps,
+  ILoggerUtils,
+  IStorageClient,
+  IStorageClientConstructorProps,
+  LoggerUtils,
+} from "../..";
+import { InternalError, PACKAGE_NAME } from "../../..";
 
-export class S3 implements IStorageService {
-  #client: S3Client;
-  #logger: ILoggerService;
+export class S3Client implements IStorageClient {
+  #client: Client;
+  #logger: ILoggerUtils;
+  #storageName: string;
 
-  constructor({ region }: IS3ConstructorParams) {
-    this.#logger = createLoggerService({
-      packageName: PackageEnum.common,
-      className: "S3",
+  private constructor({ region, storageName }: IStorageClientConstructorProps) {
+    this.#logger = LoggerUtils.initialize({
+      packageName: PACKAGE_NAME,
+      className: this.constructor.name,
     });
-    this.#client = new S3Client({ region });
+    this.#client = new Client({ region });
+    this.#storageName = storageName;
+  }
+
+  public static initialize({
+    region,
+    storageName,
+  }: IStorageClientInitializeProps) {
+    return new S3Client({ region, storageName });
   }
 
   /**
    * @public
    */
-  async createStorage({ storageName }: IStorageServiceCreateStorageParams) {
+  private async createStorage() {
     try {
       await this.#client.send(
         new CreateBucketCommand({
-          Bucket: storageName,
+          Bucket: this.#storageName,
         })
       );
     } catch (error) {
@@ -56,11 +62,11 @@ export class S3 implements IStorageService {
    * Checks if the bucket exists
    * @param param0
    */
-  async validateStorage({ storageName }: IStorageServiceRetrieveStorageParams) {
+  private async validateStorage() {
     try {
       const config = await this.#client.send(
         new GetBucketLocationCommand({
-          Bucket: storageName,
+          Bucket: this.#storageName,
         })
       );
       return !!config;
@@ -76,31 +82,17 @@ export class S3 implements IStorageService {
   /**
    * @public
    */
-  async deleteStorage({ storageName }: IStorageServiceDeleteStorageParams) {
-    try {
-      await this.#client.send(
-        new DeleteBucketCommand({
-          Bucket: storageName,
-        })
-      );
-    } catch (error) {
-      this.#logger.error({
-        location: "delete:send",
-        message: error as string,
-      });
+  async store({ key, value }: IStorageClientStoreProps) {
+    const storageExists = await this.validateStorage();
+    if (!storageExists) {
+      await this.createStorage();
     }
-  }
-
-  /**
-   * @public
-   */
-  async store({ storageName, key, data }: IStorageServiceStoreParams) {
     try {
       await this.#client.send(
         new PutObjectCommand({
-          Bucket: storageName,
+          Bucket: this.#storageName,
           Key: key,
-          Body: data,
+          Body: value,
         })
       );
     } catch (error) {
@@ -114,19 +106,30 @@ export class S3 implements IStorageService {
   /**
    * @public
    */
-  async retrieve({ storageName, key }: IStorageServiceRetrieveParams) {
+  public async retrieve({ key }: IStorageClientRetrieveProps) {
+    const storageExists = await this.validateStorage();
     try {
+      if (!storageExists) {
+        throw new InternalError({
+          location: "retrieve:{!storageExists}",
+          message: "Storage doesn't exist",
+        });
+      }
       return await this.#client.send(
         new GetObjectCommand({
-          Bucket: storageName,
+          Bucket: this.#storageName,
           Key: key,
         })
       );
-    } catch (error) {
-      this.#logger.error({
-        location: "retrieve:send",
-        message: error as string,
-      });
+    } catch (error: any) {
+      if (error instanceof InternalError) {
+        this.#logger.error(error);
+      } else {
+        this.#logger.error({
+          location: "retrieve:send",
+          message: error,
+        });
+      }
       return null;
     }
   }
@@ -134,11 +137,18 @@ export class S3 implements IStorageService {
   /**
    * @public
    */
-  async remove({ storageName, key }: IStorageServiceRemoveParams) {
+  async remove({ key }: IStorageClientRemoveProps) {
     try {
+      const storageExists = await this.validateStorage();
+      if (!storageExists) {
+        throw new InternalError({
+          location: "remove:{!storageExists}",
+          message: "Storage doesn't exist",
+        });
+      }
       await this.#client.send(
         new DeleteObjectCommand({
-          Bucket: storageName,
+          Bucket: this.#storageName,
           Key: key,
         })
       );

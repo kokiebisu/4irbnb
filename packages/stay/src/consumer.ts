@@ -1,10 +1,11 @@
-import { createLoggerService, PackageEnum } from "@4irbnb/common";
-import { createStayController } from "./controllers";
+import { LoggerUtils } from "@4irbnb/common";
+import { StayController } from ".";
+import { PACKAGE_NAME } from "./configs";
 
 export const handler = async (event: any) => {
-  const controller = createStayController();
-  const logger = createLoggerService({
-    packageName: PackageEnum.stay,
+  const controller = StayController.initialize();
+  const logger = LoggerUtils.initialize({
+    packageName: PACKAGE_NAME,
     className: "",
   });
   console.log(controller);

@@ -6,20 +6,28 @@
   version "1.1.0"
   dependencies:
     "@aws-sdk/client-apigatewayv2" "^3.24.0"
-    "@aws-sdk/client-dynamodb" "^3.24.0"
-    "@aws-sdk/client-elasticache" "^3.25.0"
     "@aws-sdk/client-s3" "^3.24.0"
     "@aws-sdk/client-sqs" "^3.25.0"
-    "@aws-sdk/client-ssm" "^3.24.0"
     "@aws-sdk/client-sts" "^3.24.0"
-    "@aws-sdk/lib-dynamodb" "^3.24.0"
-    "@aws-sdk/util-dynamodb" "^3.24.0"
-    "@sendgrid/mail" "^7.4.5"
-    "@slack/web-api" "^6.3.0"
-    "@types/uuid" "^8.3.1"
     date-fns "^2.23.0"
     uuid "^8.3.2"
     winston "^3.3.3"
+
+"@4irbnb/database@file:packages/database":
+  version "1.1.0"
+  dependencies:
+    "@4irbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@4irbnb-database-1.1.0-56c6d839-c059-4bca-80da-6b18c8e67260-1629005900215/node_modules/@4irbnb/common"
+    "@aws-sdk/client-dynamodb" "^3.24.0"
+    "@aws-sdk/client-elasticache" "^3.25.0"
+    "@aws-sdk/client-rds-data" "^3.25.0"
+    "@aws-sdk/client-ssm" "^3.24.0"
+    "@aws-sdk/lib-dynamodb" "^3.24.0"
+    "@aws-sdk/util-dynamodb" "^3.24.0"
+
+"@4irbnb/manager@file:packages/manager":
+  version "1.1.0"
+  dependencies:
+    "@aws-sdk/client-ssm" "^3.24.0"
 
 "@actions/core@^1.2.4":
   version "1.4.0"
@@ -5507,6 +5515,11 @@
   version "15.14.7"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-15.14.7.tgz#29fea9a5b14e2b75c19028e1c7a32edd1e89fe92"
   integrity sha512-FA45p37/mLhpebgbPWWCKfOisTjxGK9lwcHlJ6XVLfu3NgfcazOJHdYUZCWPMK8QX4LhNZdmfo6iMz9FqpUbaw==
+
+"@types/node@^16.6.1":
+  version "16.6.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.6.1.tgz#aee62c7b966f55fc66c7b6dfa1d58db2a616da61"
+  integrity sha512-Sr7BhXEAer9xyGuCN3Ek9eg9xPviCF2gfu9kTfuU2HkTVAMYSDeX40fvpmo72n5nansg3nsBjuQBrsS28r+NUw==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
