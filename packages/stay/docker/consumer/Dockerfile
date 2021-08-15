@@ -13,19 +13,19 @@ COPY packages/tsconfig.json .
 WORKDIR /4irbnb/packages/common
 COPY packages/common/src ./src
 COPY packages/common/package.json packages/common/tsconfig.json ./
-RUN yarn --production
+RUN yarn
 RUN yarn build
 
 WORKDIR /4irbnb/packages/database
 COPY packages/database/src ./src
 COPY packages/database/package.json packages/common/tsconfig.json ./
-RUN yarn --production
+RUN yarn
 RUN yarn build
 
 WORKDIR /4irbnb/packages/stay
 COPY packages/stay/src ./src
 COPY packages/stay/package.json packages/stay/tsconfig.json ./
-RUN yarn --production
+RUN yarn
 RUN yarn build
 
 FROM amazon/aws-lambda-nodejs:14 as prod
