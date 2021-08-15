@@ -10,6 +10,26 @@ resource "aws_dynamodb_table" "stay_database" {
     type = "S"
   }
 
+  attribute {
+    name = "title"
+    type = "S"
+  }
+
+  attribute {
+    name = "country"
+    type = "S"
+  }
+
+  attribute {
+    name = "city"
+    type = "S"
+  }
+
+  attribute {
+    name = "province"
+    type = "S"
+  }
+
   tags = {
     Environment = "production"
   }

@@ -30,13 +30,11 @@ export class StayController {
       // const stay = await this.#service.get({ identifier });
       const propertyTypeIds =
         event.multiValueQueryStringParameters["property_type_id[]"];
-      const pattern =
-        event.multiValueQueryStringParameters["refinement_paths[]"];
-      const room_types = event.multiValueQueryStringParameters["room_types[]"];
+      // const pattern =
+      //   event.multiValueQueryStringParameters["refinement_paths[]"];
+      // const room_types = event.multiValueQueryStringParameters["room_types[]"];
 
-      console.log("PROPERTY_TYPE_IDS", propertyTypeIds);
-      console.log("PATTERN", pattern);
-      console.log("ROOM_TYPES", room_types);
+      const size = 20 / propertyTypeIds.length;
 
       return {
         statusCode: 200,
