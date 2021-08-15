@@ -14,19 +14,22 @@ import { IRegion, LoggerUtils, ILoggerUtils } from "@4irbnb/common";
 import { PACKAGE_NAME } from "../..";
 
 export class NoSqlDatabaseService implements INoSqlDatabaseService {
-  #logger: ILoggerUtils;
+  #logger: ILoggerUtils = LoggerUtils.initialize({
+    packageName: PACKAGE_NAME,
+    className: this.constructor.name,
+  });
   #client: INoSqlDatabaseClient;
   constructor({ client }: INoSqlDatabaseServiceConstructorParams) {
     this.#client = client;
-    this.#logger = LoggerUtils.create({
-      packageName: PACKAGE_NAME,
-      className: this.constructor.name,
+    this.#logger.log({
+      location: "constructor",
+      message: "Successfully initialized...",
     });
   }
 
-  public static async create({ region }: IRegion) {
+  public static async initialize({ region }: IRegion) {
     return new NoSqlDatabaseService({
-      client: await DynamoDBClient.create({ region }),
+      client: await DynamoDBClient.initialize({ region }),
     });
   }
 

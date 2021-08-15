@@ -1,7 +1,11 @@
 import { ValueObject } from "@4irbnb/common";
 
-export class Title extends ValueObject<string> {
-  private constructor(props: string) {
+export interface ITitle {
+  value: string;
+}
+
+export class Title extends ValueObject<ITitle> {
+  private constructor(props: ITitle) {
     super(props);
   }
 
@@ -9,13 +13,17 @@ export class Title extends ValueObject<string> {
     if (title === undefined || title === null) {
       throw new Error("Provided argument was undefined or null");
     } else {
-      return new Title(title);
+      return new Title({ value: title });
     }
   }
 }
 
-export class ImgUrl extends ValueObject<string> {
-  private constructor(props: string) {
+export interface IImgUrl {
+  value: string;
+}
+
+export class ImgUrl extends ValueObject<IImgUrl> {
+  private constructor(props: IImgUrl) {
     super(props);
   }
 
@@ -23,7 +31,7 @@ export class ImgUrl extends ValueObject<string> {
     if (imgUrl === undefined || imgUrl === null || typeof imgUrl === "string") {
       throw new Error("imgUrls were not valid");
     } else {
-      return new ImgUrl(imgUrl);
+      return new ImgUrl({ value: imgUrl });
     }
   }
 }

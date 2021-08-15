@@ -6,7 +6,7 @@ export interface ICacheServiceConstructorParams {
   client: ICacheClient;
 }
 
-export interface ICacheServiceCreateProps {
+export interface ICacheClientInitializeProps {
   region: TRegion;
 }
 
@@ -17,6 +17,6 @@ export interface CacheClientConstructorProps {
   region: TRegion;
 }
 
-export interface ICacheClientCreateProps {
+export interface ICacheServiceInitializeProps {
   region: TRegion;
 }

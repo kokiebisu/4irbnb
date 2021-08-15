@@ -1,10 +1,12 @@
-export type TValueObject = string | number;
+export type TValueObject = {
+  [index: string]: any;
+};
 
 export abstract class ValueObject<T extends TValueObject> {
-  public props: T;
+  public readonly props: T;
 
   constructor(props: T) {
-    this.props = props;
+    this.props = Object.freeze(props);
   }
 
   public equals(valueObject: ValueObject<T>) {

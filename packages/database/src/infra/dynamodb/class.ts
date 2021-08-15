@@ -28,7 +28,10 @@ import { LoggerUtils, ILoggerUtils, IRegion } from "@4irbnb/common";
  */
 export class DynamoDBClient implements INoSqlDatabaseClient {
   #package?: DynamoDBDocumentClient;
-  #logger: ILoggerUtils;
+  #logger: ILoggerUtils = LoggerUtils.initialize({
+    packageName: PACKAGE_NAME,
+    className: "DynamoDBClient",
+  });
 
   private constructor({ region }: IRegion) {
     this.#package = DynamoDBDocumentClient.from(
@@ -37,14 +40,9 @@ export class DynamoDBClient implements INoSqlDatabaseClient {
       }),
       translateConfig
     );
-
-    this.#logger = LoggerUtils.create({
-      packageName: PACKAGE_NAME,
-      className: "DynamoDBClient",
-    });
   }
 
-  public static async create({ region }: IRegion) {
+  public static async initialize({ region }: IRegion) {
     return new DynamoDBClient({ region });
   }
 

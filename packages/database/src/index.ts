@@ -9,7 +9,5 @@
  *
  * @packageDocumentation
  */
-export * from "./repository";
 export * from "./config";
 export * from "./service";
-export * from "./infra";
