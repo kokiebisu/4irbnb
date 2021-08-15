@@ -29,7 +29,7 @@ export const handler = async (event: any) => {
     return {
       statusCode: 400,
       "Content-Type": "application/json",
-      body: error.message as string,
+      body: error,
     };
   }
 };
