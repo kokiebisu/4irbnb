@@ -1,19 +1,48 @@
 import { IStay } from "..";
-import { HostingType } from "../constants";
-import { Country } from "../constants/country";
-import { NumberOfReviews, Title } from "../domains/fields";
 
-export const stay: IStay = {
+import {
+  AverageRatings,
+  City,
+  Country,
+  HostingType,
+  Guests,
+  NumberOfReviews,
+  Province,
+  Title,
+  Bedrooms,
+  Beds,
+  Baths,
+  ImgUrl,
+} from "../domains";
+
+export const stayA: IStay = {
   title: Title.create("Best Location! Modern studio by the sky train"),
   numberOfReviews: NumberOfReviews.create(42),
-  averageRatings: 4.36,
-  city: "Coquitlam",
-  province: "British Columbia",
-  country: Country.CA,
-  imgUrls: [],
-  hostingType: HostingType.RentalUnit,
-  numberOfGuests: 1,
-  numberOfBedrooms: 1,
-  numberOfBeds: 0,
-  numberOfBath: 1,
+  averageRatings: AverageRatings.create(4.36),
+  city: City.create("Coquitlam"),
+  province: Province.create("British Columbia"),
+  country: Country.create(Country.Type.CA),
+  imgUrls: [ImgUrl.create("https://image1")],
+  hostingType: HostingType.create(HostingType.Type.RentalUnit),
+  guests: Guests.create(1),
+  bedrooms: Bedrooms.create(1),
+  beds: Beds.create(0),
+  baths: Baths.create(1),
 };
+
+export const stayB: IStay = {
+  title: Title.create("Cozy Private Suite on Ground Floor"),
+  numberOfReviews: NumberOfReviews.create(2),
+  averageRatings: AverageRatings.create(3.5),
+  city: City.create("Burnaby"),
+  province: Province.create("British Columbia"),
+  country: Country.create(Country.Type.CA),
+  imgUrls: [ImgUrl.create("https://image2")],
+  hostingType: HostingType.create(HostingType.Type.GuestSuite),
+  guests: Guests.create(1),
+  bedrooms: Bedrooms.create(1),
+  beds: Beds.create(0),
+  baths: Baths.create(1),
+};
+
+export const stay = [stayA, stayB];

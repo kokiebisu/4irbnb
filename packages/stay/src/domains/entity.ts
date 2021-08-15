@@ -23,7 +23,19 @@ export class Stay extends Entity<IStay> {
   }
 
   get averateRatings() {
-    return this.props.averateRatings;
+    return this.props.averageRatings;
+  }
+
+  get city() {
+    return this.props.city;
+  }
+
+  get province() {
+    return this.props.province;
+  }
+
+  get country() {
+    return this.props.country;
   }
 
   get imgUrls() {

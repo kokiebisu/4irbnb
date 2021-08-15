@@ -1,4 +1,17 @@
-import { AverateRatings, ImgUrl, NumberOfReviews, Title } from "./fields";
+import {
+  AverageRatings,
+  City,
+  Country,
+  ImgUrl,
+  NumberOfReviews,
+  Province,
+  Title,
+  HostingType,
+  Guests,
+  Bedrooms,
+  Baths,
+  Beds,
+} from "./fields";
 
 /**
  * A stay posted by the user
@@ -7,6 +20,14 @@ import { AverateRatings, ImgUrl, NumberOfReviews, Title } from "./fields";
 export interface IStay {
   title: Title;
   numberOfReviews: NumberOfReviews;
-  averateRatings: AverateRatings;
+  averageRatings: AverageRatings;
+  city: City;
+  province: Province;
+  country: Country;
+  hostingType: HostingType;
+  guests: Guests;
+  bedrooms: Bedrooms;
+  beds: Beds;
+  baths: Baths;
   imgUrls: ImgUrl[];
 }
