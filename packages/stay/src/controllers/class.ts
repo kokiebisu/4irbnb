@@ -1,47 +1,45 @@
-import {
-  ILoggerService,
-  PackageEnum,
-  createLoggerService,
-} from "@4irbnb/common";
-import { IStayControllerConstructorParams } from ".";
-import { isStay } from "../domains";
-import { IStayService, StayService } from "../services";
-import {
-  IStayControllerDeleteParams,
-  IStayControllerGetParams,
-  IStayControllerPatchParams,
-  IStayControllerPostParams,
-} from "./types";
+import { LoggerUtils, ILoggerUtils } from "@4irbnb/common";
+import { PACKAGE_NAME } from "../configs";
+// import { IStayService, StayService } from "../services";
+// import { IStayControllerGetParams } from "./types";
 
 /**
  * @public
  */
 export class StayController {
-  #service: IStayService;
-  #logger: ILoggerService;
+  // #service: IStayService;
+  #logger: ILoggerUtils = LoggerUtils.initialize({
+    packageName: PACKAGE_NAME,
+    className: this.constructor.name,
+  });
 
-  constructor({ db, idValidator }: IStayControllerConstructorParams) {
-    this.#service = new StayService({ db, idValidator });
-    this.#logger = createLoggerService({
-      packageName: PackageEnum.stay,
-      className: "StayController",
+  private constructor() {
+    // this.#service = StayService.initialize();
+    this.#logger.log({
+      location: "constructor",
+      message: "Successfully initialized...",
     });
   }
 
-  async get({ identifier }: IStayControllerGetParams): Promise<any> {
+  public static initialize() {
+    return new StayController();
+  }
+
+  async getStaysByCategory(): Promise<any> {
     try {
-      const stay = await this.#service.get({ identifier });
+      // const stay = await this.#service.get({ identifier });
 
       return {
         statusCode: 200,
         headers: {
           "Content-Type": "application/json",
         },
-        body: stay
-          ? JSON.stringify({
-              stay,
-            })
-          : null,
+        body: "Success",
+        // body: stay
+        //   ? JSON.stringify({
+        //       stay,
+        //     })
+        //   : null,
       };
     } catch (error) {
       this.#logger.error({ location: "get:get", message: "Entered" });
@@ -53,83 +51,6 @@ export class StayController {
         body: {
           error: "Internal Error",
         },
-      };
-    }
-  }
-
-  async post({ data }: IStayControllerPostParams): Promise<any> {
-    try {
-      await this.#service.post({ data });
-      return {
-        statusCode: 200,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
-    } catch (error) {
-      this.#logger.error({ location: "get:get", message: error as string });
-      return {
-        statusCode: 400,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: "Something went wrong",
-      };
-    }
-  }
-
-  async delete({ identifier }: IStayControllerDeleteParams): Promise<any> {
-    try {
-      await this.#service.delete({ identifier });
-
-      return {
-        headers: {
-          "Content-Type": "application/json",
-        },
-        statusCode: 200,
-      };
-    } catch (error) {
-      this.#logger.error({
-        location: "delete:delete",
-        message: error as string,
-      });
-      return {
-        statusCode: 400,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: "Something went wrong",
-      };
-    }
-  }
-
-  async patch({ identifier, data }: IStayControllerPatchParams): Promise<any> {
-    try {
-      const stay = await this.#service.patch({
-        identifier,
-        data,
-      });
-      if (!isStay(stay)) {
-        this.#logger.error({
-          location: "patch:isStay",
-          message: "Data was not a stay type",
-        });
-      }
-      return {
-        statusCode: 200,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: stay,
-      };
-    } catch (error) {
-      this.#logger.error({ location: "patch:patch", message: error as string });
-      return {
-        statusCode: 400,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: "Something went wrong",
       };
     }
   }

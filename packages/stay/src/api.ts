@@ -1,9 +1,9 @@
 import { LoggerUtils } from "@4irbnb/common";
 import { PACKAGE_NAME } from "./configs";
-import { createStayController } from "./controllers";
+import { StayController } from "./controllers";
 
 export const handler = async (event: any) => {
-  const controller = createStayController();
+  const controller = StayController.initialize();
   const logger = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,
     className: "",
@@ -11,32 +11,13 @@ export const handler = async (event: any) => {
   logger.log({ location: "handler", message: "Entered handler..." });
   try {
     switch (event.requestContext.resourceId) {
-      case "GET /stay/{id}":
+      case "GET /s/homes":
+        console.log("EVENT", event);
         logger.log({
           location: "handler",
           message: "Entered GET /stay/{id}...",
         });
-        return await controller.get({
-          identifier: {
-            id: event.pathParameters.id,
-          },
-        });
-      case "DELETE /stay/{id}":
-        logger.log({
-          location: "handler",
-          message: "Entered DELETE /stay/{id}...",
-        });
-        return await controller.delete({
-          identifier: {
-            id: event.payload.identifier,
-          },
-        });
-      case "PUT /stays":
-        logger.log({
-          location: "handler",
-          message: "Entered PUT /stays...",
-        });
-        return await controller.post({ data: JSON.parse(event.body) });
+        return await controller.getStaysByCategory();
       default:
         throw new Error(
           `Unsupported route: "${event.requestContext.resourceId}"`

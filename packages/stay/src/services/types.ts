@@ -1,4 +1,3 @@
-import { IStay } from "../domains";
 import { IStayRepo } from "../repos/types";
 
 export interface IStayService {}

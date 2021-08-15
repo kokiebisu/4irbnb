@@ -3,6 +3,7 @@ import { ILoggerUtils, LoggerUtils } from "@4irbnb/common";
 import { IStayRepo } from "../repos/types";
 import { PACKAGE_NAME } from "../configs";
 import { StayRepo } from "../repos/class";
+import { stayA, stayB } from "../mocks";
 
 export class StayService implements IStayService {
   #repo: IStayRepo;
@@ -48,7 +49,9 @@ export class StayService implements IStayService {
   /**
    * @public
    */
-  public async getStaysByCountry() {}
+  public async getStaysByCountry() {
+    return [stayA, stayB];
+  }
 
   /**
    * @public
@@ -58,7 +61,9 @@ export class StayService implements IStayService {
   /**
    * @public
    */
-  public async getStayDetail() {}
+  public async getStayDetail() {
+    return stayA;
+  }
 
   /**
    * @public
