@@ -1,3 +1,5 @@
+import { Stream } from "stream";
+
 /**
  * @public
  */
@@ -65,7 +67,11 @@ export interface IAlertClientSendMessageParams {
 
 export interface IAlertClientSendFileParams {
   to: string;
-  file: string;
+  file: {
+    filetype: string;
+    content?: Buffer | Stream;
+    filename: string;
+  };
   comment: string;
 }
 
