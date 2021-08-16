@@ -30,7 +30,7 @@ export class DynamoDBClient implements INoSqlDatabaseClient {
   #package?: DynamoDBDocumentClient;
   #logger: ILoggerUtils = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,
-    className: "DynamoDBClient",
+    className: this.constructor.name,
   });
 
   private constructor({ region }: IRegion) {
