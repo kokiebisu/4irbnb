@@ -36,6 +36,11 @@ export class StayController {
 
       const size = 20 / propertyTypeIds.length;
 
+      /**
+       * Query
+       * -
+       */
+
       return {
         statusCode: 200,
         headers: {
