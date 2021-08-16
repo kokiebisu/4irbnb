@@ -1,11 +1,16 @@
 /** SERVICE */
 
+import { TRegion } from "@4irbnb/common";
+
 /**
  * @public
  */
 export interface IRelationalDatabaseService {
-  findByAttribute(
-    params: IRelationalDatabaseServiceFindByIdParams
+  findByAttributes(
+    params: IRelationalDatabaseServiceFindByAttributesProps
+  ): Promise<any | null>;
+  findAllByAttributes(
+    params: IRelationalDatabaseServiceFindAllByAttributesProps
   ): Promise<any | null>;
 }
 
@@ -14,6 +19,25 @@ export interface IRelationalDatabaseService {
  */
 export interface IRelationalDatabaseServiceConstructorParams {
   client: IRelationalDatabaseClient;
+  tableName: string;
+}
+
+/**
+ * @public
+ */
+export interface IRelationalDatabaseServiceFindByAttributesProps {
+  attributes: {
+    [key: string]: any;
+  };
+}
+
+/**
+ * @public
+ */
+export interface IRelationalDatabaseServiceFindAllByAttributesProps {
+  attributes: {
+    [key: string]: any;
+  };
 }
 
 /**
@@ -22,6 +46,11 @@ export interface IRelationalDatabaseServiceConstructorParams {
 export interface IRelationalDatabaseServiceFindByIdParams {
   tableName: string;
   id: string;
+}
+
+export interface IRelationalDatabaseServiceInitializeProps {
+  region: TRegion;
+  tableName: string;
 }
 
 /**
@@ -79,22 +108,18 @@ export interface IRelationalDatabaseClientBatchExecuteProps {
  * @public
  */
 export interface IRelationalDatabaseClientPutParams {
-  tableName: string;
   data: any;
 }
 
 export interface IRelationalDatabaseServiceUpdateProps {
-  tableName: string;
   id: any;
   data: any;
 }
 
 export interface IRelationalDatabaseServiceCreateProps {
-  tableName: string;
   data: any;
 }
 
 export interface IRelationalDatabaseServiceDeleteProps {
-  tableName: string;
   id: any;
 }

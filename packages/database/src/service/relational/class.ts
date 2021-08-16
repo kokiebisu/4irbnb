@@ -4,9 +4,12 @@ import {
   IRelationalDatabaseServiceConstructorParams,
   IRelationalDatabaseServiceCreateProps,
   IRelationalDatabaseServiceDeleteProps,
+  IRelationalDatabaseServiceFindAllByAttributesProps,
+  IRelationalDatabaseServiceFindByAttributesProps,
+  IRelationalDatabaseServiceInitializeProps,
   IRelationalDatabaseServiceUpdateProps,
 } from "./types";
-import { IRegion, LoggerUtils, ILoggerUtils } from "@4irbnb/common";
+import { LoggerUtils, ILoggerUtils } from "@4irbnb/common";
 import { PACKAGE_NAME } from "../..";
 import { RDSClient } from "../../infra/rds";
 
@@ -16,17 +19,28 @@ export class RelationalDatabaseService implements IRelationalDatabaseService {
     className: this.constructor.name,
   });
   #client: IRelationalDatabaseClient;
-  constructor({ client }: IRelationalDatabaseServiceConstructorParams) {
+  #tableName: string;
+
+  constructor({
+    client,
+    tableName,
+  }: IRelationalDatabaseServiceConstructorParams) {
     this.#client = client;
+    this.#tableName = tableName;
+    console.log(this.#tableName);
     this.#logger.log({
       location: "constructor",
       message: "Successfully initialized...",
     });
   }
 
-  public static async initialize({ region }: IRegion) {
+  public static async initialize({
+    region,
+    tableName,
+  }: IRelationalDatabaseServiceInitializeProps) {
     return new RelationalDatabaseService({
       client: await RDSClient.initialize({ region }),
+      tableName,
     });
   }
 
@@ -34,7 +48,10 @@ export class RelationalDatabaseService implements IRelationalDatabaseService {
    * @public
    * @param param0
    */
-  async findByAttribute({ attributes }: IRelationalDatabaseServiceUpdateProps) {
+  async findByAttributes({
+    attributes,
+  }: IRelationalDatabaseServiceFindByAttributesProps) {
+    console.log(attributes);
     try {
       await this.#client.execute({ sql: "" });
     } catch (error: any) {
@@ -49,9 +66,10 @@ export class RelationalDatabaseService implements IRelationalDatabaseService {
    * @public
    * @param param0
    */
-  async findAllByAttribute({
+  async findAllByAttributes({
     attributes,
-  }: IRelationalDatabaseServiceUpdateProps) {
+  }: IRelationalDatabaseServiceFindAllByAttributesProps) {
+    console.log(attributes);
     try {
       await this.#client.batchExecute({ sql: "" });
     } catch (error: any) {
@@ -66,7 +84,8 @@ export class RelationalDatabaseService implements IRelationalDatabaseService {
    * @public
    * @param param0
    */
-  async create({ tableName, data }: IRelationalDatabaseServiceCreateProps) {
+  async create({ data }: IRelationalDatabaseServiceCreateProps) {
+    console.log(data);
     try {
       await this.#client.execute({ sql: "" });
     } catch (error: any) {
@@ -81,7 +100,8 @@ export class RelationalDatabaseService implements IRelationalDatabaseService {
    * @public
    * @param param0
    */
-  async delete({ tableName, id }: IRelationalDatabaseServiceDeleteProps) {
+  async delete({ id }: IRelationalDatabaseServiceDeleteProps) {
+    console.log(id);
     try {
       await this.#client.execute({ sql: "" });
     } catch (error: any) {
@@ -96,7 +116,8 @@ export class RelationalDatabaseService implements IRelationalDatabaseService {
    * @public
    * @param param0
    */
-  async update({ tableName, id, data }: IRelationalDatabaseServiceUpdateProps) {
+  async update({ id, data }: IRelationalDatabaseServiceUpdateProps) {
+    console.log(id, data);
     try {
       await this.#client.execute({ sql: "" });
     } catch (error: any) {
