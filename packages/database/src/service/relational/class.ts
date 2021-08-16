@@ -53,7 +53,9 @@ export class RelationalDatabaseService implements IRelationalDatabaseService {
   }: IRelationalDatabaseServiceFindByAttributesProps) {
     console.log(attributes);
     try {
-      await this.#client.execute({ sql: "" });
+      return await this.#client.execute({
+        sql: `SELECT * FROM ${this.#tableName};`,
+      });
     } catch (error: any) {
       this.#logger.error({
         location: "findByAttribute:execute",

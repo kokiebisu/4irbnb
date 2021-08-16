@@ -116,16 +116,17 @@ export class RDSClient implements IRelationalDatabaseClient {
    */
   async execute({ sql }: IRelationalDatabaseClientExecuteProps) {
     try {
-      const data = await this.#package?.send(
-        new ExecuteStatementCommand({
-          resourceArn: this.#resourceArn,
-          database: this.#databaseName,
-          secretArn: this.#secretArn,
-          sql,
-        })
-      );
-
-      return data;
+      return (
+        await this.#package?.send(
+          new ExecuteStatementCommand({
+            resourceArn: this.#resourceArn,
+            database: this.#databaseName,
+            secretArn: this.#secretArn,
+            includeResultMetadata: true,
+            sql,
+          })
+        )
+      ).records;
     } catch (error) {
       this.#logger.error({
         location: "get:send",

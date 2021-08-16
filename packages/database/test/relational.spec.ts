@@ -15,9 +15,8 @@ describe("Relational Database Service", () => {
       region: "us-east-1",
       tableName: "Stay",
     });
-    // const result = await service.findByAttributes({ attributes: {} });
-    // console.log("RESULT", result);
-    // expect(result).not.toBeNull();
+    const result = await service.findByAttributes({ attributes: {} });
+    expect(result).not.toBeNull();
   });
   // it("deletes data", async () => {
   //   await service.delete({ tableName, identifier: { id: data.id } });

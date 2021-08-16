@@ -2,9 +2,14 @@
   "extends": "../tsconfig.settings.json",
   /** lets us update all packages which are not the latest */
   "references": [
-    { "path": "./common" },
+    { "path": "./alert" },
     { "path": "./auth" },
-    { "path": "./stay" }
+    { "path": "./common" },
+    { "path": "./database" },
+    { "path": "./email" },
+    { "path": "./manager" },
+    { "path": "./stay" },
+    { "path": "./user" }
   ],
   "include": ["src"]
 }
