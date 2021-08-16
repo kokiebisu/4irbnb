@@ -1,10 +1,12 @@
 import { LoggerUtils } from "@4irbnb/common";
-import { INoSqlDatabaseService, NoSqlDatabaseService } from "@4irbnb/database";
+import {
+  IRelationalDatabaseService,
+  RelationalDatabaseService,
+} from "@4irbnb/database";
 import { IStayRepo, IStayRepoConstructorProps } from "./types";
 
 export class StayRepo implements IStayRepo {
-  #db: INoSqlDatabaseService;
-  #tableName = "Stay";
+  #db: IRelationalDatabaseService;
   #logger = LoggerUtils.initialize({
     packageName: this.constructor.name,
     className: "yo",
@@ -20,41 +22,44 @@ export class StayRepo implements IStayRepo {
 
   public static async initialize() {
     return new StayRepo({
-      db: await NoSqlDatabaseService.initialize({ region: "us-east-1" }),
+      db: await RelationalDatabaseService.initialize({
+        region: "us-east-1",
+        tableName: "Stay",
+      }),
     });
   }
 
   public async getStayById(stayId: string) {
     try {
-      const stay = await this.#db.findById({
-        tableName: this.#tableName,
-        id: stayId,
+      return await this.#db.findByAttributes({
+        attributes: {
+          id: stayId,
+        },
       });
-      return stay;
     } catch (error: any) {}
   }
 
-  public async getAllStayByCountry(country: string) {
-    return await this.#db.findByKey({
-      tableName: this.#tableName,
-      attributes: { country },
-    });
-  }
+  // public async getAllStayByCountry(country: string) {
+  //   return await this.#db.findByKey({
+  //     tableName: this.#tableName,
+  //     attributes: { country },
+  //   });
+  // }
 
-  public async getStayOwnedByHostId(hostId: string) {
-    return await this.#db.findByKey({
-      tableName: this.#tableName,
-      attributes: { hostId },
-    });
-  }
+  // public async getStayOwnedByHostId(hostId: string) {
+  //   return await this.#db.findByKey({
+  //     tableName: this.#tableName,
+  //     attributes: { hostId },
+  //   });
+  // }
 
-  public async exists(stayId: string) {
-    const stay = await this.#db.findById({
-      tableName: this.#tableName,
-      id: stayId,
-    });
-    return !!stay;
-  }
+  // public async exists(stayId: string) {
+  //   const stay = await this.#db.findById({
+  //     tableName: this.#tableName,
+  //     id: stayId,
+  //   });
+  //   return !!stay;
+  // }
 
   public async create() {}
 

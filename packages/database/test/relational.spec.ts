@@ -11,11 +11,15 @@ describe("Relational Database Service", () => {
   //   });
   // });
   it("retrieves added data", async () => {
+    jest.setTimeout(20000);
     const service = await RelationalDatabaseService.initialize({
       region: "us-east-1",
       tableName: "Stay",
     });
-    const result = await service.findByAttributes({ attributes: {} });
+    const result = await service.findByAttributes({
+      attributes: { id: 1 },
+    });
+    console.debug(result);
     expect(result).not.toBeNull();
   });
   // it("deletes data", async () => {

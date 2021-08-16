@@ -27,7 +27,6 @@ export class RelationalDatabaseService implements IRelationalDatabaseService {
   }: IRelationalDatabaseServiceConstructorParams) {
     this.#client = client;
     this.#tableName = tableName;
-    console.log(this.#tableName);
     this.#logger.log({
       location: "constructor",
       message: "Successfully initialized...",
@@ -51,10 +50,12 @@ export class RelationalDatabaseService implements IRelationalDatabaseService {
   async findByAttributes({
     attributes,
   }: IRelationalDatabaseServiceFindByAttributesProps) {
-    console.log(attributes);
+    const condition = Object.keys(attributes)
+      .map((key) => `${key} = ${attributes[key]}`)
+      .join(", ");
     try {
       return await this.#client.execute({
-        sql: `SELECT * FROM ${this.#tableName};`,
+        sql: `SELECT * FROM ${this.#tableName} WHERE ${condition}`,
       });
     } catch (error: any) {
       this.#logger.error({
