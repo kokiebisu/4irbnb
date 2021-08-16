@@ -1,8 +1,16 @@
 import {
   BatchExecuteStatementCommand,
   ExecuteStatementCommand,
-  RDSDataClient as Client,
+  RDSDataClient as DataClient,
 } from "@aws-sdk/client-rds-data";
+import {
+  RDSClient as Client,
+  DescribeDBClustersCommand,
+} from "@aws-sdk/client-rds";
+import {
+  SecretsManagerClient as SecretsClient,
+  ListSecretsCommand,
+} from "@aws-sdk/client-secrets-manager";
 import {
   IRelationalDatabaseClient,
   IRelationalDatabaseClientBatchExecuteProps,
@@ -10,7 +18,13 @@ import {
   IRelationalDatabaseClientExecuteProps,
 } from "../../service/relational/types";
 import { PACKAGE_NAME } from "../..";
-import { LoggerUtils, ILoggerUtils, IRegion } from "@4irbnb/common";
+import {
+  LoggerUtils,
+  ILoggerUtils,
+  IRegion,
+  InternalError,
+} from "@4irbnb/common";
+import { CLUSTER_NAME, DATABASE_NAME } from "../../config/rds";
 
 /**
  * @public
@@ -18,10 +32,11 @@ import { LoggerUtils, ILoggerUtils, IRegion } from "@4irbnb/common";
  * - Transactions
  */
 export class RDSClient implements IRelationalDatabaseClient {
-  #package: Client;
+  #package: DataClient;
   #resourceArn: string;
   #databaseName: string;
   #secretArn: string;
+
   #logger: ILoggerUtils = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,
     className: this.constructor.name,
@@ -36,23 +51,62 @@ export class RDSClient implements IRelationalDatabaseClient {
     this.#databaseName = databaseName;
     this.#secretArn = secretArn;
     this.#resourceArn = resourceArn;
-    this.#package = new Client({ region });
+    this.#package = new DataClient({ region });
   }
 
   public static async initialize({ region }: IRegion) {
-    /**
-     * Logic to fetch resourceArn
-     */
-    const resourceArn = "";
-    /**
-     * Logic to databaseName
-     */
-    const databaseName = "";
-    /**
-     * Logic to secretArn
-     */
-    const secretArn = "";
-    return new RDSClient({ region, resourceArn, databaseName, secretArn });
+    const configClient = new Client({
+      region,
+    });
+    try {
+      const { DBClusters } = await configClient.send(
+        new DescribeDBClustersCommand({
+          DBClusterIdentifier: CLUSTER_NAME,
+        })
+      );
+
+      if (!DBClusters) {
+        throw new InternalError({
+          location: "initialize:{!DBClusters}",
+          message: "DBClusters not fetched",
+        });
+      }
+
+      const resourceArn = DBClusters[0].DBClusterArn!;
+      /**
+       * Logic to databaseName
+       */
+      const databaseName = DATABASE_NAME;
+      /**
+       * Logic to secretArn
+       */
+
+      const secretsConfig = new SecretsClient({
+        region,
+      });
+      const { SecretList } = await secretsConfig.send(
+        new ListSecretsCommand({})
+      );
+      if (!SecretList) {
+        throw new InternalError({
+          location: "initialize:{!SecretList}",
+          message: "SecretList not fetched",
+        });
+      }
+      const targetSecret = SecretList.find((config) =>
+        config.Description?.includes("cluster-airbnb")
+      );
+      if (!targetSecret) {
+        throw new InternalError({
+          location: "initialize:{!targetSecret}",
+          message: "SecretList not fetched",
+        });
+      }
+      const secretArn = targetSecret.ARN!;
+      return new RDSClient({ region, resourceArn, databaseName, secretArn });
+    } catch (error: any) {
+      process.exit(1);
+    }
   }
 
   /**
