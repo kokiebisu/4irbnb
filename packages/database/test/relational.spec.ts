@@ -17,9 +17,8 @@ describe("Relational Database Service", () => {
       tableName: "Stay",
     });
     const result = await service.findByAttributes({
-      attributes: { id: 1 },
+      attributes: { id: 1, title: "Stay Title" },
     });
-    console.debug(result);
     expect(result).not.toBeNull();
   });
   // it("deletes data", async () => {

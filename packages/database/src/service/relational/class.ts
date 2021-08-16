@@ -51,8 +51,8 @@ export class RelationalDatabaseService implements IRelationalDatabaseService {
     attributes,
   }: IRelationalDatabaseServiceFindByAttributesProps) {
     const condition = Object.keys(attributes)
-      .map((key) => `${key} = ${attributes[key]}`)
-      .join(", ");
+      .map((key) => `${key} = '${attributes[key]}'`)
+      .join(" AND ");
     try {
       return await this.#client.execute({
         sql: `SELECT * FROM ${this.#tableName} WHERE ${condition}`,

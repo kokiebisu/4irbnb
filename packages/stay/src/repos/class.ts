@@ -3,13 +3,15 @@ import {
   IRelationalDatabaseService,
   RelationalDatabaseService,
 } from "@4irbnb/database";
+import { PACKAGE_NAME } from "../configs";
+import { StayMapper } from "../mapper";
 import { IStayRepo, IStayRepoConstructorProps } from "./types";
 
 export class StayRepo implements IStayRepo {
   #db: IRelationalDatabaseService;
   #logger = LoggerUtils.initialize({
-    packageName: this.constructor.name,
-    className: "yo",
+    packageName: PACKAGE_NAME,
+    className: this.constructor.name,
   });
 
   private constructor({ db }: IStayRepoConstructorProps) {
@@ -29,13 +31,16 @@ export class StayRepo implements IStayRepo {
     });
   }
 
-  public async getStayById(stayId: string) {
+  public async getStayById(stayId: number) {
     try {
-      return await this.#db.findByAttributes({
+      const data = await this.#db.findByAttributes({
         attributes: {
           id: stayId,
         },
       });
+      return data;
+
+      // return StayMapper.convertToPersistence(data);
     } catch (error: any) {}
   }
 

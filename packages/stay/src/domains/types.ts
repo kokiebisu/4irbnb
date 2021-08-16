@@ -19,8 +19,6 @@ import {
  */
 export interface IStay {
   title: Title;
-  reviews: Reviews;
-  averageRatings: AverageRatings;
   city: City;
   province: Province;
   country: Country;
@@ -30,4 +28,6 @@ export interface IStay {
   beds: Beds;
   baths: Baths;
   imgUrls: ImgUrl[];
+  // reviews: Reviews;
+  // averageRatings: AverageRatings;
 }
