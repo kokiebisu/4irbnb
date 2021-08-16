@@ -19,8 +19,8 @@ module "services" {
 module "database" {
   source = "../packages/database/terraform"
 
-  db_cluster_identifier = "cluster-4irbnb"
-  db_name = "4irbnb"
+  db_cluster_identifier = "cluster-airbnb"
+  db_name = "airbnb"
   db_master_username = var.db_master_username
   db_master_password = var.db_master_password
 }
