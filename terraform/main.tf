@@ -16,8 +16,8 @@ module "services" {
   source = "../packages/terraform"
 }
 
-module "common" {
-  source = "../packages/common/terraform"
+module "database" {
+  source = "../packages/database/terraform"
 
   db_cluster_identifier = "cluster-4irbnb"
   db_name = "4irbnb"
