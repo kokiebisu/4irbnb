@@ -39,24 +39,24 @@ export class ImgUrl extends ValueObject<IImgUrl> {
 }
 
 // ------------------------------------------------------------------
-interface INumberOfReviews {
+interface IReviews {
   value: number;
 }
 
-export class NumberOfReviews extends ValueObject<INumberOfReviews> {
-  private constructor(props: INumberOfReviews) {
+export class Reviews extends ValueObject<IReviews> {
+  private constructor(props: IReviews) {
     super(props);
   }
 
-  public static create(numberOfReviews: number): NumberOfReviews {
+  public static create(reviews: number): Reviews {
     if (
-      numberOfReviews === undefined ||
-      numberOfReviews === null ||
-      typeof numberOfReviews === "string"
+      reviews === undefined ||
+      reviews === null ||
+      typeof reviews === "number"
     ) {
       throw new Error("imgUrls were not valid");
     } else {
-      return new NumberOfReviews({ value: numberOfReviews });
+      return new Reviews({ value: reviews });
     }
   }
 }
@@ -75,7 +75,7 @@ export class AverageRatings extends ValueObject<IAverageRatings> {
     if (
       averageRatings === undefined ||
       averageRatings === null ||
-      typeof averageRatings === "string"
+      typeof averageRatings === "number"
     ) {
       throw new Error("averateRatings were not valid");
     } else {

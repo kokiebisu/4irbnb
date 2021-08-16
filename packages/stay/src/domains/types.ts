@@ -3,7 +3,7 @@ import {
   City,
   Country,
   ImgUrl,
-  NumberOfReviews,
+  Reviews,
   Province,
   Title,
   HostingType,
@@ -19,7 +19,7 @@ import {
  */
 export interface IStay {
   title: Title;
-  numberOfReviews: NumberOfReviews;
+  reviews: Reviews;
   averageRatings: AverageRatings;
   city: City;
   province: Province;
