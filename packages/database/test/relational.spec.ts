@@ -11,7 +11,6 @@ describe("Relational Database Service", () => {
   //   });
   // });
   it("retrieves added data", async () => {
-    jest.setTimeout(20000);
     const service = await RelationalDatabaseService.initialize({
       region: "us-east-1",
       tableName: "Stay",
@@ -19,8 +18,20 @@ describe("Relational Database Service", () => {
     const result = await service.findByAttributes({
       attributes: { id: 1, title: "Stay Title" },
     });
+    console.debug("result", result);
     expect(result).not.toBeNull();
-  });
+  }, 20000);
+  it("creates data", async () => {
+    const service = await RelationalDatabaseService.initialize({
+      region: "us-east-1",
+      tableName: "Stay",
+    });
+    const result = await service.create({
+      data: {},
+    });
+    console.debug("result", result);
+    expect(result).not.toBeNull();
+  }, 20000);
   // it("deletes data", async () => {
   //   await service.delete({ tableName, identifier: { id: data.id } });
   //   const result = await service.findOne({

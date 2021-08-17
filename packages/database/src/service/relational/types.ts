@@ -11,7 +11,7 @@ export interface IRelationalDatabaseService {
   ): Promise<any | null>;
   findAllByAttributes(
     params: IRelationalDatabaseServiceFindAllByAttributesProps
-  ): Promise<any | null>;
+  ): Promise<any[] | null>;
 }
 
 /**
@@ -116,8 +116,8 @@ export interface IRelationalDatabaseServiceUpdateProps {
   data: any;
 }
 
-export interface IRelationalDatabaseServiceCreateProps {
-  data: any;
+export interface IRelationalDatabaseServiceCreateProps<T> {
+  data: T;
 }
 
 export interface IRelationalDatabaseServiceDeleteProps {

@@ -1,5 +1,5 @@
 export type TValueObject = {
-  [index: string]: any;
+  value: any;
 };
 
 export abstract class ValueObject<T extends TValueObject> {
@@ -11,5 +11,9 @@ export abstract class ValueObject<T extends TValueObject> {
 
   public equals(valueObject: ValueObject<T>) {
     return JSON.stringify(this.props) === JSON.stringify(valueObject.props);
+  }
+
+  public value() {
+    return this.props.value;
   }
 }

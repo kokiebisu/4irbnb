@@ -13,7 +13,11 @@ import { LoggerUtils, ILoggerUtils } from "@4irbnb/common";
 import { PACKAGE_NAME } from "../..";
 import { RDSClient } from "../../infra/rds";
 
-export class RelationalDatabaseService implements IRelationalDatabaseService {
+export class RelationalDatabaseService<
+  T extends {
+    [key: string]: any;
+  }
+> implements IRelationalDatabaseService {
   #logger: ILoggerUtils = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,
     className: this.constructor.name,
@@ -74,7 +78,7 @@ export class RelationalDatabaseService implements IRelationalDatabaseService {
   }: IRelationalDatabaseServiceFindAllByAttributesProps) {
     console.log(attributes);
     try {
-      await this.#client.batchExecute({ sql: "" });
+      return await this.#client.batchExecute({ sql: "" });
     } catch (error: any) {
       this.#logger.error({
         location: "findAllByAttribute:batchExecute",
@@ -87,16 +91,23 @@ export class RelationalDatabaseService implements IRelationalDatabaseService {
    * @public
    * @param param0
    */
-  async create({ data }: IRelationalDatabaseServiceCreateProps) {
-    console.log(data);
-    try {
-      await this.#client.execute({ sql: "" });
-    } catch (error: any) {
-      this.#logger.error({
-        location: "create:execute",
-        message: error,
-      });
-    }
+  async create({ data }: IRelationalDatabaseServiceCreateProps<T>) {
+    const keys: string[] = [];
+    const values: string[] = [];
+    Object.keys(data).forEach((key: string) => {
+      keys.push(key);
+      values.push(data[key]);
+    });
+    console.debug("keys", keys.join(", "));
+    console.debug("values", values.join(", "));
+    // try {
+    //   await this.#client.execute({ sql: `INSERT INTO ${this.#tableName} ()` });
+    // } catch (error: any) {
+    //   this.#logger.error({
+    //     location: "create:execute",
+    //     message: error,
+    //   });
+    // }
   }
 
   /**

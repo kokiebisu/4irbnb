@@ -11,7 +11,6 @@ import {
   Stay,
   Title,
 } from "..";
-import { stay } from "../mocks";
 import { TRawStay } from "./types";
 
 export class StayMapper {
@@ -27,9 +26,9 @@ export class StayMapper {
         ].map((imgUrl: string) => ImgUrl.create(imgUrl)),
         hostingType: HostingType.create(stayRaw[6]["stringValue"]),
         guests: Guests.create(stayRaw[7]["longValue"]),
-        bedrooms: Bedrooms.create(stayRaw[9]["longValue"]),
-        beds: Beds.create(stayRaw[10]["longValue"]),
-        baths: Baths.create(stayRaw[11]["longValue"]),
+        bedrooms: Bedrooms.create(stayRaw[8]["longValue"]),
+        beds: Beds.create(stayRaw[9]["longValue"]),
+        baths: Baths.create(stayRaw[10]["longValue"]),
       });
     });
     return result;

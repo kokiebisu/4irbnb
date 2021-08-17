@@ -105,6 +105,7 @@ export class RDSClient implements IRelationalDatabaseClient {
       const secretArn = targetSecret.ARN!;
       return new RDSClient({ region, resourceArn, databaseName, secretArn });
     } catch (error: any) {
+      console.debug("ERROR HERE", error);
       process.exit(1);
     }
   }

@@ -30,7 +30,7 @@ export class ImgUrl extends ValueObject<IImgUrl> {
   }
 
   public static create(imgUrl: string): ImgUrl {
-    if (imgUrl === undefined || imgUrl === null || typeof imgUrl === "string") {
+    if (imgUrl === undefined || imgUrl === null || typeof imgUrl !== "string") {
       throw new Error("imgUrls were not valid");
     } else {
       return new ImgUrl({ value: imgUrl });
@@ -52,7 +52,7 @@ export class Reviews extends ValueObject<IReviews> {
     if (
       reviews === undefined ||
       reviews === null ||
-      typeof reviews === "number"
+      typeof reviews !== "number"
     ) {
       throw new Error("imgUrls were not valid");
     } else {
@@ -75,7 +75,7 @@ export class AverageRatings extends ValueObject<IAverageRatings> {
     if (
       averageRatings === undefined ||
       averageRatings === null ||
-      typeof averageRatings === "number"
+      typeof averageRatings !== "number"
     ) {
       throw new Error("averateRatings were not valid");
     } else {
@@ -95,7 +95,7 @@ export class City extends ValueObject<ICity> {
   }
 
   public static create(city: string): City {
-    if (city === undefined || city === null || typeof city === "string") {
+    if (city === undefined || city === null || typeof city !== "string") {
       throw new Error("city were not valid");
     } else {
       return new City({ value: city });
@@ -117,7 +117,7 @@ export class Province extends ValueObject<IProvince> {
     if (
       province === undefined ||
       province === null ||
-      typeof province === "string"
+      typeof province !== "string"
     ) {
       throw new Error("province were not valid");
     } else {
