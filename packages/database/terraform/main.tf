@@ -38,13 +38,13 @@
 
 
 ############## USED FOR RDS
-resource "aws_db_instance" "mysql" {
-    name = "airbnb"
-    allocated_storage = 20
-    engine = "mysql"
-    engine_version = "8.0.25"
-    instance_class = "db.t3.micro"
-    username = var.db_master_username
-    password = var.db_master_password
-    skip_final_snapshot = true
-}   
+# resource "aws_db_instance" "mysql" {
+#     name = "airbnb"
+#     allocated_storage = 20
+#     engine = "mysql"
+#     engine_version = "8.0.25"
+#     instance_class = "db.t3.micro"
+#     username = var.db_master_username
+#     password = var.db_master_password
+#     skip_final_snapshot = true
+# }   
