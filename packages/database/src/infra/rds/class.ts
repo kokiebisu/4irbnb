@@ -130,7 +130,7 @@ export class RDSClient implements IRelationalDatabaseClient {
       ).records;
     } catch (error) {
       this.#logger.error({
-        location: "get:send",
+        location: "execute:send",
         message: error as string,
       });
       return null;
@@ -156,7 +156,7 @@ export class RDSClient implements IRelationalDatabaseClient {
       return data;
     } catch (error) {
       this.#logger.error({
-        location: "get:send",
+        location: "batchExecute:send",
         message: error as string,
       });
       return null;

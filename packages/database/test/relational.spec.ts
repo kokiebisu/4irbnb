@@ -10,7 +10,7 @@ describe("Relational Database Service", () => {
   //     },
   //   });
   // });
-  it("retrieves added data", async () => {
+  it.skip("retrieves added data", async () => {
     const service = await RelationalDatabaseService.initialize({
       region: "us-east-1",
       tableName: "Stay",
@@ -26,10 +26,21 @@ describe("Relational Database Service", () => {
       region: "us-east-1",
       tableName: "Stay",
     });
+    const stayData = {
+      title: "Test Stay",
+      city: "Test City",
+      province: "Test Province",
+      country: "Test Country",
+      img_urls: ["imgUrl1", "imgUrl2"],
+      hosting_type: "Entire rental unit",
+      guests: 1,
+      beds: 1,
+      baths: 1,
+      bedrooms: 1,
+    };
     const result = await service.create({
-      data: {},
+      data: stayData,
     });
-    console.debug("result", result);
     expect(result).not.toBeNull();
   }, 20000);
   // it("deletes data", async () => {

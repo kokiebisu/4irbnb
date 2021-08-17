@@ -96,18 +96,31 @@ export class RelationalDatabaseService<
     const values: string[] = [];
     Object.keys(data).forEach((key: string) => {
       keys.push(key);
-      values.push(data[key]);
+      switch (typeof data[key]) {
+        case "string":
+          values.push(`'${data[key]}'`);
+          break;
+        case "number":
+          values.push(data[key]);
+          break;
+        case "object":
+          values.push(`'{${data[key].join(", ")}}'`);
+          break;
+      }
     });
-    console.debug("keys", keys.join(", "));
-    console.debug("values", values.join(", "));
-    // try {
-    //   await this.#client.execute({ sql: `INSERT INTO ${this.#tableName} ()` });
-    // } catch (error: any) {
-    //   this.#logger.error({
-    //     location: "create:execute",
-    //     message: error,
-    //   });
-    // }
+    const sql = `INSERT INTO ${this.#tableName} (${keys.join(
+      ", "
+    )}) VALUES (${values.join(", ")})`;
+    try {
+      await this.#client.execute({ sql });
+      return data;
+    } catch (error: any) {
+      this.#logger.error({
+        location: "create:execute",
+        message: error,
+      });
+      return null;
+    }
   }
 
   /**

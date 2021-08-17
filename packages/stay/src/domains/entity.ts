@@ -41,4 +41,20 @@ export class Stay extends Entity<IStay> {
   get imgUrls() {
     return this.props.imgUrls;
   }
+
+  get guests() {
+    return this.props.guests;
+  }
+
+  get bedrooms() {
+    return this.props.bedrooms;
+  }
+
+  get baths() {
+    return this.props.baths;
+  }
+
+  get beds() {
+    return this.props.beds;
+  }
 }
