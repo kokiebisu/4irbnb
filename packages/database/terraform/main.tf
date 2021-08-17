@@ -37,10 +37,12 @@
 # }
 
 
-############### USED FOR RDS
-# resource "aws_rds_cluster" "mysql" {
-#     allocated_storage = 20
-#     engine = mysql
-#     engine_version = 8.0.25
-#     instance_class
-# }   
+############## USED FOR RDS
+resource "aws_rds_cluster" "mysql" {
+    allocated_storage = 20
+    engine = "mysql"
+    engine_version = "8.0.25"
+    instance_class = "db.t3.micro"
+    username = var.db_master_username
+    password = var.db_master_password
+}   
