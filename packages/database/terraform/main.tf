@@ -46,6 +46,5 @@ resource "aws_db_instance" "mysql" {
     instance_class = "db.t3.micro"
     username = var.db_master_username
     password = var.db_master_password
-    name                 = "airbnb"
     skip_final_snapshot  = true
 }   
