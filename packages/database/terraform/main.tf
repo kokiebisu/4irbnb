@@ -39,6 +39,7 @@
 
 ############## USED FOR RDS
 resource "aws_db_instance" "mysql" {
+    identifier = "airbnb"
     allocated_storage = 20
     engine = "mysql"
     engine_version = "8.0.25"
