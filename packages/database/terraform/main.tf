@@ -47,4 +47,6 @@ resource "aws_db_instance" "mysql" {
     username = var.db_master_username
     password = var.db_master_password
     skip_final_snapshot  = true
+    backup_retention_period = 0
+    apply_immediately = true
 }   
