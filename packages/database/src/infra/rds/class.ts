@@ -6,6 +6,7 @@ import {
 import {
   RDSClient as Client,
   DescribeDBInstancesCommand,
+  ConnectionPoolConfiguration,
 } from "@aws-sdk/client-rds";
 import {
   SecretsManagerClient as SecretsClient,
@@ -16,6 +17,7 @@ import {
   IRelationalDatabaseClientBatchExecuteProps,
   IRelationalDatabaseClientConstructorProps,
   IRelationalDatabaseClientExecuteProps,
+  IRelationalDatabaseClientInitializeProps,
 } from "../../service/relational/types";
 import { PACKAGE_NAME } from "../..";
 import {
@@ -27,7 +29,7 @@ import {
 } from "@4irbnb/common";
 import { DB_INSTANCE_IDENTIFIER } from "../../config";
 import { ManagerService } from "@4irbnb/manager";
-import { Connection, createConnection } from "mysql";
+import { Connection, createConnection, Query } from "mysql";
 import { promisify } from "util";
 
 /**
@@ -48,21 +50,38 @@ export class RDSClient implements IRelationalDatabaseClient {
   });
 
   private constructor({ host, user, port, password }: any) {
+    console.debug("CREATE CONNECTION", {
+      host,
+      user,
+      password,
+      port,
+    });
     this.#conn = createConnection({
       host,
       user,
       port,
       password,
     });
+
+    this.#conn.connect((err) => {
+      if (!err) {
+        this.#logger.log({
+          location: "constructor",
+          message: "Successfully initialized...",
+        });
+      } else {
+        this.#logger.error({
+          location: "constructor",
+          message: "Database connection didn't work...",
+        });
+      }
+    });
   }
 
   public static async initialize({
     serviceName,
     region,
-  }: {
-    serviceName: string;
-    region: TRegion;
-  }) {
+  }: IRelationalDatabaseClientInitializeProps) {
     const configClient = new Client({
       region,
     });
@@ -82,7 +101,7 @@ export class RDSClient implements IRelationalDatabaseClient {
 
       const targetInstance = DBInstances.find(
         (instance: any) =>
-          instance.DBClusterIdentifier === DB_INSTANCE_IDENTIFIER
+          instance.DBInstanceIdentifier === DB_INSTANCE_IDENTIFIER
       );
 
       if (!targetInstance) {
@@ -114,6 +133,7 @@ export class RDSClient implements IRelationalDatabaseClient {
       return new RDSClient({ host, user, password, port });
     } catch (error: any) {
       console.debug("ERROR HERE", error);
+      process.exit(1);
     }
   }
 
@@ -124,8 +144,8 @@ export class RDSClient implements IRelationalDatabaseClient {
    */
   async execute({ sql }: IRelationalDatabaseClientExecuteProps) {
     try {
-      const query = promisify(this.#conn.query);
-      return await query(sql);
+      const query = await promisify(this.#conn.query.bind(this.#conn));
+      const result = await query(sql);
       // return (
       //   await this.#package?.send(
       //     new ExecuteStatementCommand({
@@ -137,6 +157,9 @@ export class RDSClient implements IRelationalDatabaseClient {
       //     })
       //   )
       // ).records;
+      console.debug("YO", result);
+      this.#conn.end();
+      return result;
     } catch (error) {
       this.#logger.error({
         location: "execute:query",

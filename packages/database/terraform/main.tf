@@ -51,4 +51,5 @@ resource "aws_db_instance" "mysql" {
     apply_immediately = "true"
     final_snapshot_identifier = "airbnb-snapshot"
     identifier = "airbnb"
+    publicly_accessible = true
 }   

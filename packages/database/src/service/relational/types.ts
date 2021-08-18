@@ -9,9 +9,9 @@ export interface IRelationalDatabaseService {
   findByAttributes(
     params: IRelationalDatabaseServiceFindByAttributesProps
   ): Promise<any | null>;
-  findAllByAttributes(
-    params: IRelationalDatabaseServiceFindAllByAttributesProps
-  ): Promise<any[] | null>;
+  // findAllByAttributes(
+  //   params: IRelationalDatabaseServiceFindAllByAttributesProps
+  // ): Promise<any[] | null>;
 }
 
 /**
@@ -91,6 +91,11 @@ export interface IRelationalDatabaseClientConstructorProps {
   resourceArn: string;
   databaseName: string;
   secretArn: string;
+}
+
+export interface IRelationalDatabaseClientInitializeProps {
+  serviceName: string;
+  region: TRegion;
 }
 
 export interface IRelationalDatabaseClientExecuteProps {

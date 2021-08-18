@@ -1,7 +1,7 @@
 // import { data, dataSchema, tableName } from "./mock";
 import { RelationalDatabaseService } from "../../src/service";
 
-describe("Relational Database Service", () => {
+describe.skip("Relational Database Service", () => {
   // beforeAll(async () => {
   //   await service.insert({
   //     tableName: "TestService",
@@ -10,7 +10,7 @@ describe("Relational Database Service", () => {
   //     },
   //   });
   // });
-  it.skip("retrieves added data", async () => {
+  it("retrieves added data", async () => {
     const service = await RelationalDatabaseService.initialize({
       region: "us-east-1",
       tableName: "Stay",
