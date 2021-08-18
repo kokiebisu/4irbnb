@@ -15,16 +15,17 @@
   },
   "dependencies": {
     "@4irbnb/common": "file:../common",
+    "@4irbnb/manager": "file:../manager",
     "@aws-sdk/client-dynamodb": "^3.24.0",
     "@aws-sdk/client-elasticache": "^3.25.0",
     "@aws-sdk/client-rds": "^3.26.0",
     "@aws-sdk/client-rds-data": "^3.25.0",
-    "@aws-sdk/client-secrets-manager": "^3.26.0",
-    "@aws-sdk/client-ssm": "^3.24.0",
     "@aws-sdk/lib-dynamodb": "^3.24.0",
-    "@aws-sdk/util-dynamodb": "^3.24.0"
+    "@aws-sdk/util-dynamodb": "^3.24.0",
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
+    "@types/mysql": "^2.15.19",
     "@types/uuid": "^8.3.1"
   },
   "workspaces": {

@@ -1,5 +1,5 @@
 // import { data, dataSchema, tableName } from "./mock";
-import { RelationalDatabaseService } from "../src/service";
+import { RelationalDatabaseService } from "../../src/service";
 
 describe("Relational Database Service", () => {
   // beforeAll(async () => {

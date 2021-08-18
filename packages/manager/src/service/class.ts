@@ -27,11 +27,11 @@ export class ManagerService {
   }
 
   public static initialize({
-    groupName,
+    serviceName,
     region,
   }: IManagerServiceInitializeProps) {
     return new ManagerService({
-      client: SSMClient.initialize({ region, groupName }),
+      client: SSMClient.initialize({ region, serviceName }),
     });
   }
 

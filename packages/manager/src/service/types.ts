@@ -31,11 +31,11 @@ export interface IConfigClient {
  */
 export interface ISSMClientConstructorProps {
   region: string;
-  groupName: string;
+  serviceName: string;
 }
 
 export interface IManagerServiceInitializeProps {
-  groupName: string;
+  serviceName: string;
   region: string;
 }
 
@@ -63,5 +63,5 @@ export interface IConfigClientDeleteProps {
 
 export interface IConfigClientCreateProps {
   region: string;
-  groupName: string;
+  serviceName: string;
 }

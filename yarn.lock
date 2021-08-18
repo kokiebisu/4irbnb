@@ -16,14 +16,15 @@
 "@4irbnb/database@file:packages/database":
   version "1.1.0"
   dependencies:
-    "@4irbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@4irbnb-database-1.1.0-5564e8c3-1bb5-4599-81a7-e395f8931cab-1629089943851/node_modules/@4irbnb/common"
+    "@4irbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@4irbnb-database-1.1.0-d804040c-0435-4313-b08c-01bd1cf49240-1629262772217/node_modules/@4irbnb/common"
+    "@4irbnb/manager" "file:../../Library/Caches/Yarn/v6/npm-@4irbnb-database-1.1.0-d804040c-0435-4313-b08c-01bd1cf49240-1629262772217/node_modules/@4irbnb/manager"
     "@aws-sdk/client-dynamodb" "^3.24.0"
     "@aws-sdk/client-elasticache" "^3.25.0"
     "@aws-sdk/client-rds" "^3.26.0"
     "@aws-sdk/client-rds-data" "^3.25.0"
-    "@aws-sdk/client-ssm" "^3.24.0"
     "@aws-sdk/lib-dynamodb" "^3.24.0"
     "@aws-sdk/util-dynamodb" "^3.24.0"
+    mysql "^2.18.1"
 
 "@4irbnb/manager@file:packages/manager":
   version "1.1.0"
@@ -416,44 +417,6 @@
     entities "2.2.0"
     fast-xml-parser "3.19.0"
     tslib "^2.3.0"
-
-"@aws-sdk/client-secrets-manager@^3.26.0":
-  version "3.26.0"
-  resolved "https://registry.yarnpkg.com/@aws-sdk/client-secrets-manager/-/client-secrets-manager-3.26.0.tgz#23cf6fd6203ca551e042ce7952b6fb50211680b2"
-  integrity sha512-5L/OzS9o7UnebeG00Gl8CqRzsf7TWYmi6uNtUv8jtj8GJ96Ut2xSE/KkfGqAoSyioz11dGkCGVhx1FrBofjX8Q==
-  dependencies:
-    "@aws-crypto/sha256-browser" "^1.0.0"
-    "@aws-crypto/sha256-js" "^1.0.0"
-    "@aws-sdk/client-sts" "3.26.0"
-    "@aws-sdk/config-resolver" "3.25.0"
-    "@aws-sdk/credential-provider-node" "3.26.0"
-    "@aws-sdk/fetch-http-handler" "3.25.0"
-    "@aws-sdk/hash-node" "3.25.0"
-    "@aws-sdk/invalid-dependency" "3.25.0"
-    "@aws-sdk/middleware-content-length" "3.25.0"
-    "@aws-sdk/middleware-host-header" "3.25.0"
-    "@aws-sdk/middleware-logger" "3.25.0"
-    "@aws-sdk/middleware-retry" "3.25.0"
-    "@aws-sdk/middleware-serde" "3.25.0"
-    "@aws-sdk/middleware-signing" "3.25.0"
-    "@aws-sdk/middleware-stack" "3.25.0"
-    "@aws-sdk/middleware-user-agent" "3.25.0"
-    "@aws-sdk/node-config-provider" "3.25.0"
-    "@aws-sdk/node-http-handler" "3.25.0"
-    "@aws-sdk/protocol-http" "3.25.0"
-    "@aws-sdk/smithy-client" "3.25.0"
-    "@aws-sdk/types" "3.25.0"
-    "@aws-sdk/url-parser" "3.25.0"
-    "@aws-sdk/util-base64-browser" "3.23.0"
-    "@aws-sdk/util-base64-node" "3.23.0"
-    "@aws-sdk/util-body-length-browser" "3.23.0"
-    "@aws-sdk/util-body-length-node" "3.23.0"
-    "@aws-sdk/util-user-agent-browser" "3.25.0"
-    "@aws-sdk/util-user-agent-node" "3.25.0"
-    "@aws-sdk/util-utf8-browser" "3.23.0"
-    "@aws-sdk/util-utf8-node" "3.23.0"
-    tslib "^2.3.0"
-    uuid "^8.3.2"
 
 "@aws-sdk/client-sqs@^3.25.0":
   version "3.25.0"
@@ -5671,6 +5634,13 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.2.tgz#ee771e2ba4b3dc5b372935d549fd9617bf345b8c"
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
+"@types/mysql@^2.15.19":
+  version "2.15.19"
+  resolved "https://registry.yarnpkg.com/@types/mysql/-/mysql-2.15.19.tgz#d158927bb7c1a78f77e56de861a3b15cae0e7aed"
+  integrity sha512-wSRg2QZv14CWcZXkgdvHbbV2ACufNy5EgI8mBBxnJIptchv7DBy/h53VMa2jDhyo0C9MO4iowE6z9vF8Ja1DkQ==
+  dependencies:
+    "@types/node" "*"
+
 "@types/node-fetch@^2.5.7", "@types/node-fetch@^2.5.8":
   version "2.5.12"
   resolved "https://registry.yarnpkg.com/@types/node-fetch/-/node-fetch-2.5.12.tgz#8a6f779b1d4e60b7a57fb6fd48d84fb545b9cc66"
@@ -7034,6 +7004,11 @@ big.js@^5.2.2:
   version "5.2.2"
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
   integrity sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==
+
+bignumber.js@9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-9.0.0.tgz#805880f84a329b5eac6e7cb6f8274b6d82bdf075"
+  integrity sha512-t/OYhhJ2SD+YGBQcjY8GzzDHEk9f3nerxjtfa6tlMXfe7frs/WozhvCNoGvpM0P3bNf3Gq5ZRMlGr5f3r4/N8A==
 
 binary-extensions@^1.0.0:
   version "1.13.1"
@@ -14057,6 +14032,16 @@ mute-stream@~0.0.4:
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.8.tgz#1630c42b2251ff81e2a283de96a5497ea92e5e0d"
   integrity sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==
 
+mysql@^2.18.1:
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/mysql/-/mysql-2.18.1.tgz#2254143855c5a8c73825e4522baf2ea021766717"
+  integrity sha512-Bca+gk2YWmqp2Uf6k5NFEurwY/0td0cpebAucFpY/3jhrwrVGuxU2uQFCHjU19SJfje0yQvi+rVWdq78hR5lig==
+  dependencies:
+    bignumber.js "9.0.0"
+    readable-stream "2.3.7"
+    safe-buffer "5.1.2"
+    sqlstring "2.3.1"
+
 mz@^2.4.0, mz@^2.5.0:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/mz/-/mz-2.7.0.tgz#95008057a56cafadc2bc63dde7f9ff6955948e32"
@@ -16176,7 +16161,7 @@ read@1, read@~1.0.1:
   dependencies:
     mute-stream "~0.0.4"
 
-"readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.3, readable-stream@^2.3.6, readable-stream@^2.3.7, readable-stream@~2.3.6:
+"readable-stream@1 || 2", readable-stream@2.3.7, readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.3, readable-stream@^2.3.6, readable-stream@^2.3.7, readable-stream@~2.3.6:
   version "2.3.7"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.7.tgz#1eca1cf711aef814c04f62252a36a62f6cb23b57"
   integrity sha512-Ebho8K4jIbHAxnuxi7o42OrZgF/ZTNcsZj6nRKyUmkhLFq8CHItp/fy6hQZuZmP/n3yZ9VBUbp4zz/mX8hmYPw==
@@ -17278,6 +17263,11 @@ sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
+
+sqlstring@2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/sqlstring/-/sqlstring-2.3.1.tgz#475393ff9e91479aea62dcaf0ca3d14983a7fb40"
+  integrity sha1-R1OT/56RR5rqYtyvDKPRSYOn+0A=
 
 sshpk@^1.7.0:
   version "1.16.1"

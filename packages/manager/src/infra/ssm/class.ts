@@ -22,31 +22,31 @@ import { PACKAGE_NAME } from "../..";
 export class SSMClient implements IConfigClient {
   #client;
   #logger: ILoggerUtils;
-  #groupName: string;
+  #serviceName: string;
 
-  private constructor({ region, groupName }: ISSMClientConstructorProps) {
+  private constructor({ region, serviceName }: ISSMClientConstructorProps) {
     this.#client = new SSM({ region });
     this.#logger = LoggerUtils.initialize({
       packageName: PACKAGE_NAME,
       className: this.constructor.name,
     });
-    this.#groupName = groupName;
+    this.#serviceName = serviceName;
   }
 
-  public static initialize({ region, groupName }: IConfigClientCreateProps) {
-    return new SSMClient({ region, groupName });
+  public static initialize({ region, serviceName }: IConfigClientCreateProps) {
+    return new SSMClient({ region, serviceName });
   }
 
   /**
    * @public
    */
   async get({ key }: IConfigClientGetProps) {
-    const name = this.#groupName.replace("@", "");
+    const name = this.#serviceName.replace("@", "");
     try {
       return (
         await this.#client.send(
           new GetParameterCommand({
-            Name: `/4irbnb/${name}/${key}`,
+            Name: `/airbnb/${name}/${key}`,
           })
         )
       ).Parameter?.Value;
@@ -63,11 +63,11 @@ export class SSMClient implements IConfigClient {
    * @public
    */
   async set({ key, value }: IConfigClientSetProps) {
-    const name = this.#groupName.replace("@", "");
+    const name = this.#serviceName.replace("@", "");
     try {
       await this.#client.send(
         new PutParameterCommand({
-          Name: `/4irbnb/${name}/${key}`,
+          Name: `/airbnb/${name}/${key}`,
           Value: value,
           Overwrite: true,
           DataType: "text",
@@ -86,11 +86,11 @@ export class SSMClient implements IConfigClient {
    * @public
    */
   async delete({ key }: IConfigClientDeleteProps) {
-    const name = this.#groupName.replace("@", "");
+    const name = this.#serviceName.replace("@", "");
     try {
       await this.#client.send(
         new DeleteParameterCommand({
-          Name: `/4irbnb/${name}/${key}`,
+          Name: `/airbnb/${name}/${key}`,
         })
       );
     } catch (error) {

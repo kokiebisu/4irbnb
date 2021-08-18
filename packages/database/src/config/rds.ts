@@ -1,2 +1,2 @@
-export const CLUSTER_NAME = "cluster-airbnb";
 export const DATABASE_NAME = "airbnb";
+export const DB_INSTANCE_IDENTIFIER = "airbnb";

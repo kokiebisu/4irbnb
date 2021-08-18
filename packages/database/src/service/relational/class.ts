@@ -9,9 +9,9 @@ import {
   IRelationalDatabaseServiceInitializeProps,
   IRelationalDatabaseServiceUpdateProps,
 } from "./types";
-import { LoggerUtils, ILoggerUtils } from "@4irbnb/common";
+import { LoggerUtils, ILoggerUtils, InternalError } from "@4irbnb/common";
 import { PACKAGE_NAME } from "../..";
-import { RDSClient } from "../../infra/rds";
+import { RDSClient } from "../../infra";
 
 export class RelationalDatabaseService<
   T extends {
@@ -41,10 +41,24 @@ export class RelationalDatabaseService<
     region,
     tableName,
   }: IRelationalDatabaseServiceInitializeProps) {
-    return new RelationalDatabaseService({
-      client: await RDSClient.initialize({ region }),
-      tableName,
-    });
+    try {
+      const client = await RDSClient.initialize({
+        serviceName: "RelationalDatabaseService",
+        region,
+      });
+      if (!client) {
+        throw new InternalError({
+          location: "initialize:{!client}",
+          message: "RDS Client unable to initialize",
+        });
+      }
+      return new RelationalDatabaseService({
+        client,
+        tableName,
+      });
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   /**

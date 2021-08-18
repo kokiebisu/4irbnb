@@ -84,9 +84,6 @@ export interface IRelationalDatabaseServiceFindByKeyParams {
  */
 export interface IRelationalDatabaseClient {
   execute(params: IRelationalDatabaseClientExecuteProps): Promise<any | null>;
-  batchExecute(
-    params: IRelationalDatabaseClientBatchExecuteProps
-  ): Promise<any | null>;
 }
 
 export interface IRelationalDatabaseClientConstructorProps {

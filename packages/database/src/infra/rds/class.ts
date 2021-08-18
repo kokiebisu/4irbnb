@@ -5,7 +5,7 @@ import {
 } from "@aws-sdk/client-rds-data";
 import {
   RDSClient as Client,
-  DescribeDBClustersCommand,
+  DescribeDBInstancesCommand,
 } from "@aws-sdk/client-rds";
 import {
   SecretsManagerClient as SecretsClient,
@@ -23,8 +23,12 @@ import {
   ILoggerUtils,
   IRegion,
   InternalError,
+  TRegion,
 } from "@4irbnb/common";
-import { CLUSTER_NAME, DATABASE_NAME } from "../../config/rds";
+import { DB_INSTANCE_IDENTIFIER } from "../../config";
+import { ManagerService } from "@4irbnb/manager";
+import { Connection, createConnection } from "mysql";
+import { promisify } from "util";
 
 /**
  * @public
@@ -32,81 +36,84 @@ import { CLUSTER_NAME, DATABASE_NAME } from "../../config/rds";
  * - Transactions
  */
 export class RDSClient implements IRelationalDatabaseClient {
-  #package: DataClient;
-  #resourceArn: string;
-  #databaseName: string;
-  #secretArn: string;
+  // #package: DataClient;
+  // #resourceArn: string;
+  // #databaseName: string;
+  // #secretArn: string;
+  #conn: Connection;
 
   #logger: ILoggerUtils = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,
     className: this.constructor.name,
   });
 
-  private constructor({
-    region,
-    resourceArn,
-    databaseName,
-    secretArn,
-  }: IRelationalDatabaseClientConstructorProps) {
-    this.#databaseName = databaseName;
-    this.#secretArn = secretArn;
-    this.#resourceArn = resourceArn;
-    this.#package = new DataClient({ region });
+  private constructor({ host, user, port, password }: any) {
+    this.#conn = createConnection({
+      host,
+      user,
+      port,
+      password,
+    });
   }
 
-  public static async initialize({ region }: IRegion) {
+  public static async initialize({
+    serviceName,
+    region,
+  }: {
+    serviceName: string;
+    region: TRegion;
+  }) {
     const configClient = new Client({
       region,
     });
     try {
-      const { DBClusters } = await configClient.send(
-        new DescribeDBClustersCommand({
-          DBClusterIdentifier: CLUSTER_NAME,
+      const { DBInstances } = await configClient.send(
+        new DescribeDBInstancesCommand({
+          DBInstanceIdentifier: DB_INSTANCE_IDENTIFIER,
         })
       );
 
-      if (!DBClusters) {
+      if (!DBInstances) {
         throw new InternalError({
           location: "initialize:{!DBClusters}",
           message: "DBClusters not fetched",
         });
       }
 
-      const resourceArn = DBClusters[0].DBClusterArn!;
-      /**
-       * Logic to databaseName
-       */
-      const databaseName = DATABASE_NAME;
-      /**
-       * Logic to secretArn
-       */
+      const targetInstance = DBInstances.find(
+        (instance: any) =>
+          instance.DBClusterIdentifier === DB_INSTANCE_IDENTIFIER
+      );
 
-      const secretsConfig = new SecretsClient({
-        region,
-      });
-      const { SecretList } = await secretsConfig.send(
-        new ListSecretsCommand({})
-      );
-      if (!SecretList) {
+      if (!targetInstance) {
         throw new InternalError({
-          location: "initialize:{!SecretList}",
-          message: "SecretList not fetched",
+          location: "initialize:{!targetInstance}",
+          message: "targetInstance not fetched",
         });
       }
-      const targetSecret = SecretList.find((config) =>
-        config.Description?.includes("cluster-airbnb")
-      );
-      if (!targetSecret) {
+
+      const host = targetInstance.Endpoint?.Address;
+      const port = targetInstance.Endpoint?.Port;
+
+      const manager = ManagerService.initialize({ serviceName, region });
+      const user = await manager.get({ key: "DB_USERNAME" });
+      if (!user) {
         throw new InternalError({
-          location: "initialize:{!targetSecret}",
-          message: "SecretList not fetched",
+          location: "initialize:{!dbUsername}",
+          message: "dbUsername not fetched",
         });
       }
-      const secretArn = targetSecret.ARN!;
-      return new RDSClient({ region, resourceArn, databaseName, secretArn });
+      const password = await manager.get({ key: "DB_PASSWORD" });
+      if (!password) {
+        throw new InternalError({
+          location: "initialize:{!dbPassword}",
+          message: "dbPassword not fetched",
+        });
+      }
+
+      return new RDSClient({ host, user, password, port });
     } catch (error: any) {
       console.debug("ERROR HERE", error);
-      process.exit(1);
     }
   }
 
@@ -117,49 +124,51 @@ export class RDSClient implements IRelationalDatabaseClient {
    */
   async execute({ sql }: IRelationalDatabaseClientExecuteProps) {
     try {
-      return (
-        await this.#package?.send(
-          new ExecuteStatementCommand({
-            resourceArn: this.#resourceArn,
-            database: this.#databaseName,
-            secretArn: this.#secretArn,
-            includeResultMetadata: true,
-            sql,
-          })
-        )
-      ).records;
+      const query = promisify(this.#conn.query);
+      return await query(sql);
+      // return (
+      //   await this.#package?.send(
+      //     new ExecuteStatementCommand({
+      //       resourceArn: this.#resourceArn,
+      //       database: this.#databaseName,
+      //       secretArn: this.#secretArn,
+      //       includeResultMetadata: true,
+      //       sql,
+      //     })
+      //   )
+      // ).records;
     } catch (error) {
       this.#logger.error({
-        location: "execute:send",
+        location: "execute:query",
         message: error as string,
       });
       return null;
     }
   }
 
-  /**
-   * @public
-   * Finds data to the database
-   * @returns
-   */
-  async batchExecute({ sql }: IRelationalDatabaseClientBatchExecuteProps) {
-    try {
-      const data = await this.#package?.send(
-        new BatchExecuteStatementCommand({
-          resourceArn: this.#resourceArn,
-          database: this.#databaseName,
-          secretArn: this.#secretArn,
-          sql,
-        })
-      );
+  // /**
+  //  * @public
+  //  * Finds data to the database
+  //  * @returns
+  //  */
+  // async batchExecute({ sql }: IRelationalDatabaseClientBatchExecuteProps) {
+  //   try {
+  //     // const data = await this.#package?.send(
+  //     //   new BatchExecuteStatementCommand({
+  //     //     resourceArn: this.#resourceArn,
+  //     //     database: this.#databaseName,
+  //     //     secretArn: this.#secretArn,
+  //     //     sql,
+  //     //   })
+  //     // );
 
-      return data;
-    } catch (error) {
-      this.#logger.error({
-        location: "batchExecute:send",
-        message: error as string,
-      });
-      return null;
-    }
-  }
+  //     return data;
+  //   } catch (error) {
+  //     this.#logger.error({
+  //       location: "batchExecute:send",
+  //       message: error as string,
+  //     });
+  //     return null;
+  //   }
+  // }
 }
