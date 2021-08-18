@@ -50,4 +50,5 @@ resource "aws_db_instance" "mysql" {
     backup_retention_period = 0
     apply_immediately = "true"
     final_snapshot_identifier = "airbnb-snapshot"
+    identifier = "airbnb"
 }   
