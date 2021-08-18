@@ -46,7 +46,7 @@ resource "aws_db_instance" "mysql" {
     instance_class = "db.t3.micro"
     username = var.db_master_username
     password = var.db_master_password
-    skip_final_snapshot  = "true"
+    skip_final_snapshot  = false
     backup_retention_period = 0
     apply_immediately = "true"
     final_snapshot_identifier = "airbnb-snapshot"
