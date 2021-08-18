@@ -20,7 +20,7 @@ resource "aws_security_group" "rds" {
       to_port     = 3306
       protocol    = "tcp"
       cidr_blocks = ["0.0.0.0/0"]
-      ipv6_cidr_blocks = [aws_vpc.vpc.ipv6_cidr_blocks]
+      ipv6_cidr_blocks = [aws_vpc.vpc.ipv6_cidr_block]
     }
   ]
 
