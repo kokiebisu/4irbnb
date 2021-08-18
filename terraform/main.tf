@@ -23,22 +23,22 @@ module "database" {
   db_name               = "airbnb"
   db_master_username    = var.db_master_username
   db_master_password    = var.db_master_password
-  vpc_id                = aws_vpc.vpc.id
+  rds_security_group =  aws_security_group.rds
 }
 
 
-module "stay" {
-  source = "../packages/stay/terraform"
+# module "stay" {
+#   source = "../packages/stay/terraform"
 
-  read_capacity  = 10
-  write_capacity = 10
+#   read_capacity  = 10
+#   write_capacity = 10
 
-  api_gateway_id            = aws_apigatewayv2_api.lambda.id
-  api_gateway_execution_arn = aws_apigatewayv2_api.lambda.execution_arn
+#   api_gateway_id            = aws_apigatewayv2_api.lambda.id
+#   api_gateway_execution_arn = aws_apigatewayv2_api.lambda.execution_arn
 
-  service_role_arn = aws_iam_role.service_role.arn
+#   service_role_arn = aws_iam_role.service_role.arn
 
-}
+# }
 
 # module "user" {
 #   source = "../packages/user/terraform"
@@ -53,10 +53,10 @@ module "stay" {
 
 # }
 
-module "web" {
-  source = "../packages/web/terraform"
+# module "web" {
+#   source = "../packages/web/terraform"
 
-  site_domain     = var.site_domain
-  certificate_arn = aws_acm_certificate_validation.this.certificate_arn
-  route53_zone_id = data.aws_route53_zone.this.zone_id
-}
+#   site_domain     = var.site_domain
+#   certificate_arn = aws_acm_certificate_validation.this.certificate_arn
+#   route53_zone_id = data.aws_route53_zone.this.zone_id
+# }

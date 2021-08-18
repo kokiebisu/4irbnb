@@ -52,31 +52,6 @@ resource "aws_db_instance" "mysql" {
   final_snapshot_identifier = "airbnb-snapshot"
   identifier                = "airbnb"
   publicly_accessible       = true
-  vpc_security_group_ids    = []
+  vpc_security_group_ids    = [var.rds_security_group]
 }
 
-resource "aws_security_group" "rds" {
-  name        = "rds"
-  description = "Allows RDS to be accessed from anywhere"
-  vpc_id      = var.vpc_id
-
-  ingress = [
-    {
-      description = "Allows mysql protocols to enter to the VPC"
-      from_port   = 3306
-      to_port     = 3306
-      protocol    = "tcp"
-      cidr_blocks = ["0.0.0.0/0"]
-    }
-  ]
-
-  egress = [
-    {
-      from_port        = 0
-      to_port          = 0
-      protocol         = "-1"
-      cidr_blocks      = ["0.0.0.0/0"]
-      ipv6_cidr_blocks = ["::/0"]
-    }
-  ]
-}
