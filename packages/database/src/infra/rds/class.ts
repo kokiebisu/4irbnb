@@ -63,19 +63,7 @@ export class RDSClient implements IRelationalDatabaseClient {
       password,
     });
 
-    this.#conn.connect((err) => {
-      if (!err) {
-        this.#logger.log({
-          location: "constructor",
-          message: "Successfully initialized...",
-        });
-      } else {
-        this.#logger.error({
-          location: "constructor",
-          message: "Database connection didn't work...",
-        });
-      }
-    });
+    this.#conn.connect();
   }
 
   public static async initialize({

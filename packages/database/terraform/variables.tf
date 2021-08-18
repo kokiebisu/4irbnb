@@ -13,3 +13,7 @@ variable "db_master_username" {
 variable "db_master_password" {
   type = string
 }
+
+variable "vpc_id" {
+  type = string
+}

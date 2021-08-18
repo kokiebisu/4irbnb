@@ -24,11 +24,11 @@ variable "site_domain" {
 }
 
 variable "db_master_username" {
-  type = string
+  type      = string
   sensitive = true
 }
 
 variable "db_master_password" {
-  type = string
+  type      = string
   sensitive = true
 }
