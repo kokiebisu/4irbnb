@@ -21,7 +21,7 @@ resource "aws_security_group_rule" "rds_ingress" {
   protocol          = "tcp"
   cidr_blocks       = ["0.0.0.0/0"]
   ipv6_cidr_blocks  = ["::/0"]
-  security_group_id = aws_security_group.rds
+  security_group_id = aws_security_group.rds.id
 }
 
 
@@ -32,5 +32,5 @@ resource "aws_security_group_rule" "rds_egress" {
   protocol          = "-1"
   cidr_blocks       = ["0.0.0.0/0"]
   ipv6_cidr_blocks  = ["::/0"]
-  security_group_id = aws_security_group.rds
+  security_group_id = aws_security_group.rds.id
 }
