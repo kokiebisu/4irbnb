@@ -13,8 +13,7 @@ resource "aws_security_group" "rds" {
   description = "Allows RDS to be accessed from anywhere"
   vpc_id      = aws_vpc.vpc.id
 
-  ingress = [
-    {
+  ingress = {
       description = "Allows mysql protocols to enter to the VPC"
       from_port   = 3306
       to_port     = 3306
@@ -22,15 +21,12 @@ resource "aws_security_group" "rds" {
       cidr_blocks = ["0.0.0.0/0"]
       ipv6_cidr_blocks = [aws_vpc.vpc.ipv6_cidr_block]
     }
-  ]
 
-  egress = [
-    {
+  egress = {
       from_port        = 0
       to_port          = 0
       protocol         = "-1"
       cidr_blocks      = ["0.0.0.0/0"]
       ipv6_cidr_blocks = ["::/0"]
     }
-  ]
 }
