@@ -14,7 +14,7 @@ resource "aws_security_group" "rds" {
   vpc_id      = aws_vpc.vpc.id
 }
 
-resource "aws_security_group_rule" "example" {
+resource "aws_security_group_rule" "rds_ingress" {
   type              = "ingress"
   from_port         = 3306
   to_port           = 3306
@@ -25,7 +25,7 @@ resource "aws_security_group_rule" "example" {
 }
 
 
-resource "aws_security_group_rule" "example" {
+resource "aws_security_group_rule" "rds_egress" {
   type              = "egress"
   from_port         = 0
   to_port           = 0
