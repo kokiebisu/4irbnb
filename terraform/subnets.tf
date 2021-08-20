@@ -8,16 +8,6 @@ resource "aws_subnet" "public_a" {
   }
 }
 
-resource "aws_subnet" "public_b" {
-  availability_zone = "us-east-1b"
-  cidr_block        = "10.0.1.0/24"
-  vpc_id            = aws_vpc.vpc.id
-
-  tags = {
-    Name = "${var.app_name}-public-b-subnet"
-  }
-}
-
 resource "aws_subnet" "private_a" {
   availability_zone = "us-east-1a"
   cidr_block        = "10.0.3.0/24"
@@ -27,6 +17,18 @@ resource "aws_subnet" "private_a" {
     Name = "${var.app_name}-private-a-subnet"
   }
 }
+
+resource "aws_subnet" "public_b" {
+  availability_zone = "us-east-1b"
+  cidr_block        = "10.0.2.0/24"
+  vpc_id            = aws_vpc.vpc.id
+
+  tags = {
+    Name = "${var.app_name}-public-b-subnet"
+  }
+}
+
+
 
 resource "aws_db_subnet_group" "rds" {
   name       = "rds_subnet_group"
