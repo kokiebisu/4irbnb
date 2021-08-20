@@ -46,6 +46,7 @@ resource "aws_db_instance" "mysql" {
   instance_class            = "db.t3.micro"
   username                  = var.db_rds_username
   password                  = var.db_rds_password
+  availability_zone = "us-east-1a"
   skip_final_snapshot       = true
   backup_retention_period   = 0
   apply_immediately         = "true"
