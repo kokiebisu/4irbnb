@@ -24,6 +24,7 @@ module "database" {
   db_master_username    = var.db_master_username
   db_master_password    = var.db_master_password
   rds_security_group_arn =  aws_security_group.rds.arn
+  vpc_rds_security_group_id = aws_security_group.rds.id
 }
 
 

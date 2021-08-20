@@ -17,3 +17,7 @@ variable "db_master_password" {
 variable "rds_security_group_arn" {
   type = string
 }
+
+variable "vpc_rds_security_group_id" {
+  type = string
+}
