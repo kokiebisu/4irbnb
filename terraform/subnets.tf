@@ -17,3 +17,12 @@ resource "aws_subnet" "private" {
     Name = "${var.app_name}-private-subnet"
   }
 }
+
+resource "aws_db_subnet_group" "rds" {
+  name       = "rds_subnet_group"
+  subnet_ids = aws_subnet.public.id
+
+  tags = {
+    Name = "Education"
+  }
+}

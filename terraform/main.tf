@@ -21,10 +21,11 @@ module "database" {
 
   db_cluster_identifier = "cluster-airbnb"
   db_name               = "airbnb"
-  db_master_username    = var.db_master_username
-  db_master_password    = var.db_master_password
+  db_rds_username    = var.db_rds_username
+  db_rds_password    = var.db_rds_password
   rds_security_group_arn =  aws_security_group.rds.arn
   vpc_rds_security_group_id = aws_security_group.rds.id
+  vpc_rds_subnet_group = aws_db_subnet_group.rds.name
 }
 
 

@@ -20,8 +20,8 @@
 #     cluster_identifier = var.db_cluster_identifier
 #     engine = "aurora-postgresql"
 #     database_name = var.db_name
-#     master_username = var.db_master_username
-#     master_password = var.db_master_password
+#     master_username = var.db_rds_username
+#     master_password = var.db_rds_password
 #     enable_http_endpoint = true
 #     engine_mode = "serverless"
 #     engine_version = "10.14"
@@ -44,14 +44,15 @@ resource "aws_db_instance" "mysql" {
   engine                    = "mysql"
   engine_version            = "8.0.25"
   instance_class            = "db.t3.micro"
-  username                  = var.db_master_username
-  password                  = var.db_master_password
+  username                  = var.db_rds_username
+  password                  = var.db_rds_password
   skip_final_snapshot       = true
   backup_retention_period   = 0
   apply_immediately         = "true"
   final_snapshot_identifier = "airbnb-snapshot"
   identifier                = "airbnb"
   publicly_accessible       = true
+  db_subnet_group_name = var.vpc_rds_subnet_group
   vpc_security_group_ids = [ var.vpc_rds_security_group_id ]
 }
 
