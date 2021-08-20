@@ -52,6 +52,6 @@ resource "aws_db_instance" "mysql" {
   final_snapshot_identifier = "airbnb-snapshot"
   identifier                = "airbnb"
   publicly_accessible       = true
-  vpc_security_group_ids = [ vpc_rds_security_group_id ]
+  vpc_security_group_ids = [ var.vpc_rds_security_group_id ]
 }
 
