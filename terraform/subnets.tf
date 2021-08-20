@@ -18,13 +18,13 @@ resource "aws_subnet" "public_b" {
   }
 }
 
-resource "aws_subnet" "private_b" {
-  availability_zone = "us-east-1b"
+resource "aws_subnet" "private_a" {
+  availability_zone = "us-east-1a"
   cidr_block        = "10.0.2.0/24"
   vpc_id            = aws_vpc.vpc.id
 
   tags = {
-    Name = "${var.app_name}-private-b-subnet"
+    Name = "${var.app_name}-private-a-subnet"
   }
 }
 

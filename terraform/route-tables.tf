@@ -12,13 +12,18 @@ resource "aws_route_table" "private_route_table" {
   }
 }
 
-resource "aws_route_table_association" "public_route_table" {
+resource "aws_route_table_association" "public_route_a_table" {
   route_table_id = aws_default_route_table.public_route_table.id
-  subnet_id      = aws_subnet.public.id
+  subnet_id      = aws_subnet.public_a.id
 }
 
-resource "aws_route_table_association" "private_route_table" {
+resource "aws_route_table_association" "public_route_a_table" {
+  route_table_id = aws_default_route_table.public_route_table.id
+  subnet_id      = aws_subnet.public_b.id
+}
+
+resource "aws_route_table_association" "private_route_a_table" {
   route_table_id = aws_route_table.private_route_table.id
-  subnet_id      = aws_subnet.private.id
+  subnet_id      = aws_subnet.private_a.id
 }
 
