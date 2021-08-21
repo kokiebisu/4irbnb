@@ -40,8 +40,6 @@ module "stay" {
 
   service_role_arn = aws_iam_role.service_role.arn
 
-  aws_private_subnet_a_id = aws_subnet.private_a.id
-  aws_rds_security_group_id = aws_security_group.rds.id
 }
 
 # module "user" {
