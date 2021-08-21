@@ -29,18 +29,20 @@ module "database" {
 }
 
 
-# module "stay" {
-#   source = "../packages/stay/terraform"
+module "stay" {
+  source = "../packages/stay/terraform"
 
-#   read_capacity  = 10
-#   write_capacity = 10
+  read_capacity  = 10
+  write_capacity = 10
 
-#   api_gateway_id            = aws_apigatewayv2_api.lambda.id
-#   api_gateway_execution_arn = aws_apigatewayv2_api.lambda.execution_arn
+  api_gateway_id            = aws_apigatewayv2_api.lambda.id
+  api_gateway_execution_arn = aws_apigatewayv2_api.lambda.execution_arn
 
-#   service_role_arn = aws_iam_role.service_role.arn
+  service_role_arn = aws_iam_role.service_role.arn
 
-# }
+  aws_private_subnet_a_id = aws_subnet.private_a.id
+  aws_rds_security_group_id = aws_security_group.rds.id
+}
 
 # module "user" {
 #   source = "../packages/user/terraform"
