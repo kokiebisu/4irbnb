@@ -1,7 +1,7 @@
 import { UniqueIdentifier } from "./unique";
 
 export abstract class Entity<T> {
-  protected readonly id: UniqueIdentifier;
+  public readonly id: UniqueIdentifier;
   public readonly props: T;
 
   constructor(props: T) {
@@ -9,7 +9,16 @@ export abstract class Entity<T> {
     this.props = props;
   }
 
-  equals(target: Entity<T>) {
-    return this.id.equals(target.id);
+  isEqualTo(target: Entity<T>): boolean {
+    if (target === null) {
+      return false;
+    }
+    if (!Object.is(target.id, this.id)) {
+      return false;
+    }
+    if (!Object.is(target.props, target.props)) {
+      return false;
+    }
+    return true;
   }
 }

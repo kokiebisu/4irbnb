@@ -1,9 +1,7 @@
 import {
-  AverageRatings,
   City,
   Country,
   ImgUrl,
-  Reviews,
   Province,
   Title,
   HostingType,

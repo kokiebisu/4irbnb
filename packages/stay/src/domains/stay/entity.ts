@@ -1,4 +1,5 @@
 import { Entity } from "@4irbnb/common";
+import { Guests, ImgUrl, Title } from "./fields";
 import { IStay } from "./types";
 
 /**
@@ -16,14 +17,6 @@ export class Stay extends Entity<IStay> {
 
   get title() {
     return this.props.title;
-  }
-
-  get reviews() {
-    return this.props.reviews;
-  }
-
-  get averateRatings() {
-    return this.props.averageRatings;
   }
 
   get city() {
@@ -56,5 +49,17 @@ export class Stay extends Entity<IStay> {
 
   get beds() {
     return this.props.beds;
+  }
+
+  public changeTitle(value: string) {
+    this.props.title = Title.create(value);
+  }
+
+  public changeImgUrls(value: string[]) {
+    this.props.imgUrls = value.map((url) => ImgUrl.create(url));
+  }
+
+  public changeGuests(value: number) {
+    this.props.guests = Guests.create(value);
   }
 }

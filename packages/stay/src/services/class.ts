@@ -5,6 +5,10 @@ import { PACKAGE_NAME } from "../configs";
 import { StayRepo } from "../repos/class";
 import { stayA, stayB } from "../mocks";
 
+/**
+ * @public
+ * Domain Service for {@link @stay#Stay}. supplementing the logics which cannot be enwrapped by the Stay entity.
+ */
 export class StayService implements IStayService {
   #repo: IStayRepo;
   #idValidator: any;
