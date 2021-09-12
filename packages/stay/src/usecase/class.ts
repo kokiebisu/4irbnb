@@ -1,36 +1,39 @@
 import { LoggerUtils } from "@4irbnb/common";
-import { StayService } from "..";
 import { PACKAGE_NAME } from "../configs";
-import { StayRepo } from "../repos";
-import { IStayRepo } from "../repos/types";
-import { PStayUseCase } from "./types";
+import { IStayRepository } from "../repos/types";
+import { IStayService } from "../services";
 
-export class StayUseCase {
-  #repo: IStayRepo;
-  #idValidator: any;
+export class UseCase {
+  #repo: IStayRepository;
+  #service: IStayService;
   #logger = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,
     className: this.constructor.name,
   });
-  private constructor({ repo, idValidator }: PStayUseCase) {
+
+  /**
+   * @public Constructs the UseCase
+   * @param repo
+   * @param service
+   */
+  private constructor(repo: IStayRepository, service: IStayService) {
     this.#repo = repo;
-    this.#idValidator = idValidator;
     this.#logger.log({
       location: "constructor",
       message: "Successfully initialized...",
     });
-    console.log(this.#repo);
-    console.log(this.#idValidator);
+    this.#repo = repo;
+    this.#service = service;
   }
 
   /**
-   * @public
-   *
-   * @returns
+   * @public Initializes the Stay domain use case
+   * @access public
    */
-  public static async initialize() {
-    return new StayService(await StayRepo.initialize());
+  public static async initialize(repo: IStayRepository, service: IStayService) {
+    return new UseCase(repo, service);
   }
+
   /**
    * @public
    */

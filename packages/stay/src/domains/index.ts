@@ -1,3 +1,3 @@
-export * as Entities from "./entity";
-export * as Types from "./types";
-export * as Fields from "./fields";
+export * as Entity from "./entity";
+export * as Type from "./types";
+export * as Field from "./fields";

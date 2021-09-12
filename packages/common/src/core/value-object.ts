@@ -1,17 +1,17 @@
 export type TValueObject = string | number;
 
 export abstract class ValueObject<T extends TValueObject> {
-  private readonly value: T;
+  private readonly props: T;
 
-  constructor(value: T) {
-    this.value = value;
+  constructor(props: T) {
+    this.props = props;
   }
 
   public equals(valueObject: ValueObject<T>) {
     return JSON.stringify(this.value) === JSON.stringify(valueObject.value);
   }
 
-  public toValue() {
-    return this.value;
+  public get value() {
+    return this.props;
   }
 }

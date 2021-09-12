@@ -1,3 +1,3 @@
-export * as Controllers from "./controllers";
-export * as Domains from "./domains";
-export * as Services from "./services";
+export * as Controller from "./controllers";
+export * as Domain from "./domains";
+export * as Service from "./services";

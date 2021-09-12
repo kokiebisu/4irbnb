@@ -1,5 +1,7 @@
-export interface IRepo<T> {
-  create(args: T): Promise<void>;
-  update(args: any): Promise<void>;
-  delete(args: any): Promise<void>;
+import { UniqueIdentifier } from "./unique";
+
+export interface IRepository<T> {
+  findById(id: UniqueIdentifier): T | null;
+  save(stay: T): void;
+  delete(stay: T): void;
 }
