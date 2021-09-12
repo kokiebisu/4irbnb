@@ -1,76 +1,29 @@
-import { IStayService, IStayServiceConstructorParams } from "./types";
-import { ILoggerUtils, LoggerUtils } from "@4irbnb/common";
+import { IStayService } from "./types";
+import { Stay } from "..";
 import { IStayRepo } from "../repos/types";
-import { PACKAGE_NAME } from "../configs";
-import { StayRepo } from "../repos/class";
-import { stayA, stayB } from "../mocks";
+import { ILoggerUtils, LoggerUtils, PACKAGE_NAME } from "../../../common/dist";
 
 /**
  * @public
- * Domain Service for {@link @stay#Stay}. supplementing the logics which cannot be enwrapped by the Stay entity.
+ * Domain Service for {@link @stay#Stay}. Supplements logic that cannot be enwrapped by the Stay entity.
  */
 export class StayService implements IStayService {
   #repo: IStayRepo;
-  #idValidator: any;
   #logger: ILoggerUtils = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,
     className: this.constructor.name,
   });
-
-  private constructor({ repo, idValidator }: IStayServiceConstructorParams) {
+  public constructor(repo: IStayRepo) {
     this.#repo = repo;
-    this.#idValidator = idValidator;
     this.#logger.log({
       location: "constructor",
       message: "Successfully initialized...",
     });
-    console.log(this.#repo);
-    console.log(this.#idValidator);
   }
-
   /**
-   * @public
-   *
-   * @returns
+   * @public Check if the provided stay already exists in the db
    */
-  public static async initialize() {
-    return new StayService({
-      repo: await StayRepo.initialize(),
-      idValidator: () => true,
-    });
+  public exists(value: Stay) {
+    throw new Error("Logic not implemented yet");
   }
-
-  /**
-   * @public
-   */
-  public async getStaysWithinGivenCoordinate() {}
-
-  /**
-   * @public
-   */
-  public async getStaysByCity() {}
-
-  /**
-   * @public
-   */
-  public async getStaysByCountry() {
-    return [stayA, stayB];
-  }
-
-  /**
-   * @public
-   */
-  public async getStaysByHostId() {}
-
-  /**
-   * @public
-   */
-  public async getStayDetail() {
-    return stayA;
-  }
-
-  /**
-   * @public
-   */
-  public async book() {}
 }
