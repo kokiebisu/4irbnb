@@ -92,7 +92,7 @@ export class RelationalDatabaseService<
   }: IRelationalDatabaseServiceFindAllByAttributesProps) {
     console.log(attributes);
     try {
-      return await this.#client.batchExecute({ sql: "" });
+      return await this.#client.execute({ sql: "" });
     } catch (error: any) {
       this.#logger.error({
         location: "findAllByAttribute:batchExecute",

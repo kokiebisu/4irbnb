@@ -105,7 +105,6 @@ export namespace HostingType {
 }
 
 // ------------------------------------------------------------------
-
 export class Guests extends ValueObject<number> {
   private constructor(props: number) {
     super(props);
@@ -117,7 +116,6 @@ export class Guests extends ValueObject<number> {
 }
 
 // ------------------------------------------------------------------
-
 export class Bedrooms extends ValueObject<number> {
   private constructor(props: number) {
     super(props);
