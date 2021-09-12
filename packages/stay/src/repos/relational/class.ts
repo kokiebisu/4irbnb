@@ -3,8 +3,8 @@ import {
   IRelationalDatabaseService,
   RelationalDatabaseService,
 } from "@4irbnb/database";
-import { PACKAGE_NAME } from "../configs";
-import { StayMapper } from "../mapper";
+import { PACKAGE_NAME } from "../../configs";
+import { StayMapper } from "../../mapper";
 import { IStayRepo, IStayRepoConstructorProps } from "./types";
 
 /**
