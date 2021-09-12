@@ -1,35 +1,18 @@
 import {
-  BatchExecuteStatementCommand,
-  ExecuteStatementCommand,
-  RDSDataClient as DataClient,
-} from "@aws-sdk/client-rds-data";
-import {
   RDSClient as Client,
   DescribeDBInstancesCommand,
-  ConnectionPoolConfiguration,
 } from "@aws-sdk/client-rds";
-import {
-  SecretsManagerClient as SecretsClient,
-  ListSecretsCommand,
-} from "@aws-sdk/client-secrets-manager";
+
 import {
   IRelationalDatabaseClient,
-  IRelationalDatabaseClientBatchExecuteProps,
-  IRelationalDatabaseClientConstructorProps,
   IRelationalDatabaseClientExecuteProps,
   IRelationalDatabaseClientInitializeProps,
 } from "../../service/relational/types";
 import { PACKAGE_NAME } from "../..";
-import {
-  LoggerUtils,
-  ILoggerUtils,
-  IRegion,
-  InternalError,
-  TRegion,
-} from "@4irbnb/common";
+import { LoggerUtils, ILoggerUtils, InternalError } from "@4irbnb/common";
 import { DB_INSTANCE_IDENTIFIER } from "../../config";
 import { ManagerService } from "@4irbnb/manager";
-import { Connection, createConnection, Query } from "mysql";
+import { Connection, createConnection } from "mysql";
 import { promisify } from "util";
 
 /**

@@ -34,18 +34,18 @@ export class StayRepo implements IStayRepo {
     });
   }
 
-  public async getStayById(stayId: number) {
-    try {
-      const data = await this.#db.findByAttributes({
-        attributes: {
-          id: stayId,
-        },
-      });
-      return data;
+  // public async getStayById(stayId: number) {
+  //   try {
+  //     const data = await this.#db.findByAttributes({
+  //       attributes: {
+  //         id: stayId,
+  //       },
+  //     });
+  //     return data;
 
-      // return StayMapper.convertToPersistence(data);
-    } catch (error: any) {}
-  }
+  //     // return StayMapper.convertToPersistence(data);
+  //   } catch (error: any) {}
+  // }
 
   // public async getAllStayByCountry(country: string) {
   //   return await this.#db.findByKey({
@@ -69,9 +69,9 @@ export class StayRepo implements IStayRepo {
   //   return !!stay;
   // }
 
-  public async create() {}
+  public save(user: IUser) {}
 
-  public async update() {}
+  public find() {}
 
-  public async delete() {}
+  public exists() {}
 }
