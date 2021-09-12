@@ -7,6 +7,9 @@ import { PACKAGE_NAME } from "../configs";
 import { StayMapper } from "../mapper";
 import { IStayRepo, IStayRepoConstructorProps } from "./types";
 
+/**
+ * @public Enables persisting the {@link @stay#Stay} domain object via a datastore.
+ */
 export class StayRepo implements IStayRepo {
   #db: IRelationalDatabaseService;
   #logger = LoggerUtils.initialize({
