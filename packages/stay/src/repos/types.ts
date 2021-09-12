@@ -3,5 +3,5 @@ import { Title } from "../domains/fields";
 import { IStay } from "../domains/types";
 
 export interface IStayRepository extends IRepository<IStay> {
-  findByTitle(title: Title): IStay | null;
+  findByTitle(title: Title): Promise<IStay | null>;
 }

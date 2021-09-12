@@ -1,23 +1,19 @@
 import { LoggerUtils } from "@4irbnb/common";
-import {
-  IRelationalDatabaseService,
-  RelationalDatabaseService,
-} from "@4irbnb/database";
 import { PACKAGE_NAME } from "../../configs";
-import { StayMapper } from "../../mapper";
-import { IStayRepo, IStayRepoConstructorProps } from "./types";
+import { IStayRepository } from "../types";
+
 
 /**
- * @public Enwraps the logics for persisting the {@link @stay#Stay} domain object and recreating the domain object from the datastore under the dev environment
+ * @public Enwraps the logics for persisting the {@link @stay#Stay} domain object and recreating the domain object from the datastore under the production environment
  */
-export class Repository {
-  #db: IRelationalDatabaseService;
+export class Repository implements IStayRepository {
+  #db: RelationalDBContext;
   #logger = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,
     className: this.constructor.name,
   });
 
-  private constructor({ db }: IStayRepoConstructorProps) {
+  private constructor(db: ) {
     this.#db = db;
     this.#logger.log({
       location: "constructor",
@@ -27,51 +23,38 @@ export class Repository {
 
   public static async initialize() {
     return new Repository({
-      db: await RelationalDatabaseService.initialize({
+      db: await RelationalDBContext.initialize({
         region: "us-east-1",
         tableName: "Stay",
       }),
     });
   }
 
-  // public async getStayById(stayId: number) {
-  //   try {
-  //     const data = await this.#db.findByAttributes({
-  //       attributes: {
-  //         id: stayId,
-  //       },
-  //     });
-  //     return data;
+  /**
+   * @public Finds the Stay by id
+   */
+  public async findById() {
+    throw new Error("Logic not implemented yet...");
+  }
 
-  //     // return StayMapper.convertToPersistence(data);
-  //   } catch (error: any) {}
-  // }
+  /**
+   * @public Finds the Stay by title
+   */
+  public async findByTitle() {
+    throw new Error("Logic not implemented yet...");
+  }
 
-  // public async getAllStayByCountry(country: string) {
-  //   return await this.#db.findByKey({
-  //     tableName: this.#tableName,
-  //     attributes: { country },
-  //   });
-  // }
+  /**
+   * @public Saves the Stay domain object.
+   */
+  public async save() {
+    throw new Error("Logic not implemented yet...");
+  }
 
-  // public async getStayOwnedByHostId(hostId: string) {
-  //   return await this.#db.findByKey({
-  //     tableName: this.#tableName,
-  //     attributes: { hostId },
-  //   });
-  // }
-
-  // public async exists(stayId: string) {
-  //   const stay = await this.#db.findById({
-  //     tableName: this.#tableName,
-  //     id: stayId,
-  //   });
-  //   return !!stay;
-  // }
-
-  public save(user: IUser) {}
-
-  public find() {}
-
-  public exists() {}
+  /**
+   * @public Deletes the Stay domain object from the datastore.
+   */
+  public async delete() {
+    throw new Error("Logic not implemented yet...");
+  }
 }

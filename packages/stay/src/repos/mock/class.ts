@@ -1,12 +1,12 @@
 import { UniqueIdentifier } from "@4irbnb/common";
 import { Title } from "../../domains/fields";
 import { IStay } from "../../domains/types";
-import { IRepository } from "../types";
+import { IStayRepository } from "../types";
 
 /**
  * @public Enwraps the logics for persisting the {@link @stay#Stay} domain object and recreating the domain object from the datastore under the dev environment
  */
-export class Repository implements IRepository {
+export class Repository implements IStayRepository {
   #client: { [key: string]: IStay };
   private constructor() {
     this.#client = {};
@@ -20,7 +20,7 @@ export class Repository implements IRepository {
    * @access public
    * @param id
    */
-  public findById(id: UniqueIdentifier) {
+  public async findById(id: UniqueIdentifier) {
     const idInString = id.toString();
     if (!this.#client[idInString]) {
       return null;
@@ -33,7 +33,7 @@ export class Repository implements IRepository {
    * @access public
    * @param title
    */
-  public findByTitle(title: Title) {
+  public async findByTitle(title: Title) {
     const result = Object.values(this.#client).find((stay) =>
       stay.title.equals(title)
     );
@@ -48,7 +48,7 @@ export class Repository implements IRepository {
    * @access public
    * @param stay
    */
-  public save(stay: IStay) {
+  public async save(stay: IStay) {
     const identifierAsString = stay.id.toString();
     this.#client[identifierAsString] = { ...stay };
   }
@@ -58,7 +58,7 @@ export class Repository implements IRepository {
    * @access public
    * @param stay
    */
-  public delete(stay: IStay) {
+  public async delete(stay: IStay) {
     throw new Error("Logic not implemented yet");
   }
 }
