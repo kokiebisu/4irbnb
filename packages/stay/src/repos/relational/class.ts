@@ -8,9 +8,9 @@ import { StayMapper } from "../../mapper";
 import { IStayRepo, IStayRepoConstructorProps } from "./types";
 
 /**
- * @public Enables persisting the {@link @stay#Stay} domain object via a datastore.
+ * @public Enwraps the logics for persisting the {@link @stay#Stay} domain object and recreating the domain object from the datastore under the dev environment
  */
-export class StayRepo implements IStayRepo {
+export class Repository {
   #db: IRelationalDatabaseService;
   #logger = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,
@@ -26,7 +26,7 @@ export class StayRepo implements IStayRepo {
   }
 
   public static async initialize() {
-    return new StayRepo({
+    return new Repository({
       db: await RelationalDatabaseService.initialize({
         region: "us-east-1",
         tableName: "Stay",

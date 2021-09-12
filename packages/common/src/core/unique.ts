@@ -1,12 +1,16 @@
 import { v4 as uuid } from "uuid";
 
 export class UniqueIdentifier {
-  public value: string;
+  private readonly value: string;
   constructor() {
     this.value = uuid();
   }
 
-  equals(target?: UniqueIdentifier): boolean {
+  /**
+   * @public Checks the equality of the two values
+   * @param target
+   */
+  public equals(target?: UniqueIdentifier): boolean {
     if (target === null || target === undefined) {
       return false;
     }
@@ -16,7 +20,11 @@ export class UniqueIdentifier {
     return target.value === this.value;
   }
 
-  toString() {
-    return String(this.value);
+  /**
+   * @public Converts the identifier
+   * @access public
+   */
+  public toString() {
+    return this.value;
   }
 }

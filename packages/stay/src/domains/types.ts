@@ -1,3 +1,4 @@
+import { UniqueIdentifier } from "@4irbnb/common";
 import {
   City,
   Country,
@@ -16,6 +17,7 @@ import {
  * @public
  */
 export interface IStay {
+  id: UniqueIdentifier;
   title: Title;
   city: City;
   province: Province;
