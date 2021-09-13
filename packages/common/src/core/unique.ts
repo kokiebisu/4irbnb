@@ -2,8 +2,12 @@ import { v4 as uuid } from "uuid";
 
 export class UniqueIdentifier {
   private readonly value: string;
-  constructor() {
-    this.value = uuid();
+  constructor(value?: string) {
+    if (value) {
+      this.value = value;
+    } else {
+      this.value = uuid();
+    }
   }
 
   /**

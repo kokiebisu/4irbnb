@@ -1,15 +1,15 @@
 import { UniqueIdentifier } from "@4irbnb/common";
 import {
-  City,
-  Country,
-  ImgUrl,
-  Province,
+  // City,
+  // Country,
+  // ImgUrl,
+  // Province,
   Title,
-  HostingType,
-  Guests,
-  Bedrooms,
-  Baths,
-  Beds,
+  // HostingType,
+  // Guests,
+  // Bedrooms,
+  // Baths,
+  // Beds,
 } from "./fields";
 
 /**
@@ -19,15 +19,16 @@ import {
 export interface IStay {
   id: UniqueIdentifier;
   title: Title;
-  city: City;
-  province: Province;
-  country: Country;
-  hostingType: HostingType;
-  guests: Guests;
-  bedrooms: Bedrooms;
-  beds: Beds;
-  baths: Baths;
-  imgUrls: ImgUrl[];
+  // city: City;
+  // province: Province;
+  // country: Country;
+  // hostingType: HostingType;
+  // guests: Guests;
+  // bedrooms: Bedrooms;
+  // beds: Beds;
+  // baths: Baths;
+  // imgUrls: ImgUrl[];
   // reviews: Reviews;
   // averageRatings: AverageRatings;
+  changeTitle(title: Title): void;
 }

@@ -8,9 +8,20 @@ import { IStayRepository } from "../types";
  */
 export class Repository implements IStayRepository {
   #client: { [key: string]: IStay };
+
+  /**
+   * @public Constructs the Repository
+   * @access private
+   */
   private constructor() {
     this.#client = {};
   }
+
+  /**
+   * @public Initializes the Repository class
+   * @access public
+   * @returns
+   */
   public initialize() {
     return new Repository();
   }

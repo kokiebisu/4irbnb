@@ -16,8 +16,8 @@
 "@4irbnb/database@file:packages/database":
   version "1.1.0"
   dependencies:
-    "@4irbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@4irbnb-database-1.1.0-d804040c-0435-4313-b08c-01bd1cf49240-1629262772217/node_modules/@4irbnb/common"
-    "@4irbnb/manager" "file:../../Library/Caches/Yarn/v6/npm-@4irbnb-database-1.1.0-d804040c-0435-4313-b08c-01bd1cf49240-1629262772217/node_modules/@4irbnb/manager"
+    "@4irbnb/common" "file:../../Library/Caches/Yarn/v6/npm-@4irbnb-database-1.1.0-986451c3-fb22-4d89-9e6c-7dad1a609666-1631486147557/node_modules/@4irbnb/common"
+    "@4irbnb/manager" "file:../../Library/Caches/Yarn/v6/npm-@4irbnb-database-1.1.0-986451c3-fb22-4d89-9e6c-7dad1a609666-1631486147557/node_modules/@4irbnb/manager"
     "@aws-sdk/client-dynamodb" "^3.24.0"
     "@aws-sdk/client-elasticache" "^3.25.0"
     "@aws-sdk/client-rds" "^3.26.0"
@@ -5673,6 +5673,11 @@
   version "16.6.1"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.6.1.tgz#aee62c7b966f55fc66c7b6dfa1d58db2a616da61"
   integrity sha512-Sr7BhXEAer9xyGuCN3Ek9eg9xPviCF2gfu9kTfuU2HkTVAMYSDeX40fvpmo72n5nansg3nsBjuQBrsS28r+NUw==
+
+"@types/node@^16.9.1":
+  version "16.9.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.9.1.tgz#0611b37db4246c937feef529ddcc018cf8e35708"
+  integrity sha512-QpLcX9ZSsq3YYUUnD3nFDY8H7wctAhQj/TFKL8Ya8v5fMm3CFXxo8zStsLAl780ltoYoo1WvKUVGBQK+1ifr7g==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
