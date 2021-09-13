@@ -16,8 +16,7 @@ import {
  * A stay posted by the user
  * @public
  */
-export interface IStay {
-  id: UniqueIdentifier;
+export interface IEntityProps {
   title: Title;
   // city: City;
   // province: Province;
@@ -30,5 +29,9 @@ export interface IStay {
   // imgUrls: ImgUrl[];
   // reviews: Reviews;
   // averageRatings: AverageRatings;
-  changeTitle(title: Title): void;
+  // changeTitle(title: Title): void;
+}
+
+export interface IEntity extends IEntityProps {
+  id: UniqueIdentifier;
 }

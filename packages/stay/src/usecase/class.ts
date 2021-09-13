@@ -1,9 +1,7 @@
 import { LoggerUtils, UniqueIdentifier } from "@4irbnb/common";
 import { PACKAGE_NAME } from "../configs";
 import { IStayRepository } from "../repos/types";
-import { IStayService } from "../services";
 import { Command as StayCommand } from "..";
-import { Mock, Production } from "../repos";
 import { StayData } from "../dto/class";
 
 export class UseCase {
@@ -19,7 +17,7 @@ export class UseCase {
    * @param repo
    * @param service
    */
-  private constructor(repo: IStayRepository, service: IStayService) {
+  public constructor(repo: IStayRepository, service: IStayService) {
     this.#repo = repo;
     this.#logger.log({
       location: "constructor",
@@ -30,11 +28,18 @@ export class UseCase {
   }
 
   /**
-   * @public Initializes the Stay domain use case
-   * @access public
+   * @public
+   * @param repo
+   * @param service
    */
-  public static async initialize(repo: IStayRepository, service: IStayService) {
-    return new UseCase(repo, service);
+  public create(command: StayCommand.Create) {
+    const newId = new UniqueIdentifier();
+    const service = StayService.
+    if (command.title) {
+      Stay.create({
+        title: command.title,
+      });
+    }
   }
 
   /**
@@ -42,7 +47,7 @@ export class UseCase {
    * @access public
    * @param command
    */
-  public async update(command: StayCommand.UpdateCommand) {
+  public async update(command: StayCommand.Update) {
     const targetId = command.id;
     if (!targetId) {
       throw new Error("Id property was not found from the UpdateComand");
@@ -54,13 +59,13 @@ export class UseCase {
     }
 
     if (command.title) {
-      stay.changeTitle(command.title);
+      stay.changeTitle(command.title.getValue());
     }
 
     this.#repo.save(stay);
   }
 
-  public async delete(command: StayCommand.DeleteCommand) {
+  public async delete(command: StayCommand.Delete) {
     const targetId = command.id;
     if (!targetId) {
       throw new Error("Id property was not found from the DeleteCommand");

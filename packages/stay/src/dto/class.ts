@@ -1,4 +1,4 @@
-import { IStay } from "../domains/types";
+import { Domains as StayDomains } from "..";
 
 export class StayData {
   #id: string;
@@ -9,7 +9,7 @@ export class StayData {
    * @access private
    * @param source
    */
-  public constructor(source: IStay) {
+  public constructor(source: StayDomains.Stay.Entity) {
     this.#id = source.id.toString();
     this.#title = source.title.getValue();
   }

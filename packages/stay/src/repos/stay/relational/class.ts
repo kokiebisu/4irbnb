@@ -1,12 +1,12 @@
 import { LoggerUtils } from "@4irbnb/common";
-import { PACKAGE_NAME } from "../../configs";
-import { IStayRepository } from "../types";
+import { PACKAGE_NAME } from "../../../configs";
+import { IRepository } from "../types";
 
 
 /**
  * @public Enwraps the logics for persisting the {@link @stay#Stay} domain object and recreating the domain object from the datastore under the production environment
  */
-export class Repository implements IStayRepository {
+export class Repository implements IRepository {
   #db: RelationalDBContext;
   #logger = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,

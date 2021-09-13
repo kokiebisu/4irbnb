@@ -1,10 +1,13 @@
-import { Title } from "../domains/fields";
+import { Fields } from "../domains/stay";
 
-export class UpdateCommand {
+/**
+ * @publc Command for updating the stay data based on the given id
+ */
+export class Command {
   #id: string;
-  #title: Title;
+  #title: Fields.Title;
 
-  private constructor(id: string, title: Title) {
+  private constructor(id: string, title: Fields.Title) {
     this.#id = id;
     this.#title = title;
   }

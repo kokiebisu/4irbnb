@@ -1,2 +1,1 @@
-export * from "./class";
-export * as UseCaseType from "./types";
+export { UseCase as StayUseCase } from "./class";

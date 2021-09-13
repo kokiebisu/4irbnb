@@ -1,21 +1,20 @@
-import { Entity } from "@4irbnb/common";
+import { BaseEntity } from "@4irbnb/common";
 import {
   // Guests, ImgUrl,
   Title,
 } from "./fields";
-import { IStay } from "./types";
+import { IEntity, IEntityProps } from "./types";
 
 /**
- * @public
- * Blueprint of the Stay instance
+ * @public Enwraps the logics for the Stay entity
  */
-export class Stay extends Entity<IStay> {
+export class Entity extends BaseEntity<IEntity> {
   private constructor(props: any) {
     super(props);
   }
 
-  static create(props: IStay) {
-    return new Stay(props);
+  static create(props: IEntityProps) {
+    return new Entity(props);
   }
 
   get title() {
