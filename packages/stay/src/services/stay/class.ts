@@ -4,12 +4,14 @@ import {
   LoggerUtils,
   PACKAGE_NAME,
 } from "../../../../common/dist";
+import { Types as RepositoryTypes } from "../../repos/stay";
+import { Types as DomainTypes } from "../../domains/stay";
 
 /**
  * @public Domain Service for {@link @stay#Stay}. Supplements logic that cannot be enwrapped by the Stay entity.
  */
 export class Service implements IService {
-  #repo: IStayRepository;
+  #repo: RepositoryTypes.IRepository;
   #logger: ILoggerUtils = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,
     className: this.constructor.name,
@@ -20,7 +22,7 @@ export class Service implements IService {
    * @access private
    * @param repo
    */
-  private constructor(repo: IStayRepository) {
+  private constructor(repo: RepositoryTypes.IRepository) {
     this.#repo = repo;
     this.#logger.log({
       location: "constructor",
@@ -33,7 +35,7 @@ export class Service implements IService {
    * @access public
    * @param repo
    */
-  public initialize(repo: IStayRepository) {
+  public initialize(repo: RepositoryTypes.IRepository) {
     return new Service(repo);
   }
 
@@ -45,7 +47,7 @@ export class Service implements IService {
    * This method should be placed here because it is under the Stay domain rule:
    * 'There should be no duplicate stays'
    */
-  public exists(stay: StayTypes.IEntityProps) {
+  public exists(stay: DomainTypes.IEntityProps) {
     const result = this.#repo.findByTitle(stay.title);
     return !!result;
   }

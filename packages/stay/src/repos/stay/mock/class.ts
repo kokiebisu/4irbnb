@@ -22,7 +22,7 @@ export class Repository implements IRepository {
    * @access public
    * @returns
    */
-  public initialize() {
+  public async initialize() {
     return new Repository();
   }
 

@@ -1,1 +1,1 @@
-export * from "./stay";
+export * as Repositories from "./stay";

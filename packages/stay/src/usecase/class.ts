@@ -1,11 +1,11 @@
 import { LoggerUtils, UniqueIdentifier } from "@4irbnb/common";
 import { PACKAGE_NAME } from "../configs";
-import { IStayRepository } from "../repos/types";
+import { Types } from "../repos/stay";
 import { Command as StayCommand } from "..";
 import { StayData } from "../dto/class";
 
 export class UseCase {
-  #repo: IStayRepository;
+  #repo: Types.IRepository;
   #service: IStayService;
   #logger = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,
