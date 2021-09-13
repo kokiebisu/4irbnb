@@ -1,6 +1,7 @@
-import { Domains as StayDomains } from "..";
+import { Domains as StayDomains } from "../..";
+import { IDataTransferObjectProps } from "./types";
 
-export class StayData {
+export class DataTransferObject implements IDataTransferObjectProps {
   #id: string;
   #title: string;
 

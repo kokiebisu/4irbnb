@@ -1,6 +1,6 @@
 import { UniqueIdentifier } from "./unique";
 
-export abstract class BaseEntity<T> {
+export abstract class Entity<T> {
   public readonly id: UniqueIdentifier;
   public readonly props: T;
 
@@ -9,7 +9,7 @@ export abstract class BaseEntity<T> {
     this.props = props;
   }
 
-  isEqualTo(target: BaseEntity<T>): boolean {
+  isEqualTo(target: Entity<T>): boolean {
     if (target === null) {
       return false;
     }

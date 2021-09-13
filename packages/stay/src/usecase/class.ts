@@ -1,12 +1,13 @@
 import { LoggerUtils, UniqueIdentifier } from "@4irbnb/common";
 import { PACKAGE_NAME } from "../configs";
-import { Types } from "../repos/stay";
-import { Command as StayCommand } from "..";
-import { StayData } from "../dto/class";
+import { Types as RepositoryTypes } from "../repos/stay";
+import { Types as ServiceTypes } from "../services/stay";
+import { Commands } from "..";
+import { DataTransferObject } from "../dtos/stay";
 
 export class UseCase {
-  #repo: Types.IRepository;
-  #service: IStayService;
+  #repo: RepositoryTypes.IRepository;
+  #service: ServiceTypes.IService;
   #logger = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,
     className: this.constructor.name,
@@ -17,7 +18,10 @@ export class UseCase {
    * @param repo
    * @param service
    */
-  public constructor(repo: IStayRepository, service: IStayService) {
+  public constructor(
+    repo: RepositoryTypes.IRepository,
+    service: ServiceTypes.IService
+  ) {
     this.#repo = repo;
     this.#logger.log({
       location: "constructor",
@@ -32,14 +36,14 @@ export class UseCase {
    * @param repo
    * @param service
    */
-  public create(command: StayCommand.Create) {
+  public create(command: Commands.Create) {
     const newId = new UniqueIdentifier();
-    const service = StayService.
-    if (command.title) {
-      Stay.create({
-        title: command.title,
-      });
-    }
+    // const service =
+    // if (command.title) {
+    //   Stay.create({
+    //     title: command.title,
+    //   });
+    // }
   }
 
   /**
@@ -47,7 +51,7 @@ export class UseCase {
    * @access public
    * @param command
    */
-  public async update(command: StayCommand.Update) {
+  public async update(command: Commands.Update) {
     const targetId = command.id;
     if (!targetId) {
       throw new Error("Id property was not found from the UpdateComand");
@@ -65,7 +69,7 @@ export class UseCase {
     this.#repo.save(stay);
   }
 
-  public async delete(command: StayCommand.Delete) {
+  public async delete(command: Commands.Delete) {
     const targetId = command.id;
     if (!targetId) {
       throw new Error("Id property was not found from the DeleteCommand");
@@ -84,7 +88,7 @@ export class UseCase {
     if (!stay) {
       return null;
     }
-    return new StayData(stay);
+    return new DataTransferObject(stay);
   }
 
   /**

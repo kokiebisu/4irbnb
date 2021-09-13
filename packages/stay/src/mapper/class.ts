@@ -1,40 +1,22 @@
-import {
-  Baths,
-  Bedrooms,
-  Beds,
-  City,
-  Country,
-  Guests,
-  HostingType,
-  ImgUrl,
-  Province,
-  Stay,
-  Title,
-} from "..";
-import { TRawStay } from "./types";
+import { IDataTransferObjectProps } from "../dtos/stay/types";
 
-export class StayMapper {
-  public static convertToDomain(data: TRawStay[]) {
-    const result = data.map((stayRaw: any, reviewRaw: any) => {
-      return Stay.create({
-        title: Title.create(stayRaw[1]["stringValue"]),
-        city: City.create(stayRaw[2]["stringValue"]),
-        province: Province.create(stayRaw[3]["stringValue"]),
-        country: Country.create(stayRaw[4]["stringValue"]),
-        imgUrls: stayRaw[5]["arrayValue"][
-          "stringValues"
-        ].map((imgUrl: string) => ImgUrl.create(imgUrl)),
-        hostingType: HostingType.create(stayRaw[6]["stringValue"]),
-        guests: Guests.create(stayRaw[7]["longValue"]),
-        bedrooms: Bedrooms.create(stayRaw[8]["longValue"]),
-        beds: Beds.create(stayRaw[9]["longValue"]),
-        baths: Baths.create(stayRaw[10]["longValue"]),
-      });
-    });
-    return result;
+/**
+ * @public Converts the domain object into the requested format
+ */
+export class Mapper {
+  /**
+   * @public Converts the provided Stay data transfer object into an usable Stay entity
+   * @access public
+   * @param data
+   */
+  public static convertToEntity(data: IDataTransferObjectProps) {
+    throw new Error("Logic not implemented yet");
   }
 
-  public static convertToRaw() {}
-
-  public static convertToDTO() {}
+  /**
+   * @public Converts the provided Stay entity into a data transfer object
+   */
+  public static convertToDTO() {
+    throw new Error("Logic not implemented yet");
+  }
 }

@@ -1,5 +1,5 @@
-import { StayTypes } from "../domains";
+import { Types as DomainTypes } from "../../domains/stay";
 
 export interface IService {
-  exists(stay: StayTypes.IEntityProps): boolean;
+  exists(stay: DomainTypes.IEntityProps): boolean;
 }

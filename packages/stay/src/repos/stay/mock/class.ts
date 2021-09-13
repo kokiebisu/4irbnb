@@ -1,13 +1,14 @@
 import { UniqueIdentifier } from "@4irbnb/common";
-import { Entity, Fields, Types } from "../../../domains/stay";
-import { StayData } from "../../../dto";
+import { Entity, Fields } from "../../../domains/stay";
+import { DataTransferObject } from "../../../dtos/stay";
+import { Mapper } from "../../../mapper";
 import { IRepository } from "../types";
 
 /**
  * @public Enwraps the logics for persisting the {@link @stay#Stay} domain object and recreating the domain object from the datastore under the dev environment
  */
 export class Repository implements IRepository {
-  #client: { [key: string]: StayData };
+  #client: { [key: string]: DataTransferObject };
 
   /**
    * @public Constructs the Repository
@@ -36,7 +37,7 @@ export class Repository implements IRepository {
     if (!this.#client[idInString]) {
       return null;
     }
-    return Entity.create(this.#client[idInString]);
+    return Mapper.convertToEntity(this.#client[idInString]);
   }
 
   /**
@@ -45,13 +46,13 @@ export class Repository implements IRepository {
    * @param title
    */
   public async findByTitle(title: Fields.Title) {
-    const stay = Object.values(this.#client).find((stay) =>
-      stay.title.equals(title)
+    const stay = Object.values(this.#client).find(
+      (stay) => stay.title === title.getValue()
     );
     if (!stay) {
       return null;
     }
-    return Entity.create(stay);
+    return Mapper.convertToEntity(stay);
   }
 
   /**
@@ -61,7 +62,7 @@ export class Repository implements IRepository {
    */
   public async save(stay: Entity) {
     const identifierAsString = stay.id.toString();
-    const data = new StayData(stay);
+    const data = new DataTransferObject(stay);
     this.#client[identifierAsString] = data;
   }
 
