@@ -1,5 +1,5 @@
 import { LoggerUtils, ILoggerUtils } from "@4irbnb/common";
-import { PACKAGE_NAME } from "../configs";
+import { PACKAGE_NAME } from "../config";
 // import { IStayService, StayService } from "../services";
 // import { IStayControllerGetParams } from "./types";
 

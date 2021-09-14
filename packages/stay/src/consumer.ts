@@ -1,6 +1,6 @@
 import { LoggerUtils } from "@4irbnb/common";
 import { StayController } from ".";
-import { PACKAGE_NAME } from "./configs";
+import { PACKAGE_NAME } from "./config";
 
 export const handler = async (event: any) => {
   const controller = StayController.initialize();

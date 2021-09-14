@@ -1,5 +1,5 @@
 import { LoggerUtils, UniqueIdentifier } from "@4irbnb/common";
-import { PACKAGE_NAME } from "../configs";
+import { PACKAGE_NAME } from "../config";
 import { Types as RepositoryTypes } from "../repos/stay";
 import { Types as ServiceTypes } from "../services/stay";
 import { Commands } from "..";

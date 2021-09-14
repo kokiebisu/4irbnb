@@ -1,5 +1,5 @@
 import { LoggerUtils } from "@4irbnb/common";
-import { PACKAGE_NAME } from "../../../configs";
+import { PACKAGE_NAME } from "../../../config";
 import { IRepository } from "../types";
 
 
