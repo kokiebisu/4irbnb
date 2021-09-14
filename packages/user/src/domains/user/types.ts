@@ -1,8 +1,9 @@
 import { UniqueIdentifier } from "@4irbnb/common";
-import { FullName } from "./fields";
+import { Email, FullName } from "./fields";
 
 export interface IEntityProps {
   fullName: FullName;
+  email: Email;
 }
 
 export interface IEntity extends IEntityProps {

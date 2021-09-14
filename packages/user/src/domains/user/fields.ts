@@ -26,11 +26,11 @@ export class FullName extends ValueObject<IFullName> {
 /**
  * @public Enwraps the logics for the EmailAddress value object
  */
-export class EmailAddress extends ValueObject<string> {
+export class Email extends ValueObject<string> {
   private constructor(props: string) {
     super(props);
   }
   public static create(emailAddress: string) {
-    return new EmailAddress(emailAddress);
+    return new Email(emailAddress);
   }
 }

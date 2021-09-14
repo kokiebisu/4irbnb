@@ -1,25 +1,11 @@
-import { IDatabaseService, IWithIdentifierParams } from "@4irbnb/common";
-import { IUser } from "..";
+import { User } from "../domains";
 
 /**
- * @public
- * Comment here...
+ * @public Enwraps the logics for the User domain service
+ * @remarks
+ * Follows the rules:
+ * - There should be no email address duplicates
  */
-export interface IUserService {
-  get({ identifier }: IUserServiceGetParams): Promise<IUser | null>;
+export interface IService {
+  exists(user: User.Types.IEntityProps): Promise<boolean>;
 }
-
-/**
- * @public
- * Comment here...
- */
-export interface IUserServiceConstructorParams {
-  db: IDatabaseService;
-  idValidator(): boolean;
-}
-
-/**
- * @public
- * Comment here...
- */
-export interface IUserServiceGetParams extends IWithIdentifierParams {}
