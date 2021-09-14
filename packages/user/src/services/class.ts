@@ -28,7 +28,6 @@ export class Service implements IService {
   /**
    * @public
    * @param user
-   * @returns
    */
   public static initialize(repo: RepositoryTypes.IRepository) {
     return new Service(repo);
@@ -37,7 +36,6 @@ export class Service implements IService {
   /**
    * @public
    * @param user
-   * @returns
    */
   public async exists(user: DomainTypes.IEntityProps) {
     const result = await this.#repo.findByEmail(user.email.getValue());

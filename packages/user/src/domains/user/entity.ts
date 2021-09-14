@@ -13,7 +13,11 @@ export class Entity extends BaseEntity<IEntity> {
     return new Entity(props);
   }
 
-  get fullName() {
+  public get fullName() {
     return this.props.fullName;
+  }
+
+  public get email() {
+    return this.props.email;
   }
 }
