@@ -10,7 +10,7 @@ export class Entity extends BaseEntity<IEntity> {
     super(props);
   }
 
-  static create(props: IEntityProps) {
+  static create(props: IEntityProps | IEntity) {
     return new Entity(props);
   }
 
@@ -22,7 +22,7 @@ export class Entity extends BaseEntity<IEntity> {
     return this.props.email;
   }
 
-  public changeEmail(email:string) {
-    this.props.email = Email.create(email)
+  public changeEmail(email: string) {
+    this.props.email = Email.create(email);
   }
 }

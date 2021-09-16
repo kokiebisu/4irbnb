@@ -13,7 +13,7 @@ export class Entity extends BaseEntity<IEntity> {
     super(props);
   }
 
-  static create(props: IEntityProps) {
+  static create(props: IEntityProps | IEntity) {
     return new Entity(props);
   }
 
