@@ -1,19 +1,22 @@
 import { IUseCase, LoggerUtils, UniqueIdentifier } from "@4irbnb/common";
-import { ResignCommand } from "../commands";
+import { CreateCommand } from "../commands";
 import { PACKAGE_NAME } from "../config";
 import { RepositoryTypes } from "../repos";
 import { ServiceTypes } from "../services";
 
-/**
- * @public
- */
-export class UseCase implements IUseCase<ResignCommand, void> {
+export class UseCase implements IUseCase<CreateCommand, void> {
   #repo: RepositoryTypes.IRepository;
+  #service: ServiceTypes.IService;
   #logger = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,
     className: this.constructor.name,
   });
 
+  /**
+   * @public Constructs the UseCase
+   * @param repo
+   * @param service
+   */
   public constructor(
     repo: RepositoryTypes.IRepository,
     service: ServiceTypes.IService
@@ -23,16 +26,22 @@ export class UseCase implements IUseCase<ResignCommand, void> {
       location: "constructor",
       message: "Successfully initialized...",
     });
+    this.#repo = repo;
+    this.#service = service;
   }
-  public async execute(command: ResignCommand) {
-    const targetId = command.id;
-    if (!targetId) {
-      throw new Error("id property missing from command");
-    }
-    const user = await this.#repo.findById(new UniqueIdentifier(targetId));
-    if (!user) {
-      throw new Error("Specified user not found");
-    }
-    this.#repo.delete(user);
+
+  /**
+   * @public
+   * @param repo
+   * @param service
+   */
+  public execute(command: CreateCommand) {
+    const newId = new UniqueIdentifier();
+    // const service =
+    // if (command.title) {
+    //   Stay.create({
+    //     title: command.title,
+    //   });
+    // }
   }
 }

@@ -1,3 +1,6 @@
-export interface UseCase<IArg, IResponse> {
-  execute(request?: IArg): IResponse;
+/**
+ * @public
+ */
+export interface IUseCase<ICommand, IResponse> {
+  execute(command: ICommand): IResponse;
 }

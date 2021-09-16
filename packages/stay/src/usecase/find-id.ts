@@ -1,19 +1,23 @@
 import { IUseCase, LoggerUtils, UniqueIdentifier } from "@4irbnb/common";
-import { ResignCommand } from "../commands";
+import { FindByIdCommand } from "../commands";
 import { PACKAGE_NAME } from "../config";
+import { Mapper } from "../mapper";
 import { RepositoryTypes } from "../repos";
 import { ServiceTypes } from "../services";
 
-/**
- * @public
- */
-export class UseCase implements IUseCase<ResignCommand, void> {
+export class UseCase implements IUseCase<FindByIdCommand, void> {
   #repo: RepositoryTypes.IRepository;
+  #service: ServiceTypes.IService;
   #logger = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,
     className: this.constructor.name,
   });
 
+  /**
+   * @public Constructs the UseCase
+   * @param repo
+   * @param service
+   */
   public constructor(
     repo: RepositoryTypes.IRepository,
     service: ServiceTypes.IService
@@ -23,16 +27,19 @@ export class UseCase implements IUseCase<ResignCommand, void> {
       location: "constructor",
       message: "Successfully initialized...",
     });
+    this.#repo = repo;
+    this.#service = service;
   }
-  public async execute(command: ResignCommand) {
+
+  public async execute(command: FindByIdCommand) {
     const targetId = command.id;
-    if (!targetId) {
-      throw new Error("id property missing from command");
+    if (targetId) {
+      throw new Error("id property is not included in the command");
     }
-    const user = await this.#repo.findById(new UniqueIdentifier(targetId));
-    if (!user) {
-      throw new Error("Specified user not found");
+    const stay = await this.#repo.findById(new UniqueIdentifier(targetId));
+    if (!stay) {
+      return null;
     }
-    this.#repo.delete(user);
+    return Mapper.convertToDTO(stay);
   }
 }

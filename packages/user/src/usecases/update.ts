@@ -1,10 +1,17 @@
-import { LoggerUtils, PACKAGE_NAME, UniqueIdentifier } from "@4irbnb/common";
-import { UpdateProfileCommand } from "../commands";
+import {
+  IUseCase,
+  LoggerUtils,
+  PACKAGE_NAME,
+  UniqueIdentifier,
+} from "@4irbnb/common";
+import { UpdateCommand } from "../commands";
 import { RepositoryTypes } from "../repos";
 import { ServiceTypes } from "../services";
-import { IUseCase } from "./types";
 
-export class UseCase implements IUseCase<UpdateProfileCommand, void> {
+/**
+ * @public
+ */
+export class UseCase implements IUseCase<UpdateCommand, void> {
   #repo: RepositoryTypes.IRepository;
   #logger = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,
@@ -21,7 +28,7 @@ export class UseCase implements IUseCase<UpdateProfileCommand, void> {
       message: "Successfully initialized...",
     });
   }
-  public async execute(command: UpdateProfileCommand) {
+  public async execute(command: UpdateCommand) {
     const targetId = command.id;
     if (!targetId) {
       throw new Error("id property missing from command");
