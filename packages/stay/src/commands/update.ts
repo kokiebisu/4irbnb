@@ -5,7 +5,7 @@ export class Command {
   #id: string;
   #title: string;
 
-  private constructor(id: string, title: string) {
+  constructor(id: string, title: string) {
     this.#id = id;
     this.#title = title;
   }
