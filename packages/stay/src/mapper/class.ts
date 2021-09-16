@@ -1,4 +1,7 @@
-import { IDataTransferObjectProps } from "../dtos/stay/types";
+import { Entity } from "../domains";
+import { Title } from "../domains/fields";
+import { DataTransferObject } from "../dtos";
+import { IDataTransferObject } from "../dtos/types";
 
 /**
  * @public Converts the domain object into the requested format
@@ -9,14 +12,20 @@ export class Mapper {
    * @access public
    * @param data
    */
-  public static convertToEntity(data: IDataTransferObjectProps) {
-    throw new Error("Logic not implemented yet");
+  public static convertToEntity(data: IDataTransferObject) {
+    if (data.title) {
+      throw new Error("Title property missing");
+    }
+    return Entity.create({
+      title: Title.create(data.title),
+    });
   }
 
   /**
    * @public Converts the provided Stay entity into a data transfer object
+   * @access public
    */
-  public static convertToDTO() {
-    throw new Error("Logic not implemented yet");
+  public static convertToDTO(entity: Entity) {
+    return DataTransferObject.create(entity);
   }
 }

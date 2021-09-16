@@ -1,7 +1,7 @@
-import { Domains as StayDomains } from "../..";
-import { IDataTransferObjectProps } from "./types";
+import { Entity } from "../domains";
+import { IDataTransferObject } from "./types";
 
-export class DataTransferObject implements IDataTransferObjectProps {
+export class DataTransferObject implements IDataTransferObject {
   #id: string;
   #title: string;
 
@@ -10,9 +10,13 @@ export class DataTransferObject implements IDataTransferObjectProps {
    * @access private
    * @param source
    */
-  public constructor(source: StayDomains.Stay.Entity) {
+  private constructor(source: Entity) {
     this.#id = source.id.toString();
     this.#title = source.title.getValue();
+  }
+
+  public static create(entity: Entity) {
+    return new DataTransferObject(entity);
   }
 
   /**
