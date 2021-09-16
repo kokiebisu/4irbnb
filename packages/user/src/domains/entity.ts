@@ -1,4 +1,5 @@
 import { BaseEntity } from "@4irbnb/common";
+import { Email } from "./fields";
 import { IEntity, IEntityProps } from "./types";
 
 /**
@@ -19,5 +20,9 @@ export class Entity extends BaseEntity<IEntity> {
 
   public get email() {
     return this.props.email;
+  }
+
+  public changeEmail(email:string) {
+    this.props.email = Email.create(email)
   }
 }

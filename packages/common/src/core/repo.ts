@@ -5,6 +5,6 @@ import { UniqueIdentifier } from "./unique";
  */
 export interface IBaseRepository<T> {
   findById(id: UniqueIdentifier): Promise<T | null>;
-  save(stay: T): Promise<void>;
-  delete(stay: T): Promise<void>;
+  save(entity: T): Promise<void>;
+  delete(entity: T): Promise<void>;
 }
