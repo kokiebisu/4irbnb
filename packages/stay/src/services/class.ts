@@ -1,11 +1,7 @@
 import { IService } from "./types";
-import {
-  ILoggerUtils,
-  LoggerUtils,
-  PACKAGE_NAME,
-} from "../../../../common/dist";
-import { Types as RepositoryTypes } from "../../repos/stay";
-import { Types as DomainTypes } from "../../domains/stay";
+import { ILoggerUtils, LoggerUtils, PACKAGE_NAME } from "../../../common/dist";
+import { RepositoryTypes } from "../repos";
+import { DomainTypes } from "../domains";
 
 /**
  * @public Domain Service for {@link @stay#Stay}. Supplements logic that cannot be enwrapped by the Stay entity.

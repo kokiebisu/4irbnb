@@ -1,4 +1,4 @@
-import { User } from "../domains";
+import { IEntityProps } from "../domains/types";
 
 /**
  * @public Enwraps the logics for the User domain service
@@ -7,5 +7,5 @@ import { User } from "../domains";
  * - There should be no email address duplicates
  */
 export interface IService {
-  exists(user: User.Types.IEntityProps): Promise<boolean>;
+  exists(user: IEntityProps): Promise<boolean>;
 }

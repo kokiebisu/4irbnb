@@ -1,21 +1,22 @@
-import { Fields } from "../domains/user";
-
-export class Create {
-  #fullName: Fields.FullName;
-  #email: Fields.Email;
-  public constructor(
-    fullName: { firstName: string; lastName: string },
-    email: string
-  ) {
-    this.#fullName = Fields.FullName.create(
-      fullName.firstName,
-      fullName.lastName
-    );
-    this.#email = Fields.Email.create(email);
+/**
+ * @public
+ */
+export class Command {
+  #firstName: string;
+  #lastName: string;
+  #email: string;
+  public constructor(firstName: string, lastName: string, email: string) {
+    this.#firstName = firstName;
+    this.#lastName = lastName;
+    this.#email = email;
   }
 
-  public get fulName() {
-    return this.#fullName;
+  public get firstName() {
+    return this.#firstName;
+  }
+
+  public get lastName() {
+    return this.#lastName;
   }
 
   public get email() {

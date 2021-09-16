@@ -1,3 +1,3 @@
 export * from "./controllers";
-export * from "./models";
-export * from "./services";
+export * as Services from "./services";
+export * as Commands from "./commands";

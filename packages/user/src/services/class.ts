@@ -1,13 +1,13 @@
 import { ILoggerUtils, LoggerUtils, PACKAGE_NAME } from "@4irbnb/common";
-import { Types as RepositoryTypes } from "../repos/user";
 import { IService } from "./types";
-import { Types as DomainTypes } from "../domains/user";
+import { IRepository } from "../repos/types";
+import { IEntityProps } from "../domains/types";
 
 /**
  * @public Domain Service for {@link @user#User}. Supplements logic that cannot be enwrapped by the Stay entity.
  */
 export class Service implements IService {
-  #repo: RepositoryTypes.IRepository;
+  #repo: IRepository;
   #logger: ILoggerUtils = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,
     className: this.constructor.name,
@@ -17,7 +17,7 @@ export class Service implements IService {
    * @public
    * @param repo
    */
-  private constructor(repo: RepositoryTypes.IRepository) {
+  private constructor(repo: IRepository) {
     this.#repo = repo;
     this.#logger.log({
       location: "constructor",
@@ -29,7 +29,7 @@ export class Service implements IService {
    * @public
    * @param user
    */
-  public static initialize(repo: RepositoryTypes.IRepository) {
+  public static initialize(repo: IRepository) {
     return new Service(repo);
   }
 
@@ -37,7 +37,7 @@ export class Service implements IService {
    * @public
    * @param user
    */
-  public async exists(user: DomainTypes.IEntityProps) {
+  public async exists(user: IEntityProps) {
     const result = await this.#repo.findByEmail(user.email.getValue());
     return !!result;
   }

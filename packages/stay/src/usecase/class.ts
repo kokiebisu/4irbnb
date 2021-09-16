@@ -2,8 +2,8 @@ import { LoggerUtils, UniqueIdentifier } from "@4irbnb/common";
 import { PACKAGE_NAME } from "../config";
 import { Types as RepositoryTypes } from "../repos/stay";
 import { Types as ServiceTypes } from "../services/stay";
-import { Commands } from "..";
 import { DataTransferObject } from "../dtos/stay";
+import { CreateCommand, DeleteCommand, UpdateCommand } from "../commands";
 
 export class UseCase {
   #repo: RepositoryTypes.IRepository;
@@ -36,7 +36,7 @@ export class UseCase {
    * @param repo
    * @param service
    */
-  public create(command: Commands.Create) {
+  public create(command: CreateCommand) {
     const newId = new UniqueIdentifier();
     // const service =
     // if (command.title) {
@@ -51,7 +51,7 @@ export class UseCase {
    * @access public
    * @param command
    */
-  public async update(command: Commands.Update) {
+  public async update(command: UpdateCommand) {
     const targetId = command.id;
     if (!targetId) {
       throw new Error("Id property was not found from the UpdateComand");
@@ -63,18 +63,18 @@ export class UseCase {
     }
 
     if (command.title) {
-      stay.changeTitle(command.title.getValue());
+      stay.changeTitle(command.title);
     }
 
     this.#repo.save(stay);
   }
 
-  public async delete(command: Commands.Delete) {
+  public async delete(command: DeleteCommand) {
     const targetId = command.id;
     if (!targetId) {
       throw new Error("Id property was not found from the DeleteCommand");
     }
-    var stay = await this.#repo.findById(targetId);
+    var stay = await this.#repo.findById(new UniqueIdentifier(targetId));
     if (!stay) {
       throw new Error("Stay was not found");
     }

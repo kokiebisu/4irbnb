@@ -1,2 +1,2 @@
 export * from "./class";
-export * as Types from "./types";
+export * as ServiceTypes from "./types";

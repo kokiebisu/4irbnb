@@ -1,7 +1,8 @@
 import { UniqueIdentifier } from "@4irbnb/common";
-import { Entity, Fields } from "../../../domains/stay";
-import { DataTransferObject } from "../../../dtos/stay";
-import { Mapper } from "../../../mapper";
+import { Entity } from "../../domains";
+
+import { DataTransferObject } from "../../dtos/stay";
+import { Mapper } from "../../mapper";
 import { IRepository } from "../types";
 
 /**
