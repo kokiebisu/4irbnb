@@ -32,3 +32,7 @@ export class UniqueIdentifier {
     return this.value;
   }
 }
+
+export interface IWithUniqueIdentifer {
+  id: UniqueIdentifier;
+}
