@@ -1,13 +1,14 @@
-import { IUseCase, LoggerUtils, UniqueIdentifier } from "@4irbnb/common";
-import { CreateCommand } from "../commands";
-import { PACKAGE_NAME } from "../config";
-import { RepositoryTypes } from "../repos";
-import { ServiceTypes } from "../services";
+import { LoggerUtils, UniqueIdentifier } from "@4irbnb/common";
+import { CreateCommand } from "../../commands";
+import { PACKAGE_NAME } from "../../config";
+import { RepositoryTypes } from "../../repos";
+import { ServiceTypes } from "../../services";
+import { IUseCase } from "./types";
 
 /**
  * @public
  */
-export class UseCase implements IUseCase<CreateCommand, void> {
+export class UseCase implements IUseCase {
   #repo: RepositoryTypes.IRepository;
   #service: ServiceTypes.IService;
   #logger = LoggerUtils.initialize({

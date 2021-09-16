@@ -1,4 +1,7 @@
-export { UseCase as CreateUseCase } from "./create";
-export { UseCase as DeleteUseCase } from "./delete";
-export { UseCase as FindByIdUseCase } from "./find-id";
-export { UseCase as UpdateUseCase } from "./update";
+export { UseCase as CreateUseCase, IUseCase as ICreateUseCase } from "./create";
+export { UseCase as DeleteUseCase, IUseCase as IDeleteUseCase } from "./delete";
+export {
+  UseCase as FindByIdUseCase,
+  IUseCase as IFindByIdUseCase,
+} from "./find-id";
+export { UseCase as UpdateUseCase, IUseCase as IUpdateUseCase } from "./update";

@@ -1,13 +1,17 @@
-import { IUseCase, LoggerUtils, UniqueIdentifier } from "@4irbnb/common";
-import { DeleteCommand } from "../commands";
-import { PACKAGE_NAME } from "../config";
-import { RepositoryTypes } from "../repos";
-import { ServiceTypes } from "../services";
+import { LoggerUtils, UniqueIdentifier } from "@4irbnb/common";
+import { FindByIdCommand } from "../../commands";
+import { PACKAGE_NAME } from "../../config";
+import { Mapper } from "../../mapper";
+import { RepositoryTypes } from "../../repos";
+import { ServiceTypes } from "../../services";
+import { IUseCase } from "./types";
+
+
 
 /**
  * @public
  */
-export class UseCase implements IUseCase<DeleteCommand, void> {
+export class UseCase implements IUseCase {
   #repo: RepositoryTypes.IRepository;
   #service: ServiceTypes.IService;
   #logger = LoggerUtils.initialize({
@@ -33,16 +37,15 @@ export class UseCase implements IUseCase<DeleteCommand, void> {
     this.#service = service;
   }
 
-  public async execute(command: DeleteCommand) {
+  public async execute(command: FindByIdCommand) {
     const targetId = command.id;
-    if (!targetId) {
-      throw new Error("Id property was not found from the DeleteCommand");
+    if (targetId) {
+      throw new Error("id property is not included in the command");
     }
-    var stay = await this.#repo.findById(new UniqueIdentifier(targetId));
+    const stay = await this.#repo.findById(new UniqueIdentifier(targetId));
     if (!stay) {
-      throw new Error("Stay was not found");
+      return null;
     }
-
-    this.#repo.delete(stay);
+    return Mapper.convertToDTO(stay);
   }
 }
