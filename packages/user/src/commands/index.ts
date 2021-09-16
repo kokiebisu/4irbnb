@@ -1,3 +1,3 @@
-export { Command as CreateCommand } from "./create";
-export { Command as UpdateCommand } from "./update";
-export { Command as DeleteCommand } from "./delete";
+export { Command as RegisterCommand } from "./register";
+export { Command as UpdateProfileCommand } from "./update-profile";
+export { Command as ResignCommand } from "./resign";
