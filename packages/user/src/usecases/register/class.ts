@@ -1,15 +1,15 @@
-import { IUseCase, LoggerUtils } from "@4irbnb/common";
-import { RegisterCommand } from "../commands";
-import { PACKAGE_NAME } from "../config";
-import { Entity, Fields } from "../domains";
-import { RepositoryTypes } from "../repos";
-import { ServiceTypes } from "../services";
-
+import { LoggerUtils } from "@4irbnb/common";
+import { IUseCase } from ".";
+import { RegisterCommand } from "../../commands";
+import { PACKAGE_NAME } from "../../config";
+import { Entity, Fields } from "../../domains";
+import { RepositoryTypes } from "../../repos";
+import { ServiceTypes } from "../../services";
 
 /**
  * @public
  */
-export class UseCase implements IUseCase<RegisterCommand, void> {
+export class UseCase implements IUseCase {
   #repo: RepositoryTypes.IRepository;
   #logger = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,

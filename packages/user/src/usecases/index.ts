@@ -1,3 +1,6 @@
-export { UseCase as RegisterUseCase } from "./register";
-export { UseCase as RemoveUseCase } from "./resign";
-export { UseCase as UpdateProfileUseCase } from "./update";
+export {
+  UseCase as RegisterUseCase,
+  IUseCase as IRegisterUseCase,
+} from "./register";
+export { UseCase as ResignUseCase, IUseCase as IResignUseCase } from "./resign";
+export { UseCase as UpdateUseCase, IUseCase as IUpdateUseCase } from "./update";

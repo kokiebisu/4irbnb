@@ -1,6 +1,6 @@
 /**
  * @public
  */
-export interface IUseCase<ICommand, IResponse> {
+export interface IBaseUseCase<ICommand, IResponse> {
   execute(command: ICommand): IResponse;
 }

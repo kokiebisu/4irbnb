@@ -5,6 +5,9 @@ import { Mapper } from "../mapper";
 import { RepositoryTypes } from "../repos";
 import { ServiceTypes } from "../services";
 
+/**
+ * @public
+ */
 export class UseCase implements IUseCase<FindByIdCommand, void> {
   #repo: RepositoryTypes.IRepository;
   #service: ServiceTypes.IService;

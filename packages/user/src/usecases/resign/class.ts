@@ -1,17 +1,14 @@
-import {
-  IUseCase,
-  LoggerUtils,
-  PACKAGE_NAME,
-  UniqueIdentifier,
-} from "@4irbnb/common";
-import { UpdateCommand } from "../commands";
-import { RepositoryTypes } from "../repos";
-import { ServiceTypes } from "../services";
+import { LoggerUtils, UniqueIdentifier } from "@4irbnb/common";
+import { ResignCommand } from "../../commands";
+import { PACKAGE_NAME } from "../../config";
+import { RepositoryTypes } from "../../repos";
+import { ServiceTypes } from "../../services";
+import { IUseCase } from "../register";
 
 /**
  * @public
  */
-export class UseCase implements IUseCase<UpdateCommand, void> {
+export class UseCase implements IUseCase {
   #repo: RepositoryTypes.IRepository;
   #logger = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,
@@ -28,7 +25,7 @@ export class UseCase implements IUseCase<UpdateCommand, void> {
       message: "Successfully initialized...",
     });
   }
-  public async execute(command: UpdateCommand) {
+  public async execute(command: ResignCommand) {
     const targetId = command.id;
     if (!targetId) {
       throw new Error("id property missing from command");
@@ -37,10 +34,6 @@ export class UseCase implements IUseCase<UpdateCommand, void> {
     if (!user) {
       throw new Error("Specified user not found");
     }
-    const newEmail = command.email;
-    if (newEmail) {
-      user.changeEmail(newEmail);
-    }
-    this.#repo.save(user);
+    this.#repo.delete(user);
   }
 }

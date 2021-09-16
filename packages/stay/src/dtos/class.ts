@@ -1,6 +1,9 @@
 import { Entity } from "../domains";
 import { IDataTransferObject } from "./types";
 
+/**
+ * @public
+ */
 export class DataTransferObject implements IDataTransferObject {
   #id: string;
   #title: string;

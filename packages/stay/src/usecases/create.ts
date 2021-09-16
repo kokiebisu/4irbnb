@@ -4,6 +4,9 @@ import { PACKAGE_NAME } from "../config";
 import { RepositoryTypes } from "../repos";
 import { ServiceTypes } from "../services";
 
+/**
+ * @public
+ */
 export class UseCase implements IUseCase<CreateCommand, void> {
   #repo: RepositoryTypes.IRepository;
   #service: ServiceTypes.IService;
