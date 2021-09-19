@@ -1,15 +1,22 @@
+import { IWithUniqueIdentifer } from "..";
 import { UniqueIdentifier } from "./unique";
 
-export abstract class Entity<T> {
+export abstract class BaseEntity<T extends IWithUniqueIdentifer> {
   public readonly id: UniqueIdentifier;
-  public readonly props: T;
+  public readonly props: Omit<T, "id">;
 
   constructor(props: T) {
-    this.id = new UniqueIdentifier();
-    this.props = props;
+    const { id, ...rest } = props;
+    if (!id) {
+      this.id = new UniqueIdentifier();
+    } else {
+      this.id = id;
+    }
+
+    this.props = rest;
   }
 
-  isEqualTo(target: Entity<T>): boolean {
+  isEqualTo(target: BaseEntity<T>): boolean {
     if (target === null) {
       return false;
     }

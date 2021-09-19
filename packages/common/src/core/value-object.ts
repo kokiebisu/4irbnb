@@ -1,5 +1,8 @@
-export type TValueObject = string | number;
+export type TValueObject = string | number | { [key: string]: any };
 
+/**
+ * @public Enwraps the logics for objects that don't contain identifiers
+ */
 export abstract class ValueObject<T extends TValueObject> {
   private readonly value: T;
 

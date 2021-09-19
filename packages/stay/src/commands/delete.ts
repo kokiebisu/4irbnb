@@ -1,12 +1,10 @@
-import { UniqueIdentifier } from "@4irbnb/common";
-
 /**
  * @publc Command for deleting the stay data
  */
 export class Command {
-  #id: UniqueIdentifier;
+  #id: string;
   public constructor(id: string) {
-    this.#id = new UniqueIdentifier(id);
+    this.#id = id;
   }
 
   public get id() {

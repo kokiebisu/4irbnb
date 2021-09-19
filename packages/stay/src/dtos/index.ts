@@ -1,1 +1,1 @@
-export * as Stay from "./stay";
+export * from "./class";

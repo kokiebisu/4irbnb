@@ -1,69 +1,84 @@
 import { LoggerUtils, ILoggerUtils } from "@4irbnb/common";
-import { PACKAGE_NAME } from "../configs";
-// import { IStayService, StayService } from "../services";
-// import { IStayControllerGetParams } from "./types";
+import {
+  CreateCommand,
+  DeleteCommand,
+  FindByIdCommand,
+  UpdateCommand,
+} from "../commands";
+import { PACKAGE_NAME } from "../config";
+import { RepositoryTypes } from "../repos";
+import { ServiceTypes } from "../services";
+import {
+  CreateUseCase,
+  DeleteUseCase,
+  FindByIdUseCase,
+  ICreateUseCase,
+  IDeleteUseCase,
+  IFindByIdUseCase,
+  IUpdateUseCase,
+  UpdateUseCase,
+} from "../usecases";
 
 /**
  * @public
  */
 export class StayController {
-  // #service: IStayService;
+  #create: ICreateUseCase;
+  #delete: IDeleteUseCase;
+  #findById: IFindByIdUseCase;
+  #update: IUpdateUseCase;
   #logger: ILoggerUtils = LoggerUtils.initialize({
     packageName: PACKAGE_NAME,
     className: this.constructor.name,
   });
 
-  private constructor() {
+  public constructor(
+    repo: RepositoryTypes.IRepository,
+    service: ServiceTypes.IService
+  ) {
     // this.#service = StayService.initialize();
     this.#logger.log({
       location: "constructor",
       message: "Successfully initialized...",
     });
+    this.#create = new CreateUseCase(repo, service);
+    this.#delete = new DeleteUseCase(repo, service);
+    this.#findById = new FindByIdUseCase(repo, service);
+    this.#update = new UpdateUseCase(repo, service);
   }
 
-  public static initialize() {
-    return new StayController();
-  }
-
-  async getStaysByCategory(event: any): Promise<any> {
-    try {
-      // const stay = await this.#service.get({ identifier });
-      const propertyTypeIds =
-        event.multiValueQueryStringParameters["property_type_id[]"];
-      // const pattern =
-      //   event.multiValueQueryStringParameters["refinement_paths[]"];
-      // const room_types = event.multiValueQueryStringParameters["room_types[]"];
-
-      const size = 20 / propertyTypeIds.length;
-
-      /**
-       * Query
-       * -
-       */
-
-      return {
-        statusCode: 200,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: "Success",
-        // body: stay
-        //   ? JSON.stringify({
-        //       stay,
-        //     })
-        //   : null,
-      };
-    } catch (error) {
-      this.#logger.error({ location: "get:get", message: "Entered" });
-      return {
-        statusCode: 500,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: {
-          error: "Internal Error",
-        },
-      };
+  public post(event: any) {
+    if (!event.title) {
+      throw new Error("Title property not found");
     }
+    const command = new CreateCommand(event.title);
+    this.#create.execute(command);
+  }
+
+  public delete(event: any) {
+    if (!event.id) {
+      throw new Error("id property not found");
+    }
+    const command = new DeleteCommand(event.id);
+    this.#delete.execute(command);
+  }
+
+  public get(event: any) {
+    if (!event.id) {
+      throw new Error("id property not found");
+    }
+    const command = new FindByIdCommand(event.id);
+    this.#findById.execute(command);
+  }
+
+  public put(event: any) {
+    if (!event.id) {
+      throw new Error("id property not found");
+    }
+    if (!event.title) {
+      throw new Error("Title property not found");
+    }
+    const command = new UpdateCommand(event.id, event.title);
+    this.#update.execute(command);
   }
 }

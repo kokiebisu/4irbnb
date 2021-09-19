@@ -1,59 +1,60 @@
+import { LoggerUtils } from "@4irbnb/common";
+import { RegisterCommand, ResignCommand, UpdateCommand } from "../commands";
+import { PACKAGE_NAME } from "../config";
+import { IRepository } from "../repos/types";
+import { IService } from "../services/types";
 import {
-  ILoggerService,
-  PackageEnum,
-  createLoggerService,
-} from "@4irbnb/common";
-import { IUserService } from "..";
-import { createUserService } from "../services/factory";
-import {
-  IUserControllerConstructorParams,
-  IUserControllerGetParams,
-} from "./types";
+  IRegisterUseCase,
+  IResignUseCase,
+  IUpdateUseCase,
+  RegisterUseCase,
+  ResignUseCase,
+  UpdateUseCase,
+} from "../usecases";
+import { IController } from "./types";
 
 /**
  * @public
  */
-export class UserController {
-  #service: IUserService;
-  #logger: ILoggerService;
+export class Controller implements IController {
+  #register: IRegisterUseCase;
+  #resign: IResignUseCase;
+  #update: IUpdateUseCase;
+  #logger: LoggerUtils = LoggerUtils.initialize({
+    packageName: PACKAGE_NAME,
+    className: this.constructor.name,
+  });
 
-  constructor({ region }: IUserControllerConstructorParams) {
-    this.#service = createUserService({ region });
-    this.#logger = createLoggerService({
-      packageName: PackageEnum.stay,
-      className: "UserController",
+  private constructor(repo: IRepository, service: IService) {
+    this.#register = new RegisterUseCase(repo, service);
+    this.#resign = new ResignUseCase(repo, service);
+    this.#update = new UpdateUseCase(repo, service);
+    this.#logger.log({
+      location: "controller",
+      message: "Successfully initialized...",
     });
   }
 
-  async checkIfExistsByEmail({
-    identifier,
-  }: IUserControllerGetParams): Promise<any> {
-    try {
-      const user = await this.#service.get({ identifier });
+  public initialize(repo: IRepository, service: IService) {
+    return new Controller(repo, service);
+  }
 
-      return {
-        statusCode: 200,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          exists: !!user,
-        }),
-      };
-    } catch (error) {
-      this.#logger.error({
-        location: "checkIfExistsByEmail:get",
-        message: "Entered",
-      });
-      return {
-        statusCode: 500,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: {
-          error: "Internal Error",
-        },
-      };
-    }
+  async register(event: any) {
+    const command = new RegisterCommand(
+      event.firstName,
+      event.lastName,
+      event.email
+    );
+    this.#register.execute(command);
+  }
+
+  async resign(event: any) {
+    const command = new ResignCommand(event.id);
+    this.#resign.execute(command);
+  }
+
+  async update(event: any) {
+    const command = new UpdateCommand(event.id, event.email);
+    this.#update.execute(command);
   }
 }

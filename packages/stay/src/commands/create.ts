@@ -1,13 +1,11 @@
-import { Fields } from "../domains/stay";
-
 /**
  * @publc Command for creating and persisting the stay data
  */
 export class Command {
-  #title: Fields.Title;
+  #title: string;
 
   public constructor(title: string) {
-    this.#title = Fields.Title.create(title);
+    this.#title = title;
   }
 
   public get title() {
