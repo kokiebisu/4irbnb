@@ -40,10 +40,12 @@ export class UseCase implements IUseCase {
     if (!newEmail) {
       throw new Error("Email property not included");
     }
+
     const newUser = Entity.create({
       fullName: Fields.FullName.create(newFirstName, newLastName),
       email: Fields.Email.create(newEmail),
     });
+
     await this.#repo.save(newUser);
   }
 }
