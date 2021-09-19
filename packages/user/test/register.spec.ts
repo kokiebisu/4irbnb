@@ -1,24 +1,20 @@
-import { MockRepository } from "./mock";
+import { Repository, user } from "./mock";
 import { RegisterUseCase } from "../src/usecases";
 import { Service } from "../src/services";
 import { RegisterCommand } from "../src/commands";
 
 describe("Register", () => {
-  it("is successful with no '@' mark in email", async () => {
+  it("is not successful with the '@' mark missing in the provided email", async () => {
+    const data = { ...user, email: "noAtMark" };
     let exceptionThrown = false;
-    const repository = new MockRepository();
+    const repository = new Repository();
     const service = new Service(repository);
     const register = new RegisterUseCase(repository, service);
 
-    const registerData = {
-      firstName: "Ben",
-      lastName: "Parker",
-      email: "withNoAtMark",
-    };
     const command = new RegisterCommand(
-      registerData.firstName,
-      registerData.lastName,
-      registerData.email
+      data.firstName,
+      data.lastName,
+      data.email
     );
 
     try {
@@ -27,27 +23,23 @@ describe("Register", () => {
       exceptionThrown = true;
     }
 
-    const user = await repository.findByEmail(registerData.email);
-    expect(user).toBeNull();
+    const foundUser = await repository.findByEmail(data.email);
+    expect(foundUser).toBeNull();
     expect(exceptionThrown).toBeTruthy();
   });
 
   it("is successful with all valid inputs", async () => {
+    const data = { ...user };
     let exceptionThrown = false;
 
-    const repository = new MockRepository();
+    const repository = new Repository();
     const service = new Service(repository);
     const register = new RegisterUseCase(repository, service);
 
-    const registerData = {
-      firstName: "Ben",
-      lastName: "Parker",
-      email: "ben_parker@gmail.com",
-    };
     const command = new RegisterCommand(
-      registerData.firstName,
-      registerData.lastName,
-      registerData.email
+      data.firstName,
+      data.lastName,
+      data.email
     );
 
     try {
@@ -56,8 +48,8 @@ describe("Register", () => {
       exceptionThrown = true;
     }
 
-    const user = await repository.findByEmail(registerData.email);
-    expect(user).not.toBeNull();
+    const foundUser = await repository.findByEmail(data.email);
+    expect(foundUser).not.toBeNull();
     expect(exceptionThrown).toBeFalsy();
   });
 });
