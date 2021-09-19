@@ -17,20 +17,12 @@ export class Service implements IService {
    * @public
    * @param repo
    */
-  private constructor(repo: IRepository) {
+  public constructor(repo: IRepository) {
     this.#repo = repo;
     this.#logger.log({
       location: "constructor",
       message: "Successfully initialized",
     });
-  }
-
-  /**
-   * @public
-   * @param user
-   */
-  public static initialize(repo: IRepository) {
-    return new Service(repo);
   }
 
   /**
