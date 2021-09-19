@@ -38,6 +38,6 @@ export class UseCase implements IUseCase {
     if (newEmail) {
       user.changeEmail(newEmail);
     }
-    this.#repo.save(user);
+    await this.#repo.save(user);
   }
 }
