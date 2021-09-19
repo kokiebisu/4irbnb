@@ -31,6 +31,13 @@ export class Email extends ValueObject<string> {
     super(props);
   }
   public static create(emailAddress: string) {
+    if (
+      !emailAddress.match(
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      )
+    ) {
+      throw new Error("Email doesn't match the proper email address format");
+    }
     return new Email(emailAddress);
   }
 }
