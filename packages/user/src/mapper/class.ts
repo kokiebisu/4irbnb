@@ -9,16 +9,16 @@ export class Mapper {
   }
 
   public static convertToEntity(data: IDataTransferObject) {
-    if (data.id) {
+    if (!data.id) {
       throw new Error("id property missing");
     }
-    if (data.firstName) {
+    if (!data.firstName) {
       throw new Error("firstName property missing");
     }
-    if (data.lastName) {
+    if (!data.lastName) {
       throw new Error("lastName property missing");
     }
-    if (data.email) {
+    if (!data.email) {
       throw new Error("email property missing");
     }
     return Entity.create({
