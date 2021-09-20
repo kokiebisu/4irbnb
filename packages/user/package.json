@@ -17,13 +17,14 @@
   },
   "dependencies": {
     "@4irbnb/common": "file:../common",
+    "pg": "^8.7.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
+    "@types/pg": "^8.6.1",
     "@types/uuid": "^8.3.1"
   },
   "engines": {
     "node": ">= 14.17.1"
-  },
-  "type": "commonjs"
+  }
 }
