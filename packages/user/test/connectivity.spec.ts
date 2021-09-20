@@ -3,14 +3,10 @@ import { Email } from "../src/domains/fields";
 import { Repository } from "../src/repos";
 import { IRepository } from "../src/repos/types";
 
-let repo: IRepository = new Repository({
-  host: "database-2.cmkyxohdorvf.us-east-1.rds.amazonaws.com",
-  port: 5432,
-  user: "postgres",
-  password: "postgresadmin",
-});
+let repo: IRepository;
 
 beforeAll(async () => {
+  repo = await Repository.initialize();
   await repo.openConnection();
 });
 
