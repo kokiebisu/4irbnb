@@ -1,4 +1,4 @@
-export class UniqueIdentifier {
+export class Identifier {
   private readonly value: string;
   constructor(value: string) {
     this.value = value;
@@ -8,7 +8,7 @@ export class UniqueIdentifier {
    * @public Checks the equality of the two values
    * @param target
    */
-  public equals(target?: UniqueIdentifier): boolean {
+  public equals(target?: Identifier): boolean {
     if (target === null || target === undefined) {
       return false;
     }

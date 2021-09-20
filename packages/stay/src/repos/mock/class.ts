@@ -1,4 +1,4 @@
-import { UniqueIdentifier } from "@4irbnb/common";
+import { Identifier } from "@4irbnb/common";
 import { Entity } from "../../domains";
 
 import { DataTransferObject } from "../../dtos/stay";
@@ -33,7 +33,7 @@ export class Repository implements IRepository {
    * @access public
    * @param id
    */
-  public async findById(id: UniqueIdentifier) {
+  public async findById(id: Identifier) {
     const idInString = id.toString();
     if (!this.#client[idInString]) {
       return null;

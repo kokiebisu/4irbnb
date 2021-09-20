@@ -1,10 +1,10 @@
-import { UniqueIdentifier } from "./unique";
+import { Identifier } from "./unique";
 
 export abstract class BaseEntity<T> {
-  public readonly id: UniqueIdentifier;
+  public readonly id: Identifier;
   public readonly props: Omit<T, "id">;
 
-  constructor(id: UniqueIdentifier, props: Omit<T, "id">) {
+  constructor(id: Identifier, props: Omit<T, "id">) {
     this.id = id;
     this.props = props;
   }

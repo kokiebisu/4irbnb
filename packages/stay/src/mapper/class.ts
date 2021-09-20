@@ -1,4 +1,4 @@
-import { UniqueIdentifier } from "@4irbnb/common";
+import { Identifier } from "@4irbnb/common";
 import { Entity } from "../domains";
 import { Title } from "../domains/fields";
 import { DataTransferObject } from "../dtos";
@@ -21,7 +21,7 @@ export class Mapper {
       throw new Error("Title property missing");
     }
     return Entity.create({
-      id: new UniqueIdentifier(data.id),
+      id: new Identifier(data.id),
       title: Title.create(data.title),
     });
   }

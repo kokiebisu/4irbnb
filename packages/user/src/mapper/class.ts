@@ -1,4 +1,4 @@
-import { UniqueIdentifier } from "@4irbnb/common";
+import { Identifier } from "@4irbnb/common";
 import { Entity } from "../domains";
 import { Email, FullName } from "../domains/fields";
 import { DataTransferObject, IDataTransferObject } from "../dto";
@@ -21,7 +21,7 @@ export class Mapper {
     if (!data.email) {
       throw new Error("email property missing");
     }
-    return new Entity(new UniqueIdentifier(data.id), {
+    return new Entity(new Identifier(data.id), {
       fullName: FullName.create(data.firstName, data.lastName),
       email: Email.create(data.email),
     });

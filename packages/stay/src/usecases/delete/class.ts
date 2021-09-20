@@ -1,11 +1,9 @@
-import { LoggerUtils, UniqueIdentifier } from "@4irbnb/common";
+import { LoggerUtils, Identifier } from "@4irbnb/common";
 import { DeleteCommand } from "../../commands";
 import { PACKAGE_NAME } from "../../config";
 import { RepositoryTypes } from "../../repos";
 import { ServiceTypes } from "../../services";
 import { IUseCase } from "./types";
-
-
 
 /**
  * @public
@@ -41,7 +39,7 @@ export class UseCase implements IUseCase {
     if (!targetId) {
       throw new Error("Id property was not found from the DeleteCommand");
     }
-    var stay = await this.#repo.findById(new UniqueIdentifier(targetId));
+    var stay = await this.#repo.findById(new Identifier(targetId));
     if (!stay) {
       throw new Error("Stay was not found");
     }

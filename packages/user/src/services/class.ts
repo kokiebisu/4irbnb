@@ -19,10 +19,6 @@ export class Service implements IService {
    */
   public constructor(repo: IRepository) {
     this.#repo = repo;
-    this.#logger.log({
-      location: "constructor",
-      message: "Successfully initialized",
-    });
   }
 
   /**

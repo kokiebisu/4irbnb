@@ -1,4 +1,4 @@
-import { LoggerUtils, PACKAGE_NAME, UniqueIdentifier } from "@4irbnb/common";
+import { LoggerUtils, PACKAGE_NAME, Identifier } from "@4irbnb/common";
 
 import { UpdateCommand } from "../../commands";
 import { RepositoryTypes } from "../../repos";
@@ -20,17 +20,13 @@ export class UseCase implements IUseCase {
     _: ServiceTypes.IService
   ) {
     this.#repo = repo;
-    this.#logger.log({
-      location: "constructor",
-      message: "Successfully initialized...",
-    });
   }
   public async execute(command: UpdateCommand) {
     const targetId = command.id;
     if (!targetId) {
       throw new Error("id property missing from command");
     }
-    const user = await this.#repo.findById(new UniqueIdentifier(targetId));
+    const user = await this.#repo.findById(new Identifier(targetId));
     if (!user) {
       throw new Error("Specified user not found");
     }

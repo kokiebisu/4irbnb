@@ -1,4 +1,4 @@
-import { LoggerUtils, UniqueIdentifier } from "@4irbnb/common";
+import { LoggerUtils, Identifier } from "@4irbnb/common";
 import { CreateCommand } from "../../commands";
 import { PACKAGE_NAME } from "../../config";
 import { RepositoryTypes } from "../../repos";
@@ -40,7 +40,7 @@ export class UseCase implements IUseCase {
    * @param service
    */
   public execute(command: CreateCommand) {
-    const newId = new UniqueIdentifier();
+    const newId = new Identifier();
     // const service =
     // if (command.title) {
     //   Stay.create({
