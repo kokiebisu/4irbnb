@@ -1,13 +1,7 @@
-import { v4 as uuid } from "uuid";
-
 export class UniqueIdentifier {
   private readonly value: string;
-  constructor(value?: string) {
-    if (value) {
-      this.value = value;
-    } else {
-      this.value = uuid();
-    }
+  constructor(value: string) {
+    this.value = value;
   }
 
   /**
@@ -31,8 +25,4 @@ export class UniqueIdentifier {
   public toString() {
     return this.value;
   }
-}
-
-export interface IWithUniqueIdentifer {
-  id: UniqueIdentifier;
 }
