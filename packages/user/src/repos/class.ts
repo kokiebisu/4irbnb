@@ -1,50 +1,68 @@
 import { Identifier } from "@4irbnb/common";
-import { Client } from "pg";
+import { Client, ClientConfig } from "pg";
+import { Fields } from "../domains";
+import { Mapper } from "../mapper";
 import { IRepository } from "./types";
 
 export class Repository implements IRepository {
   #client: Client;
-  public constructor() {
-    this.#client = new Client({
-      host: "database-1.cmkyxohdorvf.us-east-1.rds.amazonaws.com",
-      port: 5432,
-      user: "postgres",
-      password: "testadmin",
-    });
+  public constructor(dbConfig: ClientConfig) {
+    this.#client = new Client(dbConfig);
   }
 
-  private async initialize() {
+  public async openConnection() {
     try {
       if (this.#client) {
         await this.#client.connect();
-        console.debug("connected");
       }
     } catch (err: any) {
-      console.debug("connection error", err.stack);
+      console.error("connection error", err.stack);
     }
   }
 
-  private async close() {
+  public async closeConnection() {
     try {
       await this.#client.end();
-      console.debug("disconnected");
     } catch (err: any) {
-      console.debug("error during disconnection", err.stack);
+      console.error("error during disconnection", err.stack);
     }
   }
 
   public async findById(id: Identifier) {
-    await this.#client.connect();
-    /**
-     * Logic to find id
-     */
-    await this.#client.end();
-    return null;
+    // await this.initialize();
+    const query = {
+      name: "fetch-user-by-id",
+      text: `SELECT * FROM "user" WHERE id = $1`,
+      values: [parseInt(id.toString())],
+    };
+    try {
+      const res = await this.#client.query(query);
+      console.debug("ID", res);
+      // await this.close();
+      const data = res.rows[0];
+      return Mapper.convertToEntityFromRaw(data);
+    } catch (err) {
+      console.error("CATCH", err);
+      return null;
+    }
   }
 
-  public async findByEmail() {
-    this.initialize();
-    return null;
+  public async findByEmail(email: Fields.Email) {
+    // await this.initialize();
+    const query = {
+      name: "fetch-user-by-email",
+      text: `SELECT * FROM "user" WHERE email = $1`,
+      values: [email.getValue()],
+    };
+    try {
+      const res = await this.#client.query(query);
+      // await this.close();
+      const data = res.rows[0];
+      return Mapper.convertToEntityFromRaw(data);
+    } catch (err) {
+      console.error(err);
+      return null;
+    }
   }
 
   public async save() {}
