@@ -3,7 +3,7 @@ import { ResignCommand } from "../../commands";
 import { PACKAGE_NAME } from "../../config";
 import { RepositoryTypes } from "../../repos";
 import { ServiceTypes } from "../../services";
-import { IUseCase } from "../register";
+import { IUseCase } from "./types";
 
 /**
  * @public
@@ -17,7 +17,7 @@ export class UseCase implements IUseCase {
 
   public constructor(
     repo: RepositoryTypes.IRepository,
-    service: ServiceTypes.IService
+    _: ServiceTypes.IService
   ) {
     this.#repo = repo;
     this.#logger.log({

@@ -17,7 +17,7 @@ export class UseCase implements IUseCase {
 
   public constructor(
     repo: RepositoryTypes.IRepository,
-    service: ServiceTypes.IService
+    _: ServiceTypes.IService
   ) {
     this.#repo = repo;
     this.#logger.log({
