@@ -1,4 +1,4 @@
-import { UniqueIdentifier } from "@4irbnb/common";
+import { Identifier } from "@4irbnb/common";
 import {
   // City,
   // Country,
@@ -33,5 +33,5 @@ export interface IEntityProps {
 }
 
 export interface IEntity extends IEntityProps {
-  id: UniqueIdentifier;
+  id: Identifier;
 }

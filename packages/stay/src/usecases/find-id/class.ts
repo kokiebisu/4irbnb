@@ -1,12 +1,10 @@
-import { LoggerUtils, UniqueIdentifier } from "@4irbnb/common";
+import { LoggerUtils, Identifier } from "@4irbnb/common";
 import { FindByIdCommand } from "../../commands";
 import { PACKAGE_NAME } from "../../config";
 import { Mapper } from "../../mapper";
 import { RepositoryTypes } from "../../repos";
 import { ServiceTypes } from "../../services";
 import { IUseCase } from "./types";
-
-
 
 /**
  * @public
@@ -42,7 +40,7 @@ export class UseCase implements IUseCase {
     if (targetId) {
       throw new Error("id property is not included in the command");
     }
-    const stay = await this.#repo.findById(new UniqueIdentifier(targetId));
+    const stay = await this.#repo.findById(new Identifier(targetId));
     if (!stay) {
       return null;
     }

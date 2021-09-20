@@ -1,4 +1,4 @@
-import { UniqueIdentifier } from "@4irbnb/common";
+import { Identifier } from "@4irbnb/common";
 import { IFactory } from "../../src/factory/types";
 
 import { Entity } from "../../src/domains";
@@ -11,6 +11,6 @@ export class Factory implements IFactory {
   }
   public create(props: IEntityProps) {
     const newId = ++this.#id;
-    return new Entity(new UniqueIdentifier(newId.toString()), props);
+    return new Entity(new Identifier(newId.toString()), props);
   }
 }

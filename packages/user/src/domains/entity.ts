@@ -1,4 +1,4 @@
-import { BaseEntity, UniqueIdentifier } from "@4irbnb/common";
+import { BaseEntity, Identifier } from "@4irbnb/common";
 import { Email } from "./fields";
 import { IEntity, IEntityProps } from "./types";
 
@@ -6,7 +6,7 @@ import { IEntity, IEntityProps } from "./types";
  * @public Enwraps the logics for the User entity
  */
 export class Entity extends BaseEntity<IEntity> {
-  public constructor(id: UniqueIdentifier, props: IEntityProps) {
+  public constructor(id: Identifier, props: IEntityProps) {
     super(id, props);
   }
 

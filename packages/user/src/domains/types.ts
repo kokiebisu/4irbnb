@@ -1,4 +1,4 @@
-import { UniqueIdentifier } from "@4irbnb/common";
+import { Identifier } from "@4irbnb/common";
 import { Email, FullName } from "./fields";
 
 /**
@@ -13,5 +13,5 @@ export interface IEntityProps {
  * @public
  */
 export interface IEntity extends IEntityProps {
-  id: UniqueIdentifier;
+  id: Identifier;
 }

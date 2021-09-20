@@ -1,5 +1,5 @@
 import { v4 as uuid } from "uuid";
-import { UniqueIdentifier } from "@4irbnb/common";
+import { Identifier } from "@4irbnb/common";
 import { Entity } from "../domains";
 import { IEntityProps } from "../domains/types";
 
@@ -8,7 +8,7 @@ import { IEntityProps } from "../domains/types";
  */
 export class Factory {
   public create(props: IEntityProps) {
-    const id = new UniqueIdentifier(uuid());
+    const id = new Identifier(uuid());
     return new Entity(id, props);
   }
 }

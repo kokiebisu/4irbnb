@@ -1,6 +1,6 @@
 import { IRepository } from "../../src/repos/types";
 import { IDataTransferObject } from "../../src/dto";
-import { UniqueIdentifier } from "@4irbnb/common";
+import { Identifier } from "@4irbnb/common";
 import { Mapper } from "../../src/mapper";
 import { Entity } from "../../src/domains";
 
@@ -10,7 +10,7 @@ export class Repository implements IRepository {
     this.store = {};
   }
 
-  public async findById(id: UniqueIdentifier) {
+  public async findById(id: Identifier) {
     const target = Object.values(this.store).find(
       (data) => data.id === id.toString()
     );
