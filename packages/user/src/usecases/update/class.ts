@@ -20,10 +20,6 @@ export class UseCase implements IUseCase {
     _: ServiceTypes.IService
   ) {
     this.#repo = repo;
-    this.#logger.log({
-      location: "constructor",
-      message: "Successfully initialized...",
-    });
   }
   public async execute(command: UpdateCommand) {
     const targetId = command.id;
