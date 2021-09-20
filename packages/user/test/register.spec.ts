@@ -1,4 +1,4 @@
-import { Repository, user } from "./mock";
+import { Repository, Factory, user } from "./mock";
 import { RegisterUseCase } from "../src/usecases";
 import { Service } from "../src/services";
 import { RegisterCommand } from "../src/commands";
@@ -7,9 +7,10 @@ describe("Register", () => {
   it("is not successful with the '@' mark missing in the provided email", async () => {
     const data = { ...user, email: "noAtMark" };
     let exceptionThrown = false;
+    const factory = new Factory();
     const repository = new Repository();
     const service = new Service(repository);
-    const register = new RegisterUseCase(repository, service);
+    const register = new RegisterUseCase(factory, repository, service);
 
     const command = new RegisterCommand(
       data.firstName,
@@ -32,9 +33,10 @@ describe("Register", () => {
     const data = { ...user };
     let exceptionThrown = false;
 
+    const factory = new Factory();
     const repository = new Repository();
     const service = new Service(repository);
-    const register = new RegisterUseCase(repository, service);
+    const register = new RegisterUseCase(factory, repository, service);
 
     const command = new RegisterCommand(
       data.firstName,
@@ -49,6 +51,7 @@ describe("Register", () => {
     }
 
     const foundUser = await repository.findByEmail(data.email);
+
     expect(foundUser).not.toBeNull();
     expect(exceptionThrown).toBeFalsy();
   });

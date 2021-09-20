@@ -1,6 +1,7 @@
 import { LoggerUtils } from "@4irbnb/common";
 import { RegisterCommand, ResignCommand, UpdateCommand } from "../commands";
 import { PACKAGE_NAME } from "../config";
+import { IFactory } from "../factory/types";
 import { IRepository } from "../repos/types";
 import { IService } from "../services/types";
 import {
@@ -25,18 +26,10 @@ export class Controller implements IController {
     className: this.constructor.name,
   });
 
-  private constructor(repo: IRepository, service: IService) {
-    this.#register = new RegisterUseCase(repo, service);
+  constructor(factory: IFactory, repo: IRepository, service: IService) {
+    this.#register = new RegisterUseCase(factory, repo, service);
     this.#resign = new ResignUseCase(repo, service);
     this.#update = new UpdateUseCase(repo, service);
-    this.#logger.log({
-      location: "controller",
-      message: "Successfully initialized...",
-    });
-  }
-
-  public initialize(repo: IRepository, service: IService) {
-    return new Controller(repo, service);
   }
 
   async register(event: any) {

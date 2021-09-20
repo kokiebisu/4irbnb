@@ -21,8 +21,7 @@ export class Mapper {
     if (!data.email) {
       throw new Error("email property missing");
     }
-    return Entity.create({
-      id: new UniqueIdentifier(data.id),
+    return new Entity(new UniqueIdentifier(data.id), {
       fullName: FullName.create(data.firstName, data.lastName),
       email: Email.create(data.email),
     });

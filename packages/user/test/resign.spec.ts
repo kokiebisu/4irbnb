@@ -1,17 +1,18 @@
 import { RegisterCommand, ResignCommand } from "../src/commands";
 import { Service } from "../src/services";
 import { RegisterUseCase, ResignUseCase } from "../src/usecases";
-import { Repository, user } from "./mock";
+import { Repository, Factory, user } from "./mock";
 
-describe.only("Resign", () => {
+describe("Resign", () => {
   const repository = new Repository();
   const data = { ...user };
   /**
    * Sets up one data in the database
    */
   beforeEach(async () => {
+    const factory = new Factory();
     const service = new Service(repository);
-    const register = new RegisterUseCase(repository, service);
+    const register = new RegisterUseCase(factory, repository, service);
 
     const command = new RegisterCommand(
       data.firstName,

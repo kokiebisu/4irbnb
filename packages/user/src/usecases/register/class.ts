@@ -2,7 +2,8 @@ import { LoggerUtils } from "@4irbnb/common";
 import { IUseCase } from ".";
 import { RegisterCommand } from "../../commands";
 import { PACKAGE_NAME } from "../../config";
-import { Entity, Fields } from "../../domains";
+import { Fields } from "../../domains";
+import { FactoryTypes } from "../../factory";
 import { RepositoryTypes } from "../../repos";
 import { ServiceTypes } from "../../services";
 
@@ -10,21 +11,16 @@ import { ServiceTypes } from "../../services";
  * @public
  */
 export class UseCase implements IUseCase {
+  #factory: FactoryTypes.IFactory;
   #repo: RepositoryTypes.IRepository;
-  #logger = LoggerUtils.initialize({
-    packageName: PACKAGE_NAME,
-    className: this.constructor.name,
-  });
 
   public constructor(
+    factory: FactoryTypes.IFactory,
     repo: RepositoryTypes.IRepository,
-    service: ServiceTypes.IService
+    _: ServiceTypes.IService
   ) {
+    this.#factory = factory;
     this.#repo = repo;
-    this.#logger.log({
-      location: "constructor",
-      message: "Successfully initialized...",
-    });
   }
 
   public async execute(command: RegisterCommand) {
@@ -41,7 +37,7 @@ export class UseCase implements IUseCase {
       throw new Error("Email property not included");
     }
 
-    const newUser = Entity.create({
+    const newUser = this.#factory.create({
       fullName: Fields.FullName.create(newFirstName, newLastName),
       email: Fields.Email.create(newEmail),
     });
