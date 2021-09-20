@@ -16,9 +16,12 @@
     "deploy": "bash ../../scripts/deploy.sh user api consumer"
   },
   "dependencies": {
-    "@4irbnb/common": "file:../common"
+    "@4irbnb/common": "file:../common",
+    "uuid": "^8.3.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/uuid": "^8.3.1"
+  },
   "engines": {
     "node": ">= 14.17.1"
   },

@@ -1,9 +1,10 @@
 import { RegisterCommand, UpdateCommand } from "../src/commands";
 import { Service } from "../src/services";
 import { RegisterUseCase, UpdateUseCase } from "../src/usecases";
-import { Repository, user } from "./mock";
+import { Repository, Factory, user } from "./mock";
 
 describe.only("Update", () => {
+  const factory = new Factory();
   const repository = new Repository();
   const data = { ...user };
   /**
@@ -11,7 +12,7 @@ describe.only("Update", () => {
    */
   beforeEach(async () => {
     const service = new Service(repository);
-    const register = new RegisterUseCase(repository, service);
+    const register = new RegisterUseCase(factory, repository, service);
 
     const command = new RegisterCommand(
       data.firstName,

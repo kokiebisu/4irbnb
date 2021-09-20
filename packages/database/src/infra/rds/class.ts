@@ -128,7 +128,6 @@ export class RDSClient implements IRelationalDatabaseClient {
       //     })
       //   )
       // ).records;
-      console.debug("YO", result);
       this.#conn.end();
       return result;
     } catch (error) {
