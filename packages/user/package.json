@@ -10,8 +10,8 @@
     "start": "node dist/index.js",
     "clean": "rimraf dist *.tsbuildinfo",
     "build": "tsc -b .",
-    "test": "jest --passWithNoTests",
-    "test:watch": "jest --passWithNoTests --detectOpenHandles --watch",
+    "test": "jest --passWithNoTests --detectOpenHandles",
+    "test:watch": "yarn test --watch",
     "lint": "eslint src --ext js,ts,tsx",
     "extract": "api-extractor run --local",
     "deploy": "bash ../../scripts/deploy.sh user api consumer"
