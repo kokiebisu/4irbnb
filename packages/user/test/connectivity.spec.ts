@@ -1,32 +1,45 @@
-const { Pool } = require("pg");
+import { Identifier } from "@4irbnb/common";
+import { Email } from "../src/domains/fields";
+import { Repository } from "../src/repos";
+import { Factory } from "../src/factory";
+import { Entity, Fields } from "../src/domains";
 
-describe("it", () => {
-  it("y", async () => {
-    const pool = new Pool({
-      host: "database-1.cmkyxohdorvf.us-east-1.rds.amazonaws.com",
-      user: "postgres",
-      password: "testadmin",
+describe("Connectivity", () => {
+  it("Finds by ID", async () => {
+    const repo = await Repository.initialize();
+    const result = await repo.findById(new Identifier("1"));
+    expect(result).not.toBeNull();
+  });
+  it("Finds by Email", async () => {
+    const repo = await Repository.initialize();
+    const result = await repo.findByEmail(
+      Email.create("kenichikona@gmail.com")
+    );
+    expect(result).not.toBeNull();
+    expect(result.id.toString()).toEqual(1);
+    expect(result.fullName.getValue().firstName).toEqual("Kenichi");
+    expect(result.fullName.getValue().lastName).toEqual("Okiebisu");
+  });
+  it("Save", async () => {
+    const repo = await Repository.initialize();
+    const factory = new Factory(repo);
+    const data = {
+      email: Fields.Email.create("random@gmail.com"),
+      fullName: Fields.FullName.create("Ben", "Parker"),
+    };
+    const user = await factory.create(data);
+    const result = await repo.save(user);
+    expect(result.email.getValue()).toEqual(data.email.getValue());
+    expect(result.fullName.getValue()).toEqual(data.fullName.getValue());
+  });
+  it.only("Delete", async () => {
+    const repo = await Repository.initialize();
+    const data = new Entity(new Identifier("13"), {
+      email: Fields.Email.create("random@gmail.com"),
+      fullName: Fields.FullName.create("Ben", "Parker"),
     });
-
-    // the pool with emit an error on behalf of any idle clients
-    // it contains if a backend error or network partition happens
-    pool.on("error", (err, client) => {
-      console.error("Unexpected error on idle client", err); // your callback here
-      process.exit(-1);
-    });
-
-    // promise - checkout a client
-    pool.connect().then((client) => {
-      return client
-        .query("SELECT * FROM users WHERE id = $1", [1]) // your query string here
-        .then((res) => {
-          client.release();
-          console.log(res.rows[0]); // your callback here
-        })
-        .catch((e) => {
-          client.release();
-          console.log(err.stack); // your callback here
-        });
-    });
+    const result = await repo.delete(data);
+    expect(result.email.getValue()).toEqual(data.email.getValue());
+    expect(result.fullName.getValue()).toEqual(data.fullName.getValue());
   });
 });

@@ -10,13 +10,16 @@
     "start": "node dist/index.js",
     "clean": "rimraf dist *.tsbuildinfo",
     "build": "tsc -b .",
-    "test": "jest --passWithNoTests",
+    "test": "jest --passWithNoTests --detectOpenHandles",
+    "test:watch": "yarn test --watch",
     "lint": "eslint src --ext js,ts,tsx",
     "extract": "api-extractor run --local",
     "deploy": "bash ../../scripts/deploy.sh user api consumer"
   },
   "dependencies": {
     "@4irbnb/common": "file:../common",
+    "@4irbnb/manager": "file:../manager",
+    "@aws-sdk/client-rds": "^3.32.0",
     "pg": "^8.7.1",
     "uuid": "^8.3.2"
   },
